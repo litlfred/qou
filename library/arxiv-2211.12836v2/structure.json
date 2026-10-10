@@ -6,7 +6,8 @@
   "sha256": "4ffbb8b21f8b175d26656de27bd686c6c544330f5a9daf63e6ad631e57e5f362",
   "bytes": 855805,
   "pages": 68,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -484,6 +485,154 @@
   "likely_scanned": false,
   "toc_entries": 29,
   "sections": 24,
-  "chars_total": 145841
+  "chars_total": 145841,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "probability_aspect.tex",
+   "tex_sections": 7,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-presentation-of-the-model-and-main-results",
+     "title": "Presentation of the model and main results",
+     "prose_ratio": 0.169,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-22-a-complete-family-of-commuting-markov-kernels",
+     "title": "A complete family of commuting Markov kernels associated to Bk,n",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-23-relation-between-bkn-and-the-unitary-group",
+     "title": "Relation between Bk,n and the unitary group",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-24-main-probabilistic-theorems",
+     "title": "Main probabilistic theorems",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-25-a-geometric-corollary-on-quantum-cohomology-o",
+     "title": "A geometric corollary on quantum cohomology of the Grassmannian",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-26-related-results-and-perspectives",
+     "title": "Related results and perspectives",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-3-positively-multiplicative-graphs-random-walks",
+     "title": "Positively multiplicative graphs, random walks and Fourier transform",
+     "prose_ratio": 0.39,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-31-family-of-random-walks-and-h-transform",
+     "title": "Family of random walks and h-transform",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-33-integrable-pm-graph-fourier-transform-and-ver",
+     "title": "Integrable PM-graph, Fourier transform and Verlinde formula",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-4-noncolliding-particles-on-a-circle-and-eigenva",
+     "title": "Noncolliding particles on a circle and eigenvalues of unitary matrices",
+     "prose_ratio": 0.251,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-41-the-graph-bkn-as-an-integrable-pm-graph",
+     "title": "The graph Bk,n as an integrable PM-graph",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-42-h-transform-convolution-and-fourier-transform",
+     "title": "h-transform, convolution and Fourier transform on Bk,n",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-44-invariant-brownian-motion-on-uk-and-unitary-d",
+     "title": "Invariant Brownian motion on Uk and unitary Dyson Brownian motion",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-5-the-fourier-transform-of-a-large-sequence-of-c",
+     "title": "The Fourier transform of a large sequence of convolution",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 0.901,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-6-berry-esseen-theorem-on-bkn",
+     "title": "Berry-Esseen theorem on Bk,n",
+     "prose_ratio": 0.763,
+     "coverage_ratio": 0.937,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-62-proof-of-theorem-61",
+     "title": "Proof of Theorem 6.1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-7-local-limit-theorem-and-its-geometric-conseque",
+     "title": "Local limit theorem and its geometric consequences",
+     "prose_ratio": 0.88,
+     "coverage_ratio": 0.894,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-appendix-a-small-quantum-cohomology-of-the-grass",
+     "title": "Appendix A. Small quantum cohomology of the Grassmannian",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-a1-partitions-and-symmetric-functions",
+     "title": "A.1. Partitions and symmetric functions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-a2-the-grassmannian-schubert-variety-and-interse",
+     "title": "A.2. the Grassmannian, Schubert variety and intersection",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-a3-quantum-cohomology-ring-of-the-grassmannian",
+     "title": "A.3. Quantum cohomology ring of the Grassmannian",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-references",
+     "title": "References",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-nomenclature",
+     "title": "Nomenclature",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

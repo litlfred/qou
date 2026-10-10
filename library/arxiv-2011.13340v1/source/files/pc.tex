@@ -1,0 +1,69 @@
+\documentclass[11pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage{quoting}
+\newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert #1
+    \right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
+\quotingsetup{vskip=0pt,leftmargin=10pt,rightmargin=10pt}
+
+
+% options for preamble
+
+\def\showauthornotes{1}
+% \def\showtableofcontents{1}
+\def\showkeys{0}
+\def\showdraftbox{0}
+%\def\showcolorlinks{1}
+\def\usemicrotype{1}
+\def\showfixme{0}
+\def\showdefine{0}
+
+\input{macros}
+\input{macros-pc}
+\renewcommand{\on}{\{-1,1\}}
+\setcounter{page}{1}
+
+\title{A Matrix Bernstein Inequality for Strong Rayleigh Distributions\footnote{This paper was submitted to STOC 2020, during the process of which another paper \cite{ABY19} appeared which proves a slightly stronger result. This note is being released in its unedited form.}}
+
+\author{
+Tarun Kathuria \\ EECS, UC Berkeley \\
+\text{tarunkathuria@berkeley.edu}
+}
+
+\date{}
+
+\setcounter{tocdepth}{1}
+
+\begin{document}
+
+\maketitle
+\draftbox
+\thispagestyle{empty}
+
+\input{abstract}
+
+
+\setcounter{page}{1}
+\input{single-file-new.tex}
+
+% \section*{Acknowledgements}
+%
+% We thank Rasmus Kyng, Nikhil Srivastava and Paris Syminelakis for some helpful discussions.
+
+\addreferencesection
+\bibliographystyle{amsalpha}
+\bibliography{references}%,bib/tensor-pca}
+
+% \appendix
+
+% \input{appendix}
+
+
+%
+%\input{correction-lb-evals}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

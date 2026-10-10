@@ -7,598 +7,157 @@ section_number: 3
 pages: 9-18
 source_pdf: 1202.0067v3.pdf
 source_sha256: 2ce621c8982ee764
+text_source: latex
+latex_prose_ratio: 0.978
+latex_coverage_ratio: 0.765
 doc_brief: "CHARACTER DEFLATIONS AND A GENERALIZATION OF THE MURNAGHAN–NAKAYAMA RULE ANTON EVSEEV, ROWENA PAGET AND MARK WILDON — 8 sections: Introduction; Deflation by averaging; Skew characters"
 ---
-In this section we state and prove a result on the values of skew characters
-on elements of the form gnα (Theorem 3.3). First, we give the necessary
-combinatorial definitions. In several arguments we shall refer to James’
-abacus notation for partitions, as described in [8, page 78].
-3.1. Quotients of skew-partitions. We shall define n-quotients and nsigns for the following class of skew-partitions.
-Definition 3.1. Let m, n ∈ N. We say that a skew-partition λ/µ of mn
-is n-decomposable if there exists a border-strip tableau of shape λ/µ and
-type (nm ).
-Definition 3.2. Let m, n ∈ N and let λ/µ be an n-decomposable skewpartition of mn. Let Γ(λ) be an abacus display for λ on an n-runner abacus
-using tn beads for some t ∈ N. Let Γ(µ) be the abacus display for µ obtained
-by performing an appropriate sequence of m upward bead moves on Γ(λ).
-(This is possible since λ/µ is n-decomposable.) Let (λ(0) , . . . , λ(n−1) ) and
-(µ(0) , . . . , µ(n−1) ) be the n-quotients of λ and µ corresponding to Γ(λ) and
-Γ(µ), respectively. The n-quotient of λ/µ is defined to be
-(λ(0) /µ(0) , . . . , λ(n−1) /µ(n−1) ).
-We define the n-sign of λ/µ, denoted εn (λ/µ) to be the sign of any borderstrip tableau of shape λ/µ and type (nm ).
-To avoid cumbersome restatements, we adopt the convention that λ(i) /µ(i)
-always has the meaning of Definition 3.2 above. It is clear from the abacus
-that µ(i) is a subpartition of λ(i) for each i ∈ {0, . . . , n − 1}, and so the
+[]{#sec:skew label="sec:skew"}
 
-
-10
+In this section we state and prove a result on the values of skew characters on elements of the form $g_{n\alpha}$ (Theorem [\[thm:ind\]](#thm:ind){reference-type="ref" reference="thm:ind"}). First, we give the necessary combinatorial definitions. In several arguments we shall refer to James' abacus notation for partitions, as described in [@JK page 78].
 
-ANTON EVSEEV, ROWENA PAGET AND MARK WILDON
+## Quotients of skew-partitions {#subsec:quotients}
 
-n-quotient is well-defined. It follows from Proposition 3.13 in [15], or our
-Proposition 3.6 below, that the n-sign of a skew-partition is well defined.
-See §3.4 below for an example of these definitions and all the results in this
-section.
-We remark that it appears to be impossible to define the n-core of an
-arbitrary skew-partition. The example λ/µ = (2, 2)/(1) and n = 2 illustrates
-the obstacles that arise. Representing λ on a 2-runner abacus as
-◦ ◦
-• •
-we see that either bead may be moved up, giving two different skew-partitions
-from which no border strip of length 2 can be removed, namely (2)/(1)
-and (1, 1)/(1). The 2-quotients corresponding to these bead moves, namely
-((1), ∅) and (∅, (1)), are also different.
-Theorem 3.3 (Farahat). Let m, n ∈ N and let λ/µ be a skew-partition
-of mn. Let α be a partition of m. If λ/µ is not n-decomposable then
-χλ/µ (gnα ) = 0. If λ/µ is n-decomposable and (λ(0) /µ(0) , . . . , λ(n−1) /µ(n−1) )
-is its n-quotient, then
-χλ/µ (gnα ) = εn (λ/µ) IndSSm
-` ×···×S`
-0
+We shall define $n$-quotients and $n$-signs for the following class of skew-partitions.
 
-(0) /µ(0)
+::: definition
+[]{#def:n_dec label="def:n_dec"} Let $m$, $n \in \mathbf{N}$. We say that a skew-partition $\lambda /\mu$ of $mn$ is *$n$-decomposable* if there exists a border-strip tableau of shape $\lambda / \mu$ and type $(n^m)$.
+:::
 
-χλ
-n−1
+::: definition
+[]{#def:n_quo label="def:n_quo"} Let $m$, $n \in \mathbf{N}$ and let $\lambda / \mu$ be an $n$-decomposable skew-partition of $mn$. Let $\Gamma(\lambda)$ be an abacus display for $\lambda$ on an $n$-runner abacus using $tn$ beads for some $t \in \mathbf{N}$. Let $\Gamma(\mu)$ be the abacus display for $\mu$ obtained by performing an appropriate sequence of $m$ upward bead moves on $\Gamma(\lambda)$.
 
-× · · · × χλ
+(This is possible since $\lambda / \mu$ is $n$-decomposable.)
 
-(n−1) /µ(n−1)
+Let $(\lambda^{(0)}, \ldots, \lambda^{(n-1)})$ and $(\mu^{(0)}, \ldots, \mu^{(n-1)})$ be the $n$-quotients of $\lambda$ and $\mu$ corresponding to $\Gamma(\lambda)$ and $\Gamma(\mu)$, respectively. The *$n$-quotient* of $\lambda / \mu$ is defined to be $$(\lambda^{(0)} / \mu^{(0)}, \ldots, \lambda^{(n-1)} / \mu^{(n-1)}).$$ We define the $n$-*sign* of $\lambda / \mu$, denoted $\varepsilon_n(\lambda/\mu)$ to be the sign of any border-strip tableau of shape $\lambda / \mu$ and type $(n^m)$.
+:::
 
-
+To avoid cumbersome restatements, we adopt the convention that $\lambda^{(i)} / \mu^{(i)}$ always has the meaning of Definition [\[def:n_quo\]](#def:n_quo){reference-type="ref" reference="def:n_quo"} above. It is clear from the abacus that $\mu^{(i)}$ is a subpartition of $\lambda^{(i)}$ for each $i \in \{0,\ldots,n-1\}$, and so the $n$-quotient is well-defined. It follows from Proposition 3.13 in [@OlssonCombinatorics], or our Proposition [\[prop:nbij\]](#prop:nbij){reference-type="ref" reference="prop:nbij"} below, that the $n$-sign of a skew-partition is well defined. See §[0.4](#subsec:example){reference-type="ref" reference="subsec:example"} below for an example of these definitions and all the results in this section.
 
-(gα )
+We remark that it appears to be impossible to define the $n$-core of an arbitrary skew-partition. The example $\lambda / \mu = (2,2) / (1)$ and $n=2$ illustrates the obstacles that arise. Representing $\lambda$ on a $2$-runner abacus as $$\begin{matrix} \circ& \circ\\ \bullet& \bullet\end{matrix}$$ we see that either bead may be moved up, giving two different skew-partitions from which no border strip of length $2$ can be removed, namely $(2) /(1)$ and $(1,1) / (1)$. The $2$-quotients corresponding to these bead moves, namely $((1),\varnothing)$ and $(\varnothing,(1))$, are also different.
 
-where |λ(i) /µ(i) | = `i .
-This result, stated in the alternative language of star diagrams, was first
-proved in [5, Section 4]. The special case where µ is the n-core of λ also
-follows from the correction by Thrall and Robinson [21] to Section 7 of
-Robinson [18] or, alternatively, from Littlewood’s result in [11, Section 2].
-Farahat’s proof depends on an algebraic argument using Schur functions. A
-character-theoretic proof is given by Kerber, Sänger, and Wagner: see [10,
-Equation 3.6]. In the remainder of this section, we give a shorter charactertheoretic proof of Theorem 3.3, expressing each side of the theorem as a sum,
-and then constructing a bijection between the summands. An example to
-illustrate this bijection is given in §3.4. (Our bijection is similar to that
-defined using Brettspiele in [10].)
+::: theorem
+[]{#thm:ind label="thm:ind"} Let $m$, $n \in \mathbf{N}$ and let $\lambda / \mu$ be a skew-partition of $mn$. Let $\alpha$ be a partition of $m$. If $\lambda / \mu$ is not $n$-decomposable then $\chi^{\lambda / \mu}(g_{n \alpha}) = 0$. If $\lambda / \mu$ is $n$-decomposable and $(\lambda^{(0)} / \mu^{(0)}, \ldots, \lambda^{(n-1)} / \mu^{(n-1)})$ is its $n$-quotient, then $$\chi^{\lambda / \mu}(g_{n\alpha}) = \varepsilon_n(\lambda / \mu)
+\mathop{\mathrm{Ind}}^{S_m}_{S_{\ell_0} \times \cdots \times S_{\ell_{n-1}}}
+\bigl(
+\chi^{\lambda^{(0)} / \mu^{(0)}} \times \cdots \times 
+\chi^{\lambda^{(n-1)}/ \mu^{(n-1)}} \bigr)
+(g_\alpha)$$ where $|\lambda^{(i)} / \mu^{(i)}| = \ell_i$.
+:::
 
-3.2. A model for induction from a Young subgroup. The following
-general result on the values of a character induced from a Young subgroup
-will be used in the proof of Theorem 3.3. (The notation is chosen to be
-consistent with this later use.)
+This result, stated in the alternative language of star diagrams, was first proved in [@Farahat1954 Section 4]. The special case where $\mu$ is the $n$-core of $\lambda$ also follows from the correction by Thrall and Robinson [@ThrallRobinson1951] to Section 7 of Robinson [@Robinson1947] or, alternatively, from Littlewood's result in [@Littlewood1951 Section 2]. Farahat's proof depends on an algebraic argument using Schur functions. A character-theoretic proof is given by Kerber, Sänger, and Wagner: see [@KSW Equation 3.6]. In the remainder of this section, we give a shorter character-theoretic proof of Theorem [\[thm:ind\]](#thm:ind){reference-type="ref" reference="thm:ind"}, expressing each side of the theorem as a sum, and then constructing a bijection between the summands. An example to illustrate this bijection is given in §[0.4](#subsec:example){reference-type="ref" reference="subsec:example"}. (Our bijection is similar to that defined using *Brettspiele* in [@KSW].)
 
-
-CHARACTER DEFLATIONS
+## A model for induction from a Young subgroup {#subsec:model}
 
-11
+The following general result on the values of a character induced from a Young subgroup will be used in the proof of Theorem [\[thm:ind\]](#thm:ind){reference-type="ref" reference="thm:ind"}. (The notation is chosen to be consistent with this later use.)
 
-Lemma 3.4. Let (`0 , . . . , `n−1 ) be a composition of m ∈ N. For each i ∈
-{0, . . . , n − 1}, let ϑi be a character of S`i . If g ∈ Sm then
-X
-(ϑ
-×
-·
-·
-·
-×
-ϑ
-)(g)
+::: lemma
+[]{#lemma:model label="lemma:model"} Let $(\ell_0,\ldots,\ell_{n-1})$ be a composition of $m \in \mathbf{N}$. For each $i \in \{0,\ldots,n-1\}$, let $\vartheta_i$ be a character of $S_{\ell_i}$. If $g\in S_m$ then $$\mathop{\mathrm{Ind}}^{S_m}_{S_{\ell_0} \times \cdots \times S_{\ell_{n-1}}} 
+(\vartheta_0 \times \cdots \times \vartheta_{n-1})(g)
 =
-ϑ0 (gα0 (t) ) . . . ϑn−1 (gαn−1 (t) )
-IndSSm
-0
-n−1
-×···×S
-`
-`
-0
+\sum_{\mathbf{t}} \vartheta_0(g_{\alpha_0(\mathbf{t})}) \ldots
+\vartheta_{n-1}(g_{\alpha_{n-1}(\mathbf{t})})$$ where the sum is over all $(\ell_0,\ldots,\ell_{n-1})$-tabloids $\mathbf{t}$ such that $g \mathbf{t} = \mathbf{t}$, and $\alpha_i(\mathbf{t})$ is the cycle type of the permutation induced by $g$ on the entries of row $i+1$ of $\mathbf{t}$.
+:::
 
-n−1
-
-t
-
-where the sum is over all (`0 , . . . , `n−1 )-tabloids t such that gt = t, and αi (t)
-is the cycle type of the permutation induced by g on the entries of row i + 1
-of t.
-Proof. Let t1 , . . . , tN be the (`0 , . . . , `n−1 )-tabloids. Let s be a (`0 , . . . , `n−1 )tabloid fixed by the Young subgroup S`0 × · · · × S`n−1 . For each j such that
-1 ≤ j ≤ N , choose xj ∈ Sm such that tj = xj s. Let ϑ = ϑ0 × · · · × ϑn−1 .
-For each g ∈ Sm we have
-X
-
-ϑ
+::: proof
+*Proof.* Let $\mathbf{t}_1$, ..., $\mathbf{t}_N$ be the $(\ell_0,\ldots,\ell_{n-1})$-tabloids. Let $\mathbf{s}$ be a $(\ell_0,\ldots,\ell_{n-1})$-tabloid fixed by the Young subgroup $S_{\ell_0} \times \cdots \times S_{\ell_{n-1}}$. For each $j$ such that $1 \le j \le N$, choose $x_j \in S_m$ such that $\mathbf{t}_j =  x_j \mathbf{s}$. Let $\vartheta= \vartheta_0 \times \cdots \times \vartheta_{n-1}$. For each $g\in S_m$ we have $$\bigl( 
+\mathop{\mathrm{Ind}}^{S_m}_{S_{\ell_0} \times \cdots \times 
+S_{\ell_{n-1}}} \vartheta\bigr)
 (g)
-=
-ϑ(x−1
-IndSSm
-j gxj )
-×···×S
-`
-`
-0
-
-n−1
-
-j
-
-where the sum is over all j such that
-x−1
-j gxj ∈ S`0 × · · · × S`n−1 ,
-or, equivalently, over all j such that gtj = tj . If ∆1 , . . . , ∆q are the orbits
-−1
-−1
-of g on row i + 1 of tj , then x−1
-j ∆1 , . . . , xj ∆q are the orbits of xj gxj on
-row i + 1 of s. Hence x−1
-j gxj acts with cycle type αi (tj ) on row i + 1 of s
-and so
-ϑ(x−1
-j gxj ) = ϑ0 (gα0 (tj ) ) . . . ϑn−1 (gαn−1 (tj ) ).
-The lemma follows.
-
-
-
-3.3. Proof of Theorem 3.3. Let m, n ∈ N and let λ/µ be a skew-partition
-of mn. Let α be a partition of m. If there is a border-strip tableau of shape
-λ/µ and type nα then it is clear from the abacus that λ/µ is n-decomposable.
-Hence if λ/µ is not n-decomposable then, by the Murnaghan–Nakayama
-rule, χλ/µ (gnα ) = 0.
-We may therefore assume that λ/µ is n-decomposable. Let `i = |λ(i) /µ(i) |
-for each i ∈ {0, . . . , n − 1} and let H = S`0 × · · · × S`n−1 . To show that
-(0)
-(0)
-(n−1) /µ(n−1) 
-(4)
-χλ/µ (gnα ) = εn (λ/µ) IndSHm χλ /µ × · · · × χλ
-(gα ),
-we shall use the following generalization of border-strip tableaux.
-Definition 3.5. Let m, n ∈ N. Let λ/µ be an n-decomposable skewpartition and let α = (α1 , . . . , αk ) be a composition of m. A n-quotient
-border-strip tableau of shape λ/µ and type α is an n-tuple (T0 , . . . , Tn−1 ) of
-border-strip tableaux such that
-(a) for each i ∈ {0, . . . , n − 1}, the shape of Ti is λ(i) /µ(i) , and
-(b) for each j ∈ {1, . . . , k}, the boxes in the Ti labelled j lie in a single
-tableau, where they form a border strip of length αj .
-
-
-12
-
-ANTON EVSEEV, ROWENA PAGET AND MARK WILDON
-
-By the Murnaghan–Nakayama rule we have
-X
-χλ/µ (gnα ) =
-sgn(T )
-where the sum is over all border-strip tableaux of shape λ/µ and type nα.
-The bijection in the following proposition implies that
-X
-(5)
-χλ/µ (gnα ) = εn (λ/µ)
-sgn(T0 ) . . . sgn(Tn−1 )
-where the sum is over all n-quotient border-strip tableaux (T0 , . . . , Tn−1 ) of
-shape λ/µ and type α. An illustrative example of the bijection is given in
-Figure 2 in §3.4 below.
-Proposition 3.6. Let λ/µ be an n-decomposable skew-partition of mn and
-let α = (α1 , . . . , αk ) be a partition of m. There is a canonical bijection between border-strip tableaux of shape λ/µ and type nα and n-quotient borderstrip tableaux of shape λ/µ and type α. Under this bijection, if T is mapped
-to (T0 , . . . , Tn−1 ), then
-sgn(T ) = εn (λ/µ) sgn(T0 ) . . . sgn(Tn−1 ).
-Proof. Let T be a border-strip tableau of shape λ/µ and type α. The abacus
-gives a canonical bijection between border strips in λ/µ of length n` and
-border strips of length ` in the skew-partitions λ(i) /µ(i) for i ∈ {0, . . . , n−1}.
-If the border strip of length nαk in T corresponds to a border strip of
-length αk in λ(ik ) /µ(ik ) , then we label the corresponding boxes in the Young
-diagram of λ(ik ) /µ(ik ) by k. Removing these border strips from the tableaux
-concerned and iterating the process with the border strip of length nαk−1 ,
-and so on, we obtain a canonical bijection between border-strip tableaux of
-shape λ/µ and type nα and n-quotient border-strip tableaux of shape λ/µ
-and type α.
-It only remains to prove the assertion about signs. Since εn (λ/µ) is the
-common sign of any λ/µ-tableau of shape λ/µ and type (nm ), it suffices to
-show that if T is a λ/µ-tableau of type nα and U is a λ/µ-tableau of type
-nβ then
-sgn(T )sgn(U ) = sgn(T0 ) . . . sgn(Tn−1 )sgn(U0 ) . . . sgn(Un−1 ).
-Starting from Γ(λ) with the beads numbered in order of their positions,
-perform the sequence of bead moves corresponding to T , then perform the
-inverse of the sequence of bead moves corresponding to U . Let σ be the
-resulting permutation of the beads. Each time a border-strip of height ` is
-removed or added, the permutation required to restore the order of numbers
-is an ` + 1-cycle. Therefore sgn σ = sgn(T )sgn(U ). On the other hand, σ
-permutes the beads on each runner amongst themselves, and a similar argument shows that sgn(σ) = sgn(T0 ) . . . sgn(Tn−1 )sgn(U0 ) . . . sgn(Un−1 ).
-
-
-
-CHARACTER DEFLATIONS
-
-13
-
-Comparing Equations (4) and (5) we see that to complete the proof of
-Theorem 3.3, it suffices to show that
-X
-(0)
-(0)
-(n−1) /µ(n−1) 
-(6)
-sgn(T0 ) . . . sgn(Tn−1 ) = IndSHm χλ /µ × · · · × χλ
-(gα )
-where the sum is over all n-quotient border-strip tableaux (T0 , . . . , Tn−1 ) of
-shape λ/µ and type α. In fact Equation (6) follows from Lemma 3.4 and
-the Murnaghan–Nakayama rule, by some manipulations that are essentially
-formal. By Lemma 3.4 we have
-(0)
-(0)
-(n−1) /µ(n−1) 
-IndSHm χλ /µ × · · · × χλ
-(gα )
-X (0) (0)
-(n−1) /µ(n−1)
-(7)
-=
-χλ /µ (gα0 (t) ) . . . χλ
-(gαn−1 (t) )
-t
-
-where the sum is over all (`0 , . . . , `n−1 )-tabloids t such that gα t = t and
-αi (t) is the cycle type of the permutation of row i + 1 of t induced by gα .
-For such a tabloid t, let
-X
-f (t) =
-sgn(T0 ) . . . sgn(Tn−1 )
-where the sum is over all n-quotient border-strip tableaux (T0 , . . . , Tn−1 )
-of shape λ/µ and type α, such that Ti has a border strip labelled j (of
-length αj ) if and only if the elements of the orbit of gα corresponding to the
-part αj lie in row i + 1 of t. The Murnaghan–Nakayama rule implies that if
-gα t = t then
-χλ
-
-(0) /µ(0)
-
-(gα0 (t) ) . . . χλ
-
-(n−1) /µ(n−1)
-
-(gαn−1 (t) ) = f (t),
-
-and so, by Equation (7),
-IndSHm χλ
-
-(0) /µ(0)
-
-(n−1) /µ(n−1)
-
-× · · · × χλ
-
-
-
-(gα ) =
-
-X
-
-f (t)
-
-where the sum is over all (`0 , . . . , `n−1 )-tabloids t such that gα t = t. Every
-n-quotient border-strip tableau of shape λ/µ and type α corresponds to
-some tabloid t such that gα t = t. Thus
-X
-X
-sgn(T0 ) . . . sgn(Tn−1 ) =
-f (t)
-where the left-hand sum is over all n-quotient border-strip tableaux of shape
-λ/µ and type α, and the right-hand sum is over all (`0 , . . . , `n−1 )-tabloids t
-such that gα t = t. Equation (6) now follows on comparing the two preceding
-equations.
-3.4. Example. We give an example of the correspondences used in the
-proof of Theorem 3.3. Let λ/µ = (8, 5, 3, 2, 2, 2)/(2, 2, 1, 1, 1). Any borderstrip tableau of shape λ/µ and type (35 ) has either two or four 3-borderstrips of height 1, with the rest of height 0, so ε3 (λ/µ) = 1. Let α =
-(2, 1, 1, 1). By the Murnaghan–Nakayama rule, χλ/µ (g3α ) is the sum of the
-signs of the four border-strip tableaux of type λ/µ and type 3α = (6, 3, 3, 3)
-
-
-14
-
-ANTON EVSEEV, ROWENA PAGET AND MARK WILDON
-
-1 1 1 1 1 1
-2 2 2
-3 3
-3
-4
-4 4
-
-1 1 3 4 4 4
-1 3 3
-1 1
-1
-2
-2 2
-
-1 1 2 4 4 4
-1 2 2
-1 1
-1
-3
-3 3
-
-1 1 2 3 3 3
-1 2 2
-1 1
-1
-4
-4 4
-
- 2
-3 ,
-4
-
- 1
-1 ,
-2
-
- 1
-1 ,
-3
-
- 1
-1 ,
-4
-
-
-1 1 ,∅
-
-
-3 4 ,∅
-
-
-2 4 ,∅
-
-
-2 3 ,∅
-
-Figure 2. The bijection in Proposition 3.6 between border-strip tableaux
-of shape (8, 5, 3, 2, 2, 2)/(2, 2, 1, 1, 1) and type (6, 3, 3, 3) and 3-quotient
-border-strip tableaux of the same shape and type (2, 1, 1, 1). The
-shapes of the border-strip tableaux forming each 3-quotient border-strip
-tableau are given by the 3-quotient of (8, 5, 3, 2, 2, 2)/(2, 2, 1, 1, 1), namely
-
-(1, 1, 1), (3, 1)/(1, 1), ∅ . To make clear the skew-shape, the tableaux of
-shape (3, 1)/(1, 1) are drawn as (3, 1)-tableaux with two empty boxes.
-
-shown in Figure 2 above. Their signs are +1, −1, −1, −1, respectively, so
-χλ/µ (g3α ) = −2. These tableaux are in bijection with the four 3-quotient
-border-strip tableaux of shape λ/µ and type α = (2, 1, 1, 1) shown in Figure 2; since sgn3 (λ/µ) = 1, the bijection is sign preserving.
-
-The 3-quotient of λ/µ is (1, 1, 1), (3, 1)/(1, 1), ∅ , so the characters of S3
-and S2 we must consider are the sign character and the trivial character,
-respectively. Taking g(2,1,1,1) = (12) ∈ S5 , and following the end of the
-proof of Theorem 3.3, we see that there are four (3, 2)-tabloids fixed by
-(12), namely
-3 4 5 ,
-1 2
-
-1 2 3 ,
-4 5
-
-1 2 4 ,
-3 5
-
-1 2 5,
-3 4
-
-in the order corresponding to the tableaux shown in Figure 2. The corresponding values of the function f used in the proof of Theorem 3.3 are +1,
-−1, −1, −1 respectively. It should be noted that in general there will be
-several tableaux corresponding to each product of character values
-χλ
-
-(0) /µ(0)
-
-(gα0 (t) ) . . . χλ
-
-(n−1) /µ(n−1)
-
-(gαn−1 (t) );
-
-it is a special feature of this example that each f (t) has a single summand,
-and so the bijection extends all the way to tabloids.
-4. Proof of Theorem 1.5
-We shall prove Theorem 1.5 by induction on the number of parts of γ.
-Most of the work occurs in proving the base case when γ has a single part.
-In the first step we combine the results of §3 and §4. For later use in §6, we
-state the following proposition for a general deflation map.
-
-
-CHARACTER DEFLATIONS
-
-15
-
-Proposition 4.1. Let m, n ∈ N, let ϑ be an irreducible character of Sm ,
-and let λ/µ be a skew-partition of mn. Let g ∈ Sn be an n-cycle. If λ/µ is
-not n-decomposable, then DefresϑSn (g) = 0. If λ/µ is n-decomposable, then
-D
-E
-(0)
-(0)
-(n−1) /µ(n−1) 
-(DefresϑSn χλ/µ )(g) = εn (λ/µ) IndSHm χλ /µ × · · · × χλ
-,ϑ ,
-where H = S|λ(0) /µ(0) | × · · · × S|λ(n−1) /µ(n−1) | .
-Proof. If λ/µ is not n-decomposable then, by Theorem 3.3, χλ/µ (gnα ) = 0 for
-all partitions α of m. Hence, by Proposition 2.6(ii), (DefresϑSn χλ/µ )(g) = 0.
-If λ/µ is n-decomposable then, using Proposition 2.6(i), we may restate
-Theorem 3.3 as
-(0)
-(0)
-(n−1) /µ(n−1) 
-(8) ω(ResSm oSn χλ/µ ) = εn (λ/µ) IndSHm χλ /µ × · · · × χλ
-.
-The result now follows from Proposition 2.6(ii).
-
-
-
-It is clear from the condition on row numbers in Equation (1) in Definition 1.4 that if λ/µ is a skew-partition of mn then there is at most one
-m-border-strip tableau of shape λ/µ and type (n). The following lemma
-gives a more precise condition. Recall that a skew-partition σ/τ is said to
-be a horizontal strip if the Young diagram of σ/τ has no two boxes in the
-same column.
-Lemma 4.2. Let m, n ∈ N and let λ/µ be a skew-partition of mn. If λ/µ
-is n-decomposable, and each λ(i) /µ(i) is a horizontal strip, then there is a
-unique m-border-strip tableau of shape λ/µ and type (n); this tableau has
-sign εn (λ/µ). Otherwise there are no such tableaux.
-Proof. Suppose that T is an m-border-strip tableau of type (n) and shape
-λ/µ. Then by Definition 3.1, λ/µ is n-decomposable. Let Γ(λ) be an nrunner abacus display for λ using tn beads for some t ∈ N. Let Γ(µ) be
-the abacus display for µ obtained from Γ(λ) by an appropriate sequence of
-m single bead moves, so that in each move a bead is slid upwards into a
-gap immediately above it. We label the positions on the abacus from top
-to bottom so that the positions in row r of an abacus display are numbered
-(r − 1)n, . . . , rn − 1 (as usual). Observe that the row number of a border
-strip of length n in T corresponding to a bead in position p of Γ(λ) is the
-number of beads in positions p + 1, p + 2, . . . of Γ(λ). Therefore if p < p0
-and the beads in positions p and p0 of Γ(λ) both correspond to border strips
-in T , then in the sequence of bead moves corresponding to T , the bead in
-position p0 is moved upwards before the bead in position p.
-Let i ∈ {0, . . . , n − 1}. Suppose that Γ(λ) has beads in positions nq + i
-and nq 0 +i where q < q 0 , and that Γ(µ) has no beads in positions n(q +1)+i,
-. . . , nq 0 + i. The bead in position nq + i of Γ(λ) prevents the bead initially
-
-
-16
-
-ANTON EVSEEV, ROWENA PAGET AND MARK WILDON
-
-in position nq 0 + i from reaching its final position in Γ(µ). Therefore the
-bead in position nq + i must be moved before the bead in position nq 0 + i
-reaches its final position. This contradicts the previous paragraph. Hence
-there exist xj ∈ N0 and yj ∈ N0 such that the beads on runner i of Γ(λ)
-are in positions {i + nxj : 1 ≤ j ≤ s}, the beads on runner i of Γ(µ) are in
-positions {i + nyj : 1 ≤ j ≤ s} and
-(9)
-
-y1 ≤ x1 < y2 ≤ x2 < · · · < ys ≤ xs .
-
-It easily follows that λ(i) /µ(i) is a horizontal strip. Then, by Proposition 3.6,
-sgn(T ) = εn (λ/µ).
-Conversely, suppose that λ/µ is n-decomposable and each λ(i) /µ(i) is a
-horizontal strip. Then the inequality (9) on the bead positions in each runner
-holds. We now describe a sequence of m single upward bead moves that
-transforms Γ(λ) into Γ(µ), and thus corresponds to a border-strip tableau T
-of shape λ/µ and type (n)?m . At each step, locate the bead with maximal
-position p such that there is no bead in position p of Γ(µ). Slide that bead
-up into position p − n. This is possible by inequality (9). The row numbers
-of the border strips of length n corresponding to this sequence of moves
-are increasing, so T is a m-border-strip tableau of shape λ/µ and type (n).
-Uniqueness is clear since there is always at most one m-border strip tableau
-of shape λ/µ and type (n).
-
-We can now complete the proof of the base case.
-Proposition 4.3. Let m, n ∈ N and let g ∈ Sn be an n-cycle. If λ/µ is a
-skew-partition of mn then
-(DefresSn χλ/µ )(g) = aλ/µ,(n) .
-Proof. If λ/µ is not n-decomposable then aλ/µ,(n) = 0 by Lemma 4.2. Proposition 4.1 implies that the result holds in this case.
-Now suppose that λ/µ is n-decomposable. Let `i = |λ(i) /µ(i) | for each
-i ∈ {0, . . . , n − 1}. By Proposition 4.1 and Frobenius reciprocity, we have
-D (0) (0)
-E D (n−1) (n−1)
-E
-/µ
-(DefresSn χλ/µ )(g) = εn (λ/µ) χλ /µ , 1S`0 . . . χλ
-, 1S`n−1 .
-It follows from [8, Theorem 2.3.13(ii)] that if σ/τ is a skew-partition of `
-then
-
-E 1 if σ/τ is a horizontal strip
-D
-χσ/τ , 1S` =
-0 otherwise.
-Therefore (DefresSn χλ/µ )(g) = εn (λ/µ) if each λ(i) /µ(i) is a horizontal strip,
-and otherwise (DefresSn χλ/µ )(g) = 0. The proposition now follows from
-Lemma 4.2.
-
-
-
-CHARACTER DEFLATIONS
-
-17
-
-For the inductive step we need the following lemma and proposition. The
-former is well-known and can be deduced from [8, 2.3.12]. We write µ ⊆ λ
-if µ is a subpartition of λ (i.e. the Young diagram of µ is contained in that
-of λ).
-Lemma 4.4. Let λ/µ be a skew-partition of r. If 1 ≤ c < r then
-X
-χτ /µ × χλ/τ
-ResSc ×Sr−c χλ/µ =
-τ
-
-where the sum is over all partitions τ such that µ ⊆ τ ⊆ λ and |τ /µ| = c.
-For later use we state and prove the following proposition for a general
-deflation map.
-Proposition 4.5. Let m, n ∈ N and let λ/µ be a skew-partition of mn.
-Let ϑ be an irreducible character of Sm . Let g ∈ Sn . If g = kh where k ∈ S`
-and h ∈ Sn−` , then
-X
-(DefresϑSn χλ/µ )(g) =
-(DefresϑS` χτ /µ )(k)(DefresϑSn−` χλ/τ )(h)
-τ
-
-where the sum is over all partitions τ such that µ ⊆ τ ⊆ λ and |τ /µ| = m`.
-Proof. Let B be the base group of the wreath product Sm o Sn ≤ Smn .
-Choose a subgroup Sm` × Sm(n−`) ≤ Smn containing B. If ψ is a character
-of Sm o Sn then it is easily checked that
-m oSn
-ResS` ×Sn−` (Def ϑSn ψ) = (Def ϑS` × Def ϑSn−` )(ResSSm
-oS` ×Sm oSn−` ψ).
-
-Hence
-χ)
-ResS` ×Sn−` (DefresϑSn χ) = (DefresϑS` × DefresϑSn−` )(ResSSmn
-m` ×Sm(n−`)
-for any character χ of Smn . The proposition now follows from the expression
-for ResSm` ×Sm(n−`) χλ/µ given in Lemma 4.4.
-
-We are now ready to prove Theorem 1.5. Let m, n ∈ N and let λ/µ be
-a skew-partition of mn. Let γ = (γ1 , . . . , γd ) be a composition of n. Let
-g ∈ Sn have cycle type γ and let h ∈ Sn−γ1 have cycle type (γ2 , . . . , γd ). Note
-that, by Lemma 4.2, if τ /µ is a skew-partition of mγ1 then there is at most
-one m-border-strip tableau of shape τ /µ and type (γ1 ). We shall denote
-this tableau by Tτ /µ when it exists. By Definition 1.4, aτ /µ,(γ1 ) = sgn(Tτ /µ )
-(or is zero if no such tableau exists). Therefore Proposition 4.3 may be
-restated as (DefresSγ1 χτ /µ )(k) = sgn(Tτ /µ ), where k ∈ Sγ1 is a γ1 -cycle and
-(DefresSγ1 χτ /µ )(k) = 0 if no tableau Tτ /µ exists. It therefore follows from
-Proposition 4.5 that
-X
-(10)
-(DefresSn χλ/µ )(g) =
-sgn(Tτ /µ )(DefresSn−γ1 χλ/τ )(h)
-τ
-
-
-18
-
-ANTON EVSEEV, ROWENA PAGET AND MARK WILDON
-
-where the sum is over all partitions τ such that µ ⊆ τ ⊆ λ, |τ /µ| = mγ1
-and there is an m-border-strip tableau of shape τ /µ. By induction on the
-number of parts of γ we have
-X
-sgn(Tτ /µ )aλ/τ,(γ2 ,...,γd )
-(DefresSn χλ/µ )(g) =
-τ
-
-with the same conditions on the sum. It is clear that if T is an m-border-strip
-tableau of shape λ/µ and type γ then the border strips in T corresponding to
-the m parts of length γ1 in γ ?m form an m-border-strip tableau of shape τ /µ
-for some τ . Therefore the right-hand side of the previous equation is aλ/µ,γ .
-This completes the proof of Theorem 1.5.
+= 
+\sum_j \vartheta(x_j^{-1}gx_j)$$ where the sum is over all $j$ such that $$x_j^{-1}gx_j \in S_{\ell_0} \times \cdots \times S_{\ell_{n-1}},$$ or, equivalently, over all $j$ such that $g \mathbf{t}_j  = \mathbf{t}_j$. If
+
+$\Delta_1, \ldots, \Delta_q$ are the orbits of $g$ on row $i+1$ of $\mathbf{t}_j$, then
+
+$x_j^{-1}\Delta_1, \ldots, x_j^{-1}\Delta_q$ are the orbits of $x_j^{-1}gx_j$ on row $i+1$ of $\mathbf{s}$. Hence $x_j^{-1}gx_j$ acts with cycle type $\alpha_i(\mathbf{t}_j)$ on row $i+1$ of $\mathbf{s}$ and so $$\vartheta(x_j^{-1}gx_j) = \vartheta_0(g_{\alpha_0(\mathbf{t_j})})
+\ldots \vartheta_{n-1}(g_{\alpha_{n-1}(\mathbf{t_j})}).$$ The lemma follows. ◻
+:::
+
+## Proof of Theorem [\[thm:ind\]](#thm:ind){reference-type="ref" reference="thm:ind"} {#subsec:cfs}
+
+[]{#subsec:omega_proof label="subsec:omega_proof"}
+
+Let $m$, $n \in \mathbf{N}$ and let $\lambda / \mu$ be a skew-partition of $mn$. Let $\alpha$ be a partition of $m$. If there is a border-strip tableau of shape $\lambda /\mu$ and type $n\alpha$ then it is clear from the abacus that $\lambda / \mu$ is $n$-decomposable. Hence if $\lambda / \mu$ is not $n$-decomposable then, by the Murnaghan--Nakayama rule, $\chi^{\lambda/\mu}(g_{n \alpha}) = 0$.
+
+We may therefore assume that $\lambda / \mu$ is $n$-decomposable. Let $\ell_i = |\lambda^{(i)} / \mu^{(i)}|$ for each $i \in \{0,\ldots,n-1\}$ and let $H = {S_{\ell_0} \times \cdots \times S_{\ell_{n-1}}}$. To show that $$\begin{equation}
+ \label{eq:charmain}
+ \chi^{\lambda / \mu}(g_{n\alpha}) = \varepsilon_n(\lambda / \mu)
+\mathop{\mathrm{Ind}}^{S_m}_H
+\bigl(
+\chi^{\lambda^{(0)} / \mu^{(0)}} \times \cdots 
+\times \chi^{\lambda^{(n-1)} / \mu^{(n-1)}} \bigr)
+(g_\alpha),
+\end{equation}$$ we shall use the following generalization of border-strip tableaux.
+
+::: definition
+[]{#def:n_bs label="def:n_bs"} Let $m$, $n \in \mathbf{N}$. Let $\lambda / \mu$ be an $n$-decomposable skew-partition and let $\alpha = (\alpha_1,\ldots,\alpha_k)$ be a composition of $m$. A *$n$-quotient border-strip tableau* of *shape $\lambda / \mu$* and *type* $\alpha$ is an $n$-tuple $(T_0, \ldots, T_{n-1})$ of border-strip tableaux such that
+
+\(a\) for each $i \in \{0, \ldots, n-1\}$, the shape of $T_i$ is $\lambda^{(i)} 
+/ \mu^{(i)}$, *and*
+
+\(b\) for each $j \in \{1,\ldots,k\}$, the boxes in the $T_i$ labelled $j$ lie in a single tableau, where they form a border strip of length $\alpha_j$.
+:::
+
+By the Murnaghan--Nakayama rule we have $$\chi^{\lambda / \mu}(g_{n\alpha}) = \sum \mathrm{sgn}(T)$$ where the sum is over all border-strip tableaux of shape $\lambda / \mu$ and type $n\alpha$. The bijection in the following proposition implies that $$\begin{equation}
+\label{eq:midpoint} \chi^{\lambda / \mu}(g_{n\alpha}) =
+\varepsilon_n(\lambda / \mu) \sum \mathrm{sgn}(T_0) \ldots \mathrm{sgn}(T_{n-1})
+\end{equation}$$ where the sum is over all $n$-quotient border-strip tableaux $(T_0,\ldots,T_{n-1})$ of shape $\lambda / \mu$ and type $\alpha$. An illustrative example of the bijection is given in Figure [1](#fig:bijection){reference-type="ref" reference="fig:bijection"} in §[0.4](#subsec:example){reference-type="ref" reference="subsec:example"} below.
+
+::: proposition
+[]{#prop:nbij label="prop:nbij"} Let $\lambda / \mu$ be an $n$-decomposable skew-partition of $mn$ and let $\alpha = (\alpha_1,\ldots,\alpha_k)$ be a partition of $m$. There is a canonical bijection between border-strip tableaux of shape $\lambda / \mu$ and type $n\alpha$ and $n$-quotient border-strip tableaux of shape $\lambda / \mu$ and type $\alpha$. Under this bijection, if $T$ is mapped to $(T_0, \ldots, T_{n-1})$, then $$\mathrm{sgn}(T) = \varepsilon_n(\lambda / \mu)\, \mathrm{sgn}(T_0) \ldots \mathrm{sgn}(T_{n-1}).$$
+:::
+
+::: proof
+*Proof.* Let $T$ be a border-strip tableau of shape $\lambda / \mu$ and type $\alpha$. The abacus gives a canonical bijection between border strips in $\lambda / \mu$ of length $n \ell$ and border strips of length $\ell$ in the skew-partitions $\lambda^{(i)} / \mu^{(i)}$ for $i \in \{0,\ldots,n-1\}$. If the border strip of length $n\alpha_k$ in $T$ corresponds to a border strip of length $\alpha_k$ in $\lambda^{(i_k)} / \mu^{(i_k)}$, then we label the corresponding boxes in the Young diagram of $\lambda^{(i_k)} / \mu^{(i_k)}$ by $k$. Removing these border strips from the tableaux concerned and iterating the process with the border strip of length $n\alpha_{k-1}$, and so on, we obtain a canonical bijection between border-strip tableaux of shape $\lambda / \mu$ and type $n\alpha$ and $n$-quotient border-strip tableaux of shape $\lambda / \mu$ and type $\alpha$.
+
+It only remains to prove the assertion about signs. Since $\varepsilon_n(\lambda / \mu)$ is the common sign of any $\lambda/\mu$-tableau of shape $\lambda/\mu$ and type $(n^m)$, it suffices to show that if $T$ is a $\lambda/\mu$-tableau of type $n\alpha$ and $U$ is a $\lambda/\mu$-tableau of type $n\beta$ then $$\mathrm{sgn}(T) \mathrm{sgn}(U) = \mathrm{sgn}(T_0) \ldots \mathrm{sgn}(T_{n-1}) \mathrm{sgn}(U_0) \ldots \mathrm{sgn}(U_{n-1}).$$ Starting from $\Gamma(\lambda)$ with the beads numbered in order of their positions, perform the sequence of bead moves corresponding to $T$, then perform the inverse of the sequence of bead moves corresponding to $U$. Let $\sigma$ be the resulting permutation of the beads. Each time a border-strip of height $\ell$ is removed or added, the permutation required to restore the order of numbers is an $\ell+1$-cycle. Therefore $\mathop{\mathrm{sgn}}\sigma = \mathrm{sgn}(T) \mathrm{sgn}(U)$. On the other hand, $\sigma$ permutes the beads on each runner amongst themselves, and a similar argument shows that $\mathrm{sgn}(\sigma) =  \mathrm{sgn}(T_0) \ldots \mathrm{sgn}(T_{n-1}) \mathrm{sgn}(U_0) \ldots \mathrm{sgn}(U_{n-1})$. ◻
+:::
+
+Comparing Equations [\[eq:charmain\]](#eq:charmain){reference-type="eqref" reference="eq:charmain"} and [\[eq:midpoint\]](#eq:midpoint){reference-type="eqref" reference="eq:midpoint"} we see that to complete the proof of Theorem [\[thm:ind\]](#thm:ind){reference-type="ref" reference="thm:ind"}, it suffices to show that $$\begin{equation}
+\label{eq:final} 
+\sum \mathrm{sgn}(T_0) \ldots \mathrm{sgn}(T_{n-1}) =
+\mathop{\mathrm{Ind}}^{S_m}_H 
+\bigl(
+\chi^{\lambda^{(0)} / \mu^{(0)}} \times \cdots 
+\times \chi^{\lambda^{(n-1)} / \mu^{(n-1)}} \bigr) (g_\alpha)
+\end{equation}$$ where the sum is over all $n$-quotient border-strip tableaux $(T_0,\ldots,T_{n-1})$ of shape $\lambda / \mu$ and type $\alpha$. In fact Equation [\[eq:final\]](#eq:final){reference-type="eqref" reference="eq:final"} follows from Lemma [\[lemma:model\]](#lemma:model){reference-type="ref" reference="lemma:model"} and the Murnaghan--Nakayama rule, by some manipulations that are essentially formal. By Lemma [\[lemma:model\]](#lemma:model){reference-type="ref" reference="lemma:model"} we have $$\begin{equation}
+\label{eq:formal1} 
+\begin{split} \mathop{\mathrm{Ind}}^{S_m}_H 
+\bigl( 
+\chi^{\lambda^{(0)} /  \mu^{(0)}} {}&{}\times \cdots 
+\times \chi^{\lambda^{(n-1)} / \mu^{(n-1)}} \bigr)
+(g_\alpha)  \\ &= \sum_{\mathbf{t}} \chi^{\lambda^{(0)} / \mu^{(0)}} (g_{\alpha_0(\mathbf{t})})
+\ldots \chi^{\lambda^{(n-1)} / \mu^{(n-1)}} (g_{\alpha_{n-1}(\mathbf{t})} )
+\end{split}
+\end{equation}$$ where the sum is over all $(\ell_0,\ldots,\ell_{n-1})$-tabloids $\mathbf{t}$ such that $g_\alpha \mathbf{t} = \mathbf{t}$ and $\alpha_i(\mathbf{t})$ is the cycle type of the permutation of row $i+1$ of $\mathbf{t}$ induced by $g_\alpha$.
+
+For such a tabloid $\mathbf{t}$, let
+
+$$f(\mathbf{t}) = \sum \mathrm{sgn}(T_0) \ldots \mathrm{sgn}(T_{n-1})$$ where the sum is over all $n$-quotient border-strip tableaux $(T_0,\ldots, T_{n-1})$ of shape $\lambda / \mu$ and type $\alpha$, such that $T_i$ has a border strip labelled $j$ (of length $\alpha_j)$ if and only if the elements of the orbit of $g_\alpha$ corresponding to the part $\alpha_j$ lie in row $i+1$ of $\mathbf{t}$. The Murnaghan--Nakayama rule implies that if $g_\alpha \mathbf{t} = \mathbf{t}$ then $$\chi^{\lambda^{(0)} / \mu^{(0)}} (g_{\alpha_0(\mathbf{t})})
+\ldots \chi^{\lambda^{(n-1)} / \mu^{(n-1)}} (g_{\alpha_{n-1}(\mathbf{t})} ) =  f(\mathbf{t}),$$ and so, by Equation [\[eq:formal1\]](#eq:formal1){reference-type="eqref" reference="eq:formal1"}, $$\begin{equation*}
+\label{eq:formal2} 
+\mathop{\mathrm{Ind}}^{S_m}_H 
+\bigl( 
+\chi^{\lambda^{(0)} /  \mu^{(0)}} \times \cdots 
+\times \chi^{\lambda^{(n-1)} / \mu^{(n-1)}} \bigr)
+(g_\alpha) = \sum f(\mathbf{t})
+\end{equation*}$$ where the sum is over all $(\ell_0, \ldots, \ell_{n-1})$-tabloids $\mathbf{t}$ such that $g_\alpha \mathbf{t} = \mathbf{t}$. Every $n$-quotient border-strip tableau of shape $\lambda /\mu$ and type $\alpha$ corresponds to some tabloid $\mathbf{t}$ such that $g_\alpha \mathbf{t} = \mathbf{t}$. Thus $$\begin{equation*}
+\label{eq:sums}
+ \sum \mathrm{sgn}(T_0) \ldots \mathrm{sgn}(T_{n-1}) = \sum f(\mathbf{t})
+\end{equation*}$$ where the left-hand sum is over all $n$-quotient border-strip tableaux of shape $\lambda / \mu$ and type $\alpha$, and the right-hand sum is over all $(\ell_0, \ldots, \ell_{n-1})$-tabloids $\mathbf{t}$ such that $g_\alpha \mathbf{t} = \mathbf{t}$. Equation [\[eq:final\]](#eq:final){reference-type="eqref" reference="eq:final"} now follows on comparing the two preceding equations.
+
+## Example {#subsec:example}
+
+We give an example of the correspondences used in the proof of Theorem [\[thm:ind\]](#thm:ind){reference-type="ref" reference="thm:ind"}. Let $\lambda / \mu = (8,5,3,2,2,2) / (2,2,1,1,1)$. Any border-strip tableau of shape $\lambda/\mu$ and type $(3^5)$ has either two or four $3$-border-strips of height $1$, with the rest of height $0$, so $\varepsilon_3(\lambda /\mu) = 1$. Let $\alpha = (2,1,1,1)$. By the Murnaghan--Nakayama rule, $\chi^{\lambda / \mu}(g_{3 \alpha})$
+
+is the sum of the signs of the four border-strip tableaux of type $\lambda / \mu$ and type $3 \alpha =(6,3,3,3)$
+
+shown in Figure [1](#fig:bijection){reference-type="ref" reference="fig:bijection"} above. Their signs are $+1$, $-1$, $-1$, $-1$, respectively, so $\chi^{\lambda / \mu}(g_{3 \alpha}) = -2$. These tableaux are in bijection with the four $3$-quotient border-strip tableaux of shape $\lambda / \mu$ and type $\alpha=(2,1,1,1)$ shown in Figure [1](#fig:bijection){reference-type="ref" reference="fig:bijection"}; since $\mathrm{sgn}_3(\lambda / \mu) = 1$, the bijection is sign preserving.
+
+<figure id="fig:bijection" data-latex-placement="t">
+
+<figcaption> The bijection in Proposition <a href="#prop:nbij" data-reference-type="ref" data-reference="prop:nbij">[prop:nbij]</a> between border-strip tableaux of shape <span class="math inline">(8, 5, 3, 2, 2, 2)/(2, 2, 1, 1, 1)</span> and type <span class="math inline">(6, 3, 3, 3)</span> and <span class="math inline">3</span>-quotient border-strip tableaux of the same shape and type <span class="math inline">(2, 1, 1, 1)</span>. The shapes of the border-strip tableaux forming each <span class="math inline">3</span>-quotient border-strip tableau are given by the <span class="math inline">3</span>-quotient of <span class="math inline">(8, 5, 3, 2, 2, 2)/(2, 2, 1, 1, 1)</span>, namely <span class="math inline">((1, 1, 1), (3, 1)/(1, 1), ⌀)</span>. To make clear the skew-shape, the tableaux of shape <span class="math inline">(3, 1)/(1, 1)</span> are drawn as <span class="math inline">(3, 1)</span>-tableaux with two empty boxes. </figcaption>
+</figure>
+
+The $3$-quotient of $\lambda / \mu$ is $\bigl( (1,1,1), (3,1) / (1,1), \varnothing\bigr)$, so the characters of $S_3$ and $S_2$ we must consider are the sign character and the trivial character, respectively. Taking $g_{(2,1,1,1)} = (12) \in S_5$, and following the end of the proof of Theorem [\[thm:ind\]](#thm:ind){reference-type="ref" reference="thm:ind"}, we see that there are four $(3,2)$-tabloids fixed by $(12)$, namely $$\youngtabloid(345,12)\, , \quad \youngtabloid(123,45)\, , \quad \youngtabloid(124,35)\, , \quad \youngtabloid(125,34),$$ in the order corresponding to the tableaux shown in Figure [1](#fig:bijection){reference-type="ref" reference="fig:bijection"}. The corresponding values of the function $f$ used in the proof of Theorem [\[thm:ind\]](#thm:ind){reference-type="ref" reference="thm:ind"} are $+1$, $-1$, $-1$, $-1$ respectively. It should be noted that in general there will be several tableaux corresponding to each product of character values $$\chi^{\lambda^{(0)} / \mu^{(0)}} (g_{\alpha_{0}(\mathbf{t})})\ldots
+\chi^{\lambda^{(n-1)} / \mu^{(n-1)}} (g_{\alpha_{n-1}(\mathbf{t})});$$ it is a special feature of this example that each $f(\mathbf{t})$ has a single summand, and so the bijection extends all the way to tabloids.

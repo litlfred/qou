@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0903.0853v3/blocks/prose-sec-184",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0903.0853v3/blocks/prose-sec-184",
   "kind": "prose",
   "title": "In its original form, Adams lemma [ 1, 31, 20 ] says that, for any analytic q-diﬀerence",
   "pageStart": 117,
   "pageEnd": 117,
   "text": "../sections/sec-184-1-in-its-original-form-adams-lemma-1-31-20-says.md",
-  "derivedFrom": "library/arxiv-0903.0853v3/manifest",
-  "sourceDocument": "library/arxiv-0903.0853v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0903.0853v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0903.0853v3/manifest.jsonld",
   "provenance": "ingested"
 }

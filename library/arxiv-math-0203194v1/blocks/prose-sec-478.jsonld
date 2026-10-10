@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203194v1/blocks/prose-sec-478",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203194v1/blocks/prose-sec-478",
   "kind": "prose",
   "title": "(S,s) by any closed normal subgroup ( e.g.⟨γei",
   "pageStart": 172,
   "pageEnd": 172,
   "text": "../sections/sec-478-1-ss-by-any-closed-normal-subgroup-egγei.md",
-  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
-  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203194v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203194v1/manifest.jsonld",
   "provenance": "ingested"
 }

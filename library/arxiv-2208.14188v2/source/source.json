@@ -1,0 +1,33 @@
+{
+ "url": "https://arxiv.org/e-print/2208.14188v2",
+ "content_type": "application/gzip",
+ "sha256": "3b54ef92b108d06e6e1ad6b1ff56ebe53370f7d25712e07081c7ec233225920f",
+ "bytes": 578493,
+ "fetched": "2026-10-10T15:18:04+00:00",
+ "files": [
+  {
+   "path": "files/DG_genlevel_22v2.bbl",
+   "role": "bbl",
+   "sha256": "8997550a11a7c6050a450c15ce5b8e4c6b324722730eadbb982f54a2b6ad8407",
+   "bytes": 12762
+  },
+  {
+   "path": "files/DG_genlevel_22v2.tex",
+   "role": "tex",
+   "sha256": "6b6f53b0dabe333a7f6e61d29524e988fd1b4509355537e0b273733305c6b7b1",
+   "bytes": 140621
+  },
+  {
+   "path": "files/Papers.bib",
+   "role": "bib",
+   "sha256": "f720d8cede0fcd41b09d114e5a68f9ed91d761078a08d60f3e85b9d5a8d44efb",
+   "bytes": 1347012
+  },
+  {
+   "path": "files/jheppub.sty",
+   "role": "sty",
+   "sha256": "e73b2ddb75c396b8a366be04b661b69492d85c74326555dc6ff0b6d6fae7467d",
+   "bytes": 11816
+  }
+ ]
+}

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2111.06645/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2111.06645/blocks/prose-sec-008",
   "kind": "prose",
   "title": "Higher level and weight spaces",
   "pageStart": 15,
   "pageEnd": 18,
   "text": "../sections/sec-008-35-higher-level-and-weight-spaces.md",
-  "derivedFrom": "library/arxiv-2111.06645/manifest",
-  "sourceDocument": "library/arxiv-2111.06645/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2111.06645/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2111.06645/manifest.jsonld",
   "provenance": "ingested"
 }

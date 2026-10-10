@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1304.0323v3/blocks/prose-sec-009",
+  "kind": "prose",
+  "title": "Quantum affine algebras and their representations",
+  "pageStart": 22,
+  "pageEnd": 25,
+  "text": "../sections/sec-009-2-quantum-affine-algebras-and-their-representati.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1304.0323v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1304.0323v3/manifest.jsonld",
+  "provenance": "ingested"
+}

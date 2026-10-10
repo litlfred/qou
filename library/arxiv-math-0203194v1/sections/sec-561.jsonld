@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0203194v1/sections/sec-561",
   "@type": [
     "doco:Section"
@@ -9,16 +14,16 @@
   "pageEnd": 222,
   "contains": [
     "library/arxiv-math-0203194v1/blocks/prose-sec-561",
-    "library/arxiv-math-0203194v1/blocks/lem-sec-561-01",
-    "library/arxiv-math-0203194v1/blocks/ex-sec-561-02",
-    "library/arxiv-math-0203194v1/blocks/prop-sec-561-03",
-    "library/arxiv-math-0203194v1/blocks/cor-sec-561-04",
-    "library/arxiv-math-0203194v1/blocks/prop-sec-561-05",
-    "library/arxiv-math-0203194v1/blocks/cor-sec-561-06",
-    "library/arxiv-math-0203194v1/blocks/thm-sec-561-07",
-    "library/arxiv-math-0203194v1/blocks/rem-sec-561-08"
+    "library/arxiv-math-0203194v1/blocks/lemma-sec-561-01",
+    "library/arxiv-math-0203194v1/blocks/example-sec-561-02",
+    "library/arxiv-math-0203194v1/blocks/proposition-sec-561-03",
+    "library/arxiv-math-0203194v1/blocks/corollary-sec-561-04",
+    "library/arxiv-math-0203194v1/blocks/proposition-sec-561-05",
+    "library/arxiv-math-0203194v1/blocks/corollary-sec-561-06",
+    "library/arxiv-math-0203194v1/blocks/theorem-sec-561-07",
+    "library/arxiv-math-0203194v1/blocks/remark-sec-561-08"
   ],
-  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
-  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203194v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203194v1/manifest.jsonld",
   "provenance": "ingested"
 }

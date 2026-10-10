@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1204.4824v2/blocks/prose-sec-041",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1204.4824v2/blocks/prose-sec-041",
   "kind": "prose",
   "title": "A Joint rules for two-way streets",
   "pageStart": 74,
   "pageEnd": 74,
   "text": "../sections/sec-041-a-joint-rules-for-two-way-streets.md",
-  "derivedFrom": "library/arxiv-1204.4824v2/manifest",
-  "sourceDocument": "library/arxiv-1204.4824v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1204.4824v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1204.4824v2/manifest.jsonld",
   "provenance": "ingested"
 }

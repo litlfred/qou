@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1205.4617v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1205.4617v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1205.4617v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1205.4617&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1205.4617v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1205.4617v1",
+    "content_type": "application/gzip",
+    "sha256": "214fad2e472482fcae3f315d649127890154c19ee855e019ed562205c74eb91c",
+    "bytes": 9711,
+    "fetched": "2026-10-10T15:06:46+00:00",
+    "files": [
+      {
+        "path": "source/files/anc/gut.tex",
+        "role": "tex",
+        "sha256": "edc2e250188e41941376104941e9d68b8bf3de0bb948f0430b9b9df418d74894",
+        "bytes": 27543
+      },
+      {
+        "path": "source/files/gut.tex",
+        "role": "tex",
+        "sha256": "edc2e250188e41941376104941e9d68b8bf3de0bb948f0430b9b9df418d74894",
+        "bytes": 27543
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

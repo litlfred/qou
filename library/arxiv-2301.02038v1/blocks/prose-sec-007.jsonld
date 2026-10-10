@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2301.02038v1/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2301.02038v1/blocks/prose-sec-007",
   "kind": "prose",
   "title": "algebraic structures on horizontal cohomologies",
   "pageStart": 15,
   "pageEnd": 18,
   "text": "../sections/sec-007-23-algebraic-structures-on-horizontal-cohomologi.md",
-  "derivedFrom": "library/arxiv-2301.02038v1/manifest",
-  "sourceDocument": "library/arxiv-2301.02038v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2301.02038v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2301.02038v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0605314v1/blocks/prose-sec-104",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0605314v1/blocks/prose-sec-104",
   "kind": "prose",
   "title": "Bottom tangles in homology handlebodies. An interesting generaliza-",
   "pageStart": 63,
   "pageEnd": 63,
   "text": "../sections/sec-104-164-bottom-tangles-in-homology-handlebodies-an-i.md",
-  "derivedFrom": "library/arxiv-math-0605314v1/manifest",
-  "sourceDocument": "library/arxiv-math-0605314v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0605314v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0605314v1/manifest.jsonld",
   "provenance": "ingested"
 }

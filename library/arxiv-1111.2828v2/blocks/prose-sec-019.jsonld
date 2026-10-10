@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1111.2828v2/blocks/prose-sec-019",
+  "kind": "prose",
+  "title": "Independence of the decoration",
+  "pageStart": 22,
+  "pageEnd": 26,
+  "text": "../sections/sec-019-7-independence-of-the-decoration.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1111.2828v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1111.2828v2/manifest.jsonld",
+  "provenance": "ingested"
+}

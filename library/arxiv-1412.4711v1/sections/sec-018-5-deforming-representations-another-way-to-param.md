@@ -7,364 +7,284 @@ section_number: 5
 pages: 22-28
 source_pdf: 1412.4711v1.pdf
 source_sha256: 4fb1d6ee062cca8c
+text_source: latex
+latex_prose_ratio: 0.984
+latex_coverage_ratio: 0.948
 doc_brief: "CHARACTER VARIETIES FOR SL (3, C): THE FIGURE EIGHT KNOT — We give a description of several representation varieties of the fundamental group of the complement of the ﬁgure eight knot in PGL(3, C) or"
 ---
-components
-Having found a speciﬁc representation ρ : Γ 8 → SL(3, C) by algebraic
-means, there is a complementary method we can often use to determine
-the componentV of the variety containing ρ. We apply this procedure to a
-representation in each of the three components found in the previous section.
-As a product, we get an explicit parametrisation of the representations, i.e.
-an explicit parametrisation of matrices generating the representation, at
-least for a Zariski-open subset of the studied component. This information
-is of course very valuable for the study of the representations found, as in
-[7].
-The procedure may be broken down into four steps, which we now describe
-brieﬂy; a detailed account of the method is given in [4]. Repeated use is made
-of the LLL algorithm [16] for ﬁnding an algebraic number of low degree, close
-to a number given numerically to high precision. For ease of exposition, we
-shall assume that V has dimension 2; in advance we might not know this
-dimension, but usually with experimentation it quickly becomes evident.
-Also, the dimension of the Zariski tangent space atρ ([5]) provides an upper
-bound for the dimension of V.
-(i) First, we perturb the images of the group generators underρ slightly,
-and use these perturbed matrices as a starting point for Newton’s
-23
-method in conjunction with the group relators, so as to converge
-numerically to a representation σ. If the original representation ρ is
-not isolated, σ will typically be some generic representation close to
-ρ; however, by carefully imposing extra constraints one can “steer”
-the Newton process so that σ has some speciﬁed character. In this
-way we can obtain a ﬁnite array of representations{σij} such that for
-each generatorgk of Γ8 the traces of the matrices αij =σij(gk) form
-a suitable array of (numerical approximations to) rational numbers.
-Of course the matrix αij depends on the index k ofgk, but to avoid
-excess of notation we omit mention of this index.
-(ii) Matrices βij are chosen (independently of k) so that the conjugates
-α′
-ij = β−1
-ij αijβij have entries that are all algebraic. This is always
-possible, owing to the fact that V is an algebraic set; in practice we
-desire that the degrees of these algebraic numbers should be as small
-as possible.
-(iii) So far, for each group generator gk we have a two-dimensional array
-of matrices α′
-ij whose entries are numerical approximations to ele-
-ments of a number ﬁeldFij. We choose a suitable basis for Fij over
-the ﬁeld of rationals, noting that the ﬁeld depends on the parame-
-tersi,j . Next, LLL allows us to emerge from the world of numerical
-approximations to that of exact quantities by guessing an expres-
-sion for each matrix entry as a linear combination of basis elements.
-Of course we wish also to be freed from the discrete coordinates
-(i,j ) to general (complex) coordinates ( u,v ) for the variety V, and
-this is achieved, up to judicious guesswork, by means of polynomial
-interpolation across the (i,j )–lattice.
-(iv) The reader will note that guesswork has been employed at several
-points of this procedure, and that substantial use was made of nu-
-merical approximations to algebraic numbers. However, we have
-arrived at a function Φ that associates to each generator gk of Γ8 an
-exact matrix, whose entries lie in an algebraic extension of Q(u,v ),
-where u,v are independent transcendentals. Using software such as
-Mathematica or Maple, it is relatively straightforward to verify by
-formal manipulation that the matrices Φ(gk) satisfy the group rela-
-tions, i.e. that Φ extends to a representation of Γ 8. Following the
-nomenclature of M. Culler and P. Shalen, we call Φ the tautological
-represention of Γ 8 associated to V. A tautological representation
-depends of course on a chosen parametrization, i.e. a coordinate
-system for the variety; also, two matrix representations are consid-
-ered to be equivalent if they agree up to postmultiplication by an
-inner automorphism of the target linear group.
-The method just described would appear at ﬁrst sight to be remarkably
-ad hoc; however, it often works well. It was applied to three representations
-ρ1, ρ2, ρ3 given in§4.2 – one in each of the components found in the previous
-24 E. FALBEL, A. GUILLOUX, P.-V. KOSELEFF, F. ROUILLIER AND M. THISTLETHWAITE
-section. It produces tautological representationsRi (i = 1, 2, 3) of the ﬁgure-
-eight knot group Γ8 into SL(3,F), where the ﬁeldF is an algebraic extension
-of Q(u,v ). Our brief descriptions of the salient properties of theRi are given
-mostly without proof; however, the reader can check most of them with the
-aid of suitable computer algebra software.
-5.1. The ﬁrst component, R1. We use the presentation
-Γ8 = ⟨a, b|abbbaBAAB ⟩ ,
-where uppercase denotes inverse (see section 2). The group Γ 8 is generated
-by meridians ab, abb , and we may take
-m =ab , 𝓁 =abABaBAb
-as commuting (meridian, longitude) pair. Our choice of parameters for the
-variety is
-u = tr(A) , v = tr(b) ,
-this choice being justiﬁed by the fact that all matrix entries for the tauto-
-logical representation lie in Q(u,v ) itself:
-a ↦→
-
-
-0 0 1
-1 0 −u
-0 1 (−1+v)2(1+v)
-u
-
- and
-b ↦→
-
-
-1 −u3(−2+v)+(−1+v)3(1+v)
-u(−1+v)2v −u(−2+v)
-−1+v
-0 v −v+v3
-u
-0 u
-v−v2 −1
-
- .
-For notational convenience, let us identify a, b, A, Bwith their images
-under R1. These elements have the following traces:
-tr(a) = (−1 +v)2(1 +v)
-u , tr(A) =u , tr(b) =v , tr(B) =v .
+\label{deformation}
+
+Having found a specific representation $\rho: \Gamma_8 \to \mathrm{SL(3,\mathbb C)}$ by
+algebraic means, there is a complementary method we can often use to determine
+the component $\mathcal{V}$ of the variety containing $\rho$. We apply this procedure to a representation in each of the three components found in the previous section. As a product, we get an explicit parametrisation of the representations, i.e. an explicit parametrisation of matrices generating the representation, at least for a Zariski-open subset of the studied component. This information is of course very valuable for the study of the representations found, as in \cite{DF}.
+
+
+The procedure may be broken
+down into four steps, which we now describe briefly; a detailed account of the
+method is given in \cite{CLTb}.  Repeated use is made of the LLL algorithm \cite{LLL}
+for finding an algebraic number of low degree, close to a number given numerically to
+high precision.  For ease of exposition, we shall assume that
+$\mathcal{V}$ has dimension $2$; in advance we might not know this dimension,
+but usually with experimentation it quickly becomes evident.  Also, the dimension of
+the Zariski tangent space at $\rho$ (\cite{CLTa}) provides an upper bound for the
+dimension of $\mathcal{V}$.
+
+\begin{itemize}
+\item[\bf (i)]  First, we perturb the images of the group generators under $\rho$
+slightly, and use these perturbed matrices as a starting point for Newton's method
+in conjunction with the group relators, so as to converge numerically to a
+representation $\sigma$.  If the original representation $\rho$ is not isolated,
+$\sigma$ will typically be some generic representation close to $\rho$; however,
+by carefully imposing extra constraints one can ``steer'' the Newton process so
+that $\sigma$ has some specified character.  In this way we can obtain a
+finite array of representations $\{\sigma_{ij}\}$ such that for each generator $g_k$ of $\Gamma_8$
+the traces of the matrices $\alpha_{ij} = \sigma_{ij}(g_k) $ form a suitable array of (numerical
+approximations to) rational numbers.  Of course the matrix $\alpha_{ij}$ depends on the
+index $k$ of $g_k$, but to avoid excess of notation we omit mention of this index.
+\item[\bf (ii)]  Matrices $\beta_{ij}$ are chosen (independently of $k$) so that the conjugates
+$\alpha'_{ij} = \beta^{-1}_{ij} \alpha_{ij} \beta_{ij}$ have entries that are all algebraic.
+This is always possible, owing to the fact that $\mathcal{V}$ is an algebraic
+set; in practice we desire that the degrees of these algebraic numbers should be
+as small as possible.
+\item[\bf (iii)]  So far, for each group generator $g_k$ we have a two-dimensional array
+of matrices $\alpha'_{ij}$ whose entries
+are numerical approximations to elements of a number field $\mathcal{F}_{ij}$.
+We choose a suitable basis for $\mathcal{F}_{ij}$ over the field of rationals,
+noting that the field depends on the parameters $i, j$.  Next, LLL allows us to emerge
+from the world of numerical approximations to that of exact quantities by guessing
+an expression for each matrix entry as a linear combination of basis elements.
+Of course we wish also to be freed from the discrete coordinates $(i, j)$ to
+general (complex) coordinates $(u, v)$ for the variety $\mathcal V$, and this is
+achieved, up to judicious guesswork, by means of polynomial interpolation across
+the $(i,j)$--lattice.
+
+\item[\bf (iv)]  The reader will note that guesswork has been employed at several
+points of this procedure, and that substantial use was made of numerical approximations
+to algebraic numbers.  However, we have arrived at a function $\Phi$ that associates to
+each generator $g_k$ of $\Gamma_8$ an exact matrix, whose entries lie in an algebraic extension
+of $\mathbb Q(u,v)$, where $u,v$ are independent transcendentals.  Using software
+such as Mathematica or Maple, it is relatively straightforward to verify by formal
+manipulation that the matrices $\Phi(g_k)$ satisfy the group relations, {\it i.e.} that
+$\Phi$ extends to a representation of $\Gamma_8$.  Following the nomenclature of M. Culler and
+P. Shalen, we call $\Phi$ the {\it tautological represention} of $\Gamma_8$ associated to $\mathcal{V}$.
+A tautological representation depends of course on a chosen parametrization, {\it i.e.}
+a coordinate system for the variety; also, two matrix representations are considered
+to be equivalent if they agree up to postmultiplication by an inner automorphism of
+the target linear group.
+\end{itemize}
+
+The method just described would appear at first sight to be remarkably {\it ad hoc;}\/
+however, it often works well.  It was applied to three representations
+$\rho_1 \,,\, \rho_2 \,,\, \rho_3$ given in \S \ref{section:example-unipotent} -- one in each of the components found in the previous section. It produces tautological
+representations $R_i \; (i=1,2,3)$ of the figure-eight knot group
+$\Gamma_8$ into $\mathrm{SL(3,\mathcal{F})}$, where the field $\mathcal{F}$ is an
+algebraic extension of $\mathbb Q(u,v)$.  Our brief descriptions of the salient
+properties of the $R_i$ are given mostly without proof; however, the reader can
+check most of them with the aid of suitable computer algebra software.
+\vvv\noind
+
+\subsection{The first component, $R_1$}  \label{ss:R1}
+We use the presentation
+\[ \Gamma_8 \h=\h \langle a \bc b \;|\; a\,b\,b\,b\,a\,B\,A\,A\,B \rangle \h,\]
+where uppercase denotes inverse (see section \ref{section:intro-eight}). The group $\Gamma_8$ is generated by meridians $a\,b \bc a\,b\,b$,
+and we may take
+\[ m = a\,b \h,\h \ell = a\,b\,A\,B\,a\,B\,A\,b \]
+as commuting (meridian, longitude) pair.
+Our choice of parameters for the variety is
+\[ u = \tr(A) \quad,\quad v = \tr(b) \h,\]
+this choice being justified by the fact that
+all matrix entries for the tautological representation lie in $\mathbb Q(u,v)$ itself:
+
+
+\[
+a \;\mapsto\; \left[\begin{array}{ccc}0&0&1\\1&0&-u\\0&1&\frac{(-1+v)^2(1+v)}{u}\end{array}\right] \textrm{ and }\]
+\[b\;\mapsto\; \left[\begin{array}{ccc}1&
+\frac{-u^3(-2+v)+(-1+v)^3(1+v)}{u(-1+v)^2v}&
+-\frac{u(-2+v)}{-1+v}\\
+0&v&
+\frac{-v+v^3}{u}\\
+0&
+\frac{u}{v-v^2}&
+-1\end{array}\right] \quad. \]
+
+For notational convenience, let us identify $a \bc b \bc A \bc B$ with their images
+under $R_1$.  These elements have the following traces:
+\[ \tr(a) = \frac{(-1+v)^2(1+v)}{u} \h,\h \tr(A) = u \h,\h tr(b) = v \h,\h tr(B) = v \h.\]
 On can also compute that
-tr(ab ) = u3 + (−1 +v)3(1 +v)2
-uv(−1 +v)2 ,
+\[ \tr(a\,b) \;=\; \frac{u^3 + (-1 + v)^3(1 + v)^2}{uv(-1 + v)^2} \h,\]
 from which it is evident that attempting to assign certain values to the traces
-of A, b results in singularities.
-The classical hyperbolic representations are those satisfying the constraint
-tr(a) = tr( A), and one can compute that there are two boundary unipo-
-tent hyperbolic representations, i.e. representations mapping peripheral el-
-ements to unipotent matrices. These are as follows:
-(u,v ) =
-(
-−3 + 2
-√
-3i , 1
-2 + 3
-2
-√
-3i
-)
-and
-(u,v ) =
-(
-−3− 2
-√
-3i , 1
-2− 3
-2
-√
-3i
-)
-.
-25
-These form a complex conjugate pair, corresponding to the complete hyper-
-bolic structure on the ﬁgure-eight knot complement. The deformation space
-of the complete structure has one complex dimension, as in the classical
-PSL(2, C) case.
-5.2. The other two components,R2 andR3. For the other two varieties,
-we choose the standard “parabolic” presentation
-Γ8 = ⟨a, b|AbaBabABaB ⟩ ,
+of $A \bc b$ results in singularities.
+\vv
+
+The classical hyperbolic representations are those satisfying the
+constraint $\tr(a) = \tr(A)$, and one can compute that there are two {\it boundary unipotent}
+hyperbolic representations, {\it i.e.} representations mapping peripheral elements
+to unipotent matrices.  These are as follows:
+\[ (u , v) \;=\; \left(-3 + 2\sqrt{3}\,i \h,\h \frac{1}{2} + \frac{3}{2}\sqrt{3}\,i\right) \quad\textrm{and}\]
+\[   (u , v) \;=\; \left(-3 - 2\sqrt{3}\,i \h,\h \frac{1}{2} - \frac{3}{2}\sqrt{3}\,i\right) \h.\]
+These form a complex conjugate pair, corresponding to the complete hyperbolic structure
+on the figure-eight knot complement.  The deformation space of the complete structure
+has one complex dimension, as in the classical $\mathrm{PSL(2,\mathbb C)}$ case.
+
+
+\subsection{The other two components, $R_2$ and $R_3$}\label{ss:R_2-R_3}
+
+For the other two varieties, we choose the standard ``parabolic'' presentation
+\[ \Gamma_8 \h=\h \langle a \bc b \;|\; A\,b\,a\,B\,a\,b\,A\,B\,a\,B \rangle \h,\]
 and parameters
-u = tr(A) = tr(B) , v = tr(a) = tr(b) .
-Some matrix entries lie in a quadratic extension of Q(u,v ), namely the ﬁeld
-generated by
-√
-∆, where
-∆ = 4 u3 + 4v3−u2v2− 16uv + 16 .
-Either choice of square root of ∆ yields a valid representation. We shall
-see shortly that these varieties are related via precomposition with an outer
-automorphism of the knot group. Here are the tautological representations:
-R2
-a ↦→
-
-
-v
-2 1 − (1−i)(−16+8uv−2v3−4
-√
-∆)
-8u2−6uv2+v4
-1
-8(1 + i)(−2u + v2) 1
-4(1 + i)v 1
-1
-16(8− 4uv + v3− 2
-√
-∆) 1
-8(−4u + v2) 1
-4(1− i)v
-
-
-b ↦→
-
-
-v
-2 i (1+i)(−16+8uv−2v3−4
-√
-∆)
-8u2−6uv2+v4
-− 1
-8(1 + i)(−2u + v2) 1
-4(1− i)v i
-− 1
-16(8− 4uv + v3− 2
-√
-∆) −i
-8(−4u + v2) 1
-4(1 + i)v
-
-
-R3
-26 E. FALBEL, A. GUILLOUX, P.-V. KOSELEFF, F. ROUILLIER AND M. THISTLETHWAITE
-a ↦→
-
-
-v
-2 1 − (1−i)(−16+8uv−2v3+4
-√
-∆)
-8u2−6uv2+v4
-1
-8(1 + i)(−2u + v2) 1
-4(1 + i)v 1
-1
-16(8− 4uv + v3 + 2
-√
-∆) 1
-8(−4u + v2) 1
-4(1− i)v
-
-
-b ↦→
-
-
-v
-2 1 − (1−i)(−16+8uv−2v3+4
-√
-∆)
-8u2−6uv2+v4
-1
-8(1− i)(−2u + v2) 1
-4(1− i)v −i
-i
-16(8− 4uv + v3 + 2
-√
-∆) i
-8(−4u + v2) 1
-4(1 + i)v
-
-
-Our ﬁrst observation is that R2 and R3 satisfy the same relationships
-with regard to automorphisms of the knot group Γ 8 as those set out in
-Proposition 9.2 of [7]. In particular, if τ : Γ 8 → Γ8 is the (non-inner)
-automorphism determined by the assignments a↦→a−1ba, b ↦→b, then R3
-agrees with R2◦τ up to conjugation by a matrix in GL(3 ,F).
-Secondly, the image of R2 (also that of R3) is a copy of the (3 , 3, 4)–
-triangle group
-T (3, 3, 4) = ⟨α, β, γ|α3 =β3 =γ4 =αβγ = 1⟩ .
-Speciﬁcally, if c denotes the commutator abAB , we have
-R2(c) =
-
-
-1 0 0
-0 i 0
-0 0 −i
-
- ,
-independently of u, v, from which it follows immediately that R2(c) has
-order 4. Moreover, one can verify that the images under R2 of ac , cac
-each have order 3. Since a, c generate the knot group Γ 8, the result follows
-by taking α = R2(ac ) , β = R2(cac )−1 , γ = R2(c). It was previously
-known that the images of the representations ρ2, ρ3 were isomorphic to
-T (3, 3, 4), see [7].
-5.3. A focus on the PU(2, 1) case. As studied e.g. in [7], the representa-
-tions with image inside the real group PU(2 , 1) may carry interesting geo-
-metric properties. So we seek representations preserving Hermitian forms.
-In the case of the ﬁrst component R1, the following condition on traces
-holds:
-tr(A) = tr(a) , tr(B) = tr(b) .
-In particular, we note that since tr(B) = tr(b) =v, the parameterv is forced
-to be real for such representations. Then, from tr( A) = tr(a), we obtain
-(−1 +v)2(1 +v)
-u = u, or u = | (−1 +v)
-√
-1 +v|z,
-27
-with z lying on the unit circle.
-It is in fact possible to compute a Hermitian matrix H as a function of
-the coordinates v, z,
-H(v,z ) =
-
-
-1 r s
-r 1 r
-s r 1
-
- ,
+\[ u = \tr(A) = \tr(B) \quad,\quad v = \tr(a) = \tr(b) \h.\]
+Some matrix entries
+lie in a quadratic extension of $\mathbb Q(u,v)$, namely the field generated by
+$\sqrt{\Delta}$, where
+\[ \Delta \;=\; 4 u^3 + 4 v^3 - u^2 v^2 - 16 u v + 16 \h.\]
+Either choice of square root of $\Delta$ yields a valid representation.
+We shall see shortly that these varieties are related via precomposition with an
+outer automorphism of the knot group.  Here are the tautological representations:
+\vvv
+
+\fbox{$R_2$}
+\vskip-4ex
+
+{\bfi{12}{21}\rm
+\begin{align*}
+   a \;\mapsto\; &\left[\begin{array}{ccc}
+    \frac{v}{2} & 1 & -\frac{(1-i)(-16 + 8uv - 2v^3 - 4\sqrt{\Delta})}{8u^2 - 6uv^2 + v^4}\\
+    \frac{1}{8}(1+i)(-2u+v^2) & \frac{1}{4}(1+i)v & 1\\
+    \frac{1}{16}(8 - 4uv + v^3 - 2\sqrt{\Delta}) & \frac{1}{8}(-4u + v^2) & \frac{1}{4}(1-i)v
+    \end{array}\right] \\[3ex]
+   b\;\mapsto\; &\left[\begin{array}{ccc}
+    \frac{v}{2} & i & \frac{(1+i)(-16 + 8uv - 2v^3 - 4\sqrt{\Delta})}{8u^2 - 6uv^2 + v^4}\\
+    -\frac{1}{8}(1+i)(-2u+v^2) & \frac{1}{4}(1-i)v & i\\
+    -\frac{1}{16}(8 - 4uv + v^3 - 2\sqrt{\Delta}) & -\frac{i}{8}(-4u + v^2) & \frac{1}{4}(1+i)v
+    \end{array}\right]
+\end{align*}
+}
+
+\fbox{$R_3$}
+\vskip-4ex
+
+{\bfi{12}{21}\rm
+\begin{align*}
+   a \;\mapsto\; &\left[\begin{array}{ccc}
+    \frac{v}{2} & 1 & -\frac{(1-i)(-16 + 8uv - 2v^3 + 4\sqrt{\Delta})}{8u^2 - 6uv^2 + v^4}\\
+    \frac{1}{8}(1+i)(-2u+v^2) & \frac{1}{4}(1+i)v & 1\\
+    \frac{1}{16}(8 - 4uv + v^3 + 2\sqrt{\Delta}) & \frac{1}{8}(-4u + v^2) & \frac{1}{4}(1-i)v
+    \end{array}\right] \\[3ex]
+   b\;\mapsto\; &\left[\begin{array}{ccc}
+    \frac{v}{2} & 1 & -\frac{(1-i)(-16 + 8uv - 2v^3 + 4\sqrt{\Delta})}{8u^2 - 6uv^2 + v^4}\\
+    \frac{1}{8}(1-i)(-2u+v^2) & \frac{1}{4}(1-i)v & -i\\
+    \frac{i}{16}(8 - 4uv + v^3 + 2\sqrt{\Delta}) & \frac{i}{8}(-4u + v^2) & \frac{1}{4}(1+i)v
+    \end{array}\right]
+\end{align*}
+}\ind
+\vv
+
+Our first observation is that $R_2$ and $R_3$ satisfy the same relationships with
+regard to automorphisms of the knot group $\Gamma_8$ as those set out in Proposition 9.2
+of \cite{DF}.  In particular, if $\tau: \Gamma_8 \to \Gamma_8$ is the (non-inner) automorphism
+determined by the assignments $a \mapsto a^{-1}\,b\,a \;,\; b \mapsto b$, then
+$R_3$ agrees with $R_2 \circ \tau$ up to conjugation by a matrix in
+$\mathrm{GL(3,\mathcal F)}$.
+\vv
+
+Secondly, the image of $R_2$ (also that of $R_3$) is a copy of the $(3,3,4)$--triangle group
+\[ T(3,3,4) \;=\; \langle \alpha \bc \beta \bc \gamma \;|\;
+   \alpha^3 = \beta^3 = \gamma^4 = \alpha\beta\gamma = 1 \rangle \h.\]
+Specifically, if $c$ denotes the commutator $a\,b\,A\,B$\,, we have
+\[ R_2(c) \;=\; \left[\begin{array}{ccc}1&0&0\\0&i&0\\0&0&-i\end{array}\right] \h,\]
+independently of $u \bc v$, from which it follows immediately that $R_2(c)$ has order $4$.
+Moreover, one can verify that the images under $R_2$ of $a\,c \;,\; c\,a\,c$ each have
+order $3$.  Since $a \bc c$ generate the knot group $\Gamma_8$, the result follows by taking
+$\alpha = R_2(a\,c) \;,\; \beta = R_2(c\,a\,c)^{-1} \;,\; \gamma = R_2(c)$.  It was
+previously known that the images of the representations $\rho_2 \bc \rho_3$
+were isomorphic to $T(3,3,4)$, see \cite{DF}.
+
+\subsection{A focus on the $\mathrm{PU}(2,1)$ case}
+
+As studied e.g. in \cite{DF}, the representations with image inside the real group $\mathrm{PU}(2,1)$ may carry interesting geometric properties. So we seek representations preserving Hermitian forms.
+
+In the case of the first component $R_1$, the following condition on traces holds:
+\[ \tr(A) \,=\, \overline{\tr(a)} \quad,\quad \tr(B) \,=\, \overline{\tr(b)} \h.\]
+In particular, we note that since $\tr(B) = \tr(b) = v$, the parameter $v$ is forced to be real
+for such representations.  Then, from $\tr(A) = \tr(a)$, we obtain
+\[ 
+\frac{(-1+v)^2(1+v)}{\overline{u}} \;=\; u\;,
+\quad\text{or}\quad
+u \;=\; |  \left(-1+v\right)\sqrt{1+v} |  \, z ,
+\]
+with $z$ lying on the unit circle.
+\vv
+
+It is in fact possible to compute a Hermitian matrix $H$ as a function of the coordinates
+$v \bc z$,
+\[ H(v,z) \;=\; \left[\begin{array}{ccc}1&r&s\\\overline{r}&1&r\\\overline{s}&\overline{r}&1\end{array}\right]\h,\]
 whose associated form is respected by the representations just described;
-the entries of H lie in an Abelian extension of degree 4 of Q(v, Re(z)), and
-are a little too cumbersome for inclusion here. However, for speciﬁc v, z the
-signature of H enables one to determine whether the representation takes
-values in SU(3) or SU(2, 1), or whether the associated form is degenerate. In-
-deed, the representations with degenerate forms occupy some isolated points
-in the (v,z )–variety, together with some simple closed curves that separate
-SU(3)–representations from SU(2, 1)–representations.
-One can compute that the variety R1 gives rise to a single boundary
-unipotent representation into PU(2 , 1), obtained by composing the repre-
-sentation
-(u,v ) = ( −
-√
-3i, 2)
-with the natural projectivization map SU(2 , 1)→ PU(2, 1). The variety R1
-also contains the other two lifts of this PU(2, 1)– representation to SU(2, 1),
-at
-(u,v ) = ( −ω(
-√
-3i), 2), (u,v ) = ( −ω2(
-√
-3i), 2) (where ω =e2πi/3).
-The other two componentsR2 andR3 each give rise to just one bound-
-ary unipotent representation into PU(2, 1), given by (u,v ) = (3, 3).
-A necessary condition on traces for a representation in R2 or R3 to
-respect a Hermitian forms is
-tr(a) = tr(A), tr(b) = tr(B) , i.e. v =u .
-Using the same technique as that described at the beginning of this sec-
-tion, i.e. invoking LLL together with polynomial interpolation, the following
-diagonal matrix:
-H =
-
-
-− 1
-8(∆− 16)
-(√
-∆ +|u|2− 4
-)
-0 0
-0 ∆ − 16 0
-0 0 −8
-(√
-∆ + 4
-)
-
-
+the entries of $H$ lie in an Abelian extension of degree $4$ of $\mathbb Q(v,\mathrm{Re}(z))$,
+and are a little too cumbersome for inclusion here.  However, for specific $v \bc z$
+the signature of $H$ enables one to determine whether the representation
+takes values in $\mathrm{SU(3)}$ or $\mathrm{SU(2,1)}$, or whether the associated
+form is degenerate.  Indeed, the representations with degenerate forms occupy some
+isolated points in the $(v,z)$--variety, together with some simple closed curves that
+separate $\mathrm{SU(3)}$--representations from $\mathrm{SU(2,1)}$--representations.
+\vv
+
+One can compute that the variety $R_1$ gives rise to a single boundary
+unipotent representation into $\mathrm{PU(2,1)}$, obtained by composing the representation
+\[ (u , v) \;=\; (-\sqrt{3}\,i \;,\; 2) \]
+with the natural projectivization map $\mathrm{SU(2,1) \to PU(2,1)}$.  The variety
+$R_1$ also contains the other two lifts of this $\mathrm{PU(2,1)}$--
+representation to $\mathrm{SU(2,1)}$, at
+\[ (u , v) \;=\; (-\omega(\sqrt{3}\,i) \;,\; 2) \, ,\quad
+   (u , v) \;=\; (-\omega^2(\sqrt{3}\,i) \;,\; 2) \quad
+   (\text{where}\quad \omega = e^{2\pi i/3}).\]
+
+\bigskip
+
+The other two components $R_2$ and $R_3$ each give rise to just one boundary unipotent representation into
+$\mathrm{PU(2,1)}$, given by $(u,v) = (3,3)$.
+\vv
+
+A necessary condition on traces for a representation in $R_2$ or $R_3$ to respect a Hermitian
+forms is
+\[ \tr(a) = \tr(A) \;,\; \tr(b) = \tr(B) \quad,\quad\text{\it i.e.}\quad v = \overline{u} \h.\]
+
+Using the same technique as that described at the beginning of this section,
+{\it i.e.} invoking LLL together with polynomial interpolation, the following diagonal matrix:
+\[ H \;=\; \left[\begin{array}{ccc}
+-\frac{1}{8}(\Delta - 16)\left(\sqrt{\Delta} + |u|^2 - 4 \right) & 0 & 0\\
+0 & \Delta - 16 & 0\\
+0 & 0 & -8\left(\sqrt{\Delta} + 4 \right)
+\end{array}\right] \]
 was found, satisfying
-Ha−1 = a†H , Hb−1 = b†H (v =u, ∆≥ 0) ,
-where the superscript † denotes conjugate transpose, and ∆ = 4 u3 + 4v3−
-u2v2− 16uv + 16 = 4( u3 +u3)−|u|4− 16|u|2 + 16. Clearly the condition
-∆≥ 0 is required forH to be Hermitian. We note that the form represented
-28 E. FALBEL, A. GUILLOUX, P.-V. KOSELEFF, F. ROUILLIER AND M. THISTLETHWAITE
-byH degenerates at ∆ = 16; in the present contextv =u the corresponding
-values of u are 0, 4, 4e2πi/3, 4e4πi/3.
-Substituting u = x +iy, v = x−iy (x, y∈ R) in the expression for
-∆(u,v ), we obtain (with mild abuse of notation)
-∆(x,y ) = −x4−y4− 2x2y2− 24xy2 + 8x3− 16x2− 16y2 + 16 .
-We have therefore established that representations respecting Hermitian
-forms occur in the bounded complementary regions in the ( x,y )–plane of
-the curve ∆(x,y ) = 0, see Figure 4. The SU(3) representations lie in the
-central complementary region, and the SU(2 , 1) representations lie in the
-three petals. Corresponding Hermitian representations occur also on the
-curve itself, except for singularities at the three self-intersection points of the
-curve, where representations are not deﬁned. The quantity ∆ has geometric
-signiﬁcance in that it is related to the Brehm shape invariant [3] of the
-triangle in the associated homogeneous space (complex projective plane CP2
-or complex hyperbolic plane CH2), whose vertices are the ﬁxed points of the
-elliptic isometries α, β, γ.
-/Minus4 /Minus2 0 2 4 6
-/Minus4
-/Minus2
-0
-2
-4
-Figure 4. SU(3) and SU(2, 1) representations in R2
+\[ H a^{-1} \;=\; a^{\,\dagger}H \h,\h H b^{-1} \;=\; b^{\,\dagger}H
+\quad (v = \overline{u} \;,\; \Delta \geq 0) \h,\]
+where the superscript $^\dagger$ denotes conjugate transpose, and
+$\Delta = 4 u^3 + 4 v^3 - u^2 v^2 - 16 u v + 16 \;=\;
+4(u^3 + \overline{u}^3) - |u|^4 - 16|u|^2 + 16$.
+Clearly the condition $\Delta \geq 0$ is required for $H$ to be Hermitian.  We note that
+the form represented by $H$ degenerates at $\Delta = 16$; in the present context $v = \overline{u}$
+the corresponding values of $u$ are $0 \,,\, 4 \,,\, 4e^{2\pi i/3} \,,\, 4e^{4\pi i/3}$.
+\vv
+
+Substituting $u = x + iy \bc v = x - iy \h (x \bc y \in \mathbb R)$ in the expression for
+$\Delta(u,v)$, we obtain (with mild abuse of notation)
+\[ \Delta(x,y) \;=\; -x^4 - y^4 - 2x^2 y^2 - 24x y^2 + 8x^3 - 16x^2 - 16y^2 + 16 \h.\]
+\ind
+
+We have therefore established that
+representations respecting Hermitian forms occur in the bounded complementary regions
+in the $(x,y)$--plane of the curve $\Delta(x,y) = 0$, see Figure \ref{fig:su(2,1)}.
+The $\mathrm{SU(3)}$ representations lie in the central complementary region, and
+the $\mathrm{SU(2,1)}$ representations lie in the three petals.  Corresponding
+Hermitian representations occur also on the curve itself, except for singularities
+at the three self-intersection points of the curve, where representations are
+not defined.  The quantity $\Delta$ has
+geometric significance in that it is related to the Brehm shape invariant \cite{Brehm}
+of the triangle in the associated homogeneous space (complex projective plane
+$\mathbb{CP}^2$ or complex hyperbolic plane $\mathbb{CH}^2$), whose vertices are the
+fixed points of the elliptic isometries $\alpha \bc \beta \bc \gamma$.
+
+\begin{figure}[ht]
+\includegraphics[scale=1]{r2form-eps-converted-to.pdf}
+\caption{$\mathrm{SU(3)}$ and $\mathrm{SU(2,1)}$ representations in $R_2$}\label{fig:su(2,1)}
+\end{figure}

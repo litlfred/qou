@@ -5,7 +5,8 @@
   "file": "1202.6268v2.pdf",
   "sha256": "209af6ae25439050acd32974f2c6eeb4d407661c14b064472346b33807ae019f",
   "bytes": 714906,
-  "pages": 53
+  "pages": 53,
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "THE QUANTUM CONTENT OF THE GLUING EQUATIONS",
   "authors_raw": "TUDOR DIMOFTE AND STA VROS GAROUF ALIDIS",
-  "abstract": "The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that describe the complete hyperbolic structure of M and its deformations. Given a Neumann-Zagier datum (comprising the shapes together with the gluing equations in a partic ular canonical form) we deﬁne a formal power series with coeﬃcients in the invariant trace ﬁ eld of M that should (a) agree with the asymptotic expansion of the Kashaev invariant to all orders, and (b) contain the nonabelian Reidemeister-Ray-Singer torsion of M as its ﬁrst subleading “1-loop” term. As a case study, we prove topological invariance of the 1-loop part of the constructed series and extend it into a formal power series of rational functions on th e PSL(2 , C) character variety of M . We provide a computer implementation of the ﬁrst three terms of t he series using the standard SnapPy toolbox and check numerically the agreement of our torsion with the Reidemeister-Ray-Singer for all 59924 hyperbolic knots wit h at most 14 crossings. Finally, we explain how the deﬁnition of our series follows from the quan tization of 3d hyperbolic geometry, using principles of Topological Quantum Field Th eory. Our results have a straightforward extension to any 3-manifold M with torus boundary components (not necessarily hyperbolic) that admits a regular ideal triangulatio n with respect to some PSL(2, C) representation.",
+  "abstract": "The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that describe the complete hyperbolic structure of M and its deformations. Given a Neumann-Zagier datum (comprising the shapes together with the gluing equations in a partic ular canonical form) we de\ufb01ne a formal power series with coe\ufb03cients in the invariant trace \ufb01 eld of M that should (a) agree with the asymptotic expansion of the Kashaev invariant to all orders, and (b) contain the nonabelian Reidemeister-Ray-Singer torsion of M as its \ufb01rst subleading \u201c1-loop\u201d term. As a case study, we prove topological invariance of the 1-loop part of the constructed series and extend it into a formal power series of rational functions on th e PSL(2 , C) character variety of M . We provide a computer implementation of the \ufb01rst three terms of t he series using the standard SnapPy toolbox and check numerically the agreement of our torsion with the Reidemeister-Ray-Singer for all 59924 hyperbolic knots wit h at most 14 crossings. Finally, we explain how the de\ufb01nition of our series follows from the quan tization of 3d hyperbolic geometry, using principles of Topological Quantum Field Th eory. Our results have a straightforward extension to any 3-manifold M with torus boundary components (not necessarily hyperbolic) that admits a regular ideal triangulatio n with respect to some PSL(2, C) representation.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20180625120028-04'00'",
@@ -200,7 +201,7 @@
   },
   {
    "level": 2,
-   "title": "Invariance under 2–3 moves",
+   "title": "Invariance under 2\u20133 moves",
    "page": 19,
    "source": "outline",
    "number": "3.6"
@@ -579,7 +580,7 @@
   {
    "id": "sec-020-36-invariance-under-23-moves",
    "number": "3.6",
-   "title": "Invariance under 2–3 moves",
+   "title": "Invariance under 2\u20133 moves",
    "level": 2,
    "page_start": 19,
    "page_end": 22,
@@ -792,6 +793,229 @@
   "likely_scanned": false,
   "toc_entries": 49,
   "sections": 41,
-  "chars_total": 117040
+  "chars_total": 117040,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "torsion.tex",
+   "tex_sections": 5,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-the-kashaev-invariant-and-perturbative-chern",
+     "title": "The Kashaev invariant and perturbative Chern-Simons theory",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-12-the-neumann-zagier-datum",
+     "title": "The Neumann-Zagier datum",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-13-the-1-loop-invariant",
+     "title": "The 1-loop invariant",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-14-expectations",
+     "title": "Expectations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-15-the-higher-loop-invariants",
+     "title": "The higher-loop invariants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-16-feynman-diagrams",
+     "title": "Feynman diagrams",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-17-the-2-loop-invariant",
+     "title": "The 2-loop invariant",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-18-the-3-loop-invariant",
+     "title": "The 3-loop invariant",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-19-generalizations",
+     "title": "Generalizations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-acknowledgment",
+     "title": "Acknowledgment",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-2-mechanics-of-triangulations",
+     "title": "Mechanics of triangulations",
+     "prose_ratio": 0.11,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-21-ideal-tetrahedra",
+     "title": "Ideal tetrahedra",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-22-the-gluing-matrices",
+     "title": "The gluing matrices",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-23-the-neumann-zagier-matrices",
+     "title": "The Neumann-Zagier matrices",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-25-the-shape-solutions-to-the-gluing-equations",
+     "title": "The shape solutions to the gluing equations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-3-topological-invariance-of-our-torsion",
+     "title": "Topological invariance of our torsion",
+     "prose_ratio": 0.339,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-017-32-independence-of-a-choice-of-quad-type",
+     "title": "Independence of a choice of quad type",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-33-independence-of-a-choice-of-edge",
+     "title": "Independence of a choice of edge",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-34-independence-of-a-choice-of-meridian-path",
+     "title": "Independence of a choice of meridian path",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-36-invariance-under-23-moves",
+     "title": "Invariance under 2\u20133 moves",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-4-torsion-on-the-character-variety",
+     "title": "Torsion on the character variety",
+     "prose_ratio": 0.442,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-022-42-the-epstein-penner-cell-decomposition-and-its",
+     "title": "The Epstein-Penner cell decomposition and its triangulations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-43-neumann-zagier-datum-and-the-geometric-compon",
+     "title": "Neumann-Zagier datum and the geometric component",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-44-flattening-compatible-with-a-longitude",
+     "title": "Flattening compatible with a longitude",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-45-invariance-of-the-generalized-torsion",
+     "title": "Invariance of the generalized torsion",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-5-the-state-integral-and-higher-loops",
+     "title": "The state integral and higher loops",
+     "prose_ratio": 0.334,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-027-51-critical-points",
+     "title": "Critical points",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-52-volume",
+     "title": "Volume",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-53-torsion-revisited",
+     "title": "Torsion revisited",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-54-feynman-diagrams-and-higher-loops",
+     "title": "Feynman diagrams and higher loops",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-55-n-loop-invariants-on-the-character-variety",
+     "title": "n-loop invariants on the character variety",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-appendix-a-symplectic-properties-of-a-and-b",
+     "title": "Appendix A. Symplectic properties of A and B",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-appendix-b-the-shape-parameters-are-rational-fun",
+     "title": "Appendix B. The shape parameters are rational functions on the character variety",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-appendix-c-deriving-the-state-integral",
+     "title": "Appendix C. Deriving the state integral",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-c1-symplectic-gluing",
+     "title": "C.1. Symplectic gluing",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-c2-quantization",
+     "title": "C.2. Quantization",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-c3-quantum-reduction",
+     "title": "C.3. Quantum reduction",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-038-c5-normalization-and-invariance",
+     "title": "C.5. Normalization and invariance",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-039-appendix-d-computer-implementation-and-computati",
+     "title": "Appendix D. Computer implementation and computations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

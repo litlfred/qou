@@ -7,91 +7,65 @@ section_number: null
 pages: 3-5
 source_pdf: 2306.13098v2.pdf
 source_sha256: edeb214d587bfca4
+text_source: latex
+latex_prose_ratio: 0.97
+latex_coverage_ratio: 0.883
 doc_brief: "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the"
 ---
-nions H and octonions O. In Section 3 we review the construction of one generation of fermions with unbroken
-SU (3)c×U(1)em gauge symmetry from C⊗ O, following closely [5]. The Cayley-Dickson construction and
-the algebra of sedenions are discussed in Section 4. Finally we present our three generation model based on
-the algebra of sedenions in Section 5. We conclude with an outlook of how to develop the model further,
-and a discussion.
-2 Normed division algebras
-A division algebra is an algebra over a field where division is always well-defined, except by zero. A normed
-division algebra has the additional property that it is also normed vector spaces, with the norm defined in
-terms of a conjugate. A well-known result by Hurwitz [39] is that there exist only four normed division
-algebras (over the field of real numbers): R, C, H, O, of dimensions one, two, four and eight respectively. In
-going to higher-dimensional algebras, successive algebraic properties are lost: R is self-conjugate, commuta-
-tive and associative, C is commutative and associative (but no longer self-conjugate), H is associative but
-no longer commutative, and finally O is neither commutative nor associative (but alternative).
-The quaternions H are a generalization of the complex numbers C with three mutually anticommuting
-imaginary units I,J,K , satisfying I 2 = J 2 = K 2 = IJK =−1, which implies IJ = K =−JI , JK = I =
-−KJ , and KI =J =−IK . A general quaternion q may then be written as
-q =q01 +q1I +q2J +q3K, q 0,q 1,q 2,q 3∈ R, (1)
-With the quaternion conjugate q defined as q = q0−q1I−q2J−q3K. The norm of a quaternion |q| is
-subsequently defines by|q|2 =qq =qq, and the inverse q−1 =q/|q|2.
-The automorphism group of H is SU (2). Indeed, there is an isomorphism between the quaternions H
-and the real Clifford algebra Cℓ(0, 2), while the complexified quaternions C⊗ H (isomorphic to the Pauli
-algebra) are isomorphic to the complex Clifford algebra Cℓ(2). Note, however, that C⊗ H is not a division
-algebra (but remains associative), and manifestly contains projectors, for example: (1 + iK)(1−iK) = 0.
-The octonions O are the largest division algebra, of dimension eight. Its orthonormal basis comprises
-seven imaginary units: i1,...i 7, along with the unit 1 = i0. A general octonion x may then be written as
-x =x0i0 +x1ii +... +x7i7, x 0,...,x 7∈ R, (2)
-with the octonion conjugate x defined as x = x0i0−x1i1−...−x7i7. The norm of an octonion |x| is
-subsequently defines by|x|2 =xx =xx, and the inverse x−1 =x/|x|2.
-The multiplication of octonions1 is captured in terms of the Fano plane Fig. 1. Each projective line in the
-Fano plane corresponds (together with the identityi0) to an H subalgebra; there are seven such subalgebras.
-Like with H, all the imaginary units anticommute under multiplication. Unlike with H, the multiplication
-of elements not belonging to the same H subalgebra is non-associative. For example i4(i7i6) =−i5̸=i5 =
-(i4i7)i6. Octonion multiplication however is alternative x(xy) = (xx)y and y(xx) = (yx)x,∀x,y ∈ O. The
-complexified octonions C⊗ O are again not a division algebra (but remains alternative).
-As vector spaces O = C4. The splitting of O as C⊕ C3 relies on choosing a preferred octonion unit ia
-(and hence a preferred C subalgebra in O). For our purpose we choose i4. The map [36]
-π(x) = 1
-2(x +i4x ¯i4), x ∈ O, (3)
-1There are different multiplication rules for O used by different authors in the literature. Here we follow the multiplication
-table used in [40]
-3
-Figure 1: The Fano plane, encoding the multiplicative structure of our octonions, where a≡ia, a= 1,..., 7.
-Note that each line is cyclic, representing a quaternionic triple.
-where ¯i4 indicates the octonion conjugation, then projects O down to this preferred C⊂ O, and we can write
-the octonion x =x0i0 +... +x7i7 as:
-x = (x0 +x4i4)i0 + (x1−x5i4)i1 + (x2−x6i4)i2 + (x3−x7i4)i3. (4)
-Note that the product i4x ¯i4 is defined unambiguously since O is alternative.
-The automorphism group of O is the 14-dimensional exceptional Lie group G2. This exceptional group
-contains SU (3) as one of its maximal subgroups, corresponding to the stabilizer subgroup of one of the
-octonion imaginary units, or equivalently, the subgroup of Aut(O) that preserves the representation of O as
-the complex space C⊕ C3. This splitting is associated with the quark-lepton symmetry [36]. The space of
-internal states of a quark is then the three complex dimensional space C3 whereas the internal space of a
-lepton is C.
-Since O and C⊗ O are nonassociative, they are not representable as matrix algebras (with the standard
-matrix product). The algebra generated from the composition of left and right actions of O (and C⊗ O)
-however is associative, since each such left (right) action corresponds to a linear operator (endomorphism).
-Let La (Ra) denote the linear operator of left (right) multiplication by a∈ C⊗ O:
-La[x] =ax, R a[x] =xa, ∀a,x∈ C⊗ O. (5)
-Then
-LaLb[x] = a(bx) ̸= Lab[x] = (ab)x, (6)
-RaRb[x] = ( xb)a ̸= Rab[x] =x(ab). (7)
-The mappings a→La and a→Ra do not correspond to algebra homomorphisms as they each generate an
-associative algebra called the associative multiplication algebra 2. They do however preserve the quadratic
-relations⟨x,y⟩ = 1
-2(xy +yx) where x,y∈ C⊗ O
-LxLy1 +LyLx1 = 2⟨x,y⟩1 =RxRy1 +RyRx1. (8)
-SinceLa (Ra) correspond to linear operators, they can be represented as 8 × 8 complex matrices (acting
-on the vector space C⊗ O written as a column vector).
-For C⊗ O, one finds the following identities [4, 5]:
-Li1Li2Li3Li4Li5Li6x = Li7x, (9)
-...LibLiaLiaLic....x = −...LibLic....x, (10)
-...LiaLib...x = −...LibLia..., (11)
-where a,b,c = 1,..., 7.
-2We will henceforth refer to this algebra simply as the left action algebra or left multiplication algebra
-4
-Due to the nonassociativity of O, the left (right) associative multiplication algebra of C⊗ O contains
-genuinely new maps which are not captured by C⊗ O. For example, i3(i4(i6 +i2))̸= y(i6 +i2) for any
-y∈ C⊗ O. There are a total of 64 distinct left-acting complex-linear maps from C⊗ O to itself, and these
-(due to the given identities above) provide a faithful representation of Cℓ(6).
-Denoting the 64-dimensional left (right) associative multiplication algebra generated from left (right)
-actions of C⊗ O on itself by ( C⊗ O)L ((C⊗ O)R), one finds that any left (right) action can always be
-rewritten as a right (left) action [4]. That is:
-(C⊗ O)L∼= (C⊗ O)R∼= Cℓ(6). (12)
-This is in contrast to a similar construction for C⊗ H, where one finds that the left and right actions are
-genuinely distinct, each generating a copy of Cℓ(2). The left and right adjoint actions in this case commute,
-and only by considering both does one obtain a basis for Mat(4, C)∼= Cℓ(4).
+[]{#sec:normeddivisionalgebras label="sec:normeddivisionalgebras"}
+
+A division algebra is an algebra over a field where division is always well-defined, except by zero. A normed division algebra has the additional property that it is also normed vector spaces, with the norm defined in terms of a conjugate. A well-known result by Hurwitz [@hurwitz1898ueber] is that there exist only four normed division algebras (over the field of real numbers): $\mathbb{R}$, $\mathbb{C}$, $\mathbb{H}$, $\mathbb{O}$, of dimensions one, two, four and eight respectively. In going to higher-dimensional algebras, successive algebraic properties are lost: $\mathbb{R}$ is self-conjugate, commutative and associative, $\mathbb{C}$ is commutative and associative (but no longer self-conjugate), $\mathbb{H}$ is associative but no longer commutative, and finally $\mathbb{O}$ is neither commutative nor associative (but alternative).
+
+The quaternions $\mathbb{H}$ are a generalization of the complex numbers $\mathbb{C}$ with three mutually anticommuting imaginary units $I,J,K$, satisfying $I^2=J^2=K^2=IJK=-1$, which implies $IJ=K=-JI$, $JK=I=-KJ$, and $KI=J=-IK$. A general quaternion $q$ may then be written as $$\begin{eqnarray}
+    q=q_01+q_1I+q_2J+q_3K,\qquad q_0,q_1,q_2,q_3\in\mathbb{R},
+\end{eqnarray}$$ With the quaternion conjugate $\overline{q}$ defined as $\overline{q}=q_0-q_1I-q_2J-q_3K$. The norm of a quaternion $\vert q\vert$ is subsequently defines by $\vert q\vert^2=q\overline{q}=\overline{q}q$, and the inverse $q^{-1}=\overline{q}/\vert q\vert^2$.
+
+The automorphism group of $\mathbb{H}$ is $SU(2)$. Indeed, there is an isomorphism between the quaternions $\mathbb{H}$ and the real Clifford algebra $C\ell(0,2)$, while the complexified quaternions $\mathbb{C}\otimes\mathbb{H}$ (isomorphic to the Pauli algebra) are isomorphic to the complex Clifford algebra $\mathbb{C}\ell(2)$. Note, however, that $\mathbb{C}\otimes\mathbb{H}$ is not a division algebra (but remains associative), and manifestly contains projectors, for example: $(1+iK)(1-iK)=0$.
+
+The octonions $\mathbb{O}$ are the largest division algebra, of dimension eight. Its orthonormal basis comprises seven imaginary units: $i_1,...i_7$, along with the unit $1=i_0$. A general octonion $x$ may then be written as $$\begin{eqnarray}
+    x=x_0i_0+x_1i_i+...+x_7i_7,\qquad x_0,...,x_7\in\mathbb{R},
+\end{eqnarray}$$ with the octonion conjugate $\overline{x}$ defined as $\overline{x}=x_0i_0-x_1i_1-...-x_7i_7$. The norm of an octonion $\vert x\vert$ is subsequently defines by $\vert x\vert^2=x\overline{x}=\overline{x}x$, and the inverse $x^{-1}=\overline{x}/\vert x\vert^2$.
+
+The multiplication of octonions[^1] is captured in terms of the Fano plane Fig. [1](#fanoplane){reference-type="ref" reference="fanoplane"}. Each projective line in the Fano plane corresponds (together with the identity $i_0$) to an $\mathbb{H}$ subalgebra; there are seven such subalgebras. Like with $\mathbb{H}$, all the imaginary units anticommute under multiplication. Unlike with $\mathbb{H}$, the multiplication of elements not belonging to the same $\mathbb{H}$ subalgebra is non-associative. For example $i_4(i_7i_6) = -i_5 \neq i_5 = (i_4i_7)i_6$. Octonion multiplication however is alternative $x(xy) = (xx)y$ and $y(xx) = (yx)x$, $\forall x,y\in\mathbb{O}$. The complexified octonions $\mathbb{C}\otimes \mathbb{O}$ are again not a division algebra (but remains alternative).
+
+<figure id="fanoplane" data-latex-placement="h!">
+<img src="fanoupdated" />
+<figcaption>The Fano plane, encoding the multiplicative structure of our octonions, where <span class="math inline"><em>a</em> ≡ <em>i</em><sub><em>a</em></sub>, <em>a</em> = 1, ..., 7</span>. Note that each line is cyclic, representing a quaternionic triple.</figcaption>
+</figure>
+
+As vector spaces $\mathbb{O}=\mathbb{C}^4$. The splitting of $\mathbb{O}$ as $\mathbb{C}\oplus\mathbb{C}^3$ relies on choosing a preferred octonion unit $i_a$ (and hence a preferred $\mathbb{C}$ subalgebra in $\mathbb{O}$). For our purpose we choose $i_4$. The map [@manogue1999dimensional] $$\begin{eqnarray}
+\pi(x)=\frac{1}{2}(x+i_4x\Bar{i_4}),\quad x\in\mathbb{O},
+\end{eqnarray}$$ where $\Bar{i_4}$ indicates the octonion conjugation, then projects $\mathbb{O}$ down to this preferred $\mathbb{C}\subset \mathbb{O}$, and we can write the octonion $x=x_0i_0+...+x_7i_7$ as: $$\begin{eqnarray}
+x=(x_0+x_4i_4)i_0+(x_1-x_5i_4)i_1+(x_2-x_6i_4)i_2+(x_3-x_7i_4)i_3.
+\end{eqnarray}$$ Note that the product $i_4x\Bar{i_4}$ is defined unambiguously since $\mathbb{O}$ is alternative.
+
+The automorphism group of $\mathbb{O}$ is the $14$-dimensional exceptional Lie group $G_2$. This exceptional group contains $SU(3)$ as one of its maximal subgroups, corresponding to the stabilizer subgroup of one of the octonion imaginary units, or equivalently, the subgroup of $Aut(\mathbb{O})$ that preserves the representation of $\mathbb{O}$ as the complex space $\mathbb{C}\oplus \mathbb{C}^3$. This splitting is associated with the quark-lepton symmetry [@manogue1999dimensional]. The space of internal states of a quark is then the three complex dimensional space $\mathbb{C}^3$ whereas the internal space of a lepton is $\mathbb{C}$.
+
+Since $\mathbb{O}$ and $\mathbb{C}\otimes\mathbb{O}$ are nonassociative, they are not representable as matrix algebras (with the standard matrix product). The algebra generated from the composition of left and right actions of $\mathbb{O}$ (and $\mathbb{C}\otimes\mathbb{O}$) however is associative, since each such left (right) action corresponds to a linear operator (endomorphism).
+
+Let $L_a$ ($R_a$) denote the linear operator of left (right) multiplication by $a\in\mathbb{C}\otimes\mathbb{O}$: $$\begin{eqnarray}
+    L_a[x]=ax,\quad R_a[x]=xa,\quad \forall a,x\in  \mathbb{C}\otimes\mathbb{O}.
+\end{eqnarray}$$ Then $$\begin{eqnarray}
+    L_aL_b[x]&=&a(bx) \quad \neq \quad L_{ab}[x]=(ab)x,\\
+    R_aR_b[x]&=&(xb)a \quad \neq \quad R_{ab}[x]=x(ab).
+\end{eqnarray}$$ The mappings $a\rightarrow L_a$ and $a\rightarrow R_a$ do not correspond to algebra homomorphisms as they each generate an associative algebra called the *associative multiplication algebra*[^2]. They do however preserve the quadratic relations $\langle x,y\rangle=\frac{1}{2}(x\overline{y}+y\overline{x})$ where $x,y\in \mathbb{C}\otimes\mathbb{O}$ $$\begin{eqnarray}
+    L_xL_{\overline{y}}1+L_yL_{\overline{x}}1=2\langle x,y \rangle 1=R_xR_{\overline{y}}1+R_yR_{\overline{x}}1.
+\end{eqnarray}$$
+
+Since $L_a$ ($R_a$) correspond to linear operators, they can be represented as $8\times 8$ complex matrices (acting on the vector space $\mathbb{C}\otimes\mathbb{O}$ written as a column vector).
+
+For $\mathbb{C}\otimes\mathbb{O}$, one finds the following identities [@dixon2013division; @furey2016standard]: $$\begin{eqnarray}
+    L_{i_1}L_{i_2}L_{i_3}L_{i_4}L_{i_5}L_{i_6}x&=&L_{i_7}x,\\
+    ...L_{i_b}L_{i_a}L_{i_a}L_{i_c}....x&=&-...L_{i_b}L_{i_c}....x,\\
+    ...L_{i_a}L_{i_b}...x&=&-...L_{i_b}L_{i_a}...,
+\end{eqnarray}$$ where $a,b,c=1,...,7$.
+
+Due to the nonassociativity of $\mathbb{O}$, the left (right) associative multiplication algebra of $\mathbb{C}\otimes\mathbb{O}$ contains genuinely new maps which are not captured by $\mathbb{C}\otimes\mathbb{O}$. For example, $i_3(i_4(i_6+i_2))\neq y(i_6+i_2)$ for any $y\in\mathbb{C}\otimes\mathbb{O}$. There are a total of 64 distinct left-acting complex-linear maps from $\mathbb{C}\otimes\mathbb{O}$ to itself, and these (due to the given identities above) provide a faithful representation of $\mathbb{C}\ell(6)$.
+
+Denoting the 64-dimensional left (right) associative multiplication algebra generated from left (right) actions of $\mathbb{C}\otimes\mathbb{O}$ on itself by $(\mathbb{C}\otimes\mathbb{O})_L$ ($(\mathbb{C}\otimes\mathbb{O})_R$), one finds that any left (right) action can always be rewritten as a right (left) action [@dixon2013division]. That is: $$\begin{eqnarray}
+(\mathbb{C}\otimes\mathbb{O})_L\cong (\mathbb{C}\otimes\mathbb{O})_R\cong \mathbb{C}\ell(6).
+\end{eqnarray}$$ This is in contrast to a similar construction for $\mathbb{C}\otimes\mathbb{H}$, where one finds that the left and right actions are genuinely distinct, each generating a copy of $\mathbb{C}\ell(2)$. The left and right adjoint actions in this case commute, and only by considering both does one obtain a basis for $Mat(4,\mathbb{C})\cong\mathbb{C}\ell(4)$.
+
+[^1]: There are different multiplication rules for $\mathbb{O}$ used by different authors in the literature. Here we follow the multiplication table used in [@lohmus1994nonassociative]
+
+[^2]: We will henceforth refer to this algebra simply as the left action algebra or left multiplication algebra

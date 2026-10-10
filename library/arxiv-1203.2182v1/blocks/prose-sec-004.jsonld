@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1203.2182v1/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1203.2182v1/blocks/prose-sec-004",
   "kind": "prose",
   "title": "Faculty of Physics, University of Warsaw, ul. Ho˙ za 69, 00-6 81 Warsaw, Poland",
   "pageStart": 1,
   "pageEnd": 1,
   "text": "../sections/sec-004-5-faculty-of-physics-university-of-warsaw-ul-ho.md",
-  "derivedFrom": "library/arxiv-1203.2182v1/manifest",
-  "sourceDocument": "library/arxiv-1203.2182v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1203.2182v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1203.2182v1/manifest.jsonld",
   "provenance": "ingested"
 }

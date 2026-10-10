@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2104.04941v2/blocks/prose-sec-021",
+  "kind": "prose",
+  "title": "The map M",
+  "pageStart": 29,
+  "pageEnd": 33,
+  "text": "../sections/sec-021-56-the-map-m.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2104.04941v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2104.04941v2/manifest.jsonld",
+  "provenance": "ingested"
+}

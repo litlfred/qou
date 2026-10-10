@@ -1,0 +1,177 @@
+\subsection{%Key-estimate of \texorpdfstring{$\Gamma$}{Gamma}:
+Proof of Lemma~\ref{la:T2est}}
+Let
+\[
+ F(u) := \sabs{\lapv {\solnt'}(u)}.
+\]
+Since $g',\lapv g'\in L^2$, we obtain
+\begin{align*}
+ &{\solnt}'(x)-{\solnt}'(y) = \lapmv (\lapv {\solnt}')(x)-\lapmv (\lapv {\solnt}'(y)) \\
+ &= c_{\frac12}\br{\int \sabs{x-\xi}^{-1+\fracm{2}}\ \lapv {\solnt}'(\xi)\ d\xi-\int \sabs{y-\xi}^{-1+\fracm{2}}\ \lapv {\solnt}'(\xi)\ d\xi},
+\end{align*}
+then
+\[
+ \sabs{{\solnt}'(x)-{\solnt}'(y)} \aleq \intl_{\R} \sabs{\sabs{\xi-x}^{-1+\frac{1}{2}}-\sabs{\xi-y}^{-1+\frac{1}{2}}}\ {F(\xi)}\ d\xi,
+\]
+and hence
+\[
+ \Gamma(u) \aleq \intl_{(-1,1)^3}\ \intl_{\R^3} \intl_{-1/4}^{1/4} {F(\xi_1)}\ {F(\xi_2)}\ {F(\xi_3)}\ k(\xi,u,s,w)
+\ dw\ d\xi\ ds, 
+\]
+where for almost every $s = (s_1,s_2,s_3) \in (-1,1)^3$, $\xi = (\xi_1,\xi_2,\xi_3) \in \R^3$, $w \in \R$, $u \in \R$,
+\begin{align}\label{eq:k}
+ k(\xi,u,s,w) 
+&= \frac{
+m\brac{\xi_1-u,0,s_1,w}\ 
+m\brac{\xi_2-u,s_2,s_3,w}\ 
+m\brac{\xi_3-u,s_2,s_3,w}\ 
+} {\sabs{w}^{2}}
+\end{align}
+and
+\[
+m(a,s,t,w) := \sabs{\sabs{a+sw}^{-\frac{1}{2}}-\sabs{a+tw}^{-\frac{1}{2}}}.
+\]
+The characteristic behavior of $k$ is as follows:
+The factors $m(\cdot,\cdot,\cdot,w)$ will behave like $\abs w^\delta$ in a neighborhood of $w=0$
+such that they somewhat absorb the singular behaviour of $\abs{w}^{-2}$, that is, $k$ becomes integrable around $w=0$. This is an effect very similar to the behaviour of $H_{s}(\cdot,\cdot)$, see Lemma~\ref{lem:EstimateForH12s}, as developed in \cite{SchikorraIntBoundFrac11}.
+
+More precisely, we will derive the estimate
+\begin{subequations}\label{eq:k-est}
+\begin{align}
+ &\int_{[-1,1]^3} {k(\xi,u,s,w)}\d s \nonumber\\
+ &\aleq \abs w^{3\delta-2}\sabs{\xi_1-u}^{-1/2-\delta}
+        \sum_{\br{\s(2),s(3)}\in\set{(2,3),(3,2)}}\sabs{\xi_{\sigma(2)}-u}^{-1/2-\delta}\int_{-1}^1\sabs{\xi_{\sigma(3)}-u+tw}^{-1/2-\delta}\d t
+        \label{eq:typI}\\
+ &\quad{}+\abs w^{3\delta-2}\sabs{\xi_1-u}^{-1/2-\delta}
+        \int_{-1}^1\sabs{\xi_{2}-u+tw}^{-1/2-\delta}\sabs{\xi_{3}-u+tw}^{-1/2-\delta}\d t.
+        \label{eq:typII}
+\end{align}
+\end{subequations}
+We start with some abstract treatment of $m$.
+% In case~1,
+% \begin{equation}\label{eq:est:chi1}
+%  \max\br{\sabs{a+sw},\sabs{a+tw}}\ge2\sabs{s-t}\abs w,
+% \end{equation}
+\setlength{\multlinegap}{0ex}%
+\begin{multline}\label{eq:est:chi1}
+ \text{In \textbf{case~1},}\hfill
+ \max\br{\sabs{a+sw},\sabs{a+tw}}\ge2\sabs{s-t}\abs w,\hfill
+\end{multline}
+we obtain
+\begin{equation}\label{eq:est:chi1apsweqaptw}
+ \sabs{a+sw} \aeq \sabs{a+tw}.
+\end{equation}
+Applying the mean value theorem, for any $\delta\in(0,1)$ we arrive at
+\begin{align}
+  m(a,s,t,w)
+  &\aleq \max\br{\sabs{a+sw}^{-3/2},\sabs{a+tw}^{-3/2}}\sabs{s-t}\sabs{w} \nonumber\\
+  &\aleq \max\br{\sabs{a+sw}^{-1/2-\delta},\sabs{a+tw}^{-1/2-\delta}}\max\br{\sabs{a+sw}^{-1+\delta},\sabs{a+tw}^{-1+\delta}}\sabs{s-t}\sabs{w} \nonumber\\
+  &\refeq[\aleq]{est:chi1}\max\br{\sabs{a+sw}^{-1/2-\delta},\sabs{a+tw}^{-1/2-\delta}}\underbrace{\sabs{s-t}^\delta}_{\le2^\delta}\sabs{w}^\delta \nonumber\\
+  &\refeq[\aleq]{est:chi1apsweqaptw}\min\br{\sabs{a+sw}^{-1/2-\delta},\sabs{a+tw}^{-1/2-\delta}}\sabs{w}^\delta. \label{eq:est:chi1roughest}
+\end{align}
+% In case~2,
+% \begin{equation}\label{eq:est:chi2}
+%  \max\br{\sabs{a+sw},\sabs{a+tw}}\le2\sabs{s-t}\abs w,
+% \end{equation}
+\begin{multline}\label{eq:est:chi2}
+ \text{In \textbf{case~2},}\hfill
+ \max\br{\sabs{a+sw},\sabs{a+tw}}\le2\sabs{s-t}\abs w,\hfill
+\end{multline}
+we immediately obtain
+\begin{align}
+  m(a,s,t,w)
+  &\aleq \max\br{\sabs{a+sw}^{-1/2},\sabs{a+tw}^{-1/2}} \nonumber\\
+  &\aleq \max\br{\sabs{a+sw}^{-1/2-\delta},\sabs{a+tw}^{-1/2-\delta}}\underbrace{\sabs{s-t}^\delta}_{\le2^\delta}\sabs{w}^\delta. \label{eq:est:chi2roughest}
+\end{align}
+% As a first result we note
+% \begin{equation}\label{eq:k-1}
+% \begin{split}
+%  &\int_{[-1,1]^3} {k(\xi,u,s,w)}\d s \\
+%  &\aleq \abs w^{3\delta-2}\sum_{\mu_i\in\set{\min,\max}}
+%  \int_{-1}^1\mu_1\br{\sabs{\xi_1-u}^{-1/2-\delta},\sabs{\xi_1-u+s_1w}^{-1/2-\delta}}\d s_1 \cdot \\
+%  &\qquad\qquad{}\cdot\iint_{[-1,1]^2}\mu_2\br{\sabs{\xi_1-u+s_2w}^{-1/2-\delta},\sabs{\xi_1-u+s_3w}^{-1/2-\delta}} \cdot \\
+%  &\qquad\qquad\qquad{}\cdot\mu_3\br{\sabs{\xi_1-u+s_2w}^{-1/2-\delta},\sabs{\xi_1-u+s_3w}^{-1/2-\delta}}\d s_2\d s_3
+%  \end{split}
+% \end{equation}
+% where $\mu_i$ has to be taken accordingly to the respective case.
+We begin with the first factor in~\eqref{eq:k}. In case~1 we always have
+\begin{equation}\label{eq:x11}
+ m(\xi_1-u,0,s_1,w) \aleq \sabs{\xi_1-u}^{-1/2-\delta}\abs w^\delta.
+\end{equation}
+In case~2 we have either $\sabs{\xi_1-u+s_1w}\ge\tfrac12\sabs{\xi_1-u}$ which immediately results in~\eqref{eq:x11}
+or the opposite
+\begin{equation}\label{eq:x11a}
+ \sabs{\xi_1-u+s_1w}\le\tfrac12\sabs{\xi_1-u}
+\end{equation}
+which leads to
+\begin{equation}\label{eq:est:intlchi12ds}
+ \begin{split}
+  \int_{-1}^1 \chi_{\sabs{\xi_1-u+s_1w}\le\sabs{\xi_1-u}}m(\xi_1-u,0,s_1,w)\d s_1
+  &\aleq \abs w^\delta \int_{\sabs{\xi_1-u+s_1w}\le\sabs{\xi_1-u}} \sabs{\xi_1-u+s_1w}^{-1/2-\delta}\d s_1 \\
+  &\aleq \abs {w}^{\delta-1} \int_{\sabs{\sigma}\le\sabs{\xi_1-u}} \sabs{\sigma}^{-1/2-\delta}\d\sigma 
+  \aleq \abs {w}^{\delta-1} \sabs{\xi_1-u}^{1/2-\delta} \\
+  &\refeq[\aleq]{est:chi12aleqw} \sabs{\xi_1-u}^{-1/2-\delta}\abs {w}^\delta,\qquad\text{for }\delta\in(0,\tfrac12).
+ \end{split}
+\end{equation}
+Here we made use of the fact that, given case~2 for $a:=\xi_1-u$ and~\eqref{eq:x11a},
+\begin{align*}
+ \sabs{a} &\leq \min \br{\sabs{a+sw} + \sabs{s}\sabs{w}, \sabs{a+tw} + \sabs{t}\sabs{w}}
+ \leq \min \br{\sabs{a+sw}, \sabs{a+tw} }+\sabs{w}\\
+ &\refeq[\leq]{x11a} \;\tfrac12{\sabs{a}}+\sabs{w},
+\end{align*}
+%which
+implies
+\begin{equation}\label{eq:est:chi12aleqw}
+ \sabs{a} \leq  2\sabs{w}.
+\end{equation}
+Applying~\eqref{eq:est:chi1roughest} and~\eqref{eq:est:chi2roughest}, we arrive at
+\begin{equation}\label{eq:k-1}
+ \begin{split}
+ &\int_{[-1,1]^3} {k(\xi,u,s,w)}\d s\\
+ &\aleq \abs w^{\delta-2}\sabs{\xi_1-u}^{-1/2-\delta}\iint_{[-1,1]^2}m(\xi_2-u,s_2,s_3,w)m(\xi_3-u,s_2,s_3,w)\d s_2\d s_3 \\
+ &\aleq \abs w^{3\delta-2}\sabs{\xi_1-u}^{-1/2-\delta}%\sum_{\mu_2,\mu_3\in\set{\min,\max}}
+  \iint_{[-1,1]^2}\mu_2\br{\sabs{\xi_2-u+s_2w}^{-1/2-\delta},\sabs{\xi_2-u+s_3w}^{-1/2-\delta}} \cdot \\
+ &\qquad\qquad\qquad\qquad\qquad\qquad{}\cdot\mu_3\br{\sabs{\xi_3-u+s_2w}^{-1/2-\delta},\sabs{\xi_3-u+s_3w}^{-1/2-\delta}}\d s_2\d s_3
+ \end{split}
+\end{equation}
+where
+\[ \mu_i=\mu_i\br{\xi_i-u,s_2,s_3,w}\in\set{\min,\max}, \qquad i=2,3, \]
+depending on the respective case.
+If case~1 holds for at least one of the two factors in the integrand, say the first one, we may choose the argument of
+\[ \mu_2\br{\sabs{\xi_2-u+s_2w}^{-1/2-\delta},\sabs{\xi_2-u+s_3w}^{-1/2-\delta}}\]
+which contains the same integration variable
+as the second one. This results in terms of type~\eqref{eq:typII}.
+If, however, case~2 applies to both factors, the integral in~\eqref{eq:k-1} is bounded by
+\begin{align*}
+ &\iint_{[-1,1]^2}\br{\sabs{\xi_2-u+s_2w}^{-1/2-\delta}+\sabs{\xi_2-u+s_3w}^{-1/2-\delta}}\cdot\\
+ &\qquad\quad{}\cdot\br{\sabs{\xi_3-u+s_2w}^{-1/2-\delta}+\sabs{\xi_3-u+s_3w}^{-1/2-\delta}}\d s_2\d s_3.
+\end{align*}
+Expanding the integrand, the terms
+$\sabs{\xi_2-u+s_iw}^{-1/2-\delta}\sabs{\xi_3-u+s_iw}^{-1/2-\delta}$, $i=2,3$, lead us to~\eqref{eq:typII}.
+For the two remaining terms we may separate the integrals which gives
+\[ \sum_{\br{\s(2),s(3)}\in\set{(2,3),(3,2)}}
+   \int_{-1}^1\sabs{\xi_{\sigma(2)}-u+s_2w}^{-1/2-\delta}\d s_2
+   \int_{-1}^1\sabs{\xi_{\sigma(3)}-u+s_3w}^{-1/2-\delta}\d s_3. \]
+One integral is kept in order to arrive at~\eqref{eq:typI}, the other one is treated analogously to~\eqref{eq:x11a} and~\eqref{eq:est:intlchi12ds}.
+In order to estimate $\Gamma(u)$,
+we obtain thus for $\delta_{1},\delta_{2} \in (0,\frac{1}{2})$
+\[
+\begin{ma}
+ &&\intl_{\R^3}\ \intl_{(-1,1)^3} F(\xi_1)\ F(\xi_2)\ F(\xi_3)\ {k(\xi,u,s,w)}\d s \d\xi\\
+&\aeq& \intl_{-1}^1 \sabs{w}^{-1+(3\delta-1)} \sabs{\lapms{\frac{1-2\delta}{2}} {F}(u)}^2\ \lapms{\frac{1-2\delta}{2}} {F}(u-tw)\d t\\
+&&+ \intl_{-1}^1 \sabs{w}^{-1+(3\delta-1)} \lapms{\frac{1-2\delta}{2}} {F}(u)\ \sabs{\lapms{\frac{1-2\delta}{2}} {F}(u-tw)}^2\d t,
+\end{ma}
+\]
+which implies
+\[
+\begin{ma}
+\Gamma(u) &\aleq&  \intl_{-1}^1 \intl_{\tilde{w}} t^{2-3\delta}\ \sabs{\tilde{w}}^{-1+(3\delta-1)} \sabs{\lapms{\frac{1-2\delta}{2}} {F}(u)}^2\ \lapms{\frac{1-2\delta}{2}} {F}(u-\tilde{w})\  t^{-1} \d\tilde{w}\d t\\
+&& + \intl_{-1}^1 \intl_{\tilde{w}}t^{2-3\delta}\ \sabs{\tilde{w}}^{-1+(3\delta-1)} \lapms{\frac{1-2\delta}{2}} {F}(u)\ \sabs{\lapms{\frac{1-2\delta}{2}} {F}(u-\tilde{w})}^2\ t^{-1} \d\tilde{w}\d t\\
+
+&\overset{\delta \in(\frac13, \frac{1}{2})}{\aeq}& \intl_{w} \sabs{w}^{-1+(3\delta-1)} \sabs{\lapms{\frac{1-2\delta}{2}} {F}(u)}^2\ \lapms{\frac{1-2\delta}{2}} {F}(u-w)\d w\\
+&& + \intl_{w} \sabs{w}^{-1+(3\delta-1)} \lapms{\frac{1-2\delta}{2}} {F}(u)\ \sabs{\lapms{\frac{1-2\delta}{2}} {F}(u-w)}^2\d w\\
+
+&\aeq&  \sabs{\lapms{\frac{1-2\delta}{2}} {F}(u)}^2\ \lapmsv{4\delta-1}{F}(u)+\lapms{\frac{1-2\delta}{2}} {F}(u)\ \lapms{3\delta-1}\sabs{\lapms{\frac{1-2\delta}{2}} {F}(u)}^2.
+\end{ma}
+\]
+Setting $\delta := \frac{5}{12}$, this is \eqref{eq:Gammauest}.

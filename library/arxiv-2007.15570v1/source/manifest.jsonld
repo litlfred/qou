@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2007.15570v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2007.15570v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2007.15570v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2007.15570&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2007.15570v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2007.15570v1",
+    "content_type": "application/gzip",
+    "sha256": "e9568dd24292556be82e33155d165e30a645e4ceb4f4a826cede124d1514bd18",
+    "bytes": 237180,
+    "fetched": "2026-10-10T15:15:27+00:00",
+    "files": [
+      {
+        "path": "source/files/biblio.bib",
+        "role": "bib",
+        "sha256": "0ab10a04c90de07a28cce2da0454f390fcb382c4064f7c8483da84e702518044",
+        "bytes": 37402
+      },
+      {
+        "path": "source/files/main.bbl",
+        "role": "bbl",
+        "sha256": "e5373ff280bf65b2107e54bd8ca5f356316aecf06d71b670e7b5f3054fc9e3be",
+        "bytes": 57738
+      },
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "0aafb1424cd1b85a9e4b2c43ab45dee1e8a24c0c431711907917d9a2571a1297",
+        "bytes": 56872
+      },
+      {
+        "path": "source/files/tikz/Algorithm.tex",
+        "role": "tex",
+        "sha256": "f7434c098f5d0796132f06f300ec4b2991e45e1c02dd6498fe5a39d4dfb24819",
+        "bytes": 2799
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

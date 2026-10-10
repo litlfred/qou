@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1002.4860v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1002.4860v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1002.4860v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1002.4860&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1002.4860v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1002.4860v2",
+    "content_type": "application/gzip",
+    "sha256": "348006bd7b07ae62a02c3c6c2fde5cb414fcf5646145861b5319637bd7b1d7ce",
+    "bytes": 8055,
+    "fetched": "2026-10-10T15:03:05+00:00",
+    "files": [
+      {
+        "path": "source/files/statesumnew.bbl",
+        "role": "bbl",
+        "sha256": "24efc387288f23ff51cf51cb48882eb9c034c783cf8c95868ecfaecaf9d3af25",
+        "bytes": 1914
+      },
+      {
+        "path": "source/files/statesumnew.tex",
+        "role": "tex",
+        "sha256": "a358210b4cfcca722099d5ac05168012ae745753a032a3f1a43aeb648b0cb6ea",
+        "bytes": 22250
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

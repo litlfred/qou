@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1109.1919v3/blocks/theorem-sec-002-01",
+  "kind": "theorem",
+  "title": "Equivalence",
+  "pageStart": 5,
+  "pageEnd": 10,
+  "text": "theorem-sec-002-01.md",
+  "derivedFrom": "library/arxiv-1109.1919v3/sections/sec-002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1109.1919v3/manifest.jsonld",
+  "provenance": "ingested"
+}

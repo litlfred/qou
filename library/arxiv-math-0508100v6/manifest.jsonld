@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0508100v6/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "ASYMPTOTICS OF THE COLORED JONES FUNCTION OF A KNOT",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0508100v6/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0508100v6",
   "contains": [
     "library/arxiv-math-0508100v6/sections/sec-000",
     "library/arxiv-math-0508100v6/sections/sec-001",
@@ -46,8 +51,17 @@
     "library/arxiv-math-0508100v6/sections/sec-037"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0508100&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-math-0508100v6",
+    "title_source": "slug",
     "source_file": "0508100v6.pdf",
     "source_sha256": "9cc100a86b40c33640dfebb0d0e308915f4e2e3beca48ea77992d02602e255f1",
     "pages": 31,

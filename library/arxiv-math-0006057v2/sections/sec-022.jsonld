@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0006057v2/sections/sec-022",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Deﬁnition of Rep (H). For a quantum groupoid H let Rep(H) be the cat-",
+  "pageStart": 14,
+  "pageEnd": 16,
+  "contains": [
+    "library/arxiv-math-0006057v2/blocks/prose-sec-022",
+    "library/arxiv-math-0006057v2/blocks/lemma-sec-022-01",
+    "library/arxiv-math-0006057v2/blocks/proposition-sec-022-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "provenance": "ingested"
+}

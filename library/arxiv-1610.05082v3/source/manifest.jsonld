@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.05082v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1610.05082v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.05082v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1610.05082&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1610.05082v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1610.05082v3",
+    "content_type": "application/gzip",
+    "sha256": "6696cf60ac2930e80af3eb32b16a5ce375e8fe3822100c5517c3c46749d84411",
+    "bytes": 94524,
+    "fetched": "2026-10-10T15:11:31+00:00",
+    "files": [
+      {
+        "path": "source/files/ising.bbl",
+        "role": "bbl",
+        "sha256": "a77acab68240e7143449da6109041343564cdf038d4ea2007a24ea5fe7e67f42",
+        "bytes": 6000
+      },
+      {
+        "path": "source/files/ising.tex",
+        "role": "tex",
+        "sha256": "e6bd3f91304e33feeaf8b2b803b8d7e8bca729c9c2ceaf0291a97c5ac4d042e5",
+        "bytes": 90383
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

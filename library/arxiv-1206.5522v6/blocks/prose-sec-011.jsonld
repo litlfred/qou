@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1206.5522v6/blocks/prose-sec-011",
+  "kind": "prose",
+  "title": "Commutative algebras, free algebras, and Lie algebras",
+  "pageStart": 28,
+  "pageEnd": 36,
+  "text": "../sections/sec-011-5-commutative-algebras-free-algebras-and-lie-alg.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1206.5522v6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1206.5522v6/manifest.jsonld",
+  "provenance": "ingested"
+}

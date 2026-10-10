@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1109.3255v2/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1109.3255v2/blocks/prose-sec-005",
   "kind": "prose",
   "title": "The topology of the map W",
   "pageStart": 16,
   "pageEnd": 19,
   "text": "../sections/sec-005-22-the-topology-of-the-map-w.md",
-  "derivedFrom": "library/arxiv-1109.3255v2/manifest",
-  "sourceDocument": "library/arxiv-1109.3255v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1109.3255v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1109.3255v2/manifest.jsonld",
   "provenance": "ingested"
 }

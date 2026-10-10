@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1303.5278v1/blocks/prose-sec-016",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1303.5278v1/blocks/prose-sec-016",
   "kind": "prose",
   "title": "Regular triangulations",
   "pageStart": 34,
   "pageEnd": 41,
   "text": "../sections/sec-016-62-regular-triangulations.md",
-  "derivedFrom": "library/arxiv-1303.5278v1/manifest",
-  "sourceDocument": "library/arxiv-1303.5278v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1303.5278v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1303.5278v1/manifest.jsonld",
   "provenance": "ingested"
 }

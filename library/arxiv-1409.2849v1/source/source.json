@@ -1,0 +1,21 @@
+{
+ "url": "https://arxiv.org/e-print/1409.2849v1",
+ "content_type": "application/gzip",
+ "sha256": "edbf5374eee8623f868218ef6c85ed25405025e86e7f1da3d8c9ebcd3a7e1596",
+ "bytes": 658737,
+ "fetched": "2026-10-10T15:09:38+00:00",
+ "files": [
+  {
+   "path": "files/ising_arxiv.bbl",
+   "role": "bbl",
+   "sha256": "8997f4bd3cfd144894bd1bfead3226c823705776aa7774906da8e6fb98f5c38e",
+   "bytes": 3759
+  },
+  {
+   "path": "files/ising_arxiv.tex",
+   "role": "tex",
+   "sha256": "67384a0d3264282d666f534f5094777b16f2e1996b6eb9a390fcb02e6e69bd76",
+   "bytes": 124469
+  }
+ ]
+}

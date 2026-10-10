@@ -7,238 +7,111 @@ section_number: 3
 pages: 9-13
 source_pdf: 0503227v2.pdf
 source_sha256: 4e83adfdef827103
+text_source: latex
+latex_prose_ratio: 0.982
+latex_coverage_ratio: 1.0
 doc_brief: "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios By Jason Fulman — Bolthausen used a variation of Stein’s method to give an"
 ---
-For α > 0 the Jack α measure on partitions of size n chooses a partition λ
-with probability
-α nn!
-∏
-x∈λ (αa (x) + l(x) + 1)(αa (x) + l(x) + α ) ,
-where the product is over all boxes in the partition. Here a(x) denotes the
-number of boxes in the same row of x and to the right of x (the “arm” of x)
-10
-and l(x) denotes the number of boxes in the same column of x and below x
-(the “leg” of x). For example the partition of 5 below
-would have Jack α measure
-30α 2
-(3α + 1)(α + 2)(2α + 1)(α + 1)2 .
-Note that when α = 1, Jack measure reduces to Plancherel measure of
-the symmetric group. The papers [O2], [BO] emphasize that fo r α ﬁxed
-the study of Jack α measure is an important open problem, about which
-relatively little is known for general values of α . It is a discrete analog of
-eigenvalue ensembles from random matrix theory and like Jac k polynomials
-[GHJ], should also be relevant to the moduli space of curves.
-Given α > 0, the quantity to be studied is
-Tn,α (λ) =
-∑
-i(α
-( λ i
-2
-)
-−
-( λ ′
-i
-2
-)
-)
-√
-α
-( n
-2
-) ,
-where as usual λ i is the length of the ith row of λ and λ ′
-i is the length of
-the ith column of λ. It is of interest to study the quantity Tn,α (λ) under
-Jack measure for several reasons. When α = 1 it reduces to the study of the
-character ratio of transpositions under Plancherel measur e. When α = 2
-it is a spherical function of the Gelfand pair ( S2n, H 2n) where H2n is the
-hyperoctahedral group of size 2 nn!. Also by Corollary 1 of [DHol], there
-is a natural random walk on perfect matchings of the complete graph on n
-vertices, whose eigenvalues are precisely Tn, 2(λ )
-√
-n(n−1) , occurring with multiplicity
-proportional to the Jack 2 measure of λ.
-The paper [F2] used the “exchangeable pairs” version of Stei n’s method
-to prove a central limit theorem for Tn,α with error term Cα n−1/ 4 where Cα
-is a constant depending on α . This was sharpened in [F3] using martingales
-to Cα,s n−s for any s < 1
-2 .
-The main result of this section is Theorem 3.1.
-Theorem 3.1. Suppose that α ≥ 1 and let λ be chosen from the Jack α
-measure on partitions of size n. Then there is a constant Cα depending on
-α so that for all n ≥ 2 and real x0,
-⏐
-⏐
-⏐
-⏐P (Tn,α (λ) ≤ x0) − 1
-√
-2π
-∫ x0
-−∞
-e− t2
-2 dt
-⏐
-⏐
-⏐
-⏐ ≤ Cα n−1/ 2.
-Note that in Theorem 3.1 we suppose that α ≥ 1 since the Jack α proba-
-bility of λ is equal to the Jack 1
-α
-probability of the transpose of λ, implying
-that for any x, the Jack α probability that Tn,α = x is equal to the Jack 1
-α
-probability that Tn, 1
-α
-= −x. Also note that Cα must depend on α , since by
-11
-Corollary 5.3 of [F2], the random variable Tn,α has mean 0, variance 1, and
-third moment α −1√
-α (n
-2) .
-There is no need to write out a proof of Theorem 3.1, which uses exactly
-the same logic as that of Theorem 2.5. But it is necessary to gi ve analogs of
-Lemmas 2.1, 2.2, 2.3, and 2.4, and we do that. The concentrati on inequality
-needed for Xn,α is Lemma 6.6 of [F2] and can be used to give another proof
-of some results in this section.
-There is an α -analog of Kerov’s growth process (due to Kerov [K4]) giving
-a sequence of partitions ( λ(1), · · · , λ (n)) with λ(j) distributed according to
-the Jackα measure on partitions of size j; see [F3] for details. Moreover from
-the deﬁnition of Tn,α , it follows that
-Tn,α = 1√
-α
-( n
-2
-) (X1,α + · · · + Xn,α ).
-Here X1,α = 0 and if j ≥ 2 then Xj,α = cα (x) where x is the box added to
-λ(j − 1) to obtain λ(j) and the “ α -content” cα (x) of a box x is deﬁned to
-be α (column number of x-1) - (row number of x-1).
-Lemma 3.2 is an analog of Lemma 2.1 and is generalized in [F3] t o arbi-
-trary spherical functions of the Gelfand pair ( S2n, H 2n).
-Lemma 3.2. ([F3])
-(1) E(Xj,α |λ(j − 1)) = 0 for 2 ≤ j ≤ n and all partitions λ(j − 1).
-(2) E(Xj,α |Tn,α ) = (j−1)√α√
-(n
-2) Tn,α for all 1 ≤ j ≤ n.
-(3) E(X 2
-j,α ) = α (j − 1).
-(4) E(T 2
-n,α ) = 1 .
-Lemma 3.3 is the α version of Lemma 2.2.
-Lemma 3.3. Let λ(j − 1) be a partition of size j − 1 ≥ 1.
-(1) ([K4]) E(X 2
-j,α |λ(j − 1)) = α (j − 1).
-(2) ([La])
-E(X 4
-j,α |λ(j − 1)) = α 2
-( j
-2
-)
-+ α (α − 1)2(j − 1) + 3α
-∑
-x∈λ (j−1)
-cα (x)2
-+3α (α − 1)
-∑
-x∈λ (j−1)
-cα (x).
-Lemma 3.4 is the α version of Lemma 2.3. The proof is combinatorial, as
-opposed to the algebraic argument given for Lemma 2.3.
-Lemma 3.4. Consider the Jack α measure on partitions of size n.
-(1) If m ≥ 1 is an integer then
-E
-( ∏
-x∈λ
-(m + cα (x))
-)
-= mn.
-12
-(2) Let er,α (λ) denote the rth elementary symmetric function of the α -
-contents of the boxes of λ. Then E(er,α (λ)) = 0 for 1 ≤ r ≤ n.
-Proof. It suﬃces to prove the ﬁrst assertion since the second assert ion follows
-from the ﬁrst by taking the coeﬃcient of mn−r on both sides. Page 324 of
-[Mac] proves the identity
-∑
-λ
-bλ (q, t )Pλ (y; q, t )Pλ (z; q, t ) = e
-∑
-n≥1( 1
-n
-1−tn
-1−qn pn(y)pn(z))
-where the sum is over all λ of all sizes, Pλ (y; q, t ) denotes a Macdonald
-symmetric function, pn(y) = ∑
-i yn
-i denotes the nth power sum symmetric
-function, and bλ (q, t ) is a number to be discussed more below. We apply the
-homomorphism of the ring of symmetric functions determined by pr(y) ↦→
-mur, pr(z) ↦→l1−r for all r ≥ 1 where m, l are positive integers; this is
-possible since the pr’s are algebraically independent. Then we take the limit
-q = tα , t ↦→1 in which Macdonald polynomials become Jack polynomials.
-With these substitutions, consider the left hand side of the identity. By
-pages 380 and 381 of [Mac],
-bλ (q, t ) ↦→
-∏
-x∈λ
-αa (x) + l(x) + 1
-αa (x) + l(x) + α
-Pλ (y; q, t ) ↦→u|λ |∏
-x∈λ
-m + cα (x)
-αa (x) + l(x) + 1
-Pλ (z; q, t ) ↦→ 1
-l|λ |
-∏
-x∈λ
-l + cα (x)
-αa (x) + l(x) + 1 .
-Letting l → ∞ , one sees that the coeﬃcient of un in the left-hand side of
-the identity is 1
-α nn! E
-( ∏
-x∈λ (m + cα (x))
-)
-.
-Consider the right hand side of the identity with these subst itutions. One
-obtains e
-∑
-n≥1( mun
-nαl n−1 ). Letting l → ∞ , one obtains e
-mu
-α , and taking the
-coeﬃcient of un gives mn
-α nn! . Comparing with the previous paragraph proves
-the ﬁrst assertion of the lemma. □
-Finally, we give the analog of Lemma 2.4.
-Lemma 3.5. Suppose that n ≥ 3. There is a constant Dα such that
-(1) E(|Xn,α |3) ≤ Dα n3/ 2.
-(2) E(|Tn−1,α ||Xn,α |3) ≤ Dα n3/ 2.
-Proof. The proof method is the same as that of Lemma 2.4, using the
-Cauchy-Schwarz inequality in the ﬁrst part and the conditio nal Cauchy-
-Schwarz inequality in the second part. One uses that E(X 2
-n,α |λ(n − 1)) =
-13
-α (n − 1) for all λ(n − 1) (part 1 of Lemma 3.3). Also one needs that
-E(X 4
-n,α ) = α 2
-( n
-2
-)
-+ α (α − 1)2(n − 1) + 3α E
-
- ∑
-x∈λ (n−1)
-cα (x)2
-
-
-= α 2
-( n
-2
-)
-+ 3α 2
-( n − 1
-2
-)
-+ α (α − 1)2(n − 1).
-The ﬁrst equality used part 2 of Lemma 3.3 and the fact that E(Tn−1,α ) =
-0. The second equality used part 4 of Lemma 3.2 and Lemma 3.4 wi th
-r = 2. □
+[]{#jack label="jack"}
+
+For $\alpha>0$ the Jack$_{\alpha}$ measure on partitions of size $n$ chooses a partition $\lambda$ with probability $$\frac{\alpha^n n!}{\prod_{x \in \lambda} (\alpha a(x) + l(x) +1)
+(\alpha a(x) + l(x) + \alpha)},$$ where the product is over all boxes in the partition. Here $a(x)$ denotes the number of boxes in the same row of $x$ and to the right of $x$ (the "arm" of x) and $l(x)$ denotes the number of boxes in the same column of $x$ and below $x$ (the "leg" of x). For example the partition of 5 below $$\begin{array}{c c c} \framebox{\ }& \framebox{\ }& \framebox{\ } \\
+\framebox{\ }& \framebox{\ }& \end{array}$$ would have Jack$_{\alpha}$ measure $$\frac{30 \alpha^2}{(3 \alpha+1) (\alpha+2)(2
+\alpha+1)(\alpha+1)^2}.$$ Note that when $\alpha=1$, Jack measure reduces to Plancherel measure of the symmetric group. The papers [@O2], [@BO1] emphasize that for $\alpha$ fixed the study of Jack$_{\alpha}$ measure is an important open problem, about which relatively little is known for general values of $\alpha$. It is a discrete analog of eigenvalue ensembles from random matrix theory and like Jack polynomials [@GHJ], should also be relevant to the moduli space of curves.
+
+Given $\alpha>0$, the quantity to be studied is $$T_{n,\alpha}(\lambda) = \frac{\sum_i (\alpha {\lambda_i
+    \choose 2} - {\lambda_i' \choose 2})}{\sqrt{ \alpha {n \choose
+    2}}},$$ where as usual $\lambda_i$ is the length of the ith row of $\lambda$ and $\lambda_i'$ is the length of the ith column of $\lambda$. It is of interest to study the quantity $T_{n,\alpha}(\lambda)$ under Jack measure for several reasons. When $\alpha=1$ it reduces to the study of the character ratio of transpositions under Plancherel measure. When $\alpha=2$ it is a spherical function of the Gelfand pair $(S_{2n},H_{2n})$ where $H_{2n}$ is the hyperoctahedral group of size $2^nn!$. Also by Corollary 1 of [@DHol], there is a natural random walk on perfect matchings of the complete graph on $n$ vertices, whose eigenvalues are precisely $\frac{T_{n,2}(\lambda)}{\sqrt{n(n-1)}}$, occurring with multiplicity proportional to the Jack$_2$ measure of $\lambda$.
+
+The paper [@F2] used the "exchangeable pairs" version of Stein's method to prove a central limit theorem for $T_{n,\alpha}$ with error term $C_{\alpha} n^{-1/4}$ where $C_{\alpha}$ is a constant depending on $\alpha$. This was sharpened in [@F3] using martingales to $C_{\alpha,s}
+    n^{-s}$ for any $s<\frac{1}{2}$.
+
+The main result of this section is Theorem [\[main2\]](#main2){reference-type="ref" reference="main2"}.
+
+::: theorem
+[]{#main2 label="main2"} Suppose that $\alpha \geq 1$ and let $\lambda$ be chosen from the Jack$_{\alpha}$ measure on partitions of size $n$. Then there is a constant $C_{\alpha}$ depending on $\alpha$ so that for all $n \geq 2$ and real $x_0$, $$\left| \pp \left( T_{n,\alpha}(\lambda) \leq x_0
+    \right) - \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{x_0} e^{-
+    \frac{t^2}{2}} dt \right| \leq C_{\alpha} n^{-1/2}.$$
+:::
+
+Note that in Theorem [\[main2\]](#main2){reference-type="ref" reference="main2"} we suppose that $\alpha \geq
+    1$ since the Jack$_{\alpha}$ probability of $\lambda$ is equal to the Jack$_{\frac{1}{\alpha}}$ probability of the transpose of $\lambda$, implying that for any $x$, the Jack$_{\alpha}$ probability that $T_{n,\alpha}=x$ is equal to the Jack$_{\frac{1}{\alpha}}$ probability that $T_{n,\frac{1}{\alpha}}=-x$. Also note that $C_{\alpha}$ must depend on $\alpha$, since by Corollary 5.3 of [@F2], the random variable $T_{n,\alpha}$ has mean 0, variance 1, and third moment $\frac{\alpha-1}{\sqrt{\alpha {n \choose 2}}}$.
+
+There is no need to write out a proof of Theorem [\[main2\]](#main2){reference-type="ref" reference="main2"}, which uses exactly the same logic as that of Theorem [\[main1\]](#main1){reference-type="ref" reference="main1"}. But it is necessary to give analogs of Lemmas [\[ismart\]](#ismart){reference-type="ref" reference="ismart"}, [\[moments\]](#moments){reference-type="ref" reference="moments"}, [\[identity\]](#identity){reference-type="ref" reference="identity"}, and [\[boundmom\]](#boundmom){reference-type="ref" reference="boundmom"}, and we do that. The concentration inequality needed for $X_{n,\alpha}$ is Lemma 6.6 of [@F2] and can be used to give another proof of some results in this section.
+
+There is an $\alpha$-analog of Kerov's growth process (due to Kerov [@K4]) giving a sequence of partitions $(\lambda(1),\cdots,\lambda(n))$ with $\lambda(j)$ distributed according to the Jack$_{\alpha}$ measure on partitions of size $j$; see [@F3] for details. Moreover from the definition of $T_{n,\alpha}$, it follows that $$T_{n,\alpha} =
+\frac{1}{\sqrt{\alpha {n \choose 2}}} (X_{1,\alpha} + \cdots +
+X_{n,\alpha}).$$ Here $X_{1,\alpha}=0$ and if $j \geq 2$ then $X_{j,\alpha}=c_{\alpha}(x)$ where $x$ is the box added to $\lambda(j-1)$ to obtain $\lambda(j)$ and the "$\alpha$-content" $c_{\alpha}(x)$ of a box $x$ is defined to be $\alpha$ (column number of x-1) - (row number of x-1).
+
+Lemma [\[ismart2\]](#ismart2){reference-type="ref" reference="ismart2"} is an analog of Lemma [\[ismart\]](#ismart){reference-type="ref" reference="ismart"} and is generalized in [@F3] to arbitrary spherical functions of the Gelfand pair $(S_{2n},H_{2n})$.
+
+::: lemma
+[]{#ismart2 label="ismart2"} ([@F3])
+
+1.  $\ee(X_{j,\alpha}|\lambda(j-1))=0$ for $2 \leq j \leq n$ and all partitions $\lambda(j-1)$.
+
+2.  $\ee(X_{j,\alpha}|T_{n,\alpha})=\frac{(j-1) \sqrt{\alpha}}{\sqrt{ {n \choose 2}}} T_{n,\alpha}$ for all $1 \leq j \leq n$.
+
+3.  $\ee(X_{j,\alpha}^2) = \alpha(j-1)$.
+
+4.  $\ee(T_{n,\alpha}^2) = 1$.
+:::
+
+Lemma [\[moments2\]](#moments2){reference-type="ref" reference="moments2"} is the $\alpha$ version of Lemma [\[moments\]](#moments){reference-type="ref" reference="moments"}.
+
+::: lemma
+[]{#moments2 label="moments2"} Let $\lambda(j-1)$ be a partition of size $j-1 \geq 1$.
+
+1.  ([@K4]) $\ee(X_{j,\alpha}^2|\lambda(j-1))= \alpha(j-1)$.
+
+2.  ([@La]) $$\begin{eqnarray*}
+     \ee(X_{j,\alpha}^4|\lambda(j-1)) & = & \alpha^2 {j \choose 2} + \alpha(\alpha-1)^2(j-1) + 3 \alpha \sum_{x \in \lambda(j-1)} c_{\alpha}(x)^2 \\  & & + 3\alpha(\alpha-1) \sum_{x \in \lambda(j-1)} c_{\alpha}(x).
+    \end{eqnarray*}$$
+:::
+
+Lemma [\[identity2\]](#identity2){reference-type="ref" reference="identity2"} is the $\alpha$ version of Lemma [\[identity\]](#identity){reference-type="ref" reference="identity"}. The proof is combinatorial, as opposed to the algebraic argument given for Lemma [\[identity\]](#identity){reference-type="ref" reference="identity"}.
+
+::: lemma
+[]{#identity2 label="identity2"} Consider the Jack$_{\alpha}$ measure on partitions of size $n$.
+
+1.  If $m \geq 1$ is an integer then $$\ee \left( \prod_{x \in \lambda} (m+c_{\alpha}(x)) \right) = m^n.$$
+
+2.  Let $e_{r,\alpha}(\lambda)$ denote the $r$th elementary symmetric function of the $\alpha$-contents of the boxes of $\lambda$. Then $\ee(e_{r,\alpha}(\lambda))=0$ for $1 \leq r \leq n$.
+:::
+
+::: proof
+*Proof.* It suffices to prove the first assertion since the second assertion follows from the first by taking the coefficient of $m^{n-r}$ on both sides. Page 324 of [@Mac] proves the identity $$\sum_{\lambda}
+ b_{\lambda}(q,t) P_{\lambda}(y;q,t) P_{\lambda}(z;q,t) = e^{ \sum_{n
+ \geq 1} ( \frac{1}{n} \frac{1-t^n}{1-q^n} p_n(y) p_n(z))}$$ where the sum is over all $\lambda$ of all sizes, $P_{\lambda}(y;q,t)$ denotes a Macdonald symmetric function, $p_n(y) = \sum_i y_i^n$ denotes the nth power sum symmetric function, and $b_{\lambda}(q,t)$ is a number to be discussed more below. We apply the homomorphism of the ring of symmetric functions determined by $p_r(y) \mapsto mu^r$, $p_r(z)
+ \mapsto l^{1-r}$ for all $r \geq 1$ where $m,l$ are positive integers; this is possible since the $p_r$'s are algebraically independent. Then we take the limit $q=t^{\alpha},t \mapsto 1$ in which Macdonald polynomials become Jack polynomials.
+
+With these substitutions, consider the left hand side of the identity. By pages 380 and 381 of [@Mac], $$b_{\lambda}(q,t) \mapsto \prod_{x \in \lambda} \frac{\alpha
+        a(x) + l(x)+1}{\alpha a(x) + l(x) + \alpha}$$ $$P_{\lambda}(y;q,t) \mapsto u^{|\lambda|} \prod_{x \in
+        \lambda} \frac{m+c_{\alpha}(x)}{\alpha a(x) + l(x)+1}$$ $$P_{\lambda}(z;q,t) \mapsto \frac{1}{l^{|\lambda|}} \prod_{x
+        \in \lambda} \frac{l+c_{\alpha}(x)}{\alpha a(x) + l(x)
+        +1}.$$ Letting $l \rightarrow \infty$, one sees that the coefficient of $u^n$ in the left-hand side of the identity is $\frac{1}{\alpha^n n!} \ee \left( \prod_{x \in \lambda}
+        (m+c_{\alpha}(x)) \right)$.
+
+Consider the right hand side of the identity with these substitutions. One obtains $e^{\sum_{n \geq 1}
+        (\frac{mu^n}{n \alpha l^{n-1}})}$. Letting $l \rightarrow \infty$, one obtains $e^{\frac{mu}{\alpha}}$, and taking the coefficient of $u^n$ gives $\frac{m^n}{\alpha^n
+        n!}$. Comparing with the previous paragraph proves the first assertion of the lemma. ◻
+:::
+
+Finally, we give the analog of Lemma [\[boundmom\]](#boundmom){reference-type="ref" reference="boundmom"}.
+
+::: lemma
+[]{#boundmom2 label="boundmom2"} Suppose that $n \geq 3$. There is a constant $D_{\alpha}$ such that
+
+1.  $\ee(|X_{n,\alpha}|^3) \leq D_{\alpha} n^{3/2}$.
+
+2.  $\ee(|T_{n-1,\alpha}||X_{n,\alpha}|^3) \leq D_{\alpha} n^{3/2}$.
+:::
+
+::: proof
+*Proof.* The proof method is the same as that of Lemma [\[boundmom\]](#boundmom){reference-type="ref" reference="boundmom"}, using the Cauchy-Schwarz inequality in the first part and the conditional Cauchy-Schwarz inequality in the second part. One uses that $\ee (X_{n,\alpha}^2|\lambda(n-1))=\alpha(n-1)$ for all $\lambda(n-1)$ (part 1 of Lemma [\[moments2\]](#moments2){reference-type="ref" reference="moments2"}). Also one needs that $$\begin{eqnarray*}
+\ee(X_{n,\alpha}^4) & = & \alpha^2 {n \choose 2} +
+\alpha(\alpha-1)^2(n-1) + 3 \alpha \ee \left( \sum_{x \in
+\lambda(n-1)} c_{\alpha}(x)^2 \right)\\ & = & \alpha^2 {n \choose 2} +
+3 \alpha^2 {n-1 \choose 2} + \alpha(\alpha-1)^2(n-1).
+\end{eqnarray*}$$ The first equality used part 2 of Lemma [\[moments2\]](#moments2){reference-type="ref" reference="moments2"} and the fact that $\ee(T_{n-1,\alpha}) = 0$. The second equality used part 4 of Lemma [\[ismart2\]](#ismart2){reference-type="ref" reference="ismart2"} and Lemma [\[identity2\]](#identity2){reference-type="ref" reference="identity2"} with $r=2$. ◻
+:::

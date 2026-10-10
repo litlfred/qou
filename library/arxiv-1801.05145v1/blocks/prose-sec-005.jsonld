@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1801.05145v1/blocks/prose-sec-005",
+  "kind": "prose",
+  "title": "Quantum groups. Let I be an index set. A Cartan datum is a quintuple",
+  "pageStart": 9,
+  "pageEnd": 10,
+  "text": "../sections/sec-005-11-quantum-groups-let-i-be-an-index-set-a-cartan.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1801.05145v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1801.05145v1/manifest.jsonld",
+  "provenance": "ingested"
+}

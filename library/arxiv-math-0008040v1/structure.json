@@ -5,7 +5,8 @@
   "file": "0008040v1.pdf",
   "sha256": "a72319b55dbaf20b9d65278e1fcf0722e3a2a403c4fb2b559de68f2734882967",
   "bytes": 244778,
-  "pages": 21
+  "pages": 21,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A",
   "authors_raw": "Department of Mathematics and Computer Science, University of Leicester, University Road",
-  "abstract": "Let U be the quantum group associated to a Lie algebra g of type An. The negative part U − of U has a canonical basis B deﬁned by Lusztig and Kashi- wara, with favourable properties. We show how the spanning v ectors of the cones deﬁned by Lusztig [12], when regarded as monomials in K ashiwara’s root operators, can be described using a remarkable rectangle co mbinatorics. We use this to calculate the Lusztig parameters of the correspo nding canonical basis elements, conjecturing that translates of these vect ors span the simplicial regions of linearity of Lusztig’s piecewise-linear functi on [9, §2].",
+  "abstract": "Let U be the quantum group associated to a Lie algebra g of type An. The negative part U \u2212 of U has a canonical basis B de\ufb01ned by Lusztig and Kashi- wara, with favourable properties. We show how the spanning v ectors of the cones de\ufb01ned by Lusztig [12], when regarded as monomials in K ashiwara\u2019s root operators, can be described using a remarkable rectangle co mbinatorics. We use this to calculate the Lusztig parameters of the correspo nding canonical basis elements, conjecturing that translates of these vect ors span the simplicial regions of linearity of Lusztig\u2019s piecewise-linear functi on [9, \u00a72].",
   "docinfo": {
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20210920153317-04'00'",
@@ -55,7 +56,7 @@
   },
   {
    "level": 1,
-   "title": "(B) is a Q(v)-basis of U −, called the canonical",
+   "title": "(B) is a Q(v)-basis of U \u2212, called the canonical",
    "page": 4,
    "source": "inferred",
    "number": "1"
@@ -152,7 +153,7 @@
   {
    "id": "sec-003-1-b-is-a-qv-basis-of-u-called-the-canonical",
    "number": "1",
-   "title": "(B) is a Q(v)-basis of U −, called the canonical",
+   "title": "(B) is a Q(v)-basis of U \u2212, called the canonical",
    "level": 1,
    "page_start": 4,
    "page_end": 5,
@@ -245,6 +246,95 @@
   "likely_scanned": false,
   "toc_entries": 12,
   "sections": 12,
-  "chars_total": 79264
+  "chars_total": 79264,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 6,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-2-parametrizations-of-the-canonical-basis",
+     "title": "Parametrizations of the canonical basis",
+     "prose_ratio": 0.642,
+     "coverage_ratio": 0.93,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-1-b-is-a-qv-basis-of-u-called-the-canonical",
+     "title": "(B) is a Q(v)-basis of U \u2212, called the canonical",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-3-the-lusztig-cones-and-their-spanning-vectors",
+     "title": "The Lusztig cones and their spanning vectors",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-4-canonical-basis-elements-corresponding-to-span",
+     "title": "Canonical basis elements corresponding to spanning vecto rs",
+     "prose_ratio": 0.81,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-5-rectangles",
+     "title": "Rectangles",
+     "prose_ratio": 0.596,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-3-f4f1f-2",
+     "title": "F4F1F (2)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-2-f3f1-similarly-there-is",
+     "title": "F3F1. Similarly, there is",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-6-a-reparametrization",
+     "title": "A Reparametrization",
+     "prose_ratio": 0.895,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-acknowledgements",
+     "title": "Acknowledgements",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

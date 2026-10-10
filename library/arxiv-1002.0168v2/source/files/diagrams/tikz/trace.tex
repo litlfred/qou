@@ -1,0 +1,15 @@
+\begin{tikzpicture}[scale=.25,baseline]
+	\clip (8,6) arc (0:180:6cm) -- (-4,-6) arc (-180:0:6cm) -- (8,6);
+
+%	\filldraw[shaded] (0,0) .. controls ++(-157:3cm) and ++(157:3cm) .. (0,0) .. controls ++(112:2cm) and ++(-112:2cm) .. (0,0);
+%	\filldraw[shaded] (0,0) .. controls ++(-22:3cm) and ++(22:3cm) .. (0,0) .. controls ++(67:2cm) and ++(-67:2cm) .. (0,0);
+%	\draw (0,0) .. controls ++(22:3cm) and ++(90:4cm) .. (3,0) .. controls ++(-90:4cm) and ++(-22:3cm) .. 
+	\draw (0,0) .. controls ++(-67:6cm) and ++(-90:5cm) .. (3,0) .. controls ++(90:5cm) and ++(67:6cm) .. (0,0);
+	\draw (0,0) .. controls ++(130:4cm) and ++(90:15cm) .. (5,0) .. controls ++(-90:15cm) and ++(-130:4cm) .. (0,0) .. controls ++(-157:7cm) and ++(-90:20cm) .. (6,0) .. controls ++(90:20cm) and ++(157:7cm) .. (0,0);
+
+	\node at (0,0) [Tbox,inner sep=2mm] (T1) {};
+	\node at (T1.180) [left] {$\star$};
+	\node at (4.1,0) {$\cdots$};
+	
+	\draw[ultra thick] (8,6) arc (0:180:6cm) -- (-4,-6) arc (-180:0:6cm) -- (8,6);
+\end{tikzpicture}

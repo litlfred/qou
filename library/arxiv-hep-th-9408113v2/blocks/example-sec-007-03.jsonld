@@ -1,0 +1,16 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-th-9408113v2/blocks/example-sec-007-03",
+  "kind": "example",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "text": "example-sec-007-03.md",
+  "derivedFrom": "library/arxiv-hep-th-9408113v2/sections/sec-007",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-9408113v2/manifest.jsonld",
+  "provenance": "ingested"
+}

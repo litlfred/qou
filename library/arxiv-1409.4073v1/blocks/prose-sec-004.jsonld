@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1409.4073v1/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1409.4073v1/blocks/prose-sec-004",
   "kind": "prose",
   "title": "Yoneda embeddings.",
   "pageStart": 16,
   "pageEnd": 26,
   "text": "../sections/sec-004-3-yoneda-embeddings.md",
-  "derivedFrom": "library/arxiv-1409.4073v1/manifest",
-  "sourceDocument": "library/arxiv-1409.4073v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1409.4073v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1409.4073v1/manifest.jsonld",
   "provenance": "ingested"
 }

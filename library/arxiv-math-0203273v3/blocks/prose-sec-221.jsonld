@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-221",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-221",
   "kind": "prose",
   "title": "Objets en actions de groupe. Un objet en groupes dansX est un couple",
   "pageStart": 82,
   "pageEnd": 83,
   "text": "../sections/sec-221-1422-objets-en-actions-de-groupe-un-objet-en-gro.md",
-  "derivedFrom": "library/arxiv-math-0203273v3/manifest",
-  "sourceDocument": "library/arxiv-math-0203273v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203273v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203273v3/manifest.jsonld",
   "provenance": "ingested"
 }

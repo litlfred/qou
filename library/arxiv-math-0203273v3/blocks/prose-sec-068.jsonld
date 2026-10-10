@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-068",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-068",
   "kind": "prose",
   "title": "Proposition. 1) SoitL/K une extension de corps. Soit A uneK-alg`ebre de",
   "pageStart": 23,
   "pageEnd": 24,
   "text": "../sections/sec-068-411-proposition-1-soitlk-une-extension-de-corps.md",
-  "derivedFrom": "library/arxiv-math-0203273v3/manifest",
-  "sourceDocument": "library/arxiv-math-0203273v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203273v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203273v3/manifest.jsonld",
   "provenance": "ingested"
 }

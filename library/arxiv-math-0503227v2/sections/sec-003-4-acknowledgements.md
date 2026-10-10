@@ -7,7 +7,9 @@ section_number: 4
 pages: 13-13
 source_pdf: 0503227v2.pdf
 source_sha256: 4e83adfdef827103
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 1.0
 doc_brief: "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios By Jason Fulman — Bolthausen used a variation of Stein’s method to give an"
 ---
-The author was partially supported by NSA grant number H9823 0-05-1-
-0031.
+The author was partially supported by NSA grant number H98230-05-1-0031.

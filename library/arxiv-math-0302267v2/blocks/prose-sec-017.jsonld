@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0302267v2/blocks/prose-sec-017",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0302267v2/blocks/prose-sec-017",
   "kind": "prose",
   "title": "Par 2.16, les cat´ egories tannakiennes MT(k), pour k variable, forment un pr´ echamp",
   "pageStart": 24,
   "pageEnd": 28,
   "text": "../sections/sec-017-217-par-216-les-cat-egories-tannakiennes-mtk-pou.md",
-  "derivedFrom": "library/arxiv-math-0302267v2/manifest",
-  "sourceDocument": "library/arxiv-math-0302267v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0302267v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0302267v2/manifest.jsonld",
   "provenance": "ingested"
 }

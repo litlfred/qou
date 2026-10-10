@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1702.00039v1/blocks/prose-sec-040",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1702.00039v1/blocks/prose-sec-040",
   "kind": "prose",
   "title": "The tree Ts",
   "pageStart": 41,
   "pageEnd": 43,
   "text": "../sections/sec-040-64-the-tree-ts.md",
-  "derivedFrom": "library/arxiv-1702.00039v1/manifest",
-  "sourceDocument": "library/arxiv-1702.00039v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1702.00039v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1702.00039v1/manifest.jsonld",
   "provenance": "ingested"
 }

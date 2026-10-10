@@ -1,102 +1,171 @@
 {
-  "_schema": "pdf-structure/v1",
-  "doc_id": "arxiv-1508.01627v4",
-  "source": {
-    "file": "1508.01627v4.pdf",
-    "sha256": "778e60219862e371fbb004d915345bdfff963fd1f8a0746784e1493af4efd48d",
-    "bytes": 385486,
-    "pages": 23
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1508.01627v4",
+ "source": {
+  "file": "1508.01627v4.pdf",
+  "sha256": "778e60219862e371fbb004d915345bdfff963fd1f8a0746784e1493af4efd48d",
+  "bytes": 385486,
+  "pages": 23,
+  "math_source": "latex"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1508.01627",
+   "version": "4",
+   "primary_class": "math.RT",
+   "stamp_date": "25 Oct 2016"
   },
-  "metadata": {
-    "arxiv": {
-      "id": "1508.01627",
-      "version": "4",
-      "primary_class": "math.RT",
-      "stamp_date": "25 Oct 2016"
-    },
-    "doi": null,
-    "title": "A Murnaghan-Nakayama rule for values of unipotent characters in classical groups",
-    "authors_raw": "Frank Lubeck and Gunter Malle"
+  "doi": null,
+  "title": "A Murnaghan-Nakayama rule for values of unipotent characters in classical groups",
+  "authors_raw": "Frank Lubeck and Gunter Malle"
+ },
+ "toc": [],
+ "toc_source": "headings",
+ "sections": [
+  {
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "id": "sec-000-introduction",
+   "n_chars": 4670,
+   "n_words": 786
   },
-  "toc": [],
-  "toc_source": "headings",
-  "sections": [
-    {
-      "number": "1",
-      "title": "Introduction",
-      "level": 1,
-      "page_start": 1,
-      "page_end": 2,
-      "id": "sec-000-introduction",
-      "n_chars": 4670,
-      "n_words": 786
-    },
-    {
-      "number": "2",
-      "title": "Maximal tori in classical groups",
-      "level": 1,
-      "page_start": 2,
-      "page_end": 5,
-      "id": "sec-001-maximal-tori-in-classical-groups",
-      "n_chars": 12870,
-      "n_words": 2994
-    },
-    {
-      "number": "3",
-      "title": "A Murnaghan\u2013Nakayama rule",
-      "level": 1,
-      "page_start": 5,
-      "page_end": 9,
-      "id": "sec-002-a-murnaghan-nakayama-rule",
-      "n_chars": 10431,
-      "n_words": 2247
-    },
-    {
-      "number": "4",
-      "title": "Vanishing of characters",
-      "level": 1,
-      "page_start": 9,
-      "page_end": 14,
-      "id": "sec-003-vanishing-of-characters",
-      "n_chars": 17565,
-      "n_words": 4117
-    },
-    {
-      "number": "5",
-      "title": "Simple endotrivial modules",
-      "level": 1,
-      "page_start": 14,
-      "page_end": 17,
-      "id": "sec-004-simple-endotrivial-modules",
-      "n_chars": 13523,
-      "n_words": 2928
-    },
-    {
-      "number": "6",
-      "title": "Zeroes of characters of quasi-simple groups",
-      "level": 1,
-      "page_start": 17,
-      "page_end": 18,
-      "id": "sec-005-zeroes-of-characters-of-quasi-simple-groups",
-      "n_chars": 4441,
-      "n_words": 873
-    },
-    {
-      "number": "7",
-      "title": "An application to small 1-PIMs",
-      "level": 1,
-      "page_start": 18,
-      "page_end": 23,
-      "id": "sec-006-an-application-to-small-1-pims",
-      "n_chars": 11857,
-      "n_words": 2130
-    }
-  ],
-  "diagnostics": {
-    "pages_without_text": 0,
-    "likely_scanned": false,
-    "toc_entries": 0,
-    "sections": 7,
-    "chars_total": 76511
+  {
+   "number": "2",
+   "title": "Maximal tori in classical groups",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 5,
+   "id": "sec-001-maximal-tori-in-classical-groups",
+   "n_chars": 12870,
+   "n_words": 2994
+  },
+  {
+   "number": "3",
+   "title": "A Murnaghan\u2013Nakayama rule",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 9,
+   "id": "sec-002-a-murnaghan-nakayama-rule",
+   "n_chars": 10431,
+   "n_words": 2247
+  },
+  {
+   "number": "4",
+   "title": "Vanishing of characters",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 14,
+   "id": "sec-003-vanishing-of-characters",
+   "n_chars": 17565,
+   "n_words": 4117
+  },
+  {
+   "number": "5",
+   "title": "Simple endotrivial modules",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 17,
+   "id": "sec-004-simple-endotrivial-modules",
+   "n_chars": 13523,
+   "n_words": 2928
+  },
+  {
+   "number": "6",
+   "title": "Zeroes of characters of quasi-simple groups",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "id": "sec-005-zeroes-of-characters-of-quasi-simple-groups",
+   "n_chars": 4441,
+   "n_words": 873
+  },
+  {
+   "number": "7",
+   "title": "An application to small 1-PIMs",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 23,
+   "id": "sec-006-an-application-to-small-1-pims",
+   "n_chars": 11857,
+   "n_words": 2130
   }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 0,
+  "sections": 7,
+  "chars_total": 76511,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "MurNak.tex",
+   "tex_sections": 7,
+   "overlaid": 6,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.864,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-maximal-tori-in-classical-groups",
+     "title": "Maximal tori in classical groups",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-a-murnaghan-nakayama-rule",
+     "title": "A Murnaghan\u2013Nakayama rule",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-vanishing-of-characters",
+     "title": "Vanishing of characters",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-simple-endotrivial-modules",
+     "title": "Simple endotrivial modules",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-zeroes-of-characters-of-quasi-simple-groups",
+     "title": "Zeroes of characters of quasi-simple groups",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-an-application-to-small-1-pims",
+     "title": "An application to small 1-PIMs",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.411,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
+ }
 }

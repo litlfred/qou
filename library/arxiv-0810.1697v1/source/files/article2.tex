@@ -1,0 +1,72 @@
+\documentclass[10pt]{amsart}
+\usepackage{amsmath,amsthm,amssymb,latexsym}
+\usepackage{epsfig}
+\usepackage{graphics}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{remark}{Remark}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{pic}{Picture}
+
+
+
+\begin{document}
+\title[Cable expansion]
+{On the cable expansion formula}
+\author{Qihou Liu}
+\email{qihouliu@aya.yale.edu}
+
+\date{Sep 15,2008}
+\maketitle
+
+\begin{abstract}
+ In this paper, a generalized version of Morton's formula \cite{MO} is proved. Using this formula, one can write down the colored Jones polynomials of cabling of an knot in terms of the colored Jones polynomials of the original knot.
+\end{abstract}
+
+\section{Introduction}\label{intro}
+In \cite{MO}, Morton proved a formula relating the colored Jones polynomials of a cabling of a knot to the colored Jones polynomials of the original knot. Using this formula, Kashaev proved that the volume conjecture is true for the torus knots \cite{KT}.
+
+The original proof of Morton is written in the language of quantum groups. In this paper, an alternative way using skein theory is adopted. Although the method of quantum groups is essentially dual to the method of skein theory, the latter is more accessible to topologists. Unlike quantum groups, the skein theory starts from the pure combinatorial Kauffman's relations to build the whole theory. The relation to representation theory is hidden. In this sense, it is a straightforward approach.
+
+In a recent preprint \cite{VV}, a third version of the expansion formula is obtained.
+
+\section{Basic definitions and notations}\label{def}
+\input{definitions-and-notations2.tex}
+
+\section{Expansion of cables in the skein module}\label{thm}
+\input{expansion-of-cable.tex}
+
+\section{Proof of Theorem 1}\label{proof}
+\input{proof.tex}
+
+\section{Appendix}\label{apendix}
+\input{appendix.tex}
+\begin{thebibliography}{99}
+  \bibitem{BHMVinv} Blanchet, C.; Habegger, N.; Masbaum, G.; and Vogel, P., {\sl Three-manifold invariants derived from the Kauffman bracket}. Topology 1992 {\bf 31}, no. 4, 685--699.
+
+  \bibitem{BHMV} Blanchet, C.; Habegger, N.; Masbaum, G.; and Vogel, P., {\sl Topological quantum field theories derived from the Kauffman bracket}. Topology 1995 {\bf 34}, no. 4, 883--927.
+
+  \bibitem{KT} Kashaev, R.M.; Tirkonnen, O., {\sl  Proof of the Volume Conjecture for Torus
+Knots}. Journal of Mathematical Sciences 2003 {\bf 115}, no.1,
+2033-2036
+
+  \bibitem{LBook} Lickorish, W. B. R., An introduction to knot theory. Graduate Texts in Mathematics,{\bf 175}. Springer-Verlag, New York, 1997.
+
+  \bibitem{LSurvey} Lickorish, W. B. R.,  {\sl Quantum invariants of 3-manifolds}.  Handbook of geometric topology,  707--734, North-Holland, Amsterdam, 2002.
+
+  \bibitem{L2r} Lickorish, W. B. R., {\sl The skein method for three-manifold invariants}. J. Knot Theory Ramifications 1993 {\bf 2} , no. 2, 171-194.
+
+  \bibitem{MV} Masbaum, G., and Vogel, P., {\sl 3-valent graphs and the Kauffman bracket}.  Pacific J. Math 1994 {\bf 164}, 361-381.
+
+  \bibitem{MO} Morton, H.R., {\sl The colored Jones function and Alexander polynomial for the torus knots}. Proc.Cambridge Philos.Soc. 1995 {\bf 117}, no.1, 129-135.
+  
+  \bibitem{VV} van der Veen, R., {\sl A cabling formula for the colored Jones polynomial}. preprint, arXiv:math.GT/0807.2679.
+
+
+
+\end{thebibliography}
+
+\end{document}                   

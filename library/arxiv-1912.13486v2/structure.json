@@ -5,7 +5,8 @@
   "file": "1912.13486v2.pdf",
   "sha256": "9a8dbc1a143f7448e02fc7a60e40955738c1a63fc2badf03771a875897d0701b",
   "bytes": 1142020,
-  "pages": 21
+  "pages": 21,
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Index for a Model of 3d-3d Correspondence for Plumbed 3-Manifolds",
   "authors_raw": "Yau Mathematical Sciences Center, Tsinghua University, Beijing 100084, China",
-  "abstract": "We consider theS2×qS1 supersymmetric index of a 3dN = 2 theory T [M3] when M3 is a plumbed 3-manifold. We engineer an eﬀective description of T [M3] from the expression of the homological block for plumbed 3-manifolds as a D2×qS1 partition function of a 3d N = 2 theory T [M3] with a boundary condition. We check that the supersymmetric index for such a T [M3] is invariant under the 3d Kirby moves. arXiv:1912.13486v2 [hep-th] 22 Mar 2021",
+  "abstract": "We consider theS2\u00d7qS1 supersymmetric index of a 3dN = 2 theory T [M3] when M3 is a plumbed 3-manifold. We engineer an e\ufb00ective description of T [M3] from the expression of the homological block for plumbed 3-manifolds as a D2\u00d7qS1 partition function of a 3d N = 2 theory T [M3] with a boundary condition. We check that the supersymmetric index for such a T [M3] is invariant under the 3d Kirby moves. arXiv:1912.13486v2 [hep-th] 22 Mar 2021",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20210323011414Z",
@@ -111,6 +112,31 @@
   "likely_scanned": false,
   "toc_entries": 7,
   "sections": 2,
-  "chars_total": 72438
+  "chars_total": 72438,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "indexplumbing.tex",
+   "tex_sections": 3,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.918,
+     "coverage_ratio": 0.477,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-001-22-analysis-on-homological-block-and-index-of-le",
+     "title": "Analysis on homological block and index of lens space theory",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

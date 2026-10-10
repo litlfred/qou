@@ -7,146 +7,58 @@ section_number: 6
 pages: 19-21
 source_pdf: 1907.00949v2.pdf
 source_sha256: 865defaa34bf42be
+text_source: latex
+latex_prose_ratio: 0.962
+latex_coverage_ratio: 0.881
 doc_brief: "OPTIMIZATION ON FLAG MANIFOLDS — A ﬂag is a sequence of nested subspaces."
 ---
-We will derive expressions for the Riemannian gradient and Riemannian Hessian of a real-valued
-function on a ﬂag manifold, the main ingredients of optimization algorithms. Although in principle
-we may use any of the four extrinsic coordinate systems introduced in the last two sections —
-orthogonal (as n×n orthogonal matrices), Stiefel (as n×nd orthonormal matrices), projection or
-reduced projection (as d-tuples ofn×n projection matrices) coordinates — Stiefel coordinates give
-the most economical representation and we will use this as our coordinates of choice. So in the
-following we will identify
-Flag(n1,...,n d;n) = V(nd,n )/
-(
-O(n1)× O(n2−n1)×···× O(nd−nd−1)
-)
-. (45)
-Our expressions for gradient and Hessian in Stiefel coordinates may of course be converted to other
-coordinates — straightforward although the results may be notationally messy.
-Proposition 6.1 (Riemannian gradient). Let f : Flag(n1,...,n d;n)→ R be a smooth function
-expressed in Stiefel coordinates Y ∈ V(nd,n ). Deﬁne the n×nd matrix of partial derivatives,
-fY :=
-[ ∂f
-∂yij
-]n,nd
-i,j=1
-. (46)
-Write Y = [Y1,...,Y d] whereYi∈ Rn×(ni−ni−1) and fY = [fY1,...,f Yd] wherefYi is the n× (ni−
-ni−1) submatrix, i = 1,...,d . Then its Riemannian gradient at JY K∈ Flag(n1,...,n d;n) is given
-by∇f(JY K) = [∆1,..., ∆d] where
-∆i =fYi−
-(
-YiY T
-i fYi +
-∑
-j⁄=i
-Yjf T
-YjYi
-)
-, i = 1,...,d. (47)
-20 K. YE, K. S.-W. WONG, AND L.-H. LIM
-Proof. For anyX∈TJY K Flag(n1,...,n d;n), let Xa∈ Rn×n be the unique skew-symmetric matrix
-such that X =QXaIn,nd, where Q∈ O(n) is such that Y =QIn,nd. Since the metric expressed in
-Stiefel coordinates (29) and expressed in orthogonal coordinates (14) must be equal,
-gJY K
-(
-∇f(JY K),X
-)
-=gJQK
-(
-∇f(JY K)a,Xa
-)
-= 1
-2 tr(∇f(JY K)T
-aXa). (48)
-By deﬁnition of Riemannian gradient (5), we also have
-gJY K(∇f(JY K),X ) = tr(f T
-YXa). (49)
-Comparing (48) and (49), we see that∇f(JY K) is the projection offY ontoTJY K Flag(n1,...,n d;n),
-i.e., fY =∇f(JY K) + Z for some Z orthogonal to TJY K Flag(n1,...,n d;n). We may take Z =
-[Z1,...,Z d] to be
-Zi :=YiY T
-i fYi +
-∑
-j⁄=i
-Yjf T
-YjYi, i = 1,...,d,
-and verify that because of (27), we indeed have fY−Z∈ TJY K Flag(n1,...,n d;n) and thus Z is
-orthogonal to TJY K Flag(n1,...,n d;n). □
-The Riemannian gradient∇f may also be derived by solving an optimization problem as in [29].
-Note that if d = 1, (47) becomes ∇f(JY K) = ∆ = fY−YY TfY , the well-known expression for
-Riemannian gradient of Grassmannian in [16].
-Proposition 6.2 (Riemannian Hessian) . Let f : Flag(n1,...,n d;n)→ R be a smooth function
-expressed in Stiefel coordinates Y ∈ V(nd,n ) and let fY be as in (46). Then its Riemannian
-Hessian∇2f(JY K) at JY K∈ Flag(n1,...,n d;n) is the symmetric bilinear form given by
-∇2f(JY K)(X,X′) =fY,Y (X,X′)− 1
-2
-[
-tr(f T
-YQBTQTX′) + tr(f T
-YQC TQTX)
-)]
-, (50)
-for X,X′∈TJY K Flag(n1,...,n d;n), where
-fY,Y (X,X′) :=
-n∑
-i,k=1
-nd∑
-j,l=1
-∂2f
-∂yij∂ykl
-xijx′
-kl, (51)
-Q∈ O(n) is such that QIn,nd =Y , and B,C ∈ Rn×n are the unique skew-symmetric matrices such
-that X =QBIn,nd, X′ =QCIn,nd respectively.
-Proof. By Proposition 4.14, a geodesic γ with γ′(0) = X and γ(0) = JY K takes the form γ(t) =
-JQ exp(tB)In,ndK whereQ∈ O(n) is such that Y =QIn,nd andX =QBIn,nd. Applying chain rule,
-d
-dtf(γ(t)) = tr
-(
-f T
-Yγ′(t)
-)
-, d2
-dt2f(γ(t)) = tr
-(
-γ′(t)Tf T
-γ(t),γ(t)γ′(t)
-)
-+ tr
-(
-f T
-Yγ′′(t)
-)
-;
-followed by evaluating at t = 0 gives
-∇2f(JY K)(X,X ) = d2
-dt2f(γ(t))
-⏐⏐⏐
-t=0
-=fY,Y (X,X )− tr(f T
-YQBTQTX).
-The required expression (50) then follows from (5) and (4). □
-Ifd = 1, (50) reduces to the well-known expression for Riemannian Hessian of the Grassmannian
-[16, Section 2.5.4] since
-∇2f(JY K)(X,X′) =fY,Y (X,X′)− tr(f T
-YQBTQTX′)
-=fY,Y (X,X′)− tr(f T
-YY (X′)TX) =fY,Y (X,X′)− tr(X TX′Y TfY ).
-OPTIMIZATION ON FLAG MANIFOLDS 21
-There is slight inconsistency in our deﬁnitions of fY and fYY to make these expressions easily
-portable into computer codes. To be consistent with (51), we could deﬁne fY as a linear form:
-fY (X) =
-n,nd∑
-i,j=1
-∂f
-∂yij
-xij
-for X∈TJY K Flag(n1,...,n d;n). Alternatively, to be consistent with (46), we could deﬁne fYY to
-be a hypermatrix of partials (this is not a 4-tensor, just a convenient way to represent a 2-tensor):
-fYY =
-[ ∂2f
-∂yij∂ykl
-]n,nd,n,nd
-i,j,k,l=1
-.
+[]{#sec:gH label="sec:gH"}
+
+We will derive expressions for the Riemannian gradient and Riemannian Hessian of a real-valued function on a flag manifold, the main ingredients of optimization algorithms. Although in principle we may use any of the four extrinsic coordinate systems introduced in the last two sections --- orthogonal (as $n \times n$ orthogonal matrices), Stiefel (as $n \times n_d$ orthonormal matrices), projection or reduced projection (as $d$-tuples of $n \times n$ projection matrices) coordinates --- Stiefel coordinates give the most economical representation and we will use this as our coordinates of choice. So in the following we will identify $$\begin{equation}
+\label{eq:identify}
+\mathop{\mathrm{Flag}}(n_1,\dots,n_d;n) = \mathop{\mathrm{V}}(n_d,n) / \bigl(\mathop{\mathrm{O}}(n_1) \times \mathop{\mathrm{O}}(n_2-n_1) \times \dots \times \mathop{\mathrm{O}}(n_d- n_{d-1})\bigr).
+\end{equation}$$ Our expressions for gradient and Hessian in Stiefel coordinates may of course be converted to other coordinates --- straightforward although the results may be notationally messy.
+
+::: proposition
+[]{#prop:gradient label="prop:gradient"} Let $f:\mathop{\mathrm{Flag}}(n_1,\dots,n_d;n) \to \mathbb{R}$ be a smooth function expressed in Stiefel coordinates $Y \in \mathop{\mathrm{V}}(n_d, n)$. Define the $n\times n_d$ matrix of partial derivatives, $$\begin{equation}
+\label{eq:fY}
+f_Y \coloneqq \biggl[  \frac{\partial f}{\partial y_{ij}} \biggr]_{i,j=1}^{n,n_d}.
+\end{equation}$$ Write $Y = [Y_1,\dots, Y_d]$ where $Y_i\in \mathbb{R}^{n\times (n_i-n_{i-1})}$ and $f_Y = [f_{Y_1},\dots, f_{Y_d}]$ where $f_{Y_i}$ is the $n\times (n_i-n_{i-1})$ submatrix, $i=1,\dots, d$. Then its Riemannian gradient at $\llbracket Y \rrbracket\in \mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$ is given by $\nabla f(\llbracket Y \rrbracket) = [\Delta_1, \dots, \Delta_d]$ where $$\begin{equation}
+\label{eq:gradient variable delta}
+\Delta_i = f_{Y_i} - \Bigl(Y_i Y_i^{\scriptscriptstyle\mathsf{T}}f_{Y_i} + \sum\nolimits_{j\ne i } Y_j f_{Y_j}^{\scriptscriptstyle\mathsf{T}}Y_i\Bigr), \quad i=1,\dots,d.
+\end{equation}$$
+:::
+
+::: proof
+*Proof.* For any $X\in T_{\llbracket Y \rrbracket} \mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$, let $X_a\in \mathbb{R}^{n\times n}$ be the unique skew-symmetric matrix such that $X = Q X_a I_{n,n_d}$, where $Q\in \mathop{\mathrm{O}}(n)$ is such that $Y = QI_{n,n_d}$. Since the metric expressed in Stiefel coordinates [\[eq:g2\]](#eq:g2){reference-type="eqref" reference="eq:g2"} and expressed in orthogonal coordinates [\[eq:metric1\]](#eq:metric1){reference-type="eqref" reference="eq:metric1"} must be equal, $$\begin{equation}
+\label{eq:tmp1}
+g_{\llbracket Y \rrbracket} \bigl( \nabla f (\llbracket Y \rrbracket),X \bigr)  = g_{\llbracket Q \rrbracket} \bigl(\nabla f  (\llbracket Y \rrbracket)_a, X_a\bigr) = \frac{1}{2} \mathop{\mathrm{tr}}( \nabla f  (\llbracket Y \rrbracket)_a^{\scriptscriptstyle\mathsf{T}}X_a).
+\end{equation}$$ By definition of Riemannian gradient [\[eq:gH\]](#eq:gH){reference-type="eqref" reference="eq:gH"}, we also have $$\begin{equation}
+\label{eq:tmp2}
+g_{\llbracket Y \rrbracket}(\nabla f(\llbracket Y\rrbracket), X) =  \mathop{\mathrm{tr}}(f_Y^{\scriptscriptstyle\mathsf{T}}X_a).
+\end{equation}$$ Comparing [\[eq:tmp1\]](#eq:tmp1){reference-type="eqref" reference="eq:tmp1"} and [\[eq:tmp2\]](#eq:tmp2){reference-type="eqref" reference="eq:tmp2"}, we see that $\nabla f(\llbracket Y\rrbracket)$ is the projection of $f_Y$ onto $T_{\llbracket Y \rrbracket} \mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$, i.e., $f_Y = \nabla f(\llbracket Y\rrbracket)  + Z$ for some $Z$ orthogonal to $T_{\llbracket Y \rrbracket} \mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$. We may take $Z = [Z_1,\dots, Z_d]$ to be $$Z_i \coloneqq Y_i Y_i^{\scriptscriptstyle\mathsf{T}}f_{Y_i} + \sum\nolimits_{j\ne i } Y_j f_{Y_j}^{\scriptscriptstyle\mathsf{T}}Y_i,\quad i=1,\dots,d,$$ and verify that because of [\[eq:tangent space\]](#eq:tangent space){reference-type="eqref" reference="eq:tangent space"}, we indeed have $f_Y - Z\in T_{\llbracket Y \rrbracket} \mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$ and thus $Z$ is orthogonal to $T_{\llbracket Y \rrbracket} \mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$. ◻
+:::
+
+The Riemannian gradient $\nabla f$ may also be derived by solving an optimization problem as in [@NSP2006]. Note that if $d = 1$, [\[eq:gradient variable delta\]](#eq:gradient variable delta){reference-type="eqref" reference="eq:gradient variable delta"} becomes $\nabla f (\llbracket Y \rrbracket) = \Delta = f_Y -  Y Y^{\scriptscriptstyle\mathsf{T}}f_Y$, the well-known expression for Riemannian gradient of Grassmannian in [@EAS].
+
+::: proposition
+[]{#prop:Hessian label="prop:Hessian"} Let $f:\mathop{\mathrm{Flag}}(n_1,\dots,n_d;n) \to \mathbb{R}$ be a smooth function expressed in Stiefel coordinates $Y \in \mathop{\mathrm{V}}(n_d, n)$ and let $f_Y$ be as in [\[eq:fY\]](#eq:fY){reference-type="eqref" reference="eq:fY"}. Then its Riemannian Hessian $\nabla^2f(\llbracket Y \rrbracket)$ at $\llbracket Y \rrbracket\in \mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$ is the symmetric bilinear form given by $$\begin{equation}
+\label{eq:Hessian}
+\nabla^2f(\llbracket Y \rrbracket) (X,X') = f_{Y,Y} ( X, X') - \frac{1}{2} \bigl[ \mathop{\mathrm{tr}}(f_Y^{\scriptscriptstyle\mathsf{T}}Q B^{\scriptscriptstyle\mathsf{T}}Q^{\scriptscriptstyle\mathsf{T}}X') +  \mathop{\mathrm{tr}}(f_Y^{\scriptscriptstyle\mathsf{T}}Q C^{\scriptscriptstyle\mathsf{T}}Q^{\scriptscriptstyle\mathsf{T}}X)  \bigr) \bigr],
+\end{equation}$$ for $X,X'\in T_{\llbracket Y \rrbracket} \mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$, where $$\begin{equation}
+\label{eq:fYY}
+f_{Y,Y} (X,X') \coloneqq \sum_{i,k=1}^n \sum_{j,l=1}^{n_d} \frac{\partial^2 f}{\partial y_{ij} \partial y_{kl}} x_{ij} x'_{kl},
+\end{equation}$$ $Q\in \mathop{\mathrm{O}}(n)$ is such that $Q I_{n,n_d} = Y$, and $B,C \in \mathbb{R}^{n \times n}$ are the unique skew-symmetric matrices such that $X = Q B I_{n,n_d}$, $X' = Q C I_{n,n_d}$ respectively.
+:::
+
+::: proof
+*Proof.* By Proposition [\[prop:geodesic3a\]](#prop:geodesic3a){reference-type="ref" reference="prop:geodesic3a"}, a geodesic $\gamma$ with $\gamma'(0) = X$ and $\gamma(0) = \llbracket Y \rrbracket$ takes the form $\gamma(t) = \llbracket Q\exp(tB) I_{n,n_d} \rrbracket$ where $Q \in \mathop{\mathrm{O}}(n)$ is such that $Y = QI_{n,n_d}$ and $X = Q B I_{n,n_d}$. Applying chain rule, $$\frac{d}{dt} f(\gamma(t)) = \mathop{\mathrm{tr}}\bigl( f_Y^{\scriptscriptstyle\mathsf{T}}\gamma'(t)\bigr),\qquad
+\frac{d^2 }{dt^2} f(\gamma(t))  = \mathop{\mathrm{tr}}\bigl(\gamma'(t)^{\scriptscriptstyle\mathsf{T}}f^{\scriptscriptstyle\mathsf{T}}_{\gamma(t),\gamma(t)} \gamma'(t)\bigr) + \mathop{\mathrm{tr}}\bigl(f_Y^{\scriptscriptstyle\mathsf{T}}\gamma''(t)\bigr);$$ followed by evaluating at $t = 0$ gives $$\nabla^2f(\llbracket Y \rrbracket)(X,X) =  \frac{d^2 }{dt^2} f(\gamma(t)) \Big|_{t=0} = f_{Y,Y} (X, X)  - \mathop{\mathrm{tr}}(f_Y^{\scriptscriptstyle\mathsf{T}}Q B^{\scriptscriptstyle\mathsf{T}}Q ^{\scriptscriptstyle\mathsf{T}}X).$$ The required expression [\[eq:Hessian\]](#eq:Hessian){reference-type="eqref" reference="eq:Hessian"} then follows from [\[eq:gH\]](#eq:gH){reference-type="eqref" reference="eq:gH"} and [\[eq:polar\]](#eq:polar){reference-type="eqref" reference="eq:polar"}. ◻
+:::
+
+If $d = 1$, [\[eq:Hessian\]](#eq:Hessian){reference-type="eqref" reference="eq:Hessian"} reduces to the well-known expression for Riemannian Hessian of the Grassmannian [@EAS Section 2.5.4] since $$\begin{multline*}
+\nabla^2f(\llbracket Y \rrbracket) (X,X') = f_{Y,Y} (X, X') - \mathop{\mathrm{tr}}(f_Y^{\scriptscriptstyle\mathsf{T}}Q B^{\scriptscriptstyle\mathsf{T}}Q^{\scriptscriptstyle\mathsf{T}}X') \\
+ = f_{Y,Y} (X, X') - \mathop{\mathrm{tr}}(f_Y^{\scriptscriptstyle\mathsf{T}}Y (X')^{\scriptscriptstyle\mathsf{T}}X)  = f_{Y,Y} (X, X') - \mathop{\mathrm{tr}}(X^{\scriptscriptstyle\mathsf{T}}X' Y^{\scriptscriptstyle\mathsf{T}}f_Y).
+\end{multline*}$$
+
+There is slight inconsistency in our definitions of $f_Y$ and $f_{YY}$ to make these expressions easily portable into computer codes. To be consistent with [\[eq:fYY\]](#eq:fYY){reference-type="eqref" reference="eq:fYY"}, we could define $f_Y$ as a linear form: $$f_Y(X) = \sum_{i,j=1}^{n,n_d} \frac{\partial f}{\partial y_{ij}}  x_{ij}$$ for $X \in  T_{\llbracket Y \rrbracket} \mathop{\mathrm{Flag}}(n_1,\dots,n_d;n)$. Alternatively, to be consistent with [\[eq:fY\]](#eq:fY){reference-type="eqref" reference="eq:fY"}, we could define $f_{YY}$ to be a hypermatrix of partials (this is not a $4$-tensor, just a convenient way to represent a $2$-tensor): $$f_{YY} =\biggl[ \frac{\partial^2 f}{\partial y_{ij} \partial y_{kl}} \biggr]_{i,j,k,l=1}^{n,n_d, n, n_d}.$$

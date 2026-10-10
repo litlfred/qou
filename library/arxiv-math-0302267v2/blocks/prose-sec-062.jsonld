@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0302267v2/blocks/prose-sec-062",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0302267v2/blocks/prose-sec-062",
   "kind": "prose",
   "title": "Si x et y sont deux points-base (4.3) de X, l’espace de chemins motivique Py,x est",
   "pageStart": 53,
   "pageEnd": 53,
   "text": "../sections/sec-062-52-si-x-et-y-sont-deux-points-base-43-de-x-lespa.md",
-  "derivedFrom": "library/arxiv-math-0302267v2/manifest",
-  "sourceDocument": "library/arxiv-math-0302267v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0302267v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0302267v2/manifest.jsonld",
   "provenance": "ingested"
 }

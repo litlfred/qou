@@ -7,233 +7,275 @@ section_number: 6
 pages: 34-38
 source_pdf: 0904.1247v3.pdf
 source_sha256: 4a6f4dee6af66dac
+text_source: latex
+latex_prose_ratio: 0.838
+latex_coverage_ratio: 0.964
 doc_brief: "THE CHARACTER THEORY OF A COMPLEX GROUP — W e apply the ideas of derived algebraic geometry and topolog ical ﬁeld theory to the representation theory of reductive groups."
 ---
-In this section, we study the homotopical algebra of Hecke catego ries arising in representation
-theory. Our focus is the Hecke category of D-modules on the double quotient stack B\G/B of a
-reductive group G by a Borel subgroup B⊂G, and its unipotent monodromic variant. Our aim is
-to construct a topological ﬁeld theory from these Hecke categor ies, and in particular to relate their
-traces and centers with character sheaves.
-If we introduce the classifying stacks X =BB, Y =BG, then the double quotient stack can be
-realized as the ﬁber product
-B\G/B≃X×Y X
-From this point of view, the special technical features of this setu p are the following:
-(1) The morphism p :X→Y is proper.
-(2) The diagonal δ :X→X×X is smooth.
-The second property is especially restrictive though satisﬁed by cla ssifying spaces of smooth group
-schemes. The above conditions will imply that we have a suﬃcient arse nal of duality and adjunctions.
-6.1. Hecke categories. We establish here that Hecke categories are semi-rigid categories w ith
-a canonical Calabi-Yau structure, and thus two-dualizable monoida l categories deﬁning oriented
-topological ﬁeld theories.
-To begin, let p :X→Y be a morphism of stacks. Introduce the Hecke category H =D(X×YX).
-Consider the convolution diagram
-X×Y X×Y X
-p12
-/d119/d119♥♥♥♥♥♥♥♥♥♥♥♥ p23
-/d39/d39PPPPPPPPPPPP
-p13
-/d15/d15
-X×Y X X ×Y X X ×Y X
-EquipH =D(X×Y X) with the monoidal product deﬁned by convolution
-⋆ :H⊗H /d47/d47H
-M⋆ N =p13∗(p!
-12(M)⊗p!
-23(N))≃p13∗(p12×p23)!(M ⊠ N)
-Similar diagrams provide the usual associativity compatibilities of an alg ebra object. The monoidal
-unit 1 H is given by the pushforward u∗ωX along the map u :X→X×Y X induced by the diagonal
-δ :X→X×X.
-Recall that if p :X→Y is safe, then the integral transform construction gives a monoida l functor
-H /d47/d47 FunD(Y )(D(X),D(X)) M ✤ /d47/d47p2∗(p!
-1(−)⊗ M)
-Remark 6.1. More formally, the monoidal structure on D(X×Y X) can be deﬁned as follows. The
-stack X×Y X can be identiﬁed with endomorphisms of X in the ∞-category of stacks over Y
-with morphisms given by correspondences. The assignment of cate gories of D-modules extends to
-a symmetric monoidal functor on this ∞-category (see Remark 4.1), hence induces an associative
-algebra structure on D(X×Y X).
-34
-It is important to note that all of the maps involved in the monoidal st ructure ofH are obtained
-by base change from either the diagonal map δ : X → X×X or the projection p : X → Y .
-Moreover, the monoidal structure only uses pullbacks along maps o f the ﬁrst type and pushforwards
-along maps of the second type. Thus if we assume δ is smooth and p is proper, the functors δ! and
-p∗, and hence the monoidal product on H, will be quasi-proper. In addition, D(X) is semi-rigid
-under tensor product, by Proposition 5.4.
-Theorem 6.2. Suppose X is a stack with smooth diagonal, Y is a stack, and X→Y is a proper
-representable map.
-Then the Hecke category H =D(X×Y X) is semi-rigid (hence 2-dualizable).
-Proof. To prove the theorem, let us ﬁrst establish a candidate for the dua l of a compact object.
-First, recall that Verdier duality DX×Y X provides a self-duality
-H =D(X×Y X)≃D (X×Y X)′ =H′
-By deﬁnition, the compact objects of H andH′ form opposite categories to each other.
-Next consider the swap involution
-σ :X×Y X ∼ /d47/d47X×Y X σ (x1,y 12,x 2) = (x2,y −1
-12,x 1)
-where y−1
-12 is the path y12 traced in the opposite direction. The induced equivalence on D-modules
-intertwines the algebra structure and the opposite algebra struc ture
-σ :H ∼ /d47/d47Hop.
-Finally, introduce the composite of the swap involution, Verdier dualit y and shift
-ι :H ∼ /d47/d47H′ ι(M) = DX×Y X (σ(M))[2 dimX]
-We will show that any compact object M∈ His left and right dualizable, with both duals
-identiﬁed with ι(M)∈H , thereby establishing that H is semi-rigid. Following the discussion of
-Section 2.2.1, it suﬃces to establish for a compact object M∈H , and arbitrary objects L, N∈H ,
-that there are functorial equivalences
-HomH(L⋆ M, N)≃ HomH(L, N⋆ι (M)) Hom H(M⋆ L, N)≃ HomH(L,ι (M)⋆ N)
-We will give a proof of the ﬁrst. The second is similar or follows by applyin g σ to the ﬁrst and
-renaming objects.
-Observe that it suﬃces to establish the equivalence for L, N∈H compact objects. For arbitrary
-objects L, N∈H , it then follows by continuity by taking colimits ﬁrst in N then in L.
-For L, M, N∈H compact objects, we will establish the equivalent identity
-HomH(CX×Y X, DX×Y X (L⋆ M)⊗ N)≃ HomH(CX×Y X, DX×Y X (L)⊗ (N⋆ι (M)))
-Sincep13 is a base change of p, it is proper and hence p13∗ commutes with Verdier duality. Since
-p12×p23 is a base change of δ, it is smooth of relative dimension − dimX and hence (p12×p13)∗≃
-(p12×p13)![2 dimX]. Hence we have the identity
-DX×Y X (L⋆ M) ≃ DX×Y X (p13∗((p12×p13)!(L ⊠ M)))
-≃ p13∗DX×Y X (p12×p13)!(L ⊠ M)
-≃ p13∗(p12×p13)∗(DX×Y X (L) ⊠ DX×Y X (M))
-≃ p13∗(p12×p13)!(DX×Y X (L) ⊠ DX×Y X (M))[2 dimX]
-≃ DX×Y X (L)⋆ DX×Y X (M)[2 dimX]
-Substituting this into the above sought after identity and renaming objects, we seek to establish
-the following general identity
-(4) Γ X×Y X ((L⋆ M)⊗ N)≃ Γ X×Y X (L⊗ (N⋆σ (M)))
-35
-Let us ﬁrst modestly reformulate how to calculate each side, in part icular the quantities obtained
-before taking global sections. For the left hand side, consider the commutative diagram whose right
-hand square is Cartesian
-(X×Y X×Y X)
-id×p13
-/d15/d15
-p12×p23×p13
-/d115/d115❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤
-p13 /d47/d47X×Y X
-∆
-/d15/d15
-(X×Y X)3 (X×Y X×Y X)× (X×Y X)p12×p23×p45
-/d111/d111
-p13×p45
-/d47/d47 (X×Y X)2
-By a composition identity in the triangle and base change in the right ha nd square, there is a
-functorial equivalence
-(L⋆ M)⊗ N≃p13∗(p12×p23×p13)!(L ⊠ M ⊠ N)
-Similarly, for the right hand side, consider the commutative diagram w hose right hand square is
-Cartesian
-(X×Y X×Y X)
-p13×id
-/d15/d15
-p13×σp23×p12
-/d115/d115❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤
-p13 /d47/d47X×Y X
-∆
-/d15/d15
-(X×Y X)3 (X×Y X)× (X×Y X×Y X)p12×σp45×p34
-/d111/d111
-p12×p35
-/d47/d47 (X×Y X)2
-By a composition identity in the triangle and base change in the right ha nd square, there is a
-functorial equivalence
-L⊗ (N⋆σ (M))≃p13∗(p13×σp23×p12)!(L ⊠ M ⊠ N)
-Finally, observe that there is a natural commutative diagram
-(X×Y X×Y X)
-∼
-r
-/d42/d42❯❯❯❯❯❯❯❯❯❯❯❯❯❯❯❯❯
-p13×σp23×p12
-/d15/d15
-p13 /d47/d47X×Y X
-(X×Y X)3 (X×Y X×Y X)p12×p23×p13
-/d111/d111
-p13
-/d79/d79
-where the diagonal map r is the rotational equivalence given by
-r(x1,y 12,x 2,y 23,x 3) = (x1,y 12◦y23,x 3,y −1
-23,x 2)
-where the path y12◦y23 is the composition of the paths y12,y 23, and the path y−1
-23 is the path y23
-traced in the opposite direction.
-Let us write π :X×YX→pt. We have seen that the two sides of the sought after equivalence ( 4)
-can be realized by going around the edges of the above diagram
-Γ X×Y X ((L⋆ M)⊗ N)≃π∗p13∗(p12×p23×p13)!(L ⊠ M ⊠ N)
-Γ X×Y X (L⊗ (N⋆σ (M)))≃π∗p13∗(p13×σp23×p13)!(L ⊠ M ⊠ N)
-Thus the rotational equivalence r intertwines them and we obtain the equivalence (4). □
-Theorem 6.3. Suppose X,Y are as in Theorem 6.2. Then the Hecke category H =D(X×Y X)
-carries a canonical Calabi-Yau structure.
-Proof. Let us brieﬂy recall from [L2, Section 5.3.3] the realization of Hochs child homology and its
-S1 symmetry from the point of view of topological chiral homology.
-First, given a framed circle S, for example, the standard circle S1 = [0, 1]/∼ with its natural
-induced orientation, let IS be the∞-category given by the nerve of the poset of framed embeddings
-36
-of ﬁnite disjoint unions of open intervals in S with partial order given by framed inclusions. Given
-the E1-algebraH, introduce the natural functor
-ψH :IS /d47/d47StC ψH(I) =H⊗π0(I)
-whose structure on morphisms is given by the E1-structure on H. By deﬁnition, the topological
-chiral homology of H overS is the colimit
-∫
-SH = colim ISψH
-Observe that the above makes sense for families of framed circles, and so exhibits
-∫
-SH as the ﬁber
-of an∞-local system over the moduli of framed circles BDiﬀ +(S1).
-Recall as well that for the standard circle S1 = [0, 1]/∼, the realization of the bar resolution in
-terms of subdivisions of the interval [0 , 1] provides a natural morphism which is an equivalence
-Tr(H)≃|H⊗ H⊗HopC∗(H)| ∼ /d47/d47 colimIS1ψH =
-∫
-S1H
-Now to endow H with a Calabi-Yau structure, let S→BDiﬀ +(S1) denote the universal framed
-circle, and let VectC denote the constant∞-local system on BDiﬀ +(S1) with ﬁber Vect C. We must
-construct a morphism of ∞-local systems
-τ :
-∫
-SH /d47/d47 VectC
-Moreover, for a given framed circle S and pair of disjoint open intervals I1
-∐ I2⊂ S (hence any
-framed circle with any pair of disjoint open intervals), the natural c omposite map
-H⊗H≃H π0(I1
-∐ I2) /d47/d47 ∫
-SH
-τS /d47/d47 VectC
-must be the evaluation pairing of a self-duality of H∈ StC.
-To achieve this, given an object I = ∐
-iIi∈IS, letM(I) be the stack of maps ∐
-iIi→Y with
-lifts ∐
-i∂Ii→X at boundary points. (Note we do not regard the boundary points o f the intervals
-as embedded in S since they may coincide as, for example, for an interval of the form I =S\{s}
-where s∈S is a single point.) Let D be a closed disk with ∂D =S, and M(D,I ) be the stack of
-mapsD→Y with a lift over the complement S\ (∐
-iIi)→X. Consider the natural correspondence
-M(I) M(D,I )
-p/d111/d111 q /d47/d47pt
-Observe that ψH(I) =D(M(I)) and thanks to standard identities for D-modules, the functor
-D(M(I)) /d47/d47 VectC M ✤ /d47/d47q∗p!M
-provides a natural augmentation to the diagram given by ψH and hence a functor
-τS :
-∫
-SH /d47/d47 VectC
-Since the above makes sense for families of framed circles, it descen ds to the sought after morphism
-of∞-local systems
-τ : ∫
-SH /d47/d47 VectC
-Finally, consider the natural composite map
-H⊗H≃H π0(I1
-∐ I2) /d47/d47 ∫
-SH
-τS /d47/d47 VectC
-Unwinding the above, we ﬁnd it is given by the functor
-H⊗H≃D (X×Y X×X×Y X) /d47/d47 VectC M ✤ /d47/d47q∗p!M
-where p :X×Y X→X×Y X×X×Y X is the diagonal and q :X×Y X→pt is the projection.
-Observe that under the identiﬁcation of H∈ StC with its dual given by Verdier duality, the above
-morphism is precisely the evaluation pairing. □
-37
-Remark 6.4. We will soon identify Tr(H)≃
-∫
-SH with a full subcategory of D-modules on the loop
-spaceLY . Consider the natural correspondence of constant loops
-LY Y e/d111/d111 π /d47/d47pt
-Thanks to standard identities for D-modules, the trace τS :
-∫
-SH→ VectC will factor through the
-functor
-D(LY ) /d47/d47 VectC M ✤ /d47/d47π∗e!M
-The above theorems thus allow us to apply the Cobordism Hypothesis [L3] to the Hecke category
-to obtain an oriented two-dimensional topological ﬁeld theory.
-Corollary 6.5. There is a unique symmetric monoidal functor Z : 2Bord → Alg(1)(StC) with
-Z(pt) =H.
+[]{#character section label="character section"}
+
+In this section, we study the homotopical algebra of Hecke categories arising in representation theory. Our focus is the Hecke category of ${\mathcal D}$-modules on the double quotient stack $B\backslash G/B$ of a reductive group $G$ by a Borel subgroup $B\subset G$, and its unipotent monodromic variant. Our aim is to construct a topological field theory from these Hecke categories, and in particular to relate their traces and centers with character sheaves.
+
+If we introduce the classifying stacks $X=BB$, $Y=BG$, then the double quotient stack can be realized as the fiber product $$B\backslash G/B\simeq X \times_Y X$$ From this point of view, the special technical features of this setup are the following:
+
+1.  The morphism $p:X\to Y$ is proper.
+
+2.  The diagonal $\delta:X\to X\times X$ is smooth.
+
+The second property is especially restrictive though satisfied by classifying spaces of smooth group schemes. The above conditions will imply that we have a sufficient arsenal of duality and adjunctions.
+
+## Hecke categories {#convolution algebras}
+
+We establish here that Hecke categories
+
+are semi-rigid categories with a canonical Calabi-Yau structure, and thus two-dualizable monoidal categories defining oriented topological field theories.
+
+To begin, let $p:X\to Y$ be a morphism of stacks. Introduce the Hecke category $\mathcal H={\mathcal D}(X\times_Y X)$. Consider the convolution diagram $$\label{convolution diagram}
+\xymatrix{
+& \ar[dl]_-{p_{12}}\ar[dr]^-{p_{23}} \ar[d]_{p_{13}}X \times_Y X \times_Y X & \\
+X \times_Y X& X \times_Y X& X \times_Y X}$$ Equip $\mathcal H={\mathcal D}(X\times_Y X)$ with the monoidal product defined by convolution $$\xymatrix{
+\star:\mathcal H\otimes \mathcal H\ar[r] & \mathcal H
+}$$ $$\xymatrix{
+\mathfrak M\star \mathfrak N= p_{13*}(p_{12}^!(\mathfrak M) \otimes p_{23}^!(\mathfrak N))
+\simeq p_{13*}(p_{12} \times p_{23})^!(\mathfrak M\boxtimes \mathfrak N)
+}$$
+
+Similar diagrams provide the usual associativity compatibilities of an algebra object. The monoidal unit $1_\mathcal H$ is given by the pushforward $u_*\omega_X$ along the map $u:X\to X \times_Y X$ induced by the diagonal $\delta:X \to X\times X$.
+
+Recall that if $p:X\to Y$ is safe, then the integral transform construction gives a monoidal functor $$\xymatrix{
+\mathcal H\ar[r] &  \mathop{\mathrm{Fun}}_{{\mathcal D}(Y)}({\mathcal D}(X), {\mathcal D}(X))
+&
+\mathfrak M\ar@{|->}[r] & p_{2*}(p_1^!(-) \otimes\mathfrak M)
+}$$
+
+::: remark
+More formally, the monoidal structure on ${\mathcal D}(X\times_Y X)$ can be defined as follows. The stack $X \times_Y X$ can be identified with endomorphisms of $X$ in the $\infty$-category of stacks over $Y$ with morphisms given by correspondences. The assignment of categories of ${\mathcal D}$-modules extends to a symmetric monoidal functor on this $\infty$-category (see Remark [\[correspondences\]](#correspondences){reference-type="ref" reference="correspondences"}), hence induces an associative algebra structure on ${\mathcal D}(X \times_Y X)$.
+:::
+
+It is important to note that all of the maps involved in the monoidal structure of $\mathcal H$ are obtained by base change from either the diagonal map $\delta:X\to X \times X$ or the projection $p:X\to Y$. Moreover, the monoidal structure only uses pullbacks along maps of the first type and pushforwards along maps of the second type. Thus if we assume $\delta$ is smooth and $p$ is proper, the functors $\delta^!$ and $p_*$, and hence the monoidal product on $\mathcal H$, will be quasi-proper. In addition, ${\mathcal D}(X)$ is semi-rigid under tensor product, by Proposition [\[BG semirigid\]](#BG semirigid){reference-type="ref" reference="BG semirigid"}.
+
+::: theorem
+[]{#perfect Hecke label="perfect Hecke"} Suppose $X$ is a stack with smooth diagonal, $Y$ is a stack, and $X\to Y$ is a proper representable map.
+
+Then the Hecke category $\mathcal H={\mathcal D}(X \times_Y X)$ is semi-rigid (hence 2-dualizable).
+:::
+
+::: proof
+*Proof.* To prove the theorem, let us first establish a candidate for the dual of a compact object.
+
+First, recall that Verdier duality $\mathbb D_{X \times_Y X}$ provides a self-duality $$\xymatrix{
+\mathcal H={\mathcal D}(X \times_Y X) \simeq {\mathcal D}(X \times_Y X)' = \mathcal H'
+}$$ By definition, the compact objects of $\mathcal H$ and $\mathcal H'$ form opposite categories to each other.
+
+Next consider the swap involution $$\xymatrix{
+\sigma: X \times_Y X\ar[r]^-\sim & X \times_Y X
+& \sigma (x_1, y_{12}, x_2) = (x_2, y_{12}^{-1}, x_1)
+}$$ where $y^{-1}_{12}$ is the path $y_{12}$ traced in the opposite direction. The induced equivalence on ${\mathcal D}$-modules intertwines the algebra structure and the opposite algebra structure $$\xymatrix{
+\sigma:\mathcal H\ar[r]^-\sim & \mathcal H^{op}.
+}$$
+
+Finally, introduce the composite of the swap involution, Verdier duality and shift $$\xymatrix{
+\iota : \mathcal H\ar[r]^-\sim & \mathcal H'
+&
+\iota(\mathfrak M) = \mathbb D_{X \times_Y X}(\sigma(\mathfrak M)) [2\dim X]
+}$$
+
+We will show that any compact object $\mathfrak M\in \mathcal H$ is left and right dualizable, with both duals identified with $\iota(\mathfrak M) \in \mathcal H$, thereby establishing that $\mathcal H$ is semi-rigid. Following the discussion of Section [\[duals\]](#duals){reference-type="ref" reference="duals"}, it suffices to establish for a compact object $\mathfrak M\in \mathcal H$, and arbitrary objects $\mathfrak L, \mathfrak N\in \mathcal H$, that there are functorial equivalences $$\xymatrix{
+\mathop{\mathrm{Hom}}_{\mathcal H}(\mathfrak L\star \mathfrak M, \mathfrak N)
+ \simeq \mathop{\mathrm{Hom}}_{\mathcal H}(\mathfrak L, \mathfrak N\star \iota(\mathfrak M))
+& 
+\mathop{\mathrm{Hom}}_{\mathcal H}(\mathfrak M\star \mathfrak L, \mathfrak N)
+\simeq   \mathop{\mathrm{Hom}}_{\mathcal H}(\mathfrak L, \iota(\mathfrak M) \star\mathfrak N)
+}$$
+
+We will give a proof of the first. The second is similar or follows by applying $\sigma$ to the first and renaming objects.
+
+Observe that it suffices to establish the equivalence for $\mathfrak L, \mathfrak N\in \mathcal H$ compact objects. For arbitrary objects $\mathfrak L, \mathfrak N\in \mathcal H$, it then follows by continuity by taking colimits first in $\mathfrak N$ then in $\mathfrak L$.
+
+For $\mathfrak L, \mathfrak M, \mathfrak N\in \mathcal H$ compact objects, we will establish the equivalent identity $$\xymatrix{
+\mathop{\mathrm{Hom}}_{\mathcal H}(\mathbb C_{X \times_Y X}, \mathbb D_{X \times_Y X}(\mathfrak L\star \mathfrak M)\otimes \mathfrak N)
+ \simeq \mathop{\mathrm{Hom}}_{\mathcal H}(\mathbb C_{X \times_Y X}, \mathbb D_{X \times_Y X}(\mathfrak L)\otimes (\mathfrak N\star \iota(\mathfrak M)))
+}$$
+
+Since $p_{13}$ is a base change of $p$, it is proper and hence $p_{13*}$ commutes with Verdier duality. Since $p_{12}\times p_{23}$ is a base change of $\delta$, it is smooth of relative dimension $-\dim X$ and hence $(p_{12} \times p_{13})^* \simeq (p_{12} \times p_{13})^![2\dim X]$. Hence we have the identity $$\begin{eqnarray*}
+ \mathbb D_{X \times_Y X}(\mathfrak L\star \mathfrak M)
+&\simeq  &  \mathbb D_{X \times_Y X}(p_{13*}((p_{12} \times p_{13})^!(\mathfrak L\boxtimes  \mathfrak M)))\\
+&\simeq  &  p_{13*}\mathbb D_{X \times_Y X}(p_{12} \times p_{13})^!(\mathfrak L\boxtimes  \mathfrak M)\\
+&\simeq  &  p_{13*}(p_{12} \times p_{13})^*(\mathbb D_{X \times_Y X}(\mathfrak L) \boxtimes  \mathbb D_{X \times_Y X}(\mathfrak M))\\
+&\simeq  &  p_{13*}(p_{12} \times p_{13})^!(\mathbb D_{X \times_Y X}(\mathfrak L) \boxtimes  \mathbb D_{X \times_Y X}(\mathfrak M)) [2\dim X]\\
+&\simeq  &  \mathbb D_{X \times_Y X}(\mathfrak L) \star  \mathbb D_{X \times_Y X}(\mathfrak M) [2\dim X]\\
+\end{eqnarray*}$$
+
+Substituting this into the above sought after identity and renaming objects, we seek to establish the following general identity $$\begin{equation}
+\label{general eq}
+\Gamma_{X \times_Y X}((\mathfrak L\star \mathfrak M)\otimes \mathfrak N)
+  \simeq  \Gamma_{X \times_Y X}(\mathfrak L\otimes (\mathfrak N\star \sigma(\mathfrak M)))
+\end{equation}$$
+
+Let us first modestly reformulate how to calculate each side, in particular the quantities obtained before taking global sections. For the left hand side, consider the commutative diagram whose right hand square is Cartesian $$\xymatrix{
+ && 
+\ar[d]^-{{\rm id}\times p_{13}} \ar[dll]_-{\hspace{-3em} p_{12} \times p_{23} \times p_{13}}  (X\times_Y X\times_Y X)  \ar[r]^-{p_{13}} & X \times_Y X\ar[d]^-\Delta\\
+(X \times_Y X)^3 && \ar[ll]^-{p_{12} \times p_{23} \times p_{45}} (X\times_Y X\times_Y X) \times (X \times_Y X) \ar[r]_-{p_{13} \times p_{45}} & (X \times_Y X)^2 
+}$$ By a composition identity in the triangle and base change in the right hand square, there is a functorial equivalence $$(\mathfrak L\star \mathfrak M)\otimes \mathfrak N\simeq p_{13*}(p_{12}\times p_{23} \times  p_{13})^!
+(\mathfrak L\boxtimes \mathfrak M\boxtimes \mathfrak N)$$
+
+Similarly, for the right hand side, consider the commutative diagram whose right hand square is Cartesian $$\xymatrix{
+&& 
+\ar[d]^-{p_{13} \times {\rm id}} \ar[dll]_-{\hspace{-3em} p_{13} \times \sigma p_{23} \times  p_{12}}  (X\times_Y X\times_Y X)  \ar[r]^-{p_{13}} & X \times_Y X\ar[d]^-\Delta\\
+(X \times_Y X)^3 && \ar[ll]^-{p_{12} \times \sigma p_{45} \times  p_{34}} (X \times_Y X) \times  (X\times_Y X\times_Y X)\ar[r]_-{p_{12} \times p_{35}} & (X \times_Y X)^2 
+}$$ By a composition identity in the triangle and base change in the right hand square, there is a functorial equivalence $$\mathfrak L\otimes ( \mathfrak N\star \sigma(\mathfrak M)) \simeq p_{13*} (p_{13} \times \sigma p_{23} \times  p_{12})^!
+(\mathfrak L\boxtimes \mathfrak M\boxtimes \mathfrak N)$$
+
+Finally, observe that there is a natural commutative diagram $$\xymatrix{
+\ar[drr]^-\sim_{r} \ar[d]_-{p_{13} \times \sigma p_{23} \times  p_{12}}  (X\times_Y X\times_Y X)  \ar[rr]^-{p_{13}} &&  X \times_Y X\\
+(X \times_Y X)^3 && \ar[ll]^-{p_{12} \times  p_{23} \times  p_{13}}  (X\times_Y X\times_Y X)  \ar[u]_-{p_{13}} 
+}$$ where the diagonal map $r$ is the rotational equivalence given by $$\xymatrix{
+r (x_1, y_{12}, x_2, y_{23}, x_3) = (x_1, y_{12} \circ y_{23}, x_3, y^{-1}_{23}, x_2)
+}$$ where the path $y_{12} \circ y_{23}$ is the composition of the paths $y_{12}, y_{23}$, and the path $y^{-1}_{23}$ is the path $y_{23}$ traced in the opposite direction.
+
+Let us write $\pi:X \times_Y X\to pt$. We have seen that the two sides of the sought after equivalence [\[general eq\]](#general eq){reference-type="eqref" reference="general eq"} can be realized by going around the edges of the above diagram $$\Gamma_{X \times_Y X}((\mathfrak L\star \mathfrak M)\otimes \mathfrak N) \simeq 
+\pi_*p_{13*}(p_{12} \times p_{23} \times p_{13})^!(\mathfrak L\boxtimes \mathfrak M\boxtimes \mathfrak N)$$ $$\Gamma_{X \times_Y X}(\mathfrak L\otimes (\mathfrak N\star \sigma(\mathfrak M)))
+ \simeq \pi_*p_{13*}(p_{13} \times \sigma p_{23} \times p_{13})^!(\mathfrak L\boxtimes \mathfrak M\boxtimes \mathfrak N)$$ Thus the rotational equivalence $r$ intertwines them and we obtain the equivalence [\[general eq\]](#general eq){reference-type="eqref" reference="general eq"}. ◻
+:::
+
+::: theorem
+[]{#CY Hecke label="CY Hecke"} Suppose $X,Y$ are as in Theorem [\[perfect Hecke\]](#perfect Hecke){reference-type="ref" reference="perfect Hecke"}. Then the Hecke category $\mathcal H={\mathcal D}(X \times_Y X)$ carries a canonical Calabi-Yau structure.
+:::
+
+::: proof
+*Proof.* Let us briefly recall from [@HA Section 5.3.3] the realization of Hochschild homology and its $S^1$ symmetry from the point of view of topological chiral homology.
+
+First, given a framed circle $S$, for example, the standard circle $S^1=[0,1]/\hspace{-0.25em}\sim$ with its natural induced orientation, let $I_S$ be the $\infty$-category given by the nerve of the poset of framed embeddings of finite disjoint unions of open intervals in $S$ with partial order given by framed inclusions. Given the $E_1$-algebra $\mathcal H$, introduce the natural functor $$\xymatrix{
+\psi_\mathcal H:I_S\ar[r] &  St_\mathbb C
+& \psi_{\mathcal H}(I) = \mathcal H^{\otimes \pi_0(I)}
+}$$ whose structure on morphisms is given by the $E_1$-structure on $\mathcal H$. By definition, the topological chiral homology of $\mathcal H$ over $S$ is the colimit $$\xymatrix{
+\int_{S} \mathcal H= \mathop{\mathrm{colim}}_{I_S} \psi_{\mathcal H}
+}$$ Observe that the above makes sense for families of framed circles, and so exhibits $\int_{S} \mathcal H$ as the fiber of an $\infty$-local system over the moduli of framed circles $B\mathit{Diff^+}(S^1)$.
+
+Recall as well that for the standard circle $S^1=[0,1]/\hspace{-0.25em}\sim$, the realization of the bar resolution in terms of subdivisions of the interval $[0,1]$ provides a natural morphism which is an equivalence $$\xymatrix{
+\operatorname{Tr}(\mathcal H) \simeq | \mathcal H\otimes_{\mathcal H\otimes \mathcal H^{op}} C_*(\mathcal H)| \ar[r]^-\sim & \mathop{\mathrm{colim}}_{I_{S^1}} \psi_{\mathcal H} = \int_{S^1} \mathcal H
+}$$
+
+Now to endow $\mathcal H$ with a Calabi-Yau structure, let $\mathbb S\to B\mathit{Diff^+}(S^1)$ denote the universal framed circle, and let $\mathbb{V}\hspace{-0.25em}\operatorname{ect}_\mathbb C$ denote the constant $\infty$-local system on $B\mathit{Diff^+}(S^1)$ with fiber $\operatorname{Vect}_\mathbb C$. We must construct a morphism of $\infty$-local systems $$\xymatrix{
+\tau:\int_{\mathbb S} \mathcal H\ar[r] &\mathbb{V}\hspace{-0.25em}\operatorname{ect}_\mathbb C
+}$$ Moreover, for a given framed circle $S$ and pair of disjoint open intervals $I_1 \coprod I_2 \subset S$ (hence any framed circle with any pair of disjoint open intervals), the natural composite map $$\xymatrix{
+\mathcal H\otimes \mathcal H\simeq \mathcal H^{\pi_0(I_1\coprod I_2)} \ar[r] & \int_{S} \mathcal H\ar[r]^-{\tau_S} &\mathbb{V}\hspace{-0.25em}\operatorname{ect}_\mathbb C
+}$$ must be the evaluation pairing of a self-duality of $\mathcal H\in St_\mathbb C$.
+
+To achieve this, given an object $I = \coprod_i I_i \in I_S$, let $\mathcal M(I)$ be the stack of maps $\coprod_i  I_i\to Y$ with lifts $\coprod_i \partial I_i \to  X$ at boundary points. (Note we do not regard the boundary points of the intervals as embedded in $S$ since they may coincide as, for example, for an interval of the form $I = S\setminus\{s\}$ where $s\in S$ is a single point.) Let $D$ be a closed disk with $\partial D = S$, and $\mathcal M(D, I)$ be the stack of maps $D\to Y$ with a lift over the complement $S\setminus (\coprod_i  I_i) \to  X$. Consider the natural correspondence $$\xymatrix{
+ \mathcal M(I) & \ar[l]_-p \mathcal M(D, I) \ar[r]^-q & pt
+ }$$ Observe that $\psi_\mathcal H(I) = {\mathcal D}(\mathcal M(I))$ and thanks to standard identities for ${\mathcal D}$-modules, the functor $$\xymatrix{
+  {\mathcal D}(\mathcal M(I))\ar[r] &  \operatorname{Vect}_\mathbb C&  M \ar@{|->}[r] & q_*p^!M 
+  }$$ provides a natural augmentation to the diagram given by $\psi_\mathcal H$ and hence a functor $$\xymatrix{
+\tau_S:\int_{S} \mathcal H\ar[r] &\operatorname{Vect}_\mathbb C
+}$$ Since the above makes sense for families of framed circles, it descends to the sought after morphism of $\infty$-local systems $$\xymatrix{
+\tau:\int_{\mathbb S} \mathcal H\ar[r] &\mathbb{V}\hspace{-0.25em}\operatorname{ect}_\mathbb C
+}$$
+
+Finally, consider the natural composite map $$\xymatrix{
+\mathcal H\otimes \mathcal H\simeq \mathcal H^{\pi_0(I_1\coprod I_2)} \ar[r] & \int_{S} \mathcal H\ar[r]^-{\tau_S} &\mathbb{V}\hspace{-0.25em}\operatorname{ect}_\mathbb C
+}$$ Unwinding the above, we find it is given by the functor $$\xymatrix{
+ \mathcal H\otimes \mathcal H\simeq {\mathcal D}(X \times_Y X\times X \times_Y X) \ar[r] &  \operatorname{Vect}_\mathbb C
+ &
+  M \ar@{|->}[r] & q_*p^!M 
+  }$$ where $p:X \times_Y X\to X \times_Y X\times X \times_Y X$ is the diagonal and $q:X \times_Y X\to pt$ is the projection. Observe that under the identification of $\mathcal H\in St_\mathbb C$ with its dual given by Verdier duality, the above morphism is precisely the evaluation pairing. ◻
+:::
+
+::: remark
+We will soon identify $\operatorname{Tr}(\mathcal H) \simeq \int_{S} \mathcal H$ with a full subcategory of ${\mathcal D}$-modules on the loop space $\mathcal LY$. Consider the natural correspondence of constant loops $$\xymatrix{
+\mathcal LY & \ar[l]_-e Y \ar[r]^-\pi & pt
+}$$ Thanks to standard identities for ${\mathcal D}$-modules, the trace $\tau_S:\int_{S} \mathcal H\to \operatorname{Vect}_\mathbb C$ will factor through the functor $$\xymatrix{
+  {\mathcal D}(\mathcal LY)\ar[r] &   \operatorname{Vect}_\mathbb C& M \ar@{|->}[r] & \pi_*e^!M
+  }$$
+:::
+
+The above theorems thus allow us to apply the Cobordism Hypothesis [@jacob; @TFT] to the Hecke category to obtain an oriented two-dimensional topological field theory.
+
+::: cor
+[]{#Hecke TFT label="Hecke TFT"} There is a unique symmetric monoidal functor $\mathcal Z: 2Bord \to Alg_{(1)}(St_\mathbb C)$
+
+with $\mathcal Z(pt)=\mathcal H$.
+:::
+
+## Loop spaces and horocycle correspondences
+
+We establish here the basic relation between Hecke categories and loop spaces. It is an abstraction of the horocycle correspondence from representation theory. We will continue with the assumptions that $p:X\to Y$ is proper and $X$ has smooth diagonal $\delta:X\to X\times X$.
+
+Consider the fundamental correspondence $$\xymatrix{
+ \mathcal LY  = Y\times_{Y\times Y} Y & \mathcal LY \times_Y X =X \times_{X \times Y} X \ar[l]_-{q} \ar[r]^-{\epsilon} & X\times_Y X.\\
+}$$ where $q$ is a base change of $p$, and $\epsilon$ is a base change $\delta$.
+
+Define the functor $$\xymatrix{
+F: {\mathcal D}(X\times_Y X) \ar[r]^-{\epsilon^!} & {\mathcal D}(\mathcal LY \times_Y X) 
+ \ar[r]^-{q_*}& {\mathcal D}(\mathcal LY) \\
+}$$ Since $q$ is a base change of $p$ and hence proper, there is an adjunction $(q_*,q^!)$, and since $\epsilon$ is a base change of $\delta$ and hence smooth, of relative dimension $-\dim X$, there is an equivalence $\epsilon^*\simeq\epsilon^![2\dim X]$ and an adjunction $(\epsilon^*,\epsilon_*)$. Thus there is the continuous right adjoint $$\xymatrix{
+F^r:{\mathcal D}(\mathcal LY)   \ar[r]^-{q^!}&{\mathcal D}(\mathcal LY \times_Y X)  \ar[rr]^-{\epsilon_*[-2\dim X]} && {\mathcal D}(X\times_Y X)\\
+}$$
+
+Let $\mathcal I(F) \subset {\mathcal D}(\mathcal LY)$ denote the cocompletion of the image of $F$. It is naturally equivalent to the left orthogonal ${}^\perp \mathcal K(F^r) \subset {\mathcal D}(\mathcal LY)$ to the kernel of $F^r$. Since $q^!$ satisfies descent, both in turn are naturally equivalent to the full subcategory of ${\mathcal D}(\mathcal LY)$ of objects whose image under $q^!$ is in the cocompletion of the image of $\epsilon^!$.
+
+::: theorem
+[]{#thm center label="thm center"} There is a natural commutative diagram $$\xymatrix{
+ {\mathcal D}(X \times_Y X) & \\
+{}^\perp \mathcal K(F^r) \ar[u]^-{F^r} \ar[r]^-\sim&  \ar[ul]_-\mathfrak z\operatorname{Z}({\mathcal D}(X \times_Y X)) 
+}$$
+:::
+
+::: proof
+*Proof.* For notational convenience, set $\mathcal A= {\mathcal D}(X \times_Y X)$ and $\mathcal B= {\mathcal D}(X)$. Observe that pushforward along the relative diagonal $\mathcal B\to \mathcal A$ is monoidal, and thus we may regard $\mathcal A$ as an algebra in $\mathcal B$-bimodules.
+
+Given an algebra $\mathcal A$ in $\mathcal B$-bimodules, we have its relative bar resolution $$\xymatrix{
+  \mathcal A\simeq 
+  \left| \mathcal A^{\otimes_\mathcal B(\bullet+2)} \right| 
+  }$$ which can be used to calculate its center $$\xymatrix{
+\operatorname{Z}(\mathcal A) =  \mathop{\mathrm{Hom}}_{\mathcal A\otimes \mathcal A^{op}}(\mathcal A, \mathcal A) = \mathop{\mathrm{Hom}}_{\mathcal A\otimes \mathcal A^{op}}(\left| \mathcal A^{\otimes_\mathcal B(\bullet+2)} \right|,  \mathcal A) = 
+  \mathop{\mathrm{Tot}}\left\{\mathop{\mathrm{Hom}}_{\mathcal B\otimes \mathcal B^{op}} (\mathcal A^{\otimes_\mathcal B\bullet},  \mathcal A) \right\}
+}$$ We will access the center as the totalization of the cosimplicial object $$\mathcal C^\bullet =  \mathop{\mathrm{Hom}}_{\mathcal B\otimes \mathcal B^{op}} (\mathcal A^{\otimes_\mathcal B\bullet},  \mathcal A)$$
+
+Unwinding the notation and using the canonical identity ${\mathcal D}(X)^{\otimes k} \simeq {\mathcal D}(X^k)$, we find the cosimplicial category $$\xymatrix{
+\mathcal C^\bullet \simeq 
+\mathop{\mathrm{Fun}}_{{\mathcal D}(X\times X)}^L({\mathcal D}( (X \times_Y X)^{\times_X\bullet } ), {\mathcal D}(X \times_Y X))
+}$$
+
+Using the canonical identification of functors with integral transforms of Proposition [\[prop int trans adjoint\]](#prop int trans adjoint){reference-type="ref" reference="prop int trans adjoint"}, we have a level-wise fully faithful map of cosimplicial diagrams $$\xymatrix{
+\mathcal C^\bullet \ar[r] &  
+ {\mathcal D}(X^{\times_Y (\bullet+1)} \times_Y \mathcal LY)
+ }$$ where the cosimplicial structure maps on the latter are given by $!$-pullback functors.
+
+Thus the center $\operatorname{Z}(\mathcal A)$ is equivalent to the full subcategory of ${\mathcal D}(\mathcal LY)$ of objects whose image under $q^!$ is in the cocompletion of the image of $\epsilon^!$. ◻
+:::
+
+::: cor
+[]{#cor trace label="cor trace"} There is a natural commutative diagram $$\xymatrix{
+& \ar[dl]_-\mathfrak {tr}{\mathcal D}(X \times_Y X) \ar[d]^-{F} &\\
+\operatorname{Tr}({\mathcal D}(X \times_Y X)) \ar[r]^-\sim   & \mathcal I(F)
+}$$
+:::
+
+::: proof
+*Proof.* We have seen that ${\mathcal D}(X\times_Y X)$ is semi-rigid and pivotal, and hence its center and trace are equivalent. More precisely, the augmented semi-cosimplicial diagram calculating the center can be obtained from the augmented semi-simplicial diagram calculating the trace by passing to right adjoints. In particular, the universal central functor can be obtained as the right adjoint of the universal trace. Thus passing to left adjoints in the diagram of the previous theorem provides the diagram of the corollary. ◻
+:::
+
+## Character sheaves
+
+Now we apply our previous results to our motivating example when $X=BB$, $Y=BG$, for a reductive group $G$ and Borel subgroup $B\subset G$. Thus we are studying the Hecke category $\mathcal H_G = {\mathcal D}(B\backslash G/B)$ of Borel bi-equivariant ${\mathcal D}$-modules on $G$.
+
+With this setup, the fundamental correspondence is the horocycle correspondence $$\xymatrix{
+G/G & \ar[l]_-{q} (G\times G/B)/G \ar[r]^-{\epsilon} & B\backslash G/B.
+}$$ It contains the traditional Springer correspondence as a subspace $$\xymatrix{
+G/G & \ar[l]_-{} \widetilde G/G\simeq B/B \ar[r]^-{} & B\backslash B/B \simeq BB
+}$$ where $\widetilde G \subset G \times G/B$ comprises pairs where the group element fixes the flag.
+
+::: definition
+The dg category ${Ch}_G$ of unipotent character sheaves is defined to be the full subcategory of ${\mathcal D}(G/_{\hspace{-0.2em}ad}\hspace{0.1em}G)$ generated (under colimits) by the image of the Harish Chandra transform $F$.
+:::
+
+Applying our previous results, we immediately obtain the following.
+
+::: theorem
+[]{#thm char shvs label="thm char shvs"} The category of unipotent character sheaves ${Ch}_{G}$ is equivalent to both the trace and center of the Hecke category $\mathcal H_{G}$. The equivalences fit into natural adjoint commutative diagrams $$\xymatrix{
+&  \mathcal H_{G} \ar[dl]_-\mathfrak {tr}\ar[d]<-1ex>_-{F}&\\
+ \operatorname{Tr}(\mathcal H_{G}) \ar[r]^-\sim & \ar[u]<-1ex>_-{F^r} {Ch}_{G} \ar[r]^-\sim
+ &  \ar[ul]_-\mathfrak z\operatorname{Z}(\mathcal H_G)
+   }$$
+:::

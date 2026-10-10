@@ -1,0 +1,506 @@
+\section{Euler-Lagrange equation: Proof of Theorem \ref{thm:EulerLagrangeEquation}}
+
+This section is devoted to the proof of Theorem~\ref{thm:EulerLagrangeEquation}
+which especially involves the derivation of a formula for the first variation.
+
+By $\Wir$ we will denote the set of \underline injective and \underline regular curves in~$\W$.
+The set $\Hir[1,\infty]$ is defined accordingly.
+First we will need
+the following lemma, to guarantee that $E^{(2)}$ is well defined on a
+sufficiently small $\W\capH$ neighborhood of the curve $\g$:
+
+
+% As in Theorem~\ref{thm:EulerLagrangeEquation} we abbreviate
+% \[ U_\eps := [-\tfrac12,-\eps]\cup[\eps,\tfrac12]
+%    \qquad\text{for }\eps\in[0,\tfrac12). \]
+
+\begin{lemma}[$\Hir \capH$ is open in $\W \capH$]\label{lem:Upsilon}
+ For any $\g\in\Hir \rzd \capH \rzd$ there is some $\tau_0=\tau_0(\g)>0$ with
+ \begin{equation}\label{eq:Upsilon}
+  \Upsilon := \sett{\g+\h}{\h\in H^{1,\infty}\rzd, \norm\dh_{L^\infty}\le\tau_0}\subset\Hir[1,\infty].
+ \end{equation}
+ Moreover, there is a constant $c=c(\g)>0$ with
+ \begin{equation} \label{eq:fundamentalEstimates}
+ \min\{|\tg(u+w) - \tg(u)|, d_{\tg}(u+w,u)\}  \geq c |w|, \quad \quad
+ \quad|\dtg(u)| \geq c
+ \end{equation}
+ for all $\tg \in \Upsilon$ and $(u,w) \in U_0$.
+\end{lemma}
+
+\begin{proof}
+  We first show that $\g$ is bi-Lipschitz. To this end, choose $\delta\in(0,\frac12)$ with
+\begin{equation*}
+ \left(\int_{B_r(z)} \int_{B_r(0)} \frac
+   {|\dg(u+w)-\dg(u)|^{2}}{|w|^{2}} \d w \d u\right)^{1/2} \leq \tfrac12
+\end{equation*}
+for all $z \in \mathbb R / \mathbb Z$ and all $r \in[0,\delta]$ which gives
+\begin{align*}
+  &\frac 1 {2r}\int_{B_r (z)}\bigg| \dg(x) - \frac 1 {2r}  \int_{B_r(z)} \dg(y) \d y\bigg| \d x \\
+  &\leq \frac  1 {4r^2} \int_{B_r(z)} \int_{B_r(z)}  |\dg(x) - \dg(y)| \d x \d y \\
+  &\leq \left(  \frac 1 {4r^2} \int_{B_r(z)} \int_{B_r(z)}
+  |\dg(x) - \dg(y)|^{2} \d x \d y\right)^{1/2} \\
+  &\leq \left( \int_{B_r(z)}  \int_{B_r(z)}
+  \frac{|\dg(x) - \dg(y)|^{2}}{|x-y|^{2}} \d x \d y\right)^{1/2} \\
+  &\leq \tfrac 1 2 .
+\end{align*}
+Since $\abs{\frac 1 {2r}  \int_{B_r(z)} \dg(y)
+  \d y} \leq 1$  we deduce that
+\begin{equation*}
+  \inf_{\substack{a\in \mathbb R^n \\ |a|\leq 1}} \frac 1 {2r} \int_{B_r(z)} \abs{\dg(y)-a} \d y \leq \tfrac 1 2.
+\end{equation*}
+For $x,y \in \mathbb R / \mathbb Z$ with $|x-y| \leq 2\delta$ let $r:=
+\tfrac12|x-y|$ and $z \in \mathbb R / \mathbb Z$ be the midpoint of
+the shorter arc between $x$ and $y$. Then
+\begin{align*}
+  |\g(x)-\g(y)| &= \sup_{\substack{a\in \mathbb R^n \\ |a|\leq 1}}\;
+  \int_{B_r(z)}\langle \dg(t),a\rangle \d t\\
+ &= \sup_{\substack{a\in \mathbb R^n \\ |a|\leq 1}} \; \int_{B_r(z)}\langle
+ \dg(t) ,\dg(t) + (a-\dg(t))\rangle \d t\\
+&\geq \left( 1 - \inf_{\substack{a\in \mathbb R^n \\ |a|\leq 1}}
+  \frac 1 {2r}\int_{B_{r}(z) }|\dg(t)-a|\d t \right) |x-y| \\
+  &\geq\tfrac 12 |x-y|
+\end{align*}
+for all $x,y \in \mathbb R / \mathbb Z$ with $|x-y|\leq 2\delta$.
+Since $\g$ is embedded and
+\[ (x,y) \mapsto \frac
+{|\g(y)-\g(x)|}{|y-x|} \]
+ defines a continuous positive function on
+$I_\delta :=\{(x,y) \in (\mathbb R / \mathbb Z)^2: |x-y| \geq 2\delta\}$, we furthermore have
+\begin{equation*}
+  |\g(x) - \g(y)| \geq \underbrace{\min_{(\tilde x,\tilde y) \in I_\delta}\frac {|\g(\tilde y)-\g(\tilde x)|}{|\tilde y-\tilde x|}}_{>0} |x-y|.
+\end{equation*}
+for all $(x,y) \in I_\delta$.
+Hence, there is a $c_0=c_0(\g)>0$ with
+\begin{equation*}
+ |\g(x) - \g(x+w)| \geq c_0 |w|
+\end{equation*}
+for all $w \in [-1/2, 1/2]$.
+Lessening $c_0$ if necessary, we can also achieve by regularity
+\[ \abs{\dg}\ge c_0 \qquad\text{on }\R/\Z. \]
+
+Letting $\tau_0:=\tfrac12 c_0$ we obtain
+for arbitrary $\tg\in \Upsilon$
+\begin{align*}
+ \abs{\tg(u+w)-\tg(u)} &\ge \abs{\g(u+w)-\g(u)} - \abs{(\tg-\g)(u+w)-(\tg-\g)(u)} \\
+ &\ge c_0\abs w-\norm{\dg-\tdg}_{L^\infty}\abs w \\
+ &\ge \tfrac12c_0\abs w
+\end{align*}
+and
+\[ \abs{\tdg}\ge\abs{\dg}-\abs{\tdg-\dg}\ge c_0-\norm{\dg-\tdg}_{L^\infty}\ge\tfrac12c_0. \]
+From the latter estimate
+we deduce by~\eqref{eq:intrinsic} for $u\in\R/\Z$, $w\in[-\tfrac12,\tfrac12]$
+\[ d_{\tg}(u+w,u) \ge d_{\tg}(u\pm w,u) \ge \tfrac12c_0\abs w. \]
+We have established~\eqref{eq:fundamentalEstimates} which gives~\eqref{eq:Upsilon}.
+\end{proof}
+
+We will use the last lemma to prove the following theorem, from which 
+Theorem~\ref{thm:EulerLagrangeEquation} will follow quite easily.
+
+\begin{proposition}\label{prop:formula}
+  The energy $\E$ is continuously differentiable on $\br{\Wir\capH}\rzd$.
+  The derivative of $\E$ at $\g \in {\Wir\capH}$ in direction $\h \in {\Wir\capH}$ exists and
+  is given by
+  \begin{equation}\label{eq:formulaD}
+  \begin{split}
+    &\delta\E(\g;\h)  = \\
+    &2\lim_{\varepsilon \searrow 0} \iint\limits_{U_\eps} \Bigg\{
+    \left(
+      \frac 1 {\abs{\D\g}^2}-\frac 1 {d_\g(u+w,u)^2} \right)
+      \left\langle \frac{\dg(u)}{\abs{\dg(u)}^2},\dh(u) \right\rangle 
+\\
+    &\qquad\qquad {}-
+      \left( \frac{\sp{\D\g,\D\h}}{\abs{\D\g}^{4}}
+	-\frac{ \left.\tfrac{\d}{\d\tau}\right|_{\tau=0}d_{\g+\tau\h}(u+w,u)}
+		{d_\g(u+w,u)^{3}} \right)\Bigg\} 
+\\ &\hspace{7.6cm} |\dg(u+w)| |\dg(u)|\d w\d u .
+  \end{split}
+  \end{equation}
+\end{proposition}
+
+As $\g$ is absolutely continuous and regular, the derivative 
+$\left.\tfrac{\d}{\d\tau}\right|_{\tau=0}d_{\g+\tau\h}(u+w,u)$ is well-defined for almost all
+$(u,w) \in U_0$. From~\eqref{eq:intrinsic} we deduce
+\begin{multline}\label{eq:dd} 
+ \left.\tfrac{\d}{\d\tau}\right|_{\tau=0} d_{\g+\tau\h} (u+w,u) =
+ \begin{cases} |w|\int_{0}^1 
+    \left\langle \frac {\dg(u+\sigma w)}{|\dg(u+\sigma w)|} , \dh(u+\sigma w) \right\rangle d\sigma
+    &\text{if } \length(\g|_{[u,u+w]}) <\frac 1 2 \length(\g),\\
+    -|w|\int_{0}^1
+    \left\langle  \frac {\dg(u+\sigma w)}{|\dg(u+\sigma w)|} , \dh(u+\sigma w) \right\rangle d\sigma
+    &\text{if } \length(\g|_{[u,u+w]}) > \frac 1 2 \length(\g).
+    \end{cases}
+\end{multline}
+
+To prove Proposition~\ref{prop:formula}, we will first show that the following approximations
+of the energy $\E$, in which we cut off the singular part, are continuously differentiable
+and provide a formula for the first variation.
+For $\varepsilon\in(0,\tfrac12)$ we set
+\begin{equation*}
+  \Ee(\g) := \iint\limits_{ U_\eps} 
+    \br{\frac1{\abs{\D\g}^2}-\frac1{d_\g(u+w,u)^2}}\abs{\dg(u+w)}\abs{\dg(u)}
+    \d w\d u.  
+\end{equation*}
+
+\begin{lemma} \label{lem:FrechetDifferentiable}
+For $\eps\in(0,\tfrac12)$ the functional $\Ee$ is continuously differentiable on the space of all
+injective regular curves in $\W \rzd \cap H^{1,\infty}\rzd$.
+The directional derivative at $\g\in \Wir \rzd \cap H^{1,\infty} \rzd$ in direction 
+$\h\in \W \rzd \cap H^{1,\infty} \rzd$ is given by
+\begin{equation}\label{eq:FrechetDifferentiable}
+\begin{split}
+    &\delta\Ee(\g;\h)  = \\
+    & 2\iint\limits_{U_\eps} \Bigg\{
+    \left(
+      \frac 1 {\abs{\D\g}^2}-\frac 1 {d_\g(u+w,u)^2} \right)
+      \left\langle \frac{\dg(u)}{\abs{\dg(u)}^2},\dh(u) \right\rangle 
+\\
+    &\qquad \qquad {}-
+      \left( \frac{\sp{\D\g,\D\h}}{\abs{\D\g}^{4}}
+	-\frac{ \left.\tfrac{\d}{\d\tau}\right|_{\tau=0}d_{\g+\tau\h}(u+w,u)}
+		{d_\g(u+w,u)^{3}} \right)\Bigg\} 
+\\ &\hspace{7.6cm} |\dg(u+w)| |\dg(u)|\d w\d u .
+  \end{split}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Applying Lemma~\ref{lem:Upsilon}, we obtain an $\W \capH$-neighborhood $Y \subset \Wir \capH$ of $\g$
+such that~\eqref{eq:fundamentalEstimates} uniformly holds on $Y$ for any element in $U_\varepsilon$.
+The integrand in~\eqref{eq:FrechetDifferentiable} is almost everywhere
+the pointwise derivative of the integrand in $\Ee$. Using~\eqref{eq:intrinsic} and~\eqref{eq:dd}, one sees
+furthermore that this pointwise derivative is majorized by some $L^1$-function. So,
+Lebesgue's Theorem permits to interchange differentiation and integration which,
+by a suitable reparametrization, results in~\eqref{eq:FrechetDifferentiable}.
+
+As for continuity of $\Ee$ and $\delta\Ee$ the only difficulty is to treat the intrinsic distance.
+Recalling the continuity of the length functional with respect to absolutely continuous curves
+we can directly read off from~\eqref{eq:intrinsic} that
+the integrand of $\Ee$ defines a continuous operator
+$(H_{\mathrm{ir}}^{3/2}\cap H^{1,\infty})(\mathbb R / \mathbb Z, \mathbb R^n) \to L^1(U_{\varepsilon})$.
+
+Since $\gamma$ is regular, for any $u\in\R/\Z$ there are at most two points $w\in[-\tfrac12,\tfrac12]$ satisfying
+$\mathscr L(\gamma|_{[u,u+w]}) = \tfrac 1 2 \mathscr L(\gamma)$ which results in a null set in $U_0$.
+Additionally using~\eqref{eq:dd}, we see that the integrand of $\delta\Ee$ gives rise to a continuous mapping
+$(H_{\mathrm{ir}}^{3/2}\cap H^{1,\infty})(\mathbb R / \mathbb Z, \mathbb R^n) \times H^{1,\infty} (\mathbb R / \mathbb Z, \mathbb R^n)
+\to L^1(U_{\varepsilon})$.
+Being linear and bounded in the second component, it can be viewed as a continuous mapping from $\W[1,\infty]$
+into the linear bounded operators $\Hir\capH\to L^1(U_\eps)$.
+
+Altogether, the integrand of $\Ee$ is a continuously differentiable functional 
+$H_{\mathrm{ir}}^{3/2}\capH\to L^1(U_\eps)$.
+The statement now follows from the chain rule and the fact that the integration operator
+\[ L^1(U_\varepsilon) \to \mathbb R, \qquad
+ g \mapsto \iint_{U_\varepsilon} g(u,w) \d u\d w, \]
+is continuously differentiable as it is a bounded linear operator.
+\end{proof}
+
+Due to the fact that bounded $L^1$-sequences are not uniformly integrable, the approximations $\Ee$ do not even form
+a Cauchy sequence in $C^0(\Hir\capH)$.
+In order to prove Proposition~\ref{prop:formula}, we state in Lemma~\ref{lem:CauchySequence} below
+that $\Ee$ is \emph{nearly} a Cauchy sequence 
+in $C^1(X_{\delta})$ for subsets $X_\delta \subset \Wir\capH$, $\delta\ge0$,
+which satisfy the following substitute of the uniform integrability property
+\begin{equation}\label{eq:uniformintegrability}
+ \limsup_{\varepsilon \rightarrow 0}\sup_{\gamma \in X_\delta} 
+  \left(\iint_{\mathbb R / \mathbb Z \times [-\eps, \eps]}
+  \frac {|\gamma'(u+w) - \gamma'(u)|^2}{w^2} \d w \d u \right) ^{1/2}
+\leq \delta.
+\end{equation}
+The statement involves the Lipschitz constant
+\[ \lip_Y E = \sup_{\substack{f,\tilde f\in Y\\f\ne\tilde f}}\frac{\abs{E(f)-E(\tilde f)}}{\norm{f-\tilde f}} \]
+for some real-valued functional $E$ and a subset $Y$ contained in its domain.
+
+\begin{lemma} \label{lem:CauchySequence}
+ We have
+ \begin{equation*}
+  \Ee(\gamma) \rightarrow \E(\gamma)
+ \end{equation*}
+ for all $\gamma \in \Hir \capH$.
+
+ Furthermore, for any $\gn \in \Wir\capH$ there is an open subset $\Upsilon \subset \Wir\capH$ 
+ and a constant $C=C(\gn) < \infty$ such that
+\begin{equation}
+ \limsup_{\varepsilon_1, \varepsilon_2 \rightarrow 0}\lip_{X_\delta\cap\Upsilon} (\E[\eps_1] - \E[\eps_2])
+ \le C \delta\label{eq:CauchySequence2}
+\end{equation}
+for all subsets $X_\delta \subset \W\capH$ satisfying \eqref{eq:uniformintegrability} with $\delta \in[0,1]$.
+\end{lemma}
+
+\begin{proof}
+ From Lemma~\ref{lem:Upsilon} we get a $\W \capH$-neighborhood
+ $\Upsilon \subset \Wir \capH$ of $\gamma$ such that
+ \eqref{eq:fundamentalEstimates} holds for all $\g\in\Upsilon$.
+ Making $\Upsilon$ smaller if
+ necessary, we may also assume the existence of an $\varepsilon_0 >0$ with
+ \begin{equation*}
+  d_{\g}(u+w,u) = \mathscr L (\g|_{[u,u+w]})
+ \end{equation*}
+ for all $\g \in \Upsilon$ and  $w \in [-\varepsilon_0, \varepsilon_0]$.
+
+ \renewcommand{\gt}{\tg}
+ \renewcommand{\dgt}{\tg'} 
+ In order to bring the integrand in the definition of $\E$ and $\Ee$
+ in a more convenient form we
+ introduce the function
+ \[ g(\zeta,\eta,\vartheta,\iota) := \frac{\zeta^{-2}-\eta^{-2}}{\eta^2-\zeta^2}\vartheta\iota \]
+ which is Lipschitz continuous and positive on $[\tilde c,\infty)^4$ for any $\tilde c>0$.
+ We define for $u\in\R/\Z$, $w\in[-\eps_0,\eps_0]$
+ \begin{align*}
+  \G[\g]:(u,w) &\mapsto g\br{\abs{\int_0^1\dg(u+\theta_1w)\d\theta_1},\int_0^1\abs{\dg(u+\theta_2w)}\d\theta_2,\abs{\dg(u+w)},\abs{\dg(u)}}.
+ \end{align*}
+ We have chosen $\Upsilon$ in such a way that the arguments in $\G[]$ are 
+ uniformly bounded away from zero.
+ Then we decompose the integrand in the definition of $\E$ for $|w| \leq \varepsilon_0$ into
+ \begin{align*}
+  &\br{\frac1{\abs{\D\g}^2}-\frac1{d_{\g}(u+w,u)^2}}\abs{\dg(u+w)}\abs{\dg(u)}\\
+  &=\frac1{w^2}\br{\frac1{\abs{\int_0^1\dg(u+\theta_1w)\d\theta_1}^2}-\frac1{\br{\int_0^1\abs{\dg(u+\theta_2w)}\d\theta_2}^2}}\abs{\dg(u+w)}\abs{\dg(u)}\\
+  &=\G[\g](u,w)\frac{\br{\int_0^1 \abs{\dg(u+\theta_2w)}\d\theta_2}^2 - \abs{\int_0^1\dg(u+\theta_1w)\d\theta_1}^2}{\abs w^{2}}  \\
+  &=\G[\g](u,w)\frac{\iint_{[0,1]^2} \br{\abs{\dg(u+\theta_1w)}\abs{\dg(u+\theta_2w)} - \sp{\dg(u+\theta_1w),\dg(u+\theta_2w)}} \d\theta_1\d\theta_2}{\abs w^{2}}.
+ \end{align*}
+ Using $2\abs a\abs b-2\sp{a,b} = \abs{a-b}^2 - \abs{\abs a-\abs b}^2$ for $a,b\in\R^n$ 
+ this can be written as
+ \begin{align*}
+  &\tfrac12 \G[\g](u,w)\frac{\iint_{[0,1]^2}\abs{\dg(u+\theta_1w)-\dg(u+\theta_2w)}^2\d\theta_1\d\theta_2}{w^2} \\
+  &\quad{}-\tfrac12 \G[\g](u,w)\frac{\iint_{[0,1]^2}\br{\abs{\dg(u+\theta_1w)}-\abs{\dg(u+\theta_2w)}}^2\d\theta_1\d\theta_2}{w^2}.
+ \end{align*}
+ We first use this to get
+ \begin{align*}
+  \E(\gamma) - \Ee(\gamma) \leq C \int_{\mathbb R / \mathbb Z} \int_{-\varepsilon}^\varepsilon
+  \G[\g](u,w)\frac{\iint_{[0,1]^2}\abs{\dg(u+\theta_1w)-\dg(u+\theta_2w)}^2\d\theta_1\d\theta_2}{w^2} 
+  dw du  \\
+  \leq C  \int_{\mathbb R / \mathbb Z} \int_{-\varepsilon}^\varepsilon
+  \frac{\iint_{[0,1]^2}\abs{\dg(u+\theta_1w)-\dg(u+\theta_2w)}^2\d\theta_1\d\theta_2}{w^2} 
+  dw du 
+  \xrightarrow{\varepsilon \rightarrow 0} 0 
+ \end{align*}
+ which proves the pointwise convergence stated in the lemma.
+
+ Let now $0<\varepsilon_1 < \varepsilon_2 < \varepsilon_0$ and set
+ \[ F:= \E[\varepsilon_1] - \E[\varepsilon_2]. \]
+ Using the decomposition of the integrand above, we get 
+ \begin{align*}
+  F(\g) &=  \tfrac12 \int_{\mathbb R / \mathbb Z}
+  \int_{\varepsilon_1 < |w| < \varepsilon_2}\G[\g](u,w)\frac{\iint_{[0,1]^2}\abs{\dg(u+\theta_1w)-\dg(u+\theta_2w)}^2\d\theta_1\d\theta_2}{w^2}\d w\d u \\
+  &\quad{}-\tfrac12  \int_{\mathbb R / \mathbb Z}
+  \int_{\varepsilon_1 < |w| < \varepsilon_2}\G[\g](u,w)\frac{\iint_{[0,1]^2}\br{\abs{\dg(u+\theta_1w)}-\abs{\dg(u+\theta_2w)}}^2\d\theta_1\d\theta_2}{w^2}\d w\d u \\
+  &=: \tfrac12 F_1^{(2)}(\g) - \tfrac12 F_2^{(2)}(\g).
+ \end{align*}
+ To estimate the difference $F(\gt)-F(\g)$ for $\g,\tg\in Y_{0}$, we first consider
+ \begin{align*}
+  &\abs{\G[\gt](u,w)-\G(u,w)} \\
+  &\le C\abs{\abs{\int_0^1\dtg(u+\theta_1w)\d\theta_1}-\abs{\int_0^1\dg(u+\theta_2w)\d\theta_2}}
+  \\
+  & \quad{}+C\abs{\int_0^1\br{\abs{\dgt(u+\theta w)}-\abs{\dg(u+\theta w)}}\d\theta} \\
+  &\quad{}+C\abs{\abs{\dgt(u+w)}-\abs{\dg(u+w)}} +C\abs{\abs{\dgt(u)}-\abs{\dg(u)}} \\
+  &\le C\int_0^1\abs{\dgt(u+\theta w)-\dg(u+\theta w)}\d\theta +C\abs{{\dgt(u+w)}-{\dg(u+w)}} +C\abs{{\dgt(u)}-{\dg(u)}} \\
+  &\le C\norm{\dgt-\dg}_{L^\infty}.
+ \end{align*}
+ We arrive at
+ \begin{align*}
+  &\abs{F_1^{(2)}(\gt)-F_1^{(2)}(\g)} \\
+  &\le \iint\limits_{\R/\Z\times[-\eps_2,\eps_2]}\abs{\G[\gt](u,w)-\G(u,w)}\frac{\iint_{[0,1]^2}\abs{\dgt(u+\theta_1w)-\dgt(u+\theta_2w)}^2\d\theta_1\d\theta_2}{w^2}\d w\d u \\
+  &\quad{}+\iint\limits_{\R/\Z\times[-\eps_2,\eps_2]}\abs{\G[\g](u,w)}\\
+  & \qquad \qquad  \frac{\iint_{[0,1]^2}\abs{\abs{\dgt(u+\theta_1w)-\dgt(u+\theta_2w)}^2-\abs{\dg(u+\theta_1w)-\dg(u+\theta_2w)}^2}\d\theta_1\d\theta_2}{w^2} \\
+  & \hspace{11.2cm}\d w\d u \\
+  &\le C\norm{\dgt-\dg}_{L^\infty}\iint\limits_{[0,1]^2}\iint\limits_{\R/\Z\times[-\eps_2,\eps_2]}\frac{\abs{\dgt(u+\theta_1w)-\dgt(u+\theta_2w)}^2}{w^2}\d w\d u\d\theta_1\d\theta_2 \\
+  &\quad{}+C\norm\dg_{L^{\infty}}\iint\limits_{[0,1]^2}\iint\limits_{\R/\Z\times[-\eps_2,\eps_2]} \\
+  & \qquad  \frac{\abs{(\dgt+\dg)(u+\theta_1w)-(\dgt+\dg)(u+\theta_2w)}\abs{(\dgt-\dg)(u+\theta_1w)-(\dgt-\dg)(u+\theta_2w)}}{w^2} \\
+  & \hspace{10.2cm}\d w\d u\d\theta_1\d\theta_2 \\
+  &\le C\seminorm{\dgt}_{\W[1/2]_{\scriptstyle 2\eps_2}}^2\norm{\dgt-\dg}_{L^\infty}
+    + C \norm\dg_{L^{\infty}}\seminorm{\dgt+\dg}_{\W[1/2]_{\scriptstyle 2\eps_2}}\seminorm{\dgt-\dg}_{\W[1/2]_{\scriptstyle 2\eps_2}}
+ \end{align*}
+ where we set for $\eps\in(0,\tfrac12)$
+ \begin{equation*}
+  \seminorm{f}_{\W[1/2]_{\scriptstyle\eps}}
+  := \left( \iint_{\R/\Z\times[-\eps,\eps]} \frac{\abs{f(u+w)-f(u)}^2}{w^{2}} \d w\d u\right)^{1/2}.
+ \end{equation*}
+ For the second term we compute
+ \begin{align*}
+  &\abs{F_2^{(2)}(\gt)-F_2^{(2)}(\g)} \\
+  &\le \! \! \iint\limits_{\R/\Z\times[-\eps_2,\eps_2]} \! \! \! \!\abs{\G[\gt](u,w)-\G(u,w)}\frac{\iint_{[0,1]^2} \!\! \br{\abs{\dgt(u+\theta_1w)}-\abs{\dgt(u+\theta_2w)}}^2\d\theta_1\d\theta_2}{w^2}\d w\d u \\
+  &\qquad{}+\iint\limits_{\R/\Z\times[-\eps_2,\eps_2]}\abs{\G[\g](u,w)} \cdot\\
+  &\qquad \cdot\frac{\iint_{[0,1]^2}\abs{\br{\abs{\dgt(u+\theta_1w)}-\abs{\dgt(u+\theta_2w)}}^2-\br{\abs{\dg(u+\theta_1w)}-\abs{\dg(u+\theta_2w)}}^2}\d\theta_1\d\theta_2}{w^2}\\
+  & \hspace{11.2cm} \d w\d u \\
+  &\le C\norm{\dgt-\dg}_{L^\infty}\iint\limits_{[0,1]^2}\iint\limits_{\R/\Z\times[-\eps_2,\eps_2]}\frac{\abs{\dgt(u+\theta_1w)-\dgt(u+\theta_2w)}^2}{w^2}\d w\d u\d\theta_1\d\theta_2 \\
+  &\quad{}+C\norm\dg_{L^{\infty}}\iint\limits_{[0,1]^2}\iint\limits_{\R/\Z\times[-\eps_2,\eps_2]}\frac{\abs{\br{\abs{\dgt(u+\theta_1w)}-\abs{\dgt(u+\theta_2w)}}+\br{\abs{\dg(u+\theta_1w)}-\abs{\dg(u+\theta_2w)}}}}{\abs w}\cdot \\
+  &\qquad\quad{}\cdot\frac{\abs{\br{\abs{\dgt(u+\theta_1w)}-\abs{\dgt(u+\theta_2w)}}-\br{\abs{\dg(u+\theta_1w)}-\abs{\dg(u+\theta_2w)}}}}{\abs w}\d w\d u\d\theta_1\d\theta_2 \\
+  &\le C\norm{\dgt-\dg}_{L^\infty}\seminorm{\dgt}_{\W[1/2]_{\scriptstyle 2\eps_2}}^2
+      + C\norm\dg_{L^{\infty}}\seminorm{\abs\dgt+\abs\dg}_{\W[1/2]_{\scriptstyle 2\eps_2}}\seminorm{\abs\dgt-\abs\dg}_{\W[1/2]_{\scriptstyle 2\eps_2}}.
+ \end{align*}
+ Using the chain and product rule for Sobolev spaces and the formula
+ \[
+  \abs\dgt-\abs\dg 
+  = \frac{\sp{\dgt+\dg,\dgt-\dg}}{\abs\dgt+\abs\dg},
+ \]
+ we obtain, assuming $\eps_{0}<\tfrac14$, for $C>0$ depending on
+ the constant from~\eqref{eq:fundamentalEstimates}
+ \begin{align*}
+  \seminorm{\abs\dgt-\abs\dg}_{\W[1/2]_{\scriptstyle 2\eps_2}} 
+  &\le \seminorm{\abs\dgt-\abs\dg}_{\W[1/2](\R/\Z)} \\
+  &\le C \norm{\dgt-\dg}_{\W[1/2]\cap L^{\infty}}
+  \norm{\dgt+\dg}_{\W[1/2]\cap L^{\infty}}\br{1+\seminorm\tdg_{\W[1/2]_{\scriptstyle 2\eps_2}}+\seminorm\dg_{\W[1/2]_{\scriptstyle 2\eps_2}}}
+  \end{align*}
+ where
+ \[ \norm\cdot_{\W[1/2]\cap L^{\infty}} := \norm\cdot_{\W[1/2]}+\norm\cdot_{L^{\infty}}. \]
+ Hence
+ \begin{align*}
+    \abs{F_2^{(2)}(\gt)-F_2^{(2)}(\g)}
+    &\le C \Bigg(\seminorm{\dgt}_{\W[1/2]_{\scriptstyle 2\eps_2}}^2 +
+    \norm\dg_{L^{\infty}}\br{\seminorm\tdg_{\W[1/2]_{\scriptstyle 2\eps_2}}+\seminorm\dg_{\W[1/2]_{\scriptstyle 2\eps_2}}}
+    \norm{\dgt+\dg}_{\W[1/2]\cap L^{\infty}}\cdot \\
+    &\qquad\qquad\qquad\qquad{}\cdot\br{1+\seminorm\tdg_{\W[1/2]_{\scriptstyle 2\eps_2}}+\seminorm\dg_{\W[1/2]_{\scriptstyle 2\eps_2}}}
+     \Bigg)
+    \|\dgt-\dg\|_{\W[1/2]\cap L^{\infty}}.
+ \end{align*}
+ The claim follows from
+ \[ \limsup_{\eps_{2}\searrow0}\sup_{\tg\in X_{\delta}\cap Y}\seminorm{\dtg}_{\W[1/2]_{\scriptstyle2\eps_{2}}} \le \delta. \]
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:formula}]
+ In order to prove that \emph{directional derivatives} exist at $\gn\in\Hir\capH$ for all directions $\h\in\W\capH$
+ let $\Upsilon$ be as in the proof of Lemma~\ref{lem:CauchySequence} and
+ \begin{equation*}
+  X_0 := \sett{ \gn + \tau\h}{\tau \in (-1,1)}.
+ \end{equation*}
+ First we observe that $X_0$ satisfies~\eqref{eq:uniformintegrability}, thus being an admissible set
+ for Lemma~\ref{lem:CauchySequence}. Indeed,
+ for $\gt := \gn +\tau\h$, $|\tau| \leq 1$,
+ \begin{align}
+  &\Bigg( \iint_{\mathbb R / \mathbb Z \times [-\eps, \eps]} 
+  \frac {|\g_\tau'(u+w) - \g_\tau'(u)|^2}{|w|^2} \d w\d u \Bigg)^{1/2}  \nonumber \\
+  &\leq \left( \iint_{\mathbb R / \mathbb Z \times [-\eps, \eps]}
+  \frac {|\dg_{0}(u+w) - \dg_{0}(u)|^2}{|w|^2} \d w \d u \right)^{1/2}
+  +  \left( \iint_{\mathbb R / \mathbb Z \times [-\eps, \eps]}
+  \frac {|\dh(u+w) - \dh(u)|^2}{|w|^2} \d w \d u \right)^{1/2} 
+  \nonumber\\
+  &\xrightarrow{\eps\searrow0} 0.\label{eq:X0}
+ \end{align}
+ From this we deduce,
+ for
+ \[ f_\eps : \tau\mapsto \Ee(\g_{0}+\tau\h), \]
+ that
+ \begin{align}
+  &\abs{f_{\eps_1}'(\tau)-f_{\eps_2}'(\tau)}
+  =\abs{\delta\Ee[\eps_1](\g_0+\tau \h;\h)-\delta\Ee[\eps_2](\g_0+\tau \h;\h)} \nonumber\\
+  &\le\limsup_{\theta\to0}\abs{\frac{\Ee[\eps_1](\g_0+(\tau+\theta)\h)-\Ee[\eps_1](\g_0+\tau \h)}{\theta}
+   - \frac{\Ee[\eps_2](\g_0+(\tau+\theta)\h)-\Ee[\eps_2](\g_0+\tau \h)}{\theta}} \nonumber\\  
+  &\le \lip_{X_0\cap\Upsilon}\br{\Ee[\eps_1]-\Ee[\eps_2]}\norm \h_{\W\cap\W[1	,\infty]}\label{eq:f-f}\\
+  &\xrightarrow{\eps_1,\eps_2\searrow0}0\qquad\text{by \eqref{eq:CauchySequence2}.}\nonumber
+ \end{align}
+ As $\Ee\to\E$ pointwise, this proves that $\seq{f_\eps}$
+ is a Cauchy sequence in $C^1((-\tau_0, \tau_0))$ converging to $\E(\g_0 + \tau \h)=\lim_{\eps\searrow0}\Ee(\g_0+\tau \h)$ as 
+ $ \varepsilon \rightarrow 0$.
+ Hence, especially all directional derivatives of $\E$ exist and
+ \begin{equation*}
+  \delta \E (\g_0;\h) = \lim_{\varepsilon \searrow 0} \delta \Ee (\g_0;\h)
+ \end{equation*}
+ for all $\g_0 \in \Wir\cap\W[1,\infty]$, $\h \in \W\cap\W[1,\infty]$.
+ 
+  The next step is to establish \emph{G\^ateaux differentiability}. To this end we merely have to show
+ $\delta\E(\g_0,\cdot)\in\br{\W\cap\W[1,\infty]}^*$ for $\g_0\in\Wir\cap\W[1,\infty]$. Linearity carries over from $\Ee$.
+ In order to prove boundedness we introduce
+ \begin{equation}\label{eq:X_delta}
+  X_\delta := \{ \g \in \W : \|\g - \gn\|_{\W} \leq \delta\}\qquad\text{for }\delta\in(0,1]
+ \end{equation}
+ which also satisfies~\eqref{eq:uniformintegrability} as
+ for $\g \in X_\delta$ we have
+ \begin{equation}\label{eq:Xdelta}
+ \begin{split}
+  &\Bigg( \iint_{\mathbb R / \mathbb Z \times [-\eps, \eps]}
+  \frac {|\dg(u+w) - \dg(u)|^2}{|w|^2} \d w \d u \Bigg)^{1/2} \\
+  &\leq \left( \iint_{\mathbb R / \mathbb Z \times [-\eps, \eps]}
+  \frac {|\dgn(u+w) - \dgn(u)|^2}{|w|^2} \d w \d u \right)^{1/2}
+ +  \delta \xrightarrow{\eps\searrow0} \delta.
+ \end{split}  
+ \end{equation}
+ Now 
+ \begin{align*}
+  \delta \E(\gn;\h) 
+  &= \delta \Ee(\gn;\h) + \delta \E(\gn;\h) - \delta \Ee(\gn;\h)
+  \\
+  &= \delta \Ee(\gn;\h) + \lim_{\varepsilon_1 \searrow0} 
+   \br{\delta \E[\varepsilon_1] (\gn;\h) - \delta \Ee(\gn;\h)}
+ \end{align*}
+ and thus, arguing as in~\eqref{eq:f-f} and recalling $\delta\Ee(\g_0;\cdot)\in\br{\W\capH}^*$,
+\begin{equation*}
+\begin{aligned}
+  | \delta \E(\gn;\h) |& \leq | \delta \Ee(\gn;\h) |
+  +  \underbrace{\limsup_{\eps_1\searrow0}\lip_{X_\delta\cap\Upsilon}\br{\Ee[\eps_1]-\Ee[\eps]}}_{<\infty} \|\h\|_{\W\cap\W[1,\infty]}
+  \leq C \|\h\|_{\W\cap\W[1,\infty]}
+\end{aligned}
+\end{equation*}
+ for all $\gn \in \Wir \capH$ and $\h \in \W \capH$. Hence, $\E$ is G\^ateaux differentiable  and the 
+differential is given by
+\begin{equation*}
+ \left(\E\right)'(\gn) = \delta \E(\gn;\cdot)
+\end{equation*}
+for all $\gn \in \Wir \capH$, $\h \in \W \capH$.
+
+Finally, to see that the differential is \emph{continuous}, let $\sigma >0$ be given and let us choose
+$\delta>0$ and $\varepsilon>0$ so small that
+\begin{equation*}
+ \lip_{X_\delta\cap\Upsilon}\br{\Ee[\eps_1]-\Ee[\eps_2]} \refeq[\le]{CauchySequence2} C \delta \leq \tfrac13 \sigma
+\end{equation*}
+for all $\varepsilon_1, \varepsilon_2 < \eps$ where $X_\delta$ is as in~\eqref{eq:X_delta}. Then we
+have for $\g \in X_\delta \cap\Upsilon$ and any $\h\in\W\capH$
+\begin{align*}
+ |\delta E^{(2)}(\g;\h) - \delta E^{(2)}(\gn;\h)|
+ &\leq |\delta \E(\g;\h) - \delta \Ee(\g;\h)| + 
+  |\delta \Ee(\g;\h) - \delta \Ee(\gn;\h)| 
+ \\ 
+  &\quad + |\delta \Ee(\gn;\h) - \delta \E(\gn;\h)|
+ \\
+  &\refeq[\le]{f-f}  |\delta \Ee(\g;\h) - \delta \Ee(\gn;\h)| +  \tfrac23 \sigma \norm\h_{\W\capH}.
+\end{align*} 
+Since $\Ee$ is $C^1$ we deduce that there is an open neighborhood $V\subset X_\delta$
+of $\gn$ such that 
+\begin{equation*}
+ |\delta \Ee(\g;\h) - \delta \Ee(\gn;\h)| \leq \tfrac13\sigma \norm\h_{\W\capH}
+\end{equation*}
+and hence
+\begin{equation*}
+  |\delta \E(\g;\h) - \delta \E(\gn;\h)| \leq \sigma \norm\h_{\W\capH}
+\end{equation*}
+for all $\g\in V$.
+This proves that $\left(\E \right)'$ is continuous from $\Wir\capH$ into $\left( \W \capH \right)^\ast$ and
+hence $\E$ is $C^1(\Wir$ $\capH)$.
+\end{proof}
+
+
+\begin{proof}[Proof of Theorem~\ref{thm:EulerLagrangeEquation}]
+ Using Proposition~\ref{prop:formula} we merely have to derive the formula of the first variation
+ for a curve $\g \in \Wir\capH$ parametrized by arc-length
+ and $\h \in \W\capH$.
+ As $\abs\dg\equiv1$ a.~e.\@ we deduce from Lemma~\ref{lem:FrechetDifferentiable} 
+ and Equation~\eqref{eq:dd}
+ \begin{align*}
+  \delta\E(\g;\h) &\xleftarrow{\varepsilon \searrow 0} 2\iint_{U_\varepsilon}
+\Bigg\{\left(\frac 1 {|\g(u+w) - \g(u)|^2} - \frac 1 {w^2} \right)
+  \left\langle \dg(u), \dh(u) \right\rangle  \\
+  &\qquad {}- 2  \left(\frac{\left\langle \D\g ,\D \h \right\rangle }{|\D\g|^{4}}
+    -\frac{\left.\tfrac{\d}{\d\tau}\right|_{\tau=0}d_{\g+\tau\h}(u+w,u)}{|w|^{3}}\right)\Bigg\}
+  \d w\d u 
+ \end{align*}
+ where now 
+ \begin{equation*}
+  \left.\tfrac{\d}{\d\tau}\right|_{\tau=0}d_{\g+\tau\h}(u+w,u) = |w|\int_0^1 \left\langle \dg(u+ \theta w), \dh(u+\theta w) \right\rangle d\theta
+ \end{equation*}
+ for all $(u,w) \in \mathbb R / \mathbb Z \times (-\tfrac12, \tfrac12)$. Hence,
+ \begin{align*}
+  &\delta\E(\g;\h) 
+  \xleftarrow{\varepsilon \searrow 0}2\iint_{U_\varepsilon}  \Bigg\{
+    \left(\frac 1 {|\g(u+w) - \g(u)|^2} - \frac 1 {w^2} \right) 
+    \left\langle \dg(u), \dh(u) \right\rangle \\
+    &\quad{} -   \left(\frac{\left\langle \D\g ,\D \h \right\rangle }{|\D\g|^{4}}
+    -\frac{\int_0^1 \left\langle \dg(u+\theta w ), \dh(u+\theta w) \right\rangle d\theta}
+    {w^2}\right) \Bigg\}\d w\d u \\
+  & = 2\iint_{U_\varepsilon} \Bigg\{
+    \left(\frac 1 {|\g(u+w) - \g(u)|^2} - \frac 1 {w^2} \right) 
+    \left\langle \dg(u), \dh(u) \right\rangle \\
+    &\qquad\qquad{} - \left(\frac{\left\langle \D\g ,\D \h \right\rangle }{|\D\g|^{4}}
+    -\frac{\left\langle \dg(u), \dh(u) \right\rangle}{w^2}\right) \Bigg\}\d w\d u\\
+& = 2\iint_{U_\varepsilon} 
+  \br{\frac  {\left\langle \dg(u), \dh(u) \right\rangle} {|\g(u+w) - \g(u)|^2}
+            - \frac{\left\langle \D\g ,\D \h \right\rangle }{|\D\g|^{4}} } \d w\d u.
+\end{align*}
+\end{proof}

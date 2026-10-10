@@ -7,70 +7,78 @@ section_number: 2
 pages: 4-5
 source_pdf: 1604.02688v1.pdf
 source_sha256: bdcafe379519287c
+text_source: latex
+latex_prose_ratio: 0.956
+latex_coverage_ratio: 0.797
 doc_brief: "THE 3D-INDEX AND NORMAL SURFACES — Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary"
 ---
-The index for a triangulation is built up from thetetrahedron index I∆ : Z2→ Z[[q
-1
-2 ]],
-deﬁned form,e∈ Z by
-I∆(m,e )(q) =
-∞∑
-n=max{0,−e}
-(−1)nq
-1
-2n(n+1)−(n+ 1
-2e)m
-(q)n(q)n+e
-(1)
-where (q)n = Πn
-i=1(1−qi) is theq-Pochhammer symbol (by convention(q)0 = 1). The index
-coincides with the coeﬃcients ofze in the generating function
-I(m,q,z ) =
-∑
-e∈Z
-I∆(m,e )(q)ze = (q− m
-2 +1z−1;q)∞
-(q− m
-2 z;q)∞
-(2)
+The index for a triangulation is built up from the \emph{tetrahedron index}  
+$\ID \colon \mathbb{Z}^2\rightarrow \mathbb{Z}[[q^\frac{1}{2}]]$, defined 
+for $m,e \in \Z$ by
+\be
+\ID(m,e)(q)=\sum^{\infty}_{n=\max\{0,-e\}}(-1)^n 
+\frac{q^{\frac{1}{2}n(n+1)-(n+\frac{1}{2}e)m}}{(q)_n(q)_{n+e}}
+\label{ID_def}
+\ee
+where $(q)_n=\Pi_{i=1}^{n}(1-q^i)$ is the $q$-Pochhammer symbol 
+(by convention $(q)_0=1$). The index coincides with the coefficients 
+of $z^e$ in the generating function
+\be
+I(m,q,z)=\sum_{e \in \Z}  \ID(m,e)(q) z^e 
+= \frac{(q^{-\frac{m}{2}+1} 
+\, z^{-1};q)_\infty}{(q^{-\frac{m}{2}} \,z;q)_\infty}
+\label{ID_gen_func}
+\ee
 where
-(z;q)∞ =
-∞∏
-n=0
-(1−zqn). (3)
-(see [Gar15]). It follows that for any ﬁxedq∈ C with 0<|q|< 1, the product forI(m,q,z )
-converges for allz∈ C with z⁄= 0, and deﬁnes a holomorphic function ofz in the annulus
-0<|z|< 1 with Laurent series given by∑
-e∈ZI∆(m,e )(q)ze.
-A more symmetric version of the tetrahedral index was deﬁned in [GHRS15] fora,b,c ∈ Z
-by
-J∆(a,b,c ) = (−q
-1
-2 )−bI∆(b−c,a−b) = (−q
-1
-2 )−cI∆(c−a,b−c) = (−q
-1
-2 )−aI∆(a−b,c−a). (4)
-Then J∆(a,b,c ) is invariant under all permutations of its argumentsa,b,c and satisﬁes
-J∆(a,b,c ) = (−q
-1
-2 )sJ∆(a +s,b +s,c +s) for alls∈ Z. (5)
-In particular, ifa,b≥ 0 then (1) gives
-J∆(a,b, 0) =I∆(−a,b ) =q
-1
-2ab + higher order terms, (6)
-and (5) shows that, in general, the lowest degree term inJ∆(a,b,c ) has q-degree
-degJ∆(a,b,c ) = 1
-2 ((a−m)(b−m) + (b−m)(c−m) + (c−m)(a−m)−m) (7)
-and coeﬃcient(−1)m, wherem = min{a,b,c}.
-The tetrahedral index also satisﬁes many other interesting algebraic identities including
-the quadratic identity ∑
-e∈Z
-I∆(m,e )I∆(m,e +c)qe =δc,0, (8)
-the pentagon identity
-∑
-e0∈Z
-qe0I∆(m1,x 1 +e0)I∆(m2,x 2 +e0)I∆(m1 +m2,x 3 +e0) (9)
-=q−x3I∆(m1−x2 +x3,x 1−x3)I∆(m2−x1 +x3,x 2−x3),
-and some importantrecurrence relations. (See [Gar15] for the details.)
-THE 3D-INDEX AND NORMAL SURF ACES 5
+\be
+(z; q)_\infty = \prod_{n=0}^\infty (1- z q^n) .
+\label{zq-Poch}
+\ee
+(see \cite{Gar}). It follows that for any fixed $q \in \C$ with $0 < |q|<1$,
+ the product for $I(m,q,z)$ converges for all $z\in \C$ with $z\ne 0$, 
+and defines a holomorphic function of $z$ in the annulus $0<|z|<1$
+with Laurent series given  by $\sum_{e \in \Z}  \ID(m,e)(q) z^e$.
+
+\medskip
+A more symmetric version of the tetrahedral index was defined in \cite{GHRS}  
+ for $a,b,c \in \Z$ by
+\be
+\JD(a,b,c)= (-q^{\frac{1}{2}})^{-b} \ID(b-c,a-b)
+= (-q^{\frac{1}{2}})^{-c} \ID(c-a,b-c) = (-q^{\frac{1}{2}})^{-a} \ID(a-b,c-a).
+\ee
+Then $\JD(a,b,c)$ is \emph{invariant under all permutations of its 
+arguments} $a,b,c$ and satisfies
+\be
+\JD(a,b,c) = (-q^{\frac{1}{2}})^{s} \JD(a+s,b+s,c+s)  
+\text{ for all } s \in \Z.
+\label{J_plus_tets}
+\ee
+
+In particular, if $a, b\ge 0$ then (\ref{ID_def}) gives 
+\be
+\JD(a,b,0) =\ID(-a,b) = q^{\frac{1}{2}ab} + \text{ higher order terms},
+\label{min_j_deg}
+\ee
+and (\ref{J_plus_tets}) shows that, in general, the lowest degree term 
+in $\JD(a,b,c)$ has $q$-degree 
+\be
+\deg \JD(a,b,c) = 
+\frac{1}{2}\left( (a-m)(b-m) +(b-m)(c-m)+(c-m)(a-m) - m \right) 
+\ee
+and coefficient $(-1)^m$,  where $m=\min\{a,b,c\}$.
+
+The tetrahedral index also satisfies many other interesting algebraic 
+identities including the \emph{quadratic identity} 
+\be
+\label{eq.IDquadratic}
+\sum_{e \in \BZ} \ID(m,e)\ID(m,e+c)q^e =\delta_{c,0},
+\ee
+the \emph{pentagon identity}
+\begin{align}
+\sum_{e_0 \in \BZ}
+& q^{e_0} \ID(m_1,x_1+e_0)\ID(m_2,x_2+e_0)\ID(m_1+m_2,x_3+e_0)
+\label{pent_eq} \\
+&=q^{-x_3} \ID(m_1-x_2+x_3,x_1-x_3)\ID(m_2-x_1+x_3,x_2-x_3) ,\nonumber
+\end{align}
+and some important {\em recurrence relations}. 
+(See \cite{Gar} for the details.)

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.02592v3/sections/sec-056",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The geometrisation conjecture",
+  "pageStart": 409,
+  "pageEnd": 413,
+  "contains": [
+    "library/arxiv-1610.02592v3/blocks/prose-sec-056",
+    "library/arxiv-1610.02592v3/blocks/theorem-sec-056-01",
+    "library/arxiv-1610.02592v3/blocks/conjecture-sec-056-02",
+    "library/arxiv-1610.02592v3/blocks/conjecture-sec-056-03",
+    "library/arxiv-1610.02592v3/blocks/conjecture-sec-056-04",
+    "library/arxiv-1610.02592v3/blocks/corollary-sec-056-05",
+    "library/arxiv-1610.02592v3/blocks/corollary-sec-056-06",
+    "library/arxiv-1610.02592v3/blocks/proposition-sec-056-07",
+    "library/arxiv-1610.02592v3/blocks/theorem-sec-056-08",
+    "library/arxiv-1610.02592v3/blocks/theorem-sec-056-09"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.02592v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.02592v3/manifest.jsonld",
+  "provenance": "ingested"
+}

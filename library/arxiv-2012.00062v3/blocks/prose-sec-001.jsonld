@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2012.00062v3/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2012.00062v3/blocks/prose-sec-001",
   "kind": "prose",
   "title": "Chern–Simons theory with compact and complex gauge group",
   "pageStart": 1,
   "pageEnd": 4,
   "text": "../sections/sec-001-11-chernsimons-theory-with-compact-and-complex-g.md",
-  "derivedFrom": "library/arxiv-2012.00062v3/manifest",
-  "sourceDocument": "library/arxiv-2012.00062v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2012.00062v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2012.00062v3/manifest.jsonld",
   "provenance": "ingested"
 }

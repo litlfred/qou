@@ -7,37 +7,57 @@ section_number: 5
 pages: 14-15
 source_pdf: 0906.1500v4.pdf
 source_sha256: 9a586f6d134ca47f
+text_source: latex
+latex_prose_ratio: 0.932
+latex_coverage_ratio: 0.965
 doc_brief: "Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds — W e study a computational method of the hyperbolic Reidemeister torsion (also called in the"
 ---
-The aim of this section is to give some notation and explanation about t he reduction
-of variables (for more details, see [Mil66]).
-Let ϕ be a surjective homomorphism of π1(M ) onto Zn = ⟨t1, . . . , tn | titj = tjti⟩. We
-let h(a1,...,an) be the homomorphism of Zn into Z = ⟨t⟩, given by
-h(a1,...,an)(t1, . . . , tn) = ( ta1 , . . . , tan )
-where each aℓ is a positive integer. We use the notation ϕ(a1,...,an) for the composition
-of ϕ and h(a1,...,an):
-(14) π1(M )
-ϕ /d47/d47
-ϕ(a1 ,...,an )
-/d36/d36■■■■■■■■ Zn
-h(a1 ,...,an )
-/d15/d15
-Z
-14
-Observe that ϕ(α1,...,αn) is onto if and only if G.C.D ( a1, . . . , an) is 1. Moreover
-ϕ(α1,...,αn) satisﬁes the condition ( Aϕ) since each aℓ is positive.
-Later in this paper, we often make a reduction of several variables into one variable.
-We let ϕ be a surjective homomorphism of π1(M ) onto Zn satisfying ( Aϕ) and ρ be
-an SL 2(C)-representation satisfying ( Aρ). We choose relatively prime positive integers
-(a1, . . . , an) and let ϕ(a1,...,an) be the composition of ϕ and h(a1,...,an). From Section 3.2,
-the Reidemeister torsion ∆ ϕ⊗Ad◦ρ
-M (t1, . . . , tn) and ∆
-ϕ(a1 ,...,an )⊗Ad◦ρ
-M (t) are deﬁned for both
-the abelian homomorphisms ϕ and ϕ(a1,...,an). The following result (with sign) is a
-consequence of the deﬁnitions.
-Proposition 4 ([Mil66]). One has the following formula:
-∆ ϕ⊗Ad◦ρ
-M (ta1 , . . . , tan) = ∆
-ϕ(a1 ,...,an )⊗Ad◦ρ
-M (t).
+\label{section:naturality}
+
+The aim of this section is to give some notation and explanation
+about the reduction of variables (for more details,
+see~\cite{Milnor:1966}).
+
+Let $\varphi$ be a surjective homomorphism of $\pi_1(M)$ onto
+$\ZZ^n=\langle t_1, \ldots, t_n \,|\, t_i t_j = t_j t_i \rangle$.  
+We let $h_{(a_1, \ldots, a_n)}$ be the homomorphism of $\ZZ^n$ into
+$\ZZ=\langle t \rangle$, given by 
+\[
+h_{(a_1, \ldots, a_n)} (t_1, \ldots, t_n)
+=
+(t^{a_1}, \ldots, t^{a_n})
+\]
+where each $a_\ell$ is a positive
+integer. We use the notation $\varphi_{(a_1, \ldots, a_n)}$ for the composition of
+$\varphi$ and $h_{(a_1, \ldots, a_n)}$:
+\begin{equation}\label{diagram:Zm_to_Z}
+  \xymatrix@R=20pt{
+    \pi_1(M) \ar[r]^-\varphi \ar[dr]_{\varphi_{(a_1, \ldots, a_n)}} & \ZZ^n \ar[d]^{h_{(a_1, \ldots, a_n)}} \\  & \ZZ}
+\end{equation}
+
+Observe that $\varphi_{(\alpha_1, \ldots,
+  \alpha_n)}$ is onto if and only if G.C.D $(a_1, \ldots, a_n)$
+is $1$.  Moreover $\varphi_{(\alpha_1, \ldots, \alpha_n)}$
+satisfies the condition $(A_\varphi)$ since each $a_\ell$ is positive.
+
+Later in this paper, we often make a reduction of several variables
+into one variable.
+We let $\varphi$ be a surjective homomorphism of $\pi_1(M)$ onto
+$\ZZ^n$ satisfying $(A_\varphi)$ and $\rho$ be an $\SL$-representation
+satisfying $(A_\rho)$.  We choose relatively prime positive integers
+$(a_1, \ldots, a_n)$ and let $\varphi_{(a_1, \ldots, a_n)}$ be the
+composition of $\varphi$ and $h_{(a_1, \ldots, a_n)}$.  From
+Section~\ref{section:acyclicity_complex}, the Reidemeister torsion
+$\PolyTors{M}{\otAd{\varphi}{\rho}}(t_1, \ldots, t_n)$ and
+$\PolyTors{M}{\otAd{\varphi_{(a_1, \ldots, a_n)}}{\rho}}(t)$ are
+defined for both the abelian homomorphisms $\varphi$ and
+$\varphi_{(a_1, \ldots, a_n)}$.
+The following result (with sign) is a consequence of the definitions. 
+
+\begin{proposition}[\cite{Milnor:1966}]\label{cor:naturality}
+  One has the following formula:
+  \[
+  \PolyTors{M}{\otAd{\varphi}{\rho}}(t^{a_1}, \ldots, t^{a_n}) =
+  \PolyTors{M}{\otAd{\varphi_{(a_1, \ldots, a_n)}}{\rho}}(t).
+  \]
+\end{proposition}

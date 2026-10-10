@@ -5,7 +5,8 @@
   "file": "1611.09182v1.pdf",
   "sha256": "6b40549b96d40ac7045dc59e5086ba8375fb5da7a96375c55a8fc50372d4d4ed",
   "bytes": 911148,
-  "pages": 97
+  "pages": 97,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -1150,6 +1151,399 @@
   "likely_scanned": false,
   "toc_entries": 76,
   "sections": 57,
-  "chars_total": 142630
+  "chars_total": 142630,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Furey_thesis_arxiv_20161115.tex",
+   "tex_sections": 55,
+   "overlaid": 24,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-01-abstract",
+     "title": "Abstract",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-02-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.5,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.047,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-11-towards-conceptual-parsimony",
+     "title": "Towards conceptual parsimony",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-12-outline",
+     "title": "Outline",
+     "prose_ratio": 0.659,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-2-what-lies-in-an-algebra",
+     "title": "What lies in an algebra?",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-21-causality",
+     "title": "Causality",
+     "prose_ratio": 0.433,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-23-particles",
+     "title": "Particles",
+     "prose_ratio": 0.196,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-22-irreversible-time",
+     "title": "Irreversible time",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.337,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-009-24-summary-and-outlook",
+     "title": "Summary and outlook",
+     "prose_ratio": 0.198,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-3-complex-quaternions",
+     "title": "Complex quaternions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-31-preamble",
+     "title": "Preamble",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.583,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-33-conjugation",
+     "title": "Conjugation",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.477,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-013-34-generalized-ideals",
+     "title": "Generalized ideals",
+     "prose_ratio": 0.461,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-35-complex-invariant-action-mc",
+     "title": "Complex invariant-action, mc",
+     "prose_ratio": 0.202,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-015-351-preliminaries",
+     "title": "Preliminaries",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-352-weyl-and-dirac-spinors-as-generalized-ideals",
+     "title": "Weyl and Dirac spinors as generalized ideals",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-353-a-seamless-new-way-to-conjugate-weyl-spinors",
+     "title": "A seamless new way to conjugate Weyl spinors",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-354-majorana-spinors-as-generalized-ideals",
+     "title": "Majorana spinors as generalized ideals",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-36-hermitian-invariant-action-mh",
+     "title": "Hermitian invariant-action, mh",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.972,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-37-quaternionic-invariant-action-mq",
+     "title": "Quaternionic invariant-action, mq",
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-021-39-summary",
+     "title": "Summary",
+     "prose_ratio": 0.061,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-022-38-bilinears",
+     "title": "Bilinears",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.403,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-023-310-outlook",
+     "title": "Outlook",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-024-41-motivation",
+     "title": "Motivation",
+     "prose_ratio": 0.949,
+     "coverage_ratio": 0.427,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-025-44-minimal-left-ideals",
+     "title": "Minimal left ideals",
+     "prose_ratio": 0.989,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-026-45-how-to-identify-minimal-left-ideals",
+     "title": "How to identify minimal left ideals",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-027-452-procedure",
+     "title": "Procedure",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-461-fock-space-structure",
+     "title": "Fock space structure",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-47-the-dirac-algebra",
+     "title": "The Dirac algebra",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-030-48-right-action-required",
+     "title": "Right action required",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.235,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-031-5-standard-model-of-particle-physics",
+     "title": "Standard model of particle physics",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-51-what-it-is",
+     "title": "What it is",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-033-52-what-it-is-not",
+     "title": "What it is not",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-034-53-what-it-should-be",
+     "title": "What it should be",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-035-61-a-summary-of-the-results-to-come",
+     "title": "A summary of the results to come",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.742,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-036-63-octonionic-chain-algebra",
+     "title": "Octonionic chain algebra",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-037-64-a-system-of-ladder-operators",
+     "title": "A system of ladder operators",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-038-66-minimal-left-ideals",
+     "title": "Minimal left ideals",
+     "prose_ratio": 0.42,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-039-67-mtis-symmetries-su3c-and-u1em",
+     "title": "MTIS symmetries: su(3)c and u(1)em",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-68-ladders-to-su3c-and-u1em",
+     "title": "Ladders to su(3)c and u(1)em",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-69-towards-the-weak-force",
+     "title": "Towards the weak force",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-042-610-summary",
+     "title": "Summary",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-043-71-a-spotlight-on-right-multiplication",
+     "title": "A spotlight on right multiplication",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-044-72-leptonic-subspace-of-cl4",
+     "title": "Leptonic subspace of Cl(4)",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-045-73-mtis-symmetries-su2l-and-u1y",
+     "title": "MTIS symmetries: su(2)L and u(1)Y",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-046-74-summary-and-outlook",
+     "title": "Summary and outlook",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-047-811-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.344,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-048-813-some-notes-on-symmetry-breaking",
+     "title": "Some notes on symmetry breaking",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-049-82-a-fermionic-binary-code",
+     "title": "A fermionic binary code",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.604,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-050-84-pati-salam-model",
+     "title": "Pati-Salam model",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-051-9-towards-a-three-generation-model",
+     "title": "Towards a three-generation model",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-052-91-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.596,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-053-94-a-sample-calculation",
+     "title": "A sample calculation",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.226,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-054-97-outlook-from-one-generation-to-three",
+     "title": "Outlook: From one generation to three",
+     "prose_ratio": 0.28,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-055-10-conclusion",
+     "title": "Conclusion",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-056-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

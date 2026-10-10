@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0905.0488v5/blocks/prose-sec-010",
+  "kind": "prose",
+  "title": "Cosimplicial Formality",
+  "pageStart": 42,
+  "pageEnd": 45,
+  "text": "../sections/sec-010-10-cosimplicial-formality.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0905.0488v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0905.0488v5/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1110.6212v2/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1110.6212v2/blocks/prose-sec-006",
   "kind": "prose",
   "title": "The Plancherel Theorem",
   "pageStart": 16,
   "pageEnd": 16,
   "text": "../sections/sec-006-3-the-plancherel-theorem.md",
-  "derivedFrom": "library/arxiv-1110.6212v2/manifest",
-  "sourceDocument": "library/arxiv-1110.6212v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1110.6212v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1110.6212v2/manifest.jsonld",
   "provenance": "ingested"
 }

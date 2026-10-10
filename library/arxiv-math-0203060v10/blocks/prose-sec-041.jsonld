@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203060v10/blocks/prose-sec-041",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203060v10/blocks/prose-sec-041",
   "kind": "prose",
   "title": "Appendix: Galois properties of S-matrix",
   "pageStart": 47,
   "pageEnd": 48,
   "text": "../sections/sec-041-10-appendix-galois-properties-of-s-matrix.md",
-  "derivedFrom": "library/arxiv-math-0203060v10/manifest",
-  "sourceDocument": "library/arxiv-math-0203060v10/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203060v10/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203060v10/manifest.jsonld",
   "provenance": "ingested"
 }

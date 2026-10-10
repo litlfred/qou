@@ -7,41 +7,17 @@ section_number: 2
 pages: 7-8
 source_pdf: 1404.2541v1.pdf
 source_sha256: edb7c9b2b1561ac3
+text_source: latex
+latex_prose_ratio: 0.97
+latex_coverage_ratio: 1.0
 doc_brief: "The Stokes phenomenon for the Ramanujan’s q-difference equation and its higher order extension — We show connection formulae of local solutions of the Ramanu - jan equation between the origin and the"
 ---
-In this section, we ﬁx our notations. We assume that q ∈ C∗ satisﬁes 0 <
-|q|< 1. The q-shifted operator σq is given by σqf (x) = f (qx). For any ﬁxed
-λ ∈ C∗ \qZ, the set [ λ;q]-spiral is [ λ;q] := λq Z = {λq k;k ∈ Z}. The theta
-function of Jacobi is important in connection problems. The theta f unction
-of Jacobi with the base q is
-θq(x) :=
-∑
-n∈Z
-q
-n(n− 1)
-2 xn, ∀x ∈ C∗.
-7
-The theta function has the following properties;
-1. Jacobi’s triple product identity is
-θq(x) =
-(
-q, −x, −q
-x ;q
-)
-∞
-.
-2. The q-diﬀerence equation which the theta function satisﬁes;
-θq(qkx) = q− n(n− 1)
-2 x−kθq(x), ∀k ∈ Z.
-3. The inversion formula;
-θq
-(1
-x
-)
-= 1
-xθq(x).
-We remark that the function θ(−λx)/θ (λx), ∀λ ∈ C∗ satisﬁes a q-diﬀerence
-equation
-u(qx) = −u(x)
-which is also satisﬁed by the function u(x) = eπi( log x
-log q ).
+In this section, we fix our notations. We assume that $q\in\mathbb{C}^*$ satisfies $0<|q|<1$. The $q$-shifted operator $\sigma_q$ is given by $\sigma_qf(x)=f(qx)$. For any fixed $\lambda\in\mathbb{C}^*\setminus q^{\mathbb{Z}}$, the set $[\lambda ;q]$-spiral is $[\lambda ;q]:=\lambda q^{\mathbb{Z}}=\{\lambda q^k;k\in\mathbb{Z}\}$. The theta function of Jacobi is important in connection problems. The theta function of Jacobi with the base $q$ is $$\theta_q(x):=\sum_{n\in\mathbb{Z}}q^{\frac{n(n-1)}{2}}x^n,\qquad \forall x\in\mathbb{C}^*.$$ The theta function has the following properties;
+
+1.  Jacobi's triple product identity is $$\theta_q(x)=\left(q,-x,-\frac{q}{x};q\right)_\infty .$$
+
+2.  The $q$-difference equation which the theta function satisfies; $$\theta_q(q^kx)=q^{-\frac{n(n-1)}{2}}x^{-k}\theta_q(x),\quad \forall k\in\mathbb{Z}.$$
+
+3.  The inversion formula; $$\theta_q\left(\frac{1}{x}\right)=\frac{1}{x}\theta_q(x).$$
+
+We remark that the function $\theta (-\lambda x)/\theta (\lambda x)$, $\forall\lambda\in\mathbb{C}^*$ satisfies a $q$-difference equation $$u(qx)=-u(x)$$ which is also satisfied by the function $u(x)=e^{\pi i\left(\frac{\log x}{\log q}\right)}$.

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-015",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-015",
   "kind": "prose",
   "title": "Z ZK[x] and using the “checked binomial polynomial”",
   "pageStart": 15,
   "pageEnd": 17,
   "text": "../sections/sec-015-2-z-zkx-and-using-the-checked-binomial-polynomia.md",
-  "derivedFrom": "library/arxiv-q-alg-9504015v2/manifest",
-  "sourceDocument": "library/arxiv-q-alg-9504015v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-q-alg-9504015v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-q-alg-9504015v2/manifest.jsonld",
   "provenance": "ingested"
 }

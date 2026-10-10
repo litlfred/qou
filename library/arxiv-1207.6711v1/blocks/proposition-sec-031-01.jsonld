@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1207.6711v1/blocks/proposition-sec-031-01",
+  "kind": "proposition",
+  "title": "Garoufalidis-Thurston-Zickert [11]",
+  "pageStart": 31,
+  "pageEnd": 33,
+  "text": "proposition-sec-031-01.md",
+  "derivedFrom": "library/arxiv-1207.6711v1/sections/sec-031",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1207.6711v1/manifest.jsonld",
+  "provenance": "ingested"
+}

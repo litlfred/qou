@@ -7,92 +7,27 @@ section_number: 6
 pages: 36-37
 source_pdf: 1504.07260v3.pdf
 source_sha256: 707cb014400a3f05
+text_source: latex
+latex_prose_ratio: 0.983
+latex_coverage_ratio: 0.958
 doc_brief: "Fricke S-duality in CHL models — We consider four dimensional CHL models with sixteen spacetime supersym- metries obtained from orbifolds of type IIA superstring on K3×T 2 by aZN symmetry acting"
 ---
-In this paper we have analysed a large class of non-geometric CHL models and showed that
-they exhibit larger symmetries than previously expected. These models are in particular in-
-variant under Fricke involutionS→− 1/(NS ) which lies outside of theSL(2, Z)-symmetry
-of the original unorbifolded model. We showed that this leads to new non-trivial heterotic-
-type II dualities and gives rise to strong constraints on the associated electric and magnetic
-charge lattices. In particular, for self-dual CHL models these lattice are required to be
-N-modular. We also demonstrated that Fricke S-duality is compatible with the counting of
-1/2 BPS-states by calculating the relevant helicity supertraces and veriﬁed the invariance
-of certain BPS-saturated topological couplings.
-As mentioned in the introduction, our results give a physical interpretation of the
-modular properties of the class of Siegel modular forms Φg,h constructed in [53] in the
-context of Mathieu moonshine. It is therefore natural to speculate about the physical
-interpretation of these Siegel modular forms. It is known that in cases wheng is a geometric
-symmetry of the target space the reciprocals 1/Φg,h are generating functions of certain
-(twisted) 1/4 BPS-states in CHL models. One can also relate theΦg,h to the generalised
-eta-products via the following limit
-lim
-z→0
-Φg,h(σ,τ,z )
-(2πiz)2 =ηg,h(τ)ηg,h′(Nσ ), (6.1)
-Since we have seen in this paper that the generalised eta-products appear in certain topo-
-logical one-loop couplings involving the fourth helicity supertraces, it is natural to speculate
-that the Φg,h would similarly appear in some topological couplings involving thesixth he-
-licity supertrace
-BCHL[g]
-6 := Trg(−1)FJ6
-3qL0 ¯q
-¯L0, (6.2)
-which indeed receives contributions from 1/4 BPS-states. Schematically, this coupling
-should take the form [60]
-∫
-F
-BCHL[g]
-6 = log
-(
-(det Im Ω)wg,h|Φg,e(T,U,V )|2)
-, (6.3)
-where V is a Wilson line modulus,Ω =
-(T V
-V U
-)
-is the genus 2 period matrix andwg,h is
-the weight of the corresponding Siegel modular form. This would generalise the “threshold
-integrals” previously calculated by Sen and collaborators for a class of CHL models [20, 61,
-62].
-A related observation is the following. It has been conjectured that the negative recip-
-rocal of the weight 10 Igusa cusp formΦ10 is the generating function for Gromov-Witten
-invariants onK3×T 2 [63–65]. By standard string theory dualities this can be interpreted as
-countingBPS-statesintypeIIstringtheoryon K3×T 2. Moreover, sinceΦe,e ispreciselythe
-Igusa cusp form it is natural to conjecture that the Siegel modular formsΦg,e are generating
-functions for Gromov-Witten invariants on the CHL orbifold(K3×S1)/ZN× ˜S1. It would
-be very interesting to verify this by generalising the original analysis of Katz-Klemm-Vafa
-[63] to our class of CHL models.
-– 35 –
-The Fricke involutions appear in the context of topological string amplitudes for certain
-families of non-compact Calabi-Yau threefolds. In this setup, the involutions can be inter-
-preted as dualities exchanging the expansions of the amplitude at two diﬀerent cusps in the
-moduli space [66]. It is tantalizing to conjecture a relationship between this construction
-and the present paper, but the details of this connection are not clear to us.
-As mentioned in the introduction the Fricke involution also plays a role in the context of
-Monstrous moonshine, where some of the McKay-Thompson seriesTg(τ) exhibit invariance
-underτ→− 1/(Nτ ) forN the order ofg∈ M. In fact, Tuite has proposed the this “Fricke
-property” holds the key for understanding the elusive genus zero property of monstrous
-moonshine, namely the fact that all McKay-Thompson series are hauptmoduln for the
-modular groups Γg⊂ SL(2, R) under which theTg(τ)’s are invariant [67]. In short, the
-argument is that this genus zero property is equivalent to the statement that only for Fricke
-elementsg∈ M does the orbifoldV♮/⟨g⟩ of the monster CFTV♮ give back the same theory,
-while orbifolding by non-Fricke elements instead yields the Leech lattice CFT. Tuite was
-able to demonstrate this for a large class of elements of the monster. This observation is
-very similar to what we ﬁnd in the present paper. Namely, it is precisely when the orbifold
-C′ =C/⟨g⟩ of the K3 sigma modelC is again a K3-sigma model, that the CHL model is
-self-dual with respect to Fricke S-dualityS→− 1/(NS ). Thus, it would be very interesting
-to see if our techniques can be applied to monstrous moonshine, and perhaps shed some
-light on the relation between genus zero and Fricke properties.
-Acknowledgments
-We are grateful to all organizers and participants of the workshop ‘(Mock) modularity,
-Moonshine, and String Theory’ and, in particular, Miranda Cheng, John Duncan, Matthias
-Gaberdiel, Terry Gannon, Jeﬀ Harvey, Shamit Kachru, Sameer Murthy, Natalie Paquette
-andMaxZimetforhelpfuldiscussions. WearegratefultoBorisPiolineforpointingoutsome
-mistakes in a ﬁrst version of the paper. We thank Murad Alim and Jie Zhou for bringing
-the paper [66] to our attention and for interesting discussions about possible connections
-with our work. DP thanks SITP Stanford and both of us thank the Perimeter Institute for
-hospitality while this work was being ﬁnalised.
-This research was supported in part by Perimeter Institute for Theoretical Physics. Re-
-search at Perimeter Institute is supported by the Government of Canada through Industry
-Canada and by the Province of Ontario through the Ministry of Economic Development &
-Innovation.
+[]{#sec:conclusions label="sec:conclusions"} In this paper we have analysed a large class of non-geometric CHL models and showed that they exhibit larger symmetries than previously expected. These models are in particular invariant under Fricke involution $S\to -1/(NS)$ which lies outside of the $SL(2,\mathbb{Z})$-symmetry of the original unorbifolded model. We showed that this leads to new non-trivial heterotic-type II dualities and gives rise to strong constraints on the associated electric and magnetic charge lattices. In particular, for self-dual CHL models these lattice are required to be $N$-modular. We also demonstrated that Fricke S-duality is compatible with the counting of 1/2 BPS-states by calculating the relevant helicity supertraces and verified the invariance of certain BPS-saturated topological couplings.
+
+As mentioned in the introduction, our results give a physical interpretation of the modular properties of the class of Siegel modular forms $\Phi_{g,h}$ constructed in [@Persson:2013xpa] in the context of Mathieu moonshine. It is therefore natural to speculate about the physical interpretation of these Siegel modular forms. It is known that in cases when $g$ is a geometric symmetry of the target space the reciprocals $1/\Phi_{g, h}$ are generating functions of certain (twisted) 1/4 BPS-states in CHL models. One can also relate the $\Phi_{g,h}$ to the generalised eta-products via the following limit $$\begin{equation}
+\lim_{z\to 0}\frac{\Phi_{g,h}(\sigma,\tau,z)}{(2\pi iz)^2}=\eta_{g,h}(\tau)\eta_{g,h'}(N\sigma),
+\end{equation}$$ Since we have seen in this paper that the generalised eta-products appear in certain topological one-loop couplings involving the fourth helicity supertraces, it is natural to speculate that the $\Phi_{g,h}$ would similarly appear in some topological couplings involving the *sixth helicity supertrace* $$\begin{equation}
+B_6^{\text{CHL}[g]}:=\text{Tr}_g(-1)^{F} J_3^6 q^{L_0} \bar{q}^{\bar{L}_0},
+\end{equation}$$ which indeed receives contributions from 1/4 BPS-states. Schematically, this coupling should take the form [@Kawai:1995hy] $$\begin{equation}
+\int_{\mathcal{F}} B_6^{\text{CHL}[g]} = \text{log} \left((\text{det}\mathop{\mathrm{Im}}\Omega)^{w_{g,h}} |\Phi_{g,e}(T, U, V)|^2\right),
+\end{equation}$$ where $V$ is a Wilson line modulus, $\Omega =  \left(\begin{smallmatrix}
+T & V \\ V & U
+\end{smallmatrix}\right)$ is the genus 2 period matrix and $w_{g,h}$ is the weight of the corresponding Siegel modular form. This would generalise the "threshold integrals" previously calculated by Sen and collaborators for a class of CHL models [@David:2006ji; @David:2006yn; @Sen:2010ts].
+
+A related observation is the following. It has been conjectured that the negative reciprocal of the weight 10 Igusa cusp form $\Phi_{10}$ is the generating function for Gromov-Witten invariants on $K3\times T^2$ [@Katz:1999xq; @2014arXiv1404.6698P; @2014arXiv1411.1514O]. By standard string theory dualities this can be interpreted as counting BPS-states in type II string theory on $K3\times T^2$. Moreover, since $\Phi_{e,e}$ is precisely the Igusa cusp form it is natural to conjecture that the Siegel modular forms $\Phi_{g,e}$ are generating functions for Gromov-Witten invariants on the CHL orbifold $(K3\times S^1)/\mathbb{Z}_N \times \tilde{S}^1$. It would be very interesting to verify this by generalising the original analysis of Katz-Klemm-Vafa [@Katz:1999xq] to our class of CHL models.
+
+The Fricke involutions appear in the context of topological string amplitudes for certain families of non-compact Calabi-Yau threefolds. In this setup, the involutions can be interpreted as dualities exchanging the expansions of the amplitude at two different cusps in the moduli space [@Alim2014]. It is tantalizing to conjecture a relationship between this construction and the present paper, but the details of this connection are not clear to us.
+
+As mentioned in the introduction the Fricke involution also plays a role in the context of Monstrous moonshine, where some of the McKay-Thompson series $T_g(\tau)$ exhibit invariance under $\tau \to -1/(N\tau)$ for $N$ the order of $g\in \mathbb{M}$. In fact, Tuite has proposed the this "Fricke property" holds the key for understanding the elusive genus zero property of monstrous moonshine, namely the fact that all McKay-Thompson series are hauptmoduln for the modular groups $\Gamma_g\subset SL(2,\mathbb{R})$ under which the $T_g(\tau)$'s are invariant [@Tuite1995]. In short, the argument is that this genus zero property is equivalent to the statement that only for Fricke elements $g\in \mathbb{M}$ does the orbifold $V^{\natural}/\left<g\right>$ of the monster CFT $V^{\natural}$ give back the same theory, while orbifolding by non-Fricke elements instead yields the Leech lattice CFT. Tuite was able to demonstrate this for a large class of elements of the monster. This observation is very similar to what we find in the present paper. Namely, it is precisely when the orbifold $\mathcal{C}'=\mathcal{C}/\left<g\right>$ of the K3 sigma model $\mathcal{C}$ is again a K3-sigma model, that the CHL model is self-dual with respect to Fricke S-duality $S\to -1/(NS)$. Thus, it would be very interesting to see if our techniques can be applied to monstrous moonshine, and perhaps shed some light on the relation between genus zero and Fricke properties.
+
+We are grateful to all organizers and participants of the workshop '(Mock) modularity, Moonshine, and String Theory' and, in particular, Miranda Cheng, John Duncan, Matthias Gaberdiel, Terry Gannon, Jeff Harvey, Shamit Kachru, Sameer Murthy, Natalie Paquette and Max Zimet for helpful discussions. We are grateful to Boris Pioline for pointing out some mistakes in a first version of the paper. We thank Murad Alim and Jie Zhou for bringing the paper [@Alim2014] to our attention and for interesting discussions about possible connections with our work. DP thanks SITP Stanford and both of us thank the Perimeter Institute for hospitality while this work was being finalised.

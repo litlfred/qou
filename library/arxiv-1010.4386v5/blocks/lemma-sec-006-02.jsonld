@@ -1,0 +1,16 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1010.4386v5/blocks/lemma-sec-006-02",
+  "kind": "lemma",
+  "pageStart": 24,
+  "pageEnd": 28,
+  "text": "lemma-sec-006-02.md",
+  "derivedFrom": "library/arxiv-1010.4386v5/sections/sec-006",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1010.4386v5/manifest.jsonld",
+  "provenance": "ingested"
+}

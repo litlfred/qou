@@ -7,197 +7,141 @@ section_number: 4.1
 pages: 59-65
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
+text_source: latex
+latex_prose_ratio: 0.977
+latex_coverage_ratio: 0.942
 doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
 ---
-complex Ginibre ensemble, and we will emphasize the relation to spin glass techniques.
-51
-This formula is already known and we will give references.
-In later sections, we will describe the relationship between the mixed matrix mo-
-ments and the expected overlap functions of Chalker and Mehlig. This leads to some
-new problems.
-4.1 Mixed Matrix Moments
-Given any n×n matrix A, any positive integer k, and any nonnegative integers
-p(1),q (1),...,p (k),q (k), we may deﬁne
-Mn(p; q) = 1
-n tr[Ap(1)
-n (A∗
-n)q(1)··· Ap(k)
-n (A∗
-n)q(k)], (4.2)
-for p = (p(1),...,p (k)), q = (q(1),...,q (k)). Notice that M0 = 1. As an example,
-consider
-Mn((2, 2); (2, 2)) =
-1
-n
-n∑
-j1,...,j8=1
-an(j1,j 2)an(j2,j 3)an(j4,j 3)an(j5,j 4)an(j5,j 6)an(j6,j 7)an(j8,j 7)an(j1,j 8).
-(4.3)
-If we consider the Ginibre ensemble and let an(j,k ) = (X(j,k ) +iY (j,k ))/
-√
-2n as
-before, then we have
-E[an(j,k )an(j′,k′)] = E[an(j,k )an(j′,k′)], = 0 and E[an(j,k )an(j′,k′)] = n−1δj,j′δk,k′.
-(4.4)
-Recall that Wick’s rule says that for mean 0 Gaussian random variables X1,...,X n,
-E(X1X2...X n) =
-∑∏
-i,j
-(XiXj)
-52
-where the sum is over all distinct ways of dividing 1,...,n into pairs. Using this, and
-deﬁning mn(p, q) = E[Mn(p, q)], gives us:
-mn(p, q) =
-∑
-(p′,q′,p′′,q′′)∈S(p,q)
-E[Mn(p′, q′)Mn(p′′, q′′)], (4.5)
-whereS(p, q) is the set of all admissible pairs, which we describe now. Let R =
-p(1) +··· +p(k) +q(1) +··· +q(k), and deﬁne σ = (σ(1),...,σ (R))∈{ +1,−1}R
-asσ = ((+1)p(1), (−1)q(1),..., (+1)p(k), (−1)q(k)) viewed as spins on vertices arranged
-on a circle. We will sometimes denote this as σp,q. Let Σ( p, q) denote pairs (σ′,σ′′)
-as follows. We match up the ﬁrst +1 and any −1. Where these two are removed, we
-pinch the circle into two smaller circles. Then the remaining spins on the two smaller
-circles comprise σ′ and σ′′. E.g., for a particular example
-σ = (+1, +1,−1,−1, +1, +1,−1,−1)↦→ (σ′,σ′′) = ((+1), (−1, +1, +1,−1,−1)).
-(4.6)
-The set Σ(p, q) is the set of all possible pairs (σ′,σ′′) obtainable in this way. We then
-deﬁneS(p, q) to be the set of all pairs ( p′, q′) and ( p′′, q′′) by mapping backwards
-Σ(p, q) from σ′ and σ′′, this way.
+Given any $n\times n$ matrix $A$, any positive integer $k$, and any nonnegative integers $p(1),q(1),\dots,p(k),q(k)$, we may define $$\begin{equation}
+M_n(\mathbf{p};\mathbf{q})\, 
+=\, \frac{1}{n}\, \operatorname{tr}[A_n^{p(1)} (A_n^*)^{q(1)} \cdots A_n^{p(k)} (A_n^*)^{q(k)}]\, ,
+\end{equation}$$ for $\mathbf{p}=(p(1),\dots,p(k))$, $\mathbf{q}=(q(1),\dots,q(k))$. Notice that $M_0=1$. As an example, consider $$\begin{multline}
+M_n((2,2);(2,2))\, = \\ \, \frac{1}{n}\, \sum_{j_1,\dots,j_8=1}^n a_n(j_1,j_2) a_n(j_2,j_3) \overline{a}_n(j_4,j_3) \overline{a}_n(j_5,j_4) a_n(j_5,j_6) a_n(j_6,j_7)
+\overline{a}_n(j_8,j_7) \overline{a}_n(j_1,j_8)\, .
+\end{multline}$$ If we consider the Ginibre ensemble and let $a_n(j,k) = (X(j,k)+iY(j,k))/\sqrt{2n}$ as before, then we have $$\begin{equation}
+\mathbb{E}[a_n(j,k) a_n(j',k')]\, =\, \mathbb{E}[\overline{a}_n(j,k) \overline{a}_n(j',k')], =\, 0\ \text{ and } \
+\mathbb{E}[a_n(j,k) \overline{a}_n(j',k')]\, =\, n^{-1} \delta_{j,j'} \delta_{k,k'}\, .
+\end{equation}$$ Recall that Wick's rule says that for mean $0$ Gaussian random variables $X_1,\dots,X_n$, $$\mathbb{E}(X_1X_2\dots X_n)=\sum \prod_{i,j}(X_iX_j)$$ where the sum is over all distinct ways of dividing $1,\dots,n$ into pairs. Using this, and defining $m_n(\mathbf{p},\mathbf{q}) = \mathbb{E}[M_n(\mathbf{p},\mathbf{q})]$, gives us: $$\begin{equation}
+\label{eq:recurrence}
+m_n(\mathbf{p},\mathbf{q})\, =\, \sum_{(\mathbf{p}',\mathbf{q}',\mathbf{p}'',\mathbf{q}'') \in \mathcal{S}(\mathbf{p},\mathbf{q})} 
+
+\mathbb{E}[M_n(\mathbf{p}',\mathbf{q}') M_n(\mathbf{p}'',\mathbf{q}'')]\, ,
+\end{equation}$$ where $\mathcal{S}(\mathbf{p},\mathbf{q})$ is the set of all admissible pairs, which we describe now. Let $R = p(1)+\dots+p(k)+q(1)+\dots+q(k)$, and define $\sigma = (\sigma(1),\dots,\sigma(R)) \in \{+1,-1\}^R$ as $\sigma\, =\, ((+1)^{p(1)},(-1)^{q(1)},\dots,(+1)^{p(k)},(-1)^{q(k)})$ viewed as spins on vertices arranged on a circle. We will sometimes denote this as $\sigma_{\mathbf{p},\mathbf{q}}$. Let $\Sigma(\mathbf{p},\mathbf{q})$ denote pairs $(\sigma',\sigma'')$ as follows. We match up the first $+1$ and any $-1$. Where these two are removed, we pinch the circle into two smaller circles. Then the remaining spins on the two smaller circles comprise $\sigma'$ and $\sigma''$. E.g., for a particular example $$\begin{equation}
+\sigma = (\underline{+1},+1,\underline{-1},-1,+1,+1,-1,-1) \mapsto (\sigma',\sigma'') = ((+1),(-1,+1,+1,-1,-1))\, .
+\end{equation}$$ The set $\Sigma(\mathbf{p},\mathbf{q})$ is the set of all possible pairs $(\sigma',\sigma'')$ obtainable in this way. We then define $\mathcal{S}(\mathbf{p},\mathbf{q})$ to be the set of all pairs $(\mathbf{p}',\mathbf{q}')$ and $(\mathbf{p}'',\mathbf{q}'')$ by mapping backwards $\Sigma(\mathbf{p},\mathbf{q})$ from $\sigma'$ and $\sigma''$, this way.
+
 Using this, we wish to give the main ideas of the proof of the following theorem.
-Theorem 4.1.1. For any k and any p, q, we have
-lim
-n→∞
-mn(p, q) = m(p, q),
-wherem(p, q) is as follows. Let CR denote the number of all non-crossing matchings
-ofR vertices on a circle (Catalan’s number). Let m(p, q) denote the cardinality of all
-such matchings satisfying the following constraint: assigning spins to the R vertices
-by σp,q, each edge has two endpoints with one +1 spin and one −1 spin.
-As an example, m((2, 2); (2, 2)) = 3 where the matchings are indicated diagram-
-53
-matically as
-Theorem 4.1.1 is a well-known result. We refer to [Kemp et al., 2011] for a discussion.
-We will motivate a proof of this result, without including all details, here. Our reason
-is that we actually want to use this result to motivate the discussion of random
-matrices and spin glasses further, which we indicated earlier.
-4.1.1 Argument for the Proof of the Mixed Matrix Moments
-The ﬁrst step in the argument for the proof of Theorem 4.1.1 is to use concentration
-of measure (COM) to replace (4.5) with a nonlinear recurrence relation. Here what
-we mean is non-linearity in the probability measure for the random entries of the
-matrix. Since the expectation is linear, what we really mean is to obtain a product
-of two expectations. If Mn(p′, q′) and Mn(p′′, q′′) were independent, then we could
-replace the expectation by a product, but they are not exactly independent. Instead,
-they satisfy COM, which means that they are approximately non-random. And, of
-course, non-random variables are exactly independent of every other random variable
-(as well as themselves).
-The easiest version of COM is just L2-concentration. For example, the following
-lemma is very easy to prove:
-Lemma 4.1.2. Supposef : Rn→ R is a function such that
-‖∇f‖2
-∞ = sup x∈Rn
-∑n
-k=1
-(
-∂f
-∂xk
-(x)
-)2
-is ﬁnite. Then if U1,...,U n,V 1,...,V n are IID
-54
-N (0, 1) random variables then
-E
-[
-(f(U)−f(V))2]
-≤ 2‖∇f‖2
-∞. (4.7)
-This can be proved using the basic, but important method of “quadratic interpo-
-lation,” which is sometimes called the “smart path method” by some mathematicians
-working on spin glasses.
-Proof. Let Z = (Z1,...,Z n) be an IID N (0, 1) vector, independent of U and V.
-Then deﬁne ~U(θ) = sin( θ) U + cos(θ) Z and ~V(θ) = sin( θ) V + cos(θ) Z. Then
-d
-dθ
-~U(θ) = ~U(θ + π
-2 ), and E[~U(θ)~U(θ + π
-2 )] = 0. This means that ~U(θ) is statistically
-independent of its θ-derivative. Similar results hold for ~V(θ). On the other hand
-E[~V(θ)~U(θ + π
-2 )] =− sin(θ) cos(θ).
-Next, using the fundamental theorem of calculus,
-E
-[
-(f(U)−f(V))2]
-=
-∫ π/2
-0
-d
-dθ E
-[(
-f(~U(θ))−f(~V(θ))
-)2]
-dθ, (4.8)
-and an easy calculation using Gaussian integration by parts (and the covariance
-formulas mentioned above) shows that
-d
-dθ E
-[(
-f(~U(θ))−f(~V(θ))
-)2]
-= 2 sin(2θ)E
-[
-∇f(~U(θ))·∇f(~V(θ))
-]
-. (4.9)
-Then (4.7) follows by using the Cauchy-Schwarz inequality.
-This is only the simplest Gaussian COM result. Notice that the method of proof is
-similar to the method used to proved Talagrand’s Gaussian concentration of measure
-inequality for Lipschitz functions as stated in chapter 2 Theorem 2.1.1
-This lemma is a tool which can be applied to show that the various mixed matrix
-momentsMn(p, q) do satisfy COM. We present this lemma here, because it is easier
-to obtain concentration of measure for the matrix moments using this lemma than
-55
-with Theorem 2.1.1. It should be noted, that 2.1.1 will also work in this case and
-will give a sharper concentration bound. Either way, it is an interesting calculation,
-and much of the combinatorics, especially involving matchings related to Catalan’s
-number, are ﬁrst visible in the grad-squared calculation.
-Since the goal of this section is to give a general outline of the proof of the formula
-for the mixed matrix moments and relate it to spin glass techniques, we will just state
-that the desired concentration of measure result is true.
-Then we are able to boost (4.5) to
-lim
-n→∞
-mn(p, q)−
-∑
-(p′,q′,p′′,q′′)∈S(p,q)
-mn(p′, q′)mn(p′′, q′′) = 0 . (4.10)
-Another easy fact is that, due to symmetry, mn(p, q) = 0 unless p(1) +··· +p(k) =
-q(1) +··· +q(k). And, of course, m0 = 1.
-Using this, and the method of induction, one can then prove Theorem 4.1.1.
-4.1.2 Commentary on Proof Technique
-The quadratic interpolation technique is important in spin glasses. The ﬁrst major
-use was by Guerra and Toninelli [Guerra and Toninelli, 2002] and Guerra [Guerra,
-2003]. It is called the “smart path method” by Talagrand [Talagrand, 2011]. This is
-the method which we used to prove Talagrand’s Gaussian concentration of measure
-inequality in chapter 2.
-Using Wick’s rule to obtain a recurrence relation is important in many subjects.
-It is a standard approach to determining moments of random matrices. See, for
-instance, [Anderson et al., 2010], chapter 1. In the context of Gaussian spin glasses,
-this technique combined with stochastic stability leads to the Aizenman-Contucci
-identities [Aizenman and Contucci, 1998]. When combined with concentration of
-measure it leads to the Ghirlanda-Guerra identities [Ghirlanda and Guerra, 1998].
-56
-See, for instance, the review [Contucci and Giardina, 2007].
-For random matrices, the problem of recombining the moments into useful infor-
-mation about the limiting empirical spectral measure is also important. For Hermi-
-tian random matrices, this is related to the classical moment method. The standard
-approach is to put the moments together into the Stieltjes transform, and then to
-proceed from there [Pastur, 1973]. Again, a good general reference is [Anderson et al.,
-2010], chapter 1.
-For spin glasses, the problem of integrating the Ghirlanda-Guerra identities into
-a useful result for mean-ﬁeld models was solved only relatively recently. Panchenko
-showed that the “extended Ghirlanda-Guerra identities” imply Parisi’s ultrametric
-ansatz [Panchenko, 2011]. This is an important work. One element of his proof is
-putting various terms together into a a new exponential type generating function.
-This might be somewhat analogous to the Stieltjes transform step. But after that,
-the proofs are very diﬀerent.
-For non-Hermitian random matrices, getting useful information from the moments
-is the topic we focus on next.
+
+::: theorem
+[]{#thm:MMM label="thm:MMM"} For any $k$ and any $\mathbf{p},\mathbf{q}$, we have $$\lim_{n \to \infty} m_n(\mathbf{p},\mathbf{q})\, =\, m(\mathbf{p},\mathbf{q})\, ,$$ where $m(\mathbf{p},\mathbf{q})$ is as follows. Let $C_R$ denote the number of all non-crossing matchings of $R$ vertices on a circle (Catalan's number). Let $m(\mathbf{p},\mathbf{q})$ denote the cardinality of all such matchings satisfying the following constraint: assigning spins to the $R$ vertices by $\sigma_{\mathbf{p},\mathbf{q}}$, each edge has two endpoints with one $+1$ spin and one $-1$ spin.
+:::
+
+As an example, $m((2,2);(2,2)) = 3$ where the matchings are indicated diagrammatically as $$\begin{tikzpicture}
+\draw (0,0) circle (1.5cm);
+\draw[very thick] (67.5:1.5cm) .. controls (75:0.75cm) and (105:0.75cm)  .. (112.5:1.5cm);
+\draw[very thick] (22.5:1.5cm) .. controls (15:0.75cm) and (-15:0.75cm)  .. (-22.5:1.5cm);
+\draw[very thick] (-67.5:1.5cm) .. controls (-75:0.75cm) and (-105:0.75cm)  .. (-112.5:1.5cm);
+\draw[very thick] (157.5:1.5cm) .. controls (165:0.75cm) and (195:0.75cm)  .. (202.5:1.5cm);
+\fill (157.5:1.5cm) circle (1mm);
+\fill (112.5:1.5cm) circle (1mm);
+\filldraw[fill=white, very thick] (67.5:1.5cm) circle (1mm);
+\filldraw[fill=white, very thick] (22.5:1.5cm) circle (1mm);
+\fill (-22.5:1.5cm) circle (1mm);
+\fill (-67.5:1.5cm) circle (1mm);
+\filldraw[fill=white, very thick] (-112.5:1.5cm) circle (1mm);
+\filldraw[fill=white, very thick] (-157.5:1.5cm) circle (1mm);
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+\draw (0,0) circle (1.5cm);
+\draw[very thick] (67.5:1.5cm) .. controls (75:0.75cm) and (105:0.75cm)  .. (112.5:1.5cm);
+\draw[very thick] (22.5:1.5cm) .. controls (90:0.25cm) ..  (157.5:1.5cm);
+\draw[very thick] (-22.5:1.5cm) .. controls (-90:0.25cm) ..  (-157.5:1.5cm);
+\draw[very thick] (-67.5:1.5cm) .. controls (-75:0.75cm) and (-105:0.75cm)  .. (-112.5:1.5cm);
+\fill (157.5:1.5cm) circle (1mm);
+\fill (112.5:1.5cm) circle (1mm);
+\filldraw[fill=white, very thick] (67.5:1.5cm) circle (1mm);
+\filldraw[fill=white, very thick] (22.5:1.5cm) circle (1mm);
+\fill (-22.5:1.5cm) circle (1mm);
+\fill (-67.5:1.5cm) circle (1mm);
+\filldraw[fill=white, very thick] (-112.5:1.5cm) circle (1mm);
+\filldraw[fill=white, very thick] (-157.5:1.5cm) circle (1mm);
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+\draw (0,0) circle (1.5cm);
+\draw[very thick] (67.5:1.5cm) .. controls (0:0.25cm) .. (-67.5:1.5cm);
+\draw[very thick] (22.5:1.5cm) .. controls (15:0.75cm) and (-15:0.75cm)  .. (-22.5:1.5cm);
+\draw[very thick] (112.5:1.5cm) .. controls (180:0.25cm)  .. (-112.5:1.5cm);
+\draw[very thick] (157.5:1.5cm) .. controls (165:0.75cm) and (195:0.75cm)  .. (202.5:1.5cm);
+\fill (157.5:1.5cm) circle (1mm);
+\fill (112.5:1.5cm) circle (1mm);
+\filldraw[fill=white, very thick] (67.5:1.5cm) circle (1mm);
+\filldraw[fill=white, very thick] (22.5:1.5cm) circle (1mm);
+\fill (-22.5:1.5cm) circle (1mm);
+\fill (-67.5:1.5cm) circle (1mm);
+\filldraw[fill=white, very thick] (-112.5:1.5cm) circle (1mm);
+\filldraw[fill=white, very thick] (-157.5:1.5cm) circle (1mm);
+\end{tikzpicture}$$ Theorem [\[thm:MMM\]](#thm:MMM){reference-type="ref" reference="thm:MMM"} is a well-known result. We refer to [@Kemp] for a discussion. We will motivate a proof of this result, without including all details, here. Our reason is that we actually want to use this result to motivate the discussion of random matrices and spin glasses further, which we indicated earlier.
+
+## Argument for the Proof of the Mixed Matrix Moments {#subsec:Argument}
+
+The first step in the argument for the proof of Theorem [\[thm:MMM\]](#thm:MMM){reference-type="ref" reference="thm:MMM"} is to use concentration of measure (COM) to replace ([\[eq:recurrence\]](#eq:recurrence){reference-type="ref" reference="eq:recurrence"}) with a nonlinear recurrence relation. Here what we mean is non-linearity in the probability measure for the random entries of the matrix. Since the expectation is linear, what we really mean is to obtain a product of two expectations. If $M_n(\mathbf{p}',\mathbf{q}')$ and $M_n(\mathbf{p}'',\mathbf{q}'')$ were independent, then we could replace the expectation by a product, but they are not exactly independent. Instead, they satisfy COM, which means that they are approximately non-random. And, of course, non-random variables are exactly independent of every other random variable (as well as themselves).
+
+The easiest version of COM is just $L^2$-concentration. For example, the following lemma is very easy to prove:
+
+::: lemma
+[]{#lem:unifGrad label="lem:unifGrad"} Suppose $f : \mathbb{R}^n \to \mathbb{R}$ is a function such that\
+$\|\nabla f\|^2_{\infty} = \sup_{\mathbf{x} \in \mathbb{R}^n} \sum_{k=1}^n \left(\frac{\partial f}{\partial x_k}(\mathbf{x})\right)^2$ is finite. Then if $U_1,\dots,U_n,V_1,\dots,V_n$ are IID $\mathcal{N}(0,1)$ random variables then $$\begin{equation}
+\label{eq:lemG}
+\mathbb{E}\left[\left(f(\mathbf{U})-f(\mathbf{V})\right)^2\right]\, \leq\, 2 \|\nabla f\|_{\infty}^2\, .
+\end{equation}$$
+:::
+
+This can be proved using the basic, but important method of "quadratic interpolation," which is sometimes called the "smart path method" by some mathematicians working on spin glasses.
+
+::: proof
+*Proof.* Let $\boldsymbol{Z} = (Z_1,\dots,Z_n)$ be an IID $\mathcal{N}(0,1)$ vector, independent of $\mathbf{U}$ and $\mathbf{V}$. Then define $\widetilde{\mathbf{U}}(\theta) = \sin(\theta)\, \mathbf{U} 
++ \cos(\theta)\, \mathbf{Z}$ and $\widetilde{\mathbf{V}}(\theta) = \sin(\theta)\, \mathbf{V} 
++ \cos(\theta)\, \mathbf{Z}$. Then $\frac{d}{d\theta} \widetilde{\mathbf{U}}(\theta) = \widetilde{\mathbf{U}}(\theta+\frac{\pi}{2})$, and $\mathbb{E}[\widetilde{\mathbf{U}}(\theta) \widetilde{\mathbf{U}}(\theta+\frac{\pi}{2})] = 0$. This means that $\widetilde{\mathbf{U}}(\theta)$ is statistically independent of its $\theta$-derivative. Similar results hold for $\widetilde{\mathbf{V}}(\theta)$. On the other hand $\mathbb{E}[\widetilde{\mathbf{V}}(\theta) \widetilde{\mathbf{U}}(\theta+\frac{\pi}{2})] = 
+-\sin(\theta)\cos(\theta)$.
+
+Next, using the fundamental theorem of calculus, $$\begin{equation}
+\mathbb{E}\left[\left(f(\mathbf{U})-f(\mathbf{V})\right)^2\right]\,
+=\, \int_0^{\pi/2} \frac{d}{d\theta}
+\mathbb{E}\left[\left(f(\widetilde{\mathbf{U}}(\theta))-f(\widetilde{\mathbf{V}}(\theta))\right)^2\right]\,
+d\theta\, ,
+\end{equation}$$ and an easy calculation using Gaussian integration by parts (and the covariance formulas mentioned above) shows that $$\begin{equation}
+\frac{d}{d\theta}
+\mathbb{E}\left[\left(f(\widetilde{\mathbf{U}}(\theta))-f(\widetilde{\mathbf{V}}(\theta))\right)^2\right]\,
+=\, 2\sin(2\theta) \mathbb{E}\left[\nabla f(\widetilde{\mathbf{U}}(\theta)) \cdot 
+\nabla f(\widetilde{\mathbf{V}}(\theta))\right]\, .
+\end{equation}$$ Then (4.7) follows by using the Cauchy-Schwarz inequality. ◻
+:::
+
+This is only the simplest Gaussian COM result. Notice that the method of proof is similar to the method used to proved Talagrand's Gaussian concentration of measure inequality for Lipschitz functions as stated in chapter 2 Theorem [\[GCOM\]](#GCOM){reference-type="ref" reference="GCOM"}
+
+This lemma is a tool which can be applied to show that the various mixed matrix moments $M_n(\mathbf{p},\mathbf{q})$ do satisfy COM. We present this lemma here, because it is easier to obtain concentration of measure for the matrix moments using this lemma than with Theorem [\[GCOM\]](#GCOM){reference-type="ref" reference="GCOM"}. It should be noted, that [\[GCOM\]](#GCOM){reference-type="ref" reference="GCOM"} will also work in this case and will give a sharper concentration bound. Either way, it is an interesting calculation, and much of the combinatorics, especially involving matchings related to Catalan's number, are first visible in the grad-squared calculation.
+
+Since the goal of this section is to give a general outline of the proof of the formula for the mixed matrix moments and relate it to spin glass techniques, we will just state that the desired concentration of measure result is true.
+
+Then we are able to boost ([\[eq:recurrence\]](#eq:recurrence){reference-type="ref" reference="eq:recurrence"}) to $$\begin{equation}
+\label{eq:recur2}
+\lim_{n \to \infty} m_n(\mathbf{p},\mathbf{q}) - 
+\sum_{(\mathbf{p}',\mathbf{q}',\mathbf{p}'',\mathbf{q}'') \in \mathcal{S}(\mathbf{p},\mathbf{q})} 
+m_n(\mathbf{p}',\mathbf{q}') m_n(\mathbf{p}'',\mathbf{q}'')\, =\, 0\, .
+\end{equation}$$ Another easy fact is that, due to symmetry, $m_n(\mathbf{p},\mathbf{q})=0$ unless $p(1)+\dots+p(k)=q(1)+\dots+q(k)$. And, of course, $m_0=1$.
+
+Using this, and the method of induction, one can then prove Theorem [\[thm:MMM\]](#thm:MMM){reference-type="ref" reference="thm:MMM"}.
+
+## Commentary on Proof Technique
+
+The quadratic interpolation technique is important in spin glasses. The first major use was by Guerra and Toninelli [@GT] and Guerra [@G]. It is called the "smart path method" by Talagrand [@Talagrand2]. This is the method which we used to prove Talagrand's Gaussian concentration of measure inequality in chapter 2.
+
+Using Wick's rule to obtain a recurrence relation is important in many subjects. It is a standard approach to determining moments of random matrices. See, for instance, [@AndersonGuionnetZeitouni], chapter 1. In the context of Gaussian spin glasses, this technique combined with stochastic stability leads to the Aizenman-Contucci identities [@AC]. When combined with concentration of measure it leads to the Ghirlanda-Guerra identities [@GG]. See, for instance, the review [@ContucciGiardina].
+
+For random matrices, the problem of recombining the moments into useful information about the limiting empirical spectral measure is also important. For Hermitian random matrices, this is related to the classical moment method. The standard approach is to put the moments together into the Stieltjes transform, and then to proceed from there [@Pastur]. Again, a good general reference is [@AndersonGuionnetZeitouni], chapter 1.
+
+For spin glasses, the problem of integrating the Ghirlanda-Guerra identities into a useful result for mean-field models was solved only relatively recently. Panchenko showed that the "extended Ghirlanda-Guerra identities" imply Parisi's ultrametric ansatz [@Panchenko]. This is an important work. One element of his proof is putting various terms together into a a new exponential type generating function. This might be somewhat analogous to the Stieltjes transform step. But after that, the proofs are very different.
+
+For non-Hermitian random matrices, getting useful information from the moments is the topic we focus on next.

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2602.15276v1/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2602.15276v1/blocks/prose-sec-005",
   "kind": "prose",
   "title": "Expansion at the compacton boundary",
   "pageStart": 14,
   "pageEnd": 15,
   "text": "../sections/sec-005-expansion-at-the-compacton-boundary.md",
-  "derivedFrom": "library/arxiv-2602.15276v1/manifest",
-  "sourceDocument": "library/arxiv-2602.15276v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2602.15276v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2602.15276v1/manifest.jsonld",
   "provenance": "ingested"
 }

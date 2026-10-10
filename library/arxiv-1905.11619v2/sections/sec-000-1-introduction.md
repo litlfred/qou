@@ -7,97 +7,35 @@ section_number: 1
 pages: 1-3
 source_pdf: 1905.11619v2.pdf
 source_sha256: f634f9ec4357d5f3
+text_source: latex
+latex_prose_ratio: 0.957
+latex_coverage_ratio: 0.964
 doc_brief: "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS — We study (quasi-)cohomological properties through an anal ysis of quantum Markov semi-groups."
 ---
-The aim of this paper is to connect the theory of quantum Marko v semi-groups to certain coho-
-mological properties of their algebras. Quantum Markov sem i-groups are continuous semi-groups of
-trace preserving unital completely positive maps on a ﬁnite von Neumann algebra. Such quantum
-Markov semi-groups naturally arise in time evolutions of op en systems that undergo decoherence.
-With the emergence of non-commutative probability, their t heory had been investigated thoroughly.
-We refer in particular to the papers of Goldstein-Lindsay [G oLi95] and Cipriani [Cip97].
-A result that is of fundamental importance to us was obtained by Cipriani and Sauvageot in
-[CiSa03]. They showed that any generator ∆ of a quantum Marko v semi-group ( e−t∆ )t≥0 admits a
-closable derivation ∂ as its square root, i.e. ∆ = ∂∗∂. Since derivations are 1-cocycles in Hochschild
-cohomology, this is the ﬁrst instance that shows relevance o f quantum Markov semi-groups to
-cohomology.
-The results from [CiSa03] had several consequences in non-c ommutative potential theory and
-quantum probability. Much more recently also links to appro ximation and rigidity properties of
-von Neumann algebras were made. In particular, amenability [CiSa17] and Haagerup property
-[CaSk15] can be characterized in terms of quantum Markov sem i-groups with suﬃcient decay (see
-also [Cas18, Appendix]). Further rigidity properties of vo n Neumann algebras can be obtained
-[Cas18] by using quantum Markov semi-groups as input for the machinery developed by Ozawa-
-Popa [OzPo10a], [OzPo10b] and Peterson [Pet09]. A crucial t ool here is the gradient form (or carr´ e
-du champ) of a quantum Markov semi-group (or classically a di ﬀusion semi-group)
-We describe these rigidity results a bit further. In the cele brated paper [Voi96] Voiculescu
-showed, using free entropy, that free group factors do not po ssess a Cartan subalgebra. Later on,
-using completely diﬀerent methods, Ozawa and Popa [OzPo10a] re-obtained this result. Ozawa
-and Popa in fact prove a stronger result. Namely, they show th at the normalizer of any amenable
-diﬀuse von Neumann subalgebra generates a von Neumann algebr a that is amenable again. This
-property became known as strong solidity and plays a central role in the theory. Strong solidity
-Date: February 14, 2020.
-1
-2 MARTIJN CASPERS, YUSUKE ISONO, AND MATEUSZ W ASILEWSKI
-results are usually proved from a combination of weak compac tness and a malleable deformation
-or a group geometric/cohomological property.
-In particular, the rigidity results of [OzPo10b], [Pet09] s how that proper 1-cocycles in group
-cohomology with values in the coarse bimodule (or any bimodu le weakly contained in it) can
-be used to show that von Neumann algebras are strongly solid. After [OzPo10b], [Pet09] these
-results were improved upon in [ChSi13], [PoVa14] and [Iso15 ], where it was shown that also the
-Akemann-Ostrand property, which in the case of a group von Ne umann algebra compares to quasi-
-cocycles in bounded (group) cohomology, can be used to get st rong solidity results and further
-prime factorization results [OzPo04].
-In the current paper we address the question whether also der ivations in Hochschild cohomology
-can be used to obtain (quasi-)cohomological properties lik e the Akemann-Ostrand property. We
-do this as follows. Fix a ﬁnite von Neumann algebra M with a quantum Markov semi-group
-on it having a dense ∗-algebraA in the domain of its generator. We ﬁrst show that we can
-construct natural n-cocycles in the Hochschild cohomology of A. The case n = 1 reduces to the
-work of Cipriani-Sauvageot mentioned above [CiSa03]. The n-cocycles are deﬁned inductively and
-in each inductive step their coeﬃcient bimodule changes by a construction which we refer to as
-the ‘gradient tensor product’. Say that the n-cocycles take values in the n-fold gradient tensor
-L2(M )∇(n) (we omit the construction here in the introduction). We then analyze when L2(M )∇(n)
-is quasi-contained in the coarse bimodule; meaning that it i s contained as a bimodule in an inﬁnite
-direct sum of copies of the coarse bimodule. In order to do thi s we introduce the notion of gradient-
-Sp for a quantum Markov semi-group and prove the following.
-Theorem A. If a quantum Markov semi-group is gradient- S2n then L2(M )∇(n) is quasi-contained
-in the coarse bimodule of M .
-So essentially under gradient-S2n the cohomology takes place in the coeﬃcient bimodule given
-by the coarse bimodule. Note that gradient- S2n becomes weaker for higher n. We illustrate this
-for q-Gaussians algebras introduced by Bo˙ zejko and Speicher [B oSp91], see also [BKS97].
-Theorem B. For|q| < dim(HR)−1/p we have that the Ornstein-Uhlenbeck semi-group on the
-q-Gaussian algebra Γ q(HR) is gradient-Sp.
-The importance of Theorems A and B is so far mostly witnessed i n the case n = 1. In fact, in
-Theorem 4.1 we show that the cohomology of the ∗-algebras associated with q-Gaussians vanishes
-for n≥ 2 so that the cocycles we construct are in fact coboundaries. For n = 1 we show that
-Theorem B can be used to obtain further results that serve as i n input for the machinery developed
-in [PoVa14] and [Iso15]. We give suﬃcient conditions on a der ivation to imply the Akemann-
-Ostrand property. We analyze these conditions in the case of group algebras but also many other
-algebras by assuming that the quantum Markov semi-group has a type of ﬁltration (or is radial in
-some sense). In many known natural examples these condtions are veriﬁed, see the end of Section
-5. As a culminating result we single out the following.
-Theorem C. For|q| ⩽ dim(HR)−1/ 2 the q-Gaussian algebra Γ q(HR) satisﬁes the Akemann-Ostrand
-property; more precisely condtion AO + from [Iso15].
-In [Shl04] Shlyakhtenko obtained the same result for |q| <
-√
-2− 1 using that the q-Toeplitz
-algebra is nuclear in this range. In fact the q-Toeplitz algebras are isomorphic within this range
-L2-COHOMOLOGY, DERIV ATIONS AND SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS 3
-[DyNi93] and nuclearity for
-√
-2− 1 ⩽ |q| < 1 is still an open problem. Theorem C thus strictly
-extends the known range of q for which Γ q(HR) has AO + for dimension up until 5.
-The outline of this paper is as follows. After the preliminar ies we introduce the gradient tensor
-construction in Section 3. We analyze when a repeated tensor product is contained in the coarse
-bimodule through the notion of being gradient- Sp (Theorem A). We also show that in the group
-case, under a domain condition, one may always average quant um Markov semi-groups to a semi-
-group of Fourier multipliers retaining the gradient Sp-properties. In Section 4 we illustrate this
-using q-Gaussians and we show that the Ornstein-Uhlenbeck semi-gr oup is gradient-Sp for|q| <
-dim(HR)−1/p (Theorem B). Section 5 is then concerned with the question of which derivations
-imply condition AO +. We give suﬃcient conditions for the Cipriani-Sauvageot de rivations [CiSa03];
-amongst many other examples this includes q-Gaussians and we conclude Theorem C.
-Acknowledgements. The authors thank Ebrahim Samei for useful discussions and A dam Skalski
-for sharing a short proof of Lemma 3.13. The authors thank the referees for several comments that
-led to an improvement of the manuscript. Research of MW was pa rtially supported by National
-Science Centre (NCN) grant 2016/21/N/ST1/02499, long term structural funding – Methusalem
-grant of the Flemish Government – and by European Research Co uncil Consolidator Grant 614195
-RIGIDITY. Parts of this work were completed during a visit of MW to TU Delft; he thanks the
-university and the host for a stimulating research environm ent.
+[]{#Sect=Intro label="Sect=Intro"} The aim of this paper is to connect the theory of quantum Markov semi-groups to certain cohomological properties of their algebras. Quantum Markov semi-groups are continuous semi-groups of trace preserving unital completely positive maps on a finite von Neumann algebra. Such quantum Markov semi-groups naturally arise in time evolutions of open systems that undergo decoherence. With the emergence of non-commutative probability, their theory had been investigated thoroughly. We refer in particular to the papers of Goldstein-Lindsay [@GoldsteinLindsay] and Cipriani [@Cipriani].
+
+A result that is of fundamental importance to us was obtained by Cipriani and Sauvageot in [@CiprianiSauvageot]. They showed that any generator $\Delta$ of a quantum Markov semi-group $(e^{-t \Delta})_{t \geq 0}$ admits a closable derivation $\partial$ as its square root, i.e. $\Delta = \partial^\ast \overline{\partial}$. Since derivations are 1-cocycles in Hochschild cohomology, this is the first instance that shows relevance of quantum Markov semi-groups to cohomology.
+
+The results from [@CiprianiSauvageot] had several consequences in non-commutative potential theory and quantum probability. Much more recently also links to approximation and rigidity properties of von Neumann algebras were made. In particular, amenability [@CiprianiSauvageotAdvances] and Haagerup property [@CaspersSkalskiCMP] can be characterized in terms of quantum Markov semi-groups with sufficient decay (see also [@CaspersGradient Appendix]). Further rigidity properties of von Neumann algebras can be obtained [@CaspersGradient] by using quantum Markov semi-groups as input for the machinery developed by Ozawa-Popa [@OzawaPopaAnnals], [@OzawaPopaAJM] and Peterson [@Peterson]. A crucial tool here is the gradient form (or carré du champ) of a quantum Markov semi-group (or classically a diffusion semi-group)
+
+We describe these rigidity results a bit further. In the celebrated paper [@Voiculescu] Voiculescu showed, using free entropy, that free group factors do not possess a Cartan subalgebra. Later on, using completely different methods, Ozawa and Popa [@OzawaPopaAnnals] re-obtained this result. Ozawa and Popa in fact prove a stronger result. Namely, they show that the normalizer of any amenable diffuse von Neumann subalgebra generates a von Neumann algebra that is amenable again. This property became known as *strong solidity* and plays a central role in the theory. Strong solidity results are usually proved from a combination of weak compactness and a malleable deformation or a group geometric/cohomological property.
+
+In particular, the rigidity results of [@OzawaPopaAJM], [@Peterson] show that proper 1-cocycles in group cohomology with values in the coarse bimodule (or any bimodule weakly contained in it) can be used to show that von Neumann algebras are strongly solid. After [@OzawaPopaAJM], [@Peterson] these results were improved upon in [@ChifanSinclair], [@PopaVaesCrelle] and [@IsonoTransactions], where it was shown that also the Akemann-Ostrand property, which in the case of a group von Neumann algebra compares to quasi-cocycles in bounded (group) cohomology, can be used to get strong solidity results and further prime factorization results [@OzawaPopaPrime].
+
+In the current paper we address the question whether also derivations in Hochschild cohomology can be used to obtain (quasi-)cohomological properties like the Akemann-Ostrand property. We do this as follows. Fix a finite von Neumann algebra $M$ with a quantum Markov semi-group on it having a dense $\ast$-algebra $\mathcal{A}$ in the domain of its generator. We first show that we can construct natural $n$-cocycles in the Hochschild cohomology of $\mathcal{A}$. The case $n=1$ reduces to the work of Cipriani-Sauvageot mentioned above [@CiprianiSauvageot]. The $n$-cocycles are defined inductively and in each inductive step their coefficient bimodule changes by a construction which we refer to as the 'gradient tensor product'. Say that the $n$-cocycles take values in the $n$-fold gradient tensor $L_2(M)_{\nabla^{(n)}}$ (we omit the construction here in the introduction). We then analyze when $L_2(M)_{\nabla^{(n)}}$ is quasi-contained in the coarse bimodule; meaning that it is contained as a bimodule in an infinite direct sum of copies of the coarse bimodule. In order to do this we introduce the notion of gradient-$\mathcal{S}_p$ for a quantum Markov semi-group and prove the following.
+
+If a quantum Markov semi-group is gradient-$\mathcal{S}_{2n}$ then $L_2(M)_{\nabla^{(n)}}$ is quasi-contained in the coarse bimodule of $M$.
+
+So essentially under gradient-$\mathcal{S}_{2n}$ the cohomology takes place in the coefficient bimodule given by the coarse bimodule. Note that gradient-$\mathcal{S}_{2n}$ becomes weaker for higher $n$. We illustrate this for $q$-Gaussians algebras introduced by Bożejko and Speicher [@BozejkoSpeicher], see also [@BKS].
+
+For $\vert q \vert < \dim(H_{\mathbb{R}})^{-1/p}$ we have that the Ornstein-Uhlenbeck semi-group on the $q$-Gaussian algebra $\Gamma_q(H_{\mathbb{R}})$ is gradient-$\mathcal{S}_{p}$.
+
+The importance of Theorems A and B is so far mostly witnessed in the case $n=1$. In fact, in Theorem [\[CartanEilenberg\]](#CartanEilenberg){reference-type="ref" reference="CartanEilenberg"} we show that the cohomology of the $\ast$-algebras associated with $q$-Gaussians vanishes for $n \geq 2$ so that the cocycles we construct are in fact coboundaries. For $n = 1$ we show that Theorem B can be used to obtain further results that serve as in input for the machinery developed in [@PopaVaesCrelle] and [@IsonoTransactions]. We give sufficient conditions on a derivation to imply the Akemann-Ostrand property. We analyze these conditions in the case of group algebras but also many other algebras by assuming that the quantum Markov semi-group has a type of filtration (or is radial in some sense). In many known natural examples these condtions are verified, see the end of Section [\[Sect=AO\]](#Sect=AO){reference-type="ref" reference="Sect=AO"}. As a culminating result we single out the following.
+
+For $\vert q \vert \leqslant \dim(H_{\mathbb{R}})^{-1/2}$ the $q$-Gaussian algebra $\Gamma_q(H_{\mathbb{R}})$ satisfies the Akemann-Ostrand property; more precisely condtion AO$^+$ from [@IsonoTransactions].
+
+In [@Shlyakhtenko] Shlyakhtenko obtained the same result for $\vert q \vert < \sqrt{2} -1$ using that the $q$-Toeplitz algebra is nuclear in this range. In fact the $q$-Toeplitz algebras are isomorphic within this range [@NicaDykema] and nuclearity for $\sqrt{2} -1 \leqslant \vert q \vert <1$ is still an open problem. Theorem C thus strictly extends the known range of $q$ for which $\Gamma_q(H_{\mathbb{R}})$ has AO$^+$ for dimension up until 5.
+
+The outline of this paper is as follows. After the preliminaries we introduce the gradient tensor construction in Section [\[Sect=GradientTensor\]](#Sect=GradientTensor){reference-type="ref" reference="Sect=GradientTensor"}. We analyze when a repeated tensor product is contained in the coarse bimodule through the notion of being gradient-$\mathcal{S}_p$ (Theorem A). We also show that in the group case, under a domain condition, one may always average quantum Markov semi-groups to a semi-group of Fourier multipliers retaining the gradient $\mathcal{S}_p$-properties. In Section [\[Sect=Orhnstein-Uhlenbeck\]](#Sect=Orhnstein-Uhlenbeck){reference-type="ref" reference="Sect=Orhnstein-Uhlenbeck"} we illustrate this using $q$-Gaussians and we show that the Ornstein-Uhlenbeck semi-group is gradient-$\mathcal{S}_{p}$ for $\vert q \vert < \dim(H_{\mathbb{R}})^{-1/p}$ (Theorem B). Section [\[Sect=AO\]](#Sect=AO){reference-type="ref" reference="Sect=AO"} is then concerned with the question of which derivations imply condition AO$^+$. We give sufficient conditions for the Cipriani-Sauvageot derivations [@CiprianiSauvageot]; amongst many other examples this includes $q$-Gaussians and we conclude Theorem C.
+
+The authors thank Ebrahim Samei for useful discussions and Adam Skalski for sharing a short proof of Lemma [\[Lem=Average\]](#Lem=Average){reference-type="ref" reference="Lem=Average"}. The authors thank the referees for several comments that led to an improvement of the manuscript. Research of MW was partially supported by National Science Centre (NCN) grant 2016/21/N/ST1/02499, long term structural funding -- Methusalem grant of the Flemish Government -- and by European Research Council Consolidator Grant 614195 RIGIDITY. Parts of this work were completed during a visit of MW to TU Delft; he thanks the university and the host for a stimulating research environment.

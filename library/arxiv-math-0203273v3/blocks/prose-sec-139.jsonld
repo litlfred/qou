@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-139",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-139",
   "kind": "prose",
   "title": "Remarques. 1) SiA est tannakienne et queK est de caract´ eristique nulle, on",
   "pageStart": 47,
   "pageEnd": 48,
   "text": "../sections/sec-139-823-remarques-1-sia-est-tannakienne-et-quek-est.md",
-  "derivedFrom": "library/arxiv-math-0203273v3/manifest",
-  "sourceDocument": "library/arxiv-math-0203273v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203273v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203273v3/manifest.jsonld",
   "provenance": "ingested"
 }

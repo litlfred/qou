@@ -7,120 +7,49 @@ section_number: null
 pages: 1-3
 source_pdf: 2010.12445v1.pdf
 source_sha256: 16e9ca22ecc1f296
+text_source: latex
+latex_prose_ratio: 0.907
+latex_coverage_ratio: 0.981
 doc_brief: "STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI — Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect"
 ---
-Classical (non-neutral) Tannaka’s duality over a ﬁeld k establishes a correspondence between
-k-Tannakian categories and aﬃne gerbes over k. More precisely given a k-Tannakian category C
-we can deﬁne a ﬁbered category Π C : Aﬀ /k → (groupoids) by
-Π C(A) = {k-linear, strong monoidal and exact functors C→ Vect(A)}
-where Aﬀ /k is the category of aﬃne schemes over k and Vect(A) = Vect(SpecA) is the category
-of ﬁnitely presented locally free sheaves on Spec A. It is then proved that Π C is an aﬃne gerbe
-and the functor
-C → Vect(Π C), X ↦− →(Γ ∋ Π C(A) ↦→Γ X ∈ Vect(A))
-is a k-linear and strong monoidal equivalence. Here and in what fo llows we think sheaves (e.g
-locally free, quasi-coherent) on a ﬁbered category as funct ors from the ﬁbered category itself to
-the corresponding ﬁbered category of sheaves (see [ Ton20, Section 1] for details).
-Conversely if ∆ is an aﬃne gerbe over k then Vect (∆) is a k-Tannakian category and the
-functor
-∆ → Π Vect(∆) , (s : SpecA → ∆) ↦− →(s∗
-| Vect(∆) : Vect(∆) → Vect(A))
-is an equivalence. This is called Tannaka’s reconstruction while the previous equivalence is called
-Tannaka’s recognition.
-In this paper we want to generalize Tannaka’s reconstructio n in two ways: consider more
-general ﬁbered categories and proper subcategories of the c ategory of locally free sheaves and
-introduce generalized stacks of ﬁber functors.
-Fix a base commutative ring R. Consider a category ﬁbered in groupoids X over Aﬀ /R and
-a monoidal subcategory C ⊆ Vect(X ) that we assume is closed under taking duals. Let Y be
-another category ﬁbered in groupoids over R. Given an R-linear functor Γ : C → Vect(Y) we say
-that Γ is right exact if it is exact on right exact sequences (in the a mbient category QCoh (X )),
-whose terms are direct sum of sheaves in C (see 3.1 for a precise deﬁnition). We deﬁne Fib X , C(Y)
-as the groupoid of R-linear, right exact and strong monoidal functors Γ : C → Vect(Y). We deﬁne
-the category ﬁbered in groupoids Fib X , C : Aﬀ /R → (groupoids) by
-FibX , C(A) = FibX , C(SpecA) = {R-linear, strong monoidal and right exact functors C→ Vect(A)}
-1
-STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION 2
-We will show that under mild hypothesis on C the category Fib X , C is automatically ﬁbered in
-groupoids even without forcing it (see 5.1). Notice also that Fib X , C is a stack for the fpqc
-topology. The analogy with classical Tannaka’s duality is t hat Π Vect(∆) = Fib∆ , Vect(∆) for an
-aﬃne gerbe ∆ overR =k (see 3.4).
-There are two natural functors. An R-linear, strong monoidal and right exact functor
-G : C → Vect(FibX , C), GE (Γ ∋ FibX , C(A)) = Γ E ∈ Vect(A)
-and a map of ﬁbered categories
-PC : X − → FibX , C, (s : SpecA → X ) ↦− →(s∗
-|C : C − →VectA)
-which generalize the maps deﬁned in the case of aﬃne gerbes.
-We address two problems: when PC is an equivalence and, if this is not the case, what can we
-say about the category Fib X , C. Notice that the composition P ∗
-C ◦ G : C → Vect(X ) is the natural
-inclusion, so that, if PC is an equivalence, then G is fully faithful.
-By a quasi-compact ﬁbered category we mean a category ﬁbered in groupoids X admitting a
-map U → X from an aﬃne scheme which is representable by fpqc covering o f algebraic spaces.
-We say that a full subcategory D ⊆ QCoh(X ) generates QCoh(X ) if any quasi-coherent sheaf on
-X is a quotient of a direct sum of sheaves in D. We prove the following generalization of classical
-Tannaka’s reconstruction (see 3.4).
-Theorem A (3.2, 3.3). Let X be a quasi-compact stack over R for the fpqc topology with quasi-
-aﬃne diagonal and C ⊆ VectX be a full, monoidal subcategory with duals generating QCoh X .
-Then PC : X → FibX , C is an equivalence and, if Y is a category ﬁbered in groupoids over R, the
-functor
-Hom(Y, X ) − →FibX , C(Y), (Y
-f
-− − → X) ↦− →f ∗
-|C : C − →Vect(Y)
-is an equivalence of categories.
-In the case C = VectX , the functor PVect(X ) has already been proved to be an equivalence in
-the neutral case, that is X = BRG, where G is a ﬂat and aﬃne group scheme over R (see [Bro13,
-Theorem 1.2], where R is a Dedekind domain, and [ Sch13, Theorem 1.3.2] for general rings R),
-for particular quotient stacks over a ﬁeld (see [ Sav06] and 2.10) and for quasi-compact and quasi-
-separated schemes (see [ BC14, Proposition 1.8]). More generally, although not explicit ly stated
-elsewhere, for stacks with the resolution property and with aﬃne diagonal (which is automatic
-in the algebraic case, see [ Tot02]) the fact that PVect(X ) is an equivalence is equivalent to the
-known analogous results where Vect is replaced by QCoh (−) (for those results and other variants
-with Coh(−) or the derived category D(−) see [Lur04, Sch12, BC14, Bra14, Bha16, HR14]): one
-can pass from quasi-coherent sheaves to locally free sheave s via dualizable objects and, for the
-converse, extend functors from Vect (−) to QCoh (−) following the proof of [ Bha16, Corollary
-3.2]. We complete this picture by showing that in general the resolution property implies the
-aﬃneness of the diagonal (see 2.9).
-The proof we present here does not follow this strategy and on e of the main ingredients is
-the classiﬁcation of quasi-compact stacks whose quasi-coh erent sheaves are generated by global
-sections, called pseudo-aﬃne. We show that a quasi-compact stack X is pseudo-aﬃne if and only
-if it is a sheaf with a ﬂat monomorphism X → SpecB for some B (one can take B = H0(OX ), see
-2.2). Moreover we show that a pseudo-aﬃne algebraic stack is qua si-aﬃne (see 2.8), which has
-already been observed in [ Gro13, Proposition 3.1], and that a quasi-compact ﬂat monomorphi sm
-of algebraic stacks is quasi-aﬃne (see 2.7), which was proved in [ Ray67].
-The characterization of pseudo-aﬃne sheaves and Theorem A are a consequence of the theory
-developed in [ Ton20], where a correspondence between linear functors C → Mod(A) and quasi-
-coherent sheaves on X × A is discussed. We summarize in Section 1 the results used.
-STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION 3
-As explained above pseudo-aﬃne sheaves are used in the proof of Theorem A. On the other
-hand, another consequence of Theorem A is a diﬀerent characterization of pseudo-aﬃne sheaves:
-we show that a sheaf U is pseudo-aﬃne if and only if it is the (sheaf) intersection o f quasi-compact
-open subsets of an aﬃne scheme Spec B (one can take B = H0(OU ), see 4.2).
-A consequence of this new characterization is a partial answ er to our second initial question,
-the nature of Fib X , C, and a partial converse to Theorem A.
-Theorem B (5.1). Let X be a quasi-compact ﬁbered category over R and C ⊆ VectX be a full
-monoidal subcategory with duals. If R is not a Q-algebra assume moreover that Symn E ∈ C
-for all E ∈ C and n ∈ N. Then FibX , C is a quasi-compact fpqc stack with aﬃne diagonal and
-the subcategory {GE }E∈C ⊆ Vect(FibX , C) generates QCoh(FibX , C). In particular FibX , C has the
-resolution property.
-We also consider the substack Fib f
-X , C of Fib X , C of functors Γ : C → Vect(A) such that f (E) =
-rk Γ E for all E ∈ C , where f is a rank function f : C → N. In Theorem 5.1 we prove that Fib f
-X , C is
-non empty if and only if there exists a geometric point ξ: Spec Ω → X such that f (E) = rkξ∗E
-for all E ∈ C and that, in this case, Fib f
-X , C is also a quasi-compact stack with aﬃne diagonal and
-the resolution property.
-In Theorem 5.1 is also discussed a criterion to deduce that Fib X , C is an algebraic stack, but
-we still think this is very unsatisfactory (see 5.2).
-We expect that G : C → Vect(FibX , C) is fully faithful in general, which would imply that
-X → FibX , Vect(X ) is universal among maps from X to quasi-compact fpqc stacks with quasi-
-aﬃne diagonal and the resolution property, but we are unable to prove it (see 5.19).
-We conclude the paper by looking at the “baby case” C = {OX }. In this case Fib X , {OX } is
-the pseudo-aﬃne sheaf intersection of all quasi-compact op en subsets of Spec H 0(OX ) containing
-the image of X → Spec H0(OX ) (see 5.20). In 5.22 we show that Fib X , {OX } is not algebraic in
-general, even if X is an integral scheme of ﬁnite type over a ﬁeld.
-The outline of the paper is the following. In the ﬁrst section we describe the theory of
-sheaﬁﬁcation functors from [ Ton20] and some results about frame bundles. In the second section
-we give a ﬁrst description of pseudo-aﬃne stacks and, in the t hird section, prove Theorem A. In
-the fourth section we give a diﬀerent description of pseudo- aﬃne stacks, which is then used in
-the last section to prove Theorem B.
+Classical (non-neutral) Tannaka's duality over a field $k$ establishes a correspondence between $k$-Tannakian categories and affine gerbes over $k$. More precisely given a $k$-Tannakian category $\shC$ we can define a fibered category $\Pi_{\shC}\colon\mathop{\mathrm{\textup{Aff}}}/k\to(\text{groupoids)}$ by $$\Pi_{\shC}(A)=\{k\text{-linear, strong monoidal and exact functors \ensuremath{\shC}\ensuremath{\ensuremath{\to\mathop{\mathrm{\textup{Vect}}}}(A)\}}}$$ where $\mathop{\mathrm{\textup{Aff}}}/k$ is the category of affine schemes over $k$ and $\mathop{\mathrm{\textup{Vect}}}(A)=\mathop{\mathrm{\textup{Vect}}}(\mathop{\mathrm{\textup{Spec}}}A)$ is the category of finitely presented locally free sheaves on $\mathop{\mathrm{\textup{Spec}}}A$. It is then proved that $\Pi_{\shC}$ is an affine gerbe and the functor $$\shC\to\mathop{\mathrm{\textup{Vect}}}(\Pi_{\shC})\comma X\longmapsto(\Gamma\ni\Pi_{\shC}(A)\mapsto\Gamma_{X}\in\mathop{\mathrm{\textup{Vect}}}(A))$$ is a $k$-linear and strong monoidal equivalence. Here and in what follows we think sheaves (e.g locally free, quasi-coherent) on a fibered category as functors from the fibered category itself to the corresponding fibered category of sheaves (see [@Tonini2014 Section 1] for details).
+
+Conversely if $\Delta$ is an affine gerbe over $k$ then $\mathop{\mathrm{\textup{Vect}}}(\Delta)$ is a $k$-Tannakian category and the functor $$\Delta\to\Pi_{\mathop{\mathrm{\textup{Vect}}}(\Delta)}\comma(s\colon\mathop{\mathrm{\textup{Spec}}}A\to\Delta)\longmapsto(s_{|\mathop{\mathrm{\textup{Vect}}}(\Delta)}^{*}\colon\mathop{\mathrm{\textup{Vect}}}(\Delta)\to\mathop{\mathrm{\textup{Vect}}}(A))$$ is an equivalence. This is called Tannaka's reconstruction while the previous equivalence is called Tannaka's recognition.
+
+In this paper we want to generalize Tannaka's reconstruction in two ways: consider more general fibered categories and proper subcategories of the category of locally free sheaves and introduce generalized stacks of fiber functors.
+
+Fix a base commutative ring $R$. Consider a category fibered in groupoids $\stX$ over $\mathop{\mathrm{\textup{Aff}}}/R$ and a monoidal subcategory $\shC\subseteq\mathop{\mathrm{\textup{Loc}}}(\stX)$ that we assume is closed under taking duals. Let $\stY$ be another category fibered in groupoids over $R$. Given an $R$-linear functor $\Gamma\colon\shC\to\mathop{\mathrm{\textup{Vect}}}(\stY)$ we say that $\Gamma$ is right exact if it is exact on right exact sequences (in the ambient category $\mathop{\mathrm{\textup{QCoh}}}(\stX)$), whose terms are direct sum of sheaves in $\shC$ (see [\[def:definition of Fib stacks\]](#def:definition of Fib stacks){reference-type="ref" reference="def:definition of Fib stacks"} for a precise definition). We define $\Fib_{\stX,\shC}(\stY)$ as the groupoid of $R$-linear, right exact and strong monoidal functors $\Gamma\colon\shC\to\mathop{\mathrm{\textup{Vect}}}(\stY)$. We define the category fibered in groupoids $\Fib_{\stX,\shC}\colon\mathop{\mathrm{\textup{Aff}}}/R\to(\text{groupoids})$ by $$\Fib_{\stX,\shC}(A)=\Fib_{\stX,\shC}(\mathop{\mathrm{\textup{Spec}}}A)=\{R\text{-linear, strong monoidal and right exact functors }\text{\ensuremath{\shC}\ensuremath{\ensuremath{\to\mathop{\mathrm{\textup{Vect}}}}(A)\}}}$$ We will show that under mild hypothesis on $\shC$ the category $\Fib_{\stX,\shC}$ is automatically fibered in groupoids even without forcing it (see [\[thm:when FibX,C has the resolution property\]](#thm:when FibX,C has the resolution property){reference-type="ref" reference="thm:when FibX,C has the resolution property"}). Notice also that $\Fib_{\stX,\shC}$ is a stack for the fpqc topology. The analogy with classical Tannaka's duality is that $\Pi_{\mathop{\mathrm{\textup{Vect}}}(\Delta)}=\Fib_{\Delta,\mathop{\mathrm{\textup{Vect}}}(\Delta)}$ for an affine gerbe $\Delta$ over $R=k$ (see [\[rem:comparison with classical tannakas reconstruction\]](#rem:comparison with classical tannakas reconstruction){reference-type="ref" reference="rem:comparison with classical tannakas reconstruction"}).
+
+There are two natural functors. An $R$-linear, strong monoidal and right exact functor $$\shG\colon\shC\to\mathop{\mathrm{\textup{Vect}}}(\Fib_{\stX,\shC})\comma\shG_{\E}(\Gamma\ni\Fib_{\stX,\shC}(A))=\Gamma_{\E}\in\mathop{\mathrm{\textup{Vect}}}(A)$$ and a map of fibered categories $$\shP_{\shC}\colon\stX\arr\Fib_{\stX,\shC}\comma(s\colon\mathop{\mathrm{\textup{Spec}}}A\to\stX)\longmapsto(s_{|\shC}^{*}\colon\shC\arr\mathop{\mathrm{\textup{Loc}}}A)$$ which generalize the maps defined in the case of affine gerbes.
+
+We address two problems: when $\shP_{\shC}$ is an equivalence and, if this is not the case, what can we say about the category $\Fib_{\stX,\shC}$. Notice that the composition $\shP_{\shC}^{*}\circ\shG\colon\shC\to\mathop{\mathrm{\textup{Vect}}}(\stX)$ is the natural inclusion, so that, if $\shP_{\shC}$ is an equivalence, then $\shG$ is fully faithful.
+
+By a quasi-compact fibered category we mean a category fibered in groupoids $\stX$ admitting a map $U\to\stX$ from an affine scheme which is representable by fpqc covering of algebraic spaces. We say that a full subcategory $\shD\subseteq\mathop{\mathrm{\textup{QCoh}}}(\stX)$ generates $\mathop{\mathrm{\textup{QCoh}}}(\stX)$ if any quasi-coherent sheaf on $\stX$ is a quotient of a direct sum of sheaves in $\shD$. We prove the following generalization of classical Tannaka's reconstruction (see [\[rem:comparison with classical tannakas reconstruction\]](#rem:comparison with classical tannakas reconstruction){reference-type="ref" reference="rem:comparison with classical tannakas reconstruction"}).
+
+::: thma
+[]{#thma label="thma"} Let $\stX$ be a quasi-compact stack over $R$ for the fpqc topology with quasi-affine diagonal and $\shC\subseteq\mathop{\mathrm{\textup{Loc}}}\stX$ be a full, monoidal subcategory with duals generating $\mathop{\mathrm{\textup{QCoh}}}\stX$. Then $\shP_{\shC}\colon\stX\to\Fib_{\stX,\shC}$ is an equivalence and, if $\stY$ is a category fibered in groupoids over $R$, the functor $$\mathop{\mathrm{\textup{Hom}}}(\stY,\stX)\arr\Fib_{\stX,\shC}(\stY)\comma(\stY\arrdi f\stX)\longmapsto f_{|\shC}^{*}\colon\shC\arr\mathop{\mathrm{\textup{Loc}}}(\stY)$$ is an equivalence of categories.
+:::
+
+In the case $\shC=\mathop{\mathrm{\textup{Loc}}}\stX$, the functor $\shP_{\mathop{\mathrm{\textup{Loc}}}(\stX)}$ has already been proved to be an equivalence in the neutral case, that is $\stX=\mathop{\mathrm{\textup{B}}}_{R}G$, where $G$ is a flat and affine group scheme over $R$ (see [@Broshi2013 Theorem 1.2], where $R$ is a Dedekind domain, and [@Schappi2011 Theorem 1.3.2] for general rings $R$), for particular quotient stacks over a field (see [@Savin2006] and [\[rem: cases for resolution property\]](#rem: cases for resolution property){reference-type="ref" reference="rem: cases for resolution property"}) and for quasi-compact and quasi-separated schemes (see [@Brandenburg2012 Proposition 1.8]). More generally, although not explicitly stated elsewhere, for stacks with the resolution property and with affine diagonal (which is automatic in the algebraic case, see [@Totaro2002]) the fact that $\shP_{\mathop{\mathrm{\textup{Loc}}}(\stX)}$ is an equivalence is equivalent to the known analogous results where $\mathop{\mathrm{\textup{Loc}}}$ is replaced by $\mathop{\mathrm{\textup{QCoh}}}(-)$ (for those results and other variants with $\mathop{\mathrm{\textup{Coh}}}(-)$ or the derived category $D(-)$ see [@Lurie2004; @Schappi2012; @Brandenburg2012; @Brandenburg2014; @Bhatt2014; @Hall2014]): one can pass from quasi-coherent sheaves to locally free sheaves via dualizable objects and, for the converse, extend functors from $\mathop{\mathrm{\textup{Loc}}}(-)$ to $\mathop{\mathrm{\textup{QCoh}}}(-)$ following the proof of [@Bhatt2014 Corollary 3.2]. We complete this picture by showing that in general the resolution property implies the affineness of the diagonal (see [\[cor:quasi-affine and resolution implies affine\]](#cor:quasi-affine and resolution implies affine){reference-type="ref" reference="cor:quasi-affine and resolution implies affine"}).
+
+The proof we present here does not follow this strategy and one of the main ingredients is the classification of quasi-compact stacks whose quasi-coherent sheaves are generated by global sections, called pseudo-affine. We show that a quasi-compact stack $\stX$ is pseudo-affine if and only if it is a sheaf with a flat monomorphism $\stX\to\mathop{\mathrm{\textup{Spec}}}B$ for some $B$ (one can take $B=\mathop{\mathrm{\textup{H}}}^{0}(\odi{\stX})$, see [\[lem:recognizing affine rings from global sections\]](#lem:recognizing affine rings from global sections){reference-type="ref" reference="lem:recognizing affine rings from global sections"}). Moreover we show that a pseudo-affine algebraic stack is quasi-affine (see [\[cor:pseudo-affine algebraic is quasi-affine\]](#cor:pseudo-affine algebraic is quasi-affine){reference-type="ref" reference="cor:pseudo-affine algebraic is quasi-affine"}), which has already been observed in [@Gross2013 Proposition 3.1], and that a quasi-compact flat monomorphism of algebraic stacks is quasi-affine (see [\[thm:flat mono are quasi-affine\]](#thm:flat mono are quasi-affine){reference-type="ref" reference="thm:flat mono are quasi-affine"}), which was proved in [@Raynaud1967].
+
+The characterization of pseudo-affine sheaves and Theorem [\[thma\]](#thma){reference-type="ref" reference="thma"} are a consequence of the theory developed in [@Tonini2014], where a correspondence between linear functors $\shC\to\mathop{\mathrm{\textup{Mod}}}(A)$ and quasi-coherent sheaves on $\stX\times A$ is discussed. We summarize in Section [\[sec:Preliminaries\]](#sec:Preliminaries){reference-type="ref" reference="sec:Preliminaries"} the results used.
+
+As explained above pseudo-affine sheaves are used in the proof of Theorem [\[thma\]](#thma){reference-type="ref" reference="thma"}. On the other hand, another consequence of Theorem [\[thma\]](#thma){reference-type="ref" reference="thma"} is a different characterization of pseudo-affine sheaves: we show that a sheaf $U$ is pseudo-affine if and only if it is the (sheaf) intersection of quasi-compact open subsets of an affine scheme $\mathop{\mathrm{\textup{Spec}}}B$ (one can take $B=\mathop{\mathrm{\textup{H}}}^{0}(\odi U)$, see [\[prop:arbitrary intersection of quasi-compact open is pseudo-affine\]](#prop:arbitrary intersection of quasi-compact open is pseudo-affine){reference-type="ref" reference="prop:arbitrary intersection of quasi-compact open is pseudo-affine"}).
+
+A consequence of this new characterization is a partial answer to our second initial question, the nature of $\Fib_{\stX,\shC}$, and a partial converse to Theorem [\[thma\]](#thma){reference-type="ref" reference="thma"}.
+
+::: thmb
+[]{#thmc label="thmc"} Let $\stX$ be a quasi-compact fibered category over $R$ and $\shC\subseteq\mathop{\mathrm{\textup{Loc}}}\stX$ be a full monoidal subcategory with duals. If $R$ is not a $\Q$-algebra assume moreover that $\mathop{\mathrm{\textup{Sym}}}^{n}\E\in\shC$ for all $\E\in\shC$ and $n\in\N$. Then $\Fib_{\stX,\shC}$ is a quasi-compact fpqc stack with affine diagonal and the subcategory $\{\shG_{\E}\}_{\E\in\shC}\subseteq\mathop{\mathrm{\textup{Loc}}}(\Fib_{\stX,\shC})$ generates $\mathop{\mathrm{\textup{QCoh}}}(\Fib_{\stX,\shC})$. In particular $\Fib_{\stX,\shC}$ has the resolution property.
+:::
+
+We also consider the substack $\Fib_{\stX,\shC}^{f}$ of $\Fib_{\stX,\shC}$ of functors $\Gamma\colon\shC\to\mathop{\mathrm{\textup{Vect}}}(A)$ such that $f(\E)=\mathop{\mathrm{\textup{rk}}}\Gamma_{\E}$ for all $\E\in\shC$, where $f$ is a rank function $f\colon\shC\to\N$. In Theorem [\[thm:when FibX,C has the resolution property\]](#thm:when FibX,C has the resolution property){reference-type="ref" reference="thm:when FibX,C has the resolution property"} we prove that $\Fib_{\stX,\shC}^{f}$ is non empty if and only if there exists a geometric point $\xi\colon\mathop{\mathrm{\textup{Spec}}}\Omega\to\stX$ such that $f(\E)=\mathop{\mathrm{\textup{rk}}}\xi^{*}\E$ for all $\E\in\shC$ and that, in this case, $\Fib_{\stX,\shC}^{f}$ is also a quasi-compact stack with affine diagonal and the resolution property.
+
+In Theorem [\[thm:when FibX,C has the resolution property\]](#thm:when FibX,C has the resolution property){reference-type="ref" reference="thm:when FibX,C has the resolution property"} is also discussed a criterion to deduce that $\Fib_{\stX,\shC}$ is an algebraic stack, but we still think this is very unsatisfactory (see [\[rem:bad algebraic fib\]](#rem:bad algebraic fib){reference-type="ref" reference="rem:bad algebraic fib"}).
+
+We expect that $\shG\colon\shC\to\mathop{\mathrm{\textup{Vect}}}(\Fib_{\stX,\shC})$ is fully faithful in general, which would imply that $\stX\to\Fib_{\stX,\mathop{\mathrm{\textup{Vect}}}(\stX)}$ is universal among maps from $\stX$ to quasi-compact fpqc stacks with quasi-affine diagonal and the resolution property, but we are unable to prove it (see [\[prop:Conjecture implications\]](#prop:Conjecture implications){reference-type="ref" reference="prop:Conjecture implications"}).
+
+We conclude the paper by looking at the "baby case" $\shC=\{\odi{\stX}\}$. In this case $\Fib_{\stX,\{\odi{\stX}\}}$ is the pseudo-affine sheaf intersection of all quasi-compact open subsets of $\mathop{\mathrm{\textup{Spec}}}\mathop{\mathrm{\textup{H}}}^{0}(\odi{\stX})$ containing the image of $\stX\to\mathop{\mathrm{\textup{Spec}}}\mathop{\mathrm{\textup{H}}}^{0}(\odi{\stX})$ (see [\[prop:the simplest category\]](#prop:the simplest category){reference-type="ref" reference="prop:the simplest category"}). In [\[exa:counterexample\]](#exa:counterexample){reference-type="ref" reference="exa:counterexample"} we show that $\Fib_{\stX,\{\odi{\stX}\}}$ is not algebraic in general, even if $\stX$ is an integral scheme of finite type over a field.
+
+The outline of the paper is the following. In the first section we describe the theory of sheafification functors from [@Tonini2014] and some results about frame bundles. In the second section we give a first description of pseudo-affine stacks and, in the third section, prove Theorem [\[thma\]](#thma){reference-type="ref" reference="thma"}. In the fourth section we give a different description of pseudo-affine stacks, which is then used in the last section to prove Theorem [\[thmc\]](#thmc){reference-type="ref" reference="thmc"}.

@@ -1,0 +1,19 @@
+%%
+%% This is file `eurm.sty',
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{eurm}[1998/10/08 v0.1 Euler Roman fonts]
+\DeclareMathAlphabet\EuRoman{U}{eur}{m}{n}
+\SetMathAlphabet\EuRoman{bold}{U}{eur}{b}{n}
+\DeclareOption{psamsfonts}{%
+  \DeclareFontFamily{U}{eur}{\skewchar\font'177}%
+  \DeclareFontShape{U}{eur}{m}{n}{<-6>eurm5<6-8>eurm7<8->eurm10}{}%
+  \DeclareFontShape{U}{eur}{b}{n}{<-6>eurb5<6-8>eurb7<8->eurb10}{}%
+}
+\DeclareOption{matheur}{%
+  \providecommand{\matheur}{}\renewcommand{\matheur}{\EuRoman}%
+}
+\ExecuteOptions{matheur}
+\ProcessOptions
+\endinput
+%%
+%% End of file `eurm.sty'.

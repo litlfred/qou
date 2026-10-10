@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-9910147v1/blocks/prose-sec-016",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-9910147v1/blocks/prose-sec-016",
   "kind": "prose",
   "title": "Quantum Lorentz group, Principal Unitary Representati ons and",
   "pageStart": 10,
   "pageEnd": 10,
   "text": "../sections/sec-016-23-quantum-lorentz-group-principal-unitary-repre.md",
-  "derivedFrom": "library/arxiv-math-9910147v1/manifest",
-  "sourceDocument": "library/arxiv-math-9910147v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9910147v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9910147v1/manifest.jsonld",
   "provenance": "ingested"
 }

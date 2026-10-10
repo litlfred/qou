@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2508.03145v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Theta-Categories and Tannakian duality (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2508.03145v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2508.03145&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2508.03145v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2508.03145v1",
+    "content_type": "application/gzip",
+    "sha256": "da426f857171e68c3aac34ef1b1c6b206675f12c938cf18a80cfe5b6aa3632ce",
+    "bytes": 23012,
+    "fetched": "2026-10-10T15:21:36+00:00",
+    "files": [
+      {
+        "path": "source/files/main.bbl",
+        "role": "bbl",
+        "sha256": "70347173bbbb0790f782a62d532ab11108519509c9c5575ff90b8bfeb0ce7be5",
+        "bytes": 3859
+      },
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "0ec35dbeed2905c0b8b64398fbc8c9801ac2f96566079c02047ec1a34579fca9",
+        "bytes": 75315
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

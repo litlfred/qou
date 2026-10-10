@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0203194v1/sections/sec-558",
   "@type": [
     "doco:Section"
@@ -9,13 +14,13 @@
   "pageEnd": 217,
   "contains": [
     "library/arxiv-math-0203194v1/blocks/prose-sec-558",
-    "library/arxiv-math-0203194v1/blocks/thm-sec-558-01",
-    "library/arxiv-math-0203194v1/blocks/ex-sec-558-02",
-    "library/arxiv-math-0203194v1/blocks/thm-sec-558-03",
-    "library/arxiv-math-0203194v1/blocks/ex-sec-558-04",
-    "library/arxiv-math-0203194v1/blocks/prop-sec-558-05"
+    "library/arxiv-math-0203194v1/blocks/theorem-sec-558-01",
+    "library/arxiv-math-0203194v1/blocks/example-sec-558-02",
+    "library/arxiv-math-0203194v1/blocks/theorem-sec-558-03",
+    "library/arxiv-math-0203194v1/blocks/example-sec-558-04",
+    "library/arxiv-math-0203194v1/blocks/proposition-sec-558-05"
   ],
-  "derivedFrom": "library/arxiv-math-0203194v1/manifest",
-  "sourceDocument": "library/arxiv-math-0203194v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203194v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203194v1/manifest.jsonld",
   "provenance": "ingested"
 }

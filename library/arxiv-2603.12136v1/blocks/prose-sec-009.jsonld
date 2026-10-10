@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2603.12136v1/blocks/prose-sec-009",
+  "kind": "prose",
+  "title": "Equitable partitions of split reformulations",
+  "pageStart": 15,
+  "pageEnd": 22,
+  "text": "../sections/sec-009-equitable-partitions-of-split-reformulations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2603.12136v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2603.12136v1/manifest.jsonld",
+  "provenance": "ingested"
+}

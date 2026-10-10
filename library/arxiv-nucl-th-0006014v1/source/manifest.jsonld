@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-nucl-th-0006014v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-nucl-th-0006014v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-nucl-th-0006014v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:nucl-th/0006014&metadataPrefix=arXiv), submitted 2000-06-09, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-nucl-th-0006014v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/nucl-th/0006014v1",
+    "content_type": "application/gzip",
+    "sha256": "9cd4904194d3063e7faef85a337db5cca586d7f980162fd75adddc6871f3e131",
+    "bytes": 488053,
+    "fetched": "2026-10-10T15:31:43+00:00",
+    "files": [
+      {
+        "path": "source/files/bonn.tex",
+        "role": "tex",
+        "sha256": "b84e9882f54f8bcb43f15300d48710cddb7c60c21ee777a09a29f40bb6f3e427",
+        "bytes": 161175
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

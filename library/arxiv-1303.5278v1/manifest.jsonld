@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1303.5278v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1303.5278v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1303.5278v1",
   "contains": [
     "library/arxiv-1303.5278v1/sections/sec-000",
     "library/arxiv-1303.5278v1/sections/sec-001",
@@ -30,8 +35,17 @@
     "library/arxiv-1303.5278v1/sections/sec-021"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1303.5278&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1303.5278v1",
+    "title_source": "slug",
     "source_file": "1303.5278v1.pdf",
     "source_sha256": "92e417c93f8b883ae2ad5be1f10abcdc703bd80e32bb2988d7479cdfb45cf4d6",
     "pages": 60,

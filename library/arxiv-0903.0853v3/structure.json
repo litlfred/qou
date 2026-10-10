@@ -5,7 +5,8 @@
   "file": "0903.0853v3.pdf",
   "sha256": "d4295d4b18b2f08f8469736147a230af586bed25cf56d601480b046355cb2d39",
   "bytes": 1056459,
-  "pages": 176
+  "pages": 176,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -37,14 +38,14 @@
  "toc": [
   {
    "level": 2,
-   "title": "Vector bundles associated to q-diﬀerence modules. . . . . . . . . . . . . . . . . 108",
+   "title": "Vector bundles associated to q-di\ufb00erence modules. . . . . . . . . . . . . . . . . 108",
    "page": 6,
    "source": "inferred",
    "number": "6.3"
   },
   {
    "level": 2,
-   "title": "The q-Euler equation and conﬂuent basic hypergeometric series. . . 112",
+   "title": "The q-Euler equation and con\ufb02uent basic hypergeometric series. . . 112",
    "page": 6,
    "source": "inferred",
    "number": "7.1"
@@ -86,7 +87,7 @@
   },
   {
    "level": 3,
-   "title": "The Birkhoﬀ-Guenther program. — We quote the conclusion of",
+   "title": "The Birkho\ufb00-Guenther program. \u2014 We quote the conclusion of",
    "page": 7,
    "source": "inferred",
    "number": "1.1.2"
@@ -100,7 +101,7 @@
   },
   {
    "level": 3,
-   "title": "What this paper could contain but does not. — Before de-",
+   "title": "What this paper could contain but does not. \u2014 Before de-",
    "page": 8,
    "source": "inferred",
    "number": "1.1.3"
@@ -142,7 +143,7 @@
   },
   {
    "level": 4,
-   "title": "About the asumption that the slopes are integral . — The “abstract”",
+   "title": "About the asumption that the slopes are integral . \u2014 The \u201cabstract\u201d",
    "page": 9,
    "source": "inferred",
    "number": "1.1.3.1"
@@ -198,14 +199,14 @@
   },
   {
    "level": 3,
-   "title": "About the wealth of summation processes. — It is important",
+   "title": "About the wealth of summation processes. \u2014 It is important",
    "page": 13,
    "source": "inferred",
    "number": "1.2.1"
   },
   {
    "level": 1,
-   "title": "Note however that the “algebraic summation” introduced i n [50] and recalled and used",
+   "title": "Note however that the \u201calgebraic summation\u201d introduced i n [50] and recalled and used",
    "page": 13,
    "source": "inferred",
    "number": "2"
@@ -226,7 +227,7 @@
   },
   {
    "level": 3,
-   "title": "Theta F unctions. — Jacobi theta functions pervade the theory",
+   "title": "Theta F unctions. \u2014 Jacobi theta functions pervade the theory",
    "page": 14,
    "source": "inferred",
    "number": "1.3.1"
@@ -254,21 +255,21 @@
   },
   {
    "level": 2,
-   "title": "The category of q-diﬀerence modules",
+   "title": "The category of q-di\ufb00erence modules",
    "page": 17,
    "source": "inferred",
    "number": "2.1"
   },
   {
    "level": 3,
-   "title": "Some general facts about diﬀerence modules. — Here, we also",
+   "title": "Some general facts about di\ufb00erence modules. \u2014 Here, we also",
    "page": 17,
    "source": "inferred",
    "number": "2.1.1"
   },
   {
    "level": 1,
-   "title": "Much of what follows will be extended to the case of diﬀeren ce rings in appendix A,",
+   "title": "Much of what follows will be extended to the case of di\ufb00eren ce rings in appendix A,",
    "page": 17,
    "source": "inferred",
    "number": "1"
@@ -282,14 +283,14 @@
   },
   {
    "level": 4,
-   "title": "Unity . — An important particular object is the unity 1",
+   "title": "Unity . \u2014 An important particular object is the unity 1",
    "page": 18,
    "source": "inferred",
    "number": "2.1.1.1"
   },
   {
    "level": 4,
-   "title": "Internal Hom . — Let M = (E, Φ) and N = (F, Ψ). The map TΦ ,Ψ :",
+   "title": "Internal Hom . \u2014 Let M = (E, \u03a6) and N = (F, \u03a8). The map T\u03a6 ,\u03a8 :",
    "page": 18,
    "source": "inferred",
    "number": "2.1.1.2"
@@ -303,14 +304,14 @@
   },
   {
    "level": 4,
-   "title": "Tensor product . — Let M = (E, Φ) and N = (F, Ψ). The map",
+   "title": "Tensor product . \u2014 Let M = (E, \u03a6) and N = (F, \u03a8). The map",
    "page": 19,
    "source": "inferred",
    "number": "2.1.1.3"
   },
   {
    "level": 4,
-   "title": "Extension of scalars . — An extension diﬀerence ﬁeld ( K ′,σ ′) of",
+   "title": "Extension of scalars . \u2014 An extension di\ufb00erence \ufb01eld ( K \u2032,\u03c3 \u2032) of",
    "page": 19,
    "source": "inferred",
    "number": "2.1.1.4"
@@ -324,7 +325,7 @@
   },
   {
    "level": 4,
-   "title": "The functor of solutions . — It is customary in D-module theory to",
+   "title": "The functor of solutions . \u2014 It is customary in D-module theory to",
    "page": 20,
    "source": "inferred",
    "number": "2.1.2.1"
@@ -345,21 +346,21 @@
   },
   {
    "level": 2,
-   "title": "The Newton polygon and the slope ﬁltration",
+   "title": "The Newton polygon and the slope \ufb01ltration",
    "page": 22,
    "source": "inferred",
    "number": "2.2"
   },
   {
    "level": 3,
-   "title": "The Newton polygon. — The contents of this section are valid as",
+   "title": "The Newton polygon. \u2014 The contents of this section are valid as",
    "page": 22,
    "source": "inferred",
    "number": "2.2.1"
   },
   {
    "level": 1,
-   "title": "Note however that, from [ 38], we changed our terminology: the slopes of a q-diﬀerence",
+   "title": "Note however that, from [ 38], we changed our terminology: the slopes of a q-di\ufb00erence",
    "page": 22,
    "source": "inferred",
    "number": "2"
@@ -380,14 +381,14 @@
   },
   {
    "level": 3,
-   "title": "Pure modules. — We call pure isoclinic (of slope µ) a module M",
+   "title": "Pure modules. \u2014 We call pure isoclinic (of slope \u00b5) a module M",
    "page": 24,
    "source": "inferred",
    "number": "2.2.2"
   },
   {
    "level": 4,
-   "title": "Pure modules with integral slopes . — In particular, any fuchsian mod-",
+   "title": "Pure modules with integral slopes . \u2014 In particular, any fuchsian mod-",
    "page": 24,
    "source": "inferred",
    "number": "2.2.2.1"
@@ -401,14 +402,14 @@
   },
   {
    "level": 4,
-   "title": "Pure modules of arbitrary slopes . — The classiﬁcation of pure mod-",
+   "title": "Pure modules of arbitrary slopes . \u2014 The classi\ufb01cation of pure mod-",
    "page": 25,
    "source": "inferred",
    "number": "2.2.2.2"
   },
   {
    "level": 3,
-   "title": "The slope ﬁltration. — Submodules, quotient modules, sums. . . of",
+   "title": "The slope \ufb01ltration. \u2014 Submodules, quotient modules, sums. . . of",
    "page": 25,
    "source": "inferred",
    "number": "2.2.3"
@@ -422,14 +423,14 @@
   },
   {
    "level": 4,
-   "title": "Formal case . — Any q-diﬀerence operator P over C((z)) admits, for",
+   "title": "Formal case . \u2014 Any q-di\ufb00erence operator P over C((z)) admits, for",
    "page": 26,
    "source": "inferred",
    "number": "2.2.3.1"
   },
   {
    "level": 4,
-   "title": "Analytic case . — Here, from old results due (independantly) to",
+   "title": "Analytic case . \u2014 Here, from old results due (independantly) to",
    "page": 26,
    "source": "inferred",
    "number": "2.2.3.2"
@@ -443,7 +444,7 @@
   },
   {
    "level": 2,
-   "title": "Application to the analytic isoformal classiﬁcation",
+   "title": "Application to the analytic isoformal classi\ufb01cation",
    "page": 27,
    "source": "inferred",
    "number": "2.3"
@@ -457,7 +458,7 @@
   },
   {
    "level": 3,
-   "title": "A prototypal example and the q-Borel transformation. — To",
+   "title": "A prototypal example and the q-Borel transformation. \u2014 To",
    "page": 28,
    "source": "inferred",
    "number": "2.3.1"
@@ -485,7 +486,7 @@
   },
   {
    "level": 3,
-   "title": "The case of two slopes. — The casek = 1 is of course trivial. The",
+   "title": "The case of two slopes. \u2014 The casek = 1 is of course trivial. The",
    "page": 31,
    "source": "inferred",
    "number": "2.3.2"
@@ -499,7 +500,7 @@
   },
   {
    "level": 3,
-   "title": "Matricial description. — We now go for a preliminary matricial",
+   "title": "Matricial description. \u2014 We now go for a preliminary matricial",
    "page": 32,
    "source": "inferred",
    "number": "2.3.3"
@@ -513,14 +514,14 @@
   },
   {
    "level": 2,
-   "title": "Isoformal analytic classes of analytic q-diﬀerence modules",
+   "title": "Isoformal analytic classes of analytic q-di\ufb00erence modules",
    "page": 35,
    "source": "inferred",
    "number": "3.1"
   },
   {
    "level": 3,
-   "title": "Extension classes of analytic q-diﬀerence modules. — From",
+   "title": "Extension classes of analytic q-di\ufb00erence modules. \u2014 From",
    "page": 35,
    "source": "inferred",
    "number": "3.1.1"
@@ -548,7 +549,7 @@
   },
   {
    "level": 3,
-   "title": "The aﬃne scheme F(P1,...,P k). — Now let P1,...,P k be pure",
+   "title": "The a\ufb03ne scheme F(P1,...,P k). \u2014 Now let P1,...,P k be pure",
    "page": 37,
    "source": "inferred",
    "number": "3.1.2"
@@ -583,21 +584,21 @@
   },
   {
    "level": 3,
-   "title": "The index in the general case. — Generally speaking, there is no",
+   "title": "The index in the general case. \u2014 Generally speaking, there is no",
    "page": 40,
    "source": "inferred",
    "number": "3.2.2"
   },
   {
    "level": 1,
-   "title": "The C-linear map P : f ↦→P.f from K to itself has an index, that is",
+   "title": "The C-linear map P : f \u21a6\u2192P.f from K to itself has an index, that is",
    "page": 40,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "The index of P , that is the integer χ(P ) := dim KerP− dim CokerP is",
+   "title": "The index of P , that is the integer \u03c7(P ) := dim KerP\u2212 dim CokerP is",
    "page": 40,
    "source": "inferred",
    "number": "2"
@@ -611,7 +612,7 @@
   },
   {
    "level": 3,
-   "title": "Irregularity and the dimension of F(P1,...,P k). — The follow-",
+   "title": "Irregularity and the dimension of F(P1,...,P k). \u2014 The follow-",
    "page": 41,
    "source": "inferred",
    "number": "3.2.3"
@@ -632,7 +633,7 @@
   },
   {
    "level": 3,
-   "title": "Analytic classiﬁcation with 2 integral slopes. — From the re-",
+   "title": "Analytic classi\ufb01cation with 2 integral slopes. \u2014 From the re-",
    "page": 43,
    "source": "inferred",
    "number": "3.3.1"
@@ -646,14 +647,14 @@
   },
   {
    "level": 1,
-   "title": "Xn−dA2−Xn =Zn :=A−1",
+   "title": "Xn\u2212dA2\u2212Xn =Zn :=A\u22121",
    "page": 44,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "Yn+µ1,",
+   "title": "Yn+\u00b51,",
    "page": 44,
    "source": "inferred",
    "number": "1"
@@ -667,14 +668,14 @@
   },
   {
    "level": 1,
-   "title": "Un+µ1B−n",
+   "title": "Un+\u00b51B\u2212n",
    "page": 45,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 3,
-   "title": "The Birkhoﬀ-Guenther normal form. — Going from two slopes",
+   "title": "The Birkho\ufb00-Guenther normal form. \u2014 Going from two slopes",
    "page": 45,
    "source": "inferred",
    "number": "3.3.2"
@@ -688,7 +689,7 @@
   },
   {
    "level": 3,
-   "title": "Computational consequences of the Birkhoﬀ-Guenther nor-",
+   "title": "Computational consequences of the Birkho\ufb00-Guenther nor-",
    "page": 47,
    "source": "inferred",
    "number": "3.3.3"
@@ -709,14 +710,14 @@
   },
   {
    "level": 3,
-   "title": "Isoformal q-Gevrey classiﬁcation. —",
+   "title": "Isoformal q-Gevrey classi\ufb01cation. \u2014",
    "page": 49,
    "source": "inferred",
    "number": "3.4.2"
   },
   {
    "level": 3,
-   "title": "Another kind of q-Gevrey interpolation. — A somewhat sym-",
+   "title": "Another kind of q-Gevrey interpolation. \u2014 A somewhat sym-",
    "page": 49,
    "source": "inferred",
    "number": "3.4.3"
@@ -751,7 +752,7 @@
   },
   {
    "level": 3,
-   "title": "Asymptotics and sheaves on E q. — Recall from paragraph 4.1.1",
+   "title": "Asymptotics and sheaves on E q. \u2014 Recall from paragraph 4.1.1",
    "page": 58,
    "source": "inferred",
    "number": "4.1.3"
@@ -786,7 +787,7 @@
   },
   {
    "level": 1,
-   "title": "It is asymptotic to ˆF −1 ˆF =In, i.e. the coeﬃcients of G−In belong to",
+   "title": "It is asymptotic to \u02c6F \u22121 \u02c6F =In, i.e. the coe\ufb03cients of G\u2212In belong to",
    "page": 62,
    "source": "inferred",
    "number": "2"
@@ -807,7 +808,7 @@
   },
   {
    "level": 3,
-   "title": "Study of H 1(Eq; ΛI). — We choose τ ∈ C,ℑ(τ) > 0, such that",
+   "title": "Study of H 1(Eq; \u039bI). \u2014 We choose \u03c4 \u2208 C,\u2111(\u03c4) > 0, such that",
    "page": 63,
    "source": "inferred",
    "number": "4.3.1"
@@ -821,14 +822,14 @@
   },
   {
    "level": 3,
-   "title": "Geometric interpretation of the elements of H 1(Eq; ΛI). — We",
+   "title": "Geometric interpretation of the elements of H 1(Eq; \u039bI). \u2014 We",
    "page": 65,
    "source": "inferred",
    "number": "4.3.2"
   },
   {
    "level": 1,
-   "title": "(A) = (p◦p0)−1(K1)⊂ R2,",
+   "title": "(A) = (p\u25e6p0)\u22121(K1)\u2282 R2,",
    "page": 66,
    "source": "inferred",
    "number": "0"
@@ -849,21 +850,21 @@
   },
   {
    "level": 3,
-   "title": "The formal trivialisation of the elements of H 1(Eq; ΛI) and the",
+   "title": "The formal trivialisation of the elements of H 1(Eq; \u039bI) and the",
    "page": 69,
    "source": "inferred",
    "number": "4.3.3"
   },
   {
    "level": 2,
-   "title": "The isoformal classiﬁcation by the cohomology of the Stokes",
+   "title": "The isoformal classi\ufb01cation by the cohomology of the Stokes",
    "page": 70,
    "source": "inferred",
    "number": "4.4"
   },
   {
    "level": 3,
-   "title": "The second main theorem. — Before going on, let us make some",
+   "title": "The second main theorem. \u2014 Before going on, let us make some",
    "page": 70,
    "source": "inferred",
    "number": "4.4.1"
@@ -884,7 +885,7 @@
   },
   {
    "level": 3,
-   "title": "Divisors and sectors on the elliptic curve E q = C∗/qZ. — The",
+   "title": "Divisors and sectors on the elliptic curve E q = C\u2217/qZ. \u2014 The",
    "page": 73,
    "source": "inferred",
    "number": "5.1.1"
@@ -912,14 +913,14 @@
   },
   {
    "level": 1,
-   "title": "We say that f has q-exponential growth of order (at most) k at inﬁnity",
+   "title": "We say that f has q-exponential growth of order (at most) k at in\ufb01nity",
    "page": 78,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "We say that f has q-exponential decay of order (at least) k at inﬁnity",
+   "title": "We say that f has q-exponential decay of order (at least) k at in\ufb01nity",
    "page": 78,
    "source": "inferred",
    "number": "2"
@@ -940,14 +941,14 @@
   },
   {
    "level": 1,
-   "title": "The set AΛ",
+   "title": "The set A\u039b",
    "page": 79,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 3,
-   "title": "Asymptotics and residues (I). — Whenν = 1, divisor Λ reduces",
+   "title": "Asymptotics and residues (I). \u2014 When\u03bd = 1, divisor \u039b reduces",
    "page": 80,
    "source": "inferred",
    "number": "5.2.1"
@@ -975,56 +976,56 @@
   },
   {
    "level": 3,
-   "title": "Asymptotics and residues (II). — After [ 43], for any f∈ A[λ]",
+   "title": "Asymptotics and residues (II). \u2014 After [ 43], for any f\u2208 A[\u03bb]",
    "page": 85,
    "source": "inferred",
    "number": "5.2.2"
   },
   {
    "level": 1,
-   "title": "We call values of F on Λ at 0, and write ΛF(0), the ν (germs at inﬁnity",
+   "title": "We call values of F on \u039b at 0, and write \u039bF(0), the \u03bd (germs at in\ufb01nity",
    "page": 85,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "That is, there exists constants C, A > 0 such that, for any integer n ≫ 0, one has⏐",
+   "title": "That is, there exists constants C, A > 0 such that, for any integer n \u226b 0, one has\u23d0",
    "page": 85,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "We say that F hasq-Gevrey order k along divisor Λ at 0 if all its values",
+   "title": "We say that F hasq-Gevrey order k along divisor \u039b at 0 if all its values",
    "page": 86,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "We write F∈ EΛ",
+   "title": "We write F\u2208 E\u039b",
    "page": 86,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "The function g(ℓ) has q-exponential growth of order k both at 0 and in-",
+   "title": "The function g(\u2113) has q-exponential growth of order k both at 0 and in-",
    "page": 86,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "If ℓ < k, then g(ℓ)(λq−n) = 0 for all n∈ N; else,",
+   "title": "If \u2113 < k, then g(\u2113)(\u03bbq\u2212n) = 0 for all n\u2208 N; else,",
    "page": 86,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "Letn∈ Z and put u(z) := g(z)",
+   "title": "Letn\u2208 Z and put u(z) := g(z)",
    "page": 86,
    "source": "inferred",
    "number": "3"
@@ -1038,28 +1039,28 @@
   },
   {
    "level": 3,
-   "title": "F rom a q-Gevrey power series to an entire function. — As",
+   "title": "F rom a q-Gevrey power series to an entire function. \u2014 As",
    "page": 89,
    "source": "inferred",
    "number": "5.3.1"
   },
   {
    "level": 1,
-   "title": "For all (k,r )∈ Z2, one has:",
+   "title": "For all (k,r )\u2208 Z2, one has:",
    "page": 89,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "For all n∈ Z, write Tn the function deﬁned by:",
+   "title": "For all n\u2208 Z, write Tn the function de\ufb01ned by:",
    "page": 89,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 3,
-   "title": "The q-Gevrey theorem of Borel-Ritt. — The main result of this",
+   "title": "The q-Gevrey theorem of Borel-Ritt. \u2014 The main result of this",
    "page": 92,
    "source": "inferred",
    "number": "5.3.2"
@@ -1073,21 +1074,21 @@
   },
   {
    "level": 1,
-   "title": "Each function Ai,j has q-exponential growth of order (at most) ν at in-",
+   "title": "Each function Ai,j has q-exponential growth of order (at most) \u03bd at in-",
    "page": 93,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "There exists C >0, A> 0 such that, for all n∈ N:",
+   "title": "There exists C >0, A> 0 such that, for all n\u2208 N:",
    "page": 93,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 3,
-   "title": "Flat functions with respect to a divisor. — In the proof of the-",
+   "title": "Flat functions with respect to a divisor. \u2014 In the proof of the-",
    "page": 94,
    "source": "inferred",
    "number": "5.3.3"
@@ -1108,7 +1109,7 @@
   },
   {
    "level": 1,
-   "title": "On some spiral [λi] belonging to divisor Λ:",
+   "title": "On some spiral [\u03bbi] belonging to divisor \u039b:",
    "page": 95,
    "source": "inferred",
    "number": "2"
@@ -1122,35 +1123,35 @@
   },
   {
    "level": 3,
-   "title": "Relative divisors and two levels asymptotics. — Let Λ ′, Λ be",
+   "title": "Relative divisors and two levels asymptotics. \u2014 Let \u039b \u2032, \u039b be",
    "page": 95,
    "source": "inferred",
    "number": "5.4.1"
   },
   {
    "level": 1,
-   "title": "We call values of F over the relative divisor Λ/Λ′ at 0, and we write",
+   "title": "We call values of F over the relative divisor \u039b/\u039b\u2032 at 0, and we write",
    "page": 95,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "We say that F has q-Gevrey order k over Λ/Λ′ at 0 if all its values there",
+   "title": "We say that F has q-Gevrey order k over \u039b/\u039b\u2032 at 0 if all its values there",
    "page": 95,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "Let Λ = Λ 1 + Λ2 and Λ ′ = Λ 1. We write F ∈ EΛ",
+   "title": "Let \u039b = \u039b 1 + \u039b2 and \u039b \u2032 = \u039b 1. We write F \u2208 E\u039b",
    "page": 95,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 3,
-   "title": "Multisummable functions. — More generally, let",
+   "title": "Multisummable functions. \u2014 More generally, let",
    "page": 96,
    "source": "inferred",
    "number": "5.4.2"
@@ -1171,7 +1172,7 @@
   },
   {
    "level": 2,
-   "title": "Analytic classiﬁcation of linear q-diﬀerence equations",
+   "title": "Analytic classi\ufb01cation of linear q-di\ufb00erence equations",
    "page": 99,
    "source": "inferred",
    "number": "5.5"
@@ -1185,7 +1186,7 @@
   },
   {
    "level": 3,
-   "title": "Summability of formal solutions. — Consider the equation (5.39)",
+   "title": "Summability of formal solutions. \u2014 Consider the equation (5.39)",
    "page": 100,
    "source": "inferred",
    "number": "5.5.1"
@@ -1199,7 +1200,7 @@
   },
   {
    "level": 3,
-   "title": "Stokes phenomenon and analytic classiﬁcation. — Write",
+   "title": "Stokes phenomenon and analytic classi\ufb01cation. \u2014 Write",
    "page": 102,
    "source": "inferred",
    "number": "5.5.2"
@@ -1213,14 +1214,14 @@
   },
   {
    "level": 1,
-   "title": "There exists (λ0,λ ) ∈ {A0}×{ A0} such that [λ;q] ⁄= [ λ0;q] but",
+   "title": "There exists (\u03bb0,\u03bb ) \u2208 {A0}\u00d7{ A0} such that [\u03bb;q] \u2044= [ \u03bb0;q] but",
    "page": 104,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "The matrices B1 and B2 give rise to analytically equivalent q-diﬀerence",
+   "title": "The matrices B1 and B2 give rise to analytically equivalent q-di\ufb00erence",
    "page": 104,
    "source": "inferred",
    "number": "3"
@@ -1234,7 +1235,7 @@
   },
   {
    "level": 1,
-   "title": "In the context of q-diﬀerence equations, the singular locus of a matrix of func tions P",
+   "title": "In the context of q-di\ufb00erence equations, the singular locus of a matrix of func tions P",
    "page": 106,
    "source": "inferred",
    "number": "1"
@@ -1248,7 +1249,7 @@
   },
   {
    "level": 3,
-   "title": "Privileged cocycles. — We have three ways of constructing a co-",
+   "title": "Privileged cocycles. \u2014 We have three ways of constructing a co-",
    "page": 108,
    "source": "inferred",
    "number": "6.1.2"
@@ -1262,14 +1263,14 @@
   },
   {
    "level": 2,
-   "title": "D´ evissageq-Gevrey",
+   "title": "D\u00b4 evissageq-Gevrey",
    "page": 110,
    "source": "inferred",
    "number": "6.2"
   },
   {
    "level": 3,
-   "title": "The abelian case of two slopes. — When the Newton polygon of",
+   "title": "The abelian case of two slopes. \u2014 When the Newton polygon of",
    "page": 110,
    "source": "inferred",
    "number": "6.2.1"
@@ -1283,49 +1284,49 @@
   },
   {
    "level": 2,
-   "title": "D ´EVISSAGE q-GEVREY 105",
+   "title": "D \u00b4EVISSAGE q-GEVREY 105",
    "page": 111,
    "source": "inferred",
    "number": "6.2"
   },
   {
    "level": 3,
-   "title": "A sequence of central extensions. — For simplicity, we write G",
+   "title": "A sequence of central extensions. \u2014 For simplicity, we write G",
    "page": 111,
    "source": "inferred",
    "number": "6.2.2"
   },
   {
    "level": 3,
-   "title": "Explicit computation. — We want to make more explicit theorem",
+   "title": "Explicit computation. \u2014 We want to make more explicit theorem",
    "page": 112,
    "source": "inferred",
    "number": "6.2.3"
   },
   {
    "level": 2,
-   "title": "D ´EVISSAGE q-GEVREY 107",
+   "title": "D \u00b4EVISSAGE q-GEVREY 107",
    "page": 113,
    "source": "inferred",
    "number": "6.2"
   },
   {
    "level": 3,
-   "title": "V arious geometries on F(P1,...,P k). — In subsection 3.3.2, we",
+   "title": "V arious geometries on F(P1,...,P k). \u2014 In subsection 3.3.2, we",
    "page": 114,
    "source": "inferred",
    "number": "6.2.4"
   },
   {
    "level": 3,
-   "title": "The d´ evissage above implies that it is the same as theaﬃne structure on",
+   "title": "The d\u00b4 evissage above implies that it is the same as thea\ufb03ne structure on",
    "page": 114,
    "source": "inferred",
    "number": "3.3.4"
   },
   {
    "level": 2,
-   "title": "V ector bundles associated to q-diﬀerence modules",
+   "title": "V ector bundles associated to q-di\ufb00erence modules",
    "page": 114,
    "source": "inferred",
    "number": "6.3"
@@ -1339,14 +1340,14 @@
   },
   {
    "level": 3,
-   "title": "Sheaf theoretical interpretation of irregularity . — We inter-",
+   "title": "Sheaf theoretical interpretation of irregularity . \u2014 We inter-",
    "page": 115,
    "source": "inferred",
    "number": "6.3.2"
   },
   {
    "level": 1,
-   "title": "In its original form, Adams lemma [ 1, 31, 20 ] says that, for any analytic q-diﬀerence",
+   "title": "In its original form, Adams lemma [ 1, 31, 20 ] says that, for any analytic q-di\ufb00erence",
    "page": 117,
    "source": "inferred",
    "number": "1"
@@ -1367,14 +1368,14 @@
   },
   {
    "level": 4,
-   "title": "Notations . — We use some notations from q-calculus for this chapter",
+   "title": "Notations . \u2014 We use some notations from q-calculus for this chapter",
    "page": 118,
    "source": "inferred",
    "number": "7.0.2.1"
   },
   {
    "level": 2,
-   "title": "The q-Euler equation and conﬂuent basic hypergeometric series",
+   "title": "The q-Euler equation and con\ufb02uent basic hypergeometric series",
    "page": 118,
    "source": "inferred",
    "number": "7.1"
@@ -1388,21 +1389,21 @@
   },
   {
    "level": 3,
-   "title": "A digest on the q-Euler equation. —",
+   "title": "A digest on the q-Euler equation. \u2014",
    "page": 119,
    "source": "inferred",
    "number": "7.1.1"
   },
   {
    "level": 4,
-   "title": "Formal solution . — We obtain it, for instance, by iterating the z-",
+   "title": "Formal solution . \u2014 We obtain it, for instance, by iterating the z-",
    "page": 119,
    "source": "inferred",
    "number": "7.1.1.1"
   },
   {
    "level": 4,
-   "title": "Birkhoﬀ-Guenther normal form . — There is a unique α∈ C such",
+   "title": "Birkho\ufb00-Guenther normal form . \u2014 There is a unique \u03b1\u2208 C such",
    "page": 119,
    "source": "inferred",
    "number": "7.1.1.2"
@@ -1416,21 +1417,21 @@
   },
   {
    "level": 3,
-   "title": "Some conﬂuent basic hypergeometric functions. — Usual basic",
+   "title": "Some con\ufb02uent basic hypergeometric functions. \u2014 Usual basic",
    "page": 121,
    "source": "inferred",
    "number": "7.1.2"
   },
   {
    "level": 4,
-   "title": "Factoring L. — To get L = q2z(σq−A)(σq−B), we ﬁrst look for",
+   "title": "Factoring L. \u2014 To get L = q2z(\u03c3q\u2212A)(\u03c3q\u2212B), we \ufb01rst look for",
    "page": 122,
    "source": "inferred",
    "number": "7.1.2.1"
   },
   {
    "level": 3,
-   "title": "Some special cases. — Takinga :=b :=q−1 yields:",
+   "title": "Some special cases. \u2014 Takinga :=b :=q\u22121 yields:",
    "page": 122,
    "source": "inferred",
    "number": "7.1.3"
@@ -1458,14 +1459,14 @@
   },
   {
    "level": 3,
-   "title": "Algebraic aspects. — Remember that the equation f = 1 +zσqf",
+   "title": "Algebraic aspects. \u2014 Remember that the equation f = 1 +z\u03c3qf",
    "page": 125,
    "source": "inferred",
    "number": "7.2.1"
   },
   {
    "level": 4,
-   "title": "Newton polygon of a symmetric square . — To ﬁnd the equation",
+   "title": "Newton polygon of a symmetric square . \u2014 To \ufb01nd the equation",
    "page": 125,
    "source": "inferred",
    "number": "7.2.1.1"
@@ -1479,35 +1480,35 @@
   },
   {
    "level": 4,
-   "title": "Algebraic summation of the square of the Tshakaloﬀ s eries. — The",
+   "title": "Algebraic summation of the square of the Tshakalo\ufb00 s eries. \u2014 The",
    "page": 127,
    "source": "inferred",
    "number": "7.2.1.2"
   },
   {
    "level": 3,
-   "title": "Analytic aspects. —",
+   "title": "Analytic aspects. \u2014",
    "page": 127,
    "source": "inferred",
    "number": "7.2.2"
   },
   {
    "level": 4,
-   "title": "Multisummability . —",
+   "title": "Multisummability . \u2014",
    "page": 128,
    "source": "inferred",
    "number": "7.2.2.2"
   },
   {
    "level": 1,
-   "title": "If [λ] = [µ], then fg∈ O2[λ]",
+   "title": "If [\u03bb] = [\u00b5], then fg\u2208 O2[\u03bb]",
    "page": 128,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "If [λ]⁄= [µ], then, generically fg /∈ O[λ]+[µ]",
+   "title": "If [\u03bb]\u2044= [\u00b5], then, generically fg /\u2208 O[\u03bb]+[\u00b5]",
    "page": 128,
    "source": "inferred",
    "number": "2"
@@ -1521,7 +1522,7 @@
   },
   {
    "level": 4,
-   "title": "Possibility of a multisummation process . — No explicit algorithm is",
+   "title": "Possibility of a multisummation process . \u2014 No explicit algorithm is",
    "page": 129,
    "source": "inferred",
    "number": "7.2.2.3"
@@ -1549,21 +1550,21 @@
   },
   {
    "level": 3,
-   "title": "F unctional equation for s(α,β ;q,z ). — From the recurrence rela-",
+   "title": "F unctional equation for s(\u03b1,\u03b2 ;q,z ). \u2014 From the recurrence rela-",
    "page": 131,
    "source": "inferred",
    "number": "7.3.1"
   },
   {
    "level": 3,
-   "title": "Back to the the Mock Theta function. — We can for instance",
+   "title": "Back to the the Mock Theta function. \u2014 We can for instance",
    "page": 132,
    "source": "inferred",
    "number": "7.3.2"
   },
   {
    "level": 3,
-   "title": "Back to the q-Euler equation. — To ﬁt this equation with the",
+   "title": "Back to the q-Euler equation. \u2014 To \ufb01t this equation with the",
    "page": 132,
    "source": "inferred",
    "number": "7.3.3"
@@ -1577,14 +1578,14 @@
   },
   {
    "level": 4,
-   "title": "Birkhoﬀ-Guenther normal form . — According to section 3.3, we see",
+   "title": "Birkho\ufb00-Guenther normal form . \u2014 According to section 3.3, we see",
    "page": 133,
    "source": "inferred",
    "number": "7.3.3.2"
   },
   {
    "level": 4,
-   "title": "Privileged cocycles . — There is here an obvious isomorphism of",
+   "title": "Privileged cocycles . \u2014 There is here an obvious isomorphism of",
    "page": 133,
    "source": "inferred",
    "number": "7.3.3.3"
@@ -1598,14 +1599,14 @@
   },
   {
    "level": 3,
-   "title": "The generating series for the class numbers. — Consider the",
+   "title": "The generating series for the class numbers. \u2014 Consider the",
    "page": 134,
    "source": "inferred",
    "number": "7.4.1"
   },
   {
    "level": 3,
-   "title": "Modular relations. — In order to obtain modular and asymptotic",
+   "title": "Modular relations. \u2014 In order to obtain modular and asymptotic",
    "page": 134,
    "source": "inferred",
    "number": "7.4.2"
@@ -1619,21 +1620,21 @@
   },
   {
    "level": 3,
-   "title": "Related other examples. — Mordell also mentions that the fol-",
+   "title": "Related other examples. \u2014 Mordell also mentions that the fol-",
    "page": 135,
    "source": "inferred",
    "number": "7.4.3"
   },
   {
    "level": 2,
-   "title": "We ﬁrst describe in section A.1 an abstract version of th e problem, which",
+   "title": "We \ufb01rst describe in section A.1 an abstract version of th e problem, which",
    "page": 137,
    "source": "inferred",
    "number": "2.3"
   },
   {
    "level": 1,
-   "title": "This is all the more necessary since the work [ 40] by the ﬁrst two authors strongly",
+   "title": "This is all the more necessary since the work [ 40] by the \ufb01rst two authors strongly",
    "page": 137,
    "source": "inferred",
    "number": "1"
@@ -1647,7 +1648,7 @@
   },
   {
    "level": 1,
-   "title": "Also see the revised version “Extensions panach´ ees auto duales”, to be found on",
+   "title": "Also see the revised version \u201cExtensions panach\u00b4 ees auto duales\u201d, to be found on",
    "page": 139,
    "source": "inferred",
    "number": "4"
@@ -1670,9 +1671,9 @@
  "toc_source": "inferred",
  "sections": [
   {
-   "id": "sec-000-63-vector-bundles-associated-to-q-diﬀerence-modu",
+   "id": "sec-000-63-vector-bundles-associated-to-q-di\ufb00erence-modu",
    "number": "6.3",
-   "title": "Vector bundles associated to q-diﬀerence modules. . . . . . . . . . . . . . . . . 108",
+   "title": "Vector bundles associated to q-di\ufb00erence modules. . . . . . . . . . . . . . . . . 108",
    "level": 2,
    "page_start": 6,
    "page_end": 6,
@@ -1680,9 +1681,9 @@
    "n_words": 35
   },
   {
-   "id": "sec-001-71-the-q-euler-equation-and-conﬂuent-basic-hyper",
+   "id": "sec-001-71-the-q-euler-equation-and-con\ufb02uent-basic-hyper",
    "number": "7.1",
-   "title": "The q-Euler equation and conﬂuent basic hypergeometric series. . . 112",
+   "title": "The q-Euler equation and con\ufb02uent basic hypergeometric series. . . 112",
    "level": 2,
    "page_start": 6,
    "page_end": 6,
@@ -1740,9 +1741,9 @@
    "n_words": 210
   },
   {
-   "id": "sec-007-112-the-birkhoﬀ-guenther-program-we-quote-the-co",
+   "id": "sec-007-112-the-birkho\ufb00-guenther-program-we-quote-the-co",
    "number": "1.1.2",
-   "title": "The Birkhoﬀ-Guenther program. — We quote the conclusion of",
+   "title": "The Birkho\ufb00-Guenther program. \u2014 We quote the conclusion of",
    "level": 3,
    "page_start": 7,
    "page_end": 8,
@@ -1762,7 +1763,7 @@
   {
    "id": "sec-009-113-what-this-paper-could-contain-but-does-not-b",
    "number": "1.1.3",
-   "title": "What this paper could contain but does not. — Before de-",
+   "title": "What this paper could contain but does not. \u2014 Before de-",
    "level": 3,
    "page_start": 8,
    "page_end": 9,
@@ -1822,7 +1823,7 @@
   {
    "id": "sec-015-1131-about-the-asumption-that-the-slopes-are-int",
    "number": "1.1.3.1",
-   "title": "About the asumption that the slopes are integral . — The “abstract”",
+   "title": "About the asumption that the slopes are integral . \u2014 The \u201cabstract\u201d",
    "level": 4,
    "page_start": 9,
    "page_end": 10,
@@ -1902,7 +1903,7 @@
   {
    "id": "sec-023-121-about-the-wealth-of-summation-processes-it-i",
    "number": "1.2.1",
-   "title": "About the wealth of summation processes. — It is important",
+   "title": "About the wealth of summation processes. \u2014 It is important",
    "level": 3,
    "page_start": 13,
    "page_end": 13,
@@ -1912,7 +1913,7 @@
   {
    "id": "sec-024-2-note-however-that-the-algebraic-summation-intr",
    "number": "2",
-   "title": "Note however that the “algebraic summation” introduced i n [50] and recalled and used",
+   "title": "Note however that the \u201calgebraic summation\u201d introduced i n [50] and recalled and used",
    "level": 1,
    "page_start": 13,
    "page_end": 14,
@@ -1942,7 +1943,7 @@
   {
    "id": "sec-027-131-theta-f-unctions-jacobi-theta-functions-perv",
    "number": "1.3.1",
-   "title": "Theta F unctions. — Jacobi theta functions pervade the theory",
+   "title": "Theta F unctions. \u2014 Jacobi theta functions pervade the theory",
    "level": 3,
    "page_start": 14,
    "page_end": 15,
@@ -1980,9 +1981,9 @@
    "n_words": 217
   },
   {
-   "id": "sec-031-21-the-category-of-q-diﬀerence-modules",
+   "id": "sec-031-21-the-category-of-q-di\ufb00erence-modules",
    "number": "2.1",
-   "title": "The category of q-diﬀerence modules",
+   "title": "The category of q-di\ufb00erence modules",
    "level": 2,
    "page_start": 17,
    "page_end": 17,
@@ -1990,9 +1991,9 @@
    "n_words": 9
   },
   {
-   "id": "sec-032-211-some-general-facts-about-diﬀerence-modules-h",
+   "id": "sec-032-211-some-general-facts-about-di\ufb00erence-modules-h",
    "number": "2.1.1",
-   "title": "Some general facts about diﬀerence modules. — Here, we also",
+   "title": "Some general facts about di\ufb00erence modules. \u2014 Here, we also",
    "level": 3,
    "page_start": 17,
    "page_end": 17,
@@ -2002,7 +2003,7 @@
   {
    "id": "sec-033-1-much-of-what-follows-will-be-extended-to-the-c",
    "number": "1",
-   "title": "Much of what follows will be extended to the case of diﬀeren ce rings in appendix A,",
+   "title": "Much of what follows will be extended to the case of di\ufb00eren ce rings in appendix A,",
    "level": 1,
    "page_start": 17,
    "page_end": 18,
@@ -2022,7 +2023,7 @@
   {
    "id": "sec-035-2111-unity-an-important-particular-object-is-the",
    "number": "2.1.1.1",
-   "title": "Unity . — An important particular object is the unity 1",
+   "title": "Unity . \u2014 An important particular object is the unity 1",
    "level": 4,
    "page_start": 18,
    "page_end": 18,
@@ -2030,9 +2031,9 @@
    "n_words": 128
   },
   {
-   "id": "sec-036-2112-internal-hom-let-m-e-φ-and-n-f-ψ-the-map-tφ",
+   "id": "sec-036-2112-internal-hom-let-m-e-\u03c6-and-n-f-\u03c8-the-map-t\u03c6",
    "number": "2.1.1.2",
-   "title": "Internal Hom . — Let M = (E, Φ) and N = (F, Ψ). The map TΦ ,Ψ :",
+   "title": "Internal Hom . \u2014 Let M = (E, \u03a6) and N = (F, \u03a8). The map T\u03a6 ,\u03a8 :",
    "level": 4,
    "page_start": 18,
    "page_end": 19,
@@ -2050,9 +2051,9 @@
    "n_words": 0
   },
   {
-   "id": "sec-038-2113-tensor-product-let-m-e-φ-and-n-f-ψ-the-map",
+   "id": "sec-038-2113-tensor-product-let-m-e-\u03c6-and-n-f-\u03c8-the-map",
    "number": "2.1.1.3",
-   "title": "Tensor product . — Let M = (E, Φ) and N = (F, Ψ). The map",
+   "title": "Tensor product . \u2014 Let M = (E, \u03a6) and N = (F, \u03a8). The map",
    "level": 4,
    "page_start": 19,
    "page_end": 19,
@@ -2060,9 +2061,9 @@
    "n_words": 77
   },
   {
-   "id": "sec-039-2114-extension-of-scalars-an-extension-diﬀerence",
+   "id": "sec-039-2114-extension-of-scalars-an-extension-di\ufb00erence",
    "number": "2.1.1.4",
-   "title": "Extension of scalars . — An extension diﬀerence ﬁeld ( K ′,σ ′) of",
+   "title": "Extension of scalars . \u2014 An extension di\ufb00erence \ufb01eld ( K \u2032,\u03c3 \u2032) of",
    "level": 4,
    "page_start": 19,
    "page_end": 20,
@@ -2082,7 +2083,7 @@
   {
    "id": "sec-041-2121-the-functor-of-solutions-it-is-customary-in",
    "number": "2.1.2.1",
-   "title": "The functor of solutions . — It is customary in D-module theory to",
+   "title": "The functor of solutions . \u2014 It is customary in D-module theory to",
    "level": 4,
    "page_start": 20,
    "page_end": 21,
@@ -2110,9 +2111,9 @@
    "n_words": 0
   },
   {
-   "id": "sec-044-22-the-newton-polygon-and-the-slope-ﬁltration",
+   "id": "sec-044-22-the-newton-polygon-and-the-slope-\ufb01ltration",
    "number": "2.2",
-   "title": "The Newton polygon and the slope ﬁltration",
+   "title": "The Newton polygon and the slope \ufb01ltration",
    "level": 2,
    "page_start": 22,
    "page_end": 22,
@@ -2122,7 +2123,7 @@
   {
    "id": "sec-045-221-the-newton-polygon-the-contents-of-this-sect",
    "number": "2.2.1",
-   "title": "The Newton polygon. — The contents of this section are valid as",
+   "title": "The Newton polygon. \u2014 The contents of this section are valid as",
    "level": 3,
    "page_start": 22,
    "page_end": 22,
@@ -2132,7 +2133,7 @@
   {
    "id": "sec-046-2-note-however-that-from-38-we-changed-our-termi",
    "number": "2",
-   "title": "Note however that, from [ 38], we changed our terminology: the slopes of a q-diﬀerence",
+   "title": "Note however that, from [ 38], we changed our terminology: the slopes of a q-di\ufb00erence",
    "level": 1,
    "page_start": 22,
    "page_end": 23,
@@ -2162,7 +2163,7 @@
   {
    "id": "sec-049-222-pure-modules-we-call-pure-isoclinic-of-slope",
    "number": "2.2.2",
-   "title": "Pure modules. — We call pure isoclinic (of slope µ) a module M",
+   "title": "Pure modules. \u2014 We call pure isoclinic (of slope \u00b5) a module M",
    "level": 3,
    "page_start": 24,
    "page_end": 24,
@@ -2172,7 +2173,7 @@
   {
    "id": "sec-050-2221-pure-modules-with-integral-slopes-in-partic",
    "number": "2.2.2.1",
-   "title": "Pure modules with integral slopes . — In particular, any fuchsian mod-",
+   "title": "Pure modules with integral slopes . \u2014 In particular, any fuchsian mod-",
    "level": 4,
    "page_start": 24,
    "page_end": 25,
@@ -2192,7 +2193,7 @@
   {
    "id": "sec-052-2222-pure-modules-of-arbitrary-slopes-the-classi",
    "number": "2.2.2.2",
-   "title": "Pure modules of arbitrary slopes . — The classiﬁcation of pure mod-",
+   "title": "Pure modules of arbitrary slopes . \u2014 The classi\ufb01cation of pure mod-",
    "level": 4,
    "page_start": 25,
    "page_end": 25,
@@ -2200,9 +2201,9 @@
    "n_words": 254
   },
   {
-   "id": "sec-053-223-the-slope-ﬁltration-submodules-quotient-modu",
+   "id": "sec-053-223-the-slope-\ufb01ltration-submodules-quotient-modu",
    "number": "2.2.3",
-   "title": "The slope ﬁltration. — Submodules, quotient modules, sums. . . of",
+   "title": "The slope \ufb01ltration. \u2014 Submodules, quotient modules, sums. . . of",
    "level": 3,
    "page_start": 25,
    "page_end": 26,
@@ -2220,9 +2221,9 @@
    "n_words": 31
   },
   {
-   "id": "sec-055-2231-formal-case-any-q-diﬀerence-operator-p-over",
+   "id": "sec-055-2231-formal-case-any-q-di\ufb00erence-operator-p-over",
    "number": "2.2.3.1",
-   "title": "Formal case . — Any q-diﬀerence operator P over C((z)) admits, for",
+   "title": "Formal case . \u2014 Any q-di\ufb00erence operator P over C((z)) admits, for",
    "level": 4,
    "page_start": 26,
    "page_end": 26,
@@ -2232,7 +2233,7 @@
   {
    "id": "sec-056-2232-analytic-case-here-from-old-results-due-ind",
    "number": "2.2.3.2",
-   "title": "Analytic case . — Here, from old results due (independantly) to",
+   "title": "Analytic case . \u2014 Here, from old results due (independantly) to",
    "level": 4,
    "page_start": 26,
    "page_end": 27,
@@ -2262,7 +2263,7 @@
   {
    "id": "sec-059-231-a-prototypal-example-and-the-q-borel-transfo",
    "number": "2.3.1",
-   "title": "A prototypal example and the q-Borel transformation. — To",
+   "title": "A prototypal example and the q-Borel transformation. \u2014 To",
    "level": 3,
    "page_start": 28,
    "page_end": 29,
@@ -2302,7 +2303,7 @@
   {
    "id": "sec-063-232-the-case-of-two-slopes-the-casek-1-is-of-cou",
    "number": "2.3.2",
-   "title": "The case of two slopes. — The casek = 1 is of course trivial. The",
+   "title": "The case of two slopes. \u2014 The casek = 1 is of course trivial. The",
    "level": 3,
    "page_start": 31,
    "page_end": 32,
@@ -2322,7 +2323,7 @@
   {
    "id": "sec-065-233-matricial-description-we-now-go-for-a-prelim",
    "number": "2.3.3",
-   "title": "Matricial description. — We now go for a preliminary matricial",
+   "title": "Matricial description. \u2014 We now go for a preliminary matricial",
    "level": 3,
    "page_start": 32,
    "page_end": 33,
@@ -2340,9 +2341,9 @@
    "n_words": 285
   },
   {
-   "id": "sec-067-31-isoformal-analytic-classes-of-analytic-q-diﬀe",
+   "id": "sec-067-31-isoformal-analytic-classes-of-analytic-q-di\ufb00e",
    "number": "3.1",
-   "title": "Isoformal analytic classes of analytic q-diﬀerence modules",
+   "title": "Isoformal analytic classes of analytic q-di\ufb00erence modules",
    "level": 2,
    "page_start": 35,
    "page_end": 35,
@@ -2350,9 +2351,9 @@
    "n_words": 23
   },
   {
-   "id": "sec-068-311-extension-classes-of-analytic-q-diﬀerence-mo",
+   "id": "sec-068-311-extension-classes-of-analytic-q-di\ufb00erence-mo",
    "number": "3.1.1",
-   "title": "Extension classes of analytic q-diﬀerence modules. — From",
+   "title": "Extension classes of analytic q-di\ufb00erence modules. \u2014 From",
    "level": 3,
    "page_start": 35,
    "page_end": 35,
@@ -2390,9 +2391,9 @@
    "n_words": 242
   },
   {
-   "id": "sec-072-312-the-aﬃne-scheme-fp1p-k-now-let-p1p-k-be-pure",
+   "id": "sec-072-312-the-a\ufb03ne-scheme-fp1p-k-now-let-p1p-k-be-pure",
    "number": "3.1.2",
-   "title": "The aﬃne scheme F(P1,...,P k). — Now let P1,...,P k be pure",
+   "title": "The a\ufb03ne scheme F(P1,...,P k). \u2014 Now let P1,...,P k be pure",
    "level": 3,
    "page_start": 37,
    "page_end": 38,
@@ -2442,7 +2443,7 @@
   {
    "id": "sec-077-322-the-index-in-the-general-case-generally-spea",
    "number": "3.2.2",
-   "title": "The index in the general case. — Generally speaking, there is no",
+   "title": "The index in the general case. \u2014 Generally speaking, there is no",
    "level": 3,
    "page_start": 40,
    "page_end": 40,
@@ -2452,7 +2453,7 @@
   {
    "id": "sec-078-1-the-c-linear-map-p-f-pf-from-k-to-itself-has-a",
    "number": "1",
-   "title": "The C-linear map P : f ↦→P.f from K to itself has an index, that is",
+   "title": "The C-linear map P : f \u21a6\u2192P.f from K to itself has an index, that is",
    "level": 1,
    "page_start": 40,
    "page_end": 40,
@@ -2460,9 +2461,9 @@
    "n_words": 5
   },
   {
-   "id": "sec-079-2-the-index-of-p-that-is-the-integer-χp-dim-kerp",
+   "id": "sec-079-2-the-index-of-p-that-is-the-integer-\u03c7p-dim-kerp",
    "number": "2",
-   "title": "The index of P , that is the integer χ(P ) := dim KerP− dim CokerP is",
+   "title": "The index of P , that is the integer \u03c7(P ) := dim KerP\u2212 dim CokerP is",
    "level": 1,
    "page_start": 40,
    "page_end": 41,
@@ -2482,7 +2483,7 @@
   {
    "id": "sec-081-323-irregularity-and-the-dimension-of-fp1p-k-the",
    "number": "3.2.3",
-   "title": "Irregularity and the dimension of F(P1,...,P k). — The follow-",
+   "title": "Irregularity and the dimension of F(P1,...,P k). \u2014 The follow-",
    "level": 3,
    "page_start": 41,
    "page_end": 42,
@@ -2510,9 +2511,9 @@
    "n_words": 103
   },
   {
-   "id": "sec-084-331-analytic-classiﬁcation-with-2-integral-slope",
+   "id": "sec-084-331-analytic-classi\ufb01cation-with-2-integral-slope",
    "number": "3.3.1",
-   "title": "Analytic classiﬁcation with 2 integral slopes. — From the re-",
+   "title": "Analytic classi\ufb01cation with 2 integral slopes. \u2014 From the re-",
    "level": 3,
    "page_start": 43,
    "page_end": 43,
@@ -2530,9 +2531,9 @@
    "n_words": 329
   },
   {
-   "id": "sec-086-1-ynµ1",
+   "id": "sec-086-1-yn\u00b51",
    "number": "1",
-   "title": "Yn+µ1,",
+   "title": "Yn+\u00b51,",
    "level": 1,
    "page_start": 44,
    "page_end": 44,
@@ -2542,7 +2543,7 @@
   {
    "id": "sec-087-1-xnda2xn-zn-a1",
    "number": "1",
-   "title": "Xn−dA2−Xn =Zn :=A−1",
+   "title": "Xn\u2212dA2\u2212Xn =Zn :=A\u22121",
    "level": 1,
    "page_start": 44,
    "page_end": 45,
@@ -2560,9 +2561,9 @@
    "n_words": 202
   },
   {
-   "id": "sec-089-1-unµ1bn",
+   "id": "sec-089-1-un\u00b51bn",
    "number": "1",
-   "title": "Un+µ1B−n",
+   "title": "Un+\u00b51B\u2212n",
    "level": 1,
    "page_start": 45,
    "page_end": 45,
@@ -2570,9 +2571,9 @@
    "n_words": 24
   },
   {
-   "id": "sec-090-332-the-birkhoﬀ-guenther-normal-form-going-from",
+   "id": "sec-090-332-the-birkho\ufb00-guenther-normal-form-going-from",
    "number": "3.3.2",
-   "title": "The Birkhoﬀ-Guenther normal form. — Going from two slopes",
+   "title": "The Birkho\ufb00-Guenther normal form. \u2014 Going from two slopes",
    "level": 3,
    "page_start": 45,
    "page_end": 47,
@@ -2590,9 +2591,9 @@
    "n_words": 116
   },
   {
-   "id": "sec-092-333-computational-consequences-of-the-birkhoﬀ-gu",
+   "id": "sec-092-333-computational-consequences-of-the-birkho\ufb00-gu",
    "number": "3.3.3",
-   "title": "Computational consequences of the Birkhoﬀ-Guenther nor-",
+   "title": "Computational consequences of the Birkho\ufb00-Guenther nor-",
    "level": 3,
    "page_start": 47,
    "page_end": 48,
@@ -2620,9 +2621,9 @@
    "n_words": 22
   },
   {
-   "id": "sec-095-342-isoformal-q-gevrey-classiﬁcation",
+   "id": "sec-095-342-isoformal-q-gevrey-classi\ufb01cation",
    "number": "3.4.2",
-   "title": "Isoformal q-Gevrey classiﬁcation. —",
+   "title": "Isoformal q-Gevrey classi\ufb01cation. \u2014",
    "level": 3,
    "page_start": 49,
    "page_end": 49,
@@ -2632,7 +2633,7 @@
   {
    "id": "sec-096-343-another-kind-of-q-gevrey-interpolation-a-som",
    "number": "3.4.3",
-   "title": "Another kind of q-Gevrey interpolation. — A somewhat sym-",
+   "title": "Another kind of q-Gevrey interpolation. \u2014 A somewhat sym-",
    "level": 3,
    "page_start": 49,
    "page_end": 51,
@@ -2682,7 +2683,7 @@
   {
    "id": "sec-101-413-asymptotics-and-sheaves-on-e-q-recall-from-p",
    "number": "4.1.3",
-   "title": "Asymptotics and sheaves on E q. — Recall from paragraph 4.1.1",
+   "title": "Asymptotics and sheaves on E q. \u2014 Recall from paragraph 4.1.1",
    "level": 3,
    "page_start": 58,
    "page_end": 58,
@@ -2730,9 +2731,9 @@
    "n_words": 374
   },
   {
-   "id": "sec-106-2-it-is-asymptotic-to-ˆf-1-ˆf-in-ie-the-coeﬃcien",
+   "id": "sec-106-2-it-is-asymptotic-to-\u02c6f-1-\u02c6f-in-ie-the-coe\ufb03cien",
    "number": "2",
-   "title": "It is asymptotic to ˆF −1 ˆF =In, i.e. the coeﬃcients of G−In belong to",
+   "title": "It is asymptotic to \u02c6F \u22121 \u02c6F =In, i.e. the coe\ufb03cients of G\u2212In belong to",
    "level": 1,
    "page_start": 62,
    "page_end": 62,
@@ -2760,9 +2761,9 @@
    "n_words": 0
   },
   {
-   "id": "sec-109-431-study-of-h-1eq-λi-we-choose-τ-cℑτ-0-such-tha",
+   "id": "sec-109-431-study-of-h-1eq-\u03bbi-we-choose-\u03c4-c\u2111\u03c4-0-such-tha",
    "number": "4.3.1",
-   "title": "Study of H 1(Eq; ΛI). — We choose τ ∈ C,ℑ(τ) > 0, such that",
+   "title": "Study of H 1(Eq; \u039bI). \u2014 We choose \u03c4 \u2208 C,\u2111(\u03c4) > 0, such that",
    "level": 3,
    "page_start": 63,
    "page_end": 65,
@@ -2782,7 +2783,7 @@
   {
    "id": "sec-111-432-geometric-interpretation-of-the-elements-of",
    "number": "4.3.2",
-   "title": "Geometric interpretation of the elements of H 1(Eq; ΛI). — We",
+   "title": "Geometric interpretation of the elements of H 1(Eq; \u039bI). \u2014 We",
    "level": 3,
    "page_start": 65,
    "page_end": 66,
@@ -2792,7 +2793,7 @@
   {
    "id": "sec-112-0-a-pp01k1-r2",
    "number": "0",
-   "title": "(A) = (p◦p0)−1(K1)⊂ R2,",
+   "title": "(A) = (p\u25e6p0)\u22121(K1)\u2282 R2,",
    "level": 1,
    "page_start": 66,
    "page_end": 67,
@@ -2822,7 +2823,7 @@
   {
    "id": "sec-115-433-the-formal-trivialisation-of-the-elements-of",
    "number": "4.3.3",
-   "title": "The formal trivialisation of the elements of H 1(Eq; ΛI) and the",
+   "title": "The formal trivialisation of the elements of H 1(Eq; \u039bI) and the",
    "level": 3,
    "page_start": 69,
    "page_end": 70,
@@ -2830,9 +2831,9 @@
    "n_words": 490
   },
   {
-   "id": "sec-116-44-the-isoformal-classiﬁcation-by-the-cohomology",
+   "id": "sec-116-44-the-isoformal-classi\ufb01cation-by-the-cohomology",
    "number": "4.4",
-   "title": "The isoformal classiﬁcation by the cohomology of the Stokes",
+   "title": "The isoformal classi\ufb01cation by the cohomology of the Stokes",
    "level": 2,
    "page_start": 70,
    "page_end": 70,
@@ -2842,7 +2843,7 @@
   {
    "id": "sec-117-441-the-second-main-theorem-before-going-on-let",
    "number": "4.4.1",
-   "title": "The second main theorem. — Before going on, let us make some",
+   "title": "The second main theorem. \u2014 Before going on, let us make some",
    "level": 3,
    "page_start": 70,
    "page_end": 71,
@@ -2872,7 +2873,7 @@
   {
    "id": "sec-120-511-divisors-and-sectors-on-the-elliptic-curve-e",
    "number": "5.1.1",
-   "title": "Divisors and sectors on the elliptic curve E q = C∗/qZ. — The",
+   "title": "Divisors and sectors on the elliptic curve E q = C\u2217/qZ. \u2014 The",
    "level": 3,
    "page_start": 73,
    "page_end": 75,
@@ -2912,7 +2913,7 @@
   {
    "id": "sec-124-1-we-say-that-f-has-q-exponential-growth-of-orde",
    "number": "1",
-   "title": "We say that f has q-exponential growth of order (at most) k at inﬁnity",
+   "title": "We say that f has q-exponential growth of order (at most) k at in\ufb01nity",
    "level": 1,
    "page_start": 78,
    "page_end": 78,
@@ -2922,7 +2923,7 @@
   {
    "id": "sec-125-2-we-say-that-f-has-q-exponential-decay-of-order",
    "number": "2",
-   "title": "We say that f has q-exponential decay of order (at least) k at inﬁnity",
+   "title": "We say that f has q-exponential decay of order (at least) k at in\ufb01nity",
    "level": 1,
    "page_start": 78,
    "page_end": 79,
@@ -2940,9 +2941,9 @@
    "n_words": 298
   },
   {
-   "id": "sec-127-2-the-set-aλ",
+   "id": "sec-127-2-the-set-a\u03bb",
    "number": "2",
-   "title": "The set AΛ",
+   "title": "The set A\u039b",
    "level": 1,
    "page_start": 79,
    "page_end": 80,
@@ -2950,9 +2951,9 @@
    "n_words": 65
   },
   {
-   "id": "sec-128-521-asymptotics-and-residues-i-whenν-1-divisor-λ",
+   "id": "sec-128-521-asymptotics-and-residues-i-when\u03bd-1-divisor-\u03bb",
    "number": "5.2.1",
-   "title": "Asymptotics and residues (I). — Whenν = 1, divisor Λ reduces",
+   "title": "Asymptotics and residues (I). \u2014 When\u03bd = 1, divisor \u039b reduces",
    "level": 3,
    "page_start": 80,
    "page_end": 81,
@@ -2992,7 +2993,7 @@
   {
    "id": "sec-132-522-asymptotics-and-residues-ii-after-43-for-any",
    "number": "5.2.2",
-   "title": "Asymptotics and residues (II). — After [ 43], for any f∈ A[λ]",
+   "title": "Asymptotics and residues (II). \u2014 After [ 43], for any f\u2208 A[\u03bb]",
    "level": 3,
    "page_start": 85,
    "page_end": 85,
@@ -3000,9 +3001,9 @@
    "n_words": 106
   },
   {
-   "id": "sec-133-1-we-call-values-of-f-on-λ-at-0-and-write-λf0-th",
+   "id": "sec-133-1-we-call-values-of-f-on-\u03bb-at-0-and-write-\u03bbf0-th",
    "number": "1",
-   "title": "We call values of F on Λ at 0, and write ΛF(0), the ν (germs at inﬁnity",
+   "title": "We call values of F on \u039b at 0, and write \u039bF(0), the \u03bd (germs at in\ufb01nity",
    "level": 1,
    "page_start": 85,
    "page_end": 85,
@@ -3012,7 +3013,7 @@
   {
    "id": "sec-134-3-that-is-there-exists-constants-c-a-0-such-that",
    "number": "3",
-   "title": "That is, there exists constants C, A > 0 such that, for any integer n ≫ 0, one has⏐",
+   "title": "That is, there exists constants C, A > 0 such that, for any integer n \u226b 0, one has\u23d0",
    "level": 1,
    "page_start": 85,
    "page_end": 86,
@@ -3022,7 +3023,7 @@
   {
    "id": "sec-135-2-we-say-that-f-hasq-gevrey-order-k-along-diviso",
    "number": "2",
-   "title": "We say that F hasq-Gevrey order k along divisor Λ at 0 if all its values",
+   "title": "We say that F hasq-Gevrey order k along divisor \u039b at 0 if all its values",
    "level": 1,
    "page_start": 86,
    "page_end": 86,
@@ -3030,9 +3031,9 @@
    "n_words": 6
   },
   {
-   "id": "sec-136-3-we-write-f-eλ",
+   "id": "sec-136-3-we-write-f-e\u03bb",
    "number": "3",
-   "title": "We write F∈ EΛ",
+   "title": "We write F\u2208 E\u039b",
    "level": 1,
    "page_start": 86,
    "page_end": 86,
@@ -3040,9 +3041,9 @@
    "n_words": 135
   },
   {
-   "id": "sec-137-1-the-function-gℓ-has-q-exponential-growth-of-or",
+   "id": "sec-137-1-the-function-g\u2113-has-q-exponential-growth-of-or",
    "number": "1",
-   "title": "The function g(ℓ) has q-exponential growth of order k both at 0 and in-",
+   "title": "The function g(\u2113) has q-exponential growth of order k both at 0 and in-",
    "level": 1,
    "page_start": 86,
    "page_end": 86,
@@ -3050,9 +3051,9 @@
    "n_words": 1
   },
   {
-   "id": "sec-138-2-if-ℓ-k-then-gℓλqn-0-for-all-n-n-else",
+   "id": "sec-138-2-if-\u2113-k-then-g\u2113\u03bbqn-0-for-all-n-n-else",
    "number": "2",
-   "title": "If ℓ < k, then g(ℓ)(λq−n) = 0 for all n∈ N; else,",
+   "title": "If \u2113 < k, then g(\u2113)(\u03bbq\u2212n) = 0 for all n\u2208 N; else,",
    "level": 1,
    "page_start": 86,
    "page_end": 86,
@@ -3062,7 +3063,7 @@
   {
    "id": "sec-139-3-letn-z-and-put-uz-gz",
    "number": "3",
-   "title": "Letn∈ Z and put u(z) := g(z)",
+   "title": "Letn\u2208 Z and put u(z) := g(z)",
    "level": 1,
    "page_start": 86,
    "page_end": 87,
@@ -3082,7 +3083,7 @@
   {
    "id": "sec-141-531-f-rom-a-q-gevrey-power-series-to-an-entire-f",
    "number": "5.3.1",
-   "title": "F rom a q-Gevrey power series to an entire function. — As",
+   "title": "F rom a q-Gevrey power series to an entire function. \u2014 As",
    "level": 3,
    "page_start": 89,
    "page_end": 89,
@@ -3092,7 +3093,7 @@
   {
    "id": "sec-142-1-for-all-kr-z2-one-has",
    "number": "1",
-   "title": "For all (k,r )∈ Z2, one has:",
+   "title": "For all (k,r )\u2208 Z2, one has:",
    "level": 1,
    "page_start": 89,
    "page_end": 89,
@@ -3100,9 +3101,9 @@
    "n_words": 21
   },
   {
-   "id": "sec-143-2-for-all-n-z-write-tn-the-function-deﬁned-by",
+   "id": "sec-143-2-for-all-n-z-write-tn-the-function-de\ufb01ned-by",
    "number": "2",
-   "title": "For all n∈ Z, write Tn the function deﬁned by:",
+   "title": "For all n\u2208 Z, write Tn the function de\ufb01ned by:",
    "level": 1,
    "page_start": 89,
    "page_end": 92,
@@ -3112,7 +3113,7 @@
   {
    "id": "sec-144-532-the-q-gevrey-theorem-of-borel-ritt-the-main",
    "number": "5.3.2",
-   "title": "The q-Gevrey theorem of Borel-Ritt. — The main result of this",
+   "title": "The q-Gevrey theorem of Borel-Ritt. \u2014 The main result of this",
    "level": 3,
    "page_start": 92,
    "page_end": 92,
@@ -3132,7 +3133,7 @@
   {
    "id": "sec-146-1-each-function-aij-has-q-exponential-growth-of",
    "number": "1",
-   "title": "Each function Ai,j has q-exponential growth of order (at most) ν at in-",
+   "title": "Each function Ai,j has q-exponential growth of order (at most) \u03bd at in-",
    "level": 1,
    "page_start": 93,
    "page_end": 93,
@@ -3142,7 +3143,7 @@
   {
    "id": "sec-147-2-there-exists-c-0-a-0-such-that-for-all-n-n",
    "number": "2",
-   "title": "There exists C >0, A> 0 such that, for all n∈ N:",
+   "title": "There exists C >0, A> 0 such that, for all n\u2208 N:",
    "level": 1,
    "page_start": 93,
    "page_end": 94,
@@ -3152,7 +3153,7 @@
   {
    "id": "sec-148-533-flat-functions-with-respect-to-a-divisor-in",
    "number": "5.3.3",
-   "title": "Flat functions with respect to a divisor. — In the proof of the-",
+   "title": "Flat functions with respect to a divisor. \u2014 In the proof of the-",
    "level": 3,
    "page_start": 94,
    "page_end": 94,
@@ -3180,9 +3181,9 @@
    "n_words": 0
   },
   {
-   "id": "sec-151-2-on-some-spiral-λi-belonging-to-divisor-λ",
+   "id": "sec-151-2-on-some-spiral-\u03bbi-belonging-to-divisor-\u03bb",
    "number": "2",
-   "title": "On some spiral [λi] belonging to divisor Λ:",
+   "title": "On some spiral [\u03bbi] belonging to divisor \u039b:",
    "level": 1,
    "page_start": 95,
    "page_end": 95,
@@ -3192,7 +3193,7 @@
   {
    "id": "sec-152-541-relative-divisors-and-two-levels-asymptotics",
    "number": "5.4.1",
-   "title": "Relative divisors and two levels asymptotics. — Let Λ ′, Λ be",
+   "title": "Relative divisors and two levels asymptotics. \u2014 Let \u039b \u2032, \u039b be",
    "level": 3,
    "page_start": 95,
    "page_end": 95,
@@ -3202,7 +3203,7 @@
   {
    "id": "sec-153-1-we-call-values-of-f-over-the-relative-divisor",
    "number": "1",
-   "title": "We call values of F over the relative divisor Λ/Λ′ at 0, and we write",
+   "title": "We call values of F over the relative divisor \u039b/\u039b\u2032 at 0, and we write",
    "level": 1,
    "page_start": 95,
    "page_end": 95,
@@ -3210,9 +3211,9 @@
    "n_words": 21
   },
   {
-   "id": "sec-154-2-we-say-that-f-has-q-gevrey-order-k-over-λλ-at",
+   "id": "sec-154-2-we-say-that-f-has-q-gevrey-order-k-over-\u03bb\u03bb-at",
    "number": "2",
-   "title": "We say that F has q-Gevrey order k over Λ/Λ′ at 0 if all its values there",
+   "title": "We say that F has q-Gevrey order k over \u039b/\u039b\u2032 at 0 if all its values there",
    "level": 1,
    "page_start": 95,
    "page_end": 95,
@@ -3220,9 +3221,9 @@
    "n_words": 6
   },
   {
-   "id": "sec-155-3-let-λ-λ-1-λ2-and-λ-λ-1-we-write-f-eλ",
+   "id": "sec-155-3-let-\u03bb-\u03bb-1-\u03bb2-and-\u03bb-\u03bb-1-we-write-f-e\u03bb",
    "number": "3",
-   "title": "Let Λ = Λ 1 + Λ2 and Λ ′ = Λ 1. We write F ∈ EΛ",
+   "title": "Let \u039b = \u039b 1 + \u039b2 and \u039b \u2032 = \u039b 1. We write F \u2208 E\u039b",
    "level": 1,
    "page_start": 95,
    "page_end": 96,
@@ -3232,7 +3233,7 @@
   {
    "id": "sec-156-542-multisummable-functions-more-generally-let",
    "number": "5.4.2",
-   "title": "Multisummable functions. — More generally, let",
+   "title": "Multisummable functions. \u2014 More generally, let",
    "level": 3,
    "page_start": 96,
    "page_end": 97,
@@ -3260,9 +3261,9 @@
    "n_words": 147
   },
   {
-   "id": "sec-159-55-analytic-classiﬁcation-of-linear-q-diﬀerence",
+   "id": "sec-159-55-analytic-classi\ufb01cation-of-linear-q-di\ufb00erence",
    "number": "5.5",
-   "title": "Analytic classiﬁcation of linear q-diﬀerence equations",
+   "title": "Analytic classi\ufb01cation of linear q-di\ufb00erence equations",
    "level": 2,
    "page_start": 99,
    "page_end": 99,
@@ -3282,7 +3283,7 @@
   {
    "id": "sec-161-551-summability-of-formal-solutions-consider-the",
    "number": "5.5.1",
-   "title": "Summability of formal solutions. — Consider the equation (5.39)",
+   "title": "Summability of formal solutions. \u2014 Consider the equation (5.39)",
    "level": 3,
    "page_start": 100,
    "page_end": 101,
@@ -3300,9 +3301,9 @@
    "n_words": 584
   },
   {
-   "id": "sec-163-552-stokes-phenomenon-and-analytic-classiﬁcation",
+   "id": "sec-163-552-stokes-phenomenon-and-analytic-classi\ufb01cation",
    "number": "5.5.2",
-   "title": "Stokes phenomenon and analytic classiﬁcation. — Write",
+   "title": "Stokes phenomenon and analytic classi\ufb01cation. \u2014 Write",
    "level": 3,
    "page_start": 102,
    "page_end": 103,
@@ -3320,9 +3321,9 @@
    "n_words": 511
   },
   {
-   "id": "sec-165-1-there-exists-λ0λ-a0-a0-such-that-λq-λ0q-but",
+   "id": "sec-165-1-there-exists-\u03bb0\u03bb-a0-a0-such-that-\u03bbq-\u03bb0q-but",
    "number": "1",
-   "title": "There exists (λ0,λ ) ∈ {A0}×{ A0} such that [λ;q] ⁄= [ λ0;q] but",
+   "title": "There exists (\u03bb0,\u03bb ) \u2208 {A0}\u00d7{ A0} such that [\u03bb;q] \u2044= [ \u03bb0;q] but",
    "level": 1,
    "page_start": 104,
    "page_end": 104,
@@ -3332,7 +3333,7 @@
   {
    "id": "sec-166-3-the-matrices-b1-and-b2-give-rise-to-analytical",
    "number": "3",
-   "title": "The matrices B1 and B2 give rise to analytically equivalent q-diﬀerence",
+   "title": "The matrices B1 and B2 give rise to analytically equivalent q-di\ufb00erence",
    "level": 1,
    "page_start": 104,
    "page_end": 105,
@@ -3350,9 +3351,9 @@
    "n_words": 556
   },
   {
-   "id": "sec-168-1-in-the-context-of-q-diﬀerence-equations-the-si",
+   "id": "sec-168-1-in-the-context-of-q-di\ufb00erence-equations-the-si",
    "number": "1",
-   "title": "In the context of q-diﬀerence equations, the singular locus of a matrix of func tions P",
+   "title": "In the context of q-di\ufb00erence equations, the singular locus of a matrix of func tions P",
    "level": 1,
    "page_start": 106,
    "page_end": 107,
@@ -3372,7 +3373,7 @@
   {
    "id": "sec-170-612-privileged-cocycles-we-have-three-ways-of-co",
    "number": "6.1.2",
-   "title": "Privileged cocycles. — We have three ways of constructing a co-",
+   "title": "Privileged cocycles. \u2014 We have three ways of constructing a co-",
    "level": 3,
    "page_start": 108,
    "page_end": 109,
@@ -3402,7 +3403,7 @@
   {
    "id": "sec-173-62-d-evissageq-gevrey",
    "number": "6.2",
-   "title": "D´ evissageq-Gevrey",
+   "title": "D\u00b4 evissageq-Gevrey",
    "level": 2,
    "page_start": 110,
    "page_end": 110,
@@ -3412,7 +3413,7 @@
   {
    "id": "sec-174-621-the-abelian-case-of-two-slopes-when-the-newt",
    "number": "6.2.1",
-   "title": "The abelian case of two slopes. — When the Newton polygon of",
+   "title": "The abelian case of two slopes. \u2014 When the Newton polygon of",
    "level": 3,
    "page_start": 110,
    "page_end": 111,
@@ -3422,7 +3423,7 @@
   {
    "id": "sec-175-62-d-evissage-q-gevrey-105",
    "number": "6.2",
-   "title": "D ´EVISSAGE q-GEVREY 105",
+   "title": "D \u00b4EVISSAGE q-GEVREY 105",
    "level": 2,
    "page_start": 111,
    "page_end": 111,
@@ -3432,7 +3433,7 @@
   {
    "id": "sec-176-622-a-sequence-of-central-extensions-for-simplic",
    "number": "6.2.2",
-   "title": "A sequence of central extensions. — For simplicity, we write G",
+   "title": "A sequence of central extensions. \u2014 For simplicity, we write G",
    "level": 3,
    "page_start": 111,
    "page_end": 112,
@@ -3442,7 +3443,7 @@
   {
    "id": "sec-177-623-explicit-computation-we-want-to-make-more-ex",
    "number": "6.2.3",
-   "title": "Explicit computation. — We want to make more explicit theorem",
+   "title": "Explicit computation. \u2014 We want to make more explicit theorem",
    "level": 3,
    "page_start": 112,
    "page_end": 113,
@@ -3452,7 +3453,7 @@
   {
    "id": "sec-178-62-d-evissage-q-gevrey-107",
    "number": "6.2",
-   "title": "D ´EVISSAGE q-GEVREY 107",
+   "title": "D \u00b4EVISSAGE q-GEVREY 107",
    "level": 2,
    "page_start": 113,
    "page_end": 114,
@@ -3462,7 +3463,7 @@
   {
    "id": "sec-179-624-v-arious-geometries-on-fp1p-k-in-subsection",
    "number": "6.2.4",
-   "title": "V arious geometries on F(P1,...,P k). — In subsection 3.3.2, we",
+   "title": "V arious geometries on F(P1,...,P k). \u2014 In subsection 3.3.2, we",
    "level": 3,
    "page_start": 114,
    "page_end": 114,
@@ -3472,7 +3473,7 @@
   {
    "id": "sec-180-334-the-d-evissage-above-implies-that-it-is-the",
    "number": "3.3.4",
-   "title": "The d´ evissage above implies that it is the same as theaﬃne structure on",
+   "title": "The d\u00b4 evissage above implies that it is the same as thea\ufb03ne structure on",
    "level": 3,
    "page_start": 114,
    "page_end": 114,
@@ -3480,9 +3481,9 @@
    "n_words": 109
   },
   {
-   "id": "sec-181-63-v-ector-bundles-associated-to-q-diﬀerence-mod",
+   "id": "sec-181-63-v-ector-bundles-associated-to-q-di\ufb00erence-mod",
    "number": "6.3",
-   "title": "V ector bundles associated to q-diﬀerence modules",
+   "title": "V ector bundles associated to q-di\ufb00erence modules",
    "level": 2,
    "page_start": 114,
    "page_end": 115,
@@ -3502,7 +3503,7 @@
   {
    "id": "sec-183-632-sheaf-theoretical-interpretation-of-irregula",
    "number": "6.3.2",
-   "title": "Sheaf theoretical interpretation of irregularity . — We inter-",
+   "title": "Sheaf theoretical interpretation of irregularity . \u2014 We inter-",
    "level": 3,
    "page_start": 115,
    "page_end": 117,
@@ -3512,7 +3513,7 @@
   {
    "id": "sec-184-1-in-its-original-form-adams-lemma-1-31-20-says",
    "number": "1",
-   "title": "In its original form, Adams lemma [ 1, 31, 20 ] says that, for any analytic q-diﬀerence",
+   "title": "In its original form, Adams lemma [ 1, 31, 20 ] says that, for any analytic q-di\ufb00erence",
    "level": 1,
    "page_start": 117,
    "page_end": 117,
@@ -3542,7 +3543,7 @@
   {
    "id": "sec-187-7021-notations-we-use-some-notations-from-q-calc",
    "number": "7.0.2.1",
-   "title": "Notations . — We use some notations from q-calculus for this chapter",
+   "title": "Notations . \u2014 We use some notations from q-calculus for this chapter",
    "level": 4,
    "page_start": 118,
    "page_end": 118,
@@ -3550,9 +3551,9 @@
    "n_words": 183
   },
   {
-   "id": "sec-188-71-the-q-euler-equation-and-conﬂuent-basic-hyper",
+   "id": "sec-188-71-the-q-euler-equation-and-con\ufb02uent-basic-hyper",
    "number": "7.1",
-   "title": "The q-Euler equation and conﬂuent basic hypergeometric series",
+   "title": "The q-Euler equation and con\ufb02uent basic hypergeometric series",
    "level": 2,
    "page_start": 118,
    "page_end": 119,
@@ -3572,7 +3573,7 @@
   {
    "id": "sec-190-711-a-digest-on-the-q-euler-equation",
    "number": "7.1.1",
-   "title": "A digest on the q-Euler equation. —",
+   "title": "A digest on the q-Euler equation. \u2014",
    "level": 3,
    "page_start": 119,
    "page_end": 119,
@@ -3582,7 +3583,7 @@
   {
    "id": "sec-191-7111-formal-solution-we-obtain-it-for-instance-b",
    "number": "7.1.1.1",
-   "title": "Formal solution . — We obtain it, for instance, by iterating the z-",
+   "title": "Formal solution . \u2014 We obtain it, for instance, by iterating the z-",
    "level": 4,
    "page_start": 119,
    "page_end": 119,
@@ -3590,9 +3591,9 @@
    "n_words": 40
   },
   {
-   "id": "sec-192-7112-birkhoﬀ-guenther-normal-form-there-is-a-uni",
+   "id": "sec-192-7112-birkho\ufb00-guenther-normal-form-there-is-a-uni",
    "number": "7.1.1.2",
-   "title": "Birkhoﬀ-Guenther normal form . — There is a unique α∈ C such",
+   "title": "Birkho\ufb00-Guenther normal form . \u2014 There is a unique \u03b1\u2208 C such",
    "level": 4,
    "page_start": 119,
    "page_end": 121,
@@ -3610,9 +3611,9 @@
    "n_words": 80
   },
   {
-   "id": "sec-194-712-some-conﬂuent-basic-hypergeometric-functions",
+   "id": "sec-194-712-some-con\ufb02uent-basic-hypergeometric-functions",
    "number": "7.1.2",
-   "title": "Some conﬂuent basic hypergeometric functions. — Usual basic",
+   "title": "Some con\ufb02uent basic hypergeometric functions. \u2014 Usual basic",
    "level": 3,
    "page_start": 121,
    "page_end": 122,
@@ -3620,9 +3621,9 @@
    "n_words": 237
   },
   {
-   "id": "sec-195-7121-factoring-l-to-get-l-q2zσqaσqb-we-ﬁrst-look",
+   "id": "sec-195-7121-factoring-l-to-get-l-q2z\u03c3qa\u03c3qb-we-\ufb01rst-look",
    "number": "7.1.2.1",
-   "title": "Factoring L. — To get L = q2z(σq−A)(σq−B), we ﬁrst look for",
+   "title": "Factoring L. \u2014 To get L = q2z(\u03c3q\u2212A)(\u03c3q\u2212B), we \ufb01rst look for",
    "level": 4,
    "page_start": 122,
    "page_end": 122,
@@ -3632,7 +3633,7 @@
   {
    "id": "sec-196-713-some-special-cases-takinga-b-q1-yields",
    "number": "7.1.3",
-   "title": "Some special cases. — Takinga :=b :=q−1 yields:",
+   "title": "Some special cases. \u2014 Takinga :=b :=q\u22121 yields:",
    "level": 3,
    "page_start": 122,
    "page_end": 123,
@@ -3662,7 +3663,7 @@
   {
    "id": "sec-199-721-algebraic-aspects-remember-that-the-equation",
    "number": "7.2.1",
-   "title": "Algebraic aspects. — Remember that the equation f = 1 +zσqf",
+   "title": "Algebraic aspects. \u2014 Remember that the equation f = 1 +z\u03c3qf",
    "level": 3,
    "page_start": 125,
    "page_end": 125,
@@ -3670,9 +3671,9 @@
    "n_words": 16
   },
   {
-   "id": "sec-200-7211-newton-polygon-of-a-symmetric-square-to-ﬁnd",
+   "id": "sec-200-7211-newton-polygon-of-a-symmetric-square-to-\ufb01nd",
    "number": "7.2.1.1",
-   "title": "Newton polygon of a symmetric square . — To ﬁnd the equation",
+   "title": "Newton polygon of a symmetric square . \u2014 To \ufb01nd the equation",
    "level": 4,
    "page_start": 125,
    "page_end": 127,
@@ -3692,7 +3693,7 @@
   {
    "id": "sec-202-7212-algebraic-summation-of-the-square-of-the-ts",
    "number": "7.2.1.2",
-   "title": "Algebraic summation of the square of the Tshakaloﬀ s eries. — The",
+   "title": "Algebraic summation of the square of the Tshakalo\ufb00 s eries. \u2014 The",
    "level": 4,
    "page_start": 127,
    "page_end": 127,
@@ -3702,7 +3703,7 @@
   {
    "id": "sec-203-722-analytic-aspects",
    "number": "7.2.2",
-   "title": "Analytic aspects. —",
+   "title": "Analytic aspects. \u2014",
    "level": 3,
    "page_start": 127,
    "page_end": 128,
@@ -3712,7 +3713,7 @@
   {
    "id": "sec-204-7222-multisummability",
    "number": "7.2.2.2",
-   "title": "Multisummability . —",
+   "title": "Multisummability . \u2014",
    "level": 4,
    "page_start": 128,
    "page_end": 128,
@@ -3720,9 +3721,9 @@
    "n_words": 15
   },
   {
-   "id": "sec-205-1-if-λ-µ-then-fg-o2λ",
+   "id": "sec-205-1-if-\u03bb-\u00b5-then-fg-o2\u03bb",
    "number": "1",
-   "title": "If [λ] = [µ], then fg∈ O2[λ]",
+   "title": "If [\u03bb] = [\u00b5], then fg\u2208 O2[\u03bb]",
    "level": 1,
    "page_start": 128,
    "page_end": 128,
@@ -3730,9 +3731,9 @@
    "n_words": 1
   },
   {
-   "id": "sec-206-2-if-λ-µ-then-generically-fg-oλµ",
+   "id": "sec-206-2-if-\u03bb-\u00b5-then-generically-fg-o\u03bb\u00b5",
    "number": "2",
-   "title": "If [λ]⁄= [µ], then, generically fg /∈ O[λ]+[µ]",
+   "title": "If [\u03bb]\u2044= [\u00b5], then, generically fg /\u2208 O[\u03bb]+[\u00b5]",
    "level": 1,
    "page_start": 128,
    "page_end": 129,
@@ -3752,7 +3753,7 @@
   {
    "id": "sec-208-7223-possibility-of-a-multisummation-process-no",
    "number": "7.2.2.3",
-   "title": "Possibility of a multisummation process . — No explicit algorithm is",
+   "title": "Possibility of a multisummation process . \u2014 No explicit algorithm is",
    "level": 4,
    "page_start": 129,
    "page_end": 129,
@@ -3790,9 +3791,9 @@
    "n_words": 0
   },
   {
-   "id": "sec-212-731-f-unctional-equation-for-sαβ-qz-from-the-rec",
+   "id": "sec-212-731-f-unctional-equation-for-s\u03b1\u03b2-qz-from-the-rec",
    "number": "7.3.1",
-   "title": "F unctional equation for s(α,β ;q,z ). — From the recurrence rela-",
+   "title": "F unctional equation for s(\u03b1,\u03b2 ;q,z ). \u2014 From the recurrence rela-",
    "level": 3,
    "page_start": 131,
    "page_end": 132,
@@ -3802,7 +3803,7 @@
   {
    "id": "sec-213-732-back-to-the-the-mock-theta-function-we-can-f",
    "number": "7.3.2",
-   "title": "Back to the the Mock Theta function. — We can for instance",
+   "title": "Back to the the Mock Theta function. \u2014 We can for instance",
    "level": 3,
    "page_start": 132,
    "page_end": 132,
@@ -3810,9 +3811,9 @@
    "n_words": 111
   },
   {
-   "id": "sec-214-733-back-to-the-q-euler-equation-to-ﬁt-this-equa",
+   "id": "sec-214-733-back-to-the-q-euler-equation-to-\ufb01t-this-equa",
    "number": "7.3.3",
-   "title": "Back to the q-Euler equation. — To ﬁt this equation with the",
+   "title": "Back to the q-Euler equation. \u2014 To \ufb01t this equation with the",
    "level": 3,
    "page_start": 132,
    "page_end": 133,
@@ -3830,9 +3831,9 @@
    "n_words": 0
   },
   {
-   "id": "sec-216-7332-birkhoﬀ-guenther-normal-form-according-to-s",
+   "id": "sec-216-7332-birkho\ufb00-guenther-normal-form-according-to-s",
    "number": "7.3.3.2",
-   "title": "Birkhoﬀ-Guenther normal form . — According to section 3.3, we see",
+   "title": "Birkho\ufb00-Guenther normal form . \u2014 According to section 3.3, we see",
    "level": 4,
    "page_start": 133,
    "page_end": 133,
@@ -3842,7 +3843,7 @@
   {
    "id": "sec-217-7333-privileged-cocycles-there-is-here-an-obviou",
    "number": "7.3.3.3",
-   "title": "Privileged cocycles . — There is here an obvious isomorphism of",
+   "title": "Privileged cocycles . \u2014 There is here an obvious isomorphism of",
    "level": 4,
    "page_start": 133,
    "page_end": 133,
@@ -3862,7 +3863,7 @@
   {
    "id": "sec-219-741-the-generating-series-for-the-class-numbers",
    "number": "7.4.1",
-   "title": "The generating series for the class numbers. — Consider the",
+   "title": "The generating series for the class numbers. \u2014 Consider the",
    "level": 3,
    "page_start": 134,
    "page_end": 134,
@@ -3872,7 +3873,7 @@
   {
    "id": "sec-220-742-modular-relations-in-order-to-obtain-modular",
    "number": "7.4.2",
-   "title": "Modular relations. — In order to obtain modular and asymptotic",
+   "title": "Modular relations. \u2014 In order to obtain modular and asymptotic",
    "level": 3,
    "page_start": 134,
    "page_end": 135,
@@ -3892,7 +3893,7 @@
   {
    "id": "sec-222-743-related-other-examples-mordell-also-mentions",
    "number": "7.4.3",
-   "title": "Related other examples. — Mordell also mentions that the fol-",
+   "title": "Related other examples. \u2014 Mordell also mentions that the fol-",
    "level": 3,
    "page_start": 135,
    "page_end": 137,
@@ -3900,9 +3901,9 @@
    "n_words": 94
   },
   {
-   "id": "sec-223-23-we-ﬁrst-describe-in-section-a1-an-abstract-ve",
+   "id": "sec-223-23-we-\ufb01rst-describe-in-section-a1-an-abstract-ve",
    "number": "2.3",
-   "title": "We ﬁrst describe in section A.1 an abstract version of th e problem, which",
+   "title": "We \ufb01rst describe in section A.1 an abstract version of th e problem, which",
    "level": 2,
    "page_start": 137,
    "page_end": 137,
@@ -3912,7 +3913,7 @@
   {
    "id": "sec-224-1-this-is-all-the-more-necessary-since-the-work",
    "number": "1",
-   "title": "This is all the more necessary since the work [ 40] by the ﬁrst two authors strongly",
+   "title": "This is all the more necessary since the work [ 40] by the \ufb01rst two authors strongly",
    "level": 1,
    "page_start": 137,
    "page_end": 138,
@@ -3932,7 +3933,7 @@
   {
    "id": "sec-226-4-also-see-the-revised-version-extensions-panach",
    "number": "4",
-   "title": "Also see the revised version “Extensions panach´ ees auto duales”, to be found on",
+   "title": "Also see the revised version \u201cExtensions panach\u00b4 ees auto duales\u201d, to be found on",
    "level": 1,
    "page_start": 139,
    "page_end": 163,
@@ -3965,6 +3966,1250 @@
   "likely_scanned": false,
   "toc_entries": 233,
   "sections": 229,
-  "chars_total": 296347
+  "chars_total": 296347,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "smfcal.tex",
+   "tex_sections": 27,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-63-vector-bundles-associated-to-q-di\ufb00erence-modu",
+     "title": "Vector bundles associated to q-di\ufb00erence modules. . . . . . . . . . . . . . . . . 108",
+     "prose_ratio": 0.013,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-71-the-q-euler-equation-and-con\ufb02uent-basic-hyper",
+     "title": "The q-Euler equation and con\ufb02uent basic hypergeometric series. . . 112",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-72-the-symmetric-square-of-the-q-euler-equation",
+     "title": "The symmetric square of the q-Euler equation. . . . . . . . . . . . . . . . . . . . 118",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-73-from-the-mock-theta-functions-to-the-q-euler",
+     "title": "From the Mock Theta functions to the q-Euler equation. . . . . . . . . . 123",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-74-from-class-numbers-of-quadratic-forms-to-the",
+     "title": "From class numbers of quadratic forms to the q-Euler equation . . . 127",
+     "prose_ratio": 0.014,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-11-the-problem",
+     "title": "The problem",
+     "prose_ratio": 0.022,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-introduction",
+     "title": "Introduction",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-112-the-birkho\ufb00-guenther-program-we-quote-the-co",
+     "title": "The Birkho\ufb00-Guenther program. \u2014 We quote the conclusion of",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-2-chapter-1-introduction",
+     "title": "CHAPTER 1. INTRODUCTION",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-113-what-this-paper-could-contain-but-does-not-b",
+     "title": "What this paper could contain but does not. \u2014 Before de-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-11-the-problem-3",
+     "title": "THE PROBLEM 3",
+     "prose_ratio": 0.26,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-1-in-the-local-regular-singular-case-the-work-wa",
+     "title": "In the local regular singular case the work was achieved by the second",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-2-in-the-global-regular-singular-case-only-the-a",
+     "title": "In the global regular singular case only the abelian case is understood",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-3-in-the-local-irregular-case-using-the-results",
+     "title": "In the local irregular case , using the results of the present paper the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-4-using-case-3-the-solution-of-the-global-genera",
+     "title": "Using case 3, the solution of the global general case should follows easily",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-1131-about-the-asumption-that-the-slopes-are-int",
+     "title": "About the asumption that the slopes are integral . \u2014 The \u201cabstract\u201d",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-4-chapter-1-introduction",
+     "title": "CHAPTER 1. INTRODUCTION",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-12-contents-of-the-paper",
+     "title": "Contents of the paper",
+     "prose_ratio": 0.23,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-018-1-long-after-the-present-work-had-been-submitted",
+     "title": "Long after the present work had been submitted for publica tion, this task was under-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-12-contents-of-the-paper-5",
+     "title": "CONTENTS OF THE PAPER 5",
+     "prose_ratio": 0.412,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-020-6-chapter-1-introduction",
+     "title": "CHAPTER 1. INTRODUCTION",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-52-here-the-sectors-of-the-classical-theory-are",
+     "title": "Here, the sectors of the classical theory are replaced b y preimages in",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-12-contents-of-the-paper-7",
+     "title": "CONTENTS OF THE PAPER 7",
+     "prose_ratio": 0.189,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-023-121-about-the-wealth-of-summation-processes-it-i",
+     "title": "About the wealth of summation processes. \u2014 It is important",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-2-note-however-that-the-algebraic-summation-intr",
+     "title": "Note however that the \u201calgebraic summation\u201d introduced i n [50] and recalled and used",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-8-chapter-1-introduction",
+     "title": "CHAPTER 1. INTRODUCTION",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-13-general-notations",
+     "title": "General notations",
+     "prose_ratio": 0.474,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-027-131-theta-f-unctions-jacobi-theta-functions-perv",
+     "title": "Theta F unctions. \u2014 Jacobi theta functions pervade the theory",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-13-general-notations-9",
+     "title": "GENERAL NOTATIONS 9",
+     "prose_ratio": 0.413,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-029-10-chapter-1-introduction",
+     "title": "CHAPTER 1. INTRODUCTION",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-031-21-the-category-of-q-di\ufb00erence-modules",
+     "title": "The category of q-di\ufb00erence modules",
+     "prose_ratio": 0.016,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-032-211-some-general-facts-about-di\ufb00erence-modules-h",
+     "title": "Some general facts about di\ufb00erence modules. \u2014 Here, we also",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-1-much-of-what-follows-will-be-extended-to-the-c",
+     "title": "Much of what follows will be extended to the case of di\ufb00eren ce rings in appendix A,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-12-chapter-2-some-general-nonsense",
+     "title": "CHAPTER 2. SOME GENERAL NONSENSE",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-2111-unity-an-important-particular-object-is-the",
+     "title": "Unity . \u2014 An important particular object is the unity 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-2112-internal-hom-let-m-e-\u03c6-and-n-f-\u03c8-the-map-t\u03c6",
+     "title": "Internal Hom . \u2014 Let M = (E, \u03a6) and N = (F, \u03a8). The map T\u03a6 ,\u03a8 :",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-21-the-category-of-q-difference-modules-13",
+     "title": "THE CATEGORY OF q-DIFFERENCE MODULES 13",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-038-2113-tensor-product-let-m-e-\u03c6-and-n-f-\u03c8-the-map",
+     "title": "Tensor product . \u2014 Let M = (E, \u03a6) and N = (F, \u03a8). The map",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-039-2114-extension-of-scalars-an-extension-di\ufb00erence",
+     "title": "Extension of scalars . \u2014 An extension di\ufb00erence \ufb01eld ( K \u2032,\u03c3 \u2032) of",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-14-chapter-2-some-general-nonsense",
+     "title": "CHAPTER 2. SOME GENERAL NONSENSE",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-2121-the-functor-of-solutions-it-is-customary-in",
+     "title": "The functor of solutions . \u2014 It is customary in D-module theory to",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-042-21-the-category-of-q-difference-modules-15",
+     "title": "THE CATEGORY OF q-DIFFERENCE MODULES 15",
+     "prose_ratio": 0.345,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-043-16-chapter-2-some-general-nonsense",
+     "title": "CHAPTER 2. SOME GENERAL NONSENSE",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-044-22-the-newton-polygon-and-the-slope-\ufb01ltration",
+     "title": "The Newton polygon and the slope \ufb01ltration",
+     "prose_ratio": 0.012,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-045-221-the-newton-polygon-the-contents-of-this-sect",
+     "title": "The Newton polygon. \u2014 The contents of this section are valid as",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-046-2-note-however-that-from-38-we-changed-our-termi",
+     "title": "Note however that, from [ 38], we changed our terminology: the slopes of a q-di\ufb00erence",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-047-22-the-newton-polygon-and-the-slope-filtration-1",
+     "title": "THE NEWTON POLYGON AND THE SLOPE FILTRATION 17",
+     "prose_ratio": 0.207,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-048-18-chapter-2-some-general-nonsense",
+     "title": "CHAPTER 2. SOME GENERAL NONSENSE",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-049-222-pure-modules-we-call-pure-isoclinic-of-slope",
+     "title": "Pure modules. \u2014 We call pure isoclinic (of slope \u00b5) a module M",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-050-2221-pure-modules-with-integral-slopes-in-partic",
+     "title": "Pure modules with integral slopes . \u2014 In particular, any fuchsian mod-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-051-22-the-newton-polygon-and-the-slope-filtration-1",
+     "title": "THE NEWTON POLYGON AND THE SLOPE FILTRATION 19",
+     "prose_ratio": 0.074,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-052-2222-pure-modules-of-arbitrary-slopes-the-classi",
+     "title": "Pure modules of arbitrary slopes . \u2014 The classi\ufb01cation of pure mod-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-053-223-the-slope-\ufb01ltration-submodules-quotient-modu",
+     "title": "The slope \ufb01ltration. \u2014 Submodules, quotient modules, sums. . . of",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-054-20-chapter-2-some-general-nonsense",
+     "title": "CHAPTER 2. SOME GENERAL NONSENSE",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-055-2231-formal-case-any-q-di\ufb00erence-operator-p-over",
+     "title": "Formal case . \u2014 Any q-di\ufb00erence operator P over C((z)) admits, for",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-056-2232-analytic-case-here-from-old-results-due-ind",
+     "title": "Analytic case . \u2014 Here, from old results due (independantly) to",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-057-23-application-to-the-analytic-isoformal-classif",
+     "title": "APPLICATION TO THE ANALYTIC ISOFORMAL CLASSIFICATION 21",
+     "prose_ratio": 0.304,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-058-22-chapter-2-some-general-nonsense",
+     "title": "CHAPTER 2. SOME GENERAL NONSENSE",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-059-231-a-prototypal-example-and-the-q-borel-transfo",
+     "title": "A prototypal example and the q-Borel transformation. \u2014 To",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-060-23-application-to-the-analytic-isoformal-classif",
+     "title": "APPLICATION TO THE ANALYTIC ISOFORMAL CLASSIFICATION 23",
+     "prose_ratio": 0.22,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-061-24-chapter-2-some-general-nonsense",
+     "title": "CHAPTER 2. SOME GENERAL NONSENSE",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-062-23-application-to-the-analytic-isoformal-classif",
+     "title": "APPLICATION TO THE ANALYTIC ISOFORMAL CLASSIFICATION 25",
+     "prose_ratio": 0.169,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-063-232-the-case-of-two-slopes-the-casek-1-is-of-cou",
+     "title": "The case of two slopes. \u2014 The casek = 1 is of course trivial. The",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-064-26-chapter-2-some-general-nonsense",
+     "title": "CHAPTER 2. SOME GENERAL NONSENSE",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-065-233-matricial-description-we-now-go-for-a-prelim",
+     "title": "Matricial description. \u2014 We now go for a preliminary matricial",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-066-23-application-to-the-analytic-isoformal-classif",
+     "title": "APPLICATION TO THE ANALYTIC ISOFORMAL CLASSIFICATION 27",
+     "prose_ratio": 0.174,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-067-31-isoformal-analytic-classes-of-analytic-q-di\ufb00e",
+     "title": "Isoformal analytic classes of analytic q-di\ufb00erence modules",
+     "prose_ratio": 0.05,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-068-311-extension-classes-of-analytic-q-di\ufb00erence-mo",
+     "title": "Extension classes of analytic q-di\ufb00erence modules. \u2014 From",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-069-1-reading-the-appendix-is-not-a-prerequisite-to",
+     "title": "Reading the appendix is not a prerequisite to reading that chapter, except for some",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-070-30-chapter-3-the-affine-space-of-isoformal-analy",
+     "title": "CHAPTER 3. THE AFFINE SPACE OF ISOFORMAL ANALYTIC CLASSES",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-071-31-isoformal-analytic-classes-of-analytic-q-diff",
+     "title": "ISOFORMAL ANALYTIC CLASSES OF ANALYTIC q-DIFFERENCE MODULES 31",
+     "prose_ratio": 0.307,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-072-312-the-a\ufb03ne-scheme-fp1p-k-now-let-p1p-k-be-pure",
+     "title": "The a\ufb03ne scheme F(P1,...,P k). \u2014 Now let P1,...,P k be pure",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-073-32-index-theorems-and-irregularity",
+     "title": "Index theorems and irregularity",
+     "prose_ratio": 0.295,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-074-2-the-index-computations-in-7-are-more-general-i",
+     "title": "The index computations in [ 7] are more general in two directions: they apply to",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-075-32-index-theorems-and-irregularity-33",
+     "title": "INDEX THEOREMS AND IRREGULARITY 33",
+     "prose_ratio": 0.498,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-076-0-formal-case",
+     "title": "(formal case)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-077-322-the-index-in-the-general-case-generally-spea",
+     "title": "The index in the general case. \u2014 Generally speaking, there is no",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-078-1-the-c-linear-map-p-f-pf-from-k-to-itself-has-a",
+     "title": "The C-linear map P : f \u21a6\u2192P.f from K to itself has an index, that is",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-079-2-the-index-of-p-that-is-the-integer-\u03c7p-dim-kerp",
+     "title": "The index of P , that is the integer \u03c7(P ) := dim KerP\u2212 dim CokerP is",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-080-32-index-theorems-and-irregularity-35",
+     "title": "INDEX THEOREMS AND IRREGULARITY 35",
+     "prose_ratio": 0.189,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-081-323-irregularity-and-the-dimension-of-fp1p-k-the",
+     "title": "Irregularity and the dimension of F(P1,...,P k). \u2014 The follow-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-082-33-explicit-description-of-fp1p-k-in-the-case-of",
+     "title": "Explicit description of F(P1,...,P k) in the case of integral slopes",
+     "prose_ratio": 0.146,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-083-33-explicit-description-of-f-p1-pk-in-the-case-o",
+     "title": "EXPLICIT DESCRIPTION OF F (P1, . . . , Pk) IN THE CASE OF INTEGRAL SLOPES 37",
+     "prose_ratio": 0.045,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-084-331-analytic-classi\ufb01cation-with-2-integral-slope",
+     "title": "Analytic classi\ufb01cation with 2 integral slopes. \u2014 From the re-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-085-0-ir2",
+     "title": "Ir2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-086-1-yn\u00b51",
+     "title": "Yn+\u00b51,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-087-1-xnda2xn-zn-a1",
+     "title": "Xn\u2212dA2\u2212Xn =Zn :=A\u22121",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-088-33-explicit-description-of-f-p1-pk-in-the-case-o",
+     "title": "EXPLICIT DESCRIPTION OF F (P1, . . . , Pk) IN THE CASE OF INTEGRAL SLOPES 39",
+     "prose_ratio": 0.211,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-089-1-un\u00b51bn",
+     "title": "Un+\u00b51B\u2212n",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-090-332-the-birkho\ufb00-guenther-normal-form-going-from",
+     "title": "The Birkho\ufb00-Guenther normal form. \u2014 Going from two slopes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-091-33-explicit-description-of-f-p1-pk-in-the-case-o",
+     "title": "EXPLICIT DESCRIPTION OF F (P1, . . . , Pk) IN THE CASE OF INTEGRAL SLOPES 41",
+     "prose_ratio": 0.185,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-092-333-computational-consequences-of-the-birkho\ufb00-gu",
+     "title": "Computational consequences of the Birkho\ufb00-Guenther nor-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-093-34-interpolation-by-q-gevrey-classes",
+     "title": "Interpolation by q-Gevrey classes",
+     "prose_ratio": 0.54,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-094-34-interpolation-by-q-gevrey-classes-43",
+     "title": "INTERPOLATION BY q-GEVREY CLASSES 43",
+     "prose_ratio": 0.044,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-095-342-isoformal-q-gevrey-classi\ufb01cation",
+     "title": "Isoformal q-Gevrey classi\ufb01cation. \u2014",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-096-343-another-kind-of-q-gevrey-interpolation-a-som",
+     "title": "Another kind of q-Gevrey interpolation. \u2014 A somewhat sym-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-097-41-asymptotics",
+     "title": "Asymptotics",
+     "prose_ratio": 0.441,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-098-41-asymptotics-47",
+     "title": "ASYMPTOTICS 47",
+     "prose_ratio": 0.28,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-099-41-asymptotics-49",
+     "title": "ASYMPTOTICS 49",
+     "prose_ratio": 0.385,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-100-41-asymptotics-51",
+     "title": "ASYMPTOTICS 51",
+     "prose_ratio": 0.26,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-101-413-asymptotics-and-sheaves-on-e-q-recall-from-p",
+     "title": "Asymptotics and sheaves on E q. \u2014 Recall from paragraph 4.1.1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-102-42-existence-of-asymptotic-solutions",
+     "title": "Existence of asymptotic solutions",
+     "prose_ratio": 0.162,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-103-42-existence-of-asymptotic-solutions-53",
+     "title": "EXISTENCE OF ASYMPTOTIC SOLUTIONS 53",
+     "prose_ratio": 0.198,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-104-2121-we-then-apply-lemma-423-herebelow-and-theor",
+     "title": "We then apply lemma 4.2.3 (herebelow) and theorem 4 .2.5 (further",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-105-42-existence-of-asymptotic-solutions-55",
+     "title": "EXISTENCE OF ASYMPTOTIC SOLUTIONS 55",
+     "prose_ratio": 0.419,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-106-2-it-is-asymptotic-to-\u02c6f-1-\u02c6f-in-ie-the-coe\ufb03cien",
+     "title": "It is asymptotic to \u02c6F \u22121 \u02c6F =In, i.e. the coe\ufb03cients of G\u2212In belong to",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-107-43-the-fundamental-isomorphism",
+     "title": "The fundamental isomorphism",
+     "prose_ratio": 0.15,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-108-43-the-fundamental-isomorphism-57",
+     "title": "THE FUNDAMENTAL ISOMORPHISM 57",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-109-431-study-of-h-1eq-\u03bbi-we-choose-\u03c4-c\u2111\u03c4-0-such-tha",
+     "title": "Study of H 1(Eq; \u039bI). \u2014 We choose \u03c4 \u2208 C,\u2111(\u03c4) > 0, such that",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-110-43-the-fundamental-isomorphism-59",
+     "title": "THE FUNDAMENTAL ISOMORPHISM 59",
+     "prose_ratio": 0.053,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-111-432-geometric-interpretation-of-the-elements-of",
+     "title": "Geometric interpretation of the elements of H 1(Eq; \u039bI). \u2014 We",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-112-0-a-pp01k1-r2",
+     "title": "(A) = (p\u25e6p0)\u22121(K1)\u2282 R2,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-113-43-the-fundamental-isomorphism-61",
+     "title": "THE FUNDAMENTAL ISOMORPHISM 61",
+     "prose_ratio": 0.469,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-114-43-the-fundamental-isomorphism-63",
+     "title": "THE FUNDAMENTAL ISOMORPHISM 63",
+     "prose_ratio": 0.025,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-115-433-the-formal-trivialisation-of-the-elements-of",
+     "title": "The formal trivialisation of the elements of H 1(Eq; \u039bI) and the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-116-44-the-isoformal-classi\ufb01cation-by-the-cohomology",
+     "title": "The isoformal classi\ufb01cation by the cohomology of the Stokes",
+     "prose_ratio": 0.097,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-117-441-the-second-main-theorem-before-going-on-let",
+     "title": "The second main theorem. \u2014 Before going on, let us make some",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-118-44-the-isoformal-classification-by-the-cohomolog",
+     "title": "THE ISOFORMAL CLASSIFICATION BY THE COHOMOLOGY OF THE S TOKES SHEAF65",
+     "prose_ratio": 0.657,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-119-51-some-preparatory-notations-and-results",
+     "title": "Some preparatory notations and results",
+     "prose_ratio": 0.067,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-120-511-divisors-and-sectors-on-the-elliptic-curve-e",
+     "title": "Divisors and sectors on the elliptic curve E q = C\u2217/qZ. \u2014 The",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-121-51-some-preparatory-notations-and-results-69",
+     "title": "SOME PREPARATORY NOTATIONS AND RESULTS 69",
+     "prose_ratio": 0.431,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-122-51-some-preparatory-notations-and-results-71",
+     "title": "SOME PREPARATORY NOTATIONS AND RESULTS 71",
+     "prose_ratio": 0.182,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-123-512-jacobi-theta-function-q-exponential-growth-a",
+     "title": "Jacobi Theta function, q-exponential growth and q-Gevrey",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-124-1-we-say-that-f-has-q-exponential-growth-of-orde",
+     "title": "We say that f has q-exponential growth of order (at most) k at in\ufb01nity",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-125-2-we-say-that-f-has-q-exponential-decay-of-order",
+     "title": "We say that f has q-exponential decay of order (at least) k at in\ufb01nity",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-126-52-asymptotics-relative-to-a-divisor-73",
+     "title": "ASYMPTOTICS RELATIVE TO A DIVISOR 73",
+     "prose_ratio": 0.212,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-127-2-the-set-a\u03bb",
+     "title": "The set A\u039b",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-128-521-asymptotics-and-residues-i-when\u03bd-1-divisor-\u03bb",
+     "title": "Asymptotics and residues (I). \u2014 When\u03bd = 1, divisor \u039b reduces",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-129-52-asymptotics-relative-to-a-divisor-75",
+     "title": "ASYMPTOTICS RELATIVE TO A DIVISOR 75",
+     "prose_ratio": 0.351,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-130-52-asymptotics-relative-to-a-divisor-77",
+     "title": "ASYMPTOTICS RELATIVE TO A DIVISOR 77",
+     "prose_ratio": 0.278,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-131-52-asymptotics-relative-to-a-divisor-79",
+     "title": "ASYMPTOTICS RELATIVE TO A DIVISOR 79",
+     "prose_ratio": 0.136,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-132-522-asymptotics-and-residues-ii-after-43-for-any",
+     "title": "Asymptotics and residues (II). \u2014 After [ 43], for any f\u2208 A[\u03bb]",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-133-1-we-call-values-of-f-on-\u03bb-at-0-and-write-\u03bbf0-th",
+     "title": "We call values of F on \u039b at 0, and write \u039bF(0), the \u03bd (germs at in\ufb01nity",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-134-3-that-is-there-exists-constants-c-a-0-such-that",
+     "title": "That is, there exists constants C, A > 0 such that, for any integer n \u226b 0, one has\u23d0",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-135-2-we-say-that-f-hasq-gevrey-order-k-along-diviso",
+     "title": "We say that F hasq-Gevrey order k along divisor \u039b at 0 if all its values",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-136-3-we-write-f-e\u03bb",
+     "title": "We write F\u2208 E\u039b",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-137-1-the-function-g\u2113-has-q-exponential-growth-of-or",
+     "title": "The function g(\u2113) has q-exponential growth of order k both at 0 and in-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-138-2-if-\u2113-k-then-g\u2113\u03bbqn-0-for-all-n-n-else",
+     "title": "If \u2113 < k, then g(\u2113)(\u03bbq\u2212n) = 0 for all n\u2208 N; else,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-139-3-letn-z-and-put-uz-gz",
+     "title": "Letn\u2208 Z and put u(z) := g(z)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-140-52-asymptotics-relative-to-a-divisor-81",
+     "title": "ASYMPTOTICS RELATIVE TO A DIVISOR 81",
+     "prose_ratio": 0.459,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-141-531-f-rom-a-q-gevrey-power-series-to-an-entire-f",
+     "title": "F rom a q-Gevrey power series to an entire function. \u2014 As",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-142-1-for-all-kr-z2-one-has",
+     "title": "For all (k,r )\u2208 Z2, one has:",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-143-2-for-all-n-z-write-tn-the-function-de\ufb01ned-by",
+     "title": "For all n\u2208 Z, write Tn the function de\ufb01ned by:",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-144-532-the-q-gevrey-theorem-of-borel-ritt-the-main",
+     "title": "The q-Gevrey theorem of Borel-Ritt. \u2014 The main result of this",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-145-4-theorem-533-is-proved-with-the-help-of-theorem",
+     "title": "Theorem 5.3.3 is proved with the help of theorem 5.2.8, whe re we gave conditions for",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-146-1-each-function-aij-has-q-exponential-growth-of",
+     "title": "Each function Ai,j has q-exponential growth of order (at most) \u03bd at in-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-147-2-there-exists-c-0-a-0-such-that-for-all-n-n",
+     "title": "There exists C >0, A> 0 such that, for all n\u2208 N:",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-148-533-flat-functions-with-respect-to-a-divisor-in",
+     "title": "Flat functions with respect to a divisor. \u2014 In the proof of the-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-149-1-one-has-f1zn-f2zn-for-some-sequence-of-points",
+     "title": "One has f1(zn) =f2(zn) for some sequence of points (zn) tending to zero",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-150-54-relative-divisors-and-multisummable-functions",
+     "title": "RELATIVE DIVISORS AND MULTISUMMABLE FUNCTIONS 89",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-151-2-on-some-spiral-\u03bbi-belonging-to-divisor-\u03bb",
+     "title": "On some spiral [\u03bbi] belonging to divisor \u039b:",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-152-541-relative-divisors-and-two-levels-asymptotics",
+     "title": "Relative divisors and two levels asymptotics. \u2014 Let \u039b \u2032, \u039b be",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-153-1-we-call-values-of-f-over-the-relative-divisor",
+     "title": "We call values of F over the relative divisor \u039b/\u039b\u2032 at 0, and we write",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-154-2-we-say-that-f-has-q-gevrey-order-k-over-\u03bb\u03bb-at",
+     "title": "We say that F has q-Gevrey order k over \u039b/\u039b\u2032 at 0 if all its values there",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-155-3-let-\u03bb-\u03bb-1-\u03bb2-and-\u03bb-\u03bb-1-we-write-f-e\u03bb",
+     "title": "Let \u039b = \u039b 1 + \u039b2 and \u039b \u2032 = \u039b 1. We write F \u2208 E\u039b",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-156-542-multisummable-functions-more-generally-let",
+     "title": "Multisummable functions. \u2014 More generally, let",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-157-54-relative-divisors-and-multisummable-functions",
+     "title": "RELATIVE DIVISORS AND MULTISUMMABLE FUNCTIONS 91",
+     "prose_ratio": 0.547,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-158-55-analytic-classification-of-linear-q-differenc",
+     "title": "ANALYTIC CLASSIFICATION OF LINEAR q-DIFFERENCE EQUATIONS 93",
+     "prose_ratio": 0.111,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-159-55-analytic-classi\ufb01cation-of-linear-q-di\ufb00erence",
+     "title": "Analytic classi\ufb01cation of linear q-di\ufb00erence equations",
+     "prose_ratio": 0.027,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-160-3-in-particular-we-consider-a-block-diagonal-mat",
+     "title": "In particular, we consider a block diagonal matrice A0 as in (3.1) page 36,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-161-551-summability-of-formal-solutions-consider-the",
+     "title": "Summability of formal solutions. \u2014 Consider the equation (5.39)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-162-55-analytic-classification-of-linear-q-differenc",
+     "title": "ANALYTIC CLASSIFICATION OF LINEAR q-DIFFERENCE EQUATIONS 95",
+     "prose_ratio": 0.38,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-163-552-stokes-phenomenon-and-analytic-classi\ufb01cation",
+     "title": "Stokes phenomenon and analytic classi\ufb01cation. \u2014 Write",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-164-55-analytic-classification-of-linear-q-differenc",
+     "title": "ANALYTIC CLASSIFICATION OF LINEAR q-DIFFERENCE EQUATIONS 97",
+     "prose_ratio": 0.464,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-165-1-there-exists-\u03bb0\u03bb-a0-a0-such-that-\u03bbq-\u03bb0q-but",
+     "title": "There exists (\u03bb0,\u03bb ) \u2208 {A0}\u00d7{ A0} such that [\u03bb;q] \u2044= [ \u03bb0;q] but",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-166-3-the-matrices-b1-and-b2-give-rise-to-analytical",
+     "title": "The matrices B1 and B2 give rise to analytically equivalent q-di\ufb00erence",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-167-61-privileged-cocycles",
+     "title": "Privileged cocycles",
+     "prose_ratio": 0.406,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-168-1-in-the-context-of-q-di\ufb00erence-equations-the-si",
+     "title": "In the context of q-di\ufb00erence equations, the singular locus of a matrix of func tions P",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-169-61-privileged-cocycles-101",
+     "title": "PRIVILEGED COCYCLES 101",
+     "prose_ratio": 0.466,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-170-612-privileged-cocycles-we-have-three-ways-of-co",
+     "title": "Privileged cocycles. \u2014 We have three ways of constructing a co-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-171-61-privileged-cocycles-103",
+     "title": "PRIVILEGED COCYCLES 103",
+     "prose_ratio": 0.014,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-172-0-is",
+     "title": "Is",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-173-62-d-evissageq-gevrey",
+     "title": "D\u00b4 evissageq-Gevrey",
+     "prose_ratio": 0.017,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-174-621-the-abelian-case-of-two-slopes-when-the-newt",
+     "title": "The abelian case of two slopes. \u2014 When the Newton polygon of",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-175-62-d-evissage-q-gevrey-105",
+     "title": "D \u00b4EVISSAGE q-GEVREY 105",
+     "prose_ratio": 0.243,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-176-622-a-sequence-of-central-extensions-for-simplic",
+     "title": "A sequence of central extensions. \u2014 For simplicity, we write G",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-177-623-explicit-computation-we-want-to-make-more-ex",
+     "title": "Explicit computation. \u2014 We want to make more explicit theorem",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-178-62-d-evissage-q-gevrey-107",
+     "title": "D \u00b4EVISSAGE q-GEVREY 107",
+     "prose_ratio": 0.357,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-179-624-v-arious-geometries-on-fp1p-k-in-subsection",
+     "title": "V arious geometries on F(P1,...,P k). \u2014 In subsection 3.3.2, we",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-180-334-the-d-evissage-above-implies-that-it-is-the",
+     "title": "The d\u00b4 evissage above implies that it is the same as thea\ufb03ne structure on",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-181-63-v-ector-bundles-associated-to-q-di\ufb00erence-mod",
+     "title": "V ector bundles associated to q-di\ufb00erence modules",
+     "prose_ratio": 0.157,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-182-63-vector-bundles-associated-to-q-difference-mod",
+     "title": "VECTOR BUNDLES ASSOCIATED TO q-DIFFERENCE MODULES 109",
+     "prose_ratio": 0.367,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-183-632-sheaf-theoretical-interpretation-of-irregula",
+     "title": "Sheaf theoretical interpretation of irregularity . \u2014 We inter-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-184-1-in-its-original-form-adams-lemma-1-31-20-says",
+     "title": "In its original form, Adams lemma [ 1, 31, 20 ] says that, for any analytic q-di\ufb00erence",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-185-711-adams-lemma-was-used-implicitly-in-paragraph",
+     "title": "Adams lemma was used implicitly in paragraph 2.2.3 th rough its consequences: exis-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-186-2-this-was-of-course-well-known-to-stokes-himsel",
+     "title": "This was of course well known to Stokes himself when he stud ied the Airy equation,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-187-7021-notations-we-use-some-notations-from-q-calc",
+     "title": "Notations . \u2014 We use some notations from q-calculus for this chapter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-188-71-the-q-euler-equation-and-con\ufb02uent-basic-hyper",
+     "title": "The q-Euler equation and con\ufb02uent basic hypergeometric series",
+     "prose_ratio": 0.078,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-189-71-the-q-euler-equation-and-confluent-basic-hype",
+     "title": "THE q-EULER EQUATION AND CONFLUENT BASIC HYPERGEOMETRIC SERIES 113",
+     "prose_ratio": 0.114,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-190-711-a-digest-on-the-q-euler-equation",
+     "title": "A digest on the q-Euler equation. \u2014",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-191-7111-formal-solution-we-obtain-it-for-instance-b",
+     "title": "Formal solution . \u2014 We obtain it, for instance, by iterating the z-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-192-7112-birkho\ufb00-guenther-normal-form-there-is-a-uni",
+     "title": "Birkho\ufb00-Guenther normal form . \u2014 There is a unique \u03b1\u2208 C such",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-193-71-the-q-euler-equation-and-confluent-basic-hype",
+     "title": "THE q-EULER EQUATION AND CONFLUENT BASIC HYPERGEOMETRIC SERIES 115",
+     "prose_ratio": 0.131,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-194-712-some-con\ufb02uent-basic-hypergeometric-functions",
+     "title": "Some con\ufb02uent basic hypergeometric functions. \u2014 Usual basic",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-195-7121-factoring-l-to-get-l-q2z\u03c3qa\u03c3qb-we-\ufb01rst-look",
+     "title": "Factoring L. \u2014 To get L = q2z(\u03c3q\u2212A)(\u03c3q\u2212B), we \ufb01rst look for",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-196-713-some-special-cases-takinga-b-q1-yields",
+     "title": "Some special cases. \u2014 Takinga :=b :=q\u22121 yields:",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-197-71-the-q-euler-equation-and-confluent-basic-hype",
+     "title": "THE q-EULER EQUATION AND CONFLUENT BASIC HYPERGEOMETRIC SERIES 117",
+     "prose_ratio": 0.351,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-198-72-the-symmetric-square-of-the-q-euler-equation",
+     "title": "The symmetric square of the q-Euler equation",
+     "prose_ratio": 0.171,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-199-721-algebraic-aspects-remember-that-the-equation",
+     "title": "Algebraic aspects. \u2014 Remember that the equation f = 1 +z\u03c3qf",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-200-7211-newton-polygon-of-a-symmetric-square-to-\ufb01nd",
+     "title": "Newton polygon of a symmetric square . \u2014 To \ufb01nd the equation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-201-72-the-symmetric-square-of-the-q-euler-equation",
+     "title": "THE SYMMETRIC SQUARE OF THE q-EULER EQUATION 121",
+     "prose_ratio": 0.098,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-202-7212-algebraic-summation-of-the-square-of-the-ts",
+     "title": "Algebraic summation of the square of the Tshakalo\ufb00 s eries. \u2014 The",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-203-722-analytic-aspects",
+     "title": "Analytic aspects. \u2014",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-204-7222-multisummability",
+     "title": "Multisummability . \u2014",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-205-1-if-\u03bb-\u00b5-then-fg-o2\u03bb",
+     "title": "If [\u03bb] = [\u00b5], then fg\u2208 O2[\u03bb]",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-206-2-if-\u03bb-\u00b5-then-generically-fg-o\u03bb\u00b5",
+     "title": "If [\u03bb]\u2044= [\u00b5], then, generically fg /\u2208 O[\u03bb]+[\u00b5]",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-207-73-from-the-mock-theta-functions-to-the-q-euler",
+     "title": "FROM THE MOCK THETA FUNCTIONS TO THE q-EULER EQUATION 123",
+     "prose_ratio": 0.027,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-208-7223-possibility-of-a-multisummation-process-no",
+     "title": "Possibility of a multisummation process . \u2014 No explicit algorithm is",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-209-73-f-rom-the-mock-theta-functions-to-the-q-euler",
+     "title": "F rom the Mock Theta functions to the q-Euler equation",
+     "prose_ratio": 0.183,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-210-4-at-least-so-says-watson-in-loc-cit-however-thi",
+     "title": "At least, so says Watson in loc. cit. . However, this is questioned by G.E. Andrews",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-211-73-from-the-mock-theta-functions-to-the-q-euler",
+     "title": "FROM THE MOCK THETA FUNCTIONS TO THE q-EULER EQUATION 125",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-212-731-f-unctional-equation-for-s\u03b1\u03b2-qz-from-the-rec",
+     "title": "F unctional equation for s(\u03b1,\u03b2 ;q,z ). \u2014 From the recurrence rela-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-213-732-back-to-the-the-mock-theta-function-we-can-f",
+     "title": "Back to the the Mock Theta function. \u2014 We can for instance",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-214-733-back-to-the-q-euler-equation-to-\ufb01t-this-equa",
+     "title": "Back to the q-Euler equation. \u2014 To \ufb01t this equation with the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-215-74-from-class-numbers-of-quadratic-forms-to-the",
+     "title": "FROM CLASS NUMBERS OF QUADRATIC FORMS TO THE q-EULER EQUATION127",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-216-7332-birkho\ufb00-guenther-normal-form-according-to-s",
+     "title": "Birkho\ufb00-Guenther normal form . \u2014 According to section 3.3, we see",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-217-7333-privileged-cocycles-there-is-here-an-obviou",
+     "title": "Privileged cocycles . \u2014 There is here an obvious isomorphism of",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-218-74-f-rom-class-numbers-of-quadratic-forms-to-the",
+     "title": "F rom class numbers of quadratic forms to the q-Euler equation",
+     "prose_ratio": 0.293,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-219-741-the-generating-series-for-the-class-numbers",
+     "title": "The generating series for the class numbers. \u2014 Consider the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-220-742-modular-relations-in-order-to-obtain-modular",
+     "title": "Modular relations. \u2014 In order to obtain modular and asymptotic",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-221-74-from-class-numbers-of-quadratic-forms-to-the",
+     "title": "FROM CLASS NUMBERS OF QUADRATIC FORMS TO THE q-EULER EQUATION129",
+     "prose_ratio": 0.271,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-222-743-related-other-examples-mordell-also-mentions",
+     "title": "Related other examples. \u2014 Mordell also mentions that the fol-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-223-23-we-\ufb01rst-describe-in-section-a1-an-abstract-ve",
+     "title": "We \ufb01rst describe in section A.1 an abstract version of th e problem, which",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-224-1-this-is-all-the-more-necessary-since-the-work",
+     "title": "This is all the more necessary since the work [ 40] by the \ufb01rst two authors strongly",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-225-3-note-however-that-the-latter-comes-by-identify",
+     "title": "Note however that the latter comes by identifying Ext with Ext1, and that there",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-226-4-also-see-the-revised-version-extensions-panach",
+     "title": "Also see the revised version \u201cExtensions panach\u00b4 ees auto duales\u201d, to be found on",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-227-0-ip",
+     "title": "Ip",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-228-bibliography",
+     "title": "Bibliography",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-046",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0203273v3/blocks/prose-sec-046",
   "kind": "prose",
   "title": "Lemme. Toute alg`ebre de dimension ﬁnie sans radical sur un corps parfait",
   "pageStart": 18,
   "pageEnd": 18,
   "text": "../sections/sec-046-224-lemme-toute-algebre-de-dimension-ﬁnie-sans-r.md",
-  "derivedFrom": "library/arxiv-math-0203273v3/manifest",
-  "sourceDocument": "library/arxiv-math-0203273v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203273v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203273v3/manifest.jsonld",
   "provenance": "ingested"
 }

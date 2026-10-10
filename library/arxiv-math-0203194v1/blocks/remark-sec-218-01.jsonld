@@ -1,0 +1,16 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203194v1/blocks/remark-sec-218-01",
+  "kind": "remark",
+  "pageStart": 103,
+  "pageEnd": 103,
+  "text": "remark-sec-218-01.md",
+  "derivedFrom": "library/arxiv-math-0203194v1/sections/sec-218",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203194v1/manifest.jsonld",
+  "provenance": "ingested"
+}

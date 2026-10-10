@@ -7,12 +7,31 @@ section_number: 1
 pages: 1-1
 source_pdf: 1010.5321v3.pdf
 source_sha256: c6bb20926b1f291f
+text_source: latex
+latex_prose_ratio: 0.616
+latex_coverage_ratio: 1.0
 doc_brief: "Formulas on hyperbolic volume — This paper collects some important formulas on hyperbolic volume."
 ---
-In the ﬁrst section we give certain formulas with respect to s ome important coordinate systems
-and models, respectively.
-Then we collect the classical results on three-dimensional hyperbolic volume of J.Bolyai and
-N.I.Lobachevsky. The most famous volume-integral (depend ent on the dihedral angles of the
-orthosceme) discovered by N.I.Lobachevsky known and inves tigated worldwide however it is not
-well-known that for this volume J.Bolyai also gave two integ rals. He used as parameters both
-of the measure of the dihedral angles and the edges, respecti vely. We observed that there is no
+In the first section we give certain formulas with respect to some important coordinate systems and models, respectively.
+
+Then we collect the classical results on three-dimensional hyperbolic volume of J.Bolyai and N.I.Lobachevsky. The most famous volume-integral (dependent on the dihedral angles of the orthosceme) discovered by N.I.Lobachevsky known and investigated worldwide however it is not well-known that for this volume J.Bolyai also gave two integrals. He used as parameters both of the measure of the dihedral angles and the edges, respectively. We observed that there is no volume-formula by edge-lengthes as parameters so as an application of our general formulas we compute such an integral. We will use to this calculation the system of hyperbolic orthogonal coordinates.
+
+Finally we give a collection some new interesting formulas of special kinds of bodies discovered by contemporary mathematics showing that this old and hard problem is evergreen.
+
+## Notation
+
+$\mathbb{R}^{n}$, $\mathbb{E}^{n}$, $\mathbb{H}^{n}$:
+
+:   The space of the $n$-dimensional real vectors, the $n$-dimensional Euclidean space and the $n$-dimensional hyperbolic space, respectively.
+
+$x_i$:
+
+:   The $i^{th}$ coordinate axis, and coordinate value with respect to an Cartesian coordinate system of $\mathbb{E}^{n}$ or $\mathbb{H}^{n}$.
+
+$\xi_i$:
+
+:   The $i^{th}$ coordinate axis, and coordinate value with respect to paracyclic coordinate system of $\mathbb{H}^{n}$.
+
+$\phi_i$, $r_i$:
+
+:   The angle between the $i^{th}$ coordinate axis and the segment $OP_{i+1}$ and the length of the segment $OP_{i}$, respectively.

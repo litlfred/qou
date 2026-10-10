@@ -7,7 +7,8 @@
   "bytes": 542568,
   "pages": 28,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -278,6 +279,95 @@
   "likely_scanned": false,
   "toc_entries": 14,
   "sections": 14,
-  "chars_total": 47762
+  "chars_total": 47762,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "manuscriptCharlierClaeys.tex",
+   "tex_sections": 6,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.629,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-i",
+     "title": "I\u2032",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-2-k",
+     "title": "K\u2032",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-0-2\u03b6",
+     "title": "(2(\u2212\u03b6)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-2-wz\u03c33",
+     "title": "W(z)\u03c33,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-2-wz\u03c33-1",
+     "title": "W(z)\u03c33 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-1-we-get",
+     "title": "We get",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-12-0-sin-\u03b80",
+     "title": "(0) = sin \u03b80",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-2-if-w-0",
+     "title": "(if W = 0),",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-12-0-r120p",
+     "title": "(0) + R12(0)P (\u221e)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-2-on12",
+     "title": "O(n1/2),",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

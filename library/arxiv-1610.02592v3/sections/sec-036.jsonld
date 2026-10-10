@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.02592v3/sections/sec-036",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Algebraic topology",
+  "pageStart": 277,
+  "pageEnd": 280,
+  "contains": [
+    "library/arxiv-1610.02592v3/blocks/prose-sec-036",
+    "library/arxiv-1610.02592v3/blocks/proposition-sec-036-01",
+    "library/arxiv-1610.02592v3/blocks/conjecture-sec-036-02",
+    "library/arxiv-1610.02592v3/blocks/proposition-sec-036-03",
+    "library/arxiv-1610.02592v3/blocks/proposition-sec-036-04",
+    "library/arxiv-1610.02592v3/blocks/corollary-sec-036-05",
+    "library/arxiv-1610.02592v3/blocks/corollary-sec-036-06",
+    "library/arxiv-1610.02592v3/blocks/proposition-sec-036-07",
+    "library/arxiv-1610.02592v3/blocks/corollary-sec-036-08"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.02592v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.02592v3/manifest.jsonld",
+  "provenance": "ingested"
+}

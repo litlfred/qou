@@ -7,1759 +7,257 @@ section_number: 5
 pages: 32-46
 source_pdf: 2211.12836v2.pdf
 source_sha256: 4ffbb8b21f8b175d
+text_source: latex
+latex_prose_ratio: 0.941
+latex_coverage_ratio: 0.901
 doc_brief: "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION — We study a class of commuting Markov kernels whose simplest element describes the movement ofk particles on a discrete"
 ---
-The goal of this section is to estimate the discrete Fourier transform of the convolution of a
-sequence (µi)1≤i≤m of h-probability measures in Bk,n when m is large compared to n. Mimicking
-the previous deﬁnition for elements of Bk,n, for x∈ Rk we set⟨x⟩ =∑k
-j=1xj and then deﬁne
-~x =x−⟨x⟩
-k 1k =
-(
-x1−⟨x⟩
-k ,...,x k−⟨x⟩
-k
-)
-.
-We then introduce for x∈ Rk the shifted norm
-K(x) =‖x‖2−‖ ˜I0‖2,
-where‖·‖ denotes the usual Euclidean norm on Rk. We will regularly use for x∈ Rk the identity
-(26) K (˜x) =K(x)−⟨x⟩2
-k ,
-whose proof is left to the reader. Remark that we have in particular K( ˜I0) = 0 and that I∈Bk,n
-satisﬁes K(˜I) = 0 if and only if I = I0 +𝓁1k for some 0 ≤ 𝓁≤ n−k. Finally, we introduce for
-I∈Bk,n the shifted conﬁguration
-ˆI =I−Ik1k = (I1−Ik,...,I k−1−Ik, 0),
-so that ˆI∈ Bk,n. We introduced in Section 2 for µ∈M 1(Bk,n), the random variable Iµ∈ Bk,n
-whose distribution is
-P(Iµ =I) =µ(I)µh(I) =|V (ξn(I))|2
-nk µ(I).
-We then set
-(27)
-‖µ‖r = E
-[
-‖˜Iµ‖r
-]
-, ⟨µ⟩ = E [⟨Iµ⟩],⟨ˆµ−I0⟩r = E
-[
-⟨ˆIµ−I0⟩r
-]
-and Varr(µ) = E
-[⏐⏐⏐⟨Iµ⟩−⟨ µ⟩
-⏐⏐⏐
-r]
-for r≥ 2. We simply write Var (µ) for Var 2(µ) in the sequel, and we ﬁnally set
-K(µ) :=‖µ‖2−‖ ˜I0‖2 = E
-[
-K(˜Iµ)
-]
-.
-The ﬁrst main estimate of the Fourier transform is the following lemma, which shows pointwise
-asymptotics of the Fourier transform as n goes to inﬁnity. For sake of completeness, we give
-asymptotic results which hold uniformly in k. In the following statement, recall that for I∈ Bk
-withI1<I k+n, we setλI =I−I0 andI(n) is the unique element ofBk,n such that{I(n)
-i [n]}1≤i≤k =
-{Ii[n]}1≤i≤k.
-Lemma 5.1. Letn,k≥ 2. For any h-probability measureµ∈Bk,n and I∈Bk with n≥‖I‖∞,
-e−2iπ (⟨µ⟩−⟨I0⟩)·⟨λI⟩
-kn Φn[µ](I(n)) = 1− (2π)2
-2n2
-[
-K(µ)K(˜I)
-k2− 1 + Var (µ)⟨λI⟩2)
-k2
-]
-+ 1
-n3O
-(Var 3(µ)·|⟨λI⟩|3
-k3 +⟨ˆµ−I0⟩3·‖ ˜I‖3
-∞
-)
-,
-and
-⏐⏐⏐Φn[µ](I(n))
-⏐⏐⏐≤ 1− (2π)2
-2n2
-K(µ)K(˜I)
-k2− 1 + 1
-n3O
-(
-⟨ˆµ−I0⟩3·‖ ˜I‖3
-∞
-)
-,
-whereO(·) only depends on numeric constants.
-QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION 33
-The main ingredient in the proof of the latter lemma is an asymptotic formula for ratios of Schur
-functions. Recall that Λ k denotes the set of partitions with at most k parts and for ⃗ u∈ Rk we
-abbreviate exp(i⃗ u) for the vector (exp(iu1),..., exp(iuk)).
-Lemma 5.2. Let k≥ 2. For any λ∈ Λk with λk = 0 and ⃗ u∈ Rk such that ∑k
-i=1ui = 0 and
-⟨λ⟩ max(‖⃗ u‖∞,k/ 3)≤n,
-sλ
-(
-exp
-(
-2πi⃗ u/n
-))
-sλ
-(
-exp
-(
-2πi~I0/n
-)) = 1− (2π)2
-2(k2− 1)n2
-[
-K(~Iλ)K(⃗ u)
-]
-+O
-((⟨λ⟩· (‖⃗ u‖∞ +k)
-n
-)3)
-,
-with O(·) only depending on numeric constants.
-The proof of this lemma uses shifted Schur functions, as introduced in [45]. Shifted Schur
-functions form a particular basis{s∗
-λ}λ∈R of the ring of polynomials functions in {xi}i≥1 which are
-symmetric in the variables{xi−i}i≥1. Their main useful property for us is the following generalized
-binomial formula for all k≥ 1 and µ∈ Λk, see [45, Sec. 5],
-(28) sµ(1 +x1,..., 1 +xk)
-sµ(1,..., 1) =
-∑
-ν⊂µ
-1
-(k ↿ν)s∗
-ν(µ1,...,µ k)sν(x1,...,x k),
-wheresν,ν ∈ Λk are the usual Schur functions and (k ↿ν) =∏k
-i=1
-(νi+k−i)!
-(k−i)! =∏l(ν)
-i=1
-∏νi
-j=1(k−i+j).
-We will be mostly interested in the ﬁrst shifted Schur functions, namely for |ν|≤ 2. We then have
-s∗
-(1)(x1,x 2,... ) =
-∑
-i≥1
-xi, s∗
-(2)(x1,x 2,... ) =
-∑
-i≤j
-xj(xi− 1), s∗
-(11)(x1,x 2,... ) =
-∑
-i<j
-xj(xi + 1).
-Proof of Lemma 5.2. We only prove this lemma for λ∈ Λk such that ⟨λ⟩≥ 3, the case ⟨λ⟩≤ 2
-being done similarly. Let k≥ 1 and λ∈ Λk with⟨λ⟩≥ 3. By (28), for ( x1,...,x k)∈ Ck we have
-sλ(1 +x1,..., 1 +xk)
-sλ(1,..., 1) =
-∑
-ν⊂λ
-1
-(k ↿ν)s∗
-ν(λ)sν(⃗ x)
-=1 + 1
-(k ↿ (1))s∗
-(1)(λ)s(1)(⃗ x) + 1
-(k ↿ (2))s∗
-(2)(λ)s(2)(⃗ x)
-+ 1
-(k ↿ (11))s∗
-(11)(λ)s(11)(⃗ x) +Cλ(⃗ x),(29)
-with Cλ(⃗x) =∑
-ν⊂λ
-⟨ν⟩≥3
-1
-(k↿ν)s∗
-ν(λ)sν(⃗ x). Remark ﬁrst that for ⃗ x∈ Ck,|sν(⃗ x)|≤‖ ⃗ x‖⟨ν⟩
-∞sν(1..., 1), so
-that, using that (k ↿ν) =sν(1k)H(ν) with 1k the constant vector of length k equal to 1 and H(µ)
-the Hook length of µ, see [45, Eq. 5.5],
-|Cλ(⃗x)|≤
-∑
-ν⊂λ
-⟨ν⟩≥3
-1
-(k ↿ν)s∗
-ν(λ)sν(⃗ x)≤
-∑
-ν⊂λ
-⟨ν⟩≥3
-sν(1..., 1)
-(k ↿ν) s∗
-ν(λ)‖⃗ x‖⟨ν⟩
-∞
-≤
-∑
-ν⊂λ
-⟨ν⟩≥3
-s∗
-ν(λ)
-H(ν)‖⃗ x‖⟨ν⟩
-∞.
-Using that (|λ|−⟨ν⟩)!
-⟨λ⟩! s∗
-ν(λ) = dimV (λ\ν)
-dimV (λ) , where V (λ) denotes the Specht irreducible representation
-of the symmetric group S⟨λ⟩ associated to λ (see [45, Eq. 0.14]), and the classical Hook length
-34 J. GUILHOT, C. LECOUVEY, AND P. TARRAGO
-formula dimV (λ) = ⟨λ⟩!
-H(λ), we get
-|Cλ(⃗x)|≤
-∑
-ν⊂λ
-⟨ν⟩≥3
-H(ν)−1 ⟨λ⟩! dimV (λ\ν)
-(⟨λ⟩−⟨ ν⟩)! dimV (λ)‖⃗ x‖⟨ν⟩
-∞
-≤
-∑
-ν⊂λ
-⟨ν⟩≥3
-(⟨λ⟩
-⟨ν⟩
-)dimV (ν) dimV (λ\ν)
-dimV (λ) ‖⃗ x‖⟨ν⟩
-∞
-≤
-⟨λ⟩∑
-l=3
-(⟨λ⟩
-l
-)
-‖⃗ x‖l
-∞
-
-
-∑
-ν⊂λ
-⟨ν⟩=l
-dimV (ν) dimV (λ\ν)
-dimV (λ)
-
-.
-Remark that dim V (λ) = ∑
-ν⊂λ
-⟨ν⟩=l
-dimV (ν) dimV (λ\ν) for all 1 ≤ l ≤ ⟨λ⟩ by restricting the
-representationV (λ) of S⟨λ⟩ to Sl×S⟨λ⟩−l, so that ∑
-ν⊂λ
-⟨ν⟩=l
-dimV (ν) dimV (λ\ν)
-dimV (λ) = 1 and ﬁnally
-|Cλ(⃗x)|≤
-⟨λ⟩∑
-l=3
-(⟨λ⟩
-l
-)
-‖⃗ x‖l
-∞
-≤‖⃗ x‖3
-∞
-⟨λ⟩!
-3!(⟨λ⟩− 3)!(1 +‖⃗ x‖∞)⟨λ⟩−3≤⟨λ⟩3
-6 ‖⃗ x‖3
-∞(1 +‖⃗ x‖∞)⟨λ⟩−3
-as long as ‖x‖∞ < 1, with C only depending on λ. Remark that for ‖x‖∞≤ 1/⟨λ⟩, the latter
-bound simpliﬁes as
-(30) |Cλ(⃗x)|≤ e·⟨λ⟩3
-6 ‖⃗ x‖3
-∞.
-Let us then focus on the ﬁrst terms of the right-hand side of (29). First, we have 1
-(k↿(1)) = 1
-k and
-s∗
-(1) =s1, so that
-1
-(k ↿ (1))s∗
-(1)(λ)s(1)(⃗ x) = 1
-ks(1)(λ)s(1)(⃗ x).
-Set xi = exp(iui/n)− 1, for 1≤i≤k. We then have |xi|≤ (1∧|ui|/n) and there is a numerical
-constantC′> 0 such that
-⏐⏐⏐xi−iui/n + u2
-i
-2n2
-⏐⏐⏐≤ C′|ui|3
-n3 . Using that ∑k
-i=1ui = 0, this yields
-⏐⏐⏐⏐⏐s(1)(⃗ x) + 1
-2n2
-k∑
-i=1
-u2
-i
-⏐⏐⏐⏐⏐≤ kC′‖⃗ u‖3
-∞
-n3 .
-Hence, introducing the second power sum p2(⃗ u) =∑k
-i=1u2
-i ,
-(31) 1
-(k ↿ (1))s∗
-(1)(λ)s(1)(⃗ x) =−s(1)(λ)p2(⃗ u)
-2kn2 +K,
-with|K|≤ C⟨λ⟩‖⃗ u‖3
-∞
-n3 with C numeric.
-Next, 1
-(k↿(11)) = 1
-k(k−1) and 1
-(k↿(2)) = 1
-k(k+1). Introducing the shifted power sum p∗
-2 =∑k
-i=1(xi−
-i)2− (−i)2 =∑k
-i=1xi(xi− 2i), we then have the shifted Newton identities
-s∗
-2 = 1
-2(s2
-1 +p∗
-2), s∗
-11 = 1
-2(s2
-(1)−p∗
-2)−s(1).
-QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION 35
-Hence, using additionally the usual Newton identities yields
-1
-(k ↿ (2))s∗
-(2)(λ)s(2)(⃗ x) + 1
-(k ↿ (11))s∗
-(11)(λ)s(11)(⃗ x)
-= 1
-4k(k + 1)
-[
-s2
-(1)(λ) +p∗
-2(λ)
-]
-·
-[
-s2
-(1)(⃗ x) +p2(⃗ x)
-]
-+ 1
-4k(k− 1)
-[
-s2
-(1)(λ)−p∗
-2(λ)− 2s(1)(λ))
-]
-·
-[
-s2
-(1)(⃗ x)−p2(⃗ x)
-]
-= 1
-2k(k2− 1)
-[
-s2
-(1)(λ)
-(
-ks2
-(1)(⃗ x)−p2(⃗ x)
-)
-+p∗
-2(λ)
-(
-kp2(⃗ x)−s2
-(1)(⃗ x)
-)
-− (k + 1)s(1)(λ)
-(
-s2
-(1)(⃗ x)−p2(⃗ x)
-)]
-.
-There exists a numeric constant C >0 such that
-|xi−iui/n|≤ C|ui|2
-n2 .
-Hence, since s(1)(⃗ u) = 0, we have
-⏐⏐s(1)(⃗ x)
-⏐⏐≤ Ck‖⃗ u‖2
-∞
-n2 , which yields
-⏐⏐s(1)(⃗ x)2⏐⏐≤2Ck2‖⃗ u‖3
-∞
-n3
-for some numeric constant C >0 when‖⃗ u‖∞≤n. Likewise,
-⏐⏐x2
-i +u2
-i/n2⏐⏐≤ 2C|ui|3
-n3 for 1≤i≤k,
-so that
-⏐⏐p2(⃗ x) +p2(⃗ u)/n2)
-⏐⏐≤ 2Ck‖⃗ u‖3
-∞
-n3 .
-Therefore,
-1
-(k ↿ (2))s∗
-(2)(λ)s(2)(⃗ x)+ 1
-(k ↿ (11))s∗
-(11)(λ)s(11)(⃗ x)
-= 1
-2k(k2− 1)n2
-[
-s2
-(1)(λ)p2(⃗ u)−kp∗
-2(λ)p2(⃗ u)− (k + 1)s(1)(λ)p2(⃗ u)
-]
-+K′,(32)
-with
-K′≤C ‖⃗ u‖3
-∞
-n3k(k2− 1)
-[
-s2
-(1)(λ)(k3 +k) +k2|p∗
-2(λ)| +s(1)(λ)(k3 +k2)
-]
-≤C′‖⃗ u‖3
-∞s2
-(1)(λ)
-n3 ,
-for some numeric C,C′ > 0, where we used on the last inequality that |p∗
-2(λ)|/k≤ s(1)(λ)2 for
-λ∈ Λk. Remark that
-p∗
-2(λ) + (k + 1)s(1)(λ) =
-k∑
-i=1
-λi(λi +k− 2i + 1) =
-k∑
-i=1
-(
-λi + k− 2i + 1
-2
-)2
-−
-(k− 2i + 1
-2
-)2
-=‖λ + ˜I0‖2−‖ ˜I0‖2 =K(λ + ˜I0),
-36 J. GUILHOT, C. LECOUVEY, AND P. TARRAGO
-where K is deﬁned at the beginning of this section and we recall that ˜I0 = I0− ⟨I0⟩
-k 1k =(k+1−2i
-2
-)
-1≤i≤k. Hence, putting (30), (31) and (32) together yields then, for ‖⃗ u‖∞/n≤ 1
-⟨λ⟩,
-sλ(exp(iu1/n),..., exp(iuk/n))
-sλ(1,..., 1) = 1− 1
-2k(k2− 1)n2
-[
-−s2
-(1)(λ)p2(⃗ u) +kp2(⃗ u)K(λ + ˜I0)
-]
-+O
-((⟨λ⟩·‖ ⃗ u‖∞
-n
-)3)
-,
-= 1− 1
-2(k2− 1)n2
-[
-p2(⃗ u)
-(
-K(λ + ˜I0)−
-s2
-(1)(λ)
-k
-)]
-+O
-((⟨λ⟩·‖ ⃗ u‖∞
-n
-)3)
-,(33)
-where the last term of the right-hand side of the ﬁrst equality takes into account the correction
-coming from (31). Since s(1)(λ) =⟨λ⟩ =|Iλ|−⟨ I0⟩ and λ + ˜I0 =Iλ +⟨I0⟩
-k 1k, we have by (26)
-K(λ + ˜I0)−
-s2
-(1)(λ)
-k =K( ~λ +I0) +|λ + ˜I0|
-k −⟨λ⟩2
-k =K(~λI).
-Hence,
-(34) sλ(exp(iu1/n),..., exp(iuk/n))
-sλ(1,..., 1) = 1− K(~Iλ)‖⃗ u‖2
-2(k2− 1)n2 +O
-((⟨λ⟩·‖ ⃗ u‖∞
-n
-)3)
-,
-where we used that p2(⃗ u) =‖⃗ u‖2. In the special case where ⃗ u= 2π~I0 = 2π((k− 1)/2,..., −(k−
-1)/2), which satisﬁes ∑k
-i=1ui = 0, we have⟨I0⟩∞≤ 2πk, so that
-(35) sλ(exp(2iπ~I0/n))
-sλ(1,..., 1) = 1− (2π)2K(~Iλ)‖~I0‖2
-2(k2− 1)n2 +O
-((⟨λ⟩· k
-n
-)3)
-.
-Then, taking the ratio of (34) with (35) yields, as long as⟨λ⟩ max(‖⃗ u‖∞,k/ 3)≤n (remark that the
-constant 1/3 is arbitrary and chosen for later simpliﬁcation), which impliesK(~Iλ) max(‖⃗ u‖2
-∞,k 2)≤
-kn2,
-sλ(exp(2iπ⃗ u/n))
-sλ(exp(2iπ~I0/n))
-= 1− (2π)2
-2(k2− 1)n2
-[
-K(~Iλ)K(⃗ u)
-]
-+O
-((⟨λ⟩· (‖⃗ u‖∞ +k)
-n
-)3)
-.
-□
-Proof of Lemma 5.1. Let us ﬁx I∈Bk and ﬁrst assume that µ =δJ, n≥⟨J⟩∞. Then, for such n,
-by (19) and the fact that ξn(I) =ξn(I(n)), we have
-Φn[µ](I(n)) = SJ(ξn(I(n)))
-SJ(ξn(I0)) = SJ(ξn(I))
-SJ(ξn(I0)).
-By deﬁnition of the map ξn in (1) and the deﬁnition of SJ following (10),
-SJ(ξn(I)) =sλJ
-(
-exp
-(
-2iπ
-(
-I− k− 1
-2 1k
-)))
-=sλJ
-(
-exp
-(
-2iπ
-(
-I−⟨I0⟩
-k 1k
-)))
-,
-QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION 37
-where we used that ⟨I0⟩ = ∑k
-j=1(k−j) = k(k−1)
-2 . Moreover, recall that ˜I = I−⟨I⟩/k1k and
-ˆJ =J−Jk1k and remark that from the deﬁnition of SJ we have for ⃗ u∈ Rk such that ⃗ u= 0,
-SJ(⃗ u) =S ˆJ+Jk1k
-(⃗ u) =eiJk
-∑k
-l=1ulS ˆJ(⃗ u) =S ˆJ(⃗ u).
-Hence, using that SJ(⃗ u+l1k) = exp(il⟨λJ⟩)SJ(⃗ u) for l∈ R, we get
-SJ(ξn(I))
-SJ(ξn(I0)) = exp(2iπ(⟨I⟩−⟨ I0⟩)·⟨λJ⟩/(kn))
-SJ
-(
-ξn(I)− 2π
-n
-⟨I⟩−⟨I0⟩
-k 1k
-)
-SJ
-(
-2iπ ˜I0/n
-)
-= exp(2iπ⟨λI⟩·⟨ λJ⟩/(kn))· S ˆJ(2π ˜I/n)
-S ˆJ(2π ˜I0/n))
-(36)
-where we also used the fact that ∑k
-i=1ξn(I)i = 2π(⟨I⟩−⟨I0⟩
-n . Then, since ˆJk = 0, λ ˆJ = ˆJ−I0∈ Λk
-satisﬁes
-(
-λ ˆJ
-)
-k = 0. Moreover, remark that ‖˜I‖∞≥ (k− 1)/2, so that ⟨λ ˆJ⟩ max(‖˜I‖∞,k/ 3)≤ n
-when⟨λ ˆJ⟩·‖ ˜I‖∞ =⟨ ˆJ−I0⟩·‖ ˜I‖∞≤n. In particular, as long as ⟨ ˆJ−I0⟩·‖ ˜I‖∞≤n, we have by
-Lemma 5.2
-(37)
-S ˆJ(2π ˜I/n)
-S ˆJ(2π ˜I0/n)
-=
-sλ ˆJ
-(
-exp
-(
-2iπ ˜I/n
-))
-sλ ˆJ
-(
-exp
-(
-2iπ ˜I0/n
-)) = 1− (2π)2
-2(k2− 1)n2
-[
-K(˜I)K( ˜J)
-]
-+O
-
-
-(
-⟨ ˆJ−I0⟩·‖ ˜I‖∞
-n
-)3
-
-where we used that‖˜I‖∞≥ (k− 1)/2 to simplify the bound O(·) and that ~ˆJ = ~J.
-Consider nowµ∈M 1(Bk,n). Using the previous relation forJ =Iµ on the event⟨ˆIµ−I0⟩< n
-‖˜I‖∞
-,
-we get
-E
-[SˆIµ
-(2π ˜I/n)
-SˆIµ
-(2π ˜I0/n)
-]
-= 1− (2π)2
-2(k2− 1)n2 E
-(
-1⟨ˆIµ−I0⟩< n
-‖ ˜I‖∞
-K
-(
-~Iµ
-))
-K
-(
-~I
-)
-+ 1
-n3O
-(
-⟨ˆµ−I0⟩3‖˜I‖3
-∞
-)
-+ P
-(
-⟨ˆIµ−I0⟩> n
-‖˜I‖∞
-)
-,
-where we used that SJ(ξn(I))
-SJ(ξn(I0))≤ 1 for all J∈Bk,n by (16) to get a rough bound on the expectation
-E
-[
-S ˆIµ(2π ˜I/n)
-S ˆIµ(2π ˜I0/n)1⟨ˆIµ−I0⟩> n
-‖ ˜I‖∞
-]
-. By Markov inequality, P
-(
-⟨ˆIµ−I0⟩> n
-‖˜I‖∞
-)
-≤ ‖˜I‖3
-∞
-n3 ⟨ˆµ−I0⟩3, where
-we recall from (27) that ⟨ˆµ−I0⟩3 = E
-[
-⟨ˆIµ−I0⟩3
-]
-. Similarly, using (26) to get K(˜I)≤⟨ ˆI−I0⟩2
-for I∈Bk,n, we have
-1
-k2− 1 E
-(
-1⟨ˆIµ−I0⟩≥ n
-‖ ˜I‖∞
-K
-(
-~Iµ
-))
-≤ 1
-k2− 1 E
-(
-1⟨ˆIµ−I0⟩> n
-‖ ˜I‖∞
-⟨ˆIµ−I0⟩2
-)
-≤ 3‖˜I‖∞
-k2n ⟨ˆµ−I0⟩3,
-so that, using also that K(˜I)≤k‖˜I‖2
-∞, we get
-(38) E
-[SˆIµ
-(2π ˜I/n)
-SˆIµ
-(2π ˜I0/n)
-]
-= 1− (2π)2
-2(k2− 1)n2
-[
-K(µ)K(˜I)
-]
-+ 1
-kn3O
-(
-⟨ˆµ−I0⟩3‖˜I‖3
-∞
-)
-,
-38 J. GUILHOT, C. LECOUVEY, AND P. TARRAGO
-where we recall that K(µ) = Eµ(K(~Iµ)). A similar reasoning also yields
-(39) E
-[⏐⏐⏐⏐⏐
-SˆIµ
-(2π ˜I/n)
-SˆIµ
-(2π ˜I0/n)
-⏐⏐⏐⏐⏐
-]
-≤ 1− (2π)2
-2(k2− 1)n2
-[
-K(µ)K(˜I)
-]
-+ 1
-kn3O
-(
-⟨ˆµ−I0⟩3‖˜I‖3
-∞
-)
-.
-For the ﬁrst statement, remark that we have by (36) , for α0∈ R,
-e−2iπα0⟨λI⟩
-kn E
-[SIµ(ξn(I))
-SIµ(ξn(I0))
-]
-=E
-[
-e2iπ
-⟨λI⟩·(⟨λIµ⟩−α0)
-kn
-SˆIµ
-(2π ˜I/n)
-SˆIµ
-(2π ˜I0/n)
-]
-=E
-[
-e2iπ
-⟨λI⟩·(⟨λIµ⟩−α0)
-kn
-]
-+ E
-[SˆIµ
-(2π ˜I/n)
-SˆIµ
-(2π ˜I0/n)
-]
-− 1
-+ E
-[(
-e2iπ
-⟨λI⟩·(⟨λIµ⟩−α0)
-kn − 1
-)(SˆIµ
-(2π ˜I/n)
-SˆIµ
-(2π ˜I0/n)
-− 1
-)]
-.(40)
-Using the Taylor expansion of eit for t∈ R yields
-(41)
-e2iπ⟨λI⟩·(⟨λJ⟩−α0)
-kn = 1+ 2iπ⟨λI⟩· (⟨λJ⟩− α0)
-kn − (2π)2⟨λI⟩2· (⟨λJ⟩− α0)2
-2k2n2 +O
-(
-⟨λI⟩3· (⟨λJ⟩− α0)3
-k3n3
-)
-,
-for I,J ∈ Bk,n, with O(·) independent of I,J and α0 because the term on the left-hand side is
-bounded. Hence, averaging on Iµ yields
-E
-[
-e2iπ
-⟨λI⟩·(⟨λIµ⟩−α0)
-kn
-]
-=1 + 2iπ⟨λI⟩·
-(
-E(⟨λIµ⟩)−α0
-)
-kn −
-(2π)2⟨λI⟩2· E
-[(
-⟨λIµ⟩− α0
-)2]
-2k2n2
-+O
-
-
-⟨λI⟩3· E
-[(
-⟨λIµ⟩− α0
-)3]
-k3n3
-
-,(42)
-and putting (38) and (42) together yields
-E
-[
-e2iπ
-⟨λI⟩·(⟨λIµ⟩−α0)
-kn
-]
-+ E
-[SˆIµ
-(2π ˜I/n)
-SˆIµ
-(2π ˜I0/n)
-]
-− 1
-=1 + 2iπ⟨λI⟩·
-(
-E(⟨λIµ⟩)−α0
-)
-kn − (2π)2
-2(k2− 1)n2K(µ)K(~I)−
-(2π)2⟨λI⟩2· E
-[(
-⟨λIµ⟩− α0
-)2]
-2k2n2
-(43)
-+ 1
-n3O
-
-
-|⟨λI⟩|3· E
-[(
-⟨λIµ⟩− α0
-)3]
-k3 + 1
-k⟨ˆµ−I0⟩3·‖ ˜I‖3
-∞
-
-
-QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION 39
-Finally, we have by (37), the fact that
-(
-e2iπ
-⟨λI⟩·(⟨λIµ⟩−α0)
-kn − 1
-)
-and
-(
-S ˆIµ(2π ˜I/n)
-S ˆIµ(2π ˜I0/n)− 1
-)
-are bounded
-by 2 and the inequality |eit− 1|≤ t for t∈ R,
-⏐⏐⏐⏐⏐E
-[(
-e2iπ
-⟨λI⟩·(⟨λIµ⟩−α0)
-kn − 1
-)(SˆIµ
-(2π ˜I/n)
-SˆIµ
-(2π ˜I0/n)
-− 1
-)]⏐⏐⏐⏐⏐
-=E
-[⏐⏐⏐⏐e2iπ
-⟨λI⟩·(⟨λIµ⟩−α0)
-kn − 1
-⏐⏐⏐⏐
-⏐⏐⏐⏐⏐
-SˆIµ
-(2π ˜I/n)
-SˆIµ
-(2π ˜I0/n)
-− 1
-⏐⏐⏐⏐⏐ 1⟨ˆIµ−I0⟩≤n/‖I‖∞
-]
-+O
-(
-P(⟨ˆIµ−I0⟩>n/‖I‖∞)
-)
-≤E
-[
-2π⟨λI⟩·
-⏐⏐⟨λIµ⟩− α0
-⏐⏐
-kn · (2π)2
-2n2
-K(˜I)K(~Iµ)
-k2− 1 · 1⟨ˆIµ−I0⟩≤n/‖I‖∞
-]
-+ 1
-kn3O
-(
-⟨ˆµ−I0⟩3‖˜I‖3
-∞
-)
-+O
-(
-P(⟨ˆIµ−I0⟩>n/‖I‖∞)
-)
-≤ 1
-n3O
-
-E
-
-
-⟨λI⟩·
-⏐⏐⏐⟨λIµ⟩− α0
-⏐⏐⏐
-k ·⟨ ˆIµ−I0⟩2·‖ ˜I‖2
-∞
-
- +O
-(
-⟨ˆµ−I0⟩3‖˜I‖3
-∞
-)
-
-,
-where we used Markov inequality to bound P(⟨ˆIµ−I0⟩ > k1/3n/‖I‖∞) by 1
-kn3⟨ˆµ−I0⟩3‖˜I‖3
-∞ and
-used the inequality K( ˜Iµ)≤⟨ ˆIµ−I0⟩2 and K(˜I)≤ k‖˜I‖2
-∞ on the last inequality. By the Young
-inequalityab≤ a3
-3 + 3b3/2
-2 for a,b≥ 0, we ﬁnally get
-E
-[(
-e2iπ
-⟨λI⟩·(⟨λIµ⟩−α0)
-kn − 1
-)(SˆIµ
-(2π ˜I/n)
-SˆIµ
-(2π ˜I0/n)
-− 1
-)]
-= 1
-n3O
-
-
-|⟨λI⟩|3· E
-[(
-⟨λIµ⟩− α0
-)3]
-k3 +⟨ˆµ−I0⟩3‖˜I‖3
-∞
-
-.
-Putting the latter estimates with (43) into (40) and setting α0 = E(⟨λIµ⟩) =⟨µ⟩−⟨ I0⟩ yields then
-e−2iπ (⟨µ⟩−⟨I0⟩)·⟨λI⟩
-kn Φn[µ](I(n))
-= 1 + 2iπ
-kn⟨λI⟩Eµ
-[
-⟨λIµ⟩− (⟨µ⟩−⟨ I0⟩)
-]
-− (2π)2
-2n2
-[
-K(µ)K(~I)
-k2− 1 +⟨λI⟩2Var (µ)
-k2
-]
-+ 1
-n3O
-(|⟨λI⟩|3·Var 3(µ)
-k3 +⟨ˆµ−I0⟩3‖˜I‖3
-∞
-)
-= 1− (2π)2
-2n2
-[
-K(µ)K(~I)
-k2− 1 +⟨λI⟩2Var (µ))
-k2
-]
-+ 1
-n3O
-(|⟨λI⟩|3·Var 3(µ)
-k3 +⟨ˆµ−I0⟩3‖˜I‖3
-∞
-)
-.
-To get the second statement of the lemma, note that by (36),
-⏐⏐⏐Φn[µ](I(n))
-⏐⏐⏐ =
-⏐⏐⏐⏐E
-[SIµ(ξn(I))
-SIµ(ξn(I0))
-]⏐⏐⏐⏐≤ E
-[⏐⏐⏐⏐
-SIµ(ξn(I))
-SIµ(ξn(I0))
-⏐⏐⏐⏐
-]
-= E
-
-
-⏐⏐⏐⏐⏐⏐
-SˆIµ
-(
-2π ˜I/n
-)
-SˆIµ
-(
-2π ˜I0/n
-)
-⏐⏐⏐⏐⏐⏐
-
-.
-Using (39) yields then the result. □
-From Lemma 5.1, we can deduce asymptotics of the discrete Fourier transform of a convolution
-of Markov kernels on Bk,n. For a sequence m = (µr)1≤r≤m of h-probability measures, recall the
-40 J. GUILHOT, C. LECOUVEY, AND P. TARRAGO
-notation from Section 2.4
-X(m) =
-(
-1
-m
-m∑
-r=1
-X(µr)
-)
-−X(I0),
-for X(µ) =K(µ) or any quantity deﬁned in (27). We also set
-∗m =µ1∗µ2∗...µ m.
-Proposition 5.3. Let M > 0 and suppose that m = (µr)1≤r≤m is a sequence of h-probability
-measures on Bk,n such that Var 3(m)≤ MVar (m)3/2 and⟨ˆm⟩3 ≤ MK (m)3/2. Then, for all
-J∈Bk with J1<J k +n, we have
-⏐⏐⏐Φn[∗m](J(n))
-⏐⏐⏐≤A(J) exp
-(
-−m(2π)2
-2n2
-K( ˜J)K(m)
-k2− 1 + mM
-n3 O
-([
-kK( ˜J)K(m)
-]3/2))
-with A(J)≤ 1 and
-A(J) = exp
-[
-− m(2π)2
-2n2
-[Var (m)⟨λJ⟩2
-k2
-]
-+ mM
-n3 O
-(
-Var (m)3/2·|⟨λJ⟩|3
-k3
-)]
-.
-When‖ ˜J‖∞≤ c n
-m1/3M 1/3K(m)1/2 and⟨λJ⟩≤ c kn
-m1/3M 1/3Var (m)1/2 for some numeric c > 0 small
-enough, we get
-e−2iπm⟨m⟩)·⟨λJ⟩
-kn Φn[∗m](J(n)) = exp
-[
-− m(2π)2
-2n2
-[
-K(m)K( ˜J)
-k2− 1 + Var (m)⟨λJ⟩2
-k2
-]
-+ mM
-n3 O
-(
-Var (m)3/2·|⟨λJ⟩|3
-k3 +
-[
-k·K(m)·K( ˜J)
-]3/2
-)]
-.
+[]{#sec:Fourier_large_product label="sec:Fourier_large_product"} The goal of this section is to estimate the discrete Fourier transform of the convolution of a sequence $(\mu_i)_{1\leq i\leq m}$ of $h$-probability measures in $B_{k,n}$ when $m$ is large compared to $n$. Mimicking the previous definition for elements of $B_{k,n}$, for $x\in \mathbb{R}^k$ we set $\langle x\rangle=\sum_{j=1}^kx_j$ and then define $$\widetilde{x}=x-\frac{\langle x\rangle}{k}\mathbf{1}_k=\left(x_1-\frac{\langle x\rangle}{k},\ldots,x_k-\frac{\langle x\rangle}{k}\right).$$ We then introduce for $x\in \mathbb{R}^k$ the shifted norm $$K(x)=\Vert x\Vert^2-\Vert \tilde{I_0}\Vert^2,$$ where $\Vert\cdot\Vert$ denotes the usual Euclidean norm on $\mathbb{R}^k$. We will regularly use for $x\in\mathbb{R}^k$ the identity $$\begin{equation}
+\label{eq:rho(tilde_I)}K\left(\tilde{x}\right)=K(x)-\frac{\langle x\rangle^2}{k},
+\end{equation}$$ whose proof is left to the reader. Remark that we have in particular $K(\tilde{I_0})=0$ and that $I\in B_{k,n}$ satisfies $K(\tilde{I})=0$ if and only if $I=I_0+\ell\mathbf{1}_k$ for some $0\leq \ell\leq n-k$. Finally, we introduce for $I\in B_{k,n}$ the shifted configuration $$\hat{I}=I-I_k\mathbf{1}_k=(I_1-I_k,\ldots,I_{k-1}-I_k,0),$$ so that $\hat{I}\in B_{k,n}$. We introduced in Section [\[sec:intro_model\]](#sec:intro_model){reference-type="ref" reference="sec:intro_model"} for $\mu\in \mathcal{M}_1(B_{k,n})$, the random variable $I_{\mu}\in B_{k,n}$ whose distribution is $$\mathbb{P}(I_{\mu}=I)=\mu(I)\mu^h(I)=\frac{\vert V(\xi_n(I))\vert^2}{n^k}\mu(I).$$ We then set $$\begin{equation}
+\label{eq:definition_moments}
+\Vert\mu\Vert_r=\mathbb{E}\left[\Vert\tilde{I}_\mu\Vert^r\right],\quad \langle \mu\rangle=\mathbb{E}\left[\langle I_{\mu}\rangle\right],\,\langle\hat{\mu}-I_0\rangle_r=\mathbb{E}\left[\langle \widehat{I_{\mu}}-I_0\rangle^r\right]\text{ and } Var_{r}(\mu)=\mathbb{E}\left[\Big\vert\langle I_{\mu}\rangle-\langle \mu\rangle\Big\vert^r\right]
+\end{equation}$$ for $r\geq 2$. We simply write $Var(\mu)$ for $Var_2(\mu)$ in the sequel, and we finally set $$K(\mu):=\Vert \mu\Vert_2-\Vert \tilde{I}_0\Vert^2=\mathbb{E}\left[K(\tilde{I}_{\mu})\right].$$ The first main estimate of the Fourier transform is the following lemma, which shows pointwise asymptotics of the Fourier transform as $n$ goes to infinity. For sake of completeness, we give asymptotic results which hold uniformly in $k$. In the following statement, recall that for $I\in B_{k}$ with $I_1<I_k+n$, we set $\lambda_I=I-I_0$ and $I^{(n)}$ is the unique element of $B_{k,n}$ such that $\{I^{(n)}_i[n]\}_{1\leq i\leq k}=\{I_i[n]\}_{1\leq i\leq k}$.
+
+::: lemma
+[]{#lem:asymptoti_eigenvalue label="lem:asymptoti_eigenvalue"} Let $n,k\geq 2$. For any $h$-probability measure $\mu\in B_{k,n}$ and $I\in B_{k}$ with $n\geq \Vert I\Vert{\infty}$, $$\begin{align*}
+e^{-2i\pi \frac{(\langle\mu\rangle-\langle I_0\rangle)\cdot\langle \lambda_I\rangle}{kn}}\Phi_{n}[\mu](I^{(n)})&=1-\frac{(2\pi)^2}{2n^2}\left[\frac{K(\mu)K(\tilde{I})}{k^2-1}+\frac{Var(\mu)\langle \lambda_I\rangle^2)}{k^2}\right]\\
+&\hspace{3cm}+\frac{1}{n^3}O\left(\frac{Var_3(\mu)\cdot\vert\langle \lambda_I\rangle\vert^3}{k^3}+\langle\hat{\mu}-I_0\rangle_3\cdot\Vert \tilde{I}\Vert_\infty^3\right),
+\end{align*}$$ and $$\begin{align*}
+\left\vert \Phi_{n}[\mu](I^{(n)})\right\vert&\leq 1-\frac{(2\pi)^2}{2n^2}\frac{K(\mu)K(\tilde{I})}{k^2-1}+\frac{1}{n^3}O\left(\langle\hat{\mu}-I_0\rangle_3\cdot\Vert \tilde{I}\Vert_\infty^3\right),
+\end{align*}$$ where $O(\cdot)$ only depends on numeric constants.
+:::
+
+The main ingredient in the proof of the latter lemma is an asymptotic formula for ratios of Schur functions. Recall that $\Lambda_{k}$ denotes the set of partitions with at most $k$ parts and for $\vec{u}\in\mathbb{R}^k$ we abbreviate $\exp(i\vec{u})$ for the vector $(\exp(iu_1),\ldots,\exp(iu_k))$.
+
+::: lemma
+[]{#lem:asymptotic_schur label="lem:asymptotic_schur"} Let $k\geq 2$. For any $\lambda\in \Lambda_{k}$ with $\lambda_k=0$ and $\vec{u}\in \mathbb{R}^k$ such that $\sum_{i=1}^ku_i=0$ and $\langle \lambda\rangle \max(\Vert \vec{u}\Vert_\infty,k/3)\leq n$, $$\begin{align*}
+\frac{s_{\lambda}\left(\exp\Big(2\pi i\vec{u}/n\Big)\right)}{s_{\lambda}\left(\exp\left(2\pi i \widetilde{I_0}/n\right)\right)}=1-\frac{(2\pi)^2}{2(k^2-1)n^2}\Big[K(\widetilde{I_{\lambda}})K(\vec{u})\Big]+O\left(\left(\frac{\langle \lambda\rangle\cdot (\Vert \vec{u}\Vert_\infty+k)}{n}\right)^3\right),
+\end{align*}$$ with $O(\cdot)$ only depending on numeric constants.
+:::
+
+The proof of this lemma uses shifted Schur functions, as introduced in [@OkOl]. Shifted Schur functions form a particular basis $\{s_{\lambda}^*\}_{\lambda\in R}$ of the ring of polynomials functions in $\{x_i\}_{i\geq 1}$ which are symmetric in the variables $\{x_i-i\}_{i\geq 1}$. Their main useful property for us is the following generalized binomial formula for all $k\geq 1$ and $\mu\in \Lambda_{k}$, see [@OkOl Sec. 5], $$\begin{equation}
+\label{eq:binomial_formula}
+\frac{s_{\mu}(1+x_1,\ldots,1+x_k)}{s_{\mu}(1,\ldots,1)}=\sum_{\nu \subset \mu}\frac{1}{(k\upharpoonleft \nu)}s_{\nu}^*(\mu_1,\ldots,\mu_k)s_{\nu}(x_1,\ldots,x_k),
+\end{equation}$$ where $s_{\nu}, \nu\in \Lambda_{k}$ are the usual Schur functions and $(k\upharpoonleft \nu)=\prod_{i=1}^k\frac{(\nu_i+k-i)!}{(k-i)!}=\prod_{i=1}^{l(\nu)}\prod_{j=1}^{\nu_i}(k-i+j)$. We will be mostly interested in the first shifted Schur functions, namely for $\vert\nu\vert\leq 2$. We then have $$s^*_{(1)}(x_{1},x_2,\ldots)=\sum_{i\geq 1}x_i,\, s^*_{(2)}(x_{1},x_2,\ldots)=\sum_{i\leq j}x_j(x_i-1),\, s^*_{(11)}(x_{1},x_2,\ldots)=\sum_{i<j}x_j(x_i+1).$$
+
+::: proof
+*Proof of Lemma [\[lem:asymptotic_schur\]](#lem:asymptotic_schur){reference-type="ref" reference="lem:asymptotic_schur"}.* We only prove this lemma for $\lambda\in \Lambda_{k}$ such that $\langle \lambda\rangle\geq 3$, the case $\langle \lambda\rangle\leq 2$ being done similarly. Let $k\geq 1$ and $\lambda\in \Lambda_{k}$ with $\langle \lambda\rangle\geq 3$. By [\[eq:binomial_formula\]](#eq:binomial_formula){reference-type="eqref" reference="eq:binomial_formula"}, for $(x_1,\ldots,x_k)\in \mathbb{C}^k$ we have $$\begin{align}
+\frac{s_{\lambda}(1+x_1,\ldots,1+x_k)}{s_{\lambda}(1,\ldots,1)}=&\sum_{\nu \subset \lambda}\frac{1}{(k\upharpoonleft \nu)}s_{\nu}^*(\lambda)s_{\nu}(\vec{x})\nonumber\\
+=&1+\frac{1}{(k\upharpoonleft (1))}s_{(1)}^*(\lambda)s_{(1)}(\vec{x})+\frac{1}{(k\upharpoonleft (2))}s_{(2)}^*(\lambda)s_{(2)}(\vec{x})\nonumber\\
++&\frac{1}{(k\upharpoonleft (11))}s_{(11)}^*(\lambda)s_{(11)}(\vec{x})+C_\lambda(\vec{x}) \label{eq:ratio_schur_first expansion},
+\end{align}$$ with $C_\lambda(\vec{x)}=\sum_{\substack{\nu \subset \lambda\\\langle \nu\rangle \geq 3}}\frac{1}{(k\upharpoonleft \nu)}s_{\nu}^*(\lambda)s_{\nu}(\vec{x})$. Remark first that for $\vec{x}\in \mathbb{C}^k$, $\vert s_{\nu}(\vec{x})\vert \leq \Vert \vec{x}\Vert_{\infty}^{\langle \nu\rangle }s_{\nu}(1\ldots,1)$, so that, using that $(k\upharpoonleft \nu)=s_{\nu}(\mathbf{1}_{k})H(\nu)$ with $\mathbf{1}_k$ the constant vector of length $k$ equal to $1$ and $H(\mu)$ the Hook length of $\mu$, see [@OkOl Eq. 5.5], $$\begin{align}
+\vert C_\lambda(\vec{x)}\vert \leq \sum_{\substack{\nu \subset \lambda\\\langle \nu\rangle \geq 3}}\frac{1}{(k\upharpoonleft \nu)}s_{\nu}^*(\lambda)s_{\nu}(\vec{x})
+\leq &\sum_{\substack{\nu \subset \lambda\\\langle \nu\rangle \geq 3}}\frac{s_{\nu}(1\ldots,1)}{(k\upharpoonleft \nu)}s_{\nu}^*(\lambda)\Vert \vec{x}\Vert_{\infty}^{\langle \nu\rangle }\nonumber\\
+\leq&\sum_{\substack{\nu \subset \lambda\\\langle \nu\rangle \geq 3}}\frac{s_{\nu}^*(\lambda)}{H(\nu)}\Vert \vec{x}\Vert_{\infty}^{\langle \nu\rangle }.\nonumber
+\end{align}$$ Using that $\frac{(\vert \lambda \vert -\langle \nu\rangle )!}{\langle \lambda\rangle !}s^*_\nu(\lambda)=\frac{\dim V(\lambda\setminus \nu)}{\dim V(\lambda)}$, where $V(\lambda)$ denotes the Specht irreducible representation of the symmetric group $S_{\langle \lambda\rangle}$ associated to $\lambda$ (see [@OkOl Eq. 0.14]), and the classical Hook length formula $\dim V(\lambda)=\frac{\langle \lambda\rangle !}{H(\lambda)}$, we get $$\begin{align*}
+\vert C_\lambda(\vec{x)}\vert \leq& \sum_{\substack{\nu \subset \lambda\\\langle \nu\rangle \geq 3}}H(\nu)^{-1}\frac{\langle \lambda\rangle !\dim V(\lambda\setminus\nu)}{(\langle \lambda\rangle -\langle \nu\rangle )!\dim V(\lambda)}\Vert \vec{x}\Vert_{\infty}^{\langle \nu\rangle }\\
+\leq&\sum_{\substack{\nu \subset \lambda\\\langle \nu\rangle \geq 3}}\binom{\langle \lambda\rangle}{\langle \nu\rangle}\frac{\dim V(\nu)\dim V(\lambda\setminus\nu)}{\dim V(\lambda)}\Vert \vec{x}\Vert_{\infty}^{\langle \nu\rangle }\\
+\leq &\sum_{l=3}^{\langle \lambda\rangle}\binom{\langle \lambda\rangle}{l}\Vert \vec{x}\Vert_{\infty}^{l}\left(\sum_{\substack{\nu\subset \lambda\\\langle \nu\rangle=l}}\frac{\dim V(\nu)\dim V(\lambda\setminus\nu)}{\dim V(\lambda)}\right).
+\end{align*}$$ Remark that $\dim V(\lambda)=\sum_{\substack{\nu\subset \lambda\\\langle \nu\rangle=l}}\dim V(\nu)\dim V(\lambda\setminus\nu)$ for all $1\leq l\leq \langle \lambda\rangle$ by restricting the representation $V(\lambda)$ of $S_{\langle \lambda\rangle}$ to $S_{l}\times S_{\langle \lambda\rangle-l}$, so that $\sum_{\substack{\nu\subset \lambda\\\langle \nu\rangle=l}}\frac{\dim V(\nu)\dim V(\lambda\setminus\nu)}{\dim V(\lambda)}=1$ and finally $$\begin{align}
+\vert C_\lambda(\vec{x)}\vert \leq&\sum_{l=3}^{\langle \lambda\rangle}\binom{\langle \lambda\rangle}{l}\Vert \vec{x}\Vert_{\infty}^{l}\nonumber\\
+\leq& \Vert \vec{x}\Vert_{\infty}^{3}\frac{\langle \lambda\rangle !}{3!(\langle \lambda\rangle-3)!}(1+\Vert \vec{x}\Vert_{\infty})^{\langle \lambda\rangle-3}\leq \frac{\langle \lambda\rangle^3}{6}\Vert \vec{x}\Vert_{\infty}^{3}(1+\Vert \vec{x}\Vert_{\infty})^{\langle \lambda\rangle-3}\nonumber
+\end{align}$$ as long as $\Vert x\Vert_{\infty}<1$, with $C$ only depending on $\lambda$. Remark that for $\Vert x\Vert_\infty\leq 1/\langle \lambda\rangle$, the latter bound simplifies as $$\begin{equation}
+\label{eq:computation_ratio_first_part}
+\vert C_\lambda(\vec{x)}\vert \leq e\cdot \frac{\langle \lambda\rangle^3}{6}\Vert \vec{x}\Vert_{\infty}^{3}.
+\end{equation}$$
+
+Let us then focus on the first terms of the right-hand side of [\[eq:ratio_schur_first expansion\]](#eq:ratio_schur_first expansion){reference-type="eqref" reference="eq:ratio_schur_first expansion"}. First, we have $\frac{1}{(k\upharpoonleft (1))}=\frac{1}{k}$ and $s_{(1)}^*=s_1$, so that $$\frac{1}{(k\upharpoonleft (1))}s_{(1)}^*(\lambda)s_{(1)}(\vec{x})=\frac{1}{k}s_{(1)}(\lambda)s_{(1)}(\vec{x}).$$ Set $x_i=\exp(iu_i/n)-1$, for $1\leq i\leq k$. We then have $\vert x_i\vert\leq (1\wedge \vert u_i\vert/n)$ and there is a numerical constant $C'>0$ such that $\left\vert x_i-iu_i/n+\frac{u_i^2}{2n^2}\right\vert \leq \frac{C'\vert u_i\vert^3}{n^3}$. Using that $\sum_{i=1}^ku_i=0$, this yields $$\left\vert s_{(1)}(\vec{x})+\frac{1}{2n^2}\sum_{i=1}^ku_i^2\right\vert\leq \frac{kC'\Vert \vec{u}\Vert_{\infty}^3}{n^3}.$$ Hence, introducing the second power sum $p_2(\vec{u})=\sum_{i=1}^ku_i^2$, $$\begin{equation}
+\label{eq:computation_ratio_second_part}\frac{1}{(k\upharpoonleft (1))}s_{(1)}^*(\lambda)s_{(1)}(\vec{x})=\frac{-s_{(1)}(\lambda)p_2(\vec{u})}{2kn^2}+K,
+\end{equation}$$ with $\vert K\vert\leq C\langle \lambda\rangle \frac{\Vert \vec{u}\Vert_{\infty}^3}{n^3}$ with $C$ numeric.
+
+Next, $\frac{1}{(k\upharpoonleft (11))}=\frac{1}{k(k-1)}$ and $\frac{1}{(k\upharpoonleft (2))}=\frac{1}{k(k+1)}$. Introducing the shifted power sum $p_2^*=\sum_{i=1}^k(x_i-i)^2-(-i)^2=\sum_{i=1}^kx_i(x_i-2i)$, we then have the shifted Newton identities $$s_2^*=\frac{1}{2}(s_1^2+p_2^*),\, s_{11}^*=\frac{1}{2}(s_{(1)}^2-p_2^*)-s_{(1)}.$$ Hence, using additionally the usual Newton identities yields $$\begin{align*}
+&\frac{1}{(k\upharpoonleft (2))}s_{(2)}^*(\lambda)s_{(2)}(\vec{x})+\frac{1}{(k\upharpoonleft (11))}s_{(11)}^*(\lambda)s_{(11)}(\vec{x})\\
+=&\frac{1}{4k(k+1)}\left[s_{(1)}^2(\lambda)+p_2^*(\lambda)\right]\cdot \left[s_{(1)}^2(\vec{x})+p_2(\vec{x})\right]\\
+&\hspace{3cm}+\frac{1}{4k(k-1)}\left[s_{(1)}^2(\lambda)-p_2^*(\lambda)-2s_{(1)}(\lambda))\right]\cdot\left[s_{(1)}^2(\vec{x})-p_2(\vec{x})\right]\\
+=&\frac{1}{2k(k^2-1)}\Big[s_{(1)}^2(\lambda)\left(ks_{(1)}^2(\vec{x})-p_2(\vec{x})\right)+p_2^*(\lambda)\left(kp_2(\vec{x})-s_{(1)}^2(\vec{x})\right)\\
+&\hspace{7cm}-(k+1)s_{(1)}(\lambda)\left(s_{(1)}^2(\vec{x})-p_2(\vec{x})\right)\Big].
+\end{align*}$$ There exists a numeric constant $C>0$ such that $$\left\vert x_i-iu_i/n\right\vert \leq \frac{C\vert u_i\vert^2}{n^2}.$$ Hence, since $s_{(1)}(\vec{u})=0$, we have $\left\vert s_{(1)}(\vec{x})\right\vert \leq \frac{Ck \Vert \vec{u}\Vert_\infty^2}{n^2}$, which yields $$\begin{align*}
+\left\vert s_{(1)}(\vec{x})^2\right\vert\leq&  2Ck^2 \frac{\Vert \vec{u}\Vert_\infty^3}{n^3}
+\end{align*}$$ for some numeric constant $C>0$ when $\Vert \vec{u}\Vert_{\infty}\leq n$. Likewise, $\left\vert x_i^2+u_i^2/n^2\right\vert\leq \frac{2C\vert u_i\vert^3}{n^3}$ for $1\leq i\leq k$, so that $$\left \vert p_2(\vec{x})+p_2(\vec{u})/n^2)\right\vert \leq \frac{2Ck\Vert \vec{u}\Vert_\infty^3}{n^3}.$$ Therefore, $$\begin{align}
+\frac{1}{(k\upharpoonleft (2))}s_{(2)}^*(\lambda)s_{(2)}(\vec{x})+&\frac{1}{(k\upharpoonleft (11))}s_{(11)}^*(\lambda)s_{(11)}(\vec{x})\nonumber\\
+=&\frac{1}{2k(k^2-1)n^2}\left[s_{(1)}^2(\lambda)p_2(\vec{u})-kp_2^*(\lambda)p_2(\vec{u})-(k+1)s_{(1)}(\lambda)p_2(\vec{u})\right]+K'\label{eq:computation_ratio_third_part},
+\end{align}$$ with $$\begin{align*}
+K'\leq C\frac{\Vert \vec{u}\Vert_{\infty}^3}{n^3k(k^2-1)}\left[s_{(1)}^2(\lambda)(k^3+k)+k^2\vert p^*_2(\lambda)\vert+s_{(1)}(\lambda)(k^3+k^2)\right]\leq C'\frac{\Vert \vec{u}\Vert_{\infty}^3s_{(1)}^2(\lambda)}{n^3},
+\end{align*}$$ for some numeric $C,C'>0$, where we used on the last inequality that $\vert p_2^*(\lambda)\vert /k\leq s_{(1)}(\lambda)^2$ for $\lambda\in \Lambda_{k}$. Remark that $$\begin{align*}
+p_2^*(\lambda)+(k+1)s_{(1)}(\lambda)=\sum_{i=1}^k\lambda_i(\lambda_i+k-2i+1)=&\sum_{i=1}^k\left(\lambda_i+\frac{k-2i+1}{2}\right)^2-\left(\frac{k-2i+1}{2}\right)^2\\
+=\Vert \lambda+\tilde{I}_0\Vert^2-\Vert \tilde{I}_0\Vert^2=K(\lambda+\tilde{I}_0),
+\end{align*}$$ where $K$ is defined at the beginning of this section and we recall that $\tilde{I_0}=I_0-\frac{\langle I_0\rangle}{k}\mathbf{1}_k=\left(\frac{k+1-2i}{2}\right)_{1\leq i\leq k}$. Hence, putting [\[eq:computation_ratio_first_part\]](#eq:computation_ratio_first_part){reference-type="eqref" reference="eq:computation_ratio_first_part"}, [\[eq:computation_ratio_second_part\]](#eq:computation_ratio_second_part){reference-type="eqref" reference="eq:computation_ratio_second_part"} and [\[eq:computation_ratio_third_part\]](#eq:computation_ratio_third_part){reference-type="eqref" reference="eq:computation_ratio_third_part"} together yields then, for $\Vert \vec{u}\Vert_\infty/n\leq \frac{1}{\langle \lambda\rangle}$, $$\begin{align}
+\frac{s_{\lambda}(\exp(iu_1/n),\ldots,\exp(iu_k/n))}{s_{\lambda}(1,\ldots,1)}&=1-\frac{1}{2k(k^2-1)n^2}\Big[-s_{(1)}^2(\lambda)p_2(\vec{u})+kp_2(\vec{u})K(\lambda+\tilde{I_0})\Big]\nonumber\\
+&\hspace{7cm}+O\left(\left(\frac{\langle \lambda\rangle\cdot \Vert \vec{u}\Vert_\infty}{n}\right)^3\right),\nonumber\\
+&=1-\frac{1}{2(k^2-1)n^2}\left[p_2(\vec{u})\left(K(\lambda+\tilde{I_0})-\frac{s_{(1)}^2(\lambda)}{k}\right)\right]\nonumber\\
+&\hspace{7cm}+O\left(\left(\frac{\langle \lambda\rangle\cdot \Vert \vec{u}\Vert_\infty}{n}\right)^3\right),
+\end{align}$$ where the last term of the right-hand side of the first equality takes into account the correction coming from [\[eq:computation_ratio_second_part\]](#eq:computation_ratio_second_part){reference-type="eqref" reference="eq:computation_ratio_second_part"}. Since $s_{(1)}(\lambda)=\langle \lambda\rangle=\vert I_{\lambda}\vert-\langle I_0\rangle$ and $\lambda+\tilde{I}_0=I_{\lambda}+\frac{\langle I_0\rangle}{k}\mathbf{1}_k$, we have by [\[eq:rho(tilde_I)\]](#eq:rho(tilde_I)){reference-type="eqref" reference="eq:rho(tilde_I)"} $$\begin{align*}
+K(\lambda+\tilde{I_0})-\frac{s_{(1)}^2(\lambda)}{k}=K(\widetilde{\lambda+I_0})+\frac{\vert \lambda+\tilde{I_0}\vert}{k}-\frac{\langle \lambda\rangle^2}{k}=K(\widetilde{\lambda_I}).
+\end{align*}$$ Hence, $$\begin{equation}
+\label{eq:character_final_asymptotic}
+\frac{s_{\lambda}(\exp(iu_1/n),\ldots,\exp(iu_k/n))}{s_{\lambda}(1,\ldots,1)}=1-\frac{K(\widetilde{I_{\lambda}})\Vert \vec{u}\Vert^2}{2(k^2-1)n^2}+O\left(\left(\frac{\langle \lambda\rangle\cdot \Vert \vec{u}\Vert_\infty}{n}\right)^3\right),
+\end{equation}$$ where we used that $p_2(\vec{u})=\Vert \vec{u}\Vert^2$. In the special case where $\vec{u}=2\pi \widetilde{I_0}=2\pi((k-1)/2,\ldots,-(k-1)/2)$, which satisfies $\sum_{i=1}^ku_i=0$, we have $\langle I_0\rangle_{\infty}\leq 2\pi k$, so that $$\begin{equation}
+\label{eq:rho_final_asymptotic}
+\frac{s_{\lambda}(\exp(2i\pi \widetilde{I_0}/n))}{s_{\lambda}(1,\ldots,1)}=1-\frac{(2\pi)^2K(\widetilde{I_{\lambda}})\Vert \widetilde{I_0}\Vert^2}{2(k^2-1)n^2}+O\left(\left(\frac{\langle \lambda\rangle\cdot k}{n}\right)^3\right).
+\end{equation}$$ Then, taking the ratio of [\[eq:character_final_asymptotic\]](#eq:character_final_asymptotic){reference-type="eqref" reference="eq:character_final_asymptotic"} with [\[eq:rho_final_asymptotic\]](#eq:rho_final_asymptotic){reference-type="eqref" reference="eq:rho_final_asymptotic"} yields, as long as $\langle \lambda\rangle\max(\Vert \vec{u}\Vert_\infty,k/3)\leq n$ (remark that the constant $1/3$ is arbitrary and chosen for later simplification), which implies $K(\widetilde{I_{\lambda}})\max(\Vert \vec{u}\Vert_\infty^2,k^2)\leq kn^2$, $$\begin{align*}
+\frac{s_{\lambda}(\exp(2i\pi\vec{u}/n))}{s_{\lambda}(\exp(2i\pi \widetilde{I_0}/n))}&=1-\frac{(2\pi)^2}{2(k^2-1)n^2}\Big[K(\widetilde{I_{\lambda}})K(\vec{u})\Big]+O\left(\left(\frac{\langle \lambda\rangle\cdot (\Vert \vec{u}\Vert_\infty+k)}{n}\right)^3\right).
+\end{align*}$$ ◻
+:::
+
+::: proof
+*Proof of Lemma [\[lem:asymptoti_eigenvalue\]](#lem:asymptoti_eigenvalue){reference-type="ref" reference="lem:asymptoti_eigenvalue"}.* Let us fix $I\in B_{k}$ and first assume that $\mu=\delta_J$, $n\geq \langle J\rangle_{\infty}$. Then, for such $n$, by [\[eq:Fourier_probability\]](#eq:Fourier_probability){reference-type="eqref" reference="eq:Fourier_probability"} and the fact that $\xi_{n}(I)=\xi_{n}(I^{(n)})$, we have $$\Phi_{n}[\mu](I^{(n)})=\frac{S_{J}(\xi_{n}(I^{(n)}))}{S_{J}(\xi_{n}(I_0))}=\frac{S_{J}(\xi_{n}(I))}{S_{J}(\xi_{n}(I_0))}.$$ By definition of the map $\xi_n$ in [\[eq:definition_xi_n\]](#eq:definition_xi_n){reference-type="eqref" reference="eq:definition_xi_n"} and the definition of $S_J$ following [\[eq:def_vI\]](#eq:def_vI){reference-type="eqref" reference="eq:def_vI"}, $$S_{J}(\xi_{n}(I))=s_{\lambda_{J}}\left(\exp\left(2i\pi  \left(I-\frac{k-1}{2}\mathbf{1}_k\right)\right)\right)=s_{\lambda_{J}}\left(\exp\left(2i\pi \left(I-\frac{\langle I_0\rangle}{k}\mathbf{1}_k\right)\right)\right),$$ where we used that $\langle I_0\rangle=\sum_{j=1}^k(k-j)=\frac{k(k-1)}{2}$. Moreover, recall that $\tilde{I}=I-\langle I\rangle/k\mathbf{1}_k$ and $\hat{J}=J-J_{k}\mathbf{1}_k$ and remark that from the definition of $S_J$ we have for $\vec{u}\in \mathbb{R}^k$ such that $\vec{u}=0$, $$S_{J}(\vec{u})=S_{\hat{J}+J_k\mathbf{1}_k}(\vec{u})=e^{iJ_k\sum_{l=1}^ku_l}S_{\hat{J}}(\vec{u})=S_{\hat{J}}(\vec{u}).$$ Hence, using that $S_J(\vec{u}+l\mathbf{1}_k)=\exp(i l\langle \lambda_J\rangle)S_{J}(\vec{u})$ for $l\in \mathbb{R}$, we get $$\begin{align}
+\frac{S_{J}(\xi_{n}(I))}{S_{J}(\xi_{n}(I_0))}=&\exp(2i\pi (\langle I\rangle-\langle I_0\rangle)\cdot\langle \lambda_J\rangle/(kn))\frac{S_{J}\left(\xi_{n}(I)-\frac{2\pi}{n}\frac{\langle I\rangle-\langle I_0\rangle}{k}\mathbf{1}_k\right)}{S_{J}\left(2i\pi\tilde{I_0}/n\right)}\nonumber\\
+=&\exp(2i\pi \langle \lambda_I\rangle\cdot\langle \lambda_J\rangle/(kn))\cdot \frac{S_{\hat{J}}(2\pi\tilde{I}/n)}{S_{\hat{J}}(2\pi\tilde{I_0}/n))}\label{eq:invariance_character_centered}
+\end{align}$$ where we also used the fact that $\sum_{i=1}^k\xi_n(I)_i=\frac{2\pi(\langle I\rangle-\langle I_0\rangle}{n}$. Then, since $\hat{J}_k=0$, $\lambda_{\hat{J}}=\hat{J}-I_0\in \Lambda_{k}$ satisfies $\left(\lambda_{\hat{J}}\right)_k=0$. Moreover, remark that $\Vert \tilde{I}\Vert_\infty\geq (k-1)/2$, so that $\langle \lambda_{\hat{J}}\rangle\max(\Vert \tilde{I}\Vert_\infty,k/3)\leq n$ when $\langle \lambda_{\hat{J}}\rangle\cdot\Vert \tilde{I}\Vert_\infty=\langle  \hat{J}-I_0\rangle\cdot\Vert \tilde{I}\Vert_\infty\leq n$. In particular, as long as $\langle  \hat{J}-I_0\rangle\cdot\Vert \tilde{I}\Vert_\infty\leq n$, we have by Lemma [\[lem:asymptotic_schur\]](#lem:asymptotic_schur){reference-type="ref" reference="lem:asymptotic_schur"} $$\begin{equation}
+\frac{S_{\hat{J}}(2\pi \tilde{I}/n)}{S_{\hat{J}}(2\pi\tilde{I_0}/n)}=\frac{s_{\lambda_{\hat{J}}}\left(\exp\left(2i\pi\tilde{I}/n\right)\right)}{s_{\lambda_{\hat{J}}}\left(\exp\left(2i\pi\tilde{I_0}/n\right)\right)}=1
+-\frac{(2\pi)^2}{2(k^2-1)n^2}\left[K(\tilde{I})K(\tilde{J})\right]+O\left(\left(\frac{\langle  \hat{J}-I_0\rangle\cdot \Vert \tilde{I}\Vert_\infty}{n}\right)^3\right)\label{eq:asymptotic_eigenvalue_main_contribution}
+\end{equation}$$ where we used that $\Vert \tilde{I}\Vert_\infty\geq (k-1)/2$ to simplify the bound $O(\cdot)$ and that $\widetilde{\hat{J}}=\widetilde{J}$.
+
+Consider now $\mu\in\mathcal{M}_1(B_{k,n})$. Using the previous relation for $J=I_{\mu}$ on the event $\langle  \hat{I}_{\mu}-I_0\rangle<\frac{n}{\Vert \tilde{I}\Vert_{\infty}}$, we get $$\begin{align*}
+\mathbb{E}\left[\frac{S_{\hat{I}_{\mu}}(2\pi \tilde{I}/n)}{S_{\hat{I}_{\mu}}(2\pi\tilde{I_0}/n)}\right]&= 1-\frac{(2\pi)^2}{2(k^2-1)n^2}\mathbb{E}\left(\mathbf{1}_{\langle  \hat{I}_{\mu}-I_0\rangle<\frac{n}{\Vert \tilde{I}\Vert_{\infty}}}K\left(\widetilde{I_{\mu}}\right)\right)K\left(\widetilde{I}\right)+\frac{1}{n^3}O\left(\langle\hat{\mu}-I_0\rangle_3\Vert \tilde{I}\Vert_\infty^3\right)\\
+&\hspace{8cm}+\mathbb{P}\left(\langle  \hat{I}_{\mu}-I_0\rangle>\frac{n}{\Vert \tilde{I}\Vert_{\infty}}\right),
+\end{align*}$$ where we used that $\frac{S_{J}(\xi_{n}(I))}{S_{J}(\xi_{n}(I_0))}\leq 1$ for all $J\in B_{k,n}$ by [\[eq:inequality_Perron_Frobenius\]](#eq:inequality_Perron_Frobenius){reference-type="eqref" reference="eq:inequality_Perron_Frobenius"} to get a rough bound on the expectation $\mathbb{E}\left[\frac{S_{\hat{I}_{\mu}}(2\pi \tilde{I}/n)}{S_{\hat{I}_{\mu}}(2\pi\tilde{I_0}/n)}\mathbf{1}_{\langle  \hat{I}_{\mu}-I_0\rangle>\frac{n}{\Vert \tilde{I}\Vert_{\infty}}}\right]$. By Markov inequality, $\mathbb{P}\left(\langle  \hat{I}_{\mu}-I_0\rangle>\frac{n}{\Vert \tilde{I}\Vert_{\infty}}\right)\leq \frac{\Vert \tilde{I}\Vert_\infty^3}{n^3}\langle\hat{\mu}-I_0\rangle_3$, where we recall from [\[eq:definition_moments\]](#eq:definition_moments){reference-type="eqref" reference="eq:definition_moments"} that $\langle\hat{\mu}-I_0\rangle_3=\mathbb{E}\left[\langle \widehat{I_{\mu}}-I_0\rangle^3\right]$. Similarly, using [\[eq:rho(tilde_I)\]](#eq:rho(tilde_I)){reference-type="eqref" reference="eq:rho(tilde_I)"} to get $K(\tilde{I})\leq \langle \hat{I}-I_0\rangle^2$ for $I\in B_{k,n}$, we have $$\begin{align*}
+\frac{1}{k^2-1}\mathbb{E}\left(\mathbf{1}_{\langle  \hat{I}_{\mu}-I_0\rangle\geq\frac{n}{\Vert \tilde{I}\Vert_{\infty}}}K\left(\widetilde{I_{\mu}}\right)\right)\leq \frac{1}{k^2-1} \mathbb{E}\left(\mathbf{1}_{\langle  \hat{I}_{\mu}-I_0\rangle>\frac{n}{\Vert \tilde{I}\Vert_{\infty}}}\langle  \hat{I}_{\mu}-I_0\rangle^2\right)\leq  \frac{3\Vert \tilde{I}\Vert_{\infty}}{k^2n}\langle\hat{\mu}-I_0\rangle_3,
+\end{align*}$$ so that, using also that $K(\tilde{I})\leq k\Vert \tilde{I}\Vert_{\infty}^2$, we get $$\begin{equation}
+\label{eq:asymptotic_eigenvalue_SUk}
+\mathbb{E}\left[\frac{S_{\hat{I}_{\mu}}(2\pi \tilde{I}/n)}{S_{\hat{I}_{\mu}}(2\pi\tilde{I_0}/n)}\right]=1-\frac{(2\pi)^2}{2(k^2-1)n^2}\left[K(\mu)K(\tilde{I})\right]+\frac{1}{kn^3}O\left(\langle\hat{\mu}-I_0\rangle_3\Vert \tilde{I}\Vert_\infty^3\right),
+\end{equation}$$ where we recall that $K(\mu)=\mathbb{E}_{\mu}(K(\widetilde{I_{\mu}}))$. A similar reasoning also yields $$\begin{equation}
+\label{eq:asymptotic_bound_eigenvalue_SUk}
+\mathbb{E}\left[\left\vert\frac{S_{\hat{I}_{\mu}}(2\pi \tilde{I}/n)}{S_{\hat{I}_{\mu}}(2\pi\tilde{I_0}/n)}\right\vert\right]\leq1-\frac{(2\pi)^2}{2(k^2-1)n^2}\left[K(\mu)K(\tilde{I})\right]+\frac{1}{kn^3}O\left(\langle\hat{\mu}-I_0\rangle_3\Vert \tilde{I}\Vert_\infty^3\right).
+\end{equation}$$ For the first statement, remark that we have by [\[eq:invariance_character_centered\]](#eq:invariance_character_centered){reference-type="eqref" reference="eq:invariance_character_centered"} , for $\alpha_0\in\mathbb{R}$, $$\begin{align}
+e^{-2i\pi \frac{\alpha_0\langle \lambda_I\rangle}{kn}}\mathbb{E}\left[\frac{S_{I_{\mu}}(\xi_{n}(I))}{S_{I_{\mu}}(\xi_{n}(I_0))}\right]=&\mathbb{E}\left[e^{2i\pi \frac{\langle \lambda_I\rangle\cdot(\langle \lambda_{I_{\mu}}\rangle-\alpha_0)}{kn}}\frac{S_{\hat{I}_{\mu}}(2\pi \tilde{I}/n)}{S_{\hat{I}_{\mu}}(2\pi\tilde{I_0}/n)}\right]\nonumber\\
+=&\mathbb{E}\left[e^{2i\pi \frac{\langle \lambda_I\rangle\cdot(\langle \lambda_{I_{\mu}}\rangle-\alpha_0)}{kn}}\right]+\mathbb{E}\left[\frac{S_{\hat{I}_{\mu}}(2\pi \tilde{I}/n)}{S_{\hat{I}_{\mu}}(2\pi\tilde{I_0}/n)}\right]-1\nonumber\\
+&\hspace{2cm}+\mathbb{E}\left[\left(e^{2i\pi \frac{\langle \lambda_I\rangle\cdot(\langle \lambda_{I_{\mu}}\rangle-\alpha_0)}{kn}}-1\right)\left(\frac{S_{\hat{I}_{\mu}}(2\pi \tilde{I}/n)}{S_{\hat{I}_{\mu}}(2\pi\tilde{I_0}/n)}-1\right)\right].\label{eq:final_estimate_decompo}
+\end{align}$$ Using the Taylor expansion of $e^{it}$ for $t\in \mathbb{R}$ yields $$\begin{equation}
+\label{eq:asymptotic_eigenvalue_U1}
+e^{2i\pi \frac{\langle \lambda_I\rangle\cdot(\langle \lambda_{J}\rangle-\alpha_0)}{kn}}=1+\frac{2i\pi \langle \lambda_I\rangle\cdot \left( \langle \lambda_J\rangle-\alpha_0\right)}{kn}-\frac{(2\pi)^2\langle \lambda_I\rangle^2\cdot \left( \langle \lambda_J\rangle-\alpha_0\right)^2}{2k^2n^2}+O\left(\frac{\langle \lambda_I\rangle^3\cdot\left( \langle \lambda_J\rangle-\alpha_0\right)^3}{k^3n^3}\right),
+\end{equation}$$ for $I,J\in B_{k,n}$, with $O(\cdot)$ independent of $I,J$ and $\alpha_0$ because the term on the left-hand side is bounded. Hence, averaging on $I_{\mu}$ yields $$\begin{align}
+\mathbb{E}\left[e^{2i\pi \frac{\langle \lambda_I\rangle\cdot(\langle \lambda_{I_{\mu}}\rangle-\alpha_0)}{kn}}\right]=&1+\frac{2i\pi \langle \lambda_I\rangle\cdot \left(\mathbb{E}(\langle \lambda_{I_{\mu}}\rangle)-\alpha_0\right)}{kn}-\frac{(2\pi)^2\langle \lambda_I\rangle^2\cdot \mathbb{E}\left[\left(\langle \lambda_{I_{\mu}}\rangle-\alpha_0\right)^2\right]}{2k^2n^2}\nonumber\\
+&\hspace{6cm}+O\left(\frac{\langle \lambda_I\rangle^3\cdot\mathbb{E}\left[\left(\langle \lambda_{I_{\mu}}\rangle-\alpha_0\right)^3\right]}{k^3n^3}\right),\label{eq:asymptotic_eigenvalue_U1_averaged}
+\end{align}$$ and putting [\[eq:asymptotic_eigenvalue_SUk\]](#eq:asymptotic_eigenvalue_SUk){reference-type="eqref" reference="eq:asymptotic_eigenvalue_SUk"} and [\[eq:asymptotic_eigenvalue_U1_averaged\]](#eq:asymptotic_eigenvalue_U1_averaged){reference-type="eqref" reference="eq:asymptotic_eigenvalue_U1_averaged"} together yields $$\begin{align}
+&\mathbb{E}\left[e^{2i\pi \frac{\langle \lambda_I\rangle\cdot(\langle \lambda_{I_{\mu}}\rangle-\alpha_0)}{kn}}\right]+\mathbb{E}\left[\frac{S_{\hat{I}_{\mu}}(2\pi \tilde{I}/n)}{S_{\hat{I}_{\mu}}(2\pi\tilde{I_0}/n)}\right]-1\nonumber\\
+=&1+\frac{2i\pi \langle \lambda_I\rangle\cdot \left(\mathbb{E}(\langle \lambda_{I_{\mu}}\rangle)-\alpha_0\right)}{kn}-\frac{(2\pi)^2}{2(k^2-1)n^2}K(\mu)K(\widetilde{I})-\frac{(2\pi)^2\langle \lambda_I\rangle^2\cdot \mathbb{E}\left[\left(\langle \lambda_{I_{\mu}}\rangle-\alpha_0\right)^2\right]}{2k^2n^2}\label{eq:final_estimate_first_part}\\
+&\hspace{6cm}+\frac{1}{n^3}O\left(\frac{\vert\langle \lambda_I\rangle\vert^3\cdot\mathbb{E}\left[\left(\langle \lambda_{I_{\mu}}\rangle-\alpha_0\right)^3\right]}{k^3}+\frac{1}{k}\langle\hat{\mu}-I_0\rangle_3\cdot\Vert \tilde{I}\Vert_\infty^3\right)\nonumber
+\end{align}$$ Finally, we have by [\[eq:asymptotic_eigenvalue_main_contribution\]](#eq:asymptotic_eigenvalue_main_contribution){reference-type="eqref" reference="eq:asymptotic_eigenvalue_main_contribution"}, the fact that $\left(e^{2i\pi \frac{\langle \lambda_I\rangle\cdot(\langle \lambda_{I_{\mu}}\rangle-\alpha_0)}{kn}}-1\right)$ and $\left(\frac{S_{\hat{I}_{\mu}}(2\pi \tilde{I}/n)}{S_{\hat{I}_{\mu}}(2\pi\tilde{I_0}/n)}-1\right)$ are bounded by $2$ and the inequality $\vert e^{it}-1\vert\leq t$ for $t\in \mathbb{R}$, $$\begin{align*}
+&\left\vert\mathbb{E}\left[\left(e^{2i\pi \frac{\langle \lambda_I\rangle\cdot(\langle \lambda_{I_{\mu}}\rangle-\alpha_0)}{kn}}-1\right)\left(\frac{S_{\hat{I}_{\mu}}(2\pi \tilde{I}/n)}{S_{\hat{I}_{\mu}}(2\pi\tilde{I_0}/n)}-1\right)\right]\right\vert\\
+=&\mathbb{E}\left[\left\vert e^{2i\pi \frac{\langle \lambda_I\rangle\cdot(\langle \lambda_{I_{\mu}}\rangle-\alpha_0)}{kn}}-1\right\vert\left\vert\frac{S_{\hat{I}_{\mu}}(2\pi \tilde{I}/n)}{S_{\hat{I}_{\mu}}(2\pi\tilde{I_0}/n)}-1\right\vert\mathbf{1}_{\langle  \hat{I}_{\mu}-I_0\rangle\leq n/\Vert I\Vert_{\infty}}\right]+O\left(\mathbb{P}(\langle  \hat{I}_{\mu}-I_0\rangle> n/\Vert I\Vert_{\infty})\right)\\
+\leq& \mathbb{E}\left[ 2\pi \langle \lambda_I\rangle\cdot\frac{\left\vert\langle \lambda_{I_{\mu}}\rangle-\alpha_0\right\vert}{kn}\cdot\frac{(2\pi)^2}{2n^2}\frac{K(\tilde{I})K(\widetilde{I_{\mu}})}{k^2-1}\cdot\mathbf{1}_{\langle  \hat{I}_{\mu}-I_0\rangle\leq n/\Vert I\Vert_{\infty}}\right]+\frac{1}{kn^3}O\left(\langle\hat{\mu}-I_0\rangle_3\Vert \tilde{I}\Vert_\infty^3\right)\\
+&\hspace{10cm}+O\left(\mathbb{P}(\langle  \hat{I}_{\mu}-I_0\rangle> n/\Vert I\Vert_{\infty})\right)\\
+\leq & \frac{1}{n^3}O\left(\mathbb{E}\left(\frac{\langle \lambda_I\rangle \cdot\Big\vert\langle \lambda_{I_{\mu}}\rangle-\alpha_0\Big\vert}{k} \cdot\langle  \hat{I}_{\mu}-I_0\rangle^2\cdot\Vert \tilde{I}\Vert_{\infty}^2\right)+O\left(\langle\hat{\mu}-I_0\rangle_3\Vert \tilde{I}\Vert_\infty^3\right)\right),
+\end{align*}$$ where we used Markov inequality to bound $\mathbb{P}(\langle  \hat{I}_{\mu}-I_0\rangle> k^{1/3}n/\Vert I\Vert_{\infty})$ by $\frac{1}{kn^3}\langle\hat{\mu}-I_0\rangle_3\Vert \tilde{I}\Vert_\infty^3$ and used the inequality $K(\tilde{I_{\mu}})\leq \langle  \hat{I}_{\mu}-I_0\rangle^2$ and $K(\tilde{I})\leq k\Vert\tilde{I}\Vert_{\infty}^2$ on the last inequality. By the Young inequality $ab\leq \frac{a^3}{3}+\frac{3b^{3/2}}{2}$ for $a,b\geq 0$, we finally get $$\begin{align*}
+&\mathbb{E}\left[\left(e^{2i\pi \frac{\langle \lambda_I\rangle\cdot(\langle \lambda_{I_{\mu}}\rangle-\alpha_0)}{kn}}-1\right)\left(\frac{S_{\hat{I}_{\mu}}(2\pi \tilde{I}/n)}{S_{\hat{I}_{\mu}}(2\pi\tilde{I_0}/n)}-1\right)\right]\\
+&\hspace{7cm}=\frac{1}{n^3}O\left(\frac{\vert\langle \lambda_I\rangle\vert^3\cdot\mathbb{E}\left[\left(\langle \lambda_{I_{\mu}}\rangle-\alpha_0\right)^3\right]}{k^3}+\langle\hat{\mu}-I_0\rangle_3\Vert \tilde{I}\Vert_\infty^3\right).
+\end{align*}$$ Putting the latter estimates with [\[eq:final_estimate_first_part\]](#eq:final_estimate_first_part){reference-type="eqref" reference="eq:final_estimate_first_part"} into [\[eq:final_estimate_decompo\]](#eq:final_estimate_decompo){reference-type="eqref" reference="eq:final_estimate_decompo"} and setting $\alpha_0=\mathbb{E}(\langle \lambda_{I_{\mu}}\rangle)=\langle\mu\rangle-\langle I_0\rangle$ yields then $$\begin{align*}
+&e^{-2i\pi\frac{(\langle\mu\rangle-\langle I_0\rangle)\cdot\langle \lambda_I\rangle}{kn}}\Phi_{n}[\mu](I^{(n)})\\
+&=1+\frac{2i\pi}{kn}\langle \lambda_I\rangle\mathbb{E}_{\mu}\Big[\langle \lambda_{I_{\mu}}\rangle-(\langle\mu\rangle-\langle I_0\rangle)\Big]-\frac{(2\pi)^2}{2n^2}\left[\frac{K(\mu)K(\widetilde{I})}{k^2-1}+\frac{\langle \lambda_I\rangle^2Var(\mu)}{k^2}\right]\\
+&\hspace{8cm}+\frac{1}{n^3}O\left(\frac{\vert\langle \lambda_I\rangle\vert^3\cdot Var_3(\mu)}{k^3}+\langle\hat{\mu}-I_0\rangle_3\Vert \tilde{I}\Vert_\infty^3\right)\\
+&=1-\frac{(2\pi)^2}{2n^2}\left[\frac{K(\mu)K(\widetilde{I})}{k^2-1}+\frac{\langle \lambda_I\rangle^2Var(\mu))}{k^2}\right]+\frac{1}{n^3}O\left(\frac{\vert\langle \lambda_I\rangle\vert^3\cdot Var_3(\mu)}{k^3}+\langle\hat{\mu}-I_0\rangle_3\Vert \tilde{I}\Vert_\infty^3\right).
+\end{align*}$$ To get the second statement of the lemma, note that by [\[eq:invariance_character_centered\]](#eq:invariance_character_centered){reference-type="eqref" reference="eq:invariance_character_centered"}, $$\left\vert \Phi_{n}[\mu](I^{(n)})\right\vert=\left\vert\mathbb{E}\left[\frac{S_{I_{\mu}}(\xi_{n}(I))}{S_{I_{\mu}}(\xi_{n}(I_0))}\right]\right\vert\leq \mathbb{E}\left[\left\vert\frac{S_{I_{\mu}}(\xi_{n}(I))}{S_{I_{\mu}}(\xi_{n}(I_0))}\right\vert\right]=\mathbb{E}\left[\left\vert\frac{S_{\hat{I}_{\mu}}\left(2\pi \tilde{I}/n\right)}{S_{\hat{I}_{\mu}}\left(2\pi\tilde{I_0}/n\right)}\right\vert\right].$$ Using [\[eq:asymptotic_bound_eigenvalue_SUk\]](#eq:asymptotic_bound_eigenvalue_SUk){reference-type="eqref" reference="eq:asymptotic_bound_eigenvalue_SUk"} yields then the result. ◻
+:::
+
+From Lemma [\[lem:asymptoti_eigenvalue\]](#lem:asymptoti_eigenvalue){reference-type="ref" reference="lem:asymptoti_eigenvalue"}, we can deduce asymptotics of the discrete Fourier transform of a convolution of Markov kernels on $B_{k,n}$. For a sequence $\mathbf{m}=(\mu_r)_{1\leq r\leq m}$ of $h$-probability measures, recall the notation from Section [\[subsec:main_probabilistic_results\]](#subsec:main_probabilistic_results){reference-type="ref" reference="subsec:main_probabilistic_results"} $$X(\mathbf{m})=\left(\frac{1}{m}\sum_{r=1}^mX(\mu_r)\right)-X(I_0),$$ for $X(\mu)=K(\mu)$ or any quantity defined in [\[eq:definition_moments\]](#eq:definition_moments){reference-type="eqref" reference="eq:definition_moments"}. We also set $$*\mathbf{m}=\mu_1*\mu_2*\dots\mu_m.$$
+
+::: proposition
+[]{#prop:convergence_fourier label="prop:convergence_fourier"} Let $M>0$ and suppose that $\mathbf{m}=(\mu_r)_{1\leq r\leq m}$ is a sequence of $h$-probability measures on $B_{k,n}$ such that $Var_{3}(\mathbf{m})\leq M Var(\mathbf{m})^{3/2}$ and $\langle\widehat{\mathbf{m}}\rangle_3\leq MK(\mathbf{m})
+^{3/2}$. Then, for all $J\in B_{k}$ with $J_1<J_k+n$, we have $$\left\vert\Phi_{n}[*\mathbf{m}](J^{(n)})\right\vert \leq A(J) \exp\left(-\frac{m(2\pi)^2}{2n^2}\frac{K(\tilde{J})K(\mathbf{m})}{k^2-1}+\frac{mM}{n^3}O\left(\Big[kK(\tilde{J})K(\mathbf{m})\Big]^{3/2}\right)\right)$$ with $A(J)\leq 1$ and $$A(J)=\exp\Bigg[-\frac{m(2\pi)^2}{2n^2}\left[\frac{Var(\mathbf{m})\langle \lambda_J\rangle^2}{k^2}\right]+\frac{mM}{n^3}O\left(\frac{Var(\mathbf{m})^{3/2}\cdot\vert\langle \lambda_J\rangle\vert^3}{k^3}\right)\Bigg].$$ When $\Vert \tilde{J}\Vert_{\infty}\leq c\frac{n}{m^{1/3}M^{1/3}K(\mathbf{m})^{1/2}}$ and $\langle \lambda_J\rangle\leq c\frac{kn}{m^{1/3}M^{1/3}Var(\mathbf{m})^{1/2}}$ for some numeric $c>0$ small enough, we get $$\begin{align*}
+e^{-2i \pi \frac{m\langle\mathbf{m}\rangle)\cdot\langle \lambda_J\rangle}{kn}}\Phi_{n}[*\mathbf{m}](J^{(n)})
+=&\exp\Bigg[-\frac{m(2\pi)^2}{2n^2}\left[\frac{K(\mathbf{m})K(\tilde{J})}{k^2-1}+\frac{Var(\mathbf{m})\langle \lambda_J\rangle^2}{k^2}\right]\\
+&+\frac{mM}{n^3}O\left(\frac{Var(\mathbf{m})^{3/2}\cdot\vert\langle \lambda_J\rangle\vert^3}{k^3}+\Big[k \cdot K(\mathbf{m})\cdot K(\tilde{J})\Big]^{3/2}\right)\Bigg].
+\end{align*}$$
+:::
+
 To prove this proposition, we will need the following estimate.
-Lemma 5.4. For all I∈Bk with I⁄=I0,
-‖˜I‖2
-∞≤kK(˜I).
-As a consequence, for µ∈M 1(Bk,n),
-⟨ˆµ−I0⟩3≤ 2
-√
-2k3‖˜µ‖3.
-Proof. First remark that either‖˜I‖∞ = ˜I1 or‖˜I‖∞ = ˜Ik. Up to replacingI by (−Ik,..., −I1),which
-does not change K(˜I), we can assume that‖˜I‖∞ = ˜I1. Then, recall that K(˜I) =‖˜I‖2−‖I0‖2 and
-write ˜I =I0 +x for some nondecreasing sequence x∈ Rk satisfying∑k
-i=1xi = 0. Then, we have
-k∑
-i=2
-((I0)i +xi)2 =
-k∑
-i=2
-(I0)2
-i + 2
-k∑
-i=2
-(I0)ixi +
-k∑
-i=2
-x2
-i.
-Since I0 and x are nondecreasing sequences, by Chebyschev’s sum inequality, ∑k
-i=2(I0)ixi ≥
-1
-k−1(∑k
-i=2(I0)i)(∑k
-i=2xi), and by convexity, ∑k
-i=2x2
-i ≥ 1
-k−1
-(∑k
-i=2xi
-)2
-. Hence, replacing xi by
-1
-k−1
-(∑k
-i=2xi
-)
-yields a vector ˜I′ = ˜I0 + (x1, 1
-k−1
-∑k
-i=2xi,... ) such that ˜I′
-1 = ˜I1,∑k
-i=1 ˜I′
-i = 0 and
-K(˜I)≥K(˜I′). We thus only need to show that K(˜I′)≥‖ ˜I′
-1‖2 = ˜I1.
-QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION 41
-Now, the condition ∑k
-i=1xi = 0 yields that 1
-k−1
-∑k
-i=2xi =− x1
-k−1. Hence,
-kK(˜I′)−‖ ˜I‖2
-∞ = (k− 1)
-(
-x1 + (˜I0)1
-)2
-+k
-k∑
-i=2
-(
-(˜I0)i− x1
-k− 1
-)2
-−k‖˜I0‖2 :=g(x1).
-Since (I0)i = k+1−2i
-2 for 1≤i≤k, we haveg′(x1) = 2(k−1)
-(
-x1 + k−1
-2
-)
-+2k∑k
-i=2
-(
-x1
-k−1− k+1−2i
-2
-)
-≥
-0 for x1≥ 0. It is thus suﬃcient to check that g(x1)≥ 0 for the smallest possible value of x1
-satisfying x1 > 0 and x1−
-(
-− x1
-k−1
-)
-≥ 1 (since ˜I and thus also ˜I′ satisfy the latter condition).
-This value is x1 = k−1
-k , which actually corresponds to I = (k,k − 2,..., 0). Using the formula
-‖x + ˜I0‖2−‖ ˜I0‖2 =∑k
-i=1xi(xi +k + 1− 2i), we then have
-g
-(k− 1
-k
-)
-=k
-(
-k− 1
-k
-(k− 1
-k +k− 1
-)
-−
-k∑
-i=2
-1
-k
-(
-−1
-k +k + 1− 2i
-))
-−
-(k− 1
-2 + k− 1
-k
-)2
-=
-((k− 1)2(k + 1)
-k − (k− 1)
-(
-k− 1− 1
-k
-)
-+k(k− 1)
-)
-−
-(k + 1
-2 − 1
-k
-)2
-=k2− 1−
-(k + 1
-2
-)2
-≥ 0.
-The second statement is a consequence of the ﬁrst one. First,‖ˆI‖∞≤ 2‖˜I‖∞ and⟨ˆI−I0⟩≤ k‖ˆI‖∞
-implies⟨ˆI−I0⟩2≤ 2kK(˜I) when I⁄=I0. Since the inequality is also satisﬁed when I =I0,
-⟨ˆµ−I0⟩3 = E
-[
-⟨Iµ⟩3]
-≤ E
-[
-⟨Iµ⟩3]
-≤ 2
-√
-2k3E
-[
-K(˜Iµ)3/2
-]
-≤ 2
-√
-2k3E
-[
-‖˜Iµ‖3
-]
-=‖˜µ‖3.
-□
-Proof of Proposition 5.3. ForJ =I0 the result is clear, since Φn[∗m](I0) = 1 (because∗m is again
-a h-probability measure) and K(˜I0) =⟨λI0⟩ = 0.
-LetJ⁄=I0∈Bk withJ1<J k+n and let m = (µr)1≤r≤m be a sequence ofh-probability measures
-satisfying the hypothesis of the proposition. First, Lemma 5.1 yields that for all 1 ≤r≤n,
-⏐⏐⏐Φn[µr](J(n))
-⏐⏐⏐≤ 1− (2π)2
-2n2
-[
-K(µr)K( ˜J)
-k2− 1
-]
-+ 1
-n3O
-(
-⟨ˆµr−I0⟩3·‖ ˜J‖3
-∞
-)
-,
-with O(·) only depending on numeric constants. Using (18) with the inequality 1 + u≤ eu for
-u∈ R yields then
-⏐⏐⏐Φn[∗m](J(n))
-⏐⏐⏐ =
-m∏
-r=1
-⏐⏐⏐Φn[µr](J(n))
-⏐⏐⏐
-≤
-m∏
-r=1
-[
-1− (2π)2
-2n2
-[
-K(µr)K( ˜J)
-k2− 1
-]
-+ 1
-n3O
-(
-⟨ˆµr−I0⟩3·‖ ˜J‖3
-∞
-)]
-≤ exp
-(
-−(2π)2
-2n2
-K( ˜J)∑m
-r=1K(µr)
-k2− 1 + 1
-n3O
-(
-‖ ˜J‖3
-∞·
-m∑
-r=1
-⟨ˆµr−I0⟩3
-))
-.
-42 J. GUILHOT, C. LECOUVEY, AND P. TARRAGO
-Since‖ ˜J‖2
-∞≤kK( ˜J) for J⁄=I0 by Lemma 5.4, we thus have, using the hypothesis of the proposi-
-tion,
-1
-n3O
-(
-‖ ˜J‖3
-∞·
-m∑
-r=1
-⟨ˆµr−I0⟩3
-)
-= m
-n3O
-(
-k3/2K( ˜J)3/2·⟨ ˆmr⟩3
-)
-= m
-n3O
-(
-k3/2K( ˜J)3/2·K(m)3/2
-)
-,
-and thus
-(44)
-⏐⏐⏐Φn[∗m](J(n))
-⏐⏐⏐≤ exp
-(
-−(2π)2
-2n2
-K( ˜J)∑m
-r=1K(µr)
-k2− 1 + m
-n3O
-(
-k3/2K( ˜J)3/2·K(m)3/2
-))
-.
-Then, Lemma 5.1 yields for all 1 ≤r≤n,
-e−2iπ (⟨µr⟩−⟨I0⟩)·⟨λJ⟩
-kn Φn[µr](J(n)) = 1− (2π)2
-2n2
-[
-K(µr)K( ˜J)
-k2− 1 + Var (µr)⟨λJ⟩2
-k2
-]
-+ 1
-n3O
-(Var 3(µr)·|⟨λJ⟩|3
-k3 +⟨ˆµr−I0⟩3·‖ ˜J‖3
-∞
-)
-,
-with O(·) only depending on numeric constants. Using the inequality 1 + u≤ eu for u∈ R, (18)
-and the hypothesis of the proposition then gives as before
-⏐⏐⏐Φn[∗m](J(n))
-⏐⏐⏐ =
-m∏
-r=1
-⏐⏐⏐Φn[µr](J(n))
-⏐⏐⏐≤ exp
-[
-− m(2π)2
-2n2
-[
-K(m)K( ˜J)
-k2− 1 + Var (m)⟨λJ⟩2
-k2
-]
-+ mM
-n3 O
-(Var 3(m)·|⟨λJ⟩|3
-k3 +
-[
-k·K(m)·K( ˜J)
-]3/2)]
-.
-The latter inequality together with (44) imply the ﬁrst statement of the proposition.
-Since K(µr)≤ (⟨ˆµr⟩−⟨ I0⟩)2 and K( ˜J)≤ k‖ ˜J‖2
-∞, K(µr)K( ˜J)
-k2−1 = O(‖ ˜J‖2
-∞⟨ˆµr−I0⟩2). More-
-over, Var 2(µr) ≤ Var 3(µr)2/3. Hence, assuming that ‖ ˜J‖∞ ≤ c n
-sup1≤r≤m⟨ˆµr−I0⟩ and ⟨λJ⟩ ≤
-c kn
-sup1≤r≤mVar 3(µr)1/3 for c small enough, we have
-(2π)2
-2n2
-[
-K(µr)K( ˜J)
-k2− 1 + Var (µr)⟨λJ⟩2
-k2
-]
-+ 1
-n3O
-(Var 3(µr)·|⟨λJ⟩|3
-k3 +⟨ˆµr−I0⟩3·‖ ˜J‖3
-∞
-)
-≤ 1/2.
-The hypotheses⟨ ˆm⟩3≤MK (m)3/2 implies thatm1/3M 1/2K(m)1/2≥ sup1≤r≤m⟨ˆµr−I0r⟩. Hence,
-when‖ ˜J‖∞ ≤ c n
-m1/3M 1/3K(m)1/2 and⟨λJ⟩ ≤c kn
-m1/3M 1/3Var (m)1/2 we have in particular ‖ ˜J‖∞ ≤
-c n
-sup1≤r≤m⟨ˆµr−I0⟩. Similarly, ⟨λJ⟩≤ c kn
-m1/3M 1/3Var (m)1/2 implies that ⟨λJ⟩≤ c kn
-sup1≤r≤mVar 3(µr)1/3 .
-Hence, for such J, using the estimate 1 + u = exp(u +O(u3/2)) for|u|≤ 1/2 yields then
-e−2iπ (⟨µr⟩−⟨I0⟩)·⟨λJ⟩
-kn Φn[µr](J(n))
-= exp
-[
-− (2π)2
-2n2
-[
-K(µr)K( ˜J)
-k2− 1 + Var (µr)⟨λJ⟩2
-k2
-]
-+ 1
-n3O
-(Var 3(µr)·|⟨λJ⟩|3
-k3 +⟨ˆµr−I0⟩3·‖ ˜J‖3
-∞
-)
-+ 1
-n3O
-(
-K(µr)3/2K( ˜J)3/2
-k3 + Var (µr)3/2|⟨λJ⟩|3
-k3
-)]
-.
-QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION 43
-Since Var (µr)3/2≤Var 3(µr), K(µr)3/2≤⟨ ˆµr−I0⟩3 and K( ˜J)
-k ≤‖ ˜J‖2
-∞,
-O
-(
-K(µr)3/2K( ˜J)3/2
-k3 + Var (µr)3/2|⟨λJ⟩|3
-k3
-)
-=O
-(
-⟨ˆµr−I0⟩3‖ ˜J‖3
-∞ + Var 3(µr)|⟨λJ⟩|3
-k3
-)
-.
-Hence, since K( ˜J)≤k‖ ˜J‖2
-∞ by Lemma 5.4,
-e−2iπ (⟨µr⟩−⟨I0⟩)·⟨λJ⟩
-kn Φn[µr](J(n))
-= exp
-[
-− (2π)2
-2n2
-[
-K(µr)K( ˜J)
-k2− 1 + Var (µr)⟨λJ⟩2
-k2
-]
-+ 1
-n3O
-(
-k3/2⟨ˆµr−I0⟩3·K( ˜J)3/2 + Var 3(µr)·|⟨λJ⟩|3
-k3
-)]
-.
-Using (18) for 1≤r≤m yields then
-e−2iπm⟨m⟩)·⟨λJ⟩
-kn Φn[∗m](J(n)) =
-m∏
-r=1
-e−2iπ (⟨µr⟩−⟨I0⟩)·⟨λJ⟩
-kn Φn[µr](J)
-= exp
-[
-− m(2π)2
-2n2
-[
-K(m)K( ˜J)
-k2− 1 + Var (m)⟨λJ⟩2
-k2
-]
-+ m
-n3O
-(
-k3/2⟨ ˆm⟩3·K( ˜J)3/2 + Var 3(m)·|⟨λJ⟩|3
-k3
-)]
-.
-The hypothesisVar 3(m)≤MVar (m)3/2 and⟨ ˆm⟩3≤MK (m)3/2 yields then the second statement
-of the proposition. □
-Remark that the ﬁrst statement of Proposition 5.3 is only relevant when K( ˜J)≤ c n2k3
-M 2K(m) for
-some numeric c> 0. We conclude this section by a crude estimate of Φ n[∗m] when K( ˜J)≥cn2.
-Lemma 5.5. For any 0<c< 1/2, there exists 0<t< 1 depending on c such that for I,J ∈Bk,n
-with sup((Ii−Ii+1) mod n)≥cn,
-|SJ(ξn(I))|
-SJ(ξn(I0))≤ max
-(k−2
-k ,t
-)
-1 +O
-(k2⟨λ ˆJ⟩2
-n2
-).
-In particular, there exists η,δ > 0 only depending on k and c such that for any sequence m =
-(µi)1≤i≤m of h-probability measures with⟨ ˆm⟩3≤MK (m)3/2 and I∈Bk such that sup((ˆIi− ˆIi+1)
-mod n)≥cn,
-Φn[∗m](I(n))≤ exp
-(
-−mδ + mM
-η3n3K(m)3/2
-)
-.
-44 J. GUILHOT, C. LECOUVEY, AND P. TARRAGO
-Proof. We prove the ﬁrst part of the lemma in the case where n/2≥λ1−λ2≥cn, the other cases
-being deduced similarly. Set λ =λ ˆJ and ζj =e2iπij/n for 1≤j≤n. Then, by (36),
-|SJ(ξn(I))| =|sλ(ζ1,ζ 2,ζ 3,... )|
-≤
-∑
-µ⊂λ
-l(µ)≤2
-⏐⏐sµ(ζ1,ζ 2)sλ/µ(ζ3,...,ζ k)
-⏐⏐
-≤|sλ(ζ3,...,ζ k)| +
-∑
-0≤b<a+1≤λ+1
-b≤λ2
-⏐⏐s(a,b)(ζ1,ζ 2)sλ/(a,b)(ζ3,...,ζ k)
-⏐⏐
-+
-∑
-0<a≤λ2
-⏐⏐s(a,a)(ζ1,ζ 2)sλ/(a,a)(ζ3,...,ζ k) +s(a,a−1)(ζ1,ζ 2)sλ/(a,a−1)(ζ3,...,ζ k)
-⏐⏐
-:=S1 +S2 +S3.
-First, by the Weyl dimension formula sλ(1k) =∏
-1≤i<j≤k
-(λi−λj+j−i)
-j−i for λ⁄=∅,
-S1≤sλ(1k−2) =δl(λ)≤k−2
-1∏
-1≤i≤k−2
-λi+k−1−i
-k−1−i
-λi+k−i
-k−i
-·sλ(1k)
-≤k− 2
-k sλ(1k).(45)
-Then, if 0≤b<a , then
-|s(a,b)(ζ1,ζ 2)| =|e2(ζ1,ζ 2)|b|hb−a(ζ1,ζ 2)| =|hb−a(ζ1,ζ 2)|,
-whereel andhl are respectively the elementary and complete homogeneous symmetric polynomials.
-Forl> 0, hl(ζ1,ζ 2) = ζl+1
-1 −ζl+1
-2
-ζ1−ζ2
-and thus, using that i1≥i2,
-|hl(ζ1,ζ 2)| =| sin((l + 1)π(i1−i2)/n)|
-sin(π(i1−i2)/n) .
-Remark that for π
-2(l+1)≤x≤π/2, the inequality sin(u)>u − u3
-6 for u∈]0,π/ 2] yields
-| sin((l + 1)x)|
-sin(x) ≤ 1
-sin(x)≤ 1
-sin
-(
-π
-2(l+1)
-)≤ 2(l + 1)
-π
-(
-1−
-(
-π
-2(l+1)
-)2
-/6
-) <u 1(l + 1)
-for u1 = 2
-π
-(
-1−(π
-4 )
-2
-/6
-) < 1 independent of l. Hence, if l is such that 1
-2(l+1)≤ i1−i2
-n ≤ 1− 1
-2(l+1),
-|hl((ζ1,ζ 2)|≤ t(l + 1) =ts(a,b)(1, 1).
-Since c ≤ i1−i2
-n ≤ 1− c, there is a ﬁnite number only depending on c and l ∈ N satisfying
-min
-(i1−i2
-n , 1− i1−i2
-n
-)
-≤ 1
-2(l+1). For each of them, the function x↦→ sin((l+1)x)
-sinx is strictly decreasing
-on [0,π/ (2(l+1))] with maximum (l+1) at 0. Hence, there exists a constant u2< 1 only depending
-on c such that for any l such that min
-(i1−i2
-n , 1− i1−i2
-n
-)
-≤ 1
-2(l+1),
-| sin((l + 1)π(i1−ik)/n)|
-sin(π(i1−i2)/n) ≤u2(l + 1).
-We have thus found a constant u = (u1∨u2)< 1 only depending on c such that for all l≥ 1,
-(46) |hl((ζ1,ζ 2)|≤ u(l + 1).
-QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION 45
-In particular, for 0≤b<a ,
-|s(a,b)(ζ1,ζ 2)| =|hb−a(ζ1,ζ 2)|≤ u(b−a + 1) =us(a,b)(1, 1),
-and summing on all contributions yields
-(47) S2≤
-∑
-0≤b<a+1≤λ+1
-b≤λ2
-s(a,b)(1, 1)sλ/(a,b)(1k−2).
-Then, for a≤ λ2, remark that sλ/(a,a)(1k−2)≤ sλ/(a,a−1)(1k−2). Indeed, any semistandard ﬁlling
-of λ/(a,a ) yields a semistandard ﬁlling of λ/(a,a− 1) by putting 1 in the cell (2 ,a ). Hence, using
-that|s(a,a)(ζ1,ζ 2)| = 1 and
-|s(a,a−1)(ζ1,ζ 2)| =|h1(ζ1,ζ 2)|≤ 2 cos(cπ) = cos(cπ)s(a,a−1)(1, 1),
-we get⏐⏐s(a,a)(ζ1,ζ 2)sλ/(a,a)(ζ3,...,ζ k) +s(a,a−1)(ζ1,ζ 2)sλ/(a,a−1)(ζ3,...,ζ k)
-⏐⏐
-≤s(a,a)(1, 1)sλ/(a,a)(1k−2) + cos(cπ)s(a,a−1)(1, 1)sλ/(a,a−1)(1k−2)
-≤ 1 + cos(cπ)
-2
-(
-s(a,a)(1, 1)sλ/(a,a)(1k−2) +s(a,a−1)(1, 1)sλ/(a,a−1)(1k−2)
-)
-.
-Summing on all a≤λ2 yields then
-(48) S3≤ 1 + cos(cπ)
-2
-∑
-a≤λ2
-(
-s(a,a)(1, 1)sλ/(a,a)(1k−2) +s(a,a−1)(1, 1)sλ/(a,a−1)(1k−2)
-)
-.
-Putting (45),(47) and (48) together yields the existence of t< 1 depending only on c such that
-S1 +S2 +S3≤ max
-(k− 2
-k ,t
-) ∑
-µ⊂λ
-l(µ)≤2
-sµ(1, 1)sλ/µ(1k−2)≤ max
-(k− 2
-k ,t
-)
-sλ(1k).
-On the other hand, by (35) we have
-SJ(ξn(I0))
-SJ(0,..., 0) = 1 +O
-(k2⟨λ⟩2
-n2
-)
-,
-so that ﬁnally
-|SJ(ξn(I))|
-SJ(ξn(I0))≤ max
-(k−2
-k ,t
-)
-1−c′k2⟨λ ˆJ⟩2
-n2
-,
-with t< 1 depending on c and c′> 0 numeric.
-For the second statement, recalling that Φn[µ](I(n)) = E
-[
-SIµ(ξn(I (n)))
-SIµ(ξn(I (n)))
-]
-= E
-[SIµ(ξn(I))
-SIµ(ξn(I))
-]
-and that
-⏐⏐⏐ SJ(ξn(I))
-SJ(ξn(I0))
-⏐⏐⏐≤ 1 for all J∈Bk,n, for η >0 to choose later we have
-⏐⏐⏐Φn[µ](I(n))
-⏐⏐⏐≤ P(⟨ˆIµ⟩>ηn )) + E
-[⏐⏐⏐⏐
-SIµ(ξn(I))
-SIµ(ξn(I))
-⏐⏐⏐⏐ 1⟨ˆIµ⟩≤ηn
-)
-,
-so that by Markov inequality and the ﬁrst part of the statement, there exists t> 0 only depending
-on c such that
-⏐⏐⏐Φn[µ](I(n))
-⏐⏐⏐≤
-E
-[
-⟨ˆIµ⟩3
-]
-η3n3 + max(k−2
-k ,t )
-1−c′k2η2 ≤ 1−δ +
-E
-[
-⟨ˆIµ⟩3
-]
-η3n3 ,
-where we choose η (only depending on c and k) such that
-max(k−2
-k ,t)
-1−c′k2η2 = 1−δ with δ >0.
-46 J. GUILHOT, C. LECOUVEY, AND P. TARRAGO
-Let m = (µr)1≤r≤m be a sequence of h-probability measures satisfying the hypotheses of the
-lemma. Applying the bound 1 −δ +
-E[⟨ˆIµ⟩3]
-η3n3 ≤ exp
-(
-−δ +
-E[⟨ˆIµ⟩3]
-η3n3
-)
-and taking the product on all
-Φn[Iµr](I(n)) yield then with (18)
-Φn[∗m](I(n))≤ exp
-(
-−mδ + 1
-n3η3
-m∑
-r=1
-E
-[
-⟨ˆIµr⟩3
-])
-≤ exp
-(
-−m
-(
-δ + M
-n3η3K(m)3/2
-))
-.
-□
+
+::: lemma
+[]{#lem:bound_K_norm_inf label="lem:bound_K_norm_inf"} For all $I\in B_{k}$ with $I\not=I_0$, $$\Vert \tilde{I}\Vert_{\infty}^2\leq kK(\tilde{I}).$$ As a consequence, for $\mu\in \mathcal{M}_{1}(B_{k,n})$, $$\langle\hat{\mu}-I_0\rangle_3\leq 2\sqrt{2}k^3\Vert \tilde{\mu}\Vert_{3}.$$
+:::
+
+::: proof
+*Proof.* First remark that either $\Vert \tilde{I}\Vert_{\infty}=\tilde{I}_1$ or $\Vert \tilde{I}\Vert_{\infty}=\tilde{I}_k$. Up to replacing $I$ by $(-I_k,\ldots,-I_1)$,which does not change $K(\tilde{I})$, we can assume that $\Vert \tilde{I}\Vert_{\infty}=\tilde{I}_1$. Then, recall that $K(\tilde{I})=\Vert \tilde{I}\Vert^2-\Vert I_0\Vert^2$ and write $\tilde{I}=I_0+x$ for some nondecreasing sequence $x\in \mathbb{R}^k$ satisfying $\sum_{i=1}^kx_i=0$. Then, we have $$\sum_{i=2}^k((I_0)_i+x_i)^2=\sum_{i=2}^k(I_0)_i^2+2\sum_{i=2}^k(I_0)_ix_i+\sum_{i=2}^kx_i^2.$$ Since $I_0$ and $x$ are nondecreasing sequences, by Chebyschev's sum inequality, $\sum_{i=2}^k(I_0)_ix_i\geq \frac{1}{k-1}(\sum_{i=2}^k(I_0)_i)(\sum_{i=2}^kx_i)$, and by convexity, $\sum_{i=2}^kx_i^2\geq \frac{1}{k-1}\left(\sum_{i=2}^kx_i\right)^2$. Hence, replacing $x_i$ by $\frac{1}{k-1}\left(\sum_{i=2}^kx_i\right)$ yields a vector $\tilde{I}'=\tilde{I}_0+(x_1,\frac{1}{k-1}\sum_{i=2}^kx_i,\ldots)$ such that $\tilde{I}'_1=\tilde{I}_1$, $\sum_{i=1}^k\tilde{I}'_i=0$ and $K(\tilde{I})\geq K(\tilde{I}')$. We thus only need to show that $K(\tilde{I}')\geq \Vert \tilde{I}'_1\Vert^2=\tilde{I}_1$.
+
+Now, the condition $\sum_{i=1}^kx_i=0$ yields that $\frac{1}{k-1}\sum_{i=2}^kx_i=-\frac{x_1}{k-1}$. Hence, $$kK(\tilde{I}')-\Vert \tilde{I}\Vert_{\infty}^2=(k-1)\left(x_1+(\tilde{I_0})_1\right)^2+k\sum_{i=2}^k\left((\tilde{I}_0)_i-\frac{x_1}{k-1}\right)^2-k\Vert \tilde{I}_0\Vert^2:=g(x_1).$$ Since $(I_0)_i=\frac{k+1-2i}{2}$ for $1\leq i\leq k$, we have $g'(x_1)=2(k-1)\left(x_1+\frac{k-1}{2}\right)+2k\sum_{i=2}^k\left(\frac{x_1}{k-1}-\frac{k+1-2i}{2}\right)\geq 0$ for $x_1\geq 0$. It is thus sufficient to check that $g(x_1)\geq 0$ for the smallest possible value of $x_1$ satisfying $x_1> 0$ and $x_1-\left(-\frac{x_1}{k-1}\right)\geq 1$ (since $\tilde{I}$ and thus also $\tilde{I}'$ satisfy the latter condition). This value is $x_1=\frac{k-1}{k}$, which actually corresponds to $I=(k,k-2,\ldots,0)$. Using the formula $\Vert x+\tilde{I}_0\Vert^2-\Vert \tilde{I}_0\Vert^2=\sum_{i=1}^kx_i(x_i+k+1-2i)$, we then have $$\begin{align*}
+g\left(\frac{k-1}{k}\right)=&k\left(\frac{k-1}{k}\left(\frac{k-1}{k}+k-1\right)-\sum_{i=2}^k\frac{1}{k}\left(-\frac{1}{k}+k+1-2i\right)\right)-\left(\frac{k-1}{2}+\frac{k-1}{k}\right)^2\\
+=&\left(\frac{(k-1)^2(k+1)}{k}-(k-1)\left(k-1-\frac{1}{k}\right)+k(k-1)\right)-\left(\frac{k+1}{2}-\frac{1}{k}\right)^2\\
+=&k^2-1-\left(\frac{k+1}{2}\right)^2\geq 0.
+\end{align*}$$ The second statement is a consequence of the first one. First, $\Vert \hat{I}\Vert_{\infty}\leq 2\Vert \tilde{I}\Vert_{\infty}$ and $\langle \hat{I}-I_0\rangle \leq k\Vert \hat{I}\Vert_{\infty}$ implies $\langle \hat{I}-I_0\rangle ^2\leq 2kK(\tilde{I})$ when $I\not=I_0$. Since the inequality is also satisfied when $I=I_0$, $$\langle \hat{\mu}-I_0\rangle_3=\mathbb{E}\left[\langle I_{\mu}\rangle^3\right]\leq \mathbb{E}\left[\langle I_{\mu}\rangle^3\right]\leq 2\sqrt{2}k^3\mathbb{E}\left[K(\tilde{ I}_{\mu})^{3/2}\right]\leq 2\sqrt{2}k^3\mathbb{E}\left[\Vert\tilde{ I}_{\mu}\Vert^{3}\right]=\Vert \tilde{\mu}\Vert_3.$$ ◻
+:::
+
+::: proof
+*Proof of Proposition [\[prop:convergence_fourier\]](#prop:convergence_fourier){reference-type="ref" reference="prop:convergence_fourier"}.* For $J=I_0$ the result is clear, since $\Phi_n[*\mathbf{m}](I_0)=1$ (because $*\mathbf{m}$ is again a $h$-probability measure) and $K(\tilde{I}_0)=\langle \lambda_{I_0}\rangle=0$.
+
+Let $J\not=I_0\in B_{k}$ with $J_1<J_k+n$ and let $\mathbf{m}=(\mu_r)_{1\leq r\leq m}$ be a sequence of $h$-probability measures satisfying the hypothesis of the proposition. First, Lemma [\[lem:asymptoti_eigenvalue\]](#lem:asymptoti_eigenvalue){reference-type="ref" reference="lem:asymptoti_eigenvalue"} yields that for all $1\leq r\leq n$, $$\begin{align*}
+\left\vert\Phi_{n}[\mu_r](J^{(n)})\right\vert&\leq 1-\frac{(2\pi)^2}{2n^2}\left[\frac{K(\mu_r)K(\tilde{J})}{k^2-1}\right]+\frac{1}{n^3}O\left(\langle\hat{\mu}_r-I_0\rangle_3\cdot\Vert \tilde{J}\Vert_\infty^3\right),
+\end{align*}$$ with $O(\cdot)$ only depending on numeric constants. Using [\[eq:relation_conv_dft\]](#eq:relation_conv_dft){reference-type="eqref" reference="eq:relation_conv_dft"} with the inequality $1+u\leq e^u$ for $u\in\mathbb{R}$ yields then $$\begin{align*}
+\left\vert\Phi_{n}[*\mathbf{m}](J^{(n)})\right\vert=&\prod_{r=1}^m\left\vert \Phi_{n}[\mu_r](J^{(n)})\right\vert \\
+\leq& \prod_{r=1}^m\left[1-\frac{(2\pi)^2}{2n^2}\left[\frac{K(\mu_r)K(\tilde{J})}{k^2-1}\right]+\frac{1}{n^3}O\left(\langle\hat{\mu}_r-I_0\rangle_3\cdot\Vert \tilde{J}\Vert_\infty^3\right)\right]\\
+\leq&\exp\left(-\frac{(2\pi)^2}{2n^2}\frac{K(\tilde{J})\sum_{r=1}^mK(\mu_r)}{k^2-1}+\frac{1}{n^3}O\left(\Vert \tilde{J}\Vert_\infty^3\cdot\sum_{r=1}^m\langle\hat{\mu}_r-I_0\rangle_3\right)\right).
+\end{align*}$$ Since $\Vert \tilde{J}\Vert^2_{\infty}\leq kK(\tilde{J})$ for $J\not=I_0$ by Lemma [\[lem:bound_K_norm_inf\]](#lem:bound_K_norm_inf){reference-type="ref" reference="lem:bound_K_norm_inf"}, we thus have, using the hypothesis of the proposition, $$\begin{align*}
+\frac{1}{n^3}O\left(\Vert \tilde{J}\Vert_\infty^3\cdot\sum_{r=1}^m\langle\hat{\mu}_r-I_0\rangle_3\right)=\frac{m}{n^3}O\left(k^{3/2}K(\tilde{J})^{3/2}\cdot\langle  \hat{\mathbf{m}}_r\rangle_3\right)=\frac{m}{n^3}O\left(k^{3/2}K(\tilde{J})^{3/2}\cdot K(\mathbf{m})^{3/2}\right),
+\end{align*}$$ and thus $$\begin{equation}
+\label{eq:proof_prop_first_ineq}
+\left\vert\Phi_{n}[*\mathbf{m}](J^{(n)})\right\vert\leq\exp\left(-\frac{(2\pi)^2}{2n^2}\frac{K(\tilde{J})\sum_{r=1}^mK(\mu_r)}{k^2-1}+\frac{m}{n^3}O\left(k^{3/2}K(\tilde{J})^{3/2}\cdot K(\mathbf{m})^{3/2}\right)\right).
+\end{equation}$$ Then, Lemma [\[lem:asymptoti_eigenvalue\]](#lem:asymptoti_eigenvalue){reference-type="ref" reference="lem:asymptoti_eigenvalue"} yields for all $1\leq r\leq n$, $$\begin{align*}
+e^{-2i\pi\frac{(\langle\mu_r\rangle-\langle I_0\rangle)\cdot\langle \lambda_J\rangle}{kn}}\Phi_{n}[\mu_r](J^{(n)})&=1-\frac{(2\pi)^2}{2n^2}\left[\frac{K(\mu_r)K(\tilde{J})}{k^2-1}+\frac{Var(\mu_r)\langle \lambda_J\rangle^2}{k^2}\right]\\
+&\hspace{3cm}+\frac{1}{n^3}O\left(\frac{Var_3(\mu_r)\cdot\vert\langle \lambda_J\rangle\vert^3}{k^3}+\langle\hat{\mu}_r-I_0\rangle_3\cdot\Vert \tilde{J}\Vert_\infty^3\right),
+\end{align*}$$ with $O(\cdot)$ only depending on numeric constants. Using the inequality $1+u\leq e^{u}$ for $u\in \mathbb{R}$, [\[eq:relation_conv_dft\]](#eq:relation_conv_dft){reference-type="eqref" reference="eq:relation_conv_dft"} and the hypothesis of the proposition then gives as before $$\begin{align*}
+\left\vert\Phi_{n}[*\mathbf{m}](J^{(n)})\right\vert=\prod_{r=1}^m\left\vert \Phi_{n}[\mu_r](J^{(n)})\right\vert\leq&\exp\Bigg[-\frac{m(2\pi)^2}{2n^2}\left[\frac{K(\mathbf{m})K(\tilde{J})}{k^2-1}+\frac{Var(\mathbf{m})\langle \lambda_J\rangle^2}{k^2}\right]\\
+&+\frac{mM}{n^3}O\left(\frac{Var_3(\mathbf{m})\cdot\vert\langle \lambda_J\rangle\vert^3}{k^3}+\Big[k \cdot K(\mathbf{m})\cdot K(\tilde{J})\Big]^{3/2}\right)\Bigg].
+\end{align*}$$ The latter inequality together with [\[eq:proof_prop_first_ineq\]](#eq:proof_prop_first_ineq){reference-type="eqref" reference="eq:proof_prop_first_ineq"} imply the first statement of the proposition.
+
+Since $K(\mu_r)\leq (\langle\hat{\mu}_r\rangle-\langle I_0\rangle)^2$ and $K(\tilde{J})\leq k\Vert \tilde{J}\Vert_{\infty}^2$, $\frac{K(\mu_r)K(\tilde{J})}{k^2-1}=O(\Vert \tilde{J}\Vert_{\infty}^2 \langle\hat{\mu}_r-I_0\rangle^2)$. Moreover, $Var_2(\mu_r)\leq Var_3(\mu_r)^{2/3}$. Hence, assuming that $\Vert \tilde{J}\Vert_{\infty}\leq c\frac{n}{\sup_{1\leq r\leq m}\langle\hat{\mu}_r-I_0\rangle}$ and $\langle \lambda_J\rangle\leq c\frac{kn}{\sup_{1\leq r\leq m}Var_3(\mu_r)^{1/3}}$ for $c$ small enough, we have $$\frac{(2\pi)^2}{2n^2}\left[\frac{K(\mu_r)K(\tilde{J})}{k^2-1}+\frac{Var(\mu_r)\langle \lambda_J\rangle^2}{k^2}\right]+\frac{1}{n^3}O\left(\frac{Var_3(\mu_r)\cdot\vert\langle \lambda_J\rangle\vert^3}{k^3}+\langle\hat{\mu}_r-I_0\rangle_3\cdot\Vert \tilde{J}\Vert_\infty^3\right)\leq 1/2.$$ The hypotheses $\langle\hat{\mathbf{m}}\rangle_3\leq M K(\mathbf{m})^{3/2}$ implies that $m^{1/3}M^{1/2}K(\mathbf{m})^{1/2}\geq \sup_{1\leq r\leq m} \langle\hat{\mu}_r-I_0r\rangle$. Hence, when $\Vert \tilde{J}\Vert_{\infty}\leq c\frac{n}{m^{1/3}M^{1/3}K(\mathbf{m})^{1/2}}$ and $\langle \lambda_J\rangle\leq c\frac{kn}{m^{1/3}M^{1/3}Var(\mathbf{m})^{1/2}}$ we have in particular $\Vert \tilde{J}\Vert_{\infty}\leq c\frac{n}{\sup_{1\leq r\leq m}\langle\hat{\mu}_r-I_0\rangle}$. Similarly, $\langle \lambda_J\rangle\leq c\frac{kn}{m^{1/3}M^{1/3}Var(\mathbf{m})^{1/2}}$ implies that $\langle \lambda_J\rangle\leq c\frac{kn}{\sup_{1\leq r\leq m}Var_3(\mu_r)^{1/3}}$. Hence, for such $J$, using the estimate $1+u=\exp(u+O(u^{3/2}))$ for $\vert u\vert\leq 1/2$ yields then $$\begin{align*}
+&e^{-2i\pi\frac{(\langle\mu_r\rangle-\langle I_0\rangle)\cdot\langle \lambda_J\rangle}{kn}}\Phi_{n}[\mu_r](J^{(n)})\\
+&=\exp\Bigg[-\frac{(2\pi)^2}{2n^2}\left[\frac{K(\mu_r)K(\tilde{J})}{k^2-1}+\frac{Var(\mu_r)\langle \lambda_J\rangle^2}{k^2}\right]
++\frac{1}{n^3}O\left(\frac{Var_3(\mu_r)\cdot\vert\langle \lambda_J\rangle\vert^3}{k^3}+\langle\hat{\mu}_r-I_0\rangle^3\cdot\Vert \tilde{J}\Vert_\infty^3\right)\\
+&\hspace{7.5cm}+\frac{1}{n^3}O\left(\frac{K(\mu_r)^{3/2}K(\tilde{J})^{3/2}}{k^3}+\frac{Var(\mu_r)^{3/2}\vert\langle \lambda_J\rangle\vert^3}{k^3}\right)\Bigg].
+\end{align*}$$ Since $Var(\mu_r)^{3/2}\leq Var_3(\mu_r)$, $K(\mu_r)^{3/2}\leq \langle\hat{\mu}_r-I_0\rangle^3$ and $\frac{K(\tilde{J})}{k}\leq \Vert \tilde{J}\Vert_{\infty}^2$, $$\begin{align*}
+O\left(\frac{K(\mu_r)^{3/2}K(\tilde{J})^{3/2}}{k^3}+\frac{Var(\mu_r)^{3/2}\vert\langle \lambda_J\rangle\vert^3}{k^3}\right)=O\left(\langle\hat{\mu}_r-I_0\rangle^3\Vert \tilde{J}\Vert_{\infty}^3+\frac{Var_3(\mu_r)\vert\langle \lambda_J\rangle\vert^3}{k^3}\right).
+\end{align*}$$ Hence, since $K(\tilde{J})\leq k\Vert \tilde{J}\Vert_{\infty}^2$ by Lemma [\[lem:bound_K_norm_inf\]](#lem:bound_K_norm_inf){reference-type="ref" reference="lem:bound_K_norm_inf"}, $$\begin{align*}
+&e^{-2i\pi\frac{(\langle\mu_r\rangle-\langle I_0\rangle)\cdot\langle \lambda_J\rangle}{kn}}\Phi_{n}[\mu_r](J^{(n)})\\
+&=\exp\Bigg[-\frac{(2\pi)^2}{2n^2}\left[\frac{K(\mu_r)K(\tilde{J})}{k^2-1}+\frac{Var(\mu_r)\langle \lambda_J\rangle^2}{k^2}\right]\\
+&\hspace{2cm}+\frac{1}{n^3}O\left(k^{3/2}\langle\hat{\mu}_r-I_0\rangle^3\cdot K(\tilde{J})^{3/2}+\frac{Var_3(\mu_r)\cdot\vert\langle \lambda_J\rangle\vert^3}{k^3}\right)\Bigg].
+\end{align*}$$ Using [\[eq:relation_conv_dft\]](#eq:relation_conv_dft){reference-type="eqref" reference="eq:relation_conv_dft"} for $1\leq r\leq m$ yields then $$\begin{align*}
+e^{-2i \pi \frac{m\langle\mathbf{m}\rangle)\cdot\langle \lambda_J\rangle}{kn}}\Phi_{n}[*\mathbf{m}](J^{(n)})
+=&\prod_{r=1}^me^{-2i\pi\frac{(\langle\mu_r\rangle-\langle I_0\rangle)\cdot\langle \lambda_J\rangle}{kn}}\Phi_{n}[\mu_r](J)\nonumber\\
+=&\exp\Bigg[-\frac{m(2\pi)^2}{2n^2}\left[\frac{K(\mathbf{m})K(\tilde{J})}{k^2-1}+\frac{Var(\mathbf{m})\langle \lambda_J\rangle^2}{k^2}\right]\nonumber\\
+&\quad+\frac{m}{n^3}O\left(k^{3/2}\langle\hat{\mathbf{m}}\rangle^3\cdot K(\tilde{J})^{3/2}+\frac{Var_3(\mathbf{m})\cdot\vert\langle \lambda_J\rangle\vert^3}{k^3}\right)\Bigg].
+\end{align*}$$ The hypothesis $Var_{3}(\mathbf{m})\leq M Var(\mathbf{m})^{3/2}$ and $\langle\hat{\mathbf{m}}\rangle_3\leq M K(\mathbf{m})^{3/2}$ yields then the second statement of the proposition. ◻
+:::
+
+Remark that the first statement of Proposition [\[prop:convergence_fourier\]](#prop:convergence_fourier){reference-type="ref" reference="prop:convergence_fourier"} is only relevant when $K(\tilde{J})\leq c\frac{n^2k^3}{M^2K(\mathbf{m})}$ for some numeric $c>0$. We conclude this section by a crude estimate of $\Phi_n[*\mathbf{m}]$ when $K(\tilde{J})\geq cn^2$.
+
+::: lemma
+[]{#lem:bound_Fourier_large label="lem:bound_Fourier_large"} For any $0<c<1/2$, there exists $0<t<1$ depending on $c$ such that for $I,J\in B_{k,n}$ with $\sup( (I_i-I_{i+1}) \mod n)\geq cn$, $$\frac{\vert S_{J}(\xi_{n}(I))\vert}{S_{J}(\xi_{n}(I_0))}\leq \frac{\max\left(\frac{k-2}{k},t\right)}{1+O\left(\frac{k^2\langle \lambda_{\hat{J}}\rangle^2}{n^2}\right)}.$$
+
+In particular, there exists $\eta,\delta>0$ only depending on $k$ and $c$ such that for any sequence $\mathbf{m}=(\mu_i)_{1\leq i\leq m}$ of $h$-probability measures with $\langle\hat{\mathbf{m}}\rangle_3\leq MK(\mathbf{m})^{3/2}$ and $I\in B_{k}$ such that $\sup( (\hat{I}_i-\hat{I}_{i+1}) \mod n)\geq cn$, $$\Phi_{n}[*\mathbf{m}](I^{(n)})\leq \exp\left(-m\delta+ \frac{m M}{\eta^3n^3}K(\mathbf{m})^{3/2}\right).$$
+:::
+
+::: proof
+*Proof.* We prove the first part of the lemma in the case where $n/2\geq \lambda_1-\lambda_{2}\geq cn$, the other cases being deduced similarly. Set $\lambda=\lambda_{\hat{J}}$ and $\zeta_j=e^{2i\pi i_j/n}$ for $1\leq j\leq n$. Then, by [\[eq:invariance_character_centered\]](#eq:invariance_character_centered){reference-type="eqref" reference="eq:invariance_character_centered"}, $$\begin{align*}
+\left\vert S_{J}(\xi_{n}(I))\right\vert=&\left\vert s_{\lambda}(\zeta_1,\zeta_2,\zeta_3,\ldots)\right\vert\\
+\leq&\sum_{\substack{\mu\subset \lambda\\l(\mu)\leq 2}}\left\vert s_{\mu}(\zeta_1,\zeta_2)s_{\lambda/\mu}(\zeta_3,\ldots,\zeta_{k})\right\vert\\
+\leq&\left\vert s_{\lambda}(\zeta_3,\ldots,\zeta_{k})\right\vert+\sum_{\substack{0\leq b< a+1\leq \lambda+1\\b\leq \lambda_2}}\left\vert s_{(a,b)}(\zeta_1,\zeta_2)s_{\lambda/(a,b)}(\zeta_3,\ldots,\zeta_{k})\right\vert\\
+&+\sum_{0<a\leq \lambda_2}\left\vert s_{(a,a)}(\zeta_1,\zeta_2)s_{\lambda/(a,a)}(\zeta_3,\ldots,\zeta_{k})+s_{(a,a-1)}(\zeta_1,\zeta_2)s_{\lambda/(a,a-1)}(\zeta_3,\ldots,\zeta_{k})\right\vert\\
+:=&S_1+S_2+S_3.
+\end{align*}$$ First, by the Weyl dimension formula $s_{\lambda}(\mathbf{1}_k)=\prod_{1\leq i<j\leq k}\frac{(\lambda_i-\lambda_j+j-i)}{j-i}$ for $\lambda\not=\emptyset$, $$\begin{align}
+S_1\leq s_{\lambda}(\mathbf{1}_{k-2})=&\delta_{l(\lambda)\leq k-2}\frac{1}{\prod_{1\leq i\leq k-2}\frac{\lambda_i+k-1-i}{k-1-i}\frac{\lambda_i+k-i}{k-i}}\cdot s_{\lambda}(\mathbf{1}_{k})\nonumber\\
+\leq &\frac{k-2}{k}s_{\lambda}(\mathbf{1}_{k}).\label{eq:lemma_large_S_1}
+\end{align}$$ Then, if $0\leq b< a$, then $$\vert s_{(a,b)}(\zeta_1,\zeta_2)\vert=\vert e_2(\zeta_1,\zeta_2)\vert^b\vert h_{b-a}(\zeta_1,\zeta_2)\vert=\vert h_{b-a}(\zeta_1,\zeta_2)\vert,$$ where $e_l$ and $h_l$ are respectively the elementary and complete homogeneous symmetric polynomials. For $l>0$, $h_l(\zeta_1,\zeta_2)=\frac{\zeta_1^{l+1}-\zeta_2^{l+1}}{\zeta_1-\zeta_2}$ and thus, using that $i_1\geq i_2$, $$\vert h_l(\zeta_1,\zeta_2)\vert =\frac{\vert \sin((l+1)\pi(i_1-i_2)/n)\vert}{\sin(\pi(i_1-i_2)/n)}.$$ Remark that for $\frac{\pi}{2(l+1)}\leq x\leq \pi/2$, the inequality $\sin(u)>u-\frac{u^3}{6}$ for $u\in]0,\pi/2]$ yields $$\frac{\vert\sin((l+1)x)\vert}{\sin(x)}\leq \frac{1}{\sin(x)}\leq \frac{1}{\sin\left(\frac{\pi}{2(l+1)}\right)}\leq \frac{2(l+1)}{\pi\left(1-\left(\frac{\pi}{2(l+1)}\right)^2/6\right)}<u_1(l+1)$$ for $u_1=\frac{2}{\pi\left(1-\left(\frac{\pi}{4}\right)^2/6\right)}<1$ independent of $l$. Hence, if $l$ is such that $\frac{1}{2(l+1)} \leq\frac{i_1-i_2}{n}\leq 1-\frac{1}{2(l+1)}$, $$\vert h_l((\zeta_1,\zeta_2)\vert\leq t(l+1)=ts_{(a,b)}(1,1).$$ Since $c \leq\frac{i_1-i_2}{n}\leq 1-c$, there is a finite number only depending on $c$ and $l\in \mathbb{N}$ satisfying $\min\left(\frac{i_1-i_2}{n},1-\frac{i_1-i_2}{n}\right)\leq \frac{1}{2(l+1)}$. For each of them, the function $x\mapsto\frac{\sin((l+1)x)}{\sin x}$ is strictly decreasing on $[0,\pi/(2(l+1))]$ with maximum $(l+1)$ at $0$. Hence, there exists a constant $u_2<1$ only depending on $c$ such that for any $l$ such that $\min\left(\frac{i_1-i_2}{n},1-\frac{i_1-i_2}{n}\right)\leq \frac{1}{2(l+1)}$, $$\frac{\vert \sin((l+1)\pi(i_1-i_k)/n)\vert}{\sin(\pi(i_1-i_2)/n)}\leq u_2(l+1).$$ We have thus found a constant $u=(u_1\vee u_2)<1$ only depending on $c$ such that for all $l\geq 1$, $$\begin{equation}
+\label{eq:bound_h_2}
+\vert h_l((\zeta_1,\zeta_2)\vert\leq u(l+1).
+\end{equation}$$ In particular, for $0\leq b< a$, $$\vert s_{(a,b)}(\zeta_1,\zeta_2)\vert=\vert h_{b-a}(\zeta_1,\zeta_2)\vert\leq u(b-a+1)=us_{(a,b)}(1,1),$$ and summing on all contributions yields $$\begin{equation}
+\label{eq:lemma_large_S_2}
+S_2\leq \sum_{\substack{0\leq b< a+1\leq \lambda+1\\b\leq \lambda_2}} s_{(a,b)}(1,1)s_{\lambda/(a,b)}(\mathbf{1}_{k-2}).
+\end{equation}$$ Then, for $a\leq \lambda_2$, remark that $s_{\lambda/(a,a)}(\mathbf{1}_{k-2})\leq s_{\lambda/(a,a-1)}(\mathbf{1}_{k-2})$. Indeed, any semistandard filling of $\lambda/(a,a)$ yields a semistandard filling of $\lambda/(a,a-1)$ by putting $1$ in the cell $(2,a)$. Hence, using that $\vert s_{(a,a)}(\zeta_1,\zeta_2)\vert=1$ and $$\vert s_{(a,a-1)}(\zeta_1,\zeta_2)\vert=\vert h_1(\zeta_1,\zeta_2)\vert\leq 2\cos(c\pi)=\cos(c\pi)s_{(a,a-1)}(1,1),$$ we get $$\begin{align*}
+&\left\vert s_{(a,a)}(\zeta_1,\zeta_2)s_{\lambda/(a,a)}(\zeta_3,\ldots,\zeta_{k})+s_{(a,a-1)}(\zeta_1,\zeta_2)s_{\lambda/(a,a-1)}(\zeta_3,\ldots,\zeta_{k})\right\vert\\
+&\hspace{4cm}\leq s_{(a,a)}(1,1)s_{\lambda/(a,a)}(\mathbf{1}_{k-2})+\cos(c\pi)s_{(a,a-1)}(1,1)s_{\lambda/(a,a-1)}(\mathbf{1}_{k-2})\\
+&\hspace{4cm}\leq \frac{1+\cos(c\pi)}{2}\left(s_{(a,a)}(1,1)s_{\lambda/(a,a)}(\mathbf{1}_{k-2})+s_{(a,a-1)}(1,1)s_{\lambda/(a,a-1)}(\mathbf{1}_{k-2})\right).
+\end{align*}$$ Summing on all $a\leq \lambda_2$ yields then $$\begin{equation}
+\label{eq:lemma_large_S_3}
+S_3\leq \frac{1+\cos(c\pi)}{2}\sum_{a\leq \lambda_2}\left(s_{(a,a)}(1,1)s_{\lambda/(a,a)}(\mathbf{1}_{k-2})+s_{(a,a-1)}(1,1)s_{\lambda/(a,a-1)}(\mathbf{1}_{k-2})\right).
+\end{equation}$$ Putting [\[eq:lemma_large_S_1\]](#eq:lemma_large_S_1){reference-type="eqref" reference="eq:lemma_large_S_1"},[\[eq:lemma_large_S_2\]](#eq:lemma_large_S_2){reference-type="eqref" reference="eq:lemma_large_S_2"} and [\[eq:lemma_large_S_3\]](#eq:lemma_large_S_3){reference-type="eqref" reference="eq:lemma_large_S_3"} together yields the existence of $t<1$ depending only on $c$ such that $$\begin{align*}
+S_1+S_2+S_3\leq \max\left(\frac{k-2}{k},t\right) \sum_{\substack{\mu\subset \lambda\\l(\mu)\leq 2}}s_{\mu}(1,1)s_{\lambda/\mu}(\mathbf{1}_{k-2})\leq \max\left(\frac{k-2}{k},t\right) s_{\lambda}(\mathbf{1}_{k}).
+\end{align*}$$ On the other hand, by [\[eq:rho_final_asymptotic\]](#eq:rho_final_asymptotic){reference-type="eqref" reference="eq:rho_final_asymptotic"} we have $$\frac{S_{J}(\xi_{n}(I_0))}{S_{J}(0,\ldots,0)}=1+O\left(\frac{k^2\langle \lambda\rangle^2}{n^2}\right),$$ so that finally $$\frac{\vert S_{J}(\xi_{n}(I))\vert}{S_{J}(\xi_{n}(I_0))}\leq \frac{\max\left(\frac{k-2}{k},t\right)}{1-c'\frac{k^2\langle \lambda_{\hat{J}}\rangle^2}{n^2}},$$ with $t<1$ depending on $c$ and $c'>0$ numeric.
+
+For the second statement, recalling that $\Phi_n[\mu](I^{(n)})=\mathbb{E}\left[\frac{S_{I_{\mu}}(\xi_{n}(I^{(n)}))}{S_{I_{\mu}}(\xi_{n}(I^{(n)}))}\right]=\mathbb{E}\left[\frac{S_{I_{\mu}}(\xi_{n}(I))}{S_{I_{\mu}}(\xi_{n}(I))}\right]$ and that $\left\vert \frac{S_{J}(\xi_{n}(I))}{S_{J}(\xi_{n}(I_0))}\right\vert\leq 1$ for all $J\in B_{k,n}$, for $\eta>0$ to choose later we have $$\left\vert\Phi_n[\mu](I^{(n)})\right\vert\leq \mathbb{P}(\langle  \hat{I}_{\mu}\rangle >\eta n))+\mathbb{E}\left[\left\vert\frac{S_{I_{\mu}}(\xi_{n}(I))}{S_{I_{\mu}}(\xi_{n}(I))}\right\vert\mathbf{1}_{\langle  \hat{I}_{\mu}\rangle \leq \eta n}\right),$$ so that by Markov inequality and the first part of the statement, there exists $t>0$ only depending on $c$ such that $$\left\vert\Phi_n[\mu](I^{(n)})\right\vert\leq \frac{\mathbb{E}\left[\langle  \hat{I}_{\mu}\rangle^3\right]}{\eta^3n^3}+\frac{\max(\frac{k-2}{k},t)}{1-c' k^2\eta^2}\leq 1-\delta+\frac{\mathbb{E}\left[\langle  \hat{I}_{\mu}\rangle^3\right]}{\eta^3n^3},$$ where we choose $\eta$ (only depending on $c$ and $k$) such that $\frac{\max(\frac{k-2}{k},t)}{1-c' k^2\eta^2}=1-\delta$ with $\delta>0$.
+
+Let $\mathbf{m}=(\mu_r)_{1\leq r\leq m}$ be a sequence of $h$-probability measures satisfying the hypotheses of the lemma. Applying the bound $1-\delta+\frac{E\left[\langle  \hat{I}_{\mu}\rangle^3\right]}{\eta^3n^3}\leq \exp\left(-\delta+\frac{\mathbb{E}\left[\langle  \hat{I}_{\mu}\rangle^3\right]}{\eta^3n^3}\right)$ and taking the product on all $\Phi_n[I_{\mu_r}](I^{(n)})$ yield then with [\[eq:relation_conv_dft\]](#eq:relation_conv_dft){reference-type="eqref" reference="eq:relation_conv_dft"} $$\begin{align*}
+\Phi_{n}[*\mathbf{m}](I^{(n)})\leq& \exp\left(-m\delta+ \frac{1}{n^3\eta^3}\sum_{r=1}^m\mathbb{E}\left[\langle\hat{I}_{\mu_r}\rangle^3\right]\right)\\
+\leq &\exp\left(-m\left(\delta+ \frac{M}{n^3\eta^3}K(\mathbf{m})^{3/2}\right)\right).
+\end{align*}$$ ◻
+:::

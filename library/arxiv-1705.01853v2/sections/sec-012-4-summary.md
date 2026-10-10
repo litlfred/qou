@@ -7,42 +7,60 @@ section_number: 4
 pages: 15-16
 source_pdf: 1705.01853v2.pdf
 source_sha256: 895e0b22c93bca1b
+text_source: latex
+latex_prose_ratio: 0.819
+latex_coverage_ratio: 1.0
 doc_brief: "Line operators in the Standard Model — There is an ambiguity in the gauge group of the Standard Model."
 ---
-The global structure of the Standard Model gauge group depend s on the choice of
-quotient Γ. The diﬀerences in these theories described above are r ather formal in
-nature. Just because a line operator exists in a theory does not me an that it is available
-to experimenters. It is clearly interesting to better understand t he physical implications
-of the diﬀerent choices of Γ to see if they may reveal themselves in s ome way in our
-world.
-Some minor, and fairly cheap, respite can be found in the conjectur e that, in any
-theory with gravity, the full set of charges carried by line operato rs are also carried by
-dynamical objects [18]. The best arguments for this come from blac k hole physics [19].
-14
-In the absence of gravity, one can always decouple ﬁelds by taking t heir mass to inﬁnity,
-leaving behind only the non-dynamical line operators. In a theory wit h gravity, this is
-not possible: the backreaction of the line operator will eventually fo rm a black hole,
-which carries the appropriate electric and magnetic charges.
-Conversely, the global structure of the gauge group determines the ﬂuxes that are
-allowed through cycles in a non-trivial spacetime. A black hole provide s such a space-
-time, with an S2 horizon, and the ﬂuxes which can thread this are determined by the
-choice of Γ.
-The further requirement that elementary particles should not for m black holes [20]
-suggests that there are new magnetic (and possibly electric) part icles to be found
-whose charges depend on Γ. Obviously, if a neutral quark is discove red, transforming
-in the ( 1, 3)0 representation of G, then we must take Γ = Z2 or 1. In contrast, as we
-saw above, the discovery of a magnetic monopole, consistent with t he minimum Dirac
-quantisation with respect to the electron, but not with respect to the quark, would
-mean that Γ = Z6. Of course, these predictions are rather toothless: the particle s have
-a mass which is constrained only by the Planck scale are unlikely to be ab undant; one
-must hope that Nature is kind [21].
-One can ask if there are more subtle ways to distinguish between the theories. As ex-
-plained in [1], and reviewed in Section 2, after conﬁnement the Yang-M ills theory with
-gauge group SU (N)/ ZN exhibits topological order, with an emergent ZN magnetic
-gauge symmetry. This gives rise to the possibility of more interesting physics arising in
-spacetimes with non-trivial topologies or boundaries. For the Stan dard Model, there
-exists a magnetic Z3 symmetry arising when Γ = Z3 or Z6 but the states which carry
-charge under this also carry magnetic charge under under U(1)em. It would be interest-
-ing to see if this has any implications for physics in the presence of non -trivial topology
-or, more interestingly, in dynamical spacetime. This may allow us to an swer the basic
-question: what is the gauge group of the Standard Model?
+The global structure of the Standard Model gauge group depends on the choice of quotient $\Gamma$. The differences in these theories described above are rather formal in nature. Just because a line operator exists in a theory does not mean that it is available to experimenters.  It is clearly interesting to better understand the physical implications of the different choices of $\Gamma$ to see if they may reveal themselves in some way in our world. 
+
+\para
+Some minor, and fairly cheap, respite can be found  in the conjecture that, in any theory with  gravity,  the full set of  charges carried by  line operators are also carried by  dynamical objects \cite{joe}. The best arguments for this come from black hole physics \cite{banks}. In the absence of gravity, one can always decouple fields by taking their mass to infinity, leaving behind only the non-dynamical line operators. In a theory with gravity, this is not possible: the backreaction of the line operator will eventually form a black hole, which carries the appropriate electric and magnetic charges. 
+
+\para
+Conversely, the global structure of the gauge group determines the fluxes that are allowed through cycles in a non-trivial spacetime. A black hole provides such a spacetime, with an ${\bf S}^2$ horizon, and the fluxes which can thread this are determined by the choice of $\Gamma$. 
+
+\para
+The further requirement that elementary particles should not form black holes \cite{weakest} suggests that there are new magnetic (and possibly electric) particles to be found whose charges depend on $\Gamma$. Obviously,  if a neutral quark is discovered, transforming in the  $({\bf 1},{\bf 3})_0$ representation of $G$, then  we must take $\Gamma =  {\bf Z}_2$ or ${\bf 1}$. In contrast, as we saw above, the discovery of a magnetic monopole, consistent with the minimum Dirac quantisation with respect to the electron, but not with respect to the quark,  would mean that $\Gamma = {\bf Z}_6$. 
+ Of course, these predictions are rather toothless: the particles have a mass which is  constrained only by the Planck scale  are unlikely to be abundant; one must hope that Nature is kind \cite{moedal}. 
+
+
+\para
+One can ask if there are more subtle ways to distinguish between the theories. As explained in \cite{ast}, and reviewed in Section \ref{reviewsec}, after confinement the Yang-Mills theory with gauge group $SU(N)/{\bf Z}_N$ exhibits topological order, with an emergent ${\bf Z}_N$ magnetic gauge symmetry. This gives rise to the possibility of more interesting physics arising  in spacetimes with non-trivial topologies or boundaries. For the Standard Model, there exists a magnetic ${\bf Z}_3$ symmetry arising when $\Gamma = {\bf Z}_3$ or ${\bf Z}_6$ but the states which carry charge under this also carry magnetic charge under under $U(1)_{em}$. It would be interesting to see if this has any implications for physics in the presence of non-trivial topology or, more interestingly, in dynamical spacetime.  This may allow us to answer the basic  question: what is the gauge group of the Standard Model?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection*{Acknowledgements}
+
+My thanks to Bobby Acharya, Nick Dorey, Zohar Komargodski, Tony Padilla and John Terning for useful discussions. 
+ This work was supported by STFC grant ST/L000385/1 and by the European Research Council under
+the European Union's Seventh Framework Programme (FP7/2007-2013), ERC grant
+agreement STG 279943, �Strongly Coupled Systems�. I am a  Wolfson Royal Society Research Merit Award holder.

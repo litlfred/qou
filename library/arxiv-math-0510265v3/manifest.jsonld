@@ -1,0 +1,50 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0510265v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0510265v3",
+  "contains": [
+    "library/arxiv-math-0510265v3/sections/sec-000",
+    "library/arxiv-math-0510265v3/sections/sec-001",
+    "library/arxiv-math-0510265v3/sections/sec-002",
+    "library/arxiv-math-0510265v3/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0510265&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0510265v3",
+    "title_source": "slug",
+    "source_file": "0510265v3.pdf",
+    "source_sha256": "548a0eece08bd967c0f4f44754210f765a970010d14e5ad97917668c7d9476a5",
+    "pages": 19,
+    "arxiv": {
+      "id": "math/0510265",
+      "version": "3",
+      "primary_class": null,
+      "stamp_date": "28 May 2006"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

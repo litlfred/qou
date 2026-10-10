@@ -1,0 +1,435 @@
+%%%%%%%%% pl7.tex %%%%%%%%
+
+\bs\bs\ni{\large\bf 3. General Structure Theory}
+
+\medskip\ni{\bf 3.1. Algebra structure, Markov trace}
+
+The proof of Theorem 3.1.3 below is routine for those conversant
+with [J1] or [GHJ]. We include it since, as stated, it can
+be useful in determining principal graphs. Recall that in a planar
+algebra $P$, \ $e_k$ denotes the idempotent in $P_k$ equal to
+$\frac{1}{\delta}(| |\dots \quad )$.
+
+{\bf Lemma 3.1.1} Let $P$ be a finite-dimensional
+spherical nondegenerate planar algebra over an algebraically closed
+field. Then for each  $k$, \
+$P_{k-1}e_{k-1}P_{k-1}$ is a 2-sided ideal, denoted $I_k$, in $P_k$
+and if ${\cal M}_k$ is a set of minimal idempotents in $P_k$
+generating all the distinct minimal ideals in $P_k/I_k$, we have
+\begin{verse}
+(i)   $pP_ke_{k-1}=0$ \ for $p$ in ${\cal M}_k$
+
+(ii)  $pP_kq=0$ for $p\neq q$ in ${\cal M}_k$
+
+(iii) For each $x$ in $P_k\backslash I_k$ there is a
+$p\in\cal M_k$ with $xP_kp\neq 0$.
+
+(iv) ${\op{tr}}(p)\neq 0$ for all $p\in {\cal M}_k$.
+
+(v) $I_{k+2}=\bigoplus_{p\in{\cal M}_k}
+P_{k+2}pe_{k+1}P_{k+2}$, \ $pe_{k+1}$ being a minimal idempotent in
+$P_{k+2}$.
+\end{verse}
+Moreover, if, for each $k$, $\cal N_k$ is a set of minimal
+idempotents of $P_k$ satisfying ${\op{(i)}}\dots{\op{(iv)}}$ (with
+${\cal M}_k$ replaced by ${\cal N}_k$), then there is an invertible
+$u_k$ in $P_k$ with $u_k\cal N_ku^{-1}_k={\cal M}_k$ (so in
+particular (v) is true for ${\cal N}_k$).
+
+\bigskip
+{\sc Proof.} To see that $P_{k-1}e_{k-1}P_{k-1}$ is an
+ideal, consider the maps $\a,\beta: P_k\to P_{k-1}$ given by the
+annular tangles
+\[
+	\input{xfig/pic68}
+\]
+\ni respectively. A  diagram shows that
+$xe_{k-1}y=\a(x)e_{k-1}\beta(y)$ for $x,y\in P_k$.
+
+By Corollary 1.30, $P_k$ is semisimple and multimatrix since $K$ is
+algebraically closed. Thus properties (i), (ii), (iii) and (v) are
+obvious for ${\cal M}_k$. If $p\neq 0$ satisfied tr$(p)=0$, then tr
+would vanish on the whole matrix algebra containing $p$ which
+would then be orthogonal to $P_k$.
+
+Finally, suppose we are given ${\cal N}_k$ satisfying (i)--(iv).
+Then since $P_k$ is multimatrix, each $p$ in  ${\cal N}_k$ belongs to
+a unique matrix algebra summand in which there is an invertible
+$u_p$ with $u_ppu_p^{-1}\in{\cal M}_k$. Putting together the
+$u_p$'s, and the identity of $I_k$, we get $u_k$. Property (v) for
+${\cal N}_k$ then follows from (iii). \qed
+
+
+
+\bs{\bf Definition 3.1.2.} With $P$ and ${\cal N}_k$ as in 3.11, we
+define the {\it principal graph} $\G_P$ of $P$ to be the
+(bipartite) graph whose vertices are $\bigcup_{k\geq 0}\cal N_k$
+with distinguished vertex $*$ so that ${\cal N}_0=\{*\}$, and
+dim $(pP_{k+1}q)$ edges between $p\in{\cal N}_k$ and $q\in{\cal N}_{k+1}$. 
+Let $d_p$ denote the distance from $p$ to $*$ on $\G_P$.
+
+\bs\ni
+{\bf Theorem 3.1.3} As an algebra, $P_k$ is isomorphic to the
+algebra whose basis is random walks of length $2k$ on $\G_P$
+beginning and ending at $*$ with multiplication rule
+$w_1w_2=w_3$ if the first half of the walk $w_2$ is equal to the
+second half of $w_1$, and $w_3$ is the first half of $w_1$ followed
+by the second half of $w_2$; \ 0 otherwise. Moreover, if $\vec t$
+is the function from the vertices of $\G_P$ to $K$, \
+$\vec t_p=\d^{d_p}{\op{tr}}(p)$, \ $\vec t$ is an eigenvector for
+the adjacency matrix of $\G$, eigenvalue $\d$.
+
+\bigskip
+{\sc Proof.} The first assertion is easily equivalent to showing
+that the Bratteli diagram (see [GHJ]) of the multimatrix
+algebra $P_k$ in $P_{k+1}$ is the bipartite graph consisting of
+those vertices $p$ with $d_p\equiv k$ (mod 2) and $d_p\leq k$,
+connected to those with
+$d_p\equiv (k+1)$ (mod 2) and $d_p\leq k+1$ with appropriate
+multiplicities. Observe first that $P_0=\Bbb C$ and ${\cal M}_1$ is a
+set of minimal projections, one for each matrix algebra summand of
+$P_1$, so the Bratelli diagram is correct for $P_0\subset P_1$. Now
+proceed by induction on $k$. The trace on $P_k$ is nondegenerate,
+as is its restriction to $P_{k-1}$ so one may perform the abstract
+``basic construction" of [J1] to obtain the algebra
+$\<P_k,e_{P_{k-1}}\>$ which is multimatrix and isomorphic to
+$P_k\otimes_{P_{k-1}} P_k$ as a $P_k-P_k$ bimodule via the map
+$x\otimes y\mapsto xe_{P_{k-1}} y$. Moreover the matrix algebra
+summands of $\<P_k,e_{P_{k-1}}\>$ are indexed by those of $P_{k-1}$,
+which by induction are the vertices of $\G_P$ with $d_p\leq k-1$, \
+$d_P\equiv (k+1)$ mod 2.  If one defines the trace tr on
+$\<P_k,e_{P_{k-1}}\>$ by $\widetilde{\op{tr}}(xe_{P_{k-1}}y)=
+\frac{1}{\d^2} {\op{tr}}(xy)$ then the traces of minimal
+projections in $\<P_k,e_{P_{k-1}}\>$ are $\frac{1}{\d^2}$ times
+those in $P_{k-1}$. Moreover, setting $\g(xe_{P_{k-1}}y)=xe_ky$
+defines an algebra homomorphism from $\<P_k,e_{P_{k-1}}\>$ which is
+injective by property (iv) and onto $I_{k+1}$. And
+Tr$(xe_ky)=\frac 1\d$ Tr$(xy)$ so tr
+$=\widetilde{\op{tr}}\circ\g^{-1}$ on $I_{k+1}$. Properties (i),
+(ii) and (iii) ensure that the other  vertices of the Bratteli
+diagram for $P_k\subset P_{k+1}$ are labelled by vertices $p$ of
+$\G_P$ with $d_P=k+1$. And the number of edges on $\G_P$ connecting
+a $p$ in ${\cal M}_k$ to a $q$ in ${\cal M}_{k+1}$ is by definition the
+number of edges in the Bratteli diagram. That there are no edges
+between ${\cal M}_{k+1}$ and ${\cal M}_j$, $j < k$, follows from
+$$
+(xe_{k-1}y)p=\frac{1}{\d^2} \ x(e_{k-1}e_ke_{k-1})yp
+= \frac{1}{\d^2} \ x(e_{k-1}e_kpe_{k-1})y=0
+$$
+by (i) for $x,y\in P_{k-1}$ and $p\in {\cal M}_{k+1}$.
+
+Finally, the (normalized) trace of a minimal projection $p$ in
+$I_k$ is $\d^{d_P-k}\vec t_p$ so the assertion about the trace
+follows as usual (see [J1]). \qed
+
+\bs{\bf Remarks.} (1) Similarly, the algebras $P_{1,k}$ have a
+principal graph $\G'_P$ with the trace vector $\vec s$. We call
+$\G'_P$ the dual principal graph. Ocneanu has shown, in the $C^*$
+case,  how to associate numerical data encoding the ensuing
+embedding of the random walk algebra of $\G'_P$ into that of
+$\G_P$. This completely captures the planar algebra structure and
+is analogous to choosing local coordinates on a manifold. The same
+could be done under the hypotheses of Lemma 3.1.1. The principal
+graphs alone do not determine the planar algebra --- for instance
+the algebras $(P^\s)^{\z/4\z}$ and
+$(P^\s)^{\z/2\z\oplus\z/2\z}$ of 2.8 have the same principal graph
+but are readily distinguished by counting fixed points under the
+rotation.
+
+(2) In fact, the assumption of nondegeneracy on $P$ in 3.1.1 and
+3.1.3 could be replaced by the hypothesis $P_k/I_k$ semisimple.
+Then conditions (i)--(iv) could be  used to inductively guarantee
+nondegeneracy.
+
+(3) If $P$ had been a $C^*$-planar algebra, we would have a
+theorem (3.1.3)${}^*$ with all tr$(p)$ positive, all $p$'s
+projections, and the obvious adjoint \ ${}^*$ \  on random walks.
+
+\bs
+Theorem 3.1.3 can be used to compute the principal graphs for
+Temperley Lieb and the Fuss Catalan algebra (it is the ``middle
+pattern" method of [BJ2]). We now illustrate its use by
+calculating the principal graph of the nondegenerate planar
+algebras coming from Example 2.2. We work over $\Bbb C$ for
+convenience, and in the
+$C^*$ case to simplify life.
+
+
+Let $(A,{\op{TR}})$ be a finite-dimensional unital $C^*$-algebra
+with normalized faithful (positive) trace TR. The labelling set $L$
+is $L_1=A$. We choose a number $\d > 0$ and let $\tau_p$ be TR$(p)$
+for projections $p\in A$. A labelled network is then a disjoint
+union of smoothly embedded circles, each one containing a (possibly
+empty) sequence of 1-boxes labelled by elements in $A$. We define
+the partition function $Z$ of such a collection of circles to be
+$\d^{\# \ {\text{(circles)}}}\prod_{\text{(circles)}}
+{\op{TR}}(a_1a_2\dots a_n)$, where
+$a_1a_2\dots a_n$ are the labels  on the given circle, numbered in
+order around the circle. The partition function $Z$ is obviously
+multiplicative so we define $P^{(A,{\op{TR}})}$ to be the
+nondegenerate planar algebra, with obvious $*$-structure, defined
+by 1.23. It is linearly spanned by Temperley-Lieb diagrams with a
+single labelled box on each string. The relations of Example 2.2
+hold, noting that
+$Z(\blrighto{p})=\d\tau_p$. For certain values of $\d$ and traces
+TR we will compute the principal (and dual principal) graphs of
+$P^{A,{\op{TR}})}$ and the Markov trace, and show it to be a planar
+$C^*$-algebra. Let us first describe the graphs. Let ${\cal M}=\{p\}$
+be a set of minimal projections in $A$, one for each matrix algebra
+direct summand and let
+$n_p={\op{dim}}(pA)$. Let $\frak S({\cal M})$ be the free
+semigroup with identity on ${\cal M}$. Let $\l:{\op{Proj}}\to\Bbb
+N\cup\{\infty\}$ be a function, and $W_\l$ be the set of words in
+ $\frak S({\cal M})$  which contain no consecutive string of $p$'s
+longer than $\l(p)$, for each $p$.
+
+\medskip{\bf Definition 3.1.4.} The graph $\G_{A,\l}$ is the rooted
+tree having vertices $W_\l$, with $n_p$ edges between $w$ and
+$wp$ for every $p\in\cal M$ with $\{w\cup wp\}\subset W_f$. The
+root $*$ is the identity of $\frak S({\cal M})$.
+
+\medskip Thus if $\l(p)=1$ for all $p$ and $A$ is abelian,
+$\G_{A,\l}$ is the regular tree of valence $|{\cal M}|$. If
+$\l(p)=\infty$ for all
+$p$ and $A$ is abelian, the root $*$ of the tree $\G_{A,\l}$ has
+valence
+$|{\cal M}|$ and all other vertices have valence $|{\cal M}|+1$.
+If $A=\Bbb Cp+\Bbb Cq$ and $\l(p)=1$, \ $\l(q)=2$, the tree
+$\G_{A,\l}$ is as in Figure~\ref{pic69}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\[
+	\input{xfig/pic69}
+\]
+\begin{center}
+	Figure 3.1.5
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Recall the polynomials $T_n(x)$ of [J1], $T_1\!=\!1$,
+$T_2\!=\!1$,
+$T_{n+1}=T_n-xT_{n-1}$ and the ``Jones-Wenzl" projections
+$f_k\in TL(k)$ with $f^*_k=f^2_k=f_k$, \
+$f_ke_i\!=\!0$ for $i\!=\!1,2,\dots ,k-1$ so that $f_k$ are elements
+of any (spherical) planar algebra, and
+tr$(f_k)=T_{k-2}(\frac{1}{\d^2})$ if $T_j(\frac{1}{\d^2})\neq 0$
+for $j < k+2$.
+
+{\bf Theorem 3.1.6} With notation as above, suppose
+$\tau_p\d=2\cos \pi/(\l(p)+2)$ ($\tau_p\d\geq 2$ if $\l(p)=\infty$).
+Then $P^{(A,{\op{TR}})}$ is a (spherical) $C^*$-planar algebra with
+principal and dual principal graphs equal to $\G_{A,\l}$. The
+(normalized) trace of the minimal projection in
+$P_k^{(A,{\op{TR}})}$ corresponding to the word
+$w\!=\!p_1^{m_1}p_2^{m_2}\dots p_r^{m_r}$ (\,$\sum m_i\!=\!k$ and
+$p_i\neq p_{i+1}$) is
+$\prod^r_{i=1} \tau_{p_i}T_{m_i}(\tau_{p_i}\d)$.
+
+\bigskip
+{\sc Proof.} We shall give explicit projections satisfying
+conditions (i)--(iv) of 3.1.1. The key observation is that tangles
+with a fixed $p$ labelling each string form a Temperley-Lieb
+subalgebra $B_p$ with parameter $\d\tau_{p}$ (and identity
+$\boxf{p} \ \boxf{p}\dots \boxf{p}$\,). So if $m <\l(p)$ we
+consider the projection
+\[
+	\input{xfig/pic70}
+\]
+\ni where $f_m$ is calculated in Temperley-Lieb with $j$ strings
+and $Z(\caright\ )=\tau_p\d$. Now set
+\[
+	\input{xfig/pic71}
+\]
+\ni where we have combined the $m_j$ strings at the top (and
+bottom) of $f_{m_j}$ into one. Orientations are completely
+forgotten and may be inserted, if required, so as to satisfy
+Definition 1.7.
+
+Condition (1) of 3.1.1 is easy: $P_k$ is linearly spanned by
+Temperley Lieb diagrams with matrix units  (with the $p$'s among
+the diagonal ones) from the simple summands of $A$ in a single box
+on each string. If $x$ is such an element, then if
+$xe_{k-1}$ is non-zero, the product $p_wxe_{k-1}$ contains
+\[
+	\input{xfig/pic72}
+\]
+\ni with $e$ being a matrix unit. The string containing $e$ enters
+the box for $p_w$ either connecting two distinct $f$'s or two
+strings of the same one. In the first case the result is zero since
+$e$ belongs to precisely one of the direct summands.  In the second
+case it is zero because of the properties of the $f$'s.
+
+Condition (ii) follows similarly, noting that a picture like the
+above will occur unless all the strings of $x$ are through strings.
+
+For condition (iii) we observe that the ideal $I_k$ is linearly
+spanned by $x$'s as above with less than $k$ through-strings, so we
+may suppose $x$ is composed of through-strings, each with a matrix
+unit in its box. Note that any relation true in $B_p$ is true in
+$P_k$. Hence if $j\geq\l(p)$, $f_j=0$ and the identity of $B_p$ is
+a linear combination of tangles with less than $\l(p)$
+through-strings. So we can suppose that in $x$ there is no sequence
+of $\l(p)$ strings in a row whose matrix unit labels are in the
+same simple  summand as $p$. Thus by multiplying $x$ to the left
+and right by tangles with the appropriate matrix unit labels, we
+get $axb=p_w$ for some word $w$ in $\frak S(\cal M)$ of length $k$.
+Thus (iii) will follow provided (iv) holds.
+
+We calculate the normalized trace of $p_w$. It is 
+\[
+	\input{xfig/pic73}
+\]
+Now the partition function on $P_m$, restricted to $B_p$,
+gives a Markov trace which will be normalized after division by
+$Z(\blright{p} )^m=(\d\tau_p)^m$. So
+$Z(\blright{f_m})=\d^m\tau_p^m T_m(\tau_{p}\d)$.
+Hence tr$(p_w)=\prod^r_{i=1} \tau_{p_i}T_{m_i}(\tau_{p_i}\d)$.
+
+Finally we must calculate the multiplicities dim$(p_vP_kp_w)$ for
+$v$ of length $k$ and $w$ of length $k-1$. We must consider
+diagrams of the form
+\[
+	\input{xfig/pic74}
+\]
+\ni where $x$ is a Temperley Lieb diagram decorated with matrix
+units as before. Arguing on $p_v$, \ $x$ has only through-strings,
+$v=w_p$ for some $p\in{\cal M}$, and the first $k-1$ strings of $x$
+are labelled by the elements of $\cal M$ in $w$. Thus the diagram
+is in fact equal to
+\[
+	\input{xfig/pic75}
+\]
+\ni where $e$ is a matrix unit with one subscript fixed.
+These diagrams span $p_v P_k p_w$ and the sesquilinear form given
+by $(x,y)={\op{tr}}(y^*x)$ is diagonal with non-zero entries.
+Hence dim$(p_vP_kp_w)=n_p$. \qed
+
+\bs\ni{\bf 3.2. Duality}
+
+If $P=\cup_k P_k$ is  a planar algebra, the filtered algebras
+$\l_n(P)$, where $\l_n(P)_k=P_{n,n+k}$, for fixed $n$, have
+natural planar algebra structures. For $n$ even, this is rather
+obvious --- just add $n$ straight vertical lines to the left of a
+tangle. But if $n$ is odd one must be more careful because of
+orientations. In fact $\l_1(P)$ and $P$ are not isomorphic in
+general, even as filtered algebras, as one can see from example
+2.9. We begin by describing the planar algebra structure on
+$\l_1(P)$.
+
+If $T$ is an unlabelled $k$-tangle we define the unlabelled
+$(k+1)$-tangle $\tilde T$ to be the tangle consisting of a vertical
+straight line from (1,0) to (1,1), and the tangle $T$, with all its
+orientations reversed, shifted by 1 in the positive $x$ direction.
+Also in $\tilde T$ each internal $p$-box is replaced by a
+$(p+1)$-box with the first and last distinguished boundary points
+connected by a short curve.  The procedure is illustrated in Figure 3.2.1.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\[
+	\input{xfig/pic76}
+\]
+\begin{center}
+Figure 3.2.1
+\end{center}
+\bs
+To each internal box $B$ of $T$ there corresponds in the obvious
+way a box $\tilde B$ of $\tilde T$. If $T$ is labelled by
+$L=\coprod_{k > 0} L_k$, \
+$\tilde T$ will be given the obvious labelling by $\tilde L$, \
+$\tilde L_k= L_{k-1}(\tilde L_1=\emptyset)$.
+
+\bs\ni
+{\bf Proposition 3.2.2} Let $P=\cup_k P_k$ be a planar algebra
+with parameters $\d_1=Z(\caright)$ and
+$\d_2=Z(\caleft)$. Assume $P$ is presented on itself by
+$\Phi$. Then $\l_1(P)$ is a planar algebra with parameters
+$\d_2,\d_1$, presented on itself by $\l_1(\Phi)$ where $\l_1(\Phi)$
+is defined by $\l_1(\Phi)(T)=\d^{-p}\Phi(\tilde T)$, \ $p$ being
+the number of internal boxes in $T$.
+
+\bs
+{\sc Proof.} First note how  the labels in a tangle of
+${\cal P}(\l_1(P))$ give valid labels for ${\cal P}(P)$ because of the
+inclusion $\l_1(P)_k\subset P_{k+1}$. That $\l_1(\Phi)$ is a
+filtered algebra homomorphism is obvious. The annular invariance of
+ker $\l_1(\Phi)$ follows immediately from that of $\Phi$, by
+representing elements of $P_{1,1+k}$ as linear combinations of
+tangles with vertical first string and applying $\sim$ to linear
+combinations. Thus $\l_1(P)$ is a general planar algebra.
+
+Now $\l_1(P)_0=P_{1,1}$ and $\l_1(P)_{1,1}=P_{2,2}$ which has
+dimension 1 since $P$ is a planar algebra. So
+$\l_1(P)$ is planar. The multiplicativity property for $\l_1(P)$
+follows immediately from that of $P$, where orientations on
+networks without boxes are reversed. \qed
+
+\bs In the next two lemmas, $A$ will be the ${\cal A}(\emptyset)$
+element
+\[
+	\input{xfig/pic77}
+\]
+\ni where the actual number of boundary points is as required by
+context.
+
+\bs\ni
+{\bf Lemma 3.2.3} If $P$ is a planar algebra, $\pi_A$ defines
+a linear isomorphism between $P_k$ and $\l_1(P)_k$, for each $k >0$.
+
+\bigskip
+{\sc Proof.} By a little isotopy and the definition of
+$P_{1,k+1}$, \ $\pi_A$ is onto. But
+\[
+	\input{xfig/pic78}
+\]
+\ni provides an inverse for $\pi_A$, up to a non-zero scalar.
+So $\pi_A$ is an isomorphism. \qed
+
+
+{\bf Lemma 3.2.4} The subset $S$ of the planar algebra
+generates $P$ as a planar algebra iff $\pi_A(S)$ generates
+$\l_1(P)$ as a planar algebra.
+
+\bigskip
+{\sc Proof.} $(\Rightarrow)$ \  Given a tangle $T$ in
+${\cal P}_{1,k+1}(S)$, it suffices to exhibit a tangle $T_A$
+in ${\cal P}_k(\pi_A(S))$ with $\Phi(\tilde T_A)$ being a multiple of
+$\Phi(T)$. We create $T_A$ from $T$ by eliminating the first
+string, reversing all orientations and otherwise changing only in
+small neighborhoods of the internal boxes of $G$, sending a box
+labelled $R\in S$ in $T$ to the box labelled $\pi_A(R)$ in $T_A$ as
+below:
+\[
+	\input{xfig/pic79}
+\]
+Then by definition $\tilde T_A$ will be exactly like $T$ except
+near its boxes where it will look as below:
+\[
+	\input{xfig/pic80}
+\]
+\ni Thus $\Phi(\tilde T_A)$ is a multiple of $\Phi(T)$.
+
+$(\Leftarrow)$ \ Given $x\in P$, \ $\pi_A(\tangle{x})$
+is in $\l_1(P)$ so by hypothesis it is the image under
+$\l_1(\Phi)$ of a linear combination of tangles  labelled by
+elements of $\pi_A(S)$ which are in turn images under $\Phi$ of
+tangles  labelled by
+elements of $S$ (up to nonzero scalars). Using the tangle of Lemma
+3.2.3 to invert $\pi_A$, we are done. \qed
+
+\bs By iterating the procedure $P\mapsto\l_1(P)$, we see that all
+the $\l_n(P)$ have natural planar algebra structures, but observe
+that all the $\l_{2n}(P)$ are isomorphic to $P$ as planar algebras
+via the endomorphism (often called ``le shift de deux") defined by
+adding two straight vertical strings to the left of a tangle. We
+leave the details to the reader.
+
+The planar algebra $\l_1(P)$ is said to be the {\it dual}
+of the planar algebra $P$, and we have $\l_1(\l_1(P))\simeq P$
+as planar algebras.
+
+In the case of Example 2.9, $P^G_2$ is the group algebra
+$\Bbb C G$ and $\l_1(P^G)_2$ is $\ell^\i(G)$. The tangle $\pi_A$
+gives a {\it linear} isomorphism between the two. Thus planar
+algebra duality extends the duality between a finite group and its
+dual object.
+
+
+
+

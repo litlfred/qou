@@ -7,77 +7,40 @@ section_number: 8
 pages: 20-21
 source_pdf: 1507.03238v3.pdf
 source_sha256: 1da6a5498c08a521
+text_source: latex
+latex_prose_ratio: 0.856
+latex_coverage_ratio: 0.606
 doc_brief: "TRIANGULATION INDEPENDENT PTOLEMY VARIETIES — The Ptolemy variety forSL(2, C) is an invariant of a topological ideal triangulation of a compact 3-manifold M."
 ---
-subsets ofA(V (M)).
-Proposition 8.2. The invariant Ptolemy varieties are indeed varieties. Changing the triangu-
-lation changes the varieties by biregular isomorphisms.
-Proof. We prove this forP (T ); the proof for the other variants are identical. We must prove
-that P (T ) has an open aﬃne cover. For each transitive edge set(T,E ) consider the triangu-
-lation T (E) deﬁned as follows: ifE is non-degenerate or edge-degenerate,T (E) = T ; if E is
-moderately, or simplex-degenerate, deﬁneT (E) to be a triangulationT′ as in Deﬁnitions 7.14
-or 7.18, respectively. By deﬁnition, the invariant Ptolemy varietyP (T ) is then given by
-(8.2) P (T ) =
-⋃
-E∈T(T )\{0}
-F∈T(T (E)),F|T =E
-P (T (E),F ).
-Note that all transitive edge sets(T (E),F ) in the above union are (at worst) edge-degenerate.
-Let W∈ V (M) be the union of allV (T (E)), i.e.W is the set of virtual edgese such thate is
-an edge of one of theT (E). By Proposition 7.10, we may regardP(T ) as a subset of the ﬁnite
-dimensional aﬃne spaceA(W ). Recall that A(W ) is given by a coordinatece for each virtual
-edge inW. For a transitive edge set(T′,E′) let
-(8.3) U(T′,E′) =
-{ ∏
-e∈E′
-⁄=0
-ce⁄= 0
-}
-∈A(V (M)),
-where E′
-⁄=0 denotes the set of nonzero edges of(T′,E′). Clearly,U(T′,E′) is Zariski open, and
-(8.4) (T′,E′)⊂ (T′,E′′) ⇐⇒ U(T′,E′)⊂U(T′,E′′).
-Also, for any transitive edge sets(T′,E′) and (T′′,E′′) we clearly have
-(8.5) E′
-=0∩E′′
-⁄=0⁄=∅ =⇒ P (T′,E′)∩U(T′′,E′′) =∅.
-From this it follows that for anyE∈ T(T ) and anyF∈ T(T (E)), we have
-(8.6) P (T )∩U(T (E),F ) =
-( ⋃
-(T,E′)≤(T,E)
-P (T,E′)
-)
-∩U(T (E),F )⊂A(W ).
-By Proposition 7.10 the right-hand side of (8.6) canonically embeds inA(V (T (E))). Let X
-be the aﬃne variety inA(V (T (E))) cut out by the Ptolemy relations, identiﬁcation relations,
-and edge orientation relations forT (E) together with the edge relations around zero-edges of
-F. Since (T (E),F )) is (at worst) edge-degenerate, there are no points inX∩U(T (E),F ) that
-violate transitivity, so all points inX∩U(T (E),F ) are in P (T,E′) for some E′ ∈ T(T ) with
-(T,E′)< (T,E ). It thus follows from (8.6) thatX∩U(T (E),F ) equals P (T )∩U(T (E),F ). Since
-TRIANGULATION INDEPENDENT PTOLEMY V ARIETIES 21
-U(T (E),F ) is the non-vanishing set of a single polynomial,X∩U(T (E),F ) is aﬃne. This concludes
-the proof of existence of an aﬃne cover ofP (T ).
-Given another triangulationT′, P (T ) and P (T′) are clearly isomorphic as sets since both
-parametrize non totally degenerate decorations. The fact that they are also equal as varieties
-follows from the fact that the images ofP (T ) and P (T′) in A(V (M)) are equal (see the proof
-of Proposition 7.10). □
-9. The reduced Ptolemy v arieties
-The diagonal action on decorations, Ptolemy assignments, and natural cocycles extends canon-
-ically to the case where some of the Ptolemy coordinates are zero and some of the long edges
-are diagonal instead of counterdiagonal. We deﬁne the reduced Ptolemy varietyP red(T ) to be
-the quotient ofP (T ) by the diagonal action. In [8] we showed that the reduced Ptolemy variety
-P (T )red can be computed by setting appropriately chosen Ptolemy coordinates equal to1:
-Theorem 9.1 ([8, Prop. 1.16]). Let G be a connected graph in the one-skeleton ofˆM, which
-has fundamental group Z and contains all vertices. The reduced Ptolemy variety P (T )red is
-isomorphic to the subvariety ofP (T ) where the Ptolemy coordinates of all edges inG are 1. The
-same result holds forPσ(T )red.
-Remark 9.2. In [8] this is only proved whenG is a so-called “maximal tree with1- or 3-cycle”,
-but the proof can be trivially extended to any graph with fundamental groupZ containing all
-vertices.
-Theorem 9.3. Let E ∈ T(T ) be edge-degenerate. Then, there exists a graphG of nonzero
-edges which has fundamental group Z and contains all vertices. The reduced Ptolemy variety
-P (T,E )red is isomorphic to the subvariety ofP (T,E ) where the Ptolemy coordinates of all edges
-in G are 1. The same result holds forPσ(T,E )red andEP (T,E )red.
-Proof. SinceE is edge-degenerate, the set of nonzero edges connects all vertices ofT and contains
-cycles. Thus, we can choose a graphG with the above properties. Hence, the result follows from
-Theorem 9.1. The proofs trivially extend to the case ofEP (T,E )red. □
+[]{#sec:Invariant label="sec:Invariant"} For the non-degenerate edge set $E$, define $P(\mathcal T,E)$ to be the standard Ptolemy variety (Definition [\[def:PtolemyVariety\]](#def:PtolemyVariety){reference-type="ref" reference="def:PtolemyVariety"}). The Ptolemy variety for the other types were defined in Definitions [\[def:PtolemyMild\]](#def:PtolemyMild){reference-type="ref" reference="def:PtolemyMild"}, [\[def:PtolemyModerate\]](#def:PtolemyModerate){reference-type="ref" reference="def:PtolemyModerate"}, and [\[def:PtolemyWild\]](#def:PtolemyWild){reference-type="ref" reference="def:PtolemyWild"}. We denote the totally degenerate edge set where all edges are zero-edges by $0\in\mathop{\mathrm{T}}(\mathcal T)$.
+
+::: definition
+[]{#def:InvariantPtolemy label="def:InvariantPtolemy"} The *invariant Ptolemy variety* $\overline P(\mathcal T)$ is defined by $$\begin{equation}
+\overline P(\mathcal T)=\bigcup_{E\in\mathop{\mathrm{T}}(\mathcal T)\setminus\{0\}} P(\mathcal T,E),
+\end{equation}$$ where the (disjoint) union is taken inside $A(V(M))$. We similarly define $\overline P^\sigma(\mathcal T)$ and $\mathcal E\overline P(\mathcal T)$.
+:::
+
+## Affine coverings
+
+A priori, the invariant Ptolemy varieties are only unions of quasi-affine subsets of $A(V(M))$.
+
+::: proposition
+[]{#prop:ProofAffine label="prop:ProofAffine"} The invariant Ptolemy varieties are indeed varieties. Changing the triangulation changes the varieties by biregular isomorphisms.
+:::
+
+::: proof
+*Proof.* We prove this for $\overline P(\mathcal T)$; the proof for the other variants are identical. We must prove that $\overline P(\mathcal T)$ has an open affine cover. For each transitive edge set $(\mathcal T,E)$ consider the triangulation $T(E)$ defined as follows: if $E$ is non-degenerate or edge-degenerate, $T(E)=\mathcal T$; if $E$ is moderately, or simplex-degenerate, define $T(E)$ to be a triangulation $\mathcal T'$ as in Definitions [\[def:PtolemyModerate\]](#def:PtolemyModerate){reference-type="ref" reference="def:PtolemyModerate"} or [\[def:PtolemyWild\]](#def:PtolemyWild){reference-type="ref" reference="def:PtolemyWild"}, respectively. By definition, the invariant Ptolemy variety $\overline P(\mathcal T)$ is then given by $$\begin{equation}
+\overline P(\mathcal T)=\bigcup_{\substack{E\in \mathop{\mathrm{T}}(\mathcal T)\setminus\{0\}\\F\in\mathop{\mathrm{T}}(T(E)),\,F_{|\mathcal T}=E}}\!\!\!\!P(T(E),F).
+\end{equation}$$ Note that all transitive edge sets $(T(E),F)$ in the above union are (at worst) edge-degenerate. Let $W\in V(M)$ be the union of all $V(T(E))$, i.e. $W$ is the set of virtual edges $e$ such that $e$ is an edge of one of the $T(E)$. By Proposition [\[prop:Embeddings\]](#prop:Embeddings){reference-type="ref" reference="prop:Embeddings"}, we may regard $\overline\mathcal P(\mathcal T)$ as a subset of the finite dimensional affine space $A(W)$. Recall that $A(W)$ is given by a coordinate $c_e$ for each virtual edge in $W$. For a transitive edge set $(\mathcal T',E')$ let $$\begin{equation}
+U_{(\mathcal T',E')}=\big\{\prod_{e\in E_{\neq 0}'}c_e\neq0\big\}\in A(V(M)),
+\end{equation}$$ where $E_{\neq 0}'$ denotes the set of nonzero edges of $(\mathcal T',E')$. Clearly, $U_{(\mathcal T',E')}$ is Zariski open, and $$\begin{equation}
+(\mathcal T',E')\subset(\mathcal T',E'')\iff U_{(\mathcal T',E')}\subset U_{(\mathcal T',E'')}.
+\end{equation}$$ Also, for any transitive edge sets $(T',E')$ and $(\mathcal T'',E'')$ we clearly have $$\begin{equation}
+E'_{=0}\cap E''_{\neq 0}\neq \emptyset  \implies P(\mathcal T',E')\cap U_{(\mathcal T'',E'')}=\emptyset.
+\end{equation}$$ From this it follows that for any $E\in\mathop{\mathrm{T}}(\mathcal T)$ and any $F\in\mathop{\mathrm{T}}(T(E))$, we have $$\begin{equation}
+\label{eq:OpenIntersect}
+\overline P(\mathcal T)\cap U_{(T(E),F)} = \big(\bigcup_{(\mathcal T,E')\leq(\mathcal T,E)} P(\mathcal T,E')\big)\cap U_{(T(E),F)}\subset A(W).
+\end{equation}$$ By Proposition [\[prop:Embeddings\]](#prop:Embeddings){reference-type="ref" reference="prop:Embeddings"} the right-hand side of [\[eq:OpenIntersect\]](#eq:OpenIntersect){reference-type="eqref" reference="eq:OpenIntersect"} canonically embeds in $A(V(T(E)))$. Let $X$ be the affine variety in $A(V(T(E)))$ cut out by the Ptolemy relations, identification relations, and edge orientation relations for $T(E)$ together with the edge relations around zero-edges of $F$. Since $(T(E),F))$ is (at worst) edge-degenerate, there are no points in $X\cap U_{(T(E),F)}$ that violate transitivity, so all points in $X\cap U_{(T(E),F)}$ are in $P(\mathcal T,E')$ for some $E'\in\mathop{\mathrm{T}}(\mathcal T)$ with $(\mathcal T,E')<(\mathcal T,E)$. It thus follows from [\[eq:OpenIntersect\]](#eq:OpenIntersect){reference-type="eqref" reference="eq:OpenIntersect"} that $X\cap U_{(T(E),F)}$ equals $\overline P(\mathcal T)\cap U_{(T(E),F)}$. Since $U_{(T(E),F)}$ is the non-vanishing set of a single polynomial, $X\cap U_{(T(E),F)}$ is affine. This concludes the proof of existence of an affine cover of $\overline P(\mathcal T)$.
+
+Given another triangulation $\mathcal T'$, $\overline P(\mathcal T)$ and $\overline P(\mathcal T')$ are clearly isomorphic as sets since both parametrize non totally degenerate decorations. The fact that they are also equal as varieties follows from the fact that the images of $\overline P(\mathcal T)$ and $\overline P(\mathcal T')$ in $A(V(M))$ are equal (see the proof of Proposition [\[prop:Embeddings\]](#prop:Embeddings){reference-type="ref" reference="prop:Embeddings"}). ◻
+:::

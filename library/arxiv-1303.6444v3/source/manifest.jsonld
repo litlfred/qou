@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1303.6444v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1303.6444v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1303.6444v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1303.6444&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1303.6444v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1303.6444v3",
+    "content_type": "application/gzip",
+    "sha256": "e33c2626ff347c75fd0ee9b93c3cee876a888f82c5f58f4557c5b6d5abc3e6f4",
+    "bytes": 111523,
+    "fetched": "2026-10-10T15:08:03+00:00",
+    "files": [
+      {
+        "path": "source/files/virialpaper2v4.tex",
+        "role": "tex",
+        "sha256": "326f2672d320821bdc3ddd0cecfbcc3ce5001f4c6fe92cd5f5eb03032434de7f",
+        "bytes": 33092
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

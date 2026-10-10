@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1406.7337v4/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Semi-Adequate Closed Braids and Volume Adam Giambrone Alma College giambroneaj@alma.edu",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1406.7337v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1406.7337v4",
   "contains": [
     "library/arxiv-1406.7337v4/sections/sec-000",
     "library/arxiv-1406.7337v4/sections/sec-001",
@@ -19,8 +24,17 @@
     "library/arxiv-1406.7337v4/sections/sec-010"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1406.7337&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1406.7337v4",
+    "title_source": "slug",
     "source_file": "1406.7337v4 (1).pdf",
     "source_sha256": "5bae8237742733b902201d9414628b8801476f06357bc09479080ef90a5c8a92",
     "pages": 20,

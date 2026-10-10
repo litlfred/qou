@@ -7,7 +7,8 @@
   "bytes": 779890,
   "pages": 83,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -630,6 +631,193 @@
   "likely_scanned": false,
   "toc_entries": 37,
   "sections": 33,
-  "chars_total": 138451
+  "chars_total": 138451,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 6,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.921,
+     "coverage_ratio": 0.897,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-1-quantum-groups-and-khovanov-lauda-rouquier-alg",
+     "title": "Quantum groups and Khovanov-Lauda-Rouquier algebras",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-convention",
+     "title": "Convention",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.893,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-11-cartan-datum",
+     "title": "Cartan datum",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-12-khovanov-lauda-rouquier-algebras",
+     "title": "Khovanov-Lauda-Rouquier algebras",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-13-r-matrices-for-khovanov-lauda-rouquier-algebr",
+     "title": "R-matrices for Khovanov-Lauda-Rouquier algebras",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-14-r-matrices-with-spectral-parameters",
+     "title": "R-matrices with spectral parameters",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-15-r-matrices-for-one-dimensional-modules",
+     "title": "R-matrices for one-dimensional modules",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-16-uniqueness-of-r-matrices",
+     "title": "Uniqueness of R-matrices",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-2-quantum-affine-algebras-and-their-representati",
+     "title": "Quantum affine algebras and their representations",
+     "prose_ratio": 0.665,
+     "coverage_ratio": 0.892,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-22-r-matrices",
+     "title": "R-matrices",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-3-affine-schur-weyl-duality-via-khovanov-lauda-r",
+     "title": "Affine Schur-Weyl duality via Khovanov-Lauda-Rouquier algebras",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-31-action-of-khovanov-lauda-rouquier-algebras-on",
+     "title": "Action of Khovanov-Lauda-Rouquier algebras on V\"0362V",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-32-the-functor-f",
+     "title": "The Functor F",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-33-exactness-of-the-functor-f",
+     "title": "Exactness of the functor F",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-42-klr-modules-in-a-case",
+     "title": "KLR-modules in A case",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-43-properties-of-the-functor-f",
+     "title": "Properties of the functor F",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-44-quotient-of-the-category-r-gmod",
+     "title": "Quotient of the category R-gmod",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-47-the-category-cj",
+     "title": "The Category CJ",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-appendix-a-localization",
+     "title": "Appendix A. Localization",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-a1-tensor-category",
+     "title": "A.1. Tensor category",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-a2-adjunction-and-quasi-adjunction",
+     "title": "A.2. Adjunction and Quasi-adjunction",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-a3-central-objects",
+     "title": "A.3. Central objects",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-a4-commuting-family-of-objects",
+     "title": "A.4. Commuting family of objects",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-a5-localization",
+     "title": "A.5. Localization",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-a6-localization-of-tensor-categories",
+     "title": "A.6. Localization of tensor categories",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-a7-graded-case",
+     "title": "A.7. Graded case",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-a8-variant",
+     "title": "A.8. Variant",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-a9-twisting-of-tensor-structure",
+     "title": "A.9. Twisting of tensor structure",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-appendix-b-quotient-categories",
+     "title": "Appendix B. Quotient categories",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-b1-serre-category",
+     "title": "B.1. Serre category",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

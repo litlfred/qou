@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1108.0687v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1108.0687v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1108.0687v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1108.0687&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1108.0687v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1108.0687v3",
+    "content_type": "application/gzip",
+    "sha256": "19c68f1e477a03c5239b5d2d195b88fc4ae4a78e26c03eed8cf432be7555d0be",
+    "bytes": 24451,
+    "fetched": "2026-10-10T15:05:05+00:00",
+    "files": [
+      {
+        "path": "source/files/concentration130701.bbl",
+        "role": "bbl",
+        "sha256": "12f0e8b4b09033f053da96428cb8c0d50857d597d51afb9c6094d20929547dc0",
+        "bytes": 5449
+      },
+      {
+        "path": "source/files/concentration130701.tex",
+        "role": "tex",
+        "sha256": "50db6ce5bcf1b714f4e73ca4f2c340365098f3e4c59180e7bc1abfdda0ac3b18",
+        "bytes": 61054
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

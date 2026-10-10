@@ -6,7 +6,8 @@
   "sha256": "7579ae76959396b8dd4a05f6fe3f58a79b25d1b8bc72c21e6fd1ec6ac82819ef",
   "bytes": 187029,
   "pages": 13,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -162,6 +163,72 @@
   "likely_scanned": false,
   "toc_entries": 7,
   "sections": 7,
-  "chars_total": 35149
+  "chars_total": 35149,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 6,
+   "overlaid": 6,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-1-representations-of-quantum-dynamical-r-matrice",
+     "title": "Representations of Quantum Dynamical R-Matrices with Spe c-",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-2-exchange-representations",
+     "title": "Exchange Representations",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.963,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-3-gauge-transformations",
+     "title": "Gauge Transformations",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-4-evaluation-representations",
+     "title": "Evaluation Representations",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-5-comparison-of-f-with-the-classical-kazhdan-lus",
+     "title": "Comparison of F with the classical Kazhdan-Lusztig functor",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.627,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

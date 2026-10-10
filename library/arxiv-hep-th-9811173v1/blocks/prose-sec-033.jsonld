@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9811173v1/blocks/prose-sec-033",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-9811173v1/blocks/prose-sec-033",
   "kind": "prose",
   "title": "Up to 9 crossings, maximal symmetry is a good – yet far from infallib le – diagnostic",
   "pageStart": 23,
   "pageEnd": 23,
   "text": "../sections/sec-033-1-up-to-9-crossings-maximal-symmetry-is-a-good-y.md",
-  "derivedFrom": "library/arxiv-hep-th-9811173v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9811173v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-9811173v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-9811173v1/manifest.jsonld",
   "provenance": "ingested"
 }

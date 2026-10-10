@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1701.06567v2/blocks/prose-sec-077",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1701.06567v2/blocks/prose-sec-077",
   "kind": "prose",
   "title": "(2k)L/2 (q 1/2− q −1/2)×",
   "pageStart": 69,
   "pageEnd": 69,
   "text": "../sections/sec-077-2-2kl2-q-12-q-12.md",
-  "derivedFrom": "library/arxiv-1701.06567v2/manifest",
-  "sourceDocument": "library/arxiv-1701.06567v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1701.06567v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1701.06567v2/manifest.jsonld",
   "provenance": "ingested"
 }

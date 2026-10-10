@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1304.2934v4/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1304.2934v4 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1304.2934v4/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1304.2934&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1304.2934v4",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1304.2934v4",
+    "content_type": "application/gzip",
+    "sha256": "571a3db83d28686f776e8a1b542e63782c3220fd34bac22b2dadfcc60a2db64e",
+    "bytes": 312525,
+    "fetched": "2026-10-10T15:08:14+00:00",
+    "files": [
+      {
+        "path": "source/files/deviant.bbl",
+        "role": "bbl",
+        "sha256": "8effbae78f5c53b9c00e12c838ad147cbffd42a6c4d72257d405bf826aaf40a0",
+        "bytes": 17440
+      },
+      {
+        "path": "source/files/deviant.tex",
+        "role": "tex",
+        "sha256": "714ea7a213ccb25e4dc420e0ee0d1134e5407be67cef182221e56cbdc0b1a927",
+        "bytes": 335779
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

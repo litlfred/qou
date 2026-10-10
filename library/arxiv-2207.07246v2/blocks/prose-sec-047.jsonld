@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2207.07246v2/blocks/prose-sec-047",
+  "kind": "prose",
+  "title": "Theoretical foundation",
+  "pageStart": 135,
+  "pageEnd": 136,
+  "text": "../sections/sec-047-theoretical-foundation.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2207.07246v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2207.07246v2/manifest.jsonld",
+  "provenance": "ingested"
+}

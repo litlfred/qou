@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0104249v1/blocks/prose-sec-020",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0104249v1/blocks/prose-sec-020",
   "kind": "prose",
   "title": "Dokazatelьstvo osnovnyh rezulьtatov. Soglasno lemmam 1, 6 v slu-",
   "pageStart": 16,
   "pageEnd": 16,
   "text": "../sections/sec-020-6-dokazatelьstvo-osnovnyh-rezulьtatov-soglasno-l.md",
-  "derivedFrom": "library/arxiv-math-0104249v1/manifest",
-  "sourceDocument": "library/arxiv-math-0104249v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0104249v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0104249v1/manifest.jsonld",
   "provenance": "ingested"
 }

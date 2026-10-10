@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2502.02662v1/blocks/prose-sec-016",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2502.02662v1/blocks/prose-sec-016",
   "kind": "prose",
   "title": "The Duality Map",
   "pageStart": 20,
   "pageEnd": 21,
   "text": "../sections/sec-016-the-duality-map.md",
-  "derivedFrom": "library/arxiv-2502.02662v1/manifest",
-  "sourceDocument": "library/arxiv-2502.02662v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2502.02662v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2502.02662v1/manifest.jsonld",
   "provenance": "ingested"
 }

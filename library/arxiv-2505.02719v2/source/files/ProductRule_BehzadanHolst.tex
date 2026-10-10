@@ -1,0 +1,186 @@
+\section{Product rules}\label{sec:ProductRule}
+
+Here we gather a few product rules, i.e., statements of well-definedness and existence of bilinear compositions of functions in certain Sobolev classes. We use these results throughout the main body of the work, in particular, for the regularity theory in \cref{sec:Smoothness}.
+
+We start with the following result, which can be found as Theorem~7.4 in \cite{zbMATH07447116} but is included here for the reader's convenience.
+Notice that this theorem for bounded Lipschitz domains can be generalized to compact smooth manifolds such as $\Circle$ by the usual tricks of the trade such as choosing a smooth atlas and subordinate smooth partition of unity.
+\begin{theorem}\label{theo:ProductRuleBehzadanHolst}
+    Let $\varOmega \subset \DomSpace$ be a bounded Lipschitz domain.
+    Let $ \sigma,\sigma_1,\sigma_2\in\R$ with $ \sigma\ge0 $, and $p,p_1,p_2 \in \intervalco{1,\infty}$ satisfy 
+    one of the following two conditions for each $i \in \braces{1,2}$:
+    \begin{itemize}
+        \item
+        $p_i \leq p$,
+        $\sigma_i \geq \sigma$,
+        $\pars[\big]{\sigma_i - \tfrac{\DomDim}{p_i}} \geq \pars[\big]{ \sigma - \tfrac{\DomDim}{p}}$,
+        and
+        $\pars[\big]{\sigma_1 - \tfrac{\DomDim}{p_1}} + \pars[\big]{\sigma_2 - \tfrac{\DomDim}{p_2}}
+        >
+        \pars[\big]{\sigma - \tfrac{\DomDim}{p}}
+        $.
+        \item          
+        $\max \braces{p_1,p_2} > p$,
+        $\sigma_i > \sigma$,
+        $\pars[\big]{\sigma_i - \tfrac{\DomDim}{p_i}} 
+        > 
+        \pars[\big]{ \sigma - \tfrac{\DomDim}{p}}$,
+        and
+        $\sigma_1 + \sigma_2 - \sigma
+        >
+        \tfrac{\DomDim}{\min \braces{p_1,p_2}}$.
+    \end{itemize}
+    Then the product map
+    \[
+        W^{\sigma_1,p_1}(\Domain) \times W^{\sigma_2,p_2}(\Domain)
+        \to 
+        W^{\sigma,p}(\Domain),
+        \;\;
+        (u_1,u_2) \mapsto u_1 \cdot u_2
+    \]
+    is well-defined and continuous.
+\end{theorem}
+
+\begin{lemma}\label{lem:ProductRuleAsDistribution}
+    Let $t \geq 0$. 
+    Then for all $\varepsilon > 0$ the map
+    \[
+        H^{t}(\Circle) \times H^{t}(\Circle)
+        \to 
+        H^{\sigma(t,\varepsilon)}(\Circle),
+        \;\;
+        (u_1,u_2) \mapsto u_1 \cdot u_2
+    \]
+    is well-defined and continuous, where (as in \cref{lem:DEbYisLowerOrderIIII})
+    \[
+        \sigma(\tau,\varepsilon) \ceq 
+        \begin{cases}
+            2\,\tau - \frac{1}{2} - \varepsilon ,&\text{for $ \tau \in [0,\frac{1}{2}]$},\\
+            \tau                                ,&\text{for $\tau \in(\frac{1}{2},\infty)$}.
+        \end{cases}
+    \]
+    Here, we regard $ u_1\cdot u_2 $ as a distribution whenever $ \sigma(t,\varepsilon)<0 $.
+\end{lemma}
+
+\begin{proof}
+    If $ t>\frac{1}{2} $, $ H^{t}(\R/\Z) $ is a Banach algebra, since then $ H^{t}\hookrightarrow L^\infty $, and there is nothing to prove. So, we may focus on $ t\in[0,\frac{1}{2}] $ and distinguish three cases. 
+
+    \textit{{Case I:} $t \in (\frac{1}{4},\frac12]$.}
+    In this case, $ \sigma(t,\varepsilon)=2t-\frac{1}{2}-\varepsilon\le \frac{1}{2}-\varepsilon $ for all $ \varepsilon>0 $, and we may choose $ \varepsilon_{0}(t)\ceq\frac{1}{2}(2t-\frac{1}{2})>0 $, such that $ \sigma(t,\varepsilon)>0 $ for all $ \varepsilon\in (0,\varepsilon_{0}(t)] $. We may therefor apply \cref{theo:ProductRuleBehzadanHolst} for $ \sigma_{1}=\sigma_2\ceq t $, and $ \sigma\ceq \sigma(t,\varepsilon)=t+(t-\frac{1}{2})-\varepsilon \le t-\varepsilon<t$ for $  \varepsilon\in (0,\varepsilon_{0}(t)] $, and $ p_1=p_2=p\ceq 2 $, to obtain the result first for all $  \varepsilon\in (0,\varepsilon_{0}(t)] $. For $ \varepsilon>\varepsilon_{0}(t) $ simply observe that $ \sigma(t,\varepsilon) <\sigma(t,\varepsilon_{0}(t))$ so that $ H^{\sigma(t,\varepsilon_{0}(t))}(\R/\Z)\subset H^{\sigma(t,\varepsilon)}(\R/\Z) $. 
+
+    \textit{{Case II:} $ t \in  (0,1/4]$.}
+    In this case $ \sigma\equiv\sigma(t,\varepsilon)\le -\varepsilon <0$, and $ u_1\cdot u_2 $ acts on smooth functions as 
+    \[\textstyle\int_{\R/\Z}u_1\cdot u_2\cdot v\dd x\quad \Fo v\in C^\infty(\R/\Z).\]
+    By the Sobolev embedding theorem (see, e.g., \cite[Theorem 2.3.4]{AgranovichSobolevSpaces2015})
+    $ H^{-\sigma}(\R/\Z)\hookrightarrow L^{q}(\Circle) $ for all $ q\in [1,2/(1+2\sigma)]= [1,1/(2t-\varepsilon)]$, whereas $ H^{t}(\R/\Z)\hookrightarrow L^{2/(1-2t)} (\Circle)$. 
+
+    In view of Hölder's inequality with three factors we compute for $ p=\frac{2}{1-2t} $, $ \frac{1}{p}+\frac{1}{p}=1-2t $, to find $ q=\frac{1}{2t}\in [1,1/(2t-\varepsilon)]$, so that 
+    \begin{align*}\textstyle
+        \left|\int_{\R/\Z}u_1\cdot u_2\cdot v\d x \right|\le \left\|u_1 \right\|_{L^p}\left\|u_2 \right\|_{L^p}\left\|v \right\|_{L^q}\le C \left\|u_1 \right\|_{H^t}\left\|u_2 \right\|_{H^t}\left\|v \right\|_{H^{-\sigma}}\Foa v\in C^\infty(\R/\Z),
+    \end{align*}
+    which by density of $ C^\infty(\R/\Z) $ in $ H^{-\sigma}(\R/\Z) $ (see, e.g. \cite[Statement 4 in Section 2.3]{AgranovichSobolevSpaces2015}) yields the desired estimate for all $ v\in H^{-\sigma}(\R/\Z) $.
+
+    \textit{{Case III:} $t=0$.}
+    Now, $ \sigma(t,\varepsilon)=-\frac{1}{2}-\varepsilon <-\frac{1}{2}<0$, so we can use the known embedding $ H^{-\sigma}(\R/\Z)\hookrightarrow L^\infty(\R/\Z) $ to establish 
+    \begin{align*}\textstyle
+        \left|\int_{\R/\Z}u_1\cdot u_2\cdot v\d x \right|\le \left\|u_1 \right\|_{L^2}\left\|u_2 \right\|_{L^2}\left\|v \right\|_{L^\infty}\le C \left\|u_1 \right\|_{H^t}\left\|u_2 \right\|_{H^t}\left\|v \right\|_{H^{-\sigma}}\Foa v\in H^{-\sigma}(\R/\Z),
+    \end{align*}
+    which concludes the proof. 
+\end{proof}
+\begin{corollary}\label{cor:gamma''gamma''}
+    Let $t \geq 2$. 
+    Then for all $\varepsilon > 0$ the maps 
+    \begin{alignat*}{2}
+        H^{t}(\Circle,\R^n)
+        &\to 
+        H^{\sigma(t-2,\varepsilon)}(\Circle),
+        \quad
+        &\gamma &\mapsto \inner{\gamma'',\gamma''},
+        \\
+        H^{t}(\Circle,\R^n)
+        &\to 
+        H^{\sigma(t-2,\varepsilon)}(\Circle,\AmbSpace),
+        \quad
+        &\gamma &\mapsto \inner{\gamma'',\gamma''} \, \gamma',
+        \\
+        H^{t}(\Circle,\R^n)
+        &\to 
+        H^{\sigma(t-2,\varepsilon)-1}(\Circle,\R^n),
+        \quad
+        &\gamma &\mapsto \pars[\big]{ \inner{ \gamma'',\gamma''} \, \gamma'}',
+    \end{alignat*}
+    are well-defined and continuous, where $\sigma(\cdot,\cdot)$ is the function from \cref{lem:ProductRuleAsDistribution}.
+\end{corollary}
+\begin{proof}
+    The statement for the first map is an immediate consequence of \cref{lem:ProductRuleAsDistribution}. For the second map we note, that it suffices to prove the statement for all $ \varepsilon\in (0,\frac{1}{2}) $ by the ordering $ H^{\sigma(t-2,\varepsilon_1)}(\R/\Z)\subset H^{\sigma(t-2,\varepsilon_2)}(\R/\Z)$ for all $ 0<\varepsilon_1\le \varepsilon_2 $ and all $ t\ge 2 $. \\
+    We distinguish 3 cases. 
+
+    \textit{{Case I:} $t\in (2+\frac{1}{2},\infty)$.}
+    In this case, $ \sigma(t-2,\varepsilon)=t-2 \,$ by definition of $ \sigma(\cdot,\cdot) $, and $ H^{t-2}(\R/\Z) $ is a Banach algebra. Since $ \gamma'\in H^{t-1}(\R/\Z,\R^n)\subset H^{t-2}(\R/\Z,\R^n) $ we conclude. 
+
+    \textit{{Case II:} $t\in [2+\frac{1}{4}+\frac{\varepsilon}{2},2+\frac{1}{2}]$.}
+    Now $ \sigma(t-2,\varepsilon)\ge0 $ for all $ \varepsilon\in(0,1/2) $, and we can use \cref{theo:ProductRuleBehzadanHolst} with the choice $ \sigma\ceq \sigma(t-2,\varepsilon) $, $ \sigma_1\ceq \sigma, \sigma_2\ceq t-1>1>\frac{1}{2}-\varepsilon\ge \sigma $, and $ p_1=p_2=p \ceq 2$ to settle this case. 
+
+    \textit{{Case III:}\, $t\in [2,2+\frac{1}{4}+\frac{\varepsilon}{2}]$.} Here, $ \sigma(t-2,\varepsilon)<0 $, and we distinguish two subcases depending on $ \varepsilon\in (0,\frac{1}{2}) $.
+
+    \textit{{Case IIIa:} $\varepsilon\in (2(t-2),\frac{1}{2})$, if this interval is non-empty.}
+    Then $ \sigma(t-2,\varepsilon) <-\frac{1}{2}$ such that $ -\sigma\ceq-\sigma(t-2,\varepsilon)>\frac{1}{2} $, which implies by Morrey's embedding $ H^{-\sigma}(\R/\Z,\R^n)\hookrightarrow C^0(\R/\Z,\R^n) $ and thus,
+    \begin{align*}\textstyle
+        \left|\int_{\R/\Z}\left|\gamma'' \right|^2 \left\langle \gamma',v \right\rangle \d x \right|&\le \left\|\gamma'' \right\|^2_{L^2}\left\|\gamma' \right\|_{C^0}\left\|v \right\|_{L^\infty}
+        \le \left\|\gamma \right\|^3_{H^t}\left\|v \right\|_{H^{-\sigma}}.
+    \end{align*}
+
+    \textit{{Case IIIb:} $\varepsilon\in (0,2(t-2))$, if this interval is non-empty.}
+    Now $ \sigma(t-2,\varepsilon)\in[-\frac{1}{2},0) $, and we can apply \cref{theo:ProductRuleBehzadanHolst} to the product $ \left\langle \gamma',v \right\rangle  $ for $ v\in H^{-\sigma(t-2,\varepsilon)}(\R/\Z,\R^n) $ with the choice $ \sigma_1\ceq t-1\ge 1>\sigma_2\equiv\sigma\ceq-\sigma(t-2,\varepsilon) \in (0,\frac{1}{2}]$ to find $ \left\langle \gamma',v \right\rangle \in H^{-\sigma(t-2,\varepsilon)}(\R/\Z,\R^n) $ with the estimate 
+   \begin{equation}\label{eq:C4_abschaetzung}
+   \begin{aligned}
+    \left\|\left\langle \gamma',v \right\rangle  \right\|_{H^{-\sigma(t-2,\varepsilon)}}\le C\left\|\gamma' \right\|_{H^{t-1}}\left\|v \right\|_{H^{-\sigma(t-2,\varepsilon)}}
+        \le C\left\|\gamma \right\|_{H^{t}}\left\|v \right\|_{H^{-\sigma(t-2,\varepsilon)}}.
+   \end{aligned}
+   \end{equation}
+    We already know that $ \left\langle \gamma'',\gamma'' \right\rangle \in H^{\sigma(t-2,\varepsilon)} $ with $ \left\|\left\langle \gamma'',\gamma'' \right\rangle  \right\|_{H^{\sigma(t-2,\varepsilon)}}\le \tilde{C}\left\|\gamma \right\|_{H^t}^2 $, which implies 
+    \begin{align*}\textstyle
+        \left|\int_{\R/\Z}\left|\gamma'' \right|^2f\d x \right|\le \tilde{C}\left\|\gamma \right\|^2_{H^t}\left\|f \right\|_{H^{-\sigma(t-2,\varepsilon)}}\Foa f\in H^{\sigma(t-2,\varepsilon)}(\R/\Z,\R^n);
+    \end{align*}
+    hence by \cref{eq:C4_abschaetzung} 
+    \begin{align*}\textstyle
+        \left|\int_{\R/\Z}\left|\gamma'' \right|^2 \left\langle \gamma',v \right\rangle \d x \right|\le \tilde{C}C\left\|\gamma\right\|^3_{H^{t}}\left\|v \right\|_{H^{-\sigma(t-2,\varepsilon)}} \Foa v\in H^{-\sigma(t-2,\varepsilon)}(\R/\Z,\R^n). 
+    \end{align*}
+\end{proof}
+
+\begin{lemma}\label{lem:ProductRuleAsDistributionII}
+    Let $t \geq 1$.
+    Then for all $\varepsilon >0$ and all $\tau \leq \sigma(t-1,\varepsilon)$
+    the following map
+    \[
+        H^t(\Circle,\AmbSpace)
+        \times
+        H^{1-\tau}(\Circle,\AmbSpace) \to H^{1-t}(\Circle),
+        \quad 
+        (\gamma,h) \mapsto \inner{\gamma',h'}
+    \]
+    is well-defined and continuous,
+    where $\sigma(\cdot,\cdot)$ is the function defined in \cref{lem:ProductRuleAsDistribution}.
+\end{lemma}
+\begin{proof}
+    From \cref{lem:ProductRuleAsDistribution} we know that the following map is well-defined and continuous for all $ \tau\le \sigma(t-1,\varepsilon),\varepsilon>0 $:
+    \begin{align*}
+        H^{t}(\R/\Z,\R^n)\times H^{t-1}(\R/\Z)\to H^{\tau}(\R/\Z,\R^n), (\gamma,f)\mapsto f\gamma'.
+    \end{align*}
+    Hence,  there is a constant $ C\ge 0 $ such that 
+    \begin{equation}\label{eq:C5_abschaetzung}
+    \begin{aligned}
+        \left\|f\gamma' \right\|_{H^{\tau}}\le C\left\|f \right\|_{H^{t-1}}\left\|\gamma \right\|_{H^t},\Foa \gamma\in H^t(\R/\Z,\R^n),\,f\in H^{t-1}(\R/\Z),
+    \end{aligned}
+    \end{equation}
+    for all $ \tau\le \sigma(t-1,\varepsilon)$ and $\varepsilon>0$.
+    Since $ \tau $ may be negative, we interpret $ f\gamma' $ for a given $ f\in C^\infty(\R/\Z) \subset H^{t-1}(\R/\Z)$ as a distribution and obtain for $ h\in C^\infty(\R/\Z,\R^n) $ that 
+    \begin{align*}\textstyle
+        \int_{\R/\Z}\left\langle f\gamma',h' \right\rangle \d x =\int_{\R/\Z}\left\langle \gamma',h' \right\rangle f\d x
+    \end{align*}
+    may be interpreted as $ \left\langle \gamma',h' \right\rangle  $ acting on $ f $ as a distribution, satisfying the following estimate by means of \cref{eq:C5_abschaetzung},
+    \begin{align*}\textstyle
+        |\int_{\R/\Z}\left\langle \gamma',h' \right\rangle f\d x |\le \left\|f\gamma' \right\|_{H^{\tau}}\left\|h' \right\|_{H^{-\tau}}&\le C \left\|f \right\|_{H^{t-1}}\left\|\gamma \right\|_{H^{t}}\left\|h' \right\|_{H^{-\tau}}
+        \le C \left\|f \right\|_{H^{t-1}}\left\|\gamma \right\|_{H^{t}}\left\|h \right\|_{H^{1-\tau}}
+    \end{align*}
+    for all $ f\in C^\infty(\R/\Z) $ and $ h\in C^\infty(\R/\Z,\R^n)$. By density \cite[Statement 4, Section 2.3]{AgranovichSobolevSpaces2015} this holds for all $ f\in H^{t-1}(\R/\Z) $ and $ h\in H^{1-\tau}(\R/\Z,\R^n) $, which proves the claim. 
+\end{proof}

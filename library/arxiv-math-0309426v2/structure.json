@@ -6,7 +6,8 @@
   "sha256": "f2aa01164d9f243c7c05ddb693e87b7dbbebfcd6830e0b527b58c07dab245b7b",
   "bytes": 256993,
   "pages": 20,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -828,6 +829,269 @@
   "likely_scanned": false,
   "toc_entries": 47,
   "sections": 46,
-  "chars_total": 44707
+  "chars_total": 44707,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "elemdivs.tex",
+   "tex_sections": 8,
+   "overlaid": 6,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-2-matthias-k-unzer-and-andrew-mathas",
+     "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-introduction-and-statement-of-main-results",
+     "title": "Introduction and statement of main results",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-the-hecke-algebra-and-permutation-modules",
+     "title": "The Hecke algebra and permutation modules",
+     "prose_ratio": 0.703,
+     "coverage_ratio": 0.792,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-3-specht-modules",
+     "title": "Specht modules",
+     "prose_ratio": 0.684,
+     "coverage_ratio": 0.694,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-4-matthias-k-unzer-and-andrew-mathas",
+     "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-31-dipperjames-2-theorem-56-the-specht-module-s\u03bb",
+     "title": "(Dipper\u2013James [2, Theorem 5.6] ) The Specht module S(\u03bb) is free as an R\u2013",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-4-diagonalizability-and-elementary-divisors",
+     "title": "Diagonalizability and elementary divisors",
+     "prose_ratio": 0.912,
+     "coverage_ratio": 0.962,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-41-lemma-let-a-be-an-m-m-matrix-with-coe\ufb03cients",
+     "title": "Lemma. Let A be an m \u00d7m matrix with coe\ufb03cients in R, and suppose that",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-5-elementary-divisors-for-conjugate-partitions",
+     "title": "Elementary divisors for conjugate partitions",
+     "prose_ratio": 0.152,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-51-lemma-suppose-that-\u03bb-is-a-partition-then-the",
+     "title": "Lemma. Suppose that \u03bb is a partition. Then the Specht module S(\u03bb) is a pure",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-52-corollary-the-map-m-\u03bb-\u03b4\u03bb",
+     "title": "Corollary . The map M (\u03bb) \u2732\u03b4\u03bb",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-6-matthias-k-unzer-and-andrew-mathas",
+     "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-53-lemma-we-have-x",
+     "title": "Lemma. We have x#",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-54-dipperjames-2-lemma-41-suppose-that-w-sn-then",
+     "title": "(Dipper\u2013James [2, Lemma 4.1] ) Suppose that w \u2208 Sn. Then",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-55-lemma-the-submodule-theorem-if-u-is-a-pure-su",
+     "title": "Lemma (The Submodule Theorem) . If U is a pure submodule of M (\u03bb), then",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-56-lemma-we-have-kern\u03b8\u03bb-s\u03bb-this-induces-an-isomo",
+     "title": "Lemma. We have Kern\u03b8\u03bb =S(\u03bb)\u22a5. This induces an isomorphism",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-57-lemma-we-have-z\u03bbt-1",
+     "title": "Lemma. We have z\u03bbT \u22121",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-8-matthias-k-unzer-and-andrew-mathas",
+     "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-58-lemma-the-composition",
+     "title": "Lemma. The composition",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-6-the-elementary-divisors-for-hook-partitions",
+     "title": "The elementary divisors for hook partitions",
+     "prose_ratio": 0.276,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-020-10-matthias-k-unzer-and-andrew-mathas",
+     "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-61-proposition-let\u03bb-n-k-1k-the-map",
+     "title": "Proposition. Let\u03bb = (n \u2212k, 1k). The map",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-2-2n3k1k",
+     "title": "(2n\u22123k\u22121)[k]!",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-2-2n3k3k-1",
+     "title": "(2n\u22123k\u22123)[k + 1]!",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-62-corollary-suppose-that-\u03bb-n-k-1k-then-k",
+     "title": "Corollary . Suppose that \u03bb = (n \u2212k, 1k). Then [k]!",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-63-corollary-the-module-s\u03bb-is-rfree-with-basis-v",
+     "title": "Corollary . The module S\u2032(\u03bb) is R\u2013free with basis {v\u2032",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-12-matthias-k-unzer-and-andrew-mathas",
+     "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-65-lemma-suppose-that-t-is-a-standard-\u03bbtableau-t",
+     "title": "Lemma. Suppose that t is a standard \u03bb\u2013tableau. Then",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-14-matthias-k-unzer-and-andrew-mathas",
+     "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-67-corollary-suppose-that-s-and-t-are-standard\u03bbt",
+     "title": "Corollary . Suppose that s and t are standard\u03bb\u2013tableaux which have n in their",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-68-lemma-let-a",
+     "title": "Lemma. Let (a+",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-69-corollary-suppose-that-t-t\u03bb-is-a-standard-kn",
+     "title": "Corollary . Suppose that t \u2044= t\u03bb is a standard (k|n \u2212k)\u2013tableau. Then",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-16-matthias-k-unzer-and-andrew-mathas",
+     "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-610-corollary-suppose-that-t-is-a-standard-n-k-1",
+     "title": "Corollary . Suppose that t is a standard (n \u2212k, 1k)\u2013tableau and that n does",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-611-proposition-suppose-that-\u03bb-n-k-1k-for-some-k",
+     "title": "Proposition. Suppose that \u03bb = (n \u2212k, 1k), for some k with 0 \u2264k <n. Then",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-612-corollary-suppose-that-r-is-a-\ufb01eld-that-k",
+     "title": "Corollary . Suppose that R is a \ufb01eld, that [k]!",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-7-some-counterexamples",
+     "title": "Some counterexamples",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-037-4-2-2",
+     "title": "(2 , 2) \u2732",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-038-5-3-2",
+     "title": "(3 , 2) \u2732",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-039-6-4-2",
+     "title": "(4 , 2) \u2732",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-7-5-2",
+     "title": "(5 , 2) \u2732",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-8-6-2",
+     "title": "(6 , 2) \u2732",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-042-9-7-2-1",
+     "title": "(7 , 2) \u27321",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-043-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-044-references",
+     "title": "References",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-045-20-matthias-k-unzer-and-andrew-mathas",
+     "title": "MATTHIAS K \u00a8UNZER AND ANDREW MATHAS",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

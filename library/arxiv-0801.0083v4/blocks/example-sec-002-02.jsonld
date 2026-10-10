@@ -1,0 +1,16 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0801.0083v4/blocks/example-sec-002-02",
+  "kind": "example",
+  "pageStart": 11,
+  "pageEnd": 19,
+  "text": "example-sec-002-02.md",
+  "derivedFrom": "library/arxiv-0801.0083v4/sections/sec-002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0801.0083v4/manifest.jsonld",
+  "provenance": "ingested"
+}

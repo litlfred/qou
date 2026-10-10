@@ -7,41 +7,21 @@ section_number: 1
 pages: 1-2
 source_pdf: 0603444v2.pdf
 source_sha256: 46edfcddca963d08
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.814
 doc_brief: "QUASIHOMOGENEITY OF ISOLATED HYPERSURF ACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY — W e characterize quasihomogeneity of isolated hypersurfac e singu- larities by the injectivity of the map induced"
 ---
-We consider the germ of an isolated hypersurface singularity D ⊆ (Cn, 0). Let
-O = OCn,0 be the ring of germs of holomorphic functions on Cn at the origin
-with maximal ideal m andf ∈ m2 a reduced deﬁning equation of D. For notational
-simplicity, we shall write Cn instead of (Cn, 0). In terms of coordinates x1,...,x n on
-Cn, O = C{x1,...,x n} is the ring of convergent power series and m = ⟨x1,...,x n⟩.
-We abbreviate by fi = ∂f
-∂xi
-, i = 1,...,n , the partial derivatives of f .
-Let Ω • = Ω •
-Cn,0 be the complex of holomorphic diﬀerential forms at the origin
-and denote by Ω • (⋆D) = Ω • [f − 1] the complex of meromorphic diﬀerential forms
-with poles along D. K. Saito [Sai80, §1] introduced the subcomplex of logarithmic
-diﬀerential forms Ω • (logD) ⊆ Ω • (⋆D) along D. It is the maximal subcomplex
-consisting of forms with at most a simple pole along D. Let Der = Der C O be
-the module of C-linear derivations of O. It is a free O-module of rank n with a
-basis formed by the partial derivatives ∂1,...,∂ n with respect to x1,...,x n. The
-module of logarithmic vector ﬁelds Der( − logD)) ⊆ Der consists of all vector ﬁelds
-tangent to the smooth part of D. Under the natural inner product, Der( − logD))
-and Ω 1(logD) are mutually O-dual.
-Our object of interest in this article is the natural map
-H n
-0 (O)
-d1 /d47/d47H n
-0 (Ω 1(logD))
-induced by the ﬁrst diﬀerential of Ω • (logD) in the top local cohomology supported
-at the origin. We shall show that its injectivity is equivalent to the qua sihomogene-
-ity of the singularity.
-Theorem 1. D is quasihomogeneous if and only if d1 is injective.
-For non–isolated singularities, at least one implication fails: The divisor D ⊆ C3
-deﬁned by f =xy(x +y)(x +yz) is not quasihomogeneous but d1 is injective.
-1991 Mathematics Subject Classiﬁcation. 32S20, 32S65, 13D45, 14F40.
-Key words and phrases. hypersurface singularity, quasihomogeneity, local cohom ology, de
-Rham cohomology, logarithmic comparison theorem.
-The second author gratefully acknowledges ﬁnancial suppor t from the Humboldt foundation.
-1
-2 MICHEL GRANGER AND MATHIAS SCHULZE
+We consider the germ of an isolated hypersurface singularity $D\subseteq(\mathbb{C}^n,0)$. Let $\mathcal{O}=\mathcal{O}_{\mathbb{C}^n,0}$ be the ring of germs of holomorphic functions on $\mathbb{C}^n$ at the origin with maximal ideal $\mathfrak{m}$ and $f\in\mathfrak{m}^2$ a reduced defining equation of $D$. For notational simplicity, we shall write $\mathbb{C}^n$ instead of $(\mathbb{C}^n,0)$. In terms of coordinates $x_1,\dots,x_n$ on $\mathbb{C}^n$, $\mathcal{O}=\mathbb{C}\{x_1,\dots,x_n\}$ is the ring of convergent power series and $\mathfrak{m}=\langle x_1,\dots,x_n\rangle$. We abbreviate by $f_i=\frac{\partial f}{\partial{x_i}}$, $i=1,\dots,n$, the partial derivatives of $f$.
+
+Let $\Omega^\bullet=\Omega_{\mathbb{C}^n,0}^\bullet$ be the complex of holomorphic differential forms at the origin and denote by $\Omega^\bullet(\star D)=\Omega^\bullet[f^{-1}]$ the complex of meromorphic differential forms with poles along $D$. K. Saito [@Sai80 §1] introduced the subcomplex of logarithmic differential forms $\Omega^\bullet(\log D)\subseteq\Omega^\bullet(\star D)$ along $D$. It is the maximal subcomplex consisting of forms with at most a simple pole along $D$. Let $\mathop{\mathrm{Der}}=\mathop{\mathrm{Der}}_\mathbb{C}\mathcal{O}$ be the module of $\mathbb{C}$-linear derivations of $\mathcal{O}$. It is a free $\mathcal{O}$-module of rank $n$ with a basis formed by the partial derivatives $\partial_1,\dots,\partial_n$ with respect to $x_1,\dots,x_n$. The module of logarithmic vector fields $\mathop{\mathrm{Der}}(-\log D))\subseteq\mathop{\mathrm{Der}}$ consists of all vector fields tangent to the smooth part of $D$. Under the natural inner product, $\mathop{\mathrm{Der}}(-\log D))$ and $\Omega^1(\log D)$ are mutually $\mathcal{O}$-dual.
+
+Our object of interest in this article is the natural map $$\SelectTips{cm}{}\xymatrix{
+H^n_0(\mathcal{O})\ar[r]^-{d_1}&H^n_0(\Omega^1(\log D))
+}$$ induced by the first differential of $\Omega^\bullet(\log D)$ in the top local cohomology supported at the origin. We shall show that its injectivity is equivalent to the quasihomogeneity of the singularity.
+
+::: thm
+[]{#0 label="0"} $D$ is quasihomogeneous if and only if $d_1$ is injective.
+:::
+
+For non--isolated singularities, at least one implication fails: The divisor $D\subseteq\mathbb{C}^3$ defined by $f=xy(x+y)(x+yz)$ is not quasihomogeneous but $d_1$ is injective.

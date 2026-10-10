@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2104.14491v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Khovanov polynomials for satellites and asymptotic adjoint polynomials A. Anokhinaa,∗ A. Morozova,b,c,† A. Popolitova,b,c,‡ a Institute for Theoretical and Experimental Physics, Moscow 117218, Russia",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2104.14491v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2104.14491v1",
   "contains": [
     "library/arxiv-2104.14491v1/sections/sec-000",
     "library/arxiv-2104.14491v1/sections/sec-001",
@@ -35,8 +40,17 @@
     "library/arxiv-2104.14491v1/sections/sec-026"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2104.14491&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2104.14491v1",
+    "title_source": "slug",
     "source_file": "2104.14491v1.pdf",
     "source_sha256": "1aea658f17283df1a147f8ef75ad961ec40d37d8b735c65e4a960d47aca45041",
     "pages": 20,

@@ -1,0 +1,122 @@
+\documentclass{gtart}
+\pdfoutput=1
+\newcommand{\pathtotrunk}{./}
+\input{text/article_preamble.tex}
+\input{text/top_matter.tex}
+
+\tikzstyle{STrain}=[baseline=0,scale=2]
+\inputtikz{relations/STrains}
+
+\begin{document}
+
+\begin{abstract}
+Etingof, Nikshych and Ostrik ask in \cite[\S 2]{MR2183279}  if every fusion category can be completely defined over a cyclotomic field.  We show that this is not the case: in particular one of the fusion categories coming from the Haagerup subfactor \cite{MR1686551} and one coming from the newly constructed extended Haagerup subfactor \cite{0909.4099} can not be completely defined over a cyclotomic field.    On the other hand, we show that the Drinfel'd center of the even part of the Haagerup subfactor is completely defined over a cyclotomic field.  We identify the minimal field of definition for each of these fusion categories, compute the Galois groups, and identify their Galois conjugates.
+\end{abstract}
+
+\maketitle
+
+% remove table of contents for submitted version
+% \setcounter{tocdepth}{1}
+% \tableofcontents
+
+%\section{Introduction}
+%\input{text/intro.tex}
+
+\section{Introduction}
+In \cite[\S 2]{MR2183279}, Etingof, Nikshych and Ostrik ask if every fusion category over the complex numbers can be defined over a cyclotomic field.   More precisely, does every fusion category over $\Complex$ have a complete rational form over a cyclotomic field?  (See Section \ref{sec:background} for definitions and examples of the key notions ``rational form" and ``complete rational form.")
+
+Their question is motivated by the following results.
+\begin{itemize}
+\item The representation category of any finite group has a complete rational form over a cyclotomic field. (This is a classical result of Brauer's, see \cite[\S 12.3]{MR0450380}.)
+\item The semisimplified representation category of any quantum group at a root of unity has a complete rational form over a cyclotomic field.  (This follows from the usual construction of Weyl modules.)
+\item The Frobenius-Perron dimension of any object in a fusion category is a cyclotomic integer \cite{MR2183279}.
+\item The global dimension of a fusion category is a cyclotomic integer \cite{MR2183279}.
+\item The entries of the $S$-matrix of a modular category lie in a cyclotomic field \cite{MR1266785, MR1120140}.
+\end{itemize}
+
+We answer this question in the negative.
+
+\begin{thm} \label{thm:noncyclotomic}
+The principal even part of the Haagerup subfactor and the principal even part of the extended Haagerup subfactor are fusion categories which do not have a complete rational form over any cyclotomic field.
+\end{thm}
+
+We hope that this result will eventually allow a more robust technique for establishing the ``exotic" nature of these fusion categories.  No construction that preserves cyclotomicity can produce these fusion categories starting from groups or quantum groups.  Alternately this result might suggest new techniques for constructing these fusion categories.
+
+Let $\cH_0$ and $\cH_1$ be the Haagerup \cite{MR1686551, 0902.1294} and extended Haagerup \cite{0909.4099} subfactors which are the unique subfactors with the following principal graph pairs.
+\begin{align*}
+\Gamma(\cH_0) & = \left \{ \mathfig{0.25}{haagerup}, \mathfig{0.25}{dual-haagerup} \right \} \\
+\Gamma(\cH_1) & = \left \{ \mathfig{0.4}{EH}, \mathfig{0.4}{dual-EH} \right \}
+\end{align*}
+
+Given a subfactor $A \subset B$ there are two tensor categories $\cS^p$ and $\cS^d$ (consisting of certain $A$-$A$ bimodules and certain $B$-$B$ bimodules respectively) called the principal even part and dual even part.  If the subfactor is finite depth then $\cS^p$ and $\cS^d$ are fusion categories over $\Complex$.  We will be looking at the fusion categories $\cH_\ell^p$ and $\cH_\ell^d$ for $\ell \in \{0,1\}$.
+
+Denote by $D_0 = \frac{5+\sqrt{13}}{2} \simeq 4.30278$ and $D_1 = \frac{8}{3}+\frac{2}{3} \operatorname{Re} \sqrt[3]{\frac{13}{2} \left(-5-3 i \sqrt{3}\right)} \simeq 4.3772$ the Jones indices of $\cH_0$ and $\cH_1$.  Fix 
+\begin{align*}
+\lambda_0 & = i \sqrt{\frac{-1+\sqrt{13}}{6}} \simeq 0.658983 i \\
+\intertext{and}
+\lambda_1& = \sqrt{-\frac{1}{5}+2 \operatorname{Re} \sqrt[3]{\frac{117-  65 i \sqrt{3}}{2250}}} \simeq 0.648585 i.
+\end{align*}
+%, where we take the cube root in the upper half plane
+ Let $\zeta_m$ denote the primitive $m$th root of unity $\exp(2\pi i/m)$.  Note that
+\begin{align*}
+D_0 & = 2 -\zeta_{13}^{2} -\zeta_{13}^5 -\zeta_{13}^6 -\zeta_{13}^7-\zeta_{13}^8-\zeta_{13}^{11}\\
+D_1 & = 3+ \zeta_{13}^2  + \zeta_{13}^3 + \zeta_{13}^{10} +  \zeta_{13}^{11}
+\end{align*}
+so $D_\ell \in \Rational(\zeta_{13})$ while $\lambda_\ell$ is not cyclotomic.  In fact, $\Rational(\lambda_\ell)$ is not Galois.   The Galois group of the Galois closure of $\Rational(\lambda_0)$ is the dihedral group of order $8$, and the Galois group of the Galois closure of $\Rational(\lambda_1)$ is $\Integer/2\Integer \wr \Integer/3\Integer \cong \Integer/2\Integer \times A_4$.
+
+\begin{thm} \label{thm:detailed}
+The following statements hold for $\ell = 0,1$.
+\begin{enumerate}
+\item \label{pa:construct} The even parts $\cH_\ell^p$ and $\cH_\ell^d$ each have a (possibly incomplete) rational form over $\Rational(D_\ell)$.
+%\noah{It is very hard to make this sentence grammatical.  The old version made it sound like you could only define *both* of them when you had $D_\ell$ but maybe you could define one or the other.}
+\item \label{pa:dualprojs} The dual even part $\cH_\ell^d$ has a complete rational form over $k$ if and only if $D_\ell \in k$.
+\item \label{pa:principalprojs} The principal even part $\cH_\ell^p$ has a complete rational form over $k$ if and only if $\lambda_\ell \in k$.
+\item \label{pa:center} The Drinfel'd center $Z(\cH_0^p) \cong Z(\cH_0^d)$ has a complete rational form over $k$ as a ribbon fusion category if and only if $\zeta_{39} \in k$.
+\end{enumerate}
+\end{thm}
+
+Theorem \ref{thm:noncyclotomic} follows immediately from part \ref{pa:principalprojs} of Theorem \ref{thm:detailed}.  Part 4 is of interest because it means these results do not exclude the possibility that every braided fusion category is defined over a cyclotomic field.  We prove part \ref{pa:construct} and the ``if" direction of parts \ref{pa:dualprojs} and \ref{pa:principalprojs} in Section \ref{sec:construction}.  We prove the ``only if" direction of parts \ref{pa:dualprojs} and \ref{pa:principalprojs} in Section \ref{sec:noncyclotomic}.  We prove part \ref{pa:center} in Section \ref{sec:center}.
+
+The main technique in this paper is to show that, in the context of fusion categories associated to 3-supertransitive subfactors, the (correctly normalized) ``twisted moments" of any $\Rational$-linear combination of projections gives an element of the base field of any complete rational form.  These twisted moments can be computed using techniques from Jones's preprint \cite{quadratic}.  In the construction of the Haagerup subfactor by Peters \cite{0902.1294}, the moments and twisted moments of the ``generator" are the only scalars needed to define the subfactor.  The $\lambda_\ell$ above are $\Rational(D_\ell)$ multiples of the third twisted moments of $\frac{1}{2}\left(\id_P-\id_Q\right)$ (where $P$ and $Q$ are the two simple objects immediately after the branch).
+
+There is a third subfactor with index in the interval $(2, 3+\sqrt{3})$ called the Asaeda-Haagerup subfactor \cite{MR1686551}.  Our techniques do not give an obstruction to cyclotomicity for either of the fusion categories coming from the Asaeda-Haagerup subfactor, because the analogous moments and twisted moments are cyclotomic.  However, since there is not yet a construction of the Asaeda-Haagerup planar algebra following the Jones-Peters approach \cite{quadratic, 0902.1294, 0909.4099}, the lack of obstruction does not guarantee that the even parts of the Asaeda-Haagerup subfactor are cyclotomic.
+
+The authors would like to thank Emily Peters for teaching us about the Haagerup planar algebra and Pavel Etingof for encouraging us to write this paper.  We'd like to thank Victor Ostrik, Ben Webster, and Pasquale Zito for suggesting arguments which we used to improve Section \ref{sec:center}.  (For Pasquale Zito's suggestions, see Math Overflow \url{http://mathoverflow.net/questions/17641/}.)  In addition we would also like to thank Stephen Bigelow, Vaughan Jones, Dmitri Nikshych, and Dylan Thurston for helpful conversations.  Scott Morrison was at the Miller Institute for Basic Research at UC Berkeley during this work, and Noah Snyder was supported by an NSF Postdoctoral Fellowship at Columbia University.
+
+\section{Background}
+\label{sec:background}
+\input{text/background}
+
+\section{The shaded planar algebras $\cH_0$ and $\cH_1$}
+\label{sec:construction}
+\input{text/construction}
+
+\section{Rational forms and twisted moments}
+\label{sec:noncyclotomic}
+\input{text/noncyclotomic}
+
+\section{The Drinfel'd center}
+\label{sec:center}
+\input{text/center}
+
+\section{Galois conjugates}
+\label{sec:galois}
+\input{text/galois}
+
+% ----------------------------------------------------------------
+\hfuzz5pt 
+\newcommand{\urlprefix}{}
+\bibliographystyle{gtart}
+%Included for winedt:
+%input "bibliography/bibliography.bib"
+\bibliography{bibliography/bibliography}
+% ----------------------------------------------------------------
+
+This paper is available online at \arxiv{1002.0168}, and at
+\url{http://tqft.net/noncyclotomic}.
+
+% A GTART necessity:
+% \Addresses
+% ----------------------------------------------------------------
+\end{document}
+% ----------------------------------------------------------------

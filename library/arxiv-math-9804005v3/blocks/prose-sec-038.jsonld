@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9804005v3/blocks/prose-sec-038",
+  "kind": "prose",
+  "title": "There is a morphism TrB/A : RB → RA in D(GrModAe), which satisﬁes",
+  "pageStart": 23,
+  "pageEnd": 24,
+  "text": "../sections/sec-038-2-there-is-a-morphism-trba-rb-ra-in-dgrmodae-whi.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9804005v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9804005v3/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,634 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Double Leaves Span}
+\label{sec-LLLproof}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+This chapter contains a diagrammatic proof that light leaves form a spanning set for Hom spaces. It is somewhat involved, and a key role is played by the recursive combinatorial structure of light leaves maps.
+
+%===========
+\subsection{Negative-positive decompositions}
+\label{subsec-negpos}
+%===========
+
+For the rest of this chapter we will be interested in embedded graphs, not isotopy classes thereof. We will abusively use the term \emph{Soergel graph} to refer to a graph embedded without
+horizontal tangent lines, so that no two vertices share the same $y$-coordinate. This kind of graph can be written as the product of the generators in the introduction, tensored with
+identity maps. Recall that those generators were the bottom boundary dot, the top boundary dot, the trivalent split, the trivalent merge, the $2m$-valent vertex viewed as a map with $m$ inputs and $m$
+outputs, and polynomials. In all our arguments, polynomials will be treated separately from other parts of a graph.
+
+Given such a graph, it has \emph{height} $k$ if it is a product of $k$ generators, ignoring the polynomials. At a given $y$-coordinate without a vertex, we say the diagram has \emph{width}
+$k$ if the object given by the horizontal line at that coordinate is $B_{\un{x}}$ for a sequence of length $k$ (i.e. if the horizontal line passes through $k$ strands). The \emph{maxwidth} of a
+diagram is the maximal width attained.
+
+We classify the generators as being \emph{positive}, \emph{neutral}, or \emph{negative}, depending on whether they increase, preserve, or decrease the width when reading from bottom to
+top. Thus a top boundary dot and a splitting trivalent are positive, a $2m$-valent vertex and a box are neutral, and a bottom boundary dot and a merging trivalent are negative. Note that
+light leaves $\LL_{{\un{x}},\eb}$ are constructed purely out of non-positive maps. The \emph{negative height} of a map is the number of negative generators used, and similarly for the
+\emph{positive height}.
+
+\igc{1}{generatorsposneg}
+
+The central generator is supposed to represent any $2m$-valent vertex.
+
+A graph will be called \emph{negative-positive} if it consists of a composition of negative and neutral (\emph{non-positive}) maps followed by a composition of positive and neutral
+(\emph{non-negative}) maps. In other words, the maximal width is attained on the outside; the map shrinks in width towards the middle and then expands again. We say the map is
+\emph{strictly} negative-positive if the width shrinks non-trivially. Because polynomials are neutral, they can appear anywhere. Given a morphism in $\DC$, an expression for it as a
+$\Bbbk$-linear combination of negative-positive graphs is called a \emph{negative-positive decomposition}.
+
+Any map of the form $\LL_{{\un{x}},\eb}$ is constructed out of non-positive generators. Thus every double leaves map $\LLL$ is a negative-positive map, and the main theorem implies that every morphism in $\DC$ has a negative-positive decomposition.
+
+We state some lemmas about negative-positive decompositions:
+
+\begin{claim} Consider the Jones-Wenzl morphism as a degree $0$ map (i.e. the RHS of \eqref{twocoloridemp}). With the exception of the identity map, every other diagram is strictly
+negative-positive. Moreover, every other diagram attains a width $\le m-2$. \end{claim}
+
+\begin{proof} This is obvious. Perhaps it is most evident using the diagrammatic cellular structure on the Temperley-Lieb algebra. \end{proof}
+
+\begin{claim} Any strictly non-positive map from $B_{\un{w}}$, for ${\un{w}}$ a reduced expression, is in the span of maps with a bottom boundary dot. \label{posrexhasdot} \end{claim}
+
+\begin{proof} No rex can be the source of a merging trivalent $ss \to s$. Thus the map must consist of some rex move with polynomials followed by a bottom dot. We know,
+using \eqref{dot2m}, that a dot on top of a $2m$-valent vertex yields a sum of diagrams, each of which has a bottom boundary dot. Thus we can ``pull" the dot successively through all the
+$2m$-valent vertices in the rex move (ignoring any polynomials) until we have a bottom boundary dot. \end{proof}
+
+\begin{claim} If $\phi = fgh$ where $f$ is non-negative, $h$ is non-positive, and $g$ has a (strictly) negative-positive decomposition, then $\phi$ has a (strictly) negative-positive
+decomposition. \end{claim}
+
+\begin{proof} This is obvious. \end{proof}
+
+\begin{lemma} \label{rexmovesmlt} Let ${\un{w}}$ and ${\un{w}}'$ be two rexes for the same element $w \in W$, and let $\beta$ and $\beta'$ be two rex moves from ${\un{w}}$ to ${\un{w}}'$. Then $\beta -
+\beta'$ has a strictly negative-positive decomposition. In particular, $\beta -
+\beta'$ is in the span of diagrams having both a bottom and a top boundary dot.\end{lemma}
+
+\begin{proof} We already know (see section \ref{subsec-RexMoves}) that two rex moves can be connected by a series of transformations. These transformations correspond to the Zamolodchikov
+relations \eqref{A3std}, \eqref{B3std}, \eqref{H3std}, \eqref{A1I2mstd}, and the relation \eqref{2misomstd}. The difference between two rex moves which differ by a single transformation in
+$\DC$ is given by the analog of each of these relations: \eqref{A3}, \eqref{B3}, \eqref{H3}, \eqref{A1I2m}, and \eqref{twocoloridemp}. Applying the transformation for $A_3$ or $B_3$ or
+$A_1 \times I_2(m)$ will yield no difference between the rex moves. Applying the transformation for $H_3$ or \eqref{twocoloridemp} will have a difference with a strictly negative-positive
+decomposition. More precisely, this transformation is applied somewhere within the rex move, but using the previous claim, the overall difference will still have a strictly
+negative-positive decomposition. We can write $\beta - \beta' = (\beta - \beta_1) + (\beta_1 - \beta_2) + \ldots +(\beta_k -\beta')$ where each successive difference corresponds to a
+single transformation. The result follows. \end{proof}
+
+For $w \in W$ and an arbitrary sequence ${\un{x}}$ we write $w \le {\un{x}}$ if there exists a subsequence $\eb$ of ${\un{x}}$ expressing $w$.
+
+\begin{lemma} \label{rexesonlyplz} Let ${\un{x}}$ be a sequence. The identity of $B_{\un{x}}$ has a negative-positive decomposition where each term factors through some $B_{\un{w}}$ for some reduced
+expression ${\un{w}}$ for $w \le {\un{x}}$. \end{lemma}
+
+\begin{proof} Let us use induction on the length of ${\un{x}}$. Whenever ${\un{x}}$ is a reduced expression the statement is trivial. Suppose that ${\un{x}}$ contains a repeated index $ss$. One can apply
+the relation \eqref{iiidemp2} give a negative-positive decomposition where each term factors through ${\un{x}}'$, the sequence identical to ${\un{x}}$ except with one copy of $s$ removed. Applying
+the inductive hypothesis to ${\un{x}}'$ and nesting negative-positive decompositions, we have the result for ${\un{x}}$.
+
+Suppose that ${\un{x}}$ is not a reduced expression. There is some finite sequence of braid relations $\ubr{sts\ldots}{m} = \ubr{tst\ldots}{m}$ which, when applied to ${\un{x}}$, yield a new
+sequence which has a repeated index. Let us induct on the number of such relations which need to be applied before a repeated index is reached. For each relation applied, we can use
+\eqref{twocoloridemp} to replace the identity $\1_{sts\ldots}$ inside $\1_{\un{x}}$ with the doubled $2m$-valent vertex (the LHS of \eqref{twocoloridemp}) plus a linear combination of strictly
+negative-positive maps. The doubled $2m$-valent vertex yields a neutral map factoring through some sequence ${\un{x}}'$ which is closer to having a repeated index. Therefore, by induction,
+$\1_{\un{x}}$ has a negative-positive decomposition as desired. \end{proof}
+
+%===========
+\subsection{Modulo lower terms}
+\label{subsec-modulolower}
+%===========
+
+Let us fix an element $w \in W$ with a reduced expression ${\un{w}}$. Let $I_{\un{w}}$ denote the right ideal (bottom ideal, if you think diagrammatically) consisting of linear cominations of diagrams with arbitrary source $\un{x}$, fixed target $\un{w}$ and which are strictly positive on top. We have already shown that this is the same as the ideal generated by all the top boundary dots. The elements of this ideal are the so-called \emph{lower terms} (with respect to $\un{w}$).
+In the absence of localization, taking the quotient by $I_{\un{w}}$ is the best way to talk about maps to $Q_w$. After all, $Q_w$ is the unique standard summand which is joint kernel of the top
+boundary dots. When ${\un{w}} = \emptyset$, the ideal $I_{\un{w}}$ is zero.
+
+Let ${\un{w}}'$ be the reduced expression obtained after placing a $2m$-valent vertex above ${\un{w}}$. The $2m$-valent vertex, as a map from $B_{\un{w}} \to B_{{\un{w}}'}$, clearly sends $I_{\un{w}} \to
+I_{{\un{w}}'}$, because we can ``pull" top-dots through $2m$-valent vertices. The color-reversed $2m$-valent vertex gives a map $B_{{\un{w}}'} \to B_{\un{w}}$ sending $I_{{\un{w}}'} \to I_{\un{w}}$. The
+composition of these two maps, minus the identity, has a strictly negative-positive decomposition, and thus consists of lower terms. Therefore the doubled $2m$-valent vertex acts as the
+identity modulo $I_{\un{w}}$. We see that, for any ${\un{x}}$, the spaces $\Hom(B_{\un{x}},B_{\un{w}})/I_{\un{w}}$ and $\Hom(B_{\un{x}},B_{{\un{w}}'})/I_{{\un{w}}'}$ are isomorphic. In fact, for any two rexes, these spaces of
+morphisms modulo lower terms are all \emph{canonically} isomorphic. After all, for two arbitrary rexes ${\un{w}}$ and ${\un{w}}'$, we can use any rex move to give an isomorphism 
+$\Hom(B_{\un{x}},B_{\un{w}})/I_{\un{w}} \to \Hom(B_{\un{x}},B_{{\un{w}}'})/I_{{\un{w}}'}$, and any two rex moves are equal modulo lower terms by Lemma \ref{rexmovesmlt}.
+
+We are interested in the span of the maps $\LL_{{\un{x}},\eb}$ with target ${\un{w}}$, modulo lower terms. By the previous paragraph, we do not care which rex ${\un{w}}$ we chose, or what
+rex move is applied at the very end of the construction of $\LL_{{\un{x}},\eb}$. However, other choices of rex moves in the construction of $\LL_{{\un{x}},\eb}$ may still be important.
+
+Our first step towards showing that $\LLL$ forms a basis for all Hom spaces is showing that $\LL$ forms a basis for maps to rexes, modulo lower terms.
+
+\begin{prop} \label{LLabasismlt} Let ${\un{x}}$ be arbitrary and ${\un{w}}$ be a rex for $w \in W$. Choose a map $\LL_{{\un{x}},\eb}$ for each $\eb$ expressing $w$. These maps form a basis for
+$\Hom(B_{\un{x}},B_{\un{w}})/I_{\un{w}}$, under the action of $R$ on the left. \end{prop}
+
+We briefly defer the proof of this proposition. The discussion above implies that knowing this Proposition for a single rex ${\un{w}}$ of $w$ will imply the result for every
+rex of $w$.
+
+We already know linear independence using localization arguments, so it is enough to show that they span. We will prove this by induction, but the induction will not be easy. After all,
+the base case where ${\un{x}}={\un{w}}=\emptyset$ is already a highly non-trivial statement: that all diagrams without boundary reduce to the empty diagram (with polynomials). We do not know how to
+show this statement directly (say, with graph theory) except in type $A$ or dihedral type; the equivalent statement for $\DStd$ was shown only using nontrivial arguments involving homotopy groups.
+
+Identical statements can be made about maps from ${\un{w}}$ using the vertical flip map which is an antiinvolution. The proposition as stated above is equivalent to one
+saying that maps from ${\un{w}}$ modulo terms with bottom dots are spanned by $\oLL_{{\un{x}},\eb}$.
+
+%===========
+\subsection{Reduction to working modulo lower terms}
+\label{subsec-reduction1}
+%===========
+
+\begin{proof}[Proof of Theorem \ref{homspacetheorem} assuming Proposition \ref{LLabasismlt}] Fix sequences ${\un{x}}$ and ${\un{y}}$ and a morphism $\phi \co {\un{x}} \to {\un{y}}$. We want to write $\phi$ as
+an $R$-linear combination of diagrams of the form $\oLL_{{\un{y}},\fb} \LL_{{\un{x}},\eb}$ where the subsequences express a common element $w \in W$.
+
+The identity map of ${\un{x}}$ has a negative-positive decomposition where every term factors through a reduced expression, by Lemma \ref{rexesonlyplz}. We only need to work with one diagram at
+a time, so without loss of generality we assume that $\phi=fg$ factors as $g \co {\un{x}} \to {\un{w}}$ and $f \co {\un{w}} \to {\un{y}}$ for some reduced expression ${\un{w}}$. We will prove the statement by
+induction on ${\un{w}}$. That is, we assume that any morphism $\phi=fg$ which factors through a rex $\vb$ for $v<w$ is in the span of $\LLL$. The base case follows from the same arguments.
+
+Write $g = g_w + g_l$ and $f = f_w + f_l$. Here $g_w$ is an $R$-linear combination of $\LL_{{\un{x}},\eb}$, and $g_l \in I_{{\un{w}}}$; similarly, $f_w$ is in the span of $\oLL_{{\un{y}},\fb}$ and $f_l
+\in \overline{I}_{{\un{w}}}$. This decomposition is guaranteed by Proposition \ref{LLabasismlt}. The composition $f_w g_w$ is clearly in the span of $\LLL$. This is sufficient to prove the base
+case where $w = e \in W$, since it is clear that $g_l=f_l=0$. Now we need to account for the lower terms. It will suffice to show that $\psi g_l$ is in the span of $\LLL$ for
+any $\psi$ (the argument with $f_l$ is the same, upside-down).
+
+Consider $\psi g_l$. Now $g_l \in I_{{\un{w}}}$ so it is generated by top boundary dots, and we can separate $g_l$ into terms each generated by a single top boundary dot. Thus the composition
+looks as follows:
+
+\igc{1}{suckingupadot}
+
+Let $\zb$ denote the sequence consisting of ${\un{w}}$ with the dotted index removed. This morphism factors through $\zb$, and the identity of $\zb$ has a decomposition which factors through
+reduced expressions for elements $v$ found as subsequences of $\zb$. Subsequences of $\zb$ are strict subsequences of ${\un{w}}$, so $v < w$. Now induction implies that $\psi g_l$ is in the
+span of $\LLL$, as desired. \end{proof}
+
+%===========
+\subsection{The grand induction}
+\label{subsec-hereitis}
+%===========
+
+Now comes the crux of the argument, a giant induction on maxwidth to prove Proposition \ref{LLabasismlt}. This entire section represents the proof.
+
+Fix a rex ${\un{w}}$ for $w$. Let $X_{{\un{x}}}$ denote the set of all possible maps which are valid constructions of $\LL_{{\un{x}},\eb}$ with target ${\un{w}}$, but which also have polynomials in any
+region. We omit ${\un{w}}$ from the notation $X_{\un{x}}$ because, as noted, the choice of reduced expression giving the final target does not matter, because the canonical isomorphisms between Hom spaces modulo lower terms
+preserve the sets $X_{\un{x}}$.
+
+Fix $M \ge 0$ and consider the following two statements:
+
+\vspace{0.5cm}
+
+($L_M$) For any ${\un{x}}$ with $\ell({\un{x}}) \le M$ and any ${\un{w}}$ with $\ell({\un{w}}) \le M$, choose a single map $\LL_{{\un{x}},\eb}$ for each appropriate sequence $\eb$ with target ${\un{w}}$. Then every map
+$B_{\un{x}} \to B_{\un{w}}$ of maxwidth $\le M$ is in the left $R$-span of the $\LL_{{\un{x}},\eb}$ modulo $I_{\un{w}}$.
+
+\vspace{0.5cm}
+
+($X_M$) For any ${\un{x}}$ with $\ell({\un{x}}) \le M$ and any ${\un{w}}$ with $\ell({\un{w}}) \le M$, every map $B_{\un{x}} \to B_{\un{w}}$ of maxwidth $\le M$ is in the $\Bbbk$-span of $X_{\un{x}}$ modulo $I_{\un{w}}$.
+
+\vspace{0.5cm}
+
+Obviously $(L_M)$ is stronger than $(X_M)$. Our induction will use $(X_M)$ and $(L_{M-1})$ to prove $(L_M)$, and $(L_M)$ to prove $(X_{M+1})$. The base case is $M=0$. A map of maxwidth $0$ necessarily has $\un{w} = \emptyset$ and is just a polynomial, so both $(L_0)$ and $(X_0)$ hold. Now we fix ${\un{x}}$ and ${\un{w}}$. Any map $B_{\un{x}} \to B_{\un{w}}$ will have maxwidth $M \ge \ell({\un{w}})$ and $M \ge \ell({\un{x}})$, and if the map is in
+$X_{\un{x}}$ then it has maxwidth precisely $M=\ell({\un{x}})$. Thus the statements $(L_M)$ and $(X_M)$ are vacuous for maps to ${\un{w}}$ when $M < \ell({\un{w}})$. When proving the inductive statement for maps to
+${\un{w}}$, there will be two separate cases: $M=\ell({\un{w}})$, which we think of as the ``base case" for ${\un{w}}$ because it does not use induction; and $M>\ell({\un{w}})$.
+
+Suppose that $M=\ell({\un{w}})$, and consider a graph $B_{\un{x}} \to B_{\un{w}}$. There can be no negative maps on top of the diagram, because of the maxwidth constraint, so the diagram ends with a
+non-negative map. Unless the diagram is purely neutral, it ends with a strictly non-negative map which, by the upside-down version of Claim \ref{posrexhasdot}, implies that the diagram
+lies within $I_{\un{w}}$. Hence we can assume that the diagram is neutral, and $\ell({\un{x}})=\ell({\un{w}})$. Any neutral map must consist only of polynomials and $2m$-valent vertices, so it is a rex move
+with polynomials, and ${\un{x}}$ is also a rex for $w$. Such a map is an element of $X_{\un{x}}$ as desired, when $\eb=(1,1,\ldots,1)$. To show $(L_M)$ we need to show that any single rex move, with
+polynomials only in the leftmost region, will span morphisms consisting of compositions of all rex moves with all polynomials modulo $I_{\un{w}}$. First we use the polynomial forcing relation \eqref{dotforcegeneral} to move the polynomials
+to the leftmost region. This leaves behind terms where strands in the rex move are broken, but such terms are in $I_{\un{w}}$, because they have a strictly negative-positive decomposition. Now
+we apply Lemma \ref{rexmovesmlt} to show that the difference between two rex moves is also in $I_{\un{w}}$.
+
+Thus we have shown $(L_M)$ and $(X_M)$ for the case when $M=\ell({\un{w}})$. We assume henceforth that $\ell({\un{w}})<M$.
+
+\begin{proof}[$(L_{M-1})$ and $(X_M) \implies (L_M)$] We need to show that each element of $X_{\un{x}}$ is in the span of our particular fixed choice of $\LL$ maps. Since the width of a map in
+$X_{\un{x}}$ is precisely $\ell({\un{x}})$, induction already works unless $\ell({\un{x}})=M$, which we now assume.
+
+To get from an element of $X_{\un{x}}$ associated to $\eb$ to our particular choice of $\LL_{{\un{x}},\eb}$, we need to force all polynomials to the left, and change our rex moves (possibly changing
+the intermediate rexes ${\un{w}}_k$ as well). Let us refer to a rex move in the $\LL$ construction by which $\phi_k$ it appears in, and by whether it appears in the form $\a$ or $\b$ in Figure
+\ref{fourmaps}. In fact, rex moves of the form $\b$ inside $\phi_k$ can be viewed instead as part of $\a$ inside $\phi_{k-1}$, so we shall assume that $\b$ is always trivial, and the
+location of the rex move is specified by which $\phi_k$ it appears in. With this assumption, ${\un{w}}_k = {\un{w}}^s_k$ always.
+
+Suppose that we are building a new light leaves map for some $({\un{x}},\eb)$ expressing $w$, using arbitrary choices, but we make a single error. While performing a rex move, we
+accidentally insert some map with a strictly negative-positive decomposition. We call a graph of this form an ``$\LL$ map with error" or simply an \emph{error term}. Polynomial forcing
+\eqref{dotforcegeneral} implies that the cost of sliding a polynomial across a rex move is adding an error term. By inspection, every region in an $\LL$ map is separated from the leftmost
+region by the reduced expression ${\un{w}}_k$, or a subset thereof, so that we can assume that all polynomials are on the left, modulo error terms.
+
+Lemma \ref{rexmovesmlt} implies that the difference between two rex moves is an error (that is, what would be an error if plugged in to the $\LL$ construction). Thus if two constructions
+of $\LL$ differ only in the choice of rex moves, then the difference between the $\LL$ moves is spanned by error terms. Two constructions can also differ in their choice of ${\un{w}}_k =
+{\un{w}}^s_k$, but this can be accounted for by changing rex moves as well. One can replace the identity of ${\un{w}}_k$ with a rex move $fg$ where $g \co {\un{w}}_k \to {\un{w}}'_k$ and $f \co {\un{w}}'_k \to
+{\un{w}}_k$. Then, viewing $g$ as part of $\a$ in $\phi_k$ and $f$ as part of $\a$ in $\phi_{k+1}$, we can effectively replace ${\un{w}}_k$ with ${\un{w}}'_k$. (This still works even when dealing with
+expressions having $s$ on the right, because we can split the rex move into the parts that affect $s$ and the parts that do not.) Hence, two different constructions of the same $\LL$
+differ by error terms. Thus to show that a particular choice of $\LL$ maps spans them all, we need only show that that this choice of $\LL$ maps spans any error term.
+
+This discussion of error terms is not strictly required for the proof we give next, but does say that the difference between $\LL$ maps is under control, and is useful for picturing how
+one would, by hand, attempt to reduce a diagram into the desired form. We will use the notion of error terms in the later proofs.
+
+Note that adding an error does not affect the maxwidth of a map. Let $F$ denote the partially constructed error term $\LL_{M-1}$, after the first $M-1$ steps have been applied. Now $F$ is
+a map of width $\le M-1$, so we may apply induction and replace $F$ with an $\LL$ map \emph{of our choice}, or with a term having dots on top. By adjusting the rex moves in $\phi_{M-1}$
+and $\phi_M$ we assume that whenever $F$ is an $\LL$ map, the top of $F$ is our desired ${\un{w}}_{M-1}$. Now we apply $\phi_M$ to finish the construction. We draw the four possibilities.
+\igc{1}{proof10}
+
+As noted previously, any error in $\phi_M$ itself yields a map contained in $I_{\un{w}}$ because some dot pulls to the top, so we can assume $\phi_M$ is error free, and that
+it has our desired rex move. If $F$ is a term which has a dot on top, then this dot will pull through $\phi_M$ to become a dot on the very top except in a single case: when $\eb_M$ is D0
+or D1, and the dot is on the final strand.
+
+We have sufficient choice of $\phi_M$ such that the first diagram is actually one of our specified $\LL$ maps! The second diagram is in $I_{\un{w}}$. For the third and fourth diagrams, we can
+reapply induction to $F$ without the dot on the blue strand, thus replacing the question marks with $\LL$ maps of our choice (or with more terms of the second type). Because the top of $F$
+was a reduced expression ending in $s$, removing $s$ from the end still yields a reduced expression for which $s$ is \emph{not} in the right descent set. Now the overall expression is our
+desired $\LL$ map, for $e_M$ being U1 or U0 respectively (again, up to the freedom we have to alter $\a$). \end{proof}
+
+
+\begin{proof}[$(L_{M-1}) \implies (X_M)$] Now let us fix ${\un{w}}$ with $\ell({\un{w}})<M$, and prove that $(L_{M-1})$ implies $(X_M)$ for ${\un{w}}$. Consider a diagram of maxwidth $\le M$. If the
+maxwidth $M$ is never attained then we may use induction, so let us assume that width $M$ is attained at least once. Width $M$ may be maintained for a period of time using $2m$-valent
+vertices, and eventually the width may drop again to $M-1$ and rise back to $M$ for another interval.
+
+\begin{claim} \label{goesbackdown} Assume $(L_{M-1})$. A map $B_{\un{x}} \to B_{\un{w}}$ with $\ell({\un{x}}) \le M-1$ which only reaches width $M$ for one continuous interval is in the span of $X_{\un{x}}$ modulo $I_{\un{w}}$.
+\end{claim}
+
+\begin{claim} \label{staysup} Assume $(L_{M-1})$. A map $B_{\un{x}} \to B_{\un{w}}$ with $\ell({\un{x}}) = M$ which only reaches width $M$ for one continuous interval starting at the
+bottom is in the span of $X_{\un{x}}$ modulo $I_{\un{w}}$. \end{claim}
+
+Suppose that we can show these two claims. Then we may simplify the diagram from top to bottom as follows. Consider the first interval where width $M$ appears. If that extends all the way
+to the bottom of the map, we can use Claim \ref{staysup} to conclude that $X_M$ holds. If the interval ends and we return to width $M-1$, we can apply Claim \ref{goesbackdown} to replace that region with
+an $\LL$ map (by $(L_{M-1})$, any $\LL$ map we choose), and thus the whole region now stays below width $M-1$. After doing this, the next interval becomes the first interval, and we repeat
+the argument.
+
+We proceed to prove Claim \ref{staysup} first. Let $\eta$ denote the map in question (having bottom ${\un{x}}$), ${\un{y}}$ the topmost sequence where width $M$ is attained, and $\un{z}$
+the sequence immediately above, having $\ell(\un{z})=M-1$. The map $B_{\un{z}} \to B_{\un{w}}$ has maxwidth $M-1$ so by induction we can assume it is any construction of
+$\LL_{{\un{z}},\eb}$ we choose. We can ignore polynomials on the left of the diagram. We begin by treating the case without $2m$-valent vertices on bottom, where ${\un{x}}={\un{y}}$. There
+are two cases, to be treated differently.
+
+\igc{1}{proof1}
+
+\begin{claim} \label{addnegtri} Suppose a negative (merging) trivalent is added below a light leaves map. The result is light leaves. \end{claim}
+
+\begin{proof} Suppose that the new trivalent vertex is attached to the $k$-th strand, with ${\un{x}}_k=s$. There are four choices for $\eb_k$: U0, U1, D0, D1. The composition will be a light
+leaves with $(s\ s)$ instead of ${\un{x}}_k$ and one of four sequences instead of $\eb_k$: (U1 D1), (U1 D0), (D0 D0) or (D0 D1) respectively. This is pictured below:
+\[ \ige{1}{mergingbelowLL} \qedhere \]
+\end{proof}
+
+\begin{claim} \label{addnegdot} Suppose that we add a negative (bottom) dot after the $k$-th strand of an $\LL_{\zb,\eb}$ of our choice, yielding a map from $B_{\un{y}}$. The result is in
+$X_{\un{y}}$. \end{claim}
+
+\begin{proof} Suppose that the new boundary dot is colored $s$. If $s$ is not in the right descent set of $w_k$, then the result is an $\LL$ map, with the new strand being U0. If $s$ is in
+the right descent set, by choosing our $\LL_{\zb,\eb}$ appropriately, we can assume that $s$ occurs on the right of ${\un{w}}_k$. Now the statement follows from the equality below, because
+both terms on the RHS are in $X_{\un{y}}$. We use the decomposition of Remark \ref{LLof111}, and relation \eqref{dotforcegeneral}. Remember that the use of $\frac{1}{2}$ is unnecessary, as any dual basis will do.
+\[ \ige{1}{negdotbelowLL} \qedhere \]
+\end{proof}
+
+\begin{remark} While this is the only use in this chapter of the assumption of Demazure Surjectivity, it is significant. Without this assumption, double leaves will not form a
+basis in the simplest counterexample: maps from $B_s \ot B_s \to B_s$. \end{remark}
+
+Now we want to add more $2m$-valent vertices below this $\LL$ map. First we prove a useful inductive lemma.
+
+\begin{claim} \label{splitintwain} Assume $(L_{M-1})$, and let $\ell({\un{x}})=M$. Suppose we have a map $B_{\un{x}} \to B_{\un{w}}$ which never returns to width $M$ after it leaves it. Suppose further that
+the map splits as follows for some $0<k<M$.
+
+\igc{1}{splitintwain}
+
+Then the map is in the span of $X_{\un{x}}$, modulo $I_{\un{w}}$. \end{claim}
+
+\begin{proof} Both question mark boxes have width strictly less than $M$, so by induction, we can assume that these boxes contain $\LL$ maps of our choice, or morphisms with dots on top.
+The rest of the proof is exactly the same as the proof in the previous section. We induct on the width of the sequence $\vb$ with the dashed line through it. By an application of Lemma
+\ref{rexesonlyplz} we can assume without loss of generality that $\vb$ is actually a reduced expression for $v \in W$. We write the lower box as $f_v + f_l$, where $f_v$ is a linear
+combination of light leaves and $f_l$ is in $I_\vb$, and we write the upper box as $g_{w,1} + g_{w,0} + g_l$ where $g_l$ is in $I_{\un{w}}$, $g_{w,1}$ is a linear combination of light leaves
+beginning with all U1 for $\vb$, and $g_{w,0}$ is a linear combination of light leaves which do not begin with U1's, meaning that somewhere on $\vb$ is a U0. In the product, combining
+$f_v$ with $g_{w,1}$ will give valid constructions for an element of $X_{\un{x}}$. Combining anything with $g_l$ will be in $I_{\un{w}}$. For a term with either $f_l$ or $g_{w,0}$, we draw a new
+dashed line to avoid the dot; this decreases the width of the dashed line by one. Induction then finishes the proof. \end{proof}
+
+\begin{claim} \label{add2m} Assume $(L_{M-1})$, and let $\ell({\un{x}})=M$. Placing a $2m$-valent vertex below a diagram in $X_{\un{w}}$ will result in a diagram in the span of $X_{\un{x}}$ modulo $I_{\un{w}}$.
+\end{claim}
+
+\begin{proof} Any light leaves map with a neutral map below it is non-positive, so that it will never return to width $M$ after it departs. Suppose that we add the $2m$-valent vertex of
+colors $s,t$ to strands ${\un{x}}_{l+1}$ through ${\un{x}}_{l+m}$ of a light leaves map $\LL_{{\un{x}},\eb}$. For any $0< k \le l$ or $l+m \le k < M$, we can split the diagram into $\LL_{\le k}$ and the
+remainder as in Remark \ref{LLof111}, placing the new $2m$-valent vertex below whichever half is appropriate. Therefore, if any such $\LL_{\le k}$ maps to a shorter sequence, we can simply
+use Claim \ref{splitintwain} to finish the proof. This allows us to reduce to the following special case: ${\un{x}}_{\le l}$ is a reduced expression and $\eb_{\le l}$ is all U1 (this includes
+the possibility $l=0$); unless $l+m=M$, ${\un{x}}_{\le M-1}$ is a reduced expression and $\eb_{\le M-1}$ is all U1. Any time where $\eb_{l+1}$ through $\eb_{l+m}$ are all U1, the $2m$-valent
+vertex can be viewed as part of the rex move in $\LL_{{\un{x}},\eb}$, so the result is clearly in $X_{\un{x}}$. Hence, we assume that $M=l+m$, and $({\un{x}},\eb)_{\le l}$ is a reduced expression for
+$w_l \in W$.
+
+Furthermore, we can alter any rex moves in $\LL_{{\un{x}},\eb}$ at will. The difference term will have an error. If this error occurs in $\phi_k$ for $k<M$ then we can use induction on the
+error version of $\LL_{\le k}$, which has width $\le M-1$, to rewrite it in terms of $\LL$ maps and graphs with dots on top. These can be dealt with in the familiar manner. If the error occurs in $\phi_M$, it produces a dot on top, and is thus in $I_{\un{w}}$.
+
+Hence, we can choose any desired reduced expression ${\un{w}}_l$ for $w_l$. Now $w_l = uv$ for $v \in W_{s,t}$ the dihedral group, and $u$ a minimal right coset representative of $W_{s,t}$. We
+can choose a rex for $w_l$ of the form $\ub \vb$. Now the remaining terms of ${\un{x}}$ are all $s$ or $t$, and given any sequence of 1's and 0's, the assignment of U and D only depends on $v$
+and not on $u$. Moreover, the rex moves required to send $s$ or $t$ to the right when a D appears (i.e. the rex moves of type $\b$ in Figure \ref{fourmaps}) can all be performed within
+$\vb {\un{x}}_{>l}$, preserving $\ub$. Suppose that they are so in $\LL_{{\un{x}},\eb}$. Then the reduction to light leaves form does not depend on $\ub$ at all. We could assume without loss of
+generality that $w_l=v \in W_{s,t}$, and the entire diagram only contains $2$ colors! Morphism spaces in $\DC$ for dihedral groups are already proven in \cite{EDihedral} to be the right
+size, which implies the result; alternatively, one could do a case by case analysis. \end{proof}
+
+\begin{remark} The case by case analysis can be quite interesting, although tedious. The following is a worthwhile exercise. Let $m=3$, and $\vb=sts$. Let ${\un{x}}=ststst$ and
+$\eb=(U1,U1,U1,D0,D0,D0)$. First draw $\LL_{{\un{x}},\eb}$, and then place a $2m$-valent vertex below the D0's, and transform the diagram into light leaves format for $stssts$. This involves
+repeated applications of \eqref{assoc2}. The exact same calculation works for general $m$. \end{remark}
+
+We have now proven Claim \ref{staysup}. In order to prove Claim \ref{goesbackdown}, we need only put a positive generator below a map in $X_{\un{y}}$ for $\ell({\un{y}})=M$.
+
+\begin{claim} \label{addpostri} Assume $(L_{M-1})$. Suppose that $\ell({\un{y}})=M$ and we add a positive (splitting) trivalent below a map in $X_{\un{y}}$ to obtain a map $B_{\un{x}} \to
+B_{\un{w}}$. Then the result is in the span of $X_{\un{x}}$, modulo $I_{\un{w}}$. \end{claim}
+
+\begin{proof} Suppose that the trivalent vertex is added to ${\un{y}}_k$ and ${\un{y}}_{k+1}$. There are 8 consistent possibilities for $\eb_k$ and $\eb_{k+1}$: $\eb_k$ can be any of U0, U1, D0, D1,
+and it determines whether $\eb_{k+1}$ is U or D. In fact, if $\eb_k$ is U0 or D1, the result is manifestly in light leaves format.
+
+\igc{1}{splittingbelowLLU0D1}
+
+On the other hand, if $\eb_k$ is U1 or D0, the result locally looks like the following.
+
+\igc{1}{splittingbelowLLU1D0}
+
+By ``D0 or D1" we mean that the topmost trivalent in these graphs is as pictured when $\eb_{k+1}$ is D0, and has a further dot on top when $\eb_{k+1}$ is D1; this extra dot will not affect
+our discussion. The dashed line indicates where width $M$ is reached. The asterisk box in these graphs is some rex move between two rexes which both have $s$ on the far right.
+
+In fact, we believe both these diagrams to be zero. Let us pause to state a computational conjecture.
+
+\begin{conj} \label{conj:rextri} For any rex move $\b \co \un{w} \to \un{w'}$, where both $\un{w}$ and $\un{w'}$ have $s$ on the far right, one has \begin{equation} \label{eq:slidetrithrurex} 
+	{
+	\vspace*{.4 cm}
+	\labellist
+	\small\hair 2pt
+	 \pinlabel {$\b$} [ ] at 20 20
+	 \pinlabel {$\b$} [ ] at 100 44
+	 \pinlabel {$\un{w'}$} [ ] at 20 75
+	 \pinlabel {$\un{w'}$} [ ] at 100 75
+	 \pinlabel {$\un{w}$} [ ] at 20 -10
+	 \pinlabel {$\un{w}$} [ ] at 100 -10
+	 \pinlabel {$s$} [ ] at 47 53
+	 \pinlabel {$s$} [ ] at 128 29
+	\endlabellist
+	\centering
+	\ig{1}{lemma0}
+	}.
+	\vspace*{.4 cm} \end{equation} 
+
+This would imply, using \eqref{assoc1} and \eqref{needle}, that the following is zero. \begin{equation} \label{rexmovestriis0} \ig{1}{rexmovestriis0} \end{equation} \end{conj}
+
+Let us continue the proof without assuming this conjecture.
+
+Which rex move appears in the asterisk box? If the rex move does not involve the rightmost $s$-colored strand, then clearly the result is zero by \eqref{assoc1} and \eqref{needle}. Since
+two rex moves are equal modulo lower terms, we may assume that the asterisk box actually contains a strictly negative map followed by a strictly positive map. Moreover, Lemma
+\ref{rexmovesmlt} guarantees that both the top and bottom of the asterisk box has a boundary dot.
+
+We will now use these boundary dots to reduce the maxwidth of the diagram below $M$. The bottom dot (resp. top dot) appears either in one of the initial $k-1$ strands, or on the final
+$s$-colored strand. If the dot appears on the final $s$-colored strand, then it will pull into the nearby trivalent vertex by \eqref{unit}. Otherwise, using rectilinear isotopy, the dot
+can be pulled past this trivalent vertex. After performing these operations to the top and bottom dots, the resulting diagram never factors through a sequence of width $M$, and therefore
+$(L_{M-1})$ implies that it can be expressed in the span of light leaves. \end{proof}
+
+\begin{claim} \label{addposdot} Assume $(L_{M-1})$. Suppose that $\ell({\un{y}})=M$ and we add a positive (top) dot below a map in $X_{\un{y}}$ to obtain a map $B_{\un{x}} \to B_{\un{w}}$. Then the result is in
+the span of $X_{\un{x}}$, modulo $I_{\un{w}}$. \end{claim}
+
+\begin{proof} Suppose that the dot is attached to ${\un{y}}_l$ in $\LL_{{\un{y}},\eb}$. Let us draw a number of possibilities for what can happen to the dot.
+
+\igc{1}{dotbelowLL}
+
+In the first row, $\eb_l$ is U0 or D0 and is quickly taken care of. When $\eb_l$ is U1, what happens to the dot next can be a number of things. If the dot hits a rex move we end up on the
+third row, which we will discuss shortly. Otherwise, we consult the second row. The dot either makes it all the way to the top (ending up in $I_{\un{w}}$) or it runs into a D0 or D1 and is
+taken care of. Finally, if $\eb_l$ is D1, we end up in the first picture on the third row. The diagram on the right hand side clearly has width $\le M-1$, so it can be taken care of with
+$(L_{M-1})$.
+
+We have now proven this result except when the dot meets a rex move. We can induct on the number of $2m$-valent vertices in the rex move; the base case has just been done. Each term in the
+Jones-Wenzl projector will have a dot on top. We can resolve that dot by induction to get an $\LL$ map with width $\le M-1$. After doing so, the remainder of the diagram has width $\le
+M-1$, and we can apply $(L_{M-1})$ to finish the proof. \end{proof}
+
+\begin{remark} There is an alternative proof. We can use Claim \ref{splitintwain} and the same style of argument as in Claim \ref{add2m} to reduce to the case where $({\un{y}},\eb)_{<
+M-1}$ is a reduced expression with all U1's, and $\eb_M$ is D. Moreover, we can choose whatever rex moves we desire. Now the case by case analysis is easy, using some of the cases above.
+\end{remark}
+
+This concludes the proof of Claim \ref{goesbackdown}, and consequently of the fact that $(L_{M-1}) \implies (X_M)$. \end{proof}
+
+% %===========
+% \subsection{Trivalents and rex moves: the proof of Lemma \ref{lemma:rextri}}
+% \label{subsec-lemmaproof}
+% %===========
+% 
+% Our goal is to prove \eqref{rexmovestriis0}. In fact, we show a stronger statement.
+% 
+% \begin{prop} For any rex move $\b \co \un{w} \to \un{w'}$, where both $\un{w}$ and $\un{w'}$ have $s$ on the far right, one has \begin{equation} \label{eq:slidetrithrurex} 
+% 	{
+% 	\vspace*{.4 cm}
+% 	\labellist
+% 	\small\hair 2pt
+% 	 \pinlabel {$\b$} [ ] at 20 20
+% 	 \pinlabel {$\b$} [ ] at 100 44
+% 	 \pinlabel {$\un{w'}$} [ ] at 20 75
+% 	 \pinlabel {$\un{w'}$} [ ] at 100 75
+% 	 \pinlabel {$\un{w}$} [ ] at 20 -10
+% 	 \pinlabel {$\un{w}$} [ ] at 100 -10
+% 	 \pinlabel {$s$} [ ] at 47 53
+% 	 \pinlabel {$s$} [ ] at 128 29
+% 	\endlabellist
+% 	\centering
+% 	\ig{1}{lemma0}
+% 	}.
+% 	\vspace*{.4 cm} \end{equation}
+% \end{prop}
+% 
+% Given this, \eqref{rexmovestriis0} follows quickly from \eqref{assoc1} and \eqref{needle}. In order to prove this proposition, we will actually introduce the notion of a ``trivalent
+% vertex" attached to any reduced expression with $s$ in the right descent set, regardless of whether or not $s$ appears on the right.
+% 
+% \begin{prop} \label{prop:fancytri} Let ${\un{w}}$ denote a reduced expression and let $s$ be an element of the right descent set of $w$. Then there is a diagram of degree $-1$
+% 	
+% 	{
+% 	\vspace*{.4 cm}
+% 	\labellist
+% 	\small\hair 2pt
+% 	 \pinlabel {$M({\un{w}},s)$} [ ] at 20 20
+% 	 \pinlabel {${\color{red} s}$} [ ] at 48 29
+% 	 \pinlabel {$\un{w}$} [ ] at 20 45
+% 	 \pinlabel {$\un{w}$} [ ] at 20 -10
+% 	\endlabellist
+% 	\centering
+% 	\igc{1}{lemma1}
+% 	\vspace*{.4 cm}
+% 	}
+% 	
+% % \[
+% % \begin{tikzpicture}[scale=0.6]
+% %   \draw (0.5,1) rectangle (3.5,-1);
+% %   \node [rectangle, fill=white] at (2,2) {$\underline{w}$};
+% %   \node [rectangle, fill=white] at (2,-2) {$\underline{w}$};
+% % \node at (2,0) {$M({\un{w}}, s)$};
+% %   \draw (1,1) -- (1,1.6);
+% %    \draw (1.5,1) -- (1.5,1.6);
+% %   \draw (3,1) -- (3,1.6);
+% %   \draw (1,-1) -- (1,-1.6);
+% % \draw (1.5,-1) -- (1.5,-1.6);
+% %   \draw (3,-1) -- (3,-1.6);
+% % \node at (2.25,1.5) {$\dots$};
+% % \node at (2.25,-1.5) {$\dots$};
+% % \draw [red] (3.5,0) to node[above] {$s$} (4.5,0);
+% % \end{tikzpicture}
+% % \]
+% 
+% uniquely determined by the following properties:
+% \begin{enumerate}
+% \item if $s$ is the last term of ${\un{w}}$ then one has \begin{equation} \label{eq:Mdef1}	{
+% 	\labellist
+% 	\small\hair 2pt
+% 	 \pinlabel {$M({\un{w}},s)$} [ ] at 20 20
+% 	\endlabellist
+% 	\centering
+% 	\ig{1}{lemma2}
+% 	} \end{equation}
+% 
+% \item given any rex move $\b : {\un{w}} \to {\un{w}}'$ we have
+% 
+% \begin{equation} \label{eq:Mdef2} {
+% \labellist
+% \small\hair 2pt
+%  \pinlabel {$M({\un{w'}},s)$} [ ] at 20 44
+%  \pinlabel {$\b$} [ ] at 20 20
+%  \pinlabel {$\un{w'}$} [ ] at 20 75
+%  \pinlabel {$\un{w}$} [ ] at 20 -10
+%  \pinlabel {$\b$} [ ] at 104 44
+%  \pinlabel {$M({\un{w}},s)$} [ ] at 104 21
+%  \pinlabel {$\un{w'}$} [ ] at 104 75
+%  \pinlabel {$\un{w}$} [ ] at 104 -10
+%  \pinlabel {$s$} [ ] at 47 51
+%  \pinlabel {$s$} [ ] at 133 28
+% \endlabellist
+% \centering
+% \ig{1}{lemma3}.
+% }
+% \end{equation}
+% \end{enumerate} \end{prop}
+% \vspace*{.2cm}
+% 
+% % \[
+% % \begin{array}{c}
+% % \begin{tikzpicture}[scale=0.6]
+% %   \draw (0.5,1) rectangle (3.5,-1);
+% %   \node [rectangle, fill=white] at (2,2) {$\underline{w}$};
+% %   \node [rectangle, fill=white] at (2,-2) {$\underline{w}'$};
+% % \node at (2,-0.5) {$\beta$};
+% % \node at (2,0.5) {$M({\un{w}},s)$};
+% %   \draw (1,1) -- (1,1.6);
+% % \draw (0.5,0) -- (3.5,0);
+% %    \draw (1.5,1) -- (1.5,1.6);
+% %   \draw (3,1) -- (3,1.6);
+% %   \draw (1,-1) -- (1,-1.6);
+% % \draw (1.5,-1) -- (1.5,-1.6);
+% %   \draw (3,-1) -- (3,-1.6);
+% % \node at (2.25,1.5) {$\dots$};
+% % \node at (2.25,-1.5) {$\dots$};
+% % \draw [red] (3.5,0.5) to node[above] {$s$} (4.5,0.5);
+% % \end{tikzpicture}
+% % \end{array}
+% % =
+% % \begin{array}{c}
+% % \begin{tikzpicture}[scale=0.6]
+% %   \draw (0.5,1) rectangle (3.5,-1);
+% %   \node [rectangle, fill=white] at (2,2) {$\underline{w}$};
+% %   \node [rectangle, fill=white] at (2,-2) {$\underline{w}'$};
+% % \node at (2,-0.5) {$M({\un{w}}',s)$};
+% % \node at (2,0.5) {$\beta$};
+% %   \draw (1,1) -- (1,1.6);
+% % \draw (0.5,0) -- (3.5,0);
+% %    \draw (1.5,1) -- (1.5,1.6);
+% %   \draw (3,1) -- (3,1.6);
+% %   \draw (1,-1) -- (1,-1.6);
+% % \draw (1.5,-1) -- (1.5,-1.6);
+% %   \draw (3,-1) -- (3,-1.6);
+% % \node at (2.25,1.5) {$\dots$};
+% % \node at (2.25,-1.5) {$\dots$};
+% % \draw [red] (3.5,-0.5) to node[above] {$s$} (4.5,-0.5);
+% % \end{tikzpicture}
+% % \end{array}
+% % \]
+% 
+% For pictures of $M({\un{w}}, s)$ in type $A$, see \cite[\S 3]{EInd}. The proof of \eqref{eq:slidetrithrurex} given this proposition is easy: for any rex move $\b$ between expressions with
+% $s$ on the right one has
+% \vspace*{.5 cm}
+% \begin{equation*} {
+% \labellist
+% \small\hair 2pt
+%  \pinlabel {$\b$} [ ] at 20 20
+%  \pinlabel {$\b$} [ ] at 100 20
+%  \pinlabel {$\b$} [ ] at 176 45
+%  \pinlabel {$\b$} [ ] at 271 45
+%  \pinlabel {$M({\un{w}},s)$} [ ] at 100 45
+%  \pinlabel {$M({\un{w'}},s)$} [ ] at 176 20
+%  \pinlabel {$\un{w}$} [ ] at 20 75
+%  \pinlabel {$\un{w}$} [ ] at 100 75
+%  \pinlabel {$\un{w}$} [ ] at 176 75
+%  \pinlabel {$\un{w}$} [ ] at 271 75
+%  \pinlabel {$\un{w'}$} [ ] at 20 -10
+%  \pinlabel {$\un{w'}$} [ ] at 100 -10
+%  \pinlabel {$\un{w'}$} [ ] at 176 -10
+%  \pinlabel {$\un{w'}$} [ ] at 271 -10
+% \endlabellist
+% \centering
+% \ig{1}{lemma4}.
+% } \end{equation*}
+% \vspace*{.2 cm}
+% 
+% % \[
+% % \begin{array}{c}
+% % \begin{tikzpicture}[scale=0.6]
+% %   \draw (0.5,0) rectangle (3.5,-1);
+% %   \node [rectangle, fill=white] at (2,2) {$\underline{w}$};
+% %   \node [rectangle, fill=white] at (2,-2) {$\underline{w}'$};
+% % \node at (2,-0.5) {$\beta$};
+% % % \node at (2,0.5) {$M({\un{w}},s)$};
+% %   \draw (1,0) -- (1,1.6);
+% % % \draw (0.5,0) -- (3.5,0);
+% %    \draw (1.5,0) -- (1.5,1.6);
+% %   \draw [red] (3,0) -- (3,1.6);
+% % \draw [red] (3,0.5) -- (4.0,0.5);
+% %   \draw (1,-1) -- (1,-1.6);
+% % \draw (1.5,-1) -- (1.5,-1.6);
+% %   \draw [red] (3,-1) -- (3,-1.6);
+% % \node at (2.25,0.5) {$\dots$};
+% % \node at (2.25,-1.5) {$\dots$};
+% % %\draw [red] (3.5,0.5) to node[above] {$s$} (4.5,0.5);
+% % \draw [red] (3,-1.3) -- (4.0,-1.3);
+% % \end{tikzpicture}
+% % \end{array}
+% % =
+% % \begin{array}{c}
+% % \begin{tikzpicture}[scale=0.6]
+% %   \draw (0.5,1) rectangle (3.5,-1);
+% %   \node [rectangle, fill=white] at (2,2) {$\underline{w}$};
+% %   \node [rectangle, fill=white] at (2,-2) {$\underline{w}'$};
+% % \node at (2,-0.5) {$\beta$};
+% % \node at (2,0.5) {$M({\un{w}},s)$};
+% %   \draw (1,1) -- (1,1.6);
+% % \draw (0.5,0) -- (3.5,0);
+% %    \draw (1.5,1) -- (1.5,1.6);
+% %   \draw [red] (3,1) -- (3,1.6);
+% %   \draw (1,-1) -- (1,-1.6);
+% % \draw (1.5,-1) -- (1.5,-1.6);
+% %   \draw [red] (3,-1) -- (3,-1.6);
+% % \node at (2.25,1.5) {$\dots$};
+% % \node at (2.25,-1.5) {$\dots$};
+% % \draw [red] (3.5,0.5) to (4.0,0.5);
+% % \draw [red] (3,-1.3) -- (4.0,-1.3);
+% % \end{tikzpicture}
+% % \end{array}
+% % =
+% % \begin{array}{c}
+% % \begin{tikzpicture}[scale=0.6]
+% %   \draw (0.5,1) rectangle (3.5,-1);
+% %   \node [rectangle, fill=white] at (2,2) {$\underline{w}$};
+% %   \node [rectangle, fill=white] at (2,-2) {$\underline{w}'$};
+% % \node at (2,-0.5) {$M({\un{w}}',s)$};
+% % \node at (2,0.5) {$\beta$};
+% %   \draw (1,1) -- (1,1.6);
+% % \draw (0.5,0) -- (3.5,0);
+% %    \draw (1.5,1) -- (1.5,1.6);
+% %   \draw [red] (3,1) -- (3,1.6);
+% %   \draw (1,-1) -- (1,-1.6);
+% % \draw (1.5,-1) -- (1.5,-1.6);
+% %   \draw [red] (3,-1) -- (3,-1.6);
+% % \node at (2.25,1.5) {$\dots$};
+% % \node at (2.25,-1.5) {$\dots$};
+% % \draw [red] (3.5,-0.5) to (4.0,-0.5);
+% % \draw [red] (3,-1.3) -- (4.0,-1.3);
+% % \end{tikzpicture}
+% % \end{array}
+% % =
+% % \begin{array}{c}
+% % \begin{tikzpicture}[scale=0.6]
+% %   \draw (0.5,1) rectangle (3.5,0);
+% %   \node [rectangle, fill=white] at (2,2) {$\underline{w}$};
+% %   \node [rectangle, fill=white] at (2,-2) {$\underline{w}'$};
+% % \node at (2,0.5) {$\beta$};
+% %   \draw (1,1) -- (1,1.6);
+% % \draw (0.5,0) -- (3.5,0);
+% %    \draw (1.5,1) -- (1.5,1.6);
+% %   \draw [red] (3,1) -- (3,1.6);
+% %   \draw (1,0) -- (1,-1.6);
+% % \draw (1.5,0) -- (1.5,-1.6);
+% %   \draw [red] (3,0) -- (3,-1.6);
+% % \node at (2.25,1.5) {$\dots$};
+% % \node at (2.25,-1.5) {$\dots$};
+% % \draw [red] (3,-0.5) to (4.0,-0.5);
+% % \draw [red] (3,-1.3) -- (4.0,-1.3);
+% % \end{tikzpicture}
+% % \end{array}
+% % \]
+% 
+% It remains to prove Proposition \ref{prop:fancytri}.
+% 
+% \begin{proof}
+% 	
+% \end{proof}
+
+

@@ -5,7 +5,8 @@
   "file": "0707.3682v2.pdf",
   "sha256": "609a6f67a0cd5fc8b4ab67d4ec03a229c4a6ed673cc809d4f66c949058967a14",
   "bytes": 565975,
-  "pages": 44
+  "pages": 44,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS",
   "authors_raw": "AMNON BESSER, PAUL BUCKINGHAM, ROB DE JEU",
-  "abstract": "We formulate a conjectural p-adic analogue of Borel’s theorem re- lating regulators for higher K-groups of number ﬁelds to special values of the corresponding ζ-functions, using syntomic regulators and p-adic L-functions. We also formulate a corresponding conjecture for Artin moti ves, and state a conjecture about the precise relation between the p-adic and classical situa- tions. Parts of the conjectures are proved when the number ﬁe ld (or Artin motive) is Abelian over the rationals, and all conjectures a re veriﬁed numeri- cally in some other cases.",
+  "abstract": "We formulate a conjectural p-adic analogue of Borel\u2019s theorem re- lating regulators for higher K-groups of number \ufb01elds to special values of the corresponding \u03b6-functions, using syntomic regulators and p-adic L-functions. We also formulate a corresponding conjecture for Artin moti ves, and state a conjecture about the precise relation between the p-adic and classical situa- tions. Parts of the conjectures are proved when the number \ufb01e ld (or Artin motive) is Abelian over the rationals, and all conjectures a re veri\ufb01ed numeri- cally in some other cases.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20181105152436-05'00'",
@@ -136,6 +137,48 @@
   "likely_scanned": false,
   "toc_entries": 8,
   "sections": 4,
-  "chars_total": 127764
+  "chars_total": 127764,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 7,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.728,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-3-a-motivic-version-of-the-conjecture",
+     "title": "A motivic version of the conjecture",
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.565,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-7-examples",
+     "title": "Examples",
+     "prose_ratio": 0.897,
+     "coverage_ratio": 0.826,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

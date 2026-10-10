@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0810.2361v2/blocks/prose-sec-008",
+  "kind": "prose",
+  "title": "2-Linear Maps from Spans of Groupoids",
+  "pageStart": 22,
+  "pageEnd": 24,
+  "text": "../sections/sec-008-51-2-linear-maps-from-spans-of-groupoids.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0810.2361v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0810.2361v2/manifest.jsonld",
+  "provenance": "ingested"
+}

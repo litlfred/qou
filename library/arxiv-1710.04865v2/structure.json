@@ -5,7 +5,8 @@
   "file": "1710.04865v2.pdf",
   "sha256": "ac8f436173d550e816683457955ed337dd1e59b0ae0dc521b7cbd2be70b1d5fd",
   "bytes": 457441,
-  "pages": 24
+  "pages": 24,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS",
   "authors_raw": "JEREMY LOVEJOY AND ROBERT OSBURN",
-  "abstract": "Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p) and K(−m,p) where m and p are positive integers. In the ( −m, −p) case, this leads to new families of q-hypergeometric series generalizing the Kontsevich-Zagier series. Comparing with the cyclotomic expansion of the colored Jones polynomials of K(m,p) gives a generalization of a duality at roots of unity between the Kontsevich-Zagier function and the generating function for strongly unimodal sequences.",
+  "abstract": "Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(\u2212m,\u2212p) and K(\u2212m,p) where m and p are positive integers. In the ( \u2212m, \u2212p) case, this leads to new families of q-hypergeometric series generalizing the Kontsevich-Zagier series. Comparing with the cyclotomic expansion of the colored Jones polynomials of K(m,p) gives a generalization of a duality at roots of unity between the Kontsevich-Zagier function and the generating function for strongly unimodal sequences.",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20210414010028Z",
@@ -143,8 +144,63 @@
   "likely_scanned": false,
   "toc_entries": 6,
   "sections": 6,
-  "chars_total": 37114
+  "chars_total": 37114,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "cJdoubletwistfinal.tex",
+   "tex_sections": 5,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.883,
+     "coverage_ratio": 0.885,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.942,
+     "coverage_ratio": 0.872,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-proofs-of-theorems-11-and-12",
+     "title": "Proofs of Theorems 1.1 and 1.2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-4-concluding-remarks-and-questions",
+     "title": "Concluding remarks and questions",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.927,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  },
  "duplicate_of": "cjdoubletwistfinal",
- "duplicate_note": "Same work as library/cjdoubletwistfinal/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
+ "duplicate_note": "Same work as library/cjdoubletwistfinal/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted \u2014 existing citations may point here \u2014 but skipped by the ranking and the summary index so one work is not counted twice."
 }

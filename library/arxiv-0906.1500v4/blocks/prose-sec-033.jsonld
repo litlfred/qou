@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0906.1500v4/blocks/prose-sec-033",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0906.1500v4/blocks/prose-sec-033",
   "kind": "prose",
   "title": "Computation of the sign ν. By our assumption on M and ∂M , we observe that",
   "pageStart": 24,
   "pageEnd": 24,
   "text": "../sections/sec-033-821-computation-of-the-sign-ν-by-our-assumption.md",
-  "derivedFrom": "library/arxiv-0906.1500v4/manifest",
-  "sourceDocument": "library/arxiv-0906.1500v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0906.1500v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0906.1500v4/manifest.jsonld",
   "provenance": "ingested"
 }

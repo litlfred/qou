@@ -1,0 +1,76 @@
+\ProvidesPackage{scalerel}[2013/02/27]
+
+\usepackage{calc}
+\usepackage{tikz}
+\global\newlength\thesrwidth
+\global\newlength\thesrheight
+\global\newlength\srblobheight
+\global\newlength\srblobdepth
+\global\newlength\mnxsrwidth
+\newsavebox{\prebox}
+
+\newcommand\scalerel{\@ifstar{\scalerelplain}{\scalerelplus}}
+
+\newcommand\scalerelplain[3][99in]{%
+  \sbox{\prebox}{$#2$}%
+  \setbox0\hbox{$#3$}%
+  \setlength\srblobheight{\ht0+\dp0}%
+  \setlength\srblobdepth{\dp0}%
+  \setbox0\hbox{$#2$}%
+  \setlength\thesrwidth{\wd0*\ratio{\srblobheight}{\ht0+\dp0}}%
+  \setlength\thesrheight{\ht0*\ratio{\srblobheight}{\ht0+\dp0}}%
+  \setlength\mnxsrwidth{#1}%
+  \ifdim\thesrwidth>\mnxsrwidth\setlength\thesrwidth{\mnxsrwidth}\fi%
+  \raisebox{-\srblobdepth+\dp0*\ratio{\srblobheight}{\ht0+\dp0}}%
+           {\resizebox{\thesrwidth}{\thesrheight}{\usebox{\prebox}}}%
+}
+
+\newcommand\scalerelplus[3][99in]{\scalerelplain[#1]{#2}{#3}#3}
+
+\newcommand\stretchrel{\@ifstar{\stretchrelplain}{\stretchrelplus}}
+
+\newcommand\stretchrelplain[3][10000]{%
+  \sbox{\prebox}{$#2$}%
+  \setbox0\hbox{$#3$}%
+  \setlength\srblobheight{\ht0+\dp0}%
+  \setlength\srblobdepth{\dp0}%
+  \setbox0\hbox{$#2$}%
+  \setlength\thesrwidth{\wd0}%
+  \setlength\thesrheight{\ht0*\ratio{\srblobheight}{\ht0+\dp0}}%
+  \setlength\mnxsrwidth{\thesrheight*100/#1}
+  \ifdim\thesrwidth<\mnxsrwidth\setlength\thesrwidth{\mnxsrwidth}\fi%
+  \raisebox{-\srblobdepth+\dp0*\ratio{\srblobheight}{\ht0+\dp0}}%
+           {\resizebox{\thesrwidth}{\thesrheight}{\usebox{\prebox}}}%
+}
+
+\newcommand\stretchrelplus[3][10000]{\stretchrelplain[#1]{#2}{#3}#3}
+
+\newcommand\scaleto[3][99in]{%
+  \sbox{\prebox}{$#2$}%
+  \setlength\srblobheight{#3}%
+  \setlength\srblobdepth{0pt}%
+  \setbox0\hbox{$#2$}%
+  \setlength\thesrwidth{\wd0*\ratio{\srblobheight}{\ht0+\dp0}}%
+  \setlength\thesrheight{\ht0*\ratio{\srblobheight}{\ht0+\dp0}}%
+  \setlength\mnxsrwidth{#1}%
+  \ifdim\thesrwidth>\mnxsrwidth\setlength\thesrwidth{\mnxsrwidth}\fi%
+  \setlength\srblobdepth{\dp0*\ratio{\srblobheight}{\ht0+\dp0}}%
+  \raisebox{-\srblobdepth+\dp0*\ratio{\srblobheight}{\ht0+\dp0}}%
+           {\resizebox{\thesrwidth}{\thesrheight}{\usebox{\prebox}}}%
+}
+
+\newcommand\stretchto[3][10000]{%
+  \sbox{\prebox}{$#2$}%
+  \setlength\srblobheight{#3}%
+  \setlength\srblobdepth{0pt}%
+  \setbox0\hbox{$#2$}%
+  \setlength\thesrwidth{\wd0}%
+  \setlength\thesrheight{\ht0*\ratio{\srblobheight}{\ht0+\dp0}}%
+  \setlength\mnxsrwidth{\thesrheight*100/#1}
+  \ifdim\thesrwidth<\mnxsrwidth\setlength\thesrwidth{\mnxsrwidth}\fi%
+  \setlength\srblobdepth{\dp0*\ratio{\srblobheight}{\ht0+\dp0}}%
+  \raisebox{-\srblobdepth+\dp0*\ratio{\srblobheight}{\ht0+\dp0}}%
+           {\resizebox{\thesrwidth}{\thesrheight}{\usebox{\prebox}}}%
+}
+
+\endinput

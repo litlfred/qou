@@ -7,11 +7,11 @@ section_number: 6
 pages: 35-35
 source_pdf: 0501112v3.pdf
 source_sha256: f95088789da2453a
+text_source: latex
+latex_prose_ratio: 0.958
+latex_coverage_ratio: 1.0
 doc_brief: "GAUSSIAN FLUCTUATIONS OF CHARACTERS OF — We study asymptotics of reducible representations of the symmetric groups Sq for large q."
 ---
-I thank Akihito Hora and Philippe Biane for many discussions and re-
-marks.
-Research supported by State Committee for Scientiﬁc Research (Komitet
-Bada´ n Naukowych) grant No. 2P03A00723; by EU Network “QP-
-applications”, contract HPRN-CT-2002-00729; by KBN-DAAD project
-36/2003/2004.
+I thank Akihito Hora and Philippe Biane for many discussions and remarks.
+
+Research supported by State Committee for Scientific Research (Komitet Badań Naukowych) grant No. 2P03A00723; by EU Network "QP-applications\", contract HPRN-CT-2002-00729; by KBN-DAAD project 36/2003/2004.

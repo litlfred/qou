@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9811173v1/blocks/prose-sec-034",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-9811173v1/blocks/prose-sec-034",
   "kind": "prose",
   "title": "The maximally symmetric knots designated by Rolfsen [26] as 6 3, 7 7, 8 21, 9 40 and",
   "pageStart": 23,
   "pageEnd": 23,
   "text": "../sections/sec-034-2-the-maximally-symmetric-knots-designated-by-ro.md",
-  "derivedFrom": "library/arxiv-hep-th-9811173v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9811173v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-9811173v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-9811173v1/manifest.jsonld",
   "provenance": "ingested"
 }

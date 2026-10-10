@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1011.6483v3/blocks/prose-sec-008",
+  "kind": "prose",
+  "title": "Locality axiom and the equivalence of topological chiral homology with higher Hochschild functor for CDGAs",
+  "pageStart": 43,
+  "pageEnd": 47,
+  "text": "../sections/sec-008-52-locality-axiom-and-the-equivalence-of-topolog.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1011.6483v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1011.6483v3/manifest.jsonld",
+  "provenance": "ingested"
+}

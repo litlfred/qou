@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2601.05136v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "State integrals for the quantized SL₂(ℂ) Chern–Simons invariant",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2601.05136v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "State integrals for the quantized SL_2(ℂ) Chern-Simons invariant",
   "contains": [
     "library/arxiv-2601.05136v2/sections/sec-000",
     "library/arxiv-2601.05136v2/sections/sec-001",
@@ -23,8 +28,18 @@
     "library/arxiv-2601.05136v2/sections/sec-014"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2601.05136&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2601.05136v2",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "2601.05136v2.pdf",
     "source_sha256": "cee15456257d3028d54a86f851f3bc714779023b88b5d98c57206a784e73ede3",
     "pages": 19,

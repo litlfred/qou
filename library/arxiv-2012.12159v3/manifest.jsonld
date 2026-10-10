@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2012.12159v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2012.12159v3",
+  "contains": [
+    "library/arxiv-2012.12159v3/sections/sec-front-matter",
+    "library/arxiv-2012.12159v3/sections/sec-000",
+    "library/arxiv-2012.12159v3/sections/sec-001",
+    "library/arxiv-2012.12159v3/sections/sec-002",
+    "library/arxiv-2012.12159v3/sections/sec-003",
+    "library/arxiv-2012.12159v3/sections/sec-004",
+    "library/arxiv-2012.12159v3/sections/sec-005",
+    "library/arxiv-2012.12159v3/sections/sec-006",
+    "library/arxiv-2012.12159v3/sections/sec-007",
+    "library/arxiv-2012.12159v3/sections/sec-008",
+    "library/arxiv-2012.12159v3/sections/sec-009",
+    "library/arxiv-2012.12159v3/sections/sec-010",
+    "library/arxiv-2012.12159v3/sections/sec-011",
+    "library/arxiv-2012.12159v3/sections/sec-012",
+    "library/arxiv-2012.12159v3/sections/sec-013",
+    "library/arxiv-2012.12159v3/sections/sec-014",
+    "library/arxiv-2012.12159v3/sections/sec-015",
+    "library/arxiv-2012.12159v3/sections/sec-016",
+    "library/arxiv-2012.12159v3/sections/sec-017"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2012.12159&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2012.12159v3",
+    "title_source": "slug",
+    "source_file": "2012.12159v3.pdf",
+    "source_sha256": "473ec6959e82cd98d539a6658ade5bd4342682f2cd5e5f822e080a887926c7e8",
+    "pages": 42,
+    "arxiv": {
+      "id": "2012.12159",
+      "version": "3",
+      "primary_class": "math.DG",
+      "stamp_date": "22 Apr 2021"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

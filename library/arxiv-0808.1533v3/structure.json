@@ -5,7 +5,8 @@
   "file": "0808.1533v3.pdf",
   "sha256": "3e003cc35a4e57116b238f20d412c351d3632eacc207a8291136b03a567ce9b4",
   "bytes": 502462,
-  "pages": 30
+  "pages": 30,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -15,9 +16,9 @@
    "stamp_date": "18 Jun 2009"
   },
   "doi": null,
-  "title": "On the third order helicity of magnetic fields on invariant domains in S³",
+  "title": "On the third order helicity of magnetic fields on invariant domains in S\u00b3",
   "authors_raw": "October 28, 2018",
-  "abstract": "We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld B, which leads us to a lower bound for the L2-energy of B. The proposed approach exploits correspondence between the Milnor ¯ µ 123-invariant for 3-component links and the homotopy invariants of maps to conﬁguration sp aces, and we provide a simple geometric proof of this fact in the case of Borromean l inks. Based on these connections we develop a formulation for the third order hel icity of B on invariant un- linked domains of B, and provide Arnold’s style ergodic interpretation of this invariant as an average asymptotic ¯µ 123-invariant of orbits of B.",
+  "abstract": "We introduce an alternative approach to the third order heli city of a volume preserving vector \ufb01eld B, which leads us to a lower bound for the L2-energy of B. The proposed approach exploits correspondence between the Milnor \u00af \u00b5 123-invariant for 3-component links and the homotopy invariants of maps to con\ufb01guration sp aces, and we provide a simple geometric proof of this fact in the case of Borromean l inks. Based on these connections we develop a formulation for the third order hel icity of B on invariant un- linked domains of B, and provide Arnold\u2019s style ergodic interpretation of this invariant as an average asymptotic \u00af\u00b5 123-invariant of orbits of B.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20220426012733-04'00'",
@@ -25,11 +26,11 @@
    "Title": "",
    "Author": ""
   },
-  "title_prev": "The third order helicity of magnetic fields via link maps. R. Komendarczyk ∗†",
+  "title_prev": "The third order helicity of magnetic fields via link maps. R. Komendarczyk \u2217\u2020",
   "title_lines": [
    "The third order helicity of magnetic fields",
    "via link maps",
-   "R. Komendarczyk ∗†"
+   "R. Komendarczyk \u2217\u2020"
   ]
  },
  "toc": [
@@ -159,7 +160,47 @@
   "likely_scanned": false,
   "toc_entries": 11,
   "sections": 4,
-  "chars_total": 60982
+  "chars_total": 60982,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "unlinked-tubes.tex",
+   "tex_sections": 8,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.352,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-001-energy-bound",
+     "title": "Energy bound.",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-comparison-to-the-known-approaches-via-massey-pr",
+     "title": "Comparison to the known approaches via Massey products.",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.355,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-003-zero-contribution-of-short-paths-to-the-time-ave",
+     "title": "Zero contribution of short paths to the time average",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  },
  "duplicate_copies": [
   "arxiv-0808.1533v1"

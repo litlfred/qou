@@ -1,0 +1,386 @@
+\section{Classifying Rigid Broken Maps}\label{sec:classif}
+The aim of this section is to classify combinatorial types of rigid broken strips or rigid broken discs with the choice of perturbation scheme as done in Section \ref{sec:reg}. We will show that any rigid broken strip has only two levels and all the inside pieces are either punctured spheres or  discs with one boundary puncture that is asymptotic to a Reeb chord of length $\pi/n$. 
+
+\begin{lemma}\label{lemm:2level}
+If $(\mathfrak{u,D})$ is a regular vertically constrained broken strip  that is also rigid, it has at most two levels and the inside piece does not intersect the critical locus $\text{crit}(\pi_m)$. Similarly, if  $(\mathfrak{u,D})$ is a regular vertically constrained broken disc with point constraint, it has  at most two levels and the inside piece does not intersect the critical locus $\text{crit}(\pi_m)$.
+\end{lemma}
+
+\begin{proof}
+We have already chosen a perturbation scheme on the outside piece to make the moduli space of broken strips transversally cut out. If $(\mathfrak{u,D})$ is
+a rigid broken strip, the only deformations of the broken map $\mathfrak{u}$ are the ones obtained by the action of the automorphism group of the domain, i.e., by reparameterizing the broken strip. If $\mathfrak{u}$ has more than two levels, there will be a non-trivial neck piece $u_i$, (recall that any neck level should have a non-trivial map from the definition of a broken strip). Since $u_i$ is a non-trivial map,  translation of $u_i$ by the $\R $ action on $\R \times S^{2n-1}$ produces neck maps which have the same asymptotic Reeb chords and orbits, so there is a one dimensional deformation of  $\mathfrak{u}$ obtained by replacing $u_i$ by its translates. Notice that this deformation cannot be obtained by a reparameterization, as the map $u_i$ is not a trivial strip or a cylinder. Thus, we get a contradiction to the assumption that $\mathfrak{u}$ is rigid.
+
+\noindent Now assume that $u_{in}$ touches the critical locus, since it is regular as a vertically constrained broken strip, we have that $\Ind(\wt D^{vc}_{\mathfrak{u}}) < \Ind(\wt D_{\mathfrak{u}}) $, we see that $\mathfrak{u}$ is of high index and thus cannot be rigid.
+\end{proof}
+
+
+
+\subsection{Elementary discs}
+
+We will now classify the moduli space of single punctured discs with boundary on an asymptotically cylindrical Lagrangian manifold. The heuristic of classifying elementary discs by showing they are sections over the fibration is inspired from  \cite{seidelLongEx}. Recall, we can define a torus segment over any simple path in the punctured complex plane.   Thus, we have  a Lagrangian  $T_{\R+i\e} $ for the path $\gamma: \R \to \C^*$ given by $\gamma(s)=s+i\e$.  $$T_{\R+i\e} = \{(z_1,\dots,z_n)| \pi_m(z)\in \R+i\e, |z_1| = \dots  = |z_n|  \}.$$ Note that this Lagrangian is asymptotically close to the cylindrical Lagrangian $T_{\R \setminus \{0\}}$.
+
+
+\begin{defn}[Elementary disc in $\C^n$ ]
+A map $u: \mathbb{H} \to \C^n$ such that the restriction $u|_\R$ lies on the Lagrangian $T_{\R+i\e}$ or $T_\gamma$ for a cylindrical $\gamma$ and $u$ is asymptotic to a trivial strip over a Reeb chord of length $\frac{\pi}{n}$ is called a elementary disc. We denote the set of elementary discs with Reeb chord $\zeta$ at infinity with boundary on $T_{\R+i\e}$ and $T_\gamma$ by $\mathcal{M}_\zeta(\R+i\e)$, $\mathcal M_\zeta{(\gamma)}$ respectively.
+\end{defn} 
+
+In this subsection, we will classify single punctured discs with boundary on $T_{\R+i\e}$ that have a minimal length Reeb chord at its puncture. After classifying such discs, we will use a Gromov-compactness and regularity argument to conclude a classification of elementary discs provide us a classification of discs that occur as interior pieces of rigid broken strips and discs.
+
+
+
+
+
+
+\begin{lemma}\label{lemm:simpleissection}
+ An elementary disc $u$ with boundary on $T_{\R+i\e}$ can be viewed as sections of $\pi_m$ over the upper half-space $\mathbb{H}+i\e$ or the lower half-space   $-\mathbb{H}+i\e$ i.e. $\exists \phi_u$, a biholomorphism from $\mathbb{H} \to \pm\mathbb{H}+i\e$ and a section $s_u:\pm\mathbb{H}+i\e \to \C^ne$ such that $u= s_u \of \phi_u $.
+
+\end{lemma}
+
+\begin{proof}
+It is enough to show that $\phi_u = \pi_m \of u$  is a biholomorphism to $\pm\mathbb{H}+i\e$, then $s_u= u \of \phi_u\inv$ will be the required section. As the map $u=(u_1,\dots,u_n)$ is asymptotic to a trivial strip from Lemma \ref{remark:asymptoticLagrangian}, let's denote the trivial strip by  $$u_\zeta (z)= (z^{1/n}l_1,\dots,z^{1/n}l_n),$$ over a Reeb chord $$\zeta(t)=\frac{1}{\sqrt{n}|l_1|}(e^{it} l_1,\dots,e^{it}l_n ),$$ of length $\frac{\pi}{n}$ in $S^{2n-1}$, where we have $|l_i|=|l_j| $ for all $i,j$ since the boundary of $u$ lies on $T_{\R + i\e}$. The idea of the proof is to show that since asymptotically all the coordinates $u_i$ are away from 0, we get that the product $u_1.u_2\dots.u_n$ is  asymptotic to a trivial strip over a Reeb chord of length $\pi$ and thus essentially, a linear map.
+
+Note that $u$ can be extended to a map from the closed disc to $\P^n$  such that $$u(\infty) = [l_1: \dots:l_n:0] \in T_{Cliff} \sub \P^{n-1}_\infty, $$ where $\P^{n-1}_\infty =[z_0:\dots:z_{n-1}:0]$. The fact that $u(\infty)$  is a point in the torus $T_{Cliff}$ follows from the fact that the boundary of $u$ lies on $T_{Cliff}$ from the definition of $T_{\R +i\e}$.
+
+By checking the $S^{2n-1}$ component of the metric, we know that in limit $d_{cyl} (u(z),u_\zeta(z)) \to 0$ as $|z| \to \infty$.  We can arrange for  $\frac{u(z)}{|u(z)|}$ to lie in a small neighborhood  $\mathcal{N}$ of the Reeb chord $\zeta$ in the unit sphere $S^{2n-1}$, such that $\pi_m (\mathcal{N}) $ lies in a small neighborhood $\mathcal{N}_\zeta$ around $\pi_m(\zeta )$ for large $|z|$. We can also assume that the distance from origin to $\mathcal{N}_\zeta$ has a lower bound $\e_0$ for some fixed $\e_0 > 0$ . This implies that we can extend $\pi_m \of u$ to  a map from the closed disc to $\P^1$ by defining $\pi_m \of u (\infty) =  [1:0]$.
+
+
+Since the boundary of $\pi_m \of u$ lies on $\mathbb{R} + i\e $ and it extends to a map to $\P^1$, after applying the Schwarz reflection principle and classification of maps from  the disc $\D$ to $\P^1$ with boundary on $\R$ we see that $$\pi_m \of u = p_\R (z) + i\e,$$ where $p_\R$ is a polynomial with real coefficients. Now, using the fact that $d_{cyl}(u(z),u_\zeta(z))$ goes to 0, by checking the $\R$ component of the metric, we have
+
+
+
+$$\lim_{|z|\to \infty} \frac{|u(z)|}{|z^{1/n}|\|(l_1,\dots,l_n)\|} = 1.$$
+
+Thus, we can conclude  that 
+$$\lim_{|z|\to \infty} \frac{|\pi_m \of u(z)|}{|z||l_1.\dots.l_n|} = 1$$
+\noindent Thus combining the fact  $\pi_m \of u = p_\R + i\e$ with the limit above, we see that $p_\R$ is a non-constant linear polynomial and thus a biholomorphism. If $p_\R = az +b$ with $a>0$ we get $\pi_m \of u$ is a biholomorphism to the upper half space $\mathbb{H} + i\e$ , or else if $a<0$, it is a biholomorphism to the lower half-space $-\mathbb{H} + i\e$.
+
+
+
+\end{proof}
+
+
+\begin{remark} \label{remark:onlyupperisenough}
+    Using Lemma \ref{lemm:simpleissection} we can reduce the problem of classifying elementary discs to the problem of classifying sections. As  we have $\pi_m(z) = -\pi_m (z\xi)$  for an $n\th$ root of unity $\xi$, a section $s_u$ over $-\mathbb{H} + i\e$ is given by a section over $\mathbb{H}-i\e$ and then multiplying it with $\xi$. Thus, it is enough to classify sections over $\mathbb{H}\pm i\e$ for $\e > 0$. Also note that the \textit{phase action} of $T^{n-1}$ on $\C^n$ defined by $(\theta_1,\dots \theta_{n-1}).(z_1,\dots,z_n)= (e^{i\theta_1}z_1,\dots,e^{i\theta_{n-1}}z_{n-1}, e^{-i(\sum \theta_j)}z_n)$ induces a free action on the set of sections of $\pi_m$ over $\mathbb{H}\pm i\e$. 
+\end{remark}
+
+\begin{Theorem}[Classification of sections]\label{thm:classif}
+Let $\e > 0$.
+\begin{enumerate}
+  
+
+    \item There is a unique $T^{n-1}$ orbit of sections with finite Hofer energy over $\mathbb{H}+i\e$ with boundary on $\R+i\e$ given by $s_\theta = \theta.(z^{1/n}, \dots , z^{1/n} )$ for $\theta \in T^{n-1}$.
+    \item There are $n$ disjoint $T^{n-1}$ orbits of sections with finite Hofer energy over $\mathbb{H}-i\e$ with boundary on $\R-i\e$ given by $$s^k_\theta = \theta .((z+2i\e)^{1/n} , \dots,  \underbrace{\frac{z}{z+2i\e} (z+2i\e)^{1/n}}_{k^{th}\text{ coordinate}} , \dots , (z+2i\e)^{1/n} )$$
+\end{enumerate}
+
+\end{Theorem}
+
+
+\begin{proof}
+(1). Let the section be $\wt{u}= ({\widetilde{u_1},\wt{u_2},\dots ,\wt{u_n}})$. Thus $\wt{u_1}(z)\dots \wt{u_n}(z) = z$ and $|u_1| = \dots |u_n|$ on $\R + i\e$. As the domain of definition is in a complex plane with the negative imaginary axis removed, $\C\setminus[0,-i\infty)$, we can define an $n\th$ root in this domain. Let $u_k= \frac{\wt{u_k}}{z^{1/n}}$. Thus $u_1.\dots.u_n=1$ on $\mathbb{H}+i\e$ and $|u_k| = 1 $ on $\R + i\e$ , so we can extend $u_k$ to $\C$ by Schwarz reflection by defining $u_k(z) = \frac{1}{\bar{u_k}(\bar{z}+2i\e)}$. Note that $E_H(\wt{u}) < \infty $ implies that $u$ is asymptotic to a trivial strip over a Reeb chord. From $|\wt{u_k} (z)| =  |z|^{1/n}$ for $z \in \R + i\e$, we conclude that $u$ is asymptotic to a trivial strip over a Reeb chord of length $\pi/n$. Thus, we have $u_k$ is bounded near $\infty$. Since $u_k$ can be extended to an entire function, we have by Liouville's theorem that $u_k$ is constant. Now, from $\wt{u_1}(z)\dots \wt{u_n}(z) = z$ and $|u_1| = \dots |u_n|$ on $\R + i\e$ we see that $\wt{u}=\theta.(z^{1/n},\dots,z^{1/n})$ for some $\theta \in T^{n-1}$.
+
+
+(2). Let the section be $\wt{u}= ({\widetilde{u_1},\wt{u_2},\dots ,\wt{u_n}})$. From $\pi_m\of \wt{u} (0) = 0 $ we have that at least one of $\wt{u}_k$ is 0 at 0, without loss of generality assume $\wt{u}_1(0)=0$. Thus, in a neighborhood around 0, we have $\wt{u_1}(z) = zh(z)$ which implies $h\wt{u_2}\dots \wt{u_n}=1$ and $\wt{u_2},\dots,\wt{u_n}$ are non-vanishing on $\mathbb{H}-i\e$.  Define $u_k = \frac{\wt{u_k}}{(z+2i\e)^{1/n}}$, for $k\neq 1$ we have $u_k$ is non-vanishing and $|u_k(z)|= 1$ for $z\in \R-i\e$, thus we can do a Schwarz reflection as above to see that $u_k$ extends to an entire function. From $E_H(\wt{u}) < \infty$ and $|\wt{u_k}| = |z|^{1/n}$ on $\R -i\e$ we have that $u_k$ is bounded near infinity for $k\neq1$. Thus, from Liouville's theorem, we have $u_k$ is constant for $k \neq 1$. Now from $\pi_m \of \wt{u} (z) = z$ and the definition of $u_k$, we have that $\wt{u_1} = \frac{z}{z+2i\e} (z+2i\e)^{1/n}$. Thus, $\wt{u} = \theta.  (\frac{z}{z+2i\e} (z+2i\e)^{1/n},(z+2i\e)^{1/n},\dots,(z+2i\e)^{1/n}) $ for some $\theta \in T^{n-1}$. This gives one of $n$ $T^{n-1}$ orbits. The other orbits are obtained from the cases $u_k(0)=0$ where $k \neq 1$. Using a similar technique as above, by writing $u_k (z) = z h(z)$, one can show that the section would be of the form $s^k_\theta$.
+
+
+
+\end{proof}
+\begin{cor}\label{corr:disccount}
+For a  Reeb chord $\zeta$ of angle $\pi/n$ from $T_+$ to $T_-$ we have that for $\e>0$ $|\mathcal{M}_\zeta (\R + i\e)| =1 $ and $|\mathcal{M}_\zeta (\R - i\e)| = n $
+\end{cor}
+
+
+
+\begin{Theorem}
+\label{thm:regularsimple}
+The sections classified in Theorem \ref{thm:classif} are transversally cut out, that is, the linearized Cauchy-Riemann operator $\wt D_u$ is surjective for all the sections $u$ classified in Theorem \ref{thm:classif}.
+\end{Theorem}
+
+\begin{proof}
+This follows from Theorems \ref{thm:hortran} and \ref{thm:verttran}. 
+\end{proof}
+
+\subsection{Flattening the curve:  $\R + i\e$  to a cylindrical $\gamma$}
+
+We will now show that the count of elementary discs with boundary on $T_\gamma$ for an admissible cylindrical $\gamma$ is the same as the disc count we obtained in Corollary \ref{corr:disccount}.  We will assume $\e>0$ hereon. We will compactify the rigid discs to discs in $\C\P^n$ and prove bijection between the compactified discs.  Recall that the closure of $T_{\R +i\e}$ is a self-clean intersecting Lagrangian. A compactified elementary disc will map the  boundary puncture mapping to the self-clean intersection at the infinity divisor $T^{n-1}_{Cliff} \hookrightarrow \C\P^{n-1}_\infty \hookrightarrow \C\P^n$. 
+
+
+
+Later we will use a Lagrangian isotopy coming from a family of asymptotically cylindrical paths. We explain the process of compactifying elementary discs with boundary on $T_{\gamma_t}$ for an asymptotically cylindrical path $\gamma_t$ . We can compactify elementary discs to discs in $\C\P^n$. Given any elementary disc $u:\D^2\setminus \{1\}$ with boundary on $T_{\R\pm i\e}$ or $T_{\gamma_t}$ we can extend $u$ to $\overline{u}$ that maps $1$ to a point in the Clifford torus $T^{n-1}_{Cliff}$ in the infinity divisor $\C\P_\infty^{n-1} \hookrightarrow \C\P^n$. The Clifford torus is the self-intersection locus of the Lagrangians $\overline T_{\R\pm i\e}$ (and $\overline T_{\gamma_t}$), thus given any holomorphic map $v: \D^2 \to \C\P^n$ with boundary on $\overline T_{\R\pm i\e}$ (or $\overline T_{\gamma_t}$) such that $v\inv (\C\P^{n-1}_\infty) = \{1\}$, we have that $v: \D^2 \setminus \{1\} \to \C^n$ is asymptotic to  a Reeb chord with boundary on $T_\pm$. Similar to Step 5 in the proof of asymptotic convergence in Theorem \ref{thm:exponential conv}, by using Theorem 3.2 of \cite{schm} the length of the Reeb chord is the same as the eigenvalue of the leading order eigenfunction. We define the moduli space of discs in $\C\P^n$ that restrict to elementary discs in $\C^n$ when restricted to $\D\setminus\{1\}$ as elementary discs in $\C^n$.
+
+\begin{defn}[Elementary disc in $\C\P^n$]
+A map $u: \mathbb{D} \to \C\P^n$  with boundary on the Lagrangian $\overline T_{\R+i\e}$ or $\overline T_\gamma$ for a cylindrical $\gamma$  is called elementary when $u\inv(\C\P_\infty^{n-1})=\{1\}$ and the eigenvalue of the leading order eigenfunction of $u$ as in Theorem 3.2 of \cite{schm} is $\pi/n$. We denote the set of elementary discs that maps $1 \mapsto p \in T^{n-1}_{Clif}$  and boundary on $\overline T_{\R+i\e}$ or $\overline T_\gamma$ by $\mathcal{M}_p(\R+i\e)$, $\mathcal M_p{(\gamma)}$ respectively.
+\end{defn}
+
+ Note that for each $p\in T_{Cliff}^{n-1}$ there are $2n$ Reeb chords $\zeta_i$ in $S^{2n-1}$ of length $\pi/n$ with boundary on $T_\pm$ that descend to $p$. From the definition of elementary discs we have the following bijections 
+
+\begin{equation*}
+    \mathcal{M}_p(\R \pm i\e) \leftrightarrow \cup_{i=1}^{2n} \mathcal{M}_{\zeta_i}(\R\pm i\e)
+\end{equation*}
+\begin{equation*}
+    \mathcal{M}_p(\gamma) \leftrightarrow \cup_{i=1}^{2n} \mathcal{M}_{\zeta_i}(\gamma).
+\end{equation*}
+
+\noindent We denote the collection of discs in $\mathcal M_p(\R \pm i\e)$ that converges to the Reeb chord $\zeta$ in cylindrical coordinates as $$\mathcal M_p^\zeta (\R \pm i\e),$$ the notation $\mathcal{M}_p^{\zeta}(\gamma)$ is defined similarly. Clearly  we have the following bijections by extending and restricting the maps, $$\mathcal M_p^\zeta(\R \pm i\e) \leftrightarrow \mathcal{M}_{\zeta_i}(\R\pm i\e) $$ $$\mathcal M_p^\zeta(\gamma) \leftrightarrow \mathcal{M}_{\zeta_i}(\gamma) .$$
+
+
+We will now prove the main theorem of the subsection, which states that there is a bijection between the moduli spaces of rigid discs if we `flatten the curve'. More precisely, if we flatten $\R + i \e$ to an admissible path $\gamma_0$, counts of elementary discs don't change.
+
+
+\begin{Theorem}
+\label{thm:flattenning}
+For each $\e>0$ and Reeb chord $\zeta$ of length $\pi/n$ with boundary on $T_\pm$, the moduli space of elementary disc with Reeb asymptote $\zeta$ and  with boundary on $T_\gamma$ for an admissible cylindrical $\gamma$ is in bijection with the moduli space of elementary discs with Reeb asymptote $\zeta$ with bounding $T_{\R + i\e}$
+$$\mathcal M_\zeta{(\gamma)} \leftrightarrow \mathcal M_\zeta{(\R + i\e)}$$
+For a mutated admissible cylindrical $\gamma'$, we have a similar bijection,
+$$\mathcal M_\zeta{(\gamma')} \leftrightarrow \mathcal M_\zeta{(\R - i\e)}$$
+
+
+\end{Theorem}
+
+
+We collect some results about regularity and area computation here before proceeding to the proof of Theorem \ref{thm:flattenning}
+
+ \begin{remark}[Regularity for compactified elementary discs bounding $\ol T_{\gamma_t}$] 
+We collect some regularity results here that allows us to obtain a cobordism. From Theorem \ref{thm:regularsimple} we have that any elementary disc in $\C^n$ is cut out regularly, i.e., the linearized Cauchy-Riemann operator at any elementary disc $u$ ,  $D_u$ is surjective. Consider the extension to the elementary disc $\overline{u}$ in $\C\P^n$, this is a holomorphic disc that maps a boundary point to the self-clean intersection locus. We can set up the moduli problem of discs with boundary on $\overline T_{\R \pm i\e}$ or $\overline T_\gamma$ similar to the treatment of moduli space of strips with boundary on cleanly intersecting Lagrangians as done by Schm\"aschke in \cite{schm}. The linearization of the $\delbar$ section in this setting is denoted as follows,$$ D_{\ol u}: W^{k,p,\delta }(\overline{u}^*T\C\P^n, \del \bar u ^* T \ol T_{\R+i\e} ) \to  W^{k-1,p,\delta } (\ol {\operatorname{Hom}} (T\mathbb{H},\ol u ^* T\C\P^n ))  $$
+
+The following lemma shows that $\overline{u}$ is regular for any elementary disc $u$.
+
+We begin by comparing the formal adjoints. Note that these formal adjoints $D_{\ol u}^*$  and $D^*_{u}$ are defined through different metrics, the first one is defined through a hermitian metric on $\C\P^n$ and the second one is defined through a cylindrical hermitian metric on $\C^n$. The cylindrical hermitian structure on $\C^n$ at $z$ is given by $\frac{\langle \,,\,\rangle_{0}}{|z|^2}$ where $\langle\,,\, \rangle_0$ is the standard Hermitian metric on $\C^n$  The hermitian metric on $\C\P^n$ is given by $h_{\C\P^n}(\_,\_) = g_{\C\P^n} (\_\_) - g_{\C\P^n} (\_,J\_) $
+where $g_{\C\P^n} = dr^2/r^4 + \lambda_0^2/r^2 + \pi^*g_{FS}$ in the cylindrical end $\R \times S^{2n-1}$ of $\C^n$. The subscripts refer to the projection along the  splitting $T(\R \times S^{2n-1}) = T\R \oplus \R \langle R \rangle \oplus \xi,$ where $R$ is the Reeb field and $\xi$ is the contact structure on $S^{2n-1}$ to write sections as a sum of 3 projections. Consider the following rescaling of sections, 
+
+\begin{align*}
+    \label{eq:rescale}
+    &S_1 : \Gamma (u^*T\C^n) \to \Gamma (u^*T\C^n)\\
+    &S_1(\eta_r + \eta_R + \eta_{\xi}) = r^2(\eta_r + \eta_R) + \eta_\xi\\
+    &S_2 : \Gamma(\ol{\operatorname{Hom}}(T\Sigma, u^*T\C^n)) \to \Gamma(\ol{\operatorname{Hom}}(T\Sigma, u^*T\C^n)) \\
+    &S_2(\alpha_{r} + \alpha_{R} + \alpha_{\xi}) = r^2(\alpha_r + \alpha_R ) + \alpha_{\xi}.
+\end{align*}
+
+\noindent For these rescalings we have the following relation between the cylindrical and $\C\P^n$ metric 
+
+\begin{equation}
+        \langle \alpha, S_i \beta \rangle_{\C\P^n}=\langle S_i \alpha,\beta \rangle_{\C\P^n}  = \langle \alpha ,\beta \rangle_{cyl} .
+\end{equation}
+
+\noindent Using these rescalings we have, 
+
+\begin{align}
+    \label{eq:cokernelrel}
+    D^*_{\ol u} = S_2 D_u^* S_2\inv.
+\end{align}
+     
+ \end{remark}
+\begin{lemma}
+\label{lemm:cyltocompreg}
+For any elementary disc $\ol u$ in $\C\P^n$ with boundary on  $\ol T_{\gamma_t}$ ,  the linearization $D_{\overline{u}} $  is surjective.
+\end{lemma}
+
+\begin{proof}
+It will be enough to show that the kernel of the formal adjoint $D^*_{\ol u}$ is trivial.  Let $\eta$ be an element in the kernel of the formal adjoint $D^*_{\overline{u}}$, thus it is an element in $W^{k,p,-\delta} (\ol {\operatorname{Hom}} (T\mathbb{H},\ol u ^* T\C\P^n )) $. From Equation (\ref{eq:cokernelrel}) we have that $S_2\inv \eta$ will be an element in kernel of $D_u^*$. Since we have $\eta \in W^{k,p,-\delta} (\ol {\operatorname{Hom}} (T\mathbb{H},\ol u ^* T\C\P^n )) $, we have $\| \eta(s,t) \|_{\C\P^n} \in O(e^{\delta s}),$ which implies that $\| S_2\inv \eta \|_{cyl} \in O(e^{\delta s}) $ thus $S_2\inv \eta \in W^{k,p,-\delta} (\ol {\operatorname{Hom}} (T\mathbb{H}, u ^* T\C^n ))$. But we have already proved that for any elementary disc $u$, the linearization $D_u$ is surjective in Theorem \ref{thm:regularsimple}, thus $S_2\inv \eta = 0$, hence we have $\eta = 0 $. Thus, the kernel of $D^*_{\ol u}$ is trivial, hence $D_{\ol u}$ is surjective.
+
+
+ 
+\end{proof}
+\begin{remark}[Area computations] \label{rem:PrepSurj}
+We calculate some symplectic areas that will be required for dealing with bubbling.  Recall that $\C^n$ with the Fubini-Study, $\omega_{FS}$ is symplectomorphic to the unit ball $B_1(0),\omega_0$ by the following rescaling symplectomorphism $\phi_{FS} : B_1(0) \to \C^n$, $$\phi_{FS} ((z_1,z_2,\dots,z_n)) \mapsto \frac{1}{1-\sum_i |z_i|^2} (z_1,\dots,z_n).$$ It is clear that $\phi_{FS} \inv (T_\gamma)=T_{\wt \gamma}$ for some $\wt \gamma : [0,1] \to \C^*$.  Given a elementary disc $\ol{u}_t$ in $\C\P^n$ with boundary on $\ol T_{\gamma_t}$, we can calculate it's symplectic area by using the symplectomorphism $\phi_{FS}$. Note that from convergence to Reeb chords, we can extend the map $\phi_{FS}\inv \of \ol u_n$ by adding a Reeb chord of length $\pi/n$. Recall from Lemma \ref{lemm:Texactlag} and Remark \ref{rem:texactlag} that $T_{\wt \gamma}$ is an exact Lagrangian. Moreover, for the primitive $f_{\wt \gamma}$ of $\lambda_0$,i.e. $\lambda_0|_{T_{\wt \gamma}} = df_{\wt \gamma}$, we have that $f_{\wt \gamma}$ is constant over the fiber $T^{n-1}$, in other words, there is a $f^{\wt \gamma}$ such that $f_{\wt \gamma} = \pi_m \of f^{\wt \gamma} $. Now we can use Stoke's theorem to calculate the symplectic area of $u_n$ as follows,
+$ \int_{u_n} \omega_{FS}= \int_{\phi_{FS}\inv \of \ol u_n} \omega_0 = \pi/n \pm ( f^{\wt \gamma}(\wt \gamma (1)) - f^{\wt \gamma}(\wt \gamma (0)))$.
+
+
+\end{remark}
+\noindent Now we can proceed to the proof of Theorem \ref{thm:flattenning}.
+
+\begin{proof}[Proof of \ref{thm:flattenning}]
+
+The proof is based on a cobordism argument. Fix a family $\gamma_t$ of paths in $\C^*$ such that the compactification $\ol \gamma_t$ in $\C\P^1$ is a $C^2$ isotopy from $\gamma$ to $\R + i\e$. This induces a Lagrangian isotopy of $\ol T_{\gamma}$ to $\ol T_{\R + i\e}$. 
+
+Consider the parameterized moduli space $\wt {\M} (\zeta)$ of triples $(t,\Sigma,u)$ where $u$ is a $J_0$ holomorphic map from the one-marked-disc $\Sigma$ to $\C\P^n$ with boundary on $\ol T_{\gamma_t}$ which takes the marked point to the Reeb chord $\zeta$. This is a cobordism between $\M_\zeta (\gamma)$ and $\M_\zeta(\R + i\e)$.
+
+From Remark \ref{rem:PrepSurj} we see that there is no bubbling in this moduli space. Indeed, from exactness of $T_{\gamma_t}$ in $\C^n$, we have that any possible disc or sphere bubble has to touch the infinity divisor $\C\P^{n-1}_\infty$. One can use the area computations from Remark \ref{rem:PrepSurj} to conclude that there can't be a bubble touching the infinity divisor. From Lemma \ref{lemm:cyltocompreg} we get that the parametrized moduli space $\wt {\M}(\zeta)$ is a regularly cut-out manifold with boundary of dimension one. The Lemma \ref{lemm:cyltocompreg} also proves that the natural projection map $\wt {M}(\zeta) \to [0,1]$ is a submersion.
+
+Thus, we get that $\wt \M (\zeta)$ is a trivial  cobordism between the zero-dimensional manifolds $\M_\zeta (\gamma)$ and $\M_\zeta(\R + i\e)$. Hence we get the required bijection $\mathcal M_\zeta{(\gamma)} \leftrightarrow \mathcal M_\zeta{(\R + i\e)}$. A similar cobordism argument works for mutated admissible paths by choosing a family $\gamma'_t$ interpolating between $\gamma'$ and $\R - i\e$.
+
+
+\end{proof}
+
+\begin{remark}[Theorem \ref{thm:flattenning} for longer Reeb chords]
+    \label{rem:genflatt}
+The proof technique for Theorem \ref{thm:flattenning} gives us a bijection between single punctured holomorphic discs with higher multiplicity Reeb chords as well. Let $k>0$ be a natural number. We denote the moduli space of single punctured holomorphic discs with boundary on $T_{\R+i\e}$, that is asymptotic to a Reeb chord $\zeta$ of length $k\pi/n$, as $$\M_{\zeta}(\R+i\e).$$ We similarly denote the moduli space of single punctured disc with boundary on $T_{\gamma}$ with Reeb asymptote $\zeta$  as $$\M_{\zeta}(\gamma).$$ A trivial cobordism argument as above shows that we get a bijection (more precisely, a diffeomorphism) $$\M_\zeta(\R + i\e ) \leftrightarrow \M_\zeta (\gamma).$$  
+
+
+\end{remark}
+
+
+
+\begin{remark}\label{remark:counting discs}
+    The results of this subsection should be interpreted as a $1\longleftrightarrow n$ correspondence between elementary discs with fixed Reeb chords under mutation. Let $\zeta_+$ be a Reeb chord of minimal length starting on $T_+$ and $\zeta_-$ be a Reeb chord of minimal length starting on $T_-.$ From Remark \ref{remark:onlyupperisenough} and Theorems \ref{thm:classif} and \ref{thm:flattenning} we get the following disc counts. For the pre-mutated Lagrangian boundary $T_{\gamma}$, there is exactly one elementary disc with Reeb chord $\zeta_+$ and exactly $n$ elementary discs with Reeb chord $\zeta_-$. For the mutated Lagrangian boundary $T_{\wt \gamma}$, the disc count gets reversed. There are exactly $n$ elementary discs with Reeb chord $\zeta_+$ and exactly one elementary disc with Reeb chord $\zeta_-$.
+\end{remark}
+
+
+
+
+\subsection{Classifying inner piece maps with boundary on $T_{\R+i\e}$ }
+We will use a similar argument as in Theorem \ref{thm:classif} to classify all possible holomorphic punctured discs. We only need classification of single punctured disks for this article, we add this subsection for the sake of completion.
+
+\subsubsection{Case 1: Disc with only boundary punctures}
+
+Up to an automorphism, a punctured disc is equal to the upper half-plane with punctures on the real line. Assume that we have $k+2$ punctures on the real line,   at the points $0,1,r_1,\dots,r_k$, we denote it by $\mathbb H_{k+2}$. Let $$u:\mathbb H_{k+2} \to  \C^n$$ be a disc with boundary on $T_{\R + i\e}$. Since near the punctures , the disc $u$ is asymptotic to Reeb chords starting on the tori $T_\pm$, we have that $\pi_m \of u$ has poles at the punctures. Thus, $\pi_m \of u $ is a meromorphic map from $\mathbb H$ with boundary lying on $\R+i\e$. The usual Schwarz reflection trick gives us that $$\pi_m \of u = \frac{p}{q} + i\e,$$ where $p,q$ are real polynomials such that degree of $p$ is strictly bigger than that of $q$. Here $q(z)$ is a polynomial of the form $$z^{m_0}(z-1)^{m_1}(z-r_1)^{m_2}\dots (z-r_k)^{m_{k+2}}$$ where $m_0,\dots m_{k+2}$ are the multiplicities of the limiting Reeb chords at the punctures. Assume that $\{u_1,\dots,u_l\}$ are roots of $\pi_m \of u$ in $\mathbb H$, the roots here can have repetitions to accommodate roots with multiplicities. Let $f$ be a rational function defined as follows $$ f(z) = \pi_m \of u(z) \times \Pi_{j=1}^l \frac{z-\ol u_j}{z-u_j}.$$
+
+
+\noindent From construction of $f$, we see that all the roots of $f$ lie in the lower half plane, and the poles of $f$ are on the real line. Thus, we can take a $n\th$ root of $f$ by taking $n\th$ root of each factor. This construction can be generalized for any rational function on $\mathbb H$, we define it below.
+%
+
+\begin{defn}[Cleaning of rational functions]
+    Let $p/q$ be a rational function  on $\mathbb H$,  with zeroes at $\{u_1,\dots, u_l\}$ and poles at $\{\zeta_1,\dots \zeta_o\}$. Here the roots are poles repeat according to its multiplicitiesx. We call $f$ to be a cleaning of the rational function of $p/q$ if $$ f(z) = \frac{p(z)}{q(z)} \times \Pi_{j=1}^l \frac{z-\ol u_j}{z-u_j} \times \Pi_{j=1}^o \frac{z- \zeta_j}{z-\ol \zeta_j}. $$
+\end{defn}
+
+
+
+\begin{defn}[Weight Matrix]\label{defn:weightmatrix}
+    We call a $n \times l $ matrix $B$ a \textit{weight matrix} if each column is a standard basis vector $e_i$ of $\C^n$.  $$e_i = \begin{bmatrix}
+0 \\
+\vdots \\ 
+0 \\
+1  \\
+0  \\
+\vdots \\
+0\\ 
+\end{bmatrix}$$
+
+\end{defn}
+
+\begin{defn}
+    Let  $W$ be the set of all possible $n \times l$ weight matrices. We define an assignment function as follows,
+    $$\mathfrak{A} : W \times \C^l \to \C^n$$
+    $$\mathfrak{A}(B,(z_1,\dots,z_l)) = ( z_1^{b_{11}} z_2^{b_{21}}\dots z_n^{b_{n1}},   z_1^{b_{12}}z_2^{b_{22}}\dots z_n^{b_{n2}},\dots,  z_1^{b_{1l}}\dots z_n^{b_{nl}} ) $$
+\end{defn}
+
+\begin{example}
+    If $B =  \begin{bmatrix}
+0 & 1 \\
+1  & 0 \\
+0   & 0\\
+\end{bmatrix}$, then $\mathfrak{A}(B,(x,y)) = (y,x,1) .$
+\end{example}
+
+\noindent A quick counting argument shows that  there are $n^l$ weight matrices of size $n\times l$. We can now state the classification theorem.
+
+\begin{Theorem}\label{thm:classifboundarypunct}
+    Let $u:\mathbb H_{k+2} \to \C^n$ be a holomorphic disc with boundary on $T_{\R + i\e}$. Assume the zeroes of $\pi_m \of u$, counted with multiplicity, are $\{x_1,\dots, x_l\}$. Let $f$ be the cleaning of the rational function $\pi_m \of u$. Then,  $$u(z) = \theta . f^{1/n} (z) \mathfrak{A} \bigg( B, \bigg( \frac{z-x_1}{z-\ol x_1},  \dots \frac{z-x_l}{z-\ol x_l} \bigg ) \bigg) $$ where $B$ is a weight matrix and $\theta$ is an element of $T^{n-1}$ acting on $\C^n$ by the phase action.
+\end{Theorem}
+\begin{proof}
+    Let $u=( u_1, \dots,  u_n )$. We know that $u_1u_2\dots u_n$ has roots at $\{ x_1 , \dots x_l \}$, thus each root is  from some component $u_i$. If $u_i$ has roots $\{y_1,\dots y_h\}$ we define $$\wt u_i = \Pi_{j=1}^h \frac{z-\ol y_j}{z-y_j} \times u_i.$$In case $u_i$ doesn't have any roots, then we set $\wt u_i = u_i$. Denote the product $\wt u_1 \dots \wt u_n$ by $f$. Note that from the construction $f$ is actually the cleaning of the rational function $\pi_m \of u$. Thus, the $n\th$ root $f^{1/n}$ is a well-defined meromorphic function on $\mathbb H$.
+    Also, since $|r-z| = |r-\ol z | $ for any real number $r$, we have  $$|\wt u_i(r)| =|\wt u_j(r)| $$ for any $i,j$ and real number $r$. Since near the punctures $u$ is asymptotic to a Reeb chord starting on the Legendrian tori $T_\pm$, the holomorphic function  $\frac{\wt u_i}{f^{1/n}}$ extends over the punctures. Since $|\wt u_i| = |f^{1/n}|$ on $\mathbb R$, from the Schwarz reflection argument in Theorem \ref{thm:classif} we have that $\frac{\wt u_i}{f^{1/n}}$ is a constant function, thus $$\wt u_i = e^{i\theta_i}f^{1/n}.$$
+    Thus we have $$u_i = e^{i\theta_i}\Pi_{j=1}^h \frac{z- y_j}{z-\ol y_j} f^{1/n}.$$
+    The appearance of the weight matrix in the result comes from distributing $l$ Blaschke factors $\frac{z-x_i}{z-\ol x_i}$ into $n$ coordinates. Depending on the vanishing of each coordinate functions $u_i$, we can choose a weight matrix $B$ such that 
+    $$u(z) = \theta . f^{1/n} (z) \mathfrak{A} \bigg( B, \bigg( \frac{z-x_1}{z-\ol x_1},  \dots \frac{z-x_l}{z-\ol x_l} \bigg ) \bigg) .$$
+   
+\end{proof}
+
+
+\begin{prop}\label{prop:singlepunct}
+    
+    Let $c$ be a Reeb chord with boundary on $T_\pm $, then there is a single punctured holomorphic disc with boundary on $T_{\R + i\e}$ with the puncture asymptotic to $c$.
+\end{prop}
+\begin{proof}
+    Recall that we have a transitive $T^{n-1}$ action on the space of Reeb chords. Thus, it is enough to show that there is a single punctured disk asymptotic to a Reeb chord $c_\pm$ where $c_\pm$ is Reeb chord starting at $T_\pm$ of length equal to the length of $c$.
+
+    Let the length of $c$ be an $l$ multiple of the length of the smallest Reeb chord (i.e. length of c is $\frac{l\pi}{n}$). Let $f_\pm$ be a cleaning of the polynomial $\pm z^l + i\e$ and  $\{ x_1,\dots, x_{m} \}$ be the set of zeroes of $$\pm z^l + i\e : \mathbb{H} \to \mathbb{C} .$$ Then $$u_\pm(z) = f^{1/n}_\pm(z) \bigg[ \frac{z-x_1}{z-\ol x_1} \dots \frac{z-x_m}{z-\ol x_m} \bigg ] ^T,$$ is a single punctured disk satisfying the required properties.
+\end{proof}
+
+
+\begin{remark}
+    Note that in Proposition \ref{prop:singlepunct} the number of roots in $\mathbb{H}$ is $\lfloor{\frac{l}{2}}\rfloor$ if the Reeb chord starts at $T_+$ or else it is $\lceil{\frac{l}{2}}\rceil$.
+\end{remark}
+
+\begin{remark}
+    Using Remark  \ref{rem:genflatt} we see that Proposition \ref{prop:singlepunct} holds for the boundary condition $T_{\gamma}$ for a cylindrical path $\gamma$. 
+\end{remark}
+
+
+\subsubsection{Case 2: Disc with interior punctures}
+The classification result for discs with interior punctures ( in other words, domains with cylindrical ends) follows a similar proof strategy, except that there is more combinatorial freedom.
+
+We illustrate the combinatorial freedom by considering a neighborhood of an interior puncture. Let $p \in \D^2$ be an interior puncture and $u$ is a holomorphic disc with boundary on the Lagrangian $T_{\R+i\e}$ which is asymptotic to a Reeb orbit near the puncture $p$. We can't read off information about the Reeb orbit by looking at $\pi_m \of u $ near $p$. This stems from the fact that the Reeb orbits can have some zero coordinates, so $\pi_m \of u$ can be any of the following: \begin{enumerate}
+    \item finite at $p$.
+    \item  vanish at $p$
+    \item have a pole at $p$.
+\end{enumerate}
+Thus to account for all the cases, we need to embed the orders of vanishing and poles of the coordinates of $u$ in the hypothesis of the classification theorem. 
+
+We define the notion of negative degree of vanishing to mean the order of the pole and negative order of pole to mean the degree of vanishing. e.g. the map $z^2$ has a pole of order $-2$ at $0$ and the map $1/z^3$ vanishes to the degree $-3$ at $0$.  We also define the degree of a function at a point to be $0$ if the evaluation of the function at the point is in $\C^*$. 
+
+\begin{Theorem} \label{thm:interiorpunctclass}
+        Fix a finite set $P$ of punctures in $D^2$. Let $u=(u_1,u_2,\dots,u_n):\D^2_{P} \to \C^n$ be a holomorphic disc from the punctured disc $\D^2_{P}$ with boundary lying on $T_{\R+i\e}$. Assume that for each puncture $p\in P$, the coordinates $u_i$ have orders of vanishing $p_i$. Let $$\wt f(z)= \pi_m \of u(z) \times \Pi_{p\in P,i=1}^n \bigg(\frac{z-\ol p}{z - p}\bigg)^{p_i}.$$ Assume $\wt f$ has zeroes, counted with multiplicities, at $\{ x_1,\dots ,x_l\}$. Let $f$ be the cleaning of $\wt f$. Then there is a weight matrix $B$ such that $$u(z) = \theta. f^{1/n} \begin{bmatrix}
+\Pi_{p\in P} \big(\frac{z-p}{z-\ol p} \big)^{p_1} & 0 & 0 \dots \\
+0 & \Pi_{p\in P} \big(\frac{z-p}{z-\ol p} \big)^{p_2}  & 0 \dots \\
+0 & \ddots \\
+\vdots  \\ 
+0  \\
+\vdots \\
+0 & \dots & \Pi_{p\in P} \big(\frac{z-p}{z-\ol p} \big)^{p_n}  \\ 
+\end{bmatrix} 
+B \bigg[ \frac{z-x_1}{z-\ol x_1} \dots \frac{z-x_l}{z-\ol x_l} \bigg ] ^T
+$$
+\end{Theorem}
+
+\begin{proof}
+    The idea of the proof is exactly the same as Theorem \ref{thm:classifboundarypunct} after we factor out the zeroes and poles from the interior puncture. Define $\wt u_i = u_i \times  \Pi_{p\in P}^n \bigg(\frac{z-\ol p}{z - p}\bigg)^{p_i} $. Define $\wt u$ as the function $(\wt u_1, \dots , \wt u_n)$ and applying the same argument as in Theorem \ref{thm:classifboundarypunct} gives us the result.
+\end{proof}
+
+
+\subsection{Only elementary discs show up in rigid things}
+
+We now prove the main result of this section : the only possible interior pieces for a rigid broken strip or a disc, is an elementary disc. The idea of the proof is to utilize monotonicity of the Lagrangian pair.
+
+
+
+\begin{defn}[Maslov index for 2-level broken maps]
+    Let $(\mathfrak{u,D})$ be a 2-level broken disc (or a broken strip) with boundary on $\mathbb L$  (and on $  \mathbb K)$. The Maslov index $\mu(\mathfrak u )$ is defined to be the Maslov index of a T-gluing $u^T$. Since the homotopy type of the glued map does not depend on the gluing parameter $T$, the Maslov index for 2-level broken maps is well-defined.  
+    
+\end{defn}
+
+\begin{lemma}\label{lemm:maslovbrokenstrip}
+    Any regular broken strip $\mathfrak u$ has Maslov index at least 1. A regular rigid broken strip has Maslov index 1.
+\end{lemma}
+
+\begin{proof}
+    From Theorem \ref{thm:glu}, we know that for a large gluing parameter $T$, there is a regular holomorphic glued strip $u^T$ whose limit as $T\to \infty$ is $\mathfrak u$. As $u^T$ is regular, the Maslov index is at least one. Thus, Maslov index of $\mathfrak u$ is at least one.
+
+    From Theorem \ref{thm:bij}, we know there is a large gluing parameter $T$ such that gluing gives a bijection between rigid broken strips and rigid unbroken strips. Thus, the gluing $u^T$ is rigid, hence Maslov index is one.
+\end{proof}
+
+
+\begin{lemma}\label{lemm:maslovbrokendisc}
+    Any regular broken disc $\mathfrak u$ has Maslov index at least 2. A regular rigid broken disc with point constraint has Maslov index 2.
+\end{lemma}
+\begin{proof}
+    
+The broken disc analog can be proved by a similar gluing argument as done in the proof of Theorem \ref{lemm:maslovbrokenstrip}.
+\end{proof}
+
+
+\begin{Theorem}\label{lemm:onlysimple}
+Each disc component of the inside piece of a rigid broken strip $\mathfrak{(u,D)}$ or a rigid broken disc with point constraint is a elementary disc.
+\end{Theorem}
+
+
+\begin{proof}
+Since the Lagrangian pair is monotone, there is an upper limit of energy of rigid broken discs and strips. From Remark \ref{rem:PrepSurj} we see that the symplectic area of an inside disc increases as the number of  punctures increase. Similarly, we see that the symplectic area of an inside disc increases if the Reeb chord length at any of the punctures increases. Assume we are doing a neck-stretching around the boundary sphere of a Darboux ball of radius $R$. Thus, there is an upper limit $k_u>0$ such that any rigid broken strip or disc has Reeb chord asymptote of length at most $\frac{k_u\pi}{n}$.
+
+Since the torus segment $T_\gamma$ is exact, and the punctures map to Reeb orbits or chords, from the Stokes' theorem argument in Remark \ref{rem:PrepSurj} we see that the symplectic area is a sum of contributions from the punctures.  Each boundary puncture contributes at least $c_R(\pi/n - |f^{\gamma}(0)-f^{\gamma}(1)| ) > 0$ area and each interior puncture contributes $c_R\pi > 0$ where $c_R$ depends continuously on the radius $R$.
+
+\begin{figure}[ht]
+    \centering
+    \incfig{1.6}{smolbuild}
+    \caption{Creating $\wt{\mathfrak u}$ by replacing the disc $A$ with $A'$ and removing the outside pieces  $B$ and $C$ }
+    \label{fig:smolbuild}
+\end{figure}
+Assume that the inner piece of a rigid strip $(\mathfrak {u,D})$ has a disc $u$ with more than one punctures. Only one of the boundary punctures of $u$ matches with a boundary puncture of the strip piece lying outside. Denote the boundary puncture on the strip piece by $p$.  We can replace $u$ with a single boundary punctured disc $\wt u$ that
+matches with the Reeb chord limit of $u_{out}$ at $p$.  Repeat this for each multiple punctured disc inside, and forget some punctured spheres or discs on the outside to obtain a broken strip $\wt {\mathfrak u}$. The total symplectic area of $\wt  {\mathfrak u} $ is less than that of $\mathfrak u$. Since the Lagrangians $L,K$ form a monotone pair, we know that there is a $c_{x,y}$ for each $x,y\in L \cap K$ such that there is an action-index relation for any strip $u$ from $x$ to $y$,
+$$I_\omega (u) = \lambda I_\mu (u) + c_{x,y}.$$
+Thus, since $\wt {\mathfrak u}$ has smaller area, it will have smaller Maslov index. We have that $$\mu (\wt{\mathfrak u}) < \mu (\mathfrak{ u}).$$
+
+Since $\mathfrak u$ is a rigid disc, from Lemma \ref{lemm:maslovbrokenstrip} we have that it's Maslov index is one. Thus we have $$\mu (\wt{\mathfrak u}) < 1,$$ which contradicts that $\wt{\mathfrak u}$
+is regular. As we have fixed a regularization scheme which makes every broken map of index at most one regular, we have a contradiction.
+
+Thus, we know for any rigid strip $\mathfrak u$, every inner piece disc has exactly one puncture. From index computation in Remark \ref{rem:indexsinglepunct} we see that if the Reeb chord at boundary puncture is not of minimal length ( i.e., $\pi/n$), the dimension $\M_{in}$ is larger than the dimension of the matching condition $\mathcal{RC}$. Thus, for non-minimal Reeb chords, there is a non-trivial kernel of the evaluation map $$ev_{in} : \M_{in} \to \mathcal{RC},$$ hence such configurations cannot arise in rigid broken strips. This ends the proof for rigid broken strips. For rigid broken discs, exactly the same argument would work.
+\end{proof}
+

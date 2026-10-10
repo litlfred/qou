@@ -7,65 +7,31 @@ section_number: 6
 pages: 16-17
 source_pdf: 1912.09457v3.pdf
 source_sha256: c00b3801060fc3cc
+text_source: latex
+latex_prose_ratio: 0.965
+latex_coverage_ratio: 0.929
 doc_brief: "GENERALIZED NEGLIGIBLE MORPHISMS AND THEIR TENSOR IDEALS — We introduce a generalization of the notion of a negligible morphism and study the associated tensor ideals and thick id eals."
 ---
-We review some results about quantized tilting modules whic h are needed
-to show that the category of tilting modules can be obtained a s a mod m
-evaluation.
-6.1. Lusztig’s integral form. We denote by A = Z[v,v −1] the Laurent
-polynomial ring in an indeterminate v and byU =UA Lusztig’s integral form
-(with divided powers) of the Drinfeld quantized enveloping algebra Uv over
-Q(v) [
-L93]. Any commutative ring R with 1 and a ﬁxed invertible element
-v can be regarded as a commutative A-algebra via the homomorphism φ :
-A → R such that φ(vn) = vn for all n ∈ Z. For any A-algebraR we denote
-UR = UA ⊗A R. We apply this for R = Q(q) and specialize the generic
-parameterv to a primitive ℓ-th root of unity q withℓ odd, and assume that
-ℓ is not divisible by 3 if g ∼
-= g2. We also assume ℓ>h , the Coxeter number
-of g. Then we denote by Rep(Uq(g)) the category of ﬁnite dimensional
-representations of Uq(g) of type 1 as in [
-APW91].
-6.2. Quantized tilting modules over Q(q). InRep(Uq(g)) we have analogs
-of Weyl and induced modules (where the latter can be deﬁned by means of
-the triangular decomposition of Uq(g)) which we denote again by V (λ) and
-H 0(λ), λ ∈ X +. These satisfy exactly the same Ext-vanishing conditions
-as in the modular case. In particular
-Exti(V (λ),H 0(λ)) = 0
-for i > 0, λ ∈ X + (see [ An92] and the references therein). This uses the
-quantum variant of Kempf’s vanishing theorem. We can then de ﬁne modules
-with a good ﬁltration and a Weyl ﬁltration and deﬁne tilting m odules as in
-the modular case. The main statement (proposition 5.1) about indecompos-
-able tilting modules still holds and we denote by T (λ) the indecomposable
-tilting module attached to λ ∈X +.
-GENERALIZED NEGLIGIBLE MORPHISMS AND THEIR TENSOR IDEALS 1 7
-6.3. Quantized tilting modules over R. As in the modular case, the
-entire theory of tilting modules can be developed over a (com plete) dis-
-crete valuation ring. The crucial ingredient here is that Ke mpf’s vanishing
-theorem holds over the ground ring A as well. This follows from work of
-Ryom-Hansen [RH03] and Kaneda [ Ka00] [ Ka98-2]. For an A-algebraR we
-denote by H 0
-R(λ) and VR(λ) the corresponding induced module and Weyl
-module. For any base change A → R we have
-H 0
-A(λ) ⊗AR =H 0
-R(λ) ∀λ ∈X +
-and likewise for VR(λ). Again by Kempf’s vanishing theorem over A and
-standard facts about H i we get the vanishing of Exti
-UA(A,H 0
-A(λ) ⊗H 0
-A(µ))
-for allλ,µ ∈X + andi> 0 (see also [
-Ka98-2]). The remaining arguments are
-the same as in the modular case. In particular for each λ ∈X + there is an
-indecomposable tilting module TR(λ),λ ∈X +, such that its λ-weight space
-is free of rank 1 [ Ka98-2, Theorem 7.6] and every tilting module decomposes
-uniquely into a direct sum of the TR(λ).
-Since the λ-weight space is free of rank 1, the arguments of Jantzen [ J03,
-E.20] go through and we obtain
-Corollary 6.1. LetR be a complete discrete valuation ring with residue
-ﬁeld R/m = Q(q) (or C) of characteristic 0. Then
-TR(λ) ⊗R/m ∼
-=TR/m(λ)
-End(TR(λ)) ⊗RR/m) ∼
-=End(TR(λ)) ⊗RR/m.
+[]{#tilting-quantum label="tilting-quantum"}
+
+We review some results about quantized tilting modules which are needed to show that the category of tilting modules can be obtained as a mod $\mathfrak{m}$ evaluation.
+
+## Lusztig's integral form
+
+We denote by $\mathcal{A} = {\mathbb Z}[v,v^{-1}]$ the Laurent polynomial ring in an indeterminate $v$ and by $U = U_{\mathcal{A}}$ Lusztig's integral form (with divided powers) of the Drinfeld quantized enveloping algebra $U_v$ over ${\mathbb Q}(v)$ [@Lusztig-book]. Any commutative ring $R$ with 1 and a fixed invertible element $\bf{v}$ can be regarded as a commutative $\mathcal{A}$-algebra via the homomorphism $\phi: \mathcal{A} \to R$ such that $\phi(v^n) = {\mathbf{v}}^n$ for all $n \in {\mathbb Z}$. For any $\mathcal{A}$-algebra $R$ we denote $U_R = U_{\mathcal{A}} \otimes_{\mathcal{A}} R$. We apply this for $R = {\mathbb Q}(q)$ and specialize the generic parameter $v$ to a primitive $\ell$-th root of unity $q$ with $\ell$ odd, and assume that $\ell$ is not divisible by $3$ if $\mathfrak{g} \cong \mathfrak{g}_2$. We also assume $\ell > h$, the Coxeter number of $\mathfrak{g}$. Then we denote by $Rep(U_q(\mathfrak{g}))$ the category of finite dimensional representations of $U_q(\mathfrak{g})$ of type $1$ as in [@Andersen-Polo-Wen].
+
+## Quantized tilting modules over ${\mathbb Q}(q)$
+
+In $Rep(U_q(\mathfrak{g}))$ we have analogs of Weyl and induced modules (where the latter can be defined by means of the triangular decomposition of $U_q(\mathfrak{g})$) which we denote again by $V(\lambda)$ and $H^0(\lambda)$, $\lambda \in X^+$. These satisfy exactly the same $Ext$-vanishing conditions as in the modular case. In particular $$Ext^i (V(\lambda), H^0(\lambda)) = 0$$ for $i > 0, \ \lambda \in X^+$ (see [@Andersen-quantized] and the references therein). This uses the quantum variant of Kempf's vanishing theorem. We can then define modules with a good filtration and a Weyl filtration and define tilting modules as in the modular case. The main statement (proposition [\[prop:tilting-ind\]](#prop:tilting-ind){reference-type="ref" reference="prop:tilting-ind"}) about indecomposable tilting modules still holds and we denote by $T(\lambda)$ the indecomposable tilting module attached to $\lambda \in X^+$.
+
+## Quantized tilting modules over $R$
+
+As in the modular case, the entire theory of tilting modules can be developed over a (complete) discrete valuation ring. The crucial ingredient here is that Kempf's vanishing theorem holds over the ground ring $\mathcal{A}$ as well. This follows from work of Ryom-Hansen [@Ryom-Hansen] and Kaneda [@Kaneda-cohom] [@Kaneda-cohom-preprint]. For an $\mathcal{A}$-algebra $R$ we denote by $H^0_R(\lambda)$ and $V_R(\lambda)$ the corresponding induced module and Weyl module. For any base change $\mathcal{A} \to R$ we have $$H^0_{\mathcal{A}}(\lambda) \otimes_{\mathcal{A}} R = H^0_R (\lambda) \ \forall \lambda \in X^+$$ and likewise for $V_R(\lambda)$. Again by Kempf's vanishing theorem over $\mathcal{A}$ and standard facts about $H^i$ we get the vanishing of $Ext^i_{U_{\mathcal{A}}}(\mathcal{A}, H^0_{\mathcal{A}}(\lambda) \otimes H^0_{\mathcal{A}}(\mu) )$ for all $\lambda,\mu \in X^+$ and $i > 0$ (see also [@Kaneda-cohom-preprint]). The remaining arguments are the same as in the modular case. In particular for each $\lambda \in X^+$ there is an indecomposable tilting module $T_R(\lambda)$, $\lambda \in X^+$, such that its $\lambda$-weight space is free of rank 1 [@Kaneda-cohom-preprint Theorem 7.6] and every tilting module decomposes uniquely into a direct sum of the $T_R(\lambda)$.
+
+Since the $\lambda$-weight space is free of rank 1, the arguments of Jantzen [@Jantzen E.20] go through and we obtain
+
+::: corollary
+Let $R$ be a complete discrete valuation ring with residue field $R/\mathfrak{m} = \mathbb{Q}(q)$ (or ${\mathbb C}$) of characteristic 0. Then $$\begin{align*}
+ T_R(\lambda) \otimes R/\mathfrak{m}  & \cong T_{R/\mathfrak{m}} (\lambda) \\  End (T_R(\lambda)) \otimes_R R/\mathfrak{m}) & \cong End (T_R(\lambda)) \otimes_R R/\mathfrak{m}.
+\end{align*}$$
+:::

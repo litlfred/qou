@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9906120v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-9906120v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9906120v3/manifest.jsonld",
+  "provenance": "ingested",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/9906120&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-9906120v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math/9906120v3",
+    "content_type": "application/gzip",
+    "sha256": "f3dc1c9378936a94f7443c0d0b1f75d23593a29c4342abaf77e51ef49ac35d27",
+    "bytes": 41675,
+    "fetched": "2026-10-10T15:31:00+00:00",
+    "files": [
+      {
+        "path": "source/files/JohanssonArchive.tex",
+        "role": "tex",
+        "sha256": "bdeb7274fa26da8dbd9aba32c8616513f69e9deee8b978963d32e18c32c26ff7",
+        "bytes": 97554
+      },
+      {
+        "path": "source/files/amams.sty",
+        "role": "sty",
+        "sha256": "8706396e1c3663e1d41d38b96e25a4a119ae41b3139f0dfab08dacdae7522b23",
+        "bytes": 35283
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1702.00039v1/blocks/prose-sec-029",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1702.00039v1/blocks/prose-sec-029",
   "kind": "prose",
   "title": "Soergel bimodules and light leaves in ranks 1 and 2",
   "pageStart": 29,
   "pageEnd": 29,
   "text": "../sections/sec-029-5-soergel-bimodules-and-light-leaves-in-ranks-1.md",
-  "derivedFrom": "library/arxiv-1702.00039v1/manifest",
-  "sourceDocument": "library/arxiv-1702.00039v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1702.00039v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1702.00039v1/manifest.jsonld",
   "provenance": "ingested"
 }

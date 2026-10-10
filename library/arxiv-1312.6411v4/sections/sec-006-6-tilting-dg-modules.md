@@ -7,339 +7,520 @@ section_number: 6
 pages: 30-35
 source_pdf: 1312.6411v4.pdf
 source_sha256: ceac22eb8ffe87e6
+text_source: latex
+latex_prose_ratio: 0.99
+latex_coverage_ratio: 0.786
 doc_brief: "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI — We consider commutative DG rings (better known as nonpositive stronglycommutativeassociativeunitalDGalgebras)."
 ---
-RecallthatallDGringsherearecommutative(Convention4.2). Inparticularall
-rings are commutative.
-Deﬁnition6.1. Let AbeaDGring. ADG A-module Piscalleda tiltingDGmodule
-if there exists some DGA-module Q such thatP⊗L
-A Q∼= A in D(A).
-The DG module Q in the deﬁnition is called aquasi-inverse of P. Due to the
-symmetryoftheoperation −⊗ L
-A−, Qisalsotilting. Itiseasytoseethatthequasi-
-inverse Qisunique,uptoanonuniqueisomorphism. If P1and P2aretiltingthenso
-is P1⊗L
-A P2;thisisbecauseoftheassociativityof −⊗ L
-A−. Hencethenextdeﬁnition
-makes sense.
-Deﬁnition 6.2.The commutative derived Picard groupof A is the abelian group
-DPic(A), whose elements are the isomorphism classes, inD(A), of tilting DGA-
-modules. The product is induced by the operation−⊗ L
-A−, and the unit element
-is the class ofA.
-Lemma 6.3. Let f : A→ B be a homomorphism of DG rings.
-(1) For anyM, N∈ D(A) there is an isomorphism
-(B⊗L
-A M)⊗L
-B (B⊗L
-A N)∼= B⊗L
-A (M⊗L
-A N)
-in D(A).
-(2) If P is a tilting DGA-module, thenB⊗L
-A P is a tilting DGB-module.
-(3) If f is a quasi-isomorphism andQ is a tilting DGB-module, thenrest f (Q) is a
-tilting DGA-module.
-Proof. (1) Choose K-ﬂat resolutions˜M→ M and ˜N→ N over A. Then B⊗A ˜M
-and B⊗A ˜N are K-ﬂat overB, ˜M⊗A ˜N is K-ﬂat overA, and
-(B⊗L
-A M)⊗L
-B (B⊗L
-A N)∼= (B⊗A ˜M)⊗B (B⊗A ˜N)
-∼= B⊗A ( ˜M⊗A ˜N)∼= B⊗L
-A (M⊗L
-A N).
-(2) LetP, Q∈ D(A) be such thatP⊗L
-A Q∼= A. By (1) we have
-(B⊗L
-A P)⊗L
-B (B⊗L
-A Q)∼= B.
-(3) SayQ1, Q2∈ D(B) satisfy Q1⊗L
-B Q2∼= B. Let Pi := rest f (Qi)∈ D(A). By the
-equivalence for DG ring quasi-isomorphisms (see [YZ1, Proposition 1.4]) we have
-P1⊗L
-A P2∼= rest f (Q1⊗L
-B Q2)∼= rest f (B)∼= A.
-□
-Proposition 6.4. Let f : A→ B be a homomorphism of DG rings.
-COMMUTATIVE DG RINGS 31
-(1) There is a group homomorphism
-DPic( f ) : DPic(A)→ DPic(B)
-with formulaP↦→ B⊗L
-A P.
-(2) If f is a quasi-isomorphism thenDPic( f ) is bijective.
-Proof. (1) This follows from parts (1) and (2) of the lemma above.
-(2)Part(3)ofLemma6.3showsthatincase f isaquasi-isomorphism,thefunction
-Q↦→ rest f (Q) is an inverse ofDPic( f ). □
-Theorem 6.5. Let A be a DG ring andP∈ D(A). The following four conditions are
-equivalent.
-(i) The DGA-module P is tilting.
-(ii) The functorP⊗L
-A− is an equivalence ofD(A).
-(iii) The functorRHomA(P,−) is an equivalence ofD(A).
-(iv) TheDG A-module Pisperfect,andtheadjunctionmorphism A→ RHomA(P, P)
-in D(A) is an isomorphism.
-Proof. (i)⇒ (ii): LetQ be a quasi-inverse ofP. Then the functorG(M) := Q⊗L
-A M
-is a quasi-inverse of the functorF(M) := P⊗L
-A M.
-(ii)⇒ (i): The functorF := P⊗L
-A− is essentially surjective on objects, so there is
-some Q∈ D(A) such thatF(Q)∼= A. Then Q is a quasi-inverse ofP.
-(ii)⇔ (iii): The functorsF := P⊗L
-A− and G := RHomA(P,−) are adjoints, soF is
-an equivalence iﬀG is an equivalence.
-(ii)⇒(iv): Considertheauto-equivalence F := P⊗L
-A−of D(A). SinceAiscompact
-and P = F(A),itfollowsthat Piscompact. NowaccordingtoTheorem5.20,perfect
-is the same as compact.
-For any M∈ D(A), the adjunction morphismA→ RHomA(M, M) is an iso-
-morphism iﬀ the canonical graded ring homomorphism
-αM : H(A)→
-⨁
-k∈Z
-HomD(A)(M, M[k])
-is bijective. The equivalenceF induces a commutative diagram of graded rings
-H(A)
-αM
-
-αF(M)
-**⨁
-k∈Z
-HomD(A)(M, M[k]) F // ⨁
-k∈Z
-HomD(A)
-(
-F(M), F(M)[k]
-)
-in which the horizontal arrow is an isomorphism. Now takeM := A. Because αA
-is an isomorphism, so isαP.
-(iv)⇒ (i): DeﬁneQ := RHomA(P, A)∈ D(A). The implication (i)⇒ (iii) of Theo-
-rem 5.20 shows that
-Q⊗L
-A P = RHomA(P, A)⊗L
-A P∼= RHomA(P, P)∼= A
-in D(A). So P is tilting, with quasi-inverseQ. □
-Corollary 6.6. Let P be a tilting DG A-module. Then the DG A-module Q :=
-RHomA(P, A) is a quasi-inverse ofP.
-Proof. This was shown in the proof of the implication (iv)⇒ (i) above. □
-32 AMNON YEKUTIELI
-Remark 6.7. A DG A-module M for which the adjunction morphism A →
-RHomA(M, M)isanisomorphism,issometimescalled semidualizing;cf.[AIL]. In-
-deed,thisconditionispartofthedeﬁnitionofa dualizingDGmodule (seeDeﬁnition
-7.1below). ButaswesawinTheorem6.5,thisconditionisalsocharacteristicoftilt-
-ing DG modules – so the name semidualizing might be confusing.
-Corollary6.8. Let PbeatiltingDG A-module,andlet F := P⊗L
-A−bethecorresponding
-auto-equivalence ofD(A).
-(1) Thefunctor Fhasﬁnitecohomologicaldimension,anditpreserves D+(A), D−(A)
-and Db(A).
-(2) If A is cohomologically pseudo-noetherian, then the auto-equivalenceF preserves
-the subcategoryDf(A).
-Proof. (1) The theorem says thatP is perfect. Let s1, . . . , sn ∈ ¯A and P1, . . . , Pn
-be as in Deﬁnition 5.1. Letd0≤ d1 be integers such that eachPi is generated in
-theintegerinterval [d0, d1]. Thenthefunctor F hascohomologicaldisplacementat
-most [d0, d1] relative toD(A), and cohomological dimension at mostd1− d0. The
-claim aboutD⋆(A) is now clear.
-(2) Use Theorem 2.13(2), noting thatF(A) = P∈ D−
-f (A), by Theorems 6.5 and
-5.11. □
-Proposition6.9. Let AbeaDGring,andlet e = ( e1, . . . , en)beanidempotentcovering
-sequenceof ¯A = H0(A). Forany iwehavethelocalizedDGring Ai = Aei fromDeﬁnition
-4.5, and the DG ring homomorphismλi : A→ Ai. Then the group homomorphisms
-DPic(λi) : DPic(A)→ DPic(Ai)
+\label{sec:tilting}
+
+Recall that all DG rings here are commutative (Convention \ref{conv:100}). In 
+particular all rings are commutative. 
+
+\begin{dfn}
+Let $A$ be a DG ring.
+A DG $A$-module $P$ is called a {\em tilting DG module} if there 
+exists some DG $A$-module $Q$ such that $P \ot^{\mrm{L}}_A Q \cong A$
+in $\cat{D}(A)$.  
+\end{dfn}
+
+The DG module $Q$ in the definition is called a {\em quasi-inverse} of $P$.
+Due to the symmetry of the operation $- \ot^{\mrm{L}}_A- $, $Q$ is also 
+tilting. It is easy to see that the quasi-inverse $Q$ is unique, up to a 
+nonunique isomorphism. If $P_1$ and $P_2$ are tilting then so is 
+$P_1 \ot^{\mrm{L}}_A P_2$; this is because of the associativity of  
+$- \ot^{\mrm{L}}_A- $. Hence the next definition makes sense. 
+
+\begin{dfn} \label{dfn:350}
+The {\em commutative derived Picard group} of $A$ is the abelian group \lb 
+$\opn{DPic}(A)$, whose elements are the isomorphism classes, in $\cat{D}(A)$,
+of tilting DG $A$-modules. The product is induced by the operation
+$- \ot^{\mrm{L}}_A -$, and the unit element is the class of  $A$. 
+\end{dfn}
+
+\begin{lem} \label{lem:80}
+Let $f : A \to B$ be a homomorphism of DG rings.
+\begin{enumerate}
+\item For any $M, N \in \cat{D}(A)$ there is an isomorphism 
+\[  (B \ot^{\mrm{L}}_A M) \ot^{\mrm{L}}_B (B \ot^{\mrm{L}}_A N) \cong 
+B \ot^{\mrm{L}}_A (M \ot^{\mrm{L}}_A N) \]
+in $\cat{D}(A)$. 
+
+\item If $P$ is a tilting DG $A$-module, then $B \ot^{\mrm{L}}_A P$ is a 
+tilting DG $B$-module.
+
+\item If $f$ is a quasi-isomorphism and $Q$ is a tilting DG $B$-module, then 
+$\opn{rest}_f(Q)$ is a tilting DG $A$-module. 
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+(1) Choose K-flat resolutions $\til{M} \to M$ and $\til{N} \to N$
+over $A$. Then $B \ot_A \til{M}$ and $B \ot_A \til{N}$ are K-flat over $B$, 
+$\til{M} \ot_A \til{N}$ is K-flat over $A$, and 
+\[ \begin{aligned}
+& (B \ot^{\mrm{L}}_A M) \ot^{\mrm{L}}_B (B \ot^{\mrm{L}}_A N) \cong 
+(B \ot_A \til{M}) \ot_B (B \ot_A \til{N}) 
+\\
+& \quad 
+\cong B \ot_A (\til{M} \ot_A \til{N}) \cong
+B \ot^{\mrm{L}}_A (M \ot^{\mrm{L}}_A N) .
+\end{aligned} \]
+
+\medskip \noindent
+(2) Let $P, Q \in \cat{D}(A)$ be such that 
+$P \ot^{\mrm{L}}_A Q \cong A$. By (1)  we have 
+\[ (B \ot^{\mrm{L}}_A P) \ot^{\mrm{L}}_B (B \ot^{\mrm{L}}_A Q) \cong  B . \]
+
+\medskip \noindent
+(3) Say $Q_1, Q_2 \in \cat{D}(B)$ satisfy
+$Q_1 \ot^{\mrm{L}}_B Q_2 \cong B$. Let 
+$P_i := \opn{rest}_f(Q_i) \in \cat{D}(A)$. 
+By the equivalence for DG ring  
+quasi-isomorphisms (see \cite[Proposition 1.4]{YZ1}) we have 
+\[ P_1 \ot^{\mrm{L}}_A P_2 \cong 
+\opn{rest}_f( Q_1 \ot^{\mrm{L}}_B Q_2 ) \cong 
+\opn{rest}_f(B) \cong A . \]
+\end{proof}
+
+\begin{prop} \label{prop:32}
+Let $f : A \to B$ be a homomorphism of DG rings.
+\begin{enumerate}
+\item There is a group homomorphism
+\[ \opn{DPic}(f) : \opn{DPic}(A) \to \opn{DPic}(B)  \]
+with formula
+$P \mapsto B \ot^{\mrm{L}}_A P$.
+
+\item If $f$ is a quasi-isomorphism then $\opn{DPic}(f)$ is bijective.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+(1) This follows from parts (1) and (2) of the lemma above. 
+
+\medskip \noindent
+(2) Part (3) of Lemma \ref{lem:80} shows that in case $f$ is a 
+quasi-isomorphism, the function 
+$Q \mapsto \opn{rest}_f(Q)$ is an inverse of  $\opn{DPic}(f)$.
+\end{proof}
+
+\begin{thm} \label{thm:76}
+Let $A$ be a DG ring and $P \in \cat{D}(A)$. The following 
+four conditions are equivalent.
+\begin{enumerate}
+\rmitem{i} The DG $A$-module $P$ is tilting.
+
+\rmitem{ii} The functor $P \ot^{\mrm{L}}_A -$ is an equivalence of 
+$\cat{D}(A)$. 
+
+\rmitem{iii}  The functor $\opn{RHom}_{A}(P, -)$ is an equivalence of 
+$\cat{D}(A)$. 
+
+\rmitem{iv}  The DG $A$-module $P$ is perfect, and the adjunction morphism 
+$A \to \opn{RHom}_A(P, P)$ in $\cat{D}(A)$ is an isomorphism.
+\end{enumerate} 
+\end{thm}
+
+\begin{proof}
+(i) $\Rightarrow$ (ii): Let $Q$ be a quasi-inverse of $P$. Then the functor  
+$G(M) := Q \ot^{\mrm{L}}_A M$ is a quasi-inverse of the functor 
+$F(M) := P \ot^{\mrm{L}}_A M$.
+
+\medskip \noindent
+(ii) $\Rightarrow$ (i): The functor $F := P \ot^{\mrm{L}}_A -$ is 
+essentially surjective on objects, so there is some $Q \in \cat{D}(A)$
+such that $F(Q) \cong A$. Then $Q$ is a quasi-inverse of $P$. 
+
+\medskip \noindent
+(ii) $\Leftrightarrow$ (iii): The functors 
+$F := P \ot^{\mrm{L}}_A -$ and 
+$G := \opn{RHom}_{A}(P, -)$
+are adjoints, so $F$ is an equivalence iff $G$ is an equivalence.
+
+\medskip \noindent 
+(ii) $\Rightarrow$ (iv): 
+Consider the auto-equivalence $F := P \ot^{\mrm{L}}_A -$ of $\cat{D}(A)$.
+Since $A$ is compact and $P = F(A)$, it follows that $P$ is compact. 
+Now according to Theorem \ref{thm:74}, perfect is the same as compact. 
+
+For any $M \in \cat{D}(A)$, the adjunction morphism 
+$A \to \opn{RHom}_A(M, M)$ is an isomorphism iff the canonical 
+graded ring homomorphism 
+\[ \al_M : \opn{H}(A) \to 
+\bigoplus_{k \in \Z} \, \opn{Hom}_{\cat{D}(A)}(M, M[k]) \]
+is bijective. The equivalence $F$ induces a commutative diagram of graded rings 
+\[ \UseTips \xymatrix @C=5ex @R=5ex {
+\opn{H}(A)
+\ar[d]_{\al_M}
+\ar[dr]^{\al_{F(M)}}
+\\
+\displaystyle\bigoplus_{k \in \Z} \, \opn{Hom}_{\cat{D}(A)}(M, M[k]) 
+\ar[r]^(0.44){F}
+&
+\displaystyle\bigoplus_{k \in \Z} \, 
+\opn{Hom}_{\cat{D}(A)} \bigl( F(M), F(M)[k] \bigr)
+} \]
+in which the horizontal arrow is an isomorphism. 
+Now take $M := A$. Because $\al_A$ is an isomorphism, so is $\al_P$.
+
+\medskip \noindent
+(iv) $\Rightarrow$ (i): 
+Define $Q := \opn{RHom}_A(P, A) \in \cat{D}(A)$.
+The implication (i) $\Rightarrow$ (iii) of Theorem \ref{thm:74} 
+shows that 
+\[ Q \ot^{\mrm{L}}_A P =  \opn{RHom}_A(P, A) \ot^{\mrm{L}}_A P
+\cong \opn{RHom}_A(P, P) \cong A \]
+in $\cat{D}(A)$. So $P$ is tilting, with quasi-inverse $Q$. 
+\end{proof}
+
+\begin{cor} \label{cor:405}
+Let $P$ be a tilting DG $A$-module. Then the DG $A$-module 
+$Q := \lb \opn{RHom}_A(P, A)$ is a quasi-inverse of $P$. 
+\end{cor}
+
+\begin{proof}
+This was shown in the proof of the implication 
+(iv) $\Rightarrow$ (i) above.
+\end{proof}
+
+\begin{rem} \label{rem:510}
+A DG $A$-module $M$ for which the adjunction 
+morphism $A \to \lb \opn{RHom}_A(M, M)$ is an isomorphism, is sometimes called 
+{\em semidualizing}; cf.\ \cite{AIL}. Indeed, this condition is part of the 
+definition of a {\em dualizing DG module} (see Definition \ref{dfn:253} below). 
+But as we saw in Theorem \ref{thm:76}, this condition is also characteristic of 
+tilting DG modules -- so the name semidualizing might be confusing. 
+\end{rem}
+
+\begin{cor} \label{cor:73}
+Let $P$ be a tilting DG $A$-module, and let 
+$F := P \ot^{\mrm{L}}_A -$
+be the corresponding auto-equivalence of $\cat{D}(A)$.
+\begin{enumerate}
+\item The functor $F$ has finite cohomological dimension, and it preserves 
+$\cat{D}^+(A)$, $\cat{D}^-(A)$ and 
+$\cat{D}^{\mrm{b}}(A)$.
+
+\item If $A$ is cohomologically pseudo-noetherian, then the auto-equivalence 
+$F$ preserves the subcategory $\cat{D}_{\mrm{f}}(A)$. 
+\end{enumerate}
+\end{cor}
+
+\begin{proof}
+(1) The theorem says that $P$ is perfect. 
+Let $s_1, \ldots, s_n \in \bar{A}$ and $P_1, \ldots, P_n$ be as in Definition 
+\ref{dfn:25}.
+Let $d_0 \leq d_1$ be integers such that each $P_i$ is generated in 
+the integer interval $[d_0, d_1]$. Then the functor $F$
+has cohomological displacement at most $[d_0, d_1]$ relative to 
+$\cat{D}(A)$, and cohomological dimension at most $d_1 - d_0$. The claim about 
+$\cat{D}^{\star}(A)$ is now clear. 
+
+\medskip \noindent
+(2) Use Theorem \ref{thm:30}(2), noting that 
+$F(A) = P \in \cat{D}^-_{\mrm{f}}(A)$,
+by Theorems \ref{thm:76} and \ref{thm:50}.
+\end{proof}
+
+\begin{prop} \label{prop:313}
+Let $A$ be a DG ring, and let 
+$\bsym{e} = (e_1, \ldots, e_n)$ be an idempotent covering sequence of 
+$\bar{A} = \opn{H}^0(A)$. For 
+any $i$ we have the localized DG ring $A_i = A_{e_i}$ from Definition 
+\tup{\ref{dfn:40}}, and the DG ring homomorphism
+$\la_i : A \to A_i$.
+Then the group homomorphisms 
+\[ \opn{DPic}(\la_i) : \opn{DPic}(A) \to \opn{DPic}(A_i) \]
 induce a group isomorphism
-DPic(A) ≃− →
-n
-∏
-i=1
-DPic(Ai).
-Proof. (1) According to Proposition 4.22 there is a DG ring quasi-isomorphismλ :
-A→ ∏n
-i=1 Ai. By Proposition 6.4(2) there is a group isomorphism
-DPic(λ) : DPic(A) ≃− →DPic
-(
-∏
-n
-i=1 Ai
-)
-.
-And there is an obvious group isomorphism
-DPic
-(
-∏
-n
-i=1 Ai
-)
-∼=
-n
-∏
-i=1
-DPic(Ai).
-□
-From here to Theorem 6.13 we consider a ringA. The ﬁrst lemma goes back to
-[RD, Lemma V.3.3], and it reappeared, in a noncommutative guise, in [Ye2] and
-[RZ]. But inthe priortreatments the ringA was assumedto benoetherian. There-
-fore we give a full proof of the general case.
-Lemma 6.10. Let A be a local ring, and letP be a tilting DGA-module. Then P∼= A[k]
-in D(A) for some integerk.
-Proof. Since P is a perfect complex ofA-modules (Theorem 6.5), it is isomorphic
-in D(A) to a bounded complex of ﬁnite projectiveA-modules. Say con(H(P)) =
-[i0, i1] for some integersi0≤ i1. By replacing P with such a resolution, and then
-splittingoﬀextratermsinhighandlowdegrees,wecanassumethat Pisacomplex
-of ﬁnite projectiveA-modules, concentrated in the degree interval[i0, i1]. Then
-P′ := Hi1 (P) is a nonzero ﬁnitely presentedA-module.
-COMMUTATIVE DG RINGS 33
-Let Q be a quasi-inverse ofP. By the same reasoning, we can assume thatQ is
-a complex of ﬁnite projectiveA-modules, concentrated in a degree interval[j0, j1],
-and Q′ := Hj1 (Q) is a nonzero ﬁnitely presentedA-module.
-Now by the Künneth trick we have isomorphisms ofA-modules
-P′⊗A Q′∼= Hi1+j1 (P⊗L
-A Q)∼= Hi1+j1 (A).
-On the other handP′⊗A Q′⁄= 0, by Nakayama. The conclusion is thati1 + j1 = 0
-and P′⊗A Q′ ∼= A. This tells us that P′ and Q′ are ﬂatA-modules. Again by
-Nakayama, we see thatP′∼= Q′∼= A.
-Finally, we can split the complexesP and Q into P∼= P′[−i1]⊕ Pex and Q∼=
-Q′[−j1]⊕ Qex, where Pex and Qex are complexes of ﬁnite projectiveA-modules,
-concentrated in the degree intervals[i0, i1− 1] and [j0, j1− 1] respectively. Then
-H(Pex⊗A Q′[−j1])isadirectsummandofthegradedmodule H(P⊗L
-A Q)∼= H(A).
-Since H(Pex⊗A Q′[−j1])isconcentratedintheinterval [i0 + j1,−1],itmustbezero.
-So Pex = 0 in D(A), andP∼= P′[−i1]. □
-Recallthatan A-module Piscalled invertibleifitisprojectiveofrank 1. Inother
-words, ifP is locally free of rank1. See [Bo, Section II.5.2, Theorem 1].
-Proposition 6.11. The following conditions are equivalent for anA-module P :
-(i) P is invertible.
-(ii) When viewed as a DG module,P is tilting.
-Proof. Theimplication(i) ⇒(ii)istrivial. Fortheotherdirection: theargumentsin
-theﬁrstparagraphoftheproofofLemma6.10showthat Pisaﬁnitelypresented A-
-module. Takeanyprimeideal p. ByLemma6.3,theDG Ap-module Pp := Ap⊗A P
-istilting. Hence,byLemma6.10,wehave Pp∼= Ap. Accordingto[Bo,SectionII.5.2,
-Theorem 1] the moduleP is invertible. □
-Lemma 6.12. Let A be a ring, and letP be a tilting DGA-module. WriteX := Spec A,
-and for any integeri deﬁne the set
-Yi :={p∈ X| Hi(P)p⁄= 0}.
+\[ \opn{DPic}(A) \iso \prod_{i = 1}^n \, \opn{DPic}(A_i) . \]
+\end{prop}
+
+\begin{proof}
+(1) According to Proposition \ref{prop:20} there is a DG ring quasi-isomorphism 
+$\la : A \to \prod_{i = 1}^n A_i$. By Proposition \ref{prop:32}(2) there is a 
+group isomorphism 
+\[ \opn{DPic}(\la) : \opn{DPic}(A) \iso 
+\opn{DPic} \Bigl( \, \prod\nolimits_{i = 1}^n A_i \, \Bigr) . \]
+And there is an obvious group isomorphism 
+\[ \opn{DPic} \Bigl( \, \prod\nolimits_{i = 1}^n A_i \, \Bigr) \cong 
+\prod_{i = 1}^n \, \opn{DPic}(A_i) . \]
+\end{proof}
+
+From here to Theorem \ref{thm:315} we consider a ring $A$. The first lemma 
+goes back to \cite[Lemma V.3.3]{RD}, and it reappeared, in a noncommutative 
+guise, in \cite{Ye2} and \cite{RZ}. But in the prior treatments the ring $A$ 
+was assumed to be noetherian. Therefore we give a full proof of the general 
+case. 
+
+\begin{lem} \label{lem:575}
+Let $A$ be a local ring, and let $P$ be a tilting DG $A$-module. 
+Then $P \cong A[k]$ in $\cat{D}(A)$ for some integer $k$. 
+\end{lem}
+
+\begin{proof}
+Since $P$ is a perfect complex of $A$-modules (Theorem \ref{thm:76}), it is 
+iso\-morphic in $\cat{D}(A)$ to a bounded complex of finite projective 
+$A$-modules. Say  $\opn{con}(\opn{H}(P)) = [i_0, i_1]$ for some integers $i_0 
+\leq i_1$. By replacing $P$ with such a resolution, and then splitting off 
+extra 
+terms in high and low degrees, we can assume that $P$ is a complex of finite 
+projective $A$-modules, concentrated in the degree interval $[i_0, i_1]$. Then 
+$P' := \opn{H}^{i_1}(P)$ is a nonzero finitely presented $A$-module.  
+
+Let $Q$ be a quasi-inverse of $P$. By the same reasoning, we can assume that 
+$Q$ is a complex of finite projective $A$-modules, concentrated in a degree 
+interval $[j_0, j_1]$, and $Q' := \opn{H}^{j_1}(Q)$ is a nonzero finitely 
+presented $A$-module.
+
+Now by the K\"unneth trick we have isomorphisms of $A$-modules
+\[ P' \ot_A Q' \cong \opn{H}^{i_1 + j_1}(P \ot^{\mrm{L}}_A Q) \cong 
+\opn{H}^{i_1 + j_1}(A) . \]  
+On the other hand $P' \ot_A Q' \neq 0$, by Nakayama. The conclusion is that 
+$i_1 + j_1 = 0$ and $P' \ot_A Q' \cong A$. 
+This tells us that $P'$ and $Q'$ are flat $A$-modules. 
+Again by Nakayama, we see that $P' \cong Q' \cong A$. 
+
+Finally, we can split the complexes $P$ and $Q$ into 
+$P \cong P'[-i_1] \oplus P^{\mrm{ex}}$
+and 
+$Q \cong Q'[-j_1] \oplus Q^{\mrm{ex}}$,
+where $P^{\mrm{ex}}$ and $Q^{\mrm{ex}}$ are complexes of finite projective 
+$A$-modules, concentrated in the degree intervals $[i_0, i_1 - 1]$ and 
+$[j_0, j_1 - 1]$ respectively. 
+Then $\opn{H}(P^{\mrm{ex}} \ot_A Q'[-j_1])$
+is a direct summand of the graded module
+$\opn{H}(P \ot^{\mrm{L}}_A Q) \cong \opn{H}(A)$. 
+Since $\opn{H}(P^{\mrm{ex}} \ot_A Q'[-j_1])$ is concentrated in the interval
+$[i_0 + j_1, -1]$,
+it must be zero. So $P^{\mrm{ex}} = 0$ in $\cat{D}(A)$, and
+$P \cong P'[-i_1]$. 
+\end{proof}
+
+Recall that an $A$-module $P$ is called {\em invertible} if it is projective of 
+rank $1$. In other words, if $P$ is locally free of rank $1$.  
+See \cite[Section II.5.2, Theorem 1]{Bo}. 
+
+
+
+
+
+
+
+
+\begin{prop} \label{prop:590}
+The following conditions are equivalent for an $A$-module $P$~\tup{:}
+\begin{enumerate}
+\rmitem{i} $P$ is invertible.
+\rmitem{ii} When viewed as a DG module, $P$ is tilting. 
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+The implication (i) $\Rightarrow$ (ii) is trivial. For the other direction: 
+the arguments in the first paragraph of the proof of Lemma 
+\ref{lem:575} show that $P$ is a finitely presented $A$-module. 
+Take any prime ideal $\p$. By Lemma \ref{lem:80}, the DG $A_{\p}$-module 
+$P_{\p} := A_{\p} \ot_A P$ is tilting. Hence, by Lemma \ref{lem:575},
+we have $P_{\p} \cong A_{\p}$.  
+According to \cite[Section II.5.2, Theorem 1]{Bo} the module $P$ is 
+invertible.
+\end{proof}
+
+\begin{lem} \label{lem:570}
+Let $A$ be a ring, and let $P$ be a tilting DG $A$-module. 
+Write $X := \opn{Spec} A$, and for any integer $i$ define the set 
+\[ Y_i := \{ \p \in X \mid \opn{H}^i(P)_{\p} \neq 0 \} . \]
 Then:
-(1) Only ﬁnitely many of theYi are nonzero.
-(2) Yi∩ Yj = ∅ if i⁄= j.
-(3) X =⋃
-i Yi.
-(4) For anyi, the setYi is open-closed.
-Proof. We may assume thatA ⁄= 0, i.e. that X ⁄= ∅. This implies that P ⁄= 0.
-We know from Theorem 6.5 thatP is a perfect complex ofA-modules. Therefore
-the cohomologyH(P) is bounded, and thuscon(H(P)) = [ i0, i1] for some integers
-i0≤ i1. This proves claim (1).
-Take any primep∈ X. By Lemma 6.3 the DGAp-module Pp := Ap⊗A P is
-tilting. So by Lemma 6.10 we havePp ∼= Ap[k] for some integerk. We see that
-p∈ Y−k, andp /∈ Yi for i⁄=−k. This proves claims (2) and (3).
-It remains to prove claim (4). By induction oni1− i0 = amp(H(P)), it suﬃces
-to prove thatY′ := Yi1 is open-closed inX. The reason is this: once we know that
-Y′ is open-closed, then so is its complementY′′ :=⋃
-i0≤i<i1 Yi. So X = Y′ ∐ Y′′ as
-schemes, and correspondinglyA = A′× A′′ as rings, andP∼= P′⊕ P′′ in D(A).
-But amp(H(P′′)) < i1− i0.
-As explained in the proof of Lemma 6.10, we can assume thatP is a complex
-of ﬁnite projectiveA-modules, concentrated in the degree interval[i0, i1]. So Q :=
-Hi1 (P) is a ﬁnitely presentedA-module. Because Y′ is the support of the module
-Q, it is closed inX.
-34 AMNON YEKUTIELI
-Take a primep ∈ Y′. As we have already seen above, theAp-module Qp is
-isomorphic to Ap. According to [Bo, Section II.5.1, Corollary] there is an open
-neighborhood U of p in X such that Qq ∼= Aq for all q ∈ U. This shows that
-U⊂ Y′. ThereforeY′ is open inX. □
-For a ringA we have the following theorem, due to Negron [Ng]. It is a re-
-ﬁnement of earlier results, that are due (independently) to the author [Ye2] and to
-Rouquier-Zimmermann [RZ]. The earlierresults focused on noetherian rings, and
-hence there was an assumption thatSpec A has ﬁnitely many connected compo-
-nents. Negron recently noticed that this assumption is superﬂuous.
-Asusual, Pic(A)denotesthe(commutative)Picardgroupof A,whoseelements
-are the isomorphism classes of invertibleA-modules.
-The abelian groupFlc(Spec A, Z) was introduced in Deﬁnition 4.18. As shown
-in Proposition 4.19, each functionf ∈ Flc(Spec A, Z) determines a decomposi-
-tion A = ∏n
-i=1 Ai of the ringA, and a nondecreasing sequence of integersk =
-(k1, . . . , kn). The relation is this:f (Spec Ai) = ki.
-Theorem 6.13. Let A be a commutative ring. There is a canonical group isomorphism
-DPic(A)∼= Pic(A)× Flc(Spec A, Z) ,
-characterized as follows:
-• Thehomomorphism Pic(A)→ DPic(A)sendstheclassofaninvertible A-module
-P to its class as a tilting DGA-module.
-• Let f ∈ Flc(Spec A, Z), with corresponding ring decompositionA = ∏n
-i=1 Ai
-and integer sequence(k1, . . . , kn). The tilting DG A-module associated to f is⨁n
-i=1 Ai[ki].
-Proof. For an invertibleA-module Q and a functionf∈ Flc(Spec A, Z) let
-G(Q, f ) := Q⊗A
-(⨁n
-i=1 Ai[ki]
-)
-,
-whichisatiltingDG A-module. Wehavetoprovethatthegrouphomomorphism
-Pic(A)× Flc(Spec A, Z)→ DPic(A)
-induced byG is bijective. It is certainly injective: ifG(Q, f )∼= A, then f must be
-the constant function0, as can be checked inDPic(Ap) for eachp∈ Spec A. But
-then Q∼= A in D(A), which implies thatQ∼= A in Mod A.
-It remains to prove that the group homomorphism induced byG is surjective.
-TakeanytiltingDG A-module P. LetSpec A = ∐i1
-i=i0
-Yi bethedecompositioninto
-open-closed sets induced byP, from Lemma 6.12. Consider the locally constant
-function f : X → Z deﬁned byf|Yi := i. Then the tilting DG moduleQ :=
-P⊗L
-A G(A, f ) has the property thatHi(Q) = 0 for alli⁄= 0. By Proposition 6.11
-we know thatQ is isomorphic to an invertibleA-module, say Q′. But then P∼=
-G(Q′,− f ). □
-Let Abeanoetherianring, a-adicallycompletewithrespecttosomeideal a,with
-reduction ¯A := A/a. Itisknownthatthegrouphomomorphism Pic(A)→ Pic( ¯A)
-is bijective. For a proof see [Ha, Exercises II.9.6 and III.4.6].
-ThenexttheoremisaDGanalogueofthisfact. RecallthatforaDGring Athere
-is a canonical homomorphismA→ ¯A.
-Theorem 6.14. Let A be a commutative DG ring. Then the canonical group homomor-
-phism
-DPic(A)→ DPic( ¯A)
+\begin{enumerate}
+\item Only finitely many of the $Y_i$ are nonzero.
+\item $Y_i \cap Y_j = \varnothing$ if $i \neq j$.
+\item $X = \bigcup\nolimits_{i} \, Y_i$.
+\item For any $i$, the set $Y_i$ is open-closed.
+\end{enumerate}
+\end{lem}
+
+\begin{proof}
+We may assume that  $A \neq 0$, i.e.\ that $X \neq \varnothing$.
+This implies that $P \neq 0$. 
+We know from Theorem \ref{thm:76} that $P$ is a perfect complex of 
+$A$-modules. Therefore the cohomology $\opn{H}(P)$ is bounded, and thus
+$\opn{con}(\opn{H}(P)) = [i_0, i_1]$
+for some integers $i_0 \leq i_1$. This proves claim (1). 
+
+Take any prime $\p \in X$. By Lemma \ref{lem:80} the DG $A_{\p}$-module 
+$P_{\p} := A_{\p} \ot_A P$ is tilting. So by Lemma \ref{lem:575} we have 
+$P_{\p} 
+\cong A_{\p}[k]$ for some integer $k$. We see that $\p \in Y_{-k}$, and 
+$\p \notin Y_{i}$ for $i \neq -k$. This proves claims (2) and (3). 
+
+It remains to prove claim (4). By induction on 
+$i_1 - i_0 = \opn{amp}(\opn{H}(P))$, it suffices to prove that $Y' := Y_{i_1}$
+is open-closed in $X$. The reason is this: once we know that $Y'$ is 
+open-closed, then so is its complement $Y'' := \bigcup_{i_0 \leq i < i_1} Y_i$. 
+So $X = Y' \coprod Y''$ as schemes, and correspondingly 
+$A = A' \times A''$ as rings, and $P \cong P' \oplus P''$ in $\cat{D}(A)$. 
+But $\opn{amp}(\opn{H}(P'')) < i_1 - i_0$. 
+
+As explained in the proof of Lemma \ref{lem:575}, we can 
+assume that $P$ is a complex of finite projective $A$-modules, concentrated in 
+the degree interval $[i_0, i_1]$. So $Q := \opn{H}^{i_1}(P)$ is a finitely 
+presented $A$-module. Because $Y'$ is the support of the module 
+$Q$, it is closed in $X$. 
+
+Take a prime $\p \in Y'$. As we have already seen above, the 
+$A_{\p}$-module $Q_{\p}$ is isomorphic to $A_{\p}$. According to \cite[Section 
+II.5.1, Corollary]{Bo} there is an open neighborhood $U$ of $\p$ in $X$ such 
+that $Q_{\q} \cong A_{\q}$ for all $\q \in U$. This shows that $U \subset Y'$. 
+Therefore $Y'$ is open in $X$. 
+\end{proof}
+
+For a ring $A$ we have the following theorem, due to Negron 
+\cite{Ng}. It is a refinement of earlier results, that are due (independently) 
+to the author \cite{Ye2} and to Rouquier-Zimmermann \cite{RZ}. 
+The earlier results focused on noetherian rings, and hence there was an 
+assumption that $\opn{Spec} A$ has finitely many connected components. 
+Negron recently noticed that this assumption is superfluous. 
+
+As usual, $\opn{Pic}(A)$ denotes the (commutative) Picard group of $A$, whose 
+elements are the isomorphism classes of invertible $A$-modules. 
+
+The abelian group $\opn{F}_{\mrm{lc}}(\opn{Spec} A, \Z)$
+was introduced in Definition \ref{dfn:560}.
+As shown in Proposition \ref{prop:550}, each
+function $f \in \opn{F}_{\mrm{lc}}(\opn{Spec} A, \Z)$ 
+determines a decomposition 
+$A = \prod_{i = 1}^n \, A_i$ of the ring $A$, 
+and a nondecreasing sequence of integers $\bsym{k} = (k_1, \ldots, k_n)$. 
+The relation is this: $f(\opn{Spec} A_i) = k_i$. 
+
+\begin{thm} \label{thm:315}
+Let $A$ be a commutative ring. 
+There is a canonical group isomorphism
+\[ \opn{DPic}(A) \cong 
+\opn{Pic}(A) \times \opn{F}_{\mrm{lc}}(\opn{Spec} A, \Z) \, , \]
+characterized as follows\tup{:}
+\begin{itemize}
+\item The homomorphism 
+$\opn{Pic}(A) \to \opn{DPic}(A)$
+sends the class of an invertible $A$-module $P$ to its class as a tilting DG 
+$A$-module. 
+
+\item Let $f \in \opn{F}_{\mrm{lc}}(\opn{Spec} A, \Z)$,
+with corresponding ring decomposition
+$A = \prod_{i = 1}^n \, A_i$
+and integer sequence $(k_1, \ldots, k_n)$.
+The tilting DG $A$-module associated to $f$ is 
+$\bigoplus_{i = 1}^n  A_i[k_i]$.
+\end{itemize}
+\end{thm}
+
+\begin{proof}
+For an invertible $A$-module $Q$ and a function 
+$f \in \opn{F}_{\mrm{lc}}(\opn{Spec} A, \Z)$
+let 
+\[ G(Q, f) := Q \ot_A \bigl( \bigoplus\nolimits_{i = 1}^n  A_i[k_i] \bigr) , \]
+which is a tilting DG $A$-module. We have to prove that the group homomorphism 
+\[ \opn{Pic}(A) \times \opn{F}_{\mrm{lc}}(\opn{Spec} A, \Z) \to 
+\opn{DPic}(A) \]
+induced by $G$ is bijective. 
+It is certainly injective: if 
+$G(Q, f) \cong A$, then $f$ must be the constant function $0$, as can be 
+checked in $\opn{DPic} (A_{\p})$ for each $\p \in \opn{Spec} A$. 
+But then $Q \cong A$ in $\cat{D}(A)$, which implies that 
+$Q \cong A$ in $\cat{Mod} A$. 
+
+It remains to prove that the group homomorphism induced by $G$ is surjective.
+Take any tilting DG $A$-module $P$. Let 
+$\opn{Spec} A = \coprod_{i = i_0}^{i_1} \, Y_i$ 
+be the decomposition into open-closed sets induced by $P$, from Lemma 
+\ref{lem:570}. Consider the locally constant function $f : X \to \Z$ 
+defined by $f|_{Y_i} := i$. 
+Then the tilting DG module 
+$Q := P \ot^{\mrm{L}}_A G(A, f)$ 
+has the property that 
+$\opn{H}^i(Q) = 0$ for all $i \neq 0$.
+By Proposition \ref{prop:590} we know that $Q$ is isomorphic to an invertible 
+$A$-module, say $Q'$. But then $P \cong G(Q', -f)$. 
+\end{proof}
+
+Let $A$ be a noetherian ring, $\a$-adically complete with respect to some ideal 
+$\a$, with reduction $\bar{A} := A / \a$. It is known that the group 
+homomorphism $\opn{Pic}(A) \to \opn{Pic}(\bar{A})$ is bijective. For a proof 
+see \cite[Exercises II.9.6 and III.4.6]{Ha}. 
+
+The next theorem is a DG analogue of this fact. 
+Recall that for a DG ring $A$ there is a canonical homomorphism 
+$A \to \bar{A}$.
+
+\begin{thm} \label{thm:40}
+Let $A$ be a commutative DG ring.
+Then the canonical group homomorphism 
+\[ \opn{DPic}(A) \to \opn{DPic}(\bar{A}) \]
 is bijective.
-COMMUTATIVE DG RINGS 35
-Proof. Let us denote byπ : A→ ¯A the canonical DG ring homomorphism. We
-begin by proving that the homomorphismDPic(π) is injective. Suppose P is a
-tiltingDG A-modulesuchthat ¯A⊗L
-A P∼= ¯Ain D( ¯A). ByCorollary6.8(1)weknow
-that P∈ D−(A). Then Proposition 3.3(1) says thatP∼= A in D(A).
-Nowletusprovethat DPic(π)issurjective. TakeanytiltingDG ¯A-module ¯P. By
-Theorem6.13thereisanisomorphism ¯P∼= G( ¯P0, f )forsomeinvertible ¯A-module
-¯P0 and some functionf∈ Flc(Spec A, Z).
-By Proposition 3.5, there exists some DG module P0 ∈ D−(A) such that
-¯A⊗L
-A P0∼= ¯P0 in D( ¯A). Let ¯Q0∈ Mod ¯Abeaquasi-inverseoftheinvertiblemodule
-¯P0. Bythesamereason,thereexists Q0∈ D−(A)suchthat ¯A⊗L
-A Q0∼= ¯Q0 in D( ¯A).
-Now by Lemma 6.3(1) we have
-¯A⊗L
-A (P0⊗L
-A Q0)∼= ¯P0⊗L
-¯A
-¯Q0∼= ¯A
-in D( ¯A). SinceP0⊗L
-A Q0∈ D−(A),byProposition3.3(1)weknowthat P0⊗L
-A Q0∼=
-A in D(A). This shows thatP0 is a tilting DGA-module.
-Finally, lete = ( e1, . . . , en) and k = ( k1, . . . , kn) be the data corresponding tof
-from Proposition 4.19, and letA→ ∏n
-i=1 Ai be thee-induced decomposition ofA
-from Deﬁnition 4.25. Consider the tilting DGA-module
-P := P0⊗A
-(⨁n
-i=1 Ai[ki]
-)
-.
-Then ¯P∼= ¯A⊗L
-A P. □
-Corollary 6.15. Let A be a DG ring. There is a canonical group isomorphism
-DPic(A)∼= Pic( ¯A)× Flc(Spec ¯A, Z) .
-Proof. Combine Theorems 6.14 and 6.13. □
-Deﬁnition 6.16.Let A be a DG ring. We deﬁneDPic0(A) to be the subgroup of
-DPic(A) that corresponds toPic( ¯A), under the canonical group isomorphism of
-Corollary 6.15.
-Corollary 6.17. If ¯A is a local ring, thenDPic(A)∼= Z.
-Proof. Weknowthat Pic( ¯A)istrivial,and Spec ¯Aisconnected. NowuseCorollary
-6.15. □
+\end{thm}
+ 
+\begin{proof}
+Let us denote by $\pi : A \to \bar{A}$ the canonical DG ring homomorphism.
+We begin by proving that the homomorphism $\opn{DPic}(\pi)$ is injective.
+Suppose $P$ is a tilting DG $A$-module such that 
+$\bar{A} \ot^{\mrm{L}}_A P \cong \bar{A}$ in $\cat{D}(\bar{A})$. 
+By Corollary \ref{cor:73}(1) we know that $P \in \cat{D}^{-}(A)$.
+Then Proposition \ref{prop:305}(1) says that $P \cong A$ in $\cat{D}(A)$. 
+
+Now let us prove that  $\opn{DPic}(\pi)$ is surjective.
+Take any tilting DG $\bar{A}$-module $\bar{P}$. By Theorem \ref{thm:315} there 
+is an isomorphism 
+$\bar{P} \cong G(\bar{P}_0, f)$ for some invertible $\bar{A}$-module 
+$\bar{P}_0$ and some function $f \in \opn{F}_{\mrm{lc}}(\opn{Spec} A, \Z)$.
+
+By Proposition \ref{prop:310}, there exists some DG module 
+$P_0 \in \cat{D}^{-}(A)$ such that  \lb
+$\bar{A} \ot^{\mrm{L}}_A P_0 \cong \bar{P}_0$ in $\cat{D}(\bar{A})$.
+Let $\bar{Q}_0 \in \cat{Mod} \bar{A}$ be a quasi-inverse of the invertible 
+module $\bar{P}_0$. By the same reason, there exists
+$Q_0 \in \cat{D}^{-}(A)$ such that  
+$\bar{A} \ot^{\mrm{L}}_A Q_0 \cong \bar{Q}_0$ in $\cat{D}(\bar{A})$.
+Now by Lemma \ref{lem:80}(1) we have
+\[ \bar{A} \ot^{\mrm{L}}_A (P_0 \ot^{\mrm{L}}_A Q_0) \cong 
+\bar{P}_0 \ot^{\mrm{L}}_{\bar{A}} \bar{Q}_0 \cong \bar{A} \]
+in $\cat{D}(\bar{A})$. Since 
+$P_0 \ot^{\mrm{L}}_A Q_0 \in \cat{D}^{-}(A)$,
+by Proposition \ref{prop:305}(1) we know that 
+$P_0 \ot^{\mrm{L}}_A Q_0 \cong A$ in $\cat{D}(A)$. This shows that $P_0$ is a 
+tilting DG $A$-module. 
+
+Finally, let $\bsym{e} = (e_1, \ldots, e_n)$ and 
+$\bsym{k} = (k_1, \ldots, k_n)$ be the data corresponding to $f$ from 
+Proposition \ref{prop:550}, and let 
+$A \to \prod_{i = 1}^n A_i$ be the $\bsym{e}$-induced decomposition of 
+$A$ from Definition \ref{dfn:343}.
+Consider the tilting DG $A$-module 
+\[ P := P_0 \ot_A \bigl( \bigoplus\nolimits_{i = 1}^n  A_i[k_i] \bigr) . \]
+Then 
+$\bar{P} \cong \bar{A} \ot^{\mrm{L}}_A P$. 
+\end{proof}
+
+\begin{cor} \label{cor:330}
+Let $A$ be a DG ring. There is a canonical group isomorphism 
+\[ \opn{DPic}(A) \cong  \opn{Pic}(\bar{A}) \times 
+\opn{F}_{\mrm{lc}}(\opn{Spec} \bar{A}, \Z) \, . \]
+\end{cor}
+
+\begin{proof}
+Combine Theorems \ref{thm:40} and \ref{thm:315}.
+\end{proof}
+
+\begin{dfn} \label{dfn:330}
+Let $A$ be a DG ring. We define $\opn{DPic}^0(A)$ to be the subgroup of 
+$\opn{DPic}(A)$ that corresponds to $\opn{Pic}(\bar{A})$, under the 
+canonical group isomorphism of Corollary \ref{cor:330}.
+\end{dfn}
+
+\begin{cor} \label{cor:315}
+If $\bar{A}$ is a local ring, then $\opn{DPic}(A) \cong \Z$.
+\end{cor}
+
+\begin{proof}
+We know that $\opn{Pic}(\bar{A})$ is trivial, and 
+$\opn{Spec} \bar{A}$ is connected. Now use Corollary \ref{cor:330}.
+\end{proof}

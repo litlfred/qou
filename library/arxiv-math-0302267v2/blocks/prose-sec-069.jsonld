@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0302267v2/blocks/prose-sec-069",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0302267v2/blocks/prose-sec-069",
   "kind": "prose",
   "title": "Notons encore aσ un ´ el´ ement de Gω ⟨MT(O[1/N])⟩ image d’un ´ el´ ement",
   "pageStart": 63,
   "pageEnd": 64,
   "text": "../sections/sec-069-519-notons-encore-aσ-un-el-ement-de-gω-mto1n-ima.md",
-  "derivedFrom": "library/arxiv-math-0302267v2/manifest",
-  "sourceDocument": "library/arxiv-math-0302267v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0302267v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0302267v2/manifest.jsonld",
   "provenance": "ingested"
 }

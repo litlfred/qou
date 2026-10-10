@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1608.03227v4/sections/sec-032",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Induction functor in reduced case",
+  "pageStart": 33,
+  "pageEnd": 34,
+  "contains": [
+    "library/arxiv-1608.03227v4/blocks/prose-sec-032"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1608.03227v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1608.03227v4/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -6,7 +6,8 @@
   "sha256": "5a09955f4fb6a57e69075c38e4571f5aacb9f50a5fc4bc1ec16a536f73e393b4",
   "bytes": 493967,
   "pages": 37,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -388,6 +389,116 @@
   "likely_scanned": false,
   "toc_entries": 24,
   "sections": 18,
-  "chars_total": 96205
+  "chars_total": 96205,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 5,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-summary",
+     "title": "Summary",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-12-inspirations-and-motivations",
+     "title": "Inspirations and motivations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-13-acknowledgements",
+     "title": "Acknowledgements",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-2-overview",
+     "title": "Overview",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-3-traces-in-category-theory",
+     "title": "Traces in category theory",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-31-preliminaries",
+     "title": "Preliminaries",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-32-dualizability",
+     "title": "Dualizability",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-34-functoriality-of-dimension",
+     "title": "Functoriality of dimension",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-35-functoriality-of-traces",
+     "title": "Functoriality of traces",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-4-traces-in-geometry",
+     "title": "Traces in Geometry",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-41-categories-of-correspondences",
+     "title": "Categories of correspondences",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-43-geometric-functoriality-of-dimension",
+     "title": "Geometric functoriality of dimension",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-44-geometric-functoriality-of-trace",
+     "title": "Geometric functoriality of trace",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-5-traces-for-sheaves",
+     "title": "Traces for sheaves",
+     "prose_ratio": 0.172,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-015-51-dimensions-and-traces-of-sheaf-categories-1-c",
+     "title": "Dimensions and traces of sheaf categories: 1-categorical consequences",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-52-integration-formulas-for-traces-2-categorical",
+     "title": "Integration formulas for traces: 2-categorical consequences",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

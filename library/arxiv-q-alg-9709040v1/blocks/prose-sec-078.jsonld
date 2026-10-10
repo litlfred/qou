@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-q-alg-9709040v1/blocks/prose-sec-078",
+  "kind": "prose",
+  "title": "Isomorphism IT",
+  "pageStart": 41,
+  "pageEnd": 42,
+  "text": "../sections/sec-078-8331-isomorphism-it.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-q-alg-9709040v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-q-alg-9709040v1/manifest.jsonld",
+  "provenance": "ingested"
+}

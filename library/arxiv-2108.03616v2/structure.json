@@ -7,7 +7,8 @@
   "bytes": 579882,
   "pages": 44,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -457,6 +458,149 @@
   "likely_scanned": false,
   "toc_entries": 28,
   "sections": 22,
-  "chars_total": 127730
+  "chars_total": 127730,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "arxiv-stripped-squeezed.tex",
+   "tex_sections": 11,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.99,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.959,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-properties-of-the-imbalance-measures",
+     "title": "Properties of the imbalance measures",
+     "prose_ratio": 0.306,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-31-bounds-on-subdeterminants",
+     "title": "Bounds on subdeterminants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-32-fractional-integrality-characterization",
+     "title": "Fractional integrality characterization",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-33-self-duality",
+     "title": "Self-duality",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-34-matrix-representations",
+     "title": "Matrix representations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-35-the-triangle-inequality",
+     "title": "The triangle inequality",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-4-connections-to-other-condition-numbers",
+     "title": "Connections to other condition numbers",
+     "prose_ratio": 0.947,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-5-optimizing-circuit-imbalances",
+     "title": "Optimizing circuit imbalances",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.799,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-7-linear-programming-with-dependence-on-the-cons",
+     "title": "Linear programming with dependence on the constraint matrix only",
+     "prose_ratio": 0.271,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-71-a-black-box-algorithm",
+     "title": "A black box algorithm",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-72-layered-least-squares-interior-point-methods",
+     "title": "Layered least squares interior point methods",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-73-the-curvature-of-the-central-path",
+     "title": "The curvature of the central path",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-8-circuit-diameter-bounds-and-circuit-augmentati",
+     "title": "Circuit diameter bounds and circuit augmentation algorithms",
+     "prose_ratio": 0.181,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-015-81-an-improved-circuit-diameter-bound",
+     "title": "An improved circuit diameter bound",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-82-circuit-augmentation-algorithms",
+     "title": "Circuit augmentation algorithms",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-822-convergence-bounds",
+     "title": "Convergence bounds",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-84-an-improved-bound-for-steepest-descent-augmen",
+     "title": "An improved bound for steepest-descent augmentation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-9-circuits-integer-proximity-and-graver-bases",
+     "title": "Circuits, integer proximity, and Graver bases",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-10-a-decomposition-conjecture",
+     "title": "A decomposition conjecture",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.219,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-021-a-appendix-proof-of-proposition-320",
+     "title": "A Appendix: Proof of Proposition 3.20",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

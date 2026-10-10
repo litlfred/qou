@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0008040v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Rectangle diagrams for the Lusztig cones of quantized enveloping algebras of type A",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0008040v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0008040v1",
   "contains": [
     "library/arxiv-math-0008040v1/sections/sec-000",
     "library/arxiv-math-0008040v1/sections/sec-001",
@@ -20,8 +25,17 @@
     "library/arxiv-math-0008040v1/sections/sec-011"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0008040&metadataPrefix=arXiv), submitted 2000-08-04, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-math-0008040v1",
+    "title_source": "slug",
     "source_file": "0008040v1.pdf",
     "source_sha256": "a72319b55dbaf20b9d65278e1fcf0722e3a2a403c4fb2b559de68f2734882967",
     "pages": 21,

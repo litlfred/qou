@@ -1,0 +1,855 @@
+% We prove theorem about cusp shapes of hyperbolic knots.
+
+We will now apply the results of the previous sections to determine
+bounds on the shapes of cusps of knot complements.  In particular, let
+$K$ be a hyperbolic knot with a prime, twist reduced diagram, where
+prime and twist reduced are defined in Definitions \ref{def:prime} and
+\ref{def:twred}.  We will
+bound the normalized height of the cusp of $S^3-K$, using Theorem
+\ref{thm:main-norm-height}.  We need the following:
+\begin{enumerate}
+  \item An initial hyperbolic manifold $X$ with $n+1$ cusps.
+  \item A cone deformation deforming $X$ to the knot complement
+    $S^3-K$.
+  \item A lower bound on the tube radius ($R\geq R_1\geq 0.56$).
+\end{enumerate}
+
+Given these pieces, we will obtain bounds on
+normalized height.
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{An initial manifold}
+\label{subsec:init}
+
+% Initial manifold for cone deformation.
+
+Begin with a prime, twist reduced diagram of the knot $K$.  At each
+twist region of the diagram, add a closed curve encircling two
+strands, called a \emph{crossing circle}.  We now have a diagram of a
+link, which we call $J$.  The link complement $S^3-J$ is homeomorphic
+to the complement of the link $L$ obtained from $J$ by removing pairs
+of crossings from each twist region.  See Figure
+\ref{fig:knot-decomp}.
+
+\begin{figure}
+\begin{center}
+\includegraphics{figures/knot-decomp.eps}
+\end{center}
+\caption{Left to right:  The link $K$.  The link $K$ with crossing
+circles added.  The link $L$.}
+\label{fig:knot-decomp}
+\end{figure}
+
+These links with crossing circles added have been studied by many
+people, including Adams \cite{adams:aug}; Lackenby, Agol and Thurston
+\cite{lackenby:alt-volume}.  Many of the properties of these links were
+addressed in previous papers (see \cite{purcell:volume}, and
+\cite{futer-purcell} with Futer).
+
+The links are useful to us in the cone manifold setting because
+first, symmetries of the diagram of $L$ allow us to determine the
+hyperbolic structure on $S^3-L$ explicitly.  Secondly, $S^3-L$ is
+related to the original knot complement via Dehn filling.  In
+particular, if $2m_i$ crossings were removed from the $i$-th twist
+region to go from the diagram of $J$ to that of $L$, then by
+performing a $1/m_i$ Dehn filling on the corresponding $i$-th crossing
+circle of $S^3-L$, we re-insert these crossings and put back the
+crossing circle, obtaining $S^3-K$ (see e.g.  \cite{rolfsen-book},
+Chapter 9).
+
+Thus, starting with a hyperbolic augmented link $L$, we can determine
+information including shapes of the cusps.  Next, we can find
+conditions which will ensure the Dehn filling above can be obtained by
+a hyperbolic Dehn filling via cone deformation.  Hence we will have
+the first two pieces needed to bound the normalized height of the cusp
+$K$: The initial manifold $M$ with hyperbolic structure will be
+$S^3-L$.  It will be connected by cone deformation to $S^3-K$.
+
+\subsubsection{The geometry of $S^3-L$}
+
+We note in \cite{futer-purcell} that if $K$ has at least $2$ twist
+regions, then the augmented link complement $S^3-L$ will admit a
+complete, finite volume hyperbolic structure.  This can be shown by
+work of Adams \cite{adams:aug}, using the geometrization of Haken
+manifolds.  It can also be shown more directly using Andreev's
+theorem.  The proof using Andreev's theorem gives a packing of circles
+related to $S^3-L$ which we will need again in Section
+\ref{subsec:2bridge}, so we include it here.
+
+\begin{theorem}
+  If $K$ has a prime, twist reduced diagram with at least $2$ twist
+  regions, then the augmented link complement $S^3-L$ will admit a
+  complete, finite volume hyperbolic structure.
+\label{thm:Lhyp}
+\end{theorem}
+
+\begin{proof}
+  We prove the lemma by finding the hyperbolic structure.  To do so,
+  we decompose $S^3-L$ into two ideal polyhedra, as in
+  \cite{lackenby:alt-volume} and \cite{futer-purcell}.  We then find a
+  hyperbolic structure on the polyhedra which gives a nonsingular
+  hyperbolic structure on $S^3-L$ after gluing.
+
+  To find the polyhedra, first remove all remaining single crossings
+  at crossing circles.  That is, if the number of crossings in a twist
+  region of the diagram of $K$ was odd, then $S^3-L$ will still have a
+  single crossing at that twist region.  Remove it.  The new link has
+  components lying flat in the projection plane bound together by
+  crossing circles.  Call it $L'$.
+  
+  Slice $S^3-L'$ along the projection plane.  This cuts the manifold
+  into two identical pieces, one on either side of the plane.  Each
+  2--punctured disk encircled by a crossing circle has been sliced in
+  half.  Slice along these remaining halves of disks, opening them up
+  into two faces.  This gives an ideal polyhedral decomposition of the
+  manifold.  The edges are given by the intersection of the
+  2--punctured disks with the projection plane.  On each of the two
+  polyhedra, we have one face per planar region of the diagram of
+  $L'$, and two triangular faces per 2--punctured disk.  Shade the
+  faces arising from 2--punctured disks, giving each polyhedron a
+  checkerboard coloring.  The edges meet in 4--valent ideal vertices.
+  At each vertex, two white faces are separated by two shaded faces.
+  (See \cite{futer-purcell} or \cite{lackenby:alt-volume} for
+  pictures.) 
+  
+  The gluing pattern on the polyhedra is given by following the above
+  process in reverse: First, on each polyhedron fold the pairs of
+  triangular shaded faces together at their common vertex.  Then glue
+  each white face to its corresponding face on the opposite
+  polyhedron via the identity map.  This gives back $S^3-L'$.
+  
+  To obtain $S^3-L$, we use the same two polyhedra, but make the
+  following change in gluing.  For crossing circles encircling a
+  single crossing of the diagram of $L$, rather than glue shaded
+  triangles across their common vertex on a single polyhedron, we
+  insert a half--twist by gluing each triangle of one polyhedron to
+  the opposite triangle of the other.  See Figure
+  \ref{fig:half-twist}.  
+
+\begin{figure}
+  \begin{center}
+    \includegraphics{figures/half-twist.eps}
+  \end{center}
+  \caption{Left:  Gluing 2--punctured discs with no crossings.  Right:
+    Gluing 2--punctured discs with a single crossing.}
+  \label{fig:half-twist}
+\end{figure}
+  
+Now our goal is to find a hyperbolic structure on these two polyhedra.
+We show the two polyhedra actually have totally geodesic faces in
+$\HH^3$, meeting in dihedral angles of $\pi/2$.  Since faces are glued
+in pairs, and edges in 4's, the gluing will give a complete hyperbolic
+structure on $S^3-L$.
+  
+Note any totally geodesic plane in $\HH^3$ extends to give a circle on
+the boundary $S^2$ at infinity.  Conversely, given a collection of
+circles on $S^2$, we can view those circles as boundaries of planes in
+$\HH^3$.  We obtain our polyhedra by finding appropriate circle
+packings, then cutting away half--spaces bounded by hemispheres in
+$\HH^3$.  Our tool is a corollary of Andreev's theorem noted by
+Thurston in \cite{thurston}:
+  
+\begin{theorem}[Andreev]
+  Let $\gamma$ be a triangulation of $S^2$ such that each edge has
+  distinct ends and no two vertices are joined by more than one edge.
+  Then there is a packing of circles in $S^2$ whose nerve is isotopic
+  to $\gamma$.  This circle packing is unique up to M{\"o}bius
+  transformation.
+\end{theorem}
+
+Recall that the \emph{nerve} of a circle packing is the graph obtained
+by adding a vertex for each circle, and an edge connecting two
+vertices if and only if the corresponding circles are tangent.
+
+  
+We begin by finding a triangulation of $S^2$ associated with one of
+the polyhedra described above.  For each white face, take a vertex.
+Connect two vertices by an edge if and only if the two corresponding
+white faces meet at a vertex of the polyhedron.  This gives a
+triangulation $\gamma$ of $S^2$.  Note if we draw vertices of $\gamma$
+on top of white faces of the polyhedron, and edges of $\gamma$ through
+the vertices of the polyhedron, that each triangle of $\gamma$
+circumscribes a shaded face of the polyhedron.
+
+To apply Andreev's theorem, we need to show this triangulation
+$\gamma$ satisfies the conditions: each edge has distinct ends, and no
+two vertices are joined by more than one edge.  To show these
+conditions, we consider the graph dual to $\gamma$, as follows.
+
+Consider the original link diagram.  We view it as a 4--valent graph.
+Replace each twist region of the graph by a single edge, as in Figure
+\ref{fig:twist-to-edge}.  
+
+\begin{figure}
+  \begin{center}
+    \includegraphics{figures/twist_to_edge.eps}
+  \end{center}
+  \caption{Create a trivalent graph by replacing each twist region with
+  an edge.}
+  \label{fig:twist-to-edge}
+\end{figure}
+
+Since each crossing is part of some twist region, this gives a
+trivalent graph $\Gamma$.
+%% This probably needs proof.
+Note the dual graph to $\Gamma$ is isotopic to the triangulation
+$\gamma$.
+We use properties of the dual $\Gamma$ to show the triangulation
+$\gamma$ satisfies the conditions necessary for Andreev's theorem.
+
+\begin{lemma}
+  No edge of $\gamma$ has a single vertex at both endpoints.
+  \label{lemma:andreev1}
+\end{lemma}
+
+\begin{proof}
+Consider the graph $\Gamma$.  If its dual $\gamma$ has an edge with one
+vertex at both endpoints, then the graph $\Gamma$ must be of the form
+in Figure \ref{fig:Andr_double_end} (a).
+
+\begin{figure}
+  \begin{center}
+    (a)
+  \input{figures/Andr_double_end.pstex_t}
+  \hspace{.5in}
+  (b)
+  \input{figures/Andr_twist_end.pstex_t}
+  \end{center}
+  \caption{(a.) Form of $\Gamma$ if $\gamma$ has an edge
+    with a single vertex at both endpoints.  (b.)  Corresponding form
+    of original link diagram.  }
+  \label{fig:Andr_double_end}
+\end{figure}
+
+Note then if the edge $e$ was an original edge of the 4--valent link
+diagram, then we have a simple closed curve intersecting the link
+diagram transversely in a single point.  This is impossible.
+
+If instead the edge $e$ replaced a twist region in the original
+4-valent link diagram, then the original diagram had the form of
+Figure \ref{fig:Andr_double_end} (b).  However, note one of the
+subdiagrams $D$ and $D'$ must contain crossings else the original
+diagram has at most one twist region.  Without loss of generality, say
+$D$ contains crossings.  Then the dashed simple closed curve enclosing
+$D$ intersects the link diagram transversely in two points, but both
+its interior and its exterior contain crossings.  This contradicts the
+fact that the original diagram was prime.
+\end{proof}
+
+\begin{lemma}
+  No two vertices of $\gamma$ are joined by more than one edge. 
+  \label{lemma:andreev2}
+\end{lemma}
+
+\begin{proof}
+Suppose two vertices of $\gamma$ are joined by two distinct edges.
+Then consider the dual graph $\Gamma$.  $\Gamma$ must be of the form
+shown in Figure \ref{fig:Andr_double_edge} (a), where region $B$ and
+region $B'$ are the same.
+
+\begin{figure}
+  \begin{center}
+    (a)
+  \input{figures/Andr_double_edge.pstex_t}
+  \hspace{.5in}
+  (b)
+  \input{figures/Andr_double_graph.pstex_t}
+ 
+  \end{center}
+  \caption{Form of $\Gamma$ when $\gamma$ has two vertices
+  connected by two distinct edges.  In (a), the edges of $\gamma$ are
+  the dashed lines, with one of the vertices in $A$ and the other at
+  $\infty$.}
+  \label{fig:Andr_double_edge}
+\end{figure}
+
+Give the edge $e_1$ an orientation, say $e_1$ points in the direction
+of the edge $a$.  This gives the region $A$ an orientation, and hence
+assigns to the edge $e_2$ an orientation.  Now, trace a path of edges
+around the region $B$, listing the edges in the order they occur.  Our
+list begins with $e_1$, then $a$, etc.  Note $e_2$ must appear in the
+list before the edge $d$, else region $B$ would be cut off from region
+$B'$.  Also, edge $b$ must occur before edge $c$, by the orientation
+on $e_2$.  Hence the graph $\Gamma$ has the form illustrated in Figure
+\ref{fig:Andr_double_edge} (b).
+
+Case 1: Edges $e_1$ and $e_2$ both were edges of the original
+4--valent link diagram.  Then there is a simple closed curve
+intersecting $e_1$ and $e_2$ transversely in the original link diagram
+and intersecting the diagram in no other points.  Since the
+original diagram has crossings on either side of the region $A$, this
+contradicts the fact that we started with a prime diagram.
+
+Case 2: Edges $e_1$ and $e_2$ both replaced twist regions in the
+original link diagram.  Then the original link diagram must have been
+of the form in Figure \ref{fig:Andr_double_diag1} (a).  Then since the
+original diagram was twist reduced, either the subdiagram $D$ or $D'$
+must be a string of bigons.  But then rather than two distinct twist
+regions, our diagram must have had only one twist region.  Thus edges
+$e_1$ and $e_2$ would not have been distinct.
+
+\begin{figure}
+  \begin{center}
+    (a) \input{figures/Andr_double_diag1.pstex_t}
+  \hspace{.5in}
+  (b)
+  \input{figures/Andr_double_diag2.pstex_t}
+  \end{center}
+  \caption{Possible forms of the original link diagram if $\gamma$
+  contains two vertices connected by two distinct edges.}
+  \label{fig:Andr_double_diag1}
+\end{figure}
+
+
+Case 3: One of edge $e_1$ or $e_2$ is from the original link diagram,
+the other replaced a twist region.  Then the original link diagram
+must have been of the form shown in Figure \ref{fig:Andr_double_diag1}
+(b).  Now note that the simple closed curve bounding subdiagram $D$
+intersects the link transversely in only three points.  This is
+impossible.
+
+Since these are the only three cases, these contradictions prove the
+lemma. 
+\end{proof}
+
+
+Now Lemmas \ref{lemma:andreev1} and \ref{lemma:andreev2} are enough to
+show that Andreev's theorem applies, and there is a circle packing of
+$S^2$ whose nerve is $\gamma$.
+
+Complete the proof of Theorem \ref{thm:Lhyp} by slicing off
+half--spaces bounded by geodesic hemispheres in $\mathbb H^3$
+corresponding to each circle in the circle packing.  These give the
+geodesic white faces of the polyhedron.  The shaded faces are obtained
+by slicing off hemispheres in $\mathbb H^3$ corresponding to each
+circle of the dual circle packing.  Note white and shaded hemispheres
+meet at right angles.  
+
+Thus the polyhedron for the flat augmented link is totally geodesic in
+$\mathbb H^3$, and hence the flat augmented link is hyperbolic.
+\end{proof}
+
+
+
+\subsubsection{Normalized lengths on cusps}  To apply results on cone
+deformations, we will need the following information on normalized
+lengths of particular curves on the cusps of $S^3-L$.
+
+
+\begin{prop}
+  Let $K$ and $L$ be as above.  In the prime, twist reduced diagram of
+  $K$, let $n$ be the number of twist regions.  Let $c_i$ be the
+  number of crossings in the $i$-th twist region.  Then on
+  cusps of $L$, we have the following normalized lengths.
+  \begin{enumerate}
+  \item For a cusp corresponding to a crossing circle, let $s_i$ be
+    the slope such that {D}ehn filling $S^3-L$ along $s_i$ re-inserts
+    the $c_i$ crossings at that twist region.  Then the normalized
+    length of $s_i$ is at least $\sqrt{c_i}$.
+  \item For the cusp corresponding to the link component in the
+    projection plane, the normalized height (i.e. the normalized
+    length of the curve orthogonal to a meridian) is at least
+    $\sqrt{n}$, and at most $\sqrt{n(n-1)}$.
+  \end{enumerate}
+\label{prop:proj-height}
+\end{prop}
+
+\begin{proof}
+  This can be deduced from results of \cite{futer-purcell}.  However,
+  given the circle packing associated to $S^3-L$ developed in the
+  previous section, we are able to streamline the proof somewhat.
+  
+  First, recall the polyhedra obtained in the proof of Theorem
+  \ref{thm:Lhyp}.  Note each cusp will be tiled by rectangles given by
+  the intersection of the cusp with the totally geodesic white and
+  shaded faces of the polyhedra.  Two opposite sides of each of these
+  rectangles come from the intersection of the cusp with shaded faces
+  of the polyhedra, or from the 2--punctured disks in the diagram of
+  $L$, and the other two sides come from white faces.  Call the sides
+  shaded sides and white sides, respectively.  
+  
+  For part (1), note any crossing circle intersects a single
+  2--punctured disk in a longitude.  Half of the longitude is given by
+  the intersection with one polyhedron, the other half by intersection
+  with the other.  The crossing circle intersects no other shaded
+  faces.  Thus the crossing circle cusp is tiled by exactly two
+  identical rectangles.
+  
+  When the crossing circle encircles no single crossing, or half twist,
+  then two white faces intersect the cusp in meridians.  In this case,
+  $c_i$ is even, $c_i=2m_i$, and the slope $s_i$ is $1/m_i$.  It is
+  given by one step along a white side of a rectangle (a meridian),
+  plus $2m_i=c_i$ steps along shaded sides of the rectangle.
+  
+  When the crossing circle encircles a single crossing, then the two
+  rectangles tiling the cusp are sheared.  In this case, a meridian is
+  given by one step along a white side, plus (or minus) a step along a
+  shaded side.  Now $c_i =2m_i+1$ is odd, and the slope $s_i =1/m_i$
+  is given by a step along a white side, plus (or minus) a step along
+  a shaded side, plus (or minus) $2m_i$ steps along shaded sides.
+  
+  In either case, the slope is given by a single step along a white
+  side plus (or minus) $c_i$ steps along a shaded side.  Let $w$
+  denote the length of a white side, and let $s$ denote the length of
+  a shaded side.  Thus the normalized length of $s_i$ is:
+  $$\frac{\sqrt{w^2+c_i^2s^2}}{\sqrt{2ws}} =
+  \sqrt{\frac{w}{2s}+c_i^2\frac{s}{2w}}.$$
+  Let $u=w/(2s)$.  Then for
+  constant $c_i$, this quantity is minimized when $u=c_i/2$, and the
+  minimum value is $\sqrt{c_i}$.
+  
+  For part (2), we need to know more about the possible lengths of the
+  white sides of rectangles tiling the cusp.  For a given rectangle,
+  consider the corresponding vertex in one of the polyhedra.  On the
+  sphere $S^2$ at infinity, this vertex will look like a point of
+  tangency of two circles in the packing given by Andreev's theorem.
+  Since the nerve of this circle packing is a triangulation of $S^2$,
+  the point of tangency corresponds to an edge on two distinct
+  triangles of this nerve.  Thus there are two additional circles
+  tangent to the two given circles, as in Figure \ref{fig:circles}.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics{figures/circles1.eps} \hspace{.2in}
+    \includegraphics{figures/circles2.eps}
+  \end{center}
+  \caption{The form of the packing of circles about any vertex.
+    Dashed circles correspond to the shaded faces of the polyhedron at
+    this vertex.}
+  \label{fig:circles}
+\end{figure}
+
+Now, apply a M{\"o}bius transformation taking the vertex, or the point
+of tangency of the circle packing, to infinity.  This takes the two
+tangent circles to two parallel lines.  It takes the two additional
+tangent circles to circles tangent to both the parallel lines, as in
+Figure \ref{fig:rec-circles}.  Note this also gives the similarity
+structure of the rectangle under consideration.  If we normalize so
+that the shaded side (coming from the intersection with a 2--punctured
+disk) has length $1$, then the circle lying under the dashed line in
+Figure \ref{fig:rec-circles} has diameter $1$.  Since circles in the
+circle packing do not overlap, this forces a white side (i.e. without
+dashes in the figure) to have length at least $1$.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics{figures/rec-circ1.eps}
+    \hspace{.2in}
+    \includegraphics{figures/rec-circ2.eps}
+  \end{center}
+  \caption{Result of taking point of tangency to infinity.}
+  \label{fig:rec-circles}
+\end{figure}
+
+For an upper bound on the length of a white side, note it is longest
+when all circles in the circle packing are lined up in a row, tangent
+to the two parallel lines.  In this case, when a shaded side has
+length $1$, the length of the white side will be the number of circles
+between the parallel lines, minus $1$.  To find the number of circles
+possible, we use an Euler characteristic argument.  Note there will be
+$2n$ shaded faces in one of the polyhedra, coming from opening up $n$
+crossing circles.  These each correspond to a single face of the
+triangulation of $S^2$ used in Andreev's theorem.  Because it is a
+triangulation, the number of edges equals $3/2$ the number of faces,
+or $3n$.  Then by an Euler characteristic argument, there are $n+2$
+vertices.  Recall each vertex gave a circle in our circle packing.
+Since two of these circles become our parallel lines, there are $n$
+circles packed between these.  Thus the maximum length of a white side
+is $n-1$.
+
+Now, note that the cusp in the projection plane intersects each
+2--punctured disk $2n$ times, each time in a meridian.  Half of this
+meridian will come from the intersection of one polyhedron (the
+``top'' half), the other half from the intersection of the other
+polyhedron.  Thus the meridian runs along two shaded sides of
+rectangles.  Still normalizing so each shaded side has length $1$,
+this implies a meridian has length $2$.  The curve giving the height
+$H$ of the cusp runs along $2n$ white sides of the rectangles (one for
+each 2--punctured disk of intersection).  The normalized height will
+be given by $H/\sqrt{2H} = \sqrt{H/2}.$ The height $H$ will be minimal
+when each of the $2n$ white sides it runs along are of minimal length,
+or length $1$.  Thus the minimal normalized height is $\sqrt{n}$.
+
+Similarly, the height $H$ will be maximal when each white side is of
+maximal length, or length $n-1$.  Thus the maximal normalized height
+is $\sqrt{n(n-1)}$.
+\end{proof}
+
+
+\subsubsection{Hyperbolic cone deformation on $S^3-L$}
+  \label{subsec:crossings}
+
+If the normalized lengths of the slopes on which {D}ehn filling was
+performed were sufficiently large, then Hodgson and Kerckhoff showed
+that the {D}ehn filling could be realized by a hyperbolic cone
+deformation \cite{hk:univ}.  Proposition \ref{prop:proj-height}
+indicates that to attain these minimal normalized slope lengths, we
+need only ensure that there are sufficiently many crossings in each
+twist region.  In particular, by \cite{hk:univ}, provided $\sqrt{c_j}
+\geq 10.6273$, or provided that there are at least $113$ crossings per
+twist region of the prime, twist reduced diagram of $K$, then the
+{D}ehn filling of $S^3-L$ can be realized by a hyperbolic cone
+deformation.
+
+Actually, we will see that the number of crossings in each twist
+region needs to be larger than $113$ to apply Theorem
+\ref{thm:bound-bdry-time}.  For now, however, note that we may ensure
+a hyperbolic cone deformation does exist from $S^3-L$ to $S^3-K$ by
+putting conditions on the diagram of $K$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Finding values for tube radius}
+\label{subsec:tube}
+
+We need to ensure that the tube radius remains larger than $R_1 =
+0.56$ throughout the cone deformation.  We can do so by again applying
+work of Hodgson and Kerckhoff \cite{hk:univ}.  They show that in the
+neighborhood of the $j$-th component of the singular locus, we can
+increase the cone angle from $0$ to $2\pi$, maintaining the tube
+radius $R \geq R_1$, provided equation (\ref{eq:Lhat_int}) of the
+proof of Lemma \ref{lemma:b_j-bound} holds.
+
+That is, consider a particular component of the singular locus
+$\Sigma_j$.  The singular locus consists of crossing circles of the
+link $L$.  At the $j$-th crossing circle, the hyperbolic cone
+deformation performs {D}ehn filling along a slope of the form $1/n_j$.
+Let $L_0$ denote the normalized length of this slope in $S^3-L$.  We
+can then increase the cone angle from $0$ to $2\pi$, maintaining the
+tube radius bound $R \geq R_1$, provided the normalized length $L_0^2$
+is larger than the increasing function $I(R_1)$ defined in equation
+(\ref{eq:Lhat_int}).
+
+So to ensure $R \geq R_1 \geq 0.56$, we compute that $L_0^2$ must be
+at least $113.044$.  By Proposition \ref{prop:proj-height}, we know
+$L_0^2$ is at least $c_i$, where $c_i$ is the number of crossings in
+the $i$-th twist region.  Thus by ensuring there are at least $114$
+crossings in the $i$-th twist region, we will guarantee that our tube
+radius is at least $0.56$.  For general $R_1$, we have the following
+result.
+
+\begin{lemma}
+  Let $K$, $L$ be as above, such that we have a cone deformation from
+  $S^3-L$ to $S^3-K$.  Fix $R_1 \geq 0.531$.
+  Then $R \geq R_1$ throughout the deformation provided the number of
+  crossings in each twist region is at least $I(R_1)$, where $I(R_1)$
+  is defined in equation (\ref{eq:Lhat_int}).
+\label{lemma:crossings-vs-R}
+\end{lemma}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Proof of Theorem \ref{thm:main-knot-cusp}}
+\label{subsec:numeric}
+
+\hspace{.1in}
+
+\medskip
+
+\noindent\textbf{Theorem \ref{thm:main-knot-cusp}} \emph{
+  Let $K$ be a knot in $S^3$ which admits a prime, twist reduced
+  diagram with a total of $n\geq 2$ twist regions, with each twist
+  region containing at least $c\geq 116$ crossings.  In a hyperbolic
+  structure on $S^3-K$, take a horoball neighborhood $U$ about $K$.
+  Normalize so that the meridian on $\partial U$ has length $1$.  Then
+  the height $H$ of the cusp of $S^3-K$ satisfies:
+  $$H\geq n\,(1-f(c))^2.$$
+  Here $f(c)$ is a positive function of $c$ which
+  approaches $0$ as $c$ increases to infinity.
+Additionally, $H\leq n(\sqrt{n-1} + f(c))^2$.
+}
+
+
+\begin{proof}
+  
+  If $K$ admits a prime, twist reduced diagram with at least $2$ twist
+  regions, then we may form the augmented link $L$ from the diagram of
+  $K$.  We have seen in \S\ref{subsec:crossings} that, provided there
+  are at least $113$ crossings in each twist region of the diagram of
+  $K$, then $S^3-L$ and $S^3-K$ are connected by a hyperbolic cone
+  deformation $X_t$, with $X_0=S^3-L$, $X_\tau=S^3-K$.  The singular
+  locus will consist of the crossing circle components of $L$.  There
+  will be $n$ of these.
+  
+  By results of Section \ref{subsec:tube}, if there are at least $114$
+  crossings per twist region then the tube radius of the deformation
+  is at least $R_1=0.56$.  Then by Theorem \ref{thm:main-norm-height}, 
+  $$ -(2\pi)^2\frac{\sqrt{n\,C(R_1)}}{(1-e^{-2R_1})\sqrt{2}}
+  \leq h_\tau-h_0
+  \leq
+  (2\pi)^2\frac{\sqrt{n\,C(R_1)}}{(1-e^{-2R_1})\sqrt{2}},$$
+  where $h_t$ denotes the normalized height of the cusp at time $t$.
+  
+And so:
+\begin{equation}
+ h_0 - (2\pi)^2 \frac{\sqrt{n\,C(R_1)}}{(1-e^{-2R_1})\sqrt{2}} \leq
+h_\tau \leq
+h_0 + (2\pi)^2 \frac{\sqrt{n\,C(R_1)}}{(1-e^{-2R_1})\sqrt{2}}.
+\label{eqn:2-sides}
+\end{equation}
+
+We may now apply part (2) of Proposition \ref{prop:proj-height}.  This
+implies that the initial normalized height $h_0$, i.e. the normalized
+height on $S^3-L$, is between $\sqrt{n}$ and $\sqrt{n(n-1)}$.
+
+Plug this into the left hand side of the above equation and we find:
+\begin{equation}
+h_\tau \geq \sqrt{n}\left(1-(2\pi)^2
+  \frac{\sqrt{C(R_1)}}{(1-e^{-2R_1})\sqrt{2}}\right).
+\label{eqn:h}
+\end{equation}
+
+For the right hand side, we find:
+\begin{equation}
+  h_\tau \leq \sqrt{n}\left(\sqrt{n-1} + (2\pi)^2
+  \frac{\sqrt{C(R_1)}}{(1-e^{-2R_1})\sqrt{2}}\right).
+\label{eqn:hright}
+\end{equation}
+
+The term $C(R_1)$ can be computed explicitly using the formulas in the
+proof of 
+Lemma \ref{lemma:b_j-bound}.  Recall $C(R_1)$ is strictly decreasing,
+approaching $0$ as $R_1$ approaches infinity.  Thus the function
+$$\bar{f}(R_1)= (2\pi)^2\frac{\sqrt{C(R_1)}}{(1-e^{-2R_1})\sqrt{2}},$$
+which appears in both (\ref{eqn:h}) and (\ref{eqn:hright}), is
+decreasing with $R_1$, approaching $0$.  The graph of $\bar{f}$, as
+well as that of $I(R)$, is shown in Figure \ref{fig:F-I-graphs}.
+
+\begin{figure}
+  \begin{center}
+    \framebox{
+      \begin{tabular}{c}
+    \includegraphics[height=1.6in]{figures/F-R1.eps}\\
+    $y=\bar{f}(R)$
+    \end{tabular}}
+\hspace{.1in}
+\framebox{
+  \begin{tabular}{c}
+    \includegraphics[height=1.6in]{figures/I-R1.eps}\\
+    $y=I(R)$
+  \end{tabular}}
+  \end{center}
+  \caption{Graphs of $\bar{f}(R)$ and $I(R)$.  Here $\bar{f}(R)$ gives the
+    bounds in Theorem \ref{thm:main-knot-cusp} for given tube radius
+    $R$.  $I(R)$ gives the number of crossings required to guarantee
+    tube radius $R$.}
+  \label{fig:F-I-graphs}
+\end{figure}
+
+When $R_1=0.56$, $1-\bar{f}(R_1)$ is negative.  Since $h_\tau$
+is known to be positive, this doesn't give a very good estimate in
+(\ref{eqn:h}).  To get a better estimate, we increase $R_1$.  The
+value $1-\bar{f}(R_1)$ becomes positive when $R_1$ is about $0.6624$.
+However, as $R_1$ increases, so does $I(R_1)$, so by Lemma
+\ref{lemma:crossings-vs-R}, we need to increase the number of
+crossings in each twist region to guarantee that the tube radius
+remains larger than $R_1$ throughout the deformation.  In particular,
+$c$ must be at least $116$ to ensure $R_1 \geq 0.6624$.
+
+In general, let $f(c) = \bar{f}(I^{-1}(c))$.  Since $I(R)$ is
+strictly increasing for $R\geq 0.56$, this is well defined.  Then for
+$c\geq 116$, $1-f(c)$ is positive.
+
+To finish the proof, note that we can scale so that the meridian of
+the cusp of $S^3-K$ has length $1$.  Then the actual height $H$ of the
+cusp of $S^3-K$ will be at least $(h_\tau)^2$.
+\end{proof}
+
+Notice in Figure \ref{fig:F-I-graphs} that $\bar{f}$ is close to $0$
+for values of $R$ near $2$.  However for $R$ this size, $I(R)$, or the
+number of crossings required per twist region, is nearly $700$.  We
+find a nice compromise by choosing $R=1.0$.  Then $I(R)$ is not much
+larger than $116$, and yet $1-\bar{f}$ is already over $0.8$.  We use
+this fact in the following corollary, which gives more explicit
+numbers to the results of Theorem \ref{thm:main-knot-cusp}.
+
+\begin{corollary}
+  Let $K$ be as in the previous theorem, with at least $c\geq 145$
+  crossings in each twist region.  Then when the meridian of the cusp
+  of $S^3-K$ is normalized to have length $1$, the height of the cusp
+  satisfies: $$H \geq n\,(0.81544)^2.$$
+\label{cor:0.8}
+\end{corollary}
+
+\begin{proof}
+  Letting $c\geq 145$ in the above theorem ensures that $R> R_1 =
+  1.0$.  Then $1-f(c) = 1-\bar{f}(1.0) \geq 0.81544$.
+\end{proof}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Example: 2--bridge knots}
+\label{subsec:2bridge}
+
+The requirement of Theorem \ref{thm:main-knot-cusp} that there be at
+least $116$ crossings per twist region was based on the worst case
+analysis.  This came from Proposition \ref{prop:proj-height}, in which
+we showed that in the worst possible case, the normalized length of a
+slope was at least the square root of the number of crossings.  When
+we are dealing with particular classes of knots, we can often make
+significantly better estimates, and reduce the number of crossings
+required.  In this section, we present a particular example of such a
+class of knots:  2--bridge knots.
+
+We will determine the circle packing obtained from the proof of
+Theorem \ref{thm:Lhyp} for a 2--bridge knot.  A 2--bridge knot with an
+even number of twist regions will have a corresponding augmented link
+$L$ of the form of Figure \ref{fig:2bridge}, except possibly with
+single crossings added at some crossing circles.  The picture for an
+odd number of twist regions is similar.
+
+\begin{figure}
+  \begin{center}
+  \input{figures/2bridge.pstex_t}
+  \end{center}
+  \caption{Augmented link of a 2--bridge knot with an even number
+    of twist regions, and an even number of crossings per region.}
+  \label{fig:2bridge}
+\end{figure}
+
+In any case, the link will correspond to a trivalent graph $\Gamma$ of
+the form shown in Figure \ref{fig:2bridge_tri}.  Note each region of
+the graph complement gives a circle in the circle packing, with
+tangencies across edges. Thus each circle will be tangent to the
+circles corresponding to regions $A$ and $D$.  The circle packing
+associated with this graph is of the form in Figure
+\ref{fig:2bridge_circ}.
+
+\begin{figure}
+  \begin{center}
+  \input{figures/2bridge_tri.pstex_t}
+  \end{center}
+  \caption{Trivalent graph associated with a 2--bridge knot.}
+  \label{fig:2bridge_tri}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+  \input{figures/Fig_2bridge_circ.pstex_t}
+  \end{center}
+  \caption{Circle packing associated with a 2--bridge knot.}
+  \label{fig:2bridge_circ}
+\end{figure}
+
+Recall that the shape of cusps can be determined by analyzing the
+rectangles we get from taking points of tangency of the circles in
+Figure \ref{fig:2bridge_circ} to infinity.  In particular, we are
+interested in the cusp shapes which correspond to crossing circles in
+the link $L$.  The rectangles tiling these cusps come from the
+tangencies of circle $A$ with certain of the $B_i$ and $C_i$, and from
+tangencies of $D$ with certain of the $B_i$ and $C_i$.  Thus we find
+the general shape of rectangles of this form.
+
+When we take a point of tangency between $A$ and $B_i$ to infinity,
+$i=1$ or $2$, the two circles tangent to both $A$ and $B_i$ are $D$
+and a $C_j$.  These are tangent to each other.  Thus our rectangle in
+this case is a square.  Similarly for points of tangency between $D$
+and $B_i$.
+
+A crossing circle coming from one of these points of tangency will
+therefore be tiled by two squares, with a longitude running across two
+shaded sides.  Then the slope $s_i$ along which Dehn filling is
+performed will have normalized length $\sqrt{1+c_i^2}/\sqrt{2}$.  Note
+this is larger than $I(0.6624)$, implying that the results of Theorem
+\ref{thm:main-knot-cusp} apply, provided $c_i \geq 16$.  It is larger
+than $I(1.0)$, implying the results of Corollary \ref{cor:0.8} hold,
+when $c_i \geq 17$.  Thus the number of crossings in our theorem has
+gone from $116$ to $16$, and $145$ to $17$.
+
+When we take a point of tangency between $A$ and $C_i$, or between $D$
+and $C_i$ to infinity, we get a $1$ by $2$ rectangle.  This is because
+the circles $A$ and $C_i$ are tangent to two distinct circles
+$C_{i-1}$ and $C_{i+1}$, or possibly a $B_i$, which are each tangent
+to $D$.  Since $D$ is also tangent to $A$ and $C_i$, in the picture at
+infinity we have two parallel lines, $A$ and $C_i$, with three full
+sized circles tangent to each other and also to the lines $A$ and
+$C_i$.
+
+In this case, the crossing circle is tiled by two $1$ by $2$
+rectangles, stacked to form a square.  The slope $s_i$
+will have normalized length $\sqrt{4+c_i^2}/\sqrt{4}$.  It will be
+larger than $I(0.6624)$ provided $c_i \geq 22$, and larger
+than $I(1.0)$ provided $c_i \geq 24$.
+
+%% Add info on initial normalized height
+We can also make improvements on the initial normalized height,
+i.e. the value $h(X)$ of Theorem \ref{thm:main-norm-height}.  To
+compute $h(X)$, we determine the shape of the rectangles tiling the
+cusp corresponding to the knot strand.  These include all rectangles
+obtained by taking a point of tangency of the circle packing of Figure
+\ref{fig:2bridge_circ} to infinity, except those tangencies
+corresponding to crossing circle cusps.
+
+Each circle tangency of the form $C_{2k}$ tangent to $D$ will give a
+rectangle on the knot strand cusp.  Similarly, those tangencies of
+circles $C_{2k+1}$ tangent to $A$ will give rectangles on the knot
+strand cusp.  As we saw above, these rectangles will each have
+dimensions $1$ by $2$.  The side of length $2$ will contribute to the
+height.  There will be $(n-2)$ of these rectangles, since each $C_j$
+contributes one.  Thus these rectangles contribute $2n-4$ to the
+height.
+
+Each circle tangency $C_i$ tangent to $C_{i+1}$ also gives a rectangle
+on the knot strand cusp, as do the tangencies $B_1$ with $C_1$ and
+$C_{n-2}$ with $B_2$.  Each of these rectangles is a square,
+contributing $1$ to the height, and there are $(n-1)$ such rectangles.
+
+The tangencies of $B_1$ and $D$ and of $B_2$ and $A$ (or $D$ if $n$ is
+odd) also contribute rectangles of dimension $1$ by $1$ to the knot
+strand.  Finally, the tangency of $A$ to $D$ gives a rectangle with
+dimensions $1$ by $(n-1)$, contributing $(n-1)$ to the height.  Thus
+the total height of the cusp is
+$$(2n-4) + (n-1) + 2 + (n-1) = 4n -4.$$
+
+(When $n=2$ this argument needs to be modified slightly:  there are no
+$C_i$'s, but $B_1$ and $B_2$ are tangent.  Tangencies of $A$ and
+$B_2$, $D$ and $B_1$, and $A$ and $D$ also contribute to the height.
+These all give $1$ by $1$ rectangles, hence the height is $4 = 4n-4$
+in this case as well.)
+
+A meridian runs along the widths of two rectangles in the cusp
+tiling.  Hence it has length $2$.  Thus the normalized height $h(X)$
+is given by:
+$$h(X) = \frac{4n-4}{\sqrt{(4n-4)(2)}} = \sqrt{2(n-1)}.$$
+
+This information will show:
+
+
+\begin{prop}
+  Let $K$ be a 2--bridge knot in $S^3$ which admits a prime, twist
+  reduced diagram with $n\geq 2$ twist regions and at least $c\geq 24$
+  crossings in each twist region.  In a hyperbolic structure on
+  $S^3-K$, normalized such that the meridian has length $1$, the
+  height of the cusp of $S^3-K$ satisfies:
+  $$\left(\sqrt{2(n-1)} - \sqrt{n}(0.18456)\right)^2 \leq H \leq
+	\left(\sqrt{2(n-1)} + \sqrt{n}(0.18456)\right)^2.$$
+\label{prop:2bridge}
+\end{prop}
+
+\begin{proof}
+Let $L$ be the augmented link corresponding to $K$.  Provided we have
+at least $n\geq 2$ twist regions, Theorem \ref{thm:Lhyp} implies
+$S^3-L$ is hyperbolic.  We have seen in the above discussion that,
+provided we have at least $c\geq 24$ crossings in each twist region,
+the slope on each crossing circle of $L$ on which we perform Dehn
+filling has normalized length at least $I(1.0)$.  This implies that a
+cone deformation exists from $S^3-L$ to $S^3-K$ for which the tube
+radius is at least $R_1= 1.0$ throughout.  Then Theorem
+\ref{thm:main-norm-height} implies the normalized height of the cusp
+of $S^3-K$ satisfies:
+$$-\frac{\sqrt{n}(2\pi)^2\sqrt{C(1.0)}}{(1-e^{-2.0})} \leq
+ h_{\tau} - \sqrt{2(n-1)} \leq
+ \frac{\sqrt{n}(2\pi)^2\sqrt{C(1.0)}}{(1-e^{-2.0})}.$$
+Using the formulas for $C(1.0)$ from the proof of Lemma
+ \ref{lemma:b_j-bound}, we find
+$$\sqrt{2(n-1)} - \sqrt{n}(0.18456) \leq h_{\tau} \leq
+ \sqrt{2(n-1)} + \sqrt{n}(0.18456).$$
+We obtain the final result by noting if we scale such that the
+meridian has length $1$, then the height is at least $(h_\tau)^2$.
+\end{proof}
+
+
+
+
+

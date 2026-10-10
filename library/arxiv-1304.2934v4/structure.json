@@ -6,7 +6,8 @@
   "sha256": "b7ed2a9e85264568cfaa4edb008fc4e3c3fc7bd3a1bc0996e76df2ad59a1f783",
   "bytes": 1874483,
   "pages": 103,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -845,6 +846,234 @@
   "likely_scanned": false,
   "toc_entries": 55,
   "sections": 42,
-  "chars_total": 217955
+  "chars_total": 217955,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "deviant.tex",
+   "tex_sections": 12,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-12-theoretical-results",
+     "title": "Theoretical results",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-13-applications",
+     "title": "Applications",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-14-forthcoming-works",
+     "title": "Forthcoming works",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-15-discussion-on-our-hypotheses",
+     "title": "Discussion on our hypotheses",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-21-basic-examples-of-mod-convergence",
+     "title": "Basic examples of mod-convergence",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-22-legendre-fenchel-transforms",
+     "title": "Legendre-Fenchel transforms",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-23-gaussian-integrals",
+     "title": "Gaussian integrals",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-31-lattice-and-non-lattice-distributions",
+     "title": "Lattice and non-lattice distributions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-32-deviations-at-the-scale-otn",
+     "title": "Deviations at the scale O(tn)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-33-central-limit-theorem-at-the-scales-otn-and-o",
+     "title": "Central limit theorem at the scales o(tn) and o(tn23)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-41-berry-esseen-estimates",
+     "title": "Berry-Esseen estimates",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-42-deviations-at-scale-otn",
+     "title": "Deviations at scale O(tn)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-43-central-limit-theorem-at-the-scales-otn-and-o",
+     "title": "Central limit theorem at the scales o(tn) and o(tn23)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-51-bounds-on-cumulants-and-mod-gaussian-converge",
+     "title": "Bounds on cumulants and mod-Gaussian convergence",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-52-precise-deviations-for-random-variables-with",
+     "title": "Precise deviations for random variables with control on cumulants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-53-link-with-the-cram\u00e9r-petrov-expansion",
+     "title": "Link with the Cram\u00e9r-Petrov expansion",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-61-technical-preliminaries",
+     "title": "Technical preliminaries",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-62-a-precise-upper-bound",
+     "title": "A precise upper bound",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-63-a-precise-lower-bound",
+     "title": "A precise lower bound",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-71-mod-convergence-from-an-explicit-formula-for",
+     "title": "Mod-convergence from an explicit formula for the Laplace transform",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-72-additive-arithmetic-functions-of-random-integ",
+     "title": "Additive arithmetic functions of random integers",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-73-number-of-cycles-in-weighted-probability-meas",
+     "title": "Number of cycles in weighted probability measure",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-74-rises-in-random-permutations",
+     "title": "Rises in random permutations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-75-characteristic-polynomials-of-random-matrices",
+     "title": "Characteristic polynomials of random matrices in a compact Lie group",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-81-background-central-limit-theorem-from-locatio",
+     "title": "Background: central limit theorem from location of zeros",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-82-mod-gaussian-convergence-from-non-negative-fa",
+     "title": "Mod-Gaussian convergence from non-negative factorizations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-83-two-examples-uniform-permutations-and-uniform",
+     "title": "Two examples: uniform permutations and uniform set-partitions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-84-third-cumulant-of-the-number-of-blocks-in-uni",
+     "title": "Third cumulant of the number of blocks in uniform set-partitions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-9-dependency-graphs-and-mod-gaussian-convergence",
+     "title": "Dependency graphs and mod-Gaussian convergence",
+     "prose_ratio": 0.095,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-030-91-the-theory-of-dependency-graphs",
+     "title": "The theory of dependency graphs",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-92-joint-cumulants",
+     "title": "Joint cumulants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-93-useful-combinatorial-lemmas",
+     "title": "Useful combinatorial lemmas",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-94-proof-of-the-bound-on-cumulants",
+     "title": "Proof of the bound on cumulants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-95-sums-of-random-variables-with-a-sparse-depend",
+     "title": "Sums of random variables with a sparse dependency graph",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-101-a-bound-on-cumulants",
+     "title": "A bound on cumulants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-102-polynomiality-of-cumulants",
+     "title": "Polynomiality of cumulants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-103-moderate-deviations-for-subgraph-count-stati",
+     "title": "Moderate deviations for subgraph count statistics",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-038-111-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.257,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-039-112-bounds-and-limits-of-the-cumulants",
+     "title": "Bounds and limits of the cumulants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-113-asymptotics-of-the-random-character-values-a",
+     "title": "Asymptotics of the random character values and partitions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

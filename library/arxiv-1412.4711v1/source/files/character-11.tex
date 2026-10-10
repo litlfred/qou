@@ -1,0 +1,688 @@
+\section*{Introduction}
+
+Representation varieties of finitely presented  groups into Lie groups has been studied since a long time.  A recent by Sikora paper with many references
+is  \cite{Sikora}.  In this paper we concentrate on the representations of 3-manifold groups in $\PGL(3,\bC)$ or $\SL(3,\bC)$.
+  The case of surface groups have been studied more extensively and their  representation varieties
+into $\SL(3,\bC)$ are treated by Lawton in \cite{Lawton}.  On the other hand, only recently the study
+of representations of 3-manifold groups into $\SL(3,\bC)$ or  $\PGL(3,\bC)$  has been started. See for instance the work of Porti and Menal-Ferer \cite{MF}, of Garoufalidis, Goerner, Thurston and Zickert \cite{GTZ,GGZ} and of Bergeron with the two first named authors \cite{BFG} among others.  One has to keep in mind
+the deep study which was started in the last decades of the last century on representations into $\SL(2,\bC)$ by several authors among them
+Thurston \cite{Thurston}.  It gives a paradigm for the present study in the case of  $\PGL(3,\bC)$.  
+
+Let $\Geight$ be the fundamental group of the figure eight knot complement. We present here a thorough study of the space of representations of $\Geight$ into $\PGL(3,\bC)$ and $\SL(3,\bC)$.  It turns out that all the irreducible representations we find in  $\PGL(3,\bC)$ can be lifted to $\SL(3,\bC)$.  Therefore, most of the computations will be made in $\PGL(3,\bC)$ but we will occasionally work with $\SL(3,\bC)$.
+
+We begin with a review of different versions of this space (representation variety, character variety, decorated representations among others) and the coordinates we use to study these varieties in a rather general setting.  A diagram, displayed in Figure \ref{fig:diagram}, shows the several representation spaces and their relations.  The main coordinate system we use is derived from projective flag decorations of ideal triangulations of a 3-manifold as introduced in \cite{BFG} (see also \cite{GGZ}).   Another view of these spaces is given in  \cite{Zickert-A-pol} using Ptolemy coordinates, which are coordinates for affine flags decorations of ideal triangulations. Those work are accessible through the website CURVE \cite{CURVE}.
+
+\begin{comment}
+A simplest representation variety for the fundamental group of a 3-manifold is the one for representations  into $\SL(3,\bC)$ instead of $\PGL(3,\bC)$. 
+In section \ref{dimension} we obtain a lower bound for the dimension of the representation space
+of the fundamental group of a 3-manifold into $\SL(3,\bC)$ analogue to the bound obtained 
+in \cite{CS}  (propostion 3.2.1) and \cite{Thurston}.  In the case of a 3-manifold with 
+a torus boundary it implies that all components containing an irreducible representation with infinite 
+image are of dimension at least two.  
+Moreover, in the case of a hyperbolic manifold with boundary,  the irreducible component containing the 
+geometric representation (that is the composition of the $\SL(2,\bC)$ representation with the
+irreducible monomorphism of $\SL(2,\bC)$ into $\SL(3,\bC)$)
+has dimension equal to twice the number of cusps. 
+\end{comment}
+
+Then we proceed in section \ref{computations} to an explicit description of these different spaces for the group $\Geight$ and the different maps relating these spaces.  We use coordinates on a Zariski open set of our spaces which are associated to a given triangulation.  In particular, we describe 
+a Zariski open set (called the deformation variety) of the set of decorated representations into $\PGL(3,\bC)$ given by coordinates we introduced in \cite{BFG}.
+The main theorem is  Theorem \ref{3components}: 
+Given the standard triangulation of the figure eight knot  complement, there exits precisely three irreducible components of the
+ deformation variety.  Each component is smooth of dimension two. Whereas this result is stated and proved only for the deformation variety, we strongly believe this is also the case for the whole character variety. A precise statement and proof should appear elsewhere.
+This section begins with a reminder about Groebner basis and saturation, then a presentation of the actual equations for the figure eight knot complement in \S \ref{ss:equations}. We then proceed with a general presentation of our method to achieve computations. Eventually, we give precisions of the specific case of the figure eight knot complement.
+The three components are finally described in subsection \ref{results}.  It turns out that each representation can be lifted to an $\SL(3,\bC)$ representation. Once these components are identified, we may check the properties stated in the theorem (irreducibility, smoothness...).
+
+The next section \ref{s:A-var} is devoted to some more precise understanding of these components: description the $A$-variety associated to this knot (it is a natural analog of the A-polynomial), identification of the boundary unipotent representation and identification of the space of representations in $\PGL(2,\bC)$.
+
+Finally, in section \ref{deformation}, we describe a deformation method to obtain a parametrization of some generators of $\Geight$ on each irreducible components.
+This method allows one to obtain a particular irreducible component
+of the representation variety containing a given representation.  It is based on a Newton method and LLL algorithm and was successfully used in other contexts
+\cite{CLTa,CLTb}. We applied it to the boundary unipotent representations
+of the fundamental group of the figure eight knot complement. A great interest of this method is that its output is indeed a parametrization of matrices. It opens the path to a geometric study of those representations, see e.g. \cite{DF}.
+However it does not belong to its scope to determine all the irreducible components. We insist on the fact that it is the conjunction of both methods that gives a satisfactory result: a parametrization of each component.
+%To ADD : citations, review of papers... \cite{HP}, \cite{SegTill}
+
+We thank Nicolas Bergeron, Martin Deraux,  Matthias Goerner, Julien March\'e, Pierre Will, Maxime Wolff and Christian Zickert for many discussions and exchanges during this project.
+The authors are grateful to the ANR 'Structures G\'eom\'etriques Triangul\'ees' which has financed this project during  the last two years.
+
+\section{Representation spaces}
+
+We begin with a review of the different spaces classically considered as representation spaces. As we will consider several variations of the same space, we try to use explicit -- but sometimes lenghty -- names for these spaces.
+
+Let $\Gamma$ be a finitely presented group and $G$ the group of points over $\bC$ of a linear algebraic group. In the following, we will mainly consider $G=\PGL(3,\bC)$ or $\SL(3,\bC)$, but we will occasionally look also at $\PGL(2,\bC)$, $\SL(2,\bC)$ or even the real group $\mathrm{PU}(2,1)$. 
+
+\subsection{Representation variety and character variety}
+
+We begin by the most classical representation variety and character variety.
+
+\newcommand{\Mon}{\mathrm{Mon}}
+
+\begin{defn} 
+We denote by $\Hom(\Gamma, G)$ the set of all morphisms
+from $\Gamma$ to $G$. This space is called the \emph{representation variety}.
+
+The \emph{monodromy variety}\footnote{Neither the name nor the notation is classical. The name has been so choosen because a geometric structure on a variety gives naturally, via the monodromy of the structure, an element in the monodromy variety.} $\Mon(\Gamma,G)$ is the quotient under the natural action by conjugation of $G$ :
+$$\Mon(\Gamma,G)=\Hom(\Gamma,G)/G.$$
+\end{defn}
+
+Note that $\Hom(\Gamma,G)$ is an affine algebraic variety as $\Gamma$ is finitely presented and $G$ is affine  algebraic. Moreover the relators correspond to generators of the ideal defining the variety. Note however that $\Mon(\Gamma,G)$ is not an algebraic variety.
+%Note that for $n=2$ the group $\PSL(2,\bC)$ is isomorphic to $\SO(3,\bC)$.
+
+Though, the action of $G$ on itself by conjugation is an algebraic action.  Therefore it defines an algebraic action on $\Hom(\Gamma, G)$ which induces an
+algebraic action on its regular functions.  We let $\bC[\Hom(\Gamma, G))]^{G}$ be the ring of invariant functions.
+\begin{defn}
+The \emph{character variety} is the algebraic quotient:
+$$
+X(  \Gamma, G)=\Hom(\Gamma, G)//G.
+$$
+It is the affine variety associated to the ring  $\bC[\Hom(\Gamma, G)]^{G}$ and comes together with the  regular map
+$\Hom(\Gamma, G)\rightarrow  X(\Gamma, G)$ induced by the homomorphism 
+$$
+  \bC[X(  \Gamma, G)]=\bC[\Hom(\Gamma, G)]^{G} \rightarrow \bC[\Hom(\Gamma, G)]. 
+$$
+\end{defn}
+\newcommand{\tr}{\mathrm{tr}}
+The name of this variety comes from its links with the set of \emph{characters}, at least when $G=\SL(n,\bC)$ or $\PGL(n,\bC)$. 
+
+When $G=\SL(n,\bC)$ traces of elements are well defined and one knows that there is a bijection between the character variety and the set of trace functions.
+
+For the case $G=\PGL(n,\bC)$, let us remark that for an element $g$ in $\PGL(n,\bC)$, one may define its trace to the power $n$: choose a representant $\tilde g$ of $g$ which belongs to $\SL(n,\bC)$. Then we put: $\tr^n(g):=\tr^n(\tilde g)$. It does not depend on the choice of $\tilde g$.
+
+\begin{defn} The character of $\rho\in\Hom(\Gamma,G)$ is the trace function
+$\chi_\rho : \Gamma\rightarrow \bC$ defined by $\chi_\rho(\gamma)={\mbox{tr}}^n(\rho(\gamma))\ $. 
+\end{defn}
+ 
+Although we will not use it here, we believe that the map 
+$$ 
+X(  \Gamma, G)\rightarrow \{\textrm{characters of }\Gamma\} 
+$$
+induced by $\rho \mapsto \chi_\rho$ is a bijection. It is well-known for $n=2,\, 3$, see e.g. \cite{Lawton}.
+% From now on, we will identify $X(\Gamma,G)$ and the set of characters.
+Note that there is also a natural application from $\Mon(\Gamma,G)$ to $X(\Gamma,G)$ sending the class of a representation $\rho$ to $\chi_\rho$. This application is a surjection, but not an injection. It is not algebraic, as $\mathrm{Mon}(\Gamma,G)$ is not an algebraic variety.
+
+\subsection{Decorated versions}
+
+From now on, we assume $G=\PGL(n,\bC)$. A key point to study the previous defined spaces is to add a geometric structure on it, as usual in the study of moduli spaces. 
+Such a structure is called a \emph{decoration} and will be most easily defined with additional assumption: from now on $\Gamma$ is the fundamental group of a $1$-cusped hyperbolic $3$-variety $M$ (as the figure eight knot complement)\footnote{This assumption is not necessary and one may work with a triangulated $3$-variety (either hyperbolic with more cusps, or with boundary, or even not hyperbolic). We refer to \cite{BFG} for this setting.}. As $M=\mathbb H^3/\Gamma$ is a cusped hyperbolic manifold, we let
+ $\mathcal P\subset \mathbb{CP}^1=\partial \mathbb H^3$ be the set of cusps in the boundary of the hyperbolic space. By construction, $\Gamma$ acts on $\mathcal P$.
+Let moreover $\mathcal Fl$ be the space of complete flags of $\mathbb{CP}^n$. There is a natural action of $\PGL(n,\bC)$, for which $\mathcal Fl$ becomes the quotient of $\PGL(n,\bC)$ by the subgroup of upper-triangular matrices. Hence, given a representation $\rho$ of $\Gamma$ in $\PGL(n,\bC)$, we have an action of $\Gamma$ on $\mathcal Fl$, through $\rho$.  For these objects and the following, we refer to \cite{BFG}.
+
+\newcommand{\DecHom}{\mathrm{DecHom}}
+
+\begin{defn}
+Let $\rho \in \Hom(\Gamma,G)$. Then $\Gamma$ acts both on $\mathbb{CP}^1$ and $\mathcal Fl$. A \emph{decoration} of $\rho$ is a $\Gamma$-covariant map :
+$$\phi : \mathcal P\to \mathcal Fl.$$
+Let $\DecHom(\Gamma,G)$ be the decorated representations variety:
+$$\DecHom(\Gamma,G)=\{(\rho,\phi)|\; \rho\in \Hom(\Gamma,G), \; \phi\textrm{ is a decoration of }\rho\}.$$ 
+\end{defn}
+
+As the group $G=\PGL(n,\bC)$ acts on $\mathcal Fl$, it acts on the space of maps $\mathcal P\to \mathcal Fl.$
+Moreover, it is easily checked that if $\phi$ is a decoration of $\rho$, then $g\cdot \phi$ is a decoration of the conjugated $g\cdot \rho=g\rho g^{-1} $. 
+Hence $G$ acts on the space $\DecHom(\Gamma,G)$. 
+
+\newcommand{\DecMon}{\mathrm{DecMon}}
+
+\begin{defn}
+We define the \emph{decorated monodromy varieties} $\DecMon(\Gamma,G)$ as the naive quotient:
+$$\DecMon(\Gamma,G)=\DecHom(\Gamma,G)/G.$$
+\end{defn}
+
+
+We now proceed by defining a decorated version of the character variety. 
+First of all, note that the space of flags $\mathcal Fl$ is an algebraic variety and the action of $G$ is algebraic. 
+Moreover, $\DecHom(\Gamma,G)$ is an algebraic variety: indeed, choose a \emph{finite} fundamental set $\{p_1,\ldots,p_r\}$ for the action of $\Gamma$ on $\mathcal P$. 
+Then a decorated representation $(\rho,\phi)$ is uniquely determined by a choice of a flag $F_i$ for each $p_i$ such that $F_i$ is stabilized by $\mathrm{Stab}_\Gamma(p_i)$.
+
+\newcommand{\DecX}{\mathrm{Dec}X}
+
+We now consider the algebraic quotient of $\DecHom(\Gamma,G)$ under this action:
+\begin{defn}
+We define the \emph{decorated character variety} $\DecX(\Gamma,G)$ as the algebraic quotient:
+$$\DecX(\Gamma,G)=\DecHom(\Gamma,G)//G.$$
+\end{defn}
+
+
+
+\subsection{Peripheral representations: choosing a meridian and a longitude}\label{ss:lm}
+\newcommand{\Hol}{\mathrm{Hol}}\newcommand{\periph}{\mathrm{periph}}
+
+By considering decorated versions of the representations, we also grant an easy parametrization 
+for the \emph{peripheral representation}, that is the restriction of the representation to the fundamental group of the peripheral torus. This is more carefully studied in \cite[Section 1]{G}. Recall that $M$ is a $1$-cusped hyperbolic $3$-manifold. Let $\mathbb T$ be the peripheral torus.
+
+First, let $\Gamma_\mathrm{para}$ be the set of parabolic elements of $\Gamma$ (the identity is not considered parabolic). 
+Each element $\gamma$ of $\Gamma_\mathrm{para}$ stabilizes a unique cusp $p_\gamma\in\mathcal P$. 
+Consider a decorated representation $(\rho,\phi)\in \DecHom(\Gamma,G)$. 
+Let $D$ be the diagonal group of $G$. Then, in any basis adapted to the flag $\phi(p_\gamma)$,
+$\rho(\gamma)$ is an upper-diagonal matrix. Moreover, the diagonal part of $\rho(\gamma)$ is invariant under the action of $G$ \cite{G}.
+Hence we get a $G$-invariant map: 
+$$\DecHom(\Gamma,G)  \to \{\Gamma_\mathrm{para}\to D\}.$$
+\newcommand{\dec}{\mathrm{dec}}
+
+
+In order to parametrize the peripheral representations, we fix, \emph{once for all}, the following choices: 
+\begin{itemize}
+\item $\pi_1(\mathbb T)\simeq \mathbb Z^2$, through the choice of a longitude $l$ and a meridian $m$ of $\mathbb T$.
+\item An injection $\pi_1(\mathbb T)\to \Gamma=\pi_1(M)$.
+\end{itemize}
+
+A representation in $\Hom(\Gamma,G)$ may be restricted to $\pi_1(\mathbb T)$. This gives an algebraic map of \emph{restriction}:\newcommand{\restr}{\mathrm{restr}}
+$$X(\Gamma,G)\xrightarrow{\restr}X(\mathbb Z^2,G).$$
+Moreover, in the decorated case, as $\pi_1(\mathbb T)$ is composed of parabolic elements, we get a map, called \emph{peripheral holonomy map} and denoted by $\Hol_\periph$:
+$$\DecX(\Gamma,G)\xrightarrow{\Hol_\periph}X(\mathbb Z^2,D)=:\DecX(\mathbb Z^2,G).$$
+It consists, at the level of decorated representations, in sending a decorated representation to the diagonal part of the restriction restricted to $\pi_1(\mathbb T)$.
+
+The last step of the parametrization is achieved by noting that $D$ is an affine algebraic group isomorphic to $(\bC^*)^{n-1}$ in the case $G=\PGL(n,\bC)$ or $\SL(n,\bC)$. We fix \emph{once for all} such an isomorphism. Using this, the space $\DecX(\mathbb Z^2,G)=X(\mathbb Z^2,D)$ is isomorphic to $(\bC^*)^{2(n-1)}$. This is the desired parametrization of the peripheral representations.
+
+ In the case of $\PGL(3,\bC)$, we choose (for computational reasons, see section \ref{computations}) more precisely to use the isomorphism between $D$ and $(\bC^*)^2$ given by:
+$$\begin{pmatrix} L^*&&\\&1&\\&&L\end{pmatrix}\quad \mapsto\quad (L,L^*).$$
+ So the space $X(\mathbb Z^2,D)$ is isomorphic to $(\bC^*)^4$. A representation such that the diagonal part of the longitude and the meridian are:
+ \[
+\rho(l) = \left[ \begin{matrix}
+  L^* & \ast & \ast\\
+    0 & 1 & \ast\\
+    0 & 0 & L
+  \end{matrix} \right]\quad \textrm{and}\quad \rho(m) = \left[ \begin{matrix}
+  M^* & \ast & \ast\\
+    0 & 1 & \ast\\
+    0 & 0 & M
+  \end{matrix} \right]
+ \]
+will be represented by the coordinates $(L,L^*,M,M^*)$ (the choice is made to be compatible with the one 
+we used in \cite{BFG}).
+
+
+
+\begin{comment}
+Denote by $\chi^{\dec}_{\rho,\phi}$ the map $\Gamma\to D\simeq \bC^{n-1}$ defined by: 
+\begin{itemize}
+\item if $\gamma$ is not parabolic, send it to $\frac1{n-1}(\tr^n(\rho(\gamma)),\ldots,\tr^n(\rho(\gamma)))\in\bC^{n-1}$.
+\item $\gamma$ is parabolic, send it to $\Hol_\periph(\gamma)$.
+\end{itemize}
+
+Then a slight variation of the non-decorated case gives
+%\footnote{A proof will appear in another paper.}:
+\begin{pro}  The map 
+$$ 
+\DecX(  \Gamma, G)\rightarrow \{\textrm{decorated characters of }\Gamma\} 
+$$
+induced by $(\rho,\phi) \mapsto \chi^{\dec}_{\rho,\phi}$ is a bijection.
+\end{pro}
+\end{comment}
+
+
+\subsection{Deformation variety}\label{ss:deformationvariety}
+
+Thurston \cite{Thurston} defined coordinates on 
+$$\DecX(\Gamma,\PGL(2,\bC))
+$$ by defining the \emph{deformation variety} with the \emph{gluing equations}. We use in this paper an analog og this space for the group $\PGL(3,\bC)$. From now on, we will always assume that $n=3$. This space is defined by further assuming that $M$ is ideally triangulated: $M$ is homeomorphic to a gluing of tetrahedra with vertices removed as in \cite{Thurston, BFGKR}
+So let $\mathcal T=(T_1,T_2,\ldots,T_\nu)$ be an ideal triangulation of $M$.
+
+We now recall coordinates on these spaces as defined in \cite{BFG} (see Figure \ref{coordinates}).  For each of these (oriented) tetrahedra, one consider a set of $16$ coordinates: one on each half-edge and one in the center of this face. If the vertices of the tetrahedron $T$ are $(ijkl)$, one has twelve coordinates on half edges, denoted by $z_{ij}(T)$, $z_{ik}(T)$... and four on faces, denoted by $z_{ijk}(T)$.
+
+\begin{figure}
+\input{coordinates.pdf_tex}
+\caption{Coordinates for a tetrahedron of flags}\label{coordinates}
+\end{figure}
+
+ As described in \cite{BFG}, these coordinates are subject to two different kinds of consistency relations: 
+\begin{itemize}
+ \item Internal relations: for a tetrahedron $T=(ijkl)$ we have around each vertex $z_{ij}(T)z_{ik}(T)z_{il}(T)=-1$ and $z_{ik}(T)=\frac{1}{1-z_{ij}(T)}$; and for each face $z_{ijk}(T)=-z_{il}(T)z_{kl}(T)z_{jl}(T)$.  
+ \item Gluing relations: first, given two adjacent tetrahedra $T_{\mu}$, $T_{\mu'}$
+of $T$ with a common face  
+$(ijk)$ then 
+\begin{equation} \label{face}
+z_{ijk} (T_{\mu}) z_{ikj} (T_{\mu'}) = 1.
+\end{equation}
+second given a sequence $T_1, \ldots , T_{\mu}$ of tetrahedra sharing a
+common edge $ij$ and such that $ij$ is an inner edge of the sub-complex composed by $T_1\cup \cdots \cup T_{\mu}$ 
+then 
+\begin{equation} \label{edge}
+z_{ij} (T_1) \cdots z_{ij} (T_{\mu}) = z_{ji} (T_1) \cdots z_{ji} (T_{\mu}) = 1.
+\end{equation}
+ \end{itemize}
+ 
+Given $M$ and a triangulation $\mathcal{T}$ with $n$ tetrahedra, we consider the space of solutions of these equations and denote it by 
+$$
+\mathrm{Defor}(M,\mathcal{T})\subset \bC^{16n}.
+$$
+We call it the {\it deformation variety} of a triangulation. 
+
+Up to combinatoric choices, the holonomy map associates to each point in $\mathrm{Defor}(M,\mathcal T)$ a decorated representation into $\PGL(3,\bC)$ as in \cite[section 5]{BFG}: 
+$$
+\mathrm{Defor}(M,\mathcal{T})\rightarrow \mathrm{DecHom}(\pi_1(M),\PGL(3,\bC)).
+$$
+Moreover this map is algebraic\footnote{indeed, by construction, the expression of the matrix entries are algebraic.} and a different initial choice gives a conjugated decorated representation.  
+
+So this gives two well defined maps, landing in $\DecMon$ or $\DecX$, both called holonomy maps and denoted by $\Hol$. Note that the second one is algebraic: 
+$$
+\Hol\: : \:\mathrm{Defor}(M,\mathcal{T})\rightarrow \DecMon(\pi_1(M),\PGL(3,\bC)),
+$$
+and
+$$
+\Hol\: : \:\mathrm{Defor}(M,\mathcal{T})\rightarrow \DecX(\pi_1(M),\PGL(3,\bC)),
+$$
+We extend the peripheral holonomy map defined in the previous section in a natural way:
+\[
+\Hol_\periph\: : \:\mathrm{Defor}(M,\mathcal{T})\rightarrow\DecX(\pi_1(T),\PGL(3,\bC))\simeq(\bC^*)^4
+\]
+
+Let us comment a bit on the properties of both the holonomy maps $\Hol$: the first map is injective but not surjective, as some representation are not detected by a given triangulation. Moreover, if you forget the decoration, the maps are not any more injective : there is a (generically) finite choice for a decoration of a given representation.  All this can be seen already in the case of representations
+into $\PGL(2,\bC)$. In particular the identity representation can be obtained by gluing two tetrahedra to obtain the 
+sphere $S^3$ minus  four points and the solutions to the hyperbolic equations has a curve such that the associated representations are 
+trivial \cite{SegTill}.  Also, in the tables obtained in \cite{BFGKR} the 1-dimensional components give conjugated representations with  finite group image into $\PGL(3,\bC)$.
+Examples where a given triangulation is not enough to describe all representation are given in \cite{SegTill} already in the case of
+representations into $\PGL(2,\bC)$.
+
+On the other hand, the situation is good on some components. First, recall that, as $M$ has been assumed to be hyperbolic, there is the monodromy $[\rho_{\mathrm{geom}}]\in\Mon(\Gamma,\PGL(2,\bC))$ of the unique oriented complete hyperbolic structure on $M$. We call it the \emph{geometric representation}. Moreover, the irreducible representation $\PGL(2,\bC)\to\PGL(n,\bC)$ gives a map $\Mon(\Gamma,\PGL(2,\bC))\to\Mon(\Gamma,\PGL(n,\bC))$. We still call the image of $[\rho_{\mathrm{geom}}]$ the \emph{geometric representation}, still denoted by $[\rho_{\mathrm{geom}}]\in\Mon(\Gamma,\PGL(n,\bC))$. One can then state the following theorem for $\PGL(2,\bC)$ see \cite{Thurston,SegTill}, with a mild assumption on the triangulation that we will not define here and that is verified for the triangulation of the figure eight knot complement we will use:
+
+\begin{theorem} Let M be an orientable, connected, cusped hyperbolic manifold.  Let $\mathcal{T}$
+be an ideal triangulation of M such that all edges are essential.  Then there exists $z_{\mathrm{geom}}\in \mathrm{Defor}(M,\mathcal{T})$
+such that $\Hol(z_{\mathrm{geom}})$ is the geometric representation.  
+
+Moreover the whole  component of $X(\Gamma,\PGL(2,\bC))$ containing the (image of) the geometric representation is in the image  of the holonomy map $\Hol$.
+\end{theorem}
+
+The analogous theorem in the case of $\PGL(3,\bC)$ is believed to be true:  
+Let $M$ be an orientable, connected, cusped hyperbolic manifold.  Let $\mathcal{T}$
+be an ideal triangulation of $M$ such that all edges are essential.  Then there exists $z_{\mathrm{geom}}\in \mathrm{Defor}(M,\mathcal{T})$
+such that $\Hol(z_{\mathrm{geom}})$ is the geometric representation. We believe that the image of $\Hol$ contains the whole  component of $X(\Gamma,\PGL(3,\bC))$ containing the geometric representation.
+
+
+We also know that $z_{\mathrm{geom}}\in \mathrm{Defor}(M,\mathcal{T})$ is a smooth point (see \cite{BFGKR}). 
+
+
+\subsection{A diagram}
+
+At this point, one may write a commutative diagram: see figure \ref{fig:diagram}. Note that, between algebraic varieties, the maps are algebraic. Moreover, the vertical maps are just the forgetful maps. The non-algebraic maps are denoted by dashed lines. For the sake of readability, we drop the mentions of $\Gamma$ and $G$. Moreover, we denote by $\DecX_{\mathbb T}$ and $X_{\mathbb T}$ the (decorated) character variety of $\pi_1(\mathbb T)$. Recall that we have done a choice of an isomorphism $D\simeq (\bC^*)^2$ and of a longitude $l$ and meridian $m$ in the torus $\mathbb T$, so that $\DecX_{\mathbb T}$ is isomorphic to $(\bC^*)^4$.
+\begin{figure}[ht]
+\begin{center}
+\xymatrixcolsep{3.5pc}\xymatrix{
+\mathrm{Defor} \ar@/^2.5pc/[ddrrr]^{\: \Hol \:} \ar[ddr]_{\small \txt{(up to\\choices)}} \ar@{-->}[drr]^{\: \Hol\: } \ar@/^3pc/[ddrrrr]^{\: \Hol_\periph \:}&&&&&\\
+&&\DecMon \ar@{-->}[dr] \ar@{-->}'[d]'[dd][ddd]&&&\\
+&\DecHom \ar[d] \ar@{-->}[ur] \ar[rr]&&\DecX \ar[d] \ar[r]^-{\Hol_\periph}&\DecX_{\mathbb T}\ar[d]\\
+&\Hom \ar[rr] \ar@{-->}[dr] &&X \ar[r]^{\restr}&X_{\mathbb T}\\
+&&\Mon \ar@{-->}[ur]&&&
+}
+\end{center}
+\caption{The different representation varieties}\label{fig:diagram}
+\end{figure}
+
+
+\subsection{The A-variety}
+
+In this section we will work with representations with values in $\SL(3,\bC)$. As before $M$ is a 3-manifold with boundary a torus where we fix a basis 
+of the homology group given by a choice of a longitude and a meridian. One can identify $\DecX(\mathbb Z^2,G)$ to the diagonal representations of $\mathbb Z^2$.  As before, we see that
+$\DecX(\mathbb Z^2,G)$ is isomorphic to $(\bC^*)^4$.  The map $\DecX_{\mathbb T}\rightarrow X_{\mathbb T}$ is the quotient by the permutation group $S_3$ acting on the triple of complex numbers whose product is $1$.
+
+Consider the closure of the image of $\DecX(\pi_1(M),\SL(3,\bC))$ in $\DecX(\mathbb Z^2,G)$.   Let $D_M$  be the union of the component of maximal dimension of this closure.
+
+Consider now a natural embedding  ${\bC^*}^4\subset \bC P^4$ given by ${(L,L^*,M,M^*,1)}$ and $\bar D_M$ the closure of the 
+image of $D_M$. The ideal boundary of $D_M$ is $\bar D_M\setminus D_M$.  Essentially the following definition was given independently in \cite{Zickert-A-pol}. 
+
+\begin{defn}\label{defaideal}
+We define the $A$-variety of $M$ (for $n=3$ and with a choice of basis of the boundary torus homology) to be the closure of $D_M$ in  $\bC^4$.
+We define the \emph{A-ideal} to be its defining ideal.
+\end{defn}
+
+\begin{comment}
+\section{Dimensions of character varieties}\label{dimension}
+
+In this section we give a lower bound for the dimension of irreducible components of the character variety containing irreducible representations.  We follow the proof in the case of $\SL(2,\bC)$ as in \cite{CS}  (proposition 3.2.1) and \cite{Thurston}  (proposition 5.2.2 and  Theorem 5.6).
+We will restrict ourselves to the the case of $\SL(3,\bC)$. The statement is the following one:
+\begin{thm}\label{thm:dimcharvar}
+Let N be a compact orientable 3-manifold. Let $\rho_0 : \pi_1(N)\rightarrow \SL(3,\bC)$ be an irreducible representation 
+with infinite image
+ such that for each torus component  of $\partial N$, the image of ${\rho_{_0}}_{ \vert\pi_1(\partial N)}$ contains a non-central element.  Let
+$X_0$ be an irreducible component of $X (N)$ containing $[\rho_0]$.  
+Then ${\rm dim} X_0 \geq 2 s - 8\chi (N)$, where $s$ is the number of torus components in $\partial N$.
+\end{thm}
+We start with a few lemmas which will be used in the proof of the theorem.
+
+\subsection{Traces and irreducibility}
+
+Let $\Gamma$ be a finitely generated group.
+
+\begin{lem}\label{lemcom}
+Let $\rho$ be a representation of $\Gamma$ into $\SL(3,\bC)$.  Then the following are equivalent:
+\begin{enumerate}
+\item The image of $\rho$ is contained in a Borel subgroup (upper triangular matrices in an appropriate basis).
+\item Every element in the commutator subgroup of the image of $\rho$ is unipotent.
+\end{enumerate}
+\end{lem}
+
+
+\begin{pf}
+As the commutator group of two upper-triangular matrices is unipotent, the first point implies the second.
+
+We prove now that (2) implies (1).  If the commutator subgroup is formed by unipotent elements then it is a unipotent group and therefore we can suppose that the image of  
+$\rho$ is contained in the group of upper triangular matrices with ones in the diagonal. In particular it is reducible.
+
+The commutator subgroup is normal in the image group. Hence, if $V$ is an invariant space under the commutator subgroup, its image $\rho(g)V$ is also invariant.  We than deal with two possible cases:
+\begin{enumerate}
+\item If the commutator group is trivial then the representation is abelian and the result follows.
+\item Suppose there is a unique flag invariant under the image of commutator subgroup. Then the image of the whole group should fix this flag. It means that the image of the whole group is included in a Borel subgroup. 
+\item If this is not the case, the image of the commutator is not a regular unipotent subgroup. We may still define a canonical flag associated to it.  Indeed it has exactly two 2-dimensional invariant subspaces $V_2$ and $V'_2$.  On exactly one of them, say $V'_2$, the whole commutator subgroup acts as the identity.  The intersection $V_1=V_2\cap V_2'$ defines a canonical invariant line
+and $V_1\subset V_2$ is the canonical flag.   
+Now observe that, for any line $V\subset V'_2$, its image $\rho(g)V\subset \rho(g)V'_2$ is still invariant. Therefore  $\rho(g)V'_2=V'_2$. As there were only two invariant planes,  this implies $\rho(g)V_2=V_2$.  As their intersection, we get $\rho(g)V_1=V_1$.
+We conclude that the whole group  is contained in the Borel subgroup associated to $V_1\subset V_2$.
+\end{enumerate}
+\end{pf}
+
+We will use the following theorem which is the analog of the trace equations of $\SL(2,\bC)$ in the case $\SL(3,\bC)$.  We refer to \cite{Law} for a proof of the following theorem, see also
+\cite{W} for another view and many references.  Explicit polynomials in the theorem are known but we will not use them. 
+
+\begin{thm}\label{traces} Let $\langle N,M\rangle$ be a subgroup of $\SL(3,\bC)$ generated by two matrices.  Then the traces of all possible words
+in $N$ and $M$ are determined by polynomial functions on the traces of  $N, M,NM, N^{-1}M$, their inverses and $[N,M]$.  Moreover, the traces of 
+ $[N,M]$ and $[N^{-1},M]$ are solutions of a second degree equation on the traces of  $N, M,NM, N^{-1}M$ and their inverses.
+\end{thm}
+
+As an example of the use of the above theorem, although it is not used in the sequel, we state the next Lemma.
+
+\begin{lem}\label{lemu} Suppose $N,M\in \SL(3,\bC)$ are two unipotent matrices such that
+$NM$ and $N^{-1}M$ are unipotent.  Then the group generated by $N$ and $M$ is unipotent.
+\end{lem}
+
+\begin{pf} 
+\marginpar{Et le commutateur ?}
+
+Using theorem \ref{traces}, if $N, M, NM, N^{-1}M$ are unipotent
+then these elements and  their inverses have the same trace, namely 3.  We specialize to $N=M=Id$ to obtain that all traces 
+of all elements are then equal to 3.  This is equivalent to say that the group is unipotent.
+\end{pf}
+
+% We will use a better criterium to show that the group generated by $N$ and $M$ is unipotent:
+
+%\begin{lem}\label{lemweak}
+%\begin{enumerate}
+ %\item Suppose $N $ is unipotent,
+%and moreover $M, NM$ are of trace 3.  Then   $N^{-1}M$ has trace 3. 
+%\item  Suppose $N,M, NM $ are unipotent, and moreover $ M^{-1}N$ is of trace 3.  Then   the group generated by $N$ and $M$ is unipotent.
+%\item Suppose $N,M, NM $ are unipotent. Then   the group generated by $N$ and $M$ is unipotent.
+%\end{enumerate}
+%\end{lem}
+%\begin{pf}
+%Part 2 follows from part 1: an element $A\in \SL(3,\bC)$ is unipotent if and only if $trace(A)=trace(A^{-1})=3$. Now, by part 1, $\tr(N^{-1}M)=3$. But we also have that $M$ is unipotent and $N$ and $MN$ are of trace $3$. Then the first part again proves that $\tr(M^{-1}N)=3$. We have proven that $N,M, NM, N^{-1}M$ are unipotent. We may now apply the previous lemma to conclude.
+
+%The first part follows from an elementary computation, using the Jordan form for $N$.
+%\end{pf}
+
+%Observe that the advantage of the above criterium is that it simplifies the verification that a group generated by unipotents is unipotent.  Indeed 
+%we don't need to verify that $trace(M^{-1}N)=3$ and $trace(N^{-1}M)=3$.
+
+ We also need the following lemma related to lemma 1.5.1 in \cite{CS}.
+ \begin{lem}\label{lemnon} Let $\rho$ be an irreducible representation of $\Gamma$ into $\SL(3,\bC)$ with infinite image, and $g \in \Gamma$ 
+ such that $\rho(g)$ is a non-central element.
+ Then there exists $h\in \Gamma$, such that $\rho(h)$ is semi-simple and such that the group $\langle \rho(g), \rho(h)\rangle$ is irreducible.
+ \end{lem}
+ \begin{pf}
+ The Zariski-closure $G$ of $\rho(\Gamma)$ is an irreducible algebraic subgroup of $\SL(3,\bC)$ of dim $\geq 1$. So
+ its dimension is $>1$. Let $G^0$ be its identity component.
+
+Suppose first that the connected component $G^0$ itself is irreducible : then it is either the stabilizer of a non-degenerate quadric (a conjugate of the image of $\PGL(2,\bC)$ under the adjoint representation) or $\SL(3,\bC)$ itself.
+ 
+ In the first case, we borrow the result from \cite{CS} -- the proof for $\SL(3,\bC)$ presented below may
+ also easily be adapted. Let us now assume that $\rho(\Gamma)$ is Zariski-dense in $\SL(3,\bC)$.
+We assumed that $\rho(g)$ is non-central. So its set of fixed subspaces in the Grassmannian variety is a strict Zariski-closed subset. Hence the set of elements in $\SL(3,\bC)$ which fix one of those subspaces is itself a strict Zariski-closed subset. Moreover, the set of elements in $\SL(3,\bC)$ which are not semi-simple is a strict Zariski-closed subset.
+
+As $\rho(\Gamma)$ Zariski-dense, it contains an element $\rho(h)$ outside of these two strict Zariski-closed subsets: $\rho(h)$ is semi-simple and the group $\langle \rho(g), \rho(h)\rangle$ is irreducible.
+
+\medskip 
+
+Suppose now that $G^0$ is reducible. We may assume it has a fixed line (up to considering the dual representation given by the action of $\Gamma$ on the dual space). We note that $G^0$ is normal in $G$, or in other terms, we know that $G\subset N(G^0)$. This observation is enough to begin an inspection of the different possible situations:
+\begin{enumerate}
+\item Suppose $G^0$ has a unique fixed line. The $G$ itself fixes this line, and is not ireducible.
+
+\item Suppose $G^0$ has exactly $2$ fixed lines. Then $G$ fixes the plane generated by these lines and is not irreducible.
+
+\item Suppose $G^0$ has exactly $3$ fixed lines. Then it is diagonalisable with dimension $\geq 2$. Up to a conjugation, $G^0$ is the diagonal group. Then $G$ is generated by $G^0$ and a subgroup of the permutation group. By irreducibility of $G$, this latter subgroup contains a cyclic permutation $\sigma$. Inside $G^0\sigma$, the semisimple elements form a Zariski subset containing $\sigma$. Hence it contains an element $\rho(h)$. Then $\rho(g)$ and $\rho(h)$ generate an irreducible subgroup, as $\rho(g)$ is not an homothety.
+
+\item If $G^0$ has infinitely many fixed lines, it cannot be diagonalisable (it would be of dimension $1$). Hence it has a unique fixed on which it acts by homothety. This plane must be fixed by $G$ : once again $G$ is reducible.
+\end{enumerate}
+ \end{pf}
+ 
+ 
+
+
+
+\subsection{Proof of theorem \ref{thm:dimcharvar}}
+
+We are now ready to prove theorem \ref{thm:dimcharvar}. We follow the proof given for the case of $\SL(2,\bC)$ in \cite{CS, Thurston}.
+
+Recall that we consider a compact orientable 3-manifold $N$ with $s$ torus boundary components and an irreducible representation $\rho_0 : \pi_1(N)\rightarrow \SL(3,\bC)$ with infinite image 
+such that for each torus component  of $\partial N$, the image of ${\rho_{_0}}_{ \vert\pi_1(\partial N)}$ contains a non-central element. We want to prove that any irreducible component $X_0$ of the character variety containing $[\rho_0]$ has dimension ${\rm dim} X_0 \geq 2 s - 8\chi (N)$.
+
+It is easier to work the representation variety. Indeed, we will prove that ${\rm dim} H_0 \geq 2s - 8\chi (N)+8$ where $H_0\subset \mathrm{Hom}(\pi_1(N),SL(3,\bC)$ is the irreducible component containing $\rho_0$. 
+
+\medskip
+
+The proof is by induction on $s$.  Suppose first that $s=0$.  We realize $N$ as a finite 2-dimensional CW-complex with one 0-cell, $m$ 1-cells and 
+$n$ 2-cells so that $\pi_1 =\langle \ g_1, \cdots , g_m \ \vert\ r_1,\cdots,\, r_n\ \rangle$ is a presentation of the fundamental group. Consider the regular map $\SL(n,\bC)^m\rightarrow \SL(n,\bC)^n$ via the r relators.  The representation variety is the inverse image $(\mathrm{Id},\cdots ,\mathrm{Id})$ and therefore any irreducible component has dimension $
+\geq  8m-8n=- 8\chi (N)+8$.
+
+\medskip
+
+ Suppose now $s> 0$ and let $T$ be a torus component.  Let $\alpha\in \pi_1(T)$ be an element  such that  
+ $\rho_0(\alpha)$ is non-central.
+ 
+By lemma \ref{lemnon}, as $\rho_0$ is irreducible with infinite image, we can choose an element $\gamma$ in $\pi_1(N)$ (with base point in $T$) such that $\rho_0(\gamma)$ is semisimple and such that $\rho_0(\alpha)$ and $\rho_0(\gamma)$ generate an irreducible subgroup. We can drill a torus following a tubular neighborhood along $\gamma$ and obtain, as in Culler-Shalen, a manifold $N'$ where the torus $T$ is transformed into a genus 2 surface.
+In particular, $N'$ has only $s-1$ torus boundary components. Let $i_* \: : \: \pi_1(N')\to \pi_1(N)$ be the natural map.
+We choose the standard basis $\alpha',\beta',\gamma',\delta'$ for the fundamental group of this genus 2 surface such that $\alpha'$ and $\gamma'$ are mapped by $i_*$ to $\alpha$ and $\gamma$
+ respectively and such that $\delta'$ is the meridian of the drilled torus whose normal closure is the kernel of the embedding $i_* :\pi_1(N')\rightarrow  \pi_1(N)$.
+ 
+ \medskip
+ 
+ We now apply the induction hypothesis to the irreducible component $H'_0$ of containing $\rho_0\circ i_*\in  \mathrm{Hom}(\pi_1(N'),\SL(3,\bC))$ to obtain:
+\begin{align*}
+\mathrm{dim} H'_0 \geq& \, 2(s-1) - 8\chi (N')+ 8\\
+=& \, 2s - 8\chi (N)+ 8+6.\\
+\end{align*}
+Observe that $\mathrm{Hom}(\pi_1(N),\SL(3,\bC))$ is identified to the closed variety  $W\subset \mathrm{Hom}(\pi_1(N'),\SL(3,\bC))$ defined by the representations with $\rho(\delta')=1$.
+
+We will show that $H_0$ is an irreducible component of the inverse image of a point under an algebraic map $f: H'_0\rightarrow \bC^{6}$ and this will prove the proposition.  
+
+\newcommand{\sym}{\mathrm{sym}}
+Let $\sigma=[\delta',\gamma']=[\alpha',\beta']$ and let $\sym(A)\in\bC^2$ be the two symmetric functions on a matrix $A$ in $\SL(3,\bC)$.
+Define  $f: H'_0\rightarrow \bC^{6}$ as the map given by
+\begin{align*}
+f(\rho)&\rightarrow& \left(\sym(\rho(\sigma)),\quad \sym(\rho(\delta'^{-1}\gamma'\delta'^{-1}\gamma'^{-1}))-\sym(\rho(\delta'^{-1}))\right. ,\\
+&&\left. \sym(\rho(\alpha'^{-1}\beta'\alpha'^{-1}\beta'^{-1}))-\sym(\rho(\alpha'^{-2}))\right).
+\end{align*}
+%sym(\rho(\gamma'^{-1}\delta'\gamma'^{-1}\delta'^{-1}))-sym(\rho(\gamma'^{-2}))
+The fiber 
+$
+f^{-1}(3,3,0,0,0,0)
+$
+is composed by the representations where $\rho(\sigma)$ is unipotent and  $\rho(\alpha'^{-1}\beta\alpha'^{-1}\beta'^{-1})$ and its inverse have the same traces as $\rho(\alpha'^{-2})$ and its inverse and also $\rho(\delta'^{-1}\gamma\delta'^{-1}\gamma^{-1})$ and its inverse have the same traces as $\rho(\delta'^{-1})$ and its inverse.  Let us now show that $H_0$ is an irreducible component of this fiber $f^{-1}(3,3,0,0,0,0)$.
+
+%Consider $\rho$ a representation in this fiber. The group generated by  $N=\rho(\delta')$ and $M=\rho(\gamma'\delta'^{-1}\gamma'^{-1})$ satisfies the hypothesis of lemma \ref{lemu} , that is, $NM=\rho(\sigma)$  is unipotent.  Therefore the group itself is unipotent.
+Here are the following possibilities for a representation $\rho$ in the fiber:
+\begin{enumerate}
+\item If $\rho(\sigma)=\mathrm{Id}$ and $\rho(\delta')=\mathrm{Id}$; then $\rho$ belongs to $\mathrm{Hom}(\pi_1(N),\SL(3,\bC))$. 
+
+\item If $\rho(\sigma)=\mathrm{Id}$ and $\rho(\delta')$ is non trivial. But, as the image of $\sigma$ is trivial, $\rho(\gamma')$ commutes with $\rho(\delta')$. 
+\marginpar{On n'utilise pas la bonne relation sur les traces de delta !}One can solve the equality $ \sym(\rho(\delta'^{-1}\gamma\delta'^{-1}\gamma^{-1}))=\sym(\rho(\delta'^{-2}))= \sym(\rho(\delta'^{-1}))$. It yields three solutions (up to the natural symmetries) for the eigenvalues of $\rho(\delta')$:
+\begin{enumerate}
+\item[a)] $(1,1,1)$ and $\rho(\delta')$ is unipotent and non-trivial. As $\rho(\gamma')$ commutes with $\rho(\delta')$, we get that $\rho(\gamma')$ has a multiple eigenvalue. Hence $\rho$ belong to a Zariski-closed subset, defined by the fact that $\rho(\gamma')$ has a multiple eigenvalue. And $\rho_0$ does not belong to this set.
+\item[b)] $(1,\exp(\frac{2i\pi}{3}),\exp(\frac{4i\pi}{3}))$. The fact that the eigenvalues of $\delta'$ equal this triple (or its conjugate) is a Zariski closed condition not containing $\rho_0$.
+\item[c)] $(\exp(\frac{i\pi}{7}),\exp(\frac{2i\pi}{7}),\exp(\frac{4i\pi}{7}))$. Once again, it is a Zariski closed condition not containing $\rho_0$.
+\end{enumerate}
+\item  Suppose now $\rho(\sigma)$ is a non-trivial unipotent.
+% from the fact that the group generated by $N$ and $M$ is unipotent and 
+%that $NM=\sigma$ we conclude that $\rho(\gamma')$ is a non-trivial element in the Borel group determined by the  subgroup generated by $M$ and $N$.
+ The condition that $\rho(\alpha'^{-1}\beta'\alpha'^{-1}\beta'^{-1})$ and its inverse have the same traces as $\rho(\alpha'^{-2})$ and its inverse implies that the traces of  $\rho(\alpha')$, $\rho(\beta'\alpha'^{-1}\beta'^{-1})$, $\rho(\sigma)$ and $\rho(\alpha'^{-1}\beta'\alpha'^{-1}\beta'^{-1})$ and their inverses are the same as
+the traces of the corresponding elements substituting $\rho(\beta')=\mathrm{Id}$ (we use here Theorem \ref{traces}).  As this is a cyclic group, it is clearly contained in a Borel subgroup.  We conclude, using lemma \ref{lemcom}, that the group generated by $\rho(\alpha')$ and $\rho(\sigma)$ is a Borel subgroup containing $\rho(\sigma)$. 
+
+Analogously $\rho(\sigma)$ and $\rho(\gamma')$ is a Borel subgroup containing $\rho(\sigma)$.  As $\rho(\sigma)$ is in both subgroups and is a non trivial unipotent, we conclude that the group generated by
+$\rho(\alpha')$ and $\rho(\gamma')$ is reducible.
+The representations satisfying this condition are contained in a closed algebraic set which again does not contain  $\rho_0$ by the construction of $\gamma'$. 
+\end{enumerate}
+
+We hence have decomposed the fibre $f^{-1}(3,3,0,0,0,0)$ as the union of five closed sets, namely 
+$\mathrm{Hom(\pi_1(N),\SL(3,\bC))}$, the set of representations $\rho$ such that $\rho(\gamma')$ has a 
+multiple eigenvalue, the set of representations $\rho$ such that $\rho(\alpha')$, $\rho(\gamma')$ 
+generates a reducible subgroup, and the two sets of representations with fixed eigenvalues for $\rho(\delta')$. As $\rho_0$ does not belong to any of the latter four, the whole component 
+$H_0$ is an irreducible component of the fibre.
+
+
+\subsection{Reducible representations}
+
+We conclude this section by a rapid glance at the reducible representations, proving that there cannot be components of dimension $0$ or $1$. Any reducible representation $\rho : \Gamma \rightarrow \SL(3,\bC)$ gives rises to
+a pair  $\rho' : \Gamma \rightarrow \SL(2,\bC)$ and a character $\Xi_\rho :  \rightarrow \bC^*$.  Conversely, any pair 
+determines two reducible representations up to conjugation which are related by duality.
+
+Observe that characters are parametrized by $\bC^b(N)$ where $b(N)$ is the first Betti number of the manifold $N$ and this 
+implies the following proposition.
+
+\begin{prop}\label{propdim}
+The irreducible components of the character variety $X(N)$ containing only the projections of reducible representations are all of dimension greater than or equal to 2.
+\end{prop}
+
+\begin{pf}
+This follows from the dimension count of representations in $\SL(2,\bC)$.  There is no 0-dimensional irreducible component in this space (see \cite{CCGLS} p. 52).
+\end{pf}
+\end{comment}
+
+\section{The figure eight knot complement}\label{section:intro-eight}
+
+We present here the geometric and combinatorial facts on the figure eight knot complement $M$ we use afterwards. We need a triangulation $\mathcal T$ of $M$ -- in order to study the variety $\mathrm{Defor}(M,\mathcal T)$ -- together with some presentations of its fundamental group for paramtrizing matrices.
+
+\subsection{Triangulation}
+
+It is a well-known fact, due to Riley and used by Thurston \cite{Thurston}, that the figure eight knot complement may be triangulated by two tetrahedra, with the combinatorics of face gluings displayed in figure \ref{fig:triang8}.
+In order to simplify the notations, we denote by $u_{ij}$ and $v_{ij}$ be the coordinates associated to the edge $ij$ of the two tetrahedra as  shown in Figure \ref{fig:triang8}.
+
+\begin{figure}[ht] \label{eight}
+\begin{center}
+\begin{asy}
+   size(8cm);
+  defaultpen(1);
+  usepackage("amssymb");
+  import geometry;
+  
+  point o = (8,0);
+  point oo = (24,0);
+  pair ph = (10,0);
+  pair pv = (5,8);
+ 
+  
+  // % The left tetrahedron
+  draw(o -- o+pv,Arrow(5bp,position=.4), Arrow(5bp,position=.5));
+  draw(o+pv -- o+ph, Arrow(5bp,position=.6));
+  draw(o+ph-pv-- o, Arrow(5bp,position=.6));
+  draw(o+ph-pv-- o+ph, Arrow(5bp,position=.6));
+  draw(o+ ph/2+(0,.2)--o+pv, Arrow(5bp,position=.4), Arrow(5bp,position=.5));
+  draw(o+ph-pv -- o+ph/2+ (0,-.2));
+  draw(o -- o+ph,Arrow(5bp,position=.3), Arrow(5bp,position=.4) );
+  
+  // % on d�core des points
+  label("\small { $u_{34}$}", o, 3*dir(25));
+  //%label(" $ z_{kj}$", o, 6*dir(-75));
+  //%label(" $z_{ki}$", o, 6*dir(75));
+  label("{\small  $3$}", o, 1*W);
+  
+  label("\small {$u_{43}$}", o+ph, 3*dir(180-25));
+  //%label(" $ z_{lj}$", o+ph, 6*dir(-110));
+  //%label(" $z_{li}$", o+ph, 6*dir(110));
+  label("{\small $4$}", o+ph, .6*E);
+  
+  //%label("{$z_{il}$}", o+pv, 8*dir(-35));
+  label(" \small $ u_{12}$", o+pv, 9*dir(-80));
+  //%label(" $z_{ik}$", o+pv, 8*dir(-150));
+  label("{\small $1$}", o+pv, 1*N);
+  
+   //%label("{$z_{jl}$}", o+ph-pv, 8*dir(30));
+  label(" \small $ u_{21}$", o+ph-pv, 9*dir(80));
+  //%label(" $z_{jk}$", o+ph-pv, 8*dir(150));
+  label("{\small $2$}", o+ph -pv, 1*S);
+
+  // % the right tetrahedron
+  draw( oo+pv -- oo,Arrow(5bp,position=.6));
+  draw( oo+pv -- oo+ph,Arrow(5bp,position=.6));
+  draw( oo+ph-pv -- oo,Arrow(5bp,position=.6));
+  draw(oo+ ph/2+(0,.2)--oo +pv,Arrow(5bp,position=.4), Arrow(5bp,position=.5));
+  draw(oo+ph-pv -- oo+ ph/2-(0,.2));
+  draw(oo+ph-pv -- oo+ ph,Arrow(5bp,position=.5),Arrow(5bp,position=.6));
+  draw(oo -- oo+ph,Arrow(5bp,position=.3), Arrow(5bp,position=.4));
+  
+   // % on d�core des points
+  label("\small { $v_{34}$}", oo, 3*dir(25));
+  //%label(" $ z_{kj}$", o, 6*dir(-75));
+  //%label(" $z_{ki}$", o, 6*dir(75));
+  label("{ \small $3$}", oo, 1*W);
+  
+  label("\small {$v_{43}$}", oo+ph, 3*dir(180-25));
+  //%label(" $ z_{lj}$", o+ph, 6*dir(-110));
+  //%label(" $z_{li}$", o+ph, 6*dir(110));
+  label("{ \small $4$}", oo+ph, .6*E);
+  
+  //%label("{$z_{il}$}", oo+pv, 8*dir(-35));
+  label(" \small $  v_{12}$", oo+pv, 9*dir(-77));
+  //%label(" $z_{ik}$", oo+pv, 8*dir(-150));
+  label("{ \small $1$}", oo+pv, 1*N);
+  
+   //%label("{$z_{jl}$}", oo+ph-pv, 8*dir(30));
+  label(" \small $ v_{21}$", oo+ph-pv, 9*dir(80));
+  //%label(" $z_{jk}$", oo+ph-pv, 8*dir(150));
+  label("{\small $2$}", oo+ph -pv, 1*S);
+
+\end{asy}
+\caption{ The figure eight knot represented by two tetrahedra.} \label{fig:triang8}
+\end{center}
+\end{figure}
+
+From this triangulation, it is an elementary exercise to compute the equations defining $\mathrm{Defor}(M,\mathcal T)$ as explained in \S \ref{ss:deformationvariety}. These equations will actually be displayed in \S \ref{ss:equations}.
+
+\subsection{Presentations}
+
+Depending on the situations we will use two different presentations of the figure eight knot complement fundamental group $\Gamma_8$. 
+
+We first use the presentation (with generators as in \cite{FKR14})
+$$ 
+\langle\ g_1, g_2,
+g_3\ |\ g_2^{-1}g_1g_3^{-1}g_1^{-1}g_3,\ g_3^{-1}g_2g_1g_2^{-1}\ \rangle.
+$$  
+Observe then that
+$$
+g_2 = [g_1,g_3^{-1}]
+\quad
+\textrm{and}\quad
+g_3 = g_2g_1g_2^{-1}.
+$$
+This presentation is the SnapPea non-simplified presentation with a change of notations.
+%: $a=g_2$, $b=g_3$ and $c=g_1$.
+Keeping only the generators $g_1$ and $g_3$, we get the usual parabolic presentation, used in \S \ref{ss:R_2-R_3}, with $a=g_1$ and $b=g_3$.
+
+
+The simplified presentation in SnapPea, which we use in \S \ref{ss:R1}, is given (uppercase denotes inverse) by
+$$ 
+\langle\ a, b\ |\ \ ab^3aBA^{2}B \ \rangle
+$$  
+with $a=  g_3g_2$ and $b=g_2^{-1}$ (hence $g_1=ba$).
+
+With this notation, we know \cite{Thurston} that the canonical meridian is $m=ab=g_3$ and the longitude 
+$l=abABaBAb=[g_3,g_2^{-1}][g_3,g_2]$.
+%The relation between the generators of the boundary group are
+%$$
+%g_m=g_2^{-1} m^{-1} g_2 \ \ \  \  g_l=g_2^{-1} l^{-1} g_2.
+%$$
+
+
+%Morwen's presentation is given by defining ${\rm a}=y$ and ${\rm b}=x$.
+
+%\subsection{}
+%The figure eight knot complement is fibred over the circle with fiber a punctured torus.  The fibration is
+%encoded in the following sequence
+%$$
+%1\rightarrow F_2\rightarrow \Gamma\rightarrow \bZ\rightarrow 0.
+%$$
+%Here, $F_2$ is the free group of rank 2 with generators
+%$$F_2=\langle \ \alpha=g_2,\beta=[g_2,g_3^{-1}] \ \rangle.
+%$$
+%We can then present
+%$$
+%\Gamma = \langle \ \alpha, \beta, t\  | \ t\alpha t^{-1}= \alpha \beta \alpha , t\beta t^{-1}= \alpha \beta \ \rangle,
+%$$
+%where $t=g_3$ (identified to the meridian) is seen to act as a pseudo-Anosov element of the mapping class group of the torus group.
+
+%%%%%%%%

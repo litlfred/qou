@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-005",
   "kind": "prose",
   "title": "Z Z[x] instead of (1.11) (in other words, he did not ﬁx the coeﬃcient at x",
   "pageStart": 5,
   "pageEnd": 8,
   "text": "../sections/sec-005-2-z-zx-instead-of-111-in-other-words-he-did-not.md",
-  "derivedFrom": "library/arxiv-q-alg-9504015v2/manifest",
-  "sourceDocument": "library/arxiv-q-alg-9504015v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-q-alg-9504015v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-q-alg-9504015v2/manifest.jsonld",
   "provenance": "ingested"
 }

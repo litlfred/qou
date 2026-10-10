@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1804.03926v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1804.03926v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1804.03926v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1804.03926&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1804.03926v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1804.03926v3",
+    "content_type": "application/gzip",
+    "sha256": "7c586d0d26e2cf51ecfc1316a367cb18a371c46b4c5191a7f1f23ba2e5f6f0eb",
+    "bytes": 38541,
+    "fetched": "2026-10-10T15:13:22+00:00",
+    "files": [
+      {
+        "path": "source/files/SteinDimOne_rev1.bbl",
+        "role": "bbl",
+        "sha256": "7401dd937c29db81b1924ad9a016042142b6955edc72839fe771e1a2674a8528",
+        "bytes": 17331
+      },
+      {
+        "path": "source/files/SteinDimOne_rev1.tex",
+        "role": "tex",
+        "sha256": "32db95c782cf6673d5ee07f0351f8df91f3abb5cbe52643f30ed3e971b3f0b0c",
+        "bytes": 141365
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

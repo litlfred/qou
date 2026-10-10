@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/blocks/prose-sec-085",
+  "kind": "prose",
+  "title": "DG Bimodules over K-Flat DG Rings",
+  "pageStart": 302,
+  "pageEnd": 308,
+  "text": "../sections/sec-085-143-dg-bimodules-over-k-flat-dg-rings.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

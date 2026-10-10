@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-hep-th-9408113v2/blocks/corollary-sec-027-05",
+  "kind": "corollary",
+  "title": "of Theorem 4",
+  "pageStart": 28,
+  "pageEnd": 30,
+  "text": "corollary-sec-027-05.md",
+  "derivedFrom": "library/arxiv-hep-th-9408113v2/sections/sec-027",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-9408113v2/manifest.jsonld",
+  "provenance": "ingested"
+}

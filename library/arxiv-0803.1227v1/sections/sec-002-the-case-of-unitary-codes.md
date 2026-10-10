@@ -7,92 +7,41 @@ section_number: null
 pages: 3-5
 source_pdf: 0803.1227v1.pdf
 source_sha256: cf72e0fcdc7f3ddf
+text_source: latex
+latex_prose_ratio: 0.984
+latex_coverage_ratio: 0.992
 doc_brief: "Linear programming bounds for unitary space time codes — The linear programming method is applied to the space Un(C) of uni- tary matrices in order to obtain bounds for codes relative to the"
 ---
-As a particular case we set G = Un(C) × Un(C) and X = Un(C). For g = U × V
-and x = M we set gx = U M V−1. In this context the orbit of a pair ( x, y ) is
-3
-characterized by the eigenvalues ( eiθ1, ..., e iθn ) of the unitary matrix xy−1. The
-Peter-Weil theorem gives a decomposition of L2(X) into irreducible subspaces
-L2(X) = ⊕(Vχ ⊗ Vχ ) (3)
-where the sum runs over all irreducible representations Vχ of Un(C). It is worth
-noticing that the G-subspaces Vχ ⊗ Vχ are pairwise non isomorphic. From this
-decomposition one can deduce the following theorem :
-Proposition 3.1 The zonal functions associated to this decomposition are
-Pχ (x, y ) = χ (xy−1)
-where χ denotes any irreducible character of Un(C).
-The irreducible characters of Un(C) are known to be ﬁnite dimensional and
-to have a nice description using Schur polynomials ([16]). We recall brie ﬂy some
-notations and deﬁnitions concerning those polynomials.
-For any integer k, a partition of k in n parts is a ﬁnite decreasing sequence of
-n non negative integers which sum exactly to k (k is also called the degree of the
-partition). A partition λ is dominating µ (noted λ ≻ µ ) if ∀r ≤ n, ∑ r
-i=1 λ i ≥∑ r
-i=1 µ i. Given a partition λ = [λ 1, ..., λ n] we deﬁne the elementary symmetric
-polynomials mλ ∈ Z[x1, ..., x n] as the renormalization to a monic polynomial of
-∑
-σ ∈Sn
-xλ 1
-σ (1)xλ 2
-σ (2)...x λ n
-σ (n).
-These polynomials form a basis of the set of symmetric polynomials Z[x1, ..., x n]Sym.
-Schur polynomials have been intensively studied and have several de ﬁnitions.
-For our purpose we will deﬁne the Schur polynomials Sλ as
-Sλ =
-∑
-λ ≻µ
-Kλ,µ mµ ,
-where the Kλ,µ ∈ N are the so called Kostka numbers. For more precision on
-those numbers see [15]. It is clear that Schur polynomials form anoth er basis of
-Z[x1, ..., x n]Sym.
-It is well known that the irreducible polynomial characters of Un(C) are
-expressed using Schur polynomials (we refer to [16] for details) in th e following
-way: let ( eiθ1, ..., e iθn ) denote the eigenvalues of a unitary matrix M , and λ a
-partition. Then
-χ λ (M ) = Sλ (eiθ1 , ..., e iθn ).
-One obtains all irreducible characters of Un(C) by multiplying the characters χ λ
-by a relative power of det( M ) =∏ eiθk . All together, we obtain the theorem:
-Theorem 3.2 For all partition λ and s ∈ Z, let
-Pλ,s (x1, . . . , x n) = ( x1 . . . x n)sPλ (x1, . . . , x n). (4)
-4
-These rational fractions give the zonal functions associat ed to the irreducible
-decomposition (3) in the following way: if χ ≃ dets ⊗λ, if the eigenvalues of
-xy−1 are (eiθ1, ..., e iθn ), then
-Pχ (x, y ) = Pλ,s (eiθ1 , ..., e iθn).
+As a particular case we set $G=\U_n(\C)\times \U_n(\C)$ and $X=\U_n(\C)$. For $g=U\times V$ and $x=M$ we set $gx=UMV^{-1}$. In this context the orbit of a pair $(x,y)$ is characterized by the eigenvalues $(e^{i\theta_1},...,e^{i\theta_n})$ of the unitary matrix $xy^{-1}$. The Peter-Weil theorem gives a decomposition of $L^2(X)$ into irreducible subspaces $$\begin{equation}
+\label{dec}
+L^2(X)=\oplus (V_{\chi}\otimes V_{\conj{\chi}})
+\end{equation}$$ where the sum runs over all irreducible representations $V_{\chi}$ of $\U_n(\C)$. It is worth noticing that the $G$-subspaces $V_{\chi}\otimes V_{\conj{\chi}}$ are pairwise non isomorphic. From this decomposition one can deduce the following theorem :
+
+::: proposition
+The zonal functions associated to this decomposition are $$\begin{equation*}
+ P_\chi(x,y)=\chi(xy^{-1})
+\end{equation*}$$ where $\chi$ denotes any [irreducible character of]{.roman} $\U_n(\C)$.
+:::
+
+The irreducible characters of $\U_n(\C)$ are known to be finite dimensional and to have a nice description using Schur polynomials ([@FULTON]). We recall briefly some notations and definitions concerning those polynomials.
+
+For any integer $k$, a partition of $k$ in $n$ parts is a finite decreasing sequence of $n$ non negative integers which sum exactly to $k$ ($k$ is also called the degree of the partition). A partition $\lambda$ is dominating $\mu$ (noted $\lambda \succ \mu$) if $\forall r\le n,\ \sum_{i=1}^r \lambda_i \ge \sum_{i=1}^r \mu_i$. Given a partition $\lambda=[\lambda_1,...,\lambda_n]$ we define the elementary symmetric polynomials $m_\lambda \in \Z[x_1,...,x_n]$ as the renormalization to a monic polynomial of $$\sum_{\sigma \in \mathfrak{S}_n}  x_{\sigma(1)}^{\lambda_1}x_{\sigma(2)}^{\lambda_2}...x_{\sigma(n)}^{\lambda_n}.$$ These polynomials form a basis of the set of symmetric polynomials $\Z[x_1,...,x_n]^{\textrm {Sym}}$. Schur polynomials have been intensively studied and have several definitions. For our purpose we will define the Schur polynomials $S_\lambda$ as $$S_\lambda = \sum_{\lambda \succ \mu} K_{\lambda,\mu} m_\mu,$$ where the $K_{\lambda,\mu} \in \N$ are the so called Kostka numbers. For more precision on those numbers see [@SAGAN]. It is clear that Schur polynomials form another basis of $\Z[x_1,...,x_n]^{\textrm {Sym}}$.
+
+It is well known that the irreducible polynomial characters of $\U_n(\C)$ are expressed using Schur polynomials (we refer to [@FULTON] for details) in the following way: let $(e^{i\theta_1},...,e^{i\theta_n})$ denote the eigenvalues of a unitary matrix $M$, and $\lambda$ a partition. Then $$\begin{equation*}
+\chi_\lambda(M)=S_\lambda(e^{i\theta_1},...,e^{i\theta_n}).
+\end{equation*}$$ One obtains all irreducible characters of $\U_n(\C)$ by multiplying the characters $\chi_{\lambda}$ by a relative power of $\det(M)=\prod
+e^{i\theta_k}$. All together, we obtain the theorem:
+
+::: theorem
+For all partition $\lambda$ and $s\in \Z$, let $$\begin{equation}
+\label{P1}
+P_{\lambda,s}(x_1,\dots,x_n)=(x_1\dots x_n)^sP_{\lambda}(x_1,\dots, x_n).
+\end{equation}$$ These rational fractions give the zonal functions associated to the irreducible decomposition [\[dec\]](#dec){reference-type="eqref" reference="dec"} in the following way: if $\chi\simeq \det^s\otimes\lambda$, if the eigenvalues of $xy^{-1}$ are $(e^{i\theta_1},...,e^{i\theta_n})$, then $$\begin{equation*}
+P_{\chi}(x,y)=P_{\lambda,s}(e^{i\theta_1},...,e^{i\theta_n}).
+\end{equation*}$$
+:::
+
 .
-We are now almost ready to compute bounds for unitary codes V ⊂ Un(C).
-Let
-d2
-Σ (eiθ1 , ..., e iθn) := 1
-2n
-n∑
-i=1
-(1 − cos θi)
-and
-d2
-Π (eiθ1 , ..., e iθn ) := 1
-2
-( n∏
-i=1
-(1 − cos θi)
-) 1
-n
-.
-and deﬁne d2
-Σ (x, y ) (resp. d2
-Π (x, y )) to be the above functions evaluated at
-the eigenvalues of xy−1. These functions are related to the diversity sum and
-diversity product by
-Σ V = min
-x,y ∈V
-x⁄=y
-dΣ (x, y ) and Π V = min
-x,y ∈V
-x⁄=y
-dΠ (x, y ).
-We recall that the orbit of a pair ( x, y ) is characterized by the eigenvalues of
-xy−1, so dΣ and dΠ are constant on G-orbits. We may now deﬁne, with the
-notations of Section II, the sets S related to each diversity function:
-SΣ (δ) := {(eiθ1, ..., e iθn ) : dΣ (eiθ1, ..., e iθn ) ≥ δ}
-SΠ (δ) := {(eiθ1 , ..., e iθn) : dΠ (eiθ1 , ..., e iθn) ≥ δ}.
+
+We are now almost ready to compute bounds for unitary codes $\Code \subset \U_n(\C)$. Let $$d_\Sigma^2(e^{i\theta_1},...,e^{i\theta_n}):=\frac{1}{2n} {\sum_{i=1}^n (1-\cos \theta_i)}$$ and $$d_\Pi^2(e^{i\theta_1},...,e^{i\theta_n}):=\frac{1}{2}  \left(\prod_{i=1}^n (1-\cos \theta_i) \right)^{\frac{1}{n}}.$$ and define $d_\Sigma^2(x,y)$ (resp. $d_\Pi^2(x,y)$) to be the above functions evaluated at the eigenvalues of $xy^{-1}$. These functions are related to the diversity sum and diversity product by $$\Sigma \Nu = \min_{\substack{x,y \in \Code\\x\ne y}} d_\Sigma(x,y) \textrm{ and }
+ \Pi \Nu = \min_{\substack{x,y \in \Code\\x\ne y}} d_\Pi(x,y).$$ We recall that the orbit of a pair $(x,y)$ is characterized by the eigenvalues of $xy^{-1}$, so $d_\Sigma$ and $d_\Pi$ are constant on $G$-orbits. We may now define, with the notations of Section II, the sets $S$ related to each diversity function: $$S_\Sigma(\delta):=\{ (e^{i\theta_1},...,e^{i\theta_n}) :  d_\Sigma(e^{i\theta_1},...,e^{i\theta_n}) \ge \delta \}$$ $$S_\Pi(\delta):=\{ (e^{i\theta_1},...,e^{i\theta_n}) :  d_\Pi(e^{i\theta_1},...,e^{i\theta_n}) \ge \delta \}.$$

@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-0808.2716v4/sections/sec-009",
   "@type": [
     "doco:Section"
@@ -9,13 +14,13 @@
   "pageEnd": 17,
   "contains": [
     "library/arxiv-0808.2716v4/blocks/prose-sec-009",
-    "library/arxiv-0808.2716v4/blocks/lem-sec-009-01",
-    "library/arxiv-0808.2716v4/blocks/lem-sec-009-02",
-    "library/arxiv-0808.2716v4/blocks/lem-sec-009-03",
-    "library/arxiv-0808.2716v4/blocks/lem-sec-009-04",
-    "library/arxiv-0808.2716v4/blocks/lem-sec-009-05"
+    "library/arxiv-0808.2716v4/blocks/lemma-sec-009-01",
+    "library/arxiv-0808.2716v4/blocks/lemma-sec-009-02",
+    "library/arxiv-0808.2716v4/blocks/lemma-sec-009-03",
+    "library/arxiv-0808.2716v4/blocks/lemma-sec-009-04",
+    "library/arxiv-0808.2716v4/blocks/lemma-sec-009-05"
   ],
-  "derivedFrom": "library/arxiv-0808.2716v4/manifest",
-  "sourceDocument": "library/arxiv-0808.2716v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0808.2716v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0808.2716v4/manifest.jsonld",
   "provenance": "ingested"
 }

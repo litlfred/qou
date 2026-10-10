@@ -5,7 +5,8 @@
   "file": "0503213v2.pdf",
   "sha256": "637a9e53b9b307764b6768995994562f83dfd41ca25d2767671dfc4223558845",
   "bytes": 217539,
-  "pages": 6
+  "pages": 6,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -27,9 +28,9 @@
   },
   "title_lines": [
    "A topological model of composite preons",
-   "Sundance O. Bilson-Thompson ∗"
+   "Sundance O. Bilson-Thompson \u2217"
   ],
-  "title_prev": "A topological model of composite preons Sundance O. Bilson-Thompson ∗"
+  "title_prev": "A topological model of composite preons Sundance O. Bilson-Thompson \u2217"
  },
  "toc": [
   {
@@ -62,14 +63,14 @@
   },
   {
    "level": 1,
-   "title": "H− 0",
+   "title": "H\u2212 0",
    "page": 4,
    "source": "inferred",
    "number": "0"
   },
   {
    "level": 1,
-   "title": "H+ + H− 0",
+   "title": "H+ + H\u2212 0",
    "page": 4,
    "source": "inferred",
    "number": "0"
@@ -83,7 +84,7 @@
   },
   {
    "level": 1,
-   "title": "N (H− ) − 1",
+   "title": "N (H\u2212 ) \u2212 1",
    "page": 4,
    "source": "inferred",
    "number": "3"
@@ -97,14 +98,14 @@
   },
   {
    "level": 1,
-   "title": "N (H− )",
+   "title": "N (H\u2212 )",
    "page": 5,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "(β + Ω) . (5)",
+   "title": "(\u03b2 + \u2126) . (5)",
    "page": 5,
    "source": "inferred",
    "number": "2"
@@ -176,7 +177,7 @@
   {
    "id": "sec-004-0-h-0",
    "number": "0",
-   "title": "H− 0",
+   "title": "H\u2212 0",
    "level": 1,
    "page_start": 4,
    "page_end": 4,
@@ -186,7 +187,7 @@
   {
    "id": "sec-005-0-h-h-0",
    "number": "0",
-   "title": "H+ + H− 0",
+   "title": "H+ + H\u2212 0",
    "level": 1,
    "page_start": 4,
    "page_end": 4,
@@ -206,7 +207,7 @@
   {
    "id": "sec-007-3-n-h",
    "number": "3",
-   "title": "N (H− )",
+   "title": "N (H\u2212 )",
    "level": 1,
    "page_start": 4,
    "page_end": 4,
@@ -226,7 +227,7 @@
   {
    "id": "sec-009-3-n-h-1",
    "number": "3",
-   "title": "N (H− ) − 1",
+   "title": "N (H\u2212 ) \u2212 1",
    "level": 1,
    "page_start": 4,
    "page_end": 5,
@@ -234,9 +235,9 @@
    "n_words": 102
   },
   {
-   "id": "sec-010-2-β-ω-5",
+   "id": "sec-010-2-\u03b2-\u03c9-5",
    "number": "2",
-   "title": "(β + Ω) . (5)",
+   "title": "(\u03b2 + \u2126) . (5)",
    "level": 1,
    "page_start": 5,
    "page_end": 5,
@@ -279,6 +280,106 @@
   "likely_scanned": false,
   "toc_entries": 14,
   "sections": 14,
-  "chars_total": 29360
+  "chars_total": 29360,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Helon4-3.tex",
+   "tex_sections": 6,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-i-introduction",
+     "title": "INTRODUCTION",
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-ii-the-helon-model",
+     "title": "THE HELON MODEL",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.948,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-iii-phenomenology-of-the-helon",
+     "title": "PHENOMENOLOGY OF THE HELON",
+     "prose_ratio": 0.681,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-0-h-0",
+     "title": "H+ 0",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-0-h-0",
+     "title": "H\u2212 0",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-0-h-h-0",
+     "title": "H+ + H\u2212 0",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-3-n-h0",
+     "title": "N (H0)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-3-n-h",
+     "title": "N (H\u2212 )",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-3-n-h-1",
+     "title": "N (H+) + 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-3-n-h-1",
+     "title": "N (H\u2212 ) \u2212 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-2-\u03b2-\u03c9-5",
+     "title": "(\u03b2 + \u2126) . (5)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-iv-unresol-ved-issues",
+     "title": "UNRESOL VED ISSUES",
+     "prose_ratio": 0.873,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-012-v-discussion",
+     "title": "DISCUSSION",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.943,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-vi-acknowledgements",
+     "title": "ACKNOWLEDGEMENTS",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.18,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

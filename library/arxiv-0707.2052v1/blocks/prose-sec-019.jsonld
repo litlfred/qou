@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0707.2052v1/blocks/prose-sec-019",
+  "kind": "prose",
+  "title": "Open-closed TQFTs and the Cardy Condition",
+  "pageStart": 25,
+  "pageEnd": 26,
+  "text": "../sections/sec-019-open-closed-tqfts-and-the-cardy-condition.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0707.2052v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0707.2052v1/manifest.jsonld",
+  "provenance": "ingested"
+}

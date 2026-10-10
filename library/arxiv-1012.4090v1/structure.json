@@ -6,7 +6,8 @@
   "sha256": "02fe4a5eb36ff0edb291ac6917e0f7cb99e1ccd43217af8498ffc29961fb83a7",
   "bytes": 482015,
   "pages": 5,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -98,6 +99,42 @@
   "likely_scanned": false,
   "toc_entries": 4,
   "sections": 3,
-  "chars_total": 21246
+  "chars_total": 21246,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "paperplb.tex",
+   "tex_sections": 4,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-the-generalized-skyrme-system",
+     "title": "The Generalized Skyrme System",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.399,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-002-4-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.572,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

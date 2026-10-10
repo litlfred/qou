@@ -7,240 +7,105 @@ section_number: 2
 pages: 2-4
 source_pdf: 1303.6444v3.pdf
 source_sha256: 4f12ace2197f70ca
+text_source: latex
+latex_prose_ratio: 0.966
+latex_coverage_ratio: 0.955
 doc_brief: "VIRIAL EXPANSION BOUNDS — In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle"
 ---
-The main results of this paper rely on the particle model of the classical gas. The main
-parameters in the model are: the inverse temperature β = 1
-kT , where k is Boltzmann’s
-constant and T is the temperature; the fugacity z; the pressure P ; and the density ρ.
-We start with the Grand Canonical Partition function for a classical gas:
-Ξ(z) =
-∞∑
-N=0
-ZNzn (2.1)
-Where ZN is the N-particle conﬁguration integral:
-ZN = 1
-N!
-N∏
-i=1
-(∫
-Rd
-ddxi
-)
-e
-−β ∑
-1≤i<j≤N
-Φ(xi,xj)
-(2.2)
-We have the relationship βP = ln Ξ, which gives us an expansion for pressure. The power
-series for pressure in terms of fugacity z, may be written as:
-βP =
-∑
-n≥1
-bnzn (2.3)
-Using the formula ρ =z ∂
-∂z (βP ), we have the corresponding fugacity expansion for density:
-ρ =
-∑
-n≥1
-nbnzn (2.4)
-We see that the power series expansion for ρ has a zero constant term and non zero z
-term, where we have that b1⁄= 0 and usually we set it to 1. It is usual to have a non zero
-z coeﬃcient in the cluster expansion. This means that it is possible to invert the ρ−z
-relationship, in order to obtain an expansion for z(ρ). This can be substituted into (2.3) in
-order to get a power series for P in terms of ρ:
-P =
-∑
-n≥1
-cnρn (2.5)
-The assumptions for the initial cluster expansion bounds used in this article are:
-Assumption 1 (Potential). The N-particle interaction potential: UN(x1,··· ,xN) may be
-written as the sum of pair-potentials:
-UN(x1,··· ,xN) =
-∑
-1≤i<j≤N
-Φ(xi,xj) (2.6)
-Furthermore, we assume that the pair potentials Φ(xi,xj) are central, that is, they only
-depend on the distance from xi to xj.
-Assumption 2 (Stability). The potential energy is assumed to be stable, that is, there is a
-B >0, such that for every N and (x1,··· ,xN)∈ RNd, we have:
-U(x1,··· ,xN) =
-∑
-1≤i<j≤N
-Φ(xi,xj)≥−BN (2.7)
-whered is the dimension of our system.
-Deﬁnition 1 (C(β) and R(β) - ‘temperedness’). We have two main functions of β, which
-play an important rˆ ole in the cluster expansion bounds:
-C(β) :=
-∫
-Rd
-⏐⏐⏐e−βΦ(0,x)− 1
-⏐⏐⏐ ddx (2.8)
-VIRIAL EXPANSION BOUNDS 3
-R(β) :=
-
-|B|rd +β
-∫
-|y|>r
-|Φ(0,y )|ddy
-
- (2.9)
-If the expression (2.8) is ﬁnite then the potential Φ is called ‘tempered’, which we assume
-for bounds involving C(β)
-The r in (2.9) represents the radius of the hard-core interaction. |B| is the surface area
-of a d-dimensional sphere.
-We writeRVir for the radius of convergence of the virial expansion.
-Deﬁnition 2 (Lambert W-function). We denote by W (z), the Lambert W-function with
-domain R+ :={x∈ R|x≥ 0} and range R+. It is the solution to:
-W (z)eW(z) =z (2.10)
-Further notes on the Lambert W-function can be found in [Cor97]
-Theorem 2.1 (General Virial Bounds). Assuming cluster coeﬃcient bounds of the form:
-|nbn|≤ ann−1
-n! bn (2.11)
-wherea and b are non-negative functions of inverse temperature β, we have the virial coef-
-ﬁcient bounds:
-|cn|≤ β−1
-n
-
-a−1
-W
-(
-eab
-1+ab
-)
-(
-W
-(
-eab
-1+ab
-)
-− 1
-)2
-
-
-n−1
-(2.12)
-which gives the lower bound on the radius of convergence as:
-RVir≥a
-(
-W
-(
-eab
-1+ab
-)
-− 1
-)2
-W
-(
-eab
-1+ab
-) (2.13)
-If we apply this general theorem, which is derived in Section 4, to two speciﬁc bounds we
-have for cluster expansions, we achieve:
-Corollary 2.2 (Improved Lebowitz-Penrose). The cluster expansion bounds:
-|nbn|≤ nn−1
-n! e2βB(n−1)C(β)n−1 (2.14)
-give the bound for virial coeﬃcients:
-|cn|≤ β−1
-n
-
-C(β)e4βB
-W
-(
-e
-1+e2βB
-)
-(
-W
-(
-e
-1+e2βB
-)
-− 1
-)2
-
-
-n−1
-(2.15)
-and the bound for the radius of convergence:
-RVir≥C(β)−1e−4βB
-(
-W
-(
-e
-1+e2βB
-)
-− 1
-)2
-W
-(
-e
-1+e2βB
-) (2.16)
-4 S. J. TATE
-This is shown in Section 5
-For purely hard-core interactions B = 0 and the radius of convergence satisﬁes:
-RVir≥C(β)−1
-(
-W
-(e
-2
-)
-− 1
-)2
-W
-(e
-2
-) (2.17)
-This is precisely the same as what is obtained by Lebowitz-Penrose.
-Corollary 2.3 (Alternative Bounds). For cluster expansion bounds:
-|nbn|≤ nn−1
-n! R(β)n−1enβB (2.18)
-we have the bound for virial coeﬃcients as:
-|cn|≤ β−1
-n R(β)n−1
-
-
-W
-(
-eβB+1
-1+eβB
-)
-(
-W
-(
-eβB+1
-1+eβB
-)
-− 1
-)2
-
-
-n−1
-(2.19)
-Thus giving the radius of convergence as:
-RVir≥R(β)−1
-(
-W
-(
-eβB+1
-1+eβB
-)
-− 1
-)2
-W
-(
-eβB+1
-1+eβB
-) (2.20)
-Remark 1. The bounds for the cluster coeﬃcients used in Corollary 2.2 are obtained in
-[Rue69] and [Leb64]. The bounds for the cluster coeﬃcients used in Corollary 2.3 are ob-
-tained in [Pog09].
-Having a new separate bound is only a good idea, if it is an improvement in certain cases.
-In Section 7 we understand how the two diﬀerent bounds compare and conclude:
-Proposition 2.4 (Comparison of Bounds). The bound in Corollary 2.3 is better than that
-in Corollary 2.2, precisely when
-1.6R(β)<C (β) (2.21)
-This is likely to happen at low temperatures (large β) and for potentials with a hard
-core and attractive tail. The attractive element of the potential is important, since the
-improvements are made corresponding to the stability parameter B.
+The main results of this paper rely on the particle model of the classical gas. The main parameters in the model are: the inverse temperature $\beta = \frac{1}{kT}$, where $k$ is Boltzmann's constant and $T$ is the temperature; the fugacity $z$; the pressure $P$; and the density $\rho$.
+
+We start with the Grand Canonical Partition function for a classical gas: $$\begin{equation}
+\Xi(z)  = \sum\limits_{N=0}^{\infty}Z_Nz^n
+\end{equation}$$ Where $Z_N$ is the $N$-particle configuration integral: $$\begin{equation}
+Z_N = \frac{1}{N!}\prod\limits_{i=1}^N\left(\int_{\mathbb{R}^d}\, \mathrm{d}^dx_i\right) e^{-\beta\sum\limits_{1 \leq i<j \leq N}\Phi(x_i,x_j)}
+\end{equation}$$ We have the relationship $\beta P = \ln \Xi$, which gives us an expansion for pressure. The power series for pressure in terms of fugacity $z$, may be written as: $$\begin{equation}
+\beta P = \sum\limits_{n \geq 1}b_nz^n \label{clusterexp}
+\end{equation}$$ Using the formula $\rho=z\frac{\partial}{\partial z} (\beta P)$, we have the corresponding fugacity expansion for density: $$\begin{equation}
+\rho = \sum\limits_{n \geq 1} nb_n z^n \label{clusterexp2}
+\end{equation}$$ We see that the power series expansion for $\rho$ has a zero constant term and non zero $z$ term, where we have that $b_1 \neq 0$ and usually we set it to $1$. It is usual to have a non zero $z$ coefficient in the cluster expansion. This means that it is possible to invert the $\rho-z$ relationship, in order to obtain an expansion for $z(\rho)$. This can be substituted into [\[clusterexp\]](#clusterexp){reference-type="eqref" reference="clusterexp"} in order to get a power series for $P$ in terms of $\rho$: $$\begin{equation}
+P=\sum\limits_{n \geq 1}c_n \rho^n \label{virialexp}
+\end{equation}$$ The assumptions for the initial cluster expansion bounds used in this article are:
+
+::: assumption
+The $N$-particle interaction potential: $U_N(x_1, \cdots, x_N)$ may be written as the sum of pair-potentials: $$\begin{equation}
+U_N(x_1, \cdots, x_N)= \sum\limits_{1 \leq i<j \leq N}\Phi(x_i,x_j)
+\end{equation}$$ Furthermore, we assume that the pair potentials $\Phi(x_i,x_j)$ are central, that is, they only depend on the distance from $x_i$ to $x_j$.
+:::
+
+::: assumption
+[]{#ass: stability label="ass: stability"} The potential energy is assumed to be stable, that is, there is a $B>0$, such that for every $N$ and $(x_1, \cdots, x_N) \in \mathbb{R}^{Nd}$, we have: $$\begin{equation}
+U(x_1, \cdots, x_N)=\sum\limits_{1 \leq i<j \leq N}\Phi(x_i,x_j) \geq -BN
+\end{equation}$$ where $d$ is the dimension of our system.
+:::
+
+::: definition
+We have two main functions of $\beta$, which play an important rôle in the cluster expansion bounds: $$\begin{equation}
+C(\beta):=\int\limits_{\mathbb{R}^d} \, \left|e^{-\beta \Phi(0,x)}-1\right| \mathrm{d}^dx \label{Cbeta}
+\end{equation}$$ $$\begin{equation}
+R(\beta):= \left(|\mathbb{B}|r^d+\beta \int\limits_{|y|>r}\, |\Phi(0,y)| \mathrm{d}^dy \right) \label{Rbeta}
+\end{equation}$$ If the expression [\[Cbeta\]](#Cbeta){reference-type="eqref" reference="Cbeta"} is finite then the potential $\Phi$ is called 'tempered', which we assume for bounds involving $C(\beta)$
+
+The $r$ in [\[Rbeta\]](#Rbeta){reference-type="eqref" reference="Rbeta"} represents the radius of the hard-core interaction. $|\mathbb{B}|$ is the surface area of a $d$-dimensional sphere.
+:::
+
+We write $\mathcal{R}_{\text{Vir}}$ for the radius of convergence of the virial expansion.
+
+::: definition
+We denote by $W(z)$, the Lambert W-function with domain $\mathbb{R}_+:=\{x \in \mathbb{R} \vert x \geq 0\}$ and range $\mathbb{R}_+$. It is the solution to: $$\begin{equation}
+W(z) e^{W(z)}=z
+\end{equation}$$
+:::
+
+Further notes on the Lambert W-function can be found in [@CJK97]
+
+::: theorem
+[]{#thm: general label="thm: general"} Assuming cluster coefficient bounds of the form: $$\begin{equation}
+|nb_n| \leq a \frac{n^{n-1}}{n!}b^n
+\end{equation}$$ where $a$ and $b$ are non-negative functions of inverse temperature $\beta$, we have the virial coefficient bounds: $$\begin{equation}
+|c_n| \leq \frac{\beta^{-1}}{n}\left(a^{-1} \frac{W\left(\frac{eab}{1+ab}\right)}{\left(W\left(\frac{eab}{1+ab}\right)-1\right)^2}\right)^{n-1}
+\end{equation}$$ which gives the lower bound on the radius of convergence as: $$\begin{equation}
+\mathcal{R}_{\text{Vir}} \geq a \frac{\left(W\left(\frac{eab}{1+ab}\right)-1\right)^2}{W\left(\frac{eab}{1+ab}\right)}
+\end{equation}$$
+:::
+
+If we apply this general theorem, which is derived in Section [\[sec: general\]](#sec: general){reference-type="ref" reference="sec: general"}, to two specific bounds we have for cluster expansions, we achieve:
+
+::: corollary
+[]{#cor:lebpenbound label="cor:lebpenbound"} The cluster expansion bounds: $$\begin{equation}
+|nb_n| \leq \frac{n^{n-1}}{n!}e^{2\beta B(n-1)}C(\beta)^{n-1}
+\end{equation}$$ give the bound for virial coefficients: $$\begin{equation}
+|c_n| \leq \frac{\beta^{-1}}{n} \left(C(\beta)e^{4\beta B} \frac{W\left(\frac{e}{1+e^{2\beta B}}\right)}{\left(W\left(\frac{e}{1+e^{2\beta B}}\right)-1\right)^2}\right)^{n-1}
+\end{equation}$$ and the bound for the radius of convergence: $$\begin{equation}
+\mathcal{R}_{\text{Vir}} \geq C(\beta)^{-1} e^{-4\beta B}\frac{\left(W\left(\frac{e}{1+e^{2\beta B}}\right)-1\right)^2}{W\left(\frac{e}{1+e^{2\beta B}}\right)}
+\end{equation}$$
+:::
+
+This is shown in Section [\[sec: oldbounds\]](#sec: oldbounds){reference-type="ref" reference="sec: oldbounds"}
+
+For purely hard-core interactions $B=0$ and the radius of convergence satisfies: $$\begin{equation}
+\mathcal{R}_{\text{Vir}} \geq C(\beta)^{-1} \frac{\left(W\left(\frac{e}{2}\right)-1\right)^2}{W\left(\frac{e}{2}\right)}
+\end{equation}$$ This is precisely the same as what is obtained by Lebowitz-Penrose.
+
+::: corollary
+[]{#cor:mybounds label="cor:mybounds"} For cluster expansion bounds: $$\begin{equation}
+|nb_n| \leq \frac{n^{n-1}}{n!}R(\beta)^{n-1}e^{n\beta B}
+\end{equation}$$ we have the bound for virial coefficients as: $$\begin{equation}
+|c_n| \leq \frac{\beta^{-1}}{n}R(\beta)^{n-1} \left( \frac{W\left(\frac{e^{\beta B+1}}{1+e^{\beta B}}\right)}{\left(W\left(\frac{e^{\beta B +1}}{1+e^{\beta B}}\right)-1\right)^2}\right)^{n-1}
+\end{equation}$$ Thus giving the radius of convergence as: $$\begin{equation}
+\mathcal{R}_{\text{Vir}} \geq R(\beta)^{-1} \frac{\left(W\left(\frac{e^{\beta B +1}}{1+e^{\beta B}}\right)-1\right)^2}{W\left(\frac{e^{\beta B+1}}{1+e^{\beta B}}\right)}
+\end{equation}$$
+:::
+
+::: remark
+The bounds for the cluster coefficients used in Corollary [\[cor:lebpenbound\]](#cor:lebpenbound){reference-type="ref" reference="cor:lebpenbound"} are obtained in [@R69] and [@LPen64]. The bounds for the cluster coefficients used in Corollary [\[cor:mybounds\]](#cor:mybounds){reference-type="ref" reference="cor:mybounds"} are obtained in [@PU09].
+:::
+
+Having a new separate bound is only a good idea, if it is an improvement in certain cases. In Section [\[sec: comparison\]](#sec: comparison){reference-type="ref" reference="sec: comparison"} we understand how the two different bounds compare and conclude:
+
+::: proposition
+[]{#prop: comparison label="prop: comparison"} The bound in Corollary [\[cor:mybounds\]](#cor:mybounds){reference-type="ref" reference="cor:mybounds"} is better than that in Corollary [\[cor:lebpenbound\]](#cor:lebpenbound){reference-type="ref" reference="cor:lebpenbound"}, precisely when $$\begin{equation}
+1.6R(\beta) < C(\beta)
+\end{equation}$$
+:::
+
+This is likely to happen at low temperatures (large $\beta$) and for potentials with a hard core and attractive tail. The attractive element of the potential is important, since the improvements are made corresponding to the stability parameter $B$.

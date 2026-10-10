@@ -7,144 +7,172 @@ section_number: null
 pages: 34-38
 source_pdf: 0305275v1.pdf
 source_sha256: 9b356a9d716a0d3e
+text_source: latex
+latex_prose_ratio: 0.989
+latex_coverage_ratio: 0.703
 doc_brief: "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds — Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2 , C)."
 ---
-In this section we prove some corollaries that can be useful for stu dying
-hyperbolic 3-manifolds.
-First we show how from Theorem 6.1 one gets a proof of Mostow’s rigid ity
-for non-compact manifolds (see [P] and [BCS] for a more general st atement
-and a diﬀerent proof).
-Theorem 7.1 (Mostow’s rigidity for non-compact manifold) Let f :
-M → N be a proper map between two orientable non-compact, complet e
-hyperbolic 3-manifolds of ﬁnite volume. Suppose that vol(M)=deg(f )vol(N).
-Then f is properly homotopic to a locally isometric covering with t he same
-degree as f .
-Proof. Let ω be the volume form of N. For X = M,N let Γ X ∼= π1(X) be
-the subgroup of PSL(2 , C) such that X = H3/Γ X. Let f∗ denote both the
-map induced in homology and the representation f∗ :π1(M) → PSL(2, C).
-First assume that the lift ~f : ~M → ~N has the cone-property on the
-cusps. This implies that ~f is a pseudo-developing map for f∗. Since f∗[M] =
-deg(f )[N] we have
-vol(M) = deg(f ) · vol(N) = ⟨ω, deg(f )[N]⟩
-= ⟨ω,f ∗[M]⟩ = ⟨f ∗ω, [M]⟩ = vol(f∗).
-Thus, by Theorem 6.1 there exists an isometry ϕ such that for anyγ ∈ Γ M
-f∗(γ) = ϕ ◦γ ◦ϕ−1.
-34
-As ~M ∼= H3, we consider the isometry ϕ as an f∗-equivariant map from ~M
-to H3. Namely, for any x ∈ H3 and γ ∈ Γ M
-ϕ(γ(x)) = f∗(γ)(ϕ(x)).
-It follows that ϕ projects to a locally isometric covering ϕ : M → N and
-the convex combination from ~f to ϕ projects to a proper homotopy from f
-to ϕ. Since the degree of a map is invariant under proper homotopies, th en
-deg(ϕ) = deg(f ).
-We prove now that f is always properly homotopic to a map whose lift
-has the cone property on the cusps. Let ~f be a lift of f . For each cusp Np =
-Pp × [0, ∞) let fp = ~f |Pp×{0}. Since f is proper it follows that ~f (Np × {∞}) is
-well-deﬁned. Let Fp :Np × [0, ∞) → H3 be the map obtained by coning fp to
-~f (Np×{∞}) along geodesic rays. Let ~f ′ be the map obtained by replacing, on
-each cusp Np, the map ~f |Np with the map Fp. The map ~f ′ obviously has the
-cone-property on the cusps, and projects to a map f ′ :M →N. Moreover,
-the convex combination from ~f to ~f ′ projects to a proper homotopy between
-f and f ′.
-✷
-From Theorem 6.1, Theorem 7.1, Corollary 5.11 and the correspondin g
-statements for compact manifolds, we get the following statement .
-Theorem 7.2 Let M be a complete, oriented hyperbolic 3-manifold of ﬁnite
-volume. Let Γ ∼=π1(M) be the sub-group of PSL(2, C) such that M = H3/Γ .
-Let ρ : Γ → PSL(2, C) be a representation. Then |vol(ρ)| ≤ | vol(M)| and
-equality holds if and only if ρ is discrete and faithful.
-Corollary 7.3 Let M be an atoroidal, irreducible, ideally triangulated 3-
-manifold. Let z ∈ { C \ {0, 1}}n be a solution of the hyperbolicity equations
-such that vol(z) ⁄= 0. Then M is hyperbolic.
-Proof. This immediately follows from Corollary 5.10 and Thurston’s Hyper-
-bolization Theorem ([Th2]).
-✷
-In [F] the notion of geometric solution of the hyperbolicity equations
-is introduced. Roughly speaking, a geometric solution of the hyperb olicity
-equations for a given ideal triangulation τ is a choice of moduli which is
-compatible with a global hyperbolic structure on M. In [F] it is shown that
-not each solution of hyperbolicity equations is geometric (see [F] for more
-details on algebraic and geometric solutions of hyperbolicity equation s).
-35
-Corollary 7.4 Let M be a complete hyperbolic 3-manifold of ﬁnite volume
-and let τ be an ideal triangulation of M. If there exists a solution z ∈
-{C \ {0, 1}}n of the hyperbolicity equations for τ , then there exists a solution
-z′ of hyperbolicity equations that is geometric. Moreover suc h a solution is
-the one of maximal volume.
-Proof. Consider a natural straightening of τ , and let z′ be the moduli induced
-on τ . By Proposition 3.7, we have only to prove that the moduli are not in
-{0, 1, ∞}. Suppose that there is a degenerate tetrahedron ∆ i. Then at least
-two vertices, say v and w, of ∆ i coincide.
-Let ρ(z) be the holonomy relative to z and let Dz be a developing map
-that is also a pseudo-developing map for ρ(z). Then Dz maps ∆ i into a
-tetrahedron of modulus zi. But by hypothesis, z is in {C \ {0, 1}}n and so
-the vertices of ∆ i are four distinct points. The last assertion follows from
-Corollary 5.11 and Theorem 6.1
-✷
-Corollary 7.4 tells that, once one has a solution z ∈ { C \ { 0, 1}}n of
-the hyperbolicity equations for a triangulation τ of a cusped manifold M, in
-order to know if M admits a complete hyperbolic structure of ﬁnite volume, it
-suﬃces to study the solution of maximal volume. Namely, if one succe eds to
-prove that the solution of maximal volume is geometric, then M is hyperbolic.
-Conversely, if one proves that such a solution is not geometric (for example
-if its holonomy is not discrete) then M cannot be hyperbolic, and this does
-not depend on the chosen triangulation.
-As an example of application of Corollary 7.4 we give the following:
-Corollary 7.5 Let M be a cusped 3-manifold equipped with an ideal trian-
-gulation τ . If there exists a solution z ∈ { C \ {0, 1}}n of the hyperbolicity
-equations for τ , and all the solutions have zero volume, then M is not hyper-
-bolic.
-We notice that the hypothesis that all the solutions have zero volum e can
-be replaced by requiring that the volumes are too small . This is because the
-set of the volumes of the hyperbolic manifolds is bounded from below b y a
-positive constant.
-Finally, we obtain another proof of the well-know fact that no Dehn ﬁ lling
-of a Seifert manifold is hyperbolic.
-Corollary 7.6 LetM be a 3-manifold such that ||(M,∂M )|| = 0 and let N
-be a Dehn ﬁlling of M. Then N is not hyperbolic.
-36
-Proof. Suppose the contrary. Let ρ be the holonomy of the hyperbolic struc-
-ture of N. From Theorem 5.1 it follows that vol( ρ) = 0, but from Proposi-
-tion 4.20 and Corollary 4.15 it follows that vol( ρ) = vol(N)> 0.
-✷
-References
-[BP] R. Benedetti, C. Petronio: Lectures on Hyperbolic Geometry.
-Springer Verlag, Berlin-Heidelberg-New York, 1992.
-[BCS] J. Boland, C. Connell, J. Souto: Volume Rigidity for Finite Volume
-Manifolds. Preprint, available on:
-http://www.math.uchicago.edu/~cconnell/papers.html
-[D] N. Dunﬁeld: Cyclic surgery, degree of maps of character curves, and
-volume rigidity for hyperbolic manifolds. Invent. Math. 136, 623-657
-(1999).
-[F] S. Francaviglia: Algebraic and geometric solutions of hyperbolic
-Dehn ﬁlling equations. Preprint math.GT/0305077 available on
-http://arxiv.org
-[G] M. Gromov: Volume and Bounded Cohomology. Publ. Math. IHES
-56, 5-100 (1082).
-[GHL] S. Gallot, D. Hulin, J. Lafontaine: Riemannian Geometry (2nd Edi-
-tion). Springer Verlag, 1993.
-[Ka] M.Kapovich: Hyperbolic Manifolds and Discrete Groups: Notes
-on Thurston’s Hyperbolization. Progress in Mathematics, 183.
-Birkh¨ auser Boston, Inc., Boston, MA, 2001.
-[Ku] T. Kuessner: Relative simplicial volume. PhD thesis T¨ ubingen Uni-
-versity (2001)
-[NZ] W. D. Neumann, D. Zagier: Volumes of hyperbolic three-manifolds.
-Topology 24, 307-332 (1985).
-[PP] C. Petronio, J. Porti: Negatively oriented ideal triangulations and
-a proof of Thurston ’s hyperbolic Dehn ﬁlling theorem. Expo. Math.
-18, 1-35 (2000), no. 1.
-37
-[PW] C. Petronio, J. R. weeks: Partially ﬂat ideal triangulations of cusped
-hyperbolic 3-manifolds. Osaka J. Math. 37, 453-466 (2000), no. 2.
-[P] G. Prasad: Strong rigidity in Q-rank 1 lattices. Invent. Math. 21,
-255–286 (1973).
-[Ra] J. G. Ratcliﬀe: Foundations of hyperbolic manifolds. Graduate Texts
-in Mathematics, 149. Springer-Verlag, New York 1994.
-[Ru] W. Rudin Real and complex analysis. Third edition. McGraw-Hill
-Book Co., New York, 1987.
-[Th1] W.P. Thurston: The geometry and topology of 3-manifolds. Mim-
-eographed notes, Princeton University Mathematics Department ,
-1979.
-[Th2] W.P. Thurston: Three-dimensional manifolds, Kleinian groups and
-hyperbolic geometry. Bull. Amer. Math. Soc. 6, 357-381 (1982).
-38
+\label{s cor}
+
+In this section we prove some corollaries that can be useful 
+for studying hyperbolic $3$-manifolds.
+
+
+
+First we show how
+from Theorem~\ref{t ug} one gets a proof of Mostow's rigidity
+for non-compact manifolds (see~\cite{P} and~\cite{BCS} for a more
+general statement and a different proof).
+
+\begin{teo}[Mostow's rigidity for non-compact manifold]\label{t mstw}
+Let $f:M\to N$ be a proper map between two orientable non-compact,
+complete hyperbolic $3$-manifolds of finite volume. Suppose that
+\vol(M)={\rm deg}(f)\vol(N).
+Then $f$ is properly homotopic to a locally isometric covering with the
+same degree as $f$.   
+\end{teo}
+\proof 
+Let $\omega$ be the volume form of $N$. For $X=M,N$ let
+$\Gamma_X\cong \pi_1(X)$ be the subgroup of ${\rm PSL}(2,\M C)$ such that  
+$X=\M H^3/\Gamma_X$.
+Let $f_*$ denote both the map induced in homology and the 
+representation $f_*:\pi_1(M)\to{\rm PSL}(2,\M C)$. 
+
+First assume that the lift $\wt f:\wt M\to\wt N$ has the cone-property
+on the cusps. This implies that $\wt f$ is a pseudo-developing map for $f_*$.
+Since $f_*[M]=\deg(f)[N]$ we have
+$$
+\begin{array}{l}
+\vol(M)=\deg(f)\cdot\vol(N)=\langle\omega,\deg(f)[N]\rangle\\
+=\langle\omega,f_*[M]\rangle=\langle f^*\omega,[M]\rangle=\vol(f_*).
+\end{array}$$
+
+Thus, by Theorem~\ref{t ug} there exists an isometry $\f$ such that 
+for any $\gamma\in\Gamma_M$
+$$f_*(\gamma)=\f\circ\gamma\circ\f^{-1}.$$
+As $\wt M\cong \M H^3$, we consider the 
+isometry \f\ as an $f_*$-equivariant map from
+$\wt M$ to $\M H^3$. Namely, for any $x\in\M H^3$ and
+$\gamma\in\Gamma_M$
+$$\f(\gamma(x))=f_*(\gamma)(\f(x)).$$
+It follows that $\f$ projects to a locally isometric covering 
+$\f:M\to N$ and the convex combination from $\wt f$ to $\f$ projects to
+a proper homotopy from $f$ to $\f$. 
+{Since the degree of a map is invariant under proper homotopies, then 
+$\deg(\f)=\deg(f)$.
+
+We prove now that $f$ is always properly homotopic to a map whose lift
+has the cone property on the cusps.
+Let $\wt f$ be a lift of $f$. 
+For each cusp $N_p=P_p\times[0,\infty)$ let $f_p=\wt
+f|_{P_p\times\{0\}}$. Since $f$ is proper it follows that $\wt
+f(N_p\times\{\infty\})$ is well-defined. 
+Let $F_p:N_p\times[0,\infty)\to\M H^3$ be the map
+obtained by coning $f_p$ to $\wt f(N_p\times\{\infty\})$ along geodesic
+rays. Let $\wt {f'}$ be the map obtained by replacing, on each cusp $N_p$,
+the map $\wt f|_{N_p}$ with the map $F_p$. The map $\wt{f'}$ obviously
+has the cone-property on the cusps, and projects to a map 
+$f':M\to N$. Moreover, the convex combination from $\wt f$ to
+$\wt{f'}$ projects 
+to a proper homotopy between $f$ and $f'$.  
+\qed
+
+From Theorem~\ref{t ug}, Theorem~\ref{t mstw}, Corollary~\ref{c df}
+ and the corresponding statements for compact manifolds, we get the following
+statement.
+\begin{teo}
+  Let M be a complete, oriented hyperbolic $3$-manifold of finite
+  volume. Let $\Gamma\cong\pi_1(M)$ be the sub-group of ${\rm PSL}(2,\M C)$
+  such that $M=\M H^3/\Gamma$. 
+  Let $\rho:\Gamma\to$ {\rm PSL}$(2,\M C)$ be a representation.
+  Then $|\vol(\rho)|\leq|\vol(M)|$ and equality holds if and only if
+  $\rho$ is discrete and faithful.
+\end{teo}
+
+\begin{cor}
+Let $M$ be an atoroidal, irreducible, ideally triangulated
+$3$-manifold. Let $\z\in\{\M C\setminus\{0,1\}\}^n$ be a solution
+of the hyperbolicity equations such that 
+$\vol(\z)\neq 0$. Then $M$ is hyperbolic. 
+\end{cor}
+\proof
+This immediately follows from Corollary~\ref{c vg} and 
+Thurston's Hyperbolization Theorem~(\cite{Th2}).
+\qed 
+
+In~\cite{F3} the notion of {\em geometric} solution of the
+hyperbolicity equations is introduced.
+Roughly speaking, a geometric solution of the hyperbolicity equations 
+for a given ideal triangulation $\tau$ is a choice of moduli 
+which is compatible with a global hyperbolic structure on $M$.
+In~\cite{F3} it is shown that 
+not each solution of hyperbolicity equations is geometric 
+(see~\cite{F3} for more details on
+algebraic and geometric solutions of hyperbolicity equations).
+
+
+\begin{cor}\label{c ac}
+Let $M$ be a complete hyperbolic $3$-manifold of
+finite volume and let $\tau$ be an ideal triangulation of $M$. 
+If there exists a solution $\z\in\{\M C\setminus\{0,1\}\}^n$ 
+of the hyperbolicity equations for $\tau$, 
+then there exists a solution
+  $z'$ of hyperbolicity equations that is geometric. Moreover such a
+  solution is the one of maximal volume. 
+\end{cor}
+\proof
+Consider a natural straightening of $\tau$, and let $\z'$ be the moduli
+induced on $\tau$. By Proposition~\ref{p so}, we have only to prove
+that the moduli are not in 
+$\{0,1,\infty\}$. Suppose that there is a degenerate tetrahedron
+$\Delta_i$. Then
+at least two vertices, say $v$ and $w$, of $\Delta_i$  coincide. 
+
+Let $\rho(\z)$ be the holonomy
+relative to \z\ and let $D_\z$ be a developing map that is also a
+pseudo-developing map for $\rho(\z)$. Then $D_\z$ maps $\Delta_i$ into a
+tetrahedron of modulus $z_i$. But by hypothesis, $\z$ is in $\{\M
+C\setminus\{0,1\}\}^n$ and so the vertices of $\Delta_i$ are four
+distinct points. The last assertion follows from Corollary~\ref{c df}
+and Theorem~\ref{t ug}\qed
+
+Corollary~\ref{c ac} tells that, 
+once one has a solution $\z\in\{\M C\setminus\{0,1\}\}^n$
+of the hyperbolicity equations for a
+triangulation $\tau$ of a cusped manifold $M$, 
+in order to know if $M$ admits a complete hyperbolic structure of
+finite volume, 
+it suffices to study the solution of
+maximal volume. Namely, if one succeeds to prove that the solution of
+maximal volume is geometric, then $M$ is hyperbolic. Conversely, if
+one proves that such a solution is not geometric (for example if its
+holonomy is not discrete) then $M$ cannot be hyperbolic, and this does
+not depend on the chosen triangulation. 
+
+As an example of application
+of Corollary~\ref{c ac} we give the following:
+
+
+\begin{cor}\label{c zeron}
+Let $M$ be a cusped $3$-manifold 
+equipped with  an ideal triangulation  $\tau$. 
+If there exists a solution $\z\in\{\M C\setminus\{0,1\}\}^n$ 
+of the hyperbolicity equations for $\tau$, and all the solutions have
+zero volume, then $M$ is not hyperbolic. 
+\end{cor}
+
+We notice that the hypothesis that all the solutions have
+zero volume can be replaced by requiring that the volumes are {\em too small}.
+This is because the set of the volumes of the hyperbolic manifolds 
+is bounded from below by a positive constant. 
+
+Finally, we obtain another proof of the well-know fact that no
+Dehn filling of a Seifert manifold is hyperbolic.
+\begin{cor}\label{c fr}
+  Let $M$ be a $3$-manifold such that $||(M,\partial M)||=0$ and let $N$
+  be a Dehn filling of $M$. Then $N$ is not hyperbolic. 
+\end{cor}
+\proof Suppose the contrary. Let $\rho$ be the holonomy of the
+hyperbolic structure of $N$. From Theorem~\ref{t sv} it follows that
+$\vol(\rho)=0$, but from Proposition~\ref{p f2} and 
+Corollary~\ref{c nat} it follows that $\vol(\rho)=$ $\vol(N)>0$.\qed

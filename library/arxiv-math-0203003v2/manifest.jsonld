@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0203003v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "On the quantum Kazhdan-Lusztig functor Pavel I. Etingof Adriano A. Moura etingof@math.mit.edu adrianoam@ime.unicamp.br Introduction One of the most exciting developments in representation the ory in the recent years was the discovery",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203003v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0203003v2",
   "contains": [
     "library/arxiv-math-0203003v2/sections/sec-000",
     "library/arxiv-math-0203003v2/sections/sec-001",
@@ -15,8 +20,17 @@
     "library/arxiv-math-0203003v2/sections/sec-006"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0203003&metadataPrefix=arXiv), submitted 2002-04-24, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-math-0203003v2",
+    "title_source": "slug",
     "source_file": "0203003v2.pdf",
     "source_sha256": "7579ae76959396b8dd4a05f6fe3f58a79b25d1b8bc72c21e6fd1ec6ac82819ef",
     "pages": 13,

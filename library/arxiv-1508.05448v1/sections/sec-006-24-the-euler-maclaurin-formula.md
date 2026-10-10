@@ -7,49 +7,19 @@ section_number: 2.4
 pages: 34-36
 source_pdf: 1508.05448v1.pdf
 source_sha256: 57d2c717d8ec74d0
+text_source: latex
+latex_prose_ratio: 0.989
+latex_coverage_ratio: 0.957
 doc_brief: "Concentration of Measure Techniques and Applications — 23 sections: Biographical Sketch; Acknowledgments; Abstract"
 ---
-The Euler-Maclaurin formula is a formula which enables us to make a connection
-between a sum and its corresponding integral, provided the function is suﬃciently
-smooth. Before we can state the formula, we need a few preliminary deﬁnitions
-and notation. Let ⌊x⌋ denote the greatest integer function, so that ⌊x⌋ returns the
-greatest integer less than or equal to x. For s = 1, 2,... , let Bs(x) denote the
-Bernoulli polynomials. The generating function for the Bernoulli polynomials is as
-follows:
-text
-et− 1 =
-∞∑
-s=0
-Bs(x)ts
-s!
-Fors≥ 1, we will let Bs :=Bs(0). These Bs are called the Bernoulli numbers. The
-ﬁrst few Bernouli numbers are given byB1 =−12, B2 = 16, B3 = 0, B4 = 130, B5 =
-26
-0,B 6 = 142. See [Andrews et al., 1999] for more details and alternative deﬁnitions.
-We now have everything that we need to state the Euler-Maclaurin formula.
-Theorem 2.4.1. Supposef has continuous derivatives up to order s. Then
-n∑
-m+1
-f(x) =
-∫ n
-m
-f(x)dx +
-s∑
-i=1
-(−1)iBi
-i! (f (i−1)(n)−f (i−1)(m))
-+ (−1)i−1
-i!
-∫ n
-m
-Bs(x−⌊x⌋)f (i)(x)dx (2.11)
-Notice that this formula allows a sum to be estimated by its corresponding in-
-tegral (or an integral by its sum), and gives an exact formula for the error in using
-this estimation. In many applications, this error term can at least be bounded, if not
-computed exactly. The proof of the formula involves successively performing integra-
-tion by parts, which gives a sequence of periodic functions relating to the Bernoulli
-polynomials. For a proof, see [Andrews et al., 1999]. We will use a similar method of
-proof to prove a q-deformed version of Stirling’s formula in a later section.
-27
-3 Random Operator
-Compressions
+The Euler-Maclaurin formula is a formula which enables us to make a connection between a sum and its corresponding integral, provided the function is sufficiently smooth. Before we can state the formula, we need a few preliminary definitions and notation. Let $\lfloor x\rfloor$ denote the greatest integer function, so that $\lfloor x\rfloor$ returns the greatest integer less than or equal to $x$. For $s=1,2,\dots$, let $B_s(x)$ denote the Bernoulli polynomials. The generating function for the Bernoulli polynomials is as follows: $$\frac{te^{xt}}{e^t-1}=\sum_{s=0}^{\infty} B_s(x)\frac{t^s}{s!}$$ For $s\geq 1$, we will let $B_s:=B_s(0)$. These $B_s$ are called the Bernoulli numbers. The first few Bernouli numbers are given by $B_1 = -1⁄2,\; B_2 = 1⁄6,\; B_3 = 0 ,\; B_4 = −1⁄30, \;B_5 = 0\;, B_6 = 1⁄42$. See [@AndrewsAskeyRoy] for more details and alternative definitions. We now have everything that we need to state the Euler-Maclaurin formula.
+
+::: thm
+Suppose $f$ has continuous derivatives up to order $s$. Then $$\begin{multline}
+\sum_{m+1}^n f(x)=\int_m^n f(x) dx+\sum_{i=1}^s(-1)^i\frac{B_i}{i!}(f^{(i-1)}(n)-f^{(i-1)}(m)) \\ +\frac{(-1)^{i-1}}{i!}\int_m^n B_s(x-\lfloor x\rfloor)f^{(i)}(x) dx
+\end{multline}$$
+:::
+
+Notice that this formula allows a sum to be estimated by its corresponding integral (or an integral by its sum), and gives an exact formula for the error in using this estimation. In many applications, this error term can at least be bounded, if not computed exactly. The proof of the formula involves successively performing integration by parts, which gives a sequence of periodic functions relating to the Bernoulli polynomials. For a proof, see [@AndrewsAskeyRoy]. We will use a similar method of proof to prove a $q$-deformed version of Stirling's formula in a later section.
+
+# Random Operator Compressions

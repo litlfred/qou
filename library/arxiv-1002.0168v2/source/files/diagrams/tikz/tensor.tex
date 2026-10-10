@@ -1,0 +1,29 @@
+ \begin{tikzpicture}[PAdefn]
+	\clip [draw] (2,2) arc (90:-90:2cm) -- (-2,-2) arc (-90:-270:2cm) -- (2,2);
+	
+	%first draw the lines	
+	\draw (2,0) -- +(110:3cm) -- +(130:3cm) -- (2,0);
+	\draw (2,0) -- ++(50:3cm);
+	\draw (2,0) -- ++(-50:3cm);
+	\draw (2,0) -- +(-110:3cm) -- +(-130:3cm) -- (2,0);
+		
+	\draw (-2,0) -- +(110:3cm) -- +(130:3cm) -- (-2,0);
+	\draw (-2,0) -- ++(50:3cm);
+	\draw (-2,0) -- ++(-50:3cm);
+	\draw (-2,0) -- +(-110:3cm) -- +(-130:3cm) -- (-2,0);
+	
+	%decorate with dots, labels and stars
+	\node at (-1.8,1.2) {$\dots$};
+	\node at (-1.8,-1.2) {$\dots$};
+	\node at (2.2,1.2) {$\dots$};
+	\node at (2.2,-1.2) {$\dots$};
+
+	\node at (2,0) [Tbox,inner sep=1.4mm] (A) {\small{\textcolor{gray}{2}}};
+	\node at (-2,0) [Tbox,inner sep=1.4mm] (B) {\small{\textcolor{gray}{1}}};
+	\node at (A.180) [left] {$\star$};
+	\node at (B.180) [left] {$\star$};
+	\node at (-3.7,0)  {$\star$};	
+	
+	%redraw boundary
+	\draw[ultra thick] (2,2) arc (90:-90:2cm) -- (-2,-2) arc (-90:-270:2cm) -- (2,2);
+\end{tikzpicture}

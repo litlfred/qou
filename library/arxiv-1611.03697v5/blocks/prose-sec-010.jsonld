@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1611.03697v5/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1611.03697v5/blocks/prose-sec-010",
   "kind": "prose",
   "title": "Doubling construction",
   "pageStart": 8,
   "pageEnd": 9,
   "text": "../sections/sec-010-28-doubling-construction.md",
-  "derivedFrom": "library/arxiv-1611.03697v5/manifest",
-  "sourceDocument": "library/arxiv-1611.03697v5/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1611.03697v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1611.03697v5/manifest.jsonld",
   "provenance": "ingested"
 }

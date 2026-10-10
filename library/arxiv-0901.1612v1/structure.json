@@ -5,7 +5,8 @@
   "file": "0901.1612v1.pdf",
   "sha256": "b4f3efcadd1e5caff0aa26ee0210329756a330fe228727e1d895fb08dc6f2392",
   "bytes": 558049,
-  "pages": 23
+  "pages": 23,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INVARIANTS",
   "authors_raw": "AND INTEGRAL FORMULAS FOR THREE-COMPONENT LINKS",
-  "abstract": "Three-component links in the 3-dimensional sphere were classiﬁed up to link homotopy by John Milnor in his senior thesis, published in 1954. A complete set of invariants is given by the pairwise linking numbers p,q andr of the components, and by the residue class of one further integer µ, the “triple linking number” of the title, which is well-deﬁned modulo the greatest common divisor of p, q and r. The Borromean rings: p =q =r = 0, µ = ±1 To each such link L we associate a geometrically natural characteristic map gL from the 3-torus to the 2-sphere in such a way that link homotopies of L become homotopies ofgL. Maps of the 3-torus to the 2-sphere were classiﬁed up to homotopy by Lev Pontryagin in 1941. A complete set of invariants is given by the degrees p,q andr of their restrictions to the 2-dimensional coordinate subtori, and by the residue class of one further integer ν, an “ambiguous Hopf invariant” which is well-deﬁned modulo twice the greatest common divisor of p, q and r. We show that the pairwise linking numbers p, q and r of the components of L are equal to the degrees of its characteristic map gL restricted to the 2-dimensional subtori, and that twice Milnor’sµ-invariant forL is equal to Pontryagin’sν-invariant for gL. Whenp,q andr are all zero, theµ- andν-invariants are ordinary integers. In this case we use J. H. C. Whitehead’s integral formula for the Hopf invariant, adapted to maps of the 3-torus to the 2-sphere, together with a formula for the fundamental solution of the scalar Laplacian on the 3-torus as a Fourier series in three variables, to provide an explicit integral formula for ν, and hence for µ. We give here only sketches of the proofs of the main results, with full details to appear elsewhere. Date: 12 January, 2009. 1 arXiv:0901.1612v1 [math.GT] 12 Jan 2009",
+  "abstract": "Three-component links in the 3-dimensional sphere were classi\ufb01ed up to link homotopy by John Milnor in his senior thesis, published in 1954. A complete set of invariants is given by the pairwise linking numbers p,q andr of the components, and by the residue class of one further integer \u00b5, the \u201ctriple linking number\u201d of the title, which is well-de\ufb01ned modulo the greatest common divisor of p, q and r. The Borromean rings: p =q =r = 0, \u00b5 = \u00b11 To each such link L we associate a geometrically natural characteristic map gL from the 3-torus to the 2-sphere in such a way that link homotopies of L become homotopies ofgL. Maps of the 3-torus to the 2-sphere were classi\ufb01ed up to homotopy by Lev Pontryagin in 1941. A complete set of invariants is given by the degrees p,q andr of their restrictions to the 2-dimensional coordinate subtori, and by the residue class of one further integer \u03bd, an \u201cambiguous Hopf invariant\u201d which is well-de\ufb01ned modulo twice the greatest common divisor of p, q and r. We show that the pairwise linking numbers p, q and r of the components of L are equal to the degrees of its characteristic map gL restricted to the 2-dimensional subtori, and that twice Milnor\u2019s\u00b5-invariant forL is equal to Pontryagin\u2019s\u03bd-invariant for gL. Whenp,q andr are all zero, the\u00b5- and\u03bd-invariants are ordinary integers. In this case we use J. H. C. Whitehead\u2019s integral formula for the Hopf invariant, adapted to maps of the 3-torus to the 2-sphere, together with a formula for the fundamental solution of the scalar Laplacian on the 3-torus as a Fourier series in three variables, to provide an explicit integral formula for \u03bd, and hence for \u00b5. We give here only sketches of the proofs of the main results, with full details to appear elsewhere. Date: 12 January, 2009. 1 arXiv:0901.1612v1 [math.GT] 12 Jan 2009",
   "docinfo": {
    "Author": "Dennis DeTurck, Herman Gluck, Rafal Komendarczyk, Paul Melvin, Clayton Shonkwiler and David Shea Vela-Vick",
    "CreationDate": "D:20181026103656Z",
@@ -187,8 +188,63 @@
   "likely_scanned": false,
   "toc_entries": 11,
   "sections": 7,
-  "chars_total": 43798
+  "chars_total": 43798,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "RA8Jan7.tex",
+   "tex_sections": 6,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-statement-of-results",
+     "title": "Statement of results",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-background-and-motivation",
+     "title": "Background and motivation",
+     "prose_ratio": 0.807,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-acknowledgements",
+     "title": "Acknowledgements",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-3-explicit-formula-for-the-characteristic-map-gl",
+     "title": "Explicit formula for the characteristic map gL",
+     "prose_ratio": 0.413,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-31-an-asymmetric-version-of-the-characteristic-m",
+     "title": "An asymmetric version of the characteristic map",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-61-the-fundamental-solution-of-the-laplacian",
+     "title": "The fundamental solution of the Laplacian",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  },
  "duplicate_of": "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
- "duplicate_note": "Same work as library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
+ "duplicate_note": "Same work as library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted \u2014 existing citations may point here \u2014 but skipped by the ranking and the summary index so one work is not counted twice."
 }

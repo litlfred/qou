@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1905.06064v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1905.06064v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1905.06064v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1905.06064&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1905.06064v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1905.06064v1",
+    "content_type": "application/gzip",
+    "sha256": "6d0ecbdfbeaa6ab798f02e258f44f67fe829a1145269d29a4b9104011c666091",
+    "bytes": 49178,
+    "fetched": "2026-10-10T15:14:15+00:00",
+    "files": [
+      {
+        "path": "source/files/pknot23.bbl",
+        "role": "bbl",
+        "sha256": "fe8b9ec6c943aa945272f329db5c5eae14d1d8503fbd5066d18209560c576381",
+        "bytes": 8200
+      },
+      {
+        "path": "source/files/pknot23.tex",
+        "role": "tex",
+        "sha256": "43d1b40be35d647d6fa85eebef98cb16be6786ea581354cd1c94b564f9081119",
+        "bytes": 90048
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

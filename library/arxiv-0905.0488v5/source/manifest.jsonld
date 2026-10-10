@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0905.0488v5/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0905.0488v5 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0905.0488v5/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0905.0488&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0905.0488v5",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/0905.0488v5",
+    "content_type": "application/gzip",
+    "sha256": "c23de1bd54cad770ea2ab166b5a835cbd498213d82b8afa8d8d60ef0d058c9e0",
+    "bytes": 165714,
+    "fetched": "2026-10-10T15:02:08+00:00",
+    "files": [
+      {
+        "path": "source/files/paper_rina.tex",
+        "role": "tex",
+        "sha256": "d8ad75b2d290910859e0ce4c49744da50895cac2fb89d5994c64a3edae89e3bb",
+        "bytes": 215658
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

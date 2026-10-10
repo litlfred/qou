@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2603.25236v1/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2603.25236v1/blocks/prose-sec-002",
   "kind": "prose",
   "title": "(coming from the real part), we get that for evenl, (4) is equal to",
   "pageStart": 5,
   "pageEnd": 8,
   "text": "../sections/sec-002-2-coming-from-the-real-part-we-get-that-for-even.md",
-  "derivedFrom": "library/arxiv-2603.25236v1/manifest",
-  "sourceDocument": "library/arxiv-2603.25236v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2603.25236v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2603.25236v1/manifest.jsonld",
   "provenance": "ingested"
 }

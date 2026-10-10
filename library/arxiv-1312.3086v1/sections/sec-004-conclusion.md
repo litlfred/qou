@@ -7,28 +7,15 @@ section_number: null
 pages: 8-9
 source_pdf: 1312.3086v1.pdf
 source_sha256: ff328e7c7cbdc70c
+text_source: latex
+latex_prose_ratio: 0.915
+latex_coverage_ratio: 1.0
 doc_brief: "Quantum repeater with Rydberg blocked atomic ensembles in fiber-coupled cavities — 7 sections: Introduction; The sequence; At the end of this sequence, the s"
 ---
-In this paper we proposed a quantum repeater scenario
-based on Rydberg blocked ensembles placed in cavities
-which are linked by optical ﬁbers. Entanglement gener-
-ation between two neighboring nodes is performed in a
-heralded way by the transmission of a photon whose po-
-larization is entangled with the state of the ﬁrst atomic
-ensemble, followed by its absorption by the neighboring
-atomic ensemble. Photon losses and spontaneous emis-
-sion from the Rydberg level can be detected thanks to
-an error-syndrome measurement involving ensemble laser
-manipulations, ionizing pulses and (very eﬃcient) ion de-
-tections.
-An implementation with Cs atoms was sug-
-gested and analyzed.
-Contrary to protocols previously proposed, the scheme
-presented here does not make use of any (ineﬃcient) pho-
-todetection: this potentially allows for a speedup in the
-entanglement generation, as conﬁrmed by numerical sim-
-ulations. Finally main error sources were analyzed. Fu-
-ture work should be devoted to a closer investigation of
-the practical feasibility of our scheme with real cavities
-and ﬁbers.
-9
+In this paper we proposed a quantum repeater scenario based on Rydberg blocked ensembles placed in cavities which are linked by optical fibers. Entanglement generation between two neighboring nodes is performed in a heralded way by the transmission of a photon whose polarization is entangled with the state of the first atomic ensemble, followed by its absorption by the neighboring atomic ensemble. Photon losses and spontaneous emission from the Rydberg level can be detected thanks to an error-syndrome measurement involving ensemble laser manipulations, ionizing pulses and (very efficient) ion detections. An implementation with Cs atoms was suggested and analyzed.
+
+Contrary to protocols previously proposed, the scheme presented here does not make use of any (inefficient) photodetection: this potentially allows for a speedup in the entanglement generation, as confirmed by numerical simulations. Finally main error sources were analyzed. Future work should be devoted to a closer investigation of the practical feasibility of our scheme with real cavities and fibers.
+
+::: acknowledgments
+E. B. thanks M. Raoult, Jean-Louis Le Gouet and F. Prats for fruitful discussions.
+:::

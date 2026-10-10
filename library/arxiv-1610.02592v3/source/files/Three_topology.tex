@@ -1,0 +1,1086 @@
+\chapter{Topology of three-manifolds} \label{Three:topology:chapter}
+
+The three-manifolds world is topologically much richer than the surfaces realm, while yet not so crazy as the four-manifolds universe. In dimension two a simple homological invariant (the Euler characteristic) suffices to classify topologically all the closed orientable manifolds: at the complete opposite, the closed four-manifolds cannot be classified in any reasonable sense. The three-manifolds lie in the middle: we do not have yet a complete satisfactory picture, but we understand them a good deal.
+
+The rest of this book is devoted to three-manifolds, more specifically to compact orientable three-manifolds, possibly with boundary (the orientability assumption is not essential, but it helps to simplify many arguments). We split their study into some parts. First, we state some universal topological facts, mostly concerning the way surfaces can be contained in three-manifolds. Then we construct some classes of three-manifolds, focusing mostly on Seifert manifolds. After classifying the Seifert manifolds topologically, we assign a geometry to each: there are eight interesting geometries in dimension three, and we introduce them with some care. Finally, we concentrate on the most interesting and beautiful of the eight: hyperbolic geometry.
+
+In this chapter we start to study the topology of three-manifolds. We begin with some algebraic topology, then we show that the connected sum behaves like products of numbers: every closed three-manifold splits in a unique way in a unique list of prime factors. Finally we introduce the important notion of incompressible surface.\index{three-manifold}
+
+\section{Algebraic topology}
+The algebraic topology of compact three-manifolds is not very complicate. 
+
+\subsection{Integral homology}
+In this section all the homology groups are considered over $\matZ$. We first note that, for closed orientable 3-manifolds, the fundamental group determines everything.
+
+\begin{prop}
+The homology $H_*(M)$ of a closed orientable 3-manifold $M$ is determined by $\pi_1(M)$. 
+\end{prop} 
+\begin{proof}
+As in every path connected space, the group $H_1(M)$ is the abelianisation of $\pi_1(M)$ and $H^1(M) = \Hom(H_1(M),\matZ)$, which is hence isomorphic to $H_1(M)$ modulo its torsion. By Poincar\'e duality $H_2(M) = H^1(M)$ and $H^2(M) = H_1(M)$. Finally $H_3(M) = \matZ$.
+\end{proof}
+
+\subsection{Homology spheres}
+A \emph{homology $n$-sphere} is a closed orientable $n$-manifold $M$ whose homology is the same as that of $S^n$. That is, we have $H_0(M) = H_n(M) = \matZ$ and $H_i(M)$ vanishes for all $0<i<n$.\index{homology sphere} 
+
+By Poincar\'e duality, a closed 3-manifold $M$ is a homology sphere if and only if $H_1(M)$ vanishes. Since $H_1(M)$ is the abelianization of $\pi_1(M)$, this happens precisely when $\pi_1(M)$ is a \emph{perfect group}, that is a group with trivial abelianization.\index{group!perfect group} 
+
+In 1900 Poincar\'e conjectured that every homology 3-sphere should be homeomorphic to $S^3$. Four years later, he found himself a counterexample by constructing what is known today as \emph{Poincar\'e's homology sphere}, a closed 3-manifold with a perfect fundamental group of order 120. He then modified his original conjecture by asking whether every simply connected closed 3-manifold should be homeomorphic to $S^3$. This fact, widely known as \emph{Poincar\'e's Conjecture}, was proved only in 2002 by Perelman.
+
+We will construct Poincar\'e's homology sphere (and many more homology spheres) in Chapter \ref{Seifert:chapter}, and we will discuss the Poincar\'e Conjecture in Section \ref{geometrisation:section}, as a part of Thurston's wider \emph{Geometrisation Conjecture}, also proved by Perelman in 2002.
+
+\subsection{The boundary}
+The Euler characteristic $\chi(M)$ of a closed odd-dimensional manifold vanishes, and on manifolds with boundary we have the following.
+
+\begin{prop}
+If $M$ is a compact 3-manifold with boundary, then 
+$$\chi(M) = \frac {\chi(\partial M)}2.$$
+\end{prop}
+\begin{proof}
+We only use that $M$ has odd dimension $n$. If $M$ is closed and orientable, we have $\chi(M) = \sum_{i=0}^n (-1)^i b_i$ and the Betti numbers $b_i$ and $b_{n-i}$ are equal by Poincar\'e duality, hence $\chi(M)=0$. If $M$ is non-orientable then it has an orientable double-cover $N$ and $\chi(N) = d\chi(M)$ on degree-$d$ covers, hence $\chi(N)=0$ implies $\chi(M)=0$.
+If $M$ has boundary then 
+$$0 = \chi(DM)=2\chi (M) - \chi(\partial M)$$
+where $DM$ is the \emph{double} of $M$, constructed by taking two identical copies of $M$ and identifying their boundaries in the obvious way.
+\end{proof}
+
+The manifold $M$ has half the Euler characteristic of $\partial M$, and is also responsible for half of the first homology group of $\partial M$. More precisely, we are interested in the boundary map
+$$\partial\colon H_2(M,\partial M) \longrightarrow H_1(\partial M)$$
+and we want to prove that its image is a particular half-dimensional subgroup.
+Recall from Proposition \ref{homology:prop} that every class in $H_2(M,\partial M)$ is represented by an oriented properly embedded surface $\Sigma$, and $\partial$ sends $[\Sigma]$ to $[\partial \Sigma]$.
+
+Let $M$ be oriented. The boundary $\partial M$ may be disconnected and inherits an orientation. Recall that $H_1(\partial M)\isom \matZ^{2n}$ for some $n$ and $H_1(\partial M)$ is equipped with a symplectic intersection form $\omega$, see Section \ref{homolgy:surface:subsection}. A subgroup $L<H_1(\partial M)$ is \emph{lagrangian} if $\omega|_L\equiv 0$.\index{lagrangian subgroup} 
+
+\begin{ex}
+If $L$ is lagrangian then $\rk L \leqslant n$.
+\end{ex}
+When $\rk L = n$ we say that $L$ has maximal rank.
+
+\begin{prop}  \label{lagrangian:prop}
+Let $M$ be an oriented compact 3-manifold with boundary. The image of the map 
+$$\partial \colon H_2(M,\partial M, \matZ) \longrightarrow H_1(\partial M,\matZ)$$
+is a lagrangian subgroup of $H_1(\partial M, \matZ)$ of maximal rank.
+\end{prop}
+\begin{proof}
+Consider the long exact sequence
+$$\ldots \longrightarrow H_2(M,\partial M) \stackrel{\partial}\longrightarrow H_1(\partial M) \stackrel{i_*}\longrightarrow H_1(M) \longrightarrow \ldots$$
+We have two pairings
+\begin{align*}
+\omega \colon H_1(\partial M) \times H_1(\partial M) & \longrightarrow  \matZ, \\
+\eta \colon H_2(M,\partial M) \times H_1(M) & \longrightarrow \matZ.
+\end{align*}
+The latter is provided by Lefschetz duality and is non-degenerate after quotienting the torsion subgroups. We have
+$$\omega (\partial \alpha, \beta) = \eta (\alpha, i_*\beta)$$
+for all $\alpha \in H_2(M,\partial M)$ and $\beta \in H_1(M)$: this equality can be proved easily by representing the elements of $H_2(M,\partial M)$ as surfaces (which we can do thanks to Proposition \ref{homology:prop}). Now if $\beta = \partial\alpha'$ we get 
+$$\omega(\partial \alpha, \partial \alpha') = \eta(\alpha, i_*\partial \alpha') = \eta(\alpha,0) = 0$$
+and hence $\Img \partial$ is lagrangian. It has maximal rank since $H_2(M,\partial M)=H^1(M)$ and $H_1(M)$ have the same rank: if $\rk\, \Img \partial < \frac 12 b_1(\partial M)$, then we get $\rk \,\Img i_* > \frac 12 b_1(\partial M)$ and $\rk \ker\partial > b_1(M) - \frac 12 b_1(\partial M)$, a contradiction since $\Img i_*$ and $\ker\partial$ are $\eta$-orthogonal.
+\end{proof}
+
+\begin{cor} \label{rank:cor}
+Let $M$ be an oriented compact 3-manifold. We have 
+$$b_1(M)\geqslant \frac {b_1(\partial M)}2.$$
+\end{cor}
+\begin{proof}
+The rank of $H_1(M)$ equals that of $H^1(M) = H_2(M,\partial M)$.
+\end{proof}
+
+\begin{cor}
+The boundary of a simply connected compact 3-manifold consists of spheres.
+\end{cor}
+
+\subsection{Non-orientable surfaces}
+Let $M$ be an orientable 3-manifold and $S\subset M$ be a connected surface. If $S$ is orientable, then by Proposition \ref{unique:line:bundle:prop} every tubular neighbourhood for $S$ is diffeomorphic to the product $S \times \matR$.
+
+The orientable manifold $M$ may also contain a \emph{non}-orientable surface $S$: for instance the orientable projective space $\matRP^3$ contains the non-orientable projective plane $\matRP^2$. In that case a tubular neighbourhood of $S$ is diffeomorphic to the unique orientable interval bundle $S\timtil \matR$ over $S$, see Proposition \ref{unique:line:bundle:prop} again. A compact tubular neighbourhood of $S$ is an interval bundle $S\timtil I$, whose boundary is the orientable double cover of $S$. For instance, the boundary of $\matRP^2 \timtil I$ is a sphere.
+
+A non-orientable properly embedded surface $S\subset M$ does not define a homology class in $\matZ$, but it defines one in $\matZ_2$, that is  $[S] \in H_2(M,\partial M;\matZ_2)$. As opposite to orientable surfaces, this class $[S]$ is always non-trivial.
+
+\begin{prop} \label{non:ori:prop}
+Let $M$ be orientable. Every non-orientable surface $S$ determines a non-trivial class $[S] \in H_2(M,\partial M;\matZ_2)$. The manifold $M$ cannot contain more than $\dim H_2(M,\partial M;\matZ_2)$ disjoint non-orientable surfaces.
+\end{prop}
+\begin{proof}
+A tubular neighbourhood $S\timtil I$ of $S$ contains a simple closed loop $\alpha$ intersecting $S$ transversely in one point. The class $[S] \in  H_2(M,\partial M;\matZ_2) = H^1(M;\matZ_2) $ sends $\alpha$ to $1\in\matZ_2$ and is hence non-trivial. If $S=S_1\sqcup\ldots \sqcup S_k$ are all non-orientable, each $S_i$ has its own $\alpha_i$ and therefore the elements $[S_1], \ldots, [S_k] \in H_2(M,\partial M;\matZ_2)$ are linearly independent.
+\end{proof}
+
+\begin{cor} A simply-connected three-manifold does not contain any closed non-orientable surface.
+\end{cor}
+
+
+\section{Prime decomposition}
+In this section we study spheres and discs in three-manifolds. We prove that every sphere in $\matR^3$ bounds a disc, and we call \emph{irreducible} a three-manifold that has this property. Then we study the connected sum of three-manifolds, and we show that it behaves like multiplication of natural numbers: every closed oriented three-manifold decomposes uniquely into some \emph{prime} factors.
+
+\subsection{Balls}
+In general dimension $n$, we have used the term \emph{disc} to denote the closed Euclidean disc $D^n$, and the term \emph{ball} for its open interior. Speaking about three-dimensional spaces, we will henceforth use a more intuitive terminology and call \emph{disc} and \emph{ball} respectively the closed discs $D^2$ and $D^3$, and we will use the symbols $D$ and $B$ for them.
+
+Let $M$ be a connected 3-manifold. Theorem \ref{dischi:teo} says that all the closed balls $B\subset \interior M$ in $M$ are isotopic and hence the removal of the interior of $B$ from $M$ produces a new manifold $N$ with boundary, which does not depend on $B$. The sphere $\partial B$ is a new boundary component of $N$.
+
+The inverse operation consists of \emph{capping off} a boundary component of $N$ diffeomorphic to $S^2$ by attaching a ball $B$ to it, via some diffeomorphism. This operation depends only on the boundary component that is capped off.
+
+\begin{prop} \label{cap:prop}
+The manifold $M$ obtained by capping off a spherical boundary component of $N$ does not depend on the diffeomorphism chosen.
+\end{prop}
+\begin{proof}
+There are only two diffeomorphisms up to isotopy, see Theorem \ref{S2:omotopi:teo}, and they are related by a reflection of $B$, so they produce diffeomorphic manifolds.
+\end{proof}
+
+In dimension 3 we can therefore freely remove and add balls without affecting much the topology of the manifold. In particular, by removing the interior of a ball from $S^3$ we get another ball $B$, and by attaching a ball to $B$ we get $S^3$ back. We must thank Smale's Theorem \ref{Smale:teo} for that: the situation in higher dimensions is more complicated.
+
+\subsection{Connected sums}
+Connected sums exist in any dimension $n$, but when $n\leqslant 3$ they may be redefined in slightly simpler terms:\index{connected sum} 
+\begin{defn}
+The \emph{connected sum} $M=M_1\#M_2$ of two oriented connected $3$-manifolds $M_1$, $M_2$ is constructed by removing the interiors of two closed balls from $M_1$ and $M_2$, and then gluing the two resulting spheres via any orientation-reversing diffeomorphism. 
+\end{defn}
+In dimension $n\leqslant 3$ these diffeomorphisms are all isotopic, see Theorem \ref{S2:omotopi:teo},
+ hence this is a good definition (in arbitrary dimension we require the diffeomorphism to extend to the removed discs). We usually work with oriented 3-manifolds to have a uniquely defined connected sum, but in some cases this is not necessary. An orientable manifold $M$ is \emph{mirrorable} if it admits an orientation-reversing self-diffeomorphism.\index{manifold!mirrorable manifold}
+
+\begin{ex} If $M_1$ is mirrorable, the manifold $M = M_1\# M_2$ does not depend (up to diffeomorphisms) on the orientations of $M_1$ and $M_2$.
+\end{ex}
+
+If both $M_1$ and $M_2$ are oriented and not mirrorable, it may happen that $M_1\# M_2$ and $M_1 \# \overline{M_2}$ are not diffeomorphic (here $\overline{M_2}$ is $M_2$ with the reverse orientation).
+There is also a boundary-version of connected sum:
+
+\begin{defn}
+The \emph{$\partial$-connected sum} $M=M_1\#_\partial M_2$ of two oriented $3$-manifolds with boundary is constructed by gluing two discs $D_1\subset \partial M_1$ and $D_2\subset \partial M_2$ via an orientation-reversing diffeomorphism.
+\end{defn}
+
+The operation depends only on the components of $\partial M_1, \partial M_2$ containing $D_1, D_2$, because of Theorem \ref{dischi:teo}. The following holds:
+$$M\# S^3 = M, \qquad M\#_\partial B = M, \qquad \partial (M_1\#_\partial M_2) = (\partial M_1)\#(\partial M_2).$$
+In the latter equality we suppose that $\partial M_1$ and $\partial M_2$ are connected.
+
+\begin{ex} Let $M = M_1\# M_2$ or $M=M_1\#_\partial M_2$. We have
+$$\pi_1(M) = \pi_1(M_1) * \pi_2(M_2).$$
+\end{ex}
+\begin{proof}[Hint]
+Use Van Kampen. 
+\end{proof}
+\begin{cor}
+We have $H_1(M,\matZ) = H_1(M_1,\matZ) \oplus H_1(M_2,\matZ)$.
+\end{cor}
+
+\subsection{Irreducible 3-manifolds}
+We introduce an important definition. Let $M$ be a connected, oriented 3-manifold with (possibly empty) boundary.\index{three-manifold!irreducible three-manifold}
+\begin{defn}
+The manifold $M$ is \emph{irreducible} if every sphere $S\subset \interior M$ bounds a ball.
+\end{defn}
+It is important to recall here that the sphere must be a smooth surface. If we admitted also topological spheres, no 3-manifold would be irreducible: there are ``wild'' topological spheres inside every ball, as shown in Figure \ref{Alexander:fig}. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 7 cm] {\iftoggle{BW}{Morse-BW}{Morse}}
+\nota{Non-degenerate points of index 0, 1, and 2.}
+\label{Morse:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 3.5 cm] {\iftoggle{BW}{3D-Leveltorus-BW}{240px-3D-Leveltorus}}
+\nota{The height function on this torus is a Morse function. It has four critical points of index (from bottom to top) 0, 1, 1, 2. }
+\label{Morse_torus:fig}
+\end{center}
+\end{figure}
+
+\subsection{Alexander theorem} The first 3-manifold to look at is of course $\matR^3$. We prove here that $\matR^3$ is irreducible. 
+
+We need some Morse theory. Let $S\subset \matR^3$ be a closed surface and $f(x,y,z)=z$ be the height function. The function $f$ is a \emph{Morse function} for $S$ if $f|_S$ has finitely many critical points, and at each critical point the Hessian of $f|_S$ is non-singular (the Hessian is read on a chart for $S$, but this definition is chart-independent). The critical point is a local minimum, a saddle, or a local maximum, according to the signature of the Hessian, see Figure \ref{Morse:fig}. These critical points have \emph{index} 0, 1, and 2, respectively.\index{Morse function}
+
+\begin{ex}
+A critical point $p$ for $f|_S$ is non-degenerate if and only if $p$ is a regular (\emph{i.e.}~non-critical) point for the Gauss map $S \to S^2$.
+\end{ex}
+
+\begin{lemma} Let $S\subset \matR^3$ be a closed surface. After rotating $S$ of an arbitrarily small angle, the height function $f$ is a Morse function for $S$. 
+\end{lemma}
+\begin{proof}
+Consider the Gauss map $\psi\colon S\to S^2$. By Sard lemma there are regular values arbitrarily close to $v=(0,0,1)$. Rotate $S$ so that $v$ is a regular value. Now $\psi^{-1}(v)$ is the set of critical points for $f$ and they are all non-degenerate.
+\end{proof}
+
+We are now ready to prove the following.\index{Alexander theorem}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{Morse_cap-BW}{Morse_cap}}
+\nota{The plane $P$ intersects $S$ into circles. Starting from the innermost ones, we cut $S$ along the circles and cap them off by adding pairs of discs. The resulting surface does not intersect $P$ anymore.}
+\label{Morse_cap:fig}
+\end{center}
+\end{figure}
+
+\begin{teo}[Alexander's Theorem] \label{Alexander:teo}
+The space $\matR^3$ is irreducible.
+\end{teo}
+\begin{proof}
+Let $S\subset \matR^3$ be a 2-sphere. Up to a small rotation we suppose that the height function $f|_S$ is a Morse function, and after a further small rotation we may suppose that the $k$ critical points of $f|_S$ stay at distinct heights $z_1< \ldots <z_k$. Pick a regular value $u_i \in (z_i, z_{i+1})$ for every $i=1,\ldots, k-1$. The horizontal plane $P$ at height $u_i$ intersects $S$ transversely into circles. Starting from the innermost ones, we cut $S$ along these circles and cap them off by adding pairs of discs as in Figure \ref{Morse_cap:fig}. The resulting surface is disjoint from $P$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 10 cm] {\iftoggle{BW}{Morse2-BW}{Morse2}}
+\nota{After capping off at each $u_i$ we end up with many spheres of these basic types, which clearly bound balls.}
+\label{Morse2:fig}
+\end{center}
+\end{figure}
+
+At every cut a sphere decomposes into two spheres. If we do this for every $i=1,\ldots, k-1$ we end up with many spheres of the types shown in Figure \ref{Morse2:fig}, that clearly bound balls in $\matR^3$.
+
+Now we reverse the process and undo all the cuts: we prove inductively that at each backward step we have a set of spheres bounding balls (note that the balls are not disjoint!). At each backward step we replace two spheres $S_1, S_2$ bounding balls $B_1, B_2$ with one sphere $S$. Isotope $S_1$ and $S_2$, so that they intersect in a disc $D$. If the interiors of $B_1$ and $B_2$ are disjoint, then $S$ bounds the ball $B_1\cup B_2$. If they are not disjoint, then one is contained in the other, say $B_1 \subset B_2$ and $S$ bounds the ball $B_2\setminus \interior{B_1}$.
+\end{proof}
+
+\begin{cor}
+Every sphere contained in a sub-ball $B\subset M$ of a 3-manifold $M$ bounds a ball $B'\subset B$.
+\end{cor}
+\begin{cor} \label{both:cor}
+Every sphere in $S^3$ bounds a ball on both sides.
+\end{cor}
+\begin{proof}
+Choose two points $p, q \not \in S$ on opposite sides with respect to $S$. We have $S^3 \setminus p = S^3 \setminus q = \matR^3$ hence $S$ is contained in $\matR^3$ in two ways and bounds a ball in each.
+\end{proof}
+
+Alexander's Theorem generalises the smooth Jordan curve Theorem to dimension $3$. The situation in higher dimensions is much more problematic: it is still unknown whether every smooth 3-sphere in $\matR^4$ bounds a smooth 4-disc (this is usually called the \emph{Sch\"onflies problem}).\index{Sch\"onflies problem}
+
+\subsection{Prime manifolds}
+A connected sum $M_1\# M_2$ is \emph{trivial} if either $M_1$ or $M_2$ is a sphere. \index{three-manifold!prime three-manifold}
+
+\begin{defn}
+A connected, oriented 3-manifold $M$ is \emph{prime} if every connected sum $M=M_1\# M_2$ is trivial.
+\end{defn}
+
+Being prime is equivalent to be irreducible, with a single exception.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 8 cm] {\iftoggle{BW}{prime-BW}{prime}}
+\nota{If $S\subset M$ is non-separating, there is a simple closed curve $\alpha$ intersecting $S$ transversely in one point: here $S$ is drawn as a disc whose boundary should be collapsed to a point, and $\alpha$ is a line whose endpoints should be identified (left). Pick two tubular neighbourhoods of $S$ and $\alpha$ and consider their union $N$ (right).}
+\label{prime:fig}
+\end{center}
+\end{figure}
+
+\begin{prop} \label{S2S1:prop}
+Every oriented 3-manifold $M\neq S^2 \times S^1$ is prime if and only if it is irreducible.
+\end{prop}
+\begin{proof}
+The inverse operation of a connected sum $M=M_1\# M_2$ consists of cutting along a separating sphere $S\subset M$ and then capping off the two resulting manifolds $N_1, N_2$ with balls. The capped $N_i$ is $S^3$ if and only if $N_i$ is a ball. Therefore the connected sum is trivial if and only if $S$ bounds a ball on one side. Therefore $M$ is prime if and only if every separating sphere $S\subset M$ bounds a ball.
+
+If $M$ is irreducible, then it is clearly prime. If $M$ is prime and not irreducible, there is a non-separating sphere $S\subset M$. There is a simple closed curve $\alpha\subset M$ intersecting $S$ transversely in one point as in Figure \ref{prime:fig}-(left). Pick two tubular neighbourhoods of $S$ and $\alpha$ as in Figure \ref{prime:fig}-(right): their union is a manifold $N$ with a boundary sphere $\partial N = S'$. The sphere $S'$ is separating and $M$ is prime, hence $S'$ bounds a ball $B$ on the other side and $M=N\cup B$. 
+
+We now prove that $M=S^2\times S^1$. We embed $S\cup \alpha$ naturally in $S^2\times S^1$ as $S = S^2\times y$ and $\alpha = x \times S^1$. Decompose $S^2= D\cup D'$ in two discs and $S^1 = I\cup I'$ in two intervals. The manifold
+$N$ also embeds as $S^2\times I \cup D \times S^1$ and its complement $B=D'\times I'$ is a ball. Therefore $M = S^2\times S^1$.
+\end{proof}
+
+\subsection{Some irreducible manifolds}
+The Alexander theorem generates many more examples of irreducible 3-manifolds.
+
+\begin{prop} \label{connected:boundary:prop}
+Every compact three-dimensional submanifold $M\subset S^3$ with connected boundary is irreducible.
+\end{prop}
+\begin{proof}
+Every sphere $S \subset M$ bounds two balls in $S^3$. Since $\partial M$ is connected, it is contained in one of them, so the other is contained in $M$.
+\end{proof}
+
+We turn to coverings.
+
+\begin{prop} \label{irreducible:cover:prop}
+Let $p\colon  M \to N$ be a covering of 3-manifolds. If $ M$ is irreducible then $N$ also is.
+\end{prop}
+\begin{proof}
+A sphere $S\subset N$ lifts to many spheres in $ M$, each bounding at least one ball. Pick an innermost such ball $B$. We prove that $p(B)$ is a ball with boundary $S$ and we are done.
+
+To do this, note that $p|_{\partial B}$ is a diffeomorphism onto $S$ and $p(\interior B)$ is disjoint from $S$ since $B$ is innermost. This implies that $p|_{B}\colon B \to p(B)$ is a covering and since it has degree one on $S$ it is a diffeomorphism.
+\end{proof}
+
+\begin{cor}
+Elliptic, flat, hyperbolic 3-manifolds are irreducible.
+\end{cor}
+\begin{proof}
+Their universal covering is diffeomorphic to $S^3$ or $\matR^3$.
+\end{proof}
+
+Finally, we consider the exception $S^2\times S^1$. It is not irreducible since it contains a non-separating sphere, but it is prime.
+
+\begin{prop} The manifold $S^2\times S^1$ is prime.
+\end{prop}
+\begin{proof}
+Let $S\subset S^2\times S^1$ be a separating sphere: we must prove that it bounds a ball. It separates $S^2\times S^1$ into two manifolds $M$ and $N$, and on fundamental groups we get $\matZ = \pi_1(M)*\pi_1(N)$. This implies easily that either $\pi_1(M)$ or $\pi_1(N)$ must be trivial: suppose the first. 
+
+Since $M$ is simply connected, a copy $M'$ of $M$ lifts to the universal cover $S^2\times \matR$ of $S^2\times S^1$. We identify $S^2\times\matR = \matR^3\setminus 0$. This copy $M'$ now lies in $\matR^3$, and $\partial M' = S^2$ implies that $M'$ is a ball by Alexander theorem.
+\end{proof}
+
+\subsection{Handlebodies and line bundles}
+We now introduce some basic, but important, compact 3-manifolds with boundary. A \emph{handlebody} is a connected orientable 3-manifold that decomposes into 0- and 1- handles.\index{handlebody} 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 3.5 cm] {\iftoggle{BW}{Sphere_with_three_handles-BW}{500px-Sphere_with_three_handles}}
+\nota{A handlebody of genus $3$.}
+\label{handlebody:fig}
+\end{center}
+\end{figure}
+
+\begin{prop}
+The boundary of a handlebody is $S_g$ for some $g\geqslant 0$. Two handlebodies are diffeomorphic if and only if they have the same $g$.
+\end{prop}
+\begin{proof}
+By simplifying handles we may decompose the handlebody into one 0-handle and some $g$ 1-handles, so that the boundary is a genus-$g$ surface, see Figure \ref{handlebody:fig}. Each 1-handle is attached along a pair of discs; the orientability assumption together with Theorem \ref{dischi:teo} easily imply that the result of attaching a 1-handle depends on nothing and the handlebody depends only on $g$ up to diffeomorphisms.
+\end{proof}
+
+The \emph{genus} of a handlebody $H_g$ is the genus $g$ of its boundary surface. 
+Proposition \ref{connected:boundary:prop} implies the following.
+
+\begin{cor} \label{handle:irr:cor}
+Handlebodies are irreducible.
+\end{cor}
+
+Some other simple manifolds are irreducible.
+\begin{prop} \label{product:irr:prop}
+If $g\geqslant 1$ then $S_g\times [0,1]$ is irreducible.
+\end{prop}
+\begin{proof}
+Its universal cover $\matR^2 \times [0,1]$ is irreducible, because its interior is diffeomorphic to $\matR^3$.
+\end{proof}
+
+\begin{ex}
+If $b\geqslant 1$ the manifold $S_{g,b}\times [0,1]$ is homeomorphic to a handlebody of genus $2g+b-1 = -\chi(S_{g,b}) +1$.
+\end{ex}
+
+\subsection{Normal surfaces}
+Let $M$ be a compact 3-manifold with (possibly empty) boundary. As every smooth compact manifold, $M$ has a triangulation $T$, made of a certain number $t$ of tetrahedra. We now show that $T$ can be used to treat combinatorially many interesting surfaces in $M$.
+
+A properly embedded surface $S\subset M$ is \emph{transverse} to $T$ if it is transverse to all its simplexes. In particular $S$ does not intersect the vertices of $T$, and it intersects every edge, face, and tetrahedron respectively into a finite number of points, curves, and surfaces. Every properly embedded surface $S\subset M$ can be perturbed to be transverse to $T$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 7 cm] {\iftoggle{BW}{Normal_surface-BW}{640px-Normal_surface}}
+\nota{A normal surface intersects every tetrahedron in triangles or squares.}
+\label{normal_surface:fig}
+\end{center}
+\end{figure}
+
+
+\begin{defn}
+A \emph{normal surface} is a properly embedded surface $S$ transverse to $T$ that intersects every tetrahedron into triangles or squares as in Figure \ref{normal_surface:fig}.\index{normal surface}
+\end{defn}
+
+\begin{example}
+For every vertex $v$ of $T$ lying in $\interior M$ we may take a small sphere centred at $v$ that intersects every incident tetrahedron in a small triangle: we get a normal sphere. If $v$ lies in $\partial M$ we get similarly a normal disc. A surface of this type is called  \emph{vertex-linking}. Vertex-linking spheres are not very interesting since they bound balls.\index{normal surface!vertex-linking normal surface}  
+\end{example}
+
+\begin{ex}
+A connected normal surface is vertex-linking if and only if it consists of triangles only (no squares).
+\end{ex}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 8 cm] {\iftoggle{BW}{incompressible-BW}{incompressible}}
+\nota{We can \emph{surger} a surface $S$ along a disc $D$ with $\partial D = D\cap S$. The operation consists of removing an annular tubular neighbourhood of $\partial D$ in $S$ and adding two parallel copies of $D$. We get a new surface $S'$.}
+\label{incompressible:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11 cm] {\iftoggle{BW}{incompressible2-BW}{incompressible2}}
+\nota{We can also surger a surface $S$ along a disc $D$ touching the boundary in a segment. The result is a new properly embedded surface $S'$.}
+\label{incompressible2:fig}
+\end{center}
+\end{figure}
+
+Let $S\subset M$ be a properly embedded, possibly disconnected, compact surface.
+An \emph{elementary transformation} on $S$ is one of the following moves: 
+\begin{itemize}
+\item the removal of a connected component of $S$ contained in some ball;
+\item let $D\subset \interior M$ be a disc with $\partial D = D \cap S$: we \emph{surger} $S$ along $D$ as shown in Figure \ref{incompressible:fig};
+\item let $D\subset M$ be a disc with $D\cap (S\cup \partial M) = \partial D = \alpha \cup \beta$, where $\alpha$ is an arc in $S$ and $\beta$ an arc in $\partial M$ as in Figure \ref{incompressible2:fig}-(left): we \emph{surger} $S$ as shown in the figure.
+\end{itemize}
+Every elementary transformation is local, \emph{i.e.}~it takes place in a ball. It transforms $S$ into a new surface $S'$. 
+We fix a triangulation $T$ for $M$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{normal2-BW}{normal2}}
+\nota{Starting from the innermost curves in $\partial \Delta \cap S$ we surger along discs so that $S\cap \Delta$ consists only of discs and closed components, which we then remove.}
+\label{normal2:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 8 cm] {normal}
+\nota{The closed curves contained in a triangle are the intersections of small spherical components of $S$ with that triangle. We just remove them.}
+\label{normal:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 9 cm] {\iftoggle{BW}{normal3-BW}{normal3}}
+\nota{If the boundary of a (\iftoggle{BW}{light grey}{yellow}) disc $D$ intersects an edge $e$ of $\partial \Delta$ twice, we pick two innermost intersections, that must be in opposite directions. There must be a \iftoggle{BW}{grey}{red} disc as shown here (exercise: use Alexander's theorem), which can be used to push $S$ in the direction indicated by the arrow. The resulting surface is shown in the right. If $e\subset \partial M$, we cannot push $S$ outside $\partial M$: instead, we surger along the \iftoggle{BW}{grey}{red} disc.}
+\label{normal3:fig}
+\end{center}
+\end{figure}
+
+\begin{prop}
+Every properly embedded surface $S\subset M$ becomes normal after finitely many isotopies and elementary transformations.
+\end{prop}
+\begin{proof}
+Put $S$ transverse to $T$. It intersects every tetrahedron $\Delta$ into surfaces as in Figure \ref{normal2:fig}-(left). The intersection $S\cap \partial \Delta$ consists of closed curves: the innermost ones bound discs in $\partial \Delta$, which may be pushed a bit inside $\Delta$ and then used to surger $S$. We do this with all curves (starting with the innermost ones) to transform $S$ as in Figure \ref{normal2:fig}, so that at the end $S\cap\Delta$ consists only of discs and closed surfaces. Then we remove the closed surfaces: this is an elementary transformation since $\Delta$ is a ball. We do this for every tetrahedron $\Delta$.
+
+Now $S$ intersects every tetrahedron $\Delta$ in discs. Consider the boundary curve of one such disc: if it is contained in a face as in Figure \ref{normal:fig}-(left), it belongs to one or two discs (depending on whether the face belongs to $\partial M$ or not), which form a component of $S$ contained in a ball that can be removed. 
+
+Suppose the boundary curve crosses twice an edge of $\Delta$: if the edge lies in the interior of $M$, we isotope $S$ as shown in Figure \ref{normal3:fig} to decrease the number of intersections of $S$ with the 1-skeleton of $T$; if the edge lies in $\partial M$ we simplify analogously by surgerying along the \iftoggle{BW}{grey}{red} disc shown in the figure. In all cases then we go back to the first step of the algorithm. 
+
+After finitely many steps we get a surface $S$ intersecting every tetrahedron $\Delta$ in discs, whose boundary curves intersect every edge of $\Delta$ at most once. One such disc is either a triangle or a square.
+\end{proof}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11 cm] {\iftoggle{BW}{normal4-BW}{normal4}}
+\nota{If we cut a tetrahedron $\Delta$ along triangles and squares we get arbitrarily many prisms with triangular or quadrilateral basis, and at most $6$ other pieces (here we get $4$ pyramids and two esahedra).}
+\label{normal4:fig}
+\end{center}
+\end{figure}
+
+\subsection{Interesting surfaces cannot have too many components}
+We know from Proposition \ref{non:ori:prop} that a compact orientable $M$ cannot contain too many disjoint non-orientable surfaces. It can however contain arbitrarily many orientable surfaces: for instance, small surfaces contained in disjoint balls. A crucial aspect of 3-manifolds theory is that $M$ cannot contain arbitrarily many ``interesting'' surfaces, as we now see.
+
+Two disjoint connected diffeomorphic surfaces $\Sigma,\Sigma'\subset M$ are \emph{parallel} if they cobound a region diffeomorphic to $\Sigma\times [0,1]$ with $\Sigma= \Sigma\times 0$ and $\Sigma'=\Sigma\times 1$. Two parallel surfaces are obviously isotopic. 
+
+Let $T$ be a triangulation of a compact $M$ with (possibly empty) boundary. Let $t$ be the number of tetrahedra in $T$ and set $b_2 = \dim H_2(M,\partial M,\matZ_2)$.
+
+\begin{lemma} \label{non:parallel:lemma}
+Let $S$ be an orientable normal surface. If $S$ has more than $10t+b_2$ components, then two components $\Sigma, \Sigma'$ of $S$ are parallel and cobound a $\Sigma \times [0,1]$ which is disjoint from the other components.
+\end{lemma}
+\begin{proof}
+The complement $M\setminus S$ intersects every tetrahedron $\Delta$ into polyhedra: there are many prisms lying between parallel triangles or squares, and at most $6$ other pieces, see Figure \ref{normal4:fig}. These at most 6 pieces are adjacent to at most 1+1+1+1+3+3 = 10 triangles and squares.
+
+This implies that, except at most $10t$ of them, the components of $S$ are only adjacent (on both sides) to prisms. These prisms glue to form $I$-bundles. Therefore at least $b_2+1$ components of $S$ are adjacent to $I$-bundles on both sides. The twisted $I$-bundles are at most $b_2$ by Proposition \ref{non:ori:prop}, and each is adjacent to one surface. Therefore at least one surface is adjacent to a product $I$-bundle $\Sigma \times [0,1]$. \end{proof}
+
+We get a topological corollary. A \emph{ball with holes} is a 3-manifold obtained by removing some $k\geqslant 0$ disjoint small open balls from a ball.
+A \emph{sphere system} for a 3-manifold $M$ is a surface $S\subset \interior{M}$ consisting of disjoint spheres, such that no component of $M\setminus S$ is a ball with holes disjoint from $\partial M$. (Balls with holes adjacent to spherical components of $\partial M$ are allowed.) \index{ball with holes}\index{sphere system}
+
+\begin{cor} \label{K:cor}
+Let $M$ be a compact orientable 3-manifold that does not contain any non-separating sphere. There is a $K>0$ such that every sphere system in $M$ contains less than $K$ spheres.
+\end{cor}
+\begin{proof}
+Pick a triangulation $T$ of $M$ with some $t$ tetrahedra: we prove that $K=10t + b_2+1$ works, with $b_2 = \dim H_2(M,\partial M;\matZ_2)$. Suppose by contradiction that there is a sphere system $S$ with $\geqslant K$ spheres. Via isotopies and elementary transformations we transform $S$ into a normal surface $S'$.
+
+We now examine the effect of elementary transformations in detail. No component of $S$ is contained in a ball, otherwise by Alexander theorem an innermost component of $M\setminus S$ would be a ball. Therefore an elementary transformation cannot cancel a component of $S$. 
+
+A surgery along a disc splits a sphere $S_0$ into two spheres $S_1, S_2$. 
+We now prove that by substituting $S_0$ with either $S_1$ or $S_2$ we still get a sphere system. If we push $S_1$ and $S_2$ away from $S_0$ the surfaces $S_0, S_1, S_2$ altogether bound a ball with two holes $B$. 
+
+By our hypothesis on $M$ the spheres $S_0, S_1$, and $S_2$ are separating. Let $N_i$ be the component of $M\setminus (S_0\cup S_1\cup S_2)$ adjacent to $S_i$ distinct from $B$, for $i=0,1,2$. If both $N_1, N_2$ are balls with holes disjoint from $\partial M$, then $N_1\cup N_2 \cup B$ also is, which is excluded. Therefore one, say $N_1$, is not a ball with holes disjoint from $\partial M$. On the other side, if $N_2 \cup B \cup N_0$ were a ball with holes disjoint from $\partial M$, then $N_0$ would also be (by Alexander's theorem), which is excluded. Therefore by substituting $S_0$ with $S_1$ we still get a sphere system.
+
+This proves that the final normal surface $S'$ contains a sphere system with the same number $\geqslant K$ of components as $S$. Lemma \ref{non:parallel:lemma} gives a contradiction.
+\end{proof}
+
+\subsection{Prime decomposition}
+We now show that the connected sum operation on oriented three-manifolds behaves like the product of natural numbers: every object decomposes uniquely into prime factors.\index{prime decomposition of three-manifolds} 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 6 cm] {\iftoggle{BW}{holes-BW}{holes}}
+\nota{A reducing set of spheres (\iftoggle{BW}{grey}{red}) for $M = M_1\# M_2 \# (S^2\times S^1)$. Here $B$ is a ball with four holes and $N_i$ is $M_i$ with one hole.}
+\label{holes:fig}
+\end{center}
+\end{figure}
+
+\begin{teo} \label{prime:teo}
+Every compact oriented 3-manifold $M$ with (possibly empty) boundary decomposes into prime manifolds:
+$$M = M_1\# \ldots \# M_k$$
+This list of prime factors is unique up to permutations and adding/removing copies of $S^3$.
+\end{teo}
+\begin{proof}
+We first show the existence of a decomposition. If $M$ contains a non-separating sphere, then the proof of Proposition \ref{S2S1:prop} shows that $M = M'\# (S^2\times S^1)$. Since $H_1(M) = H_1(M')\oplus \matZ$, up to factoring finitely many copies of $S^2\times S^1$ we may suppose that every sphere in $M$ is separating.
+
+If $M$ is prime we are done. If not, it decomposes as $M=M_1\# M_2$. We keep decomposing each factor until all factors are prime: this process must end, because a decomposition $M=M_1\# \ldots \#M_k$ gives rise to a system of $k-1$ spheres, and $k$ cannot be arbitrarily big by Corollary \ref{K:cor}.
+
+We turn to uniqueness. Let 
+$$M = M_1\# \ldots \# M_k \#_h(S^2\times S^1), \qquad M = M_1'\# \ldots \# M_{k'}'\#_{h'}(S^2\times S^1)$$
+be two prime decompositions with $M_i, M_j' \neq S^2\times S^1$, so $M_i, M_j'$ are irreducible for all $i,j$. We say that a set $S \subset M$ of disjoint spheres is a \emph{reducing set of spheres} for the decomposition $M=M_1\# \ldots \# M_k\#_h(S^2\times S^1)$ if $M\setminus S$ consists of precisely one $M_i$ with some holes for each $i$, and some balls with holes disjoint from $\partial M$. An example is drawn in Figure \ref{holes:fig}. In general, we may construct $S$ by taking the spheres of the prime decomposition, plus one non-separating sphere inside each $S^2\times S^1$ summand. Similarly, let $S'$ be a reducing set of spheres for the other decomposition.
+
+The first observation we make is that if we add to $S$ any sphere $\Sigma$ disjoint from $S$, then we still get a reducing set of spheres for the same decomposition as before. This is because $\Sigma$ is contained in a holed $M_i$ or $S^3$, and since $M_i$ is irreducible $\Sigma$ bounds a ball $B$ there. Therefore by adding $\Sigma$ we still get the same holed $M_i$, plus a possibly holed (if $B\cap S \neq \emptyset$) ball $B$.
+
+We assume $S$ and $S'$ intersect transversely in circles and pick an innermost circle in a component of $S$ bounding a disc $D\subset S$. We surger $S'$ along $D$, thus substituting a component $S_0'$ of $S'$ with two spheres $S_1' \sqcup S_2'$. We check that the result is another sphere system for the same decomposition. We isotope the spheres $S_0', S_1', S_2'$ so that they are disjoint and cobound a ball with two holes $B_2$: the system $S'\sqcup S'_1 \sqcup S'_2$ is still reducing by the observation above. The removal of $S_0'$ then adds $B_2$ to the outside of $S_0'$, and this is equivalent to making one more hole there. 
+
+After finitely many surgeries we get $S\cap S'=\emptyset$. By the same observation above $S\cup S'$ is a reducing set of spheres for both decompositions: therefore the pieces $M_i$ and $M_j'$ of the decompositions are pairwise diffeomorphic.
+
+Finally we must have $h=h'$ since $M=N\#_h(S^2\times S^1) = N\#_{h'}(S^2\times S^1)$ and $H_1(M) = H_1(N) \oplus \matZ^h = H_1(N) \oplus \matZ^{h'}$.
+\end{proof}
+
+This important result is known as the \emph{Prime decomposition Theorem} for 3-manifolds: the existence of a decomposition was proved by Kneser \cite{Kn} in 1929, and its uniqueness by Milnor \cite{Mi} in 1962. In light of this result, topologists have since long restricted their attention to prime 3-manifolds, or almost equivalently to irreducible 3-manifolds.
+
+The strategy of cutting canonically a three-manifold along surfaces has proved successful with spheres, so we now try to do the same with other surfaces. We start by studying properly embedded discs, which of course occur only in manifolds with boundary. It is tempting to guess that discs should behave roughly like spheres, because by doubling a 3-manifold along its boundary we transform properly embedded discs into spheres. We now see that this is indeed the case. As for spheres, we need to distinguish the interesting ones, that we call \emph{essential}, from the others.
+
+\subsection{Essential discs} \label{essential:discs:subsection}
+Let $M$ be a compact 3-manifold with (possibly empty) boundary. A properly embedded surface $S\subset M$ is \emph{$\partial$-parallel} if it is obtained by slightly pushing inside $M$ the interior of a compact surface $S'\subset \partial M$, possibly with boundary.\index{surface!$\partial$-parallel surface} 
+
+In what follows $D$ and $S$ are properly embedded. 
+We say that:\index{sphere!essential sphere}\index{disc!essential disc}
+\begin{itemize}
+\item a sphere $S\subset M$ is \emph{essential} if it does not bound a ball, 
+\item a disc $D\subset M$ is \emph{essential} if it is not $\partial$-parallel.
+\end{itemize}
+Now, the manifold $M$ is:\index{three-manifold!$\partial$-irreducible three-manifold}
+\begin{itemize}
+\item \emph{irreducible} if it does not contain essential spheres, and
+\item \emph{$\partial$-irreducible} if it does not contain essential discs.
+\end{itemize}
+
+To warm up, we show the following. A \emph{solid torus} is a handlebody of genus 1, that is a three-manifold diffeomorphic to $D\times S^1$.\index{solid torus}
+
+\begin{prop} \label{irreducible:solid:torus:prop}
+Let $M$ be a compact, irreducible, orientable 3-manifold with boundary, and let $D\subset M$ be an essential disc. Let $\Sigma \subset \partial M$ be the boundary component containing $\partial D$. Then:
+\begin{itemize}
+\item the curve $\partial D$ is non-trivial in $\Sigma$;
+\item if $\Sigma$ is a torus then $M$ is a solid torus.
+\end{itemize}
+\end{prop}
+\begin{proof}
+If $\partial D$ bounds a disc $D'\subset \Sigma$ then $D\cup D'$ is a sphere, which bounds a ball because $M$ is irreducible; this ball furnishes a parallelism between $D$ and $D'$ and hence $D$ is $\partial$-parallel, a contradiction. 
+
+If $\Sigma$ is a torus, by surgerying $\Sigma$ along $D$ we get a sphere which must bound a ball $B$. Therefore $M$ is obtained by adding a one-handle to $B$, that is it is a solid torus.
+\end{proof}
+
+\subsection{Decomposition along discs}
+We now show that essential discs behave roughly like essential spheres, in the sense that there is a kind of prime decomposition theorem also for discs. After stating and proving this theorem, we will essentially forget about essential spheres and discs and focus on the 3-manifolds that do not contain them.
+
+Let $M$ be a compact 3-manifold with (possibly empty) boundary. A \emph{disc system} in $M$ is a set of pairwise disjoint and non-parallel essential discs. 
+ 
+\begin{prop} \label{K2:prop}
+There is a $K>0$ such that every disc system in $M$ cannot contain more than $K$ discs.
+\end{prop}
+\begin{proof}
+The proof is analogous to that of Corollary \ref{K:cor}
+\end{proof}
+
+We now want to cut irreducible manifolds along essential discs.
+
+\begin{rem}
+The opposite operation of cutting a manifold along a properly embedded disc is a 1-handle addition.
+\end{rem}
+
+We now state the analogue of Theorem \ref{prime:teo} in this context. Note that $M$ is irreducible by hypothesis: we have already eliminated the essential spheres, and we now remove the essential discs. 
+
+\begin{teo}
+Every compact oriented irreducible 3-manifold $M$ is obtained by adding 1-handles to a finite list
+$$M_1,\ldots, M_k$$
+of connected irreducible and $\partial$-irreducible 3-manifolds. The list is unique
+up to permutations and adding/removing balls.
+\end{teo}
+\begin{proof}
+The proof is similar to Theorem \ref{prime:teo}. 
+If we cut $M$ along a maximal disc system we get some connected manifolds $M_1,\ldots, M_k$. Each $M_i$ is $\partial$-irreducible because the disc system is maximal, and it is irreducible because every sphere in $M_i\subset M$ bounds a ball $B$ in $M$, and $B$ is necessarily contained in $M_i$.
+
+We prove uniqueness. Pick two sets of discs $S, S' \subset M$ such that by cutting along each we get irreducible and $\partial$-irreducible components. We prove that these components are the same up to adding/removing balls. We assume that $S$ and $S'$ intersect transversely. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 7 cm] {irreducible_isotopy.pdf}
+\nota{The discs $D$ and $D'$ form a sphere which bounds a ball since $M$ is irreducible. We can use this ball to isotope $S'$ away from $S$.}
+\label{irreducible_isotopy:fig}
+\end{center}
+\end{figure}
+
+A circle $S\cap S'$ which is innermost with respect to $S$ is bounded by two sub-discs $D\subset S$ and $D'\subset S'$, which together form a sphere: this sphere in turn bounds a ball (because $M$ is irreducible) as in Figure \ref{irreducible_isotopy:fig}. We can use the ball to isotope $S'$ away from $S$ and reduce the intersections in $S\cap S'$. After finitely many isotopies there are no circles in $S\cap S'$.
+
+We are left to consider the arcs in $S\cap S'$. We end precisely as in Theorem \ref{prime:teo}. We observe that by adding more discs to $S$ or $S'$ we get a set of discs that $\partial$-reduces $M$ into the same list of $M_i$'s, plus possibly some balls.
+
+Thanks to an innermost argument, we may surger some disc $D_0\subset S$ along an arc in $D_0\cap S'$ and transform it into two discs $D_1 \sqcup D_2$, both disjoint from $S$ and with less intersections with $S'$. The set $S\sqcup D_1 \sqcup D_2$ is still a reducing set for the $M_i$'s. If we remove $D_0$ from this new system, in the complement we only remove a ball: hence we can replace $D_0$ with $D_1\sqcup D_2$. After finitely many steps we get $S\cap S' = \emptyset$ and therefore $S\cup S'$ is a reducing set producing the same $M_i$'s of $S$ and $S'$, up to balls.
+\end{proof}
+
+\subsection{Projective planes}
+The previous discussions show how to deal with spheres and discs, and we now turn to the only remaining compact surface with $\chi>0$: the projective plane. There is not much to say about it.
+
+\begin{prop}
+The only compact irreducible orientable 3-manifold $M$ containing $\matRP^2$ is $\matRP^3$.
+\end{prop}
+\begin{proof}
+The orientable $M$ contains the orientable tubular neighbourhood $N=\matRP^2 \timtil I$ of $\matRP^2$. The boundary $\partial N$ is the orientable cover $S^2$ or $\matRP^2$. Since $M$ is irreducible, the sphere $\partial N$ bounds a ball $B$. Therefore $M$ is uniquely determined as the manifold obtained by capping off the boundary sphere of $N$. 
+
+The manifold $\matRP^3$ is irreducible (because its cover $S^3$ is) and contains $\matRP^2$, hence we must have $M=\matRP^3$.
+\end{proof}
+
+This proposition does not hold for non-orientable three-manifolds, which might contain $\matRP^2$ with a product neighbourhood $\matRP^2\times I$. These 
+cases are difficult to deal with, so one typically excludes them \emph{a priori} by requiring the manifold to be \emph{$\matRP^2$-irreducible}, which means that it does not contain two-sided projective planes.\index{three-manifold!$\matRP^2$-irreducible three-manifold}
+
+\section{Incompressible surfaces}
+We have proved that every compact oriented 3-manifold decomposes along essential spheres and discs, into some canonical pieces that do not contain essential spheres or discs anymore. 
+
+We would like to pursue this strategy with the next simplest surfaces, namely tori and annuli. To this purpose we define the important notion of \emph{incompressible} surface in a three-manifold, which applies to all surfaces of non-positive Euler characteristic.
+
+\subsection{Incompressible surfaces}
+Throughout all this section $M$ denotes a compact orientable 3-manifold with (possibly empty) boundary. Let $S\subset M$ be a properly embedded orientable surface. A \emph{compressing disc} for $S$ is a disc $D\subset M$ with $\partial D = D \cap S$, such that $\partial D$ does not bound a disc in $S$. With this hypothesis, the surgery in Figure \ref{incompressible:fig} is called a \emph{compression}: it transform $S$ into a new surface $S'\subset M$ which is simpler than $S$.\index{compressing disc}
+
+\begin{prop}  \label{S':simpler:prop}
+The surface $S'$ may have one or two components $S_i'$, and $\chi(S_i')>\chi(S)$ for each component. 
+\end{prop}
+\begin{proof}
+We have $\chi(S') = \chi(S) + 2$. If $S'$ has one component we are done, so suppose $S' = S_1' \sqcup S_2'$. Since $\partial D$ did not bound a disc in $S$, no $S_i'$ is a sphere, hence $\chi(S_i')\leqslant 1$ that implies $\chi(S_i')> \chi(S)$ for $i=1,2$.
+\end{proof}
+
+A properly embedded connected orientable compact surface $S\subset M$ with $\chi(S)\leqslant 0$ is \emph{compressible} if it has a compressing disc, and \emph{incompressible} otherwise. See Figure \ref{incompressible3:fig}-(top).\index{surface!compressible and incompressible surface} 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11 cm] {\iftoggle{BW}{incompressible3-BW}{incompressible3}}
+\nota{A surface $S$ is incompressible ($\partial$-incompressible) if the existence of a disc $D$ as in the top-left (bottom-left) picture implies the existence of another disc $D'\subset S$ as in the top-right (bottom-right) picture. If in addition $M$ is irreducible ($\partial$-irreducible) the two discs $D$ and $D'$ form a sphere (disc) which bounds a ball (is $\partial$-parallel), and hence by substituting $D'$ with $D$ we get two isotopic surfaces.}
+\label{incompressible3:fig}
+\end{center}
+\end{figure}
+
+
+
+\begin{cor} Let $S\subset M$ be any properly embedded orientable surface. After compressing it a finite number of times it transforms into a disjoint union of spheres, discs, and incompressible surfaces.
+\end{cor}
+\begin{proof}
+We compress $S$ as much as we can; after finitely many steps we must stop because of Proposition \ref{S':simpler:prop}.
+\end{proof}
+
+\begin{rem}
+By definition, an orientable 3-manifold is $\partial$-irreducible if and only if its boundary consists of incompressible components. (Strictly speaking, a boundary component is not properly embedded and hence cannot be incompressible: we implicitly push it inside the 3-manifold.)
+\end{rem}
+
+A simple incompressibility criterion is the following.
+
+\begin{prop} \label{pi1:prop}
+Let $S\subset M$ be an orientable, connected, properly embedded surface with $\chi(S)\leqslant 0$. If the map $\pi_1(S) \to \pi_1(M)$ induced by inclusion is injective, then $S$ is incompressible.
+\end{prop}
+\begin{proof}
+Suppose that a disc $D$ compresses $S$. Its boundary $\partial D$ is a non-trivial element in $\pi_1(S)$ because it does not bound a disc in $S$ by Proposition \ref{disco:prop}, but is clearly trivial in $\pi_1(M)$: a contradiction.
+\end{proof}
+
+The converse is also true, but its proof is much harder! We will complete it at the end of this chapter. For the moment we content ourselves with the following.
+
+\begin{prop} \label{incompressible:boundary:prop}
+If $S\subset M$ is incompressible, every component of $\partial S$ is non-trivial in $\partial M$.
+\end{prop}
+\begin{proof}
+If a component of $\partial S$ is trivial in $\partial M$, it bounds a disc $D\subset \partial M$ there. By taking an innermost one we get $D\cap S = \partial D$, and by pushing $D$ inside $M$ we find a compressing disc for $S$.
+\end{proof}
+
+\subsection{Tori}
+The first closed surface to look at is the torus.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 9 cm] {\iftoggle{BW}{torus-BW}{torus}}
+\nota{A torus in an irreducible 3-manifold is either incompressible, or it bounds a solid torus (left), or is contained in a ball (right).}
+\label{torus_irred:fig}
+\end{center}
+\end{figure}
+
+\begin{prop} \label{T:M:prop}
+Let $T\subset M$ be a torus in an irreducible 3-manifold. One of the following holds:
+\begin{enumerate}
+\item $T$ is incompressible,
+\item $T$ bounds a solid torus,
+\item $T$ is contained in a ball.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+If $T$ is not incompressible, it compresses along a disc $D$. The result of the compression is necessarily a sphere $S\subset M$ which bounds a ball $B$ since $M$ is irreducible. If $B$ is disjoint from $T$, then $T$ bounds a solid torus as in Fig.\ref{torus_irred:fig}-(left). If $B$ contains $T$, then case (3) holds as shown in Figure \ref{torus_irred:fig}-(right).
+\end{proof}
+
+If $M=S^3$ the case (3) can be excluded: if $T$ is contained in a ball $B$, then it bounds a solid torus ``on the outside'' using the complementary ball $S^3\setminus B$. We will also exclude the case (1) when we show that $S^3$ contains no incompressible surfaces.
+
+\subsection{$\partial$-incompressible surfaces}
+There is of course also a $\partial$-version of incompressibility. Let $S\subset M$ be a properly embedded orientable surface in a 3-manifold $M$. A \emph{$\partial$-compressing disc} for $S$ is a disc $D$ with $\partial D = \alpha \cup \beta$, where $\alpha$ lies in $S$ and $\beta$ in $\partial M$ as in Figure \ref{incompressible2:fig}-(left); we also require that there is no sub-disc $D'\subset S$ with $\partial D' = \alpha\cup \beta' $ and $\beta'\subset\partial S$. 
+The move in Figure \ref{incompressible2:fig} is a \emph{$\partial$-compression} and transforms $S$ into a surface $S'\subset M$ simpler than $S$:
+
+\begin{prop}
+The surface $S'$ may have one or two components $S_i'$, and $\chi(S_i')>\chi(S)$ for each component. 
+\end{prop}
+\begin{proof}
+We have $\chi(S') = \chi(S) + 1$. If $S'$ has one component we are done, so suppose $S' = S_1' \sqcup S_2'$. Since $\alpha$ did not bound a disc in $S$, no $S_i'$ is a disc, hence $\chi(S_i')\leqslant 0$ that implies $\chi(S_i')> \chi(S)$ for $i=1,2$.
+\end{proof}
+
+A properly embedded connected orientable compact $S\subset M$ with $\chi(S)\leqslant 0$ is \emph{$\partial$-compressible} if it has a $\partial$-compressing disc, and \emph{$\partial$-incompressible} otherwise. See Figure \ref{incompressible3:fig}.\index{surface!$\partial$-compressible and $\partial$-incompressible surface}
+
+\begin{cor} Let $S\subset M$ be any properly embedded orientable surface. After $\partial$-compressing it a finite number of times it transforms into a disjoint union of spheres, discs, and $\partial$-incompressible surfaces.
+\end{cor}
+
+\subsection{Annuli}
+The first non-closed surface to look at is the annulus. Let a \emph{tube} be the tubular neighbourhood of a properly embedded arc.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{annulus-BW}{annulus}}
+\nota{An annulus $A$ in an irreducible and $\partial$-irreducible 3-manifold is either incompressible and $\partial$-incompressible, or is parallel to an annulus in $\partial M$ (left), or bounds a tube (centre), or is contained in a ball intersecting $\partial M$ in a disc (right).}
+\label{annulus:fig}
+\end{center}
+\end{figure}
+
+\begin{prop} \label{A:M:prop}
+Let $A\subset M$ be a properly embedded annulus in an irreducible and $\partial$-irreducible 3-manifold. One of the following holds:
+\begin{enumerate}
+\item $A$ is incompressible and $\partial$-incompressible,
+\item $A$ bounds a tube,
+\item $A$ is parallel to an annulus in $\partial M$,
+\item $A$ is contained in a ball $B$ intersecting $\partial M$ in a disc.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+If $A$ compresses along a disc $D$, it transforms into two discs that are parallel to two discs $D_1, D_2 \subset \partial M$ since $M$ is $\partial$-irreducible. If $D_1\cap D_2 = \emptyset$ then $A$ bounds a tube as in Figure \ref{annulus:fig}-(right); if $D_1 \subset D_2$ then $A$ is contained in a ball $B$ intersecting $\partial M $ in $D_2$.
+
+ If $A$ $\partial$-compresses along a disc $D$, it transforms into a disc which is again $\partial$-parallel and hence $A$ is as in Figure \ref{annulus:fig}-(left) or bounds a tube.
+\end{proof}
+
+As a corollary, we get a simple criterion for detecting incompressible and $\partial$-incompressible annuli:
+
+\begin{cor} \label{A:non-parallel:cor}
+Let $A\subset M$ be a properly embedded annulus in an irreducible and $\partial$-irreducible 3-manifold. If the components of $\partial A$ are non-trivial and non-parallel in $\partial M$, the annulus $A$ is incompressible and $\partial$-incompressible.
+\end{cor}
+
+\subsection{Handlebodies}
+We study some examples. We investigate the incompressible and $\partial$-incompressible surfaces in the three-sphere and in the handlebodies. Recall that a ($\partial$)-incompressible surface is always compact, orientable, connected, properly embedded, and with non-positive Euler characteristic by hypothesis.
+
+\begin{prop}
+There are no incompressible surfaces in $\matR^3$.
+\end{prop}
+\begin{proof}
+Let $S$ be a surface in $\matR^3$. By applying as is the proof of Alexander Theorem \ref{Alexander:teo} we find that $S$ transforms into spheres after surgerying along discs. Therefore $S$ compresses somewhere.
+\end{proof}
+
+A high genus closed surface may be embedded in $\matR^3$ in a rather complicated way (which may be hard to imagine) and the proposition says that no matter how intricate the surface is, there is always a compressing disc somewhere that one can use to simplify the picture. After finitely many compressions the complicated surface is atomised into some trivial spheres. 
+
+\begin{cor} \label{no:inc:B:cor}
+There are no incompressible surfaces in $S^3$.
+\end{cor}
+\begin{cor} \label{B:cor}
+There are no incompressible surfaces in the ball $B$.
+\end{cor}
+\begin{proof}
+Use Proposition \ref{incompressible:boundary:prop}.
+\end{proof}
+
+\begin{cor}
+Every torus in $S^3$ bounds a solid torus and every properly embedded annulus in $B$ bounds a tube.
+\end{cor}
+\begin{proof}
+Apply Propositions \ref{T:M:prop} and \ref{A:M:prop}. Since the manifold is $S^3$ or $B$, the cases (3) or (4) easily imply (2).
+\end{proof}
+
+The solid torus in $S^3$ and the tube in $B$ may of course be knotted! We now turn to handlebodies. Recall that a handlebody of genus $g\geq 1$ is irreducible by Corollary \ref{handle:irr:cor}, but it is clearly not $\partial$-irreducible.
+
+\begin{prop}[Handlebodies] \label{handlebodies:prop}
+The genus-$g$ handlebody $H_g$ contains no incompressible and $\partial$-incompressible surfaces.
+\end{prop}
+\begin{proof}
+Suppose that $S\subset H_g$ is incompressible and $\partial$-incompressible. Pick disjoint essential discs $D_1,\ldots, D_g$ that cut $H_g$ into a ball $B$. Put $S$ in transverse position with respect to $\sqcup_i D_i$, so that the intersection of $S$ with $\sqcup_i D_i$ consists of circles and properly embedded arcs. Since $H_g$ is irreducible and $S$ is incompressible and $\partial$-incompressible, all these intersections can be removed by an isotopy of $S$, as explained below. Then Corollary \ref{B:cor} gives a contradiction.
+
+The intersections removal goes as follows. Let $\alpha$ be one arc or circle in $S \cap D_j$. Since $S$ is incompressible and $\partial$-incompressible, there is a disc $D'\subset S$ bounded by $\alpha$ (if $\alpha$ is a circle) or by $\alpha \cup \beta$ with $\beta\subset \partial S$ (if $\alpha$ is an arc) as in Figure \ref{incompressible3:fig}. After substituting $\alpha$ with an innermost intersection of $D'$ with $\sqcup_i D_i$ we may suppose that $D'$ is entirely contained in $B$ and hence we may eliminate $\alpha$ with an isotopy as explained in Figure \ref{incompressible3:fig}. 
+\end{proof}
+
+We can be more specific on the solid torus $H_1$.
+
+\begin{prop} \label{incompressible:solid:torus:prop}
+Every incompressible surface in a solid torus is a $\partial$-parallel annulus.
+\end{prop}
+\begin{proof}
+Every incompressible surface $S\subset H_1$ is $\partial$-compressible by Proposition \ref{handlebodies:prop}. If we $\partial$-compress it, we get either a disc or an incompressible surface again. Therefore $S$ is constructed iteratively from some discs by a sequence of moves opposite to the $\partial$-compression, that produce incompressible surfaces at each step. 
+One easily sees that the only incompressible surface that this move can produce at the first step is a $\partial$-parallel annulus (from a single disc), and then one gets stuck.
+\end{proof}
+
+\begin{warning}
+The handlebody $H_2$ contains many complicated properly embedded incompressible surfaces! However, these are all $\partial$-compressible. The main difference between $H_1$ and $H_2$ is that $\pi_1(H_2)=\matZ*\matZ$ is a free group of rank two and contains many free groups of arbitrarily high rank, so there is a lot of space for $\pi_1$-injective incompressible surfaces in $H_2$ with boundary (whose fundamental group is free).
+\end{warning}
+
+\subsection{Line bundles}
+We now turn to product line bundles. Recall that $S_g$ is the closed orientable surface of genus $g$. 
+
+\begin{prop}[Line bundles] \label{line:bundles:prop}
+Fix $g\geqslant 1$. The product $M=S_g\times [-1,1]$ is irreducible and $\partial$-irreducible. The incompressible and $\partial$-incompressible surfaces in $M$ are precisely the following (up to isotopy):
+\begin{itemize}
+\item the \emph{horizontal} surface $S_g\times 0$,
+\item a \emph{vertical} annulus $\gamma \times [-1,1]$ for each non-trivial simple closed curve $\gamma\subset S_g$.
+\end{itemize}
+\end{prop}
+\begin{proof}
+We know that $M$ is irreducible by Proposition \ref{product:irr:prop}. The horizontal surface and the vertical annuli are both incompressible and $\partial$-incompressible by 
+Propositions \ref{pi1:prop} and \ref{A:non-parallel:cor}. Propositions \ref{pi1:prop} also shows that $M$ is $\partial$-irreducible.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{prisms-BW}{prisms}}
+\nota{A move that decreases the intersection number of $S$ with the vertical edges (left). The surface $S$ intersects every prism into horizontal triangles (centre) or vertical rectangles (right).}
+\label{prisms:fig}
+\end{center}
+\end{figure}
+
+We now prove that every incompressible and $\partial$-incompressible $S$ is either vertical or horizontal, up to isotopy. We use a version of normal surface theory, with prisms instead of tetrahedra. 
+
+A triangulation $\Delta$ of $S_g$ determines a decomposition of $S_g\times [-1,1]$ into prisms. Every vertex $v$ of $\Delta$ gives rise to a vertical edge $e=v\times [-1,1]$. We suppose that $S$ is transverse to the prisms and has minimum intersection number with the vertical edges. The intersection of $S$ with a vertical rectangular face consists of arcs and circles. The simplification argument described below shows that after an isotopy we get only horizontal or vertical arcs (that is, arcs joining opposite sides of the rectangle).
+By further isotopies we can also supppose that $S$ intersects every horizontal triangle of the prism into arcs joining distinct sides. Therefore $S$ intersects necessarily every prism into either horizontal triangles or vertical rectangles as in Figure \ref{prisms:fig}-(centre) and (right). These pieces glue up to give a horizontal or vertical surface.
+
+Here is the simplification argument. There cannot be arcs with endpoints in two consecutive edges, because they could be removed by an isotopy as in Figure \ref{prisms:fig}-(left) contradicting minimality. Analogously there are no arcs with both endpoints in the same vertical edge. Circles and arcs with endpoints in the same horizontal edge are removed as in the proof of Proposition \ref{handlebodies:prop}.  
+\end{proof}
+
+
+\section{Haken manifolds}
+There are two classes of irreducible closed three-manifolds: those that contain incompressible surfaces, and those that do not. Both classes are very important and contain a wealth of interesting manifolds.
+
+The manifolds belonging to the first class are called \emph{Haken manifolds} and are somehow easier to study, because they can be cut into balls via a standard procedure called \emph{hierarchy}: we cut the manifold along an essential surface, then along another, and we iterate until we get balls. We study these manifolds here. We also prove the converse of Proposition \ref{pi1:prop}, that is that a closed surface is incompressible if and only if it is $\pi_1$-injective, see Theorem \ref{incompressible:teo}.
+
+\subsection{Introduction}
+If not otherwise mentioned, all the 3-manifolds $M$ we will consider in this section will be connected, compact, oriented and with (possibly empty) boundary.
+We introduce a definition.
+
+\begin{defn} A \emph{Haken manifold} is a compact, connected, oriented 3-manifold $M$ with (possibly empty) boundary, which is irreducible, $\partial$-irreducible, and contains an incompressible and $\partial$-incompressible surface.\index{three-manifold!Haken three-manifold}
+\end{defn} 
+
+The reader should not be frightened by the abundance of adjectives: this definition is really clever because it summarises various reasonable hypothesis in a unique word. The rest of this chapter is mainly devoted to the study of Haken manifolds. We start by looking at their boundaries.
+
+\begin{prop}
+Every boundary component $X$ of a Haken manifold $M$ has $\chi(X)\leqslant 0$ and is incompressible.
+\end{prop}
+\begin{proof}
+No component $X$ of $\partial M$ is a sphere: if it were so, it would bound a ball $B$ and we would have $M=B$, contradicting Corollary \ref{B:cor}. Hence $\chi(X)\leqslant 0$ and $X$ is incompressible
+because $M$ is $\partial$-irreducible.
+\end{proof}
+
+We now prove that there are plenty of Haken manifolds. We start with a general proposition.
+
+\begin{prop}
+Let $M$ be an oriented, compact, irreducible, and $\partial$-irreducible 3-manifold with (possibly empty) boundary.
+Every non-trivial homology class $\alpha \in H_2(M,\partial M;\matZ)$ is represented by a disjoint union of incompressible and $\partial$-incompressible oriented surfaces.
+\end{prop}
+\begin{proof}
+Every class $\alpha$ is represented by a properly embedded oriented surface $S$ by Proposition \ref{homology:prop}. A compression as in Figure \ref{incompressible:fig} and \ref{incompressible2:fig} does not alter the homology class of the surface: indeed in homology we have $S'-S = \partial B$ where $B=D\times [-1,1]$ is a tubular neighbourhood of the compressing disc $D$. Hence $[S'] = [S] = \alpha$.
+
+We compress $S$ until its connected components are either incompressible and $\partial$-incompressible surfaces, discs, or spheres. Since $M$ is irreducible and $\partial$-irreducible, discs and spheres bound balls and are hence homologically trivial, so they can be removed.
+\end{proof}
+
+\begin{cor} 
+Let $M$ be oriented, compact, irreducible, and $\partial$-irreducible. If $H_2(M,\partial M; \matZ)\neq \{e\}$ then $M$ is Haken. 
+\end{cor}
+\begin{cor} \label{boundary:implies:Haken:cor}
+Let $M$ be oriented, compact, irreducible, and $\partial$-irreducible. 
+If $\partial M \neq \emptyset$ and $M\neq B$, then $M$ is Haken.
+\end{cor}
+\begin{proof}
+If $\partial M$ contains a sphere, it bounds a ball $B$ and hence $M=B$. Otherwise $H_1(\partial M)$ has positive rank, and hence $H_2(M,\partial M)=H^1(M)$ also has positive rank by Corollary \ref{rank:cor}.
+\end{proof}
+
+We recall that every compact orientable 3-manifold decomposes along spheres and disc into irreducible and $\partial$-irreducible pieces. If one such piece has non-empty boundary then either it is ball, or it is Haken.
+
+The following lemma will be useful soon. It says that every Haken manifold contains an interesting ``spanning'' surface $S$, that touches all the boundary components (the spanning surface need not to be connected).
+
+\begin{lemma} \label{chiappa:tutto:lemma}
+Every Haken manifold $M$ contains an oriented surface $S$, whose components are incompressible and $\partial$-incompressible, such that $[\partial S\cap X]\in H_1(X,\matZ)$ is non-trivial for every boundary component $X$ of $M$.
+\end{lemma}
+\begin{proof}
+We have $\partial M = X_1\sqcup \ldots \sqcup X_k$ with $\chi(X_i)\leqslant 0$ for all $i$. Proposition \ref{lagrangian:prop} says that the image of 
+$$\partial \colon H_2(M,\partial M, \matZ) \longrightarrow H_1(\partial M,\matZ)$$
+is a lagrangian subgroup $L$ of maximal rank. We have 
+$$H_1(\partial M, \matZ) = \oplus_{i=1}^k H_1(X_i, \matZ).$$
+The decomposition is orthogonal with respect to the symplectic intersection form $\omega$. There is an $\alpha\in L$ whose projection to each $H_1(X_i,\matZ)$ is non-trivial: if not, the space $L$ would be $\omega$-orthogonal to some $H_1(X_i,\matZ)$ and hence contained in a smaller symplectic subspace, a contradiction since $L$ has maximal rank.
+Pick any incompressible and $\partial$-incompressible surface $S$ such that $\partial [S] = \alpha$.
+\end{proof}
+
+\subsection{Normal surfaces}
+On Haken manifolds, incompressible surfaces are efficiently detected by normal surfaces.  
+
+\begin{prop} \label{normal:incompressible:prop}
+Let $M$ be Haken and $T$ be a triangulation for $M$. Every compact surface $S\subset M$ whose components are all incompressible and $\partial$-incompressible is isotopic to a normal surface.
+\end{prop}
+\begin{proof}
+We know that $S$ becomes normal after surgeries as in Figure \ref{incompressible:fig} or Figure \ref{incompressible2:fig}. These surgeries are actually isotopies since $S$ is incompressible and $\partial$-incompressible, and $M$ is irreducible and $\partial$-irreducible (see Figure \ref{incompressible3:fig}).
+\end{proof}
+
+Note that in the proof of Proposition \ref{normal:incompressible:prop}, as in many other proofs, it is crucial that $M$ be irreducible and $\partial$-irreducible.
+We can now apply Lemma \ref{non:parallel:lemma} to get the following.
+
+\begin{cor} \label{incompressible:cor}
+Let $M$ be a Haken manifold. There is a $K>0$ such that every set $S$ of pairwise disjoint and non-parallel incompressible and $\partial$-incompressible surfaces in $M$ consists of at most $K$ elements.
+\end{cor}
+
+Our aim is now to cut a Haken manifold iteratively along incompressible and $\partial$-incompressible surfaces. The two-dimensional analogue to keep in mind is the following: every surface $S_g$ of genus $\geqslant 2$ can be cut into pairs-of-pants; a pair-of-pants is a quite simple surface, but we are still not satisfied and we further cut it along three arcs into two discs (two hexagons). We have constructed a two-step decomposition of $S_g$ into discs: this is what we would like to extend from two to three dimensions.
+
+\subsection{Cutting along surfaces}
+When we cut a 3-manifold along an incompressible surface, some nice properties of the manifold are preserved.
+
+\begin{prop} \label{cut:surface:prop}
+Let $M$ be compact and irreducible, and $S\subset M$ be either an essential disc or an incompressible surface. Let $M'$ be obtained by cutting $M$ along $S$. The following holds:
+\begin{itemize}
+\item the manifold $M'$ is irreducible;
+\item a closed $\Sigma\subset M'$ is incompressible in $M'$ $\Longleftrightarrow$ it is so in $M$.
+\end{itemize}
+\end{prop}
+\begin{proof}
+We prove that $M'$ is irreducible. Let $\Sigma\subset M'$ be a sphere. Since $M$ is irreducible, the sphere $\Sigma$ bounds a ball $B\subset M$. The ball $B$ cannot contain $S$ because all surfaces in a ball are compressible. Therefore $B\subset M'$ and $M'$ is irreducible.
+
+To prove the second assertion, we show that $\Sigma$ has a compressing disc $D$ in $M$ if and only if it has one in $M'$. If $D$ lies in $M'$ then of course it lies also in $M$. Conversely, suppose $D$ lies in $M$. Put $D$ in transverse position with respect to $S$ and pick an innermost intersection circle in $D$, bounding a disc $D'\subset D$. Since $D'$ cannot compress $S$, and since $M$ is irreducible, the disc $D'$ can be isotoped away from $S$. This simplifies $D\cap S$ and after finitely many steps we get $D\cap S = \emptyset$ and hence $D\subset M'$.
+\end{proof}
+
+\begin{cor} \label{Haken:cor}
+If we cut a Haken 3-manifold along a closed incompressible surface, we get a disjoint union of Haken 3-manifolds.
+\end{cor}
+
+The following consequence is also interesting.
+
+\begin{cor} \label{handlebody:closed:cor}
+Let $M$ be compact with non-empty boundary. If $M$ is irreducible, then either it is a handlebody or it contains a closed incompressible surface. 
+\end{cor}
+\begin{proof}
+The manifold $M$ decomposes along essential discs into manifolds $M_1, \ldots, M_k$ that are irreducible and $\partial$-irreducible. If every $M_i$ is a ball then $M$ is a handlebody. If $M_i$ is not a ball, the closed surface $S=\partial M_i$ is not a sphere and is incompressible in $M_i$, and hence also in $M$ by Proposition \ref{cut:surface:prop}.
+\end{proof}
+
+\subsection{Hierarchies}
+We want to use incompressible surfaces to cut every Haken manifold into simpler pieces. The procedure goes as follows.
+
+A \emph{hierarchy} for a Haken 3-manifold $M$ is a sequence of 3-manifolds\index{hierarchy}
+$$M=M_0 \stackrel{S_0}\rightsquigarrow M_1 \stackrel{S_1}\rightsquigarrow M_2 \stackrel{S_2}\rightsquigarrow \ldots \stackrel{S_{h-1}}\rightsquigarrow M_h $$
+where each $M_{i+1}$ is obtained cutting $M_i$ along a properly embedded (possibly disconnected) surface $S_i\subset M_i$, such that the following holds:
+\begin{itemize}
+\item every component of $S_i$ is an incompressible and $\partial$-incompressible surface or an essential disc, for all $i$;
+\item the final manifold $M_h$ consists of balls.
+\end{itemize}
+The number $h$ is the \emph{height} of the hierarchy. We now show that every Haken manifold can be ``atomised'' into balls in three steps.
+\begin{teo} \label{hierarchy:teo}
+Every Haken manifold has a hierarchy of height $3$.
+\end{teo}
+
+\begin{proof}
+Let $S_0$ be a maximal family of pairwise disjoint and non-parallel closed incompressible surfaces in $M$, which exists by Corollary \ref{incompressible:cor}. We cut $M_0=M$ along $S_0$ and get $M_1$.
+
+Every connected component $M_1^i$ of $M_1$ is Haken by Corollary \ref{Haken:cor}. 
+By Lemma \ref{chiappa:tutto:lemma} for every $i$ there is a ``spanning'' surface $S_1^i\subset M_1^i$ made of incompressible and $\partial$-incompressible components that intersects every boundary component of $M_1^i$. We cut $M_1$ along the spanning $S_1 = \sqcup S_1^i$ and get a new manifold $M_2$. 
+
+We now prove that $M_2$ contains no closed incompressible surface. Indeed, if $\Sigma\subset M_2$ were closed and incompressible, then it would be so also in $M$ by Proposition \ref{cut:surface:prop}. Since $S_0$ is maximal, the surface $\Sigma$ would be parallel to a component of $S_0$, that is it would cobound a $\Sigma \times [0,1]$ with it. Since the spanning surface $S_1$ intersects all the boundary components of $M_1$, a component of $S_1$ would be contained in $\Sigma \times [0,1]$ and would intersect the boundary only on the side of $S_0$: this is excluded by Proposition \ref{line:bundles:prop} (products do not contain incompressible and $\partial$-incompressible surfaces with boundary only on one side).
+
+Every component of $M_2$ is a handlebody by Corollary \ref{handlebody:closed:cor}. We cut it along a set $S_2$ of essential discs to get balls.
+\end{proof}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 8 cm] {\iftoggle{BW}{hierarchy-BW}{hierarchy}}
+\nota{The strata $S_0$, $S_1$, and $S_2$ intersect in vertices (left). The boundary of each ball $B\subset M_2$ is tessellated into domains belonging to $S_0, S_1$, or $S_2$. Three of them intersect at a 3-valent vertex (right).}
+\label{hierarchy:fig}
+\end{center}
+\end{figure}
+
+Hierarchies may be used to prove theorems on Haken manifolds. We will now use them to prove that incompressible surfaces must be $\pi_1$-injective: we need a preliminary discussion and a lemma.
+
+In our hierarchy of height $3$, the surfaces in $S_0$ are closed, the spanning surfaces in $S_1$ have boundary, and $S_2$ consists of discs. To simplify notations, we redefine $S_0$ as $\partial M \cup S_0$. 
+
+It is convenient to consider all the surfaces $S_0$, $S_1$, and $S_2$ inside $M$, without cutting $M$ along them.  With this perspective $\partial S_1$ is glued to $S_0$ and $\partial S_2$ is glued to $S_0\cup S_1$, via transverse maps. Every intersection $S_0\cap S_1 \cap S_2$ is a \emph{vertex} as in Figure \ref{hierarchy:fig}-(left). The space $X=S_0\cup S_1 \cup S_2$ is a two-dimensional cell complex whose complement in $M$ is a union of open balls: such an object $X$ is usually called a \emph{spine} for $M$.
+
+We say that our hierarchy of height $3$ is \emph{minimal} if the essential discs in $S_2$ are chosen to minimise the total number of vertices. We can of course suppose that the hierarchy is minimal.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12 cm] {\iftoggle{BW}{hierarchy2-BW}{hierarchy2}}
+\nota{If $\gamma$ intersects at most three domains, it bounds a disc $D$ intersecting only these domains, as shown here.}
+\label{hierarchy2:fig}
+\end{center}
+\end{figure}
+
+The final manifold $M_3$ is the abstract closure of $M\setminus (S_0\cup S_1 \cup S_2)$ and consists of balls.
+The boundary of every such ball $B$ is tessellated into domains belonging to $S_0$, $S_1$, or $S_2$. Three domains intersect at 3-valent vertices as in Figure \ref{hierarchy:fig}-(right). 
+We say that $B$ is \emph{essential} if every simple closed curve $\gamma\subset \partial B$ transverse to the tessellation and intersecting $\leqslant 3$ domains is the boundary of a disc $D\subset \partial B$ intersecting only these domains: see Figure \ref{hierarchy2:fig}. 
+
+\begin{lemma} \label{minimal:essential:lemma}
+If the hierarchy is minimal, every ball in $M_3$ is essential.
+\end{lemma}
+\begin{proof}
+Let $\gamma\subset \partial B$ intersect $k\leqslant 3$ domains. The curve $\gamma$ obviously bounds a properly embedded disc $D'\subset B$. 
+If $k=1$, the curve is entirely contained in $S_i$ for some $i$. Since $S_0$ and $S_1$ are incompressible and $S_2$ consists of discs, the curve $\gamma$ bounds a disc $D$ also in $S_i$. Since $S_1$ is incompressible and $S_2$ consists of essential discs, the boundary components of $S_j$ with $j>i$ are not attached in the interior of $D$, so $D$ is entirely contained in the domain containing $\gamma$ and we are done.
+
+If $k=2$, the curve $\gamma$ is contained in $S_i\cup S_j$ for some $i<j$. If $(i,j) = (0,1)$ we use that $S_1$ is $\partial$-incompressible to get a disc $D$ as in Figure \ref{hierarchy2:fig}-(top-right). If $j=2$, then $\gamma$ cuts a disc in $S_2$ into two discs $D_1 \cup D_2$. 
+
+We have three half-discs $D', D_1, D_2$ intersecting in an arc, all contained in a handlebody $H\subset M_2$. Recall that $H\setminus S_2$ consists of balls. 
+If we replace $D_1\cup D_2$ by either $D_1 \cup D'$ or $D_2 \cup D'$ (say, the first) we still get a disc system that cuts $H$ into balls, and hence another hierarchy. By minimality $D_2=D$ is adjacent to no vertices, \emph{i.e.}~it is as in Figure \ref{hierarchy2:fig}-(top-right) and we are done. 
+
+The case $k=3$ is analogous: the curve $\gamma$ cuts a disc in $S_2$ into two parts $D_1\cup D_2$ and we may replace it with $D_1\cup D'$. By minimality $D_2$ is incident to at most one vertex $v$: we isotope $\gamma$ through $v$ as in Figure \ref{hierarchy3:fig}, and then conclude using the $k=2$ case.
+\end{proof}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 10 cm] {\iftoggle{BW}{hierarchy3-BW}{hierarchy3}}
+\nota{By minimality the region in $S_2$ is incident to a single vertex and we can slide $\gamma$ through it. Then we resume to the $k=2$ case.}
+\label{hierarchy3:fig}
+\end{center}
+\end{figure}
+
+\subsection{Dehn's Lemma}
+Proposition \ref{pi1:prop} says that an orientable connected properly embedded $\pi_1$-injective surface $S\subset M$ with $\chi(S)\leqslant 0$ is incompressible. We can finally prove the converse, at least for closed surfaces.
+
+The following result is often proved as a corollary of a famous topological fact called the \emph{Dehn Lemma}. We do not state Dehn's Lemma here, and we prove directly the following using hierarchies.\index{Dehn lemma}
+
+\begin{teo} \label{incompressible:teo}
+Let $M$ be a compact oriented 3-manifold. A connected oriented closed $S\subset M$ with $\chi(S)\leqslant 0$ is incompressible if and only if the induced map $i_*\colon \pi_1(S) \to \pi_1(M)$
+is injective.
+\end{teo}
+\begin{proof}
+We know one implication from Proposition \ref{pi1:prop}; here we suppose that $S$ incompressible and prove that $i_*\colon \pi_1(S) \to \pi_1(M)$ is injective. 
+
+The decomposition of $M$ into irreducible and $\partial$-irreducible factors is made by cutting $M$ along 
+essential spheres and discs transverse to $S$. Since $S$ is incompressible, we may surger $S$ along these spheres and discs without altering $i_*$, so that $S$ is disjoint from them and hence contained in a single factor. Therefore we may suppose $M$ is irreducible and $\partial$-irreducible. 
+
+Now $M$ contains the incompressible $S$ and is hence Haken. Theorem \ref{hierarchy:teo} furnishes a hierarchy of height $\leqslant 3$. We may suppose that $S_0$ is a maximal system of closed incompressible surfaces containing $S$ and that the hierarchy is minimal. The balls in $M_3$ are essential by Lemma \ref{minimal:essential:lemma}.
+
+Suppose by contradiction that $i_*$ is not injective: there is a loop $\gamma\colon S^1 \to S$ which is homotopically trivial in $M$ but not in $S$. The triviality in $M$ furnishes a continuous map $f\colon D^2 \to M$ which extends $\gamma$. We homotope $f$ to a smooth map, transverse to all the strata of $S_0\cup S_1\cup S_2$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 5 cm] {\iftoggle{BW}{Dehn-BW}{Dehn}}
+\nota{The counterimage of $S_0\cup S_1 \cup S_2$ along $f$. An edge with label $i$ goes to $S_i$ (unlabelled edges go to $S_0$). Here there is a $0$-gon (\iftoggle{BW}{light grey}{yellow}) and three $2$-gons (\iftoggle{BW}{grey}{green}). The correct notion of $k$-gon should be clear from the picture.}
+\label{Dehn:fig}
+\end{center}
+\end{figure}
+
+By transversality, the counterimage $f^{-1}(S_0\cup S_1 \cup S_2)$ is a graph in $D^2$ as in Figure \ref{Dehn:fig}, which divides $D^2$ into regions. The graph is itself a hierarchy, with edges of type $0,1,2$ attached iteratively.
+An easy Euler characteristic argument shows that at least one region $R$ is a $k$-gon with $k\leqslant 3$, see Figure \ref{Dehn:fig}. The region $R$ is mapped inside a ball $B\subset M_3$, and $\partial R$ is mapped to an immersed curve $\alpha\subset\partial B$ intersecting $k\leqslant 3$ domains of the tessellated $\partial B$. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11 cm] {\iftoggle{BW}{Dehn2-BW}{Dehn2}}
+\nota{The immersed curve $\alpha$ intersects $k\leqslant 3$ regions and is hence of one of these types (because $B$ is essential).}
+\label{Dehn2:fig}
+\end{center}
+\end{figure}
+
+Since $B$ is essential, the curve $\alpha$ is of one of the types shown in Figure \ref{Dehn2:fig}. In all cases we may slide the disc $f(R)$ away from $B$ and decrease the number of regions in $D$ by destroying $R$. After finitely many homotopies of this kind we get $f(D)\cap (S_0 \cup S_1 \cup S_2) = \emptyset$ and hence $f(D)$ is entirely contained in a ball $B\subset M_3$. Therefore $\gamma$ is trivial in $S$, a contradiction.
+\end{proof}
+
+\begin{cor}
+The fundamental group of a Haken manifold is infinite.
+\end{cor}
+\begin{proof}
+It contains the fundamental group of a closed surface with $\chi\leqslant 0$, which is infinite.
+\end{proof}
+\begin{cor}
+Elliptic 3-manifolds are not Haken.
+\end{cor}
+
+We will see in the subsequent chapters that every flat 3-manifold is Haken. Hyperbolic 3-manifolds may or may not be Haken.
+
+\subsection{Essential surfaces} \label{essential:subsection}
+Topologists sometimes use the term ``essential'' to summarise various reasonable notions in a single word. We already know what an essential disc or sphere is (see Section \ref{essential:discs:subsection}) and we now turn to surfaces with non-positive Euler characteristic. 
+
+Let $M$ be a compact oriented three-manifold and $S\subset M$ be a properly embedded connected compact surface with $\chi(S)\leqslant 0$. We say that $S$ is \emph{essential} if it is incompressible, $\partial$-incompressible, and not $\partial$-parallel.\index{surface!essential surface}
+
+\subsection{Simple manifolds} \label{simple:manifold:subsection}
+Let $M$ be irreducible and $\partial$-irreducible. We introduce yet some more definitions. We say that
+\begin{itemize}
+\item $M$ is \emph{atoroidal} if it does not contain essential tori,
+\item $M$ is \emph{acylindrical} if it does not contain essential annuli.
+\end{itemize}
+
+Finally, the manifold $M$ is \emph{simple} if it is atoroidal and acylindrical. We can summarise this definition as follows:\index{three-manifold!atoroidal and acylindrical three-manifold}\index{three-manifold!simple three-manifold}
+
+\begin{defn} A compact oriented 3-manifold $M$ with (possibly empty) boundary is \emph{simple} if it does not contain any essential sphere, disc, torus, or annulus.
+\end{defn}
+
+Many examples come from elliptic and hyperbolic geometry:
+
+\begin{prop}
+Every closed elliptic or hyperbolic 3-manifold $M$ is simple.
+\end{prop}
+\begin{proof}
+We know that $M$ is irreducible. The manifold $M$ does not contain incompressible tori because $\pi_1(M)$ does not contain $\matZ \times \matZ$: if $M$ is elliptic then $\pi_1(M)$ is finite, if it is hyperbolic we use Corollary \ref{no:ZxZ:cor}.
+\end{proof}
+
+The flat geometry is an exception: the three-torus $S^1\times S^1\times S^1$ contains many incompressible tori and is hence not simple. For instance, the two-torus $S^1\times S^1 \times p$ is incompressible (because it is $\pi_1$-injective).
+
+Our next goal will be to decompose every irreducible and $\partial$-irreducible manifold $M$ along some canonical set of essential tori and annuli into some pieces. These pieces will be either simple, or belong to a particular class: the \emph{Seifert manifolds}. We introduce this class in the next chapter. 
+
+\subsection{References}
+The main sources that we have used for this chapter are an unfinished book of Hatcher \cite{H} and Fomenko--Matveev \cite{FoMa}. The proof of Theorem \ref{incompressible:teo} through hierarchies is due to Aitchison and Rubinstein \cite{AR}.
+
+

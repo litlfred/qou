@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-011",
+  "kind": "prose",
+  "title": "In the classical notation where log ǫ(H) = 12 and [X /H] =",
+  "pageStart": 5,
+  "pageEnd": 7,
+  "text": "../sections/sec-011-2-in-the-classical-notation-where-log-ǫh-12-and.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-astro-ph-0203462v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-astro-ph-0203462v1/manifest.jsonld",
+  "provenance": "ingested"
+}

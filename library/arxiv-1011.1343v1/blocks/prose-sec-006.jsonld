@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1011.1343v1/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1011.1343v1/blocks/prose-sec-006",
   "kind": "prose",
   "title": "Back to square one - meson-exchange currents",
   "pageStart": 11,
   "pageEnd": 13,
   "text": "../sections/sec-006-44-back-to-square-one---meson-exchange-currents.md",
-  "derivedFrom": "library/arxiv-1011.1343v1/manifest",
-  "sourceDocument": "library/arxiv-1011.1343v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1011.1343v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1011.1343v1/manifest.jsonld",
   "provenance": "ingested"
 }

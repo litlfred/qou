@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9408113v2/blocks/prose-sec-032",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-9408113v2/blocks/prose-sec-032",
   "kind": "prose",
   "title": "Prove the following nine-term, three-variable functional equations",
   "pageStart": 31,
   "pageEnd": 31,
   "text": "../sections/sec-032-3-prove-the-following-nine-term-three-variable-f.md",
-  "derivedFrom": "library/arxiv-hep-th-9408113v2/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9408113v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-9408113v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-9408113v2/manifest.jsonld",
   "provenance": "ingested"
 }

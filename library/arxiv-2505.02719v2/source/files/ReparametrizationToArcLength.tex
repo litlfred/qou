@@ -1,0 +1,443 @@
+\section{Reparametrization to arclength}\label{sec:arclength-reparam}
+
+\begin{theorem}\label[theorem]{thm:arclength}
+Let $s\in \intervaloc{1/2,1}$. The (rescaling and) reparametrization operator 
+\begin{align*}
+\ARC: H^{1+s}_\reg\left( \R/\Z,\R^n \right) \to H^{1+s}_\unitspeed\left( \R/\Z,\R^n \right),
+\quad	\gamma &\mapsto \frac{1}{\mathcal{L}(\gamma)} \, \gamma\circ\psi^{-1}_\gamma,
+\end{align*} 
+from the regular $H^{1+s}$-curves to the arclength
+parametrized $H^{1+s}$-curves 
+is continuous with respect to the $H^{1+s}$ topology, where 
+$\psi_{\gamma}(t) \ceq \frac{1}{\mathcal{L}(\gamma)}\mathcal{L}(\gamma\mid_{[0,t]})$ for $t\in [0,1]$.
+	\end{theorem}
+Similar results have been shown in different settings; 
+see, e.g., \cite[Theorem 2]{anosov_1981}. We follow the 
+approach of Reiter in \cite[Theorem 1.13]{reiter_2009} who proved this result in the case $s=1$.
+	Note that the result stated also holds for non-injective curves.
+
+We prove \Cref{thm:arclength} by showing that the mapping $\ARC$ 
+is the composition of 
+continuous functions, dealt with in 
+three separate lemmas. For that we define
+\begin{align*}
+	H^{1+s}_\homeom((0,1)) 
+	&\ceq 
+	\braces[\big]{
+		\psi\in H^{1+s}((0,1)) 
+		:  
+		\psi'(x)>0 \Foa x\in[0,1],\; \psi(0)=0,\; \psi(1)=1
+	}
+	,
+	\\
+	H^{1+s}_\periodic((0,1)) 
+	&\ceq 
+	\braces[\big]{
+		\psi\in H^{1+s}_\homeom((0,1)) 
+		:  
+		\psi'(0)=\psi'(1)
+	}.
+	\end{align*}
+	The space $H^{1+s}_\homeom((0,1))$ is the set of orientation-preserving 
+	$H^{1+s}$-diffeomorphisms of  the interval $[0,1]$, and its
+	subspace $H^{1+s}_\periodic((0,1))$ consists of those diffeomorphisms, that 
+	have a $1$-periodic derivative.
+	The first step is to show continuity of the inversion operator: 
+	\begin{lemma}
+		\label[lemma]{inversioniscontinuous}
+		For any $s\in (\frac{1}{2},1]$ the inversion operator $^{-1}:H^{1+s}_\homeom((0,1))\to H^{1+s}_\homeom((0,1))$ 
+		is well-defined and continuous. In addition, we have for any 
+		$\psi\in H^{1+s}_\homeom((0,1))$, $(\psi^{-1})'=\frac{1}{\psi'\circ\psi^{-1}}$.
+	\end{lemma}
+	\begin{proof}
+For $s=1$ this is proven in 
+\cite[Theorem 1.16]{reiter_2009}, so we may assume that $s\in (\frac{1}{2},1)$.
+Since $H^{1+s}\equiv H^{1+s}((0,1))$ 
+embeds continuously into $C^1([0,1])$, any 
+$\psi\in H^{1+s}_e\equiv H^{1+s}_e((0,1))$ is a diffeomorphism
+with a  continuously differentiable inverse $\phi \ceq \psi^{-1}$
+satisfying $\phi(0)=0$, $\phi(1)=1$, and $\phi'=\frac{1}{\psi'\circ\phi}\ge 
+\frac{1}{\left\|\psi' \right\|_{C^0}}>0$. 
+By means of the change of variables $x=\psi(w),$ $y=\psi(v)$ with $
+\d x=\psi'(w)\d w$ and $\d y=\psi'(v)\d v$ we can express the seminorm
+of $\psi'\circ\phi$ as
+\begin{align}
+\lfloor\psi' &\circ\phi\rfloor_{s,2}^2
+\textstyle
+=\iint_{[0,1]^2}\frac{\left|\psi'\circ \phi(x) - \psi'\circ \phi (y) \right|^2}{\left|x-y \right|^{1+2s}}\d x\d y 
+= \iint_{[0,1]^2}\frac{\left|\psi'(w) - \psi'(v) \right|^2}{\left|\psi(w)-\psi(v) \right|^{1+2s}}\psi'(w)\psi'(u)\d w\d v\notag\\
+&
+\textstyle
+\le  \left\|\psi' \right\|^2_{C^0}\iint_{[0,1]^2}\frac{\left|\psi'(w) 
+- \psi'(v) \right|^2}{\left|\psi(w)-\psi(v) \right|^{1+2s}}\d w\d v\le
+c_\psi^{-(1+2s)}\left\|\psi' \right\|^2_{C^0}
+\lfloor\psi'\rfloor_{s,2}^2<\infty,\label{eq:erste-chain}
+\end{align}
+where we used the bilipschitz estimate $|\psi(w)-\psi(v)|\ge c_\psi|w-v|$ 
+for
+all $v,w\in [0,1]$ for the diffeomorphism $\psi\in H^{1+s}_e$.
+Since the map $r:[c,\infty)\to(0,\frac{1}{c}],$ $r(t)=\frac{1}{t}$ 
+is Lipschitz for any $c>0$, the derivative $\phi'=r\circ\psi'\circ
+\phi$ is of class $H^{s}((0,1))$ and therefore $\phi\in H^{1+s}$, so that
+the inversion operator is well-defined. 
+
+Now consider a sequence $(\psi_k)_k\subset H^{1+s}_\homeom$ converging 
+to $\psi_\infty$ in $H^{1+s}_\homeom$ as $k\to\infty$. 
+By virtue of the compact embedding $H^{1+s}\hookrightarrow C^1$ we
+may assume without loss of generality 
+that 
+there is some constant $c>0$ such that $\psi'_k(x)\ge c$ for all $k\in\N$.
+We want to prove that  $\phi_k \ceq \psi^{-1}_{k}$ converge to $\phi_\infty \ceq 
+\psi^{-1}_\infty$ in $H^{1+s}$ as $k\to\infty$.
+With 
+\begin{align*}
+	\left\|\phi_k-\phi_\infty \right\|_{C^0}
+	&=\left\|\phi_\infty\circ\psi_\infty\circ\phi_k-\phi_\infty
+	\circ\psi_k\circ\phi_k \right\|_{C^0}
+	=\left\|\phi_\infty\circ\psi_\infty-\phi_\infty\psi_k \right\|_{C^0},
+\end{align*}
+where we used the fact that $\phi_k$ is a homeomorphism of 
+$[0,1]$ onto itself, we obtain $
+\left\|\phi_k-\phi_\infty \right\|_{C^0}
+\le \left\|\phi_\infty' \right\|_{C^0}
+\left\|\psi_k-\psi_\infty \right\|_{C^0}\to 0$ as $k\to\infty$.
+		Furthermore,  
+		\begin{align*}
+\left\|\phi'_k-\phi_\infty' \right\|_{C^0}&\textstyle
+\le \frac1{c^2}\left\|\psi'_k\circ\phi_k-\psi_\infty'
+\circ \phi_\infty \right\|_{C^0}\\
+			&
+			\textstyle
+\le \frac1{c^2}\left( \left\|\psi'_k\circ\phi_k-\psi_\infty'
+\circ \phi_k \right\|_{C^0}+\left\|\psi_\infty'
+\circ\phi_k-\psi_\infty'\circ \phi_\infty \right\| \right),
+		\end{align*}
+where the first summand on the right-hand side
+equals $\left\|\psi'_k-\psi_\infty' \right\|_{C^0}\to 0$, 
+since $\phi_k$ is a diffeomorphism and $\psi_k\to\psi_\infty$ 
+in $C^1([0,1])$ as $k\to\infty$. 
+The second summand goes to zero, as $\psi_\infty'$ is uniformly 
+continuous on $[0,1]$, 
+and we already showed that $\phi_k\to\phi_\infty$ 
+in $C^0([0,1])$ as $k\to\infty$. 
+It remains to show convergence with respect to the fractional Sobolev norm. 
+\begin{align}\label{eq:seminorm-basic-estimate}
+&\textstyle
+\lfloor\phi'_k-\phi'_\infty\rfloor_{s,2}
+\textstyle
+=  \big\lfloor\frac{\psi'_k\circ\phi_k-\psi_\infty'\circ 
+\phi_\infty}{(\psi'_k\circ\phi_k)\cdot 
+(\psi_\infty'\circ\phi_\infty)}\big\rfloor_{s,2}\\
+			&\le
+			\textstyle
+\lfloor\psi'_k\circ\phi_k\!-\!\psi_\infty'
+\circ \phi_\infty\rfloor_{s,2}
+\big\|\frac{1}{(\psi'_k\circ \phi_k)\cdot (\psi_\infty'\circ\phi_\infty)} 
+			\big\|_{C^0}
++ \|\psi'_k\circ\phi_k\!-\!\psi_\infty'\circ \phi_\infty\|_{C^0}
+\big\lfloor\frac{1}{(\psi'_k\circ\phi_k)
+\cdot (\psi_\infty'\circ\phi_\infty)}\big\rfloor_{s,2},\notag
+		\end{align}
+where we used \cite[Proposition A.5]{knappmann-etal_2023}.
+The second summand on the right-hand side of 
+\cref{eq:seminorm-basic-estimate} converges to zero as $k\to\infty$, 
+since the $C^0$-norm equals $\|\psi_k'-\psi_\infty'\|_{C^0}\to 0$, and
+the seminorm is bounded from above by 
+\begin{align}\label{eq:upper-bound-second-seminorm}
+\textstyle
+\frac1{c^2}\lfloor(\psi_k'\circ\phi_k)
+\cdot (\psi_\infty'\circ\phi_\infty)\rfloor_{s,2}&
+\textstyle
+\le\frac1{c^2}\big(
+\|\psi_k'\|_{C^0}\lfloor\psi_\infty'\circ\phi_\infty\rfloor_{s,2}+
+\lfloor\psi_k'\circ\phi_k\rfloor_{s,2}\|\psi_\infty'\|_{C^0}\big)\\
+&
+\textstyle
+\overset{\cref{eq:erste-chain}}{\le}
+\frac1{c^2}\|\psi_k'\|_{C^0}\|\psi_\infty'\|_{C^0}
+\big(c_{\psi_\infty}^{-(1+2s)/2}
+\lfloor\psi_\infty'\rfloor_{s,2}+
+c_{\psi_k}^{-(1+2s)/2}
+\lfloor\psi_k'\rfloor_{s,2}\big),\notag
+\end{align}
+according
+to \cite[Lemma A.6]{knappmann-etal_2023} and \cref{eq:erste-chain}, where the 
+bilipschitz constants $c_{\psi_k}$ of the $\psi_k$ remain
+uniformly positively bounded from below because of the convergence
+$\psi_k\to\psi_\infty$ in $C^1$ as $k\to\infty$, and by
+the fact that the
+diffeomorphism $\psi_\infty$ has a strictly positive bilipschitz
+constant $c_{\psi_\infty}$. Therefore, the supremum of 
+ \cref{eq:upper-bound-second-seminorm} over $k\in\N$ is finite.
+
+The $C^0$-norm in the first summand of the right-hand side
+of \cref{eq:seminorm-basic-estimate} is bounded from above by 
+$\frac{1}{c^2}$,
+so
+it remains to investigate the seminorm in that first summand:   
+\begin{equation}
+\label{eq:inverse_fracnorm}
+\lfloor\psi_k'\circ\phi_k-\psi_\infty'\circ\phi_\infty\rfloor_{s,2}
+\le\lfloor\psi_k'\circ\phi_k-\psi_\infty'\circ\phi_k\rfloor_{s,2}+
+\lfloor\psi_\infty'\circ\phi_k-\psi_\infty'\circ\phi_\infty\rfloor_{s,2}.
+\end{equation}
+The first term in \cref{eq:inverse_fracnorm}
+goes to zero as $k\to\infty$ since 
+\begin{align*}
+&\textstyle
+\lfloor\psi'_{k}\circ\phi_k-\psi_\infty'\circ\phi_k\rfloor_{s,2}^2
+=\iint_{[0,1]^2}\frac{|\psi'_{k}(\phi_k(x))-\psi_\infty'(\phi_k(x))
+-\psi'_{k}(\phi_k(y))+\psi_\infty'(\phi_k(y))|^2}{\left|x-y \right|^{1+2s}}\d x\d y \\
+&
+\textstyle
+= \iint_{[0,1]^2}\frac{|\psi'_{k}(v)-\psi_\infty'(v)-\psi'_{k}(w)
++\psi_\infty'(w)|^2}{\left|\psi_k(w)-\psi_k(v) \right|^{1+2s}} 
+\psi'_{k}(w) \psi'_{k}(v)\d w\d v
+\le c_{\psi_k}^{-(1+2s)}\|\psi'_k \|^2_{C^0}
+\lfloor \psi_k'\!-\!\psi_\infty'\rfloor_{s,2}^2
+\to 0,
+\end{align*}
+where we used the 
+change of variables $w=\phi_k(x)$ and 
+$v=\phi_k(y)$ and the fact that the bilipschitz constants $c_{\psi_k}$
+are uniformly positively bounded from below.
+
+For the square of the
+second summand in \cref*{eq:inverse_fracnorm} we estimate 
+the integrand of the corresponding double integral as
+\begin{align*}
+&
+\textstyle
+\frac{|\psi_\infty'(\phi_k(x))-\psi_\infty'(\phi_\infty(x))-(\psi_\infty'
+(\phi_k(y))
+-\psi_\infty'(\phi_\infty(y)))|^2}{\left|x-y \right|^{1+2s}}
+\textstyle
+\le \frac{|\psi_\infty'(\phi_k(x))-\psi_\infty'(\phi_k(y))|^2}{\left|x
+-y \right|^{1+2s}}+\frac{|\psi_\infty'(\phi_\infty(x))
+-\psi_\infty'(\phi_\infty(y))|^2}{\left|x-y \right|^{1+2s}}.
+\end{align*}
+The last summand is integrable since it equals the integrand of
+the squared seminorm $\lfloor\psi_\infty'\circ\phi_\infty\rfloor_{s,2}$,
+which can be estimated as 
+ in \cref{eq:erste-chain},
+and for the first term we have for $x\not = y$ (by setting $w=\phi_k(x)$ and $v=\phi_k(y)$)
+\begin{align*}
+\textstyle
+\frac{|\psi_\infty'(\phi_k(x))-\psi_\infty'(\phi_k(y))|^2}{\left|x-y \right|^{1+2s}}
+&
+\textstyle
+=\frac{|\psi_\infty'(w)-\psi_\infty'(v)|^2}{\left|\psi_k(w)-\psi_k(v) \right|^{1+2s}}
+\le
+c_{\psi_k}^{-(1+2s)}\frac{|\psi_\infty'(w)
+-\psi_\infty'(v)|^2}{\left|w-v \right|^{1+2s}}
+\le C\frac{|\psi_\infty'(w)
+-\psi_\infty'(v)|^2}{\left|w-v \right|^{1+2s}},
+\end{align*}
+where we used again that the bilipschitz constants $c_{\psi_k}$ are 
+uniformly positively bounded from below.
+The last term is integrable since it is the integrand of
+the squared seminorm $\lfloor\psi_\infty'\rfloor_{s,2}$.
+So we found an integrable majorant for the integrand almost everywhere 
+(as the set $\{(x,y)\in[0,1]^2 \mid x\not=y\}$ is a set of measure zero). 
+By the dominated convergence theorem we have 
+$\lfloor \psi_\infty'\circ\phi_k-\psi_\infty'\circ\phi_\infty
+\rfloor_{s,2}\to 0$, and therefore by \cref{eq:seminorm-basic-estimate}
+also $\lfloor\phi_k'-\phi_\infty'\rfloor_{s,2}\to 0$ as $k\to\infty$.
+\end{proof}
+Analogously to \cite[Corollary 1.17]{reiter_2009} we have the following corollary:
+\begin{corollary}\label{cor:restriction-inverse-operator}
+The restriction of the inversion operator $^{-1}$ to $H^{1+s}_\periodic((0,1))$ 
+is a continuous map onto $H^{1+s}_\periodic((0,1))$.
+\end{corollary}
+Next we show that the composition operator is well-defined and continuous. 
+\begin{lemma}
+\label[lemma]{composition_continuous}
+Let $s\in (\frac{1}{2},1]$. The composition operator 
+\begin{align}\label{eq:composition-operator}
+H_p^{1+s}((0,1))\times H^{1+s}(\R/\Z,\R^n)\to H^{1+s}(\R/\Z,\R^n),\quad
+(\psi,h)\mapsto h\circ\psi,
+\end{align}
+is well-defined and continuous. 
+\end{lemma}
+\begin{proof}
+For $s=1$ one finds a proof in \cite[Theorem 1.18]{reiter_2009}, so
+as before we focus on $s\in (\frac{1}{2},1)$. The chain rule \cite[Lemma A.4]{knappmann-etal_2023} yields $h\circ\psi\in H^{1+s}(\R/\Z,\R^n)$, so that the composition operator \cref{eq:composition-operator}
+is well-defined.
+
+As to continuity, 
+consider a sequence $(\psi_k,h_k)_k\subset H_p^{1+s}((0,1))
+\times H^{1+s}(\R/\Z,\R^n)$ converging in $H^{1+s}\times H^{1+s}$ to a limiting 
+pair $(\psi_\infty,h_\infty)\in H_p^{1+s}((0,1))\times H^{1+s}(\R/\Z,\R^n)$.
+Then we have 
+\begin{align*}
+\textstyle
+\|h_k\circ\psi_k-h_\infty\circ\psi_\infty\|_{C^0}
+&\textstyle
+\le\|h_k\circ\psi_k-h_\infty\circ\psi_k\|_{C^0}
++\|h_\infty\circ\psi_k-h_\infty\circ\psi_\infty\|_{C^0}\\
+&\le \|h_k-h_\infty\|_{C^0}+\|h_\infty'\|_{C^0}
+\|\psi_k-\psi_\infty\|_{C^0}\to 0,
+\end{align*}
+where we used, that $\psi_k$ is a diffeomorphism for each $k\in\N$. 
+Similarly, for the  derivative,
+\begin{align}
+\|(h_k\circ\psi_k)'- (h_\infty\circ\psi_\infty)'\|_{C^0}&
+\le\|\big(\|h_k'-h_\infty'\|_{C^0}
++\|h_\infty'\circ\psi_k-h_\infty'\circ\psi_\infty\|_{C^0} \big)\|\psi_k'\|_{C^0}
+\notag\\
+&+\|h_\infty'\circ\psi_\infty\|_{C^0}\|\psi_k'-\psi_\infty'\|_{C^0}\to 0\quad\As
+k\to\infty,\label{eq:zwischen}
+\end{align}
+since
+$h_\infty'$ is uniformly continuous on $\R/\Z$ and 
+$\psi_k\to\psi_\infty$ in $C^1$. 
+Lastly, 
+the seminorm $\lfloor(h_k\circ\psi_k)'-(h_\infty\circ\psi_\infty)'\rfloor_{s,2}
+$ is bounded from above by
+\begin{align*}
+&\lfloor(h_k'\circ\psi_k)\psi_k'-(h_\infty'\circ \psi_\infty)\psi_k'
+\rfloor_{s,2}
++\lfloor(h_\infty'\circ\psi_\infty)\psi_k'-(h_\infty'\circ \psi_\infty)
+\psi_\infty\rfloor_{s,2}\\
+&\le
+\big(\|h_k'-h_\infty'\|_{C^0}
+-\|h_\infty'\circ\psi_k-h_\infty'\circ\psi_\infty\|_{C^0}\big)
+\lfloor\psi_k'\rfloor_{s,2}\\
+& + \big(
+\lfloor h_k'\circ\psi_k-h_\infty'\circ\psi_k\rfloor_{s,2}+
+\lfloor h_\infty'\circ\psi_k-h_\infty'\circ\psi_\infty\rfloor_{s,2}\big)
+\|\psi_k'\|_{C^0}\\
+& + \|h_\infty'\circ\psi_\infty\|_{C^0}\lfloor\psi_k'-\psi_\infty'\rfloor_{s,2}
++\lfloor h_\infty'\circ\psi_\infty\rfloor_{s,2}\|\psi_k'-\psi_\infty'\|_{C^0},
+\end{align*}
+by means of the product rule \cite[Proposition A.5]{knappmann-etal_2023}.
+The $k$-dependent $C^0$-norms in the first and third line of the right-hand side
+converge to zero as $k\to\infty$
+as seen in 
+\cref{eq:zwischen}, and the seminorms $\lfloor\psi_k'\rfloor_{s,2}$
+ are uniformly bounded in $k$, as well as
+$\lfloor h_\infty'\circ\psi_\infty\rfloor_{s,2}$ and
+the norm $\|h_\infty'\circ\psi_\infty\|_{C^0}$.
+Since also the norms $\|\psi_k'\|_{C^0}$ are uniformly bounded, it suffices to
+show that the $k$-dependent seminorms in the middle line 
+converge to zero. The first
+seminorm can be treated as the first summand on the right-hand side
+of \cref{eq:inverse_fracnorm} with the only difference that now the change
+of variables reads as $w=\psi_k(x)$ and $v=\psi_k(y)$, so that one
+has to use the bilipschitz constants $c_{\phi_k}=\|\psi_k'\|_{C^0}^{-1}$
+of the inverse functions $\phi_k=\psi_k^{-1}$ satisfying
+$c_{\phi_k}\ge
+\frac{1}{2}\|\psi_\infty'\|_{C^0}>0$ for $k\gg 1$, because $\psi_k\to\psi_\infty$ in $C^1$. 
+The second seminorm in that middle line resembles the second
+summand of \cref{eq:inverse_fracnorm} and can be treated analogously 
+using dominated
+convergence, only now with the substitution $w=\psi_k(x)$ and $v=\psi_k(w)$ which
+again requires the bilipschitz constants $c_{\phi_k}$ which are uniformly
+positively bounded from below as $k\to\infty$. 
+	\end{proof}
+\begin{lemma}
+\label[lemma]{lem:parametrization_continuous}
+The operator 
+\begin{equation}\label{eq:arclength-operator}
+\textstyle
+\varPsi \colon H_\reg^{1+s}(\R/\Z,\R^n)\to H^{1+s}_\periodic((0,1)),\quad
+\gamma\mapsto \big( t\mapsto \frac{1}{\mathcal{L}(\gamma)} \int_{0}^{t}\left|\gamma'(\tau) \right|\d \tau \big),
+\end{equation}
+is well-defined and continuous.
+	\end{lemma}
+	\begin{proof}
+It is clear that $\varPsi \, \g \in H^{1+s}_p((0,1))$ for any 
+$\g\in H^{1+s}_\reg(\R/\Z,\R^n)$ so that $\varPsi$ is well-defined.
+For a sequence of curves $(\gamma_k)_{k\in\N}\subset H_\reg^{1+s}(\R/\Z,\R^n)$ 
+with $\gamma_k\to\gamma_\infty$ in $H_\reg^{1+s}(\R/\Z,\R^n)$ 
+as $k\to\infty$, 
+there exists a constant
+ $c>0$, such that we have
+ $\min\{|\gamma_k'(x)|,|\g_\infty'(x)|\}\ge c$ 
+ for all $x\in\R/\Z$ and $k\in\N$, which implies $\LL(\g_k)\ge c$ for
+ all $k\in\N$.
+ In addition, $\psi_k \ceq \varPsi \, \gamma_k$ is of class  
+ $C^1$ with $\psi_k'=\frac{1}{\mathcal{L}(\gamma_k)}\left|\gamma_k' \right|$
+ for each $k\in\N$. 
+Furthermore,  
+$\mathcal{L}(\gamma_k)\to\mathcal{L}(\gamma_\infty)$ as $k\to\infty$
+by the $C^1$-convergence $\g_k\to\g_\infty$; hence
+\begin{align*}
+&
+\textstyle
+\|\psi_k(\cdot)-\psi_\infty\|_{C^0}
+= \norm[\Big]{ 
+	\frac{\mathcal{L}(\gamma_\infty)\int_{0}^{\cdot}|\gamma_k'|\d\tau
+	-\mathcal{L}(\gamma_k)\int_{0}^{\cdot}|\gamma_\infty'|\d\tau}{\mathcal{L}(
+	\gamma_k)\mathcal{L}(\gamma_\infty)} 
+}_{C^0}\\
+&
+\textstyle
+\le\frac{1}{c}\int_{0}^{1}|\gamma_k'(\tau)-\gamma_\infty'(\tau)|\d\tau 
++ \frac{1}{c^2}| \mathcal{L}(\gamma_k)-\mathcal{L}(\gamma_\infty)|
+\int_{0}^{1}|\gamma_\infty'(\tau)|\d\tau\to 0\quad\As k\to\infty.
+\end{align*}
+For the $C^0$-norm of the derivative we get
+\begin{align*}
+\textstyle
+\|\psi_k'-\psi_\infty'\|_{C^0}&
+\textstyle
+=\big\|\frac{1}{\mathcal{L}(\gamma_k)}
+|\gamma_k'| -\frac{1}{\mathcal{L}(\gamma_\infty)}|\gamma_\infty'|\big\|_{C^0}
+\textstyle
+\le\frac{1}{c}\|\gamma_k'-\gamma_\infty'\|_{C^0}
++\frac{1}{c^2}|\mathcal{L}(\gamma_k)-\mathcal{L}(\gamma_\infty)|
+\|\gamma_\infty'\|_{C^0},
+\end{align*}
+which converges to zero as $k\to\infty$. Analogously,
+\begin{align*}
+\textstyle
+\lfloor\psi_k'-\psi_\infty'\rfloor_{s,2}\le\frac{1}{c} 
+\lfloor\gamma_k'-\gamma_\infty'\rfloor_{s,2}+\frac{1}{c^2}
+|\mathcal{L}(\gamma_k)-\mathcal{L}(\gamma_\infty)|\lfloor\gamma_\infty'
+\rfloor_{s,2}\to 0\quad\As k\to\infty. 
+\end{align*}
+	\end{proof}
+\begin{refproof}[Proof of \Cref{thm:arclength}]
+By 
+\Cref{inversioniscontinuous,composition_continuous,lem:parametrization_continuous} 
+the operator is continuous as the composition of continuous operators. 
+Furthermore, for $\gamma\in H^{1+s}_\reg(\R/\Z,\R^n)$, 
+\begin{align*}
+\textstyle
+|\ARC(\gamma)'(x)|&
+\textstyle
+=\big|\frac{1}{\mathcal{L}(\gamma)}
+\left( \gamma\circ(\varPsi \, \gamma)^{-1}\right)'(x) \big|
+=\frac{1}{\mathcal{L}(\gamma)}\left|\gamma'\left( \left( \varPsi \, \gamma \right)^{-1} (x)\right)(\left( \varPsi \, \gamma \right)^{-1})'(x) \right|\\
+&
+\textstyle
+=\frac{1}{\mathcal{L}(\gamma)}\big|\frac{\gamma'\left( (\varPsi \, \gamma)^{-1}(x) \right)}{(\varPsi \, \gamma)'((\varPsi \, \gamma)^{-1}(x))} \big|=1.
+\end{align*}
+\end{refproof}
+
+\begin{lemma}[Triple integrals]
+\label{lem:triple-integrals}
+Let $s\in (0,1)$, $\rho\in [1,\infty)$, and $\g\in W^{1+s,\rho}(\R/\Z,\R^n)$.
+Then
+\begin{equation}\label{eq:triple-integrals}
+\int_{\R/\Z}\int_{-\frac{1}{2}}^\frac{1}{2}\int_0^1\frac{|\g'(u+\theta w)-\g'(u)|^\rho}{
+|w|^{1+s\rho}}\d\theta\d w\d u\le \lfloor\g'\rfloor_{s,\rho}^\rho.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Using Fubini and the change of variable $\tilde{w} \ceq \theta w$ with $\d \tilde{w}=
+\theta\d w$ and $\tilde{w}(\pm\frac{1}{2})=\pm\frac{\theta}2$ one can bound 
+the
+triple integral in \cref{eq:triple-integrals} by means of $\theta\in [0,1]$
+from above by
+\begin{equation}\label{eq:triple-integral-upper-bound}\textstyle
+\int_0^1\!\!\int_{\R/\Z}\int_{-\frac{1}{2}}^\frac{1}{2}\frac{|\g'(u+\tilde{w})-\g'(u)|^\rho}{|\tilde{w}|^{1+s\rho}}\d \tilde{w}\d u\d\theta\le 
+\lfloor\g'\rfloor_{s,\rho}^\rho.
+\end{equation}
+\end{proof}
+
+
+
+
+

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.05082v3/blocks/proposition-sec-010-04",
+  "kind": "proposition",
+  "title": "Equation (5.49",
+  "pageStart": 8,
+  "pageEnd": 16,
+  "text": "proposition-sec-010-04.md",
+  "derivedFrom": "library/arxiv-1610.05082v3/sections/sec-010",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.05082v3/manifest.jsonld",
+  "provenance": "ingested"
+}

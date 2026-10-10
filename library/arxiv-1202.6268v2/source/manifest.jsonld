@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1202.6268v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1202.6268v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1202.6268v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1202.6268&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1202.6268v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1202.6268v2",
+    "content_type": "application/gzip",
+    "sha256": "1b55aeb941d883a64c6bc905aad9082ee0264912a311e29ec16591d1c1f9b519",
+    "bytes": 796815,
+    "fetched": "2026-10-10T15:06:11+00:00",
+    "files": [
+      {
+        "path": "source/files/torsion.bbl",
+        "role": "bbl",
+        "sha256": "41b4c7d2942e0f59654c601713bd5caa5f7ba00af3a9dcba4faeece813e36595",
+        "bytes": 13609
+      },
+      {
+        "path": "source/files/torsion.tex",
+        "role": "tex",
+        "sha256": "f052f0fc6bdc25cc46d47ba71173e27b8fd86cbe5a075ee4a291cf544377c9ac",
+        "bytes": 150202
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

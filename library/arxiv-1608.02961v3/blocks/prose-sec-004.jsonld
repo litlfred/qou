@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1608.02961v3/blocks/prose-sec-004",
+  "kind": "prose",
+  "title": "Symmetries, regularizations, and the 3d-3d correspondence",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "text": "../sections/sec-004-31-symmetries-regularizations-and-the-3d-3d-corr.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1608.02961v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1608.02961v3/manifest.jsonld",
+  "provenance": "ingested"
+}

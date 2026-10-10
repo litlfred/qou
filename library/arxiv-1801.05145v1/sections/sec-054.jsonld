@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1801.05145v1/sections/sec-054",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Determinantial modules and T-system. We will use the materials in § 9 to",
+  "pageStart": 80,
+  "pageEnd": 84,
+  "contains": [
+    "library/arxiv-1801.05145v1/blocks/prose-sec-054",
+    "library/arxiv-1801.05145v1/blocks/lemma-sec-054-01",
+    "library/arxiv-1801.05145v1/blocks/proposition-sec-054-02",
+    "library/arxiv-1801.05145v1/blocks/proposition-sec-054-03",
+    "library/arxiv-1801.05145v1/blocks/proposition-sec-054-04",
+    "library/arxiv-1801.05145v1/blocks/theorem-sec-054-05",
+    "library/arxiv-1801.05145v1/blocks/proposition-sec-054-06"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1801.05145v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1801.05145v1/manifest.jsonld",
+  "provenance": "ingested"
+}

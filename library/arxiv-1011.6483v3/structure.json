@@ -6,7 +6,8 @@
   "sha256": "7a425e51860c37a43daf1d19b07152ab2602948c242ce3343aa9da49c118dc8c",
   "bytes": 774894,
   "pages": 60,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -300,6 +301,85 @@
   "likely_scanned": false,
   "toc_entries": 20,
   "sections": 12,
-  "chars_total": 166993
+  "chars_total": 166993,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 5,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-preliminary-definitions-and-notation",
+     "title": "Preliminary definitions and notation",
+     "prose_ratio": 0.08,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-simplicial-sets",
+     "title": "Simplicial sets",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-3-derived-higher-hochschild-functor",
+     "title": "Derived higher Hochschild functor",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-31-naive-axiomatic-approach-to-higher-hochschild",
+     "title": "Naive axiomatic approach to higher Hochschild homology",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-33-pointed-simplicial-sets-and-modules",
+     "title": "Pointed simplicial sets and modules",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-43-locally-constant-factorization-algebras-and-e",
+     "title": "Locally constant factorization algebras and En-algebras",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-5-relationship-with-topological-chiral-homology",
+     "title": "Relationship with topological chiral homology",
+     "prose_ratio": 0.352,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-52-locality-axiom-and-the-equivalence-of-topolog",
+     "title": "Locality axiom and the equivalence of topological chiral homology with higher Hochschild functor for CDGAs",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-53-relation-with-the-blob-complex",
+     "title": "Relation with the Blob complex",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-55-some-applications",
+     "title": "Some applications",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

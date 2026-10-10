@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1512.04993v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1512.04993v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1512.04993v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1512.04993&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1512.04993v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1512.04993v2",
+    "content_type": "application/gzip",
+    "sha256": "c71addcb253bc351a902bf5e498302ab02e3cbf428ef742b5c2ab817cde8789c",
+    "bytes": 7807245,
+    "fetched": "2026-10-10T15:10:43+00:00",
+    "files": [
+      {
+        "path": "source/files/ComplexityLong.bbl",
+        "role": "bbl",
+        "sha256": "b00e9f5b6af16cf5703776936accb783a4fbe748eebb66197b011842934bb80e",
+        "bytes": 15635
+      },
+      {
+        "path": "source/files/ComplexityLong.tex",
+        "role": "tex",
+        "sha256": "213f3f8ff79a1d704374e1c22eb23a02b7f70d56c5647922f186acb61bc4ff43",
+        "bytes": 155697
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

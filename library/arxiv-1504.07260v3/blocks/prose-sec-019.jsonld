@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1504.07260v3/blocks/prose-sec-019",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1504.07260v3/blocks/prose-sec-019",
   "kind": "prose",
   "title": "Helicity supertrace for type IIA CHL models",
   "pageStart": 32,
   "pageEnd": 33,
   "text": "../sections/sec-019-52-helicity-supertrace-for-type-iia-chl-models.md",
-  "derivedFrom": "library/arxiv-1504.07260v3/manifest",
-  "sourceDocument": "library/arxiv-1504.07260v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1504.07260v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1504.07260v3/manifest.jsonld",
   "provenance": "ingested"
 }

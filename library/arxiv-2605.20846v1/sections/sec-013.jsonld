@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2605.20846v1/sections/sec-013",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "P and L Monoids",
+  "pageStart": 70,
+  "pageEnd": 74,
+  "contains": [
+    "library/arxiv-2605.20846v1/blocks/prose-sec-013",
+    "library/arxiv-2605.20846v1/blocks/definition-sec-013-01",
+    "library/arxiv-2605.20846v1/blocks/lemma-sec-013-02",
+    "library/arxiv-2605.20846v1/blocks/remark-sec-013-03",
+    "library/arxiv-2605.20846v1/blocks/proposition-sec-013-04",
+    "library/arxiv-2605.20846v1/blocks/remark-sec-013-05",
+    "library/arxiv-2605.20846v1/blocks/definition-sec-013-06",
+    "library/arxiv-2605.20846v1/blocks/definition-sec-013-07",
+    "library/arxiv-2605.20846v1/blocks/theorem-sec-013-08",
+    "library/arxiv-2605.20846v1/blocks/theorem-sec-013-09",
+    "library/arxiv-2605.20846v1/blocks/remark-sec-013-10",
+    "library/arxiv-2605.20846v1/blocks/example-sec-013-11",
+    "library/arxiv-2605.20846v1/blocks/example-sec-013-12",
+    "library/arxiv-2605.20846v1/blocks/example-sec-013-13"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2605.20846v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2605.20846v1/manifest.jsonld",
+  "provenance": "ingested"
+}

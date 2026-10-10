@@ -7,7 +7,8 @@
   "bytes": 222709,
   "pages": 7,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -210,6 +211,80 @@
   "likely_scanned": false,
   "toc_entries": 10,
   "sections": 10,
-  "chars_total": 24370
+  "chars_total": 24370,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "paper.tex",
+   "tex_sections": 5,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-2-observables",
+     "title": "Observables",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.853,
+     "coverage_ratio": 0.649,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-3-trans-series-expansion",
+     "title": "Trans-series expansion",
+     "prose_ratio": 0.54,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-31-resurgence-relations-between-d-and-d1",
+     "title": "Resurgence relations between D{} and D{1}",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-32-generic-relations",
+     "title": "Generic relations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-33-example",
+     "title": "Example",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-4-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-5-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

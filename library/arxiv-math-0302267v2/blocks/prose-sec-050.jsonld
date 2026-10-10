@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0302267v2/blocks/prose-sec-050",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0302267v2/blocks/prose-sec-050",
   "kind": "prose",
   "title": "Soit X une vari´ et´ e alg´ ebrique lisse sur un corps de nombresk, et x, y ∈ X(k). On",
   "pageStart": 48,
   "pageEnd": 48,
   "text": "../sections/sec-050-412-soit-x-une-vari-et-e-alg-ebrique-lisse-sur-u.md",
-  "derivedFrom": "library/arxiv-math-0302267v2/manifest",
-  "sourceDocument": "library/arxiv-math-0302267v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0302267v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0302267v2/manifest.jsonld",
   "provenance": "ingested"
 }

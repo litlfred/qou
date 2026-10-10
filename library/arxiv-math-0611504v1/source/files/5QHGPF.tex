@@ -1,0 +1,913 @@
+\section{Partition functions}\label{CLOSED}
+
+Assume that $W$ is a {\it closed} oriented $3$-manifold, and that $L$
+is a link in $W$ with a framed part $L_\Ff$ and an unframed one
+$L^0$. Each variant of quantum hyperbolic field theory (see Section
+\ref{variant}) leads to the respective {\it partition functions}. 
+
+If $\rho$ is trivial at each meridian of $L^0$, we have the
+QHFT {\it partition functions} 
+$$ \Hh_N(W,L_\Ff,L^0,\rho,h,k)$$
+that specialize to the QHFT$^0$ ones when $L=L^0$:
+$$H_N(W,L,\rho,h,k)= \Hh_N(W,\emptyset,L^0,h,k) \ .$$
+If $\rho$ is also assumed to be non trivial at each meridian of
+$L_\Ff$, we have also
+$$\Hh_N^e(W,L_\Ff,L^0,\rho,h,k) \ .$$ These partition functions are
+scalars, well-defined up to sign and multiplication by $N$th-roots of
+unity. Typical examples of triples $(W,L_\Ff,\rho)$ are given by
+hyperbolic {\it cone} manifolds $W$ with framed cone locus $L_\Ff$ and
+hyperbolic holonomy $\rho$ on $W \setminus L_\Ff$. The partition
+functions can be expressed in terms of manifolds $Y$ with toric
+boundary and containing an unframed link $L^0$ in the interior. By
+fixing an ordered basis $(m_i,l_i)$ for the integral homology of each
+boundary torus, let $W$ be obtained from $Y$ by Dehn filling along the
+$m_i$, and $L_\Ff$ be the disjoint union of the cores of the filling
+solid tori, framed by the $l_i$. Then the partition functions of
+$(W,L_\Ff,L^0,\rho,h,k)$ are in fact invariants of
+$(Y,\{(m_i,l_i)\}_i,L^0,\rho,h,k)$.
+
+\subsection{QHFT vs QHFT$^0$ partition functions}\label{ALL}
+For $\Bb=(W,L,\rho)$, $L=L^0$, with weights $h=k=0$,
+$H_N(W,L,\rho,0,0)$ coincide with the invariants $H_N(W,L,\rho)$
+constructed in \cite{BB1, BB2}.  Let us consider more generally
+$(W,L_\Ff,L^0,\rho,0,0)$.  Fix also a framing $\Ff_0$ for
+$L^0$. Then we can consider the partition function
+$\Hh_N(W,L_\Ff\cup L^0_{\Ff_0},\emptyset,\rho,0,0)$.  Let us denote by
+$\bar \lambda$ the unframed link obtained by splitting each component
+of $L^0$ in the two corresponding parallel boundary components of the
+ribbon link $L^0_{\Ff_0}$. We have:
+\begin{prop}\label{QHFTQHI} 
+$$ \Hh_N(W,L_\Ff\cup L^0_{\Ff_0},\emptyset,\rho,0,0) =_N
+\Hh_N(W,L_\Ff, \bar \lambda,\rho,0,0) \ . $$ 
+\end{prop}
+
+\noindent {\it Proof.} For simplicity, assume that $L=L^0$.  Fix a
+$\Dd$-triangulation of $(\tilde{W},\tilde{L}_\Ff,\rho)$ where each
+tunnel component $B$ has a symmetric admissible triangulation as in
+Figure \ref{carre} (opposite sides of the quadrilateral are
+identified). The tangle $\bar{\lambda}$ cuts open $B$ into symmetric
+annuli, left and right to the central vertical line in Figure
+\ref{carre}.
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=3cm]{carre.eps}
+\caption{\label{carre} A special admissible triangulation of $B$.}
+\end{center}
+\end{figure}
+
+Because $\rho$ has trivial holonomy at the meridians of $L_\Ff$,
+we can assume that the cocycle takes the same values on symmetric
+edges. Identifying the annuli we thus get a $\Dd$-triangulation
+for the QHFT$^0$ triple $(W,\bar{\lambda},\rho)$. Since
+$H_N(W,\bar{\lambda},\rho)$ is computed from the idealization and
+symmetric tetrahedra in the cusps have opposite branching
+orientation, the result will follow if we show the existence of
+symmetric flat/charges. Then each cusp tensor will be the identity
+map.
+
+The existence of flattenings with this property can be shown using
+Remark \ref{canonicalflat}, but for charges we need to take
+another route. Recall from the end of section \ref{QHG} that
+flat/charges form affine spaces over an integral lattice generated
+by vectors attached to the edges. For an edge of $B$, such vectors
+can be represented as adding $+1$ at one of the left adjacent
+corner and $-1$ at the other, and the inverse for the right
+adjacent corners. Using these rules and (\ref{2-3comp}) it is
+straightforward (though tedious) to check that any given
+flat/charge can be turned into one with equal quantum log-branches
+on symmetric tetrahedra.\hfill$\Box$
+
+\subsection{Invariants of cusped manifolds and surgery formulas}\label{DEHNF}
+
+Let us recall the QHG pseudo-manifold triangulations $\Tt$
+used in \cite{BB2} (see Definition 6.2 and Definition 6.3 in that
+paper) to define the quantum hyperbolic invariant trace tensors
+$\Hh_N(\Tt)$ for oriented cusped hyperbolic manifolds.\smallskip
+
+Let $M$ be a cusped manifold. Denote $Z$ the pseudo-manifold obtained
+by taking the one point compactification of each cusp of $M$. $M$
+admits a triangulation by positively embedded hyperbolic ideal
+tetrahedra, possibly including some degenerate ones of null volume
+(ie. having real cross-ratios). Such a triangulation can be obtained
+by subdividing the canonical Epstein-Penner cell decomposition of
+$M$. This gives rise to triangulation $(T_0,z_0)$ of $Z$, where $z_0$ is
+the cross-ratio function of the abstract edges of $T$, the imaginary
+part of every cross-ratio being $\geq 0$. We call it a {\it
+  quasi-geometric} ideal triangulation of $Z$. If some quasi-geometric
+triangulation admits a global branching, we say that $M$ is {\it
+  gentle}. More generally, $M$ is said {\it weakly-gentle} if there is
+an $\Ii$-triangulation $(T,b,w)$ of $Z$ such that $(T,z)$,
+$z=w^{*_b}$, is obtained via a (possibly empty) finite sequence
+$(T_0,z_0) \rightarrow \ldots \rightarrow (T_i,z_i) \rightarrow \ldots
+\rightarrow (T,z)$ of positive $2 \rightarrow 3$ transits, where
+$(T_0,z_0)$ is a quasi-geometric triangulation of $Z$ as above. Each
+transit $(T_i,z_i) \rightarrow (T_{i+1},z_{i+1})$ is defined by
+$W_{T_i}(e)=W_{T_{i+1}}(e)$, with all exponents $*_b=1$ (see
+(\ref{totw})). Every such a $(T,b,w)$ can be enhanced to flat/charged
+$\Ii$-triangulations $\Tt=(T,b,w,f,c)$.
+\smallskip
+
+Given $(T_0,z_0)$, it is certainly possible to get an
+$\Ii$-triangulation $(T,b,w)$ by performing {\it also} some bubble
+moves (hence introducing new interior vertices). The authors do not
+know any example of non weakly-gentle cusped manifold, that is, such
+that we are forced to do it. Anyway, dealing with bubble moves is a technical
+difficulty which will appear also in the proof of Theorem
+\ref{defscissors} (1) below. We overcome it as follows. We fix an edge
+$a$ of the canonical Epstein-Penner cell decomposition of $M$, and
+take $A$ made by two copies of $a$ that intersect at non manifold
+points of $Z$; the second copy runs parallel to $a$ within an open
+cell of the decomposition.  Hence, $A$ is a circle covered by two
+arcs.  We need to enlarge the notions introduced in Definition
+\ref{DISFLATCHARGE}. We say that {\it $(T,H)$ is a distinguished
+  triangulation of $(Z,a)$} if $H$ is a subcomplex of the $1$-skeleton
+of $T$ isotopic to $A$, that contains all the regular vertices of $T$,
+and such that one arc of $A$ is covered by an edge $l$ of $H$. We say
+that {\it $c$ is a global charge on $(T,H)$} if
+\begin{equation}\label{condc2}C_{\Tt}(e)=\left
+\lbrace\begin{array}{l} 4\\0\\ 2\end{array}\right.\begin{array}{l}
+{\rm if}\ e=l\\{\rm if}\ e \subset H\setminus l\\ {\rm if}\ e \subset
+T \setminus H \end{array}
+\end{equation}
+If $H=\emptyset$ this reduces to the usual notion of global charge on
+a closed triangulated pseudo manifold whose non manifold points have
+toric links. By using bubble moves and the existence of such usual
+global charges, it is easily seen that $(T,H)$ supports global charges
+as in (\ref{condc2}) (see the proof of Theorem 6.8 in \cite{BB2} for
+the details).
+
+We say that $\Tt=(T,H,b,w,f,c)$ is a flat/charged $\Ii$-triangulation
+of $(Z,a)$ if $(T,H,b,c)$ is a branched, charged and distinguished
+triangulation of $(Z,a)$, and $(T,z)$, $z=w^{*_b}$, is obtained from a
+quasi geometric $(T_0,z_0)$ via a finite sequence $(T_0,z_0)
+\rightarrow \ldots \rightarrow (T,z)$ of transits supported by
+positive $2 \rightarrow 3$ moves {\it and bubble moves}. By setting $a
+= \emptyset$ and $H=\emptyset$, this definition incorporates that for
+the weakly-gentle case.
+\smallskip
+
+In \cite{BB2} it is shown that flat/charged $\Ii$-triangulations $\Tt$
+of $(Z,a)$ (with arbitrary weights) do exist and that, for every odd
+$N\geq 1$,
+$$ H_N(M,a)=\Hh_N(\Tt)$$ is a well defined invariant of $(M,a)$,
+providing the weights of flat/charges to be $0$. To simplify the
+exposition, below we continue with this normalization.  When $M$ is
+weakly-gentle we get invariants $H_N(M)$. In fact, as a by product of
+the following discussion, we will realize that $H_N(M,a)$ does not
+depend on the choice of $a$, so that $H_N(M)$ is always well defined
+(see Corollary \ref{DF-converge}).
+
+\medskip
+
+Let us recall now a few facts related to {\it hyperbolic Dehn filling}
+(see \cite{Th}, \cite{BP}, \cite{Pe-Po}). A quasi geometric
+triangulation $(T_0,z_0)$ as above corresponds to the complete
+structure of $M$. It can be deformed in a complex variety of dimension
+equal to the number of cusps. If $z'$ is close enough to $z_0$,
+$(T_0,z')$ is a triangulation by (possibly negative - see
+\cite{Pe-Po}) embedded hyperbolic ideal tetrahedra in a non-complete
+hyperbolic structure, say $M'$, close to $M$.  In some case the
+completion of $M'$ gives rise to a compact closed hyperbolic manifold
+$W$, topologically obtained by Dehn filling of the (truncated) cusps
+of $M$. The core of each attached solid torus is a ``short'' simple
+closed geodesic $L_j$ of $W$, so that we have the (geodesic) link
+$\textstyle L=\coprod_j L_j$. Moreover, there are sequences
+$(W^n,L^n)$ obtained in this way such that the length of $L^n$ goes to
+$0$ when $n\to +\infty$. Hence $(W^n,L^n)$ converges to the cusped
+manifold $M$ (in a neat geometric sense). From now on we will consider
+small deformations $z'$ leading to such closed completions.
+\smallskip
+
+As well as $(T_0,z_0)$ gives rise to a triangulation $\Tt=(T,H,b,w,f,c)$
+of $(Z,a)$, $z'$ close to $z_0$ gives rise to another
+flat/charged $\Ii$-triangulation $\Tt'=(T,H,b,w',f',c)$, where $w'$ is
+close to $w$ and the log-branch associated to the global flattening
+$f'$ corresponds to a continuous deformation of the one for $f$.
+
+\begin{lem}\label{deformedlogb}{\rm (See \cite{N}, p. 469) Let $z'$ be
+a small deformation of $z_0$ producing $(W,L)$, and $m_j$ be a
+meridian of each link component $L_j$. Then there exist flattenings
+$f''$ for the deformed triangulation $(T,b,w')$ such that the weight
+$\gamma(f'')$ associated to the collection of log-branches of
+$\Tt''=(T,H,b,w',f'',c)$ satisfies $\gamma(f'')(m_j)=0$ for all $j$.}
+\end{lem}
+\noindent {\it Proof.} The logarithm of the derivative of the
+holonomy of $m_j$ is $0$ at the complete structure, but after
+deformation it represents a full
+$2\pi$-rotation about $L_j$ (see eg. \cite{Th} or \cite{BP}).
+Hence $\gamma(f')(m_j) \in \mz\sqrt{-1}\pi$. The result then follows from
+the comments after Theorem \ref{theoweight}.\hfill$\Box$
+\smallskip
+
+An explicit construction of flattenings $f''$ as in the lemma shall be
+recalled during the proof of theorem \ref{defscissors}. Hence, we
+dispose of two flat/charged $\Ii$-triangulations of $(Z,a)$, $\Tt'=
+(T,H,b,w',f',c)$ and $\Tt''=(T,H,b,w',f'',c)$, relative to a small
+deformation $z'$ of the complete structure $z_0$ as above, leading to
+respective trace tensors $\Hh_N(\Tt')$ and $\Hh_N(\Tt'')$. We can now
+state the main results of this Section. 
+
+\begin{teo}\label{defscissors}
+{\rm[Cusped manifold surgery formula]} Let $(W,L)$ be obtained by
+completion of a small deformation $z'$ of $z_0$, and $\Tt'$, $\Tt''$
+be associated triangulations. Denote by $\rho$ the hyperbolic holonomy
+of $W$. Then we have $H_N(W,L,\rho) =_N
+\Hh_N(\Tt'')$. Moreover, associated to each cusp $C_j$ of $M$ there is
+an explicitely known map $\Lambda_N^j(\Tt''): \{ N-{\rm states\ of\ T}
+\}\rightarrow \mc$ such that the following {\rm surgery formula}
+holds:
+$$H_N(W,L,\rho) =_N \sum_s \prod_{\Delta \subset T}
+    \Rr_N(\Delta,b,w',f',c)_s\ \prod_j\Lambda_N^j(\Tt'')(s)$$ where
+    $s$ runs over the $N$-states of $T$ and
+    $\Rr_N(\Delta,b,w',f',c)_s$ is the matrix dilogarithm entry
+    determined by $s$, for the tetrahedron with the continuously
+    deformed structure.
+\end{teo}
+\begin{cor}\label{DF-converge} 
+If $\{(W_n,L_n,\rho_n)\}$ is a sequence of closed hyperbolic Dehn
+fillings converging to the cusp manifold $M$, then for every arc $a$ we
+have $\textstyle \lim_n H_N (W_n,L_n,\rho_n)=_N H_N(M,a)$. Hence
+$H_N(M)=H_N(M,a)$ is always a well defined invariant of $M$ (beyond
+the weakly-gentle case).
+\end{cor}
+
+\begin{remarks}\label{CS-surg}
+{\rm (1) Theorem \ref{defscissors} is the analog for $N>1$ of Theorems
+  14.7 and Theorem 14.5 in \cite{N}, which describe surgery formulas
+  for the volume, Vol($W$), and Chern-simons invariant, CS($W$), of
+  $W$:
+$$\sqrt{-1}({\rm Vol}(W) + \sqrt{-1} {\rm CS}(W)) = \sum_{\Delta
+  \subset T} \mathcal{R}(\Delta,b,w',f')-\frac{\pi\sqrt{-1}}{2}
+\sum_j \lambda(L_j)$$ where $\Rr$ is given by (\ref{symRmatdil})
+and $\lambda(L_j)$ is the complex length of $L_j$, that is, the logarithm of
+the dilation factor of its holonomy, which is a loxodromic
+transformation of $\mh^3$. The technical complications due to the bubble
+moves disappear for $N=1$.
+\smallskip
+
+(2) If $M$ is gentle and has a geometric branched ideal
+triangulation $(T,b,w)$ without degenerate tetrahedra, then for each
+$3$-simplex the flattenings of $\Tt'$ for a sufficiently small
+deformation are just $-*_b$ times integral charges. It follows from
+the proof of Theorem \ref{defscissors} that the scissors congruence
+class $\mathfrak{c}_{\Ii_{fc}}(W,L,\rho)$ of \cite{BB2}, section 7,
+coincides with Neumann's deformed scissors congruence class
+$\hat{\beta}(M')$ in \cite{N}, Theorem 14.7 (see also Remark 6.12 and
+Conjecture 7.9 in \cite{BB2}, where the undeformed $\hat{\beta}(M)$ is
+denoted $\mathfrak{c}_{\Ii_{fc}}(M)$).
+\smallskip
+
+(3) In general there are small deformations $z$ of $z_0$ leading to
+complete manifolds that are still cusped, that is only some cusps of
+$M$ have supported a hyperbolic Dehn filling. There are also sequences
+of such cusped manifolds $M^n$, with (short) geodesic links $L^n$,
+converging to $M$. Similarly to the fusion of QHFT with QHFT$^0$
+(see Section \ref{variant}) we can define quantum hyperbolic
+invariants $H_N(M^n,L^n)$ for which the natural extensions of Theorem
+\ref{defscissors} and Corollary \ref{DF-converge} hold.}
+\end{remarks}
+Let us consider now $(W,L_\Ff,L^0,\rho)$. Let $L_j$ be a component
+of $L_\Ff$, $\bar \lambda_j = L_j \cup L_j'$, $L'_j$ being
+the longitude of $L_j$ specifying the framing. Let $U=U(L_j)$
+be a tubular neighbourhooh of $L_j$ in $W$, and $l\subset \partial U$
+be a non separating simple closed curve. Let $W(l)$ be obtained from
+$W$ by the Dehn filling of $W\setminus {\rm Int}(U)$ along $l$. Denote by $l^*$
+the core of the attached solid torus.
+\begin{teo} \label{surcomp} {\rm
+[Closed manifold surgery formula]} Assume that $\rho(l)={\rm id} \in
+  PSL(2,\mc)$ and the weight $k$ satisfies $k([l])=0$. Denote: $\rho'$
+  the natural extension of $\rho_{|W \setminus U}$ to $W(l)$;
+  $\widetilde L_\Ff = L_\Ff \setminus L_j$; $k'$ the restriction of
+  $k$ to $W(l)$. We have
+\begin{equation}\label{eqsurg1}
+\Hh_N(W,L_\Ff,L^0,\rho,0,k) =_N \ \Hh_N(W(l),\widetilde L_\Ff, L^0\cup l^* \cup
+\bar{\lambda}_j,\rho',0,k') \ .
+\end{equation}
+If moreover $\rho$ is not trivial at the meridians of $L_\Ff$ and $l$
+is a longitude of $\partial U$, then
+
+\begin{equation}\label{eqsurg2}
+\Hh_N^e(W,L_\Ff,L^0,\rho,0,k) =_N \Hh_N^e(W(l),\widetilde L_\Ff, L^0\cup l^*
+\cup L'_j,\rho',0,k') \ .
+\end{equation}
+\end{teo}
+Let us assume now that $L^0$ is made by $r$ parallel copies of $L_j$
+along the ribbon $L_\Ff$ that encodes the framing. So denote $L^0$ by
+$\lambda_r$; with this notation, $\bar \lambda = \lambda_2$. Assume furthemore
+that $l=m$ is a meridian of $L_j$, so that $l^*=L_j$. By appling inductively
+both (\ref{eqsurg1}) and Proposition \ref{QHFTQHI} to this situation we get
+\begin{cor} For every $r\geq 2$ we have
+$$H_N(W,\lambda_r,\rho)=_N H_N(W,\lambda_2,\rho) \ . $$
+\end{cor}
+
+
+\begin{remarks}\label{remsurg}{\rm  
+\smallskip
+
+(1) Though disjoint and complementary by hypothesis, formula
+    (\ref{eqsurg2}) is formally the same as that of Proposition
+    \ref{QHFTQHI}, when replacing $l$ by $m$.
+\smallskip
+
+(2) Assume (for simplicity) that $L=L_\Ff$. When $l$ is a longitude of
+$L_j$, $l^*$ inherits a natural framing in $W(l)$. Hence we get a
+triple $(W(l),\hat L_{\hat \Ff},\rho)$. It follows from the very
+definition of the QHFT tensors that $\Hh_N(W,L_\Ff,\rho,0,0)=
+\Hh_N(W(l),\hat L_{\hat \Ff},\rho,0,0)$ and the same with $\Hh_N^e$
+(when defined) replacing $\Hh_N$.
+
+\smallskip
+
+(3) We have seen that both $\Hh_N$ and $\Hh_N^e$ partitions functions
+display interesting features of QHG. A main advantage of the $\Hh_N$
+ones is the possibility to set in a {\it same ``holomorphic family''}
+the QHG tensors associated to characters that are both trivial and non
+trivial at link meridians.  Consider for example a hyperbolic knot $L$
+in $S^3$, endowed with the canonical framing $\Ff$. Kashaev's volume
+conjecture concerns the asymptotic behaviour of $H_N(S^3,L,\rho_{{\rm
+    triv}})$ when $N\to +\infty$.  A reasonable variant of it is in
+terms of the partition functions $\Hh_N(S^3,L_\Ff,\rho_{{\rm triv}}
+,0,0)=_N H_N(S^3,\bar \lambda,\rho_{{\rm triv}}) $.  A family as above
+could be useful in order to establish connections with the $\Hh_N$
+partition functions of $(S^3,L_\Ff,\rho_{{\rm hyp}})$, where
+$\rho_{\rm hyp}$ is the hyperbolic holonomy of the cusped manifold $M=
+S^3\setminus L$.}
+\end{remarks}
+
+The rest of the section is devoted to the proof of these results.
+This goes in several steps.
+
+\smallskip
+
+A main tool is the {\it simplicial blowing up/down} procedure
+considered by Neumann in \cite{N}, section 11. We use it just
+to get a simplicial version of (topological) Dehn filling.  Let $Z$ be
+a pseudo manifold without boundary such that every non-manifold point
+has toric link. Let $v$ be a non-manifold point. Consider a closed
+cone neighborhood $N(v)$ of $v$, and a non separating simple closed
+curve $C$ on the torus  $\partial N(v)$. The topological Dehn
+filling of $Z$ at $v$ along $C$ is the pseudo manifold $Z'$ obtained by
+gluing a $2$-handle to $Z\setminus {\rm Int}(N(v))$ along $C$, and then
+collapsing to one point the resulting boundary component. 
+\smallskip
+
+Now, let $T$ be a pseudo manifold triangulation of $Z$. Consider the
+{\it abstract star} Star$^0$($v$) of $v$ in $T$. The boundary of
+Star$^0$($v$) is the {\it abstract} link Link($v$) which is
+homeomorphic to $\partial N(v)$. Assume that the curve $C$ is realized
+as a {\it simplicial} curve on Link($v$). Then the cone from $v$ over
+$C$ in Star$^0$($v$) is a triangulated disk $D^0$. The interior of
+Star$^0$($v$) embeds onto the interior of the actual {\it star} of $v$
+in $T$, Star($v$), which is made of the union of the $3$-simplices
+having $v$ as a vertex. In this way $D^0$ maps onto a triangulated
+singular disk $D$ in $Z$, that has embedded interior and singular
+boundary immersed in the boundary of Star($v$). Cut open $T$ along
+${\rm Int}(D)$ and glue the double cone $CD$ of $D$ (this is a
+triangulated singular $3$-ball, see Figure \ref{doublecone}) so that
+the top and the bottom get identified with the two copies of $D$
+resulting from slicing. This gives a triangulation $T'$ of the
+pseudo-manifold $Z'$ obtained by Dehn filling along $C$. It has the
+property that every (abstract) tetrahedron of $T$ persists in
+$T'$. Referring to the topological description, the interior of the
+co-core of the $2$-handle attached to $Z\setminus {\rm Int}(N(v))$ is
+isotopic to the interior of the union $H'$ of two edges, each joining
+$v$ to the new vertex $v'$ at the ``center" of $CD$. In fact $H'$ is
+the core of the solid torus added by the Dehn filling.
+
+\begin{remark}\label{fewsimp}{\rm 
+Note that in general there are very few simplicial curves on a given
+Link($v$). Hence to get such a simplicial description of an arbitrary
+Dehn filling, we will usually have to modify a given
+triangulation. For the peculiar QHG pseudo-manifold triangulations
+considered in this section, retriangulating will be possible by using
+QHG isomorphisms, hence without altering the trace tensors. In fact,
+any two triangulations of $\partial N(v)$ are connected by a finite
+sequence of $2$-dimensional $1 \leftrightarrow 1$ ``flip'' moves (see
+Figure \ref{eTflip}), and $1 \leftrightarrow 3$ moves obtained by
+replacing a $2$-simplex with the cone of its boundary to a
+point. Since $N(v)$ is homeomorphic to Link($v$), any such a sequence
+is the boundary trace of a sequence of $2\leftrightarrow 3$ moves and
+bubble moves in Star($v$). (Note, in particular, that $H$ passes
+through the new interior vertices). By using the arguments of Theorem
+6.8 in \cite{BB2}, we will always be able to choose that sequence so
+that it lifts to a sequence of QHG transits.}
+\end{remark}
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=6cm]{doublecone.eps}
+\caption{\label{doublecone} An instance of double cone on a disc.}
+\end{center}
+\end{figure}
+
+Let us consider now a distinguished triangulation $(T,H)$ of $(Z,a)$
+as above, and let $Z'$, triangulated by $T'$, be the result of a
+simplicial Dehn filling of $Z$ along a curve $C$. Denote $H''$ the graph
+union of the knot $H'$ (the core of the solid torus) and the image of
+$H$ in $T'$. We define the notion of global charge on $(T',H'')$
+by formally replacing $H$ by $H''$ in (\ref{condc2}).
+
+\begin{lem}\label{extc} Let $c$ be a global charge on $(T,H)$
+such that the charge weight of the curve $C$ is $0$. Then $c$ extends
+to a global charge $c'$ on $(T',H')$.
+\end{lem}
+\noindent {\it Proof.} The complex $CD$ is made of pairs of
+adjacent $3$-simplices, respectively above and below the disk $D$.
+For a $3$-simplex of the top layer with charges $c_0$ and $c_1$ at
+the edges in $D$ (ordered by using an orientation of $D$, say), we
+will put the charges $-c_0$ and $2-c_1$ at these edges for the
+symmetric $3$-simplex in the bottom layer. Then the other charges
+are $c_2=1-c_0-c_1$ and $-c_2$, respectively. We have the charge
+sum $C_{T'}(e)=2$ at each interior edge of $D$, and $C_{T'}(e) =
+C_{T}(e)$ at the edges $e$ of $\partial D$. For the top edges $e'$
+of $CD$ we can also choose the charges so that $C_{T'}(e')$ equals
+$C_T(e)$, where $e$ is the copy of $e'$ in $D \subset M$. Indeed,
+there are $n$ degrees of freedom in doing this, where $n$ is the
+number of $1$-simplices in the curve $C$ used for blowing down. Then
+we check that $C_{T'}(e')=2$ at the bottom edges. In particular,
+the subcomplex $H$ survives in $T'$.
+
+Note that $C_{T'}(e_0)=-C_{T'}(e_1)$ at the edges $e_0$ and $e_1$
+of $H'$. We have to check that $C_{T'}(e_0)=0$, so that
+(\ref{condc}) is satisfied on $(T',H''\setminus l)$. In fact,
+$C_{T'}(e_0)$ is $n$ minus the sum of the $2n$ charges at the
+bottom edges of $CD$, which is also the sum of charges in
+$T'\setminus CD$ at these edges, minus $n$. We can form $n$ pairs
+of such charges corresponding to the $3$-simplices of the ideal
+triangulation $T$ of $M$ having a $2$-simplex in $D$. Replacing
+for each of them the pair with $1$ minus the last charge, we get
+that $C_{T'}(e_0)$ is equal to $\gamma(a)$, with $\gamma$ defined
+in section \ref{QHG} and $a$ is a normal path in Link($v$) that
+runs parallel to $C$ on one side (see Figure \ref{normalpath}).
+Because the weight of $C$ is zero, we deduce $C_{T'}(e_0)=0$.
+
+If $H \ne \emptyset$, we have to show that it can be deleted from
+$H''$. As the two components $l$ and $H \setminus l$ are isotopic and
+satisfy $C_{T'}(l)=4$ and $C_{T'}(e)=0$ for each edge $e \in H
+\setminus l$, we can retriangulate the surgered pseudo-manifold $Z'$
+so as to delete them, by using a sequence of charge transits starting
+from $(T',H'')$ and terminating with a negative bubble move (see
+\cite{BB1}, Proposition 4.27 and \cite{BB2}, proof of Theorem
+6.8). Retriangulating $Z'$ backward, we eventually find a sequence of
+charge transits terminating at $(T',H',c')$. The result
+follows. \hfill$\Box$
+\medskip
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=6cm]{normalpath.eps}
+\caption{\label{normalpath} A normal path $a$ in Link($v$) running
+parallel to a blowing-up curve $C$. Four $3$-simplices of $T'
+\setminus CD$ glued to three $2$-simplices of $D$ are shown in the
+picture.}
+\end{center}
+\end{figure}
+
+\noindent {\it Proof of Theorem \ref{defscissors}.}  To simplify
+assume that $M$ has only one cusp. Take $\Tt''=(T,H,b,w',f'',c)$. For
+the first claim we assume that the meridian $m$ of $L$ is a simplicial
+path in Link($v$), where the vertex $v$ of $T$ corresponds to the
+filled cusp. This is possible due to Remark \ref{fewsimp}.
+
+Lemma \ref{extc} implies that $c'$ extends to $(T',H')$ after the Dehn
+filling along $m$. Extend the branching $b$ by letting the new vertex
+$v'$ be a pit of the double cone $CD$ we splice in $T$. By using Lemma
+\ref{deformedlogb}, arguments similar to that of Lemma \ref{extc} show
+that we can give the same log-branches on the $3$-simplices of $CD$,
+in a pair above and below the disk $D$ (see \cite{N}, p. 454). Hence
+we get a distinguished flat/charged $\Ii$-triangulation for
+$(W,L,\rho)$. The weight $h \in H^1(W;\mz/2\mz)$ is clearly $0$
+because of the epimorphism $ H_1(M;\mz/2\mz) \rightarrow
+H_1(W;\mz/2\mz)$ induced by inclusion.  As in the first claim of Lemma
+\ref{CYLtensor} (2) we see that the (unnormalized) trace tensor for
+$CD$ is $N$ times the identity map from the linear space attached to
+the top copy of $D$ to that for the bottom one. Combining this with
+the normalization of trace tensors in (\ref{deftt}) gives
+$H_N(W,L,\rho) = \Hh_N(\Tt'')$.
+
+By Lemma \ref{deformedlogb} we know that $\gamma(f'')-\gamma(f') \in
+H^1(\partial M;\mz\pi\sqrt{-1})$ is non zero only at the class of $m$,
+where it is $-2\sqrt{-1}\pi$. Hence the collection of values of
+$f''-f'$ determines a path $l$ normal to the cusp triangulation
+induced by $T$, that intersects $m$ once and whose homology class is
+Poincar\'e dual to $(\gamma(f'')-\gamma(f'))/2\sqrt{-1}\pi$. Denote
+$$\Delta(l_j)=(\Delta^1,\ldots,\Delta^{\mid \Delta(l_j) \mid})$$ the
+sequence of flat/charged $\Ii$-tetrahedra (possibly with repetitions)
+determined by the $2$-simplices met by $l$. Each time $l$ goes through
+a $2$-simplex it selects one of its vertices, whence a cross-ratio
+modulus, say $z_i$, of the tetrahedron $\Delta^i$ corresponding to the
+$2$-simplex. The values of $f''$ on $\Delta^i$ are obtained from those
+of $f'$ by adding or substracting $1$ at the edges corresponding to
+the other two vertices, as indicated in Fig. \ref{surgcurve}. For any
+fixed tetrahedron $\Delta$ of $T$ all three flattenings may be
+eventually altered, and/or differ from those of $f'$ by adding or
+substrating $n_i \in \mz$ with $n_i\ne-1$ or $1$, exactly when
+$\Delta=\Delta^i=\Delta^j$ for some $i\ne j$. Now, recall from
+(\ref{deftt}) that
+$$H_N(M,a) = \Hh_N(\Tt') = \sum_s \prod_{\Delta \subset T}
+\Rr_N(\Delta,b,w,f,c)_s.$$ Put $\zeta=\exp(2\pi\sqrt{-1}/N)$. For any
+$x\in \mc \setminus \{\zeta^j,j=1,\ldots,N-1\}$ the function $g$
+defined in the Appendix satisfies (\cite{BB2}, Lemma
+8.2): $$g(x\zeta^k)=g(x)\prod_{j=1}^k
+\frac{(1-x^N)^{1/N}}{1-x\zeta^j}.$$ Using this formula, it is easily
+checked that given a flat/charged $\Ii$-tetrahedron
+$(\Delta,b,w',f',c)$ with $f'=(f_0',f_1',f_2')$ and positive branching
+orientation, if $f''=(f_0'+n,f_1',f_2'-n)$ we have
+\begin{equation}\label{defqR} \Rr_N(\Delta,b,w',f'',c)_s
+=\Rr_N(\Delta,b,w',f',c)_s\
+\prod_{j=1}^n\frac{(w_1')^{-1}}{1-w_0'\zeta^{i-k+j}}
+\end{equation}
+up to multiplication by $N$th roots of unity, where $i$ and $k$ are as
+in (\ref{symqmatdil}). For each $2$-simplex met by $l$ we can apply
+(\ref{defqR}) to the corresponding tetrahedron, or the similar formula
+(deduced from Corollary 5.6 of \cite{BB2}) for any other
+branching. This defines the function $\Lambda_N(\Tt'')$, so that we get
+$$\begin{array}{lll} \Hh_N(\Tt'') & = &
+  \sum_s \prod_{\Delta \subset T} \Rr_N(\Delta,b,w',f'',c)_s\\ & = &
+  \sum_s \prod_{\Delta \subset T}
+  \Rr_N(\Delta,b,w',f',c)_s\ \Lambda_N(\Tt'').
+\end{array}$$
+The conclusion follows from the equality $H_N(W,L,\rho) =
+\Hh_N(\Tt'')$.\hfill$\Box$
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=6cm]{surgcurve.eps}
+\caption{\label{surgcurve} Flat/charge corrections for a Dehn
+filling.}
+\end{center}
+\end{figure}
+
+{\it Proof of Theorem \ref{surcomp}.} Again for simplicity, assume
+that $L$ is a {\it knot} (one component).  We apply the very same
+arguments as for the first claim of Theorem \ref{defscissors}. In
+particular, Lemma \ref{extc} applies verbatim. Since $\rho(l)$ is
+trivial, for an arbitrary flattening the weight along $l$ (computed in
+the flattened $\Ii$-cusps) lies in $\mz\pi\sqrt{-1}$. Hence we can
+again use Theorem \ref{theoweight} to deduce the existence of
+flattenings with zero weight along $l$. Then we give the same
+log-branches on the $3$-simplices of the singular $3$-ball $CD$, in a
+pair above and below the disk $D$ (see \cite{N}, p. 454). Note that if
+we use $\Dd$ triangulations leading to $\Hh_N$ partition functions,
+then both parallel components $L,L'$ that make $\bar \lambda$ survive
+in the Hamiltonian subcomplex. If we can deal with $\Hh_N^e$-ones,
+only the framing longitude $L'$ survives.  Hence we eventually get a
+distinguished flat/charged $\Ii$-triangulation for $(W(l),l^* \cup
+\bar{\lambda},\rho)$, or $(W(l),l^* \cup
+\lambda',\rho)$ respectively. \hfill$\Box$
+
+\subsection{Manifolds that fiber over $S^1$ - Examples}\label{FIBERED} Lemma
+\ref{CYLtensor} (3) gives a practical recipe to compute the QHFT
+partition functions of mapping tori. A specific class of
+distinguished flat/charged $\Ii$-triangulations of
+$(\tilde{W}_{[\psi]},\tilde{L}_{[\psi]},\rho)$ is obtained by
+composing one for the trivial mapping cylinder $F \times [-1,1]$, say
+$\Tt_{\rm triv}$, with the monodromy action on the $e$-triangulation
+$(T,b)$ of $F \times \{1\}$, and then gluing the two boundary
+components. The monodromy action can always be decomposed as a
+sequence of flip moves: a single flip on the ideal triangulation $T'$
+associated to $T$ defines a flip on $(T,b)$ if it is not adjacent to a
+marked corner, and it lifts to sequences as in Figure \ref{liftflip}
+otherwise. We view these sequences as the result of gluing
+tetrahedra. Hence the monodromy action determines a branched
+triangulated pseudo-manifold $T_s$. This can be completed with global
+charges, and, as for any $\rho$ we are free to choose the cocycle in
+$\Tt_{\rm triv}$, we can also complete $T_s$ to a flattened
+$\Ii$-triangulation.  Equivalently we can define a sequence
+\begin{equation}\label{mon1}
+s: (T,b,\Ll) \rightarrow \ldots \rightarrow
+\psi(T,b,\Ll)\end{equation} of $e$-triangulations with
+($+$)-Log-$\Ii$-parameters compatible with $\rho$. Note that the
+edges of the associated pattern $\Tt_{s}$ of flat/charged
+$\Ii$-tetrahedra are disjoint from the Hamiltonian link $H$. Since
+$\Hh_N(\Tt_{\rm triv})=_N {\rm id}$, we deduce that
+$\Hh_N(\tilde{W}_{[\psi]},\tilde{L}_{[\psi]},\rho)=_N
+\Hh_N(\Tt_{s})$. 
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=6cm]{liftflip.eps}
+\caption{\label{liftflip} Lifts to $e$-triangulations (economic ones -
+  see Remark \ref{varpar} - at the first row) of flip moves on the
+  corresponding ideal triangulations near marked corners. The
+  tetrahedron associated to the first flip (first and third ones for
+  the second row) degenerates for a sequence $s$ with
+  ($-$)-Log-$\Ii$-parameters.}
+\end{center}
+\end{figure}
+
+Using a similar construction we now prove the
+relationship with the quantum hyperbolic invariants $H_N$ of
+fibered cusped manifolds \cite{BB2}. Recall that $W\setminus L$ is
+homeomorphic to ${\rm Int}(\tilde{W}_{[\psi]})$. Denote by $l$ the
+number of components of $L$.
+\begin{prop} \label{teofibered} 
+If ${\rm Int}(\tilde{W}_{[\psi]})$ supports a (necessarily unique)
+complete hyperbolic structure with holonomy $\rho_c$, then
+$\Hh_N(\tilde{W}_{[\psi]},\tilde{L}_{[\psi]},\rho_c,0,0)=_N
+N^{2l}\ H_N(W\setminus L)$.
+\end{prop}
+
+\noindent {\it Proof.} Let $S\setminus V$ be the fiber of $W\setminus
+L \rightarrow S^1$, equipped with an ideal triangulation $T'$. First
+we show the existence of sequences $s:T'\rightarrow \ldots \rightarrow
+\psi(T')$ of flip moves decomposing the monodromy action, such that
+the associated pseudo-manifolds $T'_s$ are topological ideal
+triangulations of $W\setminus L$, which moreover have maximal
+volume. 
+
+The first condition follows from the fact that the monodromy is
+homotopically aperiodic (ie. pseudo-Anosov), so that $T'_s$ is
+genuinely three-dimensional. When $S\setminus V$ is a once-punctured
+torus, the second condition is a consequence of a result of Lackenby
+\cite{La}, showing that the {\it monodromy ideal triangulation} of
+Floyd and Hatcher \cite{FH} is isotopic to the canonical
+Epstein-Penner cellulation. More in general, since no edge of $T'_s$
+is homotopically trivial, the results of \cite{F1} imply that we can
+straighten the tetrahedra to oriented geodesic ones, possibly with
+overlappings, so that the algebraic sum of volumes is Vol($W\setminus
+L$). This is known to be maximal \cite{F2}.
+
+As in Section \ref{DEHNF} we can complete $T_s'$ to a flat/charged
+$\Ii$-triangulation $\Tt'$. Hence the invariants $H_N(W\setminus L)$
+can be computed as trace tensors $\Hh_N(\Tt')$. We note that in the
+case when there are several fibrations of $W\setminus L$, or $T_s'$ is
+not canonical, the invariance follows from Theorem 6.8 (2) in
+\cite{BB2}, which shows that any two flat/charged $\Ii$-triangulations
+of $W\setminus L$ with maximal volume are QHG-isomorphic.
+
+Let us denote $\Tt_{s}'$ the result of cutting $\Tt'$ along the
+fiber. The two boundary copies are marked pleated hyperbolic surfaces
+$(T',b',\mathcal{L}) \rightarrow S\setminus V$ and
+$(T',b',\mathcal{L}) \rightarrow \psi(S\setminus V)$, with shear-bend
+coordinates (ie. $(-)$-Log-$\Ii$-parameters) $\Ll$ that determine
+completely the log-branches of $\Tt_s'$. Recall from Section
+\ref{+-versus} the families of flat/charged $\Ii$-triangulations
+$\mathcal{F}_t$ and $\mathcal{F}$, and let $C \in \mathcal{F}$, $C_t
+\in \mathcal{F}_t$ have boundary structures $(T,b,\mathcal{L})$,
+associated to $(T',b',\mathcal{L})$, and $(T,b,\mathcal{L}_t)$,
+respectively, at $F\times \{1\}$. We have: $$\begin{array}{lll}
+\Hh_N(\Tt') & = & {\rm Tr}(\Hh_N(\Tt_{s}'))\\ & = & N^{-2l}\ {\rm
+Tr}\left( \Hh_N(\Tt_{s}') \otimes {\rm id}^{\otimes 2l} \right)\\ & =
+& N^{-2l}\ {\rm Tr}\left(\Hh_N(C) \circ (\Hh_N(\Tt_{s}') \otimes {\rm
+id}^{\otimes 2l}) \circ \Hh_N(\psi(C))^{-1}\right)\\ & = & N^{-2l}\
+\lim_{t \rightarrow {\rm id}} {\rm Tr}\left(\Hh_N(C_t) \circ
+(\Hh_N(\Tt_{s,t}')\otimes {\rm id}^{\otimes 2l})\circ
+\Hh_N(\psi(C_t))^{-1}\right)\\ & = & N^{-2l}\ \lim_{t \rightarrow {\rm
+id}} {\rm Tr}(\Hh_N(C_t * \Tt_{s,t}'*(-\psi(C_t)))).
+\end{array}$$
+Here we use the invertibility of $\Hh_N(C)$ (Proposition
+\ref{tunnel+-}) and the equality $\Hh_N(C) =_N \Hh_N(\psi(C))$. We
+define $\Tt_{s,t}'$ as the continuous deformation of $\Tt_{s}'$
+obtained from the sequence
+$$s_t: (T,b,\Ll_t) \rightarrow \ldots \rightarrow \psi(T,b,\Ll_t)$$
+similarly as in (\ref{mon1}) (see also Figure \ref{liftflip}). In the
+last equality, $C_t * \Tt_{s,t}'*(-\psi(C_t))$ is for any fixed $t$ a
+distinguished flat/charged $\Ii$-triangulation of the mapping cylinder
+of $\psi$. Hence $\Hh_N(C_t * \Tt_{s,t}'*(-\psi(C_t)))$ does not
+depend on $t$ up to conjugacy, and we conclude with Lemma
+\ref{CYLtensor} (3).\hfill$\Box$
+
+\medskip
+
+By following the above computation backwards, we see more in general
+that for {\it any} $PSL(2,\mc)$-character $\rho$ that can be realized
+by ($-$)-Log-$\Ii$-parameters on some ideal triangulation of the fiber
+$S\setminus V$, we have
+\begin{equation}\label{mon2}
+\Hh_N(\tilde{W}_{[\psi]},\tilde{L}_{[\psi]},\rho,h,k) = N^{2l}\ {\rm
+Tr}( \Hh_N(\mathcal{T}_s'))
+\end{equation}
+where $\mathcal{T}_s'$ is a pattern of flat/charged $\Ii$-tetrahedra
+associated to a sequence similar to $(\ref{mon1})$, but with
+$e$-triangulations equipped with $(-)$-Log-$\Ii$-parameters compatible
+with $\rho$.
+\begin{remark}\label{QTeich}{\rm The formula $H_N(W\setminus
+L) = {\rm Tr}(\Hh_N(\Tt_{s}'))$ expresses the quantum hyperbolic
+invariants of fibered cusped manifolds as amplitudes between two
+markings of the fiber, identified with a pleated hyperbolic
+surface. For a similar construction based on representations of
+quantum Teichmuller spaces, see \cite{BoL}.}
+\end{remark}
+{\bf Example: the figure-eight knot complement}\label{EXAMPLES}
+Here we compute the QHFT partition functions of $(S^3,K_0)$, where
+$K_0$ is the $0$-framed figure-eight knot in $S^3$. Recall that
+$S^3\setminus K$ is fibered over $S^1$, with fiber the once-punctured
+torus $\Sigma_{1,1}$; the $0$-framing of $K$ is induced by the
+fibration. For simplicity, below we consider only characters $\rho$ of
+{\it injective} representations $\pi_1(S^3\setminus K)\rightarrow
+PSL(2,\mc)$. The restriction to $\Sigma_{1,1}$ of such representations
+can be realized by $(-)$-Log-$\Ii$-parameters on any ideal
+triangulation of $\Sigma_{1,1}$, so that, by (\ref{mon2}), we can
+determine the corresponding subspace (still denoted $Def(S^3,K)$) of
+the phase space of Definition \ref{defps} by using the monodromy ideal
+triangulation.
+\smallskip
+
+ The monodromy $\Phi:\Sigma_{1,1}\rightarrow \Sigma_{1,1}$ of
+ $S^3\setminus K$ is isotopic to the hyperbolic element
+$$\left(  \begin{array}{cc} 2 & 1 \\ 1 & 1  \end{array} \right) =
+\left( \begin{array}{cc} 1 & 1 \\ 0 & 1 \end{array}\right) \left(
+  \begin{array}{cc} 1 & 0 \\ 1 & 1 \end{array} \right) \quad \in
+SL(2,\mz).$$ This description of $[\Phi] \in {\rm Mod}(\Sigma_{1,1})$
+can be understood in terms of the Diagram of $PSL(2,\mz)$ (see
+eg. \cite{FH}) via the action of $\Phi$ on topological ideal
+triangulations of $\Sigma_{1,1}$, which can be represented by two flip
+moves. See Figure \ref{Tdyn}, where the left picture is a lift to
+$\mr^2 \setminus \mz^2$ of such a triangulation.
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=10cm]{Tdyn.eps}
+\caption{\label{Tdyn} The composition of flip transformations
+  for the monodromy of $S^3\setminus K$.}
+\end{center}
+\end{figure}
+
+The monodromy ideal triangulation $T$ of $S^3 \setminus K$ is obtained
+by realizing each flip move via the gluing of an ideal tetrahedron,
+first on a fixed triangulation of $\Sigma_{1,1}$, then on the
+resulting one. The remaining four free faces are identified under
+$\Phi$. It is not difficult to see that $T$ is isotopic to the
+canonical geodesic ideal triangulation of $S^3 \setminus K$ with its
+complete hyperbolic structure. The gluing pattern of the tetrahedra in
+$T$ is shown in Figure \ref{Teight}.
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=8cm]{Teight.eps}
+\caption{\label{Teight} The face and edge identifications for the canonical
+  geodesic ideal triangulation of $S^3\setminus K$.}
+\end{center}
+\end{figure}
+
+It is well-known (see \cite{Th}) that the deformation space of smooth
+(non necessarily complete) hyperbolic structures on $S^3 \setminus K$
+is isomorphic to the algebraic set $Def_{{\rm hyp}}(S^3 \setminus K)
+\subset \mathbb{H}^2 \times \mathbb{H}^2$ of points $(w_2,z_0)$ such
+that
+$$w_2 \in \mathbb{H}^2 \setminus \left\lbrace \frac{1}{2} +
+\frac{t}{2}i \mid t \geq \sqrt{15} \right\rbrace,\quad z_0 =
+\frac{1}{2} + \left(\frac{1}{4} +
+\frac{1}{w_2(w_2-1)}\right)^{\frac{1}{2}}$$ where $w_2$ is the
+cross-ratio modulus of the edge $e_2$ in the tetrahedron $\Delta^+$
+with positive branching orientation (back edge in the left tetrahedron
+of Figure \ref{Teight}), and similarly for $z_0$ in $\Delta^-$. The
+space $Def_{{\rm hyp}}(S^3 \setminus K)$ is a subspace of 
+\begin{equation}\label{subs}
+\mathcal{C}=\{
+(w_2,z_0) \in (\mc \setminus \{0,1\})^2 \mid
+w_1w_2^2z_0^{-2}z_1^{-1}=1\},
+\end{equation} which is isomorphic to the whole set of solutions of the edge
+compatibility relations for cross-ratio moduli (see Definition
+\ref{non-rough}). By an easy computation we find that the edge
+compatibility relations for log-branches and charges are:
+\begin{equation}\label{eqfc}
+(S)\left\lbrace\begin{array}{l}f_1^-+2f_0^-+2f_0^++f_1^+=
+(\arg(w_1)+2\arg(w_2)-\arg(z_1)-2\arg(z_0))-2*_+\\
+c_1^-+2c_0^-+2c_0^++c_1^+=0\end{array}\right.
+\end{equation}
+where $*_+$ is the sign of the imaginary part of the $w_i$, and the
+flattenings $f_i^+$ and $f_i^-$ correspond to the cross-ratio moduli
+$w_i$ and $z_i$ of $\Delta^+$ and $\Delta^-$, respectively. Hence, by
+(\ref{qlb}) we see that the QHFT phase space $Def(S^3,K)$ is the
+covering of $\mathcal{C}$ given by
+$$Def(S^3,K)=\{((w_2;f_2^+-c_2^+,f_0^+-c_0^+),(z_0;f_0^-+c_0^-,f_1^-+c_1^-))
+\in \hat{\mc}\times\hat{\mc} \mid (w_2,z_0) \in \mathcal{C},\ (S){\rm\
+is\ satisfied}\ \}.$$ Let us point out some geometrically meaningful
+subspaces (compare with \cite{N}, Section 15). The dilation factors of
+the standard meridian $m$ and longitude $l$ of $K$ are
+$$\mu(m) = z_2w_2^{-1},\quad \mu(l)=z_0^2z_2^{-2}.$$ The complete
+hyperbolic structure of $S^3\setminus K$ is obtained by solving
+$\mu(m)=1$ and $\mu(l)=1$ for points of $Def_{{\rm hyp}}(S^3 \setminus
+K)$, which gives $z_j=(w_j)^* = \exp(i\pi/3)$. We already noticed that
+the weights $k$ for this solution take values in $2\mz$ (see \cite{N},
+Proposition 5.2). Corresponding flattenings satisfy
+\begin{equation}\label{eqcompfc}f_2^--f_2^+ = k(m),\quad2f_0^--2f_2^-=k(l)
+\end{equation}
+and (\ref{eqfc}) simplifies to
+\begin{equation}\label{simpfs}
+f_1^-+2f_0^-+2f_0^++f_1^+=0.
+\end{equation}
+Together with (\ref{eqcompfc}) this gives
+\begin{equation}\label{standardf} f_1^+ = \frac{k(l)}
+{2}-1-2f_0^+,\quad \left\lbrace \begin{array}{l} f_0^-=k(m)-f_0^+\\
+    f_1^- = 2k(m)-\frac{k(l)}{2}+1+2f_0^+\end{array}\right.
+\end{equation}
+Similarly, integral charges are obtained by letting $c_i^+ = -f_i^+$
+on $\Delta^+$ and $c_i^- = +f_i^-$ on $\Delta^-$. It can be checked
+that $h=0$. Of course, (\ref{standardf}) is still true for points of
+$Def(S^3,K)$ sufficiently near the complete solution, if now $k(m)$
+and $k(l)$ are replaced with
+$\tilde{k}(m)=k(m)-\log(\mu(m))/\sqrt{-1}\pi$ and
+$\tilde{k}(l)=k(l)-\log(\mu(l))/\sqrt{-1}\pi$. Hence, in the vicinity
+of the complete structure we have the strata
+$$\{((w_2;2f_0^+-\tilde{k}(l),2f_0^+),(z_0;2\tilde{k}(m)-2f_0^+,
+2(2\tilde{k}(m)+1+2f_0^+)-\tilde{k}(l)),\ f_0^+ \in \mz\},$$
+parametrized by the lifts $k(m)$ and $k(l)$ of $\mu(m)$ and $\mu(l)$.
+\smallskip
+
+For points of $\mathcal{C}$ corresponding to hyperbolic structures
+whose metric completion is obtained from $S^3 \setminus K$ by $(p,q)$
+Dehn filling, we have $p\mu(m) +q\mu(l) = 2\pi \sqrt{-1}$. Hence the
+flattenings $f=f''$ of Lemma \ref{deformedlogb} are to satisfy
+$$p(f_2^--f_2^+)+q(2f_0^--2f_2^-)=-2$$ Let us fix $r$, $s \in \mz$
+such that $ps-qr=1$. Solving simultaneously (\ref{simpfs}) and the
+last equation gives
+\begin{equation}\label{surgf}
+f_1^+ = r-1-2f_0^+,\quad \left\lbrace \begin{array}{l}
+    f_0^-=-2s-f_0^+\\ f_1^- = -r+4s+1+2f_0^+\end{array}\right.
+\end{equation}
+The parity condition $f_0^++f_1^++f_0^-+f_1^- \in 2\mz$ (for the class
+$h$ to be $0$) is automatically satisfied.
+\smallskip
+
+Now we can compute the QHFT invariants of $(S^3,K_0)$ as functions on
+$Def(S^3,K)$. Given a $N$-state $s$ of $T$, put $\alpha=s(\hat{2})$,
+$\beta=s(\hat{0})$, $\gamma=s(\hat{3})$ and $\delta=s(\hat{1})$, where
+$\hat{i}$ denotes the face of $\Delta ^+$ opposite to the $i$th
+vertex. By \ref{mon2}) we have:
+$$N^{-2}\Hh_N(S^3,K_0,\rho) = \sum_{\alpha,\beta,\gamma,\delta=0}^{N-1}
+  \Rr_N(\Delta^+,b^+,w,f^+,c^+)_{\alpha,\beta}^{\gamma,\delta}\
+  \Rr_N(\Delta^-,b^-,z,f^-,c^-)_{\beta,\alpha}^{\delta,\gamma}$$
+$$\begin{array}{lll} & = & \sum_{\alpha,\beta,\gamma,\delta=0}^{N-1}
+    (w_0'^{-c_1^+}w_1'^{c_0^+})^{\frac{N-1}{2}} \
+    \frac{g(w_0')}{g(1)}\ \zeta^{\gamma\beta+(m+1)\gamma^2}\
+    \omega(w_0',w_1'^{-1}\vert \alpha-\gamma) \ \delta(\alpha+\beta
+    -\delta)\\ & & \hspace{4cm} \times
+    (z_0'^{-c_1^-}z_1'^{c_0^-})^{\frac{N-1}{2}}\
+    \frac{[z_0']g(1)}{g(z_0')}\ \zeta^{-\alpha\delta-(m+1)\delta^2}\
+    \frac{\delta(\alpha+\beta
+    -\gamma)}{\omega(z_0'/\zeta,z_1'^{-1}\vert \beta-\delta)} \\ \\ &
+    = &
+    (w_0'^{-c_1^+}w_1'^{c_0^+}z_0'^{-c_1^-}z_1'^{c_0^-})^{\frac{N-1}{2}}
+    \frac{[z_0']g(w_0')}{g(z_0')} \sum_{\alpha,\beta=0}^{N-1}
+    \zeta^{\beta^2-\alpha^2}\ \omega(w_0',w_1'^{-1}\vert N-\beta)\
+    \omega(z_0'/\zeta,z_1'^{-1}\vert N-\alpha)^{-1}.
+\end{array}$$
+By the proof of Proposition 8.6 in \cite{BB2} we have
+$$\frac{[z_0']g(w_0')}{g(z_0')} =
+\frac{g((z_0')^*)^*g(w_0')}{|g(1)|^2}$$
+and
+$$\omega(z_0'/\zeta,z_1'^{-1}\vert N-\alpha)^{-1} =
+\omega((z_0')^*,(z_1'^{-1})^*\vert \alpha)^*$$
+where $z^*$ is the complex conjugate of $z$. Thus, setting
+$$S(w_0',w_1') = \sum_{\beta=0}^{N-1} \zeta^{\beta^2}
+\omega(w_0',w_1'^{-1}\vert \beta) = 1+\ \sum_{\beta=1}^{N-1}
+\zeta^{\beta^2} \prod_{k=1}^{\beta} \frac{w_1'^{-1}}{1-w_0'\zeta^k}$$
+we get
+$$\Hh_N(S^3,K_0,\rho) =
+N^{2}(w_0'^{-c_1^+}w_1'^{c_0^+}z_0'^{-c_1^-}z_1'^{c_0^-})^{\frac{N-1}{2}}
+\frac{g((z_0')^*)^*g(w_0')}{|g(1)|^2}S(w_0',w_1')
+\ S((z_0')^*,(z_1')^*)^*.$$ Using (\ref{standardf}) with
+$k(m)=k(l)=f_0^+=0$ and the global charge with $c_0^+=c_0^-=0$, we see
+that for the complete hyperbolic structure $\rho_{\rm comp}$ on
+$S^3\setminus K$ we have
+$$z_0' = (w_0')^*= \exp(i\pi/3N),\quad z_1' = (w_1')^*=
+\exp(-5i\pi/3N).$$ Hence $$\Hh_N(S^3,K_0,\rho_{\rm comp})
+=N^{2}\frac{|g(e^{i\pi/3N})|^2}{|g(1)|^2} \ |
+S(e^{i\pi/3N},e^{-5i\pi/3N})|^2.$$ Let us finally consider hyperbolic
+$(p,q)$ Dehn filling of $S^3\setminus K$. Denote $S^3(K_{(p,q)})$ the
+surgered manifold, $L$ the core of the surgery, and $\rho_{(p,q)}$ its
+hyperbolic holonomy. Because of (\ref{surgf}) the difference $f''-f$
+is given on the edges $e_0$, $e_1$ and $e_2$ of $\Delta^+$
+(resp. $\Delta^-$) by $0$, $r$ and $-r$ (resp. $-2s$, $4s$ and
+$0$). Put $N=2m+1$. From Theorem \ref{defscissors} we deduce
+$$\begin{array}{l}\Hh_N(S^3(K_{(p,q)}),L,\rho_{(p,q)}) = N^{2}
+(w_0'^{-c_1^+}w_1'^{c_0^+}z_0'^{-c_1^-}z_1'^{c_0^-})^{\frac{N-1}{2}}\
+\frac{g((z_0')^*)^*g(w_0')}{|g(1)|^2}\\
+\hspace{0.8cm}\sum_{\alpha,\beta=0}^{N-1}
+  \zeta^{\beta^2-\alpha^2}\omega(w_0',w_1'^{-1}\vert N-\beta)\
+  \omega((z_0')^*,(z_1'^{-1})^*\vert \alpha)^*\
+  \zeta^{r(N-\beta)(m+1)}\prod_{j=1}^{N-2s}
+  \frac{(z_1'^{-1})^*\zeta^{-4s\alpha(m+1)}}{1-(z_0')^*\zeta^{j+\alpha}}\
+  .
+\end{array}$$
+\begin{remark}{\rm Recall the space $\mathcal{C}$ in (\ref{subs}). 
+As already mentionned after Definition \ref{non-rough}, we have a
+holonomy map $hol:\mathcal{C}\rightarrow X$ to the character variety
+$X=X(\pi_1(S^3\setminus K))$. (See \cite{Ril} or \cite{GAM} for a
+complete description of the latter). The map $hol$ is generically
+$2:1$, and is onto the geometric component of $X$ \cite{Cha}. We can
+express the above partition functions in terms of standard generators
+of $X$ by the following observation. Considering $S^3\setminus K$ as
+the mapping torus of the monodromy $\Phi$, the edges $e_0$, $e_1$ of
+$\Delta^+$ are identified with a longitude $l$ and meridian $m$ of the
+punctured torus $\Sigma_{1,1}$, and in $\Delta^-$ we have ($e_0'$ is
+opposite to $e_0$):
+$$e_0=\Phi(l.m),\quad e_1=\Phi(l),\quad e_0'= \Phi(m).$$ As above,
+assume that $\rho$ has non trivial holonomy at $m$, $l$ and
+$l.m$. Take a flat/charged $\Ii$-triangulation of $(S^3,K_0,\rho)$ as
+in Section \ref{FIBERED}, with $PSL(2,\mc)$-valued cocycle $z$. Denote
+$z_l$ the value at $l$, and so on. Note that $z_{\Phi(m)}=Az_mA^{-1}$,
+where $A=z(S^1)$, the cocycle value on the standard meridian of the
+knot $K$. Then the cross ratio moduli of $\Delta^+$ and $\Delta^-$ are
+given by
+$$w_0=[0:z_l(0):z_lz_m(0):z_{\Phi(m)}(0)],\quad z_0=
+[0:z_{\Phi(l)}z_{\Phi(m)}(0):z_{\Phi(l)}z_{\Phi(m)}z_{\Phi(l)}(0):z_mz_l(0)].$$
+(We use the branching to remove the twofold ambiguity of $hol$, as it
+allows to specify an equivariant association of a fixed point for each
+peripheral subgroup of $\rho(\pi_1(S^3\setminus K))$.)}
+\end{remark}
+\begin{remark}
+{\rm Formulas for Cheeger-Chern-Simons invariants
+$\Hh_1(S^3,K_0,\rho)$ of arbitrary $PSL(2,\mc)$-characters of
+$S^3\setminus K$ come exactly in the same way (See Remark \ref{OKCCS}
+and Remark \ref{scissors}). In the peculiar situation of the complete
+hyperbolic structure and its hyperbolic Dehn fillings, they coincide
+with those of \cite{N}, Section 15.}
+\end{remark}

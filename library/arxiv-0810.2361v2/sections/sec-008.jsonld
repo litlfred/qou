@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0810.2361v2/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "2-Linear Maps from Spans of Groupoids",
+  "pageStart": 22,
+  "pageEnd": 24,
+  "contains": [
+    "library/arxiv-0810.2361v2/blocks/prose-sec-008",
+    "library/arxiv-0810.2361v2/blocks/remark-sec-008-01",
+    "library/arxiv-0810.2361v2/blocks/proposition-sec-008-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0810.2361v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0810.2361v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1609.08719v1/blocks/prose-sec-005",
+  "kind": "prose",
+  "title": "Cross-ratios",
+  "pageStart": 3,
+  "pageEnd": 3,
+  "text": "../sections/sec-005-21-cross-ratios.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1609.08719v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1609.08719v1/manifest.jsonld",
+  "provenance": "ingested"
+}

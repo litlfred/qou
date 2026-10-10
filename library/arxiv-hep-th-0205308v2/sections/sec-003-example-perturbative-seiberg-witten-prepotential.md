@@ -7,112 +7,77 @@ section_number: null
 pages: 7-8
 source_pdf: 0205308v2.pdf
 source_sha256: 2de5a4f40d80174c
+text_source: latex
+latex_prose_ratio: 0.932
+latex_coverage_ratio: 0.987
 doc_brief: "WDVV Equations as Functional Relations — 5 sections: Introduction; WDVV and dispersionless Hirota equ; The associativity equations as coc"
 ---
-tials
-Here we shall consider one of the simplest examples of solutions to th e WDVV equations
-coming from Seiberg-Witten theory. These are related to SU (N + 1) perturbative
-prepotentials [2] and the corresponding Riemann surface is degene rate. With aij ≡
-ai − aj the perturbative prepotential is given by
-F = 1
-2
-N∑
-i<j
-a2
-ij log aij
-Λ + 1
-2
-N∑
-i=1
-a2
-i log ai
-Λ . (32)
-The second derivatives (3) (for a special choice of Λ) are
-Tij = − log aij, i < j ; Tij = Tji, i > j ;
-Tii = ln ai +
-∑
-i<j
-ln aij +
-∑
-j<i
-ln aji = ln ai −
-∑
-j⁄=i
-Tij. (33)
-Using (33) one may reexpress all matrix elements Tij through a given row explicitly.
-For example, in the ﬁrst nontrivial case corresponding to SU (4) one ﬁnds
-T =
-
-
-x y z
-y log (ex+y+z − e−y) (e−z − e−y) − y − log (e−z − e−y)
-z − log (e−z − e−y) log ( ex+y+z − e−z) (e−z − e−y) − z
-
-
-=
-
-
-log
-(
-e˜x+˜y+˜z + e−˜x) (
-e−˜x + e−˜z)
-− ˜x ˜x − log
-(
-e−˜x + e−˜z)
-˜x ˜y ˜z
-− log
-(
-e−˜x + e−˜z)
-˜z log
-(
-e˜x+˜y+˜z + e−˜z) (
-e−˜x + e−˜z)
-− ˜z
-
-
-=
-
-
-log
-(
-eˆx+ˆy+ˆz + e−ˆx) (
-e−ˆx − e−ˆy)
-− ˆx − log
-(
-e−ˆx − e−ˆy)
-ˆx
-− log
-(
-e−ˆx − e−ˆy)
-log
-(
-eˆx+ˆy+ˆz + e−ˆy) (
-e−ˆx − e−ˆy)
-− ˆy ˆy
-ˆx ˆy ˆz
-
- .
-(34)
-Here we have exhibited the diﬀerent dependence on the rows which a re taken as inde-
-pendent variables: ( x, y, z ) = ( T11, T 12, T 13), (˜x, ˜y, ˜z) = ( T21, T 22, T 23) and (ˆx, ˆy, ˆz) =
-(T31, T 32, T 33).
-In the SU (4) perturbative Seiberg-Witten case equation (31) has essentia lly only the
-one nontrivial relation ∑
-i,k
-∂T 2i
-∂T 1j
-∂T 1k
-∂T 3i
-∂T 3l
-∂T 2k
-= δj
-l . (35)
-The corresponding matrices may be straightforwardly computed u sing (33). It is easy
-to check, that (35) holds provided the Hirota relations (cf. with [14 ]) are satisﬁed:
-sign(j − i)e−Tij + sign(k − j)e−Tjk + sign(i − k)e−Tki = 0, i ⁄= j ⁄= k, (36)
-7
-(originating from aij + cyclic = 0) together with
-eT11+T12+T13−T23 + eT13+T23+T33−T12 − eT12+T22+T23−T13 = 0, (37)
-(coming from aiajk + cyclic = 0) and
-eT12+T22+T23 − eT13+T33+T23 = e−T23 (38)
-(realizing aij = ai − aj). These may be seen to be satisﬁed upon utilising (33).
+Here we shall consider one of the simplest examples of solutions to the WDVV equations coming from Seiberg-Witten theory. These are related to $SU(N+1)$ perturbative prepotentials [@MMM] and the corresponding Riemann surface is degenerate. With $a_{ij}\equiv a_i-a_j$ the perturbative prepotential is given by $$\begin{equation}
+\label{pertpre}
+{\cal F}= {1\over 2}\sum_{i<j}^N a_{ij}^2\log {a_{ij}\over\Lambda} +
+{1\over 2}\sum_{i=1}^N a_i^2\log {a_i\over\Lambda}.
+\end{equation}$$ The second derivatives ([\[pematr\]](#pematr){reference-type="ref" reference="pematr"}) (for a special choice of $\Lambda$) are $$\begin{equation}
+\label{pemape}
+\begin{split}
+ T_{ij} &= - \log a_{ij}, \ \ i<j; \qquad T_{ij} =
+T_{ji},\ \ i>j;\\  T_{ii} &= \ln a_i+\sum_{i<j} \ln a_{ij}
++\sum_{j<i}\ln a_{ji} = \ln a_i - \sum_{j\ne i} T_{ij}.
+\end{split}
+\end{equation}$$ Using ([\[pemape\]](#pemape){reference-type="ref" reference="pemape"}) one may reexpress all matrix elements $T_{ij}$ through a given row explicitly. For example, in the first nontrivial case corresponding to $SU(4)$ one finds $$\begin{equation}
+\label{pemasu4}
+\begin{split}
+T &= \left(
+\begin{array}{ccc}
+  x & y & z \\
+  y & \log\left(e^{x+y+z}-e^{-y}\right)\left(e^{-z}-e^{-y}\right)-y &
+-\log\left(e^{-z}-e^{-y}\right) \\
+  z & -\log\left(e^{-z}-e^{-y}\right) &
+\log\left(e^{x+y+z}-e^{-z}\right)\left(e^{-z}-e^{-y}\right)-z
+\end{array}\right)
+\\
+\\
+&= \left(
+\begin{array}{ccc}
+ \log\left(e^{\tilde{x}+\tilde{y}+\tilde{z}}+e^{-\tilde x}\right)
+\left(e^{-\tilde x}+e^{-\tilde z}\right)- \tilde{x}
+& \tilde{x} & -\log\left(e^{-\tilde x}+e^{-\tilde z}\right) \\
+  \tilde{x} & \tilde{y} & \tilde{z} \\
+-\log\left(e^{-\tilde x}+e^{-\tilde z}\right)  & \tilde{z} &
+\log\left(e^{\tilde{x}+\tilde{y}+\tilde{z}}+e^{-\tilde z}\right)
+\left(e^{-\tilde x}+e^{-\tilde z}\right)- \tilde{z}
+\end{array}\right)
+\\
+\\
+&= \left(
+\begin{array}{ccc}
+ \log\left(e^{\hat{x}+\hat{y}+\hat{z}}+e^{-\hat x}\right)
+\left(e^{-\hat x}-e^{-\hat y}\right)- \hat{x}
+& -\log\left(e^{-\hat x}-e^{-\hat y}\right) & \hat{x} \\
+-\log\left(e^{-\hat x}-e^{-\hat y}\right)  &
+\log\left(e^{\hat{x}+\hat{y}+\hat{z}}+e^{-\hat y}\right)
+\left(e^{-\hat x}-e^{-\hat y}\right)- \hat{y} &
+\hat{y} \\
+\hat{x} & \hat{y} & \hat{z}
+\end{array}\right).
+\end{split}
+\end{equation}$$ Here we have exhibited the different dependence on the rows which are taken as independent variables: $(x,y,z)=(T_{11},T_{12},T_{13})$, $(\tilde{x},\tilde{y},\tilde{z})=(T_{21},T_{22},T_{23})$ and $(\hat{x},\hat{y},\hat{z})=(T_{31},T_{32},T_{33})$.
+
+In the $SU(4)$ perturbative Seiberg-Witten case equation ([\[cocycle\]](#cocycle){reference-type="ref" reference="cocycle"}) has essentially only the one nontrivial relation $$\begin{equation}
+\label{cocsu4}
+\sum_{i,k}\
+\dfrac{\partial T_{2i}}{\partial T_{1j}}\dfrac{\partial T_{1k}}{\partial T_{3i}}
+\dfrac{\partial T_{3l}}{\partial T_{2k}}
+= \delta\sp{j} _l.
+\end{equation}$$ The corresponding matrices may be straightforwardly computed using ([\[pemape\]](#pemape){reference-type="ref" reference="pemape"}). It is easy to check, that ([\[cocsu4\]](#cocsu4){reference-type="ref" reference="cocsu4"}) holds provided the Hirota relations (cf. with [@ZaHi]) are satisfied: $$\begin{equation}
+\label{h1}
+{\rm sign}(j-i)e^{-T_{ij}} + {\rm sign}(k-j)e^{-T_{jk}} + {\rm sign}(i-k)e^{-T_{ki}} = 0,
+\qquad
+i \neq j \neq k,
+\end{equation}$$ (originating from $a_{ij} + {\rm cyclic}=0$) together with $$\begin{equation}
+\label{h2}
+e^{T_{11}+T_{12}+T_{13}-T_{23}} + e^{T_{13}+T_{23}+T_{33}-T_{12}} -
+e^{T_{12}+T_{22}+T_{23}-T_{13}} = 0,
+\end{equation}$$ (coming from $a_ia_{jk} + {\rm cyclic}=0$) and $$\begin{equation}
+\label{h3} e^{T_{12} + T_{22}+T_{23}} - e^{T_{13} + T_{33} +
+T_{23}} = e^{-T_{23}}
+\end{equation}$$ (realizing $a_{ij}=a_i-a_j$). These may be seen to be satisfied upon utilising ([\[pemape\]](#pemape){reference-type="ref" reference="pemape"}).

@@ -1,0 +1,47 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1904.13129v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1904.13129v1",
+  "contains": [
+    "library/arxiv-1904.13129v1/sections/sec-front-matter",
+    "library/arxiv-1904.13129v1/sections/sec-000",
+    "library/arxiv-1904.13129v1/sections/sec-001",
+    "library/arxiv-1904.13129v1/sections/sec-002",
+    "library/arxiv-1904.13129v1/sections/sec-003",
+    "library/arxiv-1904.13129v1/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1904.13129&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1904.13129v1",
+    "title_source": "slug",
+    "source_file": "1904.13129v1.pdf",
+    "source_sha256": "dfa7fd0ebf1ab8c446310a306cbed479e9da1fbec96dfdefdcedbfb6b801d8fa",
+    "pages": 24,
+    "arxiv": {
+      "id": "1904.13129",
+      "version": "1",
+      "primary_class": "math.AP",
+      "stamp_date": "30 Apr 2019"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

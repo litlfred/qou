@@ -5,7 +5,8 @@
   "file": "1101.1563v1.pdf",
   "sha256": "0c45b250fc4a2a49a5eeb67715789dd99b191e1c6df32e428af5fbf43fc87791",
   "bytes": 220232,
-  "pages": 20
+  "pages": 20,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -15,9 +16,9 @@
    "stamp_date": "8 Jan 2011"
   },
   "doi": null,
-  "title": "Gröbner-Shirshov bases for categories",
+  "title": "Gr\u00f6bner-Shirshov bases for categories",
   "authors_raw": "School of Mathematical Sciences, South China Normal Univer sity",
-  "abstract": "In this paper we establish Composition-Diamond lemma for small categ ories. We give Gr¨ obner-Shirshov bases for simplicial category and cyclic c ategory.",
+  "abstract": "In this paper we establish Composition-Diamond lemma for small categ ories. We give Gr\u00a8 obner-Shirshov bases for simplicial category and cyclic c ategory.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20220429045604-04'00'",
@@ -25,10 +26,10 @@
    "Title": "",
    "Author": ""
   },
-  "title_prev": "Gröbner-Shirshov bases for categories∗ L. A. Bokut †",
+  "title_prev": "Gr\u00f6bner-Shirshov bases for categories\u2217 L. A. Bokut \u2020",
   "title_lines": [
-   "Gröbner-Shirshov bases for categories∗",
-   "L. A. Bokut †"
+   "Gr\u00f6bner-Shirshov bases for categories\u2217",
+   "L. A. Bokut \u2020"
   ]
  },
  "toc": [
@@ -41,7 +42,7 @@
   },
   {
    "level": 1,
-   "title": "A short survey on Gröbner-Shirshov bases",
+   "title": "A short survey on Gr\u00f6bner-Shirshov bases",
    "page": 2,
    "source": "outline",
    "number": "2"
@@ -62,7 +63,7 @@
   },
   {
    "level": 1,
-   "title": "Gröbner-Shirshov bases for the simplicial category and the cyclic category",
+   "title": "Gr\u00f6bner-Shirshov bases for the simplicial category and the cyclic category",
    "page": 11,
    "source": "outline",
    "number": "5"
@@ -106,6 +107,41 @@
   "likely_scanned": false,
   "toc_entries": 5,
   "sections": 3,
-  "chars_total": 47037
+  "chars_total": 47037,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 5,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.293,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-001-3-free-categories-and-free-category-partial-alge",
+     "title": "Free categories and free category partial algebras",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-4-composition-diamond-lemma-for-categories",
+     "title": "Composition-Diamond lemma for categories",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.285,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

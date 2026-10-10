@@ -1,0 +1,808 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9909027v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-9909027v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9909027v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/9909027&metadataPrefix=arXiv), submitted 1999-09-04, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-9909027v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math/9909027v1",
+    "content_type": "application/gzip",
+    "sha256": "31cfbe8b62b90cb82bc92a65ecbc172484829c20882c1687eece77449d4535e3",
+    "bytes": 191804,
+    "fetched": "2026-10-10T15:31:07+00:00",
+    "files": [
+      {
+        "path": "source/files/defs.tex",
+        "role": "tex",
+        "sha256": "558d04315ba3c2beefe49c026996aaa87d400981a67d4a58cd0ca54391a329da",
+        "bytes": 18691
+      },
+      {
+        "path": "source/files/pl11.tex",
+        "role": "tex",
+        "sha256": "7cb21464ebae36ea20902dd2d00f0a56c7a80736aeea5a4b5854aca550017d6f",
+        "bytes": 17434
+      },
+      {
+        "path": "source/files/pl2.tex",
+        "role": "tex",
+        "sha256": "dd40a85ceb1fdf03b4e19cf8c805fb5b0140a26fcd65b39cb306ddf489cbc8a5",
+        "bytes": 20562
+      },
+      {
+        "path": "source/files/pl3.tex",
+        "role": "tex",
+        "sha256": "57d9cb4c298186d47d7439d56a6e6ad70ee1a67c36a6f602946089bf09d97d81",
+        "bytes": 20432
+      },
+      {
+        "path": "source/files/pl4.tex",
+        "role": "tex",
+        "sha256": "a1baa42d4f41e20c27f3f967f0a764782bf303fc593ae658830c6077d02ccd12",
+        "bytes": 21427
+      },
+      {
+        "path": "source/files/pl5.tex",
+        "role": "tex",
+        "sha256": "0514b4c8b273c25fd35275416652cbe1ee3b06d867c517257ed73832224b1004",
+        "bytes": 25308
+      },
+      {
+        "path": "source/files/pl6.tex",
+        "role": "tex",
+        "sha256": "805fef6b647e9edee29728a9e3bab85155d103872f7f402ec8384fb7939e5ae4",
+        "bytes": 19057
+      },
+      {
+        "path": "source/files/pl7.tex",
+        "role": "tex",
+        "sha256": "73986f498d47931659758c3d608d16c164f4feb8d82d084f4c5992e7f620d85e",
+        "bytes": 18762
+      },
+      {
+        "path": "source/files/plk1.tex",
+        "role": "tex",
+        "sha256": "a3bb9a913874d2a8e7b69525346009aa976bc3137c75d78bc9cdf737041a8d78",
+        "bytes": 17915
+      },
+      {
+        "path": "source/files/plk2.tex",
+        "role": "tex",
+        "sha256": "8f0abfb990cf863abc619731d02b916e7fe87b9aecc2c12f305ef73e9740a211",
+        "bytes": 18755
+      },
+      {
+        "path": "source/files/plk3.tex",
+        "role": "tex",
+        "sha256": "14e2d1977cd21f3f405a2c4ae15e3e3585999b48e2d4306c6b50f6de60dfc72f",
+        "bytes": 18106
+      },
+      {
+        "path": "source/files/plk4.tex",
+        "role": "tex",
+        "sha256": "442cd6c3ed8df706fad4f8def8c118515511909bb929d959762ec3912622ce6c",
+        "bytes": 20427
+      },
+      {
+        "path": "source/files/plnalg1.tex",
+        "role": "tex",
+        "sha256": "eb573a49bcd43345e6fa8dcb4f8327f4408cb3ef6e31648e1b4d5095651c7714",
+        "bytes": 2006
+      },
+      {
+        "path": "source/files/xfig/pic1.tex",
+        "role": "tex",
+        "sha256": "269160a39213de2f2f44fd3a97a5ecdd9d827ced885d3207531789a47896722a",
+        "bytes": 2044
+      },
+      {
+        "path": "source/files/xfig/pic10.tex",
+        "role": "tex",
+        "sha256": "6420731a8e5d2867b4b85d23e4d465a7d7b7fdd18a45bb588066473fe726a334",
+        "bytes": 1222
+      },
+      {
+        "path": "source/files/xfig/pic100.tex",
+        "role": "tex",
+        "sha256": "e39d5c60128632afc54a350b5bf25d1940891ad9e44facb0a2deaa4f6896cbdd",
+        "bytes": 1153
+      },
+      {
+        "path": "source/files/xfig/pic101.tex",
+        "role": "tex",
+        "sha256": "82a3d53cd89efcf98b270b26ec1d45a136d0a8216146d2c9036d000040e30ac7",
+        "bytes": 1226
+      },
+      {
+        "path": "source/files/xfig/pic102.tex",
+        "role": "tex",
+        "sha256": "380bdbdebe817467662a13655ffdc17aa6cad757bd147d139bede1c9d251a628",
+        "bytes": 1227
+      },
+      {
+        "path": "source/files/xfig/pic103.tex",
+        "role": "tex",
+        "sha256": "dc75e5fa70b5358fe944a18acf4be4bfd11a2ab005de0f741ac767b11fff8441",
+        "bytes": 1563
+      },
+      {
+        "path": "source/files/xfig/pic104.tex",
+        "role": "tex",
+        "sha256": "2840560403b8be779a207293061fd1e8c12ee2c7b30edf9e67204307bdbcffe8",
+        "bytes": 1153
+      },
+      {
+        "path": "source/files/xfig/pic105.tex",
+        "role": "tex",
+        "sha256": "f0c38a837a1b8bc6f4b0bf5221a06b9468a2500e06bab8db7a4b23e279a893d4",
+        "bytes": 1155
+      },
+      {
+        "path": "source/files/xfig/pic106.tex",
+        "role": "tex",
+        "sha256": "935e3c7ef37b5b245ce1e7fd97090adfbed0b5a1991a608b3326d26914da4e39",
+        "bytes": 2636
+      },
+      {
+        "path": "source/files/xfig/pic107.tex",
+        "role": "tex",
+        "sha256": "de087dc75f23e3639f2fd64fe24f9fe59999eec3e6934d1a1d4048aa81e57d01",
+        "bytes": 1147
+      },
+      {
+        "path": "source/files/xfig/pic108.tex",
+        "role": "tex",
+        "sha256": "9bd535386035396af119c4dcb0848f985ad9932053fa4e1ea7bc44e038669abd",
+        "bytes": 1872
+      },
+      {
+        "path": "source/files/xfig/pic109.tex",
+        "role": "tex",
+        "sha256": "ecd3cd2a674798d0f511ebca5bec99906caa5a2c940409f9524ee896b0cfb4d1",
+        "bytes": 1082
+      },
+      {
+        "path": "source/files/xfig/pic11.tex",
+        "role": "tex",
+        "sha256": "2ddfb8db8cec765dd27d1cf64369d40b49d2294d33b43bf38101e566141866dc",
+        "bytes": 1228
+      },
+      {
+        "path": "source/files/xfig/pic110.tex",
+        "role": "tex",
+        "sha256": "f8c068e481395ec69288259cac5c6f1eff270f12bfbefd4b2c21fb4de824c17d",
+        "bytes": 1686
+      },
+      {
+        "path": "source/files/xfig/pic111.tex",
+        "role": "tex",
+        "sha256": "b1977ff047ea9d07bb897ebeffc3b9cd575ce43083db4cfaf3379b7b2f3f2b7f",
+        "bytes": 1797
+      },
+      {
+        "path": "source/files/xfig/pic12.tex",
+        "role": "tex",
+        "sha256": "d16808ce4f5fbdb7bc3d661c5716b3866ade4c83dff574078f996e5f8d43e66f",
+        "bytes": 1220
+      },
+      {
+        "path": "source/files/xfig/pic13.tex",
+        "role": "tex",
+        "sha256": "fe8cc908d11dcb5b25e089fd5d087935cfa0f7409f36d3657b1e68b91ab9122f",
+        "bytes": 1000
+      },
+      {
+        "path": "source/files/xfig/pic14.tex",
+        "role": "tex",
+        "sha256": "5725400f99142ca24adf6e5ae779dd3684d14bf10c6e22a7464acb66263edf40",
+        "bytes": 1072
+      },
+      {
+        "path": "source/files/xfig/pic15.tex",
+        "role": "tex",
+        "sha256": "c7eb8e105585fdfc5ca657180cc96700130307ea6e6a0e62977bcb75e0d5528a",
+        "bytes": 2551
+      },
+      {
+        "path": "source/files/xfig/pic16.tex",
+        "role": "tex",
+        "sha256": "db3841421bb42bad4e306ff75c4ecf81363992cb42a9bc03a0533d01a627811d",
+        "bytes": 924
+      },
+      {
+        "path": "source/files/xfig/pic17.tex",
+        "role": "tex",
+        "sha256": "ffa0fbb9f6f625a65ca0031ec6ba56c69cab65194c6d60e406b7aad65520006d",
+        "bytes": 924
+      },
+      {
+        "path": "source/files/xfig/pic18.tex",
+        "role": "tex",
+        "sha256": "cf058a9e644048256e857cd530313007efbd21ce9fc6a13f4193cad293ef8e66",
+        "bytes": 2758
+      },
+      {
+        "path": "source/files/xfig/pic19.tex",
+        "role": "tex",
+        "sha256": "debe58b8b614c5aa22d6ef6f1940ff6ce61e7e3b46871afaaa2aafc1c249987c",
+        "bytes": 924
+      },
+      {
+        "path": "source/files/xfig/pic2.tex",
+        "role": "tex",
+        "sha256": "a2b44573b60e51ea87b1ed2c2153308de8b1ff8516071882c5bdba9579e81d0b",
+        "bytes": 2725
+      },
+      {
+        "path": "source/files/xfig/pic201.tex",
+        "role": "tex",
+        "sha256": "5908c62522419c573c3edae97222c4540f67a7ff94b69da5f94c940b8109971d",
+        "bytes": 2297
+      },
+      {
+        "path": "source/files/xfig/pic202.tex",
+        "role": "tex",
+        "sha256": "1d92effdf15f5abbf4cb7824457a53c389a942cacad518a83c4646abc57156b8",
+        "bytes": 1447
+      },
+      {
+        "path": "source/files/xfig/pic203.tex",
+        "role": "tex",
+        "sha256": "cc16acd5480ac02a942b2400aead0a018474a2bc47e2247cc2e8bb7514612c3b",
+        "bytes": 1986
+      },
+      {
+        "path": "source/files/xfig/pic204.tex",
+        "role": "tex",
+        "sha256": "4f42aa86ec3866a20e50ed4fb6600d16b22432766aea064133b4d69730305333",
+        "bytes": 1926
+      },
+      {
+        "path": "source/files/xfig/pic205.tex",
+        "role": "tex",
+        "sha256": "85c458f5eff07e196a5124e12177461f95501f6238ce553d9d6cfee7f8beddd3",
+        "bytes": 1438
+      },
+      {
+        "path": "source/files/xfig/pic21.tex",
+        "role": "tex",
+        "sha256": "e67e1e44a10c77eff5a678993117300d5c0875bc2494977edd4411e6cd4870ee",
+        "bytes": 2242
+      },
+      {
+        "path": "source/files/xfig/pic22.tex",
+        "role": "tex",
+        "sha256": "ed376e9ebcc8f3e71804287296683d227f69b99966794fe5a87d6b5487db7dbd",
+        "bytes": 923
+      },
+      {
+        "path": "source/files/xfig/pic23.tex",
+        "role": "tex",
+        "sha256": "8db4fff5daab779b2be8bf818ff53977a662ee2112de82e7415cd4b3c705671b",
+        "bytes": 922
+      },
+      {
+        "path": "source/files/xfig/pic24.tex",
+        "role": "tex",
+        "sha256": "aa464f717aea2fb4626a5c356094cd56d99fccde9b0370cfeba9571f5a293619",
+        "bytes": 924
+      },
+      {
+        "path": "source/files/xfig/pic25.tex",
+        "role": "tex",
+        "sha256": "62c8cdf63987d424d2b3fab7af1101a46b88b2b69ff1fa8d2343abba948685e0",
+        "bytes": 923
+      },
+      {
+        "path": "source/files/xfig/pic26.tex",
+        "role": "tex",
+        "sha256": "f888c389883ad69c429e56481f4824e665337785fa7e2faf14aa1b69da3cdff0",
+        "bytes": 923
+      },
+      {
+        "path": "source/files/xfig/pic27.tex",
+        "role": "tex",
+        "sha256": "918fd246f2ad51c2f5493b25672d1512de4771c0e2d9e25d37e356b877cabe5c",
+        "bytes": 1012
+      },
+      {
+        "path": "source/files/xfig/pic28.tex",
+        "role": "tex",
+        "sha256": "aae3562a758d4d2aebeddee819b9b9ef4c48c857f5088ecaa5b64d01929854f4",
+        "bytes": 923
+      },
+      {
+        "path": "source/files/xfig/pic29.tex",
+        "role": "tex",
+        "sha256": "d0079263425e9bdc978d6c37d0e30b536d71c8a13ec4a672bde0c2f5b13d95f2",
+        "bytes": 923
+      },
+      {
+        "path": "source/files/xfig/pic3.tex",
+        "role": "tex",
+        "sha256": "fe590c550f8fe1665ab5d735deef90bb3157998e44b7906a7eb32022fc23dd4b",
+        "bytes": 1300
+      },
+      {
+        "path": "source/files/xfig/pic30.tex",
+        "role": "tex",
+        "sha256": "5341fb108e572cbeadb7cc00e6200f8fc140b2e5482fde0dd0be2640032e0b2f",
+        "bytes": 1409
+      },
+      {
+        "path": "source/files/xfig/pic31.tex",
+        "role": "tex",
+        "sha256": "238a881a923fe33d49598df050b9b93d149f23a970938d3a783e7452df254bdf",
+        "bytes": 1481
+      },
+      {
+        "path": "source/files/xfig/pic32.tex",
+        "role": "tex",
+        "sha256": "a7db1aa5671c0ad6964c784634ee27206a0abc463fd7bb39c71ae76f7718f6d6",
+        "bytes": 1386
+      },
+      {
+        "path": "source/files/xfig/pic33.tex",
+        "role": "tex",
+        "sha256": "9ce0b3513c4c5e9c403b6092eddc63ba51e39515405af2be1dbea0b966659ea9",
+        "bytes": 1270
+      },
+      {
+        "path": "source/files/xfig/pic34.tex",
+        "role": "tex",
+        "sha256": "94f3b61dc25e5886642f8601cf67c17074a6a71b07e8f011ec59d68d84930723",
+        "bytes": 1620
+      },
+      {
+        "path": "source/files/xfig/pic35.tex",
+        "role": "tex",
+        "sha256": "4fe1089f18efea5491d6c7a849b9ca199d41222eb5660f432a459e7b8d3c60ec",
+        "bytes": 923
+      },
+      {
+        "path": "source/files/xfig/pic36.tex",
+        "role": "tex",
+        "sha256": "1e6c2eb1f40608fd4438abac7bd8c5f9e224100151d25485225bf962d6dc65d4",
+        "bytes": 1146
+      },
+      {
+        "path": "source/files/xfig/pic37.tex",
+        "role": "tex",
+        "sha256": "d6934ef7757e5ad7d5a442e5753c0400becca46de25015ca387cc5d0773d74f8",
+        "bytes": 997
+      },
+      {
+        "path": "source/files/xfig/pic38.tex",
+        "role": "tex",
+        "sha256": "5d7b9cf57a73c00dfccf5cec9a3a3f34a6b57930a78eb67838040527a102ca26",
+        "bytes": 995
+      },
+      {
+        "path": "source/files/xfig/pic39.tex",
+        "role": "tex",
+        "sha256": "090e2c8849166e9b1cc3d7cd7f20377f04559ca151d31707a1707c6dcd2943ae",
+        "bytes": 923
+      },
+      {
+        "path": "source/files/xfig/pic4.tex",
+        "role": "tex",
+        "sha256": "3e7ed0bf44a33892725d0709ad1c164f4574cf43b85f0478606ec393f2270bd4",
+        "bytes": 1296
+      },
+      {
+        "path": "source/files/xfig/pic40.tex",
+        "role": "tex",
+        "sha256": "c63dc897eb60ed300cdf5d969b147877971f43982446a2f44b831af95599fd6c",
+        "bytes": 924
+      },
+      {
+        "path": "source/files/xfig/pic41.tex",
+        "role": "tex",
+        "sha256": "b7053b11036c8ca9b95464fabcbe9cb31a75b8124369fdd523b138a8c82a4b0e",
+        "bytes": 1365
+      },
+      {
+        "path": "source/files/xfig/pic42.tex",
+        "role": "tex",
+        "sha256": "49aa9ce3ad97d59e81a832cd0175516084ac6b605979b0b5a6f74318274117a0",
+        "bytes": 1518
+      },
+      {
+        "path": "source/files/xfig/pic43.tex",
+        "role": "tex",
+        "sha256": "e7a232a96a003eb05aa85aaa6c588f93c474954006dfe6ef2c43379df933f1d4",
+        "bytes": 2300
+      },
+      {
+        "path": "source/files/xfig/pic435.tex",
+        "role": "tex",
+        "sha256": "f861bde96e24e9a5ffc33ef3262ba8713993c46bb85d2923be31172b9b329b9c",
+        "bytes": 1246
+      },
+      {
+        "path": "source/files/xfig/pic44.tex",
+        "role": "tex",
+        "sha256": "5baa8a2046db334126d63515ff75532b0d90bb8e5a6d7abd20fd1b5ec0e3cff7",
+        "bytes": 1722
+      },
+      {
+        "path": "source/files/xfig/pic45.tex",
+        "role": "tex",
+        "sha256": "0a8a2f8f8764e725bfd2ed990ce7bb6f5f1b686e8c32be1e0e544bfda6ceb2a2",
+        "bytes": 1886
+      },
+      {
+        "path": "source/files/xfig/pic46.tex",
+        "role": "tex",
+        "sha256": "3b9dd4ca7eba3b3b18363bf39f1030a67658a762070e2b47dcce68802fc6ca4e",
+        "bytes": 1143
+      },
+      {
+        "path": "source/files/xfig/pic47.tex",
+        "role": "tex",
+        "sha256": "55efe66d6a9e0406289c39bc3b82726626d735a542ca96f802c4b83d2b26b97d",
+        "bytes": 1145
+      },
+      {
+        "path": "source/files/xfig/pic48.tex",
+        "role": "tex",
+        "sha256": "4a4d0a0ca3dfbbffb5bcd66b55af8e3485d56f43222a7a6ebe237daf9cc6f466",
+        "bytes": 1149
+      },
+      {
+        "path": "source/files/xfig/pic49.tex",
+        "role": "tex",
+        "sha256": "5ecd5e7bf64a5dada06f030f2f329dae4a4df42dcff918ab36f9d5a56f9b55c5",
+        "bytes": 924
+      },
+      {
+        "path": "source/files/xfig/pic5.tex",
+        "role": "tex",
+        "sha256": "8ff4ccc9d217b79c254a3c640630ffa25833552738e13b1389c8d91ddd99334c",
+        "bytes": 1070
+      },
+      {
+        "path": "source/files/xfig/pic50.tex",
+        "role": "tex",
+        "sha256": "292b376823516429b8c2ee17518e1a042c27ee437dc378d5e38ef00baefebe09",
+        "bytes": 1005
+      },
+      {
+        "path": "source/files/xfig/pic51.tex",
+        "role": "tex",
+        "sha256": "abef32b968480d6802fbaf8966842ff69c648b8eb7e4da9f1076c2a160bf8eb8",
+        "bytes": 1466
+      },
+      {
+        "path": "source/files/xfig/pic52.tex",
+        "role": "tex",
+        "sha256": "437caa7f460a4c8e54030676d534232482ec8ac100b01d601585647cc3846bcd",
+        "bytes": 1002
+      },
+      {
+        "path": "source/files/xfig/pic53.tex",
+        "role": "tex",
+        "sha256": "fbbaeae5e3662b1b38ad903ab447965ded7f9681517e647d473a93ce55b2c258",
+        "bytes": 1083
+      },
+      {
+        "path": "source/files/xfig/pic54.tex",
+        "role": "tex",
+        "sha256": "e25cc24eea98f207db1d836b5202a6c1199d4098e9f713b70e0bf48a36ae3fba",
+        "bytes": 1550
+      },
+      {
+        "path": "source/files/xfig/pic55.tex",
+        "role": "tex",
+        "sha256": "e0e572bf27900a004211701461fb4d06961d838cd143e34e7d0fcf61e2db6e53",
+        "bytes": 1227
+      },
+      {
+        "path": "source/files/xfig/pic56.tex",
+        "role": "tex",
+        "sha256": "661d21c6f0bc260bb575dc68e3aaf73d7b72f4cbf583e51bd75bf329e5b96fe5",
+        "bytes": 998
+      },
+      {
+        "path": "source/files/xfig/pic57.tex",
+        "role": "tex",
+        "sha256": "65e5775a42c6d04ed9bff446a45caa26e09a38b39771b6823c97ae3d42285986",
+        "bytes": 1294
+      },
+      {
+        "path": "source/files/xfig/pic58.tex",
+        "role": "tex",
+        "sha256": "d21b2790e431901bddc42ad5a05459a8a381fbc8e56c3d158c23711636753a85",
+        "bytes": 998
+      },
+      {
+        "path": "source/files/xfig/pic59.tex",
+        "role": "tex",
+        "sha256": "5370ce40e816c0417cbcccdbd25fd78092122f6ca923c7ffce79f8f0aff545b7",
+        "bytes": 1357
+      },
+      {
+        "path": "source/files/xfig/pic6.tex",
+        "role": "tex",
+        "sha256": "f0902d3975ecd13fa6850e37e0a9361ca1bc7e99b8821668c1cb1d9983981841",
+        "bytes": 1069
+      },
+      {
+        "path": "source/files/xfig/pic60.tex",
+        "role": "tex",
+        "sha256": "a086d1521c77214cbee0894056115794ef75b9cfe0687b4fb848b448a8d7928b",
+        "bytes": 1567
+      },
+      {
+        "path": "source/files/xfig/pic61.tex",
+        "role": "tex",
+        "sha256": "7b548381313c093940249dc11aec16a1f98e267fd40cb3ff1438f80cbbf28486",
+        "bytes": 2018
+      },
+      {
+        "path": "source/files/xfig/pic62.tex",
+        "role": "tex",
+        "sha256": "49aab09562149a4ab4f79dee8eabb7ca264e2eab5909359cb0cd1cc9f1901e12",
+        "bytes": 1146
+      },
+      {
+        "path": "source/files/xfig/pic63.tex",
+        "role": "tex",
+        "sha256": "7f56a2af844a013cc09b3fc93b62a817a660e8841f5a3e2e2a85fad9a933942b",
+        "bytes": 1146
+      },
+      {
+        "path": "source/files/xfig/pic64.tex",
+        "role": "tex",
+        "sha256": "0156270cdc08fb3d6f7e8444d16a908ad1b1e0859a74f4aab4f0f9d5fbd2d744",
+        "bytes": 1523
+      },
+      {
+        "path": "source/files/xfig/pic65.tex",
+        "role": "tex",
+        "sha256": "4a22de691729bf4e94cf0861f78e51959de7482051f6932bd4ff49ed7db330a4",
+        "bytes": 923
+      },
+      {
+        "path": "source/files/xfig/pic66.tex",
+        "role": "tex",
+        "sha256": "f47028a160d517c22bbbbcf08ef984b6e5babdc057e4046f8a3b847db09e4e5f",
+        "bytes": 2664
+      },
+      {
+        "path": "source/files/xfig/pic67.tex",
+        "role": "tex",
+        "sha256": "2350509f4bbf90b1e8b35b842b971b7f2e348a554fc711829cec7695452caea5",
+        "bytes": 1149
+      },
+      {
+        "path": "source/files/xfig/pic68.tex",
+        "role": "tex",
+        "sha256": "97cb26232d5b477137e33329fa5d92ede69b503855b5dae2278a1ca69ce5b17f",
+        "bytes": 998
+      },
+      {
+        "path": "source/files/xfig/pic69.tex",
+        "role": "tex",
+        "sha256": "3b2fac279b27d1cf4a858bab833010204f37b3760fd2f7c906e129ef37810e7d",
+        "bytes": 997
+      },
+      {
+        "path": "source/files/xfig/pic7.tex",
+        "role": "tex",
+        "sha256": "64b8ad8b45a94880653dfc08c0be68922063c5eeecf2af1f4ecc82335d762dd4",
+        "bytes": 2610
+      },
+      {
+        "path": "source/files/xfig/pic70.tex",
+        "role": "tex",
+        "sha256": "2a42b7a0f43d3d819fffbe97355cf8a394aa631c1a85d1ccc3671503e5ac830e",
+        "bytes": 1514
+      },
+      {
+        "path": "source/files/xfig/pic71.tex",
+        "role": "tex",
+        "sha256": "28d89e349dd4f161d69f407bc990b3c31e55a2d6af5a24f4e60dca03059274eb",
+        "bytes": 1617
+      },
+      {
+        "path": "source/files/xfig/pic72.tex",
+        "role": "tex",
+        "sha256": "b551b0bf29cf0ba6cf86f756371ef7a9fd3abc28b8c4a6117f9608793d140ed5",
+        "bytes": 1073
+      },
+      {
+        "path": "source/files/xfig/pic73.tex",
+        "role": "tex",
+        "sha256": "275e14a00e19a8556e624d68598fa5186b3538555d0b99ded4b69bed368c0c37",
+        "bytes": 1950
+      },
+      {
+        "path": "source/files/xfig/pic74.tex",
+        "role": "tex",
+        "sha256": "570a25e85b6e76defa5b9aa7706f20349f50610e672f2b5be9f7957fa49fd5c6",
+        "bytes": 1462
+      },
+      {
+        "path": "source/files/xfig/pic75.tex",
+        "role": "tex",
+        "sha256": "04c576b3a89ff2fc6c633a71d44c7852108206be7a5c475d224143ad28138be0",
+        "bytes": 1232
+      },
+      {
+        "path": "source/files/xfig/pic76.tex",
+        "role": "tex",
+        "sha256": "7e76d209bc7e35225cc8c9096cd3697d88f478f32230ccf91cb37c1c62832b60",
+        "bytes": 2370
+      },
+      {
+        "path": "source/files/xfig/pic77.tex",
+        "role": "tex",
+        "sha256": "fa1b9023f87d2c1bcb160f446362e90566b6617c0c2a39bfd19506e6decaafbf",
+        "bytes": 924
+      },
+      {
+        "path": "source/files/xfig/pic78.tex",
+        "role": "tex",
+        "sha256": "99e63237289342567ff685abcc89236fee00606fd3213077f26aad830a3b2c74",
+        "bytes": 924
+      },
+      {
+        "path": "source/files/xfig/pic79.tex",
+        "role": "tex",
+        "sha256": "d057e60b301438653f7f1f18622d98490e602527b206622c3e2381ab840496c4",
+        "bytes": 1391
+      },
+      {
+        "path": "source/files/xfig/pic8.tex",
+        "role": "tex",
+        "sha256": "d21ab4d0cd33ebb6471f6d66adb2c9b8fb05ce61447d6b14fe0490af26b94ed3",
+        "bytes": 923
+      },
+      {
+        "path": "source/files/xfig/pic80.tex",
+        "role": "tex",
+        "sha256": "dd4464f3e7a65cb238980ebd43f90d2a03adf064b708f177344fb9e44ccc52af",
+        "bytes": 1466
+      },
+      {
+        "path": "source/files/xfig/pic81.tex",
+        "role": "tex",
+        "sha256": "645a744bc0bb9b4330b170ab5e5bc6916189bafec61e651a935cb90dbfb9ccf6",
+        "bytes": 1436
+      },
+      {
+        "path": "source/files/xfig/pic82.tex",
+        "role": "tex",
+        "sha256": "21d8281e551d3807afa705dc770d1c462231775237e59ef45ce5bb0d89080112",
+        "bytes": 2371
+      },
+      {
+        "path": "source/files/xfig/pic83.tex",
+        "role": "tex",
+        "sha256": "8b182b7c060c10b1816481c96aafde6ad88d99108339c14044fb8f419a041d02",
+        "bytes": 3162
+      },
+      {
+        "path": "source/files/xfig/pic84.tex",
+        "role": "tex",
+        "sha256": "d1b1264543194d523043f8e04011255d67a00721d3383ddcb92dda1ccf9d4a16",
+        "bytes": 1288
+      },
+      {
+        "path": "source/files/xfig/pic85.tex",
+        "role": "tex",
+        "sha256": "656ff3b7e99dfd9f3f8c25fb144a1c901a511e6d25d7e709108afe750e27f468",
+        "bytes": 1676
+      },
+      {
+        "path": "source/files/xfig/pic86.tex",
+        "role": "tex",
+        "sha256": "5e05fbccad088d7534f1b9b3505471bc973bf094480e6eb53d0956058664fc67",
+        "bytes": 1674
+      },
+      {
+        "path": "source/files/xfig/pic87.tex",
+        "role": "tex",
+        "sha256": "401e1762038851c7726bec778c4869ad50b090b3feffd52bf331c2fc83ece7cb",
+        "bytes": 1298
+      },
+      {
+        "path": "source/files/xfig/pic88.tex",
+        "role": "tex",
+        "sha256": "157d1e181e9f5a022eddafa5de966bf6b9c295ace6c846a70dd339faef798349",
+        "bytes": 1374
+      },
+      {
+        "path": "source/files/xfig/pic89.tex",
+        "role": "tex",
+        "sha256": "8a64c26d543e42e902a3c3137313d9366796e7a2ba73aaee1e4ef42f5144dc4f",
+        "bytes": 1298
+      },
+      {
+        "path": "source/files/xfig/pic9.tex",
+        "role": "tex",
+        "sha256": "c55f7fb3ada512aee12491e2e34364d7d0dbc2307e2f8834275ab013faf9f6c5",
+        "bytes": 1598
+      },
+      {
+        "path": "source/files/xfig/pic90.tex",
+        "role": "tex",
+        "sha256": "69e25c64278464230e530493e32dd1251f75dd815c9dd06001a55c532e68e2c0",
+        "bytes": 1298
+      },
+      {
+        "path": "source/files/xfig/pic91.tex",
+        "role": "tex",
+        "sha256": "27fdda7edd4c72bedfd83c0c01cbbf65acf4e8550178c3f751f0496c9fab0836",
+        "bytes": 1374
+      },
+      {
+        "path": "source/files/xfig/pic92.tex",
+        "role": "tex",
+        "sha256": "9ad40162f85487ff1e78237247c7db3e0fe3b778e4e5ca66fae949691036e0a9",
+        "bytes": 1216
+      },
+      {
+        "path": "source/files/xfig/pic93.tex",
+        "role": "tex",
+        "sha256": "7ee586bfbb1a1eca886662880adfbf7985248d44d05dcee43dd7cd1b61360951",
+        "bytes": 1083
+      },
+      {
+        "path": "source/files/xfig/pic94.tex",
+        "role": "tex",
+        "sha256": "8ed254dd0b2684f4dffd8d553ade67a45aaeff97b7deabc511bb2242d2fc124e",
+        "bytes": 1129
+      },
+      {
+        "path": "source/files/xfig/pic95.tex",
+        "role": "tex",
+        "sha256": "9928bef9b69e0c6df2aa3e26ab0ead3328cdd288997aac0389b43e2f07f552dd",
+        "bytes": 1076
+      },
+      {
+        "path": "source/files/xfig/pic96.tex",
+        "role": "tex",
+        "sha256": "5bc2f7a662d787f5cf6307370046226566a45b603316f85ca792e208133f806e",
+        "bytes": 3529
+      },
+      {
+        "path": "source/files/xfig/pic97.tex",
+        "role": "tex",
+        "sha256": "b2e508c9834548340d8176d5ed27757fc2038cbb076cd38ff41f55b0160cff8a",
+        "bytes": 1965
+      },
+      {
+        "path": "source/files/xfig/pic98.tex",
+        "role": "tex",
+        "sha256": "5f46fab4818aa8468a1c0f516b937db7f6b4e718e8921d42a20e26306919f67f",
+        "bytes": 1164
+      },
+      {
+        "path": "source/files/xfig/pic99.tex",
+        "role": "tex",
+        "sha256": "d371e0bf16fe2872f6cb0b8f8dc8512ea8ba3d47d0f676bdf42794d4e5a8658b",
+        "bytes": 1167
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

@@ -7,214 +7,173 @@ section_number: 3.1
 pages: 81-86
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
+text_source: latex
+latex_prose_ratio: 0.972
+latex_coverage_ratio: 0.811
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
 ---
-We deﬁne hyperbolic manifolds and prove a crucial theorem, that says that
-every complete hyperbolic manifold is isometric to a quotientHn/Γ for some
-discrete group Γ< Isom(Hn) acting freely onHn.
-3.1.1. Hyperbolic, ﬂat, and elliptic manifolds.We introduce three im-
-portant classes of Riemannian manifolds.
-Deﬁnition 3.1.1. Ahyperbolic (resp. ﬂator elliptic) manifold is a con-
-nected Riemanniann-manifold that may be covered by open sets isometric to
-open sets ofHn (resp. Rn oSn).
-A hyperbolic (resp. ﬂat or elliptic) manifold has constant sectional curva-
-ture−1 (resp. 0 or +1). We show that the modelHn is indeed unique.
-Theorem 3.1.2. Every complete simply connected hyperbolicn-manifold
-M is isometric toHn.
-Proof. Pick a pointx∈M and choose an isometryD :U→V between an
-open ballU containingx and an open ballV ⊂ Hn. We show thatD extends
-(uniquely) to an isometryD :M→ Hn.
-For everyy ∈ M, choose an arcα: [0, 1]→ M from x to y. By com-
-pactness there is a partition 0 = t0 < t1 < ... < tk = 1 and for each
-73
-74 3. HYPERBOLIC MANIFOLDS
-i = 0,...,k − 1 an isometryDi :Ui→Vi from an open ballUi inM containing
-α([ti,ti+1]) to an open ballVi⊂ Hn.
-We may suppose thatU0⊂U and D0 =D|U0. Inductively oni, we now
-modify Di so thatDi−1 and Di coincide on the componentC of Ui−1∩Ui
-containingα(ti ). To do so, note that
-Di−1◦D−1
-i :Di (C)−→Di−1(C)
-is an isometry of open connected sets inHn and hence extends to an isometry
-of Hn. Then it makes sense to composeDi withDi−1◦D−1
-i , so that the new
-mapsDi−1 andDi coincide onC. Finally, we deﬁneD(y ) =Dk−1(y ).
-The proof thatD(y ) is well-deﬁned is a standard argument. First, it is
-easy to check that diﬀerent partitions0 = t0 < ... < tk = 1 do not vary
-D(y ), just by considering a common reﬁnement. Then we consider another
-pathβ connectingx toy. SinceM is simply-connected, there is a homotopy
-connecting α and β. The image of the homotopy is compact and is hence
-covered by ﬁnitely many open ballsUi isometric to open ballsVi⊂ Hn via some
-mapsDi. By the Lebesgue number theorem, there is aN >0 such that in the
-grid in [0, 1]× [0, 1] of 1
-N× 1
-N squares, the image of every square is entirely
-contained in at least oneUi. We can now modify as above the isometriesDi
-inductively on the grid, starting from the bottom-left square, so that they all
-glue up and show thatD(y ) does not depend onα orβ.
-The resulting mapD :M→ Hn is a local isometry by construction. Since
-M is complete, the mapD is a covering by Proposition 1.2.19. SinceHn is
-simply connected, the coveringD is a homeomorphism andD is actually an
-isometry. □
-The isometryD :M→ Hn constructed in the proof is called adeveloping
-map. The same proof shows that every complete simply connected ﬂat (or
-elliptic)n-manifold is isometric toRn (orSn).
-3.1.2. Complete hyperbolic manifolds.We have determined the unique
-complete simply connected hyperbolicn-manifold, and we now look at com-
-plete hyperbolic manifolds with arbitrary fundamental group. We ﬁrst note
-that if Γ < Isom(Hn) is a group of isometries that acts freely and properly
-discontinuously on Hn, the quotient manifoldHn/Γ has a natural Riemannian
-structure that promotes the covering
-π : Hn−→ Hn/Γ
-to a local isometry, see Proposition 1.5.9. The quotientHn/Γ is a complete
-hyperbolic manifold. We now show that every complete hyperbolic manifold is
-realised in this way:
-Proposition 3.1.3.Every complete hyperbolicn-manifoldM is isometric to
-Hn/Γ for some subgroupΓ< Isom(Hn) acting freely and properly discontinu-
-ously.
-3.1. DISCRETE GROUPS OF ISOMETRIES 75
-Proof. The universal cover ofM inherits a Riemannian structure that is
-complete (by Proposition 1.2.19), hyperbolic, and simply connected: hence
-it is isometric toHn by Theorem 3.1.2. The deck transformationsΓ of the
-covering Hn → M are necessarily locally isometries, hence isometries. We
-conclude thatM = Hn/Γ and Γ acts freely and properly discontinuously using
-Proposition 1.5.1. □
-Note that Γ is isomorphic to the fundamental groupπ1(M).
-Remark 3.1.4. A group Γ < Isom(Hn) acts freely if and only if it does
-not contain elliptic isometries: that is, every non-trivial isometry inΓ is either
-hyperbolic or parabolic.
-Note also thatΓ acts properly discontinuously if and only if it is discrete,
-see Proposition 1.5.8.
-Remark 3.1.5. The same proofs show that every complete ﬂat or spherical
-n-manifoldisisometricto Rn/Γ orSn/Γ forsomediscretegroup Γofisometries
-acting freely onRn orSn.
-Corollary 3.1.6.There is a natural 1-1 correspondence
-{ complete hyperbolic
-manifoldsM up to isometry
-}
-←→
-
-
-
-discrete subgroups Γ < Isom(Hn)
-without elliptics
-up to conjugation
-
-
-
-Proof. When passing from the complete hyperbolic manifoldM to the
-group Γ, the only choice we made is an isometry between the universal cover
-ofM and Hn. Diﬀerent choices produce conjugate groupsΓ. □
-3.1.3. Discrete groups. We investigate some basic properties of discrete
-groups Γ of isometries ofHn.
-Exercise 3.1.7. IfΓ< Isom(Hn) is discrete then it is countable.
-Note that Γ is not necessarily ﬁnitely generated. We denote byΓp < Γ
-the stabiliser of a pointp∈ Hn.
-Proposition 3.1.8. Let Γ< Isom(Hn) be discrete andp∈ Hn be a point.
-The stabiliser Γp is ﬁnite and the orbitΓ(p) ={g(p)|g∈ Γ} is discrete.
-Proof. Both are obvious consequence of the fact that Γ acts properly
-discontinuously. □
-Of course Γ acts freely onHn if and only ifΓp is trivial for allp∈ Hn. A
-set of subspaces inHn is locally ﬁniteif every compact subset inHn intersects
-only ﬁnitely many of them.
-Proposition 3.1.9.Let Γ< Isom(Hn) be discrete. The pointsp∈ Hn with
-trivial stabiliser Γp form an open dense set inHn.
-76 3. HYPERBOLIC MANIFOLDS
-Proof. The ﬁxed-points setFix(g) of a non-trivial isometryg is a proper
-subspace ofHn. The subspacesFix(g) withg∈ Γ are locally ﬁnite: if inﬁnitely
-many of them intersect a compact set they accumulate andΓ does not act
-properly discontinuously. The complement of a locally ﬁnite set of proper
-subspaces is open and dense. □
-Recall that a grouphas no torsionif every non-trivial element has inﬁnite
-order.
-Proposition 3.1.10. A discrete group Γ < Isom(Hn) acts freely on Hn if
-and only if it has no torsion.
-Proof. ByProposition2.4.6parabolicandhyperbolicelementshaveinﬁnite
-order. On the other hand, an elliptic elementg∈ Γ has ﬁnite order sinceΓp
-is ﬁnite forp∈ Fix(g). □
-Corollary 3.1.11.The fundamental group of a complete hyperbolic mani-
-fold has no torsion.
-It is now time to exhibit some examples. Recall thatH2 is the half-plane
-model, see Section 2.3.
-Example 3.1.12. Themodular group
-Γ = PSL2(Z)< PSL2(R) = Isom +(H2)
-consists of all matrices in PSL2(R) having integer entries and is clearly a
-discrete subgroup. It does not act freely onH2, however: the matrix
-( 0 1
-−1 0
-)
-represents the elliptic transformationz↦→− 1
-z with ﬁxed pointi.
-3.1.4. Coverings. We now make a simple but crucial observation: ifΓ<
-Isom(Hn) acts freely and properly discontinuously, then also every subgroup
-Γ′< Γ does; we get a manifolds covering
-Hn/Γ′−→ Hn/Γ
-whose degreed is precisely the index ofΓ′ in Γ. Recall from Proposition 1.2.20
-that we get
-Vol
-(
-Hn/Γ′
-)
-=d· Vol
-(
-Hn/Γ
-)
-where some of the terms in the formula may be inﬁnite. Moreover, every
-covering of a hyperbolic completeM = Hn/Γ is constructed in this way: there
-is a nice bijective correspondence
-{
-coverings of M
-}
-←→
-{
-subgroups of Γ
-}
-.
-This holds of course also for ﬂat and spherical manifolds.
-3.1. DISCRETE GROUPS OF ISOMETRIES 77
-3.1.5. Congruence subgroups. We can now exhibit a family of two-
-dimensional hyperbolic manifolds.
-Pick an integerm> 2. Let SL2(Z/mZ) be the group of2× 2 matrices
-with coeﬃcients inZ/mZ and determinant 1. We deﬁne the quotient
-PSL2(Z/mZ) = SL 2(Z/mZ)/{±I}.
-The reduction modulom homomorphism Z→ Z/mZ induces the group homo-
-morphisms SL2(Z)→ SL2(Z/mZ) and
-PSL2(Z)−→ PSL2(Z/mZ).
-The kernel of this homomorphism is theprincipal congruence subgroupΓ(m)
-of PSL2(Z). It is clearly discrete, since PSL2(Z) is. It has ﬁnite index in
-PSL2(Z) because PSL2(Z/mZ) is ﬁnite.
-Proposition 3.1.13. Ifm> 4 the group Γ(m) acts freely onH2.
-Proof. An elementA∈ Γ(m) is a matrix
-(a b
-c d
-)
-congruent to
-(1 0
-0 1
-)
-modulo
-m. In particulara +d is congruent to 2 modulom, and hence is not−1, 0, 1.
-ThereforeA is never elliptic. □
-The quotient H2/Γ(m) is a hyperbolic surface. We will construct many
-hyperbolic surfaces in Section 6.2 via some more geometric methods.
-3.1.6. Selberg’s lemma.The discrete groupΓ = PSL2(Z) does not act
-freely onH2, but its ﬁnite-index normal subgroupΓ(m)does as soon asm> 4.
-Is this the instance of a more general principle? Yes, it is.
-Proposition 3.1.14.Every ﬁnitely generated discrete groupΓ< Isom(Hn)
-contains a ﬁnite-index normal subgroupΓ′◁ Γ that acts freely onHn.
-Proof. The groupIsom(Hn) is isomorphic toO+(n, 1)< GL(n + 1, C), so
-Selberg’s Lemma 1.4.19 applies toΓ, and it furnishes a ﬁnite-index torsion-free
-normal subgroup Γ′◁ Γ. This subgroup acts freely by Proposition 3.1.10.□
-Every ﬁnitely generated discrete groupΓ< Isom(Hn) contains at least one
-ﬁnite-index subgroup that acts freely. But how many such subgroups does it
-contain? Quite a lot, in fact.
-Proposition 3.1.15.Every ﬁnitely generated discrete groupΓ< Isom(Hn)
-is residually ﬁnite.
-Proof. See Lemma 1.4.20. □
-The following corollary shows that there is an abundance of torsion-free
-subgroups. Although algebraic in nature, it has some remarkable geometric
-consequences, that will be revealed soon in Section 4.3.5.
-Corollary 3.1.16.Let Γ< Isom(Hn)be discrete and ﬁnitely generated. For
-every non-trivialg∈ Γ there is a ﬁnite-index normal subgroupΓ′◁ Γ that acts
-freely on Hn and does not containg.
-78 3. HYPERBOLIC MANIFOLDS
+We define hyperbolic manifolds and prove a crucial theorem, that says that every complete hyperbolic manifold is isometric to a quotient $\matH^n/_\Gamma$ for some discrete group $\Gamma <\Iso(\matH^n)$ acting freely on $\matH^n$.
+
+\subsection{Hyperbolic, flat, and elliptic manifolds}
+We introduce three important classes of Riemannian manifolds.
+\index{hyperbolic manifold} \index{flat manifold} \index{elliptic manifold}
+
+\begin{defn} A \emph{hyperbolic} (resp.~\emph{flat} or \emph{elliptic}) \emph{manifold} is a connected Riemannian $n$-manifold that may be covered by open sets isometric to open sets of $\matH^n$ (resp.~$\matR^n$ o $S^n$). 
+\end{defn}
+
+A hyperbolic (resp.~flat or elliptic) manifold has constant sectional curvature $-1$ (resp.~$0$ or $+1$). We show that the model $\matH^n$ is indeed unique.
+
+
+\begin{teo} \label{simply:teo}
+Every complete simply connected hyperbolic $n$-manifold $M$ is isometric to $\matH^n$.
+\end{teo}
+\begin{proof}
+Pick a point $x\in M$ and choose an isometry $D\colon U \to V$ between an open ball $U$ containing $x$ and an open ball $V\subset \matH^n$. 
+We show that $D$ extends (uniquely) to an isometry $D\colon M\to\matH^n$. 
+
+For every $y \in M$, choose an arc $\alpha\colon [0,1]\to M$ from $x$ to $y$. By compactness there is a partition $0=t_0 < t_1 < \ldots < t_k =1$ and for each $i=0,\ldots, k-1$ an isometry $D_i\colon U_i \to V_i$ from an open ball $U_i$ in $M$ containing $\alpha([t_i,t_{i+1}])$ to an open ball $V_i\subset \matH^n$. 
+
+We may suppose that $U_0 \subset U$ and $D_0 = D|_{U_0}$. Inductively on $i$, we now modify $D_i$ so that $D_{i-1}$ and $D_i$ coincide on the component $C$ of $U_{i-1}\cap U_i$ containing $\alpha(t_i)$. To do so, note that
+$$D_{i-1}\circ D_i^{-1}\colon D_i(C) \longrightarrow D_{i-1}(C)$$
+is an isometry of open connected sets in $\matH^n$ and hence extends to an isometry of $\matH^n$. Then it makes sense to compose $D_i$ with $D_{i-1}\circ D_i^{-1}$, so that the new maps $D_{i-1}$ and $D_i$ coincide on $C$. Finally, we define $D(y) = D_{k-1}(y)$.
+
+The proof that $D(y)$ is well-defined is a standard argument. First, it is easy to check that different partitions $0=t_0 <\ldots <t_k=1$ do not vary $D(y)$, just by considering a common refinement. Then we consider another path $\beta$ connecting $x$ to $y$. Since $M$ is simply-connected, there is a homotopy connecting $\alpha$ and $\beta$. The image of the homotopy is compact and is hence covered by finitely many open balls $U_i$ isometric to open balls $V_i\subset \matH^n$ via some maps $D_i$. By the Lebesgue number theorem, there is a $N>0$ such that in the grid in $[0,1]\times [0,1]$ of $\frac 1N \times \frac 1N$ squares, the image of every square is entirely contained in at least one $U_i$. We can now modify as above the isometries $D_i$ inductively on the grid, starting from the bottom-left square, so that they all glue up and show that $D(y)$ does not depend on $\alpha$ or $\beta$.
+
+The resulting map $D\colon M \to \matH^n$ is a local isometry by construction. Since $M$ is complete, the map $D$ is a covering by Proposition \ref{local:isometry:prop}. Since $\matH^n$ is simply connected, the covering $D$ is a homeomorphism and $D$ is actually an isometry.
+\end{proof}
+
+The isometry $D\colon M \to \matH^n$ constructed in the proof is called a \emph{developing map}.
+The same proof shows that every complete simply connected flat (or elliptic) $n$-manifold is isometric to $\matR^n$ (or $S^n$). \index{developing map}
+
+\subsection{Complete hyperbolic manifolds}
+We have determined the unique complete simply connected hyperbolic $n$-manifold, and we now look at complete hyperbolic manifolds with arbitrary fundamental group. We first note that if $\Gamma < \Iso(\matH^n)$ is a group of isometries that acts freely and properly discontinuously on $\matH^n$, the quotient manifold $\matH^n/_\Gamma$ has a natural Riemannian structure that promotes the covering
+$$\pi\colon\matH^n \longrightarrow \matH^n/_\Gamma$$
+to a local isometry, see Proposition \ref{quotient:prop}. The quotient $\matH^n/_\Gamma$ is a complete hyperbolic manifold. 
+We now show that every complete hyperbolic manifold is realised in this way:
+
+\begin{prop} \label{corto:prop}
+Every complete hyperbolic $n$-manifold $M$ is isometric to $\matH^n/_\Gamma$ for some subgroup $\Gamma<\Iso(\matH^n)$ acting freely and properly discontinuously.
+\end{prop}
+\begin{proof}
+The universal cover of $M$ inherits a Riemannian structure that is complete (by Proposition \ref{local:isometry:prop}), hyperbolic, and simply connected: hence it is isometric to $\matH^n$ by Theorem \ref{simply:teo}. The deck transformations $\Gamma$ of the covering $\matH^n\to M$ are necessarily locally isometries, hence isometries. We conclude that $M=\matH^n/_\Gamma$ and $\Gamma$ acts freely and properly discontinuously using Proposition \ref{equivalent:prop}.
+\end{proof}
+
+Note that $\Gamma$ is isomorphic to the fundamental group $\pi_1(M)$.
+
+\begin{oss}
+A group $\Gamma<\Iso(\matH^n)$ acts freely if and only if it does not contain elliptic isometries: that is, every non-trivial isometry in $\Gamma$ is either hyperbolic or parabolic.
+\end{oss}
+Note also that $\Gamma$ acts properly discontinuously if and only if it is discrete, see Proposition \ref{iff:discrete:prop}. 
+
+\begin{oss}
+The same proofs show that every complete flat or spherical $n$-manifold is isometric to $\matR^n/_\Gamma$ or $S^n/_\Gamma$ for some discrete group $\Gamma$ of isometries acting freely on $\matR^n$ or $S^n$. 
+\end{oss}
+
+\begin{cor} There is a natural 1-1 correspondence
+$$\left\{\!
+\begin{array}{c}{\rm complete\ hyperbolic} \\ {\rm manifolds\ } M {\rm\ up\ to\ isometry}\end{array}\!\right\} \longleftrightarrow
+\left\{\!
+\begin{array}{c}{\rm discrete\ subgroups\ } \Gamma < \Iso(\matH^n) \\ {\rm without\ elliptics} \\ {\rm up\ to\ conjugation}\end{array}\!\right\}$$
+\end{cor}
+\begin{proof}
+When passing from the complete hyperbolic manifold $M$ to the group $\Gamma$, the only choice we made is an isometry between the universal cover of $M$ and $\matH^n$. Different choices produce conjugate groups $\Gamma$.
+\end{proof}
+
+\subsection{Discrete groups}
+We investigate some basic properties of discrete groups $\Gamma$ of isometries of $\matH^n$.
+
+\begin{ex} If $\Gamma<\Iso(\matH^n)$ is discrete then it is countable.
+\end{ex}
+
+Note that $\Gamma$ is not necessarily finitely generated. We denote by $\Gamma_p < \Gamma$ the stabiliser of a point $p\in \matH^n$.
+
+\begin{prop} \label{discrete:prop}
+Let $\Gamma <\Iso(\matH^n)$ be discrete and $p\in\matH^n$ be a point. The stabiliser $\Gamma_p$ is finite and the orbit $\Gamma(p) = \{g(p)\ |\ g\in \Gamma\}$ is discrete.
+\end{prop}
+\begin{proof}
+Both are obvious consequence of the fact that $\Gamma$
+acts properly discontinuously.
+\end{proof}
+
+Of course $\Gamma$ acts freely on $\matH^n$ if and only if $\Gamma_p$ is trivial for all $p\in\matH^n$. A set of subspaces in $\matH^n$ is \emph{locally finite} if every compact subset in $\matH^n$ intersects only finitely many of them.
+
+\begin{prop} \label{dense:prop}
+Let $\Gamma<\Iso(\matH^n)$ be discrete. The points $p\in\matH^n$ with trivial stabiliser $\Gamma_p$ form an open dense set in $\matH^n$.
+\end{prop}
+\begin{proof}
+The fixed-points set $\Fix(g)$ of a non-trivial isometry $g$ is a proper subspace of $\matH^n$. The subspaces $\Fix(g)$ with $g\in\Gamma$ are locally finite: if infinitely many of them intersect a compact set they accumulate and $\Gamma$ does not act properly discontinuously. The complement of a locally finite set of proper subspaces is open and dense.
+\end{proof}
+
+Recall that a group \emph{has no torsion} if every non-trivial element has infinite order.
+
+\begin{prop} \label{no:torsion:prop}
+A discrete group $\Gamma < \Iso(\matH^n)$ acts freely on $\matH^n$ if and only if it has no torsion.
+\end{prop}
+\begin{proof}
+By Proposition \ref{iterate:prop} parabolic and hyperbolic elements have infinite order. On the other hand, an elliptic element $g\in\Gamma$ has finite order since $\Gamma_p$ is finite for $p\in\Fix(g)$.
+\end{proof}
+
+\begin{cor}
+The fundamental group of a complete hyperbolic manifold has no torsion.
+\end{cor}
+
+It is now time to exhibit some examples. Recall that $H^2$ is the half-plane model, see Section \ref{isometry:2:3:section}.
+
+\begin{example}
+The \emph{modular group} 
+$$\Gamma = \PSLZ < \PSLR = \Iso^+(H^2)$$ 
+consists of all matrices in $\PSLR$ having integer entries and is clearly a discrete subgroup. It does not act freely on $H^2$, however: the matrix $\matr 01{-1}0$ represents the elliptic transformation $z\mapsto -\frac 1z$ with fixed point $i$. \index{modular group}
+\end{example} 
+
+\subsection{Coverings}
+We now make a simple but crucial observation: if $\Gamma < \Iso(\matH^n)$ acts freely and properly discontinuously, then also every subgroup $\Gamma' < \Gamma$ does; we get a manifolds covering
+$$\matH^n/_{\Gamma'} \longrightarrow \matH^n/_\Gamma$$
+whose degree $d$ is precisely the index of $\Gamma'$ in $\Gamma$.  Recall from Proposition \ref{volume:covering:prop} that we get
+$$\Vol\big(\matH^n/_{\Gamma'}\big) = d \cdot \Vol\big(\matH^n/_{\Gamma}\big)$$
+where some of the terms in the formula may be infinite. Moreover, every covering of a hyperbolic complete $M= \matH^n/_\Gamma$ is constructed in this way: there is a nice bijective correspondence
+$$\big\{{\rm coverings\ of\ }M \big\} \longleftrightarrow
+\big\{{\rm subgroups\ of\ }\Gamma \big\} .$$
+This holds of course also for flat and spherical manifolds.
+
+\subsection{Congruence subgroups}
+We can now exhibit a family of two-dimensional hyperbolic manifolds. 
+
+Pick an integer $m\geqslant 2$. Let $\SL_2(\matZ/_{m\matZ})$ be the group of $2\times 2$ matrices with coefficients in $\matZ/_{m\matZ}$ and determinant 1. We define the quotient 
+$$\matP\SL_2(\matZ/_{m\matZ}) = \SL_2(\matZ/_{m\matZ})/_{\{ \pm I\}}.$$
+The reduction modulo $m$ homomorphism $\matZ \to \matZ/_{m\matZ}$ induces the group homomorphisms $\SL_2(\matZ) \to \SL_2(\matZ/_{m\matZ})$ and 
+$$\PSLZ \longrightarrow \matP\SL_2(\matZ/_{m\matZ}).$$
+The kernel of this homomorphism is the \emph{principal congruence subgroup} $\Gamma(m)$ of $\PSLZ$. It is clearly discrete, since $\PSLZ$ is. It has finite index in $\PSLZ$ because $\matP\SL_2(\matZ/_{m\matZ})$ is finite. 
+\index{principal congruence subgroup}
+\begin{prop}
+If $m\geqslant 4$ the group $\Gamma(m)$ acts freely on $H^2$.
+\end{prop}
+\begin{proof}
+An element $A\in\Gamma(m)$ is a matrix $\matr abcd$ congruent to $\matr 1001$ modulo $m$. In particular $a+d$ is congruent to 2 modulo $m$, and hence is not $-1, 0, 1$. Therefore $A$ is never elliptic. 
+\end{proof}
+
+The quotient $\matH^2/_{\Gamma(m)}$ is a hyperbolic surface. We will construct many hyperbolic surfaces in Section \ref{surface:geometrisation:section} via some more geometric methods.
+
+\subsection{Selberg's lemma}
+The discrete group $\Gamma = \PSLZ$ does not act freely on $H^2$, but its finite-index normal subgroup $\Gamma(m)$ does as soon as $m\geqslant 4$. Is this the instance of a more general principle? Yes, it is. \index{Selberg lemma}
+
+\begin{prop} \label{Selberg:prop}
+Every finitely generated discrete group $\Gamma < \Iso(\matH^n)$ contains a finite-index normal subgroup $\Gamma'\triangleleft \Gamma$ that acts freely on $\matH^n$.
+\end{prop}
+\begin{proof}
+The group $\Iso(\matH^n)$ is isomorphic to $O^+(n,1) < \GL(n+1,\matC)$, so Selberg's Lemma \ref{Selberg:lemma} applies to $\Gamma$, and it furnishes a finite-index torsion-free normal subgroup $\Gamma'\triangleleft \Gamma$. This subgroup acts freely by Proposition \ref{no:torsion:prop}.
+\end{proof}
+
+Every finitely generated discrete group $\Gamma < \Iso(\matH^n)$ contains at least one finite-index subgroup that acts freely. But how many such subgroups does it contain? Quite a lot, in fact.
+
+\begin{prop} \label{FG:RF:prop}
+Every finitely generated discrete group $\Gamma<\Iso(\matH^n)$ is residually finite.
+\end{prop}
+\begin{proof}
+See Lemma \ref{RF:lemma}.
+\end{proof}
+
+The following corollary shows that there is an abundance of torsion-free subgroups. Although algebraic in nature, it has some remarkable geometric consequences, that will be revealed soon in Section \ref{finite:covers:subsection}.
+
+\begin{cor}
+Let $\Gamma < \Iso(\matH^n)$ be discrete and finitely generated. For every non-trivial $g \in \Gamma$ there is a finite-index normal subgroup $\Gamma'\triangleleft \Gamma$ that acts freely on $\matH^n$ and does not contain $g$.
+\end{cor}

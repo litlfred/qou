@@ -7,64 +7,55 @@ section_number: 5
 pages: 14-15
 source_pdf: 0707.2003v2.pdf
 source_sha256: 0b8fe37aabeee412
+text_source: latex
+latex_prose_ratio: 0.836
+latex_coverage_ratio: 0.968
 doc_brief: "A geometric model for Hochschild homology of Soergel bimodules BEN WEBSTER GEORDIE WILLIAMSON School of Mathematics Mathematisches Institut Institute for Advanced Study der Universität Freiburg — An"
 ---
-In this section, we discuss Bott-Samelson bimodules, calcu late their B× B -
-equivariant cohomology and obtain the formality results ne eded above.
-Since we have already described the geometric realization o f indecomposable
-bimodules, as intersection cohomology of subvarieties of G, we know ab-
-stractly that the Bott-Samelson bimodule Ri must be the hypercohomology
-of a perverse sheaf obtained by taking a direct sum of IC-sheaves of these
-subvarieties with appropriate multiplicities.
-However, this is deeply dissatisfying from a geometric view point, and totally
-at odds with our viewpoint that Bott-Samelson bimodules are very natural
-objects. Thus we would like a more natural geometric realiza tion of them.
-For each simple reﬂection s, let Ps be the minimal parabolic containing s. For
-a sequence i = (s, t, . . . , u) of simple reﬂections, let
-Gi = Ps×B Pt . . .···× B Pu.
-We call this the Bott-Samelson variety corresponding to i. Note that this vari-
-ety still carries a B× B -action, and thus a diagonal B -action.
-Furthermore, we have a projective B× B -equivariant map mi : Gi→ G given
-by multiplication, intertwining the diagonal B -action on Gi with the conjuga-
-tion B -action on G.
-The quotient of Gi by the right Borel action is the familiar projective Bott-
-Samelson variety which is used to construct resolutions of s ingularities for
-Schubert varieties. It is worth noting that just like in the ﬂ ag variety case, if i
-is a reduced expression (i.e. if ℓ(st . . . u) is the length of i), then the multipli-
-cation map is a resolution of singularities.
-Let us explain how to calculate the B× B -equivariant cohomology of the Bott-
-Samelson varieties. Actually , we will calculate the corres ponding dg-module
-over S⊗ S . We start with a lemma:
-Lemma 5.1 SupposeF∈ DB×B(pt) and let s be a simple reﬂection. Then:
-Γ B×B(resB×B
-Ps×BindPs×B
-B×BF) = S⊗Ss Γ B×B(F)
-Proof Thanks to Theorem 3.3 we know that Γ Ps×B(indPs×B
-B×BF) is equal to
-Γ B×B(F) regarded as an Ss⊗ S -module. Hence
-Γ B×B(resB×B
-Ps×BindPs×B
-B×BF) = ( S⊗ S)
-L
-⊗Ss⊗S Γ B×B(F).
-14
-However, S⊗ S is free as a module over Ss⊗ S and is hence K-projective.
-Thus the derived tensor product coincides with the naive ten sor product and
-the result follows.
-We can now prove the crucial “formality” claim mentioned abo ve:
-Proposition 5.2 The direct images of the sheaves CGi and IC(Gw) in DB×B(pt)
-are formal.
-Proof First notice that we can can write the sheaf (mi)∗CGi as a iterated in-
-duction and restriction:
-(mi)∗CGi
-∼= resB×B
-Ps×BindPs×B
-B×B . . . resB×B
-Pt×BindPt×B
-B×B (CB)
-Hence by the above lemma, letting p be the projection to a point:
-Γ B×B(p∗CGi) = S⊗Ss S⊗St⊗···⊗ Su S in DAB×B
-Thus the proposition is true for CGi . Now, by the decomposition theorem of
-[BBD] or more precisely , its equivariant version in [BL], wemay obtain IC(Gw)
-as a direct summand of (mi)∗Gi , if i = ( s, . . . , s) is a reduced expression for
-w. Thus p∗IC(Gw) is a direct summand of p∗CGi and is also formal.
+[]{#sec:geom-soerg-bimod label="sec:geom-soerg-bimod"}
+
+In this section, we discuss Bott-Samelson bimodules, calculate their $B \times B$-equivariant cohomology and obtain the formality results needed above.
+
+Since we have already described the geometric realization of indecomposable bimodules, as intersection cohomology of subvarieties of $G$, we know abstractly that the Bott-Samelson bimodule $\S\Bi$ must be the hypercohomology of a perverse sheaf obtained by taking a direct sum of $\IC{}$-sheaves of these subvarieties with appropriate multiplicities.
+
+However, this is deeply dissatisfying from a geometric viewpoint, and totally at odds with our viewpoint that Bott-Samelson bimodules are very natural objects. Thus we would like a more natural geometric realization of them.
+
+For each simple reflection $s$, let $P_s$ be the minimal parabolic containing $s$. For a sequence $\Bi = (s, t,  \dots, u)$ of simple reflections, let $$\begin{equation*}
+\BSi=P_s\times_{B} P_t \dots \cdots\times_{B}P_u.
+\end{equation*}$$ We call this the **Bott-Samelson variety** corresponding to $\Bi$. Note that this variety still carries a $B\times B$-action, and thus a diagonal $B$-action.
+
+Furthermore, we have a projective $B\times
+B$-equivariant map $m_\Bi:\BS{\Bi}\to G$ given by multiplication, intertwining the diagonal $B$-action on $G_\Bi$ with the conjugation $B$-action on $G$.
+
+The quotient of $\BS{\Bi}$ by the right Borel action is the familiar projective Bott-Samelson variety which is used to construct resolutions of singularities for Schubert varieties. It is worth noting that just like in the flag variety case, if $\Bi$ is a reduced expression (i.e. if $\ell(st\dots u)$ is the length of $\Bi$), then the multiplication map is a resolution of singularities.
+
+Let us explain how to calculate the $B \times B$-equivariant cohomology of the Bott-Samelson varieties. Actually, we will calculate the corresponding dg-module over $S \otimes S$. We start with a lemma:
+
+::: lem
+Suppose $\mathcal{F} \in D_{\BB}(pt)$ and let $s$ be a simple reflection. Then: $$\Gamma_{\BB}( \res_{P_s \times B}^{\BB} \ind_{\BB}^{P_s \times B} \mathcal{F}) = \HT\otimes_{\HT^s} \Gamma_{\BB}(\mathcal{F})$$
+:::
+
+::: proof
+*Proof.* Thanks to Theorem [\[equiv-thm\]](#equiv-thm){reference-type="ref" reference="equiv-thm"} we know that $\Gamma_{P_s \times B} (\ind_{\BB}^{P_s \times B} \mathcal{F})$ is equal to $\Gamma_{\BB}(\mathcal{F})$ regarded as an $\HT^s \otimes
+  \HT$-module. Hence $$\begin{equation*}
+    \Gamma_{\BB}( \res_{P_s \times B}^{\BB}
+  \ind_{\BB}^{P_s \times B} \mathcal{F}) = (\HT \otimes \HT)
+  \Lotimes_{\HT^s \otimes \HT} \Gamma_{\BB}(\mathcal{F}).
+\end{equation*}$$ However, $S \otimes S$ is free as a module over $S^s\otimes S$ and is hence $\mathcal{K}$-projective. Thus the derived tensor product coincides with the naive tensor product and the result follows. ◻
+:::
+
+We can now prove the crucial "formality" claim mentioned above:
+
+::: prop
+The direct images of the sheaves $\Cs{\BS{\Bi}}$ and $\IC(\Gw)$ in $D_{B \times
+    B}(pt)$ are formal.
+:::
+
+::: proof
+*Proof.* First notice that we can can write the sheaf $(m_{\Bi})_*\Cs{\BS{\Bi}}$ as a iterated induction and restriction: $$\begin{equation*}
+(m_{\Bi})_*\Cs{\BS{\Bi}}\cong \res_{P_{s} \times B}^{B \times B}\ind_{B \times B}^{P_{s} \times B} \dots 
+\res_{P_{t} \times B}^{B \times B}\ind_{B \times B}^{P_{t} \times B}(\Cs{B})
+\end{equation*}$$ Hence by the above lemma, letting $p$ be the projection to a point: $$\begin{equation*}
+\Gamma_{B \times B} (p_*\Cs{\BS{\Bi}}) = S\otimes_{S^{s}} S \otimes_{S^{t}} \otimes \dots \otimes_{S^{u}} S \qquad \text{in $D_{\A_{\BB}}$}
+\end{equation*}$$ Thus the proposition is true for $\Cs{\BS{\Bi}}$. Now, by the decomposition theorem of [@BBD] or more precisely, its equivariant version in [@BL], we may obtain $\IC(\Gw)$ as a direct summand of $(m_{\Bi})_*\BS{\Bi}$, if $\Bi  = (s, \dots, s)$ is a reduced expression for $w$. Thus $p_*\IC(\Gw)$ is a direct summand of $p_*\Cs{\BS{\Bi}}$ and is also formal. ◻
+:::

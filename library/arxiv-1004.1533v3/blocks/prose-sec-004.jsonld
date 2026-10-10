@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1004.1533v3/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1004.1533v3/blocks/prose-sec-004",
   "kind": "prose",
   "title": "Polytope decompositions",
   "pageStart": 10,
   "pageEnd": 15,
   "text": "../sections/sec-004-3-polytope-decompositions.md",
-  "derivedFrom": "library/arxiv-1004.1533v3/manifest",
-  "sourceDocument": "library/arxiv-1004.1533v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1004.1533v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1004.1533v3/manifest.jsonld",
   "provenance": "ingested"
 }

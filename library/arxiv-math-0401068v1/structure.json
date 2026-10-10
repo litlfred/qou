@@ -5,7 +5,8 @@
   "file": "0401068v1.pdf",
   "sha256": "8168d7e7f60699781175252c397fc949e5a49790a3d65ecac66e77ed015b66c2",
   "bytes": 176004,
-  "pages": 12
+  "pages": 12,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "THE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL FOR TWIST KNOTS",
   "authors_raw": null,
-  "abstract": "@We show that for a twist knot, the A-polynomial can be obtained fr om recur- rences for the summand in Masbaum’s formula of the colored Jones p olynomial. Our result supports the AJ conjecture due to S.Garoufalidis.",
+  "abstract": "@We show that for a twist knot, the A-polynomial can be obtained fr om recur- rences for the summand in Masbaum\u2019s formula of the colored Jones p olynomial. Our result supports the AJ conjecture due to S.Garoufalidis.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20181024063829-04'00'",
@@ -117,6 +118,48 @@
   "likely_scanned": false,
   "toc_entries": 5,
   "sections": 4,
-  "chars_total": 25028
+  "chars_total": 25028,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "ApolyJones.tex",
+   "tex_sections": 4,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "introduction",
+     "prose_ratio": 0.857,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-main-theorem",
+     "title": "Main Theorem",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.614,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-4-observations",
+     "title": "Observations",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

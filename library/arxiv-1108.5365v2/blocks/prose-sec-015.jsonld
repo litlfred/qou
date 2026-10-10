@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1108.5365v2/blocks/prose-sec-015",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1108.5365v2/blocks/prose-sec-015",
   "kind": "prose",
   "title": "The GNS description",
   "pageStart": 44,
   "pageEnd": 46,
   "text": "../sections/sec-015-53-the-gns-description.md",
-  "derivedFrom": "library/arxiv-1108.5365v2/manifest",
-  "sourceDocument": "library/arxiv-1108.5365v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1108.5365v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1108.5365v2/manifest.jsonld",
   "provenance": "ingested"
 }

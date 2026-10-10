@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2101.05931v3/sections/sec-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Marked words",
+  "pageStart": 13,
+  "pageEnd": 17,
+  "contains": [
+    "library/arxiv-2101.05931v3/blocks/prose-sec-011",
+    "library/arxiv-2101.05931v3/blocks/lemma-sec-011-01",
+    "library/arxiv-2101.05931v3/blocks/corollary-sec-011-02",
+    "library/arxiv-2101.05931v3/blocks/lemma-sec-011-03",
+    "library/arxiv-2101.05931v3/blocks/proposition-sec-011-04",
+    "library/arxiv-2101.05931v3/blocks/lemma-sec-011-05",
+    "library/arxiv-2101.05931v3/blocks/lemma-sec-011-06",
+    "library/arxiv-2101.05931v3/blocks/lemma-sec-011-07",
+    "library/arxiv-2101.05931v3/blocks/theorem-sec-011-08",
+    "library/arxiv-2101.05931v3/blocks/remark-sec-011-09",
+    "library/arxiv-2101.05931v3/blocks/corollary-sec-011-10"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2101.05931v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2101.05931v3/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,73 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2601.07906v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A universal sum over topologies in 3d gravity",
+  "contains": [
+    "library/arxiv-2601.07906v2/sections/sec-000",
+    "library/arxiv-2601.07906v2/sections/sec-001",
+    "library/arxiv-2601.07906v2/sections/sec-002",
+    "library/arxiv-2601.07906v2/sections/sec-003",
+    "library/arxiv-2601.07906v2/sections/sec-004",
+    "library/arxiv-2601.07906v2/sections/sec-005",
+    "library/arxiv-2601.07906v2/sections/sec-006",
+    "library/arxiv-2601.07906v2/sections/sec-007",
+    "library/arxiv-2601.07906v2/sections/sec-008",
+    "library/arxiv-2601.07906v2/sections/sec-009",
+    "library/arxiv-2601.07906v2/sections/sec-010",
+    "library/arxiv-2601.07906v2/sections/sec-011",
+    "library/arxiv-2601.07906v2/sections/sec-012",
+    "library/arxiv-2601.07906v2/sections/sec-013",
+    "library/arxiv-2601.07906v2/sections/sec-014",
+    "library/arxiv-2601.07906v2/sections/sec-015",
+    "library/arxiv-2601.07906v2/sections/sec-016",
+    "library/arxiv-2601.07906v2/sections/sec-017",
+    "library/arxiv-2601.07906v2/sections/sec-018",
+    "library/arxiv-2601.07906v2/sections/sec-019",
+    "library/arxiv-2601.07906v2/sections/sec-020",
+    "library/arxiv-2601.07906v2/sections/sec-021",
+    "library/arxiv-2601.07906v2/sections/sec-022",
+    "library/arxiv-2601.07906v2/sections/sec-023",
+    "library/arxiv-2601.07906v2/sections/sec-024",
+    "library/arxiv-2601.07906v2/sections/sec-025",
+    "library/arxiv-2601.07906v2/sections/sec-026",
+    "library/arxiv-2601.07906v2/sections/sec-027",
+    "library/arxiv-2601.07906v2/sections/sec-028",
+    "library/arxiv-2601.07906v2/sections/sec-029",
+    "library/arxiv-2601.07906v2/sections/sec-030"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2601.07906&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2601.07906v2",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2601.07906v2.pdf",
+    "source_sha256": "e69b1bf37f2c75b067d792f3b780054879ff55f652bfe2ffdda8738c67a82977",
+    "pages": 117,
+    "arxiv": {
+      "id": "2601.07906",
+      "version": "2",
+      "primary_class": "hep-th",
+      "stamp_date": "25 Mar 2026"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

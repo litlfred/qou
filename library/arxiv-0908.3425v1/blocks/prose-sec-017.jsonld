@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0908.3425v1/blocks/prose-sec-017",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0908.3425v1/blocks/prose-sec-017",
   "kind": "prose",
   "title": "Application to QCD",
   "pageStart": 22,
   "pageEnd": 25,
   "text": "../sections/sec-017-application-to-qcd.md",
-  "derivedFrom": "library/arxiv-0908.3425v1/manifest",
-  "sourceDocument": "library/arxiv-0908.3425v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0908.3425v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0908.3425v1/manifest.jsonld",
   "provenance": "ingested"
 }

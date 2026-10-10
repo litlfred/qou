@@ -7,321 +7,386 @@ section_number: 3
 pages: 8-12
 source_pdf: 2301.00125v3.pdf
 source_sha256: 7ecd0cff7d6c2ec4
+text_source: latex
+latex_prose_ratio: 0.833
+latex_coverage_ratio: 0.994
 doc_brief: "Generating Function for Pinsky’s Combinatorial Second Mom ent Formula for the Generalized Ulam Problem Samen Hossein The Bronx High School of Science 75 Bronx Science Bvd — Given a uniform random"
 ---
-We now apply the diagonal method, based on a complex contour integ ral. Firstly, we obtain
-∮
-C(0;1)
-β
-(
-w, xξ, y
-ξ
-) dξ
-2πiξ = α(w,xy ), (42)
-for suﬃciently small x, y and w. To state it again with the detailed formula, we have
-α(w,xy ) =
-∮
-C(0;1)
-1
-(
-(1− (xξ +yξ −1))2− 4xy
-)1/2
-−w
-· dξ
-2πiξ . (43)
-For simplicity, we will specialize this to y =x. That gives
-α(w,x 2) =
-∮
-C(0;1)
-1
-(
-(1−x· (ξ +ξ−1))2− 4x2
-)1/2
-−w
-· dξ
-2πiξ . (44)
-This may then be further simpliﬁed as
-α(w,x 2) =
-∮
-C(0;1)
-1
-((
-1−x· (ξ + 2 +ξ−1)
-)(
-1−x· (ξ− 2 +ξ−1)
-))1/2
-−w
-· dξ
-2πiξ . (45)
-8
-c1 c2
-a1 a2
-d1 d2
-b1 b2
->
-Figure 2: A schematic picture – it is not to scale but it does accurately depict the order of points – for the
-branch cuts and poles of the integral in (72). The conﬁgurati on of points and branch cuts is shown assuming
-u,t ∈ (0, 1) are suﬃciently small. The poles are at a1(x,w ), a2(x,w ), b1(x,w ) and b2(x,w ). The branch cuts
-are the intervals [c1(x),c 2(x)] and [d1(x),d 2(x)].
-We will do a contour integral for ξ as in Figure 2, which requires analytically continuing this function from
-ξ∈C (0; 1). The argument of the square-root in equation (45) is closely connected to the quartic function of ξ
-Q1(x;ξ) =
-(
-ξ−x· (ξ2 + 1)
-)2
-− 4x2ξ2
-=
-(
-x· (ξ2 + 1)− (1 + 2x)ξ
-)(
-x· (ξ2 + 1)− (1− 2x)ξ
-)
-.
-(46)
-More precisely, we can rewrite equation (45) as
-α(w,x 2) =
-∮
-C(0;1)
-1
-(
-Q1(x;ξ)/ξ2)1/2
-−w
-· dξ
-2πiξ , (47)
-because, for ξ⁄= 0 we have
-(
-1−x· (ξ + 2 +ξ−1)
-)(
-1−x· (ξ− 2 +ξ−1)
-)
-= Q1(x;ξ)
-ξ2 . (48)
-We will want to rationalize the denominator of the integrand. Theref ore, let us also introduce another quartic
-function of ξ,
-Q2(x,w ;ξ) = Q1(x;ξ)−w2ξ2
-=
-(
-ξ−x· (ξ2 + 1)
-)2
-− (4x2 +w2)ξ2.
-(49)
-If we assume that x and w are both in [0 ,∞), then we may rewrite this as
-Q2(x,w ;ξ) =
-(
-x· (ξ2 + 1)−
-(
-1 +
-√
-4x2 +w2
-)
-ξ
-)(
-x· (ξ2 + 1)−
-(
-1−
-√
-4x2 +w2
-)
-ξ
-)
-. (50)
-Now we will begin to simplify the polynomials Q2(x;·) andQ2(x,w ;·). First we may a quick deﬁnition to set
-notation.
-Deﬁnition 3.1 LetU(z0;r) denote the open unit disk in the complex plane {z :|z−z0|<r}. Let
-U(z0;r)
-denote its closure {z :|z−z0|≤ r}.
-The following four lemmas will be proved in in Appendix F. They all rely on t he quadratic formula for roots
-of 1-variable quadratic equations.
-9
-Lemma 3.2 Suppose that we have a number x∈ (0, 1/4). Then, deﬁning
-c1(x) = 1 + 2x−√1 + 4x
-2x , c 2(x) = 1− 2x−√1− 4x
-2x ,
-d1(x) = 1− 2x +√1− 4x
-2x , d 2(x) = 1 + 2x +√1 + 4x
-2x ,
-(51)
+\label{sec:PinskyDiagonal}
+
+We now apply the diagonal method, based on a complex  contour integral.
+Firstly, we obtain
+\begin{equation}
+\label{eq:alphaIntegral}
+	\oint_{\mathcal{C}(0;1)} \beta\left(w\, ,\ x\xi\, ,\ \frac{y}{\xi}\right)\, \frac{d\xi}{2\pi i \xi}\, =\, \alpha(w,xy)\, ,
+\end{equation}
+for sufficiently small $x$, $y$ and $w$.
+To state it again with the detailed formula, we have
+\begin{equation}
+\label{eq:alphaIntegralOneHalf}
+	\alpha(w,xy)\,  =\,
+\oint_{\mathcal{C}(0;1)}  \frac{1}{\left(\left(1-\left(x \xi+y \xi^{-1}\right)\right)^2-4xy\right)^{1/2}-w}\, \cdot \frac{d\xi}{2\pi i \xi}\, .
+\end{equation}
+For simplicity, we will specialize this to $y=x$. That gives
+\begin{equation}
+\label{eq:alphaIntegralThreeFourths}
+	\alpha(w,x^2)\,  =\,
+\oint_{\mathcal{C}(0;1)}  \frac{1}{\left(\left(1-x\cdot\left(\xi+\xi^{-1}\right)\right)^2-4x^2\right)^{1/2}-w}\, \cdot \frac{d\xi}{2\pi i \xi}\, .
+\end{equation}
+This may then be further simplified as 
+\begin{equation}
+\label{eq:alphaIntegralFourFifths}
+	\alpha(w,x^2)\,  =\,
+\oint_{\mathcal{C}(0;1)}  \frac{1}{\Big(\big(1-x\cdot (\xi+2+\xi^{-1})\big)\big(1-x\cdot (\xi-2+\xi^{-1})\big)\Big)^{1/2}-w}\, \cdot \frac{d\xi}{2\pi i \xi}\, .
+\end{equation}
+We will do a contour integral for $\xi$ as in Figure \ref{fig:contour},
+which requires analytically continuing this function from $\xi \in \mathcal{C}(0;1)$.
+The argument of the square-root in equation (\ref{eq:alphaIntegralFourFifths}) is closely connected
+to the quartic function of $\xi$
+\begin{equation}
+\label{eq:calQ1Def}
+\begin{split}
+	\mathcal{Q}_1(x;\xi)\, 
+	&=\, \big(\xi - x\cdot(\xi^2+1)\big)^2-4x^2\xi^2\\ 
+	&=\, \big(x \cdot(\xi^2+1) - (1+2x)\xi\big)\big(x \cdot(\xi^2+1) - (1-2x)\xi\big)\, .
+\end{split}
+\end{equation}
+More precisely, we can rewrite equation (\ref{eq:alphaIntegralFourFifths}) as
+\begin{equation}
+\label{eq:alphaIntegralFiveSixths}
+	\alpha(w,x^2)\,  =\,
+\oint_{\mathcal{C}(0;1)}  \frac{1}{\big(\mathcal{Q}_1(x;\xi)/\xi^2\big)^{1/2}-w}\, \cdot \frac{d\xi}{2\pi i \xi}\, ,
+\end{equation}
+because, for $\xi \neq 0$ we have
+\begin{equation}
+\label{eq:sqrtArgument}
+	\big(1-x\cdot (\xi+2+\xi^{-1})\big)\big(1-x\cdot (\xi-2+\xi^{-1})\big)\, 
+	=\, \frac{\mathcal{Q}_1(x;\xi)}{\xi^2}\, .
+\end{equation}
+We will want to rationalize the denominator of the integrand. Therefore, let us also introduce
+another quartic function of $\xi$, 
+\begin{equation}
+\label{eq:calQ2Def}
+\begin{split}
+	\mathcal{Q}_2(x,w;\xi)\, 
+	&=\, \mathcal{Q}_1(x;\xi)-w^2 \xi^2\\
+	&=\, \big(\xi - x\cdot(\xi^2+1)\big)^2-(4x^2+w^2)\xi^2\, .
+\end{split}
+\end{equation}
+If we assume that $x$ and $w$ are both in $[0,\infty)$, then we may rewrite this as 
+\begin{equation}
+\label{eq:calQ2Def2}
+	\mathcal{Q}_2(x,w;\xi)\, 
+	=\, \left(x \cdot(\xi^2+1) - \left(1+\sqrt{4x^2+w^2}\right)\xi\right)
+	\left(x \cdot(\xi^2+1) - \left(1-\sqrt{4x^2+w^2}\right)\xi\right)\, .
+\end{equation}
+Now we will begin to simplify the polynomials $\mathcal{Q}_2(x;\cdot)$ and $\mathcal{Q}_2(x,w;\cdot)$.
+First we may a quick definition to set notation.
+\begin{definition}
+Let $\mathcal{U}(z_0;r)$ denote the open unit disk in the complex plane $\{z\, :\, |z-z_0|<r\}$.
+Let $\overline{\mathcal{U}}(z_0;r)$ denote its closure $\{z\, :\, |z-z_0|\leq r\}$.
+\end{definition}
+The following four lemmas will be proved in in Appendix \ref{sec:quadratic}. They all rely on the quadratic formula
+for roots of 1-variable quadratic equations.
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[xscale=1.5,yscale=1.5]
+	\draw[very thick,->] (-2.5,0) -- (5,0);
+	\draw[very thick,->] (0,-2.5) -- (0,2.5);
+	\draw[line width=0.3cm, black!75!white, opacity=0.5] (0.75,0) -- (1.5,0);
+	\foreach \t in {0.65,0.7,0.75,...,1.6}{
+		\draw[thin] (\t,-0.1) -- (\t,0.1);}
+	\fill[black!75!white, opacity=0.5] (0.75,0) -- (0.75,0.1) arc (90:270:0.1cm) -- cycle;
+	\fill[black!75!white, opacity=0.5] (1.5,0) -- (1.5,0.1) arc (90:-90:0.1cm) -- cycle;
+	\draw (0.65,0.1) -- (0.65,-0.1) node[below] {\small $c_1$};
+	\draw (1.6,0.1) -- (1.6,-0.1) node[below] {\small $c_2$};
+	\draw (0,0) circle (2cm);
+	\fill (0.45,0) circle (2pt) node[above=1pt] {\small $a_1$};
+	\fill (1.8,0) circle (2pt) node[above=1pt] {\small $a_2$};
+	\begin{scope}[xshift=2.5cm]
+	\draw[line width=0.3cm, black!75!white, opacity=0.5] (0.75,0) -- (1.5,0);
+	\foreach \t in {0.65,0.7,0.75,...,1.6}{
+		\draw[thin] (\t,-0.1) -- (\t,0.1);}
+	\fill[black!75!white, opacity=0.5] (0.75,0) -- (0.75,0.1) arc (90:270:0.1cm) -- cycle;
+	\fill[black!75!white, opacity=0.5] (1.5,0) -- (1.5,0.1) arc (90:-90:0.1cm) -- cycle;
+	\draw (0.65,0.1) -- (0.65,-0.1) node[below] {\small $d_1$};
+	\draw (1.6,0.1) -- (1.6,-0.1) node[below] {\small $d_2$};
+	\fill (0.35,0) circle (2pt) node[above=1pt] {\small $b_1$};
+	\fill (1.9,0) circle (2pt) node[above=1pt] {\small $b_2$};
+	\end{scope}
+
+	\draw (45:2cm) node[rotate=135] {\small $\boldsymbol{>}$};
+\end{tikzpicture}
+\caption{\textsl{A schematic picture -- it is not to scale but it does accurately depict the order of points -- for the branch cuts and poles of the integral in (\ref{eq:alphaIntegralSevenEighths}).
+The configuration of points and branch cuts is shown assuming $u,t \in (0,1)$ are sufficiently small.
+The poles are at $a_1(x,w)$, $a_2(x,w)$, $b_1(x,w)$ and $b_2(x,w)$.
+The branch cuts are the intervals $[c_1(x),c_2(x)]$ and $[d_1(x),d_2(x)]$.
+\label{fig:contour}
+}}
+\end{center}
+\end{figure}
+\begin{lemma}
+\label{lem:calQ1roots}
+Suppose that we have a number $x \in (0,1/4)$. Then, defining
+\begin{equation}
+\begin{split}
+	c_1(x)\, &=\, \frac{1+2x-\sqrt{1+4x}}{2x}\, ,\qquad c_2(x)\, =\, \frac{1-2x-\sqrt{1-4x}}{2x}\, ,\\[5pt]
+	d_1(x)\, &=\, \frac{1-2x+\sqrt{1-4x}}{2x}\, ,\qquad d_2(x)\, =\, \frac{1+2x+\sqrt{1+4x}}{2x}\, ,
+\end{split}
+\end{equation}
 we have
-Q1(x;ξ) = x2(
-ξ−c1(x)
-)(
-ξ−c2(x)
-)(
-ξ−d1(x)
-)(
-ξ−d2(x)
-)
-. (52)
+\begin{equation}
+\label{eq:calQ1roots}
+	\mathcal{Q}_1(x;\xi)\, =\, x^2 \big(\xi  - c_1(x)\big)\big(\xi-c_2(x)\big)\big(\xi-d_1(x)\big)\big(\xi-d_2(x)\big)\, .
+\end{equation}
+\end{lemma}
 Note in particular that
-c1(x)·d2(x) = c2(x)·d1(x) = 1 , (53)
-which can also be seen since they are the roots of the self-inversive quadratic polynomials of ξ in the ultimate
-formula in (46).
-Lemma 3.3 Suppose that we have a number x∈ (0, 1/4) and another number w satisfying
-0≤ w≤
-√
-1− 4x. (54)
-Then, deﬁning
-a1(x,w ) = 1 +
-√
-4x2 +w2−
-√
-1 +w2 + 2
-√
-4x2 +w2
-2x ,
-a2(x,w ) = 1−
-√
-4x2 +w2−
-√
-1 +w2− 2
-√
-4x2 +w2
-2x ,
-b1(x,w ) = 1−
-√
-4x2 +w2 +
-√
-1 +w2− 2
-√
-4x2 +w2
-2x ,
-b2(x,w ) = 1 +
-√
-4x2 +w2 +
-√
-1 +w2 + 2
-√
-4x2 +w2
-2x ,
-(55)
+\begin{equation}
+\label{eq:Q1inversive}
+	c_1(x)\cdot d_2(x)\, =\, c_2(x) \cdot d_1(x)\, =\, 1\, ,
+\end{equation}
+which can also be seen since they are the roots of the self-inversive quadratic polynomials of $\xi$ in the ultimate formula
+in (\ref{eq:calQ1Def}). 
+\begin{lemma}
+\label{lem:calQ2roots}
+Suppose that we have a number $x \in (0,1/4)$ and another number $w$ satisfying
+\begin{equation}
+	0\, \leq\, w\, \leq\, \sqrt{1-4x}\, .
+\end{equation}
+Then, defining
+\begin{equation}
+\begin{split}
+	a_1(x,w)\, &=\, \frac{1+\sqrt{4x^2+w^2}-\sqrt{1+w^2+2\sqrt{4x^2+w^2}}}{2x}\, ,\\[5pt]
+	a_2(x,w)\, &=\, \frac{1-\sqrt{4x^2+w^2}-\sqrt{1+w^2-2\sqrt{4x^2+w^2}}}{2x}\, ,\\[5pt]
+	b_1(x,w)\, &=\, \frac{1-\sqrt{4x^2+w^2}+\sqrt{1+w^2-2\sqrt{4x^2+w^2}}}{2x}\, ,\\[5pt]
+	b_2(x,w)\, &=\, \frac{1+\sqrt{4x^2+w^2}+\sqrt{1+w^2+2\sqrt{4x^2+w^2}}}{2x}\, ,
+\end{split}
+\end{equation}
 we have
-Q2(x,w ;ξ) = x2·
-(
-ξ−a1(x,w )
-)(
-ξ−a2(x,w )
-)(
-ξ−b1(x,w )
-)(
-ξ−b2(x,w )
-)
-. (56)
-Of course, we also have
-a1(x,w )·b2(x,w ) = a2(x,w )·b1(x,w ) = 1 , (57)
-because these are the roots of the self-inversive quadratic polyn omials of ξ in (49). Let us note the following
-ordering of the roots for the two quartic equations, as in Figure 2.
-Lemma 3.4 If we have x∈ (0, 1/4) and w∈ (0,√
-1− 4x) then we have
-0<a 1(x,w )<c 1(x)<c 2(x)<a 2(x,w )< 1<b 1(x,w )<d 1(x)<d 2(x)<b 2(x,w ). (58)
-Let us introduce an analytic continuation of the function from (48) ,
-((
-1−xξ−xξ−1)
-− 4x2)1/2
-.
-Lemma 3.5 Assume we have x∈ (0, 1/4). Deﬁne the domain D2(x) as
-D2(x) = U(0;d1(x))\U(0;c1(x)). (59)
-Then for all ξ∈D 2(x), we have Q1(x;ξ)/ξ2 is in D1 from Remark 2.3. So, deﬁning the function,
-f (x;·) :D2(x)→ C, (60)
+\begin{equation}
+\label{eq:Q2factorization}
+	\mathcal{Q}_2(x,w;\xi)\, =\, x^2\cdot \big(\xi  - a_1(x,w)\big)\big(\xi-a_2(x,w)\big)\big(\xi-b_1(x,w)\big)\big(\xi-b_2(x,w)\big)\, .
+\end{equation}
+\end{lemma}
+Of course,
+we also have
+\begin{equation}
+\label{eq:Q2inversive}
+	a_1(x,w)\cdot b_2(x,w)\, =\, a_2(x,w) \cdot b_1(x,w)\, =\, 1\, ,
+\end{equation}
+because these are the roots of the self-inversive quadratic polynomials of $\xi$ 
+in (\ref{eq:calQ2Def}). 
+Let us note the following ordering of the roots for the two quartic equations,
+as in Figure \ref{fig:contour}.
+\begin{lemma}
+\label{lem:rootsOrder}
+If we have $x \in (0,1/4)$ and $w \in (0,\sqrt{1-4x})$ then we have
+\begin{equation}
+	0<a_1(x,w)<c_1(x)<c_2(x)<a_2(x,w)<1<b_1(x,w)<d_1(x)<d_2(x)<b_2(x,w)\, .
+\end{equation}
+\end{lemma}
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[xscale=5,yscale=5]
+	\draw[very thick,->] (-0.5,0) -- (2.5,0);
+	\draw[very thick,->] (0,-0.5) -- (0,0.5);
+	\foreach \t in {0.65,0.7,0.75,...,1.6}{
+		\draw[thin] (\t,-0.05) -- (\t,0.05);}
+	\draw (0.65,0.1) -- (0.65,-0.1) node[below] {\small $c_1$};
+	\draw (0.65,-0.1) -- (1.6,-0.1);
+	\draw (1.125,-0.1) node[rotate=0] {\scriptsize $\boldsymbol{>}$};
+	\draw (1.6,0.1) -- (1.6,-0.1) node[below] {\small $c_2$};
+	\draw (1.6,0.1) -- (0.65,0.1);
+	\draw (1.125,0.1) node[rotate=0] {\scriptsize $\boldsymbol{<}$};
+	\fill (0.45,0) circle (1pt) node[above=12pt] {\small $a_1$};
+	\draw (0.45,0) circle (0.1cm);
+	\draw (0.45,-0.175) node[] {$\Gamma_1(\delta)$};
+	\draw (0.45,0) +(45:0.1cm) node[rotate=135] {\scriptsize $\boldsymbol{>}$};
+	\fill (1.8,0) circle (1pt) node[above=12pt] {\small $a_2$};
+	\draw (1.8,0) circle (0.1cm);
+	\draw (1.8,-0.175) node[] {$\Gamma_2(\delta)$};
+	\draw (1.8,0) +(45:0.1cm) node[rotate=135] {\scriptsize $\boldsymbol{>}$};
+	\draw (1.125,-0.25) node[] {$\Gamma_3(\delta)$};
+\end{tikzpicture}
+\caption{\textsl{A schematic of the contours after deformation as used in the proof of Lemma \ref{lem:residue1}. The  positively oriented circular contours 
+$\Gamma_1(\delta)$ and $\Gamma_2(\delta)$ are of radius $\delta$, centered at the poles $a_1(x,w)$
+and $a_2(x,w)$. The branch cut along the real axis interval from $c_1(x)$ to $c_2(x)$ is enclosed by
+the contour $\Gamma_3(\delta)$ which is the rectangle traversing the vertices: $c_1(x)-i\delta$, $c_2(x)-i\delta$, $c_2(x)+i\delta$ 
+and $c_1(x)+i\delta$, in that order.
+\label{fig:Deformation}
+}}
+\end{center}
+\end{figure}
+Let us introduce an analytic continuation of the function from (\ref{eq:sqrtArgument}),
+$\left(\left(1-x\xi-x\xi^{-1}\right)-4x^2\right)^{1/2}$.
+\begin{lemma}
+\label{lem:sqrtContinuation}
+Assume we have $x \in (0,1/4)$. Define the domain $\mathcal{D}_2(x)$ as 
+\begin{equation}
+	\mathcal{D}_2(x)\, =\, \mathcal{U}(0;d_1(x)) \setminus \overline{\mathcal{U}}(0;c_1(x))\, .
+\end{equation}
+Then for all $\xi \in \mathcal{D}_2(x)$, we have $\mathcal{Q}_1(x;\xi)/\xi^2$ is in $\mathcal{D}_1$
+from Remark \ref{rem:sqrt}.
+So, defining the function,
+\begin{equation}
+f(x;\cdot) : \mathcal{D}_2(x) \to \C\, ,
+\end{equation}
 by the formula
-f (x;ξ) =
-√
-Q2(x;ξ)/ξ2 =
-((
-1−x· (ξ +ξ−1)
-)2
-− 4x2)1/2
-, (61)
-we have that f (x;·) is analytic.
-10
-c1
-> c2
-<a1
-Γ 1(δ)
->
-a2
-Γ 2(δ)
->
-Γ 3(δ)
-Figure 3: A schematic of the contours after deformation as used in the p roof of Lemma 4.1. The positively
-oriented circular contours Γ 1(δ) and Γ 2(δ) are of radius δ, centered at the poles a1(x,w ) and a2(x,w ). The
-branch cut along the real axis interval from c1(x) toc2(x) is enclosed by the contour Γ 3(δ) which is the rectangle
-traversing the vertices: c1(x)−iδ, c2(x)−iδ, c2(x) +iδ and c1(x) +iδ, in that order.
-We will prove Lemmas 3.2, 3.3, 3.4 and 3.5 in Appendix F. They are all eleme ntary, and essentially follow by
-applying the quadratic formula.
-We want to deform the contour from the integral in (47) as in Figure 3. For equation (47) we rationalize
-the denominator. From equation (50) and Lemma 3.5, we may rewrite that equation as
-α(w,x 2) =
-∮
-C(0;1)
-ξ·f (x;ξ) +w·ξ
-Q2(x,w ;ξ) · dξ
-2πi. (62)
-We multiplied numerator and denominator of the ﬁrst fraction by ξ2, and then canceled one power from the
-numerator with the ξ that had been in the denominator of dξ/(2πiξ), which is now absent.
-To deform this as in as in Figure 3, we need a more optimal analytic cont inuation of the function f (x;·).
-We start with the domain as in the right-hand picture in Figure 4.
-Lemma 3.6 Assume we have x∈ (0, 1/4). Deﬁne the domain D3(x) as
-D3(x) = C\
-(
-(−∞,c 2(x)]∪ [d1(x),∞)
-)
-. (63)
-Then deﬁne the function
-g(x,·) :D3(x)→ C, (64)
+\begin{equation}
+\label{eq:fDef}
+	f(x;\xi)\, =\, \sqrt{\mathcal{Q}_2(x;\xi)/\xi^2}\, =\, \big(\left(1 - x \cdot ( \xi +\xi^{-1})\right)^2-4x^2\big)^{1/2}\, ,
+\end{equation}
+we have that $f(x;\cdot)$ is analytic.
+\end{lemma}
+We will prove Lemmas \ref{lem:calQ1roots}, \ref{lem:calQ2roots}, \ref{lem:rootsOrder} 
+and \ref{lem:sqrtContinuation} in Appendix \ref{sec:quadratic}.
+They are all elementary, and essentially follow by applying the quadratic formula.
+
+We want to deform the contour from the integral in (\ref{eq:alphaIntegralFiveSixths})
+as in Figure \ref{fig:Deformation}.
+For equation (\ref{eq:alphaIntegralFiveSixths}) we rationalize the denominator.
+From equation (\ref{eq:calQ2Def2}) and Lemma \ref{lem:sqrtContinuation}, we may 
+rewrite that equation as
+\begin{equation}
+\label{eq:alphaIntegralSixSevenths}
+	\alpha(w,x^2)\,  =\,
+\oint_{\mathcal{C}(0;1)}  \frac{\xi\cdot f(x;\xi)+w\cdot \xi}
+	{\mathcal{Q}_2(x,w;\xi)}\, \cdot \frac{d\xi}{2\pi i}\, .
+\end{equation}
+We multiplied numerator and denominator of the first fraction by $\xi^2$,
+and then canceled one power from the numerator with the $\xi$ that had been
+in the denominator of $d\xi/(2\pi i \xi)$, which is now absent.
+
+To deform this as in as in Figure \ref{fig:Deformation},
+we need a more optimal analytic continuation of the function $f(x;\cdot)$.
+We start with the domain as in the right-hand picture in Figure \ref{fig:sqrtNew}.
+\begin{lemma}
+\label{lem:sqrtContinuationB}
+Assume we have $x \in (0,1/4)$. Define the domain $\mathcal{D}_3(x)$ as 
+\begin{equation}
+	\mathcal{D}_3(x)\, =\, \C \setminus \big((-\infty,c_2(x)] \cup [d_1(x),\infty)\big)\, .
+\end{equation}
+Then define the  function
+\begin{equation}
+g(x,\cdot) : \mathcal{D}_3(x) \to \C\, ,
+\end{equation}
 by the formula
-g(x;ξ) = x·
-√
-ξ−c1(x)·
-√
-ξ−c2(x)·
-√
-d1(x)−ξ·
-√
-d2(x)−ξ, (65)
-where the square-root is as in Remark 2.3. Then g(x;·) is analytic and
-∀ξ∈D 2(x)∩D 3(x) =
-(
-U(0;d1(x))\U(0;c1(x))
-)
-\ [−d1(x),−c1(x)], we have g(x;ξ) = ξ·f (x;ξ). (66)
-Lemma 3.7 Assume we have x∈ (0, 1/4). Deﬁne the domain D4(x) as
-D4(x) = C\
-(
-[c1(x),c 2(x)]∪ [d1(x),d 2(x)]
-)
-. (67)
-Then deﬁne the function
-~g(x;·) :D4(x)→ C, (68)
+\begin{equation}
+\label{eq:gDefinition}
+	g(x;\xi)\, =\, x\, \cdot \sqrt{\xi-c_1(x)}\, \cdot \sqrt{\xi-c_2(x)}\,
+\cdot \sqrt{d_1(x)-\xi}\, \cdot \sqrt{d_2(x)-\xi}\, ,
+\end{equation}
+where the square-root is as in Remark \ref{rem:sqrt}.
+Then $g(x;\cdot)$ is analytic and 
+\begin{equation}
+\label{eq:gEQUALSf}
+	\forall \xi \in \mathcal{D}_2(x)\cap \mathcal{D}_3(x)= \big(\mathcal{U}(0;d_1(x))\setminus \overline{\mathcal{U}}(0;c_1(x))\big)
+	\setminus [-d_1(x),-c_1(x)]\, ,\
+	\text{ we have }\ g(x;\xi)\, =\, \xi\cdot f(x;\xi)\, . 
+\end{equation}
+\end{lemma}
+
+
+
+\begin{lemma}
+\label{lem:sqrtContinuationC}
+Assume we have $x \in (0,1/4)$. Define the domain $\mathcal{D}_4(x)$ as 
+\begin{equation}
+	\mathcal{D}_4(x)\, =\, \C \setminus \big([c_1(x),c_2(x)]\cup[d_1(x),d_2(x)]\big)\, .
+\end{equation}
+Then define the  function
+\begin{equation}
+\label{eq:tildegDef1}
+	\widetilde{g}(x;\cdot) : \mathcal{D}_4(x) \to \C\, ,
+\end{equation}
 such that
-∀ξ∈D 3(x) =
-(
-C\
-(
-(−∞,c 2(x)]∪ [d1(x),∞)
-))
-, we have ~g(x;ξ) = g(x;ξ), (69)
+\begin{equation}
+\label{eq:tildegDef2}
+	\forall \xi \in \mathcal{D}_3(x) = \Big(\C \setminus \big((-\infty,c_2(x)] \cup [d_1(x),\infty)\big)\Big)\, ,\ \text{ we have }\
+	\widetilde{g}(x;\xi)\, =\, g(x;\xi)\, ,
+\end{equation}
 and
-∀ξ∈ (−∞,c 1(x))∪ (d2(x),∞), we have ~g(x;ξ) = lim
-ζ→ξ
-ζ∈C\R
-g(x;ζ). (70)
-Then~g(x;·) is analytic and
-∀ξ∈D 2(x), we have ~g(x;ξ) = ξ·f (x;ξ). (71)
-11
-c1 c2 d1 d2 c1 c2 d2d1
-Figure 4: The branch cuts for the function ~g(x;·) are shown on the left, which is an analytic continuation of
-the function f (x;ξ) =
-√
-Q1(ξ)/ξ2 deﬁned in a neighborhood of C(0; 1). In the ﬁgure on the right we show the
-a priori overlapping branch-cuts of the original analytic continua tion g(x;·).
-The domain for the function ~g(x;·) is as in the left-hand picture in Figure 4. We prove Lemmas 3.6 and
-3.7 in Appendix G. Then equation (62) may be rewritten as
-α(w,x 2) =
-∮
-C(0;1)
-~g(x;ξ) +w·ξ
-Q2(x,w ;ξ) · dξ
-2πi , (72)
-where the roots of Q2(x,w ;·) are a1(x;w), a2(x;w), b1(x;w) and b2(x;w), and where the domain of ~g(x;·) is
-all of C except for the union of the two intervals [ c1(x),c 2(x)] and [d1(x),d 2(x)]. Thus we obtain the region
-as in Figure 2. This is the region where we may deform the contour C(0; 1).
+\begin{equation}
+\label{eq:tildegDef3}
+\forall \xi \in (-\infty,c_1(x)) \cup (d_2(x),\infty)\, ,\ 
+\text{ we have }\ \widetilde{g}(x;\xi)\, =\, \lim_{\substack{\zeta \to \xi\\ \zeta \in  \C \setminus \R}}
+ g(x;\zeta)\, .
+\end{equation}
+Then $\widetilde{g}(x;\cdot)$ is analytic and 
+\begin{equation}
+\label{eq:signCheck}
+	\forall \xi \in \mathcal{D}_2(x)\, ,\
+	\text{ we have }\ \widetilde{g}(x;\xi)\, =\, \xi \cdot f(x;\xi)\, .
+\end{equation}
+\end{lemma}
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}[xscale=1,yscale=1]
+	\draw[very thick,->] (-2.5,0) -- (5,0);
+	\draw[very thick,->] (0,-2.5) -- (0,2.5);
+	\draw[line width=0.2cm, black!75!white, opacity=0.5] (0.75,0) -- (1.5,0);
+	\foreach \t in {0.65,0.7,0.75,...,1.6}{
+		\draw[thin] (\t,-0.1) -- (\t,0.1);}
+	\fill[black!75!white, opacity=0.5] (0.75,0) -- (0.75,0.1) arc (90:270:0.1cm) -- cycle;
+	\fill[black!75!white, opacity=0.5] (1.5,0) -- (1.5,0.1) arc (90:-90:0.1cm) -- cycle;
+	\draw (0.65,0.1) -- (0.65,-0.1) node[below] {\small $c_1$};
+	\draw (1.6,0.1) -- (1.6,-0.1) node[below] {\small $c_2$};
+	\draw[dashed] (0,0) circle (2cm);
+	\begin{scope}[xshift=2.5cm]
+	\draw[line width=0.2cm, black!75!white, opacity=0.5] (0.75,0) -- (1.5,0);
+	\foreach \t in {0.65,0.7,0.75,...,1.6}{
+		\draw[thin] (\t,-0.1) -- (\t,0.1);}
+	\fill[black!75!white, opacity=0.5] (0.75,0) -- (0.75,0.1) arc (90:270:0.1cm) -- cycle;
+	\fill[black!75!white, opacity=0.5] (1.5,0) -- (1.5,0.1) arc (90:-90:0.1cm) -- cycle;
+	\draw (0.65,0.1) -- (0.65,-0.1) node[below] {\small $d_1$};
+	\draw (1.6,0.1) -- (1.6,-0.1) node[below] {\small $d_2$};
+	\end{scope}
+
+
+\begin{scope}[xshift=8cm,xscale=0.875,yscale=0.875]
+	\draw[dashed] (0,0) circle (2cm);
+	\draw[very thick,->] (-2.5,0) -- (6.75,0);
+	\draw[very thick,->] (0,-2.5) -- (0,2.5);
+	\draw (0.65,0.1) -- (0.65,-0.1) node[below] {\small $c_1$};
+	\fill[black!25!white,opacity=0.375] (-2.5,0.1) -- (0.65,0.1) -- (0.65,-0.1) -- (-2.5,-0.1) -- cycle;
+	\draw[<->,thin] (-2.5,0.1) -- (0.65,0.1) -- (0.65,-0.1) -- (-2.5,-0.1);
+	\draw (1.6,0.1) -- (1.6,-0.1) node[below] {\small $c_2$};
+	\fill[black!25!white,opacity=0.375] (-2.5,0.2) -- (1.6,0.2) -- (1.6,-0.2) -- (-2.5,-0.2) -- cycle;
+	\draw[<->,thin] (-2.5,0.2) -- (1.6,0.2) -- (1.6,-0.2) -- (-2.5,-0.2);
+	\begin{scope}[xshift=2.5cm]
+	\draw (1.6,0.1) -- (1.6,-0.1) node[below] {\small $d_2$};
+	\fill[black!25!white,opacity=0.375] (4.25,0.1) -- (1.6,0.1) -- (1.6,-0.1) -- (4.25,-0.1) -- cycle;
+	\draw[<->,thin] (4.25,0.1) -- (1.6,0.1) -- (1.6,-0.1) -- (4.25,-0.1);
+	\draw (0.65,0.1) -- (0.65,-0.1) node[below] {\small $d_1$};
+	\fill[black!25!white,opacity=0.375] (4.25,0.2) -- (0.65,0.2) -- (0.65,-0.2) -- (4.25,-0.2) -- cycle;
+	\draw[<->,thin] (4.25,0.2) -- (0.65,0.2) -- (0.65,-0.2) -- (4.25,-0.2);
+	\end{scope}
+\end{scope}
+\end{tikzpicture}
+\caption{\textsl{The branch cuts for the function $\widetilde{g}(x;\cdot)$ are shown on the left,
+which is an analytic continuation of the function $f(x;\xi)=\sqrt{\mathcal{Q}_1(\xi)/\xi^2}$
+defined in a neighborhood of $\mathcal{C}(0;1)$.
+In the figure on the right we show the {\em a priori} overlapping branch-cuts of the original
+analytic continuation $g(x;\cdot)$.
+\label{fig:sqrtNew}
+}}
+\end{center}
+\end{figure}
+The domain for the function $\widetilde{g}(x;\cdot)$ is as in the left-hand picture in Figure \ref{fig:sqrtNew}.
+
+
+We prove Lemmas \ref{lem:sqrtContinuationB} and \ref{lem:sqrtContinuationC} in 
+Appendix \ref{sec:Deform}.
+Then equation (\ref{eq:alphaIntegralSixSevenths}) may be rewritten as 
+\begin{equation}
+\label{eq:alphaIntegralSevenEighths}
+	\alpha(w,x^2)\,  =\,
+\oint_{\mathcal{C}(0;1)}  \frac{\widetilde{g}(x;\xi)+w\cdot \xi}
+	{\mathcal{Q}_2(x,w;\xi)}\, \cdot \frac{d\xi}{2\pi i}\, ,
+\end{equation}
+where the roots of $\mathcal{Q}_2(x,w;\cdot)$ are $a_1(x;w)$, $a_2(x;w)$, $b_1(x;w)$ and $b_2(x;w)$,
+and where the domain of $\widetilde{g}(x;\cdot)$ is all of $\C$ except for the union 
+of the two intervals $[c_1(x),c_2(x)]$ and $[d_1(x),d_2(x)]$.
+Thus we obtain the region  as in Figure \ref{fig:contour}.
+This is the region where we may deform the contour $\mathcal{C}(0;1)$.

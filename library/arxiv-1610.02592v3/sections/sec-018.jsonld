@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.02592v3/sections/sec-018",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Tubes and cusps",
+  "pageStart": 117,
+  "pageEnd": 123,
+  "contains": [
+    "library/arxiv-1610.02592v3/blocks/prose-sec-018",
+    "library/arxiv-1610.02592v3/blocks/proposition-sec-018-01",
+    "library/arxiv-1610.02592v3/blocks/corollary-sec-018-02",
+    "library/arxiv-1610.02592v3/blocks/corollary-sec-018-03",
+    "library/arxiv-1610.02592v3/blocks/proposition-sec-018-04",
+    "library/arxiv-1610.02592v3/blocks/remark-sec-018-05",
+    "library/arxiv-1610.02592v3/blocks/proposition-sec-018-06",
+    "library/arxiv-1610.02592v3/blocks/example-sec-018-07",
+    "library/arxiv-1610.02592v3/blocks/remark-sec-018-08",
+    "library/arxiv-1610.02592v3/blocks/proposition-sec-018-09",
+    "library/arxiv-1610.02592v3/blocks/remark-sec-018-10",
+    "library/arxiv-1610.02592v3/blocks/proposition-sec-018-11",
+    "library/arxiv-1610.02592v3/blocks/corollary-sec-018-12",
+    "library/arxiv-1610.02592v3/blocks/corollary-sec-018-13",
+    "library/arxiv-1610.02592v3/blocks/proposition-sec-018-14"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.02592v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.02592v3/manifest.jsonld",
+  "provenance": "ingested"
+}

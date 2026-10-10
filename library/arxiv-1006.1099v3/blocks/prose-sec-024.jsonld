@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1006.1099v3/blocks/prose-sec-024",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1006.1099v3/blocks/prose-sec-024",
   "kind": "prose",
   "title": "Spinning",
   "pageStart": 49,
   "pageEnd": 52,
   "text": "../sections/sec-024-46-spinning.md",
-  "derivedFrom": "library/arxiv-1006.1099v3/manifest",
-  "sourceDocument": "library/arxiv-1006.1099v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1006.1099v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1006.1099v3/manifest.jsonld",
   "provenance": "ingested"
 }

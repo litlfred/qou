@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9804005v3/blocks/prose-sec-010",
+  "kind": "prose",
+  "title": "There is a function d : SpecA → Z such that",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "text": "../sections/sec-010-1-there-is-a-function-d-speca-z-such-that.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9804005v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9804005v3/manifest.jsonld",
+  "provenance": "ingested"
+}

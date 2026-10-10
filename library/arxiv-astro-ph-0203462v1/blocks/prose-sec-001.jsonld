@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-001",
+  "kind": "prose",
+  "title": "GRAAL, Universit´ e de Montpellier II, F-34095 Montpellier Cedex 05, France",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "text": "../sections/sec-001-2-graal-universit-e-de-montpellier-ii-f-34095-mo.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-astro-ph-0203462v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-astro-ph-0203462v1/manifest.jsonld",
+  "provenance": "ingested"
+}

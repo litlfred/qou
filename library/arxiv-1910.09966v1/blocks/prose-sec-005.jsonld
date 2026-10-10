@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1910.09966v1/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1910.09966v1/blocks/prose-sec-005",
   "kind": "prose",
   "title": "K3 Surfaces and Octonions",
   "pageStart": 13,
   "pageEnd": 15,
   "text": "../sections/sec-005-41-k3-surfaces-and-octonions.md",
-  "derivedFrom": "library/arxiv-1910.09966v1/manifest",
-  "sourceDocument": "library/arxiv-1910.09966v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1910.09966v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1910.09966v1/manifest.jsonld",
   "provenance": "ingested"
 }

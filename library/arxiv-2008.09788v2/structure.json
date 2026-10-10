@@ -5,7 +5,8 @@
   "file": "2008.09788v2.pdf",
   "sha256": "460f4f5432cb1f0cb5f0a9426749b9426fc8b40abe17a5f46841c877800184b2",
   "bytes": 438993,
-  "pages": 31
+  "pages": 31,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "NONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND SOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC GEOMETRY",
   "authors_raw": "ALEXEI KANEL-BELOV, ALEXEI CHILIKOV, ILYA IVANOV-POGODAEV, SERGEY MALEV",
-  "abstract": "This paper surveys results related to well-known works of B. Plotkin and V. Remeslennikov on the edge of algebra, logic and geomet ry. We start from a brief review of the paper and motivations. The ﬁrst section s deal with model theory. In Section 2.1 we describe the geometric equivalenc e, the elementary equiv- alence, and the isotypicity of algebras. We look at these not ions from the positions of universal algebraic geometry and make emphasis on the cas es of the ﬁrst order rigidity. In this setting Plotkin’s problem on the structur e of automorphisms of (auto)endomorphisms of free objects, and auto-equivalenc e of categories is pretty natural and important. Section 2.2 is dedicated to particul ar cases of Plotkin’s problem. Section 2.3 is devoted to Plotkin’s problem for aut omorphisms of the group of polynomial symplectomorphisms. This setting has a pplications to math- ematical physics through the use of model theory (non-stand ard analysis) in the studying of homomorphisms between groups of symplectomorp hisms and automor- phisms of the Weyl algebra. The last two sections deal with al gorithmic problems for noncommutative and commutative algebraic geometry. Se ction 3.1 is devoted to the Gr¨ obner basis in non-commutative situation. Despit e the existence of an algorithm for checking equalities, the zero divisors and ni lpotency problems are al- gorithmically unsolvable. Section 3.2 is connected with th e problem of embedding of algebraic varieties; a sketch of the proof of its algorith mic undecidability over a ﬁeld of characteristic zero is given. Dedicated to the 70-th anniversary of A.L. Semenov and to the 95-th anniversary of B.I. Plotkin.",
+  "abstract": "This paper surveys results related to well-known works of B. Plotkin and V. Remeslennikov on the edge of algebra, logic and geomet ry. We start from a brief review of the paper and motivations. The \ufb01rst section s deal with model theory. In Section 2.1 we describe the geometric equivalenc e, the elementary equiv- alence, and the isotypicity of algebras. We look at these not ions from the positions of universal algebraic geometry and make emphasis on the cas es of the \ufb01rst order rigidity. In this setting Plotkin\u2019s problem on the structur e of automorphisms of (auto)endomorphisms of free objects, and auto-equivalenc e of categories is pretty natural and important. Section 2.2 is dedicated to particul ar cases of Plotkin\u2019s problem. Section 2.3 is devoted to Plotkin\u2019s problem for aut omorphisms of the group of polynomial symplectomorphisms. This setting has a pplications to math- ematical physics through the use of model theory (non-stand ard analysis) in the studying of homomorphisms between groups of symplectomorp hisms and automor- phisms of the Weyl algebra. The last two sections deal with al gorithmic problems for noncommutative and commutative algebraic geometry. Se ction 3.1 is devoted to the Gr\u00a8 obner basis in non-commutative situation. Despit e the existence of an algorithm for checking equalities, the zero divisors and ni lpotency problems are al- gorithmically unsolvable. Section 3.2 is connected with th e problem of embedding of algebraic varieties; a sketch of the proof of its algorith mic undecidability over a \ufb01eld of characteristic zero is given. Dedicated to the 70-th anniversary of A.L. Semenov and to the 95-th anniversary of B.I. Plotkin.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20200924211841-04'00'",
@@ -77,7 +78,7 @@
   },
   {
    "level": 2,
-   "title": "Finite Gröbner basis algebras with unsolvable nilpotency problem and zero divisors problem",
+   "title": "Finite Gr\u00f6bner basis algebras with unsolvable nilpotency problem and zero divisors problem",
    "page": 23,
    "source": "outline",
    "number": "3.1"
@@ -175,6 +176,59 @@
   "likely_scanned": false,
   "toc_entries": 9,
   "sections": 7,
-  "chars_total": 104951
+  "chars_total": 104951,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 3,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-model-theoretical-aspects",
+     "title": "Model-theoretical aspects",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-algebraic-geometry-over-algebraic-systems",
+     "title": "Algebraic geometry over algebraic systems",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-23-on-the-independence-of-the-b-kk-isomorphism-o",
+     "title": "On the independence of the B-KK isomorphism of infinite prime and Plotkin conjecture for symplectomorphisms",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-3-algorithmic-aspects-of-algebraic-geometry",
+     "title": "Algorithmic aspects of algebraic geometry",
+     "prose_ratio": 0.521,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-32-on-the-algorithmic-undecidability-of-the-embe",
+     "title": "On the algorithmic undecidability of the embeddability problem for algebraic varieties over a field of characteristic zero",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

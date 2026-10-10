@@ -7,145 +7,302 @@ section_number: 7
 pages: 16-19
 source_pdf: 1604.02688v1.pdf
 source_sha256: bdcafe379519287c
+text_source: latex
+latex_prose_ratio: 0.799
+latex_coverage_ratio: 0.891
 doc_brief: "THE 3D-INDEX AND NORMAL SURFACES — Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary"
 ---
-theory
-The work of Kang-Rubinstein and Luo-Tillmann, described above, shows that the edge
-solutions and tetrahedral solutions span the real vector spaceN(T; R)⊂ R3n of closed normal
-classes, and that these together with the peripheral curve solutions span the real vector space
-Q(T; R)⊂ R3n ofall Q-normalclasses. However, overtheintegersthesituationismoresubtle
-— the integer linear combinations of edge and tetrahedral solutions generally give only a
-ﬁnite index submodule ofN(T; Z) and the integer linear combinations of edge, tetrahedral
-and peripheral curve solutions give a ﬁnite index submodule ofQ(T; Z). In this section we
-give a precise description of these integer classes. It turns out that this is a consequence of
-the results of Neumann [Neu92] on combinatorics of ideal triangulations.
-Weregarda Q-normalclassasalinearcombinationofquadsin T satisfyingthe Q-matching
-equations of Tollefson [Tol98]. Explicitly, letZE∼= Zn and Z□∼= Z3n denote the free Z-
-modules with bases given by the (unoriented) edge classes and quad types inT respectively.
-Given a quadqσ in an oriented tetrahedronσ of T we associate a sign±1 to each of the
-edges ofσ meetingqσ as shown in ﬁgure 8. (These signs give the shear parameters along the
-edges as explained in Section 6.1.) Adding these contributions gives a linear map
-F : Z□→ ZE (21)
-whose kernel is the submoduleQ(T; Z) of Q-normal classes.
-Figure 8. Each quad can be replaced by a twisted square or twisted octagon.
-Kang-Rubinstein [KR04] observed that for each edge class inT, the sum of all quad types
-facing the edges in this class gives an “edge solution” inQ(T; Z); this gives a linear map
-G : ZE→ Z□ (22)
-with image contained inQ(T; Z). Further, the sum of the three quad types in a tetrahedron
-in T gives a “tetrahedral solution” inQ(T; Z). We let E, T⊂ Q(T; Z)⊂ Z□ denote the
-THE 3D-INDEX AND NORMAL SURF ACES 17
-Z-submodules spanned by the edge solutions and tetrahedral solutions respectively, and let
-Q0(T; Z) denote the submoduleE + T⊂Q(T; Z).
-Next we associate two important homology (or cohomology) classes with anyQ-normal
-class. First observe that any quadrilateral in a tetrahedron can be replaced by a ‘twisted
-square’ meeting the same edges, or by a ‘twisted octagon’ in the corresponding truncated
-tetrahedron with its four external edges oriented as shown in Figure 8 (compare [Neu92,
-Figures 9, 10]). Note that the arrow on each external edge goes from an internal edge
-labelled +1 to an internal edge labelled−1.
-Each spun normal classS∈ Q(T; Z) is a linear combination of quads, so we can replace
-this by a linear combinationS′ of twisted octagons. It follows from theQ-matching equations
-that S′ represents a mod 2 homology class[S]2∈H2(M,∂M ; Z/2Z). Here and throughout
-the paper, we will use[ ]2 to indicate aZ/2Z homology (or co-homology) class. Further, the
-boundary edges ofS′, oriented as above, represent a homology class[∂S]∈ H1(M; Z). In
-particular, the kernel of the boundary mapS↦→ [∂S] is precisely the submoduleN(T; Z)⊂
-Q(T; Z) of closed normal classes.
-WhenS gives an embedded spun normal surface,[∂S] agrees with boundary map deﬁned
-by Tillmann in [Til08] (up to sign), and describes the boundary components of the spun
-normal surface and the direction of spiralling of the spun normal surface around∂M. (With
-the orientation convention given in Figure 8, the ends of a spun normal surface spiral up
-into the cusp to theright of the oriented boundary curve, as viewed from the cusp.)
-SinceS′ gives a 2-chain mod 2 whose boundary represents the reduction of[∂S] mod 2, it
-follows that
-([S]2, [∂S])∈{ (a,b )∈H2(M,∂M ; Z/2Z)×H1(∂M ; Z) :∂∗a =b mod 2}
-where∂∗ :H2(M,∂M ; Z/2Z)→H1(∂M ; Z/2Z) is the connecting homomorphism in the long
-exact sequence of the pair(M,∂M ). Hence, [∂S]∈ K = Ker(H1(∂M ; Z)→H1(M; Z/2Z)),
-by the long exact sequence of the pair(M,∂M ) with Z/2Z coeﬃcients.
-Theorem 7.1.The homomorphism
-H :Q(T; Z)→H2(M,∂M ; Z/2Z)×H1(∂M ; Z), S↦→ ([S]2, [∂S])
-has image
-ImH ={(a,b )∈H2(M,∂M ; Z/2Z)×H1(∂M ; Z) :∂∗a =b mod 2}
+\label{ZNST}
+
+The work of Kang-Rubinstein and Luo-Tillmann, described above, shows that 
+the edge solutions and tetrahedral solutions 
+span the real vector space $N(\T;\R) \subset \R^{3n}$ of closed normal 
+classes, and that these together with the 
+peripheral curve solutions span the real vector space 
+$Q(\T;\R) \subset \R^{3n}$ of all $Q$-normal classes.
+However, over the integers the situation is more subtle --- the integer 
+linear combinations of edge and tetrahedral solutions generally give only 
+a finite index submodule of $N(\T;\Z)$ and the integer linear combinations 
+of edge, tetrahedral and peripheral curve solutions  give a finite index 
+submodule of $Q(\T;\Z)$. In this section we give a precise 
+description of these integer classes. It turns out that this is a 
+consequence of the results of Neumann  \cite{N} on combinatorics of ideal 
+triangulations.
+
+We regard a $Q$-normal class  as a linear combination of quads in 
+$\T$ satisfying the $Q$-matching equations of Tollefson \cite{To}. 
+Explicitly, let $\Z E \cong \Z^n$ and $\Z\quads \cong \Z^{3n}$ 
+denote the free $\Z$-modules with bases given by the (unoriented) edge 
+classes and quad types in $\T$ respectively. Given a quad $q_\sigma$ in an 
+oriented tetrahedron $\sigma$ of $\T$ we associate a sign $\pm 1$ to each 
+of the edges of $\sigma$ meeting $q_\sigma$ as shown in 
+figure \ref{twisted_octagon}. (These signs give the shear parameters 
+along the edges as explained in Section \ref{spun_normal_construction}.)
+Adding these contributions gives a linear map 
+\be
+\label{Qmatching_map}
+F: \Z\quads \to \Z E
+\ee
+whose kernel is the submodule $Q(\T;\Z)$ of $Q$-normal classes.
+
+\begin{figure}[htpb]
+\begin{center}
+\includegraphics[width=0.26\textwidth]{figures/quadWithOrientation} 
+\hspace{1cm}
+\includegraphics[width=0.26\textwidth]{figures/twistedSquare} 
+\hspace{1cm}
+\includegraphics[width=0.26\textwidth]{figures/twistedOctagon}
+\end{center}
+\caption{Each quad can be replaced by a twisted square or twisted octagon.}
+\label{twisted_octagon}
+\end{figure}
+
+Kang-Rubinstein \cite{KR1} observed that for each edge class  in $\T$, the 
+sum of all quad types facing the edges in this class gives an 
+``edge solution''  in $Q(\T;\Z)$; this gives a linear map 
+
+\be 
+\label{edge_solution_map}
+G: \Z E \to \Z\quads 
+\ee 
+with image contained in $Q(\T;\Z)$.
+Further, the sum of the three quad types in a tetrahedron in $\T$ gives a 
+``tetrahedral solution'' in $Q(\T;\Z)$. We let 
+$\EE,\TT \subset Q(\T;\Z) \subset \Z\quads$ denote the $\Z$-submodules 
+spanned by the edge solutions and tetrahedral solutions respectively, and 
+let $Q_0(\T;\Z)$ denote the submodule $\EE+\TT  \subset Q(\T;\Z)$.
+
+Next we associate two important homology (or cohomology) classes with any 
+$Q$-normal class. First observe that any quadrilateral in a tetrahedron can 
+be replaced by a `twisted square' meeting the same edges, or by a 
+`twisted octagon' in the corresponding truncated tetrahedron with its 
+four external edges oriented as shown in Figure \ref{twisted_octagon} 
+(compare \cite[Figures 9, 10]{N}). Note that the arrow on each external 
+edge goes from an internal edge labelled $+1$ to an internal edge labelled $-1$.
+
+Each spun normal class $S \in Q(\T;\Z)$ is a linear combination of quads, so 
+we can replace this by a linear combination $S'$ of twisted octagons. It 
+follows from the $Q$-matching equations that  $S'$ represents a mod 2 
+homology class $[S]_2 \in H_2(M,\bd M; \Z/2\Z)$. Here and throughout the 
+paper, we will use $[~]_2$ to indicate a $\Z/2\Z$ homology (or co-homology) 
+class. Further, the boundary edges of $S'$, oriented as above, represent 
+a homology class $[\bd S] \in H_1(M;\Z)$. In particular, the kernel of the 
+boundary map $S \mapsto [\bd S]$ is precisely the  submodule 
+$N(\T;\Z) \subset Q(\T;\Z)$ of {\em  closed} normal classes. 
+
+When $S$ gives an embedded spun normal surface,  $[\bd S]$ agrees with 
+boundary map defined by Tillmann in \cite{Ti} (up to sign), and describes 
+the boundary components of the spun normal surface and the direction of 
+spiralling of the spun normal surface around $\bd M$.  (With the 
+orientation convention given in Figure \ref{twisted_octagon}, the ends of 
+a spun normal surface spiral up into the cusp to the {\em right} of the 
+oriented boundary curve, as viewed from the cusp.)
+
+Since $S'$ gives a 2-chain mod 2 whose boundary represents the reduction of 
+$[\bd S]$ mod 2, it follows that 
+$$
+([S]_2,[\bd S]) \in \{ (a,b) \in  H_2(M,\bd M;\Z/2\Z) \times H_1(\bd M;\Z) : 
+\bd_* a =   b \bmod 2  \}
+$$
+where $\bd_*: H_2(M,\bd M;\Z/2\Z) \to H_1(\bd M;\Z/2\Z) $ is the connecting 
+homomorphism in the long exact sequence of the pair $(M, \bd M)$.   
+Hence, $[\bd S] \in {\mathcal K} =\Ker(H_1(\bd M;\Z) \to H_1(M;\Z/2\Z))$, 
+by the long exact sequence of the pair $(M,\bd M)$ with $\Z/2\Z$ coefficients.
+
+\begin{thm} 
+\label{ZQNT_struct_thm}
+The homomorphism 
+$$
+H:  Q(\T;\Z) \to H_2(M,\bd M;\Z/2\Z) \times H_1(\bd M;\Z),~ S 
+\mapsto ([S]_2,[\bd S])
+$$
+has image 
+$$
+\Im H =\{ (a,b) \in H_2(M,\bd M;\Z/2\Z) \times  H_1(\bd M;\Z) :  
+\bd_* a =  b \bmod 2 \}
+$$
 and kernel
-KerH =Q0(T; Z) = E + T.
+$$
+\Ker H = Q_0(\T;\Z) = \EE + \TT.
+$$
 In particular, the homomorphism
-H0 :N(T; Z)→H2(M,∂M ; Z/2Z), S↦→ [S]2
+$$
+H_0:  N(\T;\Z) \to  H_2(M,\bd M;\Z/2\Z),~ S \mapsto [S]_2
+$$
 has image
-ImH0 = Ker(H2(M,∂M ; Z/2Z)→H2(∂M ; Z/2Z)) = Im(H2(M; Z/2Z)→H2(M,∂M ; Z/2Z))
+$$
+\Im H_0 = \Ker( H_2(M,\bd M;\Z/2\Z) \to H_2(\bd M;\Z/2\Z)) 
+=  \Im ( H_2(M;\Z/2\Z) \to H_2(M,\bd M;\Z/2\Z) )
+$$
 and kernel
-KerH0 =Q0(T; Z) = E + T.
-18 STA VROS GAROUF ALIDIS, CRAIG D. HODGSON, NEIL R. HOFFMAN, AND J. HYAM RUBINSTEIN
-Proof. This essentially follows from Neumann [Neu92, Theorem 5.1] together with Poincaré
-duality. To match Neumann’s notation from sections 4–6 of [Neu92] we letK denote the
-oriented pseudo-manifold given by the triangulationT with its ideal vertices included. Thus
-K is homeomorphic to the end compactiﬁcationˆM of the intM, obtained by collapsing each
-component of∂M to a separate point. Truncating the corners of the tetrahedra inK gives
-a cell complexK0 homeomorphic toM with boundary∂K0 homeomorphic to∂M.
-Let C0 = ZV ∼= Zr,C 1 = ZE∼= Zn,J = Z□∼= Z3n be the free Z-modules with bases
-given by the cusps, (unoriented) edge classes, and quad types in T respectively, and let
-E, T⊂ Z□ denote theZ-submodules spanned by the edge solutions and tetrahedral solutions
-respectively. Then Neumann deﬁnes a chain complex
-0→C0
-α
-− →C1
-β
-− →J
-β∗
-−→C1
-α∗
-−→C0→ 0
-where J = Z□/T∼= Z2n, α gives the sum of all edges incident to a vertex,α∗ is a map that
-associates to an edge the sum of its endpoints, andβ andβ∗ are deﬁned so that the following
-diagram commutes:
-J = Z□
-π
-
-F
-’’
-C1 = ZE
-G
-77
-β ’’
-C1 = ZE
-J = Z□/T
-β∗
-77
-Here, π : Z□→ Z□/T is the quotient map.
-To relate this to integerQ-normal surface theory we observe thatKerβ∗ =Q(T; Z)/T and
-Imβ = (E + T)/T.
-Now Neumann’s Theorem 5.1 gives an isomorphism fromKerβ∗/ Imβ =Q(T; Z)/(E + T)
-to
-{(f,g )∈H1(M; Z/2Z)×H1(∂M ; Z) :i∗f =g mod 2}
-where i∗ : H1(M; Z/2Z) → H1(∂M ; Z/2Z) is induced by the inclusion mapi : ∂M →
-M. In other words, this is the set of pairs (f,g ) with f ∈ Hom(H1(M), Z/2Z), g ∈
-Hom(H1(∂M ), Z), such that f(γ) = g(γ) mod 2 for all γ ∈ H1(∂M ), where we write
-H1(∂M ) =H1(∂M ; Z) and H1(M) =H1(M; Z).
+$$
+\Ker H_0 =Q_0(\T;\Z)= \EE + \TT.
+$$
+\end{thm}
+
+\begin{proof} 
+This essentially follows from Neumann \cite[Theorem 5.1]{N} together with 
+Poincar\'e duality. To match Neumann's notation from sections 4--6 
+of \cite{N} we let $K$ denote the oriented pseudo-manifold given by the 
+triangulation $\T$ with its ideal vertices included.
+Thus $K$ is homeomorphic to the end compactification $\hat M$ of the 
+$\text{int} M$, obtained by collapsing each component of  $\bd M$
+to a separate point. Truncating the corners of the tetrahedra in $K$ gives 
+a cell complex $K_0$ homeomorphic to $M$ with boundary
+$\bd K_0$ homeomorphic to $\bd M$. 
+
+Let  $C_0 =\Z V \cong \Z^r , C_1=\Z E \cong \Z^n ,  
+\overline{J}=\Z \quads \cong\Z^{3n}$  be the free $\Z$-modules 
+with bases given by the cusps, (unoriented) edge classes, and quad types 
+in $\T$ respectively, and let $\EE, \TT\subset \Z \quads$ denote the 
+$\Z$-submodules spanned by the edge solutions and  tetrahedral solutions
+respectively.  Then Neumann defines a chain complex
+$$
+0 \to C_0  \xrightarrow{\alpha} C_1  \xrightarrow{\beta}  J  
+\xrightarrow{\beta^*}  C_1  \xrightarrow{\alpha^*}  C_0 \to 0
+$$
+where $J= \Z \quads/\TT \cong \Z^{2n}$, $\alpha$ gives the sum of all 
+edges incident to a vertex, $\alpha^*$ is a map that associates to an 
+edge the sum of its endpoints, and $\beta$ and $\beta^*$ are defined so 
+that the following diagram commutes:
+
+\begin{center}
+\begin{tabular}{c}
+\xymatrix{
+& \overline{J}= \Z\quads \ar[dd]_\pi \ar[dr]^F &\\
+C_ 1= \Z\EE  \ar[ur]^G \ar[dr]_\beta & & C_ 1= \Z\EE\\
+&J=\Z\quads/\TT \ar[ur]_{\beta^*} & 
+}
+\end{tabular}
+\end{center}
+
+Here, $\pi: \Z\quads  \rightarrow  \Z\quads/\TT$ is the quotient map.
+
+To relate this  to integer  $Q$-normal surface theory we observe that 
+$\Ker \beta^* = Q(\T;\Z)/\TT$ and $\Im \beta = (\EE + \TT)/\TT$.
+
+Now Neumann's Theorem 5.1 gives an isomorphism from 
+$\Ker \beta^*/\Im \beta = Q(\T;\Z)/(\EE + \TT)$ to
+$$
+\{ (f,g) \in  H^1(M;\Z/2\Z) \times H^1(\bd M;\Z)  :   i^* f =  g \bmod 2 \}
+$$
+where 
+$i^*: H^1(M;\Z/2\Z) \to H^1(\bd M;\Z/2\Z) $ is induced by the inclusion 
+map $i: \bd M \to M$. In other words, this is the set of pairs
+$(f,g)$ with $f \in \Hom(H_1(M),\Z/2\Z)$, $g \in \Hom(H_1(\bd M),\Z)$, 
+such that $f(\gamma) =g(\gamma) \bmod 2$  for all $ \gamma \in H_1(\bd M)$,
+where we write  $H_1(\bd M)= H_1(\bd M; \Z)$ and $H_1(M)= H_1(M; \Z)$. 
+
 Now we have a commutative diagram
-H1(M,∂M ; Z/2Z)
-j∗
-−−−→ H1(M; Z/2Z)
-i∗
-−−−→H1(∂M ; Z/2Z)↓∼=
-↓∼=
-↓∼=
-H2(M; Z/2Z)
-j∗
-−−−→H2(M,∂M ; Z/2Z)
-∂∗
-−−−→H1(∂M ; Z/2Z)
-where the vertical maps are the isomorphisms given by Poincaré duality. This gives an
-isomorphism
-Q(T; Z)/(E + T)∼={(a,b )∈H2(M,∂M ; Z/2Z)×H1(∂M ; Z) :∂∗a =b mod 2}
-THE 3D-INDEX AND NORMAL SURF ACES 19
-where∂∗ :H2(M,∂M ; Z/2Z)→H1(∂M ; Z/2Z) is the connecting homomorphism in the long
-exact sequence of the pair(M,∂M ). A careful examination of Neumann’s work shows that
-this isomorphism is given by the homology mapH :S↦→ ([S]2, [∂S]) deﬁned above. □
-Remark 7.2. Using Poincaré duality and the Mayer-Vietoris sequence it follows that
-ImH0 = Im(H2(M; Z/2Z)→H2(M,∂M ; Z/2Z))
-∼= Ker(H1(M; Z/2Z)→H1(∂M ; Z/2Z))∼=H1( ˆM; Z/2Z).
-where ˆM is the pseudo-manifold given by the triangulationT with its ideal vertices included;
-thus ˆM is homeomorphic toM with a cone attached over each boundary torus.
-Remark 7.3. When M has no non-peripheral Z/2Z homology (for example, ifM is a knot
-or link exterior in aZ/2Z homology sphere), thenQ0(T; Z) =N(T;Z) consists of all closed
-normal classes. Further,K = Ker(H1(∂M ; Z)→H1(M; Z/2Z)) is a subgroup of index2r in
-H1(∂M ; Z) where r is the number of components of∂M.
-In general,Q0(T; Z) is a ﬁnite index submodule ofN(T;Z), and for any normal surface
-class S∈N(T;Z) its “double”2S lies inQ0(T; Z).
+$$
+\begin{CD}
+H^1(M,\bd M;\Z/2\Z) @>j^*>> H^1(M;\Z/2\Z) @>i^*>> H^1(\bd M;\Z/2\Z) \\
+@VV\cong V                      @VV\cong V     @VV\cong V          \\
+H_2(M;\Z/2\Z) @>j_*>> H_2(M,\bd M; \Z/2\Z)  @>\bd_*>>   H_1(\bd M; \Z/2\Z)
+\end{CD}
+$$
+where the vertical maps are the isomorphisms given by Poincar\'e duality.
+This gives an isomorphism 
+$$
+Q(\T;\Z)/(\EE + \TT) \cong \{ (a,b) \in  H_2(M,\bd M;\Z/2\Z) 
+\times H_1(\bd M;\Z) : \bd_* a =   b\bmod 2  \}
+$$
+where 
+$\bd_*: H_2(M,\bd M;\Z/2\Z) \to H_1(\bd M;\Z/2\Z) $ is the connecting 
+homomorphism in the long exact sequence of the pair $(M, \bd M)$. 
+A careful examination of Neumann's work shows that this isomorphism
+is given by the homology map $H :S \mapsto ([S]_2,[\bd S])$ defined above.  
+\end{proof}
+
+\begin{rmk} 
+Using Poincar\'e duality and the Mayer-Vietoris sequence it follows that
+\begin{align*}
+\Im H_0 &= \Im ( H_2(M;\Z/2\Z) \to H_2(M,\bd M;\Z/2\Z)) \\ 
+&\cong \Ker (H^1(M;\Z/2\Z) \to H^1(\bd M; \Z/2\Z)) \cong H^1(\hat M; \Z/2\Z).
+\end{align*}
+where $\hat M$ is the pseudo-manifold given by the triangulation $\T$ 
+with its ideal vertices included; thus $\hat M$ is homeomorphic to $M$ with 
+a cone attached over each boundary torus.
+\end{rmk}
+
+\begin{rmk}
+When $M$ has no non-peripheral $\Z/2\Z$ homology (for example, if $M$ is 
+a knot or link exterior in a $\Z/2\Z$ homology sphere), then 
+$Q_0(\T;\Z) = N(\T;Z)$  consists of all closed normal classes.
+Further, ${\mathcal K} =\Ker(H_1(\bd M;\Z) \to H_1(M;\Z/2\Z))$ is a 
+subgroup of index $2^r$ in $H_1(\bd M;\Z)$ where $r$ is the number of 
+components of $\bd M$.
+
+In general, $Q_0(\T;\Z)$ is a finite index submodule of $N(\T;Z)$, and for 
+any normal surface class $S \in N(\T;Z)$
+its ``double'' $2S$ lies in $Q_0(\T;\Z)$.
+\end{rmk}
+
+\subsection{Geometric generators for integer Q-normal classes}
+\label{subsect:gen_q_normal}
+
+Next we describe explicit generators for $N(\T;\Z)$. First, recall that 
+$Q_0(\T;\Z) = \EE +\TT$ is generated by the edge solutions and tetrahedral 
+solutions described by Kang-Rubinstein \cite{KR1}. 
+It follows from Theorem \ref{ZQNT_struct_thm} and the previous  remark that 
+$$
+N(\T;\Z)/Q_0(\T;\Z) \cong \Im H_0 \cong H^1(\hat M; \Z/2\Z).
+$$
+
+Given a mod 2 class  
+$a \in \Im H_0 = \Im ( H_2(M;\Z/2\Z) \to H_2(M,\bd M;\Z/2\Z))$, we can 
+construct a closed normal class  $S_0\in N(\T;\Z)$ with $[S_0]_2=a$ and 
+$[\bd S_0]=0$ as follows. 
+Choose a simplicial 1-cocycle $z \in Z^1(\T;\Z/2\Z)$ representing the dual 
+cohomology class in $H^1(\hat M;\Z/2\Z)$.
+This assigns an element $\bar 0$ or $\bar 1 \in \Z/2\Z$ to each edge of 
+$\T$, and we lift these to integers $0,1 \in \Z$ giving a 1-cochain 
+$\tilde z \in C^1(\T;\Z)$.  
+Since  $z$ is a mod 2 cocycle, it follows that the sum of integers 
+attached to the edges of any triangle in $\T$ is even. This implies that 
+the integers attached to edges of any tetrahedra in $\T$ are either:
+(i) all 0, (ii) 1 at the three edges of a triangular normal disc, 0 
+elsewhere (ii) or 1 at the four edges of a quad, 0 elsewhere. 
+Now we can construct an {\em embedded closed normal surface} $S$ by 
+taking one triangle in each tetrahedron of type (ii) 
+and one quad in tetrahedron of type (iii).   Forgetting the triangle 
+coordinates (if any) gives a closed normal class $S_0$ in $N(\T;\Z)$
+such that $[S_0]_2=a$ and $[\bd S_0]=0$.
+
+\begin{rmk} 
+Changing $z$ by a coboundary changes $S$ by adding vertex linking surfaces. 
+But there is a unique closed embedded normal surface of {\em least weight} 
+(i.e. having fewest intersections with the edges) obtained by this 
+construction.
+\end{rmk}
+
+\medskip Given any class $b \in H_1(\bd M;\Z)$, a construction of 
+Neumann \cite{N} gives a normal class $S \in Q(\T;\Z)$
+with $[\bd S] = 2 b$ as follows. Represent $b$ by an oriented multi-curve 
+$\beta$ which is in normal position relative to the induced triangulation 
+$\T_\bd$ of $\bd M$.  Each oriented normal arc of $\beta$ lies in a truncated 
+tetrahedron $\sigma$ of $\T$ and winds around one of the edges of $\sigma$, 
+which faces a quad type $q$ in $\sigma$. Now add up the quads associated 
+to all the normal arcs of $\beta$, with signs $+1$ or $-1$ according to 
+whether the normal arc winds anticlockwise or clockwise as viewed from the 
+cusp. The result is a normal class with $[\bd S] = 2 b$, $[S]_2=0$ and 
+$\chi(S)=0$. 
+
+\begin{rmk} 
+These ``peripheral curve solutions'' give normal classes in $Q(\T;\Z)$
+representing all {\em even classes}  
+$b \in H_1(\bd  M; 2\Z) \subset  H_1(\bd  M; \Z) $, i.e. those such that
+$ b \bmod 2 = 0$.  Adding these to the above closed normal classes gives 
+normal classes representing all $(a,b) \in  H_2(M,\bd M;\Z/2\Z) \times 
+H_1(\bd M;\Z)$ such that $\bd_* a =   b \bmod 2  =0$.
+We do not know a direct geometric construction for the other (non-even) 
+classes $b \in \mathcal K \subset  H_1(\bd  M; \Z)$.
+\end{rmk}
+
+\begin{rmk}
+\label{half-integer-coefs}
+For any $Q$-normal class $S \in Q(\T;\Z)$, its double satisfies 
+$[\bd (2S)]\in H_1(\bd M;2\Z)$ and $[2S]_2=0 \in H_2(M,\bd M;\Z/2\Z)$. Hence
+$2S$ is an integer linear combination of edge solutions, tetrahedral 
+solutions and peripheral curve solutions.
+\end{rmk}

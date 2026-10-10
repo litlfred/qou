@@ -1,0 +1,291 @@
+\section{Adjoint kernels}
+\label{sec:adjoints}
+
+The reader is undoubtably familiar with the notion of adjoint
+functors.  It is easy and natural to generalize this from the context
+of the 2-category $\gCat$ of categories, functors and natural
+transformations to the context of an arbitrary 2-category.  In this
+section it is shown that every kernel, considered as a 1-morphism in
+the 2-category $\gVar$, has both a left and right adjoint: this is a
+consequence of Serre duality, and is closely related to the familiar
+fact that every integral transform functor has both a left and right
+adjoint functor.
+
+Using these notions of left and right adjoints we define \emph{left
+  partial trace maps}, and similarly \emph{right partial trace
+  maps}. These can be viewed as partial versions of the Serre trace
+map. This construction is very much the heart of the paper.
+
+ \subsection{Adjunctions in 2-categories.}
+The notion of an adjunction in a 2-category simultaneously generalizes
+the notion of an adjunction between functors and the notion of a
+duality between objects of a monoidal category.  As it is the former
+that arises in the context of integral transforms, we will use that as
+the motivation, but will come back to the latter below.
+
+
+The most familiar definition of adjoint functors is as follows.  For
+categories $\C$ and $\D$, an adjunction $\Psi\dashv \Phi$ between
+functors $\Psi\colon \D\to \C$ and $\Phi\colon \C\to \D$ is the
+specification of a natural isomorphism
+\[t_{a,b}\colon \Hom_\C(\Psi(a),b)\xrightarrow{\sim}
+\Hom_\D(a,\Phi(b))\]
+for any $a\in \D$ and $b\in\C$.
+
+
+It is well known (see \cite[page 91]{GelfandManin}) that this definition is
+equivalent to an alternative definition of adjunction which consists
+of the specification of unit and counit natural morphisms, namely
+\[\eta\colon \Id_\D \Rightarrow \Phi\circ \Psi
+\quad\text{and}\quad \epsilon\colon \Psi\circ \Phi\Rightarrow
+\Id_\C, \]
+such that the composite natural transformations
+\[ \Psi \stackrel{\id_\Psi\circ\eta}\Longrightarrow
+\Psi\circ\Phi\circ\Psi \stackrel{\epsilon\circ\Id_\Psi}\Longrightarrow
+\Psi \quad\text{and}\quad \Phi
+\stackrel{\eta\circ\Id_\Phi}\Longrightarrow \Phi\circ\Psi\circ\Phi
+\stackrel{\Id_\Phi\circ\epsilon}\Longrightarrow \Phi
+\]
+are respectively the identity natural transformation on $\Psi$ and
+the identity natural transformation on $\Phi$.
+
+
+It is straight forward to translate between the two different
+definitions of adjunction.  Given $\eta$ and $\epsilon$ as above, define
+$t_{a,b}\colon\Hom_\C(\Psi(a),b)\xrightarrow{\sim}
+\Hom_\D(a,\Phi(b))$ by $t_{a,b}(f):=\Phi(f)\circ \eta_a$.  The inverse
+of $t_{a,b}$ is defined similarly using the counit $\epsilon$.
+Conversely, to get the unit and counit from the natural isomorphism of
+hom-sets, define $\eta_a:=t_{a,\Psi(a)}(\id_{\Psi(a)})$ and define
+$\epsilon$ similarly.
+
+The definition involving the unit and counit is stated purely in terms
+of functors and natural transformations --- without mentioning objects
+--- thus it generalizes immediately to arbitrary 2-categories.
+
+\begin{Definition}
+If $\gC$ is a 2-category, $X$ and $Y$ are objects of $\gC$, and
+\[ \Phi\colon X \ra Y\quad \text{and}\quad \Psi\colon Y \ra X \]
+are 1-morphisms, then an \emph{adjunction} between $\Phi$ and $\Psi$
+consists of two 2-morphisms
+\[ \eta\colon \Id_Y \Rightarrow \Phi\circ\Psi \quad\text{and}\quad
+\epsilon\colon \Psi\circ\Phi \Rightarrow \Id_X, \]
+such that
+\[(\epsilon\circh\Id_\Psi)\circv(\Id_\Psi\circh\eta)=\Id_\Psi
+\quad\text{and}\quad(\Id_\Phi\circh\epsilon)\circv(\eta\circh\Id_\Phi)=\Id_\Phi.\]
+Given such an adjunction we write $\Psi\dashv\Phi$.
+\end{Definition}
+
+
+It is worth noting that this also generalizes the notion of duality in
+a monoidal category, that is to say two objects are dual in a monoidal
+category if and only if the corresponding 1-morphisms are adjoint in
+the corresponding 2-category-with-one-object.  Indeed, taking this
+point of view, May and Sigurdsson \cite{MaySigurdsson} refer to what
+is here called adjunction as duality.
+
+
+It is at this point that the utility of the string diagram notation
+begins to be seen.  Given an adjunction $\Psi\dashv\Phi$ the counit
+$\epsilon \colon \Psi\circ \Phi \Rightarrow\Id$ and the unit
+$\eta\colon \Id\Rightarrow\Phi\circ \Psi$ can be denoted as follows:
+\[\pic{NaiveCounit2Adjunction};\qquad \text{and}\qquad
+\pic{NaiveUnit2Adjunction}.\]
+However, adopting the convention of denoting the identity one-morphism
+by omission, it is useful just to draw the unit and counit as a cup
+and a cap respectively:
+\[\pic{Counit2Adjunction}:=\pic{NaiveCounit2Adjunction};\qquad
+\text{and}\qquad \pic{Unit2Adjunction}:= \pic{NaiveUnit2Adjunction}.\]
+The relations become the satisfying
+\[\pic{SnakePsi}=\pic{IdPsi}\quad\text{and}\quad\pic{SnakePhi}=\pic{IdPhi}.\]
+
+
+Adjunctions in 2-categories, as defined above, do correspond to
+isomorphisms of certain hom-sets but in a different way to the
+classical notion of adjunction.  Namely, if $\Theta\colon Z\to Y$ and
+$\Xi\colon Z\to X$ are two other 1-morphisms, then an adjunction
+$\Psi\dashv \Phi$ as above gives an isomorphism
+\begin{align*}
+  \THom(\Psi\circ\Theta,\Xi)&\xrightarrow{\sim}\THom(\Theta,
+  \Phi\circ \Xi)\\
+  \pic{AdjunctionIso1}&\mapsto \pic{AdjunctionIso2}
+\end{align*}
+The inverse isomorphism uses the counit in the obvious way.
+
+In a similar fashion, for $\widehat\Theta\colon Y\to Z$ and $\widehat\Xi\colon
+X\to Z$ two 1-morphisms, one obtains an isomorphism
+\[\THom(\widehat\Theta\circ\Phi,\widehat\Xi)\xrightarrow{\sim}\THom(\widehat\Theta,
+\widehat\Xi\circ\Psi),\]
+for which the reader is encouraged to draw the relevant pictures.  It
+is worth noting that with respect to the previous isomorphism, $\Psi$
+and $\Phi$ have swapped sides in all senses.
+
+
+Adjunctions are unique up to a canonical isomorphism by the usual
+argument.  This means that if $\Psi$ and $\Psi'$ are, say, both left
+adjoint to $\Phi$, then there is a canonical isomorphism
+$\Psi\stackrel{\sim}\Longrightarrow\Psi'$.  This is pictured below and
+it is easy to check that this is an isomorphism.
+\[\pic{AdjCanIso}\]
+
+Adjunctions are natural in the sense that they are preserved by
+2-func\-tors, so, for instance, given a pair of adjoint kernels in
+$\gVar$, the corresponding integral transforms are adjoint functors.
+
+ \subsection{Left and right adjoints of kernels.}
+\label{subsec:leftrightadjoints}
+\label{subsec:yphimphi}
+In an arbitrary 2-category a given 1-morphism might or might not have
+a left or a right adjoint, but in the 2-category $\gVar$ every
+1-morphism, that is every kernel, has both a left and a right adjoint.
+We will see below that for a kernel $\Phi\colon X\to Y$ there are
+adjunctions
+\[\Phi^\chk\circ\SerK_Y\adjoint\Phi\adjoint \SerK_X\circ
+\Phi^\chk,\]
+where $\Phi^\chk\colon Y\to X$ means the object $\sHom_{\D(X\times
+  Y)}(\Phi,\cO_{X\times Y})$ considered as an object in $\D(Y\times
+X)$.  This should be compared with the fact that if $M$ is an
+$A$-$B$-bimodule then $M^\chk$ is naturally a $B$-$A$-bimodule.  We
+shall see that the two adjunctions above are related in some very
+useful ways.
+
+\begin{Proposition}\label{prop:deltalstar}
+  If $X$ is a space and $\Delta\colon X\to X\times X$ is the diagonal
+  embedding then $\Delta_*\colon \D(X)\to \D(X\times X)$, the
+  push-forward on derived categories, is a monoidal functor where
+  $\D(X)$ has the usual monoidal tensor product $\otimes$ and
+  $\D(X\times X)$ has the composition $\circ$ as the monoidal
+  structure.
+\end{Proposition}
+
+\begin{Proof}
+The proof is just an application of the projection formula.
+\end{Proof}
+
+\noindent This has the following immediate consequence.
+
+\begin{Lemma}
+  If $\cE$ and $\cF$ are dual as objects in $\D(X)$ then $\Delta_*\cE$
+  and $\Delta_*\cF$ are both left and right adjoint to each other as
+  1-morphisms in $\gVar$.
+\end{Lemma}
+
+
+In order not to hold-up the flow of the narrative, the proofs of the
+remaining results from this section have been relegated to
+Appendix~\ref{sec:duality}.
+
+ We begin with some background on the
+Serre kernel $\SerK_X$.
+Recall from Section~\ref{sec:serre} that the anti-Serre kernel
+$\SerK^{-1}_X$ is defined to be $\Delta_*\omega^{-1}_X[-\dim X]$, and
+that the Serre kernel $\SerK_X$ is denoted by a dashed-dotted line,
+while the anti-Serre kernel $\SerK^{-1}_X$ is denoted by a
+dashed-dotted line with a horizontal bar.  The above proposition means
+that we actually have maps
+\[\pic{SerK1},\quad
+\pic{SerK2},\quad
+\pic{SerK3},\quad
+\pic{SerK4}
+\]
+satisfying the following relations
+\[\pic{SerK5}=\pic{SerK6},\quad
+\pic{SerK7}=\pic{SerK8},\quad
+\pic{SerK9}=\pic{SerK10},\quad
+\]
+and all obvious variations thereof.
+
+
+%\label{subsec:yphimphi}
+In the appendix it is shown that for a kernel $\Phi$ there are natural
+morphisms $\rote_\Phi\colon \Phi\circ\SerK_X\circ\Phi^\chk\to \cO_\Delta$
+and $\gamma_\Phi\colon \SerK_X^{-1}\to \Phi^\chk\circ \Phi$, denoted in the
+following fashion, where the solid, upward oriented lines are labelled
+with $\Phi$ and the solid, implicitly downward oriented lines are
+labelled by $\Phi^\chk$:
+\[\rote_\Phi:\pic{M23}\quad \text{and}\quad \gamma_\Phi:\pic{Y23c}.\]
+The main property of $\rote_\Phi$ and $\gamma_\Phi$ is that if we define
+$\epsilon_\Phi$, $\overline \epsilon_\Phi$, $\eta_\Phi$ and
+$\overline\eta_\Phi$ via
+\begin{gather*}
+ \eta_\Phi: \pic{eta1}:=\pic{YbentRight},\qquad
+\overline\eta_\Phi: \pic{eta2}:=\pic{YbentLeft},\\
+\epsilon_\Phi:=\rote_{\Phi^\chk}=\pic{M14},\qquad
+\overline\epsilon_\Phi:=\rote_{\Phi}=\pic{M23},
+\end{gather*}
+then these are the units and counits of adjunctions
+\[\Phi^\chk\circ\SerK_Y\adjoint\Phi\adjoint \SerK_X\circ
+\Phi^\chk.\]
+
+\subsection{Partial traces.}
+We can now define the important notion of partial traces.
+\begin{Definition}
+   For a kernel $\Phi\colon X\kerto Y$, and
+  kernels $\Psi,\Theta\colon Z\kerto X$ define the \emph{left partial trace}
+  \[ \THom(\Phi\circ\Theta,\SerK_Y\circ\Phi\circ\Psi) \to
+  \THom(\Theta,\SerK_X\circ\Psi) \]
+  as
+  \[ \pic{UnpartialTraceLeft}\mapsto\pic{PartialTraceLeft}.\]
+  Similarly we define a \emph{right partial trace}
+  \[ \THom(\Theta'\circ\Phi,\Psi'\circ\Phi\circ\SerK_X) \to
+  \THom(\Theta',\Psi'\circ\SerK_Y)\]
+  as
+  \[ \pic{UnpartialTraceRight}\mapsto\pic{PartialTraceRight}.\]
+\end{Definition}
+\medskip
+
+\noindent
+The following key result, proved in the appendix, says that taking partial
+trace does not affect the Serre trace.
+
+\begin{Theorem}
+  For a kernel $\Phi\colon X\kerto Y$, a kernel $\Psi\colon Z\kerto X$
+  and a kernel morphism
+  $\alpha\in\Hom(\Phi\circ\cF,\SerK_Y\circ\Phi\circ\Psi\circ\SerK_Z)$
+  then the left partial trace of $\alpha$ has the same Serre trace as
+  $\alpha$, i.e., pictorially
+  \[\Tr\left(\pic{ApPT1}\right)=\Tr\left(\pic{ApPT2}\right).\]
+  The analogous result holds for the right partial trace.
+\end{Theorem}
+
+ \subsection{Adjunction as a 2-functor.}
+\label{subsec:adj2functors}
+As shown in Section~\ref{subsec:leftrightadjoints}, in the
+2-cate\-gory $\gVar$ every 1-morphism, that is every kernel,
+$\Phi\colon X\to Y$ has a right adjoint $\SerK_X\circ \Phi^\chk$.
+This can be extended to a `right adjunction 2-functor' $\tau_R\colon
+\gVar^\text{coop}\to \gVar$, where $\gVar^\text{coop}$ means the
+contra-opposite 2-category of $\gVar$, which is the 2-category with
+the same collections of objects, morphisms and 2-morphisms, but in
+which the direction of the morphisms and the 2-morphisms are reversed.
+
+
+Before defining $\tau_R$, however, it is perhaps useful to think of
+the more familiar situation of a one-object 2-category with right
+adjoints, i.e., a monoidal category with (right) duals.  So if $\gC$
+is a monoidal category in which each object $a$ has a dual $a^\chk$
+with evaluation map $\epsilon_a\colon a^\chk\otimes a\to \one$ and
+coevaluation map $\eta_a\colon \one \to a\otimes a^\chk$, then for any
+morphism $f\colon a\to b$ define $f^\chk\colon b^\chk\to a^\chk$ to be
+the composite:
+\[b^\chk\xrightarrow{\id\otimes \eta} b^\chk\otimes a\otimes
+a^\chk\xrightarrow{\id\otimes f\otimes \id} b^\chk\otimes b\otimes
+a^\chk\xrightarrow{\epsilon\otimes \id} a^\chk.\]
+This gives rise to a functor $(-)^\chk\colon \gC^\text{op}\to \gC$.
+
+
+Now return to the case of interest and define $\tau_R\colon
+\gVar^\text{coop}\to \gVar$ as follows.  On spaces define
+$\tau_R(X):=X$.  On a kernel $\Phi\colon X\to Y$ define
+$\tau_R(\Phi):=\SerK_X\circ \Phi^\chk$.  Finally, on morphisms of
+kernels define it as illustrated:
+\[\tau_R\left(\pic{BeforetauRalpha}\right):=\pic{tauRalpha}.\]
+It is a nice exercise for the reader to check that this is a
+2-functor.
+
+
+Clearly a left adjoint 2-functor $\tau_L\colon \gVar^\text{coop}\to
+\gVar$ can be similarly created by defining it on a kernel $\Phi\colon
+X\to Y$ by $\tau_L(\Phi):=\Phi^\chk\circ\SerK_Y$ and by defining it on
+morphisms of kernels by
+\[\tau_L\left(\pic{BeforetauRalpha}\right):=\pic{tauLalpha}.\]

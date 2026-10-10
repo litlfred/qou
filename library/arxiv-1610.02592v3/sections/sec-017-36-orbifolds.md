@@ -7,285 +7,221 @@ section_number: 3.6
 pages: 109-117
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
+text_source: latex
+latex_prose_ratio: 0.983
+latex_coverage_ratio: 0.813
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
 ---
-Exercise 3.5.8. The metric spaceX/Γ is the completion ofX/Γ and is
-homeomorphic to Rn.
-The image of˜S along the quotientπ :X→X/Γ is a copy of˜S and should
-now be interpreted as a singularity with cone angleθ. Whenθ = 2kπ for some
-integerk the mapπ :X→ Hn factors as
-X
-π1
-−→X/Γ
-π2
-−→ Hn.
-When k =±1 the mapπ2 is an isometry. We introduce the following deﬁni-
-tion.
-Deﬁnition 3.5.9. Ahyperbolic manifoldM with cone angles is a metric
-space with charts in someX/Γ and transition maps that are isometries.
-The term “isometries” should be interpreted in the strongest sense: the
-transition maps send singular points to singular points, and outside of the
-singular points these are isometries of Riemannian manifolds.
-The points inM that are mapped along charts to some singular set form
-a hyperbolic codimension-two submanifold inM with some cone angleθ, and
-diﬀerent components may have diﬀerent cone angles. Points with cone angle
-2π may be considered as ordinary points, while points with cone angle diﬀerent
-from 2π are singular and form thesingular locusofM.
-The singular locus ofM is a geodesic codimension-two manifold, and its
-complement is an ordinary hyperbolic manifold, whose metric completion isM.
-Flat and spherical manifolds with cone angles are deﬁned in the same way.
-3.5.6. Examples. The following simple construction is already a source
-of many two-dimensional examples: letP be any polygon inH2, R2, or S2,
-with some inner anglesα1,...,α k. By doublingP along its edges we get a
-topological sphere withk cone points of angles2α1,..., 2αk < 2π. This is a
-hyperbolic, ﬂat, or spherical surface with cone angles.
-Another simple but maybe more intriguing construction is the following:
-pick any polyhedron P in H3, R3, or S3. The faces of P are (hyperbolic,
-ﬂat, or elliptic) polygons that glue isometrically along the edges: hence∂P is
-a topological sphere with a natural structure of (hyperbolic, ﬂat, or elliptic)
-manifold with cone angles at the vertices.
-Toconstructexamplesindimensionthreeweneedabitmoreworkbecause
-polyhedra have more strata. Non-compact examples are easier to build: let
-P⊂ H3 be any ideal hyperbolic polyhedron, with somek edges with dihedral
-angles α1,...,α k; the double ofP is naturally a hyperbolic cone manifold
-where the edges form the singular locus with cone angles2α1,..., 2αk.
-3.6. Orbifolds
-An orbifold is an object locally modelled on ﬁnite quotients ofRn. It
-naturally arises when we quotient a Riemannian manifold by a discrete group
-102 3. HYPERBOLIC MANIFOLDS
-V1 V2
-V3
-O
-w
-1
-w
-2 w
-3
-c
-21
-c
-32
-Figure 3.18. An orbifoldO with three local modelsO =U1⊃U2⊃U3.
-The group Γ1 = Z2× Z2 acts onV1 by reﬂections on the two coordinate
-axis, the groupΓ2 = Z2 acts onV2 by reﬂection on the horizontal axis, the
-group Γ3 is trivial.
-of isometries that may not act freely. Orbifolds behave like manifolds on many
-aspects.
-3.6.1. Deﬁnition.Let Γ< O(n) be a ﬁnite group of linear isometries and
-V ⊂ Rn be a Γ-invariant open set. The resulting map
-ϕ:V −→V/ Γ
-is called alocal orbifold model. For instance, we may pickV =B(0,r ).
-We now generalise manifolds by allowing local orbifold models in the atlas.
-Deﬁnition 3.6.1. LetO be a Hausdorﬀ paracompact topological space.
-An orbifold atlas on O is an open covering{Ui}i∈I of O, closed by ﬁnite
-intersections and equipped with local orbifold models
-ϕi :Vi−→Vi/Γi =Ui.
-The local models are connected by some appropriate transition functions: for
-every inclusionUi⊂Uj there is an injective homomorphism
-fij : Γi ↪→ Γj
-and aΓi-equivariant smooth embeddingψij :Vi ↪→Vj compatible with the local
-models, that is
-ϕj◦ψij =ϕi.
-Two such atlases are equivalent if the are contained in some bigger atlas.
-The spaceO equipped with an orbifold atlas is anorbifold of dimensionn. See
-an example in Figure 3.18.
-3.6. ORBIFOLDS 103
-Remark 3.6.2. We think at the mapsψij andfij as deﬁned only up to the
-action of Γj (which acts onψij by composition and onfij by conjugation). In
-particular, ifUi⊂Uj⊂Uk thenwecan verifythatthe equalities ψik =ψjk◦ψij
-andfik =fjk◦fij hold only up to this ambiguity. See Figure 3.18.
-The isotropy group Γp of a pointp∈ O is the stabiliser of any lift ofp
-in any local modelV with respect to the action ofΓ. By deﬁnitionΓp is a
-ﬁnite subgroup ofO(n). A pointp is regular if its isotropy group is trivial, and
-singular otherwise.
-Example 3.6.3. The isotropy groupOp in the orbifoldO from Figure 3.18
-is Z2× Z2 at the origin,Z2 at the axis, and trivial elsewhere.
-Proposition 3.6.4. The regular points in an orbifold form a dense subset.
-Proof. On a local modelV → V/ Γ, a singular point is the image of the
-ﬁxed point locus of some element inΓ, which is in turn a proper subspace.□
-An orbifold islocally orientedif all the ﬁnite groupsΓ lie inSO(n), and it is
-oriented if, inaddition, allthetransitionmaps ψij areorientation-preserving. In
-a locally oriented orbifold reﬂections are not admitted and hence the singular
-locus has codimension> 2. An open subset of an orbifold is naturally an
-orbifold.
-3.6.2. Examples. Orbifolds are natural objects and there are plenty of
-nice examples around.
-Example 3.6.5. A diﬀerentiable manifold is an orbifold whose points are
-all regular. A diﬀerentiable manifold with boundary may be interpreted as an
-orbifold whose boundary points have the local structure of typeRn/Γ where
-Γ = Z2 is generated by a reﬂection along a hyperplane. The boundary should
-be interpreted as amirror.
-Exercise3.6.6. Constructanorbifoldstructureonthetriangleassuggested
-by Figure 3.19.
-Example 3.6.7. LetΓ< O(n) be ﬁnite andV ⊂ Rn a Γ-invariant open set.
-The quotientV/ Γ has an orbifold structure, deﬁned by the unique local model
-V →V/ Γ.
+An orbifold is an object locally modelled on finite quotients of $\matR^n$. It naturally arises when we quotient a Riemannian manifold by a discrete group of isometries that may not act freely. Orbifolds behave like manifolds on many aspects.
+
+\subsection{Definition} Let $\Gamma < \On(n)$ be a finite group of linear isometries and $V\subset \matR^n$ be a $\Gamma$-invariant open set. The resulting map
+$$\varphi \colon V \longrightarrow V/_\Gamma$$
+is called a \emph{local orbifold model}. For instance, we may pick $V=B(0,r)$. \index{orbifold!local model of an orbifold}
+
+We now generalise manifolds by allowing local orbifold models in the atlas.\index{orbifold}
+\begin{defn} Let $O$ be a Hausdorff paracompact topological space. An \emph{orbifold atlas} on $O$ is an open covering $\{U_i\}_{i\in I}$ of $O$, closed by finite intersections and equipped with local orbifold models 
+$$\varphi_i\colon V_i \longrightarrow V_i/_{\Gamma_i} = U_i.$$
+The local models are connected by some appropriate transition functions: for every inclusion $U_i\subset U_j$ there is an injective homomorphism 
+$$f_{ij}\colon \Gamma_i \hookrightarrow \Gamma_j$$ 
+and a $\Gamma_i$-equivariant smooth embedding $\psi_{ij} \colon V_i \hookrightarrow V_j$ compatible with the local models, that is 
+$$\varphi_j \circ \psi_{ij} = \varphi_i.$$
+\end{defn}
+
+Two such atlases are equivalent if the are contained in some bigger atlas. The space $O$ equipped with an orbifold atlas is an \emph{orbifold} of dimension $n$.
+See an example in Figure \ref{orbifold_charts:fig}. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 8 cm] {\iftoggle{BW}{orbifold_charts-BW}{orbifold_charts}}
+\nota{An orbifold $O$ with three local models $O=U_1 \supset U_2 \supset U_3$. The group $\Gamma_1 = \matZ_2\times \matZ_2$ acts on $V_1$ by reflections on the two coordinate axis, the group $\Gamma_2 = \matZ_2$ acts on $V_2$ by reflection on the horizontal axis, the group $\Gamma_3$ is trivial.}
+\label{orbifold_charts:fig}
+\end{center}
+\end{figure}
+
+\begin{oss}
+We think at the maps $\psi_{ij}$ and $f_{ij}$ as defined only up to the action of $\Gamma_j$ (which acts on $\psi_{ij}$ by composition and on $f_{ij}$ by conjugation).  In particular, if $U_i\subset U_j \subset U_k$ then we can verify that the equalities $\psi_{ik} = \psi_{jk}\circ \psi_{ij}$ and $f_{ik} = f_{jk}\circ f_{ij}$ hold only up to this ambiguity. See Figure \ref{orbifold_charts:fig}.
+\end{oss}
+The \emph{isotropy group} $\Gamma_p$ of a point $p\in O$ is the stabiliser of any lift of $p$ in any local model $V$ with respect to the action of $\Gamma$. By definition $\Gamma_p$ is a finite subgroup of $\On(n)$. A point $p$ is \emph{regular} if its isotropy group is trivial, and \emph{singular} otherwise. \index{orbifold!isotropy group of an orbifold}
+
+\begin{example} 
+The isotropy group $O_p$ in the orbifold $O$ from Figure \ref{orbifold_charts:fig} is 
+$\matZ_2 \times \matZ_2$ at the origin, $\matZ_2$ at the axis, and trivial elsewhere. 
+\end{example}
+
+\begin{prop}
+The regular points in an orbifold form a dense subset. 
+\end{prop}
+\begin{proof}
+On a local model $V \to V/_\Gamma$, a singular point is the image of the fixed point locus of some element in $\Gamma$, which is in turn a proper subspace.
+\end{proof}
+
+An orbifold is \emph{locally oriented} if all the finite groups $\Gamma$ lie in $\SO(n)$, and it is \emph{oriented} if, in addition, all the transition maps $\psi_{ij}$ are orientation-preserving. In a locally oriented orbifold reflections are not admitted and hence the singular locus has codimension $\geqslant 2$.
+An open subset of an orbifold is naturally an orbifold.
+
+\subsection{Examples} Orbifolds are natural objects and there are plenty of nice examples around.
+
+\begin{example} A differentiable manifold is an orbifold whose points are all regular. A differentiable manifold with boundary may be interpreted as an orbifold whose boundary points have the local structure of type $\matR^n/_\Gamma$ where $\Gamma = \matZ_2$ is generated by a reflection along a hyperplane. The boundary should be interpreted as a \emph{mirror}.
+\end{example}
+
+\begin{ex}
+Construct an orbifold structure on the triangle as suggested by Figure \ref{orbifold_triangle:fig}.
+\end{ex}
+
+\begin{example}
+Let $\Gamma < \On(n)$ be finite and $V\subset \matR^n$ a $\Gamma$-invariant open set. The quotient $V/_\Gamma$ has an orbifold structure, defined by the unique local model $V \to V/_\Gamma$. 
+\end{example}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 2.2 cm] {\iftoggle{BW}{orbifold_triangle-BW}{orbifold_triangle}}
+\nota{An orbifold structure on the triangle constructed using the local models from Figure \ref{orbifold_charts:fig}. The isotropy group is $\matZ_2 \times \matZ_2$ at the vertices, $\matZ_2$ at the edges, and trivial in the interior.}
+\label{orbifold_triangle:fig}
+\end{center}
+\end{figure}
+
 We generalise the last example.
-Proposition 3.6.8. If M a Riemannian manifold and Γ < Isom(M) is a
-discrete subgroup, the quotientM/Γ has a natural orbifold structure.
-Proof. Take a pointp∈ M/Γ and ˜p∈ M a lift. Since Γ is discrete, the
-stabiliser Γ˜p of ˜p is ﬁnite and there is ar >0 such that exp˜p(Br (0)) =Br (˜p)
-andg(Br (˜p)) intersectsBr (˜p) for someg∈ Γ if and only ifg∈ Γ˜p.
-104 3. HYPERBOLIC MANIFOLDS
-Figure 3.19. An orbifold structure on the triangle constructed using the
-local models from Figure 3.18. The isotropy group is Z2× Z2 at the
-vertices, Z2 at the edges, and trivial in the interior.
-The ball Br (˜p) is clearly Γ˜p-invariant. The group Γ˜p acts linearly and
-orthogonally onBr (0) and we get an orbifold local model
-Br (0)−→Br (0)/Γ˜p
-∼=Br (˜p)/Γ˜p =Up
-where the diﬀeomorphism is induced by the exponential map. We have con-
-structed an orbifold local modelUp aroundp. We extend the covering{Up}
-thus obtained by adding all the non-empty intersections. □
-This is the richest source of nice examples. The quotient mapM→M/Γ
-is a covering, in an appropriate sense that we now explain.
-3.6.3. Coverings. Let Γ′ < Γ < O(n) be ﬁnite groups andV ⊂ Rn a
-Γ-invariant open set. The natural map
-ϕ:V/ Γ′↦−→V/ Γ
-between the two orbifolds is alocal covering.
-Deﬁnition 3.6.9. A continuous mapp : ˜O → O between orbifolds is a
-covering if every pointp∈O has a neighbourhoodU with p−1(U) =⊔i∈IUi
-and every restrictionp|Ui :Ui→U is a local covering.
+
+\begin{prop}
+If $M$ a Riemannian manifold and $\Gamma<\Iso(M)$ is a discrete subgroup, the quotient $M/_\Gamma$ has a natural orbifold structure.
+\end{prop}
+\begin{proof}
+Take a point $p\in M/_\Gamma$ and $\tilde p\in M$ a lift. Since $\Gamma$ is discrete, the stabiliser $\Gamma_{\tilde p}$ of $\tilde p$ is finite and there is a $r>0$ such that $\exp_{\tilde p}(B_r(0)) = B_r(\tilde p)$ and $g(B_r(\tilde p))$ intersects $B_r(\tilde p)$ for some $g\in \Gamma$ if and only if $g\in\Gamma_{\tilde p}$. 
+
+The ball $B_r(\tilde p)$ is clearly $\Gamma_{\tilde p}$-invariant. The group $\Gamma_{\tilde p}$ acts linearly and orthogonally on $B_r(0)$ and we get an orbifold local model
+$$B_r(0) \longrightarrow B_r(0) /_{\Gamma_{\tilde p}} \isom B_r(\tilde p)/_{\Gamma_{\tilde p}} = U_p$$
+where the diffeomorphism is induced by the exponential map. We have constructed an orbifold local model $U_p$ around $p$. We extend the covering $\{U_p\}$ thus obtained by adding all the non-empty intersections. 
+\end{proof}
+
+This is the richest source of nice examples. The quotient map $M \to M/_\Gamma$ is a covering, in an appropriate sense that we now explain.
+
+\subsection{Coverings}
+Let $\Gamma' < \Gamma < \On(n)$ be finite groups and $V\subset \matR^n$ a $\Gamma$-invariant open set. The natural map
+$$\varphi\colon V/_{\Gamma'} \longmapsto V/_{\Gamma}$$
+between the two orbifolds is a \emph{local covering}. \index{orbifold!orbifold covering}
+
+\begin{defn}
+A continuous map $p\colon \tilde O \to O$ between orbifolds is a \emph{covering} if every point $p\in O$ has a neighbourhood $U$ with $p^{-1}(U) = \sqcup_{i \in I} U_i$ and every restriction $p|_{U_i}\colon U_i \to U$ is a local covering.
+\end{defn}
+
 The following is the main source of examples.
-Example 3.6.10. LetM be a Riemannian manifold andΓ′< Γ< Isom(M)
-be discrete groups. The natural mapM/Γ′→M/Γ is an orbifold covering.
-Deﬁnition 3.6.11 (The good, the bad, and the very good). An orbifold is
-good if it is covered by a manifold, and it isbad otherwise. It isvery goodif
-it is ﬁnitely covered by a manifold.
-3.6.4. Hyperbolic, ﬂat, and elliptic orbifolds.We deﬁne ahyperbolic,
-ﬂat, or elliptic orbifold to be an orbifold whose local models are isometric
-quotients of balls inHn, Rn, orSn, and whose transition functions are also
-isometries.
-The quotient of a hyperbolic, ﬂat, or spherical manifold by a discrete group
-of isometries is naturally a hyperbolic, ﬂat, or elliptic orbifold.
-3.6. ORBIFOLDS 105
-a b
-c
-a b
-c
-Figure3.20. Theindex-twoorientation-preserving Γor(a,b,c )◁Γ(a,b,c )
-deﬁnes an index-two orbifold coveringO→ ∆, whereO is a 2-sphere with
-three singular points and∆ a triangle.
-Example 3.6.12. The triangle groupΓ(a,b,c ) introduced in Section 3.4.5
-isadiscretegroupofisometriesof S2, R2, orH2. Itdeﬁnesatriangularorbifold
-∆, whichishyperbolic, ﬂat, orelliptic, accordingtowhether1
-a + 1
-b + 1
-c issmaller,
-equal, or bigger than 1. The isotropy groups are the dihedralD2a,D 2b, and
-D2c at the vertices,Z2 at the edges, and trivial elsewhere.
-The index-two subgroupΓor(a,b,c )◁ Γ(a,b,c ) consisting of orientation-
-preserving isometries is sometimes called avon Dyck group. It deﬁnes an ori-
-entable orbifoldO that double-covers∆. The orbifoldO is a topological sphere
-with three singular points with rotation isotopy groupsZ/aZ, Z/bZ, Z/cZ. See
-Figure 3.20.
-Exercise 3.6.13. Show that the following is a presentation forΓor(a,b,c ):
-⟨r,s,t |ra,sb,tc,rst ⟩.
-The tripler,s,t of generators is intrinsically determined in the group up to
-simultaneous conjugation or inversion. Diﬀerent unordered triples (a,b,c )
-produce non-isomorphic Von Dyck groupsΓor(a,b,c ).
-Hints. The groupΓ(a,b,c ) preserves the tessellationT of H2, R2, orS2
-into triangles with angles π
-a, π
-b, π
-c, so its ﬁnite-order elements are rotations
-along some vertices ofT. Three rotationsr,s,t that satisfyrst = 1 are of
-some very special kind. □
-Example 3.6.14. More generally, every hyperbolic (or ﬂat, elliptic) Coxeter
-polyhedron is a hyperbolic (or ﬂat, elliptic) orbifold.
-Example 3.6.15. Quotient the ﬂat torusT = R2/Z2 by theelliptic invo-
-lution (x,y )↦→ (−x,−y ). This isometry ofT has four ﬁxed points and the
-quotient ﬂat orbifold is a sphere with four singular points, see Figure 3.21.
+
+\begin{example}
+Let $M$ be a Riemannian manifold and $\Gamma' < \Gamma < \Iso(M)$ be discrete groups. The natural map $M/_{\Gamma'} \to M/_\Gamma$ is an orbifold covering.
+\end{example}
+
+\begin{defn}[The good, the bad, and the very good]
+An orbifold is \emph{good} if it is covered by a manifold, and it is \emph{bad} otherwise. It is \emph{very good} if it is finitely covered by a manifold. \index{orbifold!the bad, the good, and the very good orbifold}
+\end{defn}
+
+\subsection{Hyperbolic, flat, and elliptic orbifolds} \label{more:examples:subsection}
+We define a \emph{hyperbolic, flat}, or \emph{elliptic} orbifold to be an orbifold whose local models are isometric quotients of balls in $\matH^n$, $\matR^n$, or $S^n$, and whose transition functions are also isometries. \index{orbifold!hyperbolic, flat, elliptic orbifold}
+
+The quotient of a hyperbolic, flat, or spherical manifold by a discrete group of isometries is naturally a hyperbolic, flat, or elliptic orbifold.
+
+\begin{example}
+The triangle group $\Gamma(a,b,c)$ introduced in Section \ref{triangle:groups:subsection} is a discrete group of isometries of $S^2, \matR^2$, or $\matH^2$. It defines a triangular orbifold $\Delta$, which is hyperbolic, flat, or elliptic, according to whether $\frac 1a+\frac 1b + \frac 1c$ is smaller, equal, or bigger than 1. The isotropy groups are the dihedral $D_{2a}, D_{2b}$, and $D_{2c}$ at the vertices, $\matZ_2$ at the edges, and trivial elsewhere.
+
+The index-two subgroup $\Gamma^{\rm or}(a,b,c) \triangleleft \Gamma(a,b,c)$ consisting of orientation-preserving isometries is sometimes called a \emph{von Dyck group}. It defines an orientable orbifold $O$ that double-covers $\Delta$. The orbifold $O$ is a topological sphere with three singular points with rotation isotopy groups $\matZ/_{a\matZ}, \matZ/_{b\matZ}, \matZ/_{c\matZ}$. See Figure \ref{orbifold_triangle_abc:fig}.
+\index{group!von Dyck group}
+\end{example}
+
+\begin{ex} \label{VD:ex}
+Show that the following is a presentation for $\Gamma^{\rm or}(a,b,c)$:
+$$\langle\ r, s, t\ |\ r^{a}, s^{b}, t^{c}, rst\ \rangle.$$
+The triple $r,s,t$ of generators is intrinsically determined in the group up to simultaneous conjugation or inversion. Different unordered triples $(a,b,c)$ produce non-isomorphic Von Dyck groups $\Gamma^{\rm or}(a,b,c)$.
+\end{ex}
+\begin{proof}[Hints]
+The group $\Gamma^{\rm}(a,b,c)$ preserves the tessellation $T$ of $\matH^2$, $\matR^2$, or $S^2$ into triangles with angles $\frac \pi a, \frac \pi b, \frac \pi c$, so its finite-order elements are rotations along some vertices of $T$. Three rotations $r,s,t$ that satisfy $rst=1$ are of some very special kind.
+\end{proof}
+
+\begin{example}
+More generally, every hyperbolic (or flat, elliptic) Coxeter polyhedron is a hyperbolic (or flat, elliptic) orbifold.
+\end{example}
+
+\begin{example}
+Quotient the flat torus $T = \matR^2/_{\matZ^2}$ by the \emph{elliptic involution} $(x,y)\mapsto (-x,-y)$. This isometry of $T$ has four fixed points and the quotient flat orbifold is a sphere with four singular points, see Figure \ref{elliptic_involution:fig}.
+\end{example}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 8 cm] {\iftoggle{BW}{orbifold_triangle_abc-BW}{orbifold_triangle_abc}}
+\nota{The index-two orientation-preserving $\Gamma^{\rm or}(a,b,c) \triangleleft \Gamma(a,b,c)$ defines an index-two orbifold covering $O \to \Delta$, where $O$ is a 2-sphere with three singular points and $\Delta$ a triangle.}
+\label{orbifold_triangle_abc:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 9 cm] {\iftoggle{BW}{elliptic_involution-BW}{elliptic_involution}}
+\nota{The elliptic involution quotients the torus to a sphere with four singular points. The fixed points and their images are drawn in \iftoggle{BW}{grey}{red}. We show both a planar (left) and spacial (right) picture.}
+\label{elliptic_involution:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 10 cm] {\iftoggle{BW}{orbifold_Farey-BW}{orbifold_Farey}}
+\nota{The hyperbolic orbifold $\matH^2/_{\PSLZ}$ is obtained by mirroring the sides of a triangle with inner angles $\frac \pi 3$, $\frac \pi 2$, and zero (left). The orbifold is topologically a punctured sphere with two singular points with rotational isotropy $\matZ_2$ and $\matZ_3$ (right).}
+\label{orbifold_Farey:fig}
+\end{center}
+\end{figure}
+
 There are also many interesting non-compact orbifolds.
-Example 3.6.16. A fundamental domain forPSL2(Z) was shown in Figure
-3.15. By gluing its sides according to the action we see quite easily that
-the hyperbolic orbifoldH2/PSL2(Z) is non-compact and contains two rotational
-points of order 2 and 3, see Figure 3.22.
-106 3. HYPERBOLIC MANIFOLDS
-Figure 3.21. The elliptic involution quotients the torus to a sphere with
-four singular points. The ﬁxed points and their images are drawn in red.
-We show both a planar (left) and spacial (right) picture.
-Figure 3.22. The hyperbolic orbifoldH2/PSL2(Z) is obtained by mirroring
-the sides of a triangle with inner anglesπ
-3, π
-2, and zero (left). The orbifold
-is topologically a punctured sphere with two singular points with rotational
-isotropy Z2 and Z3 (right).
-Exercise 3.6.17. The 1-dimensional compact orbifolds areS1 and the seg-
-ment [0, 1]with mirrored endpoints. Show that there are coveringsS1→ [0, 1]
-of degree 2, and also coverings[0, 1]→ [0, 1] of any positive degree.
-When O = X/Γ and X is a simply connected manifold, we say thatΓ is
-the fundamental group of O. It is also possible to deﬁne the fundamental
-group for a generic orbifold using the appropriate orbi-notions of paths and
-homotopies.
-3.6.5. Conemanifolds. Hyperbolic(ﬂat, elliptic)conemanifoldsandorb-
-ifolds are diﬀerent objects, but they have a wide common intersection.
-A hyperbolic (ﬂat, elliptic) orbifoldO whose isotropy groupsOp are either
-trivial or generated by a 2π
-p -rotation along a codimension-two subspace is
-naturally a hyperbolic (ﬂat, elliptic) cone manifold with cone angles2π
-p . The
-singular set may consist of various connected components and the natural
-numberp depends on the component.
-3.6. ORBIFOLDS 107
-Conversely, every hyperbolic (ﬂat, elliptic) manifold with cone angles that
-divide 2π can be given a natural hyperbolic (ﬂat, elliptic) orbifold structure
-whose singular set consists of rotational points only. Moreover, we can easily
-prove that it is a good one:
-Proposition 3.6.18. Every hyperbolic (ﬂat, elliptic) manifoldM with cone
-angles that divide2π is a good hyperbolic (ﬂat, elliptic) orbifold. IfM is com-
-plete, thenM = Hn/Γ (Rn/Γ,Sn/Γ) for some discrete groupΓ of isometries.
-Proof. We consider for simplicity only the hyperbolic case. We must prove
-thatM is orbifold-covered by a hyperbolic manifold.
-The singular setS ⊂ M decomposes into connected componentsS =
-⊔iSi, each with a cone angle2π
-pi
-for some integerpi> 2. The complement
-M′ =M\S is a non-complete hyperbolic manifold and as such it is equipped
-with a developing mapD : ˜M′→ Hn and a holonomyρ:π1(M′)→ Isom(Hn).
-We pick a loopµi around each component Si of S and note that by
-deﬁnitionρ(µi ) is an elliptic isometry that rotatesHn around a codimension-
-two subspace by the angle2π
-pi
-. In particularρ(µi ) has orderpi.
-We consider the regular coveringN→M′ corresponding to the subgroup
-kerρ and giveN the hyperbolic structure induced byM′. The completionN
-of N is a hyperbolic manifold that orbifold-coversM: since ρ(µi ) has order
-preciselypi, the added singular points inN have cone angle2π and are hence
-ordinary.
-If M is complete, then N also is and hence N = Hn/Γ′. We deﬁne
-Γ < Isom(Hn) to be the group generated by Γ′ and any lifts of the deck
-transformations ofN→M, and we getM = Hn/Γ. □
-Corollary 3.6.19.IfM is complete and has ﬁnitely generated fundamental
-group, then it is very good.
-Proof. We know thatM = Hn/Γ and we apply Selberg’s Lemma. □
-Summing up, complete hyperbolic cone manifolds with angles that divide
-2π can be promoted to good orbifolds and hence to quotientsHn/Γ. We will
-encounter many examples in dimensions two and three later on.
-3.6.6. References. All the material presented here is standard and intro-
-duced in various books, like Benedetti – Petronio [4] and Ratcliﬀe [49]. A
-beautiful introduction to regular polytopes is Coxeter’s 1963 book [14], while
-the reader interested in Coxeter polytopes may consult Vinberg’s survey [59].
-The theory of orbifolds and cone manifolds presented here is quite limited:
-togetmorebackground, thereadermayconsultThurston’snotes[ 56, Chapter
-13] for the orbifolds, and McMullen’s paper [40] for the cone manifolds.
-CHAPTER 4
-Thick-thin decomposition
-A peculiar aspect of hyperbolic geometry is the existence of complete hy-
-perbolic manifolds that have ﬁnite volume but are not compact. These mani-
-folds behave like the compact ones in many aspects, but are sometimes easier
-to construct. They arise naturally when we study hyperbolic surfaces, and are
-a fundamental constituent of Thurston’s geometrisation of three-manifolds.
-We prove here a structure theorem for all such manifolds. The theorem
-says that every ﬁnite-volume complete hyperbolic manifold can be decomposed
-into two domains: a thick part which is compact and has injectivity radius
-bounded from below, and athin part that consists of cusps. A cusp is a
-(truncated) hyperbolic manifold of typeN× [0, +∞), where every section
-N×t has a ﬂat metric that shrinks exponentially witht.
-The core of this theorem is a lemma about discrete subgroups of Lie
-groups called theMargulis Lemma. We will apply this lemma also to the other
-geometries and prove Bierbach’s Theorem, that states that every compact ﬂat
-manifold is covered by a torus.
-Throughout the discussion we will also study some general aspects of
-ﬁnite-volume complete hyperbolic manifolds, concerning in particular closed
-geodesics, isometry groups, and ﬁnite covers.
+
+\begin{example}
+A fundamental domain for $\PSLZ$ was shown in Figure \ref{modular_group:fig}. By gluing its sides according to the action we see quite easily that the hyperbolic orbifold $H^2/_{\PSLZ}$ is non-compact and contains two rotational points of order 2 and 3, see Figure \ref{orbifold_Farey:fig}.
+\end{example}
+
+\begin{ex} The 1-dimensional compact orbifolds are $S^1$ and the segment $[0,1]$ with mirrored endpoints. Show that there are coverings $S^1 \to [0,1]$ of degree 2, and also coverings $[0,1] \to [0,1]$ of any positive degree.
+\end{ex}
+
+When $O=X/_\Gamma$ and $X$ is a simply connected manifold, we say that $\Gamma$ is the \emph{fundamental group} of $O$. It is also possible to define the fundamental group for a generic orbifold using the appropriate orbi-notions of paths and homotopies. 
+
+\subsection{Cone manifolds}
+Hyperbolic (flat, elliptic) cone manifolds and orbifolds are different objects, but they have a wide common intersection.
+
+A hyperbolic (flat, elliptic) orbifold $O$ whose isotropy groups $O_p$ are either trivial or generated by a $\frac{2\pi }p$-rotation along a codimension-two subspace is naturally a hyperbolic (flat, elliptic) cone manifold with cone angles $\frac{2 \pi}p$. The singular set may consist of various connected components and the natural number $p$ depends on the component. 
+
+Conversely, every hyperbolic (flat, elliptic) manifold with cone angles that divide $2\pi$ can be given a natural hyperbolic (flat, elliptic) orbifold structure whose singular set consists of rotational points only. Moreover, we can easily prove that it is a good one:
+
+\begin{prop} \label{from:cone:to:orbifold:prop}
+Every hyperbolic (flat, elliptic) manifold $M$ with cone angles that divide $2\pi$ is a good hyperbolic (flat, elliptic) orbifold. If $M$ is complete, then $M=\matH^n/_\Gamma$ ($\matR^n/_\Gamma$, $S^n/_\Gamma$) for some discrete group $\Gamma$ of isometries.
+\end{prop}
+\begin{proof}
+We consider for simplicity only the hyperbolic case. We must prove that $M$ is orbifold-covered by a hyperbolic manifold.
+
+The singular set $S\subset M$ decomposes into connected components $S = \sqcup_i S_i$, each with a cone angle $\frac{2\pi}{p_i}$ for some integer $p_i \geqslant 2$. The complement $M' = M \setminus S$ is a non-complete hyperbolic manifold and as such it is equipped with a developing map $D\colon \tilde M' \to \matH^n$ and a holonomy $\rho\colon \pi_1(M') \to \Iso(\matH^n)$. 
+
+We pick a loop $\mu_i$ around each component $S_i$ of $S$ and note that by definition $\rho(\mu_i)$ is an elliptic isometry that rotates $\matH^n$ around a codimension-two subspace by the angle $\frac{2\pi}{p_i}$. In particular $\rho(\mu_i)$ has order $p_i$. 
+
+We consider the regular covering $N \to M'$ corresponding to the subgroup $\ker \rho$ and give $N$ the hyperbolic structure induced by $M'$. The completion $\overline N$ of $N$ is a hyperbolic manifold that orbifold-covers $M$: since $\rho(\mu_i)$ has order precisely $p_i$, the added singular points in $\overline N$ have cone angle $2\pi$ and are hence ordinary. 
+
+If $M$ is complete, then $\overline N$ also is and hence $\overline N = \matH^n/_{\Gamma'}$. We define $\Gamma<\Iso(\matH^n)$ to be the group generated by $\Gamma'$ and any lifts of the deck transformations of $\overline N\to M$, and we get $M=\matH^n/_\Gamma$.
+\end{proof}
+
+\begin{cor} \label{very:good:cor}
+If $M$ is complete and has finitely generated fundamental group, then it is very good. 
+\end{cor}
+\begin{proof}
+We know that $M=\matH^n/_\Gamma$ and we apply Selberg's Lemma.
+\end{proof}
+
+Summing up, complete hyperbolic cone manifolds with angles that divide $2\pi$ can be promoted to good orbifolds and hence to quotients $\matH^n/_\Gamma$. We will encounter many examples in dimensions two and three later on.
+
+\subsection{References}
+All the material presented here is standard and introduced in various books, like Benedetti -- Petronio \cite{BP} and Ratcliffe \cite{R}. A beautiful introduction to regular polytopes is Coxeter's 1963 book \cite{Cox}, while the reader interested in Coxeter polytopes may consult Vinberg's survey \cite{Vin}.
+
+The theory of orbifolds and cone manifolds presented here is quite limited: to get more background, the reader may consult Thurston's notes \cite[Chapter 13]{Th} for the orbifolds, and McMullen's paper \cite{McM-cone} for the cone manifolds.
+
+
+
+
+
+\chapter{Thick-thin decomposition} \label{thick-thin:chapter}
+A peculiar aspect of hyperbolic geometry is the existence of complete hyperbolic manifolds that have finite volume but are not compact. These manifolds behave like the compact ones in many aspects, but are sometimes easier to construct. They arise naturally when we study hyperbolic surfaces, and are a fundamental constituent of Thurston's geometrisation of three-manifolds.
+
+We prove here a structure theorem for all such manifolds. The theorem says that every finite-volume complete hyperbolic manifold can be decomposed into two domains: a \emph{thick part} which is compact and has injectivity radius bounded from below, and a \emph{thin part} that consists of \emph{cusps}. A cusp is a (truncated) hyperbolic manifold of type $N\times [0,+\infty)$, where every section $N\times t$ has a flat metric that shrinks exponentially with $t$. 
+
+The core of this theorem is a lemma about discrete subgroups of Lie groups called the \emph{Margulis Lemma}. We will apply this lemma also to the other geometries and prove Bierbach's Theorem, that states that every compact flat manifold is covered by a torus.
+
+Throughout the discussion we will also study some general aspects of finite-volume complete hyperbolic manifolds, concerning in particular closed geodesics, isometry groups, and finite covers.

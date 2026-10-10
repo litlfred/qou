@@ -1,17 +1,31 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0910.0096v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Gröbner-Shirshov bases for Coxeter groups I∗",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0910.0096v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0910.0096v1",
   "contains": [
     "library/arxiv-0910.0096v1/sections/sec-000",
     "library/arxiv-0910.0096v1/sections/sec-001"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0910.0096&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-0910.0096v1",
+    "title_source": "slug",
     "source_file": "0910.0096v1.pdf",
     "source_sha256": "805a75c337599adc06d940638ec33ea7184ec733a6a13a372a1c4c4653625132",
     "pages": 21,

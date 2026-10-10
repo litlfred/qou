@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9306069v2/blocks/prose-sec-021",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-9306069v2/blocks/prose-sec-021",
   "kind": "prose",
   "title": "References",
   "pageStart": 47,
   "pageEnd": 47,
   "text": "../sections/sec-021-references.md",
-  "derivedFrom": "library/arxiv-hep-th-9306069v2/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9306069v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-9306069v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-9306069v2/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2208.13448v2/blocks/prose-sec-008",
+  "kind": "prose",
+  "title": "The primitive case",
+  "pageStart": 19,
+  "pageEnd": 20,
+  "text": "../sections/sec-008-33-the-primitive-case.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2208.13448v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2208.13448v2/manifest.jsonld",
+  "provenance": "ingested"
+}

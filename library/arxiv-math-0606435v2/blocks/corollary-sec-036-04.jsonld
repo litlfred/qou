@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0606435v2/blocks/corollary-sec-036-04",
+  "kind": "corollary",
+  "title": "Nakamura [Na]",
+  "pageStart": 27,
+  "pageEnd": 28,
+  "text": "corollary-sec-036-04.md",
+  "derivedFrom": "library/arxiv-math-0606435v2/sections/sec-036",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0606435v2/manifest.jsonld",
+  "provenance": "ingested"
+}

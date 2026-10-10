@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1010.5321v3/blocks/prose-sec-011",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1010.5321v3/blocks/prose-sec-011",
   "kind": "prose",
   "title": "Once more again on the volume of the orthosceme",
   "pageStart": 9,
   "pageEnd": 9,
   "text": "../sections/sec-011-33-once-more-again-on-the-volume-of-the-orthosce.md",
-  "derivedFrom": "library/arxiv-1010.5321v3/manifest",
-  "sourceDocument": "library/arxiv-1010.5321v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1010.5321v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1010.5321v3/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,64 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = en_GB
+% !TeX root = Analyticity-Menger.tex
+\documentclass[10pt,a4paper]{article}
+\input{Parts/header}
+
+
+\usepackage{authblk}
+\renewcommand{\Affilfont}{\small}
+\author{
+    Daniel Steenebr\"ugge\\
+        RWTH Aachen University, Institut für Mathematik\\
+        Templergraben 55, 52062 Aachen, Germany.\\
+        \href{mailto:steenebruegge@instmath.rwth-aachen.de}{steenebruegge@instmath.rwth-aachen.de}\\
+        \url{www.instmath.rwth-aachen.de/~steenebruegge/home}
+    \and
+    Nicole Vorderobermeier\\
+        Universität Salzburg, Fachbereich Mathematik\\
+        Hellbrunner Strasse 34, 5020 Salzburg, Austria.\\
+        \href{mailto:nicole.vorderobermeier@sbg.ac.at}{nicole.vorderobermeier@sbg.ac.at}\\
+        \url{uni-salzburg.at/index.php?id=209722}
+}
+
+
+\makeatletter
+\newcommand{\subjclass}[2][2020]{%
+	\let\@oldtitle\@title%
+	\gdef\@title{\@oldtitle\footnotetext{#1 \emph{Mathematics Subject Classification.} #2}}%
+}
+\newcommand{\keywords}[1]{%
+	\let\@@oldtitle\@title%
+	\gdef\@title{\@@oldtitle\footnotetext{\emph{Key words and phrases.} #1.}}%
+}
+\makeatother
+
+\begin{document}
+	\title{On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case}
+		
+	\subjclass{35A20, 35A10, 35B65, 57K10}
+	\keywords{Analyticity, knot energy, generalized integral Menger curvature, method of majorants, fractional Leibniz rule, bootstrapping}
+	\maketitle
+	
+	    \begin{abstract}
+		We prove the analyticity of smooth critical points for generalized integral Menger curvature energies 
+		$\textnormal{intM}^{(p,2)}$, with $p \in (\tfrac 73, \tfrac 83)$, subject to a fixed length constraint. 
+		This implies, together with already well-known regularity results, that finite-energy, critical $C^1$-curves $\gamma: \R/\Z \to \R^n$ of generalized integral Menger curvature $\textnormal{intM}^{(p,2)}$ subject to a fixed length constraint are not only $C^\infty$ but also analytic. 
+		Our approach is inspired by analyticity results on critical points for O'Hara's knot energies based on Cauchy's method of majorants and a decomposition of the first variation.
+		The main new idea is an additional iteration in the recursive estimate of the derivatives 
+		to obtain a sufficient difference in the order of regularity.
+	\end{abstract}
+
+    \input{Parts/introduction}
+    \input{Parts/L2MainTerm}
+    \input{Parts/EstimateMainTerm}
+    \input{Parts/L2Remainder}
+    \input{Parts/MainProof}
+    \input{Parts/Consequences}
+    \input{Parts/Acknowledgement}
+    \appendix
+    \input{Parts/appendix}
+    
+    \bibliographystyle{alpha}
+    \bibliography{Analyticity-Menger}
+\end{document}

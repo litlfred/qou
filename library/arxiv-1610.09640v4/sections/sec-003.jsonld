@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "On the Book",
+  "pageStart": 13,
+  "pageEnd": 14,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-003"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

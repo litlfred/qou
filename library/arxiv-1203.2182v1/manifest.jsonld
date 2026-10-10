@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1203.2182v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Volume Conjecture: Refined and Categorified",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1203.2182v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1203.2182v1",
   "contains": [
     "library/arxiv-1203.2182v1/sections/sec-000",
     "library/arxiv-1203.2182v1/sections/sec-001",
@@ -82,8 +87,17 @@
     "library/arxiv-1203.2182v1/sections/sec-073"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1203.2182&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1203.2182v1",
+    "title_source": "slug",
     "source_file": "1203.2182v1.pdf",
     "source_sha256": "2fe21af194f652278168c8637f0e6256e8994d2efb1e1be8bdb0ebea7fe750a5",
     "pages": 92,

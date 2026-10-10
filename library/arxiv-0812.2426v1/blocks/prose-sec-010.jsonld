@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0812.2426v1/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0812.2426v1/blocks/prose-sec-010",
   "kind": "prose",
   "title": "Braided categories. A braided category is a monoidal category endowed",
   "pageStart": 4,
   "pageEnd": 4,
   "text": "../sections/sec-010-13-braided-categories-a-braided-category-is-a-mo.md",
-  "derivedFrom": "library/arxiv-0812.2426v1/manifest",
-  "sourceDocument": "library/arxiv-0812.2426v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0812.2426v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0812.2426v1/manifest.jsonld",
   "provenance": "ingested"
 }

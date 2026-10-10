@@ -5,7 +5,8 @@
   "file": "1102.3530v1.pdf",
   "sha256": "ad3edab19f3dc404915e597e65b720cb8c9ca2e3bf1b684e2cd9c1571ad3a774",
   "bytes": 517505,
-  "pages": 35
+  "pages": 35,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "The colored Jones polynomial, the Chern-Simons invariant, and the Reidemeister torsion",
   "authors_raw": "INVARIANT, AND THE REIDEMEISTER TORSION OF THE",
-  "abstract": "W e show that from the asymptotic behavior of an evaluation of the colored Jones polynomial of the ﬁgure-eight knot we can extr act the Chern– Simons invariant and the twisted Reidemeister torsion asso ciated with a rep- resentation of the fundamental group of the knot complement to the two- dimensional complex special linear group.",
+  "abstract": "W e show that from the asymptotic behavior of an evaluation of the colored Jones polynomial of the \ufb01gure-eight knot we can extr act the Chern\u2013 Simons invariant and the twisted Reidemeister torsion asso ciated with a rep- resentation of the fundamental group of the knot complement to the two- dimensional complex special linear group.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20190704132522-04'00'",
@@ -25,9 +26,9 @@
    "Title": "",
    "Author": ""
   },
-  "title_prev": "THE COLORED JONES POLYNOMIAL, THE CHERN–SIMONS",
+  "title_prev": "THE COLORED JONES POLYNOMIAL, THE CHERN\u2013SIMONS",
   "title_lines": [
-   "THE COLORED JONES POLYNOMIAL, THE CHERN–SIMONS"
+   "THE COLORED JONES POLYNOMIAL, THE CHERN\u2013SIMONS"
   ]
  },
  "toc": [
@@ -75,7 +76,7 @@
   },
   {
    "level": 2,
-   "title": "Chern–Simons invariant",
+   "title": "Chern\u2013Simons invariant",
    "page": 11,
    "source": "outline",
    "number": "4.3"
@@ -161,7 +162,7 @@
   {
    "id": "sec-004-43-chernsimons-invariant",
    "number": "4.3",
-   "title": "Chern–Simons invariant",
+   "title": "Chern\u2013Simons invariant",
    "level": 2,
    "page_start": 11,
    "page_end": 11,
@@ -204,6 +205,70 @@
   "likely_scanned": false,
   "toc_entries": 12,
   "sections": 8,
-  "chars_total": 55539
+  "chars_total": 55539,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "real_u.tex",
+   "tex_sections": 8,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.91,
+     "coverage_ratio": 0.896,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-integral-formula-for-the-colored-jones-polynom",
+     "title": "Integral formula for the colored Jones polynomial",
+     "prose_ratio": 0.819,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-approximating-the-integral-formula",
+     "title": "Approximating the integral formula",
+     "prose_ratio": 0.824,
+     "coverage_ratio": 0.926,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-41-representation",
+     "title": "Representation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-43-chernsimons-invariant",
+     "title": "Chern\u2013Simons invariant",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-42-reidemeister-torsion",
+     "title": "Reidemeister torsion",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-5-calculation-of-s",
+     "title": "Calculation of S",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.33,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-007-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

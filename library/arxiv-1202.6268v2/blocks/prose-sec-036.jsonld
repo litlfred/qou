@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1202.6268v2/blocks/prose-sec-036",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1202.6268v2/blocks/prose-sec-036",
   "kind": "prose",
   "title": "C.2. Quantization",
   "pageStart": 41,
   "pageEnd": 42,
   "text": "../sections/sec-036-c2-quantization.md",
-  "derivedFrom": "library/arxiv-1202.6268v2/manifest",
-  "sourceDocument": "library/arxiv-1202.6268v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1202.6268v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1202.6268v2/manifest.jsonld",
   "provenance": "ingested"
 }

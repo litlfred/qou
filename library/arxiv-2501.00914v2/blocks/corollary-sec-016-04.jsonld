@@ -1,0 +1,16 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2501.00914v2/blocks/corollary-sec-016-04",
+  "kind": "corollary",
+  "pageStart": 24,
+  "pageEnd": 27,
+  "text": "corollary-sec-016-04.md",
+  "derivedFrom": "library/arxiv-2501.00914v2/sections/sec-016",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2501.00914v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -7,7 +7,8 @@
   "bytes": 1282526,
   "pages": 70,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -439,6 +440,149 @@
   "likely_scanned": false,
   "toc_entries": 24,
   "sections": 23,
-  "chars_total": 183387
+  "chars_total": 183387,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "exactorbitalshrinking.tex",
+   "tex_sections": 7,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.813,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-contribution",
+     "title": "Contribution",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-outline",
+     "title": "Outline",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-dimension-reduction-via-color-refinement",
+     "title": "Dimension Reduction via Color Refinement",
+     "prose_ratio": 0.142,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-equitable-partitions-and-fractional-automorphism",
+     "title": "Equitable partitions and fractional automorphisms",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-dimension-reduction-of-a-linear-program",
+     "title": "Dimension Reduction of a Linear Program",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-extending-drcr-to-reflection-symmetries",
+     "title": "Extending DRCR to reflection symmetries",
+     "prose_ratio": 0.365,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-centering-the-linear-program",
+     "title": "Centering the linear program",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-split-reformulations-of-linear-programs",
+     "title": "Split reformulations of linear programs",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-equitable-partitions-of-split-reformulations",
+     "title": "Equitable partitions of split reformulations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-reducing-the-split-reformulation",
+     "title": "Reducing the split reformulation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-choosing-the-affine-offset",
+     "title": "Choosing the affine offset",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-comparison-with-reflection-symmetries",
+     "title": "Comparison with reflection symmetries",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-detecting-reflection-reductions",
+     "title": "Detecting reflection reductions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-dimension-reduction-for-mixed-integer-linear-pro",
+     "title": "Dimension Reduction for Mixed-Integer Linear Programs",
+     "prose_ratio": 0.753,
+     "coverage_ratio": 0.779,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-affine-tu-decompositions-for-mixed-integer-linea",
+     "title": "Affine TU decompositions for mixed-integer linear programs",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-example-generalized-assignment-problem",
+     "title": "Example: Generalized Assignment problem",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-detecting-drcr-for-mixed-integer-linear-programs",
+     "title": "Detecting DRCR for mixed-integer linear programs",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.747,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-computational-results",
+     "title": "Computational Results",
+     "prose_ratio": 0.268,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-019-folding-reflection-symmetries-for-linear-program",
+     "title": "Folding reflection symmetries for Linear Programs",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-folding-symmetries-in-mixed-integer-linear-progr",
+     "title": "Folding symmetries in Mixed-Integer Linear Programming",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-discussion",
+     "title": "Discussion",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.617,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-022-experimental-results",
+     "title": "Experimental results",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -5,7 +5,8 @@
   "file": "1003.4808v2.pdf",
   "sha256": "72301d4bee491f865b87b8fd1945ccf4d693ae9cf3b3ffc011780b3fac9b981d",
   "bytes": 636459,
-  "pages": 32
+  "pages": 32,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -277,6 +278,94 @@
   "likely_scanned": false,
   "toc_entries": 14,
   "sections": 14,
-  "chars_total": 63925
+  "chars_total": 63925,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "VCReview.tex",
+   "tex_sections": 3,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-the-many-dimensions-of-the-volume-conjecture",
+     "title": "The many dimensions of the volume conjecture",
+     "prose_ratio": 0.181,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-parametrized-vc",
+     "title": "Parametrized VC",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-22-quantum-vc",
+     "title": "Quantum VC",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-23-groups-and-representations",
+     "title": "Groups and representations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-24-links-and-3-manifolds",
+     "title": "Links and 3-manifolds",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-3-tqft",
+     "title": "TQFT",
+     "prose_ratio": 0.2,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-31-cutting-and-gluing",
+     "title": "Cutting and gluing",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-32-quantization",
+     "title": "Quantization",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-321-methods",
+     "title": "Methods",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-322-simple-examples",
+     "title": "Simple examples",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-33-chern-simons-theory",
+     "title": "Chern-Simons theory",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-331-quantization-of-chern-simons-theory",
+     "title": "Quantization of Chern-Simons theory",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-332-synthesis",
+     "title": "Synthesis",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

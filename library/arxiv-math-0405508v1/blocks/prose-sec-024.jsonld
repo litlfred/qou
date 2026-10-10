@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0405508v1/blocks/prose-sec-024",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0405508v1/blocks/prose-sec-024",
   "kind": "prose",
   "title": "Knots and links inside a solid torus T can be represented unambiguously",
   "pageStart": 20,
   "pageEnd": 22,
   "text": "../sections/sec-024-51-knots-and-links-inside-a-solid-torus-t-can-be.md",
-  "derivedFrom": "library/arxiv-math-0405508v1/manifest",
-  "sourceDocument": "library/arxiv-math-0405508v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0405508v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0405508v1/manifest.jsonld",
   "provenance": "ingested"
 }

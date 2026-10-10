@@ -5,7 +5,8 @@
   "file": "0111022v1.pdf",
   "sha256": "fea7f118014838fe28843b30f7a8f6fb2b913d5198eb668c074eb541ca6ed6b7",
   "bytes": 113932,
-  "pages": 11
+  "pages": 11,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,19 +18,19 @@
   "doi": null,
   "title": "Some remarks on q-deformed multiple polylogarithms",
   "authors_raw": "A-1090 Vienna, Austria",
-  "abstract": "We introduce general q-deformed multiple polylogarithms which even in the dilogarithm case diﬀer slightly from the deformat ion usu- ally discussed in the literature. The merit of the deformati on as sug- gested, here, is that q-deformed multiple polylogarithms deﬁne an algebra, then (as in the undeformed case). For the special ca se of q- deformed multiple ζ-values, we show that there exists even a noncom- mutative and noncocommutative Hopf algebra structure whic h is a de- formation of the commutative Hopf algebra structure which o ne has in the classical case. Finally, we discuss the possible corres pondence be- tween q-deformed multiple polylogarithms and a noncommutative an d noncocommutative self-dual Hopf algebra recently introdu ced by the author as a quantum analog of the Grothendieck-Teichm¨ uller group. 1 Motivation In [CL] a family of noncommutative deformations S4,θ of the four dimen- sional sphere has been introduced from the instanton algebra. Co ncretely, the algebra of functions on S4,θ is given by the generators t,α,α ∗,β,β ∗ and relations αα ∗ = α ∗α, ββ ∗ =β ∗β 1",
+  "abstract": "We introduce general q-deformed multiple polylogarithms which even in the dilogarithm case di\ufb00er slightly from the deformat ion usu- ally discussed in the literature. The merit of the deformati on as sug- gested, here, is that q-deformed multiple polylogarithms de\ufb01ne an algebra, then (as in the undeformed case). For the special ca se of q- deformed multiple \u03b6-values, we show that there exists even a noncom- mutative and noncocommutative Hopf algebra structure whic h is a de- formation of the commutative Hopf algebra structure which o ne has in the classical case. Finally, we discuss the possible corres pondence be- tween q-deformed multiple polylogarithms and a noncommutative an d noncocommutative self-dual Hopf algebra recently introdu ced by the author as a quantum analog of the Grothendieck-Teichm\u00a8 uller group. 1 Motivation In [CL] a family of noncommutative deformations S4,\u03b8 of the four dimen- sional sphere has been introduced from the instanton algebra. Co ncretely, the algebra of functions on S4,\u03b8 is given by the generators t,\u03b1,\u03b1 \u2217,\u03b2,\u03b2 \u2217 and relations \u03b1\u03b1 \u2217 = \u03b1 \u2217\u03b1, \u03b2\u03b2 \u2217 =\u03b2 \u2217\u03b2 1",
   "docinfo": {
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20220324153116-04'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "Title": "arXiv:math/0111022v1  [math.QA]  2 Nov 2001"
   },
-  "title_prev": "Some remarks on q-deformed multiple polylogarithms Karl-Georg Schlesinger Erwin Schrödinger Institute for Mathematical Physics Boltzmanngasse 9",
+  "title_prev": "Some remarks on q-deformed multiple polylogarithms Karl-Georg Schlesinger Erwin Schr\u00f6dinger Institute for Mathematical Physics Boltzmanngasse 9",
   "title_lines": [
    "Some remarks on q-deformed multiple",
    "polylogarithms",
    "Karl-Georg Schlesinger",
-   "Erwin Schrödinger Institute for Mathematical Physics",
+   "Erwin Schr\u00f6dinger Institute for Mathematical Physics",
    "Boltzmanngasse 9"
   ]
  },
@@ -94,6 +95,37 @@
   "likely_scanned": false,
   "toc_entries": 3,
   "sections": 3,
-  "chars_total": 15911
+  "chars_total": 15911,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 3,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-motivation",
+     "title": "Motivation",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.537,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

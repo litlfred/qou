@@ -6,7 +6,8 @@
   "sha256": "0b29cbced7939f7265a53bdefb095c3f72162f1f526e4460631d4a3602b6ed3a",
   "bytes": 543442,
   "pages": 32,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -312,6 +313,99 @@
   "likely_scanned": false,
   "toc_entries": 16,
   "sections": 16,
-  "chars_total": 79407
+  "chars_total": 79407,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "qsatake_final_corrected.tex",
+   "tex_sections": 6,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-4-roman-bezrukavnikov-and-michael-finkelberg",
+     "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-6-roman-bezrukavnikov-and-michael-finkelberg",
+     "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-8-roman-bezrukavnikov-and-michael-finkelberg",
+     "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-10-roman-bezrukavnikov-and-michael-finkelberg",
+     "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-l-we-denote-by\u03c0-l-the-projection-fromtw-l-totw-w",
+     "title": "We denote by\u03c0 L the projection fromt/W L tot/W. We denote byX +",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-12-roman-bezrukavnikov-and-michael-finkelberg",
+     "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-14-roman-bezrukavnikov-and-michael-finkelberg",
+     "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-16-roman-bezrukavnikov-and-michael-finkelberg",
+     "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-18-roman-bezrukavnikov-and-michael-finkelberg",
+     "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-20-roman-bezrukavnikov-and-michael-finkelberg",
+     "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-22-roman-bezrukavnikov-and-michael-finkelberg",
+     "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-24-roman-bezrukavnikov-and-michael-finkelberg",
+     "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-26-roman-bezrukavnikov-and-michael-finkelberg",
+     "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-28-roman-bezrukavnikov-and-michael-finkelberg",
+     "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-30-roman-bezrukavnikov-and-michael-finkelberg",
+     "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

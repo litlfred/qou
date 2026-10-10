@@ -6,7 +6,8 @@
   "sha256": "e1552ceb6c82c27c0b733b7cdffaacfd383464c5b432dc12609073141f5b878a",
   "bytes": 727562,
   "pages": 71,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -813,6 +814,249 @@
   "likely_scanned": false,
   "toc_entries": 46,
   "sections": 45,
-  "chars_total": 162445
+  "chars_total": 162445,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "all.tex",
+   "tex_sections": 4,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.991,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-1-dehn-twists-and-all-that",
+     "title": "Dehn twists, and all that",
+     "prose_ratio": 0.089,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-11-exact-symplectic-geometry-and-\ufb01brations",
+     "title": "Exact symplectic geometry and \ufb01brations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-12-the-local-model",
+     "title": "The local model",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-16-gt1",
+     "title": "(||g\u2032||t\u22121",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-13-vanishing-cycles",
+     "title": "Vanishing cycles",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-16-these-can-be-chosen-such-that-in-a-neighbourh",
+     "title": "These can be chosen such that in a neighbourhood of Ec(a), \u2126 \u00b5 = \u2126 and",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-2-pseudo-holomorphic-sections",
+     "title": "Pseudo-holomorphic sections",
+     "prose_ratio": 0.098,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-21-a-simple-invariant",
+     "title": "A simple invariant",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-2-du-jduj-and-the-zero-set-muniv-univ10",
+     "title": "(Du +J\u25e6Du\u25e6j), and the zero set Muniv = ( \u00af\u2202univ)\u22121(0)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-2-l-xjduj-where-x-is-any-section-of-tev-de\ufb01ned-o",
+     "title": "(L \u02dcXJ)\u25e6Du\u25e6j where \u02dcX is any section of TEv, de\ufb01ned on a neigh-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-2-xjduj-25",
+     "title": "(\u2207XJ)\u25e6Du\u25e6j, (2.5)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-24-moreover-lemma-25-says-that-for-suitably-chos",
+     "title": "Moreover, Lemma 2.5 says that for suitably chosen Jk, the evaluation maps",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-22-horizontality",
+     "title": "Horizontality",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-0-if-u-has-nonnegative-curvature-the-converse-al",
+     "title": "If \u2207u has nonnegative curvature, the converse also holds, since t he second",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-23-a-vanishing-theorem",
+     "title": "A vanishing theorem",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-4-rskimdzdz",
+     "title": "(r\u2032\u2212sk)im(d\u00afz\u2227dz) +",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-2-rsk-0-\u03c01-r",
+     "title": "(r\u2032\u2212sk) + 0 = \u03c0(1 + r\u2032",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-24-relative-invariants",
+     "title": "Relative invariants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-0-e\u03c0q",
+     "title": "(E,\u03c0,Q ) :",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-0-e\u03c0qj",
+     "title": "(E,\u03c0,Q,J ) :",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-0-e\u03c0qj",
+     "title": "(E,\u03c0,Q,J )(\u2297",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-0-e\u03c0qj-is-a-chain-map-the",
+     "title": "(E,\u03c0,Q,J ) is a chain map. The",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-0-e\u03c0qj-0-and-c\u03c6-rel",
+     "title": "(E,\u03c0,Q,J 0) and C\u03a6 rel",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-0-e\u03c0qj-1-the-same",
+     "title": "(E,\u03c0,Q,J 1). The same",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-0-e\u03c0q-remains-invariant-under-de",
+     "title": "(E,\u03c0,Q ) remains invariant under de-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-0-ek\u03c0kqkjk-we-require-that-the-jek-jreg-ml-0l-1",
+     "title": "(Ek,\u03c0k,Qk,Jk). We require that the Jek\u2208 Jreg (M,L 0,L 1) on",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-0-e\u03c0qj-c\u03c6-rel",
+     "title": "(E,\u03c0,Q,J ) = C\u03a6 rel",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-0-e1\u03c0-1q-1j-1c\u03c6-rel",
+     "title": "(E1,\u03c0 1,Q 1,J 1)\u25e6C\u03a6 rel",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-0-e2\u03c0-2q-2j-2-230",
+     "title": "(E2,\u03c0 2,Q 2,J 2), (2.30)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-25-horizontality-and-relative-invariants",
+     "title": "Horizontality and relative invariants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-0-e\u03c0qj-\u03c6c\u03c6-rel",
+     "title": "(E,\u03c0,Q,J ) = \u03c6+(C\u03a6 rel",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-0-e\u03c0qj-\u03c6",
+     "title": "(E,\u03c0,Q,J )\u2212\u03c6),",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-3-wrapping-it-up",
+     "title": "Wrapping it up",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-31-preliminaries",
+     "title": "Preliminaries",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-32-the-\ufb01rst-map",
+     "title": "The \ufb01rst map",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-0-e\u03c0qj-\u03c6-c\u03c6-rel",
+     "title": "(E,\u03c0,Q,J ) = \u03c6 + (C\u03a6 rel",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-0-e\u03c0qj-4-cc-for-the-relative-invariant-on-the-co",
+     "title": "(E,\u03c0,Q,J (4)) : C\u2032\u2192C for the relative invariant on the cochain",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-038-33-the-second-map",
+     "title": "The second map",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-039-0-e\u03c0qj-6-cc",
+     "title": "(E,\u03c0,Q,J (6)) : C\u2212\u2192C\u2032\u2032",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-34-the-homotopy",
+     "title": "The homotopy",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-0-ebc\u03c0bcqbcj-cc",
+     "title": "(Ebc,\u03c0bc,Qbc,J ) : C\u2032\u2212\u2192C\u2032\u2032",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-042-0-e\u03c0qj-cc",
+     "title": "(E,\u03c0,Q,J ) : C\u2032\u2212\u2192C\u2032\u2032",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-043-0-ebc\u03c0bcqbcj-will-be-homotopic-to-zero-by-a-chai",
+     "title": "(Ebc,\u03c0bc,Qbc,J ) will be homotopic to zero by a chain homotopy",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-044-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

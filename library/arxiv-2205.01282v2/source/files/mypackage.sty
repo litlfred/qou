@@ -1,0 +1,43 @@
+% --------------------------------------------------------------------------
+%		数式
+% --------------------------------------------------------------------------
+
+\usepackage{amsmath, amsthm, amssymb, mathtools, mathrsfs}
+\usepackage{extarrows} % \xlongrightarrowとかの凝った矢印
+\usepackage{enumerate} % 箇条書き
+\usepackage{enumitem} %箇条書きのenumerate環境をパワーアップ
+
+%\mathtoolsset{showonlyrefs,showmanualtags} % 参照した数式だけに数式番号を付ける. 参照は\refではだめで\eqrefを使う必要がある. cleverefパッケージとは両立しない. 
+
+% --------------------------------------------------------------------------
+%		各種パッケージ
+% --------------------------------------------------------------------------
+
+\usepackage{bxpapersize} % 出力用紙サイズを設定
+\usepackage{graphicx,color} % dvipdfmxを利用するときは\documentclass[dvipdfmx]{jsarticle}のように\documentclassのオプションにdvipdfmxを付けないとgraphicxパッケージの挙動がおかしくなる
+\usepackage[svgnames]{xcolor} % 色コマンドを増やす. cyan, orange, violetあたりを使うと良さそう
+\usepackage[normalem]{ulem} % \sout{}で取り消し線を引く. normalemオプションで引用文献のタイトルに下線が付かなくなる
+
+% --------------------------------------------------------------------------
+%		図と表
+% --------------------------------------------------------------------------
+
+\usepackage{tikz}
+\usetikzlibrary{cd}% 可換図式
+\usepackage{array, booktabs} % 表
+\usepackage{colortbl} % 表の色付け
+\usepackage{tabularx} % 表のセル内改行
+\usepackage{float} % 図表の位置を設定
+\usepackage{subcaption} % 複数の図を並べる
+
+% --------------------------------------------------------------------------
+%		箇条書きの番号の設定
+% --------------------------------------------------------------------------
+
+\makeatletter
+\renewcommand{\theenumi}{{\upshape (\@roman\c@enumi)}}
+\renewcommand{\labelenumi}{\theenumi}
+\renewcommand{\p@enumii}{}
+\renewcommand{\theenumii}{{\upshape (\@alph\c@enumii)}}
+\renewcommand{\labelenumii}{\theenumii}
+\makeatother

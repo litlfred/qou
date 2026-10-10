@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.02592v3/sections/sec-048",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "JSJ decomposition",
+  "pageStart": 372,
+  "pageEnd": 377,
+  "contains": [
+    "library/arxiv-1610.02592v3/blocks/prose-sec-048",
+    "library/arxiv-1610.02592v3/blocks/theorem-sec-048-01",
+    "library/arxiv-1610.02592v3/blocks/remark-sec-048-02",
+    "library/arxiv-1610.02592v3/blocks/proposition-sec-048-03",
+    "library/arxiv-1610.02592v3/blocks/proposition-sec-048-04",
+    "library/arxiv-1610.02592v3/blocks/remark-sec-048-05",
+    "library/arxiv-1610.02592v3/blocks/proposition-sec-048-06",
+    "library/arxiv-1610.02592v3/blocks/proposition-sec-048-07"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.02592v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.02592v3/manifest.jsonld",
+  "provenance": "ingested"
+}

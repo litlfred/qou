@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0804.0917v1/blocks/prose-sec-002",
+  "kind": "prose",
+  "title": "Highest weight modules over sl2",
+  "pageStart": 7,
+  "pageEnd": 8,
+  "text": "../sections/sec-002-highest-weight-modules-over-sl2.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0804.0917v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0804.0917v1/manifest.jsonld",
+  "provenance": "ingested"
+}

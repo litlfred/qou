@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-q-alg-9601025v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "The hyperbolic volume of knots from the quantum dilogarithm",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-q-alg-9601025v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-q-alg-9601025v2",
   "contains": [
     "library/arxiv-q-alg-9601025v2/sections/sec-000",
     "library/arxiv-q-alg-9601025v2/sections/sec-001",
@@ -18,8 +23,17 @@
     "library/arxiv-q-alg-9601025v2/sections/sec-009"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:q-alg/9601025&metadataPrefix=arXiv), submitted 1996-03-25, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-q-alg-9601025v2",
+    "title_source": "slug",
     "source_file": "9601025v2.pdf",
     "source_sha256": "369b0a1a92ce67a8bfcaf6dd1ece5eb550a42562e92cad218a0a6de7a36d062f",
     "pages": 8,

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1702.00039v1/blocks/prose-sec-019",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1702.00039v1/blocks/prose-sec-019",
   "kind": "prose",
   "title": "Our favorite open questions about Hecke algebras",
   "pageStart": 19,
   "pageEnd": 20,
   "text": "../sections/sec-019-34-our-favorite-open-questions-about-hecke-algeb.md",
-  "derivedFrom": "library/arxiv-1702.00039v1/manifest",
-  "sourceDocument": "library/arxiv-1702.00039v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1702.00039v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1702.00039v1/manifest.jsonld",
   "provenance": "ingested"
 }

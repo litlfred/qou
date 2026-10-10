@@ -5,7 +5,8 @@
   "file": "2304.12545v1.pdf",
   "sha256": "bfc3c2be395b1b2da852c3ddefaf66b3daac043347f1fc9dcc7d19529dfe01ba",
   "bytes": 459137,
-  "pages": 19
+  "pages": 19,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -159,7 +160,71 @@
   "likely_scanned": false,
   "toc_entries": 7,
   "sections": 7,
-  "chars_total": 61445
+  "chars_total": 61445,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "walter.tex",
+   "tex_sections": 6,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-ideal-triangulations-and-the-gluing-equations",
+     "title": "Ideal triangulations and the gluing equations",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.862,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-volumes-and-dehn-surgeries",
+     "title": "Volumes and Dehn surgeries",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-the-bloch-group-and-the-extended-bloch-group",
+     "title": "The Bloch group and the extended Bloch group",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.96,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-4-symplectic-properties",
+     "title": "Symplectic properties",
+     "prose_ratio": 0.12,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-5-quantization",
+     "title": "Quantization",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.798,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-6-connections-to-number-theory",
+     "title": "Connections to number theory",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  },
  "duplicate_copies": [
   "celebratio-mathematica-neumann-hyperbolic-3-manifolds",

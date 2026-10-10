@@ -5,7 +5,8 @@
   "file": "0411647v2.pdf",
   "sha256": "d79f96b416cb28dad86af46aeb687d211e679a99b83fe0b3c5285a6335553225",
   "bytes": 592480,
-  "pages": 60
+  "pages": 60,
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Asymptotics of characters of symmetric groups, genus expansion and free probability",
   "authors_raw": "GENUS EXPANSION AND FREE PROBABILITY",
-  "abstract": "The convolution of indicators of two conjugacy classes on the symmetric group Sq is usually a complicated linear combination of indicators of many conjugacy classes. Similarly, a product of the mo- ments of the Jucys–Murphy element involves many conjugacy c lasses with complicated coefﬁcients. In this article we consider a combinato- rial setup which allows us to manipulate such products easil y: to each conjugacy class we associate a two-dimensional surface and the asymp- totic properties of the conjugacy class depend only on the ge nus of the resulting surface. This construction closely resembles th e genus expan- sion from the random matrix theory. As the main application w e study irreducible representations of symmetric groups Sq for large q. We ﬁnd the asymptotic behavior of characters when the corresponding Young di- agram rescaled by a factor q− 1/2 converge to a prescribed shape. The character formula (known as the Kerov polynomial) can be vie wed as a power series, the terms of which correspond to two-dimensional surfaces with prescribed genus and we compute explicitly the ﬁrst twoterms, thus we prove a conjecture of Biane. 1. I NTRODUCTION 1.1. Irreducible representations of large symmetric groups. Irreducible representations of symmetric groups are in the one-to-one c orrespondence with Young diagrams and due to algorithms such as Murnaghan–Nakayama rule or Robinson–Littlewood rule the essential questions concerning repre- sentations and characters of symmetric groups can be answer ed by a com- binatorial study of the corresponding Young diagrams [Ful9 7]. However, when one studies the asymptotic properties of large symmetr ic groups, the work with Young tableaux becomes cumbersome and one is in the need to ﬁnd another object which would encode the same information i n a more convenient way. Alternatively, one can state the above problem as follows: a typical partition of a large number q (or equivalently, a Young diagram with q boxes) is a collection of",
+  "abstract": "The convolution of indicators of two conjugacy classes on the symmetric group Sq is usually a complicated linear combination of indicators of many conjugacy classes. Similarly, a product of the mo- ments of the Jucys\u2013Murphy element involves many conjugacy c lasses with complicated coef\ufb01cients. In this article we consider a combinato- rial setup which allows us to manipulate such products easil y: to each conjugacy class we associate a two-dimensional surface and the asymp- totic properties of the conjugacy class depend only on the ge nus of the resulting surface. This construction closely resembles th e genus expan- sion from the random matrix theory. As the main application w e study irreducible representations of symmetric groups Sq for large q. We \ufb01nd the asymptotic behavior of characters when the corresponding Young di- agram rescaled by a factor q\u2212 1/2 converge to a prescribed shape. The character formula (known as the Kerov polynomial) can be vie wed as a power series, the terms of which correspond to two-dimensional surfaces with prescribed genus and we compute explicitly the \ufb01rst twoterms, thus we prove a conjecture of Biane. 1. I NTRODUCTION 1.1. Irreducible representations of large symmetric groups. Irreducible representations of symmetric groups are in the one-to-one c orrespondence with Young diagrams and due to algorithms such as Murnaghan\u2013Nakayama rule or Robinson\u2013Littlewood rule the essential questions concerning repre- sentations and characters of symmetric groups can be answer ed by a com- binatorial study of the corresponding Young diagrams [Ful9 7]. However, when one studies the asymptotic properties of large symmetr ic groups, the work with Young tableaux becomes cumbersome and one is in the need to \ufb01nd another object which would encode the same information i n a more convenient way. Alternatively, one can state the above problem as follows: a typical partition of a large number q (or equivalently, a Young diagram with q boxes) is a collection of",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20210902211750-04'00'",
@@ -423,6 +424,111 @@
   "likely_scanned": false,
   "toc_entries": 29,
   "sections": 18,
-  "chars_total": 119067
+  "chars_total": 119067,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "pushreps03.tex",
+   "tex_sections": 7,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-11-irreducible-representations-of-large-symmetri",
+     "title": "Irreducible representations of large symmetric groups",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.014,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-12-the-main-technical-problem-convolution-in-sq",
+     "title": "The main technical problem: convolution in Sq",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-13-free-probability-and-free-cumulants",
+     "title": "Free probability and free cumulants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-14-applications-fluctuations-of-random-young-dia",
+     "title": "Applications: Fluctuations of random Young diagrams",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-21-symmetric-group",
+     "title": "Symmetric group",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-15-overview-of-the-article",
+     "title": "Overview of the article",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-22-partitions",
+     "title": "Partitions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-32-multiplication-of-partitions",
+     "title": "Multiplication of partitions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-41-free-cumulants",
+     "title": "Free cumulants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-4-free-cumulants-of-partitions",
+     "title": "Free cumulants of partitions",
+     "prose_ratio": 0.427,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-44-higher-order-expansion-for-free-cumulants",
+     "title": "Higher order expansion for free cumulants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-46-higher-order-expansion-of-characters",
+     "title": "Higher order expansion of characters",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-51-admissible-and-pushing-sequences",
+     "title": "Admissible and pushing sequences",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-52-pushing-partitions",
+     "title": "Pushing partitions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-61-connection-with-the-work-of-biane",
+     "title": "Connection with the work of Biane",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-63-connection-with-orthogonal-polynomials-and-wi",
+     "title": "Connection with orthogonal polynomials and Wick product",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

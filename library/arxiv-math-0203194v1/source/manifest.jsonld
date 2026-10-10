@@ -1,0 +1,124 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203194v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0203194v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203194v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0203194&metadataPrefix=arXiv), submitted 2002-03-19, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0203194v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math/0203194v1",
+    "content_type": "application/gzip",
+    "sha256": "b98fa22a610a2eabf2f903cc38a89d53415133745234e3f406b15491be5dffaf",
+    "bytes": 437869,
+    "fetched": "2026-10-10T15:27:20+00:00",
+    "files": [
+      {
+        "path": "source/files/ascmac.sty",
+        "role": "sty",
+        "sha256": "de9bb9f48eb8ce4590fe5780135fc6c061e27a0e8a8b18ae64ab0747f47052f7",
+        "bytes": 6410
+      },
+      {
+        "path": "source/files/chap01.tex",
+        "role": "tex",
+        "sha256": "5ed27236592af6a42ee8195aaa96d6dbfcda8eaab874db53f08dc020c48cafe7",
+        "bytes": 176246
+      },
+      {
+        "path": "source/files/chap02.tex",
+        "role": "tex",
+        "sha256": "a8840f3312184b6faae2b64cc5db00ddbc0463e0afcae05e05a047e1d218af53",
+        "bytes": 151794
+      },
+      {
+        "path": "source/files/chap03.tex",
+        "role": "tex",
+        "sha256": "f067589bfed99c45aae40416230ebf798eb6540ea968377444191bb04652f3e8",
+        "bytes": 302074
+      },
+      {
+        "path": "source/files/eurm.sty",
+        "role": "sty",
+        "sha256": "ae41847cfba879f6e04ae864dc8da2aa128cbbfd4a1bca483289c16f80997bda",
+        "bytes": 592
+      },
+      {
+        "path": "source/files/intro.tex",
+        "role": "tex",
+        "sha256": "75974fe51fe664e03150baf2c221814f4ad85b4e0a6c1f5e113950c95047e68b",
+        "bytes": 22421
+      },
+      {
+        "path": "source/files/longtable.sty",
+        "role": "sty",
+        "sha256": "019927908dee5dce4b4f106d2d8cdbb01f18e3777dcfe939f8c2eb184ace5a66",
+        "bytes": 11405
+      },
+      {
+        "path": "source/files/macro.tex",
+        "role": "tex",
+        "sha256": "39e51c231ec8b2b18a60626097c267095dbf0e6789be87cf4f1ea48bb8b1f59e",
+        "bytes": 11551
+      },
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "c404e83550080f4f406098c7fe72ec6a24833c6c0e03dc1a68aa823a42bd8c51",
+        "bytes": 1890
+      },
+      {
+        "path": "source/files/minitoc.sty",
+        "role": "sty",
+        "sha256": "4d8810c9c8f8e4db4c3eab3b004f7a81e88997ee428e0ec8d9a8666ae052de22",
+        "bytes": 84716
+      },
+      {
+        "path": "source/files/mumford.tex",
+        "role": "tex",
+        "sha256": "b70455a3605359c3576d45c751057073236a4748805087fba96082c37e234cfe",
+        "bytes": 30814
+      },
+      {
+        "path": "source/files/mybooke.cls",
+        "role": "cls",
+        "sha256": "d6acdd41841323a6b0aefb2a480d9744e7759f092f56014623ea9d503358cbdb",
+        "bytes": 42261
+      },
+      {
+        "path": "source/files/rapid.tex",
+        "role": "tex",
+        "sha256": "9d59c14f33c5337277235d55509119e20e1c5da0c61517c658efb41e7529d935",
+        "bytes": 44427
+      },
+      {
+        "path": "source/files/ref.tex",
+        "role": "tex",
+        "sha256": "f8884bf5f1c9daa595323c62dc1d2c9c57532160c33888da801e9efce313f818",
+        "bytes": 31930
+      },
+      {
+        "path": "source/files/symm.tex",
+        "role": "tex",
+        "sha256": "32dbf5121ed9ba0d9022078f9d016f6ca301ac9cf735a2b5ce0b523408e3d424",
+        "bytes": 22315
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

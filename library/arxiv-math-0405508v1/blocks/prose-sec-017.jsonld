@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0405508v1/blocks/prose-sec-017",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0405508v1/blocks/prose-sec-017",
   "kind": "prose",
   "title": "Geck–Lambropoulou",
   "pageStart": 14,
   "pageEnd": 16,
   "text": "../sections/sec-017-14-gecklambropoulou.md",
-  "derivedFrom": "library/arxiv-math-0405508v1/manifest",
-  "sourceDocument": "library/arxiv-math-0405508v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0405508v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0405508v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -7,165 +7,266 @@ section_number: 3
 pages: 16-19
 source_pdf: 1312.6411v4.pdf
 source_sha256: ceac22eb8ffe87e6
+text_source: latex
+latex_prose_ratio: 0.989
+latex_coverage_ratio: 0.843
 doc_brief: "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI — We consider commutative DG rings (better known as nonpositive stronglycommutativeassociativeunitalDGalgebras)."
 ---
-Recall that by default all DG modules are left DG modules, and all DG rings
-are nonpositive (Convention 1.4). In this section we study the canonical DG ring
-homomorphism A→ ¯A, and the corresponding reduction functorD(A)→ D( ¯A),
-M↦→ ¯A⊗L
-A M. We do not make any ﬁniteness assumptions on the cohomology
-modules Hi(M).
-A triangulated functorF is calledconservative if for any objectM, F(M) = 0
-implies M = 0;orequivalently,ifforanymorphism φ, F(φ)isanisomorphismim-
-plies φisanisomorphism. Cf.[KaSc,Section1.4]. Thefollowingresultisanalogous
-to the Nakayama Lemma (cf. Remark 7.24).
-Proposition 3.1. Let A be a DG ring. The reduction functor
-¯A⊗L
-A− : D−(A)→ D−( ¯A)
-is conservative.
-Proof. Take M∈ D−(A)notisomorphicto 0,andlet i1 := sup(H(M)). Wecanﬁnd
-a K-ﬂat resolution (e.g. a semi-free resolution)P→ M over A such thatsup(P) =
-i1. Then ¯A⊗L
-A M∼= ¯A⊗A P, and (by the “Künneth trick”)
-Hi1 ( ¯A⊗L
-A M)∼= Hi1 ( ¯A⊗A P)∼= ¯A⊗A Hi1 (P)∼= Hi1 (M)
-is nonzero. Hence ¯A⊗L
-A M is nonzero. □
-Given a homomorphismφ : P→ Q in C(A), we denote bycone(φ) the corre-
-sponding cone, which is also an object ofC(A).
-Lemma 3.2. Suppose φ : P → Q is a homomorphism inC(A), where P and Q are
-pseudo-ﬁnite(resp. ﬁnite) semi-free DG modules. Thencone(φ) is a pseudo-ﬁnite(resp.
-ﬁnite) semi-free DG module.
-Proof. Clear from Proposition 1.15. □
-Proposition 3.3. Let M∈ D−(A). We write ¯M := ¯A⊗L
-A M∈ D−( ¯A).
-COMMUTATIVE DG RINGS 17
-(1) If ¯Misisomorphicin D( ¯A)to ¯A⊕r forsomecardinalnumber r,then Misisomor-
-phic inD(A) to A⊕r.
-(2) If ¯M is isomorphic inD( ¯A) to a semi-free DG¯A-module ¯P of semi-free lengthd,
-then M is isomorphic inD(A) to a semi-free DGA-module P of semi-free length
-d.
-ObservethattheDG ¯A-module ¯Pin(2)aboveisnothingbutaboundedcomplex
-of free ¯A-modules; cf. Proposition 1.15. The semi-free length was introduced in
-Deﬁnition 1.14.
-Proof. Step1. InviewofProposition3.1wecanassumethat ¯Aand Marenonzero.
-Deﬁnei1 := sup(H(M)). By replacing M with a suitable resolution of it, we can
-assume thatM is a K-ﬂatDGA-module satisfyingsup(M) = i1. After that wecan
-also assume that ¯M = ¯A⊗A M. The Künneth formula says that
-Hi1 ( ¯M)∼= Hi1 ( ¯A⊗A M)∼= ¯A⊗A Hi1 (M)∼= Hi1 (M)
-as ¯A-modules. Thereforesup(H( ¯M)) = sup( ¯M) = i1.
-We are given an isomorphism¯φ : ¯P → ¯M in D( ¯A0), where ¯P is a bounded
-complex of free ¯A-modules. Since ¯P is K-projective, we can assume that the iso-
-morphism ¯φ : ¯P→ ¯M in D( ¯A) is in fact a quasi-isomorphism inC( ¯A). The proof
-continues by induction onj := amp( ¯P)∈ N. Note that in item (1) we havei1 = 0,
-¯P = ¯A⊕r and j = 0.
-Step 2. In this step we assume thatj = 0. This means that the only nonzero term
-of ¯P is in degreei1, and it is the free module¯Pi1∼= ¯A⊕r1 for some cardinal number
-r1. In other words,¯P∼= ¯A[−i1]⊕r1 in C( ¯A). So Hi1 ( ¯M)∼= ¯Pi1, andHi( ¯M) = 0 for
-all i⁄= i1. Recall the isomorphism of¯A-modules Hi1 ( ¯M)∼= Hi1 (M) from Step 1.
-There are canonical surjectionsMi1→ Hi1 (M) and ¯Mi1→ Hi1 ( ¯M). We can write
-the quasi-isomorphism ¯φ as ¯φ : ¯A[−i1]⊕r1→ ¯M.
-Considerthenonderivedreductionfunctor F : C(A)→ C( ¯A), F(−) := ¯A⊗A−.
-Let P := A[−i1]⊕r1, a free DGA-module satisfying F(P) ∼= ¯P. There exists a
-homomorphism φ : P→ M in C(A) that lifts the quasi-isomorphism¯φ : ¯P→ ¯M,
-namely ¯φ = F(φ). Now the DG modulesP and M are K-ﬂat, so¯φ = LF(φ). Since
-¯φ is an isomorphism, and since the functorLF is conservative, we conclude thatφ
-is an isomorphism. This proves item (1).
-Step 3. Here we suppose thatj≥ 1. Let i2 := sup( ¯P), which is of course≥ i1.
-Say ¯Pi2∼= ¯A⊕r2 for some natural numberr2. Deﬁne DG modules¯P′ := ¯A[−i2]⊕r2
-and P′ := A[−i2]⊕r2; these satisfy¯P′∼= ¯A⊗A P′. The inclusion ¯Pi2⊆ ¯P is viewed
-as a DG module homomorphism¯α : ¯P′→ ¯P. We also have a quasi-isomorphism
-¯φ : ¯P → ¯M and an equality ¯M = ¯A⊗A M in C( ¯A). In this way we obtain a
-homomorphism ¯ψ : ¯P′→ ¯M, ¯ψ := ¯φ◦ ¯α. Because P′ is a free DGA-module, there
-is a homomorphismψ : P′→ M in C(A) lifting ¯ψ, namely ¯ψ = F(ψ), where F is
-the functor ¯A⊗A−.
-Let M′′∈ C(A) be the cone ofψ, so there is a distinguished triangle
-(3.4) P′ ψ
-− →M
-χ
-− →M′′− →P′[1]
-in D(A). Deﬁne ¯M′′ := F(M′′) and ¯χ := F(χ), which are an object and a mor-
-phism inC( ¯A), respectively. Since all three DG modules in this triangle are K-ﬂat,
-it follows that
-¯P′ ¯ψ
-− →¯M
-¯χ
-− →¯M′′− →¯P′[1]
-18 AMNON YEKUTIELI
-is a distinguished triangle inD( ¯A). On the other hand, let¯P′′ be the cokernel of
-the inclusion ¯α : ¯P′→ ¯P. So there is a distinguished triangle
-¯P′ ¯α− →¯P
-¯β
-− →¯P′′− →¯P′[1]
-in D( ¯A). Consider the diagram of solid arrows inD( ¯A) :
-¯P′ ¯α //
-=
-
-¯P
-¯β //
-¯φ
-
-¯P′′ //
-¯φ′′
-
-¯P′[1]
-=
-
-¯P′ ¯ψ // ¯M
-¯χ // ¯M′′ // ¯P′[1]
-Thesquareontheleftiscommutative, andthereforeitextendstoanisomorphism
-of distinguished triangles. So there is an isomorphism¯φ′′ : ¯P′′→ ¯M′′ in D( ¯A).
-Finally, the complex¯P′′ is a bounded complex of ﬁnite free¯A-modules, of am-
-plitude j− 1≥ 0. According to the induction hypothesis (step 2 forj > 1, and
-step 1 forj = 1) there is an isomorphismφ′′ : P′′ ≃− →M′′ in D(A) for some ﬁnite
-semi-free DGA-module P′′. From (3.4) we obtain a distinguished triangle
-P′ ψ
-− →M
-ψ
-− →P′′ γ
-− →P′[1]
-in D(A). Wecanassumethat γisahomomorphismin C(A). Turningthistriangle
-we get a distinguished triangle
-P′′[−1]
-−γ[−1]
-−−−−→P′ ψ
-− →M ∆− →.
-DeﬁneP to be the cone on the homomorphism−γ[−1] : P′′[−1] → P′. Then
-P∼= M in D(A), and by Lemma 3.2,P is a ﬁnite semi-free DGA-module. □
-WelearnedthenextpropositionfromB.AntieauandJ.Lurie. Cf.[Lu1,Corollary
-7.2.2.19] for a more general statement.
-Proposition 3.5. Let ¯P be a projective ¯A-module. Then there exists a DGA-module P
-with these properties:
-(i) P is a direct summand, inD(A), of a direct sum of copies ofA.
-(ii) ¯A⊗L
-A P∼= ¯P in D( ¯A).
-Proof. Say ¯Pisadirectsummand,in Mod ¯A,ofafree ¯A-module ¯F. So ¯Pistheimage
-of an idempotent endomorphism¯φ : ¯F→ ¯F. Let F be the direct sum inC(A) of
-copies of A, as many as there are copies of¯A in ¯F. There is a canonical surjection
-F → ¯F. Choose any homomorphism φ : F → F in C(A) lifting ¯φ. Note that
-manysuch φexist;andtheyaren’tnecessarilyidempotents. Let Pbethehomotopy
-colimit construction onφ. Namely we let
-Φ :
-⨁
-i∈N F →
-⨁
-i∈N F
+\label{sec:lifting}
+
+Recall that by default all DG modules are left DG modules, and all DG rings are 
+nonpositive (Convention \ref{conv:305}).   
+In this section we study the canonical DG ring homomorphism 
+$A \to \bar{A}$, and the corresponding reduction functor 
+$\cat{D}(A) \to \cat{D}(\bar{A})$, 
+$M \mapsto \bar{A} \ot^{\mrm{L}}_{A} M$.
+We do not make any finiteness assumptions on the cohomology modules 
+$\opn{H}^i(M)$.
+
+A triangulated functor $F$ is called {\em conservative} if for any object 
+$M$, $F(M) = 0$ implies $M = 0$; or equivalently, if for any morphism 
+$\phi$, $F(\phi)$ is an isomorphism implies $\phi$ is an isomorphism.
+Cf.\ \cite[Section 1.4]{KaSc}. The following result is analogous to the 
+Nakayama Lemma (cf.\ Remark \ref{rem:317}).
+
+\begin{prop} \label{prop:92}
+Let $A$ be a DG ring. The reduction functor 
+\[ \bar{A} \ot^{\mrm{L}}_{A} - : \cat{D}^{-}(A) \to \cat{D}^-(\bar{A}) \]
+is conservative. 
+\end{prop}
+
+\begin{proof}
+Take $M \in \cat{D}^{-}(A)$ not isomorphic to $0$, and let 
+$i_1 := \opn{sup}(\opn{H}(M))$.
+We can find a K-flat resolution (e.g.\ a semi-free resolution) $P \to M$ over 
+$A$ such that $\opn{sup}(P) = i_1$.
+Then $\bar{A} \ot^{\mrm{L}}_A M \cong \bar{A} \ot^{}_A P$, and  
+(by the ``K\"unneth trick'')
+\[ \opn{H}^{i_1}(\bar{A} \ot^{\mrm{L}}_A M) \cong 
+\opn{H}^{i_1}(\bar{A} \ot^{}_A P) \cong 
+\bar{A} \ot^{}_A \opn{H}^{i_1}(P) \cong \opn{H}^{i_1}(M) \]
+is nonzero. Hence $\bar{A} \ot^{\mrm{L}}_A M$ is nonzero. 
+\end{proof}
+
+Given a homomorphism $\phi : P \to Q$ in $\cat{C}(A)$, we denote by 
+$\opn{cone}(\phi)$ the corresponding cone, which is also an object of 
+$\cat{C}(A)$. 
+
+\begin{lem} \label{lem:33}
+Suppose $\phi : P \to Q$ is a homomorphism in $\cat{C}(A)$,
+where $P$ and $Q$ are pseudo-finite \tup{(}resp.\ finite\tup{)} semi-free DG 
+modules. Then $\opn{cone}(\phi)$ is a pseudo-finite \tup{(}resp.\ finite\tup{)} 
+semi-free DG module. 
+\end{lem}
+
+\begin{proof}
+Clear from Proposition \ref{prop:100}.
+\end{proof}
+
+\begin{prop} \label{prop:305}  
+Let $M \in \cat{D}^-(A)$. We write
+$\bar{M} := \bar{A} \ot^{\mrm{L}}_A M \in \cat{D}^-(\bar{A})$. 
+\begin{enumerate}
+\item If $\bar{M}$ is isomorphic in $\cat{D}(\bar{A})$ to 
+$\bar{A}^{\oplus r}$ for some cardinal number $r$, then 
+$M$ is isomorphic in $\cat{D}(A)$ to $A^{\oplus r}$.
+
+\item If $\bar{M}$ is isomorphic in $\cat{D}(\bar{A})$ to a semi-free DG 
+$\bar{A}$-module $\bar{P}$ of semi-free length $d$, then $M$ is 
+isomorphic in $\cat{D}(A)$ to a semi-free DG $A$-module $P$ of semi-free 
+length $d$.
+\end{enumerate}
+\end{prop}
+
+Observe that the DG $\bar{A}$-module $\bar{P}$ in (2) above is nothing but a
+bounded complex of free $\bar{A}$-modules; cf.\ Proposition \ref{prop:100}.
+The semi-free length was introduced in Definition \ref{dfn:311}.
+
+\begin{proof}
+Step 1. 
+In view of Proposition \ref{prop:92} we can assume that $\bar{A}$ and $M$ are 
+nonzero. Define $i_1 := \opn{sup}(\opn{H}(M))$. 
+By replacing $M$ with a suitable resolution of it, we can assume that $M$ is a 
+K-flat DG $A$-module satisfying $\opn{sup}(M) =  i_1$.
+After that we can also assume that $\bar{M} = \bar{A} \ot_A M$. 
+The K\"unneth formula says that
+\[ \opn{H}^{i_1}(\bar{M}) \cong 
+\opn{H}^{i_1}(\bar{A} \ot_{A} M) \cong \bar{A} \ot_{A} \opn{H}^{i_1}(M)
+\cong \opn{H}^{i_1}(M) \]
+as $\bar{A}$-modules. Therefore  
+$\opn{sup}(\opn{H}(\bar{M})) = \opn{sup}(\bar{M}) = i_1$.
+
+We are given an isomorphism $\bar{\phi} : \bar{P} \to \bar{M}$ in 
+$\cat{D}(\bar{A}^0)$, where $\bar{P}$ is a bounded complex of free 
+$\bar{A}$-modules. 
+Since $\bar{P}$ is K-projective, we can assume that the isomorphism 
+$\bar{\phi} : \bar{P} \to \bar{M}$ in $\cat{D}(\bar{A})$
+is in fact a quasi-isomorphism in $\cat{C}(\bar{A})$.
+The proof continues by induction on $j := \opn{amp}(\bar{P}) \in \N$.
+Note that in item (1) we have $i_1 = 0$, $\bar{P} = \bar{A}^{\oplus r}$ and 
+$j = 0$. 
+
+\medskip \noindent
+Step 2. In this step we assume that $j = 0$. This means that the 
+only nonzero term of $\bar{P}$ is
+in degree $i_1$, and it is 
+the free module $\bar{P}^{i_1} \cong \bar{A}^{\oplus r_1}$
+for some cardinal number $r_1$. In other words, 
+$\bar{P} \cong \bar{A}[-i_1]^{\oplus r_1}$ in $\cat{C}(\bar{A})$.
+So $\opn{H}^{i_1}(\bar{M}) \cong \bar{P}^{i_1}$, and 
+$\opn{H}^{i}(\bar{M}) = 0$ for all $i \neq i_1$.
+Recall the isomorphism of $\bar{A}$-modules
+$\opn{H}^{i_1}(\bar{M}) \cong \opn{H}^{i_1}(M)$ from Step 1.  
+There are canonical surjections 
+$M^{i_1} \to \opn{H}^{i_1}(M)$ and
+$\bar{M}^{i_1} \to \opn{H}^{i_1}(\bar{M})$.
+We can write the quasi-isomorphism $\bar{\phi}$ as 
+$\bar{\phi} : \bar{A}[-i_1]^{\oplus r_1} \to \bar{M}$.
+ 
+Consider the nonderived reduction functor
+$F : \cat{C}(A) \to \cat{C}(\bar{A})$, $F(-) := \bar{A} \ot_{A} -$.
+Let $P := A[-i_1]^{\oplus r_1}$, a free DG $A$-module
+satisfying $F(P) \cong \bar{P}$.  
+There exists a homomorphism 
+$\phi : P \to M$ in $\cat{C}(A)$ that lifts 
+the quasi-isomorphism
+$\bar{\phi} : \bar{P} \to \bar{M}$,
+namely $\bar{\phi} = F(\phi)$. 
+Now the DG modules $P$ and $M$ are K-flat, so 
+$\bar{\phi} = \mrm{L} F(\phi)$. 
+Since $\bar{\phi}$ is an isomorphism, and since the functor 
+$\mrm{L} F$ is conservative, we conclude that $\phi$ is an isomorphism.
+This proves item (1).
+
+\medskip \noindent
+Step 3. Here we suppose that $j \geq 1$.
+Let $i_2 := \opn{sup} (\bar{P})$, which is of course $\geq i_1$. 
+Say $\bar{P}^{i_2} \cong \bar{A}^{\oplus r_2}$ for some natural number $r_2$.
+Define DG modules $\bar{P}' := \bar{A}[-i_2]^{\oplus r_2}$ and 
+$P' := A[-i_2]^{\oplus r_2}$; these satisfy
+$\bar{P}' \cong \bar{A} \ot_A P'$. 
+The inclusion $\bar{P}^{i_2} \subseteq \bar{P}$ is viewed as a DG module 
+homomorphism $\bar{\al} : \bar{P}' \to \bar{P}$.
+We also have a quasi-isomorphism 
+$\bar{\phi} : \bar{P} \to \bar{M}$ and an equality 
+$\bar{M} = \bar{A} \ot_A M$ in $\cat{C}(\bar{A})$.
+In this way we obtain a homomorphism 
+$\bar{\psi} :  \bar{P}' \to \bar{M}$,
+$\bar{\psi} := \bar{\phi} \circ \bar{\al}$. 
+Because $P'$ is a free DG $A$-module, there is a homomorphism 
+$\psi :  P' \to M$ in $\cat{C}(A)$ lifting $\bar{\psi}$, namely 
+$\bar{\psi} = F(\psi)$, where $F$ is the functor $\bar{A} \ot_A -$. 
+
+Let $M'' \in \cat{C}(A)$ be the cone of $\psi$, so there is a distinguished 
+triangle 
+\begin{equation} \label{eqn:30}
+P' \xar{\psi} M \xar{\chi} M'' \xar{} P'[1] 
+\end{equation}
+in $\cat{D}(A)$. Define $\bar{M}'' := F(M'')$ and $\bar{\chi} := F(\chi)$,  
+which are an object and a morphism in $\cat{C}(\bar{A})$, respectively.  
+Since all three DG modules in this triangle are K-flat, it follows that 
+\[ \bar{P}' \xar{\bar{\psi}} \bar{M} \xar{\bar{\chi}} \bar{M}'' 
+\xar{} \bar{P}'[1] \]
+is a distinguished triangle in $\cat{D}(\bar{A})$.
+On the other hand, let $\bar{P}''$ be the cokernel of the inclusion 
+$\bar{\al} : \bar{P}' \to \bar{P}$. So there is a distinguished triangle
+\[ \bar{P}' \xar{\bar{\al}} \bar{P} \xar{\bar{\be}} \bar{P}'' 
+\xar{} \bar{P}'[1] \]
+in $\cat{D}(\bar{A})$. 
+Consider the diagram of solid arrows in $\cat{D}(\bar{A})$~: 
+\[  \UseTips \xymatrix @C=5ex @R=5ex {
+\bar{P}'
+\ar[r]^{\bar{\al}} 
+\ar[d]^{=}
+&
+\bar{P} 
+\ar[r]^{\bar{\be}} 
+\ar[d]^{\bar{\phi}} 
+&
+\bar{P}'' 
+\ar[r]^{}
+\ar@{-->}[d]^{\bar{\phi}''} 
+&
+\bar{P}'[1]
+\ar[d]^{=}
+\\
+\bar{P}'
+\ar[r]^{\bar{\psi}} 
+&
+\bar{M} 
+\ar[r]^{\bar{\chi}} 
+&
+\bar{M}'' 
+\ar[r]^{}
+&
+\bar{P}'[1]
+} \]
+The square on the left is commutative, and therefore it extends to an 
+isomorphism of distinguished triangles. So there is an isomorphism
+$\bar{\phi}'' : \bar{P}'' \to \bar{M}''$
+in $\cat{D}(\bar{A})$.
+
+Finally, the complex $\bar{P}''$ is a bounded complex of finite free 
+$\bar{A}$-modules, of amplitude $j-1 \geq 0$. According to the induction 
+hypothesis (step 2 for $j > 1$, and step 1 for $j = 1$) there is an isomorphism 
+$\phi'' : P'' \iso M''$ in $\cat{D}(A)$ for some finite semi-free DG 
+$A$-module $P''$. From (\ref{eqn:30}) we obtain a distinguished triangle 
+\[ P' \xar{\psi} M \xar{\psi} P'' \xar{\ga} P'[1] \]
+in $\cat{D}(A)$. We can assume that $\ga$ is a homomorphism in 
+$\cat{C}(A)$. Turning this triangle we get a distinguished triangle 
+\[ P''[-1] \xar{- \ga[-1]} P' \xar{\psi} M \xar{\vartriangle} . \]
+Define $P$ to be the cone on the homomorphism 
+$- \ga[-1] : P''[-1] \to P'$. Then $P \cong M$ in $\cat{D}(A)$,
+and by Lemma \ref{lem:33}, $P$ is a finite semi-free DG $A$-module. 
+\end{proof}
+
+
+We learned the next proposition from B. Antieau and J. Lurie. Cf.\ 
+\cite[Corollary 7.2.2.19]{Lu1} for a more general statement. 
+
+\begin{prop} \label{prop:310}
+Let $\bar{P}$ be a projective $\bar{A}$-module. Then there exists a DG 
+$A$-module $P$ with these properties:
+\begin{enumerate}
+\rmitem{i} $P$ is a direct summand, in $\cat{D}(A)$, of a direct sum of copies 
+of $A$.
+\rmitem{ii} 
+$\bar{A} \ot^{\mrm{L}}_A P \cong \bar{P}$
+in $\cat{D}(\bar{A})$.
+\end{enumerate} 
+\end{prop}
+
+\begin{proof}
+Say $\bar{P}$ is a direct summand, in $\cat{Mod} \bar{A}$, of a free 
+$\bar{A}$-module $\bar{F}$. So $\bar{P}$ is the image of an idempotent 
+endomorphism $\bar{\phi} : \bar{F} \to \bar{F}$. Let $F$ be the direct sum 
+in $\cat{C}(A)$ of copies of $A$, as many as there are copies of $\bar{A}$ in 
+$\bar{F}$. There is a canonical surjection $F \to \bar{F}$. Choose any 
+homomorphism $\phi : F \to F$ in $\cat{C}(A)$ lifting $\bar{\phi}$.
+Note that many such $\phi$ exist; and they aren't necessarily idempotents. Let 
+$P$ be the homotopy colimit construction on $\phi$. Namely we let
+\[ \Phi : \bigoplus\nolimits_{i \in \N} \, F \ \to \ 
+\bigoplus\nolimits_{i \in \N} \, F \]
 be the homomorphism
-Φ(a0, a1, a2, ...) := ( a0, a1− φ(a0), a2− φ(a1), ...)
-in C(A), and then we deﬁneP := cone(Φ)∈ C(A). Because P is K-ﬂat overA, we
-see that ¯A⊗L
-A P∼= ¯A⊗A P∼= cone( ¯Φ), where
-¯Φ :
-⨁
-i∈N
-¯F →
-⨁
-i∈N
-¯F
-is the homotopy colimit construction on¯φ. An easy calculation, using the fact that
-¯φ is an idempotent with image¯P, shows thatcone( ¯Φ)∼= ¯P in D( ¯A). This proves
-(ii).
-COMMUTATIVE DG RINGS 19
-As for (i): say ¯Q is the other direct summand of¯F in Mod ¯A. We can lift it to
-a DG A-module Q as above. Now ¯P⊕ ¯Q∼= ¯F in D( ¯A). By Proposition 3.3(1) we
-deduce thatP⊕ Q∼= F in D(A). □
+\[  \Phi(a_0, a_1, a_2, ...) := (a_0, a_1 - \phi(a_0), a_2 - \phi(a_1), ...) \]
+in $\cat{C}(A)$, and then we define 
+$P := \opn{cone}(\Phi) \in \cat{C}(A)$. 
+Because $P$ is K-flat over $A$, we see that  
+$\bar{A} \ot^{\mrm{L}}_A P \cong \bar{A} \ot_A P \cong 
+\opn{cone}(\bar{\Phi})$,
+where 
+\[ \bar{\Phi} : \bigoplus\nolimits_{i \in \N} \, \bar{F} \ \to \ 
+\bigoplus\nolimits_{i \in \N} \, \bar{F} \]
+is the homotopy colimit construction on $\bar{\phi}$.
+An easy calculation, using the fact that $\bar{\phi}$ is an idempotent with 
+image $\bar{P}$,  shows that 
+$\opn{cone}(\bar{\Phi}) \cong \bar{P}$ in $\cat{D}(\bar{A})$. 
+This proves (ii).
+
+As for (i): say $\bar{Q}$ is the other direct summand of $\bar{F}$
+in $\cat{Mod} \bar{A}$.
+We can lift it to a DG $A$-module $Q$ as above. Now
+$\bar{P} \oplus \bar{Q} \cong \bar{F}$
+in $\cat{D}(\bar{A})$. By Proposition \ref{prop:305}(1) we deduce that
+$P \oplus Q \cong F$ in $\cat{D}(A)$.
+\end{proof}

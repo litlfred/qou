@@ -1,0 +1,3341 @@
+%#!latex main.tex
+\chapter{Introduction to the theory of $p$-adic period mappings.}
+\label{chap:period-mappings}
+\addtocontents{toc}{\protect\par\vskip2mm\hskip20mm(Geometry)\par\vskip5mm}
+\minitoc
+\newpage
+\section{A survey of moduli and period mappings over $\C$.}\label{sec:1}
+
+\begin{abst}
+Review of moduli, Shimura varieties, 
+Hodge structures, period mappings, period domains, Gauss-Manin connections.
+\end{abst}
+   
+\subsection{Moduli spaces.}\label{sub:1.1}
+
+\begin{para}\label{para:1.1.1} The term ``moduli'' was
+ coined by Riemann to describe the continuous essential
+ parameters of smooth complex compact curves of a given genus $g$. The use
+ of this term has been extended to many classification problems in 
+ analytic or algebraic
+ geometry: typically, a classification problem consists of a discrete 
+ part (the dimension, and other
+ numerical invariants...) and a continuous part (the moduli). 
+
+ One can distinguish between local and global moduli spaces: 
+
+\begin{enumerate}
+ \item local moduli are the parameters of the most general small (or
+       infinitesimal) deformation of a given analytic manifold or
+       algebraic variety. Let for instance $X$ be a compact analytic
+       manifold.  Then a famous theorem of Kuranishi asserts that there
+       is a local deformation $\pi: \udl{X}\rightarrow S$ with base
+       point $s$ ($X={\udl{X}}_s$) such that any other deformation
+       comes, locally around $s$, from $\pi$ by base change; moreover
+       the tangent space of $S$ at $s$ is isomorphic to
+       $\mathrm{H}^1(X,(\Omega^1_X)^\vee)$. For curves, the dimension of
+       this space is $3g-3$ if $g\geq 2$ (the number of Riemann's
+       complex moduli).
+ \item Global moduli spaces, when they exist, provide the
+       solution of the continuous part of moduli problems. For instance,
+       Douady has constructed the global moduli space for closed analytic
+       subspaces of a given compact complex manifold. Although global moduli
+       spaces were already studied in the nineteenth century (in the case of
+       curves), the concept was first put on firm foundations by Grothendieck
+       in terms of representable functors.
+\end{enumerate}
+
+The existence of a global moduli space is often obstructed by the
+presence of automorphisms of the objects under classification. One
+possibility is to rule out these automorphisms by imposing some extra
+structure (rigidification). When all automorphism groups are finite,
+another possibility is to look for moduli orbifolds rather than moduli
+spaces
+\end{para}
+
+\begin{para}\label{para:1.1.2}
+ The most classical moduli problems concern complex elliptic
+ curves. These are classified by their $j$-invariant. However the affine
+ $j$-line ${\A}^1$ is not a fine moduli space: indeed, in any family of
+ elliptic curves parametrized by the whole affine line, all the fibers
+ are isomorphic.
+
+
+ One can rigidify the problem by introducing a ``level $N$ structure''
+ \index{levelNstructure@level $N$ structure} on 
+ elliptic curves $E$, \ie fixing an identification $\Ker[N]_A\cong
+ ({\Z}/N{\Z})^2$ such that the Weil pairing is given by
+ $(\xi,\eta)\mapsto \exp(2\pi i(\xi\wedge\eta))$ (here $[N]_A$ denotes the
+ multiplication by $N$ on the elliptic curve $A$).
+
+
+For $N\geq 3$, this rules out automorphisms of $A$, and the
+corresponding moduli functor is representable. For $N=3$, the moduli
+space is ${\A}^1\setminus \{\mu^3=1\}$; the universal elliptic curve
+with level $3$ structure is the Dixon elliptic curve
+\begin{equation*}
+ x^3+y^3+3\mu xy = 1 \text{ (in affine coordinates $x,y$)}
+\end{equation*}
+with $\Ker[3]_A=$ the set of flexes.
+
+
+For $N=2$, the automorphism $[-1]_A$ remains; there is an elliptic curve
+with level $2$ structure over ${\P}^1\setminus \{0,1,\infty\}$, namely
+the Legendre elliptic curve
+\begin{equation*}
+ y^2=x(x-1)(x-\lambda) \text{ (in affine coordinates $x,y$)}
+\end{equation*} 
+with
+$\Ker[2]_A=\{(0,0),(1,0),(\lambda, 0),(\infty,\infty)\}$, but it is not
+universal: another one is given by $\lambda y^2=x(x-1)(x-\lambda)$.
+\end{para}
+
+\begin{para}\label{para:1.1.3}
+ These moduli problems admit two natural generalizations: moduli
+ problems for curves of higher genus, and moduli problems for polarized
+ abelian varieties (polarizations ensure that the automorphism groups
+ are finite).
+
+ There is a moduli orbifold for smooth compact complex curves of genus
+ $g>0$, denoted by $\mathcal{M}_g$, which can be described as
+ follows. The set of complex structures on compact connected oriented
+ surface $S_g$ of genus $g$ is in a natural way a contractible complex
+ manifold of dimension $3g-3$ (\resp the Poincar\'e upper half plane
+ $\mathfrak{h}$ if $g=1$), the Teichm\"uller space $\mathcal{T}_g$. The
+ mapping class group $\Gamma_g$, \ie the component of connected
+ components of the group of orientation-preserving self-homeomorphisms of
+ $S_g$, acts on right on $\mathcal{T}_g$, and $\mathcal{M}_g$ is the
+ quotient $\mathcal{T}_g/\Gamma_g$. For $g=1$, one recovers
+ $\mathcal{M}_1=\mathfrak{h}/SL(2,{\Z})$.
+
+
+There is a moduli orbifold for principally polarized abelian varieties of
+dimension
+$g>0$, denoted by $\mathcal{A}_g$, which can be described as follows. For any
+abelian variety $A$, one has an exact sequence 
+\begin{equation*}
+ 0\rightarrow L\rightarrow \Lie A\rightarrow A\rightarrow 0
+\end{equation*}
+and a principal polarization corresponds to a positive
+definite hermitian form $H$ on $\Lie A$ whose imaginary part induces a
+perfect alternate form on $L$. Choosing a $\C$-basis
+$\omega_1,\ldots,\omega_g$ of $\Omega^1(A)\cong (\Lie A)^\vee$ and a
+symplectic $\Z$-basis $\gamma_1^+,\gamma_1^-,\ldots,\gamma_g^+,
+\gamma_g^-$ of $L$ gives rise to a period matrices 
+$\Omega^+=(\int_{\gamma^+_j}\omega_i)$, $\Omega^-=(\int_{\gamma^-_j}\omega_i)$,
+and $\tau=(\Omega^-)^{-1}\Omega^+$ does not depend on the
+$\omega_i$'s.  By the properties of $H$, $\tau$ belongs to the Siegel
+upper half space $\mathfrak{h}_g$ of symmetric matrices with positive
+definite imaginary part (Riemann relations); it is well-defined up to
+right multiplication by a matrix in $Sp(2g,{\Z})$ (which is the same as
+the standard left action on $\mathfrak{h}_g$ of the transposed
+matrix). This construction identifies $\mathcal{A}_g$ with
+$\mathfrak{h}_g/Sp(2g,{\Z})$.
+
+
+The construction which associates to a curve its jacobian variety with
+the principal polarization given by the theta divisor gives rise to an
+immersion $\mathcal{M}_g\hookrightarrow\mathcal{A}_g$, the Torelli map.
+\end{para}
+
+\begin{para}\label{para:1.1.4}
+ Following G.~Shimura, one also studies refined moduli problems for
+ ``decorated'' (principally polarized) abelian varieties, by prescribing
+ in addition that the endomorphism algebra contains a given simple
+ $\Q$-algebra, and imposing a level $N$ structure. This gives rise to
+ moduli orbifolds (\resp moduli spaces if $N\geq 3$) of ``PEL type''.
+
+ More precisely, let $B$ be a simple finite-dimensional $\Q$-algebra,
+ with a positive involution $\ast$. Let $V$ be a $B$-module of finite
+ type, endowed with an alternate $\Q$-bilinear form such that
+ $\an{bv,w}=\an{v,b^\ast w}$.  One denotes by $G$ the algebraic $\Q$-group of
+ $B$-linear symplectic similitudes of $V$.
+
+ Let $\mathcal{B}$ be a maximal order in $B$ stable under $\ast$, and
+let $L$ be a lattice in $V$, stable under $\mathcal{B}$ and autodual for
+$\an{\;,\;}$ (this will represent the structure of $\mathrm{H}^1(A,{\Z})$ for
+the abelian varieties $A$ under consideration). We choose in addition a
+lagrangian subspace $F^1_0\subset V_{\C}$ stable under $B$ (which
+will be $\Omega^1(A_0)\cong (\Lie A_0)^\vee$ for one particular abelian
+variety $A_0$ under consideration).
+
+There is a moduli orbifold (\resp moduli space if $N\geq 3$)
+for principally $\ast$-polarized\footnote{a principal
+$\ast$-polarization is a symmetric $\mathcal{B}$-linear isomorphism
+between the abelian variety and its dual, endowed with the transposed
+action of $\mathcal{B}$ twisted by $\ast$} abelian varieties $A$,
+together with a given action $\iota: \mathcal{B}\rightarrow \End A$
+such that $\det(\iota(b)| \Omega^1(A))=\det(b| F^1_0)$ for all
+$b\in \mathcal{B}$ (Shimura type condition), and a given
+$\mathcal{B}/N\mathcal{B}$-linear symplectic similitude
+$A[N]=\Ker[N]_A\rightarrow \Hom(L,{\Z}/N {\Z})$.
+
+
+It amounts to the same to consider abelian varieties $A$ up to isogeny,
+with $B$-action (with Shimura type condition), together with a
+$\Q$-homogeneous principal $\ast$-polarization and a class of $B$-linear
+symplectic similitudes $\mathrm{H}^1(A,{\hat {\Z}}\otimes
+\Q)\rightarrow {\hat {\Z}}\otimes V$ modulo the group $\{g \in
+G({\hat {\Z}}\otimes {\Q}) \mid (g-1)({\hat {\Z}}\otimes L)\subset {\hat
+{\Z}}\otimes L\}$.
+
+These moduli orbifolds are called Shimura orbifolds of ``PEL
+type''. \index{PELtype@PEL type} They are algebraic, and defined over
+ the number field 
+$E={\Q}[\tr(b| F^1_0)]$ (the so-called reflex field). Their
+connected components are defined over finite abelian extensions of $E$,
+\cf \cite{tds}.
+\end{para}
+
+\subsection{Period mappings.}\label{sub:1.2} 
+
+\begin{para}\label{para:1.2.1}
+ In the case of curves, the construction of period mappings belongs to
+ the nineteenth
+ century. The idea is to study the deformations of a curve by looking at
+ the variation of its periods.  Let $f:{\udl{X}}\rightarrow S$ be an
+ algebraic family of projective smooth (connected) curves of genus $g$
+ over $\C$. Let $\tilde S$ be the universal covering of $S$. Then the
+ homology groups $\mathrm{H}_1(-,{\Z})$ of the fibers form a constant
+ local system on $\tilde S$. Let us choose a symplectic basis
+ $\gamma_1^+,\gamma_1^-,\ldots ,\gamma_g^+, \gamma_g^-$. Choosing,
+ locally, an auxiliary $\C$-basis $\omega_1,\ldots,\omega_g$ of
+ $f_\ast\Omega^1_{\udl{X} /S}$ gives rise as above to a period matrices
+ $\Omega^+=(\int_{\gamma^+_j}\omega_i)$, 
+ $\Omega^-=(\int_{\gamma^-_j}\omega_i)$,  
+ and $\mathcal{P}=(\Omega^-)^{-1}\Omega^+$ does not depend on the
+ $\omega_i$'s and is well-defined on $\tilde S$.
+
+
+ We get a commutative square 
+
+ \begin{equation*}
+  \begin{CD}
+   \til{S} @>\mathcal{P}>> \mathfrak{h}_g\\
+   @VVV @VVV\\
+   S @>\mathcal{P}>> \mathfrak{h}_g/Sp(2g,\Z)
+  \end{CD}
+ \end{equation*}
+ Applying this construction to the universal case
+ $S=\mathcal{M}_g$ ($\mathcal{T}_g=\til{\mathcal{M}}_g$ in the orbifold
+ sense), the bottom line of this commutative square is nothing but an
+ analytic interpretation of the Torelli map.
+\end{para}
+
+\begin{para}\label{para:1.2.2}
+ An important feature of the period mapping $\mathcal{P}$ is that it is
+ a {\it quotient of solutions of a fuchsian differential system}, with
+ rational exponents at infinity. This comes out as follows. The vector
+ bundle $f_\ast\Omega^1_{\udl{X} /S}$ is a subbundle (of rank $g$) of a
+ vector bundle $\mathcal{H}$ (of rank $2g$) whose fibers are the De Rham
+ cohomology spaces $\mathrm{H}^1_{\mathrm{DR}}(\udl{X}_s)$. This bundle
+ $\mathcal{H}$ carries an integrable connection, the Gauss-Manin
+ connection
+ \begin{equation*}
+  \nabla_{\mathrm{GM}}:\;\mathcal{H}\rightarrow \Omega^1_S\otimes \mathcal{H}.
+ \end{equation*}
+ The local system of germs of horizontal analytic sections is
+ $R^1f_\ast{\C}$ (with fibers
+ $\mathrm{H}^1(\udl{X}_s,{\C})$). Completing, locally, the basis
+ $\omega_1,\ldots,\omega_g$ of sections of $f_\ast\Omega^1_{\udl{X}/S}$
+ into a basis $\omega_1,\ldots,\omega_g,\eta_1,\ldots,\eta_{g}$ of
+ sections $\mathcal{H}$ allows to write the connection in form of a
+ differential system, and a full {\it solution matrix} is given by the
+ ``full $2g\times 2g$-period matrix''
+ \index{full 2g 2g-period matrix@full $2g\times 2g$-period matrix} 
+ $\begin{pmatrix} \Omega^+ &
+  \Omega^- \cr N^+ & N^-  \end{pmatrix}$, while
+ $\mathcal{P}=(\Omega^-)^{-1}\Omega^+$.
+
+
+ In the case of the Legendre elliptic curve over ${\P}^1\setminus
+ \{0,1,\infty\}$ (\cf I.\ref{sec-tale}), one finds that $\mathcal{P}$
+ is given by the 
+ quotient $\tau$ of two solutions of the hypergeometric differential
+ equation with parameters $\bigl(\frac{1}{2},\frac{1}{2},1\bigr)$.
+\end{para}
+
+\begin{para}\label{para:1.2.3}
+ The theory of period mappings has been generalized to any projective
+ smooth morphism $f:\udl{X}\rightarrow S$ by P. Griffiths
+ \cite{poioam3}.  We assume that $S$ and the fibers of $f$ are connected for
+ simplicity.  The idea is the following: by abstracting the structure of
+ the periods of the fibers of $f$, one arrives at the notion of
+ polarized Hodge structure; one then construct a map from the universal
+ covering $\tilde S$ to a classifying space $\mathcal{D}$ of polarized
+ Hodge structures.
+
+ For a fixed $n$, the real cohomology spaces
+ $V_s^{\R}:= \mathrm{H}^n(\udl{X}_s,{\R})$) form a local system $V^{\R}$
+ on $S$. We denote by $V^{\C}$ its complexification. The vector bundle
+ $\mathcal{O}_S\otimes V^{\C}$ is the analytification of an algebraic
+ vector bundle $\mathcal{H}$ on $S$, and $V^{\C}$ is the local system of
+ germs of analytic solutions of an algebraic fuchsian integrable
+ connection $\nabla_{\mathrm{GM}}$ on $\mathcal{H}$, the Gauss-Manin
+ connection.
+
+ On the other hand, the spaces $V_s^{\R}$ carry a natural algebraic
+ representation of ${\C}^\times$ (Hodge structure), which amounts to a
+ decomposition $V_s^{\C}=\bigoplus_{p+q=n,\;p\geq 0}
+ \;V^{p,q},\;\;\overline{V^{p,q}}=V^{q,p}$. When $s$ varies, the
+ filtrations
+ \begin{equation*}
+  F_s^p:=\bigoplus_{p'+q=n,\;p'\geq p} V^{p',q}
+ \end{equation*}
+ are the fibers of a decreasing filtration $F_s^p$ of $\mathcal{H}$ by
+ vector subbundles (the Hodge filtration). The Gauss-Manin connection
+ fails to preserve the Hodge filtration by just one notch:
+ $\nabla_{\mathrm{GM}}(F^p)\subset \Omega^1_S\otimes F^{p-1}$.
+
+
+ The last piece of data is the polarization: a bilinear form $Q$ on
+ $V_s^{\R}$, $Q(v,v')=(-1)^nQ(v',v)$, such that $(-i)^nQ(v,\ovl{v})$ is
+ hermitian on $V_s^{\C}$, definite (of sign $(-1)^p$) on each
+ $V^{p,q}=F_s^p\cap \overline F_s^q$, and such that $F_s^p$ is the
+ orthogonal of $F_s^{n-p-1}$ in $V_s^{\C}$.
+ 
+ Let $G_{\R}$ denote the real group of similitudes of $Q$. The
+ space of isotropic flags of type $0\subset \ldots \subset F_s^p\subset
+ F_s^{p-1}\subset \ldots \subset V_s^{\C} \;$ is a homogeneous space
+ \begin{equation*}
+  \mathcal{D}^\vee = P\backslash G_{\C}
+ \end{equation*}
+ for a suitable parabolic subgroup $P$.  
+ 
+
+ The flags satisfying the above positivity condition (on each $F_s^p\cap
+ \ovl{F}_s^q$) are classified by an analytic open submanifold, the
+ {\it period domain},
+ \begin{equation*}
+  \mathcal{D}\subset \mathcal{D}^\vee ;\;\; \mathcal{D}
+   \cong K\backslash G_\R^{\mathrm{ad}}({\R})^{0}
+ \end{equation*}
+ \index{000GRad@$G_\R^{\mathrm{ad}}$}
+ for a suitable compact subgroup $K\;$ ($\mathcal{D}^\vee$ is called the
+ compact dual of $\mathcal{D}$).
+
+
+Over $\tilde S$, the local system $V^{\C}$ becomes constant, and the
+construction which attaches to any $s\in \tilde S$ the classifying point
+of the corresponding flag $0\subset \ldots \subset F_s^p\subset
+F_s^{p-1}\subset \ldots \subset V_s^{\C}\;$ gives rise to a holomorphic
+mapping, the {\it period mapping}
+
+ \begin{equation*}
+  \tilde{S}\xrightarrow{\mathcal{P}} \mathcal{D}.
+ \end{equation*}
+ Via Pl\"ucker coordinates, $\mathcal{P}$ is again
+ given by quotients of solutions of the Gauss-Manin connection
+ $\nabla_{\mathrm{GM}}$.  The projective monodromy group of
+ $\nabla_{\mathrm{GM}}$ is a 
+ subgroup $\Gamma \subset G_{\R}^{\mathrm{ad}}$ (well-defined up to
+ conjugation), and we get a commutative square
+
+\begin{equation*}
+ \begin{CD}
+  \tilde{S}@>\mathcal{P}>> \mathcal{D} @. \subset \;\mathcal{D}^{\vee}\\
+  @VVV @VVV @.\\
+  S@>\mathcal{P}>> \mathcal{D}/\Gamma.
+ \end{CD}
+\end{equation*}
+\end{para}
+
+\begin{para}\label{para:1.2.4} In the simple case of a
+ family of elliptic curves and $n=1$, $G_{\R}=GL_{2,\R}$, the flag space
+ is just $\mathcal{D}^\vee={\P}^1_{\C}$, $K=PSO(2)$ (the isotropy group
+ of $i\in {\P}^1_{\C}$ in $PSL_2({\R})=G_\R^{\mathrm{ad}}({\R})^0$), and
+ $\mathcal{D}\cong K\backslash G_\R^{\mathrm{ad}}({\R})^0$ is the
+ Poincar\'e upper half plane $\mathfrak{h}$.
+
+ More generally, for a polarized abelian
+ scheme, $G_{\R}$ is the group of symplectic similitudes, and
+ $\mathcal{D}^\vee$ is the grassmannian of lagrangian subspaces of
+ ${\C}^{2g}$, and $\mathcal{D}$ is the Siegel upper half space.
+
+ \bigskip
+ When one deals with refined moduli problems for abelian schemes with PEL
+ decoration as in \ref{para:1.1.4}, one should work with the group $G_{\R}$ of
+ $B$-{\it linear} symplectic similitudes of $V_{\R}$ (notation as in
+ \ref{para:1.1.4}). In that case, the corresponding period domain
+ $\mathcal{D}$ is a symmetric domain.
+
+ More precisely, the datum of our $B$-stable lagrangian subspace
+ $F^1_0\subset V_{\C}$ (attached to our particular $A_0$ with
+ $\mathrm{H}^1(A_0,{\C})=V_{\C}$) amounts to the datum of an algebraic
+ $\R$-homomorphism $h_0: {\C}^\times\rightarrow G_{\R}\subset
+ GL(V_{\R})$ such that $h_0$ acts by the characters $z$ and $\ovl{z}$ on
+ $V_{\C}$ ($F^1$ is the subspace where $h_0$ acts through $z$), and such
+ that the symmetric form $\an{v,h(i) w}$ is positive definite on
+ $V_{\R}$. For any abelian variety $A$ with PEL structure of the correct
+ type, together with a fixed isomorphism $\mathrm{H}^1(A,{\C})\cong
+ V_{\C}$, the corresponding subspace
+ $F^1\mathrm{H}^1(A,{\C})=\Omega^1(A)\subset V_{\C}$ is an eigenspace
+ for some conjugate of $h_0$. The set of conjugates of $h_0$ under
+ $G({\R})$ is a finite union of copies of a symmetric domain
+ $\mathcal{D}$.  \par For any component $S$ of the {\it Shimura
+ orbifold}, we thus get a commutative square
+ 
+ \begin{equation*}
+  \begin{CD}
+   \tilde{S}@>\mathcal{P}>> \mathcal{D} @. \subset\; \mathcal{D}^{\vee}\\
+   @V\mathcal{Q}VV @VV\mathcal{Q}V @.\\
+   S@>\mathcal{P}>> \mathcal{D}/\Gamma
+  \end{CD}
+ \end{equation*}
+ \par\noindent
+ where the horizontal maps are {\it isomorphisms}, $\mathcal{Q}$ denotes
+ the quotient maps, and $\Gamma$ is a congruence subgroup of level $N$
+ in the semi-simple group $G^{\mathrm{ad}}$ (a conjugate of the standard
+ one).
+
+ \bigskip
+ The complex manifold $\tilde S$ admits the following
+ modular description. Let $U$ be the oriented real Lie group
+ $\Hom(L,(\R/\Z)^\times)$ (with $\mathcal{B}$-action and polarization),
+ and let $\hat U$ be the associated infinitesimal Lie group. The
+ automorphism group $J$ of the decorated $\hat U$ coincides with
+ $G(\R)^0$. Then $\tilde S$ is a moduli space for {\it marked} decorated
+ abelian varieties, where the marking is an isomorphism $\rho: \hat
+ A\rightarrow \hat U$ of associated infinitesimal decorated oriented
+ real Lie groups (note that, by taking duals of Lie algebras, $\rho$
+ amounts to an $B$-linear symplectic isomorphism
+ $\mathrm{H}^1(A,\R)\cong V^{\R}$). Note that the standard right action
+ of $J$ on $\tilde S$ is obtained by functoriality.
+
+\newpage
+\section{Preliminaries on $p$-divisible groups.}\label{sec:2}
+
+\begin{abst}
+ Definitions and basic theorems about $p$-divisible groups,
+ quasi-isogenies, liftings and deformations.
+\end{abst}
+\end{para}
+
+\subsection{$p$-divisible groups and quasi-isogenies.}\label{sub:2.1}
+
+\begin{para}\label{para:2.1.1} We begin with four definitions. Let $S$ be a scheme. Let
+$\Lambda$ and $\Lambda'$ be commutative group schemes over $S$.  
+
+A
+homomorphism $f:\Lambda \rightarrow \Lambda'$ is called an {\it isogeny}
+if it is an (f.p.p.f.) epimorphism with finite locally free kernel.
+
+
+Let $p$ be a prime number. $\Lambda$ is a {\it $p$-divisible group}
+(or Barsotti-Tate group) if $\displaystyle
+\Lambda=\underset{n}{\liminj}\Ker [p^n]$ and for all $n$, the multiplication
+$[p^n]$ by $p^n$ on $\Lambda$ is an isogeny.
+
+\par\noindent If $S$ is connected, the rank of $\Ker [p^n]$ is then of
+the form $p^{hn}$, where $h$ is an integer called the height of $\Lambda$.  
+
+From the fact that $[p]$ is an isogeny, it follows that for 
+$p$-divisible groups, $\Hom_S(\Lambda,\Lambda')$ is a torsion-free 
+${\Z}_p$-module. 
+
+A {\it quasi-isogeny} of $p$-divisible groups $\Lambda, \Lambda'$ is a
+global section $\rho$ of the Zariski sheaf $ \udl{\Hom}_S(\Lambda,
+\Lambda')\otimes_{\Z}{\Q}$ such that there exists locally an integer $n$
+for which $p^n\rho$ is an isogeny. By abuse, one writes $\rho: \Lambda
+\rightarrow \Lambda'$ as for homomorphisms. We denote by
+$\qisog_S(\Lambda, \Lambda')$\index{000qisog@qisog} the ${\Q}_p$-space of
+quasi-isogenies.
+
+
+The objects of the category of {\it $p$-divisible groups on $S$ up
+to isogeny} are the $p$-divisible groups over $S$; morphisms between
+$\Lambda $ and $\Lambda'$ are global sections of $ \udl{\Hom}_S(\Lambda,
+\Lambda')\otimes_{\Z}{\Q}$. This is a $\Q_p$-linear category.
+\end{para}
+
+\begin{para}\label{para:2.1.2} The most important example of a
+ $p$-divisible group is $\Lambda =A[p^\infty]$, the (inductive system
+ of) $p$-primary torsion of an abelian scheme $A$ over $S$
+ (\cite{pg}); in this case, the height 
+$h$ is twice the relative dimension of $A$. 
+\end{para}
+
+\begin{para}\label{para:2.1.3}
+ When $p$ is locally nilpotent on $S$, any $p$-divisible group $\Lambda$
+ over $S$ is formally smooth; the completion $\hat\Lambda$ of a
+ $p$-divisible group $\Lambda$ along the zero section is a formal Lie
+ group \cite[VI,3.1]{grothendieck74:_group_barsot_tate_dieud}.  However
+ ${\hat\Lambda}$ is not necessarily 
+ itself a $p$-divisible group; it is if and only if the separable rank of
+ the fibers of $\Ker[p]$ is a locally constant function on $S$ (in which
+ case $\Lambda$ is an extension
+ \begin{equation*}
+  1\rightarrow \hat{\Lambda}\rightarrow \Lambda\rightarrow
+   \Lambda^{\mathrm{et}}\rightarrow 1 
+ \end{equation*} 
+ of an ind-etale $p$-divisible group $\Lambda^{\mathrm{et}}$ by the
+ infinitesimal $p$-divisible group $\hat\Lambda$, \cf
+ \cite[III,7.4]{grothendieck74:_group_barsot_tate_dieud}).
+ An example of an ind-etale (\resp infinitesimal)
+ $p$-divisible group of height $h=1\;$ is
+ $\displaystyle {\Q}_p/{\Z}_p=\underset{n}{\liminj} {\Z}/p^n{\Z}$ (\resp
+ $\hat {\G}_m$).
+\end{para}
+
+\subsection{Two theorems on $p$-divisible groups.}\label{sub:2.2} 
+
+\begin{para}\label{para:2.2.1}
+ A considerable amount of work has been
+ devoted to $p$-divisible groups and their 
+ applications to the $p$-adic study of abelian varieties and their local
+ moduli. Among the pioneers, let us mention: Barsotti, Tate, Serre,
+ Grothendieck, Lubin, Messing...
+
+
+ In the sequel, we shall outline the main concepts and results of the
+ Rapoport-Zink theory of period mappings for $p$-divisible groups,
+ emphasizing the analogy with the complex case. We refer to their book
+ \cite{psfpg} for details and proofs. We shall also emphasize the
+ relation to differential equations, which does not appear in
+ \cite{psfpg}.
+
+ The whole theory relies upon three basic theorems on $p$-divisible
+ groups and their Dieudonn\'e modules, which we shall recall below:
+
+
+ \begin{enumerate}
+  \item the rigidity theorem for $p$-divisible groups up to isogeny,
+  \item the Serre-Tate theorem, and
+  \item the Grothendieck-Messing theorem,
+ \end{enumerate}
+
+ \noindent
+ which deal with infinitesimal deformations of $p$-divisible groups.
+\end{para}
+
+\begin{para}\label{para:2.2.2} Let $\mathfrak{v}$ be a complete discrete
+valued ring $\mathfrak{v}$ of mixed characteristic $(0,p)$. Let 
+$\Nil_\mathfrak{v}$ denote the category of locally noetherian 
+$\mathfrak{v}$-schemes $S$ on which $p$ is locally nilpotent.  For any
+$S$ in $\Nil_\mathfrak{v}$, the ideal of definition 
+$\mathcal{J}=\mathcal{J}_{S_{\mathrm{red}}}$ of the closed subscheme $S_{\mathrm{red}}$ 
+(of characteristic $p$) is locally nilpotent.
+\end{para}
+
+\begin{thm}[Rigidity theorem for $p$-divisible groups up to isogeny]
+ \label{thm:2.2.3}
+ 
+ Every homomorphism
+ $\;\ovl{\rho}:\;\Lambda\times_S S_{\mathrm{red}} \rightarrow \Lambda'\times_S
+ S_{\mathrm{red}}$ of $p$-divisible groups up to isogeny admits a unique lifting
+ $\rho: \Lambda \rightarrow \Lambda'$. Moreover, $\rho$ is a
+ quasi-isogeny if $\ovl{\rho}$ is.
+\end{thm}
+
+\begin{proof}
+ (following an argument of V. Drinfeld). We may assume that $S$ is
+ affine, and that $\mathcal{J}$ is nilpotent. Then the connected part
+ ${\hat\Lambda'}$ is a formal Lie group, hence there is a power $p^n$ of
+ $p$ such that for any affine $S$-scheme $S'$, ${\hat\Lambda}'(S')$ is
+ killed by $[p^n]$ (in fact if $\mathcal{J}^{r+1}=0$ on $S$, one can take
+ $n=r^2$).
+
+ We observe that $\Ker(\Lambda'(S')\rightarrow
+ \Lambda'(S'_{\mathrm{red}}))= {\hat\Lambda}'(S')$. We have
+ \begin{align*}
+ &\Ker(\Hom(\Lambda(S') ,
+ \Lambda'(S'))\rightarrow \Hom(\Lambda(
+ S'_{\mathrm{red}}) , \Lambda'(S'_{\mathrm{red}}) )\\
+ =&
+ \Hom (\Lambda(S') ,\Ker(\Lambda'(S')
+ \rightarrow \Lambda'(S'_{\mathrm{red}}))) 
+ \end{align*}
+ which is zero because $\Ker(\Lambda'(S')\rightarrow
+ \Lambda'(S'_{\mathrm{red}})$ is killed by $[p^n]$ while $\Lambda$ is
+ $p$-divisible.
+
+ \noindent This implies the injectivity of
+ $\qisog_S(\Lambda , \Lambda') \rightarrow 
+ \qisog_{S_{\mathrm{red}}}(\Lambda\times_S S_{\mathrm{red}} ,
+ \Lambda'\times_S S_{\mathrm{red}}) $ (taking into account the fact that 
+ $\Hom(\Lambda( S'_{\mathrm{red}}), \Lambda'(S'_{\mathrm{red}}) )$ is
+ torsion-free).
+
+ \noindent For the surjectivity, let us first show that for any
+ ${\ovl{f}}\in \Hom(\Lambda(S'_{\mathrm{red}}),
+ \Lambda'(S'_{\mathrm{red}}))$, there is 
+ a lifting $g\in \Hom(\Lambda(S'), \Lambda'(S'))$ of $p^n {\ovl{f}}$. For
+ any $x\in \Lambda( S')$, let $\ovl{x}$ denote its image in $\Lambda(
+ S'_{\mathrm{red}})$. Since $\Lambda'$ is formally smooth,
+ ${\ovl{f}}({\ovl{x}})$ 
+ admits a lifting $y\in \Lambda'(S')$.  Since
+ $\Ker(\Lambda'(S')\rightarrow \Lambda'(S'_{\mathrm{red}}))) $ is killed
+ by $p^n$, 
+ $g(x):=[p^n] y$ is well-defined. This construction provides the desired
+ lifting $g$.
+
+ It remains to show that $g$ is an isogeny if
+ $\ovl{f}$ is. Let $\ovl{f}'$ be a quasi-inverse of $\ovl{f}$
+ ($\ovl{f}'\ovl{f}=[p^m]$), and $g'$ be a lifting of $p^n\ovl{f}'$. Then
+ $g'g=[p^{2n+m}]$ by unicity of liftings. Thus $g$ is an epimorphism, and
+ the subscheme $\Ker g$ of $\Ker [p^{2n+m}]$ is finite over $S$. On the
+ other hand, $\Lambda$ is flat over $S$ and the fibers of $g'$ are flat
+ (being isogenies). The criterium of flatness fiber by fiber
+ \cite[11.3.10]{ega44} implies that $g'$ is flat, and we conclude that
+ it is an isogeny.
+\end{proof}
+
+Let us observe that there is variant of both the statement and the
+proof of \ref{thm:2.2.3} for abelian schemes, instead of $p$-divisible groups. 
+
+ The next theorem asserts that deforming an abelian scheme of
+ characteristic 
+ $p$ is equivalent to deforming its $p$-divisible group. For any $S $ in
+ $\Nil_\mathfrak{v}$, let $\Def_{p\text{-div}}(S)$ be the category of
+ triples $(\ovl{A},\Lambda, \epsilon)$ consisting of an abelian scheme
+ over $S_{\mathrm{red}}$, a $p$-divisible group $\Lambda$ over $S$ and an
+ isomorphism $\epsilon: \ovl{A}[p^\infty]\cong \Lambda\times_S S_{\mathrm{red}}$.
+
+\begin{thm}[The Serre-Tate theorem]\label{thm:2.2.4}
+ The functor
+ \begin{equation*}
+  A\;\mapsto \;(A_{\mathrm{red}},\;\Lambda=A[p^\infty],
+   \;\epsilon: A_{\mathrm{red}}[p^\infty]\cong \Lambda\times_S S_{\mathrm{red}})
+ \end{equation*}
+ induces an equivalence of categories between the
+ category of abelian schemes over $S$ and the category
+ $\Def_{p\text{-div}}(S)$.
+\end{thm}
+
+
+We again follow Drinfeld's argument \cite{copsr}, \cf also \cite{slm}.
+We may assume that $S$ is affine and that
+$\mathcal{J}^{n+1}=0$. We begin with the full faithfulness: given a
+homomorphism $f^\infty: A[p^\infty]\rightarrow B[p^\infty]$ such that
+$f^\infty$ $\pmod{\mathcal{J}}$ comes from a homomorphism $\ovl{f} :
+A_{\mathrm{red}}\rightarrow B_{\mathrm{red}}$ of abelian schemes over $S_{\mathrm{red}}$, we have
+to show that there exists a unique homomorphism $f: A\rightarrow B$
+compatible with $f^\infty$ and $\ovl{f}$. The unicity follows from the
+injectivity of $\Hom(A,B)\rightarrow \Hom(A_{\mathrm{red}},B_{\mathrm{red}})\;$
+(\ref{thm:2.2.3}). Furthermore, \ref{thm:2.2.3} shows the existence of a
+homomorphism $g$ 
+compatible with $\;p^nf^\infty$ and $p^n\ovl{f}$. To show the existence
+of an $f$ such that $g=p^nf=f\circ [p^n]$, the point is to show that $g$
+kills $A[p^n]$, which can be seen on $g^\infty$.
+
+
+For the essential surjectivity, we have to construct an abelian scheme
+$A$ over $S$ compatible with a given datum $(\ovl{A},\Lambda, \epsilon)$
+in $\Def_{p\text{-div}}(S)$.  By unicity of liftings, it suffices to do so
+locally on $S$.  hence we may assume that $S$ is affine, and choose an
+abelian scheme $A'$ over $S$ and an isogeny $A'_{\mathrm{red}}\rightarrow
+\ovl{A}$. By the above argument, $p^n$ times the given isogeny
+$A'_{\mathrm{red}}\rightarrow \ovl{A}$ lifts to a (unique) isogeny
+$e:\;A'[p^\infty ]\rightarrow \Lambda$ of $p$-divisible groups over
+$S$. Its kernel is a finite locally free subgroup scheme of $A'$, and we
+can form the abelian scheme $A'':=A'/\Ker e$. The isogeny $A''[p^\infty
+]\rightarrow \Lambda$ induced by $e$ is an isomorphism
+$\pmod{\mathcal{J}}$, hence is an isomorphism.
+
+\begin{para}\label{para:2.2.5} In the sequel, we shall have to deal
+ occasionally with $p$-divisible groups over formal schemes rather 
+than over schemes. Our formal schemes $\mathfrak{X}$ will be adic,
+locally noetherian; hence there is a largest ideal of definition
+$\mathcal{J}\subset \mathcal{O}_{\mathfrak{X}}$, and
+$\mathfrak{X}=\liminj \;{\mathfrak{X}}_n\;,\;{\mathfrak{X}}_n =
+\Spec(\mathcal{O}_{\mathfrak{X}}/\mathcal{J}^{n+1})\;\;
+({\mathfrak{X}}_{\mathrm{red}}={\mathfrak{X}}_0)\;$.
+
+A $p$-divisible group $\Lambda$ over $\mathfrak{X}$ will be an inductive
+system of $p$-divisible groups $\Lambda_n$ over $\mathfrak{X}_n$ such
+that $\Lambda_{n+1}\times_{{\mathfrak{X}}_{n+1}}{\mathfrak{X}}_n\cong
+\Lambda_n$.
+
+\newpage
+\section{A stroll in the crystalline world.}\label{sec:3}
+
+\begin{abst}
+ Review of Dieudonn\'e modules, crystals, Grothendieck-Messing theory,
+ convergent isocrystals.
+\end{abst}
+\end{para}
+
+\subsection{From Dieudonn\'e modules to crystals.}\label{sub:3.1}
+
+\begin{para}\label{para:3.1.1}
+ At first, Dieudonn\'e theory presents itself as an analogue of Lie
+ theory for formal Lie groups over a perfect field $k$ of characteristic
+ $p>0$. In practice, its scope is limited to the case of {\it
+ commutative} formal Lie groups (in which case the classical counterpart
+ is not very substantial). The theory extends to the case of
+ $p$-divisible groups over $k$.
+
+
+ Let $W$ be the Witt ring of $k$, with its Frobenius automorphism
+ $\sigma$. The theory associates to any 
+ $p$-divisible group $\Lambda$ over $k$ a {\it Dieudonn\'e module}, \ie a
+ finitely generated free module over $W$ 
+ endowed with a $\sigma$-linear Frobenius $F$ and a $\sigma^{-1}$-linear
+ Verschiebung 
+ $V$ satisfying $FV=VF=p.\id$ (we work with the contravariant theory: 
+ ${\D}(\Lambda)=\Hom(\Lambda , \mathcal{W}_k)$, 
+ \index{000D@$\D$}
+ where $\mathcal{W}_k\;$
+ is the Witt scheme of $k$). This provides an 
+ {\it anti-equivalence of categories between $p$-divisible groups over
+ $k$ and Dieudonn\'e modules}. The rank of 
+ ${\D}(\Lambda)$ is the height $h$ of $\Lambda$. 
+\end{para}
+
+\begin{exs}
+  $\bullet \;\;{\D}(\Q_p/\Z_p)=W,$ with $F=\sigma,
+ \;V=p\sigma^{-1}$. 
+ \par\noindent $\bullet\;\; {\D}(\hat\G_m)=W(-1)$, \ie $W$ as an
+ underlying module, with $F=p\sigma, 
+ \;V=\sigma^{-1}$.
+ \par\noindent $\bullet$ When
+ $\Lambda=A[p^\infty]$ for an abelian variety $A$ over $k$,
+ ${\D}(\Lambda)$ may be identified with 
+ $\mathrm{H}^1_{\mathrm{cris}}(A/W)$. 
+\end{exs}
+
+ However, the structure of Dieudonn\'e modules is rather complicated in
+ general unless one inverts $p$. 
+
+\begin{para}\label{para:3.1.2}
+ When $k$ is algebraically closed, Dieudonn\'e modules $\otimes \Q$ were
+ completely classified by Dieudonn\'e (this provides a classification of
+ $p$-divisible groups over $k$ up to isogeny). They are classified by
+ their {\it slopes} $\lambda\in [0,1]\cap \Q$ and multiplicities
+ $m_\lambda\in \Z_{>0}$ (these data are better recorded in the form of a
+ Newton polygon). This comes as follows: each Dieudonn\'e module $\D$
+ has a canonical increasing finite filtration by Dieudonn\'e submodules
+ $\D_\lambda$, such that the associated graded $W$-module is free, and
+ with the following property: if $\lambda=a/b$ in irreducible form,
+ $\Gr_\lambda\otimes \Q$ admits a basis of $m_\lambda$ vectors $x$
+ satisfying $F^bx=p^ax$.
+
+
+ For instance, the slope of $W(-1)$ is $1$; the slope of the Dieudonn\'e
+ module attached to 
+ (the $p$-divisible group of) a supersingular elliptic curve over $k$ is
+ $1/2$, with multiplicity $2$.
+\end{para}
+
+\begin{para}\label{para:3.1.3} The problem of generalizing Dieudonn\'e
+ theory to $p$-divisible groups over more general bases $S$ (over which
+$p$ is nilpotent) has been tackled and advertised by Grothendieck
+ \cite{grothendieck74:_group_barsot_tate_dieud}, and further studied by many geometers.
+
+
+ What should be the right substitutes for the $W$-modules ${\D}(\Lambda)$
+ (\resp for the $W[\frac{1}{p}]$-spaces ${\D}(\Lambda)_{\Q}$)?
+
+
+ Grothendieck's proposal was to define ${\D}(\Lambda)$ as a {\it
+ $F$-crystal} on the crystalline site of $S$. 
+
+ The right substitute for $W[\frac{1}{p}]$-spaces was proposed later by
+ P. Berthelot and A. Ogus under the name of {\it convergent
+ $F$-isocrystal}. Let us describe these notions.
+\end{para}
+
+
+\subsection{The Dieudonn\'e crystal of a $p$-divisible group.}\label{sub:3.2}
+
+\begin{para}\label{para:3.2.1} Let $\mathfrak{v}$ be a finite extension of
+ $W$ of degree $e$. We assume that $e<p$, and that $\varpi$ is a 
+ uniformizing parameter of $\mathfrak{v}$ such that $\sigma$ extends to 
+ $\mathfrak{v}$ by setting $\sigma(\varpi)=\varpi$.
+
+
+Let $S$ be in $\Nil_\mathfrak{v}$. An
+$S$-divided power thickening
+$T_0\hookrightarrow T$ is given by
+\begin{enumerate}
+ \item an $S$-scheme $T_0$,
+ \item a $\mathfrak{v}$-scheme $T$ on which $p$ is locally nilpotent,
+ \item a closed immersion $T_0\hookrightarrow T$ over $\mathfrak{v}$,
+ \item a collection of maps ``$\frac{x^n}{n!}$'' from the ideal of
+ definition of $T_0$ in $T$ to $\mathcal{O}_T$, which 
+ satisfy the formal properties of the divided powers. 
+\end{enumerate}
+
+ $S$-divided power thickenings form a category
+ $(S/\mathfrak{v})_{\mathrm{cris}}$ (a fppf site). A sheaf on
+ $(S/\mathfrak{v})_{\mathrm{cris}}$ is the data, for every
+ $T_0\hookrightarrow T$, of a fppf sheaf $\mathcal{E}_{T_0,T}$ on $T$,
+ and for every morphism $f: (T_0\hookrightarrow T)\rightarrow
+ (T_0'\hookrightarrow T')$ in $(S/\mathfrak{v})_{\mathrm{cris}}$, of a
+ homomorphism $f^\ast\mathcal{E}_{T_0,T}\rightarrow
+ \mathcal{E}_{T_0',T'}$ satisfying the obvious transitivity
+ condition. Example: $\mathcal{O}_{S_0/\mathfrak{v}}$, defined by
+ $(\mathcal{O}_{S/\mathfrak{v}})_{T_0,T}=\mathcal{O}_T$. Another example:
+ any fppf sheaf $\mathcal{F}$ on $S_0$ gives rise to a sheaf
+ $\mathcal{F}_{\mathrm{cris}}$ on $(S/\mathfrak{v})_{\mathrm{cris}}$ by
+ $(\mathcal{F}_{\mathrm{cris}})_{T_0,T}=\mathcal{F}_{T_0}$.
+
+ A {\it crystal} on $(S/\mathfrak{v})_{\mathrm{cris}}$ (or,
+ abusively, on $S$) is a sheaf $\mathcal{E}$ of
+ $\mathcal{O}_{S/\mathfrak{v}}$-modules on
+ $(S/\mathfrak{v})_{\mathrm{cris}}$ such that the homomorphisms
+ $f^\ast\mathcal{F}_{T_0,T}\rightarrow \mathcal{F}_{T_0',T'}$ are
+ isomorphisms (in Grothendieck's terms: ``crystals grow and are
+ rigid''). One denotes by $\mathcal{E}_T$ the $\mathcal{O}_T$-module
+ obtained by evaluating the crystal on $(\id: T\hookrightarrow T) \in
+ (S/\mathfrak{v})_{\mathrm{cris}}$.
+
+ Because of this rigidity, and using the canonical divided powers on the
+ ideal $\varpi\mathcal{O}_S$ (since $e<p,\;\frac{\varpi^n}{n!}\in
+ \mathfrak{v}$ for any $n$), one gets an equivalence of categories
+ between crystals on $S$ and crystals on the scheme $S_0=S/\varpi$ of
+ characteristic $p$.
+\end{para}
+
+\begin{para}\label{para:3.2.2}
+ The Dieudonn\'e crystal attached to a $p$-divisible group $\Lambda$
+ over $S$ is the crystalline $\mathcal{E}xt$-sheaf
+ $\mathcal{E}xt^1(\Lambda_{\mathrm{cris}},
+ \mathcal{O}_{S/\mathfrak{v}})$. It can be shown that ${\D}(\Lambda)$ is
+ a finite locally free crystal on $S$, of rank the height of
+ $\Lambda$. It depends functorially in $\Lambda$ (in a contravariant
+ way).
+
+ An important, though formal, consequence of the crystalline local
+ character of this definition is that {\it the formation of
+ ${\D}(\Lambda)$ commutes with base change in}
+ $(S/\mathfrak{v})_{\mathrm{cris}}$, and for any $S$-divided power
+ thickening $(T_0\hookrightarrow T)$, there is a canonical isomorphism
+ of $\mathcal{O}_T$-modules ${\D}(\Lambda)_{T_0,T}\cong
+ {\D}(\Lambda_{T_0})_{T_0,T}.$
+
+ It follows that the datum of ${\D}(\Lambda)$ amounts to the datum of
+ ${\D}(\Lambda\times_S S_0)$: the Dieudonn\'e crystal depends only on the
+ $p$-divisible group modulo $\varpi$.
+\end{para}
+
+\begin{para}\label{para:3.2.3}
+ The pull-back of a crystal $\mathcal{E}$ on $S_0$ via the absolute
+ Frobenius $F_{S_0}$ is denoted by $\mathcal{E}^{(p)}$. An $F$-crystal
+ structure on $\mathcal{E}$ is the datum of a morphism of crystals
+ $F:\;\mathcal{E}^{(p)}\rightarrow \mathcal{E}$ which admits an inverse
+ up to a power of $p$.
+
+ If $\Lambda$ is a $p$-divisible group over $S_0$, ${\D}(\Lambda)$ is
+ endowed by functoriality with a structure of $F$-crystal. The classical
+ Dieudonn\'e module is obtained for
+ $S_0=T_0=\Spec(k),\;T=\Spf(W)=\liminj\;\Spec(W/p^n)$.
+
+
+ Although we shall not use this fact, let us mention that the
+ ``Dieudonn\'e functor'' ${\D}$ from $p$-divisible groups on $S_0$ to
+ $F$-crystals is fully faithful under further mild assumptions on $S_0$
+ (and even an equivalence with values in the category of ``Dieudonn\'e
+ crystals'', \ie finite locally free $F$-crystals for which $F$ admits an
+ inverse up to $p$ --- the Verschiebung); without any further assumption on
+ $S_0$, it induces an equivalence of categories between ind-etale
+ $p$-divisible groups on $S_0$ and unit-root $F$-crystals (\ie finite
+ locally free $F$-crystals for which $F$ is an isomorphism), 
+ \cf \cite{tddc1}, \cite{jong95:_cryst_dieud}.
+\end{para}
+
+
+\subsection{The Hodge filtration.}\label{sub:3.3}
+
+\begin{para}\label{para:3.3.1}
+ Let $\Lambda^\vee$ be the (Serre) dual of $\Lambda$ (the $\liminj$ of
+ the Cartier duals of the $\Lambda[p^n]$'s). There is a canonical,
+ locally split, exact sequence of $\mathcal{O}_S$-modules
+ \begin{equation*}
+  0\rightarrow F^1\rightarrow {\D}(\Lambda)_S\rightarrow
+   \Lie \Lambda^\vee\rightarrow 0
+ \end{equation*}
+ where $F^1=\CoLie \Lambda=\omega_\Lambda$ may be identified with the
+ module of invariant differentials on the formal Lie group
+ $\hat\Lambda$. In case $\Lambda$ is the $p$-divisible group attached to
+ an abelian $S$-scheme $\udl{A}$, this exact sequence reduces to the
+ Hodge exact sequence
+ \begin{equation*}
+  0\rightarrow F^1\rightarrow \mathrm{H}^1_{\mathrm{DR}}(\udl{A}/S)\rightarrow
+   \Lie \udl{A}^\vee\rightarrow 0.
+ \end{equation*}
+\end{para}
+
+\begin{para}\label{para:3.3.2}
+ Now let $S_0\hookrightarrow S$ be a {\it nilpotent} divided power
+ thickening (this means that the products
+ ``$\frac{x_1^{n_1}}{{n_1}!}$''$\ldots$``$\frac{x_1^{n_m}}{{n_m}!}$'' vanish
+ for $n_1+\ldots+n_m\gg 0$); this is for instance the case if
+ $S_0=S/\varpi$ as before and $e<p-1$.
+
+
+ The next theorem asserts that deformations of $p$-divisible
+ groups are controlled by the variation of the Hodge filtration in the
+ Dieudonn\'e module \cite{messing72:_barsot_tate}. For any $p$-divisible group
+ $\ovl{\Lambda}$ on $S_0$, and any lifting $\Lambda$ over $S$, we have
+ seen that ${\D}(\Lambda)_S$ identifies with ${\D}(\ovl{\Lambda})_S$,
+ which is a lifting of ${\D}(\ovl{\Lambda})_{S_0}$ to $S$.
+\end{para}
+
+\begin{thm}[The Grothendieck-Messing theorem]\label{thm:3.3.3}
+ The functor
+ \begin{equation*}
+  \Lambda\;\mapsto (\Lambda\times_S S_0,\;\omega_\Lambda)
+ \end{equation*}
+ induces an equivalence of categories between the category of
+ $p$-divisible groups on $S$, and the category of pairs consisting of a
+ $p$-divisible group $\ovl{\Lambda}$ over $S_0$ (Zariski-locally liftable
+ to $S$) and a locally direct factor vector subbundle of
+ ${\D}(\ovl{\Lambda})_S$ which lifts $\;\omega_{\ovl{\Lambda}}\subset
+{\D}(\ovl{\Lambda})_{S_0}$.
+\end{thm}
+
+
+ We have already seen the faithfulness in \ref{thm:2.2.3}.  We just
+ indicate here 
+ the principle of proof of essential surjectivity and fullness. Working
+ with nilpotent divided power thickenings allows one to construct, by
+ the exponential method, a formally smooth group scheme
+ $\;\E(\ovl{\Lambda})\;$ over $\;S\;$ together with a canonical
+ isomorphism
+ ${\D}(\ovl{\Lambda})_{S_0}=\Lie (\E(\ovl{\Lambda})\times_S{S_0})$, in
+ such a way that the canonical exact sequence
+
+ \begin{equation*}
+  0\rightarrow \omega_{\ovl{\Lambda}}\rightarrow
+   {\D}(\ovl{\Lambda})_{S_0}\rightarrow 
+   \Lie \ovl{\Lambda}^\vee\rightarrow 0
+ \end{equation*}
+ lifts to an exact sequence of formally smooth group schemes
+ \begin{equation*}
+  0\rightarrow \omega_{\ovl{\Lambda}}\rightarrow
+   \E(\ovl{\Lambda})\times_S{S_0}\rightarrow \ovl{\Lambda}^\vee\rightarrow 0
+ \end{equation*}
+ Via the exponential, it is equivalent to give a local summand $F^1$ of
+ ${\D}(\ovl{\Lambda})_S$ which lifts
+ $\;\omega_{\ovl{\Lambda}}$, or to give a vector sub-group scheme $V$ of
+ $\E(\ovl{\Lambda})$ which lifts $\;\omega_{\ovl{\Lambda}}$. It then
+ turns out that $\E(\ovl{\Lambda})/V$ is a 
+ $p$-divisible group $\Lambda^\vee$, whose Serre dual is the looked for 
+ $p$-divisible group $\Lambda$ over $S$: 
+ $\Lambda\times_S S_0=\ovl{\Lambda}$ by duality, and $\omega_{\Lambda}=F^1$.
+ 
+
+ The formation of $\E(\ovl{\Lambda})$ is functorial (contravariant in 
+ $\ovl{\Lambda}$). If we have two $p$-divisible groups $\ovl{\Lambda}, 
+ \ovl{\Lambda}'$ and a morphism $\ovl{f}:\;\ovl{\Lambda}=\Lambda\times_S 
+ S_0\rightarrow \ovl{\Lambda}'=\Lambda'\times_S S_0$ such that 
+ $\D(f)$ respects the $F^1$'s, then the homomorphism 
+ $\E(\ovl{f}): \E(\ovl{\Lambda})\rightarrow \E(\ovl{\Lambda}')$ 
+ preserves the vector subgroup schemes, hence induces a homomorphism 
+ $f: \E(\ovl{\Lambda})/V\cong \Lambda\rightarrow 
+ \E(\ovl{\Lambda}')/V'\cong\Lambda'$ which lifts $\ovl{f}$.
+
+
+ The exponential construction becomes simpler when the ideal of $S_0$ in
+ $S$ is of square zero (and endowed with the trivial divided
+ powers). This is the case which will be used in the sequel.
+
+\subsection{Crystals and connections.}\label{sub:3.4} 
+
+\begin{para}\label{para:3.4.1}
+ We have already encountered the terms ``$F$-crystal'', ``unit-root
+ $F$-crystal'' in I.\ref{para:f-cris}, \ref{para-unit-root} in the more
+ down-to-earth context of 
+ connections. This comes as follows. Assume for simplicity that $S_0$ is
+ affine of characteristic $p$ and lifts to a formally smooth $p$-adic
+ affine formal scheme $\mathcal{S}$ over $\mathfrak{v}=W$.  Then there
+ is an equivalence of categories between finite locally free crystals on
+ $(S_0/W)_{\mathrm{cris}}$ and finite locally free
+ $\mathcal{O}(\mathcal{S})$-modules with integrable topologically
+ nilpotent connection (this interpretation of crystals extends to much
+ more general situations, \cf \cite[2.2.2]{jong95:_cryst_dieud}).
+
+ \noindent Using this equivalence of categories, the Katz (covariant) functor
+ \begin{equation*}
+  \begin{pmatrix}\text{continuous }{\Z}_p\text{-representations} \\
+   \text{of } \pi_1^{\mathrm{alg}}(S_0,s_0)
+  \end{pmatrix}
+  \longrightarrow \text{(unit-root $F$-crystals)}
+ \end{equation*}
+ is the composite of the following (anti)equivalences of categories
+ \begin{align*}
+  \begin{pmatrix}\text{continuous } {\Z}_p\text{-representations} \\
+   \text{of } \pi_1^{\mathrm{alg}}(S_0,s_0)
+  \end{pmatrix}& \longrightarrow
+  \text{(ind-etale $p$-divisible groups over $S_0$)}\\
+  & \overset{\D}{\longrightarrow}
+  \text{(unit-root $F$-crystals over $S_0$)}.
+ \end{align*} 
+\end{para}
+
+\begin{para}\label{para:3.4.2}
+ Let us briefly recall the construction of the connection attached to a
+ finite locally free crystal $\mathcal{E}$ on
+ $(S_0/W)_{\mathrm{cris}}$. It depends on the technique of formally
+ adding divided powers to an ideal (the pd-hull). Let $\Delta_0$ be the
+ diagonal in $S_0\times S_0$, and let $\hat\Delta$ be the $p$-completion
+ of the pd-hull of the diagonal in $\mathcal{S}\hat\times\mathcal{S}$,
+ endowed with the two projections $p_1,p_2$ to $\mathcal{S}$. Then by
+ rigidity of crystals, we have for any $n$ an isomorphism
+ \begin{equation*}
+  p_2^\ast(\mathcal{E}_{S_0,\mathcal{S}/p^n})\;\cong
+   \;\mathcal{E}_{\Delta_0,\hat\Delta/p^n}\;\cong
+   \;p_1^\ast(\mathcal{E}_{S_0,\mathcal{S}/p^n})
+ \end{equation*}
+ and at the limit $n\rightarrow \infty$, an isomorphism of finite
+ locally free $\mathcal{O}({\hat\Delta})$-modules  
+ \begin{equation*}
+  \epsilon:\; p_2^\ast(\mathcal{E}_{S_0,\mathcal{S}})\;\cong
+   \;p_1^\ast(\mathcal{E}_{S_0,\mathcal{S}})
+ \end{equation*}
+ satisfying a cocycle condition. Such an isomorphism is the ``Taylor series'' 
+ \begin{equation*}
+  \epsilon(1\otimes e) = \sum_{n_1,\ldots,n_d\geq
+   0}\biggl(\nabla\Bigl(\frac{\partial}{\partial t_1}\Bigr)^{n_1}
+   \ldots\nabla\Bigl(\frac{\partial}{\partial t_d}\Bigr)^{n_d}\biggr)(e)
+   \otimes \prod_i \frac{\text{``$(1\otimes t_i-t_i\otimes 1)^{n_i}$''}}{n_i!}
+ \end{equation*}
+ of an integrable connection $\nabla$ on the finite
+ locally free $\mathcal{O}(\mathcal{S})$-module
+ $\;\mathcal{E}_{S_0,\mathcal{S}}$ (here $t_1,\ldots t_d$ denote local
+ coordinates on $\mathcal{S}$).
+\end{para}
+
+\begin{para}\label{para:3.4.3}
+ In general, the Taylor series converges only in polydiscs of radius
+ $| p |^{1/p-1}$, due to the presence of the factorials. One
+ says that $\nabla$ is {\it convergent} if its Taylor series converges
+ in (open) unit polydiscs. A well-known argument due to Dwork shows that
+ $F$-crystals give rise to convergent connections $\nabla$ (\cite{tdd}).
+
+ In order to put the discussion of convergence on proper foundations, we
+ need the notion of tube in analytic geometry.
+\end{para}
+
+
+\subsection{Interlude : analytic spaces associated with formal schemes
+ and tubes.}\label{sub:3.5}
+
+\begin{para}\label{para:3.5.1} Let us first review the Raynaud-Berthelot
+construction of the analytic space attached to a  
+$\mathfrak{v}$-formal scheme $\mathfrak{X}$. It will be convenient for
+later purpose to formulate the construction in the frame of Berkovich
+spaces rather than rigid geometry (we refer to \cite[1.6]{ecfnas} for the
+translation).
+
+
+As in \ref{para:2.2.5}, we assume that $\mathfrak{X}$ is adic, locally
+noetherian; moreover, we assume that 
+${\mathfrak{X}}_{\mathrm{red}}=\Spec(\mathcal{O}_{\mathfrak{X}}/\mathcal{J})$ is a
+separated $k$-scheme locally of finite type (in particular,
+$p\in \mathcal{J}$). However, we {\it do not} assume that $\mathfrak{X}$ is
+$p$-adic, \ie that the topology of $\mathcal{O}_{\mathfrak{X}}$
+is $p$-adic.
+
+ We describe the construction in the affine case ${\mathfrak{X}} =
+ \Spf(\mathcal{A})$; the general case follows by gluing. One chooses
+ generators $f_1,\ldots, f_r$ of 
+ $J=\Gamma({\mathfrak{X}},\mathcal{J})$, and defines, for any $n>0$,
+ \begin{equation*}
+ \mathcal{B}_n=\mathcal{A}\{T_1,\ldots,T_r\}/(f_1^n-\varpi T_1,\ldots,
+ f_r^n-\varpi T_r)
+ \end{equation*}
+ where $\mathcal{A}\{T_1,\ldots,T_r\}$ stands for the $\varpi$-adic
+ completion of $\mathcal{A}[T_1,\ldots,T_r]$. One has
+ $\mathcal{B}_n/\varpi\mathcal{B}_n\cong
+ (\mathcal{A}/(\varpi,f_1^n,\ldots,f_r^n))[T_1,\ldots,T_r]$, a
+ $k$-algebra of finite type; hence $\mathcal{B}_n$ is a
+ $\mathfrak{v}$-algebra topologically of finite type (\ie quotient of an
+ algebra of the form $\mathcal{A}\{T_1,\ldots,T_{r_n}\}$), so that
+ $\mathcal{B}_n[\frac{1}{p}]$ is an affinoid algebra. Let
+ $\matheur{M}(\mathcal{B}_n)$ be its Berkovich spectrum. The
+ homomorphism $\mathcal{B}_{n+1}\rightarrow \mathcal{B}_n$ sending $T_i$
+ to $f_iT_i$ identifies $\matheur{M}(\mathcal{B}_n)$ with an affinoid
+ subdomain of $\matheur{M}(\mathcal{B}_{n+1})$ \cite[0.2.6]{crecrasp}.
+
+
+ The analytic space $\mathfrak{X}^{\mathrm{an}}$ is defined as the union
+ $\bigcup_n \matheur{M}(\mathcal{B}_n)$. It does 
+ not depend on the choice of $f_1,\ldots, f_r$. This is a {\it
+ paracompact (strictly) analytic space} over the fraction 
+ field $K$ of $\mathfrak{v}$  (one can replace the nested ``ball-like''
+ $\matheur{M}(\mathcal{B}_n)$ by nested ``annulus-like'' 
+ spaces in order to obtain locally finite coverings). 
+\end{para}
+
+\begin{exs}\label{para:3.5.2}
+ (i) if ${\mathfrak{X}}=\Spf(\mathfrak{v}\{t\})$,
+ ${\mathfrak{X}}^{\mathrm{an}}$ is the closed unit disc.
+ 
+ (ii) if ${\mathfrak{X}}=\Spf({\mathfrak{v}[[t]]}),
+ \;\mathcal{J}=(\varpi, t)$, then $\matheur{M}(\mathcal{B}_n)$ is the 
+ closed disc $\matheur{D}_K(0,|\varpi|^{1/n})$, and
+ ${\mathfrak{X}}^{\mathrm{an}}$ is the open unit disc. 
+\end{exs}
+
+\begin{para}\label{para:3.5.3} Let $S_0$ be a closed subscheme of
+$\mathfrak{X}_{\mathrm{red}}$, and let ${\mathfrak{X}}_{S_0}$ be the formal
+completion of $\mathfrak{X}$ along $S_0$. The {\it tube of $S_0$ in
+$\mathfrak{X}$} is $\mathfrak{X}_{S_0}^{\mathrm{an}}$. It is denoted by
+$]S_0[_{\mathfrak{X}}$ (and considered as a subspace of
+$\mathfrak{X}^{\mathrm{an}}$). It depends only on $S_{0,\mathrm{red}}$.  
+
+\medskip
+ \noindent {\it Example}: if $\mathfrak{X}$ is as in example (i) above
+ (so that $\mathfrak{X}_{\mathrm{red}}=\A^1_k$), and $S_0$ is the point $0$,
+ then $\mathfrak{X}_{S_0}$ is as in example (ii) above:
+ $]0[_{\mathfrak{X}}\;=\matheur{D}(0,1^-)\subset \matheur{D}(0,1^+)$. 
+
+ \noindent More generally, the polydiscs mentioned in \ref{para:3.4.3}
+ are the tubes of closed points.
+\end{para}
+
+
+\subsection{Convergent isocrystals.}\label{sub:3.6}     
+
+\begin{para}\label{para:3.6.1} Let $S_0$ be a separated $k$-scheme of finite
+ type, and $S_0\hookrightarrow \mathfrak{Y}$ a closed immersion into a
+ flat $p$-adic formal $\mathfrak{v}$-scheme that is formally smooth in a
+ neighborhood of $S_0$. Let $E$ be a vector bundle on the tube
+ $]S_0[_{\mathfrak{Y}}$. An integrable connection $\nabla$ on $E$ is
+ {\it convergent} if its Taylor series
+ \begin{equation*}
+  \epsilon(1\otimes e) =
+   \sum_{n_1,\ldots,n_d\geq 0}
+   \biggl(\nabla\Bigl(\frac{\partial }{\partial t_1}\Bigr)^{n_1}\ldots
+   \nabla\Bigl(\frac{\partial }{\partial t_d}\Bigr)^{n_d}\biggr)(e)
+   \otimes \;\prod_i\frac{\text{``$(1\otimes t_i-t_i\otimes 1)^{n_i}$''}}{n_i!}
+ \end{equation*}
+ is induced by an isomorphism on the tube of the
+ diagonal $]S_0[_{\mathfrak{Y}\times \mathfrak{Y}}$
+ \begin{equation*}
+  \epsilon:\; p_2^\ast(E)\;\cong \;p_1^\ast(E)
+ \end{equation*} 
+ It amounts to the same to say that for any affine $U$ in $\mathfrak{Y}$
+ with local coordinates
+ $t_1,\ldots, t_d$, any section $e\in \Gamma(U^{\mathrm{an}},E)$ and any $\eta<1$,
+ one has 
+ \begin{equation*}
+  \Bigl\|\nabla\Bigl(\frac{\partial }{\partial t_1}\Bigr)^{n_1}
+   \ldots\nabla\Bigl(\frac{\partial }{\partial t_d}\Bigr)^{n_d}(e)\Bigr\|.
+   \eta^{n_1+\ldots + n_d}\rightarrow 0
+ \end{equation*}
+ where $\|\;\;\|$ denotes a Banach norm on $\Gamma(U^{\mathrm{an}},E)$.
+
+ According to Berthelot, {\it the category of vector bundles
+with convergent connection depends only on $S_0$} --- even only on
+$S_{0,\mathrm{red}}$ --- (up to canonical equivalence), and is functorial in
+$S_0/K$; this is the category of {\it convergent isocrystals on $S_0/K$}
+(or, abusively, on $S_0$).
+ 
+
+Since any separated $k$-scheme locally of finite type can be locally
+embedded into a $\mathfrak{X}$ as above, one can define the category of
+convergent isocrystals on such a scheme by gluing \cite[2.3.2]{crecrasp}.
+\end{para}
+
+\begin{para}\label{para:3.6.2} There is a natural functor from the category
+ of $F$-isocrystals on $S_0/\mathfrak{v}$ to the category of 
+convergent isocrystals on $S_0/K$ \cite[2.4]{crecrasp}.  The composite of
+this functor with the Dieudonn\'e functor is denoted by $\D(-)_\Q$. It
+factors through a $\Q_p$-linear functor, still denoted by $\D(-)_\Q:\;$
+\begin{equation*}
+\Bigl\{\begin{matrix}
+	\text{$p$-divisible groups over $S_0$}\\
+	\text{up to isogeny}
+       \end{matrix}\Bigr\}
+ \longrightarrow
+ \{\text{convergent isocrystals on $S_0$}\}
+\end{equation*}
+\end{para}
+
+\begin{para}\label{para:3.6.3} The advantage of convergent isocrystals over
+ ``crystals up to isogeny'' lies in their strong 
+``continuity property'', which allows to remove the restriction $e<p$ on
+ramification (as we shall do henceforth), and work conveniently with
+singular schemes $S_0$ (while divided powers present certain
+``pathologies'' in the singular case). In our applications, $S_0$ will
+be a countable (non-disjoint) union of irreducible projective varieties,
+and $\mathfrak{v}$ may be highly ramified.
+\end{para}
+
+\begin{para}\label{para:3.6.4} If $S_0$ is the reduced underlying scheme 
+ ${\mathfrak{X}}_{\mathrm{red}}$ of a formal scheme $\mathfrak{X}$ as in
+ \ref{para:3.5.1}, there 
+ is a notion of {\it evaluation of $E$ on $\mathfrak{X}^{\mathrm{an}}$}
+ \cite[2.3.2]{crecrasp}: this is a vector bundle on
+ ${\mathfrak{X}}^{\mathrm{an}}$ with an integrable connection. 
+ 
+
+ By functoriality of the construction, it will be enough to deal with the
+ affine case ${\mathfrak{X}}=\Spf{\mathcal{A}}$ and to assume that there
+ is a closed immersion $S_0=(\Spf{\mathcal{A}})_{\mathrm{red}}\hookrightarrow
+ \mathfrak{Y}$ into a formally smooth $p$-adic formal
+ $\mathfrak{v}$-scheme. One can construct inductively a compatible family
+ of $\mathfrak{v}$-morphisms
+ $\Spec(\mathcal{O}_{\mathfrak{X}}/\mathcal{J}^n)\rightarrow \mathfrak{Y}$,
+ whence a $\mathfrak{v}$-morphism  $\mathfrak{X} \rightarrow
+ \mathfrak{Y}$.  Let $\upsilon :\; ]S_0[_{\mathfrak{X}} 
+ ={\mathfrak{X}}^{\mathrm{an}}\rightarrow\; ]S_0[_{\mathfrak{Y}}$ be the
+ associated analytic map. The looked for evaluation of $E$ on
+ ${\mathfrak{X}}^{\mathrm{an}}$ 
+ is the pull-back by $\upsilon$ of the vector bundle with integrable
+ connection on $]S_0[_{\mathfrak{Y}}$ defined by $E$.
+\end{para}
+
+\begin{para}\label{para:3.6.5} Let now $S$ be a separated scheme in
+ $\Nil_\mathfrak{v}$ (it may also be viewed in  $\Nil_W$).
+ Let $\mathcal{E}$ be a finite locally free $F$-crystal on $S/W$. This
+ provides a vector bundle $\mathcal{E}_S$ on $S$, which 
+ only depends on the inverse image $\mathcal{E}\times_W k$ of
+ $\mathcal{E}$ on the $k$-scheme $S/p$ (\cf \ref{para:3.2.1}). On the other 
+ hand, the convergent isocrystal $E$ on $S/p$ attached to $F$-crystal
+ $\mathcal{E}\times_W k$ (\cf \ref{para:3.6.2}) depends only on
+ $S_{\mathrm{red}}$.
+\end{para}
+
+\begin{para}\label{para:3.6.6} Let us apply this to Dieudonn\'e
+ crystals. Let $\mathfrak{X}$ be a formal scheme as in \ref{para:3.5.1},
+ and let 
+ $\Lambda=\liminj \Lambda_n$ be a $p$-divisible on
+ $\mathfrak{X}=\liminj {\mathfrak{X}}_n$. This gives rise to a vector bundle 
+ $\displaystyle \D(\Lambda)_{\mathfrak{X}}= \liminj
+ \D(\Lambda_n)_{{\mathfrak{X}}_n}$ on $\mathfrak{X}$. On the other 
+ hand, we have the vector bundle $\displaystyle
+ \D(\Lambda_0)_{\mathfrak{X}}=$ on $\mathfrak{X}$ and a natural
+ homomorphism $\D(\Lambda_0)_{\mathfrak{X}}\rightarrow
+ \D(\Lambda)_{\mathfrak{X}}$ obtained by pull-back 
+ ${\mathfrak{X}}_{\mathrm{red}}={\mathfrak{X}}_0\rightarrow {\mathfrak{X}}$.
+
+
+When $e\geq p$, this is not an isomorphism in general. However, {\it the
+associated morphism of analytic vector bundles
+$(\D(\Lambda_0)_{\mathfrak{X}})^{\mathrm{an}}\rightarrow
+(\D(\Lambda)_{\mathfrak{X}})^{\mathrm{an}}$ is an isomorphism.  Moreover,
+$(\D(\Lambda_0)_{\mathfrak{X}})^{\mathrm{an}}$ is the analytic vector bundle
+underlying the evaluation of $\D(\Lambda_0)_\Q$ on
+${\mathfrak{X}}^{\mathrm{an}}$}.
+
+
+Indeed, working locally, and taking in account the very construction of
+${\mathfrak{X}}^{\mathrm{an}}$, we reduce to the case when ${\mathfrak{X}}$ is
+$p$-adic. Then $\mathfrak{X}/p$ is a $k$-scheme. Using the canonical
+divided powers on $(p)$ and the rigidity of crystals,
+$\D(\Lambda\times_{\mathfrak{X}}\mathfrak{X}/p)_{\mathfrak{X}}\cong
+\D(\Lambda)_{\mathfrak{X}}$. It is thus enough to see that
+$\D(\Lambda_0)^{\mathrm{an}}\cong\D
+(\Lambda\times_{\mathfrak{X}}\mathfrak{X}/p)_{\mathfrak{X}}^{\mathrm{an}}$. This
+follows from the fact that the convergent isocrystals $\D(\Lambda_0)_\Q$
+and $\D(\Lambda\times_{\mathfrak{X}}\mathfrak{X}/p)_\Q$ are ``the
+same'', since ${\mathfrak{X}}_0=({\mathfrak{X}}/p)_{\mathrm{red}}\;$: indeed, it
+is clear that $(\D(\Lambda_0)_{\mathfrak{X}})^{\mathrm{an}}$ (\resp
+$\D(\Lambda\times_{\mathfrak{X}}\mathfrak{X}/p)_{\mathfrak{X}}^{\mathrm{an}}$)
+coincides with the evaluation of the convergent isocrystal
+$\D(\Lambda_0)_\Q$ (\resp
+$\D(\Lambda\times_{\mathfrak{X}}\mathfrak{X}/p)_\Q$) on
+${\mathfrak{X}}^{\mathrm{an}}$ (\cf also \cite[6.4]{efgonas}, in a slightly less
+general context).
+\end{para}
+
+\begin{para}\label{para:3.6.7} Let us draw from this two consequences:
+ \begin{enumerate}
+  \item taking into account the fact that the functor $\D(-)_\Q$ factors
+	through the category of $p$-divisible
+	groups up to isogeny, we see that if we are given a quasi-isogeny
+	$\Lambda_0\rightarrow \Lambda_0'$, then there is a
+	canonical isomorphism of vector bundles
+	$\bigl(\D(\Lambda'_0)_{\mathfrak{X}}\bigr)^{\mathrm{an}}\rightarrow
+	\bigl(\D(\Lambda)_{\mathfrak{X}}\bigr)^{\mathrm{an}}$.
+  \item Through the isomorphism
+	$\bigl(\D(\Lambda_0)_{\mathfrak{X}}\bigr)^{\mathrm{an}}\rightarrow
+	\bigl(\D(\Lambda)_{\mathfrak{X}}\bigr)^{\mathrm{an}}$ (or equivalently,
+	through the isomorphism
+	$\D\bigl(\Lambda\times_{\mathfrak{X}}
+	\mathfrak{X}/p\bigr)_{\mathfrak{X}}^{\mathrm{an}}
+	\rightarrow
+	\bigl(\D(\Lambda)_{\mathfrak{X}}\bigr)^{\mathrm{an}}$), the 
+	analytic vector bundle
+	$\bigl(\D(\Lambda)_{\mathfrak{X}}\bigr)^{\mathrm{an}}$ is naturally
+	endowed with an integrable connection, which deserves to be
+	called the {\it Gauss-Manin} connection attached to $\Lambda$.
+ \end{enumerate}
+
+ Indeed, when $\Lambda=\udl{A}[p^\infty]$ for an abelian scheme
+ $\udl{A}$ over $\mathfrak{X}$,
+ $(\D(\Lambda)_{\mathfrak{X}})^{\mathrm{an}}$ may then be identified
+ with the De Rham cohomology bundle
+ $\mathrm{H}^1_{\mathrm{DR}}(\udl{A}^{\mathrm{an}}/
+ {\mathfrak{X}}^{\mathrm{an}})$
+ together with its Gauss-Manin connection.  Here, one can use the
+ comparison theorem between crystalline and De Rham cohomology, or the
+ theory of universal vectorial extensions and Grothendieck's
+ $\natural$-structures, \cf \cite{mazur74:_univer}, \cite{tddc2}.
+
+ In the first alternative, one uses the
+ divided powers on $(p)$ and construct a canonical isomorphism of vector
+ bundles with connection 
+ $\D(\Lambda\times_{\mathfrak{X}}\mathfrak{X}/p)_{\mathfrak{X}}\cong
+ \mathrm{H}^1_{\mathrm{DR}}(\udl{A}/{\mathfrak{X}})$.
+
+
+ In the second alternative, one uses Grothendieck's construction of a
+ canonical connection on the universal vectorial extension $\E(\Lambda)$
+ of $\Lambda^\vee$ --- \cf \ref{para:3.3.2}; the induced connection on the Lie
+ algebra $\D(\Lambda)_{\mathfrak{X}}$ turns out to be the Gauss-Manin
+ connection on $ \mathrm{H}^1_{\mathrm{DR}}(\udl{A}/{\mathfrak{X}})$.
+
+
+ The Gauss-Manin connection is especially significant when
+ ${\mathfrak{X}}^{\mathrm{an}}$ is smooth (even though $\mathfrak{X}$
+ itself may not be formally smooth).
+
+\newpage
+\section{Moduli problems for $p$-divisible groups.}\label{sec:4}
+
+\begin{abst}
+ Review of moduli spaces of $p$-divisible groups quasi-isogenous to a
+ fixed one modulo $p$, with examples.
+\end{abst}
+\end{para}
+
+
+\subsection{Moduli problem for $p$-divisible groups quasi-isogenous to a
+ fixed one modulo $p$.}\label{sub:4.1}
+
+\begin{para}\label{para:4.1.1} Here, we work over the discrete valuation
+ ring $\mathfrak{v}=W= {\widehat{\Z_p^{\mathrm{ur}}}}$ (the completion of the
+maximal unramified extension of $\Z_p$), with uniformizing parameter
+$\varpi=p$. Recall that $\Nil_\mathfrak{v}$ denote the category of
+locally noetherian $\mathfrak{v}$-schemes $S$ on which $p$ is locally
+nilpotent.
+
+
+Let $\ovl{\Lambda}$ be a fixed $p$-divisible group over
+$k={\ovl{\F}}_p$. The following theorem is due to M.  Rapoport and
+T. Zink \cite[2.16, 2.32]{psfpg}.
+\end{para}
+
+\begin{thm}\label{thm:4.1.2} The functor
+\begin{align*}
+ \Nil_\mathfrak{v}&\rightarrow \Sets\\
+ S&\mapsto \Bigl\{(\Lambda,\rho)\Bigm|
+ \begin{array}{l}
+  \Lambda \text{: $p$-divisible group on $S$},\\
+  \rho\in \qisog(\Lambda\times_S S_{\mathrm{red}},
+ \ovl{\Lambda}\times_{{\ovl{\F}}_p}S_{\mathrm{red}})
+ \end{array}
+ \Bigr\}\Big/\cong
+\end{align*}
+is representable by a formal scheme $\mathfrak{M}$
+over $\mathfrak{v}$; $\mathfrak{M}_{\mathrm{red}}$ is locally of
+finite type over ${\ovl{\F}}_p$ and its irreducible components are
+projective ${\ovl{\F}}_p$-varieties.
+\end{thm}
+
+Of course, the rigidity of $p$-divisible groups up to isogeny (\ref{thm:2.2.3}) is
+crucial here. The main difficulty in proving \ref{thm:4.1.2} is to control the
+powers of $p$ which are needed in the process of lifting isogenies.
+
+
+The separated formal scheme $\mathfrak{M}$ is not formally smooth in
+general, but has been conjectured to be flat over 
+$\mathfrak{v}$.  The group $J$ of self-quasi-isogenies of $\ovl{\Lambda}$
+ acts (on the right) on $\mathfrak{M}$ by  $(\Lambda,\rho).j= 
+(\Lambda,\rho\circ j$). This group $J$ is actually the group of
+ ${\Q}_p$-points of an algebraic group over ${\Q}_p$. 
+
+ We denote by $\mathcal{M}$ the Berkovich analytic space over
+ $\C_p$ attached to $\mathfrak{M} : 
+ \mathcal{M}={\mathfrak{M}}^{\mathrm{an}}\hat\otimes_K\;\C_p$
+ (\cf \ref{sub:3.5}). This is a paracompact (strictly) analytic space. We shall
+ see later that it is smooth, and a $p$-adic manifold in the sense of
+ I.\ref{para:p-adic-manifold}.
+
+\subsection{Examples.}\label{sub:4.2}
+ We take $\ovl{\Lambda} ={\ovl{A}}[p^\infty]$, the $p$-primary
+ torsion of an {\it elliptic curve ${\ovl{A}}$ over ${\ovl{\F}}_p$} ($h=2$).
+
+\begin{para}\label{para:4.2.1}
+ {\it The ordinary case}, \ie ${\ovl{A}}[p]({\ovl{\F}}_p)\neq 0$. 
+
+ Then $\ovl{\Lambda}\cong\hat {\G}_m \oplus {\Q}_p/{\Z}_p$, and
+ $J=({\G_m}_{{\Q}_p})^2$. For any $(\Lambda,\rho)$ in $\mathfrak{M}(S)$,
+ the separable rank of $\Ker[p]$ is constant (due to the quasi-isogeny
+ $\rho$). Therefore $\Lambda$ is an extension 
+ \begin{equation*}
+  \hat{\Lambda}\rightarrow \Lambda\rightarrow \Lambda^{\mathrm{et}}.
+ \end{equation*}
+ The quasi-isogeny $\rho$ respects this extension,
+ hence splits into two parts $({\hat\rho},\rho^{\mathrm{et}})$. We have
+ ${\hat\Lambda}\cong \hat {\G}_m ,\;\Lambda^{\mathrm{et}}\cong
+ {\Q}_p/{\Z}_p$. Up to isomorphism, the pair
+ $({\hat\rho},\rho^{\mathrm{et}})$ thus amounts to an element of
+ $({\Q}_p^\times/{\Z}_p^\times)^2\cong {\Z}^2$. Therefore
+ \begin{equation*}
+  \mathfrak{M}=\coprod_{\Z^2}\;\mathfrak{M}^0
+ \end{equation*}
+ is a disjoint sum of copies of a formal (group) scheme
+ $\mathfrak{M}^0$ which parametrizes extensions of ${\Q}_p/{\Z}_p$ by $
+ \hat {\G}_m$. It is known that
+ \begin{equation*}
+  \mathfrak{M}^0 =\hat {\G}_m
+ \end{equation*} 
+ This identification is given by the
+ following recipe. Recall that if $S=\Spec(R),\;R$ local artinian with
+ residue field ${\ovl{\F}}_p$ and radical $\mathfrak{m}$
+ ($\mathfrak{m}^{n+1}=0$), then $\hat {\G}_m(S)=1+\mathfrak{m}$; in
+ particular $\hat {\G}_m(S)$ is killed by $[p^n]$. Let us choose any lift
+ $q_n$ of $1/p^n\in {\Q}_p/{\Z}_p$ in $\Lambda$. Then $[p^n]q_n$ is a
+ well-defined element $q$ in $ {\hat\Lambda}(S)\cong 1+\mathfrak{m}$,
+ which is unchanged if $n$ is replaced by a bigger integer (but another
+ choice of the isomorphism ${\hat\Lambda}\cong \hat {\G}_m$ would change
+ $q$ into $q^a,\; a\in {\Z}_p^\times$).
+ 
+
+ \noindent As a formal $W$-scheme, $\mathfrak{M}^0=
+ \Spf(\mathfrak{v}[[q-1]])$, with the $(p,q-1)$-adic topology. 
+ The associated analytic space $\mathcal{M}^0$ over $\C_p$ is the open
+ unit disc $| q-1| <1$.
+ 
+ The parameter $q$ is thus the local modulus for deformations of
+ ${\ovl{A}}[p^\infty]$.  
+ On the other hand, if
+ $p\neq 2$, we have an algebraic local modulus for deformations of
+ ${\ovl{A}}$ (say, with level two structure): the Legendre parameter
+ $z=\lambda$ around the Legendre parameter $\zeta_{\mathrm{can}}$ of the
+ canonical lifting $A_{\mathrm{can}}$ of ${\ovl{A}}$ (\cf 
+ I.\ref{para-dwork-para}).
+ The $p$-divisible group $A_{\mathrm{can}}[p^\infty]$ splits: its parameter is
+ $q=1$. Therefore, in this special case, the Serre-Tate theorem \ref{thm:2.2.4}
+ asserts that $q\in
+ 1+(z-\zeta_{\mathrm{can}}){\widehat{\Z}^{\mathrm{ur}}}[[z-\zeta_{\mathrm{can}}]]$. It has been
+ proved by W. Messing and N. Katz that $q$ is the Dwork-Serre-Tate
+ parameter discussed in I.\ref{sub-serre-tate-para}, 
+ (\cite{q}, \cite{slm}) --- which explains the terminology.
+\end{para}
+
+\begin{para}\label{para:4.2.2} {\it The supersingular case}, \ie
+ ${\ovl{A}}[p]({\ovl{\F}}_p)= 0$. 
+ 
+ In this case ${\ovl{\Lambda}}
+ =\hat{\ovl{\Lambda}}$ is a so-called Lubin-Tate formal group,
+ $\;\End\;{\ovl{\Lambda}}=\mathcal{B}_p$, ``the'' maximal order in 
+ the (non-split) quaternion algebra $B_p$ over ${\Q}_p$, and $J=B_p^\times$.
+ 
+ 
+ Here again, there is a discrete invariant: the ``height'' of the
+ quasi-isogeny $\rho$, which amounts to the 
+ $p$-adic valuation of the norm of its image in $J=B_p^\times$.
+ Therefore 
+ \begin{equation*}
+  \mathfrak{M}=\coprod_{\Z}\;\mathfrak{M}^0
+ \end{equation*}
+ is a disjoint sum of copies of a formal scheme $\mathfrak{M}^0$
+ which parametrizes deformations of the Lubin-Tate group
+ $\hat{\ovl{\Lambda}}$. According to Lubin-Tate, $\mathfrak{M}^0\cong
+ \Spf(\mathfrak{v}[[t]])$, with the $(p,t)$-adic topology. The
+ associated analytic space $\mathcal{M}^0$ over $\C_p$ is the open unit
+ disc $|t|<1$.
+
+ Assume for simplicity that ${\ovl{A}}$ is defined over ${\F}_p$. Then
+ one can describe the universal formal deformation $\Lambda$ over
+ $\Spf{\Z_p[[t]]}$ through its logarithm $\sum b_n(t)X^{p^{2n}}$, which
+ is given recursively by
+ \begin{equation*}
+  b_0(t)=1,\;b_n(t)=\frac{1}{p}\sum_{0\leq m < n}b_m(t)t_{n-m}^{p^{2m}}
+ \end{equation*} 
+
+ 
+The so-called canonical lifting, corresponding to $t=0$, has formal complex
+multiplication by $\Z_{p^2}$, \cf \cite{gross94:_equiv_lubin_tate}, \cite{trapmlsasht}.
+\end{para}
+
+ 
+\subsection{Decorated variants.}\label{sub:4.3} 
+
+\begin{para}\label{para:4.3.1} Just as in the complex case
+ \ref{para:1.1.4}, it is useful to consider variants or the moduli
+ problem \ref{sub:4.1} for ``decorated'' $p$-divisible groups, with prescribed
+ endomorphisms and/or polarization.
+
+
+Instead of
+the $\Q$-algebra $B$ of \ref{para:1.1.4}, we shall consider a finite-dimensional semi-simple $\Q_p$-algebra $B_p$, since
+the category of $p$-divisible groups up to isogeny is
+$\Q_p$-linear. Let $V_p$ be a $B_p$-module
+of finite type, and let $G_{\Q_p}$ be the group of 
+$B_p$-linear endomorphisms of $V_p$.
+\par\noindent  Let $\mathcal{B}_p$ be a maximal order in $B_p$, and let
+$L_p$ be a lattice in $V_p$, stable under $\mathcal{B}_p$. 
+
+
+\end{para}
+
+\begin{para}\label{para:4.3.2} We assume that $\mathcal{B}_p$ acts on our
+ $p$-divisible group $\ovl{\Lambda}$. One then redefines $J$ to 
+be the group of self-quasi-isogenies of $\ovl{\Lambda}$ which respect
+the $\mathcal{B}_p$-action.
+
+
+For technical reasons, one picks up a lifting $\tilde{\ovl{\Lambda}}$ of
+$\ovl{\Lambda}$ with $\mathcal{B}_p$-action to some finite extension of
+$W$, and looks at the $\mathcal{B}_p$-module
+$F^1_0:=\omega_{\tilde{\ovl{\Lambda}}}$. We denote by $\mathfrak{v}$ the
+finite extension $W[\tr(b| F^1_0)]$ of $W$.
+
+
+One strengthens the moduli problem \ref{sub:4.1} by imposing to our pairs
+ $(\Lambda,\rho)$ that $\Lambda$ is endowed with a
+ $\mathcal{B}_p$-action $\iota:\mathcal{B}_p\rightarrow \End \Lambda$,
+ $\rho$ respects the $\mathcal{B}_p$-action, and moreover a ``Shimura
+ type condition'' $\det(\iota(b)| \omega(\Lambda))=\det(b|
+ F^1_0)$.
+
+ It follows easily from \ref{thm:4.1.2} \cite[3.25]{psfpg} that this
+ moduli problem is {\it representable by a formal scheme, still denoted
+ by $\mathfrak{M}$, over $\mathfrak{v}$. It is acted on by
+ $J$. $\mathfrak{M}_{\mathrm{red}}$ is locally of finite type over ${\ovl{\F}}_p$
+ and its irreducible components are projective
+ ${\ovl{\F}}_p$-varieties. }
+\end{para}
+
+\begin{para}\label{para:4.3.3} Let us say a word about the polarized variant
+ (here, it is safer to assume $p\neq 2$). One assumes 
+ that $\mathcal{B}_p$ is endowed with an involution $\ast$, and that
+ $L_p$ is autodual for an alternate $\Z_p$-bilinear form such that
+ $\an{bv,w}=\an{v,b^\ast w}$. Of course, here, $G_{\Q_p}$ denotes the algebraic
+ $\Q_p$-group of $B_p$-linear symplectic similitudes of $V_p$. One
+ assumes that $\ovl{\Lambda}$ is endowed with a $\ast$-polarization
+ \footnote{a $\ast$-polarization is a symmetric
+ $\mathcal{B}_p$-linear quasi-isogeny between the $p$-divisible and its
+ Serre dual, endowed with the transposed action of $\mathcal{B}_p$
+ twisted by $\ast$}, and modify $J$ to respect the polarization up to a
+ multiple in $\Q_p$.
+ 
+ \bigskip
+ The corresponding moduli problem is again representable by a formal
+ scheme with the same properties. This formal scheme has been conjectured to be flat by Rapoport-Zink; although this has been verified in many cases (\cf \eg \cite{gortz}), there are some counter-examples  (\cf  \cite{pappas}).
+\end{para}
+
+\begin{exa}[fake elliptic curves at a critical prime $p$]\label{exa:4.3.4}
+ Let us fix a indefinite quaternion algebra $B$
+ over $\Q$ and a maximal order $\mathcal{B}$ in $B$ (after Eichler, they
+ are all conjugate). A prime $p$ is called {\it critical} if it divides
+ the discriminant of $B$, \ie if $B_p=B\otimes_\Q \Q_p$ is the
+ (non-split) quaternion algebra over $\Q_p$. Note that $B_p$ then
+ contains copies of the unramified quadratic extension on $\Q_p$; we
+ denote by $\Q_{p^2}$ one of them. The maximal order (unique up to
+ conjugation) can be written $\mathcal{B}_p=\mathcal{B}\otimes
+ \Z_p=\Z_{p^2}[\Pi],\;\Pi^2=p,\;\Pi.a=a^\sigma\Pi$ for $a\in
+ \Z_{p^2}$. We fix a critical prime $p$.
+
+
+ We consider abelian surfaces with quaternionic multiplication by
+ $\mathcal{B}$. They are sometimes called ``{\it fake elliptic curves}''
+ \index{fake elliptic curves@fake elliptic curves}
+ because they share many features with elliptic curves, 
+ \cf \cite[III, 1]{updcds}.
+
+ We fix a fake elliptic curve $\ovl{A}$ over $\ovl{\F}_p$, and set
+ $\Lambda=\ovl{A}[p^\infty]$. This is a special formal
+ $\mathcal{B}_p$-modules of height $4$ in the following sense.
+
+ Let $S$ be in $\Nil_\mathfrak{v}$ (or else an inductive limit of such
+ schemes --- as a formal scheme), and let $\Lambda$ be a $p$-divisible
+ group over $S$. After Drinfeld, one says that $\Lambda$ is a {\it
+ special formal $\mathcal{B}_p$-modules of height $4$} if
+
+\begin{enumerate}
+ \item $\Lambda$ is infinitesimal ($\Lambda=\hat\Lambda$) of height
+       $h=4$,
+ \item $\mathcal{B}_p$ acts on $\Lambda$,
+ \item via this action, $\omega_\Lambda$ is a locally free
+       $(\Z_{p^2}\otimes_{\Z_p}\mathcal{O}_S)$-module of rank $1$.
+\end{enumerate}
+
+\noindent We take $V_p=B_p$ where $B_p$ acts by left
+multiplication. In this situation, $G_{\Q_p}\cong B_p^\times $. When
+$S=\Spec(\ovl{\F}_p)$, there is a unique class of
+$\mathcal{B}_p$-isogeny of special formal $\mathcal{B}_p$-modules of
+height $4$. The group $J$ of self-quasi-isogenies of a special formal
+$\mathcal{B}_p$-module of height $4$ is $J=GL_2(\Q_p)$. This can be
+easily read off the Dieudonn\'e module $\otimes\Q$.
+
+
+In this example, there is again a discrete invariant: the ``height'' of 
+the quasi-isogeny $\rho$, which amounts to the 
+$p$-adic valuation of the determinant of its image in $J$.
+Therefore 
+ \begin{equation*}
+ \mathfrak{M}=\coprod_{\Z}\;\mathfrak{M}^0
+\end{equation*}
+ is a disjoint sum of copies of a formal scheme $\mathfrak{M}^0$
+ which parametrizes deformations of the special formal module
+ $\hat{\ovl{\Lambda}}$. This formal scheme has been described by
+ Drinfeld, \cf \ref{para:6.3.4}.
+\end{exa}
+
+\begin{para}\label{para:4.3.5} This example and examples \ref{sub:4.2}
+ were the sources of the general theory. 
+
+\noindent Let us at once suggest a vague analogy with the
+archimedean situation --- especially \ref{para:1.1.4}, \ref{para:1.2.4} ---
+ which will become more 
+and more precise in the next sections: one can see the $p$-divisible
+group $\ovl{\Lambda}$ in characteristic $p$ (\resp $J$) as an analogue
+of the infinitesimal oriented real Lie group $\hat U$ (\resp $G(\R)^0$).
+    
+\newpage
+\section{$p$-adic period domains.}\label{sec:5}
+
+\begin{abst}
+ Review of $p$-adic symmetric domains and period domains via stability theory.
+\end{abst}
+\end{para}
+
+
+\subsection{$p$-adic flag spaces.}\label{sub:5.1}
+
+\begin{para}\label{para:5.1.1} We begin with the $p$-adic analogue of
+ the flag space $\mathcal{D}^\vee$ of \ref{para:1.2.3},
+ \ref{para:1.2.4}. In \ref{para:1.2.4}, this flag space parametrized the
+ lagrangian subspaces $F^1$ in the $\mathrm{H}_{\mathrm{DR}}^1$ of abelian
+ varieties of a certain type, marked by a fixed isomorphism
+ $\mathrm{H}_{\mathrm{DR}}^1\cong V^\C$.
+
+
+In the $p$-adic case, $\mathcal{D}^\vee$ will parametrize the Hodge
+filtration $F^1$ of Dieudonn\'e modules of $p$-divisible groups of a
+certain type (\ref{para:3.3.1}).
+\end{para}
+
+\begin{para}\label{para:5.1.2} More precisely, let us consider a moduli
+ problem for $p$-divisible groups as in \ref{sub:4.1}, possibly
+ decorated as in \ref{sub:4.3} (from which we follow the notation). The
+ decoration reflects on the 
+ Dieudonn\'e module $\D(\ovl{\Lambda})_\Q=\D(\ovl{\Lambda})\otimes \Q$:
+ one has an isomorphism of $B_p$-module (with symplectic structure, in
+ the polarized case):
+ \begin{equation*}
+  \D(\ovl{\Lambda})_\Q\cong
+   V_p\otimes_{\Q_p}\widehat{\Q_p^{\mathrm{ur}}}.
+ \end{equation*}
+ We fix such an isomorphism, and consider that
+ $G_{\Q_p}\otimes_{\Q_p}\widehat{\Q_p^{\mathrm{ur}}}$ acts on
+ $\D(\ovl{\Lambda})_\Q$. But $\D(\ovl{\Lambda})_\Q$ has an extra
+ structure: the $\sigma$-linear Frobenius automorphism. The group $J$ is
+ nothing but the {\it subgroup} of $G_{\Q_p}(\widehat{\Q_p^{\mathrm{ur}}})$ of
+ elements commuting with Frobenius.
+\end{para}
+
+\begin{para}\label{para:5.1.3} Let $\mathfrak{v}$ be the finite extension of
+ $W={\Z_p^{\mathrm{ur}}}$ considered in \ref{para:4.3.2} and let $K$ be its 
+ fraction field. We denote here by $F^1_0\subset V_p^{\C_p}=V_p\otimes
+ \C_p$ the $\C_p$-span of the space
+ $\omega_{\tilde{\ovl{\Lambda}}}\subset V_p\otimes_{\Q_p}K$ introduced in
+ \ref{para:4.3.2}. We set $G_{\C_p}=G_{\Q_p}\otimes_{\Q_p}\C_p$.
+
+ \noindent The flag variety $\mathcal{D}^\vee$ of all
+ $G_{\C_p}$-conjugates of $F^1_0$ in $V_p^{\C_p}=\D(\ovl{\Lambda})
+ \otimes_W\C_p$ is a homogeneous space 
+ \begin{equation*}
+  \mathcal{D}^\vee = P\backslash G_{\C_p}
+ \end{equation*}
+ for a suitable parabolic subgroup $P$. There is an
+ ample line bundle $\mathcal{L}$ on $\mathcal{D}^\vee$
+ which is homogeneous under the derived group $G_{\C_p}^{\mathrm{der}}$;
+ \index{000GCpder@$G_{\C_p}^{\mathrm{der}}$}
+ we denote by $\mathcal{D}^\vee \subset \P(W)$ an 
+ associated $G_{\C_p}^{\mathrm{der}}$-equivariant projective embedding (if
+ $G_{\C_p}=GL_{2g},\;\mathcal{D}^{\vee} = \Grass(g,2g)$, one 
+ can just take the $SL_{2g}$-equivariant Pl\"ucker embedding).
+
+ Note that, there is an obvious right action of $J$ on
+ $\mathcal{D}^{\vee}$, which factors through the adjoint group
+ $J^{\mathrm{ad}}:=\Im\bigl(J\rightarrow G_{\C_p}^{\mathrm{ad}}\bigr)$. 
+\end{para}
+
+\begin{para}\label{para:5.1.4} In our three basic examples (\ref{para:4.2.1}, \ref{para:4.2.2}, \ref{exa:4.3.4}), we
+have $G_{\C_p}=GL_2$, hence $\mathcal{D}^\vee=\P^1_{\C_p}$.    
+\end{para}
+
+
+\subsection{Symmetric domains via stability theory.}\label{sub:5.2}
+
+
+\begin{para}\label{para:5.2.1} In the $p$-adic case, one cannot define symmetric spaces by a positivity condition as in \ref{para:1.2.3}, \ref{para:1.2.4}.
+One uses instead the Hilbert-Mumford notion of semi-stability, following an idea of M. van der Put and H. Voskuil
+\cite{ssatsagoalf}. 
+
+
+\end{para}
+
+\begin{para}\label{para:5.2.2}
+ We set $J'=J\cap G_{\C_p}^{\mathrm{der}}$. This is
+ again the group of $\Q_p$-points of an algebraic group over $\Q_p$. Let
+ $T\cong ({\G_m}_{\Q_p})^j$ be a maximal $\Q_p$-split torus in $J'$. The
+ {\it semi-stable locus} of $\mathcal{D}^\vee$ with respect to $T$-action
+ is the open subset of points $x\in \mathcal{D}^\vee$ such that there is
+ a $T$-invariant function of $\P(W)$ which does not vanish on $x$.
+
+
+ One can check whether $x$ is semi-stable with respect to $T$ using the
+ Hilbert criterion: let $\lambda$ be any cocharacter (= one-parameter
+ subgroup) of $T$. By properness of $\mathcal{D}^\vee$, the map $z\in
+ \G_m\mapsto x.\lambda(z)\in \mathcal{D}^\vee$ extends to $\A^1$, \ie the
+ limit $\displaystyle x_0=\lim_{z\rightarrow 0} x.\lambda(z)$ exists. It
+ is clearly fixed by $\G_m$, thus the fiber $\mathcal{L}_{x_0 }$
+ corresponds to a character $z\mapsto z^{-\mu(x,\lambda)}$ of
+ $\G_m$. Then $x$ is semi-stable if and only if the Mumford invariant
+ $\mu(x,\lambda)$ is $\geq 0$ for every $\lambda$.
+\end{para}
+
+\begin{para}\label{para:5.2.3} One defines the {\it symmetric space
+ $\mathcal{D}$ to be the intersection of the semi-stable loci 
+ of $\mathcal{D}^\vee$ with respect to all maximal $\Q_p$-split tori $T$
+ in $J'$.} This is a $p$-adic manifold in the sense of
+ I.\ref{para:strict-analytic}.  It is
+ also called the {\it $p$-adic period domain} (associated with the moduli
+ problem).
+
+
+ Since $J$ acts on the set of tori $T$ by conjugation, it is clear that
+ $\mathcal{D}$ is stable under the $J$-action on $\mathcal{D}^{\vee}$.
+\end{para}
+
+ 
+\subsection{Examples.}\label{sub:5.3}
+
+\begin{para}\label{para:5.3.1} In our three basic examples, we have
+$G_{\C_p}=GL_2,\;\mathcal{D}^\vee=\P^1$.
+
+
+In example \ref{para:4.2.1}, $J'\subset J=(\G_m)^2$ is the one-dimensional torus
+$T$ with elements $(z^{-1},z)$. Its action on a point $x$ is by
+$z^2$-scaling; the limit point $x_0$ is always $0$, except if
+$x=\infty$. The only non-semi-stable point is $\infty$, hence
+$\mathcal{D}=\A^1$.
+
+
+
+In example \ref{para:4.2.2}, $J'=SL_1(B_p)\subset J=B_p^\times$. There is no
+ non-trivial $\Q_p$-split torus in $J'$, hence
+ $\mathcal{D}=\mathcal{D}^{\vee}=\P^1$.
+
+
+\end{para}
+
+\begin{para}\label{para:5.3.2} We now turn to example \ref{exa:4.3.4}. In this
+ example, $J=GL_2(\Q_p)$ and $J'=SL_2(\Q_p)$. All maximal 
+ $\Q_p$-split tori are conjugate $g^{-1}Tg$ of the above $T$. Therefore,
+ $\mathcal{D}=\P^1\setminus \bigcup \infty.g$ 
+ is the {\it Drinfeld space} over $\C_p$ 
+ \begin{equation*}
+  \mathcal{D}=\Omega_{\C_p} :=\P^1_{\C_p}\setminus \P^1(\Q_p)
+ \end{equation*} 
+
+ To be consistent, we consider the right action of
+ $PGL_2$-action on $\P^1$, which is deduced from the customary left 
+ action by the rule $x.g=g^{-1}.x$. 
+
+ The Drinfeld space is actually defined over $\Q_p$, \ie is a
+ $\Q_p$-analytic manifold $\Omega$. 
+ It is closely related to the {\it Bruhat-Tits tree}
+ $\mathcal{T}$ of $J^{\mathrm{ad}}=PGL_2(\Q_p)$. The vertices of this
+ tree correspond to closed discs in 
+ $\Q_p$; two such vertices are connected by an edge if for the
+ corresponding discs $\matheur{D}',\matheur{D}''$, one has
+ $\matheur{D}'\subset \matheur{D}''$ and the  
+ radius of $\matheur{D}''$ is $p$ times the radius of $\matheur{D}'$
+ (each vertex has $p+1$ 
+ neighbors). The group $PGL_2(\Q_p)$ acts on $\mathcal{T}$ (on 
+ the right, say).
+ \vspace*{5mm}
+ %%% PICTURE
+ \begin{figure}[h]
+%  \setlength{\unitlength}{1pt}
+  \begin{picture}(120,120)(0,0)
+   \put(0,0){\includegraphics[scale=0.5,keepaspectratio,clip]{fig2-5a.eps}}
+%   \put(100,50){\circle*{3}}
+%   \put(100,50){\line(0,1){20}}\put(100,70){\circle*{3}}
+%   \put(100,50){\line(2,-1){20}}\put(120,40){\circle*{3}}
+%   \put(100,50){\line(-2,-1){20}}\put(80,40){\circle*{3}}
+%   %
+%   \put(100,70){\line(2,1){12}}\put(112,76){\circle*{3}}
+%   \put(100,70){\line(-2,1){12}}\put(88,76){\circle*{3}}
+%   \put(120,40){\line(0,-1){12}}\put(120,28){\circle*{3}}
+%   \put(120,40){\line(2,1){12}}\put(132,46){\circle*{3}}
+%   \put(80,40){\line(0,-1){12}}\put(80,28){\circle*{3}}
+%   \put(80,40){\line(-2,1){12}}\put(68,46){\circle*{3}}
+%   %
+%   \multiput(112,76)(0,4){3}{\circle*{.3}}
+%   \multiput(112,76)(4,-2){3}{\circle*{.3}}
+%   \multiput(88,76)(0,4){3}{\circle*{.3}}
+%   \multiput(88,76)(-4,-2){3}{\circle*{.3}}
+%   \multiput(120,28)(4,-2){3}{\circle*{.3}}
+%   \multiput(120,28)(-4,-2){3}{\circle*{.3}}
+%   \multiput(132,46)(0,4){3}{\circle*{.3}}
+%   \multiput(132,46)(4,-2){3}{\circle*{.3}}
+%   \multiput(80,28)(4,-2){3}{\circle*{.3}}
+%   \multiput(80,28)(-4,-2){3}{\circle*{.3}}
+%   \multiput(68,46)(0,4){3}{\circle*{.3}}
+%   \multiput(68,46)(-4,-2){3}{\circle*{.3}}
+  \end{picture}\vspace{-1ex}
+%  \setlength{\unitlength}{1.5pt}
+  \caption{$\mathcal{T}$ for $p=2$}
+  \label{fig-bruhat-tits}
+ \end{figure}
+
+ For any disc $\matheur{D}$ centered in $\Q_p$, let $\eta_\matheur{D}$
+ denote its Berkovich 
+ ``generic point'' (which is a point in Berkovich's affine line $\A^1$
+ over $\Q_p$). Then the geometric realization of 
+ $\mathcal{T}$ may be identified with the closed subset 
+ \begin{equation*}
+  |\mathcal{T}|= \{\eta_{\matheur{D}(a,r^+)} \mid a\in \Q_p,\;0<r<\infty\}
+  \,\subset \,\Omega
+ \end{equation*}
+ (a $PGL_2(\Q_p)$-equivariant embedding), and the set of vertices with
+ the subset 
+\begin{equation*}
+ \mathrm{ver}\, \mathcal{T}=
+  \{\eta_{\matheur{D}(a,r^+)} \mid a\in \Q_p,\;r\in p^\Z\}\, \subset
+  \,|\mathcal{T}| 
+\end{equation*}
+ According to Berkovich, $|\mathcal{T}|$ is a retract of $\Omega$
+ \cite{staagonf}; in particular, $\Omega$ is simply connected.
+
+ On the other hand, $\Omega$ is the generic fiber of a $p$-adic formal
+ scheme $\hat\Omega$ whose reduction modulo $p$ is an 
+ infinite tree of projective lines, with dual graph $\mathcal{T}$ (\cf
+ \cite[I]{updcds}).
+
+
+ The Drinfeld space $\Omega$ is a $p$-adic analogue of the Poincar\'e
+ double half-plane $\P^1_{\C}\setminus \P^1(\R)$. Note that the latter
+ space could also be defined using stability, in the same way (with
+ $J'=SL_2(\R)$).  Another similarity: according to \cite{staagonf},
+ there is a $PGL_2(\Q_p)$-invariant metric on $\Omega$ (which 
+ extends the standard metric on $|\mathcal{T}|$). 
+\end{para}
+
+
+\newpage
+\section{The $p$-adic period mapping and the Gauss-Manin connection.}
+\label{sec:6}
+
+\begin{abst}
+ Rapoport-Zink's period mapping as classifying map for the Hodge
+ filtration in the Dieudonn\'e module. Basic properties: equivariance,
+ \'etaleness. Its relation to the Gauss-Manin connection. Examples and
+ formulas.
+\end{abst}
+
+\subsection{Construction.}\label{sub:6.1} 
+
+\begin{para}\label{para:6.1.1} The construction of the $p$-adic period
+ mapping is parallel to the complex case: one 
+ attaches to a point $s\in \mathcal{M}$ representing a pair $(\Lambda,
+ \rho)$ the point $\mathcal{P}(s)$ of $\mathcal{D}^\vee$ 
+which parametrizes the notch $F^1$ of the Hodge filtration of the
+ Dieudonn\'e module of $\Lambda$. The idea of the construction is
+ already present in Grothendieck's talk
+ \cite{grothendieck70:_group_barsot_tate}.
+\end{para}
+
+\begin{para}\label{para:6.1.2} More precisely, notation being as in
+ \ref{para:4.1.1}--\ref{para:4.3.1}, let us consider the universal object 
+ $(\udl{\Lambda},\udl{\rho})$ on the moduli formal scheme
+ $\mathfrak{M}$, and the Dieudonn\'e crystal $\D(\udl{\Lambda})$. Its
+ evaluation $\D(\udl{\Lambda})_{\mathfrak{M}}$ on $\mathfrak{M}$ is a
+ vector bundle on $\mathfrak{M}$.
+\end{para}
+
+\begin{lem}\label{lem:6.1.3} The quasi-isogeny $\udl{\rho}$ induces a
+ trivialization of the associated analytic vector bundle on
+$\mathcal{M}={\mathfrak{M}}^{\mathrm{an}}_{\C_p} $:
+\begin{equation*}
+ (\D(\udl{\Lambda})_{\mathfrak{M}})^{\mathrm{an}}\cong
+ V_p^{\C_p}\otimes_{\C_p}\mathcal{O}_\mathcal{M}
+\end{equation*}
+
+
+\end{lem}
+
+\begin{proof}
+ $\rho$ is a quasi-isogeny between $\udl{\Lambda}
+ \times_{\mathfrak{M}}{\mathfrak{M}}_{\mathrm{red}}$ and
+ $\ovl{\Lambda}\times_{\ovl{\F}_p}{\mathfrak{M}}_{\mathrm{red}}$. According to
+ \ref{para:3.6.7} (i), by the rigidity of convergent isocrystals, it induces a
+ canonical isomorphism $(\D(\udl{\Lambda})_{\mathfrak{M}})^{\mathrm{an}}\cong
+ \bigl(\D(\ovl{\Lambda}\times_{\ovl{\F}_p}
+ {\mathfrak{M}}_{\mathrm{red}})_{\mathfrak{M}}\bigr)^{\mathrm{an}}.$
+ On the other hand, since the formation of $\D(\Lambda)$ commutes with
+ base change (\ref{para:3.2.2}), we have
+ \begin{equation*}
+ \bigl(\D(\ovl{\Lambda}\times_{\ovl{\F}_p}
+ {\mathfrak{M}}_{\mathrm{red}})_{\mathfrak{M}}\bigr)^{\mathrm{an}} =
+ \D(\ovl{\Lambda})\otimes_W 
+ \mathcal{O}_\mathcal{M}=V_p\otimes_{\Q_p}\mathcal{O}_\mathcal{M}.
+ \end{equation*}
+\end{proof}
+
+\begin{para}\label{para:6.1.4}
+ On the other hand, we have a locally direct summand
+ $F^1=(\omega_{\udl{\Lambda}})^{\mathrm{an}}$ in
+ $(\D(\udl{\Lambda})_{\mathfrak{M}})^{\mathrm{an}}\cong
+ V_p\otimes_{\Q_p}\mathcal{O}_\mathcal{M}$ (\ref{para:3.3.1}). This
+ determines an 
+ $\mathcal{M}$-point of the flag space $\mathcal{D}^\vee$, \ie an
+ analytic mapping 
+ \begin{equation*}
+  \mathcal{P}:\mathcal{M}\;\longrightarrow \;\mathcal{D}^\vee
+ \end{equation*}
+
+ This is called the {\it period mapping} for the moduli problem
+ (decorated or not). It is clear from the construction that $\mathcal{P}$ is
+ $J$-{\it equivariant}.
+
+
+ If $\mathcal{M}^0$ is any connected component of $\mathcal{M}$, it is
+ stable under $J'\subset J$, hence the induced period mapping
+ $\mathcal{P}:\;\mathcal{M}^0\;\longrightarrow \;\mathcal{D}^\vee\;$ is
+ $J'$-equivariant (the $J'$-action factors through ${J'}^{\mathrm{ad}}$).
+\end{para}
+
+\subsection{Properties.}\label{sub:6.2}  
+
+\begin{thm}\label{thm:6.2.1} The period mapping $\mathcal{P}$ is etale. Its image lies in the period domain $\mathcal{D}$. 
+
+
+\end{thm}
+The first assertion reduces, via an infinitesimal criterion of
+etaleness, to the ``essential surjectivity part'' of the
+Grothendieck-Messing theorem (\ref{thm:3.3.3}), in the case of an ideal
+of square zero, \cf \cite[5.17]{psfpg}.  It corresponds to what is called
+the ``local Torelli property'' in the complex case.
+
+
+The second assertion is a
+consequence of a theorem of B. Totaro on the equivalence of semi-stability and ``weak admissibility'' \cite{tpipht}.
+The second assertion may be viewed as a
+$p$-adic analogue of the ``Riemann relations'' (\ref{para:1.1.3}).
+
+\begin{cor}\label{cor:6.2.2} $\mathcal{M}$ is smooth, and any component
+ $\mathcal{M}^0$ is a connected $p$-adic manifold in the sense of
+ I.\ref{para:p-adic-manifold}.
+\end{cor}
+\begin{para}\label{para:6.2.3}
+ It is very likely that $\mathcal{P}$, viewed as a mapping
+ $\mathcal{M}\rightarrow \mathcal{D}$, is surjective.  This is closely
+ related to Fontaine's conjecture on the realizability of filtered
+ Dieudonn\'e modules by $p$-divisible groups. Although recent work by
+ C. Breuil \cite{breuil99:_repres}, \cite{breuil00:_group} settles the
+ Fontaine conjecture at least for 
+ finite residue fields of characteristic $\neq 2$ (and in other cases),
+ it is not clear to the author to which extent the surjectivity
+ conjecture is now established.
+
+
+ On the other hand, the fibers of the period mapping are relatively
+ well-understood, \cf \cite[5.37]{psfpg}. 
+\end{para}
+
+\begin{para}\label{para:6.2.4}
+ The argument in the proof of \ref{lem:6.1.3} shows a little more. Recall from
+ \ref{para:3.6.7} (ii) that the analytic vector bundle
+ $(\D(\udl{\Lambda})_{\mathfrak{M}})^{\mathrm{an}}$ on $\mathcal{M}$ comes
+ together with an integrable connection $\nabla_{\mathrm{GM}}$ (the Gauss-Manin
+ connection).
+\end{para}
+
+ \begin{lem}\label{lem:6.2.5} The trivialization 
+  \begin{equation*}
+   (\D(\udl{\Lambda})_{\mathfrak{M}})^{\mathrm{an}}\cong
+   V_p^{\C_p}\otimes_{\C_p}\mathcal{O}_\mathcal{M}
+  \end{equation*}
+  of \ref{lem:6.1.3} induces a trivialization of the Gauss-Manin connection:  
+  \begin{equation*}
+   \bigl(
+    (\D(\udl{\Lambda})_{\mathfrak{M}})^{\mathrm{an}}
+    \bigr)^{\nabla_{\mathrm{GM}}} 
+    \cong V_p^{\C_p}.
+  \end{equation*}
+
+  The point is that the convergent isocrystal
+  $\D(\Lambda\times_{\mathfrak{M}}{\mathfrak{M}}_{\mathrm{red}})$ is constant, 
+  since it comes by base change, from $\D(\ovl{\Lambda})_\Q$.
+ \end{lem}
+ This useful lemma will allow us to give explicit expression of the
+ period mapping in terms of quotients of solutions of differential
+ equations, as in the complex case. 
+
+
+\subsection{Examples and formulas.}\label{sub:6.3} 
+
+\begin{para}\label{para:6.3.1} We start with example \ref{para:4.1.1}
+ ($p$-divisible groups of elliptic curves with ordinary reduction).
+ The extension
+ \begin{equation*}
+  1\rightarrow {\hat\G_m}\rightarrow \Lambda\rightarrow \Q_p/\Z_p\rightarrow 1
+ \end{equation*}
+ parametrized by $q\in 1+pW$ gives rise, by contravariance, to an
+ extension of Dieudonn\'e modules (\cf \ref{para:3.1.1}) 
+ \begin{equation*}
+  0\rightarrow W\rightarrow \D(\Lambda)\rightarrow W(-1)\rightarrow 0
+ \end{equation*}
+ which splits canonically due to the rigidity of Dieudonn\'e crystals:
+ $\D(\Lambda)=\D(\ovl{\Lambda})=W\oplus W(-1)$.  We denote by
+ $e_0,e_{-1}$ the corresponding canonical basis of $\D(\Lambda)$. The
+ image $\tau=\mathcal{P}(q)\in W[\frac{1}{p}]$ of $q$ under the period
+ mapping is, by definition, the unique element such that $\tau
+ e_0+e_{-1}$ generates $F^1$. It turns out that
+ \begin{equation*}
+  \tau=\log q,
+ \end{equation*} 
+ thus
+ \begin{equation*}
+  \mathcal{M}^0=\matheur{D}(1,1^-)
+  \xrightarrow{\mathcal{P}=\log} \A^1 =\mathcal{D}.
+ \end{equation*}
+
+ Let us indicate a sketch of proof of this remarkable formula (the
+ formula goes back to Messing-Katz \cite{q}, \cite{slm}).  The argument
+ is more transparent if 
+ we think in terms of one-motives instead of elliptic curves: that is,
+ rather than viewing $\Lambda$ as the $p$-divisible attached to some
+ elliptic curve over $W$, one remarks that it is also the $p$-divisible
+ group attached to the one-motive $M=[\Z
+ \xrightarrow{1\mapsto q} \G_m]$. Then $\D(\Lambda)$ can be identified
+ with $H_{\mathrm{DR}}(M)$, the dual of the Lie algebra of $G^\natural$, where
+ $[\Z \rightarrow G^\natural]$ denotes the universal vectorial extension
+ of $M$ (\cf \cite{tdh3}); this extension splits canonically
+ ($G^\natural=\G_a\times \G_m$), and this splitting agrees with the
+ above splitting of $\D(\Lambda)$. We are thus reduced to prove the
+ following purely algebraic fact: let us view $M=[\Z
+ \xrightarrow{1\mapsto q} \G_m]$ as a
+ one-motive over $K((q-1))$; then in terms of the canonical basis
+ $e_0,e_{-1}$ of $H_{\mathrm{DR}}(M)$, $F^1\subset
+ H_{\mathrm{DR}}(M)$ is generated by the 
+ vector $(\log q)e_0+e_{-1}$. This well-known fact is easily proved by
+ transcendental means, replacing $K$ by $\C$.
+\end{para}
+
+\begin{para}\label{para:6.3.2} Since the basis $e_0,e_{-1}$ is horizontal
+ under the Gauss-Manin connection $\nabla$ on $\matheur{D}(1,1^-)\;$ 
+ (\ref{lem:6.2.5})\footnote{which is induced by the usual Gauss-Manin
+ connection attached to the Legendre elliptic pencil, \cf
+ \ref{para:3.6.6} (ii).}, $\tau$ is a quotient 
+ of solutions of the Gauss-Manin connection. In terms of the Legendre
+ parameter $z=\lambda$ (around the parameter $\zeta_{\mathrm{can}}$ of the
+ canonical lifting $A_{\mathrm{can}}$ of the fixed ordinary elliptic curve
+ $\ovl{A}$), the equality $\tau = \log q$ means that $q\in
+ 1+(z-\zeta_{\mathrm{can}})W[[z-\zeta_{\mathrm{can}}]]$ is the
+ Dwork-Serre-Tate parameter 
+ discussed in I.\ref{sub-serre-tate-para} (for $p\neq 2$).
+
+
+ This allows to give explicit formulas for $\mathcal{P}$ as a function
+ of the algebraic parameter $z$ rather than $q$. For instance, let us
+ assume that $p\equiv 1\;(4)$. The disc $| z-\frac{1}{2}| <1$ is
+ an ordinary disc. The canonical lifting is $\zeta_{\mathrm{can}}=\frac{1}{2}$
+ (complex multiplication by $\Z[\sqrt{-1}]$).  The Gauss-Manin
+ connection is represented by the hypergeometric differential operator
+ with parameter $(\frac{1}{2},\frac{1}{2},1)$.  Let us recall the
+ setting, which we have already met in I.\ref{para-supersingular-disk}.
+
+ We consider the symplectic basis $\omega_1=\bigl[\frac{dx}{2y}\bigr],\;
+ \omega_2=\bigl[\frac{(2x-1)dx}{4y}\bigr]$ of relative De Rham
+ cohomology.  It has 
+ the virtue to be, at $z=\frac{1}{2}$, a basis of eigenvectors for the
+ complex multiplication. The Gauss-Manin connection satisfies
+ \begin{equation*}
+  \omega_2=2z(z-1)\nabla\Bigl(\frac{d}{dz}\Bigr)\omega_1 +
+  \frac{4z-5}{6}\;\omega_1.
+ \end{equation*} 
+ The first row of the
+ solution matrix $Y$ normalized by $Y\bigl(\frac{1}{2}\bigr)=\id$ is given by
+ \begin{align*}
+  y_{11} &=
+  F\Bigl(\frac{1}{4},\frac{1}{4},\frac{1}{2};(1-2z)^2\Bigr) +
+  \frac{1}{2}(1-2z)F\Bigl(\frac{3}{4},\frac{3}{4},\frac{3}{2};(1-2z)^2\Bigr),\\
+  y_{12} &=
+  (1-2z)F\Bigl(\frac{3}{4},\frac{3}{4},\frac{3}{2};(1-2z)^2\Bigr).
+ \end{align*}
+ We have to relate ${\omega_1}_{|_{1/2}},\;
+ {\omega_2}_{|_{1/2}}$ to the symplectic basis $e_0,e_{-1}$. Because
+ $z=1/2$ gives the canonical lifting, the canonical splitting of the
+ Dieudonn\'e module is given by the complex multiplication: $e_0,e_{-1}$
+ is a basis of eigenvectors. In fact, taking into account the fact that
+ we deal with symplectic bases, we find
+ \begin{equation*}
+  {\omega_1}_{|_{1/2}}=\frac{\Theta}{2}e_{-1},\quad
+   {\omega_2}_{|_{1/2}}=\frac{2}{\Theta}e_0,
+ \end{equation*}
+ where $\Theta\in W^\times$ denotes the Tate constant
+ (for $z=\frac{1}{2}$) discussed in I.\ref{para-tate-para},
+ \ref{sub-computation}. (the ambiguity --- by a 
+ factor in $\Z_p^\times$ --- is removed since the basis $e_0,e_{-1}$ has 
+ been fixed).  The period mapping $\tau=\tau(z)$ is given by the quotient
+ of the entries in the first row of the matrix
+ $Y.\begin{pmatrix}
+     {\Theta/2}&0\\
+     0&{2/\Theta}
+    \end{pmatrix}$, that is to say:
+ \begin{equation*}
+  \tau(z)=\Bigl(\frac{\Theta^2}{4}\Bigr)\frac{(1-2z)F(\frac{3}{4},\frac{3}{4},
+   \frac{3}{2};(1-2z)^2)}{F(\frac{1}{4},\frac{1}{4},
+   \frac{1}{2};(1-2z)^2)+\frac{1}{2}(1-2z)F(\frac{3}{4},
+   \frac{3}{4},\frac{3}{2};(1-2z)^2)}
+ \end{equation*}
+ 
+ Note that since the target of the period mapping is $\A^1$, the
+ denominator does not vanish on $\matheur{D}(\frac{1}{2},1^-)$. Note
+ also that, in 
+ analytic terms, the etaleness of $\mathcal{P}$ (\ref{thm:6.2.1}) reflects the
+ fact that $\frac{d\tau}{dz}$ does not vanish, being the quotient of
+ linearly independent solutions of a linear differential equation of
+ rank two.
+\end{para}
+
+\begin{para}\label{para:6.3.3}
+ We now turn to example \ref{thm:4.1.2} ($p$-divisible groups of
+ elliptic curves with supersingular reduction).  In this case, the period
+ mapping 
+ \begin{equation*}
+  \mathcal{M}^0\cong \matheur{D}(0,1^-) \xrightarrow{\mathcal{P}}
+  \P^1=\mathcal{D} 
+ \end{equation*}
+ was thoroughly investigated by Gross-Hopkins
+ \cite{gross94:_equiv_lubin_tate}, \cite{trapmlsasht}. 
+ In the special case considered in \ref{thm:4.1.2}. ii)
+ (the fixed supersingular elliptic curve $\ovl{A}$ being defined over
+ $\ovl{\F}_p$), they obtained the following formula
+ \begin{equation*}
+  \mathcal{P}(t)= \lim_{n\rightarrow \infty}
+  p^{n}b_{2n}(t)/p^{n+1}b_{2n+1}(t) \in \Q_p[[t]]
+ \end{equation*}
+ and a closed formula was proposed by J. K. Yu in \cite[11]{Yu95}.
+
+ \noindent In terms of the algebraic Legendre parameter
+ $z=\lambda$ in a supersingular disc, it is still true, via
+ \ref{lem:6.2.5}, that 
+ $\tau=\mathcal{P}(z)$ is a quotient of solutions of the Gauss-Manin
+ connection. This allows to give explicit formulas for $\mathcal{P}$ as a
+ function of the algebraic parameter $z$. For instance, let us assume
+ that $p\equiv 3\;(4)$. The disc $| z-\frac{1}{2}| <1$ is a
+ supersingular disc. In terms of a symplectic basis of eigenvectors for
+ the action of $[\sqrt{-1}]$ on $V_p^{\C_p}$, we get the following
+ formula for the Gross-Hopkins period mapping
+ \begin{equation*}
+  \tau(z)=\kappa\;\frac{(1-2z)
+   F\bigl(\frac{3}{4},\frac{3}{4},\frac{3}{2};(1-2z)^2\bigr)}
+   {F\bigl(\frac{1}{4},\frac{1}{4},\frac{1}{2};(1-2z)^2\bigr)
+   +\frac{1}{2}(1-2z)F\bigl(\frac{3}{4},\frac{3}{4},\frac{3}{2};(1-2z)^2\bigr)}
+ \end{equation*}
+ where $\kappa$ is a constant depending on the choice of the basis (a
+ natural choice would be to take this basis inside the $p$-adic Betti
+ lattice discussed in I.\ref{sub-p-adic-betti-lattice-supersing}; the
+ corresponding constant $\kappa$ is then the one occuring in the proof
+ of I.\thmref{thm-cm-period}.
+
+
+ Note that since the target of the period mapping is $\P^1$, the
+ denominator vanishes somewhere on $\matheur{D}(\frac{1}{2},1^-)$. 
+ \par\noindent Note also that the period mapping in the complex
+ situation\footnote{for the Legendre elliptic
+ pencil, and computed with help of a basis of cycles --- with coefficients
+ in the Gauss integers --- which are eigenvectors for complex
+ multiplication at z=1/2.} is given, up to a constant factor, by
+ {\it the same hypergeometric formula, viewed as a complex analytic function}. 
+\end{para}
+
+\begin{para}\label{para:6.3.4}
+ At last, let us turn to example \ref{exa:4.3.4} ($p$-divisible groups of fake
+ elliptic curves at a critical prime $p$). In this case, the period mapping 
+ \begin{equation*}
+  \mathcal{M}^0 \xrightarrow{\mathcal{P}}\Omega_{\C_p} =\mathcal{D}
+ \end{equation*}
+ is an {\it isomorphism}. This is a reinterpretation
+ of Drinfeld's work, \cf \cite{psfpg} (and \cite[II8]{updcds}). Actually,
+ Drinfeld establishes an isomorphism at the level of formal schemes 
+ \begin{equation*}
+  {\mathfrak{M}}^0 \cong \hat{\Omega}\,
+  \hat\otimes_{\Z_p}\widehat{\Z_p^{\mathrm{ur}}}
+ \end{equation*}
+ which is $J^1$-equivariant (where $J^1$ denotes the
+ image in $J^{\mathrm{ad}}=PGL_2(\Q_p)$ of the elements of $J$ whose
+ determinant is a $p$-adic unit).
+\end{para}
+
+\begin{para}\label{para:6.3.5} Recall that the $p$-adic manifold
+ $\Omega_{\C_p}$ is simply connected (in the usual topological
+ sense). However, the above isomorphism and the modular property of
+ $\mathfrak{M}$, allowed Drinfeld to construct a tower of finite etale
+ connected Galois coverings of $\Omega_{\C_p}$ (or even of
+ $\Omega_{\widehat{\Q_p^{\mathrm{ur}}}}$), as follows.
+
+
+ One considers the universal special formal module $\udl{\Lambda}$ of
+ height $4$ over
+ $\mathfrak{M}^0\cong\;\hat\Omega\;\hat\otimes\widehat{\Z_p^{\mathrm{ur}}}$. For
+ any $n\geq 1$, $\Ker[p^n]$ is a finite locally free formal group scheme
+ of rank $p^{4n}$ over
+ $\hat\Omega\;\hat\otimes\widehat{\Z_p^{\mathrm{ur}}}$. This gives rise to a
+ finite etale covering of the analytic space
+ $\Omega_{\widehat{\Q_p^{\mathrm{ur}}}}$ (fibered in rank-one
+ $\mathcal{B}_p/p^n\mathcal{B}_p$-modules).
+
+
+ To get a connected Galois covering, one looks at the $\Pi$-action
+ (recall from \ref{exa:4.3.4} that $\mathcal{B}_p=\Z_{p^2}[\Pi],\;\Pi^2=p$): one
+ has $\Ker[p^n]=\Ker[\Pi^{2n}]$, and the complement of $\Ker[\Pi^{2n-1}]$
+ in $\Ker[\Pi^{2n}]$ provides a finite etale Galois covering $\Sigma^n$
+ of $\Omega_{\widehat{\Q_p^{\mathrm{ur}}}}$ with group
+ $(\mathcal{B}_p/p^n\mathcal{B}_p)^\times$. When $n$ grows, these form a
+ projective system of Galois coverings (with Galois group the profinite
+ completion of $\mathcal{B}_p^\times$). This tower is equivariant with
+ respect to the $GL_2(\Q_p)$-action.
+
+ Over $\C_p$, $\Sigma^n$ decomposes into finitely many copies of
+ a connected $p$-adic manifold $\Upsilon^n$ which is a finite etale
+ Galois covering of $\Omega_{\C_p}$ with group
+ $SL_1(\mathcal{B}_p/p^n\mathcal{B}_p)$.  This can be seen either by
+ using various maximal commutative $\Q_p$-subalgebras of $B_p$ and
+ reasoning as in \cite[1.4.6]{varshavsky98:_shimur}, or by global means, using the
+ \v{C}erednik-Drinfeld theorem (\ref{para:7.4.7}), or else by the
+ properties of the so-called determinant map \cite[II]{tpuosc}.
+
+
+Up to now, there is no other method for constructing non-abelian finite
+etale coverings of $\Omega_{\C_p}$. The coverings $\Upsilon^n$ remain
+rather mysterious: are they simply-connected? Is any connected finite
+etale covering of $\Omega_{\C_p}$ a quotient of some $\Upsilon^n$? Does
+there exist an infinite etale Galois covering of analytic manifolds
+$\Upsilon\rightarrow \Omega_{\C_p}$ with Galois group
+$SL_1(\mathcal{B}_p)$?
+
+
+Drinfeld's construction works for any $GL_n$ over any local field $L$,
+replacing $\Omega$ by the complement ${}_L\Omega^{(n-1)}$ of
+$L$-rational hyperplanes in $\P^{n-1}$.
+
+
+\subsection{De Jong's viewpoint on $p$-adic period mappings.}\label{sub:6.4}
+
+ J. de Jong \cite{efgonas} has proposed an interpretation of the
+ period mapping which clarifies a lot the nature of its fibers. We
+ briefly present this interpretation under the following mild simplifying
+ assumption:
+
+\begin{itemize}
+ \item[$\ast$] that there is a family of 
+ affinoid domains $(X_i)$ of $\mathcal{M}^0$ such that the
+ $\mathcal{P}(X_i)$ (which are finite unions of affinoid domains in
+ $\mathcal{D}$ since
+ $\mathcal{P}$ is etale) form an admissible covering of $\mathcal{D}$. 
+\end{itemize}
+
+This assumption is fulfilled in our three basic examples (but not
+always, \cf \cite[5.53]{psfpg}).
+
+ Under $(\ast)$, De Jong shows (\loccit\footnote{of course
+ $p=\ell$ throughout \S\S  6 and 7 of \loccit }, intr. and \ref{sub:7.2}) that
+ there is an etale local system of 
+ $\Q_p$-spaces $\mathcal{V}$ on $\mathcal{D}$ such that
+ $\mathcal{M}^0$ is a component of the space of
+ $\Z_p$-lattices in $\mathcal{V}$. Here, an ``etale local system
+ of $\Q_p$-spaces'' is given by the data
+ \begin{equation*}
+  \mathcal{V}=(\{U_i\hookrightarrow \mathcal{D}\}, \mathcal{V}_i, \phi_{ij})
+ \end{equation*}
+ where $U_i\hookrightarrow \mathcal{D}$ are open immersions,
+ $\mathcal{V}_i=\underset{n}{\limproj}
+ \;\mathcal{V}_i/p^n\mathcal{V}_i$ are etale local systems of
+ $\Z_p$-lattices (each $\mathcal{V}_i/p^n\mathcal{V}_i$ being a finite
+ locally free sheaf of $\Z/p^n\Z$-modules on the etale site of $U_i$),
+ and $ \phi_{ij}: (\mathcal{V}_i\otimes \Q_p)_{|
+ U_i\times_\mathcal{D}U_j} \rightarrow (\mathcal{V}_j\otimes \Q_p)_{|
+ U_i\times_\mathcal{D}U_j} $ are isomorphisms satisfying the usual
+ cocycle condition (\cf \cite[4]{efgonas}).
+
+
+ Of course, in the ``decorated case'', $\mathcal{V}$ inherits the
+ relevant decoration.
+
+ It follows from this interpretation that in example \ref{thm:4.1.2}, the
+ fibers of the period mapping are in natural bijection with the set of
+ vertices of the Bruhat-Tits tree $\mathcal{T}$.
+
+ Similarly, in example \ref{exa:4.3.4}, one can see that the fibers of
+ $\mathcal{P}$ are in bijection with the 
+ one-point set $SL_1(B_p)/SL_1(\mathcal{B}_p)$, \cf \ref{para:7.4.4}.
+\end{para}
+
+\newpage
+\section{$p$-adic uniformization of Shimura varieties.}\label{sec:7}
+
+\begin{abst}
+ Application of the theory of $p$-adic period mappings: Rapoport-Zink's
+ $p$-adic uniformization theorem. The case of global uniformization.
+ \v{C}erednik-Drinfeld uniformization of Shimura curves and
+ other examples.
+\end{abst}
+
+\subsection{$p$-integral models of Shimura varieties.}\label{sub:7.1}
+
+\begin{para}\label{para:7.1.1} Let $\Sh$ be a Shimura variety of PEL type as
+ in \ref{para:1.1.4}. We recall the setting of \ref{para:1.1.4}: $B$ is
+ a simple finite-dimensional $\Q$-algebra, with a positive involution
+ $\ast$, $V$ is a $B$-module 
+ of finite type, endowed with an alternate $\Q$-bilinear form such that
+ $\an{bv,w}=\an{v,b^\ast w}$; 
+ $G$ denotes the $\Q$-group of
+ $B$-linear symplectic similitudes of $V$; $\mathcal{B}$ is a maximal
+ order in $B$ stable under $\ast$, and 
+ $L$ is a lattice in $V$, stable under $\mathcal{B}$ and autodual for
+ $\an{\;,\;}$.
+
+ The (non-connected) Shimura variety $\Sh$ is defined over the reflex
+ field $E$ (which is a number field in $\C$).  There are variants of
+ $\Sh$ in which the principal congruence subgroup of level $N$ of
+ $G(\hat\Z)$ is replaced by any open compact subgroup $C$ of $G(\A_f)$,
+ where $\A_f=\hat\Z\otimes \Q$ is the ring of finite adeles of $\Q$. The
+ complex points of $\Sh$ admit the following adelic description
+\begin{equation*}
+\Sh(\C)=C\backslash \bigl((G(\R)^{\mathrm{ad}}.h_0) \times G(\A_f)\bigr) /G(\Q)
+\end{equation*}
+(\cf \ref{para:1.2.4} about the one-parameter group $h_0$). 
+\end{para}
+
+\begin{para}\label{para:7.1.2} We set $B_p=B\otimes_{\Q}
+ \Q_p,\;\mathcal{B}_p=\mathcal{B}\otimes_\Z \Z_p,$ and so on. We denote
+ by $C_p$ the stabilizer of $L_p$ in $G(\Q_p)$
+
+ {\it We assume that $C$ is of the form $C^pC_p$} for some open compact
+ subgroup $C^p$ of $G(\A_f^p)$, where $\A_f^p=(\prod_{\ell\neq
+ p} \Z_\ell)\otimes \Q$. 
+
+
+ In the case of a congruence subgroup of level $N$, this condition means
+ that {\it the level is prime to $p$}. 
+
+ We fix an embedding $v: E\hookrightarrow
+ \C_p$, denote by $E_v$ the $v$-completion of $E$, by $\mathfrak{v}$ the
+ discrete valuation ring
+ $\widehat{\Z^{\mathrm{ur}}}.\mathcal{O}_{E_v}=
+ \widehat{\Z^{\mathrm{ur}}}.\mathcal{O}_E$ 
+ (compositum in $\C_p$), and by $K$ the fraction field of $\mathfrak{v}$.
+\end{para}
+
+\begin{para}\label{para:7.1.3} Let $S$ be a scheme. The objects of the the
+ category of $S$-abelian schemes {\it up to prime to $p$ 
+isogeny} are the abelian schemes over $S$; morphisms between $A $ and
+$A'$ are global sections of $ \udl{\Hom}_S(A, A')\otimes_{\Z}\Z_{(p)}$,
+where $\Z_{(p)}$ is the ring of rational numbers with denominator prime
+to $p$. This is a $\Z_{(p)}$-linear category. Its relation to
+$p$-divisible groups is given by the following elementary lemma:
+\end{para}
+
+\begin{lem}\label{lem:7.1.4} The faithful functor $A\mapsto A[p^\infty]$
+\begin{equation*}
+ \{\text{$S$-abelian schemes up to prime to $p$
+  isogeny}\}\rightarrow \{\text{$p$-divisible groups over $S$}\}
+\end{equation*}
+is conservative, \ie reflects isomorphisms.
+ 
+
+
+\end{lem}
+The following result (which we state in a rather vague manner) is due to
+R. Kottwitz \cite{possvoff} (Compare with \ref{para:1.2.4}.).
+
+\begin{pro}\label{pro:7.1.5}
+ For sufficiently small $C^p$, there is a moduli scheme $\Sh$ over
+ $\mathcal{O}_{E_v}$ for isomorphism classes of abelian 
+ varieties $A$ up to prime to $p$ isogeny, with $\mathcal{B}$-action 
+ (with Shimura type condition), together with a $\Q$-homogeneous
+ principal $\ast$-polarization and a class of $B$-linear symplectic
+ similitudes $\mathrm{H}^1_{\mathrm{et}}(A,\A_f^p)\rightarrow \A_f^p\otimes V$
+ modulo the group $C^p$. The generic fiber $\Sh
+ \otimes_{\mathcal{O}_{E_v}}E_v$ is a finite sum of copies of
+ $\Sh\otimes_E {E_v}$.
+\end{pro}
+
+In the case of a congruence subgroup of level $N$, this condition that
+$C^p$ is sufficiently small means that $N$ is sufficiently large (and
+kept prime to $p$).
+
+\subsection{The uniformization theorem.}\label{sub:7.2}
+
+\begin{para}\label{para:7.2.1}
+ One fixes a point of $\Sh(\ovl{\F}_p)$, hence a
+ $\ovl{\F}_p$-abelian variety $\ovl{A}$ up to prime to $p$ isogeny with
+ $\mathcal{B}$-action, principal $\ast$-polarization, and level
+ structure. We consider the $p$-divisible group
+ $\ovl{\Lambda}={\ovl{A}}[p^\infty]$ (with $\mathcal{B}_p$-action,
+ principal 
+ $\ast$-polarization, level structure). We denote by $\ovl{G}$ the
+ $\Q$-group of self-quasi-isogenies of ${\ovl{A}}$ respecting the
+ additional structure. It is clear that $\ovl{G}(\Q_p)\subset J$; on the
+ other hand $\ovl{G}(\A_f^p)\subset G(\A_f^p)$.
+
+ We also consider an auxiliary lifting $\tilde{\ovl{A}}$ of $\ovl{A}$ (with
+ $\mathcal{B}$-action) over some finite extension $\mathcal{O}_{E'}$ of
+ $\mathcal{O}_E$ in $\mathfrak{v}$, and set
+ $\tilde{\ovl{\Lambda}}=\tilde{\ovl{A}}_\mathfrak{v}[p^\infty]$.  We can
+ then identify $\D(\ovl{\Lambda})\otimes_W K$ with
+ $\mathrm{H}^1_{\mathrm{DR}}(\tilde{\ovl{A}})\otimes_{\mathcal{O}_{E'}}
+ K$, and the submodule $\omega_{\tilde{\ovl{\Lambda}}}$ with
+ $F^1\mathrm{H}^1_{\mathrm{DR}}(\tilde{\ovl{A}})\otimes_{\mathcal{O}_{E'}}
+ K$.  Thus if the complex lagrangian space 
+ $F^1_0$ of \ref{para:1.1.4} is taken to be
+ $F^1\mathrm{H}^1_{\mathrm{DR}}(\tilde{\ovl{A}})\otimes_{\mathcal{O}_{E'}}
+ \C$ (for some complex embedding of $E'$ 
+ extending the natural complex embedding of $E$), the complex and
+ $p$-adic Shimura type conditions ``agree'' (\ref{para:1.1.4}, \ref{para:4.3.2}). We can
+ consider the corresponding decorated moduli problem for $p$-divisible
+ groups, and the formal moduli scheme $\mathfrak{M}$ over $\mathfrak{v}$
+ as in \ref{sub:4.3}.
+ 
+
+ \noindent Moreover, the flags spaces $\mathcal{D}^\vee$ considered in 
+ the complex and $p$-adic situations agree, \ie come from the same flag 
+ space defined over the reflex field $E$.
+
+
+\end{para}
+
+\begin{para}\label{para:7.2.2}
+ One defines a morphism of functors on $\Nil_\mathfrak{v}$: 
+ \begin{equation*}
+  {\mathfrak{M}} \rightarrow \Sh
+ \end{equation*}
+ as follows \cite[6.14]{psfpg}.
+ Let $S$ be in $\Nil_\mathfrak{v}$ and let us consider a pair
+ $(\Lambda,\rho)\in \mathfrak{M}(S)$. By rigidity of $p$-divisible
+ groups up to isogeny (\ref{thm:2.2.3}), the
+ $\mathcal{B}_p$-quasi-isogeny $\rho 
+ \in \qisog(\Lambda\times_S S_{\mathrm{red}},
+ \ovl{\Lambda}\times_{{\ovl{\F}}_p}S_{\mathrm{red}})$ lifts to a unique 
+ $\mathcal{B}_p$-quasi-isogeny $\tilde{\rho}\in \qisog(\Lambda,
+ \tilde{\ovl{\Lambda}}\times_\mathfrak{v}S)$. This can be algebraized in
+ a weak sense: there is an $S$-abelian scheme $A_{(\Lambda,\rho)}$ up to
+ prime to $p$ isogeny, with $\mathcal{B}$-action and with $p$-divisible
+ group $\Lambda $, and a quasi-isogeny $A_{(\Lambda,\rho)}\rightarrow
+ \tilde{\ovl{A}}\times_{\mathcal{O}_{E'}}S$ which induces $\tilde{\rho}$
+ at the level of $p$-divisible groups. Moreover $A_{(\Lambda,\rho)}$ is
+ unique in the category of $S$-abelian schemes up to prime to $p$ isogeny
+ with $\mathcal{B}$-action (\ref{lem:7.1.4}), and its formation is
+ functorial in 
+ $(\Lambda,\rho)$. One then defines the required morphism of functors on
+ $\mathfrak{M}(S)$ by setting $(\Lambda,\rho)\mapsto A_{(\Lambda,\rho)}$
+ (endowed with the polarization and level structure inherited from $\ovl{A}$).
+
+ This defines a morphism of formal schemes, hence a morphism
+ of associated analytic spaces over $\C_p$:
+ \begin{equation*}
+  \mathcal{Q}:\;\mathcal{M}\;\rightarrow\; \Sh_{\C_p}^{\mathrm{an}}.
+ \end{equation*}
+\end{para}
+
+\begin{para}\label{para:7.2.3}
+ It turns out that the decorated abelian varieties (up to prime to $p$
+ isogeny) which are {\it isogenous} to $\ovl{A}$ form in a natural way a
+ {\it countable union $Z=\bigcup Z_n$ of projective irreducible
+ subvarieties $Z_n$ of $\;\Sh_{\ovl{\F}_p}$}, each of them
+ meeting only finitely many members of the family (\cite[6.23, 6.34]{psfpg}).
+ One can slightly generalize the notion of tubes (\ref{sub:3.5}) and
+ define the tube $]Z[\subset \Sh_{\C_p}^{\mathrm{an}}$. We denote by $S$ the
+ connected component of $]Z[$ which contains the modular point $s$ of our
+ chosen lifting $\tilde{\ovl{A}}$.
+\end{para}
+
+\begin{thm}\label{thm:7.2.4}
+ For sufficiently small $C^p$, there is a connected component
+ $\mathcal{M}^0$ of $\mathcal{M}$ such that the restriction
+ $\mathcal{Q}:\;\mathcal{M}^0\rightarrow S$ is a topological covering of
+ $S$. More precisely, $S$ is the (right) quotient of $\mathcal{M}^0$ by
+ some torsion-free discrete subgroup of $J$.
+\end{thm}
+
+\cf \cite[6.23, 6.31]{psfpg}. Roughly speaking, the proof of \ref{thm:7.2.4}
+involves two steps: using the Serre-Tate theorem \ref{thm:2.2.4}, one
+shows that 
+the morphism of $\mathfrak{v}$-formal schemes $\mathfrak{M}$
+$\rightarrow \widehat{\Sh}$ defined above is
+formally etale. One concludes by a careful study of this morphism on
+geometric points.
+
+In our examples \ref{sub:4.2}, $S$ is an open unit
+disc, and the map $\mathcal{Q}$ is an isomorphism (in \ref{para:4.2.1}, it is
+induced by $q\mapsto z=\lambda$).
+
+\begin{para}\label{para:7.2.5} Let us consider the universal decorated
+ abelian scheme $\udl{A}$ over $\Sh$, and the vector bundle
+ $\mathcal{H}=\mathrm{H}^1_{\mathrm{DR}}(\udl{A}/\Sh)$ with its
+ Gauss-Manin connection 
+ $\nabla_{\mathrm{GM}}:\mathcal{H}\rightarrow \Omega^1_{\Sh}\otimes
+ \mathcal{H}$. 
+\end{para}
+
+\begin{cor}\label{cor:7.2.6}  Viewed as a $p$-adic connection and
+ restricted to $S$, the Gauss-Manin connection 
+ ${\nabla_{\mathrm{GM}}}_{| S}$ comes from a representation of
+ $\pi_1^{\mathrm{top}}(S,s)$ on $V^{\C_p}\;$ (hence it satisfies
+ Cauchy's theorem, \cf I.\ref{sub-connection}).
+\end{cor}
+
+\begin{proof}
+ Let $\tilde{S}$ be the universal covering of $S$. According to
+ I.\ref{sub-connection}), we have to show that the pull-back of 
+ $\nabla_{\mathrm{GM}}$ on $\tilde{S}$ is trivial ($\cong V^{\C_p}\otimes
+ \mathcal{O}_{\tilde{S}})$. By \ref{thm:7.2.4} and \ref{lem:6.2.5}, this
+ already holds on the quotient $\mathcal{M}^0$ of $\tilde{S}$.
+\end{proof}
+
+ \noindent {\it Remark.} Using the Weil descent data of \cite[6.21]{psfpg},
+ one can show that the representation is defined over a
+ finite unramified extension $E'_v$ of $E_v$, \ie comes from a
+ representation of $\pi_1^{\mathrm{top}}(S,s)$ on $V\otimes E'_v$.
+
+\begin{para}\label{para:7.2.7}
+ The assumption $C=C^pC_p$ is necessary to define the morphism
+ $\mathcal{Q}: \mathcal{M}^0\rightarrow S$. The assumption ``$C^p$ small
+ enough'' is much less important. Theorem \ref{thm:7.2.4}. holds without it,
+ except that the discrete subgroup of $J$ is then no longer torsion-free
+ [the point is that there is always a normal subgroup ${C'}^p$ of finite
+ index which is small enough, one applies the theorem to ${C'}^p$, and one
+ passes to the quotient by ${C'}^p/C^p$]. However, to give a modular
+ interpretation of the (ramified) quotient of $\mathcal{M}^0$ in this
+ case, one needs the notion of $p$-adic orbifold (to be discussed in
+ III); moreover the Gauss-Manin connection may acquire logarithmic
+ singularities along the branched locus.
+
+\subsection{Global uniformization}\label{sub:7.3}
+
+We say that there is {\it global uniformization}
+in case $S$ is (the analytification of) a whole connected component of
+the Shimura variety $\Sh$. This occurs when the reduction mod $p$ of
+the decorated abelian varieties $A$ parametrized by $\Sh$ form a 
+{\it single isogeny class}. 
+
+In the situation of global uniformization, the group $\ovl{G}$ of
+self-quasi-isogenies of ${\ovl{A}}$ (with decoration) is an
+{\it inner form of $G$}.
+
+In view of our analogy \ref{para:4.3.5}, this situation can be expected to be
+closest to the complex case (in the notation of \ref{para:1.2.4}, the $\hat A$'s
+are all isomorphic to $\hat U$). Indeed, we then get a commutative
+diagram of $p$-adic manifolds (similar to \ref{para:1.2.4}):
+\begin{equation*}
+ \begin{CD}
+  \mathcal{M}^0@>\mathcal{P}>> \mathcal{D} @. \subset\;\mathcal{D}^{\vee}\\
+  @V\mathcal{Q}VV @VV\mathcal{Q}V @.\\
+  S@>\mathcal{P}>> \mathcal{D}/\Gamma.
+ \end{CD}
+\end{equation*}
+ where the horizontal maps are etale, $\mathcal{Q}$ denotes the quotient
+ maps, and $\Gamma$ is an arithmetic subgroup in the semi-simple group
+ $\ovl{G}^{\mathrm{ad}}$. In all known examples, $\mathcal{P}$ is
+ actually an isomorphism and $\mathcal{M}^0=\tilde S$ 
+ \cite[6]{psfpg}, \cite{tpuosc}, \cite{varshavsky98:_shimur},
+ \cite{varshavsky98:_shimur_ii}.
+
+
+Here, the archimedean---non archimedean correspondence goes beyond a mere
+analogy: indeed, here and in \ref{para:1.2.4}, what is denoted by $S$ (\resp
+$\mathcal{D}^\vee $) is the --- complex or $p$-adic --- analytification of
+the same algebraic variety.
+
+\medskip
+\noindent {\it Remark.} To avoid any ambiguity, let us point out
+that we consider here only phenomena of global uniformization which can
+be interpreted in terms of moduli spaces of $p$-divisible groups. This
+does not account for all cases of global $p$-adic uniformization of
+Shimura varieties. For instance, it is known that the elliptic modular
+curve $X_0(p)$ is a Mumford curve over $\Q_p$, whereas the $p$-adic
+uniformization of \ref{thm:7.2.4} (or variants with level $p$ structure)
+is local.
+\end{para}
+
+
+
+\subsection{Example: the \v{C}erednik-Drinfeld uniformization of
+Shimura curves at a critical prime.}\label{sub:7.4}
+
+\begin{para}\label{para:7.4.1}
+ The first historical example of global uniformization in the above
+ sense is the \v{C}erednik uniformization of ``Shimura
+ curves'' (modular curves for fake elliptic curves) at a critical prime
+ $p$, \cf \cite{uoacbdsopwcq}.  \v{C}erednik's method was
+ of group-theoretic nature and did not involve formal groups. A modular
+ proof was subsequently proposed by Drinfeld \cite{copsr} (\cf also
+ \cite[III]{updcds}). For examples, and related topics, we refer to
+ \cite{van89:_les_shimur}, \cite{van92:_discr_mumfor}, \cite{van92:_unifor}.
+\end{para}
+
+\begin{para}\label{para:7.4.2}
+ We fix an indefinite quaternion algebra $B$ over $\Q$, a maximal order
+ $\mathcal{B}$ in $B$, and a positive involution $\ast$ of
+ $\mathcal{B}$. We consider the standard representation $V=B$ of $B$, so
+ that $G=GL_B(V)\cong B^\times$.
+
+ We refer to the foundational paper \cite{shimura67:_const} for the
+ properties of the (connected) Shimura curve ${\mathcal{X}^+(N)}$
+ of level $N$ attached to $B$. It parametrizes principally 
+ $\ast$-polarized abelian surfaces with multiplication by $\mathcal{B}$
+ (fake elliptic curves, \cf \ref{exa:4.3.4}), with level $N$ structure.
+ We recall the following properties of ${\mathcal{X}^+(N)}$, which 
+ actually characterize it (\loccit 3.2):
+
+\begin{enumerate}
+\renewcommand{\theenumi}{\alph{enumi}}
+ \item ${\mathcal{X}^+(N)}$ is a projective geometrically connected smooth
+       curve defined over the cyclotomic field $\Q(\zeta_N)$,
+ \item ${\mathcal{X}^+(N)}(\C)= \mathfrak{h}/\Gamma^+(N)$, that is to
+       say: ${\mathcal{X}^+(N)}$ is the quotient of the Poincar\'e upper
+       half plane by the image $\Gamma^+(N)=PSL_1(\mathcal{B})(N)$ of
+       the group $\{g\in (1+N\mathcal{B})^\times, \Nr(g)>0\}$ in
+       $PSL_2(\R)$, where $\Nr$ stands for the reduced norm,
+ \item for any imaginary quadratic field $K$ in $B$ such that
+       $\mathcal{O}_K\subset \mathcal{B}$, let $z$ be its fixed point in
+       $\mathfrak{h}$. Then the extension of $\Q(\zeta_N)$ generated by the
+       image of $z$ in ${\mathcal{X}^+(N)}$ is the class field over $K$ with
+       conductor $N\mathcal{B}\cap \mathcal{O}_K$.
+\end{enumerate}
+
+ The commutative diagram of \ref{para:1.2.4}, involving the complex period 
+ mapping, specializes to the following 
+
+ \begin{equation*}
+  \begin{CD}
+   \tilde{S} @>\mathcal{P}>> \mathcal{D}=\mathfrak{h} @.
+   \subset \; \mathcal{D}^{\vee}=\P^1\\
+   @V\mathcal{Q}VV @VV\mathcal{Q}V\\
+   S={\mathcal{X}^+(N)}_\C^{\mathrm{an}}@>\mathcal{P}>>\mathcal{D}/\Gamma^+(N)
+  \end{CD}
+ \end{equation*}
+ where the horizontal maps are isomorphisms (and the
+ vertical maps are topological coverings if $\Gamma^+_p(N)$ is
+ torsion-free\footnote{if this group is not torsion-free $\tilde S$ 
+ is the universal covering in the sense of orbifolds.}).
+
+ There is a useful variant $\mathcal{X}^\ast$ of
+ $\mathcal{X}^+={\mathcal{X}^+(1)}$, already considered by Shimura
+ (\cite[3.13]{shimura67:_const}, in which 
+ $\Gamma^+$ is replaced by the image $\Gamma^\ast$ in $PSL_2(\R)$ of the
+ group $\{g\in B^\times \mid g\mathcal{B}=\mathcal{B}g,\,\Nr(g)>0\}$:
+ \begin{equation*}
+  \mathcal{X}^\ast(\C)= \mathfrak{h}/\Gamma^\ast.
+ \end{equation*}
+ It is defined over $\Q$. More generally, there is a
+ Shimura curve $\mathcal{X}_\Gamma$ attached to any 
+ congruence subgroup $\Gamma$ in $B^{\times^{+}}/\Q^\times$, where
+ $B^{\times^{+}}$ denotes the group of elements of positive 
+ reduced norm.
+\end{para}
+
+\begin{para}\label{para:7.4.3}
+ It is known that ${\mathcal{X}^+(N)}$ has
+ good reduction at any prime $p$ which does not divide the discriminant 
+ $d(B)$ of $B$ nor the level $N$ (Y. Morita). If instead $p$ is critical
+ (but still {\it does not divide $N$}), as we shall 
+ assume henceforth, \v{C}erednik's theorem shows that
+ ${\mathcal{X}^+(N)}_{\C_p}$ is a {\it Mumford curve} uniformized by 
+ the Drinfeld space $\Omega_{\C_p}=\P^1_{\C_p}\setminus \P^1(\Q_p)$ (at
+ least if $N$ is large enough); in fact, $\Sh$ becomes a 
+ Mumford curve over some finite unramified extension of $\Q_p$ (note that
+ $\Q(\zeta_N)\subset {\Q_p^{\mathrm{ur}}}$).  
+
+ To be more explicit, let $\ovl{B}$ be the definite quaternion
+ $\Q$-algebra which is ramified at the same primes as $B$ except $p$:
+ $\ovl{B}_p\cong M_2(\Q_p)$. Let $\ovl{\mathcal{B}}$ be a maximal order in
+ $\ovl{B}$. Let $\Gamma^+_p(N)$ be the image in $PGL_2(\Q_p)$ of the
+ group $\{g\in (1+N\ovl{\mathcal{B}}[\frac{1}{p}])^\times \mid \ord_p(\Nr(g))
+ \;{\rm even}\}$. Let $\Gamma^\ast_p$ be the image in $PGL_2(\Q_p)$ of
+ the normalizer $\{g\in {\ovl{B}}^\times \mid g\ovl{\mathcal{B}}[\frac{1}{p}] =
+ \ovl{\mathcal{B}}[\frac{1}{p}]g\}$.
+ These are discrete subgroups, and one has the {\it \v{C}erednik
+ uniformization}:
+ \begin{align*}
+  {\mathcal{X}^+(N)}_{\C_p}^{\mathrm{an}}&\cong\Omega_{\C_p}/\Gamma^+_p(N),\\
+  {\mathcal{X}^{\ast}}_{\C_p}^{\mathrm{an}}&\cong\Omega_{\C_p}/\Gamma^\ast_p.
+ \end{align*} 
+ For recent applications to $p$-adic $L$-functions, Heegner points,
+ etc... \cf \cite{bertolini98:_heegn_l_cered}.
+\end{para}
+
+\begin{para}\label{para:7.4.4}
+ The case of $\mathcal{X}^{\ast}$ is the one originally considered in 
+ \cite{uoacbdsopwcq}, except that \v{C}erednik uses the
+ adelic language. In order to make the translation, it is useful to keep
+ in mind the following few facts (\cf \cite[pp. 40, 99 and passim]{adadq}).
+
+
+ For critical $p$, the unique maximal order
+ $\mathcal{B}_p$ of $B_p$ is $\{b\in B_p \mid \Nr(b)\in
+ \Z_p\}$. Hence, we have an equality $SL_1(\mathcal{B}_p) = SL_1(B_p)$
+ and a chain of compact normal subgroups
+ \begin{equation*}
+  PSL_1(\mathcal{B}_p) = PSL_1(B_p)\subset PGL_1(\mathcal{B}_p) \subset
+   PGL_1(B_p)
+ \end{equation*}
+ with $PGL_1(B_p)/PSL_1(\mathcal{B}_p)\cong \Q_p^\times/(\Q_p^\times)^2$
+ (which is of type $(2,2)$ if $p\neq 2$, of type $(2,2,2)$ if $p=2$). 
+
+ On the other hand, the normalizer of $\mathcal{B}_\ell$ in
+ $B_{\ell}^{\times}$ is $B_{\ell}^{\times}$ if $\ell$ is critical, and
+ $\mathcal{B}_\ell^\times.\Q_{\ell}^{\times}$ otherwise. It follows that  
+
+ \begin{align*}
+  \Gamma^\ast&=\{g\in B^{\times^+}\mid \forall \ell
+  \nmid d(B), \; g\in \mathcal{B}_\ell^\times.\Q_\ell^\times\}/\Q^\times\\
+  \Gamma^\ast_p&=\{g\in \ovl{B}^\times\mid \forall
+   \ell \nmid d(B), \; g\in
+   \ovl{\mathcal{B}}_\ell^\times.\Q_\ell^\times\}/\Q^{\times}\\
+  \Gamma^+(N)&= \{g\in B^{\times^+}\mid \forall \ell, \; g\in
+   (1+N\mathcal{B}_\ell)^\times.\Q_\ell^{\times}\}/\Q^{\times}\\
+  \Gamma^+_p(N)&= \Bigl\{g\in \ovl{B}^\times\Bigm|
+   \begin{array}{l}
+    \ord_p(\Nr(g))\;{\rm even};\\
+    \forall \ell \neq p,\; g\in
+    (1+N\ovl{\mathcal{B}}_{\ell})^\times.\Q_\ell^\times\\ 
+   \end{array}
+  \Bigr\}\Big/\Q^{\times}
+ \end{align*}
+ If $N$ is prime to $d(B)$, this can also be rewritten
+ \begin{align*}
+ \Gamma^+(N)&= \Bigl\{g\in B^{\times^+}\Bigm|
+  \begin{array}{l}
+   \forall\ell\mid d(B),\, \ord_\ell(\Nr(g))\;{\rm even};\\
+   \forall\ell\nmid d(B),\, g\in (1+N\mathcal{B}_\ell)^\times.\Q_\ell^\times\\
+  \end{array}
+  \Bigr\}\Big/\Q^\times \\
+  \Gamma^+_p(N)&= \Bigl\{g\in \ovl{B}^\times\Bigm|
+  \begin{array}{l}
+   \forall\ell\mid d(B),\, \ord_\ell(\Nr(g))\;{\rm even};\\
+   \forall\ell\nmid d(B),\,
+    g\in (1+N\ovl{\mathcal{B}}_{\ell})^{\times}.\Q_{\ell}^{\times}\\
+  \end{array}
+  \Bigr\}\Big/\Q^{\times}
+ \end{align*}
+ In particular, for $N=1$, we see that there are canonical bijections 
+ \begin{equation*}
+ \Gamma^{\ast}/\Gamma^+=\Gamma^{\ast}_p/\Gamma^+_p =
+  (\Z/2\Z)^{\sharp\{\ell| d(B)\}}
+ \end{equation*} 
+\end{para}
+
+\begin{para}\label{para:7.4.5} We now give some indications on Drinfeld's
+ modular approach to \v{C}erednik's uniformization.  
+\end{para}
+
+\begin{lem}\label{lem:7.4.6}
+ \begin{enumerate}
+  \item Fake elliptic curves have potentially good reduction at every
+	prime; the reduction is supersingular reduction at the critical
+	prime $p$. In particular, over $\ovl{\F}_p$,
+	they form a unique isogeny class.
+  \item Fake elliptic curves have a unique principal $\ast$-polarization.
+ \end{enumerate}
+\end{lem}
+
+\begin{proof}
+ (i): due to the presence of many endomorphisms, the potential good
+ reduction follows easily from the semi-stable reduction theorem for
+ abelian schemes; also, the non-split quaternion algebra $B_p$ acts on
+ the $p$-divisible group up to isogeny, and this forces the slopes to be
+ $1/2$; for details and (ii), \cf \cite[III]{updcds}.
+\end{proof}
+
+ It follows from (i) that any fake elliptic curve over
+ $\ovl{\F}_p$ is isogenous to the square of a supersingular elliptic
+ curve $\ovl{E}$.  However, while there are only finitely many
+ supersingular elliptic curves up to isomorphism, fake elliptic curves
+ over $\ovl{\F}_p$ have continuous moduli! The moduli spaces are chains
+ of $\P^1$'s.\footnote{Another curious feature of the higher
+ dimensional case is that the product of $n > 1$ supersingular elliptic
+ curves over $\ovl{\F}_p$ form a single isomorphism class (Deligne,
+ Ogus)}
+
+ Let us introduce the quaternion $\Q$-algebra $D$ ramified only
+ at $p$ and $\infty$: $D\cong \End^\Q(\ovl{E})$. 
+ Let $\ovl{A}$ be a fake elliptic curve over $\ovl{\F}_p$. It follows from
+ \ref{lem:7.4.6} (i) that $\End^\Q(\ovl{A})\cong M_2(D)$, and $\End_{B}^\Q
+ (\ovl{A})\cong \ovl{B}$.  
+
+ In particular, the inner form $\ovl{G}$ of $G$ considered in \ref{sub:7.3} is
+ $\ovl{B}^\times$, and $\ovl{G}(\Q_p)=GL_2(\Q_p)=J$.  
+
+ It follows from \ref{lem:7.4.6} (ii) that we may disregard polarizations. The
+ $p$-divisible groups attached to fake elliptic curves with
+ $\mathcal{B}$-multiplication are special formal $\mathcal{B}_p$-modules
+ of height $4$; recall from \ref{exa:4.3.4} the corresponding formal
+ moduli space 
+ $\displaystyle \mathfrak{M} = \coprod_\Z\;\mathfrak{M}^0$. The period
+ mapping is an isomorphism (\ref{para:6.3.4}, \ref{sub:6.4}), and the
+ commutative diagram of \ref{sub:7.3} specializes to
+
+\begin{equation*}
+ \begin{CD}
+  \tilde{S}=\mathcal{M}^0 @>\mathcal{P}>> \mathcal{D}=\Omega_{\C_p} @.
+  \subset\; \mathcal{D}^{\vee}=\P^1\\
+  @V\mathcal{Q}VV  @VV\mathcal{Q}V @.\\
+  S={\mathcal{X}^+(N)}_{\C_p}^{\mathrm{an}} @>\mathcal{P}>>
+  \mathcal{D}/\Gamma^+_p(N)
+ \end{CD}
+\end{equation*}
+ where the horizontal maps are isomorphisms (and the
+ vertical maps are topological coverings if $\Gamma^+_p(N)$ is
+ torsion-free), in complete analogy with \ref{sub:7.2}.
+ 
+\begin{para}\label{para:7.4.7} Let us end this section by considering the
+ case where {\it $p$ divides the level $N$}: $N=p^n.M,\; p\nmid M$. 
+
+ In this case, $\Gamma^+_p(N)=\Gamma^+_p(M)$. The finite etale covering
+ ${\mathcal{X}^+(N)}_{\C_p}^{\mathrm{an}}\rightarrow
+ {\mathcal{X}^+(M)}_{\C_p}^{\mathrm{an}}$ is not a topological covering anymore
+ (even if $\Gamma^+_p(M)$ is torsion-free). As was shown by Drinfeld, it
+ is hidden in the finite etale covering $\Upsilon^n$ of $\Omega_{\C_p}$
+ (\ref{para:6.3.5}).
+ 
+
+ Let us assume for simplicity that $M>2$, so that $-1\notin
+ \Gamma^+(M)$. This implies that $\Gamma^+(N)/\Gamma^+(M)\cong
+ SL_1(\mathcal{B}/p^n\mathcal{B})$. Then $\Upsilon^n$ is a topological
+ covering of ${\mathcal{X}^+(N)}_{\C_p}^{\mathrm{an}}$, and more precisely, one
+ has the commutative diagram
+
+ \begin{equation*}
+ \begin{CD}
+  {\mathcal{X}^+(N)}_{\C_p}^{\mathrm{an}}@>\sim>> \Upsilon^n/\Gamma^+_p(M)\\
+  @VVV @VVV\\
+  {\mathcal{X}^+(M)}_{\C_p}^{\mathrm{an}} @>\mathcal{P}>>
+  \Omega_{\C_p}/\Gamma^+_p(M)
+ \end{CD}
+ \end{equation*}
+ where the vertical maps are finite etale Galois
+ covering maps with group $SL_1(\mathcal{B}/p^n\mathcal{B})$, \cf 
+\cite[III.5.5]{updcds}, \cite{varshavsky98:_shimur}.  Similarly, there is such a $p$-adic global
+ uniformization for any Shimura curve $\mathcal{X}_\Gamma$ (\cf
+ \ref{para:7.4.1}).
+\end{para}
+
+\subsection{Other examples of global $p$-adic uniformization.}\label{sub:7.5}
+
+\begin{para}\label{para:7.5.1}
+ Shimura's paper \cite{shimura67:_const} deals not only with quaternion algebra
+ over $\Q$, but also with quaternion algebras $B/E$ over a totally real
+ number field $E$. When $B$ {\it splits at a single real place,} he
+ constructs curves ${\mathcal{X}^+(N)}$ and ${\mathcal{X}^\ast}$
+ satisfying properties similar to (a),(b),(c) of \ref{para:7.4.2}.
+
+
+ In this context, $N$ may be an arbitrary ideal of $\mathcal{O}_E$,
+ $\Q(\zeta_N)$ has to be replaced by the ray class field with conductor
+ $N.\infty$, and the condition $N(g)>0$ means that the reduced norm of
+ $g$ is totally positive, or, what amounts to the same, is positive at
+ the split real place $\infty_0$.\index{000infinity0@$\infty_0$}
+ 
+ The novelty, however, is that these Shimura curves have {\it no
+ direct interpretation} as moduli spaces for
+ decorated abelian varieties, since $B$ is not in the Albert list of
+ endomorphism algebras of abelian varieties when $[E:\Q]>1$.
+
+
+ To overcome this problem, Shimura introduces the following remarkable
+ trick. Let $K$ be a totally imaginary quadratic extension of $E$. Then
+ $B^\bullet =B\otimes_E K$ is in Albert's list (we endow it with the
+ involution which is the tensor product of $\ast$ on $B$ and complex
+ conjugation on $K$). It turns out that the Shimura varieties of PEL
+ type for abelian varieties of dimension $g=4[E:\Q]$ ($\ast$-polarized,
+ with level structure) with complex multiplication by $B^\bullet$ are
+ twisted forms of the same curve. The Shimura curve attached to $B$ is
+ obtained by Weil descent from the Shimura curves attached to
+ $B\otimes_E K$, for sufficiently many quadratic extensions $K$.
+\end{para}
+
+\begin{para}\label{para:7.5.2}
+ \v{C}erednik's original $p$-adic uniformization theorem
+ already applies to Shimura curves attached to quaternion algebras over
+ a totally real number field $E$. His method has been further developed
+ in \cite{varshavsky98:_shimur}, \cite{varshavsky98:_shimur_ii}. On the
+ other hand, Drinfeld's modular 
+ approach has been extended by Boutot-Zink \cite{tpuosc}, using Shimura's
+ trick. Let us sketch the principle of the construction.
+
+
+ Let $G$ be the multiplicative group of $B^\times$, viewed as an
+ algebraic group over $\Q$. Let $\Gamma$ be a congruence subgroup of
+ $G^{\mathrm{ad}}(\Q)$ (alternatively, one can consider an open compact
+ subgroup 
+ $C$ of $G(\A_f)$). Let us first assume that $\Gamma$ is {\it maximal at
+ $p$} (alternatively $C$ is of the form $C^pC_p$ for some open compact
+ subgroup $C^p$ of $G(\A_f^p)$, \cf \ref{para:7.1.2}). The (non-connected) Shimura
+ curve $\Sh$ given by
+ \begin{equation*}
+  \Sh_\C^{\mathrm{an}}= C\backslash \bigl((\P_\C^1\setminus\P^1(\R)) \times
+   G(\A_f)\bigr) /G(\Q)
+ \end{equation*}
+ is defined over the reflex field, which is $E$ (embedded into $\R$ via
+ $\infty_0$). Over some finite abelian extension $E'/E$, it decomposes as
+ a disjoint union of geometrically connected Shimura curves
+ $\mathcal{X}_\Gamma$ ($\mathfrak{h}/\Gamma$ over $\C\;$; one possible
+ $\Gamma$ is the image of $G(\Q)\cap C$ in $\G^{\mathrm{ad}}(\Q)$).
+
+
+ Let $v=v_0$ be a {\it critical} finite place of $E$, \ie such that
+ $B_v$ is a non-split quaternion algebra. Let $p$ be the residue
+ characteristic of $v_0$ and let $v_1,\ldots, v_m$ be the other places
+ of $E$ above $p$.
+
+
+ Let $K$ be a totally imaginary quadratic extension of $E$, such that
+ every place $v_i$ splits in $K$. We denote by $w_i, \ovl{w_i}$ the two
+ places of $K$ above $v_i$. The quaternion algebra $B^\bullet =
+ B\otimes_E K$ is ramified at $w=w_0$: $B^\bullet_w\cong B_v$.
+
+
+ We fix an extension $\infty_0: K\hookrightarrow \C$ of the real
+ embedding $\infty_0$ of $E$, and a double embedding $\C \hookleftarrow
+ \ovl{\Q} \hookrightarrow \C_p$ whose restriction to $K$ is compatible
+ with $(\infty_0,w)$. The embeddings $K \hookrightarrow \C_p$ which
+ factor through some $w_i$ but not through some $\ovl{w_i}$ form a CM
+ type $\Psi$: $\Psi\coprod \ovl{\Psi}=\Hom(K,\C_p)$ (identified with
+ $\Hom(K,\C)$ through our chosen double embedding).
+ 
+
+There is a natural $\Q$-group $G^\bullet$ such that
+ $G^\bullet(\Q)=\{b\in B^\bullet| bb^\ast\in E\}$, acting on
+ $V^\bullet=V\otimes_E K$. One can attach to $C$ an open compact
+ subgroup $C^\bullet$ of $G^\bullet(\A_f)$, maximal at $p$, and a
+ Shimura curve $\Sh^\bullet$ such that $\Sh$ is open and closed in
+ $\Sh^\bullet$ (\cite[3.11]{tpuosc}). Alternatively, one can attach to
+ $\Gamma$ a congruence subgroup $\Gamma^\bullet$ in $G^{\bullet ad}(\Q)$
+ and a corresponding connected Shimura curve
+ $\mathcal{X}_{\Gamma^\bullet}$ which is a twisted form of
+ $\mathcal{X}_{\Gamma}$ (defined over some abelian extension of
+ $K$). The point is that this new Shimura curve $\Sh^\bullet$ is of PEL
+ type. More precisely, for $C$ small enough, it is a moduli space for
+ $\ast$-polarized abelian varieties of dimension $g=4[E:\Q]$ with
+ multiplication by
+ $\mathcal{B}^\bullet=\mathcal{B}\otimes_{\mathcal{O}_E}\mathcal{O}_K$,
+ Shimura type $\Psi$, and level structure. As in \ref{pro:7.1.5}, it
+ admits a model $\Sh^\bullet$ over $\mathcal{O}_{E_v}$.
+
+
+ Let $\udl{A} \rightarrow \Sh^\bullet$ be the universal abelian
+scheme up to prime to $p$ isogeny.  Due to the $\mathcal{O}_K$-action,
+the $p$-divisible group of $\udl{A} $ splits as $
+\udl{A}[p^\infty]\cong \prod_i \Lambda_{w_i}\times \Lambda_{\ovl{w_i}}$,
+where $ \Lambda_{w_i}$ and $\Lambda_{\ovl{w_i}}$ are $p$-divisible groups
+of height $4[E_{v_i}:\Q_p]$ with formal multiplication by
+$E_{v_i}$. Moreover, $ \Lambda_{w}= \Lambda_{w_0}$ is a special formal
+$\mathcal{B}_v$-module of height $4.[E_{v}:\Q_p]$ (defined as in 
+\ref{exa:4.3.4}, 
+replacing $\Q_p$ by $E_v$), and $ \Lambda_{\ovl{w}}$ is the Serre dual of
+$\Lambda_{w}$; the other $ \Lambda_{w_i},\;i>0,$ are etale, and the $
+\Lambda_{\ovl{w_i}}$ are their respective Serre duals. Hence the Newton
+polygon of the Dieudonn\'e module of $\udl{A}[p^\infty]$ has slopes
+$0,\frac{1}{2},1$ (only $\frac{1}{2}$ if $m=0$).
+
+\vspace*{2mm}
+%#BEGIN
+\begin{figure}[h]
+ \begin{picture}(120,70)(-20,-10)
+  \put(-10,0){\line(1,0){110}}
+  \put(0,-10){\line(0,1){70}}
+  \bezier{10}(60,15)(60,7.5)(60,0)
+  \bezier{30}(90,45)(90,22.5)(90,0)
+  \put(15,5){\makebox(0,0)[b]{{\tiny $0$}}}
+  \put(40,15){\makebox(0,0)[c]{{\tiny $1/2$}}}
+  \put(68,32){\makebox(0,0)[c]{{\tiny $1$}}}
+  \thicklines
+  \put(0,0){\line(1,0){30}}
+  \put(30,0){\line(2,1){30}}
+  \put(60,15){\line(1,1){30}}
+ \end{picture}
+ \caption{}
+\end{figure}
+%#END
+
+Let $\mathfrak{v}$ be the discrete valuation ring
+$\widehat{\Z^{\mathrm{ur}}}.\mathcal{O}_{E_v}$ as in
+\ref{para:7.1.2}. The moduli problem 
+for $\mathcal{B}_v$-module of height $4.[E_{v}:\Q_p]$ is representable
+by the $p$-adic formal scheme $\displaystyle \coprod_\Z
+\;({}_{E_v}\hat\Omega)_{\mathfrak{v}}$, where ${}_{E_v}\hat\Omega$ is
+the analogue for (and over) $\mathcal{O}_{E_v}$ of the formal scheme
+$\hat\Omega$, with associated analytic space
+$(_{E_v}\Omega)_{\C_p}=\P^1_{\C_p}\setminus \P^1(E_v)$, \cf \ref{para:6.3.5}.
+\end{para}
+
+\begin{para}\label{para:7.5.3}
+ This is the modular way taken by Boutot and Zink to reprove (and
+ strengthen) \v{C}erednik's theorem.  As was remarked by
+ Varshavsky \cite[3.13]{varshavsky98:_shimur_ii}, one obtains a simpler adelic
+ formulation if one works with a twisted version ${}^{\mathrm{ad}}\Sh$ of $\Sh$
+ (corresponding to a different normalization of $h_0$ in \ref{para:1.2.4}); this
+ does not change the adelic description of the associated complex space
+ \begin{equation*}
+  {}^{\mathrm{ad}}\Sh_\C^{\mathrm{an}}= C\backslash
+   \bigl((\P_\C^1\setminus\P^1(\R)) \times G(\A_f)\bigr)/G(\Q),
+ \end{equation*}
+ but makes the analogy with the following description of the associated
+ $p$-adic space more striking.
+ 
+
+ Let $\ovl{B}$ be the quaternion algebra over $E$ obtained from $B$ by
+ interchanging the invariants at $\infty_0, v$, and let $\ovl{G}$ be the
+ $\Q$-algebraic group attached to $\ovl{B}^\times$. Let us identify
+ $\ovl{G}(\A^p_f)$ with $G(\A^p_f)$ via an anti-isomorphism
+ $\ovl{B}\otimes_E \A^p_f \rightarrow B\otimes_E \A^p_f ,$ and set
+ $\ovl{C}=GL_2(E_v)C^p$ viewed as a subgroup of $\ovl{G}(\A_f)$.  Then
+ \begin{align*}
+  {}^{\mathrm{ad}}\Sh_{\C_p}^{\mathrm{an}} & =C^p \backslash
+  \bigl((_{E_v}\Omega)_{\C_p}\times G(\A_f^p)\bigr)/{\ovl{G}}(\Q)\\
+  & =\ovl{C}\backslash \bigl((\P^1_{\C_p}\setminus\P^1(E_v))\times
+  \ovl{G}(\A_f)\bigr)/{\ovl{G}}(\Q)
+ \end{align*}
+ where ${\ovl{G}}(\Q)$ acts on $(_{E_v}\Omega)_{\C_p}$ through
+ ${\ovl{G}}^{\mathrm{ad}}(\Q_p)\cong PGL_2(E_v)$.  
+
+ Moreover, one can drop the assumption that $C$ is maximal at $p$, on
+ replacing $(_{E_v}\Omega)_{\C_p}$ by some finite etale covering as in
+ \ref{para:7.4.7}. \cite[3]{tpuosc}, \cite[5]{varshavsky98:_shimur_ii}.
+\end{para}
+
+\begin{para}\label{para:7.5.4}
+ Rapoport, Zink and Boutot on one hand (by modular methods \`a la
+ Drinfeld), and Varshavsky on the other hand (by group-theoretic methods
+ \`a la \v{C}erednik), have pointed out similar global
+ $p$-adic uniformizations in much more general cases.
+
+ Let us only mention a remarkable example: Mumford's {\it fake
+ projective plane} \cite{aaswkak9pq0}. This is a smooth projective complex
+ surface $S$ with the same Betti numbers as $\mathbb{P}^2$, but not
+ isomorphic to $\mathbb{P}^2$. Actually, it is a surface of general
+ type. Mumford's construction is of diadic nature. It is a quotient of
+ the two-dimensional generalization $\Omega^{(2)}$ of $\Omega$ by an
+ explicit arithmetic group. This $\Omega^{(2)}$ is the complement of the
+ lines defined over $\Q_2$ in the projective plane.
+
+ Using the last theorem of \cite{psfpg} or \cite{varshavsky98:_shimur_ii}, one can see
+ that $S$ is actually a Shimura surface of PEL type, parametrizing
+ polarized abelian varieties of dimension $9$, with multiplication by an
+ order in a simple $\Q$-algebra $B$ of dimension $18$ with center
+ $\Q(\sqrt{-7})$. The invariants of $B$ at the two primes of
+ $\Q(\sqrt{-7})$ above $2$ are $1/3$ and $2/3$ (\cf a recent
+ preprint by F. Kato for more detail). The associated group $G$ is a
+ group of unitary similitudes of signature $(1,2)$.
+
+
+ The ``diadic ball'' $\Omega^{(2)}$ (or rather its formal avatar) has an
+ modular interpretation for certain $p$-divisible groups (with
+ multiplication by $B_2$). These $p$-divisible groups split as a product
+ of three $p$-divisible groups of slope $1/3$ and height $3$, and three
+ $p$-divisible groups of slope $2/3$ and height $3$.
+
+
+ The associated Gauss-Manin connection splits into six factors of rank
+ $3$ (in two variables). It resembles the Appell-Lauricella connection
+ studied in \cite{pdrefapdfhdpv}, \cite{calip}, \cite{fde}, but is different.
+\end{para}
+
+\subsection{Application of the theory of $p$-adic Betti lattices.}
+\label{sub:7.6}
+
+\begin{para}\label{para:7.6.1}
+ We consider more closely the Gauss-Manin connection
+ $(\mathcal{H},\nabla_{\mathrm{GM}})$ in the case of Shimura curves.
+
+
+ We begin with the case $E=\Q$ as in \ref{sub:7.4}.  Then $\mathcal{H}$
+ is a vector bundle of rank $4$, and the $B$-action on $\mathcal{H}$
+ obtained by functoriality of De Rham cohomology commutes with
+ $\nabla_{\mathrm{GM}}$.
+
+ Let us choose an imaginary quadratic field $F=\Q(\sqrt{-d})$ inside
+ $B$. Then $(\mathcal{H},\nabla_{\mathrm{GM}})\otimes F$ splits into two parts:
+ $(\mathcal{H},\nabla_{\mathrm{GM}})_+\oplus
+ (\mathcal{H},\nabla_{\mathrm{GM}})_{-}$ (on 
+ which $F\subset B$ acts through identity and complex conjugation
+ respectively).
+
+
+ On the other hand, let us fix embeddings $F\subset \ovl{\Q} \subset \C$,
+ and let us fix a base point $s\in \mathcal{X}_{\Gamma}(\ovl{\Q})$ of our
+ Shimura curve.  This is the moduli point of a decorated fake elliptic
+ curve $A/\ovl{\Q}$. We have $V^\C=\mathrm{H}^1_B(A_\C,\C)\cong
+ (\mathcal{H}_\C^{\mathrm{an}})^{\nabla_{\mathrm{GM}}}$, and this again splits
+ into $\pm$ parts. The Betti cohomology $F$-space
+ $\mathrm{H}^1_B(A_\C,F)$ already splits into two parts:
+ $\mathrm{H}^1_B(A_\C,F)_+\oplus \mathrm{H}^1_B(A_\C,F)_{-}$, both of
+ rank two and stable under the action of $B\otimes F \cong M_2(F)$.
+
+ The flag space $\mathcal{D}^\vee$ is actually defined over the reflex
+ field $\Q$. Over $F$, it becomes isomorphic to $\P^1$, or more
+ precisely, to $\P(\mathrm{H}^1_B(A_\C,F)_+)$. The period mapping describes the
+ ``slope'' of the Hodge line $F^1\cap V^\C_+$ with respect to a basis of
+ $\mathrm{H}^1_B(A_\C,F)_+\subset
+ ((\mathcal{H}_+)_\C^{\mathrm{an}})^{\nabla_{\mathrm{GM}}}$, and is 
+ thus given by a quotient of solutions of the (partial) Gauss-Manin
+ connection $\nabla_{\mathrm{GM}+}$.
+
+
+ Assume for simplicity that $\Gamma\subset B^\times/\Q^\times$ is
+ torsion-free. Then $\Gamma$ may be identified with the projective
+ monodromy group, \ie with the quotient by the homotheties of the image
+ of the monodromy representation
+ \begin{equation*}
+  \pi_1((\mathcal{X}_{\Gamma })_\C,s)\rightarrow GL(\mathrm{H}^1_B(A_\C,F)_+).
+ \end{equation*}
+
+
+\end{para}
+
+\begin{para}\label{para:7.6.2} Let us now turn to the $p$-adic side. We fix an
+embedding $\ovl{\Q} 
+\subset \C_p$. We shall limit ourselves to the case of a prime $p$ of
+ {\it supersingular reduction} for $A$. Note that this includes the case
+ of critical primes (\ref{lem:7.4.6}).
+
+
+ Let $D$ be the definite quaternion algebra over $\Q$ which is ramified
+ only at $p$, and let $\ovl{B}$ be the definite quaternion algebra over
+ $\Q$ which is ramified at the same primes as $B$ except $p$. Then,
+ whether $p$ is critical or not, the group $J$ (of self-quasi-isogenies
+ of $\ovl{A}[p^\infty]$ commuting with $B$) is $\ovl{B}_p^\times$.
+ 
+
+ By the local criterion for splitting fields \cite[III.3.5]{adadq}, $F$
+ is also a splitting field for the quaternion algebra $D$ (and $\ovl{B}$
+ as well). We can therefore apply the theory of
+ I.\ref{sub-p-adic-betti-lattice-supersing}, and get an 
+ $F$-structure $\mathrm{H}^1_B(A_{\C_p},F)$ inside
+ $\mathrm{H}^1_{\mathrm{cris}}(\ovl{A},/\C_p)\cong
+ V^{\C_p}=\D(\ovl{\Lambda})\otimes \C_p.$ By construction, it is stable
+ under the action of $M_2(D)\otimes F\cong M_4(F)\cong B\otimes \ovl{B}
+ \otimes F$.
+
+
+ Using the embedding $F\otimes 1\otimes F\subset B\otimes \ovl{B} \otimes
+ F$, one splits this $F$-structure $\mathrm{H}^1_B(A_{\C_p},F)$ into two parts
+ $\mathrm{H}^1_B(A_{\C_p},F)_+\oplus \mathrm{H}^1_B(A_{\C_p},F)_{-}$ (on
+ which $F\otimes 
+ 1\otimes 1\subset B\otimes \ovl{B} \otimes F$ acts through identity and
+ complex conjugation respectively), both of rank two and stable under
+ the action of $\ovl{B}\otimes F \subset M_4(F)$, hence under $J$.  \par
+ The $p$-adic flag space $\mathcal{D}^\vee$ is again defined over the
+ reflex field $\Q$. Over $F$, it becomes isomorphic to
+ $\P(\mathrm{H}^1_B(A_{\C_p},F)_+)$ (note that the scaling ambiguity of
+ $\mathrm{H}^1_B(A_{\C_p},F)_+$ by a factor in $\sqrt{F^\times}$ disappears
+ here). The $J$-equivariant period mapping $\mathcal{P}$ describes the
+ ``slope'' of the Hodge line $F^1\cap V^{\C_p}_+$ with respect to a
+ fixed basis $(e_0,\,e_1)$ of $\mathrm{H}^1_B(A_{\C_p},F)_+\subset
+ ((\mathcal{H}_+)_{\C_p}^{\mathrm{an}})^{\nabla_{\mathrm{GM}}}$, and is
+ thus given by a quotient of solutions of $\nabla_{\mathrm{GM}+}$.
+
+
+ Note that if $B$ is split at $p$, then $\mathcal{P}$ is of
+ Gross-Hopkins type, and one has only a local $p$-adic uniformization of
+ $\mathcal{X}_{\Gamma}$ around $s$ (in a supersingular disk).
+
+
+ If instead $p$ is critical, then $\mathcal{P}$ is of Drinfeld type, and
+ the group $\Gamma_p \subset J^1$ appearing in the global $p$-adic
+ uniformization of $\mathcal{X}_{\Gamma}$ may be identified with the
+ quotient by the homotheties of the image of the monodromy representation
+ (in the sense of \ref{cor:7.2.6})
+ \begin{equation*}
+  \pi_1^{\mathrm{top}}((\mathcal{X}_{\Gamma })_{\C_p},s)\rightarrow
+   GL(\mathrm{H}^1_B(A_{\C_p},F)_+).
+ \end{equation*}
+
+ A slight refinement provides a rank two
+ $\mathcal{O}_F[\frac{1}{p}]$-lattice
+ $\mathrm{H}^1_B(A_{\C_p},\mathcal{O}_F[\frac{1}{p}])_+$ in
+ $((\mathcal{H}_+)_{\C_p}^{\mathrm{an}})^{\nabla_{\mathrm{GM}}}$ stable
+ under $p$-adic monodromy.
+\end{para}
+
+\begin{para}\label{para:7.6.3}
+ One can go one step further and see that the phenomenon encountered in
+ \ref{para:6.3.3} shows up here again: ``the'' quotient $\tau$ of solutions of
+ solutions of ${\nabla_{\mathrm{GM}}}$ which expresses locally the
+ period mapping 
+ $\mathcal{P}$ is essentially given by the same formula in the complex
+ and the $p$-adic cases.
+
+
+More precisely, assume that $A$ has complex multiplication by an order
+in $M_2(F)$ (so that $A$ is isogenous to the square of an elliptic curve
+with complex multiplication by $\mathcal{O}_{\Q(\sqrt{-d})}$ with
+[fundamental] discriminant $-d$ ), and identify $\End_B(A)$ with $F$. We
+denote by $\epsilon$ the Dirichlet character, $w$ the number of roots of
+unity, $h$ the class number attached to $\mathcal{O}_{\Q(\sqrt{-d})}$.
+
+
+\noindent We may choose our symplectic basis $e_0,e_1$ of
+$\mathrm{H}^1_B(A_{\C},F)_+$ (\resp $\mathrm{H}^1_B(A_{\C_p},F)_+$) in
+ such a way that 
+$[\sqrt{-d}]^\ast e_0=-\sqrt{-d} \; e_0,\,$ $[\sqrt{-d}]^\ast
+e_1=\sqrt{-d} \;e_1$ (here $[\sqrt{-d}]$ is viewed as an element of
+$\End_B(A)=F$).
+
+\noindent Let $\omega$ be a section of $\mathcal{H}_+$ in a Zariski
+neighborhood $U$ of $s$, which corresponds to a relative differential of
+the first kind (no pole) on the universal abelian scheme. Then $\omega$
+is a cyclic vector for $\mathcal{H}_+$ over $U$ with respect to
+$\nabla_{\mathrm{GM}}$, so that $\nabla_{\mathrm{GM}}$ amounts to a
+ concrete linear 
+differential equation of order two over $U$.
+
+\noindent We calculate $\tau$ with respect the basis $e_0, e_1$
+ of $\mathrm{H}^1_B(A_{\C},F)_+$ (\resp $\mathrm{H}^1_B(A_{\C_p},F)_+$)
+ in a small 
+ neighborhood of the base point $s$. Denoting by $z$ an algebraic local
+ parameter at $s$ in $U$, and extending $e_0,\, e_1$ by horizontality, we
+ then have the proportionality
+\begin{equation*}
+ \omega \sim \tau(z) e_0 + e_1
+\end{equation*}
+\end{para}
+
+\begin{thm}\label{thm:7.6.4}
+ There is a quotient $y=y_1/y_2$ of solutions of $\nabla_{\mathrm{GM}}$ in
+ $\ovl{\Q}[[z]]$ such that $\tau$ takes the form
+ $\;\tau(z)=\kappa^{-1}\;y(z)\;$ for a suitable constant $\kappa$.
+
+\noindent In the complex case, $\;\kappa\sim\displaystyle
+ \prod_{u\in (\Z/d)^\times}
+ \Bigl(\Gamma\Bigl\langle\frac{u}{d}\Bigr\rangle\Bigr)^{\epsilon(u)w/2h}\;\in
+ \C^\times/\ovl{\Q}^\times$.
+
+\noindent In the $p$-adic case, assuming moreover that $p\nmid d $, 
+\begin{equation*}
+ \kappa\sim \prod_{u\in (\Z/d)^\times}
+  \Bigl(\Gamma_p\Bigl\langle\frac{pu}{d}\Bigr\rangle\Bigr)^{-\epsilon(u)w/4h}
+  \in \C_p^\times/\ovl{\Q}^{\times}.
+\end{equation*}
+\end{thm}
+\begin{proof}
+ Let us write $\omega_{| z=0}=\omega_{11}e_1$. Then
+ $\tau(z)=\kappa^{-1} y(z)$, with $\kappa = \omega_{11}^2/2\pi i$ in
+ the complex case, $\kappa = \omega_{11}^2$ in the $p$-adic case (the
+ factor $2\pi i$ which arises in the complex case is the factor of
+ proportionality of the symplectic forms in De Rham and in Betti
+ cohomology respectively). The evaluation of $\omega_{11}$ in the
+ complex case is given by the Lerch-Chowla-Selberg formula (\cf
+ I.\ref{thm-ogus-formula}). In the $p$-adic case, it is given by
+ I.\ref{thm-cm-period}.
+\end{proof}
+
+\begin{para}\label{para:7.6.5}
+ This discussion generalizes without much complication to the case of
+ Shimura curves attached to a quaternion algebra $D$ over a totally real
+ number field $E$ of degree $>1$. We concentrate on the case of a
+ critical place $v$ and assume, for simplicity, that $E$ is Galois over
+ $\Q$ and that $v$ is the unique place of $E$ with the same residue
+ characteristic $p$ (\ie $m=0$ in the notation of \ref{para:7.5.2}).
+
+
+ Let $F$ be a totally imaginary quadratic extension of $E$ contained in
+ $B$. Then $F$ is a splitting field for $B,\ovl{B}$, and $D$. Let us fix
+ a double embedding $\C \hookleftarrow \ovl{\Q} \hookrightarrow \C_p$ as
+ in \ref{para:7.5.2}, and an extension $FK\hookrightarrow \ovl{\Q}$ of $\infty_0$.
+ For $C$ small enough, $\Sh^\bullet$ carries a universal abelian scheme
+ of relative dimension $g=[FK:\Q]$. After tensoring $\otimes_K
+ \ovl{\Q}$, its Gauss-Manin connection splits into pieces of rank two,
+ indexed by the embeddings of $FK$ into $\ovl{\Q}$. We select the piece
+ $(\mathcal{H},\nabla_{\mathrm{GM}})_+$ corresponding to $\infty_0$.
+
+
+ Let us fix a base point $s\in \Sh(\ovl{\Q})\subset \Sh^\bullet(\ovl{\Q})
+ $ of our Shimura curve.  This is the moduli point of a decorated
+ abelian variety $A^\bullet/\ovl{\Q}$ (of dimension $g=[FK:\Q]$ and
+ multiplication by $\mathcal{B}^\bullet$). We have $V^\bullet=V\otimes_E
+ K \cong \mathrm{H}^1_B(A^\bullet_\C,\Q)$.  Note that
+ $\mathrm{H}^1_B(A_\C,F)\cong 
+ V\otimes_\Q FK$ splits into pieces of $FK$-rank two, indexed by the
+ embeddings of $F$ into $\ovl{\Q}$. We select the piece
+ $\mathrm{H}^1_B(A^\bullet_\C,F)_+$ corresponding to $\infty_0$.  We
+ then have a 
+ natural embedding $\mathrm{H}^1_B(A^\bullet_\C,F)_+\subset
+ ((\mathcal{H}_+)_{\C}^{\mathrm{an}})^{\nabla_{\mathrm{GM}}}$, and
+ $\mathrm{H}^1_B(A^\bullet_\C,F)_+$ is stable under monodromy.
+
+
+ On the other hand, it follows from \ref{lem:7.4.6}, that $A^\bullet$ has
+ supersingular reduction $\ovl{A}^\bullet$ at $v$. We can construct the
+ $F$-structure $\mathrm{H}^1_B(A^\bullet_{\C_p},F)$ inside
+ $\mathrm{H}^1_{\mathrm{cris}}(\ovl{A}^\bullet,/\C_p)\cong
+ V^{\C_p}=\D(\ovl{\Lambda}^\bullet)\otimes \C_p.$ 
+ By construction, it is stable under the action of $M_g(D)\otimes F\cong
+ M_{2g}(F)$, which contains naturally $B\otimes_\Q \ovl{B}\otimes_\Q F$.
+
+
+ Using the embedding $F\otimes 1\otimes F\subset B\otimes \ovl{B} \otimes
+ F$, one splits this $F$-structure $\mathrm{H}^1_B(A_{\C_p},F)$ into parts of
+ $FK$-rank two, indexed by the embeddings of $F$ into $\ovl{\Q}$. We
+ select the piece $\mathrm{H}^1_B(A^\bullet_{\C_p},F)_+$ corresponding to
+ $\infty_0$.  We then have a natural embedding
+ $\mathrm{H}^1_B(A^\bullet_{\C_p},F)_+\subset
+ ((\mathcal{H}_+)_{\C_p}^{\mathrm{an}})^{\nabla_{\mathrm{GM}}}$, and
+ $\mathrm{H}^1_B(A^\bullet_{\C_p},F)_+$ is stable under $p$-adic monodromy.
+\end{para}
+
+\subsection{Conclusion.}\label{sub:7.7}
+
+ Roughly speaking, the period mapping $\mathcal{P}$ attaches to
+each member of an algebraic family of algebraic complex varieties (with
+additional structure) a point in some flag space, which encodes the
+Hodge filtration in the cohomology of this variety. This mapping can be
+expressed in terms of quotients of solutions of the fuchsian
+differential equation (Picard-Fuchs/Gauss-Manin) which controls the
+variation of the cohomology.
+
+
+We have described the theory of period mappings for $p$-divisible groups
+in somewhat similar terms.
+
+\bigskip
+ Sometimes, it is possible to go through the looking-glass of sheer
+ analogies. This occurs when we 
+ restrict our attention to $p$-divisible groups attached to polarized
+ abelian varieties with prescribed endomorphisms and fixed ``Shimura
+ type''. In this situation, we have three algebraic objects defined over
+ a number field (the reflex field):
+
+\begin{enumerate}
+ \renewcommand{\theenumi}{\alph{enumi}}
+ \item the Shimura variety $\Sh$ parametrizing certain
+       ``decorated'' abelian varieties,
+ \item the Gauss-Manin connection $\nabla_{\mathrm{GM}}$ describing
+       the variation of these abelian varieties over $\Sh$, and
+ \item the flag variety $\mathcal{D}^\vee$.
+\end{enumerate}
+
+
+ These objects are transcendentally related, both in the complex and
+ $p$-adic sense.
+
+ The period mapping may be viewed as
+ multivalued and defined on $p$-adic open domains in $\Sh$; it is given
+ as in the complex case by quotients of solutions of the Gauss-Manin
+ connection (as a $p$-adic connection).
+
+
+ In most situations, these open domains are small and $\mathcal{P}$ is
+ single-valued.
+
+
+ However, it happens in some remarkable cases that $\mathcal{P}$ is a
+ global multivalued function. This occurs when the abelian varieties
+ under consideration form a {\it single isogeny class modulo $p$}. In
+ this situation, the complex and $p$-adic transcendental relations
+ between $\Sh, \nabla_{\mathrm{GM}}$ are completely similar: $\Sh$ is
+ uniformized 
+ by an analytic space which is etale over some open subset $\mathcal{D}$
+ of $\mathcal{D}^{\vee}$, and the group of deck transformations $\Gamma$
+ is isomorphic to the projective global monodromy group of
+ $\nabla_{\mathrm{GM}}$.  In III, we shall analyze in detail the
+ group-theoretic 
+ aspects of this situation.

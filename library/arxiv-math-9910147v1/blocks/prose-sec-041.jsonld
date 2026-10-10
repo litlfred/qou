@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-9910147v1/blocks/prose-sec-041",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-9910147v1/blocks/prose-sec-041",
   "kind": "prose",
   "title": "(Y0Y1)Λ BB",
   "pageStart": 21,
   "pageEnd": 21,
   "text": "../sections/sec-041-0-y0y1λ-bb.md",
-  "derivedFrom": "library/arxiv-math-9910147v1/manifest",
-  "sourceDocument": "library/arxiv-math-9910147v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9910147v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9910147v1/manifest.jsonld",
   "provenance": "ingested"
 }

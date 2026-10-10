@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0006057v2/sections/sec-048",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Bimodule categories. Here we establish an equivalence between the ten-",
+  "pageStart": 38,
+  "pageEnd": 41,
+  "contains": [
+    "library/arxiv-math-0006057v2/blocks/prose-sec-048",
+    "library/arxiv-math-0006057v2/blocks/remark-sec-048-01",
+    "library/arxiv-math-0006057v2/blocks/proposition-sec-048-02",
+    "library/arxiv-math-0006057v2/blocks/example-sec-048-03",
+    "library/arxiv-math-0006057v2/blocks/example-sec-048-04",
+    "library/arxiv-math-0006057v2/blocks/example-sec-048-05",
+    "library/arxiv-math-0006057v2/blocks/theorem-sec-048-06",
+    "library/arxiv-math-0006057v2/blocks/theorem-sec-048-07"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "provenance": "ingested"
+}

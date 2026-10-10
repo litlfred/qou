@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/blocks/prose-sec-056",
+  "kind": "prose",
+  "title": "DG Bifunctors",
+  "pageStart": 165,
+  "pageEnd": 167,
+  "text": "../sections/sec-056-91-dg-bifunctors.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

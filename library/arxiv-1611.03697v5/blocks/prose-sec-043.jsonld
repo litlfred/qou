@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1611.03697v5/blocks/prose-sec-043",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1611.03697v5/blocks/prose-sec-043",
   "kind": "prose",
   "title": "Appendix B. Convergent BPS structures",
   "pageStart": 43,
   "pageEnd": 43,
   "text": "../sections/sec-043-appendix-b-convergent-bps-structures.md",
-  "derivedFrom": "library/arxiv-1611.03697v5/manifest",
-  "sourceDocument": "library/arxiv-1611.03697v5/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1611.03697v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1611.03697v5/manifest.jsonld",
   "provenance": "ingested"
 }

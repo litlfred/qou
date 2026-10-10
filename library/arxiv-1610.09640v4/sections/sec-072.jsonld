@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-072",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Theorems on Functors Satisfying Finiteness Conditions",
+  "pageStart": 231,
+  "pageEnd": 235,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-072",
+    "library/arxiv-1610.09640v4/blocks/theorem-sec-072-01",
+    "library/arxiv-1610.09640v4/blocks/lemma-sec-072-02",
+    "library/arxiv-1610.09640v4/blocks/lemma-sec-072-03",
+    "library/arxiv-1610.09640v4/blocks/lemma-sec-072-04",
+    "library/arxiv-1610.09640v4/blocks/lemma-sec-072-05",
+    "library/arxiv-1610.09640v4/blocks/theorem-sec-072-06",
+    "library/arxiv-1610.09640v4/blocks/theorem-sec-072-07",
+    "library/arxiv-1610.09640v4/blocks/remark-sec-072-08"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

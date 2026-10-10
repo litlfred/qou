@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-2203.17029v1/sections/sec-014",
   "@type": [
     "doco:Section"
@@ -9,9 +14,9 @@
   "pageEnd": 29,
   "contains": [
     "library/arxiv-2203.17029v1/blocks/prose-sec-014",
-    "library/arxiv-2203.17029v1/blocks/rem-sec-014-01"
+    "library/arxiv-2203.17029v1/blocks/remark-sec-014-01"
   ],
-  "derivedFrom": "library/arxiv-2203.17029v1/manifest",
-  "sourceDocument": "library/arxiv-2203.17029v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2203.17029v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2203.17029v1/manifest.jsonld",
   "provenance": "ingested"
 }

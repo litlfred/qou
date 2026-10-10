@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0701051v4/blocks/prose-sec-018",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0701051v4/blocks/prose-sec-018",
   "kind": "prose",
   "title": "References",
   "pageStart": 19,
   "pageEnd": 20,
   "text": "../sections/sec-018-references.md",
-  "derivedFrom": "library/arxiv-math-0701051v4/manifest",
-  "sourceDocument": "library/arxiv-math-0701051v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0701051v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0701051v4/manifest.jsonld",
   "provenance": "ingested"
 }

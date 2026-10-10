@@ -7,7 +7,8 @@
   "bytes": 953116,
   "pages": 88,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -296,6 +297,127 @@
   "likely_scanned": false,
   "toc_entries": 15,
   "sections": 15,
-  "chars_total": 180351
+  "chars_total": 180351,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "trinh_trace.tex",
+   "tex_sections": 11,
+   "overlaid": 11,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-1-purity-mixedness-and-realization",
+     "title": "Purity, Mixedness, and Realization",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-2-mixed-categories-in-representation-theory",
+     "title": "Mixed Categories in Representation Theory",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-3-the-aw-trace",
+     "title": "The AW Trace",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.928,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-4-steinberg-schemes",
+     "title": "Steinberg Schemes",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.945,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-5-steinberg-schemes-of-braids",
+     "title": "Steinberg Schemes of Braids",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.943,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-6-khovanovrozansky-homology",
+     "title": "Khovanov\u2013Rozansky Homology",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-7-the-decategorified-trace",
+     "title": "The Decategorified Trace",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-8-delignelusztig-theory",
+     "title": "Deligne\u2013Lusztig Theory",
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-9-periodic-braids",
+     "title": "Periodic Braids",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-10-the-rational-daha",
+     "title": "The Rational DAHA",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-appendix-a-coxeter-groups-and-their-characters",
+     "title": "Appendix A. Coxeter Groups and Their Characters",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-appendix-c-examples-of-the-decategorified-trace",
+     "title": "Appendix C. Examples of the Decategorified Trace",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

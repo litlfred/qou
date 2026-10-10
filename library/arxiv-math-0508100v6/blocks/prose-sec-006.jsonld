@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0508100v6/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0508100v6/blocks/prose-sec-006",
   "kind": "prose",
   "title": "Weak versus strong convergence",
   "pageStart": 8,
   "pageEnd": 8,
   "text": "../sections/sec-006-2-weak-versus-strong-convergence.md",
-  "derivedFrom": "library/arxiv-math-0508100v6/manifest",
-  "sourceDocument": "library/arxiv-math-0508100v6/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0508100v6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0508100v6/manifest.jsonld",
   "provenance": "ingested"
 }

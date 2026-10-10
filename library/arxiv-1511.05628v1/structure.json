@@ -5,7 +5,8 @@
   "file": "1511.05628v1.pdf",
   "sha256": "3b9da2994233882bdb242798fd1a5f85e53f1d0fd66410809de751d056a07d3a",
   "bytes": 781463,
-  "pages": 41
+  "pages": 41,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY",
   "authors_raw": "TUDOR DIMOFTE AND STAVROS GAROUFALIDIS",
-  "abstract": "The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that appears in the asymptotics of the Kashaev invariant at each root of unity. Our goal is to construct a power series from a Neumann-Zagier datum (i.e., an ideal triangulation of the knot complement and a geo- metric solution to the gluing equations) and a complex root of unity ζ. We prove that the coeﬃcients of our series lie in the trace ﬁeld of the knot, adjoined a complex root of unity. We conjecture that our series are those that appear in the Quantum Modularity Conjecture and conﬁrm that they match the numerical asymptotics of the Kashaev invariant (at various roots of unity) computed by Zagier and the ﬁrst author. Our construction is motivated by the analysis of singular limits in Chern-Simons theory with gauge group SL(2, C) at ﬁxed levelk, where ζ k = 1.",
+  "abstract": "The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coe\ufb03cients that appears in the asymptotics of the Kashaev invariant at each root of unity. Our goal is to construct a power series from a Neumann-Zagier datum (i.e., an ideal triangulation of the knot complement and a geo- metric solution to the gluing equations) and a complex root of unity \u03b6. We prove that the coe\ufb03cients of our series lie in the trace \ufb01eld of the knot, adjoined a complex root of unity. We conjecture that our series are those that appear in the Quantum Modularity Conjecture and con\ufb01rm that they match the numerical asymptotics of the Kashaev invariant (at various roots of unity) computed by Zagier and the \ufb01rst author. Our construction is motivated by the analysis of singular limits in Chern-Simons theory with gauge group SL(2, C) at \ufb01xed levelk, where \u03b6 k = 1.",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20151119012606Z",
@@ -550,6 +551,167 @@
   "likely_scanned": false,
   "toc_entries": 33,
   "sections": 28,
-  "chars_total": 74018
+  "chars_total": 74018,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "text13.tex",
+   "tex_sections": 7,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-quantum-modular-forms",
+     "title": "Quantum modular forms",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-21-ideal-triangulations-and-neumann-zagier-data",
+     "title": "Ideal triangulations and Neumann-Zagier data",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-22-the-1-loop-invariant-at-level-k",
+     "title": "The 1-loop invariant at level k",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-24-feynman-diagrams-for-the-n-loop-invariant",
+     "title": "Feynman diagrams for the n-loop invariant",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-25-the-2-loop-invariant-in-detail",
+     "title": "The 2-loop invariant in detail",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-26-the-3-loop-invariant",
+     "title": "The 3-loop invariant",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-27-matching-with-the-numerical-asymptotics-of-th",
+     "title": "Matching with the numerical asymptotics of the Kashaev invariant",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-28-topological-invariance",
+     "title": "Topological invariance",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-3-proofs",
+     "title": "Proofs",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-31-proof-of-theorem-26",
+     "title": "Proof of Theorem 2.6",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-32-some-identities-of-the-cyclic-dilogarithm",
+     "title": "Some identities of the cyclic dilogarithm",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-33-proof-of-theorem-22",
+     "title": "Proof of Theorem 2.2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-4-complex-chern-simons-theory",
+     "title": "Complex Chern-Simons theory",
+     "prose_ratio": 0.105,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-41-basic-structure",
+     "title": "Basic structure",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-42-a-singular-limit",
+     "title": "A singular limit",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-43-state-integrals",
+     "title": "State integrals",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-44-derivation-of-the-torsion",
+     "title": "Derivation of the torsion",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-45-ambiguities",
+     "title": "Ambiguities",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-5-computations",
+     "title": "Computations",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-020-51-how-the-data-was-computed",
+     "title": "How the data was computed",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-52-a-sample-computation",
+     "title": "A sample computation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-6-data",
+     "title": "Data",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-023-61-the-41-knot",
+     "title": "The 41 knot",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-63-the-61-knot",
+     "title": "The 61 knot",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-65-the-912-knot",
+     "title": "The 912 knot",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-027-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

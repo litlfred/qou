@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0905.0488v5/blocks/prose-sec-007",
+  "kind": "prose",
+  "title": "Total Trivialization of Twisted Deformations",
+  "pageStart": 33,
+  "pageEnd": 36,
+  "text": "../sections/sec-007-7-total-trivialization-of-twisted-deformations.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0905.0488v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0905.0488v5/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-009",
   "kind": "prose",
   "title": "(b−c)2) (2.28a)",
   "pageStart": 9,
   "pageEnd": 10,
   "text": "../sections/sec-009-2-bc2-228a.md",
-  "derivedFrom": "library/arxiv-math-ph-0105039v1/manifest",
-  "sourceDocument": "library/arxiv-math-ph-0105039v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-ph-0105039v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-ph-0105039v1/manifest.jsonld",
   "provenance": "ingested"
 }

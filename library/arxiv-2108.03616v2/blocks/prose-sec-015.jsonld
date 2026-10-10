@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2108.03616v2/blocks/prose-sec-015",
+  "kind": "prose",
+  "title": "An improved circuit diameter bound",
+  "pageStart": 29,
+  "pageEnd": 29,
+  "text": "../sections/sec-015-81-an-improved-circuit-diameter-bound.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2108.03616v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2108.03616v2/manifest.jsonld",
+  "provenance": "ingested"
+}

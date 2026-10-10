@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1512.04993v2/blocks/prose-sec-034",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1512.04993v2/blocks/prose-sec-034",
   "kind": "prose",
   "title": "Boundary terms",
   "pageStart": 52,
   "pageEnd": 53,
   "text": "../sections/sec-034-827-boundary-terms.md",
-  "derivedFrom": "library/arxiv-1512.04993v2/manifest",
-  "sourceDocument": "library/arxiv-1512.04993v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1512.04993v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1512.04993v2/manifest.jsonld",
   "provenance": "ingested"
 }

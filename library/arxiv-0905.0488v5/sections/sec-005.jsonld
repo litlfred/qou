@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0905.0488v5/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Combinatorial Descent Data",
+  "pageStart": 25,
+  "pageEnd": 28,
+  "contains": [
+    "library/arxiv-0905.0488v5/blocks/prose-sec-005",
+    "library/arxiv-0905.0488v5/blocks/remark-sec-005-01",
+    "library/arxiv-0905.0488v5/blocks/proposition-sec-005-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0905.0488v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0905.0488v5/manifest.jsonld",
+  "provenance": "ingested"
+}

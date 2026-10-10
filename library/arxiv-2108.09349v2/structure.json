@@ -6,7 +6,8 @@
   "sha256": "4c732bfcbf3dfb163acf30a0f70a2bc464352bc3c53d23623994e454baf83d04",
   "bytes": 3374335,
   "pages": 27,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -395,6 +396,131 @@
   "likely_scanned": false,
   "toc_entries": 22,
   "sections": 20,
-  "chars_total": 76358
+  "chars_total": 76358,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "3BraidsRev1.tex",
+   "tex_sections": 6,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.615,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-organization",
+     "title": "Organization",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-acknowledgments",
+     "title": "Acknowledgments",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-2-ideal-triangulations",
+     "title": "Ideal triangulations",
+     "prose_ratio": 0.255,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-21-forming-a-three-stranded-full-twist",
+     "title": "Forming a three-stranded full twist",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-22-a-foundational-ideal-triangulation",
+     "title": "A foundational ideal triangulation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-24-an-ideal-triangulation-for-any-p",
+     "title": "An ideal triangulation for any p",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-25-equivalence-classes-of-edges-in-the-triangula",
+     "title": "Equivalence classes of edges in the triangulation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-3-angle-structures-and-the-casson-rivin-program",
+     "title": "Angle structures and the Casson-Rivin program",
+     "prose_ratio": 0.577,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-32-volumes-of-angle-structures",
+     "title": "Volumes of angle structures",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-33-the-casson-rivin-program",
+     "title": "The Casson-Rivin program",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-34-symmetries-of-angle-structures",
+     "title": "Symmetries of angle structures",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-4-the-space-of-positive-angle-structures-is-none",
+     "title": "The space of positive angle structures is nonempty",
+     "prose_ratio": 0.153,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-013-41-the-triangulations-are-veering",
+     "title": "The triangulations are veering",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-42-coordinates-for-the-space-of-positive-angle-s",
+     "title": "Coordinates for the space of positive angle structures",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-43-a-symmetry-of-the-space-of-angle-structures",
+     "title": "A symmetry of the space of angle structures",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-5-the-maximal-volume-occurs-at-a-positive-angle",
+     "title": "The maximal volume occurs at a positive angle structure",
+     "prose_ratio": 0.944,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-6-extending-the-construction",
+     "title": "Extending the construction",
+     "prose_ratio": 0.941,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-appendix-a-visualizing-triangulations-of-2-bridg",
+     "title": "Appendix A. Visualizing triangulations of 2-bridge link complements",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

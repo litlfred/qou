@@ -5,7 +5,8 @@
   "file": "1301.6953v1.pdf",
   "sha256": "8c9231d0832df3b6f9fa790e80c2caeb63a3b6c75d187d76ada0f42769ec4372",
   "bytes": 168851,
-  "pages": 13
+  "pages": 13,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -240,6 +241,92 @@
   "likely_scanned": false,
   "toc_entries": 12,
   "sections": 12,
-  "chars_total": 33579
+  "chars_total": 33579,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "jlab12PoS.tex",
+   "tex_sections": 6,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-2-chiral-perturbation-theory",
+     "title": "Chiral Perturbation Theory",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.295,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-002-3-determining-low-energy-constants-in-the-contin",
+     "title": "Determining low-energy-constants in the continuum",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-4-hard-pion-chpt",
+     "title": "Hard pion ChPT",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.981,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-5-beyond-qcd",
+     "title": "Beyond QCD",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.849,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-6-leading-logarithms",
+     "title": "Leading logarithms",
+     "prose_ratio": 0.176,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-1-l-f1",
+     "title": "L + F1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-2-l2-f2",
+     "title": "L2 + F2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-1-l-f2",
+     "title": "L + F2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-3-l3-61",
+     "title": "L3 + \u00b7 \u00b7 \u00b7 (6.1)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-acknowledgments",
+     "title": "Acknowledgments",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

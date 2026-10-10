@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0707.3799v3/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+  "pageStart": 26,
+  "pageEnd": 28,
+  "contains": [
+    "library/arxiv-0707.3799v3/blocks/prose-sec-012",
+    "library/arxiv-0707.3799v3/blocks/proposition-sec-012-01",
+    "library/arxiv-0707.3799v3/blocks/lemma-sec-012-02",
+    "library/arxiv-0707.3799v3/blocks/proposition-sec-012-03",
+    "library/arxiv-0707.3799v3/blocks/proposition-sec-012-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0707.3799v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0707.3799v3/manifest.jsonld",
+  "provenance": "ingested"
+}

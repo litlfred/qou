@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1611.09182v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Standard model physics from an algebra?",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1611.09182v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "uWaterloo LaTeX Thesis Template",
   "contains": [
     "library/arxiv-1611.09182v1/sections/sec-000",
     "library/arxiv-1611.09182v1/sections/sec-001",
@@ -65,8 +70,18 @@
     "library/arxiv-1611.09182v1/sections/sec-056"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1611.09182&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1611.09182v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "1611.09182v1.pdf",
     "source_sha256": "6b40549b96d40ac7045dc59e5086ba8375fb5da7a96375c55a8fc50372d4d4ed",
     "pages": 97,

@@ -7,121 +7,56 @@ section_number: 4
 pages: 5-7
 source_pdf: 1303.6444v3.pdf
 source_sha256: 4f12ace2197f70ca
+text_source: latex
+latex_prose_ratio: 0.938
+latex_coverage_ratio: 0.938
 doc_brief: "VIRIAL EXPANSION BOUNDS — In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle"
 ---
-We wish to obtain bounds on virial coeﬃcients using those which come from cluster
-coeﬃcients, in order to gain an estimate of the lower bound for the radius of convergence of
-the virial expansion. The derivation loosely follows the method used by Ruelle in [Rue69]
-and that of Lebowitz and Penrose in [Leb64]. The starting point is the cluster expansion
-bound, which is given in the form:
-|nbn|≤ ann−1
-n! bn (4.1)
-Wherea andb are positive functions of temperature deﬁned by the particular bound we use.
-The starting point is the relationship in (3.2), (implicitly) deﬁning virial coeﬃcients in
-terms of cluster coeﬃcients:
-cn = β−1
-2πi
-∮
-C
-dz
-nzρn−1 (4.2)
-In order to get an upper bound on |cn|, we need to bound|ρ| from below. To do this we use
-the bound:
-|ρ−z|≤
-∞∑
-n=2
-|nbn||z|n (4.3)
-We then substitute in for the upper bounds we have on the cluster coeﬃcients:
-|ρ−z|≤ a
-∞∑
-n=2
-nn−1
-n! (b|z|)n (4.4)
-We deﬁne the function: f(x) :=
-∞∑
-n=1
-nn−1
-n! xn and write (4.4) conveniently as:
-|ρ−z|≤ a(f(b|z|)−b|z|) (4.5)
-Using the reverse triangle inequality, we obtain:
-|ρ|≥| z|(1 +ab)−af(b|z|) (4.6)
-Letb|z| =se−s and observe that, from the assumed generic bound on the cluster expansion,
-b|z|≤ e−1 in order for
-∞∑
-n=1
-nbnzn to converge. se−s is an increasing function on (0, 1) and it
-takes values in (0,e−1) as required. We then have the bound in terms of s:
-|ρ|≥ b−1se−s(1 +ab)−af(se−s) (4.7)
-6 S. J. TATE
-We have chosen the functionse−s since it is the inverse function off. This can be understood
-from Lagrange Inversion (shown in appendix) and is a result in [Cor97] . We thus have the
-expression:
-|ρ|≥ b−1se−s(1 +ab)−as (4.8)
-We thus seek to maximise the right hand side to get the best possible bound. We notice
-that in the ranges∈ (0, 1) we have a zero ats = 0 and another whenb−1e−s(1+ab)−a = 0
-i.e. when es = 1 + 1
-ab, so at s = ln
-(
-1 + 1
-ab
-)
-. It is positive for s∈ (0, ln
-(
-1 + 1
-ab
-)
-). We seek
-the value of s to maximise this function in this range.
-Remark 2. This approach to estimating a lower bound for the radius of convergence for
-the virial expansion, takes a value of |z| some distance away from its maximal value for con-
-vergent cluster expansions. We expect density to increase with fugacity and so the maximal
-density for which the cluster expansions remain convergent appears to be greater than that
-for the virial expansion. This is not true in general and is a weakness of this approach.
-If we deﬁne:
-r(s) :=s(e−s(1 +ab)b−1−a) (4.9)
-and take the derivative to search for an extremum in this range.
-r′(s) = (e−s(1 +ab)b−1−a)−se−s(1 +ab)b−1 (4.10)
-if we ﬁnd when r′(s) = 0 in (4.10), then we solve:
-(1−s)e−s = ab
-1 +ab (4.11)
-Substituting γ = 1−s, we get the equation for γ:
-γeγ = eab
-1 +ab (4.12)
-The LambertW -function, as is explained in [Cor97], is the inverse ofγeγ and so we can write
-(4.9) in terms of γ and substitute γ forW (µ), where µ := eab
-1+ab. If we write ˜r(γ(s)) :=r(s).
-We thus get:
-˜r(γ) = (1−γ)(eγ 1 +ab
-eb −a)
-=a(eγ 1 +ab
-eab −γeγ 1 +ab
-eab − 1 +γ)
-=a( 1
-γ− 2 +γ)
-=a(W (µ)− 1)2
-W (µ) (4.13)
-Where we use (4.12) to cancel: γeγ 1+ab
-eab = 1 and eγ 1+ab
-eab = 1
-γ .
-We evaluate the integral (4.2) along the contour described by the circle |z| = constant,
-where the constant is determined by the manipulations above. This leaves us with the
-integral:
-|cn|≤ β−1
-2nπ
-∮
-C
-dz
-|z||ρ|n−1 (4.14)
-This gives us bounds on the coeﬃcients cn as:
-|cn|≤ β−1
-n
-(
-a−1 W (µ)
-(W (µ)− 1)2
-)n−1
-(4.15)
-VIRIAL EXPANSION BOUNDS 7
-This gives us the radius of convergence of the virial expansion satisfying:
-RVir≥a(W (µ)− 1)2
-W (µ) (4.16)
+[]{#sec: general label="sec: general"} We wish to obtain bounds on virial coefficients using those which come from cluster coefficients, in order to gain an estimate of the lower bound for the radius of convergence of the virial expansion. The derivation loosely follows the method used by Ruelle in [@R69] and that of Lebowitz and Penrose in [@LPen64]. The starting point is the cluster expansion bound, which is given in the form: $$\begin{equation}
+|nb_n| \leq a \frac{n^{n-1}}{n!}b^n \label{generalcluster}
+\end{equation}$$ Where $a$ and $b$ are positive functions of temperature defined by the particular bound we use.
+
+The starting point is the relationship in [\[contourrep\]](#contourrep){reference-type="eqref" reference="contourrep"}, (implicitly) defining virial coefficients in terms of cluster coefficients: $$\begin{equation}
+c_n=\frac{\beta^{-1}}{2 \pi i} \oint_C \frac{\mathrm{d}z}{nz\rho^{n-1}} \label{integralforvirial}
+\end{equation}$$ In order to get an upper bound on $|c_n|$, we need to bound $|\rho|$ from below. To do this we use the bound: $$\begin{equation}
+|\rho-z| \leq \sum\limits_{n=2}^{\infty} |nb_n||z|^n \label{r-zbound}
+\end{equation}$$ We then substitute in for the upper bounds we have on the cluster coefficients: $$\begin{equation}
+|\rho-z| \leq a \sum\limits_{n=2}^{\infty}\frac{n^{n-1}}{n!}(b|z|)^n \label{r-zbound2}
+\end{equation}$$ We define the function: $f(x):=\sum\limits_{n=1}^{\infty}\frac{n^{n-1}}{n!}x^n$ and write [\[r-zbound2\]](#r-zbound2){reference-type="eqref" reference="r-zbound2"} conveniently as: $$\begin{equation}
+|\rho-z| \leq a(f(b|z|)-b|z|) \label{simplebound}
+\end{equation}$$ Using the reverse triangle inequality, we obtain: $$\begin{equation}
+|\rho| \geq |z|(1+ab)-a f(b|z|) \label{rbound}
+\end{equation}$$ Let $b|z|=se^{-s}$ and observe that, from the assumed generic bound on the cluster expansion, $b|z| \leq e^{-1}$ in order for $\sum\limits_{n=1}^{\infty}nb_nz^n$ to converge. $se^{-s}$ is an increasing function on $(0,1)$ and it takes values in $(0,e^{-1})$ as required. We then have the bound in terms of $s$: $$\begin{equation}
+|\rho|\geq b^{-1}se^{-s}(1+ab)-af(se^{-s}) \label{sfunction1}
+\end{equation}$$ We have chosen the function $se^{-s}$ since it is the inverse function of $f$. This can be understood from Lagrange Inversion (shown in appendix) and is a result in [@CJK97] . We thus have the expression: $$\begin{equation}
+|\rho| \geq b^{-1}se^{-s}(1+ab)-as \label{sfunction2}
+\end{equation}$$ We thus seek to maximise the right hand side to get the best possible bound. We notice that in the range $s \in (0,1)$ we have a zero at $s=0$ and another when $b^{-1}e^{-s}(1+ab)-a=0$ i.e. when $e^{s}=1+\frac{1}{ab}$, so at $s=\ln\left(1+\frac{1}{ab}\right)$. It is positive for $s \in (0,\ln\left(1+\frac{1}{ab}\right))$. We seek the value of $s$ to maximise this function in this range.
+
+::: remark
+This approach to estimating a lower bound for the radius of convergence for the virial expansion, takes a value of $|z|$ some distance away from its maximal value for convergent cluster expansions. We expect density to increase with fugacity and so the maximal density for which the cluster expansions remain convergent appears to be greater than that for the virial expansion. This is not true in general and is a weakness of this approach.
+:::
+
+If we define: $$\begin{equation}
+r(s):=s(e^{-s}(1+ab)b^{-1}-a) \label{reqn}
+\end{equation}$$ and take the derivative to search for an extremum in this range. $$\begin{equation}
+r'(s) = (e^{-s}(1+ab)b^{-1}-a)-se^{-s}(1+ab)b^{-1} \label{r'eqn}
+\end{equation}$$ if we find when $r'(s)=0$ in [\[r\'eqn\]](#r'eqn){reference-type="eqref" reference="r'eqn"}, then we solve: $$\begin{equation}
+(1-s)e^{-s}=\frac{ab}{1+ab}
+\end{equation}$$ Substituting $\gamma=1-s$, we get the equation for $\gamma$: $$\begin{equation}
+\gamma e^{\gamma}=\frac{eab}{1+ab} \label{lambertfunction}
+\end{equation}$$ The Lambert $W$-function, as is explained in [@CJK97], is the inverse of $\gamma e^{\gamma}$ and so we can write [\[reqn\]](#reqn){reference-type="eqref" reference="reqn"} in terms of $\gamma$ and substitute $\gamma$ for $W(\mu)$, where $\mu := \frac{eab}{1+ab}$. If we write $\tilde{r}(\gamma(s)):=r(s)$. We thus get: $$\begin{align}
+ \tilde{r}(\gamma)&=(1-\gamma)(e^{\gamma}\frac{1+ab}{eb}-a) \notag \\
+ &= a(e^{\gamma}\frac{1+ab}{eab}-\gamma e^{\gamma} \frac{1+ab}{eab}-1+\gamma) \notag \\
+ &=a(\frac{1}{\gamma}-2+\gamma) \notag \\
+ &=a\frac{(W(\mu)-1)^2}{W(\mu)} \label{finalreqn}
+\end{align}$$ Where we use [\[lambertfunction\]](#lambertfunction){reference-type="eqref" reference="lambertfunction"} to cancel: $\gamma e^{\gamma} \frac{1+ab}{eab}=1$ and $e^{\gamma} \frac{1+ab}{eab}=\frac{1}{\gamma}$.
+
+We evaluate the integral [\[integralforvirial\]](#integralforvirial){reference-type="eqref" reference="integralforvirial"} along the contour described by the circle $|z|=$ constant, where the constant is determined by the manipulations above. This leaves us with the integral: $$\begin{equation}
+|c_n| \leq \frac{\beta^{-1}}{2n\pi} \oint_C \frac{\mathrm{d}z}{|z||\rho|^{n-1}}
+\end{equation}$$ This gives us bounds on the coefficients $c_n$ as: $$\begin{equation}
+|c_n| \leq \frac{\beta^{-1}}{n} \left(a^{-1}\frac{W(\mu)}{(W(\mu)-1)^2}\right)^{n-1} \label{cbounds}
+\end{equation}$$
+
+This gives us the radius of convergence of the virial expansion satisfying: $$\begin{equation}
+\mathcal{R}_{\text{Vir}} \geq a \frac{(W(\mu)-1)^2}{W(\mu)}
+\end{equation}$$

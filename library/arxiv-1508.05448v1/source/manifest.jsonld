@@ -1,0 +1,70 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1508.05448v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1508.05448v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1508.05448v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1508.05448&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1508.05448v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1508.05448v1",
+    "content_type": "application/gzip",
+    "sha256": "a8376b81fcf52dda44c51db4d3923b1e3055e6db88a4169c9f6b87e144f6b8f7",
+    "bytes": 134930,
+    "fetched": "2026-10-10T15:10:25+00:00",
+    "files": [
+      {
+        "path": "source/files/thesis_final_revised.bbl",
+        "role": "bbl",
+        "sha256": "5a825849316fc2e0e1da21f648f8c6fe7100bc5bc07df1dbbf9199298f93af92",
+        "bytes": 15667
+      },
+      {
+        "path": "source/files/thesis_final_revised.tex",
+        "role": "tex",
+        "sha256": "09d5d9d66924ee7deb8b4bac8c0926b2469fcf349291ca7bbd18153028369899",
+        "bytes": 204603
+      },
+      {
+        "path": "source/files/urcsbiblio.sty",
+        "role": "sty",
+        "sha256": "ba64248f101c77bb3ccd406a9ba9a24e2ade4baae52852c3d43fdbb375320575",
+        "bytes": 944
+      },
+      {
+        "path": "source/files/urcsmacros.tex",
+        "role": "tex",
+        "sha256": "ea06ae0571210bd0c79401400657c3007d5b8655d82d948ec3711b9b14556b8f",
+        "bytes": 4582
+      },
+      {
+        "path": "source/files/urcsmargin.sty",
+        "role": "sty",
+        "sha256": "ca8ae39bf2c039c067cad8fbb0a74cc8e880d6765cd5b7f24f2665d3f014f9ed",
+        "bytes": 721
+      },
+      {
+        "path": "source/files/urcsthesis.sty",
+        "role": "sty",
+        "sha256": "7a6084de2e6353caba39999ca42826e86e8ce7c1995ef04cd384dcf0107945c4",
+        "bytes": 8186
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

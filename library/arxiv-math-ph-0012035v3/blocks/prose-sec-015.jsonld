@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-015",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-015",
   "kind": "prose",
   "title": "For g, a semisimple Lie algebra of a Lie groupG, we introduce the standard",
   "pageStart": 17,
   "pageEnd": 17,
   "text": "../sections/sec-015-1-for-g-a-semisimple-lie-algebra-of-a-lie-groupg.md",
-  "derivedFrom": "library/arxiv-math-ph-0012035v3/manifest",
-  "sourceDocument": "library/arxiv-math-ph-0012035v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-ph-0012035v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-ph-0012035v3/manifest.jsonld",
   "provenance": "ingested"
 }

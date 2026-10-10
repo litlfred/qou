@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2604.16077v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INVARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2604.16077v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Volume Conjecture and quantum hyperbolic invariants: the figure eight knot complement",
   "contains": [
     "library/arxiv-2604.16077v1/sections/sec-000",
     "library/arxiv-2604.16077v1/sections/sec-001",
@@ -86,8 +91,18 @@
     "library/arxiv-2604.16077v1/sections/sec-077"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2604.16077&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2604.16077v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "2604.16077v1.pdf",
     "source_sha256": "2f1140b9d5fee38af86010b89acae5cc7b8054b208a1daff89d1d981142b2bf9",
     "pages": 66,

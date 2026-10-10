@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2608.15898v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Universality and Kinematic Dependence of Hadronization Effects in DIS Global Event Shapes (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2608.15898v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2608.15898&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2608.15898v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2608.15898v1",
+    "content_type": "application/gzip",
+    "sha256": "c3ed2954ab6789925e74492a68285a3e478e477df55f4b55ce63b3e9a3557d01",
+    "bytes": 280887,
+    "fetched": "2026-10-10T15:23:17+00:00",
+    "files": [
+      {
+        "path": "source/files/main-short.bib",
+        "role": "bib",
+        "sha256": "5936b507abd161b05b867794caa0d375f573620502807edde8de68485643b15f",
+        "bytes": 107698
+      },
+      {
+        "path": "source/files/main-short.tex",
+        "role": "tex",
+        "sha256": "3cb16a5e60b9c96df644deba96a1a1752562f183569a2a70eed71cb837ffd9d0",
+        "bytes": 36528
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

@@ -5,7 +5,8 @@
   "file": "0005038v1.pdf",
   "sha256": "db0b9b7a8534f16157041fbe8f6a4351064ed97839efb9ef6856774d89eb5072",
   "bytes": 196196,
-  "pages": 13
+  "pages": 13,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Braid groups are linear",
   "authors_raw": null,
-  "abstract": "The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc. The Lawrence-Krammer representation of t he braid group is the induced action on a certain twisted second homol ogy of the space C of unordered pairs of points in the n-punctured disc. Recently, Daan Krammer showed that this is a faithful representation in the case n = 4. In this paper, we show that it is faithful for all n.",
+  "abstract": "The braid groups Bn can be de\ufb01ned as the mapping class group of the n-punctured disc. The Lawrence-Krammer representation of t he braid group is the induced action on a certain twisted second homol ogy of the space C of unordered pairs of points in the n-punctured disc. Recently, Daan Krammer showed that this is a faithful representation in the case n = 4. In this paper, we show that it is faithful for all n.",
   "docinfo": {
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20181101182011-04'00'",
@@ -40,7 +41,7 @@
   },
   {
    "level": 2,
-   "title": "Deﬁnitions. Let D be an oriented disc in the complex plane. Fix a set",
+   "title": "De\ufb01nitions. Let D be an oriented disc in the complex plane. Fix a set",
    "page": 1,
    "source": "inferred",
    "number": "1.1"
@@ -54,14 +55,14 @@
   },
   {
    "level": 2,
-   "title": "Outline. In Section 2 we will deﬁne forks and noodles. These will be one-",
+   "title": "Outline. In Section 2 we will de\ufb01ne forks and noodles. These will be one-",
    "page": 2,
    "source": "inferred",
    "number": "1.2"
   },
   {
    "level": 2,
-   "title": "Notation. If α and β are arcs in D \\ P such α(s) ⁄= β(s) for all s ∈ I then",
+   "title": "Notation. If \u03b1 and \u03b2 are arcs in D \\ P such \u03b1(s) \u2044= \u03b2(s) for all s \u2208 I then",
    "page": 2,
    "source": "inferred",
    "number": "1.3"
@@ -195,9 +196,9 @@
    "n_words": 127
   },
   {
-   "id": "sec-002-11-deﬁnitions-let-d-be-an-oriented-disc-in-the-c",
+   "id": "sec-002-11-de\ufb01nitions-let-d-be-an-oriented-disc-in-the-c",
    "number": "1.1",
-   "title": "Deﬁnitions. Let D be an oriented disc in the complex plane. Fix a set",
+   "title": "De\ufb01nitions. Let D be an oriented disc in the complex plane. Fix a set",
    "level": 2,
    "page_start": 1,
    "page_end": 2,
@@ -205,9 +206,9 @@
    "n_words": 488
   },
   {
-   "id": "sec-003-12-outline-in-section-2-we-will-deﬁne-forks-and",
+   "id": "sec-003-12-outline-in-section-2-we-will-de\ufb01ne-forks-and",
    "number": "1.2",
-   "title": "Outline. In Section 2 we will deﬁne forks and noodles. These will be one-",
+   "title": "Outline. In Section 2 we will de\ufb01ne forks and noodles. These will be one-",
    "level": 2,
    "page_start": 2,
    "page_end": 2,
@@ -215,9 +216,9 @@
    "n_words": 101
   },
   {
-   "id": "sec-004-13-notation-if-α-and-β-are-arcs-in-d-p-such-αs-β",
+   "id": "sec-004-13-notation-if-\u03b1-and-\u03b2-are-arcs-in-d-p-such-\u03b1s-\u03b2",
    "number": "1.3",
-   "title": "Notation. If α and β are arcs in D \\ P such α(s) ⁄= β(s) for all s ∈ I then",
+   "title": "Notation. If \u03b1 and \u03b2 are arcs in D \\ P such \u03b1(s) \u2044= \u03b2(s) for all s \u2208 I then",
    "level": 2,
    "page_start": 2,
    "page_end": 4,
@@ -370,6 +371,119 @@
   "likely_scanned": false,
   "toc_entries": 20,
   "sections": 19,
-  "chars_total": 30751
+  "chars_total": 30751,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 4,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-2-stephen-j-bigelow",
+     "title": "STEPHEN J. BIGELOW",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.281,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-11-de\ufb01nitions-let-d-be-an-oriented-disc-in-the-c",
+     "title": "De\ufb01nitions. Let D be an oriented disc in the complex plane. Fix a set",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-12-outline-in-section-2-we-will-de\ufb01ne-forks-and",
+     "title": "Outline. In Section 2 we will de\ufb01ne forks and noodles. These will be one-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-13-notation-if-\u03b1-and-\u03b2-are-arcs-in-d-p-such-\u03b1s-\u03b2",
+     "title": "Notation. If \u03b1 and \u03b2 are arcs in D \\ P such \u03b1(s) \u2044= \u03b2(s) for all s \u2208 I then",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-4-stephen-j-bigelow",
+     "title": "STEPHEN J. BIGELOW",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-21-proof-of-the-basic-lemma-the-problem-is-that",
+     "title": "Proof of the Basic Lemma. The problem is that one cannot necessarily",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-6-stephen-j-bigelow",
+     "title": "STEPHEN J. BIGELOW",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-22-alternative-proofs-there-are-many-possible-ap",
+     "title": "Alternative proofs. There are many possible approaches to proving the Ba-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-3-the-representation-is-faithful",
+     "title": "The representation is faithful",
+     "prose_ratio": 0.078,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-31-computing-the-pairing-we-now-describe-how-to",
+     "title": "Computing the pairing. We now describe how to compute the pairing be-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-8-stephen-j-bigelow",
+     "title": "STEPHEN J. BIGELOW",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-32-proof-of-the-key-lemma-let-n-be-a-noodle-and",
+     "title": "Proof of the Key Lemma. Let N be a noodle and let F be a fork. By",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-33-proof-of-the-theorem-in-this-subsection-we-us",
+     "title": "Proof of the Theorem. In this subsection we use the Basic Lemma and the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-10-stephen-j-bigelow",
+     "title": "STEPHEN J. BIGELOW",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-4-matrices-for-the-lawrence-krammer-representati",
+     "title": "Matrices for the Lawrence-Krammer representation",
+     "prose_ratio": 0.632,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-016-12-stephen-j-bigelow",
+     "title": "STEPHEN J. BIGELOW",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-v-jones-noticed-a-striking-resemblance-between-t",
+     "title": "Jones noticed a striking resemblance between the matrices desc ribed in Theorem",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

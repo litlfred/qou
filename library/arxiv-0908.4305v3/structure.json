@@ -6,7 +6,8 @@
   "sha256": "ab8d2b335b026a36a5df2b3e50e063fcb7e03fe97eab5731deac6a787a95910d",
   "bytes": 550007,
   "pages": 67,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -256,6 +257,81 @@
   "likely_scanned": false,
   "toc_entries": 15,
   "sections": 11,
-  "chars_total": 123218
+  "chars_total": 123218,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "hda7_arxiv_4.tex",
+   "tex_sections": 6,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.725,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-3-homology-versus-cohomology",
+     "title": "Homology versus Cohomology",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-41-feynman-diagrams",
+     "title": "Feynman Diagrams",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-42-hecke-algebras",
+     "title": "Hecke Algebras",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-43-hall-algebras",
+     "title": "Hall Algebras",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-5-degroupoidifying-a-tame-span",
+     "title": "Degroupoidifying a Tame Span",
+     "prose_ratio": 0.13,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-51-tame-spans-give-operators",
+     "title": "Tame Spans Give Operators",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-52-an-explicit-formula",
+     "title": "An Explicit Formula",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-61-scalar-multiplication",
+     "title": "Scalar Multiplication",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-63-inner-products-and-adjoints",
+     "title": "Inner Products and Adjoints",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-a-review-of-groupoids",
+     "title": "A Review of Groupoids",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

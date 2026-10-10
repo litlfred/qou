@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1402.4615v3/blocks/prose-sec-012",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1402.4615v3/blocks/prose-sec-012",
   "kind": "prose",
   "title": "How to compute Jack character polynomials?",
   "pageStart": 19,
   "pageEnd": 22,
   "text": "../sections/sec-012-32-how-to-compute-jack-character-polynomials.md",
-  "derivedFrom": "library/arxiv-1402.4615v3/manifest",
-  "sourceDocument": "library/arxiv-1402.4615v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1402.4615v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1402.4615v3/manifest.jsonld",
   "provenance": "ingested"
 }

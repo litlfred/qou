@@ -1,0 +1,1 @@
+IfX1 =X2 =pt→Y =BG, so that X×Y X =G, we ﬁnd that the tensor product

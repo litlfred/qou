@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1707.02991v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1707.02991v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1707.02991v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1707.02991&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1707.02991v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1707.02991v1",
+    "content_type": "application/gzip",
+    "sha256": "f1ff73c19d70821e7805bd026d8fa76f24bee6831eced901e1753d260eee8b02",
+    "bytes": 64501,
+    "fetched": "2026-10-10T15:12:21+00:00",
+    "files": [
+      {
+        "path": "source/files/knots-quivers-short-arXiv.bbl",
+        "role": "bbl",
+        "sha256": "f6fb42744bc7707a9aa634395d88686e93c3be51ec80fc976416785d891e808b",
+        "bytes": 23960
+      },
+      {
+        "path": "source/files/knots-quivers-short-arXiv.tex",
+        "role": "tex",
+        "sha256": "b03b8c9dafcc66fd00d7b49427ed77b938a39747fdab18b2bba80dffb4bb6b18",
+        "bytes": 31292
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

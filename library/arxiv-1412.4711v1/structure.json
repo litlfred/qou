@@ -6,7 +6,8 @@
   "sha256": "4fb1d6ee062cca8ca97ebab1608c56fd4f1fa21980d6cedd0178b98fb73fb719",
   "bytes": 605425,
   "pages": 29,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -416,6 +417,131 @@
   "likely_scanned": false,
   "toc_entries": 25,
   "sections": 20,
-  "chars_total": 65982
+  "chars_total": 65982,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "character-final.tex",
+   "tex_sections": 7,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.915,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-1-representation-spaces",
+     "title": "Representation spaces",
+     "prose_ratio": 0.116,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-11-representation-variety-and-character-variety",
+     "title": "Representation variety and character variety",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-12-decorated-versions",
+     "title": "Decorated versions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-13-peripheral-representations-choosing-a-meridia",
+     "title": "Peripheral representations: choosing a meridian and a longitude",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-14-deformation-variety",
+     "title": "Deformation variety",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-21-triangulation",
+     "title": "Triangulation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-15-a-diagram",
+     "title": "A diagram",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-16-the-a-variety",
+     "title": "The A-variety",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-22-presentations",
+     "title": "Presentations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-2-the-figure-eight-knot-complement",
+     "title": "The figure eight knot complement",
+     "prose_ratio": 0.837,
+     "coverage_ratio": 0.927,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-3-the-deformation-variety-for-the-figure-eight-k",
+     "title": "The deformation variety for the figure eight knot complement",
+     "prose_ratio": 0.169,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-31-computational-tools",
+     "title": "Computational tools",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-33-overview-of-the-computations",
+     "title": "Overview of the computations.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-34-explicit-computations-for-the-figure-eight-kn",
+     "title": "Explicit computations for the Figure Eight Knot complement.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-4-eigenvalues-of-peripheral-representations",
+     "title": "Eigenvalues of peripheral representations",
+     "prose_ratio": 0.136,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-41-a-variety",
+     "title": "A-variety",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-42-where-are-some-already-known-representations",
+     "title": "Where are some already known representations ?",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-5-deforming-representations-another-way-to-param",
+     "title": "Deforming representations: another way to parametrize the components",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.948,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

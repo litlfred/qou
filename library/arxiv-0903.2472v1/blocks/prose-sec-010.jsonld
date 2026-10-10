@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0903.2472v1/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0903.2472v1/blocks/prose-sec-010",
   "kind": "prose",
   "title": "A hierarchy of diﬀerential equations",
   "pageStart": 20,
   "pageEnd": 20,
   "text": "../sections/sec-010-222-a-hierarchy-of-diﬀerential-equations.md",
-  "derivedFrom": "library/arxiv-0903.2472v1/manifest",
-  "sourceDocument": "library/arxiv-0903.2472v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0903.2472v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0903.2472v1/manifest.jsonld",
   "provenance": "ingested"
 }

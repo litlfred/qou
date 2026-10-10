@@ -6,7 +6,8 @@
   "sha256": "7e966c7392b70ae0c617e3ff2a5b4caaf95f1bfc0c887dd3476083d4fcc43c5d",
   "bytes": 329042,
   "pages": 31,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -244,6 +245,92 @@
   "likely_scanned": false,
   "toc_entries": 12,
   "sections": 12,
-  "chars_total": 61150
+  "chars_total": 61150,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "polyanalytic1.tex",
+   "tex_sections": 5,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-polyanalytic-bargmann-fock-spaces",
+     "title": "Polyanalytic Bargmann-Fock spaces",
+     "prose_ratio": 0.759,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-2-1-\u03b8121-z2q-w2q",
+     "title": "(1 \u2212\u03b81)\u22122[1 + |z|2q + |w|2q],",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-2-1t2",
+     "title": "(1\u2212t)2,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-3-berezin-density-asymptotics-for-an-exterior-po",
+     "title": "Berezin density asymptotics for an exterior point",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-4-poly-bargmann-transforms",
+     "title": "Poly-Bargmann transforms",
+     "prose_ratio": 0.75,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-2-j1zj-with-j-0-1-2-form-an-orthonormal-basis-fo",
+     "title": "(j+1)zj, with j = 0, 1, 2, . . ., form an orthonormal basis for the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-5-reproducing-kernel-and-berezin-density-asympto",
+     "title": "Reproducing kernel and Berezin density asymptotics for a",
+     "prose_ratio": 0.37,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-2-im-\u03be2-1",
+     "title": "(Im \u03be)2+ 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-2-im-\u03b72om18",
+     "title": "(Im \u03b7)2+O(m\u22121/8)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-2-t\u03be\u03b72dt",
+     "title": "(t\u2212\u03be\u2212\u00af\u03b7)2dt",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

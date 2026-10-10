@@ -5,7 +5,8 @@
   "file": "0409565v2.pdf",
   "sha256": "236704063f12c05e34426a59d228f8be807d7804dee54123f6de36eaeea93928",
   "bytes": 148906,
-  "pages": 10
+  "pages": 10,
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -15,9 +16,9 @@
    "stamp_date": "14 Oct 2004"
   },
   "doi": null,
-  "title": "Unital Gröbner Bases over Arbitrary Commutative Ground Rings",
-  "authors_raw": "Frederick Leitner, Robert Pawloski ∗",
-  "abstract": "Let R be a commutative ring with unity and a let A be a not necessarily commutative R-algebra which is free as an R-module. If I is an ideal in A, one can ask when A/I is also free as an R-module. We show that if A has an admissible system and I has a unital Gr¨ obner basisthen A/I is free as an R-module. We prove a version of Buchberger’s theorem over R and, as a corollary, we obtain a Gr¨ obner basis proof of the Poincare-Birkhoﬀ-Witt Theorem over a commutative ground ring.",
+  "title": "Unital Gr\u00f6bner Bases over Arbitrary Commutative Ground Rings",
+  "authors_raw": "Frederick Leitner, Robert Pawloski \u2217",
+  "abstract": "Let R be a commutative ring with unity and a let A be a not necessarily commutative R-algebra which is free as an R-module. If I is an ideal in A, one can ask when A/I is also free as an R-module. We show that if A has an admissible system and I has a unital Gr\u00a8 obner basisthen A/I is free as an R-module. We prove a version of Buchberger\u2019s theorem over R and, as a corollary, we obtain a Gr\u00a8 obner basis proof of the Poincare-Birkho\ufb00-Witt Theorem over a commutative ground ring.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20211109141747-05'00'",
@@ -25,9 +26,9 @@
    "Title": "",
    "Author": ""
   },
-  "title_prev": "Unital Gröbner Bases over Aribtrary Commutative Ground Rings",
+  "title_prev": "Unital Gr\u00f6bner Bases over Aribtrary Commutative Ground Rings",
   "title_lines": [
-   "Unital Gröbner Bases over Aribtrary",
+   "Unital Gr\u00f6bner Bases over Aribtrary",
    "Commutative Ground Rings"
   ]
  },
@@ -41,7 +42,7 @@
   },
   {
    "level": 1,
-   "title": "Unital Gröbner Bases.",
+   "title": "Unital Gr\u00f6bner Bases.",
    "page": 2,
    "source": "outline",
    "number": null
@@ -65,6 +66,26 @@
   "likely_scanned": false,
   "toc_entries": 2,
   "sections": 1,
-  "chars_total": 16046
+  "chars_total": 16046,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 2,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction.",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.484,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

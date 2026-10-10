@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-ph-0601023v3/blocks/prose-sec-097",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-ph-0601023v3/blocks/prose-sec-097",
   "kind": "prose",
   "title": "H. Albright and S. M. Barr, “Realization of the large mixin g an-",
   "pageStart": 243,
   "pageEnd": 244,
   "text": "../sections/sec-097-c-h-albright-and-s-m-barr-realization-of-the-lar.md",
-  "derivedFrom": "library/arxiv-hep-ph-0601023v3/manifest",
-  "sourceDocument": "library/arxiv-hep-ph-0601023v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-ph-0601023v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-ph-0601023v3/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -5,7 +5,8 @@
   "file": "1712.04887v3.pdf",
   "sha256": "024317c20a1d8b66234e608af46941093a675b6399ef480dfedd52a31dcd7bf5",
   "bytes": 711529,
-  "pages": 43
+  "pages": 43,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,8 +17,8 @@
   },
   "doi": null,
   "title": "Bloch groups, algebraic K-theory, units, and Nahm's conjecture",
-  "authors_raw": "UNITS, AND NAHM’S CONJECTURE",
-  "abstract": "Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F (e2πi/n), well-deﬁned up to n-th powers of nonzero elements of Fn. The construction uses the cyclic quantum dilogarithm, and under the identiﬁcation of the Bloch group of F with the K-group K3(F ) gives (up to an unidentiﬁed invertible scalar) a formula for a certain abstract Chern class from K3(F ). The units we deﬁne are conjectured to coincide with numbers appearing in the quantum modularity conjecture for the Kashaev invariant of knots (which was the original motivation for our investigation), and also appear in the radial asymptotics of Nahm sums near roots of unity. This latter connection is used to prove Nahm’s conjecture relating the modularity of certain q-hypergeometric series to the vanishing of the associated elements in the Bloch group of Q.",
+  "authors_raw": "UNITS, AND NAHM\u2019S CONJECTURE",
+  "abstract": "Given an element of the Bloch group of a number \ufb01eld F and a natural num- ber n, we construct an explicit unit in the \ufb01eld Fn = F (e2\u03c0i/n), well-de\ufb01ned up to n-th powers of nonzero elements of Fn. The construction uses the cyclic quantum dilogarithm, and under the identi\ufb01cation of the Bloch group of F with the K-group K3(F ) gives (up to an unidenti\ufb01ed invertible scalar) a formula for a certain abstract Chern class from K3(F ). The units we de\ufb01ne are conjectured to coincide with numbers appearing in the quantum modularity conjecture for the Kashaev invariant of knots (which was the original motivation for our investigation), and also appear in the radial asymptotics of Nahm sums near roots of unity. This latter connection is used to prove Nahm\u2019s conjecture relating the modularity of certain q-hypergeometric series to the vanishing of the associated elements in the Bloch group of Q.",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20210407001859Z",
@@ -138,7 +139,7 @@
   },
   {
    "level": 2,
-   "title": "The relation between étale cohomology and Galois cohomology",
+   "title": "The relation between \u00e9tale cohomology and Galois cohomology",
    "page": 18,
    "source": "outline",
    "number": "3.2"
@@ -465,6 +466,116 @@
   "likely_scanned": false,
   "toc_entries": 35,
   "sections": 18,
-  "chars_total": 103953
+  "chars_total": 103953,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "qDilog.45.tex",
+   "tex_sections": 7,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-bloch-groups-and-associated-units",
+     "title": "Bloch groups and associated units",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-12-algebraic-k-groups-and-associated-units",
+     "title": "Algebraic K-groups and associated units",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-14-motivation-from-quantum-topology",
+     "title": "Motivation from quantum topology",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-15-plan-of-the-paper",
+     "title": "Plan of the paper",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-24-compatibilities",
+     "title": "Compatibilities",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-25-the-5-term-relation",
+     "title": "The 5-term relation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-26-an-eigenspace-computation",
+     "title": "An eigenspace computation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-3-chern-classes-for-algebraic-k-theory",
+     "title": "Chern Classes for algebraic K-theory",
+     "prose_ratio": 0.752,
+     "coverage_ratio": 0.918,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-34-upgrading-from-s-units-to-units",
+     "title": "Upgrading from S-units to units",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-35-proof-of-theorem-15",
+     "title": "Proof of Theorem 1.5",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-4-reduction-to-finite-fields",
+     "title": "Reduction to finite fields",
+     "prose_ratio": 0.124,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-41-local-chern-class-maps",
+     "title": "Local Chern class maps",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-42-the-bloch-group-of-fq",
+     "title": "The Bloch group of Fq",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-51-proof-of-theorem-16",
+     "title": "Proof of Theorem 1.6",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-6-the-connecting-homomorphism-to-k-theory",
+     "title": "The connecting homomorphism to K-theory",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.258,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-016-acknowledgements",
+     "title": "Acknowledgements",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

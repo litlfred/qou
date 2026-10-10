@@ -7,110 +7,43 @@ section_number: 2
 pages: 2-4
 source_pdf: 0203048v1.pdf
 source_sha256: 47204f32280e91a3
+text_source: latex
+latex_prose_ratio: 0.987
+latex_coverage_ratio: 0.601
 doc_brief: "Towards a third-order topological invariant for magnetic fields — An expression for a third-order link integral of three magne tic ﬁelds is presented."
 ---
-in recent years (see e.g. Brown et al 1999). Magnetic helicity, which measures the
-linkage of magnetic ﬂux, is only a lowest order topological measure. I t fails for instance
-to detect the interlocking of magnetic ﬂux tubes in form of the Borr omean rings or
-the Whitehead link (see Figure 1). The total magnetic helicity of thes e conﬁgurations
-vanishes just as it does for three or two unlinked ﬂux tubes. Both c onﬁgurations must
-possess a higher order linkage or knottedness of magnetic ﬂux whic h is not detected
-by magnetic helicity. This naturally raises the question whether corr esponding higher
-order measures similar to magnetic helicity exist which are sensitive to these linkages.
-Here we would like to remark that the conﬁgurations shown in Figure 1 are highly
-idealized. In any real plasma we would not ﬁnd this pure linkage but a mix ture of
-diﬀerent types of linkages, each of which is to be measured by a diﬀer ent integral.
-In knot theory diﬀerent invariants are known which distinguish e.g. t he
-Borromean rings or the Whitehead link from unlinked rings. The proble m is that
-invariants used in physical applications, e.g. in magnetohydrodynam ics, should be
-expressed in terms of observable quantities, in our setting in terms of the magnetic
-ﬁeld B. Up to now only the helicity, which is related to the Gauß linking number,
-has been formulated as an invariant for magnetic ﬁelds in a satisfact ory manner.
-As was recognized ﬁrst by Monastyrsky and Sasorov (1987) and in dependently by
-Berger (1990) and Evans and Berger (1992), the link invariants ba sed on so-called
-higher Massey products (see Massey 1958, 1969, Kraines 1966, F enn 1983) can be
-written as invariants applicable to magnetic ﬂux tubes. Similar to helicit y, they only
-involve the magnetic ﬁelds and can be expressed as volume integrals o ver the space in
-consideration. Their disadvantage is that their usage is restricted to magnetic ﬁelds
-conﬁned to isolated ﬂux tubes. In addition, these ﬂux tubes must n ot possess a linkage
-Figure 1. The Borromean rings (left) and the Whitehead link (right).
-Third-order topological invariant 3
-lower than the linkage which is measured.
-In this paper we present a generalized third-order invariant for th ree magnetic
-ﬁelds not conﬁned to isolated ﬂux tubes. In the case of isolated ﬂux tubes this invariant
-coincides with the invariant known from the Massey triple product. U sing gauge
-ﬁelds in the context of an SU (2) symmetry, the generalized invariant can be shown to
-originate from the same equation as helicity. Therefore, we will ﬁrst recapitulate some
-basic facts about magnetic helicity before we turn to our main subje ct, the third-order
-link invariant.
-2. Magnetic helicity
-Magnetic helicity of a ﬁeld B with arbitrary vector potential A is deﬁned as
-H(B) =
-∫
-V
-A · B d3x, B · n|∂V = 0, (2)
-which can readily be shown to be gauge invariant if no magnetic ﬂux cro sses the
-boundary of the volume. Since it is quadratic in magnetic ﬂux it is often referred to
-as a second-order topological invariant. Magnetic helicity measure s the total mutual
-linkage of magnetic ﬂux. This interpretation can be motivated if we en visage a
-simple system of two isolated and closed ﬂux tubes U1 andU2 with vanishingly small
-cross-section. The latter condition ensures that the (self-)helic ities of the ﬂux tubes
-vanish. Moﬀatt (1969) has shown that for this conﬁguration the h elicity integral yields
-H(B) = 2 φ1φ2 lk(U1,U 2), where lk(U1,U 2) is the Gauß linking number (Gauß 1867)
-of the two tubes and where φi is the magnetic ﬂux in the tube Ui. Introducing an
-asymptotic linking number, Arnol’d (1974) was able to extend this inte rpretation to
-the generic case where ﬁeld lines are not necessarily closed (see also Arnol’d & Khesin
-1998, Part III, §4).
-Similar to helicity we can introduce the more general cross-helicity of two
-magnetic ﬁelds B1 and B2. For a simply connected volume V and provided that
-B1 · n|∂V = B2 · n|∂V = 0 we deﬁne
-H(B1, B2) :=
-∫
-V
-A1 · B2 d3x =
-∫
-V
-B1 · A2 d3x. (3)
-The boundary conditions ensure that this is again a gauge invariant q uantity. To
-see that the two integrals on the right-hand side are equivalent, no te that they diﬀer
-only by a surface integral
-∫
-(A1 × A2) · n d2x. This can be shown to vanish using
-the equivalence of Bi · n|∂V = 0 with Ai × n|∂V = 0 in a certain gauge and for a
-simply connected volume V , as proved in Appendix A. Since both integrals are gauge
-invariant this proves the equality for any gauge.
-H(B1, B2) measures purely the cross linkage of ﬂux among the two ﬁelds. App lied
-to our system of two isolated closed ﬂux tubes with ﬁelds B1 + B2 = B in the
-corresponding tubes this invariant yields
-H(B1, B2) = 2 φ1φ2 lk(U1,U 2), (4)
-which is now valid without the assumption of vanishingly small tube cros s-sections.
-The signiﬁcance of magnetic helicity arises from the fact that it is inva riant in
-IMHD. Using merely the homogeneous Maxwell equations we obtain
-∂t(A · B) + ∇ · (A0B + E × A) = −2E · B, (5)
-Third-order topological invariant 4
-which describes the time evolution of helicity density A · B. Here A0 is the electric
-potential and E the electric ﬁeld. The term A0B + E × A is to be interpreted as
-a helicity current , and −2E · B as a source term . In an ideal plasma, i.e. with
-E + v × B = 0, the source term vanishes and the helicity current can be writte n as
-A0B + E × A =A0B + v (A · B) − B (A · v). (6)
-Therefore equation (5) takes the form:
-∂t (A · B) + ∇ · (v (A · B)) = ∇ · (χB), (7)
-withχ = −A0 + A · v. Elsasser (1956) already noticed that a particular gauge can be
-found such that χ = 0. Using either this gauge or an arbitrary gauge together with
-the boundary condition B · n
-⏐
-⏐
-∂V = 0 this last equation implies the conservation of
-helicity in a comoving volume for an ideal plasma, since
-d
-dt
-∫
-V
-A · B d3x =
-∫
-V
-∂t (A · B) + ∇ · (v (A · B)) d 3x =
-∫
-∂V
-χB · n d2x = 0. (8)
-The invariance of integral (2) was ﬁrst stated by Woltjer (1958).
+Magnetic helicity of a field $\bB$ with arbitrary vector potential $\bA$ is defined as $$\begin{equation}
+  H(\bB) = \int_V \bA \cdot \bB \dxxx\,,  \quad\quad\quad 
+  \bB \cdot \bn|_{\partial V} =0,                  \label{heldef}
+\end{equation}$$ which can readily be shown to be gauge invariant if no magnetic flux crosses the boundary of the volume. Since it is quadratic in magnetic flux it is often referred to as a second-order topological invariant. Magnetic helicity measures the total mutual linkage of magnetic flux. This interpretation can be motivated if we envisage a simple system of two isolated and closed flux tubes $U_1$ and $U_2$ with vanishingly small cross-section. The latter condition ensures that the (self-)helicities of the flux tubes vanish. Moffatt (1969) has shown that for this configuration the helicity integral yields $H(\bB) = 2\,\phi_1\phi_2\,\text{lk}(U_1,U_2)$, where $\text{lk}(U_1,U_2)$ is the Gauß  linking number (Gauß 1867) of the two tubes and where $\phi_i$ is the magnetic flux in the tube $U_i$. Introducing an asymptotic linking number, Arnol'd (1974) was able to extend this interpretation to the generic case where field lines are not necessarily closed (see also Arnol'd & Khesin 1998, Part III, §4).
+
+Similar to *helicity* we can introduce the more general *cross-helicity* of two magnetic fields $\bB_1$ and $\bB_2$. For a simply connected volume $V$ and provided that $\bB_1 \cdot \bn|_{\partial V} =\bB_2 \cdot \bn|_{\partial V} = 0$ we define $$\begin{equation}
+   H(\bB_1,\bB_2) := \int_V \bA_1\cdot\bB_2 \dxxx
+                  = \int_V \bB_1\cdot\bA_2 \dxxx . \label{crosshelicity}
+\end{equation}$$ The boundary conditions ensure that this is again a gauge invariant quantity. To see that the two integrals on the right-hand side are equivalent, note that they differ only by a surface integral $\int
+(\bA_1 \times \bA_2)\cdot {\bf n}  \dxx$. This can be shown to vanish using the equivalence of $\bB_i \cdot \bn|_{\partial V}=0$ with $\bA_i \times \bn|_{\partial V}=0$ in a certain gauge and for a simply connected volume $V$, as proved in [\[Equivboundaryconditions\]](#Equivboundaryconditions){reference-type="ref" reference="Equivboundaryconditions"}. Since both integrals are gauge invariant this proves the equality for any gauge.
+
+$H(\bB_1,\bB_2)$ measures purely the cross linkage of flux among the two fields. Applied to our system of two isolated closed flux tubes with fields $\bB_1 + \bB_2 = \bB$ in the corresponding tubes this invariant yields $$\begin{equation}
+   H(\bB_1,\bB_2) = 2\,\phi_1\phi_2\,\text{lk}(U_1,U_2),
+\end{equation}$$ which is now valid without the assumption of vanishingly small tube cross-sections.
+
+The significance of magnetic helicity arises from the fact that it is invariant in IMHD. Using merely the homogeneous Maxwell equations we obtain $$\begin{equation}
+\p_t(\bA\cdot\bB)+\nabla\cdot\left(A_0\bB+\bE\times\bA\right) 
+       \,=\, -2 \bE\cdot\bB,
+\label{helicity-density}
+\end{equation}$$ which describes the time evolution of helicity density $\bA\cdot\bB$. Here $A_0$ is the electric potential and $\bE$ the electric field. The term $A_0\bB+\bE\times\bA$ is to be interpreted as a *helicity current*, and $-2\bE\cdot\bB$ as a *source term*. In an ideal plasma, i.e. with $\bE + \bv\times\bB=0$, the source term vanishes and the helicity current can be written as $$\begin{equation}
+   A_0\bB+\bE\times\bA = 
+           A_0\bB+\bv\left(\bA\cdot\bB\right)-\bB\left(\bA\cdot\bv\right).
+\end{equation}$$ Therefore ([\[helicity-density\]](#helicity-density){reference-type="ref" reference="helicity-density"}) takes the form: $$\begin{equation}
+   \p_t \left(\bA\cdot\bB\right)
+       +\nabla\cdot\left(\bv\left(\bA\cdot\bB\right)\right) 
+                        = \nabla\cdot\left(\chi\bB\right),
+                        \label{helicity-conservation-equation}
+\end{equation}$$ with $\chi=-A_0+\bA\cdot\bv$. Elsasser (1956) already noticed that a particular gauge can be found such that $\chi=0$. Using either this gauge or an arbitrary gauge together with the boundary condition $\bB\cdot\bn\big|_{\p V} = 0$ this last equation implies the conservation of helicity in a comoving volume for an ideal plasma, since $$\begin{equation}
+   \fl
+   \frac{\d}{\d t}\int\limits_V \bA\cdot\bB \dxxx = 
+   \int\limits_V \p_t \left(\bA\cdot\bB\right)
+       +\nabla\cdot\left(\bv\left(\bA\cdot\bB\right)\right) \dxxx =
+    \int\limits_{\p V} \chi\bB\cdot\bn \dxx \,= \,0.
+    \label{helicity-conservation-proof}
+\end{equation}$$ The invariance of integral ([\[heldef\]](#heldef){reference-type="ref" reference="heldef"}) was first stated by Woltjer (1958).

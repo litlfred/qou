@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2501.00914v2/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Nonzero traces",
+  "pageStart": 3,
+  "pageEnd": 3,
+  "contains": [
+    "library/arxiv-2501.00914v2/blocks/prose-sec-001",
+    "library/arxiv-2501.00914v2/blocks/theorem-sec-001-01",
+    "library/arxiv-2501.00914v2/blocks/theorem-sec-001-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2501.00914v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2501.00914v2/manifest.jsonld",
+  "provenance": "ingested"
+}

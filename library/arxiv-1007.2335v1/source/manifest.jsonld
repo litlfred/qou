@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1007.2335v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "t1.ps (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1007.2335v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1007.2335&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1007.2335v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1007.2335v1",
+    "content_type": "application/gzip",
+    "sha256": "d56fc0e9dda958ad0d34ec6fea438f9617f6267acfb5a48082971cf6e0c808a7",
+    "bytes": 103210,
+    "fetched": "2026-10-10T15:03:27+00:00",
+    "files": [
+      {
+        "path": "source/files/nicole.tex",
+        "role": "tex",
+        "sha256": "f91648af2b0b55692dab7471d6a0aeeebb6307bbf294f716c403f606a6a74111",
+        "bytes": 32178
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

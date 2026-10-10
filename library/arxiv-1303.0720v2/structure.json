@@ -6,7 +6,8 @@
   "sha256": "389ab465e81a06674df137c14c10ae3f34ab0626b329424eac052cf8a8e9f185",
   "bytes": 477618,
   "pages": 41,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -853,6 +854,266 @@
   "likely_scanned": false,
   "toc_entries": 49,
   "sections": 47,
-  "chars_total": 94432
+  "chars_total": 94432,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 10,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-overview",
+     "title": "Overview",
+     "prose_ratio": 0.937,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-weighted-polyanalytic-bergman-spaces-and-kerne",
+     "title": "Weighted polyanalytic Bergman spaces and kernels",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-basic-notation-we-let-c-denote-the-complex-pl",
+     "title": "Basic notation. We let C denote the complex plane and R the real line. For z0 \u2208C and",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-22-the-weighted-bergman-spaces-and-kernels-let-\u03c9",
+     "title": "The weighted Bergman spaces and kernels. Let \u2126be a domain in C, and let \u03c9 : \u2126\u2192R+",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-3-musings-on-polyanalytic-bergman-metrics",
+     "title": "Musings on polyanalytic Bergman metrics",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-31-bergmans-\ufb01rst-metric-stefan-bergman-5-conside",
+     "title": "Bergman\u2019s \ufb01rst metric. Stefan Bergman [5] considered the Bergman kernel for the weight",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-32-bergmans-second-metric-the-second-metric-is-r",
+     "title": "Bergman\u2019s second metric. The second metric is related to the Gaussian curvature. The",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-33-the-\ufb01rst-polyanalytic-bergman-metric-we-conti",
+     "title": "The \ufb01rst polyanalytic Bergman metric. We continue the setting of the preceding subsec-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-34-the-second-polyanalytic-bergman-metric-we-tur",
+     "title": "The second polyanalytic Bergman metric. We turn to Bergman\u2019s second metric. The",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-35-the-two-polyanalytic-bergman-metrics-in-the-m",
+     "title": "The two polyanalytic Bergman metrics in the model case of the unit disk with constant",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-4-interlude-a-priori-control-on-point-evaluation",
+     "title": "Interlude: a priori control on point evaluations",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-41-introductory-comments-let-us-consider-the-uni",
+     "title": "Introductory comments. Let us consider the unit disk D, and a given subharmonic func-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-42-the-basic-estimate-we-begin-with-a-lemma-we-d",
+     "title": "The basic estimate. We begin with a lemma. We decompose the given bianalytic function",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-5-asymptotic-expansion-of-polyanalytic-bergman-k",
+     "title": "Asymptotic expansion of polyanalytic Bergman kernels",
+     "prose_ratio": 0.053,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-44-the-e\ufb00ective-estimate-of-the-point-evaluation",
+     "title": "The e\ufb00ective estimate of the point evaluation. The problem with Proposition 4.3 as it",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-51-the-weighted-polyanalytic-bergman-space-and-k",
+     "title": "The weighted polyanalytic Bergman space and kernel for power weights. As before, \u2126",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-52-weighted-bergman-kernel-expansions-for-power",
+     "title": "Weighted Bergman kernel expansions for power weights. We should observe \ufb01rst that",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-53-the-connection-with-random-normal-matrix-theo",
+     "title": "The connection with random normal matrix theory. Apart from to the connection with to",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-54-the-polyanalytic-bergman-spaces-and-landau-le",
+     "title": "The polyanalytic Bergman spaces and Landau levels. The polyanalytic spaces PA2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-6-tools-from-the-approach-of-berman-berndtsson-s",
+     "title": "Tools from the approach of Berman-Berndtsson-Sj\u00a8ostrand",
+     "prose_ratio": 0.036,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-020-61-assumptions-on-the-potential-we-\ufb01x-a-c-smooth",
+     "title": "Assumptions on the potential. We \ufb01x a C\u221e-smooth simply connected bounded domain",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-2-re-qz-w-qw-qz-1",
+     "title": "Re Q(z, w) \u2212Q(w) \u2212Q(z) \u2264\u22121",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-62-the-phase-function-we-now-introduce-the-phase",
+     "title": "The phase function. We now introduce the phase function:",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-2-rez-w\u03b8z-w-2-re-qz-w-2qw",
+     "title": "Re[(z \u2212w)\u03b8(z, w)] = 2 Re Q(z, w) \u22122Q(w)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-63-approximate-local-reproducing-and-bergman-ker",
+     "title": "Approximate local reproducing and Bergman kernels. In [8], the point of departure is",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-64-a-di\ufb00erentialoperator-and-negligible-amplitud",
+     "title": "A di\ufb00erentialoperator and negligible amplitudes. The corrective algorithm involves the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-65-a-formal-di\ufb00usion-operator-and-the-characteri",
+     "title": "A formal di\ufb00usion operator and the characterization of negligible amplitudes. Next, to",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-66-the-local-asymptotics-for-the-weighted-bergma",
+     "title": "The local asymptotics for the weighted Bergman kernel: the corrective algorithm. We",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-7-the-kernel-expansion-algorithm-for-bianalytic",
+     "title": "The kernel expansion algorithm for bianalytic functions",
+     "prose_ratio": 0.053,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-029-72-the-initial-approximate-local-bi-reproducing",
+     "title": "The initial approximate local bi-reproducing kernel. We now turn our attention to the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-75-the-characterization-of-bi-negligible-amplitu",
+     "title": "The characterization of bi-negligible amplitudes. We need to \ufb01nd the bianalytic ana-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-77-the-local-asymptotics-for-the-weighted-bianal",
+     "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective algo-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-78-the-local-asymptotics-for-the-weighted-bianal",
+     "title": "The local asymptotics for the weighted bianalytic Bergman kernel: the corrective al-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-0-a-more-precise-calculation",
+     "title": "A more precise calculation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-8-a-priori-diagonal-estimates-of-weighted-bergma",
+     "title": "A priori diagonal estimates of weighted Bergman kernels",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-035-81-estimation-of-point-evaluations-for-local-wei",
+     "title": "Estimation of point evaluations for local weighted Bergman spaces. The spaces PA2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-82-estimation-of-the-weighted-bergman-kernel-on",
+     "title": "Estimation of the weighted Bergman kernel on the diagonal. We recall that PA2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-9-bergman-kernels-from-local-to-global",
+     "title": "Bergman kernels: from local to global",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-038-91-purpose-of-the-section-in-this-section-we-sho",
+     "title": "Purpose of the section. In this section we show how the approximate local Bergman",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-039-94-analysis-of-the-second-term-in-the-pointwise",
+     "title": "Analysis of the second term in the pointwise estimate I. We proceed to estimate the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-95-digression-on-h\u00f6rmander-type-estimates-and-an",
+     "title": "Digression on H\u00f6rmander-type estimates and an obstacle problem. We should like to",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-97-the-pointwise-distance-to-the-weighted-bergma",
+     "title": "The pointwise distance to the weighted Bergman kernel. Here, we apply the estimates",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-042-10-bianalytic-extensions-of-bergmans-metrics-and",
+     "title": "Bianalytic extensions of Bergman\u2019s metrics and asymptotic analysis",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-043-101-purpose-of-the-section-in-this-section-we-ap",
+     "title": "Purpose of the section. In this section, we apply the asymptotic formulae obtained in",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-044-102-bergmans-\ufb01rst-metric-our-starting-point-is-t",
+     "title": "Bergman\u2019s \ufb01rst metric. Our starting point is the abschnitt b\u27e82,k\u27e9with k = 0:",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-045-103-bergmans-second-metric-given-that-theorem-93",
+     "title": "Bergman\u2019s second metric. Given that Theorem 9.3 extends to apply to the lifted kernel,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-046-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

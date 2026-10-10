@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2301.08311v4/blocks/theorem-sec-006-05",
+  "kind": "theorem",
+  "title": "Mutation",
+  "pageStart": 65,
+  "pageEnd": 72,
+  "text": "theorem-sec-006-05.md",
+  "derivedFrom": "library/arxiv-2301.08311v4/sections/sec-006",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2301.08311v4/manifest.jsonld",
+  "provenance": "ingested"
+}

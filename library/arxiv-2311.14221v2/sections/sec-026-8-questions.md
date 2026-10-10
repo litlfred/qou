@@ -7,15 +7,19 @@ section_number: 8
 pages: 47-47
 source_pdf: 2311.14221v2.pdf
 source_sha256: 5aa4126bbb6df6eb
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.962
 doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B → C is an exact"
 ---
-Question 8.1. The result should be applicable if C is merely locally ﬁnite
-tensor category an/or if N is inﬁnite. The example we have in mind is
-maybe the quantum group Uq(g) at generic q.
-Question 8.2. For given classes of semisimple modular tensor categories
-C (for example: the category of representations of an aﬃne Lie a lgebra at
-positive integer level), can we classify semisimple Hopf al gebras overC?
-Question 8.3. Is there a general argument that the embedding of the coradi-
-calH0 into a pointed Hopf algebra H admits a categorical section of comodule
-categories, if we assume in addition that the Yetter-Drinfe ld module H1/H0
-is semisimple over H0?
+\begin{question}
+The result should be applicable if $\vc$ is merely locally finite tensor category an/or if $\mathcal{N}$ is infinite. The example we have in mind is maybe the quantum group $U_q(\mathfrak{g})$ at generic $q$.
+\end{question}
+
+\begin{question}
+For given classes of semisimple modular tensor categories $\mathcal{C}$ (for example: the category of representations of an affine Lie algebra at positive integer level), can we classify semisimple Hopf algebras over $\mathcal{C}$?  
+\end{question}
+
+\begin{question}
+Is there a general argument that the embedding of the coradical $H_0$ into a pointed Hopf algebra  $H$ admits a categorical section of comodule categories, if we assume in addition that the Yetter-Drinfeld module $H_1/H_0$ is semisimple over $H_0$?  
+\end{question}

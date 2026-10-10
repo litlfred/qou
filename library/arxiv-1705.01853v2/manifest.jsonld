@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1705.01853v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Line operators in the Standard Model",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1705.01853v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1705.01853v2",
   "contains": [
     "library/arxiv-1705.01853v2/sections/sec-000",
     "library/arxiv-1705.01853v2/sections/sec-001",
@@ -23,8 +28,17 @@
     "library/arxiv-1705.01853v2/sections/sec-014"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1705.01853&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1705.01853v2",
+    "title_source": "slug",
     "source_file": "1705.01853v2.pdf",
     "source_sha256": "895e0b22c93bca1b83d0a42b4735c2bdd923720cc50dea2ecf3fa50b5a07a5b8",
     "pages": 18,

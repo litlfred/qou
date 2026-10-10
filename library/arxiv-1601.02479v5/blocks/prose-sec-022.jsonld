@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1601.02479v5/blocks/prose-sec-022",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1601.02479v5/blocks/prose-sec-022",
   "kind": "prose",
   "title": "The absolute cohomological Hall algebra",
   "pageStart": 46,
   "pageEnd": 50,
   "text": "../sections/sec-022-52-the-absolute-cohomological-hall-algebra.md",
-  "derivedFrom": "library/arxiv-1601.02479v5/manifest",
-  "sourceDocument": "library/arxiv-1601.02479v5/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1601.02479v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1601.02479v5/manifest.jsonld",
   "provenance": "ingested"
 }

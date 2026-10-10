@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2412.02281v1/blocks/prose-sec-013",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2412.02281v1/blocks/prose-sec-013",
   "kind": "prose",
   "title": "Behavior of the Equation (5) and the System (2) as q1",
   "pageStart": 18,
   "pageEnd": 22,
   "text": "../sections/sec-013-behavior-of-the-equation-5-and-the-system-2-as-q.md",
-  "derivedFrom": "library/arxiv-2412.02281v1/manifest",
-  "sourceDocument": "library/arxiv-2412.02281v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2412.02281v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2412.02281v1/manifest.jsonld",
   "provenance": "ingested"
 }

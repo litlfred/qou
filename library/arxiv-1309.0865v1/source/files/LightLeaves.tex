@@ -1,0 +1,447 @@
+% %===========
+% \subsection{A rough introduction to Libedinsky's Light Leaves}
+% \label{subsec-LibedIntro}
+% %===========
+% 
+% {\color{blue}
+% As we have already mentioned, Soergel proved that for any two Soergel bimodules $B_1$ and $B_2$, $\Hom(B_1, B_2)$ is free as a left or right module $R$-module with graded rank given by $(\ch(B_1), \ch(B_2))$. Soergel's proof of this result is inductive and non-constructive.}
+% 
+% {\color{red} MINOR EDITING IN WHAT FOLLOWS:}
+% 
+% In \cite{Lib}, Libedinsky finds an explicit, though non-canonical, basis of the Hom spaces between Bott-Samelson bimodules as left or right $R$-modues. His approach categorifies the the defect formula, and gives a concrete explanation of why the graded ranks of Hom spaces between Bott-Samelson bimodules should be given by the standard pairing. Another consequence of Libedinsky's results is an explicit description of generators for all morphisms between Bott-Samelson bimodules. For somewhat mysterious reasons Libedinsky named the morphisms he constructed ``la base des feuilles l\'eg\`eres". In this paper we call the basis \emph{Libedinsky's Light Leaves}, or \emph{LLL} for short.
+% Describing the LLL basis will be much easier once diagrammatics for morphisms between Soergel bimodules have been laid out (see section \ref{subsec-LibedDiag}). For now, to whet the appetite, we will describe roughly what the LLL basis does.
+% 
+% Consider the statement that $\Hom(B_{\un{w}},R_x)$ is a free left $R$-module with graded rank given by the coefficient of $H_x$ in $\un{H}_{\un{w}}$. This coefficient can be calculated using the defect
+% formula, with one term in the sum for each subexpression $\eb$ of $\un{w}$ with end-point $x$. Libedinsky constructs  one map for each such subsequence, so that these maps give a basis
+% for the Hom space. The degree of the map will equal the defect of the subexpression.
+% 
+% To understand where these maps come from, let us localize to $Q$. After localizing, $B_s \cong Q \oplus Q_s$. Therefore $B_{\un{w}}$ splits into a direct sum of standard modules,
+% one for each subsequence $\eb$ of $\un{w}$, where a $1$ indicates taking the $Q_s$ summand of that tensor, and a $0$ indicates taking the $Q$ summand. This summand will be isomorphic to $Q_v$, where $v$ is the element of $W$ given by the end-point of the subexpression $\eb$. We call this summand $Q_\eb$. Given a map from $B_\xb$ to $Q_w$, one might ask how it restricts to each such summand. Since there are no maps from $Q_v$ to $Q_w$ when $v \ne w$, it must restrict to zero unless $\eb$ gives an expression for $w$. Over $Q$ it is clear that if $B_\xb$ has $Q_w$ as a summand with multiplicity $m$ then $\Hom(B_\xb,Q_w)$ is a free $Q$-module of rank $m$.
+% 
+% What Libedinsky does is construct, for each subsequence $\eb$, an explicit map $\phi$ of $R$-bimodules $B_\xb \to R_w$ such that, after localizing, $\phi$ restricts to the identity map
+% from $Q_\eb \to Q_w$. It may also restrict to a non-zero map from $Q_\fb \to Q_w$ for some other subsequence $\fb$ expressing $w$, but only for summands obeying upper-triangularity with respect to the
+% path dominance order. The set of these maps, over all appropriate $\eb$, therefore forms a basis for the maps after localizing with $Q$. Because localization is injective, these maps must
+% already have been linearly independent over $R$, and by counting dimensions, they must form a basis over $R$.
+% 
+% Just as the summands $Q_\eb$ are formed piece by piece, taking either the $Q$ or the $Q_s$ summand every time we tensor with $B_s$, so too are Libedinsky's maps constructed piece by piece.
+% When we tensor with a new $B_{s_i}$, we follow a specific map, depending on $\eb_i$, which acts in a controllable fashion on the two new summands. This will become more obvious with a
+% diagrammatic description. There are some choices involved at each step, which leads to the non-canonicity of the basis.
+% 
+% We can describe this process within $\BSBim$, by constructing a map from $B_{\un{w}}$ to $B_{\un{x}}$ for some rex $\un{x}$ for $x$, such that after localization the restriction to the unique $Q_x$  term inside $B_{\un{x}}$ is as described above. Which rex $\un{x}$, you ask? This is really the source of all the non-canonicity. We will explain this subtlety, but not until after a more thorough examination into maps between standard bimodules.
+% 
+% Finally, two maps $B_{\un{w}} \to B_{\un{x}}$ and $B_{\un{x}} \to B_{\un{w}}$ can be composed to obtain a map $B_{\un{w}} \to B_{\un{w}'}$ with certain properties relating to their standard filtrations. Combining such maps over all $x$ will provide a cellular basis for the space of homomorphisms $B_{\un{w}}$ to $B_{\un{w}'}$, which is Libedinsky's \emph{double leaves} basis.
+% 
+% 
+
+\part{Light leaves morphisms and proofs}
+
+\label{pt:proofs}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Libedinsky's Light Leaves} \label{sec-LLL}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In this section, we investigate Libedinsky's ``light leaves'' maps \cite{Lib} from a diagrammatic perspective, and prove (modulo the arguments in the next chapter) that ``double leaves"
+form a cellular basis for $\DC$.
+
+% Actually, the generic term ``light leaves'' refers to two different but related classes of maps. The first are the \emph{light leaves maps} $\LL_{{\un{w}},\eb}$ which, even though they are maps between Bott-Samelson bimodules/objects in $\DC$, are best thought of after localization as maps from Bott-Samelson bimodules to standard bimodules. The second are the \emph{double leaves maps} $\LLL_{w,\eb,\fb}$ which will be compositions of pairs of $\LL$ maps (one of them upside-down), and will form a basis for maps between Bott-Samelson bimodules.
+
+
+%===========
+\subsection{Diagrammatics for light leaves}
+\label{subsec-LibedDiag}
+%===========
+
+Fix a rex ${\un{w}}$. We want to find a basis of diagrams for the space of morphisms $B_{\un{x}} \to B_{\un{w}}$ modulo ``lower terms." Here, lower terms are morphisms which induce the
+zero map to the unique standard summand $Q_w \sumset B_{\un{w}}$ after localization. This basis will be parametrized by subsequences $\eb$ of $\un{x}$ which express $w$. Libedinsky
+associates a morphism $\LL_{{\un{w}},\eb}$ to $\eb$, although this choice is not canonical. In fact, there are many valid choices for what each $\LL_{{\un{w}},\eb}$ can be, and selecting
+one morphism for each $\eb$ will give a basis modulo lower terms. Thus we will give a general rubric for selecting $\LL_{{\un{w}},\eb}$, which does not specify a single map but a set of
+maps, any of which will suffice. See Remark \ref{LLprecision} below on how to be more specific.
+
+Recall that a rex move is a morphism constructed from $2m$-valent vertices which corresponds to a path in the reduced expression graph of some element $w \in W$. Rex moves have degree $0$.
+When the realization is unbalanced, there is an ambiguity when defining the rex move associated to a path, which amounts to an invertible scalar. This scalar will be irrelevant for our
+discussion below: a rescaled basis is a basis still. However, we use the convention that rex moves always preserve the 1-tensor.
+
+\begin{constr} For every $({\un{x}},\eb)$ expressing $w$ and every $k \le \ell({\un{x}})$, we let $({\un{x}}_{\le k},\eb_{\le k})$ be the first $k$ terms, expressing an element $w_k$, and let ${\un{x}}_{> k}$
+denote the remaining terms. When ${\un{x}}$ is the empty set and $\eb$ its unique subsequence, the map $\LL_{{\un{w}},\eb}$ is the empty diagram. Suppose that, by induction, we have already chosen  a map $\LL_{k-1} \define \LL_{{\un{x}}_{\le k-1},\eb_{\le k-1}} \co B_{{\un{x}}_{\le k-1}} \to B_{{\un{w}}_{k-1}}$ for some rex ${\un{w}}_{k-1}$ of $w_{k-1}$. Suppose that the next index ${\un{x}}_k$ is $s$. By
+placing a vertical line $\1_{s}$ next to $\LL_{{\un{x}}_{\le k-1},\eb_{\le k-1}}$ we get a map from $B_{{\un{x}}_{\le k}} \to B_{{\un{w}}_{k-1}} \ot B_s$. We will now choose a map $\phi_k \co
+B_{{\un{w}}_{k-1}} \ot B_s \to B_{{\un{w}}_k}$ for some rex ${\un{w}}_k$ of $w_k$. The composition will be $\LL_k \define \LL_{{\un{x}}_{\le k},\eb_{\le k}}$.
+
+It follows that $\LL_{{\un{w}},\eb}$ is a composition $\phi_{\ell({\un{w}})} \circ \phi_{\ell({\un{w}})-1} \ot \1 \circ \cdots \circ \phi_1 \ot \1$, where at the $k$-th step $\1$ denotes the
+identity map of $B_{{\un{w}}_{> k}}$. The composition of the first $k$ terms is $\LL_k \ot \1_{B_{{\un{w}}_{>k}}}$.
+
+\begin{equation} \label{LLinduction} \ig{1}{LLinduction} \end{equation}
+
+There are four possibilities for the map $\phi_k$, depending on $\eb_k$. To obtain $\phi_k$ follow these three steps (see also figure \ref{fourmaps}):
+
+\begin{itemize} \item If $\eb_k$ is either U1 or U0, do nothing. If $\eb_k$ is either D0 or D1, then $s$ is in the right descent set of $w_{k-1}$. Apply $\b \ot \1_{B_s}$, where $\b$ is
+some rex move from ${\un{w}}_{k-1}$ to a rex with $s$ on the right. Now the top has $B_s \ot B_s$ on the far right.
+
+\item If $\eb_k$ is U1 do nothing. If $\eb_k$ is U0, apply a dot to the rightmost $B_s$. If $\eb_k$ is D1, apply a cap to the final $B_s \ot B_s$. If $\eb_k$ is D0, apply a merging
+trivalent vertex to the final $B_s \ot B_s$.
+
+\item We have now reached some reduced expression for $w_k$. Now apply some rex move $\a$ to get to the desired rex ${\un{w}}_k$. \end{itemize} \end{constr}
+
+\begin{figure}  \caption{The Four Maps} $\ig{1}{wisemap1} \ig{1}{wickedmap1} \ig{1}{simplemap1} \ig{1}{noaskmap1}$ \label{fourmaps} \end{figure}
+
+As expected, the degree of the morphism $\LL_{{\un{w}},\eb}$ is $+1$ for each U0 and $-1$ for each D0 and hence agrees with defect of $\eb$.
+Note also that the width (i.e. number of strands) always weakly decreases from bottom to top in an $\LL$ map.
+
+\begin{ex} Here is a possible map $\LL_{\un{w},\eb}$ for $\un{w}=rbrgbrr$ with $m_{br}=3$ and $m_{bg}=m_{gr}=2$, and for $\eb = 1111010$. \igc{1}{LLexample} \end{ex}
+
+\begin{remark} \label{LLprecision} Clearly there are many choices in this construction. The first important choice is which rex ${\un{w}}$ is the final target. If one is to compare
+$\LL_{{\un{x}},\eb}$ with $\LL_{{\un{x}},\fb}$ for two subsequences $\eb,\fb$ both expressing $w$, then they should have the same target ${\un{w}}$, and this is generally assumed. However, at each step
+in the inductive construction one needs to choose a rex ${\un{w}}_k$, and there is no particular need to be consistent with this choice. For instance, the intermediate map $LL_k$ in the
+construction of $\LL_{{\un{x}},\eb}$ need not equal the map we constructed for $\LL_{{\un{x}}_{\le k},\eb_{\le k}}$. There is even no need for the intermediate rex ${\un{w}}_k$ to agree with the final
+target for the chosen map $\LL_{{\un{x}}_{\le k},\eb_{\le k}}$. When $\eb_k$ is D0 or D1, one has a free hand to choose which rex with $s$ on the right will be factored through, and which rex
+move $\b$ will take us there. The rex move $\a$ is also freely chosen, and by no means does it have to be the shortest or easiest way to traverse the reduced expression graph $\G_w$.
+
+To be absolutely precise, i.e. to make the above construction into an algorithm, one should fix once and for all the following data: \begin{enumerate} \item For each $w \in W$, a rex
+${\un{w}}$. \item For each $w \in W$ and each index $s \in \SC$ in the \emph{right descent set} of $w$, a rex ${\un{w}}_s$ which ends in $s$. \item For any two rexes ${\un{w}}_1$ and ${\un{w}}_2$ in for $w$, a rex move from ${\un{w}}_1$ to ${\un{w}}_2$. \end{enumerate} This is not the only way to make the algorithm precise.
+
+The more precise one is, the more annoying certain statements get. Flexibility will be more useful. However, at some point (in the final chapter) we will have to show how one set of
+choices ``spans" all the other possible choices. \end{remark}
+
+\begin{remark} \label{LLof111} When $\eb=(1,1,\ldots,1)$, it is a sequence of all U1 precisely when ${\un{w}}$ is a reduced expression. If so, the set of possible $\LL_{{\un{w}},\eb}$ is precisely
+the set of rex moves. The most convenient choice is for $\LL_{{\un{w}},\eb}$ to be the identity map.
+
+Now suppose that $({\un{w}},\eb)$ has length $k$, and the first $k-1$ terms are all U1, a rex for $w_{k-1}$. In the construction of $\LL_{{\un{w}},\eb}$ we may choose $\LL_{k-1}$ to be the identity
+map, meaning that $\LL_{{\un{w}},\eb} = \phi_k$. Thus for any sequence $({\un{w}},\eb)$ the map $\phi_k$ is a valid choice for $\LL_{{\un{w}}',\eb'}$, where ${\un{w}}' = {\un{w}}_{k-1} s$ and $\eb' =
+(1,1,1,\ldots,1,\eb_k)$. This observation gives us a different inductive way to look at light leaves: \igc{1}{LLinductionAlt} One should think of the top of an $\LL$ map as being a rex
+labelled with all U1's, for the purpose of further $\LL$ maps. \end{remark}
+
+We will write $\LL_{{\un{x}},w}$ to indicate a set consisting of one fixed choice of $\LL_{{\un{x}},\eb}$ for each subexpression $\eb$ of $\un{x}$ expressing $w$. When we speak of the ``span" of  $\LL_{{\un{x}},w}$, we mean all morphisms obtained as linear combinations of $\LL$ maps, with polynomials appearing in the left-most region. Note that $\LL$ maps themselves never have polynomials in any region.
+
+\begin{remark} Not every diagram is in the light leaves basis. Here is a diagram which is not in the light leaves basis, and a description of it as an $R$-linear combination of $\LL$ maps.
+\igc{1}{notLLexample1}
+
+Here is a diagram which is not in the span of $\LL$ maps at all, because it factors through ``lower terms."
+\igc{1}{notLLexample2}
+However, when viewed under adjunction as a map to $\emptyset$, it is an $\LL$ map.
+\igc{1}{notLLexample3}
+Note that $\emptyset$ has no lower terms, so that $\LL_{{\un{x}},e}$ should genuinely form a basis for
+$\Hom_{\DC}(B_{\un{x}},\1)$.
+\end{remark}
+
+%===========
+\subsection{Localizing light leaves}
+%===========
+
+Let us fix a light leaves map $\LL_{{\un{x}},\eb}$, with $\eb$ expressing $w$. Let ${\un{w}}$ be the target of the map. Now consider what happens after the passage $\DC \to \Kar(\DC_Q)$. The target $B_{\un{w}}$ splits up into standard summands, with a unique summand isomorphic to $Q_w$. For each subsequence $\fb$ of ${\un{x}}$ which also expresses $w$ we have a summand $Q_\fb \sumset B_{\un{w}}$ isomorphic to $Q_w$, and this is sent by $\LL_{{\un{w}},\eb}$ into the unique summand $Q_w \sumset B_{\un{w}}$ with some coefficient $p^\eb_\fb \in Q$. For the conventions used to calculate this coefficient, see section \ref{subsec-compute}. A priori this coefficient depends on the choices made in the construction of $\LL_{{\un{w}},\eb}$.
+
+\begin{prop}[Path Dominance Upper-triangularity] If $p^\eb_\fb \ne 0$ then $\fb \le \eb$ in the path dominance order. Moreover, $p^\eb_\eb$ is non-zero, and is a product of roots
+independent of the choice of $\LL_{{\un{x}},\eb}$. \end{prop}
+
+\begin{proof} Let us use the same notation as the previous section, so that $w_k$ is the element expressed by $({\un{w}}_{\le k},\eb_{\le k})$. We write $v_k$ for the corresponding element with $\eb$ replaced by $\fb$.
+
+Remember that $\LL_{{\un{w}},\eb}$ is defined inductively, beginning with $\LL_k = \LL_{{\un{w}}_{\le k},\eb_{\le k}} \ot \1$. The target of $\LL_k$ is ${\un{w}}_k$, a rex for $w_k$, which only has
+standard summands corresponding to elements $u \le w_k$. Therefore $\LL_k$ will clearly act as zero on $Q_{\fb_{\le k}}$ unless $v_k \le w_k$. Thus $\LL_{{\un{w}},\eb}$ will act as zero on
+$Q_\fb$ unless $v_k \le w_k$ for every $k$, which is exactly the condition for $\fb \le \eb$ in the path dominance order. The upper-triangularity now follows.
+
+We now turn to an explicit formula for $p^\eb_\eb$. For each $k \le \ell({\un{x}})$ define a root $\a_k$ as follows:
+\begin{gather*}
+  \a_k \define \begin{cases} w_{k-1}(\a_{{\un{x}}_k}) & \text{if $\eb_k$ is U0,} \\
+-w_{k-1}(\a_{{\un{x}}_k}) & \text{if $\eb_k$ is D1,} \\
+1 & \text{otherwise.}
+\end{cases}
+\end{gather*}
+Note that $w_{k-1}(\a_{{\un{x}}_k})$ is the coefficient one obtains if one places $\a_{{\un{x}}_k}$ in the region just before ${\un{w}}_k$, as an element of $Q_\eb$,
+and pulls it to the far left region. We claim that $p^\eb_\eb = \prod_{k=1}^{l({\un{x}})} \a_k$.
+
+Consider what happens at the $k$-th step, when one includes from either $\1$ or $Q_s$ into $B_s$, and then follows $\phi_k$, the inductive part of an $\LL$ map (see figure
+\ref{calculatingp}). First let us take care of all the cases when $\eb_k$ is 0. If $\eb_k$ is U0 then $\phi_k$ is a dot and the inclusion from $R$ is a dot, leaving us with a factor of $\a_s$ in that spot,
+which we drag left to obtain $\a_k$. If $\eb_k$ is D0 then $\phi_k$ is a trivalent vertex; the dot from the inclusion pulls into the trivalent vertex, leaving nothing behind. What remains
+is an $\LL$ map with all 0's removed (with a coefficient), so it is enough to check the formula when $\eb$ consists only of 1's.
+
+Remember that bivalent vertices ``pull through" rex moves, as in relation \eqref{slidebivalentthru2m}. All that remains of the $\LL$ map is rex moves and caps. If $\eb_k$ is U1 then one
+has a bivalent vertex as the inclusion map, which will eventually pull through braids and run into either a D1 or the top of the diagram. If it runs into the top, it will precisely cancel
+the projection map on top, leaving no coefficient. If $\eb_k$ is D1 then the bivalent vertex meets a bivalent vertex from an earlier U1, and using relation \eqref{dashedcupscaps} we obtain
+a factor of $-\a_s$, which pulls left to become $\a_k$, as in figure \ref{calculatingp}.
+
+\begin{figure} \label{calculatingp} \caption{Calculating $p^\eb_\eb$} $\ig{1}{simplemap2} \qquad \ig{1}{wickedmap2} \qquad \ig{1}{wisemap2}$ \end{figure}
+
+What we obtain is precisely the standard diagram representing the only map from $Q_{\eb}$ to $Q_{{\un{w}}}$, with a polynomial on the left equal to $\prod_{k=1}^{l({\un{w}})} \a_k$. \end{proof}
+
+\begin{remark} Do not believe that just because $p^\eb_\eb$ did not depend on the choice of rex moves in the construction of $\LL_{{\un{w}},\eb}$, that no coefficients do. When $\fb < \eb$,
+$p^\eb_\fb$ does depend on the rex moves chosen. Here is an example, where ${\un{w}}=(s,t,s,s,t,s)$ in type $A_2$, $\eb=(1,1,1,1,1,1)$ and $\fb=(0,0,0,0,0,0)$. \igc{1}{lowercoeffsdepend}
+However, it is a priori clear that all coefficients $p_{\fb}^\eb$ are either products of $W$-conjugates of simple roots, or are zero. 
+\end{remark}
+
+\begin{cor} Fix an expression $\un{x}$ and let $\LL_{{\un{x}},w}$ be a set consisting of one light leaves map $\LL_{{\un{x}},\eb} \co B_{\un{x}} \to B_{\un{w}}$ for each subexpression $\eb$ expressing $w$. Now consider the maps $B_{\un{x},Q} \to Q_{w}$ in $\Kar(\DC_Q)$ obtained by postcomposing $\LL_{{\un{x}},\eb}$ with the projection $B_{\un{w},Q} \to Q_{w}$. These maps form a basis for $\Hom(B_{\un{w},Q}, Q_{w})$. Moreover, the original set $\LL_{{\un{x}},w}$ is linearly independent over $R$ as a subset of $\Hom(B_{\un{x}}, B_{\un{w}})$. \label{LLalocalbasis}\end{cor}
+
+\begin{proof} The morphism space $B_{\un{w},Q} \to Q_{\un{w}}$ is the direct sum, for each $\fb$ expressing $w$, of the morphism space $Q_\fb \to Q_{\un{w}}$. The basis result now follows
+from upper-triangularity, and the invertibility of the diagonal in $Q$. Linear independence follows immediately. \end{proof}
+
+This corollary is essentially Libedinsky's theorem \cite{Lib}, and we have now presented a diagrammatic proof for it, entirely within the context of $\DC$ and $\DStd$ (i.e. without ever
+using bimodules). As soon as one knows that the dimensions of $\Hom$ spaces is given by the standard pairing (as is the case for Soergel bimodules by \ref{SoergelThm2}) it follows by counting dimensions that the set $LL_{\un{w}, e}$ gives a  basis of $\Hom(B_{\un{w}}, R)$.
+
+%===========
+\subsection{Double leaves}
+%===========
+
+The previous section was essentially a discussion of maps $B_{\un{w}} \to Q_w$ for some $w$. Let us use this to discuss maps $B_{\un{w}} \to B_{\un{y}}$ for arbitrary expressions ${\un{w}}$ and ${\un{y}}$.
+
+Consider a light leaves map $\LL_{{\un{x}},\eb} \co B_{\un{x}} \to B_{\un{w}}$ where ${\un{w}}$ is a rex for $w$. Flipping this diagram upside-down, we get a map $\oLL_{{\un{x}},\eb} \co
+B_{\un{w}} \to B_{\un{x}}$. By the results of the previous section, $\oLL_{{\un{w}},\eb}$ behaves nicely after localization, giving a nonzero map $Q_{{\un{w}}} \to Q_\fb$ only when $\fb
+\le \eb$. The coefficients appearing are not actually $p^\eb_\fb$, because the polynomials $\frac{1}{\a_s}$ should appear only in the projections maps from $B_{s,Q}$ to $Q$ or $Q_s$, not
+in the inclusion maps. In the new formula for $p^\eb_\eb$, U0 and U1 will not contribute, and D0 and D1 will contribute $\frac{1}{\a_k}$. We leave the reader to check the details.
+Regardless, the result is still invertible in $Q$ and the analogue of Corollary \ref{LLalocalbasis} holds.
+
+Now let ${\un{x}}$ and ${\un{y}}$ be arbitrary sequences with subsequences $\eb$ and $\fb$ respectively, such that $({\un{x}},\eb)$ and $({\un{y}},\fb)$ both express $w$. Choose a rex ${\un{w}}$ for $w$, and
+construct maps $\LL_{{\un{w}},\eb} \co B_{\un{w}} \to B_{\un{w}}$ and $\oLL_{{\un{y}},\fb} \co B_{\un{w}} \to B_{\un{y}}$. We define the corresponding \emph{double leaves map} to be the composition 
+\[
+\LLL_{w,\fb,\eb} \define \oLL_{{\un{y}},\fb} \circ \LL_{{\un{x}},\eb}.
+\] 
+After localization, we obtain a coefficient $p^{\fb,\eb}_{\fb',\eb'}$ given by the inclusion of each standard summand $Q_{\eb'}$ of $B_{\un{x}}$ and projection to each standard summand $Q_{\fb'}$ of ${\un{y}}$. We know several facts about these coefficients:
+
+\begin{itemize} \item $p^{\fb,\eb}_{\fb',\eb'}=0$ unless $({\un{x}},\eb')$ and $({\un{y}},\fb')$ express the same element $v$.
+\item $p^{\fb,\eb}_{\fb',\eb'}=0$ unless both $\eb'
+\le \eb$ and $\fb' \le \fb$. In particular, this implies that the commonly expressed element $v$ must satisfy $v \le w$. We refer to this latter phenomenon as \emph{Bruhat
+upper-triangularity}, a special kind of path dominance upper-triangularity.
+\item When $v=w$, $\eb'=\eb$ and $\fb'=\fb$, the coefficient is nonzero and is a product of roots, obeying a
+simple formula independent of the choice of $\LL$ maps. \end{itemize}
+
+\begin{prop} Let $\LLL_{{\un{w}},{\un{y}}}$ contain one map $\LLL_{w,\fb,\eb}$ for each $w \in W$ and each pair of subsequences $({\un{x}},\eb)$ and $({\un{y}},\fb)$ expressing $w$. Then after localization, $\LLL_{{\un{w}},{\un{y}}}$ forms a basis of maps $B_{\un{w}} \to B_{\un{y}}$. In particular, the set $\LLL_{{\un{w}},{\un{y}}}$ is linearly independent. \label{LLLalocalbasis} \end{prop}
+
+\begin{proof} After localization, the space of maps $B_{\un{w}} \to B_{\un{y}}$ is a direct sum of $\Hom(Q_\eb,Q_\fb)$ for each pair of subsequences. These terms have a partial order, and the
+$\LLL$ maps satisfy upper-triangularity with respect to this partial order, with an invertible diagonal. \end{proof}
+
+\begin{remark} In the definition of the double leaves basis we could have taken $\LL$ maps and rotated them 180 degrees, instead of flipping them. This would avoid some of the annoyances of the final
+chapter, but would introduce its own annoyances. Most notably, rotation takes a map $B_{\un{w}} \to B_{\un{y}}$ and returns a map $B_{\o({\un{y}})} \to B_{\o({\un{w}})}$, where $\o$ denotes reversing the order of a
+sequence. To define $\oLL$ using a rotated map, the target of the original map must be $B_{\o({\un{w}})}$, which is actually a rex for $w^{-1}$, and this requires additional bookkeeping.
+Rotation will be more obviously useful in the final chapter. Note that both approaches are equally valid, although coming up with a change of basis matrix between them would be a combinatorial nightmare. Also, flipping a diagram vertically is more natural in terms of the cellular structure.\end{remark}
+
+Let us now state some of our main results, which all assume Demazure Surjectivity:
+
+\begin{thm} \label{homspacetheorem} The set $\LLL_{{\un{x}},{\un{y}}}$ forms a free $R$-basis for $\Hom(B_{\un{x}},B_{\un{y}})$ in $\DC$. \end{thm}
+
+\begin{prop} \label{homspaceprop} The set $\LL_{{\un{x}},e}$ forms a free $R$-basis for $\Hom(B_{\un{x}},\1)$ in $\DC$. \end{prop}
+
+\begin{cor} Hom spaces in $\DC$ are free graded $R$-modules. \end{cor}
+
+\begin{remark} Proposition \ref{homspaceprop} is a special case of Theorem \ref{homspacetheorem}, because when ${\un{y}}=\emptyset$ we must have $w=e$, and $\oLL_{{\un{y}}}$ is the empty
+diagram.\end{remark}
+
+The final chapter of this paper contains an elementary diagrammatic (though unpleasant) proof of these results.  Of course it is enough to show that $\LLL$ spans, as we have already shown that this set is linearly independent over $R$. The reader is now equipped to read that chapter, which does not use anything beyond this
+section.
+
+We assume these three results for the rest of this chapter.
+
+Because Theorem \ref{homspacetheorem} did not depend on the particular $\LL$ maps chosen, this implies that two different choices of $\LLL$ are pairwise dependent. It does \emph{not} imply
+that two different choices of $\LL_{{\un{x}},w}$ are pairwise dependent, because the dependence relations may require lower terms.
+
+\begin{ex} Let $s,t$ be the indices in type $A_2$. There are two choices for the map $\LL_{sts,111}$, as below. The difference between them is not an $\LL$ map, but it is an $\LLL$ map.
+\igc{1}{LLvsLLnew} \end{ex}
+
+%===========
+\subsection{Cellularity}
+%===========
+
+We assume Theorem \ref{homspacetheorem}, so that Hom spaces are free left $R$-modules and localization is injective on Hom spaces.
+
+\begin{claim} For any $w \in W$, let $\XC_w$ be the set of maps in $\DC$ which, after localization, induce the zero map on every $Q_w$ summand of their source object. Then $\XC_w$ is a
+2-sided ideal in $\DC$. \end{claim}
+
+\begin{proof} Left to the reader. \end{proof}
+
+\begin{claim} The light leaves map $\LLL_{w,\eb,\fb}$ will be in $\XC_v$ for any $v \nleq w$. \end{claim}
+
+\begin{proof} This follows from Bruhat upper-triangularity. \end{proof}
+
+For any $I \subset W$, let $\LLL_I$ denote the span of all $\LLL$ maps which factor through $w \in I$. Now let $I \subset W$ be an ideal with respect to the Bruhat order. In other words,
+if $w \in I$ and $v \le w$ then $v \in I$.
+
+\begin{claim} When $I$ is an ideal, $\LLL_I$ is a 2-sided ideal in $\DC$. It is equal to $\XC_{W \setminus I}$, the intersection of the ideals $\XC_w$ for each $w \notin I$. \end{claim}
+
+\begin{proof} We need only show that $\LLL_I$ is equal to $\XC_{W \setminus I}$, for the latter is clearly a 2-sided ideal. The inclusion $\LLL_I \subset \XC_{W \setminus I}$ follows from
+the previous claim.
+
+Now suppose that $\phi \in \Hom({\un{w}},{\un{y}})$ is in $\XC_{W \setminus I}$, and write $\phi$ as a linear combination of $\LLL$ maps. Unless $\phi$ is zero, some $\LLL_{w,\fb,\eb}$ has a
+non-zero coefficient. Choose $w$, $\eb$, and $\fb$ successively such that each is maximal in the Bruhat/path dominance order relative to the constraint that, with the previous choices,
+there is a nonzero coefficient for $\LLL_{w,\fb,\eb}$ in $\phi$. Because of upper triangularity, this is the only coefficient which can possibly contribute to a map from $Q_\eb$ to
+$Q_{\fb}$, and it does contribute in a non-zero way. Therefore $\phi$ induces a nonzero map on $Q_\eb$, implying that $w \in I$. Since this is true for each maximal choice of $w$, we see
+that $\phi \in \LLL_I$. \end{proof}
+
+It is clear that if ${\un{w}}$ and $\un{w}'$ are rexes for $w \in W$, then any two rex moves $B_{\un{w}} \to B_{\un{w}'}$ are equal modulo $\LLL_{< w}$. Both rex moves are in $\LLL_{\le w}$, and induce the identity map on the unique $Q_w$ summand after localization.
+
+Now let ${\un{y}}={\un{x}}$. Recall that $\LLL_{w,\fb,\eb} = \oLL_{{\un{x}},\fb} \circ \LL_{{\un{x}},\eb}$, factoring through ${\un{w}}$ in the middle. Suppose we compose them in the opposite order, to get an
+endomorphism of $B_{\un{w}}$. We have an $\LLL$ basis for endomorphisms of $B_{\un{w}}$ as well, and there is a \emph{unique} light leaves morphism which induces a nonzero map on
+the unique standard summand $Q_w$. This map can be any rex move, and though we often assume for convenience that it is the identity, this assumption is not necessary. Let $\psi(\eb,\fb)$
+denote the coefficient of this light leaves morphism inside the composition $\LL_{{\un{w}},\eb} \circ \oLL_{{\un{w}},\fb}$.
+
+\begin{claim} Let ${\un{x}},{\un{y}},{\un{z}}$ be arbitrary. Fix $w \in W$, and choose subsequences $\eb$ of ${\un{x}}$, $\fb$ and $\gb$ of ${\un{y}}$, and $\hb$ of ${\un{z}}$ which all express $w$. Then the
+composition $\LLL_{\hb,\gb} \LLL_{\fb,\eb} \co B_{\un{x}} \to B_{\un{z}}$ is equal to $\psi(\gb,\fb) \LLL_{\hb,\eb}$ modulo $\LLL_{< w}$. \end{claim}
+
+\begin{proof} $\LLL_{\hb,\gb} \LLL_{\fb,\eb}$ is a composition of four maps, the inner ones being $\LL_{{\un{y}},\gb} \oLL_{{\un{y}},\fb}$. This composition is equal to $\psi(\gb,\fb)$ times the
+identity of $B_{{\un{w}}}$, plus maps in $\LLL_{< w}$. Therefore the overall composition is equal to $\psi(\gb,\fb) \oLL_{{\un{z}},\hb} \LL_{{\un{w}},\eb}$ modulo $\LLL_{< w}$, as desired. \end{proof}
+
+\begin{claim} Let $a \co B_{\un{y}} \to B_{\un{z}}$ be an arbitrary morphism, and $\LLL_{w,\eb,\fb}$ be a light leaves map $B_{\un{x}} \to B_{\un{y}}$ factoring through the rex $B_{\un{w}}$. Then $a \LLL_{w,\eb,\fb}
+= \sum_{\fb'} r_a(\fb,\fb') \LLL_{w,\eb,\fb'}$ modulo $\LLL_{< w}$. The sum runs over subexpressions $\fb'$ of ${\un{z}}$ expressing $w$. The coefficients $r_a(\fb,\fb')$ do not depend on $\eb$. \end{claim}
+
+\begin{proof} Write $a \LLL_{\eb,\fb} = a \oLL_{{\un{y}},\fb} \LL_{{\un{w}},\eb}$, and consider $a \oLL_{{\un{y}},\fb}$ as a map from $B_{\un{w}} \to B_{\un{z}}$. The space of maps $B_{\un{w}} \to B_{\un{z}}$ modulo
+$\LLL_{< w}$ is spanned by $\{ \oLL_{{\un{z}},\fb'}\}$ over all $\fb'$, so that $a \oLL_{{\un{y}},\fb} = \sum_{\fb'} r_a(\fb,\fb') \oLL_{{\un{z}},\fb'}$ modulo lower terms. Composing with $\LL_{{\un{x}},\eb}$
+once more, we get the desired result. \end{proof}
+
+\begin{defn} Let $\iota \co \DC \to \DC^{\op}$ denote the antiinvolution which preserves objects and flips diagrams upside-down. \end{defn}
+
+Note that this reverses vertical composition, but not horizontal composition ($\iota$ is monoidal and contravariant). Clearly $\iota(\LLL_{\fb,\eb}) = \LLL_{\eb,\fb}$.
+
+For the definition and basic properties of cellular categories, see \cite{West}.
+
+\begin{prop} The category $\DC$ is cellular, with cellular basis $\LLL$ (for any appropriate choice of $\LLL$ maps) and antiinvolution $\iota$. \label{Discellular} \end{prop}
+
+This proposition follows from the previous claim. The cells correspond to $w \in W$ with the Bruhat order, and the set $M({\un{x}},w)$ consists of all subsequences of ${\un{x}}$ expressing $w$. We do not know of any interesting interactions between the cellular structure and the monoidal structure.
+
+
+%===========
+\subsection{The diagrammatic character}
+%===========
+
+
+ Recall that for any ideal $I \subset W$ in the Bruhat order we have a (cellular) ideal $\LLL_I$ in $\DC$. For any coideal $J$ (i.e. $W \setminus J$ is an ideal) we consider the quotient category
+\[
+\DC^J \define \DC/\LLL_{W \setminus J}.
+\]
+A basis for morphisms in $\DC^J$ is given by double leaves maps which do not factor through $W \setminus J$. If $w$ is a minimal element in $J$ then the images of $B_{\un{w}}$ in $\DC^J$ for any rex $\un{w}$ are canonically isomorphic. (The difference of any two morphisms $B_{\un{w}} \rightrightarrows B_{\un{w}'}$ corresponding to rex moves $\un{w} \rightrightarrows \un{w'}$ lies in $\LLL_{W \setminus J}$.) Similarly for any rex $\un{w}$ we have
+\begin{equation} \label{endquot}
+\End_{\DC^J}(B_{\un{w}}) = R.
+\end{equation}
+
+Given any $w \in W$ we set
+\[
+\DC^{\ge w} \define \DC^{ \{ y \;|\; y \ge w \} }
+\]
+and the above remarks show that for any rex $\un{w}$ the object $B_{\un{w}}$ does not depend on the choice of reduced expression up to canonical isomorphism. Given any expression $\un{x}$, it follows from Theorem \ref{homspacetheorem} that $\Hom_{\DC^{\ge w}}(B_{\un{x}}, B_{\un{w}})$ is a free left $R$-module with basis the set of light leaves maps $\{ LL_{\un{x}, \eb} \}$ where $\eb$ is a subexpression of $\un{x}$ expressing $w$. It follows by Lemma \ref{lem:defects} that we have the identity
+\begin{equation} \label{bsch}
+\un{H}_{\un{x}} = \sum  \grk \Hom_{\DC^{\ge w}}(B_{\un{x}}, B_{\un{w}}) H_w
+\end{equation}
+where $\grk$ denotes the graded rank of the free $R$-module $\Hom_{\DC^{\ge w}}(B_{\un{x}}, B_{\un{w}})$.
+
+We would like to extend this ``character'' map to the Karoubi envelope $\Kar(\DC)$. The problem is that for an arbitrary $\Bbbk$ and $B \in \Kar(\DC)$, the $R$-module $\Hom_{\DC^{\ge w}}(B_{\un{x}}, B_{\un{w}})$ is projective (as the summand of a free $R$-module), but is not necessarily free. Thus it is not a priori clear what $\grk$ should mean.
+
+For this reason we assume that $\Bbbk$ is a local ring. By Nakayama's lemma and its graded version, direct summands of free graded $R$-modules are graded free.
+
+\begin{defn}
+We define the \emph{diagrammatic character} by
+\begin{align*}
+\ch : [\Kar(\DC)] & \to \HB \\
+B & \mapsto \sum_{w \in W} \grk \Hom_{\Kar(\DC^{\ge w})}(B, B_{\un{w}})H_w.
+\end{align*} 
+\end{defn}
+
+The diagrammatic character is obviously a homomorphism of abelian groups, and it is easy to check that
+$\ch(v[B]) = \ch(B(1)) = v\ch(B)$. 
+Hence $\ch$ is a homomorphism of $\Zvv$-modules. It is immediate from \eqref{bsch} that
+\begin{equation} \label{eq:chhom}
+\ch(B_{\un{x}}B_{\un{y}}) = H_{\un{x}\un{y}} = H_{\un{x}}H_{\un{y}} = \ch(B_{\un{x}})\ch(B_{\un{y}}).
+\end{equation}
+and so $\ch$ is a homomorphism on the $\Zvv$-submodule of $[\DC]$ generated by the isomorphism classes of Bott-Samelson bimodules.  In the next section will see that $\ch$ is an isomorphism of algebras if $\Bbbk$ is a complete local ring.
+
+
+%============================
+\subsection{Soergel's theorem}
+\label{subsec-SThmDiag}
+%============================
+
+We present here another proof of Soergel's Categorification Theorem (Theorems \ref{SoergelThm1} and \ref{SoergelThm2}). This proof applies directly to $\DC$, but implies the corresponding theorem for Soergel bimodules via Theorem \ref{thm-equiv}. The proof is quite formal, relying only on general facts about Krull-Schmidt categories and Theorem \ref{homspacetheorem} showing that double leaves give a basis for Hom spaces between Soergel bimodules. We find our proof conceptually simpler than Soergel's original proof, although the complexity of the diagrammatic arguments in the final chapter does temper this somewhat.
+
+Recall that an object $M$ in an additive category is indecomposable if $M \ne 0$ and $M \cong M' \oplus M''$ implies that one of $M'$ or $M''$ is zero. Recall that a Krull-Schmidt category is an additive category in which every object is isomorphic to a finite direct sum of indecomposable objects, and an object is indecomposable if and only if its endomorphism ring is local. Now assume that $\Bbbk$ is a complete local ring. It is known that any $\Bbbk$-linear idempotent complete additive category such that all Hom spaces are finitely generated is Krull-Schmidt. (This follows from the fact that any finitely generated $\Bbbk$ algebra is either local or admits a non-trivial idempotent.) Theorem \ref{homspacetheorem} shows that this condition is met for degree zero morphisms in $\DC$. We conclude:
+
+\begin{lemma}
+  If $\Bbbk$ is a complete local ring then the category $\Kar(\DC)$ is Krull-Schmidt.
+\end{lemma}
+
+The following is a diagrammatic variant of Soergel's theorem, classifying the indecomposable Soergel bimodules:
+
+\begin{thm} \label{SoergelReproof} 
+Assume that $\Bbbk$ is a complete local ring. Then for all $w \in W$ there exists a unique summand $B_w$ of $B_{\un{w}}$ which is not isomorphic to the shift of a summand of $B_{\un{v}}$ for any rex $\un{v}$ for $v < w$. The object $B_w$ does not depend on the reduced expression $\un{w}$ up to isomorphism. Moreover any indecomposable object in $\Kar(\DC)$ is isomorphic to a shift of $B_w$ for some $w \in W$. Hence one has a bijection:
+\begin{align*}
+W & \simto
+\left \{ \begin{array}{c}
+\text{indecomposable objects in $\Kar(\DC)$} \\
+\text{up to shifts and isomorphism}
+\end{array} \right \} \\
+w & \mapsto B_w
+\end{align*}
+\end{thm}
+
+\begin{proof}
+  Fix a rex $\un{w}$ for $w$ and write the identity on $B_{\un{w}}$ as a sum of mutually orthogonal indecomposable idempotents:
+\[
+\1_{B_{\un{w}}} = e_1 + \dots + e_n.
+\]
+After localizing, each $e_i$ acts as an idempotent on $B_{\un{w}} \cong Q_w \oplus \bigoplus_{\eb \ne (1, \dots, 1)} Q_{\eb}$. Because $Q_w$ is indecomposable there exists a unique idempotent (say $e_1$) such that the restriction of $e_i$ to $Q_w$ is non-zero. (If we write each $e_i$ in terms of double leaves then $e_1$ is characterised as the unique idempotent with a non-zero coefficient of $\LLL_{\eb, w, \fb}$ where $\eb = \fb = (1, \dots, 1)$.) We define $B_w$ to be the image of $e$ in $\Kar(\DC)$. Hence for all $\un{w}$ we have constructed an indecomposable object $B_w$ in $\Kar(\DC)$.
+
+It remains to show that any indecomposable object in $\Kar(\DC)$ is isomorphic to a shift of one of the objects $B_w$. So let $B$ be an arbitrary indecomposable object in $\Kar(\BC)$. That is, $B$ consists of a Bott-Samelson bimodule $B_{\un{x}}$ and an indecomposable idempotent $e \in \End(B_{\un{x}})$. For any $w \in W$ the ring $\End_{\DC^{\ge w}}(B_{\un{x}})$ is a quotient of $\End(B_{\un{x}})$. Fix $w$ maximal in the Bruhat order such that the image of $e$ in $\End_{D^{\ge w}}(B_{\un{x}})$ is non-zero. Equivalently, if we write $e$ in terms of double leaves
+\[
+e = \sum \lambda_{\eb,y,\fb} \LLL_{\eb, y, \fb}
+\]
+then $w$ is maximal such that some coefficient $\lambda_{\eb,w,\fb}$ is $\ne 0$. Hence in $\DC^{\ge w}$ we can write
+\[
+e = \sum \g_{\eb, \fb} (\oLL_{{\un{x}},\fb} \circ \LL_{\un{x},\eb})
+\]
+for some (homogenous) coefficients $\g_{\eb, \fb} \in R$, where the sum is over subexpressions $\eb, \fb$ of $\un{x}$ expressing $w$. Now assume that for all such subexpressions $\eb$ and $\fb$ with $d(\eb) + d(\fb) = 0$ ($d$ denotes the defect) we have
+\[
+ \LL_{\un{x},\eb} \circ e \circ \oLL_{{\un{x}},\fb} \in \mathfrak{m} \subset \Bbbk = \End^0_{\DC^{\ge w}}(B_{\un{w}})
+\]
+where $\mathfrak{m}$ denotes the maximal ideal of $\Bbbk$. Then by expanding $e^3 = e$ we conclude that each $\g_{\eb, \fb} \in R$ belongs to the ideal generated by $R^+$ and $\mathfrak{m}$ for all $\eb, \fb$. However both
+\[ (R^+\End(B_{\un{x}}))^0 \quad \text{and} \quad \mathfrak{m} \End^0(B_{\un{x}}) \]
+are contained in the Jacobson radical of $\End(B_{\un{x}})^0$. We obtain a contradiction, because no non-zero idempotent can be contained in the Jacobson radical.
+
+We conclude that there exists subsequences $\eb'$ and $\fb'$ of $\un{x}$ such that $d(\eb') + d(\fb') = 0$ and such that
+\[
+\LL_{\un{x},\eb} \circ e \circ \oLL_{{\un{x}},\fb'} \in \Bbbk^{\times} \subset \Bbbk = \End^0_{\DC^{\ge w}}(B_{\un{w}}).
+\]
+
+Now let us return to $\Kar(\DC)$. Consider the composition
+\[
+B_{\un{w}} \stackrel{\oLL_{{\un{x}},\fb'}}{\longto} B \stackrel{\LL_{\un{x},\eb}}{\longto} B_{\un{w}}
+\]
+and recall the summand $B_w \subset B_{\un{w}}$ constructed earlier in the proof. These maps induce maps
+\[
+B_w \stackrel{i}{\to} B \stackrel{p}{\to} B_w
+\]
+such that the image of $p \circ i$ is invertible in $\End_{\DC^{\ge w}}(B_w)$. We conclude that $p \circ i$ does not belong to the maximal ideal of $\End(B_w)$ and hence is invertible. It follows that a shift of $B_w$ is isomorphic to a summand of $B$. However $B$ was assumed indecomposable, and hence $B \cong B_w(m)$ for some $m \in \ZM$. \end{proof}
+
+\begin{cor}Assume that $\Bbbk$ is a complete local ring. The diagrammatic character
+\[ \ch : [\Kar(\DC)] \to \HB \]
+is an isomorphism of $\Zvv$-algebras.
+\end{cor}
+
+\begin{proof}
+It is immediate from Theorem \ref{SoergelReproof} that:
+\begin{enumerate}
+\item $[\Kar(\DC)]$ is spanned by the classes $[B_{\un{x}}]$ for all expressions $\un{x}$;
+\item the classes $\{ [B_x] \; | \; x \in W \}$ give a $\Zvv$-basis for $[\Kar(\DC)]$.
+\end{enumerate}
+Combining (1) with \eqref{eq:chhom} we conclude that $\ch$ is a homomorphism. Using the definition of the diagrammatic character and the construction of the objects $B_x$ we have
+\[
+\ch(B_x) = \sum_{y \le x} g_{y,x} H_y
+\]
+for some $g_{y,x} \in \Zvv$ with $g_{x,x} = 1$. Hence the set $\{ \ch(B_x) \; | \; x \in W \}$ is a basis for $\HB$, being upper triangular in the standard basis. By (2), $\ch$ maps a basis of $[\Kar(\DC)]$ to a basis of $\HB$ and hence is an isomorphism.
+\end{proof}
+
+One can check directly that $\ch(B_s) = \un{H}_s$ for all $s \in S$. Hence:
+
+\begin{cor} \label{cor:homto[B]}
+Assume that $\Bbbk$ is a complete local ring. The map $\un{H}_s \mapsto [B_s]$ defines a homomorphism $\HB \to [\Kar(\DC)]$.\end{cor}
+
+%===========
+\subsection{The equivalence to bimodules}
+%===========
+
+In this section we assume that $\hg$ is a Soergel realization over a field $\Bbbk$. In this section we prove that our diagrammatic category is equivalent to Soergel bimodules.
+
+By Corollary \ref{cor:homto[B]} the map $\HB \to [\DC] : \un{H}_s \mapsto [B_s]$ is a homomorphism. By taking the graded ranks of Hom spaces in $\DC$ we obtain a pairing on $[\DC]$ which induces a semi-linear pairing $( - , - )_{\DC}$ on $\HB$ by pull-back. It is obvious from the diagrammatic description of $\DC$ that $B_s$ is self-biadjoint in $\DC$, so $\un{H}_s$ is self-biadjoint in this pairing. It follows that $( -, - )_{\DC}$ is determined by the trace $\e_\DC : \HB \to \Zvv : h \mapsto ( h, 1 )_{\DC}$. Because the degree of any light leaves map is given by the defect of the corresponding subexpression, it follows from Proposition \ref{homspaceprop} and Corollary \ref{cor:defects} that $\e_{\DC}$ agrees with the standard trace on objects of the form $\un{H}_{\un{w}}$ for all expressions $\un{w}$. As these elements generate $\HB$ we conclude that $\e$ and $\e_{\DC}$, and hence $( - , - )_{\DC}$ and the standard form $( -, - )$, agree.
+
+In section \ref{subsec-functor} we constructed a monoidal functor $\FC : \DC \to \BSBim$. It induces a monoidal functor on the idempotent completions $\FC : \Kar(\DC) \to \SBim$.
+
+\begin{thm} Under the above assumptions $\FC : \Kar(\DC) \to \SBim$ is an equivalence of monoidal categories. \label{thm-equiv}
+\end{thm}
+
+\begin{proof} Because idempotent completion preserves equivalences, it is enough to show that $\FC : \DC \to \BSBim$ is an equivalence. Clearly this functor is essentially surjective, so it is enough to show that it is fully-faithful. It is a theorem due to Libedinsky \cite{Lib} that images under $\FC$ of the dots, trivalent vertices and $2m_{st}$-valent vertices generate all moprhisms between Bott-Samelson bimodules. It follows that $\FC$ is full. Now by the above discussion and the fact that our realization is a Soergel realization, the graded dimensions of the homomorphism spaces in $\DC$ and $\BSBim$ conincide. We conclude that $\FC$ induces an isomorphism on Hom spaces, being a surjection between graded vector spaces of the same (finite) dimension in each graded component. Hence $\FC$ is fully-faithful.\end{proof}
+
+\begin{remark} One can avoid the appeal to Libedinsky's result as follows. By adjunction, it is enough to prove that the images of dots, trivalent vertices and $2m_{st}$-valent vertices generate $\Hom(B_{\un{w}}, R)$ for any expression $\un{w}$. Now a fixed choice of light leaves maps $\LL_{\un{w},e}$ is obviously mapped to a composition of such maps, and is mapped to a linearly independent subset of $\Hom(B_{\un{w}}, R)$ by the same localisation argument as in the proof of Corollary \ref{LLalocalbasis}, this time carrried out in the localized category of Soergel bimodules. By comparing the degrees of $\LL_{{\un{w}},\eb}$ and the graded rank of $\Hom(B_{\un{w}}, R)$ one concludes that $\LL_{\un{w},e}$ spans $\Hom(B_{\un{w}}, R)$ as a graded $R$-module. Hence the result. (This is basically an adaption of Libedinsky's argument.)
+\end{remark}
+

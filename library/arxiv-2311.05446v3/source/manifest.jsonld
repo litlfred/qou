@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2311.05446v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "New Brunn--Minkowski and functional inequalities via convexity of entropy (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2311.05446v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2311.05446&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2311.05446v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2311.05446v3",
+    "content_type": "application/gzip",
+    "sha256": "90b18b06a2239f479248a56ca17872f9265d321ecb71b36d0122a27ef0ec1972",
+    "bytes": 61024,
+    "fetched": "2026-10-10T15:19:24+00:00",
+    "files": [
+      {
+        "path": "source/files/NewIntro.tex",
+        "role": "tex",
+        "sha256": "2dbd3974e4a9114177d2c3671503cfa5b3f675487d268904df115ca1954fcacb",
+        "bytes": 25232
+      },
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "d5fce2205d6cff3e69d078d563029491f7712c392958c53041b3189d48f8145f",
+        "bytes": 75957
+      },
+      {
+        "path": "source/files/morereferences.bib",
+        "role": "bib",
+        "sha256": "8b6f06493203bd16efd74618fb850621249805709429a5064b5451c32660ec9d",
+        "bytes": 19066
+      },
+      {
+        "path": "source/files/shoulderofgiants.bib",
+        "role": "bib",
+        "sha256": "28f455cd22b36e348100ecdcfd6e669644c1350fdee4327e9644a003b6211cd6",
+        "bytes": 95637
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

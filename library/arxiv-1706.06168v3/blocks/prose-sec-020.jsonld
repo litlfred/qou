@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1706.06168v3/blocks/prose-sec-020",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1706.06168v3/blocks/prose-sec-020",
   "kind": "prose",
   "title": "A Tensor Product Decomposition of SL2(C) Representations",
   "pageStart": 31,
   "pageEnd": 34,
   "text": "../sections/sec-020-a-tensor-product-decomposition-of-sl2c-represent.md",
-  "derivedFrom": "library/arxiv-1706.06168v3/manifest",
-  "sourceDocument": "library/arxiv-1706.06168v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1706.06168v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1706.06168v3/manifest.jsonld",
   "provenance": "ingested"
 }

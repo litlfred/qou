@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0408210v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0408210v3",
+  "contains": [
+    "library/arxiv-math-0408210v3/sections/sec-front-matter",
+    "library/arxiv-math-0408210v3/sections/sec-000",
+    "library/arxiv-math-0408210v3/sections/sec-001",
+    "library/arxiv-math-0408210v3/sections/sec-002",
+    "library/arxiv-math-0408210v3/sections/sec-003",
+    "library/arxiv-math-0408210v3/sections/sec-004",
+    "library/arxiv-math-0408210v3/sections/sec-005",
+    "library/arxiv-math-0408210v3/sections/sec-006",
+    "library/arxiv-math-0408210v3/sections/sec-007",
+    "library/arxiv-math-0408210v3/sections/sec-008",
+    "library/arxiv-math-0408210v3/sections/sec-009",
+    "library/arxiv-math-0408210v3/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0408210&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0408210v3",
+    "title_source": "slug",
+    "source_file": "0408210v3.pdf",
+    "source_sha256": "16d5ccb83a86954f958e4277a6a5c5f65b3db17b30d21da2f71a77b979c8e318",
+    "pages": 17,
+    "arxiv": {
+      "id": "math/0408210",
+      "version": "3",
+      "primary_class": null,
+      "stamp_date": "7 May 2005"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

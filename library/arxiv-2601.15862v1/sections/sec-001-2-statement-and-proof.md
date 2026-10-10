@@ -7,792 +7,1559 @@ section_number: 2
 pages: 1-14
 source_pdf: 2601.15862v1.pdf
 source_sha256: e37fa9b4515f58d1
+text_source: latex
+latex_prose_ratio: 0.911
+latex_coverage_ratio: 0.549
 doc_brief: "SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED — We have previously observed that the theory of solutions of par- tial differential equations, regarded asdiffietiesinside jet bundles, acquires a"
 ---
-Appendix A. Background 9
-References 14
-1.Introduction
-The tenet ofsynthetic differential geometry(SDG, cf. [Koc79; Lav96; Koc10])
-is that concepts and results in differential geometry often find a more natural and
-powerful formulation after faithfully embedding the category of smooth manifolds
-into a suitabletopos(cf. [MM92; Bor94]) whereinfinitesimal spacesexist as actual
-objects.
-Such a “well-adapted” SDG topos is theCahiers toposdue to E. Dubuc ([Dub79],
-cf. [GS25b,§2]), which we may think of as the category offormal smooth sets
-(recalled in§A.1 — here “formal” is common jargon for “infinitesimally thickened”
-or “haloed”). This is a differential-geometric analog of working withformal schemes
-in algebraic geometry.
-One striking example is from the geometry of partial differential equations. On
-top of describing classical solutions, SDG can treat formal (power series) solutions
-of partial differential equations as primary objects. Classically, these formal solu-
-tions appeared in the guise ofdiffietiesinside infinite jet bundles (a very fruitful
-perspective due to [Vin81], brief background is recalled in§A.3). Their appearance
-Date: January 23, 2026.
-2020Mathematics Subject Classification.Primary: 58A03, 51K10, 58A20 Secondary: 18F15,
-35A30 .
-Key words and phrases.Synthetic differential geometry, infinite jet bundles, Cahiers topos,
-formal smooth sets.
-Funding: IK’s work is supported by theCzech Academy of SciencesResearch Plan
-RVO:67985840. The remaining authors are supported byTamkeen UAEunder theNYU Abu
-Dhabi Research Institute grantCG008.
-1
-arXiv:2601.15862v1  [math.DG]  22 Jan 2026
-2 GRIGORIOS GIOTOPOULOS, IGOR KHAVKINE, HISHAM SATI, AND URS SCHREIBER
-in SDG turns out to become largely structural (namelycomonadic) when viewed in
-the synthetic context of formal (infinitesimally thickened) smooth sets. This is the
-result of [KS26]. However, a key technical step in this identification had remained
-unproven, recalled as Thm. 2.1 below:
-Namely, withinfinite jet bundles(A.9) being projective limits of finite-dimensional
-manifolds, there area prioritwo different ways of regarding them among formal
-smooth sets: Either by first taking the limit (in Fr´ echet manifolds) and then passing
-to formal smooth sets, or the other way around! We prove here that that these two
-constructions are naturally isomorphic.
-This has crucial implications for applications in variational calculus and in La-
-grangian field theory, cf Cor. 2.2 below.
-The result may be “intuitively expected” to be true, but proving it is not entirely
-trivial. Here we provide a detailed and largely constructive proof. Besides filling
-this particular gap in the previous literature, our proof may be interesting for the
-technique it uses, which seems to be new, and may be adapted to other situations,
-cf. Rem. 2.7 below.
-2.Statement and Proof
-We writei ! (Def. A.7) for the inclusion of smooth sets — such as Fr´ echet mani-
-folds (Lem. A.9) — among formal smooth sets.
-Theorem 2.1.For E Σ a finite-dimensional surjective submersion of smooth
-manifolds, passage to formal smooth sets preserves the projective limit involved in
-forming its infinite jet bundleJ ∞
-Σ E(cf.§A.3), in that there is a natural isomor-
-phism:
-(2.1)i !
-(
-lim←−k∈N
-Jk
-ΣE
-)
-≃lim←−k∈N
-(
-i!Jk
-ΣE
-)
-.
-By the characterization [KS26, Prop. 2.29; GS25a, Cor. 3.6] of smooth maps out
-of Fr´ echet projective limit manifolds (“locally pro-manifolds”), Thm. 2.1 implies:
-Corollary 2.2.The maps of formal smooth sets from a synthetic jet bundleJ ∞
-Σ E
-to a finite-dimensional manifoldFis in canonical bijection with point-set smooth
-maps which are locally of finite jet order(as considered in [Tak79]).
-We prove Thm. 2.1 below after establishing a few lemmas, based on the following
-recognition principle for reduced objects among formal smooth sets:
-Lemma 2.3.An objectX∈FrmSmthSetisreduced (A.2)iff the following two
-conditions hold:
-(i)All germs of maps out of aU×D∈FrmCrtSpintoXfactor through some
-V∈CrtSp :
-(2.2) ∀U×D V X.
-∀
-∃ι ∃f
-SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED 3
-(ii)The equivalence relation on the set of such factorizations(ι,f)which is
-generatedby the relation
-(2.3) (ι,f)∼(ι ′,f)⇔
-V
-U×D X
-V′
-∃
-fι
-ι′ f′
-is that of equal composites, hence:
-(2.4) (ι,f)∼
-∃
-···∼(ι ′,f′)⇔f◦ι=f ′◦ι′.
-Proof.This is an immediate reformulation of the followingcoendformula for the
-left Kan extension on presheaves (cf. [Kel82, p. 4.25; Lor21, (2.27)]):
-(2.5) (i !X)(U×D)≃
-∫V∈CrtSp
-FrmCrtSp(U×D, V)×X(V),
-which (seen under the Yoneda lemma) says that mapsU×D i!X in FrmSmthSet
-are in natural bijection to equivalence classes of pairs consisting of a mapU×D V
-(in FrmCrtSp FrmSmthSet) into a Cartesian space V∈CrtSp FrmCrtSpi
-and a mapV X in SmthSet, subject to the equivalence relation which is gener-
-ated by compatible maps ϕ:V V′ (in CartSp) between the factor spaces:
-{
-U×D i!X
-}
-≃
-{(
-U×D Vι ,V X
-f )}/ 
-
-
-
-
-V V
-U×D X
-V′, V′
-ϕ ϕ
-fι
-ι′ f′
-
-
-
-
-,
-where on the right we mean that a pair as on the top of the diagram is in relation
-to a pair as shown at the bottom ifϕexists that makes the two triangles commute.
-Under passage to sheaves (A.3) this statement holds on germs of maps, as
-claimed.□
-The archetype of Thm. 2.1 is the statement that the projective limit defining
-the projectively infinite-dimensional Cartesian space (cf. [KS26, Def. 2.24, Prop.
-2.26]),
-(2.6)R ∞ := lim←−
-(
-R2 R1 R0
-)
-∈ FrchtMfd SmthSet(A.8) ,
+We write $i_!$ (\cref{ToposOfFormalSmoothSets}) for the inclusion of smooth sets --- such as Fr{\'e}chet manifolds (\cref{FrechetManifoldsAsSmoothSets}) --- among formal smooth sets.
+
+\begin{theorem}
+\label[theorem]{i!PreservesInfiniteJetBundles}
+For $\inlinetikzcd{E \ar[r] \& \Sigma}$ a finite-dimensional surjective submersion of smooth manifolds, passage to formal smooth sets preserves the projective limit involved in forming its infinite jet bundle $J^\infty_\Sigma E$ \textup{(cf. \cref{OnJetBundles})}, in that there is a natural isomorphism:
+\begin{equation}
+  \label{i!PreservingInfiniteJetBundles}
+  i_! 
+  \Big(
+    \varprojlim_{k \in \mathbb{N}} 
+    J^k_\Sigma E 
+  \Big)
+    \;\simeq\; 
+  \varprojlim_{k \in \mathbb{N}}
+  \left(
+    i_!  J^k_\Sigma E
+  \right)
+  \mathrlap{.}
+\end{equation}
+\end{theorem}
+
+By the characterization \parencites[Prop. 2.29]{KS26}[Cor. 3.6]{GS25-FieldsI} of smooth maps out of Fr{\'e}chet projective limit manifolds (``locally pro-manifolds''), \cref{i!PreservesInfiniteJetBundles} implies:
+\begin{corollary}
+\label[corollary]
+ {MapsOutOfJetBundleAreLocallyOfFiniteOrder}
+The maps of formal smooth sets from a synthetic jet bundle $J^\infty_\Sigma E$ to a finite-dimensional manifold $F$ is in canonical bijection with point-set smooth maps which are locally of finite jet order \textup{(as considered in \cite{Takens1979})}. 
+\end{corollary}
+
+We prove \cref{i!PreservesInfiniteJetBundles} below after establishing a few lemmas, based on the following recognition principle for reduced objects among formal smooth sets:
+\begin{lemma}
+  \label[lemma]{RecognizingReducedObjects}
+  An object $X \in \HaloedSmoothSets$ is \emph{reduced} \cref{SmthSetInsideFrmSmthSet} iff the following two conditions hold: 
+  \begin{enumerate}
+  \item All germs of maps out of a $U \times \mathbb{D} \in \HaloedCartesianSpaces$ into $X$ factor through some $\inlinetikzcd{V \in \CartesianSpaces}$:
+  \begin{equation}
+    \label{ReducedAsFactoringPlots}
+    \begin{tikzcd}[
+      column sep=30
+    ]
+      \mathllap{\forall\;}
+      U \times \mathbb{D}
+      \ar[
+        rr,
+        uphordown,
+        "{ 
+          \forall 
+         }"{description}
+      ]
+      \ar[
+        r, 
+        dashed,
+        "{ 
+          \exists \, \iota
+        }"{pos=.4}
+      ]
+      &
+      V
+      \ar[
+        r, 
+        dashed,
+        "{ 
+          \exists f
+        }"{pos=.4}
+      ]
+      &
+      X
+      \mathrlap{\,.}
+    \end{tikzcd}
+  \end{equation}
+  \item
+  The equivalence relation on the set of such factorizations $(\iota,f)$ which is \emph{generated} by the relation
+  \begin{equation}
+    \label{GeneratingRelation}
+    (\iota,f)
+    \sim
+    (\iota',f)
+    \quad 
+    \Leftrightarrow
+    \quad 
+    \begin{tikzcd}[row sep=-1pt]
+      & 
+      V
+      \ar[
+        dd,
+        dashed,
+        "{ \exists }"{swap, pos=.4}
+      ]
+      \ar[
+        dr,
+        "{ f }"
+      ]
+      \\
+      U \times \mathbb{D}
+      \ar[
+        ur,
+        "{ \iota }"
+      ]
+      \ar[
+        dr,
+        "{ \iota' }"{swap}
+      ]
+      &&
+      X
+      \\
+      &
+      V'
+      \ar[
+        ur,
+        "{ f' }"{swap}
+      ]
+    \end{tikzcd}
+  \end{equation}
+  is that of equal composites, hence:
+  \begin{equation}
+   \label{ZigZigOfRelationsGivingEquivalence}
+      (\iota,f)
+      \sim
+      \overset{\exists}{\cdots} 
+      \sim
+      (\iota',f')
+    \;\;\;\;\;
+    \Leftrightarrow
+    \;\;\;\;\;
+    f \circ \iota
+    =
+    f' \circ \iota'
+    \mathrlap{\,.}
+  \end{equation}
+  \end{enumerate}
+\end{lemma}
+\begin{proof}  
+  This is an immediate reformulation of the following \emph{coend} formula for the left Kan extension on presheaves (cf. \parencites[4.25]{Kelly1982}[(2.27)]{Loregian2021}):
+  \begin{equation}
+    \label{CoendFormulaFori!}
+    (i_! X)(U \times \mathbb{D})
+    \simeq
+    \int^{V \in \CartesianSpaces}
+\!\!    \HaloedCartesianSpaces (
+      U \times \mathbb{D}
+      ,\,
+      V
+    )
+      \times
+    X(V)
+    \mathrlap{\,,}
+  \end{equation}
+  which (seen under the Yoneda lemma) says that maps $\inlinetikzcd{U \times \mathbb{D} \ar[r] \& i_! X}$ in $\mathrm{FrmSmthSet}$  are in natural bijection to equivalence classes of pairs consisting of a map $\inlinetikzcd{U \times \mathbb{D} \ar[r] \& V}$ (in $\inlinetikzcd{\mathrm{FrmCrtSp} \ar[r, hook] \& \mathrm{FrmSmthSet}}$) into a Cartesian space $\inlinetikzcd{V \in \mathrm{CrtSp} \ar[r, hook, "{i}"] \& \mathrm{FrmCrtSp}}$ and a map $\inlinetikzcd{V \ar[r] \& X}$ in $\mathrm{SmthSet}$, subject to the equivalence relation which is generated by compatible maps $\inlinetikzcd{\phi : V \ar[r] \& V'}$ (in $\mathrm{CartSp}$) between the factor spaces:
+  $$
+    \begin{array}{l}
+    \left\{
+      \inlinetikzcd{
+        U \times \mathbb{D}
+        \ar[r]
+        \&
+        i_! X
+      }
+    \right\}
+  
+    \! \simeq \!
+    \Big\{\!
+      \big(
+      \inlinetikzcd{
+        U \times \mathbb{D}
+        \ar[r, "{ \iota }"]
+        \&
+        V
+      },
+      \inlinetikzcd{
+        V
+        \ar[r, "{ f }"]
+        \&
+        X
+      }
+      \big)
+   \! \Big\}
+    \Big/
+    \Bigg\{\!\!
+    \Bigg(
+    \begin{tikzcd}[row sep=-2pt, 
+      column sep=0pt
+    ]
+      &[15pt]
+      V
+      \ar[
+        dd, 
+        dashed,
+        "{ \phi }"{swap}
+      ]
+      &
+      V
+      \ar[
+        dd, 
+        dashed,
+        "{ \phi }"
+      ]
+      \ar[dr, "{ f }"{pos=.35}]
+      &[15pt]
+      \\
+      U \!\times\! \mathbb{D}
+      \ar[ur, "{ \iota }"]
+      \ar[dr, "{ \iota' }"{swap}]
+      &
+      &
+      &
+      X
+      \\
+      & 
+      V'\mathrlap{\,,}
+      &
+      V'
+      \ar[ur, "{ f' }"{pos=.35,swap}]
+    \end{tikzcd}
+    \Bigg)
+    \!\!\Bigg\}
+    \mathrlap{\,,}
+    \end{array}
+  $$
+  where on the right we mean that a pair as on the top of the diagram is in relation to a pair as shown at the bottom if $\phi$ exists that makes the two triangles commute.
+
+  Under passage to sheaves \cref{i!AndSheafification} this statement holds on germs of maps, as claimed.
+\end{proof}
+
+ 
+
+The archetype of \cref{i!PreservesInfiniteJetBundles} is the statement that the projective limit defining the projectively infinite-dimensional Cartesian space (cf. \cite[Def. 2.24, Prop. 2.26]{KS26}),
+\begin{equation}
+  \label{InfiniteCartesianSpace}
+  \mathbb{R}^\infty 
+    := 
+  \varprojlim\big(
+    \begin{tikzcd}[
+      column sep=18pt
+    ]
+      \ar[r, dotted, ->>]
+      &
+      \mathbb{R}^2
+      \ar[r,->>]
+      &
+      \mathbb{R}^1
+      \ar[r, ->>]
+      &
+      \mathbb{R}^0
+    \end{tikzcd}
+  \big)
+  \in
+  \begin{tikzcd}
+    \mathrm{FrchtMfd}
+    \ar[
+     r, 
+     hook,
+     "{
+       \scalebox{.6}{\cref{FrechetManifoldsFullyFaithfulInSmoothSets}}
+     }"
+    ]
+    &
+    \mathrm{SmthSet}
+  \end{tikzcd}
+  \mathrlap{\,,}
+\end{equation}
 is preserved:
-Proposition 2.4.Passage to haloed smooth sets preserves the projective limit in-
-volved in forming the infinite Cartesian space(2.6):
-(2.7)i !
-(
-lim←−k∈N
-Rk
-)
-≃lim←−k∈N
-(
-i!Rk
-)
-.
-Proof.It will suffice to observe that the right-hand side of (2.7) is reduced (proved
-below in Lem. 2.5), whence (using (A.7)):
-(2.8) lim ←−k∈N
-(
-i!Rk
-)
-=ℜlim←−k∈N
-(
-i!Rk
-)
-≃i !i∗ lim←−k∈N
-(
-i!Rk
-)
-.
-4 GRIGORIOS GIOTOPOULOS, IGOR KHAVKINE, HISHAM SATI, AND URS SCHREIBER
-With that and by full faithfulness ofi ! (Lem. A.8), the claim is equivalent to:
-(2.9) lim ←−k∈N
-Rk ≃i ∗
-(
-lim←−k∈N
-(
-i!Rk
-))
-.
-But this holds sincei ∗ commutes with (projective) limits (being a right adjoint)
-and then using (A.5).□
+\begin{proposition}
+  \label[proposition]{IsRInfinityTheProjLimitInFrmSmthSet}
+  Passage to haloed smooth sets preserves the projective limit involved in forming the infinite Cartesian space \cref{InfiniteCartesianSpace}:
+  \begin{equation}
+    \label{RInfinityAsTheProjLimitInFrmSmthSet}
+  i_!
+  \Big(
+    \varprojlim_{k \in \mathbb{N}}
+    \mathbb{R}^k
+  \Big)
+  \simeq
+  \varprojlim_{k \in \mathbb{N}}
+  \left(
+    i_!
+    \mathbb{R}^k
+  \right)
+  \mathrlap{.}
+  \end{equation}
+\end{proposition}
+\begin{proof}
+  It will suffice to observe that
+  the right-hand side of \cref{RInfinityAsTheProjLimitInFrmSmthSet} is reduced (proved below in \cref{LimRkIsReduced}),
+  whence (using~\cref{IExciAst}):
+  \begin{equation}
+  \varprojlim_{k \in \mathbb{N}}
+  \left(
+    i_!  \mathbb{R}^k
+  \right)
+  =
+  \reduced \varprojlim_{k \in \mathbb{N}}
+  \left(
+    i_!  \mathbb{R}^k
+  \right)
+  \simeq
+  i_!
+  \,
+  i^\ast
+  \varprojlim_{k \in \mathbb{N}}
+  \left(
+    i_!  \mathbb{R}^k
+  \right)
+  .
+ \end{equation}
+ With that and by full faithfulness of $i_!$ (\cref{PropertiesOfSmthSetInsideFrmSmthSet}), the claim is equivalent to:
+ \begin{equation}
+   \varprojlim_{k \in \mathbb{N}}
+   \mathbb{R}^k
+   \simeq
+   i^\ast
+   \bigg(
+     \varprojlim_{k \in \mathbb{N}}
+     \big(
+       i_!  \mathbb{R}^k
+     \big)
+  \! \bigg)
+   \mathrlap{.}
+ \end{equation}
+ But this holds since $i^\ast$ commutes with (projective) limits (being a right adjoint) and then using \cref{iAstIExc}.
+\end{proof}
+
 Hence the key is to see that:
-Lemma 2.5.The limiting objectlim←−k(i!Rk)is reduced(A.2).
-Proof.In view of Lem. 2.3, we first show that every top map of the following form
-factors through someV∈CrtSp as shown at the bottom:
-U×D V lim←−k∈N
-(
-i!Rk
-)
-.
-Since we are dealing with maps into a limit, we need to equivalently see that every
-commuting diagram of maps of the form
-U×D
-i!R3 i!R2 i!R1 i!R0
-factors in this form:
-U×D
-V
-i!R3 i!R2 i!R1 i!R0.
-Now, a map U×D i!Rk in FrmSmthSet is just a morphism in FrmCrtSp of the
-form U×D Rk (becausei ! preserves representables, cf. Lem. A.8), hence is a
-k-tuple
-(
-[fi]
-)k
-i=1 of elements ofC ∞(U×D). By Def. A.6, every such element [f i] is
-an equivalence class of an elementf i ∈C ∞(U×R d), for somed∈Ndepending
-only onD. Hence, if we takeV:=U×R d then we may choose thesef i for each
-given [fi]:
-U×D
-U×Rd
-Rk+1 Rk
-([fi])k+1
-i=1 ([fi])k
-i=1
-(fi)k+1
-i=1 (fi)k
-i=1
-to achieve the desired factorization.
-In order to conclude with Lem. 2.3, we still need to show that any two such factor-
-izations of the same map are related by a compatible zig-zag (2.4) of maps between
-the intermediateVs. This follows from: (i) the evident observation that every fac-
-torization is related to one whereιis a formal proper embedding of arbitrarily high
-SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED 5
-codimension (Lem. A.11), combined with (ii) the more laborious verification that
-any two of these whose composites are equal are in zig-zag relation to each other.
-This is finally shown as Lem. 2.8 below.□
+\begin{lemma}
+\label[lemma]{LimRkIsReduced}
+  The limiting object
+  $
+    \varprojlim_k
+    (
+      i_!
+      \mathbb{R}^k
+    )
+  $
+  is reduced \cref{SmthSetInsideFrmSmthSet}.
+\end{lemma}
+\begin{proof}
+  In view of \cref{RecognizingReducedObjects}, 
+  we first show that every top map of the following form factors through some $V \in \CartesianSpaces$ as shown at the bottom:
+  $$
+    \begin{tikzcd}
+    U \times \mathbb{D}
+    \ar[r, dashed]
+    \ar[
+      rr,
+      uphordown,
+    ]
+    &
+    V
+    \ar[r, dashed]
+    &
+    \displaystyle{
+      \varprojlim_{k \in \mathbb{N}}
+    }
+    \big(
+      i_!
+      \mathbb{R}^k
+    \big)
+    \mathrlap{\,.}
+    \end{tikzcd}
+  $$
+  Since we are dealing with maps into a limit, we need to equivalently see that every commuting diagram of maps of the form
+  $$
+    \begin{tikzcd}[row sep=5pt, column sep=30pt]
+      &&
+      U \!\times\! \mathbb{D}
+      \ar[ddll, dotted]
+      \ar[ddl]
+      \ar[dd]
+      \ar[ddr]
+      \ar[ddrr]
+      \\
+      \\
+      {\phantom{\mathbb{R}^n}}
+      \ar[r, dotted, ->>]
+      &
+      i_! \mathbb{R}^3
+      \ar[r, ->>]
+      &
+      i_! \mathbb{R}^2
+      \ar[r, ->>]
+      &
+      i_! \mathbb{R}^1
+      \ar[r, ->>]
+      &
+      i_! \mathbb{R}^0
+    \end{tikzcd}
+  $$
+  factors in this form:
+  $$
+    \begin{tikzcd}[row sep=10pt, column sep=30pt]
+      &&
+      U \!\times\! \mathbb{D}
+      \ar[d]
+      \\
+      &&
+      V
+      \ar[dll, dotted]
+      \ar[dl]
+      \ar[d]
+      \ar[dr]
+      \ar[drr]
+      \\
+      {\phantom{\mathbb{R}^n}}
+      \ar[r, dotted, ->>]
+      &
+      i_! \mathbb{R}^3
+      \ar[r, ->>]
+      &
+      i_! \mathbb{R}^2
+      \ar[r, ->>]
+      &
+      i_! \mathbb{R}^1
+      \ar[r, ->>]
+      &
+      i_! \mathbb{R}^0
+      \mathrlap{\,.}
+    \end{tikzcd}
+  $$
+  Now, a map
+  $\inlinetikzcd{U \!\times\! \mathbb{D} \ar[r] \& i_! \mathbb{R}^k}$ in $\HaloedSmoothSets$ is just a morphism in $\HaloedCartesianSpaces$ of the form $\inlinetikzcd{U \!\times\! \mathbb{D} \ar[r] \& \mathbb{R}^k}$ (because $i_!$ preserves representables, cf. \cref{PropertiesOfSmthSetInsideFrmSmthSet}), hence is a $k$-tuple $\left(\left[f_i\right]\right)_{i = 1}^k$ of elements of $C^\infty(U \!\times\! \mathbb{D})$. By \cref{FormalCartesianSpaces}, every such element $[f_i]$ is an equivalence class of an element $f_i \in C^\infty(U \!\times\! \mathbb{R}^d)$, for some $d \in \mathbb{N}$ depending only on $\mathbb{D}$. Hence, if we take $V := U \!\times\! \mathbb{R}^d$ then we may choose these $f_i$ for each given $[f_i]$:
+  $$
+    \begin{tikzcd}[
+      column sep=35pt,
+      row sep=25pt
+    ]
+      & 
+      U \!\times\! \mathbb{D}
+      \ar[
+        d,
+        hook
+      ]
+      \ar[
+        ddl,
+        bend right=20,
+        "{
+          ([f_i])_{i=1}^{k+1}
+        }"{swap}
+      ]
+      \ar[
+        ddr,
+        bend left=20,
+        "{
+          ([f_i])_{i=1}^{k}
+        }"
+      ]
+      \\[-10pt]
+      &
+      U \!\times\! \mathbb{R}^d
+      \ar[
+        dl,
+        "{
+          (f_i)_{i=1}^{k+1}
+        }"{description}
+      ]
+      \ar[
+        dr,
+        "{
+          (f_i)_{i=1}^{k}
+        }"{description}
+      ]
+      \\
+      \mathbb{R}^{k+1}
+      \ar[rr, ->>]
+      &&
+      \mathbb{R}^k
+    \end{tikzcd}
+  $$
+  to achieve the desired factorization.
+
+  In order to conclude with \cref{RecognizingReducedObjects}, we still need to show that any two such factorizations of the same map are related by a compatible zig-zag \cref{ZigZigOfRelationsGivingEquivalence} of maps between the intermediate $V$s. This follows from:  (i) the evident observation that every factorization is related to one where $\iota$ is a formal proper embedding of arbitrarily high codimension (\cref{FirstMapMayBeAssumedFormalEmbedding}), 
+  combined with (ii) the more laborious verification that any two of these whose composites are equal are in zig-zag relation to each other. This is finally shown as \cref{FactoredMapsToRInfinityEquivalences} below.
+\end{proof}
+
+
 With this we conclude:
-Proof of Thm. 2.1.The key is to observe that the right hand side of (2.1) is re-
-duced, in that
-lim←−k∈N
-(
-i!Jk
-ΣE
-)
-≃i !i∗ lim←−k∈N
-(
-i!Jk
-ΣE
-)
-,
-from which the claim will follow formally, just as in the proof of Prop. 2.4: Sincei !
-is fully faithful, the desired condition (2.1) thereby becomes equivalent to:
-lim←−k∈N
-(
-Jk
-ΣE
-)
-≃i ∗ lim←−k∈N
-(
-i!Jk
-ΣE
-)
-,
-which holds, sincei ∗ commutes with projective limits (being a right adjoint) and
-then using thati ∗◦i !≃id (A.5).
-To see that the right-hand side of (2.1) is indeed reduced, consider a dashed
-horizontal map of the form
-U×D lim←−ki!Jk
-ΣE
-i!Σ,
-where at the bottom we are indicating the induced map to Σ, over which everything
-is fibered. By Lem. 2.3 we need to show that a germ of the horizontal dashed
-map factors through a Cartesian space. By the fact that E Σ is assumed to
-be a surjective submersion, and hence similarly all ofJ k
-ΣE→J k−1
-Σ E→ ··· →
-Σ, there is a representative of the germ of eachU×D→i !Jk
-ΣEwhich factors
-through a trivial fibrationU k×D↪→i !Jk
-Rn Rn+m. But upon further restriction
-to common overlaps, these yield a representative for the germ of the original map
-U×D→lim←−ki!Jk
-ΣE(with domain to be denoted U
-′
-U) which factors through
-the corresponding jet bundle of a trivial fibration:
-U′×D lim←−ki!Jk
-Rn Rn+m lim←−ki!Jk
-ΣE
-i!Rn+m i!E
-i!Rn i!Σ.
-⌟
-Thereby we have reduced the situation to essentially that of Prop. 2.4 and the proof
-follows analogously.□
-It just remains to prove the very last statement in the proof of Lem. 2.5. This
-is the step that requires most of the work, we prove it as Lem. 2.8 below.
-Notation 2.6.For ease of notation we shall now abbreviate the “synthetic differ-
-ential version” ofR ∞ (2.6) as
-(2.10)R ∞ := lim←−k
-i!Rk ∈FrmSmthSet
-6 GRIGORIOS GIOTOPOULOS, IGOR KHAVKINE, HISHAM SATI, AND URS SCHREIBER
-(though once we are done with the proof of Lem. 2.8, Prop. 2.4 asserts thatR ∞ is
-isomorphic toi !R∞).
-Remark2.7.Sincei !Rk =R k ∈FrmCrtSp (A.4), the plots ofR ∞ (2.10) are
-nothing butN-tuples of smooth functions:
-Hom(U×D,R ∞)≃lim←−k∈N
-Hom(U×D,R k)≃
-∏
-k∈N
-Hom(U×D,R 1)
-≃
-∏
-k∈N
-C∞(U×D).
-This means in particular that we may add and subtract among these plots (used
-in (2.14) and (2.17) below) and apply Hadamard’s lemma to them (used in (2.13)
-and (2.16) below).
-In fact, in the following proof we only use that elements ofC ∞(U,R∞) (forU∈
-CrtSp) are additive and subject to Hadamard’s lemma, and hence the analogous
-argument applies in caseR ∞ is replaced by any other object for which this is the
-case.
-Lemma 2.8.Given an outer commuting diagram as follows:
-V
-U×D W R∞,
-V′
-fαι
-ι′
-ϕ
-f′
-α′
-whereιandι ′ are formal proper embeddings(Def. A.10)of sufficiently high codi-
-mension, there existsW∈CrtSpsuch that the diagram may be filled by dashed
-maps as shown, making all triangles commute.
-In order to make the proof of Lem. 2.8 transparent, we present it in stages
-of increasing generality. We begin with the simple case whereU≡ ∗andD≡
-D1(1)≡Spec
-(
-C∞(R1)/(x2)
-)
-.
-Lemma 2.9.Given a commuting diagram of smooth functions of the form of the
-outer solid arrows in the following diagram:
-V
-D1(1) W R∞
-V′
-fαι
-ι′
-ϕ
-f′
-α′
-↔
-TV
-∗ TW TR∞,
-TV′
-Tf
-Tα˜ι
-˜ι′
-Tϕ
-Tf′
-Tα′
-whereιandι ′ are monomorphisms, then there existsW∈CrtSpand smooth maps
-corresponding to the dashed arrows that make the whole diagram commute.
-Proof.We may assume without restriction of generality that the base points picked
-byιandι ′ are the origins of 0∈Vand 0∈V ′, respectively (otherwise reparametrize),
-hence that
-˜ι(•) =:v 0∈T 0V,
-˜ι′(•) =:v ′
-0∈T 0V′.
-SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED 7
-The assumption thatιandι ′ are monomorphic means thatv 0̸= 0 andv ′
-0̸= 0.
-Therefore (writingV⊥⊂Vfor the orthogonal subspace tov 0 andV ′
-⊥⊂V ′ for the
-orthogonal subspace tov ′
-0), we may coordinatizeVandV ′ by:
-R×V ⊥ V
-(t,⃗ x)↦−→(tv0,⃗ x),
-∼ R×V ′
-⊥ V′
-(t′,⃗ x′ ) ↦−→(t′v′
-0,⃗ x′).
-∼
-Now set
-W:=V×V ′×R 1
-and
-V W
-(t,⃗ x)↦−→
-(
-(t,⃗ x),(t,0),0
-)
-,
-α V′ W
-(t′,⃗ x′) ↦−→
-(
-(t′,0),(t′,⃗ x′),t′2
-)
-.
-α′
-Since
-α(0,0) =
-(
-(0,0),(0,0),0
-)
-,
-α′(0,0) =
-(
-(0,0),(0,0),0
-)
-,
-∂
-∂tα(0,0) =
-(
-(1,0),(1,0),0
-)
-,
-∂
-∂t′α′(0,0) =
-(
-(1,0),(1,0),0
-)
-,
-this makes the left part of our diagram commute.
-Finally, to defineϕ, first consider
-δ:R−→R ∞(2.11)
-t↦−→f′(t,0)−f(t,0).(2.12)
-By the commutativity of the outer diagram, we haveδ(0) = 0 and d
-dtδ(0) = 0.
-Hence by Hadamard’s lemma there is a smooth function
-(2.13) µ:R R∞,such thatδ(t) =t 2·µ(t).
-With that function in hand, finally define
-(2.14)ϕ:
-(
-(t,⃗ x),(t′,⃗ x′),j
-)
-↦−→f(t,⃗ x)−f′(t,0) +f ′(t,⃗ x′) +j·µ(t).
-We check that this makes the right part of our diagram commute, since:
-ϕ◦α(t,⃗ x) =ϕ
-(
-(t,⃗ x),(t,0),0
-)
-=f(t,⃗ x) + 0 + 0,
-and
-ϕ◦α ′(t′,⃗ x′) =ϕ
-(
-(t′,0),(t′,⃗ x′),t′2
-)
-=f(t ′,0)−f ′(t′,0)/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
-−δ(t′)
-+f′(t′,⃗ x′) +t′2·µ(t′)/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
-δ(t′)
-=f ′(t′,⃗ x′).
-This completes the proof.□
-Next, we generalize this proof to the case where (stillU≡∗but)Dis arbitrary.
-To that end, choose an inclusion D Rd with minimaldand choose a set of
-generators
-(2.15) ⃗h:=
-(
-hi∈C ∞(Rd)
-)n
-i=1
-(for somen∈N)
-for the kernel of the dual algebra homomorphism C∞(Rd) C∞(D).
-8 GRIGORIOS GIOTOPOULOS, IGOR KHAVKINE, HISHAM SATI, AND URS SCHREIBER
-Lemma 2.10.Given a commuting diagram of smooth functions of the form of the
-outer solid arrows in the following diagram:
-V
-D W R∞,
-V′,
-fαι
-ι′
-ϕ
-f′
-α′
-whereιandι ′ are monomorphisms, then there existsW∈CrtSpand dashed maps
-also making the inner diagram commute.
-Proof.Without restriction of generality we may assume thatι(0) = 0∈Vand
-ι′(0) = 0∈V ′ (otherwise reparametrize). Sinceιandι ′ are monomorphic, we may
-decomposeV,V ′ respectively into the span of the image ofι,ι ′ and its orthogonal
-complement, respectively:
-Rd×V⊥ V ,
-Rd×V ′
-⊥ V′.
-∼
-∼
-Now take
-W:=V×V ′×Rn
-and
-α(⃗t,⃗ x) :=
-(
-(⃗t,⃗ x),(⃗t,0),0
-)
-α′(⃗t′,⃗ x′) :=
-(
-(⃗t′,0),( ⃗t′,⃗ x′),⃗h(⃗t′)
-)
-,
-where the last component are the values of the generators (2.15) of the nil ideal.
-Then we have the following composites (where in the lower lines we show the
-pullback of the canonical coordinate functions along the top map, whose inspection
-is sufficient for identifying these maps, cf. [GS25b, Prop. 4.6])
-D Rd×V⊥ Rd×V⊥× Rd×V′
-⊥× Rn
-[⃗t] ⃗t ⃗t
-0 ⃗ x ⃗ x
-[⃗t′] ⃗t′ ⃗t′
-0 0 ⃗ x′
-0 0 ⃗j
-ι α
-and
-D Rd×V ′
-⊥ Rd×V⊥× Rd×V′
-⊥× Rn
-[⃗t] ⃗t ⃗t
-0 0 ⃗ x
-[⃗t′] ⃗t′ ⃗t′
-0 ⃗ x′ ⃗ x′
-0 ⃗h(⃗t′) ⃗j,
-ι′ α′
-where in the last line we use that the functions⃗h(2.15) vanish onD, by assumption.
-Since these two composite maps hence agree, the left part of our diagram commutes.
-SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED 9
-Now consider
-Rd R∞
-⃗t ↦−→f′(⃗t,0)−f( ⃗t,0).
-δ
-By the commutativity of the outer part of our diagram, the components of this
-map are in the ideal spanned by theh i (2.15), so that
-(2.16)δ( ⃗t) = ∑
-ihi(⃗t)µ i(⃗t) for some ( µi :R d R∞)n
-i=1.
-With this in hand, finally define
-(2.17)ϕ
-(
-(⃗t,⃗ x),(⃗t′,⃗ x′ ), ⃗j
-)
-:=f( ⃗t,⃗ x)−f′(⃗t,0) +f ′(⃗t,⃗ x′) +∑
-ijiµi(⃗t).
-We check by direct computation that this indeed makes the right part of our diagram
-commute:
-ϕ◦α( ⃗t,⃗ x) =ϕ
-(
-(⃗t,⃗ x),(⃗t,0),0
-)
-=f( ⃗t,⃗ x) + 0 + 0
-and
-ϕ◦α ′(⃗t′,⃗ x′) =ϕ
-(
-(⃗t′,0),( ⃗t′,⃗ x′),⃗h(⃗t)
-)
-=f( ⃗t,0)−f ′(⃗t,0)/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
-−δ(⃗t)
-+f′(⃗t,⃗ x′) +∑
-ihi(⃗t)µ i(⃗t)/bracehtipupleft/bracehtipdownright/bracehtipdownleft/bracehtipupright
-δ(⃗t)
-=f ′(⃗t,⃗ x′).
-This completes the proof.□
+\begin{proof}[Proof of \cref{i!PreservesInfiniteJetBundles}]
+  The key is to observe that the right hand side of \cref{i!PreservingInfiniteJetBundles} is reduced, in that
+  $$
+    \varprojlim_{k \in \mathbb{N}}
+    \left(
+      i_!  J^k_\Sigma E
+    \right)
+    \simeq
+    i_! \, i^\ast
+    \varprojlim_{k \in \mathbb{N}}
+    \left(
+      i_!  J^k_\Sigma E
+    \right)
+    ,
+  $$
+  from which the claim will follow formally, just as in the proof of \cref{IsRInfinityTheProjLimitInFrmSmthSet}:
+  Since $i_!$ is fully faithful, the desired condition \cref{i!PreservingInfiniteJetBundles} thereby becomes equivalent to:
+  $$
+    \varprojlim_{k \in \mathbb{N}}
+    \left(
+      J^k_\Sigma E
+    \right)
+    \simeq
+    i^\ast
+    \varprojlim_{k \in \mathbb{N}}
+    \left(
+      i_!  J^k_\Sigma E
+    \right)
+    \mathrlap{,}
+  $$
+  which holds, since $i^\ast$ commutes with projective limits (being a right adjoint) and then using that $i^\ast \circ i_! \simeq \mathrm{id}$ \cref{iAstIExc}.
+
+  To see that the right-hand side of \cref{i!PreservingInfiniteJetBundles} is indeed reduced, consider a dashed horizontal map of the form
+  $$
+    \begin{tikzcd}[row sep=15pt]
+      U \times \mathbb{D}
+      \ar[r, dashed]
+      \ar[dr, dashed]
+      &
+      \varprojlim_{k}
+      i_! J^k_\Sigma E
+      \ar[d, ->>]
+      \\
+      & 
+      i_! \Sigma
+      \mathrlap{\,,}
+    \end{tikzcd}
+  $$
+  where at the bottom we are indicating the induced map to $\Sigma$, over which everything is fibered. By \cref{RecognizingReducedObjects} we need to show that a germ of the horizontal dashed map factors through a Cartesian space. By the fact that $\inlinetikzcd{E \ar[r] \& \Sigma}$ is assumed to be a surjective submersion, and hence similarly all of $J^k_\Sigma E\rightarrow J^{k-1}_\Sigma E\rightarrow \cdots \rightarrow \Sigma$, there is a representative of the germ of each 
+  $U\times \mathbb{D} \rightarrow i_! J^k_\Sigma E$ which factors through a trivial fibration $U^k\times \mathbb{D} \hookrightarrow i_! J^k_{\mathbb{R}^n} \mathbb{R}^{n+m}$. But upon further restriction to common overlaps, these yield a representative for the germ of  the original map $U\times \mathbb{D} \rightarrow \varprojlim_{k}
+      i_! J^k_\Sigma E$ (with domain to be denoted $\inlinetikzcd{U^{'} \ar[r, hook] \& U}$) which factors through the corresponding jet bundle of a trivial fibration:
+  $$
+    \begin{tikzcd}[
+      row sep=15pt, column sep=large
+    ]
+      U' \times \mathbb{D}
+      \ar[r, dashed]
+      \ar[dr, dashed]
+      \ar[ddr, dashed]
+      &
+      \varprojlim_{k}
+      i_! J^k_{\mathbb{R}^n} \mathbb{R}^{n+m}
+      \ar[r, hook]
+      \ar[d, ->>]
+      &[-9pt]
+      \varprojlim_{k}
+      i_! J^k_\Sigma E
+      \ar[d, ->>]
+      \\
+      & 
+      i_! \mathbb{R}^{n+m}
+      \ar[r, hook]
+      \ar[d, ->>]
+      \ar[
+        dr,
+        phantom,
+        "{ \lrcorner }"{pos=.1}
+      ]
+      &
+      i_! E
+      \ar[d, ->>]
+      \\
+      &
+      i_! \mathbb{R}^n
+      \ar[r, hook]
+      &
+      i_! \Sigma
+      \mathrlap{\,.}
+    \end{tikzcd}
+  $$
+  Thereby we have reduced the situation to essentially that of \cref{IsRInfinityTheProjLimitInFrmSmthSet} and the proof follows analogously. 
+\end{proof}
+
+It just remains to prove the very last statement in the proof of \cref{LimRkIsReduced}. This is the step that requires most of the work, we prove it as \cref{FactoredMapsToRInfinityEquivalences} below.
+
+\begin{notation}
+For ease of notation we shall now abbreviate the ``synthetic differential version'' of $\mathbb{R}^\infty$ \cref{InfiniteCartesianSpace} as
+\begin{equation}
+  \label{RInfinityInFormalSmoothSets}
+  \mathbf{R}^\infty
+  :=
+  \varprojlim_k i_! \mathbb{R}^k
+  \in
+  \HaloedSmoothSets
+\end{equation}
+(though once we are done with the proof of \cref{FactoredMapsToRInfinityEquivalences}, \cref{IsRInfinityTheProjLimitInFrmSmthSet} asserts that $\mathbf{R}^\infty$ is isomorphic to $i_! \mathbb{R}^{\infty}$). 
+\end{notation}
+\begin{remark}
+\label[remark]
+  {OnTheNatureOfRInfinityInFormalSmoothSets}
+Since $i_! \mathbb{R}^k = \mathbb{R}^k \in \HaloedCartesianSpaces$ \cref{i!PreservesRepresentables}, the plots of $\mathbf{R}^\infty$ \cref{RInfinityInFormalSmoothSets} are nothing but $\mathbb{N}$-tuples of smooth functions:
+$$
+  \begin{aligned}
+  \mathrm{Hom}(
+    U \times \mathbb{D}
+    ,\,
+    \mathbf{R}^\infty
+  )
+  & 
+  \simeq
+  \varprojlim_{k \in \mathbb{N}}
+  \mathrm{Hom}(
+    U \times \mathbb{D}
+    ,\,
+    \mathbb{R}^k
+  )
+  \simeq
+  \prod_{k \in \mathbb{N}}
+  \mathrm{Hom}(
+    U \times \mathbb{D}
+    ,\,
+    \mathbb{R}^1
+  )
+  \\
+  & \simeq 
+  \prod_{k \in \mathbb{N}}
+  C^\infty(U \times \mathbb{D})
+  \mathrlap{\,.}
+  \end{aligned}
+$$
+This means in particular that we may add and subtract among these plots (used in \cref{DefOfPhiForD1Case,DefinitionOfPhi} below) and apply Hadamard's lemma to them (used in \cref{HadamardRemainderOfDeltaForD1Case,HadamardRemainderOfDelta} below).
+
+In fact, in the following proof we only use that elements of $C^\infty(U,\mathbf{R}^\infty)$ (for $U \in \mathrm{CrtSp}$) are additive and subject to Hadamard's lemma, and hence the analogous argument applies in case $\mathbf{R}^\infty$ is replaced by any other object for which this is the case.
+\end{remark}
+
+
+\begin{lemma}
+\label[lemma]
+  {FactoredMapsToRInfinityEquivalences}
+Given an outer commuting diagram as follows:
+$$
+  \begin{tikzcd}[
+    row sep=12pt, column sep=40pt
+  ]
+    &
+    V
+    \ar[
+      dr,
+      "{ f }"
+    ]
+    \ar[
+      d,
+      dashed,
+      "{ \alpha }"
+    ]
+    \\
+    U \times \mathbb{D}
+    \ar[
+      ur,
+      "{ \iota }"
+    ]
+    \ar[
+      dr,
+      "{ \iota' }"{swap}
+    ]
+    \ar[
+      r,
+      dashed
+    ]
+    &
+    W
+    \ar[
+      r,
+      dashed,
+      "{ \phi }"{description, pos=.45}
+    ]
+    &
+    \mathbf{R}^\infty
+    \mathrlap{,}
+    \\
+    &
+    V'
+    \ar[
+      ur,
+      "{ f' }"{swap}
+    ]
+    \ar[
+      u,
+      dashed,
+      "{ \alpha' }"{swap}
+    ]
+  \end{tikzcd}
+$$
+where $\iota$ and $\iota'$ are formal proper embeddings \textup{(\cref{FormalEmbedding})} of sufficiently high codimension,
+there exists $W \in \CartesianSpaces$ such that the diagram may be filled by dashed maps as shown, making all triangles commute.
+\end{lemma}
+
+In order to make the proof of \cref{FactoredMapsToRInfinityEquivalences} transparent, we present it in stages of increasing generality. We begin with the simple case where $U \defneq \ast$ and $\mathbb{D} \defneq \mathbb{D}^1(1) \defneq \mathrm{Spec}\big( C^\infty(\mathbb{R}^1)/(x^2) \big)$.
+
+\begin{lemma}
+\label[lemma]
+{FirstStepTowardsFactoredMapsToRInfinityEquivalences}
+  Given a commuting diagram of smooth functions of the form of the outer solid arrows in the following diagram:
+  $$
+  \begin{tikzcd}[
+    row sep=12pt,
+    column sep=35pt
+  ]
+    &
+    V
+    \ar[
+      dr,
+      "{ f }"
+    ]
+    \ar[
+      d,
+      dashed,
+      "{ \alpha }"
+    ]
+    \\
+    \mathbb{D}^1(1)
+    \ar[
+      ur,
+      "{ \iota }"
+    ]
+    \ar[
+      dr,
+      "{ \iota' }"{swap}
+    ]
+    \ar[
+      r,
+      dashed
+    ]
+    &
+    W
+    \ar[
+      r,
+      dashed,
+      "{ \phi }"{description, pos=.45}
+    ]
+    &
+    \mathbf{R}^\infty
+    \\
+    &
+    V'
+    \ar[
+      ur,
+      "{ f' }"{swap}
+    ]
+    \ar[
+      u,
+      dashed,
+      "{ \alpha' }"{swap}
+    ]
+  \end{tikzcd}
+  \;\;\;\;
+  \leftrightarrow
+  \;\;\;\;
+  \begin{tikzcd}[
+    row sep=12pt,
+    column sep=40
+  ]
+    &
+    T V
+    \ar[
+      dr,
+      "{ T f }"
+    ]
+    \ar[
+      d,
+      dashed,
+      "{ T \alpha }"
+    ]
+    \\
+    \ast
+    \ar[
+      ur,
+      "{ \tilde \iota }"
+    ]
+    \ar[
+      dr,
+      "{ \tilde \iota' }"{swap}
+    ]
+    \ar[
+      r,
+      dashed
+    ]
+    &
+    T W
+    \ar[
+      r,
+      dashed,
+      "{ T\phi }"{description, pos=.45}
+    ]
+    &
+    T \mathbf{R}^\infty
+    \mathrlap{,}
+    \\
+    &
+    T V'
+    \ar[
+      ur,
+      "{ T f' }"{swap}
+    ]
+    \ar[
+      u,
+      dashed,
+      "{ T \alpha' }"{swap}
+    ]
+  \end{tikzcd}
+  $$
+  where $\iota$ and $\iota'$ are monomorphisms,
+  then there exists $W \in \CartesianSpaces$ and smooth maps corresponding to the dashed arrows that make the whole diagram commute.
+\end{lemma}
+\begin{proof}
+  We may assume without restriction of generality that the base points picked by $\iota$ and $\iota'$ are the origins of $0 \in V$ and $0 \in V'$, respectively (otherwise reparametrize), hence that 
+  $$
+    \begin{aligned}
+    \tilde \iota(\bullet) & =: v_0 \in T_0 V
+    \mathrlap{,}
+    \\
+    \tilde \iota'(\bullet) & =: v'_0 \in T_0 V'
+    \mathrlap{.}
+    \end{aligned}
+  $$
+
+  The assumption that $\iota$ and $\iota'$ are monomorphic means that $v_0 \neq 0$ and $v'_0 \neq 0$.
+  Therefore (writing $V_\perp \subset V$ for the orthogonal subspace to $v_0$ and $V'_\perp \subset V'$ for the orthogonal subspace to $v'_0$), we may coordinatize $V$ and $V'$ by:
+  $$
+    \begin{tikzcd}[row sep=-3pt, column sep=0pt]
+      \mathbb{R} \times V_\perp
+      \ar[rr, "{ \sim }"]
+      &&
+      V
+      \\
+      (t,\vec x\,) 
+         &\longmapsto& 
+      (t v_0, \vec x\,)
+      \mathrlap{\,,}
+    \end{tikzcd}
+    \;\;\;\;\;\;
+    \begin{tikzcd}[row sep=-2pt, column sep=0pt]
+      \mathbb{R} \times V'_\perp
+      \ar[rr, "{ \sim }"]
+      &&
+      V'
+      \\
+      (t', \vec x{\,}'\,) 
+        &\longmapsto& 
+      (t' v'_0, \vec x{\,}')
+      \mathrlap{\,.}
+    \end{tikzcd}
+  $$  
+  Now set
+  $$
+    W 
+      := 
+    V \times V' \times \mathbb{R}^1
+  $$
+  and
+  $$
+    \begin{tikzcd}[row sep=-2pt, column sep=0pt]
+      V \ar[rr, "{ \alpha }"]
+      && 
+      W
+      \\
+      (t, \vec x\,) 
+        &\longmapsto& 
+      \left(
+        (t, \vec x\,), 
+        (t, 0),
+        0
+      \right)
+      \mathrlap{,}
+    \end{tikzcd}
+    \;\;\;\;\;\;
+    \begin{tikzcd}[row sep=-3pt, column sep=0pt]
+      V' \ar[rr, "{ \alpha' }"]
+      && 
+      W
+      \\
+      (t',\vec x{\,}') 
+        &\longmapsto& 
+      \left(
+        (t', 0),
+        (t', \vec x{\,}'),
+        t'^2
+      \right)
+      \mathrlap{.}
+    \end{tikzcd}
+  $$
+  Since
+  $$
+    \begin{aligned}
+      \alpha(0,0) 
+        & = 
+      \left(
+        (0,0),
+        (0,0),
+        0
+      \right)
+      \mathrlap{,}
+      \\
+      \alpha'(0,0) 
+        & = 
+      \left(
+        (0,0),
+        (0,0),
+        0
+      \right)
+      \mathrlap{,}
+    \end{aligned}
+    \;\;\;\;\;\;
+    \begin{aligned}
+      \tfrac{\partial}{\partial t}
+      \alpha(0,0)
+      & =
+      \left(
+        (1,0),
+        (1,0),
+        0
+      \right)
+      \mathrlap{,}
+      \\
+      \tfrac{\partial}{\partial t'}
+      \alpha'(0,0)
+      & =
+      \left(
+        (1,0),
+        (1,0),
+        0
+      \right)
+      \mathrlap{,}
+    \end{aligned}
+  $$
+  this makes the left part of our diagram commute.
+
+  Finally, to define $\phi$, first consider
+  \begin{align} 
+    \delta 
+      : 
+    \mathbb{R} & \longrightarrow \mathbf{R}^\infty
+\\[-1pt]
+    t & \longmapsto f'(t, 0) - f(t, 0)
+    \,.
+  \end{align} 
+  By the commutativity of the outer diagram, we have $\delta(0) = 0$ and $\tfrac{d}{d t} \delta(0) = 0$. Hence by Hadamard's lemma there is a smooth function 
+  \begin{equation}
+    \label{HadamardRemainderOfDeltaForD1Case}
+    \inlinetikzcd{
+    \mu 
+      : 
+    \mathbb{R} \ar[r] \& \mathbf{R}^\infty
+    },
+    \;\;
+    \mbox{
+      such that $\delta(t) = t^2 \cdot \mu(t)$.
+    }
+  \end{equation}
+  With that function in hand, finally define
+  \begin{equation}
+    \label{DefOfPhiForD1Case}
+    \phi 
+    :
+    \left(
+      (t,\vec x\,), 
+      (t',\vec x{\,}'),
+      j
+    \right)
+    \longmapsto
+    f(t, \vec x\,)
+    -
+    f'(t, 0)
+    +
+    f'(t, \vec x{\,}')
+    +
+    j
+    \cdot
+    \mu(t)
+    \mathrlap{\,.}
+  \end{equation}
+  We check that this makes the right part of our diagram commute, since:
+  $$
+    \begin{aligned}
+      \phi \circ \alpha(t, \vec x\,)
+      &=
+      \phi\left(
+        (t, \vec x\,), 
+        (t, 0),
+        0
+      \right)
+      \\
+      & =
+      f(t, \vec x\,) + 0 + 0
+      \mathrlap{\,,}
+    \end{aligned}
+  $$
+  and
+  $$
+    \begin{aligned}
+      \phi \circ \alpha'(t', \vec x{\,}')
+      &=
+      \phi\left(
+        (t', 0), 
+        (t', \vec x{\,}'),
+        t'^2
+      \right)
+      \\
+      & =
+      \grayunderbrace{
+      f(t',0)
+      -
+      f'(t',0)
+      }{\mathclap{
+       -\delta(t')
+      }}
+      +
+      f'(t',\vec x{\,}')
+      +
+      \grayunderbrace{
+      t'^2
+      \cdot
+      \mu(t')
+      }{\mathclap{
+        \delta(t')
+      }
+      }
+      \\
+      & =
+      f'(t',\vec x{\,}')
+      \mathrlap{\,.}
+    \end{aligned}
+  $$
+  This completes the proof.
+\end{proof}
+
+Next, we generalize this proof to the case where (still $U \defneq \ast$ but) $\mathbb{D}$ is arbitrary. To that end, choose an inclusion $\inlinetikzcd{\mathbb{D} \ar[r, hook] \& \mathbb{R}^d}$ with minimal $d$ and choose a set of generators
+\begin{equation}
+  \label{GeneratorsForKernel}
+  \vec h
+  :=
+  \left(
+    h_i 
+    \in
+    C^\infty(\mathbb{R}^d)
+  \right)_{i = 1}^{n}
+  \;\;
+  \left(\mbox{for some}\;n \in \mathbb{N}\right)
+\end{equation}
+for the kernel of the dual algebra homomorphism
+$
+  \begin{tikzcd}[sep=15pt]
+    C^\infty(\mathbb{R}^d)
+    \ar[
+      r,
+      ->>
+    ]
+    &
+    C^\infty(\mathbb{D})
+    \mathrlap{\,.}
+  \end{tikzcd}
+$
+
+\begin{lemma}
+\label[lemma]
+  {TowardsFactoredMapsToRInfinityEquivalences}
+  Given a commuting diagram of smooth functions of the form of the outer solid arrows in the following diagram:
+  $$
+  \begin{tikzcd}[
+    row sep=12pt,
+    column sep=40
+  ]
+    &
+    V
+    \ar[
+      dr,
+      "{ f }"
+    ]
+    \ar[
+      d,
+      dashed,
+      "{ \alpha }"
+    ]
+    \\
+    \mathbb{D}
+    \ar[
+      ur,
+      "{ \iota }"
+    ]
+    \ar[
+      dr,
+      "{ \iota' }"{swap}
+    ]
+    \ar[
+      r,
+      dashed
+    ]
+    &
+    W
+    \ar[
+      r,
+      dashed,
+      "{ \phi }"{description, pos=.45}
+    ]
+    &
+    \mathbf{R}^\infty,
+    \\
+    &
+    V'
+    \mathrlap{\,,}
+    \ar[
+      ur,
+      "{ f' }"{swap}
+    ]
+    \ar[
+      u,
+      dashed,
+      "{ \alpha' }"{swap}
+    ]
+  \end{tikzcd}
+$$
+where $\iota$ and $\iota'$ are monomorphisms,
+then there exists $W \in \CartesianSpaces$ and dashed maps also making the inner diagram commute.
+\end{lemma}
+\begin{proof}
+  Without restriction of generality we may assume that $\iota(0) = 0 \in V$ and $\iota'(0) = 0 \in V'$ (otherwise reparametrize). 
+  Since $\iota$ and $\iota'$ are monomorphic, we may decompose $V$, $V'$ respectively into the span of the image of $\iota$, $\iota'$ and its orthogonal complement, respectively:
+  $$
+    \begin{tikzcd}[row sep=0pt]
+      \mathbb{R}^d \times V_\perp
+      \ar[r, "{ \sim }"]
+      &
+      V
+      \mathrlap{\,,}
+      \\
+      \mathbb{R}^d \times V'_\perp
+      \ar[r, "{ \sim }"]
+      &
+      V'
+      \mathrlap{\,.}
+    \end{tikzcd}
+  $$
+  Now take
+  $$
+    W 
+    :=
+    V 
+    \times
+    V'
+    \times
+    \mathbb{R}^n
+  $$
+  and
+  $$
+    \begin{aligned}
+      \alpha(\vec t\,, \vec x\,)
+      & :=
+      \left(
+        (\vec t\,, \vec x\,), 
+        (\vec t\,, 0),
+        0
+      \right)
+      \\
+      \alpha'(\vec t{\phantom{.}}', \vec x{\,}')
+      &
+      :=
+      \left(
+        (\vec t{\phantom{.}}',0)
+        ,\,
+        (\vec t{\phantom{.}}', \vec x{\,}'),
+        \vec h(\vec t{\phantom{.}}') 
+      \right)
+      \mathrlap{,}
+    \end{aligned}
+  $$
+  where the last component are the values of the generators \cref{GeneratorsForKernel} of the nil ideal.
+  
+  Then we have the following composites (where in the lower lines we show the pullback of the canonical coordinate functions along the top map, whose inspection is sufficient for identifying these maps, cf. \cite[Prop. 4.6]{GS26-FieldsII})
+  $$
+    \begin{tikzcd}[
+      column sep=-7pt,
+      row sep=-5pt
+    ]
+      \mathbb{D}
+      \ar[r, "{ \iota }"]
+      &[25pt]
+      \mathbb{R}^d 
+        \times 
+      V_\perp
+      \ar[r, "{ \alpha }"]
+      &[25pt]
+      \mathbb{R}^d 
+        &\times& 
+      V_\perp 
+        &\times&
+      \mathbb{R}^d 
+        &\times& 
+      V'_\perp
+      &\times&
+      \mathbb{R}^n
+      \\
+      {[\,\vec t \;]}
+      \ar[
+        r,
+        <-|,
+        shorten=6pt
+      ]
+      &
+      \vec t
+      \ar[
+        r,
+        <-|,
+        shorten=6pt
+      ]
+      &
+      \vec t 
+      \\
+      0
+      \ar[
+        r,
+        <-|,
+        shorten=4pt
+      ]
+      &
+      \vec x
+      \ar[
+        rrr,
+        <-|,
+        shorten=4pt
+      ]
+      & 
+      &&
+      \vec x
+      \\
+      {[\,{\vec t}{\phantom{.}}']}
+      \ar[
+        r,
+        <-|,
+        shorten=4pt
+      ]
+      &
+      {\vec t}{\phantom{.}}'
+      \ar[
+        rrrrr,
+        <-|,
+        shorten=4pt
+      ]
+      & 
+      &&
+      &&
+      {\vec t}{\phantom{.}}'
+      \\
+      0
+      \ar[
+        r,
+        <-|,
+        shorten=4pt
+      ]
+      &
+      0
+      \ar[
+        rrrrrrr,
+        <-|,
+        shorten=4pt
+      ]
+      & 
+      &&
+      &&
+      &&
+      {\vec x}{\,}'
+      \\
+      0
+      \ar[
+        r,
+        <-|,
+        shorten=4pt
+      ]
+      &
+      0
+      \ar[
+        rrrrrrrrr,
+        <-|,
+        shorten=4pt
+      ]
+      & 
+      &&
+      &&
+      &&
+      &&
+      \vec j
+    \end{tikzcd}
+  $$
+  and
+  $$
+    \begin{tikzcd}[
+      column sep=-7pt,
+      row sep=-5pt
+    ]
+      \mathbb{D}
+      \ar[r, "{ \iota' }"]
+      &[25pt]
+      \mathbb{R}^d 
+        \times 
+      V'_\perp
+      \ar[r, "{ \alpha' }"]
+      &[25pt]
+      \mathbb{R}^d 
+        &\times& 
+      V_\perp 
+        &\times&
+      \mathbb{R}^d 
+        &\times& 
+      V'_\perp
+        &\times&
+      \mathbb{R}^n
+      \\
+      {[\,\vec t\;]}
+      \ar[
+        r,
+        <-|,
+        shorten=6pt
+      ]
+      &
+      \vec t
+      \ar[
+        r,
+        <-|,
+        shorten=6pt
+      ]
+      &
+      \vec t 
+      \\
+      0
+      \ar[
+        r,
+        <-|,
+        shorten=4pt
+      ]
+      &
+      0
+      \ar[
+        rrr,
+        <-|,
+        shorten=4pt
+      ]
+      & 
+      &&
+      \vec x
+      \\
+      {[\,{\vec t}{\phantom{.}}']}
+      \ar[
+        r,
+        <-|,
+        shorten=4pt
+      ]
+      &
+      {\vec t}{\phantom{.}}'
+      \ar[
+        rrrrr,
+        <-|,
+        shorten=4pt
+      ]
+      & 
+      &&
+      &&
+     {\vec t}{\phantom{.}}'
+      \\
+      0
+      \ar[
+        r,
+        <-|,
+        shorten=4pt
+      ]
+      &
+      {\vec x}{\,}'
+      \ar[
+        rrrrrrr,
+        <-|,
+        shorten=4pt
+      ]
+      & 
+      &&
+      &&
+      &&
+{ \vec x}{\,}'
+      \\
+      0
+      \ar[
+        r,
+        <-|,
+        shorten=4pt
+      ]
+      &
+      \vec h({\vec t}{\phantom{.}}')
+      \ar[
+        rrrrrrrrr,
+        <-|,
+        shorten=4pt
+      ]
+      & 
+      &&
+      &&
+      &&
+      &&
+      \vec j
+      \mathrlap{\,,}
+    \end{tikzcd}
+  $$
+  where in the last line we use that the functions $\vec h$ \cref{GeneratorsForKernel} vanish on $\mathbb{D}$, by assumption.  
+  Since these two composite maps hence agree, the left part of our diagram commutes.
+
+  Now consider
+  $$
+    \begin{tikzcd}[row sep=-2pt, column sep=0pt]
+      \mathbb{R}^d
+      \ar[rr, "{ \delta }"]
+      &&
+      \mathbf{R}^\infty
+      \\
+      \vec t 
+      &\longmapsto&
+      f'(\vec t\,, 0)
+      -
+      f(\vec t\,, 0)\,.
+    \end{tikzcd}
+  $$
+  By the commutativity of the outer part of our diagram,
+  the components of this map are in the ideal spanned by the $h_i$ \cref{GeneratorsForKernel}, so that
+  \begin{equation}
+    \label{HadamardRemainderOfDelta}
+    \delta(\vec t\,)
+    =
+    \textstyle{\sum_i}
+    \,
+    h_i(\vec t\,)
+    \,
+    \mu^i(\vec t\,)
+    \;\;\;
+    \mbox{for some}
+    \;\;\;
+    (\,
+      \inlinetikzcd{
+      \mu^i
+      :
+      \mathbb{R}^d
+      \ar[r]
+      \&
+      \mathbf{R}^\infty
+      }
+    )_{i = 1}^{n}
+    \mathrlap{\,.}
+  \end{equation}
+  With this in hand, finally define
+  \begin{equation}
+    \label{DefinitionOfPhi}
+    \phi\left(
+      (\vec t\,, \vec x \,)
+      ,\,
+      ({\vec t}{\phantom{.}}',\vec x{\,}'\,)
+      ,\
+      \vec j \,
+    \right)
+    :=
+    f(\vec t\,, \vec x \,)
+    -
+    f'(\vec t\,, 0)
+    +
+    f'(\vec t\,,\vec x{\,}')
+    +
+    \textstyle{\sum_i}
+    \,
+    j_i
+    \,
+    \mu^i(\vec t\,)
+    \mathrlap{\,.}
+  \end{equation}
+  We check by direct computation that this indeed makes the right part of our diagram commute:
+  $$
+    \begin{aligned}
+      \phi \circ \alpha(
+        \vec t\,, \vec x \,
+      )
+      &
+      =
+      \phi\left(
+        (\vec t\,, \vec x \,)
+        ,\,
+        (\vec t\,, 0)
+        ,\,
+        0
+      \right)
+      \\
+      & =
+      f(\vec t\,, \vec x\,)
+      +
+      0
+      +
+      0
+    \end{aligned}
+  $$
+  and
+  $$
+    \begin{aligned}
+      \phi \circ \alpha'(
+        {\vec t}{\phantom{.}}', \vec x{\,}'
+      )
+      &
+      =
+      \phi\left(
+        ({\vec t}{\phantom{.}}', 0)
+        ,\,
+        ({\vec t}{\phantom{.}}', \vec x{\,}')
+        ,\,
+        \vec h(\vec t\,)
+      \right)
+      \\
+      & =
+      \grayunderbrace{
+      f(\vec t\,, 0)
+      -
+      f'(\vec t\,, 0)
+      }{\mathclap{
+        -\delta(\vec t\,)
+      }}
+      +
+      f'(\vec t\,, \vec x{\,}')
+      +
+      \grayunderbrace{
+        \textstyle{\sum_i}
+        \,
+        h_i(\vec t\,)
+        \,
+        \mu^i(\vec t\,)
+      }{{\mathclap{
+        \delta(\vec t\,)
+      }}}
+      \\
+      & =
+      f'(\vec t\,, \vec x{\,}')
+      \mathrlap{\,.}
+    \end{aligned}
+  $$
+  This completes the proof.
+\end{proof}
+
 Finally, it is not much more work to lift this proof to full generality:
-Proof of Lem. 2.8.By Lem. A.12 we may assume, without restriction of generality,
-that, up to diffeomorphism on the target:
-ι|U×{∗} ≃(id ,0) :U U× ˜V≃V
-ι′|U×{∗} ≃(id,0) :U U× ˜V′≃V ′.
-But under this identification, we have over each pointu∈Uthe exact situation
-of Lem. 2.10, and hence the solution is as given there, just withWhaving another
-factor ofUand withα,α ′ andϕdepending on a further variableu∈U.
-Concretely, in generalizing Lem. 2.9 this way:
-(i)The parametrization ofVis now as a bundle overU×R, with (u,t·
-v(u),⃗ xv(u))∈V, where⃗ x v(u) are elements perpendicular tov(u).
-(ii)The correspondingδis now a mapU×R→R ∞ which satisfiesδ(u,0) = 0,
-∂
-∂tδ(u,0) = 0 and so, by thepartial/parameterized versionof Hadamard’s
-lemma Thm. A.5, may be written asδ(u,t) =t 2·µ(u,t) for a smooth
-µ:U×R→R ∞.□
-AppendixA.Background
-For reference in the main text, here we briefly record some basic definitions and
-facts.
-10 GRIGORIOS GIOTOPOULOS, IGOR KHAVKINE, HISHAM SATI, AND URS SCHREIBER
-A.1.Formal Smooth Sets.We briefly review the topos offormal smooth sets
-([Sch13, Def. 4.5.5; KS26,§2.1; GS25b,§2], exposition in [Sch25]), equivalent (by
-[GS25b,§4.1]) to Dubuc’sCahiers topos[Dub79; KR87], which is a “well-adapted
-model” for synthetic differential geometry.
-Our ground field is the real numbers. We write CAlg for the category of com-
-mutativeR-algebras.
-Definition A.1. (i)We write CrtSp for the category whose objects are the
-Cartesian spacesR n,n∈N, and whose morphisms are the smooth func-
-tions between these. Hence this is the full subcategory of smooth manifolds
-CrtSp SmthMfd
-on the Cartesian spaces. We will denote generic Cartesian spaces byU,V∈
-CrtSp.
-(ii)We regard this category as a site by equipping it with the coverage (Grothendieck
-pre-topology) of differentiably good open covers.
-Proposition A.2(cf. [KMS93,§35]).The functor which forms (plain)R-algebras
-of smooth functions constitutes a full inclusion of smooth manifolds, hence in par-
-ticular of Cartesian spaces(Def. A.1):
-CrtSp SmthMfd CAlgopC∞(−)
-Definition A.3.The category ofinfinitesimally thickened points(haloed points)
-is the full subcategory of the opposite of commutative algebras
-FrmPnt CAlgop
-D ↦−→C∞(D).
-on those what are calledWeil algebrasin the SDG literature orArtin local algebras
-in algebraic geometry, namely those of the form
-C∞(D)≃ R R⊕V ,
-whereV⊂C ∞(D) is a finite-dimensional ideal which isnilpotentin that
-∃k∈N :V k+1 = 0.
-The smallestkfor which this holds is theorder of nilpotencyofD.
-Example A.4.Aninfinitesimal diskof dimensiond∈Nand order of infinitesi-
-malityk∈Nis an infinitesimally thickened pointD d(k)∈FrmPnt (Def. A.3) of
-the form
-C∞
-(
-Dd(k)
-)
-≃C ∞(Rd)/(x1,···,x d)k+1
-≃R[ϵ 1,···,ϵ d]/(ϵ1,···,ϵ d)k+1.
-The second equivalence above follows by Hadamard’s lemma, which we repeat-
-edly refer to. For reference, we state it in a version that covers both parameters
-and partial derivatives:
-SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED 11
-Lemma A.5(Hadamard’s Lemma, cf. [DK04, Lem. 2.2.7], we follow [GS25b,
-Lem. 4.1]).For any smooth functionf(x,y)∈C ∞(Rk×R m)and anyl∈N,
-there exist smooth functions{h i1···il+1}i1,···,i l+1=1,···,m ⊂C ∞(Rk×Rm)such that
-f=f(x,0) +
-m∑
-i=1
-yi∂yif(x,0) + 1
-2
-m∑
-i,j=1
-yiyj∂yi∂yjf(x,0)
-+···+ 1
-l!
-m∑
-i1,···,i l=1
-yi1···y il·∂yi1···∂ yilf(x,0)
-+
-m∑
-i1,···,i l+1=1
-yi1···y il+1·hi1···il+1(x,y).
-Definition A.6. (i)The category offormal Cartesian spacesis the full sub-
-category of the opposite of commutative algebras,
-FrmCrtSp CAlgop
-U×D ↦−→C∞(U)⊗ RC∞(D),
-C∞(−)
-on those which are tensor products of an algebra of smooth functions on a
-U∈CrtSp (cf. Prop. A.2) with those on aD∈FrmPnt (Def. A.3).
-(ii)We regard this category as a site by equipping it with the coverage (Grothendieck
-pre-topology) whose covering families are of the form
-{
-Ui×D U×D
-ιi×id }
-i∈I
-for
-{Ui U
-ιi
-}i∈I
-a covering family in CrtSp (a differentiably good open cover).
-By construction, we have a fully faithful inclusion of sites:
-(A.1) CrtSp FrmCrtSp
-U ↦−→U×D 0.
-i
-Definition A.7.We say that the sheaf topos
-(i)over CrtSp is the category ofsmooth sets,
-(ii)over FrmCrtSp is the category offormal smooth sets,
-and that the essential image of the former under the left base changei ! along the
-inclusion (A.1) constitute thereducedformal smooth sets:
-(A.2) SmthSet := Sh(CrtSp) Sh(FrmCrtSp) =: FrmSmthSet,
-i!
-⊥
-i∗
-Herei ! on sheaves is theleft Kan extensioni ! of presheaves (2.5) followed by
-sheafificationL, and we are using thati ∗ manifestly preserves sheaves:
-(A.3)
-PSh(CrtSp) PSh(FrmCrtSp)
-Sh(CrtSp) Sh(FrmCrtSp).
-i!
-⊥
-i∗
-i!
-⊥
-i∗
-⊥ L
-Now, basic category theory shows the following important properties:
-12 GRIGORIOS GIOTOPOULOS, IGOR KHAVKINE, HISHAM SATI, AND URS SCHREIBER
-Lemma A.8.The inclusioni ! in(A.2):
-(i)preserves representables V∈CrtSp SmthSet in that:1
-(A.4) i!V≃V≡V×D 0∈FrmCrtSp FrmSmthSet,
-(ii)is fully faithful, hence
-(A.5)i ∗◦i !≃id,
-(iii)and such that thereducedobjects X∈SmthSet FrmSmthSet
-i!
-are equiv-
-alently those which are isomorphic to theirpurely reduced aspectℜ(X),
-(A.6)X≃ℜ(X),
-where
-(A.7)ℜ:=i !◦i∗.
-Proof.The first statement follows with the coend formula (2.5): Every pair (ι,f) (of
-maps into a Cartesian spaceVfactoring through a Cartesian spaceW) is equivalent
-to its actual composite regarded as the pair (f◦ι,id), like this:
-W
-U×D V.
-V
-f
-f
-ι
-f◦ι id
-This shows thati ! on presheaves preserves representables. Finally, our coverage is
-clearly subcanonical in that representable presheaves are already sheaves.
-For the second statement cf. [Kel82, Prop. 4.23] with [Mac98,§IV.3 Thm. 1].
-From this the last statement follows.□
-A classical notion in infinite-dimensional differential geometry areFr´ echet man-
-ifolds(cf. [Ham82,§I.4]). These are faithfully subsumed here:
-Lemma A.9.The evident inclusion of Fr´ echet manifolds among smooth sets(and
-hence further among formal smooth sets Def. A.7)
-(A.8)
-FrchtMfd SmthSet
-X ↦−→
-(
-U↦→C∞(U,X)
-)
-is fully faithful.
-Proof.This is essentially the statement of [Los94, Thm. 3.1.1], cf. [KS26, Prop.
-2.22]. □
-A.2.Formal embeddings.
-Definition A.10.A map i:U×D V in FrmCrtSp (Def. A.6) is aformal
-embeddingif its restriction toU×{0}is an embedding of smooth manifolds and its
-restriction to each{u}×Dis a monomorphism. Moreover, this is aproperformal
-embedding if the restriction toU×{0}is also a proper map.
-The following lemma is immediate but still worth recording:
-1We are leaving the Yoneda embedding notationally implicit.
-SYNTHETIC DIFFERENTIAL JET BUNDLES ARE REDUCED 13
-Lemma A.11.Every U×D V Xi f
-is equivalent(2.3)to(ι,f ′), whereιis
-a formal proper embedding(Def. A.10)of arbitrarily high codimension.
-Proof.Choose a monomorphism (wheredmay be arbitrarily large) of the form
-δ:U×D U×R d (cf. [GS25b, Cor. 4.3(iii)]), note that this makes the fol-
-lowing diagram commute:
-V
-U×D X,
-V×(U×R d)
-fi
-ι:=(i,δ)
-f′:=f◦pr V
-prV
-and finally observe thatι:= (i,δ) is a formal proper embedding.□
-Lemma A.12.For every proper embedding ι:R n Rn+c of sufficiently high
-codimensionc, there exists a diffeomorphism ofR n+c under which the embedding
-is a rectilinear inclusion:i≃(id,0).
-Proof.First we claim that there exists a proper smooth homotopy fromito (id,0).
-This may be seen by observing that proper maps extend to pointed maps between
-one-point compactifications (cf. [Jam84, p. 80]). In our case the extended maps
-are of the form Sn Sn+c and hence pointed null-homotopic forc≥1. This
-pointed null-homotopy comes from a proper homotopy between the original maps
-as desired.
-From this it follows thatiis related to (id,0) by ambient isotopy (with [Hir76,
-§8.1 Exc. 11], which requiresc >1 +n) and thus by diffeotopy (with [Hir76,§8.1
-Thm. 1.3]).□
-A.3.Jet Bundles.For traditional background on jet bundle geometry cf. [Sau89;
-Tak79].
-A finite-rankjet bundleJ k
-ΣEis the bundle of all possible partial derivatives,
-of order≤k, of sections of a given surjective submersion p:E Σ of smooth
-manifolds.
-This traditional notion has a slick synthetic differential formulation ([KS26,
-§3.3][GS25b,§2.4]) in terms of the maximal infinitesimal disksDs(k) Σ (Ex. A.4)
-around any points∈Σ: The fiber ofJ k
-ΣEoversconsists of the sections ofpover
-Ds(k):
-(Jk
-ΣE)s≃FrmSmthSet /Σ
-(
-Ds(k), E
-)
-≡
-
-
-
-E
-Ds(k) Σ
-p
-
-
-
-,
-andJ k
-ΣEcanonically inherits the structure of a smooth manifold this way.
-Now, the evident inclusions Ds(k) Ds(k+ 1) thus induce natural projections
-Jk+1
-Σ E Jk
-ΣE, and theinfinite rankjet bundle (cf. [Sau89,§7]) is the projective
-limit over these projections:
-(A.9)J ∞
-Σ E:= lim←−k∈N
-Jk
-ΣE.
-14 GRIGORIOS GIOTOPOULOS, IGOR KHAVKINE, HISHAM SATI, AND URS SCHREIBER
-Traditionally, this limit is understood in the category of Fr´ echet manifolds (cf.
-Lem. A.9), and it is nota prioriclear how this relates to the corresponding limit
-formed in formal smooth sets, since the inclusioni ! (A.2) does not preserve limits
-in general
-Thati ! does preserve the particular limits (A.9) is the content of our main result
-Thm. 2.1.
+
+\begin{proof}[Proof of \cref{FactoredMapsToRInfinityEquivalences}]
+By \cref{RectifyingProperEmbeddingsOfCartesianSpaces} we may assume, without restriction of generality, that, up to diffeomorphism on the target: 
+$$
+  \begin{array}{l}
+    \inlinetikzcd{
+      \iota \vert_{U\times \{*\}} \simeq (\mathrm{id}_,0) : U \ar[r, hook] \& U \times \tilde V \simeq V}
+    \\[-2pt]
+    \inlinetikzcd{
+      \iota' \vert_{U\times \{*\}} \simeq (\mathrm{id},0) : U \ar[r, hook] \& U \times \tilde V' \simeq V'}
+      \mathrlap{.}
+  \end{array}
+$$
+But under this identification, we have over each point $u \in U$ the exact situation of \cref{TowardsFactoredMapsToRInfinityEquivalences}, and hence the solution is as given there, just with $W$ having another factor of $U$ and with $\alpha$, $\alpha'$ and $\phi$ depending on a further variable $u \in U$.
+
+Concretely, in generalizing \cref{FirstStepTowardsFactoredMapsToRInfinityEquivalences} this way: 
+\begin{enumerate}
+\item The parametrization of $V$ is now as a bundle over $U\times \mathbb{R}$, with $(u, t\cdot v(u), \vec x_{v(u)}) \in V$ , where $\vec x_{v(u)}$ are  elements perpendicular to $v(u)$.
+
+\item The corresponding $\delta$ is now a map $U\times \mathbb{R} \rightarrow \mathbf{R}^\infty$ which satisfies $\delta(u,0) = 0$, $\frac{\partial}{\partial t} \delta (u,0) =0$ and so, by the \emph{partial/parameterized version} of Hadamard's lemma \cref{HadamardsLemma}, may be written as $\delta(u,t) = t^2 \cdot \mu(u,t)$ for a smooth $\mu : U\times \mathbb{R} \rightarrow \mathbf{R}^\infty$. \qedhere
+\end{enumerate}
+\end{proof}

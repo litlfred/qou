@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1701.06567v2/blocks/prose-sec-075",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1701.06567v2/blocks/prose-sec-075",
   "kind": "prose",
   "title": "Acknowledgments",
   "pageStart": 67,
   "pageEnd": 69,
   "text": "../sections/sec-075-acknowledgments.md",
-  "derivedFrom": "library/arxiv-1701.06567v2/manifest",
-  "sourceDocument": "library/arxiv-1701.06567v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1701.06567v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1701.06567v2/manifest.jsonld",
   "provenance": "ingested"
 }

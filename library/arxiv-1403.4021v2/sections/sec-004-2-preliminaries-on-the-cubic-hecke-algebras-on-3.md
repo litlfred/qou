@@ -7,279 +7,225 @@ section_number: 2
 pages: 5-8
 source_pdf: 1403.4021v2.pdf
 source_sha256: 046d02411e0dc086
+text_source: latex
+latex_prose_ratio: 0.954
+latex_coverage_ratio: 0.931
 doc_brief: "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS — We classify the Markov traces factoring through the Birman-Wenzl-Murakami (BMW) algebras."
 ---
-In order to insure the coherence of notations with the forthcoming sections, we let
-R = Q [a,a−1,b,b−1,c,c−1] = Q [a,b,c, (abc)−1],
-although all the results of the present section are actually already valid withR = Z [a,b,c, (abc)−1].
-We let Hn denote the R-algebra deﬁned as the quotient of the group algebra RBn of the
-braid group on n strands by the relations ( si−a)(si−b)(si−c) = 0 for 1 ≤ i≤ n− 1 or,
-equivalently – since each si is conjugated to s1 – by the relation (s1−a)(s1−b)(s1−c) = 0.
-It is known that Hn is a free R-module of ﬁnite rank for n≤ 5 (see [16]). More precisely,
-for n = 3, one may excerpt from [16] the following result (see also [4, 7, 18] for related
-statements).
-Proposition 2.1.
-(i) The algebra H3 is a free H2-module of rank 8, with basis the elements 1,s 2,s−1
-2 ,sα
-1sβ
-2
-for α,β ∈{ 1,−1}, s2s−1
-1 s2.
-(ii) The algebra H3 is a free R-module of rank 24, with basis the elements
-B1 = (1 ,s 1,s−1
-1 ,s 2,s−1
-2 ,s 1s2,s 1s−1
-2 ,s−1
-1 s2,s−1
-1 s−1
-2 ,s 1s2s1,s 1s2s−1
-1 ,s−1
-1 s2s1,s−1
-1 s2s−1
-1 ,
-s1s−1
-2 s1,s−1
-1 s−1
-2 s1,s 2s1,s−1
-2 s1,s 2s−1
-1 ,s−1
-2 s−1
-1 ,s 1s−1
-2 s−1
-1 ,s−1
-1 s−1
-2 s−1
-1 ,s 2s−1
-1 s2,
-s1s2s−1
-1 s2,s−1
-1 s2s−1
-1 s2).
-Proof. From [16] theorem 3.2 we know thatH3 is generated as aH2-module by the 8 elements
-on the ﬁrst statement. Since H2 is spanned by 1,s 1,s−1
-1 it follows that H3 is generated as a
-6 Ivan Marin & Emmanuel Wagner
-H3-module by the 24 elements of the second statement. Since Γ 3 has 24 elements and by an
-a argument of [5] (see also [17], proposition 2.4 (1)) it follows that these 24 elements are a
-basis over R of H3. It readily follows that the 8 original elements provide a basis of H3 as a
-H2-module. □
-A consequence is thatH3 is a free deformation of the group algebra RΓ3, where Γn denotes
-the quotient of the braid group by the relations s3
-i = 1, and H3 becomes isomorphic to it
-after extension of scalars to the algebraic closure K of the ﬁeld of fractions K ofR. Actually,
-one has the stronger result H3⊗RK≃KΓ3, because the irreducible representations of KH3
+\label{sectH3}
+In order to insure the coherence of notations with the forthcoming sections,
+we let 
+$$
+R = \Q[a,a^{-1},b,b^{-1},c,c^{-1}] = \Q[a,b,c,(abc)^{-1}],$$
+although all the results of the present section are actually already valid with $R=\Z[a,b,c,(abc)^{- 1}]$.
+
+
+ We let $H_n$ denote
+the $R$-algebra defined as the quotient of the group algebra $R B_n$
+of the braid group on $n$ strands by the relations $(s_i-a)(s_i-b)(s_i-c) = 0$
+for $1 \leq i \leq n-1$ or, equivalently -- since each $s_i$ is conjugated to $s_1$ --
+by the relation $(s_1-a)(s_1-b)(s_1-c)= 0$. It is known that $H_n$ is a
+free $R$-module of finite rank for $n \leq 5$ (see \cite{CUBIC5}).
+More precisely, for $n =3$, one may excerpt from \cite{CUBIC5} the
+following result (see also \cite{BROUEMALLE, FUNAR,THESE} for related statements).
+
+\begin{prop} {\ } \label{prop:H3libre}
+\begin{enumerate}
+\item The algebra $H_3$ is a free $H_2$-module of rank $8$, with basis the elements $1, s_2,s_2^{-1}$, $s_1^{\alpha} s_2^{\beta}$ for $\alpha,\beta \in \{ 1,-1 \}$,
+$s_2 s_1^{-1} s_2$.
+\item The algebra $H_3$ is a free $R$-module of rank 24, with basis the
+elements 
+$$
+\begin{array}{lcl}
+\mathcal{B}_1&=& (1,  s_1, s_1^{-1}, s_2, s_2^{-1}, s_1s_2, s_1s_2^{-1}, s_1^{-1}s_2, s_1^{-1}s_2^{-1}, s_1s_2s_1, s_1s_2s_1^{-1}, s_1^{-1}s_2s_1, 
+  s_1^{-1}s_2s_1^{-1},\\ & & s_1s_2^{-1}s_1, s_1^{-1}s_2^{-1}s_1, s_2s_1, s_2^{-1}s_1, s_2s_1^{-1}, s_2^{-1}s_1^{-1}, s_1s_2^{-1}s_1^{-1}, 
+  s_1^{-1}s_2^{-1}s_1^{-1}, s_2s_1^{-1}s_2,\\ & & s_1s_2s_1^{-1}s_2, s_1^{-1}s_2s_1^{-1}s_2 ).
+  \end{array}
+$$ {}
+\end{enumerate}
+\end{prop}
+\begin{proof}  From \cite{CUBIC5} theorem 3.2 we know that $H_3$ is generated as a $H_2$-module by the $8$ elements on the first statement. Since $H_2$
+is spanned by $1,s_1, s_1^{-1}$ it follows that $H_3$ is generated as a $H_3$-module by the $24$ elements of the
+second statement. Since $\Gamma_3$ has 24 elements and by an a argument of \cite{BMR} (see also \cite{CYCLO}, proposition 2.4 (1)) it follows that these $24$ elements are 
+a basis over $R$ of $H_3$. It readily follows that the $8$ original elements provide a basis of $H_3$ as a $H_2$-module.
+\end{proof}
+
+
+
+A consequence is that $H_3$ is a free deformation
+of the group algebra $R \Gamma_3$,
+where $\Gamma_n$ denotes the quotient of the braid group by the relations $s_i^3 = 1$,
+and $H_3$ becomes isomorphic to it after extension of scalars to the algebraic
+closure $\overline{K}$ of the field of fractions $K$ of $R$. Actually, one
+has the stronger result $H_3 \otimes_R K \simeq K \Gamma_3$,
+because the irreducible representations of $K H_3$ 
 are absolutely irreducible.
-We will use the following explicit matrix models for the representations, which are basically
-the same which were obtained in [4], §5B. We endow{a,b,c} with the total order a<b<c .
-We denote
-(i) Sα for α∈{a,b,c} the 1-dimensional representation s1,s 2↦→α
-(ii) Uα,β for α,β ∈{a,b,c} with α<β the 2-dimensional representation
-Uα,β :s1↦→
-(
-α 0
-−α β
-)
-s2↦→
-(
-β β
-0 α
-)
-(iii) V the 3-dimensional irreducible representation
-s1↦→
-
-
-c 0 0
-ac +b2 b 0
-b 1 a
-
-s2↦→
-
-
-a −1 b
-0 b −ac−b2
-0 0 c
-
-
-We note the important feature that these representations are actually deﬁned over R. As a
-consequence, these formulas provide an explicit embedding
-ΦH3 :H3↪→R3⊕M2(R)3⊕M3(R)
-and the RHS is easy to identify with R24 as a R-module.
-For an algebra A, we let [A,A ] denote the submodule spanned by the ab−ba for a,b∈A.
-Proposition 2.2. H3/[H3,H 3] is freely generated over R by the 7 elements
-1,s 1,s−1
-1 ,s 1s2,s 1s−1
-2 ,s−1
-1 s−1
-2 ,s−1
-1 s2s−1
-1 s2.
-Proof. From the basis above it is readily proved (note for instance that the element s1s2s1
-conjugates s1 and s2) that H3/[H3,H 3] is generated by these 7 elements. The freeness is
-a consequence of the fact that, if ˜H3 = H3⊗R K, then ˜H3/[ ˜H3, ˜H3]≃ Z( ˜H3)≃ Z(KΓ3)
-has dimension 7. Since these 7 elements also generate ˜H3/[ ˜H3, ˜H3] they are a basis of the 7-
-dimensionalK-vector space ˜H3/[ ˜H3, ˜H3]. If aR-linear combination of these elements belonged
-to [H3,H 3], this would yield a contradiction since H3⊂ ˜H3. □
-Proposition 2.3.
-(i) The familyB0 below provides a basis of H3 as a R-module.
-B0 = 1,s 1,s 2
-1,s 2,s 2
-2,s 1s2,s 1s2
-2,s 2
-1s2,s 2
-1s2
-2,s 1s2s1,s 1s2s2
-1,s 2
-1s2s1,s 2
-1s2s2
-1,s 1s2
-2s1,s 2
-1s2
-2s1,s 2s1,
-s2
-2s1,s 2s2
-1,s 2
-2s2
-1,s 1s2
-2s2
-1,s 2
-1s2
-2s2
-1,s 2s2
-1s2,s 1s2s2
-1s2,s 2
-1s2s2
-1s2
-(ii) The linear form t0 :H3→R deﬁned by t0(1) = 1 and t0(g) = 0 for all g∈B 0\{ 1}
-is a (nondegenerate) symmetrizing form for H3.
-MARKOV TRACES ON THE BMW-ALGEBRAS 7
-Proof. It was checked in [4]§4B that the linear span ofB0 (actually of the image ofB0 under
-the anti-automorphism si↦→si, see [16]) was stable under left multiplication by s1,s 2, hence
-generates H3, and thus provides a basis of H3. It appears however that the computations in
-[4] might have (incorrectly) been made inside H3⊗K instead of H3, so we need to provide
-another argument. Since we proved thatB1 is a basis of H3, it is suﬃcient to show that every
-element ofB1 can be expressed as a linear combination of the elements of B0. This readily
-follows from the expression of s−1
-i as a linear combination of 1 ,si and s2
-i . This proves (1).
-Using the explicit injective morphism Φ : H3→ R3×M2(R)3×M3(R) above, calculations
-insideH3 are easy, and we can explicitely check that (x,y )↦→t0(xy) is indeed a symmetrizing
-trace, more precisely that the matrix t0(bibj) for bi∈B 0 (resp. B1) is a symmetric matrix
-with determinant−(abc)54 (resp.−(abc)2), which belongs to R×. □
-Because of the proposition, it is possible to apply the theory of Geck’s ‘Schur elements’
-(see e.g. [8]) to H3, that is to determine elements pχ∈R attached to each of the irreducible
-representations χ of H3⊗K such that t0 = ∑
-χ
-1
-pχtrχ where trχ denotes the matrix trace
-attached to the irreductible representation χ of H3⊗K. Once convenient matrix models as
-well as an explicit description oft0 are known, it is a simple matter to determine them. These
-elements were already determined in [14].
-The one attached to Sa is
-pSa = (a−c)
-(
-a2−ac +c2)
-(a−b)
-(
-a2−ab +b2)(
-bc +a2)
-b4c4
-the one to Ub,c is
-pUb,c =−
-(
-b2 +c2−bc
-)
-(a−c) (a−b)
-(
-bc +a2)
-a4bc
-and the one to V is
-pV =
-(
-bc +a2)(
-ab +c2)(
-ac +b2)
-a2c2b2
-By this theory of Schur elements (see [8] theorem 7.2.6) we have that, for each morphism
-ϕ : R→ k for k a ﬁeld, H3⊗ϕk is semisimple if and only if ϕ(pχ)⁄= 0 for all irreducible
-representation χ of H3. Another related computation that can be found in [18] is that the
-discriminant of the trace form of the regular representation of H3, that is to say of the action
-of H3 on itself by left multiplication, is
-21239a6b6c6(c−b)10(a−c)10(b−a)10
-(c2−cb +b2)6(a2−ac +c2)6(b2−ba +a2)6(a2 +bc)14(b2 +ac)14(c2 +ab)14.
+
+
+We will use the following explicit matrix models for the representations, which
+are basically the same which were obtained in \cite{BROUEMALLE}, \S 5B. We endow $\{a,b,c \}$
+with the total order $a<b<c$. We denote
+\begin{enumerate}
+\item $S_{\alpha}$ for $\alpha \in \{a,b,c\}$ the 1-dimensional representation
+$s_1,s_2 \mapsto \alpha$ 
+\item $U_{\alpha,\beta}$ for $\alpha , \beta \in  \{a,b,c\}$ with $\alpha < \beta$ the 2-dimensional representation
+$$
+U_{\alpha,\beta} : 
+s_1 \mapsto \left( \begin {array}{cc} \alpha&0\\ \noalign{\medskip}-\alpha&\beta\end {array} \right)
+s_2 \mapsto \left( \begin {array}{cc} \beta&\beta\\ \noalign{\medskip}0&\alpha\end {array} \right)
+$$
+\item $V$ the $3$-dimensional irreducible representation 
+$$
+s_1 \mapsto \left( \begin {array}{ccc} c&0&0\\ \noalign{\medskip}ac+{b}^{2}&b&0\\ \noalign{\medskip}b&1&a\end {array} \right)
+s_2 \mapsto \left( \begin {array}{ccc} a&-1&b\\ \noalign{\medskip}0&b&-ac-{b}^{2}\\ \noalign{\medskip}0&0&c\end {array} \right) 
+$$
+\end{enumerate}
+We note the important feature that these representations are actually defined over $R$.
+As a consequence, these formulas provide an explicit embedding
+$$
+\Phi_{H_3} : H_3 \into R^3 \oplus M_2(R)^3 \oplus M_3(R) 
+$$
+and the RHS is easy to identify with $R^{24}$ as a $R$-module.
+
+For an algebra $A$, we let $[A,A]$ denote the submodule spanned by the $ab-ba$ for $a,b \in A$.
+
+\begin{prop} \label{prop:H3AB}
+$H_3/[H_3,H_3]$ is freely generated over $R$ by the $7$ elements
+    $$
+    1,s_1,s_1^{-1},s_1s_2,s_1s_2^{-1}, s_1^{-1} s_2^{-1}, s_1^{-1} s_2 s_1^{-1}s_2.
+    $$
+\end{prop}
+\begin{proof}
+From the basis above it is readily proved (note for instance that
+    the element $s_1s_2s_1$ conjugates $s_1$ and $s_2$) that
+    $H_3/[H_3,H_3]$ is generated by these $7$ elements. The freeness is
+    a consequence of the fact that, if $\tilde{H}_3 = H_3 \otimes_R K$, then $\tilde{H}_3/[\tilde{H}_3,\tilde{H}_3] \simeq Z(\tilde{H}_3)
+     \simeq Z(K \Gamma_3)$ has dimension $7$. Since these $7$ elements also generate $\tilde{H}_3/[\tilde{H}_3,\tilde{H}_3]$
+     they are a basis of the $7$-dimensional $K$-vector space $\tilde{H}_3/[\tilde{H}_3,\tilde{H}_3]$. If a $R$-linear combination of these elements
+     belonged to $[H_3,H_3]$, this would yield a contradiction since $H_3  \subset \tilde{H}_3$.
+\end{proof}
+
+
+\begin{prop} {\ }
+\begin{enumerate} 
+\item The family $\mathcal{B}_0$ below provides a basis of $H_3$ as a $R$-module.
+$$
+\mathcal{B}_0 = \begin{array}{l}
+ 1, s_1, s_1^2,s_2, s_2^2, s_1s_2, s_1s_2^2, s_1^2s_2, 
+  s_1^2s_2^2, s_1s_2s_1, s_1s_2s_1^2, s_1^2s_2s_1, 
+  s_1^2s_2s_1^2, s_1s_2^2s_1, s_1^2s_2^2s_1, s_2s_1, \\
+  s_2^2s_1, s_2s_1^2, s_2^2s_1^2, s_1s_2^2s_1^2, 
+  s_1^2s_2^2s_1^2, s_2s_1^2s_2, s_1s_2s_1^2s_2, 
+  s_1^2s_2s_1^2s_2 
+  \end{array}
+$$
+\item The linear form $t_0 : H_3 \to R$ defined by $t_0(1) = 1$ and $t_0(g) = 0$ for all $g \in \mathcal{B}_0 \setminus \{ 1 \}$
+is a (nondegenerate) symmetrizing form for $H_3$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+It was checked in \cite{BROUEMALLE} \S 4B that the linear span of $\mathcal{B}_0$ (actually of the image of $\mathcal{B}_0$
+under the anti-automorphism $s_i \mapsto s_i$, see \cite{CUBIC5})
+was stable
+under left multiplication by $s_1, s_2$, hence generates $H_3$, and thus provides
+a basis of $H_3$. It appears however that the computations in \cite{BROUEMALLE} might have (incorrectly) been made inside $H_3\otimes K$
+instead of $H_3$, so we need to provide another argument. Since we proved that $\mathcal{B}_1$ is a basis of $H_3$,
+it is sufficient to show that every element of $\mathcal{B}_1$ can be expressed as a linear combination of
+the elements of $\mathcal{B}_0$. This readily follows from the expression of $s_i^{-1}$
+as a linear combination of $1,s_i$ and $s_i^2$. This proves (1). Using the explicit injective morphism $\Phi : H_3 \to
+R^3 \times M_2(R)^3 \times M_3(R)$ above, calculations inside $H_3$ are easy, and 
+we can explicitely check that $(x,y) \mapsto t_0(xy)$ is indeed a symmetrizing trace, more precisely that
+the matrix $t_0(b_i b_j)$ for $b_i \in \mathcal{B}_0$ (resp. $\mathcal{B}_1$) is a symmetric matrix with determinant $-(abc)^{54}$ (resp. $-(abc)^2$), which belongs to $R^{\times}$.
+\end{proof}
+
+Because of the proposition, it is possible to apply the theory of Geck's `Schur elements' (see e.g. \cite{GECKPFEIFFER}) to $H_3$, that is
+to determine elements $p_{\chi} \in R$ attached to each of the irreducible representations $\chi$ of $H_3 \otimes K$ such that
+$t_0 = \sum_{\chi} \frac{1}{p_{\chi}} tr_{\chi}$ where $tr_{\chi}$ denotes the matrix trace attached to the irreductible
+representation $\chi$ of $H_3 \otimes K$. Once convenient matrix models as well as an explicit description
+of $t_0$ are known, it is a simple matter to determine them. These elements were already
+determined in \cite{MALLE}.
+
+The one attached to $S_a$
+is
+$$
+p_{S_a} = {\frac { \left( a-c \right)  \left( {a}^{2}-ac+{c}^{2} \right)  \left( a-b \right)  \left( {a}^{2}-ab+{b}^{2} \right) 
+ \left( bc+{a}^{2} \right) }{{b}^{4}{c}^{4}}}
+ $$
+ 
+the one to $U_{b,c}$ is
+$$
+p_{U_{b,c}} = -{\frac { \left( {b}^{2}+{c}^{2}-bc \right)  \left( a-c \right)  \left( a-b \right)  \left( bc+{a}^{2} \right) }{{a}^{4}bc
+}}
+$$
+and the one to $V$ is
+$$
+p_V = {\frac { \left( bc+{a}^{2} \right)  \left( ab+{c}^{2} \right)  \left( ac+{b}^{2} \right) }{{a}^{2}{c}^{2}{b}^{2}}}
+$$
+By this theory of Schur elements (see \cite{GECKPFEIFFER} theorem 7.2.6) we have that, for
+each morphism $\varphi : R \to k$ for $k$ a field, $H_3 \otimes_{\varphi} k$ is semisimple
+if and only if $\varphi(p_{\chi}) \neq 0$ for all irreducible representation $\chi$ of $H_3$.
+Another related computation that can be found in \cite{THESE} is that the discriminant of the
+trace form of the regular representation of $H_3$, that is to say of the action of $H_3$ on itself by left multiplication,
+is
+$$
+\begin{array}{c}
+2^{12}3^9a^6b^6c^6(c-b)^{10}(a-c)^{10}(b-a)^{10} \\
+(c^2-cb+b^2)^6(a^2-ac+c^2)^6
+(b^2-ba+a^2)^6(a^2+bc)^{14}(b^2+ac)^{14}(c^2+ab)^{14}. \\
+\end{array}
+$$
+
+
 From this computation of Schur elements we get the following lemma.
-Lemma 2.4. LetR1 be a domain, and ϕ :R→R1 a morphism of rings such that ϕ(pχ)⁄= 0
-for all the irreducible representation χ of H3 . Then the induced map
-ΦH3⊗R1 :H3⊗ϕR1→R3
-1⊕M2(R1)3⊕M3(R1)
+
+\begin{lemma} \label{lem:injH3} Let $R_1$ be a domain, and $\varphi : R \to R_1$ a
+morphism of rings such that $\varphi(p_{\chi}) \neq 0$ for all the irreducible representation $\chi$ of $H_3$ . Then the induced map
+$$
+\Phi_{H_3} \otimes R_1 : H_3 \otimes_{\varphi} R_1 \to R_1^3 \oplus M_2(R_1)^3 \oplus M_3(R_1)
+$$
 is injective.
-Proof. Let k denote an algebraic closure of the fraction ﬁeld of R1. By the remarks above
-we get the semisimplicity of H3⊗ϕ k and, by Tits deformation theorem, that H3⊗ϕ k is
-isomorphic to k3⊕M2(k)3⊕M3(k). Moreover (see [8] theorem 7.4.6), the ‘decomposition
-map’ between H3⊗K and H3⊗ϕk induces an isomorphism between simple modules, which
-implies that the morphism that we consider Φ H3⊗ϕ : H3⊗ϕk→ k3⊕M2(k)3⊕M3(k) is a
-8 Ivan Marin & Emmanuel Wagner
-morphism from H3⊗ϕk to the sum of the matrix algebras associated to its simple modules.
-Because H3⊗ϕk is semisimple, this morphism is indeed an isomorphism. Since H3 is free
-overR1 the conclusion follows. □
-Let M be a R-module. Since the natural map H2→ H3 is injective, we can identify H2
-with a R-subalgebra of H3.
-ForM a R-module, we let MTn(M) be the R-module of R-linear maps t :Hn→M such
-thatt(xy) =t(yx) for all x,y∈Hn, and such that t(xsn−1) =t(xs−1
-n−1), for all x in the image
-of the natural morphism Hn−1→Hn.
-Proposition 2.5. Let M be a R-module. Then MT 3(M) is isomorphic to HomR(R4,M )
-under t↦→ t(1)e∗
-1 +t(s1)e∗
-2 +t(s1s2)e∗
-3 +t(s1s−1
-2 s1s−1
-2 )e∗
-4, where (e1,...,e 4) is the canonical
-basis of R4 and the e∗
-i∈ Hom(R4,M ) are the obvious dual maps.
-Proof. Let t∈ MT 3(M). Since s2 is conjugated to s1 and t vanishes on s2−s−1
-2 , it also
-vanishes ons1−s−1
-1 , hence t(s−1
-1 ) =t(s1). Since t also vanishes ons1s2−s1s−1
-2 , and because
-s−1
-1 s−1
-2 −s1s2 = ( s−1
-1 s−1
-2 −s−1
-1 s2) + (s−1
-1 s2−s1s2)
-= ( s−1
-1 s−1
-2 −s−1
-1 s2) + (s1s2s1)(s−1
-2 s1−s2s1)(s1s2s1)−1
-we get that t(s1s2) = t(s1s−1
-2 ) = t(s−1
-1 s−1
-2 ). By proposition 2.2 it follows that the map
-MT 3(M)→ HomR(R4,M ) described in the statement is injective (note that t(s1s−1
-2 s1s−1
-2 ) =
-t(s2s−1
-1 s2s−1
-1 ) = t(s−1
-1 s2s−1
-1 s2) using s1s2s1-conjugation and the invariance of traces under
-cyclic rotation). Conversely, because by proposition 2.2 H3/[H3,H 3] is a free module, it is
-possible to associate to each element in HomR(R4,M ) a tracet onH3 satisfyingt(s−1
-1 ) =t(s1),
-t(s1s2) =t(s1s−1
-2 ) =t(s−1
-1 s−1
-2 ). Now, since H2 is spanned by 1,s 1,s−1
-1 , theR-module spanned
-by the xs2−xs−1
-2 for x∈H2 is spanned by s2−s−1
-2 , s1s2−s1s−1
-2 , s−1
-1 s2−s−1
-1 s−1
-2 , hence t
-clearly vanishes on it. □
+\end{lemma}
+\begin{proof} Let $k$ denote an algebraic closure of the fraction field of $R_1$. By the remarks above we get the
+semisimplicity of $H_3 \otimes_{\varphi} k$ and, by Tits deformation theorem, that
+$H_3 \otimes_{\varphi} k$ is isomorphic to $k^3 \oplus M_2(k)^3 \oplus M_3(k)$.
+Moreover (see \cite{GECKPFEIFFER} theorem 7.4.6), the `decomposition map' between
+$H_3 \otimes K$ and $H_3 \otimes_{\varphi} k$ induces an isomorphism
+between simple modules, which implies that the morphism that we consider 
+$\Phi_{H_3} \otimes_{\varphi} : H_3 \otimes_{\varphi} k \to k^3 \oplus M_2(k)^3 \oplus M_3(k)$
+is a morphism from $H_3 \otimes_{\varphi} k$ to the sum of the matrix algebras
+associated to its simple modules. Because $H_3 \otimes_{\varphi} k$
+is semisimple, this morphism is indeed an isomorphism.
+Since $H_3$ is free over $R_1$ the conclusion follows.
+\end{proof}
+
+
+Let $M$ be a $R$-module. Since the natural map $H_2 \to H_3$
+is injective, we can identify $H_2$ with a $R$-subalgebra of $H_3$.
+
+For $M$ a $R$-module, we let $MT_n(M)$ be the $R$-module
+of $R$-linear maps $t : H_n \to M$ such that
+$t(xy) = t(yx)$ for all $x ,y \in H_n$, and such that $t(xs_{n-1}) = t(xs_{n-1}^{-1})$,
+for all $x$ in the image of the natural morphism $H_{n-1} \to H_n$.
+
+\begin{prop} \label{propMT3} Let $M$ be a $R$-module. Then $MT_3(M)$ is isomorphic to $\Hom_R(R^4,M)$
+under $t \mapsto t(1) e_1^* + t(s_1) e_2^* + t(s_1 s_2)e_3^* + t(s_1 s_2^{-1} s_1 s_2^{-1}) e_4^*$, 
+where $(e_1,\dots,e_4)$ is the canonical basis of $R^4$ and the $e_i^* \in \Hom(R^4,M)$
+are the obvious dual maps.
+\end{prop}
+\begin{proof} Let $t \in MT_3(M)$. Since $s_2$ is conjugated to $s_1$ and $t$ vanishes on $s_2 - s_2^{-1}$,
+it also vanishes on $s_1- s_1^{-1}$, hence $t(s_1^{-1}) = t(s_1)$. Since $t$ also vanishes on
+$s_1 s_2 - s_1 s_2^{-1}$, and because
+ $$ \begin{array}{lcl}
+ s_1^{-1} s_2^{-1} - s_1s_2 &=& (s_1^{-1} s_2^{-1} -s_1^{-1} s_2) + (s_1^{-1} s_2  - s_1s_2 )\\
+ &=&(s_1^{-1} s_2^{-1} -s_1^{-1} s_2) + (s_1s_2s_1)(s_2^{-1} s_1  - s_2s_1 )(s_1s_2s_1)^{-1} \\
+ \end{array}
+ $$
+we get that $t(s_1 s_2) = t(s_1 s_2^{-1}) = 
+t( s_1^{-1} s_2^{-1})$. By proposition \ref{prop:H3AB} it follows that the map $MT_3(M) \to \Hom_R(R^4,M)$
+described in the statement is injective (note that $t(s_1s_2^{-1}s_1s_2^{-1}) = t(s_2s_1^{-1} s_2 s_1^{-1}) = t(s_1^{-1} s_2 s_1^{-1} s_2)$
+using $s_1s_2s_1$-conjugation and the invariance of traces under cyclic rotation). Conversely, because by proposition \ref{prop:H3AB} $H_3/[H_3,H_3]$
+is a free module, it is possible to associate to each element in $ \Hom_R(R^4,M)$ a trace $t$ on $H_3$ satisfying
+$t(s_1^{-1}) = t(s_1)$, $t(s_1 s_2) = t(s_1 s_2^{-1}) = 
+t( s_1^{-1} s_2^{-1})$. Now, since $H_2$ is spanned by $1,s_1,s_1^{-1}$, the $R$-module spanned by the $x s_2 - x s_2^{-1}$ for $x \in H_2$ is spanned
+by $s_2 - s_2^{-1}$, $s_1 s_2- s_1s_2^{-1}$, $s_1^{-1}s_2 - s_1^{-1}s_2^{-1}$, hence $t$ clearly vanishes on it.
+\end{proof}

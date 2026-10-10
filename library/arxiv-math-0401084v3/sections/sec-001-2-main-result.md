@@ -7,202 +7,117 @@ section_number: 2
 pages: 2-4
 source_pdf: 0401084v3.pdf
 source_sha256: f56bbd4cee4f3418
+text_source: latex
+latex_prose_ratio: 0.962
+latex_coverage_ratio: 0.956
 doc_brief: "Some limits of the colored Jones polynomials of the figure-eight knot — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine"
 ---
-To state our main result we recall some of the results in [16, 24].
-Let K be a hyperbolic knot in the three-sphere S3, that is, the complement
-S3 \ K has a complete hyperbolic structure. The complete hyperbolic stru cture
-can be deformed by a complex parameter u that is the logarithm of the ratio of
-the eigenvalues of the image of the meridian K by the holonomy representation
-π1(S3 \ K) → SL2(C). We also denote by v the logarithm of the eigenvalue of the
-image of the longitude. If the structure is complete, then u = 0. Let Φ( u) be the
-potential function introduced in [16, Theorem 3] that satisﬁes
-
-
-
-
-
-d Φ( u)
-du = 2v,
-Φ(0) = 0 .
-We also put
-f (u) := Φ( u)
-4 − uv
-4 .
-(see [16, Equation (50)]).
-Let ℓ be a loop on the boundary of the tubular neighborhood N (K) of K in
-S3. Suppose that the hyperbolic structure parameterized by u on S3 \ K can
-be completed to an orbifold Ku by attaching a solid torus such that its meridian
-coincides with ℓ. It is called generalized Dehn surgery and if pu + qv = 2π√−1 for
-coprime integers p and q, then it is usual ( p, q)-Dehn surgery and Ku becomes a
-closed three-manifold [18, Chapter 4] and ℓ is homotopic to p·meridian+ q·longitude
-in π1(∂N (K)). Let γ be the core of the solid torus. It is a geodesic in Ku, and
-its length and torsion are denoted by length( γ) and torsion( γ) respectively. (If one
-travels around γ then the plane perpendicular to it is rotated by torsion( γ). See [24,
-Deﬁnition 1.1] for the precise deﬁnition.) Then the volume and the Che rn–Simons
-invariant of Ku can be obtained as follows ([24, Theorem 2], which was conjectured
-in [16, Conjecture]).
-THE COLORED JONES POLYNOMIALS OF THE FIGURE-EIGHT KNOT 3
-Theorem 2.1 (T. Yoshida) . Put λ(γ) := length( γ) + √−1 torsion(γ). Then we
-have
-Vol(Ku) +
-√
-−1 CS(Ku) ≡ f (u)√−1 − π
-2 λ(γ) + Vol
-(
-S3 \ K
-)
-+
-√
-−1 CS
-(
-S3 \ K
-)
-mod π2√
-−1Z.
-Now we study the case where the knot is the ﬁgure-eight knot E.
-Let u be a complex parameter near 0. Put
-m := − exp(u/2),
-z := −m4 + m2 + 1 +
-√
-(m2 + m + 1)(m2 + m − 1)(m2 − m + 1)(m2 − m − 1)
-2m2 ,
-and
-w := m4 + m2 − 1 +
-√
-(m2 + m + 1)(m2 + m − 1)(m2 − m + 1)(m2 − m − 1)
-2m2 .
-We take the branch of the square root so that z = w = exp(π/3) when u = 0. We
-also put
-v := 2 log
-(
-z(1 − z)
-)
-,
-where the branch is chosen so that v = 0 when u = 0. Note that z and w satisfy
-the following equations.
-{
-log w + log
-(
-1 − z
-)
-= u,
-log z + log
-(
-1 − z
-)
-+ log w + log
-(
-1 − w
-)
-= 0.
-Put
-f (u) := 1
-2π
-{
-R(z) + R(w) − π2
-6
-}
-−
-√−1
-2π Vol
-(
-S3 \ E
-)
-and
-Φ( u) := 4 f (u) + uv,
-where
-R(ξ) := 1
-2 log ξ log(1 − ξ) −
-∫ ξ
-0
-log(1 − η)
-η dη
-is Roger’s dilogarithm function. Then
-
-
-
-
-
-d Φ( u)
-du = 2v,
-Φ(0) = 0 ,
-and
-Vol(Eu) +
-√
-−1 CS(Eu) ≡ f (u)√−1 − π
-2 λ(γ) + Vol
-(
-S3 \ E
-)
-mod π2√
-−1Z,
-since CS
-(
-S3 \ E
-)
-= 0.
+To state our main result we recall some of the results in [@Neumann/Zagier:TOPOL85; @Yoshida:INVEM85].
+
+Let $K$ be a hyperbolic knot in the three-sphere $S^3$, that is, the complement $S^3\setminus{K}$ has a complete hyperbolic structure. The complete hyperbolic structure can be deformed by a complex parameter $u$ that is the logarithm of the ratio of the eigenvalues of the image of the meridian $K$ by the holonomy representation $\pi_1(S^3\setminus{K})\to\mathrm{SL}_2(\mathbb{C})$. We also denote by $v$ the logarithm of the eigenvalue of the image of the longitude. If the structure is complete, then $u=0$. Let $\Phi(u)$ be the potential function introduced in [@Neumann/Zagier:TOPOL85 Theorem 3] that satisfies $$\begin{equation*}
+\begin{cases}
+  \dfrac{d\,\Phi(u)}{du}=2v,
+  \\[3mm]
+  \Phi(0)=0.
+\end{cases}
+\end{equation*}$$ We also put $$\begin{equation*}
+  f(u):=\frac{\Phi(u)}{4}-\frac{uv}{4}.
+\end{equation*}$$ (see [@Neumann/Zagier:TOPOL85 Equation (50)]).
+
+Let $\ell$ be a loop on the boundary of the tubular neighborhood $N(K)$ of $K$ in $S^3$. Suppose that the hyperbolic structure parameterized by $u$ on $S^3\setminus{K}$ can be completed to an orbifold $K_{u}$ by attaching a solid torus such that its meridian coincides with $\ell$. It is called generalized Dehn surgery and if $pu+qv=2\pi\sqrt{-1}$ for coprime integers $p$ and $q$, then it is usual $(p,q)$-Dehn surgery and $K_{u}$ becomes a closed three-manifold [@Thurston:GT3M Chapter 4] and $\ell$ is homotopic to $p\cdot\text{meridian}+q\cdot\text{longitude}$ in $\pi_1(\partial{N(K)})$. Let $\gamma$ be the core of the solid torus. It is a geodesic in $K_{u}$, and its length and torsion are denoted by $\operatorname{length}(\gamma)$ and $\operatorname{torsion}(\gamma)$ respectively. (If one travels around $\gamma$ then the plane perpendicular to it is rotated by $\operatorname{torsion}(\gamma)$. See [@Yoshida:INVEM85 Definition 1.1] for the precise definition.) Then the volume and the Chern--Simons invariant of $K_{u}$ can be obtained as follows ([@Yoshida:INVEM85 Theorem 2], which was conjectured in [@Neumann/Zagier:TOPOL85 Conjecture]).
+
+::: thm
+[]{#thm:Yoshida label="thm:Yoshida"} Put $\lambda(\gamma):=\operatorname{length}(\gamma)+\sqrt{-1}\operatorname{torsion}(\gamma)$. Then we have $$\begin{multline*}
+  \operatorname{Vol}(K_{u})+\sqrt{-1}\operatorname{CS}(K_{u})
+  \equiv
+  \frac{f(u)}{\sqrt{-1}}
+  -\frac{\pi}{2}\lambda(\gamma)
+  +\operatorname{Vol}\left(S^3\setminus{K}\right)+\sqrt{-1}\operatorname{CS}\left(S^3\setminus{K}\right)
+  \\
+  \mod{\pi^2\sqrt{-1}\mathbb{Z}}.
+\end{multline*}$$
+:::
+
+Now we study the case where the knot is the figure-eight knot $E$.
+
+Let $u$ be a complex parameter near $0$. Put $$\begin{align*}
+  m&:=-\exp(u/2),
+  \\
+  z&:=\frac{-m^4+m^2+1+\sqrt{(m^2+m+1)(m^2+m-1)(m^2-m+1)(m^2-m-1)}}{2m^2},
+  \\
+  \intertext{and}
+  w&:=\frac{m^4+m^2-1+\sqrt{(m^2+m+1)(m^2+m-1)(m^2-m+1)(m^2-m-1)}}{2m^2}.
+\end{align*}$$ We take the branch of the square root so that $z=w=\exp(\pi/3)$ when $u=0$. We also put $$\begin{equation*}
+  v:=2\log\bigl(z(1-z)\bigr),
+\end{equation*}$$ where the branch is chosen so that $v=0$ when $u=0$. Note that $z$ and $w$ satisfy the following equations. $$\begin{equation*}
+  \begin{cases}
+    \log{w}+\log\bigl(1-z\bigr)=u,
+    \\
+    \log{z}+\log\bigl(1-z\bigr)+\log{w}+\log\bigl(1-w\bigr)=0.
+  \end{cases}
+\end{equation*}$$
+
+Put $$\begin{align*}
+  f(u)&:=\frac{1}{2\pi}\left\{R(z)+R(w)-\frac{\pi^2}{6}\right\}
+        -\frac{\sqrt{-1}}{2\pi}\operatorname{Vol}\left(S^3\setminus{E}\right)
+  \\
+  \intertext{and}
+  \Phi(u)&:=4f(u)+uv,
+\end{align*}$$ where $$\begin{equation*}
+  R(\xi):=\frac{1}{2}\log{\xi}\log(1-\xi)
+  -\int_{0}^{\xi}\frac{\log(1-\eta)}{\eta}d\eta
+\end{equation*}$$ is Roger's dilogarithm function. Then $$\begin{gather*}
+  \begin{cases}
+    \dfrac{d\,\Phi(u)}{du}=2v,
+    \\[3mm]
+    \Phi(0)=0,
+  \end{cases}
+  \\
+  \intertext{and}
+  \operatorname{Vol}(E_u)+\sqrt{-1}\operatorname{CS}(E_u)
+  \equiv
+  \frac{f(u)}{\sqrt{-1}}-\frac{\pi}{2}\lambda(\gamma)
+  +\operatorname{Vol}\left(S^3\setminus{E}\right)
+  \mod{\pi^2\sqrt{-1}\mathbb{Z}},
+\end{gather*}$$ since $\operatorname{CS}\left(S^3\setminus{E}\right)=0$.
+
 Now we state our main result.
-Let JN (K; t) be the colored Jones polynomial of a knot K corresponding to the
-N -dimensional representation of sl2(C). We normalize it so that JN (unknot; t) = 1.
-Then we have the following theorem.
-4 HITOSHI MURAKAMI AND YOSHIYUKI YOKOTA
-Theorem 2.2. Let E be the ﬁgure-eight knot. There exists a neighborhood U of 0
-in C such that for any u ∈ (U \ π√
-−1Q) ∪ {0}, the following limit exists:
-(u + 2π
-√
-−1) lim
-N →∞
-log
-(
-JN
-(
-E; exp
-(
-(u + 2π√−1)/N
-)))
-N .
-Moreover if we denote the limit by H(u), then it can be extended to a complex
-analytic function and it satisﬁes the following equalities .
-
-
-
-
-
-d H(u)
-du = v
-2 + π√−1,
-H(0) = √−1 Vol(S3 \ E).
-Remark 2.3. The precise meaning of the limit is as follows. If the ratio
-JN
-(
-E; exp
-(
-(u + 2π√−1)/N
-))
-exp
-(
-N h(u)
-)
-grows polynomially with respect to N , then we denote the limit
-log
-(
-JN
-(
-E; exp
-(
-(u + 2π√−1)/N
-)))
-N
-by h(u). So it is deﬁned modulo 2 π√−1.
-As a corollary we can express the volume and the Chern–Simons invar iant of a
-three-manifold obtained from the ﬁgure-eight knot by generalized Dehn surgery.
-Corollary 2.4. Let Eu be the three-manifold obtained from the ﬁgure-eight knot by
-generalized Dehn surgery corresponding to u near 0 such that πu /∈ Q. Then
-Vol(Eu) +
-√
-−1 CS(Eu) ≡ H(u)√−1 − πu − uv
-4√−1 − π
-2 λ(γ) mod π2√
-−1Z.
+
+Let $J_N(K;t)$ be the colored Jones polynomial of a knot $K$ corresponding to the $N$-dimensional representation of $sl_2(\mathbb{C})$. We normalize it so that $J_N(\text{unknot};t)=1$. Then we have the following theorem.
+
+::: thm
+[]{#thm:main label="thm:main"} Let $E$ be the figure-eight knot. There exists a neighborhood $U$ of $0$ in $\mathbb{C}$ such that for any $u\in({U}\setminus\pi\sqrt{-1}\mathbb{Q})\cup\{0\}$, the following limit exists: $$\begin{equation*}
+  (u+2\pi\sqrt{-1})
+  \lim_{N\to\infty}
+  \frac{\log\Bigl(J_N\bigl(E;\exp\left((u+2\pi\sqrt{-1})/N\right)\bigr)\Bigr)}
+  {N}.
+\end{equation*}$$ Moreover if we denote the limit by $H(u)$, then it can be extended to a complex analytic function and it satisfies the following equalities. $$\begin{equation*}
+\begin{cases}
+  \dfrac{d\,H(u)}{du}=\dfrac{v}{2}+\pi\sqrt{-1},
+  \\[3mm]
+  H(0)=\sqrt{-1}\operatorname{Vol}(S^3\setminus{E}).
+\end{cases}
+\end{equation*}$$
+:::
+
+::: rem
+The precise meaning of the limit is as follows. If the ratio $$\begin{equation*}
+  \frac{J_N\bigl(E;\exp\left((u+2\pi\sqrt{-1})/N\right)\bigr)}
+  {\exp\bigl(N\,h(u)\bigr)}
+\end{equation*}$$ grows polynomially with respect to $N$, then we denote the limit $$\begin{equation*}
+  \frac{\log\Bigl(J_N\bigl(E;\exp\left((u+2\pi\sqrt{-1})/N\right)\bigr)\Bigr)}
+  {N}
+\end{equation*}$$ by $h(u)$. So it is defined modulo $2\pi\sqrt{-1}$.
+:::
+
+As a corollary we can express the volume and the Chern--Simons invariant of a three-manifold obtained from the figure-eight knot by generalized Dehn surgery.
+
+::: cor
+[]{#cor:Vol_CS label="cor:Vol_CS"} Let $E_u$ be the three-manifold obtained from the figure-eight knot by generalized Dehn surgery corresponding to $u$ near $0$ such that $\pi{u}\notin\mathbb{Q}$. Then $$\begin{equation*}
+  \operatorname{Vol}(E_u)+\sqrt{-1}\operatorname{CS}(E_u)
+  \equiv
+  \frac{H(u)}{\sqrt{-1}}-\pi{u}-\frac{uv}{4\sqrt{-1}}
+  -\frac{\pi}{2}\lambda(\gamma)
+  \mod{\pi^2\sqrt{-1}\mathbb{Z}}.
+\end{equation*}$$
+:::

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-9910147v1/blocks/prose-sec-033",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-9910147v1/blocks/prose-sec-033",
   "kind": "prose",
   "title": "Z+)2,A − mX ∈ N},Q =",
   "pageStart": 14,
   "pageEnd": 14,
   "text": "../sections/sec-033-2-z2a-mx-nq.md",
-  "derivedFrom": "library/arxiv-math-9910147v1/manifest",
-  "sourceDocument": "library/arxiv-math-9910147v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9910147v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9910147v1/manifest.jsonld",
   "provenance": "ingested"
 }

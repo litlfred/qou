@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1704.02352v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "GAUSSIAN FLUCTUATIONS OF JACK-DEFORMED RANDOM YOUNG DIAGRAMS",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1704.02352v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1704.02352v2",
   "contains": [
     "library/arxiv-1704.02352v2/sections/sec-000",
     "library/arxiv-1704.02352v2/sections/sec-001",
@@ -33,8 +38,17 @@
     "library/arxiv-1704.02352v2/sections/sec-024"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1704.02352&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1704.02352v2",
+    "title_source": "slug",
     "source_file": "1704.02352v2.pdf",
     "source_sha256": "9a14dd6ee33248d37fb9d2f7bb12ac8da23ff1c60343ffcbfe7fa64a82ee493b",
     "pages": 43,

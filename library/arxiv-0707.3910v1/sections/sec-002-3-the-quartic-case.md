@@ -7,220 +7,139 @@ section_number: 3
 pages: 5-7
 source_pdf: 0707.3910v1.pdf
 source_sha256: ad31f3cba16c4ea4
+text_source: latex
+latex_prose_ratio: 0.907
+latex_coverage_ratio: 0.86
 doc_brief: "LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS — We present a rational version of the classical Landen transfor- mation for elliptic integrals."
 ---
-In this section we describe the computability of rational functions R ∈Em
-4 .
-These are functions of the form
-R(z)
-=
-P(z)
-(z4 + 2az2 + 1)m+1
-where P(z) is an even polynomial of degree 4m+2. Observe that the normalization
-a0 = a2 = 1 makes the denominator of R automatically symmetric. It suﬃces to
-evaluate
-Nn,4(d1; m)
-:=
-Z ∞
-0
-z2n dz
-(z4 + 2d1z2 + 1)m+1
-(3.1)
-6
-GEORGE BOROS AND VICTOR H. MOLL
-where 0 ≤n ≤2m+1 is required for convergence. From (2.4) we have Nn,4(d1; m) =
-N2m−1−n,4(d1; m), so we may assume 0 ≤n ≤m. We now employ Theorem 2.1 to
-obtain a closed form expression for Nn,4(d1; m).
-Theorem 3.1. Let m ∈N and assume 0 ≤n ≤m. Then
-Nn,4(d1; m) :=
-Z ∞
-0
-z2n dz
-(z4 + 2d1z2 + 1)m+1
-=
-(3.2)
-π
-23m+3/2(1 + a)m+1/2 ×
-m−n
-X
-j=0
-2j(1 + d1)j ×
-2m −2j −1
-m −j
-m −n + j
-2j
-2j
-j
-m
-j
-−1
-.
-For m + 1 ≤n ≤2m + 1 we have
-Z ∞
-0
-z2n dz
-(z4 + 2d1z2 + 1)m+1
-=
-(3.3)
-π
-23m+3/2(1 + d1)m+1/2 ×
-n−m−1
-X
-j=0
-2j(1 + d1)j ×
-2m −2j −1
-m −j
-m −n + j
-2j
-2j
-j
-m
-j
-−1
-.
-Proof. We apply the result of the Theorem 2.1 with D1(d1; z) = z4 + 2d1z2 + 1 and
-E1(d1; z) = (1 + d1)z2 + 2, so that
-Z ∞
-0
-z2n dz
-(z4 + 2d1z2 + 1)m+1
-=
-2−m
-m−n
-X
-j=0
-4j
-m −n + j
-2j
- Z ∞
-0
-z2(m−j) dz
-((1 + d1)z2 + 2)m+1 .
-The change of variable u = (1 + d1)z2/2 then yields
-Z ∞
-0
-z2(m−j) dz
-( (1 + d1)z2 + 2 )m+1
-=
-2−(j+3/2)(1 + d1)−m+j−1/2
-Z ∞
-0
-um−j−1/2 du
-(1 + u)m+1
-=
-π
-2m −2j
-m −j
-2j
-j
-m
-j
-−1
-2−(2m+j+3/2)(1 + d1)−(m−j+1/2),
+\label{sec-quartic}
+\setcounter{equation}{0}
+
+
+In this section we describe the computability of rational functions 
+$R \in {\E}_{4}^{m}$. These are functions of the form 
+\ba
+R(z) & = &  \frac{P(z)}{(z^{4} + 2az^{2} + 1)^{m+1} } \nn
+\ea
+\no
+where $P(z)$ is an even polynomial of degree $4m+2$. Observe that
+the normalization $a_{0}=a_{2} = 1$ makes the denominator of $R$ 
+automatically symmetric.  It suffices to evaluate
+\ba
+N_{n,4}(d_{1};m) & := &  \int_{0}^{\infty} \frac{z^{2n} \; dz}{(z^{4} + 2d_{1}z^{2} 
++1)^{m+1} } \label{n04}
+\ea
+\no
+where $0 \leq n \leq 2m+1$ is required for convergence. From (\ref{symrule}) 
+we have
+$N_{n,4}(d_{1};m)  =  N_{2m-1-n,4}(d_{1};m)$, so we
+may assume $0 \leq n \leq m$. 
+We now employ Theorem \ref{main} to obtain a closed form expression 
+for $N_{n,4}(d_{1};m)$.  
+
+\begin{Thm}
+\label{mainthm}
+Let $m \in \mathbb{N}$ and assume $0 \leq n \leq m$. Then 
+\ba
+N_{n,4}(d_{1};m) := \int_{0}^{\infty} \frac{z^{2n} \; dz}
+{ \left( z^{4} + 2d_{1}z^{2} + 1 \right)^{m+1} } \; \; =  \label{quartic1}
+\ea
+\ba
+\frac{\pi}{ 2^{3m+3/2} (1+a)^{m+1/2} } \times 
+\sum_{j=0}^{m-n} 2^{j}(1+d_{1})^{j} \times
+\binom{2m-2j-1}{m-j}  \binom{m-n+j}{2j} \binom{2j}{j}
+\binom{m}{j}^{-1} . \nn
+\ea
+\no
+For $m+1 \leq n \leq 2m+1$ we have
+\ba
+\int_{0}^{\infty} \frac{z^{2n} \; dz}
+{ \left( z^{4} + 2d_{1}z^{2} + 1 \right)^{m+1} } \; \; =  \label{quartic2}
+\ea
+\ba
+\frac{\pi}{ 2^{3m+3/2} (1+d_{1})^{m+1/2} } \times 
+\sum_{j=0}^{n-m-1} 2^{j}(1+d_{1})^{j} \times
+\binom{2m-2j-1}{m-j}  \binom{m-n+j}{2j} \binom{2j}{j}
+\binom{m}{j}^{-1} . \nn
+\ea
+\end{Thm}
+
+\begin{proof}
+We apply the result of the Theorem \ref{main} with 
+$D_{1}(d_{1};z)  =  z^{4} + 2d_{1}z^{2} + 1 $ and
+$E_{1}(d_{1};z) = (1 + d_{1})z^{2} + 2$, so that 
+\ba
+\int_{0}^{\infty} \frac{z^{2n} \, dz }{(z^{4} + 2d_{1}z^{2} + 1)^{m+1} } & = &
+2^{-m} \sum_{j=0}^{m-n} 4^{j} \binom{m-n+j}{2j} 
+\int_{0}^{\infty} \frac{z^{2(m-j)} \, dz}{ ( (1+d_{1})z^{2} + 2 )^{m+1} }. \nn
+\ea
+\no
+The change of variable $u = (1+d_{1})z^{2}/2$ then yields
+\ba
+\int_{0}^{\infty} \frac{z^{2(m-j)} \, dz}{ ( \; (1+d_{1})z^{2} + 2 \; )^{m+1} } 
+& = &  2^{-(j+3/2)} (1+d_{1})^{-m+j-1/2} 
+\int_{0}^{\infty} \frac{u^{m-j-1/2} \; du }{(1+u)^{m+1} }
+\nn \\
+ &  = & \pi \binom{2m-2j}{m-j} \binom{2j}{j} \binom{m}{j}^{-1} 2^{-(2m+j+3/2)}
+(1+d_{1})^{-(m-j+1/2)}, \nn
+\ea
+\no
 where we have used
-Z ∞
-0
-ur−1/2
-(1 + u)s du
-=
-π
-22(s−1)
-2r
-r
-2(s −r −1)
-s −r −1
-s −1
-r
-−1
-.
-□
-The algorithm also requires a scaled version of N0,4(d1; m).
-Corollary 3.2. Let b > 0, c > 0, a > −
-√
-bc, m ∈N, and 0 ≤n ≤m. Deﬁne
-Nn,4(a, b, c; m)
-:=
-Z ∞
-0
-z2n dz
-(bz4 + 2az2 + c)m+1 .
-Then for 0 ≤n ≤m,
-Nn,4(a, b, c; m)
-=
-π
-
-c(c/b)m−n n
-8(a +
-√
-bc)
-o2m+1−1/2
-×
-×
-m−n
-X
-k=0
-2k
-2m −2k
-m −k
-m −n + k
-2k
-2k
-k
-m
-k
-−1  a
-√
-bc
-+ 1
-k
-,
-(3.4)
-LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS
-7
-and for m + 1 ≤n ≤2m + 1,
-Nn,4(a, b, c; m)
-=
-π
-
-c(c/b)m−n n
-8(a +
-√
-bc)
-o2m+1−1/2
-×
-×
-n−m−1
-X
-k=0
-2k
-2m −2k
-m −k
-m −n + k
-2k
-2k
-k
-m
-k
-−1  a
-√
-bc
-+ 1
-k
-.
-(3.5)
-Proof. Let 0 ≤n ≤m. The substitution u = z(b/c)1/4 yields
-Nn,4(a, b, c; m)
-=
-1
-cm−n/2+3/4bn/2+1/4 Nn,4
- a
-√
-bc
-; m
-
-,
-(3.6)
-so (3.4) then follows from Theorem 3.1.
-From (2.4) we have Nn,4(a, b, c; m) =
-N2m+1−n,4(c, b, a; m) for m + 1 ≤n ≤2m + 1, giving (3.5).
-□
+\ba
+\ift \frac{u^{r- 1/2}}{(1+u)^{s}} \, du & = & 
+\frac{\pi}{2^{2(s-1)}} \binom{2r}{r} \binom{2(s-r-1)}{s-r-1} 
+\binom{s-1}{r}^{-1}. \nn
+\ea
+\end{proof}
+
+\no
+The algorithm also requires a scaled version of $N_{0,4}(d_{1};m)$. 
+
+\no
+\begin{Cor}
+\label{cor62}
+Let $b>0, \, c>0,\; a > - \sqrt{bc}, \, m \in \mathbb{N}$, 
+and $0 \leq n \leq m$. Define
+\ba
+N_{n,4}(a,b,c;m) & := &  \ift \frac{z^{2n} \; dz}{ \left( bz^{4} + 2az^{2} + c 
+\right)^{m+1}}. \nn
+\ea
+\no
+Then for $0 \leq n \leq m$, 
+\ba
+N_{n,4}(a,b,c;m) & = & 
+ \pi \left( c (c/b)^{m-n} \left\{ 8(a + \sqrt{bc}) \right\}^{2m+1} 
+\right)^{-1/2} \times  \nn \\
+ & & \times
+\sum_{k=0}^{m-n} 2^{k} \binom{2m-2k}{m-k} \binom{m-n+k}{2k} 
+\binom{2k}{k} \binom{m}{k}^{-1} \left( \frac{a}{\sqrt{bc}} +1 
+\right)^{k}, \nn \\
+ &  & \label{sum1}
+\ea
+and for $m+1 \leq n \leq 2m+1$, 
+\ba
+N_{n,4}(a,b,c;m) & = & 
+ \pi \left( c (c/b)^{m-n} \left\{ 8(a + \sqrt{bc}) \right\}^{2m+1} 
+\right)^{-1/2} \times  \nn \\
+ & & \times
+ \sum_{k=0}^{n-m-1} 2^{k} 
+\binom{2m-2k}{m-k} \binom{m-n+k}{2k} 
+\binom{2k}{k} \binom{m}{k}^{-1} \left( \frac{a}{\sqrt{bc}} + 1 \right)^{k}.
+\nn \\
+ &  & \label{sum2}
+\ea
+\end{Cor}
+
+\begin{proof}
+Let $0 \leq n \leq m$. The substitution $u = z (b/c)^{1/4}$ yields
+\ba
+N_{n,4}(a,b,c;m) & = & 
+\frac{1}{c^{m-n/2 + 3/4} b^{n/2 + 1/4} } N_{n,4} 
+\left( \frac{a}{\sqrt{bc}} ; m \right), \label{scaled}
+\ea
+\no
+so (\ref{sum1}) then follows from Theorem \ref{mainthm}.
+From (\ref{symrule}) we have
+$N_{n,4}(a,b,c;m)  =  
+N_{2m+1-n,4}(c,b,a;m)$ for $m+1 \leq n \leq 2m+1$, giving (\ref{sum2}).
+\end{proof}

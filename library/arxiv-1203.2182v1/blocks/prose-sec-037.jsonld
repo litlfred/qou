@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1203.2182v1/blocks/prose-sec-037",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1203.2182v1/blocks/prose-sec-037",
   "kind": "prose",
   "title": "(u), (3.163)",
   "pageStart": 41,
   "pageEnd": 41,
   "text": "../sections/sec-037-0-u-3163.md",
-  "derivedFrom": "library/arxiv-1203.2182v1/manifest",
-  "sourceDocument": "library/arxiv-1203.2182v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1203.2182v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1203.2182v1/manifest.jsonld",
   "provenance": "ingested"
 }

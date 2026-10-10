@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0903.2472v1/blocks/prose-sec-063",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0903.2472v1/blocks/prose-sec-063",
   "kind": "prose",
   "title": "(u). As for the geometric branch, this is then substituted",
   "pageStart": 54,
   "pageEnd": 54,
   "text": "../sections/sec-063-0-u-as-for-the-geometric-branch-this-is-then-sub.md",
-  "derivedFrom": "library/arxiv-0903.2472v1/manifest",
-  "sourceDocument": "library/arxiv-0903.2472v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0903.2472v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0903.2472v1/manifest.jsonld",
   "provenance": "ingested"
 }

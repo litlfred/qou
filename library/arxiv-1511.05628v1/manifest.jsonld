@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1511.05628v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1511.05628v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1511.05628v1",
   "contains": [
     "library/arxiv-1511.05628v1/sections/sec-000",
     "library/arxiv-1511.05628v1/sections/sec-001",
@@ -36,8 +41,17 @@
     "library/arxiv-1511.05628v1/sections/sec-027"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1511.05628&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1511.05628v1",
+    "title_source": "slug",
     "source_file": "1511.05628v1.pdf",
     "source_sha256": "3b9da2994233882bdb242798fd1a5f85e53f1d0fd66410809de751d056a07d3a",
     "pages": 41,

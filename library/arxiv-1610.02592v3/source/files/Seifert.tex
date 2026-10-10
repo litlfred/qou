@@ -1,0 +1,1334 @@
+\chapter{Seifert manifolds} \label{Seifert:chapter}
+
+In the previous chapter we have proved various general theorems on three-manifolds, and it is now time to construct examples. A rich and important source is a family of manifolds built by Seifert in the 1930s, which generalises circle bundles over surfaces by admitting some ``singular'' fibres. The three-manifolds that admit such kind of fibration are now called \emph{Seifert manifolds}. 
+
+In this chapter we introduce and completely classify (up to diffeomorphisms) the Seifert manifolds. In Chapter \ref{eight:chapter} we will then show how to \emph{geometrise} them, by assigning a nice Riemannian metric to each. We will show, for instance, that all the elliptic and flat three-manifolds are in fact particular kinds of Seifert manifolds.
+
+\section{Lens spaces}
+We introduce some of the simplest 3-manifolds, the lens spaces. These manifolds (and many more) are easily described using an important three-dimensional construction, called \emph{Dehn filling}.\index{Dehn filling}
+
+\subsection{Dehn filling} \label{Dehn:filling:subsection}
+If a 3-manifold $M$ has a spherical boundary component, we can cap it off with a ball. If $M$ has a toric boundary component, there is no canonical way to cap it off: the simplest object that we can attach to it is a solid torus $D\times S^1$, but the resulting manifold depends on the gluing map. This operation is called a \emph{Dehn filling} and we now study it in detail.
+
+Let $M$ be a 3-manifold and $T\subset \partial M$ be a boundary torus component. 
+\begin{defn}
+A \emph{Dehn filling} of $M$ along $T$ is the operation of gluing a solid torus $D\times S^1$ to $M$ via a diffeomorphism $\varphi\colon \partial D\times S^1 \to T$. 
+\end{defn}
+
+The closed curve $\partial D \times \{x\}$ is glued to some simple closed curve $\gamma\subset T$, see Figure \ref{DF:fig}. The result of this operation is a new manifold $M^{\rm fill}$, which has one boundary component less than $M$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 9 cm] {\iftoggle{BW}{DF-BW}{DF}}
+\nota{The Dehn filling $M^{\rm fill}$ of a 3-manifold $M$ is determined by the unoriented simple closed curve $\gamma \subset T$ to which a meridian $\partial D$ of the solid torus is attached.}
+\label{DF:fig}
+\end{center}
+\end{figure}
+
+\begin{lemma} \label{pq:lemma}
+The manifold $M^{\rm fill}$ depends only on the isotopy class of the unoriented curve $\gamma$.
+\end{lemma}
+\begin{proof}
+Decompose $S^1$ into two closed segments $S^1 = I\cup J$ with coinciding endpoints. The attaching of $D\times S^1$ may be seen as the attaching of a 2-handle $D\times I$ along $\partial D \times I$, followed by the attaching of a 3-handle $D\times J$ along its full boundary. 
+
+If we change $\gamma$ by an isotopy, the attaching map of the 2-handle changes by an isotopy and hence gives the same manifold. The attaching map of the 3-handle is irrelevant by Proposition \ref{cap:prop}.
+\end{proof}
+
+We say that the Dehn filling \emph{kills} the curve $\gamma$, since this is what really happens on fundamental groups, as we now see. 
+
+The \emph{normaliser} of an element $g\in G$ in a group $G$ is the smallest normal subgroup $N(g) \triangleleft G$ containing $g$. The normaliser depends only on the conjugacy class of $g^{\pm 1}$, hence  the subgroup $N(\gamma)\triangleleft \pi_1(M)$ makes sense without fixing a basepoint or an orientation for $\gamma$.\index{normaliser}
+
+\begin{prop} 
+We have
+$$\pi_1(M^{\rm fill}) = \pi_1(M) /_{N(\gamma)}.$$
+\end{prop}
+\begin{proof}
+The Dehn filling decomposes into the attachment of a 2-handle over $\gamma$ and of a 3-handle. By Van Kampen, the first operation kills $N(\gamma)$,
+and the second leaves the fundamental group unaffected.
+\end{proof}
+
+Let a \emph{slope} on a torus $T$ be the isotopy class $\gamma$ of an unoriented homotopically non-trivial simple closed curve.\index{slope} The set of slopes on $T$ was indicated by $\calS$ in Chapter \ref{Teichmuller:chapter}. If we fix a basis $(m, l)$ for $H_1(T,\matZ)=\pi_1(T)$, every slope may be written as $\gamma = \pm (pm + ql)$ for some coprime pair $(p,q)$. Therefore we get a 1-1 correspondence
+$$\calS \longleftrightarrow \matQ\cup \{\infty\}$$
+by sending $\gamma$ to $\frac pq$. If $T$ is a boundary component of $M$, every number $\frac pq$ determines a Dehn filling of $M$ that kills the corresponding slope $\gamma$. 
+
+Different values of $\frac pq$ typically produce non-diffeomorphic manifolds $M^{\rm fill}$: this is not always true - a notable exception is described in the next section - but it holds in ``generic'' cases.
+
+\subsection{Lens spaces}
+The simplest manifold that can be Dehn-filled is the solid torus $M=D\times S^1$ itself. The oriented \emph{meridian} $m=S^1 \times \{y\}$ and \emph{longitude} $l=\{x\}\times S^1$ form a basis for $H_1(\partial M,\matZ)$.\index{meridian and longitude}
+
+\begin{defn} The \emph{lens space} $L(p,q)$ is the result of a Dehn filling of $M=D\times S^1$ that kills the slope $qm+pl$.\index{lens space}
+\end{defn}
+
+A lens space is a three-manifold that decomposes into two solid tori. We have already encountered lens spaces in the more geometric setting of Section \ref{lens:subsection}, and we will soon prove that the two definitions are coherent. Since $L(p,q)=L(-p,-q)$ we usually suppose $p\geqslant 0$.
+
+\begin{ex}
+We have $\pi_1\big(L(p,q)\big) = \matZ/_{p\matZ}$. 
+\end{ex}
+
+\begin{prop}
+We have $L(0,1) = S^2\times S^1$ and $L(1,0) = S^3$.
+\end{prop}
+\begin{proof}
+The lens space $L(0,1)$ is obtained by killing $m$, that is by mirroring $D\times S^1$ along its boundary. The lens space $L(1,0)$ is $S^3$ because the complement of a standard solid torus in $S^3$ is another solid torus, with the roles of $m$ and $l$ exchanged (exercise).
+\end{proof}
+
+\begin{ex} \label{fill:T:ex}
+Every Dehn filling of one component of the product $T\times [0,1]$ is diffeomorphic to $D\times S^1$. Therefore by Dehn-filling both components of $T\times [0,1]$ we get a lens space.
+\end{ex}
+
+The solid torus $D\times S^1$ has a non-trivial self-diffeomorphism 
+$$(x, e^{i\theta}) \longmapsto (xe^{i\theta}, e^{i\theta})$$
+called a \emph{twist} along the disc $D\times \{y\}$. The solid torus can also be \emph{mirrored} via the map
+$$(x,e^{i\theta}) \longmapsto (x,e^{-i\theta}).$$
+
+\begin{ex} \label{pqpq:ex}
+We have $L(p,q)\isom L(p,q')$ if $q' \equiv \pm q^{\pm 1}$ (mod $p$).
+\end{ex}
+\begin{proof}[Hint]
+Twist, mirror, and exchange the two solid tori giving $L(p,q)$.
+\end{proof}
+
+\begin{rem}
+The meridian $m$ of the solid torus $M=D\times S^1$ may be defined intrinsically as the unique slope in $\partial M$ that is homotopically trivial in $M$. The longitude $l$ is \emph{not} intrinsically determined: a twist sends $l$ to $m+l$. The solid torus contains infinitely many non-isotopic longitudes, and there is no intrinsic way to choose one of them.
+\end{rem}
+
+\subsection{Equivalence of the two definitions}
+When $p>0$, we have defined the lens space $L(p,q)$ in two different ways: as the $(q,p)$-Dehn filling of the solid torus, and as an elliptic manifold in Section \ref{lens:subsection}. In the latter description we set
+$$\omega = e^{\frac{2\pi i}p}, \qquad f(z,w) = (\omega z, \omega^qw)$$ 
+and define $L(p,q)$ as $S^3/_\Gamma$ where $\Gamma = \langle f \rangle$ is generated by $f$. We now show that the two definitions produce the same manifolds.
+
+\begin{prop}
+The manifold $S^3/_{\langle f \rangle}$ is the $(q,p)$-Dehn filling of the solid torus.
+\end{prop}
+\begin{proof}
+The isometry $f$ preserves the central torus 
+$$T = \big\{(z,w)\ \big|\ |z|=|w| = \tfrac {\sqrt 2}2 \big\}$$
+that divides $S^3$ into two solid tori
+\begin{align*}
+N^1 & = \big\{(z,w)\ \big|\ |z| \leqslant \tfrac {\sqrt 2}2,\ |w| = \sqrt{1-|z|^2}\big\}, \\
+N^2 & = \big\{(z,w)\ \big|\ |w| \leqslant \tfrac {\sqrt 2}2,\ |z| = \sqrt{1-|w|^2}\big\}.
+\end{align*}
+Identify $T$ with $S^1\times S^1 = \matR^2/_{\matZ^2}$ in the obvious way, so that  $H_1(T) = \matZ \times \matZ$. The meridians of $N^1$ and $N^2$ are $(1,0)$ and $(0,1)$. The isometry $f$ act on $T$ as a translation of vector $v=\big(\frac 1p, \frac qp\big)$. The quotient $T/_{\langle f\rangle}$ is again a torus, with fundamental domain the parallelogram generated by $v$ and $w=(0,1)$.
+
+The quotients $N^1/_{\langle f \rangle}$, and $N^2/_{\langle f \rangle}$ are again solid tori. Therefore $S^3/_{\langle f \rangle}$ is also a union of two solid tori. Their meridians are the projections of the horizontal and vertical lines in $\matR^2$ to $T/_{\langle f \rangle} = \matR^2/_{\langle v,w \rangle}$. In the basis $(v,w)$ these meridians are $pv -qw$ and $w$ respectively. Therefore $S^3/_{\langle f\rangle}$ is a $(-q,p)$-Dehn filling on the solid torus, which is diffeomorphic to the $(q,p)$-Dehn filling by mirroring the solid torus.
+\end{proof}
+
+\begin{cor}
+We have $L(1,0) = S^3$ and $L(2,1) = \matRP^3$.
+\end{cor}
+\begin{proof}
+We have $f = \id$ and $f=-\id$, correspondingly.
+\end{proof}
+
+\subsection{Classification of lens spaces}
+Which lens spaces are diffeomorphic? It is not so easy to answer this question, because many lens spaces like $L(5,1)$ and $L(5,2)$ have the same homotopy and homology groups, while there is no evident diffeomorphism between them. 
+A complete answer was given by Reidemeister in 1935, who could distinguish lens spaces using a new invariant, now known as the \emph{Reidemeister torsion}.\index{Reidemeister torsion} More topological proofs were discovered in th 1980s by Bonahon and Hodgson. We follow here Hatcher \cite{H}.
+
+\begin{teo} \label{Lpq:teo}
+The lens spaces $L(p,q)$ and $L(p',q')$ are diffeomorphic $\Longleftrightarrow$ $p=p'$ and $q' \equiv \pm q^{\pm 1}$ (mod $p$).
+\end{teo}
+\begin{proof}
+We may suppose $p>1$.
+Exercise \ref{pqpq:ex} furnishes one implication, so we start with a lens space $L(p,q)$ and we prove that there is (up to isotopy) only one torus $T$ dividing $L(p,q)$ into two solid tori: this fact then implies that one can recover $p$ and $q$ intrinsically from $L(p,q)$, up to the stated ambiguity for $q$ (which depends on the chosen longitudes and orientations, and changes by switching the solid tori). So we suppose that there is another torus $T'$.
+
+Let $\Sigma$ be the core circle of one solid torus adjacent to $T'$. If we can isotope $\Sigma$ inside the torus $T$, we are done: in that case $T'$ is isotopic to the boundary of a small tubular neighbourhood of $\Sigma$, hence both $T$ and $T'$ are cut into two annuli $T = A_1 \cup A_2$ and $T' = A_1' \cup A_2'$ such that $\Sigma \subset A_1$, all four annuli share the same boundaries, and $A_2$ is contained in the large outside solid torus bounded by $T'$; the annulus $A_2$ is incompressible in this solid torus by Proposition \ref{pi1:prop} (otherwise $\Sigma$ would be homotopically trivial, contradicting $p>1$) and hence $\partial$-parallel by Proposition \ref{incompressible:solid:torus:prop}, so it is isotopic to either $A_1'$ or $A_2'$, suppose to $A_2'$; since $A_1$ is clearly isotopic to $A_1'$ we conclude that $T$ and $T'$ are isotopic.
+
+Our aim is now to prove that $\Sigma$ can be isotoped inside $T$. To this purpose we construct two different objects from $T'$ and $T$, a \emph{spine} $\Delta$ and a \emph{foliation} $\calF$. The spine $\Delta\subset M$ is built by adding to $\Sigma$ the meridian $D$ of the other solid torus incident to $T'$, enlarged so that $\partial D$ is glued along $\Sigma$ like a degree-$p$ covering. Note that $M\setminus \Delta$ is an open ball.
+
+We construct the foliation $\calF$ of $M$ by subdividing each solid torus bounded by $T$ into concentric tori, with a central singular circle in each. We represent $\calF$ as the level sets of a map $f\colon L(p,q) \to [0,1]$ where the singular circles are the extreme levels $f^{-1}(0)$ and $f^{-1}(1)$.
+
+We now put $\Delta$ in some good position with respect to $\calF$. We first perturb $\Sigma$ so that it is disjoint from the singular circles of $\calF$ and $f|_\Sigma$ is a Morse function with singular points in distinct levels. At every local maximum (minimum) of $f|_\Sigma$ we isotope $\Delta$ so that the $p$ sheets of $\Delta$ lie above (below) $\Sigma$ as in Figure \ref{sheets_above:fig}. Finally, we require $\Delta$ to be transverse to the two singular circles of $\calF$ and $f|_{\Delta \setminus \Sigma}$ to be a Morse function, with critical points at distinct levels (also distinct from those of the critical points of $f|_\Sigma$).
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 3 cm] {sheets_above}
+\nota{We require the $p$ sheets of the spine $\Delta$ to lie above every local maximum for $f|_\Sigma$.}
+\label{sheets_above:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{lens_singular-BW}{lens_singular}}
+\nota{The singular points in $D$ can be centres (top left), saddles (top right) and half-saddles (bottom).}
+\label{lens_singular:fig}
+\end{center}
+\end{figure}
+
+The foliation $\calF$ induces a singular foliation on $\Delta$ that pulls back to $D$ via the map $D\to \Delta$. There are three types of singular points in the foliation, shown in Figure \ref{lens_singular:fig}: centres, saddles, and half-saddles.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{lens_leaves-BW}{lens_leaves}}
+\nota{A singular leaf exiting from a singular point may be of one of these kinds. The dots in (e) indicate that there might be another half-saddle at the other endpoint: this is because there are half-saddles at the same level (precisely $p$ for every local maximum or minimum for $f|_\Sigma$).}
+\label{lens_leaves:fig}
+\end{center}
+\end{figure}
+
+A leaf in $D$ incident to a singular point is \emph{singular}. Since we minimised the critical points that may stay at the same level, the singular leaves exiting from a singular point may be only of the six possible kinds shown in Figure \ref{lens_leaves:fig}.  
+The saddles and half-saddles of type (a) and (e) are called \emph{essential}, and the others \emph{inessential}.
+In (a) the singular leaves divide $D$ into four \emph{quarter discs}, and in (e) they cut off two or more \emph{half discs}.
+
+Among all possible good configurations of $\Delta$, we pick one that minimises first the number of critical points in $f|_\Sigma$, and second the number of essential saddles.
+
+Let $D' \subset D$ be a quarter or half-disc not containing any smaller quarter or half-disc. Define $\alpha = D' \cap \partial D$. Suppose first that $D'$ is a half-disc and both endpoints of $\alpha$ are singular. The singular disc $D'$ can contain some singular point of type (b), and it certainly contains one singular point of type (f), see Figure \ref{lens_leaves1:fig}-(left). (It contains no other singular point except these.) The image of $D'$ in $\Delta$ is shown in Figure \ref{lens_leaves1:fig}-(right). In this case we can slide $\alpha$ along $D'$ to the \iftoggle{BW}{light grey}{green} arc shown in the figure which lies entirely in a level torus of $f$. If we could do this for all the arcs of $\partial D$ cut by singular points, we would happily isotope $\Sigma$ inside a torus level and hence into $T$, and we would be done.
+
+There are however two other cases to consider, and both will be excluded by our minimality assumption on $\Delta$. One is that $D'$ may be a half-disc with only one singular endpoint for $\alpha$, as in Figure \ref{lens_leaves2:fig}. In that case we can isotope $\alpha$ to the \iftoggle{BW}{light grey}{green} curve through $D'$, dragging the spine $\Delta$ behind. In the new configuration $f|_\Sigma$ has strictly less critical points, a contradiction.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 8.5 cm] {\iftoggle{BW}{lens_leaves1-BW}{lens_leaves1}}
+\nota{The disc $D'$ is a half-disc and $\alpha$ is incident to two singular points.}
+\label{lens_leaves1:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 8.5 cm] {\iftoggle{BW}{lens_leaves2-BW}{lens_leaves2}}
+\nota{The disc $D'$ is a half-disc and $\alpha$ is incident to one singular point.}
+\label{lens_leaves2:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 9 cm] {\iftoggle{BW}{lens_leaves3-BW}{lens_leaves3}}
+\nota{The disc $D'$ is a quarter disc.}
+\label{lens_leaves3:fig}
+\end{center}
+\end{figure}
+
+In the last case $D'$ is a quarter disc as in Figure \ref{lens_leaves3:fig} and we can isotope $\alpha$ to the \iftoggle{BW}{light grey}{green} curve dragging $\Sigma$ as above, but more carefully: we enlarge the other $p-1$ sheets of $\Delta$ by parallel copies of $D'$. In the new configuration the number of critical points in $f|_\Sigma$ is unchanged, but there are strictly fewer essential saddles: at least one is destroyed and no new one is created. (Note that many inessential saddles may be created.) This is also excluded.
+\end{proof}
+
+We have discovered, in particular, that there are closed three-manifolds like $L(5,1)$ and $L(5,2)$ that are not diffeomorphic, although their fundamental groups are both isomorphic to $\matZ/_{5\matZ}$; the two manifolds are both covered by $S^3$, so they also have isomorphic higher homotopy groups.
+
+\section{Circle bundles}
+We now introduce another simple class of 3-manifolds, the orientable circle bundles over some compact surface $S$. We will discover that there is essentially only one circle bundle if $S$ has boundary, and infinitely many if $S$ is closed, distinguished by an integer called the \emph{Euler number}.
+
+\subsection{The trivial circle bundle}
+Let $S$ be a compact connected surface. As every connected manifold, the surface $S$ has a unique orientable line bundle
+$$S\times I \quad {\rm or} \quad S\timtil I$$ 
+depending on whether $S$ is orientable or not. We denote by 
+$$M=S\times S^1 \quad {\rm or} \quad S\timtil S^1$$ 
+respectively the double of $S\times I$ and $S\timtil I$ along its boundary. If we do not know whether $S$ is orientable or not, we use the symbols $S\timforsetil I$ and $S\timforsetil S^1$ to denote these objects. The manifold $S\timforsetil S^1$ is an orientable circle bundle over $S$, called the \emph{trivial} one. 
+
+\subsection{Circle bundles with boundary}
+We start by exploring the case where the base surface $S$ has non-empty boundary: in this case every bundle $M$ over $S$ is a 3-manifold with boundary; the boundary consists of tori, one fibering above each circle in $\partial S$, because the torus is the unique orientable surface that fibres over $S^1$.
+
+It turns out that there is essentially only one bundle over $S$, the trivial one:
+
+\begin{lemma} \label{unique:lemma}
+If $\partial S \neq \emptyset$, the orientable circle bundles on $S$ are all isomorphic.
+\end{lemma}
+\begin{proof}
+Let $N\to S$ be an orientable circle bundle. Decompose $S$ as a disc $D$ with some pairs of disjoint segments $(I_i, J_i)$ in $\partial D$ to be glued. Since $D$ is contractible the restriction of $N$ to $D$ is a product $D\times S^1$ and $N$ is obtained from it by gluing the annuli $I_i\times S^1$ and $J_i\times S^1$ via orientation-reversing fibre-preserving maps. Two such maps are always isotopic (exercise) and hence $N$ is uniquely determined.
+\end{proof}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11 cm] {\iftoggle{BW}{section-BW}{section}}
+\nota{A twist along a fibered annulus $A$ modifies a section $S$ as shown.}
+\label{section:fig}
+\end{center}
+\end{figure}
+
+We now want to study the \emph{sections} of the trivial bundle $M\to S$, because these will be useful in the study of bundles over closed surfaces. We now discover that, although the bundle is trivial, it contains many non isotopic sections, and we want to classify them.
+
+Recall that a \emph{section} of the bundle $\pi\colon M\to S$ is a map $i\colon S\to M$ such that $\pi\circ i = \id$. Since the section $i$ is determined by its image $i(S)$, we simply consider the surface $i(S)$ as a section of $\pi$. By construction $M$ is the double of an interval bundle over $S$ and as such it contains the \emph{zero-section} $S$ there. However, this section is not unique in general, not even up to isotopy. 
+
+To modify a section, pick a properly embedded arc in $S$. The arc determines a fibered annulus $A\subset M$ above it, which we may use to \emph{twist} the section as shown in Figure \ref{section:fig}. This operation modifies the curves $\partial S\subset \partial M$ via two Dehn twists (one positive and one negative) on the tori $\partial M$ along the two curves in $\partial A$.
+
+By twisting along annuli we may construct all the sections of $M$:
+
+\begin{lemma} \label{section:lemma}
+Two sections of $S\timforsetil S^1$ are connected by a composition of twists along fibered annuli and fibre-preserving isotopies.
+\end{lemma}
+\begin{proof}
+Let $i_1, i_2$ be two sections. Decompose $S$ as a 0-handle $D$ with some rectangular 1-handles attached to $\partial D$. The bundle is trivial on each handle. Since $D$ is contractible, every map $i\colon D\to S^1$ is homotopic to a constant and we may hence isotope $i_1$ and $i_2$ so that they coincide on $D$. 
+
+See a 1-handle as $[-1,1]^2$ with $\{\pm 1\}\times [-1,1]$ glued to $D$. The sections $i_1, i_2\colon [-1,1]^2 \to S^1$ coincide on $\{\pm 1\}\times [-1,1]$, and up to reparametrising we may suppose that they are constantly $1$ there. The section $i_1 \colon [-1,1]^2 \to S^1$ defines an element $d\in \pi_1(S^1,1) = \matZ$, determined by the loop $t\mapsto i_1(t,u)$, whose homotopy class does not depend on the fixed $u\in [-1,1]$. The section is in fact determined up to isotopy by $d$, and by twisting along the annulus $0 \times [-1,1]$ we can vary this integer arbitrarily. Therefore after some twists and isotopies the sections $i_0$ and $i_1$ are both constantly 1 on 1-handles, and thus coincide everywhere.
+\end{proof}
+
+\begin{cor} \label{unique:cor}
+If $S$ has only one boundary component, the boundary of a section of $M=S\timforsetil S^1$ is a slope in $\partial M$ that does not depend on the section.
+\end{cor}
+\begin{proof}
+Distinct sections are connected by finitely many Dehn twists along annuli. One such twist acts on the torus $\partial M$ as a composition of two opposite Dehn twists, which cancel each other. Hence it does not affect the boundary slope of a section.
+\end{proof}
+
+\begin{ex} Prove this corollary using Proposition \ref{lagrangian:prop}.
+\end{ex}
+
+\subsection{Closed circle bundles} \label{closed:circle:subsection}
+We now turn to closed circle bundles. In this section we prove that 
+the oriented circle bundles over a closed surface are parameterised by an integer called the \emph{Euler number} of the fibering.\index{Euler number}
+
+We prefer to see the bundles over closed surfaces as Dehn fillings of bundles over surfaces with boundary. Here are the details.
+
+Let $S$ be a compact surface with non-empty boundary. Pick $M=S\timforsetil S^1$ and fix an orientation for $M$. Recall that we denote by $S$ the zero-section of $M$. Every boundary component $T$ of $M$ is an oriented torus, which contains two natural unoriented simple closed curves: the boundary $m=T\cap \partial S$ of the section $S$ and the fibre $l$ of the bundle. If oriented, the curves $m$ and $l$ form a basis $(m,l)$ for $H_1(T,\matZ)$. We choose orientations for $m$ and $l$ such that $(m,l)$ form a positively oriented basis: there is a unique choice up to reversing both $m$ and $l$.
+
+A Dehn filling on $T$ is determined as usual by a pair $(p,q)$ of coprime integers that indicate the slope $\pm (pm+ql)$ to be killed. 
+
+Suppose now that $S$ has only one boundary component and let $M^{\rm fill}$ be obtained by Dehn filling $M$ along the slope $(1,q)$. Let $\hat S$ be the closed surface obtained by capping $S$ with a disc.
+
+\begin{prop} \label{classify:bundles:prop}
+The circle bundle $M\to S$ extends to a circle bundle $M^{\rm fill}\to \hat S$. Every oriented circle bundle on $\hat S$ is obtained in this way, and distinct values of $q$ yield vector bundles that are not orientation-preservingly isomorphic.
+\end{prop}
+\begin{proof}
+The meridian of the filling solid torus is $m'=m + ql$. The fibre $l$ has geometric intersection 1 with $m'$ and is hence a longitude for the filling solid torus. We may represent the filling solid torus as $D \times S^1$ with $m' = S^1 \times \{y\}$ and $l=\{x\}\times S^1$. The circle bundle $M\to S$ extends naturally to a circle bundle $M^{\rm fill} \to \hat S$ with $\hat S = S\cup D$.
+
+Every closed circle bundle $N\to \hat S$ arises in this way: the bundle above a disc $D\subset \hat S$ is the trivial $D\times S^1$, and if we remove it we get $M \to S$ back. 
+The number $q$ is intrinsically determined: the meridian $m$ does not depend on the section of $M\to S$ by Corollary \ref{unique:cor}, and the equality $m' = m+ql$ determines $q$. Therefore distinct values of $q$ yield non-isomorphic bundles.
+\end{proof}
+
+The integer $q$ is the \emph{Euler number} of the circle bundle and is usually denoted with the letter $e$. We summarise our discovery:
+\begin{cor} \label{unique:e:cor}
+For every $e\in \matZ$ and every closed surface $S$ there is a unique oriented circle bundle over $S$ with Euler number $e$.
+\end{cor}
+
+A change of orientation for $M$ transforms $e$ into $-e$.
+Recall that every closed surface $S$ has a trivial circle bundle $S\timforsetil S^1$ constructed by doubling the unique oriented line bundle on $S$.
+
+\begin{ex} \label{circle:bundle:ex}
+An oriented circle bundle over a closed surface is trivial $\Longleftrightarrow$ $e=0$ $\Longleftrightarrow$ the bundle has a section. 
+\end{ex}
+
+We may see the Euler number of a bundle $M\to S$ over a closed $S$ as an obstruction for the existence of a section.
+
+\begin{oss} \label{bundle:oss}
+Every oriented $n$-dimensional vector bundle $E \to S$ over a closed oriented $n$-manifold $S$ has a \emph{Euler number} defined by taking two generic sections and counting their signed intersections. We briefly explain how this number is closely related to the one we defined here.\index{Euler number}
+
+Each vector bundle $E \to S$ induces a sphere bundle $M\to S$: it suffices to fix a Riemannian metric on $E$ and take the sub-bundle consisting of unit tangent vectors. When $n=2$ we get a circle bundle $M\to S$ and the Euler number of $E\to S$ coincides with that of $M\to S$ that we defined above.
+
+When $E$ is the tangent bundle of $S$, the Euler number is the Euler characteristic $\chi(S)$. For instance, the unit tangent bundle of $S^2$ has Euler number $e=\chi(S^2)=2$ and hence it is diffeomorphic to $L(2,1) = \matRP^3$. 
+\end{oss}
+
+\begin{ex} \label{bundle:ex}
+Let $M$ be a circle bundle over the genus-$g$ surface $S_g$ with Euler number $e$. We have 
+$H_1(M,\matZ) = \matZ^{2g} \times \matZ/_{e\matZ}$.
+\end{ex}
+
+\begin{cor} \label{distinct:bundle:cor}
+Let $M \to S_g$ and $M' \to S_{g'}$ be circle bundles with Euler numbers $e$ and $e'$. The manifolds $M$ and $M'$ are diffeomorphic $\Longleftrightarrow$ $g=g'$ and $|e|=|e'|$.
+\end{cor}
+
+\begin{ex} \label{e:ex}
+The circle bundle $M$ over $S^2$ with Euler number $e$ is diffeomorphic to the lens space $L(|e|,1)$.
+\end{ex}
+\begin{proof}[Hint] The base sphere $S^2$ decomposes into two discs, and the fibration over each disc is a solid torus. Therefore $M$ is the union of two solid tori.
+\end{proof}
+
+We end the discussion by defining explicitly a famous non-trivial circle bundle over $S^2$.
+
+\subsection{The Hopf fibration} \label{Hopf:lens:subsection}
+The quotient map 
+\begin{align*}
+(\matC^2)^* & \longrightarrow \matCP^1 \\
+(z,w) & \longmapsto [z,w]
+\end{align*}
+restricts to a circle bundle $S^3 \to \matCP^1 = S^2$ called the \emph{Hopf fibration}.
+The fibre over $[z,w]$ is the circle $(\omega z, \omega w)$ as $\omega \in S^1$ varies. See Figure \ref{Hopf:fig}.\index{Hopf fibration}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 9 cm] {\iftoggle{BW}{Hopf_Fibration-BW}{Hopf_Fibration}}
+\nota{The fibre of every point in the Hopf fibration $S^3\to S^2$ is a circle, and the counterimage of a circle in $S^2$ is a torus in $S^3$. The picture shows the counterimage of three circle arcs: each is a portion of standard torus in $S^3 = \matR^3\cup \infty$, foliated by circles of type $(1,1)$.}
+\label{Hopf:fig}
+\end{center}
+\end{figure}
+
+Exercise \ref{e:ex} implies that the Euler number of the Hopf fibration $S^3 \to S^2$ is $\pm 1$, and hence it has no section by Exercise \ref{circle:bundle:ex}.
+
+\section{Seifert manifolds}
+We now enlarge the class of circle bundles over surfaces by admitting some kind of singular fibres. We introduce the \emph{Seifert fibrations}, whose total spaces are called \emph{Seifert manifolds}. These manifolds were introduced by Herbert Seifert in 1933 and fit perfectly in the much more recent geometrisation perspective: in the next chapter we will introduce the eight three-dimensional geometries, and prove that six of them are realised precisely by the Seifert manifolds.
+
+\subsection{Definition}
+We define the Seifert manifolds as Dehn fillings of trivial bundles over surfaces with boundary. Here are the details.
+
+Let $M$ be the (unique) oriented bundle $S\timforsetil S^1$ over a compact connected (possibly non-orientable) surface $S$ with boundary. We denote by $S$ the zero-section.
+
+Let $T_1,\ldots, T_k$ be the boundary tori of $M$. On each $T_i$ we choose an orientation for the meridian $m_i=T_i\cap \partial S$ and for the fibre $l_i$ of the bundle so that the basis $(m_i,l_i)$ for $H_1(T_i,\matZ)$ be positively oriented.
+ 
+A $(p_i,q_i)$-Dehn filling on $T_i$ kills the slope $p_im_i + q_il_i$. We say that the Dehn filling is \emph{fibre-parallel} if $p_i=0$, \emph{i.e.}~if it kills a fibre.
+
+\begin{defn}
+A \emph{Seifert manifold} is any 3-manifold $N$ obtained from $M$ by Dehn filling some $h\leqslant k$ boundary tori in a non-fibre-parallel way, that is with $p_i\neq 0$ for all $i$.\index{Seifert manifold} 
+\end{defn}
+
+The Seifert manifold is closed if $h=k$, and has $k-h$ boundary tori otherwise. It is not important to know which $h$ tori are filled, in virtue of the following.
+
+\begin{prop}
+Every permutation of the boundary tori is realised by a self-diffeomorphism of $M$ that preserves the pairs $\pm (m_i,l_i)$.
+\end{prop}
+\begin{proof}
+Every permutation of the boundary circles of $S$ is realised by a self-diffeomorphism of $S$, that extends orientation-preservingly to the orientable $I$-bundle and its double $M$.
+\end{proof}
+
+The pair $(p_i,q_i)$ is determined up to sign, so we can always suppose $p_i>0$ and we fully encode the Seifert manifold $N$ using the following notation: 
+\begin{equation} \label{Seifert:notation:eqn}
+N = \big(\hat S, (p_1,q_1), \ldots, (p_h, q_h)\big)
+\end{equation}
+where $\hat S$ is $S$ with $h$ boundary components capped. The reason for using $\hat S$ instead of $S$ is that $N$ has a particular fibration onto $\hat S$, as we will soon see. Before constructing this fibration we list some simple examples that should hopefully help the reader to familiarise with the notation (\ref{Seifert:notation:eqn}), that will be used extensively in the whole chapter.
+
+\begin{example}
+The Seifert manifold $\big(S_g,(1,e)\big)$ is the circle bundle over the orientable genus-$g$ surface $S_g$ with Euler number $e$, by construction. In particular $\big(S_g,(1,0)\big) = S_g \times S^1$.
+\end{example}
+
+\begin{example}
+The Seifert manifold $\big( S^2, (p,q) \big)$ is diffeomorphic to the lens space $L(q,p)$.
+\end{example}
+
+The following facts follow from Exercise \ref{fill:T:ex}.
+
+\begin{ex} \label{solid:ex}
+The Seifert manifold $\big(D^2, (p,q)\big)$ is a solid torus.
+\end{ex}
+
+In the following exercise, it should be clear that the resulting manifold is a lens space (by Exercise \ref{fill:T:ex}) and the hard part is to check carefully that the proposed lens space parameters are correct.
+\begin{ex} \label{two:lens:ex}
+The Seifert manifold $\big(S^2, (p_1,q_1), (p_2, q_2)\big)$ is the lens space $L (p_1q_2 + q_1p_2, rq_2 + sp_2)$
+where $r,s$ are such that $p_1s-q_1r=\pm 1$. In particular, this Seifert manifold is $S^3$ when $p_1q_2+q_1p_2 = \pm 1$.
+\end{ex}
+
+\subsection{Seifert fibrations}
+As we anticipated, a Seifert manifold $N$ as in (\ref{Seifert:notation:eqn}) possesses some kind of singular fibration over the filled surface $\hat S$. We clarify this point here by defining the notion of \emph{Seifert fibration}. 
+
+Let $(p,q)$ be two coprime integers with $p>0$. A \emph{standard fibered solid torus} with coefficients $(p,q)$ is the solid torus\index{solid torus!standard fibered solid torus} 
+$$D \times [0,1]/_\psi$$
+where $\psi\colon D \times 0 \to D \times 1$ is a rotation of angle $2\pi \frac qp$. The fibration into vertical segments $\{{\rm pt}\} \times [0,1]$ extends to a fibration into circles of the solid torus. The central fibre obtained by identifying the endpoints of $0 \times [0,1]$ is the core of the solid torus, and every non-central fibre winds $p$ times around the core of $M$: see Figure \ref{Seifert_fibration:fig}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 2.5 cm] {\iftoggle{BW}{Seifert_fibration-BW}{Seifert_fibration}}
+\nota{A standard fibered solid torus. We identify the top and bottom discs by a $2\pi \frac qp$ rotation, for some $q$ coprime with $p$. Here $p=5$. Every non-central fibre (\iftoggle{BW}{light grey}{green}) winds $p$ times along the central fibre (\iftoggle{BW}{dark grey}{red}).}
+\label{Seifert_fibration:fig}
+\end{center}
+\end{figure}
+
+The positive number $p$ is the \emph{multiplicity} of the central fibre. If $p=1$ the fibered solid torus is diffeomorphic to the usual product fibration $D\times S^1$ and the central fibre is \emph{regular}. If $p>1$ the central fibre is \emph{singular}.
+
+\begin{defn}
+A \emph{Seifert fibration} is a partition of a compact oriented 3-manifold $N$ with (possibly empty) boundary into circles, such that every circle has a fibered neighbourhood diffeomorphic to a standard fibered solid torus.\index{Seifert fibration}
+\end{defn}
+
+Let $S$ be the topological space obtained from $N$ by quotienting circles to points.
+
+\begin{prop}
+The space $S$ is a compact connected surface with (possibly empty) boundary.
+\end{prop}
+\begin{proof}
+Every standard fibered solid torus quotients to a disc: a sector $z= \rho e^{i\theta}$ with $0\leqslant \rho \leqslant 1$ and $0\leqslant \theta \leqslant \frac{2\pi}p$ with two edges $\theta=0$ and $\theta = \frac{2\pi}p$ identified by a rotation. This disc actually looks like a ``cone'', and this motivates the following discussion.
+\end{proof}
+
+The map $N \to S$ is in fact what we call a Seifert fibration. The surface $S$ may have boundary and may be non-orientable, and its interior has a natural orbifold structure: if the preimage of $x\in S$ is a fibre of order $p$, we see $x$ as a cone point of order $p$, see Section \ref{orbifold:surface:subsection}. If $N$ has boundary, then $S$ also has, and we say that $S$ itself is an orbifold for simplicity although we actually mean only its interior. Morally, we should consider the fibration $N\to S$ as a circle bundle over the orbifold $S$.
+
+A Seifert fibration without singular fibres is just an ordinary circle bundle. 
+We now show that Seifert manifolds and Seifert fibrations are more or less the same thing. 
+
+\begin{prop} 
+The Seifert manifold
+\begin{equation*} 
+N = \big(S, (p_1,q_1), \ldots, (p_h, q_h)\big)
+\end{equation*}
+has a Seifert fibration $N \to S$ over the orbifold 
+$$(S, p_1,\ldots, p_h).$$
+Every Seifert fibration arises in this way.
+\end{prop}
+\begin{proof}
+The Seifert manifold $N$ is obtained by filling $h$ components of a bundle $M=S'\timforsetil S^1$. The bundle $M \to S'$ extends to a Seifert fibration $N \to S$ where the orbifold $S$ is obtained from $S'$ by attaching $h$ discs with cone points $p_1,\ldots, p_h$.
+
+More precisely, we fill each boundary torus $T_i$ of $M$ with a solid torus having meridian $\mu_i= p_im_i + q_il_i$. We fix a longitude $\lambda_i= r_im_i + s_il_i$ for this solid torus by choosing $r_i,s_i$ with $p_is_i-q_ir_i=1$. We get $l_i = p_i\lambda_i - r_i\mu_i$. By hypothesis the Dehn filling is not fibre-parallel, hence $p_i\neq 0$ and the fibration $M\to S'$ extends to a standard fibration of the solid torus with coefficients $(p_i,-r_i)$.
+
+Every Seifert fibration $N\to S$ arises in this way: if we remove the singular fibres (or a regular one, if there are not) we get an ordinary circle bundle over a surface with boundary, which is trivial. Therefore $N$ is a Dehn filling of this trivial bundle, hence a Seifert manifold.
+\end{proof}
+
+We have seen that the notation
+\begin{equation} \label{notation:eqn}
+N = \big(S, (p_1,q_1), \ldots, (p_h, q_h)\big)
+\end{equation}
+defines a Seifert fibration $N \to S$ and a Seifert manifold $N$.
+
+\begin{example} \label{bad:example}
+If the orbifold $S$ is a disc with at most one singular point then $N$ is a standard fibered solid torus. If $S$ is $S^2$ with at most $2$ singular points then $N$ is a lens space: see Exercises \ref{solid:ex} and \ref{two:lens:ex}.
+\end{example}
+
+\subsection{Classification of Seifert fibrations}
+We say that two Seifert fibrations $\pi_1\colon N_1\to S$, $\pi_2\colon N_2 \to S$ are \emph{isomorphic} if there is a diffeomorphism $\psi\colon N_1 \to N_2$ such that $\pi_1 = \pi_2\circ \psi$. Two different notations as in (\ref{notation:eqn}) may describe isomorphic fibrations, but this phenomenon is completely understood.
+
+\begin{prop} \label{S:moves:prop}
+Two notations as in (\ref{notation:eqn}) describe two orientation-preservingly isomorphic Seifert fibrations if and only if they are related by a finite sequence of the following moves and their inverses:
+\begin{align}
+(p_i,q_i), (p_{i+1},q_{i+1}) & \longmapsto (p_i, q_i+p_i), (p_{i+1},q_{i+1}-p_{i+1}), \label{Seifert:1:eqn} \\
+(p_1,q_1), \ldots, (p_h, q_h) & \longmapsto (p_1,q_1), \ldots, (p_h, q_h), (1,0), \label{Seifert:2:eqn} \\
+(p_i,q_i) & \longmapsto (p_i,q_i+p_i) \quad {\rm if}\ \partial N \neq\emptyset, \label{Seifert:3:eqn}
+\end{align}
+and permutations of the pairs $(p_i,q_i)$'s.
+\end{prop}
+\begin{proof}
+Recall that $N$ is a Dehn filling of $M=S'\timforsetil S^1$. Move (\ref{Seifert:1:eqn}) is the result of twisting $M$ along a fibered annulus $A$ connecting the tori $T_i$ and $T_{i+1}$ in $\partial M$: this self-diffeomorphism of $M$ acts on $T_i$ and $T_{i+1}$ like two opposite Dehn twists and extends to an isomorphism of the two fibrations. In (\ref{Seifert:3:eqn}) we twist along an annulus connecting $T_i$ and $\partial N$. The move (\ref{Seifert:2:eqn}) corresponds to drilling a nonsingular fibered torus and refilling it back.
+
+We now prove that these moves suffice to connect two isomorphic Seifert fibrations. 
+Suppose that two distinct notations as in (\ref{notation:eqn}) describe isomorphic fibrations. 
+We use the moves (\ref{Seifert:1:eqn}), (\ref{Seifert:2:eqn}), and (\ref{Seifert:3:eqn}) to eliminate the parameters $p_i=1$ as much as possible from both notations. If there are no singular fibres, we end up with a single parameter $(1,e)$ if $S$ is closed, and no parameters at all if $\partial S \neq \emptyset$. We conclude by Corollary \ref{unique:e:cor}. 
+
+If the fibration has at least one singular fibre, we can eliminate all $p_i=1$ and the $(p_i,q_i)$ correspond to singular fibres. An isomorphism of Seifert fibrations sends singular fibres to singular fibres and hence induces an isomorphism of their complement $S'\timforsetil S^1$. The parameters $(p_i,q_i)$ are determined by the choice of a section in $S'\timforsetil S^1$. Different sections are related by Dehn twist along annuli and hence the parameters are related by the moves (\ref{Seifert:1:eqn}) and (\ref{Seifert:3:eqn}).
+\end{proof}
+
+Proposition \ref{S:moves:prop} classifies all the Seifert fibrations up to isomorphism. A classification of Seifert manifolds up to \emph{diffeomorphism} would also be desirable, but it is much harder to obtain because a three-manifold may admit many non-isomorphic Seifert fibrations. For instance, 
+Exercise \ref{two:lens:ex} shows that the lens spaces may fibre in many different ways; a manifold as familiar as $S^3$ fibres over the orbifold $(S^2, p_1, p_2)$ if $p_1$ and $p_2$ are coprime and hence has infinitely many non-isomorphic fibrations. It is a stimulating exercise to try to visualise these Seifert fibrations of $S^3$.
+
+We now start a long journey in Seifert manifolds theory, whose ultimate goal is to classify them completely up to diffeomorphism. We will see at the end that the only Seifert manifolds admitting non-isomorphic fibrations are the ``smallest'' ones, like $S^3$, the lens spaces, and few more that will be classified using some \emph{ad hoc} argument.
+
+\begin{ex}
+The number of non-isomorphic Seifert fibrations over a fixed orbifold $S$ is finite $\Longleftrightarrow$ $\partial S \neq \emptyset$.
+\end{ex}
+
+\subsection{Euler number}
+We now extend the notion of Euler number from ordinary to Seifert fibrations.
+We define the \emph{Euler number} of the fibration (\ref{notation:eqn}) to be the rational number\index{Euler number}
+$$e(N) = \sum_{i=1}^h \frac{q_i}{p_i}.$$
+The Euler number is only defined modulo $\matZ$ when $N$ has boundary. The good definition follows from Proposition \ref{S:moves:prop} (the moves do not affect $e$, except (\ref{Seifert:3:eqn}) that modifies $e$ into $e+1$ and applies only when $N$ has boundary) and is coherent with the circle bundle case. The Euler number depends on the fibration and not only on $N$, but we write $e(N)$ anyway for simplicity. Proposition \ref{S:moves:prop} easily implies the following.
+
+\begin{cor} \label{classification:Seifert:cor}
+Two Seifert fibrations
+$$\big(S, (p_1,q_1), \ldots, (p_h, q_h)\big), \quad \big(S', (p_1',q_1'), \ldots, (p_{h'}', q_{h'}')\big)$$
+with $p_i, p_i'\geqslant 2$ are orientation-preservingly isomorphic if and only if $S=S'$, $h=h'$, $e=e'$, and up to reordering $p_i=p_i'$ and $q_i \equiv q_i'$ (mod $p_i$) for all $i$.
+\end{cor}
+The numbers $e$ and $e'$ indicate the Euler numbers of the two fibrations, and recall that they are only defined modulo $\matZ$ when $\partial S \neq \emptyset$.
+
+\begin{rem} \label{reverse:rem}
+The move
+$$\big(S,(p_1,q_1), \ldots, (p_h,q_h)\big) \longmapsto \big(S,(p_1,-q_1), \ldots, (p_h,-q_h)\big) $$
+corresponds to a change of orientation for the three-manifold and transforms $e$ into $-e$.
+\end{rem}
+
+
+\subsection{Homology} \label{Seifert:homology:sphere:subsection}
+We now characterise the Seifert manifolds that have finite homology groups, and in particular the homology spheres.
+
+\begin{prop} \label{Seifert:homology:prop}
+The homology group $H_1(M, \matZ)$ of 
+$$M=\big(S,(p_1,q_1), \ldots, (p_h,q_h)\big)$$
+is finite $\Longleftrightarrow$ one of the following holds:
+\begin{itemize}
+\item $S=S^2$ and $e\neq 0$, and we get $|H_1(M,\matZ)| = |e|p_1\cdots p_h$;
+\item $S=\matRP^2$, and we get $|H_1(M,\matZ)| = 4p_1\cdots p_h$.
+\end{itemize}
+\end{prop}
+\begin{proof}
+If $M$ is not closed then $H_1(M,\matZ)$ is infinite because $H_1(\partial M,\matZ)$ is. If $S\neq S^2, \matRP^2$ then $H_1(S)$ is infinite. It is easy to check that the fibration $M\to S$ induces a surjection $H_1(M)\to H_1(S)$ and hence $H_1(M)$ is also infinite.
+
+Suppose $S=S^2$. The manifold $M$ is a $(p_i,q_i)$-Dehn filling of $S_{0,h}\times S^1$ where $S_{0,h}$ is the sphere with $h$ holes. The homology of $S_{0,h}\times S^1$ is generated by $m_1,\ldots,m_h,l$ with the relation $m_1+\ldots + m_h=0$. The $i$-th Dehn filling adds the relation $p_im_i + q_il_i=0$. The relations form a square $(h+1)$-matrix
+$$
+\begin{pmatrix}
+1 & p_1 & 0 & \cdots & 0 \\
+1 & 0 & p_2 & \ddots & \vdots \\
+\vdots & \vdots & \ddots & \ddots & 0 \\
+\phantom{\Big|} \! 1 & 0 & 0 & \cdots & p_h \\
+0 & q_1 & q_2 & \cdots & q_h
+\end{pmatrix}
+\sim
+\begin{pmatrix}
+1 & p_1 & 0 & \cdots & 0 \\
+1 & 0 & p_2 & \ddots & \vdots \\
+\vdots & \vdots & \ddots & \ddots & 0 \\
+\phantom{\Big|} \! 1 & 0 & 0 & \cdots & p_h \\
+-e & 0 & 0 & \cdots & 0
+\end{pmatrix}.
+$$
+We have used Gauss moves to simplify the last row. The determinant of this matrix is $\pm ep_1\cdots p_h$. The order $|H_1(M,\matZ)|$ is the absolute value of the determinant if it is non-zero, and is infinite if it is zero.
+
+Suppose $S=\matRP^2$ and let $S^{\rm no}_{1,h}$ be $\matRP^2$ with $h$ holes. The homology of $S^{\rm no}_{1,h} \timtil S^1$ is generated by $a,m_1,\ldots, m_h, l$, where $a$ is an orientation-reversing curve in $S^{\rm no}_{1,h}$, with the relations $2a+m_1+\ldots +m_h=0$ and $2l=0$. The relations now form a square $(h+2)$-matrix with determinant
+$$
+\det \begin{pmatrix}
+2 & 0 & 0 & \ldots & 0 \\
+1 & 0 & p_1 & \ddots & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+\phantom{\Big|} \! 1 & 0 & 0 & \cdots & p_h \\
+0 & 2& q_1 & \cdots & q_h
+\end{pmatrix}
+= \pm 2 \det
+\begin{pmatrix}
+2 & 0 & \cdots & 0 \\
+1 & p_1 & \ddots & \vdots \\
+\vdots & \vdots & \ddots & \vdots \\
+1 & 0 & \cdots & p_h
+\end{pmatrix} = \pm 4 p_1\cdots p_h.
+$$
+The proof is complete.
+\end{proof}
+
+We deduce an elegant description of all the Seifert homology spheres.
+
+\begin{cor} \label{sigma:cor}
+For every set $p_1, \ldots, p_h$ of pairwise coprime integers $p_i\geqslant 2$ there is a unique homology sphere $\Sigma(p_1,\ldots, p_h)$ Seifert-fibering over $(S^2,p_1,\ldots,p_h)$. Every homology sphere Seifert manifold arises in this way.
+\end{cor}
+\begin{proof}
+By the previous proposition a Seifert manifold 
+$$M=\big(S,(p_1,q_1), \ldots, (p_h,q_h)\big)$$
+is a homology sphere if and only if $S=S^2$ and $|ep_1\cdots p_h|=1$. We have
+$$ep_1\cdots p_h = \sum_{i=1}^h \frac{q_i}{p_i}p_1\cdots p_h = \sum_{i=1}^h q_ip_1\cdots \widehat {p_i}\cdots p_h = \sum_{i=1}^h q_ip_i'$$
+where we set $p_i' = p_1\cdots \widehat {p_i}\cdots p_h$. The integers $p_1,\ldots, p_h$ are \emph{pairwise} coprime if and only if $p_1',\ldots, p_h'$ are \emph{globally} coprime (no prime number divides all of them). The equation $\sum_{i=1}q_ip_i' = 1$ is satisfied by some $q_1,\ldots, q_h$ $\Longleftrightarrow$ they are globally coprime. Different solutions $q_i$ are related by moves as in Proposition \ref{S:moves:prop} (exercise) and produce the same Seifert fibration.
+\end{proof}
+
+For instance, the homology spheres $\Sigma(p_1)$ and $\Sigma(p_1,p_2)$ are just $S^3$ by Example \ref{bad:example}. The simplest homology sphere with three singular fibres is $\Sigma(2,3,5)$. This manifold is called the \emph{Poincar\'e homology sphere} and we will soon see that its fundamental group has order 120.\index{Poincar\'e homology sphere} All the other Seifert homology spheres have infinite fundamental group: this is related to the fact that $\sum \frac 1{p_i}>1$ for all choices of $(p_1,\ldots, p_h)$ with $h\geqslant 3$ except $(2,3,5)$, as we will soon see. A Seifert homology sphere of type $\Sigma(p_1,p_2,p_3)$ is called a \emph{Brieskorn homology sphere}\index{Brieskorn homology sphere}.
+
+\subsection{Coverings} 
+We now start to investigate the coverings of Seifert fibered spaces. Our main goal will be to subdivide the Seifert manifolds into nine classes: this will be done in Section \ref{commensurability:Seifert:subsection}.
+
+Like ordinary fibrations, Seifert fibrations behave well with respect to coverings.
+Let $M \to S$ be a Seifert fibration and $\tilde M \to M$ a covering. The foliation into circles of $M$ lifts to a foliation into circles or lines in $\tilde M$, with some quotient space $\tilde S$. 
+
+\begin{prop} \label{Seifert:lifts:prop}
+The quotient $\tilde S$ is an orbifold covering of $S$. 
+\begin{itemize}
+\item If $\tilde M$ foliates in circles then $\tilde M \to \tilde S$ is a Seifert fibration, 
+\item If $\tilde M$ foliates in lines then $\tilde M \to \tilde S$ is a line bundle.
+\end{itemize}
+In the second case $\tilde S$ has no singular points.
+\end{prop}
+\begin{proof}
+This holds on all coverings of a standard fibered solid torus and hence holds everywhere.
+\end{proof}
+
+We now concentrate ourselves on the finite-degree case.
+
+\subsection{Finite-degree coverings}
+We define a \emph{finite-degree covering} of a Seifert fibration $M\to S$ to be a commutative diagram
+$$
+\xymatrix{ 
+\tilde M\ar[r] \ar[d] & M \ar[d] \\
+\tilde S\ar[r] & S
+}
+$$
+where $\tilde M \to \tilde S$ is a Seifert fibration, $\tilde M \to M$ is a finite-degree covering, and $\tilde S \to S$ is an orbifold covering. Proposition \ref{Seifert:lifts:prop} implies the following.
+
+\begin{cor}
+Let $M\to S$ be a Seifert fibration. Every finite-degree covering $\tilde M \to M$ induces a finite-degree covering of Seifert fibrations:
+$$
+\xymatrix{ 
+\tilde M\ar[r] \ar@{.>}[d] & M \ar[d] \\
+\tilde S\ar@{.>}[r] & S
+}
+$$
+\end{cor}
+The dotted arrows indicate the maps that are induced. The degree $d$ of such a covering $\tilde M \to M$ splits into two parts: 
+\begin{itemize}
+\item the \emph{horizontal} degree $d_{\rm h}$ is the degree of the covering $\tilde S \to S$, 
+\item the \emph{vertical} degree $d_{\rm v}$ is the degree with which a regular fibre of $\tilde M$ covers a regular fibre of $M$. 
+\end{itemize}
+The vertical degree is well-defined since regular fibres in $\tilde M$ form a connected set. The pre-image of a regular fibre in $M$ consists of $d_{\rm h}$ regular fibres in $\tilde M$, each fibering with degree $d_{\rm v}$. Therefore
+$$d = d_{\rm h} \cdot d_{\rm v}.$$
+A covering $\tilde M \to M$ is \emph{horizontal} or \emph{vertical} if respectively
+$d_{\rm v} = 1$ or $d_{\rm h} = 1$.
+
+\begin{prop}[Pull-back] \label{horizontal:prop}
+Let $M\to S$ be a Seifert fibration. Every finite-degree orbifold covering $\tilde S \to S$ is induced by a unique horizontal covering of Seifert fibrations:
+$$
+\xymatrix{ 
+\tilde M\ar@{.>}[r] \ar@{.>}[d] & M \ar[d] \\
+\tilde S\ar[r] & S
+}
+$$
+\end{prop}
+\begin{proof}
+Like for ordinary bundles, there is a unique way to define $\tilde M$ by pulling back the Seifert fibration on fibered solid tori.
+\end{proof}
+
+Recall that an orbifold is \emph{very good} when it is finitely covered by a surface. Every locally orientable 2-orbifold is very good except the bad orbifolds $S^2(p_1)$ and $S^2(p_1,p_2)$ with $p_1\neq p_2$, see Theorem \ref{O:geometrisation:teo} and Corollary \ref{very:good:surface:cor}.
+
+\begin{cor} \label{good:bundle:cor}
+If $S$ is good, every Seifert fibration $M\to S$ is finitely covered by a circle bundle over a surface.
+\end{cor}
+\begin{proof}
+Pull-back the fibration along the surface cover $\tilde S \to S$.
+\end{proof}
+
+\begin{prop} \label{hv:prop}
+Every finite-degree covering between Seifert fibrations is a composition of one vertical and one horizontal covering. 
+\end{prop}
+\begin{proof}
+Let $p\colon \tilde M\to M$ be a covering of Seifert fibrations, with base spaces $\tilde S \to S$. If we pull-back $M$ to $\tilde S$ we get a horizontal covering $p_{\rm h}\colon M_{\rm h} \to M$. There is a natural vertical $p_{\rm v}\colon \tilde M \to M_{\rm h}$ such that $p = p_{\rm h} \circ p_{\rm v}$.
+\end{proof}
+
+\subsection{Circle bundle coverings}
+The Euler number of the fibration and the Euler characteristic of the base orbifold behave well with coverings.
+
+\begin{prop} \label{e:prop}
+Let $p\colon \tilde M \to M$ be a finite covering of closed Seifert fibrations with base orbifolds $\tilde S$ and $S$, with degrees $(d_{\rm h}, d_{\rm v})$. We have
+\begin{align*}
+\chi(\tilde S) & = d_{\rm h} \cdot \chi (S), \\
+e(\tilde M ) & = \frac{d_{\rm h}}{d_{\rm v}} \cdot e(M).
+\end{align*}
+\end{prop}
+\begin{proof}
+The first equality holds for every orbifold covering $\tilde S \to S$.
+Concerning the second one, by Proposition \ref{hv:prop} we may suppose $p$ is either vertical or horizontal. Write
+$$M = \big(S, (p_1,q_1), \ldots (p_h, q_h)\big)$$
+and recall that $M$ is obtained from a circle bundle $N$ by $(p_i,q_i)$-filling the boundary torus $T_i$ for all $i=1,\ldots, h$. Set $\tilde T_i = p^{-1}(T_i)$ and $\tilde N = p^{-1}(N)$.
+
+If $p$ is vertical, we fix a section of $\tilde  N$ and note that it projects to a section of $N$: these sections induce meridians on $\tilde T_i$ and $T_i$. Here $\tilde T_i$ is a single torus and $\tilde T_i \to T_i$ wraps the fibre with degree $d=d_{\rm v}$. Since the covering extends to the filled solid tori, we have $d|q_i$ and $\tilde T_i$ is filled with parameters $(p_i,q_i/d)$. Therefore $e(\tilde M) = e(M)/d$.
+
+If $p$ is horizontal, we fix a section of $N$, and its counterimage is a section of $\tilde N$: these sections induce meridians on $T_i$ and $\tilde T_i$.
+Now $\tilde T_i$ consists of some tori $\tilde T_i = \tilde T_{i,1} \sqcup \ldots \sqcup \tilde T_{i,k_i}$ and $\tilde T_{i,j} \to T_i$ wraps the meridians with some degree $d_{i,j}$. The total sum of these local degrees is $d_{i,1}+\ldots +d_{i,k_i}=d = d_{\rm h}$. Similarly as above we have $d_{i,j}|p_i$ and the filling solid torus at $\tilde T_{i,j}$ has parameters $(p_i/d_{i,j},q_i)$. Therefore 
+$$e(\tilde M) = \sum_{i=1}^h \sum_{j=1}^{k_i} \frac{d_{i,j}q_i}{p_i} = \sum_{i=1}^h d\cdot \frac{q_i}{p_i} = d \cdot e(M).$$
+This concludes the proof.
+\end{proof}
+
+An important consequence is that the signs of $\chi(S)$ and $e(M)$ are invariant under finite coverings. 
+
+\subsection{Commensurability classes} \label{commensurability:Seifert:subsection}
+We now would like to subdivide the Seifert manifolds into few classes, and to this purpose we introduce a general equivalence relation between manifolds.
+
+\begin{defn}
+Two manifolds $M$ and  $N$ are \emph{commensurable} if there is a manifold that covers both $M$ and $N$ with finite degrees.\index{commensurability of manifolds}
+\end{defn}
+
+\begin{prop}
+Commensurability is an equivalence relation.
+\end{prop}
+\begin{proof}
+If $M$ is commensurable with $N_1$ and $N_2$, it has finite-sheeted coverings $M_1, M_2$ that cover $N_1$ and $N_2$ corresponding to finite-index subgroups $\Gamma_1, \Gamma_2 < \pi_1(M)$. The subgroup $\Gamma = \Gamma_1\cap \Gamma_2$ has also finite index and determines a manifold that covers both $N_1$ and $N_2$.
+\end{proof}
+
+\begin{ex}
+There are three commensurable classes of closed surfaces, determined by their Euler characteristic being positive, null, or negative.
+\end{ex}
+
+We now classify the commensurability classes of Seifert manifolds. The \emph{3-torus} is of course $T\times S^1 = S^1\times S^1\times S^1$.\index{3-torus}
+
+\begin{prop} \label{cover:Seifert:prop}
+A closed Seifert fibration $M\to S$ has:
+\begin{itemize}
+\item $\chi(S)>0$ and $e=0$ $\Longleftrightarrow M$ is covered by $S^2\times S^1$,
+\item $\chi(S)>0$ and $e\neq 0$ $\Longleftrightarrow M$ is covered by $S^3$,
+\item $\chi(S)=0$ and $e=0$ $\Longleftrightarrow M$ is covered by the 3-torus,
+\item $\chi(S)=0$ and $e\neq 0$ $\Longleftrightarrow M$ is covered by a twisted bundle over $T$,
+\item $\chi(S)<0$ and $e=0$ $\Longleftrightarrow M$ is covered by $S_g \times S^1$ for some $g>1$,
+\item $\chi(S)<0$ and $e\neq 0$ $\Longleftrightarrow M$ is covered by a twisted bundle over $S_g$ for some $g>1$.
+\end{itemize}
+\end{prop}
+\begin{proof}
+If $S$ is a bad orbifold, then $S=S^2(p)$ or $S^2(p_1,p_2)$ with $p_1\neq p_2$ and hence we get $e\neq 0$ and $\chi(S)>0$. The manifold $M$ is a lens space by Example \ref{bad:example} and is hence covered by $S^3$.
+
+If $S$ is good, the fibration $M\to S$ is covered by a circle bundle $\tilde M\to \tilde S$ over an orientable closed surface $\tilde S$ by Corollary \ref{good:bundle:cor}. By Proposition \ref{e:prop} the numbers $\chi(\tilde S)$ and $e(\tilde M)$ have the same signs of $\chi(S)$ and $e(M)$. Therefore $\tilde S = S^2, T$, or $S_g$ with $g> 1$, depending on whether $\chi(S)$ is positive, null, or negative. 
+Exercise \ref{circle:bundle:ex} says that the circle bundle $\tilde M \to \tilde S$ is trivial $\Longleftrightarrow e(\tilde M) =0 \Longleftrightarrow e(M) =0$. Note that a non-trivial bundle over $S^2$ is a lens space $L(e,1)$ with $e\neq 0$ and is hence covered by $S^3$.
+
+We have proved that $M$ is covered (according to the signs of $\chi$ and $e$) by a manifold belonging to one of the six types: $S^3$, $S^2\times S^1$, the 3-torus, a twisted bundle over $T$, $S_g\times S^1$, and a twisted bundle over $S_g$. It remains to prove that $M$ cannot be covered by two manifolds $M_1, M_2$ belonging to two different types: this holds because manifolds of distinct types are not commensurable. To prove that, note that the finite cover of a manifold of one of the six types is a manifold of the same type, and Corollary \ref{distinct:bundle:cor} implies that a manifold cannot belong to two different types. If two manifolds of distinct types were commensurable they would be covered by a manifold belonging to both types, yielding a contradiction.
+\end{proof}
+
+
+\begin{table}
+\begin{center}
+\begin{tabular}{c||ccc}
+        & \phantom{\Big|} $\chi>0$ & $\chi = 0$ & $\chi<0$ \\
+ \hline \hline
+ $e=0$ & \phantom{\Big|} $S^2\times S^1$ & $S^1\times S^1\times S^1$ & $S_2 \times S^1$ \\
+ $e\neq 0$ & \phantom{\big|} $S^3$ & $\big(T,(1,1)\big)$ & $\big(S_2,(1,1)\big)$ \\
+ $\partial M\neq \emptyset$ & \phantom{\Big|} $D\times S^1$ & $T \times [0,1]$ & $P \times S^1$
+\end{tabular}
+\vspace{.2 cm}
+\nota{There are 9 commensurability classes of Seifert manifolds: 6 closed and 3 with boundary. Every Seifert manifold $M$ is commensurable with one (and only one) of these 9 manifolds. The commensurability class of $M$ is easily detected by looking at its invariants $\chi$ and $e$ (the latter only in the closed case). The surfaces $T,S_2,D,P$ are the torus, the genus-2 surface, the disc, and the pair-of-pants. Note that $S^3 = \big(S^2,(1,1)\big)$.}
+\label{commensurability:table}
+\end{center}
+\end{table}
+
+We can now easily classify all closed Seifert manifolds up to commensurability. To conclude we just need to solve the following exercise.
+
+\begin{ex} \label{e:construct:ex}
+Pick $S=S_g$ and $e>0$. Construct:
+\begin{itemize}
+\item a degree-$e$ vertical covering $\big(S,(1,1)\big)\to \big(S,(1,e)\big)$,
+\item a degree-$e$ horizontal covering $\big(\tilde S,(1,e)\big) \to \big(S,(1,1)\big)$ if $g\geqslant 1$.
+\end{itemize}
+\end{ex}
+\begin{proof}[Hint] If $g\geqslant 1$ then $S$ has covers of any degree $e$. To construct them, pick surjective homomorphisms $\pi_1(S)\to H_1(S) \to \matZ/_{e\matZ}$.
+\end{proof}
+
+\begin{cor}
+There are six commensurability classes of closed Seifert manifolds, depending on $\chi$ and $e$ as shown in Table \ref{commensurability:table}.
+\end{cor}
+\begin{proof}
+By the previous exercise the non-trivial (or trivial) bundles over closed surfaces with $\chi < 0$ (or $\chi =0$, $\chi >0$) are all commensurable.
+\end{proof}
+
+\begin{cor}
+A closed Seifert fibration $M\to S$ has $e=0$ $\Longleftrightarrow$ it is finitely covered by a trivial circle bundle.
+\end{cor}
+
+We recall that a Seifert manifold $M$ may have non-isomorphic Seifert fibrations $M\to S$ and $M\to S'$, and the invariants $\chi, \chi'$ and $e, e'$ of the two fibrations are not necessarily equal; however $\chi$ is positive, null, or negative if and only if $\chi'$ is, and $e$ vanishes if and only if $e'$ does (in the closed case). This holds because the commensurability class of $M$ does not depend on its fibration. For instance, Exercise \ref{two:lens:ex} shows that a lens space $M=L(p,q)$ with $p>0$ has many fibrations, but each with $\chi>0$ and $e\neq 0$.
+
+We now consider the boundary case, which is simpler because circle bundles over orientable surfaces with boundary are always trivial. Let $A$ denote the annulus and $S_{g,b}$ be the surface of genus $g$ with $b$ open discs removed.
+
+\begin{prop}
+A Seifert fibration $M\to S$ with boundary has
+\begin{itemize}
+\item $\chi(S)>0 \Longleftrightarrow M = D\times S^1$,
+\item $\chi(S)=0 \Longleftrightarrow M$ is covered by $A \times S^1 = T\times [0,1]$,
+\item $\chi(S)<0 \Longleftrightarrow M$ is covered by $S_{g,b} \times S^1$ for some $g+b>2$.
+\end{itemize}
+\end{prop}
+\begin{proof}
+Every Seifert manifold with boundary is covered by a circle bundle over an orientable surface, and such a bundle is trivial here. If $\chi>0$ the base surface is a disc with at most one cone point and hence $M$ is a standard fibered solid torus. 
+\end{proof}
+
+\begin{cor} There are three commensurability classes of Seifert manifolds with boundary, depending on $\chi$ as shown in Table \ref{commensurability:table}.
+\end{cor}
+\begin{proof}
+The surfaces $S_{g,b}$ with $g+b>2$ are commensurable (exercise).
+\end{proof}
+
+We now characterise some commensurability classes by looking at the fundamental groups.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{c||ccc}
+        & \phantom{\Big|} $\chi>0$ & $\chi = 0$ & $\chi<0$ \\
+ \hline \hline
+ $e=0$ & \phantom{\Big|} $\matZ$ & $\matZ^3$ & \\
+ $e\neq 0$ & \phantom{\big|} $\{e\}$ & &  \\
+ $\partial M\neq \emptyset$ & \phantom{\Big|} $\matZ$ & $\matZ^2$ &
+\end{tabular}
+\vspace{.2 cm}
+\nota{There are five Seifert manifolds $M$ with $\pi_1(M) = \matZ^h$ and they belong to distinct commensurability classes. The fundamental group $\pi_1(N)$ of every other manifold $N$ in these five classes is virtually abelian: it contains $\matZ^h$ as a finite-index subgroup.}
+\label{abelian:group:table}
+\end{center}
+\end{table}
+
+\subsection{Virtually abelian fundamental groups} \label{virtually:abelian:subsection}
+A group $G$ is \emph{virtually abelian of rank $h$} if it contains $\matZ^h$ as a finite-index subgroup. 
+
+This is a finite-index-independent property: if $G'<G$ has finite index, the group $G'$ is virtually abelian of rank $h$ if and only if $G$ is. Therefore a manifold $M$ has a virtually abelian fundamental group of rank $h$ $\Longleftrightarrow$ every manifold $N$ commensurable with $M$ also has $\Longleftrightarrow$ there is a manifold $N$ in the commensurability class with $\pi_1(N)=\matZ^h$.
+
+\begin{prop} \label{virtually:abelian:prop}
+There are five commensurability classes of Seifert manifolds with virtually abelian fundamental groups, shown in Table \ref{abelian:group:table}.
+\end{prop}
+\begin{proof}
+These five classes contain $S^2\times S^1$, $S^1\times S^1\times S^1$, $S^3$, $D\times S^1$, and $A\times S^1$. The remaining four classes do not contain manifolds with abelian fundamental group: every manifold in these classes is covered by some $S \times S^1$ with $\chi(S)<0$ or $\big(S_g, (1,e)\big)$ with $g\geqslant 1$ and $e\geqslant 1$ (use Exercise \ref{e:construct:ex}). The fundamental group of such manifolds is not $\matZ^h$: the former because $\pi_1(S)$ is not abelian, and the latter because its abelianization contains torsion, see Exercise \ref{bundle:ex}.
+\end{proof}
+
+It could be reasonable to expect these five commensurability classes to contain manifolds of some simpler topological nature, which are easier to study and classify. We will see however in Section \ref{Seifert:finite:subsection} that the Seifert manifolds covered by $S^3$ are quite interesting and their topological classification is certainly not immediate: we already experienced that for lens spaces in Theorem \ref{Lpq:teo}, whose classification is quite involved. The other four classes are indeed of a simpler nature: we now prove that each contains finitely many manifolds, and we classify them completely.
+
+\subsection{Finite commensurability classes} \label{finite:classes:prop}
+We now completely identify the commensurability classes of Seifert manifolds that contain only finitely many manifolds.
+
+We start by considering manifolds $M$ with boundary. We have already seen that the class $\chi>0$ contains only the solid torus. The class $\chi=0$ also contains few manifolds:
+
+\begin{prop} \label{diffeo:fiberings:prop}
+Every Seifert fibration with boundary and $\chi = 0$ is isomorphic to one of the following:
+$$ A \times S^1, \qquad S \timtil S^1, \qquad \big(D, (2,1), (2,-1) \big).$$
+The Seifert manifold is correspondingly diffeomorphic to the interval bundles
+$ T \times I$, $K \timtil I$, and $K \timtil I$ again. Here $A$, $S$, and $K$ are the annulus, the M\"obius strip, and the Klein bottle.
+\end{prop}
+\begin{proof}
+The orbifolds with boundary and $\chi=0$ are $A$, $S$, and $(D,2,2)$.
+Every Seifert fibration over $(D,2,2)$ is isomorphic to $\big(D,(2,2n+1),(2,2m+1)\big)$ and does not depend on $n,m\in \matZ$ by Proposition \ref{S:moves:prop}. Hence there is only one Seifert fibration over the orbifold $(D,2,2)$, which we write as $\big(D,(2,1),(2,-1)\big)$ only for aesthetic reasons (to get $e=0$).
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12 cm] {\iftoggle{BW}{two_fibrations-BW}{two_fibrations}}
+\nota{Draw the orientable line bundle over the Klein bottle as $S^1\times [-1,1]\times [-1,1]/_\psi$ where $\psi$ identifies the lower and upper (\iftoggle{BW}{light grey}{yellow}) annuli $S^1\times [-1,1]\times \{\pm 1\}$ by gluing $(e^{i\theta},t)$ to $(e^{-i\theta},-t)$. The Klein bottle is drawn in \iftoggle{BW}{grey}{green} (left). 
+This manifold has two fibrations: a horizontal one with fibres $S^1\times x \times y$ and base surface the \iftoggle{BW}{grey}{green} M\"obius strip (centre), and a vertical one with fibres $x\times y \times [-1,1]$ and base surface the \iftoggle{BW}{grey}{green} disc with two cone points of order two (the \iftoggle{BW}{grey}{green} annulus becomes a disc after identifying the points $(e^{i\theta}, 0)$ and $(e^{-i\theta}, 0)$). The two singular fibres of order two lie above $(\pm 1,0)$ and are drawn in \iftoggle{BW}{grey}{red} (right).}
+\label{two_fibrations:fig}
+\end{center}
+\end{figure}
+
+We get three manifolds and we now prove that they are all diffeomorphic to some interval bundle. The diffeomorphism $A\times S^1 \isom T\times I$ is obvious. Draw $K\timtil I$ as $S^1\times [-1,1]\times [-1,1]/_\psi$ as in Figure \ref{two_fibrations:fig}. The manifold has two fibrations: a horizontal one by circles $S^1\times x\times y$, and a vertical one by segments $x\times y \times [-1,1]$. The horizontal one gives $S\timtil S^1$ and the vertical one closes to a Seifert fibration over the disc with two singular fibres of order two, and hence is $(D,(2,1),(2,-1))$.
+\end{proof}
+
+\begin{cor}
+Every Seifert manifold with boundary and $\chi\geqslant 0$ is diffeomorphic to $D\times S^1$, $T\times I$, or $K\timtil I$.
+\end{cor}
+
+We now turn to closed Seifert manifolds. We have seen that $K\timtil I$ fibres in two non-isomorphic ways, and this has some consequences.
+
+\begin{cor} \label{Seifert:diffeo:cor}
+The following diffeomorphisms hold:
+\begin{align*}
+\big(S^2,(2,1),(2,-1),(p,q)\big) & \isom \big(\matRP^2, (q,p)\big), \\
+\big(S^2,(2,1),(2,1),(2,-1),(2,-1)\big) & \isom K\timtil S^1.
+\end{align*}
+\end{cor}
+\begin{proof}
+Both equalities follow from $\big(D, (2,1), (2,-1)\big) \isom S\timtil S^1$. In the first we look at Figure \ref{two_fibrations:fig} to check that a $(p,q)$ curve in $\big(D,(2,1),(2,-1)\big)$ becomes a $(q,p)$ curve in $S\timtil S^1$.
+The second equality is obtained by doubling the line bundle $K\timtil I$.
+\end{proof}
+
+We want to classify the closed Seifert manifolds with $\chi\geqslant 0$ and $e=0$. We start with the case $\chi >0$.
+
+\begin{prop} \label{rp:prop}
+Every closed Seifert fibration with $\chi>0$ and $e=0$ is isomorphic to one of the following: 
+$$S^2 \times S^1, \qquad \matRP^2 \timtil S^1, \qquad \big(S^2, (p,q), (p,-q)\big).$$
+The manifolds of the last type are all diffeomorphic to $S^2\times S^1$.
+\end{prop}
+\begin{proof}
+If the base surface $S$ is a sphere with $\leqslant 2$ singular fibres, we use Exercise \ref{two:lens:ex}. Otherwise $S$ is one of the following orbifolds (see Table \ref{orbifold:elliptic:table}):
+$$(S^2,2,2,p), \quad (S^2,2,3,3), \quad (S^2,2,3,4), \quad (S^2,2,3,5), \quad \matRP^2, \quad (\matRP^2, p) $$
+with $p\geqslant 2$. In all cases except $\matRP^2$, we get $e\neq 0$ for any choice of Dehn filling parameters: for instance 
+$$e\big(S^2,(2,q_1),(2,q_2),(p,q_3)\big) = \frac{q_1+q_2}2 + \frac{q_3}p \neq 0.$$ 
+The other cases are analogous.
+\end{proof}
+
+The manifold $\matRP^2 \timtil S^1$ is not diffeomorphic to $S^2\times S^1$, because they have non-isomorphic fundamental groups. Moreover, $\matRP^2 \timtil S^1$ is not prime:
+
+\begin{ex} The two manifolds $\matRP^2\timtil S^1$ and $\matRP^3\#\matRP^3$ are diffeomorphic.
+\end{ex}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{c||c}
+\phantom{\Big|} $M$ & $H_1(M,\matZ)$ \\
+\hline \hline
+\phantom{\Big|} $ T \times S^1$ & $\matZ^3$ \\ 
+\phantom{\big|} $ K \timtil S^1$ & $\matZ \times \matZ/_{2\matZ} \times \matZ/_{2\matZ}$ \\
+\phantom{\Big|} $ \big(S^2, (2,1), (2,1), (2,-1), (2,-1) \big) $ & $\matZ \times \matZ/_{2\matZ} \times \matZ/_{2\matZ}$ \\
+\phantom{\big|} $ \big(S^2, (3,1), (3,1), (3,-2) \big) $ & $\matZ \times \matZ/_{3\matZ} $ \\
+\phantom{\Big|} $ \big(S^2, (2,1), (4,-1), (4,-1) \big) $ & $\matZ \times \matZ/_{2\matZ} $ \\
+\phantom{\big|} $ \big(S^2, (2,1), (3,1), (6,-5) \big) $ & $\matZ$ \\
+\phantom{\Big|} $ \big(\matRP^2, (2,1), (2,-1)\big) $ & $\matZ/_{4\matZ} \times \matZ/_{4\matZ}$
+\end{tabular}
+\vspace{.2 cm}
+\nota{The seven closed Seifert fibrations with $\chi=0$ and $e=0$. Two of these manifolds are actually diffeomorphic, so we get six closed Seifert manifolds up to diffeomorphism, distinguished by their homology.}
+\label{seven:table}
+\end{center}
+\end{table}
+
+We will soon see that $\matRP^2 \timtil S^1$ is the unique non-prime Seifert manifold. We now turn to the $\chi=0$ case.
+
+\begin{prop} \label{chi:zero:prop}
+Every closed Seifert fibration with $\chi = 0$ and $e=0$ is isomorphic to one of the seven listed in Table \ref{seven:table}. These seven manifolds are all pairwise non-diffeomorphic, except
+$$\big(S^2,(2,1),(2,1),(2,-1),(2,-1)\big) \isom K\timtil S^1.$$
+\end{prop}
+\begin{proof}
+The closed orbifolds with $\chi =0$ are 
+$$T,\ K,\ (\matRP^2, 2,2),\ (S^2, 2,2,2,2),\ (S^2,2,3,6),\ (S^2,3,3,3),\ (S^2,2,4,4).$$ 
+It is easy to show that by imposing $e=0$ we get the fibrations listed.
+The homology calculation is an easy exercise and luckily distinguishes all the manifolds except (of course) the two diffeomorphic ones (see Corollary \ref{Seifert:diffeo:cor}).
+\end{proof}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{c||ccc}
+       & \phantom{\Big|} $\chi>0$ & $\chi = 0$ & $\chi<0$ \\
+ \hline \hline
+ $e=0$ & \phantom{\Big|} $2$ & $6$ & $\infty$ \\
+ $e\neq 0$ & \phantom{\big|} $\infty$ & $\infty$ & $\infty$ \\
+ $\partial M \neq \emptyset$  & \phantom{\Big|} $1$ & $2$ & $\infty$
+\end{tabular}
+\vspace{.2 cm}
+\nota{The number of Seifert manifolds in each commensurability class.}
+\label{finite:table}
+\end{center}
+\end{table}
+
+Summing up, there are four commensurability classes containing finitely many manifolds, and their number is shown in Table \ref{finite:table}.
+
+\subsection{Universal cover}
+We now determine the universal cover of all the closed Seifert manifolds. Nothing strange happens: we either get $S^3$, $S^2\times \matR$, or $\matR^3$.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{c||ccc}
+       & \phantom{\Big|} $\chi>0$ & $\chi = 0$ & $\chi<0$ \\
+ \hline \hline
+ $e=0$ & \phantom{\Big|} $S^2 \times \matR$ & $\matR^3$ & $\matR^3$ \\
+ $e\neq 0$ & \phantom{\big|} $S^3$ & $\matR^3$ & $\matR^3$
+\end{tabular}
+\vspace{.2 cm}
+\nota{The universal cover of a closed Seifert manifold depends on its invariants $e$ and $\chi$.}
+\label{universal:table}
+\end{center}
+\end{table}
+
+\begin{prop} \label{universal:Seifert:prop}
+The universal cover of a closed Seifert manifold is shown in Table \ref{universal:table}.
+\end{prop}
+\begin{proof}
+The universal cover of a circle bundle over a surface $S$ with $\chi(S)\leqslant 0$
+is a line bundle over the universal cover $\matR^2$ of $S$. The line bundle is trivial since $\matR^2$ is contractible and we get $\matR^2\times \matR = \matR^3$.
+\end{proof}
+
+\begin{cor}
+Every Seifert manifold $M$ is either irreducible or covered by $S^2\times \matR$. In the latter case $M$ is diffeomorphic to $S^2\times S^1$ or $\matRP^2\timtil S^1$.
+\end{cor}
+\begin{proof}
+If the universal cover is $S^3$ or $\matR^3$, it is irreducible and hence also $M$ is. When $M$ has boundary, we apply the proof of Proposition \ref{universal:Seifert:prop} to the interior of $M$ and find that its universal cover is $\matR^3$.
+\end{proof}
+
+Therefore every Seifert manifold is prime except $\matRP^2 \timtil S^1 = \matRP^3 \# \matRP^3$.
+
+\subsection{Fibre-Parallel Dehn filling}
+We have investigated various topological properties of Seifert manifolds, and we are now curious: what happens if we perform a forbidden fibre-parallel Dehn filling? We start by looking at the basic block $P\times S^1$, where $P$ is a pair-of-pants.
+
+\begin{prop}
+A fibre-parallel Dehn filling on $P\times S^1$ produces the connected sum of two solid tori; the fibres of $P\times S^1$ become the meridians of the solid tori.
+\end{prop}
+\begin{proof}
+Let $\gamma \subset \partial P$ be the component whose torus $\gamma \times S^1$ is filled. Pick an essential arc $\alpha$ in $P$ with both endpoints in $\gamma$: the fibered annulus $A = \alpha \times S^1$ closes up to a two-sphere $S$ in the Dehn filling. 
+
+The sphere $S$ separates the filled manifold into two portions, each diffeomorphic to $T\times [0,1]$ with a two-handle attached along a non-trivial curve: this is a holed solid torus. Every fibre now bounds a disc there.
+\end{proof}
+
+We now turn to arbitrary bundles.
+
+\begin{ex}
+Let $S$ be a compact surface with $b\geqslant 1$ boundary components.
+The fibre-parallel Dehn filling of $S \timtil S^1$ is diffeomorphic to the connected sum of $b-1$ solid tori and $-\chi(S)+2-b$ copies of $S^2\times S^1$.
+\end{ex}
+
+We now deduce a more general fact: a fibre-parallel Dehn filling of a Seifert manifold is a connected sum of lens spaces and solid tori.
+
+\begin{cor} \label{fiber:parallel:cor}
+The fiber-parallel Dehn filling of
+$$\big(S, (p_1,q_1), \ldots, (p_h, q_h)\big)$$
+is diffeomorphic to the connected sum
+$$L(p_1,q_1) \# \ldots \# L(p_h,q_h) \#_k (S^2 \times S^1) \#_{b-1} (D^2 \times S^1)$$
+where $S$ has $b$ boundary components and $k=-\chi(S) +2-b$.
+\end{cor}
+If $S$ is orientable then $k$ is twice the genus of $S$. 
+
+\begin{cor} \label{DF:Seifert:cor}
+Every Dehn filling of a Seifert manifold is a connected sum of Seifert manifolds.
+\end{cor}
+
+If we have a Seifert manifold $M$ with many boundary components and we Dehn fill some of them, we are guaranteed to produce a new Seifert manifold, unless one of the Dehn filling kills a fiber-parallel slope: in that case the manifold ``degenerates'' to a connected sum of lens spaces and solid tori. This is an interesting phenomenon to keep in mind, because it will reproduce in Chapter \ref{Hyperbolic:Dehn:chapter} in the hyperbolic world: we will show that by Dehn filling a cusped hyperbolic three-manifold we always get a new hyperbolic manifold if we avoid a finite number of ``exceptional slopes'' on every boundary torus; if some of the exceptional slopes is employed, the manifold is possibly not hyperbolic, and it typically ``degenerates'' and breaks into simpler pieces.
+
+\section{Classification}
+In the previous section we have classified the Seifert fibrations up to isomorphism and the Seifert manifolds up to commensurability. We now want to complete our study by classifying Seifert manifolds up to diffeomorphism: our final achievement will be Theorem \ref{Seifert:teo} that determines precisely the Seifert manifolds that admit non-isomorphic fibrations.
+
+The proof of Theorem \ref{Seifert:teo} is not straightforward: we will apply different techniques to different classes of Seifert manifolds. We start by studying the fundamental group of Seifert manifolds, showing in particular that it fits into a nice short exact sequence. Then we study essential surfaces: we show that these can always be isotoped to be either in ``vertical'' or ``horizontal'' position with respect to the fibration.
+
+In ``most'' cases, a Seifert manifold contains many incompressible vertical tori and these can be used to characterise the manifold. When the Seifert manifold is ``small'' it contains no such tori, and we must use different techniques: for instance we look at its fundamental group, which may be finite or infinite. 
+
+
+
+\subsection{Fundamental group}
+We study the fundamental group of Seifert manifolds. Recall that every closed Seifert fibration has two fundamental invariants $\chi$ and $e$ that determine the commensurability class of the Seifert manifold. Finite fundamental groups are easily detected:
+
+\begin{prop}
+A closed Seifert manifold has finite fundamental group $\Longleftrightarrow$ it is covered by $S^3$ $\Longleftrightarrow$ it has $\chi>0$ and $e\neq 0$.
+\end{prop}
+\begin{proof}
+A compact manifold has finite fundamental group $\Longleftrightarrow$ its universal cover is also compact. Table \ref{universal:table} applies.
+\end{proof}
+
+
+Ordinary fibrations generate exact sequences in homotopy, and also Seifert fibrations do. Recall that a good orbifold has a well-defined fundamental group, and that all locally orientable surface orbifolds are good except $(S^2, p)$ and $(S^2, p_1, p_2)$ with $p_1\neq p_2$. We will ignore bad orbifolds, since the Seifert manifolds fibering over them are lens spaces.
+
+\begin{prop}
+Let $M \to S$ be a Seifert fibration over a good orbifold $S$. There is an exact sequence
+$$1 \longrightarrow K \longrightarrow \pi_1(M) \longrightarrow \pi_1(S)\longrightarrow 1$$
+where $K$ is the normal cyclic subgroup of $\pi_1(M)$ generated by a regular fiber and $\pi_1(S)$ is the orbifold fundamental group of $S$. 
+\end{prop}
+\begin{proof}
+The universal cover $\tilde M$ of $M$ fibres over the universal cover $\tilde S$ of $S$. 
+The fiber is a circle or a line, depending on whether $\pi_1(M)$ is finite or infinite, see Proposition \ref{universal:Seifert:prop}.
+
+The group $\pi_1(M)$ acts fibre-preservingly on $\tilde M$ and hence acts also on $\tilde S$ as a covering automorphism for $\tilde S \to S$. This induces a natural homomorphism $\pi_1(M) \to \pi_1(S)$. Its kernel consists of all deck transformations of $\tilde M$ that fix the fibres: these are precisely $K$. The homomorphism is surjective because every loop in $S$ lifts to a loop in $M$.
+\end{proof}
+
+We now look more closely at the normal cyclic subgroup $K$.
+
+\begin{prop} \label{infinite:K:prop}
+The group $K$ is infinite if and only if $\pi_1(M)$ is.
+\end{prop}
+\begin{proof}
+The group $K$ acts freely and proper discontinuously on each fiber of the universal cover $\tilde M$, and it quotients it to a circle. The fiber in $\tilde M$ is compact if and only if $\pi_1(M)$ is finite.
+\end{proof}
+
+\begin{prop} \label{central:prop}
+The group $K$ lies in the centre of $\pi_1(M)$ if and only if $S$ is orientable or $K$ has order two.
+\end{prop}
+\begin{proof}
+If $S$ is orientable, the manifold $M$ is a Dehn filling of a product $S' \times S^1$ where the fiber is obviously in the centre, and it remains so after the Dehn filling. If $S$ is non-orientable, pick an orientation-reversing loop $\alpha$ in $S$: there is a Klein bottle fibering above $\alpha$ and we get $\alpha g \alpha^{-1} = g^{-1}$ for the fiber $g\in K$. Therefore $K$ is central if and only if $g^2 = e$.
+\end{proof}
+
+In many cases the subgroup $K$ may be characterised intrinsically.
+
+\begin{prop}
+Let $M$ be a Seifert manifold whose fundamental group is not virtually abelian. The subgroup $K\triangleleft \pi_1(M)$ is the unique maximal cyclic normal subgroup of $\pi_1(M)$.
+\end{prop}
+\begin{proof}
+Suppose by contradiction that $\pi_1(M)$ contains a cyclic normal subgroup $K'$ which is not contained in $K$. Therefore its image in $\pi_1(S)$ is a non-trivial cyclic normal subgroup. 
+
+If $\chi(S)<0$ then $\interior S = \matH^2/_\Gamma$ for a discrete group $\Gamma=\pi_1(S)$ of isometries of $\matH^2$. Corollary \ref{normal:abelian:cor} implies that $\Gamma$ does not contain non-trivial cyclic normal subgroups.
+
+If $\chi(S) = 0$ then $\interior S=\matR^2/_\Gamma$ for a discrete group $\Gamma = \pi_1(S)$ of isometries of $\matR^2$, which in fact may contain cyclic normal subgroups: so we need a more careful analysis. Since $\pi_1(M)$ is not virtually abelian, the surface $S$ is closed and $e\neq 0$.
+
+The image of $K'$ in $\pi_1(S)$ is non-trivial, normal, and cyclic, and is hence infinite (finite cyclic groups are generated by rotations and cannot be normal). Therefore $K'$ is infinite and it intersects non-trivially every finite-index subgroup of $\pi_1(M)$: up to substituting $M$ with a finite cover we may suppose that $S$ is a torus. 
+
+The image of $K'$ is a non-trivial subgroup of $\pi_1(S) =\matZ \times \matZ$. 
+Pick two elements $a' \in K', b \in \pi_1(M)$ whose images in $\pi_1(S)$ generate a finite-index subgroup of $\pi_1(S)$. Pick a generator $a\in K$. The three elements $a,a',b$ generate a finite-index subgroup of $\pi_1(M)$. The element $a$ is central by Proposition \ref{central:prop}. We have $b^{-1}a'b = (a')^{\pm 1}$ because $K' = \matZ $ is normal.  The elements $a,a',b^2$ commute and generate a finite-index abelian $\matZ^3<\pi_1(M)$: a contradiction.
+\end{proof}
+
+\begin{cor} \label{center:cor}
+Let $M$ be a Seifert manifold whose fundamental group is not virtually abelian. The centre of $\pi_1(M)$ is $K$ if $S$ is orientable and trivial otherwise.
+\end{cor}
+\begin{proof}
+Use Propositions \ref{central:prop} and \ref{infinite:K:prop}.
+\end{proof}
+
+We have collected some important information on the fundamental group of Seifert manifolds. We now move from algebra to topology and study the essential surfaces in Seifert manifolds: we will prove a theorem analogous to Proposition \ref{line:bundles:prop}, namely that every essential surface in a Seifert manifold is either horizontal or vertical.
+
+\subsection{Horizontal and vertical surfaces}
+We now want to study how Seifert manifolds may contain interesting surfaces.
+Let $M \to S$ be a Seifert fibration. A properly embedded surface $\Sigma \subset M$ is
+\begin{itemize}
+\item \emph{vertical} if it is a union of some regular fibres,
+\item \emph{horizontal} if it is transverse to all fibres.
+\end{itemize}
+
+If $\Sigma$ is vertical, it is either an annulus, a torus, or a Klein bottle, projecting respectively to an arc, an orientation-preserving, or an orientation-reversing simple closed curve that avoids the cone points. Vertical surfaces are in 1-1 correspondence with 1-dimensional objects in $S$ and are thus easily determined.
+
+Horizontal surfaces are more subtle. We first note that if $\Sigma$ is horizontal, the natural projection $\Sigma \to S$ is an orbifold covering. When does $M$ contain a horizontal surface? It certainly does when $M$ has boundary.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 5 cm] {\iftoggle{BW}{Euler_zero-BW}{Euler_zero}}
+\nota{We cut $S$ along $k$ (\iftoggle{BW}{grey}{blue}) arcs to get $S=S_0\cup D_1\cup \ldots \cup D_k$ with $D_i$ a disc containing the (\iftoggle{BW}{grey}{red}) cone point $p_i$: here $k=3$. }
+\label{Euler_zero:fig}
+\end{center}
+\end{figure}
+
+\begin{prop}
+Every Seifert fibration $M\to S$ with boundary contains a horizontal surface.
+\end{prop}
+\begin{proof}
+We have $M=\big(S,(p_1,q_1),\ldots,(p_k,q_k)\big)$. We cut $S$ along 
+$k$ arcs as in Figure \ref{Euler_zero:fig} to get $S=S_0\cup D_1\cup\ldots \cup D_k$ with $D_i$ a disc containing the cone point $p_i$. Let $p$ be a common multiple of $p_1,\ldots, p_k$. The bundle over $S_0$ has no singular fibres and is hence $S_0\timforsetil S^1$. The bundle $S_0\timforsetil S^1$ contains a (possibly disconnected) horizontal surface $\Sigma$ intersecting the fibres in any fixed number $n$ of points (exercise) and we pick one $\Sigma$ with $n=p$.
+
+For every $i=1,\ldots, k$ there is a standard fibered solid torus lying above $D_i$, attached to $S_0 \timforsetil S^1$ via a vertical annulus $A$. The meridian of this solid torus intersects $A$ into $p_i$ horizontal segments. Pick $\frac{p}{p_i}$ parallel meridians: both $\Sigma$ and these meridians intersect $A$ in $p$ horizontal segments and can hence be glued to form a horizontal surface for $M$.
+\end{proof}
+
+On closed Seifert manifolds the existence of a horizontal surface is fully detected by the Euler number.
+
+\begin{prop}
+A closed Seifert fibration $M \to S$ contains a horizontal surface if and only if $e=0$.
+\end{prop}
+\begin{proof}
+Suppose $M\to S$ contains a horizontal surface $\Sigma$. We pull-back the fibration along the orbifold covering $\Sigma \to S$ to get a $\tilde M \to \Sigma$. The horizontal surface $\Sigma$ lifts to a section of $\tilde M \to \Sigma$. Since the fibration has a section, we get $e(\tilde M) = 0$ and hence $e(M) = 0 $.
+
+Conversely, suppose $e(M)=0$. Drill one open fibered solid torus from $M$: we know by the previous proposition that the resulting fibration has a horizontal surface $\Sigma$. Its boundary consists of parallel curves of some type $(p,q)$ with $p>0$. If we Dehn-fill the manifold by killing these curves we get another Seifert manifold $M'$, to which the fibration and the section extend: therefore $e(M')=0$. At most one pair $(p,q)$ may produce a manifold with $e=0$, and hence $M=M'$.
+\end{proof}
+
+\subsection{Essential surfaces}
+Recall the definition of essential surface from Sections \ref{essential:discs:subsection} and \ref{essential:subsection}. We now show that essential surfaces in irreducible Seifert manifolds are either vertical or horizontal. 
+
+\begin{prop} \label{v:h:prop}
+Let $M\to S$ be a Seifert fibration and $M$ be irreducible. Every essential surface $\Sigma$ is isotopic to a vertical or horizontal surface.
+\end{prop}
+\begin{proof}
+See $M$ as a Dehn filling of $S\timforsetil S^1$. We suppose that $\Sigma$ intersects transversely the cores of the filling solid tori in the minimum number of points up to isotopy. After an isotopy $\Sigma$ intersects the filling solid tori into parallel horizontal discs.
+
+Decompose $S$ into one 0-handle and some $g$ one-handles. We see the 0-handle as a $2g$-gon and each 1-handle as a rectangle. Above each edge of the $2g$-gon or of a rectangle there is a vertical annulus $A$. We put $\Sigma$ in transverse position with respect to these vertical annuli and up to isotopy we may suppose that $\Sigma\cap A$ consists either of vertical fibres or horizontal arcs for each $A$. Indeed we can easily eliminate trivial circles (because $\Sigma$ is incompressible and $M$ is irreducible) and arcs forming bigons with $\partial A$ (because $\Sigma$ is $\partial$-irreducible and has minimal intersection with the solid tori cores).
+
+Above every polygonal handle of $S$ there is a prismatic solid torus $W$. The closed curves $\Sigma \cap \partial W$ are made of horizontal or vertical arcs and are hence essential, forming some parallel slopes in $\partial W$. We can suppose that $\Sigma\cap W$ consists of essential discs or incompressible surfaces (if there is a compressing disc $D$ inside $W$, then $\partial D\subset \Sigma$ bounds a disc in $\Sigma$ which we isotope to $D$ reducing the intersection with the vertical annuli). 
+We can also suppose that $\Sigma\cap W$ is $\partial$-incompressible with respect to every vertical annulus $A\subset \partial W$, in the sense that there is no $\partial$-compressing disc $D$ with $\partial D\subset A \cup \Sigma$ (otherwise we isotope $\Sigma$ and reduce intersections).
+
+By Proposition \ref{incompressible:solid:torus:prop} the surface $\Sigma\cap W$ consists either of essential discs or $\partial$-parallel annuli (not both). In the first case $\Sigma\cap \partial W$ consists of horizontal curves and $\Sigma\cap W$ consists of horizontal discs. In the second case, since the annuli are $\partial$-incompressible with respect to the vertical annuli in $\partial W$, their boundaries must be vertical circles lying in distinct vertical annuli. Up to isotopy $\Sigma\cap W$ consists of vertical annuli.
+
+We have decomposed $\Sigma$ into horizontal discs or vertical annuli, and both cannot coexist. Hence $\Sigma$ is either horizontal or vertical.
+\end{proof}
+
+\begin{cor} \label{partial:cor}
+Every Seifert manifold is irreducible and $\partial$-irreducible, except $S^2\times S^1$, $\matRP^2 \timtil S^1$, and $D\times S^1$.
+\end{cor}
+\begin{proof}
+We already know it is irreducible with the first two exceptions. If it contains an essential disc $D$, it contains a horizontal one which covers the base surface $S$ of the fibration, hence $\chi (S) >0$ and we get $D\times S^1$.
+\end{proof}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 10 cm] {\iftoggle{BW}{vertical_incompressible-BW}{vertical_incompressible}}
+\nota{A vertical torus or annulus is essential, unless its projection is: the boundary of a disc containing zero (1) or one (2) singular cone points, an arc parallel to the boundary (3), or a $\partial$-parallel closed curve (4).}
+\label{vertical_incompressible:fig}
+\end{center}
+\end{figure}
+
+We now prove a converse to Proposition \ref{v:h:prop}. 
+
+\begin{prop} \label{incompressible:vertical:prop}
+Let $M\to S$ be a Seifert fibration and $M$ be irreducible. Let $\Sigma \subset M $ be an orientable connected surface. Suppose that
+\begin{itemize}
+\item $\Sigma$ is horizontal, or
+\item $\Sigma$ is vertical and its projection is not as in Figure \ref{vertical_incompressible:fig}.
+\end{itemize}
+Then $\Sigma$ is essential.
+\end{prop}
+\begin{proof}
+If $\Sigma$ is horizontal, it finitely covers $S$ and hence $\pi_1(\Sigma)$ injects in $\pi_1(S)$. Therefore it injects also in $\pi_1(M)$ and $\Sigma$ is incompressible. By doubling everything along $\partial M$ we get a horizontal $D\Sigma$ inside $DM$, which must also be incompressible: this implies that $\Sigma$ is $\partial$-incompressible. It is also clearly not $\partial$-parallel, so it is essential.
+
+If $\Sigma$ is vertical, by cutting along it we get one or two Seifert fibrations. Since $\Sigma$ is not as in Figure \ref{Euler_zero:fig}-(right), the base orbifolds of these fibrations have $\chi\leqslant 0$, so their boundary is incompressible by Corollary \ref{partial:cor}. Therefore $\Sigma$ is incompressible and $\partial$-incompressible. Moreover it is not a $\partial$-parallel torus because none of the cut Seifert manifold is $A\times S^1$.
+\end{proof}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 5 cm] {\iftoggle{BW}{vertical_examples-BW}{vertical_examples}}
+\nota{Some essential vertical annuli and tori in a Seifert manifold fibering over a disc with 2 or 3 singular points.}
+\label{vertical_examples:fig}
+\end{center}
+\end{figure}
+
+\begin{example}
+The curves in Figure \ref{vertical_examples:fig} determine vertical essential annuli and tori in Seifert manifolds fibering over the disc with 2 or 3 singular fibres.
+\end{example}
+
+We can now fully detect essential tori in almost all Seifert manifolds.
+
+\begin{cor} \label{vertical:tori:cor}
+Let $M\to S$ be a Seifert fibration and $M$ be irreducible. If $M$ is not covered by a 3-torus or $T\times [0,1]$, every essential torus or annulus is vertical.
+\end{cor}
+\begin{proof}
+Horizontal tori or annuli may arise only when $\chi=0$ and $\partial M\neq 0$ or $e=0$.
+\end{proof}
+
+\subsection{Simple Seifert manifolds} \label{simple:Seifert:subsection}
+We want to classify Seifert manifolds up to diffeomorphism. To do so, we group them into some classes, and use different techniques on each class. Recall that a 3-manifold is \emph{simple} if it contains no essential sphere, disc, annulus, or torus. 
+
+\begin{prop} \label{simple:Seifert:prop}
+A Seifert manifold is simple $\Longleftrightarrow$ it fibres over $S^2$ with at most three singular fibres and is not covered by $S^2\times S^1$ or the 3-torus. 
+\end{prop}
+\begin{proof}
+Let $M\to S$ be a Seifert fibration. The manifold $M$ contains an essential vertical torus or annulus $\Longleftrightarrow$ the orbifold $S$ contains an arc or an orientation-preserving simple closed curve that is not as in Figure \ref{vertical_incompressible:fig}. The only orbifolds that do not contain such arcs or curves are: $D$ with at most one fiber, $S^2$ with at most three fibres, and $\matRP^2$ with at most one fiber. In the first case $M$ is a solid torus, which contains an essential disc, and in the third case $M$ also fibres over $S^2$ with at most three singular fibres, see Corollary \ref{Seifert:diffeo:cor}. 
+
+We are left to consider horizontal closed essential surfaces with $\chi \geqslant 0$. These arise only when $e=0$ and $\chi(S)\geqslant 0$, \emph{i.e.}~when $M$ is covered by $S^2\times S^1$ or the 3-torus.
+\end{proof}
+
+We note in particular that all the simple Seifert manifolds are closed.
+
+\begin{rem}
+Among the nine commensurability classes of Seifert manifolds, three contain simple manifolds: those with empty boundary and $e\neq 0$. The Euler characteristic $\chi$ of a sphere with 3 singular fibres may in fact be positive, null, or negative. In particular there are simple Seifert manifolds with finite and with infinite fundamental group.
+\end{rem}
+
+\subsection{Seifert manifolds with boundary}
+To classify Seifert manifolds up to diffeomorphism, we will show that (except a few explicit exceptions) a generic Seifert manifold has a unique fibration up to isomorphism. We start with the easier non-empty-boundary case.
+
+\begin{prop} \label{except:non-empty:prop}
+Every Seifert manifold $M$ with non-empty boundary admits only one fibration up to isomorphism, except in the following cases:
+\begin{itemize}
+\item $M = D \times S^1$ fibres as $\big( D, (p,q) \big)$,
+\item $M = S \timtil S^1$ fibres as $\big(D, (2,1), (2,-1) \big)$.
+\end{itemize}
+Here $S$ is the M\"obius strip.
+\end{prop}
+\begin{proof}
+If $M$ fibres over an orbifold $S$ with $\chi(S)\geqslant 0$, we have already proved this in Section \ref{finite:classes:prop}. Suppose that $M$ has two fibrations $M\to S$ and $M\to S'$ with $\chi(S), \chi(S')< 0$. 
+
+Pick a minimal collection of properly embedded arcs in $S$ that avoid the cone points and decompose $S$ into discs, each containing at most one cone point. Each arc determines an essential vertical annulus in $M\to S$. The complement of these annuli consists of vertical fibered solid tori.
+
+By Proposition \ref{incompressible:vertical:prop} these annuli are essential and by  Proposition \ref{v:h:prop} they are isotopic to vertical annuli with respect to the other fibration $M\to S'$ (they cannot be horizontal since $\chi(S')<0$). Therefore we may isotope the fibration $M\to S'$ so that the annuli are vertical in both fibrations, and by further isotoping we can in fact suppose that the two fibrations coincide on a neighbourhood of these annuli. 
+
+The complement of this neighbourhood consists of solid tori. The two fibrations are obtained from the same fibration by Dehn-filling along the same slopes, and hence they are isomorphic.
+\end{proof}
+
+\subsection{Seifert manifolds with infinite fundamental group}
+We now turn to closed Seifert manifolds. We start by examining the $\chi\leqslant 0$ case.
+
+\begin{prop}
+Every closed Seifert manifold $M$ not covered by $S^3$ and $S^2\times S^1$ admits only one fibration up to isomorphism, except:
+$$\big(S^2,(2,1),(2,1),(2,-1),(2,-1)\big) \isom K\timtil S^1. $$
+\end{prop}
+\begin{proof}
+If the Seifert manifold $M$ is covered by the 3-torus, we have already proved this in Proposition \ref{chi:zero:prop}. Suppose that $M$ is not covered by $S^3$, $S^2\times S^1$, or the 3-torus. Let $M$ have two fibrations $M\to S$ and $M\to S'$. 
+
+We first suppose that $M$ contains an essential torus. We try to proceed as in the proof of Proposition \ref{except:non-empty:prop} using vertical tori instead of annuli. Essential tori are vertical to both fibrations by Corollary \ref{vertical:tori:cor}. In particular both $S$ and $S'$ are not spheres with at most three singular points.
+
+Let $\dot S\subset S$ be $S$ without its singular points. Pick two multicurves $C_1,C_2 \subset \dot S$ without puncture-parallel components, that fill $\dot S$ and intersect minimally. By filling $\dot S$ we mean that $\dot S \setminus (C_1\cup C_2)$ consists of discs or once-punctured discs, and minimality implies that no such disc is an unpunctured bigon.
+
+Let $T_1, T_2$ be the collections of tori fibering above $C_1, C_2$. The set $T_1$ consists of disjoint essential tori, so up to isotopy they are vertical also with respect to $M\to S'$. The two fibrations now coincide on a neighbourhood of $T_1$. 
+
+We turn to the tori $T_2$, that are vertical with respect to $M\to S$. Up to isotopy, each simple closed curve in $T_1\cap T_2$ is either horizontal or vertical with respect to $M\to S'$. Each annulus in $T_2\setminus T_1$ is essential in $M\setminus T_1$ and hence it is correspondingly horizontal or vertical after an isotopy. Horizontal annuli glue to a horizontal torus in $T_2$, which is excluded: hence the tori in $T_2$ are also vertical with respect to $M\to S'$. The two fibrations now coincide on a neighbourhood of $T_1\cup T_2$ after an isotopy.
+
+The complement $M\setminus (T_1\cup T_2)$ consists of vertical solid tori and we conclude as in Proposition \ref{except:non-empty:prop} that the two fibrations are isomorphic.
+
+We are left to consider the case where $M$ contains no essential tori, and hence is a simple manifold. Both $S,S'$ are spheres with exactly three singular points by Proposition \ref{simple:Seifert:prop} (not less than three singular points since $M$ is not covered by $S^3$ or $S^2\times S^1$). 
+
+By Corollary \ref{center:cor}, the fundamental groups $\pi_1(S)$ and $\pi_1(S')$ are both isomorphic to $\pi_1(M)$ quotiented by its centre. Exercise \ref{VD:ex} implies that the two orbifolds are isomorphic, so $S=S' = (S^2, p_1,p_2,p_3)$ for some $p_1, p_2, p_3 \geqslant 2$. 
+Consider the exact sequence
+$$1 \longrightarrow K \longrightarrow \pi_1(M) \longrightarrow \pi_1(S)\longrightarrow 1.$$
+Fix a generator $l\in K$ and coherently an orientation for the fibres of both fibrations $M\to S$ and $M\to S'$. 
+The Von Dyck group $\pi_1(S^2,p_1,p_2,p_3)$ has a presentation 
+$$\langle\ r_1, r_2, r_3\ |\ r_1^{p_1}, r_2^{p_2}, r_3^{p_3}, r_1r_2r_3\ \rangle$$
+and the three generators $r_1, r_2, r_3$ are intrinsically determined up to simultaneous conjugation or inversion, see Exercise \ref{VD:ex}. Fix three lifts $m_1, m_2, m_3$ of $r_1, r_2, r_3$ in $\pi_1(M)$ with $m_1m_2m_3 = 1$: these lifts determine sections for the fibrations $M\to S$ and $M\to S'$ with boundary meridians $m_1,m_2,m_3$. We use these sections to determine the parameters $q_i$ and $q_i'$ in both fibrations, for $i=1,2,3$.
+
+The centre $K$ is infinite since $\pi_1(M)$ is, see Proposition \ref{infinite:K:prop}. Therefore $m_i^{p_i} \in K$ equals $l^{q_i''}$ for some unique $q_i''\in \matZ$. By construction we have $q_i'' = q_i$ and $q_i'' = q_i'$, hence $q_i=q_i'$. The two fibrations $M\to S$ and $M\to S'$ are isomorphic.
+\end{proof}
+
+\subsection{Seifert manifolds with finite fundamental group} \label{Seifert:finite:subsection}
+This long journey through Seifert manifolds is almost finished: it remains to classify the Seifert manifolds with finite fundamental group, that is that are covered by the three-sphere.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{c||ccccc}
+\phantom{\Big|} fibration        & $e(M)$ & $|\pi_1(S)|$ & $|\pi_1(M)|$ & $|H_1(M,\matZ)|$ \\
+ \hline \hline
+\phantom{\Big|} $\big(S^2,(2,1),(2,1),(p,q)\big)$ & $\frac {p+q}p$ & $2p$ & $4p|p+q|$ & $4|p+q|$ \\
+\phantom{\Big|} $\big(S^2,(2,1),(3,1),(3,q)\big)$ & $\frac{5+2q}6$ & $12$ & $24|5+2q|$ & $3|5+2q|$ \\
+\phantom{\Big|} $\big(S^2,(2,1),(3,1),(4,q)\big)$ & $\frac{10+3q}{12}$ & $24$ & $48|10+3q|$ & $2|10+3q|$ \\
+\phantom{\Big|} $\big(S^2,(2,1),(3,1),(5,q)\big)$ & $\frac{25+6q}{30}$ & $60$ & $120|25+6q|$ & $|25+6q|$
+\end{tabular}
+\vspace{.2 cm}
+\nota{The non-lens Seifert manifolds $M$ with finite fundamental group. For each fixed base orbifold $S$, the fibration is determined by the order of $H_1(M,\matZ)$: when two different parameters $q$ give the same order of $H_1(M,\matZ)$, the fibrations are actually the same (with opposite orientations and hence Euler numbers).}
+\label{elliptic:table}
+\end{center}
+\end{table}
+
+\begin{prop} \label{elliptic:center:prop}
+Let $M$ be a Seifert manifold covered by $S^3$ that is not a lens space. It has a unique fibration over one of the orbifolds
+$$S = (S^2,2,2,p), \quad (S^2,2,3,3), \quad (S^2,2,3,4), \quad (S^2,2,3,5)$$
+for some $p\geqslant 2$. The centre of $M$ is the cyclic group $K$ in 
+$$1 \longrightarrow K \longrightarrow \pi_1(M) \longrightarrow \pi_1(S)\longrightarrow 1.$$
+The manifold $M$ is determined by $S$ and the order of $H_1(M)$, see Table \ref{elliptic:table}.
+\end{prop}
+\begin{proof}
+We have $M\to S$ with $\chi(S)>0$ and hence $S$ is either a sphere with at most two singular points (so $M$ is a lens space), one of the orbifolds listed, or $\matRP^2$ with one singular point; in the latter case $M$ also fibres over $(S^2,2,2,p)$ by Corollary \ref{Seifert:diffeo:cor}.
+
+The subgroup $K$ is central by Proposition \ref{central:prop}. Suppose that $\pi_1(M)$ contains a central element disjoint from $K$: its image in $\pi_1(S)$ is a non-trivial central element. However $S$ is spherical and $\pi_1(S)$ is a non-cyclic group of rotations of $S^2$: two rotations with different axis never commute.
+
+The subgroup $K<\pi_1(M)$ is intrinsically determined as the centre, hence the quotient $\pi_1(S)$ is also determined, and $S$ also is by
+Exercise \ref{VD:ex}.
+Therefore $M$ cannot fiber on two different orbifolds in the list.
+
+To conclude, we prove that the fibration $M\to S$ is determined by $S$ and the finite number $|H_1(M,\matZ)|$. We analyse each case separately. First, we transform the fibration as in Table \ref{elliptic:table}: using the move from Proposition \ref{S:moves:prop}-(\ref{Seifert:1:eqn}) we manage to transform each $(2,q')$ in $(2,1)$ and $(3,q')$ in either $(3,1)$ or $(3,2)$, and by reversing orientation (see Remark \ref{reverse:rem}) we transform $(3,2)$ into $(3,-2)$ and hence into $(3,1)$.
+
+Using Proposition \ref{Seifert:homology:prop} we see that $|H_1(M)|$ is as in Table \ref{elliptic:table}. The only cases where different values of $q$ give the same $|H_1(M)|$ are the following:
+\begin{itemize}
+\item $S=(S^2,2,2,p)$ and $|p+q|=|p+q'|$, hence $q'=-q-2p$, 
+\item $S=(S^2,2,3,3)$ and $|5+2q| = |5+2q'|$, hence $q' = -q-5$ which implies $q,q' \equiv 2 \ ({\rm mod}\ 3)$.
+\end{itemize}
+In these cases it is easy to verify that the fibrations with $q$ and $q'$ are isomorphic using Proposition \ref{S:moves:prop}-(\ref{Seifert:1:eqn}) and Remark \ref{reverse:rem}.
+
+The order $|\pi_1(M)|$ in Table \ref{elliptic:table} is obtained using the formula
+$$|\pi_1(M)| = \frac{4e(M)}{\chi(S)^2}$$
+that we now prove. Since the orbifolds are good, the fibration is covered horizontally by a fibration over $S^2$, which is in turn covered vertically by $\big(S^2,(1,1)\big) = S^3$. The total degree is $d=d_{\rm h} \cdot d_{\rm v}$. Proposition \ref{e:prop} gives
+$$d_{\rm h} = \frac{\chi(S^2)}{\chi(S)} = \frac 2{\chi(S)}, \quad 1=e(S^2,(1,1)) = \frac{d_{\rm h}}{d_{\rm v}} \cdot e(M).$$ 
+Therefore $d_{\rm v} = d_{\rm h}\cdot e(M)$ and
+$$d = d_{\rm h} \cdot d_{\rm v} = d_{\rm h}^2 \cdot e(M) = \frac{4e(M)}{\chi(S)^2}$$
+as required.
+\end{proof}
+
+\subsection{Summary} \label{summary:Seifert:subsection}
+We now summarise the topological classification of Seifert manifolds in a single statement. 
+
+The Seifert fibrations $M\to S$ are fully classified by Proposition \ref{S:moves:prop} and Corollary \ref{classification:Seifert:cor}. The latter says that two Seifert fibrations
+$$\big(S, (p_1,q_1), \ldots, (p_h, q_h)\big), \quad \big(S', (p_1',q_1'), \ldots, (p_{h'}', q_{h'}')\big)$$
+with $p_i, p_i'\geqslant 2$ are orientation-preservingly isomorphic if and only if $S=S'$, $h=h'$, $e=e'$, and up to reordering $p_i=p_i'$ and $q_i \equiv q_i'$ (mod $p_i$) for all $i$.
+
+We easily understand when two Seifert fibrations are isomorphic. To classify Seifert manifolds up to diffeomorphism it only remains to understand which Seifert manifolds can have non-isomorphic fibrations. A long discussion has shown the following. We write $S^2\times S^1$ as the lens space $L(0,1)$.
+
+\begin{teo} \label{Seifert:teo}
+Every Seifert manifold has a unique Seifert fibration up to isomorphism, except the following:
+\begin{itemize}
+\item $L(p,q)$ fibres over $S^2$ with $\leqslant 2$ singular points in many ways,
+\item $D\times S^1$ fibres over $D$ with $\leqslant 1$ singular point in many ways,
+\item $\big( D, (2,1), (2,-1)\big) \isom S\timtil S^1$,
+\item $\big(S^2,(2,1),(2,-1),(p,q)\big) \isom \big(\matRP^2, (q,p)\big)$, 
+\item $\big(S^2,(2,1),(2,1),(2,-1),(2,-1)\big) \isom K\timtil S^1. $
+\end{itemize}
+Here $S$ and $K$ are the M\"obius strip and the Klein bottle.
+\end{teo}
+
+\subsection{References}
+The main sources that we have consulted for this long chapter are Hatcher \cite{H} and Scott \cite{S}. Some material can also be found in Fomenko -- Matveev \cite{FM}. Two classical references are Seifert's original paper \cite{Se} and Orlik \cite{O}.

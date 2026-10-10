@@ -6,7 +6,8 @@
   "sha256": "24496fb444a2b5587e28d86f6190c592c54d705939aab80dcc6c415ccacf9f38",
   "bytes": 463186,
   "pages": 17,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -114,6 +115,48 @@
   "likely_scanned": false,
   "toc_entries": 5,
   "sections": 4,
-  "chars_total": 46035
+  "chars_total": 46035,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Cocycles_HQMMs.tex",
+   "tex_sections": 4,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-cocycle-actions-and-symmetry-protection-in-hqmms",
+     "title": "Cocycle Actions and Symmetry Protection in HQMMs",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.601,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-discussion-and-outlook",
+     "title": "Discussion and Outlook",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-appedix-hidden-quantum-markov-models",
+     "title": "Appedix: Hidden Quantum Markov Models",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

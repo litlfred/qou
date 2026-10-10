@@ -5,7 +5,8 @@
   "file": "2006.02042v1.pdf",
   "sha256": "9de75ced3a3360bb7cff8b7d51183eae135606c3a267221a370915288ee45571",
   "bytes": 171708,
-  "pages": 11
+  "pages": 11,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "The Strong AJ Conjecture for the Figure 8 Knot",
   "authors_raw": "HOANG-AN NGUYEN AND ANH T. TRAN",
-  "abstract": "Motivated by the theory of quantum A-ideals of Frohman-Gelca-Lo Faro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and the AJ co njecture of Garoufalidis, Sikora formulated the strong AJ conjecture which relates the A-ideal and recurrence ideal of a knot in the 3-sphere. This conjecture h as been veriﬁed for all torus knots and most of their cables. In this paper, we verify the s trong AJ conjecture for the ﬁgure eight knot.",
+  "abstract": "Motivated by the theory of quantum A-ideals of Frohman-Gelca-Lo Faro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and the AJ co njecture of Garoufalidis, Sikora formulated the strong AJ conjecture which relates the A-ideal and recurrence ideal of a knot in the 3-sphere. This conjecture h as been veri\ufb01ed for all torus knots and most of their cables. In this paper, we verify the s trong AJ conjecture for the \ufb01gure eight knot.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20220307013821-05'00'",
@@ -255,6 +256,78 @@
   "likely_scanned": false,
   "toc_entries": 15,
   "sections": 11,
-  "chars_total": 23804
+  "chars_total": 23804,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 3,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-the-colored-jones-polynomial-and-recurrence-i",
+     "title": "The colored Jones polynomial and recurrence ideal",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-12-the-aj-conjecture",
+     "title": "The AJ conjecture",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-13-main-result",
+     "title": "Main result",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-21-step-1-applying-symmetric-conditions",
+     "title": "Step 1: Applying symmetric conditions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-22-step-2-applying-polynomial-conditions",
+     "title": "Step 2: Applying polynomial conditions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-26-step-6-applying-initial-conditions",
+     "title": "Step 6: Applying initial conditions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-27-step-7-explicit-solution",
+     "title": "Step 7: Explicit solution",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-28-double-checking-the-recurrence-relation",
+     "title": "Double-checking the recurrence relation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

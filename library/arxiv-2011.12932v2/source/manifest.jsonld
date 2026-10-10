@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2011.12932v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2011.12932v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2011.12932v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2011.12932&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2011.12932v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2011.12932v2",
+    "content_type": "application/gzip",
+    "sha256": "75c987901111b179c2dce3fc5c0e1c3fe7092335bd87b5c6604e2b66eae04b33",
+    "bytes": 113321,
+    "fetched": "2026-10-10T15:15:41+00:00",
+    "files": [
+      {
+        "path": "source/files/2021-04-19_survey.tex",
+        "role": "tex",
+        "sha256": "eb18e6c8dd49f5523e3da1b5f3f44a5966cc173ee74cb2dc93294174fa9bc86b",
+        "bytes": 108101
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

@@ -6,7 +6,8 @@
   "sha256": "f634f9ec4357d5f34d5a161a0fea1e598715b059592cfd5813b0a85d3764cd83",
   "bytes": 342525,
   "pages": 24,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -300,6 +301,97 @@
   "likely_scanned": false,
   "toc_entries": 17,
   "sections": 14,
-  "chars_total": 66999
+  "chars_total": 66999,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 6,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-general-conventions-and-notation",
+     "title": "General conventions and notation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-22-containment-of-bimodules",
+     "title": "Containment of bimodules",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-23-hochschild-cohomology",
+     "title": "Hochschild cohomology",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-3-gradient-tensoring-n-cocycles-and-gradient-sp",
+     "title": "Gradient tensoring, n-cocycles and gradient-Sp",
+     "prose_ratio": 0.689,
+     "coverage_ratio": 0.946,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-32-construction-of-n-cocycles",
+     "title": "Construction of n-cocycles.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-41-q-gaussian-algebras",
+     "title": "q-Gaussian algebras",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-33-the-haagerup-averaging-technique",
+     "title": "The Haagerup averaging technique",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-42-gradient-sp-estimates",
+     "title": "Gradient-Sp estimates",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-43-consequences-for-cartan-rigidity",
+     "title": "Consequences for Cartan rigidity",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-5-derivations-and-the-akemann-ostrand-property",
+     "title": "Derivations and the Akemann-Ostrand property",
+     "prose_ratio": 0.41,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-51-group-algebras",
+     "title": "Group algebras",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-071",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Cohomological Dimensions of Functors and Objects",
+  "pageStart": 227,
+  "pageEnd": 231,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-071",
+    "library/arxiv-1610.09640v4/blocks/example-sec-071-01",
+    "library/arxiv-1610.09640v4/blocks/example-sec-071-02",
+    "library/arxiv-1610.09640v4/blocks/example-sec-071-03",
+    "library/arxiv-1610.09640v4/blocks/example-sec-071-04",
+    "library/arxiv-1610.09640v4/blocks/example-sec-071-05",
+    "library/arxiv-1610.09640v4/blocks/remark-sec-071-06",
+    "library/arxiv-1610.09640v4/blocks/example-sec-071-07",
+    "library/arxiv-1610.09640v4/blocks/example-sec-071-08",
+    "library/arxiv-1610.09640v4/blocks/proposition-sec-071-09",
+    "library/arxiv-1610.09640v4/blocks/proposition-sec-071-10",
+    "library/arxiv-1610.09640v4/blocks/proposition-sec-071-11",
+    "library/arxiv-1610.09640v4/blocks/proposition-sec-071-12",
+    "library/arxiv-1610.09640v4/blocks/proposition-sec-071-13",
+    "library/arxiv-1610.09640v4/blocks/proposition-sec-071-14",
+    "library/arxiv-1610.09640v4/blocks/proposition-sec-071-15",
+    "library/arxiv-1610.09640v4/blocks/remark-sec-071-16"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1204.4824v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1204.4824v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1204.4824v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1204.4824&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1204.4824v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1204.4824v2",
+    "content_type": "application/gzip",
+    "sha256": "f54c0f94710b07ec1cce52ac0147dfeeb087a8a7556cfbdcdc8a33fdbabda52d",
+    "bytes": 1889103,
+    "fetched": "2026-10-10T15:06:35+00:00",
+    "files": [
+      {
+        "path": "source/files/jheppub.sty",
+        "role": "sty",
+        "sha256": "df00feea9c12f61474e4c029e3c80db0df37266467209cfa43ff04877499cd02",
+        "bytes": 10882
+      },
+      {
+        "path": "source/files/swn-paper.bbl",
+        "role": "bbl",
+        "sha256": "bb33084368561e20a28f2a9efb59250c22382183958d3e6351f3a53bc9450f67",
+        "bytes": 13725
+      },
+      {
+        "path": "source/files/swn-paper.tex",
+        "role": "tex",
+        "sha256": "0581c432ac331f4acb4b3f767cc134a081e9afc3a5e341e70ca90564a873ec92",
+        "bytes": 259458
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

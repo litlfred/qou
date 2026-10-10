@@ -5,7 +5,8 @@
   "file": "0702179v1.pdf",
   "sha256": "4d78ee89f0e67fbbb91bede3a42d648208e57b62e38425b1d56b0b50a2440bd2",
   "bytes": 140162,
-  "pages": 8
+  "pages": 8,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -111,6 +112,50 @@
   "likely_scanned": false,
   "toc_entries": 5,
   "sections": 4,
-  "chars_total": 17153
+  "chars_total": 17153,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "euridice06.tex",
+   "tex_sections": 6,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.903,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-the-role-of-resonance-chiral-theory",
+     "title": "The role of Resonance Chiral Theory",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-resonance-contributions-to-the-op6-lecs",
+     "title": "Resonance contributions to the O(p6) LECs",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.584,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-perspective",
+     "title": "Perspective",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.343,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

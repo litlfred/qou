@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9907032v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-9907032v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9907032v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/9907032&metadataPrefix=arXiv), submitted 1999-07-06, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-9907032v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math/9907032v1",
+    "content_type": "application/gzip",
+    "sha256": "479ca7a6779f3c5b68b2f44b2524a93305dc6e8dd95b4b66865bb4816590dc88",
+    "bytes": 37360,
+    "fetched": "2026-10-10T15:31:04+00:00",
+    "files": [
+      {
+        "path": "source/files/acmabs.cls",
+        "role": "cls",
+        "sha256": "b9e9b75a00a7115d942bf8bd5b04a3ff2e92f1625ed2b47f12daad20ff514587",
+        "bytes": 5324
+      },
+      {
+        "path": "source/files/acmart.cls",
+        "role": "cls",
+        "sha256": "4d33b2badb1febd8d2299eef17b2bb7ddf833e293749b84aa70fa51aaedcf0f2",
+        "bytes": 33198
+      },
+      {
+        "path": "source/files/combopt.tex",
+        "role": "tex",
+        "sha256": "5c45f433d6f7dec9568df54c912a705fe622f174ddda431aa0892b880df6b044",
+        "bytes": 88568
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

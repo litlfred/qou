@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2009.03688v6/blocks/prose-sec-019",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2009.03688v6/blocks/prose-sec-019",
   "kind": "prose",
   "title": "(−3 + O(q)) + 2ζ 9νq",
   "pageStart": 30,
   "pageEnd": 30,
   "text": "../sections/sec-019-26-3-oq-2ζ-9νq.md",
-  "derivedFrom": "library/arxiv-2009.03688v6/manifest",
-  "sourceDocument": "library/arxiv-2009.03688v6/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2009.03688v6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2009.03688v6/manifest.jsonld",
   "provenance": "ingested"
 }

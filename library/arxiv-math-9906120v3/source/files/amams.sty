@@ -1,0 +1,1160 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% amams.sty: AMSTeX Macros for Articles to be published in
+%%
+%% Annals of Mathematics
+%% 
+%% Princeton University and the
+%% Institute for Advanced Study
+%%
+%% Published by Princeton University Press
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Variations on AMSPPT.sty written by Amy Hendrickson
+%% TeXnology Inc, Brookline, MA
+%% 617 738-8029, amyh@ai.mit.edu
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\spaces{\space\space\space\space\space\space\space\space\space\space}
+\def\spacess{\message{\spaces\spaces\spaces\spaces\spaces\spaces\spaces}}
+\spacess
+\spacess
+\message{Annals of Mathematics Style: Current Version: 1.1. June 10, 1992}
+\spacess
+\spacess
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\catcode`\@=11
+
+\hyphenation{acad-e-my acad-e-mies af-ter-thought anom-aly anom-alies
+an-ti-deriv-a-tive an-tin-o-my an-tin-o-mies apoth-e-o-ses apoth-e-o-sis
+ap-pen-dix ar-che-typ-al as-sign-a-ble as-sist-ant-ship as-ymp-tot-ic
+asyn-chro-nous at-trib-uted at-trib-ut-able bank-rupt bank-rupt-cy
+bi-dif-fer-en-tial blue-print busier busiest cat-a-stroph-ic
+cat-a-stroph-i-cally con-gress cross-hatched data-base de-fin-i-tive
+de-riv-a-tive dis-trib-ute dri-ver dri-vers eco-nom-ics econ-o-mist
+elit-ist equi-vari-ant ex-quis-ite ex-tra-or-di-nary flow-chart
+for-mi-da-ble forth-right friv-o-lous ge-o-des-ic ge-o-det-ic geo-met-ric
+griev-ance griev-ous griev-ous-ly hexa-dec-i-mal ho-lo-no-my ho-mo-thetic
+ideals idio-syn-crasy in-fin-ite-ly in-fin-i-tes-i-mal ir-rev-o-ca-ble
+key-stroke lam-en-ta-ble light-weight mal-a-prop-ism man-u-script
+mar-gin-al meta-bol-ic me-tab-o-lism meta-lan-guage me-trop-o-lis
+met-ro-pol-i-tan mi-nut-est mol-e-cule mono-chrome mono-pole mo-nop-oly
+mono-spline mo-not-o-nous mul-ti-fac-eted mul-ti-plic-able non-euclid-ean
+non-iso-mor-phic non-smooth par-a-digm par-a-bol-ic pa-rab-o-loid
+pa-ram-e-trize para-mount pen-ta-gon phe-nom-e-non post-script pre-am-ble
+pro-ce-dur-al pro-hib-i-tive pro-hib-i-tive-ly pseu-do-dif-fer-en-tial
+pseu-do-fi-nite pseu-do-nym qua-drat-ics quad-ra-ture qua-si-smooth
+qua-si-sta-tion-ary qua-si-tri-an-gu-lar quin-tes-sence quin-tes-sen-tial
+re-arrange-ment rec-tan-gle ret-ri-bu-tion retro-fit retro-fit-ted
+right-eous right-eous-ness ro-bot ro-bot-ics sched-ul-ing se-mes-ter
+semi-def-i-nite semi-ho-mo-thet-ic set-up se-vere-ly side-step sov-er-eign
+spe-cious spher-oid spher-oid-al star-tling star-tling-ly
+sta-tis-tics sto-chas-tic straight-est strange-ness strat-a-gem strong-hold
+sum-ma-ble symp-to-matic syn-chro-nous topo-graph-i-cal tra-vers-a-ble
+tra-ver-sal tra-ver-sals treach-ery turn-around un-at-tached un-err-ing-ly
+white-space wide-spread wing-spread wretch-ed wretch-ed-ly Brown-ian
+Eng-lish Euler-ian Feb-ru-ary Gauss-ian Grothen-dieck Hamil-ton-ian
+Her-mit-ian Jan-u-ary Japan-ese Kor-te-weg Le-gendre Lip-schitz
+Lip-schitz-ian Mar-kov-ian Noe-ther-ian No-vem-ber Rie-mann-ian
+Schwarz-schild Sep-tem-ber}
+
+\Invalid@\nofrills
+\Invalid@\usualspace
+\newif\ifnofrills@
+\def\nofrills@#1#2{\relaxnext@
+  \DN@{\ifx\next\nofrills
+    \nofrills@true\let#2\relax\DN@\nofrills{\nextii@}%
+  \else
+    \nofrills@false\def#2{#1}\let\next@\nextii@\fi
+\next@}}
+\def\usualspace@#1{\ifnofrills@\def\usualspace{#1}\fi}
+\def\addto#1#2{\csname \expandafter\eat@\string#1@\endcsname
+  \expandafter{\the\csname \expandafter\eat@\string#1@\endcsname#2}}
+\newdimen\bigsize@
+\def\big@#1#2{{\hbox{$\left#2\vcenter to#1\bigsize@{}%
+  \right.\nulldelimiterspace\z@\m@th$}}}
+\def\big{\big@\@ne}
+\def\Big{\big@{1.5}}
+\def\bigg{\big@\tw@}
+\def\Bigg{\big@{2.5}}
+\def\raggedcenter@{\leftskip\z@ plus.4\hsize \rightskip\leftskip
+ \parfillskip\z@ \parindent\z@ \spaceskip.3333em \xspaceskip.5em
+ \pretolerance9999\tolerance9999 \exhyphenpenalty\@M
+ \hyphenpenalty\@M \let\\\linebreak}
+\def\upperspecialchars{\def\ss{SS}\let\i=I\let\j=J\let\ae\AE\let\oe\OE
+  \let\o\O\let\aa\AA\let\l\L}
+\def\uppercasetext@#1{%
+  {\spaceskip1.2\fontdimen2\the\font plus1.2\fontdimen3\the\font
+   \upperspecialchars\uctext@#1$\m@th\aftergroup\eat@$}}
+\def\uctext@#1$#2${\endash@#1-\endash@$#2$\uctext@}
+\def\endash@#1-#2\endash@{%
+\uppercase{#1}\if\notempty{#2}--\endash@#2\endash@\fi}
+\def\runaway@#1{\DN@{#1}\ifx\envir@\next@
+  \Err@{You seem to have a missing or misspelled \string\end#1 ...}%
+  \let\envir@\empty\fi}
+\newif\iftemp@
+\def\notempty#1{TT\fi\def\test@{#1}\ifx\test@\empty\temp@false
+  \else\temp@true\fi \iftemp@}
+
+\font@\tensmc=cmcsc10
+\font@\sevenex=cmex7 
+\font@\sevenit=cmti7
+\font@\eightrm=cmr8 % preloaded in plain.tex
+\font@\sixrm=cmr6 % preloaded in plain.tex
+\font@\eighti=cmmi8     \skewchar\eighti='177 % preloaded
+\font@\sixi=cmmi6       \skewchar\sixi='177   % preloaded
+\font@\eightsy=cmsy8    \skewchar\eightsy='60 % preloaded
+\font@\sixsy=cmsy6      \skewchar\sixsy='60   % preloaded
+\font@\eightex=cmex8 %
+\font@\eightbf=cmbx8 % preloaded in plain.tex
+\font@\sixbf=cmbx6   % preloaded in plain.tex
+\font@\eightit=cmti8 % preloaded in plain.tex
+\font@\eightsl=cmsl8 % preloaded in plain.tex
+\font@\eightsmc=cmcsc10 
+\font@\eighttt=cmtt8 % preloaded in plain.tex
+%\font@\ninerm=cmr9
+%\font@\ninei=cmmi9    \skewchar\ninei='177
+%\font@\ninesy=cmsy9   \skewchar\ninesy='60
+%\font@\nineex=cmex9
+%\font@\ninebf=cmbx9
+%\font@\nineit=cmti9
+%\font@\ninesl=cmsl9
+%\font@\ninesmc=cmcsc9
+%\font@\ninemsa=msam9
+%\font@\ninemsb=msbm9
+%\font@\nineeufm=eufm9
+
+
+\loadmsam
+\loadmsbm
+\loadeufm
+%\UseAMSsymbols % it was
+%\input AMSsym.def  %I did
+%\input AMSsym.tex   %I did
+
+\def\penaltyandskip@#1#2{\relax\ifdim\lastskip<#2\relax\removelastskip
+      \ifnum#1=\z@\else\penalty@#1\relax\fi\vskip#2%
+  \else\ifnum#1=\z@\else\penalty@#1\relax\fi\fi}
+\def\nobreak{\penalty\@M
+  \ifvmode\def\penalty@{\let\penalty@\penalty\count@@@}%
+  \everypar{\let\penalty@\penalty\everypar{}}\fi}
+\let\penalty@\penalty
+
+
+\def\block{\RIfMIfI@\nondmatherr@\block\fi
+       \else\ifvmode\vskip\abovedisplayskip\noindent\fi
+        $$\def\endblock{\par\egroup$$}\fi
+  \vbox\bgroup\advance\hsize-2\indenti\noindent}
+\def\endblock{\par\egroup}
+
+
+\def\logo@{\baselineskip2pc \hbox to\hsize{\hfil\eightpoint Typeset by
+ \AmSTeX}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Macros for Annals of Mathematics written by Amy Hendrickson
+%% TeXnology Inc, Brookline, MA
+%% 617 738-8029, amyh@ai.mit.edu
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%% This file includes: 
+%% 1) Font declarations, 
+%% 2) Page set up, 
+%% 3) Title page 
+%% 4) Section heads,
+%% 5) Equation macros, autonumbering equations, etc.,
+%% 6) Figure and Table Captions,
+%% 7) End matter macros: Bibliography, Appendix, etc.,
+%% 8) Footnotes,
+%% 9) Theorem type environments
+%% 10) Cross-referencing
+%% 11) Listing
+%% 12) Article and Journal Table of Contents
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 1) Font declarations, 
+% Computer Modern fonts 
+
+% Small Caps
+\font\elevensc=cmcsc10 scaled\magstephalf
+\font\tensc=cmcsc10
+\font\ninesc=cmcsc10 scaled900
+\font\eightsc=cmcsc10 scaled800
+
+\font\twelverm=cmr12
+\font\elevenrm=cmr10 scaled \magstephalf
+\font\ninerm=cmr9
+\font\eightrm=cmr8
+\font\sixrm=cmr6
+\font\fiverm=cmr5
+
+\font\eleveni=cmmi10 scaled\magstephalf
+\font\ninei=cmmi9
+\font\eighti=cmmi8
+\font\sixi=cmmi6
+\font\fivei=cmmi5
+\skewchar\ninei='177 \skewchar\eighti='177 \skewchar\sixi='177
+\skewchar\eleveni='177
+
+\font\elevensy=cmsy10 scaled\magstephalf
+\font\ninesy=cmsy9
+\font\eightsy=cmsy8
+\font\sixsy=cmsy6
+\font\fivesy=cmsy5
+\skewchar\ninesy='60 \skewchar\eightsy='60 \skewchar\sixsy='60
+\skewchar\elevensy'60
+
+\font\eighteenbf=cmbx10 scaled\magstep3
+
+\font\twelvebf=cmbx10 scaled \magstep1
+\font\elevenbf=cmbx10 scaled \magstephalf
+\font\tenbf=cmbx10
+\font\ninebf=cmbx9
+\font\eightbf=cmbx8
+\font\sixbf=cmbx6
+\font\fivebf=cmbx5
+
+\font\elevenit=cmti10 scaled\magstephalf
+\font\nineit=cmti9
+\font\eightit=cmti8
+
+% Fonts for bold math
+\font\eighteenmib=cmmib10 scaled \magstep3
+\font\twelvemib=cmmib10 scaled \magstep1
+\font\elevenmib=cmmib10 scaled\magstephalf
+\font\tenmib=cmmib10
+\font\eightmib=cmmib10 scaled 800 
+\font\sixmib=cmmib10 scaled 600
+
+\font\eighteensyb=cmbsy10 scaled \magstep3 
+\font\twelvesyb=cmbsy10 scaled \magstep1
+\font\elevensyb=cmbsy10 scaled \magstephalf
+\font\tensyb=cmbsy10 
+\font\eightsyb=cmbsy10 scaled 800
+\font\sixsyb=cmbsy10 scaled 600
+ 
+\font\elevenex=cmex10 scaled \magstephalf
+\font\tenex=cmex10     
+\font\eighteenex=cmex10 scaled \magstep3
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Font families
+
+\def\elevenpoint{\def\rm{\fam0\elevenrm}%
+  \textfont0=\elevenrm \scriptfont0=\eightrm \scriptscriptfont0=\sixrm
+  \textfont1=\eleveni \scriptfont1=\eighti \scriptscriptfont1=\sixi
+  \textfont2=\elevensy \scriptfont2=\eightsy \scriptscriptfont2=\sixsy
+  \textfont3=\elevenex \scriptfont3=\tenex \scriptscriptfont3=\tenex
+  \def\bf{\fam\bffam\elevenbf}%
+  \def\it{\fam\itfam\elevenit}%
+  \textfont\bffam=\elevenbf \scriptfont\bffam=\eightbf
+   \scriptscriptfont\bffam=\sixbf
+\normalbaselineskip=13.95pt
+  \setbox\strutbox=\hbox{\vrule height9.5pt depth4.4pt width0pt\relax}%
+  \normalbaselines\rm}
+
+\elevenpoint % default fonts and baselineskip
+\let\tenpoint\elevenpoint
+
+\def\ninepoint{\def\rm{\fam0\ninerm}%
+  \textfont0=\ninerm \scriptfont0=\sixrm \scriptscriptfont0=\fiverm
+  \textfont1=\ninei \scriptfont1=\sixi \scriptscriptfont1=\fivei
+  \textfont2=\ninesy \scriptfont2=\sixsy \scriptscriptfont2=\fivesy
+  \textfont3=\tenex \scriptfont3=\tenex \scriptscriptfont3=\tenex
+  \def\it{\fam\itfam\nineit}%
+  \textfont\itfam=\nineit
+  \def\bf{\fam\bffam\ninebf}%
+  \textfont\bffam=\ninebf \scriptfont\bffam=\sixbf
+   \scriptscriptfont\bffam=\fivebf
+\normalbaselineskip=11pt
+  \setbox\strutbox=\hbox{\vrule height8pt depth3pt width0pt\relax}%
+  \normalbaselines\rm}
+
+\def\eightpoint{\def\rm{\fam0\eightrm}%
+  \textfont0=\eightrm \scriptfont0=\sixrm \scriptscriptfont0=\fiverm
+  \textfont1=\eighti \scriptfont1=\sixi \scriptscriptfont1=\fivei
+  \textfont2=\eightsy \scriptfont2=\sixsy \scriptscriptfont2=\fivesy
+  \textfont3=\tenex \scriptfont3=\tenex \scriptscriptfont3=\tenex
+  \def\it{\fam\itfam\eightit}%
+  \textfont\itfam=\eightit
+  \def\bf{\fam\bffam\eightbf}%
+  \textfont\bffam=\eightbf \scriptfont\bffam=\sixbf
+   \scriptscriptfont\bffam=\fivebf
+\normalbaselineskip=12pt
+  \setbox\strutbox=\hbox{\vrule height8.5pt depth3.5pt width0pt\relax}%
+  \normalbaselines\rm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Font families for bold math in title and section heads
+
+\def\eighteenbold{\def\rm{\fam0\eighteenbf}%
+  \textfont0=\eighteenbf \scriptfont0=\twelvebf \scriptscriptfont0=\tenbf
+  \textfont1=\eighteenmib \scriptfont1=\twelvemib\scriptscriptfont1=\tenmib
+  \textfont2=\eighteensyb \scriptfont2=\twelvesyb\scriptscriptfont2=\tensyb
+  \textfont3=\eighteenex \scriptfont3=\tenex \scriptscriptfont3=\tenex
+  \def\bf{\fam\bffam\eighteenbf}%
+  \textfont\bffam=\eighteenbf \scriptfont\bffam=\twelvebf
+   \scriptscriptfont\bffam=\tenbf
+\normalbaselineskip=20pt
+  \setbox\strutbox=\hbox{\vrule height13.5pt depth6.5pt width0pt\relax}%
+\everymath {\fam0 }
+\everydisplay {\fam0 }
+  \normalbaselines\rm}
+
+\def\elevenbold{\def\rm{\fam0\elevenbf}%
+  \textfont0=\elevenbf \scriptfont0=\eightbf \scriptscriptfont0=\sixbf
+  \textfont1=\elevenmib \scriptfont1=\eightmib \scriptscriptfont1=\sixmib
+  \textfont2=\elevensyb \scriptfont2=\eightsyb \scriptscriptfont2=\sixsyb
+  \textfont3=\elevenex \scriptfont3=\elevenex \scriptscriptfont3=\elevenex
+  \def\bf{\fam\bffam\elevenbf}%
+  \textfont\bffam=\elevenbf \scriptfont\bffam=\eightbf
+   \scriptscriptfont\bffam=\sixbf
+\normalbaselineskip=14pt
+  \setbox\strutbox=\hbox{\vrule height10pt depth4pt width0pt\relax}%
+\everymath {\fam0 }
+\everydisplay {\fam0 }
+  \normalbaselines\bf}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 2) Page set up
+
+\hsize=31pc
+\vsize=48pc
+
+\parindent=22pt
+\parskip=0pt
+
+\widowpenalty=10000
+\clubpenalty=10000
+
+\topskip=12pt 
+
+\skip\footins=20pt
+\dimen\footins=3in % maximum footnote height
+
+\abovedisplayskip=6.95pt plus3.5pt minus 3pt
+\belowdisplayskip=\abovedisplayskip
+
+%% Output routine
+
+\voffset=7pt\hoffset=.7in
+%\def\bindingoffset{\ifodd\pageno \hoffset=-18pt\else\hoffset9pc\fi}
+
+\newif\iftitle
+
+\def\amheadline{\iftitle%
+\hbox to\hsize{\hss\currannalsline\hss}\else\line{\ifodd\pageno
+\hfill\thetitle\hfill\llap{\elevenrm\folio}\else\rlap{\elevenrm\folio}
+\hfill\theauthors\hfill\fi}\fi}
+
+\headline={\amheadline}
+\footline={\global\titlefalse}
+%\output={\bindingoffset\plainoutput}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 3) Title page 
+
+
+ %#1= Volume number, #2=year of publication
+\def\annalsline#1#2{\vfill\eject
+\ifodd\pageno\else % first page of article on right.
+\line{\hfill}
+\vfill\eject\fi
+\global\titletrue
+\def\currannalsline{\eightrm Annals of Mathematics,
+{\eightbf#1} (#2), \thepages}}
+
+\def\titleheadline#1{\def\one{#1}\ifx\one\empty\else
+\def\thetitle{{\frenchspacing%
+\let\\ \relax\eightsc\uppercase{#1}}}\fi}
+
+
+\newif\ifshort
+\def\shortname#1{\global\shorttrue\xdef\theauthors{{\eightsc{#1}}}}
+\let\shorttitle\titleheadline
+
+
+\def\yearofpublication#1{\def\theyear{#1}}
+\def\onpages#1#2{\def\thepages{#1--#2}}
+
+\def\thismuchskip[#1]{\vskip#1pt}
+\def\ilook{\ifx\next[ \let\go\thismuchskip\else
+\let\go\relax\vskip1pt\fi\go}
+
+\def\institution#1{\def\theinstitutions{\vbox{\baselineskip10pt
+\def\and{{\eightrm and }}
+\def\\{\futurelet\next\ilook}\eightsc #1}}}
+\let\institutions\institution
+
+
+\newwrite\auxfile
+
+\def\startingpage#1{\def\one{#1}\ifx\one\empty\global\pageno=1\else
+\global\pageno=#1\fi
+\theoremcount=0 \eqcount=0 \sectioncount=0 
+\openin1 \jobname.aux \ifeof1 
+\onpages{#1}{???}
+\else\closein1 \relax\input \jobname.aux
+\onpages{#1}{\lastpage}
+\fi\immediate\openout\auxfile=\jobname.aux
+}
+
+
+\def\endarticle{\ifRefsUsed\global\RefsUsedfalse%
+\else\vskip21pt\theinstitutions%
+\nobreak
+\vskip8pt
+\vbox{\thereceived\therevised}\fi%
+\write\auxfile{\string\def\string\lastpage{\the\pageno}}}
+
+
+\outer\def\bye{\endarticle\par \vfill \supereject \end}
+
+% variation on code from amsspt.sty ==>
+\def\document{\let\fontlist@\relax\let\alloclist@\relax
+  \elevenpoint}
+\let\enddocument\bye
+
+% <=== end of code varied from amsppt.sty
+
+\newif\ifacks
+\long\def\acknowledgements#1{\def\one{#1}\ifx\one\empty\else
+\vskip-\baselineskip%
+\global\ackstrue\footnote{\ \unskip}{*#1}\fi}
+
+\let\acknowledgement\acknowledgements
+
+\def\received#1{\def\thereceived{\medbreak%\vskip1sp
+\centerline{\ninerm (Received #1)}}}
+
+\def\revised#1{\def\therevised{\smallbreak%\vskip-2.9pt 
+\centerline{\ninerm (Revised #1)}}}
+
+\def\title#1{\titleheadline{#1}
+\vbox to80pt{\vfill
+\baselineskip=18pt
+\parindent=0pt
+\overfullrule=0pt
+\hyphenpenalty=10000
+\everypar={\hskip\parfillskip\relax}
+\hbadness=10000
+\def\\ {\vskip1sp}
+\eighteenbold#1\vskip1sp}}
+
+\newif\ifauthor
+
+\def\author#1{\vskip11pt
+\hbox to\hsize{\hss\tenrm By \tensc#1\ifacks\global\acksfalse*\fi\hss}
+\ifshort\else\xdef\theauthors{{\eightsc\uppercase{#1}}}\fi%
+\vskip21pt\global\authortrue\everypar={\global\authorfalse\everypar={}}}
+
+\def\twoauthors#1#2{\vskip11pt
+\hbox to\hsize{\hss%
+\tenrm By \tensc#1 {\tenrm and} #2\ifacks\global\acksfalse*\fi\hss}
+\ifshort\else\xdef\theauthors{{\eightsc\uppercase{#1 and #2}}}\fi%
+\vskip21pt
+\global\authortrue\everypar={\global\authorfalse\everypar={}}}
+
+
+\let\authors\author
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 4) Section heads, counters
+
+\newcount\theoremcount
+\newcount\sectioncount
+\newcount\eqcount
+
+
+\newif\ifspecialnumon
+\def\specialnumber#1{\global\specialnumontrue\gdef\spnum{#1}}
+
+\let\spnumber\specialnumber
+
+\def\eqnumber=#1 {\global\eqcount=#1 \global\advance\eqcount by-1\relax}
+\def\sectionnumber=#1 {\global\sectioncount=#1 
+\global\advance\sectioncount by-1\relax}
+\def\proclaimnumber=#1 {\global\theoremcount=#1 
+\global\advance\theoremcount by-1\relax}
+
+\newif\ifsection
+\newif\ifsubsection
+
+\def\intro{\global\authorfalse%
+\centerline{\bf Introduction}\everypar={}\vskip6pt}
+
+\def\elevenboldmath#1{$#1$\egroup}
+\def\mathbold{\hbox\bgroup\elevenbold\elevenboldmath}
+
+\def\section#1{\global\theoremcount=0
+\global\eqcount=0
+\ifauthor\global\authorfalse\else%
+\vskip18pt plus 18pt minus 6pt\fi%
+{\parindent=0pt\everypar={\hskip\parfillskip}%
+\def\\ {\vskip1sp}\elevenpoint\bf%
+\ifspecialnumon\global\specialnumonfalse$\rm\spnum$%
+\gdef\sectnum{$\rm\spnum$}%
+\else\interlinepenalty=10000%
+\global\advance\sectioncount by1\relax\the\sectioncount%
+\gdef\sectnum{\the\sectioncount}%
+\fi.\hskip6pt#1\vrule width 0pt depth12pt}\hskip\parfillskip\break%
+\global\sectiontrue%
+\everypar={\global\sectionfalse\global\interlinepenalty=0\everypar={}}%
+\ignorespaces
+
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 5) Equation Macros
+
+\newif\ifspequation
+\def\Xspeqnu#1{\global\spequationtrue
+\global\specialnumontrue\gdef\spnum{#1}\eqnu}
+
+\def\speqnu#1{\specialnumber{#1}\eqnu}
+
+\let\saveeqno\eqno
+\let\eqno\leqno %automatic left side equation numbers
+
+\newif\ifineqalignno
+\let\saveleqalignno\leqalignno
+\def\leqalignno{\let\eqnu\Eeqnu\saveleqalignno}
+
+\let\eqalignno\leqalignno
+
+\def\sectandeqnum{%
+\ifspecialnumon\global\specialnumonfalse
+$\rm\spnum$\gdef\eqnum{{$\rm\spnum$}}\else\global\firstlettertrue
+\global\advance\eqcount by1 
+\ifappend\applett\else\the\sectioncount\fi.%
+\the\eqcount
+\xdef\eqnum{\ifappend\applett\else\the\sectioncount\fi.\the\eqcount}\fi}
+
+\def\eqnu{\leqno{\hbox{\elevenrm\ifspequation\else(\fi\sectandeqnum
+\ifspequation\global\spequationfalse\else)\fi}}}
+
+\def\Speqnu{\global\setbox\leqnobox=\hbox{\elevenrm
+\ifspequation\else%
+(\fi\sectandeqnum\ifspequation\global\spequationfalse\else)\fi}}
+
+\def\Eeqnu{\hbox{\elevenrm
+\ifspequation\else%
+(\fi\sectandeqnum\ifspequation\global\spequationfalse\else)\fi}}
+
+\newif\iffirstletter
+\global\firstlettertrue
+\def\eqletter#1{\global\specialnumontrue\iffirstletter\global\firstletterfalse
+\global\advance\eqcount by1\fi
+\gdef\spnum{\the\sectioncount.\the\eqcount#1}\eqnu}
+
+%%% Split math
+\newbox\leqnobox
+\def\outsideeqnu#1{\global\setbox\leqnobox=\hbox{#1}}
+
+\def\eatone#1{}
+
+%% Vertically centers equation number.
+\def\dosplit#1#2{\vskip-.5\abovedisplayskip
+\setbox0=\hbox{$\let\eqno\outsideeqnu%
+\let\eqnu\Speqnu\let\leqno\outsideeqnu#2$}%
+\setbox1\vbox{\noindent\hskip\wd\leqnobox\ifdim\wd\leqnobox>0pt\hskip1em\fi%
+$\displaystyle#1\mathstrut$\hskip0pt plus1fill\relax
+\vskip1pt
+\line{\hfill$\let\eqnu\eatone\let\leqno\eatone%
+\displaystyle#2\mathstrut$\ifmathqed~~\qed\fi}}%
+\copy1
+\ifvoid\leqnobox
+\else\dimen0=\ht1 \advance\dimen0 by\dp1
+\vskip-\dimen0
+\vbox to\dimen0{\vfill
+\hbox{\unhbox\leqnobox}
+\vfill}
+\fi}
+
+\everydisplay{\lookforbreak}
+
+\long\def\lookforbreak #1$${\def\mathone{#1}
+\expandafter\testforbreak\mathone\splitmath @}
+
+\def\testforbreak#1\splitmath #2@{\def\mathtwo{#2}\ifx\mathtwo\empty%
+#1$$%
+\ifmathqed\vskip-\belowdisplayskip
+\setbox0=\vbox{\let\eqno\relax\let\eqnu\relax$\displaystyle#1$}% 
+\vskip-\ht0\vskip-3.5pt\hbox to\hsize{\hfill\qed}
+\vskip\ht0\vskip3.5pt\fi
+\else$$\vskip-\belowdisplayskip
+\vbox{\dosplit{#1}{\let\eqno\eatone
+\let\splitmath\relax#2}}%
+\nobreak\vskip.5\belowdisplayskip
+\noindent\ignorespaces\fi}
+
+%% Proof box to be used when proof ends with equation.
+
+\newif\ifmathqed
+\def\inmathqed{\global\mathqedtrue}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% \mtable, Math table to make binary table easily
+
+%% Use:
+% \mtable
+% &n_1&n_2&n_3&n_4&n_5&n_6\cr
+% \Delta_1&M_3&M_2&0&0&0&0\cr
+% \Delta_2&0&0&M_1&M_3&0&0\cr
+% \endmtable
+
+\newcount\linenum
+\newcount\colnum
+
+%++
+\def\spline{\omit&\multispan{\the\colnum}{\hrulefill}\cr}
+\def\colcounter{\ifnum\linenum=1\global\advance\colnum by1\fi}
+
+\def\everyline{\noalign{\global\advance\linenum by1\relax}%
+\ifnum\linenum=2\spline\fi}
+
+\def\mtable{\bgroup\offinterlineskip
+\everycr={\everyline}\global\linenum=0
+\halign\bgroup\vrule height 10pt depth 4pt width0pt
+\hfill$##$\hfill\hskip6pt\ifnum\linenum>1
+\vrule\fi&&\colcounter\hskip12pt\hfill$##$\hfill\hskip12pt\cr}
+
+\def\endmtable{\crcr\egroup\egroup}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Array
+
+%% Will work in math or in text, will be in math mode inside array. 
+%% For each column desired supply
+%% r, l, or c, for right, left, or center orientation of that column.
+%% End each line with \\.
+
+%% To use: 
+%  \array ccc*
+%  x_s\leq a_1\\
+%  a_s<x_s^s<b_s\\
+%  x_s\geq a_1
+%  \endarray
+
+\def\xast{*}
+\newcount\intable
+\newcount\mathcol
+\newcount\savemathcol
+\newcount\topmathcol
+\newdimen\arrayhspace
+\newdimen\arrayvspace
+
+\arrayhspace=8pt % horizontal space between columns, (half this width
+                 %  will horizontally precede and follow the array)
+\arrayvspace=12pt % vertical space between lines
+
+\newif\ifdollaron
+
+
+\def\mathalign#1{\def\arg{#1}\ifx\arg\xast%
+\let\go\relax\else\let\go\mathalign%
+\global\advance\mathcol by1 %
+\global\advance\topmathcol by1 %
+\expandafter\def\csname  mathcol\the\mathcol\endcsname{#1}%
+\fi\go}
+
+\def\arraypickapart#1]#2*{\if#1c \ifmmode\vcenter\else
+\global\dollarontrue$\vcenter\fi\else%
+\if#1t\vtop\else\if#1b\vbox\fi\fi\fi\bgroup%
+\def\one{#2}}
+
+\def\arraystrut{\vrule height .7\arrayvspace depth .3\arrayvspace width 0pt}
+
+\def\array#1#2*{\def\firstarg{#1}%
+\if\firstarg[ \def\two{#2} \expandafter\arraypickapart\two*\else%
+\ifmmode\vcenter\else\vbox\fi\bgroup \def\one{#1#2}\fi%
+\global\everycr={\noalign{\global\mathcol=\savemathcol\relax}}%
+\def\\ {\cr}%
+\global\advance\intable by1 %
+\ifnum\intable=1 \global\mathcol=0 \savemathcol=0 %
+\else \global\advance\mathcol by1 \savemathcol=\mathcol\fi%
+\expandafter\mathalign\one*%
+\mathcol=\savemathcol %
+\halign\bgroup&\hskip.5\arrayhspace\arraystrut%
+\global\advance\mathcol by1 \relax%
+\expandafter\if\csname mathcol\the\mathcol\endcsname r\hfill\else%
+\expandafter\if\csname mathcol\the\mathcol\endcsname c\hfill\fi\fi%
+$\displaystyle##$%
+\expandafter\if\csname mathcol\the\mathcol\endcsname r\else\hfill\fi\relax%
+\hskip.5\arrayhspace\cr}
+
+\def\endarray{\crcr\egroup\egroup%
+\global\mathcol=\savemathcol %
+\global\advance\intable by -1\relax%
+\ifnum\intable=0 %
+\ifdollaron\global\dollaronfalse $\fi
+\loop\ifnum\topmathcol>0 %
+\expandafter\def\csname  mathcol\the\topmathcol\endcsname{}%
+\global\advance\topmathcol by-1 \repeat%
+\global\everycr={}\fi%
+}
+
+
+\def\big#1{{\hbox{$\left#1\vbox to 10pt{}\right.\n@space$}}}
+\def\Big#1{{\hbox{$\left#1\vbox to 13pt{}\right.\n@space$}}}
+\def\bigg#1{{\hbox{$\left#1\vbox to 16pt{}\right.\n@space$}}}
+\def\Bigg#1{{\hbox{$\left#1\vbox to 19pt{}\right.\n@space$}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 6) Figure and Table Captions.
+
+\def\fig#1#2{\topinsert
+\vskip4pt %<===topadjust to match height of ascenders on opposing page.
+\vbox to#2{\vfill}\vskip1sp
+\centerline{\eightsc Figure #1}
+\vskip16pt
+\endinsert}
+
+\def\figcaption#1#2#3{\topinsert
+\vskip4pt %<===topadjust to match height of ascenders on opposing page.
+\vbox to#3{\vfill}\vskip1sp
+\setbox0=\hbox{\eightsc Figure #1.\hskip12pt\eightpoint #2}
+\ifdim\wd0>\hsize
+\noindent\eightsc Figure #1.\hskip12pt\eightpoint #2
+\else
+\centerline{\eightsc Figure #1.\hskip12pt\eightpoint #2}
+\fi
+\vskip16pt
+\endinsert}
+
+\def\wfig#1#2#3{\topinsert
+\vskip4pt %<===topadjust to match height of ascenders on opposing page.
+\hbox to\hsize{\hss\vbox{\hrule height .25pt width #3
+\hbox to #3{\vrule width .25pt height #2\hfill\vrule width .25pt height #2}
+\hrule height.25pt}\hss}
+\vskip1sp
+\centerline{\eightsc Figure #1}
+\vskip16pt
+\endinsert}
+
+\def\wfigcaption#1#2#3#4{\topinsert
+\vskip4pt %<===topadjust to match height of ascenders on opposing page.
+\hbox to\hsize{\hss\vbox{\hrule height .25pt width #4
+\hbox to #4{\vrule width .25pt height #3\hfill\vrule width .25pt height #3}
+\hrule height.25pt}\hss}
+\vskip1sp
+\setbox0=\hbox{\eightsc Figure #1.\hskip12pt\eightpoint\rm #2}
+\ifdim\wd0>\hsize
+\noindent\eightsc Figure #1.\hskip12pt\eightpoint\rm #2\else
+\centerline{\eightsc Figure #1.\hskip12pt\eightpoint\rm #2}\fi
+\vskip16pt
+\endinsert}
+
+\def\tablehead#1{\vskip6pt
+\centerline{\eightsc Table #1}
+\vskip6pt}
+
+\def\tabcaption#1#2{\vskip6pt
+\setbox0=\hbox{\eightsc Table #1.\hskip12pt\eightpoint #2}
+\ifdim\wd0>\hsize
+\noindent\eightsc Table #1.\hskip12pt\eightpoint #2
+\else
+\centerline{\eightsc Table #1.\hskip12pt\eightpoint #2}
+\fi
+\vskip6pt}
+
+\def\endinsert{\egroup\if@mid\dimen@\ht\z@\advance\dimen@\dp\z@ 
+\advance\dimen@ 12\p@\advance\dimen@\pagetotal\ifdim\dimen@ >\pagegoal 
+\@midfalse\p@gefalse\fi\fi\if@mid\smallskip\box\z@\bigbreak\else
+\insert\topins{\penalty 100 \splittopskip\z@skip\splitmaxdepth\maxdimen
+\floatingpenalty\z@\ifp@ge\dimen@\dp\z@\vbox to\vsize {\unvbox \z@ 
+\kern -\dimen@ }\else\box\z@\nobreak\smallskip\fi}\fi\endgroup}
+
+\def\pagecontents{
+\ifvoid\topins \else\iftitle\else 
+\unvbox \topins \fi\fi \dimen@ =\dp \@cclv \unvbox 
+\@cclv 
+\ifvoid\topins\else\iftitle\unvbox\topins\fi\fi
+\ifvoid \footins \else \vskip \skip \footins \footnoterule 
+\unvbox \footins \fi \ifr@ggedbottom \kern -\dimen@ \vfil \fi} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 7) End Matter
+
+\newif\ifappend
+
+\def\appendix#1#2{\def\applett{#1}\def\two{#2}%
+\global\appendtrue
+\global\theoremcount=0
+\global\eqcount=0
+\vskip18pt plus 18pt
+\vbox{\parindent=0pt
+\everypar={\hskip\parfillskip}
+\def\\ {\vskip1sp}\elevenbold Appendix% 
+\ifx\applett\empty\gdef\applett{A}\ifx\two\empty\else.\fi%
+\else\ #1.\fi\hskip6pt#2\vskip12pt}%
+\global\sectiontrue%
+\everypar={\global\sectionfalse\everypar={}}\nobreak\ignorespaces}
+
+\newif\ifRefsUsed
+\long\def\references{\global\RefsUsedtrue\vskip21pt
+\theinstitutions
+\global\everypar={}\global\bibnum=0
+\vskip20pt\goodbreak\bgroup
+\vbox{\centerline{\eightsc References}\vskip6pt}%
+\ifdim\maxbibwidth>0pt
+\leftskip=\maxbibwidth%
+\parindent=-\maxbibwidth%
+\else
+\leftskip=18pt%
+\parindent=-18pt%
+\fi
+\ninepoint
+\frenchspacing
+\nobreak\ignorespaces\everypar={\amref}%
+}
+
+\def\endreferences{\vskip1sp\egroup\global\everypar={}%
+\nobreak\vskip8pt\vbox{\thereceived\therevised}
+}
+
+\newcount\bibnum
+
+\def\amref#1 {\global\advance\bibnum by1%
+\immediate\write\auxfile{\string\expandafter\string\def\string\csname
+\space #1croref\string\endcsname{[\the\bibnum]}}%
+\leavevmode\hbox to18pt{\hbox to13.2pt{\hss[\the\bibnum]}\hfill}}
+
+\def\bibline{\hbox to30pt{\hrulefill}\/\/}
+
+\def\name#1{{\eightsc#1}}
+
+\newdimen\maxbibwidth
+\def\AuthorRefNames [#1] {%
+\immediate\write\auxfile{\string\def\string\cite\string##1{[\string##1]}}
+
+\def\amref{\spamref}
+\setbox0=\hbox{[#1] }\global\maxbibwidth=\wd0\relax}
+
+
+\def\spamref[#1] {\leavevmode\hbox to\maxbibwidth{\hss[#1]\hfill}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 8) Footnotes
+
+
+\def\footnoterule{\kern-3pt\hrule width1in height.5pt\kern2.5pt}
+
+\def\footnote#1#2{%
+\plainfootnote{#1}{{\eightpoint\normalbaselineskip11pt
+\normalbaselines#2}}}
+
+
+\def\vfootnote#1{%
+\insert \footins \bgroup \eightpoint\baselineskip11pt
+\interlinepenalty \interfootnotelinepenalty
+\splittopskip \ht \strutbox \splitmaxdepth \dp \strutbox \floatingpenalty 
+\@MM \leftskip \z@skip \rightskip \z@skip \spaceskip \z@skip 
+\xspaceskip \z@skip
+{#1}$\,$\footstrut \futurelet \next \fo@t}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 9) Theorem type environments
+
+\newif\iffirstadded
+\newif\ifadded
+\def\addletter#1{\global\addedtrue\global\specialnumontrue\def\addedlett{#1}}
+\def\addedlett{}
+
+\def\alltheoremnums{%
+\ifspecialnumon\global\specialnumonfalse
+\ifadded\global\addedfalse
+\iffirstadded\global\firstaddedfalse
+\global\advance\theoremcount by1 \fi
+\ifappend\applett\else\the\sectioncount\fi.\the\theoremcount\addedlett%
+\xdef\theoremnum{\ifappend\applett\else\the\sectioncount\fi.%
+\the\theoremcount\addedlett}%
+\else$\rm\spnum$\def\theoremnum{{$\rm\spnum$}}\fi%
+\else\global\firstaddedtrue
+\global\advance\theoremcount by1 
+\ifappend\applett\else\the\sectioncount\fi.\the\theoremcount%
+\xdef\theoremnum{\ifappend\applett\else\the\sectioncount\fi.%
+\the\theoremcount}\fi}
+
+\def\allcorolnums{%
+\ifspecialnumon\global\specialnumonfalse
+\ifadded\global\addedfalse
+\iffirstadded\global\firstaddedfalse
+\global\advance\corolcount by1 \fi
+\the\corolcount\addedlett%
+\else$\rm\spnum$\def\corolnum{$\rm\spnum$}\fi%
+\else\global\advance\corolcount by1 
+\the\corolcount\fi}
+
+%% use for Theorem, Corollary, Lemma, Proposition, Demonstration and similar.
+
+\newcount\corolcount
+\def\xcorol{Corollary}
+\def\xtheorem{Theorem}
+\def\xmaintheorem{Main Theorem}
+
+\newif\ifthtitle
+\def\proclaimtitle#1{\gdef\thethtitle{#1}\global\thtitletrue}
+
+\let\saverparen)
+\let\savelparen(
+\def\rmparenl{{\rm(}}
+\def\rmparenr{{\rm\/)}}
+{
+\catcode`(=13
+\catcode`)=13
+\gdef\makeparensRM{\catcode`(=13\catcode`)=13\let(=\rmparenl%
+\let)=\rmparenr%
+\everymath{\let(\savelparen%
+\let)\saverparen}%
+\everydisplay{\let(\savelparen%
+\let)\saverparen\lookforbreak}}}
+
+\medskipamount=8pt plus.1\baselineskip minus.05\baselineskip
+
+\def\rmtext#1{\hbox{\rm#1}}
+
+\def\proclaim#1{\vskip-\lastskip
+\def\one{#1}\ifx\one\xtheorem\global\corolcount=0\fi
+\ifsection\global\sectionfalse\vskip-6pt\fi
+\medskip
+{\elevensc#1}%
+\ifx\one\xmaintheorem\global\corolcount=0
+\gdef\theoremnum{Main Theorem}\else%
+\ifx\one\xcorol\ \allcorolnums\else\ \alltheoremnums\fi\fi%
+\ifthtitle\ \global\thtitlefalse{\rm(\thethtitle)}\fi.%
+\hskip1em\bgroup\let\text\rmtext\makeparensRM\it\ignorespaces}
+
+
+\def\nonumproclaim#1{\vskip-\lastskip
+\def\one{#1}\ifx\one\xtheorem\global\corolcount=0\fi
+\ifsection\global\sectionfalse\vskip-6pt\fi
+\medskip
+{\elevensc#1}.\ifx\one\xmaintheorem\global\corolcount=0
+\gdef\theoremnum{Main Theorem}\fi\hskip.5pc%
+\bgroup\it\makeparensRM\ignorespaces}
+
+\def\endproclaim{\egroup\medskip}
+
+%% Use demo for Proof, Proof of, Definition, Example,
+%% Remark, Case, Subcase, Conjecture, Note, Notation,
+%% Convention, Construction and Step.
+%% Any other use for demo will format similar to `Proof.'
+
+\def\xproof{Proof}
+\def\xremark{Remark}
+\def\xcase{Case}
+\def\xsubcase{Subcase}
+\def\xconjecture{Conjecture}
+\def\xstep{Step}
+\def\xof{of}
+
+
+\def\deconstruct#1 #2 #3 #4 #5 @{\def\one{#1}\def\two{#2}\def\three{#3}%
+\def\four{#4}%
+\ifx\two\empty #1\else%
+\ifx\one\xproof%
+\ifx\two\xof%
+  \ifx\three\xcorol Proof of Corollary \rm#4\else%
+     \ifx\three\xtheorem Proof of Theorem \rm#4\else\xone\fi%
+  \fi\fi%
+\else\xone\fi\fi.}
+
+
+\def\pickup#1 {\def\this{#1}%
+\ifx\this\xproof\global\let\go\demoproof
+\global\let\enddemo\endproof\else
+\ifx\this\xremark\global\let\go\demoremark\else
+\ifx\this\xcase\global\let\go\demostep\else
+\ifx\this\xsubcase\global\let\go\demostep\else
+\ifx\this\xconjecture\global\let\go\demostep\else
+\ifx\this\xstep\global\let\go\demostep\else
+\global\let\go\demoproof\fi\fi\fi\fi\fi\fi}
+
+\newif\ifnonum
+\def\demo#1{\vskip-\lastskip
+\ifsection\global\sectionfalse\vskip-6pt\fi
+\def\one{#1 }\def\two{#1*}%
+\setbox0=\hbox{\expandafter\pickup\one}\expandafter\go\two}
+
+\def\numbereddemo#1{\vskip-\lastskip
+\ifsection\global\sectionfalse\vskip-6pt\fi
+\def\two{#1*}%
+\expandafter\demoremark\two}
+
+\def\demoproof#1*{\medskip\def\xone{#1}
+{\ignorespaces\it\expandafter\deconstruct\xone {} {} {} {} {} @%
+\unskip\hskip6pt}\rm\ignorespaces}
+
+\def\demoremark#1*{\medskip
+{\it\ignorespaces#1\/} \ifnonum\global\nonumtrue\else
+ \alltheoremnums\unskip.\fi\hskip1pc\rm\ignorespaces}
+
+\def\demostep#1 #2*{\vskip4pt
+{\it\ignorespaces#1\/} #2.\hskip1pc\rm\ignorespaces}
+
+\def\enddemo{\medskip}
+
+
+\def\endproof{\ifmathqed\global\mathqedfalse\medskip\else
+\parfillskip=0pt~~\hfill\qed\medskip
+\fi\global\parfillskip0pt plus 1fil\relax
+\gdef\enddemo{\medskip}}
+
+\def\qed{\vbox{\hrule\hbox{\vrule height6pt\hskip6pt\vrule}\hrule}}
+
+%% Proof box to be used in a \proclaim{}...\endproclaim environment
+
+\def\proofbox{\parfillskip=0pt~~\hfill\qed\vskip1sp\parfillskip=
+0pt plus 1fil\relax}
+
+%%%%
+
+\let\endsteps\endcases
+\let\endconjectures\endcases
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%% 10) CrossRefs 
+
+%%% Generic crossreferencing
+%%% to use: \label\nameoflabel* (will give the page number when referenced)
+
+% Commands to access current state of counter, for cross-referencing
+% \sectnum
+% \theoremnum
+% \eqnum
+
+
+%%% You can make another definition that includes counters and/or the
+%%% page number and access this information as the second argument:
+%%% \label\yourlabelname[2.13]*
+
+%%% Since this method of cross-referencing relies
+%%% on an auxiliary file, the first time you tex the file
+%%% you will get `??' when you write \ref\nameoflabel.
+%%% When you TeX the file the second time the auxiliary file
+%%% will be input and \ref\nameoflabel will produce the cross-ref.
+
+\def\stripbs#1#2*{\def\one{#2}}
+
+\def\emptyspace{ }
+\def\nextthing{}
+\def\newline{***}
+\def\eatone#1{ }
+
+\def\lookatspace#1{\ifcat\noexpand#1\ \else%
+\gdef\nextthing{}\xdef\next{#1}%
+\ifx\next\emptyspace%
+\let\nextthing\emptyspace\else\ifx\next\newline%
+\gdef\nextthing{\eatone}\fi\fi\fi\egroup\nextthing#1}
+
+{\catcode`\^^M=\active%
+\gdef\spacer{\bgroup\catcode`\^^M=\active%
+\let^^M=\newline\obeyspaces\lookatspace}}
+
+\def\ref#1{\seeifdefined{#1}\expandafter\csname\one\endcsname\spacer}
+
+\def\cite#1{\expandafter\ifx\csname#1croref\endcsname\relax[??]\else
+\csname#1croref\endcsname\fi\spacer}
+
+%% for testing in \label and \ref to see if term already labeled.
+
+\def\seeifdefined#1{\expandafter\stripbs\string#1croref*%
+\crorefdefining{#1}}
+
+\newif\ifcromessage
+\global\cromessagetrue
+
+\def\crorefdefining#1{\ifdefined{\one}{}
+{\ifcromessage\global\cromessagefalse%
+\message{\spaces\spaces\spaces\spaces\spaces\spaces\spaces}%
+\message{<Undefined reference.}%
+\message{Please TeX file once more to have accurate cross-references.>}%
+\message{\spaces\spaces\spaces\spaces\spaces\spaces\spaces}\fi[??]}}
+
+\def\label#1#2*{\gdef\ctest{#2}%
+\xdef\currlabel{\string#1croref}
+\expandafter\seeifdefined{#1}%
+\ifx\empty\ctest%
+\xdef\labelnow{\write\auxfile{\noexpand\def\currlabel{\the\pageno}}}%
+\else\xdef\labelnow{\write\auxfile{\noexpand\def\currlabel{#2}}}\fi%
+\labelnow}
+
+\def\ifdefined#1#2#3{\expandafter\ifx\csname#1\endcsname\relax%
+#3\else#2\fi}
+
+%%%%%%%%%%%%%%%%%%%%%
+%% 11) Listing
+
+\def\listitem#1{\vskip1sp\indent\llap{(#1)}\ }
+
+%% To use with asterisks:
+\def\asteritem#1{\vskip1sp\indent\llap{$#1$}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+%% 12) Article and Journal Table of Contents
+
+\def\articlecontents{
+\vskip20pt\centerline{\bf Table of Contents}\everypar={}\vskip6pt
+\bgroup \leftskip=3pc \parindent=-2pc 
+\def\item##1{\vskip1sp\indent\hbox to2pc{##1.\hfill}}}
+
+\def\endcontents{\vskip1sp\leftskip=0pt\egroup}
+
+\def\journalcontents{\vfill\eject
+\def\currannalsline{\hfill}
+\global\titletrue
+\vglue3.5pc
+\centerline{\tensc\hskip12pt TABLE OF CONTENTS}\everypar={}\vskip30pt
+\bgroup \leftskip=34pt \rightskip=-12pt \parindent=-22pt 
+  \def\\ {\vskip1sp\noindent}
+\def\pagenum##1{\unskip\parfillskip=0pt\dotfill##1\vskip1sp
+\parfillskip=0pt plus 1fil\relax}
+\def\name##1{{\tensc##1}}}
+
+%% default values
+
+\institution{}
+\onpages{0}{0}
+\def\lastpage{???}
+\def\thetitle{Title ???}
+\def\theauthors{Authors ???}
+\def\thereceived{}
+\def\therevised{}
+
+\gdef\split{\relaxnext@\ifinany@\let\next\insplit@\else
+ \ifmmode\ifinner\def\next{\onlydmatherr@\split}\else
+ \let\next\outsplit@\fi\else
+ \def\next{\onlydmatherr@\split}\fi\fi\let\eqnu\xspliteqnu\next}
+
+\gdef\align{\relaxnext@\ifingather@\let\next\galign@\else
+ \ifmmode\ifinner\def\next{\onlydmatherr@\align}\else
+ \let\next\align@\fi\else
+ \def\next{\onlydmatherr@\align}\fi\fi\let\eqnu\xspliteqnu\next}
+
+\def\spliteqnu{{\tenrm\sectandeqnum}\relax}
+
+\def\xspliteqnu{\tag\spliteqnu}
+
+
+\catcode`@=12
+
+
+

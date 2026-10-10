@@ -1,0 +1,675 @@
+\section{ Parameters for $PSL(2,\C)$-characters of surfaces}
+\label{PARAM} Fix a compact closed oriented surface $S$ of genus
+$g$ with a non empty set $V= \{v_1,\dots \ , v_r\}$ of marked
+points, and negative Euler characteristic $\chi(S\setminus V)<0$.
+Denote by $\pi$ the fundamental group of $S\setminus V$, and by
+$$\Rr(g,r) = {\rm Hom}(\pi, PSL(2,\C))/PSL(2,\C)$$ the set of {\it
+all} conjugacy classes of $PSL(2,\C)$-valued representations of
+$\pi$. The group $\pi$ is free of rank $\kappa = 2g + r -1$. Any
+choice of free generators of $\pi$ identifies the set ${\rm
+Hom}(\pi, PSL(2,\C))$ with $PSL(2,\C)^\kappa$. Different such
+identifications are related by algebraic automorphisms of
+$PSL(2,\C)^\kappa$.  Moreover, the isomorphism $PSL(2,\C)\cong
+SO(3,\C)$ induced by the adjoint action ${\rm Ad}: PSL(2,\mc)
+\rightarrow {\rm Aut}(sl(2,\mc))$ implies that ${\rm Hom}(\pi,
+PSL(2,\C))$ is an {\it affine} complex algebraic set, with the
+complex algebraic action of $PSL(2,\C)$ by conjugation.
+
+As the rough topological quotient space $\Rr(g,r)$ is not
+Hausdorff, it is more convenient to consider the algebro-geometric
+quotient $$X(\pi)={\rm
+  Hom}(\pi, PSL(2,\C))//PSL(2,\C)$$ of invariant theory, called the
+{\it variety of $PSL(2,\C)$-characters} (see eg. \cite{HP}).
+Recall that $X(\pi)$ is a complex affine algebraic set such that
+there exists a surjective regular map $$t:{\rm Hom}(\pi,
+PSL(2,\C))\to X(\pi)$$ inducing an isomorphism $t^*$ between the
+regular functions on $X(\pi)$ and the regular functions on ${\rm
+Hom}(\pi, PSL(2,\C))$ invariant by conjugation. In general
+$t(\gamma)=t(\sigma)$ does not imply that $\gamma$ and $\sigma$
+are conjugate, but this is true if we restrict to {\it
+irreducible} representations: we have ${\rm
+  Hom}^{irr}(\pi, PSL(2,\C)) = t^{-1}(X^{irr}(\pi))$, where
+$X^{irr}(\pi)= t({\rm Hom}^{irr}(\pi, PSL(2,\C))$, so that the
+(restricted) rough quotient $\Rr(g,r)^{irr}$ and the algebraic
+quotient $X^{irr}(\pi)$ coincide.
+
+ We can deal with the whole of $\Rr(g,r)$ to construct
+the QHFT. Hence below we treat the complex dimension of subsets of
+$\Rr(g,r)$ somewhat formally, as everything can be substantiated
+in terms of $X(\pi)$, or by restriction to $X^{irr}(\pi)$. For
+instance, as $PSL(2,\C)$ has trivial centre and complex dimension
+$3$ we say that the complex dimension of $\Rr(g,r)$ is $3\kappa -
+3 = -3\chi(F)$.
+\subsection {Efficient triangulations}\label{e-triang}
+Fix a surface $F$ with $r$ boundary components, obtained by
+removing from $S$ the interior of small $2$-disks $D_i$ such that
+$v_i \in \partial D_i$.
+
+A triangulation $T'$ of $S$ with the set of vertices equal to $V$ is
+called a {\it topological ideal triangulation} of $S\setminus
+V$. Given such a $T'$, we need a marking of corners of the
+$2$-simplices. The best suited to $3$-dimensional extension are
+induced by global branchings $b'$ of $T'$, and it is known that pairs
+$(T',b')$ always exist. Then, as in section \ref{QHG}, we have a sign
+function $\sigma = \sigma_{(T',b')}$. A {\it corner map} $v\mapsto
+c_v$ associates to each vertex $v$ of $T'$ the corner at $v$ of a
+triangle, say $t_v$, in its star. We say that $v\mapsto c_v$ is {\it
+$t$-injective} if $v\mapsto t_v$ is injective.
+\begin{lem}\label{injcorner}
+For every $(g,r)\ne (0,3)$, every triangulation $T'$ of $S$ with $r$
+vertices admits $t$-injective corner maps.
+\end{lem}
+\noindent {\it Proof.} For $(g,r) =(0,4)$ or $g>0$ and $r=1$, it
+is immediate to construct such a triangulation. Subdividing a
+triangle by taking the cone from an interior point preserves the
+existence of $t$-injective corner maps. By induction on $r$ we
+deduce that for every $(g,r)\ne (0,3)$ there exist triangulations
+of $S$ as in the statement.\hfill\break In Figure \ref{eTflip} the
+corner selection is specified by a $*$, and the rows show all the
+possible flip moves on triangulations of $S$, up to obvious
+symmetries, that preserve the injectivity of corner maps. Consider
+triangulations $T'$, $T''$ of $S$ with $r$ vertices, such that
+$T''$ supports a $t$-injective corner map. It is well known that
+$T''$ is connected to $T'$ via a finite sequence of flips. The
+$t$-injective corner map for $T''$ yields a $t$-injective corner
+map for $T'$ by decorating these flips as in Figure
+\ref{eTflip}.\hfill$\Box$\medskip
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=6cm]{eTflip.eps}
+\caption{\label{eTflip} The flips with marked corners.}
+\end{center}
+\end{figure}
+There are no obstructions to use arbitrary corners maps in what
+follows. Specializing to injective ones just simplifies the
+exposition. For $(g,r)= (0,3)$, triangulations have two
+$2$-simplices, one with two selected corners.  From now on, we
+assume that $(g,r) \neq (0,3)$, the extension to the $(0,3)$ case
+being straightforward.
+
+\smallskip
+
+Given a pair $(g,r) \ne (0,3)$ and $(T',b')$ as in Lemma
+\ref{injcorner}, fix a $t$-injective corner map $v\mapsto c_v$. In the
+interior of each triangle $t_v$ consider a bigon $D_v$ with one vertex
+at $v$, and call $v'$ the other vertex. Remove from $t_v$ the interior
+of $D_v$, and triangulate the resulting cell $s_v = t_v \setminus {\rm
+  Int}(D_v)$ by taking the cone with base $v'$. Repeating this
+procedure for each $t_v$, we get a triangulation $T$ of $F$ with $2r$
+vertices and $p+2r$ triangles, where $p$ denotes the number of
+triangles of $T'$.  The set of edges of $T$, $E(T)$, contains $E(T')$
+in a natural way, and $|E(T)|= |E(T')|+4r$. We extend $b'$ to a
+branching $b$ on $T$ as in in Figure \ref{newb}, and the sign function
+$\sigma_{(T',b')}$ to the triangles of $(T,b)$ in the natural way.
+Note that the figure shows only one of the possible branching
+configuration.  In general we extend $b'$ to $b$ so that we can
+recover $(T',b')$ from $(T,b)$ by ``zipping'' and ``collapsing'', as
+suggested at the bottom of Figure \ref{newb}. In what follows, for
+simplicity we will refer to this configuration, as the treatment of
+the others is similar.
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=6cm]{newb2.eps}
+\caption{\label{newb} The branched triangulated cell $s_v$.}
+\end{center}
+\end{figure}
+\begin{defi}\label{defet}
+{\rm We call the pair $(T,b)$ an efficient triangulation (for short:
+    $e$-{\it triangulation}) of $F$. For each vertex $v$, the {\it
+    preferred innner triangle at} $v$ is the triangle $\tau_v$ in
+    $s_v$ with an edge on $\partial F$ whose $b$-orientation coincides
+    with the boundary orientation of $F$.}
+\end{defi}
+
+\subsection{Cocycle parameters}\label{Dpar}
+The inclusions of Int$(F)$ into $F$ and $S\setminus V$ induce
+identifications of the respective fundamental groups.
+
+Fix an $e$-triangulation $(T,b)$ of $F$. Denote by $Z(T,b)$ the space
+of $PSL(2,\C)$-valued $1$-cocycles on $(T,b)$; we stipulate
+that on a triangle with ordered $b$-oriented edges $e_0,e_1,e_2$ the
+cocycle relation is $z(e_0)z(e_1)z(e_2)^{-1} = 1$. In this section we
+construct a parametrization of $\Rr(g,r)$ based on cocycle
+coefficients by specifying subsets of $Z(T,b)$ with small `residual
+gauge groups', that make principal algebraic bundles over the
+``strata'' of a suitable partition of $\Rr(g,r)$. These strata are
+determined by the holonomies around the boundary components of
+$F$.
+
+Write $C(T,b)$ for the space of $PSL(2,\C)$-valued $0$-cochains on
+$(T,b)$, that is the $PSL(2,\C)$-valued functions defined on the
+set of vertices of $T$.  Two $1$-cocycles $z$ and $z'$ are said
+equivalent {\it up to gauge transformation} if there is a
+$0$-cochain $\lambda$ such that, for every oriented edge
+$e=[x_0,x_1]$, we have $$z'(e) = \lambda(x_0)^{-1}z(e)\lambda(x_1)
+\ . $$ It is well known that the quotient set $H(T,b) =
+Z(T,b)/C(T,b)$ is in one-one correspondence with $\Rr(g,r)$.
+Indeed, for any fixed $x_0 \in T$ we have a natural surjective map
+$$f_{x_0}: Z(T,b) \to {\rm Hom}(\pi, PSL(2,\C)),$$ where
+$\pi=\pi_1(F,x_0)$, and two representations $f_{x_0}(z)$ and
+$f_{x_0}(z')$ define the same point in $\Rr(g,r)$ if and only if
+$z$ and $z'$ are equivalent up to gauge transformation. Note that
+the complex dimension of $H(T,b)$ is $3(|E(T)| - (p+2r) - 2r) =
+-3\chi(F)$, which is the dimension of $\Rr(g,r)$. This is because
+the complex dimension of $C(T,b)$ is equal to $6r$, the set
+$Z(T,b)$ is defined by $3(p+2r)$ polynomial relations on $3|E(T)|$
+variables, and $PSL(2,\C)$ has trivial centre. (Recall that $p$ is
+the number of triangles of the initial triangulation $T'$ of $S$
+with $r$ vertices.)
+
+Denote by $B^+(2,\C)$ (respectively $B^-(2,\C)$) the Borel subgroup of
+$SL(2,\C)$ of upper (respectively lower) triangular matrices. Let
+$PB^\pm(2,\C)= B^\pm(2,\C)/\pm I$ and put
+$$ P=\left( \begin{array}{cc} 0 & 1 \\ 1 & 0  \end{array}\right).$$
+Define a map
+\begin{equation}\label{convert}
+\Psi : SL(2,\C)\to SL(2,\C),\quad \Psi(A)=PAP
+\end{equation}
+and denote by $\Psi$ the induced automorphism of $PSL(2,\C)$. We
+have $\Psi(B^\pm(2,\C)) = B^\mp(2,\C)$. %We note that for cocycle
+%parameters, the roles of $B^\pm(2,\C)$ are perfectly exchangeable
+%each with the other via the map $\Phi$. This symmetry will be
+%broken in Subsection \ref{Ipar}, when we will consider the
+%$\Ii$-parameters.
+For any $g\in PSL(2,\C)$ we distinguish the {\it type} of $g$ as
+{\it
+  trivial}, {\it parabolic} or {\it generic} (the latter for elliptic or
+loxodromic) with the obvious meaning. We denote
+$$\mathcal{C}^+(g) \in PB^+(2,\C)$$ the canonical
+upper triangular matrix (up to sign) representative of the conjugacy
+class of $g$ (for generic $g$ we normalize $\mathcal{C}^+(g)$ by stipulating
+that the top diagonal entry has absolute value $>1$), and we set
+$$\mathcal{C}^-(g) = \Psi(\mathcal{C}^+(g)). $$
+We define the type of $\rho \in \Rr(g,r)$ as the $n$-uple of types of
+the $\rho$-holonomies of the oriented boundary components
+$\gamma_1,\ldots,\gamma_r$ of $F$. Put:
+$$\begin{array}{l} \Rr(g,r,t) = \{ \rho \in \Rr(g,r) \mid \rho {\rm\
+has \ type\ } t\} \\ \Rr(g,r,\mathcal{C}^\pm) = \{ \rho \in \Rr(g,r,t)
+\mid \mathcal{C}^\pm(\rho(\gamma_i)) = \mathcal{C}_i^\pm\}
+\end{array}$$
+where $\mathcal{C}^\pm=(\mathcal{C}_1^\pm,\ldots,\mathcal{C}_r^\pm)$,
+$\mathcal{C}_i^\pm$ is an arbitrary diagonal or unipotent element in
+$PB^\pm(2,\C)$, and $\mathcal{C}^\pm$ has type $t$.
+\smallskip
+For any $g \in PB^\pm(2,\C)$ let us write $g=[a,b]^\pm$, where $a$ is
+the top diagonal entry of $g$ and $b$ is the non diagonal one (we do
+the abuse of confusing $g$ with its projective class). For every
+vertex $v_i$ of $(T,b)$, let $e_1^i$ be the boundary edge of the
+preferred inner triangle $\tau_{v_i}$ (see Definition \ref{defet}),
+and $\gamma_i$ the oriented boundary loop of $F$ based at
+$v_i$. Recall the projections $f_{v_i}: Z(T,b) \to {\rm Hom}(\pi,
+PSL(2,\C))$.
+\begin{defi} \label{defcoc}
+The set of ($\pm$)-{\it cocycle parameters} for
+$\Rr(g,r,\mathcal{C}^\pm)$ is $$\Zz(T,b,\mathcal{C}^\pm) = \{ z
+\in Z(T,b) \mid \forall i=1,\ldots,r,\ f_{v_i}(z)(\gamma_i) =
+\mathcal{C}^\pm_i,\ z(e_1^i)= [1,1/2]^\pm \}.$$
+\end{defi}
+Clearly $\Zz(T,b,\mathcal{C}^\pm)$ is non empty. In fact, any
+$z\in Z(T,b)$ with ${\rm conj} \circ f(z) \in
+\Rr(g,r,\mathcal{C}^\pm)$ is equivalent to one in
+$\Zz(T,b,\mathcal{C}^\pm)$ via some gauge transformation.
+Moreover, given a vertex $v_i$ and a $0$-cochain $s$ with support
+at $v_i$ and $v_i'$, $s$ maps $\Zz(T,b,\mathcal{C}^\pm)$ onto
+itself if and only if $$s(v_i)\in {\rm Stab}(\mathcal{C}^\pm_i)$$
+and $$s(v_i')^{-1}[1,1/2]^\pm s(v_i) = [1,1/2]^\pm. $$ As the
+triangles $\tau_{v_i}$ are in one-one correspondence with the
+$v_i$, we deduce that there is a projection
+\begin{equation}\label{projc}
+p^\pm_{\mathcal{C}}: \Zz(T,b,\mathcal{C}^\pm)\to
+\Rr(g,r,\mathcal{C}^\pm) \end{equation} with fiber isomorphic to
+the group $$\Gg (T,b,\mathcal{C}^\pm):={\rm
+Stab}(\mathcal{C}^\pm_1)\times \dots \times {\rm
+Stab}(\mathcal{C}^\pm_r)$$ that we call the {\it residual gauge
+transformations}.  Denote by $\Zz(T,b,t)^\pm$ (respectively
+$p^\pm_t$) the union of the $\Zz(T,b,\mathcal{C}^\pm)$
+(respectively $p^\pm _{\mathcal{C}}$) over all $\mathcal{C}^\pm$
+with type $t$, and put $$\textstyle \Zz(T,b)^\pm = \coprod_t
+\Zz(T,b,t)^\pm, \quad p^\pm =  \coprod_t p^\pm_t).$$ For futur
+reference, we summarize the above constructions in the following
+proposition.
+\begin{prop}\label{topcomp} For every $\Cc^\pm$, the projection
+  $p^\pm : \Zz(T,b)^\pm \rightarrow \Rr(g,r)$ restricts
+to a complex affine algebraic principal $\Gg
+(T,b,\mathcal{C}^\pm)$-bundle $$\Zz(T,b,\mathcal{C}^\pm) \to
+\Rr(g,r,\mathcal{C}).$$ The map $\Psi$ in (\ref{convert}) yields
+an isomorphism $\Zz(T,b,\mathcal{C}^\pm) \cong
+\Zz(T,b,\mathcal{C}^\mp)$. Moreover we have: $$\begin{array}{lll}
+{\rm dim}(\Zz(T,b,\mathcal{C}^\pm)= -3\chi(F)\\ {\rm
+dim}(\Rr(g,r,\mathcal{C})) = -3\chi(F) - {\rm dim}(\Gg
+(T,b,t_{\mathcal{C}}))\\ {\rm dim}(\Rr(g,r,t_{\mathcal{C}})) =
+{\rm dim}(\Rr(g,r,\mathcal{C})) + \alpha(t_{\mathcal{C}})
+\end{array}$$
+where $t_{\mathcal{C}}$ is the type of $\mathcal{C}$ and
+$\alpha(t_{\mathcal{C}})$ is the number of
+generic entries of $t_{\mathcal{C}}$.
+\end{prop}
+Observe that: if $t_{{\rm gen}}$ is the purely generic type, then
+${\rm dim}(\Rr(g,r,t_{{\rm gen}}))= -3\chi(F)$; if $t_{{\rm par}}$ is
+purely parabolic, then ${\rm dim}(\Rr(g,r,t_{{\rm par}}))= -3\chi(F)-
+r$; if $t_I$ is purely trivial, then ${\rm dim}(\Rr(g,r,t_I))=
+-3\chi(F) -3r = -3\chi(S)= 6g-6$. Hence $\Rr(g,r,t_{{\rm gen}})$ is a
+dense open subset of $\Rr(g,r)$. Moreover, via the inclusion of
+closures, we have a filtration of $\Rr(g,r)$ for which $\Rr(g,r,t_I)$
+is the `deepest' part. It would be interesting to study the
+singularities of the closure of each $\Rr(g,r,t)$ in $\Rr(g,r)$, in
+order to check if this filtration induces a ``stratification'' of
+$\Rr(g,r)$.
+
+\begin{remark}\label{real} {\rm For parabolic elements $g \in
+    PSL(2,\R)$ we have two conjugacy classes, that can be
+distinguished by a sign. So, replacing $PSL(2,\C)$ with
+$PSL(2,\R)$, the constructions of this section still work by
+associating a {\it sign} to each parabolic end of the surface $S
+\setminus V$. Note that for $PSL(2,\R)$-valued cocycles the
+idealization procedure described in Section \ref{Ipar} below gives
+only degenerate triangles and tetrahedra (with real shapes or
+cross-ratio moduli).}
+\end{remark}
+
+\noindent {\bf Example: the Fricke space.} Suppose that $S$ has a
+unique marked point $v$. Choose a standard curve system
+$\mathcal{S}=\{a_i,b_i\}_{i=1}^{g}$ based at $v$, so that
+$$\pi_1(S,v) =<a_1,b_1,\ldots,a_g,b_g\mid [a_1,b_1]\ldots
+[a_g,b_g] =1>.$$ Cutting open $S$ along $\mathcal{S}$ we get a
+$4g$-gon $P$ with oriented boundary edges. Taking the cone to a
+vertex it is easy to construct a branched triangulation of $P$,
+which induces one, say $(T',b')$, for $(S,v)$.  Denote by $(T,b)$
+any $e$-triangulation obtained from $(T',b')$. \hfill\break Recall
+that the Teichm\"uller space $\mathcal{T}(S)$ can be identified
+with the set of conjugacy classes of $PSL(2,\mr)$-valued discrete
+faithful representations of $\pi_1(S)$, and that we have the
+well-known (real-analytic) Fricke parametrization $\mathcal{T}(S)
+\cong \mr^{6g-6}$ (see e.g. \cite{Ab}). For each $z \in
+\mathcal{T}(S)$ the Fricke coordinates of $z$ are matrix entries
+of the $\hat{z}(\gamma)$ for all $\gamma \in \mathcal{S}$, where
+$\hat{z}$ is a representative of $z$ specified by fixing once and
+for all three of the fixed points of $z(a_g)$ and $z(b_g)$. So
+$\mathcal{T}(S)$ embeds in the space of real cocycle parameters
+for $F$ with trivial type $t_I$. This embedding is generalized
+easily to the Teichm\"uller space of arbitrary bordered Riemann
+surfaces, by considering the spaces $\Zz(T,b,t)$ for all types $t$
+and $e$-triangulations of $(S,V)$ with arbitrary $V$ (see Remark
+\ref{real}).
+
+\subsection {Cross-ratio parameters}\label{Ipar}
+In this section we derive from the cocycle parameters
+$\Zz(T,b)^\pm$ other parameters for $\Rr(g,r)$ which are related
+to the shear-bend coordinates for pleated hyperbolic surfaces.
+These parameters are obtained via an {\it idealization procedure}
+that includes the choice of a base point on the Riemann sphere. We
+fix this base point as $0$. Note that the $B^+(2,\C)$-orbit of $0$
+is the whole of $\C$, while $B^-(2,\C)$ fixes $0$. Hence the
+symmetry between $\Zz(T,b)^+$ and $\Zz(T,b)^-$ given by the map
+$\Psi$ in (\ref{convert}) shall be broken.
+\begin{defi} \label{triideal-pre} {\rm
+(Compare with Definition \ref{3dim-id}.) Let $(K,b)$ be any oriented
+surface branched triangulation. Let $z$ be any $PSL(2,\C)$-valued
+cocycle on $(K,b)$.  We say that $z$ is {\it idealizable} if for any
+triangle $t$ of $(T,b)$ with $b$-ordered edges $e_0$, $e_1$ and $e_2$,
+the points $u_0=0$, $u_1= z(e_0)(0)$ and $u_2= z(e_2)(0)$ are distinct
+in $\mc$. We say that the complex triangle with vertices $u_0$, $u_1$
+and $u_2$ is the \emph{idealization} of $t$.}
+\end{defi}
+\begin{defi} \label{triideal}
+{\rm Let $(T,b)$ be an $e$-triangulation of $F$ obtained from a
+branched ideal triangulation $(T',b')$ of $S \setminus V$. A
+cocycle $z\in \Zz(T,b)^+$ is {\it (strongly) idealizable} if:
+\smallskip
+
+(a) $z$ is idealizable;
+\smallskip
+
+(b) $\Psi(z) \in \Zz(T,b)^-$, which {\it cannot} be idealizable at the
+triangles having an edge on $\partial F$, is nevertheless idealizable
+at every other triangle.
+\smallskip
+
+We denote by $\Zz_I(T,b)^+$ the set of (strongly) idealizable
+cocycles, and we put $\Zz_I(T,b)^- = \Psi(\Zz_I(T,b)^+)$ and
+$\Rr_I(T,b) = p^+(\Zz_I(T,b)^+) = p^-(\Zz_I(T,b)^- )$.}
+\end{defi}
+
+Clearly, $\Zz_I(T,b)^+$ is a non-empty dense open subset of
+$\Zz(T,b)^+$. If every edge of $T$ has distinct endpoints (in case
+we say that $T$ {\it quasi-regular}), then $\Rr_I(T,b) =
+\Rr(g,r)$. In general, characters of representations with a free
+action on a non-empty domain of $\mc\mathbb{P}^1$ (such as
+quasi-Fuchsian representations) always belong to $\Rr_I(T,b)$, for
+any $(T,b)$. By using the arguments of \cite{Kmod}, Theorem 1, it
+can be shown that for any character $\rho\in \Rr(g,r)$ of
+irreducible representations, there exists an $e$-triangulation
+$(T,b)$ with idealizable cocycles representing $\rho$. In fact,
+the union of a finite number of spaces $\Zz_I(T,b)^+$ cover the
+whole of $\Rr(g,r)^{irr}$.
+
+\smallskip
+
+\noindent{\bf Exponential $\Ii$-parameters.}  For any cocycle $z
+\in \Zz_I(T,b)^+$, we associate a non zero complex weight
+$W^+(z)(e)$ to each edge $e$ of $T$ that is not contained in
+$\partial F$, as follows. Let $p_e$ be the initial endpoint of
+$e$, and $t_l$ and $t_r$ the left and right adjacent triangles (as
+viewed from $e$). Locally modify the branching on $t_l \cup t_r$
+by cyclically reordering the vertices on each triangle, so that
+$p_e$ is eventually the source of the new branching on both $t_l$
+and $t_r$. The {\it ($+$)-exponential $\Ii$-parameter} $W^+(z)(e)$
+is the cross-ratio modulus at $e$ of the (possibly degenerate)
+branched oriented hyperbolic ideal tetrahedron spanned by the
+idealization of $t_r \cup t_l$, where the branching completes the
+one of $t_l \cup t_r$ so that $*_b=1$. %With the terminology of
+\smallskip
+
+Let us assume now that $\Psi(z)\in \Zz_I(T,b)^-$. For each $v \in V$,
+denote by $e_v^1$ and $e_v^2$ the edges of the triangle $t_v$ of $T'$
+having $c_v$ as corner. At an edge $e$ of $T'$ distinct from any of
+the $e_v^i$, we define the {\it ($-$)-exponential $\Ii$-parameter}
+$W^-(\Psi(z))(e)$ in the same way as $W^+(z)(e)$, but taking
+the idealization for $\Psi(z)$ instead of $z$. If $e$ is one of the
+$e_v^i$, the formula works as well, except that each left/right
+triangle with an edge on $\partial F$ is replaced with the innermost
+triangle in the corresponding triangle $t_v$ of $T'$. Note that $t_r
+\cup t_l$ is again a quadrilateral, because $0$ is a fixed point of
+the cocycle values at the boundary edges of $F$.
+\smallskip
+
+By varying the edge in $T$ or $T'$ for every $\Cc^\pm$, we have two
+{\it ($\pm$)-exponential $\Ii$ parameter maps}
+(recall that the number of edges of $T'$ is $ -3\chi(F)$, and $p$
+denotes the number of triangles of $T'$):
+$$W^+: \Zz_I(T,b,\mathcal{C}^+)
+    \rightarrow (\mc \setminus \{ 0\})^{-3\chi(F)+2p}$$
+$$W^-: \Zz_I(T,b,\mathcal{C}^-) \rightarrow (\mc \setminus \{ 0
+    \})^{-3\chi(F)}.$$
+
+    \begin{defi}\label{phasespace} {\rm We call
+        $W^\pm(T,b,\mathcal{C}) = W^\pm(\Zz_I(T,b,\mathcal{C}^\pm))$
+        the {\it ($\pm$)-exponential $\Ii$-parameter space} of
+        $\Rr_I(T,b,\mathcal{C})$. }
+\end{defi}
+We stress again that the result of the idealization strongly
+depends on the choice of the base point, here $0$. In particular,
+the exponential $\Ii$-parameters are {\it not} invariant under
+arbitrary gauge transformations of cocycles.  A remarkable
+exception is for gauge transformations associated to $0$-cochains
+$\lambda$ with values in $PB^-(2,\C)$. Indeed, these act on the
+idealization of quadrilaterals as conformal transformations of the
+{\it four} vertices (this is because $0$ is fixed by every
+$\lambda(v)$, $v \in V$), and cross-ratios are conformal
+invariants. This makes a big difference between $W^+$ and $W^-$.
+In fact the whole of the residual gauge group
+$\Gg(T,b,\mathcal{C}^+)$ acts on $W^+(T,b,\mathcal{C})$ via the
+map $W^+$. On the other hand, consider the subgroup of
+$\Gg(T,b,\mathcal{C}^-)$ defined as $$B\Gg(T,b,\mathcal{C}^-):=
+\prod_{i=1,\dots, r}{\rm Stab}(\mathcal{C}^-_i)\cap PB^-(2,\C) \
+.$$ Any fiber $(W^-)^{-1}(W^-(z))$ is given by the
+$B\Gg(T,b,\mathcal{C}^-)$-orbit of $z$ in
+$\Zz_I(T,b,\mathcal{C}^-)$. Hence the actual residual gauge
+transformations of $W^-(T,b,\mathcal{C})$ are in one-one
+correspondence with the quotient set $\Gg(T,b,\mathcal{C}^-)/
+B\Gg(T,b,\mathcal{C}^-)$, where the equivalence class of $\lambda$
+is $B\Gg(T,b,\mathcal{C}^-)\lambda$. For the matter of notational
+convenience, formally put $\textstyle B\Gg(T,b,\mathcal{C}^+):=
+\prod_{i=1,\dots, r} {\rm Id}$. The map $$\Theta^\pm:
+W^\pm(T,b,\mathcal{C}) \to \Rr(g,r,\mathcal{C}^\pm)$$ given by $
+\Theta^\pm(W^\pm(z))= p^\pm_{\mathcal{C}}(z)$, with
+$p^\pm_{\mathcal{C}}$ defined in (\ref{projc}), is a principal
+$\Gg (T,b,\mathcal{C}^\pm)/ B\Gg(T,b,\mathcal{C}^\pm)$-bundle. The
+situation is particularly clean when $\mathcal{C}$ has no trivial
+entries :
+\begin{prop}\label{no-gauge} If $\mathcal{C}$ has no trivial entries
+the ($-$)-exponential $\Ii$-parameter map $W^-:
+  \Zz_I(T,b,\mathcal{C}^-) \rightarrow W^-(T,b,\mathcal{C})$ is
+  invariant under gauge transformations.
+\end{prop}
+
+\noindent{\bf Geometry and computation of $\Theta^\pm$.} The maps
+$\Theta^\pm$ can be defined directly in terms of $\Ii$-parameters. A
+way to see this is to consider $\Ii$ triangulations of cylinders $C =
+F \times [0,1]$, as discussed in Section \ref{FIBERED}, and the
+corresponding pseudo-developing maps. We give here another
+description. Let us just consider $\Theta^-$. Recall that $PSL(2,\mc)$
+is isomorphic to Isom$^+(\mh^3)$, with the natural conformal action on
+$\mc\mathbb{P}^1=\partial\bar{\mh}^3$ via linear fractional
+transformations. For any $\rho\in \Rr(g,r,\mathcal{C}^-)$, take a
+representative $\tilde{\rho}: \pi_1(F,q) \rightarrow PSL(2,\mc)$ in
+the conjugacy class. Consider the associated flat principal
+$PSL(2,\mc)$-bundle $F_{\tilde{\rho}}$. A trivializing atlas defines a
+cocycle $z \in \Zz(T,b,\mathcal{C}^-)$. If $\rho\in
+\Rr_I(T,b,\mathcal{C}^-)$, we can take $z \in
+\Zz_I(T,b,\mathcal{C}^-)$, so that the trivializing atlas of
+$F_{\tilde{\rho}}$ associated to the cellulation $T'^*$ {\it dual} to
+$T'$, with edges oriented by using the orientation of $F$ and the
+branching orientation of the edges of $T'$, has non trivial transition
+functions. These can be viewed as transition functions for the fiber
+bundle associated to $F_{\tilde{\rho}}$ and with fibre $\mh^3$. For
+each $2$-simplex $t$ of $T'$, there is a unique $g_t \in {\rm
+  Isom}(\mh^3)$ (possibly reversing the orientation) mapping the
+vertices $u_0$, $u_1$ and $u_2$ of the idealization of $t$ to $0$,
+$\infty$ and $-1$ respectively. Then, the transition function along
+the edge of $T'^*$ {\it positively transverse} to a given edge $e$ of
+$T'$ is of the form $(g_{t_l})^{-1}\circ \varphi(z)(e)\circ g_{t_l}
+\in {\rm Isom}^+(\mh^3)$, where $t_l$ is the triangle on the left of
+$e$, and $\varphi(z)(e)$ is the isometry of $\mh^3$ of hyperbolic type
+fixing $0$ and $\infty$ and mapping $1$ to $W^-(z)(e)$. Analytic
+continuation defines the parallel transport of $F_{\tilde{\rho}}$
+along paths transverse to $T'$, whence a representation into
+$PSL(2,\mc)$ of the groupoid of such paths, well-defined up to
+homotopy rel($\partial$)). In particular, it gives a practical recipe
+to compute $\tilde{\rho}$, that we describe now.
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=10cm]{matrixrep.eps}
+\caption{\label{matrixrep} The recipe for reading off holonomies
+from exponential $\Ii$-parameters.}
+\end{center}
+\end{figure}
+
+Let the base point $q$ be not in the $1$-skeleton of $T'$.  Given
+an element of $\pi_1(F,q)$, represent it by a closed curve
+$\gamma$ in $F$ transverse to $T'$, and which do not departs from
+an edge it just entered. Assume that $\gamma$ intersects an edge
+$e$ of $T'$ positively with respect to the orientation of $F$.
+Figure \ref{matrixrep} shows three possible branching
+configurations for the two triangles glued along $e$. Fix
+arbitrarily a square root $W^-(z)(e)^{1/2}$ of $W^-(z)(e)$.
+Consider the elements of $PSL(2,\mc)$ given by $$\gamma(e)=\left(
+\begin{array}{cc} W^-(z)(e)^{1/2} & 0 \\ 0 & W^-(z)(e)^{-1/2}
+  \end{array} \right), \quad p=\left(
+  \begin{array}{cc} 0 & 1 \\ 1 & 0  \end{array}\right),
+\quad l=\left(\begin{array}{cc} -1 & 1 \\ -1 & 0
+\end{array}\right)$$
+and $r=l^{-1}$. The matrix $\gamma(e)$ represents the isometry
+with fixed points $0,\infty \in \mc\mathbb{P}^1$ and mapping $1$
+to $W^-(z)(e)$.  The elliptic elements $p$ and $l$ send
+$(0,1,\infty)$ to $(\infty,1,0)$ and $(\infty, 0,1)$ respectively.
+For the portion of $\gamma$ on the left of Figure \ref{matrixrep},
+if $\gamma$ turns to the left after crossing $e$ the parallel
+transport operator is $\gamma(e)\cdot p\cdot l$, while it is
+$\gamma(e)\cdot p\cdot r$ if $\gamma$ turns to the right.  (The
+matrix multiplication is on the right, as is the action of
+$PSL(2,\mc)$ on the total space of $F_{\tilde{\rho}}$). In the
+middle and right pictures the parallel transport operators along
+the portion of $\gamma$ are given by $\gamma(e)\cdot l$ or
+$\gamma(e)\cdot p\cdot l$, and $\gamma(e)\cdot p\cdot r$ or
+$\gamma(e)\cdot r$ respectively. We see that the action of $p$,
+$l$ and $r$ depends on the reordering of the vertices after the
+mapping $\gamma(e)$. If $\gamma$ intersects $e$ negatively, we
+replace $\gamma(e)$ with $\gamma(e)^{-1}$ in the above
+expressions. A similar recipe applies for any other branching of
+the two triangles glued along $e$.
+
+Continuing this way each time $\gamma$ crosses an edge of $T'$
+until it comes back to $q$, we get an element $[W(z)]_q(\gamma)
+\in PSL(2,\mc)$ that depends only on the homotopy class of
+$\gamma$ based at $q$ and coincides with $\tilde{\rho}(\gamma)$,
+because of the identity $D_z(\gamma \cdot x) = [W(z)]_q(\gamma)
+\cdot D_z(x)$ for any $x \in \tilde{F}$, where $D_z: \tilde{F}
+\rightarrow \mc\mathbb{P}^1$ is a $\tilde{\rho}$-equivariant
+pseudo-developing map from the universal cover $\tilde{F}$ of $F$.
+Varying $\gamma$, we eventually get the representation $[W(z)]_q
+=\tilde{\rho}: \pi_1(F,q) \rightarrow PSL(2,\mc)$.
+\smallskip
+
+\noindent{\bf ($-$)-exponential $\Ii$-parameters and pleated
+surfaces.} When $\Cc^-$ has no trivial entries, there is a nice
+interpretation of the parameter space $W^-(T,b,\mathcal{C})$ in
+terms of pleated hyperbolic surface structures on $S\setminus V$.
+(see eg. \cite{CEG}; compare also with \cite{BoL}, Section 8.)
+\smallskip
+
+As before, let $T'$ be a triangulation of $S$ with vertices $V$,
+viewed as an ideal triangulation of $S^{\circ} = S \setminus V$. A
+{\it pleated surface} (with pleating locus $T'$) is a pair
+$(\tilde{\mathfrak{f}},r)$, where $r: \pi_1(S^{\circ}) \rightarrow
+PSL(2,\mc)$ is a group homomorphism (not up to conjugacy), and
+$\tilde{\mathfrak{f}} : \widetilde{S^{\circ}} \rightarrow \mh^3$
+is a map from the universal cover $\widetilde{S^{\circ}}$ of
+$S^{\circ}$ such that:
+\begin{itemize}
+\item $\tilde{\mathfrak{f}}$ sends homeomorphically each component of
+  the preimage $\tilde{T'}$ of $T'$ in $\widetilde{S^{\circ}}$ to a
+  complete geodesic in $\mh^3$;
+
+\item $\tilde{\mathfrak{f}}$ sends homeomorphically the closure of
+  each component of $\tilde{S^{\circ}} \setminus \tilde{T'}$ to an
+  ideal triangle in $\mh^3$;
+
+\item $\tilde{\mathfrak{f}}$ is $r$-equivariant, that is, for all $x
+  \in \tilde{S^{\circ}}$, $\gamma \in \pi_1(S^{\circ})$ we have
+  $\tilde{\mathfrak{f}}(\gamma x) = r(\gamma)
+  \tilde{\mathfrak{f}}(x)$.
+\end{itemize}
+Two pleated surfaces $(\tilde{\mathfrak{f}},r)$ and
+$(\tilde{\mathfrak{f}}',r')$ are said {\it isometric} if there
+exists an isometry $A \in PSL(2,\mc)$ and a lift $\tilde{\phi} :
+\tilde{S^{\circ}} \rightarrow \tilde{S^{\circ}}$ of an isotopy of
+$S^{\circ}$ such that $\tilde{\mathfrak{f}}' = A \circ
+\tilde{\mathfrak{f}} \circ \tilde{\phi}$ and $r'(\gamma) = A
+r(\gamma) A^{-1}$ for all $\gamma \in \pi_1(S^{\circ})$. From
+\cite{Bo} it is known that isometry classes of pleated surfaces
+$(\tilde{\mathfrak{f}},r)$ are in one-one correspondence with
+arrays $\{x_e\}_e$ of non zero complex numbers $x_e$ associated to
+the edges $e$ of $T'$, the {\it exponential shear-bend
+parameters}.
+
+To a pleated surface $(\tilde{\mathfrak{f}},r)$ we can associate
+the type $\mathcal{C}^-=(\mathcal{C}_1,\ldots,\mathcal{C}_r)$ of
+the conjugacy class of $r$, defined as in Section \ref{Dpar}. For
+instance, it is shown in \cite{Th} that the set of isometry
+classes of pleated surfaces given by real positive shear-bend
+parameters is real-analytic diffeomorphic to the Teichm\"uller
+space of hyperbolic metrics on $S^{\circ}$, with totally geodesic
+boundary completion or non compact finite area completion at
+$v_i$, according to the type of $\mathcal{C}_i$, loxodromic or
+parabolic.
+
+In general, we can also associate a {\it sign} to each loxodromic
+puncture. Namely, if $A$ is a small annulus neignborhood of $v_i$,
+each connected component $\tilde{A}$ of the preimage of $A$ in
+$\tilde{S^{\circ}}$ is the fixed point set of a subgroup $\pi$ of
+$\pi_1(S^{\circ})$. This subgroup is the image of the fundamental
+group of $A$ for some choice of base points and paths between
+these base points. All the edges of $\tilde{T}'$ that meet
+$\tilde{A}$ are sent by $\tilde{\mathfrak{f}}$ to geodesics lines
+that meet at one of the two fixed points of $r(\pi)$. We specify
+this fixed point by a sign, as it determines an orientation
+(whence a generator) for the axis of the group $r(\pi)$. Since any
+two subgroups $\pi$ as above are conjugated, for each puncture the
+fixed point assignment is $r$-equivariant, so that the sign is
+canonically associated to the puncture.
+
+\smallskip
+
+Recall that in Definition \ref{defcoc} the types $\mathcal{C}_i$
+where assigned to the components of $\partial F$ endowed with the
+boundary orientation. Let us remove this constraint, and associate
+to each boundary component with loxodromic type an orientation
+that we specify by a sign, positive for the boundary orientation,
+and negative otherwise. Then, for each type $\mathcal{C}^-$ with
+$l$ loxodromic entries and each $l$-uple of signs $s$, we get a
+space $\Zz_I(T,b,\mathcal{C}^-,s)$. We define
+$W^-(T,b,\mathcal{C},s)=W(\Zz_I(T,b,\mathcal{C}^-,s))$.
+\begin{prop}\label{psI}{\rm For each type
+    $\mathcal{C}$ with non trivial entries $\mathcal{C}_i$, $l$ being
+    loxodromic, and for each $l$-uple of signs $s$, the space
+    $W^-(T,b,\mathcal{C},s)$ coincides with the exponential shear-bend
+    parameter space $\mathcal{P}\mathcal{S}_{\mathcal{C}}^s$ of
+    isometry classes of pleated surfaces of type $\mathcal{C}$ and
+    signs $s$:
+\begin{equation}\label{polPS}
+\mathcal{P}\mathcal{S}_{\mathcal{C}}^s = \lbrace \{x_e\} \in (\mc
+  \setminus \{ 0 \})^{-3\chi(S^{\circ})} \mid \forall i=1,\ldots,r,\
+  \prod x_e = \mu_i \rbrace.
+\end{equation}
+Here the product is over all edges $e$ with $v_i \in\partial e$
+(counted with multiplicities), $\mu_i$ is $1$ if $\mathcal{C}_i$
+is parabolic, and, if $\mathcal{C}_i$ is loxodromic, $\mu_i$ is
+the dilation factor of the generator of $<\mathcal{C}_i>$
+specified by the sign of $v_i$. (Hence, in either case this is an
+eigenvalue of $\mathcal{C}_i$.)}
+\end{prop}
+
+\noindent{\it Proof.} By the results of \cite{Bo} recalled above,
+each point of $W^-(T,b,\mathcal{C},s)$ is identified with the
+family of exponential shear-bend parameters of an isometry class
+of pleated hyperbolic surface on $S^{\circ}$ with pleated locus
+$T'$. The definition of the map $\Theta: W^-(T,b,\mathcal{C},s)
+\rightarrow \Rr_I(T,b,\mathcal{C})$ shows that this isometry class
+has type $\mathcal{C}$. Furthermore, by using the recipe given
+above for computing $\Theta$, we check that the holonomy of any
+positively oriented (with respect to the boundary orientation)
+small loop about the puncture $v_i$ is exactly $\mathcal{C}_i$.
+The upper left diagonal entry is just the product of a square root
+of the exponential $\Ii$-parameters at the edges with endpoint
+$v_i$. From (\ref{polPS}), which is an easy consequence of results
+in \cite{Bo} (see sections 12.2-12.3 in that paper), we deduce
+that $W^-(T,b,\mathcal{C},s) \subset
+\mathcal{P}\mathcal{S}_{\mathcal{C}}^s$.
+
+Conversely, for any $(\tilde{\mathfrak{f}},r) \in
+\mathcal{P}\mathcal{S}_{\mathcal{C}}^s$ we have $ {\rm conj}(r) \in
+\Rr_I(T,b,\mathcal{C})$, because $r$ is injective. Also, by
+\cite{BoL}, Proposition 33, it is known that the isometry class of
+$(\tilde{\mathfrak{f}},r)$ is determined by $r$ and the signs $s$.
+As the map $\Theta$ is onto, let us take $z \in
+\Zz_I(T,b,\mathcal{C}^-,s)$ with ${\rm conj} \circ f(z) = {\rm conj}(r)$
+and consider the isometry class of pleated hyperbolic surfaces
+associated to $W^-(z)$. There is a representative
+$(\tilde{\mathfrak{f}}',r)$ with the same holonomy $r$. As the signs
+of $(\tilde{\mathfrak{f}}',r)$ are $s$, the same as for
+$(\tilde{\mathfrak{f}},r)$, the two pleated surfaces coincide. So
+$\mathcal{P}\mathcal{S}_{\mathcal{C}}^s \subset
+W^-(T,b,\mathcal{C},s)$.\hfill$\Box$
+
+\begin{remark}\label{branchwhy}{\rm
+Exponential shear-bend parameters do not depend on branchings but the
+orientation of $F$ (taking the opposite branching edge orientation
+simultaneously exchanges the left and right triangles). However,
+branchings govern all choices in QHFT tensors. Also, they allow us to
+interpret exponential shear-bend parameters as exponential
+$\Ii$-parameters, thus coming from $1$-cocycles representing {\it
+  arbitrary} $PSL(2,\mc)$-characters on the triangulated boundary of
+{\it arbitrary} compact orientable $3$-manifolds.  When $\Cc$ has no
+trivial entries, the maps $W^\pm$ define {\it decorated} shear-bend
+parameter spaces similar to those occurring in \cite{Kmod, Pe}.}
+\end{remark}
+\begin{remark}\label{varpar}
+{\rm For types $\mathcal{C}$ with no trivial entries, we can use
+simpler $e$-triangulations of $F$ (see Figure \ref{more-e}): for
+each of the triangles $t_v$ of the base surface $S$ we remove the
+interior of a {\it monogon} inside $t_v$, and triangulate the
+resulting quadrilateral by adding an edge $e_v$ with endpoints $v$
+and the $b$-output vertex of the opposite edge. We extend $b$ by
+orienting $e_v$ from that vertex to $v$. Proposition \ref{topcomp}
+applies to the cocycle parameters based on such
+$e$-triangulations, for points of $\Rr(g,r)$, and also the
+treatment of exponential $\Ii$-parameters works as well.}
+\end{remark}
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=3.5cm]{moreE.eps}
+\caption{\label{more-e} More economic e-triangulation.}
+\end{center}
+\end{figure}

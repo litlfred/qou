@@ -1,0 +1,16 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2111.04763v2/blocks/theorem-sec-008-04",
+  "kind": "theorem",
+  "pageStart": 19,
+  "pageEnd": 27,
+  "text": "theorem-sec-008-04.md",
+  "derivedFrom": "library/arxiv-2111.04763v2/sections/sec-008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2111.04763v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -5,7 +5,8 @@
   "file": "1705.01853v2.pdf",
   "sha256": "895e0b22c93bca1b83d0a42b4735c2bdd923720cc50dea2ecf3fa50b5a07a5b8",
   "bytes": 191793,
-  "pages": 18
+  "pages": 18,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Line operators in the Standard Model",
   "authors_raw": "Department of Applied Mathematics and Theoretical Physics",
-  "abstract": "There is an ambiguity in the gauge group of the Standard Model. The group is G = SU (3) × SU (2) × U(1)/ Γ, where Γ is a subgroup of Z6 which cannot be determined by current experiments. We describe how the electr ic, magnetic and dyonic line operators of the theory depend on the choice of Γ. We als o explain how the periodicity of the theta angles, associated to each factor of G, diﬀer.",
+  "abstract": "There is an ambiguity in the gauge group of the Standard Model. The group is G = SU (3) \u00d7 SU (2) \u00d7 U(1)/ \u0393, where \u0393 is a subgroup of Z6 which cannot be determined by current experiments. We describe how the electr ic, magnetic and dyonic line operators of the theory depend on the choice of \u0393. We als o explain how the periodicity of the theta angles, associated to each factor of G, di\ufb00er.",
   "docinfo": {
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.08",
    "CreationDate": "D:20170612203748-04'00'",
@@ -96,14 +97,14 @@
   },
   {
    "level": 1,
-   "title": "(e2πi/3)ze",
+   "title": "(e2\u03c0i/3)ze",
    "page": 8,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "This, and subsequent ﬁgures, show the four possible ( ze",
+   "title": "This, and subsequent \ufb01gures, show the four possible ( ze",
    "page": 9,
    "source": "inferred",
    "number": "2"
@@ -227,9 +228,9 @@
    "n_words": 259
   },
   {
-   "id": "sec-008-2-e2πi3ze",
+   "id": "sec-008-2-e2\u03c0i3ze",
    "number": "2",
-   "title": "(e2πi/3)ze",
+   "title": "(e2\u03c0i/3)ze",
    "level": 1,
    "page_start": 8,
    "page_end": 9,
@@ -237,9 +238,9 @@
    "n_words": 314
   },
   {
-   "id": "sec-009-2-this-and-subsequent-ﬁgures-show-the-four-possi",
+   "id": "sec-009-2-this-and-subsequent-\ufb01gures-show-the-four-possi",
    "number": "2",
-   "title": "This, and subsequent ﬁgures, show the four possible ( ze",
+   "title": "This, and subsequent \ufb01gures, show the four possible ( ze",
    "level": 1,
    "page_start": 9,
    "page_end": 11,
@@ -302,6 +303,104 @@
   "likely_scanned": false,
   "toc_entries": 16,
   "sections": 15,
-  "chars_total": 34058
+  "chars_total": 34058,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "linesm.tex",
+   "tex_sections": 4,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction-1",
+     "title": "Introduction 1",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-2-a-review-of-line-operators-3",
+     "title": "A Review of Line Operators 3",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-3-line-operators-in-the-standard-model-7",
+     "title": "Line Operators in the Standard Model 7",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-31-theta-angles-10",
+     "title": "Theta Angles 10",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-32-electroweak-symmetry-breaking-12",
+     "title": "Electroweak Symmetry Breaking 12",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-4-summary-14",
+     "title": "Summary 14",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-2-a-review-of-line-operators",
+     "title": "A Review of Line Operators",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-3-line-operators-in-the-standard-model",
+     "title": "Line Operators in the Standard Model",
+     "prose_ratio": 0.186,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-2-e2\u03c0i3ze",
+     "title": "(e2\u03c0i/3)ze",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-2-this-and-subsequent-\ufb01gures-show-the-four-possi",
+     "title": "This, and subsequent \ufb01gures, show the four possible ( ze",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-31-theta-angles",
+     "title": "Theta Angles",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-32-electroweak-symmetry-breaking",
+     "title": "Electroweak Symmetry Breaking",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-4-summary",
+     "title": "Summary",
+     "prose_ratio": 0.819,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-acknowledgements",
+     "title": "Acknowledgements",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

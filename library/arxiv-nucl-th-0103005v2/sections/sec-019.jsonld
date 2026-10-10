@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-nucl-th-0103005v2/sections/sec-019",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Steven C. Pieper and R. B. Wiringa",
+  "pageStart": 26,
+  "pageEnd": 27,
+  "contains": [
+    "library/arxiv-nucl-th-0103005v2/blocks/prose-sec-019"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-nucl-th-0103005v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-nucl-th-0103005v2/manifest.jsonld",
+  "provenance": "ingested"
+}

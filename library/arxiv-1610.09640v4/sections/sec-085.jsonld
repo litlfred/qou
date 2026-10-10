@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-085",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "DG Bimodules over K-Flat DG Rings",
+  "pageStart": 302,
+  "pageEnd": 308,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-085",
+    "library/arxiv-1610.09640v4/blocks/example-sec-085-01",
+    "library/arxiv-1610.09640v4/blocks/example-sec-085-02",
+    "library/arxiv-1610.09640v4/blocks/example-sec-085-03",
+    "library/arxiv-1610.09640v4/blocks/proposition-sec-085-04",
+    "library/arxiv-1610.09640v4/blocks/proposition-sec-085-05",
+    "library/arxiv-1610.09640v4/blocks/proposition-sec-085-06",
+    "library/arxiv-1610.09640v4/blocks/proposition-sec-085-07",
+    "library/arxiv-1610.09640v4/blocks/lemma-sec-085-08",
+    "library/arxiv-1610.09640v4/blocks/proposition-sec-085-09",
+    "library/arxiv-1610.09640v4/blocks/proposition-sec-085-10",
+    "library/arxiv-1610.09640v4/blocks/remark-sec-085-11",
+    "library/arxiv-1610.09640v4/blocks/remark-sec-085-12",
+    "library/arxiv-1610.09640v4/blocks/remark-sec-085-13"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

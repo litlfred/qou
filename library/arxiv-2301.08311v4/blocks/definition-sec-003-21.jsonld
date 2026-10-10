@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2301.08311v4/blocks/definition-sec-003-21",
+  "kind": "definition",
+  "title": "Compactified energy",
+  "pageStart": 30,
+  "pageEnd": 43,
+  "text": "definition-sec-003-21.md",
+  "derivedFrom": "library/arxiv-2301.08311v4/sections/sec-003",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2301.08311v4/manifest.jsonld",
+  "provenance": "ingested"
+}

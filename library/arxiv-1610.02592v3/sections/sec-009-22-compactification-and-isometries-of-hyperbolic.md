@@ -7,243 +7,213 @@ section_number: 2.2
 pages: 67-72
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
+text_source: latex
+latex_prose_ratio: 0.911
+latex_coverage_ratio: 0.788
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
 ---
-xn
-xn
-d 0
-t
-d
-de-t
-g
-1
-g
-3
-g
-1
-g
-3
-Figure 2.9. Two vertical linesγ1 and γ3 in the half-space modelHn
-at Euclidean distanced. Thehyperbolic length of the horizontal segment
-between them at heightxn is d
-xn and hence tends to zero asxn→∞ (left).
-Using as a height parameter the more intrinsic hyperbolic arc-length, we
-see that the two vertical geodesicsγ1 andγ3 approach at exponential rate,
-sinced(γ1(t),γ 3(t))⩽de−t (right).
-is equivalent toγ2 sinced(γ2(t),γ 3(t)) =| ln yn
-xn|for allt and is also equivalent
-toγ1 becaused(γ1(t),γ 3(t))→ 0 as shown in Figure 2.9.
-Supposethat γ1 andγ2 convergetodistinctpointsin ∂Dn. Wecanusethe
-half-space model again and suppose thatγ1 is upwards vertical andγ2 tends to
-someotherpointin {xn = 0}. Inthatcaseweeasilyseethat d(γ1(t),γ 2(t))→
-∞: for anyM >0 there is at0> 0 such thatγ1(t) andγ2(t) lie respectively
-in{xn+1>M} and
-{
-xn< 1
-M
-}
-for allt >t0. Whatever curve connects these
-two open sets, it has length at leastlnM2, henced(γ1(t),γ 2(t))> lnM2 for
-allt >t0. □
-2.2.2. The compactiﬁcation.We can giveHn the topology ofDn, and
-in that way we havecompactiﬁedHn by adding its points at inﬁnity. The
-interior of Hn is Hn, and the points at inﬁnity form a sphere∂Hn.
-The topology on Hn may also be deﬁned intrinsically: for anyp∈ ∂Hn
-we deﬁne a system of open neighbourhoods ofp in Hn as follows. Letγ be a
-half-line with [γ] =p andV be an open neighbourhood of the vectorγ′(0) in
-the unitary sphere inTγ(0)Hn. Pickr >0 and deﬁne the subset ofHn:
-U(γ,V,r ) =
-{
-α(t)
-⏐⏐α(0) =γ(0), α′(0)∈V, t >r
-}
-⋃{
-[α]
-⏐⏐α(0) =γ(0), α′(0)∈V
-}
-where α indicates a half-line inHn and [α]∈∂Hn its class, see Figure 2.10.
-We deﬁne an open neighbourhoods system{U(γ,V,r )} forp by lettingγ,V,
-andr vary. The resulting topology onHn coincides with that induced byDn.
-Note that Hn is a complete Riemannian manifold (and hence a complete
-metric space), while its compactiﬁcationHn is only a topological space: a
-point in∂Hn has inﬁnite distance from any other point inHn.
-60 2. HYPERBOLIC SPACE
-p
-g(0)
-g
-Figure 2.10. An open neighbourhoodU(γ,V,r ) ofp∈∂Hn (in yellow).
-We use the Klein model here.
-2.2.3. Klein model. In the Klein modelKn⊂ RPn, the compactiﬁcation
-is obtained by adding the quadric∂Kn ={x 2
-1 +... +x 2
-n−x 2
-n+1 = 0}, which
-is the image of the light cone inRn+1. Analogously, in the hyperboloid model
-In we may represent∂In as the set of rays in the light cone.
-A nice feature of the Klein model is that the pointsx ∈ RPn that lie
-“beyond the inﬁnity”, that is outsideKn, can also be given a natural geometric
-interpretation. One such x ∈ RPn\Kn is a space-like ray inRn+1 and as
-such it deﬁnes a hyperplanex⊥ of signature(n− 1, 1) in Rn+1, which projects
-to a hyperbolic hyperplane inKn. The points beyond the inﬁnity are in 1-1
-correspondence with the hyperbolic hyperplanes inKn.
-2.2.4. Incident, parallel, and ultraparallel subspaces. A k-subspace
-S⊂ Hn has a topological closureS in the compactiﬁcationHn. The boundary
-∂S =S∩∂Hn ofS is a (k− 1)-sphere.
-For instance, the boundary of a linel consists of two distinct points, the
-endpoints ofl. The boundary of a plane is a circle. Two distinct points in∂Hn
-are the endpoints of a unique line. A circle in the sphere∂D 3 is the boundary
-of a unique plane in the disc model.
-The usualdistance d(A,B ) between two subsetsA,B in a metric space is
-deﬁned as
-d(A,B ) = inf
-x∈A,y∈B
-{
-d(x,y )
-}
-.
-There are three types of conﬁgurations for two subspaces inHn, depicted
-in Figure 2.11.
-Proposition 2.2.3.LetS andS′ be subspaces inHn of arbitrary dimension.
-Precisely one of the following holds:
-(1) S∩S′⁄= ∅,
-(2) S∩S′ = ∅ andS∩S′ is a point in∂Hn; moreoverd(S,S′) = 0 and
-there is no geodesic orthogonal to bothS andS′,
-2.2. COMPACTIFICATION AND ISOMETRIES OF HYPERBOLIC SPACE 61
-Figure 2.11. Two incident, asymptotic parallel, and ultraparallel lines.
-Figure 2.12. Two ultraparallel subspacesS,S′ and a lineγ orthogonal to both.
-(3) S∩S′ = ∅; moreover d = d(S,S′) > 0 and there is a unique
-geodesicγ orthogonal to bothS andS′: the segment ofγ between
-S andS′ is the unique arc connecting them of lengthd.
-Proof. IfS∩S′ contains two points then it contains the line connecting
-them and henceS∩S′⁄= ∅.
-In (2) we use the half-space model and sendS∩S′ at inﬁnity. ThenS and
-S′ are Euclidean vertical subspaces and Figure 2.9 shows thatd(S,S′) = 0 .
-Geodesics are vertical or half-circles and cannot be orthogonal to bothS and
-S′.
-In (3), letxi ∈ S and x′
-i ∈ S′ be such thatd(xi,x′
-i )→ d. Since Hn is
-compact, on a subsequencexi → x ∈ S and x′
-i → x′∈ S′. By hypothesis
-x⁄=x′ and hencex,x′∈ Hn sinced <∞. Therefored >0.
-Let γ be the line passing throughx and x′. The segment betweenx and
-x′ has lengthd(x,x′) = d. The line is orthogonal toS and S′: if it had an
-angle smaller thanπ
-2 withS′ we could ﬁnd another pointx′′∈S′ nearx′ with
-d(x,x′′) < d. We can drawS,S′,γ as in Figure 2.12 by placing the origin
-betweenx andx′: no other line can be orthogonal to bothS andS′. □
-Two subspaces of type (1), (2) or (3) are called respectivelyincident,
-asymptotically parallel, andultra-parallel.
-62 2. HYPERBOLIC SPACE
-2.2.5. The conformal sphere at inﬁnity.The sphere at inﬁnity∂Hn has
-no metric structure, but it has instead aconformal structure, that is a Rie-
-mannian structure considered up to conformal transformations. Before deﬁn-
-ing it we note the following.
-Proposition 2.2.4.Every isometryϕ: Hn→ Hn extends to a unique home-
-omorphismϕ : Hn→ Hn. An isometryϕ is determined by its traceϕ|∂Hn at
-the boundary.
-Proof. The extension ofϕ to∂Hn is deﬁned intrinsically: a boundary point
-is a class[γ] of geodesic half-lines and we setϕ([γ]) = [ϕ(γ)].
-To prove the second assertion we show that an isometryϕ that ﬁxes the
-points at inﬁnity is the identity. The isometryϕ ﬁxes every line as a set
-(because it ﬁxes its endpoints), and since every point is the intersection of two
-lines it ﬁxes also every point. □
-We give ∂Hn the conformal structure of the sphere∂Dn. The group
-Isom(Hn) is generated by sphere inversions, which act conformally: although
-the metric tensor of∂Dn is not preserved by this action, its conformal class is
-preserved and hence the conformal structure on∂Hn is well-deﬁned.
-2.2.6. Elliptic, parabolic, and hyperbolic isometries. It is convenient
-to classify the isometries ofHn into three types.
-Proposition 2.2.5.Letϕ be a non-trivial isometry ofHn. Precisely one of
-the following holds:
-(1) ϕ has at least one ﬁxed point inHn,
-(2) ϕ has no ﬁxed points inHn and has exactly one in∂Hn,
-(3) ϕ has no ﬁxed points inHn and has exactly two in∂Hn.
-Proof. The extensionϕ : Hn→ Hn is continuous and has a ﬁxed point by
-Brouwer’s Theorem. We only need to prove that ifϕ has three ﬁxed points
-P1,P 2,P 3 at the boundary then it has some ﬁxed point in the interior. The
-isometryϕ ﬁxes the liner with endpointsP1 andP2. There is only one lines
-with endpointP3 and orthogonal tor (exercise): the isometryϕ must also ﬁx
-s and hence ﬁxes the pointr∩s. □
-Isometriesoftype(1),(2),and(3)arecalledrespectively elliptic,parabolic,
-and hyperbolic. A hyperbolic isometry ﬁxes two pointsp,q ∈∂Hn and hence
-preserves the unique linel with endpointsp and q. The linel is theaxis of
-the hyperbolic isometry, which acts onl as a translation.
-2.2.7. Horospheres. Parabolic transformations are related to some ob-
-jects in Hn called horospheres.
-Deﬁnition 2.2.6. Letp be a point in∂Hn. A horosphere centred inp is a
-connected complete hypersurface orthogonal to all the lines exiting fromp.
-2.2. COMPACTIFICATION AND ISOMETRIES OF HYPERBOLIC SPACE 63
-Figure 2.13. A horocycle inH2 centred inp∈∂H2 is a circle tangent
-top. It is orthogonal to all the lines exiting fromp.
-Horospheres may be easily visualised in the half-space modelHn by sending
-p at inﬁnity. The lines exiting fromp are the Euclidean vertical lines and the
-horospheres centred atp are precisely the horizontal hyperplanes{xn = k}
-withk >0.
-Remark 2.2.7. Since the metric tensorg = 1
-x 2n
-gE is constant on each
-hyperplane{xn =k}, each horosphere isisometric to the EuclideanRn.
-The horospheres centred atp⁄=∞ in ∂Hn or at any pointp∈∂Dn are
-precisely the Euclidean spheres tangent inp to the sphere at inﬁnity. The
-horospheres in H2 are circles and are calledhorocycles, see Figure 2.13. The
-portion of Hn delimited by a horosphere is called ahoroball.
-Let us go back to the isometries ofHn. We sometimes write a point in
-the half-spaceHn as a pair(x,t ) with x∈ Rn−1 and t >0. Isometries with
-nice ﬁxed points have nice expressions in the conformal models.
-Proposition 2.2.8. Letϕ be an isometry ofHn:
-(1) ifϕ is elliptic with ﬁxed point0∈Dn then
-ϕ(x) =Ax
-for some matrixA∈ O(n);
-(2) ifϕ is parabolic with ﬁxed point∞ inHn then
-ϕ(x,t ) = (Ax +b,t )
-for some matrixA∈ O(n− 1) and some vectorb;
-(3) ifϕ is hyperbolic with ﬁxed points0 and∞ inHn then
-ϕ(x,t ) =λ(Ax,t )
-for some matrixA∈ O(n− 1) and some positive scalarλ⁄= 1.
-64 2. HYPERBOLIC SPACE
-Proof. Point (1) is obvious. In (2) the isometryϕ ﬁxes∞ and hence
-permutes the horospheres centred at∞: we ﬁrst prove that this permutation
-is trivial. The mapϕ sends a horosphereO0 at heightt =t0 to a horosphere
-O1 at some heightt = t1. If t1⁄= t0, up to changingϕ with its inverse we
-may suppose thatt1<t 0.
-We know that the mapψ : O1→ O0 sending (x,t 1) to (x,t 0) is a con-
-traction: hence ϕ◦ψ :O1→O1 is a contraction and thus has a ﬁxed point
-(x,t 1). Thereforeϕ(x,t 0) = (x,t 1). Sinceϕ(∞) =∞, the vertical geodesic
-passing through(x,t 0) and (x,t 1) is preserved byϕ, and hence we have found
-another ﬁxed point(x, 0)∈∂Hn, a contradiction.
-We now know thatϕ preserves the horosphereO at heightt, for allt. The
-metric tensor onO is Euclidean (rescaled by 1
-t2), henceϕ acts onO like an
-isometryx↦→Ax +b. Sinceϕ sends vertical geodesics to vertical geodesics,
-it acts with the same formula on each horosphere and we are done.
-Concerning (3), the axisl ofϕ is the vertical line with endpoints0 = (0, 0)
-and∞, andϕ acts onl by translations: hence it sends(0, 1) to some (0,λ ).
-The diﬀerentialdϕ at (0, 1) is necessarily
-(A 0
-0 λ
-)
-for someA∈ O(n− 1) and
-henceϕ is globally as stated. The caseλ = 1 is excluded because(0, 1) would
-be a ﬁxed point inHn. □
-The minimum displacementd =d(ϕ) of an isometryϕ of Hn is
-d(ϕ) = inf
-x∈Hn
-d
-(
-x,ϕ (x)
-)
-.
-A pointx realises the minimum displacement ifd(x,ϕ (x)) =d(ϕ).
-Corollary 2.2.9.The following hold:
-(1) an elliptic transformationϕ hasd = 0 realised on its ﬁxed points;
-(2) a parabolic transformationϕ with ﬁxed pointp∈ ∂Hn has d = 0
-realised nowhere and ﬁxes every horosphere centred inp;
-(3) a hyperbolic transformationϕ with ﬁxed pointsp,q ∈∂Hn hasd >0
-realised on its axis.
-Proof. Point (1) is obvious. Point (2) was already noticed while proving
-Proposition 2.2.8. Concerning (3), letl be the axis of the hyperbolic trans-
-formationϕ. The hyperplane orthogonal tol at a pointx∈l is sent to the
-hyperplane orthogonal tol in ϕ(x). The two hyerplanes are ultraparallel and
-by Proposition 2.2.3 their minimum distance is realised at the pointsx and
-ϕ(x). Hence the points onl realise the minimum displacement forϕ. □
+In this section we compactify the hyperbolic space $\matH^n$ by adding some ``points at infinity''. The compactification will then be used to classify the isometries of $\matH^n$ into three types. We also study the mutual position of two subspaces and define some peculiar hyperbolic objects: the horospheres. 
+
+\subsection{Points at infinity}
+Let a \emph{geodesic half-line} in $\matH^n$ be a geodesic $\gamma\colon [0,+\infty) \to \matH^n$ with constant unit speed. \index{geodesic!geodesic half-line}
+\begin{defn} The set $\partial \matH^n$ of the \emph{points at infinity} in $\matH^n$ is the set of all geodesic half-lines, considered up to the following equivalence relation:
+$$\gamma_1 \sim \gamma_2 \ \Longleftrightarrow \sup_{t\in [0,+\infty)}\big\{d\big(\gamma_1(t), \gamma_2(t)\big) \big\} < + \infty.$$
+\end{defn}
+
+We add its points at infinity to $\matH^n$ by defining
+$$\overline {\matH^n} = \matH^n \cup \partial \matH^n.$$
+
+\begin{prop} \label{bordo:prop}
+On the disc model there is a natural 1-1 correspondence between $\partial D^n$ and $\partial \matH^n$ and hence between the closed disc $\overline{D^n}$ and $\overline{\matH^n}$.
+\end{prop}
+\begin{proof}
+A geodesic half-line $\gamma$ in $D^n$ is a circle or line arc orthogonal to $\partial D^n$ and hence the Euclidean limit $\lim_{t\to\infty}\gamma(t)$ is a point in $\partial D^n$. We now prove that two half-lines converge to the same point if and only if they lie in the same equivalence class.
+
+Suppose that two half-geodesics $\gamma_1$, $\gamma_2$ converge to the same point $p\in\partial D^n$. Up to isometries and inversions, we can change the conformal model to $H^n$ and take $p= \infty$. In this nicer setting $\gamma_1$ and $\gamma_2$ are vertical lines:
+$$\gamma_1(t) = (x_1,\ldots,x_{n-1},x_ne^t), \quad
+\gamma_2(t) = (y_1,\ldots,y_{n-1},y_ne^t). $$ 
+The geodesic
+$$\gamma_3(t) = (y_1,\ldots,y_{n-1},x_ne^t) $$ 
+is equivalent to $\gamma_2$ since $d(\gamma_2(t),\gamma_3(t))=|\ln \frac{y_n}{x_n}|$ for all $t$ and is also equivalent to $\gamma_1$ because $d(\gamma_1(t),\gamma_3(t))\to 0$ as shown in Figure \ref{verticali:fig}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 6 cm] {\iftoggle{BW}{verticali-BW}{verticali}}
+\nota{Two vertical lines $\gamma_1$ and $\gamma_3$ in the half-space model $H^n$ at \emph{Euclidean} distance $d$. The \emph{hyperbolic} length of the horizontal segment between them at height $x_n$ is $\frac d{x_n}$ and hence tends to zero as $x_n\to\infty$ (left). 
+Using as a height parameter the more intrinsic hyperbolic arc-length, we see that the two vertical geodesics $\gamma_1$ and $\gamma_3$ approach at exponential rate, since $d(\gamma_1(t), \gamma_3(t))\leqslant de^{-t}$ (right).}
+\label{verticali:fig}
+\end{center}
+\end{figure}
+
+Suppose that $\gamma_1$ and $\gamma_2$ converge to distinct points in $\partial D^n$. We can use the half-space model again and suppose that $\gamma_1$ is upwards vertical and $\gamma_2$ tends to some other point in $\{x_n=0\}$. In that case we easily see that $d(\gamma_1(t), \gamma_2(t))\to \infty$: for any $M>0$ there is a $t_0>0$ such that $\gamma_1(t)$ and $\gamma_2(t)$ lie respectively in $\{x_{n+1}>M\}$ and $\left\{x_n<\frac 1M\right\}$ for all $t>t_0$. Whatever curve connects these two open sets, it has length at least $\ln{M^2}$, hence $d(\gamma_1(t), \gamma_2(t)) > \ln{M^2}$ for all $t>t_0$.
+\end{proof}
+
+\subsection{The compactification}
+We can give $\overline{\matH^n}$ the topology of $\overline{D^n}$, and in that way we have \emph{compactified} $\matH^n$ by adding its points at infinity. The interior of $\overline{\matH^n}$ is $\matH^n$, and the points at infinity form a sphere $\partial \matH^n$. \index{hyperbolic space!compactification of hyperbolic space}
+
+The topology on $\overline {\matH^n}$ may also be defined intrinsically: for any $p\in\partial \matH^n$ we define a system of open neighbourhoods of $p$ in $\overline{\matH^n}$ as follows. Let $\gamma$ be a half-line with $[\gamma] = p$ and $V$ be an open neighbourhood of the vector $\gamma'(0)$ in the unitary sphere in $T_{\gamma(0)}\matH^n$. Pick $r>0$ and define the subset of $\overline{\matH^n}$:
+\begin{align*}
+U(\gamma, V, r) & = \left\{\alpha(t)\ \big|\ \alpha(0) = \gamma(0), \ \alpha'(0) \in V, \ t>r \right\} \\
+& \bigcup \left\{[\alpha] \ \big|\ \alpha(0) = \gamma(0), \ \alpha'(0) \in V \right\}
+\end{align*}
+where $\alpha$ indicates a half-line in $\matH^n$ and $[\alpha]\in\partial\matH^n$ its class, see Figure \ref{intorno:fig}. We define an open neighbourhoods system $\{U(\gamma, V, r)\}$ for $p$ by letting $\gamma$, $V$, and $r$ vary. The resulting topology on $\overline{\matH^n}$ coincides with that induced by $\overline{D^n}$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 5 cm] {\iftoggle{BW}{intorno-BW}{intorno}}
+\nota{An open neighbourhood $U(\gamma, V, r)$ of $p\in\partial\matH^n$\iftoggle{BW}{ (in light grey)}{ (in yellow)}. We use the Klein model here.}
+\label{intorno:fig}
+\end{center}
+\end{figure}
+
+Note that $\matH^n$ is a complete Riemannian manifold (and hence a complete metric space), while its compactification $\overline{\matH^n}$ is only a topological space: a point in $\partial \matH^n$ has infinite distance from any other point in $\overline{\matH^n}$.
+
+\subsection{Klein model} \label{projective:compactification:subsection}
+In the Klein model $K^n\subset \matRP^n$, the compactification is obtained by adding the quadric $\partial K^n = \{x_1^2 + \ldots + x_n^2 - x_{n+1}^2=0\}$, which is the image of the light cone in $\matR^{n+1}$. Analogously, in the hyperboloid model $I^n$ we may represent $\partial I^n$ as the set of rays in the light cone.
+
+A nice feature of the Klein model is that the points $x\in\matRP^n$ that lie ``beyond the infinity'', that is outside $\overline {K^n}$, can also be given a natural geometric interpretation. One such $x\in \matRP^n \setminus \overline{K^n}$ is a space-like ray in $\matR^{n+1}$ and as such it defines a hyperplane $x^\bot$ of signature $(n-1,1)$ in $\matR^{n+1}$, which projects to a hyperbolic hyperplane in $K^n$. The points beyond the infinity are in 1-1 correspondence with the hyperbolic hyperplanes in $K^n$.
+
+\subsection{Incident, parallel, and ultraparallel subspaces}
+A $k$-subspace $S\subset \matH^n$ has a topological closure $\overline S$ in the compactification $\overline{\matH^n}$. The boundary $\partial S = \overline S\cap \partial\matH^n$ of $S$ is a $(k-1)$-sphere.
+
+For instance, the boundary of a line $l$ consists of two distinct points, the \emph{endpoints} of $l$. The boundary of a plane is a circle. Two distinct points in $\partial \matH^n$ are the endpoints of a unique line. A circle in the sphere $\partial D^3$ is the boundary of a unique plane in the disc model.
+
+The usual \emph{distance} $d(A,B)$ between two subsets $A,B$ in a metric space is defined as 
+$$d(A,B) = \inf_{x\in A, y\in B} \big\{d(x,y)\big\}.$$
+
+There are three types of configurations for two subspaces in $\matH^n$, depicted in Figure \ref{lines:fig}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11 cm] {\iftoggle{BW}{lines-BW}{lines}}
+\nota{Two incident, asymptotic parallel, and ultraparallel lines.}
+\label{lines:fig}
+\end{center}
+\end{figure}
+
+
+\begin{prop} \label{sottospazi:prop}
+Let $S$ and $S'$ be subspaces in $\matH^n$ of arbitrary dimension. Precisely one of the following holds: 
+\begin{enumerate}
+\item $S\cap S' \neq \emptyset$,
+\item $S\cap S' = \emptyset$ and $\overline S \cap \overline {S'}$ is a point in $\partial \matH^n$; moreover $d(S,S')=0$ and there is no geodesic orthogonal to both $S$ and $S'$,
+\item $\overline S\cap \overline{S'} = \emptyset$; moreover $d=d(S,S')>0$ and there is a unique geodesic $\gamma$ orthogonal to both $S$ and $S'$: the segment of $\gamma$ between $S$ and $S'$ is the unique arc connecting them of length $d$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+If $\overline S \cap \overline{S'}$ contains two points then it contains the line connecting them and hence $S\cap S'\neq \emptyset$.
+
+In (2) we use the half-space model and send $\overline S\cap \overline {S'}$ at infinity. Then $S$ and $S'$ are Euclidean vertical subspaces and Figure \ref{verticali:fig} shows that $d(S,S')=0$. Geodesics are vertical or half-circles and cannot be orthogonal to both $S$ and $S'$.
+
+In (3), let $x_i \in S$ and $x'_i \in S'$ be such that $d(x_i,x_i')\to d$. Since $\overline{\matH^n}$ is compact, on a subsequence $x_i\to x\in \overline S$ and $x_i'\to x'\in\overline {S'}$. By hypothesis $x\neq x'$ and hence $x,x' \in \matH^n$ since $d<\infty$. Therefore $d>0$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 4 cm] {\iftoggle{BW}{unica_geodetica-BW}{unica_geodetica}}
+\nota{Two ultraparallel subspaces $S, S'$ and a line $\gamma$ orthogonal to both.}
+\label{unica_geodetica:fig}
+\end{center}
+\end{figure}
+
+Let $\gamma$ be the line passing through $x$ and $x'$. The segment between $x$ and $x'$ has length $d(x,x') = d$. The line is orthogonal to $S$ and $S'$: if it had an angle smaller than $\frac\pi 2$ with $S'$ we could find another point $x''\in S'$ near $x'$ with $d(x,x'')<d$. We can draw $S, S', \gamma$ as in Figure \ref{unica_geodetica:fig} by placing the origin between $x$ and $x'$: no other line can be orthogonal to both $S$ and $S'$.
+\end{proof}
+
+Two subspaces of type (1), (2) or (3) are called respectively \emph{incident}, \emph{asymptotically parallel}, and \emph{ultra-parallel}.
+\index{subspace!incident, asymptotically parallel, ultra-parallel subspaces}
+
+\subsection{The conformal sphere at infinity}
+The sphere at infinity $\partial \matH^n$ has no metric structure, but it has instead a \emph{conformal structure}, that is a Riemannian structure considered up to conformal transformations. Before defining it we note the following.
+
+\begin{prop}
+Every isometry $\varphi \colon \matH^n \to \matH^n$ extends to a unique homeomorphism $\varphi:\overline{\matH^n} \to \overline{\matH^n}$. An isometry $\varphi$ is determined by its trace $\varphi|_{\partial \matH^n}$ at the boundary.
+\end{prop}
+\begin{proof}
+The extension of $\varphi$ to $\partial \matH^n$ is defined intrinsically: a boundary point is a class $[\gamma]$ of geodesic half-lines and we set $\varphi ([\gamma]) = [\varphi(\gamma)]$. 
+
+To prove the second assertion we show that an isometry $\varphi$ that fixes the points at infinity is the identity. The isometry $\varphi$ fixes every line as a set (because it fixes its endpoints), and since every point is the intersection of two lines it fixes also every point.
+\end{proof}
+
+We give $\partial \matH^n$ the conformal structure of the sphere $\partial D^n$. The group $\Iso(\matH^n)$ is generated by sphere inversions, which act conformally: although the metric tensor of $\partial D^n$ is not preserved by this action, its conformal class is preserved and hence the conformal structure on $\partial \matH^n$ is well-defined.
+
+\subsection{Elliptic, parabolic, and hyperbolic isometries}
+It is convenient to classify the isometries of $\matH^n$ into three types.
+\index{isometry!elliptic, parabolic, and hyperbolic isometry}
+
+\begin{prop} \label{fixed:prop}
+Let $\varphi$ be a non-trivial isometry of $\matH^n$. Precisely one of the following holds: 
+\begin{enumerate}
+\item $\varphi$ has at least one fixed point in $\matH^n$, 
+\item $\varphi$ has no fixed points in $\matH^n$ and has exactly one in $\partial \matH^n$,
+\item $\varphi$ has no fixed points in $\matH^n$ and has exactly two in $\partial \matH^n$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+The extension $\varphi:\overline{\matH^n} \to \overline{\matH^n}$ is continuous and has a fixed point by Brouwer's Theorem. We only need to prove that if $\varphi$ has three fixed points $P_1, P_2, P_3$ at the boundary then it has some fixed point in the interior. The isometry $\varphi$ fixes the line $r$ with endpoints $P_1$ and $P_2$.
+There is only one line $s$ with endpoint $P_3$ and orthogonal to $r$ (exercise): the isometry $\varphi$ must also fix $s$ and hence fixes the point $r\cap s$.
+\end{proof}
+Isometries of type (1), (2), and (3) are called respectively \emph{elliptic}, \emph{parabolic}, and \emph{hyperbolic}. A hyperbolic isometry fixes two points $p,q\in \partial \matH^n$ and hence preserves the unique line $l$ with endpoints $p$ and $q$. The line $l$ is the \emph{axis} of the hyperbolic isometry, which acts on $l$ as a translation.
+
+\subsection{Horospheres} \label{orosfere:subsection}
+Parabolic transformations are related to some objects in $\matH^n$ called horospheres. \index{horosphere}
+
+\begin{defn} Let $p$ be a point in $\partial\matH^n$. A \emph{horosphere} centred in $p$ is a connected complete hypersurface orthogonal to all the lines exiting from $p$.
+\end{defn}
+
+Horospheres may be easily visualised in the half-space model $H^n$ by sending $p$ at infinity. The lines exiting from $p$ are the Euclidean vertical lines and the horospheres centred at $p$ are precisely the horizontal hyperplanes $\{x_n = k\}$ with $k>0$. 
+
+\begin{oss}
+Since the metric tensor $g = \frac 1{x_n^2}g^E$ is constant on each hyperplane $\{x_n = k\}$, each horosphere is \emph{isometric} to the Euclidean $\matR^n$. 
+\end{oss}
+
+The horospheres centred at $p\neq \infty$ in $\partial H^n$ or at any point $p\in \partial D^n$ are precisely the Euclidean spheres tangent in $p$ to the sphere at infinity. The horospheres in $\matH^2$ are circles and are called \emph{horocycles}, see Figure \ref{Horocycle_normals:fig}. The portion of $\matH^n$ delimited by a horosphere is called a \emph{horoball}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 5 cm] {\iftoggle{BW}{Horocycle_normals-BW}{Horocycle_normals}}
+\nota{A horocycle in $\matH^2$ centred in $p\in\partial\matH^2$ is a circle tangent to $p$. It is orthogonal to all the lines exiting from $p$.}
+\label{Horocycle_normals:fig}
+\end{center}
+\end{figure}
+
+Let us go back to the isometries of $\matH^n$. We sometimes write a point in the half-space $H^n$ as a pair $(x,t)$ with $x\in \matR^{n-1}$ and $t>0$. Isometries with nice fixed points have nice expressions in the conformal models. 
+
+\begin{prop} \label{tre:prop}
+Let $\varphi$ be an isometry of $\matH^n$:
+\begin{enumerate}
+\item if $\varphi$ is elliptic with fixed point $0\in D^n$ then
+$$\varphi(x) = Ax$$
+for some matrix $A\in \On(n)$; 
+\item if $\varphi$ is parabolic with fixed point $\infty$ in $H^n$ then
+$$\varphi (x,t) = (Ax+b, t)$$ 
+for some matrix $A\in \On(n-1)$ and some vector $b$;
+\item if $\varphi$ is hyperbolic with fixed points $0$ and $\infty$ in $H^n$ then
+$$\varphi (x,t) = \lambda(Ax,t)$$
+for some matrix $A\in \On(n-1)$ and some positive scalar $\lambda\neq 1$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Point (1) is obvious. In (2) the isometry $\varphi$ fixes $\infty$ and hence permutes the horospheres centred at $\infty$: we first prove that this permutation is trivial. The map $\varphi$ sends a horosphere $O_0$ at height $t=t_0$ to a horosphere $O_1$ at some height $t=t_1$. If  $t_1\neq t_0$, up to changing $\varphi$ with its inverse we may suppose that $t_1<t_0$. 
+
+We know that the map $\psi\colon O_1 \to O_0$ sending $(x,t_1)$ to $(x,t_0)$ is a contraction: hence $\varphi\circ\psi \colon O_1 \to O_1$ is a contraction and thus has a fixed point $(x,t_1)$. Therefore $\varphi(x,t_0) = (x,t_1)$. Since $\varphi(\infty)=\infty$, the vertical geodesic passing through $(x,t_0)$ and $(x,t_1)$ is preserved by $\varphi$, and hence we have found another fixed point $(x,0)\in\partial \matH^n$, a contradiction.
+
+We now know that $\varphi$ preserves the horosphere $O$ at height $t$, for all $t$.
+The metric tensor on $O$ is Euclidean (rescaled by $\frac 1{t^2}$), hence $\varphi$ acts on $O$ like an isometry $x\mapsto Ax+b$.
+Since $\varphi$ sends vertical geodesics to vertical geodesics, it acts with the same formula on each horosphere and we are done.
+
+Concerning (3), the axis $l$ of $\varphi$ is the vertical line with endpoints $0=(0,0)$ and $\infty$, and $\varphi$ acts on $l$ by translations: hence it sends $(0,1)$ to some $(0,\lambda)$. The differential $d\varphi$ at $(0,1)$ is necessarily $\matr A 0 0 \lambda$ for some $A\in \On(n-1)$ and hence $\varphi$ is globally as stated. The case $\lambda = 1$ is excluded because $(0,1)$ would be a fixed point in $\matH^n$.
+\end{proof}
+
+The \emph{minimum displacement} $d=d(\varphi)$ of an isometry $\varphi$ of $\matH^n$ is \index{minimum displacement}
+$$d(\varphi) = \inf_{x\in\matH^n} d\big(x,\varphi(x)\big).$$
+A point $x$ realises the minimum displacement if $d(x,\varphi(x)) = d(\varphi)$.
+\begin{cor} \label{spostamento:cor}
+The following hold:
+\begin{enumerate}
+\item an elliptic transformation $\varphi$ has $d=0$ realised on its fixed points;
+\item a parabolic transformation $\varphi$ with fixed point $p\in \partial\matH^n$ has $d=0$ realised nowhere and fixes every horosphere centred in $p$; 
+\item a hyperbolic transformation $\varphi$ with fixed points $p,q\in\partial\matH^n$ has $d>0$ realised on its axis.
+\end{enumerate}
+\end{cor}
+\begin{proof}
+Point (1) is obvious. Point (2) was already noticed while proving Proposition \ref{tre:prop}. Concerning (3), let $l$ be the axis of the hyperbolic transformation $\varphi$. The hyperplane orthogonal to $l$ at a point $x\in l$ is sent to the hyperplane orthogonal to $l$ in $\varphi(x)$. The two hyerplanes are ultraparallel and by Proposition \ref{sottospazi:prop} their minimum distance is realised at the points $x$ and $\varphi(x)$. Hence the points on $l$ realise the minimum displacement for $\varphi$.
+\end{proof}

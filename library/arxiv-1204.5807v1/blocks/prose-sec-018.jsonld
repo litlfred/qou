@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1204.5807v1/blocks/prose-sec-018",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1204.5807v1/blocks/prose-sec-018",
   "kind": "prose",
   "title": "The non-degenerate quotient. Let C be an additive k-linear spher-",
   "pageStart": 8,
   "pageEnd": 10,
   "text": "../sections/sec-018-24-the-non-degenerate-quotient-let-c-be-an-addit.md",
-  "derivedFrom": "library/arxiv-1204.5807v1/manifest",
-  "sourceDocument": "library/arxiv-1204.5807v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1204.5807v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1204.5807v1/manifest.jsonld",
   "provenance": "ingested"
 }

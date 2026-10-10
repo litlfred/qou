@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2601.07906v2/blocks/prose-sec-028",
+  "kind": "prose",
+  "title": "VTQFT technology",
+  "pageStart": 98,
+  "pageEnd": 98,
+  "text": "../sections/sec-028-vtqft-technology.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2601.07906v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2601.07906v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0008027v1/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "HITOSHI MURAKAMI",
+  "pageStart": 6,
+  "pageEnd": 6,
+  "contains": [
+    "library/arxiv-math-0008027v1/blocks/prose-sec-006"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0008027v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0008027v1/manifest.jsonld",
+  "provenance": "ingested"
+}

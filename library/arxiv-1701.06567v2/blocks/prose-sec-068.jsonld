@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1701.06567v2/blocks/prose-sec-068",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1701.06567v2/blocks/prose-sec-068",
   "kind": "prose",
   "title": "Links in S2×S1 and Rozansky’s proposal",
   "pageStart": 60,
   "pageEnd": 63,
   "text": "../sections/sec-068-42-links-in-s2s1-and-rozanskys-proposal.md",
-  "derivedFrom": "library/arxiv-1701.06567v2/manifest",
-  "sourceDocument": "library/arxiv-1701.06567v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1701.06567v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1701.06567v2/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0811.2435v1/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0811.2435v1/blocks/prose-sec-003",
   "kind": "prose",
   "title": "Donaldson-Thomas invariants for non-commutative 3d Calabi-Yau varieties",
   "pageStart": 9,
   "pageEnd": 10,
   "text": "../sections/sec-003-donaldson-thomas-invariants-for-non-commutative.md",
-  "derivedFrom": "library/arxiv-0811.2435v1/manifest",
-  "sourceDocument": "library/arxiv-0811.2435v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0811.2435v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0811.2435v1/manifest.jsonld",
   "provenance": "ingested"
 }

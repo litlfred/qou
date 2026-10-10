@@ -5,7 +5,8 @@
   "file": "2402.04839v2.pdf",
   "sha256": "daf09811c350a2ad4453a89faaca2af5f0e84788e822fb79c4d3be3e3d9e9fba",
   "bytes": 882689,
-  "pages": 28
+  "pages": 28,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -15,7 +16,7 @@
    "stamp_date": "8 Jun 2026"
   },
   "doi": null,
-  "title": "On a volume invariant of 3–manifolds",
+  "title": "On a volume invariant of 3\u2013manifolds",
   "authors_raw": "Marc Kegel, Arunima Ray, Jonathan Spreer, Em Thompson and Stephan Tillmann",
   "abstract": null,
   "docinfo": {
@@ -25,7 +26,7 @@
    "Title": "On a volume invariant of 3-manifolds"
   },
   "title_lines": [
-   "On a volume invariant of 3–manifolds"
+   "On a volume invariant of 3\u2013manifolds"
   ]
  },
  "toc": [
@@ -412,6 +413,136 @@
   "likely_scanned": false,
   "toc_entries": 22,
   "sections": 22,
-  "chars_total": 75422
+  "chars_total": 75422,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "volt.tex",
+   "tex_sections": 5,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.912,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-properties-examples-and-questions",
+     "title": "Properties, examples and questions",
+     "prose_ratio": 0.067,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-definition-of-topological-volume-and-its-spectru",
+     "title": "Definition of topological volume and its spectrum",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-refinements-of-topological-volume",
+     "title": "Refinements of topological volume",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-a-finiteness-result",
+     "title": "A finiteness result",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-covers-and-branched-covers",
+     "title": "Covers and branched covers",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-constructions-of-unbounded-topological-volume",
+     "title": "Constructions of unbounded topological volume",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-bounds-on-topological-volume",
+     "title": "Bounds on topological volume",
+     "prose_ratio": 0.067,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-upper-bounds-from-surgery-descriptions-or-triang",
+     "title": "Upper bounds from surgery descriptions or triangulations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-lower-bounds",
+     "title": "Lower bounds",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-the-minimal-topological-volume-manifolds",
+     "title": "The minimal topological volume manifolds",
+     "prose_ratio": 0.069,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-a-census",
+     "title": "A census",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-parenthood",
+     "title": "Parenthood",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-homology-classes-of-minimisers",
+     "title": "Homology classes of minimisers",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-connected-sums",
+     "title": "Connected sums",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-examples-obtained-from-the-whitehead-link-and-it",
+     "title": "Examples obtained from the Whitehead link and its sister",
+     "prose_ratio": 0.234,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-volume-functions-on-dehn-surgery-space",
+     "title": "Volume functions on Dehn surgery space",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-the-topological-volume-of-all-but-finitely-many",
+     "title": "The topological volume of all but finitely many lens spaces",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-determining-the-minimiser",
+     "title": "Determining the minimiser",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-using-tetrahedron-shapes-to-prove-equivalence-of",
+     "title": "Using tetrahedron shapes to prove equivalence of volumes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-equivalence-of-volumes-m006-and-m007",
+     "title": "Equivalence of volumes: m006 and m007",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-equivalence-of-volumes-m015-m016-and-m017",
+     "title": "Equivalence of volumes: m015, m016 and m017",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

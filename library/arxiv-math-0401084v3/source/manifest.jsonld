@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0401084v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0401084v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0401084v3/manifest.jsonld",
+  "provenance": "ingested",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0401084&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0401084v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math/0401084v3",
+    "content_type": "application/gzip",
+    "sha256": "65f5d853ce190c182ba867a17d19647fa6b06b11eefd6530d8f1025f6c950424",
+    "bytes": 14384,
+    "fetched": "2026-10-10T15:27:56+00:00",
+    "files": [
+      {
+        "path": "source/files/dehn.bbl",
+        "role": "bbl",
+        "sha256": "1cb5310830c6083df1934249038f7931a5ee17c793f52ef901cbfafbaa50a59e",
+        "bytes": 4922
+      },
+      {
+        "path": "source/files/dehn.tex",
+        "role": "tex",
+        "sha256": "39d70bd64c838b9cb1dc51a69a0f9a075363bc48ebe6bb046ffa1ac890288bb1",
+        "bytes": 50439
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

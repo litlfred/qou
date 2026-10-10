@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9804005v3/blocks/prose-sec-043",
+  "kind": "prose",
+  "title": "If for every minimal graded prime ideal p the quotient algebra A/p is graded",
+  "pageStart": 24,
+  "pageEnd": 24,
+  "text": "../sections/sec-043-3-if-for-every-minimal-graded-prime-ideal-p-the.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9804005v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9804005v3/manifest.jsonld",
+  "provenance": "ingested"
+}

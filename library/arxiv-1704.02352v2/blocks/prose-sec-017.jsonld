@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1704.02352v2/blocks/prose-sec-017",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1704.02352v2/blocks/prose-sec-017",
   "kind": "prose",
   "title": "Slow growth of (Rn) implies slow growth of (Sn)",
   "pageStart": 30,
   "pageEnd": 31,
   "text": "../sections/sec-017-42-slow-growth-of-rn-implies-slow-growth-of-sn.md",
-  "derivedFrom": "library/arxiv-1704.02352v2/manifest",
-  "sourceDocument": "library/arxiv-1704.02352v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1704.02352v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1704.02352v2/manifest.jsonld",
   "provenance": "ingested"
 }

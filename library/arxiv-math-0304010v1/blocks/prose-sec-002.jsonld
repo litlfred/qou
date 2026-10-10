@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0304010v1/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0304010v1/blocks/prose-sec-002",
   "kind": "prose",
   "title": "Thus, the degree of ⟨f⟩n does not exceed 1",
   "pageStart": 27,
   "pageEnd": 33,
   "text": "../sections/sec-002-410-thus-the-degree-of-fn-does-not-exceed-1.md",
-  "derivedFrom": "library/arxiv-math-0304010v1/manifest",
-  "sourceDocument": "library/arxiv-math-0304010v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0304010v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0304010v1/manifest.jsonld",
   "provenance": "ingested"
 }

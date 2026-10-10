@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9805116v3/sections/sec-020",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Haar integrals",
+  "pageStart": 29,
+  "pageEnd": 31,
+  "contains": [
+    "library/arxiv-math-9805116v3/blocks/prose-sec-020",
+    "library/arxiv-math-9805116v3/blocks/lemma-sec-020-01",
+    "library/arxiv-math-9805116v3/blocks/proposition-sec-020-02",
+    "library/arxiv-math-9805116v3/blocks/theorem-sec-020-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9805116v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9805116v3/manifest.jsonld",
+  "provenance": "ingested"
+}

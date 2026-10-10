@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2512.18642v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2512.18642v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2512.18642&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2512.18642v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2512.18642v1",
+    "content_type": "application/gzip",
+    "sha256": "000580de1d501b4082c018a8cd657dd7ef5275458ef270c1a8856b2c68941a26",
+    "bytes": 24366,
+    "fetched": "2026-10-10T15:22:05+00:00",
+    "files": [
+      {
+        "path": "source/files/HQMM_associated_with_AKLT.tex",
+        "role": "tex",
+        "sha256": "e002a84aed3101e8f718c413a6e6e7eafed8197d94dc3f447328dd7a7196a2c4",
+        "bytes": 81569
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

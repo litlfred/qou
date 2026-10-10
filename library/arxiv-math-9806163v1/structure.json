@@ -5,7 +5,8 @@
   "file": "9806163v1.pdf",
   "sha256": "dba44975f29cb017beca484167ac9721da1751533cd1f20335c253b3c84727db",
   "bytes": 244448,
-  "pages": 23
+  "pages": 23,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Weights of Markov traces on Hecke algebras",
   "authors_raw": "November 16, 2021",
-  "abstract": "We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn. In order to prove the weight formula, we deﬁne representations of the Hecke algebra of ty pe B onto a reduced Hecke Algebra of type A. To compute the weights for type D we use the inclusion of the Hecke algebra of type D into the Hecke algebra of type B.",
+  "abstract": "We compute the weights, i.e. the values at the minimal idempo tents, for the Markov trace on the Hecke algebra of type Bn and type Dn. In order to prove the weight formula, we de\ufb01ne representations of the Hecke algebra of ty pe B onto a reduced Hecke Algebra of type A. To compute the weights for type D we use the inclusion of the Hecke algebra of type D into the Hecke algebra of type B.",
   "docinfo": {
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20220305131056-05'00'",
@@ -25,10 +26,10 @@
    "Title": "arXiv:math/9806163v1  [math.CO]  30 Jun 1998"
   },
   "title_lines": [
-   "Weights of Markov Traces on Hecke Algebras ∗",
+   "Weights of Markov Traces on Hecke Algebras \u2217",
    "R.C. Orellana"
   ],
-  "title_prev": "Weights of Markov Traces on Hecke Algebras ∗ R.C. Orellana"
+  "title_prev": "Weights of Markov Traces on Hecke Algebras \u2217 R.C. Orellana"
  },
  "toc": [
   {
@@ -131,7 +132,7 @@
   },
   {
    "level": 2,
-   "title": "A Homomorphism of Hn(q, −qr1+m) onto a reduced algebra of",
+   "title": "A Homomorphism of Hn(q, \u2212qr1+m) onto a reduced algebra of",
    "page": 10,
    "source": "inferred",
    "number": "3.2"
@@ -352,7 +353,7 @@
   {
    "id": "sec-014-32-a-homomorphism-of-hnq-qr1m-onto-a-reduced-alg",
    "number": "3.2",
-   "title": "A Homomorphism of Hn(q, −qr1+m) onto a reduced algebra of",
+   "title": "A Homomorphism of Hn(q, \u2212qr1+m) onto a reduced algebra of",
    "level": 2,
    "page_start": 10,
    "page_end": 12,
@@ -465,6 +466,154 @@
   "likely_scanned": false,
   "toc_entries": 25,
   "sections": 25,
-  "chars_total": 48498
+  "chars_total": 48498,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 6,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-introduction",
+     "title": "Introduction",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-2-r-c-orellana",
+     "title": "R. C. Orellana",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-1-preliminaries-and-notation",
+     "title": "Preliminaries and Notation",
+     "prose_ratio": 0.308,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-11-partitions-and-standard-tableaux",
+     "title": "Partitions and Standard Tableaux",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-4-r-c-orellana",
+     "title": "R. C. Orellana",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-12-schur-functions",
+     "title": "Schur Functions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-6-r-c-orellana",
+     "title": "R. C. Orellana",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-13-the-braid-group",
+     "title": "The Braid Group",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-2-hecke-algebra-of-type-bn",
+     "title": "Hecke Algebra of type Bn",
+     "prose_ratio": 0.128,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-8-r-c-orellana",
+     "title": "R. C. Orellana",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-3-representations-of-the-hecke-algebra-of-type-b",
+     "title": "Representations of the Hecke algebra of type B onto",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-31-the-hecke-algebra-of-type-a",
+     "title": "The Hecke Algebra of type A",
+     "prose_ratio": 0.248,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-013-10-r-c-orellana",
+     "title": "R. C. Orellana",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-32-a-homomorphism-of-hnq-qr1m-onto-a-reduced-alg",
+     "title": "A Homomorphism of Hn(q, \u2212qr1+m) onto a reduced algebra of",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-12-r-c-orellana",
+     "title": "R. C. Orellana",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-14-r-c-orellana",
+     "title": "R. C. Orellana",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-4-markov-traces-on-the-hecke-algebra-of-type-b",
+     "title": "Markov Traces on the Hecke Algebra of type B",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-018-16-r-c-orellana",
+     "title": "R. C. Orellana",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-5-the-weight-formula",
+     "title": "The Weight Formula",
+     "prose_ratio": 0.429,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-020-18-r-c-orellana",
+     "title": "R. C. Orellana",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-20-r-c-orellana",
+     "title": "R. C. Orellana",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-6-markov-trace-for-the-hecke-algebra-of-type-d",
+     "title": "Markov Trace for the Hecke algebra of type D",
+     "prose_ratio": 0.727,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-023-22-r-c-orellana",
+     "title": "R. C. Orellana",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

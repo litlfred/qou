@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-0001202v2/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-0001202v2/blocks/prose-sec-009",
   "kind": "prose",
   "title": "The absence of a further inequivalent 3-primitive at weight n = 5 means",
   "pageStart": 9,
   "pageEnd": 13,
   "text": "../sections/sec-009-1-the-absence-of-a-further-inequivalent-3-primit.md",
-  "derivedFrom": "library/arxiv-hep-th-0001202v2/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0001202v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-0001202v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-0001202v2/manifest.jsonld",
   "provenance": "ingested"
 }

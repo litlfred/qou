@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1611.03697v5/blocks/prose-sec-042",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1611.03697v5/blocks/prose-sec-042",
   "kind": "prose",
   "title": "A.7. Behaviour of BPS invariants",
   "pageStart": 41,
   "pageEnd": 43,
   "text": "../sections/sec-042-a7-behaviour-of-bps-invariants.md",
-  "derivedFrom": "library/arxiv-1611.03697v5/manifest",
-  "sourceDocument": "library/arxiv-1611.03697v5/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1611.03697v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1611.03697v5/manifest.jsonld",
   "provenance": "ingested"
 }

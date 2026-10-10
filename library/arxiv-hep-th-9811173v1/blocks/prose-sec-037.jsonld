@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9811173v1/blocks/prose-sec-037",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-9811173v1/blocks/prose-sec-037",
   "kind": "prose",
   "title": "Dedekind zeta value from an 18-crossing Feynman knot",
   "pageStart": 25,
   "pageEnd": 26,
   "text": "../sections/sec-037-57-dedekind-zeta-value-from-an-18-crossing-feynm.md",
-  "derivedFrom": "library/arxiv-hep-th-9811173v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9811173v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-9811173v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-9811173v1/manifest.jsonld",
   "provenance": "ingested"
 }

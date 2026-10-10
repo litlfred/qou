@@ -5,7 +5,8 @@
   "file": "0808.2716v4.pdf",
   "sha256": "ea66f7ddcf9e9fe68292d8334dd47fe60f8a1debcb453f00ac35a8dc183165f8",
   "bytes": 525847,
-  "pages": 44
+  "pages": 44,
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -469,6 +470,139 @@
   "likely_scanned": false,
   "toc_entries": 29,
   "sections": 23,
-  "chars_total": 132672
+  "chars_total": 132672,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "farey-cusps.tex",
+   "tex_sections": 6,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.209,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-cusp-shapes-and-areas",
+     "title": "Cusp shapes and areas",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-12-cusp-area-and-link-diagrams",
+     "title": "Cusp area and link diagrams",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-15-organization",
+     "title": "Organization",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-16-acknowledgements",
+     "title": "Acknowledgements",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-22-oncepunctured-torus-bundles",
+     "title": "Once\u2013punctured torus bundles",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-23-4punctured-sphere-bundles",
+     "title": "4\u2013punctured sphere bundles",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-24-two-bridge-links",
+     "title": "Two-bridge links",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-3-geometric-estimates-for-ford-domains",
+     "title": "Geometric estimates for Ford domains",
+     "prose_ratio": 0.096,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-31-estimates-for-triangulated-hyperbolic-3manifo",
+     "title": "Estimates for triangulated hyperbolic 3\u2013manifolds",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-33-horosphere-estimate",
+     "title": "Horosphere estimate",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-34-the-length-of-a-meridian",
+     "title": "The length of a meridian",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-4-cusp-area-estimates",
+     "title": "Cusp area estimates",
+     "prose_ratio": 0.067,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-013-41-puncturedtorus-bundles",
+     "title": "Punctured\u2013torus bundles",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-42-4punctured-sphere-bundles",
+     "title": "4\u2013punctured sphere bundles",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-43-2bridge-links",
+     "title": "2\u2013bridge links",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-5-volume-estimates-for-closed-3braids",
+     "title": "Volume estimates for closed 3\u2013braids",
+     "prose_ratio": 0.042,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-017-51-a-normal-form-for-3braids",
+     "title": "A normal form for 3\u2013braids",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-52-hyperbolic-3braids",
+     "title": "Hyperbolic 3\u2013braids",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-6-the-jones-polynomial-and-volume-of-closed-3bra",
+     "title": "The Jones polynomial and volume of closed 3\u2013braids",
+     "prose_ratio": 0.08,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-020-61-the-jones-polynomials-of-generic-3braids",
+     "title": "The Jones polynomials of generic 3\u2013braids",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-62-connections-to-volume",
+     "title": "Connections to volume",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

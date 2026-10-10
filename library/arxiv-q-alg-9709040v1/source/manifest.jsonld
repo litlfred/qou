@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-q-alg-9709040v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-q-alg-9709040v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-q-alg-9709040v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:q-alg/9709040&metadataPrefix=arXiv), submitted 1997-09-29, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-q-alg-9709040v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/q-alg/9709040v1",
+    "content_type": "application/gzip",
+    "sha256": "6c084ab2d09e07f16a6e3161e70b7a7881f50d8d4e5b426fe794e0ddbed5c53d",
+    "bytes": 69896,
+    "fetched": "2026-10-10T15:32:30+00:00",
+    "files": [
+      {
+        "path": "source/files/Pfc.tex",
+        "role": "tex",
+        "sha256": "3f1aa8ba6c6354e115cfdb9f913ad9e19df9045f603cc408729b86513a5181f4",
+        "bytes": 192157
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

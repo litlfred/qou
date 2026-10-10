@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0508100v6/blocks/prose-sec-025",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0508100v6/blocks/prose-sec-025",
   "kind": "prose",
   "title": "The maximum of the R-matrices at roots of unity",
   "pageStart": 22,
   "pageEnd": 22,
   "text": "../sections/sec-025-84-the-maximum-of-the-r-matrices-at-roots-of-uni.md",
-  "derivedFrom": "library/arxiv-math-0508100v6/manifest",
-  "sourceDocument": "library/arxiv-math-0508100v6/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0508100v6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0508100v6/manifest.jsonld",
   "provenance": "ingested"
 }

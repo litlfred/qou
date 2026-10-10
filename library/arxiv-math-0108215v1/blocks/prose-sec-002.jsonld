@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0108215v1/blocks/prose-sec-002",
+  "kind": "prose",
+  "title": "Research supported by Chatham College, the University of Io wa, and NSF grant",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "text": "../sections/sec-002-2-research-supported-by-chatham-college-the-univ.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0108215v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0108215v1/manifest.jsonld",
+  "provenance": "ingested"
+}

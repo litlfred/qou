@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0606435v2/blocks/theorem-sec-054-02",
+  "kind": "theorem",
+  "title": "Squier [Sq]",
+  "pageStart": 49,
+  "pageEnd": 50,
+  "text": "theorem-sec-054-02.md",
+  "derivedFrom": "library/arxiv-math-0606435v2/sections/sec-054",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0606435v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1203.2182v1/blocks/prose-sec-054",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1203.2182v1/blocks/prose-sec-054",
   "kind": "prose",
   "title": "Examples coming from reﬁned BPS invariants",
   "pageStart": 54,
   "pageEnd": 55,
   "text": "../sections/sec-054-4-examples-coming-from-reﬁned-bps-invariants.md",
-  "derivedFrom": "library/arxiv-1203.2182v1/manifest",
-  "sourceDocument": "library/arxiv-1203.2182v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1203.2182v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1203.2182v1/manifest.jsonld",
   "provenance": "ingested"
 }

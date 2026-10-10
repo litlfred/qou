@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2106.01332v4/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2106.01332v4/blocks/prose-sec-001",
   "kind": "prose",
   "title": "(for C𝓁(6)) and B3 (for C𝓁(4)). In such a construction, the",
   "pageStart": 3,
   "pageEnd": 4,
   "text": "../sections/sec-001-3-for-c𝓁6-and-b3-for-c𝓁4-in-such-a-construction.md",
-  "derivedFrom": "library/arxiv-2106.01332v4/manifest",
-  "sourceDocument": "library/arxiv-2106.01332v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2106.01332v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2106.01332v4/manifest.jsonld",
   "provenance": "ingested"
 }

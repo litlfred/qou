@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1206.5522v6/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "B-framings",
+  "pageStart": 6,
+  "pageEnd": 9,
+  "contains": [
+    "library/arxiv-1206.5522v6/blocks/prose-sec-002",
+    "library/arxiv-1206.5522v6/blocks/example-sec-002-01",
+    "library/arxiv-1206.5522v6/blocks/theorem-sec-002-02",
+    "library/arxiv-1206.5522v6/blocks/lemma-sec-002-03",
+    "library/arxiv-1206.5522v6/blocks/lemma-sec-002-04"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1206.5522v6/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1206.5522v6/manifest.jsonld",
+  "provenance": "ingested"
+}
