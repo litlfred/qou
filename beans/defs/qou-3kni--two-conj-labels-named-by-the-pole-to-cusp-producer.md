@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-14T19:57:29Z
-updated_at: 2026-10-10T06:43:35Z
+updated_at: 2026-10-10T07:05:41Z
 parent: b9cj
 ---
 
@@ -105,3 +105,62 @@ conjecture, and `thurston-relaxation` keeps citing a carrier that is not there.
 No number moves; no witness is wrong; the cost is entirely that a reader
 following those citations lands on nothing, and that the GB-PL identification
 reads as backed when it is not.
+
+
+---
+
+## Re-checked 2026-10-10 — the producer half is MORE blocked, and this bean's third finding is misdescribed
+
+**Environment, measured in a fresh container (not the one that wrote this bean):**
+`snappy` absent as before, and so are **`mpmath`, `numpy`, `scipy` and `sympy`** —
+all four. So the docstring half stays blocked and the block is wider than
+recorded: the two producers cannot be imported here, let alone re-run to
+re-stamp `scriptHash`. Nothing in `computations/` was edited.
+
+**🛑 The third finding above is wrong about WHERE the label is named, and the
+error propagated into `notation-collisions.md`.** This bean says
+`prop:jet-gb-pl-correspondence` *"is named in
+`brings-surface/thurston-relaxation.md:9` as the carrier of the GB-PL
+bijection"*. It is not. The whole of line 9's claim is
+
+> The Gröbner--Shirshov reduction depth maps to the number of ideal tetrahedra
+> used in the triangulation (GB--PL bijection).
+
+— a bare parenthetical with no label and no link. Measured: `jet-gb-pl`,
+`GB-PL` and `GB--PL` together occur in that file **exactly once**, on that line.
+
+That misdescription reached `notation-collisions.md` in PR #7401, whose
+`n`-overload entry read *"the carrier it names for that … has no file in the
+tree"*. Provenance checked, not assumed: main before #7401's merge had **0**
+occurrences of that clause, the branch side **1**. Corrected in PR #7546.
+
+**The correction makes the claim STRONGER.** "Cites a dead carrier" is a
+dangling reference; "names no carrier" means the GB-PL assertion is
+**unreachable by label at all** — an agent grepping the label to find the claim
+lands only on the register entry recording its absence, never on the assertion.
+
+**Carrier counts re-measured on `main` 77695711d2** (the 2026-09-14 figures
+above are a month and ~500 commits old):
+
+| label | carriers | was |
+|---|---|---|
+| `jet-gb-pl-correspondence` | 0 | 0 |
+| `pl-jsj-mass-integration-equivalence` | 0 | 0 |
+| `denominator-zeros-as-sw-critical-points` | 0 | 0 |
+| `shared-denominator-cusp-holonomy` | **6** | 5 |
+| `algebraic-geometric-dilog-equivalence` | 5 | 5 |
+
+And **no witness either**: the `jet-gb-pl-correspondence.witness.json` that
+`docs/audits/2026-05-18-compute-integration-sweep.md:145` lists does not exist.
+Both dated audits place the block at
+`content/quantum-observable-universe/descartes-universe/`, which the
+`content/` -> `folio/` move left behind.
+
+**Still open, and why it is not closeable here** (per the rule against closing a
+bean whose subject is an open conjecture): the two *docstring* labels need a
+container that can run the producers, and whether `thurston-relaxation.md:9`'s
+uncited GB-PL identification should be scoped, retired, or given a carrier is a
+mathematics decision for the owner — clause (1) of
+`conj:algebraic-geometric-dilog-equivalence` defers to that line for the
+depth-equals-tetrahedron-count identification, so changing it moves what the
+conjecture is understood to rest on.
