@@ -33,20 +33,62 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from hecke_characters import chi_lambda_braid
 from mass_at_3A_proper import atom_braid_word_3A
-from q_parameter import Q
+from q_parameter import Q, Q_50_DIGIT_STR
 from witness_base import WitnessBuilder
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 
 
-HA = 0.20906032198987945  # h = q − q⁻¹ at q_0
+# h = q − q⁻¹ at the pinned substrate q₀, DERIVED, as `mpf`.
+#
+# This was the float64 literal `HA = 0.20906032198987945`, and that number is
+# not a stale copy of this quantity — it is this quantity **at a different
+# q₀ pin**. Inverting `h = q − 1/q` gives `q = 1.1099785955541805692`, which
+# is the **muon CODATA-2018** pin to 6.1e-18, i.e. exact to the literal's own
+# 17 digits. The live pin is the proton one, `q₀ = 1.1099785827513808076`.
+#
+# So this was a LAYER STRADDLE in AGENTS.md's precise sense — an ideal-layer
+# (muon) input hardcoded into a producer whose `d` values arrive from the live
+# proton pin — and not a rounding slip. The drift is 2.31942e-8 on `h`, which
+# is 1.81 × the 1.28e-8 q₀ separation, i.e. **the μ–p substrate tension
+# itself, 11.53 ppb**. That matches the μ₃ Fréchet straddle AGENTS.md records
+# (11.54 ppb) to three digits, because it is the same quantity. It is also
+# doubly superseded: the muon anchor moved to CODATA 2022 on 2026-08-22
+# (`fca08de7d2`), so the literal was not even the current ideal-layer value.
+#
+# What it broke: `HA`/`H_HALF` are pattern-matching discriminators against the
+# `d` of each crossing at tolerance 1e-12, and `atom_braid_word_3A` emits `d`
+# as `mpf` at the live pin — measured on deuterium, `d ∈ {0, -0.20906029879…,
+# -0.10453014939…, -0.10445824776…}`. With the stale literal `abs(d + HA)` is
+# 2.32e-8, never `< 1e-12`, so the σ⁻¹ branch could never be taken and
+# `expand_to_branches` fell through to `raise ValueError(f"unexpected d={d}")`
+# on every live word. It also contaminated values: the stale literal is the
+# empty-word branch's coefficient, so λ=(2,1) read −2.3194e-08 where the exact
+# value is 0.
+#
+# Derived from `Q_50_DIGIT_STR` rather than from `hecke_core.h`, which is the
+# live-pin value but is a Python `float` — one carrier, and no float64 path.
+_Q_MP = mp.mpf(Q_50_DIGIT_STR)
+HA = _Q_MP - 1 / _Q_MP
 H_HALF = HA / 2
+
+# Exact-arithmetic tag for `chi_lambda_braid`. Without it that function
+# returns float64 regardless of what it is given, which put 44 raw-float64
+# fields into this producer's witness the first time the HA repair above let it
+# run far enough to emit one. Measured at n = 3: 0.05 ms/call, i.e. ~2 s for
+# the 40k-call ⁴He case — the float64 path bought nothing.
+CHI_PRECISION = 50
 
 
 def _pn_weighted_d():
-    """-h(1/2 - delta/4): the colour-weighted p-n interface shift."""
+    """-h(1/2 - delta/4): the colour-weighted p-n interface shift.
+
+    Carries `mpf` throughout. The two `float()` casts this had — on
+    `hecke_core.h` and on `_avg_color_delta()` — were a float64 path on a
+    quantity compared at 1e-9, and `hecke_core.h` is itself a Python `float`,
+    so `HA` above is used instead: one carrier for `h` in this file.
+    """
     from canonical_braid_crossings import _avg_color_delta
-    from hecke_core import h as _h
-    return -float(_h) * (0.5 - float(_avg_color_delta()) / 4)
+    return -HA * (mp.mpf(1) / 2 - mp.mpf(str(_avg_color_delta())) / 4)
 
 
 _D_PN_WEIGHTED = _pn_weighted_d()
@@ -115,14 +157,23 @@ def expand_to_branches(atom_word):
     return branches
 
 
-def chi_lambda_atom_braid(lambda_shape, atom_word, q_value, tol=1e-12):
-    """Compute χ_λ(T_w) by linear expansion over Avg branches."""
+def chi_lambda_atom_braid(lambda_shape, atom_word, q_value, tol=1e-12,
+                          precision=CHI_PRECISION):
+    """Compute χ_λ(T_w) by linear expansion over Avg branches.
+
+    `precision` is passed through to `chi_lambda_braid`, which otherwise
+    returns a Python `float` **whatever it is given** — measured: the exact
+    value `χ_(2,1)(σ₂σ₂⁻¹) = 2` comes back as `1.9999999999999997` under the
+    default and as the exact string `"2.0"` at `precision=50`. Passing an
+    `mpf` `q_value` alone does NOT help; the float64 is inside the callee.
+    """
     branches = expand_to_branches(atom_word)
     total = mp.mpf(0)
     for coeff, word in branches:
         if word:
-            val = chi_lambda_braid(lambda_shape, word, q_value=q_value)
-            total += coeff * mp.mpf(val)
+            val = chi_lambda_braid(lambda_shape, word, q_value=q_value,
+                                   precision=precision)
+            total += coeff * mp.mpf(str(val))
         else:
             # Empty word = identity element; χ_λ(1) = dim V_λ.
             # `hook_length_dim_lambda` never existed in `hecke_characters`
@@ -141,7 +192,7 @@ def chi_lambda_atom_braid(lambda_shape, atom_word, q_value, tol=1e-12):
 
 def main() -> int:
     set_compute_dps()
-    q = float(Q)
+    q = _Q_MP   # was float(Q): a float64 cast of the substrate parameter
 
     w = WitnessBuilder("atom-braid-active-partitions", engine="mpmath")
     w.set_description(
@@ -180,12 +231,25 @@ def main() -> int:
 
         t0 = time.time()
         chi_values = {}
+        chi_failures = []
         for lam in partitions:
             try:
                 val = chi_lambda_atom_braid(lam, atom_word, q)
-                chi_values[tuple(lam)] = float(val)
+                chi_values[tuple(lam)] = mp.mpf(str(val))
             except Exception as e:
+                # VISIBLE, not swallowed. This bare handler is why the
+                # committed witness recorded `observed_active_count: 0` and
+                # `match_prediction: True` for every atom: `expand_to_branches`
+                # raised `ValueError: unexpected d=...` for EVERY partition
+                # (the muon-pinned `HA` above), the handler recorded `None`, the
+                # `v is not None` filter selected nothing, and
+                # `match = (0 <= predicted)` passed VACUOUSLY. A conjecture's
+                # structural prediction was being published as confirmed by a
+                # producer that computed nothing at all — on a witness stamped
+                # with the correct live proton anchor, so every staleness and
+                # anchor detector read it as healthy.
                 chi_values[tuple(lam)] = None
+                chi_failures.append((tuple(lam), f"{type(e).__name__}: {e}"))
 
         elapsed = time.time() - t0
 
@@ -195,7 +259,16 @@ def main() -> int:
 
         observed_active_count = len(active)
 
-        match = (observed_active_count <= predicted_active)
+        # A vacuous pass is not a pass. If any chi could not be computed the
+        # active set is not a measurement of anything, and `match` must not be
+        # reported as True on the strength of an empty set.
+        chi_failed_count = len(chi_failures)
+        if chi_failed_count:
+            print(f"  \u26a0 {chi_failed_count}/{len(partitions)} chi values FAILED "
+                  f"— the active set is not a measurement. First: "
+                  f"{chi_failures[0][1]}")
+        match = (observed_active_count <= predicted_active
+                 and chi_failed_count == 0)
 
         result = {
             "Z": Z, "N": N, "A": A, "n_0": n0,
@@ -203,11 +276,14 @@ def main() -> int:
             "predicted_max_active": predicted_active,
             "observed_active_count": observed_active_count,
             "match_prediction": match,
+            "chi_failed_count": chi_failed_count,
+            "chi_failures": [{"lambda": list(l), "error": e}
+                             for l, e in chi_failures[:5]],
             "n_avg_crossings": n_avg,
             "n_branches": 2 ** n_avg,
             "elapsed_seconds": elapsed,
             "top_active_partitions": [
-                {"lambda": list(lam), "chi": v}
+                {"lambda": list(lam), "chi": fmt(v)}
                 for lam, v in active_sorted[:15]
             ],
         }
