@@ -204,4 +204,57 @@ theorem capped_gt_is_sufficient {cap true_ other : ℝ} (hle : cap ≤ true_) (h
   intro hcon
   linarith
 
+/-- **The hypothesis `sum_charge_extend` assumes, discharged from monotonicity.**
+
+`sum_charge_extend` is stated over *"if every padded coordinate is charged zero"*, and says in
+its own docstring that the analytic content is elsewhere: *"the padded coordinates satisfy
+`box_charge_eq_zero_of_nonpos`, and that is checked, not assumed."*  This is the lemma that
+stops it being assumed, for the one reason the bottom-edge frame actually supplies.
+
+The per-row gradient is `Γ j - c j - lam`, with `Γ` the row's tangent slope, `c j ≥ 0` the linear
+wall cost, and `lam ≥ 0` the integrality-gap multiplier.  `Γ` is *antitone* in the row index, so
+a single row `J` with `Γ J ≤ lam` forces the whole tail beyond it non-positive — one inequality
+covers infinitely many coordinates, which is exactly what a certificate at every block length
+needs.
+
+Note `c` enters only through `0 ≤ c j`: subtracting a non-negative cost can only help, so the
+bound does not depend on the wall's shape. -/
+theorem gradient_nonpos_of_antitone_tail {J : ℕ} (Γ c : ℕ → ℝ) (lam : ℝ)
+    (hmono : ∀ i j, i ≤ j → Γ j ≤ Γ i) (hc : ∀ j, 0 ≤ c j) (hJ : Γ J ≤ lam) :
+    ∀ j, J ≤ j → Γ j - c j - lam ≤ 0 := by
+  intro j hj
+  have h1 : Γ j ≤ Γ J := hmono J j hj
+  have h2 : 0 ≤ c j := hc j
+  linarith
+
+/-- **The composition: an antitone tail is charged exactly nothing.**  `gradient_nonpos_of_antitone_tail`
+feeds `box_charge_eq_zero_of_nonpos` directly, so every padded row past `J` contributes zero to
+the certificate's linear term — not a bounded amount, zero.
+
+This is the fact the bottom-edge measurement reports (`padded charge 0.0, tail 0.0 [exactly zero
+(g ≤ 0, lo = w = 0, Γ monotone)]`), and it is why `sum_charge_extend` rather than
+`sum_charge_extend_le` is the operative form there. -/
+theorem padded_tail_charge_eq_zero {J : ℕ} (Γ c lo hi w : ℕ → ℝ) (lam : ℝ)
+    (hmono : ∀ i j, i ≤ j → Γ j ≤ Γ i) (hc : ∀ j, 0 ≤ c j) (hJ : Γ J ≤ lam)
+    (hw : ∀ j, J ≤ j → w j = lo j) :
+    ∀ j, J ≤ j →
+      (if 0 ≤ Γ j - c j - lam then (Γ j - c j - lam) * (hi j - w j)
+       else (Γ j - c j - lam) * (lo j - w j)) = 0 := by
+  intro j hj
+  exact box_charge_eq_zero_of_nonpos _ (lo j) (hi j) (w j)
+    (gradient_nonpos_of_antitone_tail Γ c lam hmono hc hJ j hj) (hw j hj)
+
+/-- **Antitonicity is load-bearing, not decoration.**  Without it a single row below `lam` says
+nothing about the tail: take `Γ = (1, 2, 2, …)` and `lam = 1`.  Then `Γ 0 ≤ lam` holds and the
+row-1 gradient is `+1`, so the tail is charged a positive amount and the certificate over the
+padded index set is strictly larger than the one over the used coordinates.
+
+Stated as a refutation rather than a remark because a hypothesis nobody has shown to bite is
+indistinguishable from one that does not. -/
+theorem antitone_hypothesis_is_necessary :
+    ¬ ∀ (Γ : ℕ → ℝ) (lam : ℝ), Γ 0 ≤ lam → ∀ j, 0 ≤ j → Γ j - lam ≤ 0 := by
+  intro h
+  have := h (fun j => if j = 0 then 1 else 2) 1 (by norm_num) 1 (Nat.zero_le 1)
+  norm_num at this
+
 end QOU.BraidKnot.SupergradientCertificate
