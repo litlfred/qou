@@ -465,6 +465,27 @@ if [ "${1:-}" = "--changed" ]; then
   # nothing to scope down — but if this change cannot have moved any of them,
   # skip the run entirely.
   #
+  # 🛑 THAT PATTERN WAS `content/` AND WENT DEAD ON THE TREE RENAME (2026-10-10).
+  # The paper tree moved `content/` -> `folio/` (#7485) and `content/` does not
+  # exist on main at all, so the third alternative matched NOTHING: a Lean-only
+  # or .ts-only commit skipped this entire suite and printed
+  # "0 relevant of N changed file(s) — skipped". The "A SKIP IS NOT A PASS"
+  # note below is what makes that legible rather than silent — it was doing its
+  # job, and the fact it reported was wrong.
+  #
+  # MEASURED, same six-file sample through the old and new predicate:
+  #   old (^content/): 2 relevant   — the two computations/ files only
+  #   new (^folio/):   5 relevant   — plus the paper .lean, the block .ts, and
+  #                                   folio/values/registry.ts
+  # That last one is cited BY NAME in codata_corpus_literal_scan.py's own
+  # docstring as a CODATA value site (`folio/values/registry.ts:647`), so the
+  # predicate was skipping a file the gate it was widened for documents.
+  #
+  # The gate itself was never stale: codata_corpus_literal_scan.py walks
+  # `REPO.rglob("*")`, and a live run reports 63 `folio/` hits against 315
+  # `computations/` and 139 `docs/`. Only the short-circuit was wrong, which is
+  # the worse place for it to be — a blind gate still runs and still reports.
+  #
   # `content/**/*.{lean,ts}` was ADDED to this predicate on 2026-08-22, with
   # the CODATA stale-edition gate. Every other gate here examines witnesses
   # and `computations/` Python, so the old two-pattern predicate was exactly
@@ -495,7 +516,7 @@ if [ "${1:-}" = "--changed" ]; then
   # cannot make a clean checkout run the suite for no reason.
   considered=$(changed_files)
   relevant=$(printf '%s\n' "$considered" \
-             | grep -E '(\.witness\.json$|^computations/.*\.py$|^content/.*\.(lean|ts)$)' || true)
+             | grep -E '(\.witness\.json$|^computations/.*\.py$|^folio/.*\.(lean|ts)$)' || true)
   # A SKIP IS NOT A PASS (#5495, requested by the sibling on #5453). "0 files
   # considered" and "N considered, none relevant" were the same sentence, and
   # they are not the same fact: the first means this gate examined NOTHING.
