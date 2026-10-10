@@ -61,3 +61,15 @@ QOU/SchurWeyl/FullTowerTraceWindow.lean (sorry-free; axioms are standard only):
 - T1 qPlancherel_not_coherent and T3 ocneanuWeight_pos_of_le duplicate #7612 (PlancherelRestrictionIncoherent, and OcneanuWeightPositiveWindow, which is the stronger iff). They are independent second proofs; #7612 is the reference for those two.
 - Not proved here: the z=q−q⁻¹ endpoint trace; the window converse (done in #7612).
 **Derivation status:** coherent Markov trace on H_∞ + positive + faithful on every λ ⟺ z∈[0,h], with Molien (z=0, the literature's Hecke Plancherel measure) at one end. The point is still not selected. Note from #7612 TauBondLetter: Molien gives tr exactly 0 at ³He/⁴He, so B_log is undefined there.
+
+
+## 2026-10-10 — B_log on the faithful window: OPEN PROBLEM (owner: "leave as open problem"; session_01SVz9wTyu9X4uLbfvEKADVH)
+Owner rejected evaluating B_log at z_D (option A) and asked to explore changing the functional (C), left open.
+- **Where the collision comes from (upstream).** The live law `B = E_0·log(|tr_free|/|tr_atom|) = −E_0 Σ_bonds log f_b` (binding_log_free_energy.py, 2026-09-05 arc) was built on the convention-D trace, where every bond factor is positive (z_D+d: pp 0.613, nn 0.404, pn 0.508). D7 (2026-09-07) then moved mass/binding to the full tower. The two were never reconciled. Note the live code already takes absolute values.
+- **Structural form.** The bond letters are pp=σ, nn=σ⁻¹=σ−h, pn≈σ−h/2. Bond factors at Markov parameter z: tr(σ)=z, tr(σ⁻¹)=z−h. Faithful positive window is z∈[0,h] (#7612 iff + FullTowerTraceWindow T2). So on every faithful trace, σ and σ⁻¹ have traces of opposite sign (or one is 0). A log of a product of crossings of both chiralities cannot be real on a faithful trace. General-z bond formula ∏(z+d_k) checked exactly in H_6 (1 and 2 bonds), not proved.
+- **b₃ under any per-bond additive law (A, or C2 = Σ g(f_b)) is exactly 0** (no connected three-body term). It is not specific to A.
+- **C1 `1−∏f` is already refuted in the corpus**: it is the linear Δtr law (Δtr/tr_free = 1−∏f), intensive, saturates, 1592× AME spread (binding_canonical.py banner). Do not revive.
+- **C2 `Σ g(f_b)`**: defined on the window, extensive, b₃=0; g must be derived (anti-fit).
+- **Ordering fact**: d_nn < d_pn < d_pp, so any monotone-decreasing functional of the factor binds nn most, pp least, at every z. The two-nucleon spectrum (only pn binds) cannot come from the functional; it is in the letters (qou-kj4v).
+- **Unexplored C3 (speculative, not computed):** per-block determinant `Σ_λ μ_λ log|det ρ_λ(·)|`, multiplicative for any word and defined on faithful traces since σ is invertible. Owner consent needed before any code.
+- **Literature:** none found in library/ (INDEX + sections grep) on log-of-Markov-trace binding with signed factors. The nearest precedent for "log of a quantum trace" is the volume conjecture, which takes log|J_N|. Positivity of Markov traces is classical (Wenzl 1988, not held); Orellana arxiv-math-9806163v1 gives the weights.
