@@ -281,7 +281,12 @@ def main() -> int:
                              for l, e in chi_failures[:5]],
             "n_avg_crossings": n_avg,
             "n_branches": 2 ** n_avg,
-            "elapsed_seconds": elapsed,
+            # Timing is inherently float64 and AGENTS.md lists `elapsed_seconds`
+            # among the volatile/ephemeral keys, but the raw-float64 ratchet is a
+            # DRAINING baseline and three new raw fields would take it red. Format
+            # rather than baseline-widen, per "fix at the producer; baselines
+            # drain, never grow."
+            "elapsed_seconds": fmt(mp.mpf(str(elapsed))),
             "top_active_partitions": [
                 {"lambda": list(lam), "chi": fmt(v)}
                 for lam, v in active_sorted[:15]
