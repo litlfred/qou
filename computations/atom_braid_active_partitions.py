@@ -124,9 +124,18 @@ def chi_lambda_atom_braid(lambda_shape, atom_word, q_value, tol=1e-12):
             val = chi_lambda_braid(lambda_shape, word, q_value=q_value)
             total += coeff * mp.mpf(val)
         else:
-            # Empty word = identity element; χ_λ(1) = dim V_λ
-            from hecke_characters import hook_length_dim_lambda
-            total += coeff * mp.mpf(hook_length_dim_lambda(lambda_shape))
+            # Empty word = identity element; χ_λ(1) = dim V_λ.
+            # `hook_length_dim_lambda` never existed in `hecke_characters`
+            # (nor anywhere in the tree) — the name this file wants is
+            # `specht_dim`, whose docstring IS this quantity: "Integer
+            # Specht-module dimension f^λ = #SYT(λ) = n! / ∏ hook(c)
+            # (hook-length formula)". `partition_utils.dim_lambda` records the
+            # same function as the replacement for ad-hoc `hook_length_dim`
+            # copies, and agrees with it exactly. NOT `dim_q`, which is the
+            # q-deformed dimension (2.0109 vs 2 at λ=(2,1) at the proton q₀).
+            # Bean qou-2cz1.
+            from hecke_characters import specht_dim
+            total += coeff * mp.mpf(specht_dim(lambda_shape))
     return total
 
 
