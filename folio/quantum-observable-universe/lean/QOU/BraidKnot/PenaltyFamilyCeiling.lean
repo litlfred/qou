@@ -49,6 +49,15 @@ reporting a factor `2.4` where the honest figure is `2.1`.
 `budget_needed_for_cut_32` is the falsifiable condition: the curvature budget would have to be
 `>= 0.1096`, i.e. `2.1x` the limit the probe can justify (`2.87x` for parity with the G1 route).
 
+**That condition has since been measured and it does not hold.**  `ln q0 / 2` is sufficient,
+not measured; the true budget is `-lam_max(H_G)/2`, and over the Hessian of the probe's own
+gradient the tightest sampled value is `0.0643955 = 1.2343x` the probe's limit, well under the
+`2.1018x` required (`floor_at_measured_budget_exceeds_cut32`; the floor rises only from
+`1.3603x` to `1.3235x`, against `1.1873x` needed).  A sampled point upper-bounds a budget that
+is an infimum, so this **closes** the condition.  The exclusion is therefore no longer
+conditional on the probe's sufficient bound — only on the sampling, which is stated with the
+measurement.
+
 ## What this does and does not establish
 
 It is a **scope-(b) exclusion of the objective-penalty route, conditional on the curvature
@@ -154,6 +163,27 @@ The family is therefore **excluded**, not merely short — and excluded with the
 zero, so the padding lead cannot rescue it either. -/
 theorem floor_exceeds_cut32_requirement :
     (2.5643604628939807681 : ℝ) < 3.27708095409687544 - 26 * (0.0521703601597597 / 4) := by
+  norm_num
+
+/-- **The budget was measured, and it does not reopen the route.**  `ln q0 / 2` is only a
+sufficient concavity condition in the probe; the true budget is `-lam_max(H_G)/2`, since
+`G + lam * sum (u^2 - u)` is concave exactly when `H_G + 2 lam I <= 0`.  Measured over the
+Hessian of the probe's own gradient at `mp.dps = 60`
+([`rev_e_infinity_hessian_budget_probe.py`](computations/deltalambda/rev_e_infinity_hessian_budget_probe.py)),
+the tightest sampled value is `0.06439550031177121` at `pe = 0`, `T = JPAD = 26` —
+`1.2343x` the probe's limit, against the `2.1018x` `budget_needed_for_cut_32` demands.
+
+The floor at that budget is `3.27708095409687544 - 26 * 0.06439550031177121 / 4 =
+2.858510202 = 1.3235x`, still above the `1.1873x` the arc needs, by `0.294149739`.  Since a
+sampled point is an *upper* bound on a budget that is an infimum over the domain, and the
+measured budget decreases with the row count and is still decreasing at `T = JPAD`, this
+**closes** the reopening condition rather than merely failing to meet it.
+
+Trap recorded with the measurement: the **diagonal** of `H_G` reads `lam <= 0.413049687
+= 7.9173x`, which looks like a decisive reopening.  `lam_max(H_G) >= max_i H_ii`, so that is
+also only an upper bound — and the cross terms (the pair gains) inflate it by `6.41x`. -/
+theorem floor_at_measured_budget_exceeds_cut32 :
+    (2.5643604628939807681 : ℝ) < 3.27708095409687544 - 26 * (0.06439550031177121 / 4) := by
   norm_num
 
 /-- The falsifiable form, and the only thing that reopens the route: for the floor to drop to

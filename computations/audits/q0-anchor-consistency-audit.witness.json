@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-27T18:32:58.531344+00:00",
-  "commitSha": "6a939b9882577e2209fe46fb9551731997642d4a",
+  "engineVersion": "python 3.11.17",
+  "computedAt": "2026-10-10T12:47:23.229362+00:00",
+  "commitSha": "cdc7aa505599d464f7c53a592dab9c5c365c7cf1",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "8019c8193d71",
-  "scriptCommitSha": "9af18d43a5f3e57f3cc39771e649588329c4976b",
+  "scriptCommitSha": "16ca52cc51c47489866e36bc4172cbfb0b2a93f3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,13 +42,8 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
-    "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "python": "3.11.17",
+    "mpmath": "1.4.1"
   },
   "invocation": {
     "argv": [
@@ -60,7 +55,7 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded). Q0_ANCHOR_UNRECOGNISED is an anchor label that maps to no pin, so NO comparison was made — also CI-failing, because 'could not check' is not green, but not a flip and counted apart from one.",
   "data": {
     "counts": {
-      "Q0_OK": 1495,
+      "Q0_OK": 1503,
       "Q0_AMBIGUOUS": 7,
       "Q0_AMBIGUOUS_NO_REASON": 12,
       "Q0_INDEPENDENT": 175,
@@ -68,7 +63,7 @@
       "Q0_COMPARISON": 30,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1661,
+      "Q0_ANCHOR_MISSING": 1654,
       "Q0_VALUE_MISSING": 26,
       "Q0_AUDIT_EXEMPT": 91,
       "Q0_PARSE_ERROR": 0,
@@ -796,10 +791,6 @@
         },
         {
           "witness": "branch-phase-fit-to-mass-tower.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "brane-tower-isospin-diagnosis.witness.json",
           "detail": ""
         },
         {
@@ -3219,6 +3210,10 @@
           "detail": ""
         },
         {
+          "witness": "gram-h3-supergolden-is-convention-c-artefact.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "gram-qtrace-hutchinson-probe.witness.json",
           "detail": ""
         },
@@ -3428,10 +3423,6 @@
         },
         {
           "witness": "keystone-valuemap-genuine-smatrix-s013.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "keystone-valuemap-qbessel-gate-s013.witness.json",
           "detail": ""
         },
         {
@@ -4099,10 +4090,6 @@
           "detail": ""
         },
         {
-          "witness": "rho-k-markov-multiplicativity.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "rhoF-vs-adjoint-torsion.witness.json",
           "detail": ""
         },
@@ -4447,10 +4434,6 @@
           "detail": ""
         },
         {
-          "witness": "qbessel-jackson-contiguity.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "qbessel-mu-lambda-vs-qlommel-zeros.witness.json",
           "detail": ""
         },
@@ -4460,10 +4443,6 @@
         },
         {
           "witness": "qbessel-second-kind-quadratic-action-gate.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "qbessel-second-order-qdifference-equation.witness.json",
           "detail": ""
         },
         {
@@ -5499,10 +5478,6 @@
           "detail": ""
         },
         {
-          "witness": "qbeta-qbessel-contiguity-cfinite.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "qbeta-qbeta-scores-a-difference.witness.json",
           "detail": ""
         },
@@ -5608,10 +5583,6 @@
         },
         {
           "witness": "qbeta-silver-ratio-pell-lucas-ck.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "qbeta-silver-rationals.witness.json",
           "detail": ""
         },
         {
@@ -6431,10 +6402,6 @@
           "detail": ""
         },
         {
-          "witness": "low-isotope-binding-sweep.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "mass-table-bring-phi-q-h4-sweep.witness.json",
           "detail": ""
         },
@@ -7166,6 +7133,10 @@
         },
         {
           "witness": "branching-qvalue-chain.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "brane-tower-isospin-diagnosis.witness.json",
           "detail": ""
         },
         {
@@ -10517,6 +10488,10 @@
           "detail": ""
         },
         {
+          "witness": "keystone-valuemap-qbessel-gate-s013.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "keystone-wlambda-vs-ylambda-projected-shift.witness.json",
           "detail": ""
         },
@@ -10922,6 +10897,10 @@
         },
         {
           "witness": "rho-k-h3a-co-casimir-perknot-rerun.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "rho-k-markov-multiplicativity.witness.json",
           "detail": ""
         },
         {
@@ -11346,6 +11325,14 @@
         },
         {
           "witness": "pair-skein-mass-bar-parity.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbessel-jackson-contiguity.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbessel-second-order-qdifference-equation.witness.json",
           "detail": ""
         },
         {
@@ -11989,6 +11976,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-qbessel-contiguity-cfinite.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-qbessel-crossanchor-smoothness-refutation.witness.json",
           "detail": ""
         },
@@ -12050,6 +12041,10 @@
         },
         {
           "witness": "qbeta-signed-vs-abs-tower-diagnostic.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-silver-rationals.witness.json",
           "detail": ""
         },
         {
@@ -12458,6 +12453,10 @@
         },
         {
           "witness": "light-isotope-sweep.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "low-isotope-binding-sweep.witness.json",
           "detail": ""
         },
         {
