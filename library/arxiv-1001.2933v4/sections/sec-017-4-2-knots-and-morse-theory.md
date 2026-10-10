@@ -8,6 +8,7 @@ pages: 71-85
 source_pdf: 1001.2933v4.pdf.txt
 source_sha256: b02636c86d593c02
 toc_source: inferred
+doc_brief: "Analytic Continuation Of Chern-Simons Theory — The title of this article refers to analytic continuation of three-dimensional ChernSimons gauge theory away from integer values of the usual coupling"
 ---
 4.2 Knots And Morse Theory
 Beginning in section 2.5.3, we described the analytic continuation of Chern-Simons knot

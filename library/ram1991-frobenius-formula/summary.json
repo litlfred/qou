@@ -1,0 +1,77 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "ram1991-frobenius-formula",
+ "source_sha256": "26b2fc85338d9150",
+ "brief": "A Frobenius formula for the characters of the Hecke algebras — This paper uses the theory of quantum groups and the quantum Yang-Baxter equation as a guide in order to produce a method of computing",
+ "extended": "**A Frobenius formula for the characters of the Hecke algebras**\n\n*Arun Ram*\n\n28 pp, 11 sections.\n\n**Abstract.** This paper uses the theory of quantum groups and the quantum Yang-Baxter equation as a guide in order to produce a method of computing the irreducible characters of the Hecke algebra. This approach is motivated by an observation of M. Jimbo giving a representation of the Hecke algebra on tensor space which generates the full centralizer of a tensor power of the \"standard\" representation of the quantum group U_q(sl(n)). By rewriting the solutions of the quantum Yang-Baxter equation for U_q(sl(n)) in a different form one can avoid the quantum group completely and produce a “Frobenius\" formula for the characters of the Hecke algebra by elementary methods. Using this formula we derive a combinatorial rule for computing the irreducible characters of the Hecke algebra.\n\n**Outline.** Front matter; 0 Introduction; 1 The symmetric group S_f and the Hecke algebr; 2 Remarks on the quantum group U_q(sl(n)) and ; 3 The action of H_f on V^{⊗f}; 4 The Frobenius formula for the characters of ; 5 Formulas for the irreducible characters of H; 6 A combinatorial rule for computing the irred; 7 Work of King-Wybourne and Vershik-Kerov; 8 Tables and formulas for special cases; References\n\n**Extracted claims (proposals, not verified).**\n- Lemma 3.5: shows that, for an idempotent pe Hf, one can compute tr(Dp) by",
+ "tokens": {
+  "brief": 49,
+  "extended": 355
+ },
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "title": "Front matter",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-000-0-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-1-the-symmetric-group-s-f-and-the-hecke-alge",
+   "title": "The symmetric group S_f and the Hecke algebra H_f",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-002-2-remarks-on-the-quantum-group-u-q-sl-n-and",
+   "title": "Remarks on the quantum group U_q(sl(n)) and the solutions of the quantum Yang-Baxter equation",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-003-3-the-action-of-h-f-on-v-f",
+   "title": "The action of H_f on V^{⊗f}",
+   "pages": "7-10"
+  },
+  {
+   "id": "sec-004-4-the-frobenius-formula-for-the-characters-o",
+   "title": "The Frobenius formula for the characters of H_f",
+   "pages": "10-16"
+  },
+  {
+   "id": "sec-005-5-formulas-for-the-irreducible-characters-of",
+   "title": "Formulas for the irreducible characters of H_f",
+   "pages": "16-19"
+  },
+  {
+   "id": "sec-006-6-a-combinatorial-rule-for-computing-the-irr",
+   "title": "A combinatorial rule for computing the irreducible characters of the Hecke algebras",
+   "pages": "19-23"
+  },
+  {
+   "id": "sec-007-7-work-of-king-wybourne-and-vershik-kerov",
+   "title": "Work of King-Wybourne and Vershik-Kerov",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-008-8-tables-and-formulas-for-special-cases",
+   "title": "Tables and formulas for special cases",
+   "pages": "25-27"
+  },
+  {
+   "id": "sec-009-references",
+   "title": "References",
+   "pages": "27-28"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -8,6 +8,7 @@ pages: 1-1
 source_pdf: 9712256v2.pdf
 source_sha256: 9939add0a5823a43
 toc_source: inferred
+doc_brief: "On structure constants and fusion rules in the SL(2,C)/SU(2) WZNW model — A closed formula for the structure constants in the SL(2,C)/SU(2) WZNW model is derived by a method previously used in"
 ---
 arXiv:hep-th/9712256v2  27 Jun 1998
 LPM-97/03

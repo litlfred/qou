@@ -8,6 +8,7 @@ pages: 1-2
 source_pdf: 9712256v2.pdf
 source_sha256: 9939add0a5823a43
 toc_source: inferred
+doc_brief: "On structure constants and fusion rules in the SL(2,C)/SU(2) WZNW model — A closed formula for the structure constants in the SL(2,C)/SU(2) WZNW model is derived by a method previously used in"
 ---
 1. Introduction
 Little is known about conformal ﬁeld theories that have continuous families of primary ﬁelds

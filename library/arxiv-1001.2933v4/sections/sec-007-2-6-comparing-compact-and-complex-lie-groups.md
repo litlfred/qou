@@ -8,6 +8,7 @@ pages: 17-20
 source_pdf: 1001.2933v4.pdf.txt
 source_sha256: b02636c86d593c02
 toc_source: inferred
+doc_brief: "Analytic Continuation Of Chern-Simons Theory — The title of this article refers to analytic continuation of three-dimensional ChernSimons gauge theory away from integer values of the usual coupling"
 ---
 2.6 Comparing Compact And Complex Lie Groups
 If we do not require that the generalized integral ZH,C(k) should agree with the original
