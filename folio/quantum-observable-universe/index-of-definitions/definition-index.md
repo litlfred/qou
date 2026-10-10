@@ -375,7 +375,7 @@
 | [prop:prolonged-periods-fixed-depth](#prop:prolonged-periods-fixed-depth) | A fixed-depth recurrence for the prolonged periods exists (Cayley–Hamilton) | Ch 12 | `qou:QOU.Mass.prolongation_fixed_depth_recurrence` |
 | [prop:gram-degeneracy-blocks-connes](#prop:gram-degeneracy-blocks-connes) | A Lipschitz seminorm with nonzero kernel has no finite Connes sup | Ch 12 | `qou:QOU.QBeta.GramSignature.lip_kernel_forces_unbounded` |
 | [prop:qou-is-ccc](#prop:qou-is-ccc) | A QOU with aeons is a conformal cyclic cosmology | Ch 20 | `qou:QOU.qou_is_ccc` |
-| [prop:toroidal-harmonics-delta-lambda](#prop:toroidal-harmonics-delta-lambda) | A toroidal-harmonic change of variables for the $z$-recursion | Ch 12 | `qou:QOU.QBeta.toroidal_ode_to_markov_w` |
+| [prop:toroidal-harmonics-delta-lambda](#prop:toroidal-harmonics-delta-lambda) | A toroidal-harmonic change of variables and the Markov loop values | Ch 12 | `qou:QOU.QBeta.toroidal_ode_to_markov_w` |
 | [prop:mi-sw-abelianisation](#prop:mi-sw-abelianisation) | Abelianisation of the MI integral on exceptional divisors | Ch 6 | `qou:QOU.BringsSurface.mi_sw_abelianisation` |
 | [prop:acoustic-horizon-conditions](#prop:acoustic-horizon-conditions) | Acoustic horizon formation and gravitational emergence | Ch 18 | `qou:QOU.FluidDynamics.acoustic_horizon_conditions` |
 | [prop:em-coupling-bring-zero-mode](#prop:em-coupling-bring-zero-mode) | Additive Bring zero-mode form $1/\alpha_{EM} = q\cdot[9]_q\cdot[10]_q + 2g/(4\pi(g-1))$ (conditional) | Ch 14 | `qou:QOU.Archimedean.bring_zero_mode_additive_form` |
