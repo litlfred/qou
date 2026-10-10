@@ -19,6 +19,7 @@ export default proposition({
     engine: "python",
     script: "computations/observations/neutron_prediction_comparison_probe.py",
     witness: "computations/observations/neutron_prediction_comparison_probe.witness.json",
+    status: "verified",
   },
   authorNotes: [
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
