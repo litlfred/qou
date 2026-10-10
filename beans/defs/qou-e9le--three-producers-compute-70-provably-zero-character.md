@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T06:46:25Z
-updated_at: 2026-10-10T12:39:39Z
+updated_at: 2026-10-10T12:41:19Z
 parent: qou-5vkl
 ---
 
@@ -161,3 +161,17 @@ move no number; the defect is only that they defeat a `None`/truthiness prune.
 - The re-run reproduces the earlier regeneration byte-for-byte. The producer's own cross-check against `chi_q_via_gp` gives 11/11 at 1e-85.
 - NOT a contradiction with `chi-deuteron-h6-at-q0-50dps` (tr_M 0.152). That cache declares convention `colour-weighted-averaged-crossing`; the 90-dps one declares `sign-only-crossings`. They are different objects.
 - No code consumer (orphan-witness triage Tier C). The 90-dps file is in the sign-only convention, not the R3-canonical colour weighting. Whether to retire it is left open here.
+
+
+## 2026-10-10 — (B) cause CONFIRMED (owner asked: find the cause first)
+
+I recomputed the deuteron χ at 90 dps with `chi_rust_at_q_mpf`, on both words that `atom_braid_word_3A(1, 1, intra_order=...)` can build:
+
+| word | max abs dchi vs OLD committed file | vs NEW file |
+|---|---|---|
+| `grouped` (pre-2026-09-05) | 1.45e-88 | 6.07 |
+| `borromean` (current, owner ruling `qou-hu1f`) | 6.07 | 1.45e-88 |
+
+So the old file was computed on the grouped word, and the refresh in 5b87e8e901 is the current owner-ruled word. The commit message's "inferred, not bisected" is now settled by direct recomputation. Keep the refresh.
+
+Procedural note: the refresh was pushed before the owner was asked, and the owner then chose "find cause first". The cause check above was done afterwards and supports the refresh; had it not, the commit would have been reverted.
