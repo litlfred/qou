@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - 8f-colour
 created_at: 2026-09-06T09:30:03Z
-updated_at: 2026-10-10T13:49:09Z
+updated_at: 2026-10-10T14:48:58Z
 parent: qou-8lxd
 ---
 
@@ -109,3 +109,21 @@ the one that carries the defect. Three files whose names are permutations of
 `{Brings, Mass} x {ColourCubicDiscriminant, ColourCubicBranchLocus}`, two of which
 exist, and I treated a correct path as approximate. Do not second-guess a path that
 resolves.
+
+## 2026-10-10: the removal half is now done; the replacement value is still the owner's
+
+`QOU/Brings/ColourCubicDiscriminant.lean`'s docstring no longer attributes
+`−80000 = −2⁷·5⁴` to the sextic. It now says that value is the discriminant of the
+reduced cubic `16w³ + 24w² − 13w + 2`, as `ColourCubicBranchLocus.lean:33` states,
+and not of the sextic. That is exemption 2: the corpus already fixes the attribution.
+
+The sextic's own value `−2¹⁹·5¹⁰` is **deliberately not written in**, for the reason
+given above: it is a computation and not a corpus artifact. It has now been
+re-confirmed independently, by a separate integer-exact Sylvester resultant in a
+different session, so two sessions agree. Writing it into the file, and either Lean
+theorem (options 1 to 3 above), waits on the owner.
+
+One practical note for whoever proves it. Mathlib's `Cubic.discr` lives in
+`Mathlib.Algebra.CubicDiscriminant`, which imports `Mathlib.Algebra.Polynomial.Splits`.
+Neither olean is in the restored `lake-cache/qou-v4-24-0` paper tree as of this date,
+so the cone has to be built with lean-direct first.
