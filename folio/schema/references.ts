@@ -8769,6 +8769,93 @@ export const references: Reference[] = [
     note: "English translation of Algebra i Analiz 2 (1990), no. 4. Introduces the KZ associator Φ_KZ and the (pro-unipotent) Grothendieck–Teichmüller group GT. The Drinfeld–Kohno theorem itself (KZ monodromy ≅ quantum-group R-matrix representation) is proved in Drinfeld, 'Quasi-Hopf algebras', Leningrad Math. J. 1 (1990) — reference [1] of this paper, NOT held in library/. PDF library/drinfeld1991-quasitriangular/ — a scan (no text layer; OCR text in ocr/ and sections/); its first spread's left page is the tail of a different paper (D. I. Gurevich, bibliography, p. 828).",
   }),
 
+  // ── Arias Abad 2015 — lecture notes: braid-group reps, KZ, Drinfeld–Kohno ──
+  ref({
+    id: "ariasabad2015",
+    library: {
+      docId: "ariasabad2015-revcolmat",
+      dir: "library/ariasabad2015-revcolmat",
+      pdf: "library/ariasabad2015-revcolmat/ariasabad2015-revcolmat.pdf",
+      stage: "candidates",
+      pages: 38,
+      sections: 19,
+      alternates: ["arxiv-1404.0724v1"],
+    },
+    type: "article-journal",
+    title: "Introduction to representations of braid groups",
+    author: [{ family: "Arias Abad", given: "Camilo" }],
+    "container-title": "Revista Colombiana de Matemáticas",
+    volume: "49",
+    issue: "1",
+    page: "1-38",
+    issued: { "date-parts": [[2015]] },
+    URL: "https://arxiv.org/abs/1404.0724",
+    note: "Expository lecture notes (CIMPA school): Burau and Lawrence–Krammer–Bigelow representations, the KZ connection and its monodromy, quasi-triangular bialgebras and a statement + sketch of the Drinfeld–Kohno theorem (§5). arXiv:1404.0724. PDF library/ariasabad2015-revcolmat/ — published version; the arXiv v1 preprint is also held as library/arxiv-1404.0724v1/ (duplicate_of the published copy).",
+  }),
+
+  // ── Chryssomalakos 1997 — explicit Drinfeld twist for U_q(su(2)), adjoint rep ──
+  ref({
+    id: "chryssomalakos1997",
+    library: {
+      docId: "arxiv-q-alg-9707006v1",
+      dir: "library/arxiv-q-alg-9707006v1",
+      pdf: "library/arxiv-q-alg-9707006v1/9707006v1.pdf",
+      stage: "candidates",
+      pages: 11,
+      sections: 7,
+      arxiv: "q-alg/9707006v1",
+    },
+    type: "article",
+    title: "Drinfeld twist for quantum su(2) in the adjoint representation",
+    author: [{ family: "Chryssomalakos", given: "Chryssomalis" }],
+    issued: { "date-parts": [[1997]] },
+    URL: "https://arxiv.org/abs/q-alg/9707006",
+    note: "arXiv:q-alg/9707006 (preprint, 11 pp). Computes the Drinfeld twist F (Δ = F Δ_c F⁻¹) for U_q(su(2)) in the adjoint (spin-1) representation and its tensor square, with q real throughout (h = ln q), so F is orthogonal; F commutes with the undeformed Δ(H) and is block-diagonal by H-weight (§4). PDF library/arxiv-q-alg-9707006v1/.",
+  }),
+
+  // ── Ciamprone–Giannone–Pinzari — unitary coboundary weak quasi-Hopf algebras, KLF theorem ──
+  ref({
+    id: "ciamprone2021",
+    library: {
+      docId: "arxiv-2101.10016v16",
+      dir: "library/arxiv-2101.10016v16",
+      stage: "candidates",
+      pages: 261,
+      sections: 41,
+      arxiv: "2101.10016v16",
+    },
+    type: "article",
+    title: "Unitary coboundary weak quasi-Hopf algebras in the Kazhdan–Lusztig–Finkelberg theorem",
+    author: [
+      { family: "Ciamprone", given: "Sergio" },
+      { family: "Giannone", given: "Marco Valerio" },
+      { family: "Pinzari", given: "Claudia" },
+    ],
+    issued: { "date-parts": [[2021]] },
+    URL: "https://arxiv.org/abs/2101.10016",
+    note: "arXiv:2101.10016 (first posted 2021; held version v16, 4 Oct 2026, 261 pp, math.QA). Wenzl twist, unitary coboundary weak (quasi-)Hopf algebras, abstract Drinfeld–Kohno (§30). Text extract held at library/arxiv-2101.10016v16/ — NO PDF; sections/ built from the plain-text extraction.",
+  }),
+
+  // ── Pinzari 2025 — fusion-category equivalences via quantum gauge groups ──
+  ref({
+    id: "pinzari2025",
+    library: {
+      docId: "arxiv-2502.06229v5",
+      dir: "library/arxiv-2502.06229v5",
+      pdf: "library/arxiv-2502.06229v5/2502.06229v5.pdf",
+      stage: "candidates",
+      pages: 35,
+      sections: 21,
+      arxiv: "2502.06229v5",
+    },
+    type: "article",
+    title: "Constructing equivalences between fusion categories of quantum groups and of vertex operator algebras via quantum gauge groups",
+    author: [{ family: "Pinzari", given: "Claudia" }],
+    issued: { "date-parts": [[2025]] },
+    URL: "https://arxiv.org/abs/2502.06229",
+    note: "arXiv:2502.06229 (first posted 2025; held version v5, 14 Apr 2026, 35 pp, math.OA). Survey/outline of the ciamprone2021 programme; §9 compares it with the original Drinfeld–Kohno theorem. PDF library/arxiv-2502.06229v5/.",
+  }),
+
   // ── Faddeev 1995 — quantum dilogarithm functional equation ────
   ref({
     id: "faddeev1995",
