@@ -115,7 +115,11 @@ def check(name, ok, detail, w=None):
 
 
 def has_computation(ts_path: Path) -> bool:
-    return ts_path.exists() and "computation:" in ts_path.read_text()
+    # A `computation:` FIELD, not the word: the block's own authorNotes quote
+    # "`computation:`" in prose, which a substring test read as a declared
+    # producer (2026-10-10 follow-up, bean qou-v4ux).
+    return ts_path.exists() and re.search(
+        r"^\s*computation\s*:", ts_path.read_text(), re.M) is not None
 
 
 def main() -> int:

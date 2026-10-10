@@ -1,14 +1,14 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T14:03:53.678687+00:00",
-  "commitSha": "bce13f80469461c5a1bc42b8ac75e80530c4cbf6",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-10T10:32:11.320878+00:00",
+  "commitSha": "a895474b14b9c902711a7348f93e6ca8945edcfa",
   "assertions": [
     {
       "name": "neither_the_block_nor_what_it_uses_declares_a_producer",
-      "computed": false,
+      "computed": true,
       "expected": true,
-      "passed": false,
+      "passed": true,
       "source": "ilp-solution-count-unwrap.ts is a bare `remark` with no `computation:` field, and prop:stable-atom-decidable, the block it `uses`, declares none either. So nothing in the manifest layer points at code that computes N_l"
     },
     {
@@ -27,18 +27,18 @@
     },
     {
       "name": "N_l_eq_84_is_an_UNSOURCED_FIGURE",
-      "computed": false,
+      "computed": true,
       "expected": true,
-      "passed": false,
+      "passed": true,
       "source": "no manifest declares a producer, the one named witness does not carry the number, and the only counting code is a deprecated heuristic capped at 3. So the two reproduction attempts on this branch were measured against a figure nothing derives, and their failure is NOT evidence against their readings. NOT claimed: that 84 is wrong -- an exhaustive enumeration may have been run and its result recorded by hand. Claimed only: the corpus contains nothing that reproduces it, so it cannot be checked and a mismatch against it cannot be interpreted. Same class as the neutron NF table"
     }
   ],
-  "allPassed": false,
-  "durationMs": 138,
+  "allPassed": true,
+  "durationMs": 126,
   "computation": "qbeta-nl84-provenance",
   "scriptFile": "qbeta_nl84_provenance_probe.py",
-  "scriptHash": "7eca095e53fd",
-  "scriptCommitSha": "116e63ee17ca9663988cac126502f04d42392831",
+  "scriptHash": "7f8119da639b",
+  "scriptCommitSha": "aa914b606a6de5e4f447e3746adaa687a9f608c6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,14 +46,11 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "mpmath": "1.4.1"
   },
   "invocation": {
     "argv": [
@@ -63,9 +60,9 @@
   },
   "description": "Provenance audit of N_l = 84: the block declares no producer, the one named witness does not contain the number, and the only ILP-counting code in the corpus is a deprecated heuristic capped at 3. The figure is unsourced, so the two failed reproductions on this branch cannot be read as evidence against their readings.",
   "data": {
-    "block_declares_computation": true,
+    "block_declares_computation": false,
     "used_block_declares_computation": false,
-    "neither_the_block_nor_what_it_uses_declares_a_producer": false,
+    "neither_the_block_nor_what_it_uses_declares_a_producer": true,
     "cited_witness_exists": true,
     "cited_witness_fields_equal_84": 0,
     "cited_witness_relevant_keys": [],
@@ -78,9 +75,9 @@
     ],
     "counting_code_live_importers": 0,
     "the_only_counting_code_CANNOT_return_84_and_is_orphaned": true,
-    "grep_adjoin_loose": 51,
-    "grep_adjoin_excluding_adjoint": 8,
-    "N_l_eq_84_is_an_UNSOURCED_FIGURE": false,
+    "grep_adjoin_loose": 59,
+    "grep_adjoin_excluding_adjoint": 11,
+    "N_l_eq_84_is_an_UNSOURCED_FIGURE": true,
     "scope": "(a) provenance only"
   },
   "q0Anchor": "independent",
