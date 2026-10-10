@@ -6,7 +6,8 @@
   "sha256": "a84f478d72d40af25ad556602a5d27cd81e14931527abe71f4ab931597d0297d",
   "bytes": 150569,
   "pages": 13,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -129,6 +130,47 @@
   "likely_scanned": false,
   "toc_entries": 5,
   "sections": 5,
-  "chars_total": 22151
+  "chars_total": 22151,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 3,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.529,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-acknowledgments",
+     "title": "Acknowledgments",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-references",
+     "title": "References",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-4-appendix",
+     "title": "Appendix",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

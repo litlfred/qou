@@ -7,7 +7,8 @@
   "bytes": 167260,
   "pages": 6,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -142,6 +143,57 @@
   "likely_scanned": false,
   "toc_entries": 6,
   "sections": 6,
-  "chars_total": 31750
+  "chars_total": 31750,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "MWDs_vL.tex",
+   "tex_sections": 4,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "INTRODUCTION",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-2-the-stellar-dynamo",
+     "title": "THE STELLAR DYNAMO",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-3-magnetic-white-dwarfs-in-the-solar",
+     "title": "MAGNETIC WHITE DWARFS IN THE SOLAR",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-references",
+     "title": "References",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-4-summary-and-conclusions",
+     "title": "SUMMARY AND CONCLUSIONS",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.475,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

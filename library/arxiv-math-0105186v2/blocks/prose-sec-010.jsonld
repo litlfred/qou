@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0105186v2/blocks/prose-sec-010",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0105186v2/blocks/prose-sec-010",
   "kind": "prose",
   "title": "(L ˜XJ)◦Du◦j where ˜X is any section of TEv, deﬁned on a neigh-",
   "pageStart": 24,
   "pageEnd": 24,
   "text": "../sections/sec-010-2-l-xjduj-where-x-is-any-section-of-tev-deﬁned-o.md",
-  "derivedFrom": "library/arxiv-math-0105186v2/manifest",
-  "sourceDocument": "library/arxiv-math-0105186v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0105186v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0105186v2/manifest.jsonld",
   "provenance": "ingested"
 }

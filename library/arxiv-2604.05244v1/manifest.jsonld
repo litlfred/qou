@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2604.05244v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Edge universality in Floquet sideband spectra Miguel Tierz",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2604.05244v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Edge universality in Floquet sideband spectra",
   "contains": [
     "library/arxiv-2604.05244v1/sections/sec-000",
     "library/arxiv-2604.05244v1/sections/sec-001",
@@ -18,8 +23,18 @@
     "library/arxiv-2604.05244v1/sections/sec-009"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2604.05244&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2604.05244v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "2604.05244v1.pdf",
     "source_sha256": "a5097e763dd89d06ccdddc79920f425d30d320a8f8ac6e1dc4150be11d5f7314",
     "pages": 31,

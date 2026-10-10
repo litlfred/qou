@@ -7,219 +7,39 @@ section_number: null
 pages: 7-8
 source_pdf: 2608.25107v1.pdf
 source_sha256: 6dca8b99a1f32db4
+text_source: latex
+latex_prose_ratio: 0.906
+latex_coverage_ratio: 0.975
 doc_brief: "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples César Jesús-Valls1,∗ 1European Organization for Nuclear Research (CERN), 1211 Geneva 23, Switzerland — 17 sections: ADoNIS: A Differe"
 ---
-ADoNISimplements the same underlying physics
-choices as ACHILLES, enabling a direct validation
-against its predictions. Ref. [90] compares ACHILLES
-with a broad set of measurements; here we reproduce rep-
-resentative comparisons withADoNISand ACHILLES
-overlaid, spanning different probes, interaction channels,
-target nuclei and beam energies.
-Figure 1 shows the MINERvA CC0πsample on 12C
-at⟨E ν⟩ ≈3 GeV, generated for the signal definition
-of Ref. [138]. The observables span lepton kinematics,
-hadron kinematics and the transverse kinematic imbal-
-ance (TKI) variables that correlate the two. At MIN-
-ERvA energies both quasi-elastic and resonant interac-
-tions contribute substantially, with excellent agreement
-observed in both. Agreement holds equally for other
-beams, binnings and signal definitions. For instance,
-we showcase the T2K CC0πand CC1π + samples of
-Refs. [139] and [140] in Figs. 13 and 14 of Appendix A.
-Figure 2 showcases the double-differential cross sec-
-tion for NC 1π 0Xp production measured by Micro-
-BooNE [141], and demonstrates that equivalent predic-
-tions are also achieved for the two generators for neutral-
-current observables on Ar. Analogous agreement in
-charged-current MicroBooNE TKI observables [142] is
-also presented in Fig. 15 in Appendix A.
-The last two comparisons isolate single ingredients.
-Figure 3 shows inclusive (e,e′) cross sections on 12C and
-40Ar at 2.222 GeV, in the configuration of the Jefferson
-Lab E12-14-012 measurements [15, 131, 143]: an elec-
-tromagnetic probe of known kinematics, on both target
-nuclei, separated into quasi-elastic and resonant contri-
-butions. Exclusive electron-scattering observables from
-e4ν[144], which confront the neutrino-energy estimators
-against a beam of known energy, are given in Fig. 16
-of Appendix A. Lastly, Fig. 4 showsπ +–nucleus absorp-
-tion and reaction cross sections in the configuration of
-Refs. [145–147], where the pions come from a tagged
-hadron beam rather than an interaction vertex, so that
-the cascade is exercised on its own.
-8
-Taken together, these comparisons show that the
-differentiable reformulation preserves the underlying
-physics predictions.
-0.0 0.5 1.0 1.5 2.0 2.5 3.0
-δαT [rad]
-0.0
-0.2
-0.4
-0.6
-0.8
-1.0dσ/dx [nb]
-1e−5
-/ Total
-/ QE
-/ RES
-0 500 1000 1500 2000
-pn [MeV/c]
-0
-2
-4
-6
-8
-1e−8
-0 500 1000 1500 2000
-δpT [MeV/c]
-0
-2
-4
-6
-8
-1e−8
-0.0 0.5 1.0 1.5 2.0 2.5 3.0
-δϕT [rad]
-0
-2
-4
-6
-1e−5
-600 800 1000 1200
-pp [MeV/c]
-0
-1
-2
-3
-4
-1e−8
-0 10 20 30 40 50 60 70
-θp [deg]
-0
-2
-4
-6
-8
-1e−7
-2000 4000 6000 8000 10000
-pμ [MeV/c]
-0.0
-0.2
-0.4
-0.6
-0.8
-1.0
-1e−8
-0 5 10 15 20
-θμ [deg]
-0.0
-0.5
-1.0
-1.5
-1e−6
-FIG. 1. ADoNIS (solid) vs. ACHILLES (dashed). MINERvA
-CC0πon 12C at⟨E ν⟩≈3 GeV, with the signal definition of
-Ref. [138]: the TKI variablesδα T ,p n,δp T andδϕ T , and the
-proton and muon kinematics.
-0 200 400 600 800 1000 1200
-pπ0 [MeV/c],  −1 < cos θπ0 < 0
-0
-1
-2
-3dσ/dx [nb]
-1e−8
-/ Total
-/ QE
-/ RES
-0 200 400 600 800 1000 1200
-pπ0 [MeV/c],  0 < cos θπ0 < 0.5
-0.0
-0.5
-1.0
-1.5
-1e−8
-0 200 400 600 800 1000 1200
-pπ0 [MeV/c],  0.5 < cos θπ0 < 0.85
-0.0
-0.2
-0.4
-0.6
-0.8
-1.0
-1e−8
-0 200 400 600 800 1000 1200
-pπ0 [MeV/c],  0.85 < cos θπ0 < 1
-0
-1
-2
-3
-4
-5
-1e−9
-FIG. 2. ADoNIS (solid) vs. ACHILLES (dashed). Micro-
-BooNE NC 1π0Xp on 40Ar [141]: the double-differential cross
-sectiond 2σ/dcosθ π0dpπ0, in slices of cosθ π0.
-0.2 0.4 0.6 0.8
-ω [GeV]
-0
-2500
-5000
-7500
-10000
-12500dσ/dω [nb/GeV]
-40Ar/ Total
-/ QE
-/ RES
-0.2 0.4 0.6 0.8
-ω [GeV]
-0
-1000
-2000
-3000
-4000
-5000 12C
-FIG. 3. ADoNIS (solid) vs. ACHILLES (dashed). Inclusive
-(e,e′) cross sectiondσ/dωon 12C and 40Ar at a beam energy
-of 2.222 GeV andθ e′ ≈15.5 ◦ [15, 131, 143], separated into
-quasi-elastic and resonant contributions.
-0.1 0.2 0.3 0.4
-0
-50
-100
-150
-200σ [mb]
-π +  12C
-absorption
-0.2 0.4 0.6 0.8 1.0
-0
-200
-400
-600
-800σ [mb]
-π +  12C
-reaction
-0.1 0.2 0.3 0.4
-beam |p| [GeV/c]
-0
-100
-200
-300
-400
-500σ [mb]
-π +  40Ar
-0.2 0.4 0.6 0.8 1.0
-beam |p| [GeV/c]
-0
-250
-500
-750
-1000
-1250
-1500σ [mb]
-π +  40Ar
-FIG. 4. ADoNIS (solid) vs. ACHILLES (dashed).π +–nucleus
-absorption and reaction cross sections on carbon and argon as
-a function of pion momentum [145–147], testing the intranu-
-clear cascade in isolation.
+[]{#sec:validation label="sec:validation"}
+
+[ADoNIS]{.smallcaps} implements the same underlying physics choices as ACHILLES, enabling a direct validation against its predictions. Ref. [@Isaacson:2025cnk] compares ACHILLES with a broad set of measurements; here we reproduce representative comparisons with [ADoNIS]{.smallcaps} and ACHILLES overlaid, spanning different probes, interaction channels, target nuclei and beam energies.
+
+Figure [1](#fig:val_minerva){reference-type="ref" reference="fig:val_minerva"} shows the MINERvA CC0$\pi$ sample on $^{12}$C at $\langle E_\nu\rangle \approx 3$ GeV, generated for the signal definition of Ref. [@MINERvA:2018hba]. The observables span lepton kinematics, hadron kinematics and the transverse kinematic imbalance (TKI) variables that correlate the two. At MINERvA energies both quasi-elastic and resonant interactions contribute substantially, with excellent agreement observed in both. Agreement holds equally for other beams, binnings and signal definitions. For instance, we showcase the T2K CC0$\pi$ and CC1$\pi^+$ samples of Refs. [@T2K:2018rnz] and [@T2K:2021naz] in Figs. [\[fig:val_t2k_cc0pi\]](#fig:val_t2k_cc0pi){reference-type="ref" reference="fig:val_t2k_cc0pi"} and [\[fig:val_t2k_cc1pi\]](#fig:val_t2k_cc1pi){reference-type="ref" reference="fig:val_t2k_cc1pi"} of Appendix [\[app:validation\]](#app:validation){reference-type="ref" reference="app:validation"}.
+
+Figure [2](#fig:val_uboone_nc2d){reference-type="ref" reference="fig:val_uboone_nc2d"} showcases the double-differential cross section for NC 1$\pi^0$Xp production measured by MicroBooNE [@MicroBooNE:2024pdj], and demonstrates that equivalent predictions are also achieved for the two generators for neutral-current observables on Ar. Analogous agreement in charged-current MicroBooNE TKI observables [@MicroBooNE:2023tzj] is also presented in Fig. [\[fig:val_uboone_cc1p\]](#fig:val_uboone_cc1p){reference-type="ref" reference="fig:val_uboone_cc1p"} in Appendix [\[app:validation\]](#app:validation){reference-type="ref" reference="app:validation"}.
+
+The last two comparisons isolate single ingredients. Figure [3](#fig:val_ee){reference-type="ref" reference="fig:val_ee"} shows inclusive $(e,e')$ cross sections on $^{12}$C and $^{40}$Ar at $2.222$ GeV, in the configuration of the Jefferson Lab E12-14-012 measurements [@Murphy:2019wed; @JeffersonLabHallA:2022cit; @JeffersonLabHallA:2022ljj]: an electromagnetic probe of known kinematics, on both target nuclei, separated into quasi-elastic and resonant contributions. Exclusive electron-scattering observables from e4$\nu$ [@CLAS:2021neh], which confront the neutrino-energy estimators against a beam of known energy, are given in Fig. [\[fig:val_e4nu\]](#fig:val_e4nu){reference-type="ref" reference="fig:val_e4nu"} of Appendix [\[app:validation\]](#app:validation){reference-type="ref" reference="app:validation"}. Lastly, Fig. [4](#fig:val_pinuc){reference-type="ref" reference="fig:val_pinuc"} shows $\pi^+$--nucleus absorption and reaction cross sections in the configuration of Refs. [@ASHERY; @LADS:2000pzh; @DUET], where the pions come from a tagged hadron beam rather than an interaction vertex, so that the cascade is exercised on its own.
+
+Taken together, these comparisons show that the differentiable reformulation preserves the underlying physics predictions.
+
+<figure id="fig:val_minerva" data-latex-placement="htbp">
+<img src="fig09_minerva_cc0pi_noratio" />
+<figcaption>ADoNIS (solid) vs. ACHILLES (dashed). MINERvA CC0<span class="math inline"><em>π</em></span> on <span class="math inline"><sup>12</sup></span>C at <span class="math inline">⟨<em>E</em><sub><em>ν</em></sub>⟩ ≈ 3</span> GeV, with the signal definition of Ref. <span class="citation" data-cites="MINERvA:2018hba"></span>: the TKI variables <span class="math inline"><em>δ</em><em>α</em><sub><em>T</em></sub></span>, <span class="math inline"><em>p</em><sub><em>n</em></sub></span>, <span class="math inline"><em>δ</em><em>p</em><sub><em>T</em></sub></span> and <span class="math inline"><em>δ</em><em>ϕ</em><sub><em>T</em></sub></span>, and the proton and muon kinematics.</figcaption>
+</figure>
+
+<figure id="fig:val_uboone_nc2d" data-latex-placement="htbp">
+<img src="fig11_uboone_nc1pi0_doublediff_noratio" />
+<figcaption>ADoNIS (solid) vs. ACHILLES (dashed). MicroBooNE NC 1<span class="math inline"><em>π</em><sup>0</sup></span>Xp on <span class="math inline"><sup>40</sup></span>Ar <span class="citation" data-cites="MicroBooNE:2024pdj"></span>: the double-differential cross section <span class="math inline"><em>d</em><sup>2</sup><em>σ</em>/<em>d</em>cos <em>θ</em><sub><em>π</em><sup>0</sup></sub> <em>d</em><em>p</em><sub><em>π</em><sup>0</sup></sub></span>, in slices of <span class="math inline">cos <em>θ</em><sub><em>π</em><sup>0</sup></sub></span>.</figcaption>
+</figure>
+
+<figure id="fig:val_ee" data-latex-placement="htbp">
+<img src="fig01_ee_domega_noratio" />
+<figcaption>ADoNIS (solid) vs. ACHILLES (dashed). Inclusive <span class="math inline">(<em>e</em>, <em>e</em><sup>′</sup>)</span> cross section <span class="math inline"><em>d</em><em>σ</em>/<em>d</em><em>ω</em></span> on <span class="math inline"><sup>12</sup></span>C and <span class="math inline"><sup>40</sup></span>Ar at a beam energy of <span class="math inline">2.222</span> GeV and <span class="math inline"><em>θ</em><sub><em>e</em><sup>′</sup></sub> ≈ 15.5<sup>∘</sup></span> <span class="citation" data-cites="Murphy:2019wed JeffersonLabHallA:2022cit JeffersonLabHallA:2022ljj"></span>, separated into quasi-elastic and resonant contributions.</figcaption>
+</figure>
+
+<figure id="fig:val_pinuc" data-latex-placement="htbp">
+<img src="fig03_pi_nucleus_sigma_noratio" />
+<figcaption>ADoNIS (solid) vs. ACHILLES (dashed). <span class="math inline"><em>π</em><sup>+</sup></span>–nucleus absorption and reaction cross sections on carbon and argon as a function of pion momentum <span class="citation" data-cites="ASHERY LADS:2000pzh DUET"></span>, testing the intranuclear cascade in isolation.</figcaption>
+</figure>

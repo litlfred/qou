@@ -7,209 +7,218 @@ section_number: 3
 pages: 10-15
 source_pdf: 2311.14221v2.pdf
 source_sha256: 5aa4126bbb6df6eb
+text_source: latex
+latex_prose_ratio: 0.758
+latex_coverage_ratio: 0.858
 doc_brief: "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B → C is an exact"
 ---
-In this Section we recall the notion of relative (co)ends ; a tool developed
-in [ 3] in the context of representations of tensor categories, ge neralizing the
-well-known notion of (co)ends in category theory.
-LetC be a tensor category and M be a left C-module category. Assume
-thatA is a category and S :Mop×M→A is a functor equipped with
-natural isomorphisms
-(3.1) βX
-M,N :S(M,X⊲N )→S(X ∗⊲M,N ),
-FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS 11
-for any X ∈C ,M,N ∈M . We shall say that β is a prebalancing of the
-functor S. Sometimes we shall say that it is a C-prebalancing, to emphasize
-the dependence on C.
-Deﬁnition 3.1. The relative end of the pair ( S,β ) is an object E ∈ A
-equipped with dinatural transformations πM :E ..− →S(M,M ) such that
-(3.2)
-S(M,M )
-S((X ∗⊲X )⊲M,M ) S(X ∗⊲ (X⊲M ),M )
-S(X⊲M,X ⊲M )
-E
-S(evop
-X ⊲idM ,idM )
-S(mop
-X∗,X,M ,idM )
-βX
-X⊲M,M
-πX⊲MπM
-for any X∈C ,M ∈M , and is universal with this property. This means
-that, if ~E∈A is another object with dinatural transformations ξM : ~E ..− →
-S(M,M ), such that they fulﬁll ( 3.2), there exists a unique morphism h :
-~E→E such that ξM =πM◦h.
-The relative end depends on the choice of the prebalancing. W e will
-denote the relative end as
-∮
-M ∈M(S,β ), or sometimes simply as
-∮
-M ∈MS,
-when the prebalancing β is understood from the context.
-The relative coend of the pair ( S,β ) is deﬁned dually. This is an object
-C∈A equipped with dinatural transformations πM : S(M,M ) ..− →C such
-that
-(3.3)
-S(M,M )
-S(M, (X ∗⊗X)⊲M ) S(M,X⊲ (X ∗⊲M ))
-S(X ∗⊲M,X ∗⊲M )
-C
-S(idM ,coevX ⊲idM )
-S(idM ,mX,X ∗,M )
-βX
-M,X ∗⊲M
-πX∗⊲MπM
-for any X∈C ,M ∈M , universal with this property. This means that, if
-~C∈A is another object with dinatural transformations λM :S(M,M ) ..− →~C
-12 LENTNER AND MOMBELLI
-such that they satisfy ( 3.3), there exists a unique morphism g :C→ ~C such
-that g◦πM = λM . The relative coend will be denoted
-∮ M ∈M(S,β ), or
-simply as
-∮ M ∈MS.
-A similar deﬁnition can be made for right C-module categories. Let A
-be a category, and N be a right C-module category endowed with a functor
-S :N op×N→A with a prebalancing
-γX
-M,N :S(M ⊳X,N )→S(M,N ⊳ ∗X),
-for any M,N ∈N , X∈C .
-Deﬁnition 3.2. The relative end for S is an object E∈A equipped with
-dinatural transformations λN :E ..− →S(N,N ) such that
-(3.4)
-S(N,N )
-S(N,N ⊳ (X⊗ ∗X)) S(N, (N ⊳X)⊳ ∗X)
-S(N ⊳X,N ⊳X)
-E
-S(idN ,idN ⊳ evX )
-S(id,id⊗m−1
-N,X,∗X )
-γX
-N,N ⊳X
-λN ⊳XλN
-for anyN∈N ,X∈C . We shall also denote this relative end by
-∮
-N ∈N (S,γ ).
-Similarly, the relative coend is an object C∈B with dinatural transfor-
-mations λN :S(N,N ) ..− →C such that
-(3.5)
-S(N,N )
-S(N ⊳(∗X⊗X),N ) S((N ⊳∗X)⊳X,N )
-S(N ⊳∗X,N ⊳ ∗X)
-C
-S(idN ⊳ coevop
-X ,idN )
-S(m−1 op
-N,∗ X,X ,idN )
-γX
-N ⊳∗ X,N
-λN ⊳∗ XλN
-for any N ∈ N, X ∈ C. We shall also denote this relative coend by∮ N ∈N (S,γ ).
-FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS 13
-In the next Proposition we collect some results about the rel ative (co)end
-that will be useful. The reader is referred to [ 3, Prop. 3.3], [ 3, Prop. 4.2].
-Proposition 3.3. AssumeM,N are left C-module categories, and S, ~S :
-Mop×M→A are functors equipped with C-prebalancings
-βX
-M,N :S(M,X⊲N )→S(X ∗⊲M,N ),
-~βX
-M,N : ~S(M,X⊲N )→ ~S(X ∗⊲M,N ),
-X∈C ,M,N ∈M . The following assertions holds
-(i) Assume that the module ends
-∮
-M ∈M(S,β ),
-∮
-M ∈M( ~S, ~β) exist and
-have dinatural transformations π, ~π, respectively. If γ : S→ ~S is
-a natural transformation such that
-(3.6) ~βX
-M,Nγ(M,X⊲N ) =γ(X ∗⊲M,N )βX
-M,N,
-then there exists a unique map ˆγ :
-∮
-M ∈M(S,β )→
-∮
-M ∈M( ~S, ~β) such
-that
-~πM ˆγ =γ(M,M )πM
-for any M∈M . If γ is a natural isomorphism, then ˆγ is an iso-
-morphism.
-(ii) For any pair of C-module functors (F,c ), (G,d ) :M→N , the func-
-tor
-HomN (F (−),G (−)) :Mop×M→ vect k
-has a canonical prebalancing given by
-(3.7) βX
-M,N : Hom N (F (M ),G (X ⊲N))→ HomN (F (X ∗⊲M ),G (N ))
-βX
-M,N (α) = (evX ⊲ id G(N ))m−1
-X ∗,X,G(N )(id X ∗⊲d X,Nα)cX ∗,M,
-for any X∈C ,M,N ∈M . There is an isomorphism
-Natm(F,G )≃
-∮
-M ∈M
-(HomN (F (−),G (−)),β ).
-□
-The next result will be needed later. It follows from a combin ation of [ 3,
-Prop. 3.3] (ii) and [ 3, Lemma 3.6]. Let M be a leftC-module category, then
-N =Mop is a right C-module category with right action given by
-M ⊳X =X ∗⊲M.
-AssumeA is a category equipped with a functor
-S :N op×N→A ,
+\label{Section:mcoends}
+
+In this Section we recall the notion of \textit{relative (co)ends}; a tool developed in \cite{BM} in the context of representations of tensor categories, generalizing the well-known notion of (co)ends in category theory.
+
+
+\medbreak
+ Let $\ca$ be a  tensor category and $\Mo$ be a left $\ca$-module category. Assume that $\Ac$ is a category and $S:\Mo^{\op}\times \Mo\to \Ac$ is a functor equipped with natural isomorphisms
+\begin{equation} \beta^X_{M,N}: S(M,X\triangleright N)\to S(X^*\triangleright M,N),
+\end{equation}
+for any $X\in \ca, M,N\in \Mo$. We shall say that $\beta$ is a \textit{prebalancing} of the functor $S$. Sometimes we shall say that it is a $\ca$-\textit{prebalancing}, to emphasize the dependence on $\ca$.
+
+\begin{defi} The \textit{relative end} of the pair $(S,\beta)$ is an object $E\in \Ac$ equipped with dinatural transformations $\pi_M: E\xrightarrow{ . .} S(M,M)$ such that 
+
+
+\begin{equation}\label{dinat:end:module:left}
+\pentagonC
+{S(M,M)}
+{S(\mathrm{ev}_X^{op}\triangleright\mathrm{id}_M,\mathrm{id}_M)}
+{S((X^*\triangleright X)\triangleright M, M)}
+{S(m_{X^*,X,M}^{op} ,  \mathrm{id}_M) \vphantom{{{X^X}^X}^X}} 
+{S(X^*\triangleright(X\triangleright M), M)}
+{\beta^X_{X\triangleright M,M}}
+{S(X\triangleright M,X\triangleright M)}
+{\pi_{X\triangleright M}}
+{E}
+{\pi_{ M}}
+\end{equation}
+for any $X\in \ca, M\in \Mo$, and is universal with this property. This means that, if $\widetilde{E}\in \Ac$ is another object with dinatural transformations $\xi_M:\widetilde{E}\xrightarrow{ . .} S(M,M)$, such that they fulfill \eqref{dinat:end:module:left}, there exists a unique morphism $h:\widetilde{E}\to E$ such that $\xi_M= \pi_M\circ h $.
+\end{defi}
+The relative end depends on the choice of the prebalancing. We will denote the relative end as $\oint_{M\in \Mo} (S,\beta)$, or sometimes simply as $\oint_{M\in \Mo} S$, when the prebalancing $\beta$ is understood from the context.
+
+
+\smallbreak
+The \textit{ relative coend} of the pair $(S,\beta)$ is defined dually. This  is an object $C\in \Ac$ equipped with dinatural transformations $\pi_M:S(M,M)\xrightarrow{ . .} C$ such that
+
+
+\begin{equation}\label{dinat:coen:module:left} 
+\pentagonABxBCxCDxDExAE
+{S(M,M)}
+{S(\mathrm{id}_M,\mathrm{coev}_X\triangleright\mathrm{id}_M)}
+{S(M,(X^*\otimes X)\triangleright M)}
+{S(\mathrm{id}_M, m_{X,X^*,M})\vphantom{{{X^X}^X}^X}} 
+{S(M,X\triangleright (X^*\triangleright M))}
+{\beta^X_{M,X^*\triangleright M}}
+{S(X^{*}\triangleright M,X^*\triangleright M)}
+{\pi_{X^*\triangleright M}}
+{C}
+{\pi_M}
+\end{equation}
+for any $X\in \ca, M\in \Mo$, universal with this property. This means that, if $\widetilde{C}\in \Ac$ is another object with dinatural transformations  $\lambda_M: S(M,M) \xrightarrow{ . .} \widetilde{C}$ such that they satisfy \eqref{dinat:coen:module:left}, there exists a unique morphism $g:C\to \widetilde{C}$ such that $g \circ \pi_M=\lambda_M$. The relative coend will be denoted  $\oint^{M\in \Mo} (S,\beta)$, or simply as $\oint^{M\in \Mo} S$.
+
+\medbreak
+
+
+A similar definition can be made for \textit{right} $\ca$-module categories. Let $\Ac$ be a category, and $\No$ be a right $\ca$-module category endowed with a functor $S:\No^{\op}\times \No\to \Ac$ with a \textit{prebalancing}
+$$ \gamma^X_{M,N}: S(M\triangleleft X, N)\to S(M, N\triangleleft {}^* X),$$
+for any $M,N\in \No$, $X\in \ca$. 
+\begin{defi} The \textit{relative end} for $S$ is an object $E\in \Ac$ equipped with dinatural transformations  $\lambda_N:E\xrightarrow{ .. } S(N,N)$ such that 
+\begin{equation}\label{dinat:end:module:right}
+\pentagonD
+{S(N,N)}
+{ S(\mathrm{id}_N,\mathrm{id}_N \triangleleft \,\mathrm{ev}_X)}
+{S(N,N\triangleleft (X\otimes {^*}X))}
+{S(\mathrm{id},\mathrm{id}\otimes m^{-1}_{N,X,{}^* X} )}
+{S(N,(N\triangleleft X)\triangleleft {^*}X)}
+{\gamma^X_{N,N\triangleleft X}}
+{S(N\triangleleft X,N\triangleleft X)}
+{\lambda_{N\triangleleft X}}
+{E}
+{\lambda_N}
+\end{equation}
+for any $N\in \No$, $X\in \ca$. We shall also denote this relative end by $\oint_{N\in \No} (S, \gamma)$.
+
+Similarly, the \textit{relative coend} is an object $C\in \Bc$ with dinatural transformations $\lambda_N: S(N,N)\xrightarrow{ .. } C$  such that
+
+
+
+\begin{equation}\label{dinat:coend:module:right}
+\pentagonBAxBCxCDxDExAE
+{S(N,N)}
+{S(\mathrm{id}_N  \triangleleft\, \mathrm{coev}_X^{op},\mathrm{id}_N)}
+{S(N  \triangleleft  ({^*}X\otimes  X),N)}
+{S(m^{-1\,op}_{N, {^*}X, X}, \mathrm{id}_N)}
+{S((N  \triangleleft  {}^*X)\triangleleft X,N )}
+{\gamma^X_{N  \triangleleft  {^*}X, N}}
+{S(N  \triangleleft  {^*}X,N  \triangleleft  {}^* X)}
+
+{\lambda_{N  \triangleleft  {^*}X}}
+{C}
+{\lambda_N}
+\end{equation}
+for any $N\in \No$, $X\in \ca$. We shall also denote this relative coend by $\oint^{N\in \No} (S, \gamma)$.
+\end{defi}
+
+
+In the next Proposition we collect some results about the relative (co)end that will be useful.  The reader is referred to \cite[Prop. 3.3]{BM}, \cite[Prop. 4.2]{BM}.
+
+\begin{prop}\label{compilat-r} Assume  $\Mo, \No$ are  left $\ca$-module categories, and $S, \widetilde{S}:\Mo^{\op}\times \Mo\to \Ac$ are functors equipped with $\ca$-prebalancings $$\beta^X_{M,N}: S(M,X\triangleright N)\to S(X^*\triangleright M,N),$$ $$ \widetilde{\beta}^X_{M,N}: \widetilde{S}(M,X\triangleright N)\to \widetilde{S}(X^*\triangleright M,N),$$ $X\in \ca, M,N\in \Mo$. The following assertions holds
+\begin{itemize}
+
+\item[(i)] Assume that the module ends $\oint_{M\in \Mo} (S,\beta), \oint_{M\in \Mo} (\widetilde{S},\widetilde{\beta})$ exist and have dinatural transformations $\pi, \widetilde{\pi}$, respectively. If  $\gamma:S\to \widetilde{S}$ is a natural transformation  such that 
+\begin{equation}\label{gamma-ind}
+ \widetilde{\beta}^X_{M,N} \gamma_{(M,X\triangleright N)}=\gamma_{(X^*\triangleright M,N)} \beta^X_{M,N},
+\end{equation}
+then there exists a unique map $\widehat{\gamma}: \oint_{M\in \Mo} (S,\beta)\to \oint_{M\in \Mo} (\widetilde{S},\widetilde{\beta})$ such that   $$\widetilde{\pi}_M \widehat{\gamma}= \gamma_{(M,M)} \pi_M$$ for any $M\in \Mo$. If $\gamma$ is a natural isomorphism, then  $\widehat{\gamma}$ is an isomorphism.
+
+
+\item[(ii)] For any pair of $\ca$-module functors $(F, c), (G, d):\Mo\to \No,$ the functor $$\Hom_{\No}(F(-), G(-)): \Mo^{\op}\times \Mo\to \vect_\ku$$
+has a canonical prebalancing  given by
+\begin{equation}\label{beta-for-hom}
+ \beta^X_{M,N}: \Hom_{\No}(F(M), G(X\triangleright N))\to \Hom_{\No}(F(X^*\triangleright M), G(N))
+\end{equation}
+$$ \beta^X_{M,N}(\alpha)= (ev_X\triangleright \id_{G(N)}) m^{-1}_{X^*,X,G(N)} (\id_{X^*}\triangleright d_{X,N}\alpha)c_{X^*,M},$$
+for any $X\in \ca, M, N\in \Mo$.
+There is an isomorphism $$ \Nat_{\!m}(F,G)\simeq \oint_{M\in \Mo} (\Hom_{\No}(F(-), G(-)), \beta).$$\qed
+\end{itemize}
+\end{prop}
+The next result will be needed later. It follows from a combination of \cite[Prop. 3.3]{BM} (ii) and \cite[Lemma 3.6]{BM}.
+Let $\Mo$ be a left $\ca$-module category, then $\No=\Mo^{\op}$ is a right $\ca$-module category with right action given by
+$$M \triangleleft X= X^*\triangleright M.  $$
+ Assume $\Ac$ is a category equipped with a functor
+$$S:\No^{\op}\times \No\to \Ac,$$
 together with a prebalancing
-βX
-M,N :S(M ⊳X,N )→S(M,N ⊳ ∗X).
+$$\beta^X_{M,N}: S(M \triangleleft X, N)\to S(M,N \triangleleft {}^*X).$$
 The functor
-HomA(S(−,−),U ) :Mop×M→ vect k,
-14 LENTNER AND MOMBELLI
-has a natural prebalancing
-γX
-M,N : Hom A(S(M,N ⊳ ∗X),U )→ HomA(S(M ⊳X,N ),U ),
-γX
-M,N (f ) = f◦βX
-M,N.
-The proof of the next statement is similar to the proof of [ 3, Prop. 3.3 (ii)].
-Proposition 3.4. If the coend
-∮
-M ∈N (S,β ) exists, then for any object U∈
-A, the end
-∮
-M ∈M HomA(S(−,−),U ) exists, and there is an isomorphism
-∮
-M ∈M
-HomA(S(−,−),U )≃ HomA(
-∮ M ∈N
-(S,β ),U ).
-Moreover, if
-∮
-M ∈M HomA(S(−,−),U ) exists for any U∈A , then the coend∮ M ∈N (S,β ) exists. □
-The proof of the next result is completely analogous to the pr oof in the
-case of usual coend.
-Lemma 3.5. LetM be a right C-module category, S :Mop×M→A
-a functor equipped with a prebalancing γ. If F :A→A ′ is a right exact
-functor, then there is an isomorphism
-F (
-∮ M ∈M
-(S,γ ))≃
-∮ M ∈M
-(F◦S,F (γ)).
-□
+$$\Hom_\Ac(S(-,-), U):\Mo^{\op}\times \Mo\to \vect_\ku, $$
+has a natural prebalancing 
+$$ \gamma^X_{M,N}:\Hom_\Ac(S(M, N\triangleleft {}^* X), U)\to \Hom_\Ac( S(M\triangleleft X, N),U),$$
+$$\gamma^X_{M,N}(f)=f\circ \beta^X_{M,N}.$$
+The proof of the next statement is similar to the proof of \cite[Prop. 3.3 (ii)]{BM}.
+\begin{prop}\label{int-hom} If the coend  $\oint_{M\in \No} (S,\beta)$ exists, then for any object $U\in \Ac$,  the end $\oint_{M\in \Mo} \Hom_\Ac( S( -, -), U)$ exists, and there is an isomorphism
+$$\oint_{M\in \Mo} \Hom_\Ac(S( -, -),U)\simeq  \Hom_\Ac( \oint^{M\in \No} (S,\beta), U).$$
+Moreover, if $\oint_{M\in \Mo} \Hom_\Ac(S( -, -),U)$ exists for any $U\in \Ac$, then the coend $\oint^{M\in \No} (S,\beta)$ exists.\qed
+\end{prop}
+
+The proof of the next result is completely analogous to the proof in the case of usual coend.
+
+\begin{lema}\label{right-exact-on-coend} Let $\Mo$ be a right $\ca$-module category, $S:\Mo^{\op}\times \Mo\to \ac$ a functor equipped with a prebalancing $\gamma$. If $F:\Ac\to \Ac'$ is a right exact functor, then there is an isomorphism
+$$F(\oint^{M\in \Mo} (S,\gamma))\simeq \oint^{M\in \Mo} (F\circ S,F(\gamma)).$$\qed
+\end{lema}
+
 We shall also need the next result.
-Lemma 3.6. LetM,N be rightC-module categories and let (J,c ) :M→N
-be an equivalence of C-module categories. Assume that S :N op×N →A
-is a functor equipped with a prebalancing β. The functor S(J(−),J (−)) :
-Mop×M→A has a prebalancing γ given by
-γV
-M,N =S(id J(M ),c N,∗V )βV
-J(M ),J (N )S(c−1
-M,V, id J(N ))
-for any M,N ∈M . There is an isomorphism
-∮ M ∈M
-(S(J(−),J (−)),γ )≃
-∮ N ∈N
-(S,β ).
-Proof. We only sketch the proof. Let λN : S(N,N ) →
-∮ N ∈N (S,β ) the
-associated dinatural transformations. If we deﬁne πM = λJ(M ), for any
-M∈M , one can verify that these are dinatural transformations an d they
-satisfy ( 3.5). Universality of π follows from the universality of λ and the
-fact that J is an equivalence of categories. □
-FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS 15
+\begin{lema}\label{equivalence-on-coend} Let $\Mo, \No$ be right $\ca$-module categories and let $(J,c):\Mo\to\No$ be an equivalence of $\ca$-module categories. Assume that $S:\No^{\op}\times \No\to \ac$ is a functor equipped with a prebalancing $\beta$. The functor $S(J(-), J(-)):\Mo^{\op}\times \Mo\to \ac$ has a prebalancing $\gamma$ given by
+$$\gamma^V_{M,N}=S(\id_{J(M)},c_{N,{}^*V})\beta^V_{J(M),J(N)}S(c^{-1}_{M,V},\id_{J(N)}) $$
+for any $M,N\in \Mo$. There is an isomorphism
+$$\oint^{M\in \Mo}  (S(J(-), J(-)),\gamma)\simeq \oint^{N\in \No}  (S,\beta).$$
+\end{lema}
+\pf We only sketch the proof. Let $\lambda_N:S(N,N)\to \oint^{N\in \No}  (S,\beta)$ the associated dinatural transformations. If we define $\pi_M=\lambda_{J(M)}$, for any $M\in \Mo$, one can verify that these are dinatural transformations and they satisfy \eqref{dinat:coend:module:right}. Universality of $\pi$ follows from the universality of $\lambda$ and the fact that $J$ is an equivalence of categories.
+\epf
+
+
+\subsection{Existence of (co)ends }\label{Section_coendExists}
+
+In this Section we shall prove that certain (co)ends exists. All these (co)ends will be used in subsequent sections. We shall use ideas from \cite{Sh5}.
+
+\medbreak
+
+Let $\vc$ be a tensor category, $\Bc$  be  a right $\vc$-module category. Since our definition of module category includes that the action is right exact in each variable, hypothesis  of \cite[Thm. 2.24]{DSS} are fulfilled. This means that, there exists an algebra $A\in \vc$ such that 
+\begin{equation}\label{eq-ma}
+\Bc\simeq {}_{A}\vc
+\end{equation} 
+as module categories. Consider $\vc$ as a right $\vc$-module category with the regular action. We shall denote by $\Rex_\vc(\Bc, \vc)$ the category of right exact $\vc$-module functors. The functor 
+$$\Phi:\Bc^{\op} \to \Rex_\vc(\Bc, \vc),$$
+$$\Phi(B)(D)= \uhom(D,B)^*$$
+is an equivalence of categories, since, under identification \eqref{eq-ma}, the functor $\Phi$ is the composition of equivalences
+$$ ({}_A\vc)^{\op} \xrightarrow{( -)^*} \vc_A\xrightarrow{\, R \,} \Rex_\vc({}_{A}\vc,\vc).$$
+Here $R:  \vc_{A}  \to \Rex_\vc({}_A\vc,\vc)$ is the functor given by $R(V)(W)=V\ot_{A} W.$
+Let be $(F,c)\in \Rex_\vc(\Bc, \vc)$. In particular, we have natural isomorphisms
+$$c_{B,X}: F(B \triangleleft X)\to F(B) \ot X,$$
+for $B\in\Bc, X\in\vc$. Consider the functor
+$$\Bc^{\op}\times \Bc\to \Bc, $$
+$$(D, B)\mapsto D \triangleleft {}^*F(B). $$
+ This functor posses a $\vc$-prebalancing
+\begin{equation}\label{prebalancing-gamma}
+    \gamma^V_{B,D}: D\triangleleft {}^*F(B \triangleleft V) \to D\triangleleft {}^*V\ot{}^*F(B ),
+\end{equation} 
+$$\gamma^V_{B,D}=\id_{D}\triangleleft   (\phi^l_{F(B),V})^{-1} {}^*(c^{-1}_{B,V}). $$
+\begin{prop}\label{existence-coend0} Let $\Bc$  be  a right $\vc$-module category. For any right exact $\vc$-module functor $(F,c):\Bc\to \vc$ the coend
+$$\widetilde{C}(F,c)=\oint^{B\in \Bc} (B \triangleleft {}^*F(B), \gamma)\in \Bc,$$
+exists. Moreover, the functor $(F,c)\mapsto \widetilde{C}(F,c)$ is a quasi-inverse of $\Phi$.
+\end{prop}
+\pf For any $D\in \Bc$ we have
+\begin{align*}
+\Nat_{\! m}(\Phi(D), F)& \simeq \oint_{B\in \Bc} \Hom_\vc(\Phi(D)(B), F(B))\\
+&\simeq \oint_{B\in \Bc} \Hom_\vc(\uhom_{\Bc}(B,D)^*, F(B))\\
+&\simeq \oint_{B\in \Bc} \Hom_\vc( {}^*F(B), \uhom_{\Bc}(B,D))\\
+&\simeq \oint_{B\in \Bc} \Hom_\Bc(B \triangleleft {}^*F(B), D)\\
+&\simeq \Hom_\Bc( \oint^{B\in \Bc}  B \triangleleft {}^*F(B), D)\\
+&=\Hom_{\Bc^{\op}}(D, \oint^{B\in \Bc}  B \triangleleft {}^*F(B)).
+\end{align*} 
+The first isomorphism is Proposition \ref{compilat-r} (ii), and the fifth isomorphism is Proposition \ref{int-hom}. Observe that, to prove the existence of the  fourth isomorphism, one has to check that the natural isomorphisms
+$$\Hom_\vc( {}^*F(B), \uhom_{\Bc}(B,D)\simeq \Hom_\Bc(B \triangleleft {}^*F(B), D)$$
+commute with the respective prebalancings and then use Proposition \ref{compilat-r} (i). This calculation is left to the reader.
+This proves both, that the coend  $\widetilde{C}(F,c)$ exists and that the quasi-inverse of $\Phi$ is given by 
+$$\bar{\Phi}:  \Rex_\vc(\Bc, \vc) \to\Bc^{\op}, $$ $$\bar{\Phi}(F,c)= \oint^{B\in \Bc} (B \triangleleft {}^*F(B), \gamma).$$\epf
+
+For a pair of  module functors $(F,c), (\widetilde F, \tilde c):\Bc\to \vc$, the functor
+$$\Bc^{\op}\times \Bc\to \vc, $$
+$$ (A,B)\mapsto \widetilde{F}(B)\ot {}^*F(A)$$
+ has a canonical prebalancing, given by
+\begin{equation}\label{preb-s1}\begin{split} \beta^X_{A,B}: \widetilde{F}(B)\ot {}^*F(A \triangleleft X) \to \widetilde{F}(B \triangleleft  {}^*X)\ot  {}^*F(A),\\
+\beta^X_{A,B}=(\tilde{c}^{-1}_{B, {}^*X}\ot \id)(\id_{\widetilde F(B)}\ot (\phi^l_{F(A),X})^{-1} {}^*(c^{-1}_{A,X})).
+\end{split}
+\end{equation}
+
+As a consequence of Lemma \ref{right-exact-on-coend}, one can apply $\widetilde F $ to the coend in Proposition \ref{existence-coend0}. Thus we get the next result.
+\begin{cor}\label{existence-coend1}  For any pair of right exact $\vc$-module functors $F, \widetilde F:\Bc\to \vc$, the coend
+$$\oint^{B\in \Bc} (\widetilde F(B) \ot {}^*F(B), \beta)\in \Bc,$$
+exists.\qed
+\end{cor}

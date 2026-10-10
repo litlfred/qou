@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-029",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-029",
   "kind": "prose",
   "title": "F aF a + iF aT a",
   "pageStart": 36,
   "pageEnd": 36,
   "text": "../sections/sec-029-2-f-af-a-if-at-a.md",
-  "derivedFrom": "library/arxiv-math-ph-0012035v3/manifest",
-  "sourceDocument": "library/arxiv-math-ph-0012035v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-ph-0012035v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-ph-0012035v3/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9901120v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-9901120v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9901120v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/9901120&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-9901120v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math/9901120v3",
+    "content_type": "application/gzip",
+    "sha256": "53109d7875d3fb8e5791a979976ab61483c826d802e6c8562a104b82806b0a8b",
+    "bytes": 6265,
+    "fetched": "2026-10-10T15:30:53+00:00",
+    "files": [
+      {
+        "path": "source/files/boundary_slopes.tex",
+        "role": "tex",
+        "sha256": "7f3e1fda2e6cdb9d0f5bbc1209680349dc6f2d3a17bedb307784bfeac6c420b8",
+        "bytes": 8460
+      },
+      {
+        "path": "source/files/table1.tex",
+        "role": "tex",
+        "sha256": "f50b8072fedb0f03bf83414df5d80a03d9973a358892ecfc11a6cedbbeffd647",
+        "bytes": 12477
+      },
+      {
+        "path": "source/files/table2.tex",
+        "role": "tex",
+        "sha256": "b8c7022232be8c80f73389de03a646a5fad794340f5012b8aa50036005dcbd91",
+        "bytes": 2232
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

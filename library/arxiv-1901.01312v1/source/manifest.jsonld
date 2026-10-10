@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1901.01312v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1901.01312v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1901.01312v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1901.01312&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1901.01312v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1901.01312v1",
+    "content_type": "application/gzip",
+    "sha256": "a404e3478bcef9ba3b41e5d4dcd030d2559adc85a9e860170c80bb15f5ebe029",
+    "bytes": 346613,
+    "fetched": "2026-10-10T15:13:57+00:00",
+    "files": [
+      {
+        "path": "source/files/Proceedings_paper_Gresnigt_v2.bbl",
+        "role": "bbl",
+        "sha256": "cc0fb74acaabfa8eccde29f173fd63f3eed0985e40b954922d6ea5aaaf795dd8",
+        "bytes": 6069
+      },
+      {
+        "path": "source/files/Proceedings_paper_Gresnigt_v2.tex",
+        "role": "tex",
+        "sha256": "be16fe1296b1908a2da57c8890338a1122f1dd530d24e6ea81af6385ec54c486",
+        "bytes": 35498
+      },
+      {
+        "path": "source/files/jpconf.cls",
+        "role": "cls",
+        "sha256": "2f08e9b7334ac52cc834b0a231f07b862eb058292cb7ec9ff182d2f6427b3177",
+        "bytes": 35662
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

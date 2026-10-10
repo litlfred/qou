@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1604.02688v1/sections/sec-009",
   "@type": [
     "doco:Section"
@@ -9,9 +14,9 @@
   "pageEnd": 16,
   "contains": [
     "library/arxiv-1604.02688v1/blocks/prose-sec-009",
-    "library/arxiv-1604.02688v1/blocks/thm-sec-009-01"
+    "library/arxiv-1604.02688v1/blocks/theorem-sec-009-01"
   ],
-  "derivedFrom": "library/arxiv-1604.02688v1/manifest",
-  "sourceDocument": "library/arxiv-1604.02688v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1604.02688v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1604.02688v1/manifest.jsonld",
   "provenance": "ingested"
 }

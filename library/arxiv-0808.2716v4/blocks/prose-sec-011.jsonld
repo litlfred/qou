@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0808.2716v4/blocks/prose-sec-011",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0808.2716v4/blocks/prose-sec-011",
   "kind": "prose",
   "title": "The length of a meridian",
   "pageStart": 20,
   "pageEnd": 20,
   "text": "../sections/sec-011-34-the-length-of-a-meridian.md",
-  "derivedFrom": "library/arxiv-0808.2716v4/manifest",
-  "sourceDocument": "library/arxiv-0808.2716v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0808.2716v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0808.2716v4/manifest.jsonld",
   "provenance": "ingested"
 }

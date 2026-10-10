@@ -6,7 +6,8 @@
   "sha256": "156fd9080847b4e75e8a4f4b16558161b49cc0fdbcf7149ff9f35fa90819c152",
   "bytes": 750417,
   "pages": 23,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -193,6 +194,88 @@
   "likely_scanned": false,
   "toc_entries": 9,
   "sections": 9,
-  "chars_total": 45138
+  "chars_total": 45138,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "paper.tex",
+   "tex_sections": 8,
+   "overlaid": 8,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-classical-motivation",
+     "title": "Classical motivation",
+     "prose_ratio": 0.917,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-fricke-klein-example",
+     "title": "Fricke-Klein example",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.955,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-setup",
+     "title": "Setup",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.897,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-what-is-known",
+     "title": "What is known?",
+     "prose_ratio": 0.926,
+     "coverage_ratio": 0.965,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-5-cohascoulomb-branches",
+     "title": "COHAs/Coulomb branches",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.942,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-6-main-example",
+     "title": "Main example",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.906,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-7-poisson-geometry-of-coulomb-branches",
+     "title": "Poisson geometry of Coulomb branches",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.94,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

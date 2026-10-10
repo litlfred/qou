@@ -5,7 +5,8 @@
   "file": "2208.13692v1.pdf",
   "sha256": "567eff9fb44ef3e59cc9ebed6de32806be91a756cffb152a0448e747346580d5",
   "bytes": 873491,
-  "pages": 38
+  "pages": 38,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -15,9 +16,9 @@
    "stamp_date": "29 Aug 2022"
   },
   "doi": null,
-  "title": "BRING’S CURVE: OLD AND NEW",
+  "title": "BRING\u2019S CURVE: OLD AND NEW",
   "authors_raw": "H. W. BRADEN AND LINDEN DISNEY-HOGG",
-  "abstract": "Bring’s curve, the unique Riemann surface of genus-4 with automorphism group S5, has many exceptional properties. We review, give new proofs of, and extend a number of these including giving the complete realisation of the automorphism group for a plane curve model, identifying a new elliptic quotient of the curve and the modular curve X0(50), providing a complete description of the orbit decomposition of the theta characteristics, and identifying the unique invariant characteristic with the divisor of the Sz¨ ego kernel. In achieving this we have used modern computational tools in Sagemath, Macaulay2, and Maple, for which notebooks demonstrating calculations are provided.",
+  "abstract": "Bring\u2019s curve, the unique Riemann surface of genus-4 with automorphism group S5, has many exceptional properties. We review, give new proofs of, and extend a number of these including giving the complete realisation of the automorphism group for a plane curve model, identifying a new elliptic quotient of the curve and the modular curve X0(50), providing a complete description of the orbit decomposition of the theta characteristics, and identifying the unique invariant characteristic with the divisor of the Sz\u00a8 ego kernel. In achieving this we have used modern computational tools in Sagemath, Macaulay2, and Maple, for which notebooks demonstrating calculations are provided.",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20220830004341Z",
@@ -26,7 +27,7 @@
    "Title": ""
   },
   "title_lines": [
-   "BRING’S CURVE: OLD AND NEW"
+   "BRING\u2019S CURVE: OLD AND NEW"
   ]
  },
  "toc": [
@@ -396,8 +397,136 @@
   "likely_scanned": false,
   "toc_entries": 21,
   "sections": 21,
-  "chars_total": 101718
+  "chars_total": 101718,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "arxivpaper.tex",
+   "tex_sections": 6,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.976,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-defining-equations-and-elementary-properties",
+     "title": "Defining Equations and Elementary Properties",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-basic-properties",
+     "title": "Basic Properties",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-22-the-period-matrix",
+     "title": "The Period Matrix",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-23-the-automorphism-group",
+     "title": "The Automorphism Group",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-3-geometric-points",
+     "title": "Geometric Points",
+     "prose_ratio": 0.36,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-31-weierstrass-points",
+     "title": "Weierstrass Points",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-32-vertices-and-face-centres",
+     "title": "Vertices and Face-Centres",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-4-quotients-by-subgroups",
+     "title": "Quotients by Subgroups",
+     "prose_ratio": 0.136,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-41-genera-of-quotients",
+     "title": "Genera of Quotients",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-42-relations-between-quotients",
+     "title": "Relations between Quotients",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-43-quotients-by-a-4--and-22-cycle",
+     "title": "Quotients by a 4- and 2,2-cycle",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-44-quotients-by-a-3-cycle",
+     "title": "Quotients by a 3-cycle",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-45-quotients-by-a-transposition",
+     "title": "Quotients by a transposition",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-46-summarising",
+     "title": "Summarising",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-5-theta-characteristics",
+     "title": "Theta Characteristics",
+     "prose_ratio": 0.236,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-51-abel-jacobi-and-the-riemann-constant-vector",
+     "title": "Abel-Jacobi and the Riemann Constant Vector",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-52-tritangent-planes-and-odd-characteristics",
+     "title": "Tritangent Planes and Odd Characteristics",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-53-even-characteristics",
+     "title": "Even Characteristics",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-6-conclusion",
+     "title": "Conclusion",
+     "prose_ratio": 0.92,
+     "coverage_ratio": 0.847,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-020-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  },
  "duplicate_of": "s40879-023-00706-0",
- "duplicate_note": "Same work as library/s40879-023-00706-0/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
+ "duplicate_note": "Same work as library/s40879-023-00706-0/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted \u2014 existing citations may point here \u2014 but skipped by the ranking and the summary index so one work is not counted twice."
 }

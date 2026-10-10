@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0905.0228v4/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0905.0228v4/blocks/prose-sec-002",
   "kind": "prose",
   "title": "Connection with q-Fibonacci polynomials and q-Lucas polynomials",
   "pageStart": 12,
   "pageEnd": 16,
   "text": "../sections/sec-002-4-connection-with-q-fibonacci-polynomials-and-q.md",
-  "derivedFrom": "library/arxiv-0905.0228v4/manifest",
-  "sourceDocument": "library/arxiv-0905.0228v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0905.0228v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0905.0228v4/manifest.jsonld",
   "provenance": "ingested"
 }

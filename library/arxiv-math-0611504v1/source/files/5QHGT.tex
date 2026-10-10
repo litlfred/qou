@@ -1,0 +1,561 @@
+\section {The QHFT functor}\label{TENSOR} Consider a QHFT bordism
+$\Bb =(\tilde{Y},\tilde{L}_\Ff,\rho,\alpha_\pm)$. For every odd
+integer $N\geq 1$, we associate a finite dimensional complex
+linear space $V(\alpha_\pm)$ to $\alpha_{\pm}$, and a linear map
+$\Hh_N(\Bb) : V(\alpha_-) \to V(\alpha_+)$ to $\Bb$, well-defined
+up to sign and multiplication by $N$th roots of unity. This
+defines a (moderately projective) functor $\Hh_N: {\rm QHB}
+\rightarrow {\rm Vect}$, where Vect is the tensor category of
+complex linear spaces. The construction immediately implies that
+$\Hh_N$ is a modular functor, in the sense of \cite{T}, III.1.2.
+
+\subsection {From QHFT bordisms to QHG-triangulated pseudomanifolds}
+\label{Z(B)}
+First we associate to $\Bb$ a pseudomanifold $Z(\Bb)$.
+Fill each tunnel boundary component of $\tilde{Y}$
+with a solid tube, thus recovering a copy of the manifold $Y$. The
+cores of the solid tubes make a parallel unframed copy $\lambda''$
+of $L$. We define $Z(\Bb)$ as the result of collapsing to one
+point each component of $\lambda''$. In other words, we glue to
+each tunnel component of $\tilde{Y}$ the {\it oriented topological
+cusp} $\hat{\bf C} = B \times [0,+\infty]/(B \times \{\infty\})$
+with base equal to either $B=S^1\times [-1,1]$ or $B=S^1\times
+S^1$.
+\smallskip
+
+Next we describe a procedure to convert $Z(\Bb)$ to a
+distinguished QHG-triangulated pseudomanifold. We refer to the
+notions introduced in Subsection \ref{ToGeoSpec}.
+
+\smallskip
+
+We say that a branched triangulation $(T,b)$ of $B$ as above is {\it
+  admissible} if $B \cap \partial_\pm \tilde{Y}$ and the tangles
+  $\lambda$, $\lambda'$ are covered by the $1$-skeleton. We denote
+  $(\hat{T},\hat{b})$ the branched triangulation of $\hat{\bf C}$,
+  where $\hat{T}$ is the cone over $T$ from the non manifold point,
+  say $\infty$, and $\hat{b}$ extends $b$ so that $\infty$ is a pit
+  for every branched tetrahedron of $\hat{T}$.  Assume we are given an
+  idealizable $PB^+(2,\mc)$-valued cocycle $z$ on an admissible
+  triangulation of $B$. The idealization of $z$ determines for each
+  $2$-simplex of $B$ a face of an ideal hyperbolic tetrahedron with
+  further vertex at $\infty$ (see Figure \ref{tcusp}, where opposite
+  vertical triangles are identified).  Since the fundamental group of
+  $B$ is Abelian, the resulting family of oriented ideal hyperbolic
+  tetrahedra actually makes an $\Ii$-triangulation
+  $(\hat{T},\hat{b},w)$, which we call an {\it $\Ii$-cusp}. By
+  conjugating if necessary, we see that $\Ii$-cusps make sense also
+  when $z$ takes values more generally in $PSL(2,\mc)$. We get
+  flattenings similarly as in Lemma \ref{canonicalflat}: at a corner
+  of a $2$-simplex formed by edges $e_l$ and $e_r$ we put the
+  difference of the logarithms of the vectors in $\mc$ associated by
+  the idealization to $e_l$ and $e_r$, respectively.
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=4cm]{tcusp.eps}
+\caption{\label{tcusp} An $\Ii$-cusp.}
+\end{center}
+\end{figure}
+
+\begin{defi}\label{Dtriang}{\rm A {\it $\Dd$-triangulation} of
+$\Bb =(\tilde{Y},\tilde{L}_\Ff,\rho,\alpha_\pm)$ consists of a
+$4$-uple $\Kk =(K,\bar{H},b,z)$ where:
+
+\smallskip
+
+(a) $(K,b)$ is a branched triangulation of $\tilde{Y}$ extending
+that on $\partial_\pm \tilde{Y}$, and inducing an admissible cusp
+base triangulation at each tunnel component of $\tilde{L}_{\Ff}$.
+
+\smallskip
+
+(b) The $1$-dimensional subcomplex $\bar{H}= H\cup H'$ of $K$ is
+ambiently isotopic to the tangle $\bar{\lambda}=\lambda \cup
+\lambda'$, and $\bar{H}$ contains
+all the vertices of $K$.
+
+\smallskip
+
+(c) $z$ is an idealizable $PSL(2,\C)$-valued $1$-cocycle on $(K,b)$
+such that:
+
+(i) the conjugacy class of $PSL(2,\mc)$-representations of $\pi_1(\tilde{Y})$
+associated to $z$ coincides with $\rho$;
+
+(ii) the ($+$)-exponential $\Ii$-parameters given by the
+restriction of $z$ to $\partial_{\pm} \tilde{Y}$ coincide with
+that of the objects $\alpha_- \cup \alpha_+$ (see Definition \ref{log-I}).
+\smallskip
+
+(d) the restriction of $z$ to each vertical tunnel component of
+$\tilde{L}_{\Ff}$ takes values in the Borel subgroup $PB^+(2,\mc)$
+of $PSL(2,\mc)$.}
+\end{defi}
+For any $\Dd$-triangulation $\Kk =(K,\bar{H},b,z)$ of $\Bb$ we get
+a distinguished $\Ii$-triangulation $\Kk_\Ii=(K,\bar{H},b,w)$ of
+$(Z(\Bb), \bar{\lambda})$ by gluing the idealization of $\Kk$ with
+the $\Ii$-cusp given by the cocycle at each tunnel component. Note
+that $\bar{H}$ contains all the vertices of $K_I$ that are
+manifold points.
+\begin{defi}\label{flat/charge-def} {\rm We say that $\mathcal{T}(\mathcal{B})
+=(\Kk_\Ii,f,c) = (K,\bar{H},b,w,f,c)$ is a {\it distinguished
+  flat/charged $\Ii$-triangulation} of $(Z(\Bb),\bar{\lambda})$ if it
+satisfies Definition \ref{DISFLATCHARGE}, and at every boundary edge
+of $Z(\Bb)$ the total (classical or quantum) log-branch of
+$(\Kk_\Ii,f,c)$ of (\ref{totw}) coincides with the (classical or
+quantum) Log-$\Ii$-parameter of the boundary object $\alpha_- \cup
+\alpha_+$. }
+\end{defi}
+Recall the cohomological weights from section \ref{ToGeoSpec}.  These
+notions still make sense for distinguished flat/charged
+$\Ii$-triangulations, where the homology of $\partial T_0$ is replaced
+with that of the tunnel components $\tilde{L}_\Ff$. Since we have
+weights $(h_f,k_f)$ for log-branches and $(h_c,k_c)$ for charges at
+the same time, we will denote them $(h,k)=((h_f,h_c),(k_f,k_c))$. We
+can also define, in the very same way, boundary weights $k_f\in
+H^1(\partial \tilde{Y}; \mc)$, but these are completely encoded by
+$\alpha_\pm$. We have:
+\begin{teo} \label{teoTOP} For every bordism
+$\Bb=(\tilde{Y},\tilde{L}_\Ff,\rho,\alpha_\pm)$ and every $(h,k)
+\in H^1(\tilde{Y};\Z/2\Z) \times H^1(\tilde{L}_\Ff; \mc)$
+satisfying the properties (\ref{weightcondition}), there are
+distinguished flat/charged $\Ii$-triangulations $\Tt(\Bb)$ of
+$Z(\Bb)$ with weight $(h,k)$, and any two are QHG-isomorphic.
+\end{teo}
+
+\noindent {\it Proof.} The existence of distinguished
+$\Ii$-triangulations $\Kk_\Ii$ of $Z(\Bb)$ follows from a tedious
+but straightforward generalization of Theorem 4.13 in \cite{BB1}.
+Global flattenings and integral charges with arbitrary weight
+exist on the double $D\Kk_\Ii$ of $\Kk_\Ii$ by the results
+recalled with Theorem \ref{theoweight}.
+
+Consider the ($+$)-Log-$\Ii$-parameters $\{W^\pm(z)(e)\}_e$ at
+$\alpha_\pm$. They are in one-one correspondence with the interior
+edges of the corresponding $e$-triangulations, which is less than the
+cardinality of the families $m$ and $n$ used to defined flattenings
+and charges in Definition \ref{log-I}. Hence any family of
+determinations of the logarithms of the $W^\pm(z)(e)$ is a system of
+($+$)-Log-$\Ii$-parameters. Also, Lemma \ref{canonicalflat} implies
+that any system of ($+$)-Log-$\Ii$-parameters at $\alpha_\pm$ extends
+to a distinguished flat/charge $\Ii$-triangulation of the pseudo
+manifold obtained from the trivial cylinders over
+$\partial_{\pm}\tilde{Y}$ by collapsing to a point each annulus of
+$\partial( \partial_{\pm}\tilde{Y}) \times [-1,1]$.
+
+This means that any QHFT surface bounds a QHFT bordism, and that
+for the bordism $\Bb$ there are flat/charges on $D\Kk_\Ii$ whose
+restriction to $\Kk_\Ii$ induce the Log-$\Ii$-parameters of
+$\alpha_\pm$. Hence we get global flat/charges as in Definition
+\ref{flat/charge-def}. In fact the affine spaces of flat/charges
+on $D\Kk_\Ii$ project onto that on $\Kk_\Ii$ compatible with
+$\alpha_\pm$ (see the end of section \ref{QHG}). Then, the
+Mayer-Vietoris exact sequence in cohomology for the triad
+$(DK_\Ii,\Kk_\Ii,-\Kk_\Ii)$ shows that $(h,k)$ is induced by some
+weight on $D\Kk_\Ii$. As we can choose the latter arbitrarily,
+this concludes the proof of the first claim.
+
+The second is harder, but follows strictly from the arguments in
+the proof of Theorem 6.8 (2) in \cite{BB2}. The only new
+ingredient is the presence of $\Ii$-cusps, which mimic the ends of
+cusped manifolds treated in that paper. \hfill$\Box$
+
+An alternative characterization of classical/quantum log-branches
+of distinguished flat/charged $\Ii$-triangulations $\Tt(\Bb)$
+follows from Remark \ref{univfc}.
+\subsection{Amplitudes}\label{QHFTTENS} Fix an odd positive integer $N$.
+Write $V=\C^N$, with the canonical basis $\{e_i\}$, and $V^{-1}$
+for the dual space. Both are endowed with the hermitian inner
+product with orthonormal basis the vectors $e_0$ and
+$(e_i+e_{N-i})/\sqrt{2}$, $i=1,\ldots,N-1$.
+
+Recall the notations of section \ref{PARAM}. For each base surface
+$F$ fix an $e$-triangulation $(T,b)$, an ordering of the set
+$T^{(2)}$ of $2$-simplices, and let $V(T,b) = \otimes_{t\in
+T^{(2)}} V^{\sigma_\pm (t)}$. Given a QHFT bordism
+$\Bb=(\tilde{Y},\tilde{L}_\Ff,\rho,\alpha_\pm)$ with a
+distinguished flat/charged $\Ii$-triangulation $\Tt(\Bb)$, the
+trace tensor in (\ref{deftt}) is a morphism $\Hh_N(\Tt(\Bb)) \in
+{\rm Hom}(V(\alpha_-),V(\alpha_+))$, where $V(\alpha_\pm)$ is the
+tensor product of isomorphic copies of the spaces $V(T,b)$ over
+the (ordered) components of $\alpha_\pm$.
+\begin{teo}\label{main} The morphism $\Hh_N(\Bb,h,k)=\Hh_N(\Tt(\Bb))$ does not
+depend on the choice of $\Tt(\Bb)$ up to sign and multiplication by
+$N$th roots of unity, and $\Hh_N(\Bb,h,k)=\Hh_N(\Bb,h',k')$ if the
+mod($N\mz$) reductions of $h$ and $h'$ (resp. $k$ and $k'$) are the
+same, that is, if we have $k-k' \in H^1(\tilde{L}_\Ff;\mz)$ and $k-k'=0 \in
+H^1(\tilde{L}_\Ff;\mz/N\mz)$, and similarly for $h$ and $h'$. Moreover,
+there is no sign ambiguity if we restrict to even valued flattenings
+as in Lemma \ref{canonicalflat} (hence with $h=0$). We call
+$\Hh_N(\Bb,h,k)$ the {\rm amplitude} of $(\Bb,h,k)$.
+\end{teo}
+\noindent {\it Proof.} The result up to sign is an immediate
+consequence of Proposition \ref{fund_func} and the last claim in
+Theorem \ref{teoTOP}. For the dependance with respect to the
+mod($N\mz$) reductions of weights, we note that the associated systems
+of $N$th roots of moduli (see Remark \ref{univfc}) are connected by
+QHG isomorphisms. Indeed, the difference $k-k' \in
+H^1(\tilde{L}_\Ff;N\mz)$ coincides with $\gamma(f) -
+\gamma(f')/\sqrt{-1}\pi$ and $\gamma(c) - \gamma(c')/\sqrt{-1}\pi$ for
+some $f$, $f'$ and $c$, $c'$, and similarly for $h-h'$ and the
+$\gamma_2$ maps. By first considering $(k-k')/N$ we can eventually
+take the collections of values of $f-f'$ and $c-c'$ in $N\mz$, and
+equal. Hence the conclusion follows from (\ref{qvar}) and
+(\ref{symqmatdil}). For even valued flattenings, the
+claim follows from the fact that Proposition \ref{fund_func} has no
+sign ambiguity. For clarity let us state the result with some details.
+
+Consider all the possible branching configurations of $2
+\leftrightarrow 3$ QHG transits, up to obvious symmetries. They are
+obtained from a single one by composing with the transpositions
+$(01)$, $(12)$, $(23)$ and $(34)$ of the vertices (ordered in
+accordance with the branching). Any such a transposition changes the
+matrix dilogarithm of each tetrahedron by matrix conjugation and
+multiplication by a determined scalar factor (see Corollary 5.6 of
+\cite{BB2}). Now, there is a prefered ``basic'' $2 \leftrightarrow 3$
+QHG transit, for which {\it even} flattenings give no sign ambiguity
+in Proposition \ref{fund_func} (see the proof of Theorem 5.7 in
+\cite{BB2}). The corresponding branching configuration is defined by
+ordering the vertices as $1$ and $3$ on the bottom and top of the
+central edge, and $0$, $2$, $4$ counterclockwise as viewed from the
+$3$rd vertex. The following table describes for each tetrahedron
+$\Delta^i$, opposite to the $i$-th vertex, the scalar factors induced
+by the above transpositions (we put $v=\exp(\sqrt{-1}\pi(1-N)/2N)$,
+which is $-\zeta^{-(m+1)(1-N)/2}$ in the notations of \cite{BB2}, and
+the $c_k^l$ are charge values):
+$$\begin{tabular}{||c||c|c||c|c|c||} \hline &
+  \rule{0cm}{0.4cm}{$\Delta^1$}& $\Delta^3$ & $\Delta^0$ & $\Delta^2$
+  & $\Delta^4$ \\ \hline
+
+\rule{0cm}{0.8cm} \raisebox{0.2cm}{$(01)$} & \raisebox{0.2cm}{$0$} &
+\raisebox{0.2cm}{$v^{c_0^3}$} & \raisebox{0.2cm}{$0$} &
+\raisebox{0.2cm}{$v^{c_0^2}$} & \raisebox{0.2cm}{$v^{c_0^4}$}\\ \hline
+
+\rule{0cm}{0.8cm} \raisebox{0.2cm}{$(12)$} & \raisebox{0.2cm}{$0$} &
+\raisebox{0.2cm}{$v^{c_1^3}$} & \raisebox{0.2cm}{$v^{c_0^0}$} &
+\raisebox{0.2cm}{$0$} & \raisebox{0.2cm}{$v^{c_1^4}$} \\ \hline
+
+\rule{0cm}{0.8cm} \raisebox{0.2cm}{$(23)$} &
+\raisebox{0.2cm}{$v^{c_1^1}$} & \raisebox{0.2cm}{$0$} &
+\raisebox{0.2cm}{$v^{c_1^0}$} & \raisebox{0.2cm}{$0$} &
+\raisebox{0.2cm}{$v^{c_0^4}$} \\ \hline
+
+\rule{0cm}{0.8cm} \raisebox{0.2cm}{$(34)$} &
+\raisebox{0.2cm}{$v^{c_0^1}$} & \raisebox{0.2cm}{$0$} &
+\raisebox{0.2cm}{$v^{c_0^0}$} & \raisebox{0.2cm}{$v^{c_0^2}$} &
+\raisebox{0.2cm}{$0$} \\ \hline
+\end{tabular}$$
+Because of (\ref{preserveq}), we see that the scalars at both sides
+are equal. Hence, for any $2 \leftrightarrow 3$ log-branch transit
+with even flattenings, the only ambiguity in Proposition
+(\ref{fund_func}) is by multiplication by $N$th roots of unity, which
+is due to the definition of the function $g$ in (\ref{funcg}). The
+conclusion follows as before by using QHG-isomorphisms preserving the
+parity of flattenings (whence based on even multiples of the
+generators of flat/charge lattices).\hfill$\Box$
+\begin{remark}\label{scissors}(Cheeger-Chern-Simons invariants and $\Hh_1$.)
+{\rm By the results of \cite{N}, there is an injective
+homomorphism from $H_3(PSL(2,\mc);\mz)$ (discrete homology) to a
+scissors congruence group $\hat{\mathcal{P}}(\mc)$, such that the
+dilogarithm (\ref{symRmatdil}), defined on
+$\hat{\mathcal{P}}(\mc)$, restricts to the universal
+Cheeger-Chern-Simons class $\hat{C}_2: H_3(PSL(2,\mc);\mz)
+\rightarrow \mc/\pi^2\mz$. Hence $\Hh_1$ is a natural extension of
+$\exp(\hat{C}_2/i\pi)$, the exponential of a constant times ${\rm
+Vol} +iCS$, to classes representing QHFT bordisms. Recently J.
+Dupont and C. Zickert produced dilogarithmic formulas for the lift
+$\hat{C}_2'$ of $\hat{C}_2$ to $H_3(SL(2,\mc);\mz)$, such that
+$\exp(\hat{C}_2'/i\pi)$ coincides with the lift of $\Hh_1$
+determined by even flattenings in Theorem \ref{main} \cite{DZ}. We are
+indebted to their work for pointing out the existence of such
+flattenings.}
+\end{remark}
+Recall Definition \ref{composition}. Assume that $\Bb'' =
+\Bb'*\Bb$ exists, and let $\Tt(\Bb)$ and $\Tt(\Bb')$ be given
+weights $(h,k)$ and $(h',k')$, respectively. Then
+$\Tt(\Bb')*\Tt(\Bb)$ is a distinguished flat/charged
+$\Ii$-triangulation $\Tt(\Bb'')$, with some weight $(h'', k'')$.
+(It follows from the Mayer-Vietoris exact sequence
+    for $(\Bb'',\Bb',\Bb)$ that even if $h=h'=0$, it can happen
+    that $h''\ne 0$. However, if the glued part of the boundary is
+    connected, or is a boundary in $\Bb * \Bb'$, then $h=h'=0$ implies
+    $h''=0$.)
+\begin{prop} \label{functQHFT}{\rm (Functoriality)} For any composition
+$\Bb'' = \Bb'*\Bb$ of bordisms, $\Hh_N(\Bb'',h'',k'')$ coincides
+with $\Hh_N(\Bb',h',k')\circ \Hh_N(\Bb,h,k)$ up to sign and
+multiplication by $N$th roots of unity.
+\end{prop}
+This is a direct consequence of Theorem \ref{main}. Also, we prove
+as in Proposition 4.29 of \cite{BB2}:
+\begin{prop}\label{unitarity} {\rm (Polarity)}
+Write $\bar{\Bb}$ for the QHFT bordism with opposite orientation and
+  complex conjugate holonomy $\bar{\rho}$. Then
+  $\Hh_N(\bar{\Bb},-h,-k)$ and $\Hh_N(\Bb,h,k)^*$, the adjoint for the
+  hermitian structure of $V(\alpha_\pm)$, coincide up to sign and
+  multiplication by $N$th roots of unity.
+\end{prop}
+In the proof of Theorem \ref{teoTOP} we have seen that the space
+$\tilde{W}^+(T,b)$ of ($+$)-Log-$\Ii$-parameters over $W^+(T,b)$
+(the disjoint union of spaces $W^+(T,b,\mathcal{C})$) is
+isomorphic to $\tilde{\mc}^{-3\chi(F)+2p}$, where $\tilde{\mc}$ is
+the universal cover of $\mc \setminus \{0\}$. Similarly, for any
+admissible triangulation $\tau$ of a topological cusp with $n$
+$2$-simplices, we have the analytic subspace $Def(\tau)$ of
+$\widehat{\mc}^n$ made of the $n$-uples of log-branches for the
+tetrahedra of $\Ii$-cusps with base triangulation $\tau$, where
+$\widehat{\mc}$ is defined in Section \ref{buildbox}. Such
+log-branches satisfy the compatibility relations $L_\Tt(e)=0$ at
+interior edges.
+\begin{defi}\label{defps}{\rm Let $X=(Y,L_\Ff,\alpha_\pm)$ be a marked
+topological bordism with $e$-triangulated or admissibly
+triangulated boundary components. The {\it phase space} of $X$ is
+the (analytic) subset $Def(X)$ in the product of the spaces
+$\tilde{W}^+(T,b)$ and $Def(\tau)$ over the components of
+$\partial \tilde{Y}$ and $L$, determined by the family of
+distinguished flat/charged $\Ii$-triangulations of QHFT bordisms
+supported by $(Y,L_\Ff,\alpha_\pm)$.}
+\end{defi}
+When $Y$ has empty boundary, $Def(X)$ is a generalization of the well
+known deformation space of hyperbolic structures supported by ideal
+triangulations of $Y\setminus L$, introduced in \cite{Th}, and
+recently studied in \cite{Choi} and \cite{Cha}. When $\tilde{Y}$ is
+the mapping cylinder of a diffeomorphism $\phi$ of $F$, the amplitudes
+of QHFT bordisms supported by $\tilde{Y}$ define a morphism of the
+trivial vector bundle
+\begin{equation}\label{statebundle}
+E(F)^+=E(T,b)^+: \tilde{W}^+(T,b) \times V(T,b) \rightarrow
+\tilde{W}^+(T,b). \end{equation}(Note that any two choices of
+$e$-triangulations $(T_1,b_1)$ and $(T_2,b_2)$ of $F$ yield
+isomorphic bundles $E(T_1,b_1)$ and $E(T_2,b_2)$, with
+birationally equivalent bases.) The resulting mapping of sections
+of $E(F)$, the {\it states of $F$}, are studied in \cite{B}.
+\begin{prop}\label{phase-space}{\rm (Analyticity)} For every $N\geq 1$,
+the amplitudes of QHFT bordisms supported by
+$X=(Y,L_\Ff,\alpha_\pm)$ vary analytically with the boundary
+structure in $Def(X)$, up to sign and multiplication by $N$th
+roots of unity.
+\end{prop}
+This follows immediately from the fact that the matrix
+dilogarithms are analytic, together with the fact that any
+path in $Def(X)$ lifts to a path of log-branches via the relations
+induced by Definition \ref{flat/charge-def} (4).
+
+\subsection{QHFT variants}\label{variant} By varying the
+bordism category we can vary the corresponding QFT.
+\smallskip
+
+{\bf QHFT$^0$:} Consider the bordism category supported by triples
+$(Y,L,\rho)$, where $L$ is an non-empty {\it unframed} tangle in $Y$
+and $\rho$ is a $PSL(2,\mc)$-character on the whole of $Y$ (ie. $\rho$
+is trivial at the meridians of $L$). In fact, we restrict to
+holonomies $\rho$ such that $(Y,L,\rho)$ admits $\Dd$-triangulations
+that extend a topological branched ideal triangulation $(T',b')$ of
+each boundary component, say $(S,V)$, and for which the link $L$ is
+realized as a Hamiltonian subcomplex (hence with no $\Ii$-cusp). In
+particular the objects of this bordism category incorporate the
+idealization of (necessarily idealizable) cocycles on $(T',b')$, that
+represent the restriction of $\rho$ to $S$.  The arguments of Theorem
+\ref{main} can be easily adapted to produce tensors $H_N(\Bb,h,k)$
+associated to such a bordism $\Bb$, and eventually the so called
+QHFT$^0$ variant of quantum hyperbolic field theory.
+\medskip
+
+{\bf Fusion of QHFT and QHFT$^0$:} We can consider triples
+$(Y,L_\Ff,L^0,\rho)$, where $L=L_\Ff\cup L^0$ is a tangle with a {\it
+framed part} $L_\Ff$ and an {\it unframed} one $L^0$.  We also
+stipulate that $\rho$ is trivial at each meridian of $L^0$.  For every
+object support $(S,V)$, we have a partition $V= V_\Ff \cup V_0$ and we
+use ``mixed'' triangulations that looks like an efficient one at
+$p\in V_\Ff$ and like an ideal one at $p\in V_0$. A similar mixed
+behaviour holds for the adapted $\Dd$-triangulations of such
+bordisms. We eventually get tensors still denoted
+$\Hh_N(\Bb,h,k)$ giving variants, still denoted QHFT, that extend both
+the previous one ($L^0 = \emptyset$), and QHFT$^0$ ($L_\Ff = \emptyset$).
+\medskip
+
+{\bf QHFT$^e$:} Let $(Y,L_\Ff,L^0,\rho)$ be as above, and let us
+specialize to $\rho$ that, as usual, are trivial at the meridians of
+$L^0$, but are {\it not} trivial at the meridians of $L_\Ff$. Now we
+use mixed triangulations of each object support $(S,V_\Ff\cup V_0)$
+that look like an {\it economic} triangulation (see Remark
+\ref{varpar}) at each $p\in V_\Ff$. Concerning the adapted
+$\Dd$-triangulations, each component of $L_\Ff$ contributes the
+hamiltonian subcomplex with just a copy of the parallel curve
+specifying the framing (recall that by using ordinary efficient
+triangulations, it contributed with {\it two} parallel curves). We get
+tensors now denoted $\Hh^e_N(\Bb,h,k)$, and a variant denoted
+QHFT$^e$.
+\medskip
+
+Of course, there are no deep structural differences between these
+variants; nevertheless each one has its own interest (see also Section
+\ref{CLOSED}).
+
+\subsection{Mapping class group representations}\label{MODREP}
+Fix $F$. Set $\tilde{Y}_F= F\times [-1,1]$, $\tilde{L}=\partial
+F\times [-1,1]$ with trivial vertical framing, and let ${\rm
+Mod}(g,r)$ be the mapping class group of $F$, that is, the group of
+homotopy classes of orientation-preserving diffeomorphisms of $F$
+fixing pointwise each boundary component. Given $\psi_{\pm}:(\pm F,
+(T,b,\Ll)) \rightarrow F \times \{\pm 1\}$, put $\psi=
+\psi_+^{-1}\psi_-$ and $[\psi]$ for the corresponding element in ${\rm
+Mod}(g,r)$. Denote by $\tilde{W}_{[\psi]}$ the {\it mapping torus}
+$(F\times [-1,1])/ (x,-1) \sim (\psi(x),1)$ of $\psi$, with tunnel
+boundary $\tilde{L}_{[\psi]}$. Let $\rho$ be the conjugacy class of
+$PSL(2,\C)$-valued representations of $\pi_1(F\times [-1,1])$
+(identified with $\pi_1(F))$) associated to $\Ll$.  To simplify
+notations, in all statements of this section we do not mention the
+weights (we understand they are fixed).
+
+\begin{lem}\label{CYLtensor} Up to sign and multiplication by
+  $N$th roots of unity (denoted "$=_N$") we have :
+
+\smallskip
+
+(1) For any fixed $(T,b,\Ll)$ the amplitudes
+$\Hh_N(\tilde{Y},\tilde{L}_F,\rho,(\pm F,(T,b,\Ll)), [\psi_\pm])$
+depend only on $[\psi]$. We denote them $\Hh_N([\psi])$.
+\smallskip
+
+  (2) $\Hh_N([id])$ is the identity map from $E_N(\alpha_-)$ to
+  $E_N(\alpha_+)$, and $\Hh_N([h_2])\circ \Hh_N([h_1]) =_N
+  \Hh_N([h_2h_1])$. In particular, for any $[\psi] \in {\rm Mod}(g,r)$
+  the QHFT tensor $\Hh_N([\psi])$ is invertible, with inverse
+  $\Hh_N([\psi^{-1}])$, and for a homotopically $d$-periodic $[\psi]$
+  the QHFT tensor $\Hh_N([\psi])$ is of finite order less than or
+  equal to $d$.  \smallskip
+
+  (3) If $\psi(\rho)$ coincides with $\rho$, then ${\rm
+    Trace}\bigl(\Hh_N([\psi])\bigr)=_N\Hh_N(\tilde{W}_{[\psi]},
+  \tilde{L}_{[\psi]},\rho).$
+\end{lem}
+\noindent{\it Proof.} Point (1) follows from Theorem \ref{main},
+because $$\Hh_N(\tilde{Y},\tilde{L}_F,\rho,(\pm
+F,(T,b,\Ll)),[\psi_\pm]) =_N \Hh_N(\tilde{Y},\tilde{L}_F,\rho,(\pm
+F,(T,b,\Ll)),[id],[\psi])$$ (the homeomorphism $\psi_-^{-1} \times
+{\rm id}$ sends the first mapping cylinder to the second). By
+Proposition \ref{functQHFT} we have $\Hh_N^2([id]) =_N
+\Hh_N([id])$, so $\Hh_N([id])$ is an idempotent. It is invertible
+because the matrix dilogarithms are. Both facts imply the first
+claim in (2). The rest is a direct consequence of Proposition
+\ref{functQHFT} and formula (\ref{deftt}). \hfill $\Box$
+\medskip
+
+The arguments in the proof of Lemma \ref{CYLtensor} imply also
+that, letting $[\psi] = [id]$ and $\rho$ fixed, the amplitudes of
+any marking variation $(T,b,\Ll) \rightarrow (T_1,b_1,\Ll_1)$ are
+invertible. Hence $\Hh_N([\psi])$ is conjugated to the tensor
+$\Hh_N(\tilde{Y},\tilde{L}_F,\rho,(\pm F,(T_1,b_1,\Ll_1)),
+[\psi_\pm])$. Moreover $\Hh_N(-\tilde{Y},\tilde{L}_F,\rho,(\mp
+F,(T,b,\Ll)), [\psi_\pm])$, the amplitude with reversed
+orientation, clearly coincides with $\Hh_N([\psi]^{-1})$. Using
+Proposition \ref{unitarity} we deduce:
+\begin{cor}\label{mcgrep} For any fixed $\rho\in \Rr(g,r)$, the homomorphisms
+$\psi \mapsto \Hh_N([\psi])$ induce a conjugacy class of
+  linear representations of ${\rm Mod}(g,r)$, well-defined up to sign and
+  multiplication by $N$th roots of unity. For $SL(2,\mr)$-valued
+  characters $\rho$ these representations are unitary.
+\end{cor}
+
+\subsection{Tunneling the ($+$)/($-$) states}\label{+-versus} We use
+($+$)-Log-$\Ii$-parameters to define the QHFT because of the existence
+of strongly idealizable cocycles on QHFT bordism triangulations, which
+makes functoriality easy to check. Here we exhibit a family of tensors
+correlating the ($\pm$)-Log-$\Ii$-parameters, thus recovering, in
+particular, the direct and nice interpretation of boundary structures
+having non trivial holonomy at the punctures in terms of pleated
+hyperbolic surfaces (see Section \ref{Ipar}). These tensors are also
+used in Section \ref{FIBERED}.
+\smallskip
+
+For any base surface $F$ with an $e$-triangulation $(T,b)$, let $Z(F)$
+be the pseudo-manifold obtained by collapsing to a point each boundary
+annulus of the cylinder $C(F)=F\times [-1,1]$.  Recall the bundle
+$E(F)^{+}$ in (\ref{statebundle}), and consider similarly
+$E(F)^{-}:\tilde{W}^-(T,b) \times V(T,b) \rightarrow
+\tilde{W}^-(T,b)$. We have:
+\begin{prop}\label{tunnel+-} There exists a canonical family $\mathcal{F}$
+of flat/charged $\Ii$-triangulations covering a portion of $Z(F)$,
+with invertible trace tensor $\Hh_N(\mathcal{F}): E(F)^{+}
+\rightarrow E(F)^-$.
+\end{prop}
+\noindent {\it Proof.} Orient $C(F)$ so that $\pm F$ is identified
+with $F\times \{\pm 1\}$. Let $P(T,b)$ be the cell decomposition
+of $C(F)$ made by the prisms with base the $2$-simplices of $T$.
+Orient all the ``vertical'' (ie. parallel to $[-1,1]$) edges of
+$P(T,b)$ towards $+F$. For every abstract prism $P$, every
+vertical boundary quadrilateral $R$ has both the two horizontal
+and the two vertical edges endowed with parallel orientations. So
+exactly one vertex of $R$ is a source (that belongs to $-F$), and
+exactly one is a pit (that belongs to $+F$). Triangulate each $R$
+by the oriented diagonal going from the source to the pit. Finally
+extend the resulting triangulation of $\partial P$ to a
+triangulation of $P$ made of $3$ tetrahedra, by taking the cone
+from the $b$-first vertex of the bottom base triangle of $P$ (note
+that no further vertices nor further edges have been introduced).
+Repeating this for every prism, we get a branched distinguished
+triangulation $(C(T,b),H)$ of $C(F)$, where the vertical edges
+make the Hamiltonian tangle $H$. As in the proof of Theorem
+\ref{teoTOP} there exists integral charges on $(C(T,b),H)$.
+
+Let $F\times [-1,3]$ be triangulated by two adjacent copies of
+$C(T,b)$, glued each to the other at $F\times \{+1\}$. For any $z \in
+\Zz_I(T,b)^+$, consider the unique cocycle $C_0(z)$ on the composition
+$C(T,b)*C(T,b)$ that: extends $z\cup \Psi(z)$, given on $(F\times
+\{-1\})\cup (F\times \{3\})$; takes the value $P$ of (\ref{convert})
+on each vertical edge contained in $F\times [1,2]$; takes the value
+$1$ on each vertical edge contained in $F\times [-1,1]$. Perturb
+$C_0(z)$ with a $0$-cochain $s$ that: takes the value $1$ on $(F\times
+\{-1\})\cup (F\times \{3\})$; takes values in $PB^+(2,\C)$ at each
+vertical boundary annulus; restricts to an idealizable cocycle on
+$F\times [-1,1]$ and to a {\it maximally idealizable} cocycle on
+$F\times [1,3]$ (see Definition \ref{triideal}). Finally, glue
+$\Ii$-cusps to the idealization.  Note that the only non idealizable
+tetrahedra are those in the star of a boundary edge of the
+triangulation of $F\times \{3\}$.  Lemma \ref{canonicalflat} gives
+flattenings for the idealizable tetrahedra.
+
+Look at the ideal triangulation $(T',b')$ of $S\setminus V$
+corresponding to the copy of the triangulation $(T,b)$ for the
+boundary component $F\times \{3\}$. For every cochain $s$ as above and
+every edge $e$ of $T'$ we have two complex numbers: the
+($-$)-exponential $\Ii$-parameter $W^-(\Psi(z))(e)$, and, as in
+(\ref{totw}), the total product $\Ww(e)$ of the cross-ratio moduli at
+the edges of $T$ that enter the definition of
+$W^-(\Psi(z))(e)$. Recall that there are two distinct such edges only when $e$
+contributes to make a marked corner. It is possible to normalize $s$
+so that for every edge $e$ of $T'$ we have $W^-(\Psi(z))(e) =
+\Ww(e)^{-1}$. 
+
+Varying the cocycle $z \in \Zz_I(T,b)^+$, this choice determines the
+family $\mathcal{F}$ in the statement. By perturbing the initial
+cocycle $z$ with $0$-cochains $t$ with values in $PSL(2,\mc)\setminus
+PB^+(2,\mc)$, the same construction leads to families $\mathcal{F}_t$
+of flat/charged $\Ii$-triangulations covering the whole of $F \times
+[-1,3]$. 
+
+Note that for suitable flat/charges ($f_1=0$ in (\ref{symRmatdil}) and
+$c_1=0$ in (\ref{symqmatdil})) the matrix dilogarithms have
+well-defined finite limits when the cross-ratio modulus $w_0
+\rightarrow 0$. From the symmetry relations of the matrix dilogarithms
+(see \cite{BB2}, Corollary 5.6), this is true more in general for any
+degenerating sequence of $\Ii$-tetrahedra, that is when $w_0$ goes to
+$0$, $1$ or $\infty$. Now, we can choose in a continuous way the
+flat/charges of $\mathcal{F}_t$ so that they satisfy the above
+constraints on the tetrahedra of $\mathcal{F}_t$ that become non
+idealizable in $\mathcal{F}$, when $t \rightarrow {\rm id}$. Then
+$\textstyle \Hh_N(\mathcal{F}):=\lim_t \Hh_N(\mathcal{F}_t)$
+exists. As in Lemma \ref{CYLtensor} (2) we see that
+$\Hh_N(\mathcal{F}_t)$ is invertible, with inverse
+$\Hh_N(-\mathcal{F}_t)$. Since $\textstyle \Hh_N(\mathcal{F}) \circ
+\Hh_N(-\mathcal{F})= \lim_t (\Hh_N(\mathcal{F}_t)\circ
+\Hh_N(-\mathcal{F}_t))=_N{\rm id}$ (Proposition \ref{phase-space}), we
+deduce that $\Hh_N(\mathcal{F})$ is invertible.  \hfill$\Box$
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=5cm]{Tcyl.eps}
+\caption{\label{tcusp} Pasting opposite vertical sides yields an
+instance of $C(T,b)$ for the once-punctured torus $S$, based on an
+economic triangulation of $S$ as in Remark \ref{varpar}.}
+\end{center}
+\end{figure}

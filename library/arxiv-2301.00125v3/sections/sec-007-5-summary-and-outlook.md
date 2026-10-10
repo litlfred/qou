@@ -7,44 +7,45 @@ section_number: 5
 pages: 16-16
 source_pdf: 2301.00125v3.pdf
 source_sha256: 7ecd0cff7d6c2ec4
+text_source: latex
+latex_prose_ratio: 0.993
+latex_coverage_ratio: 0.931
 doc_brief: "Generating Function for Pinsky’s Combinatorial Second Mom ent Formula for the Generalized Ulam Problem Samen Hossein The Bronx High School of Science 75 Bronx Science Bvd — Given a uniform random"
 ---
-We have presented some explicit formula for the generating functio n of the combinatorial array A(N,j ). This
-arrray was introduced by Ross Pinsky in his beautiful combinatorial formula for the 2nd moment of Zn,k
-from the generalized Ulam problem. Pinsky then obtained rigorous up per and lower bounds, suﬃcient for
-his purpose of determining when the sequence Zn,kn satisﬁes a weak law of large numbers or does not satisfy
-such, depending on the behavior of the sequence kn asn→∞ . But for reasons discussed in Appendix B and
-in the introduction, we believe that more precise asymptotics are de sirable.
-We presented several formulas for the generating function, but not for the precise asymptotics. Using the
-Chebyshev inequality applied to
-α(w,x 2) =
-∞∑
-j,N =0
-wjx2NA(N,j ), (100)
-since all the combinatorial terms A(N,j ) are nonnegative, we may obtain an upper bound
-A(N,j )≤ min
-w>0
-min
-z>0
-α(w,x 2)
-wjx2N = min
-w>0
-min
-z>0
-A1(x,w ) +A2(x,w )
-wjx2N . (101)
-We have not yet carried out this optimization problem. We mention tha t the collaboration resulting in the
-present paper took place after one of the authors worked on his o wn (with mentorship) for precisely one
-summer, and then both coauthors collaborated on the present pa per after that work was carried out. This
-paper represents the end product of a certain collaboration. Eve n if further results seem like they should
-naturally be contained herein, we have limited this paper to the produ cts of that research experience.
-So the above calculation represents our primary interest in future research in this area. As we said before,
-a next natural question is to calculate E[Zn,kZn,ℓ] for k and ℓ being allowed to diﬀer. We expect that is
-an important ﬁrst step towards calculating all higher moments by ite rating Pinsky’s procedure for the 2nd
-moment. But as with the problem above, we have not carried that ou t yet. Either we will return to this
-problem, possibly in collaboration with other researchers. Or else pe rhaps some other researchers will resolve
-this, indepenent from ourselves.
-Acknowledgments
-S.S. is grateful to Dongsheng Wu for a helpful conversation. The w ork of S.S. was partly supported by a
-Simons collaboration grant.
-Appendices
+We have presented some explicit formula for the generating function of the combinatorial array $A(N,j)$.
+This arrray was introduced by Ross Pinsky in his beautiful combinatorial formula for the 2nd moment
+of $Z_{n,k}$ from the generalized Ulam problem.
+Pinsky then obtained rigorous upper and lower bounds, sufficient for his purpose of determining when the sequence $Z_{n,{k_n}}$
+satisfies a weak law of large numbers or does not satisfy such, depending on the behavior of the sequence $k_n$
+as $n \to \infty$.
+But for  reasons discussed in Appendix \ref{sec:SK} and in the introduction, we believe
+that more precise asymptotics are desirable.
+
+We presented several formulas for the generating function, but not for the precise asymptotics. Using the Chebyshev
+inequality applied to 
+\begin{equation}
+\alpha(w,x^2)\, =\, \sum_{j,N=0}^{\infty} w^j x^{2N} A(N,j)\, ,
+\end{equation}
+since all the combinatorial terms $A(N,j)$ are nonnegative, we may obtain an upper bound
+\begin{equation}
+	A(N,j)\, \leq\, \min_{w>0} \min_{z>0} \frac{\alpha(w,x^2)}{w^j x^{2N}}\, =\,
+\min_{w>0} \min_{z>0} \frac{\mathcal{A}_1(x,w)+\mathcal{A}_2(x,w)}{w^j x^{2N}}\, .
+\end{equation}
+We have not yet carried out this optimization problem.
+We mention that the collaboration resulting in the present paper took place after one of the authors
+worked on his own (with mentorship) for  precisely one summer, and then both coauthors collaborated
+on the present paper after that work was carried out.
+This paper represents the end product of a certain collaboration. 
+Even if further results seem like they should naturally be contained herein, we have limited this paper to 
+the products of that research experience.
+
+So the above calculation represents our primary interest in future research in this area.
+As we said before, a next natural question is to calculate $\mathbf{E}[Z_{n,k} Z_{n,\ell}]$ for $k$ and $\ell$
+being allowed to differ.
+We expect that is an important first step towards calculating all higher moments by iterating Pinsky's
+procedure for the 2nd moment.
+But as with the problem above, we have not carried that out yet.
+Either we will return to this problem, possibly in collaboration with other researchers.
+Or else perhaps some other researchers will resolve this, indepenent from ourselves.
+
+\label{sec:Outlook}

@@ -7,64 +7,83 @@ section_number: 5
 pages: 20-21
 source_pdf: 1011.0679v2.pdf
 source_sha256: 6fa4bbcf4e908373
+text_source: latex
+latex_prose_ratio: 0.964
+latex_coverage_ratio: 0.924
 doc_brief: "A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS — Let π, π ′ be tempered representations of an aﬃne Hecke algebra with positive parameters."
 ---
-In this section we extend the deﬁnitions and results from Sec tion 1.4 (which stem
-from [DeOp2]) to non-tempered induction data ξ ∈ Ξ \ Ξ un. One approach would
-be to deﬁne the R-group of ξ = (P,δ,t ) to be that of ξun = (P,δ,t |t|−1). This works
-out well in most cases, but it is unsatisfactory if the isotro py group Wξun is strictly
-larger than Wξ.
-The problem is that t |t|−1 is not always a generic point of ( T P )Wξ . To overcome
-this, we deﬁne Mξ to be the collection of mirrors M ∈ M P,δ that contain not
-onlyt |t|−1, but the entire connected component of t|t|−1 in (T P
-un)Wξ . Notice that all
-components of (T P )Wξ are cosets of a complex subtorus of T P . Since t |t|r ∈ (T P )Wξ
-for all r ∈ R, Mξ is precisely the collection of mirrors whose complexiﬁcati on
-containst.
-Now we deﬁne Rξ,R +
-ξ and Rξ as in (28) and (29). We note that Rξ may diﬀer
-from Rξun, but that Rξ =RP,δ,t′ for almost all t′ ∈ (T P
-un)Wξ . For positive induction
-data there is an analogue of Theorem 1.5:
-Theorem 5.1. Letξ = (P,δ,t ) ∈ Ξ +.
-(a) Forw ∈ W ξ the intertwiner π(w,ξ ) is scalar if and only if w ∈W (Rξ).
-(b) There exists a 2-cocycle κξ of Rξ such that EndH(π(ξ)) is isomorphic to the
-twisted group algebra C[Rξ,κ ξ].
-(c) There exists a unique bijection
-Irr(C[Rξ,κ ξ]) → IrrWξ(H) : ρ ↦→πρ,
-and there exist indecomposable direct summands ~πρ of π(ξ), such that πρ is a
-quotient of ~πρ and π(ξ) ∼=
-⨁
-ρ ~πρ ⊗ρ as H ⊗ C[Rξ,κ ξ]-modules.
-Remark 5.2. Part (a) also holds for general ξ ∈ Ξ . Part (d) of Theorem 1.5
-does not admit a nice generalization to ξ ∈ Ξ +. One problem is that the category
-Modf (C[Rξ,κ ξ]) is semisimple, while π(ξ) is not always completely reducible. One
-can try to consider the category of H-representations all whose irreducible subquo-
-tients lie in Irrξ(H), but then one does not get a nice formula for the functor Eξ.
-Proof. (a) and (b) Since ξ is positive, the operators π(w,ξ ) with w ∈ W ξ span
-EndH(π(ξ)) [Sol3, Theorem 3.3.1]. Let v ∈W (Rξ). The intertwiner π(v,P,δ,t ′) is
-rational in t′ and by Theorem 1.5.a it is scalar for all t′ in a Zariski-dense subset of
-(T P
-un)Wξ . Hence π(v,P,δ,t ′) is scalar for all t′ ∈ (T P )Wξ , which together with (29)
-and (17) implies that
-EndH(π(ξ)) = span {π(w,ξ ) : w ∈ Rξ}.
-All the intertwiners π(w,P,δ,t ′) depend continuously on t′, so the type of π(P,δ,t ′)
-as a projective Rξ-representation is constant on connected components of ( T P )Wξ .
-Again by Theorem 1.5.a {π(w,ξ ) : w ∈ Rξ} is linearly independent for generic
-t′ ∈ (T P
-un)Wξ , so it is in fact linearly independent for all t′ ∈ (T P )Wξ . Now the mul-
-tiplication rules for intertwining operators (17) show tha t End H(π(ξ)) is isomorphic
-to a twisted group algebra of Rξ.
-(c) Let A = End C[Rξ,κξ] be the bicommutant of π(ξ, H) in End C(H). There is a
-canonical bijection
-Irr(C[Rξ,κ ξ]) → Irr(A) : ρ ↦→~πρ
-A FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS 21
-such thatπ(ξ) ∼=
-⨁
-ρ ~πρ⊗ρ asA⊗C[Rξ,κ ξ]-modules. By construction the irreducible
-A-subrepresentations ofπ(ξ) are precisely the indecomposable H-subrepresentations
-of π(ξ). By [Sol3, Proposition 3.1.4] every ~πρ has a unique irreducible quotient H-
-representation, say πρ, and πρ ∼= πρ′ if and only if ~πρ ∼= ~πρ′ as H-representations.
-Thus ρ ↦→πρ sets up a bijection between Irr( C[Rξ,κ ξ]) and the equivalence classes
-of irreducible quotients of π(ξ). By Theorem 1.2 the latter collection is none other
-than Irr Wξ(H). ✷
+In this section we extend the definitions and results from Section \ref{sec:RgroupTemp}
+(which stem from \cite{DeOp2}) to non-tempered induction data $\xi \in \Xi \setminus \Xi_{un}$.
+One approach would be to define the R-group of $\xi = (P,\delta,t)$ to be that of
+$\xi_{un} = (P,\delta ,t \,|t|^{-1})$. This works out well in most cases, but it is unsatisfactory
+if the isotropy group $\mc W_{\xi_{un}}$ is strictly larger than $\mc W_\xi$.
+
+The problem is that $t \, |t|^{-1}$ is not always a generic point of $(T^P)^{\mc W_\xi}$.
+To overcome this, we define $\mc M_\xi$ to be the collection of mirrors $M \in \mc M^{P,\delta}$
+that contain not only $t \, |t|^{-1}$, but the entire connected component of $t |t|^{-1}$ in
+$(T^P_{un})^{\mc W_\xi}$. Notice that all components of $(T^P)^{\mc W_\xi}$ are cosets of a
+complex subtorus of $T^P$. Since $t \, |t|^r \in (T^P)^{\mc W_\xi}$ for all $r \in \R ,\; \mc M_\xi$
+is precisely the collection of mirrors whose complexification contains $t$.
+
+Now we define $R_{\xi} ,R^+_{\xi}$ and $\mf R_\xi$ as in \eqref{eq:24} and \eqref{eq:3}.
+We note that $\mf R_\xi$ may differ from $\mf R_{\xi_{un}}$, but that $R_\xi = R_{P,\delta,t'}$
+for almost all $t' \in (T^P_{un})^{\mc W_\xi}$. For positive induction data there is an analogue
+of Theorem \ref{thm:KnappStein}:
+
+\begin{thm} \label{thm:KnappSteinNontemp}
+Let $\xi = (P,\delta,t) \in \Xi^+$.
+\enuma{
+\item For $w \in \mc W_\xi$ the intertwiner $\pi (w,\xi)$ is scalar if and only if $w \in W(R_{\xi})$.
+\item There exists a 2-cocycle $\kappa_\xi$ of $\mf R_\xi$ such that
+$\mr{End}_{\mc H} (\pi (\xi))$ is isomorphic to the twisted group algebra $\C [\mf R_\xi ,\kappa_\xi]$.
+\item There exists a unique bijection
+\[
+\mr{Irr}(\C [\mf R_\xi ,\kappa_\xi]) \to \mr{Irr}_{\mc W \xi} ( \mc H ) :
+\rho \mapsto \pi_\rho ,
+\]
+and there exist indecomposable direct summands $\widetilde{\pi_\rho}$ of $\pi (\xi)$,
+such that $\pi_\rho$ is a quotient of $\widetilde{\pi_\rho}$ and
+$\pi (\xi) \cong \bigoplus_\rho \widetilde{\pi_\rho} \otimes \rho$ as
+$\mc H \otimes \C [\mf R_\xi ,\kappa_\xi]$-modules.
+}
+\end{thm}
+\begin{rem} Part (a) also holds for general $\xi \in \Xi$. Part (d) of Theorem
+\ref{thm:KnappStein} does not admit a nice generalization to $\xi \in \Xi^+$.
+One problem is that the category $\mr{Mod}_f (\C [\mf R_\xi ,\kappa_\xi])$ is semisimple,
+while $\pi (\xi)$ is not always completely reducible. One can try to consider the category of
+$\mc H$-representations all whose irreducible subquotients lie in $\mr{Irr}_\xi (\mc H)$,
+but then one does not get a nice formula for the functor $E_\xi$.
+\end{rem}
+\emph{Proof.}
+(a) and (b) Since $\xi$ is positive, the operators $\pi (w,\xi)$ with $w \in \mc W_\xi$ span
+$\mr{End}_{\mc H} (\pi (\xi))$ \cite[Theorem 3.3.1]{Sol-Irr}.
+Let $v \in W(R_{\xi})$. The intertwiner $\pi (v,P,\delta ,t')$ is rational in $t'$ and
+by Theorem \ref{thm:KnappStein}.a it is scalar for all $t'$ in a Zariski-dense subset of
+$(T^P_{un})^{\mc W_\xi}$. Hence $\pi (v,P,\delta ,t')$ is scalar for all
+$t' \in (T^P)^{\mc W_\xi}$, which together with \eqref{eq:3} and \eqref{eq:multIntOp} implies that
+\[
+\mr{End}_{\mc H} (\pi (\xi)) = \mr{span} \{ \pi (w,\xi) : w \in \mf R_\xi \} .
+\]
+All the intertwiners $\pi (w,P,\delta,t')$ depend continuously on $t'$, so the type of
+$\pi (P,\delta,t')$ as a projective $\mf R_\xi$-representation is constant on connected
+components of $(T^P)^{\mc W_\xi}$. Again by Theorem \ref{thm:KnappStein}.a
+$\{ \pi (w,\xi) : w \in \mf R_\xi \}$ is linearly independent for generic
+$t' \in (T^P_{un})^{\mc W_\xi}$, so it is in fact linearly independent for all $t' \in (T^P)^{\mc W_\xi}$.
+Now the multiplication rules for intertwining operators \eqref{eq:multIntOp} show that
+$\mr{End}_{\mc H} (\pi (\xi))$ is isomorphic to a twisted group algebra of $\mf R_\xi$.
+
+(c) Let $A = \mr{End}_{\C [\mf R_\xi,\kappa_\xi]}$ be the bicommutant of $\pi (\xi, \mc H)$ in
+$\mr{End}_\C (\mc H)$. There is a canonical bijection
+\[
+\mr{Irr}(\C [\mf R_\xi ,\kappa_\xi]) \to \mr{Irr} (A) : \rho \mapsto \widetilde{\pi_\rho}
+\]
+such that $\pi (\xi) \cong \bigoplus_\rho \widetilde{\pi_\rho} \otimes \rho$ as
+$A \otimes \C [\mf R_\xi ,\kappa_\xi]$-modules. By construction the irreducible $A$-subrepresentations
+of $\pi (\xi)$ are precisely the indecomposable $\mc H$-subrepresentations of $\pi (\xi)$.
+By \cite[Proposition 3.1.4]{Sol-Irr} every $\widetilde{\pi_\rho}$ has a unique irreducible quotient
+$\mc H$-representation, say $\pi_\rho$, and $\pi_\rho \cong \pi_{\rho'}$ if and only if
+$\widetilde{\pi_\rho} \cong \widetilde{\pi_{\rho'}}$ as $\mc H$-representations. Thus
+$\rho \mapsto \pi_\rho$ sets up a bijection between Irr$(\C [\mf R_\xi ,\kappa_\xi])$ and the
+equivalence classes of irreducible quotients of $\pi (\xi)$. By Theorem \ref{thm:parametrizationOfDual}
+the latter collection is none other than $\mr{Irr}_{\mc W \xi} (\mc H). \qquad \Box$
+\vspace{4mm}

@@ -1,0 +1,70 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2205.01282v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2205.01282v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2205.01282v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2205.01282&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2205.01282v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2205.01282v2",
+    "content_type": "application/gzip",
+    "sha256": "238361b37aa64cecb8a5f66f25c4c63bf286df098e9116e9e65c18c8bb535d1e",
+    "bytes": 36518,
+    "fetched": "2026-10-10T15:17:31+00:00",
+    "files": [
+      {
+        "path": "source/files/Plumbed_GPPV_arXiv.bbl",
+        "role": "bbl",
+        "sha256": "d8612b66bc2d3e2ceec9e337ec751a3600bce58de2a1af45935a43a290458607",
+        "bytes": 7681
+      },
+      {
+        "path": "source/files/Plumbed_GPPV_arXiv.tex",
+        "role": "tex",
+        "sha256": "9fcbea7202283bdb0c8b5f4b2ebb17fdc2dbc066ec3664888aa4a24b56024bd3",
+        "bytes": 75603
+      },
+      {
+        "path": "source/files/mycommand.sty",
+        "role": "sty",
+        "sha256": "5569e1c74fd8b4df1d643259094c4d793e5677f8ac000811a15a0e39ede294e5",
+        "bytes": 9217
+      },
+      {
+        "path": "source/files/mypackage.sty",
+        "role": "sty",
+        "sha256": "ea88df3b71114e03f55689719d4495a1e54f5b3899fcf4b4140eed760332fc5c",
+        "bytes": 2253
+      },
+      {
+        "path": "source/files/mytheoremeng.sty",
+        "role": "sty",
+        "sha256": "0ef5841a853a592354f0f9ec1f25010990587c92f1e6179dc96d9bd173fcc3a2",
+        "bytes": 3095
+      },
+      {
+        "path": "source/files/quantum_inv_plumbed_work.bib",
+        "role": "bib",
+        "sha256": "750e3779e7283cb687ad5c5f98e31fa30d6e86b9c1fd0dbd32b3fe7c18e36f84",
+        "bytes": 48027
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

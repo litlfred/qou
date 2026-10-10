@@ -7,129 +7,51 @@ section_number: 1
 pages: 1-4
 source_pdf: 2607.10525v1.pdf
 source_sha256: b893cb4c87ea1d66
+text_source: latex
+latex_prose_ratio: 0.978
+latex_coverage_ratio: 0.817
 doc_brief: "FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE TENSOR CATEGORIES — LetGbe a finite group acting on a finite tensor categoryC."
 ---
-LetCbe a finite tensor category over an algebraically closed fieldkof characteristic
-zero. Afiber functoronCis ak-linear exact faithful tensor functorF:C→Vec k.
-Classical neutral Tannakian duality reconstructs affine group schemes from symmetric
-tensor categories equipped with a fiber functor [SR72, DM82]. In the non-symmetric
-setting relevant here, Tannaka–Krein reconstruction instead produces a Hopf alge-
-bra [JS91, Sch92, BV07]: for every fiber functorFon a finite tensor categoryC, there
-is a finite-dimensional Hopf algebraAF withC≃Rep(A F ), under whichFbecomes
-the forgetful functor [EGNO15, Theorem 5.3.12]. The fiber-functor problem is thus
-the problem ofHopf realization: deciding when a finite tensor category is the repre-
-sentation category of a finite-dimensional Hopf algebra, and counting the realizations
-arising from inequivalent forgetful functors.
-For group-theoretical fusion categories this problem has a concrete answer in terms
-of finite groups and cohomology. Recall that a fusion category is calledgroup-
-theoreticalif it is categorically Morita equivalent toVec ω
-G, the category of finite-
-dimensionalG-graded vector spaces with associativity constraint defined by a3-
-cocycleω∈Z 3(G,k×). In this case fiber functors are described by subgroup and
-2020Mathematics Subject Classification.18M05, 18M20, 16T05.
-Key words and phrases.finite tensor category, equivariantization, fiber functor, module category,
-gauging.
-1
-arXiv:2607.10525v1  [math.QA]  12 Jul 2026
-2 C. GALINDO, C. GALLEGO, AND Y. MORALES
-cochain data [Ost03, Nik08]. Equivariantizations give a different source of exam-
-ples. If a finite groupGacts on a tensor categoryC, thenC G is the category of
-objects ofCequipped with compatibleG-equivariant structures, and is again a finite
-tensor category. Equivariantizations of Tambara–Yamagami categories, the fusion
-categories with simple objectsA∪{m}and fusion rulem⊗m= L
-a∈Aa, give
-non-group-theoretical semisimple Hopf algebras [Nik08, TY98], answering [ENO05,
-Question 8.45]. Thus non-group-theoretical fusion categories may still admit fiber
-functors; consequently, the group-theoretical classification does not cover the gen-
-eral fiber-functor problem. Our first result classifies fiber functors on an arbitrary
-equivariantization.
-Theorem 1.1.LetGbe a finite group acting on a finite tensor categoryC. Fiber
-functors onCG are classified by conjugacy classes of pairs(H,M), whereH⊆Gis a
-subgroup andMis anH-equivariantC-module category whose underlyingC-module
-category is indecomposable, exact, and semisimple, satisfying:
-(1)Hacts transitively onIrr(M);
-(2)for some, and hence every, simple objectX∈M, the stabilizer cocycle
-[αX]∈H 2(StH(X),k×)
-is non-degenerate.
-This is Theorem 3.6; the relevant notion of conjugacy is Definition 2.3. In this
-form, the theorem turns the fiber-functor problem forCG into a rank-one condition
-for equivariant module categories; via Tannaka–Krein reconstruction it also covers
-Hopf realizations outside the semisimple setting. Structurally, the simple objects of
-MH are obtained fromH-orbits inIrr(M)together with projective representations of
-stabilizers. HenceM H has rank one exactly when theH-action is transitive and the
-twisted group algebrakαX[StH(X)]of a stabilizer is simple. When the relevant second
-cohomology groups vanish, for instance whenever every subgroup ofGis cyclic, the
-description reduces to freeness and transitivity of theH-action onIrr(M).
-The proof combines three known facts. Fiber functors correspond to rank-one exact
-module categories [EGNO15, Proposition 7.3.3 and Example 7.4.6]. Exact module
-categories over equivariantizations come from equivariant module categories over the
-original category [GM12]. Finally, simple objects in equivariant semisimple categories
-are governed by projective representations of stabilizers. Combining these facts gives
-Theorem 1.1.
-Here and throughout,Cn denotes the cyclic group of ordern.
-OurfirstapplicationconcernsafamilyofsemisimpleHopfalgebrasduetoNikshych.
-Theorem 1.2.Letpbe an odd prime, and letH p be Nikshych’s semisimple Hopf
-algebra of dimension4p2 constructed in[Nik08]. ThenRep(H p)has one equivalence
-class of fiber functors ifp≡3 (mod 4), and two equivalence classes of fiber functors
-ifp≡1 (mod 4).
-This is Theorem 4.4. In Nikshych’s construction,Hp is reconstructed from theC2-
-equivariantization of the Tambara–Yamagami categoryTY(Cp×C p,χp,p−1), where
-FIBER FUNCTORS OF EQUIV ARIANTIZATIONS 3
-χp is the standard hyperbolic form andC2 acts by interchanging the two factors. This
-Tambara–Yamagami category has exactly two fiber functors, corresponding to the or-
-dered decompositionsCp×Cp =L 1×L 2 andC p×Cp =L 2×L 1, whereL1 =C p×{0}
-andL 2 ={0}×C p. The involution used in the construction ofHp interchanges them;
-hence they give one equivalence class on the equivariantization. The remaining possi-
-bility left by Theorem 1.1, namely a fiber functor coming fromH=C2, is controlled
-by the rank-two module categories over this Tambara–Yamagami category described
-in [Nik08]: it is impossible forp≡3 (mod 4), and contributes one additional class
-forp≡1 (mod 4).
-Our second application concerns gaugings. A gauging of a braided fusion cat-
-egoryBis an equivariantizationE G, whereE= L
-g∈GEg is a faithfulG-crossed
-braided fusion category with neutral componentEe =B[CGPW16, ENO10]. Com-
-bining Theorem 1.1 with Clifford theory for module categories over graded fusion
-categories [Gal12, MCnM20], we reduce the module-category input fromEto module
-categories over the neutral componentB, together with extension and equivariant-lift
-data; this is Theorem 5.4. For prime cyclic gaugings the description is especially
-explicit: ifG=C p, the relevant second cohomology groups vanish, and Corollary 5.5
-says that a fiber functor either comes from a rank-one module category overE, or
-from aC p-equivariantE-module category withpsimple objects. In the latter case,
-the module category is either induced from aB-module categoryNfor which every
-componentE g ⊠BNhas rank one, or is already anE-module category of rankp; in
-both subcases the generator acts on simple objects as a singlep-cycle.
-We apply this to the small radical gaugings classified in [GN25]. There the Tan-
-nakian radical is the subcategoryRep(G)being gauged, and the mantle is the braided
-fusion categoryBappearing as the neutral component. The non-pointed, non-
-degenerate entries are canonical gaugings of their mantles by their radicals. We
-reproduce the relevant table as Table 1, whereC(A,q)denotes the pointed mod-
-ular category attached to ametric group(A,q), that is, a finite abelian groupA
-with a non-degenerate quadratic formq, and add the fiber-functor conclusion. Since
-a non-degenerate braiding onRep(H)corresponds to a factorizable quasitriangular
-structure on the semisimple Hopf algebraH, deciding which entries admit a fiber
-functor is the same as deciding which are realized by finite-dimensional semisimple
-factorizable Hopf algebras.
-Corollary 1.3.Apart from pointed categories, the entries from the small-dimensional
-list in[GN25]considered in Table 1 that admit realizations as representation categories
-of finite-dimensional semisimple factorizable Hopf algebras are exactly:
-(1)the ordinary dihedral doublesRep(D(Dr));
-(2)the hyperbolic prime-cyclic twisted-double rowsRep(D ω(Cr ⋊C p)), withp|
-r−1, for every cohomology class[ω]∈H 3(Cr ⋊Cp,k×).
+Let $\mathcal{C}$ be a finite tensor category over an algebraically closed field ${\Bbbk}$ of characteristic zero. A *fiber functor* on $\mathcal{C}$ is a ${\Bbbk}$-linear exact faithful tensor functor $F:\mathcal{C}\to\mathop{\mathrm{Vec}}_{{\Bbbk}}$. Classical neutral Tannakian duality reconstructs affine group schemes from symmetric tensor categories equipped with a fiber functor [@Saavedra72; @DM82]. In the non-symmetric setting relevant here, Tannaka--Krein reconstruction instead produces a Hopf algebra [@JS91; @Schauenburg92; @BV07]: for every fiber functor $F$ on a finite tensor category $\mathcal{C}$, there is a finite-dimensional Hopf algebra $A_F$ with $\mathcal{C}\simeq\operatorname{Rep}(A_F)$, under which $F$ becomes the forgetful functor [@EGNO15 Theorem 5.3.12]. The fiber-functor problem is thus the problem of *Hopf realization*: deciding when a finite tensor category is the representation category of a finite-dimensional Hopf algebra, and counting the realizations arising from inequivalent forgetful functors.
+
+For group-theoretical fusion categories this problem has a concrete answer in terms of finite groups and cohomology. Recall that a fusion category is called *group-theoretical* if it is categorically Morita equivalent to $\mathop{\mathrm{Vec}}_G^\omega$, the category of finite-dimensional $G$-graded vector spaces with associativity constraint defined by a $3$-cocycle $\omega\in Z^3(G,{\Bbbk}^\times)$. In this case fiber functors are described by subgroup and cochain data [@Os03; @Nik08]. Equivariantizations give a different source of examples. If a finite group $G$ acts on a tensor category $\mathcal{C}$, then $\mathcal{C}^G$ is the category of objects of $\mathcal{C}$ equipped with compatible $G$-equivariant structures, and is again a finite tensor category. Equivariantizations of Tambara--Yamagami categories, the fusion categories with simple objects $A\cup\{m\}$ and fusion rule $m\otimes m=\bigoplus_{a\in A}a$, give non-group-theoretical semisimple Hopf algebras [@Nik08; @TY98], answering [@ENO05 Question 8.45]. Thus non-group-theoretical fusion categories may still admit fiber functors; consequently, the group-theoretical classification does not cover the general fiber-functor problem. Our first result classifies fiber functors on an arbitrary equivariantization.
+
+::: theorem
+[]{#thm:intro_main_classification label="thm:intro_main_classification"} Let $G$ be a finite group acting on a finite tensor category $\mathcal{C}$. Fiber functors on $\mathcal{C}^G$ are classified by conjugacy classes of pairs $(H,\mathcal{M})$, where $H\subseteq G$ is a subgroup and $\mathcal{M}$ is an $H$-equivariant $\mathcal{C}$-module category whose underlying $\mathcal{C}$-module category is indecomposable, exact, and semisimple, satisfying:
+
+1.  $H$ acts transitively on $\operatorname{Irr}(\mathcal{M})$;
+
+2.  for some, and hence every, simple object $X\in\mathcal{M}$, the stabilizer cocycle $$[\alpha_X]\in H^2(\operatorname{St}_H(X),{\Bbbk}^\times)$$ is non-degenerate.
+:::
+
+This is Theorem [\[thm:main_classification\]](#thm:main_classification){reference-type="ref" reference="thm:main_classification"}; the relevant notion of conjugacy is Definition [\[def:conjugate_equivariant_module_categories\]](#def:conjugate_equivariant_module_categories){reference-type="ref" reference="def:conjugate_equivariant_module_categories"}. In this form, the theorem turns the fiber-functor problem for $\mathcal{C}^G$ into a rank-one condition for equivariant module categories; via Tannaka--Krein reconstruction it also covers Hopf realizations outside the semisimple setting. Structurally, the simple objects of $\mathcal{M}^H$ are obtained from $H$-orbits in $\operatorname{Irr}(\mathcal{M})$ together with projective representations of stabilizers. Hence $\mathcal{M}^H$ has rank one exactly when the $H$-action is transitive and the twisted group algebra ${\Bbbk}_{\alpha_X}[\operatorname{St}_H(X)]$ of a stabilizer is simple. When the relevant second cohomology groups vanish, for instance whenever every subgroup of $G$ is cyclic, the description reduces to freeness and transitivity of the $H$-action on $\operatorname{Irr}(\mathcal{M})$.
+
+The proof combines three known facts. Fiber functors correspond to rank-one exact module categories [@EGNO15 Proposition 7.3.3 and Example 7.4.6]. Exact module categories over equivariantizations come from equivariant module categories over the original category [@GM11]. Finally, simple objects in equivariant semisimple categories are governed by projective representations of stabilizers. Combining these facts gives Theorem [\[thm:intro_main_classification\]](#thm:intro_main_classification){reference-type="ref" reference="thm:intro_main_classification"}.
+
+Here and throughout, $C_n$ denotes the cyclic group of order $n$.
+
+Our first application concerns a family of semisimple Hopf algebras due to Nikshych.
+
+::: theorem
+[]{#thm:intro_nikshych label="thm:intro_nikshych"} Let $p$ be an odd prime, and let $H_p$ be Nikshych's semisimple Hopf algebra of dimension $4p^2$ constructed in [@Nik08]. Then $\operatorname{Rep}(H_p)$ has one equivalence class of fiber functors if $p\equiv3\pmod4$, and two equivalence classes of fiber functors if $p\equiv1\pmod4$.
+:::
+
+This is Theorem [\[thm:nikshych_fiber_functors\]](#thm:nikshych_fiber_functors){reference-type="ref" reference="thm:nikshych_fiber_functors"}. In Nikshych's construction, $H_p$ is reconstructed from the $C_2$-equivariantization of the Tambara--Yamagami category $\operatorname{TY}(C_p\times C_p,\chi_p,p^{-1})$, where $\chi_p$ is the standard hyperbolic form and $C_2$ acts by interchanging the two factors. This Tambara--Yamagami category has exactly two fiber functors, corresponding to the ordered decompositions $C_p\times C_p=L_1\times L_2$ and $C_p\times C_p=L_2\times L_1$, where $L_1=C_p\times\{0\}$ and $L_2=\{0\}\times C_p$. The involution used in the construction of $H_p$ interchanges them; hence they give one equivalence class on the equivariantization. The remaining possibility left by Theorem [\[thm:intro_main_classification\]](#thm:intro_main_classification){reference-type="ref" reference="thm:intro_main_classification"}, namely a fiber functor coming from $H=C_2$, is controlled by the rank-two module categories over this Tambara--Yamagami category described in [@Nik08]: it is impossible for $p\equiv3\pmod4$, and contributes one additional class for $p\equiv1\pmod4$.
+
+Our second application concerns gaugings. A gauging of a braided fusion category $\mathcal{B}$ is an equivariantization $\mathcal{E}^G$, where $\mathcal{E}=\bigoplus_{g\in G}\mathcal{E}_g$ is a faithful $G$-crossed braided fusion category with neutral component $\mathcal{E}_e=\mathcal{B}$ [@CGPW16; @ENO10]. Combining Theorem [\[thm:intro_main_classification\]](#thm:intro_main_classification){reference-type="ref" reference="thm:intro_main_classification"} with Clifford theory for module categories over graded fusion categories [@Gal12; @MM20], we reduce the module-category input from $\mathcal{E}$ to module categories over the neutral component $\mathcal{B}$, together with extension and equivariant-lift data; this is Theorem [\[thm:gauging_clifford_fiber_functors\]](#thm:gauging_clifford_fiber_functors){reference-type="ref" reference="thm:gauging_clifford_fiber_functors"}. For prime cyclic gaugings the description is especially explicit: if $G=C_p$, the relevant second cohomology groups vanish, and Corollary [\[cor:prime_cyclic_gauging\]](#cor:prime_cyclic_gauging){reference-type="ref" reference="cor:prime_cyclic_gauging"} says that a fiber functor either comes from a rank-one module category over $\mathcal{E}$, or from a $C_p$-equivariant $\mathcal{E}$-module category with $p$ simple objects. In the latter case, the module category is either induced from a $\mathcal{B}$-module category $\mathcal{N}$ for which every component $\mathcal{E}_g\boxtimes_{\mathcal{B}}\mathcal{N}$ has rank one, or is already an $\mathcal{E}$-module category of rank $p$; in both subcases the generator acts on simple objects as a single $p$-cycle.
+
+We apply this to the small radical gaugings classified in [@GNradical]. There the Tannakian radical is the subcategory $\operatorname{Rep}(G)$ being gauged, and the mantle is the braided fusion category $\mathcal{B}$ appearing as the neutral component. The non-pointed, non-degenerate entries are canonical gaugings of their mantles by their radicals. We reproduce the relevant table as Table [\[tab:small_radical_gaugings\]](#tab:small_radical_gaugings){reference-type="ref" reference="tab:small_radical_gaugings"}, where $\mathcal{C}(A,q)$ denotes the pointed modular category attached to a *metric group* $(A,q)$, that is, a finite abelian group $A$ with a non-degenerate quadratic form $q$, and add the fiber-functor conclusion. Since a non-degenerate braiding on $\operatorname{Rep}(H)$ corresponds to a factorizable quasitriangular structure on the semisimple Hopf algebra $H$, deciding which entries admit a fiber functor is the same as deciding which are realized by finite-dimensional semisimple factorizable Hopf algebras.
+
+::: corollary
+[]{#cor:intro_factorizable_realizations label="cor:intro_factorizable_realizations"} Apart from pointed categories, the entries from the small-dimensional list in [@GNradical] considered in Table [\[tab:small_radical_gaugings\]](#tab:small_radical_gaugings){reference-type="ref" reference="tab:small_radical_gaugings"} that admit realizations as representation categories of finite-dimensional semisimple factorizable Hopf algebras are exactly:
+
+1.  the ordinary dihedral doubles $\operatorname{Rep}(D(D_r))$;
+
+2.  the hyperbolic prime-cyclic twisted-double rows $\operatorname{Rep}(D^\omega(C_r\rtimes C_p))$, with $p\mid r-1$, for every cohomology class $[\omega]\in H^3(C_r\rtimes C_p,{\Bbbk}^\times)$.
+
 All remaining non-pointed entries in that table have no such realization.
-This is Corollary 5.18. Its proof draws on several distinct obstructions. The rows
-containing Ising categories, metaplectic categories, and centers of elliptic Tambara–
-Yamagami categories are excluded by integrality. For the dihedral twisted doubles,
-4 C. GALINDO, C. GALLEGO, AND Y. MORALES
-the group-theoretical description of fiber functors, Goursat’s lemma, and the explicit
-cocycle representatives of [CGR00] show that only the trivial cohomology class sur-
-vives. The odd elliptic prime-cyclic rows are excluded using the prime-cyclic gauging
-description, the non-group-theoreticality theorem of [GPR24], and the Hopf-algebra
-obstruction of [JL09]. The dimension36row requires instead a separate invariant-
-Lagrangian computation for theF4 extension, together with the same Hopf-algebra
-obstruction.
-The paper is organized as follows. Section 2 fixes conventions on finite tensor
-categories, equivariantizations, and equivariant module categories, and records the
-conjugacy theorem for equivariantized module categories, Theorem 2.4. Section 3
-proves the main classification, Theorem 3.6. Section 4 proves Theorem 4.4. Section 5
-establishes the Clifford-theoretic description of fiber functors on gaugings and applies
-it to the table of [GN25].
+:::
+
+This is Corollary [\[cor:factorizable_hopf_realizations\]](#cor:factorizable_hopf_realizations){reference-type="ref" reference="cor:factorizable_hopf_realizations"}. Its proof draws on several distinct obstructions. The rows containing Ising categories, metaplectic categories, and centers of elliptic Tambara--Yamagami categories are excluded by integrality. For the dihedral twisted doubles, the group-theoretical description of fiber functors, Goursat's lemma, and the explicit cocycle representatives of [@CGR00] show that only the trivial cohomology class survives. The odd elliptic prime-cyclic rows are excluded using the prime-cyclic gauging description, the non-group-theoreticality theorem of [@GPR24], and the Hopf-algebra obstruction of [@JL09]. The dimension $36$ row requires instead a separate invariant-Lagrangian computation for the $\mathbb{F}_4$ extension, together with the same Hopf-algebra obstruction.
+
+The paper is organized as follows. Section [\[sec:preliminaries\]](#sec:preliminaries){reference-type="ref" reference="sec:preliminaries"} fixes conventions on finite tensor categories, equivariantizations, and equivariant module categories, and records the conjugacy theorem for equivariantized module categories, Theorem [\[thm:conjugacy_equivariantization\]](#thm:conjugacy_equivariantization){reference-type="ref" reference="thm:conjugacy_equivariantization"}. Section [\[sec:fiber-functors\]](#sec:fiber-functors){reference-type="ref" reference="sec:fiber-functors"} proves the main classification, Theorem [\[thm:main_classification\]](#thm:main_classification){reference-type="ref" reference="thm:main_classification"}. Section [\[sec:nikshych\]](#sec:nikshych){reference-type="ref" reference="sec:nikshych"} proves Theorem [\[thm:nikshych_fiber_functors\]](#thm:nikshych_fiber_functors){reference-type="ref" reference="thm:nikshych_fiber_functors"}. Section [\[sec:gauging\]](#sec:gauging){reference-type="ref" reference="sec:gauging"} establishes the Clifford-theoretic description of fiber functors on gaugings and applies it to the table of [@GNradical].

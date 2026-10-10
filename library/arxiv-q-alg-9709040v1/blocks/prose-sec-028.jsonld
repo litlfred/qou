@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-q-alg-9709040v1/blocks/prose-sec-028",
+  "kind": "prose",
+  "title": "A sketch of the proof",
+  "pageStart": 13,
+  "pageEnd": 13,
+  "text": "../sections/sec-028-45-a-sketch-of-the-proof.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-q-alg-9709040v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-q-alg-9709040v1/manifest.jsonld",
+  "provenance": "ingested"
+}

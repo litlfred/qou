@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-040",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-040",
   "kind": "prose",
   "title": "Involution. The formal quantization of section 3 can be put in the",
   "pageStart": 11,
   "pageEnd": 12,
   "text": "../sections/sec-040-41-involution-the-formal-quantization-of-section.md",
-  "derivedFrom": "library/arxiv-hep-th-0006156v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0006156v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-0006156v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-0006156v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -5,7 +5,8 @@
   "file": "1012.5432v4.pdf",
   "sha256": "ec5f6da1f813649eaa2d181004d06fefc47c4ae42db286849c3ce37313ab6439",
   "bytes": 1595881,
-  "pages": 52
+  "pages": 52,
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -665,6 +666,114 @@
   "likely_scanned": false,
   "toc_entries": 62,
   "sections": 19,
-  "chars_total": 56657
+  "chars_total": 56657,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "arxivupdate.tex",
+   "tex_sections": 11,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-a-hamiltonian",
+     "title": "A Hamiltonian",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-3-instantons",
+     "title": "Instantons",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-1-dirac-monopoles",
+     "title": "Dirac Monopoles",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-1-three-dimensions",
+     "title": "Three Dimensions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-2-two-dimensions",
+     "title": "Two Dimensions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-1-fusion",
+     "title": "Fusion",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-2-antiparticles",
+     "title": "Antiparticles",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-1-particles",
+     "title": "Particles",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-2-braiding-and-fusion",
+     "title": "Braiding and Fusion",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-2-s3",
+     "title": "S3",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-3-a5",
+     "title": "A5",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-4-fusion-rules",
+     "title": "Fusion Rules:",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-1-fusion-probabilities",
+     "title": "Fusion Probabilities",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-1-a5",
+     "title": "A5",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-2-s3",
+     "title": "S3",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-acknowledgments",
+     "title": "Acknowledgments",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-2-a4",
+     "title": "A4",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-3-s4",
+     "title": "S4",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-4-d4",
+     "title": "D4",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,0 +1,16 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2002.07369v2/blocks/definition-sec-001-09",
+  "kind": "definition",
+  "pageStart": 2,
+  "pageEnd": 13,
+  "text": "definition-sec-001-09.md",
+  "derivedFrom": "library/arxiv-2002.07369v2/sections/sec-001",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2002.07369v2/manifest.jsonld",
+  "provenance": "ingested"
+}

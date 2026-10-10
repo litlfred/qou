@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2203.17029v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "MODULAR q-HOLONOMIC MODULES",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2203.17029v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2203.17029v1",
   "contains": [
     "library/arxiv-2203.17029v1/sections/sec-000",
     "library/arxiv-2203.17029v1/sections/sec-001",
@@ -38,8 +43,17 @@
     "library/arxiv-2203.17029v1/sections/sec-029"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2203.17029&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2203.17029v1",
+    "title_source": "slug",
     "source_file": "2203.17029v1.pdf",
     "source_sha256": "5557f7f272cb8a438cdf7b35118d702cd0f14dd029e0a66b8e1c951b7bbf014e",
     "pages": 65,

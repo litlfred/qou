@@ -7,137 +7,49 @@ section_number: 2
 pages: 4-6
 source_pdf: 0606222v2.pdf
 source_sha256: 5c2a45596d04dd07
+text_source: latex
+latex_prose_ratio: 0.982
+latex_coverage_ratio: 0.979
 doc_brief: "QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIONS — We derive explicit dimension formulas for irreducible MF-spherical KF-re- presentations where KF is the maximal compact subgroup of the"
 ---
-Important in our approach is the fact that (quantum) dimensions o f irreducible spher-
-ical representations associated to quantum, real/complex and p-adic Grassmannians are
-degenerations of a generalized dimension formula involving multivariab le little q-Jacobi
-polynomials, which we now introduce. We work over the ﬁeld E (see (1.4)), although in
-the present situation c andd are dummy parameters and could just as well be omitted (in
-contrast to the Macdonald-Koornwinder and multivariable big q-Jacobi case as treated in
-Section 6).
-The symmetric group Sn in n letters acts on Zn
-+ by permuting the coordinates. The
-corresponding fundamental domain is the cone Λ n of partitions with at most n parts. The
-QUANTUM DIMENSIONS AND THEIR NON-ARCHIMEDEAN DEGENERATIO NS 5
-symmetric group Sn acts on E[z] = E[z1,...,z n] by permuting the independent variables
-z1,...,z n. We denote E[z]S for the subalgebra of Sn-invariant polynomials in E[z]. An
-E-basis of E[z]S is formed by the symmetric monomials ~mλ(z) =∑
-µ∈Snλzµ (λ ∈ Λ n). The
-monic multivariable little q-Jacobi polynomial P L
-λ (z) = P L
-λ (z;a,b ;q,t ) ∈ E[z]S of degree
-λ ∈ Λ n from [26] is of the form
-(2.1) P L
-λ (z) = ~mλ(z) +
-∑
-µ∈Λ n:µ<λ
-cL
-λ,µ~mµ(z)
-for certain coeﬃcients cL
-λ,µ = cL
-λ,µ(a,b ;q,t ) ∈ E. The multivariable little q-Jacobi polyno-
-mials can be characterized as solution of a second-order diﬀerence equation, or in terms
-of orthogonality relations deﬁned with respect to an explicit discret e probability orthogo-
-nality measure. The characterization in terms of the diﬀerence equ ation is as follows. For
-j = 1,...,n we write Tj for the multiplicative q-shift in zj,
-(Tjf )(z) = f (z1,...,z j−1,qz j,z j+1,...,z n), f ∈ E[z±1].
-The characterizing diﬀerence equation then reads DLP L
-λ =EqJ
-λ P L
-λ where
-DL =
-n∑
-j=1
-(
-φ+
-L,j(z)(Tj − Id) +φ−
-L,j(z)(T−1
-j − Id)
-)
-,
-φ+
-L,j(z) = qtn−1a
-(
-b − 1
-qzj
-) ∏
-l⁄=j
-zl −tzj
-zl −zj
-, φ −
-L,j(z) =
-(
-1 − 1
-zj
-) ∏
-l⁄=j
-zj −tzl
-zj −zl
-and with eigenvalue
-EqJ
-λ =
-n∑
-j=1
-(
-qabt2n−j−1(qλj − 1) +tj−1(q−λj − 1)
-)
-.
-An algebraic formulation of the orthogonality relations of the multiva riable little q-Jacobi
-polynomials is as follows. Deﬁne an E-linear functional
-hL =ha,b;q,t
-L : E[z]S → E
-by requiring
-hL
-(
-P L
-λ
-)
-=
-{
-1, if λ = 0,
-0, if λ ⁄= 0.
-Deﬁne a form ⟨·, ·⟩L = ⟨·, ·⟩a,b;q,t
-L on E[z]S by
-(2.2) ⟨p1,p 2⟩L =hL
-(
-p1(z)p2(z)
-)
-, p 1,p 2 ∈ E[z]S,
-where p(z) ↦→p(z) stands for the anti-linear algebra involution on E[z] which extends
-complex conjugation on C by requiring that the parameters a,b,c,d,q,t and the variables
-zj to be formally real, e.g. a = a and zj = zj. The orthogonality relations now take the
-form
-(2.3) ⟨P L
-λ,P L
-µ ⟩L =NL(λ)δλ,µ, λ,µ ∈ Λ n
-6 URI ONN AND JASPER V. STOKMAN
-for suitable explicit quadratic norms NL(λ) = NL(λ;a,b ;q,t ) ∈ E, which are recalled in
-Subsection 6.2.
-The expressions
-(2.4) Dq(λ;a,b ;t) =
-(
-P L
-λ (0;q−1a,q−1b;q,t )
-) 2
-NL(λ;q−1a,q−1b;q,t ) ∈ E, λ ∈ Λ n
-play a crucial role in the sequel. Note that Dq(λ;a,b ;t) is the generalized dimension d(λ)
-from the introduction (see (1.3)), up to a slight reparametrization of the four auxiliary
-parameters a,b,q and t (which we justify in a moment).
-We show that specializations of the parameters ( a,b,t ) in Dq(λ) give the quantum di-
-mensions of spherical irreducible representations associated to q uantum complex Grass-
-mannians. In addition we show that suitable degenerations in ( a,b,q,t ) lead to the dimen-
-sions of spherical irreducible representations associated to comp lex/real Grassmannians
-(in which case the four parameters degenerate to one, but with diﬀ erent exponents), and
-to dimensions of spherical irreducible representations associated to Grassmannians over
-non-Archimedean local ﬁelds (in which case q degenerates to zero while the remaining
-three parameters (a,b,t ) are specialized to q-independent values which are explicitly given
-in terms of the cardinality of the residue ﬁeld). The latter case thus does not involve
-degenerating the parameters ( a,b,t ), which is the reason to use the multivariable little q-
-Jacobi polynomials with parameters ( q−1a,q−1b,t ) in the deﬁnition (2.4) of the generalized
-dimensions.
-We derive evaluation formulas forP L
-λ in Section 6, which thus lead to explicit evaluations
-of Dq(λ) = Dq(λ;a,b ;t) and to explicit evaluations of the (quantum) dimensions for the
-irreducible spherical irreducible representations associated to diﬀ erent types of (quantum)
-Grassmannians.
+[]{#qJsection label="qJsection"}
+
+Important in our approach is the fact that (quantum) dimensions of irreducible spherical representations associated to quantum, real/complex and $p$-adic Grassmannians are degenerations of a generalized dimension formula involving multivariable little $q$-Jacobi polynomials, which we now introduce. We work over the field $\mathbb{E}$ (see [\[Fz\]](#Fz){reference-type="eqref" reference="Fz"}), although in the present situation $c$ and $d$ are dummy parameters and could just as well be omitted (in contrast to the Macdonald-Koornwinder and multivariable big $q$-Jacobi case as treated in Section [\[evaluation\]](#evaluation){reference-type="ref" reference="evaluation"}).
+
+The symmetric group $S_n$ in $n$ letters acts on $\mathbb{Z}_+^n$ by permuting the coordinates. The corresponding fundamental domain is the cone $\Lambda_n$ of partitions with at most $n$ parts. The symmetric group $S_n$ acts on $\mathbb{E}[z]=\mathbb{E}[z_1,\ldots,z_n]$ by permuting the independent variables $z_1,\ldots,z_n$. We denote $\mathbb{E}[z]^S$ for the subalgebra of $S_n$-invariant polynomials in $\mathbb{E}[z]$. An $\mathbb{E}$-basis of $\mathbb{E}[z]^S$ is formed by the symmetric monomials $\widetilde{m}_\lambda(z)=\sum_{\mu\in S_n\lambda}z^\mu$ ($\lambda\in\Lambda_n$). The monic multivariable little $q$-Jacobi polynomial $P_\lambda^L(z)=P_\lambda^L(z;a,b;q,t)\in \mathbb{E}[z]^S$ of degree $\lambda\in\Lambda_n$ from [@S0] is of the form $$\begin{equation}
+\label{expansionL}
+P_\lambda^L(z)=\widetilde{m}_\lambda(z)+\sum_{\mu\in\Lambda_n: \mu<\lambda}c_{\lambda,\mu}^L\widetilde{m}_{\mu}(z)
+\end{equation}$$ for certain coefficients $c_{\lambda,\mu}^L=c_{\lambda,\mu}^L(a,b;q,t)\in \mathbb{E}$. The multivariable little $q$-Jacobi polynomials can be characterized as solution of a second-order difference equation, or in terms of orthogonality relations defined with respect to an explicit discrete probability orthogonality measure. The characterization in terms of the difference equation is as follows. For $j=1,\ldots,n$ we write $T_j$ for the multiplicative $q$-shift in $z_j$, $$(T_jf)(z)=f(z_1,\ldots,z_{j-1},qz_j, z_{j+1},\ldots,z_n),\qquad f\in \mathbb{E}[z^{\pm 1}].$$ The characterizing difference equation then reads $D_LP_\lambda^L=E_\lambda^{qJ}P_\lambda^L$ where $$\begin{equation*}
+\begin{split}
+D_L&=\sum_{j=1}^n\bigl(\phi_{L,j}^+(z)(T_j-\hbox{Id})+\phi_{L,j}^-(z)(T_j^{-1}-\hbox{Id})\bigr),\\
+\phi_{L,j}^+(z)&=qt^{n-1}a\bigl(b-\frac{1}{qz_j}\bigr)\prod_{l\not=j}\frac{z_l-tz_j}{z_l-z_j},
+\qquad
+\phi_{L,j}^-(z)=\bigl(1-\frac{1}{z_j}\bigr)\prod_{l\not=j}\frac{z_j-tz_l}{z_j-z_l}
+\end{split}
+\end{equation*}$$ and with eigenvalue $$E_\lambda^{qJ}=\sum_{j=1}^n\bigl(qabt^{2n-j-1}(q^{\lambda_j}-1)+t^{j-1}(q^{-\lambda_j}-1)\bigr).$$ An algebraic formulation of the orthogonality relations of the multivariable little $q$-Jacobi polynomials is as follows. Define an $\mathbb{E}$-linear functional $$h_L=h_L^{a,b;q,t}: \mathbb{E}[z]^S\rightarrow \mathbb{E}$$ by requiring $$\begin{equation*}
+h_L\bigl(P_\lambda^L\bigr)=
+\begin{cases}
+1,\qquad &\hbox{ if } \lambda=0,\\
+0,\qquad &\hbox{ if } \lambda\not=0.
+\end{cases}
+\end{equation*}$$ Define a form $\langle \cdot,\cdot\rangle_L= \langle
+\cdot,\cdot\rangle_L^{a,b;q,t}$ on $\mathbb{E}[z]^S$ by $$\begin{equation}
+\label{Lpairing}
+\langle
+p_1,p_2\rangle_L=h_L\bigl(p_1(z)\overline{p_2(z)}\bigr),\qquad
+p_1,p_2\in \mathbb{E}[z]^S,
+\end{equation}$$ where $p(z) \mapsto \overline{p(z)}$ stands for the anti-linear algebra involution on $\mathbb{E}[z]$ which extends complex conjugation on $\mathbb{C}$ by requiring that the parameters $a,b,c,d,q,t$ and the variables $z_j$ to be formally real, e.g. $\overline{a}=a$ and $\overline{z_j}=z_j$. The orthogonality relations now take the form $$\begin{equation}
+\langle P_\lambda^L,P_\mu^L\rangle_L=N_L(\lambda)\delta_{\lambda,\mu},
+\qquad \lambda,\mu\in\Lambda_n
+\end{equation}$$ for suitable explicit quadratic norms $N_L(\lambda)=N_L(\lambda;a,b;q,t)\in \mathbb{E}$, which are recalled in Subsection [\[little\]](#little){reference-type="ref" reference="little"}.
+
+The expressions $$\begin{equation}
+\label{Dgeneralized}
+D_q(\lambda;a,b;t)=
+\frac{\bigl(P_\lambda^L(0;q^{-1}a,q^{-1}b;q,t)\bigr)^2}{N_L(\lambda;q^{-1}a,q^{-1}b;q,t)}
+\in \mathbb{E}, \qquad \lambda\in\Lambda_n
+\end{equation}$$ play a crucial role in the sequel. Note that $D_q(\lambda;a,b;t)$ is the generalized dimension $d(\lambda)$ from the introduction (see [\[tildeD\]](#tildeD){reference-type="eqref" reference="tildeD"}), up to a slight reparametrization of the four auxiliary parameters $a,b,q$ and $t$ (which we justify in a moment).
+
+We show that specializations of the parameters $(a,b,t)$ in $D_q(\lambda)$ give the quantum dimensions of spherical irreducible representations associated to quantum complex Grassmannians. In addition we show that suitable degenerations in $(a,b,q,t)$ lead to the dimensions of spherical irreducible representations associated to complex/real Grassmannians (in which case the four parameters degenerate to one, but with different exponents), and to dimensions of spherical irreducible representations associated to Grassmannians over non-Archimedean local fields (in which case $q$ degenerates to zero while the remaining three parameters $(a,b,t)$ are specialized to $q$-independent values which are explicitly given in terms of the cardinality of the residue field). The latter case thus does not involve degenerating the parameters $(a,b,t)$, which is the reason to use the multivariable little $q$-Jacobi polynomials with parameters $(q^{-1}a, q^{-1}b,t)$ in the definition [\[Dgeneralized\]](#Dgeneralized){reference-type="eqref" reference="Dgeneralized"} of the generalized dimensions.
+
+We derive evaluation formulas for $P_\lambda^L$ in Section [\[evaluation\]](#evaluation){reference-type="ref" reference="evaluation"}, which thus lead to explicit evaluations of $D_q(\lambda)=D_q(\lambda;a,b;t)$ and to explicit evaluations of the (quantum) dimensions for the irreducible spherical irreducible representations associated to different types of (quantum) Grassmannians.

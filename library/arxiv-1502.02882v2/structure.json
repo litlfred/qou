@@ -6,7 +6,8 @@
   "sha256": "43641c6f3aed63dd287a423ba8abcda0b4d36b3df9bdd585fed35339436d8f01",
   "bytes": 1207509,
   "pages": 36,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -432,6 +433,143 @@
   "likely_scanned": false,
   "toc_entries": 23,
   "sections": 23,
-  "chars_total": 57475
+  "chars_total": 57475,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Pivotal.tex",
+   "tex_sections": 6,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.996,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-string-diagrams",
+     "title": "String diagrams",
+     "prose_ratio": 0.122,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-conventions-for-general-monoidal-categories",
+     "title": "Conventions for general monoidal categories",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-22-conventions-for-fusion-categories",
+     "title": "Conventions for fusion categories",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-3-the-pivotal-operators-on-a-fusion-category",
+     "title": "The pivotal operators on a fusion category",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-32-the-pairing-convention",
+     "title": "The pairing convention",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-31-fusion-and-frobenius-peron-dimensions",
+     "title": "Fusion and Frobenius-Peron dimensions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-321-further-graphical-conventions",
+     "title": "Further graphical conventions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-33-the-pivotal-operators",
+     "title": "The pivotal operators",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-34-positivity-of-paired-dimensions",
+     "title": "Positivity of paired dimensions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-35-the-pivotal-operators-as-a-monoidal-functor",
+     "title": "The pivotal operators as a monoidal functor",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-36-the-pivotal-operators-are-the-double-dual-fun",
+     "title": "The pivotal operators are the double dual functor",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-4-explicit-formula-for-the-pivotal-operators",
+     "title": "Explicit formula for the pivotal operators",
+     "prose_ratio": 0.081,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-013-42-the-pivotal-indicators",
+     "title": "The pivotal indicators",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-41-monodromy-interpretation-of-the-pivotal-opera",
+     "title": "Monodromy interpretation of the pivotal operators",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-43-formula-for-the-pivotal-operators",
+     "title": "Formula for the pivotal operators",
+     "prose_ratio": 0.43,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-5-pivotal-structures",
+     "title": "Pivotal structures",
+     "prose_ratio": 0.078,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-017-51-explicit-equations-for-pivotal-structures",
+     "title": "Explicit equations for pivotal structures",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-52-fusion-homomorphisms",
+     "title": "Fusion homomorphisms",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-53-sphericalization-of-a-fusion-category",
+     "title": "Sphericalization of a fusion category",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-6-ocneanu-rigidity",
+     "title": "Ocneanu rigidity",
+     "prose_ratio": 0.126,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-021-61-the-tangent-complex",
+     "title": "The tangent complex",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-62-vanishing-of-cohomology",
+     "title": "Vanishing of cohomology",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

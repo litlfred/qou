@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9909027v1/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "(w∗ is w written backwards) satisﬁes alt( w1w∗",
+  "pageStart": 44,
+  "pageEnd": 47,
+  "contains": [
+    "library/arxiv-math-9909027v1/blocks/prose-sec-009",
+    "library/arxiv-math-9909027v1/blocks/corollary-sec-009-01",
+    "library/arxiv-math-9909027v1/blocks/corollary-sec-009-02",
+    "library/arxiv-math-9909027v1/blocks/example-sec-009-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9909027v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9909027v1/manifest.jsonld",
+  "provenance": "ingested"
+}

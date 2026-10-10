@@ -1,0 +1,62 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0808.1923v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Connections on Non-Abelian Gerbes and their Holonomy",
+  "contains": [
+    "library/arxiv-0808.1923v3/sections/sec-000",
+    "library/arxiv-0808.1923v3/sections/sec-001",
+    "library/arxiv-0808.1923v3/sections/sec-002",
+    "library/arxiv-0808.1923v3/sections/sec-003",
+    "library/arxiv-0808.1923v3/sections/sec-004",
+    "library/arxiv-0808.1923v3/sections/sec-005",
+    "library/arxiv-0808.1923v3/sections/sec-006",
+    "library/arxiv-0808.1923v3/sections/sec-007",
+    "library/arxiv-0808.1923v3/sections/sec-008",
+    "library/arxiv-0808.1923v3/sections/sec-009",
+    "library/arxiv-0808.1923v3/sections/sec-010",
+    "library/arxiv-0808.1923v3/sections/sec-011",
+    "library/arxiv-0808.1923v3/sections/sec-012",
+    "library/arxiv-0808.1923v3/sections/sec-013",
+    "library/arxiv-0808.1923v3/sections/sec-014",
+    "library/arxiv-0808.1923v3/sections/sec-015",
+    "library/arxiv-0808.1923v3/sections/sec-016",
+    "library/arxiv-0808.1923v3/sections/sec-017",
+    "library/arxiv-0808.1923v3/sections/sec-018",
+    "library/arxiv-0808.1923v3/sections/sec-019"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0808.1923&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0808.1923v3",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "0808.1923v3.pdf",
+    "source_sha256": "3c53f7c0fd9acf8929545496dfb3eab2ec11a5ad9ddf3ac9aed9aa4c75a22019",
+    "pages": 57,
+    "arxiv": {
+      "id": "0808.1923",
+      "version": "3",
+      "primary_class": "math.DG",
+      "stamp_date": "24 Sep 2013"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -6,7 +6,8 @@
   "sha256": "e610a4fa938a7cc9fbe349fb60cea9118a492064b62bfd59ad18951fff491ade",
   "bytes": 827058,
   "pages": 83,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -1042,6 +1043,321 @@
   "likely_scanned": false,
   "toc_entries": 59,
   "sections": 59,
-  "chars_total": 191797
+  "chars_total": 191797,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "GR4allSB.tex",
+   "tex_sections": 7,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-2-ben-elias-and-geordie-williamson",
+     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-i-ntroduction",
+     "title": "I NTRODUCTION",
+     "prose_ratio": 0.012,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-11-the-hecke-algebra-by-generators-and-relations",
+     "title": "The Hecke algebra by generators and relations. LetG be a split \ufb01nite reductive",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-12-the-hecke-category-beginning-with-the-seminal",
+     "title": "The Hecke category. Beginning with the seminal work [KL79] of Kazhdan and",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-13-soergel-bimodules-just-as-iwahori-gave-an-int",
+     "title": "Soergel bimodules. Just as Iwahori gave an intrinsic construction of the Hecke",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-4-ben-elias-and-geordie-williamson",
+     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-14-soergel-bimodules-by-generators-and-relations",
+     "title": "Soergel bimodules by generators and relations. A Bott-Samelson bimodule is a",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-6-ben-elias-and-geordie-williamson",
+     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-141-one-color-relations-it-was-pointed-out-in-ek",
+     "title": "One color relations: It was pointed out in [EK] that most of the one color rela-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-142-two-color-relations-two-color-graphs-and-soe",
+     "title": "Two color relations: Two color graphs and Soergel bimodules for the dihedral",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-8-ben-elias-and-geordie-williamson",
+     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-143-three-color-or-zamolodchikov-relations-there",
+     "title": "Three color or \u201cZamolodchikov\u201d relations: There is one relation for each \ufb01nite par-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-10-ben-elias-and-geordie-williamson",
+     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-15-consequences-for-the-structure-of-soergel-bim",
+     "title": "Consequences for the structure of Soergel bimodules. Let D denote the di-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-12-ben-elias-and-geordie-williamson",
+     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-17-acknowledgements-both-authors-would-like-to-t",
+     "title": "Acknowledgements. Both authors would like to thank Mikhail Khovanov for",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-2-t-he-hecke-algebra",
+     "title": "T HE HECKE ALGEBRA",
+     "prose_ratio": 0.012,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-017-21-basic-de\ufb01nitions-let-ws-be-a-coxeter-system-a",
+     "title": "Basic de\ufb01nitions. Let (W,S ) be a Coxeter system and let e \u2208 W denote the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-14-ben-elias-and-geordie-williamson",
+     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-22-the-kazhdan-lusztig-basis-the-hecke-algebra-i",
+     "title": "The Kazhdan-Lusztig basis. The Hecke algebra is equipped with a /CI -linear bar",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-23-the-presentation-in-the-kazhdan-lusztig-gener",
+     "title": "The presentation in the Kazhdan-Lusztig generators. As the elementsHs gen-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-16-ben-elias-and-geordie-williamson",
+     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-24-the-standard-trace-and-the-defect-formula-a-t",
+     "title": "The standard trace and the defect formula. A trace on H is a Z[v\u00b11]-linear map",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-18-ben-elias-and-geordie-williamson",
+     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-3-s-oergel-bimodules",
+     "title": "S OERGEL BIMODULES",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-025-31-realizations-of-coxeter-systems-for-both-soer",
+     "title": "Realizations of Coxeter systems. For both Soergel\u2019s construction of Soergel bi-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-20-ben-elias-and-geordie-williamson",
+     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-22-ben-elias-and-geordie-williamson",
+     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-32-t-echnicalities-it-is-important-to-remember-t",
+     "title": "T echnicalities. It is important to remember the key dichotomy in this paper: we",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-33-demazure-operators-fixs-s-we-will-extend-the",
+     "title": "Demazure operators. Fixs \u2208 S. We will extend the map \u27e8\u03b1\u2228",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-24-ben-elias-and-geordie-williamson",
+     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-34-soergel-bimodules-and-standard-bimodules-in-t",
+     "title": "Soergel bimodules and standard bimodules. In this section we give an intro-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-26-ben-elias-and-geordie-williamson",
+     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-35-categori\ufb01cation-we-denote-the-split-grothendi",
+     "title": "Categori\ufb01cation. We denote the split Grothendieck group of an additive cate-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-28-ben-elias-and-geordie-williamson",
+     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-36-localization-as-k-is-a-domain-so-is-r-let-q-d",
+     "title": "Localization. As k is a domain, so is R. Let Q denote the fraction \ufb01eld of R,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-30-ben-elias-and-geordie-williamson",
+     "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-4-d-iagrammatics-for-standard-bimodules",
+     "title": "D IAGRAMMATICS FOR STANDARD BIMODULES",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-038-41-diagrammatic-de\ufb01nition-we-assume-that-the-rea",
+     "title": "Diagrammatic de\ufb01nition. We assume that the reader is familiar with diagram-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-039-42-rex-moves-and-rex-graphs-the-terminology-of-t",
+     "title": "Rex moves and rex graphs. The terminology of this section is ad hoc, and non-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-5-d-iagrammatics-for-soergel-bimodules",
+     "title": "D IAGRAMMATICS FOR SOERGEL BIMODULES",
+     "prose_ratio": 0.395,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-041-52-jones-wenzl-morphisms-presenting-the-bott-sam",
+     "title": "Jones-Wenzl morphisms. Presenting the Bott-Samelson category in rank 2 is",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-042-1-at-genericq-for-any-0-k-m-the-direct-sum-decom",
+     "title": "(at genericq), for any 0 \u2264k <m. The direct sum decomposition",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-043-53-the-functor-to-bimodules-we-now-\ufb01x-a-realizat",
+     "title": "The functor to bimodules. We now \ufb01x a realization where Demazure Surjec-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-044-55-computation-using-localization-each-object-bx",
+     "title": "Computation using localization. Each object Bx in D splits in Kar (DQ) as the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-045-56-unbalanced-realizations-now-we-discuss-the-di",
+     "title": "Unbalanced realizations. Now we discuss the diagrammatic alterations which",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-046-6-l-ibedinsky-s-light-leaves",
+     "title": "L IBEDINSKY \u2019S LIGHT LEAVES",
+     "prose_ratio": 0.035,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-047-61-diagrammatics-for-light-leaves-fix-a-rex-w-we",
+     "title": "Diagrammatics for light leaves. Fix a rex w. We want to \ufb01nd a basis of dia-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-048-62-localizing-light-leaves-let-us-\ufb01x-a-light-lea",
+     "title": "Localizing light leaves. Let us \ufb01x a light leaves map LLx,e, with e expressing",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-049-63-double-leaves-the-previous-section-was-essent",
+     "title": "Double leaves. The previous section was essentially a discussion of mapsBw \u2192",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-050-64-cellularity-we-assume-theorem-611-so-that-hom",
+     "title": "Cellularity. We assume Theorem 6.11, so that Hom spaces are free leftR-modules",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-051-65-the-diagrammatic-character-recall-that-for-an",
+     "title": "The diagrammatic character. Recall that for any ideal I \u2282 W in the Bruhat",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-052-66-soergels-theorem-we-present-here-another-proo",
+     "title": "Soergel\u2019s theorem. We present here another proof of Soergel\u2019s Categori\ufb01cation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-053-67-the-equivalence-to-bimodules-in-this-section",
+     "title": "The equivalence to bimodules. In this section we assume that h is a Soergel",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-054-7-d-ouble-leaves-span",
+     "title": "D OUBLE LEAVES SPAN",
+     "prose_ratio": 0.039,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-055-71-negative-positive-decompositions-for-the-rest",
+     "title": "Negative-positive decompositions. For the rest of this chapter we will be in-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-056-ll-this-is-suf\ufb01cient-to-prove-the-base-case-wher",
+     "title": "This is suf\ufb01cient to prove the base case where w = e \u2208 W , since it is clear that",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-057-74-the-grand-induction-now-comes-the-crux-of-the",
+     "title": "The grand induction. Now comes the crux of the argument, a giant induction",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-058-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

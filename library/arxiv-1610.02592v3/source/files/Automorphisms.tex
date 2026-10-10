@@ -1,0 +1,1449 @@
+
+\chapter{Surface diffeomorphisms} \label{automorfismi:chapter} \label{automorphisms:chapter}
+
+We describe in this chapter an analogy between the hyperbolic space $\matH^n$ and the Teichm\"uller space $\Teich(S_g)$ of a closed orientable surface $S_g$ of genus $g\geqslant 1$. The theory, originated from Thurston in the late 1970s, provides a beautiful and powerful framework for the analysis of the geometric and dynamical properties of the surfaces $S_g$ and of their mapping class group $\MCG(S_g)$. %One notable consequence is that the non-trivial elements of $\MCG(S_g)$ are partitioned into three types, in a way that is similar to the classification of the isometries of $\matH^n$ into elliptic, parabolic, and hyperbolic.
+
+Here is a quick sketch of this analogy. We have already seen that $\matH^n$ compactifies to a closed disc $\overline{\matH^n}$, that $\Iso(\matH^n)$ acts on it, that by Brouwer's theorem every non-trivial isometry $\varphi$ has a fixed point in $\overline{\matH^n}$, and we have called $\varphi$ \emph{elliptic}, \emph{parabolic}, or \emph{hyperbolic} according to the position of its fixed points.
+
+We construct in this chapter a similar compactification of the open ball $\Teich(S_g)$ to a closed disc. The action of the mapping class group $\MCG(S_g)$ extends to this closed disc, and by Brouwer's theorem every non-trivial element $\varphi$ of $\MCG(S_g)$ has a fixed point there. According to the position of the fixed points of $\varphi$, we say that $\varphi$ is \emph{finite order}, \emph{reducible}, or \emph{pseudo-Anosov}. 
+
+If $\varphi$ is an isometry for some hyperbolic structure of $S_g$, it belongs to the first type. Dehn twists belong to the second. The pseudo-Anosov maps are both the most mysterious and the most important, and for their study we need to introduce a wealth of beautiful new technology: \emph{geodesic currents}, \emph{laminations}, and \emph{train tracks}.
+
+\section{Thurston's compactification}
+Let $S_g$ be a surface of genus $g\geqslant 2$.
+Recall that $\Teich(S_g)$ is the Teichm\"uller space of $S_g$ and $\calS = \calS(S_g)$ is the set of all non-trivial simple closed curves in $S_g$, considered up to isotopy and orientation reversal: all the closed curves considered in this chapter are \emph{unoriented}. 
+
+Although $\Teich(S_g)$ and $\calS$ are very different in nature, we want to compactify both spaces by embedding them in a single bigger space. The model that we have in mind, and that we would like to extend to higher genus surfaces, is the flat torus picture that was painted in Section \ref{length:torus:subsection}. 
+
+We briefly summarise it. The Teichm\"uller space $\Teich(T)$ of the torus $T$ is $\matH^2$ and it compactifies to $\overline {\matH^2}$; the mapping class group $\MCG(T)$ acts on $\overline {\matH^2}$ as a discrete group of isometries; as such, the non-trivial elements of $\MCG(T)$ are divided into three classes (hyperbolic, parabolic, elliptic); the simple closed curves form a dense countable set of rational points in $\partial \matH^2 = \matR\cup \{\infty\}$.
+
+We now may wonder whether there is an analogous identification between $\Teich(S_g)$ and $\matH^{6g-6}$ that transforms $\Teich(S_g)$ into a discrete subgroup of $\Iso(\matH^n)$. This is unfortunately not the case, and the compactification of $\Teich(S_g)$ must be constructed from scratch via different methods: we compactify $\Teich(S_g)$ by embedding it in a bigger infinite-dimensional space.
+
+\subsection{Projective immersion} \label{projective:immersion:subsection}
+In Chapter  \ref{Teichmuller:chapter} we have used the length functions to construct an embedding
+$$i\colon \Teich(S_g) \hookrightarrow \matR^\calS.$$
+We know that $\Teich(S_g)$ is homeomorphic to an open ball of dimension $6g-6$, and we want to compactify it in a geometrically meaningful way. A first tentative could be to take its closure in $\matR^\calS$, but this does not work:
+
+\begin{prop}
+The subspace $i(\Teich(S_g))$ is closed in $\matR^\calS$.
+\end{prop}
+\begin{proof}
+The inclusion is proper, hence closed by Proposition \ref{propria:chiusa:prop}.
+\end{proof}
+
+We are apparently stuck, so we turn back to our model, hyperbolic space, to get some inspiration. We recall that $\matH^n$ is properly embedded in the lorentzian $\matR^{n+1}$ as a hyperboloid $I^n$. To compactify $\matH^n$, we may consider its image $K^n$ in $\matRP^n$ (the Klein model) and take the closure $\overline{K^n}$ there.
+
+We try to mimic this construction, by considering the infinite-dimensional projective space $\matP(\matR^\calS)$ with the projection 
+$$\pi\colon \matR^\calS\setminus \{0\} \longrightarrow \matP(\matR^\calS).$$
+We first need to check that $\Teich(S_g)$ embeds there.
+\begin{prop}
+The composition
+$$\pi\circ i \colon \Teich(S_g) \longrightarrow \matP(\matR^\calS)$$
+is injective.
+\end{prop}
+\begin{proof}
+Suppose by contradiction that there are two distinct points $m, m' \in \Teich(S_g)$ with $\pi(i(m)) = \pi(i(m'))$; this implies that there is a constant $k>1$ such that $\ell^\gamma(m) = k\cdot\ell^\gamma(m')$ for all $\gamma\in\calS$. That sounds very unlikely, and we now prove that it easily leads to a contradiction.
+
+Let $\gamma_1, \gamma_2 \in \calS$ be two curves with $i(\gamma_1,\gamma_2)=1$. We take $x_0 = \gamma_1 \cap \gamma_2$ as a basepoint for $\pi_1(S_g, x_0)$ and note that the elements $\gamma_2*\gamma_1$ and $\gamma_2*\gamma_1^{-1}$ are represented by two more non-trivial simple closed curves in $S_g$. It is easily checked that the formula
+$$\tr(A)\cdot \tr(B) = \tr(AB) + \tr(A^{-1}B)$$
+holds for any $A,B \in \SLR$. Proposition \ref{trace:prop} implies that
+$$2\cosh \left(\frac{L(\gamma_1)}2 \right) \cdot \cosh\left(\frac{L(\gamma_2)}2 \right) = 
+\cosh\left(\frac{L(\gamma_2*\gamma_1)}2 \right) + \cosh\left(\frac{L(\gamma_2*\gamma_1^{-1})}2 \right).$$
+We have obtained a relation between the lengths of $\gamma_1, \gamma_2$, $\gamma_2* \gamma_1$, and $\gamma_2*\gamma_1^{-1}$ that holds for any hyperbolic metric on $S_g$. It may be rewritten as: 
+$$ \cosh\left(\tfrac{L(\gamma_1) + L(\gamma_2)}2 \right) + \cosh\left(\tfrac{L(\gamma_1) - L(\gamma_2)}2 \right) = \cosh\left(\tfrac{L(\gamma_2*\gamma_1)}2 \right) + \cosh\left(\tfrac{L(\gamma_2*\gamma_1^{-1})}2 \right).
+$$
+By contradiction every $m'$-length is $k$ times a $m$-length: this equation is hence valid after multiplying every argument by $k$. It is easy to check that 
+$$\cosh a + \cosh b = \cosh c + \cosh d, \quad \cosh ka + \cosh kb = \cosh kc + \cosh kd$$ 
+if and only if $\{a,b\} = \{c,d\}$. This leads to a contradiction: the number $L(\gamma_1)+L(\gamma_2)$ is strictly bigger than $L(\gamma_2*\gamma_1)$ or $L(\gamma_2*\gamma_1^{-1})$, since $\gamma_2*\gamma_1$ and $\gamma_2*\gamma_1^{-1}$ have a non-geodesic representative of length $L(\gamma_1)+L(\gamma_2)$.
+\end{proof}
+
+We have embedded $\Teich(S_g)$ in $\matP(\matR^\calS)$, and we now turn to the set $\calS$.
+
+\subsection{Thurston's compactification}
+We now embed $\calS$ in $\matP(\matR^\calS)$. A simple closed curve $\gamma \in \calS$ defines a functional $i(\gamma) \in \matR^\calS$ by setting:
+$$i(\gamma)(\eta) = i(\gamma, \eta).$$
+We have constructed a map $i\colon \calS \to \matR^\calS$.
+\begin{prop}
+The composition
+$$\pi \circ i\colon\calS \longrightarrow \matP(\matR^\calS)$$
+is injective.
+\end{prop}
+\begin{proof}
+Let $\gamma_1, \gamma_2\in \calS$ be distinct. There is always a curve $\eta\in\calS$ with $i(\gamma_1,\eta)\neq 0$ and $i(\gamma_2,\eta)=0$. (If $i(\gamma_1,\gamma_2)>0$, simply take $\eta=\gamma_2$. Otherwise, it is an easy exercise.)
+\end{proof}
+
+We will now tacitly consider both $\Teich(S_g)$ and $\calS$ as subsets of $\matR^\calS$.
+\begin{prop}
+The subsets $\Teich(S_g)$ and $\calS$ are disjoint in $\matP(\matR^\calS)$.
+\end{prop}
+\begin{proof}
+For each $\gamma\in\calS$ we have $i(\gamma,\gamma)=0$, while every curve has positive length on any hyperbolic metric.
+\end{proof}
+
+We can now state Thurston's compactification theorem.\index{Thurston's compactification theorem} 
+
+\begin{teo} \label{compattificazione:teo}
+The closure $\overline{\Teich(S_g)}$ of $\Teich(S_g)$ in $\matP(\matR^\calS)$ is homeomorphic to the closed disc $D^{6g-6}$. Its interior is $\Teich(S_g)$ and its boundary sphere contains $\calS$ as a dense subset.
+\end{teo}
+In particular, the closure of $\calS$ is homeomorphic to a sphere $S^{6g-7}$. 
+The proof of Theorem \ref{compattificazione:teo} occupies most of this chapter and will be completed in Section \ref{MCG:conclusion:subsection}. We will introduce in the process various new geometric objects that play an important role in the topology of manifolds in dimension two and three: \emph{geodesic currents}, \emph{laminations}, and \emph{train tracks}.
+
+For the moment we content ourselves with checking that this projective embedding strategy works at least on the much simpler flat torus case.
+
+\subsection{The torus}
+The Teichm\"uller space of the torus $T$ is described in Section \ref{length:torus:subsection} and needs no further comment; nevertheless, we prove here that the projective embedding strategy works for $T$, just as a sanity check before approaching the more complicated higher genus surfaces.
+
+\begin{prop} \label{T:compactification:prop}
+The space $\Teich(T)$ embeds in $\matP(\matR^\calS)$ and its closure there is homeomorphic to a closed disc $D^2$. The interior of this disc is $\Teich(T)$ and its boundary contains $\calS$ as a dense subset.
+\end{prop}
+\begin{proof}
+Everything can be written explicitly by identifying $\Teich(T)$ with the half-plane $H^2$ and $\calS$ with the set $\matQ\cup \{\infty\} \subset \partial H^2$. Exercise \ref{i:torus:ex} and Proposition \ref{lunghezza:toro:prop} give
+\begin{align*}
+i\left(\frac pq, \frac rs \right) & = \left|\det \begin{pmatrix} p & r \\ q & s \end{pmatrix}\right| = |ps-qr| = |s|\cdot \left|p-q\frac rs \right|, \\ 
+\ell^{\frac pq}(z) & = \frac {|p+qz|}{\sqrt{\Im z}}.
+\end{align*}
+Therefore the images of $\frac rs\in\calS$ and $z\in H^2 = \Teich(T)$ in $\matP(\matR^\calS)$ are respectively the functionals
+\begin{align*}
+\frac pq & \longmapsto \left|p - q\frac rs\right| \ {\rm if\ } s \neq 0 {\rm \ and \ } |q|\ {\rm if } \ s=0, \\
+\frac pq & \longmapsto \left|p+qz\right|.
+\end{align*}
+We could remove the constants $|s|$ and $\sqrt{\Im z}$ because we are considering functionals in $\matP(\matR^\calS)$ rather than in $\matR^\calS$. 
+We define for all $z \in  \overline{H^2}$ the functional
+\begin{align*}
+f_z & \colon \frac pq \longmapsto |p+qz| \quad {\rm if\ } z\neq \infty,\\
+f_\infty & \colon \frac pq \longmapsto |q|.
+\end{align*}
+and we get a continuous immersion $z \mapsto f_z$ of $\overline{H^2}$ into $\matP(\matR^\calS)$. The immersion is closed because it sends a compact space to a Hausdorff space, hence it is a homeomorphism onto its image. The image is the closure of $\Teich(T)$ and its boundary contains $\calS$ as a dense set.
+\end{proof}
+
+\section{Geodesic currents}
+We will prove Thurston's compactification Theorem \ref{compattificazione:teo} using a slightly different perspective. We are guided by the analogy with the hyperbolic space: when we embed (actually, define) the space $\matH^n$ in $\matR^{n+1}$, we make an essential use of the lorentzian form $\langle,\rangle$ in $\matR^{n+1}$, so that $\matH^n$ consists of some points $v$ with $\langle v,v \rangle = -1$, and $\partial \matH^n$ may be identified with the light cone rays, that is the rays spanned by vectors $v$ with $\langle v , v \rangle = 0$.
+
+It would be nice to have a similar nice bilinear form $\langle,\rangle$ on $\matR^\calS$, with the property that $\Teich(S_g)$ and $\calS$ consist of points with $\langle v,v\rangle = k$ and $\langle v, v \rangle = 0$ respectively, for some fixed $k\neq 0$. Unfortunately we are not able to define such a bilinear form in $\matR^\calS$, and in order to get one we now substitute $\matR^\calS$ with a similar (but more structured) infinite-dimensional space, the space of \emph{geodesic currents}.
+
+In geometric measure theory, a \emph{current} is a measure on some space, which generalises the notion of $m$-dimensional submanifold in a $n$-manifold. A \emph{geodesic current} is a similar tool introduced by Bonahon in 1988 specifically designed for geodesics on hyperbolic surfaces.
+
+We will see that the geodesic currents are indeed equipped with a bilinear form, which generalises beautifully both the intersection number $i(\alpha, \beta)$ of curves and the length functions $\ell^\gamma$ on the Teichm\"uller space.
+
+\subsection{Geodesics}
+From now on, and through all the rest of this chapter, we will consider geodesics only as subsets, neglecting their parametrisation.
+
+More precisely, let $M$ a complete hyperbolic manifold. We indicate by $\calG(M)$ the set of the supports of all the complete non-trivial geodesics $\matR \to M$. With a little language abuse, we call an element of $\calG(M)$ a \emph{geodesic}. 
+
+A geodesic in $\calG(M)$ is \emph{closed} if it is the support of a closed geodesic $S^1 \to M$, that is if it is compact; otherwise, it is \emph{open}. We say that a geodesic is \emph{simple} if it has a simple geodesic parametrisation, either as an open geodesic $\matR \to M$ or as a closed one $S^1 \to M$. 
+  
+We are particularly interested in the set $\calG = \calG(\matH^2)$ of lines in $\matH^2$. A line is determined by its extremes, hence there is a natural bijection 
+$$\calG \longleftrightarrow \left(\partial \matH^2 \times \partial \matH^2\setminus \Delta\right)/_\sim$$
+where $\Delta = \{(a,a)\ |\ a\in\partial\matH^2\}$ is the diagonal and $(a,b) \sim (b,a)$. We assign to $\calG$ the topology of $\left(\partial \matH^2 \times \partial \matH^2\setminus \Delta\right)/_\sim$. 
+\begin{ex} \label{Mobius:ex}
+The space $\calG$ is homeomorphic to an open M\"obius strip. The lines intersecting a compact set $K\subset \matH^2$ form a compact subset of $\calG$.
+\end{ex}
+The isometries of $\matH^2$ act naturally on $\calG$ by homeomorphisms.
+\begin{prop}
+If $S=\matH^2/_\Gamma$ is a complete hyperbolic surface there is a natural bijection
+$$\calG(S) \longleftrightarrow \calG/_\Gamma.$$
+\end{prop}
+\begin{proof}
+Every geodesic in $S$ lifts to a $\Gamma$-orbit of lines in $\matH^2$.
+\end{proof}
+
+It is typically more comfortable to lift objects from $S$ to the universal cover $\matH^2$, and to study them there: we will often see a geodesic $\gamma\in\calG(S)$ as a $\Gamma$-orbit of lines in $\matH^2$. 
+
+We will since now consider only closed surfaces $S_g$ of genus $g\geqslant 2$.
+We now prove the crucial fact that $\calG(S_g)$ depends only mildly on the chosen hyperbolic metric for $S_g$. 
+An \emph{isomorphism} between two pairs $(\calG_1, \Gamma_1)$ and $(\calG_2, \Gamma_2)$ of groups $\Gamma_i$ acting on topological spaces $\calG_i$ is an isomorphism $\psi\colon\Gamma_1\to \Gamma_2$ together with a $\psi$-equivariant homeomorphism $\calG_1\to \calG_2$.
+
+\begin{prop}
+Let $g\geqslant 2$ and $S_g = \matH^2/_\Gamma$ have a hyperbolic metric. The pair $(\calG, \Gamma)$ does not depend (up to canonical isomorphisms) on the chosen hyperbolic metric.
+\end{prop}
+\begin{proof}
+Let $m,m'$ be two hyperbolic structures on $S_g$, inducing two different coverings $\pi, \pi' \colon \matH^2 \to S_g$. The identity map $S_g\to S_g$ lifts to a map $\matH^2 \to \matH^2$ that extends to an equivariant homeomorphism $\partial \matH^2 \to \partial \matH^2$ by Theorem \ref{estensione:teo}. This induces an equivariant homeomorphism $\calG \to \calG$.
+\end{proof}
+
+Here and in the next sections, the hyperbolic metric on $S_g$ has only an auxiliary role: we need it to identify $S_g$ with $\matH^2/_\Gamma$ and to define and study some geometric objects like $\calG(S_g) = \calG/_\Gamma$, but most of our discoveries will be independent \emph{a posteriori} of the auxiliary hyperbolic metric. 
+
+Let $S_g=\matH^2/_\Gamma$ be a hyperbolic surface. We note that $\Gamma$ does \emph{not} act properly discontinuously on $\calG$.
+
+\begin{prop} \label{orbit:discrete:prop}
+The $\Gamma$-orbit of a line $l\in\calG$ is discrete if and only if $l$ projects to a closed geodesic in $S_g$.
+\end{prop}
+\begin{proof}
+Let $\pi(l)\subset S_g$ be the projection of $l$ in $S_g$. Since $S_g$ is compact, the projection $\pi(l)$ is \emph{not} a closed geodesic $\Leftrightarrow$ there is a small disc $D \subset S_g$ intersecting $\pi(l)$ into infinitely many distinct segments $\Leftrightarrow$ there is a small disc $D\subset \matH^2$ intersecting infinitely many lines of the $\Gamma$-orbit of $l$ $\Leftrightarrow$ the $\Gamma$-orbit is not discrete.
+\end{proof}
+
+The lines $l\subset \matH^2$ that project to closed geodesics in $S_g$ are precisely the axis of the hyperbolic isometries $\varphi$ in $\Gamma$, and the $\Gamma$-orbit of one such axis $l$ consists of the axis of all the isometries in $\Gamma$ conjugate to $\varphi$. Two such axis are either incident or ultraparallel by Corollary \ref{axis:cor}, and the closed geodesic in $S_g$ is simple if and only if all the distinct axis in the $\Gamma$-orbit are ultraparallel.
+
+Proposition \ref{orbit:discrete:prop} implies in particular that the $\Gamma$-orbit of $l$ is discrete only for countably many lines $l\in\calG$. 
+
+Recall from Corollary \ref{unique:closed:geodesic:cor} that every homotopically non-trivial closed curve in $S_g$ is homotopic to a unique closed geodesic. 
+
+\subsection{Geodesic currents} \label{correnti:subsection}
+We now introduce a measure-theoretical notion which is at first sight unrelated with everything we have seen up to now; we will later show that, on the contrary, it generalises many of the geometric objects that we have encountered in the last pages. The basic notions of measure theory that we will need are summarised in Section \ref{measure:theory:section}.
+
+\begin{defn}
+Let $S_g=\matH^2/_\Gamma$ be a hyperbolic surface. 
+A \emph{geodesic current} on $S_g$ is a locally finite $\Gamma$-invariant Borel measure on $\calG = \calG(\matH^2)$.\index{geodesic current}
+\end{defn}
+
+We denote by $\calC = \calC (S_g)$ the set of all the geodesic currents in $S_g$. It is a subset of the space $\calM(\calG)$ of all the locally finite Borel measures on $\calG$, closed with respect to sums and products with non-negative scalars, and it inherits its topology, see Section \ref{topology:measure:subsection}.
+
+The currents space $\calC$ is independent of the auxiliary hyperbolic metric on $S_g$ up to canonical isomorphisms, since the pair $(\calG, \Gamma)$ is.
+
+\subsection{Closed geodesics}
+We now introduce a fundamental example of geodesic current.
+
+\begin{example}[Closed geodesics]
+\label{scc:example}
+A closed geodesic $\gamma$ on $S_g=\matH^2/_\Gamma$ lifts by Proposition \ref{orbit:discrete:prop} to a discrete $\Gamma$-orbit of lines in $\matH^2$. The Dirac measure on this discrete set is locally finite and $\Gamma$-invariant, hence it is a geodesic current.
+\end{example}
+
+We can therefore interpret every closed geodesic in $S_g$ as a particular geodesic current with discrete support. In particular we get an embedding
+$$\calS \hookrightarrow \calC$$
+of the set $\calS$ of all (isotopy classes of) unoriented non-trivial simple closed curves in $S_g$ into $\calC$. The embedding is defined by taking the geodesic representative of each curve. Recall that the hyperbolic metric plays only an auxiliary role.
+
+The following proposition implies that -- conversely -- every current supported on a discrete set is a linear combination of closed geodesics. 
+
+\begin{prop} \label{atomic:prop}
+If $l\in \calG$ is an atomic point for a geodesic current $\mu$, that is if $\mu(\{l\})>0$, then $l$ projects to a closed geodesic in $S_g$.
+\end{prop}
+\begin{proof}
+Since $l$ is atomic and $\mu$ is $\Gamma$-invariant and locally finite, the $\Gamma$-orbit of $l$ in $\calG$ is discrete. We conclude thanks to Proposition \ref{orbit:discrete:prop}.
+\end{proof}
+
+It is an important aspect of the theory that atomic points may be only of a very specific type. We remind that many closed geodesics are not simple.
+
+\subsection{Pencils} \label{pencils:subsection}
+We have determined the 0-dimensional subsets of $\calG$ that may have positive mass, and we now look at some natural 1-dimensional ones. Let a \emph{pencil} $p\subset\calG$ of lines centred at $a\in\partial \matH^2$ be some Borel set of lines all having one endpoint at $a$, as in Figure \ref{pencil-box:fig}-(left).\index{pencil}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 9 cm] {\iftoggle{BW}{pencil-box-BW}{pencil-box}}
+\nota{A pencil and a box (in the Klein model).}
+\label{pencil-box:fig}
+\end{center}
+\end{figure}
+
+We note that a pencil may contain at most one axis of some hyperbolic transformation in $\Gamma$, because two axis are never asymptotically parallel by Corollary \ref{axis:cor}.
+
+\begin{prop} \label{pencils:prop}
+Let $\mu$ be a geodesic current. The mass of a pencil $p$ is zero, unless it contains the axis of some non-trivial element in $\Gamma$.
+\end{prop}
+\begin{proof}
+It suffices to consider the case where $p$ contains no axis, and consists of all lines with one endpoint in $a$ and another in some segment $[b,c] \subset \partial \matH^2$ not containing $a$.
+
+As the lines in $p$ point to $a$, they project in $S_g$ to a narrow beam of lines that go on running forever and exponentially-narrowing in $S_g$ but never close up. There is a disc $D\subset S_g$ intersecting them infinitely many times, hence a lift $D\subset \matH^2$ intersects infinitely many disjoint $\Gamma$-translates of $p$. The lines intersecting $D$ form a compact subset of $\calG$, hence $\mu(p)=0$.
+\end{proof}
+
+\subsection{Boxes}
+We now investigate some natural 2-dimensional subsets of $\calG$. Let $a,b,c,d \in \partial \matH^2$ be four distinct counterclockwise-ordered points as in Figure \ref{pencil-box:fig}-(right): these determine two disjoint arcs $[a,b], [c,d] \subset \partial \matH^2$ and hence a compact set $B=[a,b] \times [c,d] \subset \calG$ consisting of all lines with endpoints in $[a,b]$ and $[c,d]$, see Figure \ref{pencil-box:fig}-(right). We call this compact set $B$ a \emph{box}.\index{box}
+
+The topological boundary $\partial B$ of a box $B$ has four sides: the four pencils of lines in $B$ with one endpoint in $a,b,c$, or $d$. We say that the box $B$ is \emph{generic} if no line $l\in\partial B$ projects to a closed geodesic, \emph{i.e.}~no $l\in\partial B$ is the axis of some hyperbolic transformation in $\Gamma$. This is indeed a generic condition: if neither of $a,b,c,d$ is the endpoint of some axis, then $B$ is certainly generic, and recall that there are only countably many axis overall.
+
+We equip the currents space $\calC$ with the weak-* topology introduced in Section \ref{topology:measure:subsection}. We now prove that a converging sequence of currents behave well on generic boxes.
+
+\begin{prop}
+If $\mu_i \rightharpoonup \mu$ is a converging sequence of geodesic currents and $B$ is a generic box, then $\mu_i(B) \to \mu(B)$.
+\end{prop}
+\begin{proof}
+By Proposition \ref{delta:zero:prop} it suffices to prove that $\mu(\partial B) = 0$, and this follows from Proposition \ref{pencils:prop}.
+\end{proof}
+
+\subsection{Rigidity of atoms}
+We now use boxes to prove that the atomic points in $\calC$ are somehow rigid. 
+
+\begin{prop} \label{closed:discrete:currents:prop}
+The closed geodesics form a discrete subset in $\calC$.
+\end{prop}
+\begin{proof}
+Let $\mu \in \calC$ be a closed geodesic, \emph{i.e}~it is the Dirac measure on the $\Gamma$-orbit of an axis $l\subset \matH^2$ of some hyperbolic transformation $\varphi\in\Gamma$. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 9 cm] {\iftoggle{BW}{boxes-BW}{boxes}}
+\nota{The box $B$ containing $l$ and the sub-boxes $B'$ and $B''$ (left). A line $l\in U_\gamma$ parametrised by the pair $(t,\theta)$ (right).}
+\label{boxes:fig}
+\end{center}
+\end{figure}
+
+Let $B=[a,b]\times [c,d]$ be a small generic box containing $l$ and no other $\Gamma$-translate of $l$, so that $\mu(B) = 1$. Up to substituting $\varphi$ with $\varphi^{-1}$ we may suppose that $\varphi([a,b]) = [a',b'] \subset [a,b]$. Consider the sub-boxes $B' = [a,a']\times [c,d]$ and $B'' = [b',b]\times [c,d]$ shown in Figure \ref{boxes:fig}-(left). Since $\varphi$ contracts $[a,b]$ and expands $[c,d]$, we have 
+\begin{equation} \label{Bl:eqn}
+B\setminus p \subset \bigcup_{i=1}^\infty \varphi^i(B' \sqcup B'').
+\end{equation}
+where $p$ is the pencil containing $l$ and other lines with one endpoint varying in $[b,c]$. Note that $p$ contains no axis of $\Gamma$ other than $l$.
+If necessary, we move $a'$ and $b'$ slightly farther from $a$ and $b$ to ensure that $B'$ and $B''$ (and hence all their $\varphi$-translates) are generic while (\ref{Bl:eqn}) still holds.
+
+We have $\mu(B' \sqcup B'')=0$ and we define an open neighbourhood $U$ of $\mu$ in the current space $\calC$ as follows: 
+$$U = \big\{ \eta\in \calC\ |\ \eta(B' \sqcup B'') < \varepsilon,\ \eta(B)>1-\varepsilon\big\}$$ 
+for some fixed $0<\varepsilon < 1$. This is indeed an open set because $B, B',$ and $B''$ are generic. We now prove that $U$ contains no closed geodesic except $\mu$.
+
+By contradiction, suppose $U$ contains a closed geodesic $\eta$. Since $\eta(B)>1-\varepsilon>0$, at least one atom $l'$ of $\eta$ is contained in $B$. If $l'=l$ then $\eta=\mu$ and we are done. Otherwise, the line $l'$ is contained in $B\setminus p$ and hence in $\varphi^i(B' \sqcup B'')$ for some $i$. This is impossible since this set has measure $\varepsilon < 1$.
+\end{proof}
+
+We have classified the elements in $\calC$ supported on discrete sets, and it is now time to  introduce some geodesic currents supported on the whole of $\calG$.
+
+\subsection{The Liouville measure}
+There is a continuous measure on $\calG = \calG(\matH^2)$ that is invariant under the action of the whole isometry group $\Iso(\matH^2)$. This measure is called the \emph{Liouville measure}, and is defined as follows.\index{Liouville measure}
+
+Let $\gamma\colon \matR \to \matH^2$ be a geodesic parametrised by arc length, and $U_\gamma\subset \calG$ be the open set consisting of all the lines intersecting $\gamma$, except $\gamma$ itself. We can parametrise $U_\gamma$ via the homeomorphism 
+$$\matR \times (0,\pi) \to U_\gamma$$ 
+that sends $(t, \theta)$ to the line $l$ that intersects $\gamma$ at the point $\gamma(t)$ with angle $\theta$, see Figure \ref{boxes:fig}-(right). We define a volume 2-form on $U_\gamma$ by setting: 
+$$L_\gamma = \frac 12 \sin\theta\, dt\wedge d\theta.$$
+Since $\calG$ is non-orientable, we cannot hope to define a global area form on $\calG$. However all these local forms match up to sign and hence give rise to a measure.
+\begin{prop}
+The charts $U_\gamma$ form a differentiable atlas for $\calG$. The 2-forms $L_\gamma$ match up to sign and hence define a measure  $L$ on $\calG$.
+\end{prop}
+\begin{proof}
+Every line in $\matH^2$ intersects some other line, hence the charts cover $\calG$. 
+We consider a line $r\in U_\gamma\cap U_{\gamma'}$. The charts $U_\gamma$ and $U_{\gamma'}$ have parametrisations $(t,\theta)$ and $(t', \theta')$ and 2-forms 
+$$L_\gamma = \frac 12 \sin\theta dt \wedge d\theta, \quad 
+L_{\gamma'} = \frac 12 \sin\theta' dt' \wedge d\theta'.$$ 
+We consider the jacobian $J = \frac{\partial (t', \theta')}{\partial (t,\theta)}$ 
+and recall that 
+$$dt' \wedge d\theta' = \det J \cdot dt \wedge d\theta$$
+so we need to show that
+\begin{equation} \label{J:eqn}
+\det J = \pm\frac {\sin \theta}{\sin \theta'}.
+\end{equation}
+We can reparametrise $\gamma$ at our please, since this may change $L_\gamma$ only by a sign. We may suppose that $\gamma$ and $\gamma'$ are asymptotically parallel, because any two lines $\gamma, \gamma'$ intersecting $r$ are connected by a path $\gamma = \gamma_1, \ldots, \gamma_k = \gamma'$ of lines intersecting $r$, such that any two subsequent lines $\gamma_i$, $\gamma_{i+1}$ are asymptotically parallel (actually $k= 3$ suffices). 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 5 cm] {\iftoggle{BW}{Liouville-BW}{Liouville}}
+\nota{The two asymptotic lines $\gamma, \gamma'$ in the half-space model $H^2$ and the line $r$ intersecting both.}
+\label{Liouville:fig}
+\end{center}
+\end{figure}
+
+We represent the lines $\gamma, \gamma',$ and $r$ in the half-plane model $H^2\subset \matR^2$ as in Figure \ref{Liouville:fig}. Up to isometries and reparametrisations we have 
+$$\gamma(t) = (0, e^t), \qquad \gamma'(t') = (1,e^{t'}).$$
+The line $r$ is a Euclidean half-circle with center at some point $C\in \matR$ and with some radius $R>0$. It intersects $\gamma$ and $\gamma'$ at some heights $e^t$ and $e^{t'}$, with some angles $\theta$ and $\theta'$. We now calculate the determinant of $J = \frac{\partial (t', \theta')}{\partial (t,\theta)}$. Figure \ref{Liouville:fig} shows that
+%$$R^2 = (e^t)^2 + C^2 = (e^{t'})^2 + (C-1)^2$$
+%and also
+$$ R = \frac{e^t}{\sin \theta} = \frac{e^{t'}}{\sin \theta'}$$
+%which implies that
+%$$ C = \sqrt{R^2 - e^{2t}} = e^t \sqrt{\frac 1{\sin^2 \theta} - 1} = - e^t \cot \theta$$
+$$ C = -e^t \cot \theta, \qquad 1 - C = e^{t'} \cot \theta'.$$
+%where the minus sign follows by looking at Figure \ref{Liouville:fig}. Now
+Now
+$$\frac{\partial (C,R)}{\partial(t,\theta)} = 
+\begin{pmatrix} 
+-e^t\cos\theta\sin^{-1}\theta & e^t\sin^{-2}\theta \\
+e^t\sin^{-1}\theta & -e^t \cos\theta\sin^{-2} \theta
+\end{pmatrix}
+$$
+whose determinant is $-e^{2t} \sin^{-1}\theta = -R\sin\theta$, and we get the same formula for $\frac{\partial (C,R)}{\partial(t',\theta')}$. Therefore
+$$\det \frac{\partial (t', \theta')}{\partial (t,\theta)} =
+\det \frac{\partial (t', \theta')}{\partial (C, R)}
+\cdot 
+\det \frac{\partial (C,R)}{\partial(t,\theta)} 
+=
+(-R\sin\theta')^{-1} \cdot (R \sin\theta) = \frac{\sin\theta}{\sin\theta'}$$
+and we finally obtain (\ref{J:eqn}), as required.
+\end{proof}
+The measure $L$ on $\calG$ is called the \emph{Liouville measure} and is clearly invariant by the action of $\Iso(\matH^2)$. The renormalising factor $\frac 12$ in the definition was chosen to get the following property, which nicely characterises $L$.
+
+\begin{prop} \label{l:prop}
+Let $s\subset \matH^2$ be a geodesic segment of length $l$. The lines in $\matH^2$ intersecting $s$ form a set of measure $l$.
+\end{prop}
+\begin{proof}
+The set has measure
+$$\int_0^\pi\int_0^l \frac 12 \sin\theta \, dt\, d\theta = l \int_0^\pi \frac 12 \sin \theta \, d\theta = l.$$
+The proof is complete.
+\end{proof}
+
+The Liouville measure $L$ is supported on the whole of $\calG$.
+
+\begin{ex}
+The Liouville measure of a box $B=[a,b]\times [c,d]$ is 
+$$L(B) = \big| \log \beta(a,b,c,d) \big|$$
+where $\beta$ is the cross-ratio of the four points.
+\end{ex}
+
+\subsection{The Liouville current}
+Let now $S_g=\matH^2/_\Gamma$ be equipped with a hyperbolic metric. The Liouville measure on $\calG$ is $\Iso(\matH^2)$-invariant: in particular it is $\Gamma$-invariant and hence defines a current $L \in \calC(S_g)$, called the \emph{Liouville current}.\index{Liouville current} 
+
+It is important to note that the space of currents $\calC = \calC(S_g)$ does not depend on the given hyperbolic metric for $S_g$, but the Liouville current does! Every metric $m\in \Teich(S_g)$ induces a Liouville current $L_m\in \calC$, and in this way we get a \emph{Liouville map}\index{Liouville map}
+$$\Teich(S_g) \longrightarrow \calC$$
+that sends $m$ to $L_m$.
+We will soon see that this map is injective: as promised, we have mapped both $\calS$ and $\Teich(S_g)$ inside the currents space $\calC$. 
+
+\begin{rem}
+We constructed the Liouville current $L_m$ by assigning to $\calG$ a differentiable atlas -- hence a smooth structure -- and a 2-form defined up to sign. We note that the smooth structure on $\calG$ also depends crucially on $m$, because the boundary extension of Theorem \ref{estensione:teo} is not guaranteed to be a diffeomorphism.
+\end{rem}
+
+The crucial feature that makes $\calC$ preferable to $\matP(\matR^\calS)$ as a comfortable ambient space for both $\calS$ and $\Teich(S_g)$ is the existence of a nice bilinear form in $\calC$ that extends both the length and the geometric intersection of closed geodesics. We now introduce this bilinear form.
+
+\subsection{The projective frame bundle}
+We denote by $\calI \subset \calG \times \calG$ the open subset consisting of all the pairs of \emph{incident} distinct lines in $\matH^2$. We give $\calI$ the topology induced by $\calG \times \calG$, hence $\calI$ is an open topological 4-manifold. Since two distinct incident lines intersect in a single point $p\in\matH^2$, the set $\calI$ can be interpreted as the set of triples $(p,l_1,l_2)$ with $p\in \matH^2$ and $l_1,l_2$ two distinct vector lines in the tangent plane $T_p\matH^2$.
+
+Let now $S_g=\matH^2/_\Gamma$ be equipped with a hyperbolic metric. The action of $\Gamma$ on $\calG$ is not properly discontinuous, but the diagonal action of $\Gamma$ on $\calI$ is, as the following shows.
+\begin{prop}
+The map $\calI \to \calI/_\Gamma$ is a topological covering.
+\end{prop}
+\begin{proof}
+The group $\Gamma$ acts freely and properly discontinuously on $\matH^2$, and hence it does so \emph{a fortiori} on the triples $(p,l_1,l_2)$.
+\end{proof}
+
+In particular $\calI/_\Gamma$ is a four-manifold, and it is naturally a bundle over $S_g$, whose fibre above $p\in S_g$ consists of the ordered pairs of distinct vector lines $l_1,l_2$ in $T_pS_g$. Recall that the \emph{frame bundle} on a manifold $M$ is a bundle whose fibre above $p\in M$ is the set of all \emph{frames} (i.e.~basis) in $T_pM$. The space $\calI/_\Gamma$ can be seen as some projective quotient of the frame bundle on $S_g$.
+
+\subsection{Intersection form}
+Two geodesic currents $\alpha, \beta \in \calC = \calC(S_g)$ induce a $\Gamma$-invariant product measure $\alpha\times \beta$ on $\calG\times \calG$ and hence on $\calI$. This measure descends via the covering $\calI \to \calI/_\Gamma$ to a measure on $\calI/_\Gamma$ which we still indicate by $\alpha\times \beta$, see Section \ref{measure:descends:subsection}.\index{intersection form on currents}
+
+\begin{defn}
+The \emph{intersection} $i(\alpha,\beta)$ of two geodesic currents is the total volume of $\calI/_\Gamma$ in the measure $\alpha\times\beta$. 
+\end{defn}
+
+The intersection $i(\alpha, \beta)$ does not depend on the auxiliary hyperbolic metric for $S_g$. The finiteness of $i(\alpha,\beta)$ is not immediate since $\calI/_\Gamma$ is not compact, and it deserves a proof.
+
+\begin{prop}
+The intersection $i(\alpha,\beta)$ is finite.
+\end{prop}
+\begin{proof}
+Let $D$ be a compact fundamental domain for $S_g = \matH^2/_\Gamma$. Since $D$ is compact, the lines intersecting $D$ form a compact subset $X\subset \calG$ which has finite measures $\alpha(X)$ and $\beta(X)$. The projection sends $(X \times X) \cap \calI$ surjectively onto $\calI/_\Gamma$. 
+Therefore $i(\alpha,\beta) = (\alpha\times \beta) (\calI/_\Gamma) < \alpha(X) \cdot \beta(X)$.
+\end{proof}
+
+The form $i$ is clearly bilinear and symmetric. 
+
+\subsection{Geometric intersection and length of closed geodesics}
+We now show that this abstract-looking intersection form generalises both the geometric intersection and the length of simple closed geodesics.
+We consider as usual the set $\calS$ of simple closed curves as a subset of $\calC$. The following proposition explains why we employed the notation $i$ for the intersection form of two geodesic currents.
+
+\begin{prop}
+If $\alpha, \beta \in \calS$, the number $i(\alpha,\beta)$ is the geometric intersection of the simple closed curves $\alpha$ and $\beta$.
+\end{prop}
+\begin{proof}
+Represent $\alpha$ and $\beta$ as simple closed geodesics. The measure $\alpha\times \beta$ is the Dirac measure with support the pairs of incident lines in $\matH^2$ that cover respectively $\alpha$ and $\beta$. The $\Gamma$-orbits of these pairs are in natural bijection with the transverse intersection points in $\alpha\cap \beta$. Hence the volume of $\calI/_\Gamma$ is the cardinality of $\alpha\cap\beta$, except when $\alpha = \beta$ and in this case we get zero.
+\end{proof}
+
+We note in particular that $i(\alpha,\alpha)=0$ for every $\alpha\in\calS$, hence the set $\calS$ is contained in the ``light cone'' consisting of all the currents $\alpha$ with $i(\alpha,\alpha)=0$. (Of course $i(\alpha, \alpha)\geqslant 0$ for every geodesic current $\alpha$.) We now consider the Liouville current $L_m\in\calC$ determined by some hyperbolic metric $m$ on $S_g$.
+
+\begin{prop} \label{i:metric:curve:prop}
+If $\alpha\in \calS$ then $i(L_m, \alpha) = \ell^\alpha(m)$ is the length of the geodesic representative of $\alpha$ in the metric $m$.
+\end{prop}
+\begin{proof}
+Represent $\alpha$ as a simple closed geodesic in the metric $m$, of length $\ell^\alpha(m)$. The measure $L_m \times \alpha$ has its support on the pairs $(l,l')$ of incident lines where $l$ is arbitrary and $l'$ is a lift of $\alpha$. 
+
+Any segment $s'\subset l'$ of length $\ell^\alpha(m)$ in a fixed lift $l'$ of $\alpha$ is a fundamental domain for the action of $\Gamma$ on the lifts of $\alpha$. Therefore $i(L_m, \alpha)$ is the volume of the pairs $(l,l')$ where $l'$ is fixed, and $l$ is arbitrary and intersects $s'$. By Proposition \ref{l:prop} these pairs have volume $\ell^\alpha(m)$.
+\end{proof}
+
+The intersection form $i$ on $\calC$ generalises both the geometric intersection of curves and the length functions on Teichm\"uller space, two apparently unrelated objects! As promised, we can easily deduce that $\Teich(S_g)$ embeds in $\calC$.
+
+\begin{cor}
+The Liouville map $\Teich(S_g) \to \calC$ is injective.
+\end{cor}
+\begin{proof}
+If $m\neq m'$ there is a curve $\gamma\in\calS$ with $\ell^\gamma(m) \neq \ell^\gamma(m')$ by Proposition \ref{9g-9:prop} and hence $i(L_m,\gamma) \neq i(L_{m'},\gamma)$. Therefore $L_m \neq L_{m'}$.
+\end{proof}
+
+We will since now consider both $\Teich(S_g)$ and $\calS$ as subsets of $\calC$.
+We know the geometric meaning of the intersection of two curves, and of a curve and a hyperbolic metric. What is the intersection of two hyperbolic metrics? When they coincide, we get a positive constant.
+
+\begin{prop}
+If $m \in \Teich(S_g)$ we have $i(L_m, L_m) = -\pi^2 \chi(S_g)$.
+\end{prop}
+\begin{proof}
+The metric $m$ produces a smooth structure on $\calG$ and hence on $\calI$, and $L_m$ is induced by a $\Gamma$-invariant 2-form on $\calG$ defined up to sign, that we also denote as $L_m$. We need to integrate the 4-form $L_m \times L_m$ on $\calI/_\Gamma$.
+
+Recall that $\calI/_\Gamma$ may be interpreted as a bundle over $S_g$.
+We make a first-order computation on a very small region of $S_g$, which we may suppose to be Euclidean: a very thin rectangle $R$ in $S_g$ of sides $l$ and $a$ with $a \ll l$. We compute the volume of the portion of bundle lying above $R$.
+
+We integrate $L_m \times L_m$ on all the pairs of segments intersecting in some point in $R$, and we consider only segments with both endpoints on the big $l$ sides, neglecting the small $a$ sides. A segment meeting the $l$ sides at angle $\theta$ has length $L(\theta) = a/\sin \theta$. By Proposition \ref{l:prop} the $L_m \times L_m$ volume of the portion of $\calI$ above $R$ is (at a first order) equal to
+$$\int_0^\pi \int_0^l \frac 12 \sin \theta \cdot L(\theta) \, dt\, d\theta \sim
+\frac 12 l \int_0^\pi \sin \theta \cdot \frac a{\sin \theta} = \frac{\pi}2 la.$$
+
+The first-order contribution of a small region is hence $\frac{\pi}2$ times its area. Since the volume is induced by a differentiable form, by taking the limit we find that the contribution of any region is precisely $\frac{\pi}2$ its area and we conclude by the Gauss-Bonnet theorem.
+\end{proof}
+
+We have already noted that $i$ is symmetric and bilinear. 
+As we mentioned, there is an evident analogy between the embeddings $\Teich(S_g)\hookrightarrow \calC$ and $\matH^n\hookrightarrow \matR^{n+1}$, since there is a bilinear form on both spaces $\calC$ and $\matR^{n+1}$, and $\Teich(S_g)$ is also contained in a ``hyperboloid'' consisting of vectors $v$ with $i(v,v) = k$ for some fixed $k \neq 0$. On the other hand $\calS$ is contained in the ``light cone'' formed by all vectors $v$ with $i(v,v)=0$. 
+
+We may compactify $\matH^n$ by projecting the hyperboloid to the Klein model $K^n\subset \matRP^{n}$. Now $K^n$ is an open disc, whose boundary is the image of the light cone. We would like to apply the same compactification strategy to $\Teich(S_g)$. Before doing that, we need to prove a slightly technical fact: that the bilinear form $i$ is continuous. 
+
+\subsection{Continuity of the intersection form}
+Let $S_g=\matH^2/_\Gamma$ be a closed hyperbolic surface.
+The following theorem is not obvious because $\calI$ is not compact: the proof relies on the fact that closed geodesics form a discrete rigid set in $\calC$ and therefore atomic points cannot ``escape to infinity'' on a converging sequence of currents.
+
+\begin{teo}
+The form $i\colon \calC \times \calC \to \matR$ is continuous.
+\end{teo}
+\begin{proof}
+Let $\beta_1, \beta_2$ be two currents converging to $\alpha_1, \alpha_2$. We need to prove that $i(\beta_1,\beta_2)$ converges to $i(\alpha_1, \alpha_2)$. The bundle $\calI/_\Gamma$ is not compact and we need to control that no mass escapes to infinity: the infinity here is the diagonal $\Delta \subset \calG \times \calG$, so our aim is to cover $\Delta$ with small boxes and prove that they contribute very little to $i(\beta_1,\beta_2)$. For any box $B$, we define
+$$\Psi(B) = \big((B\times B)\cap \calI \big)/_\Gamma.$$
+We show that for every $\varepsilon >0$ there are finitely many small generic boxes $B_i$ whose $\Gamma$-translates cover $\calG$, such that 
+$$(\beta_1 \times \beta_2) (\cup_i\Psi(B_i)) < \varepsilon$$
+as soon as $\beta_1,\beta_2$ are sufficiently close to $\alpha_1,\alpha_2$. Since the $\Gamma$-translates of $\cup_i (B_i\times B_i)$ form an open neighbourhood of $\Delta$, the set $(\calI/_\Gamma )\setminus (\cup_i \Psi(B_i))$ is compact with zero-measure boundary (because the boxes $B_i$ are generic) so its contribution to $i(\beta_1, \beta_2)$ tends to that to $i(\alpha_1,\alpha_2)$ if $\beta_1,\beta_2$ are sufficiently close, and the theorem is proved.
+
+It remains to construct the boxes $B_i$. We first fix finitely many generic boxes $B_i$ whose $\Gamma$-translates cover $\calG$. Let $K>0$ be bigger than the total $\alpha_1$ and $\alpha_2$-mass of the boxes. 
+
+We now pick a small number $0<\varepsilon' < \varepsilon / 2K$ and subdivide each box $B_i$ into finitely many generic sub-boxes (which we still call $B_i$) such that the following holds for each $i$ and each $j=1,2$:
+\begin{enumerate}
+\item either $\alpha_j(B_i) < \varepsilon'$, or
+\item there is an atomic point $l \in B_i$ with $\alpha_j(l) > \varepsilon'$ and $\alpha_j(B_i \setminus l) < \varepsilon'$.
+\end{enumerate}
+If the second case holds for both $j=1,2$, we also require $l\in B_i$ to be the same line for $j=1,2$.
+We note that the total $\alpha_1$ and $\alpha_2$-mass of the boxes is still smaller than $K$ after the subdivision.
+We have
+$$(\beta_1 \times \beta_2)(\Psi(B)) \leqslant \beta_1(B) \cdot \beta_2(B)$$
+so if $\beta_1,\beta_2$ are sufficiently close to $\alpha_1, \alpha_2$ the boxes $B_i$ that are of the first kind for at least one value of $j=1,2$ contribute to $i(\beta_1, \beta_2)$ less than $2\varepsilon' K<\varepsilon$.
+
+We are left to consider the boxes $B_i$ containing a line $l$ whose $\alpha_1$ and $\alpha_2$-mass are both bigger than $\varepsilon'$. This is a potentially bad situation since the point $(l,l) \in \calG\times \calG$ is atomic and contained in the frontier of $\calI$, and could enter inside $\calI$ abruptly for some arbitrarily small perturbations of $\alpha_1$ and $\alpha_2$. We show that this cannot happen because atomic points are rigid, as noted in Proposition \ref{closed:discrete:currents:prop}.
+
+As in the proof of Proposition \ref{closed:discrete:currents:prop}, we set $B_i = B = [a,b] \times [c,d]$ and construct $B' = [a,a'] \times [c,d], B'' = [b',b] \times [c,d]$ whose $\varphi$-translates cover $B\setminus p$ where $p$ is a pencil containing $l$. We note that
+$$(\beta_1 \times \beta_2) (\Psi(B)) \leqslant \beta_1(B' \sqcup B'') \cdot \beta_2(B) + \beta_2(B'\sqcup B'') \cdot \beta_1(B)$$
+is smaller than $\varepsilon' (\beta_1(B) + \beta_2(B))$ and hence by summing on the $B_i$ we get again a contribution smaller than $2\varepsilon' K < \varepsilon$.
+\end{proof}
+
+\subsection{Filling geodesic currents}
+We now define an interesting class of currents, whose importance will be evident in the next section.
+
+We say that a geodesic current $\alpha\in\calC(S_g)$ \emph{fills} the surface $S_g=\matH^2/_\Gamma$ if every line in $\matH^2$ intersects transversely at least one line in the support of $\alpha$. For instance, a Liouville measure fills $S_g$ since its support is the whole of $\calG$. We say that $k$ closed geodesics $\gamma_1,\ldots, \gamma_k$ \emph{fill $S_g$} if the geodesic current $\gamma_1+\ldots + \gamma_k$ does.
+
+\begin{prop}
+Let $\gamma_1,\ldots, \gamma_k$ be closed geodesics. If $S_g \setminus (\gamma_1\cup \cdots\cup \gamma_k)$ consists of polygons, the curves fill $S_g$.
+\end{prop}
+\begin{proof}
+Every geodesic in $S_g$ intersects these curves.
+\end{proof}
+
+As an example, we can pick two multicurves $\eta$ and $\mu$ in $S_g$ that intersect transversely forming only polygons but no bigons. By the bigon criterion $\eta$ and $\mu$ are in minimal position and by Proposition \ref{minimale:unica:prop} their geodesic representatives have the same configuration as $\eta\cup\mu$, so they fill $S_g$.
+
+It is a bit more difficult to construct a single (non-simple) closed geodesic that fills $S_g$. The following remark is straightforward.
+
+\begin{oss} \label{correnti:oss}
+Let $\alpha$ and $\beta$ be currents. We have $i(\alpha,\beta)>0$ if and only if there are two lines in the supports of $\alpha$ and $\beta$ that intersect in a point.
+\end{oss}
+
+\begin{cor} \label{riempie:cor}
+If $\alpha$ fills $S_g$ then $i(\alpha,\beta)>0$ for every non-trivial $\beta\in\calC$.
+\end{cor}
+
+\subsection{A compactness criterion}
+We now state a simple and general compactness criterion for subsets of $\calC$ that has various nice (and apparently unrelated) geometric consequences.
+
+\begin{prop}[Compactness criterion] \label{compattezza:C:prop}
+If $\alpha\in\calC$ fills $S_g$, the set of all $\beta\in\calC$ with $i(\alpha,\beta)\leqslant M$ is compact, for all $M>0$.
+\end{prop}
+\begin{proof}
+Let $C\subset\calC$ be the set of all $\beta$ with $i(\alpha,\beta)\leqslant M$. It is closed because $i$ is continuous.
+
+Let $l$ be a line in $\matH^2$. By hypothesis there is another line $l'$ in the support of $\alpha$ which intersects $l$ in a point. Let $B'$, $B$ be two sufficiently small boxes neighbourhoods of $l',l$ in $\calG$, so that $B' \times B \subset \calI$ and
+$B' \times B$ is mapped injectively into $\calI/_\Gamma$.
+If $\beta\in C$ we have
+$$\alpha(B')\beta(B) = (\alpha\times\beta)(B' \times B) \leqslant (\alpha\times\beta)\left(\calI/_\Gamma\right) = i(\alpha,\beta) \leqslant M.$$
+Therefore every line $l$ in $\matH^2$ has a box neighbourhood $B$ such that
+$$\beta(B) \leqslant K_l \quad \forall \beta \in C$$
+for some constant $K_l = M/\alpha(B')$ that depends only on $l$. The set $C$ is relatively compact by Theorem \ref{compact:measure:teo}, and hence compact since it is closed. The proof is complete.
+\end{proof}
+
+We now state some corollaries. The first concerns the immersion of $\Teich(S_g)$ in $\calC$. 
+
+\begin{cor}
+The Liouville map $\Teich(S_g)\hookrightarrow\calC$ is proper and a homeomorphism onto its image.
+\end{cor}
+\begin{proof}
+We prove that the map is proper: if $m_j\in \Teich(S_g)$ is a diverging sequence of metrics, we know from Proposition \ref{diverges:infinity:prop} that there is a closed curve $\gamma\in\calS$ such that $\ell^\gamma(m_j) = i(m_j, \gamma) \to \infty$ on a subsequence. Since $i$ is continuous, the sequence $m_j$ diverges also in $\calC$. 
+
+We denote the Liouville map by $L$. We should now prove that $L$ is continuous, but we prefer to consider the inverse map $L^{-1}\colon L(\Teich(S_g)) \to \Teich(S_g)$. The map $L^{-1}$ is continuous because $i$ is and $\Teich(S_g)$ has the weakest topology where the length functions are continuous. We show that $L^{-1}$ is proper. Let $\gamma_1, \ldots, \gamma_k$ be simple closed curves that fill $S_g$. If $L(m_i)$ is a diverging sequence, by Proposition \ref{compattezza:C:prop} we have $i(L(m_i),\sum_t \gamma_t)\to \infty$ and hence $i(L(m_i),\gamma_t)\to \infty$ for some $t$. Therefore $m_i$ is divergent also in $\Teich(S_g)$.
+
+Now $L^{-1}$ is continuous and proper and hence a homeomorphism by
+Corollary \ref{propria:chiusa:cor}.
+\end{proof}
+
+A second immediate corollary is a general compactness criterion for the Teichm\"uller space.
+
+\begin{cor} \label{bounded:metrics:compact:cor}
+Let $\gamma_1,\ldots, \gamma_k$ be some closed geodesics that fill $S_g$. The metrics $m\in\Teich(S_g)$ with $\ell^{\gamma_i}(m) \leqslant M$ form a compact subset of $\Teich(S_g)$, for all $M>0$.
+\end{cor}
+
+We can similarly deduce the following.
+\begin{cor}
+Let $\gamma_1,\ldots, \gamma_k$ be some simple closed curves that fill $S_g$. For every $M$ there are only finitely many $\alpha \in \calS$ with $i(\gamma_i, \alpha) < M$ for all $i$.
+\end{cor}
+
+
+\begin{ex} Use the compactness criterion to re-prove that on a hyperbolic closed surface there are only finitely many closed geodesics of bounded length.
+\end{ex}
+
+We are finally ready to construct Thurston's compactification of the Teichm\"uller space, using Bonahon's geodesic currents. 
+
+\subsection{Projective currents}
+As usual, we pick a hyperbolic closed surface $S_g=\matH^2/_\Gamma$.
+The currents space $\calC$ is equipped with a multiplication by positive scalars, hence we can define its projectivisation
+$$\pi\colon \calC\setminus 0 \longrightarrow \matP\calC$$
+where $\matP \calC = (\calC \setminus 0)/_\sim$ with $\alpha \sim \lambda \alpha$ for all $\lambda>0$. We give $\matP\calC$ the quotient topology.
+
+\begin{prop} The space $\matP\calC$ is compact.
+\end{prop}
+\begin{proof}
+Pick an $\alpha\in\calC$ that fills $S_g$. By the compactness criterion the set $C = \{\beta\in\calC\ |\ i(\alpha,\beta)=1\}$ is compact. By Corollary \ref{riempie:cor} we have $i(\alpha,\beta)>0$ for all $\beta$, hence $\lambda\beta \in C$ for some $\lambda>0$. Therefore $\pi(C) = \matP\calC$ and $\matP\calC$ is compact.
+\end{proof}
+
+We now want to embed both $\Teich(S_g)$ and $\calS$ in $\matP\calC$.
+
+\begin{prop}
+The composition $\calS \to \calC\setminus 0 \to \matP\calC$ is injective.
+\end{prop}
+\begin{proof}
+Let $\gamma_1,\gamma_2 \in\calS$ be distinct. There is always a closed curve $\eta\in\calS$ with $i(\gamma_1,\eta)\neq 0$ and $i(\gamma_2,\eta)=0$.
+\end{proof}
+
+\begin{prop} \label{embed:Teich:prop}
+The composition $\Teich(S_g) \to \calC \setminus 0\to \matP\calC$ is injective and a homeomorphism onto its image.
+\end{prop}
+\begin{proof}
+We see $\Teich(S_g)$ already properly embedded in $\calC$.
+Since $i(m,m) = -\pi^2\chi(S_g)$ is constant on $\Teich(S_g)$, the composition is injective. The restriction $\pi\colon \Teich(S_g) \to \pi(\Teich(S_g))$ is also continuous, and we now prove that it is proper (note that we need to restrict the codomain to get this).
+
+Consider a diverging sequence $m_j\in \Teich(S_g)$. By compactness of $\matP\calC$ the sequence $[m_j]\in\matP\calC$ converges on a subsequence to some $[\alpha]\in\matP\calC$. For each $j$ there is a $\lambda_j>0$ such that $\lambda_jm_j \to \alpha$ in $\calC$. Since $m_j$ diverges in $\Teich(S_g)$ and hence in $\calC$ we get $\lambda_j\to 0$. We get
+$$i(\alpha,\alpha) = \lim_{j\to \infty} i(\lambda_jm_j, \lambda_jm_j) =  -\pi^2\chi(S_g) \lim_{j\to \infty} \lambda_j^2 = 0.$$
+In particular $[\alpha]\not\in \pi(\Teich(S_g))$. Therefore the restriction $\pi\colon \Teich(S_g) \to \pi(\Teich(S_g))$ is proper and hence a homeomorphism. 
+\end{proof}
+
+We will since now consider both $\calS$ and $\Teich(S_g)$ embedded in $\matP\calC$. 
+
+\subsection{Thurston's compactification}
+We consider the closure $\overline{\Teich(S_g)}$ of $\Teich(S_g)$ inside $\matP\calC$. This closure is compact since $\matP\calC$ is, and it is called the \emph{Thurston compactification} of Teichm\"uller space. We define its \emph{boundary} simply as
+$$\partial\Teich(S_g) = \overline{\Teich(S_g)} \setminus \Teich(S_g).$$ 
+Our aim is now to identify the topology of the Thurston boundary.
+The proof of Proposition \ref{embed:Teich:prop} already shows the following.
+
+\begin{prop} \label{alpha:zero:prop}
+The Thurston boundary consists of projective currents $[\alpha]$ with $i(\alpha,\alpha)=0$.
+\end{prop}
+
+We will later prove that the Thurston boundary actually consists of \emph{all} the projective currents $[\alpha]$ with $i(\alpha,\alpha)=0$. For the moment we content ourselves with some examples. 
+
+\subsection{Weighted pants decompositions}
+We construct some geodesic currents based on geodesic pants decompositions. We will need the following.
+
+\begin{ex} \label{pants:simple:line:ex}
+Let $P$ be a hyperbolic geodesic pair-of-pants. Every simple geodesic $\gamma$ in the interior of $P$ is open and has both ends that converge to $\partial P$, winding around it.
+\end{ex}
+\begin{proof}[Hint]
+Decompose $P$ into two right-angled hexagons.
+\end{proof}
+
+Let a \emph{weighted pants decomposition} for $S_g$ be a pants decomposition $\mu = \gamma_1 \sqcup \ldots \sqcup \gamma_{3g-3}$ equipped with some real numbers $\lambda_1,\ldots,\lambda_{3g-3}\geqslant 0$. A weighted pants decomposition defines a geodesic current $\mu = \lambda_1\gamma_1+\ldots + \lambda_{3g-3}\gamma_{3g-3}$ such that $i(\mu,\mu)=0$.\index{pants decomposition!weighted pants decomposition} 
+
+We will soon prove that $[\mu]$ lies in the Thurston boundary if $\mu\neq 0$. We will need the following lemma that characterises the positively weighted pants decompositions among all currents.
+
+\begin{lemma}
+Let $\mu = \sum \lambda_i\gamma_i$ be a weighted pants decomposition with all positive weights $\lambda_i>0$. A current $\alpha \in \calC$ has $i(\alpha,\alpha) = i(\alpha,\mu)=0$ if and only if $\alpha = \sum \lambda_i'\gamma_i$ for some weights $\lambda_i'\geqslant 0$.
+\end{lemma}
+\begin{proof}
+If $\alpha = \sum \lambda_i'\gamma_i$, then clearly $i(\alpha,\alpha) = i(\alpha,\mu)=0$. Conversely, let $\alpha$ be a current with $i(\alpha,\alpha) = i(\alpha, \mu)=0$. Since $\lambda_i>0$, the support of $\mu$ is the preimage in $\matH^2$ of the geodesic pants decomposition. Since $i(\alpha, \mu)=0$, the support of $\alpha$ consists of lines that are either contained or disjoint from that of $\mu$. 
+
+By Exercise \ref{pants:simple:line:ex} a line $l$ of the latter type has both its endpoints at the endpoints of some line of $\mu$, so there are only countably many of them overall; they are not atomic since their projection in $S_g$ is not closed and hence have zero mass. So such lines $l$ do not occur. The support of $\alpha$ is hence contained in that of $\mu$ and the proof is complete.
+\end{proof}
+
+We now characterise simple closed curves.
+
+\begin{lemma} \label{characterize:S:lemma}
+Let $\gamma\in\calS$ be a simple closed curve and $\mu\in\calC$ be a non-trivial current. If $i(\gamma,\alpha)=0$ implies $i(\mu,\alpha)=0$ for all $\alpha\in\calS$, then $[\mu] = [\gamma]$.
+\end{lemma}
+\begin{proof}
+Extend $\gamma=\gamma_1$ to a geodesic pants decomposition $\beta = \sum_i\gamma_i$. The previous lemma implies that $\mu = \sum_i\lambda_i\gamma_i$ and by letting the pants decomposition vary we get $\mu = \lambda_1\gamma_1$.
+\end{proof}
+
+\subsection{Pinching and twisting} \label{pinching:twisting:subsection}
+How can we construct sequences of hyperbolic metrics on $S_g$ that converge to some point at infinity? We can do this quite easily by \emph{pinching} a simple geodesic, or by \emph{twisting} along it. 
+
+To define the former, we need to fix some Fenchel--Nielsen coordinates $(l_i, \theta_i)$ for $\Teich(S_g)$ based on a pants decomposition $\mu = \gamma_1\sqcup \ldots \sqcup \gamma_{3g-3}$.
+Fix a metric $(l_i,\theta_i) \in \Teich(S_g)$. A \emph{pinching} along $\gamma=\gamma_1$ is any sequence of metrics where the first length coordinate $l_1$ tends to zero and all the other coordinates are kept bounded (from above and below).
+
+\begin{prop}
+The limit of a pinching is $[\gamma]$.
+\end{prop}
+\begin{proof}
+By the Collar Lemma \ref{collar:lemma}, the length of a closed geodesic $\alpha$ in the pinched metrics tends to infinity if $i(\gamma,\alpha)>0$ and stays bounded if $i(\gamma,\alpha)=0$. Therefore the pinched metrics tend in $\matP\calC$ to a class $[\mu]$ such that $i(\gamma,\alpha) = 0 \Rightarrow i(\mu,\alpha)=0$ for all $\alpha \in \calS$. Lemma 
+\ref{characterize:S:lemma} gives $[\mu] = [\gamma]$.
+\end{proof}
+
+Let $m\in \Teich(S_g)$ be any metric and $\gamma$ be a closed geodesic.  We denoted by $m_\theta^\gamma$ the metric obtained from $m$ via an earthquake of angle $\theta$ along $\gamma$, see Section \ref{earthquakes:subsection}.
+
+\begin{prop}
+The limit of $m_\theta^\gamma$ as $\theta \to \pm \infty$ is $[\gamma]$.
+\end{prop}
+\begin{proof}
+By Proposition \ref{strettamente:convessa:prop} the length of a closed geodesic $\alpha$ tends to infinity if $i(\gamma,\alpha)>0$ and is constant if $i(\gamma,\alpha)=0$. We conclude as above that the metrics tend to $[\gamma]$.
+\end{proof}
+
+%There are two ways to send a hyperbolic surface to infinity in Teichm\"uller space: by pinching it, and by wringing its neck (this sentence is attributed to Bers \cite{McM}).
+
+To appreciate the qualitative difference between pinching and twisting along $\gamma$, recall the explicit torus case from Section \ref{length:torus:subsection}: if we pinch along $\gamma$, the sequence of metrics converge to $[\gamma]\in \partial \matH^2$ roughly like a geodesic pointing to $[\gamma]$, while if we twist along $\gamma$ it does so along a horosphere centred at $[\gamma]$.
+
+We have discovered in particular that the set $\calS$ is entirely contained in Thurston's boundary. To fully identify the Thurston boundary, we now analyse the geodesic currents $\alpha$ lying in the ``light cone'', that is those with $i(\alpha,\alpha)=0$. We already know that the weighted pants decompositions are there, but there is more: we will soon see that the light cone contains many new fascinating objects called \emph{laminations}. 
+
+\section{Laminations}
+
+In this section we characterize geometrically the currents $\alpha\in\calC$ contained in the ``light cone,'' \emph{i.e.}~those with $i(\alpha,\alpha)=0$. Every such current may be represented as a \emph{measured geodesic lamination}, a closed subset of $S_g$ foliated by geodesics and equipped with a transverse measure. These unexpected objects play an important part in the topology of manifolds of dimension two and three.
+
+\subsection{Geodesic laminations.}
+Let $S = \matH^2/_\Gamma$ be a hyperbolic surface. Recall that in this chapter we consider geodesics only as subsets of $S$, neglecting their parametrisation. 
+
+A \emph{geodesic lamination} $\lambda$ is a set of disjoint simple complete geodesics in $S$, whose union is a closed subset of $S$. Each geodesic may be closed or open and is called a \emph{leaf}; their union is the \emph{support} of $\lambda$. We will often confuse $\lambda$ with its support for simplicity, since the support determines the set of geodesics in all the interesting cases (see below).\index{geodesic lamination}
+
+The following examples of geodesic laminations are fundamental:
+\begin{itemize}
+\item a geodesic multicurve (that is a finite set of disjoint simple closed geodesics) in $S$;
+\item a set of disjoint lines in $\matH^2$ whose union is closed. 
+\end{itemize}
+
+A lamination in $\matH^2$ may be particularly complicated, see Figure \ref{lamination:fig}. Recall that $\calG = \calG(\matH^2)$ is the set of all lines in $\matH^2$, with its natural topology.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 5 cm] {\iftoggle{BW}{600px-lamination}{600px-lamination}}
+\nota{A geodesic lamination in $\matH^2$.}
+\label{lamination:fig}
+\end{center}
+\end{figure}
+
+\begin{ex} 
+A set $\lambda$ of disjoint lines in $\matH^2$ forms a closed set in $\matH^2$ if and only if $\lambda$ is closed when considered as a subset of $\calG$.
+\end{ex}
+If a set of disjoint lines in $\matH^2$ is not closed, it suffices to take its closure to get a lamination. Every lamination in $S=\matH^2/_\Gamma$ lifts to a $\Gamma$-invariant lamination  in $\matH^2$, hence the laminations in $S$ are in natural bijection with the $\Gamma$-invariant laminations in $\matH^2$. 
+
+\subsection{Local behaviour}
+A geodesic lamination is often too complicated to be determined with full precision. In fact, its topology is already quite involved, and we now start by examining it locally. Let $\lambda$ be a geodesic lamination on a hyperbolic surface $S=\matH^2/_\Gamma$. The following exercise may be proved by passing to the universal cover $\matH^2$.
+
+\begin{ex} 
+Every point $p\in \lambda$ has an open neighbourhood $U$ and a chart $U \to (-1,1) \times (-1,1)$ that sends $p$ to $(0,0)$ and $\lambda \cap U$ to $(-1,1) \times J$ for some closed subset $J\subset (0,1)$.
+\end{ex}
+
+What kind of $J\subset (0,1)$ may arise?
+It is possible to construct some laminations in $\matH^2$ or in some simple hyperbolic surfaces like cusps and tubes, where their support is the whole manifold. In this case $J$ is the full interval $(0,1)$. These cases are however of no interest for us, because of the following.
+
+\begin{prop} \label{empty:J:prop}
+If $S$ has finite volume, then $J$ has empty interior.
+\end{prop}
+\begin{proof}
+Suppose by contradiction that $J$ contains some open interval. This open interval determines a set of leaves of $\lambda$, whose lift in $\matH^2$ forms an open subset $U\subset \matH^2$ foliated into lines. Its limit in $\partial \matH^2$ has non-empty interior $S$. By Corollary \ref{parabolic:hyperbolic:dense:cor} there is a hyperbolic transformation $\gamma \in \Gamma$ with an attracting limit point in $S$. This implies easily that there are $\gamma$-translates of some lines in $U$ that intersect some lines of $U$ transversely, a contradiction. 
+\end{proof}
+
+\begin{cor}
+If $S$ has finite volume, every geodesic lamination $\lambda$ in $S$ has empty interior and is determined by its support.
+\end{cor}
+
+\subsection{Complementary regions}
+Let $\lambda \subset S$ be a geodesic lamination in a hyperbolic surface $S=\matH^2/_\Gamma$.
+A \emph{complementary region} (shortly, a \emph{region}) is a connected component of the open complement $S\setminus \lambda$. The abstract completion of a complementary region is a hyperbolic surface with non-empty geodesic boundary consisting of lines and/or circles. 
+
+In general, a complementary region may have genus and/or infinitely many boundary components. Note that in any case there are at most countably many regions, and hence only countably many leaves of $\lambda$ may be incident to a region: if $\lambda$ has uncountably many leaves (this will be the typical case), most leaves are not incident to any region (compare this with the Cantor subset in $[0,1]$, which contains uncountably many points, but only countably many of them are adjacent to some complementary open segment).
+
+\begin{prop} \label{finite:regions:prop}
+A geodesic lamination $\lambda\subset S_g$ in a closed hyperbolic surface $S_g=\matH^2/_\Gamma$ has at most $4g-4$ complementary regions. The boundary of each region has finitely many components.
+\end{prop}
+\begin{proof}
+Every complementary region has area at least $\pi$ (the area of an ideal triangle) and a region with infinitely many boundary components has infinite area. By Gauss-Bonnet we get $\Area(S_g) = -2\pi\chi(S_g) = (4g-4)\pi$.
+\end{proof}
+
+We say that a lamination $\lambda \subset S_g$ is \emph{full} if every region is an ideal polygon.\index{geodesic lamination!full}
+
+%\subsection{Minimal laminations}
+%A geodesic lamination $\lambda \subset S$ is \emph{minimal} if it contains no proper non-empty sublamination. For instance, a geodesic multicurve is minimal if and only if it is connected, that is consists of a single simple closed geodesic.\index{geodesic lamination!minimal}
+
+%\begin{prop} \label{minimal:dense:prop}
+%A geodesic lamination $\lambda \subset S$ is minimal $\Longleftrightarrow$ every leaf in $\lambda$ is dense.
+%\end{prop}
+%\begin{proof}
+%The closure of a leaf $l\subset \lambda$ is a sub-lamination of $\lambda$.
+%\end{proof}
+
+\subsection{Transverse measures}
+Let $\lambda\subset S$ be a geodesic lamination in a hyperbolic surface $S$. A \emph{transverse arc} to $\lambda$ is the support of a simple regular curve $\alpha\colon [a,b] \to S$ transverse to each leaf of $\lambda$, whose endpoints $\alpha(a)$ and $\alpha(b)$ are not contained in $\lambda$.\index{geodesic lamination!measured geodesic lamination} 
+
+\begin{defn} \label{measure:axioms:defn}
+A \emph{transverse measure} for a lamination $\lambda\subset S$ is a locally finite Borel measure $L_\alpha$ on each transverse arc $\alpha$ such that:
+\begin{enumerate}
+\item if $\alpha' \subset \alpha$ is a sub-arc of $\alpha$, the measure $L_{\alpha'}$ is the restriction of $L_\alpha$;
+\item the support of $L_\alpha$ is $\alpha\cap \lambda$;
+\item the measure is invariant through isotopies of transverse arcs.
+\end{enumerate}
+\end{defn}
+In particular every arc $\alpha$ transverse to $\lambda$ has a finite \emph{length}, defined as the total measure of the arc. The arc has length zero if and only if $\alpha\cap\lambda = \emptyset$. A \emph{measured geodesic lamination} is a geodesic lamination equipped with a transverse measure.
+
+\begin{example} \label{weight:example}
+A geodesic multicurve $\lambda \subset S$ has a natural transverse measure: for any transverse arc $\alpha$, the measure $L_\alpha$ on $\alpha$ is just the Dirac measure supported on the finite set $\alpha\cap\lambda$.
+
+More generally, we may assign a positive weight $a_i>0$ at each component $\lambda_i$ of $\lambda$ and define a measured geodesic lamination by giving the weight $a_i$ at each intersection $\alpha \cap \gamma_i$. By varying weights we get distinct measured geodesic laminations with the same support.
+\end{example}
+
+\subsection{Currents and measured geodesic laminations}
+Let $S_g=\matH^2/_\Gamma$ be a closed hyperbolic surface. We now construct a natural bijection between the measured geodesic laminations on $S_g$ and the geodesic currents $\lambda$ with $i(\lambda,\lambda)=0$, \emph{i.e.}~those lying in the ``light cone.'' We see a measured geodesic lamination in $S_g$ as a $\Gamma$-invariant measured geodesic lamination in $\matH^2$.
+
+Let $\lambda \in \calC$ be a geodesic current with $i(\lambda,\lambda)=0$. By Remark \ref{correnti:oss} the support of $\lambda$ is a closed $\Gamma$-invariant subset of $\calG$ formed by disjoint lines, hence a $\Gamma$-invariant lamination in $\matH^2$. The geodesic current induces also a transverse measure as follows. Let $\alpha$ be an arc transverse to the lamination $\lambda$. Up to cutting $\alpha$ in finitely many arcs we may suppose that it intersects each leaf of $\lambda$ in at most one point. We define the measure of a Borel set $U\subset \alpha$ as the $\lambda$-measure in $\calG$ of the lines in $\lambda$ that it intersects.
+\begin{ex}
+This transverse measure satisfies the axioms of Definition \ref{measure:axioms:defn} and gives $\lambda$ the structure of a $\Gamma$-invariant measured geodesic lamination.
+\end{ex}
+\begin{prop}
+We have just defined a bijection
+$$\big\{ {\rm currents\ } \lambda {\rm \ with\ } i(\lambda,\lambda)=0 \big\}
+\longleftrightarrow 
+\big\{ {\rm measured\ geodesic\ laminations\ in\ } S_g\big\}
+$$
+\end{prop}
+\begin{proof}
+We define the inverse map by transforming a $\Gamma$-invariant measured geodesic lamination $\lambda$ into a geodesic current with support $\lambda \subset \calG$ as follows. For every leaf $l$ of $\lambda$, we pick a small transverse arc $\alpha$ that intersects all the leaves in a neighbourhood $U_l$ of $l$ in $\lambda$, each once. The measure on $\alpha$ translates into a measure on $U_l$, and all the measures on these small sets $U_l$ match to yield a measure on $\lambda$ thanks to Proposition  \ref{ricoprimento2:prop}. 
+\end{proof}
+
+We denote by $\calM\calL\subset \calC$ the set of all the measured geodesic laminations on $S_g$, henceforth identified with the currents lying in the ``light cone''. With this identification $\calML$ is independent on the auxiliary hyperbolic metric on $S_g$.\index{$\calML$}
+
+Recall that a multicurve on $S_g$ is a finite collection of disjoint non-trivial simple closed curves. A multicurve determines a measured geodesic lamination: consider $n$ parallel components as a single one with weight $n$, take the geodesic representative of the resulting essential multicurve (keeping the same weights), and use Example \ref{weight:example}. We obtain the inclusions
+$$\calS \subset \calM \subset \ML \subset \calC$$ 
+where $\calS$ and $\calM$ are the sets of simple closed curves and multicurves in $S_g$.\index{$\calM$} 
+
+\subsection{Some properties}
+We can now use our knowledge of the geodesic currents to get some information about the measured geodesic laminations. 
+
+\begin{prop} \label{at:most:two:prop}
+Let $\lambda\subset S_g$ be a measured geodesic lamination. For every $p\in\partial \matH^2$, there are at most two lines in the preimage $\tilde\lambda\subset\matH^2$ incident to $p$, and if there are two, none of them projects to a closed geodesic in $\lambda$. 
+\end{prop}
+\begin{proof}
+If there are at least three lines $l_1, l_2, l_3$ incident to $p$, with $l_2$ lying strictly between $l_1$ and $l_3$, we may find a small arc $\alpha$ transverse to $\tilde \lambda$, whose support lies between $l_1$ and $l_3$, that intersects $l_2$ and possibly other lines incident to $p$, and no other line of $\tilde \lambda$ (use Proposition \ref{empty:J:prop} near $l_2$ here). The lines intersected by $\alpha$ form a pencil with positive mass. By Proposition \ref{pencils:prop} the pencil consists of a single line, the axis of a hyperbolic element $\varphi\in \Gamma$.
+
+On the other hand, if $p$ is the endpoint of the axis of some $\varphi$, then no other leaf $l\subset \tilde\lambda$ can be incident to $p$, otherwise infinitely many lines $\varphi^i(l)$ would also be, and the same argument above would give a contradiction.
+\end{proof}
+
+\begin{ex}
+There are some geodesic laminations in $S_g$ that do not support any transverse measure.
+\end{ex}
+\begin{proof}[Hint]
+Construct a geodesic lamination $\lambda \subset S_g$ consisting of some disjoint simple closed curves and finitely many open leaves that wind around them (see Section \ref{incomplete:metrics:subsection}). The pre-image $\tilde\lambda\subset\matH^2$ contradicts Proposition \ref{at:most:two:prop}.
+\end{proof}
+
+%\begin{prop}
+%Every measured geodesic lamination $\lambda \subset S_g$ decomposes uniquely as a disjoint union of minimal measured geodesic laminations. If $\lambda$ is full, it is also minimal.
+%\end{prop}
+%\begin{proof}
+%For every leaf of $\lambda$, consider its closure. Closures of distinct leaves either coincide or are disjoint.
+%\end{proof}
+
+\subsection{Intersection form}
+What is the geometric meaning of the intersection form $i$ of two geodesic currents, when applied to a measured geodesic lamination? Let $\lambda$ be a measured geodesic lamination in a hyperbolic closed surface $S_g=\matH^2/_\Gamma$. Three cases are relevant for us:
+
+\begin{enumerate}
+\item If $\gamma$ is a simple closed geodesic, then either $\gamma$ is contained in $\lambda$, and we get $i(\gamma, \lambda)=0$, or $\gamma$ is disjoint from $\lambda$, and we still get $i(\gamma,\lambda)=0$, or $\gamma$ is transverse to $\lambda$, and in that case $i(\lambda, \gamma)$ equals the full measure $L(\gamma)$ of $\gamma$ as a transverse curve to $\lambda$.
+\item If $\lambda'$ is another measured geodesic lamination, then $i(\lambda, \lambda')$ ``counts'' the (possibly infinitely many) transverse intersections of $\lambda$ and $\lambda'$ with respect to the product of the two transverse measures.
+\item If $m$ is a hyperbolic metric, then $i(\lambda, m)$ measures the ``length'' of $\lambda$ with respect to $m$, that is the integral over $\lambda$ of the usual length weighted with the transverse measure.
+\end{enumerate}
+
+We now consider a non-geodesic non-trivial simple closed curve $\gamma$ transverse to $\lambda$, and we denote by $L(\gamma)$ its full transverse $\lambda$-measure. The quantities $L(\gamma)$ and $i(\gamma, \lambda)$ need \emph{not} to be equal in this case (because $\gamma$ is not geodesic), but this phenomenon is easily controlled by a suitable version of the bigon criterion.
+
+\begin{prop} \label{m:i:prop}
+We have $L(\gamma) \geqslant i(\gamma, \lambda)$ and the equality holds $\Longleftrightarrow$ $\gamma$ forms no bigon with any leaf of $\lambda$.
+\end{prop}
+\begin{proof}
+We follow the proof of Theorem \ref{bigono:teo}. Let $\tilde \lambda$ be the counterimage of $\lambda$ in $\matH^2$. A lift $\tilde\gamma$ of $\gamma$ has distinct endpoints in $\partial \matH^2$ and $\tilde \gamma$ must intersect the leaves of $\tilde\lambda$ whose endpoints are linked with them. The curve $\tilde \gamma$ intersects each such leaf only once and no other leaf $\Leftrightarrow$ $\tilde \gamma$ forms no bigon with any leaf of $\tilde \lambda$ $\Leftrightarrow$ $\gamma$ forms no bigon with any leaf of $\lambda$.
+\end{proof}
+
+\begin{prop} \label{sublamination:prop}
+If $\lambda \in \calML$ is full, we have $i(\lambda, \alpha)>0$ for every current $\alpha$ that is not a measured sublamination of $\lambda$.
+\end{prop}
+\begin{proof}
+If $i(\lambda, \alpha)=0$ then every line $l$ in the support of $\alpha$ is either a leaf of $\lambda$ or an infinite diagonal in some complementary ideal polygon; a diagonal would be an atomic point in $\alpha$ that would cover a closed geodesic and could be added to $\lambda$ contradicting 
+Proposition \ref{at:most:two:prop}.
+\end{proof}
+
+\subsection{Train tracks}
+How can one construct a measured geodesic lamination, concretely? There are some nice combinatorial tools designed to this purpose, called train tracks.\index{train track} 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11 cm] {\iftoggle{BW}{switch-BW}{switch}}
+\nota{A switch contains $a\geqslant 1$ and $b\geqslant 1$ branches on each side: here $a=3$ and $b=2$ (1). The complementary regions of a train track contain no discs, annuli, monogons, or bigons (2).}
+\label{switch:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 8 cm] {\iftoggle{BW}{Triple-torus-train-track-BW}{Triple-torus-train-track}}
+\nota{A train track on the genus-three surface $S_3$. }
+\label{train_track:fig}
+\end{center}
+\end{figure}
+
+A \emph{train track} in a closed surface $S_g$ is a closed subset $\tau\subset S_g$ built by taking a finite set of points (called \emph{vertices} or \emph{switches}) and joining them with disjoint arcs called \emph{branches}. We require that every switch looks locally like Figure \ref{switch:fig}-(1): all branches have the same tangent line, and there is at least one branch at each side. 
+
+The \emph{complementary regions} of $\tau$ are the abstract closures of the connected components of $S_g\setminus \tau$. Each complementary region is naturally a compact surface with finitely many singular vertices in its boundary having ``zero interior angle''. In the definition of a train track, we also require that no complementary region be a disc, an annulus, a monogon, or a bigon, as in Figure \ref{switch:fig}. An example is shown in Figure \ref{train_track:fig}. The exclusion of these complementary regions is essential to get the following.
+
+\begin{ex}
+A train track contains at most $-6\chi(S_g)$ switches and at most $-2\chi(S_g)$ regions; it contains $-6\chi(S_g)$ switches if and only if every switch is trivalent and every complementary region is a triangle. The sphere and the torus contain no train track. 
+\end{ex}
+\begin{proof}[Hint] Make the appropriate Euler characteristic computation.
+\end{proof}
+
+\begin{ex}
+Construct a train track with $-2\chi(S_g)$ triangular complementary regions in $S_g$ for every $g\geqslant 2$. 
+\end{ex}
+\begin{proof}[Hint] Take a pants decomposition and add three arcs (tangent to the boundary) inside each pants to decompose it into two triangular regions.
+\end{proof}
+
+We obtain a finiteness property.
+
+\begin{cor}
+There are only finitely many train tracks $\tau$ in $S_g$ up to diffeomorphism (but not up to isotopy!).
+\end{cor}
+\begin{proof}
+There are only finitely many combinatorial types for $\tau$, its complementary regions, and the way they are adjacent.
+\end{proof}
+
+
+\subsection{Weight systems}
+
+A \emph{weight system} on a train track $\tau\subset S_g$ is the assignment of a non-negative real number, called \emph{weight}, to each branch of $\tau$, such that at every vertex the \emph{switch condition} holds: the sum of the weights on the left branches should be equal to the sum of the weights on the right branches. 
+
+Let $w$ be an \emph{integral} weight system, that is one whose weights are all integers. The integral weight system $w$ determines a closed 1-manifold in $S_g$ as follows: replace every branch with weight $a$ with $a$ parallel copies of it, and pair all the branches at every switch in the obvious way (this is possible thanks to the switch condition).
+
+\begin{prop}
+The resulting closed 1-manifold is a multicurve.
+\end{prop}
+\begin{proof}
+Since no complementary region of $\tau$ is a disc or monogon, the complementary regions of the closed 1-manifold have non-positive Euler characteristic (exercise).
+\end{proof}
+
+Our aim now is to use the train tracks to parametrise all the multicurves in $S_g$. Later on, we will extend everything from multicurves to measured geodesic laminations.
+
+\subsection{A parametrisation for $\calM$} \label{parametrisation:M:subsection}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11 cm] {\iftoggle{BW}{pantaloni_anelli_ex-BW}{pantaloni_anelli_ex}}
+\nota{Decompose $S$ into pairs of pants and annuli, so that each simple closed curve separates a pair of pants from an annulus. We mark a \iftoggle{BW}{}{blue }point in each curve.}
+\label{pantaloni_anelli_ex:fig}
+\end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 6 cm] {\iftoggle{BW}{pantaloni_anelli_new2-BW}{pantaloni_anelli_new2}}
+\nota{Identify each pair of pants and annulus with one of these two fixed models.}
+\label{pantaloni_anelli:fig}
+\end{center}
+\end{figure}
+
+Let $S_g$ have genus $g\geqslant 2$. We now construct finitely many train tracks that parametrise all the multicurves in $S_g$, and to this purpose we fix a frame similar to the one used in the Fenchel-Nielsen parametrisation of the Teichm\"uller space. 
+
+We decompose $S_g$ into pairs of pants and annuli as in Figure \ref{pantaloni_anelli_ex:fig}. We mark \iftoggle{BW}{}{(in blue) }an arbitrary point in each closed curve and we also fix once for all a diffeomorphism (preserving orientation and marked points) between each pair of pants and annulus with the corresponding model in Figure \ref{pantaloni_anelli:fig}. The resulting parametrisation of $\calM$ will depend also on these fixed diffeomorphisms.
+
+Let a \emph{colouring} be the assignment of a triple $a_i,b_i,c_i$ of non-negative numbers to each annulus of the decomposition, such that one of the following equalities holds:
+$$a_i = b_i+c_i, \quad b_i = c_i+a_i, \quad c_i = a_i +b_i.$$
+We assign the colour $a_i$ to each of the two curves that bound the annulus.
+Since there are $-\frac 32\chi(S_g) = 3g-3$ annuli, we get $-\frac 92\chi(S_g) = 9g-9$ colours overall. The colouring is \emph{integral} if the colours are integers and also the following holds: 
+for each pair of pants, the sum $a_i+a_j+a_k$ of the colours of its boundary curves must be even.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{pants_train_tracks-BW}{pants_train_tracks}}
+\nota{The portion of weighted train track in a pair of pants $P$ is determined by the point $Q=[a_i,a_j,a_k]\in\matRP^2$. Having non-negative entries, the point $Q$ is contained in the triangle with vertices $[1,0,0], [0,1,0], [0,0,1]$. This triangle subdivides into four sub-triangles by adding the vertices $[0,1,1]$, $[1,0,1]$, $[1,1,0]$ and the shape of the train track depends on which sub-triangle contains $Q$. The three edges of the train track are given the weights indicated in the figure: these are the only weights that sum to $a_i, a_j, a_k$ at the boundaries. When $Q$ lies in the frontier of two or more triangles some branch has weight zero and we delete it: the different shapes prescribed by the adjacent triangles coincide after deleting this branch.}
+\label{pants_train_tracks:fig}
+\end{center}
+\end{figure}
+
+We now transform each colouring into a weighted train track $\tau$ as follows. The boundary components of each pair-of-pants $P$ are coloured by some triple $a_i, a_j, a_k$. We insert in $P$ a portion of train track as in Figure \ref{pants_train_tracks:fig}: its shape depends on the position of the point $[a_i,a_j,a_k]$ in $\matRP^2$ and its weights depend linearly on $a_i, a_j, a_k$. Note that there are finitely many possible shapes overall.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 8 cm] {\iftoggle{BW}{anelli_train_tracks-BW}{anelli_train_tracks}}
+\nota{The portion of weighted train track in each annulus $A$ is determined by the point $Q=[a,b,c] = [a_i,b_i,c_i]\in \matRP^2$. By hypothesis $Q$ is contained in the boundary of the triangle with vertices $[1,0,0], [0,1,0], [0,0,1]$. The boundary subdivides into three segments and the shape of the train track depends on which segment contains $Q$. When $Q$ is a vertex some branch has weight zero and we delete it.}
+\label{anelli_train_tracks:fig}
+\end{center}
+\end{figure}
+
+We extend the train track inside each annulus $A$ coloured with $a_i, b_i, c_i$ as shown in Figure \ref{anelli_train_tracks:fig}. Again, the shape of the portion depends on the position of $[a_i,b_i,c_i]$ in $\matRP^2$. As a result we get a train track $\tau$ with integral weights and hence a multicurve.
+
+\begin{prop} \label{parametrize:multicurves:prop}
+The construction produces a bijection
+$$\big\{ {\rm integral\ colourings}\big\} \longleftrightarrow \calM.$$
+\end{prop}
+\begin{proof}
+We start by proving surjectivity. Given a multicurve $\mu\in \calM$, we minimise its intersections with our decomposition into pants and annuli: now $\mu$ intersects every pair of pants $P$ into non-trivial simple closed curves and arcs (an arc is trivial if it forms a bigon with $\partial P$). 
+
+By decomposing $P$ into two hexagons, and minimising the intersections of the curves and arcs with them, one deduces easily that $P$ contains only three isotopy classes of non-trivial closed curves (one parallel to each component of $\partial P$) and six isotopy classes of non-trivial arcs (one connecting every pair of components of $\partial P$). Note that isotopies are \emph{not} required to fix $\partial P$ pointwise.
+
+We isotope all the closed curves away from $P$ and place them inside the adjacent annuli, so there are only arcs. As above, we check easily that the isotopy class of the whole set of arcs in $P$ is determined by the intersection numbers $a_i, a_j, a_k$ with the components of $\partial P$ and is hence represented by the corresponding train track portion from Figure \ref{pants_train_tracks:fig}. 
+
+We now turn to annuli. On each annulus $A$, there is only one isotopy class of non-trivial arcs and one isotopy class of non-trivial closed curves. However, an arc may wind many times around $A$ and we are not allowed to use isotopies that move $\partial A$ anymore because the configuration in $P$ is already fixed: one deduces easily that the triples $(a,b,c)$ from Figure \ref{anelli_train_tracks:fig} describe precisely all the possible configurations. 
+
+The injectivity is surprisingly simple to prove: the configuration of $\mu$ that minimises its intersections with the decomposition into pairs of pants and annuli is unique thanks to Proposition \ref{minimale:unica:prop} and hence the numbers $a_i,b_i,c_i$ are easily determined by $\mu$. The proof is complete.
+\end{proof}
+
+We have found a complete combinatorial parametrisation for the set $\calM$, and we now want to extend it to $\calML$.
+
+\subsection{Topological laminations} \label{topological:laminations:subsection}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11 cm] {\iftoggle{BW}{switch_weights-BW}{switch_weights}}
+\nota{How to construct a lamination from a weighted train track. Here we have a switch with weights $a$, $b$, $c$ (1) and the switch condition $a=b+c$ allows all the Euclidean rectangles (2) to glue (3).}
+\label{switch_weights:fig}
+\end{center}
+\end{figure}
+
+A train track $\tau$ in $S_g$ with integer weights parametrises a multicurve. We now show that, more generally, a weighted train track parametrises a measured geodesic lamination. 
+
+The construction goes as follows. First, we remove all the branches with zero weight, and we replace every branch of weight $a>0$ with a Euclidean rectangle of width $a$ and with arbitrary length as in Figure \ref{switch_weights:fig}-(2). Thanks to the switch conditions, these rectangles glue nicely at each switch as in Figure \ref{switch_weights:fig}-(3).
+
+In Figure \ref{switch_weights:fig}-(3) we see that all the lines from left- and right-rectangles are matched in a 1-1 correspondence, with a finite number of exceptions. At each exception, some $m \geqslant 1$ left-lines are matched to some $n \geqslant 1$ right-lines at some point, and we have $m+n=3$ or 4. We call these lines and points \emph{singular}. 
+
+After gluing the rectangles we get a closed subset $\lambda$ of $S_g$ foliated by lines, with finitely many singular points and lines. We now eliminate the singular points and lines by cutting $\lambda$ carefully along them: if $m+n=4$ this amounts simply to doubling the singular point; if $m+n=3$ we double the singular leaf by opening a small open corridor in the foliation, starting from the singular point and digging along the leaf. Since the singular leaf may be non-compact, for the process to converge in $S_g$ we need to shrink the width of the corridor sufficiently fast. 
+
+After this cut we get a closed subset of $S_g$, which we still name $\lambda$, nicely partitioned into disjoint lines that may be either open or closed: we call it a \emph{topological lamination}. After the cut every rectangle of type $L\times [0,a]$ as in Figure \ref{switch_weights:fig} transforms into a set $L \times J$ where $J$ is obtained by cutting $[0,a]$ along (at most) countably many points. Note that $J$ may be a Cantor set.\index{topological lamination}
+
+The set $J$ inherits from $[0,a]$ a Borel measure with total mass $a$. This measure gives a transverse measure to the leaves of the rectangle $L\times J$, and $\lambda$ inherits the structure of a measured topological lamination (the notion of a transverse measure is exactly the same as in the geodesic case).
+
+It only remains to promote the topological lamination to a geodesic lamination: this is usually done by \emph{straightening} its leaves. We describe this procedure only for a particular class of train tracks: the ones introduced in the previous section to parametrise $\calM$.
+
+\subsection{A parametrisation for $\ML$} \label{parametrizzazione:subsection}
+We now extend the arguments of Section \ref{parametrisation:M:subsection}
+from multicurves to laminations.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11 cm] {\iftoggle{BW}{foglia_new-BW}{foglia_new}}
+\nota{The decomposition into pants and annuli of $S_g$ is homotopic to a geodesic pants decomposition (with each curve counted twice) whose counterimage in $\matH^2$ consists of infinitely many disjoint ultraparallel lines as in the picture.
+We show that the lift of a leaf $l$ of $\lambda$ in $\matH^2$ has two distinct endpoints in $\partial \matH^2$: if $l$ is a closed curve in an annulus $A$, then it is isotopic to a closed geodesic and we are done; if $l$ intersects annuli and pairs of pants into non-trivial arcs, its lift intersects the ultraparallel lines forming no bigons, hence it intersects each line at most once: therefore it has disjoint limits at $\pm \infty$ (left). The straightening replaces the lift with the unique line with these endpoints (right).}
+\label{foglia_new:fig}
+\end{center}
+\end{figure}
+
+
+We fix a decomposition of $S_g$ into 
+pants and annuli. Every colouring $(a_i,b_i,c_i)$ produces a weighted train track, which in turn parametrises a measured topological lamination $\lambda$. We fix a hyperbolic structure $S_g = \matH^2/_\Gamma$. 
+
+The lamination $\lambda$ can be \emph{straightened} to a measured geodesic lamination $\bar\lambda$ as follows. A leaf $l$ of $\lambda$ is either a closed curve in some annulus $A$, or it intersects every annulus $A$ and pair of pants $P$ in non-trivial arcs: in both cases, every lift of $l$ in $\matH^2$ is a curve with two distinct limit endpoints in $\partial \matH^2$, see Figure \ref{foglia_new:fig}. We replace every lift of $l$ with the unique line having these endpoints, and we do this for every leaf $l$ of $\lambda$. 
+
+The result is a $\Gamma$-invariant closed set of disjoint lines in $\matH^2$ that project to a geodesic lamination $\bar\lambda$ in $S_g$. The transverse measure on $\lambda$ easily induces one on the straightened $\bar\lambda$: it suffices to consider transverse arcs contained in the decomposition into pairs of pants and annuli. Note that some parallel closed leaves of $\lambda$ may have collapsed to a single atom closed geodesic in $\bar\lambda$.
+
+
+\begin{prop} \label{parametrize:laminations:prop}
+The construction induces a bijection
+$$\big\{ {\rm colourings}\big\} \longleftrightarrow \calML.$$
+\end{prop}
+\begin{proof}
+We adapt the proof of Proposition \ref{parametrize:multicurves:prop}, starting with surjectivity: given a measured geodesic lamination $\lambda$, we determine a colour $(a_i,b_i,c_i)$ representing it.
+
+The decomposition into pairs of pants and annuli is homotopic to a geodesic pants decomposition $\mu=\gamma_1\sqcup \ldots \sqcup \gamma_{3g-3}$ (with each curve counted twice). We set $a_i = i(\gamma_i,\lambda)$.
+
+The measured geodesic lamination $\lambda \in \calML$ decomposes as $\lambda = \lambda_0 \sqcup \lambda_1$ where $\lambda_0 = \sum_ik_i\gamma_i$ is a weighted pants decomposition with support in $\mu$ and $\lambda_1$ is transverse to $\mu$. If $k_i\neq 0$ then necessarily $a_i=0$ and we set $b_i=c_i=k_i$.
+
+At every pair of pants $P$ the three colours $a_i,a_j,a_k$ determine a portion of weighted train track as prescribed by Figure \ref{pants_train_tracks:fig}. The intersection $\lambda_1\cap P$ consists of geodesic and hence non-trivial arcs: therefore the weighted train track describes faithfully this portion of measured geodesic lamination, up to isotopy. The numbers $b_i$ and $c_i$ are then determined by the way these two portions wind and match along $\gamma_i$. The colours $(a_i,b_i,c_i)$ parametrise $\lambda$.
+
+The choices of the colours $(a_i,b_i,c_i)$ were forced by the intersection of $\lambda$ with the two pants $P$ adjacent to $\gamma_i$ (exercise). This shows injectivity.
+\end{proof}
+
+We have parametrised $\calML$, and we now investigate its topology. The space of all colourings $(a_i,b_i,c_i)$ forms the subset $C\times \ldots \times C \subset \matR^3 \times \ldots \times \matR^3$ where $C \subset \matR^3$ is the cone based on the origin over the sides of the triangle with vertices $(1,1,0)$, $(0,1,1)$, and $(1,0,1)$, and is homeomorphic to $\matR^2$. The space of colourings is homeomorphic to $\matR^{2\cdot (3g-3)} = \matR^{6g-6}$, that is to the Teichm\"uller space itself!
+
+The parametrisation identifies $\calML$ with  $C\times \ldots \times C$. We want to show that this identification is a homeomorphism, and to this purpose we study the intersection form.
+
+\subsection{Intersection form}
+We now show that the intersection form $i$ between curves and laminations has a surprisingly simple behaviour after that we parametrise the space $\calML$ as $C\times \ldots \times C$. 
+
+We note that $C\times \ldots \times C$ is a piecewise-linear object in $\matR^{9g-9}$, that is it is the support of a simplicial complex. Recall that a continuous map between simplicial complexes is \emph{simplicial} if it sends each simplex onto a simplex in an affine linear way, and it is \emph{piecewise linear} if it restricts to a simplicial map on some subdivisions. Finally, the map is \emph{half-integral piecewise linear} if all the affine linear maps have half-integer (possibly integer) coefficients.
+
+\begin{prop} \label{integral:PL:map:prop}
+For every $\gamma\in\calS$ the map
+\begin{align*}
+C\times \ldots \times C & \to \matR \\
+\lambda & \longmapsto i(\gamma, \lambda)
+\end{align*}
+is half-integral piecewise linear.
+\end{prop}
+\begin{proof}
+A colour $(a_i,b_i,c_i)\in C\times \ldots \times C$ defines a weighted train track $\tau$ and hence a measured topological lamination $\lambda$, obtained by substituting every edge of $\tau$ with some product $L\times J$ of horizontal leaves. Thanks to Proposition \ref{m:i:prop} the intersection $i(\gamma, \lambda)$ is realized by some representative $\gamma$ which is either a leaf of $\lambda$ or is transverse to $\lambda$ and forms no bigon with any leaf of $\lambda$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{monotonic-BW}{monotonic}}
+\nota{A monotonic curve $\gamma$ intersects the products $L \times J$ in monotonic paths (left) and forms no bigons outside the products (right).}
+\label{monotonic:fig}
+\end{center}
+\end{figure}
+
+We say that a closed curve transverse to $\lambda$ is \emph{monotonic} if 
+\begin{enumerate}
+\item it intersects every product $L\times J$ into arcs that are monotonic in both coordinates, and the same monotonicity is preserved when the curve goes from one product $L\times J$ to an adjacent one as in Figure \ref{monotonic:fig}-(left);
+\item it makes no bigons outside the rectangles as in Figure \ref{monotonic:fig}-(right).
+\end{enumerate}
+
+Concerning (1), a horizontal path in $L\times J$ disjoint from $\lambda$ is allowed, but it must keep being horizontal on the adjacent products. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 12.5 cm] {\iftoggle{BW}{monotonic2-BW}{monotonic2}}
+\nota{If a monotonic curve $\gamma$ forms a bigon with a leaf $\alpha$, by cutting carefully $\tau$ along $\gamma$ we construct a portion of train track on this bigon containing $\alpha$ and with truncated edges exiting orthogonally from $\gamma$ (left). We then simplify the triangles adjacent to $\gamma$ (right).}
+\label{monotonic2:fig}
+\end{center}
+\end{figure}
+
+A simple closed curve that forms no bigons with any leaf of $\lambda$ can be easily isotoped to be monotonic. Conversely, we now prove that a monotonic curve $\gamma$ forms no bigons with any leaf of $\lambda$. If it did, by cutting $\tau$ along $\gamma$ we would get an abstract bigon with a portion of train track as in Figure \ref{monotonic2:fig}-(left). If $\gamma$ is adjacent to some triangles as in Figure \ref{monotonic2:fig}-(right) we close them as shown there. Finally, by doubling the bigon along $\gamma$ we get a train track on a disc, and by doubling again we build a train track in a sphere, which is absurd (one checks easily that no complementary region is a disc, annulus, monogon, or bigon: there are no bigons because we have closed the triangles as in Figure \ref{monotonic2:fig}-(right)).
+
+The $\lambda$-transversal length $L(\gamma)$ of a monotonic $\gamma$ is the sum of the lengths of the sub-paths intersecting sequences of products $L\times J$ as in Figure \ref{monotonic:fig}-(left). One checks easily that the length of each sub-path is a half-integer linear combination of the colours $(a_i,b_i,c_i)$. Therefore $L(\gamma) = i(\gamma,\lambda)$ is a half-integer combination of the colours.
+
+If we vary the colouring $(a_i,b_i,c_i)$ a little, the curve $\gamma$ keeps being monotonic in the same way as before, except when a portion of $\gamma$ is horizontal: in that case the new monotonicity depends on how the colouring varies. In all cases, the new $\gamma$ is still monotonic, hence bigonless, hence $L(\gamma)=i(\gamma, \lambda)$ again. 
+
+If there are no horizontal portions in $\gamma$, the length $L(\gamma)$ varies linearly with the same integral formula found above. If there are horizontal portions, then the colour lies in a hyperplane of $\matR^{9g-9}$, and there are two different linear formulas joining there. Hence $i(\gamma,\lambda)$ is half-integral piecewise linear.
+\end{proof}
+
+The map $\lambda \mapsto i(\gamma, \lambda)$ is also obviously homogeneous, in the sense that $i(\gamma, t\lambda) = ti(\gamma, \lambda)$ for all $t\geqslant 0$. 
+
+The proof of Proposition \ref{integral:PL:map:prop} contains a recipe for calculating $i(\gamma, \lambda)$. It suffices to put $\gamma$ in monotonic position and then add the contributions of each monotonic arc. For instance, the $i$-th curve $\gamma_i$ of the pants decomposition has an obvious monotone position giving $i(\gamma_i,\lambda) = a_i$.
+
+The colours $b_i$ and $c_i$ do not have such an immediate description, but the following holds anyway.
+
+\begin{ex} \label{abc:ex}
+There exist finitely many simple closed curves $\gamma_j$ whose intersections $i(\lambda, \gamma_j)$ determine the colouring $(a_i,b_i,c_i)$ representing $\lambda$ in a half-integral piecewise-linear continuous fashion.
+\end{ex}
+\begin{proof}[Hint] Choose some additional curves as in Proposition \ref{9g-9:prop} 
+and compute their intersections with $\lambda$.
+\end{proof}
+
+\subsection{The Thurston boundary}
+We can finally determine the topology of the measured geodesic laminations space $\calML$ and of the Thurston boundary of the Teichm\"uller space.
+
+\begin{prop}
+The colouring parametrisation induces a homeomorphism $\calML \isom \matR^{6g-6}$.
+\end{prop}
+\begin{proof}
+The map $\calML \to C\times \ldots \times C \isom \matR^{6g-6}$ is continuous by Exercise \ref{abc:ex}. It is proper: if the colours $(a_i,b_i,c_i)$ stay bounded, the intersections $i(\lambda, \gamma_i)$ with finitely many filling curves $\gamma_i$ stay bounded, and hence $\lambda$ moves in a compact set by Proposition \ref{compattezza:C:prop}. The continuous map is a homeomorphism by Proposition \ref{propria:chiusa:cor}.
+\end{proof} 
+
+Let now $\matP\calML \subset \matP\calC$ be the set of all \emph{projective measured laminations}, that is the image of $\calML\setminus 0$ in $\matP\calC$. The set $\matP\calML$ contains the projective simple closed curves $\matP\calS$ and the projective multicurves $\matP\calM$.\index{geodesic lamination!projective measured geodesic lamination}
+
+\begin{teo}
+The following homeomorphism holds
+$$\partial \Teich(S_g) = \matP\calML \isom S^{6g-7}.$$ 
+The set $\matP\calS$ is dense in $\matP\calML$.
+\end{teo}
+\begin{proof}
+The homeomorphism $\calML \isom \matR^{6g-6}$ induces $\matP\calML \isom S^{6g-7}$. Concerning the Thuston boundary, we know from Section \ref{pinching:twisting:subsection} and Proposition \ref{alpha:zero:prop} that 
+$$\matP\calS \subset \partial \Teich(S_g) \subset \matP\calML.$$
+We now show that $\matP\calS$ is dense in $\matP\calML$, and this concludes the proof. 
+
+First, we prove that $\matP\calM$ is dense in $\matP\calML$. Rational colours $(a_i,b_i,c_i)$ form a dense subset of $C\times \ldots \times C$ and project to a dense subset of $\matP\calML$. Every rational colour is a multiple of an integer colour, which represents a multicurve.
+
+Second, we prove that $\matP\calS$ is dense in $\matP\calM$. Let $\mu$ be a multicurve in $S_g$. Up to acting via $\MCG(S_g)$ we may suppose that $\mu$ is supported on the pants decomposition $\gamma_1,\ldots, \gamma_{3g-3}$ used to define $C\times \ldots \times C$, hence $\mu$ is defined by some integral colour $(a_i,b_i,c_i) = (0,b_i,b_i)$. Now pick any simple closed curve $\gamma$ with $a_i' = i(\gamma, \gamma_i)>0$ for all $i$, represented by some colours $(a_i', b_i', c_i')$. By Dehn twisting $\gamma$ along the $\gamma_i$ we vary the pair $b_i', c_i'$ as we please, and by twisting at the correct rates we construct a sequence of simple closed curves that converge projectively to $[\mu]$.
+\end{proof}
+
+The mapping class group $\MCG(S_g)$ acts naturally on the whole set $\calC$ of currents and in particular it acts by homeomorphisms on $\partial \Teich(S_g)$. 
+
+The identification of $\partial\Teich(S_g) = \matP\calML$ with the projectivisation of $C\times \ldots \times C$ is of course not canonical because it depends on a decomposition of $S_g$ into pairs of pants and annuli. However, Proposition \ref{integral:PL:map:prop} and Exercise \ref{abc:ex} imply that any two different identifications differ by some projective integral piecewise-linear homeomorphisms, hence the Thurston boundary has a natural \emph{projective integral piecewise linear} structure, called PIP for short, which is preserved by $\MCG(S_g)$. In particular $\matP\calML$ contains some natural rational points, and these are $\matP\calM$.\index{PIP structure}
+
+\subsection{A projection}
+The reader has probably noted that the coordinates that yield the homeomorphisms $\Teich(S_g) \cong \matR^{6g-6}$ and $\partial \Teich(S_g)\cong S^{6g-7}$ are quite similar: they both depend on a pants decomposition $\mu$ plus some additional marking, and every curve of the pants decomposition contributes roughly with two parameters, a ``length'' and a ``twist''. It would now be reasonable to expect that both these coordinates merge nicely to give a global homeomorphism $\overline{\Teich(S_g)} \cong D^{6g-6}$, but this is unfortunately not the case. 
+
+The proof that $\overline{\Teich(S_g)}$ is homeomorphic to $D^{6g-6}$ is disappointingly indirect. We first prove that $\overline{\Teich(S_g)}$ is a topological manifold with boundary, by constructing some charts. To construct a chart, we first build a map
+$$q\colon\Teich(S_g) \to \ML$$ 
+that depends only on a fixed pants decomposition $\mu$. For a given hyperbolic metric $m\in\Teich(S_g)$, we construct a measured geodesic lamination $q(m)$ as follows. We straighten $\mu$ to its geodesic representative (with respect to $m$), and we consider separately each geodesic pair of pants $P$ of the decomposition. We first show that $P$ has a natural partial foliation, that depends only on its metric, whose leaves are not geodesics. We then glue these partial foliations to get a partial foliation on $S_g$, and then straighten it to a geodesic lamination $q(m)$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 10 cm] {\iftoggle{BW}{pants_q-BW}{pants_q}}
+\nota{Every geodesic pair of pants $P$ has a natural partial foliation: the shape of the foliation is determined by the sub-triangle containing $Q=[a_1,a_2,a_3]$ in Figure \ref{pants_train_tracks:fig}, where $a_1,a_2,a_3$ are the lengths of $\partial P$; the two pictures shown here correspond to two cases. In each case, there are three rectangles: each is the $R$-neighbourhood of the corresponding (unique) orthogeodesic\iftoggle{BW}{}{ (drawn in blue)}, and $R$ is the linear combination of $a_1,a_2,a_3$ prescribed by Figure \ref{pants_train_tracks:fig}, that is the unique combination that guarantees that the three rectangles match nicely as in the figure (1). We cut the geodesic pants $P$ along the three\iftoggle{BW}{}{ blue} orthogeodesics and get two right-angled hexagons. Since by hypothesis the three \iftoggle{BW}{small}{red} sides have length $\geqslant \varepsilon/2$, one sees easily that the central triangle has diameter bounded by some constant $C'$ depending only on $\varepsilon$, and hence every leaf in each of the three rectangles is shorter than some $C''$ that also depends only on $\varepsilon$ (2).}
+\label{pants_q:fig}
+\end{center}
+\end{figure}
+
+The natural partial foliation on $P$ is constructed as follows. Let $g_{ij}$ be the unique orthogeodesic connecting the $i$-th and $j$-th boundary component of $P$, for all $1 \leqslant i,j \leqslant 3$. Let $a_1, a_2, a_3$ be the lengths of the boundaries of $P$. We consider the point $Q=[a_1,a_2,a_3]$ in the triangle of Figure \ref{pants_train_tracks:fig}, pick the three orthogeodesics $g_{ij}$ isotopic to the three curves indicated in the sub-triangle of Figure \ref{pants_train_tracks:fig} containing $Q$, and thicken each $g_{ij}$ to a metric $R$-neighbourhood of $g_{ij}$, where $R$ is the linear combination of $a_1,a_2,a_3$ indicated in Figure \ref{pants_train_tracks:fig}. The $R$-neighbourhood is naturally foliated into (non-geodesic) arcs staying at fixed distance from $g_{ij}$ and the foliated neighbourhoods cover nicely much of the pair of pants $P$, as shown in Figure \ref{pants_q:fig}-(1). 
+Every foliated rectangle is equipped with a natural transverse measure induced by the orthogonal distance between leaves.
+
+The partial foliations of all the pairs of pants of $S_g$ glue to a singular measured foliation for $S_g$, which straightens as prescribed in Section \ref{parametrizzazione:subsection} to a measured geodesic lamination $q(m)$. 
+
+Let $\mu = \gamma_1\sqcup \ldots \sqcup \gamma_{3g-3}$ be our original pants decomposition.
+
+\begin{prop} \label{q:homeom:prop}
+The map $q$ restricts to a homeomorphism
+$$q\colon \Teich(S_g) \longrightarrow \big\{\lambda \in \ML \ \big|\ i(\lambda, \gamma_i)>0\ \forall i\ \big\}.$$
+\end{prop}
+\begin{proof}
+Compare the coordinates $(l_i, \theta_i)$ for $\Teich(S_g)$ and $(a_i,b_i,c_i)$ for $\ML$. The map $q$ sends $(l_i,\theta_i)$ to $(l_i,b_i,c_i)$ for some $(b_i,c_i)$ that depends homeomorphically on $\theta_i\in\matR$ for each $i$.
+Note that $a_i = i(\lambda, \gamma_i)$.
+\end{proof}
+
+\subsection{The fundamental lemma}
+We now show that the projection $q$ distorts very little the lengths of the simple closed curves, as long as we put a lower bound on the lengths of the curves $\gamma_1,\ldots \gamma_{3g-3}$ of the fixed pants decomposition $\mu$. This technical fact is called the Fundamental Lemma \cite{FLP}.
+
+For every $\varepsilon > 0$, we define $V(\varepsilon) \subset \Teich(S_g)$ to be the open subset consisting of all metrics $m$ such that $i(m,\gamma_i)>\varepsilon$ for all $i$.
+
+\begin{lemma}
+For every simple closed curve $\alpha\in \calS$ there exists a constant $C>0$ such that, for all $m\in V(\varepsilon)$, we have
+$$i(q(m),\alpha) \leqslant i (m,\alpha) \leqslant i(q(m), \alpha) + C.$$
+\end{lemma}
+\begin{proof}
+We represent $q(m)$ as a singular partial foliation, without straightening it. The transverse measure of $q(m)$ is just the length of orthogonal geodesics, hence the $q(m)$-measure of any piecewise-transverse closed curve is smaller or equal than its length: this proves that  $i(q(m),\alpha) \leqslant i (m,\alpha)$.
+
+We prove the other inequality. If $\alpha = \gamma_i$ then $i(m,\alpha) = i(q(m),\alpha)$, so we suppose that $i(\alpha, \mu)>0$. Up to isotopy we may take $\alpha$ to be monotonically transverse to $q(m)$, recall the proof of Proposition \ref{integral:PL:map:prop}. The curve $\alpha$ intersects each pair of pants $P$ into some essential arcs $\beta$ that cross each foliated rectangle monotonically. 
+
+We can easily homotope each of these arcs $\beta \subset \alpha\cap P$ with fixed endpoints into a (not necessarily simple!) piecewise smooth arc that decomposes into finitely many sub-arcs, that are alternatively contained either in a component of $\partial P$ or in a leaf of some foliated rectangle. Each sub-arc in a component of $\partial P$ may make many full turns (and hence may not be injective). Each of the three rectangles contains at most one leaf that is a sub-arc of $\beta$. We arrange the homotopy efficiently so that the new $\beta$ has the same transverse $q(m)$-measure as before.
+
+The transverse $q(m)$-measure of $\beta$ on the sub-arcs in $\partial P$ is equal to its length, whereas on the leaf sub-arcs it is zero. Therefore the $m$-length of $\beta$ is equal to its measure plus the length of at most 3 leaves of some rectangles in $P$. Figure \ref{pants_q:fig}-(2) shows that each such leaf is shorter than some constant $C''$ that depends only on $\varepsilon$. 
+
+Note that $\alpha$ is decomposed into $i(\alpha, \mu)$ arcs like $\beta$.
+By homotoping each $\beta$ as above we find a homotopic representative for $\alpha$ whose length is at most the $q(m)$-measure of $\alpha$ plus $C=3i(\alpha,\mu)C''$. The length of any homotopic representative is greater or equal than the length $i(m,\alpha)$ of the geodesic one, and this proves the second inequality.
+\end{proof}
+
+\begin{cor} \label{same:limit:cor}
+Let $m_i \in V(\varepsilon)$ be a diverging sequence in $\Teich(S_g)$. The sequence converges in $\overline{\Teich(S_g)}$ $\Longleftrightarrow$ the sequence $[q(m_i)]\in\PML$ does, and in this case they tend to the same limit.
+\end{cor}
+\begin{proof}
+If $m_i$ converges to some $[\alpha]\in\PML$, we have $\lambda_im_i \to \alpha$ for some real numbers $\lambda_i \to 0$. By the fundamental lemma, for every simple closed curve $\gamma \in \calS$ we get
+$$\big|i \big(\lambda_im_i, \gamma\big) - i\big(\lambda_iq(m_i), \gamma\big) \big| \to 0.$$
+Therefore $\lambda_iq(m_i)$ converges (on a subsequence) to a $\beta\in\calML$ such that $i(\alpha, \gamma) = i(\beta, \gamma)$ for all $\gamma \in \calS$. Exercise \ref{abc:ex} gives $\beta =\alpha$.
+
+The other implication is analogous.
+\end{proof}
+
+\subsection{A topological chart}
+Pick an arbitrary $[\lambda]\in \PML = \partial \Teich(S_g)$. We now construct an explicit neighbourhood of $[\lambda]$ in $\overline{\Teich(S_g)}$. 
+
+Let $\mu = \gamma_1\sqcup \ldots \sqcup \gamma_{3g-3}$ be a pants decomposition such that $i(\gamma_i, \lambda)>0$ for all $i$. We fix $\varepsilon>0$ and define as above $V(\varepsilon)\subset \Teich(S_g)$ as the set of all the metrics $m$ such that $i(\gamma_i, m)> \varepsilon$ for all $i$. We define similarly $W\subset \PML$ as the set of all $[\alpha]$ such that $i(\gamma_i, \alpha) > 0 $ for all $i$. We have $[\lambda]\in W$. 
+
+\begin{prop} We have 
+$$\pi(q(V(\varepsilon))) = \pi(q(\Teich(S_g))) = W.$$
+The set $W\cup V(\varepsilon)$ is an open neighbourhood of $[\lambda]$ in $\overline{\Teich(S_g)}$.
+\end{prop}
+\begin{proof}
+Proposition \ref{q:homeom:prop} implies the second equality, the first holds because every $[\alpha] \in W$ is represented by an $\alpha$ with $i(\gamma_i, \alpha)\geqslant \varepsilon$.
+
+The sets $W$ and $V(\varepsilon)$ are open in $\PML$ and $\Teich(S_g)$ respectively.
+If $W\cup V(\varepsilon)$ were not open in $\overline{\Teich(S_g)}$, there would be a sequence $m_i \not\in V(\varepsilon)$ of metrics converging to some $[\alpha]\in W$. On a subsequence we may suppose that $i(m_i,\gamma_j)<\varepsilon$ for some fixed $j$ and therefore $i(\alpha, \gamma_i)=0$, a contradiction.
+\end{proof}
+
+We have found an open neighbourhood of $[\lambda]$ and we now want to determine its topology. 
+
+\begin{prop}
+There is a homeomorphism 
+$$\phi\colon W\cup V(\varepsilon) \longrightarrow U $$
+onto an open subset $U\subset H$ of a half-space $H\subset \matR^{6g-6}$, with $\phi(W) = U\cap \partial H$.
+\end{prop}
+\begin{proof}
+We complete the pants decomposition $\mu$ to a filling set $\mu'\in \calC$ of simple closed curves in $S_g$, considered as a current. We know from Proposition \ref{bounded:metrics:compact:cor} that the metrics $m$ with $i(m,\mu')\leqslant M$ form a compact subset in $\Teich(S_g)$. We define the map
+\begin{align*}
+\phi \colon W \cup V(\varepsilon) & \longrightarrow W\times [0,1] \\
+x & \longmapsto 
+\left\{
+\begin{array}{ll} (x,0) & {\rm if\ } x\in W, \\
+(\pi(q(x)), e^{-i(q(x),\mu')}) & {\rm if\ } x\in V(\varepsilon).
+\end{array}
+\right.
+\end{align*}
+
+The map $\phi$ is continuous: if a sequence $m_i\in V(\varepsilon)$ of metrics tends to $[\alpha]\in\PML$, then $i(m_i,\mu')\to \infty$, hence $i(q(m_i),\mu')\to \infty$ by the fundamental lemma. Moreover $\pi(q(m_i)) \to [\alpha]$ by Corollary \ref{same:limit:cor}. Summing up, we get that $\phi(m_i) \to ([\alpha],0) = \phi([\alpha])$.
+
+The map $\phi$ is injective: given two metrics $m,m'$, if the first components of $\phi(m), \phi(m')$ are equal then $q(m) = \lambda q(m')$, and if the second components are equal we get $\lambda = 1$.
+
+By similar methods one proves that the image of $\phi$ is open and the inverse there is continuous. The set $W\times [0,1]$ embeds in $H$ since $W$ embeds in $\matR^{6g-7}$.
+\end{proof}
+
+\begin{cor} The space $\overline{\Teich(S_g)}$ is a topological manifold with boundary $\partial \Teich(S_g)$.
+\end{cor}
+
+\subsection{Conclusion} \label{MCG:conclusion:subsection}
+We have discovered that $\overline{\Teich(S_g)}$ is a compact topological manifold with boundary, and we now invoke Theorem \ref{topological:disc:teo} to deduce that it is a disc. We have finally completed the proof of the following theorem, which is the main achievement of the whole chapter.
+
+\begin{teo} \label{current:compactification:teo}
+The closure $\overline{\Teich(S_g)}$ of $\Teich(S_g)$ in $\matP\calC$ is homeomorphic to the closed disc $D^{6g-6}$. Its interior is $\Teich(S_g)$ and its boundary contains $\calS$ as a dense subset.
+\end{teo}
+
+Thurston's original compactification theorem embeds everything in $\matR^\calS$ instead of $\calC$. We can easily deduce it from Theorem \ref{current:compactification:teo}.
+
+\begin{proof}[Proof of Theorem \ref{compattificazione:teo}]
+The natural map $\calC \to \matR^\calS$ induced by the intersection form $i$ is continuous since $i$ is, and it induces a continuous map $\varphi\colon\matP\calC \to \matP(\matR^\calS)$ on their projective spaces. 
+
+The Teichm\"uller space is embedded in both projective spaces and $\varphi$ restricts to a homeomorphism between the two embeddings, and to a continuous surjective map from their compactifications. The map on compactifications is actually injective since $\varphi|_{\PML}$ is (intersections with simple closed curves distinguish laminations) and is hence a homeomorphism.
+\end{proof}
+
+
+\section{Surface diffeomorphisms} \label{surface:diffeomorphisms:section}
+We have discovered that Thurston's compactification $\overline{\Teich(S_g)}$ of the Teichm\"uller space is homeomorphic to a closed disc. The mapping class group $\MCG(S_g)$ acts on it naturally. We can now apply Brouwer's fixed point theorem to every element $\varphi \in \MCG(S_g)$, and characterise $\varphi$ according to the position of its fixed points, much similarly as we did for the isometries of $\matH^n$.
+
+\subsection{The torus case}
+As usual, the flat torus case is very instructive because everything can be written explicitly. 
+
+We know from Proposition \ref{toro:azione:prop} that $\MCG(T)$ acts on $\Teich(T)$ like the M\"obius transformations $\PSLZ$ do on the hyperbolic half-plane $H^2$. The action of course extends to the compactification $\overline{H^2} = H^2\cup \matR\cup\{\infty\}$ and every non-trivial isometry $A \in\PSLZ$ is elliptic, parabolic, or hyperbolic according to the position of its fixed points.
+
+As an integral matrix, the isometry $A$ has also more properties that are easy to check: if it is elliptic, it has finite order because $\PSLZ$ is discrete; if it is parabolic, it is conjugate in $\PSLZ$ to a matrix $\matr 1 n 0 1$ for some $n\neq 0$ and is thus the $n$-th power of a Dehn twist; if it is hyperbolic, it is conjugate in $\PSLR$ to a diagonal matrix $\matr \lambda 0 0 {\lambda^{-1}}$ for some $\lambda >1$, with some basis of eigenvectors $v,w$. The two foliations of $\matR^2$ into lines parallel to $v$ or $w$ are both preserved by $A$ and descend to foliations in $T = \matR^2/_{\matZ^2}$ that are preserved by $A$. The two foliations are both irrational (because $\lambda$ is), that is every leaf is dense in $T$, and $A$ stretches one foliation by $\lambda$ and contracts the other by $1/\lambda$. One such diffeomorphism of $T$ is called \emph{Anosov}.\index{Anosov diffeomorphism}
+
+Summing up, the non-trivial elements in $\MCG(T)$ either have finite order, or preserve a simple closed curve, or are Anosov. We now define an analogous trichotomy for the elements in $\MCG(S_g)$ when $g\geqslant 2$, where the foliations are replaced by measured geodesic laminations, and the measure is there to encode stretchings and contractions.
+
+\subsection{The trichotomy}
+Let $S_g$ have genus $g\geqslant 2$. The mapping class group $\MCG(S_g)$ acts naturally on the whole space $\calC$ of currents and in particular on the compactification $\overline{\Teich(S_g)} \cong D^{6g-6}$ of the Teichm\"uller space.
+
+Let $\varphi \in \MCG(S_g)$ be a non-trivial element. By Brouwer's fixed point theorem, $\varphi$ fixes at least one point in $\overline{\Teich(S_g)}$. We say that $\varphi$ is:
+\begin{enumerate}
+\item \emph{finite order} if it fixes a hyperbolic metric $m \in \Teich(S_g)$;
+\item \emph{reducible} if it fixes a multicurve $\mu \in \calM$;
+\item \emph{pseudo-Anosov} in all the other cases.
+\end{enumerate}
+
+We now analyse the three cases individually.\index{finite-order mapping class}\index{reducible mapping class}\index{pseudo-Anosov mapping class}
+
+\subsection{Finite order elements}
+We must first explain the terminology.
+
+\begin{prop} \label{finite:finite:prop}
+A non-trivial element $\varphi\in\MCG(S_g)$ is finite order if and only if it has indeed finite order in $\MCG(S_g)$.
+\end{prop}
+\begin{proof}
+Suppose that $\varphi$ preserves the isotopy class $[m]\in\Teich(S_g)$ of a hyperbolic metric $m$ in $S_g$. We can choose a representative for $\varphi$ that fixes $m$. This representative is an isometry for $m$.
+Since the isometry group of a closed hyperbolic manifold is finite (see Corollary \ref{finite:isometry:group:cor}) we have $\varphi^n=\id$ for some $n>1$ and $\varphi$ has indeed finite order in $\MCG(S_g)$. 
+
+Conversely, let $\varphi$ be an element having finite order in $\MCG(S_g)$. The subgroup $\langle \varphi \rangle$ generated by $\varphi$ cannot act freely on $\Teich(S_g) \isom  \matR^{6g-6}$, otherwise it would quotient $\matR^{6g-6}$ to an aspherical manifold with finite fundamental group, contradicting Theorem \ref{no:torsion:aspherical:teo}. Therefore some non-trivial power of $\varphi$ has a fixed point in $\Teich(S_g)$.
+
+If $\varphi$ has prime order we easily conclude that also $\varphi$ has a fixed point and we are done. However, if $\varphi$ has order $p_1\cdots p_s$ for some primes $p_i$, we need to do more work. By induction, $\varphi' = \varphi^{p_1\cdots p_{s-1}}$ has a fixed point $[m]\in\Teich(S_g)$ and is hence represented by an isometry for $S_g$ with metric $m$. The isometry $\varphi'$ quotients $S_g$ to a hyperbolic orbifold, and the fixed points $\Fix(\varphi')$ of $\varphi'$ in $\Teich(S_g)$ can be identified naturally with the (suitably defined) Teichm\"uller space of this orbifold, which is homeomorphic to $\matR^N$ for some $N>0$ like in the surface case (exercise).
+
+Since $\varphi$ and $\varphi'$ commute, the first act as a mapping class on $\Fix(\varphi')$ with order $p_1\cdots p_{s-1}$: we conclude by induction on $s$ that $\varphi$ has a fixed point in $\Teich(S_g)$.
+\end{proof}
+
+We get in particular the following corollary, which is far from obvious because $\MCG(S_g)$ does \emph{not} act itself on $S_g$, and algebraic relations in $\MCG(S_g)$ do not translate into algebraic relations between representatives, except in some very lucky cases.
+
+\begin{cor}
+If $\varphi\in\MCG(S_g)$ has order $k$, it may be represented by a diffeomorphism $\varphi\colon S_g\to S_g$ such that $\varphi^k = \id$.
+\end{cor}
+\begin{proof}
+The class $\varphi$ has a representative $\varphi\colon S_g \to S_g$ that is an isometry for some hyperbolic metric; the isometry $\varphi^k$ is isotopic to the identity and is hence the identity by Corollary \ref{isometries:not:homotopic:cor}.
+\end{proof}
+
+\subsection{Reducible elements}
+We must explain the terminology also in this case.
+If $\varphi$ fixes a multicurve $\mu$, one can cut $S_g$ along $\mu$ and look at the restriction of $\varphi$ to the resulting pieces: after extending all the theory to surfaces with boundary (that we have not done here for simplicity), we can hence study inductively each piece, and this explains the word \emph{reducible}.
+
+The cases (1) and (2) are not exclusive: there are isometries of hyperbolic surfaces that preserve some multicurve. On the other hand, there are finite order elements that are not reducible (exercise) and reducible mapping classes that are not of finite order: for instance, Dehn twists. 
+
+\subsection{The action on $\calML$}
+The mapping class group $\MCG(S_g)$ of $S_g$ acts on the currents space $\calC$ and hence on the ``light cone'' subspace $\calML$ of all measured geodesic laminations, which contains the space $\calM$ of multicurves. 
+
+The action of $\MCG(S_g)$ on $\calML$ can be seen concretely inside $S_g$. It suffices to consider $\calML$ as the space of all measured \emph{topological} laminations (defined in Section \ref{topological:laminations:subsection}) considered up to isotopy and collapsing of parallel closed leaves. 
+Now $\varphi\in\MCG(S_g)$ acts on $\calML$ simply by sending the measured topological lamination $\mu$ to $\varphi(\mu)$. 
+
+We now prove that if $\varphi$ fixes a non-trivial point in $\calML$ we fall back into one of the two cases already considered.
+
+\begin{prop} \label{varphi:fixes:mu:prop}
+If $\varphi(\mu) = \mu$ for some non-trivial $\mu\in\ML$, then $\varphi$ is either finite order or reducible.
+\end{prop}
+\begin{proof}
+We fix a hyperbolic metric on $S_g$ and represent $\mu$ as a measured geodesic lamination there. 
+
+By Proposition \ref{finite:regions:prop} there are finitely many complementary regions in $S_g\setminus \mu$. If $\mu$ is not full, some region is not an ideal polygon and hence deformation-retracts onto a subsurface $S'\subset S_g$, whose boundary components $\partial S'$ are non-trivial simple closed curves in $S_g$. The union of all such curves $\partial S'$ as $S'$ varies produces a multicurve preserved by $\varphi$, which is hence reducible.
+
+If $\mu$ is full, all the complementary regions are ideal polygons, and after substituting $\varphi$ with a finite power we can suppose that each region is fixed (not pointwise) by $\varphi$, together with each of its boundary components. We consider the preimage $\tilde \mu \subset \matH^2$ and note that its complementary regions in $\matH^2$ are still ideal finite polygons, the lifts of the ones in $S_g$. 
+
+The diffeomorphism $\varphi$ lifts to a homeomorphism $\tilde\varphi \colon \overline{\matH^2} \to \overline{\matH^2}$ that fixes $\tilde \mu$, and we may suppose that it fixes (not pointwise) a complementary polygon and each of its boundary lines. In particular $\varphi$ fixes orientation-preservingly a line $l\subset \tilde \mu$. 
+
+Remember that $\calG$ is the set of all lines in $\matH^2$.
+We now prove that, if $\tilde\varphi$ fixes (orientation-preservingly) a 
+line $l\subset \tilde \mu \subset \calG$, then it fixes (still orientation-preservingly) all the lines in $\tilde \mu$ contained in some neighbourhood of $l\in \calG$. This is done as follows: since the boxes form a neighbourhood system for $\calG$, and $\tilde\varphi$ acts via homeomorphisms on $\calG$, there are two boxes $B\subset B'$ containing $l$ such that $\tilde\varphi(B) \subset B'$. Now $B\cap \tilde \mu \subset B'\cap \tilde \mu$ consists of some parallel lines, which look like $J\times \matR \subset J' \times \matR$ for some measured ordered set $J'$ and some subsegment $J\subset J'$: the map $\varphi$ sends  $J$ to $J'$ preserving both the ordering and the measure, and fixing the point corresponding to $l$: hence it is the identity.
+
+On the other hand, every complementary region of $\tilde\mu$ is a finite ideal polygon: hence if $\tilde\varphi$ fixes (orientation-preservingly) one side of the polygon, it fixes all the others. 
+
+The two properties just listed together easily imply that, since $l$ is fixed, the whole of $\tilde\mu$ is. Since the lines are fixed orientation-preservingly, their endpoints are fixed: the map $\tilde\varphi$ fixes all the endpoints of all lines in $\tilde\mu$, and since these endpoints form a dense subset of $\partial \matH^2$ the map $\tilde\varphi$ fixes $\partial \matH^2$ pointwise and hence $\varphi$ is trivial in $\MCG(S_g)$ by Proposition \ref{action:curves:prop}.
+\end{proof}
+
+The previous proposition shows in particular that pseudo-Anosov elements act freely on $\calML\setminus \{0\}$. We now investigate more closely these mysterious mapping classes.
+
+\subsection{Pseudo-Anosov elements}
+A pseudo-Anosov element $\varphi$ is by definition neither finite order nor reducible. We have just seen that $\varphi$ acts freely on $\calML\setminus \{0\}$, but this does not prevent it from having some fixed points in $\PML$; indeed we now show that there are two fixed points there, one attracting and the other repelling, so that $\varphi$ looks very much like a hyperbolic isometry on the hyperbolic space.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 5 cm] {\iftoggle{BW}{pAdynamics-BW}{pAdynamics}}
+\nota{The appropriate lift $\tilde \varphi$ acts on $\partial \matH^2$ with $2k$ fixed points that are alternatively attractive and repelling. By joining the repelling points we find another lamination $\mu_u$ fixed by $\varphi$. Here $k=5$.}
+\label{pAdynamics:fig}
+\end{center}
+\end{figure}
+
+\begin{teo} \label{su:teo}
+Let $\varphi \in \MCG(S_g)$ be a pseudo-Anosov element. There are two measured geodesic laminations $\mu_s, \mu_u \in \ML$ and a real number $\lambda >1$ such that 
+$$\varphi(\mu_s) = \lambda \mu_s, \qquad \varphi(\mu_u) = \frac 1\lambda \mu_u.$$
+The laminations $\mu_s$ and $\mu_u$ are full, and they altogether fill $S_g$. %and minimal, and they altogether fill $S_g$.
+\end{teo}
+\begin{proof}
+By Brouwer's fixed point theorem, a pseudo-Anosov element $\varphi$ has a fixed point in $\overline{\Teich(S_g)}\isom D^{6g-6}$ which is (by definition) neither a metric nor a multicurve. Therefore $\varphi$ fixes a projective measured lamination $[\mu]$ which is full (otherwise $\varphi$ would be reducible: see the proof of Proposition \ref{varphi:fixes:mu:prop}).
+
+Since $[\mu]$ is a projective class, we have $\varphi(\mu) = \lambda\mu$ for some real number $\lambda >0$. Up to replacing $\varphi$ with its inverse $\varphi^{-1}$ we may suppose that $\lambda \geqslant 1$, and Proposition \ref{varphi:fixes:mu:prop} shows that $\lambda>1$. We denote this $\mu$ by $\mu_s$.
+
+We now construct $\mu_u$. As in the proof of Proposition \ref{varphi:fixes:mu:prop}, we consider the preimage $\tilde\mu_s\subset \matH^2$ of $\mu_s$, and after replacing $\varphi$ with a finite power we may choose a lift $\tilde \varphi$ of $\varphi$ that fixes a complementary polygonal region $R$ of $\tilde\mu_s$ and its sides, hence in particular the vertices of $R$, see Figure \ref{pAdynamics:fig}.
+
+The $k$ vertices of $R$ divide $\partial \matH^2$ into $\tilde\varphi$-invariant arcs $I_1,\ldots, I_k$, corresponding to the sides $s_1,\ldots, s_k$ of $R$, see Figure \ref{pAdynamics:fig}. Since $\mu_s$ is full, each $s_i$ is the limit of a sequence of leaves in $\tilde\mu_s$ with both endpoints in $I_i$ converging to the endpoints of $s_i$ but distinct from them by Proposition \ref{at:most:two:prop}. Since $\lambda > 1$, the map $\tilde\varphi$ pushes these leaves towards $s_i$, so in particular the vertices of $R$ are local attractors for the action of $\tilde\varphi$ on $\partial \matH^2$, see Figure \ref{pAdynamics:fig}.
+
+Since the endpoints $p$ and $q$ of $l_i$ are attractors, the map $\tilde\varphi$ fixes at least one point in the interior of $I_i$, and we show that it cannot fix two: if $\tilde \varphi$ fixes $r$ and $s$ in the interior of $I_i$, then it fixes the box $[p,r] \times [s,q]$ that has non-zero measure, a contradiction since $\lambda > 1$. There is a single fixed point in $l_i$, and it must be repulsive.
+
+The dynamics of $\tilde \varphi$ on $\partial \matH^2$ is described in Figure \ref{pAdynamics:fig}. %The support of $\mu_s$ in $S_g$ is the closure of the projection of the $k$ \iftoggle{BW}{grey}{red} lines, by Proposition \ref{minimal:dense:prop}. 
+The closure of the projection of the $k$ \iftoggle{BW}{light grey}{green} lines is another invariant geodesic lamination $\mu_u$, which must be full %and minimal 
+because $\varphi$ is pseudo-Anosov.
+
+We now prove that $\mu_u$ admits some (non unique) transverse measure and can hence be considered as an element of $\ML$. The dynamics shows that for some curve $\gamma\in\calS$ the supports of $\varphi^{-k}(\gamma)$ tend to that of $\mu_u$. The sequence $\varphi^{-k}([\gamma])\in \PML$ hence converges on a subsequence to a projective measured geodesic lamination with support $\mu_u$.
+
+In principle, the measure supported by $\mu_u$ needs not to be unique, not even up to rescaling: hence the element $[\mu_u]$ may not be uniquely determined and we cannot conclude that it is fixed by $\varphi$, unfortunately. However, distinct measures on the same support form obviously a convex cone in the current space $\calC$ and hence a closed disc in $\matP\calC$, the class $\varphi$ acts on this disc and therefore has a fixed point there by Brouwer's fixed point theorem again. 
+
+We have $\varphi(\mu_u) = \lambda' \mu_u$ for some $\lambda'$. 
+It is clear that $\mu_u$ and $\mu_s$ fill $S_g$ altogether, and in particular $i(\mu_u, \mu_s) > 0$. Therefore
+$$0 < i(\mu_u, \mu_s) = i(\varphi(\mu_u), \varphi(\mu_s)) = \lambda \lambda' i(\mu_u, \mu_s)$$
+gives $\lambda' = \frac 1 \lambda$. The proof is complete.
+\end{proof}
+
+The laminations $\mu_s$ and $\mu_u$ are the \emph{stable} and the \emph{unstable} measured geodesic laminations fixed by $\varphi$, and $\lambda$ is the \emph{dilatation} of $\varphi$. We now prove a converse to Theorem \ref{su:teo}.\index{geodesic lamination!stable and unstable measured geodesic lamination}
+
+\begin{prop} \label{pA:converse:prop}
+If $\varphi \in \MCG(S_g)$ is such that $\varphi(\mu) = \lambda \mu$ for some full %and minimal 
+$\mu \in \calML$ and $\lambda > 1$, then $\varphi$ is pseudo-Anosov.
+\end{prop}
+\begin{proof}
+We need to prove that $\varphi$ is neither finite order nor reducible, that is that $\varphi$ fixes no non-trivial current $\alpha \in \Teich(S_g) \cup \calM$. We have 
+$$i\big(\varphi^k(\alpha), \mu\big) = i\big(\alpha, \varphi^{-k}(\mu)\big) =
+\lambda^{-k}i\big(\alpha, \mu) \to 0$$
+as $k\to +\infty$. Therefore $\varphi(\alpha) \neq \alpha$ unless $i(\alpha, \mu)=0$, which is excluded since $\mu$ is full.
+\end{proof}
+
+\subsection{Examples}
+We now construct plenty of pseudo-Anosov diffeomorphisms. We need a bit of simple linear algebra.
+
+We say that a matrix or vector is \emph{positive} if all its entries are.
+A square matrix $M$ with non-negative integral entries is \emph{Perron-Frobenius} if $M^k$ is positive for some $k>0$.\index{Perron-Frobenius matrix} 
+
+\begin{prop} \label{PF:prop}
+Every Perron-Frobenius integral matrix $M$ has a positive eigenvector $v$ with some eigenvalue $\lambda>1$.
+\end{prop}
+\begin{proof}
+The matrix $M$ has non-negative entries and hence preserves the standard simplex $\Delta = \{x_i\geqslant 0, \sum x_i = 1\}$, so by Brouwer's fixed point theorem it has a fixed point $v\in \Delta$ there. Since $M^k > 0$ and $v$ is an eigenvector for $M^k$, we get $v>0$. Since $M^k$ is integral we get $\lambda^k > 1$ and hence $\lambda >1$.
+\end{proof}
+
+The following examples were constructed by Penner in 1988. Recall that a multicurve $\alpha$ in $S_g$ is \emph{essential} if it contains no parallel components: this holds for instance if $\alpha$ is a simple closed curve or a pants decomposition.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11 cm] {\iftoggle{BW}{Penner-BW}{Penner}}
+\nota{We smoothen $\alpha \cup \beta$ to a bigon track that contains both $\alpha$ and $\beta$ (left). The bigon track may have some bigons as complementary regions (right).}
+\label{Penner:fig}
+\end{center}
+\end{figure}
+
+\begin{teo} \label{Penner:teo}
+Let $\alpha$ and $\beta$ be two essential multicurves that altogether fill $S_g$. Let $\varphi\in\MCG(S_g)$ be any composition of Dehn twists $T_a^{+1}$ and $T_b^{-1}$ where $a$ and $b$ vary among the curves in $\alpha$ and $\beta$. If every component $a$, $b$ of $\alpha$, $\beta$ occurs at least once, then $\varphi$ is pseudo-Anosov.
+\end{teo}
+The Dehn twists may occur in any order, for instance $\varphi = T_{a}^2T_b^{-3}T_{b'}^{-1}T_{a'}$.
+\begin{proof}
+We put $\alpha$ and $\beta$ in minimal position and smoothen the transverse intersections as in Figure \ref{Penner:fig}-(left) to get a \emph{bigon track} $\tau$. A bigon track is like a train track, except that it may contain some complementary bigon as in Figure \ref{Penner:fig}-(right). The straightening procedure described in Section \ref{parametrizzazione:subsection} works also in this case (exercise), so every weight system on $\tau$ determines a measured geodesic lamination in $S_g$.\index{train track!bigon track} (Different weight systems may determine the same geodesic laminations because of the bigons.)
+
+We have $\alpha = a_1 \sqcup \ldots \sqcup a_m$ and $\beta = b_1 \sqcup \ldots \sqcup b_n$. Each $a_i$ and $b_j$ may be represented by assigning weights 1 or 0 to the edges of $\tau$, and these weights form $m+n$ independent (exercise) vectors $v_1,\ldots, v_{m+n}$
+in the weights space of $\tau$. Let $V$ be the $(m+n)$-dimensional sub-cone of the weights space generated by $v_1,\ldots, v_{m+n}$ via combinations with non-negative coefficients. 
+Every vector in $V$ models a measured geodesic lamination in $S_g$.
+
+Let $\Omega$ be the $m+n$ square matrix $\Omega_{ij} = i(v_i, v_j)$. We have $\Omega = \matr 0HK0$. The crucial point here is that both $T_{a_j}$ and $T_{b_k}^{-1}$ act on $V$ like the matrix 
+$$Q_i = I + D_i\Omega$$
+where $I$ is the identity and $D_i$ has 1 on the $i$-th entry of the diagonal and 0 everywhere else. The map $\varphi$ therefore acts on $V$ as a product $M = Q_{i_1} \cdots Q_{i_h}$ of non-negative matrices. Since each $i=1,\ldots,m+n$ occurs at least once as an index, we may deduce (exercise) that $M$ is Perron-Frobenius. Therefore $M$ has a positive eigenvector $v$ with eigenvalue $\lambda > 1$.
+
+The positive eigenvector $v$ determines an element $\mu \in \ML$ such that $\varphi(\mu) = \lambda \mu$. We leave to the reader the proof that $\mu$ is full, %and minimal, 
+and we conclude using Proposition \ref{pA:converse:prop}.
+\end{proof}
+
+\subsection{References}
+The material contained in this chapter is well known to experts, but it is hard to find a source in the literature that contains everything in a fully self-contained way. The whole theory was presented by Thurston in a very nice and readable paper \cite{Th_diff} that however contained no proof. The most complete book on the subject is then Fathi -- Laudenbach -- Po\'enaru \cite{FLP}, and this is also the main source that we have used for writing this chapter. 
+Another important source is Casson -- Bleiler \cite{CB}.
+
+We have chosen to describe the whole theory using Bonahon's geodesic currents, that originated in the papers \cite{B1, B2}. To this purpose we have also consulted McMullen \cite{McM}, Aramayona -- Leininger \cite{AL}, and Calegari \cite{Ca}. We also borrowed some arguments on train tracks and measured geodesic laminations from a nice and self-contained paper of Hatcher \cite{H2}. The proof of Proposition \ref{finite:finite:prop} was taken from \cite[Theorem 6.1]{FM}. Theorem \ref{Penner:teo} was proved by Penner in \cite{Pe}.
+
+
+

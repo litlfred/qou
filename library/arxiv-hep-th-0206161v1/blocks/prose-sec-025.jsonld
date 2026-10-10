@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-025",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-025",
   "kind": "prose",
   "title": "Baulieu, A. Losev, N. Nekrasov, hep-th/9707174",
   "pageStart": 31,
   "pageEnd": 31,
   "text": "../sections/sec-025-l-baulieu-a-losev-n-nekrasov-hep-th9707174.md",
-  "derivedFrom": "library/arxiv-hep-th-0206161v1/manifest",
-  "sourceDocument": "library/arxiv-hep-th-0206161v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-0206161v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-0206161v1/manifest.jsonld",
   "provenance": "ingested"
 }

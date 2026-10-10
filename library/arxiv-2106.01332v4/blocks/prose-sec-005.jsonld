@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2106.01332v4/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2106.01332v4/blocks/prose-sec-005",
   "kind": "prose",
   "title": "Using the deﬁnition of braided network, a framed link L is",
   "pageStart": 7,
   "pageEnd": 10,
   "text": "../sections/sec-005-l-using-the-deﬁnition-of-braided-network-a-frame.md",
-  "derivedFrom": "library/arxiv-2106.01332v4/manifest",
-  "sourceDocument": "library/arxiv-2106.01332v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2106.01332v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2106.01332v4/manifest.jsonld",
   "provenance": "ingested"
 }

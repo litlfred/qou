@@ -6,7 +6,8 @@
   "sha256": "8ad8e2d5a8881a5bcc890a08f8ec95627c0be9ef5d82e9731f9f57a1dcba0746",
   "bytes": 405672,
   "pages": 34,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -184,6 +185,62 @@
   "likely_scanned": false,
   "toc_entries": 9,
   "sections": 8,
-  "chars_total": 85115
+  "chars_total": 85115,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "SteinDimOne_rev1.tex",
+   "tex_sections": 6,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-on-covariance-identities-and-the-stein-kernel",
+     "title": "On covariance identities and the Stein kernel",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-3-some-weighted-functional-inequalities",
+     "title": "Some weighted functional inequalities",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-32-links-with-muckenhoupt-type-criteria",
+     "title": "Links with Muckenhoupt-type criteria",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-33-asymmetric-brascamp-lieb-type-inequalities",
+     "title": "Asymmetric Brascamp-Lieb-type inequalities",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-34-isoperimetric-constant",
+     "title": "Isoperimetric constant",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-4-concentration-inequalities",
+     "title": "Concentration inequalities",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-5-tail-bounds",
+     "title": "Tail bounds",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

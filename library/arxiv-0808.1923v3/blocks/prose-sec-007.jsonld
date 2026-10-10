@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0808.1923v3/blocks/prose-sec-007",
+  "kind": "prose",
+  "title": "Transport 2-Functors",
+  "pageStart": 12,
+  "pageEnd": 15,
+  "text": "../sections/sec-007-3-transport-2-functors.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0808.1923v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0808.1923v3/manifest.jsonld",
+  "provenance": "ingested"
+}

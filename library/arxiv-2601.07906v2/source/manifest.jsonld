@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2601.07906v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A universal sum over topologies in 3d gravity (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2601.07906v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2601.07906&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2601.07906v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2601.07906v2",
+    "content_type": "application/gzip",
+    "sha256": "590775f69f3ec81b87d0f78fc1c9e6ba2cf094a3d49ecc7a36aa3e6c10d8cf20",
+    "bytes": 211796,
+    "fetched": "2026-10-10T15:22:16+00:00",
+    "files": [
+      {
+        "path": "source/files/bib.bib",
+        "role": "bib",
+        "sha256": "3f21a3ab8a62ff5ea991ed9789c8f190e112a52e0606222bc0e01f34aaed3420",
+        "bytes": 131142
+      },
+      {
+        "path": "source/files/jheppub.sty",
+        "role": "sty",
+        "sha256": "ad5d4c2893ec2be4efc70ecddb12ccfc04244befbce9af1d1ce9a19d62812cd9",
+        "bytes": 11838
+      },
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "b35c15bed5eb41f68630737781fc4b8b6c85c971435f327dc14c30c4ac42a525",
+        "bytes": 714410
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

@@ -6,7 +6,8 @@
   "sha256": "9a7757f998b7f6808f05324c7f3e26e9270a6c32a40846f450fe7c357f84b1ed",
   "bytes": 459991,
   "pages": 46,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -591,6 +592,168 @@
   "likely_scanned": false,
   "toc_entries": 37,
   "sections": 29,
-  "chars_total": 82029
+  "chars_total": 82029,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 4,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.213,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-curvature",
+     "title": "Curvature",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-parallel-transport",
+     "title": "Parallel transport",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-the-dependence-of-the-parallel-transport-on-a-sm",
+     "title": "The dependence of the parallel transport on a smooth family of curves - the Ambrose-Singer theorem",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-crossed-modules",
+     "title": "Crossed modules",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-crossed-modules-and-categorical-groups",
+     "title": "Crossed modules and categorical groups",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-the-thin-fundamental-categorical-group-of-a-mani",
+     "title": "The thin fundamental categorical group of a manifold",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-1-tracks",
+     "title": "1-Tracks",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-2-tracks",
+     "title": "2-Tracks",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-horizontal-and-vertical-compositions-of-2-tracks",
+     "title": "Horizontal and vertical compositions of 2-tracks",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-the-thin-fundamental-crossed-module-of-a-smooth",
+     "title": "The thin fundamental crossed module of a smooth manifold",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-two-exact-sequences",
+     "title": "Two exact sequences",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-two-dimensional-holonomies",
+     "title": "Two-dimensional holonomies",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-013-categorical-connections",
+     "title": "Categorical connections",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-the-2-curvature-3-form-of-a-g-categorical-connec",
+     "title": "The 2-curvature 3-form of a G-categorical connection",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-algebraic-preliminaries",
+     "title": "Algebraic preliminaries",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-the-2-structure-equation",
+     "title": "The 2-structure equation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-the-2-bianchi-identity",
+     "title": "The 2-Bianchi identity",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-local-form-of-a-categorical-connection",
+     "title": "Local form of a categorical connection",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-categorical-holonomy",
+     "title": "Categorical holonomy",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-categorical-connections-and-categorical-connecti",
+     "title": "Categorical connections and categorical connection holonomies",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-a-well-known-lemma",
+     "title": "A well-known lemma",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-the-dependence-of-the-surface-holonomy-on-a-smoo",
+     "title": "The dependence of the surface holonomy on a smooth family of surfaces",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-re-scaling",
+     "title": "Re-scaling",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-2-bundles",
+     "title": "2-Bundles",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-wilson-spheres",
+     "title": "Wilson Spheres",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-the-dependence-of-a-categorical-connection-holon",
+     "title": "The dependence of a categorical connection holonomy on the elements of the fibre",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-associating-2-holonomies-to-embedded-spheres",
+     "title": "Associating 2-holonomies to embedded spheres",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-appendix-technical-lemmas",
+     "title": "Appendix: Technical Lemmas",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.458,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

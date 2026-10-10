@@ -6,7 +6,8 @@
   "sha256": "db27cb6d01c4f2fbd5478f29532386c399aa0f7b8b2a223cf1a284567b48b3fb",
   "bytes": 1047366,
   "pages": 99,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -351,6 +352,132 @@
   "likely_scanned": false,
   "toc_entries": 20,
   "sections": 17,
-  "chars_total": 201519
+  "chars_total": 201519,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main.tex",
+   "tex_sections": 12,
+   "overlaid": 8,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-generators",
+     "title": "Generators",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-commutative-frobenius-relations",
+     "title": "Commutative Frobenius Relations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-outline-of-strategy",
+     "title": "Outline of Strategy",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.884,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-existence-and-spherical-morse-functions",
+     "title": "Existence and Spherical Morse Functions",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.917,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-spherical-morse-functions",
+     "title": "Spherical Morse Functions",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.759,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-local-models-of-excellent-morse-failures",
+     "title": "Local Models of Excellent Morse Failures",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.495,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-007-prime-relations",
+     "title": "Prime Relations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-no-internal-relations",
+     "title": "No Internal Relations",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.842,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-external-prime-relations",
+     "title": "External Prime Relations",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.857,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-sufficiency-of-external-relations",
+     "title": "Sufficiency of External Relations",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.864,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-necessity-of-legs-relations",
+     "title": "Necessity of Legs Relations",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.876,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-passing-through-tfts",
+     "title": "Passing through TFTs",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-p-and-l-monoids",
+     "title": "P and L Monoids",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.758,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-relations-to-j-algebras",
+     "title": "Relations to J-Algebras",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.326,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-015-presentations-of-a-category",
+     "title": "Presentations of a Category",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-towards",
+     "title": "Towards",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

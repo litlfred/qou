@@ -6,7 +6,8 @@
   "sha256": "8e38b9e56d2467095ccd08f0b61a1ae8b7d08cd2a46a52e8b20afcf84e3c8ba4",
   "bytes": 419302,
   "pages": 36,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -174,6 +175,71 @@
   "likely_scanned": false,
   "toc_entries": 9,
   "sections": 7,
-  "chars_total": 83726
+  "chars_total": 83726,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 8,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-0-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.597,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-prestacks-on-a-topological-space",
+     "title": "Prestacks on a Topological Space",
+     "prose_ratio": 0.805,
+     "coverage_ratio": 0.942,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-extensions-of-gerbes",
+     "title": "Extensions of Gerbes",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.883,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-4-obstruction-classes",
+     "title": "Obstruction Classes",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-5-sufficient-conditions-for-existence-of-obstruc",
+     "title": "Sufficient Conditions for Existence of Obstruction Classes",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.967,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-6-pronilpotent-gerbes",
+     "title": "Pronilpotent Gerbes",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.495,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-006-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

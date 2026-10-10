@@ -6,7 +6,8 @@
   "sha256": "a3cc6d51cd04fc0736955afa21ff937ff60793a255bc282e835a6e7b662688db",
   "bytes": 308042,
   "pages": 30,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -190,6 +191,49 @@
   "likely_scanned": false,
   "toc_entries": 14,
   "sections": 5,
-  "chars_total": 51922
+  "chars_total": 51922,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 3,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.977,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-rank-one",
+     "title": "Rank one",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-rank-two",
+     "title": "Rank two",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-rank-three",
+     "title": "Rank three",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-physical-applications",
+     "title": "Physical applications",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.379,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2108.03616v2/blocks/prose-sec-008",
+  "kind": "prose",
+  "title": "Connections to other condition numbers",
+  "pageStart": 15,
+  "pageEnd": 18,
+  "text": "../sections/sec-008-4-connections-to-other-condition-numbers.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2108.03616v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2108.03616v2/manifest.jsonld",
+  "provenance": "ingested"
+}

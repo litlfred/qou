@@ -5,7 +5,8 @@
   "file": "2111.04763v2.pdf",
   "sha256": "760a7f9794e8baaa78e7288747f5b919cb8c9596c16504f1d17782387fe390da",
   "bytes": 1203153,
-  "pages": 59
+  "pages": 59,
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -15,9 +16,9 @@
    "stamp_date": "18 Apr 2026"
   },
   "doi": null,
-  "title": "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION",
-  "authors_raw": "STAVROS GAROUFALIDIS, JIE GU, MARCOS MARIÑO, AND CAMPBELL WHEELER",
-  "abstract": "Some years ago, it was conjectured by the first author that the Chern–Simons perturbation theory of a 3-manifold at the trivial flat connection is a resurgent power series. We describe completely the resurgent structure of the above series (including the location of the singularities and their Stokes constants) in the case of a hyperbolic knot complement in terms of an extended square matrix of(x,q)-series whose rows are indexed by the boundary parabolicSL 2(C)-flat connections, including the trivial one. We use our extended matrix to describe the Stokes constants of the above series, to define explicitly their Borel transform and to identify it with state–integrals. Along the way, we use our matrix to give an analytic extension of the Kashaev invariant and of the colored Jones polynomial and to complete the matrix valued holomorphic quantum modular forms as well as to give an exact version of the refined quantum modularity conjecture of Zagier and the first author. Finally, our matrix provides an extension of the 3D-index in a sector of the trivial flat connection. We illustrate our definitions, theorems, numerical calculations and conjectures with the two simplest hyperbolic knots.",
+  "title": "RESURGENCE OF CHERN\u2013SIMONS THEORY AT THE TRIVIAL FLAT CONNECTION",
+  "authors_raw": "STAVROS GAROUFALIDIS, JIE GU, MARCOS MARI\u00d1O, AND CAMPBELL WHEELER",
+  "abstract": "Some years ago, it was conjectured by the first author that the Chern\u2013Simons perturbation theory of a 3-manifold at the trivial flat connection is a resurgent power series. We describe completely the resurgent structure of the above series (including the location of the singularities and their Stokes constants) in the case of a hyperbolic knot complement in terms of an extended square matrix of(x,q)-series whose rows are indexed by the boundary parabolicSL 2(C)-flat connections, including the trivial one. We use our extended matrix to describe the Stokes constants of the above series, to define explicitly their Borel transform and to identify it with state\u2013integrals. Along the way, we use our matrix to give an analytic extension of the Kashaev invariant and of the colored Jones polynomial and to complete the matrix valued holomorphic quantum modular forms as well as to give an exact version of the refined quantum modularity conjecture of Zagier and the first author. Finally, our matrix provides an extension of the 3D-index in a sector of the trivial flat connection. We illustrate our definitions, theorems, numerical calculations and conjectures with the two simplest hyperbolic knots.",
   "docinfo": {
    "Author": "Stavros Garoufalidis; Jie Gu; Marcos Marino; Campbell Wheeler",
    "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
@@ -25,7 +26,7 @@
    "Title": "Resurgence of Chern-Simons theory at the trivial flat connection"
   },
   "title_lines": [
-   "RESURGENCE OF CHERN–SIMONS THEORY AT THE TRIVIAL FLAT",
+   "RESURGENCE OF CHERN\u2013SIMONS THEORY AT THE TRIVIAL FLAT",
    "CONNECTION"
   ]
  },
@@ -39,7 +40,7 @@
   },
   {
    "level": 2,
-   "title": "Resurgence of Chern–Simons perturbation theory",
+   "title": "Resurgence of Chern\u2013Simons perturbation theory",
    "page": 2,
    "source": "outline",
    "number": "1.1"
@@ -109,7 +110,7 @@
   },
   {
    "level": 2,
-   "title": "The Andersen–Kashaev state-integral",
+   "title": "The Andersen\u2013Kashaev state-integral",
    "page": 18,
    "source": "outline",
    "number": "2.5"
@@ -263,7 +264,7 @@
   {
    "id": "sec-001-11-resurgence-of-chernsimons-perturbation-theory",
    "number": "1.1",
-   "title": "Resurgence of Chern–Simons perturbation theory",
+   "title": "Resurgence of Chern\u2013Simons perturbation theory",
    "level": 2,
    "page_start": 1,
    "page_end": 4,
@@ -323,7 +324,7 @@
   {
    "id": "sec-007-25-the-andersenkashaev-state-integral",
    "number": "2.5",
-   "title": "The Andersen–Kashaev state-integral",
+   "title": "The Andersen\u2013Kashaev state-integral",
    "level": 2,
    "page_start": 18,
    "page_end": 19,
@@ -416,6 +417,100 @@
   "likely_scanned": false,
   "toc_entries": 31,
   "sections": 16,
-  "chars_total": 122752
+  "chars_total": 122752,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "GGMW21.tex",
+   "tex_sections": 4,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-resurgence-of-chernsimons-perturbation-theory",
+     "title": "Resurgence of Chern\u2013Simons perturbation theory",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-12-a-summary-of-our-results",
+     "title": "A summary of our results",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-13-challenges",
+     "title": "Challenges",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-14-illustration-with-the-two-simplest-hyperbolic",
+     "title": "Illustration with the two simplest hyperbolic knots",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-acknowledgements",
+     "title": "Acknowledgements",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-24-borel-resummation-and-stokes-constants",
+     "title": "Borel resummation and Stokes constants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-25-the-andersenkashaev-state-integral",
+     "title": "The Andersen\u2013Kashaev state-integral",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-26-a-new-state-integral",
+     "title": "A new state-integral",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-33-borel-resummation-and-stokes-constants",
+     "title": "Borel resummation and Stokes constants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-42-the-habiro-polynomials-and-the-descendant-kas",
+     "title": "The Habiro polynomials and the descendant Kashaev invariants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-44-borel-resummation-and-stokes-constants",
+     "title": "Borel resummation and Stokes constants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-45-xq-series",
+     "title": "(x,q)-series",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-46-x-version-of-borel-resummation-and-stokes-con",
+     "title": "x-version of Borel resummation and Stokes constants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-47-an-analytic-extension-of-the-kashaev-invarian",
+     "title": "An analytic extension of the Kashaev invariant and the colored Jones polynomial",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

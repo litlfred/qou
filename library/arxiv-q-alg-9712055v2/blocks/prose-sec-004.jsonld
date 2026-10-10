@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-q-alg-9712055v2/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-q-alg-9712055v2/blocks/prose-sec-004",
   "kind": "prose",
   "title": "Using (2.14) and Proposition 2.1 we get",
   "pageStart": 6,
   "pageEnd": 9,
   "text": "../sections/sec-004-2-using-214-and-proposition-21-we-get.md",
-  "derivedFrom": "library/arxiv-q-alg-9712055v2/manifest",
-  "sourceDocument": "library/arxiv-q-alg-9712055v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-q-alg-9712055v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-q-alg-9712055v2/manifest.jsonld",
   "provenance": "ingested"
 }

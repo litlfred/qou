@@ -7,443 +7,301 @@ section_number: 3
 pages: 15-22
 source_pdf: 1002.0126v1.pdf
 source_sha256: ea218a0586a13490
+text_source: latex
+latex_prose_ratio: 0.923
+latex_coverage_ratio: 0.947
 doc_brief: "An introduction to the volume conjecture — This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts."
 ---
-Figure 22. The label of the arc between the second bottom cross-
-ing and the bottom-most crossing should be i + j− k. Note that
-j− k≥ 0
-Figure 23. The label k should coincide with i.
-From Figure 14, we have
-JN (E; q)
-=
-∑
-0≤i≤N −1,0≤j≤N −1
-0≤i+j≤N −1
-Ri,0
-0,i (R−1)i,j
-i+j,0 R0,i+j
-i,j (R−1)j,0
-0,j (µ−1)i
-i µj
-j
-=
-∑
-0≤i≤N −1,0≤j≤N −1
-0≤i+j≤N −1
-(−1)i {i + j}!{N− 1}!
-{i}!{j}!{N− 1− i− j}! q−(N −1)i/2+(N −1)j/2−i2/4+j2/4−3i/4+3j/4.
-16 HITOSHI MURAKAMI
-Figure 24. The ﬁgure-eight knot can also regarded as the closure
-of a (1 , 1)-tangle.
-Putting k := i + j, we have
-JN (E; q) =
-N −1∑
-k=0
-{N− 1}!
-{N− 1− k}! qk2/4+N k/2+k/4
-( k∑
-i=0
-(−1)i {k}!
-{i}!{k− i}! q−N i−ik/2−i/2
-)
-.
-Using the formula (see [28, Lemma 3.2])
-k∑
-i=0
-(−1)iqli/2 {k}!
-{i}!{k− i}! =
-k∏
-g=1
-(1− q(l+k+1)/2−g),
-we have the following simple formula with only one summand, which is due t o
-Habiro and Lˆ e (I learned this method from Lˆ e).
-(2.5) JN (E; q) = 1
-{N}
-N −1∑
-k=0
-{N + k}!
-{N− 1− k}! .
-3. Volume conjecture
-In this section we state the Volume Conjecture and then prove it fo r the ﬁgure-
-eight knot. We also give supporting evidence for the conjecture.
-3.1. Statement of the V olume Conjecture. In [15] Kashaev introduced a link
-invariant⟨L⟩N∈ C for an integer N greater than one and a link L by using the quan-
-tum dilogarithm. Then he observed in [16] that the limit 2 π limN →∞ log|⟨K⟩N|/N
-is equal to the hyperbolic volume of the knot complement if a knot K is hyperbolic.
-Here a knot in the three-sphere S3 is called hyperbolic if its complement possesses
-a complete hyperbolic structure with ﬁnite volume. He also conjectu red this would
-also hold for any hyperbolic knot.
-In [28] J. Murakami and I proved that Kashaev’s invariant equals the N -dimensional
-colored Jones polynomial evaluated at the N -th root of unity, that is, ⟨L⟩N =
-JN (L; exp(2π√
-−1/N)) and proposed that Kashaev’s conjecture would hold for any
-knot by using the simplicial volume.
-AN INTRODUCTION TO THE VOLUME CONJECTURE 17
-Conjecture 3.1 (Volume Conjecture [16, 28]) . The following equality would hold
-for any knot K.
-2π lim
-N →∞
-log|JN (K; exp(2π√−1/N))|
-N = Vol(S3\ K).
-To deﬁne the simplicial volume (or Gromov norm), we introduce the Ja co–
-Shalen–Johannson (JSJ) decomposition (or the torus decomposit ion) of a knot
-complement.
-Deﬁnition 3.2 (Jaco–Shalen–Johannson decomposition [11, 13]) . Let K be a knot.
-Then its complement S3\ K can be uniquely decomposed into hyperbolic pieces
-and Seifert ﬁbered pieces by a system of tori:
-S3\ K =
-( ⨆
-Hi
-)
-⊔
-( ⨆
-Ej
-)
-with Hi hyperbolic and Ej Seifert-ﬁbered.
-Then the simplicial volume of the knot complement is deﬁned to be the s um of
-the hyperbolic volumes of the hyperbolic pieces.
-Deﬁnition 3.3 (Simplicial volume (Gromov norm) [7]) . If a knot complement
-S3\ K is decomposed as above, then its simplicial volume Vol( S3\ K) is deﬁned as
-Vol(S3\ K) :=
-∑
-Hi:hyperbolic piece
-Hyperbolic Volume of Hi.
-Example 3.4. Let us consider the (2 , 1)-cable of the ﬁgure-eight knot as shown
-in ﬁgure 25. Then its complement can be decomposed by a torus into t wo pieces
-Figure 25. (2, 1)-cable of the ﬁgure-eight knot
-(Figure 26), one hyperbolic and one Seifert ﬁbered. Therefore we have
-Vol
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-= Vol
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.
-18 HITOSHI MURAKAMI
-=
-hyperbolic
-⊔
-Seifert ﬁbered
-Figure 26. The JSJ decomposition of the (2 , 1)-cable of the
-ﬁgure-eight knot
-3.2. Proof of the V olume Conjecture for the ﬁgure-eight knot. We give a
-proof of the Volume Conjecture for the ﬁgure-eight knot due to T . Ekholm.
-3.2.1. Calculation of the limit. We use the formula (2.5) of the colored Jones poly-
-nomial for the ﬁgure-eight knot E due to Habiro and Lˆ e. (See [8, 21] for Habiro’s
-method.) By a simple calculation using it, we have
-(3.1) JN (E; q) =
-N −1∑
-j=0
-j∏
-k=1
-(
-q(N −k)/2− q−(N −k)/2
-)(
-q(N +k)/2− q−(N +k)/2
-)
-.
-Replacing q with exp(2 π√
-−1/N), we have
-JN
-(
-E; exp(2π
-√
-−1/N)
-)
-=
-N −1∑
-j=0
-j∏
-k=1
-f (N ; k)
-where we put f (N ; k) := 4 sin 2(kπ/N ). The graph of f (N ; k) is depicted in Fig-
-ure 27.
-Figure 27. Graph of f (N ; k)
-Put g(N ; j) := ∏ j
-k=1 f (N ; k) so that JN
-(
-E; exp(2π√
-−1/N)
-)
-=∑ N −1
-j=0 g(N ; j).
-Then g(N ; j) decreases when 0 < j < N/ 6 and 5 N/6 < j , and increases when
-AN INTRODUCTION TO THE VOLUME CONJECTURE 19
-N/6 < j < 5N/6. Therefore g(N ; j) takes its maximum at j = 5 N/6. (To be
-precise we need to take the integer part of 5 N/6.) See Table 1. Since there are N
-j 0 ··· N/6 ··· 5N/6 ··· 1
-f (N ; k) < 1 1 > 1 1 < 1
-g(N ; j) 1 ց ր maximum ց
-Table 1. table of f (N ; k) and g(N ; j)
-positive terms in JN
-(
-E; exp(2π√−1/N)
-)
-=∑ N −1
-j=0 g(N ; j) and g(N ; 5N/6) is the
-maximum of these terms, we have
-g(N ; 5N/6)≤ JN
-(
-E; exp(2π
-√
-−1/N)
-)
-≤ N× g(N ; 5N/6).
-Noting that each side is positive, we take their logarithms and divide th em by N .
-log g(N ; 5N/6)
-N ≤ log JN
-(
-E; exp(2π√−1/N)
-)
-N ≤ log N
-N + log g(N ; 5N/6)
-N .
-Since log N →∞(log N )/N = 0, we have
-lim
-N →∞
-log g(N ; 5N/6)
-N ≤ lim
-N →∞
-log JN
-(
-E; exp(2π√−1/N)
-)
-N ≤ lim
-N →∞
-log g(N ; 5N/6)
-N .
-Therefore we have
-lim
-N →∞
-log JN
-(
-E; exp(2π√−1/N)
-)
-N = lim
-N →∞
-log g(N ; 5N/6)
-N .
-We can calculate the limit lim N →∞
-(
-log g(N ; 5N/6)
-)
-/N by integration. Since
-g(N ; j) =∏ j
-k=1 f (N ; k), we have
-lim
-N →∞
-log g(N ; 5N/6)
-N = lim
-N →∞
-1
-N
-5N/6∑
-k=1
-log f (N ; k)
-= 2 lim
-N →∞
-1
-N
-5N/6∑
-k=1
-log
-(
-2 sin(kπ/N )
-)
-= 2
-π
-∫ 5π/6
-0
-log
-(
-2 sin x
-)
-dx.
-(3.2)
-What does this mean? I will explain a geometric interpretation of this in tegral.
-3.2.2. Lobachevsky function. The function deﬁned by the integral in (3.2) is known
-as the Lobachevsky function. More precisely, we deﬁne the Lobac hevsky function
-Λ( θ) as
-Λ( θ) :=−
-∫ θ
-0
-log|2 sin x| dx
-for θ∈ R. By using this function, we can express the limit of the colored Jones
-polynomial as
-(3.3) lim
-N →∞
-log JN
-(
-E; exp(2π√
-−1/N)
-)
-N =− 2
-π Λ(5 π/6)
-We show some properties of the Lobachevsky function (see for ex ample [23]).
-Lemma 3.5. The Lobachevsky function satisﬁes the following two proper ties.
-20 HITOSHI MURAKAMI
-(1) The Lobachevsky function is an odd function and has period π.
-(2) We have Λ(2 θ) = 2Λ( θ) + 2Λ( θ + π/2). In general we have Λ( nθ) =
-n∑ n−1
-k=1 Λ( θ + kπ/n).
-Proof. The ﬁrst property is easily shown by the periodicity of the sine funct ion.
-To prove the second, we use the double angle formula of the sine fun ction:
-sin(2x) = 2 sin x cos x. We have
-log|2 sin(2x)| = log|2 sin x| + log|2 cos x| = log|2 sin x| + log|2 sin(x + π/2)|,
-completing the proof. □
-From (1) we have
-Λ(5 π/6) = Λ(−π/6) =−Λ( π/6).
-From (2) and (1) we also have
-Λ( π/3) = 2Λ( π/6) + 2Λ(2 π/3) = 2Λ( π/6)− 2Λ( π/3).
-Therefore we have
-Λ(5 π/6) =− 3
-2 Λ( π/3).
-Returning to the limit of the Jones polynomial (3.3), we conclude that
-2π lim
-N →∞
-log JN
-(
-E; exp(2π√−1/N)
-)
-N = 6Λ( π/3).
+[]{#sec:Volume_Conjecture label="sec:Volume_Conjecture"}
+
+In this section we state the Volume Conjecture and then prove it for the figure-eight knot. We also give supporting evidence for the conjecture.
+
+## Statement of the Volume Conjecture
+
+In [@Kashaev:MODPLA95] Kashaev introduced a link invariant $\langle L\rangle_N\in\mathbb{C}$ for an integer $N$ greater than one and a link $L$ by using the quantum dilogarithm. Then he observed in [@Kashaev:LETMP97] that the limit $2\pi\lim_{N\to\infty}\log|\langle K\rangle_N|/N$ is equal to the hyperbolic volume of the knot complement if a knot $K$ is hyperbolic. Here a knot in the three-sphere $S^3$ is called hyperbolic if its complement possesses a complete hyperbolic structure with finite volume. He also conjectured this would also hold for any hyperbolic knot.
+
+In [@Murakami/Murakami:ACTAM12001] J. Murakami and I proved that Kashaev's invariant equals the $N$-dimensional colored Jones polynomial evaluated at the $N$-th root of unity, that is, $\langle L\rangle_N=J_N(L;\exp(2\pi\sqrt{-1}/N))$ and proposed that Kashaev's conjecture would hold for any knot by using the simplicial volume.
+
+::: conjecture
+[]{#conj:VC label="conj:VC"} The following equality would hold for any knot $K$. $$\begin{equation*}
+  2\pi\lim_{N\to\infty}\frac{\log|J_N(K;\exp(2\pi\sqrt{-1}/N))|}{N}
+  =\operatorname{Vol}(S^3\setminus{K}).
+\end{equation*}$$
+:::
+
+To define the simplicial volume (or Gromov norm), we introduce the Jaco--Shalen--Johannson (JSJ) decomposition (or the torus decomposition) of a knot complement.
+
+::: definition
+Let $K$ be a knot. Then its complement $S^3\setminus{K}$ can be uniquely decomposed into hyperbolic pieces and Seifert fibered pieces by a system of tori: $$\begin{equation*}
+  S^3\setminus{K}
+  =
+  \left(\bigsqcup H_i\right)\sqcup\left(\bigsqcup E_j\right)
+\end{equation*}$$ with $H_i$ hyperbolic and $E_j$ Seifert-fibered.
+:::
+
+Then the simplicial volume of the knot complement is defined to be the sum of the hyperbolic volumes of the hyperbolic pieces.
+
+::: definition
+If a knot complement $S^3\setminus{K}$ is decomposed as above, then its simplicial volume $\operatorname{Vol}(S^3\setminus{K})$ is defined as $$\begin{equation*}
+  \operatorname{Vol}(S^3\setminus{K})
+  :=
+  \sum_{H_i:\text{hyperbolic piece}}\text{Hyperbolic Volume of $H_i$}.
+\end{equation*}$$
+:::
+
+::: example
+Let us consider the $(2,1)$-cable of the figure-eight knot as shown in figure [1](#fig:2_1_fig_8){reference-type="ref" reference="fig:2_1_fig_8"}.
+
+<figure id="fig:2_1_fig_8" data-latex-placement="h">
+<embed src="2_1_cable_small.eps" />
+<figcaption><span class="math inline">(2, 1)</span>-cable of the figure-eight knot</figcaption>
+</figure>
+
+Then its complement can be decomposed by a torus into two pieces (Figure [2](#fig:2_1_fig_8_JSJ){reference-type="ref" reference="fig:2_1_fig_8_JSJ"}), one hyperbolic and one Seifert fibered.
+
+<figure id="fig:2_1_fig_8_JSJ" data-latex-placement="h">
+<p><embed src="complement_2_1_cable_small.eps" /> <span class="math inline">$\underset{\text{\raisebox{-2mm}{hyperbolic}}}
+    {\includegraphics[scale=0.3]{complement_fig8_small.eps}}$</span></p>
+<figcaption>The JSJ decomposition of the <span class="math inline">(2, 1)</span>-cable of the figure-eight knot</figcaption>
+</figure>
+
+Therefore we have $$\begin{equation*}
+  \operatorname{Vol}
+  \left(
+    \raisebox{-14mm}{\includegraphics[scale=0.3]{complement_2_1_cable_small.eps}}
+  \right)
+  =
+  \operatorname{Vol}
+  \left(
+    \raisebox{-14mm}{\includegraphics[scale=0.3]{complement_fig8_small.eps}}
+  \right).
+\end{equation*}$$
+:::
+
+## Proof of the Volume Conjecture for the figure-eight knot {#subsec:proof_fig8}
+
+We give a proof of the Volume Conjecture for the figure-eight knot due to T. Ekholm.
+
+### Calculation of the limit
+
+We use the formula [\[eq:fig8_single\]](#eq:fig8_single){reference-type="eqref" reference="eq:fig8_single"} of the colored Jones polynomial for the figure-eight knot $E$ due to Habiro and Lê. (See [@Habiro:SURIK2000; @Masbaum:ALGGT12003] for Habiro's method.) By a simple calculation using it, we have $$\begin{equation}
+\label{eq:Jones_fig8}
+  J_N\left(E;q\right)
+  =
+  \sum_{j=0}^{N-1}
+  \prod_{k=1}^{j}
+  \left(q^{(N-k)/2}-q^{-(N-k)/2}\right)
+  \left(q^{(N+k)/2}-q^{-(N+k)/2}\right).
+\end{equation}$$ Replacing $q$ with $\exp(2\pi\sqrt{-1}/N)$, we have $$\begin{equation*}
+  J_N\left(E;\exp(2\pi\sqrt{-1}/N)\right)
+  =
+  \sum_{j=0}^{N-1}\prod_{k=1}^{j}f(N;k)
+\end{equation*}$$ where we put $f(N;k):=4\sin^2(k\pi/N)$.
+
+The graph of $f(N;k)$ is depicted in Figure [3](#fig:graph_f){reference-type="ref" reference="fig:graph_f"}.
+
+<figure id="fig:graph_f" data-latex-placement="h">
+<embed src="graph_f_small.eps" />
+<figcaption>Graph of <span class="math inline"><em>f</em>(<em>N</em>; <em>k</em>)</span></figcaption>
+</figure>
+
+Put $g(N;j):=\prod_{k=1}^{j}f(N;k)$ so that $J_N\left(E;\exp(2\pi\sqrt{-1}/N)\right)=\sum_{j=0}^{N-1}g(N;j)$. Then $g(N;j)$ decreases when $0<j<N/6$ and $5N/6<j$, and increases when $N/6<j<5N/6$. Therefore $g(N;j)$ takes its maximum at $j=5N/6$. (To be precise we need to take the integer part of $5N/6$.) See Table [1](#tbl:f_g){reference-type="ref" reference="tbl:f_g"}.
+
+::: {#tbl:f_g}
+     $j$      $0$    $\cdots$    $N/6$    $\cdots$    $5N/6$     $\cdots$    $1$
+  ---------- ----- ------------ ------- ------------ --------- ------------ -----
+   $f(N;k)$            $<1$       $1$       $>1$        $1$        $<1$     
+   $g(N;j)$   $1$   $\searrow$           $\nearrow$   maximum   $\searrow$  
+
+  : table of $f(N;k)$ and $g(N;j)$
+:::
+
+Since there are $N$ positive terms in $J_N\left(E;\exp(2\pi\sqrt{-1}/N)\right)=\sum_{j=0}^{N-1}g(N;j)$ and $g(N;5N/6)$ is the maximum of these terms, we have $$\begin{equation*}
+  g(N;5N/6)
+  \le
+  J_N\left(E;\exp(2\pi\sqrt{-1}/N)\right)
+  \le
+  N\times g(N;5N/6).
+\end{equation*}$$ Noting that each side is positive, we take their logarithms and divide them by $N$. $$\begin{equation*}
+  \frac{\log{g(N;5N/6)}}{N}
+  \le
+  \frac{\log J_N\left(E;\exp(2\pi\sqrt{-1}/N)\right)}{N}
+  \le
+  \frac{\log{N}}{N}+
+  \frac{\log{g(N;5N/6)}}{N}.
+\end{equation*}$$ Since $\log_{N\to\infty}(\log{N})/N=0$, we have $$\begin{equation*}
+  \lim_{N\to\infty}\frac{\log{g(N;5N/6)}}{N}
+  \le
+  \lim_{N\to\infty}
+  \frac{\log J_N\left(E;\exp(2\pi\sqrt{-1}/N)\right)}{N}
+  \le
+  \lim_{N\to\infty}\frac{\log{g(N;5N/6)}}{N}.
+\end{equation*}$$ Therefore we have $$\begin{equation*}
+  \lim_{N\to\infty}
+  \frac{\log{J_N\left(E;\exp(2\pi\sqrt{-1}/N)\right)}}{N}
+  =
+  \lim_{N\to\infty}\frac{\log{g(N;5N/6)}}{N}.
+\end{equation*}$$
+
+We can calculate the limit $\lim_{N\to\infty}\bigl(\log{g(N;5N/6)}\bigr)/N$ by integration. Since $g(N;j)=\prod_{k=1}^{j}f(N;k)$, we have $$\begin{equation}
+\label{eq:Jones_integral}
+\begin{split}
+  \lim_{N\to\infty}\frac{\log{g(N;5N/6)}}{N}
+  &=
+  \lim_{N\to\infty}
+  \frac{1}{N}
+  \sum_{k=1}^{5N/6}\log{f(N;k)}
+  \\
+  &=
+  2
+  \lim_{N\to\infty}
+  \frac{1}{N}
+  \sum_{k=1}^{5N/6}\log\bigl(2\sin(k\pi/N)\bigr)
+  \\
+  &=
+  \frac{2}{\pi}
+  \int_{0}^{5\pi/6}
+  \log\bigl(2\sin{x}\bigr)\,dx.
+\end{split}
+\end{equation}$$ What does this mean? I will explain a geometric interpretation of this integral.
+
+### Lobachevsky function
+
+The function defined by the integral in [\[eq:Jones_integral\]](#eq:Jones_integral){reference-type="eqref" reference="eq:Jones_integral"} is known as the Lobachevsky function. More precisely, we define the Lobachevsky function $\Lambda(\theta)$ as $$\begin{equation*}
+  \Lambda(\theta)
+  :=
+  -\int_{0}^{\theta}\log|2\sin{x}|\,dx
+\end{equation*}$$ for $\theta\in\mathbb{R}$. By using this function, we can express the limit of the colored Jones polynomial as $$\begin{equation}
+\label{eq:Jones_Lobachevsky}
+  \lim_{N\to\infty}
+  \frac{\log{J_N\left(E;\exp(2\pi\sqrt{-1}/N)\right)}}{N}
+  =
+  -\frac{2}{\pi}\Lambda(5\pi/6)
+\end{equation}$$ We show some properties of the Lobachevsky function (see for example [@Milnor:BULAM382]).
+
+::: lemma
+The Lobachevsky function satisfies the following two properties.
+
+1.  The Lobachevsky function is an odd function and has period $\pi$.
+
+2.  We have $\Lambda(2\theta)=2\Lambda(\theta)+2\Lambda(\theta+\pi/2)$. In general we have $\Lambda(n\theta)=n\sum_{k=1}^{n-1}\Lambda(\theta+k\pi/n)$.
+:::
+
+::: proof
+*Proof.* The first property is easily shown by the periodicity of the sine function.
+
+To prove the second, we use the double angle formula of the sine function: $\sin(2x)=2\sin{x}\cos{x}$. We have $$\begin{equation*}
+  \log|2\sin(2x)|
+  =
+  \log|2\sin{x}|
+  +
+  \log|2\cos{x}|
+  =
+  \log|2\sin x|
+  +
+  \log|2\sin(x+\pi/2)|,
+\end{equation*}$$ completing the proof. ◻
+:::
+
+From (1) we have $$\begin{equation*}
+  \Lambda(5\pi/6)
+  =
+  \Lambda(-\pi/6)
+  =
+  -\Lambda(\pi/6).
+\end{equation*}$$ From (2) and (1) we also have $$\begin{equation*}
+  \Lambda(\pi/3)
+  =
+  2\Lambda(\pi/6)+2\Lambda(2\pi/3)
+  =
+  2\Lambda(\pi/6)-2\Lambda(\pi/3).
+\end{equation*}$$ Therefore we have $$\begin{equation*}
+  \Lambda(5\pi/6)=-\frac{3}{2}\Lambda(\pi/3).
+\end{equation*}$$
+
+Returning to the limit of the Jones polynomial [\[eq:Jones_Lobachevsky\]](#eq:Jones_Lobachevsky){reference-type="eqref" reference="eq:Jones_Lobachevsky"}, we conclude that $$\begin{equation*}
+  2\pi\lim_{N\to\infty}
+  \frac{\log{J_N\left(E;\exp(2\pi\sqrt{-1}/N)\right)}}{N}
+  =
+  6\Lambda(\pi/3).
+\end{equation*}$$
+
 Next we show how the Lobachevsky function is related to hyperbolic geometry.
-3.2.3. Hyperbolic geometry. It is well known that the complement of the ﬁgure-eight
-knot can be decomposed into two ideal hyperbolic regular tetrahed ra.
-Theorem 3.6 (W. Thurston [34]) . The complement of the ﬁgure-eight knot can be
-obtained by gluing two ideal hyperbolic regular tetrahedra .
-I will explain what is an ideal hyperbolic regular tetrahedron later. To pologically,
-the theorem states that the complement of the ﬁgure-eight knot can be obtained
-by gluing two truncated tetrahedra as in Figure 28 (see also [24]). In Figure 28 we
-identify A with A′, B with B′, C with C′ and D with D′. Note that edges with
-single arrows and edges with double arrows are also identiﬁed respec tively.
-= ∪
-A=A′,B=B′,
-C=C ′,D=D′
-Figure 28. The complement of the ﬁgure-eight knot is decom-
-posed into two ideal hyperbolic regular tetrahedra. Shadowed tri-
-angles make the boundary of the knot complement.
+
+### Hyperbolic geometry {#subsubsec:geometry}
+
+It is well known that the complement of the figure-eight knot can be decomposed into two ideal hyperbolic regular tetrahedra.
+
+::: theorem
+The complement of the figure-eight knot can be obtained by gluing two ideal hyperbolic regular tetrahedra.
+:::
+
+I will explain what is an ideal hyperbolic regular tetrahedron later. Topologically, the theorem states that the complement of the figure-eight knot can be obtained by gluing two truncated tetrahedra as in Figure [4](#fig:fig8_tetra){reference-type="ref" reference="fig:fig8_tetra"} (see also [@Murakami:FUNDM2004]). In Figure [4](#fig:fig8_tetra){reference-type="ref" reference="fig:fig8_tetra"} we identify $A$ with $A'$, $B$ with $B'$, $C$ with $C'$ and $D$ with $D'$. Note that edges with single arrows and edges with double arrows are also identified respectively.
+
+<figure id="fig:fig8_tetra" data-latex-placement="h">
+<p><embed src="complement_fig8_small.eps" /> <embed src="tetrahedron_z_small.eps" /> <embed src="tetrahedron_w_small.eps" /></p>
+<figcaption>The complement of the figure-eight knot is decomposed into two ideal hyperbolic regular tetrahedra. Shadowed triangles make the boundary of the knot complement.</figcaption>
+</figure>
+
 Here I give a short introduction to hyperbolic geometry.
-First consider the upper half space {(x, y, z)∈ R3 | z > 0} with hyperbolic
-metric ds :=
-√
-dx2 + dy2 + dz2/z and denote it by H3. It is known that a geodesic
-AN INTRODUCTION TO THE VOLUME CONJECTURE 21
-line in H3 is a semicircle or a straight line perpendicular to the xy-plane, and that
-a geodesic plane is a hemisphere or a ﬂat plane perpendicular to the xy-plane.
-An ideal hyperbolic tetrahedron is a tetrahedron in H3 with geodesic faces with
-four vertices at inﬁnity, that is, on the xy-plain or at the point at inﬁnity ∞.
-By isometry we may assume that one vertex is ∞ and the other three are on the
-xy-plane. So its faces consist of three perpendicular planes and a hem isphere as
-shown in Figure 29. If we see the tetrahedron from the top, it is a (E uclidean)
-Figure 29. An ideal hyperbolic tetrahedron is the part above the
-hemisphere surrounded by three perpendicular planes.
-triangle with angles α, β, and γ. It is known that an ideal hyperbolic tetrahedron
-Figure 30. A top view (right) of the ideal hyperbolic tetrahedron (left)
-is deﬁned (up to isometry) by the similarity class of this triangle. Ther efore we
-can parametrize an ideal hyperbolic tetrahedron by a triple of posit ive numbers
-(α, β, γ) with α + β + γ = π. We denote it by ∆( α, β, γ).
-The hyperbolic volume Vol(∆( α, β, γ)) can be expressed by using the Lobachevsky
-function Λ( θ). In fact it can be shown that
-Vol(∆( α, β, γ)) = Λ( α) + Λ( β) + Λ( γ).
-For a proof, see for example [34, Chapter 7].
-Now we return to the decomposition of the ﬁgure-eight knot comple ment. Fig-
-ure 28 shows that after identiﬁcation we have two edges, edge with single arrow
-and edge with double arrow, each of them is obtained by identifying six edges.
-So if the ideal hyperbolic tetrahedra we are using are regular, that is, isometric
-to ∆( π/3, π/3, π/3) then the sum of dihedral angles around each edge becomes
-22 HITOSHI MURAKAMI
-2π. This means that if we use two ideal hyperbolic regular tetrahedra, our glu-
-ing is geometric, that is, the complement of the ﬁgure-eight knot is is ometric
-to the union of two copies of ∆( π/3, π/3, π/3). In particular its volume equals
-2 Vol(∆( π/3, π/3, π/3)) = 6Λ( π/3).
-Thus we have proved
-2π lim
-N →∞
-log JN
-(
-E; exp(2π√−1/N)
-)
-N = 6Λ( π/3) = Vol
-(
-S3\ E
-)
-,
-which is the statement of the Volume Conjecture for the ﬁgure-eig ht knot.
-3.3. Knots and links for which the V olume Conjecture is proved. As far
-as I know the Volume Conjecture is proved for
-(1) ﬁgure-eight knot by Ekholm,
-(2) 5 2 knot by Kashaev and Yokota,
-(3) Whitehead doubles of torus knots by Zheng [43],
-(4) torus knots by Kashaev and Tirkkonen [17],
-(5) torus links of type (2 , 2m) by Hikami [9],
-(6) knots and links with volume zero by van der Veen [37],
-(7) Borromean rings by Garoufalidis and Lˆ e [6],
-(8) twisted Whitehead links by Zheng [43],
-(9) Whitehead chains by van der Veen [38],
-(10) a satellite link around the ﬁgure-eight knot with pattern the Wh itehead
-link by Yamazaki and Yokota [39].
-Note that (1) and (2) are for hyperbolic knots, (3) is for a knot wh ose JSJ decom-
-position consists of a hyperbolic piece and a Seifert ﬁbered piece, (4 )–(6) are for
-knots and links only with Seifert pieces, (7)–(9) are for hyperbolic lin ks, and (10)
-is for a link whose JSJ decomposition consists of a hyperbolic piece and a Seifert
-ﬁbered piece.
+
+First consider the upper half space $\{(x,y,z)\in\mathbb{R}^3\mid z>0\}$ with hyperbolic metric $ds:=\sqrt{dx^2+dy^2+dz^2}/z$ and denote it by $\mathbb{H}^3$. It is known that a geodesic line in $\mathbb{H}^3$ is a semicircle or a straight line perpendicular to the $xy$-plane, and that a geodesic plane is a hemisphere or a flat plane perpendicular to the $xy$-plane.
+
+An ideal hyperbolic tetrahedron is a tetrahedron in $\mathbb{H}^3$ with geodesic faces with four vertices at infinity, that is, on the $xy$-plain or at the point at infinity $\infty$. By isometry we may assume that one vertex is $\infty$ and the other three are on the $xy$-plane. So its faces consist of three perpendicular planes and a hemisphere as shown in Figure [5](#fig:tetrahedron){reference-type="ref" reference="fig:tetrahedron"}.
+
+<figure id="fig:tetrahedron" data-latex-placement="h">
+<embed src="tetrahedron_small.eps" />
+<figcaption>An ideal hyperbolic tetrahedron is the part above the hemisphere surrounded by three perpendicular planes.</figcaption>
+</figure>
+
+If we see the tetrahedron from the top, it is a (Euclidean) triangle with angles $\alpha$, $\beta$, and $\gamma$.
+
+<figure id="fig:top_view" data-latex-placement="h">
+<embed src="tetrahedron_skeleton_small.eps" />
+<figcaption>A top view (right) of the ideal hyperbolic tetrahedron (left)</figcaption>
+</figure>
+
+It is known that an ideal hyperbolic tetrahedron is defined (up to isometry) by the similarity class of this triangle. Therefore we can parametrize an ideal hyperbolic tetrahedron by a triple of positive numbers $(\alpha,\beta,\gamma)$ with $\alpha+\beta+\gamma=\pi$. We denote it by $\Delta(\alpha,\beta,\gamma)$.
+
+The hyperbolic volume $\operatorname{Vol}(\Delta(\alpha,\beta,\gamma))$ can be expressed by using the Lobachevsky function $\Lambda(\theta)$. In fact it can be shown that $$\begin{equation*}
+  \operatorname{Vol}(\Delta(\alpha,\beta,\gamma))
+  =
+  \Lambda(\alpha)+\Lambda(\beta)+\Lambda(\gamma).
+\end{equation*}$$ For a proof, see for example [@Thurston:GT3M Chapter 7].
+
+Now we return to the decomposition of the figure-eight knot complement. Figure [4](#fig:fig8_tetra){reference-type="ref" reference="fig:fig8_tetra"} shows that after identification we have two edges, edge with single arrow and edge with double arrow, each of them is obtained by identifying six edges. So if the ideal hyperbolic tetrahedra we are using are regular, that is, isometric to $\Delta(\pi/3,\pi/3,\pi/3)$ then the sum of dihedral angles around each edge becomes $2\pi$. This means that if we use two ideal hyperbolic regular tetrahedra, our gluing is geometric, that is, the complement of the figure-eight knot is isometric to the union of two copies of $\Delta(\pi/3,\pi/3,\pi/3)$. In particular its volume equals $2\operatorname{Vol}(\Delta(\pi/3,\pi/3,\pi/3))=6\Lambda(\pi/3)$.
+
+Thus we have proved $$\begin{equation*}
+  2\pi\lim_{N\to\infty}
+  \frac{\log{J_N\left(E;\exp(2\pi\sqrt{-1}/N)\right)}}{N}
+  =
+  6\Lambda(\pi/3)
+  =
+  \operatorname{Vol}\left(S^3\setminus{E}\right),
+\end{equation*}$$ which is the statement of the Volume Conjecture for the figure-eight knot.
+
+## Knots and links for which the Volume Conjecture is proved
+
+As far as I know the Volume Conjecture is proved for
+
+1.  figure-eight knot by Ekholm,
+
+2.  $5_2$ knot by Kashaev and Yokota,
+
+3.  Whitehead doubles of torus knots by Zheng [@Zheng:CHIAM22007],
+
+4.  torus knots by Kashaev and Tirkkonen [@Kashaev/Tirkkonen:ZAPNS2000],
+
+5.  torus links of type $(2,2m)$ by Hikami [@Hikami:COMMP2004],
+
+6.  knots and links with volume zero by van der Veen [@van_der_veen:2008],
+
+7.  Borromean rings by Garoufalidis and Lê [@Garoufalidis/Le:2005],
+
+8.  twisted Whitehead links by Zheng [@Zheng:CHIAM22007],
+
+9.  Whitehead chains by van der Veen [@van_der_Veen:ACTMV2009],
+
+10. a satellite link around the figure-eight knot with pattern the Whitehead link by Yamazaki and Yokota [@Yamazaki/Yokota].
+
+Note that (1) and (2) are for hyperbolic knots, (3) is for a knot whose JSJ decomposition consists of a hyperbolic piece and a Seifert fibered piece, (4)--(6) are for knots and links only with Seifert pieces, (7)--(9) are for hyperbolic links, and (10) is for a link whose JSJ decomposition consists of a hyperbolic piece and a Seifert fibered piece.

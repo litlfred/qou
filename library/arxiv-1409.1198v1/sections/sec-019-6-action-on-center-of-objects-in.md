@@ -7,129 +7,234 @@ section_number: 6
 pages: 43-45
 source_pdf: 1409.1198v1.pdf
 source_sha256: 13ecb6c28bab6744
+text_source: latex
+latex_prose_ratio: 0.965
+latex_coverage_ratio: 0.945
 doc_brief: "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR — Categoriﬁcation is a process of lifting structures to a high er categorical level."
 ---
-This section is devoted to the proof of Theorem 1.3. The action of th e current algebra on the trace
-of any 2-representation follows directly from the functotiality of t he trace. The rest of the section
-establishes the action on the center.
-6.0.1. Centers of categories. The center Z(C) of an additive category C is the endomorphism ring
-of the identity functor Id C on C. Note that an endomorphism of Id C is a natural transformation
-α : Id C ⇒ IdC. Such a natural transformation consists of a map αx : x → x for each object x of C
-satisfying the requirement that for any map f : x →y in C, we get a commutative square
-x
-f /d47/d47
-αx
-/d15/d15
-y
-αy
-/d15/d15x f
-/d47/d47y
-Exercise 24. Show that Z(C) is commutative ring. Hint: use the Eckmann–Hilton argument .
-An additive category is an object of the linear 2-category AdCat of additive categories, additive
-functors, and natural transformations. For an arbitrary, linea r 2-category C we deﬁne the center Z(x)
-of an object x ∈ Ob(C) as the ring of endomorphisms C(1x, 1x), see [22]. Deﬁne the center of objects
-of the 2-category C as the Z(C) = ⨁
-x∈Ob(C)Z(x).
-The relationship between Hochschild homology and cohomology descr ibed in section 2.2.3 can now
-be recast in a more general framework.
-Exercise 25. Let C be a linear 2-category C. Show that for each x ∈ Ob(C), the abelian group
-Tr(C(x,x )) is a module over the ring Z(x).
-Example 12. In the 2-category U(sl2), an element in the center Z(λ) for an object λ ∈ Ob(U(sl2)) is
-given by any closed diagram in the graphical calculus. It was shown in S ection 8 of [37] that any such
-closed diagram can be reduced to a product of non-nested dotted bubbles with the same orientation.
-As explained in section 4.3, this provides an isomorphism between Z(λ) and the ring Sym of symmetric
-functions.
-Given a 2-endomorphism f : 1λ′x1λ ⇒ 1λ′x1λ in U ∗(sln), we can interpret the class [ f ] as a diagram
-on the annulus. If we forget that the diagram is on an annulus, we ar e left with a diagram representing
-44 ANNA BELIAKOV A, ZAUR GULIYEV, KAZUO HABIRO, AND AARON D. L AUDA
-an endomorphism of 1λ′ .
-λλ′
-/d15/d15/d79/d79
-/d79/d79/d79/d79 /d15/d15 /d15/d15
-/d15/d15/d79/d79 ii
-• ∈ Tr(U ∗) ↝
-λ
-λ′
-/d15/d15/d79/d79
-/d79/d79/d79/d79 /d15/d15 /d15/d15
-/d15/d15/d79/d79 ii
-• ∈Z(λ′)
-By choosing scalars tij = tji = 1 for all i ⁄= j, the 2-category U(sln)) = UQ(sln)) is cyclic and the
-resulting diagram is independent of the choice of representative fo r the class [ f ] ∈ Tr(U(sln)). In this
-way, [f ] gives rise to a map Z(λ) →Z(λ′) given by placing an element from Z(λ) inside the annulus
-and regarding the result as an element in Z(λ′). Hence, we have the following proposition.
-Proposition 6.1. The linear category Tr( U ∗(sln)) acts by endomorphisms on the commutative ring
-Z (U ∗(sln)). Under this action the class [ f ] of endomorphisms f : 1λ′x1λ ⇒ 1λ′x1λ in U ∗(sln) is sent
-to the linear operator sending a closed diagram D representing an element of Z(λ) to the element in
-Z(λ′) obtained by removing the annulus from the diagram [ f.D].
-Remark for experts . Being able to deﬁne an action of the trace on the center of object s in a 2-
-category essentially amounts to having enough “coherent” duality in the 2-category so that the trace
-takes values in the center of objects. This idea is captured by the n otion of a pivotal 2-category [52].
-This can be seen as a many object version of a pivotal monoidal cate gory, see [24] where traces in this
-context are studied. M¨ uger points out in [52, page 11] a strict piv otal 2-category can be deﬁned from
-Mackaay’s work [47] on spherical 2-categories by ignoring the mon oidal structure. It is also equivalent
-to a 2-category in which every 1-morphism has a speciﬁed cyclic biadj oint (see [20, 37]).
-6.0.2. A current algebra action on centers. In what follows we represent a generic 2-morphismf ∈Z(λ),
-f : 1λ ⇒ 1λ, by the diagram
-∗
-λ
-where we use the ∗ to represent any linear combination of closed diagrams describing f .
-Theorem 6.2. The vector space
-(6.1) Z :=
-⨁
-λ∈ ˙U
-Z(λ)
-is a U(sln[t])-module with
-1λ : Z − → Z(λ)(6.2)
-∗
-λ′
-↦→ δλ,λ′
-
- ∗
-λ 
-
-x+
-i,r : Z(λ) − → Z(λ +αi)(6.3)
-TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR 45
-∗
-λ
-↦→ (−1)(i+1)r /d15/d15/d79/d79
-i•r
-∗
-λ λ +αi
-x−
-i,s : Z(λ) − → Z(λ −αi)(6.4)
-∗
-λ
-↦→ (−1)(i+1)s /d79/d79/d15/d15
-i•s
-∗
-λ λ −αi
-ξi,r : Z(λ) − → Z(λ)(6.5)
-∗
-λ
-↦→ (−1)(i+1)rpi,r(λ) ∗
-λ
-(6.6)
-Proof. This theorem follows immediately from Proposition 23. In particular, t he fact that the current
-algebra relations hold in the trace Tr( U ∗(sln)) imply that these relations hold under the action described
-above. □
-6.0.3. An action of the current algebra on centers of 2-representat ions.
-Deﬁnition 6.3. A 2-representation of ˙UQ(sln) is a graded additive k -linear 2-functor Ψ : ˙UQ(sln) → K
-for some graded, additive 2-category K.
-When all of the Hom categories K(x,y ) between objects x and y of K are idempotent complete, in
-other words Kar( K) ∼= K, then any graded additive k -linear 2-functor UQ(sln) → K extends uniquely
-to a 2-representation of ˙UQ(sln).
-Any 2-representation Ψ induces a map on traces
-Tr( ˙UQ(sln)) → Tr(K)(6.7)
-[f ] ↦→[Ψ(f )].
-When looking at U ∗ as
-U ∗(x,y ) :=
-⨁
-t∈ /CI
-U(x,y ⟨t⟩),
+\label{action}
+
+
+
+This section is devoted to the proof of Theorem \ref{2-reps}. The action of the current algebra on the trace of any 2-representation follows
+directly from the functotiality of the trace. The rest of the section establishes the action on the center.
+
+
+
+\subsubsection{Centers of categories}
+
+
+
+
+The center $Z(\C)$ of an additive category $\C$ is the endomorphism ring of the identity functor $\Id_{\C}$ on $\C$.  Note that an endomorphism of $\Id_{\C}$ is a natural transformation $\alpha \maps \Id_{\C} \To \Id_{\C}$.  Such a natural transformation consists of a map $\alpha_x \maps x \to x$ for each object $x$ of $\C$ satisfying the requirement that for any map $f \maps x \to y$ in $\C$, we get a commutative square
+\[
+ \xymatrix{
+ x \ar[r]^{f} \ar[d]_{\alpha_x} & y \ar[d]^{\alpha_y} \\ x \ar[r]_{f} & y
+ }
+\]
+\begin{exercise}
+Show that $Z(\C)$ is commutative ring. Hint: use the Eckmann--Hilton argument.
+\end{exercise}
+
+An additive category is an object of the linear 2-category \cat{AdCat} of additive categories, additive functors, and natural transformations.  For an arbitrary, linear 2-category $\CC$ we define the center $Z(x)$ of an object $x \in \Ob( \CC)$ as the ring of endomorphisms $\CC(1_{x}, 1_{x})$, see \cite{GK}.  Define the {\em center of objects} of the 2-category $\CC$ as the $Z(\CC) = \bigoplus_{x \in \Ob(\CC)} Z(x)$.
+
+
+The relationship between Hochschild homology and cohomology described in section~\ref{subsec_HHco} can now be recast in a more general framework.
+
+\begin{exercise}
+Let $\CC$ be a linear 2-category $\CC$. Show that for each $x \in \Ob(\CC)$, the abelian group $\Tr(\CC(x,x))$ is a module over the ring $Z(x)$.
+\end{exercise}
+
+
+
+
+
+\begin{example} \label{examp_sl2}
+In the 2-category $\Ucat(\mf{sl}_2)$, an element in the center $Z(\lambda)$ for an object $\lambda \in \Ob(\Ucat(\mf{sl}_2))$ is given by any closed diagram in the graphical calculus.  It was shown in Section 8 of \cite{Lau1} that any such closed diagram can be reduced to a product of non-nested dotted bubbles with the same orientation.  As explained in section~\ref{sec_sym-bub}, this provides an isomorphism between $Z(\lambda)$ and the ring $\sym$ of symmetric functions.
+\end{example}
+
+
+Given a 2-endomorphism $f \maps \onelp x \onel \To \onelp x \onel$ in $\Ucat^{\ast}(\mf{sl}_n)$, we can interpret the class $[f]$ as a diagram on the annulus.  If we forget that the diagram is on an annulus, we are left with a diagram representing an endomorphism of $\onelp$.
+\[
+ \vcenter{ \xy 0;/r.16pc/:
+ (8,0)*{
+ \hackcenter{\begin{tikzpicture}
+  \path[draw,blue, very thick, fill=blue!10]
+   (-2,-.6) to (-2,.6) .. controls ++(0,1.85) and ++(0,1.85) .. (2,.6)
+   to (2,-.6)  .. controls ++(0,-1.85) and ++(0,-1.85) .. (-2,-.6);
+    \path[draw, blue, very thick, fill=white]
+    (-0.25,0) .. controls ++(0,.35) and ++(0,.35) .. (0.25,0)
+            .. controls ++(0,-.35) and ++(0,-.35) .. (-0.25,0);
+\end{tikzpicture}}
+ };
+(10,8)*{\lambda}; (-15,12)*{\lambda'};
+  (8,8)*{\lcap};
+  (8,14)*{\xlcap};
+
+ 
+ (8,-14)*{\xlcupef};
+ (-8,0)*{\ecross};
+ (20,0)*{\sfline};
+ (28,0)*{\sfline};
+ (8,-10)*{\lcupef};
+(-2,-3)*{\scs i}; (-15,-3)*{\scs i};
+ (-10,1)*{\bullet};
+ \endxy} \;\; \in \Tr(\Ucat^{\ast})
+ \qquad \rightsquigarrow \qquad
+ \vcenter{ \xy 0;/r.18pc/:
+(10,8)*{\lambda}; (-15,12)*{\lambda'};
+  (8,8)*{\lcap};
+  (8,14)*{\xlcap};
+
+ 
+ (8,-14)*{\xlcupef};
+ (-8,0)*{\ecross};
+ (20,0)*{\sfline};
+ (28,0)*{\sfline};
+ (8,-10)*{\lcupef};
+(-2,-3)*{\scs i}; (-15,-3)*{\scs i};
+ (-10,1)*{\bullet};
+ \endxy} \;\; \in Z(\lambda')
+\]
+By choosing scalars $t_ij=t_{ji}=1$ for all $i\neq j$, the 2-category $\Ucat(\mf{sl}_n))=\Ucat_Q(\mf{sl}_n))$ is cyclic and the resulting diagram is independent of the choice of representative for the class $[f] \in \Tr(\Ucat(\mf{sl}_n))$.
+In this way, $[f]$ gives rise to a map $Z(\lambda) \to Z(\lambda')$ given by placing an element from $Z(\lambda)$ inside the annulus and regarding the result as an element in $Z(\lambda')$.  Hence, we have the following proposition.
+
+
+\begin{prop} \label{thm_center-action}
+The linear category $\Tr(\Ucat^{\ast}(\mf{sl}_n))$ acts by endomorphisms on the commutative ring
+$Z\left(\Ucat^{\ast}(\mf{sl}_n) \right)$.  Under this action the class $[f]$ of endomorphisms $f \maps \onelp x \onel \To \onelp x \onel$ in $\Ucat^{\ast}(\mf{sl}_n)$ is sent to the linear operator sending a closed diagram $D$ representing an element of $Z(\lambda)$ to the element in $Z(\lambda')$ obtained by removing the annulus from the diagram $[f.D]$.
+\end{prop}
+\vspace*{3mm}
+
+\noindent
+{\bf Remark for experts}.
+Being able to define an action of the trace on the center of objects in a 2-category essentially amounts to having enough ``coherent" duality in the 2-category so that the trace takes
+values in the center of objects.  This idea is captured by the notion of a pivotal 2-category~\cite{Muger}.  This can be seen as a many object version of a pivotal monoidal category, see \cite{GMV} where
+traces in this context are studied.  M\"{u}ger points out in \cite[page 11]{Muger} a strict pivotal 2-category can be defined from Mackaay's work~\cite{MackSphere} on spherical
+2-categories by ignoring the monoidal structure.  It is also equivalent to a 2-category in which  every 1-morphism has a specified cyclic biadjoint (see \cite{CKS,Lau1}).
+
+
+
+
+\subsubsection{A current algebra action on centers}
+
+
+
+In what follows we represent a generic 2-morphism $f \in Z(\lambda)$, $f \maps
+\onel \To \onel$, by the diagram
+\[
+
+
+
+
+
+
+ \xy
+  (0,0)*{*};(0,-4)*{};
+  (8,6)*{\lambda};
+ \endxy
+\]
+where we use the $*$ to represent any linear combination of closed diagrams
+describing $f$.
+
+
+\begin{thm} \label{thm_main}
+The vector space
+\begin{equation}
+ Z := \bigoplus_{\lambda \in \UcatD} Z(\lambda)
+\end{equation}
+is a $\bfU(\fsl_n[t])$-module with
+\begin{eqnarray}
+  1_{\lambda} \maps Z &\lra & Z(\lambda ) \\
+ \xy
+  (0,0)*{\ast};
+  (8,6)*{\lambda'};
+ \endxy & \mapsto &
+  \delta_{\lambda,\lambda'} \left(\;\;   \xy
+  (0,0)*{\ast};
+  (8,6)*{\lambda};
+ \endxy\;\;\;\right)
+   \nn\\
+  x^+_{i,r}  \maps Z(\lambda) &\lra & Z(\lambda+\alpha_i) \\
+ \xy
+  
+  (0,0)*{\ast};
+  (8,6)*{\lambda};
+ \endxy
+& \mapsto & (-1)^{(i+1)r}\;\;
+  \xy
+(0,0)*{\lcbub{i}};
+  (-8,-8)*{\bullet}+(-3,-2)*{r};
+  (0,0)*{\ast};
+  (4,6)*{\lambda};
+  (22,6)*{\lambda+\alpha_i};
+ \endxy\;\;
+   \nn\\
+ x^-_{i,s} \maps Z(\lambda) &\lra & Z(\lambda-\alpha_i) \\
+ \xy
+  
+  (0,0)*{\ast};
+  (8,6)*{\lambda};
+ \endxy
+& \mapsto & (-1)^{(i+1)s} \;\;
+ \xy
+(0,0)*{\lccbub{i}};
+(-8,-8)*{\bullet}+(-3,-2)*{s};
+  
+  (0,0)*{\ast};
+  (4,6)*{\lambda};
+  (22,6)*{\lambda-\alpha_i};
+ \endxy
+ \nn \\
+   \xi_{i,r} \maps Z(\lambda)& \lra & Z(\lambda)  \\
+   \xy
+  (0,0)*{\ast};
+  (8,6)*{\lambda};
+ \endxy & \mapsto & (-1)^{(i+1)r}
+     \xy
+     (0,-6)*{};
+  (-9,0)*{p_{i,r}(\lambda)};
+  (0,0)*{\ast};
+  (8,6)*{\lambda};
+ \endxy
+\end{eqnarray}
+
+\end{thm}
+
+
+\begin{proof}
+This theorem follows immediately from Proposition ~\ref{prop-cur}.
+In particular, the fact that the current algebra relations hold in the trace $\Tr(\Ucat^\ast(\mf{sl}_n))$ imply that these relations hold under the action described above.
+\end{proof}
+
+
+
+
+\subsubsection{An action of the current algebra on centers of 2-representations}
+
+
+
+
+\begin{defn}
+A 2-representation of $\UcatD_Q(\mf{sl}_n)$ is a graded additive $\Bbbk$-linear 2-functor $\Psi \maps \UcatD_Q(\mf{sl}_n)\to \cal{K}$ for some graded, additive 2-category $\cal{K}$.
+\end{defn}
+
+When all of the Hom categories $\cal{K}(x,y)$ between objects $x$ and $y$ of $\cal{K}$ are idempotent complete, in other words
+$\Kar(\cal{K}) \cong \cal{K}$, then any graded additive $\Bbbk$-linear 2-functor $\Ucat_{Q}(\mf{sl}_n) \to \cal{K}$ extends uniquely to a 2-representation of $\UcatD_Q(\mf{sl}_n)$.
+
+Any 2-representation $\Psi$ induces a map on traces
+\begin{align}
+\Tr(\UcatD_Q(\mf{sl}_n)) &\to \Tr(\cal{K}) \\ \nn
+[f] & \mapsto [\Psi(f)].
+\end{align}
+When looking at $\U^\ast$ as
+\[
+\Ucat^{\ast}(x,y) := \bigoplus_{t \in \Z} \Ucat(x, y \la t\ra),
+\]
 we can easily extend this map to
-Tr(U ∗(sln)) → Tr(K).
-Hence by the same procedure described in Proposition 6.1, the trac e Tr(U ∗(sln)) acts on the center
-Z(K) of any 2-representation. Since Proposition 23 shows that the cu rrent algebra is contained in the
-trace, it follows that the current algebra acts on any 2-represen tation.
+\begin{align*}
+\Tr(\U^\ast(\mf{sl}_n)) &\to \Tr(\cal{K}).
+\end{align*}
+
+Hence by the same procedure described in Proposition~\ref{thm_center-action}, the trace $\Tr(\U^\ast(\mf{sl}_n))$ acts on the center $Z(\cal{K})$ of any 2-representation.  Since
+Proposition~\ref{prop-cur} shows that the current algebra is contained in the trace, it follows that the current algebra acts on any 2-representation.

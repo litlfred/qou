@@ -6,7 +6,8 @@
   "sha256": "211667ea1312d47f6df85b5e096aa3ae57afbe714805d5d5c38c4d02cb56c988",
   "bytes": 521305,
   "pages": 37,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -264,6 +265,82 @@
   "likely_scanned": false,
   "toc_entries": 16,
   "sections": 11,
-  "chars_total": 97810
+  "chars_total": 97810,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 5,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction.",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.979,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-mathematical-background",
+     "title": "Mathematical background.",
+     "prose_ratio": 0.134,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-geometry-of-posets",
+     "title": "Geometry of posets.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-22-nets-of-c-algebras",
+     "title": "Nets of C*-algebras.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-23-nets-and-presheaves-of-tensor-categories",
+     "title": "Nets and presheaves of tensor categories.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-31-charge-structure",
+     "title": "Charge structure.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-32-symmetry",
+     "title": "Symmetry.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-33-the-main-result",
+     "title": "The main result.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-4-group-bundles-as-global-gauge-symmetries",
+     "title": "Group bundles as global gauge symmetries.",
+     "prose_ratio": 0.528,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-42-twisted-nets-and-background-potentials",
+     "title": "Twisted nets and background potentials.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-5-conclusions-and-the-gerbe-perspective",
+     "title": "Conclusions and the gerbe perspective.",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.551,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-nucl-th-0309051v5/blocks/prose-sec-002",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-nucl-th-0309051v5/blocks/prose-sec-002",
   "kind": "prose",
   "title": "(∂µξ†∂νξ − ∂νξ†∂µξ)2, (ξ†ξ = 1). (9)",
   "pageStart": 2,
   "pageEnd": 4,
   "text": "../sections/sec-002-4-µξνξ-νξµξ2-ξξ-1-9.md",
-  "derivedFrom": "library/arxiv-nucl-th-0309051v5/manifest",
-  "sourceDocument": "library/arxiv-nucl-th-0309051v5/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-nucl-th-0309051v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-nucl-th-0309051v5/manifest.jsonld",
   "provenance": "ingested"
 }

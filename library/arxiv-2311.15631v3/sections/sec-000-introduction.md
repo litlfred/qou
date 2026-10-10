@@ -7,180 +7,91 @@ section_number: null
 pages: 1-5
 source_pdf: 2311.15631v3.pdf
 source_sha256: a3cc6d51cd04fc07
+text_source: latex
+latex_prose_ratio: 0.946
+latex_coverage_ratio: 0.977
 doc_brief: "Classification of connected étale algebras in pre-modular fusion categories up to rank three Ken KIKUCHI — We classify connected ´ etale algebras A’s in pre-modular fusion categories B with rank(B) ≤"
 ---
-Throughout the paper, C denotes a fusion category (FC) over the ﬁeld C of complex numbers
-(see [1] for deﬁnitions). Its simple objects are denoted ci’s withi = 1, . . . ,rank(C). We denote
-its fusion ring by K(C). A pivotal structure a : idC ∼= (−)∗∗ deﬁnes left and right quantum
-(or categorical) traces tr L/R (a) : 1 → 1. A pivotal structure is called spherical if ∀c ∈ C ,
-trL(ac) = tr R(ac∗). In an FC C with a spherical structure a, a (quantum) dimension of an
-object c ∈ C is deﬁned as dc := tr L(ac). Its squared sum deﬁnes categorical (or global)
-dimension
-D2(C) :=
-rank(C)∑
-i=1
-d2
-ci. (1.1)
-Note that for a given categorical dimension, there are two D(C)’s, one positive and one
-negative. If an FC is equipped with a braiding c, in order to avoid confusion, we especially
-write the braided fusion category (BFC) B and simple objects bi’s. A spherical BFC is called
-pre-modular fusion category (pre-MFC). This is our ambient categ ory. If the braiding in
-a pre-MFC is non-degenerate, the category is called modular or mod ular fusion category
-(MFC).
-With a braiding, we can study commutative algebras. An algebra in an F C C is a triple
-(A, µ, u) of an object A ∈ C , multiplication morphism µ : A ⊗ A → A, and unit morphism
-u : 1 → A obeying associativity and unit axioms. A category CA of right A-modules consists
-1
-of pairs ( m, p) where m ∈ C and p : m ⊗ A → m subject to coherence conditions. (A
-category AC of left A-modules is deﬁned analogously.) An algebra is called separable if CA is
-semisimple. An algebra A ∈ B in a BFC is called commutative if
-µ · cA,A = µ. (1.2)
-A commutative separable algebra is called ´ etale. Any ´ etale algebraA decomposes to a direct
-sum of connected ones [2] where A ∈ C is called connected if dim C C(1, A) = 1. An example
-of connected ´ etale algebra is the unitA ∼= 1 ∈ B giving BA ≃ B . A BFC B without nontrivial
-connected ´ etale algebra is called completely anisotropic. The goal o f this paper is to classify
-connected ´ etale algebras1 in pre-MFCs. Our main results are summarized as the
-Theorem. Connected ´ etale algebras in pre-modular fusion categories B’s up to rank three
-are given as follows:
-Rank B Results Completely anisotropic?
-1 VectC Table 2 Yes
-2 Vecα
-Z/ 2Z Tables 3,4 No (two with (2.6))/ Yes (the other 14)
-Fib Table 5 Yes
-3 Vec1
-Z/ 3Z Table 6 No ( hX = hY = 0)/ Yes ( hX = hY = ± 1
-3)
-Ising Table 7 Yes
-Rep(S3) Tables 8,9 No (the other six)/ Yes (two symmetric with dY = −1)
-psu(2)5 Table 10 Yes
+Throughout the paper, $\mathcal C$ denotes a fusion category (FC) over the field $\mathbb C$ of complex numbers (see [@EGNO15] for definitions). Its simple objects are denoted $c_i$'s with $i=1,\dots,\text{rank}(\mathcal C)$. We denote its fusion ring by $K(\mathcal C)$. A pivotal structure $a:id_{\mathcal C}\cong(-)^{**}$ defines left and right quantum (or categorical) traces $\text{tr}^{L/R}(a):1\to1$. A pivotal structure is called spherical if $\forall c\in\mathcal C$, $\text{tr}^L(a_c)=\text{tr}^R(a_{c^*})$. In an FC $\mathcal C$ with a spherical structure $a$, a (quantum) dimension of an object $c\in\mathcal C$ is defined as $d_c:=\text{tr}^L(a_c)$. Its squared sum defines categorical (or global) dimension $$\begin{equation}
+    D^2(\mathcal C):=\sum_{i=1}^{\text{rank}(\mathcal C)}d_{c_i}^2.\label{categoricaldim}
+\end{equation}$$ Note that for a given categorical dimension, there are two $D(\mathcal C)$'s, one positive and one negative. If an FC is equipped with a braiding $c$, in order to avoid confusion, we especially write the braided fusion category (BFC) $\mathcal B$ and simple objects $b_i$'s. A spherical BFC is called pre-modular fusion category (pre-MFC). This is our ambient category. If the braiding in a pre-MFC is non-degenerate, the category is called modular or modular fusion category (MFC).
+
+With a braiding, we can study commutative algebras. An algebra in an FC $\mathcal C$ is a triple $(A,\mu,u)$ of an object $A\in\mathcal C$, multiplication morphism $\mu:A\otimes A\to A$, and unit morphism $u:1\to A$ obeying associativity and unit axioms. A category $\mathcal C_A$ of right $A$-modules consists of pairs $(m,p)$ where $m\in\mathcal C$ and $p:m\otimes A\to m$ subject to coherence conditions. (A category $_A\mathcal C$ of left $A$-modules is defined analogously.) An algebra is called separable if $\mathcal C_A$ is semisimple. An algebra $A\in\mathcal B$ in a BFC is called commutative if $$\begin{equation}
+    \mu\cdot c_{A,A}=\mu.\label{commutativealg}
+\end{equation}$$ A commutative separable algebra is called étale. Any étale algebra $A$ decomposes to a direct sum of connected ones [@DMNO10] where $A\in\mathcal C$ is called connected if $\dim_{\mathbb C}\mathcal C(1,A)=1$. An example of connected étale algebra is the unit $A\cong1\in\mathcal B$ giving $\mathcal B_A\simeq\mathcal B$. A BFC $\mathcal B$ without nontrivial connected étale algebra is called completely anisotropic. The goal of this paper is to classify connected étale algebras[^1] in pre-MFCs. Our main results are summarized as the\
+
+**Theorem.** *Connected étale algebras in pre-modular fusion categories $\mathcal B$'s up to rank three are given as follows:*
+
+:::: center
+::: {#results}
+   Rank                  $\mathcal B$                                                                                                                               Results                                                                                                                                                       Completely anisotropic?
+  ------ -------------------------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------
+    1             $\text{Vect}_{\mathbb C}$                                                                                 Table [\[rank1results\]](#rank1results){reference-type="ref" reference="rank1results"}                                                                                                                          Yes
+    2     $\text{Vec}_{\mathbb Z/2\mathbb Z}^\alpha$       Tables [\[rank2Z2anomfreeresults\]](#rank2Z2anomfreeresults){reference-type="ref" reference="rank2Z2anomfreeresults"},[\[rank2Z2anomresults\]](#rank2Z2anomresults){reference-type="ref" reference="rank2Z2anomresults"}        No (two with ([\[Z2etale\]](#Z2etale){reference-type="ref" reference="Z2etale"}))/ Yes (the other 14)
+                         $\text{Fib}$                                                                                   Table [\[rank2fibresults\]](#rank2fibresults){reference-type="ref" reference="rank2fibresults"}                                                                                                                     Yes
+    3       $\text{Vec}_{\mathbb Z/3\mathbb Z}^1$                                                                        Table [\[rank3Z3results\]](#rank3Z3results){reference-type="ref" reference="rank3Z3results"}                                                                                                  No ($h_X=h_Y=0$)/ Yes ($h_X=h_Y=\pm\frac13$)
+                        $\text{Ising}$                                                                               Table [\[rank3isingresults\]](#rank3isingresults){reference-type="ref" reference="rank3isingresults"}                                                                                                                  Yes
+                      $\text{Rep}(S_3)$                Tables [\[rank3nonsymRepS3results\]](#rank3nonsymRepS3results){reference-type="ref" reference="rank3nonsymRepS3results"},[\[rank3symRepS3results\]](#rank3symRepS3results){reference-type="ref" reference="rank3symRepS3results"}                           No (the other six)/ Yes (two symmetric with $d_Y=-1$)
+                          $psu(2)_5$                                                                                 Table [\[rank3psu25results\]](#rank3psu25results){reference-type="ref" reference="rank3psu25results"}                                                                                                                  Yes
+
+  : Connected étale algebras in pre-MFC $\mathcal B$ with $\text{rank}(\mathcal B)\le3$
+:::
+
 .
-T able 1: Connected ´ etale algebras in pre-MFC B with rank( B) ≤ 3
-What is central in our classiﬁcation method [3] is the Frobenius-Perr on dimensions. They
-are deﬁned as follows. An FC C has Grothendieck ring Gr(C). It admits a non-negative integer
-matrix representation (NIM-rep). The matrix ( Ni)jk := Nij
-k consists of N-coeﬃcients
-ci ⊗ cj ∼=
-rank(C)⨁
-k=1
-Nij
-kck. (1.3)
-Since they have non-negative entries, we can apply the Perron-Fr obenius theorem to get the
-largest positive eigenvalue FPdim C(ci) called Frobenius-Perron dimension of ci (or Ni). Its
-squared sum deﬁnes Frobenius-Perron dimension of an FC
-FPdim(C) :=
-rank(C)∑
-i=1
-(FPdimC(ci))2. (1.4)
-1They are also called quantum subgroup, consensable algebra, or no rmal algebra depending on contexts.
-2
-An FC C with D2(C) = FPdim( C) is called pseudo-unitary, and unitary if ∀c ∈ C , dc =
-FPdimC(c). The Frobenius-Perron dimension deﬁnes a Lagrangian algebra. A connected
-´ etale algebraA in a BFC B is called Lagrangian if (FPdim B(A))2 = FPdim( B). With the
-Frobenius-Perron dimension at hand, our classiﬁcation method [3] c onsists of three steps:
-1. Find a maximal rank rmax on rank( BA),
-2. List up candidate fusion categories for BA,
-3. Check which of them satisfy axioms.
-A maximal rank on BA is given by rmax = ⌊FPdim(B)⌋ [3]. This is because ∀c ∈ C ,
-FPdimC(c) ≥ 1 [4, 1], and for a BFC B and a connected ´ etale algebraA ∈ B , Frobenius-Perron
-dimensions obey [5, 4, 2]
-FPdimB(A) = FPdim(B)
-FPdim(BA) . (1.5)
-Since FPdim B(A) ≥ 1, we obtain
-1 ≤ FPdim(BA) ≤ FPdim(B), (1.6)
-and
-rank(BA) ≤ rmax = ⌊FPdim(B)⌋. (1.7)
-In our setup, BA is known to be a fusion category. 2 Hence, we list up candidate fu-
-sion categories C’s for BA in the second step. The candidates should satisfy three con-
-ditions: i) rank( C) ≤ rmax = ⌊FPdim(B)⌋, ii) (1 ≤)FPdim(C) ≤ FPdim(B), and iii)
-FPdimB(A) = FPdim( B)/FPdim(C). The ﬁrst two conditions are coming from (1.7,1.6).
-The third condition is coming from (1.5). Since A is a direct sum of simple objects in
-B, its Frobenius-Perron dimension is given by a linear sum of those of sim ple objects with
-N-coeﬃcients
-FPdimB(A) =
-rank(B)∑
-i=1
-niFPdimB(bi) ( ni ∈ N). (1.8)
-It turns out that these conditions are strong enough to rule out m any fusion categories. In
-the third step, we check which candidate fusion categories satisfy axioms of connected ´ etale
-algebras. In particular, we have to check (1.2). For that purpose , we check a necessary
-condition
-µ · cA,A · cA,A = µ (1.9)
-2Here is the reason. Let C be a multitensor category and A ∈ C be a connected separable algebra. Then,
-CA is a semisimple tensor category with simple unit A ∈ C A. If C is ﬁnite, CA is ﬁnite. Thus, for a ﬁnite
-multitensor category C and connected separable algebra A ∈ C , CA is a fusion category. (Recall a fusion
-category is deﬁned as ﬁnite semisimple tensor category.)
-3
-for an algebra to be commutative. With conformal dimension hi of bi, the double braiding is
-given by
-cA,A · cA,A ∼=
-n∑
-i,j =1
-(ιi ⊗ ιj) · caj ,a i · cai,a j · (pi ⊗ pj), (1.10)
-where pi : A → ai and ιi : ai → A are product projections and coproduct injections of a
-direct sum A ∼= a1 ⊕ a2 ⊕ · · · ⊕ an, respectively. The double braiding caj ,a i · cai,a j of simple
-objects ai, aj can be computed from the formula 3
-caj ,a i · cai,a j =
-rank(B)∑
-k=1
-Nij
-k e2πih k
-e2πi (hi+hj) idk. (1.14)
-If one ﬁnds A does not satisfy (1.9), one can drop it from the list of candidates. I f a candidate
-does pass the necessary condition, we need to check the axiom µ · cA,A = µ seriously. Just
-like a double braiding, the half-braiding is given by
-cA,A ∼=
-n∑
-i,j =1
-(ιj ⊗ ιi) · cai,a j · (pi ⊗ pj). (1.15)
-To ﬁnd cai,a j , in principle, we have to solve hexagon equations, but ‘diagonal’ ones cb,b ’s for
-self-dual simple objects b ∼= b∗ can be computed from the formula [6]
-cb,b ∼= e−2πih bν2(b)idb⊗b, (1.16)
-where ν2(b) is the Frobenius-Schur indicator [7]. 4
-3The quantum trace of double braidings deﬁnes S-matrix
-~Si,j := tr(cbj ,b i · cbi,b j ) =
-rank(B)∑
-k=1
-Nij
-k e2πih k
-e2πi (hi+hj ) dk. (1.11)
-A normalized S-matrix is deﬁned by
-Si,j :=
-~Si,j
-D(B) .
-Another modular matrix T is deﬁned by
-Ti,j = e2πih i δi,j . (1.12)
-When B is modular, the matrices deﬁne (additive) central charge c(B) mod 8 by
-(ST )3 = e2πic (B)/ 8S2. (1.13)
-4When B is modular, it can be computed with the formula
-ν2(bk) := 1
-D2(B)
-rank(B)∑
-i,j =1
-Nij
-kdidj
-(e2πih i
-e2πih j
-) 2
-. (1.17)
-4
-Another fact we use to check an existence of connected ´ etale alg ebra A ∈ B is that
-BA is a left B-module category [8]. A left C-module category (or module category over
-C) is a quadruple ( M, ⊲, m, l) of a category M, an action (or module product) bifunctor
-⊲ : C × M → M , and natural isomorphisms m−, −, − : ( − ⊗ − ) ⊲ − ∼= − ⊲ (− ⊲ −) and
-l : 1 ⊲ M ≃ M called module associativity constraint and unit constraint, respect ively.
-They are subject to associativity and unit axioms as usual. An essen tial fact about module
-categories is that since c⊲m is an object of M, it can be decomposed to a direct sum of simple
-objects with N-coeﬃcients. Thus, actions of (left) C-module categories form NIM-reps. If one
-ﬁnds no r-dimensional NIM-rep, one can rule out candidates A ∈ B giving BA’s with rank
-r. On the other hand, if one ﬁnds r-dimensional NIM-reps, we can use it to constrain forms
-of A’s. In order to get additional constraints, we use the internal Hom [8]. For m1, m2 ∈ M
-over C, the internal Hom Hom (m1, m2) ∈ C is deﬁned, if exists, by a natural isomorphism
-∀c ∈ C , M(c ⊲ m1, m2) ∼= C(c, Hom(m1, m2)). (1.18)
-It has a natural isomorphism
-∀c ∈ C , ∀m1, m2 ∈ M, Hom(m1, c ⊲ m2) ∼= c ⊗ Hom(m1, m2). (1.19)
-We will use this fact to translate actions ⊲ of C on M to monoidal products ⊗ in C. For
-every m ∈ M , Hom (m, m) has a canonical structure of an algebra in C. Furthermore, it is
-known [8, 1] that the functor
-F := Hom(m, −) : M → C Hom(m,m ) (m ∈ M) (1.20)
-sending m′ ∈ M to Hom (m, m′) ∈ C gives M ≃ C Hom(m,m ).
-2 Classiﬁcation
+::::
+
+What is central in our classification method [@KK23GSD] is the Frobenius-Perron dimensions. They are defined as follows. An FC $\mathcal C$ has Grothendieck ring $\text{Gr}(\mathcal C)$. It admits a non-negative integer matrix representation (NIM-rep). The matrix $(N_i)_{jk}:={N_{ij}}^k$ consists of $\mathbb N$-coefficients $$\begin{equation}
+    c_i\otimes c_j\cong\bigoplus_{k=1}^{\text{rank}(\mathcal C)}{N_{ij}}^kc_k.\label{NIM}
+\end{equation}$$ Since they have non-negative entries, we can apply the Perron-Frobenius theorem to get the largest positive eigenvalue $\text{FPdim}_{\mathcal C}(c_i)$ called Frobenius-Perron dimension of $c_i$ (or $N_i$). Its squared sum defines Frobenius-Perron dimension of an FC $$\begin{equation}
+    \text{FPdim}(\mathcal C):=\sum_{i=1}^{\text{rank}(\mathcal C)}(\text{FPdim}_{\mathcal C}(c_i))^2.\label{FPdimC}
+\end{equation}$$ An FC $\mathcal C$ with $D^2(\mathcal C)=\text{FPdim}(\mathcal C)$ is called pseudo-unitary, and unitary if $\forall c\in\mathcal C$, $d_c=\text{FPdim}_{\mathcal C}(c)$. The Frobenius-Perron dimension defines a Lagrangian algebra. A connected étale algebra $A$ in a BFC $\mathcal B$ is called Lagrangian if $(\text{FPdim}_{\mathcal B}(A))^2=\text{FPdim}(\mathcal B)$. With the Frobenius-Perron dimension at hand, our classification method [@KK23GSD] consists of three steps:
+
+1.  Find a maximal rank $r_\text{max}$ on $\text{rank}(\mathcal B_A)$,
+
+2.  List up candidate fusion categories for $\mathcal B_A$,
+
+3.  Check which of them satisfy axioms.
+
+A maximal rank on $\mathcal B_A$ is given by $r_\text{max}=\lfloor\text{FPdim}(\mathcal B)\rfloor$ [@KK23GSD]. This is because $\forall c\in\mathcal C$, $\text{FPdim}_{\mathcal C}(c)\ge1$ [@ENO02; @EGNO15], and for a BFC $\mathcal B$ and a connected étale algebra $A\in\mathcal B$, Frobenius-Perron dimensions obey [@KO01; @ENO02; @DMNO10] $$\begin{equation}
+    \text{FPdim}_{\mathcal B}(A)=\frac{\text{FPdim}(\mathcal B)}{\text{FPdim}(\mathcal B_A)}.\label{FPdimA}
+\end{equation}$$ Since $\text{FPdim}_{\mathcal B}(A)\ge1$, we obtain $$\begin{equation}
+    1\le\text{FPdim}(\mathcal B_A)\le\text{FPdim}(\mathcal B),\label{fpdimeq}
+\end{equation}$$ and $$\begin{equation}
+    \text{rank}(\mathcal B_A)\le r_\text{max}=\lfloor\text{FPdim}(\mathcal B)\rfloor.\label{rmax}
+\end{equation}$$ In our setup, $\mathcal B_A$ is known to be a fusion category.[^2] Hence, we list up candidate fusion categories $\mathcal C$'s for $\mathcal B_A$ in the second step. The candidates should satisfy three conditions: i) $\text{rank}(\mathcal C)\le r_\text{max}=\lfloor\text{FPdim}(\mathcal B)\rfloor$, ii) $(1\le)\text{FPdim}(\mathcal C)\le\text{FPdim}(\mathcal B)$, and iii) $\text{FPdim}_{\mathcal B}(A)=\text{FPdim}(\mathcal B)/\text{FPdim}(\mathcal C)$. The first two conditions are coming from ([\[rmax\]](#rmax){reference-type="ref" reference="rmax"},[\[fpdimeq\]](#fpdimeq){reference-type="ref" reference="fpdimeq"}). The third condition is coming from ([\[FPdimA\]](#FPdimA){reference-type="ref" reference="FPdimA"}). Since $A$ is a direct sum of simple objects in $\mathcal B$, its Frobenius-Perron dimension is given by a linear sum of those of simple objects with $\mathbb N$-coefficients $$\begin{equation}
+    \text{FPdim}_{\mathcal B}(A)=\sum_{i=1}^{\text{rank}(\mathcal B)}n_i\text{FPdim}_{\mathcal B}(b_i)\quad(n_i\in\mathbb N).\label{fpdimAlinearsum}
+\end{equation}$$ It turns out that these conditions are strong enough to rule out many fusion categories. In the third step, we check which candidate fusion categories satisfy axioms of connected étale algebras. In particular, we have to check ([\[commutativealg\]](#commutativealg){reference-type="ref" reference="commutativealg"}). For that purpose, we check a necessary condition $$\begin{equation}
+    \mu\cdot c_{A,A}\cdot c_{A,A}=\mu\label{necessarycommutative}
+\end{equation}$$ for an algebra to be commutative. With conformal dimension $h_i$ of $b_i$, the double braiding is given by $$\begin{equation}
+    c_{A,A}\cdot c_{A,A}\cong\sum_{i,j=1}^n(\iota_i\otimes\iota_j)\cdot c_{a_j,a_i}\cdot c_{a_i,a_j}\cdot(p_i\otimes p_j),\label{cAAcAA}
+\end{equation}$$ where $p_i:A\to a_i$ and $\iota_i:a_i\to A$ are product projections and coproduct injections of a direct sum $A\cong a_1\oplus a_2\oplus\cdots\oplus a_n$, respectively. The double braiding $c_{a_j,a_i}\cdot c_{a_i,a_j}$ of simple objects $a_i,a_j$ can be computed from the formula[^3] $$\begin{equation}
+    c_{a_j,a_i}\cdot c_{a_i,a_j}=\sum_{k=1}^{\text{rank}(\mathcal B)}{N_{ij}}^k\frac{e^{2\pi ih_k}}{e^{2\pi i(h_i+h_j)}}id_k.\label{doublebraiding}
+\end{equation}$$ If one finds $A$ does not satisfy ([\[necessarycommutative\]](#necessarycommutative){reference-type="ref" reference="necessarycommutative"}), one can drop it from the list of candidates. If a candidate does pass the necessary condition, we need to check the axiom $\mu\cdot c_{A,A}=\mu$ seriously. Just like a double braiding, the half-braiding is given by $$\begin{equation}
+    c_{A,A}\cong\sum_{i,j=1}^n(\iota_j\otimes\iota_i)\cdot c_{a_i,a_j}\cdot(p_i\otimes p_j).\label{cAA}
+\end{equation}$$ To find $c_{a_i,a_j}$, in principle, we have to solve hexagon equations, but 'diagonal' ones $c_{b,b}$'s for self-dual simple objects $b\cong b^*$ can be computed from the formula [@K05] $$\begin{equation}
+    c_{b,b}\cong e^{-2\pi ih_b}\nu_2(b)id_{b\otimes b},\label{cbb}
+\end{equation}$$ where $\nu_2(b)$ is the Frobenius-Schur indicator [@FRS92].[^4]
+
+Another fact we use to check an existence of connected étale algebra $A\in\mathcal B$ is that $\mathcal B_A$ is a left $\mathcal B$-module category [@O01]. A left $\mathcal C$-module category (or module category over $\mathcal C$) is a quadruple $(\mathcal M,\triangleright,m,l)$ of a category $\mathcal M$, an action (or module product) bifunctor $\triangleright:\mathcal C\times\mathcal M\to\mathcal M$, and natural isomorphisms $m_{-,-,-}:(-\otimes-)\triangleright-\cong-\triangleright(-\triangleright-)$ and $l:1\triangleright\mathcal M\simeq\mathcal M$ called module associativity constraint and unit constraint, respectively. They are subject to associativity and unit axioms as usual. An essential fact about module categories is that since $c\triangleright m$ is an object of $\mathcal M$, it can be decomposed to a direct sum of simple objects with $\mathbb N$-coefficients. Thus, actions of (left) $\mathcal C$-module categories form NIM-reps. If one finds no $r$-dimensional NIM-rep, one can rule out candidates $A\in\mathcal B$ giving $\mathcal B_A$'s with rank $r$. On the other hand, if one finds $r$-dimensional NIM-reps, we can use it to constrain forms of $A$'s. In order to get additional constraints, we use the internal Hom [@O01]. For $m_1,m_2\in\mathcal M$ over $\mathcal C$, the internal Hom $\underline{\text{Hom}}(m_1,m_2)\in\mathcal C$ is defined, if exists, by a natural isomorphism $$\begin{equation}
+    \forall c\in\mathcal C,\quad\mathcal M(c\triangleright m_1,m_2)\cong\mathcal C(c,\underline{\text{Hom}}(m_1,m_2)).\label{inthom}
+\end{equation}$$ It has a natural isomorphism $$\begin{equation}
+    \forall c\in\mathcal C,\forall m_1,m_2\in\mathcal M,\quad\underline{\text{Hom}}(m_1,c\triangleright m_2)\cong c\otimes\underline{\text{Hom}}(m_1,m_2).\label{inthomprop}
+\end{equation}$$ We will use this fact to translate actions $\triangleright$ of $\mathcal C$ on $\mathcal M$ to monoidal products $\otimes$ in $\mathcal C$. For every $m\in\mathcal M$, $\underline{\text{Hom}}(m,m)$ has a canonical structure of an algebra in $\mathcal C$. Furthermore, it is known [@O01; @EGNO15] that the functor $$\begin{equation}
+    F:=\underline{\text{Hom}}(m,-):\mathcal M\to\mathcal C_{\underline{\text{Hom}}(m,m)}\quad(m\in\mathcal M)\label{Ffunc}
+\end{equation}$$ sending $m'\in\mathcal M$ to $\underline{\text{Hom}}(m,m')\in\mathcal C$ gives $\mathcal M\simeq\mathcal C_{\underline{\text{Hom}}(m,m)}$.
+
+[^1]: They are also called quantum subgroup, consensable algebra, or normal algebra depending on contexts.
+
+[^2]: Here is the reason. Let $\mathcal C$ be a multitensor category and $A\in\mathcal C$ be a connected separable algebra. Then, $\mathcal C_A$ is a semisimple tensor category with simple unit $A\in\mathcal C_A$. If $\mathcal C$ is finite, $\mathcal C_A$ is finite. Thus, for a finite multitensor category $\mathcal C$ and connected separable algebra $A\in\mathcal C$, $\mathcal C_A$ is a fusion category. (Recall a fusion category is defined as finite semisimple tensor category.)
+
+[^3]: The quantum trace of double braidings defines $S$-matrix $$\begin{equation}
+        \widetilde S_{i,j}:=\text{tr}(c_{b_j,b_i}\cdot c_{b_i,b_j})=\sum_{k=1}^{\text{rank}(\mathcal B)}{N_{ij}}^k\frac{e^{2\pi ih_k}}{e^{2\pi i(h_i+h_j)}}d_k.\label{Smatrix}
+    \end{equation}$$ A normalized $S$-matrix is defined by $$S_{i,j}:=\frac{\widetilde S_{i,j}}{D(\mathcal B)}.$$ Another modular matrix $T$ is defined by $$\begin{equation}
+        T_{i,j}=e^{2\pi ih_i}\delta_{i,j}.\label{Tmatrix}
+    \end{equation}$$ When $\mathcal B$ is modular, the matrices define (additive) central charge $c(\mathcal B)$ mod 8 by $$\begin{equation}
+        (ST)^3=e^{2\pi ic(\mathcal B)/8}S^2.\label{centralcharge}
+    \end{equation}$$
+
+[^4]: When $\mathcal B$ is modular, it can be computed with the formula $$\begin{equation}
+        \nu_2(b_k):=\frac1{D^2(\mathcal B)}\sum_{i,j=1}^{\text{rank}(\mathcal B)}{N_{ij}}^kd_id_j\left(\frac{e^{2\pi ih_i}}{e^{2\pi ih_j}}\right)^2.\label{FSindicator}
+    \end{equation}$$

@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2507.12454v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Cohomology rings of character varieties (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2507.12454v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2507.12454&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2507.12454v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2507.12454v1",
+    "content_type": "application/gzip",
+    "sha256": "b7114f86fedc0e1770c67518a16bb837a481e1e9c01bbd7f61b776edf9a9b3e9",
+    "bytes": 309529,
+    "fetched": "2026-10-10T15:21:25+00:00",
+    "files": [
+      {
+        "path": "source/files/paper.bbl",
+        "role": "bbl",
+        "sha256": "c7c0c9c9a6437149da13e9ec4df81e095296606f2e15a51322038f1064a338de",
+        "bytes": 8618
+      },
+      {
+        "path": "source/files/paper.tex",
+        "role": "tex",
+        "sha256": "b6702bccdf1f49a37d268e9d2f05b086746d9b787113d8117b423c8ade0d8ef2",
+        "bytes": 62056
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

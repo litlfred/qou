@@ -6,7 +6,8 @@
   "sha256": "f09f5047bd12651cac56b9ba5f6e60ff729d66daf6e081b138a9dcf8278c22d8",
   "bytes": 269766,
   "pages": 9,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -429,6 +430,136 @@
   "likely_scanned": false,
   "toc_entries": 24,
   "sections": 22,
-  "chars_total": 31372
+  "chars_total": 31372,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "cm9.tex",
+   "tex_sections": 5,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-i-introduction",
+     "title": "INTRODUCTION",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-ii-knot-in-skyrme-theor-y",
+     "title": "KNOT IN SKYRME THEOR Y",
+     "prose_ratio": 0.226,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-2-\u00b5\u03c92-1-cos-\u03c9\u00b5-\u02c6n2",
+     "title": "(\u2202\u00b5\u03c9)2 + (1 \u2212 cos \u03c9)(\u2202\u00b5 \u02c6n)2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-2-\u00b5\u03c9\u03bd-\u02c6n-\u03bd\u03c9\u00b5-\u02c6n2",
+     "title": "(\u2202\u00b5\u03c9\u2202\u03bd \u02c6n \u2212 \u2202\u03bd\u03c9\u2202\u00b5 \u02c6n)2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-8-1-cos-\u03c9\u00b5",
+     "title": "(1 \u2212 cos \u03c9)\u2202\u00b5",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-8-1-cos-\u03c9-sin-\u03c9\u00b5-\u02c6n-\u03bd-\u02c6n2-0",
+     "title": "(1 \u2212 cos \u03c9) sin \u03c9(\u2202\u00b5 \u02c6n \u00d7 \u2202\u03bd \u02c6n)2 = 0,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-4-1-cos-\u03c9\u02c6n-\u00b5-\u02c6n",
+     "title": "(1 \u2212 cos \u03c9)\u02c6n \u00d7 \u2202\u00b5 \u02c6n",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-8-1-cos-\u03c92\u02c6n-\u00b5-\u02c6n-\u03bd-\u02c6n\u03bd-\u02c6n",
+     "title": "(1 \u2212 cos \u03c9)2(\u02c6n \u00b7\u2202\u00b5 \u02c6n \u00d7 \u2202\u03bd \u02c6n)\u2202\u03bd \u02c6n",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-2-\u00b5-\u02c6n2-\u03b1",
+     "title": "(\u2202\u00b5 \u02c6n)2 \u2212 \u03b1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-4-\u00b5-\u02c6n-\u03bd-\u02c6n2-6",
+     "title": "(\u2202\u00b5 \u02c6n \u00d7 \u2202\u03bd \u02c6n)2, (6)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-iii-knot-in-two-component",
+     "title": "KNOT IN TWO-COMPONENT",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-2-\u03c6\u03c62-1",
+     "title": "(\u03c6\u2020\u03c6)2 \u2212 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-2-i\u03c12-\u03c12",
+     "title": "(\u2202i\u03c1)2 + \u03c12",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-8-\u03c12-\u03c12",
+     "title": "(\u03c12 \u2212 \u03c12",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-4-\u00b5-\u02c6n2",
+     "title": "(\u2202\u00b5 \u02c6n)2,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-2-n\u00b5\u03bd-20",
+     "title": "N\u00b5\u03bd, (20)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-8-i-\u02c6n2-\u03bb",
+     "title": "(\u2202i \u02c6n)2 + \u03bb",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-4-i-\u02c6n2\u03c1-\u03bb",
+     "title": "(\u2202i \u02c6n)2\u03c1 = \u03bb",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-iv-knot-in-two-gap",
+     "title": "KNOT IN TWO-GAP",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-4-f-2",
+     "title": "F 2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-4-\u00b5-\u02c6n2-g2a\u00b5-a\u00b52",
+     "title": "(\u2202\u00b5 \u02c6n)2 + g2(A\u00b5 + \u02dcA\u00b5)2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-v-discussion",
+     "title": "DISCUSSION",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.765,
+     "result": "overlaid",
+     "converter": "latex"
+    }
+   ]
+  }
  }
 }

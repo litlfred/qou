@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0006057v2/blocks/prose-sec-010",
+  "kind": "prose",
+  "title": "Examples : T emperley-Lieb algebras. It was shown in [NV3] (see Section",
+  "pageStart": 8,
+  "pageEnd": 9,
+  "text": "../sections/sec-010-27-examples-t-emperley-lieb-algebras-it-was-show.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -6,7 +6,8 @@
   "sha256": "4bf4f73b0c152b1953f56eca70071426b28e2f05568e23cf03d50bb6ea80ce0a",
   "bytes": 339013,
   "pages": 27,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -906,6 +907,278 @@
   "likely_scanned": false,
   "toc_entries": 51,
   "sections": 51,
-  "chars_total": 66593
+  "chars_total": 66593,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 4,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.448,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-2-andruskiewitsch-angiono-garc\u00eda-iglesias-torrec",
+     "title": "ANDRUSKIEWITSCH, ANGIONO, GARC\u00cdA IGLESIAS, TORRECILLAS , V AY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-26-on-the-other-hand-any-quasitriangular-hopf-al",
+     "title": "On the other hand, any quasitriangular Hopf algebra is e mbedded in",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-1-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-11-notations-let-k-be-an-algebraically-closed-\ufb01e",
+     "title": "Notations. Let k be an algebraically closed \ufb01eld of characteristic 0 and",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-12-t-ensor-categories-we-refer-to-bak-mcl-egno-e",
+     "title": "T ensor categories. We refer to [BaK, McL, EGNO, ENO, EO] for",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-13-hopf-algebras-we-use-standard-notation-for-ho",
+     "title": "Hopf algebras. We use standard notation for Hopf algebras (always",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-4-andruskiewitsch-angiono-garc\u00eda-iglesias-torrec",
+     "title": "ANDRUSKIEWITSCH, ANGIONO, GARC\u00cdA IGLESIAS, TORRECILLAS , V AY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-14-nichols-algebras-let-h-be-a-hopf-algebra-we-s",
+     "title": "Nichols algebras. Let H be a Hopf algebra. We shall say braided",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-2-spherical-hopf-algebras",
+     "title": "Spherical Hopf algebras",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-21-spherical-hopf-algebras-the-notion-of-spheric",
+     "title": "Spherical Hopf algebras. The notion of spherical Hopf algebra was",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-6-andruskiewitsch-angiono-garc\u00eda-iglesias-torrec",
+     "title": "ANDRUSKIEWITSCH, ANGIONO, GARC\u00cdA IGLESIAS, TORRECILLAS , V AY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-22-spherical-categories-a-monoidal-rigid-categor",
+     "title": "Spherical Categories. A monoidal rigid category C is pivotal when",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-23-quantum-dimensions-the-quantum-dimension-of-a",
+     "title": "Quantum dimensions. The quantum dimension of an object X in a",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-231-if-c-is-a-spherical-tensor-category-then-end",
+     "title": "If C is a spherical tensor category, then End(1) = k, and the function",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-232-let-h-be-a-hopf-algebra-given-l-irrh-m-reph",
+     "title": "Let H be a Hopf algebra. Given L \u2208 IrrH, M \u2208 RepH, we set",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-8-andruskiewitsch-angiono-garc\u00eda-iglesias-torrec",
+     "title": "ANDRUSKIEWITSCH, ANGIONO, GARC\u00cdA IGLESIAS, TORRECILLAS , V AY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-233-if-h-is-a-non-semisimple-spherical-hopf-alge",
+     "title": "If H is a non-semisimple spherical Hopf algebra, then qdimM = 0 for",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-24-the-non-degenerate-quotient-let-c-be-an-addit",
+     "title": "The non-degenerate quotient. Let C be an additive k-linear spher-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-10-andruskiewitsch-angiono-garc\u00eda-iglesias-torre",
+     "title": "ANDRUSKIEWITSCH, ANGIONO, GARC\u00cdA IGLESIAS, TORRECILLA S, V AY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-251-let-h-be-a-pointed-hopf-algebra-and-set-g-gh",
+     "title": "Let H be a pointed Hopf algebra and set G = G(H). We assume",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-252-let-g-be-a-\ufb01nite-group-and-\u03b4g-be-the-charact",
+     "title": "Let G be a \ufb01nite group and \u03b4g be the characteristic function of the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-26-spherical-hopf-algebras-with-involutory-pivot",
+     "title": "Spherical Hopf algebras with involutory pivot. There are many",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-262-let-h-be-a-\ufb01nite-dimensional-pointed-hopf-al",
+     "title": "Let H be a \ufb01nite-dimensional pointed Hopf algebra with G(H) not",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-12-andruskiewitsch-angiono-garc\u00eda-iglesias-torre",
+     "title": "ANDRUSKIEWITSCH, ANGIONO, GARC\u00cdA IGLESIAS, TORRECILLA S, V AY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-263-let-h-be-a-\ufb01nite-dimensional-copointed-hopf",
+     "title": "Let H be a \ufb01nite-dimensional copointed Hopf algebra over kG, with G",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-264-let-h-be-a-spherical-hopf-algebra-with-invol",
+     "title": "Let H be a spherical Hopf algebra with involutory pivot \u03c9. Then",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-27-ribbon-hopf-algebras-this-is-a-distinguished",
+     "title": "Ribbon Hopf algebras. This is a distinguished class of spherical Hopf",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-14-andruskiewitsch-angiono-garc\u00eda-iglesias-torre",
+     "title": "ANDRUSKIEWITSCH, ANGIONO, GARC\u00cdA IGLESIAS, TORRECILLA S, V AY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-28-cospherical-hopf-algebras-it-is-natural-to-lo",
+     "title": "Cospherical Hopf algebras. It is natural to look at the notions that",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-16-andruskiewitsch-angiono-garc\u00eda-iglesias-torre",
+     "title": "ANDRUSKIEWITSCH, ANGIONO, GARC\u00cdA IGLESIAS, TORRECILLA S, V AY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-3-tilting-modules",
+     "title": "Tilting modules",
+     "prose_ratio": 0.351,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-032-31-quasi-hereditary-algebras-and-tilting-modules",
+     "title": "Quasi-hereditary algebras and tilting modules. Tilting modules",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-18-andruskiewitsch-angiono-garc\u00eda-iglesias-torre",
+     "title": "ANDRUSKIEWITSCH, ANGIONO, GARC\u00cdA IGLESIAS, TORRECILLA S, V AY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-32-induced-and-produced-leta-be-an-inclusion-of",
+     "title": "Induced and produced. Let\u0592\u2192A be an inclusion of algebras. We",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-321-the-induced-and-produced-modules-of-t-b--mod",
+     "title": "The induced and produced modules of T \u2208B- Mod are",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-322-assume-that-a-is-a-\ufb01nite-b-module-then-resa",
+     "title": "Assume that A is a \ufb01nite B-module. Then ResA",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-20-andruskiewitsch-angiono-garc\u00eda-iglesias-torre",
+     "title": "ANDRUSKIEWITSCH, ANGIONO, GARC\u00cdA IGLESIAS, TORRECILLA S, V AY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-038-323-let-k-be-a-hopf-subalgebra-of-a-hopf-algebra",
+     "title": "Let K be a Hopf subalgebra of a Hopf algebra H, with H \ufb01nite over",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-039-324-let-g-be-a-simple-lie-algebra-b-a-borel-suba",
+     "title": "Let g be a simple Lie algebra, b a Borel subalgebra andq a root of unity",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-33-finite-dimensional-nichols-algebras-of-diagon",
+     "title": "Finite-dimensional Nichols algebras of diagonal type. We con-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-331-let-\u03b8-n-and-i-1\u03b8-let-\u03bb-be-a-free-abelian-gro",
+     "title": "Let \u03b8 \u2208 N and I = {1,...,\u03b8 }. Let \u039b be a free abelian group with basis",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-042-332-let-qijiji-be-a-symmetric-matrix-with-entrie",
+     "title": "Let (qij)i,j\u2208I be a symmetric matrix with entries in k\u00d7. Let (V,c ) be",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-043-333-a-pre-nichols-algebra-ofv-is-any-graded-brai",
+     "title": "A pre-Nichols algebra ofV is any graded braided Hopf algebra T inter-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-044-22-andruskiewitsch-angiono-garc\u00eda-iglesias-torre",
+     "title": "ANDRUSKIEWITSCH, ANGIONO, GARC\u00cdA IGLESIAS, TORRECILLA S, V AY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-045-334-the-lusztig-algebra-lv-of-v-is-the-graded-du",
+     "title": "The Lusztig algebra L(V ) of V is the graded dual of \u02c6B(V ), that is",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-046-34-the-small-quantum-groups-we-consider-\ufb01nite-di",
+     "title": "The small quantum groups. We consider \ufb01nite-dimensional pointed",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-047-24-andruskiewitsch-angiono-garc\u00eda-iglesias-torre",
+     "title": "ANDRUSKIEWITSCH, ANGIONO, GARC\u00cdA IGLESIAS, TORRECILLA S, V AY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-048-35-generalized-quantum-groups-the-next-idea-is-t",
+     "title": "Generalized quantum groups. The next idea is to replace \u0393 by an",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-049-references",
+     "title": "References",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-050-26-andruskiewitsch-angiono-garc\u00eda-iglesias-torre",
+     "title": "ANDRUSKIEWITSCH, ANGIONO, GARC\u00cdA IGLESIAS, TORRECILLA S, V AY",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

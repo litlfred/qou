@@ -1,0 +1,16 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1101.1563v1/blocks/remark-sec-002-08",
+  "kind": "remark",
+  "pageStart": 8,
+  "pageEnd": 20,
+  "text": "remark-sec-002-08.md",
+  "derivedFrom": "library/arxiv-1101.1563v1/sections/sec-002",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1101.1563v1/manifest.jsonld",
+  "provenance": "ingested"
+}

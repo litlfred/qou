@@ -7,141 +7,29 @@ section_number: null
 pages: 1-2
 source_pdf: 2608.25107v1.pdf
 source_sha256: 6dca8b99a1f32db4
+text_source: latex
+latex_prose_ratio: 0.716
+latex_coverage_ratio: 0.986
 doc_brief: "ADoNIS: A Differentiable generatOr of Neutrino Interaction Samples César Jesús-Valls1,∗ 1European Organization for Nuclear Research (CERN), 1211 Geneva 23, Switzerland — 17 sections: ADoNIS: A Differe"
 ---
-Neutrino oscillation experiments have entered a preci-
-sion era. The determination of the leptonic charge-parity
-(CP)-violating phase, the resolution of the neutrino mass
-ordering, and the increasingly stringent tests of the three-
-flavour paradigm all rest on comparing measured event
-rates against predictions at the percent level [1–4]. Be-
-cause accelerator neutrino beams are broad-band, the
-energy of each interacting neutrino is not known a pri-
-ori and must be inferred from the observed final state.
-That inference is made through a model of the neutrino–
-nucleus interaction, so the accuracy of the model prop-
-agates directly into the accuracy of the oscillation mea-
-surement. Interaction modelling is consequently among
-the leading systematic uncertainties of the field, and one
-of the most difficult to control, since its sources lie in de-
-tails of nuclear physics that are not directly observable,
-and can mimic the very shifts in the oscillation parame-
-ters that are being measured [5–7].
-The difficulty is that atO(GeV) energies, typical
-of accelerator neutrino oscillation experiments, several
-neutrino–nucleus interaction channels contribute simul-
-taneously and involve a broad range of nuclear and par-
-ticle physics. Quasielastic scattering, multinucleon pro-
-cesses and resonance production depend on the nuclear
-environment and nucleon structure, while at higher en-
-ergies interactions increasingly probe the internal struc-
-ture of the nucleon. A realistic prediction must there-
-fore combine the initial nuclear state, the relevant inter-
-action mechanisms, the transport of produced hadrons
-through the nucleus, and the de-excitation of the rem-
-nant, while providing a consistent description across kine-
-matic regimes and target nuclei.
-∗ cesar.jesus@cern.ch
-Every one of these stages is a research front in its
-own right, pursued by different groups with different for-
-malisms, approximations, and domains of validity. De-
-scriptions of the nuclear ground state continue to be re-
-fined [8–18]. At the primary interaction, quasielastic
-and resonant descriptions [19–35], two-body currents [36–
-48], nucleon form factors [49–59], coherent pion pro-
-duction [60–65], and shallow- and deep-inelastic scat-
-tering [66–79] are all subjects of active theoretical and
-phenomenological development. The subsequent trans-
-port of hadrons through the nucleus [80–90] and the de-
-excitation of the residual system [91, 92] are likewise ac-
-tive areas of development.
-Making these ingredients consistent across interaction
-channels and target nuclei remains an open and ac-
-tively contested problem [7, 93–95]. Event generators
-are where these ingredients are assembled into complete
-final-state predictions for experimental analyses. The
-field therefore uses several generators, including GE-
-NIE [96, 97], NEUT [98], NuWro [82], GiBUU [80], and
-ACHILLES [86, 99], reflecting different scopes, use cases,
-and choices of physics implementation.
-Once these ingredients are assembled in an event gen-
-erator, a separate challenge remains: using its output to
-infer physics from data. An event generator maps a set
-of physics parameters to simulated final states, which an
-analysis then turns into observable predictions that can
-be compared with measurements. At truth level, these
-predictions can be compared with cross-section measure-
-ments to validate interaction models, tune their parame-
-ters and derive constraints. In an experimental analysis,
-instead, the simulated events are propagated through the
-detector and compared with data in reconstructed kine-
-matics to infer the underlying physics. In either case, in-
-ference requires knowing how the observable predictions
-change when the physics parameters are varied. Conven-
-tional generators do not provide this information directly
-arXiv:2608.25107v1  [hep-ex]  25 Aug 2026
-2
-as derivatives, so analyses must obtain it through addi-
-tional parameter-response machinery [100–104]. Build-
-ing and maintaining this machinery, sometimes tied to
-particular analysis choices, slows the adoption of new the-
-oretical developments in experiments and, in turn, delays
-the experimental feedback that helps theorists steer fur-
-ther improvements. That delay matters especially now,
-when many parts of neutrino-interaction modelling are
-being improved at the same time and experiments in-
-creasingly need those developments to keep pace with
-their precision.
-For parameter inference, one way to work around
-this limitation is simulation-based inference, which trains
-a machine-learning model on repeated simulations to
-learn an inverse mapping from the resulting observ-
-ables back to the physics parameters [105, 106], an ap-
-proach recently applied to neutrino-interaction model
-tuning [107, 108]. The way the predictions change when
-the physics parameters are varied is, however, already
-encoded in the physics calculation itself. A differentiable
-generator exposes this response directly, event by event,
-through exact derivatives. Rather than learning an ap-
-proximate inverse relation from repeated simulations, it
-provides the derivatives of the forward calculation itself.
-These derivatives can then be propagated to arbitrary ob-
-servables to show which parameters affect them, where
-different parameters produce similar effects, and which
-datasets add new information, while also supporting pa-
-rameter inference, uncertainty estimation and measure-
-ment design.
-Differentiability concerns how a calculation is imple-
-mented rather than which physics model it represents,
-and therefore need not favour one model over another or
-come at the expense of physical fidelity or interpretabil-
-ity. The construction presented here is therefore general:
-it provides a recipe for making event generators differen-
-tiable that is not tied to the particular interaction models
-implemented inADoNIS. This motivates treating differ-
-entiability as a general capability of future neutrino inter-
-action generators. To demonstrate this in a realistic set-
-ting, this paper presentsADoNIS, a fully differentiable
-neutrino event generator. We use it to show how differ-
-entiability can be maintained throughout the neutrino-
-interaction calculation, including through the stochastic
-intranuclear cascade, and explore what the resulting gra-
-dient information makes possible.
-The remainder of this paper is organised as fol-
-lows. Section II describes the construction ofADo-
-NISand how exact derivatives are propagated from the
-interaction-model parameters to individual events and
-arbitrary observables. Section III validates the differ-
-entiable implementation against ACHILLES across neu-
-trino, electron and hadron probes. Section IV uses the
-resulting Jacobian to show where model parameters af-
-fect measured distributions, which combinations are con-
-strained or degenerate, and how different measurements
-provide complementary information. Section V demon-
-strates how the exact gradient information can be used
-directly for parameter inference and uncertainty quan-
-tification, including the computational advantages it pro-
-vides. Finally, Sec. VI demonstrates unfolding within the
-same differentiable framework, carrying the prediction
-through detector response and extracting a cross section
-from reconstructed data.
+Neutrino oscillation experiments have entered a precision era. The determination of the leptonic charge-parity (CP)-violating phase, the resolution of the neutrino mass ordering, and the increasingly stringent tests of the three-flavour paradigm all rest on comparing measured event rates against predictions at the percent level [@T2K:2025wet; @NOvA:2025tmb; @DUNE:2020jqi; @Hyper-Kamiokande:2025fci]. Because accelerator neutrino beams are broad-band, the energy of each interacting neutrino is not known a priori and must be inferred from the observed final state. That inference is made through a model of the neutrino--nucleus interaction, so the accuracy of the model propagates directly into the accuracy of the oscillation measurement. Interaction modelling is consequently among the leading systematic uncertainties of the field, and one of the most difficult to control, since its sources lie in details of nuclear physics that are not directly observable, and can mimic the very shifts in the oscillation parameters that are being measured [@Coyle:2025xjk; @Liu:2025hpl; @Dolan:2026nlr].
+
+The difficulty is that at $\mathcal{O}(\mathrm{GeV})$ energies, typical of accelerator neutrino oscillation experiments, several neutrino--nucleus interaction channels contribute simultaneously and involve a broad range of nuclear and particle physics. Quasielastic scattering, multinucleon processes and resonance production depend on the nuclear environment and nucleon structure, while at higher energies interactions increasingly probe the internal structure of the nucleon. A realistic prediction must therefore combine the initial nuclear state, the relevant interaction mechanisms, the transport of produced hadrons through the nucleus, and the de-excitation of the remnant, while providing a consistent description across kinematic regimes and target nuclei.
+
+Every one of these stages is a research front in its own right, pursued by different groups with different formalisms, approximations, and domains of validity. Descriptions of the nuclear ground state continue to be refined [@Wiringa:2013ala; @Lovato:2015qka; @Rocco:2018vbf; @Weiss:2018tbu; @Cruz-Torres:2019fum; @Rocco:2020jlx; @Sobczyk:2022ezo; @JeffersonLabHallA:2022cit; @Sobczyk:2023mey; @Nikolakopoulos:2023zse; @Ankowski:2024ntv]. At the primary interaction, quasielastic and resonant descriptions [@Gonzalez-Jimenez:2014eqa; @Megias:2016lke; @Gonzalez-Jimenez:2019ejf; @Butkevich:2021sfn; @Franco-Patino:2022tvv; @Nikolakopoulos:2023pdw; @Franco-Patino:2023msk; @Gonzalez-Rosa:2024udj; @McKean:2025khb; @Nakamura:2015rta; @Nakamura:2016cnn; @Sobczyk:2018ghy; @Nikolakopoulos:2022tut; @Kabirnezhad:2024cor; @Yan:2024kkg; @Gonzalez-Rosa:2023aim; @Gonzalez-Rosa:2026cbz], two-body currents [@Martini:2009uj; @Nieves:2011pp; @Bodek:2011ps; @Nieves:2012yz; @VanCuyck:2016fab; @Gallmeister:2016dnq; @Dolan:2019bxf; @Sobczyk:2020dkn; @Casale:2025wsg; @Casale:2025zac; @Martinez-Consentino:2025ebw; @Kasturi:2026oyt; @Franco-Munoz:2026hxi], nucleon form factors [@Bodek:2007vi; @Meyer:2016oeg; @RQCD:2019jai; @Alexandrou:2020okk; @Meyer:2022mix; @Djukanovic:2022wru; @MINERvA:2023avz; @Tomalak:2023pdi; @Jang:2023zts; @MINERvA:2025ygc; @Meyer:2026kdl], coherent pion production [@Alvarez-Ruso:2007rcg; @Alvarez-Ruso:2007kwp; @Amaro:2009vu; @Nakamura:2009iq; @Saraswat:2016kln; @Sogarwal:2022xle], and shallow- and deep-inelastic scattering [@NuSTEC:2019lqd; @SajjadAthar:2020nvy; @SajjadAthar:2025fhk; @Jeong:2023hwe; @Ansari:2020xne; @Ansari:2021cao; @Zaidi:2021iam; @AtharSajjad:2022ipr; @Zaidi:2026rxo; @Muzakka:2022wey; @Helenius:2021tof; @Klasen:2023uqj; @Yang:2009zx; @FerrarioRavasio:2024kem] are all subjects of active theoretical and phenomenological development. The subsequent transport of hadrons through the nucleus [@Buss:2011mx; @Boudard:2012wc; @Golan:2012wx; @Niewczas:2019fro; @Nikolakopoulos:2022qkq; @Ershova:2022jah; @Isaacson:2022cwh; @Nikolakopoulos:2024mjj; @Butkevich:2025fsf; @Yan:2025aau; @Isaacson:2025cnk] and the de-excitation of the residual system [@Ershova:2023dbv; @Abe:2023iwq] are likewise active areas of development.
+
+Making these ingredients consistent across interaction channels and target nuclei remains an open and actively contested problem [@NuSTEC:2020nsl; @Alvarez-Ruso:2025oak; @Dolan:2026dfu; @Dolan:2026nlr]. Event generators are where these ingredients are assembled into complete final-state predictions for experimental analyses. The field therefore uses several generators, including GENIE [@GENIE:2021npt; @Andreopoulos:2009rq], NEUT [@Hayato:2021heg], NuWro [@Golan:2012wx], GiBUU [@Buss:2011mx], and ACHILLES [@Isaacson:2020wlx; @Isaacson:2022cwh], reflecting different scopes, use cases, and choices of physics implementation.
+
+Once these ingredients are assembled in an event generator, a separate challenge remains: using its output to infer physics from data. An event generator maps a set of physics parameters to simulated final states, which an analysis then turns into observable predictions that can be compared with measurements. At truth level, these predictions can be compared with cross-section measurements to validate interaction models, tune their parameters and derive constraints. In an experimental analysis, instead, the simulated events are propagated through the detector and compared with data in reconstructed kinematics to infer the underlying physics. In either case, inference requires knowing how the observable predictions change when the physics parameters are varied. Conventional generators do not provide this information directly as derivatives, so analyses must obtain it through additional parameter-response machinery [@Stowell:2016jfr; @Chakrani:2022tey; @GENIE:2024ufm; @Abe:2025yaa; @T2K:2026cqe]. Building and maintaining this machinery, sometimes tied to particular analysis choices, slows the adoption of new theoretical developments in experiments and, in turn, delays the experimental feedback that helps theorists steer further improvements. That delay matters especially now, when many parts of neutrino-interaction modelling are being improved at the same time and experiments increasingly need those developments to keep pace with their precision.
+
+For parameter inference, one way to work around this limitation is simulation-based inference, which trains a machine-learning model on repeated simulations to learn an inverse mapping from the resulting observables back to the physics parameters [@Cranmer:2019eaq; @Brehmer:2019xox], an approach recently applied to neutrino-interaction model tuning [@Tame-Narvaez:2025pwg; @Tame-Narvaez:2026zmc]. The way the predictions change when the physics parameters are varied is, however, already encoded in the physics calculation itself. A differentiable generator exposes this response directly, event by event, through exact derivatives. Rather than learning an approximate inverse relation from repeated simulations, it provides the derivatives of the forward calculation itself. These derivatives can then be propagated to arbitrary observables to show which parameters affect them, where different parameters produce similar effects, and which datasets add new information, while also supporting parameter inference, uncertainty estimation and measurement design.
+
+Differentiability concerns how a calculation is implemented rather than which physics model it represents, and therefore need not favour one model over another or come at the expense of physical fidelity or interpretability. The construction presented here is therefore general: it provides a recipe for making event generators differentiable that is not tied to the particular interaction models implemented in [ADoNIS]{.smallcaps}. This motivates treating differentiability as a general capability of future neutrino interaction generators. To demonstrate this in a realistic setting, this paper presents [ADoNIS]{.smallcaps}, a fully differentiable neutrino event generator. We use it to show how differentiability can be maintained throughout the neutrino-interaction calculation, including through the stochastic intranuclear cascade, and explore what the resulting gradient information makes possible.
+
+The remainder of this paper is organised as follows. Section [\[sec:adonis\]](#sec:adonis){reference-type="ref" reference="sec:adonis"} describes the construction of [ADoNIS]{.smallcaps} and how exact derivatives are propagated from the interaction-model parameters to individual events and arbitrary observables. Section [\[sec:validation\]](#sec:validation){reference-type="ref" reference="sec:validation"} validates the differentiable implementation against ACHILLES across neutrino, electron and hadron probes. Section [\[sec:jacobian\]](#sec:jacobian){reference-type="ref" reference="sec:jacobian"} uses the resulting Jacobian to show where model parameters affect measured distributions, which combinations are constrained or degenerate, and how different measurements provide complementary information. Section [\[sec:fitting\]](#sec:fitting){reference-type="ref" reference="sec:fitting"} demonstrates how the exact gradient information can be used directly for parameter inference and uncertainty quantification, including the computational advantages it provides. Finally, Sec. [\[sec:unfolding\]](#sec:unfolding){reference-type="ref" reference="sec:unfolding"} demonstrates unfolding within the same differentiable framework, carrying the prediction through detector response and extracting a cross section from reconstructed data.
+
+## Differentiable programming in particle physics {#sec:intro_diffprog}
+
+Differentiable programming makes a simulation differentiable in its own inputs, so that derivatives of the prediction are produced by the program rather than reconstructed outside it. Automatic differentiation [@Baydin:2015tfa] decomposes a program into elementary operations and applies the chain rule through each of them, giving the exact derivative of the output with respect to any input; in reverse mode a full gradient costs a small constant multiple of one forward evaluation, independent of the number of inputs, and higher derivatives follow by nesting the same construction.
+
+Physics is adopting this formalism broadly [@Schoenholz:2019jaxmd; @Kasim:2021dqc; @Weymouth:2023waterlily; @Meunier:2025veros; @Liao:2019tensor; @Kaiser:2024cheetah; @Agol:2021nbody; @Li:2022pmwd]. Within high-energy physics, applications are emerging rapidly. The stochastic sampling long presumed to obstruct them has proved tractable [@Arya:2022stochad], and gradient information has been put to use across the full range of common experimental tasks: detector design [@MODE:2022znx], physics modelling [@Heinrich:2022xfa; @Cranmer:2021gdt; @Nachman:2022jbj; @BarhamAlzas:2024ggt], and data analysis [@Simpson:2022suz]. In neutrino physics, differentiable frameworks now exist for the two most widely used detector technologies, liquid argon time projection chambers [@Gasiorowski:2023tqf] and optical Cherenkov and scintillation detectors [@Alterkait:2026ocv; @CCM:2025dbq], with demonstrated applications to detector calibration and event reconstruction. [ADoNIS]{.smallcaps} extends this emerging paradigm to the modelling of neutrino interactions.

@@ -6,7 +6,8 @@
   "sha256": "683d6bd44cea670426e95e11717cb371716d90c20b72a84518ec929c32b1620b",
   "bytes": 359609,
   "pages": 31,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -197,6 +198,69 @@
   "likely_scanned": false,
   "toc_entries": 11,
   "sections": 8,
-  "chars_total": 76593
+  "chars_total": 76593,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 4,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-a-ring-theoretic-point-of-view",
+     "title": "A Ring-Theoretic Point of View",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.945,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-a-tannakian-point-of-view",
+     "title": "A Tannakian Point of View",
+     "prose_ratio": 0.763,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-comparison-of-the-galois-groups",
+     "title": "Comparison of the Galois groups",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-a-model-theoretic-point-of-view",
+     "title": "A Model-Theoretic Point of View",
+     "prose_ratio": 0.353,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-the-galois-group",
+     "title": "The Galois group",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-more-on-picard-vessiot-rings",
+     "title": "More on Picard-Vessiot rings",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-concluding-remarks",
+     "title": "Concluding remarks",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

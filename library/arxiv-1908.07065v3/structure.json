@@ -5,7 +5,8 @@
   "file": "1908.07065v3.pdf",
   "sha256": "c43e413aed71aef141585a5ccace94def4cd6e215f3467c5393633b38fcae402",
   "bytes": 1002227,
-  "pages": 47
+  "pages": 47,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -15,9 +16,9 @@
    "stamp_date": "20 Jul 2020"
   },
   "doi": null,
-  "title": "Non-perturbative approaches to the quantum Seiberg–Witten curve",
-  "authors_raw": "Alba Grassia, Jie Gu b and Marcos Mariñob",
-  "abstract": "We study various non-perturbative approaches to the quantization of the Seiberg– Witten curve ofN = 2, SU (2) super Yang–Mills theory, which is closely related to the modiﬁed Mathieu operator. The ﬁrst approach is based on the quantum WKB periods and their resurgent properties. We show that these properties are encoded in the TBA equations of Gaiotto–Moore– Neitzke determined by the BPS spectrum of the theory, and we relate the Borel-resummed quantum periods to instanton calculus. In addition, we use the TS/ST correspondence to obtain a closed formula for the Fredholm determinant of the modiﬁed Mathieu operator. Finally, by using blowup equations, we explain the connection between this operator and the τ function of Painlev´ e III. arXiv:1908.07065v3 [hep-th] 20 Jul 2020",
+  "title": "Non-perturbative approaches to the quantum Seiberg\u2013Witten curve",
+  "authors_raw": "Alba Grassia, Jie Gu b and Marcos Mari\u00f1ob",
+  "abstract": "We study various non-perturbative approaches to the quantization of the Seiberg\u2013 Witten curve ofN = 2, SU (2) super Yang\u2013Mills theory, which is closely related to the modi\ufb01ed Mathieu operator. The \ufb01rst approach is based on the quantum WKB periods and their resurgent properties. We show that these properties are encoded in the TBA equations of Gaiotto\u2013Moore\u2013 Neitzke determined by the BPS spectrum of the theory, and we relate the Borel-resummed quantum periods to instanton calculus. In addition, we use the TS/ST correspondence to obtain a closed formula for the Fredholm determinant of the modi\ufb01ed Mathieu operator. Finally, by using blowup equations, we explain the connection between this operator and the \u03c4 function of Painlev\u00b4 e III. arXiv:1908.07065v3 [hep-th] 20 Jul 2020",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20200721010638Z",
@@ -25,10 +26,10 @@
    "Producer": "medialab",
    "Title": ""
   },
-  "title_prev": "Prepared for submission to JHEP Non-perturbative approaches to the quantum Seiberg–Witten curve",
+  "title_prev": "Prepared for submission to JHEP Non-perturbative approaches to the quantum Seiberg\u2013Witten curve",
   "title_lines": [
    "Non-perturbative approaches to the quantum",
-   "Seiberg–Witten curve"
+   "Seiberg\u2013Witten curve"
   ]
  },
  "toc": [
@@ -55,7 +56,7 @@
   },
   {
    "level": 2,
-   "title": "Review of the TBA equations of Gaiotto–Moore–Neitzke",
+   "title": "Review of the TBA equations of Gaiotto\u2013Moore\u2013Neitzke",
    "page": 9,
    "source": "outline",
    "number": "3.1"
@@ -139,7 +140,7 @@
   },
   {
    "level": 1,
-   "title": "On the modified Mathieu operator and Painlevé III3",
+   "title": "On the modified Mathieu operator and Painlev\u00e9 III3",
    "page": 36,
    "source": "outline",
    "number": "6"
@@ -201,7 +202,7 @@
   {
    "id": "sec-003-31-review-of-the-tba-equations-of-gaiottomoorene",
    "number": "3.1",
-   "title": "Review of the TBA equations of Gaiotto–Moore–Neitzke",
+   "title": "Review of the TBA equations of Gaiotto\u2013Moore\u2013Neitzke",
    "level": 2,
    "page_start": 9,
    "page_end": 11,
@@ -314,6 +315,100 @@
   "likely_scanned": false,
   "toc_entries": 19,
   "sections": 14,
-  "chars_total": 100685
+  "chars_total": 100685,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "GGM_19_rev3.tex",
+   "tex_sections": 8,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.721,
+     "coverage_ratio": 0.924,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-the-all-orders-wkb-method",
+     "title": "The all-orders WKB method",
+     "prose_ratio": 0.943,
+     "coverage_ratio": 0.801,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-quantum-periods-from-tba-equations",
+     "title": "Quantum periods from TBA equations",
+     "prose_ratio": 0.037,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-31-review-of-the-tba-equations-of-gaiottomoorene",
+     "title": "Review of the TBA equations of Gaiotto\u2013Moore\u2013Neitzke",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-321-strong-coupling-region",
+     "title": "Strong coupling region",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-322-weak-coupling-region",
+     "title": "Weak coupling region",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-33-solving-the-tba-equations-in-the-strong-coupl",
+     "title": "Solving the TBA equations in the strong coupling region",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-4-quantum-periods-from-instanton-calculus",
+     "title": "Quantum periods from instanton calculus",
+     "prose_ratio": 0.088,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-41-review-of-instanton-calculus",
+     "title": "Review of instanton calculus",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-42-comparison-to-borel-resummation",
+     "title": "Comparison to Borel resummation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-5-the-fredholm-determinant-from-topological-stri",
+     "title": "The Fredholm determinant from topological string theory",
+     "prose_ratio": 0.302,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-51-a-closed-formula-and-its-derivation",
+     "title": "A closed formula and its derivation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-52-tests-of-our-formula",
+     "title": "Tests of our formula",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-7-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.367,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

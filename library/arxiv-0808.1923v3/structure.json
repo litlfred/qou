@@ -6,7 +6,8 @@
   "sha256": "3c53f7c0fd9acf8929545496dfb3eab2ec11a5ad9ddf3ac9aed9aa4c75a22019",
   "bytes": 731517,
   "pages": 57,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -387,6 +388,128 @@
   "likely_scanned": false,
   "toc_entries": 21,
   "sections": 20,
-  "chars_total": 149880
+  "chars_total": 149880,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 5,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-foundations-of-the-transport-functor-formalism",
+     "title": "Foundations of the Transport Functor Formalism",
+     "prose_ratio": 0.103,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-the-path-2-groupoid-of-a-smooth-manifold",
+     "title": "The Path 2-Groupoid of a Smooth Manifold",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-22-local-trivializations-and-descent-data",
+     "title": "Local Trivializations and Descent Data",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-23-smooth-2-functors",
+     "title": "Smooth 2-Functors",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-24-transport-functors",
+     "title": "Transport Functors",
+     "prose_ratio": 0.13,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-31-smooth-descent-data",
+     "title": "Smooth Descent Data",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-3-transport-2-functors",
+     "title": "Transport 2-Functors",
+     "prose_ratio": 0.455,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-32-transport-2-functors",
+     "title": "Transport 2-Functors",
+     "prose_ratio": 0.408,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-33-some-features-of-transport-2-functors",
+     "title": "Some Features of Transport 2-Functors",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-34-curvature-2-functors",
+     "title": "Curvature 2-Functors",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-4-transport-2-functors-are-non-abelian-gerbes",
+     "title": "Transport 2-Functors are Non-Abelian Gerbes",
+     "prose_ratio": 0.51,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-42-abelian-bundle-gerbes-with-connection",
+     "title": "Abelian Bundle Gerbes with Connection",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-43-non-abelian-bundle-gerbes-with-connection",
+     "title": "Non-Abelian Bundle Gerbes with Connection",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-44-2-bundles-with-connections",
+     "title": "2-Bundles with Connections",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-5-surface-holonomy",
+     "title": "Surface Holonomy",
+     "prose_ratio": 0.101,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-51-markings-and-fundamental-bigons",
+     "title": "Markings and Fundamental Bigons",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-52-reduced-surface-holonomy",
+     "title": "Reduced Surface Holonomy",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-53-properties-of-reduced-surface-holonomy",
+     "title": "Properties of Reduced Surface Holonomy",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

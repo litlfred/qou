@@ -1,0 +1,94 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2301.08311v4/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2301.08311v4 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2301.08311v4/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2301.08311&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2301.08311v4",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2301.08311v4",
+    "content_type": "application/gzip",
+    "sha256": "216ca982945565c30d55872a2a98c0515ddae79f30bc18291adfd273e2a4119c",
+    "bytes": 123922,
+    "fetched": "2026-10-10T15:18:42+00:00",
+    "files": [
+      {
+        "path": "source/files/Sections/SFT.tex",
+        "role": "tex",
+        "sha256": "b5626ac7ab5490fa7da9bd779a99e1d4b91ddf2f4dc3c69d97822b40baf59010",
+        "bytes": 54099
+      },
+      {
+        "path": "source/files/Sections/classif.tex",
+        "role": "tex",
+        "sha256": "786b428649e3ab92a2e760ed902fe277d3eef227554530d6e3fabd2623560edf",
+        "bytes": 40210
+      },
+      {
+        "path": "source/files/Sections/floerhomo.tex",
+        "role": "tex",
+        "sha256": "e36ac3972091b46d0a49f56ea633b64ed2c209ce0c41ce7e5bf23105d780b7eb",
+        "bytes": 27026
+      },
+      {
+        "path": "source/files/Sections/intro.tex",
+        "role": "tex",
+        "sha256": "948e62cf514a8e44d16598980bbda2011c0c0e47888aaecd173341b5c49d45fd",
+        "bytes": 22379
+      },
+      {
+        "path": "source/files/Sections/modconstruct.tex",
+        "role": "tex",
+        "sha256": "2595cf72a20dcda6932af62e363d1469b68103d79ecc4436bbbf542b4644898e",
+        "bytes": 58339
+      },
+      {
+        "path": "source/files/Sections/reg.tex",
+        "role": "tex",
+        "sha256": "815e9fc1564e848798511583c3eb814db07e0c26ef0e60e022b0d8666b914d29",
+        "bytes": 42081
+      },
+      {
+        "path": "source/files/Sections/setup.tex",
+        "role": "tex",
+        "sha256": "bdd5af55a3c2eeb9af981219be147a91c2d6080d0eb5166bc3f47efc983478f1",
+        "bytes": 23695
+      },
+      {
+        "path": "source/files/bib.bib",
+        "role": "bib",
+        "sha256": "c460a5e205db0e003c5cefff21f8731629c01b631436f54856e0e108d9a94aaa",
+        "bytes": 17031
+      },
+      {
+        "path": "source/files/main.bbl",
+        "role": "bbl",
+        "sha256": "ee3d98b0e630d824d468bbb190ebeb2b58acf81ca78015ff03bc489bd7a527b0",
+        "bytes": 14347
+      },
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "1e55712c091509f27cb3bc31a8b0eca6be4178f96366e0e83c4a5eabd2fc18e6",
+        "bytes": 4458
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

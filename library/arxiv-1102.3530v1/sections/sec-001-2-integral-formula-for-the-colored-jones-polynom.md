@@ -7,177 +7,133 @@ section_number: 2
 pages: 4-6
 source_pdf: 1102.3530v1.pdf
 source_sha256: ad3edab19f3dc404
+text_source: latex
+latex_prose_ratio: 0.819
+latex_coverage_ratio: 0.951
 doc_brief: "The colored Jones polynomial, the Chern-Simons invariant, and the Reidemeister torsion — W e show that from the asymptotic behavior of an evaluation of the colored Jones polynomial of the ﬁgure-eight"
 ---
-In this section we use the quantum dilogarithm function to express t he colored
-Jones polynomial of the ﬁgure-eight knot as an integral. We mainly fo llow [1].
-First of all we recall the following formula due to Habiro and Le (see fo r example
-[17]).
-JN (E;q) =
-N −1∑
-k=0
-k∏
-l=1
-(
-q(N −l)/ 2 −q−(N −l)/ 2
-)(
-q(N +l)/ 2 −q−(N +l)/ 2
-)
-=
-N −1∑
-k=0
-q−kN
-k∏
-l=1
-(
-1 −qN −l)(
-1 −qN +l)
-.
-(2.1)
-For a complex number γ with Re(γ)> 0, deﬁne the quantum dilogarithm Sγ (z)
-as follows [6]:
-Sγ (z) := exp
-( 1
-4
-∫
-CR
-ezt
-sinh(πt) sinh(γt)
-dt
-t
-)
-,
-where | Re(z)| < π + Re(γ) and CR is ( −∞, −R] ∪ Ω R ∪ [R, ∞) with Ω R :=
-{R exp(√−1(π −s)) | 0 ≤ s ≤ π} for 0 < R < min{π/|γ|, 1}. Note that the
-poles of the integrand are 0 , ±√−1, ±2√−1,... and ±π√−1/γ, ±2π√−1/γ,... .
-Remark 2.1. Note that in [1] it is assumed that γ is real and 0 < γ <1 but we
-can deﬁne Sγ (z) when Re( γ) > 0. See [3, (3.21)]. (Our quantum dilogarithm
-Sγ (z) is equal to Φ( z/(2π);γ/π) in [3].) We give a proof of the analyticity of Sγ in
-Lemma 5.1.
-The following formula is well known and its proof can be found in [1, p. 53 0].
-Note that they assume that γ is real but their proof is also valid in our case.
-Lemma 2.2. If | Re(z)|<π , then we have
-(2.2)
-(
-1 +e
-√−1z
-)
-Sγ (z +γ) = Sγ (z −γ).
-Putting γ := (2π − √−1u)/(2N ) and z :=π − √−1u − 2lγ (l = 1, 2,...,N − 1)
-in (2.2), we have
-(
-1 +e
-√−1(π −√−1u−2lγ )
-)
-Sγ (π −
-√
-−1u − 2lγ +γ) = Sγ (π −
-√
-−1u − 2lγ −γ).
-So for k = 1, 2,...,N − 1 we have
-k∏
-l=1
-(
-1 − exp((N −l)ξ/N )
-)
-=
-k∏
-l=1
-(
-1 +e
-√
-−1(π −√−1u−2πl/N +√−1ul/N )
-)
-=
-k∏
-l=1
-Sγ (π − √
-−1u − (2l + 1)γ)
-Sγ (π − √−1u − (2l − 1)γ)
-= Sγ (π − √−1u − (2k + 1)γ)
-Sγ (π − √−1u −γ) .
-THE COLORED JONES POLYNOMIAL OF THE FIGURE-EIGHT KNOT 5
-Similarly we have
-k∏
-l=1
-(
-1 − exp((N +l)ξ/N )
-)
-= Sγ (−π − √
-−1u +γ)
-Sγ (−π − √−1u + (2k + 1)γ).
-Therefore we have
-JN
-(
-E; exp(ξ/N )
-)
-= Sγ (−π − √−1u +γ)
-Sγ (π − √−1u −γ)
-N −1∑
-k=0
-exp(−ku) Sγ (π − √
-−1u − (2k + 1)γ)
-Sγ (−π − √−1u + (2k + 1)γ).
-Using Sγ we deﬁne
-(2.3) gN (w) := exp( −Nuw ) Sγ (π − √−1u + √−1ξw)
-Sγ (−π − √−1u − √−1ξw).
-SinceSγ (z) is deﬁned for | Re(z)|<π + Re(γ), the function gN (w) is deﬁned for w
-with |π −Im(ξw)|<π +Re(γ) = π +π/N, that is, w is in the strip −(2π/u) Re(w)−
-π/(Nu )< Im(w)< −(2π/u) Re(w) + 2π/u +π/(Nu ) (Figure 1).
-/C7
-Ꜽ
-/BD /A0 Ꜽ
-/CA/CT
-/C1/D1
-/D4
-/A0 /BD
-/A0
-/D4
-/A0 /BD
-/BE /AP
-/D4
-/A0 /BD
-/D9
-Figure 1. The function gN (Φ, respectively) is deﬁned between
-the two dotted (thick, respectively) lines. The dashed parallelo-
-gram indicates the contour C+(ε) ∪C−(ε).
-For 0 < ε < 1/(4N ), let C+(ε) be the polygonal line that connects 1 − ε,
-1 −u/(2π) −ε + √
-−1, −u/(2π) +ε + √−1, and ε, and C−(ε) be the polygonal line
-that connects ε, u/(2π) − √−1, 1 + u/(2π) − √−1, and 1 −ε. See Figure 1. Put
-C(ε) := C−(ε) ∪C+(ε). Note that the domain of gN (w) contains C(ε).
-By the residue theorem we have
-6 HITOSHI MURAKAMI
-JN
-(
-E; exp(ξ/N )
-)
-= Sγ (−π − √−1u +γ)
-Sγ (π − √−1u −γ)
-√−1 exp(u/2)N
-2
-∫
-C(ε)
-tan(Nπw )gN (w)dw
-since the set of the poles of tan( Nπw ) inside C(ε) is {(2k + 1)/(2N ) | k =
-0, 1, 2,...,N − 1} and the residue of each pole is −1/(Nπ ).
-Putting
-G±(N,ε ) :=
-∫
-C±(ε)
-tan(Nπw )gN (w)dw,
-we have
-(2.4)
-JN
-(
-E; exp(ξ/N )
-)
-= Sγ (−π − √
-−1u +γ)
-Sγ (π − √−1u −γ)
-√−1 exp(u/2)N
-2
-(
-G+(N,ε ) +G−(N,ε )
-)
-.
+[]{#sec:integral label="sec:integral"} In this section we use the quantum dilogarithm function to express the colored Jones polynomial of the figure-eight knot as an integral. We mainly follow [@Andersen/Hansen:JKNOT2006].
+
+First of all we recall the following formula due to Habiro and Le (see for example [@Masbaum:ALGGT12003]). $$\begin{equation}
+\label{eq:Habiro_Le}
+\begin{split}
+  J_N(E;q)
+  &=
+  \sum_{k=0}^{N-1}
+  \prod_{l=1}^{k}
+  \left(q^{(N-l)/2}-q^{-(N-l)/2}\right)
+  \left(q^{(N+l)/2}-q^{-(N+l)/2}\right)
+  \\
+  &=
+  \sum_{k=0}^{N-1}
+  q^{-kN}
+  \prod_{l=1}^{k}
+  \left(1-q^{N-l}\right)
+  \left(1-q^{N+l}\right).
+\end{split}
+\end{equation}$$
+
+For a complex number $\gamma$ with $\operatorname{Re}(\gamma)>0$, define the quantum dilogarithm $S_{\gamma}(z)$ as follows [@Faddeev:LETMP1995]: $$\begin{equation*}
+  S_{\gamma}(z)
+  :=
+  \exp
+  \left(
+    \frac{1}{4}
+    \int_{C_R}
+    \frac{e^{zt}}{\sinh(\pi t)\sinh(\gamma t)}
+    \frac{dt}{t}
+  \right),
+\end{equation*}$$ where $|\operatorname{Re}(z)|<\pi+\operatorname{Re}(\gamma)$ and $C_R$ is $(-\infty,-R]\cup\Omega_R\cup[R,\infty)$ with $\Omega_R:=\{R\exp(\sqrt{-1}(\pi-s))\mid0\le s\le\pi\}$ for $0<R<\min\{\pi/|\gamma|,1\}$. Note that the poles of the integrand are $0,\pm\sqrt{-1},\pm2\sqrt{-1},\dots$ and $\pm\pi\sqrt{-1}/\gamma,\pm2\pi\sqrt{-1}/\gamma,\dots$.
+
+::: rem
+Note that in [@Andersen/Hansen:JKNOT2006] it is assumed that $\gamma$ is real and $0<\gamma<1$ but we can define $S_{\gamma}(z)$ when $\operatorname{Re}(\gamma)>0$. See [@Dimofte/Gukov/Lenells/Zagier:CNTP2010 (3.21)]. (Our quantum dilogarithm $S_{\gamma}(z)$ is equal to $\Phi(z/(2\pi);\gamma/\pi)$ in [@Dimofte/Gukov/Lenells/Zagier:CNTP2010].) We give a proof of the analyticity of $S_{\gamma}$ in Lemma [\[lem:analyticity\]](#lem:analyticity){reference-type="ref" reference="lem:analyticity"}.
+:::
+
+The following formula is well known and its proof can be found in [@Andersen/Hansen:JKNOT2006 p. 530]. Note that they assume that $\gamma$ is real but their proof is also valid in our case.
+
+::: lem
+If $|\operatorname{Re}(z)|<\pi$, then we have $$\begin{equation}
+\label{eq:S_gamma}
+  \left(1+e^{\sqrt{-1}z}\right)S_{\gamma}(z+\gamma)
+  =
+  S_{\gamma}(z-\gamma).
+\end{equation}$$
+:::
+
+Putting $\gamma:=(2\pi-\sqrt{-1}u)/(2N)$ and $z:=\pi-\sqrt{-1}u-2l\gamma$ ($l=1,2,\dots,N-1$) in [\[eq:S_gamma\]](#eq:S_gamma){reference-type="eqref" reference="eq:S_gamma"}, we have $$\begin{equation*}
+  \left(1+e^{\sqrt{-1}(\pi-\sqrt{-1}u-2l\gamma)}\right)
+  S_{\gamma}(\pi-\sqrt{-1}u-2l\gamma+\gamma)
+  =
+  S_{\gamma}(\pi-\sqrt{-1}u-2l\gamma-\gamma).
+\end{equation*}$$ So for $k=1,2,\dots,N-1$ we have $$\begin{equation*}
+\begin{split}
+  \prod_{l=1}^{k}\bigl(1-\exp((N-l)\xi/N)\bigr)
+  &=
+  \prod_{l=1}^{k}
+  \left(1+e^{\sqrt{-1}(\pi-\sqrt{-1}u-2\pi l/N+\sqrt{-1}ul/N)}\right)
+  \\
+  &=
+  \prod_{l=1}^{k}
+  \frac{S_{\gamma}(\pi-\sqrt{-1}u-(2l+1)\gamma)}
+       {S_{\gamma}(\pi-\sqrt{-1}u-(2l-1)\gamma)}
+  \\
+  &=
+  \frac{S_{\gamma}(\pi-\sqrt{-1}u-(2k+1)\gamma)}
+       {S_{\gamma}(\pi-\sqrt{-1}u-\gamma)}.
+\end{split}
+\end{equation*}$$ Similarly we have $$\begin{equation*}
+  \prod_{l=1}^{k}\bigl(1-\exp((N+l)\xi/N)\bigr)
+  =
+  \frac{S_{\gamma}(-\pi-\sqrt{-1}u+\gamma)}
+       {S_{\gamma}(-\pi-\sqrt{-1}u+(2k+1)\gamma)}.
+\end{equation*}$$ Therefore we have $$\begin{multline*}
+  J_N\bigl(E;\exp(\xi/N)\bigr)
+  \\
+  =
+  \frac{S_{\gamma}(-\pi-\sqrt{-1}u+\gamma)}{S_{\gamma}(\pi-\sqrt{-1}u-\gamma)}
+  \sum_{k=0}^{N-1}
+  \exp(-ku)
+  \frac{S_{\gamma}(\pi-\sqrt{-1}u-(2k+1)\gamma)}
+       {S_{\gamma}(-\pi-\sqrt{-1}u+(2k+1)\gamma)}.
+\end{multline*}$$
+
+Using $S_{\gamma}$ we define $$\begin{equation}
+\label{eq:g_N_def}
+  g_N(w)
+  :=
+  \exp(-Nuw)
+  \frac{S_{\gamma}(\pi-\sqrt{-1}u+\sqrt{-1}\xi w)}
+        {S_{\gamma}(-\pi-\sqrt{-1}u-\sqrt{-1}\xi w)}.
+\end{equation}$$ Since $S_{\gamma}(z)$ is defined for $|\operatorname{Re}(z)|<\pi+\operatorname{Re}(\gamma)$, the function $g_N(w)$ is defined for $w$ with $|\pi-\operatorname{Im}(\xi w)|<\pi+\operatorname{Re}(\gamma)=\pi+\pi/N$, that is, $w$ is in the strip $-(2\pi/u)\operatorname{Re}(w)-\pi/(Nu)<\operatorname{Im}(w)<-(2\pi/u)\operatorname{Re}(w)+2\pi/u+\pi/(Nu)$ (Figure [1](#fig:contour){reference-type="ref" reference="fig:contour"}).
+
+<figure id="fig:contour" data-latex-placement="h">
+<embed src="contour.eps" />
+<figcaption>The function <span class="math inline"><em>g</em><sub><em>N</em></sub></span> (<span class="math inline"><em>Φ</em></span>, respectively) is defined between the two dotted (thick, respectively) lines. The dashed parallelogram indicates the contour <span class="math inline"><em>C</em><sub>+</sub>(<em>ε</em>) ∪ <em>C</em><sub>−</sub>(<em>ε</em>)</span>.</figcaption>
+</figure>
+
+For $0<\varepsilon<1/(4N)$, let $C_{+}(\varepsilon)$ be the polygonal line that connects $1-\varepsilon$, $1-u/(2\pi)-\varepsilon+\sqrt{-1}$, $-u/(2\pi)+\varepsilon+\sqrt{-1}$, and $\varepsilon$, and $C_{-}(\varepsilon)$ be the polygonal line that connects $\varepsilon$, $u/(2\pi)-\sqrt{-1}$, $1+u/(2\pi)-\sqrt{-1}$, and $1-\varepsilon$. See Figure [1](#fig:contour){reference-type="ref" reference="fig:contour"}. Put $C(\varepsilon):=C_{-}(\varepsilon)\cup C_{+}(\varepsilon)$. Note that the domain of $g_N(w)$ contains $C(\varepsilon)$.
+
+By the residue theorem we have $$\begin{multline*}
+  J_N\bigl(E;\exp(\xi/N)\bigr)
+  \\
+  =
+  \frac{S_{\gamma}(-\pi-\sqrt{-1}u+\gamma)}{S_{\gamma}(\pi-\sqrt{-1}u-\gamma)}
+  \frac{\sqrt{-1}\exp(u/2)N}{2}
+  \int_{C(\varepsilon)}
+  \tan(N\pi w)
+  g_N(w)
+  dw
+\end{multline*}$$ since the set of the poles of $\tan(N\pi w)$ inside $C(\varepsilon)$ is $\{(2k+1)/(2N)\mid k=0,1,2,\dots,N-1\}$ and the residue of each pole is $-1/(N\pi)$.
+
+Putting $$\begin{equation*}
+  G_{\pm}(N,\varepsilon)
+  :=
+  \int_{C_{\pm}(\varepsilon)}\tan(N\pi w)g_N(w)\,dw,
+\end{equation*}$$ we have $$\begin{equation}
+\label{eq:G}
+  J_N\bigl(E;\exp(\xi/N)\bigr)
+  =
+  \frac{S_{\gamma}(-\pi-\sqrt{-1}u+\gamma)}{S_{\gamma}(\pi-\sqrt{-1}u-\gamma)}
+  \frac{\sqrt{-1}\exp(u/2)N}{2}
+  \bigl(G_{+}(N,\varepsilon)+G_{-}(N,\varepsilon)\bigr).
+\end{equation}$$

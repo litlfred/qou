@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1207.4990v3/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1207.4990v3/blocks/prose-sec-007",
   "kind": "prose",
   "title": "Some applications",
   "pageStart": 42,
   "pageEnd": 45,
   "text": "../sections/sec-007-9-some-applications.md",
-  "derivedFrom": "library/arxiv-1207.4990v3/manifest",
-  "sourceDocument": "library/arxiv-1207.4990v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1207.4990v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1207.4990v3/manifest.jsonld",
   "provenance": "ingested"
 }

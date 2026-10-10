@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2412.02281v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Explicit evaluation of the q-Stokes matrices for certain confluent hypergeometric q-difference equations",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2412.02281v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2412.02281v1",
   "contains": [
     "library/arxiv-2412.02281v1/sections/sec-000",
     "library/arxiv-2412.02281v1/sections/sec-001",
@@ -23,8 +28,17 @@
     "library/arxiv-2412.02281v1/sections/sec-014"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2412.02281&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2412.02281v1",
+    "title_source": "slug",
     "source_file": "2412.02281v1.pdf",
     "source_sha256": "ac4127cf4994b2ba5ef279a9c54ef591c91f1ff089a0c90bc560f1f6912234c2",
     "pages": 28,

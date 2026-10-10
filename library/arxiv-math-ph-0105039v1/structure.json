@@ -5,7 +5,8 @@
   "file": "0105039v1.pdf",
   "sha256": "850e6a00721e38d0eadbdc9a3ce14b2e0d732742c8d9bfea0d4621d621c2e71c",
   "bytes": 287825,
-  "pages": 31
+  "pages": 31,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Hyperbolic Structure Arising from a Knot Invariant",
   "authors_raw": "Department of Physics, Graduate School of Science",
-  "abstract": "We study the knot invariant based on the quantum dilogarithm function. This invariant can be regarded as a non-compact analogue of Kashaev’s invarian t, or the colored Jones invariant, and is deﬁned by an integral form. The 3-dimensional picture of our invariant originates from the pentagon identity of the quantum dilogarithm function, and we show that the hyperbolicity consistency conditions in gluing polyhedra arise naturally in the classical limit as the saddle point equation of our invariant.",
+  "abstract": "We study the knot invariant based on the quantum dilogarithm function. This invariant can be regarded as a non-compact analogue of Kashaev\u2019s invarian t, or the colored Jones invariant, and is de\ufb01ned by an integral form. The 3-dimensional picture of our invariant originates from the pentagon identity of the quantum dilogarithm function, and we show that the hyperbolicity consistency conditions in gluing polyhedra arise naturally in the classical limit as the saddle point equation of our invariant.",
   "docinfo": {
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20190506143712-04'00'",
@@ -28,9 +29,9 @@
    "December 23, 2000",
    "(Revised Edition)",
    "Hyperbolic Structure Arising from a Knot Invariant",
-   "Kazuhiro HIKAMI †"
+   "Kazuhiro HIKAMI \u2020"
   ],
-  "title_prev": "December 23, 2000 (Revised Edition) Hyperbolic Structure Arising from a Knot Invariant Kazuhiro HIKAMI †"
+  "title_prev": "December 23, 2000 (Revised Edition) Hyperbolic Structure Arising from a Knot Invariant Kazuhiro HIKAMI \u2020"
  },
  "toc": [
   {
@@ -84,21 +85,21 @@
   },
   {
    "level": 1,
-   "title": "(p2−p′",
+   "title": "(p2\u2212p\u2032",
    "page": 8,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(a−d)2− 1",
+   "title": "(a\u2212d)2\u2212 1",
    "page": 9,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(b−c)2) (2.28a)",
+   "title": "(b\u2212c)2) (2.28a)",
    "page": 9,
    "source": "inferred",
    "number": "2"
@@ -235,7 +236,7 @@
   {
    "id": "sec-007-2-p2p",
    "number": "2",
-   "title": "(p2−p′",
+   "title": "(p2\u2212p\u2032",
    "level": 1,
    "page_start": 8,
    "page_end": 9,
@@ -245,7 +246,7 @@
   {
    "id": "sec-008-2-ad2-1",
    "number": "2",
-   "title": "(a−d)2− 1",
+   "title": "(a\u2212d)2\u2212 1",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
@@ -255,7 +256,7 @@
   {
    "id": "sec-009-2-bc2-228a",
    "number": "2",
-   "title": "(b−c)2) (2.28a)",
+   "title": "(b\u2212c)2) (2.28a)",
    "level": 1,
    "page_start": 9,
    "page_end": 10,
@@ -348,6 +349,123 @@
   "likely_scanned": false,
   "toc_entries": 18,
   "sections": 18,
-  "chars_total": 43470
+  "chars_total": 43470,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "canoquan2.tex",
+   "tex_sections": 8,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.229,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-2-quantum-dilogarithm-function",
+     "title": "Quantum Dilogarithm Function",
+     "prose_ratio": 0.378,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-21-classical-dilogarithm-function",
+     "title": "Classical Dilogarithm Function",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-2-li2z2-23",
+     "title": "Li2(z2), (2.3)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-22-quantum-dilogarithm-function-and-the-r-operat",
+     "title": "Quantum Dilogarithm Function and the R Operator",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-23-representation",
+     "title": "Representation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-2-p2p",
+     "title": "(p2\u2212p\u2032",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-2-ad2-1",
+     "title": "(a\u2212d)2\u2212 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-2-bc2-228a",
+     "title": "(b\u2212c)2) (2.28a)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-3-invariant-of-knot-and-link",
+     "title": "Invariant of Knot and Link",
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.98,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-4-asymptotic-behavior-and-3-dimensional-picture",
+     "title": "Asymptotic Behavior and 3-dimensional Picture",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-51-r-operators-as-the-braid-operator",
+     "title": "R-Operators as the Braid Operator",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-52-hyperbolicity-condition-for-surface",
+     "title": "Hyperbolicity Condition for Surface",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-53-gluing-around-ridgeline-of-octahedron",
+     "title": "Gluing Around Ridgeline of Octahedron",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-6-example-figure-eight-knot",
+     "title": "Example: Figure-Eight Knot",
+     "prose_ratio": 0.926,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-7-concluding-remarks",
+     "title": "Concluding Remarks",
+     "prose_ratio": 0.933,
+     "coverage_ratio": 0.878,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-ph-9306237v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "KEK preprint 92-169",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-ph-9306237v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-ph-9306237v1",
   "contains": [
     "library/arxiv-hep-ph-9306237v1/sections/sec-000",
     "library/arxiv-hep-ph-9306237v1/sections/sec-001",
@@ -31,8 +36,17 @@
     "library/arxiv-hep-ph-9306237v1/sections/sec-022"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-ph/9306237&metadataPrefix=arXiv), submitted 1993-06-07, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-hep-ph-9306237v1",
+    "title_source": "slug",
     "source_file": "9306237v1.pdf",
     "source_sha256": "6fea847208a60505bf14d48dcf27d4c8db984176da9ba577c3f8240846150051",
     "pages": 14,

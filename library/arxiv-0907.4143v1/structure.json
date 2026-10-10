@@ -7,7 +7,8 @@
   "bytes": 235768,
   "pages": 14,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -193,6 +194,71 @@
   "likely_scanned": false,
   "toc_entries": 9,
   "sections": 9,
-  "chars_total": 25059
+  "chars_total": 25059,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "ms.tex",
+   "tex_sections": 4,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.786,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-the-model",
+     "title": "The model",
+     "prose_ratio": 0.038,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-symbiotic-stars",
+     "title": "Symbiotic stars",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-x-ray-sources",
+     "title": "X-ray sources",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-results",
+     "title": "Results",
+     "prose_ratio": 0.121,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-basic-parameters-of-the-monte-carlo-simulation",
+     "title": "Basic parameters of the Monte Carlo simulation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-population-of-x-ray-sources",
+     "title": "Population of X-ray sources",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-properties-of-x-ray-sources",
+     "title": "Properties of X-ray sources",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.31,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

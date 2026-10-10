@@ -6,7 +6,8 @@
   "sha256": "95c1544431e6bf37e7dae3806a24bea3d6ea51480583a1b0b44fbda6a7f900d9",
   "bytes": 447448,
   "pages": 39,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -21,7 +22,7 @@
   "title_lines": [
    "TURAEV-VIRO INV ARIANTS AS AN EXTENDED TQFT"
   ],
-  "abstract": "In this paper we show how one can extend Turaev-Viro invarian ts, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners. W e demonstrate that this gives an extended TQFT which c onjecturally coincides with the Reshetikhin-Turaev TQFT corresponding to the Drinfeld center Z(C). In the present paper we give a partial proof of this stateme nt.",
+  "abstract": "In this paper we show how one can extend Turaev-Viro invarian ts, de\ufb01ned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners. W e demonstrate that this gives an extended TQFT which c onjecturally coincides with the Reshetikhin-Turaev TQFT corresponding to the Drinfeld center Z(C). In the present paper we give a partial proof of this stateme nt.",
   "docinfo": {
    "Producer": "GPL Ghostscript 10.01.2",
    "CreationDate": "D:20241126172437-05'00'",
@@ -330,6 +331,130 @@
   "likely_scanned": false,
   "toc_entries": 17,
   "sections": 17,
-  "chars_total": 62552
+  "chars_total": 62552,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "TV.tex",
+   "tex_sections": 10,
+   "overlaid": 8,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.885,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-acknowledgments",
+     "title": "Acknowledgments",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-1-preliminaries-i-spherical-categories",
+     "title": "Preliminaries I: spherical categories",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.949,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-2-preliminaries-ii-drinfeld-center",
+     "title": "Preliminaries II: Drinfeld Center",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.941,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-3-polytope-decompositions",
+     "title": "Polytope decompositions",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.971,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-4-tv-invariants-from-polytope-decompositions",
+     "title": "TV invariants from polytope decompositions",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-5-proof-of-independence-of-polytope-decompositio",
+     "title": "Proof of independence of polytope decomposition",
+     "prose_ratio": 0.336,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-invariance-under-m1",
+     "title": "Invariance under M1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-invariance-under-m2",
+     "title": "Invariance under M2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-invariance-under-m3",
+     "title": "Invariance under M3",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-6-surfaces-with-boundary",
+     "title": "Surfaces with boundary",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-7-extended-combinatorial-surfaces",
+     "title": "Extended combinatorial surfaces",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.921,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-8-invariants-of-extended-3-manifolds",
+     "title": "Invariants of extended 3-manifolds",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.947,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-9-some-computations",
+     "title": "Some computations",
+     "prose_ratio": 0.037,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-91-cylinder-over-an-annulus",
+     "title": "Cylinder over an annulus",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-92-sphere-with-n-holes",
+     "title": "Sphere with n holes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

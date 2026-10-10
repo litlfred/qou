@@ -5,7 +5,8 @@
   "file": "1301.4504v4.pdf",
   "sha256": "201acc5bb1d4b6a0fdf39f7edffb36e11b0119366d1459d968d80b8278a969f3",
   "bytes": 825500,
-  "pages": 66
+  "pages": 66,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Quantum Computation vs. Firewalls",
   "authors_raw": null,
-  "abstract": "In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue against the smoothness of black hole horizons. We argue that the quantum computations required to do these experiments would take a time which is exponential in the entropy of the black hole under study, and we show that for a wide variety of black holes this prevents the experiments from being done. We interpret our results as motivating a broader type of nonlocality than is usually considered in the context of black hole thought experiments, and claim that once this type of nonlocality is allowed there may be no need for ﬁrewalls. Our results do not threaten the unitarity of of black hole evaporation or the ability of advanced civilizations to test it. arXiv:1301.4504v4 [hep-th] 6 Apr 2013",
+  "abstract": "In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue against the smoothness of black hole horizons. We argue that the quantum computations required to do these experiments would take a time which is exponential in the entropy of the black hole under study, and we show that for a wide variety of black holes this prevents the experiments from being done. We interpret our results as motivating a broader type of nonlocality than is usually considered in the context of black hole thought experiments, and claim that once this type of nonlocality is allowed there may be no need for \ufb01rewalls. Our results do not threaten the unitarity of of black hole evaporation or the ability of advanced civilizations to test it. arXiv:1301.4504v4 [hep-th] 6 Apr 2013",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20241127045613Z",
@@ -431,6 +432,139 @@
   "likely_scanned": false,
   "toc_entries": 24,
   "sections": 22,
-  "chars_total": 158168
+  "chars_total": 158168,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "decodingv5.tex",
+   "tex_sections": 7,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.927,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-the-firewall-argument",
+     "title": "The Firewall Argument",
+     "prose_ratio": 0.145,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21-a-quantum-black-hole-from-the-outside",
+     "title": "A Quantum Black Hole from the Outside",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-22-a-quantum-black-hole-from-the-inside",
+     "title": "A Quantum Black Hole from the Inside",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-23-a-way-out",
+     "title": "A Way Out?",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-3-the-amps-experiment-as-a-quantum-computation",
+     "title": "The AMPS Experiment as a Quantum Computation",
+     "prose_ratio": 0.338,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-31-quantum-computing-is-hard",
+     "title": "Quantum Computing is Hard",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-32-implementing-a-general-unitary-transformation",
+     "title": "Implementing a General Unitary Transformation with Quantum Gates",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-34-two-counting-arguments",
+     "title": "Two Counting Arguments",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-4-quantum-coding-and-error-correction",
+     "title": "Quantum Coding and Error Correction",
+     "prose_ratio": 0.046,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-41-review-of-error-correcting-codes",
+     "title": "Review of Error Correcting Codes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-42-computational-complexity-stabilizer-codes-and",
+     "title": "Computational Complexity, Stabilizer Codes, and NP-Hardness",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-44-error-correction-and-zero-knowledge-proofs",
+     "title": "Error Correction and Zero-Knowledge Proofs",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-5-more-general-black-holes",
+     "title": "More General Black Holes",
+     "prose_ratio": 0.041,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-51-schwarzschild-in-a-box",
+     "title": "Schwarzschild in a Box",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-52-reissner-nordstrom",
+     "title": "Reissner-Nordstrom",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-53-near-extremal-ads-throat",
+     "title": "Near Extremal AdS Throat",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-531-the-brane-setup",
+     "title": "The Brane Setup",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-532-hawking-page-transition-for-toroidal-black-h",
+     "title": "Hawking-Page Transition for Toroidal Black Holes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-533-time-scales",
+     "title": "Time Scales",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-6-the-structure-of-the-hilbert-space",
+     "title": "The Structure of the Hilbert Space",
+     "prose_ratio": 0.987,
+     "coverage_ratio": 0.759,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-a-the-absorption-probability-for-a-nambu-goto-st",
+     "title": "A The Absorption Probability for a Nambu-Goto String",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

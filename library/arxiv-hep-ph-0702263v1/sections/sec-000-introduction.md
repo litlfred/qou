@@ -7,55 +7,86 @@ section_number: null
 pages: 2-3
 source_pdf: 0702263v1.pdf
 source_sha256: 8ae381b4eba60286
+text_source: latex
+latex_prose_ratio: 0.954
+latex_coverage_ratio: 0.971
 doc_brief: "Chiral Low-Energy Constants ∗ Gerhard Ecker Faculty of Physics, Univ. of Vienna — The progress in determining the coupling constants of meson ic chi- ral Lagrangians is reviewed, with emphasis on the"
 ---
-Chiral low-energy constants (LECs) are the coupling constants o f eﬀective
-chiral Lagrangians. They are independent of the light quark masse s by con-
-struction and they describe the inﬂuence of all “heavy” degrees o f freedom
-that are not contained explicitly in the eﬀective Lagrangians. The co nstruc-
-tion of eﬀective Lagrangians is based on symmetry considerations o nly so
-that a lot of information is lost in going from the underlying Standard M odel
-to the eﬀective theory. As a consequence, eﬀective Lagrangians contain many
-LECs, especially at higher orders in the chiral expansion. Progress in chiral
-perturbation theory (CHPT) [1–3] depends on realistic estimates o f chiral
-LECs.
-My task in this talk was to review the progress in determining or estima t-
-ing chiral LECs since 1993 when the ﬁrst Eurodaphne Network got s tarted.
-Most of this progress is in fact due to work performed in the three E uropean
-Networks Eurodaphne I, Eurodaphne II and Euridice. I will only con sider
-the meson sector here. The corresponding eﬀective chiral Lagra ngian is given
-in Table 1. For a recent review including the baryon sector see Ref. [4 ].
-Lchiral order (# of LECs) loop order
-Lp2(2) + Lodd
-p4 (0) + L∆ S=1
-GF p2 (2) + Lem
-e2p0(1) + Lemweak
-G8e2p0 (1)
-L = 0
-+ Lp4(10) + Lodd
-p6 (23) + L∆ S=1
-G8p4 (22) + L∆ S=1
-G27p4 (28)
-L ≤ 1
-+ Lem
-e2p2(13) + Lemweak
-G8e2p2 (14) + Lleptons
-e2p (5)
-+ Lp6(90) L ≤ 2
-Table 1: Eﬀective chiral Lagrangian in the meson sector. The numbe rs in
-brackets refer to the number of LECs for chiral SU (3).
-Information on chiral LECs is obtained either from phenomenology o r
+Chiral low-energy constants (LECs) are the coupling constants of
+effective chiral Lagrangians. 
+They are independent of the light quark 
+masses by construction and they describe the influence of all ``heavy'' 
+degrees of freedom that are not contained explicitly in the effective  
+Lagrangians. The construction of effective Lagrangians is based on
+symmetry considerations only so that a lot of information is lost in 
+going from the underlying Standard Model to the effective theory. As a 
+consequence, effective Lagrangians contain many LECs, especially at
+higher orders in the chiral expansion. Progress in chiral perturbation
+theory (CHPT) \cite{Weinberg:1978kz,GLsu2,GLsu3}
+depends on realistic estimates of chiral LECs.
+
+My task in this talk was to review the progress in
+determining or estimating chiral LECs since 1993 when the first
+Eurodaphne Network got started. Most of this progress is in fact due
+to work performed in the three European Networks Eurodaphne I, 
+Eurodaphne II and Euridice. I will only consider the meson sector
+here. The corresponding effective chiral Lagrangian is given in 
+Table \ref{tab:Leff}. For a recent review including the baryon sector
+see Ref.~\cite{Bernard:2006gx}. 
+
+\begin{center} 
+\renewcommand{\arraystretch}{1.2}
+\begin{table}[H]
+$$
+\begin{tabular}{|l|c|} 
+\hline
+&  \\
+\hspace{1cm} ${\cal L}_{\rm chiral\; order}$ 
+~($\#$ of LECs)  &  loop  ~order \\[8pt] 
+\hline 
+&  \\
+ ${\cal L}_{p^2}(2)$~+~ $
+{\cal L}_{p^4}^{\rm odd}(0)$
+~+~ $ {\cal L}_{G_Fp^2}^{\Delta S=1}(2)$  
+~+~ ${\cal L}_{e^2p^0}^{\rm em}(1)$
+~+~ ${\cal L}_{G_8e^2p^0}^{\rm emweak}(1)$ & $L=0$ \\[15pt]
+~+~ ${\cal L}_{p^4}(10)$~+~
+${\cal L}_{p^6}^{\rm odd}(23)$
+~+~${\cal L}_{G_8p^4}^{\Delta S=1}(22)$
+~+~${\cal L}_{G_{27}p^4}^{\Delta S=1}(28)$ &   
+$L \le 1$ \\[3pt]
+~+~ ${\cal L}_{e^2p^2}^{\rm em}(13)$
+~+~${\cal L}_{G_8e^2p^2}^{\rm emweak}(14)$ 
+~+~ ${\cal L}_{e^2p}^{\rm leptons}(5)$  & \\[15pt] 
+~+~ ${\cal L}_{p^6}(90)$  & $L \le 2$ \\[8pt] 
+\hline
+\end{tabular}
+$$
+\caption{Effective chiral Lagrangian in the meson sector. The numbers
+  in brackets refer to the number of LECs for chiral $SU(3)$.}
+\label{tab:Leff}
+\end{table}
+\end{center}
+
+Information on chiral LECs is obtained either from phenomenology or
 with additional input from theory.
-1
-● Extraction from experiment
-Some LECs are associated with terms in the Lagrangian that contrib ute
-to amplitudes even in the chiral limit. They govern the momentum de-
-pendence of amplitudes and are at least in principle accessible experi-
-mentally. The other class involves chiral symmetry breaking terms t hat
-specify the quark mass dependence of amplitudes. The related LEC s
-are much more diﬃcult to determine phenomenologically but they are
-accessible in lattice simulations.
-● Input from theory
-✸ Large-Nc methods match CHPT with QCD by bridging the gap
-MK ∼< E ∼< 1. 5 GeV with resonance exchange.
-✸ Lattice QCD.
+\begin{dinglist}{108}
+\item Extraction from experiment \\[.1cm]
+Some LECs are associated with terms in the Lagrangian that contribute
+to amplitudes even in
+the chiral limit. They govern the momentum dependence of amplitudes
+and are at least in principle accessible experimentally. The
+other class involves chiral symmetry breaking terms that specify the
+quark mass dependence of amplitudes. The related LECs are much more
+difficult to determine phenomenologically but they are accessible in
+lattice simulations. 
+\item Input from theory 
+
+\vspace*{-.3cm}  
+
+\begin{dinglist}{88}
+\item Large-$N_c$ methods match CHPT with QCD by bridging
+  the gap $M_K \lsim E \lsim 1.5$ GeV with resonance exchange. 
+\item Lattice QCD.
+\end{dinglist} 
+\end{dinglist}

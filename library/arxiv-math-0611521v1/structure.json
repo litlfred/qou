@@ -6,7 +6,8 @@
   "sha256": "65fcd77b7b0a208e272563e93a17b681ab2075b426d28ff6d771b4e976182913",
   "bytes": 208839,
   "pages": 22,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -311,6 +312,104 @@
   "likely_scanned": false,
   "toc_entries": 16,
   "sections": 16,
-  "chars_total": 67054
+  "chars_total": 67054,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 4,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.404,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-1-dd-of-\u03c01dd-a-d-module-is-a-representation-\u03c1",
+     "title": "(D\u2217,d) of \u03c01(D\u2217,d): a D-module \u201cis\u201d a representation \u03c1\u2297",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-1-dd-the-small-fundamental-group-is-the-topologi",
+     "title": "(D\u2217,d). The \u201csmall fundamental group\u201d is the topological group \u03c01(D\u2217,d),",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-1-dd-the-small-group-is-zariski-dense-in-the",
+     "title": "(D\u2217,d). The small group is Zariski-dense in the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-2-prerequisites-mostly-from-26-27-21-and-28",
+     "title": "Prerequisites (mostly from [26], [27], [21] and [28])",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-21-general-facts",
+     "title": "General facts",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-22-filtration-by-the-slopes",
+     "title": "Filtration by the slopes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-0-is",
+     "title": "Is",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-23-stokes-operators",
+     "title": "Stokes operators",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-3-stokes-operators-and-alien-derivations",
+     "title": "Stokes operators and alien derivations",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-31-stokes-operators-are-galois",
+     "title": "Stokes operators are galois",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-32-alien-derivations-and-q-borel-transform",
+     "title": "Alien derivations and q-Borel transform",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-4-conclusion",
+     "title": "Conclusion",
+     "prose_ratio": 0.934,
+     "coverage_ratio": 0.989,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-acknowledgements",
+     "title": "Acknowledgements",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0903.2472v1/blocks/conjecture-sec-006-01",
+  "kind": "conjecture",
+  "title": "Arithmeticity conjecture",
+  "pageStart": 10,
+  "pageEnd": 15,
+  "text": "conjecture-sec-006-01.md",
+  "derivedFrom": "library/arxiv-0903.2472v1/sections/sec-006",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0903.2472v1/manifest.jsonld",
+  "provenance": "ingested"
+}

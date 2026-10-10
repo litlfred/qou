@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1010.5321v3/blocks/prose-sec-014",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1010.5321v3/blocks/prose-sec-014",
   "kind": "prose",
   "title": "The case of dimension n",
   "pageStart": 13,
   "pageEnd": 14,
   "text": "../sections/sec-014-333-the-case-of-dimension-n.md",
-  "derivedFrom": "library/arxiv-1010.5321v3/manifest",
-  "sourceDocument": "library/arxiv-1010.5321v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1010.5321v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1010.5321v3/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -6,7 +6,8 @@
   "sha256": "3f87983ce379a8d668e2180183a0cb81624936d26a7698b68df1aeb50cdd8409",
   "bytes": 551240,
   "pages": 34,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -483,6 +484,157 @@
   "likely_scanned": false,
   "toc_entries": 26,
   "sections": 26,
-  "chars_total": 84674
+  "chars_total": 84674,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main.tex",
+   "tex_sections": 6,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-the-hurwitz-topological-quantum-field-theory",
+     "title": "The Hurwitz Topological Quantum Field Theory",
+     "prose_ratio": 0.342,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-the-hurwitz-theory-at-fixed-degree",
+     "title": "The Hurwitz Theory at Fixed Degree",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-the-extended-hurwitz-theory",
+     "title": "The Extended Hurwitz Theory",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-the-string-dual",
+     "title": "The String Dual",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-from-two-dimensional-yang-mills-to-hurwitz",
+     "title": "From Two-dimensional Yang-Mills to Hurwitz",
+     "prose_ratio": 0.123,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-the-observables-of-two-dimensional-yang-mills-th",
+     "title": "The Observables of Two-dimensional Yang-Mills Theory",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-the-schur-weyl-dictionary",
+     "title": "The Schur-Weyl Dictionary",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-the-gross-taylor-expansion",
+     "title": "The Gross-Taylor Expansion",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-chiral-yang-mills-theory-as-a-deformed-hurwitz-t",
+     "title": "Chiral Yang-Mills Theory as a Deformed Hurwitz Theory",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-the-stringy-structure-of-chiral-yang-mills-theor",
+     "title": "The Stringy Structure of Chiral Yang-Mills Theory",
+     "prose_ratio": 0.053,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-a-double-expansion",
+     "title": "A Double Expansion",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-vertex-operators",
+     "title": "Vertex Operators",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-a-stringy-deformation",
+     "title": "A Stringy Deformation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-a-deformed-gromov-witten-theory",
+     "title": "A Deformed Gromov-Witten Theory",
+     "prose_ratio": 0.152,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-015-the-partial-permutation-algebra-of-yang-mills-th",
+     "title": "The Partial Permutation Algebra of Yang-Mills Theory",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-the-duality-map",
+     "title": "The Duality Map",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-the-gromov-witten-formulation",
+     "title": "The Gromov-Witten Formulation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-the-inverse-map",
+     "title": "The Inverse Map",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-remarks-on-wilson-loops",
+     "title": "Remarks on Wilson Loops",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-021-useful-identities",
+     "title": "Useful Identities",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-determining-the-dictionary",
+     "title": "Determining the Dictionary",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-phase-transitions",
+     "title": "Phase Transitions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-analytical-phase-transitions",
+     "title": "Analytical Phase Transitions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-numerical-phase-transitions",
+     "title": "Numerical Phase Transitions",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

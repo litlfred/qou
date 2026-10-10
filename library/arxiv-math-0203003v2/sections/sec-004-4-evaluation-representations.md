@@ -7,37 +7,26 @@ section_number: 4
 pages: 10-10
 source_pdf: 0203003v2.pdf
 source_sha256: 7579ae76959396b8
+text_source: latex
+latex_prose_ratio: 0.993
+latex_coverage_ratio: 0.98
 doc_brief: "On the quantum Kazhdan-Lusztig functor Pavel I. Etingof Adriano A. Moura etingof@math.mit.edu adrianoam@ime.unicamp.br Introduction One of the most exciting developments in representation the ory in t"
 ---
-In this section we would like to study the action of the functo r F on evaluation representations
-of Uq(ˆsln). Let Wν (z) be the evaluation representation of Uq(ˆsln) with dominant integral highest
-weightν, evaluated at z ∈ C∗.
-Proposition 4.1. The representation F(Wν (z)) is isomorphic to the evaluation representation
-Vµ (z) of the elliptic quantum group deﬁned in [TV01] (see Corolla ry 3.4 and Theorem 5.9), tensored
-with a 1-dimensional representation.
-Proof. Similarly to quantum aﬃne algebra, for elliptic quantum gro up there is a natural notion
-of a highest weight for a ﬁnite dimensional representation W (it was studied in detail in [Ca01]).
-Namely, the highest weight is, essentially, the set of eigen values of the diagonal entries of the
-noncommutative matrix LW (u, ˆλ) on the highest weight vector.
-It is not diﬃcult to compute highest weights of representati ons F(Wν (z)) and show that they
-coincide with highest weights of Vν (z) up to tensoring with a 1-dimensional representation. Name ly
-one needs to prove this statement for the fundamental repres entations (exterior powers), since for
-other representations the statement follows by taking tens or products.
-To prove the statement for exterior powers, one ﬁrst proves i t for the vector representation V ,
-in which case it is trivial, since it reduces to analyzing ent ries of RV . To pass to an arbitrary
-exterior power, one may use fusion procedure (i.e. the fact t hat Λ iV is contained in the product of
-i copies of V with appropriate shifts).
-Now, it was shown in [Ca01] that if two irreducible highest we ight ﬁnite dimensional represen-
-tations of the elliptic quantum group have the same highest w eight, then they are isomorphic. This
-completes the proof.
-Remark: It is clear that the functor F extends naturally to a tensor functor RepO(Uq(ˆsln)) ⊗C
-MV → RepO(Rell
-τ,γ ) between the categories O of representations of the quantum aﬃne algebra,
-respectively the elliptic quantum group (i.e. categories o f representations whose h-weight multi-
-plicities are ﬁnite, and the multiplicity function is suppo rted on a ﬁnite union of sets of the form
-µ −Q+, where Q+ is the positive cone in the root lattice of g). Namely, the construction of F we
-gave generalizes to this case in a straighforward way. Moreo ver, it is not hard to see that after this
-extension the functor remains fully faithful (the proof of f ull faithfulness also generalizes without
-signiﬁcant changes). In particular, we see that any evaluat ion module for Uq(ˆsln) admits an elliptic
-deformation. This was conjectured in [TV01], and the conjec ture was checked for Verma modules
-and ﬁnite dimensional representations.
+In this section we would like to study the action of the functor $\text{$\mathcal{F}$}$ on evaluation representations of $U_q(\widehat{\mathfrak{s}}l_n)$. Let $W_\nu(z)$ be the evaluation representation of $U_q({\widehat{\mathfrak{s}}l}_n)$ with dominant integral highest weight $\nu$, evaluated at $z\in \text{$\mathbb{C}$}^*$.
+
+::: prop
+The representation ${\text{$\mathcal{F}$}}(W_\nu(z))$ is isomorphic to the evaluation representation $V_\mu(z)$ of the elliptic quantum group defined in [@TaVa01] (see Corollary 3.4 and Theorem 5.9), tensored with a 1-dimensional representation.
+:::
+
+::: proof
+*Proof.* Similarly to quantum affine algebra, for elliptic quantum group there is a natural notion of a highest weight for a finite dimensional representation $W$ (it was studied in detail in [@Ca01]). Namely, the highest weight is, essentially, the set of eigenvalues of the diagonal entries of the noncommutative matrix $L_W(u,\hat\lambda)$ on the highest weight vector.
+
+It is not difficult to compute highest weights of representations ${\text{$\mathcal{F}$}}(W_\nu(z))$ and show that they coincide with highest weights of $V_\nu(z)$ up to tensoring with a 1-dimensional representation. Namely one needs to prove this statement for the fundamental representations (exterior powers), since for other representations the statement follows by taking tensor products.
+
+To prove the statement for exterior powers, one first proves it for the vector representation $V$, in which case it is trivial, since it reduces to analyzing entries of $R_V$. To pass to an arbitrary exterior power, one may use fusion procedure (i.e. the fact that $\Lambda^iV$ is contained in the product of $i$ copies of $V$ with appropriate shifts).
+
+Now, it was shown in [@Ca01] that if two irreducible highest weight finite dimensional representations of the elliptic quantum group have the same highest weight, then they are isomorphic. This completes the proof. ◻
+:::
+
+It is clear that the functor $\mathcal F$ extends naturally to a tensor functor $\text{\bf Rep}_{\text{$\mathcal{O}$}}(U_q({\widehat{\mathfrak{s}}l}_n))\otimes_{\text{$\mathbb{C}$}}M_V\to 
+\text{\bf Rep}_{\text{$\mathcal{O}$}}(R_{\tau,\gamma}^{ell})$ between the categories $\mathcal O$ of representations of the quantum affine algebra, respectively the elliptic quantum group (i.e. categories of representations whose $\mathfrak{h}$-weight multiplicities are finite, and the multiplicity function is supported on a finite union of sets of the form $\mu-Q_+$, where $Q_+$ is the positive cone in the root lattice of $\mathfrak{g}$). Namely, the construction of $\mathcal F$ we gave generalizes to this case in a straighforward way. Moreover, it is not hard to see that after this extension the functor remains fully faithful (the proof of full faithfulness also generalizes without significant changes). In particular, we see that any evaluation module for $U_q({\widehat{\mathfrak{s}}l}_n)$ admits an elliptic deformation. This was conjectured in [@TaVa01], and the conjecture was checked for Verma modules and finite dimensional representations.

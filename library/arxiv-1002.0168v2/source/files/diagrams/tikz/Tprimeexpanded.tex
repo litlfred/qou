@@ -1,0 +1,14 @@
+\rotatebox{180}{
+\begin{tikzpicture}[baseline=1ex]
+\foreach \x / \label in {0/left, 1.5/middle, 3/right} {
+	\node(\label)[fill=white,draw,rectangle] at (\x,0) {\rotatebox{180}{$\JW{2}$}};
+}
+% now the shading
+\begin{pgfonlayer}{background} 
+\draw[fill=black!20]
+	($(left.250)+(0,-0.5)$) -- (left.110) to [bend left=90] (right.70) -- ($(right.290)+(0,-0.5)$)
+	($(right.250)+(0,-0.5)$) -- (right.110) to [bend right=90] (middle.70) -- ($(middle.290)+(0,-0.5)$)
+	($(middle.250)+(0,-0.5)$) -- (middle.110) to [bend right=90] (left.70) -- ($(left.290)+(0,-0.5)$);
+\end{pgfonlayer}
+\end{tikzpicture}
+}

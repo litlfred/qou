@@ -1,0 +1,70 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1712.03058v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1712.03058v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1712.03058v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1712.03058&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1712.03058v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1712.03058v3",
+    "content_type": "application/gzip",
+    "sha256": "17283ccca39c001dc81b1074188e9b76ce833f89b145b7b4f23e455284418d87",
+    "bytes": 1771824,
+    "fetched": "2026-10-10T15:12:58+00:00",
+    "files": [
+      {
+        "path": "source/files/abstract.tex",
+        "role": "tex",
+        "sha256": "bd462054712e161c33e2f2ef8e528082aead9537bd427c54a1af7eb17aa10c57",
+        "bytes": 1497
+      },
+      {
+        "path": "source/files/abstract_def.sty",
+        "role": "sty",
+        "sha256": "37502ae525b35987dadca0df12a4dfcbab83389811c5a36609465eff6870bb99",
+        "bytes": 127
+      },
+      {
+        "path": "source/files/header_Stocks.tex",
+        "role": "tex",
+        "sha256": "556df7dc5157b31ae6563653b9b1607e01895c21321152e3583c4731a0cdb148",
+        "bytes": 1738
+      },
+      {
+        "path": "source/files/iterated_filtering.tex",
+        "role": "tex",
+        "sha256": "c9488e016c71259be073b12b1d131b2d99b0e01cb93ebc1db6f54b9a2dcc345b",
+        "bytes": 59930
+      },
+      {
+        "path": "source/files/ms.bbl",
+        "role": "bbl",
+        "sha256": "ffa44814717a7ed619cf8bdb39b08443f2d13c5cc92d795d38d5cddcbd05b1a2",
+        "bytes": 10929
+      },
+      {
+        "path": "source/files/ms.tex",
+        "role": "tex",
+        "sha256": "50c7b076c5ebf008d89abd319fda06752305b03d75740690bae705305b78159e",
+        "bytes": 1339
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

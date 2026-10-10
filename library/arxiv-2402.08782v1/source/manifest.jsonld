@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2402.08782v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2402.08782v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2402.08782v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2402.08782&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2402.08782v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2402.08782v1",
+    "content_type": "application/gzip",
+    "sha256": "6355aeb8ec3ecc15c7e4e727f6485d304de700839888291e92b66aba3f964f7a",
+    "bytes": 717745,
+    "fetched": "2026-10-10T15:19:50+00:00",
+    "files": [
+      {
+        "path": "source/files/KS4.tex",
+        "role": "tex",
+        "sha256": "82f66ef570927d0d389b33019fdc29f53f07bf564651b5bc663ecc8fbd3586c6",
+        "bytes": 31461
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

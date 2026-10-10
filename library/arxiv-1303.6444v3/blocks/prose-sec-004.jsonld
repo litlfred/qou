@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1303.6444v3/blocks/prose-sec-004",
+  "kind": "prose",
+  "title": "General Derivation: Derivation for Theorem 2.1",
+  "pageStart": 5,
+  "pageEnd": 7,
+  "text": "../sections/sec-004-4-general-derivation-derivation-for-theorem-21.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1303.6444v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1303.6444v3/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -6,7 +6,8 @@
   "sha256": "047d492babc63d2f5412bcb8a996ad1ac6091f976bbd7d31f8b76d2599811d99",
   "bytes": 293981,
   "pages": 10,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -143,6 +144,49 @@
   "likely_scanned": false,
   "toc_entries": 6,
   "sections": 6,
-  "chars_total": 16278
+  "chars_total": 16278,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main_3.tex",
+   "tex_sections": 8,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-2-mark-lewko",
+     "title": "MARK LEWKO",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-4-mark-lewko",
+     "title": "MARK LEWKO",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-6-mark-lewko",
+     "title": "MARK LEWKO",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-8-mark-lewko",
+     "title": "MARK LEWKO",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-references",
+     "title": "References",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-10-mark-lewko",
+     "title": "MARK LEWKO",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

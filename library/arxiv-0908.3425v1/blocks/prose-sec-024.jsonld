@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0908.3425v1/blocks/prose-sec-024",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0908.3425v1/blocks/prose-sec-024",
   "kind": "prose",
   "title": "Masses of the Goldstone bosons",
   "pageStart": 42,
   "pageEnd": 46,
   "text": "../sections/sec-024-masses-of-the-goldstone-bosons.md",
-  "derivedFrom": "library/arxiv-0908.3425v1/manifest",
-  "sourceDocument": "library/arxiv-0908.3425v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0908.3425v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0908.3425v1/manifest.jsonld",
   "provenance": "ingested"
 }

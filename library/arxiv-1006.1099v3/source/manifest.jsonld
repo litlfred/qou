@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1006.1099v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1006.1099v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1006.1099v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1006.1099&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1006.1099v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1006.1099v3",
+    "content_type": "application/gzip",
+    "sha256": "12150d480c5061770245bc667ce10776ff042cec35e0ec83be25424c8f6aac5f",
+    "bytes": 109802,
+    "fetched": "2026-10-10T15:03:19+00:00",
+    "files": [
+      {
+        "path": "source/files/QuadricFukaya-Final.tex",
+        "role": "tex",
+        "sha256": "cbceee8338d210865b2b4b91d1a93b767e8ffc9662b7748926a8609a6090a07d",
+        "bytes": 312596
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

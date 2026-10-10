@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0605314v1/blocks/conjecture-sec-087-04",
+  "kind": "conjecture",
+  "title": "p-adic Non-vanishing Conjecture",
+  "pageStart": 49,
+  "pageEnd": 51,
+  "text": "conjecture-sec-087-04.md",
+  "derivedFrom": "library/arxiv-math-0605314v1/sections/sec-087",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0605314v1/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1901.08945v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "DECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1901.08945v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Decompositions of derived categories of gerbes and families of Brauer–Severi varieties",
   "contains": [
     "library/arxiv-1901.08945v2/sections/sec-000",
     "library/arxiv-1901.08945v2/sections/sec-001",
@@ -15,8 +20,18 @@
     "library/arxiv-1901.08945v2/sections/sec-006"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1901.08945&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-1901.08945v2",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "1901.08945v2.pdf",
     "source_sha256": "df222d76e597057fb4de115627fe041939fe30d8acaff7bbd4a68aa9a1789617",
     "pages": 28,

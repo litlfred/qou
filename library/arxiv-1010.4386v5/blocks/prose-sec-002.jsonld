@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1010.4386v5/blocks/prose-sec-002",
+  "kind": "prose",
+  "title": "The Derived Completion and Torsion Functors",
+  "pageStart": 7,
+  "pageEnd": 10,
+  "text": "../sections/sec-002-2-the-derived-completion-and-torsion-functors.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1010.4386v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1010.4386v5/manifest.jsonld",
+  "provenance": "ingested"
+}

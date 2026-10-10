@@ -7,7 +7,8 @@
   "bytes": 268293,
   "pages": 10,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -194,6 +195,73 @@
   "likely_scanned": false,
   "toc_entries": 9,
   "sections": 9,
-  "chars_total": 42070
+  "chars_total": 42070,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "article.tex",
+   "tex_sections": 6,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.573,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-1-what-is-the-distance-scale-l-on-which-the-lowe",
+     "title": "What is the distance scale l on which the lowest",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-2-how-far-up-in-the-spectrum-\u03bbc-are-the-modes",
+     "title": "How far up in the spectrum (\u03bbc) are the modes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-conclusions",
+     "title": "Conclusions",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.604,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-i-hip",
+     "title": "Hip,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-c-b-lang",
+     "title": "B. Lang",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-v-g-bornyakov-e-v-luschevskaya-s-m-mo",
+     "title": "G. Bornyakov, E. V. Luschevskaya, S. M. Mo-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-c-jung-o-kaczmarek-f-karsch-and-e-laermann",
+     "title": "Jung, O. Kaczmarek, F. Karsch and E. Laermann",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

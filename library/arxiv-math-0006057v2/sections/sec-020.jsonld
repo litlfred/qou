@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0006057v2/sections/sec-020",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Duality for actions. An analogue of the Blattner-Montgomery duality the-",
+  "pageStart": 14,
+  "pageEnd": 14,
+  "contains": [
+    "library/arxiv-math-0006057v2/blocks/prose-sec-020",
+    "library/arxiv-math-0006057v2/blocks/theorem-sec-020-01",
+    "library/arxiv-math-0006057v2/blocks/corollary-sec-020-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "provenance": "ingested"
+}

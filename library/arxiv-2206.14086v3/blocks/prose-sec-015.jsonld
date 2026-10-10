@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2206.14086v3/blocks/prose-sec-015",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2206.14086v3/blocks/prose-sec-015",
   "kind": "prose",
   "title": "Comments on universality",
   "pageStart": 12,
   "pageEnd": 13,
   "text": "../sections/sec-015-9-comments-on-universality.md",
-  "derivedFrom": "library/arxiv-2206.14086v3/manifest",
-  "sourceDocument": "library/arxiv-2206.14086v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2206.14086v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2206.14086v3/manifest.jsonld",
   "provenance": "ingested"
 }

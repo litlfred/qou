@@ -7,86 +7,21 @@ section_number: 1
 pages: 1-3
 source_pdf: 1711.08944v2.pdf
 source_sha256: ad7a020e7e92b788
+text_source: latex
+latex_prose_ratio: 0.979
+latex_coverage_ratio: 0.926
 doc_brief: "The second largest eigenvalues of some Cayley graphs on alternating groups ∗ — Let An denote the alternating group of degree n with n ≥ 3."
 ---
-Let G = ( V (G), E(G)) be a simple undirected graph of order n. The adjacency
-matrix of G, denoted by A(G), is the n × n matrix with entries auv = 1 if {u, v} ∈
-E(G) and auv = 0 otherwise. The eigenvalues of A(G) are denoted by λ1(G) ≥
-λ2(G) ≥ · · · ≥ λn(G), which are also called the eigenvalues of G.
-For v ∈ V (G), we denote by N(v) = {u ∈ V (G) | { u, v} ∈ E(G)} and d(v) =
-|N(v)| the neighborhood and degree of v, respectively. Let D(G) = diag( d(v) |
-v ∈ V (G)) denote the diagonal degree matrix of G. The Laplacian matrix of G is
-deﬁned as L(G) = D(G) − A(G), which is positive semi-deﬁnite and always has 0 as
-its eigenvalue. So the eigenvalues of L(G) can be arranged as µ1(G) ≥ µ2(G) ≥ · · · ≥
-µn−1(G) ≥ µn(G) = 0. Furthermore, µn−1(G) > 0 if and only if G is connected, and
-for connected non-complete graphs we know that 0 < µ n−1(G) ≤ κ(G) ≤ κ′(G) ≤
-δ(G), where κ(G), κ′(G) and δ(G) denote the vertex connectivity, edge connectivity
-and minimum degree of G, respectively (cf. [
-9], Corollary 7.4.6). For this reason,
-µn−1(G) is called the algebraic connectivity of G. Clearly, if G is r-regular then
-µn−1(G) = r − λ2(G).
-∗ This work is supported by the National Natural Science Foundation of China (Grant nos.
-11531011, 11671344).
-†Corresponding author.
-E-mail address: huangxymath@gmail.com (X. Huang), huangqx@xju.edu.cn (Q. Huan g).
-1
-2
-For a ﬁnite group Γ, and a subset T ⊆ Γ \ {e} (e is the identity element of Γ)
-such that T = T −1, the Cayley graph Cay(Γ , T ) on Γ with respect to T is deﬁned
-as the undirected graph with vertex set Γ and edge set {{γ, tγ} | γ ∈ Γ , t ∈ T }.
-Clearly, Cay(Γ , T ) is a |T |-regular graph which is connected if and only if T is a
-generating subset of Γ.
-Let Sn be the symmetric group of degree n ≥ 3 (for σ, τ ∈ Sn, the product
-στ means that we ﬁrst apply permutation σ and then apply permutation τ , and τi
-represents the image of i under the permuation τ ), and let T be a set of transpositions
-in Sn. The transposition graph Tra(T ) of T is deﬁned as the graph with vertex
-set {1, 2, . . . , n} and with an edge connecting two vertices i and j if and only if
-(i, j) ∈ T . It is known that T can generate Sn if and only if Tra( T ) is connected [ 13].
-Around 1992, Aldous [ 1] (see also [ 4, 12]) conjectured that if Tra( T ) is connected
-then the second largest eigenvalue of Cay( Sn, T ) is equal to |T | − µn−1(Tra(T )),
-that is, Cay( Sn, T ) and Tra( T ) share the same algebraic connectivity. Before 1992,
-Flatto et al. [ 11] and Diaconis and Shahshahani [ 10] had conﬁrmed the conjecture for
-Tra(T ) = K1,n−1 and Tra(T ) = Kn, respectively. In 2000, Friedman [ 12] proved that
-if Tra( T ) is a tree ( |T | = n − 1) then the second largest eigenvalue of Cay( Sn, T )
-is at least n − 2, and exactly equal to n − 2 if and only if Tra( T ) = K1,n−1. In
-2010, Cesi [ 4] conﬁrmed Aldous’ conjecture when Tra( T ) is a complete multipartite
-graph. Almost at the same time, Caputo et al. [ 2] completely solved the conjecture
-for all connected Tra( T ). For other Cayley graphs on symmetric groups, Cesi [ 3]
-proved that the second largest eigenvalue of the pancake graph Pn = Cay( Sn, S)
-(S = {(1, i)(2, i − 1) · · · | 2 ≤ i ≤ n}) is equal to n − 2; and very recently, Chung
-and Tobin [ 8] determined the second largest eigenvalues of the reversal grap h Rn =
-Cay(Sn, S) (S = {(i, j)(i + 1, j − 1) · · · | 1 ≤ i < j ≤ n}) and a family of graphs that
-generalize the pancake graph. Their method is very imaginative, whic h depends on
-ﬁnding enough equitable partitions of Rn and decomposing the edge set E(Rn) to
-that of Pn and n copies of Rn−1.
-Now we consider the Cayley graphs on alternating group An (n ≥ 3). Let
-T1 = {(1, 2, i), (1, i, 2) | 3 ≤ i ≤ n}, T2 = {(1, i, j), (1, j, i) | 2 ≤ i < j ≤ n}
-and T3 = {(i, j, k), (i, k, j) | 1 ≤ i < j < k ≤ n}. The alternating group graph
-AGn, extended alternating group graph EAGn and complete alternating group graph
-CAG n are deﬁned as the Cayley graphs Cay( An, T1), Cay( An, T2) and Cay( An, T3),
-respectively. Since T1 ⊆ T2 ⊆ T3, AGn is a spanning subgraph of EAGn while
-EAGn is also a spanning subgraph of CAG n, and all these graphs are connected
-because T1 can generate An (cf. [ 16], p. 298). In [ 15], Jwo et al. introduced the
-alternating group graph AGn as an interconnection network topology for computing
-systems, and they also showed that AGn is 2-transitive, Hamiltonian and of diame-
-ter ⌊3(n − 2)/2⌋. Following this paper, AGn was extensively studied over decades.
-For example, Chang and Yang [ 5, 6] investigated the panconnectivity, Hamiltonian-
-connectivity and fault-tolerant Hamiltonicity of AGn. Zhou [ 17] determined the full
-automorphism group of AGn. In addition, the complete alternating group graph
-CAG n can be viewed as one of the two isomorphic connected components o f the
-(n − 3)-point ﬁxing graph F (n, n − 3) deﬁned in [ 7], which has only integral eigen-
-values (cf. [ 7], Corollary 1.2). Recently, the full automorphism group of CAG n was
-determined by Huang and Huang [ 14].
-3
-Inspired by the work of Chung and Tobin [ 8], in the present paper, we determine
-the second largest eigenvalues of AGn, EAGn and CAG n, which are equal to 2 n − 6
-(for n ≥ 4), n2 − 5n + 5 and 1
-3n(n − 2)(n − 4), respectively.
-The paper is organized as follows. In Section 2, we obtain the second largest
-eigenvalue of AGn by induction on n. In Section 3, we focus on determining the
-second largest eigenvalue of CAG n. In order to achieve this goal by induction on n,
-we decompose the edge set of CAG n into that of EAGn and n copies of CAG n−1,
-and use λ2(EAGn) + λ2(CAG n−1) to bound λ2(CAG n). Thus we have to determine
-λ2(EAGn), and for this reason, we also decompose the edge set of EAGn into that of
-AGn and n copies of EAGn−1, and use λ2(AGn) +λ2(EAGn−1) to bound λ2(EAGn)
-as λ2(AGn) has been determined in Section 2.
+[]{#s-1 label="s-1"} Let $G=(V(G),E(G))$ be a simple undirected graph of order $n$. The *adjacency matrix* of $G$, denoted by $A(G)$, is the $n\times n$ matrix with entries $a_{uv}=1$ if $\{u,v\}\in E(G)$ and $a_{uv}=0$ otherwise. The eigenvalues of $A(G)$ are denoted by $\lambda_1(G)\geq \lambda_2(G)\geq \cdots\geq \lambda_n(G)$, which are also called the *eigenvalues* of $G$.
+
+For $v\in V(G)$, we denote by $N(v)=\{u\in V(G)\mid \{u,v\}\in E(G)\}$ and $d(v)=|N(v)|$ the *neighborhood* and *degree* of $v$, respectively. Let $D(G)=\mathrm{diag}(d(v)\mid v\in V(G))$ denote the diagonal degree matrix of $G$. The *Laplacian matrix* of $G$ is defined as $L(G)=D(G)-A(G)$, which is positive semi-definite and always has $0$ as its eigenvalue. So the eigenvalues of $L(G)$ can be arranged as $\mu_1(G)\geq \mu_2(G)\geq \cdots\geq \mu_{n-1}(G)\geq \mu_n(G)=0$. Furthermore, $\mu_{n-1}(G)>0$ if and only if $G$ is connected, and for connected non-complete graphs we know that $0<\mu_{n-1}(G)\leq\kappa(G)\leq\kappa'(G)\leq \delta(G)$, where $\kappa(G)$, $\kappa'(G)$ and $\delta(G)$ denote the vertex connectivity, edge connectivity and minimum degree of $G$, respectively (cf. [@Cvetkovic], Corollary 7.4.6). For this reason, $\mu_{n-1}(G)$ is called the *algebraic connectivity* of $G$. Clearly, if $G$ is $r$-regular then $\mu_{n-1}(G)=r-\lambda_2(G)$.
+
+For a finite group $\Gamma$, and a subset $T\subseteq \Gamma\setminus\{e\}$ ($e$ is the identity element of $\Gamma$) such that $T=T^{-1}$, the *Cayley graph* $\mathrm{Cay}(\Gamma,T)$ on $\Gamma$ with respect to $T$ is defined as the undirected graph with vertex set $\Gamma$ and edge set $\{\{\gamma,t\gamma \}\mid\gamma\in\Gamma,t\in T\}$. Clearly, $\mathrm{Cay}(\Gamma,T)$ is a $|T|$-regular graph which is connected if and only if $T$ is a generating subset of $\Gamma$.
+
+Let $S_n$ be the symmetric group of degree $n\geq 3$ (for $\sigma,\tau\in S_n$, the product $\sigma\tau$ means that we first apply permutation $\sigma$ and then apply permutation $\tau$, and $\tau_i$ represents the image of $i$ under the permuation $\tau$), and let $T$ be a set of transpositions in $S_n$. The *transposition graph* $\mathrm{Tra}(T)$ of $T$ is defined as the graph with vertex set $\{1,2,\ldots,n\}$ and with an edge connecting two vertices $i$ and $j$ if and only if $(i,j)\in T$. It is known that $T$ can generate $S_n$ if and only if $\mathrm{Tra}(T)$ is connected [@Godsil1]. Around 1992, Aldous [@Aldous] (see also [@Friedman; @Cesi]) conjectured that if $\mathrm{Tra}(T)$ is connected then the second largest eigenvalue of $\mathrm{Cay}(S_n,T)$ is equal to $|T|-\mu_{n-1}(\mathrm{Tra}(T))$, that is, $\mathrm{Cay}(S_n,T)$ and $\mathrm{Tra}(T)$ share the same algebraic connectivity. Before 1992, Flatto et al.[@Flatto] and Diaconis and Shahshahani [@Diaconis] had confirmed the conjecture for $\mathrm{Tra}(T)=K_{1,n-1}$ and $\mathrm{Tra}(T)=K_{n}$, respectively. In 2000, Friedman [@Friedman] proved that if $\mathrm{Tra}(T)$ is a tree ($|T|=n-1$) then the second largest eigenvalue of $\mathrm{Cay}(S_n,T)$ is at least $n-2$, and exactly equal to $n-2$ if and only if $\mathrm{Tra}(T)=K_{1,n-1}$. In 2010, Cesi [@Cesi] confirmed Aldous' conjecture when $\mathrm{Tra}(T)$ is a complete multipartite graph. Almost at the same time, Caputo et al. [@Caputo] completely solved the conjecture for all connected $\mathrm{Tra}(T)$. For other Cayley graphs on symmetric groups, Cesi [@Cesi1] proved that the second largest eigenvalue of the pancake graph $\mathcal{P}_n=\mathrm{Cay}(S_n,S)$ ($S=\{(1,i)(2,i-1)\cdots\mid 2\leq i\leq n\}$) is equal to $n-2$; and very recently, Chung and Tobin [@Chung] determined the second largest eigenvalues of the reversal graph $R_n=\mathrm{Cay}(S_n,S)$ ($S=\{(i,j)(i+1,j-1)\cdots\mid1\leq i<j\leq n\}$) and a family of graphs that generalize the pancake graph. Their method is very imaginative, which depends on finding enough equitable partitions of $R_n$ and decomposing the edge set $E(R_n)$ to that of $\mathcal{P}_{n}$ and $n$ copies of $R_{n-1}$.
+
+Now we consider the Cayley graphs on alternating group $A_n$ ($n\geq 3$). Let $T_1=\{(1,2,i),(1,i,2)\mid 3\leq i\leq n\}$, $T_2=\{(1,i,j),(1,j,i)\mid 2\leq i<j\leq n\}$ and $T_3=\{(i,j,k),(i,k,j)\mid 1\leq i<j<k\leq n\}$. The *alternating group graph* $AG_n$, *extended alternating group graph* $EAG_n$ and *complete alternating group graph* $CAG_n$ are defined as the Cayley graphs $\mathrm{Cay}(A_n,T_1)$, $\mathrm{Cay}(A_n,T_2)$ and $\mathrm{Cay}(A_n,T_3)$, respectively. Since $T_1\subseteq T_2\subseteq T_3$, $AG_n$ is a spanning subgraph of $EAG_n$ while $EAG_n$ is also a spanning subgraph of $CAG_n$, and all these graphs are connected because $T_1$ can generate $A_n$ (cf. [@Suzuki], p. 298). In [@Jwo], Jwo et al. introduced the alternating group graph $AG_n$ as an interconnection network topology for computing systems, and they also showed that $AG_n$ is $2$-transitive, Hamiltonian and of diameter $\lfloor 3(n-2)/2\rfloor$. Following this paper, $AG_n$ was extensively studied over decades. For example, Chang and Yang [@Chang; @Chang1] investigated the panconnectivity, Hamiltonian-connectivity and fault-tolerant Hamiltonicity of $AG_n$. Zhou [@Zhou] determined the full automorphism group of $AG_n$. In addition, the complete alternating group graph $CAG_n$ can be viewed as one of the two isomorphic connected components of the $(n-3)$-point fixing graph $\mathcal{F}(n,n-3)$ defined in [@Cheng], which has only integral eigenvalues (cf. [@Cheng], Corollary 1.2). Recently, the full automorphism group of $CAG_n$ was determined by Huang and Huang [@Huang].
+
+Inspired by the work of Chung and Tobin [@Chung], in the present paper, we determine the second largest eigenvalues of $AG_n$, $EAG_n$ and $CAG_n$, which are equal to $2n-6$ (for $n\geq 4$), $n^2-5n+5$ and $\frac{1}{3}n(n-2)(n-4)$, respectively.
+
+The paper is organized as follows. In Section [\[s-2\]](#s-2){reference-type="ref" reference="s-2"}, we obtain the second largest eigenvalue of $AG_n$ by induction on $n$. In Section [\[s-3\]](#s-3){reference-type="ref" reference="s-3"}, we focus on determining the second largest eigenvalue of $CAG_n$. In order to achieve this goal by induction on $n$, we decompose the edge set of $CAG_n$ into that of $EAG_n$ and $n$ copies of $CAG_{n-1}$, and use $\lambda_2(EAG_n)+\lambda_2(CAG_{n-1})$ to bound $\lambda_2(CAG_n)$. Thus we have to determine $\lambda_2(EAG_n)$, and for this reason, we also decompose the edge set of $EAG_n$ into that of $AG_n$ and $n$ copies of $EAG_{n-1}$, and use $\lambda_2(AG_n)+\lambda_2(EAG_{n-1})$ to bound $\lambda_2(EAG_n)$ as $\lambda_2(AG_n)$ has been determined in Section [\[s-2\]](#s-2){reference-type="ref" reference="s-2"}.

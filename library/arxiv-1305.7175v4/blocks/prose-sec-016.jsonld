@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1305.7175v4/blocks/prose-sec-016",
+  "kind": "prose",
+  "title": "Integration formulas for traces: 2-categorical consequences",
+  "pageStart": 31,
+  "pageEnd": 36,
+  "text": "../sections/sec-016-52-integration-formulas-for-traces-2-categorical.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1305.7175v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1305.7175v4/manifest.jsonld",
+  "provenance": "ingested"
+}

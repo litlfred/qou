@@ -5,7 +5,8 @@
   "file": "friedvidu1.pdf",
   "sha256": "cfeaf61f759a6af80dac1de25d05ca973cc6fcca9ff33939f1da90589ec1f51a",
   "bytes": 498418,
-  "pages": 42
+  "pages": 42,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "A SURVEY OF TWISTED ALEXANDER POLYNOMIALS",
   "authors_raw": "STEFAN FRIEDL AND STEFANO VIDUSSI",
-  "abstract": "We give a short introduction to the theory of twisted Alexand er polynomials of a 3–manifold associated to a representation of its fundam ental group. We summarize their formal properties and we explain their relationship t o twisted Reidemeister torsion. We then give a survey of the many applications of twisted inva riants to the study of topological problems. We conclude with a short summary of th e theory of higher order Alexander polynomials.",
+  "abstract": "We give a short introduction to the theory of twisted Alexand er polynomials of a 3\u2013manifold associated to a representation of its fundam ental group. We summarize their formal properties and we explain their relationship t o twisted Reidemeister torsion. We then give a survey of the many applications of twisted inva riants to the study of topological problems. We conclude with a short summary of th e theory of higher order Alexander polynomials.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript SVN PRE-RELEASE 8.71",
    "CreationDate": "D:20100208024914Z00'00'",
@@ -145,7 +146,7 @@
   },
   {
    "level": 2,
-   "title": "Twisted Alexander polynomials of zero–surgeries",
+   "title": "Twisted Alexander polynomials of zero\u2013surgeries",
    "page": 13,
    "source": "outline",
    "number": "5.1"
@@ -215,7 +216,7 @@
   },
   {
    "level": 2,
-   "title": "Twisted Alexander polynomials and the space of 2–dimensional representations",
+   "title": "Twisted Alexander polynomials and the space of 2\u2013dimensional representations",
    "page": 25,
    "source": "outline",
    "number": "7.2"
@@ -257,7 +258,7 @@
   },
   {
    "level": 2,
-   "title": "Zeroes of twisted Alexander polynomials and non–abelian representations",
+   "title": "Zeroes of twisted Alexander polynomials and non\u2013abelian representations",
    "page": 27,
    "source": "outline",
    "number": "8.3"
@@ -285,7 +286,7 @@
   },
   {
    "level": 1,
-   "title": "Twisted Alexander polynomials of CW–complexes and groups",
+   "title": "Twisted Alexander polynomials of CW\u2013complexes and groups",
    "page": 29,
    "source": "outline",
    "number": "9"
@@ -313,14 +314,14 @@
   },
   {
    "level": 1,
-   "title": "Alexander polynomials and representations over non–commutative rings",
+   "title": "Alexander polynomials and representations over non\u2013commutative rings",
    "page": 30,
    "source": "outline",
    "number": "10"
   },
   {
    "level": 2,
-   "title": "Non–commutative Alexander polynomials",
+   "title": "Non\u2013commutative Alexander polynomials",
    "page": 31,
    "source": "outline",
    "number": "10.1"
@@ -334,7 +335,7 @@
   },
   {
    "level": 2,
-   "title": "Comparing different –compatible maps",
+   "title": "Comparing different \u2013compatible maps",
    "page": 33,
    "source": "outline",
    "number": "10.3"
@@ -506,7 +507,7 @@
   {
    "id": "sec-014-51-twisted-alexander-polynomials-of-zerosurgerie",
    "number": "5.1",
-   "title": "Twisted Alexander polynomials of zero–surgeries",
+   "title": "Twisted Alexander polynomials of zero\u2013surgeries",
    "level": 2,
    "page_start": 13,
    "page_end": 14,
@@ -596,7 +597,7 @@
   {
    "id": "sec-023-72-twisted-alexander-polynomials-and-the-space-o",
    "number": "7.2",
-   "title": "Twisted Alexander polynomials and the space of 2–dimensional representations",
+   "title": "Twisted Alexander polynomials and the space of 2\u2013dimensional representations",
    "level": 2,
    "page_start": 25,
    "page_end": 25,
@@ -656,7 +657,7 @@
   {
    "id": "sec-029-83-zeroes-of-twisted-alexander-polynomials-and-n",
    "number": "8.3",
-   "title": "Zeroes of twisted Alexander polynomials and non–abelian representations",
+   "title": "Zeroes of twisted Alexander polynomials and non\u2013abelian representations",
    "level": 2,
    "page_start": 27,
    "page_end": 28,
@@ -676,7 +677,7 @@
   {
    "id": "sec-031-9-twisted-alexander-polynomials-of-cwcomplexes-a",
    "number": "9",
-   "title": "Twisted Alexander polynomials of CW–complexes and groups",
+   "title": "Twisted Alexander polynomials of CW\u2013complexes and groups",
    "level": 1,
    "page_start": 29,
    "page_end": 30,
@@ -706,7 +707,7 @@
   {
    "id": "sec-034-10-alexander-polynomials-and-representations-ove",
    "number": "10",
-   "title": "Alexander polynomials and representations over non–commutative rings",
+   "title": "Alexander polynomials and representations over non\u2013commutative rings",
    "level": 1,
    "page_start": 30,
    "page_end": 31,
@@ -716,7 +717,7 @@
   {
    "id": "sec-035-101-noncommutative-alexander-polynomials",
    "number": "10.1",
-   "title": "Non–commutative Alexander polynomials",
+   "title": "Non\u2013commutative Alexander polynomials",
    "level": 2,
    "page_start": 31,
    "page_end": 32,
@@ -769,6 +770,239 @@
   "likely_scanned": false,
   "toc_entries": 47,
   "sections": 40,
-  "chars_total": 117376
+  "chars_total": 117376,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 11,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.45,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-21-twisted-reidemeister-torsion",
+     "title": "Twisted Reidemeister torsion",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-2-definition-and-basic-properties",
+     "title": "Definition and basic properties",
+     "prose_ratio": 0.506,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-22-computation-of-twisted-reidemeister-torsion",
+     "title": "Computation of twisted Reidemeister torsion",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-24-twisted-alexander-invariants",
+     "title": "Twisted Alexander invariants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-25-computation-of-twisted-alexander-polynomials",
+     "title": "Computation of twisted Alexander polynomials",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-3-basic-properties-of-twisted-invariants",
+     "title": "Basic properties of twisted invariants",
+     "prose_ratio": 0.059,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-31-relationship-between-twisted-invariants",
+     "title": "Relationship between twisted invariants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-32-twisted-invariants-for-conjugate-representati",
+     "title": "Twisted invariants for conjugate representations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-33-change-of-variables",
+     "title": "Change of variables",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-34-duality-for-twisted-invariants",
+     "title": "Duality for twisted invariants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-36-twisted-invariants-of-knots-and-links",
+     "title": "Twisted invariants of knots and links",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-4-distinguishing-knots-and-links",
+     "title": "Distinguishing knots and links",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.984,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-5-twisted-alexander-polynomials-and-concordance",
+     "title": "Twisted Alexander polynomials and concordance",
+     "prose_ratio": 0.11,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-51-twisted-alexander-polynomials-of-zerosurgerie",
+     "title": "Twisted Alexander polynomials of zero\u2013surgeries",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-52-twisted-alexander-polynomials-and-knot-concor",
+     "title": "Twisted Alexander polynomials and knot concordance",
+     "prose_ratio": 0.676,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-53-ribbon-knots-and-doubly-slice-knots",
+     "title": "Ribbon knots and doubly slice knots",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-54-twisted-invariants-and-slice-links",
+     "title": "Twisted invariants and slice links",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-6-twisted-alexander-polynomials-the-thurston-nor",
+     "title": "Twisted Alexander polynomials, the Thurston norm and fibered manifolds",
+     "prose_ratio": 0.74,
+     "coverage_ratio": 0.986,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-62-twisted-alexander-polynomials-and-the-thursto",
+     "title": "Twisted Alexander polynomials and the Thurston norm",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-63-normalized-twisted-reidemeister-torsion-and-t",
+     "title": "Normalized twisted Reidemeister torsion and the free genus of a knot",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-7-twisted-invariants-of-knots-and-special-repres",
+     "title": "Twisted invariants of knots and special representations",
+     "prose_ratio": 0.13,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-022-71-parabolic-representations",
+     "title": "Parabolic representations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-72-twisted-alexander-polynomials-and-the-space-o",
+     "title": "Twisted Alexander polynomials and the space of 2\u2013dimensional representations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-73-twisted-invariants-of-hyperbolic-knots-and-li",
+     "title": "Twisted invariants of hyperbolic knots and links",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-74-metabelian-representations",
+     "title": "Metabelian representations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-8-miscellaneous-applications-of-twisted-reidemei",
+     "title": "Miscellaneous applications of twisted Reidemeister torsion to knot theory",
+     "prose_ratio": 0.062,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-027-81-a-partial-order-on-knots",
+     "title": "A Partial order on knots",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-82-periodic-and-freely-periodic-knots",
+     "title": "Periodic and freely periodic knots",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-83-zeroes-of-twisted-alexander-polynomials-and-n",
+     "title": "Zeroes of twisted Alexander polynomials and non\u2013abelian representations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-85-homology-of-cyclic-covers",
+     "title": "Homology of cyclic covers",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-9-twisted-alexander-polynomials-of-cwcomplexes-a",
+     "title": "Twisted Alexander polynomials of CW\u2013complexes and groups",
+     "prose_ratio": 0.494,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-032-92-twisted-alexander-polynomials-of-groups",
+     "title": "Twisted Alexander polynomials of groups",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-93-plane-algebraic-curves",
+     "title": "Plane algebraic curves",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-10-alexander-polynomials-and-representations-ove",
+     "title": "Alexander polynomials and representations over non\u2013commutative rings",
+     "prose_ratio": 0.28,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-035-101-noncommutative-alexander-polynomials",
+     "title": "Non\u2013commutative Alexander polynomials",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-102-higher-order-alexander-polynomials",
+     "title": "Higher order Alexander polynomials",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-104-miscellaneous-applications-of-higher-order-a",
+     "title": "Miscellaneous applications of higher order Alexander polynomials",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-038-11-open-questions-and-problems",
+     "title": "Open questions and problems",
+     "prose_ratio": 0.977,
+     "coverage_ratio": 0.978,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-039-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

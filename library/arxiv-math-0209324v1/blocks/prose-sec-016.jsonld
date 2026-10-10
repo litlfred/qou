@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0209324v1/blocks/prose-sec-016",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0209324v1/blocks/prose-sec-016",
   "kind": "prose",
   "title": "Units in Z[q]S. If R is a ring and S ⊂ MR is a subset consisting",
   "pageStart": 14,
   "pageEnd": 15,
   "text": "../sections/sec-016-71-units-in-zqs-if-r-is-a-ring-and-s-mr-is-a-sub.md",
-  "derivedFrom": "library/arxiv-math-0209324v1/manifest",
-  "sourceDocument": "library/arxiv-math-0209324v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0209324v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0209324v1/manifest.jsonld",
   "provenance": "ingested"
 }

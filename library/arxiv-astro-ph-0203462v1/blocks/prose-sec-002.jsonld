@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-002",
+  "kind": "prose",
+  "title": "Observatoire de Paris, GEPI, 61 av. de l’Observatoire, F-75 014 Paris, France",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "text": "../sections/sec-002-3-observatoire-de-paris-gepi-61-av-de-lobservato.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-astro-ph-0203462v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-astro-ph-0203462v1/manifest.jsonld",
+  "provenance": "ingested"
+}

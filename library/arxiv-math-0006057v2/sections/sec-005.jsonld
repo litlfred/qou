@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0006057v2/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+  "pageStart": 6,
+  "pageEnd": 7,
+  "contains": [
+    "library/arxiv-math-0006057v2/blocks/prose-sec-005",
+    "library/arxiv-math-0006057v2/blocks/proposition-sec-005-01",
+    "library/arxiv-math-0006057v2/blocks/proposition-sec-005-02",
+    "library/arxiv-math-0006057v2/blocks/proposition-sec-005-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "provenance": "ingested"
+}

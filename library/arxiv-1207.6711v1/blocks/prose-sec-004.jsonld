@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1207.6711v1/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1207.6711v1/blocks/prose-sec-004",
   "kind": "prose",
   "title": "Concrete triangulations",
   "pageStart": 5,
   "pageEnd": 6,
   "text": "../sections/sec-004-2-concrete-triangulations.md",
-  "derivedFrom": "library/arxiv-1207.6711v1/manifest",
-  "sourceDocument": "library/arxiv-1207.6711v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1207.6711v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1207.6711v1/manifest.jsonld",
   "provenance": "ingested"
 }

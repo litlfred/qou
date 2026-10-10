@@ -5,7 +5,8 @@
   "file": "1208.1663v2.pdf",
   "sha256": "87e94e429d58386cc727555aa0708ad989d716adb4d3e4c12e2c3b9146fcd48e",
   "bytes": 830232,
-  "pages": 29
+  "pages": 29,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "The 3D index of an ideal triangulation and angle structures",
   "authors_raw": null,
-  "abstract": "The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the set of ideal triangulations of 3-manifolds with r torii boundary components. For a ﬁxed 2 r tuple of integers, the index takes values in the set of q-series with integer coeﬃcients. Our goal is to give an axiomatic deﬁnition of the tetrahedron index, and a proof that the domain of the 3D index consists precisely of the set of ideal triangulations that support an index structure. The latter is a generalization of a strict angle structure. We also prove that the 3D index is invariant under 3-2 moves, but not in general under 2-3 moves.",
+  "abstract": "The 3D index of Dimofte-Gaiotto-Gukov a partially de\ufb01ned function on the set of ideal triangulations of 3-manifolds with r torii boundary components. For a \ufb01xed 2 r tuple of integers, the index takes values in the set of q-series with integer coe\ufb03cients. Our goal is to give an axiomatic de\ufb01nition of the tetrahedron index, and a proof that the domain of the 3D index consists precisely of the set of ideal triangulations that support an index structure. The latter is a generalization of a strict angle structure. We also prove that the 3D index is invariant under 3-2 moves, but not in general under 2-3 moves.",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20151008003248Z",
@@ -490,6 +491,143 @@
   "likely_scanned": false,
   "toc_entries": 31,
   "sections": 23,
-  "chars_total": 56132
+  "chars_total": 56132,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "text6.tex",
+   "tex_sections": 6,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.767,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-index-structures-angle-structures-and-the-3d-i",
+     "title": "Index structures, angle structures and the 3D index",
+     "prose_ratio": 0.346,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-22-angle-structures",
+     "title": "Angle structures",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-23-the-neumann-zagier-matrices",
+     "title": "The Neumann-Zagier matrices",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-24-on-the-topological-invariance-of-the-index",
+     "title": "On the topological invariance of the index",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-3-axioms-for-the-tetrahedron-index",
+     "title": "Axioms for the tetrahedron index",
+     "prose_ratio": 0.896,
+     "coverage_ratio": 0.898,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-4-properties-of-a-tetrahedron-index",
+     "title": "Properties of a tetrahedron index",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-41-part-d-of-theorem-32",
+     "title": "Part (d) of Theorem 3.2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-43-the-rank-of-v-part-b-of-theorem-32",
+     "title": "The rank of V+: part (b) of Theorem 3.2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-44-proof-of-triality-part-c-of-theorem-32",
+     "title": "Proof of triality: part (c) of Theorem 3.2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-46-the-degree-of-i",
+     "title": "The degree of I",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-47-proof-of-theorem-37",
+     "title": "Proof of Theorem 3.7",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-5-convergence-of-the-3d-index",
+     "title": "Convergence of the 3D index",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-013-51-proof-of-theorem-24",
+     "title": "Proof of Theorem 2.4",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-52-an-independent-proof-of-convergence-for-stric",
+     "title": "An independent proof of convergence for strict index structures",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-63-an-ideal-triangulation-of-m136",
+     "title": "An ideal triangulation of m136",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-64-an-ideal-triangulation-of-m064",
+     "title": "An ideal triangulation of m064",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-65-an-ideal-triangulation-with-no-index-structur",
+     "title": "An ideal triangulation with no index structure",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-67-acknowledgment",
+     "title": "Acknowledgment",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-a1-a-generating-series-proof-of-the-pentagon-ide",
+     "title": "A.1. A generating series proof of the pentagon identity",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-a2-a-second-proof-of-the-pentagon-identity",
+     "title": "A.2. A second proof of the pentagon identity",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-appendix-b-the-tetrahedron-index-and-the-quantum",
+     "title": "Appendix B. The tetrahedron index and the quantum dilogarithm",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2404.19155v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Octahedral coordinates from the Wirtinger presentation Calvin McPhail-Snyder Duke University calvin@sl2.site",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2404.19155v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2404.19155v2",
   "contains": [
     "library/arxiv-2404.19155v2/sections/sec-000",
     "library/arxiv-2404.19155v2/sections/sec-001",
@@ -14,8 +19,17 @@
     "library/arxiv-2404.19155v2/sections/sec-005"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2404.19155&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2404.19155v2",
+    "title_source": "slug",
     "source_file": "2404.19155v2.pdf",
     "source_sha256": "45b9ed90006536b3c3ed2678f246941eac8deb7ca9ab740a7b67f3c9b54c7458",
     "pages": 21,

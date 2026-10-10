@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-1006.1099v3/sections/sec-018",
   "@type": [
     "doco:Section"
@@ -9,16 +14,16 @@
   "pageEnd": 30,
   "contains": [
     "library/arxiv-1006.1099v3/blocks/prose-sec-018",
-    "library/arxiv-1006.1099v3/blocks/rem-sec-018-01",
-    "library/arxiv-1006.1099v3/blocks/lem-sec-018-02",
-    "library/arxiv-1006.1099v3/blocks/thm-sec-018-03",
-    "library/arxiv-1006.1099v3/blocks/rem-sec-018-04",
-    "library/arxiv-1006.1099v3/blocks/ex-sec-018-05",
-    "library/arxiv-1006.1099v3/blocks/rem-sec-018-06",
-    "library/arxiv-1006.1099v3/blocks/rem-sec-018-07",
-    "library/arxiv-1006.1099v3/blocks/rem-sec-018-08"
+    "library/arxiv-1006.1099v3/blocks/remark-sec-018-01",
+    "library/arxiv-1006.1099v3/blocks/lemma-sec-018-02",
+    "library/arxiv-1006.1099v3/blocks/theorem-sec-018-03",
+    "library/arxiv-1006.1099v3/blocks/remark-sec-018-04",
+    "library/arxiv-1006.1099v3/blocks/example-sec-018-05",
+    "library/arxiv-1006.1099v3/blocks/remark-sec-018-06",
+    "library/arxiv-1006.1099v3/blocks/remark-sec-018-07",
+    "library/arxiv-1006.1099v3/blocks/remark-sec-018-08"
   ],
-  "derivedFrom": "library/arxiv-1006.1099v3/manifest",
-  "sourceDocument": "library/arxiv-1006.1099v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1006.1099v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1006.1099v3/manifest.jsonld",
   "provenance": "ingested"
 }

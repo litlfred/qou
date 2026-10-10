@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2403.00360v2/blocks/prose-sec-016",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2403.00360v2/blocks/prose-sec-016",
   "kind": "prose",
   "title": "Connection to the Gauge Group of the Standard Model",
   "pageStart": 18,
   "pageEnd": 19,
   "text": "../sections/sec-016-42-connection-to-the-gauge-group-of-the-standard.md",
-  "derivedFrom": "library/arxiv-2403.00360v2/manifest",
-  "sourceDocument": "library/arxiv-2403.00360v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2403.00360v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2403.00360v2/manifest.jsonld",
   "provenance": "ingested"
 }

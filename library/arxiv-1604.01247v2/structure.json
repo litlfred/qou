@@ -5,7 +5,8 @@
   "file": "1604.01247v2.pdf",
   "sha256": "5a402405aadf5d54e235ff25aad1c10e6aecfa04b6cc7be348b5b8c8bfa5c3b9",
   "bytes": 298312,
-  "pages": 37
+  "pages": 37,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Exceptional quantum geometry and particle physics",
   "authors_raw": "AND PARTICLE PHYSICS",
-  "abstract": "Based on an interpretation of the quark-lepton symmetry in t erms of the unimodularity of the color group SU (3) and on the existence of 3 generations, we develop an argumentation suggesting th at the “ﬁnite quantum space” corresponding to the exceptional rea l Jordan algebra of dimension 27 (the Euclidean Albert algebra) is re levant for the description of internal spaces in the theory of particle s. In par- ticular, the triality which corresponds to the 3 oﬀ-diagonal octonionic elements of the exceptional algebra is associated to the 3 ge nerations of the Standard Model while the representation of the octoni ons as a complex 4-dimensional space C ⊕ C3 is associated to the quark-lepton symmetry, (one complex for the lepton and 3 for the correspon ding quark). More generally it is is suggested that the replaceme nt of the algebra of real functions on spacetime by the algebra of func tions on spacetime with values in a ﬁnite-dimensional Euclidean Jor dan alge- bra which plays the role of “the algebra of real functions” on the corresponding almost classical quantum spacetime is relev ant in par- ticle physics. This leads us to study the theory of Jordan mod ules and to develop the diﬀerential calculus over Jordan algebras , (i.e. to introduce the appropriate notion of diﬀerential forms). We f ormulate the corresponding deﬁnition of connections on Jordan modul es. May 3, 2016 1Laboratoire de Physique Th´ eorique, CNRS, Universit´ e Paris-Sud, Universit´ e Paris- Saclay, Bˆ atiment 210, F-91 405 Orsay. Michel.Dubois-Violette@u-psud.fr",
+  "abstract": "Based on an interpretation of the quark-lepton symmetry in t erms of the unimodularity of the color group SU (3) and on the existence of 3 generations, we develop an argumentation suggesting th at the \u201c\ufb01nite quantum space\u201d corresponding to the exceptional rea l Jordan algebra of dimension 27 (the Euclidean Albert algebra) is re levant for the description of internal spaces in the theory of particle s. In par- ticular, the triality which corresponds to the 3 o\ufb00-diagonal octonionic elements of the exceptional algebra is associated to the 3 ge nerations of the Standard Model while the representation of the octoni ons as a complex 4-dimensional space C \u2295 C3 is associated to the quark-lepton symmetry, (one complex for the lepton and 3 for the correspon ding quark). More generally it is is suggested that the replaceme nt of the algebra of real functions on spacetime by the algebra of func tions on spacetime with values in a \ufb01nite-dimensional Euclidean Jor dan alge- bra which plays the role of \u201cthe algebra of real functions\u201d on the corresponding almost classical quantum spacetime is relev ant in par- ticle physics. This leads us to study the theory of Jordan mod ules and to develop the di\ufb00erential calculus over Jordan algebras , (i.e. to introduce the appropriate notion of di\ufb00erential forms). We f ormulate the corresponding de\ufb01nition of connections on Jordan modul es. May 3, 2016 1Laboratoire de Physique Th\u00b4 eorique, CNRS, Universit\u00b4 e Paris-Sud, Universit\u00b4 e Paris- Saclay, B\u02c6 atiment 210, F-91 405 Orsay. Michel.Dubois-Violette@u-psud.fr",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
    "CreationDate": "D:20160502203323-04'00'",
@@ -366,6 +367,93 @@
   "likely_scanned": false,
   "toc_entries": 28,
   "sections": 13,
-  "chars_total": 60616
+  "chars_total": 60616,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 8,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.864,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-23-the-quark-lepton-symmetry",
+     "title": "The quark-lepton symmetry",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-24-gauge-theoretical-aspect",
+     "title": "Gauge theoretical aspect",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-31-the-3-generations",
+     "title": "the 3-generations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-32-finite-quantum-spaces",
+     "title": "Finite quantum spaces",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-34-exceptional-almost-classical-quantum-spacetim",
+     "title": "Exceptional almost classical quantum spacetime",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-4-modules-and-fundamental-fermions",
+     "title": "Modules and fundamental fermions",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-41-modules-over-jordan-algebras",
+     "title": "Modules over Jordan algebras",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-43-modules-for-the-two-families-by-generation",
+     "title": "Modules for the two families by generation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-45-charge-conjugation",
+     "title": "Charge conjugation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-6-connections-on-jordan-modules",
+     "title": "Connections on Jordan modules",
+     "prose_ratio": 0.758,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-63-general-connections",
+     "title": "General connections",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-7-tentative-conclusion",
+     "title": "Tentative conclusion",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.483,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

@@ -7,341 +7,234 @@ section_number: 4
 pages: 10-13
 source_pdf: 2409.09372v4.pdf
 source_sha256: b7eed67ec102ab3d
+text_source: latex
+latex_prose_ratio: 0.972
+latex_coverage_ratio: 0.72
 doc_brief: "MARKOV TRACES ON DEGENERATE CYCLOTOMIC HECKE ALGEBRAS DEKE ZHAO Dedicated to Professor Yingbo Zhang on the occasion of her 80th birthday — LetH n(u) be the degenerate cyclotomic Hecke algebra with"
 ---
-In this section we construct aC(u)–linear function onH n(u) by using the standard bases and show
-it constitutes a non-normalized Markov trace, thereby proving Theorem 1.5 from the introduction.
+[]{#Sec:BK-trace label="Sec:BK-trace"} In this section we construct a $\mathbb{C}(\boldsymbol{u})$--linear function on $H_n(\boldsymbol{u})$ by using the standard bases and show it constitutes a non-normalized Markov trace, thereby proving Theorem [\[Them:Markov-BK\]](#Them:Markov-BK){reference-type="ref" reference="Them:Markov-BK"} from the introduction.
+
 The following easy verified fact will be useful.
-Lemma 4.1.For integers1≤k≤m−1andn≥1, we have
-Jk
-n+1sn =s nJk
-n +
-k−1X
-i=0
-Jk−1−i
-n+1 Ji
-n.
-Proof.Apply induction onkandk= 1 follows by applying Eq. (1.3). Assume that it holds fork−1≥1.
-Fork,
-Jk
-n+1sn =J k−1
-n+1(snJn + 1)
-=
-
-snJk−1
-n +
-k−2X
-i=0
-Jk−2−i
-n+1 Ji
-n
-
-Jn +J k−1
-n+1
-=s nJk
-n +
-k−2X
-i=0
-Jk−2−i
-n+1 Ji+1
-n +J k−1
-n+1
-=s nJk
-n +
-k−1X
-i=0
-Jk−1−i
-n+1 Ji
-n.
-The proof is completed. □
-Lemma 4.2.Define the bimodule map
-ψn :H n(u)⊗Hn−1(u)Hn(u)⊕
-m−1M
-i=0
-Hn(u)
-
-→H n+1(u)
-by
-a⊗b⊕
-m−1M
-i=0
-ai
-
-7→as nb+
-m−1X
-i=0
-aiJi
-n+1.
-Thenψ n is anH n(u)-bimodule isomorphism.
-Proof.Analogous to Lemma 3.1’s proof using standard basis arguments.□
-Givenz,y 1,...,y m−1∈C(u), we inductively define aC(u)-linear function Tr onH ∞(u) as follows.
-Assume Tr is defined onH n(u). Forx∈H n+1(u) decomposed via Lemma 4.2 as
-x=ψ n
-
-a⊗b⊕
-m−1M
-k=0
-αkJk
-n+1
-
-,
-10
-we define
-(4.3) Tr(x) :=z·Tr(ab) + Tr(α 0) +
-m−1X
-k=1
-Tr(Jk
-n+1)Tr(αk),
-where Tr(1) = 0 and Tr(Jk
-n+1) determined by:
-(M4) Tr(hsnJk
-nsn) = Tr(Jk
-n)Tr(h) for allh∈H n(u) and for all 1≤k≤m−1;
-(M5) Tr(Jk
-1 ) =y k for allk= 1,...,m−1.
-Let us remark that (M4) and Lemma 4.1 show that
-Tr(Jk
-n+1) = Tr(Jk
-n) +
-k−1X
-i=0
-Tr(Ji
-nJk−1−i
-n+1 sn)
-for 1≤k≤m−1,n= 1,2,....
-Proposition 4.4.TheC(u)–linear functionTrsatisfies
-(M1) Tr(sn) =zfor alln≥1;
-(M3) Tr(xsny) =z·Tr(xy)for allx,y∈H n(u);
-(M4’) Tr(snJk
-nsn) = Tr(Jk
-n)for1≤k≤m−1and for alln≥1.
-Proof.(M1, M3) follows directly from Eq. (4.3) via bimodule structure, while (M4’) is immediate from
-(M4). □
-Remark4.5.This trace construction specializes to the Brundan–Kleshchev traceτ BK through parameter
-specialization, analogous to [9, Lemma 4.3]. The non-normalized condition Tr(1) = 0 distinguishes it
-from the normalized Markov traces while preserving essential conjugation properties.
-We now show that theC(u)–linear function Tr defined by Eq. (4.3) is a trace onH ∞(u), i.e.,
-Tr(αβ) = Tr(βα) for allα,β∈H ∞(u).
-Our approach follows arguments parallel to those in Section 3.
-Lemma 4.6.For anyx,y∈H n(u)and1≤k≤m−1,
-Tr(xJk
-n+1y) = Tr(Jk
-n+1)Tr(xy).
-Proof.Letw∈S n be expressed in Jones normal form:
-w= (s i1si1−1···s k1)(si2si2−1···s k2)···(s irsir−1···s kr),
-where 0< i 1 <···< i r < n, 0< k1 <···< k r≤n−1, andi j≥k j for allj. By Eq. (1.4), we may
-assume thaty=J a1
-1 ···J an
-n w′sn−1, where 0≤a i≤m−1 andw ′∈S n−1.
-Applying Lemma 2.3(ii, iii) for commutation relations:
-Tr(xJk
-n+1y) = Tr(xJk
-n+1Ja1
-1 ···J an
-n w′sn−1)
-= Tr(xJa1
-1 ···J an
-n w′sn−1Jk
-n+1) (Lemma 2.3)
-= Tr(xy)Tr(Jk
-n+1).
-It completes the proof. □
-Lemma 4.7.For sllx,y∈H n(u),
-Tr(xsnysn) = Tr(snxsny).
-In particular, for all1≤k≤m−1,
-Tr(Jk
-nsnsn−1sn) = Tr(snJk
-nsnsn−1).
-Proof.The second equality follows from the first by takingx=J k
-n andy=s n−1. We establish the first
-equality through case by case analysis:
-Case 1.x,y∈H n−1(u):
-Tr(xsnysn) = Tr(xy) = Tr(snxsny).
-Case 2.x∈H n−1(u),y=αs n−1βwhereα,β∈H n−1(u), or vice versa:
-Tr(xsnysn) = Tr(xα(snsn−1sn)β) = Tr(snxsny).
-Case 3.x=αs n−1β,y=δs n−1γwhereα,β,δ,γ∈H n−1(u):
-Tr(xsnysn) = Tr(αsn−1βδ(snsn−1sn)γ) =z 2 Tr(αβδγ),
-Tr(snxsny) = Tr(α(snsn−1sn)βδsn−1γ) =z 2 Tr(αβδγ).
-11
-Case 4.x∈H n−1(u),y=αJ ℓ
-n whereα∈H n−1(u) and 1≤ℓ≤m−1, or vice versa:
-Tr(xsnysn) = Tr(xαsnJℓ
-nsn) = Tr(Jℓ
-n)Tr(xα),
-Tr(snxsny) = Tr(xαJℓ
-n) = Tr(Jℓ
-n)Tr(xα).
-Case 5.x=αJ ℓ
-n,y=βJ k
-n whereα,β∈H n−1(u) and 1≤k,ℓ≤m−1:
-Tr(xsnysn) = Tr(αβJℓ
-nsnJk
-nsn) = tr(Jk
-n)tr(Jℓ
-n)Tr(αβ),
-Tr(snxsny) = Tr(αsnJℓ
-nsnJk
-nβ) = tr(Jℓ
-n)Tr(Jk
-n)Tr(αβ).
-Case 6.x=αs n−1β,y=γJ ℓ
-n whereα,β,γ∈H n−1(u), or vice versa:
-Tr(xsnysn) = Tr(αsn−1βγsnJℓ
-nsn) =zTr(J ℓ
-n)Tr(αβγ),
-Tr(snxsny) = Tr(αsnsn−1snβγJℓ
-n) =zTr(J ℓ
-n)Tr(αβγ).
-All cases demonstrate the required equality, thus completing the proof.□
-Lemma 4.8.For anyh n∈H n(u),1≤i≤n−1, and1≤k≤m−1,
-Tr(hnsnsn−1···s iJk
-isn) = Tr(snhnsnsn−1···s iJk
-i ),
-Tr(hnsnsn−1···s iJk
-it) = Tr(thnsnsn−1···s iJk
-i ).
-Proof.For thefirst equality, we have
-Tr(hnsnsn−1···s iJk
-isn) = Tr(hnsnsn−1snsn−2···s iJk
-i )
-=zTr(h nsn−2···s iJk
-i ).
-For Tr(snhnsnsn−1···s iJk
-i ), we apply the case by case analysis:
-Case 1. hn∈H n−1(u):
-Tr(snhnsnsn−1···s iJk
-i ) = Tr(hnsn−1···s iJk
-i )
-=zTr(h nsn−2···s iJk
-i ).
-Case 2. hn =αs n−1βwhereα,β∈H n−1(u):
-Tr(snhnsn···s iJk
-i ) = Tr(αsnsn−1snβsn−1···s iJk
-i )
-=z 2 Tr(αβsn−2···s iJk
-i )
-=zTr(h nsn−2···s iJk
-i ).
-Case 3. hn =αJ ℓ
-n whereα∈H n−1(u),1≤ℓ≤m−1:
-Tr(snhnsn···s iJk
-i ) = Tr(α(snJℓ
-nsn)sn−1···s iJk
-i )
-=zTr(J ℓ
-n)Tr(αsn−2···s iJk
-i )
-=zTr(h nsn−2···s iJk
-i ).
-Thus, the first equality holds.
-Second Equality:By induction onn. It is trivial forn= 1. Assume it is true forn≥1. Forn+ 1,
-we have
-Tr(hn+1sn+1···s iJk
-it) =zTr(h n+1sn···s iJk
-it) (by (M3))
-=zTr(th n+1sn···s iJk
-i ) (inductive hypothesis)
-= Tr(thn+1sn+1···s iJk
-i ).
-This completes the proof. □
-Lemma 4.9.For anyh n∈H n(u),i= 1,...,n, and1≤k≤m−1, we have
-Tr(hnJk
-n+1t) = Tr(th nJk
-n+1),
-Tr(hnJk
-n+1si) = Tr(s ihnJk
-n+1).
-Proof.Thanks to Lemma 2.4(vi),
-Tr(hnJk
-n+1t) = Tr(Jk
-n+1)Tr(hnt) = Tr(Jk
-n+1)Tr(thn) = Tr(thnJk
-n+1),
-where the second equality follows by the induction argument onn. Thus the first equality holds.
-Now we show the second equality holds. Fori= 1,...,n−1,
-Tr(hnJk
-n+1si) = Tr(Jk
-n+1)Tr(hnsi) = Tr(Jk
-n+1)Tr(sihn) = Tr(sihnJk
-n+1),
-where the middle equality uses the induction hypothesis Tr(h nsi) = Tr(sihn).
-12
-Now Lemma 4.1 and Eq. (4.3) show
-Tr(hnJk
-n+1sn) =zTr(h nJk
-n) +
-k−1X
-i=0
-Tr(hnJi
-nJk−1−i
-n+1 ).
-On the other hand, ifh n∈H n−1(u) thens nhn =h nsn and Lemma 4.1 shows
-Tr(snhnJk
-n+1) =zTr(h nJk
-n) +
-k−1X
-i=0
-tr(hnJi
-nJk−1−i
-n+1 ).
-Ifh n =αs n−1β∈H n(u) whereα,β∈H n−1(u), then
-Tr(snαsn−1βJk
-n+1) = Tr(α(snJk
-n+1)sn−1β)
-=zTr(αJ k
-nsn−1β) +
-k−1X
-i=0
-Tr(αJi
-nJk−1−i
-n+1 sn−1β)
-=zTr(h nJk
-n) +
-k−1X
-i=0
-Tr(hnJi
-nJk−1−i
-n+1 ),
-where the last equality follows by an induction argument.
-Ifh n =αJ ℓ
-n∈H n(u) whereα∈H n−1(u) and 1≤ℓ≤m−1, then
-Tr(snαJℓ
-nJk
-n+1) = Tr(α(snJk
-n+1)Jℓ
-n)
-=zTr(αJ k+ℓ
-n ) +
-k−1X
-i=0
-Tr(αJi
-nJk−1−i
-n+1 Jℓ
-n)
-=zTr(h nJk
-n) +
-k−1X
-i=0
-Tr(hnJi
-nJk−1−i
-n+1 ).
-Thus Tr(hnJk
-n+1sn) = Tr(snhnJk
-n+1) holds in all cases. It completes the proof.□
-We are ready to show Tr is a trace function onH ∞(u).
-Theorem 4.10.For alla,b∈H ∞(u),
-Tr(ab) = Tr(ba).
-Proof.We verify Tr(ax) = Tr(xa) inductively. Assume it holds for alla,b∈H n(u). Fora,b∈H n+1(u),
-it suffices to check whenbis a generators i (1≤i≤n) ort, that is,
-(∗) Tr(at) = Tr(ta) and Tr(as i) = Tr(sia) for 1≤i≤n.
-Thanks to Theorem 2.6, we only need to check that Eq. (∗) holds whenais an element of the four forms
-(I)—(IV): Ifais an element of form (I), i.e.,a=h n∈H n(u), then the induction hypothesis gives
-Tr(hnt) = Tr(thn) and Tr(hnsi) = Tr(sihn) fori= 1,...,n−1.
-Further Proposition 4.4(M3) shows
-Tr(asn) =zTr(a) = Tr(s na).
-Ifais an element of forms (II)—(IV), the assertion follows directly form Lemmas 4.7, 4.8, and 4.9.□
-Now we can prove Theorem 1.5 in Introduction.
-Proof of Theorem 1.5.(M1), (M3)–(M5) follow directly by Eq. (4.3) and (M2) follows by applying The-
-orem 4.10. Note that having proved the existence, the uniqueness of Tr follows immediately. Indeed
-Theorem 2.6 shows that Tr(x) can be clearly computed inductively using rules (M1)–(M4) for any
-x∈H n+1(u). □
+
+::: lemma
+[]{#Lemm:J-s_n label="Lemm:J-s_n"} For integers $1 \leq k\leq m-1$ and $n \geq 1$, we have $$\begin{align*}
+J_{n+1}^k s_n &= s_n J_n^k + \sum_{i=0}^{k-1} J_{n+1}^{k-1-i} J_n^i.
+\end{align*}$$
+:::
+
+::: proof
+*Proof.* Apply induction on $k$ and $k=1$ follows by applying Eq. [\[Equ:JM-H\]](#Equ:JM-H){reference-type="eqref" reference="Equ:JM-H"}. Assume that it holds for $k-1\geq 1$. For $k$, $$\begin{align*}
+J_{n+1}^{k} s_n &= J_{n+1}^{k-1}(s_nJ_n+1)\\
+&= \biggl(s_n J_n^{k-1} + \sum_{i=0}^{k-2} J_{n+1}^{k-2-i} J_n^i\biggr)J_n+J_{n+1}^{k-1}\\
+&=s_nJ_n^{k}+\sum_{i=0}^{k-2} J_{n+1}^{k-2-i} J_n^{i+1}+J_{n+1}^{k-1}\\
+&= s_n J_n^k + \sum_{i=0}^{k-1} J_{n+1}^{k-1-i} J_n^i.
+\end{align*}$$ The proof is completed. ◻
+:::
+
+::: lemma
+[]{#Lemm:Bimodules-iso-JM label="Lemm:Bimodules-iso-JM"} Define the bimodule map $$\psi_n: H_n(\boldsymbol{u}) \otimes_{H_{n-1}(\boldsymbol{u})} H_n(\boldsymbol{u}) \oplus \biggl(\bigoplus_{i=0}^{m-1} H_n(\boldsymbol{u})\biggr) \to H_{n+1}(\boldsymbol{u})$$ by $$a \otimes b \oplus \biggl(\bigoplus_{i=0}^{m-1} a_i\biggr) \mapsto a s_n b + \sum_{i=0}^{m-1} a_i J_{n+1}^i.$$ Then $\psi_n$ is an $H_n(\boldsymbol{u})$-bimodule isomorphism.
+:::
+
+::: proof
+*Proof.* Analogous to Lemma [\[Lemm:Bimodules-iso\]](#Lemm:Bimodules-iso){reference-type="ref" reference="Lemm:Bimodules-iso"}'s proof using standard basis arguments. ◻
+:::
+
+Given $z, y_1, \ldots, y_{m-1}\in \mathbb{C}(\boldsymbol{u})$, we inductively define a $\mathbb{C}(\boldsymbol{u})$-linear function $\mathrm{Tr}$ on $H_\infty(\boldsymbol{u})$ as follows. Assume $\mathrm{Tr}$ is defined on $H_n(\boldsymbol{u})$. For $x \in H_{n+1}(\boldsymbol{u})$ decomposed via Lemma [\[Lemm:Bimodules-iso-JM\]](#Lemm:Bimodules-iso-JM){reference-type="ref" reference="Lemm:Bimodules-iso-JM"} as $$x = \psi_n\biggl(a \otimes b \oplus \biggl(\bigoplus_{k=0}^{m-1} \alpha_k J_{n+1}^k\biggr)\biggr),$$ we define $$\begin{equation}
+\label{Equ:tr-def-JM}
+\mathrm{Tr}(x) :=z\cdot\mathrm{Tr}(ab) + \mathrm{Tr}(\alpha_0) + \sum_{k=1}^{m-1} \mathrm{Tr}(J_{n+1}^k) \mathrm{Tr}(\alpha_k),
+\end{equation}$$ where $\mathrm{Tr}(1) = 0$ and $\mathrm{Tr}(J_{n+1}^k)$ determined by:
+
+- $\mathrm{Tr}(h s_n J_{n}^k s_n) = \mathrm{Tr}(J_{n}^k) \mathrm{Tr}(h)$ for all $h \in H_n(\boldsymbol{u})$ and for all $1 \leq k \leq m-1$;
+
+- $\mathrm{Tr}(J_1^k) =y_k$ for all $k=1,\ldots,m-1$.
+
+Let us remark that (M4) and Lemma [\[Lemm:J-s_n\]](#Lemm:J-s_n){reference-type="ref" reference="Lemm:J-s_n"} show that $$\begin{equation*}
+  \mathrm{Tr}(J_{n+1}^k)=\mathrm{Tr}(J_{n}^k)+\sum_{i=0}^{k-1} \mathrm{Tr}(J_n^iJ_{n+1}^{k-1-i}s_n)
+\end{equation*}$$ for $1\leq k\leq m-1$, $n=1,2,\ldots$.
+
+::: proposition
+[]{#Prop:Tr-M label="Prop:Tr-M"} The $\mathbb{C}(\boldsymbol{u})$--linear function $\mathrm{Tr}$ satisfies
+
+1.  $\mathrm{Tr}(s_n) = z$ for all $n \geq 1$;
+
+2.  $\mathrm{Tr}(x s_n y) = z\cdot\mathrm{Tr}(xy)$ for all $x,y \in H_n(\boldsymbol{u})$;
+
+3.  $\mathrm{Tr}(s_n J_n^k s_n) = \mathrm{Tr}(J_n^k)$ for $1 \leq k \leq m-1$ and for all $n\geq 1$.
+:::
+
+::: proof
+*Proof.* (M1, M3) follows directly from Eq. [\[Equ:tr-def-JM\]](#Equ:tr-def-JM){reference-type="eqref" reference="Equ:tr-def-JM"} via bimodule structure, while (M4') is immediate from (M4). ◻
+:::
+
+::: remark
+This trace construction specializes to the Brundan--Kleshchev trace $\tau_{\mathrm{BK}}$ through parameter specialization, analogous to [@GIM Lemma 4.3]. The non-normalized condition $\mathrm{Tr}(1)=0$ distinguishes it from the normalized Markov traces while preserving essential conjugation properties.
+:::
+
+We now show that the $\mathbb{C}(\boldsymbol{u})$--linear function $\mathrm{Tr}$ defined by Eq. [\[Equ:tr-def-JM\]](#Equ:tr-def-JM){reference-type="eqref" reference="Equ:tr-def-JM"} is a trace on $H_{\infty}(\boldsymbol{u})$, i.e., $$\begin{equation*}
+    \mathrm{Tr}(\alpha\beta) = \mathrm{Tr}(\beta\alpha) \quad \text{ for all } \alpha,\beta \in H_{\infty}(\boldsymbol{u}).
+\end{equation*}$$ Our approach follows arguments parallel to those in Section [\[Sec:Markov-traces\]](#Sec:Markov-traces){reference-type="ref" reference="Sec:Markov-traces"}.
+
+::: lemma
+[]{#Lemm:tr(xJy)=tr(xy) label="Lemm:tr(xJy)=tr(xy)"} For any $x,y \in H_n(\boldsymbol{u})$ and $1 \leq k\leq m-1$, $$\begin{equation*}
+    \mathrm{Tr}(xJ_{n+1}^k y) = \mathrm{Tr}(J_{n+1}^k) \mathrm{Tr}(xy).
+\end{equation*}$$
+:::
+
+::: proof
+*Proof.* Let $w \in \mathfrak{S}_n$ be expressed in Jones normal form: $$\begin{align*}
+    w = (s_{i_1}s_{i_1-1}\cdots s_{k_1})(s_{i_2}s_{i_2-1}\cdots s_{k_2}) \cdots (s_{i_r}s_{i_r-1}\cdots s_{k_r}),
+\end{align*}$$ where $0 < i_1 < \cdots < i_r < n$, $0 < k_1 < \cdots < k_r \leq n-1$, and $i_j \geq k_j$ for all $j$. By Eq. [\[Equ:Standard-basis\]](#Equ:Standard-basis){reference-type="eqref" reference="Equ:Standard-basis"}, we may assume that $y = J_1^{a_1}\cdots J_n^{a_n}w' s_{n-1}$, where $0 \leq a_i\leq m-1$ and $w' \in \mathfrak{S}_{n-1}$.
+
+Applying Lemma [\[Lem:si-Jj\]](#Lem:si-Jj){reference-type="ref" reference="Lem:si-Jj"}(ii, iii) for commutation relations: $$\begin{align*}
+    \mathrm{Tr}(xJ_{n+1}^k y) &= \mathrm{Tr}(xJ_{n+1}^k J_1^{a_1}\cdots J_n^{a_n}w's_{n-1}) \\
+    &= \mathrm{Tr}(xJ_1^{a_1}\cdots J_n^{a_n} w's_{n-1} J_{n+1}^{k}) \quad \text{(Lemma~\ref{Lem:si-Jj})} \\
+    &= \mathrm{Tr}(xy) \mathrm{Tr}(J_{n+1}^k).
+\end{align*}$$ It completes the proof. ◻
+:::
+
+::: lemma
+[]{#Lemm:JM-xs_nys_n label="Lemm:JM-xs_nys_n"} For sll $x,y\in H_{n}(\boldsymbol{u})$, $$\begin{equation*}
+    \mathrm{Tr}(xs_nys_n) = \mathrm{Tr}(s_nxs_ny).
+\end{equation*}$$ In particular, for all $1\leq k\leq m-1$, $$\begin{equation*}
+    \mathrm{Tr}(J_n^ks_ns_{n-1}s_n) = \mathrm{Tr}(s_nJ_n^{k}s_ns_{n-1}).
+\end{equation*}$$
+:::
+
+::: proof
+*Proof.* The second equality follows from the first by taking $x = J_n^k$ and $y = s_{n-1}$. We establish the first equality through case by case analysis:
+
+**Case 1.** $x,y \in H_{n-1}(\boldsymbol{u})$: $$\begin{align*}
+    \mathrm{Tr}(xs_nys_n) &= \mathrm{Tr}(xy) = \mathrm{Tr}(s_nxs_ny).
+\end{align*}$$ **Case 2.** $x \in H_{n-1}(\boldsymbol{u})$, $y = \alpha s_{n-1}\beta$ where $\alpha,\beta\in H_{n-1}(\boldsymbol{u})$, or vice versa: $$\begin{align*}
+    \mathrm{Tr}(xs_nys_n) &=\mathrm{Tr}(x\alpha(s_ns_{n-1}s_n)\beta)=\mathrm{Tr}(s_nxs_ny).
+\end{align*}$$ **Case 3.** $x = \alpha s_{n-1}\beta$, $y = \delta s_{n-1}\gamma$ where $\alpha,\beta,\delta,\gamma\in H_{n-1}(\boldsymbol{u})$: $$\begin{align*}
+    \mathrm{Tr}(xs_nys_n) &=\mathrm{Tr}(\alpha s_{n-1}\beta\delta(s_ns_{n-1}s_n)\gamma)= z^2\,\mathrm{Tr}(\alpha\beta\delta\gamma), \\
+    \mathrm{Tr}(s_nxs_ny) &=\mathrm{Tr}(\alpha (s_ns_{n-1}s_n)\beta\delta s_{n-1}\gamma)= z^2\,\mathrm{Tr}(\alpha\beta\delta\gamma).
+\end{align*}$$ **Case 4.** $x \in H_{n-1}(\boldsymbol{u})$, $y = \alpha J_n^{\ell}$ where $\alpha\in H_{n-1}(\boldsymbol{u})$ and $1\leq\ell\leq m-1$, or vice versa: $$\begin{align*}
+    \mathrm{Tr}(xs_nys_n)&=\mathrm{Tr}(x\alpha s_nJ_n^{\ell}s_n)=
+    \mathrm{Tr}(J_n^{\ell})\mathrm{Tr}(x\alpha), \\
+    \mathrm{Tr}(s_nxs_ny) &=\mathrm{Tr}(x\alpha J_n^{\ell})= \mathrm{Tr}(J_n^{\ell})\mathrm{Tr}(x\alpha).
+\end{align*}$$ **Case 5.** $x = \alpha J_n^{\ell}$, $y = \beta J_n^k$ where $\alpha,\beta\in H_{n-1}(\boldsymbol{u})$ and $1\leq k, \ell\leq m-1$: $$\begin{align*}
+ \mathrm{Tr}(xs_nys_n)&= \mathrm{Tr}(\alpha\beta J_n^{\ell}s_nJ_n^ks_n)=\mathrm{tr}(J_n^{k})\mathrm{tr}(J_n^{\ell})\mathrm{Tr}(\alpha\beta), \\
+\mathrm{Tr}(s_nxs_ny)&= \mathrm{Tr}(\alpha s_nJ_n^{\ell}s_nJ_n^k\beta)=\mathrm{tr}(J_n^{\ell})\mathrm{Tr}(J_n^k)\mathrm{Tr}(\alpha\beta).
+\end{align*}$$
+
+**Case 6.** $x = \alpha s_{n-1}\beta$, $y = \gamma J_n^{\ell}$ where $\alpha,\beta,\gamma\in H_{n-1}(\boldsymbol{u})$, or vice versa: $$\begin{align*}
+    \mathrm{Tr}(xs_nys_n) &=\mathrm{Tr}(\alpha s_{n-1}\beta\gamma s_n J_n^{\ell}s_n)= z\,\mathrm{Tr}(J_n^{\ell})\mathrm{Tr}(\alpha\beta\gamma), \\
+    \mathrm{Tr}(s_nxs_ny) &=\mathrm{Tr}(\alpha s_ns_{n-1}s_n\beta\gamma J_n^{\ell})= z\,\mathrm{Tr}(J_n^{\ell})\mathrm{Tr}(\alpha\beta\gamma).
+\end{align*}$$ All cases demonstrate the required equality, thus completing the proof. ◻
+:::
+
+::: lemma
+[]{#Lemm:JM-Typer-III label="Lemm:JM-Typer-III"} For any $h_n \in H_n(\boldsymbol{u})$, $1 \leq i\leq n-1$, and $1 \leq k\leq m-1$, $$\begin{align*}
+    \mathrm{Tr}(h_n s_n s_{n-1} \cdots s_i J_i^k s_n) &=
+    \mathrm{Tr}(s_n h_n s_n s_{n-1} \cdots s_i J_i^k), \\
+    \mathrm{Tr}(h_n s_n s_{n-1} \cdots s_i J_i^k t) &=
+     \mathrm{Tr}(t h_n s_n s_{n-1} \cdots s_i J_i^k).
+\end{align*}$$
+:::
+
+::: proof
+*Proof.* For the **first equality**, we have $$\begin{align*}
+    \mathrm{Tr}(h_n s_n s_{n-1} \cdots s_i J_i^k s_n)
+    &= \mathrm{Tr}(h_n s_n s_{n-1} s_n s_{n-2} \cdots s_i J_i^k) \\
+    &= z\,\mathrm{Tr}(h_n s_{n-2} \cdots s_i J_i^k).
+\end{align*}$$ For $\mathrm{Tr}(s_n h_n s_n s_{n-1} \cdots s_i J_i^k)$, we apply the case by case analysis:
+
+[Case 1.]{.underline} $h_n \in H_{n-1}(\boldsymbol{u})$: $$\begin{align*}
+    \mathrm{Tr}(s_n h_n s_n s_{n-1} \cdots s_i J_i^k)
+    &= \mathrm{Tr}(h_n s_{n-1} \cdots s_i J_i^k) \\
+    &= z\,\mathrm{Tr}(h_n s_{n-2} \cdots s_i J_i^k).
+\end{align*}$$
+
+[Case 2.]{.underline} $h_n = \alpha s_{n-1} \beta$ where $\alpha, \beta \in H_{n-1}(\boldsymbol{u})$: $$\begin{align*}
+    \mathrm{Tr}(s_n h_n s_n \cdots s_i J_i^k)
+    &= \mathrm{Tr}(\alpha s_n s_{n-1} s_n \beta s_{n-1} \cdots s_i J_i^k) \\
+    &= z^2\,\mathrm{Tr}(\alpha \beta s_{n-2} \cdots s_i J_i^k) \\
+    &= z\,\mathrm{Tr}(h_n s_{n-2} \cdots s_i J_i^k).
+\end{align*}$$
+
+[Case 3.]{.underline} $h_n = \alpha J_n^\ell$ where $\alpha \in H_{n-1}(\boldsymbol{u}), 1 \leq \ell\leq m -1$: $$\begin{align*}
+    \mathrm{Tr}(s_n h_n s_n \cdots s_i J_i^k)
+    &= \mathrm{Tr}(\alpha (s_n J_n^\ell s_n) s_{n-1} \cdots s_i J_i^k) \\
+    &= z\,\mathrm{Tr}(J_n^\ell) \mathrm{Tr}(\alpha s_{n-2} \cdots s_i J_i^k) \\
+    &= z\,\mathrm{Tr}(h_n s_{n-2} \cdots s_i J_i^k).
+\end{align*}$$ Thus, the first equality holds.
+
+**Second Equality:** By induction on $n$. It is trivial for $n = 1$. Assume it is true for $n \geq 1$. For $n+1$, we have $$\begin{align*}
+    \mathrm{Tr}(h_{n+1} s_{n+1} \cdots s_i J_i^k t)
+    &= z\,\mathrm{Tr}(h_{n+1} s_{n} \cdots s_i J_i^k t) \quad \text{(by (M3))} \\
+    &= z\,\mathrm{Tr}(t h_{n+1} s_{n} \cdots s_i J_i^k) \quad \text{(inductive hypothesis)} \\
+    &= \mathrm{Tr}(t h_{n+1} s_{n+1} \cdots s_i J_i^k).
+\end{align*}$$ This completes the proof. ◻
+:::
+
+::: lemma
+[]{#Lemm:JM-Type-IV label="Lemm:JM-Type-IV"}For any $h_{n}\in H_{n}(\boldsymbol{u})$, $i=1, \ldots, n$, and $1\leq k\leq m-1$, we have $$\begin{eqnarray*}
+\mathrm{Tr}(h_{n}J_{n+1}^kt)&=&\mathrm{Tr}(th_{n}J_{n+1}^k),\\
+\mathrm{Tr}(h_{n}J_{n+1}^ks_i)&=&\mathrm{Tr}(s_ih_{n}J_{n+1}^k).
+\end{eqnarray*}$$
+:::
+
+::: proof
+*Proof.* Thanks to Lemma [\[Lemm:s-t\]](#Lemm:s-t){reference-type="ref" reference="Lemm:s-t"}(vi), $$\begin{align*}
+\mathrm{Tr}(h_{n}J_{n+1}^kt)&=\mathrm{Tr}(J_{n+1}^k)\mathrm{Tr}(h_{n}t)=\mathrm{Tr}(J_{n+1}^k)
+\mathrm{Tr}(th_{n})=\mathrm{Tr}(th_{n}J_{n+1}^k),
+\end{align*}$$ where the second equality follows by the induction argument on $n$. Thus the first equality holds.
+
+Now we show the second equality holds. For $i=1, \ldots, n-1$, $$\begin{align*}
+\mathrm{Tr}(h_{n}J_{n+1}^ks_i)=\mathrm{Tr}(J_{n+1}^k)\mathrm{Tr}(h_{n}s_i)
+=\mathrm{Tr}(J_{n+1}^k)\mathrm{Tr}(s_ih_{n})
+=\mathrm{Tr}(s_ih_{n}J_{n+1}^k),
+\end{align*}$$ where the middle equality uses the induction hypothesis $\mathrm{Tr}(h_{n}s_i)=\mathrm{Tr}(s_ih_{n})$.
+
+Now Lemma [\[Lemm:J-s_n\]](#Lemm:J-s_n){reference-type="ref" reference="Lemm:J-s_n"} and Eq. [\[Equ:tr-def-JM\]](#Equ:tr-def-JM){reference-type="eqref" reference="Equ:tr-def-JM"} show $$\begin{align*}
+\mathrm{Tr}(h_{n}J_{n+1}^ks_n)&=z\,\mathrm{Tr}(h_{n}J_n^{k})+
+\sum_{i=0}^{k-1}\mathrm{Tr}(h_nJ_{n}^iJ_{n+1}^{k-1-i}).
+\end{align*}$$
+
+On the other hand, if $h_{n}\in H_{n-1}(\boldsymbol{u})$ then $s_nh_n=h_ns_n$ and Lemma [\[Lemm:J-s_n\]](#Lemm:J-s_n){reference-type="ref" reference="Lemm:J-s_n"} shows $$\begin{eqnarray*}
+\mathrm{Tr}(s_nh_{n}J_{n+1}^k)&=&z\,\mathrm{Tr}(h_{n}J_n^{k})+
+\sum_{i=0}^{k-1}\mathrm{tr}(h_nJ_{n}^iJ_{n+1}^{k-1-i}).
+\end{eqnarray*}$$
+
+If $h_{n}=\alpha s_{n-1}\beta\in H_{n}(\boldsymbol{u})$ where $\alpha,\beta\in H_{n-1}(\boldsymbol{u})$, then $$\begin{align*}
+\mathrm{Tr}(s_n\alpha s_{n-1}\beta J_{n+1}^k)
+&=\mathrm{Tr}(\alpha (s_n J_{n+1}^k)s_{n-1}\beta)\\
+&=z\,\mathrm{Tr}(\alpha J_n^{k}s_{n-1}\beta)+
+\sum_{i=0}^{k-1}\mathrm{Tr}(\alpha J_{n}^iJ_{n+1}^{k-1-i}s_{n-1}\beta)\\
+&=z\,\mathrm{Tr}(h_{n}J_n^{k})+
+\sum_{i=0}^{k-1}\mathrm{Tr}(h_nJ_{n}^iJ_{n+1}^{k-1-i}),
+\end{align*}$$ where the last equality follows by an induction argument.
+
+If $h_{n}=\alpha J_{n}^{\ell}\in H_{n}(\boldsymbol{u})$ where $\alpha\in H_{n-1}(\boldsymbol{u})$ and $1\leq \ell\leq m-1$, then $$\begin{align*}
+\mathrm{Tr}(s_n\alpha J_n^{\ell} J_{n+1}^k)&=\mathrm{Tr}(\alpha (s_n J_{n+1}^k)J_n^{\ell})\\
+&=z\,\mathrm{Tr}(\alpha J_n^{k+\ell})+\sum_{i=0}^{k-1}\mathrm{Tr}(\alpha J_{n}^iJ_{n+1}^{k-1-i}J_n^{\ell})\\
+&=z\,\mathrm{Tr}(h_{n}J_n^{k})+
+\sum_{i=0}^{k-1}\mathrm{Tr}(h_nJ_{n}^iJ_{n+1}^{k-1-i}).
+\end{align*}$$ Thus $\mathrm{Tr}(h_{n}J_{n+1}^ks_n)=\mathrm{Tr}(s_nh_{n}J_{n+1}^k)$ holds in all cases. It completes the proof. ◻
+:::
+
+We are ready to show $\mathrm{Tr}$ is a trace function on $H_{\infty}(\boldsymbol{u})$.
+
+::: theorem
+[]{#Them:ab=ba label="Them:ab=ba"}For all $a,b\in H_{\infty}(\boldsymbol{u})$, $$\begin{align*}
+\mathrm{Tr}(ab)=\mathrm{Tr}(ba).
+\end{align*}$$
+:::
+
+::: proof
+*Proof.* We verify $\mathrm{Tr}(ax)=\mathrm{Tr}(xa)$ inductively. Assume it holds for all $a, b\in H_{n}(\boldsymbol{u})$. For $a, b\in H_{n+1}(\boldsymbol{u})$, it suffices to check when $b$ is a generator $s_i$ ($1\leq i\leq n$) or $t$, that is, $$\begin{align*}
+(*)\qquad\quad\mathrm{Tr}(at)=\mathrm{Tr}(ta) \text{ and } \mathrm{Tr}(as_i)=\mathrm{Tr}(s_ia)\text{ for }1\leq i\leq n.
+\end{align*}$$ Thanks to Theorem [\[Them:Inductive-basis\]](#Them:Inductive-basis){reference-type="ref" reference="Them:Inductive-basis"}, we only need to check that Eq. $(*)$ holds when $a$ is an element of the four forms (I)---(IV): If $a$ is an element of form (I), i.e., $a=h_n\in H_n(\boldsymbol{u})$, then the induction hypothesis gives $$\begin{equation*}
+\mathrm{Tr}(h_nt)=\mathrm{Tr}(th_n)\text{ and }\mathrm{Tr}(h_ns_i)=\mathrm{Tr}(s_ih_n)\text{ for }i=1, \ldots, n-1.
+\end{equation*}$$ Further Proposition [\[Prop:Tr-M\]](#Prop:Tr-M){reference-type="ref" reference="Prop:Tr-M"}(M3) shows $$\begin{equation*}
+  \mathrm{Tr}(as_n)=z\,\mathrm{Tr}(a)=\mathrm{Tr}(s_na).
+\end{equation*}$$ If $a$ is an element of forms (II)---(IV), the assertion follows directly form Lemmas [\[Lemm:JM-xs_nys_n\]](#Lemm:JM-xs_nys_n){reference-type="ref" reference="Lemm:JM-xs_nys_n"}, [\[Lemm:JM-Typer-III\]](#Lemm:JM-Typer-III){reference-type="ref" reference="Lemm:JM-Typer-III"}, and [\[Lemm:JM-Type-IV\]](#Lemm:JM-Type-IV){reference-type="ref" reference="Lemm:JM-Type-IV"}. ◻
+:::
+
+Now we can prove Theorem [\[Them:Markov-BK\]](#Them:Markov-BK){reference-type="ref" reference="Them:Markov-BK"} in Introduction.
+
+::: proof
+*Proof of Theorem [\[Them:Markov-BK\]](#Them:Markov-BK){reference-type="ref" reference="Them:Markov-BK"}.* (M1), (M3)--(M5) follow directly by Eq. [\[Equ:tr-def-JM\]](#Equ:tr-def-JM){reference-type="eqref" reference="Equ:tr-def-JM"} and (M2) follows by applying Theorem [\[Them:ab=ba\]](#Them:ab=ba){reference-type="ref" reference="Them:ab=ba"}. Note that having proved the existence, the uniqueness of $\mathrm{Tr}$ follows immediately. Indeed Theorem [\[Them:Inductive-basis\]](#Them:Inductive-basis){reference-type="ref" reference="Them:Inductive-basis"} shows that $\mathrm{Tr}(x)$ can be clearly computed inductively using rules (M1)--(M4) for any $x\in H_{n+1}(\boldsymbol{u})$. ◻
+:::

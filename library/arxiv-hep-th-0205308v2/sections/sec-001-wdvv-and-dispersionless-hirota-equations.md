@@ -7,124 +7,77 @@ section_number: null
 pages: 3-5
 source_pdf: 0205308v2.pdf
 source_sha256: 2de5a4f40d80174c
+text_source: latex
+latex_prose_ratio: 0.977
+latex_coverage_ratio: 0.946
 doc_brief: "WDVV Equations as Functional Relations — 5 sections: Introduction; WDVV and dispersionless Hirota equ; The associativity equations as coc"
 ---
-The WDVV equations usually follow from the crossing relations
-∑
-k
-Ck
-ijCn
-kl =
-∑
-k
-Ck
-ilCn
-kj (7)
-for the structure constants of some algebra
-φ i ◦ φ j =
-∑
-k
-Ck
-ijφ k. (8)
-It is useful also to write (7) in the matrix form
-Ci · Cj = Cj · Ci, ∀i, j (Ci)l
-m = Cl
-im. (9)
-Equations (7) are algebraic relations and they turn into the WDVV sy stem of nonlin-
-ear diﬀerential equations after expressing the structure const ants in terms of the third
-derivatives of some function F (a1, . . . , a N )
-Ck
-ij = ηklFijl. (10)
-Generically the matrix η can be an arbitrary linear combination with time dependent
-coeﬃcients η = ∑
-j α j(a)Fj , but for simplicity we will mostly consider η = F1. Then
-ηrs = ια dTrs.
-3
-Various rewritings of the WDVV equations are possible. In the Frobe nius manifold
-setting there is a pencil of ﬂat connections, while the general equa tions (1) are equivalent
-[12] to the commuting of matrix-valued vector ﬁelds:
-[∂i − (Fj )−1Fi ∂j, ∂ k − (Fj )−1Fk ∂j] = 0
-(with ﬁxed j). For our purposes one may also rewrite (7) as
-∑
-k
-Ck
-ijFkln =
-∑
-k
-Ck
-ilFkjn . (11)
-With one form C = η−1dT ( i.e. Ck
-ijdai = ηkl∂iTjldai = ηklFijldai) we have
-[Ci, Cj] = 0 ⇐ ⇒C ∧ C = 0 ⇐ ⇒dT ∧ η−1dT = 0. (12)
-Unfortunately the connection C is unrelated to the various connections arising in the
-special K¨ ahler geometry because of the (arbitrary) appearance of η which is unrelated to
-the special K¨ ahler metric. In general the curvature of C is nonvanishing. (The curvature
-will, for example, vanish as a consequence of the WDVV equations if th ere is a symmetry
-Lα dT = µdT , for some matrix µ .) The ﬁnal form of (12) is reminiscent of the Hirota
-bilinear equations which may be interpreted in terms of Pl¨ ucker for mulae, but again the
-appearance of η means the bilinear form in such formulae is not constant. Whatever, the
-ﬁnal form shows that the WDVV equations impose relations on the pe riod matrices T ,
-and consequently restrict the associated Seiberg-Witten curves that can yield solutions
-of (1).
-An important observation was made recently in [13] where it was show n that in
-the case of dispersionless integrable hierarchies the WDVV equation s maybe derived
-directly by diﬀerentiating corresponding Hirota algebraic relations. In particular, the
-solutions associated with the Landau-Ginzburg topological models c an be constructed
-in this way. Below, we will reverse the arrow of this implication and demo nstrate that
-the WDVV equations, if rewritten in terms of second derivatives, ca n be simply viewed
-as certain Hirota-like functional relations.
-The dispersionless Hirota relations (see [13] and references there in about the details
-and their explicit form) for the second derivatives, which can be writ ten as
-Fij = Tij(ϕ ) (13)
-where Tij are some known functions and {ϕ i} denote some restricted set (of cardinality
-N , the size of the matrices under consideration in the ﬁnite-dimension al situation)
-second derivatives, for example
-ϕ i = F1i(a) (14)
-Without specifying form of the functions Tij in (13) this is just a dimensional statement
-that the matrix of second derivatives of any function can be expressed in terms of only
-a vector of variables.
-Consider the “period” matrix (3) which for any integrable system is a function of
-only N variables. This means that in the “Siegel upper half-space” {Tij} of dimension
-N (N + 1)
-2 we have a “submanifold” of dimension N
-Tij = Tij(a1, . . . , a N ) (15)
-4
-or codimension N (N − 1)
-2 given by deﬁning equations
-fA(Tij) = 0 A = 1, . . . , N (N − 1)
-2 (16)
-Of course, on this submanifold (under a generic assumption of nons ingularity) one may
-choose new variables, say
-ϕ i = T1i(a) (17)
-Consequently there exist functional relations
-Tij = Tij(ϕ 1, . . . , ϕ N ) = Tij(a(ϕ 1, . . . , ϕ N )) (18)
-between the matrix elements of the whole period matrix, exactly as o ne has in disper-
-sionless Hirota’s relations. In the case of (17) all of the matrix eleme nts of the period
-matrix would be expressed in terms of a single row or column. (We give a n example of
-this in section 4.)
-More generally, let us assume we can ﬁnd coordinates ϕ k so that
-dTij = Ck
-ij dϕ k. (19)
-Using the deﬁnition (10) this means
-dϕ k = ηkldal. (20)
-Both (19) and (20) have the common integrability condition
-dηkl ∧ dal = 0 ⇐ ⇒M i
-sFirk = M i
-rFisk, M i
-r = ∂α i
-∂a r , (21)
-where the α i’s were the coeﬃcients deﬁning η above. These are certainly satisﬁed for
-constant α i. Thus the choice (17) would correspond to η = F1. Supposing the integra-
-bility condition (21) holds, our assumption (19) means that the stru cture constants can
-be integrated, i.e. deﬁned as derivatives of the functions (13)
-Ck
-ij = ∂T ij
-∂ϕ k
-(22)
-and that
-Tij(ϕ ) =
-∫ ∑
-k
-Ck
-ijdϕ k, (23)
-i.e. the structure constants determine the form of the Hirota-like relations (13).
+The WDVV equations usually follow from the crossing relations $$\begin{equation}
+\label{crossing}
+\sum_k C^k_{\ ij}C^n_{\ kl} = \sum_k C^k_{\ il}C^n_{\ kj}
+\end{equation}$$ for the structure constants of some algebra $$\begin{equation}
+\label{alg}
+\phi_i\circ\phi_j =\sum_k  C^k_{\ ij}\phi_k.
+\end{equation}$$ It is useful also to write ([\[crossing\]](#crossing){reference-type="ref" reference="crossing"}) in the matrix form $$\begin{equation}
+\label{crossmatr}
+{\sf C}_i\cdot {\sf C}_j = {\sf C}_j\cdot {\sf C}_i,\qquad \forall i,j
+\qquad  ({\sf C}_i)\sp{l}_{\ m} = C_{\ im}\sp{l}.
+\end{equation}$$ Equations ([\[crossing\]](#crossing){reference-type="ref" reference="crossing"}) are algebraic relations and they turn into the WDVV system of nonlinear differential equations after expressing the structure constants in terms of the third derivatives of some function ${\cal F}(a\sp1,\dots,a\sp{N})$ $$\begin{equation}
+\label{cf}
+C_{\ ij}^k = \eta^{kl}{\cal F}_{ijl}.
+\end{equation}$$ Generically the matrix $\eta$ can be an arbitrary linear combination with time dependent coefficients $\eta = \sum_j \alpha\sp{j}({\bf a}){\sf F}_j$, but for simplicity we will mostly consider $\eta={\sf F}_1$. Then $\eta_{rs}=\iota_\alpha dT_{rs}$.
+
+Various rewritings of the WDVV equations are possible. In the Frobenius manifold setting there is a pencil of flat connections, while the general equations ([\[WDVV\]](#WDVV){reference-type="ref" reference="WDVV"}) are equivalent [@mor] to the commuting of matrix-valued vector fields: $$[\partial_i -({\sf F}_j)\sp{-1}{\sf F}_i\, \partial_j,
+   \partial_k -({\sf F}_j)\sp{-1}{\sf F}_k\, \partial_j]=0$$ (with fixed $j$). For our purposes one may also rewrite ([\[crossing\]](#crossing){reference-type="ref" reference="crossing"}) as $$\begin{equation}
+\label{crossF}
+\sum_k C^k_{\ ij}{\cal F}_{kln} = \sum_k C^k_{\ il}{\cal F}_{kjn}.
+\end{equation}$$ With one form $C=\eta\sp{-1}dT$ ( i.e. $C_{\ ij}^k da\sp{i}= \eta^{kl}\partial_i T_{jl}da\sp{i}=
+\eta^{kl}{\cal F}_{ijl}da\sp{i}$) we have $$\begin{equation}
+\label{bilinear}
+[{\sf C}_i, {\sf C}_j ]=0\Longleftrightarrow C\wedge C=0
+\Longleftrightarrow dT\wedge \eta\sp{-1}dT=0.
+\end{equation}$$ Unfortunately the connection $C$ is unrelated to the various connections arising in the special Kähler geometry because of the (arbitrary) appearance of $\eta$ which is unrelated to the special Kähler metric. In general the curvature of $C$ is nonvanishing. (The curvature will, for example, vanish as a consequence of the WDVV equations if there is a symmetry ${\cal L}_\alpha dT=\mu dT$, for some matrix $\mu$.) The final form of ([\[bilinear\]](#bilinear){reference-type="ref" reference="bilinear"}) is reminiscent of the Hirota bilinear equations which may be interpreted in terms of Plücker formulae, but again the appearance of $\eta$ means the bilinear form in such formulae is not constant. Whatever, the final form shows that the WDVV equations impose relations on the period matrices $T$, and consequently restrict the associated Seiberg-Witten curves that can yield solutions of ([\[WDVV\]](#WDVV){reference-type="ref" reference="WDVV"}).
+
+An important observation was made recently in [@BMRWZ] where it was shown that in the case of dispersionless integrable hierarchies the WDVV equations maybe derived directly by differentiating corresponding Hirota algebraic relations. In particular, the solutions associated with the Landau-Ginzburg topological models can be constructed in this way. Below, we will reverse the arrow of this implication and demonstrate that the WDVV equations, if rewritten in terms of second derivatives, can be simply viewed as certain Hirota-like functional relations.
+
+The dispersionless Hirota relations (see [@BMRWZ] and references therein about the details and their explicit form) for the second derivatives, which can be written as $$\begin{equation}
+\label{hir}
+{\cal F}_{ij} = T_{ij}({\mbox{\boldmath $\varphi$}})
+\end{equation}$$ where $T_{ij}$ are some *known* functions and $\{\varphi_i\}$ denote some restricted set (of cardinality $N$, the size of the matrices under consideration in the finite-dimensional situation) second derivatives, for example $$\begin{equation}
+\label{vf}
+\varphi_i = {\cal F}_{1i}({\bf a})
+\end{equation}$$ Without specifying form of the functions $T_{ij}$ in ([\[hir\]](#hir){reference-type="ref" reference="hir"}) this is just a *dimensional* statement that the *matrix* of second derivatives of any function can be expressed in terms of only a *vector* of variables.
+
+Consider the "period" matrix ([\[pematr\]](#pematr){reference-type="ref" reference="pematr"}) which for any integrable system is a function of only $N$ variables. This means that in the "Siegel upper half-space" $\{ T_{ij}\}$ of dimension $\dfrac{N(N+1)}{2}$ we have a "submanifold" of dimension $N$ $$\begin{equation}
+\label{hs1}
+T_{ij} = T_{ij}(a\sp1,\dots,a\sp{N})
+\end{equation}$$ or codimension $\dfrac{N(N-1)}{2}$ given by defining equations $$\begin{equation}
+\label{hs2}
+f_A(T_{ij})=0
+\quad
+A=1,\dots,{N(N-1)\over 2}
+\end{equation}$$ Of course, on this submanifold (under a generic assumption of nonsingularity) one may choose new variables, say $$\begin{equation}
+\label{defphi}
+\varphi_i = T_{1i}({\bf a})
+\end{equation}$$ Consequently there exist functional relations $$\begin{equation}
+T_{ij} = T_{ij}(\varphi_1,\dots,\varphi_N) = T_{ij}({\bf a}
+(\varphi_1,\dots,\varphi_N))
+\end{equation}$$ between the matrix elements of the whole period matrix, exactly as one has in dispersionless Hirota's relations. In the case of ([\[defphi\]](#defphi){reference-type="ref" reference="defphi"}) all of the matrix elements of the period matrix would be expressed in terms of a single row or column. (We give an example of this in section [\[ss:eg\]](#ss:eg){reference-type="ref" reference="ss:eg"}.)
+
+More generally, let us assume we can find coordinates $\varphi_k$ so that $$\begin{equation}
+\label{defc}
+dT_{ij}=C^k_{\ ij}\,d\varphi_k.
+\end{equation}$$ Using the definition ([\[cf\]](#cf){reference-type="ref" reference="cf"}) this means $$\begin{equation}
+\label{defp}
+d\varphi_k=\eta_{kl}d a\sp{l}.
+\end{equation}$$ Both ([\[defc\]](#defc){reference-type="ref" reference="defc"}) and ([\[defp\]](#defp){reference-type="ref" reference="defp"}) have the common integrability condition $$\begin{equation}
+\label{integ}
+d\eta_{kl}\wedge d a\sp{l}=0\Longleftrightarrow M\sp{i}_s {\cal F}_{irk}=
+M\sp{i}_r {\cal F}_{isk} ,\qquad M\sp{i}_r=\dfrac{\partial\alpha\sp{i}}{\partial a\sp{r}},
+\end{equation}$$ where the $\alpha\sp{i}$'s were the coefficients defining $\eta$ above. These are certainly satisfied for constant $\alpha\sp{i}$. Thus the choice ([\[defphi\]](#defphi){reference-type="ref" reference="defphi"}) would correspond to $\eta={\sf F}_1$. Supposing the integrability condition ([\[integ\]](#integ){reference-type="ref" reference="integ"}) holds, our assumption ([\[defc\]](#defc){reference-type="ref" reference="defc"}) means that the structure constants can be *integrated*, i.e. defined as derivatives of the functions ([\[hir\]](#hir){reference-type="ref" reference="hir"}) $$\begin{equation}
+\label{c}
+C_{\ ij}^k = {\partial T_{ij}\over\partial\varphi_k}
+\end{equation}$$ and that $$\begin{equation}
+\label{inthir}
+T_{ij}({\mbox{\boldmath $\varphi$}}) = \int \sum_k C_{ij}^k d\varphi_k,
+\end{equation}$$ i.e. the structure constants determine the form of the Hirota-like relations ([\[hir\]](#hir){reference-type="ref" reference="hir"}).

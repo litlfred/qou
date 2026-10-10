@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0606222v2/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0606222v2/blocks/prose-sec-008",
   "kind": "prose",
   "title": "The quantum Grassmann representation",
   "pageStart": 19,
   "pageEnd": 20,
   "text": "../sections/sec-008-52-the-quantum-grassmann-representation.md",
-  "derivedFrom": "library/arxiv-math-0606222v2/manifest",
-  "sourceDocument": "library/arxiv-math-0606222v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0606222v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0606222v2/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,492 @@
+\medskip (i) Orient the distinguished curves. The global
+orientation will be denoted $\twoheadrightarrow\!\!-$ and the tangle
+orientation by $\rightarrow\!\!-$.
+
+\smallskip (ii) At a point of intersection between the
+distinguished curves and the strings of the tangle, insert 2-boxes
+containing $u$ or $u^{-1}$ according to the following conventions
+\[
+	\input{xfig/pic45}
+\]
+\bs
+\ni Thus along a distinguished curve one alternately meets $u$ or
+$u^{-1}$.
+
+From now on we suppose for convenience that $\D = 1$.
+
+\bs\ni
+{\bf Lemma 2.11.2} The Reidemeister type  II moves are
+satisfied, i.e.,
+\[
+	\input{xfig/pic46}
+\]
+\ni where either of the two curves is distinguished and its global
+orientation is arbitrary.
+
+\bs
+{\sc Proof.} This is just a re-expression of bi-invertibility. \qed
+
+\bs\ni
+{\bf Theorem 2.11.3} If $P$ is a general planar algebra and
+$u$ is bi-invertible, let $P^u_k$ be
+\bs
+\[
+\{x\in P_k\ \text{s.t.}\input{xfig/pic47} 
+\mbox{\ \ for some}\ \ y\in  P_k\}.
+\]
+\bs
+Then $P^u$ is a  general planar subalgebra, $P^u$ is a (general)
+planar $*$-subalgebra if $P$ is a planar $*$-algebra and $u$ is
+bi-unitary. The properties of being planar, $C^*$ and spherical
+are inherited from $P$.
+
+\bs
+{\sc Proof.} That $P^u$ is a subalgebra is obvious. The
+$*$-property is more interesting. Applying $*$ to the pictures we
+obtain (using $u^*=u^{-1}$)
+\[
+	\input{xfig/pic48}
+\]
+\ni Now we surround these pictures with the annular tangle
+\[
+	\input{xfig/pic49}
+\]
+\ni and then apply type II Reidemeister moves. We see that $x^*\in
+P^u$ if $x$ does (though note that the ``$y$'' for $x^*$ is
+$y^*$, but rotated.
+
+To show that $P^u$ is a general planar subalgebra, we only have to
+show by 1.18 that it is invariant under $\cal A(\phi)$. But if we
+arrange the annular tangle $A$ so that all critical points of the
+height function on strings are local maxima and minima, the
+distinguished line
+\[
+	\input{xfig/pic50}
+\]
+\ni can be moved through $\pi_A(x)$, close to \ $\tangle{x}$ 
+using only planar isotopy and type II Reidemeister moves.
+It can then go past $x$, producing a $y$, and down to the bottom
+via type II Reidemeister moves. Thus  $\pi_A(x)$ is in $P^u$.
+
+Planarity, positivity and sphericity are all
+inherited. \qed
+
+\bs {\bf Notes.} (i) We will see that $P^u$ may be planar even
+when $P$ is only general planar.
+
+(ii) When $k=2$ the equation of Theorem 2.11.3 is an abstract
+version of the Yang-Baxter equation ([Ba]).
+
+\bs We now recast the equation of Theorem 2.11.3 in some equivalent
+forms which reveal some of its structure. The idea of the equation,
+as seen clearly in the proof of 2.11.3 is just that the
+distinguished lines can move freely past the boxes. As stated this
+requires a special configuration as the distinguished line
+approaches a box, but by Reidemeister type II invariance any
+approach will do. We record this below, keeping the notation of
+2.11.3. (Note that it is somewhat cumbersome to force all the
+pictures to fit appropriately into the standard $k$-box. We use a
+disk with $2k$ boundary points-as in the introduction.)
+
+\medskip
+{\bf Proposition 2.11.4} An $x$ in $P_k$ is in $P^u_k$ iff
+there is a $y$ in $P^u_k$ with
+\[
+	\input{xfig/pic51}
+\]
+\ni where $p+q=2k$, where the pictures may be isotoped in any way
+so that the annular region becomes the standard annular region
+(with $*$ anywhere allowed by the orientations).
+
+\medskip
+{\sc Proof.} If $p>q$, surround the two pictures with the annular
+tangle
+\[
+	\input{xfig/pic52}
+\]
+\ni and  use isotopy, rotation (if necessary to get $*$ in the
+right place), and type II Reidemeister moves to obtain the same
+picture as in 2.11.3. \qed
+
+\bs{\bf Definition 2.11.5.} Given $P$ and $u$ as above, define
+$\s_u:P_k\to P_{k+1}$ by the tangle below:
+\[
+	\input{xfig/pic53}
+\]
+
+\bs\ni
+{\bf Proposition 2.11.6} The map $\s_u$ is a unital
+endomorphism of the filtered algebra $P$ (a $*$-endomorphism if $u$
+is unitary) and $P^u_k=\{x\mid \s_u(x)\in P_{1,k+1}\}$.
+
+\bs
+{\sc Proof.}  That $\s_u$ preserves multiplication follows from
+type II Reidemeister moves. The alternative definition of $P^u$ is
+just the case $q=0$, with $*$ appropriately placed, in 2.11.4. \qed
+
+\bs Note that the endomorphism $\s_u$ is the obvious ``shift de un"
+when restricted to the Temperley-Lieb subalgebra.
+
+The condition of $2.11.5$ involved a pair $(x,y)$. In fact $x$ is
+determined by $y$ and vice versa as we now record.
+
+\bs\ni
+{\bf Proposition 2.11.7} Suppose $P$ is a general planar
+algebra. If $x\in P^u$ with \ $\s_u(x)=$ $\boxi{y}$.
+Then
+
+\medskip
+\[
+	\input{xfig/pic54}
+\]
+
+\bs
+{\sc Proof.}  Just apply the appropriate annular tangles
+and use Reidemeister moves. \qed
+
+\bs Thus we could rewrite equations for $x\in P^u$ entirely in
+terms of $x$. The least obvious reformulation of these equations
+involves less boundary points than above and requires positivity.
+
+\bs\ni
+{\bf Theorem 2.11.8} Let $P$ be a spherical finite-dimensional
+$C^*$-planar algebra and $u\in P_2$ be bi-unitary. Then $x\in P^u$
+iff
+\[
+	\input{xfig/pic55}.
+\]
+
+\bs
+{\sc Proof.}  $(\Rightarrow)$ This is easy and requires no
+positivity.
+
+$(\Leftarrow)$ We begin by observing that
+$\d\s^*_u(z)$ is given by the tangle below
+\[
+	\input{xfig/pic56}
+\]
+\ni Here the adjoint of $\s_u$ is as a map between the
+finite-dimensional Hilbert spaces $P_k$ and $P_{k+1}$ with inner
+products given by the normalized traces.  This formula for $\s^*_u$
+thus follows from the equality by isotopy of the following two
+networks, the first of which is, up to a power of $\d$,  \
+$\<\s_u(x),z^*\>$
+\[
+	\input{xfig/pic57}
+\]
+\ni Thus orthogonal projection $E$ onto $\s_u(P_k)$ is
+$\s_u\s^*_u$ which is given on $z\in P_k$ by $\frac 1\d$ times the
+following picture
+\[
+	\input{xfig/pic58}
+\]
+\ni Orthogonal projection $F$ onto $P_{1,k+1}$ is given by
+$\d F(z)= \quad \boxh{z}$.
+An element $w$ of $\s_u(P_k)$ is in $P_{1,k+1}$  iff
+$EF(w)=w$. But if $x$ satisfies the condition of the theorem we have
+\bs
+\[
+	\input{xfig/pic59}
+\]
+Hence $x\in P^u$. \qed
+
+\bs {\bf Remark.} We did not use the full force of the hypotheses.
+The result will hold in a finite-dimensional general $C^*$-planar
+algebra provided isolated circles can be removed with a
+multiplicative factor $\d$, that the tangle formula for orthogonal
+projection onto $P_{1,k+1}$ is correct, and dim $P_1=1$.
+
+We will see in the case of spin models that $P^u$ may be planar
+although $P$ is not. (But the conditions of the above remark are
+satisfied by $P^\s$.)
+
+It is easy to check that a bi-invertible $u\in P_2$ may be altered
+by four invertible elements $A,B,C,D$ in $P_1$ as in Figure 2.11.9
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\[
+	\input{xfig/pic60}
+\]
+\caption[2.11.9]{}\label{pic60}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bs
+
+{\bf Definition 2.11.10.} Two bi-invertibles are said to differ by
+a {\it gauge transformation} if one is obtained from the other as
+in Figure 2.11.9.
+
+\bs Gauge transformations have an inessential effect on $P^u$; $A$
+and $C$ change absolutely nothing, $B$ and $D$ change $P^u$ by a
+planar algebra isomorphism (induced by one on $P$-conjugation by
+\ $\boxa{d} \ \boxb{d} \ \boxa{d}\dots$).
+
+In the $*$ case, gauge transformations on bi-unitary matrices are
+ones with $A,B,C,D$ unitary.
+
+A significant observation about the equations defining $P^u$ above
+is that they are {\it linear} so the calculation of $P^u_k$, given
+$P_k$ and $u$, is a {\it finite} problem, unlike the calculation of
+the planar subalgebra generated by some set, which requires
+consideration of infinitely many tangles. In practice, however, the
+brute force calculation, even just of dim $P^u_k$, runs into a
+serious problem. For the dimension of $P_k$ grows exponentially
+with $k$. For $k=2$ the calculation is usually easy enough (indeed
+we give an entirely satisfactory general solution for $k=2$ when
+$P=P^\s$, below) and somewhat harder for $k=3$. For $k=4$ it tends
+to be very demanding even for relatively ``small" $P$'s.
+On the other hand, we are dealing with objects  with a lot of
+structure. For instance, once we have calculated $P^u_2$ by brute
+force or otherwise, the fact that $P^u$ is a planar algebra means
+that every unlabelled 2-tangle gives a {\it nonlinear constraint.}
+For if a 2-tangle is given labels with elements in  $P$, in order
+for the corresponding element of $P_2$ to be in $P^u$, it must lie
+in the linear subspace of $P_2$ already calculated. It was the
+desire to systematically exploit these highly interesting nonlinear
+constraints that led to the theory of planar algebras --- their
+generality was only appreciated afterwards.
+
+There are good reasons for wanting to calculate $P^u$. In general
+the calculation is greatly facilitated by the presence of group
+symmetry but there are many cases of bi-invertible elements with no
+apparent symmetry. We hope that the planar algebra $P^u$ plays the
+role of ``higher", non-group-like symmetries which reveal
+structural properties of the combinatorial object $u$.
+
+We turn now to a special case where this program has had some
+partial success, namely in Hadamard matrices.  The theory is no
+different for generalized Hadamard matrices, which occur as
+biunitaries for spin models. Consider the spin model  $P^\s$ with
+$Q$ spins and its spherical planar algebra structure ($\S$2.8). A
+bi-invertible element $u$ of $P^\s_2$ is an invertible $Q\x Q$
+matrix $u^b_a$ such that
+\[
+	\input{xfig/pic61}
+\]
+\ni So if $(u^{-1})^b_a=v^b_a$ we have $u_{a,b}v_{b,a}=1/Q$ where
+the factor $1/Q$ comes from counting oriented circles after
+smoothing. If $u$ is biunitary, $v_{a,b}=\overline{u_{b,a}}$, so
+the condition is precisely
+\[
+ |u_{a,b}|=\frac{1}{\sqrt{Q}} %\tag 2.11.11
+\]
+We call a unitary matrix satisfying 2.11.11 a {\it
+generalized Hadamard matrix.} A Hadamard matrix is just $\sqrt{Q}$
+times a real generalized Hadamard matrix.
+
+Gauge transformations alter a generalized Hadamard matrix by
+multiplying rows and columns by scalars of modulus one ($\pm 1$ in
+the Hadamard case). This, together with permutations of the rows
+and columns, gives what is called {\it Hadamard equivalence} of
+(generalized) Hadamard matrices. Row and column permutations
+are easily seen by
+2.11.6 to produce equivalent $P^u$'s so any information about $u$
+obtained from $P^u$ alone will be {\it invariant under  Hadamard
+equivalence.} (The endomorphism $\s_u$ of 2.11.5 itself is more
+information than just $P^u$.)
+
+\bs\ni
+{\bf Proposition 2.11.12} If $u$ is a generalized Hadamard
+matrix, $P^u$ is planar, hence a spherical $C^*$-planar algebra.
+Moreover, ${\op{dim}} \ P^u_1=1$, and $P^u_2$ and $P^u_{1,3}$ are
+abelian.
+
+\bs
+{\sc Proof.} Obviously dim $P^u_1=1$ implies planarity, so
+consider a tangle $T$ representing an element of $P_1$. It consists
+of a vertical straight line with a 1-box on it, and networks to the
+left and right. The networks to the left have exterior shaded white
+so only contribute scalars. The picture below is the condition for
+such an element to be in  $P^u_1$ (for some element $S$)
+\[
+	\input{xfig/pic62}
+\]
+\ni If the bottom shaded region is assigned a spin $a$, and the top
+region a spin $b$, the left-hand side gives $u^b_aT_a$ and the
+right-hand side gives $u^b_aS_b$, so $T_a$ is independent of $a$,
+and dim  $P^u_1=1$.  $P^u_{1,3}$ is abelian because $P_{1,3}$ is
+and $P^u_2$ is abelian since it is $\s^{-1}_u(\s_u(P_2)\cap P_{1,3})$
+by 2.11.6. \qed
+
+\bs So by $\S$4.3, a generalized Hadamard matrix $u$ yields a
+subfactor whose planar algebra invariant is $P^u$. In fact such a
+subfactor was the starting point of the theory of planar algebras, as the equations for $P^u$ are
+those for the relative commutants of a spin model commuting square
+given in [JS]. Note that the original subfactor is
+hyperfinite whereas the one obtained from 4.3 is not! We now
+determine $P^u_2$ for a generalized Hadamard matrix $u$.
+
+\bs {\bf Definition 2.11.13.} Given a $Q\x Q$
+generalized Hadamard matrix $u^b_a$ we define the $Q^2\x Q^2$ {\it
+profile matrix} \ Prof$(u)$ by
+$$
+{\op{Prof}}(u)^{c,d}_{a,b} =\sum_x
+u^x_a \overline{u^x_b} \ \overline{u^x_c} \ u^x_d \ .
+$$
+The profile matrix is used in the theory of Hadamard matrices.
+We will see that it determines $P^u$.
+
+\bs {\bf Definition 2.11.14.} Given the $Q^2\x Q^2$
+matrix \ Prof$(u)$, define the directed graph $\G_u$ on $Q^2$
+vertices by $(a,b)\rightarrow\!\!\!- (c,d)$ iff \
+Prof$(u)^{c,d}_{a,b}\neq 0$.
+
+\bs The isomorphism class of $\G_u$ is an invariant of Hadamard
+equivalence.
+
+\bs\ni
+{\bf Theorem 2.11.15} If $u$ is a $Q\x Q$
+generalized Hadamard matrix thought of as a biunitary for the spin
+model $P^\s$, then the minimal projections of the abelian
+$C^*$-algebra $P^u_2$ are in bijection with the connected
+components of the graph $\G_u$. Moreover the (normalized) trace of
+such a projection is $n/Q^2$ where $n$ is the size of the connected
+component, which is necessarily a multiple of $Q$.
+
+\bs
+{\sc Proof.} For matrices $x^b_a, \ y^b_a$, the equations of
+Theorem 2.11.3 are the ``star-triangle" equations
+\[
+\sum_d u^d_a \ \overline{u^d_b} \ x^c_d =
+u^c_a  \ \overline{u^c_b} \ y^b_a %\tag 2.11.15
+\]
+which amount to saying that, for each $(a,b)$, the vector
+$v_{(a,b)}$ whose $d^{\text{th}}$ component is the
+$u^d_a\overline{u^d_b}$ is an eigenvector of the matrix $x^c_d$
+with eigenvalue $y^b_a$. The profile matrix is just the matrix of
+inner products
+$\<v_{(a,b)},v_{(c,d)}\>$ so the orthogonal projection onto the
+linear span of $v_{(a,b)}$'s in a connected component is in $P^u_2$
+and is necessarily minimal since eigenvectors for distinct minimal
+projections are orthogonal.
+
+If the matrix $x$ is an orthogonal projection, $y^b_a$ is either 1
+or 0 depending on whether $v_{(a,b)}$ is in the connected
+component or not. Consider the picture
+\[
+	\input{xfig/pic63}
+\]
+\ni
+Applying Reidemeister type II moves and summing we obtain the
+assertion about the trace. (It is a multiple of $1/Q$ since $x$ is
+a $Q\x Q$ matrix.) \qed
+
+\bs If $G$ is a finite abelian group and $g\mapsto\hat g$ is an
+isomorphism of $G$ with its dual $\hat G$ (=Hom$(G,\Bbb C^*)$), we
+obtain a generalized Hadamard matrix $u$, with $Q=|G|$, by setting
+$u^h_g=\frac{1}{\sqrt{Q}} \ \hat h(g)$. We call this a {\it
+standard} generalized Hadamard matrix.  It is Hadamard if
+$G=(\z/2\z)^n$ for some $n$. We leave it to the reader to check
+that if $u$ is standard $P^u$ is exactly the planar
+algebra of
+$\S$2.9 for the group $G$. In particular, dim$(P^u_k)=Q^k$. It is
+well known in subfactor theory that any subfactor with
+$N'\cap M_1=\Bbb C^{[M:N]}$ comes from a  group. It can
+also be seen directly from association schemes that if
+dim$(P^u_2)=Q$ then $u$ is standard up to gauge equivalence
+(recall that $P^u$ is always an assocation scheme as remarked in
+$\S$2.8).
+
+We have, together with R.~Bacher,
+ P.~de la Harpe, and M.G.V.~Bogle performed many computer
+calculations. So far we have not found a
+generalized Hadamard matrix $u$ for which dim$(P^u_2)=2$ but
+dim$(P^u_3) >5$.  Such an example would be a confirmation of our
+non-group symmetry program as group-like symmetries tend to show up
+in $P_2$. In particular the five $16\x 16$ Hadamard matrices have
+dim$ P^u_2=$ 16,8,5,3 and 3, and are completely distinguished by
+the trace. There are group-like symmetries in all cases
+corresponding to the presence of normalizer in the subfactor
+picture.
+
+Haagerup has shown how to construct many interesting examples and
+given a complete classification for $Q=5$. In the circulant case he
+has shown there are only finitely many examples for fixed prime
+$Q$  (see [\qquad ]).
+
+Perhaps somewhat surprisingly, the  presence of a lot of symmetry
+in $u$ can cause $P^u_2$ to be small! The kind of biunitary
+described in the following result is quite common --- the Paley
+type Hadamard matrices give an example.
+
+\bs\ni
+{\bf Proposition 2.11.17} Suppose $Q-1$ is prime and let $u$
+be a $Q\x Q$ generalized Hadamard matrix with the following two
+properties (the first of which is always true up to gauge
+equivalence):
+\begin{verse}
+(i) There is an index $*$ with $u^a_*=u^*_a=1$ for all $a$.
+
+(ii) The group $\z/(Q-1)\z$ acts transitively on the
+spins other than $*$, and $u^{ga}_{gb}=u^a_b$ for all
+$g\in\z/(Q-1)\z$.
+\end{verse}
+Then dim$(P^u_2)=2$ or $u$ is gauge equivalent to a standard
+matrix.
+
+\bs
+{\sc Proof.} The nature of the equations 2.11.15 makes it clear
+that $\z/(Q-1)\z$ acts by automorphisms on $P^u_2$, obviously
+fixing the projection $e_1$ which is the matrix
+$x^b_a=1/Q$. Thus the action preserves $(1-e_1)P^u_2(1-e_1)$.
+Since $(Q-1)$ is prime there are  only two possibilities:
+either the action is non-trivial and dim$(P^u_2)=Q$ so $P^u$ is
+standard, or every solution of 2.11.15 is fixed by
+$\z/(Q-1)\z$. In the latter case let $x^b_a,y^b_a$ be a solution
+of 2.11.15. Then putting $c=*$ we obtain $\sum_d u^d_a \
+\overline{u^d_b} x^*_d=y^b_a$, so $y^b_a$ is determined by the two
+numbers
+$x^*_*$ and $x^*_d$, $d\neq *$. So by 2.11.7 we are done. \qed
+
+\bs Note that the standard case in the above result can occur. The
+$8\x 8$ Hadamard matrix is of the required form, but it is Hadamard
+equivalent to a standard matrix. For $Q=$ 12 and 24 this cannot be the
+case and dim $P_2^u=2$.
+
+We have very few general results on $P^u_k$ for $k >2$.
+We only record the observation that $P^u_k$ is the $\d^2$
+eigenspace for the $Q^k\x Q^k$ matrix  given by the ``transfer
+matrix with periodic horizontal boundary conditions" for the
+$Q$-spin vertex model having the profile matrix as Boltzmann
+weights. The transfer matrix is given by the picture:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\[
+	\input{xfig/pic65}
+\]
+
+\ni where of course the internal spins have been summed over.
+This is an immediate consequence of 2.11.8.
+
+We would like to make the following two open problems about
+matrices quite explicit. Both concern a generalized Hadamard matrix
+$u$.
+\begin{verse}
+(i) Is the calculation of dim $P^u_k$ feasible in the
+polynomial time as a function of $k$?
+
+(ii) Is there a $u$ for which dim
+$P^u_k=\frac{1}{k+1}{2k\choose k}$? (i.e.,
+$P^u_k$ is just the Temperley-Lieb algebra).
+\end{verse}
+
+Finally we make some comments on vertex models. There are many
+formal connections with Hopf algebras here which is not surprising
+since quantum groups arose from vertex models in statistical
+mechanical models ([Dr]). Banica has done some interesting
+work from this point of view --- see [Ban].
+
+A vertex model, in the above context, is simply a biunitary (or
+biinvertible) in the planar algebra $P^{\otimes}$. The equations of
+Theorem 2.11.3 are then just the equations for the higher relative
+commutants of a subfactor coming from a certain commuting square
+(see [JS]). Perhaps the most interesting examples not coming from
+the quantum group machinery are the Krishan-Sunder ``bipermutation
+matrices" where $u$ is a permutation matrix with respect to some
+basis of the underlying vector space (see [KS]).
+B.Bhattacharya has exhibited a planar algebra which is bigger than
+that of example 2.3. (Fuss Catalan) and which is necessarily a
+planar subalgebra of $P^u$  if $u$ is a bipermutation matrix.
+
+
+
+

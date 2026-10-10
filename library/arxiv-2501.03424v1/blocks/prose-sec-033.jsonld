@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2501.03424v1/blocks/prose-sec-033",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2501.03424v1/blocks/prose-sec-033",
   "kind": "prose",
   "title": "In aid of lemma 4.2.3,",
   "pageStart": 22,
   "pageEnd": 22,
   "text": "../sections/sec-033-in-aid-of-lemma-423.md",
-  "derivedFrom": "library/arxiv-2501.03424v1/manifest",
-  "sourceDocument": "library/arxiv-2501.03424v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2501.03424v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2501.03424v1/manifest.jsonld",
   "provenance": "ingested"
 }

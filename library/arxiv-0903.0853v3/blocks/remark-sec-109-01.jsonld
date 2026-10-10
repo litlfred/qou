@@ -1,0 +1,16 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0903.0853v3/blocks/remark-sec-109-01",
+  "kind": "remark",
+  "pageStart": 63,
+  "pageEnd": 65,
+  "text": "remark-sec-109-01.md",
+  "derivedFrom": "library/arxiv-0903.0853v3/sections/sec-109",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0903.0853v3/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -5,7 +5,8 @@
   "file": "1404.2541v1.pdf",
   "sha256": "edb7c9b2b1561ac3dd50c96bb6cb02714eb5757d4728b53ba9c171e76dcefb9e",
   "bytes": 198677,
-  "pages": 22
+  "pages": 22,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -15,9 +16,9 @@
    "stamp_date": "9 Apr 2014"
   },
   "doi": null,
-  "title": "The Stokes phenomenon for the Ramanujan’s q-difference equation and its higher order extension",
+  "title": "The Stokes phenomenon for the Ramanujan\u2019s q-difference equation and its higher order extension",
   "authors_raw": null,
-  "abstract": "We show connection formulae of local solutions of the Ramanu - jan equation between the origin and the inﬁnity. These solut ions are given by the Ramanujan function, the q-Airy function and the diver- gent basic hypergeometric series 2ϕ 0(0, 0; −; q, x ). We use two diﬀerent q-Borel-Laplace resummation methods to obtain our connecti on for- mulae. We also introduce the q-Borel-Laplace transformation of level r−1, which are higher order extension of these transformation s. These methods are useful to obtain an asymptotic formula of a diver gent se- ries rϕ 0(0, 0, . . . , 0; −; q, x ).",
+  "abstract": "We show connection formulae of local solutions of the Ramanu - jan equation between the origin and the in\ufb01nity. These solut ions are given by the Ramanujan function, the q-Airy function and the diver- gent basic hypergeometric series 2\u03d5 0(0, 0; \u2212; q, x ). We use two di\ufb00erent q-Borel-Laplace resummation methods to obtain our connecti on for- mulae. We also introduce the q-Borel-Laplace transformation of level r\u22121, which are higher order extension of these transformation s. These methods are useful to obtain an asymptotic formula of a diver gent se- ries r\u03d5 0(0, 0, . . . , 0; \u2212; q, x ).",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20220422155936-04'00'",
@@ -25,12 +26,12 @@
    "Title": "",
    "Author": ""
   },
-  "title_prev": "The Stokes phenomenon for the Ramanujan’s q-difference equation and its higher order extension Takeshi MORITA∗",
+  "title_prev": "The Stokes phenomenon for the Ramanujan\u2019s q-difference equation and its higher order extension Takeshi MORITA\u2217",
   "title_lines": [
-   "The Stokes phenomenon for the Ramanujan’s",
+   "The Stokes phenomenon for the Ramanujan\u2019s",
    "q-difference equation and its higher order",
    "extension",
-   "Takeshi MORITA∗"
+   "Takeshi MORITA\u2217"
   ]
  },
  "toc": [
@@ -166,6 +167,65 @@
   "likely_scanned": false,
   "toc_entries": 9,
   "sections": 6,
-  "chars_total": 25963
+  "chars_total": 25963,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 10,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.934,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-basic-notations",
+     "title": "Basic notations",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-two-q-exponential-functions",
+     "title": "Two q-exponential functions",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-covering-transformations",
+     "title": "Covering transformations",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.154,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-004-6-the-q-borel-laplace-transformations",
+     "title": "The q-Borel-Laplace transformations",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.626,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-9-the-q-borel-laplace-transformations-of-level-r",
+     "title": "The q-Borel-Laplace transformations of level r-1 and its application",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.226,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

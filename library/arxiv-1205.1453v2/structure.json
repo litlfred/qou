@@ -6,7 +6,8 @@
   "sha256": "29d1b1fd9466a3d885fab05470c70d7dd07e155afafd5e0e9214165b6a603f4d",
   "bytes": 142254,
   "pages": 12,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -124,6 +125,45 @@
   "likely_scanned": false,
   "toc_entries": 6,
   "sections": 4,
-  "chars_total": 14986
+  "chars_total": 14986,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 5,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.917,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-basic-notations",
+     "title": "Basic notations",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.713,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-31-local-solutions-of-the-degenerated-equation",
+     "title": "Local solutions of the degenerated equation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-32-an-asymptotic-formula",
+     "title": "An asymptotic formula",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

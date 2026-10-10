@@ -7,7 +7,8 @@
   "bytes": 590099,
   "pages": 60,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -1017,6 +1018,318 @@
   "likely_scanned": false,
   "toc_entries": 58,
   "sections": 57,
-  "chars_total": 108414
+  "chars_total": 108414,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "draft2.tex",
+   "tex_sections": 9,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.944,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-riemann-hilbert-theory",
+     "title": "Riemann-Hilbert Theory",
+     "prose_ratio": 0.849,
+     "coverage_ratio": 0.953,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-0-the-dashed-lines-and-a-contour-\u03c3p-ii2-consisti",
+     "title": "(the dashed lines), and a contour \u03a3P II,2 consisting of a pair of curved solid",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-3-connection-to-the-toda-lattice-and-the-painlev",
+     "title": "Connection to the Toda Lattice and the Painlev\u00b4e III Equation",
+     "prose_ratio": 0.534,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-2-zz1ad\u03c33zq",
+     "title": "(z\u2212z\u22121)ad\u03c33z\u2212q",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-11-0-q-which-are-related-to",
+     "title": "(0; q) which are related to",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-4-equilibrium-measure-and-g-function",
+     "title": "Equilibrium Measure and g-function",
+     "prose_ratio": 0.458,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-2-zz1",
+     "title": "(z+z\u22121)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-2-zz1-on-the-unit-circle-see-sz1",
+     "title": "(z+z\u22121) on the unit circle (see [Sz1],",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-2-this-gives-us-f-\u03c6",
+     "title": "This gives us F \u2032(\u03c6) =",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-2-z-z1-on-the-unit-circle-is-de\ufb01ned-by-the-follo",
+     "title": "(z + z\u22121) on the unit circle is de\ufb01ned by the following",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-21-0eqleqg0-1qm1",
+     "title": "(0)eqleqg(0) = \u2212(\u22121)qm(1)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-21-0eql",
+     "title": "(0)eql,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-1-if-0-\u03b3-1-then",
+     "title": "If 0 \u2264\u03b3 \u22641, then",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-2-if-\u03b3-1-then",
+     "title": "If \u03b3 > 1, then",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-2-s-s1ds",
+     "title": "(s + s\u22121))ds",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-2-z-z1-0",
+     "title": "(z + z\u22121) = 0",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-4-1-z2-\u03b3",
+     "title": "(1 \u2212z\u22122) + \u03b3",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-4-z-z1-\u03b3",
+     "title": "(z + z\u22121) + \u03b3",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-2-z-z1-\u03b3-g1-g1",
+     "title": "(z + z\u22121) + \u03b3 + g+(1) + g\u2212(1)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-2-z-z1-g1-g1",
+     "title": "(z + z\u22121) + g+(1) + g\u2212(1)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-2-zz1",
+     "title": "(z\u2212z\u22121)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-2-z-z1-log-z",
+     "title": "(z \u2212z\u22121) + log z",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-2-\u03c1-\u03c11-cos-\u03b8-log-\u03c1",
+     "title": "(\u03c1 \u2212\u03c1\u22121) cos \u03b8 + log \u03c1,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-3-1-\u03b332",
+     "title": "(1 \u2212\u03b3)3/2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-22-0-1",
+     "title": "(0) = 1 +",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-2-zz1dz-1-2",
+     "title": "(z\u2212z\u22121)||dz| = (1) + (2)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-2-zz1-eq",
+     "title": "(z\u2212z\u22121)| \u2264eq",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-2-zz1-e2",
+     "title": "(z\u2212z\u22121)| \u2264e\u22122",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-2-1\u03b3-cos-\u03b832",
+     "title": "(1+\u03b3 cos \u03b8)3/2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-c-since",
+     "title": "Since",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-1-if-0-\u03b3-1-\u03b41-then-for-some-constants-c-c-which",
+     "title": "If 0 \u2264\u03b3 \u22641 \u2212\u03b41, then, for some constants C, c which may depend on \u03b41,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-2-if-1",
+     "title": "If 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-3-if-1",
+     "title": "If 1 \u2212",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-21-0eql-1qeq\u03b3log-\u03b31m1",
+     "title": "(0)eql = \u2212(\u22121)qeq(\u2212\u03b3+log \u03b3+1)m(1)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-0--x2",
+     "title": "(-x/2)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-6-u2-u2",
+     "title": "(u2 \u2212u2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-6-u2u2",
+     "title": "(u2\u2212u2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-038-22-0-r220",
+     "title": "(0) = R22(0)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-039-21-0-noting-the-factorization-v4",
+     "title": "(0). Noting the factorization v(4) =",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-21-0-er220m5",
+     "title": "(0) = eR22(0)m(5,\u221e)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-21-0-eq\u03b3log-\u03b31-1",
+     "title": "(0) = eq(\u2212\u03b3+log \u03b3+1) 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-042-1-if-1-\u03b43-\u03b3",
+     "title": "If 1 + \u03b43 \u2264\u03b3,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-043-3-if-1-\u03b3-1",
+     "title": "If 1 < \u03b3 \u22641 +",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-044-7-asymptotics-of-\u03c6n\u03bb-as-n",
+     "title": "Asymptotics of \u03c6n(\u03bb) as n \u2192\u221e",
+     "prose_ratio": 0.302,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-045-3-k-1",
+     "title": "(k + 1)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-046-2-n112",
+     "title": "(n+1)(1\u22122",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-047-2-therefore-from-lemma-51-i-we-have",
+     "title": "Therefore, from Lemma 5.1 (i), we have",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-048-2-n1",
+     "title": "(n+1)\u2212",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-049-2-m6",
+     "title": "( M6",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-050-24-n-1",
+     "title": "(n + 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-051-1-if-0-2",
+     "title": "If 0 \u22642",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-052-3-if-1",
+     "title": "If 1\u2212",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-053-4-if-1",
+     "title": "If 1 +",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-054-8-de-poissonization-lemmas",
+     "title": "De-Poissonization Lemmas",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-055-9-proofs-of-main-theorems",
+     "title": "Proofs of main Theorems",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.373,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-056-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

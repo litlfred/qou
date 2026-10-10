@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2301.00125v3/blocks/prose-sec-013",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2301.00125v3/blocks/prose-sec-013",
   "kind": "prose",
   "title": "G Elementary proofs from contour deformations",
   "pageStart": 28,
   "pageEnd": 29,
   "text": "../sections/sec-013-g-elementary-proofs-from-contour-deformations.md",
-  "derivedFrom": "library/arxiv-2301.00125v3/manifest",
-  "sourceDocument": "library/arxiv-2301.00125v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2301.00125v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2301.00125v3/manifest.jsonld",
   "provenance": "ingested"
 }

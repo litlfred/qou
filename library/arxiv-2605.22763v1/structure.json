@@ -5,7 +5,8 @@
   "file": "2605.22763v1.pdf",
   "sha256": "1fe6b92bb5eb0b454cd26149d7756c41cd9c48208b85c1fa447770f583e84566",
   "bytes": 2067520,
-  "pages": 59
+  "pages": 59,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,10 +17,10 @@
   },
   "doi": null,
   "title": "Advancing mathematics research with AI-driven formal proof search",
-  "authors_raw": "Bérczi2, Francisco J. R. Ruiz1, Arun Suggala1, Adam Zsolt Wagner1, Eric Wieser1, Lei Yu1, Aja Huang1, Miklós",
+  "authors_raw": "B\u00e9rczi2, Francisco J. R. Ruiz1, Arun Suggala1, Adam Zsolt Wagner1, Eric Wieser1, Lei Yu1, Aja Huang1, Mikl\u00f3s",
   "abstract": null,
   "docinfo": {
-   "Author": "George Tsoukalas; Anton Kovsharov; Sergey Shirobokov; Anja Surina; Moritz Firsching; Gergely Bérczi; Francisco J. R. Ruiz; Arun Suggala; Adam Zsolt Wagner; Eric Wieser; Lei Yu; Aja Huang; Miklós Z. Horváth; Andrew Ferrauiolo; Henryk Michalewski; Codrut Grosu; Thomas Hubert; Matej Balog; Pushmeet Kohli; Swarat Chaudhuri",
+   "Author": "George Tsoukalas; Anton Kovsharov; Sergey Shirobokov; Anja Surina; Moritz Firsching; Gergely B\u00e9rczi; Francisco J. R. Ruiz; Arun Suggala; Adam Zsolt Wagner; Eric Wieser; Lei Yu; Aja Huang; Mikl\u00f3s Z. Horv\u00e1th; Andrew Ferrauiolo; Henryk Michalewski; Codrut Grosu; Thomas Hubert; Matej Balog; Pushmeet Kohli; Swarat Chaudhuri",
    "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
    "Producer": "pikepdf 8.15.1",
    "Title": "Advancing Mathematics Research with AI-Driven Formal Proof Search"
@@ -28,12 +29,12 @@
    "2026-5-22",
    "Advancing Mathematics Research with",
    "AI-Driven Formal Proof Search",
-   "George Tsoukalas1†",
-   "Anton Kovsharov1†",
-   "Sergey Shirobokov1†",
+   "George Tsoukalas1\u2020",
+   "Anton Kovsharov1\u2020",
+   "Sergey Shirobokov1\u2020",
    "Anja Surina1, Moritz Firsching1, Gergely"
   ],
-  "title_prev": "2026-5-22 Advancing Mathematics Research with AI-Driven Formal Proof Search George Tsoukalas1† , Anton Kovsharov1† , Sergey Shirobokov1† , Anja Surina1, Moritz Firsching1, Gergely"
+  "title_prev": "2026-5-22 Advancing Mathematics Research with AI-Driven Formal Proof Search George Tsoukalas1\u2020 , Anton Kovsharov1\u2020 , Sergey Shirobokov1\u2020 , Anja Surina1, Moritz Firsching1, Gergely"
  },
  "toc": [
   {
@@ -115,7 +116,7 @@
   },
   {
    "level": 2,
-   "title": "Selection of Erdős and OEIS Problems",
+   "title": "Selection of Erd\u0151s and OEIS Problems",
    "page": 26,
    "source": "outline",
    "number": null
@@ -248,9 +249,9 @@
    "n_words": 3656
   },
   {
-   "id": "sec-011-selection-of-erdős-and-oeis-problems",
+   "id": "sec-011-selection-of-erd\u0151s-and-oeis-problems",
    "number": null,
-   "title": "Selection of Erdős and OEIS Problems",
+   "title": "Selection of Erd\u0151s and OEIS Problems",
    "level": 2,
    "page_start": 26,
    "page_end": 27,
@@ -283,6 +284,103 @@
   "likely_scanned": false,
   "toc_entries": 14,
   "sections": 14,
-  "chars_total": 151587
+  "chars_total": 151587,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main.tex",
+   "tex_sections": 6,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.735,
+     "coverage_ratio": 0.92,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-alphaproof-nexus",
+     "title": "AlphaProof Nexus",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-systematic-evaluation-on-open-problems",
+     "title": "Systematic Evaluation on Open Problems",
+     "prose_ratio": 0.787,
+     "coverage_ratio": 0.762,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-deployment-in-mathematics-research",
+     "title": "Deployment in Mathematics Research",
+     "prose_ratio": 0.775,
+     "coverage_ratio": 0.813,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-impact-of-agent-architecture-and-model",
+     "title": "Impact of Agent Architecture and Model",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.735,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-discussion",
+     "title": "Discussion",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.201,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-006-materials-and-methods",
+     "title": "Materials and Methods",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-further-details-on-alphaproof-nexus-agents",
+     "title": "Further Details on AlphaProof Nexus Agents",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-prompts",
+     "title": "Prompts",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-supplementary-text",
+     "title": "Supplementary Text",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-related-work",
+     "title": "Related Work",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-selection-of-erd\u0151s-and-oeis-problems",
+     "title": "Selection of Erd\u0151s and OEIS Problems",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-details-on-comparisons-across-agent-architecture",
+     "title": "Details on Comparisons across Agent Architectures and Models",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-deformalized-lean-proofs",
+     "title": "Deformalized Lean Proofs",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

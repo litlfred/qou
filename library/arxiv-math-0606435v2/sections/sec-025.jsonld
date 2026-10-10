@@ -1,5 +1,10 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
   "@id": "library/arxiv-math-0606435v2/sections/sec-025",
   "@type": [
     "doco:Section"
@@ -9,15 +14,15 @@
   "pageEnd": 17,
   "contains": [
     "library/arxiv-math-0606435v2/blocks/prose-sec-025",
-    "library/arxiv-math-0606435v2/blocks/lem-sec-025-01",
-    "library/arxiv-math-0606435v2/blocks/lem-sec-025-02",
-    "library/arxiv-math-0606435v2/blocks/lem-sec-025-03",
-    "library/arxiv-math-0606435v2/blocks/thm-sec-025-04",
-    "library/arxiv-math-0606435v2/blocks/ex-sec-025-05",
-    "library/arxiv-math-0606435v2/blocks/cor-sec-025-06",
-    "library/arxiv-math-0606435v2/blocks/cor-sec-025-07"
+    "library/arxiv-math-0606435v2/blocks/lemma-sec-025-01",
+    "library/arxiv-math-0606435v2/blocks/lemma-sec-025-02",
+    "library/arxiv-math-0606435v2/blocks/lemma-sec-025-03",
+    "library/arxiv-math-0606435v2/blocks/theorem-sec-025-04",
+    "library/arxiv-math-0606435v2/blocks/example-sec-025-05",
+    "library/arxiv-math-0606435v2/blocks/corollary-sec-025-06",
+    "library/arxiv-math-0606435v2/blocks/corollary-sec-025-07"
   ],
-  "derivedFrom": "library/arxiv-math-0606435v2/manifest",
-  "sourceDocument": "library/arxiv-math-0606435v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0606435v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0606435v2/manifest.jsonld",
   "provenance": "ingested"
 }

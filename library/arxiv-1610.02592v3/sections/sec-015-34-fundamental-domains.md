@@ -7,317 +7,221 @@ section_number: 3.4
 pages: 97-105
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
+text_source: latex
+latex_prose_ratio: 0.963
+latex_coverage_ratio: 0.786
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
 ---
-Figure 3.14. A Voronoi tessellation of the Euclidean plane.
-Proposition 3.3.4. The setD(p) is a polyhedron and the polyhedraD(p)
-asp∈S varies form a tessellation ofHn.
-Proof. It is an easy exercise to show that the points inHn having the same
-distance from two distinct ﬁxed points form a hyperplane. For everyp′∈ S
-diﬀerent fromp we deﬁne the half-space
-Hp′ =
-{
-q∈ Hn ⏐⏐d(q,p )⩽d(q,p′)
-}
-.
-The setD(p) is the intersection of the half-pacesHp′ asp′ varies inS\{p}.
-Since S is discrete, these half-spaces are locally ﬁnite (there are ﬁnitely
-manypointsin S atboundeddistancefrom p,henceﬁnitelymanyhyperplanes).
-ThereforeD(p) is a polyhedron. SinceS is discrete, every pointq∈ Hn has
-at least one nearest pointp∈S: therefore the polyhedraD(p) cover Hn as
-p∈S varies.
-It remains to prove that the polyhedraD(p)intersect along common faces.
-We haveD(p)∩D(p′) =D(p)∩∂Hp′ and henceD(p)∩D(p′) is either empty
-or a face ofD(p). The case of multiple intersections follows from Exercise
-3.2.2. □
-Voronoi tessellations of course make sense also inRn and Sn, see Figure
-3.14. Wehavejustprovedthattessellationsarenotexoteric, butquiteordinary
-objects, and we now show that they are useful to study hyperbolic manifolds.
-3.4. Fundamental domains
-We turn back to our discrete subgroupsΓ< Isom(Hn). The geometry of a
-discrete Γ is nicely controlled by some polyhedra, calledfundamental domains.
+We turn back to our discrete subgroups $\Gamma < \Iso(\matH^n)$. The geometry of a discrete $\Gamma$ is nicely controlled by some polyhedra, called \emph{fundamental domains}.
 We introduce these objects and make some important examples.
-3.4.1. Fundamental and Dirichlet domains.Let Γ be a discrete group
-of isometries ofHn. The groupΓ may or may not act freely onHn.
-90 3. HYPERBOLIC MANIFOLDS
-Figure 3.15. The shadowed triangle (with one ideal vertex) is a fun-
-damental domain for Γ = PSL2(Z) acting on the half-spaceH2. The
-translates of the fundamental domain form the tessellation shown.
-Deﬁnition 3.4.1. Afundamental domain for Γ is a polyhedronD⊂ Hn
-whose translatesg(D) as g∈ Γ varies are distinct and form a tessellation of
-the space Hn.
-If D is a fundamental domain, the group Γ acts freely and transitively
-on the tessellation
-{
-g(D)
-}
-g∈Γ, so in particular the polyhedrag(D) are all
-isometric.
-We describe a procedure that builds a fundamental domain for any discrete
-subgroup Γ< Isom(Hn). Pick a pointp∈ Hn with trivial stabiliserΓp, which
-exists by Proposition 3.1.9. The groupΓ acts freely and transitively on the
-orbit Γ(p), which is discrete by Proposition 3.1.8.
-The discrete orbit Γ(p) deﬁnes aΓ-invariant Voronoi tessellation ofHn,
-and every polyhedron of the tessellation is a fundamental domain. The poly-
-hedronD(p) of the tessellation containingp is called theDirichlet domainfor
-Γ centred atp. By construction we have
-D(g(p)) =g(D(p))
-for allg∈ Γ. We have proved in particular the following.
-Proposition 3.4.2. Every discrete groupΓ< Isom(Hn) has a fundamental
-domain.
-Fundamental domains are far from being unique. The Dirichlet domain
-D(p) depends onp in a continuous fashion, and many fundamental domains
-are not Dirichlet domains.
-Exercise 3.4.3. Prove that the shadowed triangle in Figure 3.15 is a fun-
-damental domain for the modular groupPSL2(Z).
-Everything we say also holds forRn andSn.
-3.4. FUNDAMENTAL DOMAINS 91
-3.4.2. Fundamental domain of manifolds.Let Γ< Isom(Hn) be a dis-
-crete subgroup that acts freely onHn and D be a fundamental domain for
-Γ. We can get some information on the hyperbolic manifoldM = Hn/Γ by
-looking atD.
-Proposition 3.4.4. Let M = Hn/Γ be a hyperbolic manifold andD a fun-
-damental domain forΓ. The projectionπ : Hn→M restricts to a surjective
-mapD→M that sendsint(D) isometrically onto an open dense subset ofM.
-In particular we have
-Vol(D) = Vol(M).
-IfD is a Dirichlet domain, it is compact if and only ifM is.
-Proof. The translatesg(D) cover Hn, hence the projectionD→ M is
-surjective. The translates g(int(D)) are disjoint, hence int(D) is sent iso-
-metrically insideM. The boundary ∂D has measure zero, hence Vol(D) =
-Vol(int(D)) = Vol(M).
-If D is compact thenM clearly is. If D = D(p) is a Dirichlet domain
-andM is compact,M has ﬁnite diameterδ and hence every point inHn is at
-distance⩽δ of some point in the orbit ofp. HenceD(p) is contained in the
-closure ofB(p,δ ). □
-A fundamental domainD alone however does not determineM: we will
-soon see in Section 3.4.8 that a square inR2 is the fundamental domain of
-two non homeomorphic compact ﬂat surfaces.
-3.4.3. Asteroids. The facets of a fundamental domainD are naturally
-partitioned into isometric pairs, as follows. Ever facetf ofD is incident toD
-and to another fundamental domaing(D) of the tessellation. The isometry
-g−1 sendsg(D) toD and hence sendsf to another facetf′ ofD. One checks
-immediately that (f′)′ =f, sof andf′ are paired isometrically.
-One should think ofM as obtained fromD by identifying these facets in
-pairs: we can picture an observer – say, a spaceship – ﬂoating and traveling
-insideM by visualising it inD, and jumping fromf tof′ every time it crosses
-the interior of a facetf, like in the 1979 video gameAsteroids.
-3.4.4. Spineandcutlocus. Anotherpicturethatmayhelptounderstand
-M geometrically is thespine S⊂M deﬁned asS =π(∂D). This is a(n− 1)-
-dimensional object inM whose complement is an open ball. WhenD =D(p)
-is the Dirichlet domain of a pointp, the spineS is called thecut locusof the
-pointq =π(p)∈M.
-Exercise 3.4.5. The cut locus ofq∈M consists of all pointsq′ such that
-there are at least two geodesics of minimal length connectingq toq′.
-We now exhibit some important examples of discrete groups of isometries
-in the three geometriesHn, Rn, andSn, and study their fundamental domains.
-92 3. HYPERBOLIC MANIFOLDS
-3.4.5. Triangle groups.Leta,b,c > 2 be natural numbers and∆ be the
-triangle inH2,S 2, orR2 with inner anglesπ
-a, π
-b, π
-c. By reﬂecting iteratively∆
-along its sides we get a tessellationT, see Section 3.3.1.
-The triangle group Γ = Γ(a,b,c ) is the group of isometries ofS2, R2, or
-H2 generated by the reﬂectionsx,y,z along the three sides of∆ opposite to
-the vertices with inner anglesa,b,c , respectively.
-Proposition 3.4.6.The triangle groupΓ(a,b,c ) acts freely and transitively
-on the triangles of the tessellationT. Hence it is discrete and∆ is a funda-
-mental domain forΓ. A presentation for the group is
-⟨x,y,z |x 2,y 2,z 2, (xy )c, (yz )a, (zx )b⟩.
-Proof. We restrict for simplicity to the hyperbolic case, the others being
-analogous. It is convenient to construct the tessellationT abstractly (this
-also furnishes a rigorous proof that by mirroring∆ along its sides we get a
-tessellation of H2).
-We denote byx,y,z both the sides of∆ and the reﬂections along them.
-For everyg∈ Γ we deﬁne an abstract copy∆g of ∆, and then we glue all these
-abstract copies altogether by pairing their sides as follows: for every side of
-∆, sayx, and everyg∈ Γ, we identify the two copies of the sidex in ∆g and
-∆gx with the obvious identity map.
-Via these identiﬁcations we get an abstract spaceT tessellated into the
-triangles ∆g. The groupΓ acts freely and transitively on the tessellation (the
-elementg′∈ Γsends ∆g to ∆g′g). Wenowprovethat T hasanaturalstructure
-of a hyperbolic surface: sinceΓ acts transitively, it suﬃces to check this for
-the pointsp lying in ∆e. If p lies in the interior of∆e or of a side, this is
-clear by construction. Ifp is a vertex, say with inner anglea, by construction a
-cycle of2a triangles ∆e, ∆y, ∆yz, ∆yzy, ∆yzyz ,... is attached aroundp because
-(yz )a =e, and henceT is naturally a hyperbolic surface also nearp.
-The hyperbolic surfaceT is easily seen to be connected and complete.
-There is a natural developing mapϕ:T→ H2 that sends ∆g to g(∆). The
-map ϕ is a local isometry, hence a covering by Proposition 1.2.19, hence an
-isometry since H2 is simply connected. We identifyT with H2 throughϕ.
-It remains to prove thatΓ may be presented as stated. LetG be the group
-presented as
-⟨x,y,z |x 2,y 2,z 2, (xy )c, (yz )a, (zx )b⟩.
-There is a natural surjectionG→ Γ. We may repeat all the arguments above
-using G instead of Γ and get anotherT′ isometric to H2 that coversT. We
-deduce thatT′ =T andG = Γ. □
-The triangle groupΓ(2, 2,c )∼= Z/2Z×D2c has order4c and is the symme-
-try group of a prism. The triangle groupsΓ(2, 3, 3), Γ(2, 3, 4), and Γ(2, 3, 5)
-3.4. FUNDAMENTAL DOMAINS 93
-have order24, 48, and120 and are the symmetry groups of the regular tetra-
-hedron, octahedron, and icosahedron: the reader is invited to check all these
-facts visually by looking at Figure 3.5.
-The triangle groupsΓ(2, 3, 6), Γ(2, 4, 4), andΓ(3, 3, 3) are discrete groups
-of isometries ofR2 with compact quotientR2/Γ. If 1
-a + 1
-b + 1
-c < 1 the group
-Γ(a,b,c )isadiscretesubgroupof Isom(H2). Itcontainsinﬁnitelymanyelliptic
-elements, such as reﬂections along lines and ﬁnite-order rotations around the
-vertices of the triangles. By Selberg’s Lemma, there is a torsion-free subgroup
-Γ′ < Γ of some ﬁnite indexh. The quotient H2/Γ′ is a closed hyperbolic
-surface and is tessellated intoh triangles isometric to∆.
-3.4.6. Coxeter polyhedra. Triangle groups may be generalised to all di-
-mensionsasfollows. Apolyhedron P in Hn (or Rn,Sn)isa Coxeterpolyhedron
-if the dihedral angle of every codimension-two face dividesπ. For instance,
-the regular ideal tetrahedron and octahedron are Coxeter polyhedra.
-The following theorem generalises Proposition 3.4.6. LetP be a ﬁnite
-Coxeter polyhedron: it is the convex hull of ﬁnitely many vertices inHn (or
-Rn, Sn) and hask facets, that we number as1,...,k ; we denote byri the
-reﬂection along thei-th facet, and byπ
-aij
-the dihedral angle formed by thei-th
-and j-th facets, if they are incident. LetΓ be the isometry group generated
-by the reﬂections along the facets ofP.
-Theorem 3.4.7. By mirroring iteratively a ﬁnite Coxeter polyhedronP
-along its facets we get a tessellation ofHn (or Rn,Sn). The group Γ acts
-freely and transitively on the tessellation: hence it is discrete andP is a fun-
-damental domain forΓ. A presentation forΓ is
-⟨r1,...,r k|r 2
-i , (rirj )aij⟩
-wherei varies in 1,...,k and the pairi,j varies among the incident facets.
-Proof. Same proof as Proposition 3.4.6, with in addition an induction on
-the dimensionn. Here are the details. We consider for simplicity only the
-hyperbolic case.
-For everyg∈ Γ we deﬁne an abstract copyPg of P, and we identify the
-i-th facet ofPg and Pgri for allg∈ Γ and alli. To prove that the resulting
-spaceT is naturally a hyperbolic manifold, we use the induction hypothesis as
-follows. Every p∈ Pe lies in the interior of someh-dimensional facef, and
-let Γf < Γ be the subgroup generated by the reﬂections along all the facets of
-P containing f. The pointp is adjacent inT to the polyhedraPg such that
-g∈ Γf. By intersecting each suchPg with a small codimensionh + 1 sphere
-centred inp and contained in the codimensionh subspace orthogonal tof, we
-get some spherical polytopeQg of dimensionn−h− 1< n. (The spherical
-polytopeQt is usually called thespherical linkoff.)
-Byconstruction Qe⊂Sn−h−1 isaCoxeterpolytopeandthesubgroup Γf <
-Isom(Sn−h−1) is generated by the reﬂections along its facets. By applying the
-94 3. HYPERBOLIC MANIFOLDS
-induction hypothesis onQe we deduce that the polytopesQg withg∈ Γf form
-a tessellation ofSn−h−1, hence the polyhedraPg incident top form naturally
-a hyperbolic ball locally nearp. ThereforeT is a hyperbolic manifold.
-Proving that T is complete requires a bit of care ifPe has some ideal
-vertexv. In that casev has a Euclidean link (obtained by intersectingPe with
-a small horosphere) and we conclude by induction as above that the Euclidean
-links of thePg incident tov in T glue to form a EuclideanRn−1, that is a
-horosphere, so by intersecting eachPg with small horoballs we get a horoball
-nearv, which is complete.
-The hyperbolic spaceT is complete and connected, and we conclude as in
-the proof of Proposition 3.4.6. □
-A group generated by some reﬂections along hyperplanes is called areﬂec-
-tion group. The following proposition shows that Coxeter polyhedra generate
-all the interesting reﬂection groups.
-Proposition 3.4.8. Every discrete reﬂection groupΓ is generated by the
-reﬂections along the facets of some Coxeter polyhedron.
-Proof. Consider the mirror hyperplanes of all the reﬂections inΓ. Since Γ
-is discrete, these form a locally ﬁnite set and hence deﬁne a tessellation ofHn
-onto whichΓ acts transitively. Pick one polyhedronP of the tessellation. The
-reﬂections along the facets ofP generate Γ (exercise). □
-Coxeter polyhedra are beautiful objects that can be used to construct
-hyperbolic manifolds: every ﬁnite Coxeter polyhedronP generates a reﬂection
-group Γ which contains, by Selberg’s Lemma, a torsion-free subgroupΓ′ of
-some ﬁnite indexh. The quotient M = Hn/Γ′ is a hyperbolic manifold and
-is tessellated intoh copies of P, so that Vol(M) = hVol(P ). By residual
-ﬁniteness, there are plenty of such manifolds.
-3.4.7. Coxeter graphs.If a Coxeter polyhedronP has a reasonable num-
-ber of facets (for instance, ifP is a simplex), then one can study many of
-its properties by looking at itsCoxeter graph, which is constructed as follows:
-draw one node for each facet ofP, and for every pair of facets intersecting
-with dihedral angleπ
-a connect the corresponding nodes with an edge labeled
-witha. One also uses thickened or dashed edges to denote non-incident faces
-that do or do not intersect at some ideal vertex, respectively (these cases
-cannot occur on simplexes). Given the abundance of right angles, one usually
-omit the edges with label 2.
-Exercise 3.4.9. LetP be a regular polytope or tessellation with Schläﬂi
-symbol{a,b,...,z }. By quotientingP via all its isometries we get a Coxeter
-simplex, called itscharacteristic simplex, whose Coxeter graph is
-3.4. FUNDAMENTAL DOMAINS 95
-Figure 3.16. A fundamental domain inR2 for the torus (left) and the
-Klein bottle (centre): opposite sides should be identiﬁed as indicated by
-the arrows. A fundamental domain inS2 for RP2 (right).
-3.4.8. Flat tori. The isometry groupIsom(Rn) of Rn contains the trans-
-lations subgroup that we identify withRn. The integer translations Γ = Zn
-form a discrete subgroup that acts freely onRn, therefore the quotientRn/Γ
-is a ﬂat manifold. It is naturally diﬀeomorphic to then-dimensional torus:
-Rn/Zn = (R/Z)n∼=S1×... ×S1
-| {z }
-n
-.
-Exercise 3.4.10. For every p ∈ Rn the Dirichlet domain D(p) is a n-
-dimensional unit cube centred atp.
-The ﬂatn-torus may be seen as the unitn-cube with its opposite facets
-identiﬁed by translations. The two-dimensional case is shown in Figure 3.16-
-(left): by identifying the opposite sides of a square we get a torus.
-The n-torus possesses a continuous family of non-isometric ﬂat metrics.
-A lattice Γ< Rn is a discrete subgroup isomorphic toZn which spans Rn as
-a vector space. We seeΓ as a group of translations.
-Exercise 3.4.11. For every latticeΓ, the ﬂat manifoldRn/Γ is diﬀeomor-
-phic to then-torus. A fundamental domain is the parallelotope spanned byn
-generators of Γ.
-A Dirichlet domain forΓ is almost never a parallelotope! In thehexagonal
-torus R2/Γ the groupΓ is the equilateral lattice generated by the translations
-(1, 0),
-( 1
-2,
-√
-3
-2
-)
-and the Dirichlet domain of any point is a regular hexagon. Orientable ﬂat
-manifolds are easily classiﬁed (up to diﬀeomorphism) in dimension two.
-Proposition 3.4.12. Every closed ﬂat orientable surface is a torus.
-Proof. A closed ﬂat surfaceS is isometric to R2/Γ for some discrete
-group Γ of orientation-preserving isometries acting freely. Every ﬁxed-point-
-free orientation-preserving isometry of R2 is a translation (exercise), hence
-Γ< R2. If Γ has rank one thenS is not compact, henceΓ is a lattice andS
-is a torus. □
-96 3. HYPERBOLIC MANIFOLDS
-Flat manifolds more complicated than tori can be constructed by consid-
-ering also non-translational isometries ofRn, which exist forn> 3 and also
-forn = 2 in the non-orientable setting. For instance, in dimension two we ﬁnd
-the Klein bottleby taking Γ as the group generated by the isometries:
-τ : (x,y )↦→ (x + 1,y ), η : (x,y )↦→ (1−x,y + 1).
-A fundamental domain for the Klein bottle is shown in Figure 3.16-(centre).
-Every subgroup Γ′ < Γ furnishes another ﬂat manifoldR2/Γ′ that covers
-the Klein bottle. For instance, the subgroups⟨τ⟩ and⟨η⟩ generated respec-
-tively byτ andη are both isomorphic toZ but provide two diﬀerent coverings:
-the manifold R2/⟨τ⟩ is an inﬁnite cylinder whileR2/⟨η⟩ is an inﬁnite Möbius
-strip.
-The subgroup Γ′ generated by the translationsτ and η2 is isomorphic to
-Z2 and has index 2 inΓ. The Klein bottle is doubly covered by the ﬂat torus
-H2/Γ′. A fundamental domain forΓ′ is a rectangle with vertices(0, 0), (1, 0),
-(0, 2), (1, 2).
-We have seen that the Klein bottle is covered by a torus. In fact, we will
-see in Section 4.4 thatevery closed ﬂatn-manifold is covered by a ﬂatn-torus.
-Exercise 3.4.13. A squareQ⊂ R2 is a Coxeter polygon and determines
-a reﬂection groupΓ. What is the minimum index of a torsion-free subgroup
-Γ′< Γ? Which topological surfacesR2/Γ′ do we get?
-3.4.9. Real projective spaces.We now exhibit some elliptic manifolds.
-Every elliptic manifold is covered bySn and is hence compact and has ﬁnite
-fundamental group (because coverings between compact manifolds have ﬁnite
-degree).
-An important example is the real projective spaceRPn =Sn/Γ where Γ is
-the order-two group generated by the antipodal mapι(x) =−x.
-Exercise 3.4.14. For everyp∈Sn, the Dirichlet domainD(p) of Γ is the
-hemisphere centred atp.
-The two-dimensional case is shown in Figure 3.16-(right). The only elliptic
-surfaces areS2 and RP2 in virtue of the following.
-Proposition 3.4.15.In even dimensionn the only elliptic manifolds areSn
-and RPn.
-Proof. Let M = Sn/Γ be an elliptic manifold. Every matrix in SO(n +
-1) has an eigenvalue +1 because n is even (exercise) and hence acts inSn
-with a ﬁxed point. ThereforeΓ contains no non-trivial orientation-preserving
-isometries, and since these form a group of index at most two, eitherΓ is
-trivial or is generated by an orientation-reversing ﬁxed-point free involution in
-O(n + 1), and−I is the only such element (exercise). □
+
+\subsection{Fundamental and Dirichlet domains}
+Let $\Gamma$ be a discrete group of isometries of $\matH^n$. The group $\Gamma$ may or may not act freely on $\matH^n$.  \index{fundamental domain}
+\begin{defn}
+A \emph{fundamental domain} for $\Gamma$ is a polyhedron $D \subset\matH^n$ whose translates $g(D)$ as $g\in \Gamma$ varies are distinct and form a tessellation of the space $\matH^n$. 
+\end{defn}
+If $D$ is a fundamental domain, the group $\Gamma$ acts freely and transitively on the tessellation $\big\{g(D)\big\}_{g \in \Gamma}$, so in particular the polyhedra $g(D)$ are all isometric. 
+
+We describe a procedure that builds a fundamental domain for any discrete subgroup $\Gamma < \Iso(\matH^n)$. Pick  a point $p\in \matH^n$ 
+with trivial stabiliser $\Gamma_p$, which exists by Proposition \ref{dense:prop}. The group $\Gamma$ acts freely and transitively on the orbit $\Gamma(p)$, which is discrete by Proposition \ref{discrete:prop}.
+
+The discrete orbit $\Gamma(p)$ defines a $\Gamma$-invariant Voronoi tessellation of $\matH^n$, and every polyhedron of the tessellation is a fundamental domain. The polyhedron $D(p)$ of the tessellation containing $p$ is called the \emph{Dirichlet domain} for $\Gamma$ centred at $p$. By construction we have \index{Dirichlet domain}
+$$D(g(p)) = g(D(p))$$
+for all $g\in \Gamma$. We have proved in particular the following.
+
+\begin{prop}
+Every discrete group $\Gamma < \Iso(\matH^n)$ has a fundamental domain.
+\end{prop}
+
+Fundamental domains are far from being unique. The Dirichlet domain $D(p)$ depends on $p$ in a continuous fashion, and many fundamental domains are not Dirichlet domains.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11 cm] {\iftoggle{BW}{ModularGroup-FundamentalDomain-01-BW}{ModularGroup-FundamentalDomain-01}}
+\nota{The shadowed triangle (with one ideal vertex) is a fundamental domain for $\Gamma = \PSLZ$ acting on the half-space $H^2$. The translates of the fundamental domain form the tessellation shown.}
+\label{modular_group:fig}
+\end{center}
+\end{figure}
+
+\begin{ex}
+Prove that the shadowed triangle in Figure \ref{modular_group:fig} is a fundamental domain for the modular group $\PSLZ$. 
+\end{ex}
+
+Everything we say also holds for $\matR^n$ and $S^n$.
+
+\subsection{Fundamental domain of manifolds}
+Let $\Gamma< \Iso(\matH^n)$ be a discrete subgroup that acts freely on $\matH^n$ and $D$ be a fundamental domain for $\Gamma$. We can get some information on the hyperbolic manifold $M=\matH^n/_\Gamma$ by looking at $D$. 
+
+\begin{prop}
+Let $M=\matH^n/_\Gamma$ be a hyperbolic manifold and $D$ a fundamental domain for $\Gamma$. The projection $\pi\colon \matH^n \to M$ restricts to a surjective map $D \to M$ that sends $\interior D$ isometrically onto an open dense subset of $M$. In particular we have
+$$\Vol(D) = \Vol (M).$$
+If $D$ is a Dirichlet domain, it is compact if and only if $M$ is.
+\end{prop}
+\begin{proof}
+The translates $g(D)$ cover $\matH^n$, hence the projection $D \to M$ is surjective.
+The translates $g(\interior D)$ are disjoint, hence $\interior D$ is sent isometrically inside $M$. The boundary $\partial D$ has measure zero, hence $\Vol(D) = \Vol(\interior D) = \Vol(M)$. 
+
+If $D$ is compact then $M$ clearly is. If $D = D(p)$ is a Dirichlet domain and $M$ is compact, $M$ has finite diameter $\delta$ and hence every point in $\matH^n$ is at distance $\leqslant \delta$ of some point in the orbit of $p$. Hence $D(p)$ is contained in the closure of $B(p,\delta)$.
+\end{proof}
+
+A fundamental domain $D$ alone however does not determine $M$: we will soon see in Section \ref{piatte:subsection} that a square in $\matR^2$ is the fundamental domain of two non homeomorphic compact flat surfaces.
+
+\subsection{Asteroids}
+The facets of a fundamental domain $D$ are naturally partitioned into isometric pairs, as follows. Ever facet $f$ of $D$ is incident to $D$ and to another fundamental domain $g(D)$ of the tessellation. The isometry $g^{-1}$ sends $g(D)$ to $D$ and hence sends $f$ to another facet $f'$ of $D$. One checks immediately that $(f')' = f$, so $f$ and $f'$ are paired isometrically. 
+
+One should think of $M$ as obtained from $D$ by identifying these facets in pairs: we can picture an observer -- say, a spaceship -- floating and traveling inside $M$ by visualising it in $D$, and jumping from $f$ to $f'$ every time it crosses the interior of a facet $f$, like in the 1979 video game \emph{Asteroids}.
+
+\subsection{Spine and cut locus}
+Another picture that may help to understand $M$ geometrically is the \emph{spine}\index{spine} $S \subset M$ defined as $S=\pi(\partial D)$. This is a $(n-1)$-dimensional object in $M$ whose complement is an open ball. When $D = D(p)$ is the Dirichlet domain of a point $p$, the spine $S$ is called the \emph{cut locus} of the point $q=\pi(p) \in M$. \index{cut locus}
+
+\begin{ex}
+The cut locus of $q \in M$ consists of all points $q'$ such that there are at least two geodesics of minimal length connecting $q$ to $q'$.
+\end{ex}
+
+We now exhibit some important examples of discrete groups of isometries in the three geometries $\matH^n$, $\matR^n$, and $S^n$, and study their fundamental domains. 
+
+\subsection{Triangle groups} \label{triangle:groups:subsection}
+Let $a,b,c \geqslant 2$ be natural numbers and $\Delta$ be the triangle in $\matH^2, S^2$, or $\matR^2$ with inner angles $\frac \pi a$, $\frac \pi b$, $\frac \pi c$. By reflecting iteratively $\Delta$ along its sides we get a tessellation $T$, see Section \ref{triangular:subsection}. \index{group!triangle group}
+
+The \emph{triangle group} $\Gamma = \Gamma (a,b,c)$ is the group of isometries of $S^2$, $\matR^2$, or $\matH^2$ generated by the reflections $x,y,z$ along the three sides of $\Delta$ opposite to the vertices with inner angles $a,b,c$, respectively.
+
+\begin{prop} \label{triangle:gamma:prop}
+The triangle group $\Gamma (a,b,c)$ acts freely and transitively on the triangles of the tessellation $T$. Hence it is discrete and $\Delta$ is a fundamental domain for $\Gamma$. A presentation for the group is
+$$\langle x, y,z\ |\ x^2, y^2, z^2, (xy)^c, (yz)^a, (zx)^b \rangle.$$
+\end{prop}
+\begin{proof}
+We restrict for simplicity to the hyperbolic case, the others being analogous. It is convenient to construct the tessellation $T$ abstractly (this also furnishes a rigorous proof that by mirroring $\Delta$ along its sides we get a tessellation of $\matH^2$). 
+
+We denote by $x,y,z$ both the sides of $\Delta$ and the reflections along them. For every $g\in \Gamma$ we define an abstract copy $\Delta_g$ of $\Delta$, and then we glue all these abstract copies altogether by pairing their sides  as follows: for every side of $\Delta$, say $x$, and every $g\in \Gamma$, we identify the two copies of the side $x$ in $\Delta_g$ and $\Delta_{gx}$ with the obvious identity map.
+
+Via these identifications we get an abstract space $T$ tessellated into the triangles $\Delta_g$. The group $\Gamma$ acts freely and transitively on the tessellation (the element $g'\in \Gamma$ sends $\Delta_g$ to $\Delta_{g'g}$). We now prove that $T$ has a natural structure of a hyperbolic surface: since $\Gamma$ acts transitively, it suffices to check this for the points $p$ lying in $\Delta_e$. If $p$ lies in the interior of $\Delta_e$ or of a side, this is clear by construction. If $p$ is a vertex, say with inner angle $a$, by construction a cycle of $2a$ triangles $\Delta_e, \Delta_y, \Delta_{yz}, \Delta_{yzy}, \Delta_{yzyz}, \ldots $ is attached around $p$ because $(yz)^a = e$, and hence $T$ is naturally a hyperbolic surface also near $p$.
+
+The hyperbolic surface $T$ is easily seen to be connected and complete. There is a natural developing map $\varphi\colon T\to \matH^2$ that sends $\Delta_g$ to $g(\Delta)$. The map $\varphi$ is a local isometry, hence a covering by Proposition \ref{local:isometry:prop}, hence an isometry since $\matH^2$ is simply connected. We identify $T$ with $\matH^2$ through $\varphi$.
+
+It remains to prove that $\Gamma$ may be presented as stated. Let $G$ be the group presented as
+$$\langle x, y,z\ |\ x^2, y^2, z^2, (xy)^c, (yz)^a, (zx)^b \rangle.$$
+There is a natural surjection $G\to \Gamma$. We may repeat all the arguments above using $G$ instead of $\Gamma$ and get another $T'$ isometric to $\matH^2$ that covers $T$. We deduce that $T'=T$ and $G=\Gamma$.
+\end{proof}
+
+The triangle group $\Gamma(2,2,c) \isom \matZ/_{2\matZ}\times D_{2c}$ has order $4c$ and is the symmetry group of a prism. The triangle groups $\Gamma(2,3,3)$, $\Gamma(2,3,4)$, and $\Gamma(2,3,5)$ have order $24$, $48$, and $120$ and are the symmetry groups of the regular tetrahedron, octahedron, and icosahedron: the reader is invited to check all these facts visually by looking at Figure \ref{triangular:fig}.
+
+The triangle groups $\Gamma(2,3,6)$, $\Gamma(2,4,4)$, and $\Gamma(3,3,3)$ are discrete groups of isometries of $\matR^2$ with compact quotient $\matR^2/_\Gamma$. 
+If $\frac 1a + \frac 1b + \frac 1c <1$ the group $\Gamma(a,b,c)$ is a discrete subgroup of $\Iso(\matH^2)$. It contains infinitely many elliptic elements, such as reflections along lines and finite-order rotations around the vertices of the triangles. By Selberg's Lemma, there is a torsion-free subgroup $\Gamma' < \Gamma$ of some finite index $h$. The quotient $\matH^2/_{\Gamma'}$ is a closed hyperbolic surface and is tessellated into $h$ triangles isometric to $\Delta$.
+
+\subsection{Coxeter polyhedra}
+Triangle groups may be generalised to all dimensions as follows. A polyhedron $P$ in $\matH^n$ (or $\matR^n$, $S^n$) is a \emph{Coxeter polyhedron} if the dihedral angle of every codimension-two face divides $\pi$.\index{polyhedron!Coxeter polyhedron} For instance, the regular ideal tetrahedron and octahedron are Coxeter polyhedra.
+
+The following theorem generalises Proposition \ref{triangle:gamma:prop}. Let $P$ be a finite Coxeter polyhedron: it is the convex hull of finitely many vertices in $\overline{\matH^n}$ (or $\matR^n$, $S^n$) and has $k$ facets, that we number as $1, \ldots, k$; we denote by $r_i$ the reflection along the $i$-th facet, and by $\frac {\pi}{a_{ij}}$ the dihedral angle formed by the $i$-th and $j$-th facets, if they are incident. Let $\Gamma$ be the isometry group generated by the reflections along the facets of $P$.
+
+\begin{teo}
+By mirroring iteratively a finite Coxeter polyhedron $P$ along its facets we get a tessellation of $\matH^n$ (or $\matR^n, S^n$).
+The group $\Gamma$ acts freely and transitively on the tessellation: hence it is discrete and $P$ is a fundamental domain for $\Gamma$. A presentation for $\Gamma$ is
+$$\langle r_1, \ldots, r_k \ |\  r_i^2, (r_ir_j)^{a_{ij}} \rangle$$
+where $i$ varies in $1,\ldots, k$ and the pair $i,j$ varies among the incident facets.
+\end{teo}
+\begin{proof}
+Same proof as Proposition \ref{triangle:gamma:prop}, with in addition an induction on the dimension $n$. Here are the details. We consider for simplicity only the hyperbolic case.
+
+For every $g\in \Gamma$ we define an abstract copy $P_g$ of $P$, and we identify the $i$-th facet of $P_g$ and $P_{gr_i}$ for all $g\in \Gamma$ and all $i$. To prove that the resulting space $T$ is naturally a hyperbolic manifold, we use the induction hypothesis as follows. Every $p\in P_e$ lies in the interior of some $h$-dimensional face $f$, and let $\Gamma_f<\Gamma$ be the subgroup generated by the reflections along all the facets of $P$ containing $f$. The point $p$ is adjacent in $T$ to the polyhedra $P_g$ such that $g\in \Gamma_f$. By intersecting each such $P_g$ with a small codimension $h+1$ sphere centred in $p$ and contained in the codimension $h$ subspace orthogonal to $f$, we get some spherical polytope $Q_g$ of dimension $n-h-1<n$. (The spherical polytope $Q_t$ is usually called the \emph{spherical link} of $f$.)
+
+By construction $Q_e \subset S^{n-h-1}$ is a Coxeter polytope and the subgroup $\Gamma_f < \Iso(S^{n-h-1})$ is generated by the reflections along its facets. By applying the induction hypothesis on $Q_e$ we deduce that the polytopes $Q_g$ with $g\in \Gamma_f$ form a tessellation of $S^{n-h-1}$, hence the polyhedra $P_g$ incident to $p$ form naturally a hyperbolic ball locally near $p$. Therefore $T$ is a hyperbolic manifold.
+
+Proving that $T$ is complete requires a bit of care if $P_e$ has some ideal vertex $v$. In that case $v$ has a Euclidean link (obtained by intersecting $P_e$ with a small horosphere) and we conclude by induction as above that the Euclidean links of the $P_g$ incident to $v$ in $T$ glue to form a Euclidean $\matR^{n-1}$, that is a horosphere, so by intersecting each $P_g$ with small horoballs we get a horoball near $v$, which is complete.
+
+The hyperbolic space $T$ is complete and connected, and we conclude as in the proof of Proposition \ref{triangle:gamma:prop}. 
+\end{proof}
+
+A group generated by some reflections along hyperplanes is called a \emph{reflection group}.\index{group!reflection group}
+The following proposition shows that Coxeter polyhedra generate all the interesting reflection groups.
+
+\begin{prop}
+Every discrete reflection group $\Gamma$ is generated by the reflections along the facets of some Coxeter polyhedron.
+\end{prop}
+\begin{proof}
+Consider the mirror hyperplanes of all the reflections in $\Gamma$. Since $\Gamma$ is discrete, these form a locally finite set and hence define a tessellation of $\matH^n$ onto which $\Gamma$ acts transitively. Pick one polyhedron $P$ of the tessellation. The reflections along the facets of $P$ generate $\Gamma$ (exercise).
+\end{proof}
+
+Coxeter polyhedra are beautiful objects that can be used to construct hyperbolic manifolds: every finite Coxeter polyhedron $P$ generates a reflection group $\Gamma$ which contains, by Selberg's Lemma, a torsion-free subgroup $\Gamma'$ of some finite index $h$. The quotient $M=\matH^n/_{\Gamma'}$ is a hyperbolic manifold and is tessellated into $h$ copies of $P$, so that $\Vol(M) = h\Vol(P)$. By residual finiteness, there are plenty of such manifolds.
+
+\subsection{Coxeter graphs}
+If a Coxeter polyhedron $P$ has a reasonable number of facets (for instance, if $P$ is a simplex), then one can study many of its properties by looking at its \emph{Coxeter graph},\index{Coxeter graph} which is constructed as follows: draw one node for each facet of $P$, and for every pair of facets intersecting with dihedral angle $\frac \pi a$ connect the corresponding nodes with an edge labeled with $a$. One also uses thickened or dashed edges to denote non-incident faces that do or do not intersect at some ideal vertex, respectively (these cases cannot occur on simplexes). Given the abundance of right angles, one usually omit the edges with label 2. 
+
+\begin{ex}
+Let $P$ be a regular polytope or tessellation with Schl\"afli symbol $\{a,b, \ldots, z\}$. By quotienting $P$ via all its isometries we get a Coxeter simplex, called its \emph{characteristic simplex}, whose Coxeter graph is\index{simplex!characteristic simplex}
+\begin{center}
+\includegraphics[width = 3 cm]{Coxeter_line}
+\end{center}
+\end{ex}
+
+\subsection{Flat tori} \label{piatte:subsection}
+The isometry group $\Iso(\matR^n)$ of $\matR^n$ contains the translations subgroup that we identify with $\matR^n$. The integer translations $\Gamma = \matZ^n$ form a discrete subgroup that acts freely on $\matR^n$, therefore the quotient $\matR^n /_\Gamma$ is a flat manifold. It is naturally diffeomorphic to the $n$-dimensional torus: 
+$$\matR^n/_{\matZ^n} = \left(\matR/_{\matZ}\right)^n \isom \underbrace{S^1  \times \ldots \times S^1}_n.$$
+
+\begin{ex} For every $p\in \matR^n$ the Dirichlet domain $D(p)$ is a $n$-dimensional unit cube centred at $p$.
+\end{ex}
+
+The flat $n$-torus may be seen as the unit $n$-cube with its opposite facets identified by translations. The two-dimensional case is shown in Figure \ref{domini:fig}-(left): by identifying the opposite sides of a square we get a torus. \index{flat torus}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 11.5 cm] {\iftoggle{BW}{domini-BW}{domini}}
+\nota{A fundamental domain in $\matR^2$ for the torus (left) and the Klein bottle (centre): opposite sides should be identified as indicated by the arrows. A fundamental domain in $S^2$ for $\matRP^2$ (right).}
+\label{domini:fig}
+\end{center}
+\end{figure}
+
+The $n$-torus possesses a continuous family of non-isometric flat metrics. A \emph{lattice} $\Gamma<\matR^n$ is a discrete subgroup isomorphic to $\matZ^n$ which spans $\matR^n$ as a vector space. We see $\Gamma$ as a group of translations. \index{lattice}
+
+\begin{ex} For every lattice $\Gamma$, the flat manifold $\matR^n/_\Gamma$ is diffeomorphic to the $n$-torus. A fundamental domain is the parallelotope spanned by $n$ generators of $\Gamma$.
+\end{ex}
+
+A Dirichlet domain for $\Gamma$ is almost never a parallelotope! In the \emph{hexagonal torus} $\matR^2/_\Gamma$ the group $\Gamma$ is the equilateral lattice generated by the translations\index{torus!hexagonal torus}
+$$(1,0), \quad \big(\tfrac 12, \tfrac{\sqrt 3}2\big)$$ 
+and the Dirichlet domain of any point is a regular hexagon. Orientable flat manifolds are easily classified (up to diffeomorphism) in dimension two. \index{hexagonal torus}
+
+\begin{prop} \label{flat:is:torus:prop}
+Every closed flat orientable surface is a torus.
+\end{prop}
+\begin{proof}
+A closed flat surface $S$ is isometric to $\matR^2/_\Gamma$ for some discrete group $\Gamma$ of orientation-preserving isometries acting freely. Every fixed-point-free orientation-preserving isometry of $\matR^2$ is a translation (exercise), hence $\Gamma < \matR^2$. If $\Gamma$ has rank one then $S$ is not compact, hence $\Gamma$ is a lattice and $S$ is a torus.
+\end{proof}
+
+Flat manifolds more complicated than tori can be constructed by considering also non-translational isometries of $\matR^n$, which exist for $n\geqslant 3$ and also for $n=2$ in the non-orientable setting. For instance, in dimension two we find the \emph{Klein bottle} by taking $\Gamma$ as the group generated by the isometries:
+$$\tau\colon(x,y) \mapsto (x+1, y), \qquad \eta\colon(x,y) \mapsto (1-x, y+1).$$
+A fundamental domain for the Klein bottle is shown in Figure \ref{domini:fig}-(centre).
+\index{Klein bottle}
+
+Every subgroup $\Gamma' < \Gamma$ furnishes another flat manifold $\matR^2/_{\Gamma'}$ that covers the Klein bottle. For instance, the subgroups $\langle \tau \rangle$ and $\langle \eta \rangle$ generated respectively by $\tau$ and $\eta$ are both isomorphic to $\matZ$ but provide two different coverings: the manifold $\matR^2/_{\langle\tau\rangle}$ is an infinite cylinder while $\matR^2/_{\langle\eta\rangle}$ is an infinite M\"obius strip. 
+
+The subgroup $\Gamma'$ generated by the translations $\tau$ and $\eta^2$ is isomorphic to $\matZ^2$ and has index 2 in $\Gamma$. The Klein bottle is doubly covered by the flat torus $\matH^2/_{\Gamma'}$. A fundamental domain for $\Gamma'$ is a rectangle with vertices $(0,0)$, $(1,0)$, $(0,2)$, $(1,2)$.
+
+We have seen that the Klein bottle is covered by a torus. In fact, we will see in Section \ref{Bieberbach:section} that \emph{every} closed flat $n$-manifold is covered by a flat $n$-torus.
+
+\begin{ex}
+A square $Q\subset \matR^2$ is a Coxeter polygon and determines a reflection group $\Gamma$. What is the minimum index of a torsion-free subgroup $\Gamma' < \Gamma$? Which topological surfaces $\matR^2/_{\Gamma'}$ do we get?
+\end{ex}
+
+\subsection{Real projective spaces} 
+We now exhibit some elliptic manifolds. Every elliptic manifold is covered by $S^n$ and is hence compact and has finite fundamental group (because coverings between compact manifolds have finite degree). \index{$\matRP^n$}
+
+An important example is the real projective space $\matRP^n = S^n/_\Gamma$ where $\Gamma$ is the order-two group generated by the antipodal map $\iota (x) = -x$. 
+
+\begin{ex}
+For every $p\in S^n$, the Dirichlet domain $D(p)$ of $\Gamma$ is the hemisphere centred at $p$.
+\end{ex}
+The two-dimensional case is shown in Figure \ref{domini:fig}-(right). The only elliptic surfaces are $S^2$ and $\matRP^2$ in virtue of the following.
+\begin{prop}
+In even dimension $n$ the only elliptic manifolds are $S^n$ and $\matRP^n$.
+\end{prop}
+\begin{proof}
+Let $M=S^n/_\Gamma$ be an elliptic manifold. Every matrix in $\SO(n+1)$ has an eigenvalue $+1$ because $n$ is even (exercise) and hence acts in $S^n$ with a fixed point. Therefore $\Gamma$ contains no non-trivial orientation-preserving isometries, and since these form a group of index at most two, either $\Gamma$ is trivial or is generated by an orientation-reversing fixed-point free involution in $O(n+1)$, and $-I$ is the only such element (exercise).
+\end{proof}
+
+\subsection{Lens spaces} \label{lens:subsection}
+In dimension two $\matRP^2$ and $S^2$ are the only elliptic manifolds, but in dimension three there are more. Let $p\geqslant 1$ and $q\geqslant 1$ be coprime integers and set $\omega = e^{\frac{2\pi i}p}$. We identify $\matR^4$ with $\matC^2$ and see $S^3$ as
+$$S^3 = \big\{(z,w)\in \matC^2\ \big|\ |z|^2+|w|^2 = 1 \big\}.$$
+The map
+$$f(z,w) = (\omega z, \omega^qw)$$
+is an isometry of $\matR^4$ because it consists of two simultaneous rotations on the coordinate planes $w=0$ and $z=0$. The map $f$ hence induces an isometry of $S^3$. It has order $p$ and none of its iterates $f, f^2, \ldots, f^{p-1}$ has a fixed point. Therefore the group $\Gamma = \langle f \rangle$ generated by $f$ acts freely on $S^3$, and is discrete because it is finite. \index{lens space} \index{$L(p,q)$}
+
+We have constructed an elliptic manifold $S^3/_\Gamma$, called a \emph{lens space} and indicated with the symbol $L(p,q)$. Its fundamental group is isomorphic to $\Gamma = \matZ/_{p\matZ}$. Note that the manifold depends on both $p$ and $q$.

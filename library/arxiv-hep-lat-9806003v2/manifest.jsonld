@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-lat-9806003v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Statistical analysis and the equivalent of a Thouless energy in lattice QCD Dirac spectra",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-lat-9806003v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-lat-9806003v2",
   "contains": [
     "library/arxiv-hep-lat-9806003v2/sections/sec-000",
     "library/arxiv-hep-lat-9806003v2/sections/sec-001",
@@ -16,8 +21,17 @@
     "library/arxiv-hep-lat-9806003v2/sections/sec-007"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-lat/9806003&metadataPrefix=arXiv), submitted 1998-12-02, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-hep-lat-9806003v2",
+    "title_source": "slug",
     "source_file": "9806003v2.pdf",
     "source_sha256": "e34739e703aae6db3d32504857979dd7c1ebf459e63f9f644369ea32822db5fb",
     "pages": 26,

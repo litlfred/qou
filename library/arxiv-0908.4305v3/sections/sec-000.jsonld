@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0908.4305v3/sections/sec-000",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Introduction",
+  "pageStart": 1,
+  "pageEnd": 25,
+  "contains": [
+    "library/arxiv-0908.4305v3/blocks/prose-sec-000",
+    "library/arxiv-0908.4305v3/blocks/example-sec-000-01",
+    "library/arxiv-0908.4305v3/blocks/example-sec-000-02",
+    "library/arxiv-0908.4305v3/blocks/example-sec-000-03",
+    "library/arxiv-0908.4305v3/blocks/example-sec-000-04",
+    "library/arxiv-0908.4305v3/blocks/proposition-sec-000-05",
+    "library/arxiv-0908.4305v3/blocks/proposition-sec-000-06",
+    "library/arxiv-0908.4305v3/blocks/theorem-sec-000-07",
+    "library/arxiv-0908.4305v3/blocks/proposition-sec-000-08",
+    "library/arxiv-0908.4305v3/blocks/proposition-sec-000-09",
+    "library/arxiv-0908.4305v3/blocks/proposition-sec-000-10",
+    "library/arxiv-0908.4305v3/blocks/theorem-sec-000-11",
+    "library/arxiv-0908.4305v3/blocks/proposition-sec-000-12",
+    "library/arxiv-0908.4305v3/blocks/proposition-sec-000-13",
+    "library/arxiv-0908.4305v3/blocks/proposition-sec-000-14"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0908.4305v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0908.4305v3/manifest.jsonld",
+  "provenance": "ingested"
+}

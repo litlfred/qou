@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-003",
+  "kind": "prose",
+  "title": "Lund Observatory, Box 43, S-221 00 Lund, Sweden",
+  "pageStart": 1,
+  "pageEnd": 1,
+  "text": "../sections/sec-003-5-lund-observatory-box-43-s-221-00-lund-sweden.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-astro-ph-0203462v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-astro-ph-0203462v1/manifest.jsonld",
+  "provenance": "ingested"
+}

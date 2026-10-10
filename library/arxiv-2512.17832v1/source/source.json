@@ -1,0 +1,27 @@
+{
+ "url": "https://arxiv.org/e-print/2512.17832v1",
+ "content_type": "application/gzip",
+ "sha256": "e29513c9d25f98ef3eba24d52294e3a0c120423525baf5758fbeb56902e8205a",
+ "bytes": 227609,
+ "fetched": "2026-10-10T15:22:02+00:00",
+ "files": [
+  {
+   "path": "files/HeHeSuppression.bbl",
+   "role": "bbl",
+   "sha256": "deb9ce65d8e34dad76c4ff6024d55d339a8fcbe276208d85ca5a839e2742c1aa",
+   "bytes": 57409
+  },
+  {
+   "path": "files/HeHeSuppression.tex",
+   "role": "tex",
+   "sha256": "966e0c303d8a0041c732ede84fbbfd6a81dabe4e9a4fa611104a76c1706ec3bb",
+   "bytes": 32710
+  },
+  {
+   "path": "files/siunitx.sty",
+   "role": "sty",
+   "sha256": "7d95a4a634b218091df61aa0601ad4c6079649405e640ce3fff542760efcf0ef",
+   "bytes": 331158
+  }
+ ]
+}

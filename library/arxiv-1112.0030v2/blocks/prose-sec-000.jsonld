@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1112.0030v2/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1112.0030v2/blocks/prose-sec-000",
   "kind": "prose",
   "title": "Setting the stage",
   "pageStart": 1,
   "pageEnd": 7,
   "text": "../sections/sec-000-1-setting-the-stage.md",
-  "derivedFrom": "library/arxiv-1112.0030v2/manifest",
-  "sourceDocument": "library/arxiv-1112.0030v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1112.0030v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1112.0030v2/manifest.jsonld",
   "provenance": "ingested"
 }

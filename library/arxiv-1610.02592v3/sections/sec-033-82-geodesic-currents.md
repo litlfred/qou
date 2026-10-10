@@ -7,726 +7,565 @@ section_number: 8.2
 pages: 230-246
 source_pdf: 1610.02592v3.pdf
 source_sha256: 81020523d7d2bc1a
+text_source: latex
+latex_prose_ratio: 0.968
+latex_coverage_ratio: 0.803
 doc_brief: "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022 — 68 sections: Introduction; Differential topology; Riemannian geometry"
 ---
-For the moment we content ourselves with checking that this projective
-embedding strategy works at least on the much simpler ﬂat torus case.
-8.1.3. The torus. The Teichmüller space of the torusT is described in
-Section 7.2.4 and needs no further comment; nevertheless, we prove here that
-the projective embedding strategy works forT, just as a sanity check before
-approaching the more complicated higher genus surfaces.
-Proposition 8.1.6. The space Teich(T ) embeds in P(RS ) and its closure
-thereishomeomorphictoacloseddisc D2. Theinteriorofthisdiscis Teich(T )
-and its boundary containsS as a dense subset.
-Proof. Everything can be written explicitly by identifyingTeich(T ) with
-the half-planeH2 and S with the setQ∪{∞}⊂ ∂H 2. Exercise 6.3.14 and
-Proposition 7.2.5 give
-i
-(p
-q,r
-s
-)
-=
-⏐⏐⏐⏐det
-(p r
-q s
-)⏐⏐⏐⏐ =|ps−qr| =|s|·
-⏐⏐⏐p−qr
-s
-⏐⏐⏐,
-𝓁
-p
-q (z) =|p +qz|√
-ℑz .
-Therefore the images of r
-s ∈ S and z ∈ H2 = Teich(T ) in P(RS ) are
-respectively the functionals
-p
-q↦−→
-⏐⏐⏐p−qr
-s
-⏐⏐⏐ if s⁄= 0 and|q| if s = 0,
-p
-q↦−→|p +qz|.
-We could remove the constants|s| and
-√
-ℑz because we are considering func-
-tionals in P(RS ) rather than inRS. We deﬁne for allz∈H2 the functional
-fz : p
-q↦−→|p +qz| if z⁄=∞,
-f∞ : p
-q↦−→|q|.
-and we get a continuous immersionz↦→fz ofH2 into P(RS ). The immersion
-is closed because it sends a compact space to a Hausdorﬀ space, hence it is
-a homeomorphism onto its image. The image is the closure ofTeich(T ) and
-its boundary containsS as a dense set. □
-8.2. GEODESIC CURRENTS 223
-8.2. Geodesic currents
-We will prove Thurston’s compactiﬁcation Theorem 8.1.5 using a slightly
-diﬀerent perspective. We are guided by the analogy with the hyperbolic space:
-when we embed (actually, deﬁne) the spaceHn in Rn+1, we make an essential
-use of the lorentzian form⟨,⟩ in Rn+1, so thatHn consists of some pointsv
-with⟨v,v⟩ =−1, and∂Hn may be identiﬁed with the light cone rays, that is
-the rays spanned by vectorsv with⟨v,v⟩ = 0.
-It would be nice to have a similar nice bilinear form⟨,⟩ on RS, with the
-propertythat Teich(Sg)and S consistofpointswith ⟨v,v⟩ =k and⟨v,v⟩ = 0
-respectively, for some ﬁxedk⁄= 0. Unfortunately we are not able to deﬁne
-such a bilinear form inRS, and in order to get one we now substituteRS
-with a similar (but more structured) inﬁnite-dimensional space, the space of
-geodesic currents.
-In geometric measure theory, acurrent is a measure on some space, which
-generalises the notion ofm-dimensional submanifold in an-manifold. A ge-
-odesic current is a similar tool introduced by Bonahon in 1988 speciﬁcally
-designed for geodesics on hyperbolic surfaces.
-We will see that the geodesic currents are indeed equipped with a bilinear
-form, which generalises beautifully both the intersection numberi(α,β ) of
-curves and the length functions𝓁γ on the Teichmüller space.
-8.2.1. Geodesics. From now on, and through all the rest of this chapter,
-we will consider geodesics only as subsets, neglecting their parametrisation.
-More precisely, letM a complete hyperbolic manifold. We indicate by
-G (M)the set of the supports of all the complete non-trivial geodesicsR→M.
-With a little language abuse, we call an element ofG (M) a geodesic.
-A geodesic in G (M) is closed if it is the support of a closed geodesic
-S1→M, that is if it is compact; otherwise, it isopen. We say that a geodesic
-is simple if it has a simple geodesic parametrisation, either as an open geodesic
-R→M or as a closed oneS1→M.
-We are particularly interested in the setG = G (H2) of lines inH2. A line
-is determined by its extremes, hence there is a natural bijection
-G←→
-(
-∂H2×∂H2\ ∆
-)
-/∼
-where ∆ ={(a,a )| a∈∂H2} is the diagonal and(a,b )∼ (b,a ). We assign
-to G the topology of
-(
-∂H2×∂H2\ ∆
-)
-/∼.
-Exercise 8.2.1. The space G is homeomorphic to an open Möbius strip.
-The lines intersecting a compact setK⊂ H2 form a compact subset ofG.
-The isometries ofH2 act naturally onG by homeomorphisms.
-Proposition 8.2.2.IfS = H2/Γ is a complete hyperbolic surface there is a
-natural bijection
-G (S)←→ G/Γ.
-224 8. SURFACE DIFFEOMORPHISMS
-Proof. Every geodesic inS lifts to aΓ-orbit of lines inH2. □
-It is typically more comfortable to lift objects fromS to the universal
-cover H2, and to study them there: we will often see a geodesicγ∈ G (S) as
-a Γ-orbit of lines inH2.
-Wewillsincenowconsideronlyclosedsurfaces Sg ofgenus g> 2. Wenow
-prove the crucial fact thatG (Sg) depends only mildly on the chosen hyperbolic
-metric forSg. An isomorphism between two pairs (G1, Γ1) and (G2, Γ2) of
-groups Γi acting on topological spaces Gi is an isomorphism ψ : Γ 1 → Γ2
-together with aψ-equivariant homeomorphismG1→ G2.
-Proposition 8.2.3. Let g> 2 and Sg = H2/Γ have a hyperbolic metric.
-Thepair (G, Γ)doesnotdepend(uptocanonicalisomorphisms)onthechosen
-hyperbolic metric.
-Proof. Letm,m′ betwohyperbolicstructureson Sg,inducingtwodiﬀerent
-coveringsπ,π′ : H2→Sg. The identity mapSg→Sg lifts to a mapH2→ H2
-thatextendstoanequivarianthomeomorphism ∂H2→∂H2 byTheorem5.2.1.
-This induces an equivariant homeomorphismG→ G. □
-Here and in the next sections, the hyperbolic metric onSg has only an
-auxiliary role: we need it to identifySg with H2/Γ and to deﬁne and study
-some geometric objects likeG (Sg) = G/Γ, but most of our discoveries will be
-independent a posterioriof the auxiliary hyperbolic metric.
-Let Sg = H2/Γ be a hyperbolic surface. We note that Γ does not act
-properly discontinuously onG.
-Proposition 8.2.4. The Γ-orbit of a linel∈ G is discrete if and only ifl
-projects to a closed geodesic inSg.
-Proof. Letπ(l)⊂Sg be the projection ofl in Sg. Since Sg is compact,
-the projectionπ(l) is not a closed geodesic⇔ there is a small discD⊂ Sg
-intersectingπ(l) into inﬁnitely many distinct segments⇔ there is a small disc
-D⊂ H2 intersecting inﬁnitely many lines of theΓ-orbit ofl⇔ the Γ-orbit is
-not discrete. □
-The linesl⊂ H2 that project to closed geodesics inSg are precisely the
-axis of the hyperbolic isometriesϕ in Γ, and the Γ-orbit of one such axisl
-consists of the axis of all the isometries inΓ conjugate toϕ. Two such axis
-are either incident or ultraparallel by Corollary 4.2.3, and the closed geodesic
-inSg is simple if and only if all the distinct axis in theΓ-orbit are ultraparallel.
-Proposition 8.2.4 implies in particular that theΓ-orbit ofl is discrete only
-for countably many linesl∈ G.
-Recall from Corollary 4.1.14 that every homotopically non-trivial closed
-curve inSg is homotopic to a unique closed geodesic.
-8.2. GEODESIC CURRENTS 225
-8.2.2. Geodesic currents. We now introduce a measure-theoretical no-
-tion which is at ﬁrst sight unrelated with everything we have seen up to now;
-we will later show that, on the contrary, it generalises many of the geometric
-objects that we have encountered in the last pages. The basic notions of
-measure theory that we will need are summarised in Section 1.3.
-Deﬁnition 8.2.5. LetSg = H2/Γ be a hyperbolic surface. A geodesic
-current onSg is a locally ﬁniteΓ-invariant Borel measure onG = G (H2).
-We denote byC = C (Sg) the set of all the geodesic currents inSg. It is a
-subset of the spaceM (G ) of all the locally ﬁnite Borel measures onG, closed
-with respect to sums and products with non-negative scalars, and it inherits
-its topology, see Section 1.3.3.
-The currents spaceC is independent of the auxiliary hyperbolic metric on
-Sg up to canonical isomorphisms, since the pair(G, Γ) is.
-8.2.3. Closed geodesics. We now introduce a fundamental example of
-geodesic current.
-Example 8.2.6 (Closed geodesics). A closed geodesicγ onSg = H2/Γ lifts
-by Proposition 8.2.4 to a discreteΓ-orbit of lines inH2. The Dirac measure on
-this discrete set is locally ﬁnite andΓ-invariant, hence it is a geodesic current.
-We can therefore interpret every closed geodesic inSg as a particular
-geodesic current with discrete support. In particular we get an embedding
-S ↪→ C
-of the set S of all (isotopy classes of) unoriented non-trivial simple closed
-curves inSg into C. The embedding is deﬁned by taking the geodesic rep-
-resentative of each curve. Recall that the hyperbolic metric plays only an
-auxiliary role.
-The following proposition implies that – conversely – every current sup-
-ported on a discrete set is a linear combination of closed geodesics.
-Proposition 8.2.7. If l∈ G is an atomic point for a geodesic currentµ,
-that is ifµ({l})> 0, thenl projects to a closed geodesic inSg.
-Proof. Sincel is atomic andµ is Γ-invariant and locally ﬁnite, theΓ-orbit
-ofl in G is discrete. We conclude thanks to Proposition 8.2.4. □
-It is an important aspect of the theory that atomic points may be only of
-a very speciﬁc type. We remind that many closed geodesics are not simple.
-8.2.4. Pencils. We have determined the 0-dimensional subsets ofG that
-may have positive mass, and we now look at some natural 1-dimensional ones.
-Let apencil p⊂ G of lines centred ata∈∂H2 be some Borel set of lines all
-having one endpoint ata, as in Figure 8.1-(left).
-226 8. SURFACE DIFFEOMORPHISMS
-a a
-b
-c
-d
-Figure 8.1. A pencil and a box (in the Klein model).
-We note that a pencil may contain at most one axis of some hyperbolic
-transformationin Γ,becausetwoaxisareneverasymptoticallyparallelbyCorol-
-lary 4.2.3.
-Proposition 8.2.8.Letµ be a geodesic current. The mass of a pencilp is
-zero, unless it contains the axis of some non-trivial element inΓ.
-Proof. It suﬃces to consider the case wherep contains no axis, and
-consists of all lines with one endpoint ina and another in some segment
-[b,c ]⊂∂H2 not containinga.
-As the lines inp point toa, they project inSg to a narrow beam of lines
-that go on running forever and exponentially-narrowing inSg but never close
-up. There is a discD⊂ Sg intersecting them inﬁnitely many times, hence
-a liftD⊂ H2 intersects inﬁnitely many disjointΓ-translates ofp. The lines
-intersectingD form a compact subset ofG, henceµ(p) = 0. □
-8.2.5. Boxes. We now investigate some natural 2-dimensional subsets of
-G. Let a,b,c,d ∈ ∂H2 be four distinct counterclockwise-ordered points as
-in Figure 8.1-(right): these determine two disjoint arcs[a,b ], [c,d ]⊂ ∂H2
-and hence a compact setB = [a,b ]× [c,d ]⊂ G consisting of all lines with
-endpoints in[a,b ] and [c,d ], see Figure 8.1-(right). We call this compact set
-B a box.
-The topological boundary∂B of a boxB has four sides: the four pencils of
-lines inB with one endpoint ina,b,c , ord. We say that the boxB is generic
-if no linel∈ ∂B projects to a closed geodesic,i.e. no l∈ ∂B is the axis of
-some hyperbolic transformation inΓ. This is indeed a generic condition: if
-neither ofa,b,c,d is the endpoint of some axis, thenB is certainly generic,
-and recall that there are only countably many axis overall.
-We equip the currents spaceC with the weak-* topology introduced in
-Section 1.3.3. We now prove that a converging sequence of currents behave
-well on generic boxes.
-Proposition 8.2.9.Ifµi ⇀µ is a converging sequence of geodesic currents
-andB is a generic box, thenµi (B)→µ(B).
-8.2. GEODESIC CURRENTS 227
-Figure 8.2. The boxB containingl and the sub-boxesB′ andB′′ (left).
-A linel∈Uγ parametrised by the pair(t,θ ) (right).
-Proof. By Proposition 1.3.8 it suﬃces to prove thatµ(∂B) = 0, and this
-follows from Proposition 8.2.8. □
-8.2.6. Rigidity of atoms.We now use boxes to prove that the atomic
-points in C are somehow rigid.
-Proposition 8.2.10. The closed geodesics form a discrete subset inC.
-Proof. Letµ∈ C be a closed geodesic,i.e it is the Dirac measure on the
-Γ-orbit of an axisl⊂ H2 of some hyperbolic transformationϕ∈ Γ.
-Let B = [a,b ]× [c,d ] be a small generic box containingl and no other
-Γ-translate ofl, so thatµ(B) = 1 . Up to substitutingϕ with ϕ−1 we may
-suppose thatϕ([a,b ]) = [a′,b′]⊂ [a,b ]. Consider the sub-boxesB′ = [a,a′]×
-[c,d ] and B′′ = [b′,b ]× [c,d ] shown in Figure 8.2-(left). Sinceϕ contracts
-[a,b ] and expands [c,d ], we have
-(4) B\p⊂
-∞⋃
-i=1
-ϕi (B′⊔B′′).
-wherep is the pencil containingl and other lines with one endpoint varying in
-[b,c ]. Note thatp contains no axis ofΓ other thanl. If necessary, we move
-a′ and b′ slightly farther froma and b to ensure thatB′ and B′′ (and hence
-all theirϕ-translates) are generic while (4) still holds.
-We haveµ(B′⊔B′′) = 0 and we deﬁne an open neighbourhoodU ofµ in
-the current spaceC as follows:
-U =
-{
-η∈ C |η(B′⊔B′′)<ε, η(B)> 1−ε
-}
-for some ﬁxed0<ε< 1. This is indeed an open set becauseB,B′, and B′′
-are generic. We now prove thatU contains no closed geodesic exceptµ.
-By contradiction, supposeU contains a closed geodesicη. Sinceη(B)>
-1−ε> 0, at least one atoml′ ofη is contained inB. Ifl′ =l thenη =µ and
-wearedone. Otherwise, theline l′ iscontainedin B\p andhencein ϕi (B′⊔B′′)
-for somei. This is impossible since this set has measureε< 1. □
-228 8. SURFACE DIFFEOMORPHISMS
-We have classiﬁed the elements inC supported on discrete sets, and it is
-now time to introduce some geodesic currents supported on the whole ofG.
-8.2.7. The Liouville measure. There is a continuous measure onG =
-G (H2)thatisinvariantundertheactionofthewholeisometrygroup Isom(H2).
-This measure is called theLiouville measure, and is deﬁned as follows.
-Letγ : R→ H2 be a geodesic parametrised by arc length, andUγ⊂ G be
-the open set consisting of all the lines intersectingγ, exceptγ itself. We can
-parametriseUγ via the homeomorphism
-R× (0,π )→Uγ
-that sends (t,θ ) to the linel that intersectsγ at the pointγ(t) with angleθ,
-see Figure 8.2-(right). We deﬁne a volume 2-form onUγ by setting:
-Lγ = 1
-2 sinθdt ∧dθ.
-Since G is non-orientable, we cannot hope to deﬁne a global area form on
-G. However all these local forms match up to sign and hence give rise to a
-measure.
-Proposition 8.2.11. The chartsUγ form a diﬀerentiable atlas forG. The
-2-formsLγ match up to sign and hence deﬁne a measureL on G.
-Proof. Every line inH2 intersects some other line, hence the charts cover
-G. We consider a liner∈Uγ∩Uγ′. The chartsUγ and Uγ′ have parametri-
-sations (t,θ ) and (t′,θ′) and 2-forms
-Lγ = 1
-2 sinθdt∧dθ, L γ′ = 1
-2 sinθ′dt′∧dθ′.
-We consider the jacobianJ = ∂(t′,θ′)
-∂(t,θ) and recall that
-dt′∧dθ′ = detJ·dt∧dθ
+We will prove Thurston's compactification Theorem \ref{compattificazione:teo} using a slightly different perspective. We are guided by the analogy with the hyperbolic space: when we embed (actually, define) the space $\matH^n$ in $\matR^{n+1}$, we make an essential use of the lorentzian form $\langle,\rangle$ in $\matR^{n+1}$, so that $\matH^n$ consists of some points $v$ with $\langle v,v \rangle = -1$, and $\partial \matH^n$ may be identified with the light cone rays, that is the rays spanned by vectors $v$ with $\langle v , v \rangle = 0$.
+
+It would be nice to have a similar nice bilinear form $\langle,\rangle$ on $\matR^\calS$, with the property that $\Teich(S_g)$ and $\calS$ consist of points with $\langle v,v\rangle = k$ and $\langle v, v \rangle = 0$ respectively, for some fixed $k\neq 0$. Unfortunately we are not able to define such a bilinear form in $\matR^\calS$, and in order to get one we now substitute $\matR^\calS$ with a similar (but more structured) infinite-dimensional space, the space of \emph{geodesic currents}.
+
+In geometric measure theory, a \emph{current} is a measure on some space, which generalises the notion of $m$-dimensional submanifold in a $n$-manifold. A \emph{geodesic current} is a similar tool introduced by Bonahon in 1988 specifically designed for geodesics on hyperbolic surfaces.
+
+We will see that the geodesic currents are indeed equipped with a bilinear form, which generalises beautifully both the intersection number $i(\alpha, \beta)$ of curves and the length functions $\ell^\gamma$ on the Teichm\"uller space.
+
+\subsection{Geodesics}
+From now on, and through all the rest of this chapter, we will consider geodesics only as subsets, neglecting their parametrisation.
+
+More precisely, let $M$ a complete hyperbolic manifold. We indicate by $\calG(M)$ the set of the supports of all the complete non-trivial geodesics $\matR \to M$. With a little language abuse, we call an element of $\calG(M)$ a \emph{geodesic}. 
+
+A geodesic in $\calG(M)$ is \emph{closed} if it is the support of a closed geodesic $S^1 \to M$, that is if it is compact; otherwise, it is \emph{open}. We say that a geodesic is \emph{simple} if it has a simple geodesic parametrisation, either as an open geodesic $\matR \to M$ or as a closed one $S^1 \to M$. 
+  
+We are particularly interested in the set $\calG = \calG(\matH^2)$ of lines in $\matH^2$. A line is determined by its extremes, hence there is a natural bijection 
+$$\calG \longleftrightarrow \left(\partial \matH^2 \times \partial \matH^2\setminus \Delta\right)/_\sim$$
+where $\Delta = \{(a,a)\ |\ a\in\partial\matH^2\}$ is the diagonal and $(a,b) \sim (b,a)$. We assign to $\calG$ the topology of $\left(\partial \matH^2 \times \partial \matH^2\setminus \Delta\right)/_\sim$. 
+\begin{ex} \label{Mobius:ex}
+The space $\calG$ is homeomorphic to an open M\"obius strip. The lines intersecting a compact set $K\subset \matH^2$ form a compact subset of $\calG$.
+\end{ex}
+The isometries of $\matH^2$ act naturally on $\calG$ by homeomorphisms.
+\begin{prop}
+If $S=\matH^2/_\Gamma$ is a complete hyperbolic surface there is a natural bijection
+$$\calG(S) \longleftrightarrow \calG/_\Gamma.$$
+\end{prop}
+\begin{proof}
+Every geodesic in $S$ lifts to a $\Gamma$-orbit of lines in $\matH^2$.
+\end{proof}
+
+It is typically more comfortable to lift objects from $S$ to the universal cover $\matH^2$, and to study them there: we will often see a geodesic $\gamma\in\calG(S)$ as a $\Gamma$-orbit of lines in $\matH^2$. 
+
+We will since now consider only closed surfaces $S_g$ of genus $g\geqslant 2$.
+We now prove the crucial fact that $\calG(S_g)$ depends only mildly on the chosen hyperbolic metric for $S_g$. 
+An \emph{isomorphism} between two pairs $(\calG_1, \Gamma_1)$ and $(\calG_2, \Gamma_2)$ of groups $\Gamma_i$ acting on topological spaces $\calG_i$ is an isomorphism $\psi\colon\Gamma_1\to \Gamma_2$ together with a $\psi$-equivariant homeomorphism $\calG_1\to \calG_2$.
+
+\begin{prop}
+Let $g\geqslant 2$ and $S_g = \matH^2/_\Gamma$ have a hyperbolic metric. The pair $(\calG, \Gamma)$ does not depend (up to canonical isomorphisms) on the chosen hyperbolic metric.
+\end{prop}
+\begin{proof}
+Let $m,m'$ be two hyperbolic structures on $S_g$, inducing two different coverings $\pi, \pi' \colon \matH^2 \to S_g$. The identity map $S_g\to S_g$ lifts to a map $\matH^2 \to \matH^2$ that extends to an equivariant homeomorphism $\partial \matH^2 \to \partial \matH^2$ by Theorem \ref{estensione:teo}. This induces an equivariant homeomorphism $\calG \to \calG$.
+\end{proof}
+
+Here and in the next sections, the hyperbolic metric on $S_g$ has only an auxiliary role: we need it to identify $S_g$ with $\matH^2/_\Gamma$ and to define and study some geometric objects like $\calG(S_g) = \calG/_\Gamma$, but most of our discoveries will be independent \emph{a posteriori} of the auxiliary hyperbolic metric. 
+
+Let $S_g=\matH^2/_\Gamma$ be a hyperbolic surface. We note that $\Gamma$ does \emph{not} act properly discontinuously on $\calG$.
+
+\begin{prop} \label{orbit:discrete:prop}
+The $\Gamma$-orbit of a line $l\in\calG$ is discrete if and only if $l$ projects to a closed geodesic in $S_g$.
+\end{prop}
+\begin{proof}
+Let $\pi(l)\subset S_g$ be the projection of $l$ in $S_g$. Since $S_g$ is compact, the projection $\pi(l)$ is \emph{not} a closed geodesic $\Leftrightarrow$ there is a small disc $D \subset S_g$ intersecting $\pi(l)$ into infinitely many distinct segments $\Leftrightarrow$ there is a small disc $D\subset \matH^2$ intersecting infinitely many lines of the $\Gamma$-orbit of $l$ $\Leftrightarrow$ the $\Gamma$-orbit is not discrete.
+\end{proof}
+
+The lines $l\subset \matH^2$ that project to closed geodesics in $S_g$ are precisely the axis of the hyperbolic isometries $\varphi$ in $\Gamma$, and the $\Gamma$-orbit of one such axis $l$ consists of the axis of all the isometries in $\Gamma$ conjugate to $\varphi$. Two such axis are either incident or ultraparallel by Corollary \ref{axis:cor}, and the closed geodesic in $S_g$ is simple if and only if all the distinct axis in the $\Gamma$-orbit are ultraparallel.
+
+Proposition \ref{orbit:discrete:prop} implies in particular that the $\Gamma$-orbit of $l$ is discrete only for countably many lines $l\in\calG$. 
+
+Recall from Corollary \ref{unique:closed:geodesic:cor} that every homotopically non-trivial closed curve in $S_g$ is homotopic to a unique closed geodesic. 
+
+\subsection{Geodesic currents} \label{correnti:subsection}
+We now introduce a measure-theoretical notion which is at first sight unrelated with everything we have seen up to now; we will later show that, on the contrary, it generalises many of the geometric objects that we have encountered in the last pages. The basic notions of measure theory that we will need are summarised in Section \ref{measure:theory:section}.
+
+\begin{defn}
+Let $S_g=\matH^2/_\Gamma$ be a hyperbolic surface. 
+A \emph{geodesic current} on $S_g$ is a locally finite $\Gamma$-invariant Borel measure on $\calG = \calG(\matH^2)$.\index{geodesic current}
+\end{defn}
+
+We denote by $\calC = \calC (S_g)$ the set of all the geodesic currents in $S_g$. It is a subset of the space $\calM(\calG)$ of all the locally finite Borel measures on $\calG$, closed with respect to sums and products with non-negative scalars, and it inherits its topology, see Section \ref{topology:measure:subsection}.
+
+The currents space $\calC$ is independent of the auxiliary hyperbolic metric on $S_g$ up to canonical isomorphisms, since the pair $(\calG, \Gamma)$ is.
+
+\subsection{Closed geodesics}
+We now introduce a fundamental example of geodesic current.
+
+\begin{example}[Closed geodesics]
+\label{scc:example}
+A closed geodesic $\gamma$ on $S_g=\matH^2/_\Gamma$ lifts by Proposition \ref{orbit:discrete:prop} to a discrete $\Gamma$-orbit of lines in $\matH^2$. The Dirac measure on this discrete set is locally finite and $\Gamma$-invariant, hence it is a geodesic current.
+\end{example}
+
+We can therefore interpret every closed geodesic in $S_g$ as a particular geodesic current with discrete support. In particular we get an embedding
+$$\calS \hookrightarrow \calC$$
+of the set $\calS$ of all (isotopy classes of) unoriented non-trivial simple closed curves in $S_g$ into $\calC$. The embedding is defined by taking the geodesic representative of each curve. Recall that the hyperbolic metric plays only an auxiliary role.
+
+The following proposition implies that -- conversely -- every current supported on a discrete set is a linear combination of closed geodesics. 
+
+\begin{prop} \label{atomic:prop}
+If $l\in \calG$ is an atomic point for a geodesic current $\mu$, that is if $\mu(\{l\})>0$, then $l$ projects to a closed geodesic in $S_g$.
+\end{prop}
+\begin{proof}
+Since $l$ is atomic and $\mu$ is $\Gamma$-invariant and locally finite, the $\Gamma$-orbit of $l$ in $\calG$ is discrete. We conclude thanks to Proposition \ref{orbit:discrete:prop}.
+\end{proof}
+
+It is an important aspect of the theory that atomic points may be only of a very specific type. We remind that many closed geodesics are not simple.
+
+\subsection{Pencils} \label{pencils:subsection}
+We have determined the 0-dimensional subsets of $\calG$ that may have positive mass, and we now look at some natural 1-dimensional ones. Let a \emph{pencil} $p\subset\calG$ of lines centred at $a\in\partial \matH^2$ be some Borel set of lines all having one endpoint at $a$, as in Figure \ref{pencil-box:fig}-(left).\index{pencil}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 9 cm] {\iftoggle{BW}{pencil-box-BW}{pencil-box}}
+\nota{A pencil and a box (in the Klein model).}
+\label{pencil-box:fig}
+\end{center}
+\end{figure}
+
+We note that a pencil may contain at most one axis of some hyperbolic transformation in $\Gamma$, because two axis are never asymptotically parallel by Corollary \ref{axis:cor}.
+
+\begin{prop} \label{pencils:prop}
+Let $\mu$ be a geodesic current. The mass of a pencil $p$ is zero, unless it contains the axis of some non-trivial element in $\Gamma$.
+\end{prop}
+\begin{proof}
+It suffices to consider the case where $p$ contains no axis, and consists of all lines with one endpoint in $a$ and another in some segment $[b,c] \subset \partial \matH^2$ not containing $a$.
+
+As the lines in $p$ point to $a$, they project in $S_g$ to a narrow beam of lines that go on running forever and exponentially-narrowing in $S_g$ but never close up. There is a disc $D\subset S_g$ intersecting them infinitely many times, hence a lift $D\subset \matH^2$ intersects infinitely many disjoint $\Gamma$-translates of $p$. The lines intersecting $D$ form a compact subset of $\calG$, hence $\mu(p)=0$.
+\end{proof}
+
+\subsection{Boxes}
+We now investigate some natural 2-dimensional subsets of $\calG$. Let $a,b,c,d \in \partial \matH^2$ be four distinct counterclockwise-ordered points as in Figure \ref{pencil-box:fig}-(right): these determine two disjoint arcs $[a,b], [c,d] \subset \partial \matH^2$ and hence a compact set $B=[a,b] \times [c,d] \subset \calG$ consisting of all lines with endpoints in $[a,b]$ and $[c,d]$, see Figure \ref{pencil-box:fig}-(right). We call this compact set $B$ a \emph{box}.\index{box}
+
+The topological boundary $\partial B$ of a box $B$ has four sides: the four pencils of lines in $B$ with one endpoint in $a,b,c$, or $d$. We say that the box $B$ is \emph{generic} if no line $l\in\partial B$ projects to a closed geodesic, \emph{i.e.}~no $l\in\partial B$ is the axis of some hyperbolic transformation in $\Gamma$. This is indeed a generic condition: if neither of $a,b,c,d$ is the endpoint of some axis, then $B$ is certainly generic, and recall that there are only countably many axis overall.
+
+We equip the currents space $\calC$ with the weak-* topology introduced in Section \ref{topology:measure:subsection}. We now prove that a converging sequence of currents behave well on generic boxes.
+
+\begin{prop}
+If $\mu_i \rightharpoonup \mu$ is a converging sequence of geodesic currents and $B$ is a generic box, then $\mu_i(B) \to \mu(B)$.
+\end{prop}
+\begin{proof}
+By Proposition \ref{delta:zero:prop} it suffices to prove that $\mu(\partial B) = 0$, and this follows from Proposition \ref{pencils:prop}.
+\end{proof}
+
+\subsection{Rigidity of atoms}
+We now use boxes to prove that the atomic points in $\calC$ are somehow rigid. 
+
+\begin{prop} \label{closed:discrete:currents:prop}
+The closed geodesics form a discrete subset in $\calC$.
+\end{prop}
+\begin{proof}
+Let $\mu \in \calC$ be a closed geodesic, \emph{i.e}~it is the Dirac measure on the $\Gamma$-orbit of an axis $l\subset \matH^2$ of some hyperbolic transformation $\varphi\in\Gamma$. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 9 cm] {\iftoggle{BW}{boxes-BW}{boxes}}
+\nota{The box $B$ containing $l$ and the sub-boxes $B'$ and $B''$ (left). A line $l\in U_\gamma$ parametrised by the pair $(t,\theta)$ (right).}
+\label{boxes:fig}
+\end{center}
+\end{figure}
+
+Let $B=[a,b]\times [c,d]$ be a small generic box containing $l$ and no other $\Gamma$-translate of $l$, so that $\mu(B) = 1$. Up to substituting $\varphi$ with $\varphi^{-1}$ we may suppose that $\varphi([a,b]) = [a',b'] \subset [a,b]$. Consider the sub-boxes $B' = [a,a']\times [c,d]$ and $B'' = [b',b]\times [c,d]$ shown in Figure \ref{boxes:fig}-(left). Since $\varphi$ contracts $[a,b]$ and expands $[c,d]$, we have 
+\begin{equation} \label{Bl:eqn}
+B\setminus p \subset \bigcup_{i=1}^\infty \varphi^i(B' \sqcup B'').
+\end{equation}
+where $p$ is the pencil containing $l$ and other lines with one endpoint varying in $[b,c]$. Note that $p$ contains no axis of $\Gamma$ other than $l$.
+If necessary, we move $a'$ and $b'$ slightly farther from $a$ and $b$ to ensure that $B'$ and $B''$ (and hence all their $\varphi$-translates) are generic while (\ref{Bl:eqn}) still holds.
+
+We have $\mu(B' \sqcup B'')=0$ and we define an open neighbourhood $U$ of $\mu$ in the current space $\calC$ as follows: 
+$$U = \big\{ \eta\in \calC\ |\ \eta(B' \sqcup B'') < \varepsilon,\ \eta(B)>1-\varepsilon\big\}$$ 
+for some fixed $0<\varepsilon < 1$. This is indeed an open set because $B, B',$ and $B''$ are generic. We now prove that $U$ contains no closed geodesic except $\mu$.
+
+By contradiction, suppose $U$ contains a closed geodesic $\eta$. Since $\eta(B)>1-\varepsilon>0$, at least one atom $l'$ of $\eta$ is contained in $B$. If $l'=l$ then $\eta=\mu$ and we are done. Otherwise, the line $l'$ is contained in $B\setminus p$ and hence in $\varphi^i(B' \sqcup B'')$ for some $i$. This is impossible since this set has measure $\varepsilon < 1$.
+\end{proof}
+
+We have classified the elements in $\calC$ supported on discrete sets, and it is now time to  introduce some geodesic currents supported on the whole of $\calG$.
+
+\subsection{The Liouville measure}
+There is a continuous measure on $\calG = \calG(\matH^2)$ that is invariant under the action of the whole isometry group $\Iso(\matH^2)$. This measure is called the \emph{Liouville measure}, and is defined as follows.\index{Liouville measure}
+
+Let $\gamma\colon \matR \to \matH^2$ be a geodesic parametrised by arc length, and $U_\gamma\subset \calG$ be the open set consisting of all the lines intersecting $\gamma$, except $\gamma$ itself. We can parametrise $U_\gamma$ via the homeomorphism 
+$$\matR \times (0,\pi) \to U_\gamma$$ 
+that sends $(t, \theta)$ to the line $l$ that intersects $\gamma$ at the point $\gamma(t)$ with angle $\theta$, see Figure \ref{boxes:fig}-(right). We define a volume 2-form on $U_\gamma$ by setting: 
+$$L_\gamma = \frac 12 \sin\theta\, dt\wedge d\theta.$$
+Since $\calG$ is non-orientable, we cannot hope to define a global area form on $\calG$. However all these local forms match up to sign and hence give rise to a measure.
+\begin{prop}
+The charts $U_\gamma$ form a differentiable atlas for $\calG$. The 2-forms $L_\gamma$ match up to sign and hence define a measure  $L$ on $\calG$.
+\end{prop}
+\begin{proof}
+Every line in $\matH^2$ intersects some other line, hence the charts cover $\calG$. 
+We consider a line $r\in U_\gamma\cap U_{\gamma'}$. The charts $U_\gamma$ and $U_{\gamma'}$ have parametrisations $(t,\theta)$ and $(t', \theta')$ and 2-forms 
+$$L_\gamma = \frac 12 \sin\theta dt \wedge d\theta, \quad 
+L_{\gamma'} = \frac 12 \sin\theta' dt' \wedge d\theta'.$$ 
+We consider the jacobian $J = \frac{\partial (t', \theta')}{\partial (t,\theta)}$ 
+and recall that 
+$$dt' \wedge d\theta' = \det J \cdot dt \wedge d\theta$$
 so we need to show that
-(5) detJ =± sinθ
-sinθ′.
-We can reparametriseγ at our please, since this may changeLγ only by a sign.
-We may suppose thatγ and γ′ are asymptotically parallel, because any two
-linesγ,γ′ intersectingr are connected by a pathγ =γ1,...,γ k =γ′ of lines
-intersectingr, such that any two subsequent linesγi,γi+1 are asymptotically
-parallel (actuallyk = 3 suﬃces).
-We represent the linesγ,γ′, andr in the half-plane modelH2⊂ R2 as in
-Figure 8.3. Up to isometries and reparametrisations we have
-γ(t) = (0,et), γ ′(t′) = (1,et′
-).
-The line r is a Euclidean half-circle with center at some pointC ∈ R and
-with some radiusR >0. It intersectsγ and γ′ at some heightset and et′
-,
-8.2. GEODESIC CURRENTS 229
-0 1
-g
-C
-g'
-r
-u
-u'
-R
-Figure 8.3. The two asymptotic linesγ,γ′ in the half-space modelH2
-and the liner intersecting both.
-with some anglesθ andθ′. We now calculate the determinant ofJ = ∂(t′,θ′)
-∂(t,θ) .
-Figure 8.3 shows that
-R = et
-sinθ = et′
-sinθ′
-C =−et cotθ, 1−C =et′
-cotθ′.
+\begin{equation} \label{J:eqn}
+\det J = \pm\frac {\sin \theta}{\sin \theta'}.
+\end{equation}
+We can reparametrise $\gamma$ at our please, since this may change $L_\gamma$ only by a sign. We may suppose that $\gamma$ and $\gamma'$ are asymptotically parallel, because any two lines $\gamma, \gamma'$ intersecting $r$ are connected by a path $\gamma = \gamma_1, \ldots, \gamma_k = \gamma'$ of lines intersecting $r$, such that any two subsequent lines $\gamma_i$, $\gamma_{i+1}$ are asymptotically parallel (actually $k= 3$ suffices). 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width = 5 cm] {\iftoggle{BW}{Liouville-BW}{Liouville}}
+\nota{The two asymptotic lines $\gamma, \gamma'$ in the half-space model $H^2$ and the line $r$ intersecting both.}
+\label{Liouville:fig}
+\end{center}
+\end{figure}
+
+We represent the lines $\gamma, \gamma',$ and $r$ in the half-plane model $H^2\subset \matR^2$ as in Figure \ref{Liouville:fig}. Up to isometries and reparametrisations we have 
+$$\gamma(t) = (0, e^t), \qquad \gamma'(t') = (1,e^{t'}).$$
+The line $r$ is a Euclidean half-circle with center at some point $C\in \matR$ and with some radius $R>0$. It intersects $\gamma$ and $\gamma'$ at some heights $e^t$ and $e^{t'}$, with some angles $\theta$ and $\theta'$. We now calculate the determinant of $J = \frac{\partial (t', \theta')}{\partial (t,\theta)}$. Figure \ref{Liouville:fig} shows that
+
+
+$$ R = \frac{e^t}{\sin \theta} = \frac{e^{t'}}{\sin \theta'}$$
+
+
+$$ C = -e^t \cot \theta, \qquad 1 - C = e^{t'} \cot \theta'.$$
+
 Now
-∂(C,R )
-∂(t,θ ) =
-(−et cosθ sin−1θ e t sin−2θ
-et sin−1θ −et cosθ sin−2θ
-)
-whose determinant is−e2t sin−1θ =−R sinθ, and we get the same formula
-for ∂(C,R)
-∂(t′,θ′). Therefore
-det∂(t′,θ′)
-∂(t,θ ) = det∂(t′,θ′)
-∂(C,R )· det∂(C,R )
-∂(t,θ ) = (−R sinθ′)−1· (R sinθ) = sinθ
-sinθ′
-and we ﬁnally obtain (5), as required. □
-The measureL on G is called theLiouville measureand is clearly invariant
-by the action ofIsom(H2). The renormalising factor 1
-2 in the deﬁnition was
-chosen to get the following property, which nicely characterisesL.
-Proposition 8.2.12. Let s⊂ H2 be a geodesic segment of lengthl. The
-lines in H2 intersectings form a set of measurel.
-Proof. The set has measure
-∫ π
-0
-∫ l
-0
-1
-2 sinθdtdθ =l
-∫ π
-0
-1
-2 sinθdθ =l.
-The proof is complete. □
-The Liouville measureL is supported on the whole ofG.
-Exercise 8.2.13. The Liouville measure of a boxB = [a,b ]× [c,d ] is
-L(B) =
-⏐⏐ logβ(a,b,c,d )
-⏐⏐
-whereβ is the cross-ratio of the four points.
-230 8. SURFACE DIFFEOMORPHISMS
-8.2.8. The Liouville current. Let nowSg = H2/Γ be equipped with a
-hyperbolic metric. The Liouville measure onG is Isom(H2)-invariant: in par-
-ticular it is Γ-invariant and hence deﬁnes a currentL∈ C (Sg), called the
-Liouville current.
-It is important to note that the space of currentsC = C (Sg) does not
-depend on the given hyperbolic metric forSg, but the Liouville current does!
-Every metricm∈ Teich(Sg) induces a Liouville currentLm∈ C, and in this
-way we get aLiouville map
-Teich(Sg)−→ C
-that sendsm toLm. We will soon see that this map is injective: as promised,
-we have mapped bothS and Teich(Sg) inside the currents spaceC.
-Remark 8.2.14. We constructed the Liouville currentLm by assigning to
-G a diﬀerentiable atlas – hence a smooth structure – and a 2-form deﬁned up
-to sign. We note that the smooth structure onG also depends crucially on
-m, because the boundary extension of Theorem 5.2.1 is not guaranteed to be
-a diﬀeomorphism.
-The crucial feature that makesC preferable to P(RS ) as a comfortable
-ambient space for bothS and Teich(Sg) is the existence of a nice bilinear
-form in C that extends both the length and the geometric intersection of
-closed geodesics. We now introduce this bilinear form.
-8.2.9. The projective frame bundle.We denote by I ⊂ G× G the
-open subset consisting of all the pairs ofincident distinct lines inH2. We give
-I the topology induced byG× G, henceI is an open topological 4-manifold.
-Since two distinct incident lines intersect in a single pointp∈ H2, the setI
-can be interpreted as the set of triples(p,l 1,l 2) with p∈ H2 and l1,l 2 two
-distinct vector lines in the tangent planeTpH2.
-Let nowSg = H2/Γ be equipped with a hyperbolic metric. The action of
-Γ on G is not properly discontinuous, but the diagonal action ofΓ on I is, as
-the following shows.
-Proposition 8.2.15. The map I→ I/Γ is a topological covering.
-Proof. The group Γ acts freely and properly discontinuously onH2, and
-hence it does soa fortiorion the triples(p,l 1,l 2). □
-In particular I/Γ is a four-manifold, and it is naturally a bundle overSg,
-whose ﬁbre abovep∈Sg consists of the ordered pairs of distinct vector lines
-l1,l 2 inTpSg. Recall that theframe bundleon a manifoldM is a bundle whose
-ﬁbre abovep∈M is the set of allframes (i.e. basis) inTpM. The spaceI/Γ
-can be seen as some projective quotient of the frame bundle onSg.
-8.2. GEODESIC CURRENTS 231
-8.2.10. Intersection form. Two geodesic currentsα,β ∈ C = C (Sg)
-induce a Γ-invariant product measureα×β on G× G and hence onI. This
-measure descends via the coveringI→ I/Γ to a measure onI/Γ which we
-still indicate byα×β, see Section 1.5.4.
-Deﬁnition 8.2.16. Theintersectioni(α,β ) of two geodesic currents is the
-total volume ofI/Γ in the measureα×β.
-The intersectioni(α,β )does not depend on the auxiliary hyperbolic metric
-forSg. The ﬁniteness ofi(α,β ) is not immediate sinceI/Γ is not compact,
-and it deserves a proof.
-Proposition 8.2.17. The intersectioni(α,β ) is ﬁnite.
-Proof. LetD be a compact fundamental domain forSg = H2/Γ. SinceD
-is compact, the lines intersectingD form a compact subsetX⊂ G which has
-ﬁnite measuresα(X)andβ(X). The projection sends(X×X)∩I surjectively
-onto I/Γ. Thereforei(α,β ) = (α×β)(I/Γ)<α (X)·β(X). □
-The formi is clearly bilinear and symmetric.
-8.2.11. Geometric intersection and length of closed geodesics.We
-now show that this abstract-looking intersection form generalises both the
-geometric intersection and the length of simple closed geodesics. We consider
-as usual the setS of simple closed curves as a subset ofC. The following
-proposition explains why we employed the notationi for the intersection form
-of two geodesic currents.
-Proposition 8.2.18. If α,β ∈ S, the number i(α,β ) is the geometric
-intersection of the simple closed curvesα andβ.
-Proof. Representα andβ as simple closed geodesics. The measureα×β
-is the Dirac measure with support the pairs of incident lines inH2 that cover
-respectivelyα andβ. The Γ-orbits of these pairs are in natural bijection with
-the transverse intersection points inα∩β. Hence the volume ofI/Γ is the
-cardinality ofα∩β, except whenα =β and in this case we get zero. □
-We note in particular thati(α,α ) = 0 for everyα∈ S, hence the setS is
-contained in the “light cone” consisting of all the currentsα withi(α,α ) = 0.
-(Of coursei(α,α )> 0 for every geodesic currentα.) We now consider the
-Liouville currentLm∈ C determined by some hyperbolic metricm onSg.
-Proposition 8.2.19. Ifα∈ S theni(Lm,α ) = 𝓁α(m) is the length of the
-geodesic representative ofα in the metricm.
-Proof. Representα as a simple closed geodesic in the metricm, of length
-𝓁α(m). The measure Lm×α has its support on the pairs(l,l′) of incident
-lines wherel is arbitrary andl′ is a lift ofα.
-232 8. SURFACE DIFFEOMORPHISMS
-Any segments′⊂l′ of length𝓁α(m) in a ﬁxed liftl′ ofα is a fundamental
-domain for the action ofΓ on the lifts ofα. Thereforei(Lm,α ) is the volume
-of the pairs (l,l′) where l′ is ﬁxed, andl is arbitrary and intersectss′. By
-Proposition 8.2.12 these pairs have volume𝓁α(m). □
-Theintersectionform i on C generalisesboththegeometricintersectionof
-curvesandthelengthfunctionsonTeichmüllerspace, twoapparentlyunrelated
-objects! As promised, we can easily deduce thatTeich(Sg) embeds in C.
-Corollary 8.2.20.The Liouville mapTeich(Sg)→ C is injective.
-Proof. Ifm⁄=m′ there is a curveγ∈ S with𝓁γ(m)⁄=𝓁γ(m′) by Propo-
-sition 7.3.4 and hencei(Lm,γ )⁄=i(Lm′,γ ). ThereforeLm⁄=Lm′. □
-We will since now consider bothTeich(Sg) and S as subsets ofC. We
-know the geometric meaning of the intersection of two curves, and of a curve
-and a hyperbolic metric. What is the intersection of two hyperbolic metrics?
-When they coincide, we get a positive constant.
-Proposition 8.2.21. Ifm∈ Teich(Sg) we havei(Lm,Lm) =−π2χ(Sg).
-Proof. The metricm produces a smooth structure onG and hence onI,
-and Lm is induced by aΓ-invariant 2-form onG deﬁned up to sign, that we
-also denote asLm. We need to integrate the 4-formLm×Lm on I/Γ.
-Recall that I/Γ may be interpreted as a bundle overSg. We make a
-ﬁrst-order computation on a very small region ofSg, which we may suppose
-to be Euclidean: a very thin rectangleR in Sg of sidesl and a with a≪ l.
-We compute the volume of the portion of bundle lying aboveR.
-We integrateLm×Lm on all the pairs of segments intersecting in some
-point inR, and we consider only segments with both endpoints on the bigl
-sides, neglecting the smalla sides. A segment meeting thel sides at angleθ
-has lengthL(θ) =a/ sinθ. By Proposition 8.2.12 theLm×Lm volume of the
-portion of I aboveR is (at a ﬁrst order) equal to
-∫ π
-0
-∫ l
-0
-1
-2 sinθ·L(θ)dtdθ ∼ 1
-2l
-∫ π
-0
-sinθ· a
-sinθ = π
-2la.
-The ﬁrst-order contribution of a small region is henceπ
-2 times its area.
-Since the volume is induced by a diﬀerentiable form, by taking the limit we
-ﬁnd that the contribution of any region is preciselyπ
-2 its area and we conclude
-by the Gauss-Bonnet theorem. □
-We have already noted thati is symmetric and bilinear. As we mentioned,
-there is an evident analogy between the embeddingsTeich(Sg) ↪→ C and
-Hn ↪→ Rn+1, since there is a bilinear form on both spacesC and Rn+1, and
-Teich(Sg) is also contained in a “hyperboloid” consisting of vectorsv with
-i(v,v ) = k for some ﬁxedk⁄= 0. On the other handS is contained in the
-“light cone” formed by all vectorsv withi(v,v ) = 0.
-8.2. GEODESIC CURRENTS 233
-We may compactifyHn by projecting the hyperboloid to the Klein model
-Kn⊂ RPn. NowKn is an open disc, whose boundary is the image of the light
-cone. Wewouldliketoapplythesamecompactiﬁcationstrategyto Teich(Sg).
-Before doing that, we need to prove a slightly technical fact: that the bilinear
-formi is continuous.
-8.2.12. Continuity of the intersection form.LetSg = H2/Γ be a closed
-hyperbolic surface. The following theorem is not obvious becauseI is not
-compact: the proof relies on the fact that closed geodesics form a discrete
-rigid set in C and therefore atomic points cannot “escape to inﬁnity” on a
-converging sequence of currents.
-Theorem 8.2.22.The formi : C× C→ R is continuous.
-Proof. Letβ1,β 2 be two currents converging toα1,α 2. We need to prove
-that i(β1,β 2) converges toi(α1,α 2). The bundle I/Γ is not compact and
-we need to control that no mass escapes to inﬁnity: the inﬁnity here is the
-diagonal ∆⊂ G× G, so our aim is to cover∆ with small boxes and prove that
-they contribute very little toi(β1,β 2). For any boxB, we deﬁne
-Ψ(B) =
-(
-(B×B)∩ I
-)
-/Γ.
-We show that for everyε> 0 there are ﬁnitely many small generic boxesBi
-whose Γ-translates cover G, such that
-(β1×β2)(∪i Ψ(Bi ))<ε
-as soon asβ1,β 2 are suﬃciently close toα1,α 2. Since the Γ-translates of
-∪i (Bi×Bi ) form an open neighbourhood of∆, the set(I/Γ)\ (∪i Ψ(Bi )) is
-compact with zero-measure boundary (because the boxesBi are generic) so
-its contribution toi(β1,β 2) tends to that toi(α1,α 2) ifβ1,β 2 are suﬃciently
-close, and the theorem is proved.
-It remains to construct the boxesBi. We ﬁrst ﬁx ﬁnitely many generic
-boxesBi whose Γ-translates cover G. LetK >0 be bigger than the totalα1
-andα2-mass of the boxes.
-We now pick a small number 0 < ε′ < ε/2K and subdivide each box
-Bi into ﬁnitely many generic sub-boxes (which we still callBi) such that the
-following holds for eachi and eachj = 1, 2:
-(1) eitherαj (Bi )<ε′, or
-(2) there is an atomic pointl∈Bi withαj (l)>ε′ andαj (Bi\l)<ε′.
-If the second case holds for bothj = 1, 2, we also requirel∈ Bi to be the
-same line forj = 1, 2. We note that the totalα1 andα2-mass of the boxes is
-still smaller thanK after the subdivision. We have
-(β1×β2)(Ψ(B))⩽β1(B)·β2(B)
-so ifβ1,β 2 are suﬃciently close toα1,α 2 the boxesBi that are of the ﬁrst kind
-for at least one value ofj = 1, 2 contribute toi(β1,β 2) less than 2ε′K <ε.
-234 8. SURFACE DIFFEOMORPHISMS
-We are left to consider the boxesBi containing a linel whose α1 and
-α2-mass are both bigger thanε′. This is a potentially bad situation since the
-point (l,l )∈ G× G is atomic and contained in the frontier ofI, and could
-enter inside I abruptly for some arbitrarily small perturbations ofα1 andα2.
-We show that this cannot happen because atomic points are rigid, as noted in
-Proposition 8.2.10.
-As in the proof of Proposition 8.2.10, we setBi =B = [a,b ]× [c,d ] and
-construct B′ = [a,a′]× [c,d ],B′′ = [b′,b ]× [c,d ] whose ϕ-translates cover
-B\p wherep is a pencil containingl. We note that
-(β1×β2)(Ψ(B))⩽β1(B′⊔B′′)·β2(B) +β2(B′⊔B′′)·β1(B)
-is smaller thanε′(β1(B) +β2(B)) and hence by summing on theBi we get
-again a contribution smaller than2ε′K <ε. □
-8.2.13. Filling geodesic currents.We now deﬁne an interesting class of
-currents, whose importance will be evident in the next section.
-We say that a geodesic currentα∈ C (Sg) ﬁllsthe surfaceSg = H2/Γ
-if every line inH2 intersects transversely at least one line in the support of
-α. For instance, a Liouville measure ﬁllsSg since its support is the whole of
-G. We say thatk closed geodesicsγ1,...,γ k ﬁllSg if the geodesic current
-γ1 +... +γk does.
-Proposition8.2.23. Letγ1,...,γ k beclosedgeodesics. If Sg\(γ1∪···∪ γk)
-consists of polygons, the curves ﬁllSg.
-Proof. Every geodesic inSg intersects these curves. □
-As an example, we can pick two multicurvesη andµ inSg that intersect
-transversely forming only polygons but no bigons. By the bigon criterionη and
-µ are in minimal position and by Proposition 6.3.24 their geodesic representa-
-tives have the same conﬁguration asη∪µ, so they ﬁllSg.
-It is a bit more diﬃcult to construct a single (non-simple) closed geodesic
-that ﬁllsSg. The following remark is straightforward.
-Remark 8.2.24. Letα andβ be currents. We havei(α,β )> 0 if and only
-if there are two lines in the supports ofα andβ that intersect in a point.
-Corollary 8.2.25.Ifα ﬁllsSg theni(α,β )> 0 for every non-trivialβ∈ C.
-8.2.14. A compactness criterion. We now state a simple and general
-compactness criterion for subsets ofC that has various nice (and apparently
-unrelated) geometric consequences.
-Proposition 8.2.26 (Compactness criterion).If α∈ C ﬁllsSg, the set of
-allβ∈ C withi(α,β )⩽M is compact, for allM >0.
-8.2. GEODESIC CURRENTS 235
-Proof. Let C ⊂ C be the set of allβ with i(α,β )⩽ M. It is closed
-becausei is continuous.
-Letl be a line inH2. By hypothesis there is another linel′ in the support
-of α which intersectsl in a point. LetB′, B be two suﬃciently small boxes
-neighbourhoods of l′,l in G, so thatB′×B ⊂ I and B′×B is mapped
-injectively into I/Γ. Ifβ∈C we have
-α(B′)β(B) = (α×β)(B′×B)⩽ (α×β) (I/Γ) =i(α,β )⩽M.
-Therefore every linel in H2 has a box neighbourhoodB such that
-β(B)⩽Kl ∀β∈C
-for some constant Kl = M/α(B′) that depends only on l. The set C is
-relatively compact by Theorem 1.3.9, and hence compact since it is closed.
-The proof is complete. □
-We now state some corollaries. The ﬁrst concerns the immersion of
-Teich(Sg) in C.
-Corollary 8.2.27.The Liouville mapTeich(Sg)↪→ C is proper and a home-
-omorphism onto its image.
-Proof. We prove that the map is proper: ifmj∈ Teich(Sg) is a diverging
-sequence of metrics, we know from Proposition 7.3.14 that there is a closed
-curveγ∈ S such that𝓁γ(mj ) = i(mj,γ )→∞ on a subsequence. Sincei is
-continuous, the sequencemj diverges also inC.
-We denote the Liouville map byL. We should now prove thatL is con-
-tinuous, but we prefer to consider the inverse mapL−1 : L(Teich(Sg)) →
-Teich(Sg). The map L−1 is continuous becausei is and Teich(Sg) has the
-weakest topology where the length functions are continuous. We show that
-L−1 is proper. Let γ1,...,γ k be simple closed curves that ﬁllSg. If L(mi )
-is a diverging sequence, by Proposition 8.2.26 we havei(L(mi ),∑
-tγt)→∞
-and hencei(L(mi ),γt)→∞ for somet. Therefore mi is divergent also in
-Teich(Sg).
-NowL−1 is continuous and proper and hence a homeomorphism by Corol-
-lary 7.3.11. □
-A second immediate corollary is a general compactness criterion for the
-Teichmüller space.
-Corollary 8.2.28.Letγ1,...,γ k be some closed geodesics that ﬁllSg. The
-metricsm∈ Teich(Sg) with𝓁γi (m)⩽M form a compact subset ofTeich(Sg),
-for allM >0.
+$$\frac{\partial (C,R)}{\partial(t,\theta)} = 
+\begin{pmatrix} 
+-e^t\cos\theta\sin^{-1}\theta & e^t\sin^{-2}\theta \\
+e^t\sin^{-1}\theta & -e^t \cos\theta\sin^{-2} \theta
+\end{pmatrix}
+$$
+whose determinant is $-e^{2t} \sin^{-1}\theta = -R\sin\theta$, and we get the same formula for $\frac{\partial (C,R)}{\partial(t',\theta')}$. Therefore
+$$\det \frac{\partial (t', \theta')}{\partial (t,\theta)} =
+\det \frac{\partial (t', \theta')}{\partial (C, R)}
+\cdot 
+\det \frac{\partial (C,R)}{\partial(t,\theta)} 
+=
+(-R\sin\theta')^{-1} \cdot (R \sin\theta) = \frac{\sin\theta}{\sin\theta'}$$
+and we finally obtain (\ref{J:eqn}), as required.
+\end{proof}
+The measure $L$ on $\calG$ is called the \emph{Liouville measure} and is clearly invariant by the action of $\Iso(\matH^2)$. The renormalising factor $\frac 12$ in the definition was chosen to get the following property, which nicely characterises $L$.
+
+\begin{prop} \label{l:prop}
+Let $s\subset \matH^2$ be a geodesic segment of length $l$. The lines in $\matH^2$ intersecting $s$ form a set of measure $l$.
+\end{prop}
+\begin{proof}
+The set has measure
+$$\int_0^\pi\int_0^l \frac 12 \sin\theta \, dt\, d\theta = l \int_0^\pi \frac 12 \sin \theta \, d\theta = l.$$
+The proof is complete.
+\end{proof}
+
+The Liouville measure $L$ is supported on the whole of $\calG$.
+
+\begin{ex}
+The Liouville measure of a box $B=[a,b]\times [c,d]$ is 
+$$L(B) = \big| \log \beta(a,b,c,d) \big|$$
+where $\beta$ is the cross-ratio of the four points.
+\end{ex}
+
+\subsection{The Liouville current}
+Let now $S_g=\matH^2/_\Gamma$ be equipped with a hyperbolic metric. The Liouville measure on $\calG$ is $\Iso(\matH^2)$-invariant: in particular it is $\Gamma$-invariant and hence defines a current $L \in \calC(S_g)$, called the \emph{Liouville current}.\index{Liouville current} 
+
+It is important to note that the space of currents $\calC = \calC(S_g)$ does not depend on the given hyperbolic metric for $S_g$, but the Liouville current does! Every metric $m\in \Teich(S_g)$ induces a Liouville current $L_m\in \calC$, and in this way we get a \emph{Liouville map}\index{Liouville map}
+$$\Teich(S_g) \longrightarrow \calC$$
+that sends $m$ to $L_m$.
+We will soon see that this map is injective: as promised, we have mapped both $\calS$ and $\Teich(S_g)$ inside the currents space $\calC$. 
+
+\begin{rem}
+We constructed the Liouville current $L_m$ by assigning to $\calG$ a differentiable atlas -- hence a smooth structure -- and a 2-form defined up to sign. We note that the smooth structure on $\calG$ also depends crucially on $m$, because the boundary extension of Theorem \ref{estensione:teo} is not guaranteed to be a diffeomorphism.
+\end{rem}
+
+The crucial feature that makes $\calC$ preferable to $\matP(\matR^\calS)$ as a comfortable ambient space for both $\calS$ and $\Teich(S_g)$ is the existence of a nice bilinear form in $\calC$ that extends both the length and the geometric intersection of closed geodesics. We now introduce this bilinear form.
+
+\subsection{The projective frame bundle}
+We denote by $\calI \subset \calG \times \calG$ the open subset consisting of all the pairs of \emph{incident} distinct lines in $\matH^2$. We give $\calI$ the topology induced by $\calG \times \calG$, hence $\calI$ is an open topological 4-manifold. Since two distinct incident lines intersect in a single point $p\in\matH^2$, the set $\calI$ can be interpreted as the set of triples $(p,l_1,l_2)$ with $p\in \matH^2$ and $l_1,l_2$ two distinct vector lines in the tangent plane $T_p\matH^2$.
+
+Let now $S_g=\matH^2/_\Gamma$ be equipped with a hyperbolic metric. The action of $\Gamma$ on $\calG$ is not properly discontinuous, but the diagonal action of $\Gamma$ on $\calI$ is, as the following shows.
+\begin{prop}
+The map $\calI \to \calI/_\Gamma$ is a topological covering.
+\end{prop}
+\begin{proof}
+The group $\Gamma$ acts freely and properly discontinuously on $\matH^2$, and hence it does so \emph{a fortiori} on the triples $(p,l_1,l_2)$.
+\end{proof}
+
+In particular $\calI/_\Gamma$ is a four-manifold, and it is naturally a bundle over $S_g$, whose fibre above $p\in S_g$ consists of the ordered pairs of distinct vector lines $l_1,l_2$ in $T_pS_g$. Recall that the \emph{frame bundle} on a manifold $M$ is a bundle whose fibre above $p\in M$ is the set of all \emph{frames} (i.e.~basis) in $T_pM$. The space $\calI/_\Gamma$ can be seen as some projective quotient of the frame bundle on $S_g$.
+
+\subsection{Intersection form}
+Two geodesic currents $\alpha, \beta \in \calC = \calC(S_g)$ induce a $\Gamma$-invariant product measure $\alpha\times \beta$ on $\calG\times \calG$ and hence on $\calI$. This measure descends via the covering $\calI \to \calI/_\Gamma$ to a measure on $\calI/_\Gamma$ which we still indicate by $\alpha\times \beta$, see Section \ref{measure:descends:subsection}.\index{intersection form on currents}
+
+\begin{defn}
+The \emph{intersection} $i(\alpha,\beta)$ of two geodesic currents is the total volume of $\calI/_\Gamma$ in the measure $\alpha\times\beta$. 
+\end{defn}
+
+The intersection $i(\alpha, \beta)$ does not depend on the auxiliary hyperbolic metric for $S_g$. The finiteness of $i(\alpha,\beta)$ is not immediate since $\calI/_\Gamma$ is not compact, and it deserves a proof.
+
+\begin{prop}
+The intersection $i(\alpha,\beta)$ is finite.
+\end{prop}
+\begin{proof}
+Let $D$ be a compact fundamental domain for $S_g = \matH^2/_\Gamma$. Since $D$ is compact, the lines intersecting $D$ form a compact subset $X\subset \calG$ which has finite measures $\alpha(X)$ and $\beta(X)$. The projection sends $(X \times X) \cap \calI$ surjectively onto $\calI/_\Gamma$. 
+Therefore $i(\alpha,\beta) = (\alpha\times \beta) (\calI/_\Gamma) < \alpha(X) \cdot \beta(X)$.
+\end{proof}
+
+The form $i$ is clearly bilinear and symmetric. 
+
+\subsection{Geometric intersection and length of closed geodesics}
+We now show that this abstract-looking intersection form generalises both the geometric intersection and the length of simple closed geodesics.
+We consider as usual the set $\calS$ of simple closed curves as a subset of $\calC$. The following proposition explains why we employed the notation $i$ for the intersection form of two geodesic currents.
+
+\begin{prop}
+If $\alpha, \beta \in \calS$, the number $i(\alpha,\beta)$ is the geometric intersection of the simple closed curves $\alpha$ and $\beta$.
+\end{prop}
+\begin{proof}
+Represent $\alpha$ and $\beta$ as simple closed geodesics. The measure $\alpha\times \beta$ is the Dirac measure with support the pairs of incident lines in $\matH^2$ that cover respectively $\alpha$ and $\beta$. The $\Gamma$-orbits of these pairs are in natural bijection with the transverse intersection points in $\alpha\cap \beta$. Hence the volume of $\calI/_\Gamma$ is the cardinality of $\alpha\cap\beta$, except when $\alpha = \beta$ and in this case we get zero.
+\end{proof}
+
+We note in particular that $i(\alpha,\alpha)=0$ for every $\alpha\in\calS$, hence the set $\calS$ is contained in the ``light cone'' consisting of all the currents $\alpha$ with $i(\alpha,\alpha)=0$. (Of course $i(\alpha, \alpha)\geqslant 0$ for every geodesic current $\alpha$.) We now consider the Liouville current $L_m\in\calC$ determined by some hyperbolic metric $m$ on $S_g$.
+
+\begin{prop} \label{i:metric:curve:prop}
+If $\alpha\in \calS$ then $i(L_m, \alpha) = \ell^\alpha(m)$ is the length of the geodesic representative of $\alpha$ in the metric $m$.
+\end{prop}
+\begin{proof}
+Represent $\alpha$ as a simple closed geodesic in the metric $m$, of length $\ell^\alpha(m)$. The measure $L_m \times \alpha$ has its support on the pairs $(l,l')$ of incident lines where $l$ is arbitrary and $l'$ is a lift of $\alpha$. 
+
+Any segment $s'\subset l'$ of length $\ell^\alpha(m)$ in a fixed lift $l'$ of $\alpha$ is a fundamental domain for the action of $\Gamma$ on the lifts of $\alpha$. Therefore $i(L_m, \alpha)$ is the volume of the pairs $(l,l')$ where $l'$ is fixed, and $l$ is arbitrary and intersects $s'$. By Proposition \ref{l:prop} these pairs have volume $\ell^\alpha(m)$.
+\end{proof}
+
+The intersection form $i$ on $\calC$ generalises both the geometric intersection of curves and the length functions on Teichm\"uller space, two apparently unrelated objects! As promised, we can easily deduce that $\Teich(S_g)$ embeds in $\calC$.
+
+\begin{cor}
+The Liouville map $\Teich(S_g) \to \calC$ is injective.
+\end{cor}
+\begin{proof}
+If $m\neq m'$ there is a curve $\gamma\in\calS$ with $\ell^\gamma(m) \neq \ell^\gamma(m')$ by Proposition \ref{9g-9:prop} and hence $i(L_m,\gamma) \neq i(L_{m'},\gamma)$. Therefore $L_m \neq L_{m'}$.
+\end{proof}
+
+We will since now consider both $\Teich(S_g)$ and $\calS$ as subsets of $\calC$.
+We know the geometric meaning of the intersection of two curves, and of a curve and a hyperbolic metric. What is the intersection of two hyperbolic metrics? When they coincide, we get a positive constant.
+
+\begin{prop}
+If $m \in \Teich(S_g)$ we have $i(L_m, L_m) = -\pi^2 \chi(S_g)$.
+\end{prop}
+\begin{proof}
+The metric $m$ produces a smooth structure on $\calG$ and hence on $\calI$, and $L_m$ is induced by a $\Gamma$-invariant 2-form on $\calG$ defined up to sign, that we also denote as $L_m$. We need to integrate the 4-form $L_m \times L_m$ on $\calI/_\Gamma$.
+
+Recall that $\calI/_\Gamma$ may be interpreted as a bundle over $S_g$.
+We make a first-order computation on a very small region of $S_g$, which we may suppose to be Euclidean: a very thin rectangle $R$ in $S_g$ of sides $l$ and $a$ with $a \ll l$. We compute the volume of the portion of bundle lying above $R$.
+
+We integrate $L_m \times L_m$ on all the pairs of segments intersecting in some point in $R$, and we consider only segments with both endpoints on the big $l$ sides, neglecting the small $a$ sides. A segment meeting the $l$ sides at angle $\theta$ has length $L(\theta) = a/\sin \theta$. By Proposition \ref{l:prop} the $L_m \times L_m$ volume of the portion of $\calI$ above $R$ is (at a first order) equal to
+$$\int_0^\pi \int_0^l \frac 12 \sin \theta \cdot L(\theta) \, dt\, d\theta \sim
+\frac 12 l \int_0^\pi \sin \theta \cdot \frac a{\sin \theta} = \frac{\pi}2 la.$$
+
+The first-order contribution of a small region is hence $\frac{\pi}2$ times its area. Since the volume is induced by a differentiable form, by taking the limit we find that the contribution of any region is precisely $\frac{\pi}2$ its area and we conclude by the Gauss-Bonnet theorem.
+\end{proof}
+
+We have already noted that $i$ is symmetric and bilinear. 
+As we mentioned, there is an evident analogy between the embeddings $\Teich(S_g)\hookrightarrow \calC$ and $\matH^n\hookrightarrow \matR^{n+1}$, since there is a bilinear form on both spaces $\calC$ and $\matR^{n+1}$, and $\Teich(S_g)$ is also contained in a ``hyperboloid'' consisting of vectors $v$ with $i(v,v) = k$ for some fixed $k \neq 0$. On the other hand $\calS$ is contained in the ``light cone'' formed by all vectors $v$ with $i(v,v)=0$. 
+
+We may compactify $\matH^n$ by projecting the hyperboloid to the Klein model $K^n\subset \matRP^{n}$. Now $K^n$ is an open disc, whose boundary is the image of the light cone. We would like to apply the same compactification strategy to $\Teich(S_g)$. Before doing that, we need to prove a slightly technical fact: that the bilinear form $i$ is continuous. 
+
+\subsection{Continuity of the intersection form}
+Let $S_g=\matH^2/_\Gamma$ be a closed hyperbolic surface.
+The following theorem is not obvious because $\calI$ is not compact: the proof relies on the fact that closed geodesics form a discrete rigid set in $\calC$ and therefore atomic points cannot ``escape to infinity'' on a converging sequence of currents.
+
+\begin{teo}
+The form $i\colon \calC \times \calC \to \matR$ is continuous.
+\end{teo}
+\begin{proof}
+Let $\beta_1, \beta_2$ be two currents converging to $\alpha_1, \alpha_2$. We need to prove that $i(\beta_1,\beta_2)$ converges to $i(\alpha_1, \alpha_2)$. The bundle $\calI/_\Gamma$ is not compact and we need to control that no mass escapes to infinity: the infinity here is the diagonal $\Delta \subset \calG \times \calG$, so our aim is to cover $\Delta$ with small boxes and prove that they contribute very little to $i(\beta_1,\beta_2)$. For any box $B$, we define
+$$\Psi(B) = \big((B\times B)\cap \calI \big)/_\Gamma.$$
+We show that for every $\varepsilon >0$ there are finitely many small generic boxes $B_i$ whose $\Gamma$-translates cover $\calG$, such that 
+$$(\beta_1 \times \beta_2) (\cup_i\Psi(B_i)) < \varepsilon$$
+as soon as $\beta_1,\beta_2$ are sufficiently close to $\alpha_1,\alpha_2$. Since the $\Gamma$-translates of $\cup_i (B_i\times B_i)$ form an open neighbourhood of $\Delta$, the set $(\calI/_\Gamma )\setminus (\cup_i \Psi(B_i))$ is compact with zero-measure boundary (because the boxes $B_i$ are generic) so its contribution to $i(\beta_1, \beta_2)$ tends to that to $i(\alpha_1,\alpha_2)$ if $\beta_1,\beta_2$ are sufficiently close, and the theorem is proved.
+
+It remains to construct the boxes $B_i$. We first fix finitely many generic boxes $B_i$ whose $\Gamma$-translates cover $\calG$. Let $K>0$ be bigger than the total $\alpha_1$ and $\alpha_2$-mass of the boxes. 
+
+We now pick a small number $0<\varepsilon' < \varepsilon / 2K$ and subdivide each box $B_i$ into finitely many generic sub-boxes (which we still call $B_i$) such that the following holds for each $i$ and each $j=1,2$:
+\begin{enumerate}
+\item either $\alpha_j(B_i) < \varepsilon'$, or
+\item there is an atomic point $l \in B_i$ with $\alpha_j(l) > \varepsilon'$ and $\alpha_j(B_i \setminus l) < \varepsilon'$.
+\end{enumerate}
+If the second case holds for both $j=1,2$, we also require $l\in B_i$ to be the same line for $j=1,2$.
+We note that the total $\alpha_1$ and $\alpha_2$-mass of the boxes is still smaller than $K$ after the subdivision.
+We have
+$$(\beta_1 \times \beta_2)(\Psi(B)) \leqslant \beta_1(B) \cdot \beta_2(B)$$
+so if $\beta_1,\beta_2$ are sufficiently close to $\alpha_1, \alpha_2$ the boxes $B_i$ that are of the first kind for at least one value of $j=1,2$ contribute to $i(\beta_1, \beta_2)$ less than $2\varepsilon' K<\varepsilon$.
+
+We are left to consider the boxes $B_i$ containing a line $l$ whose $\alpha_1$ and $\alpha_2$-mass are both bigger than $\varepsilon'$. This is a potentially bad situation since the point $(l,l) \in \calG\times \calG$ is atomic and contained in the frontier of $\calI$, and could enter inside $\calI$ abruptly for some arbitrarily small perturbations of $\alpha_1$ and $\alpha_2$. We show that this cannot happen because atomic points are rigid, as noted in Proposition \ref{closed:discrete:currents:prop}.
+
+As in the proof of Proposition \ref{closed:discrete:currents:prop}, we set $B_i = B = [a,b] \times [c,d]$ and construct $B' = [a,a'] \times [c,d], B'' = [b',b] \times [c,d]$ whose $\varphi$-translates cover $B\setminus p$ where $p$ is a pencil containing $l$. We note that
+$$(\beta_1 \times \beta_2) (\Psi(B)) \leqslant \beta_1(B' \sqcup B'') \cdot \beta_2(B) + \beta_2(B'\sqcup B'') \cdot \beta_1(B)$$
+is smaller than $\varepsilon' (\beta_1(B) + \beta_2(B))$ and hence by summing on the $B_i$ we get again a contribution smaller than $2\varepsilon' K < \varepsilon$.
+\end{proof}
+
+\subsection{Filling geodesic currents}
+We now define an interesting class of currents, whose importance will be evident in the next section.
+
+We say that a geodesic current $\alpha\in\calC(S_g)$ \emph{fills} the surface $S_g=\matH^2/_\Gamma$ if every line in $\matH^2$ intersects transversely at least one line in the support of $\alpha$. For instance, a Liouville measure fills $S_g$ since its support is the whole of $\calG$. We say that $k$ closed geodesics $\gamma_1,\ldots, \gamma_k$ \emph{fill $S_g$} if the geodesic current $\gamma_1+\ldots + \gamma_k$ does.
+
+\begin{prop}
+Let $\gamma_1,\ldots, \gamma_k$ be closed geodesics. If $S_g \setminus (\gamma_1\cup \cdots\cup \gamma_k)$ consists of polygons, the curves fill $S_g$.
+\end{prop}
+\begin{proof}
+Every geodesic in $S_g$ intersects these curves.
+\end{proof}
+
+As an example, we can pick two multicurves $\eta$ and $\mu$ in $S_g$ that intersect transversely forming only polygons but no bigons. By the bigon criterion $\eta$ and $\mu$ are in minimal position and by Proposition \ref{minimale:unica:prop} their geodesic representatives have the same configuration as $\eta\cup\mu$, so they fill $S_g$.
+
+It is a bit more difficult to construct a single (non-simple) closed geodesic that fills $S_g$. The following remark is straightforward.
+
+\begin{oss} \label{correnti:oss}
+Let $\alpha$ and $\beta$ be currents. We have $i(\alpha,\beta)>0$ if and only if there are two lines in the supports of $\alpha$ and $\beta$ that intersect in a point.
+\end{oss}
+
+\begin{cor} \label{riempie:cor}
+If $\alpha$ fills $S_g$ then $i(\alpha,\beta)>0$ for every non-trivial $\beta\in\calC$.
+\end{cor}
+
+\subsection{A compactness criterion}
+We now state a simple and general compactness criterion for subsets of $\calC$ that has various nice (and apparently unrelated) geometric consequences.
+
+\begin{prop}[Compactness criterion] \label{compattezza:C:prop}
+If $\alpha\in\calC$ fills $S_g$, the set of all $\beta\in\calC$ with $i(\alpha,\beta)\leqslant M$ is compact, for all $M>0$.
+\end{prop}
+\begin{proof}
+Let $C\subset\calC$ be the set of all $\beta$ with $i(\alpha,\beta)\leqslant M$. It is closed because $i$ is continuous.
+
+Let $l$ be a line in $\matH^2$. By hypothesis there is another line $l'$ in the support of $\alpha$ which intersects $l$ in a point. Let $B'$, $B$ be two sufficiently small boxes neighbourhoods of $l',l$ in $\calG$, so that $B' \times B \subset \calI$ and
+$B' \times B$ is mapped injectively into $\calI/_\Gamma$.
+If $\beta\in C$ we have
+$$\alpha(B')\beta(B) = (\alpha\times\beta)(B' \times B) \leqslant (\alpha\times\beta)\left(\calI/_\Gamma\right) = i(\alpha,\beta) \leqslant M.$$
+Therefore every line $l$ in $\matH^2$ has a box neighbourhood $B$ such that
+$$\beta(B) \leqslant K_l \quad \forall \beta \in C$$
+for some constant $K_l = M/\alpha(B')$ that depends only on $l$. The set $C$ is relatively compact by Theorem \ref{compact:measure:teo}, and hence compact since it is closed. The proof is complete.
+\end{proof}
+
+We now state some corollaries. The first concerns the immersion of $\Teich(S_g)$ in $\calC$. 
+
+\begin{cor}
+The Liouville map $\Teich(S_g)\hookrightarrow\calC$ is proper and a homeomorphism onto its image.
+\end{cor}
+\begin{proof}
+We prove that the map is proper: if $m_j\in \Teich(S_g)$ is a diverging sequence of metrics, we know from Proposition \ref{diverges:infinity:prop} that there is a closed curve $\gamma\in\calS$ such that $\ell^\gamma(m_j) = i(m_j, \gamma) \to \infty$ on a subsequence. Since $i$ is continuous, the sequence $m_j$ diverges also in $\calC$. 
+
+We denote the Liouville map by $L$. We should now prove that $L$ is continuous, but we prefer to consider the inverse map $L^{-1}\colon L(\Teich(S_g)) \to \Teich(S_g)$. The map $L^{-1}$ is continuous because $i$ is and $\Teich(S_g)$ has the weakest topology where the length functions are continuous. We show that $L^{-1}$ is proper. Let $\gamma_1, \ldots, \gamma_k$ be simple closed curves that fill $S_g$. If $L(m_i)$ is a diverging sequence, by Proposition \ref{compattezza:C:prop} we have $i(L(m_i),\sum_t \gamma_t)\to \infty$ and hence $i(L(m_i),\gamma_t)\to \infty$ for some $t$. Therefore $m_i$ is divergent also in $\Teich(S_g)$.
+
+Now $L^{-1}$ is continuous and proper and hence a homeomorphism by
+Corollary \ref{propria:chiusa:cor}.
+\end{proof}
+
+A second immediate corollary is a general compactness criterion for the Teichm\"uller space.
+
+\begin{cor} \label{bounded:metrics:compact:cor}
+Let $\gamma_1,\ldots, \gamma_k$ be some closed geodesics that fill $S_g$. The metrics $m\in\Teich(S_g)$ with $\ell^{\gamma_i}(m) \leqslant M$ form a compact subset of $\Teich(S_g)$, for all $M>0$.
+\end{cor}
+
 We can similarly deduce the following.
-Corollary 8.2.29.Letγ1,...,γ k be some simple closed curves that ﬁllSg.
-For everyM there are only ﬁnitely manyα∈ S withi(γi,α )<M for alli.
-236 8. SURFACE DIFFEOMORPHISMS
-Exercise 8.2.30. Use the compactness criterion to re-prove that on a hy-
-perbolicclosedsurfacethereareonlyﬁnitelymanyclosedgeodesicsofbounded
-length.
-We are ﬁnally ready to construct Thurston’s compactiﬁcation of the Te-
-ichmüller space, using Bonahon’s geodesic currents.
-8.2.15. Projective currents. As usual, we pick a hyperbolic closed sur-
-face Sg = H2/Γ. The currents space C is equipped with a multiplication by
-positive scalars, hence we can deﬁne its projectivisation
-π : C\ 0−→ PC
-where PC = (C\ 0)/∼ withα∼λα for allλ> 0. We givePC the quotient
-topology.
-Proposition 8.2.31. The space PC is compact.
-Proof. Pick anα∈ C that ﬁllsSg. By the compactness criterion the
-set C ={β∈ C | i(α,β ) = 1} is compact. By Corollary 8.2.25 we have
-i(α,β )> 0 for allβ, henceλβ∈C for someλ> 0. Therefore π(C) = PC
-and PC is compact. □
-We now want to embed bothTeich(Sg) and S in PC.
-Proposition 8.2.32. The composition S→ C\ 0→ PC is injective.
-Proof. Letγ1,γ 2∈ S be distinct. There is always a closed curveη∈ S
-withi(γ1,η )⁄= 0 andi(γ2,η ) = 0. □
-Proposition 8.2.33.The compositionTeich(Sg)→ C\0→ PC is injective
-and a homeomorphism onto its image.
-Proof. Wesee Teich(Sg)alreadyproperlyembeddedin C. Sincei(m,m ) =
-−π2χ(Sg) is constant onTeich(Sg), the composition is injective. The restric-
-tionπ : Teich(Sg)→π(Teich(Sg)) is also continuous, and we now prove that
-it is proper (note that we need to restrict the codomain to get this).
-Consider a diverging sequencemj ∈ Teich(Sg). By compactness of PC
-the sequence [mj ]∈ PC converges on a subsequence to some[α]∈ PC. For
-each j there is aλj > 0 such that λjmj → α in C. Since mj diverges in
-Teich(Sg) and hence inC we getλj→ 0. We get
-i(α,α ) = lim
-j→∞
-i(λjmj,λjmj ) =−π2χ(Sg) lim
-j→∞
-λ2
-j = 0.
-In particular [α]⁄∈ π(Teich(Sg)). Therefore the restrictionπ : Teich(Sg)→
-π(Teich(Sg)) is proper and hence a homeomorphism. □
-We will since now consider bothS and Teich(Sg) embedded in PC.
-8.2. GEODESIC CURRENTS 237
-8.2.16. Thurston’scompactiﬁcation.Weconsidertheclosure Teich(Sg)
-of Teich(Sg) inside PC. This closure is compact sincePC is, and it is called
-the Thurston compactiﬁcationof Teichmüller space. We deﬁne itsboundary
-simply as
-∂Teich(Sg) = Teich(Sg)\ Teich(Sg).
-Our aim is now to identify the topology of the Thurston boundary. The proof
-of Proposition 8.2.33 already shows the following.
-Proposition 8.2.34.The Thurston boundary consists of projective currents
-[α] withi(α,α ) = 0.
-We will later prove that the Thurston boundary actually consists ofall the
-projective currents[α]withi(α,α ) = 0. For the moment we content ourselves
-with some examples.
-8.2.17. Weighted pants decompositions.We construct some geodesic
-currents based on geodesic pants decompositions. We will need the following.
-Exercise8.2.35. LetP beahyperbolicgeodesicpair-of-pants. Everysimple
-geodesicγ in the interior ofP is open and has both ends that converge to∂P,
-winding around it.
-Hint. DecomposeP into two right-angled hexagons. □
-Let aweighted pants decompositionforSg be a pants decompositionµ =
-γ1⊔... ⊔γ3g−3 equipped with some real numbersλ1,...,λ 3g−3 > 0. A
-weighted pants decomposition deﬁnes a geodesic currentµ = λ1γ1 +... +
-λ3g−3γ3g−3 such thati(µ,µ ) = 0.
-We will soon prove that[µ] lies in the Thurston boundary ifµ⁄= 0. We
-will need the following lemma that characterises the positively weighted pants
-decompositions among all currents.
-Lemma 8.2.36. Let µ =∑λiγi be a weighted pants decomposition with
-all positive weightsλi > 0. A currentα∈ C hasi(α,α ) =i(α,µ ) = 0 if and
-only ifα =∑λ′
-iγi for some weightsλ′
-i> 0.
-Proof. Ifα =∑λ′
-iγi, then clearlyi(α,α ) = i(α,µ ) = 0. Conversely, let
-α be a current withi(α,α ) = i(α,µ ) = 0. Sinceλi > 0, the support ofµ is
-the preimage inH2 of the geodesic pants decomposition. Sincei(α,µ ) = 0,
-the support ofα consists of lines that are either contained or disjoint from
-that ofµ.
-By Exercise 8.2.35 a linel of the latter type has both its endpoints at the
-endpoints of some line ofµ, so there are only countably many of them overall;
-they are not atomic since their projection inSg is not closed and hence have
-zero mass. So such linesl do not occur. The support ofα is hence contained
-in that ofµ and the proof is complete. □
-238 8. SURFACE DIFFEOMORPHISMS
+\begin{cor}
+Let $\gamma_1,\ldots, \gamma_k$ be some simple closed curves that fill $S_g$. For every $M$ there are only finitely many $\alpha \in \calS$ with $i(\gamma_i, \alpha) < M$ for all $i$.
+\end{cor}
+
+
+\begin{ex} Use the compactness criterion to re-prove that on a hyperbolic closed surface there are only finitely many closed geodesics of bounded length.
+\end{ex}
+
+We are finally ready to construct Thurston's compactification of the Teichm\"uller space, using Bonahon's geodesic currents. 
+
+\subsection{Projective currents}
+As usual, we pick a hyperbolic closed surface $S_g=\matH^2/_\Gamma$.
+The currents space $\calC$ is equipped with a multiplication by positive scalars, hence we can define its projectivisation
+$$\pi\colon \calC\setminus 0 \longrightarrow \matP\calC$$
+where $\matP \calC = (\calC \setminus 0)/_\sim$ with $\alpha \sim \lambda \alpha$ for all $\lambda>0$. We give $\matP\calC$ the quotient topology.
+
+\begin{prop} The space $\matP\calC$ is compact.
+\end{prop}
+\begin{proof}
+Pick an $\alpha\in\calC$ that fills $S_g$. By the compactness criterion the set $C = \{\beta\in\calC\ |\ i(\alpha,\beta)=1\}$ is compact. By Corollary \ref{riempie:cor} we have $i(\alpha,\beta)>0$ for all $\beta$, hence $\lambda\beta \in C$ for some $\lambda>0$. Therefore $\pi(C) = \matP\calC$ and $\matP\calC$ is compact.
+\end{proof}
+
+We now want to embed both $\Teich(S_g)$ and $\calS$ in $\matP\calC$.
+
+\begin{prop}
+The composition $\calS \to \calC\setminus 0 \to \matP\calC$ is injective.
+\end{prop}
+\begin{proof}
+Let $\gamma_1,\gamma_2 \in\calS$ be distinct. There is always a closed curve $\eta\in\calS$ with $i(\gamma_1,\eta)\neq 0$ and $i(\gamma_2,\eta)=0$.
+\end{proof}
+
+\begin{prop} \label{embed:Teich:prop}
+The composition $\Teich(S_g) \to \calC \setminus 0\to \matP\calC$ is injective and a homeomorphism onto its image.
+\end{prop}
+\begin{proof}
+We see $\Teich(S_g)$ already properly embedded in $\calC$.
+Since $i(m,m) = -\pi^2\chi(S_g)$ is constant on $\Teich(S_g)$, the composition is injective. The restriction $\pi\colon \Teich(S_g) \to \pi(\Teich(S_g))$ is also continuous, and we now prove that it is proper (note that we need to restrict the codomain to get this).
+
+Consider a diverging sequence $m_j\in \Teich(S_g)$. By compactness of $\matP\calC$ the sequence $[m_j]\in\matP\calC$ converges on a subsequence to some $[\alpha]\in\matP\calC$. For each $j$ there is a $\lambda_j>0$ such that $\lambda_jm_j \to \alpha$ in $\calC$. Since $m_j$ diverges in $\Teich(S_g)$ and hence in $\calC$ we get $\lambda_j\to 0$. We get
+$$i(\alpha,\alpha) = \lim_{j\to \infty} i(\lambda_jm_j, \lambda_jm_j) =  -\pi^2\chi(S_g) \lim_{j\to \infty} \lambda_j^2 = 0.$$
+In particular $[\alpha]\not\in \pi(\Teich(S_g))$. Therefore the restriction $\pi\colon \Teich(S_g) \to \pi(\Teich(S_g))$ is proper and hence a homeomorphism. 
+\end{proof}
+
+We will since now consider both $\calS$ and $\Teich(S_g)$ embedded in $\matP\calC$. 
+
+\subsection{Thurston's compactification}
+We consider the closure $\overline{\Teich(S_g)}$ of $\Teich(S_g)$ inside $\matP\calC$. This closure is compact since $\matP\calC$ is, and it is called the \emph{Thurston compactification} of Teichm\"uller space. We define its \emph{boundary} simply as
+$$\partial\Teich(S_g) = \overline{\Teich(S_g)} \setminus \Teich(S_g).$$ 
+Our aim is now to identify the topology of the Thurston boundary.
+The proof of Proposition \ref{embed:Teich:prop} already shows the following.
+
+\begin{prop} \label{alpha:zero:prop}
+The Thurston boundary consists of projective currents $[\alpha]$ with $i(\alpha,\alpha)=0$.
+\end{prop}
+
+We will later prove that the Thurston boundary actually consists of \emph{all} the projective currents $[\alpha]$ with $i(\alpha,\alpha)=0$. For the moment we content ourselves with some examples. 
+
+\subsection{Weighted pants decompositions}
+We construct some geodesic currents based on geodesic pants decompositions. We will need the following.
+
+\begin{ex} \label{pants:simple:line:ex}
+Let $P$ be a hyperbolic geodesic pair-of-pants. Every simple geodesic $\gamma$ in the interior of $P$ is open and has both ends that converge to $\partial P$, winding around it.
+\end{ex}
+\begin{proof}[Hint]
+Decompose $P$ into two right-angled hexagons.
+\end{proof}
+
+Let a \emph{weighted pants decomposition} for $S_g$ be a pants decomposition $\mu = \gamma_1 \sqcup \ldots \sqcup \gamma_{3g-3}$ equipped with some real numbers $\lambda_1,\ldots,\lambda_{3g-3}\geqslant 0$. A weighted pants decomposition defines a geodesic current $\mu = \lambda_1\gamma_1+\ldots + \lambda_{3g-3}\gamma_{3g-3}$ such that $i(\mu,\mu)=0$.\index{pants decomposition!weighted pants decomposition} 
+
+We will soon prove that $[\mu]$ lies in the Thurston boundary if $\mu\neq 0$. We will need the following lemma that characterises the positively weighted pants decompositions among all currents.
+
+\begin{lemma}
+Let $\mu = \sum \lambda_i\gamma_i$ be a weighted pants decomposition with all positive weights $\lambda_i>0$. A current $\alpha \in \calC$ has $i(\alpha,\alpha) = i(\alpha,\mu)=0$ if and only if $\alpha = \sum \lambda_i'\gamma_i$ for some weights $\lambda_i'\geqslant 0$.
+\end{lemma}
+\begin{proof}
+If $\alpha = \sum \lambda_i'\gamma_i$, then clearly $i(\alpha,\alpha) = i(\alpha,\mu)=0$. Conversely, let $\alpha$ be a current with $i(\alpha,\alpha) = i(\alpha, \mu)=0$. Since $\lambda_i>0$, the support of $\mu$ is the preimage in $\matH^2$ of the geodesic pants decomposition. Since $i(\alpha, \mu)=0$, the support of $\alpha$ consists of lines that are either contained or disjoint from that of $\mu$. 
+
+By Exercise \ref{pants:simple:line:ex} a line $l$ of the latter type has both its endpoints at the endpoints of some line of $\mu$, so there are only countably many of them overall; they are not atomic since their projection in $S_g$ is not closed and hence have zero mass. So such lines $l$ do not occur. The support of $\alpha$ is hence contained in that of $\mu$ and the proof is complete.
+\end{proof}
+
 We now characterise simple closed curves.
-Lemma 8.2.37. Let γ ∈ S be a simple closed curve andµ∈ C be a
-non-trivial current. If i(γ,α ) = 0 implies i(µ,α ) = 0 for allα∈ S, then
-[µ] = [γ].
-Proof. Extendγ =γ1 to a geodesic pants decompositionβ =∑
-iγi. The
-previous lemma implies thatµ =∑
-iλiγi and by letting the pants decomposi-
-tion vary we getµ =λ1γ1. □
-8.2.18. Pinching and twisting.How can we construct sequences of hy-
-perbolic metrics onSg that converge to some point at inﬁnity? We can do
-this quite easily bypinching a simple geodesic, or bytwisting along it.
-To deﬁne the former, we need to ﬁx some Fenchel–Nielsen coordinates
-(li,θi ) for Teich(Sg) based on a pants decompositionµ = γ1⊔... ⊔γ3g−3.
-Fix a metric (li,θi )∈ Teich(Sg). A pinching along γ = γ1 is any sequence
-of metrics where the ﬁrst length coordinatel1 tends to zero and all the other
-coordinates are kept bounded (from above and below).
-Proposition 8.2.38. The limit of a pinching is[γ].
-Proof. By the Collar Lemma 7.3.7, the length of a closed geodesicα
-in the pinched metrics tends to inﬁnity ifi(γ,α ) > 0 and stays bounded if
-i(γ,α ) = 0. Therefore the pinched metrics tend inPC to a class[µ] such that
-i(γ,α ) = 0⇒i(µ,α ) = 0 for allα∈ S. Lemma 8.2.37 gives[µ] = [γ]. □
-Letm∈ Teich(Sg) be any metric andγ be a closed geodesic. We denoted
-bymγ
-θ the metric obtained fromm via an earthquake of angleθ alongγ, see
-Section 7.2.1.
-Proposition 8.2.39. The limit ofmγ
-θ asθ→±∞ is [γ].
-Proof. By Proposition 7.2.10 the length of a closed geodesicα tends to
-inﬁnity ifi(γ,α ) > 0 and is constant ifi(γ,α ) = 0 . We conclude as above
-that the metrics tend to[γ]. □
-To appreciate the qualitative diﬀerence between pinching and twisting
-alongγ, recall the explicit torus case from Section 7.2.4: if we pinch alongγ,
-the sequence of metrics converge to[γ]∈∂H2 roughly like a geodesic pointing
-to [γ], while if we twist alongγ it does so along a horosphere centred at[γ].
-We have discovered in particular that the setS is entirely contained in
-Thurston’s boundary. To fully identify the Thurston boundary, we now analyse
-the geodesic currentsαlying in the “light cone”, that is those withi(α,α ) = 0.
-We already know that the weighted pants decompositions are there, but there
-is more: we will soon see that the light cone contains many new fascinating
+
+\begin{lemma} \label{characterize:S:lemma}
+Let $\gamma\in\calS$ be a simple closed curve and $\mu\in\calC$ be a non-trivial current. If $i(\gamma,\alpha)=0$ implies $i(\mu,\alpha)=0$ for all $\alpha\in\calS$, then $[\mu] = [\gamma]$.
+\end{lemma}
+\begin{proof}
+Extend $\gamma=\gamma_1$ to a geodesic pants decomposition $\beta = \sum_i\gamma_i$. The previous lemma implies that $\mu = \sum_i\lambda_i\gamma_i$ and by letting the pants decomposition vary we get $\mu = \lambda_1\gamma_1$.
+\end{proof}
+
+\subsection{Pinching and twisting} \label{pinching:twisting:subsection}
+How can we construct sequences of hyperbolic metrics on $S_g$ that converge to some point at infinity? We can do this quite easily by \emph{pinching} a simple geodesic, or by \emph{twisting} along it. 
+
+To define the former, we need to fix some Fenchel--Nielsen coordinates $(l_i, \theta_i)$ for $\Teich(S_g)$ based on a pants decomposition $\mu = \gamma_1\sqcup \ldots \sqcup \gamma_{3g-3}$.
+Fix a metric $(l_i,\theta_i) \in \Teich(S_g)$. A \emph{pinching} along $\gamma=\gamma_1$ is any sequence of metrics where the first length coordinate $l_1$ tends to zero and all the other coordinates are kept bounded (from above and below).
+
+\begin{prop}
+The limit of a pinching is $[\gamma]$.
+\end{prop}
+\begin{proof}
+By the Collar Lemma \ref{collar:lemma}, the length of a closed geodesic $\alpha$ in the pinched metrics tends to infinity if $i(\gamma,\alpha)>0$ and stays bounded if $i(\gamma,\alpha)=0$. Therefore the pinched metrics tend in $\matP\calC$ to a class $[\mu]$ such that $i(\gamma,\alpha) = 0 \Rightarrow i(\mu,\alpha)=0$ for all $\alpha \in \calS$. Lemma 
+\ref{characterize:S:lemma} gives $[\mu] = [\gamma]$.
+\end{proof}
+
+Let $m\in \Teich(S_g)$ be any metric and $\gamma$ be a closed geodesic.  We denoted by $m_\theta^\gamma$ the metric obtained from $m$ via an earthquake of angle $\theta$ along $\gamma$, see Section \ref{earthquakes:subsection}.
+
+\begin{prop}
+The limit of $m_\theta^\gamma$ as $\theta \to \pm \infty$ is $[\gamma]$.
+\end{prop}
+\begin{proof}
+By Proposition \ref{strettamente:convessa:prop} the length of a closed geodesic $\alpha$ tends to infinity if $i(\gamma,\alpha)>0$ and is constant if $i(\gamma,\alpha)=0$. We conclude as above that the metrics tend to $[\gamma]$.
+\end{proof}
+
+
+
+To appreciate the qualitative difference between pinching and twisting along $\gamma$, recall the explicit torus case from Section \ref{length:torus:subsection}: if we pinch along $\gamma$, the sequence of metrics converge to $[\gamma]\in \partial \matH^2$ roughly like a geodesic pointing to $[\gamma]$, while if we twist along $\gamma$ it does so along a horosphere centred at $[\gamma]$.
+
+We have discovered in particular that the set $\calS$ is entirely contained in Thurston's boundary. To fully identify the Thurston boundary, we now analyse the geodesic currents $\alpha$ lying in the ``light cone'', that is those with $i(\alpha,\alpha)=0$. We already know that the weighted pants decompositions are there, but there is more: we will soon see that the light cone contains many new fascinating objects called \emph{laminations}.

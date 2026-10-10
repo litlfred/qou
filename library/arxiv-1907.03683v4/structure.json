@@ -6,7 +6,8 @@
   "sha256": "eb8cc2ddfc8c0739d117c22d5275d35c54c83fa10144f8e7491329b3a4db5978",
   "bytes": 344479,
   "pages": 31,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -431,6 +432,138 @@
   "likely_scanned": false,
   "toc_entries": 23,
   "sections": 23,
-  "chars_total": 62698
+  "chars_total": 62698,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 4,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-random-partitions-as-point-processes-the-aim",
+     "title": "Random partitions as point processes. The aim of this article is to study defor-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-12-determinantal-point-processes-and-christo\ufb00el",
+     "title": "Determinantal point processes and Christo\ufb00el deformations. A speci\ufb01c and",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-13-background-and-motivations",
+     "title": "Background and motivations:",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-14-main-results-as-mentioned-above-it-is-easy-to",
+     "title": "Main results. As mentioned above, it is easy to de\ufb01ne Christo\ufb00el deformations of",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-15-organization-of-the-paper-the-paper-is-organi",
+     "title": "Organization of the paper. The paper is organized as follows. In section 2, we collect",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-2-christoffel-deformations-of-orthogonal-polynom",
+     "title": "Christoffel deformations of orthogonal polynomial ensembles",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-21-notation-the-set-of-non-negative-integers-is",
+     "title": "Notation. The set of non-negative integers is denoted by N. For n \u2208N and a \u2208C,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-22-christo\ufb00el-deformations-of-discrete-orthogona",
+     "title": "Christo\ufb00el deformations of discrete orthogonal polynomials. Let \u03c9 be a discrete",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-23-discrete-orthogonal-polynomial-ensembles-and",
+     "title": "Discrete orthogonal polynomial ensembles and determinantal point pro-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-24-palm-measures-of-determinantal-point-processe",
+     "title": "Palm measures of determinantal point processes. We here give a probabilistic",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-3-the-charlier-ensemble-and-a-deformation-of-the",
+     "title": "The Charlier ensemble and a deformation of the Plancherel measure",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-31-on-the-plancherel-measure-on-partitions-the-p",
+     "title": "On the Plancherel measure on partitions. The Plancherel measure is a probability",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-32-christo\ufb00el-deformations-of-the-charlier-ensem",
+     "title": "Christo\ufb00el deformations of the Charlier ensemble and main result. We now",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-33-proof-of-theorem-31-we-will-use-the-following",
+     "title": "Proof of Theorem 3.1. We will use the following Lemma, which we prove at the end",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-32-using-the-continuity-of-the-determinant-we-ha",
+     "title": "Using the continuity of the determinant, we have established that, for all x\u0338 = y",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-34-palm-measures-of-the-discrete-bessel-point-pr",
+     "title": "Palm measures of the discrete Bessel point process. In regards of subsection",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-4-the-z-measures-and-a-deformation-of-the-gamma",
+     "title": "The z-measures and a deformation of the gamma process",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-018-41-christo\ufb00el-deformations-of-the-z-measures-the",
+     "title": "Christo\ufb00el deformations of the z-measures. The z-measures on partitions were",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-42-palm-measures-of-the-z-measures-we-now-state",
+     "title": "Palm measures of the z-measures. We now state in Theorem 4.4 below the inter-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-43-a-deformation-of-the-gamma-kernel-let-z-z-be",
+     "title": "A deformation of the Gamma kernel. Let (z, z\u2032) be admissible parameters, either",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-44-proof-of-theorem-45-we-begin-with-the-followi",
+     "title": "Proof of Theorem 4.5. We begin with the following Proposition which gives the \ufb01rst",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

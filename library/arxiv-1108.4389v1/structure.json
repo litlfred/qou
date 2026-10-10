@@ -5,7 +5,8 @@
   "file": "1108.4389v1.pdf",
   "sha256": "d3ac77510654d8285c0fd4e71d628421bf703cd739d76d8f6e14053b58aad8f9",
   "bytes": 1580851,
-  "pages": 58
+  "pages": 58,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Gauge Theories Labelled by Three-Manifolds",
   "authors_raw": "Tudor Dimofte1 and Davide Gaiotto 1 and Sergei Gukov 2,3",
-  "abstract": "We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories. Under this duality, standard operations on triangulated 3-manifolds and various invariants thereof (classical as well as quantum) ﬁnd a natural interpretation in ﬁeld theory. For example, independence of the SL(2) Chern-Simons partition function on the choice of triangulation translates to a statement that S3 b partition functions of two mirror 3d N = 2 gauge theories are equal. Three-dimensional N = 2 ﬁeld theories associated to 3-manifolds can be thought of as theories that describe boundary conditions and duality walls in four-dimensional N = 2 SCFTs, thus making the whole construction functorial with respect to cobordisms and gluing. CALT-68-2847 arXiv:1108.4389v1 [hep-th] 22 Aug 2011",
+  "abstract": "We propose a dictionary between geometry of triangulated 3-manifolds and physics of three-dimensional N = 2 gauge theories. Under this duality, standard operations on triangulated 3-manifolds and various invariants thereof (classical as well as quantum) \ufb01nd a natural interpretation in \ufb01eld theory. For example, independence of the SL(2) Chern-Simons partition function on the choice of triangulation translates to a statement that S3 b partition functions of two mirror 3d N = 2 gauge theories are equal. Three-dimensional N = 2 \ufb01eld theories associated to 3-manifolds can be thought of as theories that describe boundary conditions and duality walls in four-dimensional N = 2 SCFTs, thus making the whole construction functorial with respect to cobordisms and gluing. CALT-68-2847 arXiv:1108.4389v1 [hep-th] 22 Aug 2011",
   "docinfo": {
    "CreationDate": "D:20241127002354Z",
    "Creator": "TeX",
@@ -45,7 +46,7 @@
   },
   {
    "level": 1,
-   "title": "Max-Planck-Institut f¨ ur Mathematik, Vivatsgasse 7, D-53111 Bonn, Germany",
+   "title": "Max-Planck-Institut f\u00a8 ur Mathematik, Vivatsgasse 7, D-53111 Bonn, Germany",
    "page": 1,
    "source": "inferred",
    "number": "3"
@@ -115,7 +116,7 @@
   },
   {
    "level": 2,
-   "title": "An Sp(2N, Z) action on 3d CFTs with U(1)N ﬂavor symmetry",
+   "title": "An Sp(2N, Z) action on 3d CFTs with U(1)N \ufb02avor symmetry",
    "page": 21,
    "source": "inferred",
    "number": "3.1"
@@ -129,7 +130,7 @@
   },
   {
    "level": 1,
-   "title": "U−1t",
+   "title": "U\u22121t",
    "page": 23,
    "source": "inferred",
    "number": "0"
@@ -157,7 +158,7 @@
   },
   {
    "level": 1,
-   "title": "We want to show that ST◦T 1",
+   "title": "We want to show that ST\u25e6T 1",
    "page": 27,
    "source": "inferred",
    "number": "2"
@@ -185,7 +186,7 @@
   },
   {
    "level": 2,
-   "title": "Deﬁnition",
+   "title": "De\ufb01nition",
    "page": 30,
    "source": "inferred",
    "number": "4.1"
@@ -199,21 +200,21 @@
   },
   {
    "level": 1,
-   "title": "This deﬁnition",
+   "title": "This de\ufb01nition",
    "page": 31,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 2,
-   "title": "The bipyramid and the 2–3 move",
+   "title": "The bipyramid and the 2\u20133 move",
    "page": 33,
    "source": "inferred",
    "number": "4.2"
   },
   {
    "level": 2,
-   "title": "The ﬂip",
+   "title": "The \ufb02ip",
    "page": 36,
    "source": "inferred",
    "number": "4.3"
@@ -241,7 +242,7 @@
   },
   {
    "level": 1,
-   "title": "Moduli space on R2× S1",
+   "title": "Moduli space on R2\u00d7 S1",
    "page": 41,
    "source": "inferred",
    "number": "5"
@@ -255,7 +256,7 @@
   },
   {
    "level": 1,
-   "title": "On a circle of ﬁnite radius β, this theory has the eﬀective twisted superpotential",
+   "title": "On a circle of \ufb01nite radius \u03b2, this theory has the e\ufb00ective twisted superpotential",
    "page": 42,
    "source": "inferred",
    "number": "2"
@@ -283,7 +284,7 @@
   },
   {
    "level": 1,
-   "title": "RZ, and ﬁnd a partition function 18 [5]",
+   "title": "RZ, and \ufb01nd a partition function 18 [5]",
    "page": 47,
    "source": "inferred",
    "number": "2"
@@ -311,14 +312,14 @@
   },
   {
    "level": 2,
-   "title": "Relation to moduli spaces on R2×S1",
+   "title": "Relation to moduli spaces on R2\u00d7S1",
    "page": 51,
    "source": "inferred",
    "number": "6.4"
   },
   {
    "level": 1,
-   "title": "Line operators and q–diﬀerence equations",
+   "title": "Line operators and q\u2013di\ufb00erence equations",
    "page": 52,
    "source": "inferred",
    "number": "7"
@@ -363,7 +364,7 @@
   {
    "id": "sec-002-3-max-planck-institut-f-ur-mathematik-vivatsgass",
    "number": "3",
-   "title": "Max-Planck-Institut f¨ ur Mathematik, Vivatsgasse 7, D-53111 Bonn, Germany",
+   "title": "Max-Planck-Institut f\u00a8 ur Mathematik, Vivatsgasse 7, D-53111 Bonn, Germany",
    "level": 1,
    "page_start": 1,
    "page_end": 2,
@@ -461,9 +462,9 @@
    "n_words": 68
   },
   {
-   "id": "sec-012-31-an-sp2n-z-action-on-3d-cfts-with-u1n-ﬂavor-sy",
+   "id": "sec-012-31-an-sp2n-z-action-on-3d-cfts-with-u1n-\ufb02avor-sy",
    "number": "3.1",
-   "title": "An Sp(2N, Z) action on 3d CFTs with U(1)N ﬂavor symmetry",
+   "title": "An Sp(2N, Z) action on 3d CFTs with U(1)N \ufb02avor symmetry",
    "level": 2,
    "page_start": 21,
    "page_end": 21,
@@ -483,7 +484,7 @@
   {
    "id": "sec-014-0-u1t",
    "number": "0",
-   "title": "U−1t",
+   "title": "U\u22121t",
    "level": 1,
    "page_start": 23,
    "page_end": 23,
@@ -523,7 +524,7 @@
   {
    "id": "sec-018-2-we-want-to-show-that-stt-1",
    "number": "2",
-   "title": "We want to show that ST◦T 1",
+   "title": "We want to show that ST\u25e6T 1",
    "level": 1,
    "page_start": 27,
    "page_end": 29,
@@ -561,9 +562,9 @@
    "n_words": 93
   },
   {
-   "id": "sec-022-41-deﬁnition",
+   "id": "sec-022-41-de\ufb01nition",
    "number": "4.1",
-   "title": "Deﬁnition",
+   "title": "De\ufb01nition",
    "level": 2,
    "page_start": 30,
    "page_end": 30,
@@ -581,9 +582,9 @@
    "n_words": 137
   },
   {
-   "id": "sec-024-2-this-deﬁnition",
+   "id": "sec-024-2-this-de\ufb01nition",
    "number": "2",
-   "title": "This deﬁnition",
+   "title": "This de\ufb01nition",
    "level": 1,
    "page_start": 31,
    "page_end": 33,
@@ -593,7 +594,7 @@
   {
    "id": "sec-025-42-the-bipyramid-and-the-23-move",
    "number": "4.2",
-   "title": "The bipyramid and the 2–3 move",
+   "title": "The bipyramid and the 2\u20133 move",
    "level": 2,
    "page_start": 33,
    "page_end": 36,
@@ -601,9 +602,9 @@
    "n_words": 1267
   },
   {
-   "id": "sec-026-43-the-ﬂip",
+   "id": "sec-026-43-the-\ufb02ip",
    "number": "4.3",
-   "title": "The ﬂip",
+   "title": "The \ufb02ip",
    "level": 2,
    "page_start": 36,
    "page_end": 37,
@@ -643,7 +644,7 @@
   {
    "id": "sec-030-5-moduli-space-on-r2-s1",
    "number": "5",
-   "title": "Moduli space on R2× S1",
+   "title": "Moduli space on R2\u00d7 S1",
    "level": 1,
    "page_start": 41,
    "page_end": 42,
@@ -661,9 +662,9 @@
    "n_words": 47
   },
   {
-   "id": "sec-032-2-on-a-circle-of-ﬁnite-radius-β-this-theory-has",
+   "id": "sec-032-2-on-a-circle-of-\ufb01nite-radius-\u03b2-this-theory-has",
    "number": "2",
-   "title": "On a circle of ﬁnite radius β, this theory has the eﬀective twisted superpotential",
+   "title": "On a circle of \ufb01nite radius \u03b2, this theory has the e\ufb00ective twisted superpotential",
    "level": 1,
    "page_start": 42,
    "page_end": 44,
@@ -701,9 +702,9 @@
    "n_words": 38
   },
   {
-   "id": "sec-036-2-rz-and-ﬁnd-a-partition-function-18-5",
+   "id": "sec-036-2-rz-and-\ufb01nd-a-partition-function-18-5",
    "number": "2",
-   "title": "RZ, and ﬁnd a partition function 18 [5]",
+   "title": "RZ, and \ufb01nd a partition function 18 [5]",
    "level": 1,
    "page_start": 47,
    "page_end": 47,
@@ -743,7 +744,7 @@
   {
    "id": "sec-040-64-relation-to-moduli-spaces-on-r2s1",
    "number": "6.4",
-   "title": "Relation to moduli spaces on R2×S1",
+   "title": "Relation to moduli spaces on R2\u00d7S1",
    "level": 2,
    "page_start": 51,
    "page_end": 52,
@@ -751,9 +752,9 @@
    "n_words": 266
   },
   {
-   "id": "sec-041-7-line-operators-and-qdiﬀerence-equations",
+   "id": "sec-041-7-line-operators-and-qdi\ufb00erence-equations",
    "number": "7",
-   "title": "Line operators and q–diﬀerence equations",
+   "title": "Line operators and q\u2013di\ufb00erence equations",
    "level": 1,
    "page_start": 52,
    "page_end": 55,
@@ -786,6 +787,248 @@
   "likely_scanned": false,
   "toc_entries": 44,
   "sections": 44,
-  "chars_total": 136959
+  "chars_total": 136959,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "toolbox.tex",
+   "tex_sections": 7,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-institute-for-advanced-study-einstein-dr-princ",
+     "title": "Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-2-california-institute-of-technology-pasadena-ca",
+     "title": "California Institute of Technology, Pasadena, CA 91125, USA",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-3-max-planck-institut-f-ur-mathematik-vivatsgass",
+     "title": "Max-Planck-Institut f\u00a8 ur Mathematik, Vivatsgasse 7, D-53111 Bonn, Germany",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.958,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-2-geometry-of-3-manifolds",
+     "title": "Geometry of 3-manifolds",
+     "prose_ratio": 0.016,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-21-building-blocks",
+     "title": "Building blocks",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-22-gluing",
+     "title": "Gluing",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-23-geodesic-boundaries",
+     "title": "Geodesic boundaries",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-11-its-boundary-is-a-5-punctures-sphere-c-here-w",
+     "title": "Its boundary is a 5-punctures sphere C. Here, we form the bipyramid from three ideal",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-24-torus-cusps",
+     "title": "Torus cusps",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-25-changing-the-triangulation",
+     "title": "Changing the triangulation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-3-operations-on-3d-abelian-theories",
+     "title": "Operations on 3d abelian theories",
+     "prose_ratio": 0.05,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-31-an-sp2n-z-action-on-3d-cfts-with-u1n-\ufb02avor-sy",
+     "title": "An Sp(2N, Z) action on 3d CFTs with U(1)N \ufb02avor symmetry",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-311-generalities",
+     "title": "Generalities",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-0-u1t",
+     "title": "U\u22121t",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-312-adding-supersymmetry",
+     "title": "Adding supersymmetry",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-32-a-z2-action-on-3d-n-2-theories-with-a-chiral",
+     "title": "A Z2 action on 3d N = 2 theories with a chiral operator",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-33-useful-n-2-mirror-symmetries",
+     "title": "Useful N = 2 mirror symmetries",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-2-we-want-to-show-that-stt-1",
+     "title": "We want to show that ST\u25e6T 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-2-chern-simons-interaction",
+     "title": "Chern-Simons interaction",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-2-the-chain-of-equivalences-326",
+     "title": "The chain of equivalences ( 3.26)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-4-construction-of-tm",
+     "title": "Construction of TM",
+     "prose_ratio": 0.076,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-022-41-de\ufb01nition",
+     "title": "De\ufb01nition",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-2-chern-simons-term-turned-on-we-will-say-from-n",
+     "title": "Chern-Simons term turned on. We will say from now on",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-2-this-de\ufb01nition",
+     "title": "This de\ufb01nition",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-42-the-bipyramid-and-the-23-move",
+     "title": "The bipyramid and the 2\u20133 move",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-43-the-\ufb02ip",
+     "title": "The \ufb02ip",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-44-tm-as-a-boundary-condition",
+     "title": "TM as a boundary condition",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-45-the-octahedron",
+     "title": "The octahedron",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-46-figure-eight-knot",
+     "title": "Figure-eight knot",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-5-moduli-space-on-r2-s1",
+     "title": "Moduli space on R2\u00d7 S1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-51-the-tetrahedron",
+     "title": "The tetrahedron",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-2-on-a-circle-of-\ufb01nite-radius-\u03b2-this-theory-has",
+     "title": "On a circle of \ufb01nite radius \u03b2, this theory has the e\ufb00ective twisted superpotential",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-52-the-bipyramid",
+     "title": "The bipyramid",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-2-ro-with",
+     "title": "RO, with",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-61-chirals-and-tetrahedra",
+     "title": "Chirals and tetrahedra",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-2-rz-and-\ufb01nd-a-partition-function-18-5",
+     "title": "RZ, and \ufb01nd a partition function 18 [5]",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-2-chern-simons",
+     "title": "Chern-Simons",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-038-62-gluing-and-bipyramids",
+     "title": "Gluing and bipyramids",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-039-63-figure-eight-knot",
+     "title": "Figure-eight knot",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-64-relation-to-moduli-spaces-on-r2s1",
+     "title": "Relation to moduli spaces on R2\u00d7S1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-7-line-operators-and-qdi\ufb00erence-equations",
+     "title": "Line operators and q\u2013di\ufb00erence equations",
+     "prose_ratio": 0.811,
+     "coverage_ratio": 0.957,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-042-acknowledgments",
+     "title": "Acknowledgments",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-043-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

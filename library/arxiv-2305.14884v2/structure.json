@@ -5,7 +5,8 @@
   "file": "2305.14884v2.pdf",
   "sha256": "ebc8e64d901c9e4f397ece6170c92d5d65045ef7fbb15d251a268327acf7e1fb",
   "bytes": 544045,
-  "pages": 48
+  "pages": 48,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS",
   "authors_raw": "STAVROS GAROUFALIDIS, MATTHIAS STORZER, AND CAMPBELL WHEELER",
-  "abstract": "We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further choices) is a top ological invariant. This formal power series is conjectured to agree to all orders in pertu rbation theory with two important topological invariants of hyperbolic knots, namely the Ka shaev invariant and the Andersen–Kashaev invariant (also known as the state-integral) o f Teichm¨ uller TQFT.",
+  "abstract": "We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further choices) is a top ological invariant. This formal power series is conjectured to agree to all orders in pertu rbation theory with two important topological invariants of hyperbolic knots, namely the Ka shaev invariant and the Andersen\u2013Kashaev invariant (also known as the state-integral) o f Teichm\u00a8 uller TQFT.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20230712211737-04'00'",
@@ -55,7 +56,7 @@
   },
   {
    "level": 2,
-   "title": "Neumann–Zagier data",
+   "title": "Neumann\u2013Zagier data",
    "page": 6,
    "source": "outline",
    "number": "2.2"
@@ -222,7 +223,7 @@
   {
    "id": "sec-003-22-neumannzagier-data",
    "number": "2.2",
-   "title": "Neumann–Zagier data",
+   "title": "Neumann\u2013Zagier data",
    "level": 2,
    "page_start": 6,
    "page_end": 8,
@@ -365,6 +366,118 @@
   "likely_scanned": false,
   "toc_entries": 22,
   "sections": 17,
-  "chars_total": 94606
+  "chars_total": 94606,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "text36.tex",
+   "tex_sections": 7,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.841,
+     "coverage_ratio": 0.937,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-21-the-faddeev-quantum-dilogarithm",
+     "title": "The Faddeev quantum dilogarithm",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-2-preliminaries",
+     "title": "Preliminaries",
+     "prose_ratio": 0.181,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-22-neumannzagier-data",
+     "title": "Neumann\u2013Zagier data",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-23-geometric-aspects",
+     "title": "Geometric aspects",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-3-formal-gaussian-integration",
+     "title": "Formal Gaussian integration",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-31-basics-on-formal-gaussian-integration",
+     "title": "Basics on formal Gaussian integration",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-4-elementary-invariance-properties",
+     "title": "Elementary invariance properties",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-5-invariance-under-the-choice-of-quad",
+     "title": "Invariance under the choice of quad",
+     "prose_ratio": 0.938,
+     "coverage_ratio": 0.918,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-6-invariance-under-pachner-moves",
+     "title": "Invariance under Pachner moves",
+     "prose_ratio": 0.643,
+     "coverage_ratio": 0.892,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-61-the-case-of-b-with-full-rank",
+     "title": "The case of B with full rank",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-62-the-case-of-b-with-nullity-one",
+     "title": "The case of B with nullity one",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-63-the-case-of-b-with-nullity-two",
+     "title": "The case of B with nullity two",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-acknowledgements",
+     "title": "Acknowledgements",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-appendix-a-complements-on-the-fourier-transform",
+     "title": "Appendix A. Complements on the Fourier transform",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-appendix-b-complements-on-the-pentagon-identity",
+     "title": "Appendix B. Complements on the pentagon identity",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

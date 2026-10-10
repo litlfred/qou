@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1808.08110v1/blocks/prose-sec-001",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1808.08110v1/blocks/prose-sec-001",
   "kind": "prose",
   "title": "W2-triality and the 3 generations",
   "pageStart": 12,
   "pageEnd": 15,
   "text": "../sections/sec-001-5-w2-triality-and-the-3-generations.md",
-  "derivedFrom": "library/arxiv-1808.08110v1/manifest",
-  "sourceDocument": "library/arxiv-1808.08110v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1808.08110v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1808.08110v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,16 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9909027v1/blocks/example-sec-007-03",
+  "kind": "example",
+  "pageStart": 27,
+  "pageEnd": 35,
+  "text": "example-sec-007-03.md",
+  "derivedFrom": "library/arxiv-math-9909027v1/sections/sec-007",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9909027v1/manifest.jsonld",
+  "provenance": "ingested"
+}

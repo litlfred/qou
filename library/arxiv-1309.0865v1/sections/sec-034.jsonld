@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1309.0865v1/sections/sec-034",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "BEN ELIAS AND GEORDIE WILLIAMSON",
+  "pageStart": 28,
+  "pageEnd": 29,
+  "contains": [
+    "library/arxiv-1309.0865v1/blocks/prose-sec-034",
+    "library/arxiv-1309.0865v1/blocks/theorem-sec-034-01",
+    "library/arxiv-1309.0865v1/blocks/conjecture-sec-034-02",
+    "library/arxiv-1309.0865v1/blocks/remark-sec-034-03",
+    "library/arxiv-1309.0865v1/blocks/remark-sec-034-04",
+    "library/arxiv-1309.0865v1/blocks/remark-sec-034-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1309.0865v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1309.0865v1/manifest.jsonld",
+  "provenance": "ingested"
+}

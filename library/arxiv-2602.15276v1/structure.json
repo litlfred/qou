@@ -6,7 +6,8 @@
   "sha256": "18d77d6aa140fc50acbd58b10496818adad25bcb9174f1911b6a50dfcc24bed8",
   "bytes": 4441451,
   "pages": 44,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -310,6 +311,83 @@
   "likely_scanned": false,
   "toc_entries": 23,
   "sections": 11,
-  "chars_total": 90532
+  "chars_total": 90532,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "sfcpnqballs-v3.tex",
+   "tex_sections": 7,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.951,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-the-lagrangian-and-euler-lagrange-equations",
+     "title": "The Lagrangian and Euler-Lagrange equations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-radial-reduction",
+     "title": "Radial reduction",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-energy-density",
+     "title": "Energy density",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-noether-currents",
+     "title": "Noether currents",
+     "prose_ratio": 0.976,
+     "coverage_ratio": 0.759,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-expansion-at-the-compacton-boundary",
+     "title": "Expansion at the compacton boundary",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-expansion-at-the-center",
+     "title": "Expansion at the center",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-numerical-solutions",
+     "title": "Numerical solutions",
+     "prose_ratio": 0.088,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-shooting-method",
+     "title": "Shooting method",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-q-shells",
+     "title": "Q-shells",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-acknowledgmets",
+     "title": "Acknowledgmets",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.07,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

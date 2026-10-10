@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-105",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Graded Rigid NC DC",
+  "pageStart": 429,
+  "pageEnd": 435,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-105",
+    "library/arxiv-1610.09640v4/blocks/proposition-sec-105-01",
+    "library/arxiv-1610.09640v4/blocks/theorem-sec-105-02",
+    "library/arxiv-1610.09640v4/blocks/theorem-sec-105-03",
+    "library/arxiv-1610.09640v4/blocks/theorem-sec-105-04",
+    "library/arxiv-1610.09640v4/blocks/lemma-sec-105-05",
+    "library/arxiv-1610.09640v4/blocks/lemma-sec-105-06",
+    "library/arxiv-1610.09640v4/blocks/lemma-sec-105-07",
+    "library/arxiv-1610.09640v4/blocks/corollary-sec-105-08"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

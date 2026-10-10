@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1011.0679v2/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1011.0679v2/blocks/prose-sec-007",
   "kind": "prose",
   "title": "Algebras of invariants",
   "pageStart": 17,
   "pageEnd": 20,
   "text": "../sections/sec-007-4-algebras-of-invariants.md",
-  "derivedFrom": "library/arxiv-1011.0679v2/manifest",
-  "sourceDocument": "library/arxiv-1011.0679v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1011.0679v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1011.0679v2/manifest.jsonld",
   "provenance": "ingested"
 }

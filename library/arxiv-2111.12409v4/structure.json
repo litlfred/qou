@@ -6,7 +6,8 @@
   "sha256": "3f0b94ee06fe79bf50355d5643695b1bbdd7d50ef3cda3001c1f54d5e8136033",
   "bytes": 326888,
   "pages": 21,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -210,6 +211,75 @@
   "likely_scanned": false,
   "toc_entries": 11,
   "sections": 9,
-  "chars_total": 57516
+  "chars_total": 57516,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "roth_ad_curv_equi.tex",
+   "tex_sections": 7,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-0-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-01-history",
+     "title": "History",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-02-results-in-this-paper",
+     "title": "Results in this paper",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-1-adelic-curves",
+     "title": "Adelic curves",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.653,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-2-the-interpolating-polynomial",
+     "title": "The interpolating polynomial",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.97,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-3-integral-estimates",
+     "title": "Integral estimates",
+     "prose_ratio": 0.922,
+     "coverage_ratio": 0.524,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-appendices",
+     "title": "Appendices",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-a-construction-of-the-interpolating-polynomial",
+     "title": "A Construction of the interpolating polynomial",
+     "prose_ratio": 0.536,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

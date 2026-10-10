@@ -7,93 +7,81 @@ section_number: 2.6
 pages: 45-47
 source_pdf: 2207.07246v2.pdf
 source_sha256: 91e70e5fe39e07a5
+text_source: latex
+latex_prose_ratio: 0.902
+latex_coverage_ratio: 0.963
 doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 58 sections: Front matter; ABSTRACT; LIST OF TABLES"
 ---
-For the AV6’ interaction, there are only the ﬁrst 6 operators in Eq.(2.19), so G
-is 1, and Eq.(2.61) becomes the high-accuracy Trotter formula 6 (Feynman (1948);
-Schmidt and Lee (1995)) which has O(∆τ)3 accuracy and can be denoted as US(∆τ),
-US(∆τ)≡e−V†
-2 ∆τe−T ∆τe−V
-2 ∆τ =e−H∆τ− ∆τ3
-24 [2T +V,[T,V]]+... =e−H∆τ +O(∆τ)3, (2.74)
-where the subscript letter S means symmetric because US(∆τ) =U†
-S(∆τ). Note that
-although the approximation ofe−V
-2 ∆τ which is Eq.(2.63) alone hasO(∆τ 2) error, when
-written the form of Eq.(2.74), the O(∆τ 2) cancels and one is left with only O(∆τ 3)
-error. Furthermore, we ﬁnd
-US(∆τ)US(−∆τ) = 1, (2.75)
-this ensures the error in the exponential of US(∆τ) only contains odd orders of ∆τ,
-US(∆τ) =e−H∆τ+ ˆf3∆τ3+ ˆf5∆τ5+ ˆf7∆τ7+..., (2.76)
-where ˆfi are functions of operators which do not depend on ∆ τ.
-For the AV6’ interaction, in the PIMC calculation, we useN short-time propagator
-[US(∆τ)]N instead of (e−H∆τ)N in calculating Eq.(2.11), and the total imaginary time
-τ =N∆τ, so NO(∆τn) =τO(∆τn−1). Considering Eq.(2.76), this means that for a
-givenτ, the error of [US(∆τ)]N only contain the even orders of ∆τ,
-[US(∆τ)]N =
-(
-e−H∆τ+ ˆf3∆τ3+ ˆf5∆τ5+...
-)N
-=e−Hτ +O(∆τ 2) +O(∆τ 4) +..., (2.77)
-6All the error structures of the propagator can be found by repeatedly using Campbell-Baker-
-Hausdorﬀ (CBH) formula (Reinsch (2000)),
-eAeB =eA+B+ 1
-2 [A,B]+ 1
-12 [A−B,[A,B]]+ 1
-24 [B,[A,[B,A]]]+..., (2.72)
-where A and B are operators or matrices. From Eq.(2.72) we can further ﬁnd that,
-e
-B
-2eAe
-B
-2 =eA+B+ 1
-24 [2A+B,[A,B]]+.... (2.73)
-and that is how we can write down (Apaja (2009)) Eq.(2.74).
-35
-and this means⟨ ˆO(∆τ)⟩ in Eq.(2.15) and the true expectation value ⟨ ˆO⟩ of Eq.(2.11)
-are related by the following equation,
-⟨ ˆO(∆τ)⟩ = Re⟨ΨT|[US(∆τ)]N1 ˆO[US(∆τ)]N2|ΨT⟩
-Re⟨ΨT|[US(∆τ)]N|ΨT⟩
-=⟨ ˆO⟩× 1 +O(∆τ 2) +O(∆τ 4) +...
-1 +O(∆τ 2) +O(∆τ 4) +.... (2.78)
-For small ∆τ, in order to extrapolate the expectation value ⟨ ˆO⟩, we need to use,
-⟨ ˆO(∆τ)⟩ =⟨ ˆO⟩ +
-nc∑
-n=1
-C2n(∆τ 2n), (2.79)
-whereC2n are the ﬁtting parameters for even orders of ∆τ, and nc is the cutoﬀ integer
-for n. The theoretical value of C2n depends on the trial wave function and the total
-imaginary time τ. In principle, a general extrapolation formula which suits a wide
-range of ∆τ should have the same form as Eq.(2.78).
-For the local chiral N 2LO interaction, we use the U(∆τ) in Eq.(2.61) as the
-short-time propagator and it has errors O(∆τ 2), so when the total imaginary time
-τ =N∆τ, we multiply U(∆τ) the short-time propagator N times we have error of
-NO(∆τ 2) =τO(∆τ) which isO(∆τ),
-[U(∆τ)]N =e−Hτ +O(∆τ), (2.80)
-this means that the error of ⟨ ˆO(∆τ)⟩ in Eq.(2.15) hasO(∆τ) error,
-⟨ ˆO(∆τ)⟩ = Re⟨ΨT|[U(∆τ)]N1 ˆO[U(∆τ)]N2|ΨT⟩
-Re⟨ΨT|[U(∆τ)]N|ΨT⟩
-=⟨ ˆO⟩× 1 +O(∆τ) +O(∆τ 2) +O(∆τ 3) +...
-1 +O(∆τ) +O(∆τ 2) +O(∆τ 3) +.... (2.81)
-Similar with the Taylor expansion of 1
-1+x = 1−x +... requires|x|< 1 to converge,
-when the error in the denominator in Eq.(2.81) is less than one, Eq.(2.81) can be
-written as,
-⟨ ˆO(∆τ)⟩ =⟨ ˆO⟩ +O(∆τ) +O(∆τ 2) +.... (2.82)
-36
-So, usually, for a given total time τ and small ∆τ, in order to get the true expectation
-value⟨ ˆO⟩ of Eq.(2.11), we need to calculate ⟨ ˆO(∆τ)⟩ for diﬀerence time step ∆τ and
-error bar, and then use the following polynomial equation to extrapolate ⟨ ˆO⟩ and its
-error bar,
-⟨ ˆO(∆τ)⟩ =⟨ ˆO⟩ +
-nc∑
-n=1
-Cn(∆τn), (2.83)
-where Cn are ﬁtting parameters and the theoretical value of Cn depends on the trial
-wave function and the total imaginary time τ. In principle a general extrapolation
-expression should be Eq.(2.81).
-From the error structure Eq.(2.78) or Eq.(2.81) we can see that, even if ∆τ itself
-is not very small, as long as the ∆ τ errors (especially the leading order errors) in the
-numerator and the denominator of Eq.(2.78) or Eq.(2.81) are comparable, ⟨ ˆO(∆τ)⟩
-can still be close to the true expectation value ⟨ ˆO⟩. That is to say the results of PIMC
-is robust because they may not be very sensitive to the time step ∆ τ.
+[]{#secErrEst label="secErrEst"} For the AV6' interaction, there are only the first 6 operators in Eq.([\[AV6\'\]](#AV6'){reference-type="ref" reference="AV6'"}), so $\mathcal{G}$ is 1, and Eq.([\[propagatorN2LOVTV\]](#propagatorN2LOVTV){reference-type="ref" reference="propagatorN2LOVTV"}) becomes the high-accuracy Trotter formula[^1] ([@Feynman1948RMP; @SchmidtLee95a]) which has $\mathcal{O}(\Delta \tau)^3$ accuracy and can be denoted as $U_S(\Delta \tau)$, $$\begin{equation}
+U_S(\Delta \tau) \equiv
+e^{-\frac{\mathcal{V}^\dagger}{2} \Delta \tau }
+e^{-T \Delta \tau} e^{-\frac{\mathcal{V}}{2} \Delta \tau }
+= e^{- H \Delta \tau
+- \frac{ {\Delta \tau}^3}{24}[2T+\mathcal{V}, [T,\mathcal{V}]] + ... }
+= e^{- H \Delta \tau} + \mathcal{O}(\Delta \tau)^3,
+\label{HighTrotter}
+\end{equation}$$ where the subscript letter $S$ means symmetric because $U_S(\Delta \tau)=U^\dagger_S(\Delta \tau)$. Note that although the approximation of $e^{-\frac{\mathcal{V}}{2} \Delta \tau }$ which is Eq.([\[propagatorv6half\]](#propagatorv6half){reference-type="ref" reference="propagatorv6half"}) alone has $\mathcal{O}(\Delta \tau^2)$ error, when written the form of Eq.([\[HighTrotter\]](#HighTrotter){reference-type="ref" reference="HighTrotter"}), the $\mathcal{O}(\Delta \tau^2)$ cancels and one is left with only $\mathcal{O}(\Delta \tau^3)$ error. Furthermore, we find $$\begin{equation}
+U_S(\Delta \tau) U_S(-\Delta \tau)=1,
+\label{USuni}
+\end{equation}$$ this ensures the error in the exponential of $U_S(\Delta \tau)$ only contains odd orders of $\Delta \tau$, $$\begin{equation}
+U_S(\Delta \tau) = e^{-H \Delta \tau
++ \hat{f}_3 \Delta \tau^3
++ \hat{f}_5 \Delta \tau^5
++ \hat{f}_7 \Delta \tau^7 + ... } ,
+\label{propagatorerrstruc}
+\end{equation}$$ where $\hat{f}_i$ are functions of operators which do not depend on $\Delta \tau$.
+
+For the AV6' interaction, in the PIMC calculation, we use $N$ short-time propagator $[U_S(\Delta \tau)]^N$ instead of $(e^{-H \Delta \tau})^N$ in calculating Eq.([\[PIMCopexpdetailshorttime\]](#PIMCopexpdetailshorttime){reference-type="ref" reference="PIMCopexpdetailshorttime"}), and the total imaginary time $\tau=N\Delta \tau$, so $N\mathcal{O}(\Delta \tau^n)=\tau \mathcal{O}(\Delta \tau^{n-1})$. Considering Eq.([\[propagatorerrstruc\]](#propagatorerrstruc){reference-type="ref" reference="propagatorerrstruc"}), this means that for a given $\tau$, the error of $[U_S(\Delta \tau)]^N$ only contain the even orders of $\Delta \tau$, $$\begin{equation}
+\left[U_S(\Delta \tau)\right]^N =
+\left(e^{ -H \Delta \tau
++ \hat{f}_3 \Delta \tau^3
++ \hat{f}_5 \Delta \tau^5 + ... }\right)^N
+=e^{-H \tau} + \mathcal{O}(\Delta \tau^2) + \mathcal{O}(\Delta \tau^4) + ... ,
+\label{propagatorNerrstruc}
+\end{equation}$$ and this means $\langle \hat{O} (\Delta \tau) \rangle$ in Eq.([\[PIMCopexpdetailshorttimeapprox\]](#PIMCopexpdetailshorttimeapprox){reference-type="ref" reference="PIMCopexpdetailshorttimeapprox"}) and the true expectation value $\langle \hat{O} \rangle$ of Eq.([\[PIMCopexpdetailshorttime\]](#PIMCopexpdetailshorttime){reference-type="ref" reference="PIMCopexpdetailshorttime"}) are related by the following equation, $$\begin{align}
+\langle \hat{O} (\Delta \tau) \rangle
+& = \frac{ Re  \langle \Psi_T| [U_S(\Delta \tau)]^{N_1} \hat{O} [U_S(\Delta \tau)]^{N_2}| \Psi_T \rangle  }
+{ Re \langle \Psi_T| [U_S(\Delta \tau)]^{N} | \Psi_T \rangle} \nonumber \\
+& = \langle \hat{O} \rangle \times
+\frac{1 + \mathcal{O}(\Delta \tau^2) + \mathcal{O}(\Delta \tau^4) + ... }
+{1+ \mathcal{O}(\Delta \tau^2) + \mathcal{O}(\Delta \tau^4) + ... } .
+\label{PIMCUSdetail}
+\end{align}$$ For small $\Delta\tau$, in order to extrapolate the expectation value $\langle \hat{O} \rangle$, we need to use, $$\begin{equation}
+\langle \hat{O} (\Delta \tau) \rangle
+= \langle \hat{O} \rangle
++ \sum_{n=1}^{n_c} C_{2n} (\Delta \tau^{2n}),
+\label{Oextrapolation}
+\end{equation}$$ where $C_{2n}$ are the fitting parameters for even orders of $\Delta \tau$, and $n_c$ is the cutoff integer for $n$. The theoretical value of $C_{2n}$ depends on the trial wave function and the total imaginary time $\tau$. In principle, a general extrapolation formula which suits a wide range of $\Delta \tau$ should have the same form as Eq.([\[PIMCUSdetail\]](#PIMCUSdetail){reference-type="ref" reference="PIMCUSdetail"}).
+
+For the local chiral N$^2$LO interaction, we use the $U(\Delta \tau)$ in Eq.([\[propagatorN2LOVTV\]](#propagatorN2LOVTV){reference-type="ref" reference="propagatorN2LOVTV"}) as the short-time propagator and it has errors $\mathcal{O}(\Delta \tau^2)$, so when the total imaginary time $\tau=N\Delta \tau$, we multiply $U(\Delta \tau)$ the short-time propagator $N$ times we have error of $N\mathcal{O}(\Delta \tau^2)=\tau \mathcal{O}(\Delta \tau)$ which is $\mathcal{O}(\Delta \tau)$, $$\begin{equation}
+\left[U(\Delta \tau)\right]^N = e^{-H \tau} + \mathcal{O}(\Delta \tau),
+\label{propagatorNerrstruc}
+\end{equation}$$ this means that the error of $\langle \hat{O} (\Delta \tau) \rangle$ in Eq.([\[PIMCopexpdetailshorttimeapprox\]](#PIMCopexpdetailshorttimeapprox){reference-type="ref" reference="PIMCopexpdetailshorttimeapprox"}) has $\mathcal{O}(\Delta \tau)$ error, $$\begin{align}
+\langle \hat{O} (\Delta \tau) \rangle
+& = \frac{ Re  \langle \Psi_T| [U(\Delta \tau)]^{N_1} \hat{O} [U(\Delta \tau)]^{N_2}| \Psi_T \rangle  }
+{ Re \langle \Psi_T| [U(\Delta \tau)]^N | \Psi_T \rangle} \nonumber \\
+& = \langle \hat{O} \rangle \times
+\frac{1 + \mathcal{O}(\Delta \tau) + \mathcal{O}(\Delta \tau^2) + \mathcal{O}(\Delta \tau^3) + ... }
+{1+ \mathcal{O}(\Delta \tau) + \mathcal{O}(\Delta \tau^2) + \mathcal{O}(\Delta \tau^3) + ... } .
+\label{PIMCUN2LOdetail}
+\end{align}$$ Similar with the Taylor expansion of $\frac{1}{1+x}=1-x+...$ requires $|x|<1$ to converge, when the error in the denominator in Eq.([\[PIMCUN2LOdetail\]](#PIMCUN2LOdetail){reference-type="ref" reference="PIMCUN2LOdetail"}) is less than one, Eq.([\[PIMCUN2LOdetail\]](#PIMCUN2LOdetail){reference-type="ref" reference="PIMCUN2LOdetail"}) can be written as, $$\begin{align}
+\langle \hat{O} (\Delta \tau) \rangle
+= \langle \hat{O} \rangle
++ \mathcal{O}(\Delta \tau) + \mathcal{O}(\Delta \tau^2) + ... .
+\end{align}$$ So, usually, for a given total time $\tau$ and small $\Delta \tau$, in order to get the true expectation value $\langle \hat{O} \rangle$ of Eq.([\[PIMCopexpdetailshorttime\]](#PIMCopexpdetailshorttime){reference-type="ref" reference="PIMCopexpdetailshorttime"}), we need to calculate $\langle \hat{O} (\Delta \tau) \rangle$ for difference time step $\Delta \tau$ and error bar, and then use the following polynomial equation to extrapolate $\langle \hat{O} \rangle$ and its error bar, $$\begin{equation}
+\langle \hat{O} (\Delta \tau) \rangle
+= \langle \hat{O} \rangle
++ \sum_{n=1}^{n_c} C_{n} (\Delta \tau^{n}),
+\label{ON2LOextrapolation}
+\end{equation}$$ where $C_n$ are fitting parameters and the theoretical value of $C_{n}$ depends on the trial wave function and the total imaginary time $\tau$. In principle a general extrapolation expression should be Eq.([\[PIMCUN2LOdetail\]](#PIMCUN2LOdetail){reference-type="ref" reference="PIMCUN2LOdetail"}).
+
+From the error structure Eq.([\[PIMCUSdetail\]](#PIMCUSdetail){reference-type="ref" reference="PIMCUSdetail"}) or Eq.([\[PIMCUN2LOdetail\]](#PIMCUN2LOdetail){reference-type="ref" reference="PIMCUN2LOdetail"}) we can see that, even if $\Delta \tau$ itself is not very small, as long as the $\Delta \tau$ errors (especially the leading order errors) in the numerator and the denominator of Eq.([\[PIMCUSdetail\]](#PIMCUSdetail){reference-type="ref" reference="PIMCUSdetail"}) or Eq.([\[PIMCUN2LOdetail\]](#PIMCUN2LOdetail){reference-type="ref" reference="PIMCUN2LOdetail"}) are comparable, $\langle \hat{O} (\Delta \tau) \rangle$ can still be close to the true expectation value $\langle \hat{O} \rangle$. That is to say the results of PIMC is robust because they may not be very sensitive to the time step $\Delta \tau$.
+
+[^1]: All the error structures of the propagator can be found by repeatedly using Campbell-Baker-Hausdorff (CBH) formula ([@Reinsch2000JMP]), $$\begin{eqnarray}
+    e^A e^B = e^{A+B+\frac{1}{2}[A,B]+\frac{1}{12}[A-B,[A,B]]+\frac{1}{24}[B,[A,[B,A]]] + ...},
+    \label{CBHformula}
+    \end{eqnarray}$$ where A and B are operators or matrices. From Eq.([\[CBHformula\]](#CBHformula){reference-type="ref" reference="CBHformula"}) we can further find that, $$\begin{equation}
+    e^{\frac{B}{2} }  e^{A}  e^{\frac{B}{2}}
+    = e^{A+B
+    + \frac{1}{24}[2A+B, [A,B]] + ... }.
+    \end{equation}$$ and that is how we can write down ([@VesaPDF]) Eq.([\[HighTrotter\]](#HighTrotter){reference-type="ref" reference="HighTrotter"}).

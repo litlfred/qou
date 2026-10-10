@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0006057v2/sections/sec-047",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A Galois correspondence. The following simple observation gives a natural",
+  "pageStart": 37,
+  "pageEnd": 38,
+  "contains": [
+    "library/arxiv-math-0006057v2/blocks/prose-sec-047",
+    "library/arxiv-math-0006057v2/blocks/proposition-sec-047-01",
+    "library/arxiv-math-0006057v2/blocks/theorem-sec-047-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "provenance": "ingested"
+}

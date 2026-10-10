@@ -6,7 +6,8 @@
   "sha256": "da982c95b9674382ace91cf6773aabb7ed0ba16e526d933f69128296347deeed",
   "bytes": 560483,
   "pages": 21,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -177,6 +178,80 @@
   "likely_scanned": false,
   "toc_entries": 8,
   "sections": 8,
-  "chars_total": 46707
+  "chars_total": 46707,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 7,
+   "overlaid": 7,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-0-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.755,
+     "coverage_ratio": 0.917,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-1-a-adic-systems",
+     "title": "a-Adic Systems",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.55,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-free-resolutions-of-a-adic-systems",
+     "title": "Free Resolutions of a-Adic Systems",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.887,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-3-a-adic-flatness",
+     "title": "a-Adic Flatness",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.915,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-4-weakly-proregular-ideals",
+     "title": "Weakly Proregular Ideals",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.936,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-5-modules-of-decaying-functions",
+     "title": "Modules of Decaying Functions",
+     "prose_ratio": 0.994,
+     "coverage_ratio": 0.888,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-6-the-non-noetherian-example",
+     "title": "The Non-Noetherian Example",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.954,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

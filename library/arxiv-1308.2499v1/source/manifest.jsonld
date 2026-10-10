@@ -1,0 +1,70 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1308.2499v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1308.2499v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1308.2499v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1308.2499&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1308.2499v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1308.2499v1",
+    "content_type": "application/gzip",
+    "sha256": "85d5167d4ef9d2fe14e372cf535c0eb9f8ba308858ad57aa5d130a5b520b866c",
+    "bytes": 71757,
+    "fetched": "2026-10-10T15:08:36+00:00",
+    "files": [
+      {
+        "path": "source/files/energy-space.tex",
+        "role": "tex",
+        "sha256": "4c95c67a2159fe6d0c8a85fd587cdbabc413f8429909f4e9b99db163cd8cefbb",
+        "bytes": 29503
+      },
+      {
+        "path": "source/files/fractional.tex",
+        "role": "tex",
+        "sha256": "8c588c766d98307ee00b266eb87059e98e250412e685a9ebb397acf68be00d15",
+        "bytes": 9605
+      },
+      {
+        "path": "source/files/intro.tex",
+        "role": "tex",
+        "sha256": "d7d554b13a3da84551fc480f5e1b7f616f15f3b175906de0baf2d9465481eed6",
+        "bytes": 18960
+      },
+      {
+        "path": "source/files/regularity.tex",
+        "role": "tex",
+        "sha256": "cd3d5fda6ff20d46d7e28121994b7a2e58598047888dce66d5dbd4d24838e196",
+        "bytes": 34742
+      },
+      {
+        "path": "source/files/statpointmenger.bbl",
+        "role": "bbl",
+        "sha256": "2d2985cf572e22ad675bf0d8ff8669f68d24a85a24c00db0a241e02d48de85d3",
+        "bytes": 8877
+      },
+      {
+        "path": "source/files/statpointmenger.tex",
+        "role": "tex",
+        "sha256": "9b45ffd386208c6da3ea2196f4424a74bd85e9290d24b2e9762fba4c272527fd",
+        "bytes": 9657
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

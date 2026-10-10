@@ -7,24 +7,42 @@ section_number: 10
 pages: 11-11
 source_pdf: 2402.08782v1.pdf
 source_sha256: 30311f0bd815f93f
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.846
 doc_brief: "Hecke–Farey coordinates for Bring’s surface — The modular groupΓ (which is the Hecke groupH3) can be used to study triangular maps, Here we use the Hecke groupH4 to study the reg- ular map that"
 ---
 .
-With these side identifications we can easily find the equivalence classes of ver-
-tices.
-Label the vertices a1,a 2,··· a20 with edge 1 having vertices a1,a 2 (going anti-
-clockwise), side 2 having verticesa2,a 3 etc.
-As 2 is paired to 5, we geta2 =a6,a3 =a5.
-As 6 ia paired to 9, we geta6 =a10, a7 =a9.
-As 7 is paired with 16, we geta7 =a17, a8 =a16.
-As 10 is paired to 13, we havea11 =a13, a10 =a14.
-As 11 is paired to 20 is paired with 13, we geta11 =a13, a10 =a14.
-As 14 is pared with 17 we gata15 =a17, a14 =a18.
-As 4 is paired to 15a4 =a16, a3 =a15.
-As 18 is paired to 1, we geta1 =a19, a18 =a2.
-As 8 is paired with 19 , we geta8 =a19, a8 =a20.
-Thuswefindthat ak wherek isoddrepresentonevertexin M4(5),a2, a6, a10, a14, a18
-represent another vertex anda4, a8, a12 and a16 represent a third vertex. Thus
-M3(5), Bring’s surface has 3 vertices, 10 edges and 1 face. We then get2− 2g =
-3− 10 + 1 =−6 dgiving g = 4 which it should be.
+  
+  With these side identifications we can easily find the equivalence classes of vertices. \\Label the vertices $a_1, a_2,\cdots a_{20}$ with edge 1 having vertices  $a_1, a_2$ (going anti-clockwise), side 2 having vertices $a_2, a_3$ etc.
+  
+
+As 2 is paired to 5, we get $a_2=a_6$,\;$a_3=a_5$.
+  
+   
+As 6 ia paired to 9, we get $a_6=a_{10}$,  $a_7=a_9.$
+
+
+As 7 is paired with 16, we get $a_7=a_{17},\; a_8=a_{16}$.
+
+As 10 is paired to 13, we have $a_{11}=a_{13}$, $a_{10}=a_{14}.$
+
+As 11 is paired to 20 is paired with 13, we get $a_{11}= a_{13}$, $a_{10}=a_{14}.$
+
+As 14 is pared with 17 we gat $a_{15}=a_{17}$, $a_{14}=a_{18}.$
+
+As 4 is paired to 15 $a_4=a_{16}$, $a_3=a_{15}.$
+
+As 18 is paired to 1, we get $a_1=a_{19}$, $a_{18}=a_2.$
+
+As 8 is paired with 19 , we get $a_8=a_{19}$, $a_8=a_{20}.$ 
+
+
+Thus we find that $a_k$ where $k$ is odd represent one vertex in $\mathscr{M}_4(5)$,   $a_2,\; a_6,\;a_{10},\;a_{14},\;a_{18}$ represent another vertex and $a_4,\;a_8,\;a_{12}$ and $a_{16}$ represent a third vertex. Thus $\mathscr{M}_3(5)$, Bring's surface has 3 vertices, 10 edges and 1 face.  We then get $2-2g=3-10+1= -6$ dgiving $g=4$ which it should be.
+
+
+
+
+
+
 .

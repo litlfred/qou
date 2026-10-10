@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1701.06567v2/blocks/prose-sec-061",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1701.06567v2/blocks/prose-sec-061",
   "kind": "prose",
   "title": "The formula ( 3.145) deﬁnes homological blocks ˆZa(q) in terms of a plumbing graph",
   "pageStart": 53,
   "pageEnd": 53,
   "text": "../sections/sec-061-3-the-formula-3145-deﬁnes-homological-blocks-ˆza.md",
-  "derivedFrom": "library/arxiv-1701.06567v2/manifest",
-  "sourceDocument": "library/arxiv-1701.06567v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1701.06567v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1701.06567v2/manifest.jsonld",
   "provenance": "ingested"
 }

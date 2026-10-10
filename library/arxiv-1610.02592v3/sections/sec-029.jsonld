@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.02592v3/sections/sec-029",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Introduction",
+  "pageStart": 199,
+  "pageEnd": 202,
+  "contains": [
+    "library/arxiv-1610.02592v3/blocks/prose-sec-029",
+    "library/arxiv-1610.02592v3/blocks/proposition-sec-029-01",
+    "library/arxiv-1610.02592v3/blocks/remark-sec-029-02",
+    "library/arxiv-1610.02592v3/blocks/remark-sec-029-03",
+    "library/arxiv-1610.02592v3/blocks/proposition-sec-029-04",
+    "library/arxiv-1610.02592v3/blocks/corollary-sec-029-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.02592v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.02592v3/manifest.jsonld",
+  "provenance": "ingested"
+}

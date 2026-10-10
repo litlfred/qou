@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9408113v2/blocks/prose-sec-074",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-9408113v2/blocks/prose-sec-074",
   "kind": "prose",
   "title": "Let us consider a function f (a) := f (z,a ) = ϕ(za)/ϕ(a). Show that",
   "pageStart": 83,
   "pageEnd": 83,
   "text": "../sections/sec-074-3-let-us-consider-a-function-f-a-f-za-ϕzaϕa-show.md",
-  "derivedFrom": "library/arxiv-hep-th-9408113v2/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9408113v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-9408113v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-9408113v2/manifest.jsonld",
   "provenance": "ingested"
 }

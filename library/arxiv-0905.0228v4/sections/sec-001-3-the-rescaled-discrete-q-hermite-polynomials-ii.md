@@ -7,337 +7,277 @@ section_number: 3
 pages: 7-12
 source_pdf: 0905.0228v4.pdf
 source_sha256: 1744545d0f210949
+text_source: latex
+latex_prose_ratio: 0.936
+latex_coverage_ratio: 0.919
 doc_brief: "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS — Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials."
 ---
-By deﬁnition (1.13) and (1.7) we have
-hn+1(x, s ; q) = qnxhn(x, s ; q) − [n]qshn−1(x, s ; q). (3.1)
+By definition \eqref{eq:H2} and \eqref{eq:ACR} we have 
+\begin{align}
+h_{n+1}(x,s;q)=q^nx h_n(x,s;q)-[n]_q s h_{n-1}(x,s;q).
+\end{align}
 We derive then
-hn(x, s ; q) = q(n
-2)√
-sn˜hn
-( x√s ; q
-)
-(3.2)
-=
-n∑
-k=0
-q(n−2k
-2 )
-[ n
-2k
-]
-[2k − 1]q!!(−s)kxn−2k, (3.3)
-where ˜hn(x; q) are the discrete q-Hermite polynomials II, see (1.13).
-Since Dq(f g) = Dq(f )g + f (qx)Dq(g) and Dq(x) = 1, we see that
-Dq(hn+1(x)) = qnxDq(hn(x)) + qnhn(qx) − [n]qsDq(hn−1(x)).
-We derive by induction on n that
-Dqhn(x, s ; q) = [ n]qhn−1(qx, s ; q). (3.4)
-The ﬁrst terms of these polynomials are
-1, x, qx 2 − s, q 3x3 − s[3]qx, q 6x4 − s(q5 + q4 + 2q3 + q2 + q)x2 + s2[3]q.
-The following result shows that the polynomials hn(x, s ; q) are moments of some orthogonal
-polynomials.
-Theorem 6. The generating function of hn(x, s ; q) has the continued fraction expansion:
-∑
-m≥0
-hn(x, s ; q)tn = 1
-1 − b0t − λ 1t2
-1 − b1t − λ 2t2
-1 − b2t − λ 3t2
-1 − . . .
-,
-7
-with
-bn = qn−1(qn + qn+1 − 1)x and λ n = −qn−1[n]q(s + q2n−2(1 − q)x2). (3.5)
-Proof. To prove this it suﬃces to show that the Stieltjes tableau (5. 3) is satisﬁed with
-a(n, k ) =
-[ n
-k
-]
-hn−k(qkx, s ; q).
-This is easily veriﬁed.
+\begin{align}
+h_n(x,s;q)&=q^{n\choose 2}\sqrt{s^n} \tilde h_n\left(\frac{x}{\sqrt{s}};q\right)\\
+&=\sum_{k=0}^nq^{n-2k\choose 2}{n\brack 2k}[2k-1]_q!! (-s)^k x^{n-2k},
+\end{align}
+where $\tilde h_n(x;q)$ are the discrete $q$-Hermite polynomials II, see \eqref{eq:H2}.
+
+Since ${\D}_q(fg)={\D}_q(f)g+f(qx){\D}_q(g)$ and ${\D}_q(x)=1$, we see that
+$$
+{\D}_q(h_{n+1}(x))=q^nx{\D}_q(h_n(x))+q^nh_n(qx)-[n]_qs{\D}_q(h_{n-1}(x)).
+$$
+We derive by induction on $n$ that
+\begin{align}\label{eq:qdif}
+{\D}_q h_n(x,s;q)=[n]_q h_{n-1}(qx,s;q).
+\end{align}
+
+The first terms of these polynomials are
+$$
+1,\quad x,\quad qx^2-s,\quad q^3x^3-s[3]_qx,\quad 
+q^6x^4-s(q^5+q^4+2q^3+q^2+q)x^2+s^2[3]_q. 
+$$
+The following result shows that  the polynomials $h_n(x,s;q)$ are moments of some orthogonal polynomials.
+\begin{thm}\label{thm4.4}
+The generating function of  $h_n(x,s;q)$  has the  continued fraction expansion:
+ $$
+ \sum_{m\geq 0}h_n(x,s;q)t^n=\cfrac{1}{ 1 -b_0 t-
+\cfrac{\la_1 t^2}{1 -b_1 t-
+ \cfrac{\la_2t^2}{1 - b_2 t-
+ \cfrac{\la_3t^2}{1 -
+ \ddots}}}},
+ $$
+ with
+\begin{align}\label{eq:parameter}
+b_n=q^{n-1}(q^n+q^{n+1}-1)x\quad \text{and}\quad \la_n=-q^{n-1}[n]_q(s+q^{2n-2}(1-q)x^2).
+\end{align}
+\end{thm}
+\begin{proof}
+To prove this it suffices to show that the Stieltjes tableau \eqref{eq:stableau} is satisfied with 
+$$
+a(n,k)={n\brack k}h_{n-k}(q^kx,s;q).
+$$
+This is easily verified.
+\end{proof}
+
 This implies that their Hankel determinants are
-det(hi+j(x, s ; q))n−1
-i,j = (−1)(n
-2)q(n
-3)
-n−1∏
-j=0
-(
-[j]q!(s + q2j(1 − q)x2)n−1−j)
-(3.6)
-and
-det(hi+j+1(x, s ; q))n−1
-i,j
-det(hi+j(x, s ; q))n−1
-i,j
-= w(n), (3.7)
-where w(n) satisﬁes
-w(n + 1) = qn−1(qn + qn+1 − 1)xw(n) + qn−1[n]q(s + q2n−2(1 − q)x2)w(n − 1).
-It is easily veriﬁed that
-w(n) =
-n∑
-k=0
-q2(n−k
-2 )
-[ n
-2k
-]
-[2k − 1]q!!skxn−2k (3.8)
-satisﬁes the same recurrence with the same initial values.
-Lemma 7. Let Ln(x) := hn(x, (1 − q)s; q). Then
-sLn(x) + xLn+1(x) = ( x2 + s)Ln(qx). (3.9)
-Proof. First we note that the constant terms of both sides of (3.9) ar e equal to sLn(0). So it
-suﬃces to show that the derivatives of the two sides are equal . Applying Dq to (3.9) and using
-(3.4) we obtain, after replacing x by x/q ,
-s[n]Ln−1(x) + xq[n − 1]Ln(x) + Ln+1(x) = ( x2 + s)q[n]Ln−1(qx).
-Since Ln+1(x) = qnxLn(x) − (1 − qn)sLn−1(x), we can rewrite the above equation as follows:
-sLn−1(x) + xLn(x) = ( x2 + s)Ln−1(qx). (3.10)
-The proof is thus completed by induction on n.
-We shall prove the following Jacobi continued fraction expa nsion for the generating function
-of ( x + (1 − q)sDq)n · 1. This is equivalent to Theorem 4.
-8
-Theorem 8. Let Tn(x, s ) = ( x + (1 − q)sDq)n · 1. Then
-∑
-n≥0
-Tn(x, s )tn = 1
-1 − b0t − λ 1t2
-1 − b1t − λ 2t2
-1 − . . .
-, (3.11)
-where the coeﬃcients are
-bn = qnx, for n ≥ 0; and λ n = (1 − qn)s, for n ≥ 1. (3.12)
-Proof. Since Tn(x, s ) = ( x + (1 − q)sDq)Tn−1(x, s ), we have
-Tn(x, s ) = ( x + s
-x )Tn−1(x, s ) − s
-x Tn−1(qx, s ).
-Equivalently the generating function G(x, t ) = ∑
-n≥0 Tn(x, s )tn satisﬁes the functional equa-
-tion: (
-1 − x2 + s
-x t
-)
-G(x, t ) = 1 − s
-x tG(qx, t ). (3.13)
+\begin{align}
+\det(h_{i+j}(x,s;q))_{i,j}^{n-1}=(-1)^{n\choose 2}q^{n\choose 3}\prod_{j=0}^{n-1}\left([j]_q! (s+q^{2j}(1-q)x^2)^{n-1-j}\right)
+\end{align}
+and 
+\begin{align}
+\frac{\det(h_{i+j+1}(x,s;q))_{i,j}^{n-1}}
+{\det(h_{i+j}(x,s;q))_{i,j}^{n-1}}
+=w(n),
+\end{align}
+where  $w(n)$ satisfies
+$$
+w(n+1)=q^{n-1}(q^n+q^{n+1}-1)xw(n)+q^{n-1}[n]_q (s+q^{2n-2}(1-q)x^2)w(n-1).
+$$
+It is easily verified that
+\begin{align}
+ w(n)=\sum_{k=0}^nq^{2{n-k\choose 2}}{n\brack 2k}[2k-1]_q!! s^k x^{n-2k}
+\end{align}
+satisfies the same recurrence with the same initial values.
+
+
+
+
+
+\begin{lem} Let $L_n(x):=h_{n}(x,(1-q)s;q)$. Then 
+\begin{align}\label{eq:basic}
+s L_n(x)+xL_{n+1}(x)=(x^2+s)L_n(qx).
+\end{align}
+\end{lem}
+\begin{proof} First we note that the constant terms of both sides of \eqref{eq:basic} are equal to $sL_n(0)$. So it suffices to 
+show that the derivatives of the two sides are equal.  
+Applying ${\D}_q$ to \eqref{eq:basic} and using \eqref{eq:qdif}  we obtain, after replacing $x$ by $x/q$,
+$$
+s[n]L_{n-1}(x)+xq[n-1]L_n(x)+L_{n+1}(x)=(x^2+s)q[n]L_{n-1}(qx).
+$$
+Since $L_{n+1}(x)=q^nxL_n(x)-(1-q^n)sL_{n-1}(x)$, we can rewrite the above equation as follows:
+\begin{align}
+sL_{n-1}(x)+xL_n(x)=(x^2+s)L_{n-1}(qx).
+\end{align}
+The proof is thus completed by induction on $n$.
+\end{proof}
+
+We shall prove the following Jacobi  continued fraction expansion for the 
+generating function of $(x+(1-q)s{\D}_q)^n\cdot 1$. This is equivalent to Theorem~\ref{thm:main}.
+\begin{thm} \label{thm:Hh} Let $T_n(x,s)=(x+(1-q)s{\D}_q)^n\cdot 1$. Then
+\begin{align}
+\sum_{n\geq 0} T_n(x,s) t^n=
+\cfrac{1}{1-b_0 t-
+\cfrac{\lambda_1 t^2}{1-b_1 t-
+\cfrac{\lambda_2 t^2}{1-\ddots}}},
+\end{align}
+where the coefficients are 
+\begin{equation}\label{eq:coeff} 
+b_n=q^n x,\quad \text{for $n\geq 0$};\quad\text{and}\quad  
+\lambda_n=(1-q^n) s,\quad \text{for $n\geq 1$}.
+\end{equation}
+\end{thm}
+\begin{proof}
+Since $T_n(x,s)=(x+(1-q)s{\D}_q) T_{n-1}(x,s)$, we have
+$$
+T_n(x,s)=(x+\frac{s}{x})T_{n-1}(x,s)-\frac{s}{x}T_{n-1}(qx,s).
+$$
+Equivalently the generating function
+$G(x,t)=\sum_{n\geq 0}T_n(x,s)t^n$ satisfies
+the functional equation:
+\begin{equation}\label{func-eq}
+\left(1-\frac{x^2+s}{x}t\right)G(x,t)=1-\frac{s}{x}tG(qx,t).
+\end{equation}
 Suppose that
-G(x, t ) = 1
-1 − c1t
-1 − c2t
-1 − c3t
-1 − . . .
-, (3.14)
-where cn = (gn − 1)gn−1A with A := A(x) = − x2+s
-x and gi := gi(x).
-Substituting (3.14) in (3.13) and then replacing t by t/A we obtain
-1 + t
-1 − (g1 − 1)t
-1 − (g2 − 1)g1t
-1 − (g3 − 1)g2t
-1 − (g4 − 1)g3t
-1 − . . .
-= 1 +
-s
-x2+s t
-1 − (g′
-1 − 1) A′
-A t
-1 − (g′
-2 − 1)g′
-1
-A′
-A t
-1 − (g′
-3 − 1)g′
-2
-A′
-A t
-1 − . . .
-, (3.15)
-where A′ := A(qx) and g′
-i := gi(qx). Comparing this with Wall’s formula (see [12]):
-1 + z
-1 − (g1 − 1)z
-1 − (g2 − 1)g1z
-1 − (g3 − 1)g2z
-1 − (g4 − 1)g3z
-1 − . . .
-= 1 + g1z
-1 − (g1 − 1)g2z
-1 − (g2 − 1)g3z
-1 − (g3 − 1)g4z
-1 − . . .
-, (3.16)
-9
-we derive that g0 = 1 and for n ≥ 1,
-
-
-
-
-
-
-
-g2n = A′
-A
-g′
-2n−1 − 1
-g2n−1 − 1 g′
-2n−2,
-g2n+1 = A′
-A
-g′
-2n − 1
-g2n − 1 g′
-2n−1.
-(3.17)
+\begin{align}\label{eq:cfstieltjes}
+G(x,t)=\cfrac{1}{ 1 -
+\cfrac{c_1t}{1 -
+ \cfrac{c_2t}{1 - 
+ \cfrac{c_3t}{1 -
+ \ddots}}}},
+ \end{align}
+where  $c_n=(g_n-1)g_{n-1}A$ with $A:=A(x)=-\frac{x^2+s}{x}$ and $g_i:=g_i(x)$. 
+
+Substituting \eqref{eq:cfstieltjes} in \eqref{func-eq}  and then replacing $t$ by $t/A$  we obtain
+\begin{align}
+{1+t\over \displaystyle 1 -{(g_1-1)t\over
+\displaystyle 1 - {(g_2-1)g_1t\over
+\displaystyle 1 - {(g_3-1)g_2t\over
+\displaystyle 1 - {(g_4-1)g_3t\over
+\displaystyle 1 - \ldots}}}}}
+=1 +{\frac{s}{x^2+s}t\over
+\displaystyle 1 - {(g_1'-1)\frac{A'}{A}t\over
+\displaystyle 1 - {(g_2'-1)g_1'\frac{A'}{A}t\over
+\displaystyle 1 - {(g_3'-1)g_2'\frac{A'}{A}t\over
+\displaystyle 1 - \ldots}}}},
+\end{align}
+where $A':=A(qx)$ and $g_i':=g_i(qx)$.
+Comparing this with  Wall's formula (see \cite{KZ}):
+\begin{align}
+{1+z\over \displaystyle 1 -{(g_1-1)z\over
+\displaystyle 1 - {(g_2-1)g_1z\over
+\displaystyle 1 - {(g_3-1)g_2z\over
+\displaystyle 1 - {(g_4-1)g_3z\over
+\displaystyle 1 - \ldots}}}}}
+=1 +{g_1z\over
+\displaystyle 1 - {(g_1-1)g_2z\over
+\displaystyle 1 - {(g_2-1)g_3z\over
+\displaystyle 1 - {(g_3-1)g_4z\over
+\displaystyle 1 - \ldots}}}},
+\end{align}
+we derive that $g_0=1$ and for $n\geq 1$, 
+\begin{equation}\label{eq1}\left\{\begin{split}
+g_{2n}&=\frac{A'}{A}\,\frac{g_{2n-1}'-1}{g_{2n-1}-1}\,g_{2n-2}',\\
+g_{2n+1}&=\frac{A'}{A}\,\frac{g_{2n}'-1}{g_{2n}-1}\,g_{2n-1}'.
+\end{split}\right.
+\end{equation}
+
 For example,
-g1 = s
-x2 + s , g 3 = A′
-A
-g′
-2 − 1
-g2 − 1 g′
-1 = s
-x2 + s
-1
-q ,
-g2 = A′
-A
-g′
-1 − 1
-g1 − 1 = q, g 4 = A′
-A
-g′
-3 − 1
-g3 − 1 g′
-2 = −s + qs + q3x2
-−s + qs + qx2 .
+\begin{align*}
+g_1&=\frac{s}{x^2+s},\quad 
+&g_3&=\frac{A'}{A}\frac{g_2'-1}{g_2-1}g_1'=\frac{s}{x^2+s}\frac{1}{q},\\
+g_2&=\frac{A'}{A}\frac{g_1'-1}{g_1-1}=q,\quad
+&g_4&=\frac{A'}{A}\frac{g_3'-1}{g_3-1}g_2'={\frac {-s+qs+{q}^{3}{x}^{2}}{-s+qs+q{x}^{2}}}.
+\end{align*}
 In general we have the following result.
-
-
-
-
-
-
-
-g2n = sLn(x) + xLn+1(x)
-(x2 + s)Ln(x) ,
-g2n+1 = sLn(x)
-sLn(x) + xLn+1(x) .
-(n ≥ 0). (3.18)
-This can be veriﬁed by induction on n. Suppose that the formula (3.18) is true for n ≥ 0. We
-prove that the formula holds for n + 1. By (3.17) we have
-g2n+2 = A′
-A
-g′
-2n+1 − 1
-g2n+1 − 1 g′
-2n = sLn(x) + xLn+1(x)
-(x2 + s)Ln+1(x)
-Ln+1(qx)
-Ln(qx) .
-It follows from Lemma 1 that
-g2n+2 = sLn+1(x) + xLn+2(x)
-(x2 + s)Ln+1(x) . (3.19)
-Since
-Ln+1(x) − xLn(x) = ( qn − 1)(xLn(x) + sLn−1(x)), (3.20)
-the veriﬁcation for g2n+3 is then straightforward. We derive from (3.14) and (3.18) th at
-
-
-
-
-
-
-
-c2n = (g2n − 1)g2n−1A = (1 − qn)s Ln−1(x)
-Ln(x) , for n ≥ 1;
-c2n+1 = (g2n+1 − 1)g2nA = Ln+1(x)
-Ln(x) , for n ≥ 0.
-(3.21)
-Invoking the contraction formula (see [19]), which transforms a S-continued fraction to a J-
-continued fraction,
-1
-1 − c1z
-1 − c2z
-1 − c3z
-1 − c4z
-. . .
-= 1
-1 − c1z − c1c2z2
-1 − (c2 + c3)z − c3c4z2
-. . .
-, (3.22)
-10
-we obtain
-
-
-
-
-
-
-bn = hn+1(x, (1 − q)s; q)
-hn(x, (1 − q)s; q) + (1 − qn)s hn−1(x, (1 − q)s; q)
-hn(x, (1 − q)s; q) = qnx,
-λ n = hn(x, (1 − q)s; ; q)
-hn−1(x, (1 − q)s; q) · (1 − qn)s hn−1(x, (1 − q)s; ; q)
-hn(x, (1 − q)s; ; q) = (1 − qn)s.
-(3.23)
-This completes the proof.
-Remark. Instead of the contraction formula (3.22), we can also proce ed as follows. Deﬁne a
-table ( A(n, k ))n,k ≥0 by
-A(0, k ) = δk, 0,
-A(n, 0) = c1A(n − 1, 1), (3.24)
-A(n, k ) = A(n − 1, k − 1) + ck+1A(n − 1, k + 1).
-In this case A(2n, 2k + 1) = A(2n + 1, 2k) = 0 for all n, k . If we deﬁne
-a(n, k ) = A(2n, 2k),
-then it is easily veriﬁed that a(n, k ) satisfy (5.3) with
-b0 = c1, b n = c2n + c2n+1, λ n = c2nc2n−1. (3.25)
-Substituting the values in (3.21) for cn we obtain (3.23). Therefore
-∑
-n
-A(2n, 0)tn =
-∑
-n
-a(n, 0)tn =
-∑
-n
-Tn(x, s )tn.
-As another application of this remark we prove the following result.
-Proposition 9. Let wn(m, q ) = q
-n((2m+1)n+1)
-2 . Then
-∑
-m≥0
-wn(m, q )tn = 1
-1 − b0t − λ 1t2
-1 − b1t − λ 2t2
-1 − b2t − λ 3t2
-1 − . . .
-,
-where
-bn = q(2m+1)n−m(q(2m+1)n − 1) + q(2m+1)(2n+1)−m,
-λ n = q(2m+1)(3n−1)−2m(q(2m+1)n − 1).
-Proof. Let
-A(2n, 2k) = wn(m, q )
-wk(m, q )
-[ n
-k
-]
-q2m+1
-and A(2n + 1, 2k + 1) = wn+1(m, q )
-wk+1(m, q )
-[ n
-k
-]
-q2m+1
-.
-Then it is easily veriﬁed that the table (3.24) holds with c2n = q(2m+1)n−m(q(2m+1)n − 1) and
-c2n+1 = q(2m+1)(2n+1)−m. Therefore
-∑
-n
-A(2n, 0)tn =
-∑
-n
-a(n, 0)tn =
-∑
-n
-wn(m, q )tn.
-11
+\begin{equation}\label{keystep}\left\{\begin{split}
+g_{2n}&=\frac{sL_n(x)+xL_{n+1}(x)}{(x^2+s)L_{n}(x)},\\
+g_{2n+1}&=\frac{s L_{n}(x)} {sL_{n}(x)+xL_{n+1}(x)}.
+\end{split}\right.\qquad (n\geq 0).
+\end{equation}
+This can be verified by induction on $n$.  Suppose that the formula~\eqref{keystep}  is true for $n\geq 0$. 
+We prove that the formula holds for $n+1$. By \eqref{eq1} we have
+\begin{align*}
+g_{2n+2}=\frac{A'}{A}\,\frac{g_{2n+1}'-1}{g_{2n+1}-1}\,g_{2n}'
+=\frac{s L_n(x)+xL_{n+1}(x)}{(x^2+s)L_{n+1}(x)}\, \frac{L_{n+1}(qx)}{L_n(qx)}.
+\end{align*}
+It follows from Lemma 1 that 
+\begin{align}\label{eq:induction}
+g_{2n+2}=\frac{s L_{n+1}(x)+xL_{n+2}(x)}{(x^2+s)L_{n+1}(x)}.
+\end{align}
+Since 
+\begin{align}\label{eq:l1}
+L_{n+1}(x)-xL_n(x)=(q^n-1)(xL_n(x)+sL_{n-1}(x)),
+\end{align}
+the  verification for   $g_{2n+3}$ is then straightforward.
+We  derive  from \eqref{eq:cfstieltjes} and \eqref{keystep} that
+\begin{equation}\label{eq:coeff} 
+\left\{\begin{split}
+c_{2n}&=(g_{2n}-1)g_{2n-1}A=(1-q^n)s\frac{L_{n-1}(x)}{L_n(x)},\quad \text{for $n\geq 1$};\\
+c_{2n+1}&=(g_{2n+1}-1)g_{2n}A=\frac{L_{n+1}(x)}{L_n(x)},\quad \text{for $n\geq 0$}.
+\end{split}\right.
+\end{equation}
+Invoking the \emph{contraction formula} (see \cite{zeng}), which transforms 
+a S-continued fraction to a J-continued fraction, 
+\begin{align}\label{eq:contraction}
+ {1\over \displaystyle 1 -{c_1z\over
+\displaystyle 1 - {c_2z\over
+\displaystyle 1 - {c_{3}z\over
+\displaystyle 1-{c_4z\over
+\displaystyle  \ddots
+}}}}}=\cfrac{1}{1-c_1z-\cfrac{c_1c_2 z^2}{
+ 1 -(c_2+c_3)z-\cfrac{c_3c_4z^2}{\ddots}}},
+\end{align}
+we obtain
+\begin{equation}\label{eq:jacobi}
+\left\{\begin{split}
+ b_n&=\frac{h_{n+1}(x,(1-q)s;q)}{h_n(x,(1-q)s;q)}+(1-q^n)s\frac{h_{n-1}(x,(1-q)s;q)}{h_n(x,(1-q)s;q)}=q^nx,\\
+\la_n&=\frac{h_{n}(x, (1-q)s;;q)}{h_{n-1}(x, (1-q)s;q)}\cdot (1-q^n)s\frac{h_{n-1}(x, (1-q)s;;q)}{h_n(x, (1-q)s;;q)}=(1-q^n) s.
+\end{split}\right.
+\end{equation}
+This completes the proof. 
+\end{proof}
+
+\noindent{\bf Remark.}  Instead of the contraction formula~\eqref{eq:contraction}, we can also proceed as follows. Define a table $(A(n,k))_{n,k\geq 0}$ by
+\begin{align}
+ A(0,k)&=\delta_{k,0},\nonumber\\
+A(n,0)&=c_1 A(n-1,1),\label{ctable}\\
+A(n,k)&=A(n-1,k-1)+c_{k+1}A(n-1,k+1).\nonumber
+\end{align}
+
+In this case $A(2n,2k+1)=A(2n+1,2k)=0$ for all $n,k$.
+If we define 
+$$
+a(n,k)=A(2n,2k),
+$$
+then it is easily verified that $a(n,k)$ satisfy \eqref{eq:stableau} with
+\begin{align}
+b_0=c_1,\quad b_n=c_{2n}+c_{2n+1},\quad \la_n=c_{2n}c_{2n-1}.
+\end{align}
+Substituting the values in \eqref{eq:coeff} for $c_n$ 
+we obtain \eqref{eq:jacobi}.
+Therefore 
+$$\sum_{n}A(2n,0)t^n=\sum_n a(n,0)t^n=\sum_n T_n(x,s)t^n.
+$$
+
+
+As another application of this remark  we prove the following result.
+
+\begin{prop}
+ Let $w_n(m,q)=q^\frac{n((2m+1)n+1)}{2}$. Then
+ $$
+ \sum_{m\geq 0}w_n(m,q)t^n=\cfrac{1}{ 1 -b_0 t-
+\cfrac{\la_1 t^2}{1 -b_1 t-
+ \cfrac{\la_2t^2}{1 - b_2 t-
+ \cfrac{\la_3t^2}{1 -
+ \ddots}}}},
+ $$
+ where
+\begin{align*}
+b_n&=q^{(2m+1)n-m}(q^{(2m+1)n}-1)+q^{(2m+1)(2n+1)-m},\\
+\la_n&=q^{(2m+1)(3n-1)-2m}(q^{(2m+1)n}-1).
+\end{align*}
+\end{prop}
+\begin{proof}
+ Let 
+$$
+A(2n,2k)=\frac{w_n(m,q)}{w_k(m,q)}{n\brack k}_{q^{2m+1}}\quad
+\text{and}\quad A(2n+1,2k+1)=\frac{w_{n+1}(m,q)}{w_{k+1}(m,q)}{n\brack k}_{q^{2m+1}}.
+$$
+Then it is easily verified that the table \eqref{ctable} holds with 
+$c_{2n}=q^{(2m+1)n-m}(q^{(2m+1)n}-1)$ and $c_{2n+1}=q^{(2m+1)(2n+1)-m}$.
+Therefore 
+$$
+\sum_{n}A(2n,0)t^n=\sum_n a(n,0)t^n=\sum_n w_n(m,q)t^n.
+$$
+\end{proof}

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-q-alg-9712055v2/blocks/prose-sec-005",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-q-alg-9712055v2/blocks/prose-sec-005",
   "kind": "prose",
   "title": "For an arbitrary k≥ 0",
   "pageStart": 9,
   "pageEnd": 10,
   "text": "../sections/sec-005-5-for-an-arbitrary-k-0.md",
-  "derivedFrom": "library/arxiv-q-alg-9712055v2/manifest",
-  "sourceDocument": "library/arxiv-q-alg-9712055v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-q-alg-9712055v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-q-alg-9712055v2/manifest.jsonld",
   "provenance": "ingested"
 }

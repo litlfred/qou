@@ -5,7 +5,8 @@
   "file": "1604.02688v1.pdf",
   "sha256": "bdcafe379519287cc9399877919d607a0e833f84cf2d77f5a265107a1a594d41",
   "bytes": 1171918,
-  "pages": 57
+  "pages": 57,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "THE 3D-INDEX AND NORMAL SURFACES",
   "authors_raw": "STAVROS GAROUFALIDIS, CRAIG D. HODGSON, NEIL R. HOFFMAN",
-  "abstract": "Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary components. The 3D-index is a collection of formal power series inq1/2 with integer coeﬃcients. Our goal is to explain how the 3D-index is a generating series of normal surfaces associated to the ideal triangulation. This shows a connection of the 3D-index with classical normal surface theory, and fulﬁlls a dream of constructing topological invariants of 3-manifolds using normal surfaces.",
+  "abstract": "Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary components. The 3D-index is a collection of formal power series inq1/2 with integer coe\ufb03cients. Our goal is to explain how the 3D-index is a generating series of normal surfaces associated to the ideal triangulation. This shows a connection of the 3D-index with classical normal surface theory, and ful\ufb01lls a dream of constructing topological invariants of 3-manifolds using normal surfaces.",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20160412003006Z",
@@ -574,6 +575,183 @@
   "likely_scanned": false,
   "toc_entries": 35,
   "sections": 29,
-  "chars_total": 133583
+  "chars_total": 133583,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "paper_april4.tex",
+   "tex_sections": 12,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.908,
+     "coverage_ratio": 0.817,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-acknowledgements",
+     "title": "Acknowledgements",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-2-the-tetrahedral-index",
+     "title": "The tetrahedral index",
+     "prose_ratio": 0.956,
+     "coverage_ratio": 0.797,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-3-notation-and-conventions-for-triangulated-3-ma",
+     "title": "Notation and conventions for triangulated 3-manifolds",
+     "prose_ratio": 0.17,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-31-gluing-equations",
+     "title": "Gluing equations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-32-generalised-angle-structures",
+     "title": "Generalised angle structures",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-4-the-3d-index-of-an-ideal-triangulation",
+     "title": "The 3D-index of an ideal triangulation",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.738,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-5-dependence-on-the-choice-of-triangulation",
+     "title": "Dependence on the choice of triangulation",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.728,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-61-construction-of-spun-normal-surfaces",
+     "title": "Construction of spun normal surfaces",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-62-geometric-generators-for-q-normal-classes",
+     "title": "Geometric generators for Q-normal classes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-7-combinatorics-of-ideal-triangulations-and-inte",
+     "title": "Combinatorics of ideal triangulations and integer normal surface theory",
+     "prose_ratio": 0.799,
+     "coverage_ratio": 0.891,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-71-geometric-generators-for-integer-q-normal-cla",
+     "title": "Geometric generators for integer Q-normal classes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-81-convergence-of-the-index-sum",
+     "title": "Convergence of the index sum",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-10-generalised-normal-surfaces",
+     "title": "Generalised normal surfaces",
+     "prose_ratio": 0.093,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-101-generalised-normal-and-spun-normal-surfaces",
+     "title": "Generalised normal and spun normal surfaces",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-102-degrees-of-index-terms",
+     "title": "Degrees of index terms",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-103-normalisation-and-barriers",
+     "title": "Normalisation and barriers",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-111-solid-torus",
+     "title": "Solid torus",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-11-some-examples",
+     "title": "Some examples",
+     "prose_ratio": 0.401,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-019-112-trefoil-complement",
+     "title": "Trefoil complement",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-114-a-toroidal-example",
+     "title": "A toroidal example",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-115-m009",
+     "title": "m009",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-12-notes-on-connectedness-of-the-1-efficient-pac",
+     "title": "Notes on connectedness of the 1-efficient Pachner Graph",
+     "prose_ratio": 0.461,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-023-121-a-census-of-ideal-triangulations",
+     "title": "A census of ideal triangulations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-122-two-tetrahedron-ideal-triangulations",
+     "title": "Two tetrahedron ideal triangulations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-124-connected-components-of-normal-surfaces",
+     "title": "Connected components of normal surfaces",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-appendix-a-generalised-angle-structures-and-the",
+     "title": "Appendix A. Generalised angle structures and the Euler characteristic",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-a1-euler-characteristic-from-generalised-angle-s",
+     "title": "A.1. Euler characteristic from generalised angle structures",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

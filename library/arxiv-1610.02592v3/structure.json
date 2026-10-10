@@ -6,7 +6,8 @@
   "sha256": "81020523d7d2bc1adc694fb1b57e0a88fde37b3af5779b4043d56a8ef3a2fe32",
   "bytes": 16037733,
   "pages": 494,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -1338,6 +1339,547 @@
   "likely_scanned": false,
   "toc_entries": 88,
   "sections": 68,
-  "chars_total": 936876
+  "chars_total": 936876,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Geometric_topology.tex",
+   "tex_sections": 67,
+   "overlaid": 61,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.459,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-differential-topology",
+     "title": "Differential topology",
+     "prose_ratio": 0.808,
+     "coverage_ratio": 0.786,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-12-riemannian-geometry",
+     "title": "Riemannian geometry",
+     "prose_ratio": 0.925,
+     "coverage_ratio": 0.798,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-13-measure-theory",
+     "title": "Measure theory",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.614,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-14-groups",
+     "title": "Groups",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.847,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-005-15-group-actions",
+     "title": "Group actions",
+     "prose_ratio": 0.973,
+     "coverage_ratio": 0.832,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-006-16-homology",
+     "title": "Homology",
+     "prose_ratio": 0.93,
+     "coverage_ratio": 0.79,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-17-cells-and-handle-decompositions",
+     "title": "Cells and handle decompositions",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.818,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-21-the-models-of-hyperbolic-space",
+     "title": "The models of hyperbolic space",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.748,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-22-compactification-and-isometries-of-hyperbolic",
+     "title": "Compactification and isometries of hyperbolic space",
+     "prose_ratio": 0.911,
+     "coverage_ratio": 0.788,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-010-23-isometry-groups-in-dimensions-two-and-three",
+     "title": "Isometry groups in dimensions two and three",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.881,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-011-24-geometry-of-hyperbolic-space",
+     "title": "Geometry of hyperbolic space",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.842,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-012-31-discrete-groups-of-isometries",
+     "title": "Discrete groups of isometries",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.811,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-013-32-polyhedra",
+     "title": "Polyhedra",
+     "prose_ratio": 0.969,
+     "coverage_ratio": 0.839,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-014-33-tessellations",
+     "title": "Tessellations",
+     "prose_ratio": 0.825,
+     "coverage_ratio": 0.929,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-34-fundamental-domains",
+     "title": "Fundamental domains",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.786,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-016-35-geodesic-boundary-non-complete-and-cone-manif",
+     "title": "Geodesic boundary, non-complete, and cone manifolds",
+     "prose_ratio": 0.84,
+     "coverage_ratio": 0.801,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-36-orbifolds",
+     "title": "Orbifolds",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.813,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-41-tubes-and-cusps",
+     "title": "Tubes and cusps",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.821,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-42-the-margulis-lemma",
+     "title": "The Margulis Lemma",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.846,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-020-43-geodesic-spectrum-isometry-groups-and-finite",
+     "title": "Geodesic spectrum, isometry groups, and finite covers",
+     "prose_ratio": 0.991,
+     "coverage_ratio": 0.777,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-021-44-the-bieberbach-theorem",
+     "title": "The Bieberbach Theorem",
+     "prose_ratio": 0.897,
+     "coverage_ratio": 0.758,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-022-51-limit-set",
+     "title": "Limit set",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.847,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-023-52-extensions-of-homotopies",
+     "title": "Extensions of homotopies",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.667,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-024-61-topological-classification",
+     "title": "Topological classification",
+     "prose_ratio": 0.5,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-025-62-geometrisation",
+     "title": "Geometrisation",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.79,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-026-63-curves-on-surfaces",
+     "title": "Curves on surfaces",
+     "prose_ratio": 0.954,
+     "coverage_ratio": 0.91,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-027-64-homotopy-and-isotopy",
+     "title": "Homotopy and isotopy",
+     "prose_ratio": 0.845,
+     "coverage_ratio": 0.867,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-028-65-mapping-class-group",
+     "title": "Mapping class group",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.796,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-029-71-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.278,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-030-72-earthquakes-and-length-functions",
+     "title": "Earthquakes and length functions",
+     "prose_ratio": 0.945,
+     "coverage_ratio": 0.852,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-031-73-fenchelnielsen-coordinates",
+     "title": "Fenchel\u2013Nielsen coordinates",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.878,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-032-74-shear-coordinates",
+     "title": "Shear coordinates",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.701,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-033-82-geodesic-currents",
+     "title": "Geodesic currents",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.803,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-034-83-laminations",
+     "title": "Laminations",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.863,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-035-84-surface-diffeomorphisms",
+     "title": "Surface diffeomorphisms",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.83,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-036-91-algebraic-topology",
+     "title": "Algebraic topology",
+     "prose_ratio": 0.985,
+     "coverage_ratio": 0.825,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-037-92-prime-decomposition",
+     "title": "Prime decomposition",
+     "prose_ratio": 0.955,
+     "coverage_ratio": 0.826,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-038-93-incompressible-surfaces",
+     "title": "Incompressible surfaces",
+     "prose_ratio": 0.988,
+     "coverage_ratio": 0.809,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-039-94-haken-manifolds",
+     "title": "Haken manifolds",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.841,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-040-101-lens-spaces",
+     "title": "Lens spaces",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.836,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-041-102-circle-bundles",
+     "title": "Circle bundles",
+     "prose_ratio": 0.611,
+     "coverage_ratio": 0.883,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-042-103-seifert-manifolds",
+     "title": "Seifert manifolds",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.75,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-043-104-classification",
+     "title": "Classification",
+     "prose_ratio": 0.951,
+     "coverage_ratio": 0.859,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-044-111-heegaard-splittings",
+     "title": "Heegaard splittings",
+     "prose_ratio": 0.553,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-045-112-knots-and-links",
+     "title": "Knots and links",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.742,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-046-113-dehn-surgery",
+     "title": "Dehn surgery",
+     "prose_ratio": 0.907,
+     "coverage_ratio": 0.83,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-047-114-surface-bundles",
+     "title": "Surface bundles",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.745,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-048-115-jsj-decomposition",
+     "title": "JSJ decomposition",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.9,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-049-121-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.183,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-050-122-elliptic-three-manifolds",
+     "title": "Elliptic three-manifolds",
+     "prose_ratio": 0.981,
+     "coverage_ratio": 0.826,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-051-123-flat-three-manifolds",
+     "title": "Flat three-manifolds",
+     "prose_ratio": 0.817,
+     "coverage_ratio": 0.899,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-052-124-the-product-geometries",
+     "title": "The product geometries",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.726,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-053-125-nil-geometry",
+     "title": "Nil geometry",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.624,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-054-127-sol-geometry",
+     "title": "Sol geometry",
+     "prose_ratio": 0.996,
+     "coverage_ratio": 0.862,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-055-128-summary",
+     "title": "Summary",
+     "prose_ratio": 0.811,
+     "coverage_ratio": 0.926,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-056-129-the-geometrisation-conjecture",
+     "title": "The geometrisation conjecture",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.855,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-057-131-volume-of-tetrahedra",
+     "title": "Volume of tetrahedra",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.842,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-058-132-simplicial-volume",
+     "title": "Simplicial volume",
+     "prose_ratio": 0.909,
+     "coverage_ratio": 0.839,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-059-133-mostow-rigidity",
+     "title": "Mostow rigidity",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.786,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-060-141-cusped-three-manifolds",
+     "title": "Cusped three-manifolds",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.895,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-061-142-closed-hyperbolic-three-manifolds",
+     "title": "Closed hyperbolic three-manifolds",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.867,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-062-151-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.829,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-063-152-the-solution-space",
+     "title": "The solution space",
+     "prose_ratio": 0.935,
+     "coverage_ratio": 0.79,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-064-153-proof-of-the-theorem",
+     "title": "Proof of the theorem",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.766,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-065-154-volumes",
+     "title": "Volumes",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.844,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-066-bibliography",
+     "title": "Bibliography",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-067-index",
+     "title": "Index",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

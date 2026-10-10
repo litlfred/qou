@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1105.0091v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A central limit theorem for the characters of the infinite symmetric group and of the infinite Hecke algebra (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1105.0091v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1105.0091&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1105.0091v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1105.0091v1",
+    "content_type": "application/gzip",
+    "sha256": "bfefa393daac0fc63f28a24202abf798ee018c8503df5ca2b4b555952820ba21",
+    "bytes": 164345,
+    "fetched": "2026-10-10T15:04:43+00:00",
+    "files": [
+      {
+        "path": "source/files/cltinfinity.bbl",
+        "role": "bbl",
+        "sha256": "b8ed336ef8582b0b42f4e43ba31ba73856faa42ded7e6dc3af44802baea9ffca",
+        "bytes": 11683
+      },
+      {
+        "path": "source/files/cltinfinity.tex",
+        "role": "tex",
+        "sha256": "8a1288cff04a0d4e1e0323c1a5b46ec02bf75c4d21a41bdaa5cb744b1009d9a7",
+        "bytes": 179124
+      },
+      {
+        "path": "source/files/svjour3.cls",
+        "role": "cls",
+        "sha256": "7334bcfda97ba34d06e28dc546a7bd7801711a1ba7732f03481dafbe0d04f892",
+        "bytes": 47679
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

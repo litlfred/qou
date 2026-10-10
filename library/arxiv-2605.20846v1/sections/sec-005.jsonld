@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2605.20846v1/sections/sec-005",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Spherical Morse Functions",
+  "pageStart": 32,
+  "pageEnd": 38,
+  "contains": [
+    "library/arxiv-2605.20846v1/blocks/prose-sec-005",
+    "library/arxiv-2605.20846v1/blocks/proposition-sec-005-01",
+    "library/arxiv-2605.20846v1/blocks/corollary-sec-005-02",
+    "library/arxiv-2605.20846v1/blocks/remark-sec-005-03",
+    "library/arxiv-2605.20846v1/blocks/corollary-sec-005-04",
+    "library/arxiv-2605.20846v1/blocks/definition-sec-005-05",
+    "library/arxiv-2605.20846v1/blocks/theorem-sec-005-06",
+    "library/arxiv-2605.20846v1/blocks/theorem-sec-005-07",
+    "library/arxiv-2605.20846v1/blocks/proposition-sec-005-08",
+    "library/arxiv-2605.20846v1/blocks/theorem-sec-005-09"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2605.20846v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2605.20846v1/manifest.jsonld",
+  "provenance": "ingested"
+}

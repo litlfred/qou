@@ -1,0 +1,378 @@
+% !TeX root = main.tex
+\section{Twisted sheaves}
+\label{sec:quasi-coher-sheav}
+In this section, $\Delta$ will denote a diagonalizable group scheme (over $\Spec \mathbb{Z}$)
+with character group~$A := \Hom_{\Spec\mathbb{Z}}(\Delta, \GGm)$.
+Recall that $A$ is a finitely generated abelian group.
+We will usually use multiplicative notation for $A$,
+except when we identify it with something like the additive group of $\mathbb{Z}$.
+
+Let $S$ be an algebraic stack.
+By a $\Delta$-gerbe on $S$ we mean a $\Delta_S$-gerbe on
+$S$.
+Fix a $\Delta$-gerbe $\alpha\colon X \to S$.
+Note that $X$ is isomorphic to $\BB \Delta_S$ locally on $S$.
+In particular, $X$ is an algebraic stack,
+and it is reasonable to talk about quasi-coherent sheaves on~$X$.
+
+\begin{remark}
+\label{rem-gerbe-ff}
+Let $\alpha\colon X \to S$ be a $\Delta$-gerbe.
+Note that the structure morphism $\alpha$ is smooth and surjective.
+Indeed, this is true for any algebraic gerbe
+\cite[Proposition~A.2]{bergh2017}.
+Moreover, assume that $Y$ is a $\Delta'$-gerbe over $S$
+and let $\rho\colon X \to Y$ be a morphism over $S$ with induced morphism $\varphi\colon \Delta_S \to \Delta'_S$ on bands.
+Then $\rho$ factors as $X \to X\times\BB \Delta' \to \varphi_*X \cong Y$ by Construction~\ref{cons-gerbe-pf}
+combined with Proposition~\ref{gerbe-functorial-group}.
+Note that the first morphism in the factorization is a
+$\Delta'$-torsor 
+and that the second morphism is a gerbe banded by~$\Delta$.
+In particular, the morphism $\rho$ is faithfully flat.
+See also Remark~\ref{rem-gerbe-concentrated} for cohomological properties of $\rho$.
+\end{remark}
+
+\begin{definition}
+\label{def-homogeneous-sheaf}
+Let $\mathcal{F}$ be an object in $\Mod(X_\fppf, \mathcal{O}_X)$,
+and let $\chi\colon \Delta_S \to \GGms{S}$ be a character.
+Note that $\Delta_X$ acts on $\mathcal{F}$ from the right via the inertial action \eqref{eq-inertial-action}
+and the banding (see Definition~\ref{def-banding}) of $X$,
+and that $\GGm$ acts on $\mathcal{F}$ from the left via the inclusion $\GGms{X} \subset \mathcal{O}_X$.
+We define the \emph{$\chi$-homogeneous subsheaf} $\mathcal{F}_\chi$ of $\mathcal{F}$ by
+\begin{equation}
+  \label{eq:chi-subsheaf}
+  \mathcal{F}_\chi = \{s \in \mathcal{F} \mid 
+  \text{$s\cdot\gamma = \chi(\gamma)s$ for all $\gamma
+  \in \Delta_X$}\}.
+\end{equation}
+An object $\mathcal{F}$ of $\Mod(X_\fppf, \mathcal{O}_X)$ is
+called \emph{$\chi$-homogeneous}
+or \emph{homogeneous of degree $\chi$}
+provided that $\mathcal{F} = \mathcal{F}_\chi$,
+and we denote the full subcategory of $\chi$-homogeneous objects in $\Qcoh(X_\fppf, \mathcal{O}_X)$
+by $\Qcoh_\chi(X_\fppf, \mathcal{O}_X)$.
+\end{definition}
+
+\begin{remark}
+\label{rem:def-Qcoh-chi}
+Note that the expression
+\eqref{eq:chi-subsheaf} does not make sense in the lisse--\'etale
+topos unless $\Delta_X$ is smooth over $X$.
+When we talk about homogeneous sheaves in $\Qcoh(X_\liset, \mathcal{O}_X)$,
+we implicitly transport the subcategory
+$\Qcoh_\chi(X_\fppf, \mathcal{O}_X) \subset \Qcoh(X_\fppf, \mathcal{O}_X)$
+to a subcategory $\Qcoh_\chi(X_\liset, \mathcal{O}_X) \subset \Qcoh(X_\liset, \mathcal{O}_X)$
+under the equivalence obtained by restriction.
+We will usually simply write $\Qcoh_\chi(X)$ for any of these subcategories. 
+\end{remark}
+
+\begin{definition}[Twisted sheaves]
+\label{def:twisted}
+Let $\alpha\colon X \to S$ be a $\GGm$-gerbe and let $\id\colon \GGm \to \GGm$
+be the identity character.
+An \emph{$\alpha$-twisted quasi-coherent sheaf on $S$} is simply an object of $\Qcoh_\id(X)$.
+We will often use the notation $\Qcoh_{\alpha}(S)$ instead
+of $\Qcoh_\id(X)$.
+\end{definition}
+
+\begin{remark}
+\label{rem-twisted-abuse}
+Since the category $\Qcoh_{\alpha}(S)$, up to equivalence,
+obviously depends only on the class of $\alpha$ in $\HH^2(S_\fppf, \GGm)$,
+we will sometimes abuse notation and write $\Qcoh_{\alpha}(S)$
+even if $\alpha$ is just a cohomology class in $\HH^2(S_\fppf, \GGm)$.
+\end{remark}
+
+\begin{remark}
+\label{rem-twisted-2-cocycle}
+Twisted sheaves may also be described using 2-cocycles.
+This approach was taken by C{\u{a}}ld{\u{a}}raru in \cite[Definition~1.2.1]{caldararu2000}.
+That his definition is essentially equivalent to the definition above was proved by
+Lieblich in~\cite[Proposition~2.1.3.11]{lieblich2004}. 
+\end{remark}
+
+We now give a precise formulation of the well-known fact that
+any quasi-coherent sheaf on a suitable gerbe
+decomposes into its homogeneous subsheaves (c.f.~\cite[Proposition~2.2.1.6]{lieblich2004}).
+
+\begin{theorem}
+  \label{t-qc-gerbe-split}
+  Let $S$ be an algebraic stack and let $\alpha\colon X \to S$ be a
+  gerbe 
+  banded by a diagonalizable group $\Delta$.
+  Then $\Qcoh_\chi(X)$ is
+  a Serre subcategory (see~\cite[\sptag{02MO}]{stacks-project}) of $\Qcoh(X)$
+  for any character $\chi$ of $\Delta_S$,
+  and taking the coproduct gives an equivalence
+  \begin{equation}
+    \label{eq-eq-qc-gerbe}
+    \prod_{\chi \in A}\Qcoh_\chi(X) \sira \Qcoh(X),
+    \qquad
+    (\mathcal{F}_\chi)_\chi \mapsto \bigoplus_{\chi \in A}
+    \mathcal{F}_\chi, 
+  \end{equation}
+  of abelian categories, where $A$ denotes the character group of $\Delta$.
+  
+  Furthermore, assume that $\mathcal{F}_\chi$ and $\mathcal{G}_\psi$ are quasi-coherent
+  $\mathcal{O}_X$-modules which are homogeneous for $\Delta_S$-characters $\chi$ and $\psi$, respectively.
+  Then the quasi-coherent $\mathcal{O}_X$-modules
+  \begin{equation}
+    \label{eq-qc-monoidal}
+    \mathcal{F}_\chi \otimes \mathcal{G}_\psi, \qquad
+    \sheafHom(\mathcal{G}_\psi, \mathcal{F}_\chi)
+  \end{equation}
+  are $\chi\psi$- and $\chi\psi^{-1}$-homogeneous,
+  respectively. 
+\end{theorem}
+
+\begin{proof}
+Throughout the proof,
+we work with sheaves in $X_\fppf$,
+which we view as the topos of sheaves on the site of affine schemes over $X$.
+Fix a quasi-coherent sheaf $\mathcal{F}$ of $\mathcal{O}_X$-modules.
+
+  Let $x$ be an object of $X$ lying over an affine scheme $\Spec A$.
+  Then $\mathcal{F}(x)$ is an $A$-module with an $A$-linear right action of the group 
+  $\Delta(A):=\Delta(\Spec A)$ coming from the inertial action via the banding.
+  Given a morphism $f \colon y \ra x$ in $X$ lying over a
+  morphism $\Spec \phi \colon \Spec B \ra \Spec A$,
+  the corresponding morphism $\mathcal{F}(f) \colon \mathcal{F}(x) \ra \mathcal{F}(y)$ 
+  is equivariant with respect to $\Delta(A) \ra \Delta(B)$.
+  Moreover, since $\mathcal{F}$ is quasi-coherent,
+  it induces an isomorphism $B \otimes_{\phi, A} 
+  \mathcal{F}(x) \sira \mathcal{F}(y)$ of $B$-modules.
+
+  By restricting $\mathcal{F}$ to $\Spec A$ along $x\colon \Spec A \to X$ (see \cite[\sptag{06W9}]{stacks-project}),
+  we see that the $A$-module $\mathcal{F}(x)$ can be viewed as
+  a right representation of the diagonalizable $A$-group scheme
+  $\Delta_{\Spec A}$ in the sense of \cite[I.2.7]{Jantzen}.
+  Hence it decomposes as 
+  $\mathcal{F}(x)=\bigoplus_{\chi \in A}\mathcal{F}(x)_\chi$ by 
+  \cite[I.2.11]{Jantzen}.
+
+  If the object $x$ varies, all these decompositions 
+  are compatible and combine into the decomposition 
+  $\mathcal{F}=\bigoplus_{\chi \in A} \mathcal{F}_\chi$ where
+  $\mathcal{F}_\chi$ is the 
+  $\chi$-homogeneous subsheaf of $\mathcal{F}$. 
+  This shows that the functor \eqref{eq-eq-qc-gerbe} is
+  essentially surjective.
+  Similarly, we get a decomposition of morphisms between pairs of quasi-coherent modules
+  (cf. \cite[I.2.11]{Jantzen}),
+  which shows that \eqref{eq-eq-qc-gerbe} is fully faithful.
+  Moreover, any $\Delta_S$-character $\chi$ clearly gives an exact functor $\mathcal{F} \mapsto \mathcal{F}_\chi$.
+  In particular, $\Qcoh_\chi(X)$ is a Serre subcategory of $\Qcoh(X)$.
+
+  The statement that the tensor product of a $\chi$-homogeneous
+  quasi-coherent module with a $\psi$-homogeneous quasi-coherent
+  module is $(\chi+\psi)$-homogeneous is obvious, and
+  the corresponding claim for the internal Hom-functor is then a
+  formal consequence.
+\end{proof}
+
+\begin{remark}
+\label{rem-coprod-prod}
+Note that the canonical morphism
+$
+\bigoplus_{\chi\in A} \mathcal{F}_\chi
+\to
+\prod_{\chi\in A} \mathcal{F}_\chi
+$
+is an isomorphism even if the character group
+$A$ is not finite. Here the product is taken in $\Qcoh(X)$.
+This is a simple consequence of 
+the equivalence 
+\eqref{eq-eq-qc-gerbe} in
+Theorem~\ref{t-qc-gerbe-split}.
+\end{remark}
+
+\begin{proposition}
+\label{p:pull-back-grading}
+Let $S$ be an algebraic stack and 
+$\alpha\colon X \to S$ a gerbe banded by a diagonalizable group
+$\Delta$.
+Let $f\colon T \to S$ be a morphism of algebraic stacks,
+and let $g\colon Y \to X$ denote the base change of $f$ along
+$\alpha$.
+Then the functors
+$$
+g^*\colon \Qcoh(X) \to \Qcoh(Y), \qquad
+g_*\colon \Qcoh(Y) \to \Qcoh(X)
+$$
+respect the decompositions of $\Qcoh(X)$ and~$\Qcoh(Y)$
+into homogeneous objects given in Theorem~\ref{t-qc-gerbe-split}.
+\end{proposition}
+\begin{proof}
+As a formal consequence of adjunction,
+it is enough to verify that one of the functors $g^*$ and~$g_*$ preserves the decomposition.
+The functor $g^*$ is obtained by restriction of the functor
+$g^*\colon\Mod(S_\fppf, \mathcal{O}_S) \to \Mod(T_\fppf, \mathcal{O}_T)$,
+which in turn is just given by restriction of the topos $S_\fppf$.
+In this setting the statement is obvious from the definition of a
+homogeneous sheaf
+(see Definition~\ref{def-homogeneous-sheaf}).
+\end{proof}
+
+\begin{proposition}
+  \label{t:equivalence-epi}
+  Let $X$ and $X'$ be gerbes over $S$ banded by diagonalizable groups $\Delta$ and~$\Delta'$,
+  respectively, and let $\rho\colon X \to X'$ be a morphism over~$S$ with induced morphism $\varphi\colon \Delta_S \to \Delta'_S$ on the bands.
+  Fix a character $\chi'\colon \Delta'_S \to \GGms{S}$, and let $\chi =
+  \chi' \circ \varphi$.
+  Then the pull-back functor $\rho^*$ takes $\chi'$-homogeneous
+  objects to $\chi$-homogeneous 
+  objects and induces an equivalence
+  \begin{equation}
+    \label{eq-rho-restricted}
+    \rho^*\colon 
+    \Qcoh_{\chi'}(X') \sira \Qcoh_{\chi}(X)
+  \end{equation}
+  of categories.
+  In particular, if $X' = S$ then $\rho^*\colon \Qcoh(S) \to \Qcoh(X)$ is fully faithful with 
+  essential image consisting of those objects that are
+  homogeneous for the trivial character. 
+\end{proposition}
+
+\begin{proof}
+By a similar argument as in the proof of Proposition~\ref{p:pull-back-grading},
+we see that $\rho^*$
+takes $\chi'$-homogeneous objects to 
+$\chi$-homogeneous objects.
+First we note that the special case in the last
+sentence in the statement of the proposition follows
+directly from 
+Proposition~\ref{p-gerbe-pb-ff}.
+
+In the general case, we consider the fiber product $X\times_S X'$
+and its projections $p$ and~$q$ to $X$ and~$X'$.
+Note that $X\times_S X'$ is a $\Delta\times\Delta'$-gerbe over~$S$
+and that $p$ and~$q$ induce the projections to $\Delta$ respectively~$\Delta'$
+on the bands.
+
+The projection $p$ is a gerbe banded by the kernel of the
+projection $\Delta\times\Delta' \to \Delta$,
+which is isomorphic to~$\Delta'$.
+In particular, $p^*$ is fully faithful with essential image consisting of sheaves
+on which this kernel acts trivially.
+Similar statements hold for~$q$.
+Hence it follows from the decomposition in Theorem~\ref{t-qc-gerbe-split}
+that we get equivalences
+\begin{align}
+  \label{eq:equiv-p}
+  p^* \colon \Qcoh_\chi(X)
+  & \rightleftarrows \Qcoh_{(\chi,e')}(X \times_S X'/S)\colon p_*,\\
+  \label{eq:equiv-q}
+  q^* \colon \Qcoh_{\chi'}(X')
+  & \rightleftarrows \Qcoh_{(e, \chi')}(X \times_S X'/S)\colon q_*,
+\end{align}
+where $e$ and~$e'$ denote the trivial characters of $\Delta$ and~$\Delta'$,
+respectively.
+
+Note that the gerbe $p$ has a trivialization~$\tau = (\id, \rho)$.
+In particular, there exists a line bundle $\mathcal{L}$ on $X\times_S X'$ such
+that
+\begin{enumerate}
+\item
+\label{it-cond-1}
+$\mathcal{L}$ is $\chi'$-homogeneous with respect to the decomposition induced by~$p$;
+\item
+\label{it-cond-2}
+$\tau^*\mathcal{L} \cong \mathcal{O}_X$.
+\end{enumerate}
+Since $\mathcal{L}$ is a line bundle,
+it must also be homogeneous for some character $(\psi, \psi')$ of $(\Delta\times\Delta')_S$
+with respect to the gerbe $X\times_S X' \to S$.
+By \ref{it-cond-1}, we have $\psi' = \chi'$.
+Furthermore, since $\tau$ induces the morphism $(\id, \varphi)$ on bands,
+we have $\tau^*\mathcal{L} \in \Qcoh_{\psi\chi}(X)$.
+This forces $\psi = \chi^{-1}$ by \ref{it-cond-2},
+so $\mathcal{L} \in \Qcoh_{(\chi^{-1}, \chi')}(X\times_S X'/S)$.
+In particular, it follows from the equivalences \eqref{eq:equiv-p} and~\eqref{eq:equiv-q} and the statement about
+the monoidal structure in Theorem~\ref{t-qc-gerbe-split} that we
+get an equivalence
+$$
+p_*(\mathcal{L}^\vee\otimes q^*(-))\colon \Qcoh_{\chi'}(X') \sira \Qcoh_{\chi}(X).
+$$
+Furthermore, the restriction of the natural transformation 
+\begin{multline*}
+p_*(\mathcal{L}^\vee\otimes q^*(-)) \cong \tau^*p^*p_*(\mathcal{L}^\vee\otimes q^*(-)) \to\\
+\tau^*(\mathcal{L}^\vee\otimes q^*(-)) \cong \tau^*(\mathcal{L}^\vee)\otimes \tau^*q^*(-) \cong \rho^*
+\end{multline*}
+to $\Qcoh_{\chi'}(X')$ is an isomorphism,
+which concludes the proof.
+\end{proof}
+
+Now the following corollaries are easy consequences of Theorem~\ref{t-qc-gerbe-split},
+Proposition~\ref{p:pull-back-grading} and~Proposition~\ref{t:equivalence-epi}.
+\begin{corollary}
+\label{cor:twisted-power}
+Let $S$ be an algebraic stacks and let $\alpha\colon X \to S$ be a gerbe banded by $\Delta$,
+and choose a character $\chi\colon \Delta_S \to \GGms{S}$.
+Then we have an equivalence
+\begin{equation}
+\label{eq-pb-character}
+\Qcoh_{\chi_*\alpha}(S)\cong \Qcoh_\chi(X) 
+\end{equation}
+of categories, where $\chi_*\alpha$ is defined as in Construction~\ref{cons-gerbe-pf}.
+In the particular case when $\Delta = \GGm$,
+this gives the equivalence
+\begin{equation}
+\label{eq-pb-power}
+\Qcoh_{\alpha^d}(S)\cong \Qcoh_{d}(X) 
+\end{equation}
+for any $d \in \mathbb{Z}$, where $\alpha^d$ is defined as in Construction~\ref{cons-gerbe-operations}.
+\end{corollary}
+\begin{proof}
+The equivalence \eqref{eq-pb-character} is the special case of Proposition~\ref{t:equivalence-epi} where
+we take $\rho$ to be $X \to \chi_* X$ as in Construction~\ref{cons-gerbe-pf}.
+The equivalence \eqref{eq-pb-power} is the special case of \eqref{eq-pb-character},
+where we take $\chi = p_n$ as in Construction~\ref{cons-gerbe-operations}.
+\end{proof}
+
+\begin{corollary}
+\label{cor:twisted-tensor}
+Let $S$ be an algebraic stack and let $\alpha\colon X \to S$ and~$\beta\colon Y \to S$ be $\GGm$-gerbes.
+Then the tensor product and the internal Hom-functor on $\Qcoh(X\times_S Y)$ induce functors
+\begin{align*}
+\otimes & \colon \Qcoh_{\alpha}(S) \times \Qcoh_{\beta}(S) \to \Qcoh_{\alpha\beta}(S), \\
+\sheafHom & \colon \Qcoh_{\alpha}(S)^\opp \times \Qcoh_{\beta}(S)
+\to \Qcoh_{\alpha^{-1}\beta}(S).
+\end{align*}
+Furthermore, if $f\colon T \to S$ is an arbitrary morphism of algebraic stacks,
+then we get an induced pair of adjoint functors
+\begin{equation*}
+  f^* \colon \Qcoh_{\alpha}(S) \to \Qcoh_{f^*\alpha}(T),
+  \qquad
+  f_* \colon \Qcoh_{f^*\alpha}(T) \to \Qcoh_{\alpha}(S).
+\end{equation*}
+Recall our conventions regarding $f_*$ and $\sheafHom$ from Notation~\ref{not-sheaf-op}.
+\end{corollary}
+\begin{proof}
+The product $X\times_S Y$ has the structure of a $\GGm\times \GGm$-gerbe
+such that the projections on the factors $X$ and $Y$ induce the projections on the factors
+on the bands.
+By applying Proposition~\ref{t:equivalence-epi} to the two projections $\GGm\times \GGm \to \GGm$,
+we get equivalences
+$$
+\Qcoh_{\alpha}(S) \cong \Qcoh_{(1, 0)}(X\times_S Y), \qquad
+\Qcoh_{\beta}(S) \cong \Qcoh_{(0, 1)}(X\times_S Y),
+$$
+where we have identified the character group of $\GGm$ with~$\mathbb{Z}$.
+By applying Proposition~\ref{t:equivalence-epi} to the multiplication and inversion maps
+given in Construction~\ref{cons-gerbe-operations},
+we obtain the equivalences
+$$
+\Qcoh_{\alpha\beta}(S) \cong \Qcoh_{(1, 1)}(X\times_S Y), \qquad
+\Qcoh_{\alpha^{-1}\beta}(S) \cong \Qcoh_{(-1, 1)}(X\times_S Y),
+$$
+respectively.
+Now the functors $\otimes$ and $\sheafHom$ are obtained from the monoidal structure of $\Qcoh(X\times_S Y)$
+described in Theorem~\ref{t-qc-gerbe-split}.
+The statement about the functors $f^*$ and $f_*$ is an obvious consequence of Proposition~\ref{p:pull-back-grading}.
+\end{proof}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End: 

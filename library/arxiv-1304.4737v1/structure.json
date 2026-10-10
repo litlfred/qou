@@ -7,7 +7,8 @@
   "bytes": 1781362,
   "pages": 18,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -103,6 +104,31 @@
   "likely_scanned": false,
   "toc_entries": 6,
   "sections": 2,
-  "chars_total": 28231
+  "chars_total": 28231,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "toroidal-wall20-prd3+arxiv1.tex",
+   "tex_sections": 6,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.165,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

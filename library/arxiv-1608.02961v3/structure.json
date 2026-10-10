@@ -6,7 +6,8 @@
   "sha256": "ef3805c23133b8f2721db68af09236f70c5f384e2f81e6735930396cca3634b8",
   "bytes": 1184956,
   "pages": 33,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -219,6 +220,76 @@
   "likely_scanned": false,
   "toc_entries": 11,
   "sections": 10,
-  "chars_total": 83149
+  "chars_total": 83149,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "DI.tex",
+   "tex_sections": 5,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.895,
+     "coverage_ratio": 0.632,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-21-equivariant-quantization",
+     "title": "Equivariant quantization",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-22-holomorphic-polarizations-and-cft",
+     "title": "Holomorphic polarizations and CFT",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-3-complex-chern-simons-theory-as-a-tqft",
+     "title": "Complex Chern-Simons theory as a TQFT?",
+     "prose_ratio": 0.576,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-31-symmetries-regularizations-and-the-3d-3d-corr",
+     "title": "Symmetries, regularizations, and the 3d-3d correspondence",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-4-three-connections-to-three-manifold-topology",
+     "title": "Three connections to three-manifold topology",
+     "prose_ratio": 0.079,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-41-hyperbolic-volumes-twisted-torsion-and-large",
+     "title": "Hyperbolic volumes, twisted torsion, and large N",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-42-state-integral-models-and-angle-structures",
+     "title": "State-integral models and angle structures",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-43-embedded-surfaces-and-m2-branes-in-the-3d-ind",
+     "title": "Embedded surfaces and M2 branes in the 3d index (k=0)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-5-the-quantum-modularity-conjecture",
+     "title": "The Quantum Modularity Conjecture",
+     "prose_ratio": 0.966,
+     "coverage_ratio": 0.472,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

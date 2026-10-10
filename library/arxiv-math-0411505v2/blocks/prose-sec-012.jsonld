@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0411505v2/blocks/prose-sec-012",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0411505v2/blocks/prose-sec-012",
   "kind": "prose",
   "title": "Sortings and the Jones polynomial",
   "pageStart": 13,
   "pageEnd": 14,
   "text": "../sections/sec-012-72-sortings-and-the-jones-polynomial.md",
-  "derivedFrom": "library/arxiv-math-0411505v2/manifest",
-  "sourceDocument": "library/arxiv-math-0411505v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0411505v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0411505v2/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -7,141 +7,72 @@ section_number: 11
 pages: 39-41
 source_pdf: 1207.6711v1.pdf
 source_sha256: 320c4301ac66fff1
+text_source: latex
+latex_prose_ratio: 0.913
+latex_coverage_ratio: 0.88
 doc_brief: "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were"
 ---
-We now prove that the bottom row of diagram (1.5) consists of one-one correspondences.
-The idea is to ﬁrst prove that a shape assignment determines a natural cocycle on each
-doubly truncated simplex. This is a consequence of the internal gluing equations. The face
-and edge equations imply that the cocycles glue together to a cocycle on M; the middle
-edges glue together because of the face equations, and the edge equations imply that we can
-ﬁll in the prisms.
-Lemma 11.1. If two shape assignments z and w agree on two faces i and j, then z = w,
-i.e. ifze
-s =we
-s whenei =si = 0 orej =sj = 0, thenze
-s =we
-s for all (s,e )∈ ∆3
-n−2(Z)× ˙∆3
-2(Z).
-40 STA VROS GAROUF ALIDIS, MATTHIAS GOERNER, AND CHRISTIAN K. ZICKERT
-Proof. We may assume that z and w agree on face 2 and 3. It is enough to prove that
-z1100
-s = w1100
-s for all s = (s0,s 1,s 2,s 3)∈ ∆3
-n−2(Z). By assumption, this holds if either s2
-or s3 is 0. Suppose by induction that z1100
-s = w1100
-s for all s with s2 +s3 < k, and let
-s∈ ∆3
-n−2(Z) be a subsimplex with s2 +s3 =k. Since the result holds, when either s2 ors3 is
-0, we may assume that s =α + 0011, withα∈ ∆3
-n−4(Z). Let t =s + 1100. By Lemma 6.10,
-z and w satisfy the internal gluing equations, i.e. we have
-(11.1)
-z0011
-α+1100z0101
-α+1010z0110
-α+1001z1001
-α+0110z1010
-α+0101z1100
-s =w0011
-α+1100w0101
-α+1010w0110
-α+1001w1001
-α+0110w1010
-α+0101w1100
-s ,
-which equals 1. Note that for all terms except z1100
-s and w1100
-s , the lower index satisﬁes
-s2 +s3 <k . By induction, each term z1111−I
-α+I equalsw1111−I
-α+I . Hence z1100
-s =w1100
-s , completing
-the induction. □
-Lemma 11.2. The factorization of the middle edges is unique, i.e. if
-(11.2)
-n−1∏
-k=1
-(n−k∏
-i=1
-xi(1)
-n−k−1∏
-i=1
-Hi(ak,i)
-)
-=
-n−1∏
-k=1
-(n−k∏
-i=1
-xi(1)
-n−k−1∏
-i=1
-Hi(bk,i)
-)
-,
-then ak,i =bk,i for all k,i .
-Proof. Suppose (11.2) holds. In particular, all diagonal entries are equal. Hence, as in
-Remark 10.17, the equality ∏n−2
-i=l
-∏n−1−i
-k=1 ak,i =∏n−2
-i=l
-∏n−1−i
-k=1 bk,i holds for all l = 1,...,n .
-The result now follows by induction. □
-Proposition 11.3. The map Z from generic decorations on ∆ 3
-n to shape assignments on
-∆3
-n is surjective.
-Proof. Let z be a shape assignment. We wish to construct a decoration D withZ(D) = z.
-Let D = (B,q 1B,β 012q1B,γ 012β013q1B) and let z′ =Z(D). By Lemma 11.1, it is enough
-to prove that z′ agrees with z on face 2 and 3. We prove this for face 3 ( s3 = 0), face 2
-being similar. We use induction on s2. Let β′ and γ′ denote the labelings of the natural
-cocycle of D. Let Xt and X′
-t denote the X coordinates of z and z′. Note that β′
-012 = β012
-and γ′
-012 = γ012. Since γ′
-012 = γ012, the equality z1100
-s = w1100
-s holds for s2 = 0 proving the
-induction start. Since β′
-012 =β012, it follows from Lemma 11.2 that Xt =X′
-t for all t on face
-2 and 3. Now suppose by induction that z1100
-s = w1100
-s holds for s2 < k. Let t = s + 1100.
+\label{sec:ReconstructRep}
+
+We now prove that the bottom row of diagram~\eqref{eqn:DiagramIntro} consists of one-one correspondences.
+The idea is to first prove that a shape assignment determines a natural cocycle on each doubly truncated simplex. This is a consequence of the internal gluing equations. The face and edge equations imply that the cocycles glue together to a cocycle on $M$; the middle edges glue together because of the face equations, and the edge equations imply that we can fill in the prisms.
+
+\begin{lemma}\label{lemma:AgreeonFaces}
+If two shape assignments $z$ and $w$ agree on two faces $i$ and $j$, then $z=w$, i.e.~if $z_s^e=w_s^e$ when $e_i=s_i=0$ or $e_j=s_j=0$, then $z_s^e=w_s^e$ for all $(s,e)\in\Delta^3_{n-2}(\Z)\times\dot\Delta^3_2(\Z)$.
+\end{lemma}
+
+\begin{proof}
+We may assume that $z$ and $w$ agree on face $2$ and $3$. It is enough to prove that $z_s^{1100}=w_s^{1100}$ for all $s=(s_0,s_1,s_2,s_3)\in\Delta^3_{n-2}(\Z)$. By assumption, this holds if either $s_2$ or $s_3$ is $0$. Suppose by induction that $z_s^{1100}=w_s^{1100}$ for all $s$ with $s_2+s_3<k$, and let $s\in\Delta^3_{n-2}(\Z)$ be a subsimplex with $s_2+s_3=k$. Since the result holds, when either $s_2$ or $s_3$ is $0$, we may assume that $s=\alpha+0011$, with $\alpha\in\Delta^3_{n-4}(\Z)$. Let $t=s+1100$. By Lemma~\ref{lemma:InternalEquation}, $z$ and $w$ satisfy the internal gluing equations, i.e.~we have
+\begin{equation}
+z^{0011}_{\alpha+1100}z^{0101}_{\alpha+1010}z^{0110}_{\alpha+1001}z^{1001}_{\alpha+0110}z^{1010}_{\alpha+0101}z^{1100}_s=w^{0011}_{\alpha+1100}w^{0101}_{\alpha+1010}w^{0110}_{\alpha+1001}w^{1001}_{\alpha+0110}w^{1010}_{\alpha+0101}w^{1100}_s,
+\end{equation}
+which equals $1$. Note that for all terms except $z_s^{1100}$ and $w_s^{1100}$, the lower index satisfies $s_2+s_3<k$. By induction, each term $z^{1111-I}_{\alpha+I}$ equals $w^{1111-I}_{\alpha+I}$. Hence $z^{1100}_s=w_s^{1100}$, completing the induction. 
+\end{proof}
+
+\begin{lemma}\label{lemma:UniqueFactorization}
+The factorization of the middle edges is unique, i.e.~if
+\begin{equation}\label{eq:UniqueFactorization}
+\prod_{k=1}^{n-1}\left(\prod^{n-k}_{i=1}x_i(1)\prod_{i=1}^{n-k-1}H_i(a_{k,i})\right)=\prod_{k=1}^{n-1}\left(\prod^{n-k}_{i=1}x_i(1)\prod_{i=1}^{n-k-1}H_i(b_{k,i})\right),
+\end{equation}
+then $a_{k,i}=b_{k,i}$ for all $k,i$.
+\end{lemma}
+
+\begin{proof}
+Suppose~\eqref{eq:UniqueFactorization} holds. In particular, all diagonal entries are equal. Hence, as in Remark~\ref{rm:DiagonalEntries}, the equality $\prod_{i=l}^{n-2}\prod_{k=1}^{n-1-i} a_{k,i}=\prod_{i=l}^{n-2}\prod_{k=1}^{n-1-i} b_{k,i}$ holds for all $l=1,\dots,n$. The result now follows by induction.
+
+
+
+
+
+\end{proof}
+
+\begin{proposition}\label{prop:ZisSurjective}
+The map $\mathcal Z$ from generic decorations on $\Delta^3_n$ to shape assignments on $\Delta^3_n$ is surjective.
+\end{proposition}
+
+\begin{proof}
+Let $z$ be a shape assignment. We wish to construct a decoration $D$ with $\mathcal Z(D)=z$. Let $D=(B, q_1B, \beta_{012} q_1 B, \gamma_{012} \beta_{013} q_1 B)$ and let $z'=\mathcal Z(D)$. By Lemma~\ref{lemma:AgreeonFaces}, it is enough to prove that $z'$ agrees with $z$ on face $2$ and $3$. 
+We prove this for face $3$ ($s_3=0$), face $2$ being similar. We use induction on $s_2$. Let $\beta'$ and $\gamma'$ denote the labelings of the natural cocycle of $D$. Let $X_t$ and $X'_t$ denote the $X$ coordinates of $z$ and $z'$. Note that $\beta'_{012}=\beta_{012}$ and $\gamma'_{012}=\gamma_{012}$. Since $\gamma'_{012}=\gamma_{012}$, the equality $z_s^{1100}=w_s^{1100}$ holds for $s_2=0$ proving the induction start. Since $\beta'_{012}=\beta_{012}$, it follows from 
+Lemma~\ref{lemma:UniqueFactorization} that $X_t=X'_t$ for all $t$ on face $2$ and $3$.
+Now suppose by induction that $z_s^{1100}=w_s^{1100}$ holds for $s_2<k$. Let $t=s+1100$.  
 We have
-(11.3) −z1100
-s z1010
-t−1010z0110
-t−0110 =Xt =X′
-t =−z′1100
-s z′1010
-t−1010z′0110
-t−0110.
-By induction, z1010
-t−1010 = z′1010
-t−1010 and z0110
-t−0110 = z′0110
-t−0110, so we must also have z1100
-s = z′1100
-s .
-This proves the result. □
-Theorem 11.4. The bottom row of diagram (1.5) consists of one-one correspondences.
-Proof. We ﬁrst prove this for a simplex. The map Lαβγ is bijective by Remark 9.14. In-
-jectivity ofZ follows from Theorem 10.14, and surjectivity was proved in Proposition 11.3.
-Now supposez is a shape assignment on (M,T ). We must prove thatz determines a generic
-decoration, or equivalently a natural cocycle. By Proposition 11.3 z determines a natural
-cocycle on each doubly truncated simplex. We must prove that these ﬁt together to form
-GLUING EQUATIONS FOR PGL( n, C)-REPRESENTATIONS OF 3-MANIFOLDS 41
-a cocycle on M. The labelings of long edges obviously match up, and by (10.22) and Re-
-mark 10.10, the middle edges match up if and only if the face equations are satisﬁed. Now
-all that is left to prove is that the induced labeling on the prisms are cocycles. This is a
-direct consequence of the edge equations. □
-Remark 11.5. It follows from Theorem 11.4 that (10.22) gives an explicit map from shape
-assignments to cocycles. Combined with Remark 9.14 this gives explicit inverses of Z and
-Lαβγ. Similarly, we have explicit inverses of C andLαβ via (10.4).
+\begin{equation}
+-z_s^{1100}z_{t-1010}^{1010}z^{0110}_{t-0110}=X_t=X'_t=-z_s'^{1100}z_{t-1010}'^{1010}z'^{0110}_{t-0110}.
+\end{equation}
+By induction, $z_{t-1010}^{1010}=z_{t-1010}'^{1010}$ and $z_{t-0110}^{0110}=z_{t-0110}'^{0110}$, so we must also have
+$z_s^{1100}=z_s'^{1100}$. This proves the result.
+\end{proof}
+
+
+\begin{theorem}\label{thm:One-One}
+The bottom row of diagram~\eqref{eqn:DiagramIntro} consists of one-one correspondences. 
+\end{theorem}
+
+\begin{proof}
+We first prove this for a simplex. The map $\mathcal L_{\alpha\beta\gamma}$ is bijective by Remark~\ref{rm:CocycleToDecoration}. Injectivity of $\mathcal Z$ follows from Theorem~\ref{thm:NaturalCocycleShapes}, and surjectivity was proved in Proposition~\ref{prop:ZisSurjective}. Now suppose $z$ is a shape assignment on $(M,\T)$. We must prove that $z$ determines a generic decoration, or equivalently a natural cocycle. By Proposition~\ref{prop:ZisSurjective} $z$ determines a natural cocycle on each doubly truncated simplex. We must prove that these fit together to form a cocycle on $M$. The labelings of long edges obviously match up, and by \eqref{eq:NaturalCocycleFormula} and Remark~\ref{rm:HalfofFaceEq}, the middle edges match up if and only if the face equations are satisfied. 
+Now all that is left to prove is that the induced labeling on the prisms are cocycles. This is a direct consequence of the edge equations.
+\end{proof}
+
+\begin{remark} 
+It follows from Theorem~\ref{thm:One-One} that \eqref{eq:NaturalCocycleFormula} gives an explicit map from shape assignments to cocycles. Combined with Remark~\ref{rm:CocycleToDecoration} this gives explicit inverses of $\mathcal Z$ and $\mathcal L_{\alpha\beta\gamma}$. Similarly, we have explicit inverses of $\mathcal C$ and $\mathcal L_{\alpha\beta}$ via \eqref{eq:betaTrunc}.
+\end{remark}

@@ -7,442 +7,166 @@ section_number: 3
 pages: 10-15
 source_pdf: 2011.13340v1.pdf
 source_sha256: e73876ed2c923608
+text_source: latex
+latex_prose_ratio: 0.946
+latex_coverage_ratio: 0.72
 doc_brief: "A Matrix Bernstein Inequality for Strong Rayleigh Distributions* — The Entropy method provides a powerful framework for provin g scalar concentration in- equalities by establishing functional"
 ---
-In this section we show how to use Matrix valued Poincare inequ alities to obtain matrix Bernstein
-style inequalities.
-We will need a well-known monotonicity property of the trace exponential [Tro15]
-Lemma 3.1. For any monotone function f , for any Hermitian matrices A and H such that A ≼H, then
-Tr
-[
-f (A)
-]
-⩽ Tr
-[
-f (H)
-]
-The next lemma characterizes Jensen’s inequality for matri ces. The ﬁrst statement about
-operator Jensen’s inequality for matrices can be found in [ Tro15], while the Jensen inequality for
-the trace of a convex function is from [ HP03]
-Lemma 3.2. Given a decomposition of the identity of the form
-n∑
-i=1
-K∗
-i Ki = I and an operator convex function
-f , we have for any set of Hermitian matrices A 1, . . . ,An,
-f
-( n∑
-i
-K∗
-i AiKi
-)
-≼
-n∑
-i
-K∗
-i f (Ai)Ki
-For any convex function, we also have
-T r
-[
-f
-( n∑
-i
-K∗
-i AiKi
-) ]
-⩽ T r
-[n∑
-i=1
-K∗
-i f ((Ai)Ki
-]
-10
-Finally , we will need the following matrix identities which we will use to establish a mean
-value theorem for the Dirichlet form.
-Fact 3.3. [Eqn 5.35 in [ Bha07]] Given any positive semi-deﬁnite A, B, any Hermitian X and any unitarily
-invariant norm ‖ · ‖, we have
-‖‖‖‖‖
-1∫
-0
-AtXB1−tdt
-‖‖‖‖‖⩽ 1
-2 ‖AX + XB‖
-Fact 3.4. [Eqn 6.42 in [ Bha07]] For any Hermitian X, Y, we have
-eX − eY =
-1∫
-0
-etX(X − Y)e(1−t)Ydt
-Lemma 3.5. Given random Hermitian matrices X and Y, we have
-T r
-[
-E[(eX − eY)2]
-] p
-⩽ 1
-2 E
-[
-‖X − Y‖2pT r[e2pX + e2pY]
-]
-Proof. We have
-T r
-[
-E[(eX − eY)2]
-] p
-⩽ E
-[
-T r
-[
-(eX − eY)2p]
-(using Lemma 3.2)
-= E
-[
-T r
-[
-1∫
-0
-etX(X − Y)e(1−t)Y] 2p]
-(from Fact 3.4)
-= E
-[‖‖‖‖‖
-1∫
-0
-etX(X − Y)e(1−t)Y
-‖‖‖‖‖
-2p
-2p
-]
-⩽ E
-[(1
-2
-‖‖‖eX(X − Y) + (X − Y)eY‖‖‖2p
-) 2p]
-(using Fact 3.3)
-⩽ E
-[1
-22p
-( ‖‖‖eX(X − Y)
-‖‖‖2p +
-‖‖‖(X − Y)eY‖‖‖2p
-) 2p]
-(using triangle inequality)
-⩽ E
-[1
-2
-( ‖‖‖eX(X − Y)
-‖‖‖
-2p
-2p +
-‖‖‖(X − Y)eY‖‖‖
-2p
-2p
-)]
-(using (a + b)p ⩽ 2p−1(ap + bp) )
-⩽ 1
-2 E
-[
-‖X − Y‖2p(
-‖eX‖2p
-2p + ‖eY‖2p
-2p
-)
-= 1
-2 E
-[
-‖X − Y‖2pT r
-[
-e2pX + e2pY] ]
-□
-We now use this lemma to derive an upper bound on the trace powe r of the Dirichlet form.
-11
-Lemma 3.6. Given a reversible Markov Chain with transition matrix P ∈ RΩ×Ω and stationary measure
-π ∈ RΩ, any function F : Ω→ Sd, we have
-T r
-[
-E(eF, eF)
-] p
-⩽ v(F)2pT r[Ex∼π[e2pF(x)]]
-where v(F) = max
-x,y∈Ω
-x∼y
-‖F(x) − F(y)‖
-Proof. Consider the trace power of the Dirchlet form,
-T r
-[
-E(eF, eF)
-] p
-= T r
-[∑
-x∈Ω
-πx
-∑
-y∈Ω
-Pxy
-(
-eF(x) − eF(y)) 2] p
-⩽
-∑
-x∈Ω
-πxT r
-[∑
-y∈Ω
-Pxy
-(
-eF(x) − eF(y)) 2] p
-(using Lemma 3.2)
-⩽ 1
-2
-∑
-x∈Ω
-πx
-∑
-y∈Ω
-Pxy
-(
-‖F(x) − F(y)‖2pT r
-[
-e2pF(x) + e2pF(y)])]
-(using Lemma 3.5 with X = F(x) and Y = F(y) )
-⩽ v(F)2p
-2
-∑
-x,y∈Ω
-πxPxyT r[e2pF(x) + e2pF(y)]
-⩽ v(F)2p
-∑
-x∈Ω
-πxT r[e2pF(x)] (using reversibility of P)
-= v(F)2pT r[Ex∼π[e2pF(x)]]
-□
-We are ﬁnally ready to use our Matrix valued Poincare inequalit y to prove our matrix concen-
-tration inequality . A standard method to prove matrix concentration uses the exponential moment
-generating function (mgf) which we state next.
-Proposition 3.7. [Matrix Laplace T ransform Method [T ro15]] Let X ∈ Hd be a random matrix with trace
-mgf m(θ) = T r[eθ(X−E[X])]. For every t ∈ R,
-Pr[‖X − E[X]‖/greaterorequalslantt] ⩽ 2 inf
-θ>0
-e−θt+log(m(θ))
-Hence, to get our concentration inequality , we just need to g et a bound on the moment gener-
-ating function.
-Theorem 3.8. Given a reversible Markov Chain with transition matrix P ∈ RΩ×Ω and its stationary
-distribution π ∈ RΩ, any function F : Ω → Sd such that it satisﬁes the Matrix valued Poincare inequality
-with constant λ, we have
-Prx∼π[‖F(x) − Ey∼π[F(y)]‖/greaterorequalslantt] ⩽ 2de−t2/4(v(F)2/λ+tv(F)/
-√
-λ)
-where v(F) = max
-x,y∈Ω
-x∼y
-‖F(x) − F(y)‖
-12
-Proof. For notational convenience, we will write λ as the inverse of the actual λ value. Hence,
-our Poincare inequality now looks like V ar[F] ≼λE[F, F]To use Proposition 3.7, we need an upper
-bound on the mgf. The statement we want to prove, via inductio n, is
-(1 − λv(F)2Sk)T r
-[
-E[eF(x)]
-]
-⩽ T r[E[eF(x)/2k
-]]2k
-(3.1)
-where λv(F)2 ⩽ 1 and Sk =
-k∑
-i=1
-1/2i which tends to 1 as k → ∞ . Assuming the induction
-hypothesis, consider the RHS where n = 2k
-T r[E[eF(x)/n]]n = T r[
-∑
-x∈Ω
-πx(1 + F(x)/n + (F(x)/n)2/2! + . . .)]n
-= T r[(1 + E[F(x)]/n)n] → T r[eE[F(x)]]
-where the second inequality follows as we can ignore the seco nd order terms and beyond for
-n → ∞. Now notice that for any β > 0, we have v(βF) = βv(F). Now taking θF in place of F and the
-requirement of λv(θF)2 ⩽ 1 translates to θ2λv(F)2 ⩽ 1, we plug this into Equation 3.1, to get
-T r
-[
-Ex∼π[eθF(x)]
-]
-⩽ T r[eθEx∼π[F(x)]]
-1 − θ2λv(F)2 (3.2)
-Now, using Equation3.2 with F being F−E[F] which is zero mean and noticing thatv(F−E[F]) = v(F),
-we get that
-T r
-[
-Ex∼π[eθF(x)]
-]
-⩽ d
-1 − θ2λv(F)2 (3.3)
-Now, in the RHS for Proposition 3.7, we have
-2 inf
-θ>0
-e−θt+log m(θ) ⩽ 2 inf
-θ2λv(F)2⩽ 1
-e−θt+log m(θ)
-= 2d inf
-θ2λv(F)2⩽ 1
-e−θt−log(1−θ2λv(F)2)
-⩽ 2d inf
-θ2λv(F)2⩽ 1
-e
-−θt+λv(F)2θ2+ λ2v(F)4θ4
-2(1−λv(F)2θ2)
-Diﬀerentiating w.r.t θ and setting to zero, we get that the probability is upper boun ded by
-2de−t2/4(λv(F)2)+t
-√
-λv(F)) and we would be done.
-Now, it just remains to prove the induction statement. Our pr oof proceeds by a doubling trick
-to transform the variance of eF to the exponential moment generating function. We ﬁrst prove the
-base case. Consider k = 1 and consider the function f = F/2. Using the matrix valued Poincare
-inequality on ef, we have
-V ar(ef) = λE(ef, ef)
-=⇒ E[e2f] ≼(E[ef])2 + E(ef, ef)
-E[eF] ≼(E[ef])2 + E(ef, ef)
-13
+In this section we show how to use Matrix valued Poincare inequalities to obtain matrix Bernstein style inequalities.
+
+We will need a well-known monotonicity property of the trace exponential \cite{TroppIntro15}
+\begin{lemma}
+  \label{lem:trMonotone}
+  For any monotone function $f$, for any Hermitian matrices $\bf{A}$ and $\bf{H}$ such that $\bf{A} \preceq \bf{H}$, then $\Tr\big[f(\mathbf{A})\big] \leq \Tr\big[ f(\mathbf{H})\big]$
+\end{lemma}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The next lemma characterizes Jensen's inequality for matrices. The first statement about operator Jensen's inequality for matrices can be found in \cite{TroppIntro15}, while the Jensen inequality for the trace of a convex function is from \cite{HP03}
+\begin{lemma}\label{lem:jensen} Given a decomposition of the identity of the form $\sum\limits_{i=1}^{n}\mathbf{K}_i^{*}\mathbf{K}_i = \mathbf{I}$ and an operator convex function $f$, we have for any set of Hermitian matrices $A_1,\ldots,A_n$,
+  \begin{align*}
+    f\bigg(\sum\limits_{i}^{n}\mathbf{K}_i^{*} \mathbf{A}_i\mathbf{K}_i\bigg) \preceq \sum\limits_{i}^{n}\mathbf{K}_i^{*}f(\mathbf{A}_i)\mathbf{K}_i
+  \end{align*}
+  For any convex function, we also have
+  \begin{align*}
+    \mathsf{Tr}\bigg[f\big(\sum\limits_{i}^{n}\mathbf{K}_i^{*}\mathbf{A}_i \mathbf{K}_i\big)\bigg]\leq \mathsf{Tr}\bigg[\sum\limits_{i=1}^{n}\mathbf{K}_i^{*}f(\mathbf({A}_i)\mathbf{K}_i\bigg]
+  \end{align*}
+\end{lemma}
+
+Finally, we will need the following matrix identities which we will use to establish a mean value theorem for the Dirichlet form.
+
+\begin{fact}{[Eqn 5.35 in \cite{Bhatia07}]}\label{fct:intNorm} Given any positive semi-definite $\mathbf{A},\mathbf{B}$, any Hermitian $\mathbf{X}$ and any unitarily invariant norm $\| \cdot \|$, we have
+  \begin{align*}
+    \bigg\|\small\intop_{0}^{1}\mathbf{A}^{t}\mathbf{XB}^{1-t}\mathrm{dt}\bigg\| \leq \frac{1}{2}\|\mathbf{AX} + \mathbf{XB}\|
+  \end{align*}
+\end{fact}
+
+\begin{fact}{[Eqn 6.42 in \cite{Bhatia07}]}\label{fct:duhamel} For any Hermitian $\mathbf{X},\mathbf{Y}$, we have \begin{align*}
+  e^\mathbf{X}-e^{\mathbf{Y}} = \intop_{0}^{1}e^{t\mathbf{X}}(\mathbf{X}-\mathbf{Y})e^{(1-t)\mathbf{Y}}\mathrm{dt}
+\end{align*}
+\end{fact}
+\begin{lemma}\label{lem:var} Given random Hermitian matrices X and Y, we have
+  \begin{align*}
+    \mathsf{Tr}\big[ \mathbb{E}[(e^\mathbf{X}-e^\mathbf{Y})^2]\big]^p\leq \frac{1}{2}\mathbb{E}\big[\|\mathbf{X}-\mathbf{Y}\|^{2p}\mathsf{Tr}[e^{2p\mathbf{X}}+e^{2p\mathbf{Y}}]\big]
+  \end{align*}
+\end{lemma}
+\begin{proof}
+  We have
+  \begin{align*}
+    \mathsf{Tr}\big[ \mathbb{E}[(e^\mathbf{X}-e^\mathbf{Y})^2]\big]^p&\leq \mathbb{E}\big[\mathsf{Tr}\big[ (e^\mathbf{X}-e^\mathbf{Y})^{2p}\big] \ \ \ \text{(using Lemma \ref{lem:jensen})}\\
+    &=\mathbb{E}\big[\mathsf{Tr}\big[ \intop_{0}^{1}e^{t\mathbf{X}}(\mathbf{X}-\mathbf{Y})e^{(1-t)\mathbf{Y}}\big]^{2p}\big] \ \ \ \text{(from Fact \ref{fct:duhamel}) }\\
+    &=\mathbb{E}\bigg[\bigg\|\intop_{0}^{1}e^{t\mathbf{X}}(\mathbf{X}-\mathbf{Y})e^{(1-t)\mathbf{Y}}\bigg\|_{2p}^{2p}\bigg]&\\
+    &\leq \mathbb{E}\bigg[\bigg(\frac{1}{2}\big\|e^{\mathbf{X}}(\mathbf{X-Y})+(\mathbf{X-Y})e^{\mathbf{Y}}\big\|_{2p}\bigg)^{2p}\bigg] \ \ \ \text{(using Fact \ref{fct:intNorm})}\\
+    &\leq \mathbb{E}\bigg[\frac{1}{2^{2p}}\bigg(\big\|e^{\mathbf{X}}(\mathbf{X-Y})\big\|_{2p}+\big\|(\mathbf{X-Y})e^{\mathbf{Y}}\big\|_{2p}\bigg)^{2p}\bigg]\ \ \ \text{(using triangle inequality)}\\
+    &\leq \mathbb{E}\bigg[\frac{1}{2}\bigg(\big\|e^{\mathbf{X}}(\mathbf{X-Y})\big\|_{2p}^{2p} + \big\|(\mathbf{X-Y})e^{\mathbf{Y}}\big\|_{2p}^{2p} \bigg)\bigg] \ \ \ \text{(using }(a+b)^p \leq 2^{p-1}(a^p + b^p) \ )\\
+    &\leq \frac{1}{2}\mathbb{E}\bigg[\|X-Y\|^{2p}\big(\|e^{\mathbf{X}}\|_{2p}^{2p}+\|e^{\mathbf{Y}}\|_{2p}^{2p}\big)\\
+    &=\frac{1}{2}\mathbb{E}\bigg[\|X-Y\|^{2p}\mathsf{Tr}\big[e^{2p\mathbf{X}}+e^{2p\mathbf{Y}}\big]\bigg]
+  \end{align*}
+\end{proof}
+We now use this lemma to derive an upper bound on the trace power of the Dirichlet form.
+\begin{lemma}\label{lem:dirichlet} Given a reversible Markov Chain with transition matrix $\mathbf{P}\in\mathbb{R}^{\Omega\times \Omega}$ and stationary measure $\mathbf{\pi}\in\mathbb{R}^{\Omega}$, any function $\mathbf{F} : \Omega \rightarrow \mathbb{S}_d$, we have
+  \begin{align*}
+    \mathsf{Tr}\big[\mathcal{E}(e^\mathbf{F}, e^\mathbf{F})\big]^p \leq v(F)^{2p} \mathsf{Tr}[\mathbb{E}_{x \sim \pi}[e^{2p\mathbf{F(x)}}]]
+  \end{align*}
+  where $v(F) = \max\limits_{\substack{x,y\in\Omega\\x\sim y}}\|\mathbf{F(x)}-\mathbf{F(y)}\|$
+\end{lemma}
+\begin{proof}
+
+  Consider the trace power of the Dirchlet form,
+  \begin{align*}
+    \mathsf{Tr}\big[\mathcal{E}(e^\mathbf{F},e^\mathbf{F})\big]^p &= \mathsf{Tr}\big[\sum\limits_{x \in \Omega} \mathbb{\pi}_x \sum\limits_{y \in \Omega}\mathbf{P}_{xy}\big(e^\mathbf{F(x)}-e^\mathbf{F(y)}\big)^2\big]^p\\
+     &\leq \sum\limits_{x\in\Omega}\pi_x\mathsf{Tr}\big[\sum\limits_{y \in \Omega}\mathbf{P}_{xy}\big(e^\mathbf{F(x)}-e^\mathbf{F(y)}\big)^2\big]^p \ \ \text{(using Lemma \ref{lem:jensen})}\\
+    &\leq \frac{1}{2}\sum\limits_{x\in\Omega}\pi_x\sum\limits_{y\in\Omega}\mathbf{P}_{xy}\big(\|\mathbf{F(x)}-\mathbf{F(y)}\|^{2p}\mathsf{Tr}\big[e^{2p\mathbf{F(x)}}+e^{2p\mathbf{F(y)}}\big]\big)\big]\ \ \text{(using Lemma \ref{lem:var} with } \mathbf{X} = \mathbf{F(x)} \text{ and } \mathbf{Y} = \mathbf{F(y)}\text{ )}\\
+    &\leq \frac{v(F)^{2p}}{2}\sum\limits_{x,y \in \Omega}\pi_x \mathbf{P}_{xy}\mathsf{Tr}[e^{2p\mathbf{F}(x)}+e^{2p\mathbf{F(y)}}]\\
+    &\leq v(F)^{2p} \sum\limits_{x\in\Omega}\pi_x \mathsf{Tr}[e^{2p\mathbf{F(x)}}] \ \ \text{(using reversibility of \textbf{P})}\\
+    &=v(F)^{2p} \mathsf{Tr}[\mathbf{E}_{x \sim \pi}[e^{2p\mathbf{F(x)}}]]
+\end{align*}
+\end{proof}
+We are finally ready to use our Matrix valued Poincare inequality to prove our matrix concentration inequality. A standard method to prove matrix concentration uses the exponential moment generating function (mgf) which we state next.
+\begin{proposition}{[Matrix Laplace Transform Method \cite{TroppIntro15}]}\label{prop:mgf} Let $\mathbf{X} \in \mathbb{H}_d$ be a random matrix with trace mgf $m(\theta) = \mathsf{Tr}[e^{\theta (\mathbf{X}-\mathbb{E}[\mathbf{X}])}]$. For every $t \in \mathbb{R}$,
+  \begin{align*}
+    \mathsf{Pr}[\|\mathbf{X}-\mathbb{E}[\mathbf{X}]\|\geq t] \leq 2 \inf\limits_{\theta > 0}e^{-\theta t + \log(m(\theta))}
+  \end{align*}
+\end{proposition}
+Hence, to get our concentration inequality, we just need to get a bound on the moment generating function.
+\begin{theorem}\label{thm:mgfBound}
+Given a reversible Markov Chain with transition matrix $\mathbf{P}\in\mathbb{R}^{\Omega \times \Omega}$ and its stationary distribution $\pi\in \mathbb{R}^{\Omega}$, any function $\mathbf{F} : \Omega \rightarrow \mathbb{S}_d$ such that it satisfies the Matrix valued Poincare inequality with constant $\lambda$, we have
+\begin{align*}\mathsf{Pr}_{x \sim \pi}[\|\mathbf{F}(x)-\mathbb{E}_{y \sim \pi}[\mathbf{F(y)}]\|\geq t] \leq 2d e^{-t^2/4(v(\mathbf{F})^2/\lambda + tv(\mathbf{F})/\sqrt{\lambda})}\end{align*}
+  where $v(F) = \max\limits_{\substack{x,y\in\Omega\\x\sim y}}\|\mathbf{F(x)}-\mathbf{F(y)}\|$
+\end{theorem}
+
+\begin{proof}
+  For notational convenience, we will write $\lambda$ as the inverse of the actual $\lambda$ value. Hence, our Poincare inequality now looks like $\mathbf{Var}[\mathbf{F}]\preceq\lambda\mathcal{E}[\mathbf{F},\mathbf{F}]$To use Proposition \ref{prop:mgf}, we need an upper bound on the mgf. The statement we want to prove, via induction, is \begin{equation}\label{eqn:indStmt}
+  (1-\lambda v(F)^2 S_k )\mathsf{Tr}\big[\mathbb{E}[e^{\mathbf{F(x)}}]\big]\leq  \mathsf{Tr}[\mathbb{E}[e^{\mathbf{F(x)}/2^k}]]^{2^k}
+\end{equation}
+
+where $\lambda v(\mathbf{F})^2 \leq 1$ and $S_k = \sum\limits_{i=1}^{k}1/2^i$ which tends to 1 as $k \rightarrow \infty$.
+Assuming the induction hypothesis, consider the RHS where $n=2^k$
+\begin{align*}
+  \mathsf{Tr}[\mathbb{E}[e^{\mathbf{F(x)}/n}]]^n&=\mathsf{Tr}[\sum\limits_{x \in \Omega}\pi_x (1+\mathbf{F(x)}/n + (\mathbf{F(x)}/n)^2/2!+\ldots)]^n\\
+  &=\mathsf{Tr}[(1 + \mathbb{E}[F(x)]/n)^n] \rightarrow \mathsf{Tr}[e^{\mathbb{E}\mathbf[F(x)]}]
+\end{align*}
+where the second inequality follows as we can ignore the second order terms and beyond for $n\rightarrow \infty$.
+Now notice that for any $\beta > 0$, we have $v(\beta \mathbf{F}) = \beta v(\mathbf{F})$. Now taking $\theta \mathbf{F}$ in place of $\mathbf{F}$ and the requirement of $\lambda v(\theta \mathbf{F})^2 \leq 1$ translates to $\theta^2 \lambda v(\mathbf{F})^2 \leq 1$, we plug this into Equation \ref{eqn:indStmt}, to get
+\begin{equation}\label{eqn:mgfB}
+  \mathsf{Tr}\big[\mathbb{E}_{x \sim \pi}[e^{\theta\mathbf{F(x)}}]\big]\leq \frac{\mathsf{Tr}[e^{\theta\mathbb{E}_{x \sim \pi}[\mathbf{F(x)}]}]}{1-\theta^2\lambda v(\mathbf{F})^2}
+\end{equation}
+Now, using Equation \ref{eqn:mgfB} with $\mathbf{F}$ being $\mathbf{F}-\mathbb{E}[\mathbf{F}]$ which is zero mean and noticing that $v(\mathbf{F}-\mathbb{E}[\mathbf{F}]) = v(\mathbf{F})$, we get that
+\begin{equation}\label{eqn:mgfBo}
+  \mathsf{Tr}\big[\mathbb{E}_{x \sim \pi}[e^{\theta\mathbf{F(x)}}]\big]\leq \frac{d}{1-\theta^2\lambda v(\mathbf{F})^2}
+\end{equation}
+Now, in the RHS for Proposition \ref{prop:mgf}, we have
+\begin{align*}
+  2\inf\limits_{\theta>0}e^{-\theta t + \log m(\theta)}&\leq 2\inf\limits_{\theta^2 \lambda v(\mathbf{F})^2\leq 1}e^{-\theta t + \log m(\theta)}\\
+  &=2d\inf\limits_{\theta^2 \lambda v(\mathbf{F})^2\leq 1}e^{-\theta t - \log(1-\theta^2 \lambda v(\mathbf{F})^2)}\\
+  &\leq 2d\inf\limits_{\theta^2 \lambda v(\mathbf{F})^2\leq 1}e^{-\theta t +\lambda v(\mathbf{F})^2\theta^2 + \frac{\lambda^2 v(\mathbf{F})^4\theta^4}{2(1-\lambda v(\mathbf{F})^2\theta^2)}}\\
+\end{align*}
+Differentiating w.r.t $\theta$ and setting to zero, we get that the probability is upper bounded by $2de^{-t^2/4(\lambda v(\mathbf{F})^2)+t \sqrt{\lambda}v(\mathbf{F}))}$ and we would be done.
+
+Now, it just remains to prove the induction statement. Our proof proceeds by a doubling trick to transform the variance of $e^\mathbf{F}$ to the exponential moment generating function. We first prove the base case. Consider $k=1$ and consider the function $\mathbf{f}=\mathbf{F}/2$. Using the matrix valued Poincare inequality on $e^\mathbf{f}$, we have
+\begin{align*}
+  &\mathbf{Var}(e^\mathbf{f}) = \lambda \mathcal{E}(e^\mathbf{f},e^{\mathbf{f}})\\
+  \implies&\mathbb{E}[e^\mathbf{2f}] \preceq (\mathbb{E}[e^\mathbf{f}])^2 + \mathcal{E}(e^\mathbf{f},e^{\mathbf{f}})\\
+  &\mathbb{E}[e^\mathbf{F}] \preceq (\mathbb{E}[e^\mathbf{f}])^2 + \mathcal{E}(e^\mathbf{f},e^{\mathbf{f}})
+\end{align*}
 Taking trace on both sides, we have
-T r[E[eF]] ⩽ T r[(E[eF/2])2] + T r[E(eF/2, eF/2)]
-⩽ T r[(E[eF/2])2] + v(F/2)2T r[Ex∼π[eF]] (using Lemma 3.6)
-= T r[(E[eF/2])2] + v(F)2
-4 T r[Ex∼π[eF]]
-⩽ T r[(E[eF/2])2] + λv(F)2S1
-2 T r[Ex∼π[eF]] (using λ /greaterorequalslant1 and S1 = 1/2 )
-(
-1 − λv(F)2S1
-2
-)
-T r[E[eF]] ⩽ T r[(E[eF/2])2]
-which establishes our base case. Now assume the induction hy pothesis for k-1 and consider the
-function f = F/2k. Denote vk = v(F/2k) = v(F)/2k Using the matrix valued Poincare inequality on ef
-and taking trace to the power p = 2k−1, we get,
-T r
-[
-E[eF/2k−1
-]
-] 2k−1
-⩽ T r
-[
-(E[eF/2k
-])2 + λE(eF/2k
-, eF/2k
-)
-] 2k−1
-= T r
-[
-(1 − λv2
-k) (E[eF/2k
-])2
-(1 − λv2
-k) + λv2
-k)(E(eF/2k
-, eF/2k
-)/v2
-k)
-] 2k−1
-⩽
-T r
-[
-E[eF/2k
-]
-] 2k
-(1 − λvk)2k−1−1 + λv2
-kT r
-[
-(E(eF/2k
-, eF/2k
-)/v2
-k)
-] 2k−1
-(using Jensen’s inequality as λv2
-k ⩽ 1 )
-⩽
-T r
-[
-E[eF/2k
-]
-] 2k
-(1 − λv2
-k)2k−1−1 + λv2
-k T r[Ex∼π[eF]] (using Lemma 3.6)
-Now using the induction hypothesis, we can lower bound the LH S above to get,
-(1 − λv(F)2Sk−1)T r[Ex∼π[eF]] ⩽
-T r
-[
-E[eF/2k
-]
-] 2k
-(1 − λv2
-k)2k−1−1 + λv2
-kT r[Ex∼π[eF]]
-(1 − λv(F)2Sk−1 − λv2
-k )T r[Ex∼π[eF]] ⩽
-T r
-[
-E[eF/2k
-]
-] 2k
-(1 − λv2
-k)2k−1−1
-T r
-[
-E[eF/2k
-]
-] 2k
-/greaterorequalslant(1 − λv(F)2Sk−1 − λv2
-k)(1 − λv2
-k)2k−1−1T r[Ex∼π[eF]]
-/greaterorequalslant(1 − λv(F)2Sk−1 − λv2
-k)(1 − λ(2k−1 − 1)v2
-k)T r[Ex∼π[eF]]
-/greaterorequalslant(1 − λv(F)2Sk−1 − λ2k−1v2
-k)T r[Ex∼π[eF]]
-/greaterorequalslant(1 − λv(F)2Sk−1 − λ2k−1v(F)2/22k)T r[Ex∼π[eF]]
-/greaterorequalslant(1 − λv(F)2Sk)T r[Ex∼π[eF]]
-where the fourth inequality follows from (1 − x)n /greaterorequalslant(1 − nx) and the last line follows as 2 k−1/22k =
-1/2k+1 ⩽ 1/2k □
-14
-Proof. [of Theorem 1.1] Since our function F is L-Lipshitz, we know that v(F) ⩽ 2L as the Hamming
-distance between any pair of connected states in the Markov Ch ain is 2. Hence, using Theorem
-3.8 and the fact that λ /greaterorequalslant1/2k (from 2.1), we are done. □
-4 Comparison with [ KS18]
-We ﬁrst state the main result of [ KS18] below.
-Theorem 4.1. Suppose (x1, . . . ,xn) ∈ { 0, 1}n is a random subset whose distribution is a k-homogenous
-strong Rayleigh distribution. Given a collection of PSD matri ces A 1, . . . ,An ∈ Rd×d s.t. for all e ∈ [n] we
-have ‖Ae‖⩽ 1 and ‖E[∑
-e xeAe]‖⩽ µ. Then for any ε > 0,
-Pr[‖
-∑
-e
-xeAe − E[
-∑
-e
-xeAe]‖/greaterorequalslantεµ] ⩽ de−ε2µ/(log k+ε)Θ(1)
-Compared to our Theorem 1.1, immediate di ﬀerences is that our theorem can handle any
-symmetric matrix valued Lipshitz function rather than just sums of random matrices associated
-to each element. Furthermore, [ KS18] require their matrices to be PSD whereas we just require the
-matrices to be symmetric. Finally , in the special case of sum s of PSD matrices. While Theorem
-4.1 is concerned with multiplicative errors whereas we are conc erned with additive errors, we can
-take t = εµ and plugging this into Theorem 1.1, noticing that sums of spectral norm 1 random
-matrices have Θ(1) Lipshitz constant and ignoring constants in both bounds we get that our bound
-is better when
-ε2µ
-log(k) + ε ⩽ ε2µ2
-k + εµ
-√
-k
-k + εµ
-√
-k ⩽ µ log k + εµ
-Now assuming ε ⩽ 1√
-k , we get that the above equation is approximately
-µ /greaterorequalslantk/(log(k))
-Also notice that in this case, µ ⩽ k but it is conceivable that µ = Θ(k) when there is no strong
-relation between the underlying strong Rayleigh measure an d the matrices for each element. So
-our bound is better when such a condition is satisﬁed and we are looking for small error of the
-form ε ⩽ 1/
-√
-k. If one could establish a Matrix valued modiﬁed log-Sobolev an d a Matrix Herbst
-argument, the
-√
-kε term in our bound will not appear which would allow us to get ri d of the
-ε ⩽ 1/
-√
-k condition and just require µ /greaterorequalslantk/ log(k). However, we are not aware of any strategy to
-get multiplicative bounds even in the scalar concentration settings using log-Sobolev or any other
-functional inequalities.
+\begin{align*}
+  \mathsf{Tr}[\mathbb{E}[e^\mathbf{F}]]&\leq \mathsf{Tr}[(\mathbb{E}[e^{\mathbf{F}/2}])^2] + \mathsf{Tr}[\mathcal{E}(e^{\mathbf{F}/2},e^{\mathbf{F}/2})]\\
+  &\leq \mathsf{Tr}[(\mathbb{E}[e^{\mathbf{F}/2}])^2] + v(\mathbf{F}/2)^2\mathsf{Tr}[\mathbb{E}_{x\sim\pi}[e^{\mathbf{F}}]] \ \ \text{(using Lemma \ref{lem:dirichlet})}\\
+  &=\mathsf{Tr}[(\mathbb{E}[e^{\mathbf{F}/2}])^2] + \frac{v(\mathbf{F})^2}{4}\mathsf{Tr}[\mathbb{E}_{x\sim\pi}[e^{\mathbf{F}}]]\\
+  &\leq \mathsf{Tr}[(\mathbb{E}[e^{\mathbf{F}/2}])^2] + \frac{\lambda v(\mathbf{F})^2 S_1}{2}\mathsf{Tr}[\mathbb{E}_{x\sim\pi}[e^{\mathbf{F}}]] \ \ \text{(using }\lambda \geq 1\text{ and } S_1 = 1/2\text{ )}\\
+  \hspace{0.5em}\bigg(1-\frac{\lambda v(\mathbf{F})^2 S_1}{2}\bigg)\mathsf{Tr}[\mathbb{E}[e^\mathbf{F}]] &\leq  \mathsf{Tr}[(\mathbb{E}[e^{\mathbf{F}/2}])^2]
+\end{align*}
+which establishes our base case.
+Now assume the induction hypothesis for k-1 and consider the function $\mathbf{f}=\mathbf{F}/2^k$. Denote $v_k = v(\mathbf{F}/2^{k}) = v(\mathbf{F})/2^k$ Using the matrix valued Poincare inequality on $e^\mathbf{f}$ and taking trace to the power $p=2^{k-1}$, we get,
+\begin{align*}
+  \mathsf{Tr}\big[\mathbb{E}[e^{\mathbf{F}/{2^{k-1}}}]\big]^{2^{k-1}} &\leq \mathsf{Tr}\big[(\mathbb{E}[e^{\mathbf{F}/2^{k}}])^2 + \lambda\mathcal{E}(e^{\mathbf{F}/2^k},e^{\mathbf{F}/2^k})\big]^{2^{k-1}}\\
+  &=\mathsf{Tr}\big[(1-\lambda v_k^2 )\frac{(\mathbb{E}[e^{\mathbf{F}/2^{k}}])^2}{(1-\lambda v_k^2)} + \lambda v_k^2)(\mathcal{E}(e^{\mathbf{F}/2^k},e^{\mathbf{F}/2^k})/v_k^2)\big]^{2^{k-1}}\\
+  &\leq \frac{\mathsf{Tr}\big[\mathbb{E}[e^{\mathbf{F}/2^{k}}]\big]^{2^k}}{(1-\lambda v_k)^{2^{k-1}-1}} + \lambda v_k^2\mathsf{Tr}\big[(\mathcal{E}(e^{\mathbf{F}/2^k},e^{\mathbf{F}/2^k})/v_k^2)\big]^{2^{k-1}}\ \ \text{(using Jensen's inequality as }\lambda v_k^2 \leq 1 \text{ )}\\
+  &\leq \frac{\mathsf{Tr}\big[\mathbb{E}[e^{\mathbf{F}/2^{k}}]\big]^{2^k}}{(1-\lambda v_k^2)^{2^{k-1}-1}} + \lambda v_k^2\mathsf{Tr}[\mathbb{E}_{x \sim \pi}[e^{\mathbf{F}}]] \ \ \text{(using Lemma \ref{lem:dirichlet})}
+\end{align*}
+Now using the induction hypothesis, we can lower bound the LHS above to get,
+\begin{align*}
+  (1-\lambda v(F)^2 S_{k-1})\mathsf{Tr}[\mathbb{E}_{x\sim\pi}[e^\mathbf{F}]] &\leq \frac{\mathsf{Tr}\big[\mathbb{E}[e^{\mathbf{F}/2^{k}}]\big]^{2^k}}{(1-\lambda v_k^2)^{2^{k-1}-1}}+ \lambda v_k^2\mathsf{Tr}[\mathbb{E}_{x \sim \pi}[e^{\mathbf{F}}]]\\
+  (1-\lambda v(F)^2 S_{k-1}-\lambda v_k^2)\mathsf{Tr}[\mathbb{E}_{x\sim\pi}[e^\mathbf{F}]]&\leq \frac{\mathsf{Tr}\big[\mathbb{E}[e^{\mathbf{F}/2^{k}}]\big]^{2^k}}{(1-\lambda v_k^2)^{2^{k-1}-1}}\\
+  \mathsf{Tr}\big[\mathbb{E}[e^{\mathbf{F}/2^{k}}]\big]^{2^k}&\geq(1-\lambda v(F)^2 S_{k-1}-\lambda v_k^2)(1-\lambda v_k^2)^{2^{k-1}-1}\mathsf{Tr}[\mathbb{E}_{x\sim\pi}[e^\mathbf{F}]]\\
+  &\geq(1-\lambda v(F)^2 S_{k-1}-\lambda v_k^2)(1-\lambda (2^{k-1}-1)v_k^2)\mathsf{Tr}[\mathbb{E}_{x\sim\pi}[e^\mathbf{F}]] \\
+   &\geq (1-\lambda v(F)^2 S_{k-1}-\lambda 2^{k-1} v_k^2)\mathsf{Tr}[\mathbb{E}_{x\sim\pi}[e^\mathbf{F}]]\\
+   &\geq (1-\lambda v(F)^2 S_{k-1}-\lambda 2^{k-1} v(F)^2/2^{2k})\mathsf{Tr}[\mathbb{E}_{x\sim\pi}[e^\mathbf{F}]]\\
+   &\geq (1-\lambda v(F)^2 S_{k})\mathsf{Tr}[\mathbb{E}_{x\sim\pi}[e^\mathbf{F}]]
+\end{align*}
+where the fourth inequality follows from $(1-x)^n\geq(1-nx)$ and the last line follows as $2^{k-1}/2^{2k} = 1/2^{k+1} \leq 1/2^k$
+\end{proof}
+\begin{proof}{[of Theorem \ref{thm:srBern}]} Since our function $\mathbf{F}$ is L-Lipshitz, we know that $v(\mathbf{F})\leq 2L$ as the Hamming distance between any pair of connected states in the Markov Chain is 2. Hence, using Theorem \ref{thm:mgfBound} and the fact that $\lambda\geq1/{2k}$ (from \ref{thm:mpc}), we are done.
+\end{proof}

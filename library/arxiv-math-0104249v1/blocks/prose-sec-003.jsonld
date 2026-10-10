@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-0104249v1/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-0104249v1/blocks/prose-sec-003",
   "kind": "prose",
   "title": "Analytic construction. We ﬁx positive odd parameters a,b,c such thatc ≥ 3,",
   "pageStart": 2,
   "pageEnd": 4,
   "text": "../sections/sec-003-3-analytic-construction-we-ﬁx-positive-odd-param.md",
-  "derivedFrom": "library/arxiv-math-0104249v1/manifest",
-  "sourceDocument": "library/arxiv-math-0104249v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0104249v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0104249v1/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -6,7 +6,8 @@
   "sha256": "7b7db6dce87dc81e00aff8778db68dddfd50882a11d5be9c998b750d5ef6d016",
   "bytes": 20252884,
   "pages": 22,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -218,6 +219,85 @@
   "likely_scanned": false,
   "toc_entries": 11,
   "sections": 10,
-  "chars_total": 47198
+  "chars_total": 47198,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "paper.tex",
+   "tex_sections": 7,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.631,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-the-model",
+     "title": "The model",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.816,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-initial-approximation",
+     "title": "Initial approximation",
+     "prose_ratio": 0.992,
+     "coverage_ratio": 0.921,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-numerical-results",
+     "title": "Numerical results",
+     "prose_ratio": 0.149,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-41-q1",
+     "title": "Q=1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-42-q2",
+     "title": "Q=2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-431-degrees-3-and-4",
+     "title": "Degrees 3 and 4",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-432-degrees-56-and-7",
+     "title": "Degrees 5,6 and 7",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-5-compact-solutions",
+     "title": "Compact solutions",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 0.93,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-6-summary",
+     "title": "Summary",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.589,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

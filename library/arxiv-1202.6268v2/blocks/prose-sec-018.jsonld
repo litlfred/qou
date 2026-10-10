@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1202.6268v2/blocks/prose-sec-018",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1202.6268v2/blocks/prose-sec-018",
   "kind": "prose",
   "title": "Independence of a choice of edge",
   "pageStart": 17,
   "pageEnd": 18,
   "text": "../sections/sec-018-33-independence-of-a-choice-of-edge.md",
-  "derivedFrom": "library/arxiv-1202.6268v2/manifest",
-  "sourceDocument": "library/arxiv-1202.6268v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1202.6268v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1202.6268v2/manifest.jsonld",
   "provenance": "ingested"
 }

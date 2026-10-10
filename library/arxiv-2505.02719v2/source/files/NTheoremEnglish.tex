@@ -1,0 +1,55 @@
+\newcommand{\mynewtheorem}[4] %{BEZEICHNER}{COUNTER}{TITEL}{PLURAL} - for correct enumeration with \cref from the cleveref package
+{%
+\newaliascnt{#1}{#2}%
+\newtheorem{#1}[#1]{#3}%
+\aliascntresetthe{#1}%
+% \expandafter\def\csname #1autorefname\endcsname{#3}%
+\crefname{#1}{#3}{#4}%
+\Crefname{#1}{#3}{#4}%
+}
+
+\newtheorem{basetheorem}{Theorem}[section]
+
+\mynewtheorem{theorem}{basetheorem}{Theorem}{Theorems} 
+\mynewtheorem{lemma}{basetheorem}{Lemma}{Lemmata} 
+\mynewtheorem{proposition}{basetheorem}{Proposition}{Propositions} 
+\mynewtheorem{corollary}{basetheorem}{Corollary}{Corollaries}
+% \mynewtheorem{quest}{basetheorem}{Question}{Questions}
+\mynewtheorem{prelemma}{basetheorem}{Pre-lemma}{Pre-lemmata} 
+\mynewtheorem{problem}{basetheorem}{Problem}{Problems}
+
+\theoremstyle{break}
+\mynewtheorem{btheorem}{basetheorem}{Theorem}{Theorems} 
+\mynewtheorem{blemma}{basetheorem}{Lemma}{Lemmata}
+\mynewtheorem{bproposition}{basetheorem}{Proposition}{Propositions}
+\mynewtheorem{bcorollary}{basetheorem}{Corollary}{Corollaries}
+\mynewtheorem{bproblem}{basetheorem}{Problem}{Problems}
+
+\theoremstyle{plain}
+\theorembodyfont{\normalfont}
+\mynewtheorem{definition}{basetheorem}{Definition}{Definitions}
+\mynewtheorem{example}{basetheorem}{Example}{Examples}
+% \theorembodyfont{\footnotesize}
+% \theoremsymbol{\ensuremath{\Diamond}}%
+\mynewtheorem{remark}{basetheorem}{Remark}{Remarks}
+
+
+\theoremstyle{break}
+\mynewtheorem{bdfn}{basetheorem}{Definition}{Definitions}
+\mynewtheorem{bex}{basetheorem}{Example}{Examples}
+% \theorembodyfont{\footnotesize}
+% \theoremsymbol{\ensuremath{\Diamond}}%
+\mynewtheorem{brem}{basetheorem}{Remark}{Remarks}
+
+\theoremheaderfont{\itshape}
+\theorembodyfont{\upshape}
+\theoremstyle{nonumberplain}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\Box}}	
+\newtheorem{proof}{Proof}
+
+\newtheorem{preproof}{Pre-proof}
+
+
+\theoremstyle{empty}
+\newtheorem{refproof}{Proof}

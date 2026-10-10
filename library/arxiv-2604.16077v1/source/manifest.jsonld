@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2604.16077v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Volume Conjecture and quantum hyperbolic invariants: the figure eight knot complement (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2604.16077v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2604.16077&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2604.16077v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2604.16077v1",
+    "content_type": "application/gzip",
+    "sha256": "ac72df5940fce5f40be9358262afc1bef8d786d13ce559ad6f0f95c9d89a175f",
+    "bytes": 77822,
+    "fetched": "2026-10-10T15:22:40+00:00",
+    "files": [
+      {
+        "path": "source/files/K8V1.tex",
+        "role": "tex",
+        "sha256": "5b83f68aaf483fa6d12c1ae49baf058a277ee6da927f03949d7ef6c2ab16bd18",
+        "bytes": 273877
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

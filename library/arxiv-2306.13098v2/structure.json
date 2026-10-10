@@ -6,7 +6,8 @@
   "sha256": "edeb214d587bfca4222762a184a20dfb181ee0cb6e2d1c999bdc8e92f47efef4",
   "bytes": 473467,
   "pages": 18,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,12 +18,12 @@
   },
   "doi": null,
   "title": "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions",
-  "authors_raw": "Niels G. Gresnigt 1⋆, Liam Gourlay 1 and Abhinav Varma1",
+  "authors_raw": "Niels G. Gresnigt 1\u22c6, Liam Gourlay 1 and Abhinav Varma1",
   "title_lines": [
    "Three generations of colored fermions with S3 family symmetry",
    "from Cayley-Dickson sedenions"
   ],
-  "abstract": "An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the Cayley-Dickson algebra of sedenions S is constructed. Recent constructions based on division algebras convincingly describe a single generation of leptons and quarks with Standard Model gauge symmetries. Nonetheless, an algebraic origin for the existence of exactly three generations has proven difficult to sub- stantiate. We motivate S as a natural algebraic candidate to describe three generations with SU (3)C gauge symmetry. We initially represent one generation of leptons and quarks in terms of two minimal left ideals of Cℓ(6), generated from a subset of all left actions of the complex sedenions on themselves. Subsequently we employ the finite group S3, which are automorphisms of S but not of O to generate two additional generations. Given the relative obscurity of sedenions, efforts have been made to present the material in a self-contained manner.",
+  "abstract": "An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the Cayley-Dickson algebra of sedenions S is constructed. Recent constructions based on division algebras convincingly describe a single generation of leptons and quarks with Standard Model gauge symmetries. Nonetheless, an algebraic origin for the existence of exactly three generations has proven difficult to sub- stantiate. We motivate S as a natural algebraic candidate to describe three generations with SU (3)C gauge symmetry. We initially represent one generation of leptons and quarks in terms of two minimal left ideals of C\u2113(6), generated from a subset of all left actions of the complex sedenions on themselves. Subsequently we employ the finite group S3, which are automorphisms of S but not of O to generate two additional generations. Given the relative obscurity of sedenions, efforts have been made to present the material in a self-contained manner.",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20240216021025Z",
@@ -266,7 +267,96 @@
   "likely_scanned": false,
   "toc_entries": 15,
   "sections": 12,
-  "chars_total": 55111
+  "chars_total": 55111,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Article.tex",
+   "tex_sections": 9,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.902,
+     "coverage_ratio": 0.992,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-normed-division-algebras",
+     "title": "Normed division algebras",
+     "prose_ratio": 0.97,
+     "coverage_ratio": 0.883,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-one-generation-of-electrocolor-states-from-co",
+     "title": "One generation of electrocolor states from CO",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-the-cayley-dickson-construction-and-the-algebra",
+     "title": "The Cayley-Dickson construction and the algebra of sedenions",
+     "prose_ratio": 0.369,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-octonion-subalgebras-inside-the-sedenions",
+     "title": "Octonion subalgebras inside the sedenions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-automorphisms-of-sedenions",
+     "title": "Automorphisms of sedenions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-why-not-sedenions",
+     "title": "Why not sedenions?",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-one-generation-of-electrocolor-states-from-cs",
+     "title": "One generation of electrocolor states from CS",
+     "prose_ratio": 0.383,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-generating-two-additional-generations-from-s3-au",
+     "title": "Generating two additional generations from S3 automorphisms",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-linear-dependence-of-minimal-ideal-states",
+     "title": "Linear dependence of minimal ideal states",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-outlook",
+     "title": "Outlook",
+     "prose_ratio": 0.924,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-discussion",
+     "title": "Discussion",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.385,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  },
  "duplicate_copies": [
   "s10052-023-11923-y-a"

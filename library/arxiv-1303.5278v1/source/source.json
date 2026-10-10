@@ -1,0 +1,27 @@
+{
+ "url": "https://arxiv.org/e-print/1303.5278v1",
+ "content_type": "application/gzip",
+ "sha256": "c02398198545a2e5bd82f5c284a5f6c50bd13bc3e1b1cd65e76f8b38758e94ff",
+ "bytes": 980615,
+ "fetched": "2026-10-10T15:08:00+00:00",
+ "files": [
+  {
+   "path": "files/pinlabel.sty",
+   "role": "sty",
+   "sha256": "a8d98ae22958cecaa69a7d5f7933181371ac4705491db206a18dd90de028df0a",
+   "bytes": 38722
+  },
+  {
+   "path": "files/text_final.bbl",
+   "role": "bbl",
+   "sha256": "5a7d9a16f2ca915124b02dad018d2526d04ddcfc21acc8329072e134bc978192",
+   "bytes": 9097
+  },
+  {
+   "path": "files/text_final.tex",
+   "role": "tex",
+   "sha256": "b7be131b5b1df8b1947153972e38014cac522c8ba433398443346f601b14429c",
+   "bytes": 183142
+  }
+ ]
+}

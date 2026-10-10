@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-ph-0010012v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "From random polynomials to symplectic geometry Steve Zelditch",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-ph-0010012v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-ph-0010012v1",
   "contains": [
     "library/arxiv-math-ph-0010012v1/sections/sec-000",
     "library/arxiv-math-ph-0010012v1/sections/sec-001",
@@ -17,8 +22,17 @@
     "library/arxiv-math-ph-0010012v1/sections/sec-008"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math-ph/0010012&metadataPrefix=arXiv), submitted 2000-10-10, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-math-ph-0010012v1",
+    "title_source": "slug",
     "source_file": "0010012v1.pdf",
     "source_sha256": "cd6eca5ccb81ff90b6fa939571e87119d442d754e67f12c8a0e1b5326431b8d2",
     "pages": 7,

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1111.2828v2/blocks/prose-sec-015",
+  "kind": "prose",
+  "title": "The geometry of the Ptolemy coordinates",
+  "pageStart": 16,
+  "pageEnd": 18,
+  "text": "../sections/sec-015-51-the-geometry-of-the-ptolemy-coordinates.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1111.2828v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1111.2828v2/manifest.jsonld",
+  "provenance": "ingested"
+}

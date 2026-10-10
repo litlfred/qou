@@ -7,89 +7,46 @@ section_number: 2.3
 pages: 33-35
 source_pdf: 2207.07246v2.pdf
 source_sha256: 91e70e5fe39e07a5
+text_source: latex
+latex_prose_ratio: 0.934
+latex_coverage_ratio: 0.97
 doc_brief: "Path Integral Quantum Monte Carlo Method for Light Nuclei — 58 sections: Front matter; ABSTRACT; LIST OF TABLES"
 ---
-The interaction used in this work will not change the total number of Z protons
-and A−Z neutrons 3 , so the number of possible isospin states is
-(A
-Z
-)
-. However the
-tensor part Sij can ﬂip spin, so the possible number of spin states is 2 A. Therefore, as
-stated before, the total number of spin-isospin basis states is,
-Ntot =
-(A
-Z
-)
-× 2A = A!
-Z!(Z−A)!× 2A. (2.27)
-Take 4He as an example, it has Ntot = 6× 16 = 96 spin-isospin basis states. In
-other words, our Hilbert space is constructed by the 96 basis states and therefore a
-general state is the linear combination of these basis states. We mark these basis states
-as|S⟩ and S can be labeled from 1 to 96,
-|S⟩≡| s1⟩⊗| s2⟩⊗| s3⟩⊗| s4⟩≡| s1s2s3s4⟩, (2.28)
-where si means the spin isospin state of particle i, it can be any state from neutron
-spin up|n↑⟩, neutron spin down|n↓⟩, proton spin up|p↑⟩, proton spin down|p↓⟩. In
-Eq.(2.28), we implicitly mean particle 1 is at s1 state, particle 2 is at s2 state, particle
-3 is at s3 state and particle 4 is at s4 state. To be clear, it is really,
-|S⟩≡| s1
-1⟩⊗| s2
-2⟩⊗| s3
-3⟩⊗| s4
-4⟩≡| s1
-1s2
-2s3
-3s4
-4⟩, (2.29)
-3The AV6’ and local chiral N 2LO we use in this work conserve the number of isospin states. For
-example, for 4He we begin with
-(4
-2
-)
-= 6 diﬀerent isospin states, the interaction we use always generate
-isospin states within these 6 states, they do not generate isospin states other than these 6 states.
-23
-where the subscript (the state label) 1 to 4 represents state 1 to state 4, and the
-superscript (particle label) from 1 to 4 represents particle 1 to particle 4.
-We denote the spatial conﬁguration of a system with A particles as R,
-R≡ (r1,r2,...,rA), (2.30)
-whereri = (xi,yi,zi) is the coordinates of particle i. The coordinate space conﬁguration
-R of 4He can also be written as a state |R⟩,
-|R⟩≡| r1⟩⊗| r2⟩⊗| r3⟩⊗| r4⟩≡| r1r2r3r4⟩. (2.31)
-Similar with Eq.(2.29), Eq.(2.31) really means,
-|R⟩≡| r1
-1⟩⊗| r2
-2⟩⊗| r3
-3⟩⊗| r4
-4⟩≡| r1
-1r2
-2r3
-3r4
-4⟩. (2.32)
-TakingR and the spin isospin state S in to account, our basis state |RS⟩ can
-ﬁnally be written as,
-|RS⟩ =|R⟩⊗| S⟩≡| r1r2r3r4⟩⊗| s1s2s3s4⟩, (2.33)
-The correspondingly identity operators for our basis are,
-∫
-dR|R⟩⟨R| = 1, (2.34)
-∑
-S
-|S⟩⟨S| = 1, (2.35)
-∑
-S
-∫
-dR|RS⟩⟨RS| =
-∫
-dR|R⟩⟨R|⊗
-∑
-S
-|S⟩⟨S| = 1. (2.36)
-In fact, without the Coulomb interaction, for 4He it is possible to use two |T = 0⟩
-states (T is the total isospin quantum number) to couple with 16 spin states to form 32
-basis. And due to the fact that the Hamiltonian has time-reversal symmetry, only 16 of
-the 32 basis states are independent, therefore we can use 16 states to form the Hilbert
-space instead of 96. However the Coulomb interaction does not commute with the
-24
-total isospin operator, it does not conserve total isospin and can generate T⁄= 0 states,
-therefore the 16 spin/isospin states with T = 0 cannot be used when the Coulomb
-interaction was present. And this is why we use the 96 states in this work.
+[]{#secModSpace label="secModSpace"}
+
+The interaction used in this work will not change the total number of $Z$ protons and $A-Z$ neutrons[^1], so the number of possible isospin states is $\binom {A}{Z}$. However the tensor part $S_{ij}$ can flip spin, so the possible number of spin states is $2^A$. Therefore, as stated before, the total number of spin-isospin basis states is, $$\begin{equation}
+N_{\rm{tot}}= \binom {A}{Z} \times 2^A = \frac{A!}{Z!(Z-A)!} \times 2^A.
+\label{Nbasistotal}
+\end{equation}$$
+
+Take $^4$He as an example, it has $N_{\rm{tot}}=6 \times 16=96$ spin-isospin basis states. In other words, our Hilbert space is constructed by the 96 basis states and therefore a general state is the linear combination of these basis states. We mark these basis states as $| S \rangle$ and $S$ can be labeled from 1 to 96, $$\begin{equation}
+| S \rangle \equiv  | s_1\rangle \otimes | s_2 \rangle \otimes | s_3 \rangle \otimes | s_4 \rangle \equiv | s_1 s_2 s_3 s_4 \rangle, \label{basisS}
+\end{equation}$$ where $s_i$ means the spin isospin state of particle i, it can be any state from neutron spin up $|n \uparrow \rangle$, neutron spin down $|n \downarrow\rangle$, proton spin up $|p \uparrow\rangle$, proton spin down $|p \downarrow\rangle$. In Eq.([\[basisS\]](#basisS){reference-type="ref" reference="basisS"}), we implicitly mean particle 1 is at $s_1$ state, particle 2 is at $s_2$ state, particle 3 is at $s_3$ state and particle 4 is at $s_4$ state. To be clear, it is really, $$\begin{equation}
+| S \rangle \equiv  | s^1_1\rangle \otimes | s^2_2 \rangle \otimes | s^3_3 \rangle \otimes | s^4_4 \rangle
+\equiv | s^1_1 s^2_2 s^3_3 s^4_4 \rangle, \label{basisSmoreclear}
+\end{equation}$$ where the subscript (the state label) 1 to 4 represents state 1 to state 4, and the superscript (particle label) from 1 to 4 represents particle 1 to particle 4.
+
+We denote the spatial configuration of a system with $A$ particles as $R$, $$\begin{equation}
+R \equiv ( \bm{r}_1, \bm{r}_2, ..., \bm{r}_A  ) , \label{Rdef}
+\end{equation}$$ where $\bm{r}_i=(x_i,y_i,z_i)$ is the coordinates of particle i. The coordinate space configuration $R$ of $^4$He can also be written as a state $| R \rangle$, $$\begin{equation}
+| R \rangle \equiv  | \bm{r}_1\rangle \otimes | \bm{r}_2 \rangle \otimes | \bm{r}_3 \rangle \otimes | \bm{r}_4 \rangle \equiv | \bm{r}_1 \bm{r}_2 \bm{r}_3 \bm{r}_4 \rangle. \label{basisR}
+\end{equation}$$ Similar with Eq.([\[basisSmoreclear\]](#basisSmoreclear){reference-type="ref" reference="basisSmoreclear"}), Eq.([\[basisR\]](#basisR){reference-type="ref" reference="basisR"}) really means, $$\begin{equation}
+| R \rangle \equiv  | \bm{r}^1_1\rangle \otimes | \bm{r}^2_2 \rangle \otimes | \bm{r}^3_3 \rangle \otimes | \bm{r}^4_4 \rangle
+\equiv | \bm{r}^1_1 \bm{r}^2_2 \bm{r}^3_3 \bm{r}^4_4 \rangle. \label{basisRmoreclear}
+\end{equation}$$
+
+Taking $R$ and the spin isospin state $S$ in to account, our basis state $| RS \rangle$ can finally be written as, $$\begin{equation}
+| RS \rangle = | R \rangle \otimes | S \rangle
+\equiv | \bm{r}_1 \bm{r}_2 \bm{r}_3 \bm{r}_4 \rangle \otimes | s_1 s_2 s_3 s_4 \rangle , \label{basisRS}
+\end{equation}$$
+
+The correspondingly identity operators for our basis are, $$\begin{flalign}
+ \int dR | R \rangle  \langle R | &=  1 , \label{identityR} \\
+ \sum_S | S \rangle  \langle S | &=  1 , \label{identityS} \\
+ \sum_S  \int dR | RS \rangle  \langle RS | & =
+\int dR | R \rangle  \langle R |  \otimes  \sum_S  | S \rangle  \langle S | = 1 .  \label{identityRS}
+\end{flalign}$$
+
+In fact, without the Coulomb interaction, for $^4$He it is possible to use two $|T=0\rangle$ states (T is the total isospin quantum number) to couple with 16 spin states to form 32 basis. And due to the fact that the Hamiltonian has time-reversal symmetry, only 16 of the 32 basis states are independent, therefore we can use 16 states to form the Hilbert space instead of 96. However the Coulomb interaction does not commute with the total isospin operator, it does not conserve total isospin and can generate $T\neq 0$ states, therefore the 16 spin/isospin states with $T=0$ cannot be used when the Coulomb interaction was present. And this is why we use the 96 states in this work.
+
+[^1]: The AV6' and local chiral N$^2$LO we use in this work conserve the number of isospin states. For example, for $^4$He we begin with $\binom {4}{2}=6$ different isospin states, the interaction we use always generate isospin states within these 6 states, they do not generate isospin states other than these 6 states.

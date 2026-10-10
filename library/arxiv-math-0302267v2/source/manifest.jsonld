@@ -1,0 +1,94 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0302267v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0302267v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0302267v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0302267&metadataPrefix=arXiv), submitted 2003-02-27, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0302267v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math/0302267v2",
+    "content_type": "application/gzip",
+    "sha256": "1a82a2afaf63c1154563a4e585576bed270e883062cfbc2de3d2b7dfde54fef6",
+    "bytes": 61813,
+    "fetched": "2026-10-10T15:27:34+00:00",
+    "files": [
+      {
+        "path": "source/files/Appenccc.tex",
+        "role": "tex",
+        "sha256": "03553abf4fa3238c1cbbd26aae090ccb6feb0de36c7fa7e82416d4dd15adb0df",
+        "bytes": 14655
+      },
+      {
+        "path": "source/files/Refs.tex",
+        "role": "tex",
+        "sha256": "73b79af02ab772a1d4374ad38d7d50b102884baf92c1da811376f6fe74c1b5a9",
+        "bytes": 4026
+      },
+      {
+        "path": "source/files/Sec1ccc.tex",
+        "role": "tex",
+        "sha256": "5551e3a5bde8b1c0bc374d0452547941d45c5b676770a5d3511d7ad62cab2dcf",
+        "bytes": 23247
+      },
+      {
+        "path": "source/files/Sec2ccc.tex",
+        "role": "tex",
+        "sha256": "484a360123ddbad51f9c34adef7138d3b3aedf3a73ec0a361412e067c9ecdca5",
+        "bytes": 26433
+      },
+      {
+        "path": "source/files/Sec3ccc.tex",
+        "role": "tex",
+        "sha256": "21c053816b8bdc817939ec995dfd147f139060bf09d99c6326d61e09f27c26f2",
+        "bytes": 35114
+      },
+      {
+        "path": "source/files/Sec4ccc.tex",
+        "role": "tex",
+        "sha256": "18d75c1813ebc7f5b97c929dc9d3a429da77591c058b570f6323fc277f75d67e",
+        "bytes": 22450
+      },
+      {
+        "path": "source/files/Sec5ccc.tex",
+        "role": "tex",
+        "sha256": "a3057006067db9bbcc93b5f8efffac10d6ab8e9647152756b8935f64edd0426c",
+        "bytes": 40000
+      },
+      {
+        "path": "source/files/Sec6ccc.tex",
+        "role": "tex",
+        "sha256": "ac965ff00e40d50c428296f45e07fcbebae53d5a73bdd01b07d688cb95d6d61b",
+        "bytes": 16179
+      },
+      {
+        "path": "source/files/Tateccc.tex",
+        "role": "tex",
+        "sha256": "1d41b90e46d9b8f3cff907c6aafdb1fd627259a056875ac811befccaa362e1e3",
+        "bytes": 10630
+      },
+      {
+        "path": "source/files/introccc.tex",
+        "role": "tex",
+        "sha256": "cc4277cfd5df5b290f857a0b05c62bb0daf3654c437dccd3e41bf8791d9fafa2",
+        "bytes": 3321
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

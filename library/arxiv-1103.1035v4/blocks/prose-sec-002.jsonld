@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1103.1035v4/blocks/prose-sec-002",
+  "kind": "prose",
+  "title": "The Deligne 2-Groupoid",
+  "pageStart": 23,
+  "pageEnd": 31,
+  "text": "../sections/sec-002-6-the-deligne-2-groupoid.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1103.1035v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1103.1035v4/manifest.jsonld",
+  "provenance": "ingested"
+}

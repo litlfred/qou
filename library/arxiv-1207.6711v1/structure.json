@@ -5,7 +5,8 @@
   "file": "1207.6711v1.pdf",
   "sha256": "320c4301ac66fff15d69ef60bc2e445788ba75b3189a1f5581211e805b5e6188",
   "bytes": 984156,
-  "pages": 47
+  "pages": 47,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS",
   "authors_raw": "STAVROS GAROUFALIDIS, MATTHIAS GOERNER, AND CHRISTIAN K. ZICKERT",
-  "abstract": "In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were inspired by A-coordinates on higher Teichm¨ uller space due to Fock and Goncharov. In this paper, we parametrize rep- resentations into PGL(n, C) using shape coordinates which are a 3-dimensional analogue of Fock and Goncharov’s X -coordinates. These coordinates satisfy equations generalizing Thurston’s gluing equations. These equations are of Neumann-Zagier type and satisfy sym- plectic relations with applications in quantum topology. We also explore a duality between the Ptolemy coordinates and the shape coordinates.",
+  "abstract": "In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were inspired by A-coordinates on higher Teichm\u00a8 uller space due to Fock and Goncharov. In this paper, we parametrize rep- resentations into PGL(n, C) using shape coordinates which are a 3-dimensional analogue of Fock and Goncharov\u2019s X -coordinates. These coordinates satisfy equations generalizing Thurston\u2019s gluing equations. These equations are of Neumann-Zagier type and satisfy sym- plectic relations with applications in quantum topology. We also explore a duality between the Ptolemy coordinates and the shape coordinates.",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20211120190911Z",
@@ -731,6 +732,237 @@
   "likely_scanned": false,
   "toc_entries": 43,
   "sections": 39,
-  "chars_total": 97128
+  "chars_total": 97128,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "GluingEquations.tex",
+   "tex_sections": 14,
+   "overlaid": 5,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.559,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-12-our-main-results",
+     "title": "Our main results",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-13-computations-and-applications",
+     "title": "Computations and applications",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-14-overview-of-the-paper",
+     "title": "Overview of the Paper",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-2-concrete-triangulations",
+     "title": "Concrete triangulations",
+     "prose_ratio": 0.259,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-15-acknowledgement",
+     "title": "Acknowledgement",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-21-face-pairing-permutations",
+     "title": "Face pairing permutations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-31-symplectic-properties-of-the-gluing-equations",
+     "title": "Symplectic properties of the gluing equations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-4-generalized-gluing-equations",
+     "title": "Generalized gluing equations",
+     "prose_ratio": 0.174,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-41-simplex-coordinates",
+     "title": "Simplex coordinates",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-42-symmetries-of-a-simplex",
+     "title": "Symmetries of a simplex",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-43-shape-assignments",
+     "title": "Shape assignments",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-44-gluing-equations-for-oriented-triangulations",
+     "title": "Gluing equations for oriented triangulations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-45-the-pullback-of-a-shape-assignment-under-a-sy",
+     "title": "The pullback of a shape assignment under a symmetry",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-46-gluing-equations-for-general-concrete-triangu",
+     "title": "Gluing equations for general concrete triangulations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-5-review-of-ptolemy-coordinates",
+     "title": "Review of Ptolemy coordinates",
+     "prose_ratio": 0.219,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-51-ptolemy-assignments-for-ordered-triangulation",
+     "title": "Ptolemy assignments for ordered triangulations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-52-the-pullback-of-a-ptolemy-assignment-under-a",
+     "title": "The pullback of a Ptolemy assignment under a symmetry",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-53-ptolemy-assignments-for-general-concrete-tria",
+     "title": "Ptolemy assignments for general concrete triangulations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-6-from-ptolemy-coordinates-to-shapes",
+     "title": "From Ptolemy coordinates to shapes",
+     "prose_ratio": 0.397,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-020-61-proof-for-edge-equations",
+     "title": "Proof for edge equations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-62-proof-for-face-equations",
+     "title": "Proof for face equations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-63-proof-for-internal-equations",
+     "title": "Proof for internal equations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-7-symplectic-properties-and-quantum-topology",
+     "title": "Symplectic properties and quantum topology",
+     "prose_ratio": 0.605,
+     "coverage_ratio": 0.931,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-024-71-applications-in-quantum-topology",
+     "title": "Applications in quantum topology",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-8-decorations",
+     "title": "Decorations",
+     "prose_ratio": 0.456,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-026-81-generic-decorations-ptolemy-coordinates-and-s",
+     "title": "Generic decorations, Ptolemy coordinates and shapes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-9-the-natural-cocycle-of-a-generic-decoration",
+     "title": "The natural cocycle of a generic decoration",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-028-92-cocycles",
+     "title": "Cocycles",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-91-truncated-and-doubly-truncated-simplices",
+     "title": "Truncated and doubly truncated simplices",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-10-explicit-formulas-for-the-natural-cocycles",
+     "title": "Explicit formulas for the natural cocycles",
+     "prose_ratio": 0.093,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-031-101-diamond-and-ratio-coordinates",
+     "title": "Diamond and ratio coordinates",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-102-x-coordinates",
+     "title": "X-coordinates",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-11-from-shape-assignments-to-cocycles",
+     "title": "From shape assignments to cocycles",
+     "prose_ratio": 0.913,
+     "coverage_ratio": 0.88,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-034-12-duality",
+     "title": "Duality",
+     "prose_ratio": 0.936,
+     "coverage_ratio": 0.937,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-035-13-the-cusp-equations",
+     "title": "The cusp equations",
+     "prose_ratio": 0.615,
+     "coverage_ratio": 0.905,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-036-131-simplifying-the-cusp-equations",
+     "title": "Simplifying the cusp equations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-14-example-the-figure-eight-knot",
+     "title": "Example: the figure-eight knot",
+     "prose_ratio": 0.897,
+     "coverage_ratio": 0.968,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-038-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

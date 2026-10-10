@@ -1,0 +1,276 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   SECTION 4: Explicit formula for the characteristic map      %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Explicit formulas for the characteristic map} 
+\label{sec:characteristic}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In this section we give an explicit diffeomorphism from the Grassmann manifold $\gras$ of oriented $2$-planes through the origin in $4$-space to a product of two $2$-spheres, and then use it to give a formula for the characteristic map $g_L:\tor\to S^2$ of a three-component link $L$ in the $3$-sphere. 
+
+We also describe an alternative form $h_L:\tor\to S^2$ of the characteristic map, homotopic to $g_L$ but more convenient for the proof of  \thmref{A} that we will give in \secref{A}.   The formula for $h_L$ will reveal a close connection between the characteristic map and the classical Gauss map $T^2\to S^2$ for two-component links in $3$-space. 
+
+Throughout we regard $\br^4$ as the algebra of {\itb quaternions}, with orthonormal basis $1,i,j,k$ and unit sphere $S^3$ (oriented so that $i,j,k$ is a positive frame for the tangent space to $S^3$ at the point $1$),  and $\br^3$ as the subspace of {\itb pure imaginary quaternions} spanned by $i$, $j$ and $k$, with unit sphere $S^2$.    Thus $S^3$ is viewed as the multiplicative group of unit quaternions, and $S^2$ as the subset of pure imaginary unit quaternions.  
+
+For any quaternion $q = q_0+q_1i+q_2j+q_3k$, let $\bar q$ denote its conjugate $q_0-q_1i-q_2j-q_3k$, which coincides with $q^{-1}$ when $q\in S^3$, and let $\re(q) = q_0$ and $\Im(q)=q_1i+q_2j+q_3k$ denote its real and imaginary parts.  
+
+
+ 
+%%%%%
+\part{The Grassmann manifold $\gras$}
+%%%%%
+
+It is well known
+% dating back to the work of Julius Pl\"ucker in the nineteenth century
+that $\gras$ can be identified with a product of two $2$-spheres.  In particular, we will use the diffeomorphism
+$$
+\pi: \gras \longrightarrow S^2\times S^2  
+$$
+that maps the oriented plane $\pb ab$, spanned by an orthonormal $2$-frame $(a,b)$ in $\br^4$, to the point $(b\bar a,\bar ab)$ in $S^2\times S^2$.  Note that both coordinates 
+$$
+\pi_+\pb ab \ = \ b\bar a \qquad\text{and}\qquad \pi_-\pb ab \ = \ \bar ab
+$$
+do in fact lie in $S^2$ since right and left multiplication by $\bar a$ are orthogonal transformations of $\br^4$, carrying the orthonormal frame $(a,b)$ to the orthonormal frames $(1,b\bar a)$ and $(1,\bar ab)$.   
+
+To see that $\pi$ is well-defined, consider any other orthonormal basis for the plane $\pb ab$.  It must be of the form $(ac,bc)$ for some $c$ in the circle subgroup $C_{\bar ab}$ through $\bar ab$, since this group acts on the plane by rotations.   Thus it suffices to check that $bc\,\overline{ac} = b\bar a$, which is immediate, and that $\overline{ac}\, bc = \bar ab$, which is true since $c$ commutes with $\bar ab$.  
+
+To see that $\pi$ is in fact a diffeomorphism, we can simply write down the inverse.  It maps a pair $(x,y)$ in $S^2\times S^2$ to the plane $\pb c{cy}$ where $c$ is the midpoint of any geodesic arc from $x$ to $y$ on $S^2$.   This can be verified by a straightforward calculation using the fact that conjugation by a pure imaginary quaternion rotates the $2$-sphere about that quaternion by $\pi$ radians, so $cy\bar c = x$.
+% together with the observation that $C_{\bar ab}$ is the full centralizer of $\bar ab$ in $S^3$
+
+\begin{comment}
+More generally, conjugation by $\cos\theta + u\sin\theta$ rotates $S^2$ about $u$ by $2\theta$ radians.
+
+Using this special property of the midpoint $c$, it is immediate that the map above, call it $\rho$, is a right inverse to $\pi$, since $\pi\rho(x,y) = (cy\bar c, \bar ccy) = (x,y)$.  To see that it is also a left inverse, we compute $\rho\pi\pb ab = \pb c{c\bar ab}$ where $c$ is the midpoint of any geodesic from $b\bar a$ to $\bar ab$ on $S^2$.  But then $c\bar ab\bar c = b\bar a$ by the special property of $c$, and it follows that $\bar ac$ commutes with $\bar ab$.  Therefore $c\in aC(\bar ab)$ and so $\rho\pi\pb ab \ = \  \pb c{c\bar ab} \ = \  \pb ab$.
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\part{The characteristic map $g_L$} 
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+Recall from the introduction that the Grassmann map $G:\conf\to\gras$ sends a triple $(x,y,z)$ of distinct points in $S^3$ to the plane they span in $\br^4$, translated to pass through the origin, and oriented so that
+$$
+G(x,y,z) \ = \ \pb{x-z}{y-z}.
+$$  
+We have extended notation so that for {\it any} two linearly independent vectors $a$ and $b$ in $\br^4$, the symbol $\pb ab$ denotes the oriented plane they span.  Then, given a three-component link $L$ in $S^3$, its characteristic map $g_L:\tor\to S^2$ is defined using the Grassmann map $G$ and the projection $\pi_+:\gras\to S^2$ by the formula 
+$$
+g_L(s,t,u) \ = \ \pi_+G(x,y,z) \ = \ \pi_+\pb{x-z}{y-z}
+$$
+where $x=x(s)$, $y=y(t)$ and $z=z(u)$ parametrize the components of $L$.   
+
+To make this explicit, and to show that using $\pi_-$ in place of $\pi_+$ in the definition would not change the homotopy class of $g_L$, we need expressions for $\pi_\pm\pb ab$ when $a$ and $b$ are arbitrary linearly independent vectors in $\br^4$, but not necessarily orthonormal.  
+
+For example, if $a$ and $b$ are orthogonal, then $b\bar a$ and $\bar ab$ are still pure imaginary, and so need only be normalized to give  $\pi_+\pb ab$ and $\pi_-\pb ab$.   
+
+For a general pair of linearly independent vectors $a$ and $b$, the vector $c = b-(b\dt a/a\dt a)a$, where $\dt$ is the dot product in $\br^4$, is orthogonal to $a$ and satisfies $\pb ac = \pb ab$.  Therefore $\pi_+\pb ab = \pi_+\pb ac$, which equals the unit normalization of the vector $c\bar a = b\bar a - b\dt a$.  But $b\dt a = \re(b\bar a)$, and so $\pi_+\pb ab$ is the unit normalization of $\Im(b\bar a)$.  Similarly $\pi_-\pb ab$ is the unit normalization of $\Im(\bar ab)$.  Therefore, for {\it any} two linearly independent vectors $a$ and $b$, we have  
+$$
+\pi_\pm\pb ab \ = \ (a,b)_\pm / |(a,b)_\pm|  
+$$
+where $(\,,\,)_\pm$ are the skew symmetric bilinear forms on $\br^4$ defined by 
+$$
+(a,b)_+ \ = \ \Im\,b\bar a \qquad\text{and}\qquad (a,b)_- \ = \ \Im\,\bar ab\,.
+$$
+
+\begin{comment}
+Note that both vectors $(a,b)_\pm$ have norm equal to the area of the parallelogram spanned by $a$ and $b$.
+\end{comment}
+
+It follows that $g_L(s,t,u)$ is the unit normalization of the vector
+$$
+\begin{aligned}
+F(x,y,z) \ &= \ (x-z,y-z)_+ \ = \ (x,y)_+ + (y,z)_+ + (z,x)_+ \\
+&= \ (ix\dt y + iy\dt z + iz\dt x \ , \  jx\dt y + jy\dt z + jz\dt x \ , \  kx\dt y + ky\dt z + kz\dt x)
+\end{aligned}
+$$
+where the last expression follows from the formula $(a,b)_+ = (ia\dt b, ja\dt b, ka\dt b)$.  This formula is seen as follows.  By definition, $(a,b)_+ = \Im(b\bar a)  =  (i\dt b\bar a)i + (j\dt b\bar a)j + (k\dt b\bar a)k$.  But $q\dt b\bar a = qa\dt b$ for any $q$ (in particular $i$, $j$ or $k$) since right multiplication by the unit quaternion $a/|a|$ is an isometry, and so $(a,b)_+ = (ia\dt b)i + (ja\dt b)j + (ka\dt b)k = (ia\dt b, ja\dt b, ka\dt b)$.
+% Similarly $\Im(\bar a b)= (ai\dt b, aj\dt b, ak\dt b)$
+Summarizing, we have shown:
+ 
+%%%%%%%%%
+\begin{proposition}
+\label{prop:char}
+\textbf{\boldmath The characteristic map $g_L:\tor\to S^2$ of a three-component link $L$ in $S^3$ is given by the formula
+$$
+g_L(s,t,u) \ = \ F(x,y,z)/\|F(x,y,z)\|
+$$
+where $x = x(s)$, $y = y(t)$ and $z = z(u)$ parametrize the components of $L$, and $F:\conf\to\br^3$ is the function defined above.}
+\end{proposition}
+%%%%%%%%%
+
+This formula for $g_L$ will be used in our proof of \thmref{B} in Sections \ref{sec:B} and \ref{sec:B'}.  
+For \thmref{A} it will be more convenient, for the most part, to use an alternative form of the characteristic map that we introduce next.
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\part{The asymmetric characteristic map $h_L$}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+Given a three-component link $L$ in the $3$-sphere, we define below an asymmetric version 
+$$
+h_L:\tor\longrightarrow S^2
+$$
+of the characteristic map in which the last component of $L$ plays a distinguished role, and show that it is homotopic to the earlier defined symmetric characteristic map $g_L$.  As will be seen, the map $h_L$ can be viewed as a parametrized family of Gauss maps for twisted versions of the first two components of $L$, parametrized by the third component.  
+
+For notational economy, we will use $\norm{q}$ to denote the unit normalization $q/|q|$ of any nonzero quaternion $q$.
+
+The key observation that motivates the definition of $h_L$ is that the Grassmann map $G:\conf\to\gras$ factors up to homotopy through the {\itb Stiefel manifold} $\stiefel$ of orthonormal $2$-frames in $4$-space.  
+
+More precisely, let $\pr_z$ denote {\itb stereographic projection} of $S^3-\{z\}$ onto $z^\perp$, the $3$-plane through the origin in $\br^4$ orthogonal to $z$.  Then we define the {\itb Stiefel map}
+$$
+H:\conf\longrightarrow\stiefel \quad,\quad (x,y,z) \longmapsto (z,\norm{\pr_zx-\pr_zy})
+$$
+(recall that the square brackets signify unit normalization), and will show that it is a homotopy equivalence whose composition with the canonical projection 
+$$
+P:\stiefel\longrightarrow\gras \quad,\quad (z,v)\longmapsto\pb zv
+$$
+is homotopic to the Grassmann map $G$.  
+
+To see this, first observe that there is a deformation retraction of $\conf$ to its subspace 
+$$
+V  \ = \ \{(v,-z,z) \st v\perp z\}
+$$ 
+defined as follows.  Start with $(x,y,z)\in\conf$, and consider the points $\pr_zx$ and $\pr_zy$ in $z^\perp$.   Translation in $z^\perp$ moves $\pr_zy$ to the origin, and then dilation in $z^\perp$ makes the translated $\pr_zx$ into a unit vector.   Conjugating this motion by $\pr_z$ moves $x$ to $\norm{\pr_zx-\pr_zy}$, moves $y$ to $-z$, and leaves $z$ fixed, as pictured in \figref{stfl}, thus defining a deformation retraction of $\conf$ to its subspace $V$, sending $(x,y,z)$ to $(\norm{\pr_zx-\pr_zy},-z,z)$.
+  
+
+%%% FIGURE 14: Deformation retraction to V %%%
+\begin{figure}[h!]
+\includegraphics[height=150pt]{FigRT.pdf}
+\put(-127,136){\small$z$}
+\put(-105,18){\small$-z$}
+\put(-80,103){\small$x$}
+\put(-92,123){\small$y$}
+\put(-40,72){\small $\pr_zx$}
+\put(-30,100){\small $\pr_zy$}
+\put(-187,45){$z^\perp$}
+\put(-145,90){$S^3$}
+\put(-150,0){\small$\norm{\pr_zx-\pr_zy} \ = \ (\pr_zx-\pr_zy)/|\pr_zx-\pr_zy|$}
+\caption{The deformation retraction $\conf\to V$}
+\label{fig:stfl}
+\end{figure}
+%%%%%%%%%%%%%%%%% 
+
+Identifying $V$ with $\stiefel$ via $(v,-z,z)\leftrightarrow(z,v)$, this shows that $H$ is a homotopy equivalence with homotopy inverse $I$ given by $I(z,v) = (v,-z,z)$.  The calculation 
+$$
+GI(z,v) \ = \ \pb{v-z}{-2z} \ = \ \pb zv \ = \ P(z,v)\,,
+$$
+shows that $GI=P$, and so $G\simeq PH$ as claimed.
+
+Now observe that there are two natural homeomorphisms from the Stiefel manifold $\stiefel$ to $S^3\times S^2$ that arise from viewing $S^3$ as the unit quaternions and $S^2$ as the pure imaginary unit quaternions, namely $(z,v) \mapsto (z,v\bar z)$ and $(z,v)\mapsto (z,\bar zv)$.  These yield projections $\pi_\pm:\stiefel\to S^2$ given by 
+$$
+\pi_+(z,v) \ = \ v\bar z \qquad\text{and}\qquad \pi_-(z,v) =  \bar zv.
+$$
+These are just the lifts to $\stiefel$ of the previously defined projections $\pi_\pm:\gras\to S^2$ with the same names. 
+ 
+Define the {\itb asymmetric characteristic map} $h_L:\tor\to S^2$ to be the composition $\pi_+He_L$, that is,
+$$
+h_L(s,t,u) \ = \ \norm{\pr_zx-\pr_zy}\, \bar z 
+$$ 
+where as usual $x=x(s)$, $y=y(t)$ and $z=z(u)$ parametrize the components of $L$, and the square brackets indicate unit normalization.     
+
+%%%%%%%%%
+\begin{proposition}
+\label{prop:asymmetric}
+\textbf{\boldmath The two versions $g_L$ and $h_L$ of the characteristic map of a three-component link $L$ in $S^3$ are homotopic.  Furthermore, these maps are independent, up to homotopy, of the choice of projections $\pi_+$ or $\pi_-$ used in their definitions.}
+\end{proposition}
+%%%%%%%%%
+
+\begin{proof}
+By definition $g_L = \pi_+Ge_L$ and $h_L = \pi_+He_L$, shown in the diagram below as the maps from left to right across the bottom and top, respectively.
+\vskip-.1in
+\begin{diagram}[size=1.5em]
+&&&& \quad \stiefel \quad && \\
+&&& \ruTo[leftshortfall=10pt]^H \ && \rdTo[leftshortfall=10pt]^{\pi_+} & \\
+\tor\ & \rTo[l>=.5in]_{e_L} & \ \conf \ \ \  && \dTo_P && \ S^2\\
+&&& \rdTo[leftshortfall=10pt]_G && \ \ruTo[leftshortfall=7pt]_{\pi_+}[rightshortfall=10pt] & \\
+&&&& \quad \gras \quad && \\
+\end{diagram}
+\vskip.1in
+\noindent Here $e_L(s,t,u)=(x(s),y(t),z(u))$ records the parametrization of the link, and $G$ and $H$ are the Grassmann and Stiefel maps with their associated projections $\pi_+$.  It was shown above that the left triangle in the diagram commutes up to homotopy, and the right triangle commutes on the nose.  Therefore $h_L$ and $g_L$ are homotopic.
+
+%\quad\underset{e_L}\longrightarrow\quad
+
+
+Now the same argument shows that the maps $h_L' = \pi_-He_L$ and $g_L' =  \pi_-Ge_L$ are homotopic.   Hence to complete the proof, it suffices to show that $h_L$ and $h_L'$ are homotopic.  To do so, view $\stiefel$ as the unit tangent bundle of $S^3$, with projection $p$ to the base $S^3$ given by $p(z,v) = z$.  Then the composition $pHe_L$ is null-homotopic, since it maps onto the third component of $L$, and so the map $He_L$ is homotopic to a map into any $S^2$-fiber of the bundle $\stiefel\to S^3$.  We choose the fiber over $z=1$, where the two projections $\pi_+(z,v) = v\zbar$ and $\pi_-(z,v) = \zbar v$ coincide.  It follows that $h_L$ and $h_L'$ are homotopic. 
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\part{A Gaussian view of the asymmetric characteristic map}
+%%%%%%%%%%%%%%%%%%%%%%
+
+The formula above for $h_L$ involves first normalizing a vector in $z^\perp$, and then multiplying by $\zbar$ to move it to the unit sphere $S^2$ in the pure imaginary quaternion $3$-space $\br^3$.  We would like to express this directly as the normalization of a vector in $\br^3$.  
+
+A geometric argument shows that stereographic projection $\pr_a$ is given by 
+$$
+\pr_ab \ = \ (\Im\,b\bar a)a/(1-\re\,b\bar a)
+$$
+and it follows that $(\pr_ab)c  = \pr_{ac}\,bc$ for any three unit quaternions $a$, $b$ and $c$ with $a\ne b$.  Hence the formula $h_L(s,t,u) = \norm{\pr_zx-\pr_zy}\, \bar z$ can be rewritten as
+$$
+\begin{aligned}
+h_L(s,t,u) \ &= \ \norm{\pr_1\,x\zbar - \pr_1\,y\zbar} \\
+&= \ \norm{\pr_{-1}(-y\zbar) - \pr_{-1}(-x\zbar)}
+\end{aligned}
+$$
+where, as usual, $x=x(s)$, $y=y(t)$ and $z=z(u)$ parametrize $L$, and the square brackets indicate unit normalization in $\br^3$.  We favor the last expression because stereographic projection from $-1$ is orientation-preserving, while from $1$ it is orientation-reversing.  
+
+Now for any two distinct unit quaternions $a$ and $z$, introduce the abbreviation
+$$
+a_z \ = \ \pr_{-1}(-a\zbar) \ \in \ \br^3\,,
+$$
+and so in particular $a_{-1} = \pr_{-1}\,a$.  Then we can write
+$$
+h_L(s,t,u) \ = \ \norm{y_z-x_z}\,.
+$$
+For fixed $u$, this is just the classical Gauss map for the two-component link $X_z\cup Y_z \subset \br^3$ that is the image of the first two components $X\cup Y$ of $L$ under the map $a\mapsto a_z$.  
+Thus the asymmetric characteristic map $h_L$ can be viewed as a one-parameter family of Gauss maps for images in $3$-space of $X\cup Y$.  The third component $Z$ provides the parameter and determines the axes about which these images are gradually twisted.
+
+In the next section, we will explain this perspective more carefully.  But we can see right now that it yields an easy proof of the first part of \thmref{A}, equating the pairwise linking numbers of the link $L$ with the degrees of the restriction of its characteristic map $g_L$ to the coordinate $2$-tori.
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+\part{Proof of the first statement in \thmref{A}}
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+It can be arranged by an isotopy of $L$ that $z(0) = -1$.  Then the restriction of $h_L$ to the coordinate $2$-torus $S^1\times S^1\times 0$ is precisely the Gauss map of the stereographic image $X_{-1}\cup Y_{-1}$ of $X\cup Y$, whose degree is equal to the linking number $\lk(X, Y )$ since $\pr_{-1}$ is orientation-preserving. Since $g_L$ is homotopic to $h_L$, the same is true for $g_L$.  But then it follows from the symmetry of $g_L$ that $\lk(X,Z)$ and $\lk(Y,Z)$ are given by the degrees of $g_L$ on $S^1\times 0\times S^1$ and on $0 \times S^1\times S^1$, respectively. 
+
+The proof of the second statement in \thmref{A} -- which relates the triple linking number of $L$ to the Pontryagin $\nu$-invariant of its characteristic map -- is more delicate.  It will occupy us for the next two sections.
+
+
+
+
+
+
+
+
+
+
+\begin{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\part{A Gaussian view of the asymmetric characteristic map}
+%%%%%%%%%%%%%%%%%%%%%%
+
+Recall that the linking number of a two-component link in $\br^3$ is given by the degree of its Gauss map $(s,t)\mapsto \norm{y-x}$, where $x=x(s)$ and $y=y(t)$ parametrize the components of the link, and where as usual the brackets denote unit normalization.
+
+Using stereographic projection $\pr_1:S^3-\{1\} \to \br^3$, the same formula holds for a two component links\ $L$ in $S^3-\{1\}$ where the associated {\itb Gauss map} 
+$$
+g_L:T^2\longrightarrow S^2 
+$$ 
+is given by $g_L(s,t) = \norm{\pr_1x - \pr_1y}$.  The change in the order of the variables $x$ and $y$ in the formula reflects the fact that $\pr_1$ is orientation reversing.  Here one uses the usual conventions for orienting $S^3\subset\br^4$ (outward normal first) and the pure quaternion $3$-space (with ordered basis $i,j,k$).
+
+Now let $L$ be a $3$-component link in $S^3$, with components $X$, $Y$ and $Z$ parametrized by $x=x(s)$, $y=y(t)$ and $z=z(u)$ as usual.  For each $u\in S^1$, let $u(X\cup Y)$ denote the two-component link  that is the image of $X\cup Y$ under right multiplication by $\zbar = \zbar(u)$.  Then the asymmetric characteristic map of $L$ can be expressed as
+$$
+h_L(s,t,u) \ = \   \norm{\pr_1\,x\zbar - \pr_1\,y\zbar}\ = \ g_{u(X\cup Y)}(s,t)
+$$
+and so can be viewed as a parametrized family of Gauss maps for twisted versions $u(X\cup Y)$ of $X\cup Y$, where the twisting is induced by $Z$.
+
+From this perspective, the first statement in \thmref{A} is completely transparent.  Indeed, it can be arranged by an isotopy of $L$ that $z(1) = 1$.  Then the restriction of $h_L$ to the coordinate $2$-torus $S^1\times S^1\times 1$ is precisely the Gauss map of $X\cup Y$, whose degree is equal to the linking number $\lk(X, Y )$. Since $g_L$ is homotopic to $h_L$, the same is true for $g_L$.  But then it follows from the symmetry of $g_L$ that $\lk(X,Z)$ and $\lk(Y,Z)$ are given by the degrees of $g_L$ on $S^1\times 1\times S^1$ and $1 \times S^1\times S^1$, respectively. 
+
+The proof of the second statement in \thmref{A} is more delicate, and will occupy us for the next two sections.
+
+\end{comment}  
+

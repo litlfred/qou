@@ -1,0 +1,2842 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\%
+%           This is a LaTeX2e file. Please, LaTeX twice.
+%
+%   ("hlatex" command may be needed instead of ordinary "latex"
+%             if the size of the file is too large)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% In this version of the file, the discussion about the filtration
+%%   is removed and the pdf input is replaced with the tex code.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% DEFINITIONS OF SIZE
+%\documentstyle[12pt,bezier]{article}
+%%\documentclass[12pt]{article}
+%\documentclass[12pt]{amsart}
+\documentclass[10pt]{amsart}
+%\documentclass[12pt]{article}
+
+
+
+
+
+%\usepackage{fancyhdr}
+%\usepackage[us,12hr]{datetime} % `us' makes \today behave as usual in TeX/LaTeX
+%\fancypagestyle{plain}{
+%\fancyhf{}
+%\rfoot{Compiled on {\ddmmyyyydate\today} at \currenttime}
+%\lfoot{Page \thepage}
+%\renewcommand{\headrulewidth}{0pt}}
+\pagestyle{plain}
+
+
+%\usepackage{fancyhdr}
+%\usepackage[yyyymmdd,hhmmss]{datetime}
+%%\pagestyle{fancy}
+%\rfoot{Compiled on \today\ at \currenttime}
+%\cfoot{}
+%\lfoot{Page \thepage}
+
+%\usepackage{graphicx}
+
+%\usepackage[dvipdfm]{graphicx}
+\usepackage{bmpsize}
+\usepackage{feynmp}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+\usepackage{amsbsy}
+\usepackage{amsmath,tabu}
+%\usepackage[alphabetic]{amsrefs}
+%\usepackage{showlabels}
+%%%%\usepackage[dvips]{graphicx}
+\usepackage[dvipdfmx]{graphicx}
+%\usepackage{epic}
+%\usepackage[all]{xy}
+%%%%%%%%%%%%\usepackage{epsfig}    %this was commented
+%\usepackage[cmtip,arrow]{xy}
+%%%\usepackage{pb-diagram,pb-xy}
+%   \usepackage{pb-diagram}
+%    \usepackage{lamsarrow}
+%    \usepackage{pb-lams}
+\usepackage[all]{xy}
+% %%   \usepackage{c:/MYTEX/definitions/Bdiagx}
+%  \usepackage[all]{xy}
+%\input epsf.tex
+%\usepackage{epsf}
+%\usepackage{showlabels}
+\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amscd}
+%\usepackage{nath}
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{bbm}
+\usepackage{euscript}%[mathscr]
+\usepackage{mathrsfs}
+\usepackage{yhmath}
+
+\usepackage{tikz}
+
+\usepackage{hyperref}
+
+
+\usetikzlibrary{shapes,fit,intersections}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{patterns}
+\usetikzlibrary{matrix,arrows}
+%\usetikzlibrary{cd}
+\usepgflibrary{decorations.pathmorphing}
+
+%\input{tikzstyledefs.tex}
+
+\usepackage{tikz-cd}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{mathrsfs}
+\DeclareMathAlphabet{\mathscrbf}{OMS}{mdugm}{b}{n}
+
+
+
+\usepackage{stackengine}
+\stackMath
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% index of notations
+%\usepackage[splitindex]{imakeidx}
+
+\usepackage{imakeidx}
+
+\newrobustcmd{\SymbolPrint}[1]{\ensuremath{#1}\index[notationlist]{\ensuremath{#1}}}%
+
+
+
+
+
+
+
+\makeindex[intoc=true,name=notationlist,columns=3,title={List of Symbols}]
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\input ./defs/gendef.tex
+%\input ./defs/basdef.tex
+%\input ./defs/letdef.tex
+%\input ./defs/semlocdef.tex
+
+\input gendef.tex
+\input basdef.tex
+\input letdef.tex
+\input semlocdef.tex
+
+
+%\input  /Users/alexeioblomkov/Dropbox/WorkingDir/Rozansky/defs/gendef.tex
+%\input /Users/alexeioblomkov/Dropbox/WorkingDir/Rozansky/defs/basdef.tex
+%\input /Users/alexeioblomkov/Dropbox/WorkingDir/Rozansky/defs/letdef.tex
+%\input /Users/alexeioblomkov/Dropbox/WorkingDir/Rozansky/defs/semlocdef.tex
+
+
+%\input ./defs/locdeffiltr.tex
+%\input ./defs/locdeffiltrtail.tex
+
+
+
+%%% !!!! UNCOMMENT THE NEXT LINE IN ORDER TO GENERATE THE CONTENTS IN .PDF !!! %%%%%%%%%%%%
+%\usepackage[dvipdfm,backref,colorlinks=true,hyperindex,bookmarks]{hyperref}
+
+
+
+% \textwidth=125mm
+% \textheight=185mm
+% \parindent=8mm
+% \evensidemargin=0pt
+% \oddsidemargin=0pt
+% \frenchspacing
+
+
+% \topmargin=0in                          % top margin (less 1")
+% \headheight=0in                         % height of heading
+% \headsep=0in                            % separation of heading from body
+% \textheight=9in                         % height of body
+% %\footheight=3ex                         % height of foot
+% \footskip=4ex                           % between bottoms of body & foot
+% \textwidth=6in                          % width of body
+% \parskip=\medskipamount                 % space between paragraphs
+% \abovedisplayskip=1em plus.3em minus.5em        % space above equation (either)
+% \belowdisplayskip=1em plus.3em minus.5em        % " below
+% \abovedisplayshortskip=.5em plus.2em minus.4em  % " above when no overlap
+% \belowdisplayshortskip=.5em plus.2em minus.4em  % " below
+% \def\baselinestretch{1.2}       % magnification for line spacing
+% \thicklines                     % thick straight lines for pictures
+% \hsize=6in                      % " (TeX)
+% \lineskip=0pt                   % minimum box separation (TeX)
+
+
+
+% \marginparwidth=24pt \headsep=2em \headheight=1em
+% \textheight=9.2in \hoffset=-.5in \textwidth=6.5in
+% \voffset=-0.5in
+
+
+
+
+% \def\normalbaselines{\baselineskip20pt \lineskip3pt \lineskiplimit3pt}
+% \def\mapright#1{\smash{ \mathop{\longrightarrow}\limits^{#1}}}
+% \def\mapdown#1{\Big\downarrow\rlap
+%    {$\vcenter{\hbox{$\scriptstyle#1$}}$}}
+% \def\mapne#1{\nearrow\rlap
+%    {$\vcenter{\hbox{$\scriptstyle#1$}}$}}
+% \def\mapse#1{\searrow\rlap
+%    {$\vcenter{\hbox{$\scriptstyle#1$}}$}}
+
+
+%%%%%%%%%%% END OF COMMUTATIVE DIAGRAM DEFINITIONS %%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%% END OF LETTER DEFINITIONS %%%%%%%%
+
+
+
+
+%\input c:/MYTEX/definitions/gendef.tex
+%\input c:/MYTEX/definitions/basdef.tex
+%\input c:/MYTEX/definitions/letdef.tex
+%\input c:/MYTEX/definitions/semlocdef.tex
+%%%\input c:/MYTEX/definitions/locdefuogr.tex
+%\input c:/MYTEX/wsfoam/locdef.tex
+
+
+%%%%%%%%% LOCAL DEFS %%%%%%%%%%
+\def\mtrc#1#2{ \langle #1,#2 \rangle }
+\def\ap{ \alpha^{\prime} }
+\def\app{ \alpha^{\prime\prime} }
+\def\neo{ \nabla_{E_1} }
+\def\neeoo{ \nabla_{E_1}E_1 }
+\def\del{ \partial }
+
+\def\IR{ \mathbb{R} }
+\def\IC{ \mathbb{C} }
+\def\rx#1{ ~(\ref{#1}) }
+\def\ex#1{ eq.\rx{#1} }
+
+
+\def\a{ \alpha }
+\def\b{ \beta }
+\def\k{ \kappa }
+\def\t{ \tau }
+\def\e{ \epsilon }
+\def\tz{ \t_0 }
+
+\def\ka{ \k_\a }
+\def\kb{ \k_\b }
+\def\ta{ \t_\a }
+\def\Bfa{ \Bf_\a }
+\def\Tfa{ \Tf_\a }
+\def\Nfa{ \Nf_\a }
+\def\Bfb{ \Bf_\b }
+\def\Tfb{ \Tf_\b }
+\def\Nfb{ \Nf_\b }
+
+\def\bx{ \mathbf{x} }
+
+\def\rE{ \mathrm{E} }
+\def\rF{ \mathrm{F} }
+\def\rG{ \mathrm{G} }
+\def\rL{ \mathrm{L} }
+\def\rM{ \mathrm{M} }
+\def\rN{ \mathrm{N} }
+
+\def\ap{ \a^\prime }
+\def\bp{ \b^\prime }
+
+\def\ni{\noindent}
+\def\sol{ \underline{\bf Solution} }
+\def\solc{ \ni\sol }
+
+\def\prb#1{\ni\underline{\bf Problem #1} }
+
+\def\Bf{ B }
+\def\Tf{ T }
+\def\Nf{ N }
+
+\def\aap{ \alpha\p }
+\def\p{ ^{\prime} }
+\def\pp{ ^{\prime\prime} }
+\def\nbapp{ \nabla_{\aap}\aap }
+\def\nbap{ \nabla_{\aap} }
+
+\def\stzo{ 1 + \e^2\tz^2 }
+\def\stz{ (\stzo)^{1/2} }
+\def\stzm{ (\stzo)^{-1/2} }
+\def\stzmm{ (\stzo)^{-1} }
+
+\def\Ev#1{ E_{#1} }
+\def\Eo{ \Ev{1} }
+\def\Et{ \Ev{2} }
+\def\Eth{ \Ev{3} }
+
+\def\tho{ \theta_1 }
+\def\tht{ \theta_2 }
+
+
+\def\cov#1{ \nabla_{#1} }
+
+\def\ap{ \a^\prime }
+\def\app{ \a^{\prime\prime} }
+
+\def\omv#1{ \omega_{#1} }
+\def\omot{ \omv{12} }
+\def\omoth{ \omv{13} }
+
+\def\xbf{ \mathbf{x} }
+
+\def\xbfu{ \xbf_u }
+\def\xbfv{ \xbf_v }
+
+\def\snv{ \sin v\, }
+\def\csv{ \cos v\, }
+\def\esnv{ \e\snv }
+\def\ecsv{ \e\csv }
+\def\eksnv{ \e\,\k\snv }
+\def\ekcsv{ \e\,\k\csv }
+\def\kcsv{ \k\csv }
+\def\ksnv{ \k\snv }
+
+\def\Uu{ U_u }
+\def\Uv{ U_v }
+
+%%%%%%%%%%%%%% New defs %%%%%%%%%%%%
+
+\def\as{ \alpha(s) }
+\def\bs{ \beta(s) }
+\def\Ns{ N(s) }
+\def\p{ ^\prime }
+
+\def\xa{ a }
+\def\xb{ b }
+\def\xbs{ \xb(s) }
+
+\def\xs{ x(s) }
+\def\ys{ y(s) }
+
+\def\Sg{ \Sigma }
+\def\xU{ U }
+\def\xp{ p }
+\def\xps{ \xp(s) }
+
+\def\Ts{ T(s) }
+
+\def\bx{ \mathbf{x} }
+\def\fpp{ f\pp }
+\def\pp{ ^{\prime\prime} }
+
+\def\xCE{Chevalley-Eilenberg}
+
+\def\rmT{ \mathrm{T} }
+\def\rmS{ \mathrm{S} }
+\def\rmC{ \mathrm{C} }
+\def\rmH{ \mathrm{H} }
+
+\def\rmHu{ \rmH^* }
+
+\def\ZZ{\mathbb{Z} }
+
+%\def\Tsc{T_{sc}}
+\def\dgTsc{ \deg_{\Tsc}}
+\def\shdg#1{ \mathsf{#1}}
+\def\shq{ \shdg{q}}
+\def\sht{ \shdg{t}}
+%\def\sha{ \shdg{a}}
+\def\sha{}
+
+%********** 10s ***********
+
+\def\vcmp#1{ \langle #1 \rangle }
+\def\kpg{ \kappa_{\mathrm{g}} }
+
+%%%%%%%%%
+
+%\usepackage{showlabels}
+%\usepackage{hyperref}
+
+\usepackage{todonotes}
+
+\begin{document}
+%\draft
+\today  %\currenttime
+
+\newlength{\gap}
+\setlength{\gap}{0.4cm}
+
+\setlength{\unitlength}{3947sp}
+\setlength{\unitlength}{1mm}
+
+\def\xG{ G }
+%\def\xG{ \mfG }
+\def\xGC{ \xG_{\IC} }
+\def\xal{\alpha}
+\def\xbet{\beta}
+\def\xgm{\gamma}
+\def\xLv{ \mathbb{L} }
+\def\xft{ \mathfrak{h} }
+\def\xftC{ \xft_{\IC} }
+\def\xfg{ \mathfrak{g}}
+\def\xfgC{ \xfg_{\IC} }
+
+\def\xTr{ \mathbb{T} }
+
+
+\def\xalc{ \xal_{\mathrm{c}} }
+\def\lY{ Y }
+\def\cY{ \mathcal{\lY} }
+\def\oO{ O }
+\def\oOcv#1{ \oO_{#1} }
+\def\oOca{ \oOcv{\xalc} }
+\def\oOs{ \oO^{\ast} }
+%\def\oOscv#1{ \oOs_{#1} }
+\def\oOscv#1{ \oO_{\xLv;#1} }
+\def\oOsca{ \oOscv{\xalc} }
+
+\def\xa{ a }
+\def\xb{ b }
+\def\xc{ c }
+\def\xaz{ \xa_0 }
+\def\xbz{ \xb_0 }
+\def\xcz{ \xc_0 }
+
+\def\xain{ \xa_\infty }
+\def\xbin{ \xb_\infty }
+\def\xcin{ \xc_\infty }
+
+
+\def\rT{ \mathrm{T} }
+\def\rTs{ \rT^\ast }
+
+\def\xg{ g }
+\def\xgc{ \xg_{\mathrm{c}} }
+
+\def\xV{ V }
+\def\xcV{ \mathcal{V} }
+\def\lYv#1{\lY_{\xLv;#1} }
+\def\lYalc{ \lYv{\xalc} }
+\def\cYv#1{\cY_{\xLv;#1} }
+\def\cYalc{ \cYv{\xalc} }
+
+\def\mnN{ N }
+\def\mnNv#1{ N_{#1} }
+\def\mnNo{ \mnNv{1}}
+\def\mnNt{ \mnNv{2}}
+\def\mnNopt{ \mnNo+\mnNt }
+
+\def\cM{ \mathcal{M} }
+\def\cMv#1{ \cM_{\xLv;#1} }
+\def\cMalc{ \cMv{\xlac} }
+
+\def\SUv#1{ \mathrm{SU}(#1) }
+\def\SUN{ \SUv{\mnN} }
+
+\def\SLv#1{ \mathrm{SL}(#1) }
+\def\SLN{ \SLv{\mnN} }
+
+\def\GLv#1{ \mathrm{GL}(#1) }
+\def\GLN{ \GLv{\mnN} }
+
+\def\glv#1{ \mathfrak{gl}(#1) }
+\def\glN{ \glv{\mnN}}
+
+\def\slv#1{ \mathfrak{sl}(#1) }
+\def\slt{ \slv{2}}
+
+
+\def\rmT{ \mathrm{T}}
+\def\rmTs{ \rmT^*}
+\def\rmTsB{ \rmTs\cB }
+\def\mfgs{ \mfg^* }
+
+\def\bmtr#1{ \begin{bmatrix} #1 \end{bmatrix} }
+\def\spob{ O }
+
+\def\flF{ F }
+
+\def\cM{ \mathcal{M} }
+\def\cMS{ \cM_{\mathrm{S}} }
+\def\cF{ \mathcal{F} }
+\def\cB{ \mathcal{B}}
+\def\cN{ \mathcal{N}}
+\def\xF{ F }
+\def\SLNC{ \mathrm{SL}(N,\IC)}
+\def\SLtC{ \mathrm{SL}(2,\IC)}
+\def\slNC{ \mathfrak{sl}(N,\IC)}
+\def\xB{ B }
+\def\mfb{\mathfrak{b}}
+\def\mfn{\mathfrak{n}}
+\def\mfg{\mathfrak{g}}
+
+\def\Wz{ W_0 }
+\def\spW{ W }
+
+\def\pidv#1{ \pi^*_{#1}}
+\def\pido{ \pidv{1}}
+\def\pidt{ \pidv{2}}
+\def\pidot{ \pidv{12}}
+\def\pidth{ \pidv{23}}
+\def\pidoh{ \pidv{13}}
+
+\def\piuv#1{ \pi_{*,#1}}
+\def\piuoh{ \piuv{13}}
+
+\def\piv#1{ \pi_{#1}}
+\def\pio{ \piv{1}}
+\def\pit{ \piv{2}}
+\def\piot{ \piv{12}}
+\def\pith{ \piv{23}}
+\def\pioh{ \piv{13}}
+\def\piij{ \piv{ij}}
+
+\def\mfG{ \xG }
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\def\MF{ \mathrm{MF}^{sc} }
+\def\MFcrit{ \mathrm{MF}^{\mathrm{sc,crit}}}
+\def\MFs{\mathrm{MF}}
+\def\MFG{ \MF_{\mfG} }
+\def\MFBpt{ \MF_{\mBp\times\mBp}}
+\def\MFGvv#1#2{ \MFG(#1;#2) }
+\def\MFBptvv#1#2{ \MFBpt(#1;#2) }
+\def\MFGXgW{ \MFGvv{\Xg}{\mfW} }
+\def\MFGtW{ \MFGvv{\mfg\times\rmTsB\times\rmTsB}{\spW}}
+\def\MFBptW{ \MFBptvv{\xmvr}{\spW} }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\def\xmvr{ \mfg\times\mfnp\times\mfnp \times\xG }
+
+\def\MFvvv#1#2#3{ \MF_{#1} (#2;#3) }
+
+\def\mfcE{ E }
+\def\mfcF{ F }
+
+\def\brgr{ \mathfrak{Br}}
+\def\brgrv#1{ \brgr_{#1}}
+\def\brgrN{ \brgrv{\mnN} }
+\def\brgrNo{ \brgrv{\mnNo} }
+\def\brgrNt{ \brgrv{\mnNt} }
+\def\brgrNopt{ \brgrv{\mnNopt}}
+
+\def\Ob{ \mathrm{Ob}}
+
+\def\ctb#1{ [\![#1]\!] }
+\def\dmm{ \cdot }
+
+\def\brb{ \beta }
+\def\brbv#1{ \brb_{#1}}
+\def\brbo{ \brbv{1}}
+\def\brbt{ \brbv{2}}
+
+\def\xId{ \mathbbm{1}}
+\def\xIdv#1{ \xId_{#1}}
+
+\def\mB{ B }
+\def\mBp{ \mB_+ }
+\def\mfnp{ \mfn_+ }
+\def\mfbp{ \mfb_+ }
+
+\def\xX{ X }
+\def\xY{ Y }
+\def\xYv#1{ \xY_{#1} }
+\def\xYz{ \xYv{0} }
+\def\xYo{ \xYv{1} }
+\def\xYt{ \xYv{2} }
+\def\xYh{ \xYv{3} }
+\def\xYi{ \xYv{i} }
+
+\def\gxv#1{ g_{#1}}
+\def\gxo{ \gxv{1}}
+\def\gxt{ \gxv{2}}
+\def\gxh{ \gxv{3}}
+\def\gxot{ \gxv{12}}
+\def\gxth{ \gxv{23}}
+\def\gxoh{ \gxv{13}}
+
+\def\xmctt{ \End(\spob) }
+
+\def\xmtr#1{ \begin{bmatrix} #1 \end{bmatrix} }
+\def\kmtr#1{ \begin{bmatrix} #1 \end{bmatrix} }
+
+\def\dltv#1{ \delta_{#1} }
+\def\dlto{ \dltv{1} }
+\def\dltt{ \dltv{2} }
+
+\def\xv#1{ x_{#1} }
+\def\xo{ \xv{1} }
+\def\xz{ \xv{0} }
+\def\xmo{ \xv{-1}}
+
+\def\yv#1{ y_{#1} }
+\def\yo{ \yv{1} }
+\def\yt{ \yv{2} }
+\def\yi{ \yv{i} }
+
+\def\exa{ a }
+\def\exav#1{ \exa_{#1} }
+\def\exaoo{ \exav{11} }
+\def\exaot{ \exav{12} }
+\def\exato{ \exav{21} }
+\def\exatt{ \exav{22} }
+
+\def\txz{ \tilde{x}_0 }
+\def\ttxz{ \tilde{\tilde{x}}_0 }
+
+\def\xxA{ A }
+\def\Zt{ \ZZ_2 }
+\def\xD{ D }
+
+\def\mBpdb{\mBp\!\times\!\mBp}
+\def\xxM{ M }
+\def\xxV{ V }
+\def\xdl{ d_{\mathrm{l}} }
+\def\xdr{ d_{\mathrm{r}} }
+
+\def\Ksz{ \mathrm{K} }
+\def\Kszvvv#1#2#3{ \Ksz(#1;#2,#3) }
+\def\ktht{\theta}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%\def\crX{\mathbf{X}}
+%\def\crXv#1{ \crX_{#1}}
+%\def\crXpr{\crXv{\parallel}}
+%\def\crXbl{\crXv{\bullet}}
+%\def\crXp{\crXv{+}}
+%\def\crXn{\crXv{-}}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\crX{\mathcal{C}}
+\def\crXv#1{ \crX_{#1}}
+\def\crXpr{\crXv{\parallel}}
+\def\crXbl{\crXv{\bullet}}
+\def\crXp{\crXv{+}}
+\def\crXn{\crXv{-}}
+
+
+
+
+\def\brwsh#1#2{ { \langle #1,#2 \rangle } }
+\def\brhsh#1#2#3{{ \langle #1,#2,#3 \rangle }}
+\def\ztsh#1{ [#1] }
+\def\ztsho{ \ztsh{1} }
+
+\def\rgR{ R }
+\def\rgRshv#1#2{ \rgR_{\scriptscriptstyle \brwsh{#1}{#2 } } }
+\def\rgRmomo{ \rgRshv{-1}{-1}}
+
+\def\mcnv{ * }
+
+\def\xchv#1{ \chi_{#1} }
+\def\xchp{ \xchv{+} }
+\def\xchm{ \xchv{-} }
+
+
+\def\exav#1{a_{#1}}
+\def\exaoo{\exav{11}}
+\def\exaot{\exav{12}}
+\def\exato{\exav{21}}
+\def\exatt{\exav{22}}
+\def\exbv#1{b_{#1}}
+\def\exboo{\exbv{11}}
+\def\exbot{\exbv{12}}
+\def\exbto{\exbv{21}}
+\def\exbtt{\exbv{22}}
+\def\excv#1{c_{#1}}
+\def\excoo{\excv{11}}
+\def\excot{\excv{12}}
+\def\excto{\excv{21}}
+\def\exctt{\excv{22}}
+
+\def\xXtl{ \tilde{\xX} }
+\def\dgBs{ \deg_{\mflg^2}}
+\def\dltv#1{ \delta_{#1}}
+\def\dlto{ \dltv{1} }
+\def\dltt{ \dltv{2}}
+\def\dlth{ \dltv{3}}
+
+
+
+
+%%%%%%%%%%%%%% More Defs from Lev %%%%%%
+
+\def\yh{y_3}
+
+%%%%%%%%%%%%%%%%% Even more defs %%%%%%%%
+
+
+
+\def\xYo{ \xY_1 }
+\def\xYt{ \xY_2 }
+\def\xYpo{ \xYp_1}
+\def\xYpt{ \xYp_2}
+\def\yo{ y_1 }
+\def\yt{ y_2 }
+\def\xgo{ g_1 }
+\def\xgt{ g_2 }
+\def\xg{ g }
+\def\xgot{ g_{12} }
+\def\xgth{ g_{23} }
+\def\xgoh{ g_{13} }
+\def\xgof{ g_{14} }
+\def\xghf{ g_{34} }
+\def\xigot{ g^{-1}_{12} }
+\def\xigth{ g^{-1}_{23} }
+\def\xigoh{ g^{-1}_{13} }
+\def\xigof{ g^{-1}_{14} }
+\def\xighf{g^{-1}_{34} }
+\def\xh{ h }
+\def\xho{ h_1 }
+\def\xht{ h_2 }
+\def\xXtl{ \tilde{\xX} }
+\def\dgBs{ \deg_{\mflg^2}}
+\def\dltv#1{ \delta_{#1}}
+\def\dlto{ \dltv{1} }
+\def\dltt{ \dltv{2}}
+%\def\crX{\mathbf{X}}
+%\def\crXv#1{ \crX_{#1}}
+%\def\crXpr{\crXv{\parallel}}
+%\def\crXbl{\crXv{\bullet}}
+%\def\crXp{\crXv{+}}
+%\def\crXn{\crXv{-}}
+%\def\brwsh#1#2{ \langle #1,#2 \rangle }
+
+\def\xbmtr#1{\begin{bmatrix} #1 \end{bmatrix}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%% refs from Lev %%%%%%%
+
+\def\exav#1{a_{#1}}
+\def\exaoo{\exav{11}}
+\def\exaot{\exav{12}}
+\def\exato{\exav{21}}
+\def\exatt{\exav{22}}
+\def\exaoh{\exav{13}}
+\def\exath{\exav{23}}
+\def\exaho{\exav{31}}
+\def\exaht{\exav{32}}
+\def\exahh{\exav{33}}
+\def\exbv#1{b_{#1}}
+\def\exboo{\exbv{11}}
+\def\exbot{\exbv{12}}
+\def\exbto{\exbv{21}}
+\def\exbtt{\exbv{22}}
+\def\exboh{ \exbv{13}}
+\def\exbth{ \exbv{23} }
+\def\exbhh{ \exbv{33}}
+\def\exbho{ \exbv{31}}
+\def\exbht{ \exbv{32} }
+\def\excv#1{c_{#1}}
+\def\excoo{\excv{11}}
+\def\excot{\excv{12}}
+\def\excto{\excv{21}}
+\def\exctt{\excv{22}}
+\def\excoh{ \excv{13}}
+\def\excth{ \excv{23} }
+\def\exchh{ \excv{33}}
+\def\excho{ \excv{31}}
+\def\excht{ \excv{32} }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\def\xoo{x_{11}}
+\def\xot{x_{12}}
+\def\xoh{x_{13}}
+\def\xto{x_{21}}
+\def\xtt{x_{22}}
+\def\xth{x_{23}}
+\def\xho{x_{31}}
+\def\xht{x_{32}}
+\def\xhh{x_{33}}
+\def\txoo{\tx_{11}}
+\def\txot{\tx_{12}}
+\def\txoh{\tx_{13}}
+\def\txto{\tx_{21}}
+\def\txtt{\tx_{22}}
+\def\txth{\tx_{23}}
+\def\txho{\tx_{31}}
+\def\txht{\tx_{32}}
+\def\txhh{\tx_{33}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+
+
+\def\brh{ h }
+\def\brht{ \brh_2 }
+\def\briht{ \brh^{-1}_2 }
+\def\ybet{ \beta }
+\def\ybetth{ \ybet_{23} }
+\def\ybettt{ \ybet_{22} }
+\def\ybethh{ \ybet_{33} }
+
+
+
+%%%% bar %%%%%%
+
+\newcommand{\bpi}{\bar{\pi}}
+\newcommand{\bC}{\bar{C}}
+\newcommand{\bR}{\bar{R}}
+\newcommand{\bcalX}{\bar{\calX}}
+\newcommand{\brpi}{\bar{\pi}}
+\newcommand{\bcalC}{\bar{\calC}}
+
+
+%%%%mathscr %%%%%%%
+
+\newcommand{\scX}{\mathscr{X}}
+
+%%%%%% mathbf %%%%%%
+
+\newcommand{\bfG}{\mathbf{G}}
+\newcommand{\bfB}{\mathbf{B}}
+\newcommand{\bfQ}{\mathbf{Q}}
+
+%%%% mathcal %%%%%
+
+
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calC}{\mathcal{C} }
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calG}{\mathcal{G}}
+\newcommand{\calE}{\mathcal{E}}
+\newcommand{\calI}{\mathcal{I}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calO}{\mathcal{O}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\calK}{\mathcal{K}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calZ}{\mathcal{Z}}
+
+%%%% mathbb %%%%%%%%%%%
+
+\newcommand{\bbS}{\mathbb{S}}
+
+
+%%%%% maps %%%%%%%%%%%%
+\newcommand{\cont}{\mathrm{Cont}}
+\newcommand{\forg}{\mathrm{fgt}}
+\newcommand{\ir}{\bar{i}}
+\newcommand{\cl}{\mathrm{cl}}
+
+%%%% Homological notations %%%%%%%
+\newcommand{\cohog}[2]{\mathrm{H}^{#1}(#2)}
+\newcommand{\CE}{\mathrm{CE}}
+\newcommand{\bCE}{\overline{\mathrm{CE}}}
+\newcommand{\Com}{\mathrm{Com}}
+\newcommand{\Mod}{\mathrm{Mod}}
+\newcommand{\odel}{\stackon{\otimes}{\scriptstyle\Delta}}
+
+%%%%%%% General %%%%%%%%%%%%%%%%%
+\newcommand{\CC}{\mathbb{C}}
+
+%%%%%Spaces %%%%%%%%%%%%%
+\newcommand{\Hilb}{\mathrm{Hilb}}
+\newcommand{\Fl}{\mathrm{Fl}}
+\newcommand{\calX}{\scX}
+\newcommand{\calXr}{\overline{\scX}}
+\newcommand{\calXsm}{\overline{\mathcal{X}}}
+\newcommand{\calXsmu}{\underline{\calXsm}}
+\newcommand{\calXu}{\underline{\calX}}
+\newcommand{\St}{\mathrm{St}}
+\newcommand{\scXr}{\bar{\mathscrbf{X}}}
+\newcommand{\calCV}{\mathcal{CV}}
+
+%%%% Math operations %%%%%%%%%%%%%
+\newcommand{\supp}{\mathrm{supp}}
+\newcommand{\Ker}{\mathrm{Ker}}
+\newcommand{\adj}{\mathrm{adj}}
+\newcommand{\ind}{\mathrm{ind}}
+\newcommand{\indb}{\overline{\mathrm{ind}}}
+\newcommand{\Ind}{\mathrm{Ind}}
+\newcommand{\Indb}{\overline{\Ind}}
+\newcommand{\Lie}{\mathrm{Lie}}
+\newcommand{\xwr}{\mathrm{wr}}
+\newcommand{\Trg}{\mathcal{T}r}
+
+%%%%% Algebras %%%%%%%%%%%%%%%%%%
+\newcommand{\frb}{\mathfrak{b}}
+\newcommand{\frh}{\mathfrak{h}}
+\newcommand{\frn}{\mathfrak{n}}
+\newcommand{\frt}{\mathfrak{t}}
+\newcommand{\gl}{\mathfrak{gl}}
+\newcommand{\frg}{\mathfrak{g}}
+\newcommand{\frq}{\mathfrak{q}}
+
+\newcommand{\Brgr}{\mathfrak{Br}}
+
+%%%%%% Rings and ideals %%%%%%%%%%%%%%%%%
+\newcommand{\Icr}{\mathcal{I}^{crit}}
+\newcommand{\Spec}{\mathrm{Spec}}
+\newcommand{\Ann}{\mathrm{Ann}}
+\newcommand{\Brgrn}{\Brgr_n}
+
+%%%%%%% Sheaves %%%%%%%%%%%%%%%%%%
+
+%%%%%%% Functions %%%%%%%%
+
+\newcommand{\Wr}{\overline{W}}
+
+%%%%%%%%% Groups %%%%%%%
+
+\newcommand{\Tsc}{T_{sc}}
+\newcommand{\GL}{\mathrm{GL}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% end of my insertion %%%%%%%%%%%
+
+\thanks{The work of A.O. was supported in part by the Sloan Foundation the NSF CAREER grant DMS-1352398}
+\thanks{The work of L.R. was supported in part by  the NSF grant DMS-1108727}
+
+
+\title{Knot Homology and sheaves on the Hilbert scheme of points on the plane}
+\author[A.~Oblomkov]{Alexei Oblomkov}
+\address{
+A.~Oblomkov\\
+Department of Mathematics and Statistics\\
+University of Massachusetts at Amherst\\
+Lederle Graduate Research Tower\\
+710 N. Pleasant Street\\
+Amherst, MA 01003 USA
+}
+\email{oblomkov@math.umass.edu}
+
+
+\author[L.~Rozansky]{Lev Rozansky}
+\address{
+L.~Rozansky\\
+Department of Mathematics\\
+University of North Carolina at Chapel Hill\\
+CB \# 3250, Phillips Hall\\
+Chapel Hill, NC 27599 USA
+}
+\email{rozansky@math.unc.edu}
+
+
+%\usepackage{showlabels}
+
+
+\begin{abstract} For each braid $\beta\in \Brgrn$ we construct a $2$-periodic complex $\bbS_\beta$ of  quasi-coherent $\CC^*\times \CC^*$-equivariant sheaves  on the non-commutative nested Hilbert
+scheme $\Hilb_{1,n}^{free}$.
+We show that
+the triply graded vector space of the hypercohomology $ \mathbb{H}( \bbS_{\beta}\otimes \wedge^\bullet (\calB))$ with $\calB$ being tautological vector bundle, is an isotopy invariant of the  knot obtained by the
+closure of $\beta$. We also show that the support of cohomology of the complex $\bbS_\beta$ is supported on the ordinary nested Hilbert
+scheme $\Hilb_{1,n}\subset\Hilb_{1,n}^{free}$, that allows us to relate the triply graded knot homology to the sheaves on $\Hilb_{1,n}$ \end{abstract}
+
+
+%\begin{document}
+
+
+\maketitle
+\tableofcontents
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Introduction}\label{sec:intro}
+
+
+\subsection{Motivation}
+In recent years there was a lot of interest in establishing a connection between  knot homology, Macdonald polynomials and Hilbert schemes of points on a plane
+%[2],[6],[14],[17],[31].
+\cite{AS},\cite{Ch},\cite{GN},\cite{GORS},\cite{ORS}.
+In particular, there are many conjectural
+formulas expressing the knot homology of torus knots in terms of Macdonald polynomials or in terms of spaces of sections of special sheaves on the Hilbert schemes of points \cite{ORS},\cite{GORS},\cite{GN}. An agreement between these formulas is an interesting result at the intersection of algebra and geometry.
+%
+% The fact that all formulas yield the same homology results
+%
+%These formulas all expect to agree and the matching of the different version of the formulas results in interesting geometric and algebraic statements.
+
+When this paper was posted and its results were announced, the  attempts to attack these conjectures directly, without a new computational method, were not succeeding. More recently, a version of a categorical localization was developed and applied to some of these conjectures in  \cite{Ho,EHo,Me}.
+
+% That changed with the
+%more recent developments in the papers \cite{Ho,EHo,Me} where a version of categorical localization was developed and applied to some of the above mentioned conjectures.
+
+The current mathematical construction of triply graded homology based on Soergel bimodules is not related to Hilbert schemes of points. Hence the approach of  \cite{Ho,EHo,Me} is to compute the Soergel-based knot homology explicitly
+%Thus the way
+%the authors of \cite{EHo,Ho,Me} prove the conjectures is to compute explicitly the knot homology of the these knots
+and compare the answer with the homology of sheaves on the Hilbert scheme where the answer is known. One would still like to find a more direct link between the knot homology and sheaves on the Hilbert scheme of points on the plane.
+% The problem with this approach is that the Soergel bimodule computations are very challenging. However, in the paper \cite{EH}  some progress in this direction is made and building on work \cite{EH}
+Around the time of posting of this paper the authors of
+\cite{GNR} proposed a conjectural connection between the Soergel bimodules and the category of coherent sheaves on the Hilbert scheme of points.
+
+Our approach is different from that of \cite{GNR}. Roughly speaking, to a braid $\beta\in\Brgrn$ we associate a sheaf $\calS_{\beta}$ on the Hilbert scheme $\SymbolPrint{\Hilb_n}$ of $n$ points on $\CC^2$. The space of global sections of $\calS_\beta$ is the homology of the link $L(\beta)$ which is the closure of $\beta$.
+
+The construction of $\calS_\beta$ is quite involved and relies on a homomorphism from the braid group $\Brgrn$ to the convolution algebra of a category of matrix factorizations on an auxiliary space. We expect this homomorphism to be injective, but we neither prove nor use this fact in the paper.
+%
+%In this paper we construct a
+%triply graded homology of an oriented link by providing an explicit  construction for a sheaf whose global sections yield the triply graded homology. Our approach is different from that of
+%\cite{GNR}. Roughly speaking, in our approach the homology of the closure $\SymbolPrint{L(\beta)}$ of a braid
+%$\beta\in \Brgrn$ is the space of
+%global sections of a sheaf $\SymbolPrint{\calS_{\beta}}$  on the Hilbert scheme
+%$\SymbolPrint{\Hilb_n}$ of $n$ points on $\CC^2$.
+%The construction of
+% such sheaf $\calS_\beta$ is quite involved and relies on the homomorphism of  the braid group the
+%convolution algebra of matrix factorizations on an auxiliary space. We expect the homomorphism to be injective but it is
+%not shown (or used) in this paper.
+
+Compared to Soergel bimodule construction, our approach is more complicated conceptually, but it is more geometric and, surprisingly, in some important cases it is less computationally challenging.
+% Our construction is more geometric and less computationally
+%challenging than the Soergel bimodule theory.
+For example, in a subsequent paper \cite{OR} we  show that adding a full twist $\SymbolPrint{Tw}$ to the braid results in the twisting of $\calS_{\beta}$ by a special line bundle:
+$\calS_{\beta\cdot Tw}=\calS_{\beta}\otimes L$.  Existence of a knot theory with such property was predicted in \cite{ORS}.
+ %The precise relation between the homology of sheaves on the Hilbert schemes and knot homology will be discussed in subsequent paper.
+
+
+% We construct a specialization of our homology theory that reproduces the HOMFLYPT polynomial
+% (see theorem~\ref{thm:HOMFLYP}). Thus it is natural to expect that the homology theory in this paper coincides with previously
+% constructed theory \cite{KhR} that relies on the theory of Soergel bimodules, at the moment we do not have a proof that the theories
+% match.
+
+
+
+\subsection{Main result}
+% Here is our main result.
+ We consider a `non-commutative analog' of the nested Hilbert scheme defined as a quotient
+  $\SymbolPrint{\Hilb_{1,n}^{free}}=\SymbolPrint{\widetilde{\Hilb}_{1,n}^{free}}/\SymbolPrint{B}$, where
+ \[
+ %\Hilb_{1,n}^{free}=\widetilde{\Hilb}_{1,n}^{free}/(B\times\CC^*),\qquad
+ \widetilde{\Hilb}_{1,n}^{free} = \{
+ (X,Y,v)\in \frb\times\frn\times V\,|\,\CC\langle X,Y\rangle v=\SymbolPrint{V}
+ \}
+ \]
+ is an open subset of the product $\frn\times\frb\times V$ ($\frn,\frb\subset\mathfrak{gl}_n(\SymbolPrint{V})$ being the nilpotent radial and Borel subalgebra), the Borel subgroup $B\subset\mathrm{GL}_n$ acts on the first two factors by conjugation and  $V$ is its fundamental representation.
+ %Define $\widetilde{\Hilb}_{1,n}^{free}$
+%It turns out the most natural object is related to the non-commutative nested Hilbert  scheme which is defined as follows. We define $\widetilde{\Hilb}_{1,n}^{free}$
+%as an open subset of
+%$\frn\times \frb\times V$ consisting of triples $(X,Y,v)$ such that $\CC\langle X,Y\rangle v=V$.
+%The non-commutative nested Hilbert scheme is defined as a quotient:
+%\[\Hilb_{1,n}^{free}=\widetilde{\Hilb}_{1,n}^{free}/(B\times\CC^*).\]
+%we call non-commutative Hilbert scheme
+%$\Hilb_{1,n}^{free}$.
+
+Denote a flag $ V_\bullet=(V_1\subset\cdots \subset V_{n-1}\subset V_n=V)\in \mathrm{Fl}$ and denote a point in the cotangent bundle $T^*\mathrm{Fl}$ as a pair \( (Y,V_\bullet )\), where $Y$ is a nilpotent matrix preserving the flag: $Y V_i\subset V_{i-1}$.
+
+In order to  avoid a quotient by a non-reductive group \(B\) we can define \(\Hilb^{free}_{1,n}\) equivalently as a GIT \(\mathrm{GL}_n\)-quotient of
+%
+%
+% To avoid  taking a quotient by a non-reductive group \(B\)
+% % in our construction of \(\Hilb^{free}_{1,n}\)
+%  we can also define \(\Hilb^{free}_{1,n}\) as a GIT \(\mathrm{GL}_n\)-quotient of
+ the space  of quadruples \((X,Y,V_\bullet,v)\in \frg\times T^*\mathrm{Fl}\times V\) such that \(\CC\langle X,Y\rangle v=V\) and \(X V_\bullet\subset V_\bullet\).
+ The fact that these definitions match follows from covering
+  \(\widetilde{\Hilb}_{1,n}\) by affine charts with free \(B\)-action, for details see proposition~\ref{prop: aff cover}. The affine cover also provides a "hands on" description of the algebraic structure of the quotient manifold.
+
+
+Let us denote by  $\SymbolPrint{\calB^\vee}$  the trivial vector bundle over $\widetilde{\Hilb}_{1,n}^{free}$ with the fiber $V$, we use the same notation for
+ its   descent to the $B$-quotient. Respectively, $\SymbolPrint{\calB}$ is the vector bundle dual to $\calB^\vee$.
+
+% Let us also point out that the action of \(B\) on
+%\(\widetilde{\Hilb}_{1,n}^{free}\) is free and in the  proposition~\ref{prop: aff cover} we construct an explicit set of affine charts that are \(B\)-equivariant, this cover
+%provides the quotient with the structure  of algebraic manifold.
+%There is a $T_{sc}=(\CC^*)^2$ action on $\Hilb_{1,n}^{free}$ by scaling $X$ and $Y$ and
+
+
+The two-dimensional torus
+$\SymbolPrint{\Tsc}=\CC^*\times\CC^*$ acts on  $\Hilb_{1,n}^{free}$ by scaling $X,Y$: an element $(\lambda,\mu)\in T_{sc}$ turns a pair of matrices $(X,Y)$ into $(\lambda^{-2}X,\lambda^2 \mu^2Y)$.
+We refer to the weights of this action as $q$-degree and $t$-degree.
+The torus \(T_{sc}\) acts on the space \(V\) by \((\lambda,\mu)\cdot v=\lambda v\), that is the vectors of \(V\) have degree \(t\).
+We use notation \(\SymbolPrint{\shq^k\sht^l}\) for the shift of the \(T_{sc}\)-action: \[(\lambda,\mu)(\shq^k\sht^l\cdot x)=\lambda^k\mu^l (\lambda,\mu)\cdot x.\]
+
+We denote by $\SymbolPrint{D^{per}_{T_{sc}}(\Hilb_{1,n}^{free})}$ the derived category of two-periodic
+ complexes on $\Hilb_{1,n}^{free}$ which are $T_{sc}$-equivariant. Let $\Brgrn$ denote a braid group with $n$ strands and let $\SymbolPrint{\xwr(\beta)}$ denote the writhe of a braid $\beta$
+defined as the difference between the positive and negative crossings.
+Our main result is the construction of the object
+$$ \SymbolPrint{\bbS_\beta}\in D^{per}_{T_{sc}}(\Hilb_{1,n}^{free}),$$
+such that the hypercohomology of the complex
+$$ \SymbolPrint{\mathbb{H}^k(\beta)}:=\mathbb{H}(\bbS_\beta\otimes \wedge^k\calB)$$
+defines an isotopy invariant of $L(\beta)$. To simplify notations we assume  \(\mathbb{H}^k(\dots)=0\) for \(k\notin \{0,1,\dots,n\}\).
+
+\begin{theorem}\label{thm: intro main} For any $\beta\in \Brgr_n$ the triply graded space:
+\[\SymbolPrint{\mathcal{H}(\beta)}:=\oplus_{k\in\ZZ}\SymbolPrint{\mathcal{H}^k(\beta)},\]
+with \(\mathcal{H}^k(\beta)\)  doubly graded  defined by
+$$\calH^k(\beta):=\shq^{-\xwr(\beta)+n}\cdot\mathbb{H}^{(k-\xwr(\beta)+n-1)/2}(\beta),$$
+is an isotopy invariant of the braid closure $L(\beta)$.
+\end{theorem}
+
+
+Let us also introduce a notation for the graded pieces of $\calH^k$: $\SymbolPrint{\calH^{i,j,k}}\subset \calH^k$ is the subspace of vectors that are of weight
+$q^it^j$.
+We show that our invariant categorifies HOMFLY-PT polynomial.
+
+
+\def\Hvv#1{ \calH^{#1}}
+\def\Hijk{ \Hvv{i,j,k}}
+
+\begin{theorem}\label{thm:HOMFLY}
+The bi-graded Euler characteristic of $\calH^k(\beta)$ is equal to the HOMFLY-PT polynomial of the link $L(\beta)$:
+\def\Phmf{P}
+\[
+\Phmf\bigl(L(\beta)\bigr) =\sum_{i,j,k\in\ZZ} (-1)^j q^i a^k\dim\Hijk(\beta).
+\]
+\end{theorem}
+
+%Let $\calCV\subset \frg^2$, $\frg=\mathfrak{sl}_n$ be a scheme consisting of the pairs of commuting traceless matrices $(X,Y)$. Inside this scheme we choose an
+%open subscheme $\calC_{st}$ defined by the conditions that there is a vector $v\in \CC^n$ such that $\CC[x,y]v=\CC^n$. The group $\bfG=\GL(n)$  acts on $\calCV^{st}$ by conjugations.
+%Let  $D^{qcoh}_{\bfG\times T_{sc}}(\calCV^{st})$ denote the derived category   of quasi-coherent $(\bfG\times T_{sc})$-equivariant sheaves  on $\frg^2$ with homological support on
+%$\calCV^{st}$. The differentials in complexes have $q,t$-weight $(0,1)$, so $t$-degree is homological.
+
+
+The first categorification of HOMFLY-PT polynomial was discovered by Khovanov and Rozansky \cite{KhR} and it is natural to expect that the homology
+theory from this paper coincides with one from \cite{KhR}. We do not have a proof for a match of these theories.
+%The main piece of evidence for our conjecture is the theorem~\ref{thm: main}.
+
+\subsection{Sheaves on Hilbert schemes}
+The usual nested Hilbert scheme $\SymbolPrint{\Hilb^L_{1,n}}$
+%\footnote{The variety $\Hilb^L_{1,n}$ probably should thought of as
+%a "Lagrangian" subvariety of the bigger variety $\Hilb_{1,n}$ that consists of $B$-orbits of
+%commuting pairs $(X,Y)\in \in \frb^2$ with a property that exist vector $v$ such that $\CC[X,Y]=\CC^n$}
+is a subvariety of $\Hilb_{1,n}^{free}$ defined by the commutativity constraint on $X,Y$:
+\[ [X,Y]=0.\]
+It turns out that the support of the homology of the complex $\bbS_\beta$ is contained in $\Hilb_{1,n}^L$. Hence the sheaf homology of the complex is the  sheaf
+\[\SymbolPrint{\calS_\beta}=\SymbolPrint{\calS_\beta^{odd}}\oplus\SymbolPrint{\calS_\beta^{even}}:=\mathcal{H}^*(\Hilb_{1,n}^{free},\mathbb{S}_\beta)\] on $\Hilb_{1,n}$ and we immediately have the following:
+\begin{theorem}\label{thm: spec seq}
+There is a spectral sequence with $E_2$ term being
+$$ (\textup{H}^*(\Hilb^L_{1,n},\calS_\beta\otimes\wedge^k\calB),d)$$
+$$
+d: \textup{H}^k(\Hilb^L_{1,n},\calS^{odd/even}_\beta\otimes\wedge^k\calB)\to
+\textup{H}^{k-1}(\Hilb^L_{1,n},\calS^{even/odd}_\beta\otimes\wedge^k\calB),$$
+that converges to $\mathbb{H}^k(\beta)$.
+\end{theorem}
+
+
+
+
+We conjecture that one can extract the link invariant for $L(\beta)$ directly from the sheaf $\calS_\beta$ if $\beta$ is sufficiently positive
+
+\begin{conjecture} For any \(\beta\in\Brgr_n\) and sufficiently positive \(k\) we have  \[\textup{H}^{>0}(\Hilb^L_{1,n},\calS_{\beta\cdot Tw^k})=0.\]
+\end{conjecture}
+
+
+There is a natural projection from the nested Hilbert scheme to the usual Hilbert scheme $p: \Hilb_{1,n}\to\Hilb_n$ and  it turns out that the push-forward $\SymbolPrint{p_*}(\mathcal{S}_\beta)\in
+D_{T_{sc}}^{per}(\Hilb_n)$  has slightly better properties than
+$\calS_\beta$:
+
+\begin{theorem} The element of \(D_{T_{sc}}^{per}(\Hilb_n)\)
+$$\SymbolPrint{\calS_{[\beta]}}:=p_*(\calS_\beta)$$
+depends only on the conjugacy class of $\beta$.
+\end{theorem}
+
+%We use matrix factorizations to construct  map:
+%\[
+%\xymatrix{
+%\Brgrn
+%\ar[r]
+%&
+%\Ob D^{qcoh}_{\bfG\times T_{sc}}(\calCV_{st}),\qquad \Trg(\beta)=\calS_\beta.
+%}
+%\]
+
+%We show in theorem~\ref{thm: conj inv} that the complex $\calS_\beta$ only depends on the conjugacy class of  the braid $\beta$. Thus we use notation $\calS_{[\beta]}$ for the above sheaf where $[\beta]$ is our notation for the
+%conjugacy class in $\Brgr_n$
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%The Hilbert scheme $\mathbf{Hilb}_n(\CC^2)$ of $n$ points on $\CC^2$ is the moduli space of ideals $I\subset \CC[x,y]$ such that $\dim (\CC[x,y]/I)=n$. The Hilbert-Chow map
+%$HC: \mathbf{Hilb}_n(\CC^2)\to \mathrm{Sym}^n(\CC^2)$ is defined by $HC(I)=\supp(\CC[x,y]/I)$.
+
+%There is a natural map $\Sigma:\mathrm{Sym}^n(\CC^2)\to \CC^2$ which is
+%just just a total sum of coordinates of an element in $\mathrm{Sym}^n(\CC^2)$. Let us define
+%map $hc:\mathbf{Hilb}_n(\CC^2)\to \CC^2$ as composition of $HC$ and $\Sigma$.
+%The $G$-action on $\calCV^{st}$ is free and
+%the quotient is $\Hilb_n(\CC^2):=hc^{-1}(0,0)$.
+
+%Similarly, we define the nested Hilbert scheme $\Hilb_{1,n}$ that constits of the chains of ideals $\CC[x,y]=I_0\supset I_1\supset\dots\supset I_n$. In our work for every $\beta\in \Brgr_n$ we construct a sheaf $\calS_\beta=
+%\calS_\beta^{even}\oplus \calS_\beta^{odd}$ on $\Hilb_{1,n}$ such that
+%$$ \calS_{[\beta]}=p_*(\calS_{\beta}),$$
+%where $p: \Hilb_{1,n}\to \Hilb_n$ is the natural projection.
+
+
+%The homology  $\mathrm{H}^*(\calC_\beta):=\mathrm{H}^{odd}(\calC_\beta)\oplus \mathrm{H}^{even}(\calC_\beta)$ is $\bfG$-equivariant sheaf on $\calCV$. Thus by restricting on the stable
+%locus $\calCV_{st}$ we obtain a sheaf on $\Hilb_n(\CC^2)$ which we denote by the  symbol $\calS_\beta$.
+
+%The universal ideal sheaf $\calI$ on $\Hilb_n(\CC^2)\times \CC^2$ is a sub-sheaf of the  structure sheaf $\calO$ and the push-forward $pr_1(\calO/\calI)$ is the rank $n$-vector bundle
+%on $\Hilb_n(\CC^2)$ which we denote by $\mathcal{T}$. This sheaf contains a unique copy of the trivial line bundle and we denote the quotient $\mathcal{T}/\calO$
+%by $\mathcal{B}$. Similarly, we define the vector bundle $\calB$ on $\Hilb_{1,n}$: $\calB=p^*(\calB)$.
+
+%The sheaf $\calS_\beta$ does not seem to be an invariant of the conjugacy invariant  and it is unlikely that
+%the global sections of this sheaf is an isotopy invariant of the link $L(\beta)$ but as we explain below it is possible to construct the doubly graded space
+%$\mathbb{H}^k(\beta)$ such that $\mathbb{H}^{k+\xwr(\beta)}(\beta)$  is an isotopy invariant of $L(\beta)$. We show that the following relation
+%with the sheaf $\calS_\beta$:
+
+
+%We use matrix factorizations to construct the sheaf from above. Thus the other aspect of our work is a construction of a canonical matrix factorization $\xht{\beta}$ for any braid $\beta$ with the property
+%that $\calHom(\xht{1},\xht{\beta})$ is the isotopy invariant of $L(\beta)$ (see theorem~\ref{thm:knot inv}).
+
+%The double grading of the vector space $\calH^k(\beta)$ originates from the action of the torus $T_{sc}$. The anti-diagonal
+% one-dimensional dimensional subtorus $\CC^*_a\subset T_{sc}$, which scales $x$ and $y$ with opposite weights, is special because   the class of $\calHom(\xht{1},\xht{\beta})$ inside the
+% $K$-group $K^{per}_{qcoh,T\times \CC^*_a}(\calC_{st})$ is an isotopy invariant of the closure $L(\beta)$. In particular, this class recovers the HOMFLY-PT polynomial of $L(\beta)$:
+%
+% \begin{theorem}\label{thm:HOMFLY1} For any braid $\beta\in \Brgrn$ we have
+% $$ \textup{HOMFLYPT}(L(\beta))=\sum_l a^{l}\left(\dim_q(\textup{H}^0(\calC_{st}/T,\calF^{(l+1-w)/2}_\beta))-\dim_q(\textup{H}^1(\calC_{st}/T,\calF^{(l+1-w)/2}_{\beta})) \right),$$
+% where $\dim_q$ the notation for the $\CC^*_a$-character of the vector space and $w=writh(\beta)$.
+% \end{theorem}
+
+In the sequel to this paper we  compute the sheaf $\bbS_\beta$ for many elements of the braid group. That allows us to give a  geometric description of the homology of a torus knot $T_{n,nk+1}$. More precisely,
+we study the positive braid $\beta_k\in \Brgrn$ such that  $L(\beta_k)=T_{n,nk+1}$. We compute explicitly the sheaf corresponding to this braid. It is supported on the punctual Hilbert scheme:
+$\SymbolPrint{\Hilb_{1,n}^{0}}=\widetilde{\Hilb}^{0}_{1,n}/B$,
+$\widetilde{\Hilb}_{1,n}^{0}:=\widetilde{\Hilb}_{1,n}\cap \frn^2\times V$ and we show
+
+\begin{theorem}\cite{OR}\label{thm:Tnk} For any \(k\in \ZZ\) we have
+  $$\calS_{\beta_k}=[\calO_{\Hilb_{1,n}^{0}}]^{vir}\otimes \det(\mathcal{B})^k,$$
+  where \([\calO_{\Hilb_{1,n}^0}]^{vir}\) is the Koszul complex defining the punctual Hilbert scheme
+  \(\widetilde{\Hilb}^0_{1,n}\subset \widetilde{\Hilb}_{1,n}^{free}\).
+\end{theorem}
+
+The sheaf $\calO_{\Hilb_n^0(\CC^2)}\otimes \det(\mathcal{B})^k$
+attracted a lot of attention in connection to combinatorics \cite{Hai}, representation theory \cite{GS} and knot theory
+\cite{ORS,GORS}. In particular, in \cite{ORS} it was conjectured that the global sections of this sheaf is a particular double-graded subspace  of the
+space of Khovanov-Rozansky homology of the torus knot $T_{n,1+nk}$. We expect that the push forward of the complex \(p_*([\calO_{\Hilb_{1,n}^0}]^{vir})\) is
+\(\calO_{\Hilb_n^0(\CC^2)}\) and thus
+our theorem is consistent with this conjecture and its generalization in \cite{GORS}.
+%In general our theory  behaves  well with respect to the addition of the full twists  (see section~\ref{sec:torus}).
+In a forthcoming paper we explore this regular behavior to gain more insight into the behavior of our knot invariant
+on large classes of knots.
+
+\subsection{Braids and matrix factorizations}
+
+%Let us also say few words on the construction of the sheaf $\bbS_\beta\in D^{per}_{T_{sc}}(\Hilb_{1,n}^{free})$.
+Our construction  of the complex of sheaves $\bbS_\beta\in D^{per}_{T_{sc}}(\Hilb_{1,n}^{free})$ is based on a homomorphism from the braid group
+$\Brgr_n$ to the convolution algebra of \(T_{sc}\)-equivariant and (weakly)  $B^2$-equivariant matrix  factorizations \(\MF_{B^2}(\calXr_2(G_n),\Wr)\) on the space $\SymbolPrint{\calXr_2(G_n)}:=\frb\times G_n\times \frn$ with the potential
+$$\SymbolPrint{\Wr}=\Tr(X\Ad_g(Y)),$$
+where $X\in \frb$ in upper triangular, $Y\in \frn$ is strictly upper triangular and \(\SymbolPrint{G_n}=GL_n\)\footnote{The space \(\calXr_2(G_n)\) appears naturally in the
+  context on the Kapustin-Saulina-Rozansky topological field theory, we describe this physical theory in the forthcoming paper.}. The potential $\Wr$ has degree $t^2$ with respect to $T_{sc}$ so we  also assume  that the differentials of the matrix factorizations from
+$\MF_{B^2}(\calXr_2( G_n),\Wr)$ have degree $t$.
+
+  In the section~\ref{sec: inc fun gens} we prove the following
+
+\begin{theorem}\label{thm: braid realization} The homotopic category $\MF_{B^2}(\calXr_2(G_n),\Wr)$ has a natural monoidal structure and there is a homomorphism
+$$  \Brgr_n\to  \MF_{B^2}(\calXr_2(G_n),\Wr),\quad \beta\mapsto \SymbolPrint{\bcalC_\beta}$$
+defined by an explicit choice of images of braid generators.
+\end{theorem}
+
+
+The construction of the homomorphism from the theorem is similar in spirit to the construction of Bezrukavnikov and Riche \cite{BR},
+%\cite{BR},
+though we do not rely on the results of \cite{BR}
+%\cite{BR}
+and
+our methods differ from their approach, mainly because we try to make our construction as explicit as it possible. Let us also remark that recently Arkhipov and Kanstrup %[1]
+\cite{AK}
+provided
+a construction of braid group   action on  categories matrix factorizations. We discovered our construction  independently and  our methods differ from theirs.
+
+
+There is a similar homomorphism $\Brgr_n\to \MF_{B^2}(\calXr_2(G_n),-\Wr)$, $ \beta\mapsto \bcalC'_\beta$  and, in particular, $\bcalC'_\parallel$ is the complex of the identity braid.
+Informally, the complex $\bbS_\beta$ should be thought as sheaf homology of the $2$-periodic complex $\bcalC_\beta\otimes \bcalC'_\parallel\in \MF_{B^2}(\calXr_2(G_n),0)$ followed by the
+restriction to the stable part of $\calXr_2(G_n)$ and extracting $B$ invariant part of the product ($B$ is embedded diagonally inside $B^2$).
+%\marginpar{$g=1$?}
+To turn this informal definition into a rigorous mathematical construction, in section~\ref{sec: link inv} we introduce an auxiliary space $\calX_\ell(G_n)$ and
+work with matrix factorizations on this space.
+
+
+%    Another interesting consequence of our construction is that our knot invariant is actually a degeneration of the transverse knot invariant:
+%
+%  \begin{theorem}
+% \label{th:mthm}
+%    For any braid $\beta\in \Brgrn$ there are $T\times T_{sc}$-equivariant quasi-coherent sheaves $\calF^i_{\beta}$ on $\calC_{st}$ such that for any $i,j$ the doubly graded vector space
+%\begin{equation}
+%\label{eq:ijhom}
+%\textup{H}^i(\calC/T,\calF^j_\beta),
+%\end{equation}
+%is an invariant of the transverse knot $L(\beta)$
+%\end{theorem}
+
+%\subsection{Relation to Langlands correspondence}
+%\def\GLn{ \mathrm{GL}_n }
+%\def\gln{ \mathrm{gl}_n}
+%\def\cZ{ \mathcal{Z}}
+%\def\tcatC{\ddot{\mathbf{Cat}_n}}
+%\def\lMF{ \mathrm{MF}}
+%\def\zG{G}
+%\def\zB{B}
+%\def\zmfg{ \mfg }
+%Within this subsection denote $\zG = \GLn$, $\zB \subset \zG$ being Borel subgroup, while $\mfg = \gln$,
+%$\frn,\frb\subset\mfg$ being its nilpotent radical and Borel sugalgebra.
+%Our constructions have a natural interpretation on the `B-side' of the Langlands correspondence. In~\cite{Kea} Kapustin, Setter and Vyas introduced a `2-category of a circle'. We use a slight modification of this category (denoted $\tcatC$) required to accommodate the stability vector $v$. An object of this category is a pair $(\cZ,W)$, where $\cZ$ is an algebraic variety with an action of $\GLn$, while $W$ is a $\GLn$-invariant holomorphic function on $\cZ\times\mfg\times V$. A category of morphisms between two objects of  $\tcatC$ is a category of $\GLn$-equivariant matrix factorizations:
+%\[
+%\Hom_{\tcatC} \bigl( (\cZ_1,W_1),(\cZ_2,W_2)\bigr) =
+%\lMF_{\GLn}(\cZ_1\times\cZ_2\times\mfg\times V;W_2 - W_1).
+%\]
+%We consider an object $(\cZ,W)$ with $\cZ = \rmTs(\zG/\zB) = (\zG\times \frn)/\zB$ and $W(g,Y,X,v) = \Tr X(\Adv{g}Y)$. The category of its endomorphisms is
+%\[
+%\End_{\tcatC} (\cZ,W) = \lMF_{\zG\times\xB\times\xB}
+%\bigl( (\zG\times \frn)\times(\zG\times\frn)\times\mfg\times V;
+%\Tr X (\Adv{g_2} Y_2 - \Adv{g_1} Y_1)
+%\bigr).
+%\]
+%
+%$\MFs_{B^2}(\calX_2,W)$
+
+\subsection{Structure of the paper}
+%Let us shortly discuss the structure of the paper.
+In the section~\ref{sec:notations} we collect most of notations used in the paper, we also state and prove some key
+properties of the matrix factorizations. In section~\ref{sec: eq push} we  state
+and prove the results about matrix factorizations that are needed for the main body of the paper.
+In section~\ref{sec:convolution} we introduce our main tool: the convolution algebra on the space of
+matrix factorizations with the potential. In this section we show that the convolution is associative and discuss generalizations of the construction.
+The section \ref{sec: Knor} is devoted to the study of Knorrer functor which intertwines the convolution algebras on the smaller space $\calXr_2(G_n)$ with
+the convolution algebra on the bigger space $\calX_2(G_n)$.
+
+The sections \ref{sec: inc} and  \ref{sec: inc fun gens} contain the technical results about the convolution algebra that are used in the  rest of the paper, to be more precise we discuss various induction functors between the categories of matrix factorizations associated to the braid groups of different rank and
+their relation with the convolution product.
+ At the
+end of section \ref{sec: inc} we introduce the matrix factorizations that generate the braid group. In section~\ref{sec: aux sec} we prove several auxiliary results that
+we use later, in particular we show how the convolution with the matrix factorization for the elementary braid could be computed with the use of rank $1$ Chevalley-Eilenberg complex.
+
+Our proof of the braid relations for the matrix factorizations introduced in the section~\ref{sec: inc} is spread between sections~\ref{sec: two str},\ref{sec: three str 2} and~\ref{sec: three str 3}.
+In the section~\ref{sec: link inv} we construct the sheaf $\calS_{[\beta]}$ and show that it only depends on the conjugacy class of $\beta$.
+Finally, in the section~\ref{sec: link inv 2} we prove our main theorem about the link invariant. Finally in the very last section we prove the theorem~\ref{thm:HOMFLY} and define the differential
+$d_{m|n}$ that allows us to state a conjecture relating our cohomology to the $gl(m|n)$ type quantum invariants.
+
+Finally, at the very end of the paper we compose the list of notations used in the paper. We tabulate the first appearance of a symbol and the place of more in depth
+discussion of the corresponding object.
+
+{\bf Acknowledgments:} Authors would like to thank Dima Arinkin, Roman Bezrukavnikov, Tudor Dimofte, Ben Elias,  Tina Kanstrup, Davesh Maulik, Peter Samuleson, Jenia Tevelev for useful discussions. L.R. is especially thankful to Dima Arinkin for illuminating explanations and to Eugene Gorsky for stimulating discussions and sharing the results of his ongoing research.  A.O. is especially thankful to Eugene Gorsky, Matt Hogancamp, Andrei Negu\c{t} and
+Jake Rasmussen for extensive discussions about  the subject and for sharing their insight and intuition.
+Authors are very thankful to an anonymous referee for his/her Herculean effort to improve the paper.
+A.O. would like to thank Simons Center for Geometry and Physics for support during month-long stay in May 2015, the large portion of this work
+was written during this stay and the conference at the end of the program presented us with opportunity to report on this work.
+Work of A.O. was partially supported by Sloan Foundation and NSF CAREER grant DMS-1352398. The work of L.R. is supported by the NSF grant DMS-1108727.
+
+
+
+
+\section{Basic space and Matrix factorizations}\label{sec:notations}
+\subsection{Notations, conventions}
+\subsubsection{}Let us fix the following notations for the groups that appear in our work:
+$$ \SymbolPrint{G_n}=\mathrm{GL}_n,\quad \SymbolPrint{T_n}\subset B_n\subset G_n.$$
+
+ We use gothic script for the Lie algebras of the respective groups. Whenever the rank of the group is obvious from the context of the paper
+we omit the subscripts.
+Let \(U_n=[B_n,B_n]\) and \(\frn_n=\textup{Lie}(U_n)\). We also denote the Lie algebra of
+$T_n$ as $\SymbolPrint{\mathfrak{h}_n}$.
+
+Let us also fix the notations for the projections on the upper and the lower triangular parts of the matrix: for a given square matrix $X$ we denote by $\SymbolPrint{X_+}$  and
+$\SymbolPrint{X_{++}}$ the
+upper-triangular and the strictly upper-triangular part of $X$:
+\[(X_{++})_{ij}=\begin{cases} X_{ij},& i<j\\
+                            0,&i \ge j
+                          \end{cases},\quad (X_{+})_{ij}=\begin{cases} X_{ij},&i\le j\\
+                            0,&i>j
+                          \end{cases}
+                        \]
+                        respectively $X_-:=X-X_{++}$ and $X_{--}:=X-X_+$ are the lower-triangular and strictly lower-triangular parts of $X$.
+
+
+
+
+The main geometric object in our study is the ($G_n\times B_n^\ell$)-space $\calX_\ell=\frg_n\times (G_n\times \frn_n)^\ell$ with the following action of the group:
+$$ (b_1,\dots,b_\ell)\cdot (X,g_1,Y_1,\dots,g_\ell, Y_\ell)=(X,g_1\cdot b_1^{-1},\Ad_{b_1}(Y_1),\dots,g_\ell\cdot b_\ell^{-1},\Ad_{b_\ell}(Y_\ell)),$$
+$$ h\cdot (X,h\cdot g_1,Y_1,\dots,g_\ell, Y_\ell)=(\Ad_h(X),h\cdot g_1,Y_1,\dots,h\cdot g_\ell,Y_\ell).$$
+
+The space \(\calX_2\) is the enlarged version of the space \(\calXr_2(G_n)\), that was discussed in the introduction. Sometimes we use notation \(\calX_2(G_n)\) for
+\(\calX_2\).
+
+\def\yHom{ \Hom }
+
+\subsection{Matrix factorizations: three lemmas} In this subsection we fix notations for matrix factorizations and remind some basic facts about them.
+In particular we prove three lemmas that we will use in the main body of the paper. These lemmas essentially contain all facts about matrix factorizations
+that are used here. For more thorough review of the theory of matrix factorization the reader could consult the beautiful original paper \cite{E} or later surveys in \cite{D}.
+
+
+Given an affine variety $\mathcal{Z}$ and a function $F$ on it we define \cite{E} the homotopy category $\SymbolPrint{\MFs}(\mathcal{Z},F)$ of matrix factorizations whose objects are complexes of $\CC[\calZ]$-modules
+$M=M_{odd}\oplus M_{even}$ equipped with the differential \[D\in \yHom_{\CC[\calZ]}(M_{odd},M_{even})\oplus  \yHom_{\CC[\calZ]}(M_{even},M_{odd})\] such that $D^2=F$.
+%The equivalence relation between the complexes is the homotopy equivalence between these complexes.
+Thus $\MFs(\mathcal{Z},F)$ is a triangulated category as explained in subsection 3.1 of \cite{Or}.
+
+If $\calZ$ is a variety with $G$-action  and $F$ is a $G$-invariant function then
+we define the category of strongly  equivariant matrix factorizations $\SymbolPrint{\MFs^{str}_G}(\mathcal{Z},F)$ as the category of matrix factorizations with extra condition  that $D$ is a $G$-equivariant matrix.
+Unfortunately, this definition is too restrictive and we use a slightly more sophisticated definition for the category of  equivariant matrix factorization. We postpone the details of our definition till the next section
+where we define matrix factorizations that are equivariant up to homotopy.
+However, the naive equivariant matrix factorization as above are objects in our category.
+
+Let us discuss some specific types of matrix factorizations that will be used in our paper. Suppose $C_\bullet=[C_0\to C_1\to\dots \to C_n]$ is the complex of $\CC[\calZ]$-modules.
+Then we construct a matrix factorization $\SymbolPrint{[C_\bullet]_{per}}\in \MFs(\calZ,0)$ by setting $M=C_{odd}\oplus C_{even}$,
+$C_{even}:=\oplus_{i\in 2\ZZ} C_i, C_{odd}= \oplus_{i\in 1+2\ZZ} C_i$ and the differential is induced from the complex $C_\bullet$.
+
+Another type of matrix factorization appearing in our work is obtained by "doubling" the differential $d^+$ of an ordinary complex $(C_\bullet,d^+)$. Indeed, let us denote by $\MFs^\ell(\calZ,F)$ the set of the following
+complexes:
+$$
+C_\bullet=\oplus_{i=0}^\ell C_i,\quad
+d^+_i: C_i\to C_{i-1},\quad
+d^-_i:C_i\to C_{>i},\quad (\sum_i d_i^-+d_i^+)^2=F\cdot \mathrm{Id}.$$
+
+
+\def\xHom{ \Hom }
+\def\xExt{ \Hom }
+\def\xExtdp{ \xExt_{d_+}}
+\def\xExtdpv#1{ \xExtdp^{#1}}
+\def\xExtdpk{ \xExtdpv{k}}
+The complex $C_\bullet$ with only  the positive differentials $d^+_i$ is called the positive part of the complex.
+There is a folding map $\SymbolPrint{\MFs^{\ell}}(\calZ,F)\to \MFs(\calZ,F)$ that associates to $(C_\bullet,d^\pm_\bullet)$ a two-periodic complex $[C_\bullet,d^\pm_\bullet]_{per}$.
+The matrix factorizations of the above type occur very naturally in a geometric setting as explained in the lemma below. The notations for the morphisms are as follows:
+$\xHom^{k}(C_\bullet,C_\bullet)=\oplus_{m} \yHom(C_m,C_{m-k})$ is notations for the maps of $\CC[\calZ]$-modules and
+$\xExtdpk(C_\bullet,C_\bullet)$ is the subspace of maps from $\yHom^k(C_\bullet,C_\bullet)$ that commute with the differential $d^+$.
+
+\begin{lemma}\label{lem: ext MF} Let $(C_\bullet,d_\bullet^+)$ be the complex
+$$C_0\xleftarrow{d_1^+}C_1\xleftarrow{d_2^+}\dots\xleftarrow{d_\ell^+} C_\ell$$
+of $\CC[\calZ]$ modules and $F\in \CC[\calZ]$ such that
+\begin{enumerate}
+\item Elements of $\xExtdpv{<0}(C_\bullet,C_\bullet)$ are homotopic to $0$
+%\item $\mathrm{H}^{>0}(C_\bullet,d_\bullet^+)=0$
+\item The element $F\in \xExtdpv{0}(C_\bullet,C_\bullet)$ is homotopic to $0$.
+\end{enumerate}
+Then the complex $(C_\bullet,d_\bullet^+)$ can be extended to $(C_\bullet,d^\pm_\bullet)\in \MFs^{\ell}(\calZ,F)$.
+\end{lemma}
+\begin{proof}
+By assumption of the lemma, the  endomorphism $F\cdot \mathrm{Id}$  of $(C_\bullet,d_\bullet^+)$ is homotopic to  $0$. This means that there exist morphisms of $\CC[\calZ]$ modules
+$h^{(-1)}_i: C_i\to C_{i+1}$ such that $F=h^{(-1)}_i\circ d_{i+1}^++d_i^+\circ h^{(-1)}_{i-1}$. Then a new differential $D^{(-1)}:=d^++h^{(-1)}$ satisfies the relation
+$$ \left(D^{(-1)}\right)^2-F =(h^{(-1)})^2\in \yHom^{\leq-2}(C_\bullet,C_\bullet).$$
+%is not quite a matrix factorization we were looking for. However we found an extension $D^{(1)}$ of $d^-$ which satisfies
+%$$ \left(D^{(-1)}\right)^2-F\in Hom^{\leq<-2}(C_\bullet,C_\bullet).$$
+%where $Hom^{k}(C_\bullet,C_\bullet)=\oplus_{m} Hom(C_m,C_{m-k})$.
+Thus $D^{(-1)}$ provides a base
+%This would provide us with the seed
+of induction for the proof of existence $h^{(-2i-1)}\in \yHom^{-2i-1}(C_\bullet,C_\bullet)$, $i\ge 0$ such that
+\begin{enumerate}
+\item $[h^{(-1)},d^+]_+=F$
+\item $[h^{(-2i-1)},d^+]_+=\sum_{j=0}^{i-1} h^{(-2j-1)} h^{(-2i+2j+1)}$, $i>0$
+\end{enumerate}
+were we used the notation $[a,b]_+=ab+ba$.
+
+Indeed, suppose we constructed $h^{(-2i-1)}$ for all $i<j$. Define $D^{(-2j+1)}=d^++\sum_{k=0}^{j-1} h^{(-1-2k)}$, then the inductive
+assumption implies:
+\begin{equation}\label{eq: D2}
+\left( D^{(-2j+1)}\right)^2-F-R^{(-2j)}\in \yHom^{<-2j}(C_\bullet,C_\bullet),\quad R^{(-2j)}=\sum_{k=0}^{j-1} h^{(-2k-1)} h^{(-2j+1+2k)}
+\end{equation}
+On the other hand, a direct computation using the inductive assumptions and the fact that $F$ commutes with all $h^{(2i-1)}$ and $d^+$ implies
+\begin{equation}\label{eq: com d+}
+ [d^+,R^{(-2j)}]=0.
+\end{equation}
+In more details, let us introduce notation $R^{(<-2j)}:=(D^{(-2j-1)})^2-F-R^{(-2j)}$ then
+\begin{multline*}
+0=[D^{(-2j-1)}, (D^{(2j-1)})^2]=[d^+ +\sum_i h^{(-2i-1)}, F+R^{(-2j)}+R^{(<-2j)}]\\=[d^+,R^{(-2j)}]+[d_++\sum_i h^{(-2i-1)},R^{(<-2j)}]+[\sum_i h^{(-2j-1)},R^{(-2j)}+R^{(-2j-1)}].
+\end{multline*}
+The first term in the last sum is from $\xHom^{-2j+1}(C_\bullet,C_\bullet)$, on the other hand the last two   are from
+$\xHom^{<-2j+1}(C_\bullet,C_\bullet)$ thus (\ref{eq: com d+}) follows.
+
+
+Thus $R^{(-2j)}$ is the morphism of the complex $(C_\bullet,d^+)$ of degree $-2j$, that is, an element of $\xExtdpv{-2j}(C_\bullet,C_\bullet)$. The assumption of our lemma implies that such
+morphism is homotopic to zero and the homotopy morphism $h^{(-2j-1)}\in \xHom^{-2j-1}(C_\bullet,C_\bullet)$ provides the induction step
+since $[h^{(-2j-1)},d^+]_+=R^{(-2j)}$.
+
+
+Thus by setting $d_i^-=\sum_i h^{(-2i-1)}$ we obtain the desired extension because of (\ref{eq: D2}).
+\end{proof}
+
+
+\def\xHomdpm{\xHom_{d^{\pm}}}
+
+The extension described in Lemma~\ref{lem: ext MF} is unique up to a natural equivalence relation. First, let us fix notations: the space of morphisms
+ $\xHomdpm(A,B)$, $A,B\in \MFs^{\ell}(\calZ,F)$ consists of $\CC[\calZ]$-module homomorphism that (super-)commute with the differentials $d_\bullet^\pm$.
+ This space is $\ZZ$-graded with $\xHomdpm^i(A,B)$ consisting of morphisms $h_k: A_k\to A_{k+i}$.
+%The element $\Psi=\sum_{i\le 0}\Psi_i, \Psi_i\in Hom^i(Z,B)$ is invertible if and only if $\Psi_0$ is invertible.
+%Such morphisms provide examples of homotopy equivalence and these morphisms appear in the following:
+
+
+
+\begin{lemma}\label{lem: ext uniq} Let $A=(C_\bullet,d^\pm_\bullet), B=(C_\bullet,\tilde{d}^\pm_\bullet)\in \MFs^{\ell}(\calZ,F)$ such that
+\begin{enumerate}
+\item $(\tilde{C},\tilde{d}^+_\bullet)=(C_\bullet,d^+_\bullet)$
+\item Elements of $\xExtdpv{<0}(C_\bullet,C_\bullet)$ are homotopic to $0$
+\item The element $F\in \xExtdpv{0}(C_\bullet,C_\bullet)$ is homotopic to $0$.
+\end{enumerate}
+Then there is $\Psi=\sum_{i\le 0}\Psi_i$, $\Psi_i\in \Hom^{i}(A,B)$ such that $\Psi_0=\mathrm{Id}$ and
+$$ \Psi\circ (d^++d^-)\circ \Psi^{-1}=(\tilde{d}^++\tilde{d}^-).$$
+\end{lemma}
+\begin{proof}
+
+For brevity let us denote by $C^+$ the complex $(C_\bullet,d^+_\bullet)$, respectively we use notation
+$\xExtdp(C^+,C^+)$ for the morphisms that respect the differential $d^+$ and $\Hom(C,C)$ for the morphisms
+of complexes simply as modules. In particular in these notations we have
+$$ D=d^++d^-,\quad  \tilde{D}=d^++\tilde{d}^-\in \Hom^{1}(C,C)\oplus \Hom^{\le -1}(C,C).$$
+
+We claim that there is sequence of morphisms $\Psi^{(k)}\in \Hom^{\le 0}(C,C)$, $k=0,1,2,\dots$ such that
+\begin{enumerate}
+\item $\Psi^{(k)}_0=\mathrm{Id}$,
+\item $D^{(k)}-\tilde{D}\in \Hom^{-k-1}(C,C)$,
+\end{enumerate}
+where $D^{(k)}=\Psi^{(k)}\circ D\circ (\Psi^{(k)})^{-1}$.
+
+Indeed, for $k=0$ we can set $\Psi^{(0)}=\mathrm{Id}$. For the step of induction we assume the existence of $\Psi^{(k-1)}$, then
+the leading term $\Delta=(D^{(k-1)}-\tilde{D})_{-k}\in \xHom^{-k}(C,C)$ is actually an element of $\xExtdp^{-k}(C^+,C^+)$ as could be seen from
+degree $-k+1$ part of the equation
+$$ (D^{(k-1)})^2-D^2=0.$$
+
+On the other hand the second assumption of the Lemma implies that all elements of $\xExtdp^{-k}(C^+,C^+)$ are homotopic to $0$ and
+hence there is $h\in Hom^{-k-1}(C,C)$ such that $[h,d^+]=\Delta$. Hence the element $\Psi^{(k)}:=(1+h)\circ \Psi^{(k-1)}$ satisfies the condition of
+our induction statement.
+
+Finally, since the complex $C$ is bounded see that the morphism $\Psi^{(\ell)}$ has the desired properties and our proof is complete.
+\end{proof}
+
+
+The last lemma is very elementary but it is responsible for appearance of the Hilbert scheme of points on the plane in our construction of the knot homology.
+
+\begin{lemma}\label{lem: crit} Let \(Z\) be smooth and affine. The elements of the ideal $\calI_{crit}$ generated by the partial derivatives of the potential
+$F$ act by zero homotopies on the elements of $\MFs(\calZ,F)$
+\end{lemma}
+\begin{proof}
+Let $z$ be a local coordinate on $\calZ$ and $D$ is the differential from some matrix factorization with
+the potential $F$. Then we have
+$$ \frac{\partial F}{\partial z}=\frac{\partial D}{\partial z}\circ D+ D\circ \frac{\partial D}{\partial z}.$$
+Hence $\frac{\partial D}{\partial z}$ is the map that provides a homotopy of $\frac{\partial F}{\partial z}$ to $0$.
+\end{proof}
+
+\subsection{Koszul matrix factorizations}\label{ssec: str eq Kosz} In this subsection we set notations for a particular type of matrix factorization that is ubiquitous in our work and in the previous work that relates
+matrix factorizations to knot invariants \cite{KR}. We need slightly more general setting than the one from \cite{KR} because we work with equivariant matrix factorizations.
+We state some simple properties of these factorizations that are used later in the paper.
+
+Suppose $\calZ$ is a variety with the action of a group $G$ and $F$ is a $G$-invariant potential.
+%Define the $(\mBpdb)$-equivariant algebra $\xxA=\IC[\mfg\times\mfnp\times\mfnp\times\xG]$.
+An object of the category $\MFs_{B^2}^{str}(\calZ,F)$ is a free $B^2$-equivariant $\Zt$-graded $\CC[\calZ]$-module $\xxM$ with the odd $G$-invariant differential $\xD$ such that $\xD^2 = F\xIdv{M}$. In particular, a free $G$-equivariant $\CC[\calZ]$-module $\xxV$ with two elements $\xdl\in\xxV$, $\xdr\in\xxV^*$ such that $(d_l,d_r)=F$, determines a Koszul matrix factorization $\SymbolPrint{\Kszvvv{\xxV}{\xdl}{\xdr}} = \bigwedge^{\bullet}\xxV$ with the differential $Dv = \xdl\wedge v + \xdr\cdot v$ for $v\in \bigwedge^{\bullet}\xxV$. We use a more detailed notation by choosing a basis $\ktht_1,\ldots,\ktht_n\in \xxV$ and presenting $\xdl$ and $\xdr$ in terms of components: $\xdl=a_1\ktht_1 +\cdots a_n\ktht_n$, $\xdr=b_1\ktht^*_1+\cdots + b_n\ktht^*_n$:
+\begin{equation}
+\label{eq:kszm}
+\Kszvvv{\xxV}{\xdl}{\xdr} = \kmtr{a_1 & b_1 &\ktht_1\\ \vdots & \vdots & \vdots \\
+a_n & b_n & \ktht_n}
+\end{equation}
+The structure of $G$-module is described by specifying the action of $G$ on the basis $\ktht_1,\ldots,\ktht_n$.
+In some cases when $G$-equivariant structure of the module $\xxM$ is clear from the context we omit the last columns from the notations. We call a matrix presenting Koszul matrix factorization Koszul matrix.
+For example, %
+%
+%If we choose a different basis in the $\xxV$, then we obtain an isomorphic matrix factorization.
+%In terms of the presentation~\eqref{eq:kszm}, a change of basis is `a row transformation'. Below we illustrate that elementary row transformation
+%affects the presentation of the matrix factorization.
+%
+%Indeed,
+if  we change the basis $\theta_1,\dots, \theta_n$ to the basis $\theta_1,\dots,\theta_i+c\theta_j,\dots, \theta_j,\dots,\theta_n$ the $i$-th and
+$j$-th rows of the Koszul matrix will change:
+$$ \begin{bmatrix}
+a_i& b_i&\theta_i\\
+a_j& b_j&\theta_j
+\end{bmatrix}
+\mapsto
+\begin{bmatrix}
+a_i+ca_j& b_i&\theta_i+c\theta_j\\
+a_j& b_j-cb_i&\theta_j
+\end{bmatrix}
+$$
+
+Suppose $a_1,\dots,a_n\in \CC[\calZ]$ is a regular sequence and $F\in (a_1,\dots,a_n)$. We can choose $b_i$ such that $F=\sum_i a_i b_i$ and
+$\xdl$ and $\xdr$ are as above: $\xdl=a_1\ktht_1 +\cdots a_n\ktht_n$, $\xdr=b_1\ktht^*_1+\cdots + b_n\ktht^*_n$.
+In general, there is no unique choice for $b_i$ but all choices lead to homotopy equivalent
+Koszul matrix factorizations (in the non-equivariant case they would be simply isomorphic).
+%the  homotopy type of the element $\Kszvvv{\xxV}{\xdl}{\xdr}$ is unique.
+In other words, if $b'_i$ is a another collection of elements such that $F=\sum a_i b'_i$  and $\xdr'=b'_1\ktht^*_1+\cdots + b'_n\ktht^*_n$
+then Lemma~\ref{lem: ext uniq} implies that the complexes $\Kszvvv{\xxV}{\xdl}{\xdr}$ and $\Kszvvv{\xxV}{\xdl}{\xdr'}$ are homotopy equivalent.
+
+Indeed, we need to apply Lemma~\ref{lem: ext uniq} for \((C_\bullet,d^+_\bullet)=(\tilde{C}_\bullet,\tilde{d}_\bullet^+)=(\Lambda^\bullet V,\xdl)\).
+The elements \(a_i\) form a regular sequence hence \(\Lambda^\bullet V,\xdl\) is homotopic to \(\mathcal{O}=\CC[Z]/I\), \(I=(a_1,\dots,a_n)\) and
+we conclude that \(\Hom_{d_+}^{<0}(C_\bullet,C_\bullet)=\Hom_{d_+}^{<0}(\mathcal{O},C_\bullet)=0\). Moreover, the differentials \(\xdr\) and \(\xdr'\)
+are homotopies between \(F\in Hom_{d_+}^0(C_\bullet,C_\bullet)\) and \(0\).
+Thus there is a homotopy between $\Kszvvv{\xxV}{\xdl}{\xdr}$ and $\Kszvvv{\xxV}{\xdl}{\xdr'}$ and  from now on we use notation $\SymbolPrint{\mathrm{K}^F}(a_1,\dots,a_n)$ for such matrix factorization.
+
+
+
+
+
+
+
+
+
+%\input{part1.tex}
+
+
+
+\input{part2_gl.tex}
+\input{part3_gl.tex}
+\input{part4_gl.tex}
+\input{part5_gl.tex}
+\input{part6_gl.tex}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Link invariant}\label{sec: link inv 2}
+The nested Hilbert scheme $\Hilb_{1,n}$ is a very singular scheme and it has very complicated geometry, the main source of complexity is the commutativity relation between the matrices.
+On the other hands, we can define  the free Hilbert scheme $\Hilb^{free}_{1,n}$ by omitting commutativity condition, this turn out to be relatively simple variety which is an iterated fibration of
+projective spaces (see proposition~\ref{prop: aff cover}). In this section we explain a construction for $\bbS_\beta \in D^{per}_{\Tsc}(\Hilb^{free}_{1,n})$ for $\beta\in \Brgr_n$ with the property that
+the total cohomology of $\bbS_\beta$ is an isotopy  invariant of the closure $L(\beta)$ (see theorem~\ref{thm: main}).
+
+
+\subsection{Geometry of $\Hilb^{free}_{1,n}$} Let us define by the following open subset of $\frb\times\frn\times V$:
+$$\widetilde{\Hilb}^{free}_{1,n}:=\{ (X,Y,v)| \CC\langle X,Y\rangle v=V\}.$$
+There is an action of $B\times \CC^*$ on $\widetilde{\Hilb}^{free}_{1,n}$ and we use notation $\Hilb^{free}_{1,n}$ for the quotient.
+
+Define a map $p: \Hilb^{free}_{1,n}\to \Hilb^{free}_{1,n-1}$ as the map induced by the projection map on the vector space of upper-triangular matrices: the map
+forgets the first row of the matrix. Let us also introduce the map $\chi: \Hilb^{free}_{1,n}\to \frh_n=\CC^{n}$, $\chi(X,Y,v)=(x_{11},\dots,x_{nn})$.  Given $z\in \frh_n$ we denote by $\Hilb^{free}_{1,n}(z)$ the preimage
+$\chi^{-1}(z)$. By restricting the map $p$ to the space of diagonal matrices we get the map $p:\frh_n\to \frh_{n-1}$.
+
+\begin{proposition}\label{prop: aff cover} The fibers of the map $p: \Hilb^{free}_{1,n}(z)\to \Hilb^{free}_{1,n-1}(p(z))$ are projective spaces $\mathbb{P}^{n-1}$.
+\end{proposition}
+\begin{proof}
+Below we construct an affine cover of the space $\Hilb^{free}_{1,n}(z)$, these are the affine charts for the space $\Hilb^{free}_{1,n}(z)$. The charts a labeled by the following combinatorial data: $(\vec{S}_1,\vec{S}_2)$
+where $\vec{S}_1=(S_1^1,\dots,S_1^{n-1})$, $\vec{S}_2=(S_2^1,\dots, S_2^{n-1})$ where $S_i^j$ are the subsets of integers with the following properties:
+$$ S_1^i, S_2^i\subset \{1,\dots,i\},\quad S_i^j\subset S_i^{j+1},\quad |S_1^i|+|S_2^i|=i.$$
+
+For a given $\SymbolPrint{(\vec{S}_1,\vec{S}_2)}$ we define the affine subspace $\SymbolPrint{\mathbb{A}_{\vec{S}_1,\vec{S}_2}}$ inside $\frb\times \frn\times V$ by the following equations:
+\begin{gather}
+x_{n-i, n+1-k}=0 \mbox{ if } k\in S_1^i,\quad y_{n-i,n+1-k}=0,\mbox{ if } k\in S_2^i, \label{eq: slice 1}\\
+x_{n-i,n+1-k}=1 \mbox{ if } k \in S_1^{i+1}\setminus S_1^i\quad y_{n-i,n+1-k}=1 \mbox{ if } k \in S_2^{i+1}\setminus S_2^i, \label{eq: slice 2}
+\end{gather}
+where \( i=1,\dots, n-1,\) and
+\begin{equation}
+ v_i=\delta_{in}\label{eq: slice 3}.
+\end{equation}
+
+
+Below we use induction by $n$ to show that
+\begin{enumerate}
+\item The isotropy group of an element of $\mathbb{A}_{\vec{S}_1,\vec{S}_2}$ inside $B$ is trivial
+\item $\widetilde{\Hilb}^{free}_{1,n}(z)=\cup_{(\vec{S}_1,\vec{S}_2)} B\cdot \mathbb{A}_{\vec{S}_1,\vec{S}_2}.$
+\end{enumerate}
+
+Indeed, the seed of induction is clear. Let us assume that statement true for $\Hilb^{free}_{1,n-1}(p(z))$. Hence a $B$-orbit $\calO\subset\widetilde{\Hilb}_{1,n}(z)$ intersect  the variety
+$p^{-1}(a)$ for some $a\in \mathbb{A}_{\vec{S}_1,\vec{S}_2}$ for some $\vec{S}_1, \vec{S}_2$.   By the induction, the subgroup of $B$ preserving the intersection
+$\calO\cap p^{-1}(a)$ has Lie group spanned by the matrix units $E_{1i}$, $i=2,\dots,n$.
+
+ Let us pick an element $u\in \calO\cap p^{-1}(a)$.  We can use group generated by the
+$e^{tE_{1i}}$, $i=2,\dots,n$ to translate an element $u$ to an element $w=(X,Y,v)$ that satisfies equation (\ref{eq: slice 1}) and (\ref{eq: slice 3}). The element $w$ is unique up to the
+action of the group $\CC^*=exp(E_{11}t)$. Finally, since $w=(X,Y,v)\in \widetilde{\Hilb}^{free}_{1,n}(z)$ we have $\CC\langle X,Y\rangle v=V$ and
+hence either $(x_{1,n+1-k})_{k\notin S^n_1}$ or $(y_{1,n+1-k})_{k\notin S^n_2}$ is non zero. If the first vector is non-zero, we set $S_1^{n+1}\setminus S_1^n$ to the index of the non-zero entry.
+The case $(y_{1,n+1-k})_{k\notin S^n_2}\ne 0$ is analogous. As a last step we use the group $exp(E_{11}t)$ to scale this non-zero entry to $1$ and thus
+obtain a unique element of the orbit $\calO$ that satisfies equations (\ref{eq: slice 1},\ref{eq: slice 2},\ref{eq: slice 3}).
+\end{proof}
+
+Let us denote by $\tilde{\calB}_n$ the  vector bundle over $\widetilde{\Hilb}^{free}_{1,n}$  with the fiber over the point $(X,g,Y,v)$ equal to the space $V$.
+This vector bundle descends to the vector bundle $\calB_n$ on the quotient $\Hilb^{free}_{1,n}$.
+
+Let us denote by $\chi_i\in \Hom(T,\CC^*)$, $T\subset B$  such that $\chi_i(\exp(\sum_{i=1}^n t_i E_{ii}))=\exp(t_i)$ and we use the same notation for
+the induced characters of $\mathbf{B}$ and for the restriction to the subgroup $B$. The trivial line bundle on $\widetilde{\Hilb}_{1,n}^{free}$ twisted by the character $\chi_i$
+descends to line bundle on $\Hilb_{1,n}^{free}$ which we denote by $\calO_i(-1)$. The line bundle $\calO_n(-1)$ admits more geometric description
+$$ \calO_n(-1)=\calB_n /p^*(\calB_{n-1}),$$
+which we use in the proof of the following
+
+\begin{proposition}\label{prop: push forward} Let $p$ be the map $\Hilb^{free}_{1,n}(z)\to\Hilb^{free}_{1,n-1}(p(z))$ then we have
+\begin{enumerate}
+\item $p_*(\wedge^k\calB_n)=\wedge^k\calB_{n-1}.$
+\item $p_*(\calO_n(m)\otimes \wedge^k\calB_n)=0$ if $m\in [-1,-n+2].$
+\item $p_*(\calO_n(-n+1)\otimes \wedge^k\calB_n)=\wedge^{k-1}\calB_{n-1}[n]$
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Let $U\subset \Hilb_{1,n-1}^{free}$ is an open subset then we can apply the global section functor $\Gamma(p^{-1}(U),-)$ to the short exact sequence of sheaves on :
+\begin{multline*}
+  0\to \calO_n(m)\otimes\wedge^k p^*(\calB_{n-1})\to \calO_n(m)\otimes\wedge^k\calB_n\\
+  \to \calO_n(m)\otimes\calB_n/p^*(\calB_{n-1})\otimes \wedge^{k-1}(p^*(\calB_{n-1}))\to 0.
+  \end{multline*}
+
+The fibers of the map $p$ are projective spaces $\mathbb{P}^n$ and the line bundle $\calO_n(-1)$ restricted to a fiber is the standard tautological bundle $\calO(-1)$.
+Since $\calB_n/p^*(\calB_{n-1})=\calO_n(-1)$ then by the previous observation and well known formulas for the homology of $\calO(k)$ on the projective space combined with the short exact sequence from above imply
+ $$\textup{H}^i(p^{-1}(U),\calO_n(m)\otimes\wedge^k\calB_n)=0,\quad i\ne 0, n $$
+ $$ \textup{H}^0(p^{-1}(U),\calO_n(m)\otimes \wedge^k\calB_n)=\begin{cases} &\textup{H}^0(U,\wedge^k\calB_{n-1}),\mbox{ if } m=0\\
+                                                                                                                                             & 0,\mbox{ if } m<0.
+                                                                                                                    \end{cases}
+                                                                                                                    $$
+
+ $$ \textup{H}^n(p^{-1}(U),\calO_n(m)\otimes \wedge^k\calB_n)=\begin{cases} &\textup{H}^0(U,\wedge^{k-1}\calB_{n-1}),\mbox{ if } m=-n\\
+                                                                                                                                             & 0,\mbox{ if } m>-n.
+                                                                                                                    \end{cases}
+                                                                                                                    $$
+ Hence the statement of the proposition follows.
+\end{proof}
+
+\subsection{Braid complex on $\Hilb^{free}_{1,n}$}
+In this subsection we explain how one could construct for every $\beta\in \Brgr_n$ a periodic complex $\mathbb{S}_\beta\in D^{per}_{T_{sc}}(\Hilb^{free}_{1,n})$ such that
+the hypercohomology of the complex is an isotopy invariant of the link $L(\beta)$.  First let us explain a construction of the sheaf.
+
+
+First let us introduce the analogs of the previous constructions for the Kn\"orrer reduced spaces.
+We define $\calXr_{2,fr}$ to be a subvariety of $\calXr_2\times V^0$ consisting of $(X,g,Y,u)$ such that
+\[\CC\langle X,\Ad_{g}^{-1}(Y)\rangle u=V\]
+
+The space $\calXr_{2,fr}$ is an open subvariety of $\calXr_{2,fr}\times V$ and we can restrict the  Kn\"orrer $\Phi_n\times \mathrm{id}_V$
+on this open set to obtain:
+$$\Phi_n: \MF_{B^2}(\calXr_{2,fr},\Wr)\to \MF_{B^2}(\calX_{2,fr},W).$$
+
+There is forgetful map $\forg:\calXr_{2,fr}\rightarrow \calXr_2$ and the argument almost identical to the proof of
+Lemma~\ref{lem: for homom} implies that $\forg^*$ is the homomorphism of the convolution algebras and
+\begin{equation}\label{eq: Phi for}
+  \Phi_n\circ \forg^*=\forg^*\circ\Phi_n.
+ \end{equation}
+
+
+It is natural to define $\SymbolPrint{\calXr_1}:=\frb\times\frn$ and
+respectively we have the analog of the closure map $j_e:\calXr_1\rightarrow \calXr_2$ by $j_e(X,Y)=(X,e,Y)$.
+Similarly, we define $\calXr_{1,fc}\subset \frb\times\frn\times V$ to be $\widetilde{\Hilb}^{free}_{1,n}$ and we have a natural
+map $\SymbolPrint{j_e}:\calXr_{1,fc}\rightarrow \calX_{2,fr}$.
+
+For any $\beta\in \Brgr_n$ we define the element of $D^{per}_{T_{sc}}(\Hilb_{1,n}^{free})$:
+$$\SymbolPrint{\mathbb{S}_\beta}:=j_e^*(\bar{\calC}_\beta).$$
+
+
+
+
+
+
+
+
+%The map $I: \calXr_2\to\calXr_2$ defined by $(X,g,Y)\mapsto (X,g,-Y)$ defines an isomorphism of categories $I^*:\MF_{B^2}(\calXr_2,\Wr)\to \MF_{B^2}(\calXr_2,-\Wr)$. Let us defiine
+%$$\bbS'_\beta:=\bcalC_\beta\otimes I^*(\bcalC_{\parallel}) \in \MF_{B^2}(\calXr_2,0).$$
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% There is a natural $B$-equivariant embedding $j_e:\widetilde{\Hilb}^{free}_{1,n}\to \calXr_2\times V$
+% defined by $j_e(X,Y,v)=(X,\xId,Y,v)$. Thus we can define the periodic complex
+%$$\bbS_\beta:=\CE_{\frn}(j^*_e(\bcalC_\beta))^T\in D_{\Tsc}^{per}(\Hilb_{1,n}^{free}).$$
+
+
+
+For a element $\bbS\in D^{per}_{\Tsc}(\Hilb^{free}_{1,n})$ we denote by $\mathbb{H}(\bbS)$ the doubly graded space of the hypercohomology of the complex and let us introduce:
+$$\mathbb{H}^k(\beta):=\mathbb{H}(\bbS_\beta\otimes \wedge^k\calB)$$
+ The main result of the paper is the following
+
+\begin{theorem}\label{thm: main} The doubly graded space
+$$\calH^k(\beta):=\mathbb{H}^{(k+\xwr(\beta)-n-1)/2}(\beta)$$
+is the isotopy invariant of $L(\beta)$.
+\end{theorem}
+
+Let us denote by $\calH^*(\bbS_\beta\otimes \wedge^m\calB)=\calH^{odd}(\bbS_\beta\otimes\wedge^k \calB)\oplus\calH^{even}(\bbS_\beta\otimes\wedge^k\calB)$ the sheaf on $\Hilb^{free}_{1,n}$ that is the sheaf of homology of the complex $\bbS_\beta$. Since
+the matrix factorization $\bbS'_\beta$ is supported on the critical locus of $\Wr$, the sheaf $\calH^*(\bbS_\beta)$ is supported on subvariety $\Hilb_{1,n}$. Moreover, the following statement implies
+the theorem~\ref{thm: spec seq} from the introduction.
+
+\begin{corollary} There is a spectral sequence with $E_2$ term equal
+$$ (\textup{H}^*(\Hilb^L_{1,n},\calH^*(\bbS_\beta\otimes\wedge^k\calB)),d)$$
+$$
+d: \textup{H}^k(\Hilb^L_{1,n},\calH^{odd/even}(\bbS_\beta\otimes\wedge^k\calB))\to
+\textup{H}^{k-1}(\Hilb^L_{1,n},\calH^{even/odd}(\bbS_\beta\otimes\wedge^k\calB)),$$
+that converges to $\mathbb{H}^k(\beta)$.
+\end{corollary}
+
+%In particular, the push forward of $\bbS_\beta$ along the natural projection map $\Hilb_{1,n}\to \Hilb_n$ coincides with the sheaf $\calS_\beta$ from the section~\ref{sec: link inv} and hence we
+%we have shown theorem~\ref{thm: spec seq}.
+
+\subsection{Proof of theorem~\ref{thm: main}}
+By the construction the $\mathbb{H}^k(\beta)$ does not depends on the presentation of $\beta$ as a product of the elementary braids.
+Let us explain why $\mathbb{H}^k(\beta)$ actually only depends only conjugacy class of $\beta$.
+First let us notice that because of the equality (\ref{eq: Phi for}) we have a construction for $\mathbb{H}^k(\beta)$ as hyper-cohomology of the complex on
+$\calX_{1,fc}$:
+$$\mathbb{H}^k(\beta)=\mathbb{H}(\Lambda^k\mathcal{B}\otimes \calC_\beta),$$
+here $\calB$ is the vector bundle over $\calX_{1,fc}$ with fiber over $(X,g,Y,v)$ equal $V$.
+
+Thus given a presentation $\beta=\sigma_{i_1}^{\epsilon_1}\cdot\dots\cdot\sigma_{i_\ell}^{\epsilon_\ell}$ we have
+$$\mathbb{H}^k(\beta)=\mathbb{H}(\Lambda^k\pi_1^*(\mathcal{B})\otimes \CE_{\frn^\ell}(\pi_{12}^*(\calC_{\sigma_{i_1}^{\epsilon_1}})\otimes
+  \dots \pi_{\ell,1}^*(\calC_{\sigma_{i_\ell}^{\epsilon_\ell}}))).$$
+  where $\pi_{ij}:\calX_{\ell,fc}\to \calX_{2,fr}$ are the natural projections. The  LHS of the last formula  only depends on
+  the cyclic order of the elements $\sigma_{i_k}^{\epsilon_k}$, because the space \(\calX_{\ell,fc}\) has \(\ZZ_\ell\) cyclic symmetry and
+  the group element \(g_{i,i+1}\) provides an isomorphism of the  vector bundles \(\pi_i^*(\calB)\) and \(\pi_{i+1}^*(\calB)\) for all \(i\).
+  Hence we showed that $\mathbb{H}^k(\beta)$ only depends on the conjugacy
+  class of $\beta$.
+
+
+
+
+
+
+
+
+To complete our proof we need to show that
+\begin{equation}\label{eq: Markov}
+\mathbb{H}^k(\beta\cdot \sigma_1)=\mathbb{H}^k(\beta'),\quad \mathbb{H}^k(\beta\cdot \sigma_1^{-1})=\mathbb{H}^{k-1}(\beta')
+\end{equation}
+for $\beta'\in \Brgr_{n-1}$ and $\beta=1\boxtimes\beta'\in \Brgr_n$ is the inclusion of $\beta'$ in the braid with $n$ strings in a such way it tangles only the last $n-1$ strings.
+
+
+Next we can use proposition~\ref{prop: small prod 1} to conclude:
+
+\begin{multline*}\mathbb{H}^k(\beta\cdot \sigma_1^{\pm 1})=
+\mathbb{H}(\forg^*(\CE_\frn(\cl^*(\bar{\pi}_{13*}(\CE_{\frn_n}(\bar{\pi}_{12}\otimes_{B_n}\bar{\pi}_{23})^*(\bar{\calC}_\beta\boxtimes\bar{\calC}_{\sigma_1^{\pm 1}}))^{T_n}))^{T_n}\otimes \Lambda^k\calB)\\
+=\mathbb{H}(\forg^*(\CE_\frn(\cl^*(\bar{\pi}_{13*}(\CE_{\frn_2}(\bar{\pi}_{12}\otimes_{B_2}\bar{\pi}_{23})^*(\bar{\calC}_\beta\boxtimes\bar{\calC}_{\sigma^{\pm 1}_1}))^{T_2}))^{T_n}\otimes\Lambda^k\calB)
+\end{multline*}
+
+
+
+
+
+
+
+Thus we have shown that
+$$ \mathbb{H}^k(\beta\cdot \sigma_{n-1}^{\pm 1})= \mathbb{H}(\forg^*(\CE_{\frn\oplus \frn_2}(j^*_{e}(\bar{\pi}_{12}\otimes_{B_2}\bar{\pi}_{23})^*(\bcalC_{\beta}\boxtimes\bcalC_{\sigma_{1}^{\pm 1}}))^{T_n\times T_2}\otimes \wedge^k\calB_n),$$
+where $j_e:\frb\times G_2\times \frn\to \calXr_3(G_n,G_{n,n-1})$ is the embedding that identifies $\frb\times G_2\times \frn$ with the subvariety of $\calXr_3(G_n,G_{n,n-1})$ defined by the
+equation $j_{e}(X,g,Y)=(X,g^{-1},g,Y)$.
+
+Let us simplify the complex $(j^*_{e}(\bar{\pi}_{12}\otimes_{B_2}\bar{\pi}_{23})^*(\bcalC_{\beta}\boxtimes\bcalC_{\sigma_{1}^{\pm 1}})\in \MF_{B_n\times B_2}(\frb\times G_2\times\frn,0)$.
+Since $\bcalC_\beta=\indb_{n-1}(1\otimes\bcalC_{\beta'})\in \MF_{B^2}(\calXr_2,\Wr)$ it has the following description
+$$\bcalC_\beta=(M\otimes\Lambda^* V,D+d^++d^-,\partial_l,\partial_r) \in \MF_{B^2}(\calXr_2,\Wr),$$
+where $V=\CC^{n-1}=\langle \theta_2,\dots,\theta_n\rangle$; $(M,D)\in \Mod_{per}(\calXr_2)$ such that $D^2=\Wr $ modulo ideal $I_{n-1}=(g_{12},\dots, g_{1n})\subset \CC[\calXr_2]$;
+$d^+=\sum_{i=2}^n g_{1i}\theta_i$ and $d^-=\sum_{\vec{i}} d^-_{\vec{i}}\frac{\partial}{\partial \theta_{\vec{i}}}$; $\partial_l,\partial_r$ define equivariant structure such that
+$(M,D,\partial_l,\partial_r)$ modulo the ideal $I_{n-1}$ is an equivariant matrix factorization $p_1^*(\bcalC_{\beta'})$.
+
+As we explained previously in the subsection~\ref{ssec: row ops} conjugation by $\exp(\phi\frac{\partial}{\partial\theta_2})$ of the differential of $(\bar{\pi}_{12}\otimes_{B_2}\bar{\pi}_{23})^*(\bcalC_{\beta}\boxtimes\bcalC_{\sigma_{n-1}^{\pm 1}})$
+ results in the row transformation of
+ of  the first type. Using these transformations we can obtain a complex $\calC'$ that is homotopic to $(\bar{\pi}_{12}\otimes_{B_2}\bar{\pi}_{23})^*(\bcalC_{\beta}
+ \boxtimes\bcalC_{\sigma_{n-1}^{\pm 1}}) $ and the only dependence of it differentials on  $g_{12}$
+comes from the term $g_{12}\theta_2$ of $d^+$. Then we can contract $\calC'$ along the differential $g_{12}\theta_2$ to obtain a homotopy equivalence
+$$(\bar{\pi}_{12}\otimes_{B_2}\bar{\pi}_{23})^*(\bcalC_{\beta}
+ \boxtimes\bcalC_{\sigma_{n-1}^{\pm 1}}) \sim\calC''\sim (\bcalC_{\beta,12}\otimes \bar{\pi}_{23}^*(\bcalC_\pm)),$$
+where the last complex is the complex of $\CC[\frb\times B_2\times G_n\times \frn]$-modules and
+$\bcalC_{\beta,12}\in \MF_{B\times B_2}(\frb\times B_2\times \frn,0)$ is the matrix factorization defined by the data
+$$\bcalC_{\beta,12}=(j_{12}^*(M)\otimes\Lambda^* V_{12},d^+_{12}+j^*_{12}(D+d^++d^-),j^*_{12}(\partial_l),j^*_{12}(\partial_r)),$$
+where $j_{12}:\frb\times B_2\times G_n\times\frn\to \frb \times G_2\times G_n\times \frn$ is the embedding; $V_{12}=\langle \theta_3,\dots, \theta_n\rangle$ and
+$d^+_{12}=\sum_{i=3}^n g_{1i}\theta_i$.
+
+
+Next note that since $\CE_{\frn_2}(\CC[B_2])^{T_2}=\CC$ there is a homotopy equivalence
+\begin{multline*} \CE_{\frn_2}( j^*_{e}(\bar{\pi}_{12}\otimes_{B_2}\bar{\pi}_{23})^*(\bcalC_{\beta}\boxtimes\bcalC_{\sigma_{n-1}^{\pm 1}}))^{T_2}\sim
+  j_{e,e}^*(\bcalC_{12,\beta}\otimes \bar{\pi}^*_{23}(\bcalC_{\pm}))\\=j_{e,e}^*(\bcalC_{\beta,12})\otimes j_{e,e}^*(\bar{\pi}^*_{23}(\bcalC_{\pm})),
+  \end{multline*}
+where $\SymbolPrint{j_{e,e}}: \frb\times 1\times 1\times \frn\to \frn\times B_2\times G_n\times \frn$.
+Below we analyze two terms in the last tensor product.
+
+Let us notice that $\bcalC_{\pm}|_{g=1}=[x_{11}-x_{22},0]^{\pm}$ where where $[x_{11}-x_{22},0]^+=[x_{11}-x_{22},0]$ and $[x_{11}-x_{22},0]\langle -1\rangle$.Thus we obtain
+\[ j_{e,e}^*(\bar{\pi}^*_{23}(\bcalC_{+}))=[x_{11}-x_{22},0]^+:=[x_{11}-x_{22},0],\]
+\[j_{e,e}^*(\bar{\pi}^*_{23}(\bcalC_{-}))=[x_{11}-x_{22},0]^-:=[x_{11}-x_{22},0]\otimes \chi_n^{-1}.\]
+
+Let us denote by $p$ the natural projection map $\frb_n\times \frn_n\to \frb_{n-1}\times \frn_{n-1}$ that gives the map $p:\widetilde{\Hilb}^{free}_{1,n}\to \widetilde{\Hilb}^{free}_{1,n-1}$ when
+restricted to the stable locus.
+The key observation about the other term in the last tensor product of the matrix factorization is that it contains a sub complex $p^*(j_{e}^*(\bcalC_{\beta'}))=(M',D',\partial'_l+\partial_r')$,
+$\partial'_l+\partial_r':M'\otimes \Lambda^\bullet(\frn_{n-1})\to M'\otimes \Lambda^{<\bullet}(\frn_{n-1})$
+$$j_{e,e}^*(\bcalC_{12,\beta})=(M'\otimes \Lambda^\bullet V_{12},D'+d'_-,\partial'_l+\partial'_r+\partial^f)$$
+where $d'_-=j_{e,e}^*(j_{12}^*(d^-))$ and $$\partial^f+\partial'_l+\partial'_r: M'\otimes \Lambda^\bullet(\frn_{n})\otimes \Lambda^* V_{12}\to M'\otimes \Lambda^{<\bullet}(\frn_{n})\otimes \Lambda^* V_{12},$$
+with $(M'\otimes \Lambda^\bullet (\frn_{n-1}),\partial'_l+\partial'_r)\otimes \Lambda^* V_{12}$ being a sub complex of $( M'\otimes \Lambda^\bullet(\frn_{n})\otimes \Lambda^* V_{12},\partial^f+\partial'_l+\partial'_r)$.
+Moreover $\partial^f$ has a non-trivial degree along with respect to the exterior power $\Lambda^* V_{12}$:
+$$\partial^f: M'\otimes \Lambda^*(\frn_{n})\otimes \Lambda^\bullet V_{12}\to M'\otimes \Lambda^{*}(\frn_{n})\otimes \Lambda^{<\bullet} V_{12},$$
+
+We complete our argument with an analysis of spectral sequence for the differential $D_{tot}=(D'+\partial'_l+\partial'_r)+d_{ce}+d_c+\partial^f+d'_-$ by first
+computing homology with respect to $d_{ce}$ then with respect to $d_c$, we give details below.
+
+%We proceed by analyzing the complex $\bbS'_{\beta,\sigma_{n-1}^{\pm 1}}$. Let us denote by $p$ the natural projection $\calXr_2(G_n)\to \calXr_2(G_{n-1})$ that extends the projection $\widetilde{\Hilb}_{1,n}^{free}
+%\to\widetilde{\Hilb}^{free}_{1,n-1}$.
+%Since $\bbS'_{\beta,\sigma_{n-1}^{\pm 1}}=\Indb_{1,\dots,n-1}(\calC_\beta)\otimes\Indb_{n-1,n}(\calC_\pm)$, we have
+%that:
+%$$ \bbS'_{\beta,\sigma_{n-1}^{\pm 1}}= \left(\bigotimes_{i=3}^n [g_{1i},*]\otimes p^*(\bcalC_\beta)\otimes [g_{21},*]\right)\otimes \left(\bigotimes_{i=3}^n[g_{1i},*]\otimes \bcalC_{\pm}\otimes p^*(\pi_{21}^*(\bcalC_{\parallel}))\right)
+%$$
+%where $\bcalC_\pm$ is given by (\ref{eq: C+}) and (\ref{eq: C-}). Now we can apply row operation  of the big tensor products in the both factors to obtain the complex
+%$$  \bigotimes_{i=3}^n [g_{1i},0]\otimes [f_i, 0].$$
+%where the functions $f_i$ are defined inductively $f_{i+1}=\frac{(f_i-f_i|_{g_{1i}=0})}{g_{1i}}$, $f_2=\Wr$. Next step we use the last factor in the first term to eliminate
+%$g_{21}$ from the other terms and we arrive to the following complex
+%$$\bigotimes_{i=2}^n[g_{i1},0]\otimes p^*(\bcalC_\beta\otimes\pi_{21}^*(\bcalC_{\parallel}))\otimes [x_{11}-x_{22},0]^{\pm}\otimes \bigotimes_{i=3}[f_i,0],$$
+%where $[x_{11}-x_{22},0]^+=[x_{11}-x_{22},0]$ and $[x_{11}-x_{22},0]^-=[x_{11}-x_{22},0]\otimes \chi_n^{-1}$.
+
+%Now we can use first big tensor product together with $p^*(\bcalC_{\parallel})=p^*(\mathrm{K}^{\Wr_{n-1}}(g_{--})$  to eliminate variables $g_{--}$ and obtain
+%$$\mathbb{H}(\forg^*(\CE_{\frn^2}(\bbS'_{\beta},\sigma_{n-1}^{\pm 1}))^{T^2}\otimes \wedge^k\calB_n)=\mathbb{H}(\CE_{\frn^2}(j^*_B(p^*(\bcalC_\beta)\otimes [x_{11}-x_{22},0]^{\pm}\otimes \bigotimes_{i=3}[f_i,0]))^{T^2}\otimes\wedge^k\calB_n).$$
+
+%Next, simillary to the argument (\ref{eq: nn to n})  from above we reduce to working with the complexes on $\widetilde{\Hilb}_{1,n}^{free}$:
+Let us summarize the previous discussion, we have shown that
+\[\mathbb{H}^k(\beta\cdot\sigma_{1}^{\pm 1})=
+\mathbb{H}(
+M'\otimes V_{12}\otimes [x_{11}-x_{22},0]^{\pm}\otimes \Lambda^k\calB_n,  D_{tot}),\]
+\[\quad D_{tot}=(D'+\partial'_l+\partial'_r)+(d_{ce}+d_c+\partial^f+d'_-).
+\]
+
+
+%Let us study the hypercohomology of the last complex, let us denote the complex by $\calC$.
+%Non-equivariant limit   of the total differential $D_{tot}$ of the two-periodic complex is the sum of four parts:
+%where $d_{mf}:=D'$ is the differential of the matrix factorization with zero potential, $d_{ce}$ is the Chevalley-Eillenberg differential and
+In the total differential $D_{tot}$ the term $d_c$ is the Cech differential for some Cech cover
+of $\widetilde{\Hilb}_{1,n}$.
+In particular, if we choose Cech cover of $\widetilde{\Hilb}_{1,n}^{free}$ by the affine varieties $U_{\vec{S}_1,\vec{S}_2}=B\cdot \mathbb{A}_{\vec{S}_1,\vec{S}_2}$ from the proof of proposition~\ref{prop: aff cover}, we
+can derive from fact that $B$-action on $U_{\vec{S}_1,\vec{S}_2}$ is free that
+$$\textup{H}^k(\CC[U_{\vec{S}_1,\vec{S}_2}],d_{ce})=\begin{cases} &\CC[T\cdot \mathbb{A}_{\vec{S}_1,\vec{S}_2}],\mbox{ if } k=0\\ &0,\mbox{ if } k>0.\end{cases}.$$
+
+Thus we can conclude that \(\mathbb{H}(\beta\cdot\sigma_{1}^{\pm 1})\) is equal to
+$$ \mathbb{H}(\Hilb_{1,n}^{free}, (M'\otimes V_{12}\otimes [x_{11}-x_{22},0]^{\pm})^{B}\otimes \Lambda^k\calB_n,
+(D'+\partial'_l+\partial'_r)+d_c+\partial^f+d'_-).$$
+where superscript $B$ indicate the descend of the complex to the quotient $\widetilde{\Hilb}_{1,n}^{free}/B=\Hilb_{1,n}^{free}$.
+
+Let $\Delta_{1,2}\subset\frh$ be the root hyperplane for  the root $\epsilon_1-\epsilon_{2}$ and $\Hilb^{free}_{1,n}(\Delta_{1,2}):=\chi^{-1}(\Delta_{1,2})$. By contracting the differential
+of the complex $[x_{11}-x_{22},0]$ we obtain the last simplification for \(\mathbb{H}^k(\beta\cdot\sigma_{1}^{\pm 1})\):
+$$ \mathbb{H}(\Hilb_{1,n}^{free}(\Delta_{1,2}), (M'\otimes\Lambda^* V_{12}\otimes\chi_n^{-1/2\pm 1/2})^{B}\otimes \Lambda^k\calB_n,
+(D'+\partial'_l+\partial'_r)+d_c+\partial^f+d'_-).$$
+
+ %and $\widetilde{\Hilb}^{free}_{1,n}(\Delta_{n,n-1})\subset \widetilde{\Hilb}^{free}_{1,n}(\Delta_{n,n-1})$ is the quotient preimage.
+%If we denote by $j_{n,n-1}$ the embedding  map $\widetilde{\Hilb}^{free}_{1,n}(\Delta_{n,n-1})\to \calXr_{2,fr}$ then we get the final reduction
+%$$ \mathbb{H}(\beta\cdot\sigma_{n-1}^{\pm 1})=\mathbb{H}(\calO_n(-1/2\pm 1/2)\otimes   \left(j^*_{n,n-1}(p^*(\bcalC_\beta)\otimes \bigotimes_{i=3}[f_i,0])\right)^{B}\otimes\wedge^k\calB_n)$$
+%where the LHS is hyper-cohomology of the complex of sheaves on $\Hilb^{free}_{1,n}(\Delta_{n,n-1})$.
+
+Let us present the torus $T_n$ of $B_n$ as a product $T_1\times T_{n-1}$ where $T_1$ is the one-dimensional torus that preserves $B_{n-1}$ and  $T_{n-1}$ is the torus of $B_{n-1}$.
+Hence the torus $T_1$  acts non-trivially on the fibers of $p:\widetilde{\Hilb}_{1,n}^{free}\to \widetilde{\Hilb}_{1,n-1}^{free}$ and $T_{n-1}$ fixes these fibers.
+
+As the final step we push forward the last complex along the morphism $p$.
+ For that let us observe that the elements $\theta_3,\dots,\theta_n$ have weight $-1$ with respect to $T_1$ and $0$ with respect to $T_{n-1}$ thus
+ $$ (\Lambda^* V_{12})^B=\Lambda^* \calO_n(-1)^{\oplus n-2}.$$
+
+
+
+%For that we observe that $\bigotimes_{i=3}^n[f_i,0]$ descends to the Koszul complex
+%$$ \bigotimes_{i=3}^n j^*_{n,n-1}([f_i,0])^B=\bigotimes_{i=3}^n[\calO_n(-1)\xrightarrow{f_i}\calO].$$
+Since $\chi_n^{-1}$ descends to $\calO_n(-1)$ we can use proposition~\ref{prop: push forward} to conclude that for the map $p:\Hilb^{free}_{1,n}(\Delta_{n,n-1})\to \Hilb^{free}_{1,n}$ we have
+$$ p_*(\wedge^k\calB_n\otimes\Lambda^*(V_{12})^B)=\wedge^k\calB_{n-1},\quad  p_*(\wedge^k\calB_n\otimes \calO_n(-1)\otimes \Lambda^*(V_{12})^B)=\wedge^{k-1}\calB_{n-1}[n].$$
+
+Since $(M',D',\partial'_l+\partial'_r)=p^*(j_{e}(\bcalC_{\beta'}))$ and both $\partial^f$ and $d'_-$ have non-trivial degree along the exterior power
+$\Lambda^* V_{12}$  we can apply the projection formula to conclude
+\[ \mathbb{H}^k(\beta\cdot\sigma_{1})=\mathbb{H}(\Hilb^{free}_{1,n-1}, j^*_e(\bcalC_{\beta'})\otimes \Lambda^k\calB_{n-1}),\]\
+\[\mathbb{H}^k(\beta\cdot\sigma_{1}^{-1})=\mathbb{H}(\Hilb^{free}_{1,n-1}, j^*_e(\bcalC_{\beta'})\otimes \Lambda^{k-1}\calB_{n-1}[n]).\]
+ The last formula  implies the desired equation (\ref{eq: Markov}).
+
+%\input{LastSection.tex}
+
+ \section{Connections with other knot invariants}
+
+\subsection{Unknot}
+\label{sec:unknot}
+
+Let us evaluate our knot invariant on the unknot \(L(1)\), \(1\in \Brgr_1\).
+
+\begin{proposition} The Poincare polynomial of \(L(1)\) is
+  \[\sum_{i,j,k}\mathcal{H}^{i,j,k}q^it^j a^i=\frac{a^{-1}+at}{q^{-1}-q}.\]
+\end{proposition}
+\begin{proof}
+  We have \(X=\calXr_2(G_1)=\frg_1\times G_1\times 0\). Respectively \(\bar{\mathcal{C}}_1=\mathcal{O}_X\) and since \(\calX_1(G_1)=\frg_1\times 0\), we have
+  \(\mathbb{S}_1=j^*_e(\bar{\mathcal{C}}_1)=\mathcal{O}_{\frg_1}\). Since weight of \(T_{sc}\)-action along \(\frg_1=\CC\)  is \(q^2\) and \(\mathcal{B}=\CC\) is
+  the trivial vector bundle of weight \(t\), we conclude the formula from the statement.
+\end{proof}
+\subsection{HOMFLY-PT polynomial specialization}
+The space $\calH^k(\beta)$ is  doubly-graded with $q,t$ gradings induced by the action of $T_{sc}$ on $\Hilb^{free}_{1,n}$. We denote by $\calH^{i,j,k}(\beta)$ the subspace of
+$\calH^k(\beta)$ of degree $t^iq^j$. Respectively we introduce the super-polynomial:
+$$\SymbolPrint{\calP}(L(\beta)):= \sum_{i,j,k} t^iq^j a^k \calH^{i,j,k}(\beta),$$
+where $\beta\in \Brgr_n$.
+In this section we explain why our super polynomial $\calP(L)$ specializes to the HOMFLY-PT polynomial $P(L)$.
+
+First of all let us notice that
+$\calP(L(\beta))$ has  a well defined specialization at $t=-1$. The space \(\mathbb{H}^k(\beta)\) is infinite dimensional doubly-graded space with each graded piece is
+finite-dimensional. However if we forget about one of the gradings the last property might stop being true but it does not happen under the specialization \(t=-1\).
+
+Indeed,  only coordinates $Y$ along $\frn$ have non-trivial $t$-weights in coordinate ring of $\widetilde{\Hilb}_{1,n}^{free}$. On the other hand since
+$Y$ is strictly upper triangular all these variables have non-trivial positive weights with respect to the maximal torus \(T\subset B\).
+The other coordinates on $\widetilde{\Hilb}_{1,n}^{free}$ have nonnegative weights with respect to the maximal torus and positive \(q\)-weight.
+Thus only finitely many powers of $Y_{ij}$ could possibly contribute to $\mathbb{H}^k(\beta)$ which is constructed out of \(T\)-isotypical components
+of the rings of functions on the open Cech charts of \(\widetilde{\Hilb}_{1,n}^{free}\).
+
+Let us fix  conventions about the HOMFLY-PT polynomial $P(L)$:
+$$ aP(L_+)-a^{-1} P(L_-)=(q-q^{-1})P(L_0), \quad P(\mathrm{unknot})=1,$$
+where $L_+$ and $L_-$ are positive and negative crossings.
+
+\begin{theorem}\label{thm:HOMFLYPT} For any  $\beta\in \Brgr_n$ we have
+$$P(L(\beta))= \calP(L(\beta))|_{t=-1}$$
+\end{theorem}
+\begin{proof}
+First, let us notice that the theorem~\ref{thm: main} implies that the map \[\Tr_n: \Brgr_n\to \calP(L(\beta))|_{t=-1}\] is a trace map: $\Tr_n(ab)=\Tr_n(ba)$.
+Also, the  construction of the elements $\calC_{\pm}^{(i)}$ and the description of $\calC_+$ and $\calC_-$ as cones in proposition~\ref{prop: cones} implies  that $\Tr_n$ satisfies the skein relations:
+$$ a\Tr_n(\tau\sigma_i)-a^{-1}\Tr_n(\tau\sigma_i^{-1})=(q-q^{-1})\Tr_{n}(\tau),$$
+$\tau\in \Brgr_{n-1}$.
+
+Let us spell out the details for the skein relations.
+Since we imposed condition that all differentials in our matrix factorizations have degree \(t\),  setting \(t=-1\) corresponds to passing to the K-theory of the category matrix factorizations.
+We denote by \([\calC]\) the corresponding class of the matrix factorization in the K-theory. Thus the statement in proposition~\ref{prop: cones} implies the linear relations in K-theory:
+\[[\calC_+]=-\mathrm{q}^{-1}\left([\calC_\parallel]-[\calC_\bullet\langle-1,-1\rangle]\right),\]
+\[[\calC_-]=-\mathrm{q}^{-1}\left(-\mathrm{q}^2[\calC_\parallel]+[\calC_\bullet\langle-1,-1\rangle]\right).\]
+Taking into account the shift \(k-\mathrm{wr}(\beta)+n-1\) in the definition of \(\mathcal{H}^k(\beta)\) we the skein relation by canceling the
+terms related to class \([\calC_\bullet\langle-1,-1\rangle]\).
+
+Since $L(\tau\sigma)=L(\tau\sigma^{-1})$ the inductive argument shows that the skein relations imply that $\Tr_{n}(1)=A^{n}$ where $A=\Tr_1(1)=(a^{-1}-a)/(q^{-1}-q)$. Indeed, since \(L(\sigma_n^{\pm 1}1_{n+1})=L(1_n)\), \(1_n\in\Brgr_n\) and \(Tr_n(\beta)\) is an isotopy invariant of \(L(\beta)\), we can use the skein relations:
+\[a\Tr_{n+1}(\sigma_n)-a^{-1}\Tr_{n+1}(\sigma_n^{-1})=(a-a^{-1})\Tr_n(1)=(q-q^{-1})\Tr_{n+1}(1).\]
+
+Let us defined renormalized trace
+\begin{equation}\label{eq: trace OJ}
+ \textup{tr}'_n(\beta):=\left(\frac{a}{q}\right)^{\xwr(\beta)}A^{-n}\Tr_n(\beta),
+\end{equation}
+where \(\xwr(\sigma_{i_1}^{\epsilon_1}\dots \sigma_{i_\ell}^{\epsilon_\ell})=\sum_{i=1}^{\ell} \epsilon_i.\)
+
+The Hecke algebra \(H_n\) is generated by \(g_i\), \(i=1,\dots,n-1\) modulo relations:
+\[g_ig_{i+1}g_{i}=g_{i+1}g_ig_{i+1},
+  \quad i=1,\dots,n-2,\]
+\[g_i-g_i^{-1}=q-q^{-1},\quad i=1,\dots, n-1.\]
+
+There is a natural algebra homomorphism $\pi:\Brgr_n\to H_n$, \(\sigma_i\mapsto g_i\).
+The skein relations imply that the map $\textup{tr}'_n$ factors through the projection $\pi$:
+$\textup{tr}_n=\textup{tr}_n\circ \pi$ where $\textup{tr}'_n: H_n\to \CC(a,q)$ is the trace on $H_n$. Since the trace $\Tr_n$ satisfies the Markov move $\Tr_n(\tau\sigma_{n-1}^{\pm1 })=\Tr_{n-1}(\tau)$ we see that
+the sequence of traces $\textup{tr}_n$ satisfies the same restrictions as Ocneanu-Jones trace (see section 5 of \cite{Jones}):
+\begin{enumerate}
+\item $\textup{tr}_n(1)=1$
+\item $\textup{tr}_n(\alpha\beta)=\textup{tr}(\beta\alpha)$
+\item $\textup{tr}_n(\tau g_{n-1})=z\textup{tr}_{n-1}(\tau),$  $g\in H_{n-1}$
+\end{enumerate}
+where $z=aq^{-1}A^{-1}$.
+The factor \(z\) appears in the last formula because
+\[\textup{tr}_n(\tau g_{n-1})=\left(\frac{a}{q}\right)^{\mathrm{wr}(\tau g_{n-1})}A^{-n}\Tr_n( \tau g_{n-1})=
+\left(\frac{a}{q}\right)^{\xwr(\tau)}A^{-n+1} \Tr_{n-1}(\tau) aq^{-1}A^{-1}.\]
+
+According to the section 5 of \cite{Jones} the trace on $\cup H_n$ with such properties is unique and according to the section 6 of \cite{Jones} the renormalized trace $\Tr_n$ as in equation
+\ref{eq: trace OJ} defines the HOMFLY-PT polynomial.
+\end{proof}
+
+\subsection{$gl(m|n)$-homology differential}
+Recall that the vector bundle $\calB_n^\vee$ over $\widetilde{\Hilb}^{free}_{1,n}$ is  a vector bundle with the fiber $V $ over the point $(X,Y,v)$ where $V=\CC^n$ and $v$ is
+the cyclic vector. Define a section $\varphi_{m|n}$ of $\calB_n^\vee$ with the value $X^mY^n v\in V$ at the fiber at the point $(X,Y,v)$. Contraction with this
+section
+$$i_{\varphi_{m|n}}: \Lambda^\bullet \calB_n\to \Lambda^{\bullet-1}\calB_n.$$
+%Hence $i_{\varphi_{m|n}}$
+induces the differential  $d_{m|n}: \bbS_\beta\otimes \Lambda^\bullet\calB_n\to \bbS_\beta\otimes \Lambda^{\bullet-1}\calB_n$, which
+%. The differential $d_{m|n}$
+commutes with the \v{C}ech differential
+$d_c$, the Chevalley-Eilenberg differential $d_{ce}$, the equivariant correction differentials $\partial_l+\partial_r$ and the matrix factorization differential $D$. Thus  we can define following homology
+$$ \mathbb{H}_{m|n}(\beta)=(\oplus_{i=0}^n \bbS_\beta\otimes \Lambda^\bullet\calB_n, D_{tot}^{m|n}),\quad D_{tot}^{m|n}:=D+\partial_l+\partial_r+d_{ce}+d_{c}+d_{m|n}.$$
+The homology $\mathbb{H}_{m|n}(\beta)$ is only doubly graded. In forthcoming paper we prove the following
+
+\begin{theorem}\cite{OR} $\mathbb{H}_{m|n}(\beta)$ is an isotopy invariant of $L(\beta)$.
+\end{theorem}
+
+The differential $d_{m|n}$ is very much in spirit of the conjectures in the papers \cite{ORS, GGS} and thus we propose the conjecture:
+
+\begin{conjecture} The homology $\mathbb{H}_{m|n}$ categorifies the quantum invariant of type $gl(m|n)$.
+\end{conjecture}
+
+
+
+
+\printindex[notationlist]
+
+
+
+
+
+\begin{thebibliography}{99}
+
+
+\bibitem{AK} Arkhipov, Sergey,
+Kanstrup, Tina,
+Braid group actions on matrix factorizations, arXiv:1510.07588.
+
+
+
+
+\bibitem{AS}
+Aganagic, Mina,
+Shakirov, Shamil,
+Refined Chern-Simons theory and knot homology,
+Proceedings of Symposia in Pure Mathematics,
+vol. 85,
+(2012),
+3--31.
+
+
+
+\bibitem{BEG}
+Berest,Yuri,
+Etingof, Pavel,
+Ginzburg, Victor,
+Finite-dimensional representations of rational Cherednik algebras,
+Interbational Mathematical Research Notes, 19,
+(2003),
+1053--1088.
+
+
+\bibitem{BN}
+Bar-Nathan, Dror,
+Khovanov's homology for tangles and cobordisms,
+Geom. Topol.,
+vol. 9,
+(2005),
+1443--1499.
+
+
+\bibitem{BR} Berukavnikov, Roman, Riche, Simon,
+Affine braid group actions on derived categories of Springer resolutions,
+Annales Scientifiques de l'\'Ecole Normale Sup\`erieure. Quatri\`eme S\'erie,
+4,
+(2012),
+vol. 45,
+535--599.
+
+
+\bibitem{Ch}Cherednik, Ivan,
+Jones polynomials of torus knots via DAHA,
+International Mathematical Research Notes,
+23,
+(2013),
+5366--5425.
+
+
+%\bib{Deligne}{article}{
+%author={Deligne, Pierre}
+%title={}
+%}
+
+\bibitem{CG}
+Chriss, Neil,
+Ginzburg, Victor,
+Representation theory and complex geometry,
+Birkh\"aser,
+(2010),
+nnBoston.
+
+
+\bibitem{D}
+Dyckerhoff, Tobias,
+Compact generators in categories of matrix factorizations,
+Duke Math. J.,
+159,
+(2011),
+ no.2,
+223--274.
+
+
+\bibitem{DGR}
+Dunfield, Nathan,
+Gukov, Sergei,
+Rasmussen, Jacob,
+The superpolynomial for knot homologies,
+Experiment. Math.,
+15,
+(2006),
+no. 2,
+129--159.
+
+
+\bibitem{DM}Dyckerhoff, Tobias, Murfet, Daniel,
+Pushing forward matrix factorizations,
+Duke Math. J.,
+162,
+(2013),
+7,
+1249--1311.
+
+
+\bibitem{E}Eisenbud, David,
+Homological algebra on a complete intersection, with an application to group representations,
+Trans. Amer. Math. Soc.,
+260,
+(1980),
+no.1,
+35--64.
+
+\bibitem{E2}Eisenbud, David, Commutative algebra. With a view toward algebraic geometry, Graduate Texts in Mathematics, 150, Springer-Verlag,
+New York,
+1995.
+
+
+
+\bibitem{GGS} Gorsky, Eugene,
+Gukov, Sergei,
+Stosic, Marko,
+Quadruply-graded colored homology of knot, arXiv:1304.3481.
+
+\bibitem{GN}
+Gorsky, Eugene,
+Negu{\c t}, Andrei,
+ Refined knot invariants and Hilbert schemes,
+J. Math. Pures Appl.,
+vol. 9,
+104,
+(2015),
+no. 3,
+403--435.
+
+\bibitem{GNR}Gorksy, Eugene,
+Negu{\c t}, Andrei,
+Rasmussen, Jacob,
+Flag Hilbert schemes, colored projectors and Khovanov-Rozansky homology,  arXiv:1608.07308.
+
+
+\bibitem{GOR}Gorsky, Eugene, Oblomkov, Alexei,
+Rasmussen, Jacob,
+On stable Khovanov homology of torus knots, Journal of Experimental Mathematics,
+22,
+(2013),
+vol. 3,
+265--281.
+
+
+\bibitem{GORS} Gorsky, Eugene,
+Oblomkov, Alexei,
+Rasmussen, Jacob,
+Shende, Vivek,
+Torus knots and the rational DAHA,
+Duke Mathematical Journal,
+14,
+(2014),
+vol. 163,
+ 2709--2794.
+
+
+\bibitem{GS}
+Gordon, Iain,  Stafford, Tobias,
+Rational Cherednik algebras and Hilbert schemes. II. Representations and sheaves,
+Duke Math. J.,
+(2006),
+132,
+ no.1,
+ 73--135.
+
+
+\bibitem{GuWi}Gukov, Sergei,
+Witten, Edward,
+Gauge Theory, Ramification, And The Geometric Langlands Program,
+Current Developments in Mathematics,
+(2008), 35--180.
+
+
+\bibitem{EH}Elias, Benjamin, Hogancamp,Matt,
+On the computation of torus link homology,
+ arXiv:1603.00407.
+
+%\bib{Eis}{book}{
+%}
+
+ \bibitem{EHo}
+  Elias, Benjamin,
+  Hogancamp, Matt,
+Categorical diagonalization,  arXiv:1707.04349.
+
+
+\bibitem{Ho} Hogancamp, Matt, Khovanov-Rozansky homology and higher Catalan sequences,  arXiv:1704.01562.
+
+\bibitem{Jones}Jones, Vaughan,
+Hecke algebra representations of braid groups and link polynomials,
+Ann. of Math.,
+vol. 2,
+126,
+(1987),
+no. 2,
+335--388.
+
+\bibitem{Hai}
+Haiman, Mark,
+Combinatorics, symmetric functions, and Hilbert schemes, Current developments in mathematics,
+(2002), 39--111.
+
+\bibitem{KRS} Kapustin, Anton,
+Rozansky, Lev,
+Saulina, Natalia,
+Three-dimensional topological field theory and symplectic algebraic geometry. I,
+Nuclear Physics B,
+no. 3,
+(2009),
+vol. 816,
+295--355.
+
+\bibitem{KR}
+Kapustin, Anton,
+Rozansky, Lev, Three-dimensional topological field theory and symplectic algebraic geometry II,
+Communications in Number Theory and Physics,
+no.3,
+(2010),
+vol.4,
+463--549.
+
+%\bib{Kea}{article}{
+%author={Kapustin, Anton},
+%author={Setter, Kevin},
+%author={Vyas, Ketan},
+%title={Surface operators in four-dimensional topological gauge theory and Langlands duality},
+%eprint={arXiv:1002.0385}
+%}
+
+
+
+
+%\bib{KW}{article}{
+%author={Kapustin, Anton},
+%author={Witten, Edward},
+%title={Electric-Magnetic Duality And The Geometric Langlands Program},
+%journal={Communications in Number Theory and Physics},
+%volume={1},
+%number={1},
+%pages={1--236},
+%year={2007}
+%}
+
+\bibitem{KhR}
+Khovanov, Mikhail,
+Rozansky, Lev,
+Matrix factorizations and link homology, Fundamenta Mathematicae,
+(2008),
+vol. 199,
+1--91.
+
+\bibitem{KhR1} Khovanov, Mikhail,
+Rozansky, Lev,
+Matrix factorizations and link homology II,
+Geometry and Topology,
+3,
+(2008),
+vol. 12,
+1387--1425.
+
+%\bib{KhTh}{article}{
+%author={Khovanov, Mikhail},
+%author={Thomas, Richard},
+%title={Braid cobordisms, triangulated categories, and flag varieties},
+%journal={Homology, homotopy and applications},
+%volume={9},
+%year={2007},
+%pages={19-94},
+%number={2},
+%eprint={arXiv:math/0609335}
+%}
+
+
+\bibitem{Kn}
+Kn\"orrer, Horst,
+Cohen-Macaulay modules on hypersurface singularities. I,
+Inventiones Mathematecae,
+(1987),
+88,
+no. 1,
+153--164.
+
+
+\bibitem{Me} Mellit, Anton, Homology of torus knots, arXiv:1704.07630.
+
+
+\bibitem{MOY}   Murakami H,  Ohtsuki T, Yamada, Homfly polynomial via an invariant of colored plane
+graphs, Enseign. Math. (2) 44 (1998), no. 3-4, 325–360.
+
+
+\bibitem{N}
+Negu{\c t}, Andrei,
+Moduli of flags of sheaves and their K-theory,
+Algebr. Geom.,
+2,
+(2015),
+no. 1,
+19--43.
+
+\bibitem{Nak}
+Nakajima, Hiraku,
+ Lectures on Hilbert schemes of points on surfaces,
+ American Mathematical Society,
+ Providence, RI,
+1999.
+
+\bibitem{OR}Oblomkov, Alexei,
+Rozansky, Lev,
+Knot Homology and Sheaves on the Hilbert scheme of points on the plane II,
+Paper in preparation.
+
+
+\bibitem{ORS}
+Oblomkov, Alexei,
+Rasmussen, Jacob,
+Shende, Vivek,
+The Hilbert scheme of a plane curve singularity and the HOMFLY homology of its link,
+arXiv:1201.2115.
+
+
+\bibitem{OY}Oblomkov, Alexei,
+Yun, Zhiwei,
+Geometric representations of graded and rational Cherednik algebras,
+arXiv:1407.5685.
+
+\bibitem{Or} Orlov, Dmitri, Triangulated categories of singularities and D-branes in Landau-Ginzburg models,
+
+\bibitem{R}Riche, Simon,
+Geometric braid group action on derived categories of coherent sheaves (with a joint appendix with Roman Bezrukavnikov),
+Representation theory,
+(2008),
+vol. 12,
+131--169.
+
+
+\bibitem{WW2}Webster, Benjamin,
+Williamson, Geordie,
+The geometry of Markov traces,
+Duke Mathematical Journal,
+2,
+(2011),
+vol. 160,
+401--419.
+
+\bibitem{Wei} Weibel, Charles,
+An introduction to homological algebra,
+Cambridge Studies in Advanced Mathematics, 38,
+Cambridge University Press,
+Cambridge, 1994.
+
+\end{thebibliography}
+
+
+
+
+\end{document}
+
+
+
+\begin{bibdiv}
+
+\begin{biblist}
+\bib{AK}{article}{
+author={Arkhipov, Sergey},
+author={Kanstrup, Tina},
+title={Braid group actions on matrix factorizations},
+eprint={ arXiv:1510.07588}
+}
+
+
+
+\bib{AS}{article}{
+author={Aganagic, Mina},
+author={Shakirov, Shamil},
+title={Refined Chern-Simons theory and knot homology},
+journal={Proceedings of Symposia in Pure Mathematics},
+volume={85},
+year={2012},
+pages={3--31}
+}
+
+
+
+\bib{BEG}{article}{
+author={Berest,Yuri},
+author={Etingof, Pavel},
+author={Ginzburg, Victor},
+title={Finite-dimensional representations of rational Cherednik algebras},
+journal={Interbational Mathematical Research Notes},
+%issue={19},
+year={2003},
+pages={1053--1088}
+}
+
+\bib{BN}{article}{
+author={Bar-Nathan, Dror},
+title={Khovanov's homology for tangles and cobordisms},
+journal={Geom. Topol.},
+voulme={9},
+year={2005},
+pages={1443--1499}
+}
+
+\bib{BR}{article}{
+author={Berukavnikov, Roman},
+author={Riche, Simon},
+title={Affine braid group actions on derived categories of Springer resolutions},
+journal={Annales Scientifiques de l'\'Ecole Normale Sup\`erieure. Quatri\`eme S\'erie},
+issue={4},
+year={2012},
+volume={45},
+pages={535--599}
+}
+
+\bib{Ch}{article}{
+author={Cherednik, Ivan},
+title={Jones polynomials of torus knots via DAHA},
+journal={International Mathematical Research Notes},
+issue={23},
+year={2013},
+pages={5366--5425}
+}
+
+%\bib{Deligne}{article}{
+%author={Deligne, Pierre}
+%title={}
+%}
+
+\bib{CG}{book}{
+author={Chriss, Neil},
+author={Ginzburg, Victor},
+title={Representation theory and complex geometry},
+publisher={Birkh\"aser},
+year={2010},
+address={Boston}
+}
+
+\bib{D}{article}{
+author={Dyckerhoff, Tobias},
+title={Compact generators in categories of matrix factorizations},
+journal={Duke Math. J.},
+issue={159},
+year={2011},
+ number={2},
+ pages={223--274}
+ }
+
+\bib{DGR}{article}{
+author={Dunfield, Nathan},
+author={Gukov, Sergei},
+author={Rasmussen, Jacob},
+title={The superpolynomial for knot homologies},
+journal={Experiment. Math.},
+issue={15},
+year={2006},
+number={2},
+pages={129--159}
+}
+
+\bib{DM}{article}{
+author={Dyckerhoff, Tobias},
+author={Murfet, Daniel},
+title={Pushing forward matrix factorizations},
+journal={Duke Math. J.},
+issue={162},
+year={2013},
+number={7},
+pages={1249--1311}
+}
+
+\bib{E}{article}{
+author={Eisenbud, David},
+title={Homological algebra on a complete intersection, with an application to group representations},
+journal={Trans. Amer. Math. Soc.},
+issue={260},
+year={1980},
+number={1},
+pages={35--64}
+}
+
+\bib{E2}{book}{
+author={Eisenbud, David},
+title={Commutative algebra. With a view toward algebraic geometry},
+series={Graduate Texts in Mathematics, 150},
+publisher={Springer-Verlag},
+address={New York},
+year={1995}
+ }
+
+
+\bib{GGS}{article}{
+author={Gorsky, Eugene},
+author={Gukov, Sergei},
+author={Stosic, Marko},
+title={Quadruply-graded colored homology of knot},
+eprint={ arXiv:1304.3481}
+}
+
+\bib{GN}{article}{
+author={Gorsky, Eugene},
+author={Negut, Andrei},
+title={ Refined knot invariants and Hilbert schemes},
+journal={J. Math. Pures Appl.},
+volume={9},
+issue={104},
+year={2015},
+numer={3},
+pages={403--435},
+eprint={arXiv:1304.3328 }
+}
+
+\bib{GNR}{article}{
+author={Gorksy, Eugene},
+author={Negu{\c t}, Andrei},
+author={Rasmussen, Jacob},
+title={Work in progress}
+}
+
+\bib{GOR}{article}{
+author={Gorsky, Eugene},
+author={Oblomkov, Alexei},
+author={Rasmussen, Jacob},
+title={On stable Khovanov homology of torus knots},
+journal={Journal of Experimental Mathematics},
+issue={22},
+year={2013},
+volume={3},
+pages={265--281},
+}
+
+\bib{GORS}{article}{
+title={Torus knots and the rational DAHA},
+author={Gorsky, Eugene}
+author={Oblomkov, Alexei},
+author={Rasmussen, Jacob},
+author={Shende, Vivek},
+journal={Duke Mathematical Journal},
+issue={14},
+year={2014},
+volume={163},
+pages={ 2709--2794}
+}
+
+\bib{GS}{article}{
+title={Rational Cherednik algebras and Hilbert schemes. II. Representations and sheaves},
+author={Gordon, Iain},
+author={Stafford, Tobias},
+journal={ Duke Math. J.},
+year={2006},
+issue={132},
+ umner={1},
+ pages={73--135}
+}
+
+\bib{GuWi}{article}{
+title={Gauge Theory, Ramification, And The Geometric Langlands Program},
+author={Gukov, Sergei},
+author={Witten, Edward},
+journal={Current Developments in Mathematics},
+volume={2006},
+year={2008},
+pages={35-180},
+eprint={arXiv:hep-th/0612073}
+}
+
+
+\bib{EH}{article}{
+author={Elias, Benjamin},
+author={Hogancamp,Matt},
+title={On the computation of torus link homology},
+eprint={ arXiv:1603.00407}
+}
+
+%\bib{Eis}{book}{
+% }
+
+\bib{EHo}{article}{
+  author={Elias, Benjamin}
+  author={Hogancamp, Matt}
+  title={Categorical diagonalization}}
+
+\bib{M}{article}{Me}{
+author={Mellit, Anton}}
+
+\bib{Jones}{article}{
+author={Jones, Vaughan},
+title={
+Hecke algebra representations of braid groups and link polynomials}
+journal={Ann. of Math.},
+volume={2},
+issue={126},
+year={1987},
+number={2},
+pages={335--388}
+}
+
+\bib{Hai}{article}{
+author={Haiman, Mark},
+title={Combinatorics, symmetric functions, and Hilbert schemes},
+journal={Current developments in mathematics},
+year={2002},
+pages={39--111}
+%Int. Press, Somerville, MA, 2003.
+}
+
+\bib{Ho}{article}{
+author={Hogancamp, Matt}
+}
+
+\bib{KRS}{article}{
+author={Kapustin, Anton},
+author={Rozansky, Lev},
+author={Saulina, Natalia},
+title={Three-dimensional topological field theory and symplectic algebraic geometry. I},
+journal={Nuclear Physics B},
+number={3},
+year={2009},
+volume={816},
+pages={295--355}
+}
+
+\bib{KR}{article}{
+author={Kapustin, Anton},
+author={Rozansky, Lev},
+title={ Three-dimensional topological field theory and symplectic algebraic geometry II},
+journal={Communications in Number Theory and Physics },
+number={3},
+year={2010},
+volume={4},
+pages={463--549}
+}
+
+\bib{Kea}{article}{
+author={Kapustin, Anton},
+author={Setter, Kevin},
+author={Vyas, Ketan},
+title={Surface operators in four-dimensional topological gauge theory and Langlands duality},
+eprint={arXiv:1002.0385}
+}
+
+\bib{KW}{article}{
+author={Kapustin, Anton},
+author={Witten, Edward},
+title={Electric-Magnetic Duality And The Geometric Langlands Program},
+journal={Communications in Number Theory and Physics},
+volume={1},
+number={1},
+pages={1--236},
+year={2007}
+}
+
+\bib{KhR}{article}{
+title={Matrix factorizations and link homology},
+author={Khovanov, Mikhail},
+author={Rozansky, Lev},
+journal={Fundamenta Mathematicae},
+year={2008},
+volume={199},
+pages={1--91}
+}
+
+\bib{KhR1}{article}{
+title={Matrix factorizations and link homology II},
+author={Khovanov, Mikhail},
+author={Rozansky, Lev},
+journal={Geometry and Topology},
+issue={3},
+year={2008},
+volume={12},
+pages={1387--1425}
+}
+
+\bib{KhTh}{article}{
+author={Khovanov, Mikhail},
+author={Thomas, Richard},
+title={Braid cobordisms, triangulated categories, and flag varieties},
+journal={Homology, homotopy and applications},
+volume={9},
+year={2007},
+pages={19-94},
+number={2},
+eprint={arXiv:math/0609335}
+}
+
+
+\bib{Kn}{article}{
+author={Kn\"orrer, Horst},
+title={Cohen-Macaulay modules on hypersurface singularities. I},
+journal={Inventiones Mathematecae},
+year={1987},
+issue={88},
+number={1},
+pages={153--164}
+}
+
+\bib{N}{article}{
+author={Negu{\c t}, Andrei},
+title={Moduli of flags of sheaves and their K-theory},
+journal={Algebr. Geom.},
+issue={2},
+year={2015},
+number={1},
+pages={19--43}
+}
+
+\bib{Nak}{book}{
+author={Nakajima, Hiraku},
+title={ Lectures on Hilbert schemes of points on surfaces},
+year={1999},
+publisher={American Mathematical Society},
+address={ Providence, RI}
+}
+
+\bib{OR}{article}{
+author={Oblomkov,Alexei},
+author={Rozansky,Lev},
+title={Knot Homology and Sheaves on the Hilbert scheme of points on the plane II},
+journal={Paper in preparation}
+}
+
+
+\bib{ORS}{article}{
+author={Oblomkov, Alexei},
+author={Rasmussen, Jacob},
+author={Shende, Vivek},
+title={The Hilbert scheme of a plane curve singularity and the HOMFLY homology of its link},
+eprint={arXiv:1201.2115 }
+}
+
+\bib{OY}{article}{
+author={Oblomkov, Alexei},
+author={Yun, Zhiwei},
+title={Geometric representations of graded and rational Cherednik algebras},
+eprint={arXiv:1407.5685}
+}
+
+\bib{R}{article}{
+author={Riche, Simon},
+title={Geometric braid group action on derived categories of coherent sheaves (with a joint appendix with Roman Bezrukavnikov)},
+journal={Representation theory},
+year={2008},
+volume={12},
+pages={131--169}
+}
+
+
+\bib{WW2}{article}{
+author={Webster, Benjamin},
+author={Williamson, Geordie},
+title={The geometry of Markov traces},
+journal={Duke Mathematical Journal},
+issue={2},
+year={2011},
+volume={160},
+pages={401--419}
+}
+\bib{Wei}{book}{
+author={Weibel, Charles},
+title={An introduction to homological algebra},
+series={Cambridge Studies in Advanced Mathematics, 38},
+publisher={Cambridge University Press},
+address={Cambridge},
+year={1994}
+}
+\end{biblist}
+\end{bibdiv}
+
+\end{document}
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

@@ -6,7 +6,8 @@
   "sha256": "d2d541426aaec7427cd52ca09445c2bab7d1521cb56f8e55a969aa1d2d1cfce8",
   "bytes": 482907,
   "pages": 52,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -387,6 +388,129 @@
   "likely_scanned": false,
   "toc_entries": 21,
   "sections": 20,
-  "chars_total": 95104
+  "chars_total": 95104,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 7,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.859,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-3-finite-groups",
+     "title": "Finite groups",
+     "prose_ratio": 0.107,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-31-background-from-representation-theory",
+     "title": "Background from representation theory",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-32-central-limit-theorems-for-character-ratios",
+     "title": "Central limit theorems for character ratios",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-33-example-cayley-graphs-of-the-symmetric-group",
+     "title": "Example: Cayley Graphs of the Symmetric Group",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-4-gelfand-pairs",
+     "title": "Gelfand pairs",
+     "prose_ratio": 0.125,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-41-background-from-representation-theory",
+     "title": "Background from representation theory",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-42-central-limit-theorem-for-spherical-functions",
+     "title": "Central limit theorem for spherical functions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-43-example-the-hypercube",
+     "title": "Example: The Hypercube",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-44-example-graphs-on-perfect-matchings",
+     "title": "Example: Graphs on Perfect Matchings",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-5-twisted-gelfand-pairs",
+     "title": "Twisted Gelfand Pairs",
+     "prose_ratio": 0.318,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-51-background-from-representation-theory",
+     "title": "Background from representation theory",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-52-markov-chains-on-strict-partitions",
+     "title": "Markov chains on strict partitions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-53-central-limit-theorem-for-shifted-plancherel",
+     "title": "Central limit theorem for shifted Plancherel measure",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-6-association-schemes",
+     "title": "Association Schemes",
+     "prose_ratio": 0.18,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-015-61-background-on-association-schemes",
+     "title": "Background on association schemes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-62-central-limit-theorem-for-the-spectrum",
+     "title": "Central limit theorem for the spectrum",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-63-example-hamming-scheme",
+     "title": "Example: Hamming Scheme",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-7-acknowledgements",
+     "title": "Acknowledgements",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-019-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

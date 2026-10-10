@@ -7,118 +7,73 @@ section_number: 2
 pages: 5-7
 source_pdf: 9907032v1.pdf
 source_sha256: 1850f32a2375c8ce
+text_source: latex
+latex_prose_ratio: 0.912
+latex_coverage_ratio: 1.0
 doc_brief: "Combinatorial optimization in geometry (Rivin) — extends and unifies results on ideal polyhedra in H³ to singular Euclidean structures on surfaces, possibly with infinitely many singularities."
 ---
-In order for the linear program L to have any chance of having a solution, the
-dihedral angles ∆ must satisfy some constraints. Indeed, suppos eL has a solution.
-Condition 2.1. All of the dihedral angles must be positive.
-· 6
-Furthermore, the sum of all of the dihedral angles of all of the edg es of T must be
-equal to the sum of all of the angles of all of the faces of T, orF (T )π. On the other
-hand, it is almost equally obvious that if t1,...,t n ∈F (T ) is is some proper subset
-of the faces of T , then the sum of the dihedral angles at the edges incident to one
-of the ti must be strictly greater than the nπ. In other words:
-Condition 2.2. Let F ⊆ F (T ), and let E(F ) be the set of all edges incident to
-an element of F . Then
-∑
-e∈E(F )
-∆( e) ≥π|F |, (3)
-with equality if and only if F =F (T ) or E(F ) = ∅.
-Definition 2.3. For a subcomplex F of T , we deﬁne the excess of F to be
-excess F =
-∑
-e∈E(F )
-∆( e) −π|F |,
-Definition 2.4. An edge e of a subcomplex F of T is a relative boundary edge
-of F if it is incident to a top-dimensional face of F on exactly one side, and is not
-a boundary edge of T .
+[]{#necessary label="necessary"}
+
+In order for the linear program $L$ to have any chance of having a solution, the dihedral angles $\Delta$ must satisfy some constraints. Indeed, suppose $L$ has a solution.
+
+::: condition
+[]{#dihpos label="dihpos"} All of the dihedral angles must be positive.
+:::
+
+Furthermore, the sum of all of the dihedral angles of all of the edges of $T$ must be equal to the sum of all of the angles of all of the faces of $T,$ or $F(T) \pi$. On the other hand, it is almost equally obvious that if $t_1, \dots, t_n \in F(T)$ is is some proper subset of the faces of $T$, then the sum of the dihedral angles at the edges incident to one of the $t_i$ must be strictly greater than the $n \pi$. In other words:
+
+::: condition
+[]{#sumdih label="sumdih"} Let $\mathcal{F} \subseteq F(T)$, and let $E(\mathcal{F})$ be the set of all edges incident to an element of $\mathcal{F}$. Then $$\begin{equation}
+\label{sumdihineq}
+\sum_{e\in E(\mathcal{F})} \Delta(e)\geq \pi |\mathcal{F}|,
+\end{equation}$$ with equality if and only if $\mathcal{F} = F(T)$ or $E(\mathcal{F})=\emptyset.$
+:::
+
+::: definition
+For a subcomplex $\mathcal{F}$ of $T$, we define the *excess* of $\mathcal{F}$ to be $$\mathrm{excess\:}\mathcal{F} = \sum_{e\in E(\mathcal{F})} \Delta(e) - \pi |\mathcal{F}|,$$
+:::
+
+::: definition
+An edge $e$ of a subcomplex $\mathcal{F}$ of $T$ is a *relative boundary edge* of $\mathcal{F}$ if it is incident to a top-dimensional face of $\mathcal{F}$ on exactly one side, and is not a boundary edge of $T$.
+:::
+
 The following lemma will prove useful in the sequel.
-Lemma 2.5. Let ∆ : E(T ) → (0,π ] be an assignment of dihedral angles to edges
-of T satisfying condition 2.2. Let t1,t 2,...,t n be a collection of closed triangles of
-T , and let F = t1 ∪t2 ∪... ∪tn – assume F ⁄= T . Let ∑
-∂ F be the sum of the
-dihedral angles of the boundary edges of F . Then
-0< excess F <
-∑
-∂
-F. (4)
-Proof. The ﬁrst inequality of 4 is a restatement of Condition 2.2, applied to
-the subcomplex F . To show the second inequality, let
-F =
-⋃
-t∈F (T )\{t1,...,t n}
-t.
-Evidently,
-F ∪ F =T,
-while
-F ∩ F =∂F.
-Applying the conditions 2.2 to F , we see that
-0<
-∑
-e∈E(F )
-∆( e) −π|F (F )|, (5)
-while applying them to F , we see that
-0<
-∑
-e∈E(F )
-∆( e) −π|F (F )|. (6)
-· 7
-Note now that
-|F (F )| + |F (F )| = |F (T )|, (7)
-while
-∑
-e∈E(F )
-∆( e) +
-∑
-e∈E(F )
-∆( e) −
-∑
-∂
-F =
-∑
-e∈E(T )
-∆( e). (8)
-Adding inequalities 5 and 6, and applying equations 7 and 8, we obtain
-∑
-e∈E(F )
-∆( e) −π|F (F )|
-<
-
- ∑
-e∈E(F )
-∆( e) −π|F (F )|
-
- +
-
- ∑
-e∈E(
-F)
-∆( e) −π|F (F )|
-
-
-=
-
- ∑
-e∈E(F )
-∆( e) +
-∑
-e∈E(
-F )
-∆( e)
-
- −
-(
-π|F (F )| +π|F (
-F )|
-)
-=
-∑
-e∈E(T )
-∆( e) +
-∑
-∂
-F +π|F (T )| =
-∑
-∂
-F,
-where the last equality is obtained by applying the equality case of Con dition 2.2.
+
+::: lemma
+[]{#boundaryineq label="boundaryineq"} Let $\Delta: E(T) \rightarrow (0, \pi ]$ be an assignment of dihedral angles to edges of $T$ satisfying condition [\[sumdih\]](#sumdih){reference-type="ref" reference="sumdih"}. Let $t_1, t_2, \ldots, t_n$ be a collection of closed triangles of $T$, and let $\mathcal{F} = t_1 \cup t_2 \cup \ldots \cup t_n$ -- assume $\mathcal{F} \neq T$. Let $\sum_\partial \mathcal{F}$ be the sum of the dihedral angles of the boundary edges of $\mathcal{F}$. Then $$\begin{equation}
+\label{doublebd}
+0 < \mathrm{excess\:}\mathcal{F} < \sum_\partial \mathcal{F}.
+\end{equation}$$
+:::
+
+::: proof
+*Proof.* The first inequality of [\[doublebd\]](#doublebd){reference-type="ref" reference="doublebd"} is a restatement of Condition [\[sumdih\]](#sumdih){reference-type="ref" reference="sumdih"}, applied to the subcomplex $\mathcal{F}$. To show the second inequality, let $$\overline{\mathcal{F}} = \bigcup_{t \in F(T) \backslash \{t_1,
+\ldots, t_n\}} t.$$ Evidently, $$\mathcal{F} \cup \overline{\mathcal{F}} = T,$$ while $$\mathcal{F} \cap \overline{\mathcal{F}} = \partial\mathcal{F}.$$ Applying the conditions [\[sumdih\]](#sumdih){reference-type="ref" reference="sumdih"} to $\mathcal{F}$, we see that $$\begin{equation}
+\label{ineqf}
+0 < \sum_{e\in E(\mathcal{F})} \Delta(e) -  \pi |F(\mathcal{F})|,
+\end{equation}$$ while applying them to $\overline{\mathcal{F}}$, we see that $$\begin{equation}
+\label{ineqf2}
+0 < \sum_{e\in E(\overline{\mathcal{F}})} \Delta(e) -  \pi
+|F(\overline{\mathcal{F}})|.
+\end{equation}$$
+
+Note now that $$\begin{equation}
+\label{ufaces}
+|F(\mathcal{F})| + |F(\overline{\mathcal{F}})| = |F(T)|,
+\end{equation}$$ while $$\begin{equation}
+\label{uedges}
+\sum_{e\in E(\mathcal{F})} \Delta(e)+ \sum_{e\in
+  E(\overline{\mathcal{F}})} \Delta(e) - \sum_\partial \mathcal{F} =
+\sum_{e\in E(T)} \Delta(e).
+\end{equation}$$ Adding inequalities [\[ineqf\]](#ineqf){reference-type="ref" reference="ineqf"} and [\[ineqf2\]](#ineqf2){reference-type="ref" reference="ineqf2"}, and applying equations [\[ufaces\]](#ufaces){reference-type="ref" reference="ufaces"} and [\[uedges\]](#uedges){reference-type="ref" reference="uedges"}, we obtain $$\begin{eqnarray*}
+ & &  \sum_{e\in E(\mathcal{F})} \Delta(e) -  \pi |F(\mathcal{F})| \\
+ & < & \left(\sum_{e\in E(\mathcal{F})} \Delta(e) -  \pi |F(\mathcal{F})|\right) +
+         \left(\sum_{e\in E(\overline{\mathcal{F}})} \Delta(e) -
+         \pi|F(\overline{\mathcal{F}})|\right) \\
+  & = & \left(\sum_{e\in E(\mathcal{F})} \Delta(e) + \sum_{e\in
+    E(\overline{\mathcal{F}})} \Delta(e)\right) - \left(\pi |F(\mathcal{F})| +
+         \pi|F(\overline{\mathcal{F}})|\right) \\
+  & = & \sum_{e\in E(T)} \Delta(e) +  \sum_\partial \mathcal{F} + \pi
+  |F(T)|  =  \sum_\partial\mathcal{F},
+\end{eqnarray*}$$ where the last equality is obtained by applying the equality case of Condition [\[sumdih\]](#sumdih){reference-type="ref" reference="sumdih"}. ◻
+:::

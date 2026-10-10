@@ -6,7 +6,8 @@
   "sha256": "44c19a99624997bfbc59bdd31e9e1f3bdf8ed67ce44ef8e239bf2cd45244ce41",
   "bytes": 523717,
   "pages": 15,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -193,6 +194,83 @@
   "likely_scanned": false,
   "toc_entries": 9,
   "sections": 9,
-  "chars_total": 63650
+  "chars_total": 63650,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Braided_matter_final.tex",
+   "tex_sections": 9,
+   "overlaid": 6,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-i-introduction",
+     "title": "INTRODUCTION",
+     "prose_ratio": 0.997,
+     "coverage_ratio": 0.791,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-3-for-c\ud835\udcc16-and-b3-for-c\ud835\udcc14-in-such-a-construction",
+     "title": "(for C\ud835\udcc1(6)) and B3 (for C\ud835\udcc1(4)). In such a construction, the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-iii-theories-on-ribbon-graphs",
+     "title": "THEORIES ON RIBBON GRAPHS",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.988,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-iv-leptons-and-quarks-as-topological-excit-a-tio",
+     "title": "LEPTONS AND QUARKS AS TOPOLOGICAL EXCIT A TIONS",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.938,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-004-v-ribbon-networks-embedded-into-3-manifolds",
+     "title": "RIBBON NETWORKS EMBEDDED INTO 3-MANIFOLDS",
+     "prose_ratio": 0.584,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-l-using-the-de\ufb01nition-of-braided-network-a-frame",
+     "title": "Using the de\ufb01nition of braided network, a framed link L is",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-vi-isotopy-inv-ariants-of-braided-networks",
+     "title": "ISOTOPY INV ARIANTS OF BRAIDED NETWORKS",
+     "prose_ratio": 0.993,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-007-vii-possible-pre-geometric-unifica-tion-of-ma-tt",
+     "title": "POSSIBLE PRE-GEOMETRIC UNIFICA TION OF MA TTER AND GRA VITY",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-008-viii-discussion",
+     "title": "DISCUSSION",
+     "prose_ratio": 0.995,
+     "coverage_ratio": 0.52,
+     "result": "overlaid",
+     "converter": "latex"
+    }
+   ]
+  }
  }
 }

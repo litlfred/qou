@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0110009v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0110009v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0110009v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0110009&metadataPrefix=arXiv), submitted 2003-09-03, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0110009v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math/0110009v3",
+    "content_type": "application/gzip",
+    "sha256": "a2c6d5cdfe8644feb1070a9539c5e0246ba4aa0c68f53953bac295c46b7edfe8",
+    "bytes": 33945,
+    "fetched": "2026-10-10T15:26:55+00:00",
+    "files": [
+      {
+        "path": "source/files/CohnElkies.tex",
+        "role": "tex",
+        "sha256": "9a334bb2327d3a3edab73ec994ceb3aa05afd71bc2ddcb6c652fbee5ecb59114",
+        "bytes": 67602
+      },
+      {
+        "path": "source/files/cespecial.sty",
+        "role": "sty",
+        "sha256": "2d1bfae896cf3e54063f1cfc5214daa31feff6115162ec1a9752682871f5e2c7",
+        "bytes": 34170
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

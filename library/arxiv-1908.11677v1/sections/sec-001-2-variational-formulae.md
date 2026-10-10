@@ -7,477 +7,770 @@ section_number: 2
 pages: 5-11
 source_pdf: 1908.11677v1.pdf
 source_sha256: c53663eeb457daf9
+text_source: latex
+latex_prose_ratio: 0.968
+latex_coverage_ratio: 0.968
 doc_brief: "Variational formulae and estimates of O’Hara’s knot energies — O’Hara’s energies, introduced by Jun O’Hara, were proposedto answer the question of what is the canonical shape in a given knot typ e"
 ---
-We begin by recalling the deﬁnition of the function N . For functions u, v :
-R/ LZ → Rd, where d = 1 or n, we set
-N (u, v) = 1
-2‖∆f‖2
-Rn
-∫ s1
-s2
-∫ s1
-s2
-∆ 3
-4u · ∆ 3
-4vds3ds4.
-We use N (u) instead of N (u, u) for simplicity.
+\label{Sect. variational formulae}
+
+We begin by recalling the definition of the function
+$\scrN$.
+For functions
+$\vecu$,
+$\vecv : \R/\calL\Z \to \R^d$,
+where
+$d=1$
+or
+$n$,
+we set
+\[
+	\scrN(\vecu,\vecv)
+	=
+	\frac 1 { 2 \| \Delta \vecf \|_{\R^n}^2 }
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1}
+	\Delta_4^3 \vecu \cdot \Delta_4^3 \vecv
+	ds_3ds_4.
+\]
+We use
+$\scrN(\vecu)$
+instead of
+$\scrN(\vecu,\vecu)$
+for simplicity.
+
 Setting
-Mα (f ) = ϕ α (N (τ ))
-‖∆f ‖α
-Rn
-, (2.1)
+\begin{equation}\label{def Malpha}
+	\scrM_\alpha(\vecf)
+	=
+	\frac{ \vphi_\alpha(\scrN(\vectau)) }{ \| \Delta \vecf \|_{\R^n}^\alpha },
+\end{equation}
 then the energy can be written as
-E(α,p )(f ) =
-∫∫
-(R/ LZ)2
-(Mα (f ))pds1ds2.
-The ﬁrst variational formula G(α,p ) can be derived as
-G(α,p )(f )[φ ]ds1ds2 = δ{(Mα (f ))p}[φ ]ds1ds2 + Mα (f )δ(ds1ds2)[φ ],
+\[
+	\calE_{(\alpha,p)}(\vecf)
+	=
+	\iint_{(\R/\calL\Z)^2} ( \scrM_\alpha(\vecf) )^p ds_1ds_2.
+\]
+The first variational formula
+$\scrG_{(\alpha,p)}$
+can be derived as
+\[
+	\scrG_{(\alpha,p)}(\vecf)[\vecphi] ds_1ds_2
+	=
+	\delta \{ ( \scrM_\alpha(\vecf) )^p \} [\vecphi] ds_1ds_2
+	+
+	\scrM_\alpha(\vecf) \delta (ds_1ds_2)[\vecphi],
+\]
 and
-δ{(Mα (f ))p}[φ ] = p(Mα (f ))p−1δMα (f )[φ ].
-The second variational formula H(α,p ) is calculated similarly. Since δ(dsj)[φ ] =
-τ (sj ) ·φ ′(sj )dsj holds (see, for example, [11]), we obtain the following.
-5
-Theorem 2.1. G(α,p )(f )[φ ] and H(α,p )(f )[φ , ψ ] can be written as
-G(α,p )(f )[φ ] =
-2∑
-i=1
-Gi(f )[φ ], H(α,p )(f )[φ , ψ ] =
-6∑
-i=1
-Hi(f )[φ , ψ ],
-where
-G1(f )[φ ] = p(Mα (f ))p−1δMα (f )[φ ],
-G2(f )[φ ] = ( Mα (f ))p(τ (s1) ·φ ′(s1) +τ (s2) ·φ ′(s2)),
-H1(f )[φ , ψ ] = p(Mα (f ))p−1δ2Mα (f )[φ , ψ ],
-H2(f )[φ , ψ ] = p(p − 1)(Mα (f ))p−2δMα (f )[φ ]δMα (f )[ψ ],
-H3(f )[φ , ψ ] = G1(f )[φ ](τ (s1) ·ψ ′(s1) +τ (s2) ·ψ ′(s2)),
-H4(f )[φ , ψ ] = G1(f )[ψ ](τ (s1) ·φ ′(s1) +τ (s2) ·φ ′(s2)),
-H5(f )[φ , ψ ] = ( Mα (f ))p{φ ′(s1) ·ψ ′(s1) +φ ′(s2) ·ψ ′(s2)
-−2(τ (s1) ·φ ′(s1))(τ (s1) ·ψ ′(s1)) − 2(τ (s2) ·φ ′(s2))(τ (s2) ·ψ ′(s2))
-}
-,
-H6(f )[φ , ψ ] = ( Mα (f ))p(τ (s1) ·φ ′(s1) +τ (s2) ·φ ′(s2))(τ (s1) ·ψ ′(s1) +τ (s2) ·ψ ′(s2)).
-In the remainder of this section, we will give the exact expression of δMα (f )[φ ]
-and δ2Mα (f )[φ , ψ ]. First we note that, by (2.1), we have
-δMα (f )[φ ] = ϕ ′
-α (N (τ )) δN (τ )[φ ]
-‖∆f ‖α
-Rn
-− α
-2
-ϕ α (N (τ ))δ‖∆f ‖2
-Rn[φ ]
-‖∆f ‖α +2
-Rn
-, (2.2)
-and therefore we need variational formulae for N (τ ), and ‖∆f ‖2
-Rn. It follows
-from the deﬁnition of N (τ ) that δN (τ ) can be written in terms of δτ as well as
-δ‖∆f ‖2
-Rn. We can derive the second variational formula from the correspon ding
-ingredients.
-Firstly, we show the ingredients as Lemma 2.2. The variational formu lae
-δN (τ ) and δ2N (τ ) will be given in the forthcoming Lemma 2.4. Also, we give
-representations of δMα (f ) and δ2Mα (f ) in Proposition 2.5.
-Foru,v : R/ LZ → Rn, let
-K (u, v) = ∆u · ∆v
-‖∆f ‖2
-Rn
-.
-Lemma 2.2. The following variational formulae hold.
-1. δτ (sj)[φ ] =φ ′(sj) − (τ (sj) ·φ ′(sj ))τ (sj).
-2. δ‖∆ i
-jτ ‖2
-Rn[φ ] = 2∆ i
-jτ · ∆ i
-jφ ′ − ‖∆ i
-jτ ‖2
-Rn (τ (si) ·φ ′(si) +τ (sj) ·φ ′(sj)).
-3. δ‖∆f ‖2
-Rn[φ ] = 2 K (f , φ )‖∆f ‖2
-Rn .
-4. δ
-( 1
-‖∆f ‖2
-Rn
-)
-[φ ] = −2 K (f , φ )
-‖∆f‖2
-Rn
-.
-5. δ2‖∆f ‖2
-Rn[φ , ψ ] = 2 K (φ , ψ )‖∆f ‖2
-Rn.
-Proof. See [11, Lemma 1].
-Before proving Lemma 2.4, we establish the following sublemma.
-6
-Lemma 2.3. 1. Assume thatu : R/ LZ → Rn isτ orφ ′. Then, δN (τ , u)[ψ ]
+\[
+	\delta \{ (\scrM_\alpha(\vecf))^p \} [\vecphi]
+	=
+	p (\scrM_\alpha(\vecf))^{p-1} \delta \scrM_\alpha(\vecf) [\vecphi].
+\]
+The second variational formula
+$\scrH_{(\alpha,p)}$
+is calculated similarly.
+Since
+$\delta(ds_j) [\vecphi] = \vectau(s_j) \cdot \vecphi^\prime(s_j) ds_j$
+holds
+(see,
+for example,
+\cite{IN15}),
+we obtain the following.
+\begin{theorem}\label{variation}
+$\scrG_{(\alpha,p)}(\vecf)[\vecphi]$
+and
+$\scrH_{(\alpha,p)}(\vecf)[\vecphi,\vecpsi]$
 can be written as
-δN (τ , u)[ψ ] = −2K (f , ψ )N (τ , u)
-+ 1
-2‖∆f‖Rn
-∫ s1
-s2
-∫ s1
-s2
-{δ(∆ 3
-4τ · ∆ 3
-4u)[ψ ]
-+ (∆ 3
-4τ · ∆ 3
-4u)(τ (s3) ·ψ ′(s3) +τ (s4) ·ψ ′(s4))}ds3ds4,
+\[
+	\scrG_{(\alpha,p)}(\vecf)[\vecphi]
+	=
+	\sum_{i=1}^2 \scrG_i(\vecf)[\vecphi],
+	\quad
+	\scrH_{(\alpha,p)}(\vecf)[\vecphi,\vecpsi]
+	=
+	\sum_{i=1}^6 \scrH_i(\vecf)[\vecphi,\vecpsi],
+\]
 where
-δ(∆ 3
-4τ · ∆ 3
-4u)[ψ ]
-=
-
-
-
-2∆ 3
-4τ · ∆ 3
-4φ ′ − ‖∆ 3
-4τ ‖2
-Rn(τ (s3) ·φ ′(s3) +τ (s4) ·φ ′(s4)), u =τ ,
-∆ 3
-4φ ′ · ∆ 3
-4ψ ′ − (∆ 3
-4τ · ∆ 3
-4φ ′)(τ (s3) ·ψ ′(s3) +τ (s4) ·ψ ′(s4))
-− {∆ 3
-4(τ ·φ ′)}{∆ 3
-4(τ ·ψ ′)}, u =φ ′.
-2. It holds that
-δK (f , φ )[ψ ] = K (φ , ψ ) − 2K (f , φ )K (f , ψ ).
-Proof. 1. By Lemma 2.2, we have
-δN (τ , u)[ψ ] = δ
-( 1
-2‖∆f‖2
-Rn
-∫ s1
-s2
-∫ s1
-s2
-∆ 3
-4τ · ∆ 3
-4uds3ds4
-)
-[ψ ]
-= 1
-2 δ
-( 1
-‖∆f ‖2
-Rn
-)
-[ψ ]
-∫ s1
-s2
-∫ s1
-s2
-∆ 3
-4τ · ∆ 3
-4uds3ds4
-+ 1
-2‖∆f‖2
-Rn
-∫ s1
-s2
-∫ s1
-s2
-δ(∆ 3
-4τ · ∆ 3
-4u)[ψ ]ds3ds4
-+ 1
-2‖∆f‖2
-Rn
-∫ s1
-s2
-∫ s1
-s2
-(∆ 3
-4τ · ∆ 3
-4u)δ(ds3ds4)[ψ ]
-= −2K (f , ψ )N (τ , u) + 1
-2‖∆f‖2
-Rn
-∫ s1
-s2
-∫ s1
-s2
-{δ(∆ 3
-4τ · ∆ 3
-4u)[φ ]
-+ (∆ 3
-4τ · ∆ 3
-4u)(τ (s3) ·ψ ′(s3) +τ (s4) ·ψ ′(s4))}ds3ds4.
-It remains to calculate δ(∆ 3
-4τ · ∆ 3
-4u)[φ ]. Since the case where u =τ may
-be handled by Lemma 2.2, we deal with the case where u =φ ′. Then, it
-7
-follows from Lemma 2.2 and δφ ′(sj )[ψ ] = −(τ (sj) ·ψ ′(sj))φ ′(sj) that
-δ(∆ 3
-4τ · ∆ 3
-4φ ′)[ψ ]
-= δ(∆ 3
-4τ )[ψ ] · ∆ 3
-4φ ′ + ∆ 3
-4τ · δ(∆ 3
-4φ ′)[ψ ]
-= ∆ 3
-4ψ ′ · ∆ 3
-4φ ′ − ∆ 3
-4{(τ ·ψ ′)τ } · ∆ 3
-4φ ′ − ∆ 3
-4τ · ∆ 3
-4{(τ ·ψ ′)φ ′}
-= ∆ 3
-4φ ′ · ∆ 3
-4ψ ′ − [(τ (s3) ·ψ ′(s3))∆ 3
-4τ + {∆ 3
-4(τ ·ψ ′)}τ (s4)] · ∆ 3
-4φ ′
-− ∆ 3
-4τ · [{∆ 3
-4(τ ·ψ ′)}φ ′(s3) + (τ (s4) ·ψ ′(s4))∆ 3
-4φ ′]
-= ∆ 3
-4φ ′ · ∆ 3
-4ψ ′
-− (∆ 3
-4τ · ∆ 3
-4φ ′)(τ (s3) ·ψ ′(s3) +τ (s4) ·ψ ′(s4))
-− {∆ 3
-4(τ ·ψ ′)}(τ (s4) · ∆ 3
-4φ ′ + ∆ 3
-4τ ·φ ′(s3))
-= ∆ 3
-4φ ′ · ∆ 3
-4ψ ′
-− (∆ 3
-4τ · ∆ 3
-4φ ′)(τ (s3) ·ψ ′(s3) +τ (s4) ·ψ ′(s4))
-− {∆ 3
-4(τ ·φ ′)}{∆ 3
-4(τ ·ψ ′)}.
-2. Using Lemma 2.2, we have
-δK (f , φ )[ψ ] = δ(∆f · ∆φ )[ψ ]
-‖∆f ‖2
-Rn
-+ (∆f · ∆φ )δ
-( 1
-‖∆f ‖2
-Rn
-)
-[ψ ]
-= ∆ψ · ∆φ
-‖∆f ‖2
-Rn
-− 2∆f · ∆φ K (f , ψ )
-‖∆f ‖2
-Rn
-= K (φ , ψ ) − 2K (f , φ )K (f , ψ ).
-Lemma 2.4. δN (τ )[φ ] and δ2N (τ )[φ , ψ ] can be written as
-δN (τ )[φ ] =
-2∑
-i=1
-Ri(f )[φ ], δ 2N (τ )[φ , ψ ] =
-5∑
-i=1
-Si(f )[φ , ψ ],
-where
-R1(f )[φ ] = −2K (f , φ )N (τ ),
-R2(f )[φ ] = 2 N (τ , φ ′),
-S1(f )[φ , ψ ] = −2(K (φ , ψ ) − 2K (f , φ )K (f , ψ ))N (τ ),
-S2(f )[φ , ψ ] = −K (f , φ )δN (τ )[ψ ] − K (f , ψ )δN (τ )[φ ],
-S3(f )[φ , ψ ] = −2K (f , ψ )N (τ , φ ′) − 2K (f , φ )N (τ , ψ ′),
-S4(f )[φ , ψ ] = 2 N (φ ′, ψ ′),
-S5(f )[φ , ψ ] = −2N ((τ ·φ ′), (τ ·ψ ′)).
-8
-Proof. By Lemmas 2.2 and 2.3, we have
-δN (τ )[φ ] = −2K (f , φ )N (τ )
-+ 1
-2‖∆f ‖2
-Rn
-∫ s1
-s2
-∫ s1
-s2
-{δ‖∆ 3
-4τ ‖2
-Rn [φ ]
-+ ‖∆ 3
-4τ ‖2
-Rn(τ (s3) ·φ ′(s3) +τ (s4) ·φ ′(s4))}ds3ds4
-= −2K (f , φ )N (τ ) + 1
-‖∆f ‖2
-Rn
-∫ s1
-s2
-∫ s1
-s2
-∆ 3
-4τ · ∆ 3
-4φ ′ds3ds4
-= −2K (f , φ )N (τ ) + 2N (τ , φ ′)
-=
-2∑
-i=1
-Ri(f )[φ ].
-Next we calculate δ2N (τ )[φ , ψ ]. Firstly, we have
-δ2N (τ )[φ , ψ ] = 1
-2 δ(δN (τ )[φ ])[ψ ] + 1
-2 δ(δN (τ )[ψ ])[φ ].
-By the symmetry with respect toφ andψ , it is suﬃcient to calculate δ(δN (τ )[φ ])[ψ ],
-for which we ﬁrst note that
-δ(δN (τ )[φ ])[ψ ] =
-2∑
-i=1
-δ(Ri(f )[φ ])[ψ ].
-Using Lemma 2.3 again, we can show that
-δ(R1(f )[φ ])[ψ ] = −2δK (f , φ )[ψ ]N (τ ) − 2K (f , φ )δN (τ )[ψ ]
-= −2K (φ , ψ )N (τ ) + 4K (f , φ )K (f , ψ )N (τ )
-− 2K (f , φ )δN (τ )[ψ ],
+\begin{align*}
+	\scrG_1(\vecf)[\vecphi]
+	&=
+	p(\scrM_\alpha(\vecf))^{p-1} \delta \scrM_\alpha(\vecf)[\vecphi],
+\\
+	\scrG_2(\vecf)[\vecphi]
+	&=
+	( \scrM_\alpha(\vecf) )^p
+	( \vectau(s_1) \cdot \vecphi^\prime(s_1) + \vectau(s_2) \cdot \vecphi^\prime(s_2) ),
+\\
+	\scrH_1(\vecf)[\vecphi,\vecpsi]
+	&=
+	p(\scrM_\alpha(\vecf))^{p-1} \delta^2 \scrM_\alpha(\vecf) [\vecphi,\vecpsi],
+\\
+	\scrH_2(\vecf)[\vecphi,\vecpsi]
+	&=
+	p(p-1) ( \scrM_\alpha(\vecf) )^{p-2}
+	\delta \scrM_\alpha(\vecf) [\vecphi] \delta \scrM_\alpha(\vecf) [\vecpsi],
+\\
+	\scrH_3(\vecf)[\vecphi,\vecpsi]
+	&=
+	\scrG_1(\vecf) [\vecphi]
+	( \vectau(s_1) \cdot \vecpsi^\prime(s_1) + \vectau(s_2) \cdot \vecpsi^\prime(s_2) ),
+\\
+	\scrH_4(\vecf)[\vecphi,\vecpsi]
+	&=
+	\scrG_1(\vecf) [\vecpsi]
+	( \vectau(s_1) \cdot \vecphi^\prime(s_1) + \vectau(s_2) \cdot \vecphi^\prime(s_2) ),
+\\
+	\scrH_5(\vecf)[\vecphi,\vecpsi]
+	&=
+	( \scrM_\alpha(\vecf) )^p
+	\{
+	\vecphi^\prime(s_1) \cdot \vecpsi^\prime(s_1) + \vecphi^\prime(s_2) \cdot \vecpsi^\prime(s_2)
+\\
+	&\quad
+	\left.
+	-2 ( \vectau(s_1) \cdot \vecphi^\prime(s_1) )( \vectau(s_1) \cdot \vecpsi^\prime(s_1) )
+	-2 ( \vectau(s_2) \cdot \vecphi^\prime(s_2) )( \vectau(s_2) \cdot \vecpsi^\prime(s_2) )
+	\right\},
+\\
+	\scrH_6(\vecf)[\vecphi,\vecpsi]
+	&=
+	( \scrM_\alpha(\vecf) )^p
+	( \vectau(s_1) \cdot \vecphi^\prime(s_1) + \vectau(s_2) \cdot \vecphi^\prime(s_2) )
+	( \vectau(s_1) \cdot \vecpsi^\prime(s_1) + \vectau(s_2) \cdot \vecpsi^\prime(s_2) ).
+\end{align*}
+\end{theorem}
+
+In the remainder of this section,
+we will give the exact expression of
+$\delta \scrM_\alpha(\vecf)[\vecphi]$
 and
-δ(R2(f )[φ ])[ψ ] = 2 δ(N (τ , φ ′))[ψ ]
-= −4K (f , ψ )N (τ , φ ′)
-+ 1
-‖∆f ‖2
-Rn
-∫ s1
-s2
-∫ s1
-s2
-[∆ 3
-4φ ′ · ∆ 3
-4ψ ′
-− (∆ 3
-4τ · ∆ 3
-4φ ′)(τ (s3) ·ψ ′(s3) +τ (s4) ·ψ ′(s4))
-− {∆ 3
-4(τ ·φ ′)}{∆ 3
-4(τ ·ψ ′)}
-+ (∆ 3
-4τ · ∆ 3
-4φ ′)(τ (s3) ·ψ ′(s3) +τ (s4) ·ψ ′(s4))]ds3ds4
-= −4K (f , ψ )N (τ , φ ′) + 2N (φ ′, ψ ′) − 2N ((τ ·φ ′), (τ ·ψ ′)),
+$\delta^2 \scrM_\alpha(\vecf)[\vecphi,\vecpsi]$.
+First we note that,
+by \eqref{def Malpha},
+we have
+\begin{equation}
+	\delta \scrM_\alpha(\vecf)[\vecphi]
+	=
+	\vphi_\alpha^\prime(\scrN(\vectau))
+	\frac{ \delta \scrN(\vectau) [\vecphi] }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	-
+	\frac \alpha 2
+	\frac{ \vphi_\alpha(\scrN(\vectau)) \delta \| \Delta \vecf \|_{\R^n}^2 [\vecphi] }
+	{ \| \Delta \vecf \|_{\R^n}^{\alpha+2} },
+\label{delta Malpha}
+\end{equation}
+and therefore we need variational formulae for
+$\scrN(\vectau)$,
+and
+$\| \Delta \vecf \|_{\R^n}^2$.
+It follows from the definition of
+$\scrN(\vectau)$
+that 
+$\delta \scrN(\vectau)$
+can be written in terms of
+$\delta \vectau$
+as well as
+$\delta \| \Delta \vecf \|_{\R^n}^2$.
+We can derive the second variational formula from the corresponding ingredients.
+
+Firstly,
+we show the ingredients as Lemma \ref{variation lemma}.
+The variational formulae
+$\delta \scrN(\vectau)$
+and
+$\delta^2 \scrN(\vectau)$
+will be given in the forthcoming Lemma \ref{variation N}.
+Also,
+we give representations of
+$\delta \scrM_\alpha(\vecf)$
+and
+$\delta^2 \scrM_\alpha(\vecf)$
+in Proposition \ref{variation Malpha}.
+
+For
+$\vecu$,
+$\vecv : \R/\calL\Z \to \R^n$,
+let
+\[
+	\scrK(\vecu,\vecv)
+	=
+	\frac{ \Delta \vecu \cdot \Delta \vecv }{ \| \Delta \vecf \|_{\R^n}^2 }.
+\]
+
+\begin{lemma}\label{variation lemma}
+The following variational formulae hold.
+\begin{enumerate}\renewcommand{\labelenumi}{\upshape\textrm{\theenumi.}}
+\item
+$\delta \vectau(s_j)[\vecphi] = \vecphi^\prime(s_j) - (\vectau(s_j) \cdot \vecphi^\prime(s_j)) \vectau(s_j)$.
+\item
+$
+	\delta \| \Delta^i_j \vectau \|_{\R^n}^2[\vecphi]
+	=
+	2\Delta^i_j \vectau \cdot \Delta^i_j \vecphi^\prime
+	-
+	\| \Delta^i_j \vectau \|_{\R^n}^2
+	( \vectau(s_i) \cdot \vecphi^\prime(s_i) + \vectau(s_j) \cdot \vecphi^\prime(s_j) )
+$.
+\item
+$
+	\displaystyle
+	\delta \| \Delta \vecf \|_{\R^n}^2 [\vecphi]
+	=
+	2 \scrK(\vecf,\vecphi) \| \Delta \vecf \|_{\R^n}^2
+$.
+\item
+$
+	\displaystyle
+	\delta \left( \frac 1 { \| \Delta \vecf \|_{\R^n}^2 } \right)[\vecphi]
+	=
+	-2
+	\frac{ \scrK(\vecf,\vecphi) }{ \| \Delta \vecf \|_{\R^n}^2 }
+$.
+\item
+$
+	\displaystyle
+	\delta^2 \| \Delta \vecf \|_{\R^n}^2[\vecphi,\vecpsi]
+	=
+	2 \scrK(\vecphi,\vecpsi) \| \Delta \vecf \|_{\R^n}^2
+$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+See
+\cite[Lemma 1]{IN15}.
+\end{proof}
+
+Before proving Lemma \ref{variation N},
+we establish the following sublemma.
+
+\begin{lemma}\label{variation N sublemma}
+\begin{enumerate}\renewcommand{\labelenumi}{\upshape\textrm{\theenumi.}}
+\item
+Assume that
+$\vecu : \R/\calL\Z \to \R^n$
+is
+$\vectau$
+or
+$\vecphi^\prime$.
+Then,
+$\delta \scrN(\vectau,\vecu)[\vecpsi]$
+can be written as
+\begin{align*}
+	\delta \scrN(\vectau,\vecu) [\vecpsi]
+	&=
+	-2 \scrK(\vecf,\vecpsi) \scrN(\vectau,\vecu)
+\\
+	&\quad
+	+
+	\frac 1 { 2 \| \Delta \vecf \|_{\R^n} }
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1}
+	\{
+	\delta (\Delta_4^3 \vectau \cdot \Delta_4^3 \vecu)[\vecpsi]
+\\
+	&\qquad
+	+
+	( \Delta_4^3 \vectau \cdot \Delta_4^3 \vecu )
+	( \vectau(s_3) \cdot \vecpsi^\prime(s_3) + \vectau(s_4) \cdot \vecpsi^\prime(s_4) )
+	\}
+	ds_3ds_4,
+\end{align*}
+where
+\begin{multline*}
+	\delta (\Delta_4^3 \vectau \cdot \Delta_4^3 \vecu)[\vecpsi]
+\\
+	=
+	\left\{
+	\begin{array}{ll}
+		2\Delta_4^3 \vectau \cdot \Delta_4^3 \vecphi^\prime
+		-
+		\| \Delta_4^3 \vectau \|_{\R^n}^2
+		( \vectau(s_3) \cdot \vecphi^\prime(s_3) + \vectau(s_4) \cdot \vecphi^\prime(s_4) ),
+		& \vecu = \vectau,
+	\vspace{5pt}\\
+	\begin{aligned}
+		\Delta_4^3 \vecphi^\prime \cdot \Delta_4^3 \vecpsi^\prime
+		&- ( \Delta_4^3 \vectau \cdot \Delta_4^3 \vecphi^\prime )
+		( \vectau(s_3) \cdot \vecpsi^\prime(s_3) + \vectau(s_4) \cdot \vecpsi^\prime(s_4) )
+	\\
+		&- \{ \Delta_4^3 ( \vectau \cdot \vecphi^\prime ) \}
+		\{ \Delta_4^3 ( \vectau \cdot \vecpsi^\prime ) \},
+	\end{aligned}
+		& \vecu = \vecphi^\prime.
+	\end{array}
+	\right.
+\end{multline*}
+\item
+It holds that
+\[
+	\delta \scrK(\vecf,\vecphi)[\vecpsi]
+	=
+	\scrK(\vecphi,\vecpsi)
+	-
+	2 \scrK(\vecf,\vecphi) \scrK(\vecf,\vecpsi).
+\]
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+\begin{enumerate}
+\item By Lemma \ref{variation lemma},
+we have
+\begin{align*}
+	\delta \scrN(\vectau,\vecu)[\vecpsi]
+	&=
+	\delta
+	\left(
+	\frac 1 { 2\| \Delta \vecf \|_{\R^n}^2 }
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1}
+	\Delta_4^3 \vectau \cdot \Delta_4^3 \vecu ds_3ds_4
+	\right) [\vecpsi]
+\\
+	&=
+	\frac 1 2
+	\delta
+	\left(
+	\frac 1 { \| \Delta \vecf \|_{\R^n}^2 }
+	\right) [\vecpsi]
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1}
+	\Delta_4^3 \vectau \cdot \Delta_4^3 \vecu ds_3ds_4
+\\
+	&\quad
+	+
+	\frac 1 { 2\| \Delta \vecf \|_{\R^n}^2 }
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1}
+	\delta (\Delta_4^3 \vectau \cdot \Delta_4^3 \vecu) [\vecpsi] ds_3ds_4
+\\
+	&\quad
+	+
+	\frac 1 { 2\| \Delta \vecf \|_{\R^n}^2 }
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1} ( \Delta_4^3 \vectau \cdot \Delta_4^3 \vecu )
+	\delta(ds_3ds_4)[\vecpsi]
+\\
+	&=
+	-2\scrK(\vecf,\vecpsi) \scrN(\vectau,\vecu)
+	+
+	\frac 1 { 2\| \Delta \vecf \|_{\R^n}^2 }
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1}
+	\{
+	\delta (\Delta_4^3 \vectau \cdot \Delta_4^3 \vecu) [\vecphi]
+\\
+	&\qquad
+	+
+	( \Delta_4^3 \vectau \cdot \Delta_4^3 \vecu )
+	(\vectau(s_3) \cdot \vecpsi^\prime(s_3) + \vectau(s_4) \cdot \vecpsi^\prime(s_4))
+	\}
+	ds_3ds_4.
+\end{align*}
+It remains to calculate
+$\delta (\Delta_4^3 \vectau \cdot \Delta_4^3 \vecu) [\vecphi]$.
+Since the case where
+$\vecu = \vectau$
+may be handled by Lemma \ref{variation lemma},
+we deal with the case where
+$\vecu = \vecphi^\prime$.
+Then,
+it follows from Lemma \ref{variation lemma} and
+$\delta \vecphi^\prime(s_j)[\vecpsi] = - (\vectau(s_j) \cdot \vecpsi^\prime(s_j)) \vecphi^\prime(s_j)$
+that
+\begin{align*}
+	&
+	\delta ( \Delta_4^3 \vectau \cdot \Delta_4^3 \vecphi^\prime ) [\vecpsi]
+\\
+	&=
+	\delta ( \Delta_4^3 \vectau ) [\vecpsi] \cdot \Delta_4^3 \vecphi^\prime
+	+
+	\Delta_4^3 \vectau \cdot \delta ( \Delta_4^3 \vecphi^\prime ) [\vecpsi]
+\\
+	&=
+	\Delta_4^3 \vecpsi^\prime \cdot \Delta_4^3 \vecphi^\prime
+	-
+	\Delta_4^3 \{ ( \vectau \cdot \vecpsi^\prime ) \vectau \} \cdot \Delta_4^3 \vecphi^\prime
+	-
+	\Delta_4^3 \vectau \cdot \Delta_4^3 \{ ( \vectau \cdot \vecpsi^\prime ) \vecphi^\prime \}
+\\
+	&=
+	\Delta_4^3 \vecphi^\prime \cdot \Delta_4^3 \vecpsi^\prime
+	-
+	[ ( \vectau(s_3) \cdot \vecpsi^\prime(s_3) ) \Delta_4^3 \vectau
+	+ \{ \Delta_4^3 ( \vectau \cdot \vecpsi^\prime) \} \vectau(s_4) ] \cdot \Delta_4^3 \vecphi^\prime
+\\
+	&\quad
+	-
+	\Delta_4^3 \vectau \cdot [ \{ \Delta_4^3 (\vectau \cdot \vecpsi^\prime ) \} \vecphi^\prime(s_3)
+	+ ( \vectau(s_4) \cdot \vecpsi^\prime(s_4) ) \Delta_4^3 \vecphi^\prime ]
+\\
+	&=
+	\Delta_4^3 \vecphi^\prime \cdot \Delta_4^3 \vecpsi^\prime
+\\
+	&\quad
+	-
+	( \Delta_4^3 \vectau \cdot \Delta_4^3 \vecphi^\prime )
+	( \vectau(s_3) \cdot \vecpsi^\prime(s_3) + \vectau(s_4) \cdot \vecpsi^\prime(s_4) )
+\\
+	&\quad
+	- \{ \Delta_4^3 ( \vectau \cdot \vecpsi^\prime ) \}
+	( \vectau(s_4) \cdot \Delta_4^3 \vecphi^\prime + \Delta_4^3 \vectau \cdot \vecphi^\prime(s_3) )
+\\
+	&=
+	\Delta_4^3 \vecphi^\prime \cdot \Delta_4^3 \vecpsi^\prime
+\\
+	&\quad
+	-
+	( \Delta_4^3 \vectau \cdot \Delta_4^3 \vecphi^\prime )
+	( \vectau(s_3) \cdot \vecpsi^\prime(s_3) + \vectau(s_4) \cdot \vecpsi^\prime(s_4) )
+\\
+	&\quad
+	- \{ \Delta_4^3 ( \vectau \cdot \vecphi^\prime ) \} \{ \Delta_4^3 ( \vectau \cdot \vecpsi^\prime ) \}.
+\end{align*}
+
+\item Using Lemma \ref{variation lemma},
+we have
+\begin{align*}
+	\delta \scrK(\vecf , \vecphi)[\vecpsi]
+	&=
+	\frac{ \delta ( \Delta \vecf \cdot \Delta \vecphi )[\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^2 }
+	+
+	(\Delta \vecf \cdot \Delta \vecphi)
+	\delta \left( \frac 1 { \| \Delta \vecf \|_{\R^n}^2 } \right) [\vecpsi]
+\\
+	&=
+	\frac{ \Delta \vecpsi \cdot \Delta \vecphi }{ \| \Delta \vecf \|_{\R^n}^2 }
+	-
+	2
+	\Delta \vecf \cdot \Delta \vecphi
+	\frac{ \scrK(\vecf,\vecpsi) }{ \| \Delta \vecf \|_{\R^n}^2 }
+\\
+	&=
+	\scrK(\vecphi,\vecpsi)
+	-
+	2 \scrK(\vecf,\vecphi) \scrK(\vecf,\vecpsi).
+\end{align*}
+\end{enumerate}
+\end{proof}
+
+\begin{lemma}\label{variation N}
+$\delta\scrN(\vectau)[\vecphi]$
+and
+$\delta^2\scrN(\vectau)[\vecphi,\vecpsi]$
+can be written as
+\[
+	\delta\scrN(\vectau)[\vecphi]
+	=
+	\sum_{i=1}^2 \scrR_i(\vecf)[\vecphi],
+	\quad
+	\delta^2\scrN(\vectau)[\vecphi,\vecpsi]
+	=
+	\sum_{i=1}^5 \scrS_i(\vecf)[\vecphi,\vecpsi],
+\]
+where
+\begin{align*}
+	\scrR_1 (\vecf)[\vecphi]
+	&=
+	-2\scrK(\vecf,\vecphi) \scrN(\vectau),
+\\
+	\scrR_2 (\vecf)[\vecphi]
+	&=
+	2\scrN(\vectau,\vecphi^\prime),
+\\
+	\scrS_1(\vecf)[\vecphi,\vecpsi]
+	&=
+	-2
+	( \scrK(\vecphi,\vecpsi) -2 \scrK(\vecf,\vecphi) \scrK(\vecf,\vecpsi) )
+	\scrN(\vectau),
+\\
+	\scrS_2(\vecf)[\vecphi,\vecpsi]
+	&=
+	-
+	\scrK(\vecf,\vecphi) \delta \scrN(\vectau) [\vecpsi]
+	-
+	\scrK(\vecf,\vecpsi) \delta \scrN(\vectau) [\vecphi],
+\\
+	\scrS_3(\vecf)[\vecphi,\vecpsi]
+	&=
+	-2
+	\scrK(\vecf,\vecpsi)
+	\scrN(\vectau,\vecphi^\prime)
+	-2
+	\scrK(\vecf,\vecphi)
+	\scrN(\vectau,\vecpsi^\prime),
+\\
+	\scrS_4(\vecf)[\vecphi,\vecpsi]
+	&=
+	2\scrN(\vecphi^\prime,\vecpsi^\prime),
+\\
+	\scrS_5(\vecf)[\vecphi,\vecpsi]
+	&=
+	-
+	2 \scrN( (\vectau \cdot \vecphi^\prime) , (\vectau \cdot \vecpsi^\prime) ).
+\end{align*}
+\end{lemma}
+
+\begin{proof}
+By Lemmas \ref{variation lemma} and \ref{variation N sublemma},
+we have
+\begin{align*}
+	\delta \scrN(\vectau)[\vecphi]
+	&=
+	-2\scrK(\vecf,\vecphi) \scrN(\vectau)
+\\
+	&\quad
+	+
+	\frac 1 { 2\| \Delta \vecf \|_{\R^n}^2 }
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1}
+	\{
+	\delta \| \Delta_4^3 \vectau \|_{\R^n}^2 [\vecphi]
+\\
+	&\qquad
+	+
+	\| \Delta_4^3 \vectau \|_{\R^n}^2
+	(\vectau(s_3) \cdot \vecphi^\prime(s_3) + \vectau(s_4) \cdot \vecphi^\prime(s_4))
+	\}
+	ds_3ds_4
+\\
+	&=
+	-2\scrK(\vecf,\vecphi) \scrN(\vectau)
+	+
+	\frac 1 { \| \Delta \vecf \|_{\R^n}^2 }
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1} \Delta_4^3 \vectau \cdot \Delta_4^3 \vecphi^\prime ds_3ds_4
+\\
+	&=
+	-2\scrK(\vecf,\vecphi) \scrN(\vectau)
+	+
+	2\scrN(\vectau,\vecphi^\prime)
+\\
+	&=
+	\sum_{i=1}^2 \scrR_i(\vecf)[\vecphi].
+\end{align*}
+
+Next we calculate
+$\delta^2 \scrN(\vectau)[\vecphi,\vecpsi]$.
+Firstly,
+we have
+\[
+	\delta^2 \scrN(\vectau)[\vecphi,\vecpsi]
+	=
+	\frac 1 2 \delta ( \delta \scrN(\vectau)[\vecphi] ) [\vecpsi]
+	+
+	\frac 1 2 \delta ( \delta \scrN(\vectau)[\vecpsi] ) [\vecphi].
+\]
+By the symmetry with respect to
+$\vecphi$
+and
+$\vecpsi$,
+it is sufficient to calculate
+$\delta ( \delta \scrN(\vectau)[\vecphi] ) [\vecpsi]$,
+for which we first note that
+\[
+	\delta ( \delta \scrN(\vectau)[\vecphi] ) [\vecpsi]
+	=
+	\sum_{i=1}^2 \delta ( \scrR_i(\vecf)[\vecphi] ) [\vecpsi].
+\]
+Using Lemma \ref{variation N sublemma} again,
+we can show that
+\begin{align*}
+	\delta (\scrR_1(\vecf)[\vecphi]) [\vecpsi]
+	&=
+	-2 \delta \scrK(\vecf,\vecphi) [\vecpsi] \scrN(\vectau)
+	-2 \scrK(\vecf,\vecphi) \delta \scrN(\vectau) [\vecpsi]
+\\
+	&=
+	-2
+	\scrK(\vecphi,\vecpsi) \scrN(\vectau)
+	+
+	4
+	\scrK(\vecf,\vecphi) \scrK(\vecf,\vecpsi)
+	\scrN(\vectau)
+\\
+	&\quad
+	-2
+	\scrK(\vecf,\vecphi)
+	\delta \scrN(\vectau)[\vecpsi],
+\end{align*}
+and
+\begin{align*}
+	\delta (\scrR_2(\vecf)[\vecphi]) [\vecpsi]
+	&=
+	2 \delta ( \scrN(\vectau,\vecphi^\prime) )[\vecpsi]
+\\
+	&=
+	-4\scrK(\vecf,\vecpsi) \scrN(\vectau,\vecphi^\prime)
+\\
+	&\quad
+	+
+	\frac 1 { \| \Delta \vecf \|_{\R^n}^2 }
+	\int_{s_2}^{s_1} \int_{s_2}^{s_1}
+	[
+	\Delta_4^3 \vecphi^\prime \cdot \Delta_4^3 \vecpsi^\prime
+\\
+	&\qquad
+	-
+	( \Delta_4^3 \vectau \cdot \Delta_4^3 \vecphi^\prime )
+	( \vectau(s_3) \cdot \vecpsi^\prime(s_3) + \vectau(s_4) \cdot \vecpsi^\prime(s_4) )
+\\
+	&\qquad
+	- \{ \Delta_4^3 ( \vectau \cdot \vecphi^\prime ) \} \{ \Delta_4^3 ( \vectau \cdot \vecpsi^\prime ) \}
+\\
+	&\qquad
+	+
+	( \Delta_4^3 \vectau \cdot \Delta_4^3 \vecphi^\prime )
+	(\vectau(s_3) \cdot \vecpsi^\prime(s_3) + \vectau(s_4) \cdot \vecpsi^\prime(s_4))
+	]
+	ds_3ds_4
+\\
+	&=
+	-4\scrK(\vecf,\vecpsi)
+	\scrN(\vectau,\vecphi^\prime)
+	+
+	2\scrN(\vecphi^\prime,\vecpsi^\prime)
+	-
+	2 \scrN( (\vectau \cdot \vecphi^\prime) , (\vectau \cdot \vecpsi^\prime) ),
+\end{align*}
 from which the claim follows.
-Next, we give expressions of δMα (f )[φ ] and δ2Mα (f )[φ , ψ ] in terms of N ,
-δN , and δ2N .
-Proposition 2.5. δMα (f )[φ ] and δ2Mα (f )[φ , ψ ] can be written as
-δMα (f )[φ ] =
-2∑
-i=1
-Pi(f )[φ ], δ 2Mα (f )[φ , ψ ] =
-6∑
-i=1
-Qi(f )[φ , ψ ],
-9
-where
-P1(f )[φ ] = ϕ ′
-α (N (τ )) δN (τ )[φ ]
-‖∆f ‖α
-Rn
-,
-P2(f )[φ ] = − α
-2 Mα (f ) δ‖∆f ‖2
-Rn[φ ]
-‖∆f ‖2
-Rn
-,
-Q1(f )[φ , ψ ] = ϕ ′
-α (N (τ )) δ2N (τ )[φ , ψ ]
-‖∆f ‖α
-Rn
-,
-Q2(f )[φ , ψ ] = − α
-2 ϕ ′
-α (N (τ )) δN (τ )[φ ]
-‖∆f ‖α
-Rn
-δ‖∆f ‖2
-Rn[ψ ]
-‖∆f ‖2
-Rn
-,
-Q3(f )[φ , ψ ] = ϕ ′′
-α (N (τ )) δN (τ )[φ ]
-‖∆f ‖
-α
-2
-Rn
-δN (τ )[ψ ]
-‖∆f ‖
-α
-2
-Rn
-,
-Q4(f )[φ , ψ ] = − α
-2 δMα (f )[ψ ] δ‖∆f ‖2
-Rn [φ ]
-‖∆f ‖2
-Rn
-,
-Q5(f )[φ , ψ ] = − α
-2 Mα (f ) δ2‖∆f ‖2
-Rn [φ , ψ ]
-‖∆f ‖2
-Rn
-,
-Q6(f )[φ , ψ ] = α
-2 Mα (f ) δ‖∆f ‖2
-Rn[φ ]
-‖∆f ‖2
-Rn
-δ‖∆f ‖2
-Rn[ψ ]
-‖∆f ‖2
-Rn
-.
-Proof. The assertion for δMα (f ) follows immediately from (2.1) and (2.2).
-Regarding δ2Mα (f ), we have
-δ2Mα (f )[φ , ψ ] = δ(δMα (f )[φ ])[ψ ] =
-2∑
-i=1
-δ(Pi(f )[φ ])[ψ ],
+\end{proof}
+
+Next,
+we give expressions of
+$\delta \scrM_\alpha(\vecf) [\vecphi]$
 and
-δ(P1(f )[φ ])[ψ ] = ϕ ′′
-α (N (τ ))δN (τ )[ψ ] δN (τ )[φ ]
-‖∆f ‖α
-Rn
-+ ϕ ′
-α (N (τ )) δ2N (τ )[φ , ψ ]
-‖∆f ‖α
-Rn
-− α
-2 ϕ ′
-α (N (τ )) δN (τ )[φ ]δ‖∆f ‖2
-Rn [ψ ]
-‖∆f ‖α +2
-Rn
-= Q3(f )[φ , ψ ] + Q1(f )[φ , ψ ] + Q2(f )[φ , ψ ],
-δ(P2(f )[φ ])[ψ ] = − α
-2 δMα (f )[ψ ] δ‖∆f ‖2
-Rn[φ ]
-‖∆f ‖2
-Rn
-− α
-2 Mα (f ) δ2‖∆f ‖2
-Rn[φ , ψ ]
-‖∆f ‖2
-Rn
-+ α
-2 Mα (f ) δ‖∆f ‖2
-Rn[φ ]δ‖∆f ‖2
-Rn [ψ ]
-‖∆f ‖4
-Rn
-= Q4(f )[φ , ψ ] + Q5(f )[φ , ψ ] + Q6(f )[φ , ψ ].
-Plugging Lemma 2.4 and Proposition 2.5 into Theorem 2.1, we obtain the
-ﬁrst and second variational formulae of the ( α, p )-O’Hara energies. Since the
-expressions are rather lengthy, we omit their explicit formulae here .
-10
-3 Estimates of the ﬁrst and second variational
-formulae
+$\delta^2 \scrM_\alpha(\vecf) [\vecphi,\vecpsi]$
+in terms of
+$\scrN$,
+$\delta \scrN$,
+and
+$\delta^2 \scrN$.
+
+\begin{proposition}\label{variation Malpha}
+$\delta \scrM_\alpha(\vecf) [\vecphi]$
+and
+$\delta^2 \scrM_\alpha(\vecf) [\vecphi,\vecpsi]$
+can be written as
+\[
+	\delta \scrM_\alpha(\vecf) [\vecphi]
+	=
+	\sum_{i=1}^2 \scrP_i(\vecf) [\vecphi],
+	\quad
+	\delta^2 \scrM_\alpha(\vecf) [\vecphi,\vecpsi]
+	=
+	\sum_{i=1}^6 \scrQ_i(\vecf)[\vecphi,\vecpsi],
+\]
+where
+\begin{align*}
+	\scrP_1(\vecf)[\vecphi]
+	&=
+	\vphi_\alpha^\prime(\scrN(\vectau))
+	\frac{ \delta \scrN(\vectau)[\vecphi] }{ \| \Delta \vecf \|_{\R^n}^\alpha },
+\\
+	\scrP_2(\vecf)[\vecphi]
+	&=
+	-
+	\frac \alpha 2 
+	\scrM_\alpha(\vecf)
+	\frac{ \delta \| \Delta \vecf \|_{\R^n}^2 [\vecphi] }{ \| \Delta \vecf \|_{\R^n}^2 },
+\\
+	\scrQ_1(\vecf)[\vecphi,\vecpsi]
+	&=
+	\vphi_\alpha^\prime(\scrN(\vectau))
+	\frac{ \delta^2 \scrN(\vectau)[\vecphi,\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^\alpha },
+\\
+	\scrQ_2(\vecf)[\vecphi,\vecpsi]
+	&=
+	-
+	\frac \alpha 2
+	\vphi_\alpha^\prime(\scrN(\vectau))
+	\frac{ \delta \scrN(\vectau)[\vecphi] }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	\frac{ \delta \| \Delta \vecf \|_{\R^n}^2 [\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^2 },
+\\
+	\scrQ_3(\vecf)[\vecphi,\vecpsi]
+	&=
+	\vphi_\alpha^{\prime\prime}(\scrN(\vectau))
+	\frac{ \delta \scrN(\vectau)[\vecphi] }{ \| \Delta \vecf \|_{\R^n}^{\frac \alpha 2} }
+	\frac{ \delta \scrN(\vectau)[\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^{\frac \alpha 2} },
+\\
+	\scrQ_4(\vecf)[\vecphi,\vecpsi]
+	&=
+	-
+	\frac \alpha 2
+	\delta \scrM_\alpha(\vecf)[\vecpsi]
+	\frac{ \delta \| \Delta \vecf \|_{\R^n}^2 [\vecphi] }{ \| \Delta \vecf \|_{\R^n}^2 },
+\\
+	\scrQ_5(\vecf)[\vecphi,\vecpsi]
+	&=
+	-
+	\frac \alpha 2
+	\scrM_\alpha(\vecf)
+	\frac{ \delta^2 \| \Delta \vecf \|_{\R^n}^2 [\vecphi,\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^2 },
+\\
+	\scrQ_6(\vecf)[\vecphi,\vecpsi]
+	&=
+	\frac \alpha 2
+	\scrM_\alpha(\vecf)
+	\frac{ \delta \| \Delta \vecf \|_{\R^n}^2 [\vecphi] }{ \| \Delta \vecf \|_{\R^n}^2 }
+	\frac{ \delta \| \Delta \vecf \|_{\R^n}^2 [\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^2 }.
+\end{align*}
+\end{proposition}
+
+\begin{proof}
+The assertion for
+$\delta \scrM_\alpha(\vecf)$
+follows immediately from \eqref{def Malpha} and \eqref{delta Malpha}.
+
+Regarding
+$\delta^2 \scrM_\alpha(\vecf)$,
+we have
+\[
+	\delta^2\scrM_\alpha(\vecf)[\vecphi,\vecpsi]
+	=
+	\delta ( \delta\scrM_\alpha(\vecf)[\vecphi] )[\vecpsi]
+	=
+	\sum_{i=1}^2
+	\delta (\scrP_i(\vecf)[\vecphi]) [\vecpsi],
+\]
+and
+\begin{align*}
+	\delta (\scrP_1(\vecf)[\vecphi]) [\vecpsi]
+	&=
+	\vphi_\alpha^{\prime\prime}(\scrN(\vectau)) \delta\scrN(\vectau)[\vecpsi]
+	\frac{ \delta \scrN(\vectau)[\vecphi] }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+	+
+	\vphi_\alpha^\prime(\scrN(\vectau))
+	\frac{ \delta^2 \scrN(\vectau)[\vecphi,\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^\alpha }
+\\
+	&\quad
+	-
+	\frac \alpha 2
+	\vphi_\alpha^\prime(\scrN(\vectau))
+	\frac{ \delta \scrN(\vectau)[\vecphi] \delta\| \Delta \vecf \|_{\R^n}^2[\vecpsi] }
+	{ \| \Delta \vecf \|_{\R^n}^{\alpha+2} }
+\\
+	&=
+	\scrQ_3(\vecf)[\vecphi,\vecpsi] + \scrQ_1(\vecf)[\vecphi,\vecpsi] + \scrQ_2(\vecf)[\vecphi,\vecpsi],
+\\
+	\delta (\scrP_2(\vecf)[\vecphi]) [\vecpsi]
+	&=
+	-
+	\frac \alpha 2
+	\delta\scrM_\alpha(\vecf)[\vecpsi]
+	\frac{ \delta \| \Delta \vecf \|_{\R^n}^2 [\vecphi] }{ \| \Delta \vecf \|_{\R^n}^2 }
+	-
+	\frac \alpha 2
+	\scrM_\alpha(\vecf)
+	\frac{ \delta^2 \| \Delta \vecf \|_{\R^n}^2 [\vecphi,\vecpsi] }{ \| \Delta \vecf \|_{\R^n}^2 }
+\\
+	&\quad
+	+
+	\frac \alpha 2
+	\scrM_\alpha(\vecf)
+	\frac{ \delta \| \Delta \vecf \|_{\R^n}^2 [\vecphi] \delta \| \Delta \vecf \|_{\R^n}^2 [\vecpsi] }
+	{ \| \Delta \vecf \|_{\R^n}^4 }
+\\
+	&=
+	\scrQ_4(\vecf)[\vecphi,\vecpsi] + \scrQ_5(\vecf)[\vecphi,\vecpsi] + \scrQ_6(\vecf)[\vecphi,\vecpsi].
+\end{align*}
+\end{proof}
+
+Plugging Lemma \ref{variation N} and Proposition \ref{variation Malpha} into Theorem \ref{variation},
+we obtain the first and second variational formulae of the
+$(\alpha,p)$-O'Hara energies.
+Since the expressions are rather lengthy,
+we omit their explicit formulae here.

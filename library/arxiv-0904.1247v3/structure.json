@@ -6,7 +6,8 @@
   "sha256": "4a6f4dee6af66dac294aa8e12da2fc672b9a003cdfe411cfeacc380e21e1dd8e",
   "bytes": 546916,
   "pages": 44,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -501,6 +502,143 @@
   "likely_scanned": false,
   "toc_entries": 33,
   "sections": 23,
-  "chars_total": 135100
+  "chars_total": 135100,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 5,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.351,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-homotopical-algebra-of-hecke-categories",
+     "title": "Homotopical algebra of Hecke categories",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-15-acknowledgements",
+     "title": "Acknowledgements",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-21--category-basics",
+     "title": "-category basics",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-23-centers-and-traces",
+     "title": "Centers and traces",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-3-rigidity-and-dualizability",
+     "title": "Rigidity and dualizability",
+     "prose_ratio": 0.048,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-31-semi-rigid-categories",
+     "title": "Semi-rigid categories",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-32-transposes",
+     "title": "Transposes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-33-bar-constructions",
+     "title": "Bar constructions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-34-dualizability",
+     "title": "Dualizability",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-4-preliminaries-on-d-modules",
+     "title": "Preliminaries on D-modules",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-41-d-modules-on-schemes",
+     "title": "D-modules on schemes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-43-d-modules-on-stacks",
+     "title": "D-modules on stacks",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-5-integral-transforms-for-d-modules",
+     "title": "Integral transforms for D-modules",
+     "prose_ratio": 0.978,
+     "coverage_ratio": 0.982,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-014-6-hecke-categories-and-character-sheaves",
+     "title": "Hecke categories and character sheaves",
+     "prose_ratio": 0.838,
+     "coverage_ratio": 0.964,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-62-loop-spaces-and-horocycle-correspondences",
+     "title": "Loop spaces and horocycle correspondences",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-63-character-sheaves",
+     "title": "Character sheaves",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-7-monodromic-variant",
+     "title": "Monodromic variant",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-018-71-monodromic-d-modules",
+     "title": "Monodromic D-modules",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-72-monodromic-hecke-categories",
+     "title": "Monodromic Hecke categories",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-73-monodromic-hochschild-calculations",
+     "title": "Monodromic Hochschild calculations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-74-character-sheaves-again",
+     "title": "Character sheaves again",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

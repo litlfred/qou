@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2406.02111v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2406.02111v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2406.02111v3/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2406.02111&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2406.02111v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2406.02111v3",
+    "content_type": "application/gzip",
+    "sha256": "c716ad2e9181363b5c54fc74213c31da1150b6bb335ad2443331c9760cd09642",
+    "bytes": 197826,
+    "fetched": "2026-10-10T15:20:12+00:00",
+    "files": [
+      {
+        "path": "source/files/LQG_Volume.bib",
+        "role": "bib",
+        "sha256": "a596137445e7459ab178041a09d3a2690e93fdd332df8373e292b4270ef9c719",
+        "bytes": 40458
+      },
+      {
+        "path": "source/files/main.bbl",
+        "role": "bbl",
+        "sha256": "18c43a8b423765c9036fa870185750bed3a7265cb5f422765ad86ce121b78b44",
+        "bytes": 14623
+      },
+      {
+        "path": "source/files/main.tex",
+        "role": "tex",
+        "sha256": "221be1efd1a67f3adae0f7e4f8e9f08c9b73f1bc874ed3a011c60d77974eff98",
+        "bytes": 129779
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

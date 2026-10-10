@@ -7,84 +7,115 @@ section_number: 4
 pages: 10-11
 source_pdf: 2101.05931v3.pdf
 source_sha256: 41eaa81b97ede8e9
+text_source: latex
+latex_prose_ratio: 0.741
+latex_coverage_ratio: 0.927
 doc_brief: "CATEGORICAL BRAID GROUP ACTIONS — Let g be a semisimple simply-laced Lie algebra of ﬁnite type."
 ---
-4.1. General deﬁnition. Let T be a triangulated category with shift functor [1] : T → T . In
-the cases of most interest to us, T is a subcategory of a derived category, in which case [1] is th e
-homological shift functor. Suppose T has a t-structure t = (T ≤0, T ≥0), with heart T ♥ = T ≤0 ∩T ≥0
-[4]. Recall that a triangulated functor F : T → S between triangulated categories with t-structure
-is t-exact if F (T ≤0) ⊆ S ≤0 and F (T ≥0) ⊆ S ≥0. We let F [p] : T → S denote the pre-composition
-of F with the p-shift [p].
-Now let S ⊂ T be a thick triangulated subcategory, and consider the quoti ent functor Q :
-T → T /S. Following [15], we say that t is compatible with S if tT /S = (Q(T ≤0),Q (T ≥0)) is a t-
-structure on T/S. By [15, Lemmas 3.3 & 3.9], if t is compatible with S then (T/S)♥ = T ♥/T ♥ ∩S ,
-and tS = (S ∩ T ≤0, S ∩ T ≥0) is a t-structure on S such that S ♥ = T ♥ ∩ S .
-Now suppose that T, T ′ are two triangulated categories with t-structures t,t ′. Suppose further
-that we have ﬁltrations by thick triangulated subcategorie s:
-0 ⊂ T 0 ⊂ T 1 ⊂ · · · ⊂ T r = T, 0 ⊂ T ′
-0 ⊂ T ′
-1 ⊂ · · · ⊂ T ′
-r = T ′,
-such that for everyi,t is compatible with Ti andt′ is compatible with T ′
-i . By [15, Lemma 3.11], tTi is
-also compatible with Ti−1, and hence Ti/Ti−1 inherits a natural t-structure. Let p : {0,...,r } → Z.
-The data ( T•, T ′
-•,p ) is termed a perversity triple .
-Although Chuang and Rouquier didn’t formulate perverse equ ivalences for graded categories, it
-is straightforward to extend their deﬁnitions to this setti ng.
-Deﬁnition 4.1. A graded equivalence of graded triangulated categories F : T → T ′ is a (graded)
-perverse equivalence with respect to ( T•, T ′
-•,p ) if for every i,
-(1) F(Ti) = T ′
-i , and
-(2) the induced equivalence F[−p(i)] : Ti/Ti−1 → T ′
-i/T ′
-i−1 is t-exact.
-For brevity, we say F is perverse if it is a graded perverse equivalence with respect to some
-perversity datum. Since we will be working exclusively in th e graded setting, a perverse equivalence
-for us will always mean a graded perverse equivalence.
-A perverse equivalence F : T → T ′ induces a bijection ϕF : Irr(T ♥) → Irr(T ′♥). Indeed, by (2)
-F[−p(i)] induces a bijection Irr(T ♥
-i ) \ Irr(T ♥
-i−1) → Irr(T ′♥
-i ) \ Irr(T ′♥
-i−1), and these yield ϕF.
-Although the construction of ϕF depends on a choice of perversity triple, the resulting bije ction
-does not when T ♥, T ′♥ have ﬁnitely many simple objects. This follows from the foll owing lemma.
-CATEGORICAL BRAID GROUP ACTIONS AND CACTUS GROUPS 11
-Lemma 4.2 ([33], Lemma 2.4) . Suppose that T ♥, T ′♥ have ﬁnitely many simple objects, and for
-i = 1, 2 let Fi : T → T ′ be a perverse equivalence with respect to the perversity dat um (Ti,•, T ′
-i,•,p i).
-If the induced maps [F1], [F2] : [ T ]Z → [T ′]Z coincide then ϕF1 =ϕF2 .
-Corollary 4.3. Suppose that T ♥, T ′♥ have ﬁnitely many simple objects, and F : T → T ′ is
-perverse. Then ϕF is independent of the choice of perversity triple.
-Proof. Suppose F is a graded perverse equivalence with respect to two choices of perversity triples
-(Ti,•, T ′
-i,•,p i), i = 1, 2. Now apply the lemma. □
-The proofs of the following lemmas are straightforward.
-Lemma 4.4. Suppose F : T → T ′ is perverse. Then for any ℓ ∈ Z, F[ℓ] is also perverse and
-ϕF[ℓ] =ϕF.
-Lemma 4.5. Suppose F : T → T ′ is a perverse equivalence with respect to (T•, T ′
-•,p ), and G : T ′ →
-T ′′ is a perverse equivalence with respect to (T ′
-•, T ′′
-• ,q ). Then G ◦ F is a perverse equivalence with
-respect to (T•, T ′′
-• ,p +q), and ϕG◦F =ϕG ◦ϕF.
-Lemma 4.6. Let T, T ′ be triangulated with t-structures t,t ′, and let S ⊂ T , S ′ ⊂ T ′ be thick
-triangulated subcategories such that t is compatible with S and t′ is compatible with S ′. Suppose
-further that F : T → T ′ is a perverse equivalence with respect to (T•, T ′
-•,p ), and F(S) = S ′.
-Deﬁne Si = S ∩ T i, S ′
-i = S ′ ∩ T ′
-i and (T/S)i = Q(Ti), (T ′/S ′)i = Q′(T ′
-i ). Let G : S → S ′ and
-H : T/S → T ′/S ′ be the induced equivalences. Then:
-(1) G is a perverse equivalence with respect to (S•, S ′
-•,p ), and ϕG =ϕF|IrrS ♥.
-(2) H is a perverse equivalence with respect to ((T/S)•, (T ′/S ′)•,p ), and ϕH =ϕF|IrrT ♥\IrrS ♥.
-Lemma 4.7 ([33], Lemma 2.4) . Suppose F : T → T ′ is perverse, and G (respectively G′) is an
-autoequivalence of T (respectively T ′) which is t-exact up to shift. Then G′ ◦ F ◦ G is perverse, and
-ϕG′◦F◦G =ϕG′ ◦ϕF ◦ϕG′.
-Note that in [33, Lemma 2.4] is stated for functors which are t -exact. Our formulation for
-functors which are t-exact up to shift follows by Lemma 4.4.
+\subsection{General definition}\label{sec:pervdef}
+Let $\cT$ be a triangulated category with shift functor $[1]:\cT \rightarrow \cT$. In the cases of most interest to us, $\cT$ is a subcategory of a derived category, in which case $[1]$ is the homological shift functor.
+Suppose $\cT$ has a t-structure $t=(\cT^{\leq0},\cT^{\geq0})$, with heart $\cT^\heartsuit=\cT^{\leq0} \cap \cT^{\geq0}$ \cite{BBD}.  Recall that a triangulated functor $F:\cT \to \cS$ between triangulated categories with $t$-structure is \textbf{$t$-exact} if $F(\cT^{\leq0})\subseteq \cS^{\leq0}$ and $F(\cT^{\geq0})\subseteq \cS^{\geq0}$.  We let $F[p]: \cT \to \cS$ denote the pre-composition of $F$ with the $p$-shift $[p]$.
+
+
+Now let $\cS \subset \cT$ be a thick triangulated subcategory, and consider the quotient functor $Q:\cT \to \cT/\cS$.  Following \cite{CRperv}, we say that $t$ is \textbf{compatible} with $\cS$ if $t_{\cT/\cS}=(Q(\cT^{\leq0}),Q(\cT^{\geq0}))$ is a t-structure on $\cT/\cS$.  By \cite[Lemmas 3.3 \& 3.9]{CRperv}, if $t$ is compatible with $\cS$ then $(\cT/\cS)^\heartsuit=\cT^\heartsuit/\cT^\heartsuit\cap \cS$, and  $t_\cS=(\cS\cap\cT^{\leq0},\cS\cap\cT^{\geq0})$ is a t-structure on $\cS$ such that $\cS^\heartsuit=\cT^\heartsuit\cap \cS$.
+
+Now suppose that $\cT,\cT'$ are two triangulated categories with t-structures $t,t'$.  Suppose further that we have filtrations by thick triangulated subcategories:
+\begin{align*}
+0 \subset \cT_0 \subset \cT_1\subset \cdots\subset \cT_r=\cT ,\quad 0 \subset \cT_0' \subset \cT_1'\subset \cdots\subset \cT_r'=\cT', 
+\end{align*}
+such that for every $i$, $t$ is compatible with $\cT_i$ and $t'$ is compatible with $\cT'_i$. By \cite[Lemma 3.11]{CRperv}, $t_{\cT_i}$ is also compatible with $\cT_{i-1}$, and hence $\cT_i/\cT_{i-1}$ inherits a natural t-structure.  Let $p: \{0,\hdots,r\} \rightarrow \ZZ$.  The data $(\cT_\bullet, \cT'_\bullet, p)$ is termed a \textbf{perversity triple}.  
+
+Although Chuang and Rouquier didn't formulate perverse equivalences for graded categories, it is straightforward to extend their definitions to this setting.
+
+\begin{Definition}\label{def:PE}
+A graded equivalence of graded triangulated categories $\sF:\cT\to\cT'$ is a \textbf{(graded) perverse equivalence} with respect to $(\cT_\bullet, \cT'_\bullet, p)$ if for every $i$, 
+\begin{enumerate}
+\item $\sF(\cT_i)= \cT_i'$, and
+\item the induced equivalence $\sF[-p(i)]:\cT_i/\cT_{i-1}\to \cT_i'/\cT_{i-1}'$ is t-exact.
+\end{enumerate}
+\end{Definition}
+For brevity, we say $\sF$ is \textbf{perverse} if it is a graded perverse equivalence with respect to some perversity datum.  Since we will be working exclusively in the graded setting, a perverse equivalence for us will always mean a graded perverse equivalence.    
+
+A perverse equivalence $\sF:\cT\to\cT'$  induces a bijection $\varphi_\sF:\Irr(\cT^\heartsuit) \to \Irr(\cT^{\prime\heartsuit})$.  Indeed, by (2) $\sF[-p(i)]$ induces a bijection $\Irr(\cT_i^\heartsuit)\setminus \Irr(\cT_{i-1}^\heartsuit) \to \Irr(\cT_i^{\prime\heartsuit})\setminus \Irr(\cT_{i-1}^{\prime\heartsuit})$, and these yield $\varphi_\sF$.
+
+
+Although the construction of $\varphi_\sF$ depends on a choice of perversity triple, the resulting bijection does not when $\cT^\heartsuit,\cT^{\prime\heartsuit}$ have finitely many simple objects.  This follows from the following lemma.
+ 
+
+\begin{Lemma}[\cite{LosCacti}, Lemma 2.4]\label{lem:LosLem}
+ Suppose that $\cT^\heartsuit,\cT^{\prime\heartsuit}$ have finitely many simple objects, and for $i=1,2$ let $\sF_i:\cT \to \cT'$ be a  perverse equivalence with respect to the perversity datum $(\cT_{i,\bullet}, \cT'_{i,\bullet}, p_i)$.  If the induced maps $[\sF_1],[\sF_2]:[\cT]_\ZZ \to [\cT']_\ZZ$ coincide then $\varphi_{\sF_1}=\varphi_{\sF_2}$.
+ \end{Lemma}
+ 
+ \begin{Corollary}
+ Suppose that $\cT^\heartsuit,\cT^{\prime\heartsuit}$ have finitely many simple objects, and  $\sF:\cT \to \cT'$ is perverse.  Then $\varphi_\sF$ is independent of the choice of perversity triple.
+ \end{Corollary}
+ 
+ \begin{proof}
+Suppose $\sF$ is a graded perverse equivalence with respect to two choices of perversity triples $(\cT_{i,\bullet}, \cT'_{i,\bullet}, p_i)$, $i=1,2$.  Now apply the lemma.
+ \end{proof}
+ 
+ The proofs of the following lemmas are straightforward.
+ 
+ \begin{Lemma}\label{lem:pervshift}
+ Suppose $\sF:\cT \rightarrow \cT'$ is perverse.  Then for any $\ell\in\ZZ$, $\sF[\ell]$ is also perverse and $\varphi_{\sF[\ell]}=\varphi_\sF$.
+ \end{Lemma}
+ 
+ \begin{Lemma}\label{lem:pervcomp}
+ Suppose $\sF:\cT \rightarrow \cT'$ is a  perverse equivalence with respect to $(\cT_\bullet, \cT'_\bullet, p)$, and $\sG:\cT' \rightarrow \cT''$ is a  perverse equivalence with respect to $(\cT'_\bullet, \cT''_\bullet, q)$.  Then $\sG\circ \sF$ is a  perverse equivalence with respect to $(\cT_\bullet, \cT''_\bullet, p+q)$, and $\varphi_{\sG\circ \sF}=\varphi_\sG\circ\varphi_\sF$.
+ \end{Lemma}
+ 
+\begin{Lemma}\label{lem:quot}
+Let $\cT,\cT'$ be triangulated with t-structures $t,t'$, and let $\cS\subset \cT, \cS'\subset \cT'$ be thick triangulated subcategories such that $t$ is compatible with $\cS$ and $t'$ is compatible with $\cS'$.  Suppose further that $\sF:\cT\to\cT'$ is a perverse equivalence with respect to $(\cT_\bullet, \cT'_\bullet, p)$, and $\sF(\cS)=\cS'$.  
+
+Define $\cS_i=\cS\cap \cT_i, \cS_i'=\cS'\cap \cT_i'$ and  $(\cT/\cS)_i=Q(\cT_i), (\cT'/\cS')_i=Q'(\cT_i')$.  Let 
+$\sG:\cS\to\cS'$ and $\sH:\cT/\cS \to \cT'/\cS'$ be the induced equivalences.  Then:
+\begin{enumerate}
+\item $\sG$ is a perverse equivalence with respect to $(\cS_\bullet, \cS'_\bullet,p)$, and $\varphi_{\sG}=\varphi_{\sF}|_{\Irr{\cS^\heartsuit}}$.
+\item $\sH$ is a perverse equivalence with respect to $((\cT/\cS)_\bullet,(\cT'/\cS')_\bullet,p)$, and
+$
+\varphi_{\sH}=\varphi_{\sF}|_{\Irr{\cT^\heartsuit} \setminus \Irr{\cS^\heartsuit}}.
+$
+\end{enumerate}
+\end{Lemma}
+
+\begin{Lemma}[\cite{LosCacti}, Lemma 2.4]\label{lem:texactperv}
+Suppose $\sF:\cT \rightarrow \cT'$ is perverse, and $\sG$ (respectively $\sG'$) is an autoequivalence of $\cT$ (respectively $\cT'$) which is t-exact up to shift.  Then $\sG'\circ \sF \circ \sG$ is perverse, and $\varphi_{\sG'\circ \sF \circ \sG}=\varphi_{\sG'}\circ\varphi_{\sF}\circ\varphi_{\sG'}$.  
+\end{Lemma}
+
+Note that in \cite[Lemma 2.4]{LosCacti}  is stated for functors which are t-exact.  Our formulation for functors which are t-exact up to shift follows by Lemma \ref{lem:pervshift}.
+
+
+
+\subsection{Derived categories of graded abelian categories}
+We now specialise to the case of derived categories.  We recall that if $\cA$ is an abelian category, then the bounded derived category $D^b(\cA)$ has a standard t-structure $(D^b(\cA)^{\leq0},D^b(\cA)^{\geq0})$ whose heart is $\cA$.  
+
+Given a $\cB \subset \cA$ a Serre subcategory, we let $D_\cB^b(\cA) \subset D^b(\cA)$ denote the thick subcategory consisting of complexes with cohomology supported in $\cB$. The category $D_\cB^b(\cA)$ inherits a natural t-structure from the standard t-structure on $D^b(\cA)$: $D_\cB^b(\cA)^{\leq0}=D_\cB^b(\cA) \cap D^b(\cA)^{\leq0}$ and $D_\cB^b(\cA)^{\geq0}=D_\cB^b(\cA) \cap D^b(\cA)^{\geq0}$.  The heart of the t-structure on 
+$D_\cB^b(\cA)$ is $\cB$.  Moreover, if $\cC \subset \cB$ is another Serre subcategory then 
+the $t$-structure on $D_\cB^b(\cA)$ is compatible with $D_\cC^b(\cA)$.  In particular, the quotient  $D_\cB^b(\cA)/D_\cC^b(\cA)$ inherits a natural t-structure whose heart is $\cB/\cC$.
+
+For the remainder of this section let $\cA,\cA'$ be graded abelian categories.  In the setting of derived categories of graded abelian categories, a perverse equivalence can be packaged as follows.  We can encode a perversity triple $(\mathcal{A}_\bullet, \mathcal{A}'_\bullet, p)$ using filtrations on the abelian categories: $\cA_\bullet$ and $\cA'_\bullet$ are filtrations by shift-invariant Serre subcategories:
+\begin{align*}
+	0 = \mathcal{A}_{-1} \subset \mathcal{A}_0 \subset \mathcal{A}_1 \subset \hdots \subset \mathcal{A}_r=\mathcal{A}, \quad
+	0 = \mathcal{A}'_{-1} \subset \mathcal{A}'_0 \subset \mathcal{A}'_1 \subset \hdots \subset \mathcal{A}'_r=\mathcal{A}'.
+	\end{align*}
+Then a graded equivalence $\sF:D^b(\mathcal{A}) \to D^b(\mathcal{A}')$ is a perverse with respect to $(\mathcal{A}_\bullet, \mathcal{A}'_\bullet, p)$ if conditions (1) and (2) of Definition \ref{def:PE} hold for $\cT_i=D^b_{\mathcal{A}_i}(\mathcal{A})$ and $\cT_i'=D^b_{\mathcal{A}'_i}(\mathcal{A}')$
+
+
+
+
+
+
+
+
+
+ As above, a graded perverse equivalence $\sF:D^b(\mathcal{A}) \to D^b(\mathcal{A}')$ induces a bijection $\varphi_\sF:\Irr(\cA)\to\Irr(\cA')$.  
+ 
+The following standard lemma will be useful in the proof of our main result.  
+
+\begin{Lemma}\label{lem:trianginv}
+Let $\cA,\cA'$ be abelian categories, and $\cB,\cB'$ Serre subcategories.  Let $a\leq b$ be integers, and $\sF_i:\cA \to \cA'$ be exact functors for $a \leq i \leq b$.  Suppose these functors  fit into a  complex $\sF=(\sF_a \to \sF_{a+1} \to \cdots \to \sF_{b} )$, defining a functor 
+$$
+\sF:D^b(\cA) \to D^b(\cA').
+$$
+If $\sF_i(\cB)\subset \cB'$ for all $a \leq i \leq b$, then $\sF(D_\cB^b(\cA))\subseteq D_{\cB'}^b(\cA')$.
+\end{Lemma}

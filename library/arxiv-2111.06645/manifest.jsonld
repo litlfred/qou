@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2111.06645/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Knots and Their Related q-Series",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2111.06645/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2111.06645",
   "contains": [
     "library/arxiv-2111.06645/sections/sec-000",
     "library/arxiv-2111.06645/sections/sec-001",
@@ -31,8 +36,17 @@
     "library/arxiv-2111.06645/sections/sec-022"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by-sa/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2111.06645&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2111.06645",
+    "title_source": "slug",
     "source_file": "2304.09377v2.pdf",
     "source_sha256": "76ae6c6058f4a9f9433feed2ef84207fb352b90102f6a49337e6f8ab95a591f1",
     "pages": 39,

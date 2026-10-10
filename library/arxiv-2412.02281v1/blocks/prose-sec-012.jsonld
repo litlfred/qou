@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2412.02281v1/blocks/prose-sec-012",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2412.02281v1/blocks/prose-sec-012",
   "kind": "prose",
   "title": "Explicit Evaluation of Connection Matrix and q-Stokes Matrix of (2)",
   "pageStart": 17,
   "pageEnd": 18,
   "text": "../sections/sec-012-explicit-evaluation-of-connection-matrix-and-q-s.md",
-  "derivedFrom": "library/arxiv-2412.02281v1/manifest",
-  "sourceDocument": "library/arxiv-2412.02281v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2412.02281v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2412.02281v1/manifest.jsonld",
   "provenance": "ingested"
 }

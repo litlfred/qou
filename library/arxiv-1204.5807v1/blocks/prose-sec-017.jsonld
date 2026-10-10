@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1204.5807v1/blocks/prose-sec-017",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1204.5807v1/blocks/prose-sec-017",
   "kind": "prose",
   "title": "If H is a non-semisimple spherical Hopf algebra, then qdimM = 0 for",
   "pageStart": 8,
   "pageEnd": 8,
   "text": "../sections/sec-017-233-if-h-is-a-non-semisimple-spherical-hopf-alge.md",
-  "derivedFrom": "library/arxiv-1204.5807v1/manifest",
-  "sourceDocument": "library/arxiv-1204.5807v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1204.5807v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1204.5807v1/manifest.jsonld",
   "provenance": "ingested"
 }

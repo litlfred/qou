@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1106.6298v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1106.6298v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1106.6298v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1106.6298&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1106.6298v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1106.6298v1",
+    "content_type": "application/gzip",
+    "sha256": "a2e6c580753c435aba639ced103274a2c51a2227cda7316254b2fe93dc3dbc9e",
+    "bytes": 26072,
+    "fetched": "2026-10-10T15:04:58+00:00",
+    "files": [
+      {
+        "path": "source/files/Beliakova_Le_final.tex",
+        "role": "tex",
+        "sha256": "5a3f005ae10819c58e313a9a8c8ebb3861b84a92cb97c54977829c05d23e3421",
+        "bytes": 69564
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

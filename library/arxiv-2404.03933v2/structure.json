@@ -6,7 +6,8 @@
   "sha256": "48aff6e97e1f126731c0e133d99d6b8616275d9de5f2f0e9b16ee251d1cc4dc0",
   "bytes": 855403,
   "pages": 44,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -303,6 +304,118 @@
   "likely_scanned": false,
   "toc_entries": 16,
   "sections": 15,
-  "chars_total": 82071
+  "chars_total": 82071,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "LPRS.tex",
+   "tex_sections": 10,
+   "overlaid": 8,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.964,
+     "coverage_ratio": 0.925,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-algebra-uqsl2-and-its-representations",
+     "title": "Algebra Uq(sl2) and its representations",
+     "prose_ratio": 0.99,
+     "coverage_ratio": 0.702,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-4-restriction-from-uqsl2-to-uqsl2",
+     "title": "Restriction from Uq(sl2) to uq(sl2)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-5-recursive-formulae-for-uqsl2-and-uqsl2-tensor",
+     "title": "Recursive formulae for Uq(sl2) and uq(sl2) tensor products.",
+     "prose_ratio": 0.968,
+     "coverage_ratio": 0.789,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-6-multiplicities-and-lattice-paths",
+     "title": "Multiplicities and lattice paths",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.895,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-7-integral-formula-for-multiplicities",
+     "title": "Integral formula for multiplicities",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.91,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-8-probabilistic-measures-on-the-tensor-product-d",
+     "title": "Probabilistic measures on the tensor product decomposition",
+     "prose_ratio": 0.948,
+     "coverage_ratio": 0.867,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-9-the-asymptotic-of-the-character-and-plancherel",
+     "title": "The asymptotic of the character and Plancherel measures for Uq(sl2)",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.901,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-10-the-asymptotic-of-probability-measures-for-uq",
+     "title": "The asymptotic of probability measures for uq(sl2)",
+     "prose_ratio": 0.965,
+     "coverage_ratio": 0.919,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-appendix-a-gaussian-binomial-coefficients",
+     "title": "Appendix A. Gaussian binomial coefficients",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-appendix-b-proof-of-theorem-63",
+     "title": "Appendix B. Proof of Theorem 6.3",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-appendix-c-proof-of-theorems-91-92-93",
+     "title": "Appendix C. Proof of Theorems 9.1, 9.2, 9.3",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-appendix-d-proof-of-theorem-94",
+     "title": "Appendix D. Proof of Theorem 9.4",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-appendix-e-proof-of-theorems-95-and-96",
+     "title": "Appendix E. Proof of Theorems 9.5 and 9.6",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

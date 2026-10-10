@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1010.4386v5/blocks/prose-sec-004",
+  "kind": "prose",
+  "title": "The Telescope Complex",
+  "pageStart": 16,
+  "pageEnd": 22,
+  "text": "../sections/sec-004-4-the-telescope-complex.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1010.4386v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1010.4386v5/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -7,226 +7,101 @@ section_number: 4
 pages: 15-17
 source_pdf: 2105.09342v1.pdf
 source_sha256: 57ae12327da7b9a1
+text_source: latex
+latex_prose_ratio: 0.907
+latex_coverage_ratio: 0.974
 doc_brief: "A Unitary Matrix Model for q-deformed Plancherel Growth — In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure."
 ---
-In this section, we discuss the growth process controlled by the q-deformed probability
-measure considered in [9], given by (2.11). The partition function (3.2) can be written as
-Zq =
-∞∑
-k=1
-∑
-λk
-exp[Seff (hi)]e− lnq
-6 N(N−1)(N−2) (4.1)
-where the eﬀective action is given by (see Appendix B)
-Seff (hi) =k lnt(1−q) +k lnk−k +
-∑
-i⁄=j
-1
-2 ln|hi−hj|−
-∑
-i
-(hi lnhi−hi)
-+
-∑
-i⁄=j
-1
-2 ln|qhj−qhi|−
-N∑
-i=1
-hi∑
-j=1
-ln(1−qj).
-(4.2)
-In the continuum limit, the eﬀective action takes the form
-Seff [h(x)] =N 2
-[
-k′ lnt(1−q)N +k′ lnk′−k′−
-∫ 1
-0
-dx (h(x) lnh(x)−h(x))
-+1
-2
-∫ 1
-0
-dx−
-∫ 1
-0
-dy
-(
-ln|qNh(x)−qNh(y)| + ln|h(x)−h(y)|
-)
-−
-∫ 1
-0
-dx
-∫ h(x)
-0
-dy ln(1−qNy )
-]
-.
-(4.3)
-In the double scaling limit (3.6), the dominant contribution to the partition function comes
-from the conﬁgurations satisfying the saddle point equation
-−
-∫ hU
-hL
-dh′u(h′)
-[
-cothλ(h−h′)
-2 + 2
-λ(h−h′)
-]
-= 1 + 2
-λ lnh(1−e−λh)
-tλk′ (4.4)
-where [hL,hU] denotes the support of u(h). Our goal is to ﬁnd a solution of (4.4) for λ⁄= 0.
-In order to solve the saddle point equation (4.4), we take the following ansatz for u(h)
-u(h) =
-{
-1 for 0 ≤h≤a
-˜u(h) for a≤h≤b. (4.5)
-15
-The equation of motion (4.4) takes the form
-−
-∫ b
-a
-dh′ ˜u(h′)
-[
-cothλ(h−h′)
-2 + 2
-λ(h−h′)
-]
-= 1−a + 2
-λ ln
-[(h−a)(1−e−λ(h−a))
-λξ2
-]
-. (4.6)
-The kernel in the above integral equation is nontrivial. It is diﬃcult to do a change of
-variable which brings the kernel to a standard form. However, the coth part of the kernel
-has the same singular structure as that of the second part. We therefore expand the coth
-part in powers of λ and separate out the singular part. The derivation is given in Appendix
-C. To ﬁnd ˜u(h), we again deﬁne a resolvent function as in (3.20). We provide the explicit
-calculations for the resolvent in Appendix C. Here, we present the ﬁnal answer.
-H(h) = lnh
-ξ + ln
-√
-b−√a√
-b +√a
-+ lnh +
-√
-ab−
-√
-(h−a)(h−b)
-h−
-√
-ab +
-√
-(h−a)(h−b)
-+ λ
-4 (1−a) +
-∞∑
-k=1
-A(1)
-k
-√
-(h−a)
-(h−b)
-+
-∞∑
-k=1
-A(2)
-k
-2F1(1, 1
-2 +k, 2 +k, a−b
-a−h)√
-(h−a)(h−b)
-+
-∞∑
-k=1
-2k−1∑
-n=0
-A(1)
-k,n
-√
-(h−a)
-(h−b)
-+
-∞∑
-k=1
-2k−1∑
-n=0
-A(2)
-k,n
-2F1(1, 1
-2 +n, 2 +n, a−b
-a−h)√
-(h−a)(h−b)
-(4.7)
-where Ak’s are given by equation (C.11). Diﬀerent moments, hn (deﬁned in (C.6)) appear
-on the right hand side of this expression, which are a priori not known. Hence, the saddle
-point equation has to be solved recursively. However, if we calculate the resolvent order by
-order in λ, the moments start appearing only at order λ2. The result up to order λ is given
-by
-H(h) = lnh
-ξ + ln
-√
-b−√a√
-b +√a
-+ lnh +
-√
-ab−
-√
-(h−a)(h−b)
-h−
-√
-ab +
-√
-(h−a)(h−b)
-+ λ
-4 (1−h)
-+ λ
-√
-(h−a)(h−b)
-4 .
-(4.8)
-The support of ˜u(h) can be found from the asymptotic behaviour of the resolvent. Up to
-ﬁrst order in λ, we get
-a = 1− 2ξ +λξ2
-2, b = 1 + 2ξ +λξ2
-2. (4.9)
+\label{subsec:qdkind1}
+
+
+In this section, we discuss the growth process controlled by the \qd probability measure considered in \cite{Strahov07}, given by \eqref{eq:Strahov-qPlancherel}. The partition function \eqref{q-partition} can be written as
+\begin{equation}\label{eq:PF_Strahov}
+Z_q=\sum_{k=1}^{\infty}\sum_{\lambda_k} \exp[S_{eff}(h_i)]e^{-\frac{\ln q}{6}N(N-1)(N-2)}
+\end{equation}
+where the effective action is given by (see \ref{app:calculationofZ})
+\begin{equation}
+\label{eff-S}
+\begin{aligned}
+S_{eff}(h_i) = k\ln t(1-q) +k\ln k -k & + \sum_{ i\neq j} \frac{1}{2} \ln |h_i-h_j|-\sum_{i} (h_i \ln h_i -h_i) \\
+& + \sum_{ i\neq j}  \frac{1}{2}\ln |q^{h_j}-q^{h_i}| -\sum_{i=1}^{N} \sum_{j=1}^{h_i} \ln (1-q^j).
+\end{aligned}
+\end{equation}
+In the continuum limit, the effective action takes the form
+\begin{equation}
+\begin{aligned}
+S_{eff}[h(x)]&=N^2\left[k'\ln t(1-q)N+k' \ln k' -k'-\int_0^1 dx\ (h(x)\ln h(x)-h(x))\right.\\
+&\hspace*{-1.7cm}\left.+\frac{1}{2}\int_0^1 dx \Xint-_{0}^{1} dy \left(\ln |q^{Nh(x)}-q^{Nh(y)}|
++\ln|h(x)-h(y)|\right)-\int_0^1 dx \int_0^{h(x)}dy\ \ln(1-q^{Ny})\right].
+\end{aligned}
+\end{equation}
+In the double scaling limit (\ref{eq:doublescalling}), the dominant contribution to the partition function comes from the configurations satisfying the saddle point equation
+\begin{equation}
+\label{fulleom}
+\Xint-_{h_{L}}^{h_{U}} dh' u(h')\left[\coth \frac{\lambda(h-h')}{2}+\frac{2}{\lambda(h-h')}\right]=1+\frac{2}{\lambda}\ln \frac{h(1-e^{-\lambda h})}{t\lambda k'}
+\end{equation}
+where $[h_L,h_U]$ denotes the support of $u(h)$. Our goal is to find a solution of (\ref{fulleom}) for $\lambda\neq 0$.\\
+In order to solve the saddle point equation (\ref{fulleom}), we take the following ansatz for $u(h)$
+\begin{equation}
+\label{eq:u_ansatz}
+u(h)=
+\begin{cases}
+1 &\mbox{for}\ 0\leq h\leq a \\
+\tilde{u}(h) &\mbox{for}\  a\leq h\leq b.
+\end{cases}
+\end{equation}
+The equation of motion \eqref{fulleom} takes the form
+\begin{equation}
+\label{eom2}
+\Xint-_{a}^{b} dh'\ \tilde{u}(h')\left[\coth \frac{\lambda(h-h')}{2}+\frac{2}{\lambda(h-h')}\right]=1-a+\frac{2}{\lambda}\ln \left[\frac{(h-a)(1-e^{-\lambda (h-a)})}{\lambda \xi^2}\right].
+\end{equation}
+The kernel in the above integral equation is nontrivial. It is difficult to do a change of variable which brings the kernel to a standard form. However, the $\coth$ part of the kernel has the same singular structure as that of the second part. We therefore expand the $\coth$ part in powers of $\lambda$ and separate out the singular part. The derivation is given in \ref{app:strahov}. To find $\tilde{u}(h)$, we again define a resolvent function as in \eqref{eq:def_resolvent}. We provide the explicit calculations for the resolvent in \ref{app:strahov}. Here, we present the final answer.
+
+\begin{eqnarray} 
+\label{resolvent-exact}
+\begin{split}
+ H(h) = \ln \frac{h}{\xi} & + \ln \frac{\sqrt{b}-\sqrt{a}}{\sqrt{b}+\sqrt{a}}+\ln \frac{h + \sqrt{a b} - \sqrt{(h-a)(h-b)}}{h-\sqrt{a b} + \sqrt{(h-a)(h-b)}} + \frac{\lambda}{4}(1-a)+\sum_{k=1}^{\infty} A_{k}^{(1)}\sqrt{\frac{(h-a)}{(h-b)}} \\ & + \sum_{k=1}^{\infty}A_{k}^{(2)}\frac{_2F_1(1,\frac{1}{2}+k,2+k,\frac{a-b}{a-h})}{\sqrt{(h-a)(h-b)}}+\sum_{k=1}^{\infty}\sum_{n=0}^{2k-1}A_{k,n}^{(1)}\sqrt{\frac{(h-a)}{(h-b)}} \\ & + \sum_{k=1}^{\infty}\sum_{n=0}^{2k-1}A_{k,n}^{(2)}\frac{_2F_1(1,\frac{1}{2}+n,2+n,\frac{a-b}{a-h})}{\sqrt{(h-a)(h-b)}}       
+\end{split}
+\end{eqnarray}
+
+where $A_k$'s are given by equation (\ref{eq:Aks}). Different moments, $\mathfrak{h}_n$ (defined in \eqref{shifted-moment}) appear on the right hand side of this expression, which are a priori not known. Hence, the saddle point equation has to be solved recursively. However, if we calculate the resolvent order by order in $\lambda$, the moments start appearing only at order $\lambda^2$. The result up to order $\lambda$ is given by
+
+\begin{equation}
+\label{resolvent-approx}
+\begin{aligned}
+ H(h)&=\ln \frac{h}{\xi}+\ln \frac{\sqrt{b}-\sqrt{a}}{\sqrt{b}+\sqrt{a}}+\ln \frac{h+\sqrt{ab}-\sqrt{(h-a)(h-b)}}{h-\sqrt{ab}+\sqrt{(h-a)(h-b)}}+\frac{\lambda}{4}(1-h)\\&\hspace{1cm} + \frac{\lambda\sqrt{(h-a)(h-b)}}{4}.
+\end{aligned}
+\end{equation}
+
+The support of $\tilde{u}(h)$ can be found from the asymptotic behaviour of the resolvent. Up to first order in $\lambda$, we get
+
+\begin{eqnarray}
+a = 1-2\xi +\lambda\frac{\xi^{2}}{2},\quad
+b = 1+2\xi +\lambda\frac{\xi^{2}}{2}.
+\end{eqnarray}
+
 and the Young diagram density is given by
-˜u(h) = 1
-π cos−1
-(2h−a−b
-b−a
-)
-− λ
-√
-(h−a)(b−h)
-4π . (4.10)
-Since a≥ 0, the above solution is valid for
-0<ξ ≤ 1
-2 + λ
-16. (4.11)
-16
-˜u(h) given by (4.10) describes the automodel class of [5] corrected up to ﬁrst order in λ. It
-is easy to check from equations (3.25) and (4.10) that the order λ correction to automodel
-density in both the cases is same apart from a factor of half. The reason behind this is the
-appearance of dimλk in (2.11).
-The limit shape corresponds to the upper limit of ξ given in (4.11). We plot the limit
-shape in a rotated coordinate system (see [1] for coordinate transformation) in ﬁg 5. It is
-clear that the symmetric property of the distribution [1] is lost under q deformation.
--2 -1 1 2
-u
-0.5
-1.0
-1.5
-2.0
-2.5
-v
-Figure 5: The limit shape for a q-deformed (λ = 0.97) Plancherel growth process (green curve) and itsq→ 1
-(λ→ 0) limit (orange curve) for comparison.
-Thus, we see that both the measures (2.11 and 2.16) qualitatively give the similar asymp-
-totic behaviour up to order λ. However, we emphasise that (3.25) is exact in λ.
+
+\begin{equation}\label{eq:tildeuhstrahov}
+\tilde{u}(h)=\frac{1}{\pi}\cos^{-1}\Big(\frac{2h-a-b}{b-a}\Big)-\frac{\lambda\sqrt{(h-a)(b-h)}}{4\pi}.
+\end{equation}
+
+Since $a\geq 0$, the above solution is valid for 
+
+\be\label{eq:xilimitstrahov}
+0<\xi\leq \frac12 +\frac{\lambda}{16}.
+\ee
+
+$\tilde u(h)$ given by (\ref{eq:tildeuhstrahov}) describes the automodel class of \cite{Kerov1} corrected up to first order in $\lambda$. It is easy to check from equations (\ref{q-automodel-D}) and (\ref{eq:tildeuhstrahov}) that the order $\lambda$ correction to automodel density in both the cases is same apart from a factor of half. The reason behind this is the appearance of $\text{dim}\lambda_k$ in (\ref{eq:Strahov-qPlancherel}). 
+
+The limit shape corresponds to the upper limit of $\xi$ given in (\ref{eq:xilimitstrahov}). We plot the limit shape in a rotated coordinate system (see \cite{Chattopadhyay:2019pkl} for coordinate transformation) in fig \ref{fig:strahov-ls}. It is clear that the symmetric property of the distribution \cite{Chattopadhyay:2019pkl} is lost under \qq deformation. 
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.4]{strahov-ls.pdf}
+		\caption{The limit shape for a $q$-deformed ($\lambda=0.97$) Plancherel growth process (green curve) and its $q\rightarrow 1$ ($\lambda\rightarrow 0$) limit (orange curve) for comparison.}
+		\label{fig:strahov-ls}
+	\end{center}
+\end{figure}
+
+Thus, we see that both the measures (\ref{eq:Strahov-qPlancherel} and \ref{eq:qmeasure2}) qualitatively give the similar asymptotic behaviour up to order $\lambda$. However, we emphasise that (\ref{q-automodel-D}) is exact in $\lambda$.

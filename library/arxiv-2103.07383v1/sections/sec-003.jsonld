@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2103.07383v1/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Representation of the remainder term R(p)",
+  "pageStart": 9,
+  "pageEnd": 10,
+  "contains": [
+    "library/arxiv-2103.07383v1/blocks/prose-sec-003"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2103.07383v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2103.07383v1/manifest.jsonld",
+  "provenance": "ingested"
+}

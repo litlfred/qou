@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9306069v2/blocks/prose-sec-024",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-hep-th-9306069v2/blocks/prose-sec-024",
   "kind": "prose",
   "title": "K. S. Thorne, R. H. Price, and D. A. MacDonald, P Black Holes: The Membrane",
   "pageStart": 47,
   "pageEnd": 48,
   "text": "../sections/sec-024-9-k-s-thorne-r-h-price-and-d-a-macdonald-p-black.md",
-  "derivedFrom": "library/arxiv-hep-th-9306069v2/manifest",
-  "sourceDocument": "library/arxiv-hep-th-9306069v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-9306069v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-9306069v2/manifest.jsonld",
   "provenance": "ingested"
 }

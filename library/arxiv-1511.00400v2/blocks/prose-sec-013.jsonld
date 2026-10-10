@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1511.00400v2/blocks/prose-sec-013",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1511.00400v2/blocks/prose-sec-013",
   "kind": "prose",
   "title": "Torsion on the variety of characters",
   "pageStart": 19,
   "pageEnd": 19,
   "text": "../sections/sec-013-32-torsion-on-the-variety-of-characters.md",
-  "derivedFrom": "library/arxiv-1511.00400v2/manifest",
-  "sourceDocument": "library/arxiv-1511.00400v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1511.00400v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1511.00400v2/manifest.jsonld",
   "provenance": "ingested"
 }

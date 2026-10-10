@@ -7,7 +7,8 @@
   "bytes": 542944,
   "pages": 19,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pymupdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -398,6 +399,127 @@
   "likely_scanned": false,
   "toc_entries": 24,
   "sections": 19,
-  "chars_total": 50207
+  "chars_total": 50207,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Survey2021v3.tex",
+   "tex_sections": 9,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.577,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-21-tasep",
+     "title": "TASEP",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-2-tasep-corner-growth-model-and-exponential-dlpp",
+     "title": "TASEP, corner growth model, and exponential DLPP",
+     "prose_ratio": 0.714,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-24-hydrodynamic-limit-and-kpz-limit",
+     "title": "Hydrodynamic limit and KPZ limit",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-31-poisson-dlpp",
+     "title": "Poisson DLPP",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-3-one-point-distribution",
+     "title": "One-point distribution",
+     "prose_ratio": 0.044,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-33-exponential-dlpp",
+     "title": "Exponential DLPP",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-32-longest-increasing-subsequence",
+     "title": "Longest increasing subsequence",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-34-integrable-method",
+     "title": "Integrable method",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-4-multi-point-distributions",
+     "title": "Multi-point distributions",
+     "prose_ratio": 0.919,
+     "coverage_ratio": 0.568,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-010-6-ring-domain",
+     "title": "Ring domain",
+     "prose_ratio": 0.89,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-011-7-formula-of-multi-point-distribution-functions",
+     "title": "Formula of multi-point distribution functions",
+     "prose_ratio": 0.33,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-72-periodic-case",
+     "title": "Periodic case",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-73-transition-probabilities",
+     "title": "Transition probabilities",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-91-thin-dlpp",
+     "title": "Thin DLPP",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-9-comments-on-universality",
+     "title": "Comments on universality",
+     "prose_ratio": 0.393,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-92-interacting-particle-systems",
+     "title": "Interacting particle systems",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-93-tasep-coulomb-gas-and-random-matrices",
+     "title": "TASEP, Coulomb gas, and random matrices",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-94-universality-in-many-directions",
+     "title": "Universality in many directions",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

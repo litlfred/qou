@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2301.02038v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2301.02038v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2301.02038v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2301.02038&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2301.02038v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2301.02038v1",
+    "content_type": "application/gzip",
+    "sha256": "4d60f40c6aa1ae0b4591ae8ef3de3c64c7102b9481ed52a22cdc2e79e02878ed",
+    "bytes": 27031,
+    "fetched": "2026-10-10T15:18:38+00:00",
+    "files": [
+      {
+        "path": "source/files/Vinogradov_SC_v2.tex",
+        "role": "tex",
+        "sha256": "95d55348d481397e853fdae85fac48202a1886a6f58694ffac576db417dc4349",
+        "bytes": 100203
+      },
+      {
+        "path": "source/files/conm-p-l.cls",
+        "role": "cls",
+        "sha256": "9a5574fc07cc047e62f81ee08b242ad8a04f66c7da20ef8f78013295ad8e05b3",
+        "bytes": 1517
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

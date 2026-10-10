@@ -1,0 +1,16 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0203194v1/blocks/example-sec-369-01",
+  "kind": "example",
+  "pageStart": 147,
+  "pageEnd": 147,
+  "text": "example-sec-369-01.md",
+  "derivedFrom": "library/arxiv-math-0203194v1/sections/sec-369",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0203194v1/manifest.jsonld",
+  "provenance": "ingested"
+}

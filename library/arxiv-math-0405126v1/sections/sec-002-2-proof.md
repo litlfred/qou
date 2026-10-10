@@ -7,156 +7,294 @@ section_number: 2
 pages: 2-4
 source_pdf: 0405126v1.pdf
 source_sha256: 713498dbe80f7319
+text_source: latex
+latex_prose_ratio: 0.657
+latex_coverage_ratio: 0.914
 doc_brief: "ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT — W e study the asymptotic behaviors of the colored Jones polyn o- mials of torus knots. Contrary to the works by R. Kashaev, O."
 ---
-When t = e2πr √
-−1/N for r ∈ C \ Z, JN
-(
-T (a, b ); e2πr √−1/N
-)
-can be given by the
-following integral form [11, Lemma 1].
-JN
-(
-T (a, b ), e 2πr √−1/N
-)
-= Φ a,b,r (N )
-∫
-C
-eN fa,b,r(z)τa,b (z)dz.
-Here
-Φ a,b,r (N ) := ga,b,r
-√
-N e−(ab(N 2−1)+a/b +b/a )πr √−1/ (2N )
-with ga,b,r :=
-√
-ab
-2π
-√
-2reπ √−1/ 4 sinh
-(
-πr √ − 1
-) ,
-fa,b,r (z) := ab
-(
-z − z2
-2πr √ − 1
-)
-,
-THE COLORED JONES POLYNOMIALS OF A TORUS KNOT 3
-τa,b (z) := 2 sinh(az) sinh(bz)
-sinh(abz) ,
-and C is the line
-(2.1) C := {seϕ √−1 |s ∈ R}
-with Re
-(
-r√ − 1e−2ϕ √−1
-)
-> 0. (We will choose ϕ later.)
-Let P be the set of the poles of τa,b (z), that is , we put
-P :=
-{ kπ √ − 1
-ab
-⏐
-⏐k ∈ Z, a ∤ k, b ∤ k
-}
-.
-We will show that the result follows if r / ∈ R, Re r > 0, and |r|> 1
-ab .
-Put θ := arg r (− π/ 2 < θ < π/ 2) so that r = |r|eθ√−1. Put also ϕ := θ/ 2 + π/ 4
-in (2.1). Note that Re
-(
-r√ − 1e−2ϕ √−1
-)
-= Re |r|> 0 and that 0 < ϕ < π/ 2.
-Let C′ be the line parallel to C that passes through the point πr √ − 1. (We change
-C′ slightly near P to avoid poles of τa,b (z) if necessary.) For a positive number
-R, let D+ (D−, respectively) be the segment of the line Re z = R (Re z = − R,
-respectively) between C and C′ oriented upward (downward, respectively). We see
-that C′ and D± are parameterized as follows.
-C′ =
-{
-se(θ/ 2+π/ 4)√−1 + πr
-√
-− 1
-⏐
-⏐
-⏐ s ∈ R
-}
-,
-D± =
-{
-± R + s
-√
-− 1
-⏐
-⏐ ± R tan (θ/ 2 + π/ 4) ≤ s ≤ ± R tan (θ/ 2 + π/ 4) + π |r|h(θ)
-}
-,
-where h(θ) := cos θ + sin θ tan(θ/ 2 + π/ 4) Note that C′ crosses the imaginary axis
-at π |r|h(θ)√
-− 1.
-Then by the residue theorem∫
-C
-eN fa,b,r(z)τa,b (z) dz
-=
-∫
-C ′
-eN fa,b,r(z) τa,b (z) dz +
-∑
-k
-Res
-(
-eN fa,b,r(z)τa,b (z); z = kπ
-√
-− 1/ (ab)
-)
-−
-∫
-D+
-eN fa,b,r(z)τa,b (z) dz −
-∫
-D−
-eN fa,b,r(z)τa,b (z) dz,
-where Res( F (z); z = ζ) is the residue of F (z) around z = ζ, C (C′, respectively)
-is the segment in C (C′, respectively) bounded by D± oriented from left to right,
-and k runs over integers that are not multiples of a or b such that kπ √ − 1/ab is
-between C and C′, that is, 0 < k < ab |r|h(θ).
-Since it is not hard to see that on D±
-⏐
-⏐
-⏐eN fa,b,r(z)
-⏐
-⏐
-⏐ < e abN(c2R2+c1R+c0)
-for some ci with c2 < 0 if R is suﬃciently large, and that
-|τa,b (z)|=
-⏐
-⏐(eaz − e−az)
-(
-ebz − e−bz) ⏐
-⏐
-|eabz − e−abz|
-≤
-⏐
-⏐e(a+b)z⏐
-⏐+
-⏐
-⏐e(a−b)z⏐
-⏐+
-⏐
-⏐e(b−a)z⏐
-⏐+
-⏐
-⏐e−(a+b)z⏐
-⏐
-⏐
-⏐|eabz| − |e−abz|
-⏐
-⏐
-= e±(a+b)R + e±(a−b)R + e±(b−a)R + e∓(a+b)R
-|e±abR − e∓abR| ,
-the integrals on D± vanish when R → ∞ . Therefore we have
-∫
-C
-eN fa,b,r(z)τa,b (z) dz
+When $t=e^{2\pi{r}\sqrt{-1}/N}$ for $r\in\mathbb{C}\setminus{\mathbb{Z}}$, $J_N\left(T(a,b);e^{2\pi{r}\sqrt{-1}/N}\right)$ can be given by the following integral form [@Kashaev/Tirkkonen:ZAPNS200 Lemma 1]. $$\begin{equation*}
+  J_N\left(T(a,b),e^{2\pi{r}\sqrt{-1}/N}\right)
+  =
+  \Phi_{a,b,r}(N)
+  \int_{C}
+  e^{Nf_{a,b,r}(z)}
+  \tau_{a,b}(z)
+  dz.
+\end{equation*}$$ Here $$\begin{align*}
+  \Phi_{a,b,r}(N)
+  &:=g_{a,b,r}\sqrt{N}
+     e^{-\left(ab\left(N^2-1\right)+a/b+b/a\right)\pi{r}\sqrt{-1}/(2N)}
+  \\
+  &\text{
+    with
+      $g_{a,b,r}
+       :=
+       \frac{\sqrt{ab}}
+            {2\pi\sqrt{2r}
+            e^{\pi\sqrt{-1}/4}\sinh\left(\pi{r}\sqrt{-1}\right)}$},
+  \\[3mm]
+  f_{a,b,r}(z)
+  &:=
+  ab\left(z-\frac{z^2}{2\pi{r}\sqrt{-1}}\right),
+  \\[3mm]
+  \tau_{a,b}(z)
+  &:=
+  \frac{2\sinh(az)\sinh(bz)}{\sinh(abz)},
+\end{align*}$$ and $C$ is the line $$\begin{equation}
+\label{eq:C}
+  C:=\{se^{\varphi\sqrt{-1}}\mid{s}\in\mathbb{R}\}
+\end{equation}$$ with $\operatorname{Re}\left(r\sqrt{-1}e^{-2\varphi\sqrt{-1}}\right)>0$. (We will choose $\varphi$ later.)
+
+Let $\mathcal{P}$ be the set of the poles of $\tau_{a,b}(z)$, that is , we put $$\begin{equation*}
+  \mathcal{P}
+  :=
+  \left\{\frac{k\pi\sqrt{-1}}{ab} \big| k\in\mathbb{Z},a\nmid k,b\nmid k\right\}.
+\end{equation*}$$ We will show that the result follows if $r\notin\mathbb{R}$, $\operatorname{Re}{r}>0$, and $|r|>\frac{1}{ab}$.
+
+Put $\theta:=\arg{r}$ ($-\pi/2<\theta<\pi/2$) so that $r=|r|e^{\theta\sqrt{-1}}$. Put also $\varphi:=\theta/2+\pi/4$ in [\[eq:C\]](#eq:C){reference-type="eqref" reference="eq:C"}. Note that $\operatorname{Re}\left(r\sqrt{-1}e^{-2\varphi\sqrt{-1}}\right)=\operatorname{Re}|r|>0$ and that $0<\varphi<\pi/2$.
+
+Let ${C'}$ be the line parallel to $C$ that passes through the point $\pi{r}\sqrt{-1}$. (We change $C'$ slightly near $\mathcal{P}$ to avoid poles of $\tau_{a,b}(z)$ if necessary.) For a positive number $R$, let $D_{+}$ ($D_{-}$, respectively) be the segment of the line $\operatorname{Re}{z}=R$ ($\operatorname{Re}{z}=-R$, respectively) between $C$ and $C'$ oriented upward (downward, respectively). We see that $C'$ and $D_{\pm}$ are parameterized as follows. $$\begin{equation*}
+\begin{split}
+  C'
+  &=
+  \left\{
+    se^{(\theta/2+\pi/4)\sqrt{-1}}+\pi{r}\sqrt{-1}
+    \Bigm|
+    s\in\mathbb{R}
+  \right\},
+  \\
+  D_{\pm}
+  &=
+  \left\{
+    \vphantom{\bigr)}
+    \pm{R}+s\sqrt{-1}
+    \bigm|
+    \pm{R}\tan\left(\theta/2+\pi/4\right)
+    \le{s}
+    \le
+    \pm{R}\tan\left(\theta/2+\pi/4\right)
+    +
+    \pi|r|h(\theta)
+  \right\},
+\end{split}
+\end{equation*}$$ where $h(\theta):=\cos\theta+\sin\theta\tan(\theta/2+\pi/4)$ Note that $C'$ crosses the imaginary axis at $\pi|r|h(\theta)\sqrt{-1}$.
+
+Then by the residue theorem $$\begin{equation*}
+\begin{split}
+  &
+  \int_{\overline{C}}
+  e^{Nf_{a,b,r}(z)}\tau_{a,b}(z)\,dz
+  \\
+  &\quad
+  =
+  \int_{\overline{C'}}
+  e^{Nf_{a,b,r(z)}}\tau_{a,b}(z)\,dz
+  +
+  \sum_{k}
+  \operatorname{Res}
+  \left(
+    e^{Nf_{a,b,r}(z)}\tau_{a,b}(z);z=k\pi\sqrt{-1}/(ab)
+  \right)
+  \\
+  &\quad\quad
+  -\int_{D_+}
+  e^{Nf_{a,b,r}(z)}\tau_{a,b}(z)\,dz
+  -\int_{D_-}
+  e^{Nf_{a,b,r}(z)}\tau_{a,b}(z)\,dz,
+\end{split}
+\end{equation*}$$ where $\operatorname{Res}(F(z);z=\zeta)$ is the residue of $F(z)$ around $z=\zeta$, $\overline{C}$ ($\overline{C'}$, respectively) is the segment in $C$ (${C'}$, respectively) bounded by $D_{\pm}$ oriented from left to right, and $k$ runs over integers that are not multiples of $a$ or $b$ such that $k\pi\sqrt{-1}/ab$ is between $C$ and $C'$, that is, $0<k<ab|r|h(\theta)$.
+
+Since it is not hard to see that on $D_{\pm}$ $$\begin{equation*}
+  \left|e^{Nf_{a,b,r}(z)}\right|
+  <
+  e^{abN\left(c_2R^2+c_1R+c_0\right)}
+\end{equation*}$$ for some $c_i$ with $c_2<0$ if $R$ is sufficiently large, and that $$\begin{equation*}
+\begin{split}
+  \left|\tau_{a,b}(z)\right|
+  &=
+  \frac{\left|\left(e^{az}-e^{-az}\right)
+              \left(e^{bz}-e^{-bz}\right)\right|}
+       {\left|e^{abz}-e^{-abz}\right|}
+  \\
+  &\le
+  \frac{\left|e^{(a+b)z}\right|
+        +
+        \left|e^{(a-b)z}\right|
+        +
+        \left|e^{(b-a)z}\right|
+        +
+        \left|e^{-(a+b)z}\right|}
+       {\bigl|\left|e^{abz}\right|-\left|e^{-abz}\right|\bigr|}
+  \\
+  &=
+  \frac{e^{\pm(a+b)R}
+        +
+        e^{\pm(a-b)R}
+        +
+        e^{\pm(b-a)R}
+        +
+        e^{\mp(a+b)R}}
+       {\left|e^{\pm{abR}}-e^{\mp{abR}}\right|},
+\end{split}
+\end{equation*}$$ the integrals on $D_{\pm}$ vanish when $R\to\infty$. Therefore we have $$\begin{multline*}
+  \int_{C}
+  e^{Nf_{a,b,r}(z)}\tau_{a,b}(z)\,dz
+  \\
+  =
+  \int_{C'}
+  e^{Nf_{a,b,r}(z)}\tau_{a,b}(z)\,dz
+  +
+  \sum_{k}
+  \operatorname{Res}
+  \left(
+    e^{Nf_{a,b,r}(z)}\tau_{a,b}(z);z=k\pi\sqrt{-1}/(ab)
+  \right).
+\end{multline*}$$
+
+We will apply the saddle point method (or the method of steepest descent) to know the asymptotic behavior of the integral on $C'$. See for example [@Marsden/Hoffman:Complex_Analysis Theorem 7.2.9]. On $C'$ we have $$\begin{equation*}
+  f_{a,b,r}\left(se^{(\theta/2+\pi/4)\sqrt{-1}}+\pi{r}\sqrt{-1}\right)
+  =
+  -\frac{s^2}{2\pi|r|}+\frac{\pi{r}\sqrt{-1}}{2}.
+\end{equation*}$$ So $\operatorname{Im}{f_{a,b,r}(z)}$ is constant on $C'$ and $\operatorname{Re}{f_{a,b,r}(z)}$ takes its unique maximum at $z=\pi{r}\sqrt{-1}$ (when $s=0$) on $C'$. (Note that this is also true if we change $C'$ slightly near a pole of $\tau_{a,b}$.) Therefore from the saddle point method we have $$\begin{equation*}
+\begin{split}
+  &
+  \int_{C'}
+  e^{Nf_{a,b,r}(z)}\tau_{a,b}(z)\,dz
+  \\
+  &\quad\underset{N\to\infty}{\sim}
+  \frac{\sqrt{2\pi}\tau_{a,b}(\pi{r}\sqrt{-1})}
+       {\sqrt{N}\sqrt{-d^2f_{a,b,r}(z)/dz^2\big|_{z=\pi{r}\sqrt{-1}}}}
+  e^{Nf_{a,b,r}(\pi{r}\sqrt{-1})}
+  \\
+  &=
+  \pi\sqrt{\frac{2r}{abN}}e^{\pi\sqrt{-1}/4}
+  \tau_{a,b}(\pi{r}\sqrt{-1})
+  e^{Nab\pi{r}\sqrt{-1}/2}.
+\end{split}
+\end{equation*}$$ We also have $$\begin{equation*}
+\begin{split}
+  &
+  \operatorname{Res}
+  \left(
+    e^{Nf_{a,b,r}(z)}\tau_{a,b}(z);z=k\pi\sqrt{-1}/(ab)
+  \right)
+  \\
+  &\quad=
+  e^{Nk\pi\sqrt{-1}\left(1-\frac{k}{2abr}\right)}
+  \operatorname{Res}\left(\tau_{a,b}(z);z=k\pi\sqrt{-1}/(ab)\right)
+  \\
+  &\quad=
+  (-1)^k
+  \frac{2\sinh(k\pi\sqrt{-1}/a)\sinh(k\pi\sqrt{-1}/b)}{ab}
+  e^{Nk\pi\sqrt{-1}\left(1-\frac{k}{2abr}\right)}.
+\end{split}
+\end{equation*}$$
+
+Therefore we have $$\begin{equation}
+\label{eq:asymptotic}
+\begin{split}
+  &\int_{C}
+  e^{Nf_{a,b,r}(z)}\tau_{a,b}(z)\,dz
+  \\
+  &\quad\underset{N\to\infty}{\sim}
+  \pi\sqrt{\frac{2r}{abN}}e^{\pi\sqrt{-1}/4}
+  \tau_{a,b}(\pi{r}\sqrt{-1})
+  e^{Nab\pi{r}\sqrt{-1}/2}
+  \\
+  &\quad\phantom{\underset{N\to\infty}{\sim}}
+  +
+  \sum_{k}
+  (-1)^k
+  \frac{2\sinh(k\pi\sqrt{-1}/a)\sinh(k\pi\sqrt{-1}/b)}{ab}
+  e^{Nk\pi\sqrt{-1}\left(1-\frac{k}{2abr}\right)}.
+\end{split}
+\end{equation}$$
+
+Now we want to know the biggest real part of the exponents in [\[eq:asymptotic\]](#eq:asymptotic){reference-type="eqref" reference="eq:asymptotic"}. We have $$\begin{equation*}
+\begin{split}
+  &
+  \max
+  \left\{
+    \operatorname{Re}\left(\frac{ab\pi{r}\sqrt{-1}}{2}\right),
+    \max_{k}{\operatorname{Re}\left(k\pi\sqrt{-1}\left(1-\frac{k}{2abr}\right)\right)}
+  \right\}
+  \\
+  &\quad=
+  \max
+  \left\{
+    -\frac{ab\pi\operatorname{Im}{r}}{2},
+    \max_{k}{\frac{-k^2\pi\operatorname{Im}{r}}{2ab|r|^2}}
+  \right\}
+  \\
+  &\quad=
+  \begin{cases}
+    \displaystyle
+    \frac{\pi\operatorname{Im}{r}}{2ab}\max_{k}
+    \left\{
+      -a^2b^2,-\frac{k^2}{|r|^2}
+    \right\}
+    &\qquad\text{if $\operatorname{Im}{r}>0$}
+    \\[5mm]
+    \displaystyle
+    -\frac{\pi\operatorname{Im}{r}}{2ab}\max_{k}
+    \left\{
+      a^2b^2,\frac{k^2}{|r|^2}
+    \right\}
+    &\qquad\text{if $\operatorname{Im}{r}<0$}
+  \end{cases}.
+\end{split}
+\end{equation*}$$ Since $1<h(\theta)$ when $0<\theta<\pi/2$, $|r|>1/(ab)$, and $k$ runs over positive integers less than $ab|r|h(\theta)>1$, we have $$\begin{equation*}
+  \max_{k}\left\{-a^2b^2,-\frac{k^2}{|r|^2}\right\}
+  =
+  -\frac{1}{|r|^2}
+\end{equation*}$$ if $\operatorname{Im}{r}>0$. Since $0<h(\theta)<1$ when $-\pi/2<\theta<0$, $0<k<ab|r|h(\theta)<ab|r|$. So we have $$\begin{equation*}
+  \max_{k}\left\{a^2b^2,\frac{k^2}{|r|^2}\right\}
+  =
+  a^2b^2
+\end{equation*}$$ if $\operatorname{Im}{r}<0$.
+
+Therefore if $\operatorname{Im}{r}<0$ $$\begin{equation*}
+  \int_{C}
+  e^{Nf_{a,b,r(z)}}\tau_{a,b}(z)dz
+  \underset{N\to\infty}{\sim}
+  \pi\sqrt{\frac{2r}{abN}}e^{\pi\sqrt{-1}/4}
+  \tau_{a,b}(\pi{r}\sqrt{-1})
+  e^{Nab\pi{r}\sqrt{-1}/2}
+\end{equation*}$$ and if $\operatorname{Im}{r}>0$ $$\begin{equation*}
+  \int_{C}
+  e^{Nf_{a,b,r}(z)}\tau_{a,b}(z)\,dz
+  \\
+  \underset{N\to\infty}{\sim}
+  -
+  \frac{2\sinh(\pi\sqrt{-1}/a)\sinh(\pi\sqrt{-1}/b)}{ab}
+  e^{N\pi\sqrt{-1}\left(1-\frac{1}{2abr}\right)}.
+\end{equation*}$$ Since $$\begin{equation*}
+  \Phi_{a,b,r}(N)
+  \underset{N\to\infty}{\sim}
+  g_{a,b,r}\sqrt{N}e^{-Nabr\pi\sqrt{-1}/2},
+\end{equation*}$$ we have $$\begin{multline*}
+  J_N\bigr(T(a,b);e^{2\pi{r}\sqrt{-1}}\bigr)
+  \\
+  \underset{N\to\infty}{\sim}
+  -
+  \frac{2\sinh(\pi\sqrt{-1}/a)\sinh(\pi\sqrt{-1}/b)g_{a,b,r}}{ab}
+  \sqrt{N}
+  e^{N\pi\sqrt{-1}\bigl(1-abr/2-1/(2abr)\bigr)}
+\end{multline*}$$ if $\operatorname{Im}{r}>0$ and $$\begin{equation*}
+  J_N\bigr(T(a,b);e^{2\pi{r}\sqrt{-1}}\bigr)
+  \underset{N\to\infty}{\sim}
+  \frac{\sinh(ar\pi\sqrt{-1})\sinh(br\pi\sqrt{-1})}
+       {\sinh(abr\pi\sqrt{-1})\sinh(r\pi\sqrt{-1})}
+\end{equation*}$$ if $\operatorname{Im}{r}<0$.
+
+Since the Alexander polynomial $\Delta\bigl(T(a,b);t\bigr)$ of $T(a,b)$ is $\frac{(t^{ab/2}-t^{-ab/2})(t^{1/2}-t^{-1/2})}
+      {(t^{a/2}-t^{-a/2})(t^{b/2}-t^{-b/2})}$ (see for example [@Lickorish:1997 Page 119]), we have $$\begin{equation*}
+  \lim_{N\to\infty}J_N\left(T(a,b);e^{2\pi{r}\sqrt{-1}/N}\right)
+  =
+  \frac{1}{\Delta\left(T(a,b);e^{2\pi{r}\sqrt{-1}}\right)}
+\end{equation*}$$ if $\operatorname{Im}{r}<0$. If $\operatorname{Im}{r}>0$ we have $$\begin{equation*}
+  \lim_{N\to\infty}
+  \frac{\log{J_N\left(T(a,b);e^{2\pi{r}\sqrt{-1}/N}\right)}}{N}
+  =
+  \left(1-\dfrac{1}{2abr}-\dfrac{abr}{2}\right)\pi\sqrt{-1}.
+\end{equation*}$$ This completes the proof of Theorem [\[thm\]](#thm){reference-type="ref" reference="thm"}.

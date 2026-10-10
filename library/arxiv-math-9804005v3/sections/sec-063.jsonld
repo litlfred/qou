@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9804005v3/sections/sec-063",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "It follows from Theorem 6.17 and Proposition 3.9(1) that",
+  "pageStart": 36,
+  "pageEnd": 38,
+  "contains": [
+    "library/arxiv-math-9804005v3/blocks/prose-sec-063",
+    "library/arxiv-math-9804005v3/blocks/example-sec-063-01",
+    "library/arxiv-math-9804005v3/blocks/example-sec-063-02",
+    "library/arxiv-math-9804005v3/blocks/example-sec-063-03",
+    "library/arxiv-math-9804005v3/blocks/theorem-sec-063-04",
+    "library/arxiv-math-9804005v3/blocks/proposition-sec-063-05",
+    "library/arxiv-math-9804005v3/blocks/corollary-sec-063-06",
+    "library/arxiv-math-9804005v3/blocks/theorem-sec-063-07",
+    "library/arxiv-math-9804005v3/blocks/theorem-sec-063-08"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9804005v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9804005v3/manifest.jsonld",
+  "provenance": "ingested"
+}

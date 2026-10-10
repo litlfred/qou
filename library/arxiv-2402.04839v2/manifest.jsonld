@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2402.04839v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "On a volume invariant of 3–manifolds",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2402.04839v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On a volume invariant of 3-manifolds",
   "contains": [
     "library/arxiv-2402.04839v2/sections/sec-000",
     "library/arxiv-2402.04839v2/sections/sec-001",
@@ -30,8 +35,18 @@
     "library/arxiv-2402.04839v2/sections/sec-021"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2402.04839&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-2402.04839v2",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
     "source_file": "2402.04839v2.pdf",
     "source_sha256": "daf09811c350a2ad4453a89faaca2af5f0e84788e822fb79c4d3be3e3d9e9fba",
     "pages": 28,

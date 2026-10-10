@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-astro-ph-0203462v1/blocks/prose-sec-017",
+  "kind": "prose",
+  "title": "The third-peak elements and the actinides,",
+  "pageStart": 11,
+  "pageEnd": 13,
+  "text": "../sections/sec-017-45-the-third-peak-elements-and-the-actinides.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-astro-ph-0203462v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-astro-ph-0203462v1/manifest.jsonld",
+  "provenance": "ingested"
+}

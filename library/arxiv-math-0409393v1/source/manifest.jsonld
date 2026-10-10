@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0409393v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0409393v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0409393v1/manifest.jsonld",
+  "provenance": "ingested",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0409393&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0409393v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math/0409393v1",
+    "content_type": "application/gzip",
+    "sha256": "34a181b5a96a78335fe161605b3dab309a39c2c4ff5156cc21c2c211bda66d85",
+    "bytes": 38429,
+    "fetched": "2026-10-10T15:28:20+00:00",
+    "files": [
+      {
+        "path": "source/files/preprint.tex",
+        "role": "tex",
+        "sha256": "ccd101137201b277a21a86022cca37aacdc807a03d74d50ce1d06a3334b09fa1",
+        "bytes": 77564
+      },
+      {
+        "path": "source/files/smfart.cls",
+        "role": "cls",
+        "sha256": "9e3f95225d4d80e3e85dda8988335338dedc62e0fc7b284166b1acae83b9c721",
+        "bytes": 47059
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

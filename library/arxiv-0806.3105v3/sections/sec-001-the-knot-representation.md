@@ -7,262 +7,227 @@ section_number: null
 pages: 3-7
 source_pdf: 0806.3105v3.pdf
 source_sha256: a37b4f2e96365d30
+text_source: latex
+latex_prose_ratio: 0.977
+latex_coverage_ratio: 0.989
 doc_brief: "Knots and preons — It is shown that the four quantum trefoil solitons that are describ ed by the irreducible representations D3/ 2 mm′ of the quantum algebra SLq(2) (and that may be identiﬁed with"
 ---
-We replace the point particles of standard theory with quantum kno ts by attaching to each
-normal mode a knot state just as one introduces spin by attaching a spin state. The knot
-states and the corresponding ﬁelds are deﬁned only up to a gauge t ransformation and the
-action is required to be invariant under these gauge transformatio ns.
-We assume that the kinematical quantum states of the knot are de rived from the irre-
-ducible representations of the symmetry algebra of the knot, nam ely3
-Dj
-mm′(a, b, c, d ) =
-∑
-s≤n+
-t≤n−
-Aj
-mm′(q, s, t )δ(s + t, n ′
-+)asbn+−sctdn−−t (2.1)
+We replace the point particles of standard theory with quantum
+knots by attaching to each normal mode a knot state just as one
+introduces spin by attaching a spin state.  The knot states and
+the corresponding fields are defined only up to a gauge
+transformation and the action is required to be invariant under
+these gauge transformations.
+
+We assume that the kinematical quantum states of the knot are
+derived from the 
+irreducible representations of the symmetry algebra of the knot,
+namely$^3$
+\be
+{\cal{D}}^j_{mm^\prime}(a,b,c,d) = \sum_{\scriptstyle s\leq n_+
+\atop\scriptstyle t\leq n_-} 
+{\cal{A}}^j_{mm^\prime}(q,s,t)\delta(s+t,n_+^\prime)
+a^sb^{n_+-s}c^td^{n_--t}
+\ee
 where
-n± = j ± m (2.2)
-n′
-± = j ± m′ (2.3)
-and the arguments of Dj
-mm′ obey the algebra of SLq(2) as follows:
-ab = qba
-ac = qca
-bd = qdb
-cd = qdc
-bc = cb ad − qbc = 1
-da − q1cb = 1
-q1 = q−1 (2.4)
-We shall refer to (2.4) as the “knot algebra”. This algebra and Dj
-mm′(a, b, c, d ) are deﬁned
-only up to the following gauge transformation
-a′ = eiϕ aa
-d′ = e−iϕ ad
-b′ = eiϕ bb
-c′ = e−iϕ bc
-(2.5)
-Eqs. (2.5) leave the algebra (2.4) invariant and induce on the element s of every representa-
-tion the following transformation 3
-Dj
-mm′(a′, b ′, c ′, d ′) = ei(m+m′)ϕ aei(m−m′)ϕ bDj
-mm′(a, b, c, d )
-= eim(ϕ a+ϕ b)eim′(ϕ a−ϕ b)Dj
-mm′(a, b, c, d )
-(2.6)
-We now associate Dj
-mm′ with the geometrical knot by setting
-j = N
-2
-m = w
-2
-m′ = r+1
-2
-(2.7)
-3
-where w and r are the writhe and rotation respectively and where N is the number of
-crossings. The writhe and the rotation are topological invariants a nd we shall also assume
-that N is a dynamical invariant. The kinematic states of the quantum knot m ay be labelled
-by these three invariants of the motion. Then by (2.6) and (2.7)
-DN/ 2
-w
-2
-r+1
-2
-(a′, b ′, c ′, d ′) = ei w
-2 ϕ wei r+1
-2 ϕ r DN/ 2
-w
-2
-r+2
-2
-(a, b, c, d )
-= e− i
-k Q(w)ϕ we− i
-k Q(r)ϕ r DN/ 2
-w
-2
-r+1
-2
-(a, b, c, d )
-(2.8)
+\begin{eqnarray}
+n_\pm &=& j\pm m \\
+n_\pm^\prime &=& j\pm m^\prime
+\end{eqnarray}
+and the arguments of ${\cal{D}}^j_{mm^\prime}$ obey the algebra
+of $SL_q(2)$ as follows:
+\be
+\left.
+\begin{array}{l}
+ab = qba \\ ac = qca
+\end{array} \right. \quad \left.
+\begin{array}{l}
+bd = qdb \\ cd = qdc
+\end{array} \right. \quad \left.
+\begin{array}{l}
+bc = cb \\ \hfil 
+\end{array} \right. \quad \left.
+\begin{array}{l}
+ad-qbc=1 \\ da-q_1cb=1 
+\end{array} \right.  \qquad
+q_1=q^{-1}
+\ee
+
+We shall refer to (2.4) as the ``knot algebra".  This algebra and
+${\cal{D}}^j_{mm^\prime}(a,b,c,d)$ are defined only up to the
+following gauge transformation
+\be
+\left.
+\begin{array}{l}
+a^\prime = e^{i\varphi_a}a \\ d^\prime = e^{-i\varphi_a}d
+\end{array} \right. \qquad \left.
+\begin{array}{l}
+b^\prime = e^{i\varphi_b}b \\ c^\prime = e^{-i\varphi_b}c
+\end{array} \right.
+\ee
+Eqs. (2.5) leave the algebra (2.4)
+invariant and induce on the elements
+of every representation the following transformation$^3$
+\be
+\begin{array}{rcl}
+{\cal{D}}^j_{mm^\prime}(a^\prime,b^\prime,c^\prime,d^\prime)
+&=& e^{i(m+m^\prime)\varphi_a}e^{i(m-m^\prime)\varphi_b}
+{\cal{D}}^j_{mm^\prime}(a,b,c,d) \\
+&=& e^{im(\varphi_a+\varphi_b)}e^{im^\prime(\varphi_a-\varphi_b)}
+{\cal{D}}^j_{mm^\prime}(a,b,c,d)
+\end{array}
+\ee
+We now associate ${\cal{D}}^j_{mm^\prime}$ with the geometrical
+knot by setting
+\be
+\begin{array}{rcl}
+j &=& \frac{N}{2} \\
+m &=& \frac{w}{2} \\
+m^\prime &=& \frac{r+1}{2}
+\end{array}
+\ee
+where $w$ and $r$ are the writhe and rotation respectively and
+where $N$ is the number of crossings.
+The writhe and the rotation are topological invariants and we
+shall also assume that $N$ is a dynamical invariant.  
+The kinematic states of the quantum knot may be labelled by 
+these three
+invariants of the motion.  Then by (2.6) and (2.7)
+\be
+\begin{array}{rcl}
+{\cal{D}}^{N/2}_{\frac{w}{2}\frac{r+1}{2}}
+(a^\prime,b^\prime,c^\prime,d^\prime)&=& e^{i\frac{w}{2}
+\varphi_w} e^{i\frac{r+1}{2}\varphi_r}
+{\cal{D}}^{N/2}_{\frac{w}{2}\frac{r+2}{2}}(a,b,c,d) \\
+&=& e^{-\frac{i}{k}Q(w)\varphi_w}
+e^{-\frac{i}{k}Q(r)\varphi_r}
+{\cal{D}}^{N/2}_{\frac{w}{2}\frac{r+1}{2}}(a,b,c,d)
+\end{array}
+\ee
 where
-Q(w) = −k w
-2 (2.9)
-Q(r) = −k r + 1
-2 (2.10)
-and k is a constant to be determined. Q(w) and Q(r) are two topological integrals of the
-motion. The gauge transformations (2.8) operate on all the norma l modes and therefore on
-all ﬁelds. We require that the action be invariant under these gauge transformations since
-they are induced by the transformations (2.5) that leave the deﬁn ing algebra (2.4) invariant.
-Therefore by Noether’s theorem Q(w) and Q(r) behave as conserved charges and will be
-called the writhe charge and the rotation charge.
-We shall now make a direct comparison between Q(w) and Q(r) of the quantum knot
-and the charge and hypercharge of the 4 fermion families, each den oted by ( f1, f 2, f 3).3
-Standard Representation Knot Representation
-(f1, f 2, f 3) t t3 t0 Qe (w, r ) DN/ 2
-w
-2
-r+1
-2
-Qw Qr Qw + Qr
-(e, µ, τ ) 1
-2 − 1
-2 − 1
-2 −e (3,2) D3/ 2
-3
-2
-3
-2
-−k
-(
-3
-2
-)
-−k
-(
-3
-2
-)
-−3k
-(νe, ν µ , ν τ) 1
-2
-1
-2 − 1
-2 0 (-3,2) D3/ 2
-− 3
-2
-3
-2
-−k
-(
-− 3
-2
-)
-−k
-(
-3
-2
-)
-0
-(d, s, b ) 1
-2 − 1
-2
-1
-6 − 1
-3 e (3,-2) D3/ 2
-3
-2 − 1
-2
-−k
-(
-3
-2
-)
-−k
-(
-− 1
-2
-)
-−k
-(u, c, t ) 1
-2
-1
-2
-1
-6
-2
-3e (-3,-2) D3/ 2
-− 3
-2 − 1
-2
-−k
-(
-− 3
-2
-)
-−k
-(
-− 1
-2
-)
-2k
-Table 1.
-4
-In this table Qw and Qr are given by (2.9) and (2.10), and we have adopted a particular
-relative order of the four trefoils with respect to the four families o f fermions. For this order
-we ﬁnd
-Qw = et3 (2.11)
-Qr = et0 (2.12)
-Qw + Qr = Qe (2.13)
-if and only if k = e/ 3. These relations are in agreement with the following independent
-equation of standard theory:
-Qe = e(t3 + t0) (2.14)
-If one aligns the trefoils and the families in any other relative order, o ne needs more than
-one value of k. In this respect the correspondence between the two sets is uniq ue.
-The correspondence between the quantum knots and the isospin a nd charge of the ele-
-mentary fermions may be summarized by the following relations, which may also be read
-directly from Table 1:
-t = N
-6
-t3 = − w
-6
-t0 = − r+1
-6
-Qe = − e
-6 (w + r + 1)
-or
-t = j
-3
-t3 = − m
-3
-t0 = − m′
-3
-Qe = − e
-3 (m + m′)
-(2.15)
+\begin{eqnarray}
+Q(w) &=&-k\frac{w}{2} \\
+Q(r) &=& -k\frac{r+1}{2}
+\end{eqnarray}
+and $k$ is a constant to be determined.  $Q(w)$ and $Q(r)$ are two
+topological
+integrals of the motion.  The gauge transformations (2.8)
+operate on all the normal modes and therefore on all fields.
+We require that the 
+action be invariant under these gauge transformations since
+they are induced by the transformations (2.5) that leave the
+defining
+algebra (2.4) invariant.  Therefore 
+by Noether's theorem $Q(w)$ and $Q(r)$ behave as
+conserved charges and will be called the writhe charge and the
+rotation charge.
+
+We shall now make a direct comparison between $Q(w)$ and $Q(r)$ 
+of the quantum knot and the charge and hypercharge of the 4
+fermion families, each denoted by $(f_1,f_2,f_3)$.$^3$
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ccccc|ccccc}
+\multicolumn{5}{c}{\underline{Standard Representation}} &
+\multicolumn{5}{c}{\underline{Knot Representation}} \\
+\underline{$(f_1,f_2,f_3)$} & \underline{$t$} & 
+\underline{$t_3$} &
+\underline{$t_0$} & \underline{$Q_e$} & \underline{$(w,r)$} &
+\underline{${\cal{D}}^{N/2}_{\frac{w}{2}\frac{r+1}{2}}$} &
+\underline{$Q_w$} & \underline{$Q_r$} & \underline{$Q_w+Q_r$} \\
+$(e,\mu,\tau)$ & $\frac{1}{2}$ & $-\frac{1}{2}$ & $-\frac{1}{2}$
+& $-e$ & (3,2) & ${\cal{D}}^{3/2}_{\frac{3}{2}\frac{3}{2}}$ &
+$-k\left(\frac{3}{2}\right)$ & $-k\left(\frac{3}{2}\right)$ &
+$-3k$ \\
+$(\nu_e,\nu_\mu,\nu_\tau)$ & $\frac{1}{2}$ & $\frac{1}{2}$ &
+$-\frac{1}{2}$ & 0 & (-3,2) & ${\cal{D}}^{3/2}_{-\frac{3}{2}
+\frac{3}{2}}$ & $-k\left(-\frac{3}{2}\right)$ &
+$-k\left(\frac{3}{2}\right)$ & 0 \\
+$(d,s,b)$ & $\frac{1}{2}$ & $-\frac{1}{2}$ & $\frac{1}{6}$ &
+$-\frac{1}{3}e$ & (3,-2) & ${\cal{D}}^{3/2}_{\frac{3}{2}-\frac
+{1}{2}}$ & $-k\left(\frac{3}{2}\right)$ & $-k\left(-\frac{1}{2}
+\right)$ & $-k$ \\ 
+$(u,c,t)$ & $\frac{1}{2}$ & $\frac{1}{2}$ & $\frac{1}{6}$ &
+$\frac{2}{3}e$ & (-3,-2) & ${\cal{D}}^{3/2}_{-\frac{3}{2}
+-\frac{1}{2}}$ & $-k\left(-\frac{3}{2}\right)$ &
+$-k\left(-\frac{1}{2}\right)$ & $2k$ \\
+\end{tabular}
+\end{center}
+\end{table}
+\begin{center}
+{\bf Table 1.}
+\end{center}
+
+\no In this table $Q_w$ and $Q_r$ are given by (2.9) and 
+(2.10), and we have adopted a particular relative order of
+the four trefoils with respect to the four families of fermions.
+For this order we find
+\begin{eqnarray}
+Q_w &=& et_3 \\
+Q_r &=& et_0 \\
+Q_w + Q_r &=& Q_e
+\end{eqnarray}
+\underline{if and only if $k=e/3$}.  These relations are in
+agreement with the following independent equation of standard theory:
+\be
+Q_e = e(t_3+t_0)
+\ee
+If one aligns the trefoils and the families in any other relative
+order, one needs more than one value of $k$.  In this respect
+the correspondence between the two sets is unique. 
+
+The correspondence between the quantum knots and the isospin and
+charge of the elementary fermions may be summarized by the
+following relations, which may also be read directly from Table 1:
+\be
+\left.
+\begin{array}{l}
+t~=\frac{N}{6} \\ t_3=-\frac{w}{6} \\ t_0=-\frac{r+1}{6} \\
+Q_e=-\frac{e}{6}~(w+r+1) 
+\end{array} \right. \qquad \mbox{or}  \qquad \left.
+\begin{array}{l}
+t~=\frac{j}{3} \\ t_3=-\frac{m}{3} \\ t_0=-\frac{m^\prime}{3} \\
+Q_e=-\frac{e}{3}~(m+m^\prime)
+\end{array} \right.
+\ee
 Note also that
-Qe = − e
-N
-( w + r + 1
-2
-)
-and Qe = −e
-(
-m + m′
-2j
-)
-(2.16)
+\be
+Q_e=-\frac{e}{N}\left(\frac{w+r+1}{2}\right) \quad \mbox{and}
+\quad Q_e = -e\left(\frac{m+m^\prime}{2j}\right)
+\ee
 holds for all the elementary fermions.
-While t3 and t0 are initially deﬁned in the standard theory with respect to SU (2) ×U(1),
-here they label the gauge transformations on the knot algebra, a nd are also described by
-(w, r ) and ( m, m ′) as shown in Table 1 and Eq. (2.15). In the limit of the standard theor y,
-where q = 1, t3 and t0 assume their usual meaning in SU (2) and U(1) respectively.
-The states labelled by the quantum numbers ( j, m, m ′) or ( t, t 3, t 0) are the multinomials
-lying in the algebra (2.4) and given by (2.1). These multinomials are asso ciated with the
-knot ( N, w, r ) and, like the Jones (Laurent) polynomial, label the knot.
-5
-These conclusions may be summarized by assigning D3t
-−3t3−3t0 to the fermion families
-with (t, t 3, t 0). The members of each family are described by the quantum states D3t
-−3t3−3t0|n⟩
-where |n⟩ are the states deﬁned by the knot algebra. 3
-Remark: Although the D3/ 2
-w
-2
-r+1
-2
-representation permits a uniﬁed description of the elec-
-troweak properties of the four families, it does not also imply that they transform under
-a 4-dimensional representation of SLq(2). Rather Eq. (2.8) is the only formal property
-of DN/ 2
-w
-2
-r+1
-2
-(a, b, c, d ) that has been invoked. The only new invariance beyond the standa rd
-theory that has been introduced is invariance under the global gau ge transformations of the
-knot algebra that are expressed by (2.5) and (2.6).
-6
+
+While $t_3$ and $t_0$ are initially defined in the standard
+theory with respect to $SU(2)\times U(1)$, here they label the
+gauge transformations on the knot algebra, and are also
+described by $(w,r)$ and $(m,m^\prime)$ as shown in Table 1 and
+Eq. (2.15).  In the limit of the standard theory, where
+$q=1$, $t_3$ and $t_0$ assume their usual meaning in
+$SU(2)$ and $U(1)$ respectively.
+
+The states labelled by the quantum numbers $(j,m,m^\prime)$ or
+$(t,t_3,t_0)$ are the multinomials lying in the algebra (2.4) and
+given by (2.1).  These multinomials are associated with the knot
+$(N,w,r)$ and, like the Jones (Laurent) polynomial, label the
+knot.
+
+These conclusions may be summarized by assigning ${\cal{D}}^{3t}_{-3t_3-3t_0}$ to the fermion families with $(t,t_3,t_0)$.
+The members of each family are described by the quantum states
+${\cal{D}}^{3t}_{-3t_3-3t_0}|n\rangle$ where $|n\rangle$ are the
+states defined by the knot algebra.$^3$
+
+\no {\it Remark:}  Although the ${\cal{D}}^{3/2}_{\frac{w}{2}
+\frac{r+1}{2}}$ representation permits a unified description
+of the electroweak properties of the four families, it does 
+\underline{not} also imply that they transform 
+under a 4-dimensional
+representation of $SL_q(2)$.  Rather Eq. (2.8) is the only
+formal property of ${\cal{D}}^{N/2}_{\frac{w}{2}\frac{r+1}{2}}
+(a,b,c,d)$ that has been invoked.  The only new invariance 
+beyond the standard theory that
+has been introduced is invariance under the global gauge
+transformations of the knot algebra that are expressed by (2.5)
+and (2.6).
+
+\ve

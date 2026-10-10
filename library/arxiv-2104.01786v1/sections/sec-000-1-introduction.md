@@ -7,177 +7,90 @@ section_number: 1
 pages: 1-5
 source_pdf: 2104.01786v1.pdf
 source_sha256: 34087d5063ef5507
+text_source: latex
+latex_prose_ratio: 0.877
+latex_coverage_ratio: 0.998
 doc_brief: "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real"
 ---
-The suggestion that octonions may provide a useful language for d escribing elementary particles
-is almost as old as the Standard Model (SM) itself, see [1] and refere nces therein. 1 Thus, it
-was observed early on that the 8-dimensional space of octonions, after a complex structure is
-chosen, splits as O = C ⊕ C3, with the ﬁrst factor naturally corresponding to leptons and the
-second one describing quarks. The subgroup of the group of auto morphisms of the octonions
-G2 preserving this split is precisely the strong gauge group SU(3).
-1Note, however, that in this reference, somewhat confusingly, th e usual octonion division algebra written in
-a complex basis is referred to as the split octonion algebra.
-1
-Many authors have since been fascinated by a possible link between e lementary particles
-and octonions. The literature on this topic has grown to be large, bu t also hard to summarise
-because the subject has never became a communal eﬀort. Individ uals that did work on it had
-diﬀerent backgrounds and used their own distinct language, making a review of what has been
-achieved diﬃcult. There is currently a renewed interest in these top ics, as is manifested in
-particular by [2]. Some of the most notable past developments in relat ion to this topic are
-works by Dixon e.g. [3], [4], [5], as well as works by Dray and collaborator s, see e.g. [6] and
-references therein. More recent works are those by Furey e.g. [7 ], [8] and by Dubois-Violette
-and Todorov [9], [10], [11], [12], [13]. Octonions play a prominent role in all these papers.
-While some of the papers on this subject only attempt to describe th e ”internal” particle
-degrees of freedom on which the gauge group of the SM acts, othe rs are trying to put the Lorentz
-spinor degrees of freedom into the picture as well. The basic observ ation in this regard is that
-spinors of (psuedo-) orthogonal groups Spin(2 n), when restricted to their subgroup Spin(2 k) ×
-Spin(2l),k +l =n decompose as spinors with respect to both Spin(2 k), Spin(2l) factors. This,
-in particular, means that a spinor of a (pseudo-) orthogonal grou p in 14 dimensions Spin(14),
-when restricted to Spin(10) × Spin(4) will behave as a spinor with respect to both of these
-groups. As far as we are aware, the ﬁrst mention of the possibility o f such a uniﬁcation of
-Lorentz spinor and ”internal” (isospin and colour) degrees of free dom is in [14].
-The number of real functions that is needed to describe one gener ation of the SM fermions
-is 64. This is the dimension of the Weyl, i.e. semi-spinor representation in 14 dimensions.
-However, for most possible signature combinations, the arising rep resentation is complex 64-
-dimensional. The only two cases that admit real, i.e. Majorana semi-sp inors in this dimension
-are the split case Spin(7 , 7) and Spin(11 , 3). The case Spin(11 , 3) was studied in works [15],
-[16]. The split case Spin(7 , 7) was advocated in an earlier work of this author [17].
-The purpose of this paper is to revisit the idea that all ﬁeld componen ts of one generation
-of the SM particles can be described using a real Weyl spinor of a pse udo-orthogonal group in
-14 dimensions. The new twist that we add is an observation that ther e is a natural octonionic
-model for both Spin(7 , 7) and Spin(11 , 3). One can then consider various diﬀerent complex
-structures on S+ arising from the octonions, similar to what was done in [18] in the conte xt
-of Spin(9). We will see that there are two natural commuting comple x structures, both cor-
-responding to a choice of a unit imaginary octonion, and their joint co mmutant in Spin(11, 3)
-is the direct product of the Pati-Salam and Lorentz groups. There is also a version of the
-construction that gives the product of the gauge group of the lef t/right-symmetric extension of
-the SM times the Lorentz group. It is the simplicity of this character isation of the groups so
-relevant for physics that prompted us to write this paper.
-There are many diﬀerent ways to describe Spin(7, 7), Spin(11, 3). There is always the Killing-
-Cartan description with roots and weights. Unfortunately, it does become diﬃcult to work with
-for groups of such high dimension. For orthogonal groups, one ca n instead proceed starting
-with the corresponding Cliﬀord algebras. One standard way to obta in these is by taking tensor
-products of γ-matrices in lower dimensions. This is indeed the approach that was fo llowed in
-[16], but it also becomes quite cumbersome. It is more eﬃcient to rest rict to some carefully
-chosen commuting subgroups and build a model for the big group bas ed on the representation
-theory of the smaller groups. Thus, the semi-spinor representat ions of Spin(8) can be identiﬁed
-with octonions O, similarly for the semi-spinor representations of the split Spin(4 , 4) that can
-be identiﬁed with ˜O. One can then restrict Spin(11 , 3) to Spin(8) × Spin(3, 3), and similarly
-Spin(7, 7) to Spin(4, 4) × Spin(3, 3), and then view the semi-spinor representation of Spin(11 , 3)
-and Spin(7, 7) as the tensor product of spinors of Spin(8) , Spin(3, 3) and Spin(4 , 4), Spin(3, 3)
-2
-respectively. The semi-spinor representation of Spin(3 , 3) is a copy of R4. This means that the
-semi-spinor representation of Spin(11 , 3) can be viewed as 8 copies of the octonions, and that
-of Spin(7, 7) can be viewed as 8 copies of the split octonions. This formalism is use ful and can
-be developed further, but there is an even more eﬃcient descriptio n.
-What seems to be the most natural description of Spin(7 , 7), Spin(11, 3) arises by restricting
-to the groups Spin(7) ×Spin(7) ⊂ Spin(7, 7) and Spin(7) ×Spin(4, 3) ⊂ Spin(11, 3).2 The spinor
-representation of Spin(7) can be identiﬁed with octonions O, and the spinor representation of
-Spin(4, 3) with split octonions ˜O. This means that a semi-spinor of Spin(7 , 7) can be identiﬁed
-with O ⊗ O (or with ˜O ⊗ ˜O), and a semi-spinor of Spin(11 , 3) can be identiﬁed with O ⊗ ˜O. It
-is this description and the corresponding models for Spin(7 , 7), Spin(11, 3) that we will develop
-in the main text.
-The resulting model for Spin(7 , 7), Spin(11, 3) can be phrased more generally, as it describes
-some other pseudo-orthogonal groups as well. It can be summaris ed in the following proposition:
-Theorem 1. Let X, Y be a pair of division algebras from the set C, ˜C, H, ˜H, O, ˜O, where C, ˜C
-are the usual and split complex numbers, and H and ˜H are the usual and split quaternions
-respectively. The matrices taking values in End((X ⊗ Y)2)
-Γ x =
-( 0 Lx ⊗ I
-L¯x ⊗ I 0
-)
-, x ∈ Im(X), Γ y =
-( 0 −I ⊗Ly
-I ⊗L¯y 0
-)
-, y ∈ Im(Y) (1)
-whereLx,L y are the operators of left multiplication by x ∈ Im(X),y ∈ Im(Y), and bar denotes
-conjugation in X, Y, satisfy
-Γ 2
-x = |x|2I, Γ 2
-y = −|y|2I, (2)
-Γ xΓ y + Γ yΓ x = 0.
-They thus generate the Cliﬀord algebra of signature that can be symbolically expressed as
-|Im(X)|2 − |Im(Y)|2. (3)
-A proof is by direct veriﬁcation.
-Remark 1. The construction in Theorem 1 is very closely related to that of 2 ×2 matrix algebras
-in [19]. Our construction is a subcase of the more general construc tion in this reference in the
-sense that larger groups in [19] can be obtained by adding to the set of Cliﬀord generators
-of Theorem 1 two more generators. This adds one positive deﬁnite a nd one negative deﬁnite
-direction. Results in [19], see also [20], are then reproduced. We will re turn to this in the main
-text.
-Remark 2. This construction of the Cliﬀord algebra identiﬁes spinors with ( X ⊗ Y)2, and thus a
-single copy of X ⊗ Y with semi-spinors. This immediately gives a description of the Lie algebr a
-in terms of matrices in End( X ⊗ Y). This will be described in the main text, for the cases of
-interest.
-Remark 3. The case of Cliﬀ 11, 3 corresponds to X = O, Y = ˜O. The split case Cliﬀ 7, 7 can be
-described by both X = O, Y = O, which corresponds to restricting to the Spin(7) × Spin(7)
-subgroup, as well as by X = ˜O, Y = ˜O, which corresponds to restricting to Spin(3, 4)×Spin(4, 3).
-Both are useful descriptions and capture two diﬀerent types of s pinor orbits in the (7 , 7) case.
-2In the case of Spin(7 ,7) there is also the possibility Spin(3 ,4) × Spin(4,3) ⊂ Spin(7,7).
-3
-Remark 4. Note that there is no way to get the compact case Spin(14) by this c onstruction,
-at least not by keeping the construction real. Indeed, the semi-sp inor representations of this
-group are complex 64-dimensional. One would need to introduce fact ors of the imaginary unit
-in one of the two Γ-matrices to counteract the unavoidable minus sig n in (3). Allowing for
-such factors of imaginary unit generalises the construction of The orem 1 to an even larger set
-of groups.
-Further implications of the construction of Theorem 1 will be discuss ed in the main text.
-With this result at hand we can identify the semi-spinor representat ion of Spin(11, 3), and
-thus components of one fermion generation of the SM, with O⊗ ˜O. The Lie algebra of Spin(11 , 3)
-and thus of its various subgroups of interest can be obtained by ta king the commutators of the
-Γ-matrices (1). This gives an explicit and useful description, as we w ill further illustrate in the
-main text.
-This gives an ultimate ”kinematic” uniﬁcation of all known to us compon ents of fermions of
-one generation in such an elegant structure as O⊗ ˜O. But it does not answer the crucial question
-of any such uniﬁcation approach: What breaks the big symmetry gr oup such as Spin(11 , 3) to
-the product of groups we know act on elementary particles in Natur e? The important part of
-this question is what singles out the Lorentz group Spin(1 , 3) that we know plays a very diﬀerent
-role from the gauge groups appearing in the Standard Model. Indee d, the group Spin(11 , 3) we
-have considered mixes the SM gauge group with the transformation s from the Lorentz group.
-We don’t know of any such mixed transformations playing any role in ou r physical theories.
-So, any ”uniﬁcation” scheme that puts together the SM gauge gro up with the Lorentz group
-but does not explain how these two factors appear is largely useless .
-We do not have a satisfactory answer to these questions, but the re are some interesting
-observations that can be made. Let us ﬁrst recall the more more c onventional GUT scenarios.
-In Spin(10) uniﬁcation, all fermionic components of one generation (but not including the
-Lorentz spinor components) can be elegantly described by a single c omplex 16-dimensional
-representation. The question is then what breaks the Spin(10) sy mmetry down to the ones we
-see in the SM. In all considered models, see e.g. [21] for a nice recen t review, the symmetry
-breaking happens in two stages. The ﬁrst stage is to break Spin(10 ) down to either the Pati-
-Salam group Spin(6) × Spin(4), or down to the Georgi-Glashow group SU(5). Only after th is
-one breaks the remaining symmetry down to the SM gauge group, wh ich is then further broken
-to SU(3) × U(1), the unbroken gauge group of the SM. All these breakings ar e carried out using
-various Higgs ﬁelds, and no Higgs ﬁeld taking values in a single irreducible representation of
-Spin(10) is suﬃcient for the purpose.
-It is known that the breaking of Spin(10) to either the Pati-Salam gr oup Spin(6) × Spin(4)
-or to SU(5) × U(1) = U(5) can be carried out using the Higgs in the 210 representation, see
-e.g. the diagram in Section 1.4.5 in [21]. Alternatively, this stage of the s ymmetry breaking can
-be reformulated by saying that there exists complex structures in the space of Spin(10) semi-
-spinors whose commutants are either the Pati-Salam or U(5). Both of these complex structures
-are closely related to octonions, and can be reformulated using the octonionic language that
-exists for Spin(10), see e.g. [22] for a description of the octonionic model of Spin(10). What
-matters for our discussion here is that the phenomenologically inter esting complex structures
-that break either to Pati-Salam or to U(5) can be both parametrise d by a choice of a unit
-imaginary octonion.
-For the case of the complex structure that breaks Spin(10) down to the Pati-Salam group
-this can be explained without any further background. The octonio nic model of Spin(10)
-proceeds by identifying 8 of the 10 directions of the Cliﬀord algebra C liﬀ 10 with octonions, thus
-4
-leaving out two of the directions as special. There is another directio n that is singled out as
-special, which corresponds to the identity element in O. A choice of a unit imaginary octonion
-u ∈ Im(O) gives yet another special direction. From this data one can easily c onstruct a complex
-structure on semi-spinors whose commutant is the Pati-Salam grou p Spin(6) × Spin(4). Indeed,
-the product of any two γ-matrices in Cliﬀ 10 gives an operator that squares to minus the identity
-and preserves the space of semi-spinors. However, the commuta nt of such a complex structure is
-Spin(8) × Spin(2), so this is not what we want. The next in complexity operator that preserves
-the space of semi-spinors is given by the product of four of the γ-matrices. However, this squares
-to plus the identity, and so is not a complex structure. However, th e next case is the product
-of six diﬀerent γ’s. This squares to minus the identity, and so gives a complex structu re. It
-breaks Spin(10) down to Spin(6) × Spin(4). Finally, it can clearly be parametrised by a choice
-of a unit imaginary octonion u. Indeed, as we already discussed, together with u we have four
-special directions in Cliﬀ 10, and thus also remaining 6 directions. These are the directions in
-O that are not in the space Span( I,u ). The product of the corresponding γ-matrices is the
-desired complex structure that breaks Spin(10) to the Pati-Salam group.
-Our main new observation in this paper is that there exist very analog ous complex structures
-on Spin(11, 3). These complex structures can also be parametrised by a choice of unit imaginary
+The suggestion that octonions may provide a useful language for describing elementary particles is almost as old as the Standard Model (SM) itself, see [@Gunaydin:1973rs] and references therein.[^1] Thus, it was observed early on that the 8-dimensional space of octonions, after a complex structure is chosen, splits as ${\mathbb O}={\mathbb C}\oplus{\mathbb C}^3$, with the first factor naturally corresponding to leptons and the second one describing quarks. The subgroup of the group of automorphisms of the octonions $G_2$ preserving this split is precisely the strong gauge group ${\rm SU}(3)$.
+
+Many authors have since been fascinated by a possible link between elementary particles and octonions. The literature on this topic has grown to be large, but also hard to summarise because the subject has never became a communal effort. Individuals that did work on it had different backgrounds and used their own distinct language, making a review of what has been achieved difficult. There is currently a renewed interest in these topics, as is manifested in particular by [@Workshop]. Some of the most notable past developments in relation to this topic are works by Dixon e.g. [@Dixon-book], [@Dixon:1999rg], [@Dixon:2010px], as well as works by Dray and collaborators, see e.g. [@Manogue:2009gf] and references therein. More recent works are those by Furey e.g. [@Furey:2016ovx], [@Furey:2018yyy] and by Dubois-Violette and Todorov [@Dubois-Violette:2016kzx], [@Todorov:2018mwd], [@Dubois-Violette:2018wgs], [@Todorov:2018yvi], [@Todorov:2019hlc]. Octonions play a prominent role in all these papers.
+
+While some of the papers on this subject only attempt to describe the \"internal\" particle degrees of freedom on which the gauge group of the SM acts, others are trying to put the Lorentz spinor degrees of freedom into the picture as well. The basic observation in this regard is that spinors of (psuedo-) orthogonal groups ${\rm Spin}(2n)$, when restricted to their subgroup ${\rm Spin}(2k)\times {\rm Spin}(2l), k+l=n$ decompose as spinors with respect to both ${\rm Spin}(2k), {\rm Spin}(2l)$ factors. This, in particular, means that a spinor of a (pseudo-) orthogonal group in 14 dimensions ${\rm Spin}(14)$, when restricted to ${\rm Spin}(10)\times {\rm Spin}(4)$ will behave as a spinor with respect to both of these groups. As far as we are aware, the first mention of the possibility of such a unification of Lorentz spinor and \"internal\" (isospin and colour) degrees of freedom is in [@Percacci:1984ai].
+
+The number of real functions that is needed to describe one generation of the SM fermions is 64. This is the dimension of the Weyl, i.e. semi-spinor representation in 14 dimensions. However, for most possible signature combinations, the arising representation is complex 64-dimensional. The only two cases that admit real, i.e. Majorana semi-spinors in this dimension are the split case ${\rm Spin}(7,7)$ and ${\rm Spin}(11,3)$. The case ${\rm Spin}(11,3)$ was studied in works [@Nesti:2009kk], [@Lisi:2010uw]. The split case ${\rm Spin}(7,7)$ was advocated in an earlier work of this author [@Krasnov:2018txw].
+
+The purpose of this paper is to revisit the idea that all field components of one generation of the SM particles can be described using a real Weyl spinor of a pseudo-orthogonal group in 14 dimensions. The new twist that we add is an observation that there is a natural octonionic model for both ${\rm Spin}(7,7)$ and ${\rm Spin}(11,3)$. One can then consider various different complex structures on $S_+$ arising from the octonions, similar to what was done in [@Krasnov:2019auj] in the context of ${\rm Spin}(9)$. We will see that there are two natural commuting complex structures, both corresponding to a choice of a unit imaginary octonion, and their joint commutant in ${\rm Spin}(11,3)$ is the direct product of the Pati-Salam and Lorentz groups. There is also a version of the construction that gives the product of the gauge group of the left/right-symmetric extension of the SM times the Lorentz group. It is the simplicity of this characterisation of the groups so relevant for physics that prompted us to write this paper.
+
+There are many different ways to describe ${\rm Spin}(7,7), {\rm Spin}(11,3)$. There is always the Killing-Cartan description with roots and weights. Unfortunately, it does become difficult to work with for groups of such high dimension. For orthogonal groups, one can instead proceed starting with the corresponding Clifford algebras. One standard way to obtain these is by taking tensor products of $\gamma$-matrices in lower dimensions. This is indeed the approach that was followed in [@Lisi:2010uw], but it also becomes quite cumbersome. It is more efficient to restrict to some carefully chosen commuting subgroups and build a model for the big group based on the representation theory of the smaller groups. Thus, the semi-spinor representations of ${\rm Spin}(8)$ can be identified with octonions ${\mathbb O}$, similarly for the semi-spinor representations of the split ${\rm Spin}(4,4)$ that can be identified with $\tilde{{\mathbb O}}$. One can then restrict ${\rm Spin}(11,3)$ to ${\rm Spin}(8)\times{\rm Spin}(3,3)$, and similarly ${\rm Spin}(7,7)$ to ${\rm Spin}(4,4)\times{\rm Spin}(3,3)$, and then view the semi-spinor representation of ${\rm Spin}(11,3)$ and ${\rm Spin}(7,7)$ as the tensor product of spinors of ${\rm Spin}(8), {\rm Spin}(3,3)$ and ${\rm Spin}(4,4), {\rm Spin}(3,3)$ respectively. The semi-spinor representation of ${\rm Spin}(3,3)$ is a copy of ${\mathbb R}^4$. This means that the semi-spinor representation of ${\rm Spin}(11,3)$ can be viewed as 8 copies of the octonions, and that of ${\rm Spin}(7,7)$ can be viewed as 8 copies of the split octonions. This formalism is useful and can be developed further, but there is an even more efficient description.
+
+What seems to be the most natural description of ${\rm Spin}(7,7), {\rm Spin}(11,3)$ arises by restricting to the groups ${\rm Spin}(7)\times{\rm Spin}(7)\subset {\rm Spin}(7,7)$ and ${\rm Spin}(7)\times{\rm Spin}(4,3)\subset {\rm Spin}(11,3)$.[^2] The spinor representation of ${\rm Spin}(7)$ can be identified with octonions ${\mathbb O}$, and the spinor representation of ${\rm Spin}(4,3)$ with split octonions $\tilde{{\mathbb O}}$. This means that a semi-spinor of ${\rm Spin}(7,7)$ can be identified with ${\mathbb O}\otimes{\mathbb O}$ (or with $\tilde{{\mathbb O}}\otimes\tilde{{\mathbb O}}$), and a semi-spinor of ${\rm Spin}(11,3)$ can be identified with ${\mathbb O}\otimes\tilde{{\mathbb O}}$. It is this description and the corresponding models for ${\rm Spin}(7,7), {\rm Spin}(11,3)$ that we will develop in the main text.
+
+The resulting model for ${\rm Spin}(7,7), {\rm Spin}(11,3)$ can be phrased more generally, as it describes some other pseudo-orthogonal groups as well. It can be summarised in the following proposition:
+
+::: theorem
+Let ${\mathbb X},{\mathbb Y}$ be a pair of division algebras from the set ${\mathbb C},\tilde{{\mathbb C}},{\mathbb H},\tilde{{\mathbb H}},{\mathbb O},\tilde{{\mathbb O}}$, where ${\mathbb C},\tilde{{\mathbb C}}$ are the usual and split complex numbers, and ${\mathbb H}$ and $\tilde{{\mathbb H}}$ are the usual and split quaternions respectively. The matrices taking values in ${\rm End}(({\mathbb X}\otimes{\mathbb Y})^2)$ $$\begin{eqnarray}
+\label{Gammas}
+\Gamma_x = \left( \begin{array}{cc} 0 & L_x\otimes {\mathbb I}\\ L_{\bar{x}}\otimes {\mathbb I}& 0 \end{array}\right), \quad x\in{\rm Im}({\mathbb X}), \qquad
+\Gamma_y = \left( \begin{array}{cc} 0 & -{\mathbb I}\otimes L_y \\ {\mathbb I}\otimes L_{\bar{y}} & 0 \end{array}\right), \quad y\in{\rm Im}({\mathbb Y})
+\end{eqnarray}$$ where $L_x, L_y$ are the operators of left multiplication by $x\in{\rm Im}({\mathbb X}), y\in{\rm Im}({\mathbb Y})$, and bar denotes conjugation in ${\mathbb X},{\mathbb Y}$, satisfy $$\begin{eqnarray}
+\label{cliff-XY-rels}
+\Gamma_x^2=|x|^2 {\mathbb I}, \quad \Gamma_y^2= -|y|^2 {\mathbb I}, \\ \nonumber
+\Gamma_x\Gamma_y + \Gamma_y \Gamma_x=0.
+\end{eqnarray}$$ They thus generate the Clifford algebra of signature that can be symbolically expressed as $$\begin{eqnarray}
+\label{signature}
+| {\rm Im}({\mathbb X})|^2 - | {\rm Im}({\mathbb Y})|^2.
+\end{eqnarray}$$
+:::
+
+A proof is by direct verification.
+
+::: remark
+The construction in Theorem 1 is very closely related to that of $2\times 2$ matrix algebras in [@Barton:2000ki]. Our construction is a subcase of the more general construction in this reference in the sense that larger groups in [@Barton:2000ki] can be obtained by adding to the set of Clifford generators of Theorem 1 two more generators. This adds one positive definite and one negative definite direction. Results in [@Barton:2000ki], see also [@Dray:2014mba], are then reproduced. We will return to this in the main text.
+:::
+
+::: remark
+This construction of the Clifford algebra identifies spinors with $({\mathbb X}\otimes{\mathbb Y})^2$, and thus a single copy of ${\mathbb X}\otimes{\mathbb Y}$ with semi-spinors. This immediately gives a description of the Lie algebra in terms of matrices in ${\rm End}({\mathbb X}\otimes{\mathbb Y})$. This will be described in the main text, for the cases of interest.
+:::
+
+::: remark
+The case of ${\rm Cliff}_{11,3}$ corresponds to ${\mathbb X}={\mathbb O}, {\mathbb Y}=\tilde{{\mathbb O}}$. The split case ${\rm Cliff}_{7,7}$ can be described by both ${\mathbb X}={\mathbb O}, {\mathbb Y}={\mathbb O}$, which corresponds to restricting to the ${\rm Spin}(7)\times{\rm Spin}(7)$ subgroup, as well as by ${\mathbb X}=\tilde{{\mathbb O}}, {\mathbb Y}=\tilde{{\mathbb O}}$, which corresponds to restricting to ${\rm Spin}(3,4)\times{\rm Spin}(4,3)$. Both are useful descriptions and capture two different types of spinor orbits in the $(7,7)$ case.
+:::
+
+::: remark
+Note that there is no way to get the compact case ${\rm Spin}(14)$ by this construction, at least not by keeping the construction real. Indeed, the semi-spinor representations of this group are complex 64-dimensional. One would need to introduce factors of the imaginary unit in one of the two $\Gamma$-matrices to counteract the unavoidable minus sign in ([\[signature\]](#signature){reference-type="ref" reference="signature"}). Allowing for such factors of imaginary unit generalises the construction of Theorem 1 to an even larger set of groups.
+:::
+
+Further implications of the construction of Theorem 1 will be discussed in the main text.
+
+With this result at hand we can identify the semi-spinor representation of ${\rm Spin}(11,3)$, and thus components of one fermion generation of the SM, with ${\mathbb O}\otimes\tilde{{\mathbb O}}$. The Lie algebra of ${\rm Spin}(11,3)$ and thus of its various subgroups of interest can be obtained by taking the commutators of the $\Gamma$-matrices ([\[Gammas\]](#Gammas){reference-type="ref" reference="Gammas"}). This gives an explicit and useful description, as we will further illustrate in the main text.
+
+This gives an ultimate \"kinematic\" unification of all known to us components of fermions of one generation in such an elegant structure as ${\mathbb O}\otimes\tilde{{\mathbb O}}$. But it does not answer the crucial question of any such unification approach: What breaks the big symmetry group such as ${\rm Spin}(11,3)$ to the product of groups we know act on elementary particles in Nature? The important part of this question is what singles out the Lorentz group ${\rm Spin}(1,3)$ that we know plays a very different role from the gauge groups appearing in the Standard Model. Indeed, the group ${\rm Spin}(11,3)$ we have considered mixes the SM gauge group with the transformations from the Lorentz group. We don't know of any such mixed transformations playing any role in our physical theories. So, any \"unification\" scheme that puts together the SM gauge group with the Lorentz group but does not explain how these two factors appear is largely useless.
+
+We do not have a satisfactory answer to these questions, but there are some interesting observations that can be made. Let us first recall the more more conventional GUT scenarios.
+
+In ${\rm Spin}(10)$ unification, all fermionic components of one generation (but not including the Lorentz spinor components) can be elegantly described by a single complex 16-dimensional representation. The question is then what breaks the ${\rm Spin}(10)$ symmetry down to the ones we see in the SM. In all considered models, see e.g. [@DiLuzio:2011mda] for a nice recent review, the symmetry breaking happens in two stages. The first stage is to break ${\rm Spin}(10)$ down to either the Pati-Salam group ${\rm Spin}(6)\times{\rm Spin}(4)$, or down to the Georgi-Glashow group ${\rm SU}(5)$. Only after this one breaks the remaining symmetry down to the SM gauge group, which is then further broken to ${\rm SU}(3)\times{\rm U}(1)$, the unbroken gauge group of the SM. All these breakings are carried out using various Higgs fields, and no Higgs field taking values in a single irreducible representation of ${\rm Spin}(10)$ is sufficient for the purpose.
+
+It is known that the breaking of ${\rm Spin}(10)$ to either the Pati-Salam group ${\rm Spin}(6)\times{\rm Spin}(4)$ or to ${\rm SU}(5)\times{\rm U}(1)={\rm U}(5)$ can be carried out using the Higgs in the ${\bf 210}$ representation, see e.g. the diagram in Section 1.4.5 in [@DiLuzio:2011mda]. Alternatively, this stage of the symmetry breaking can be reformulated by saying that there exists complex structures in the space of ${\rm Spin}(10)$ semi-spinors whose commutants are either the Pati-Salam or ${\rm U}(5)$. Both of these complex structures are closely related to octonions, and can be reformulated using the octonionic language that exists for ${\rm Spin}(10)$, see e.g. [@Bryant] for a description of the octonionic model of ${\rm Spin}(10)$. What matters for our discussion here is that the phenomenologically interesting complex structures that break either to Pati-Salam or to ${\rm U}(5)$ can be both parametrised by a choice of a unit imaginary octonion.
+
+For the case of the complex structure that breaks ${\rm Spin}(10)$ down to the Pati-Salam group this can be explained without any further background. The octonionic model of ${\rm Spin}(10)$ proceeds by identifying 8 of the 10 directions of the Clifford algebra ${\rm Cliff}_{10}$ with octonions, thus leaving out two of the directions as special. There is another direction that is singled out as special, which corresponds to the identity element in ${\mathbb O}$. A choice of a unit imaginary octonion $u\in{\rm Im}({\mathbb O})$ gives yet another special direction. From this data one can easily construct a complex structure on semi-spinors whose commutant is the Pati-Salam group ${\rm Spin}(6)\times{\rm Spin}(4)$. Indeed, the product of any two $\gamma$-matrices in ${\rm Cliff}_{10}$ gives an operator that squares to minus the identity and preserves the space of semi-spinors. However, the commutant of such a complex structure is ${\rm Spin}(8)\times{\rm Spin}(2)$, so this is not what we want. The next in complexity operator that preserves the space of semi-spinors is given by the product of four of the $\gamma$-matrices. However, this squares to plus the identity, and so is not a complex structure. However, the next case is the product of six different $\gamma$'s. This squares to minus the identity, and so gives a complex structure. It breaks ${\rm Spin}(10)$ down to ${\rm Spin}(6)\times{\rm Spin}(4)$. Finally, it can clearly be parametrised by a choice of a unit imaginary octonion $u$. Indeed, as we already discussed, together with $u$ we have four special directions in ${\rm Cliff}_{10}$, and thus also remaining 6 directions. These are the directions in ${\mathbb O}$ that are not in the space ${\rm Span}({\mathbb I},u)$. The product of the corresponding $\gamma$-matrices is the desired complex structure that breaks ${\rm Spin}(10)$ to the Pati-Salam group.
+
+Our main new observation in this paper is that there exist very analogous complex structures on ${\rm Spin}(11,3)$. These complex structures can also be parametrised by a choice of unit imaginary octonions, but now in both ${\mathbb O},\tilde{{\mathbb O}}$. A choice of $u\in {\rm Im}({\mathbb O})$ still singles out 6 of the $\gamma$-matrices in ${\rm Cliff}_{11,3}$, corresponding to the octonions not in ${\rm Span}({\mathbb I},u)\subset {\mathbb O}$. This gives the complex structure $J$. Its commutant in ${\rm Spin}(11,3)$ is ${\rm Spin}(6)\times{\rm Spin}(5,3)$, which is not interesting in itself.
+
+Let us now consider the possibilities that arise because we have the $\tilde{{\mathbb O}}$ factor in our octonionic model for ${\rm Spin}(11,3)$. The relevant Clifford algebra is ${\rm Cliff}_{4,3}$, where the first 4 directions can be referred to as timelike. These are the negative-definite directions of the corresponding quadratic form. Now a choice of a unit imaginary octonion $\tilde{u}\in{\rm Im}(\tilde{{\mathbb O}})$ is a choice of either a timelike or a spacelike direction. Choosing $\tilde{u}$ to be spacelike gives us the complex structure that is given by the product of 6 $\gamma$-matrices not in ${\rm Span}({\mathbb I},\tilde{u})\subset\tilde{{\mathbb O}}$. The commutant of this complex structure in ${\rm Spin}(11,3)$ is then ${\rm Spin}(7,1)\times {\rm Spin}(4,2)$, which does not seem to be interesting for physics.
+
+Let us now consider the case when $\tilde{u}$ is selected to be timelike. In this case the product of 6 $\gamma$-matrices that correspond to directions not in ${\rm Span}({\mathbb I},\tilde{u})\subset\tilde{{\mathbb O}}$ is not a complex structure, as this operator squares to plus the identity. However, now the product of the 4 $\gamma$-matrices that correspond to $\tilde{u}$ and to the 3 spacelike directions in ${\rm Cliff}_{4,3}$ is a complex structure. We shall refer to it as $\tilde{J}$. Its commutant in ${\rm Spin}(11,3)$ is ${\rm Spin}(10)\times{\rm Spin}(1,3)$, which is interesting.
+
+This discussion can be summarised by the following proposition:
+
+::: theorem
+There exist two complex structures $J, \tilde{J}$ on the space of semi-spinors of ${\rm Spin}(11,3)$, one parametrised by a unit imaginary octonion $u\in{\rm Im}({\mathbb O})$, the other parametrised by a unit imaginary octonion $\tilde{u}\in{\rm Im}(\tilde{{\mathbb O}})$ that is **timelike**. Their common commutant in ${\rm Spin}(11,3)$ is the product of the Pati-Salam ${\rm Spin}(6)\times{\rm Spin}(4)$ and Lorentz ${\rm Spin}(1,3)$ groups.
+:::
+
+While it is perhaps not very surprising that complex structures breaking ${\rm Spin}(11,3)$ to Pati-Salam and Lorentz groups exist, we find it striking that both of these are parametrised by the same data -- a unit imaginary octonion in either ${\mathbb O}$ or $\tilde{{\mathbb O}}$. Further, the fact that there are two such natural complex structures is explained by the fact that there exists an ${\mathbb O}\otimes\tilde{{\mathbb O}}$ model for ${\rm Spin}(11,3)$. While this does not yet give a sought mechanism of symmetry breaking from ${\rm Spin}(11,3)$ to the groups that we see in Nature, the similarity of the complex structures $J, \tilde{J}$ suggests that maybe the dynamical mechanism that selects them is one and the same. In any case, the result in Theorem 2 puts the symmetry breaking needed to single out the Lorentz group from ${\rm Spin}(11,3)$ on a very similar footing with the symmetry breaking that is needed to select the Pati-Salam group from ${\rm Spin}(10)$ GUT group. This suggests that unconventional descriptions that \"unify\" the internal (colour, isospin) with the Lorentz spin degrees of freedom should be taken more seriously.
+
+The organisation of the rest of the paper is as follows. We start by reviewing in Section [\[sec:spin7\]](#sec:spin7){reference-type="ref" reference="sec:spin7"} how the group ${\rm Spin}(7)$ is described using the usual octonions. The spinor representation of ${\rm Spin}(7)$ is naturally the octonions ${\mathbb O}$. We also explain here how a natural complex structure $J$ on ${\mathbb O}$ arise from a choice of a unit imaginary octonion, and how the subgroups ${\rm SU}(3)$ and ${\rm U}(1)$ of ${\rm Spin}(7)$ arise in the process. We repeat similar analysis for ${\rm Spin}(4,3)$ in Section [\[sec:spin43\]](#sec:spin43){reference-type="ref" reference="sec:spin43"}. The novelty here is that a new type of complex structure arises, one related to a timelike unit octonion. The commutant of this complex structure $\tilde{J}$ is then the product of the Lorentz ${\rm Spin}(1,3)$ and \"weak\" ${\rm SU}(2)$ gauge groups. We put everything together in Section [\[sec:spin11-3\]](#sec:spin11-3){reference-type="ref" reference="sec:spin11-3"}, where the octonionic model for ${\rm Spin}(11,3)$ is described. We then interrupt our representation theoretic discussion by a review of some aspects of the left/right symmetric extension of the SM in Section [\[sec:left-right\]](#sec:left-right){reference-type="ref" reference="sec:left-right"}. This becomes a very useful starting point when we describe an explicit dictionary between particles and octonions in Section [\[sec:dictionary\]](#sec:dictionary){reference-type="ref" reference="sec:dictionary"}. We then apply the developed octonionic formalism to the problem of characterising the symmetry breaking and possible fermion mass terms. We make a small step in this direction and show how the 3-form field in $\Lambda^3({\mathbb R}^{11,3})$ can be used to break the symmetry down to the product of the SM gauge group, Lorentz group, and ${\rm U}(1)_{B-L}$, which remains unbroken. This Higgs also produces the Dirac mass terms for all the particles. We conclude with a discussion.
+
+[^1]: Note, however, that in this reference, somewhat confusingly, the usual octonion division algebra written in a complex basis is referred to as the split octonion algebra.
+
+[^2]: In the case of ${\rm Spin}(7,7)$ there is also the possibility ${\rm Spin}(3,4)\times{\rm Spin}(4,3)\subset {\rm Spin}(7,7)$.

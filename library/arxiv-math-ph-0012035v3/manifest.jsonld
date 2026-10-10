@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-ph-0012035v3/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "Non-Abelian Stokes theorem in action",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-ph-0012035v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-ph-0012035v3",
   "contains": [
     "library/arxiv-math-ph-0012035v3/sections/sec-000",
     "library/arxiv-math-ph-0012035v3/sections/sec-001",
@@ -48,8 +53,17 @@
     "library/arxiv-math-ph-0012035v3/sections/sec-039"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math-ph/0012035&metadataPrefix=arXiv), submitted 2002-01-16, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-math-ph-0012035v3",
+    "title_source": "slug",
     "source_file": "0012035v3.pdf",
     "source_sha256": "06a4c8096c8ebb10eb2103766fb3e63e006a4953be24ae3641ec659141f9d0d6",
     "pages": 46,

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2111.04763v2/blocks/prose-sec-014",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2111.04763v2/blocks/prose-sec-014",
   "kind": "prose",
   "title": "An analytic extension of the Kashaev invariant and the colored Jones polynomial",
   "pageStart": 52,
   "pageEnd": 56,
   "text": "../sections/sec-014-47-an-analytic-extension-of-the-kashaev-invarian.md",
-  "derivedFrom": "library/arxiv-2111.04763v2/manifest",
-  "sourceDocument": "library/arxiv-2111.04763v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2111.04763v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2111.04763v2/manifest.jsonld",
   "provenance": "ingested"
 }

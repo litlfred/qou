@@ -1,0 +1,1 @@
+Everycrystallographicgrouphasaﬁnite-indextranslation

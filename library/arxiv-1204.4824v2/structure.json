@@ -5,7 +5,8 @@
   "file": "1204.4824v2.pdf",
   "sha256": "bf01cbaa5a8712c82f1f20fb5c85ce796468cf5e67b2968e1fca5ab18bb77d3d",
   "bytes": 2982423,
-  "pages": 87
+  "pages": 87,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Spectral networks",
   "authors_raw": "Davide Gaiotto, 1 Gregory W. Moore 2 and Andrew Neitzke 3",
-  "abstract": "We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules. Spec- tral networks arise naturally in four-dimensionalN = 2 theories coupled to surface defects, particularly the theories of class S. In these theories spectral networks provide a useful tool for the computation of BPS degeneracies: the network directly determines the degen- eracies of solitons living on the surface defect, which in turn determine the degeneracies for particles living in the 4d bulk. Spectral networks also lead to a new map between ﬂat GL(K, C) connections on a two-dimensional surface C and ﬂat abelian connections on an appropriate branched cover Σ of C. This construction produces natural coordinate sys- tems on moduli spaces of ﬂat GL(K, C) connections on C, which we conjecture are cluster coordinate systems. arXiv:1204.4824v2 [hep-th] 6 Oct 2013",
+  "abstract": "We introduce new geometric objects called spectral networks. Spectral net- works are networks of trajectories on Riemann surfaces obeying certain local rules. Spec- tral networks arise naturally in four-dimensionalN = 2 theories coupled to surface defects, particularly the theories of class S. In these theories spectral networks provide a useful tool for the computation of BPS degeneracies: the network directly determines the degen- eracies of solitons living on the surface defect, which in turn determine the degeneracies for particles living in the 4d bulk. Spectral networks also lead to a new map between \ufb02at GL(K, C) connections on a two-dimensional surface C and \ufb02at abelian connections on an appropriate branched cover \u03a3 of C. This construction produces natural coordinate sys- tems on moduli spaces of \ufb02at GL(K, C) connections on C, which we conjecture are cluster coordinate systems. arXiv:1204.4824v2 [hep-th] 6 Oct 2013",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20131008002801Z",
@@ -984,6 +985,286 @@
   "likely_scanned": false,
   "toc_entries": 62,
   "sections": 51,
-  "chars_total": 200844
+  "chars_total": 200844,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "swn-paper.tex",
+   "tex_sections": 10,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction-and-summary",
+     "title": "Introduction and summary",
+     "prose_ratio": 0.975,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-a-brief-review-of-theories-of-class-s",
+     "title": "A brief review of theories of class S",
+     "prose_ratio": 0.986,
+     "coverage_ratio": 0.973,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-geometric-description-of-bps-states",
+     "title": "Geometric description of BPS states",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-31-4d-bps-states",
+     "title": "4d BPS states",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-32-solitons",
+     "title": "Solitons",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-33-framed-2d-4d-bps-states",
+     "title": "Framed 2d-4d BPS states",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-34-enhanced-degeneracies",
+     "title": "Enhanced degeneracies",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-35-a-problem-of-signs",
+     "title": "A problem of signs",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-4-basics-of-framed-2d-4d-indices",
+     "title": "Basics of framed 2d-4d indices",
+     "prose_ratio": 0.082,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-41-generating-functions-of-framed-2d-4d-indices",
+     "title": "Generating functions of framed 2d-4d indices",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-42-formal-products-and-composition",
+     "title": "Formal products and composition",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-43-the-spectral-network-w",
+     "title": "The spectral network W",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-51-walls-as-trajectories",
+     "title": "Walls as trajectories",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-52-joints-and-wall-crossing-for",
+     "title": "Joints and wall-crossing for",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-56-homotopy-invariance",
+     "title": "Homotopy invariance",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-6-varying",
+     "title": "Varying",
+     "prose_ratio": 0.097,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-61-endpoints-crossing-s-walls",
+     "title": "Endpoints crossing S-walls",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-62-k-walls-and-the-degenerate-spectral-networks",
+     "title": "K-walls and the degenerate spectral networks Wc",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-64-4d-bps-degeneracies",
+     "title": "4d BPS degeneracies",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-65-wall-crossing-formula",
+     "title": "Wall-crossing formula",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-66-proof-of-the-k-wall-formula",
+     "title": "Proof of the K-wall formula",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-7-examples-of-k-walls",
+     "title": "Examples of K-walls",
+     "prose_ratio": 0.021,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-022-71-saddle-connections",
+     "title": "Saddle connections",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-72-closed-loops",
+     "title": "Closed loops",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-73-three-string-webs",
+     "title": "Three-string webs",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-74-the-setting-sun",
+     "title": "The setting sun",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-8-some-bps-spectra",
+     "title": "Some BPS spectra",
+     "prose_ratio": 0.108,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-027-81-the-pentagon-theory-revisited",
+     "title": "The pentagon theory revisited",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-83-the-theory-of-9-free-hypermultiplets",
+     "title": "The theory of 9 free hypermultiplets",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-9-general-spectral-networks-and-path-lifting",
+     "title": "General spectral networks and path lifting",
+     "prose_ratio": 0.419,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-030-92-canonical-examples-the-w",
+     "title": "Canonical examples: the W",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-93-soliton-content",
+     "title": "Soliton content",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-94-path-lifting",
+     "title": "Path lifting",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-101-nonabelianization",
+     "title": "Nonabelianization",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-103-the-nonabelianization-map",
+     "title": "The nonabelianization map",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-104-holomorphic-symplectic-structures",
+     "title": "Holomorphic symplectic structures",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-105-dimension-counts",
+     "title": "Dimension counts",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-106-equivalence-of-spectral-networks",
+     "title": "Equivalence of spectral networks",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-038-107-a-picture-of-the-set-of-all-spectral-network",
+     "title": "A picture of the set of all spectral networks",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-039-108-coordinate-systems-and-a-cluster-conjecture",
+     "title": "Coordinate systems and a cluster conjecture",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-109-wkb-asymptotics",
+     "title": "WKB asymptotics",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-a-joint-rules-for-two-way-streets",
+     "title": "A Joint rules for two-way streets",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-042-a1-rules-for-soliton-degeneracies",
+     "title": "A.1 Rules for soliton degeneracies",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-043-a2-joint-rules-for-soliton-sets",
+     "title": "A.2 Joint rules for soliton sets",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-044-b-a-categorical-approach",
+     "title": "B A categorical approach",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-045-b1-the-ring-of-a-category",
+     "title": "B.1 The ring of a category",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-046-b2-categories-of-paths",
+     "title": "B.2 Categories of paths",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-047-b3-the-winding-ideal",
+     "title": "B.3 The winding ideal",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-048-b4-formal-parallel-transport-for-the-path-groupo",
+     "title": "B.4 Formal parallel transport for the path groupoid",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-049-b5-cocycles",
+     "title": "B.5 Cocycles",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-050-c-convention-convention",
+     "title": "C Convention convention",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

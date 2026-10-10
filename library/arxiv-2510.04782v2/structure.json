@@ -5,7 +5,8 @@
   "file": "2510.04782v2.pdf",
   "sha256": "591d0bdf2c48d12f91d6c9a4beec32978bc1e9a9448b04ef0efdc4a84315373b",
   "bytes": 1400591,
-  "pages": 82
+  "pages": 82,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "q-Hodge complexes over the Habiro ring",
   "authors_raw": "October 9, 2025",
-  "abstract": "— Peter Scholze has raised the question whether some variant of the q-de Rham complex is already defined over theHabiro ringH := limm∈N Z[q]∧ (qm−1). Such a variant should then be called (algebraic) Habiro cohomology. We show that algebraic Habiro cohomology exists whenever theq-de Rham complex can be equipped with aq-Hodge filtration: aq-deformation of the Hodge filtration, subject to some reasonable conditions. To any suchq-Hodge filtration we associate a small modification of theq-de Rham complex, which we call theq-Hodge complex, and show that it descends canonically to the Habiro ring. This construction recovers and generalises theHabiro ring of a number fieldfrom [GSWZ24] and is closely related to the q-de Rham–Witt complexes from [Wag24] as well as, conjecturally, to Scholze’sanalytic Habiro stack[Sch25]. While there’s no canonicalq-Hodge filtration in general, we show that it does exist in many cases of interest. For example, for a smooth schemeX over Z, the q-de Rham complexq9ΩX/Z can be equipped with a canonicalq-Hodge filtration as soon as one inverts all primesp⩽ dim(X/Z).",
+  "abstract": "\u2014 Peter Scholze has raised the question whether some variant of the q-de Rham complex is already defined over theHabiro ringH := limm\u2208N Z[q]\u2227 (qm\u22121). Such a variant should then be called (algebraic) Habiro cohomology. We show that algebraic Habiro cohomology exists whenever theq-de Rham complex can be equipped with aq-Hodge filtration: aq-deformation of the Hodge filtration, subject to some reasonable conditions. To any suchq-Hodge filtration we associate a small modification of theq-de Rham complex, which we call theq-Hodge complex, and show that it descends canonically to the Habiro ring. This construction recovers and generalises theHabiro ring of a number fieldfrom [GSWZ24] and is closely related to the q-de Rham\u2013Witt complexes from [Wag24] as well as, conjecturally, to Scholze\u2019sanalytic Habiro stack[Sch25]. While there\u2019s no canonicalq-Hodge filtration in general, we show that it does exist in many cases of interest. For example, for a smooth schemeX over Z, the q-de Rham complexq9\u2126X/Z can be equipped with a canonicalq-Hodge filtration as soon as one inverts all primesp\u2a7d dim(X/Z).",
   "docinfo": {
    "Author": "Ferdinand Wagner",
    "Creator": "arXiv GenPDF (tex2pdf:e76afa9)",
@@ -68,7 +69,7 @@
   },
   {
    "level": 1,
-   "title": "Habiro rings of étale extensions",
+   "title": "Habiro rings of \u00e9tale extensions",
    "page": 13,
    "source": "outline",
    "number": "2"
@@ -82,7 +83,7 @@
   },
   {
    "level": 2,
-   "title": "Habiro rings of étale extensions",
+   "title": "Habiro rings of \u00e9tale extensions",
    "page": 15,
    "source": "outline",
    "number": "2.2"
@@ -110,14 +111,14 @@
   },
   {
    "level": 2,
-   "title": "Deformations of q-de Rham–Witt complexes",
+   "title": "Deformations of q-de Rham\u2013Witt complexes",
    "page": 28,
    "source": "outline",
    "number": "3.3"
   },
   {
    "level": 2,
-   "title": "The Nygaard filtration on q-de Rham–Witt complexes",
+   "title": "The Nygaard filtration on q-de Rham\u2013Witt complexes",
    "page": 32,
    "source": "outline",
    "number": "3.4"
@@ -250,9 +251,9 @@
    "n_words": 1100
   },
   {
-   "id": "sec-004-2-habiro-rings-of-étale-extensions",
+   "id": "sec-004-2-habiro-rings-of-\u00e9tale-extensions",
    "number": "2",
-   "title": "Habiro rings of étale extensions",
+   "title": "Habiro rings of \u00e9tale extensions",
    "level": 1,
    "page_start": 13,
    "page_end": 13,
@@ -270,9 +271,9 @@
    "n_words": 321
   },
   {
-   "id": "sec-006-22-habiro-rings-of-étale-extensions",
+   "id": "sec-006-22-habiro-rings-of-\u00e9tale-extensions",
    "number": "2.2",
-   "title": "Habiro rings of étale extensions",
+   "title": "Habiro rings of \u00e9tale extensions",
    "level": 2,
    "page_start": 14,
    "page_end": 25,
@@ -292,7 +293,7 @@
   {
    "id": "sec-008-33-deformations-of-q-de-rhamwitt-complexes",
    "number": "3.3",
-   "title": "Deformations of q-de Rham–Witt complexes",
+   "title": "Deformations of q-de Rham\u2013Witt complexes",
    "level": 2,
    "page_start": 28,
    "page_end": 40,
@@ -365,6 +366,100 @@
   "likely_scanned": false,
   "toc_entries": 25,
   "sections": 15,
-  "chars_total": 217253
+  "chars_total": 217253,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "q-Habiro_arXiv.tex",
+   "tex_sections": 4,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.025,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-habiro-cohomology",
+     "title": "Habiro cohomology",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-12-q-hodge-filtrations-and-habiro-descent",
+     "title": "q-Hodge filtrations and Habiro descent",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-14-organisation-of-this-paper",
+     "title": "Organisation of this paper",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-2-habiro-rings-of-\u00e9tale-extensions",
+     "title": "Habiro rings of \u00e9tale extensions",
+     "prose_ratio": 0.089,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-21-a-general-descent-principle",
+     "title": "A general descent principle",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-22-habiro-rings-of-\u00e9tale-extensions",
+     "title": "Habiro rings of \u00e9tale extensions",
+     "prose_ratio": 0.874,
+     "coverage_ratio": 0.589,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-32-the-main-result",
+     "title": "The main result",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-33-deformations-of-q-de-rhamwitt-complexes",
+     "title": "Deformations of q-de Rham\u2013Witt complexes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-35-the-twisted-q-hodge-filtration",
+     "title": "The twisted q-Hodge filtration",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-38-habiro-descent-in-derived-commutative-algebra",
+     "title": "Habiro descent in derived commutative algebras",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-4-functorial-q-hodge-filtrations",
+     "title": "Functorial q-Hodge filtrations",
+     "prose_ratio": 0.067,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-41-functorial-q-hodge-filtrations-away-from-smal",
+     "title": "Functorial q-Hodge filtrations away from small primes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-42-functorial-q-hodge-filtrations-for-certain-qu",
+     "title": "Functorial q-Hodge filtrations for certain quasi-regular quotients",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

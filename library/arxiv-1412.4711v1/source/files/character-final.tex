@@ -1,0 +1,134 @@
+\documentclass[11pt]{amsart}
+
+\usepackage{url}
+\usepackage[utf8]{inputenc}
+\usepackage{asymptote}
+\usepackage{latexsym,amssymb,amsmath}
+\usepackage{mathrsfs}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amssymb,amscd}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{psfrag}
+\usepackage{comment}
+\usepackage[all]{xy}\xyoption{rotate}\xyoption{pdf}
+
+\RequirePackage{graphics}
+\def\Frac#1#2{{\displaystyle{{#1} \overwithdelims.. {#2}}}}
+\def\cP{{\mathcal P}}
+\def\eps{\varepsilon}
+\def\abs#1{\vert #1 \vert}
+
+\usepackage{bbm}
+\usepackage[english]{babel}
+
+\usepackage[left,modulo]{lineno}
+%%%%%%%%%% Start TeXmacs macros
+\catcode`\<=\active \def<{
+\fontencoding{T1}\selectfont\symbol{60}\fontencoding{\encodingdefault}}
+\catcode`\>=\active \def>{
+\fontencoding{T1}\selectfont\symbol{62}\fontencoding{\encodingdefault}}
+\catcode`\|=\active \def|{
+\fontencoding{T1}\selectfont\symbol{124}\fontencoding{\encodingdefault}}
+\newcommand{\nocomma}{}
+\newcommand{\nosymbol}{}
+\newcommand{\tmem}[1]{{\em #1\/}}
+\newcommand{\tmop}[1]{\ensuremath{\operatorname{#1}}}
+\newcommand{\tmtextbf}[1]{{\bfseries{#1}}}
+\newcommand{\tmtextit}[1]{{\itshape{#1}}}
+\newtheorem{theorem}{Theorem}
+%%%%%%%%%% End TeXmacs macros
+
+
+\newtheorem{prop}{Proposition}
+\newtheorem{lem}[theorem]{Lemma}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{conj}[theorem]{Conjecture}
+\newtheorem{qn}{Question}
+\newtheorem{pro}{Proposition}[section]
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{remk}{Remark}[section]
+\newcommand\bC{\mathbb{C}}
+\newcommand\bR{\mathbb{R}}
+\newcommand\bZ{\mathbb{Z}}
+\newcommand\SL{\textrm{SL}}
+\newcommand\PSL{\textrm{PSL}}
+\newcommand\SO{\textrm{SO}}
+\newcommand\PGL{\textrm{PGL}}
+\newcommand\Geight{\Gamma_{8}}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\Rep}{\mathrm{Rep}}
+\newcommand{\cZ}{{\mathcal Z}}
+
+
+\newcommand{\ind}{\setlength{\parindent}{2em}}
+\newcommand{\noind}{\setlength{\parindent}{0em}}
+%\renewcommand{\(}{$ \:}
+%\renewcommand{\)}{\: $}
+
+%\DeclareSymbolFont{mathbold}{OML}{hlcm}{b}{n}
+%\DeclareSymbolFontAlphabet{\mathbf}{mathbold}
+
+\def\bfi#1#2{\fontsize{#1}{#2}\fontseries{b}\fontshape{it}\selectfont}
+%\def\bfsc{\fontseries{b}\fontshape{sc}\selectfont}
+\def\bc{\,,\,}
+\def\h{\hspace{.5em}}
+\def\hm{\hspace{-.25em}}
+\def\v{\vspace{.5ex}}
+\def\vv{\vspace{1ex}}
+\def\vvv{\vspace{2ex}}
+\def\vvvv{\vspace{4ex}}
+\def\bs{\,\backslash\,}
+
+%\renewcommand{\familydefault}{hlh}
+\def\dis{\displaystyle}
+
+\def\Int{\operatorname{Int}}
+\def\Bd{\operatorname{Bd}}
+\def\phm{\phantom{\minus}}
+%\def\cZ{{\cal Z}}
+
+
+%\def\tr{\mathrm{tr}}
+\def\phm{\phantom{m}}
+
+\newcommand{\renvoi}[1]{$\blacksquare$\marginpar{#1}}
+
+\def\square{\hfill${\vcenter{\vbox{\hrule height.4pt \hbox{\vrule width.4pt
+height7pt \kern7pt \vrule width.4pt} \hrule height.4pt}}}$}
+
+\newenvironment{pf}{{\it Proof.}\quad}{\square \vskip 12pt}
+
+\author{E. Falbel, A. Guilloux, P.-V. Koseleff,\\ F. Rouillier and M. Thistlethwaite}
+%\thanks{This work was supported in part by the ANR through the project "Structures G\'eom\'etriques et Triangulations".}
+%\address{Institut de Math\'ematiques de Jussieu \\
+%Unit\'e Mixte de Recherche 7586 du CNRS \\
+%CNRS UMR 7586 and INRIA EPI-OURAGAN \\
+%Universit\'e Pierre et Marie Curie \\
+%4, place Jussieu 75252 Paris Cedex 05, France \\}
+
+
+\begin{document}
+
+\title[] {Character varieties for $\SL(3,\bC)$: the figure eight knot. }
+
+\begin{abstract}
+We give a description of several representation varieties of the fundamental group of the complement of the figure eight knot in
+$\PGL(3,\bC)$ or $\PSL(3,\bC)$.  We  obtain a description of the projection of the representation variety into
+the character variety of the boundary torus into $\SL(3,\bC)$. 
+\end{abstract}
+
+
+\maketitle
+%\linenumbers
+%\modulolinenumbers[5]
+\input{character-11}
+%\input{character-2}
+\input{character-2new.tex}
+\input{character-3_mbt}
+%\input{character-4}
+\end{document}

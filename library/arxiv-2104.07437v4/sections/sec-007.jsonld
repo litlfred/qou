@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2104.07437v4/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Spectral trace and its factorisation",
+  "pageStart": 20,
+  "pageEnd": 24,
+  "contains": [
+    "library/arxiv-2104.07437v4/blocks/prose-sec-007"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2104.07437v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2104.07437v4/manifest.jsonld",
+  "provenance": "ingested"
+}

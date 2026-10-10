@@ -5,7 +5,8 @@
   "file": "0511710v2.pdf",
   "sha256": "f88f50d45908049080d3a545857aca9b09164367dbf73ecc5512c279bfbef159",
   "bytes": 358853,
-  "pages": 29
+  "pages": 29,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Higher gauge theory",
   "authors_raw": "Riverside, CA 92521, USA",
-  "abstract": "Just as gauge theory describes the parallel transport of poi nt particles using connections on bundles, higher gauge theory describe s the parallel transport of 1-dimensional objects (e.g. strings) using 2- connections on 2-bundles. A 2-bundle is a categoriﬁed version of a bundle: t hat is, one where the ﬁber is not a manifold but a category with a suitable smooth structure. Where gauge theory uses Lie groups and Lie algebr as, higher gauge theory uses their categoriﬁed analogues: Lie 2-group s and Lie 2- algebras. We describe a theory of 2-connections on principa l 2-bundles and explain how this is related to Breen and Messing’s theory of con- nections on nonabelian gerbes. The distinctive feature of o ur theory is that a 2-connection allows parallel transport along paths a nd surfaces in a parametrization-independent way. In terms of Breen and Messing’s framework, this requires that the ‘fake curvature’ must van ish. In this paper we summarize the main results of our theory without pro ofs.",
+  "abstract": "Just as gauge theory describes the parallel transport of poi nt particles using connections on bundles, higher gauge theory describe s the parallel transport of 1-dimensional objects (e.g. strings) using 2- connections on 2-bundles. A 2-bundle is a categori\ufb01ed version of a bundle: t hat is, one where the \ufb01ber is not a manifold but a category with a suitable smooth structure. Where gauge theory uses Lie groups and Lie algebr as, higher gauge theory uses their categori\ufb01ed analogues: Lie 2-group s and Lie 2- algebras. We describe a theory of 2-connections on principa l 2-bundles and explain how this is related to Breen and Messing\u2019s theory of con- nections on nonabelian gerbes. The distinctive feature of o ur theory is that a 2-connection allows parallel transport along paths a nd surfaces in a parametrization-independent way. In terms of Breen and Messing\u2019s framework, this requires that the \u2018fake curvature\u2019 must van ish. In this paper we summarize the main results of our theory without pro ofs.",
   "docinfo": {
    "Producer": "GPL Ghostscript 10.01.2",
    "CreationDate": "D:20241126163552-05'00'",
@@ -56,14 +57,14 @@
   },
   {
    "level": 1,
-   "title": "If φ: C → X is a plot in X, and f : C′ → C is a smooth map between",
+   "title": "If \u03c6: C \u2192 X is a plot in X, and f : C\u2032 \u2192 C is a smooth map between",
    "page": 9,
    "source": "inferred",
    "number": "1"
   },
   {
    "level": 1,
-   "title": "If iα : Cα → C is an open cover of a convex set C by convex subsets Cα ,",
+   "title": "If i\u03b1 : C\u03b1 \u2192 C is an open cover of a convex set C by convex subsets C\u03b1 ,",
    "page": 9,
    "source": "inferred",
    "number": "2"
@@ -116,9 +117,9 @@
    "n_words": 657
   },
   {
-   "id": "sec-003-1-if-φ-c-x-is-a-plot-in-x-and-f-c-c-is-a-smooth",
+   "id": "sec-003-1-if-\u03c6-c-x-is-a-plot-in-x-and-f-c-c-is-a-smooth",
    "number": "1",
-   "title": "If φ: C → X is a plot in X, and f : C′ → C is a smooth map between",
+   "title": "If \u03c6: C \u2192 X is a plot in X, and f : C\u2032 \u2192 C is a smooth map between",
    "level": 1,
    "page_start": 9,
    "page_end": 9,
@@ -126,9 +127,9 @@
    "n_words": 11
   },
   {
-   "id": "sec-004-2-if-iα-cα-c-is-an-open-cover-of-a-convex-set-c",
+   "id": "sec-004-2-if-i\u03b1-c\u03b1-c-is-an-open-cover-of-a-convex-set-c",
    "number": "2",
-   "title": "If iα : Cα → C is an open cover of a convex set C by convex subsets Cα ,",
+   "title": "If i\u03b1 : C\u03b1 \u2192 C is an open cover of a convex set C by convex subsets C\u03b1 ,",
    "level": 1,
    "page_start": 9,
    "page_end": 27,
@@ -161,6 +162,58 @@
   "likely_scanned": false,
   "toc_entries": 7,
   "sections": 7,
-  "chars_total": 52646
+  "chars_total": 52646,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "higher.tex",
+   "tex_sections": 4,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.971,
+     "coverage_ratio": 0.994,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-2-internalization",
+     "title": "Internalization",
+     "prose_ratio": 0.47,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-1-if-\u03c6-c-x-is-a-plot-in-x-and-f-c-c-is-a-smooth",
+     "title": "If \u03c6: C \u2192 X is a plot in X, and f : C\u2032 \u2192 C is a smooth map between",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-2-if-i\u03b1-c\u03b1-c-is-an-open-cover-of-a-convex-set-c",
+     "title": "If i\u03b1 : C\u03b1 \u2192 C is an open cover of a convex set C by convex subsets C\u03b1 ,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-acknowledgements",
+     "title": "Acknowledgements",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

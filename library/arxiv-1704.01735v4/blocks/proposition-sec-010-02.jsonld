@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1704.01735v4/blocks/proposition-sec-010-02",
+  "kind": "proposition",
+  "title": "see [35], Proposition 2.5",
+  "pageStart": 13,
+  "pageEnd": 21,
+  "text": "proposition-sec-010-02.md",
+  "derivedFrom": "library/arxiv-1704.01735v4/sections/sec-010",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1704.01735v4/manifest.jsonld",
+  "provenance": "ingested"
+}

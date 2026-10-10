@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2205.01282v2/blocks/lemma-sec-008-02",
+  "kind": "lemma",
+  "title": "[AM22, p. 743]",
+  "pageStart": 9,
+  "pageEnd": 11,
+  "text": "lemma-sec-008-02.md",
+  "derivedFrom": "library/arxiv-2205.01282v2/sections/sec-008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2205.01282v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -7,7 +7,8 @@
   "bytes": 392199,
   "pages": 26,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -444,6 +445,134 @@
   "likely_scanned": false,
   "toc_entries": 29,
   "sections": 20,
-  "chars_total": 81742
+  "chars_total": 81742,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "HLLY-June-2023.tex",
+   "tex_sections": 9,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.776,
+     "coverage_ratio": 0.983,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-21-the-quantum-group",
+     "title": "The quantum group",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-acknowledgement",
+     "title": "Acknowledgement",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-003-2-background-on-quantum-groups",
+     "title": "Background on quantum groups",
+     "prose_ratio": 0.534,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-22-braid-group-actions-on-integrable-representat",
+     "title": "Braid group actions on integrable representations of U_q(g).",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-31-notation",
+     "title": "Notation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-33-crystals",
+     "title": "Crystals",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-35-the-categorical-braid-group-action",
+     "title": "The categorical braid group action",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-4-perverse-equivalences",
+     "title": "Perverse equivalences",
+     "prose_ratio": 0.741,
+     "coverage_ratio": 0.927,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-42-derived-categories-of-graded-abelian-categori",
+     "title": "Derived categories of graded abelian categories",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-5-some-commutation-relations",
+     "title": "Some commutation relations",
+     "prose_ratio": 0.56,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-52-marked-words",
+     "title": "Marked words",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-71-cactus-groups",
+     "title": "Cactus groups",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-7-crystalising-the-braid-group-action",
+     "title": "Crystalising the braid group action",
+     "prose_ratio": 0.536,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-72-the-cactus-group-action-arising-from-rickard",
+     "title": "The cactus group action arising from Rickard complexes",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-73-reconciling-the-two-cactus-group-actions",
+     "title": "Reconciling the two cactus group actions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-8-examples-and-applications",
+     "title": "Examples and Applications",
+     "prose_ratio": 0.653,
+     "coverage_ratio": 0.969,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-017-82-type-a-combinatorics",
+     "title": "Type A combinatorics",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

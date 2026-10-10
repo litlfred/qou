@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1109.3255v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1109.3255v2 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1109.3255v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1109.3255&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1109.3255v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/1109.3255v2",
+    "content_type": "application/gzip",
+    "sha256": "cee827dfb2740d5a344dd8305c5d15d3b241eafbc7a6a8ba936e3f64cb11ec9c",
+    "bytes": 1973119,
+    "fetched": "2026-10-10T15:05:30+00:00",
+    "files": [
+      {
+        "path": "source/files/cp2-conic-line.bbl",
+        "role": "bbl",
+        "sha256": "eb69ad192cb755d0aa0cb72f01153c91d7ced5053662812a1698d187e90ff9d7",
+        "bytes": 9433
+      },
+      {
+        "path": "source/files/cp2-conic-line.sty",
+        "role": "sty",
+        "sha256": "14f0c6198c2bc1e1870cf4842f5eaa5cefa8e2bc4c47e947408f8858b3647ac3",
+        "bytes": 3039
+      },
+      {
+        "path": "source/files/cp2-conic-line.tex",
+        "role": "tex",
+        "sha256": "d021bb695eaaf20b4ed044ba677e58b94c55841c5613cfc04e72207074715c4d",
+        "bytes": 305906
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

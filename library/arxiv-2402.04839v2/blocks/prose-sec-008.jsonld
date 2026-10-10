@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-2402.04839v2/blocks/prose-sec-008",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-2402.04839v2/blocks/prose-sec-008",
   "kind": "prose",
   "title": "Upper bounds from surgery descriptions or triangulations",
   "pageStart": 8,
   "pageEnd": 11,
   "text": "../sections/sec-008-upper-bounds-from-surgery-descriptions-or-triang.md",
-  "derivedFrom": "library/arxiv-2402.04839v2/manifest",
-  "sourceDocument": "library/arxiv-2402.04839v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2402.04839v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2402.04839v2/manifest.jsonld",
   "provenance": "ingested"
 }

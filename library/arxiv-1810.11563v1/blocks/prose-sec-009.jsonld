@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1810.11563v1/blocks/prose-sec-009",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1810.11563v1/blocks/prose-sec-009",
   "kind": "prose",
   "title": "The Second Law of Quantum Complexity",
   "pageStart": 26,
   "pageEnd": 30,
   "text": "../sections/sec-009-9-the-second-law-of-quantum-complexity.md",
-  "derivedFrom": "library/arxiv-1810.11563v1/manifest",
-  "sourceDocument": "library/arxiv-1810.11563v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1810.11563v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1810.11563v1/manifest.jsonld",
   "provenance": "ingested"
 }

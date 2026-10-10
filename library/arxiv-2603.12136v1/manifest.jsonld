@@ -1,0 +1,65 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2603.12136v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Folding Mixed-Integer Linear Programs and Reflection Symmetries",
+  "contains": [
+    "library/arxiv-2603.12136v1/sections/sec-000",
+    "library/arxiv-2603.12136v1/sections/sec-001",
+    "library/arxiv-2603.12136v1/sections/sec-002",
+    "library/arxiv-2603.12136v1/sections/sec-003",
+    "library/arxiv-2603.12136v1/sections/sec-004",
+    "library/arxiv-2603.12136v1/sections/sec-005",
+    "library/arxiv-2603.12136v1/sections/sec-006",
+    "library/arxiv-2603.12136v1/sections/sec-007",
+    "library/arxiv-2603.12136v1/sections/sec-008",
+    "library/arxiv-2603.12136v1/sections/sec-009",
+    "library/arxiv-2603.12136v1/sections/sec-010",
+    "library/arxiv-2603.12136v1/sections/sec-011",
+    "library/arxiv-2603.12136v1/sections/sec-012",
+    "library/arxiv-2603.12136v1/sections/sec-013",
+    "library/arxiv-2603.12136v1/sections/sec-014",
+    "library/arxiv-2603.12136v1/sections/sec-015",
+    "library/arxiv-2603.12136v1/sections/sec-016",
+    "library/arxiv-2603.12136v1/sections/sec-017",
+    "library/arxiv-2603.12136v1/sections/sec-018",
+    "library/arxiv-2603.12136v1/sections/sec-019",
+    "library/arxiv-2603.12136v1/sections/sec-020",
+    "library/arxiv-2603.12136v1/sections/sec-021",
+    "library/arxiv-2603.12136v1/sections/sec-022"
+  ],
+  "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2603.12136&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2603.12136v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2603.12136v1.pdf",
+    "source_sha256": "e9c50616344b24e0605976affa8f5d4bb6b9baad038df3216f4ef412ae4f8884",
+    "pages": 70,
+    "arxiv": {
+      "id": "2603.12136",
+      "version": "1",
+      "primary_class": "math.OC",
+      "stamp_date": "12 Mar 2026"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

@@ -6,7 +6,8 @@
   "sha256": "b47ca7d1cf7b44be8ddad2be40c75dc8299d50c112dbedb64078d8f5cbb4341e",
   "bytes": 3587244,
   "pages": 47,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -836,6 +837,242 @@
   "likely_scanned": false,
   "toc_entries": 52,
   "sections": 43,
-  "chars_total": 62211
+  "chars_total": 62211,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Gentle.tex",
+   "tex_sections": 7,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.113,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-declaration-of-intent",
+     "title": "Declaration of intent",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-13-acknowledgements",
+     "title": "Acknowledgements",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-2-classical-level-coxeter-systems",
+     "title": "Classical level: Coxeter systems",
+     "prose_ratio": 0.159,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-22-baby-examples",
+     "title": "Baby examples",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-24-generalizing-the-baby-examples-tesselations",
+     "title": "Generalizing the baby examples: tesselations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-241-tesselations-of-the-euclidean-plane",
+     "title": "Tesselations of the Euclidean plane",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-242-tesselations-of-the-hyperbolic-plane",
+     "title": "Tesselations of the hyperbolic plane",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-25-generalizing-the-baby-examples-more-dimension",
+     "title": "Generalizing the baby examples: more dimensions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-26-more-examples",
+     "title": "More examples",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-27-bruhat-order-and-an-important-property",
+     "title": "Bruhat order and an important property",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-3-quantum-level-hecke-algebras",
+     "title": "Quantum level: Hecke algebras",
+     "prose_ratio": 0.326,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-32-calculations-of-kl-bases-in-examples",
+     "title": "Calculations of KL bases in examples",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-321-baby-example-a",
+     "title": "Baby example A",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-322-baby-example-b",
+     "title": "Baby example B",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-323-example-c",
+     "title": "Example C",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-324-example-d",
+     "title": "Example D",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-331-existence",
+     "title": "Existence",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-332-uniqueness",
+     "title": "Uniqueness",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-34-our-favorite-open-questions-about-hecke-algeb",
+     "title": "Our favorite open questions about Hecke algebras",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-4-categorical-level-in-the-baby-example-a",
+     "title": "Categorical level in the baby example A",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-021-41-the-objects-soergel-bimodules",
+     "title": "The objects: Soergel bimodules",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-42-stability-of-soergel-bimodules",
+     "title": "Stability of Soergel bimodules",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-421-the-crucial-phenomena",
+     "title": "The crucial phenomena",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-441-step-1",
+     "title": "Step 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-442-step-2",
+     "title": "Step 2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-451-indecomposables",
+     "title": "Indecomposables",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-452-how-to-produce-an-algebra-from-soergel-bimod",
+     "title": "How to produce an algebra from Soergel bimodules",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-453-recovering-the-hecke-algebra",
+     "title": "Recovering the Hecke algebra",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-5-soergel-bimodules-and-light-leaves-in-ranks-1",
+     "title": "Soergel bimodules and light leaves in ranks 1 and 2",
+     "prose_ratio": 0.126,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-030-51-soergel-category-b-for-any-coxeter-system-ove",
+     "title": "Soergel category B for any Coxeter system over R",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-52-drawing-morphisms-one-color",
+     "title": "Drawing morphisms: one color",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-53-one-color-light-leaves",
+     "title": "One color light leaves",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-54-two-colors-light-leaves",
+     "title": "Two colors light leaves",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-6-light-leaves-in-general",
+     "title": "Light leaves in general",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-035-61-adjunction",
+     "title": "Adjunction",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-62-a-new-morphism",
+     "title": "A new morphism",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-622-examples",
+     "title": "Examples",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-038-621-the-morphism-fsr",
+     "title": "The morphism fsr",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-039-63-path-morphisms",
+     "title": "Path morphisms",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-64-the-tree-ts",
+     "title": "The tree Ts",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-65-construction-of-the-double-leaves-basis",
+     "title": "Construction of the double leaves basis",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-042-7-final-calculations-examples-b-c-and-d",
+     "title": "Final calculations: examples B, C and D",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 0.45,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

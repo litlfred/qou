@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0603732v2/blocks/prose-sec-002",
+  "kind": "prose",
+  "title": "Rigid dualising complexes",
+  "pageStart": 1,
+  "pageEnd": 2,
+  "text": "../sections/sec-002-02-rigid-dualising-complexes.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0603732v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0603732v2/manifest.jsonld",
+  "provenance": "ingested"
+}

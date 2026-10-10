@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-physics-0203048v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-physics-0203048v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-physics-0203048v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:physics/0203048&metadataPrefix=arXiv), submitted 2002-03-15, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-physics-0203048v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/physics/0203048v1",
+    "content_type": "application/gzip",
+    "sha256": "9462a9112ca59e80e347f71a186d4c77600fc3d7be53a8791f6fd6473a028859",
+    "bytes": 243815,
+    "fetched": "2026-10-10T15:32:12+00:00",
+    "files": [
+      {
+        "path": "source/files/iopams.sty",
+        "role": "sty",
+        "sha256": "37f26a4791895ea856533d51123967a5b328ae0773996af0cc172b3e264d2777",
+        "bytes": 3139
+      },
+      {
+        "path": "source/files/iopart.cls",
+        "role": "cls",
+        "sha256": "3f05d7a7dcba7040fdebaea7416c731e8ea028e4f271eb80c53fa625ba854edb",
+        "bytes": 36611
+      },
+      {
+        "path": "source/files/third-order-invariant.tex",
+        "role": "tex",
+        "sha256": "64a221156d3a3a80091c06345f2a151a733330aa553839b8cd2c91e48da7e3ee",
+        "bytes": 53588
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

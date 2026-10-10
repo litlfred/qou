@@ -6,7 +6,8 @@
   "sha256": "9843b9dd71d1ec7453c4c83a98a954871870e6ba7425e9cc155b09298751596e",
   "bytes": 670406,
   "pages": 33,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -329,6 +330,104 @@
   "likely_scanned": false,
   "toc_entries": 17,
   "sections": 17,
-  "chars_total": 77788
+  "chars_total": 77788,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "quantumcocy_arXiv_v3.tex",
+   "tex_sections": 9,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-2-masahico-saito-and-emanuele-zappala",
+     "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-4-masahico-saito-and-emanuele-zappala",
+     "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-6-masahico-saito-and-emanuele-zappala",
+     "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-8-masahico-saito-and-emanuele-zappala",
+     "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-1-then-there-exists-an",
+     "title": "Then there exists an",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-10-masahico-saito-and-emanuele-zappala",
+     "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-12-masahico-saito-and-emanuele-zappala",
+     "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-14-masahico-saito-and-emanuele-zappala",
+     "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-16-masahico-saito-and-emanuele-zappala",
+     "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-18-masahico-saito-and-emanuele-zappala",
+     "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-20-masahico-saito-and-emanuele-zappala",
+     "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-22-masahico-saito-and-emanuele-zappala",
+     "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-24-masahico-saito-and-emanuele-zappala",
+     "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-26-masahico-saito-and-emanuele-zappala",
+     "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-28-masahico-saito-and-emanuele-zappala",
+     "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-30-masahico-saito-and-emanuele-zappala",
+     "title": "MASAHICO SAITO AND EMANUELE ZAPPALA",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

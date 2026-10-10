@@ -5,7 +5,8 @@
   "file": "2012.00062v3.pdf",
   "sha256": "2aacb7fa43f5e0da2657c6b7f7e58947baea6c3c4b37810c529e9b13b6b35039",
   "bytes": 1251854,
-  "pages": 68
+  "pages": 68,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,8 +17,8 @@
   },
   "doi": null,
   "title": "PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY",
-  "authors_raw": "STAVROS GAROUFALIDIS, JIE GU, AND MARCOS MARIÑO",
-  "abstract": "The partition function of complex Chern-Simons theory on a 3-manifold with torus boundary reduces to a ﬁnite dimensional state-integral which is a holomorphic function of a complexiﬁed Planck’s constantτ in the complex cut plane and an entire function of a complex parameteru. This gives rise to a vector of factorially divergent perturbative formal power series whose Stokes rays form a peacock-like pattern in the complex plane. We conjecture that these perturbative series are resurgent, their trans-series involve two non-perturbative variables, their Stokes automorphism satisﬁes a unique factorization prop- erty and that it is given explicitly in terms of a fundamental matrix solution to a (dual) linear q-diﬀerence equation. We further conjecture that a distinguished entry of the Stokes automorphism matrix is the 3D-index of Dimofte–Gaiotto–Gukov. We provide proofs of our statements regarding theq-diﬀerence equations and their properties of their fundamen- tal solutions and illustrate our conjectures regarding the Stokes matrices with numerical calculations for the two simplest hyperbolic41 and 52 knots.",
+  "authors_raw": "STAVROS GAROUFALIDIS, JIE GU, AND MARCOS MARI\u00d1O",
+  "abstract": "The partition function of complex Chern-Simons theory on a 3-manifold with torus boundary reduces to a \ufb01nite dimensional state-integral which is a holomorphic function of a complexi\ufb01ed Planck\u2019s constant\u03c4 in the complex cut plane and an entire function of a complex parameteru. This gives rise to a vector of factorially divergent perturbative formal power series whose Stokes rays form a peacock-like pattern in the complex plane. We conjecture that these perturbative series are resurgent, their trans-series involve two non-perturbative variables, their Stokes automorphism satis\ufb01es a unique factorization prop- erty and that it is given explicitly in terms of a fundamental matrix solution to a (dual) linear q-di\ufb00erence equation. We further conjecture that a distinguished entry of the Stokes automorphism matrix is the 3D-index of Dimofte\u2013Gaiotto\u2013Gukov. We provide proofs of our statements regarding theq-di\ufb00erence equations and their properties of their fundamen- tal solutions and illustrate our conjectures regarding the Stokes matrices with numerical calculations for the two simplest hyperbolic41 and 52 knots.",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20220408010627Z",
@@ -40,7 +41,7 @@
   },
   {
    "level": 2,
-   "title": "Chern–Simons theory with compact and complex gauge group",
+   "title": "Chern\u2013Simons theory with compact and complex gauge group",
    "page": 2,
    "source": "outline",
    "number": "1.1"
@@ -271,7 +272,7 @@
   {
    "id": "sec-001-11-chernsimons-theory-with-compact-and-complex-g",
    "number": "1.1",
-   "title": "Chern–Simons theory with compact and complex gauge group",
+   "title": "Chern\u2013Simons theory with compact and complex gauge group",
    "level": 2,
    "page_start": 1,
    "page_end": 4,
@@ -454,6 +455,123 @@
   "likely_scanned": false,
   "toc_entries": 32,
   "sections": 19,
-  "chars_total": 135353
+  "chars_total": 135353,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "GGM_peacock_20v4.tex",
+   "tex_sections": 7,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-chernsimons-theory-with-compact-and-complex-g",
+     "title": "Chern\u2013Simons theory with compact and complex gauge group",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-13-a-q-holonomic-module-of-the-partition-functio",
+     "title": "A q-holonomic module of the partition function and its descendants",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-14-perturbative-series-and-their-resurgence",
+     "title": "Perturbative series and their resurgence",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-15-disclaimers",
+     "title": "Disclaimers",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-16-further-directions",
+     "title": "Further directions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-acknowledgements",
+     "title": "Acknowledgements",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-2-borel-resummation-and-stokes-automorphisms",
+     "title": "Borel resummation and Stokes automorphisms",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 0.487,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-008-4-holonomic-and-elliptic-functions-inside-and-ou",
+     "title": "Holonomic and elliptic functions inside and outside the unit disk",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.895,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-009-5-the-41-knot",
+     "title": "The 41 knot",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-51-asymptotic-series",
+     "title": "Asymptotic series",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-52-holomorphic-blocks",
+     "title": "Holomorphic blocks",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-55-the-borel-resummations-of-the-asymptotic-seri",
+     "title": "The Borel resummations of the asymptotic series",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-6-the-52-knot",
+     "title": "The 52 knot",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-61-asymptotic-series",
+     "title": "Asymptotic series",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-62-holomorphic-blocks",
+     "title": "Holomorphic blocks",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-65-the-borel-resummations-of-the-asymptotic-seri",
+     "title": "The Borel resummations of the asymptotic series",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-7-one-dimensional-state-integrals-and-their-desc",
+     "title": "One-dimensional state-integrals and their descendants",
+     "prose_ratio": 0.963,
+     "coverage_ratio": 0.841,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-018-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

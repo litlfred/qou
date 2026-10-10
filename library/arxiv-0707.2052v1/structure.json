@@ -7,7 +7,8 @@
   "bytes": 428764,
   "pages": 39,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -538,6 +539,171 @@
   "likely_scanned": false,
   "toc_entries": 31,
   "sections": 28,
-  "chars_total": 70757
+  "chars_total": 70757,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "main.tex",
+   "tex_sections": 8,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.982,
+     "coverage_ratio": 0.966,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-the-2-category-of-kernels",
+     "title": "The 2-category of kernels",
+     "prose_ratio": 0.178,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-a-reminder-on-2-categories",
+     "title": "A reminder on 2-categories.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-serre-functors",
+     "title": "Serre functors",
+     "prose_ratio": 0.138,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-the-serre-functor-on-dx",
+     "title": "The Serre functor on D(X).",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-adjoint-kernels",
+     "title": "Adjoint kernels",
+     "prose_ratio": 0.22,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-adjunctions-in-2-categories",
+     "title": "Adjunctions in 2-categories.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-left-and-right-adjoints-of-kernels",
+     "title": "Left and right adjoints of kernels.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-partial-traces",
+     "title": "Partial traces.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-adjunction-as-a-2-functor",
+     "title": "Adjunction as a 2-functor.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-induced-maps-on-homology",
+     "title": "Induced maps on homology",
+     "prose_ratio": 0.143,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-hochschild-cohomology",
+     "title": "Hochschild cohomology.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-hochschild-homology",
+     "title": "Hochschild homology.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-push-forward-and-pull-back",
+     "title": "Push-forward and pull-back.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-the-mukai-pairing-and-adjoint-kernels",
+     "title": "The Mukai pairing and adjoint kernels",
+     "prose_ratio": 0.957,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-015-the-chern-character",
+     "title": "The Chern character",
+     "prose_ratio": 0.34,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-the-chern-character-as-a-map-on-k-theory",
+     "title": "The Chern character as a map on K-theory.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-the-chern-character-and-inner-products",
+     "title": "The Chern character and inner products.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-example",
+     "title": "Example.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-open-closed-tqfts-and-the-cardy-condition",
+     "title": "Open-closed TQFTs and the Cardy Condition",
+     "prose_ratio": 0.082,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-020-open-closed-2d-tqfts",
+     "title": "Open-closed 2d TQFTs.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-open-closed-2d-tqfts-with-d-branes",
+     "title": "Open-closed 2d TQFTs with D-branes.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-the-open-closed-2d-tqft-from-a-calabi-yau-manifo",
+     "title": "The open-closed 2d TQFT from a Calabi-Yau manifold.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-the-baggy-cardy-condition",
+     "title": "The Baggy Cardy Condition.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-duality-and-partial-trace",
+     "title": "Duality and partial trace",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-polite-duality",
+     "title": "Polite duality.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

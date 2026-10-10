@@ -6,7 +6,8 @@
   "sha256": "69ef10f8e70fc6f6fded518e9653f2f222f5a42cea4d29eee37d20dc92db0d66",
   "bytes": 198624,
   "pages": 12,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -83,6 +84,35 @@
   "likely_scanned": false,
   "toc_entries": 3,
   "sections": 2,
-  "chars_total": 25742
+  "chars_total": 25742,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Verkabeling5.tex",
+   "tex_sections": 3,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-proof-of-the-cabling-formula",
+     "title": "Proof of the cabling formula",
+     "prose_ratio": 0.96,
+     "coverage_ratio": 0.743,
+     "result": "overlaid",
+     "converter": "pandoc"
+    }
+   ]
+  }
  }
 }

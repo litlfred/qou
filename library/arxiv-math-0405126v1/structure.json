@@ -5,7 +5,8 @@
   "file": "0405126v1.pdf",
   "sha256": "713498dbe80f731940968055c95f50b654de89a60dbd183cb5010e2103a83979",
   "bytes": 126005,
-  "pages": 7
+  "pages": 7,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT",
   "authors_raw": null,
-  "abstract": "W e study the asymptotic behaviors of the colored Jones polyn o- mials of torus knots. Contrary to the works by R. Kashaev, O. T irkkonen, Y. Yokota, and the author, they do not seem to give the volumes or the Chern–Simons invariants of the three-manifolds obtained b y Dehn surgeries. On the other hand it is proved that in some cases the limits giv e the inverse of the Alexander polynomial. Let K be a knot in the three-sphere and JN (K; t) the colored Jones polynomial corresponding to the N -dimensional representation of sl2(C) normalized so that JN (unknot; t) = 1 [8, 12]. R. Kashaev found a series of link invariants parameterize d by positive integers [9] and proposed a conjecture that the asymp totic behavior of his invariants would determine the hyperbolic volume of the knot comp lement for any hyperbolic knot [10]. It turned out [19] that Kashaev’s invariant with parameter N is equal to ⏐ ⏐ ⏐JN ( K; e2π √ −1/N ) ⏐ ⏐ ⏐. Kashaev’s conjecture was generalized to the volume conjecture which states that the asymptotic behavior of K ashaev’s invariant would determine the Gromov norm [5] of the knot complement for any knot. Kashaev and O. Tirkkonen [11] proved the volume conjecture for t orus knots. More precisely they proved that for the torus knot T (a, b ) for coprime integers a and b, lim N →∞ log JN ( T (a, b ), e 2π √ −1/N )/ N = 0. Note that since the complement of a torus knot is a Seifert ﬁbered space [17], its Gromov norm is zero . The volume conjecture (or Kashaev’s conjecture in this case) is also proved for the ﬁgure-eight knot by T. Ekholm (see for example [18]). Moreover in [20 ] Y. Yokota and the author proved that for the ﬁgure-eight knot E the asymptotic behavior of JN ( E; e2πr √−1/N ) determines the volume and the Chern–Simons invariant for the closed three-manifold obtained by a Dehn surgery along E, where r is a com- plex parameter near 1. More precisely lim N →∞ log JN ( E; e2πr √−1/N )/ N is an analytic function of r that is almost the potential",
+  "abstract": "W e study the asymptotic behaviors of the colored Jones polyn o- mials of torus knots. Contrary to the works by R. Kashaev, O. T irkkonen, Y. Yokota, and the author, they do not seem to give the volumes or the Chern\u2013Simons invariants of the three-manifolds obtained b y Dehn surgeries. On the other hand it is proved that in some cases the limits giv e the inverse of the Alexander polynomial. Let K be a knot in the three-sphere and JN (K; t) the colored Jones polynomial corresponding to the N -dimensional representation of sl2(C) normalized so that JN (unknot; t) = 1 [8, 12]. R. Kashaev found a series of link invariants parameterize d by positive integers [9] and proposed a conjecture that the asymp totic behavior of his invariants would determine the hyperbolic volume of the knot comp lement for any hyperbolic knot [10]. It turned out [19] that Kashaev\u2019s invariant with parameter N is equal to \u23d0 \u23d0 \u23d0JN ( K; e2\u03c0 \u221a \u22121/N ) \u23d0 \u23d0 \u23d0. Kashaev\u2019s conjecture was generalized to the volume conjecture which states that the asymptotic behavior of K ashaev\u2019s invariant would determine the Gromov norm [5] of the knot complement for any knot. Kashaev and O. Tirkkonen [11] proved the volume conjecture for t orus knots. More precisely they proved that for the torus knot T (a, b ) for coprime integers a and b, lim N \u2192\u221e log JN ( T (a, b ), e 2\u03c0 \u221a \u22121/N )/ N = 0. Note that since the complement of a torus knot is a Seifert \ufb01bered space [17], its Gromov norm is zero . The volume conjecture (or Kashaev\u2019s conjecture in this case) is also proved for the \ufb01gure-eight knot by T. Ekholm (see for example [18]). Moreover in [20 ] Y. Yokota and the author proved that for the \ufb01gure-eight knot E the asymptotic behavior of JN ( E; e2\u03c0r \u221a\u22121/N ) determines the volume and the Chern\u2013Simons invariant for the closed three-manifold obtained by a Dehn surgery along E, where r is a com- plex parameter near 1. More precisely lim N \u2192\u221e log JN ( E; e2\u03c0r \u221a\u22121/N )/ N is an analytic function of r that is almost the potential",
   "docinfo": {
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20210915172238-04'00'",
@@ -160,6 +161,61 @@
   "likely_scanned": false,
   "toc_entries": 7,
   "sections": 7,
-  "chars_total": 14984
+  "chars_total": 14984,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "torus.tex",
+   "tex_sections": 3,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-2-hitoshi-murakami",
+     "title": "HITOSHI MURAKAMI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-statement-of-the-result",
+     "title": "Statement of the result",
+     "prose_ratio": 0.929,
+     "coverage_ratio": 0.945,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-2-proof",
+     "title": "Proof",
+     "prose_ratio": 0.657,
+     "coverage_ratio": 0.914,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-hitoshi-murakami",
+     "title": "HITOSHI MURAKAMI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-3-comments",
+     "title": "Comments",
+     "prose_ratio": 0.384,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-6-hitoshi-murakami",
+     "title": "HITOSHI MURAKAMI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0710.4310v2/blocks/prose-sec-017",
+  "kind": "prose",
+  "title": "The 2-Bianchi identity",
+  "pageStart": 20,
+  "pageEnd": 20,
+  "text": "../sections/sec-017-the-2-bianchi-identity.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0710.4310v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0710.4310v2/manifest.jsonld",
+  "provenance": "ingested"
+}

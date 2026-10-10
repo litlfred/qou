@@ -7,7 +7,8 @@
   "bytes": 603291,
   "pages": 21,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -380,6 +381,129 @@
   "likely_scanned": false,
   "toc_entries": 20,
   "sections": 20,
-  "chars_total": 23314
+  "chars_total": 23314,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "nagoya99.tex",
+   "tex_sections": 4,
+   "overlaid": 3,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-2-hitoshi-murakami",
+     "title": "HITOSHI MURAKAMI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.946,
+     "coverage_ratio": 0.89,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-2-algebra",
+     "title": "Algebra",
+     "prose_ratio": 0.86,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-hitoshi-murakami",
+     "title": "HITOSHI MURAKAMI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-3-geometry",
+     "title": "Geometry",
+     "prose_ratio": 0.145,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-31-ideal-tetrahedron-decomposition-of-s3-k-two-p",
+     "title": "Ideal tetrahedron decomposition of S3 \\ (K \u222a two points ). We will de-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-6-hitoshi-murakami",
+     "title": "HITOSHI MURAKAMI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-32-ideal-tetrahedron-decomposition-of-s3-k-we-wi",
+     "title": "Ideal tetrahedron decomposition of S3 \\ K. We will deform the ideal",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-8-hitoshi-murakami",
+     "title": "HITOSHI MURAKAMI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-33-hyperbolicity-condition-now-we-have-a-topolog",
+     "title": "Hyperbolicity condition. Now we have a topological ideal tetrahedron de-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-1-consistency-condition-at-each-vertex-in-the-cu",
+     "title": "Consistency condition: at each vertex in the cusp torus, the pr oduct of the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-2-cusp-condition-the-products-of-the-parameters",
+     "title": "Cusp condition: the products of the parameters along the latitu de and the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-4-analysis-and-harmony",
+     "title": "Analysis, and Harmony",
+     "prose_ratio": 0.962,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-references",
+     "title": "References",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-10-hitoshi-murakami",
+     "title": "HITOSHI MURAKAMI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-12-hitoshi-murakami",
+     "title": "HITOSHI MURAKAMI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-14-hitoshi-murakami",
+     "title": "HITOSHI MURAKAMI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-16-hitoshi-murakami",
+     "title": "HITOSHI MURAKAMI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-18-hitoshi-murakami",
+     "title": "HITOSHI MURAKAMI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-20-hitoshi-murakami",
+     "title": "HITOSHI MURAKAMI",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

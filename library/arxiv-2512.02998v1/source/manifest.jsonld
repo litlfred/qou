@@ -1,0 +1,94 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2512.02998v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Stability of knot equivalence at low regularity, and symmetric critical knots for the M\\\"obius energy (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2512.02998v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2512.02998&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2512.02998v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2512.02998v1",
+    "content_type": "application/gzip",
+    "sha256": "86eaa3fd07f46da193b05e2e0f2cb23092e845c420ff6ef02044ce5797264374",
+    "bytes": 57190,
+    "fetched": "2026-10-10T15:21:58+00:00",
+    "files": [
+      {
+        "path": "source/files/harmonic-substitution_vdM.tex",
+        "role": "tex",
+        "sha256": "66fc3722dbcf38b33210cf1e5a4b838b66d76aee6b3043eab7e3556bbfa6e8da",
+        "bytes": 23481
+      },
+      {
+        "path": "source/files/int_vdM.tex",
+        "role": "tex",
+        "sha256": "53565e4640ce25bb194ebcb0b2805d38b0bbd1a3b01dfa005123acbe3ba2fdd3",
+        "bytes": 22600
+      },
+      {
+        "path": "source/files/isomorphic-fundamental-groups_vdM.tex",
+        "role": "tex",
+        "sha256": "f5c0af96478b119e9bca3977f7ff589f314bba91a384ee0541a513fb131e864e",
+        "bytes": 15499
+      },
+      {
+        "path": "source/files/local-distortion_vdM.tex",
+        "role": "tex",
+        "sha256": "0556c1af2750860b0ee414d3cadcf96dcf3c7556f945c57aa56668b80c017228",
+        "bytes": 11537
+      },
+      {
+        "path": "source/files/main_vdM.bbl",
+        "role": "bbl",
+        "sha256": "ff1eaae75c92e6a924b655a677504db1c4ea9e93d35a2255375418787c61fa94",
+        "bytes": 11743
+      },
+      {
+        "path": "source/files/main_vdM.tex",
+        "role": "tex",
+        "sha256": "260903f45f82114613fded32f580a3d90cc75cbc76631e3b918ba84252d1c0ec",
+        "bytes": 12127
+      },
+      {
+        "path": "source/files/pseudo-gradient_vdM.tex",
+        "role": "tex",
+        "sha256": "87bcf7f1f29ea696fe3998c4ebcc5acbe150eed7aa44cbb089cb420e92adc067",
+        "bytes": 16010
+      },
+      {
+        "path": "source/files/stability-knot-equivalence_vdM.tex",
+        "role": "tex",
+        "sha256": "282a386b30d7b6ab65c7a66879cc155ddaae23048a51e7b96cc0c63ce1727d86",
+        "bytes": 17541
+      },
+      {
+        "path": "source/files/symmetric-critical-knots_vdM.tex",
+        "role": "tex",
+        "sha256": "a03a87125b0ebe22e0f2a1ca43ce94dbd13f14805681e82ec68b8f7042da2631",
+        "bytes": 7576
+      },
+      {
+        "path": "source/files/weak-fractional-compactness_vdM.tex",
+        "role": "tex",
+        "sha256": "e6e8593c7d3a5e13e8c75b76dab66afb2612029c587cd4c77e7e2bb3095b6035",
+        "bytes": 30231
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

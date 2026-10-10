@@ -1,0 +1,355 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[namelimits]{amsmath}
+\usepackage{amsxtra}
+\usepackage[varg]{txfonts}
+\usepackage[unicode]{hyperref}
+\usepackage[amsmath,hyperref,framed,thmmarks]{ntheorem}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+%\usepackage{showkeys}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Line numbering
+% \usepackage[left,mathlines,pagewise]{lineno}
+% \newcommand*\patchAmsMathEnvironmentForLineno[1]{%
+% \expandafter\let\csname old#1\expandafter\endcsname\csname #1\endcsname
+% \expandafter\let\csname oldend#1\expandafter\endcsname\csname end#1\endcsname
+% \renewenvironment{#1}%
+% {\linenomath\csname old#1\endcsname}%
+% {\csname oldend#1\endcsname\endlinenomath}}%
+% \newcommand*\patchBothAmsMathEnvironmentsForLineno[1]{%
+% \patchAmsMathEnvironmentForLineno{#1}%
+% \patchAmsMathEnvironmentForLineno{#1*}}%
+% \AtBeginDocument{%
+% \patchBothAmsMathEnvironmentsForLineno{equation}%
+% \patchBothAmsMathEnvironmentsForLineno{align}%
+% \patchBothAmsMathEnvironmentsForLineno{flalign}%
+% \patchBothAmsMathEnvironmentsForLineno{alignat}%
+% \patchBothAmsMathEnvironmentsForLineno{gather}%
+% \patchBothAmsMathEnvironmentsForLineno{multline}%
+% }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theorems
+%\setlength{\FrameSep}{.5ex}
+\theoremseparator{.}
+\makeatletter
+\renewcommand{\newframedtheorem}[1]{%
+\theoremprework{\framed\vspace{-1.5ex}}%
+\theorempostwork{\vspace{-2ex}\endframed}%
+\newtheorem@i{#1}%
+}
+\makeatother
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\theorembodyfont{\upshape}
+\theoremsymbol{$\Diamond$}
+\newtheorem{remark}[theorem]{Remark}
+\makeatletter
+\newtheoremstyle{proof}%
+{\item[\theorem@headerfont\hskip\labelsep ##1\theorem@separator]}%
+{\item[\ifx\@empty##3\else\theorem@headerfont\hskip \labelsep ##1\ of\ ##3\theorem@separator\fi]}
+\makeatother
+\theoremheaderfont{\itshape}
+\theoremstyle{proof}
+\theoremseparator{.}
+\theoremsymbol{\ensuremath{\Box}}
+\newtheorem{proof}{Proof}
+\theoremheaderfont{\sffamily\bfseries}\theorembodyfont{\sffamily\upshape}
+\theoremstyle{plain}
+\theoremnumbering{alph}
+\theoremsymbol{$\Diamond$}
+\theoremprework{\small}
+\theorempostwork{\normalsize}
+\newtheorem{detail}{Detail}[theorem]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Hyperlinks in blue
+\hypersetup{
+breaklinks=true,
+colorlinks=true,
+linkcolor=blue,
+citecolor=blue,
+urlcolor=blue,
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Paragraph layout
+\setlength{\parindent}{0ex}
+\setlength{\parskip}{1ex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% boldmath (from http://www.volkerschatz.com/tex/thacks.html)
+\def\bfseries{\fontseries \bfdefault \selectfont \boldmath}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Roman numbers for enumerate
+\renewcommand{\theenumi}{\textup{(\roman{enumi})}}
+\renewcommand{\labelenumi}{\theenumi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% fnsymbols by asterisks
+\makeatletter
+\def\@fnsymbol#1{\ensuremath{\ifcase#1\or *\or **\or {}\or {}\or {**}{**}\else\@ctrerr\fi}}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Brackets
+\newcommand{\abs}[1]{\ensuremath{\left|#1\right|}}
+\newcommand{\br}[1]{\ensuremath{\left(#1\right)}}
+\newcommand{\bv}[1]{\ensuremath{\left[#1\right]}}
+\renewcommand{\d}{\ensuremath{\,\mathrm{d}}}
+\newcommand{\fseq}[1]{\ensuremath{\br{#1}_{k\in\Z}}}
+\newcommand{\hnorm}[2][1,2]{\ensuremath{\left\|#2\right\|_{H^{{#1}}}}}
+\newcommand{\lnorm}[2][2]{\ensuremath{\left\|#2\right\|_{L^{{#1}}}}}
+\newcommand{\norm}[1]{\ensuremath{\left\|#1\right\|}}
+\newcommand{\seminorm}[1]{\ensuremath{\left[#1\right]}}
+\newcommand{\seq}[1]{\ensuremath{\br{#1}_{\eps>0}}}
+\newcommand{\seqn}[2][k]{\ensuremath{\br{{#2}_{#1}}_{#1\in\N}}}
+\newcommand{\seqnu}[2][k]{\ensuremath{\br{{#2}_{#1}}_{#1\in\N\cup\set0}}}
+\newcommand{\set}[1]{\ensuremath{\left\{#1\right\}}}
+\newcommand{\sets}[2]{\ensuremath{\left\{\left.#1\,\right|#2\right\}}}
+\newcommand{\sett}[2]{\ensuremath{\left\{#1\left|\,#2\right.\right\}}}
+\renewcommand{\sp}[1]{\ensuremath{\left\langle#1\right\rangle}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Equation numbers within section
+\numberwithin{equation}{section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abbreviations
+\renewcommand{\a}{\ensuremath{\alpha}}
+\renewcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\CC}[1][]{\ensuremath{\mathscr{C}_{#1}}}
+\DeclareMathOperator{\const}{const}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\lip}{lip}
+\newcommand{\D}[1]{{#1}(u+w)-{#1}(u)}
+\newcommand{\dg}{{\gamma}'}
+\newcommand{\dgt}{\gt'}
+\renewcommand{\dh}{{h}'}
+\newcommand{\dtg}{{\tilde{\gamma}}'}
+\newcommand{\dth}{{\tilde{h}}'}
+\newcommand{\dvp}{h'}
+\newcommand{\E}{\ensuremath{E^{(\a)}}}
+\newcommand{\Ee}[1][\eps]{\ensuremath{E_{#1}^{(\a)}}}
+\newcommand{\eps}{\ensuremath{\varepsilon}}
+\newcommand{\Fe}[2][\eps]{\ensuremath{F_{#1}^{(#2)}}}
+\newcommand{\g}{\gamma}
+\renewcommand{\G}[1][\g]{\ensuremath{\mathcal G_{{#1}}^{(\a)}}}
+\newcommand{\Ge}[1][\eps]{\ensuremath{G_{#1}^{(\a)}}}
+\DeclareMathOperator{\id}{id}
+\newcommand{\Lp}[1][p]{\ensuremath{L^{\scriptstyle #1}}}
+\newcommand{\length}{\ensuremath{\mathscr L}}
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\p}[1][s]{(-\Delta)^{#1/2}}
+\newcommand{\Q}[1][\a]{Q^{(#1)}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\refeq}[2][=]{\ensuremath{\stackrel{\text{\makebox[0cm][c]{\eqref{eq:#2}}}}{#1}}}
+\renewcommand{\rho}{\ensuremath{\varrho}}
+\newcommand{\RR}[1][\g]{R^{(\a)}}
+\newcommand{\rzd}{\ensuremath{(\R/\Z,\R^n)}}
+\newcommand{\s}{\ensuremath{\sigma}}
+\newcommand{\tE}{\tilde E^{(\a)}}
+\newcommand{\tg}{\tilde{\gamma}}
+\newcommand{\tQ}[1][\a]{\widetilde{Q}^{(#1)}_\lambda}
+\newcommand{\ts}{\ensuremath{{\tilde{\sigma}}}}
+\newcommand{\vth}{\ensuremath{\vartheta}}
+\newcommand{\W}[1][(\a+1)/2,2]{\ensuremath{H^{\scriptstyle #1}}}
+\newcommand{\Wir}[1][(\a+1)/2,2]{\ensuremath{H_{\mathrm{ir}}^{#1}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+
+\newcommand{\todo}[1]{\textbf{\textsc{\textcolor{red}{(TODO: #1)}}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title
+\title{Stationary Points of O'Hara's Knot Energies}
+\author{%
+ Simon Blatt\thanks{Mathematics Institute, Zeeman Building, University of Warwick, Coventry CV4 7AL, United Kingdom, \url{S.Blatt@warwick.ac.uk}} \and
+ Philipp Reiter\thanks{Abteilung f\"ur Angewandte Mathematik, Universit\"at Freiburg, Hermann-Herder-Stra\ss e 10, 79104 Freiburg i.~Br., Germany, \url{reiter@mathematik.uni-freiburg.de}}%
+ \footnote{MSC (2000) 42A45, 53A04, 57M25}%
+ \footnote{The final publication is available at \url{www.springerlink.com}.}}
+
+ 
+\begin{document}
+\maketitle
+
+%\linenumbers
+
+\begin{abstract}
+In this article we study the regularity of stationary points of the knot energies~$\E$
+introduced by O'Hara in \cite{oha:en,oha:fam-en,oha:en-func}
+in the  range $\a\in(2,3)$.
+In a first step we prove that $\E$ is $C^1$
+on the set of all regular embedded curves belonging to  $\W\rzd$
+and calculate its derivative.
+After that we use the structure of the Euler-Lagrange equation to study the regularity of
+stationary points of $\E$ plus a 
+positive multiple of the length. We show that stationary points of finite energy are of class
+$C^\infty$ --- so especially all local minimizers of~$\E$ among curves with fixed length 
+are smooth.
+\end{abstract}
+\tableofcontents
+
+
+\input{intro}
+\input{energy-space}
+\input{bootstrap}
+
+\begin{appendix}
+ \input{fractional}
+\end{appendix}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography
+
+\begin{thebibliography}{10}
+
+\bibitem{acfgh}
+A.~Abrams, J.~Cantarella, J.~H.~G. Fu, M.~Ghomi, and R.~Howard.
+\newblock Circles minimize most knot energies.
+\newblock {\em Topology}, 42(2):381--394, 2003.
+
+\bibitem{alt-felix}
+W.~Alt, D.~Felix, {\relax Ph}.~Reiter, and H.~von~der Mosel.
+\newblock Energetics and dynamics of global integrals modeling interaction
+  between stiff filaments.
+\newblock {\em J. Math. Biol.}, 59(3):377--414, 2009.
+
+\bibitem{blatt:bre}
+S.~Blatt.
+\newblock Boundedness and regularizing effects of {O'Hara}'s knot energies.
+\newblock To appear in {\em J. Knot Theory Ramifications},
+  2011.
+
+\bibitem{blatt:tpe}
+S.~Blatt.
+\newblock The energy spaces of the tangent point energies.
+\newblock Preprint, 2011.
+
+\bibitem{blatt:gfoh}
+S.~Blatt.
+\newblock The gradient flow of {O'Hara}'s knot energies.
+\newblock In preparation.
+
+\bibitem{blatt:gfm}
+S.~Blatt.
+\newblock The gradient flow of the {M}\"obius energy near local minima.
+\newblock {\em Calc. Var.}, 43(3):403 --439, 2012.
+
+\bibitem{blatt-reiter}
+S.~Blatt and {\relax Ph}.~Reiter.
+\newblock Does finite knot energy lead to differentiability?
+\newblock {\em J. Knot Theory Ramifications}, 17(10):1281 -- 1310, 2008.
+
+\bibitem{CW}
+F.~M. Christ and M.~I. Weinstein.
+\newblock Dispersion of small amplitude solutions of the generalized
+  {K}orteweg-de {V}ries equation.
+\newblock {\em J. Funct. Anal.}, 100(1):87--109, 1991.
+
+\bibitem{CM}
+R.~R. Coifman and Y.~Meyer.
+\newblock {\em Au del\`a des op\'erateurs pseudo-diff\'erentiels}, volume~57 of
+  {\em Ast\'erisque}.
+\newblock Soci\'et\'e Math\'ematique de France, Paris, 1978.
+
+\bibitem{fhw}
+M.~H. Freedman, Z.-X. He, and Z.~Wang.
+\newblock M\"obius energy of knots and unknots.
+\newblock {\em Ann. of Math. (2)}, 139(1):1--50, 1994.
+
+\bibitem{fete}
+S.~Fukuhara.
+\newblock Energy of a knot.
+\newblock In {\em A f\^ete of topology}, pages 443--451. Academic Press,
+  Boston, MA, 1988.
+
+\bibitem{grafakos:modern}
+L.~Grafakos.
+\newblock {\em Modern {F}ourier analysis}, volume 250 of {\em Graduate Texts in
+  Mathematics}.
+\newblock Springer, New York, second edition, 2009.
+
+\bibitem{he:elghf}
+Z.-X. He.
+\newblock The {E}uler-{L}agrange equation and heat flow for the {M}\"obius
+  energy.
+\newblock {\em Comm. Pure Appl. Math.}, 53(4):399--431, 2000.
+
+\bibitem{oha:en}
+J.~O'Hara.
+\newblock Energy of a knot.
+\newblock {\em Topology}, 30(2):241--247, 1991.
+
+\bibitem{oha:fam-en}
+J.~O'Hara.
+\newblock Family of energy functionals of knots.
+\newblock {\em Topology Appl.}, 48(2):147--161, 1992.
+
+\bibitem{oha:en-func}
+J.~O'Hara.
+\newblock Energy functionals of knots. {II}.
+\newblock {\em Topology Appl.}, 56(1):45--61, 1994.
+
+\bibitem{oha:en-kn}
+J.~O'Hara.
+\newblock {\em Energy of knots and conformal geometry}, volume~33 of {\em
+  Series on Knots and Everything}.
+\newblock World Scientific Publishing Co. Inc., River Edge, NJ, 2003.
+
+\bibitem{reiter:rtm}
+{\relax Ph}.~Reiter.
+\newblock Regularity theory for the {M}\"obius energy.
+\newblock {\em Commun. Pure Appl. Anal.}, 9(5):1463--1471, 2010.
+
+\bibitem{reiter:rkepdc}
+{\relax Ph}.~Reiter.
+\newblock Repulsive knot energies and pseudodifferential calculus for
+  {O'Hara}'s knot energy family ${E}^{(\alpha)}$.
+\newblock To appear in \emph{Mathematische Nachrichten},
+\href{http://dx.doi.org/10.1002/mana.201000090}{DOI: 10.1002/mana.201000090} (2012).
+
+\bibitem{RS}
+T.~Runst and W.~Sickel.
+\newblock {\em Sobolev spaces of fractional order, {N}emytskij operators, and
+  nonlinear partial differential equations}, volume~3 of {\em de Gruyter Series
+  in Nonlinear Analysis and Applications}.
+\newblock Walter de Gruyter \& Co., Berlin, 1996.
+
+\bibitem{SM4}
+P.~Strzelecki, M.~Szuma{\'n}ska, and H.~von~der Mosel.
+\newblock A geometric curvature double integral of {M}enger type for space
+  curves.
+\newblock {\em Ann. Acad. Sci. Fenn. Math.}, 34(1):195--214, 2009.
+
+\bibitem{SM5}
+P.~Strzelecki, M.~Szuma{\'n}ska, and H.~von~der Mosel.
+\newblock Regularizing and self-avoidance effects of integral {M}enger
+  curvature.
+\newblock {\em Ann. Sc. Norm. Super. Pisa Cl. Sci. (5)}, IX(1):145--187, 2010.
+
+\bibitem{SM6}
+P.~Strzelecki and H.~von~der Mosel.
+\newblock Integral {M}enger curvature for surfaces.
+\newblock {\em Advances in Mathematics}, 226(3):2233--2304, 2011.
+
+\bibitem{SM7}
+P.~Strzelecki and H.~von~der Mosel.
+\newblock Tangent-point self-avoidance energies for curves.
+\newblock To appear in \emph{Journal of Knot Theory and its
+Ramifications}, \href{http://dx.doi.org/10.1142/S0218216511009960}{DOI: 10.1142/S0218216511009960} (2011).
+
+\bibitem{taylor}
+M.~E. Taylor.
+\newblock {\em Partial differential equations {I--III}}, volume 115--117 of
+  {\em Applied Mathematical Sciences}.
+\newblock Springer-Verlag, New York, 1996--1997.
+
+\end{thebibliography}
+\end{document}

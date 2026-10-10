@@ -7,161 +7,97 @@ section_number: 3
 pages: 7-9
 source_pdf: 2103.07383v1.pdf
 source_sha256: 9dca35ea16490ad8
+text_source: latex
+latex_prose_ratio: 0.938
+latex_coverage_ratio: 0.86
 doc_brief: "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case — We prove the analyticity of smooth critical points for generalized integral Menger cur- vature"
 ---
-Next we investigate the order of the main termQ(p), for which we need to examine itsL2-
-representation ﬁrst.
-Lemma 3.1. Let p∈( 7
-3, 8
-3), s≥0 and γ∈H3p−4+s(R/Z, Rn) be parametrized by arc-length.
-Then, there is⟨Q(p)(γ)∈Hs(R/Z, Rn) such that for allh∈H
-3
-2p−2(R/Z, Rn),
-Q(p)(γ,h) =
-
-R/Z
-⟨
-⟨Q(p)(γ)(u),h (u)
-⟩
-du.
-In particular,⟨Q(p) mapsC∞(R/Z, Rn) into itself. The Fourier coeﬃcients of⟨Q(p), for allk∈Z,
-are given by
-ˆ⟨Q(p)(γ)(k) =q(p)
-k |k|3p−4ˆγ(k).
-The constantsq(p)
-k are bounded independently ofn, and satisfy
-0≤q(p)
-k =c +o(1)
-as|k|→∞for c> 0.
-Proof. By [BR15, Proposition 4.1], we have
-Q(p)(γ,h) =
-∑
-k∈Z
-ϱk
-⟨
-ˆγ(k), ˆh(k)
-⟩
-Cn
-, where ϱk =c|k|3p−4 +o(|k|3p−4) as|k|→∞,
-for anyh∈H
-3
-2p−2(R/Z, Rn). In particular, theϱk are independent ofn, cf. their deﬁnition in
-the proof of [BR15, Proposition 4.1]. Settingq(p)
-k :=|k|4−3pϱk, which implies that theq(p)
-k are
-also independent ofn, we obtain
-(1 +k2)
-s
-2
-⏐⏐q(p)
-k |k|3p−4ˆγ(k)
-⏐⏐= (1 +k2)
-s
-2|c +o(1)||k|3p−4|ˆγ(k)|
-≤(1 +k2)
-s
-2 ˜c|k|3p−4|ˆγ(k)|≤˜c(1 +k2)
-3p−4+s
-2 |ˆγ(k)|as|k|→∞
-for some ˜c > 0. The right hand side, taken as a sequence ink∈Z, is in𝓁2(Z) because γ∈
-H3p−4+s(R/Z, Rn), see [Tay96, Chapter 4, (3.8)], and so⟨Q(p)(γ), the inverse Fourier transform
-7
-ofq(p)
-k |k|3p−4ˆγ(k), is well-deﬁned and inHs(R/Z, Rn). Allq(p)
-k |k|3p−4 are real asQ(p) maps real
-functions to real numbers andˆγ(k) = ˆγ(−k) due to the real image ofγ. Thus, ⟨Q(p)(γ)(u) =∑
-k∈Zq(p)
-k |k|3p−4ˆγ(k)e−2πiku= ˆγ(0) +∑
-k∈Nq(p)
-k |k|3p−4ℜ(ˆγ(k)e−2πiku) for almost allu∈R/Z
-meaning that⟨Q(p)(γ) maps into the real numbers.
-By Parseval’s relation [Gra14, Proposition 3.2.7 (3)], we have
-
-R/Z
-⟨
-⟨Q(p)(γ)(u),h (u)
-⟩
-du =
-∑
-k∈Z
-⟨
-q(p)
-k |k|3p−4ˆγ(k), ˆh(k)
-⟩
-Cn
-=
-∑
-k∈Z
-ϱk
-⟨
-ˆγ(k), ˆh(k)
-⟩
-Cn
-=Q(p)(γ,h).
-Remark 3.2. Assuming C5-regularity ofγ, one may explicitly calculate
-⟨Q(p)(γ)(u) :=
-
-D
-|v−w|−p|v|2−p|w|2−p·
-( ∆−w,0γ
-−w −∆ w,0γ
-w
-w +
-∆−v,0γ
-−v −∆ v,0γ
-v
-v
-+
-∆ v,0γ
-v −∆ v−w,−wγ
-v
-w +
-∆ w,0γ
-w −∆ w−v,−vγ
-w
-v
-(
-dw dv.
-The proof works via ﬁrst restricting to the case|v|,|w|> εto obtain the formula and then
-showing existence forε= 0 by means of several Taylor approximations. Since this method is
-quite technical and long, we choose to omit it here.
-From the previous Lemma 3.1, we deduce the following indispensable corollary regarding the
-order of the main termQ(p).
-Corollary 3.3. Given real numbersp∈( 7
-3, 8
-3) andm≥0, there exists a constant⟨C = ⟨C(p)> 0
-such that for all curvesγ∈C∞(R/Z, Rn) and integersl≥0
-‖γ(l+3)‖H m+3p−7≤⟨C‖∂l⟨Q(p)(γ)‖H m
-holds.
-Proof. By applying Lemma 3.1, well-known properties of Fourier coeﬃcients and the elementary
-estimate (1 +k2)3p−7≤(2|k|)2(3p−7) for anyk∈Z\0, we get
-‖∂l⟨Q(p)(γ)‖2
-H m =
-∑
-k∈Z
-(1 +|k|2)m|ˆ∂l⟨Q(p)(γ)(k)|2
-=
-∑
-k∈Z
-(1 +|k|2)m(2π|k|)2l|ˆ⟨Q(p)(γ)(k)|2
-=
-∑
-k∈Z
-(1 +|k|2)m(2π|k|)2l(q(p)
-k )2|k|2(3p−4)|ˆγ(k)|2
-≥inf
-k∈Z\0
-{(q(p)
-k )2(2π)−622(7−3p)}
-∑
-k∈Z
-(1 +|k|2)m+3p−7(2π|k|)2(l+3)|ˆγ(k)|2
-= ⟨C−2∑
-k∈Z
-(1 +|k|2)m+3p−7|ˆγ(l+3)(k)|2
-= ⟨C−2‖γ(l+3)‖2
-H m+3p−7,
-where ⟨C := infk∈Z\0{|q(p)
-k |(2π)−327−3p}−1 is a positive constant only depending onp. In partic-
-ular, independence ofn follows from Lemma 3.1.
-8
+\label{sec:EstimateMainTerm}
+
+Next we investigate the order of the main term $Q^{(p)}$, for which we need to examine its $L^2$-representation first.
+
+\begin{lemma}
+    \label{lemma:L2MainTermViaFourier}
+    Let $p \in (\tfrac 7 3,\tfrac 8 3)$, $s \ge 0$ and $\gamma \in H^{3p-4+s}(\R/\Z,\R^n)$ be parametrized by arc-length.
+    Then, there is $\Qpt(\gamma) \in H^s(\R/\Z,\R^n)$ such that for all $h \in H^{\frac 3 2 p -2}(\R/\Z,\R^n)$,
+    \[
+        \Qp(\gamma,h) = \int_{\R/\Z} \left<\Qpt(\gamma)(u), h(u)\right> \d u.
+    \]
+    In particular, $\Qpt$ maps $C^\infty(\R/\Z,\R^n)$ into itself.
+    The Fourier coefficients of $\Qpt$, for all $k\in \Z$, are given by
+    \begin{align*}\label{eq:fouriercoeffQ}
+        \widehat{\Qpt(\gamma)}(k) = q_k^{(p)} \abs{k}^{3p-4} \hat{\gamma} (k).
+    \end{align*}
+    The constants $q_k^{(p)}$ are bounded independently of $n$, and satisfy 
+    \[
+        0 \leq q_k^{(p)} = c + o(1)
+    \]
+    as $\abs{k} \rightarrow \infty$ for $c>0$.
+\end{lemma}
+\begin{proof}
+    By \cite[Proposition 4.1]{BlattReiter:2015:Menger}, we have
+    \[
+        \Qp(\gamma,h) = \sum_{k \in \Z}\rho_k \left< \hat \gamma(k),\hat h(k)\right>_{\C^n}, \text{ where } \rho_k = c\abs{k}^{3p-4} + o(\abs{k}^{3p-4}) \text{ as } \abs{k} \to \infty,
+    \]
+    for any $h \in H^{\frac 3 2 p -2}(\R/\Z,\R^n)$. In particular,  the $\rho_k$ are independent of $n$, cf.\ their definition in the proof of \cite[Proposition 4.1]{BlattReiter:2015:Menger}.
+    Setting $q_k^{(p)} := \abs{k}^{4-3p} \rho_k$, which implies that the $q_k^{(p)}$ are also independent of $n$, we obtain
+    \[
+        \begin{split}
+            (1+k^2)^{\frac s 2}\abs[\big]{q_k^{(p)}\abs{k}^{3p-4}\hat \gamma(k)}
+            &= (1+k^2)^{\frac s 2}\abs{c+o(1)}\abs{k}^{3p-4} \abs{\hat \gamma(k)}\\
+            &\le (1+k^2)^{\frac s 2} \tilde c \abs{k}^{3p-4} \abs{\hat \gamma(k)}
+            \le \tilde c (1+k^2)^{\frac {3p-4+s} {2}} \abs{\hat \gamma(k)} \text{ as } \abs{k} \to \infty
+        \end{split}
+    \]
+    for some $\tilde c>0$.
+    The right hand side, taken as a sequence in $k \in \Z$, is in $\ell^2(\Z)$ because $\gamma \in H^{3p-4+s}(\R/\Z,\R^n)$, see \cite[Chapter~4, (3.8)]{Taylor:1996:PartialDifferentialEquationsa},
+    and so $\Qpt(\gamma)$, the inverse Fourier transform of $q_k^{(p)}\abs{k}^{3p-4}\hat \gamma(k)$, is well-defined and in $H^s(\R/\Z,\R^n)$.
+    All $q_k^{(p)}\abs{k}^{3p-4}$ are real as $\Qp$ maps real functions to real numbers and $\overline{\hat \gamma(k)} = \hat \gamma (-k)$ due to the real image of $\gamma$.
+    Thus, $\Qpt(\gamma)(u) = \sum_{k\in \Z} q_k^{(p)}\abs{k}^{3p-4} \hat{\gamma}(k) e^{-2\pi i k u} = \hat \gamma(0) + \sum_{k \in \N} q_k^{(p)}\abs{k}^{3p-4} \Re(\hat \gamma(k) e^{-2 \pi i k u})$ for almost all $u \in \R/\Z$ meaning that $\Qpt(\gamma)$ maps into the real numbers.
+    
+    By Parseval's relation \cite[Proposition~3.2.7~(3)]{Grafakos:2014:ClassicalFourierAnalysis}, we have
+    \[
+        \int_{\R/\Z} \left<\Qpt(\gamma)(u),h(u)\right> \d u
+        = \sum_{k\in \Z} \left< q_k^{(p)}\abs{k}^{3p-4}\hat \gamma(k), \hat h(k)\right>_{\C^n}
+        = \sum_{k \in \Z}\rho_k \left< \hat \gamma(k),\hat h(k)\right>_{\C^n}
+        = \Qp(\gamma,h).
+    \]
+\end{proof}
+\begin{remark}
+    Assuming $C^5$-regularity of $\gamma$, one may explicitly calculate
+    \begin{align*}
+        \Qpt(\gamma)(u) :=& \iint_D \abs{v-w}^{-p} \abs{v}^{2-p} \abs{w}^{2-p} \cdot \Biggl(
+        \frac {\frac{\difference{-w,0} \gamma} {-w} - \frac {\difference{w,0} \gamma} {w}} {w}
+        + \frac {\frac {\difference{-v,0} \gamma} {-v} - \frac {\difference{v,0} \gamma} {v}} {v}\\
+        &+ \frac {\frac {\difference{v,0} \gamma} {v} - \frac {\difference{v-w,-w} \gamma} {v}} {w}
+        + \frac {\frac {\difference{w,0} \gamma} {w} - \frac {\difference{w-v,-v} \gamma} {w}} {v}
+        \Biggr)
+        \d w \d v.
+    \end{align*}
+    The proof works via first restricting to the case $\abs{v},\abs{w}>\epsilon$ to obtain the formula and then showing existence for $\epsilon = 0$ by means of several Taylor approximations.
+    Since this method is quite technical and long, we choose to omit it here.
+\end{remark}
+
+From the previous \thref{lemma:L2MainTermViaFourier}, we deduce the following indispensable corollary regarding the order of the main term $Q^{(p)}$.
+
+
+\begin{corollary}  \label{cor:Ql}
+	Given real numbers $p\in (\tfrac 73, \tfrac 83)$ and $m\geq 0$, there exists a constant $ \widetilde{C}=\widetilde{C}(p)>0$ such that for all curves $\gamma \in C^\infty(\R/\Z, \R^n)$ and  integers $l\geq 0$ 
+	\begin{align*}
+	\|\gamma^{(l+3)} \|_{H^{m+3p-7}} \leq \widetilde{C} \|\partial^{l} \Qpt(\gamma)\|_{H^m}
+	\end{align*}
+	holds.
+\end{corollary}
+\begin{proof}
+	By applying \thref{lemma:L2MainTermViaFourier}, well-known properties of Fourier coefficients and the elementary estimate $(1+k^2)^{3p-7} \leq (2|k|)^{2(3p-7)}$ for any $k\in \Z  \setminus 0$,  we get
+	\begin{align*}
+	\|\partial^{l}\Qpt (\gamma) \|_{H^m}^2 &= \sum_{k\in \Z} (1+|k|^2)^m|\widehat{\partial^{l}\Qpt (\gamma)}(k)|^2 \\
+	&= \sum_{k\in \Z} (1+|k|^2)^m (2\pi| k|)^{2l} |\widehat{\Qpt (\gamma)}(k)|^2 \\
+	&= \sum_{k\in \Z} (1+|k|^2)^m (2\pi| k|)^{2l} (q_k^{(p)})^2 |k|^{2(3p-4)} |\hat{\gamma} (k)|^2\\
+	&\geq \inf_{k\in\Z\setminus 0} \{(q_k^{(p)})^2 (2\pi)^{-6} 2^{2(7-3p)} \} \sum_{k \in \Z} (1+|k|^2)^{m+3p-7} (2\pi| k|)^{2(l+3)}   |\hat{\gamma} (k)|^2 \\
+	&= \widetilde{C}^{-2} \sum_{k \in \Z} (1+|k|^2)^{m+3p-7} |\widehat{\gamma^{(l+3)} } (k)|^2 \\
+	&= \widetilde{C}^{-2}   \|\gamma^{(l+3)} \|_{H^{m+3p-7}}^2,
+	\end{align*}
+	where $\widetilde{C}:=\inf_{k\in\Z\setminus{0}} \{\abs{q_k^{(p)}} (2\pi)^{-3} 2^{7-3p}\}^{-1}$ is a positive constant only depending on $p$.
+    In particular, independence of $n$ follows from  \thref{lemma:L2MainTermViaFourier}.
+\end{proof}

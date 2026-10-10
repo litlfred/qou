@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0808.2716v4/blocks/prose-sec-018",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0808.2716v4/blocks/prose-sec-018",
   "kind": "prose",
   "title": "Hyperbolic 3–braids",
   "pageStart": 28,
   "pageEnd": 34,
   "text": "../sections/sec-018-52-hyperbolic-3braids.md",
-  "derivedFrom": "library/arxiv-0808.2716v4/manifest",
-  "sourceDocument": "library/arxiv-0808.2716v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0808.2716v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0808.2716v4/manifest.jsonld",
   "provenance": "ingested"
 }

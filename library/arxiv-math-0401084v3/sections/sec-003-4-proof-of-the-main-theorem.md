@@ -7,168 +7,130 @@ section_number: 4
 pages: 14-15
 source_pdf: 0401084v3.pdf
 source_sha256: f56bbd4cee4f3418
+text_source: latex
+latex_prose_ratio: 0.871
+latex_coverage_ratio: 0.818
 doc_brief: "Some limits of the colored Jones polynomials of the figure-eight knot — W e calculate limits of the colored Jones polynomials of the ﬁ gure- eight knot and conclude that in most cases they determine"
 ---
 In this section we will prove the main theorem.
-First we will calculate the derivative of H(u) := H(y, m2).
-Lemma 4.1.
-d
-(
-H(u) − π√
-−1u
-)
-du = v
-2 .
-Proof. We ﬁrst calculate the partial derivatives of H(ξ, η). We have
-∂ H (ξ, η)
-∂ξ = 1
-ξ
-{
-log
-(
-1 − ξ−1η−1)
-+ log
-(
-1 − ξη −1)
-+ log η
-}
-= 1
-ξ log
-(
-η + η−1 − ξ − ξ−1)
-and
-∂ H (ξ, η)
-∂η = 1
-η
-{
-log
-(
-1 − ξ−1η−1)
-− log
-(
-1 − ξη −1)
-+ log(−ξ)
-}
-= 1
-η
-{
-log
-(1 − ξη
-η − ξ
-)
-+ π
-√
-−1
-}
-.
-Since
-∂ H (ξ, η)
-∂ ξ
-⏐
-⏐
-⏐
-⏐
-ξ=y,η =m2
-= 1
-y log
-(
-m + m−1 − y − y−1)
-= 0
-from (3.2) we have
-d H(u)
-du = ∂ H (ξ, η)
-∂ξ
-⏐
-⏐
-⏐
-⏐
-ξ=y,η =m2
-× d y
-du + ∂ H (ξ, η)
-∂η
-⏐
-⏐
-⏐
-⏐
-ξ=y,η =m2
-× d m2
-du
-= log
-(1 − ym2
-m2 − y
-)
-+ π
-√
-−1.
-But since {
-ym2 + zm2 = 1
-z−1 + m2y−1 = 1,
-we have
-d
-(
-H(u) − π√−1u
-)
-du = log
-(
-z(1 − z)
-)
-= v
-2 .
-□
-Next we will calculate H(0).
-Lemma 4.2.
-H(0) =
-√
-−1 Vol
-(
-S3 \ E
-)
-Proof. Since m
-⏐
-⏐
-u=0 = −1 and y
-⏐
-⏐
-u=0 = exp(−π√
-−1/3), we have
-H(0) = Li 2
-(
-e−π √−1/ 3
-)
-− Li2
-(
-eπ √−1/ 3
-)
-= 4
-√
-−1 L(π/6)
-from (3.3).
-On the other hand from the equality
-L(2θ) = 2 L(θ) − 2 L(π/2 − θ)
-THE COLORED JONES POLYNOMIALS OF THE FIGURE-EIGHT KNOT 15
-(see for example [9, Lemma 1]), we have 4 L(π/6) = 6 L(π/3), which equals the
-volume of S3 \ E. □
-Proof of Corollary 2.4. We see that
-Φ( u) = 4 H(u) − 4π
-√
-−1u − 4H(0)
-and so
-f (u) = H(u) − π
-√
-−1u − uv/4 −
-√
-−1 Vol
-(
-S3 \ E
-)
-since CS
-(
-S3 \ E
-)
-= 0. Therefore from Theorem 2.1
-Vol (Eu) +
-√
-−1 CS (Eu) = H(u)√−1 − πu − uv
-4√−1 − π
-2 λ(γ).
-□
+
+First we will calculate the derivative of $H(u):=H(y,m^2)$.
+
+::: lem
+$$\begin{equation*}
+  \frac{d\,\bigl(H(u)-\pi\sqrt{-1}u\bigr)}{du}
+  =
+  \frac{v}{2}.
+\end{equation*}$$
+:::
+
+::: proof
+*Proof.* We first calculate the partial derivatives of $H(\xi,\eta)$. We have $$\begin{equation*}
+\begin{split}
+  \frac{\partial\,H(\xi,\eta)}{\partial\xi}
+  &=
+  \
+  \frac{1}{\xi}
+  \left\{
+     \log\left(1-\xi^{-1}\eta^{-1}\right)
+    +\log\left(1-\xi\eta^{-1}\right)
+    +\log\eta
+  \right\}
+  \\
+  &=
+  \frac{1}{\xi}\log\left(\eta+\eta^{-1}-\xi-\xi^{-1}\right)
+\end{split}
+\end{equation*}$$ and $$\begin{equation*}
+\begin{split}
+  \frac{\partial\,H(\xi,\eta)}{\partial\eta}
+  &=
+  \frac{1}{\eta}
+  \left\{
+     \log\left(1-\xi^{-1}\eta^{-1}\right)
+    -\log\left(1-\xi\eta^{-1}\right)
+    +\log(-\xi)
+  \right\}
+  \\
+  &=
+  \frac{1}{\eta}
+  \left\{
+    \log\left(\frac{1-\xi\eta}{\eta-\xi}\right)
+    +\pi\sqrt{-1}
+  \right\}.
+\end{split}
+\end{equation*}$$ Since $$\begin{equation*}
+  \left.\frac{\partial\,H(\xi,\eta)}{\partial\,\xi}\right|_{\xi=y,\eta=m^2}
+  =
+  \frac{1}{y}\log\left(m+m^{-1}-y-y^{-1}\right)
+  =0
+\end{equation*}$$ from [\[eq:y\]](#eq:y){reference-type="eqref" reference="eq:y"} we have $$\begin{equation*}
+\begin{split}
+  \frac{d\,H(u)}{du}
+  &=
+  \left.\frac{\partial\,H(\xi,\eta)}{\partial\xi}\right|_{\xi=y,\eta=m^2}
+  \times\frac{d\,y}{du}
+  +
+  \left.\frac{\partial\,H(\xi,\eta)}{\partial\eta}\right|_{\xi=y,\eta=m^2}
+  \times\frac{d\,m^2}{du}
+  \\
+  &=
+  \log\left(\frac{1-ym^2}{m^2-y}\right)+\pi\sqrt{-1}.
+\end{split}
+\end{equation*}$$ But since $$\begin{equation*}
+\begin{cases}
+  ym^2+zm^2=1
+  \\
+  z^{-1}+m^2y^{-1}=1,
+\end{cases}
+\end{equation*}$$ we have $$\begin{equation*}
+  \frac{d\,\bigl(H(u)-\pi\sqrt{-1}u\bigr)}{du}
+  =
+  \log\bigl(z(1-z)\bigr)
+  =
+  \frac{v}{2}.
+\end{equation*}$$ ◻
+:::
+
+Next we will calculate $H(0)$.
+
+::: lem
+$$\begin{equation*}
+  H(0)=\sqrt{-1}\operatorname{Vol}\left(S^3\setminus{E}\right)
+\end{equation*}$$
+:::
+
+::: proof
+*Proof.* Since $m\bigr|_{u=0}=-1$ and $y\bigr|_{u=0}=\exp(-\pi\sqrt{-1}/3)$, we have $$\begin{equation*}
+  H(0)
+  =
+   \operatorname{Li}_2\left(e^{-\pi\sqrt{-1}/3}\right)
+  -\operatorname{Li}_2\left(e^{ \pi\sqrt{-1}/3}\right)
+  =
+  4\sqrt{-1}\operatorname{\text{\tencyr\cyracc L}}(\pi/6)
+\end{equation*}$$ from [\[eq:H_on_circle\]](#eq:H_on_circle){reference-type="eqref" reference="eq:H_on_circle"}.
+
+On the other hand from the equality $$\begin{equation*}
+  \operatorname{\text{\tencyr\cyracc L}}(2\theta)=2\operatorname{\text{\tencyr\cyracc L}}(\theta)-2\operatorname{\text{\tencyr\cyracc L}}(\pi/2-\theta)
+\end{equation*}$$ (see for example [@Milnor:BULAM382 Lemma 1]), we have $4\operatorname{\text{\tencyr\cyracc L}}(\pi/6)=6\operatorname{\text{\tencyr\cyracc L}}(\pi/3)$, which equals the volume of $S^3\setminus{E}$. ◻
+:::
+
+::: proof
+*Proof of Corollary [\[cor:Vol_CS\]](#cor:Vol_CS){reference-type="ref" reference="cor:Vol_CS"}.* We see that $$\begin{equation*}
+  \Phi(u)
+  =
+  4H(u)-4\pi\sqrt{-1}u-4H(0)
+\end{equation*}$$ and so $$\begin{equation*}
+  f(u)
+  =
+  H(u)-\pi\sqrt{-1}u-uv/4-\sqrt{-1}\operatorname{Vol}\left(S^3\setminus{E}\right)
+\end{equation*}$$ since $\operatorname{CS}\left(S^3\setminus{E}\right)=0$. Therefore from Theorem [\[thm:Yoshida\]](#thm:Yoshida){reference-type="ref" reference="thm:Yoshida"} $$\begin{equation*}
+\begin{split}
+  \operatorname{Vol}\left(E_{u}\right)+\sqrt{-1}\operatorname{CS}\left(E_{u}\right)
+  &=
+  \frac{H(u)}{\sqrt{-1}}
+  -\pi{u}
+  -\frac{uv}{4\sqrt{-1}}
+  -\frac{\pi}{2}\lambda(\gamma).
+\end{split}
+\end{equation*}$$ ◻
+:::

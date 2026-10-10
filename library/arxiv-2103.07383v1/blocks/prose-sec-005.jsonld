@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2103.07383v1/blocks/prose-sec-005",
+  "kind": "prose",
+  "title": "Proof of the main statement",
+  "pageStart": 18,
+  "pageEnd": 18,
+  "text": "../sections/sec-005-5-proof-of-the-main-statement.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2103.07383v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2103.07383v1/manifest.jsonld",
+  "provenance": "ingested"
+}

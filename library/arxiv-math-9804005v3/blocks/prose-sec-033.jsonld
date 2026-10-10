@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9804005v3/blocks/prose-sec-033",
+  "kind": "prose",
+  "title": "LetC be any k-algebra. Then for M ∈ D(Mod(B ⊗C◦)) there is a functorial",
+  "pageStart": 18,
+  "pageEnd": 20,
+  "text": "../sections/sec-033-1-letc-be-any-k-algebra-then-for-m-dmodb-c-there.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9804005v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9804005v3/manifest.jsonld",
+  "provenance": "ingested"
+}

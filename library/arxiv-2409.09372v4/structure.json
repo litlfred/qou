@@ -6,7 +6,8 @@
   "sha256": "b7eed67ec102ab3d4abc33b53e619c314300d978f73ad3f71059ee4181943cb2",
   "bytes": 412640,
   "pages": 16,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -177,6 +178,77 @@
   "likely_scanned": false,
   "toc_entries": 8,
   "sections": 8,
-  "chars_total": 40267
+  "chars_total": 40267,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Markov-trace_revision_.tex",
+   "tex_sections": 6,
+   "overlaid": 6,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.952,
+     "coverage_ratio": 0.791,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-inductive-basis",
+     "title": "Inductive basis",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.703,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-3-normalized-markov-traces",
+     "title": "Normalized Markov traces",
+     "prose_ratio": 0.961,
+     "coverage_ratio": 0.705,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-4-non-normalized-markov-traces",
+     "title": "Non-normalized Markov traces",
+     "prose_ratio": 0.972,
+     "coverage_ratio": 0.72,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-5-specializations",
+     "title": "Specializations",
+     "prose_ratio": 0.892,
+     "coverage_ratio": 0.757,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-005-acknowledgements",
+     "title": "Acknowledgements",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-declaration",
+     "title": "Declaration",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.875,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

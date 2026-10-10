@@ -7,90 +7,142 @@ section_number: 4
 pages: 6-8
 source_pdf: 1604.02688v1.pdf
 source_sha256: bdcafe379519287c
+text_source: latex
+latex_prose_ratio: 0.958
+latex_coverage_ratio: 0.738
 doc_brief: "THE 3D-INDEX AND NORMAL SURFACES — Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index, associated to a suitable ideal triangulation of a 3-manifold with torus boundary"
 ---
-Using the notation from the previous section, we now give a deﬁnition of the 3D-index of
-an ideal triangulationT as formulated in [GHRS15, section 4.7].
-Given k = (k1,...,k n)∈ Zn, we can assign an integer weightki to theith edge class. Eﬀec-
-tively, this also gives a weight on each edge of each tetrahedronσj in T. Letaj(k),bj(k),cj(k)
-be the sums of weights assigned to the pair of edges in tetrahedronj opposite quadsqj,q′
-j,q′′
-j
-respectively. Note that these coeﬃcients are precisely the entries in the linear combination∑n
-i=1kiEi of the rows of the gluing matrix corresponding to the edge equations.
-Now we deﬁne a tetrahedral index associated to the tetrahedronσj by
-J(σj; k) =J∆(aj(k),bj(k),cj(k)).
-THE 3D-INDEX AND NORMAL SURF ACES 7
-and the3D-index IT(0) of the triangulationT is deﬁned as
-IT(0)(q) =
-∑
-k∈Zn−r
-q
-∑
-iki
-n∏
-j=1
-J(σj; k), (15)
-where the summation is over a (suitable) sublatticeZn−r⊂ Zn, obtained by settingr of the
-edge weightski equal to zero. Forr = 1 we can set anyki = 0; but in general ther edge
-weights set to zero must be chosen carefully (see [GHRS15, sections 4.5, 4.6]).
-More generally, the 3D-index gives a functionIT :H1(∂M ; Z)∼= Z2r→ Z((q
-1
-2 )) deﬁned as
-follows. Letγ be an oriented multicurve on∂M with no contractible components, such that
-γ is innormal positionwith respect to the induced triangulationT∂ of ∂M. Then letγh be
-the component ofγ in cusph and expressγh = phµh +qhλh, whereµh corresponds to the
-rowMh in the gluing matrix andλh corresponds toLh. Now put
-J(σj; k,γ ) =J∆(aj(k,γ ),bj(k,γ ),cj(k,γ ))
-where the coeﬃcientsaj(k,γ ),bj(k,γ ),cj(k,γ ) are precisely the entries in the linear combi-
-nation∑n
-i=1kiEi +∑n
-h=1(phMh +qhLh) corresponding to tetrahedronσj.
-Then the general3D-index of the triangulationT is deﬁned as
-IT([γ])(q) =
-∑
-k∈Zn−r
-q
-∑
-iki
-∏
-j
-J(σj; k,γ ), (16)
-where [γ]∈H1(∂M ; Z) is the homology class ofγ and the summation is overZn−r⊂ Zn as
-above. (It is shown in [GHRS15] that the sum only depends on the homology class ofγ.)
-Example 4.1.For the ﬁgure eight knot complementM, with the ideal triangulation given
-by Thurston [Thu77, §4], we have the following induced triangulation on∂M (as viewed
-from the cusp).
-Figure 2. A labelled triangulation of the cusp of the ﬁgure 8 knot complement.
-From this we can read oﬀ the following gluing data.
-Choosing generatorsµ,λ forH1(∂M, Z) = Z2 corresponding to the standard meridian and
-longitude, and integer weightsk1 =k,k 2 = 0 on the edges gives
-8 STA VROS GAROUF ALIDIS, CRAIG D. HODGSON, NEIL R. HOFFMAN, AND J. HYAM RUBINSTEIN
-edge/peripheral curve a1 b1 c1 a2 b2 c2
-edge 1 (blue) 2 1 0 2 1 0
-edge 2 (red) 0 1 2 0 1 2
-meridian µ 0 0 1 -1 0 0
-longitude λ 0 0 0 2 0 -2
-IT(xµ +yλ) =
-∑
-k∈Z
-qkJ∆(2k,k,x )J∆(2k−x + 2y,k,−2y)
-=
-∑
-k∈Z
-I∆(k−x,k )I∆(k + 2y,k−x + 2y).
-For example, up to terms of orderq10, we have
-IT(0) = 1− 2q− 3q2 + 2q3 + 8q4 + 18q5 + 18q6 + 14q7− 12q8− 52q9− 106q10 +...
-IT(µ) = 2q− 2q2 + 2q3 + 8q4 + 16q5 + 16q6 + 10q7− 14q8− 52q9− 102q10 +...
-IT(2µ) =−q−q2 + 3q3 + 6q4 + 12q5 + 9q6 + 3q7− 19q8− 50q9− 88q10 +...
-IT(λ) =q3 + 2q4 + 5q5 + 2q6− 3q7− 16q8− 32q9− 52q10 +...
-IT(4µ +λ) =q−q4− 2q5− 5q6− 8q7− 10q8− 11q9− 6q10 +...
-In this example, it is easy to check thatIT(±xµ±yλ) =IT(xµ +yλ), and we can also deﬁne
-the index forx∈ Z,y∈ 1
-2 Z, as done in [DGG13]. For example,
-IT(1
-2λ) =−2q3/2 + 4q7/2 + 10q9/2 + 14q11/2 + 10q13/2− 2q15/2− 32q17/2− 68q19/2 +...
-IT(µ + 1
-2λ) =−q−q2 + 2q3 + 7q4 + 11q5 + 11q6 + 3q7− 17q8− 49q9− 88q10 +...
-IT(2µ + 1
-2λ) =−q1/2 +q5/2 + 4q7/2 + 7q9/2 + 7q11/2 + 3q13/2− 12q15/2− 31q17/2− 62q19/2 +...
+Using the notation from the previous section, we now give a definition of 
+the 3D-index of an ideal triangulation $\tri$ as formulated 
+in \cite[section 4.7]{GHRS}. 
+
+Given $\kk =(k_1, \ldots, k_n)\in \Z^n$, we can assign an integer weight 
+$k_i$ to the $i$th edge class. Effectively, this also gives a weight on 
+each edge of each tetrahedron $\sigma_j$ in $\CT$.
+Let $a_j(\kk), b_j(\kk), c_j(\kk)$ be the sums of weights assigned to 
+the pair of edges in  tetrahedron $j$ opposite quads $q_j, q_j',q_j''$ 
+respectively. Note that these coefficients are precisely the entries in 
+the linear combination $\sum_{i=1}^n k_i E_i$ of the rows of the gluing matrix 
+corresponding to the edge equations. 
+
+Now we define a tetrahedral index associated to the tetrahedron $\sigma_j$ by
+$$
+J(\sigma_j;\kk)=\JD(a_j(\kk), b_j(\kk) , c_j(\kk)).
+$$
+and the \emph{3D-index}  $I_{\CT}({\bf 0})$ of the triangulation $\CT$ is 
+defined as 
+\be
+I_{\CT}({\bf 0})(q)  = \sum_{\kk \in \Z^{n-r}} 
+ q^{\sum_i k_i}   \prod_{j=1} ^n
+J(\sigma_j;\kk),
+\ee
+where the summation is over a (suitable) sublattice  
+$\Z^{n-r} \subset \Z^{n}$, obtained by setting $r$ of the edge weights 
+$k_i$ equal to zero. For $r=1$ we can set any $k_i=0$; but  in general the 
+$r$ edge weights set to zero must be chosen carefully (see 
+\cite[sections 4.5, 4.6]{GHRS}).
+
+More generally, the 3D-index gives a function 
+$I_{\CT} : H_1(\bd M; \Z) \cong \Z^{2r}\to \Z((q^\frac{1}{2}))$ defined 
+as follows. Let $\gamma$ be an oriented multicurve on $\bd M$ with no 
+contractible components, such that $\gamma$  is in {\em normal position} 
+with respect to the induced triangulation $\tri_\bd$ of $\bd M$. 
+Then let $\gamma_h$ be the component of $\gamma$ in cusp $h$ and express 
+$\gamma_h = p_h \mu_h + q_h \lambda_h$, where $\mu_h$ corresponds to the 
+row $M_h$ in the gluing matrix and $\lambda_h$ corresponds to $L_h$.
+Now put
+$$
+J(\sigma_j;\kk,\gamma)=\JD(a_j(\kk,\gamma), b_j(\kk,\gamma) , c_j(\kk,\gamma))
+$$
+where the coefficients  
+$a_j(\kk,\gamma), b_j(\kk,\gamma), c_j(\kk,\gamma)$ are precisely the 
+entries in the linear combination 
+$\sum_{i =1}^nk_i E_i  +\sum_{h=1}^n (p_h M_h + q_h L_h)$ corresponding 
+to tetrahedron $\sigma_j$.
+
+Then the general \emph{3D-index} of the triangulation $\CT$ is defined as 
+\be
+I_{\CT}([\gamma])(q)  = \sum_{\kk \in \Z^{n-r}} q^{\sum_i k_i}   \prod_j 
+J(\sigma_j;\kk,\gamma),
+\label{JD_index_eq}
+\ee
+where $[\gamma] \in H_1(\bd M; \Z)$ is the homology class of $\gamma$ and
+the summation is over $\Z^{n-r} \subset \Z^{n}$ as above. (It is shown 
+in \cite{GHRS} that the sum only depends on the homology class of $\gamma$.)
+
+\begin{ex}
+\label{ex:fig8}
+For the figure eight knot complement $M$, with the ideal triangulation 
+given by Thurston \cite[\sect4]{Th}, we have the following 
+induced triangulation on $\bd M$ (as viewed from the cusp).
+
+\begin{center}
+\begin{figure}[htpb]
+\includegraphics[width=0.8\textwidth]{figures/figure8Cusp_new}
+\caption{\label{fig:figure8cusp} A labelled triangulation of the cusp 
+of the figure 8 knot complement.}
+\end{figure}
+\end{center}
+
+From this we can read off the following gluing data.
+
+\begin{table}[htpb]
+\begin{tabular}{|c||c|c|c|c|c|c|}
+\hline
+edge/peripheral curve
+& ~~$a_1$~~ & ~~$b_1$~~ & ~~$c_1$~~ & ~~$a_2$~~ & ~~$b_2$~~ & ~~$c_2$ \\
+\hline
+\hline
+edge 1 (blue) & 2 & 1 & 0 & 2 &1 & 0 \\
+\hline
+edge 2 (red) & 0& 1 & 2& 0 & 1 & 2 \\ 
+\hline
+meridian $\mu$ & 0& 0 & 1& -1 & 0 & 0 \\ 
+\hline
+longitude $\lambda$ & 0& 0 & 0& 2  & 0 & -2\\ 
+\hline
+\end{tabular}
+\end{table}
+
+Choosing generators $\mu,\lambda$ for $H_1(\bd M, \Z) = \Z^2$ corresponding 
+to the standard meridian and longitude, and integer weights $k_1=k,k_2=0$ 
+on the edges gives
+
+\begin{align*} 
+I_{\CT}(x \mu + y\lambda )
+&=\sum_{k \in \Z}  q^k \JD(2k,k,x)\JD(2k-x+2y,k,-2y) \\
+& = \sum_{k \in \Z}  \ID(k-x,k) \ID(k+2y,k-x+2y).
+\end{align*}
+
+For example, up to terms of order $q^{10}$, we have 
+
+\begin{align*}
+I_{\CT}({\bf 0} ) &=  
+1-2 q-3 q^2+2 q^3+8 q^4+18 q^5+18 q^6+14 q^7-12 q^8-52 q^9-106 q^{10} + \ldots
+\\
+I_{\CT}(\mu) &= 
+2 q-2 q^2+2 q^3+8 q^4+16 q^5+16 q^6+10 q^7-14 q^8-52 q^9-102 q^{10}+ \ldots
+\\
+I_{\CT}(2\mu) &= 
+-q - q^2 + 3 q^3 + 6 q^4 + 12 q^5 + 9 q^6 + 3 q^7 - 19 q^8 - 50 q^9 -  88 q^{10}
++ \ldots \\
+I_{\CT}(\lambda ) &=  
+q^3+2 q^4+5 q^5+2 q^6-3 q^7-16 q^8-32 q^9-52 q^{10}+ \ldots \\
+I_{\CT}(4\mu+\lambda ) &= 
+q-q^4-2 q^5-5 q^6-8 q^7-10 q^8-11 q^9-6 q^{10}+ \ldots
+\end{align*}
+In this example, it is easy to check that 
+$I_{\CT}(\pm x \mu  \pm y \lambda)=I_{\CT}(x \mu + y\lambda)$,
+and we can also define the index for $x \in \Z, y \in \frac{1}{2} \Z$, 
+as done in \cite{DGG1}. For example,
+
+\begin{align*}
+I_{\CT}(\frac{1}{2} \lambda) &= -2 q^{3/2}+4 q^{7/2}+10 q^{9/2}
++14 q^{11/2}+10 q^{13/2}-2 q^{15/2}-32 q^{17/2}-68   q^{19/2} + \ldots \\
+I_{\CT}(\mu+\frac{1}{2} \lambda) &= -q-q^2+2 q^3+7 q^4+11 q^5+11 q^6
++3 q^7-17 q^8-49 q^9-88 q^{10} + \ldots  \\
+I_{\CT}(2\mu+\frac{1}{2} \lambda) &=
+-q^{1/2}+q^{5/2}+4 q^{7/2}+7 q^{9/2}+7 q^{11/2}+3 q^{13/2}-12 q^{15/2}
+-31 q^{17/2}-62 q^{19/2}  + \ldots 
+\end{align*}
+\end{ex}

@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-9909027v1/sections/sec-008",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Choose a diagram for L and add a parallel double L′ of L to the left of L",
+  "pageStart": 35,
+  "pageEnd": 44,
+  "contains": [
+    "library/arxiv-math-9909027v1/blocks/prose-sec-008",
+    "library/arxiv-math-9909027v1/blocks/corollary-sec-008-01",
+    "library/arxiv-math-9909027v1/blocks/remark-sec-008-02",
+    "library/arxiv-math-9909027v1/blocks/conjecture-sec-008-03",
+    "library/arxiv-math-9909027v1/blocks/example-sec-008-04",
+    "library/arxiv-math-9909027v1/blocks/example-sec-008-05",
+    "library/arxiv-math-9909027v1/blocks/proposition-sec-008-06",
+    "library/arxiv-math-9909027v1/blocks/lemma-sec-008-07",
+    "library/arxiv-math-9909027v1/blocks/theorem-sec-008-08"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9909027v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9909027v1/manifest.jsonld",
+  "provenance": "ingested"
+}

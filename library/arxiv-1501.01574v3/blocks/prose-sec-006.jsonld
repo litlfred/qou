@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1501.01574v3/blocks/prose-sec-006",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1501.01574v3/blocks/prose-sec-006",
   "kind": "prose",
   "title": "Boundary slopes and homology of cable spaces",
   "pageStart": 6,
   "pageEnd": 9,
   "text": "../sections/sec-006-22-boundary-slopes-and-homology-of-cable-spaces.md",
-  "derivedFrom": "library/arxiv-1501.01574v3/manifest",
-  "sourceDocument": "library/arxiv-1501.01574v3/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1501.01574v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1501.01574v3/manifest.jsonld",
   "provenance": "ingested"
 }

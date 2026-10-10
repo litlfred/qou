@@ -5,7 +5,8 @@
   "file": "0012035v3.pdf",
   "sha256": "06a4c8096c8ebb10eb2103766fb3e63e006a4953be24ae3641ec659141f9d0d6",
   "bytes": 322978,
-  "pages": 46
+  "pages": 46,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -24,14 +25,14 @@
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
    "Title": "arXiv:math-ph/0012035v3  16 Jan 2002"
   },
-  "title_prev": "Non-Abelian Stokes theorem in action Bogus/suppress law Broda1 Department of Theoretical Physics University of /suppress Lódź Pomorska 149/153 PL 90–236 /suppress Lódź Poland",
+  "title_prev": "Non-Abelian Stokes theorem in action Bogus/suppress law Broda1 Department of Theoretical Physics University of /suppress L\u00f3d\u017a Pomorska 149/153 PL 90\u2013236 /suppress L\u00f3d\u017a Poland",
   "title_lines": [
    "Non-Abelian Stokes theorem in action",
    "Bogus/suppress law Broda1",
    "Department of Theoretical Physics",
-   "University of /suppress Lódź",
+   "University of /suppress L\u00f3d\u017a",
    "Pomorska 149/153",
-   "PL 90–236 /suppress Lódź",
+   "PL 90\u2013236 /suppress L\u00f3d\u017a",
    "Poland"
   ]
  },
@@ -164,14 +165,14 @@
   },
   {
    "level": 1,
-   "title": "For every element g ∈ G, there is a unique decomposition of g into a",
+   "title": "For every element g \u2208 G, there is a unique decomposition of g into a",
    "page": 18,
    "source": "inferred",
    "number": "4"
   },
   {
    "level": 1,
-   "title": "One can see that the action of an arbitrary group element g ∈ G on |R⟩",
+   "title": "One can see that the action of an arbitrary group element g \u2208 G on |R\u27e9",
    "page": 18,
    "source": "inferred",
    "number": "5"
@@ -206,21 +207,21 @@
   },
   {
    "level": 1,
-   "title": "C−1",
+   "title": "C\u22121",
    "page": 31,
    "source": "inferred",
    "number": "13"
   },
   {
    "level": 1,
-   "title": "C−1",
+   "title": "C\u22121",
    "page": 31,
    "source": "inferred",
    "number": "6"
   },
   {
    "level": 1,
-   "title": "C−1",
+   "title": "C\u22121",
    "page": 31,
    "source": "inferred",
    "number": "3"
@@ -283,21 +284,21 @@
   },
   {
    "level": 1,
-   "title": "SαT 2",
+   "title": "S\u03b1T 2",
    "page": 38,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 2,
-   "title": "Three-dimensional topological quantum ﬁeld theory",
+   "title": "Three-dimensional topological quantum \ufb01eld theory",
    "page": 38,
    "source": "inferred",
    "number": "3.2"
   },
   {
    "level": 1,
-   "title": "A ∧ A ∧ A",
+   "title": "A \u2227 A \u2227 A",
    "page": 39,
    "source": "inferred",
    "number": "3"
@@ -516,7 +517,7 @@
   {
    "id": "sec-018-4-for-every-element-g-g-there-is-a-unique-decomp",
    "number": "4",
-   "title": "For every element g ∈ G, there is a unique decomposition of g into a",
+   "title": "For every element g \u2208 G, there is a unique decomposition of g into a",
    "level": 1,
    "page_start": 18,
    "page_end": 18,
@@ -526,7 +527,7 @@
   {
    "id": "sec-019-5-one-can-see-that-the-action-of-an-arbitrary-gr",
    "number": "5",
-   "title": "One can see that the action of an arbitrary group element g ∈ G on |R⟩",
+   "title": "One can see that the action of an arbitrary group element g \u2208 G on |R\u27e9",
    "level": 1,
    "page_start": 18,
    "page_end": 21,
@@ -576,7 +577,7 @@
   {
    "id": "sec-024-13-c1",
    "number": "13",
-   "title": "C−1",
+   "title": "C\u22121",
    "level": 1,
    "page_start": 31,
    "page_end": 33,
@@ -664,9 +665,9 @@
    "n_words": 319
   },
   {
-   "id": "sec-033-2-sαt-2",
+   "id": "sec-033-2-s\u03b1t-2",
    "number": "2",
-   "title": "SαT 2",
+   "title": "S\u03b1T 2",
    "level": 1,
    "page_start": 38,
    "page_end": 38,
@@ -674,9 +675,9 @@
    "n_words": 208
   },
   {
-   "id": "sec-034-32-three-dimensional-topological-quantum-ﬁeld-th",
+   "id": "sec-034-32-three-dimensional-topological-quantum-\ufb01eld-th",
    "number": "3.2",
-   "title": "Three-dimensional topological quantum ﬁeld theory",
+   "title": "Three-dimensional topological quantum \ufb01eld theory",
    "level": 2,
    "page_start": 38,
    "page_end": 39,
@@ -686,7 +687,7 @@
   {
    "id": "sec-035-3-a-a-a",
    "number": "3",
-   "title": "A ∧ A ∧ A",
+   "title": "A \u2227 A \u2227 A",
    "level": 1,
    "page_start": 39,
    "page_end": 39,
@@ -739,6 +740,228 @@
   "likely_scanned": false,
   "toc_entries": 42,
   "sections": 40,
-  "chars_total": 64108
+  "chars_total": 64108,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "NASTiA.tex",
+   "tex_sections": 4,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-11-abelian-stokes-theorem",
+     "title": "Abelian Stokes theorem",
+     "prose_ratio": 0.004,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.662,
+     "coverage_ratio": 0.974,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-12-historical-remarks",
+     "title": "Historical remarks",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-2-non-abelian-stokes-theorem",
+     "title": "Non-Abelian Stokes theorem",
+     "prose_ratio": 0.051,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-13-contents",
+     "title": "Contents",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-21-operator-formalism",
+     "title": "Operator formalism",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-211-calculus-of-paths",
+     "title": "Calculus of paths",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-212-ordering",
+     "title": "Ordering",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-213-theorem",
+     "title": "Theorem",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-22-path-integral-formalism",
+     "title": "Path-integral formalism",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-221-coherent-state-approach",
+     "title": "Coherent-state approach",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-1-we-will-determine-a-coherent-stateholomorphic",
+     "title": "We will determine a coherent-state/holomorphic path-integral representa-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-2-for-a-closed-curve-c-we-will-calculate-the-tra",
+     "title": "For a closed curve C we will calculate the trace of the path-integral form",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-3-we-will-apply-the-abelian-stokes-theorem-to-th",
+     "title": "We will apply the Abelian Stokes theorem to the exponent of the integrand",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-1-for-g-a-semisimple-lie-algebra-of-a-lie-groupg",
+     "title": "For g, a semisimple Lie algebra of a Lie groupG, we introduce the standard",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-2-we-chose-a-unitary-irreducible-representation",
+     "title": "We chose a unitary irreducible representation R of the group G, as well",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-3-a-subgroup-of-g-that-consists-of-all-the-group",
+     "title": "A subgroup of G that consists of all the group elements h that will leave",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-4-for-every-element-g-g-there-is-a-unique-decomp",
+     "title": "For every element g \u2208 G, there is a unique decomposition of g into a",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-5-one-can-see-that-the-action-of-an-arbitrary-gr",
+     "title": "One can see that the action of an arbitrary group element g \u2208 G on |R\u27e9",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-222-holomorphic-approach",
+     "title": "Holomorphic approach",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-223-measure",
+     "title": "Measure",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-23-generalizations",
+     "title": "Generalizations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-231-t-opology",
+     "title": "T opology",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-13-c1",
+     "title": "C\u22121",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-232-higher-dimensional-forms",
+     "title": "Higher-dimensional forms",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-2-the-forms-are-of-a-very-particular-shape-namel",
+     "title": "The forms are of a very particular shape, namely, the connectio n 1-form and",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-3-applications",
+     "title": "Applications",
+     "prose_ratio": 0.367,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-028-31-two-dimensional-yang-mills-theory",
+     "title": "Two-dimensional Yang-Mills theory",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-2-f-af-a-if-at-a",
+     "title": "F aF a + iF aT a",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-2-t-at-a",
+     "title": "T aT a",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-2-c2rs",
+     "title": "C2(R)S",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-2-c2risi",
+     "title": "C2(Ri)Si",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-2-s\u03b1t-2",
+     "title": "S\u03b1T 2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-32-three-dimensional-topological-quantum-\ufb01eld-th",
+     "title": "Three-dimensional topological quantum \ufb01eld theory",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-3-a-a-a",
+     "title": "A \u2227 A \u2227 A",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-3-aiajak",
+     "title": "AiAjAk",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-33-other-applications",
+     "title": "Other applications",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-038-4-summary",
+     "title": "Summary",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.987,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-039-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

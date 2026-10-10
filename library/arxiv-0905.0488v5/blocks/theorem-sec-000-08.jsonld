@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0905.0488v5/blocks/theorem-sec-000-08",
+  "kind": "theorem",
+  "title": "Cosimplicial Formality",
+  "pageStart": 1,
+  "pageEnd": 11,
+  "text": "theorem-sec-000-08.md",
+  "derivedFrom": "library/arxiv-0905.0488v5/sections/sec-000",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0905.0488v5/manifest.jsonld",
+  "provenance": "ingested"
+}

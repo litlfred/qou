@@ -6,7 +6,8 @@
   "sha256": "f95088789da2453ad00f1a60d147922bf270149fe5ffb01394643e0a1e60ac81",
   "bytes": 283411,
   "pages": 37,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -974,6 +975,301 @@
   "likely_scanned": false,
   "toc_entries": 55,
   "sections": 55,
-  "chars_total": 72063
+  "chars_total": 72063,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "gaussian02.tex",
+   "tex_sections": 6,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-2-piotr-sniady",
+     "title": "PIOTR \u00b4SNIADY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-1-i-ntroduction",
+     "title": "I NTRODUCTION",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-11-representations-of-large-symmetric-groups-irr",
+     "title": "Representations of large symmetric groups. Irreducible represen-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-12-genus-expansion-random-matrices-and-free-prob",
+     "title": "Genus expansion, random matrices and free probability. Free",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-13-higher-order-free-probability-as-we-mentioned",
+     "title": "Higher-order free probability. As we mentioned above, the \ufb01rst or-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-14-factorization-of-characters-biane-bia01-prove",
+     "title": "Factorization of characters. Biane [Bia01] proved (under some mild",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-4-piotr-sniady",
+     "title": "PIOTR \u00b4SNIADY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-15-fluctuations-of-young-diagrams-every-\ufb01nite-di",
+     "title": "Fluctuations of Young diagrams. Every \ufb01nite-dimensional represen-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-16-overview-of-this-article-in-section-2-we-pres",
+     "title": "Overview of this article. In Section 2 we present brie\ufb02y all necessary",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-2-p-reliminaries",
+     "title": "P RELIMINARIES",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-21-normalized-conjugacy-class-indicators-let-int",
+     "title": "Normalized conjugacy class indicators. Let integer numbers",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-22-disjoint-product-usually-by-a-product-of-norm",
+     "title": "Disjoint product. Usually by a product of normalized conjugacy",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-6-piotr-sniady",
+     "title": "PIOTR \u00b4SNIADY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-23-classical-cumulants-the-notion-of-cumulants-o",
+     "title": "Classical cumulants. The notion of cumulants (or semi-invariants)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-2-we",
+     "title": "We",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-24-elements-of-the-group-algebra-as-random-varia",
+     "title": "Elements of the group algebra as random variables. Let us \ufb01x",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-25-canonical-probability-measure-on-young-diagra",
+     "title": "Canonical probability measure on Young diagrams associated to a",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-26-generalized-young-diagrams-let-\u03bb-be-a-young-d",
+     "title": "Generalized Young diagrams. Let \u03bb be a Young diagram. We assign",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-27-functionals-of-the-shape-of-young-diagramsthe",
+     "title": "Functionals of the shape of Young diagrams.The main result of this",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-8-piotr-sniady",
+     "title": "PIOTR \u00b4SNIADY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-28-transition-measure-of-a-young-diagram-to-any",
+     "title": "Transition measure of a Young diagram. To any generalized Young",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-29-free-cumulants-of-the-transition-measure-cauc",
+     "title": "Free cumulants of the transition measure. Cauchy transform of a",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-10-piotr-sniady",
+     "title": "PIOTR \u00b4SNIADY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-3-r-epresentations-with-character-factorization",
+     "title": "R EPRESENTATIONS WITH CHARACTER FACTORIZATION PROPERTY",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-024-31-factorization-of-characters-and-gaussian-\ufb02uct",
+     "title": "Factorization of characters and Gaussian \ufb02uctuations. The follow-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-12-piotr-sniady",
+     "title": "PIOTR \u00b4SNIADY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-2-ri-eri",
+     "title": "(Ri \u2212 ERi)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-2-pi-e-pi",
+     "title": "( \u02dcpi \u2212 E \u02dcpi)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-32-examples-all-examples-presented-in-this-secti",
+     "title": "Examples. All examples presented in this section not only have the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-14-piotr-sniady",
+     "title": "PIOTR \u00b4SNIADY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-16-piotr-sniady",
+     "title": "PIOTR \u00b4SNIADY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-18-piotr-sniady",
+     "title": "PIOTR \u00b4SNIADY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-4-p-roof-of-the-main-result",
+     "title": "P ROOF OF THE MAIN RESULT",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-033-41-toy-example-let-us-have-a-look-on-the-main-re",
+     "title": "Toy example. Let us have a look on the main result (Theorem and",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-42-partitions-we-recall-that-\u03c0-\u03c0-1-\u03c0-r-is-a-part",
+     "title": "Partitions. We recall that \u03c0 = {\u03c0 1, . . . , \u03c0 r} is a partition of a \ufb01nite",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-43-algebra-of-conjugacy-classes-and-its-\ufb01ltratio",
+     "title": "Algebra of conjugacy classes and its \ufb01ltration. Ivanov and Kerov",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-20-piotr-sniady",
+     "title": "PIOTR \u00b4SNIADY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-44-three-probability-spaces-commutative-algebras",
+     "title": "Three probability spaces. Commutative algebras A and A\u2022 can be",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-038-45-cumulants-of-products-if-\u03c1-\u03c11-\u03c1-kis-a-partiti",
+     "title": "Cumulants of products. If \u03c1 = {\u03c11, . . . , \u03c1 k}is a partition of the set",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-039-22-piotr-sniady",
+     "title": "PIOTR \u00b4SNIADY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-24-piotr-sniady",
+     "title": "PIOTR \u00b4SNIADY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-471-cumulants-of-falling-factorials-element-\u03c3-1",
+     "title": "Cumulants of falling factorials. Element \u03a3 1, . . . , 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-042-26-piotr-sniady",
+     "title": "PIOTR \u00b4SNIADY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-043-5-p-roof-of-theorem-43",
+     "title": "P ROOF OF THEOREM 4.3",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-044-51-cumulants-if-\u00b5-\u00b5-1-\u00b5-k-is-a-partition-of-the",
+     "title": "Cumulants. If \u00b5 = {\u00b5 1, . . . , \u00b5 k} is a partition of the set {1, . . . , n }",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-045-52-partitionindexed-conjugacy-classes-in-the-fol",
+     "title": "Partition\u2013indexed conjugacy classes. In the following we present",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-046-0-1-2-1-q-1",
+     "title": "(1, 2 ) . . . (1, q ) 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-047-28-piotr-sniady",
+     "title": "PIOTR \u00b4SNIADY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-048-54-geometric-interpretation-of-the-degree-of-\u03c3-\u03c0",
+     "title": "Geometric interpretation of the degree of \u03a3 \u03c0 . It is very useful to",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-049-30-piotr-sniady",
+     "title": "PIOTR \u00b4SNIADY",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-050-55-geometric-interpretation-of-theorem-51-we-wil",
+     "title": "Geometric interpretation of Theorem 5.1. We will use the notations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-051-56-fat-partitions-let-\u03c0-\u03c0-1-\u03c0-r-be-a-partition-o",
+     "title": "Fat partitions. Let \u03c0 = {\u03c0 1, . . . , \u03c0 r} be a partition of the set",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-052-57-explicit-form-of-the-partitionindexed-conjuga",
+     "title": "Explicit form of the partition\u2013indexed conjugacy class ind ica-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-053-6-a-cknowledgments",
+     "title": "A CKNOWLEDGMENTS",
+     "prose_ratio": 0.958,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-054-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

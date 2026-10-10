@@ -7,188 +7,80 @@ section_number: 2
 pages: 1-3
 source_pdf: 0603217v3.pdf
 source_sha256: d7375d4fee00dd98
+text_source: latex
+latex_prose_ratio: 0.854
+latex_coverage_ratio: 0.908
 doc_brief: "A version of the volume conjecture — W e propose a version of the volume conjecture that would rela te a certain limit of the colored Jones polynomials of a knot to th e volume function deﬁned by a"
 ---
-Let K be a knot in S3. Denote by JN (K; q) the colored Jones polynomial associ-
-ated to the N -dimensional irreducible representation of the Lie algebra sl(2, C) [9].
-We normalize it so that J2(K; q) is the Jones polynomial [5] and that JN (U ; q) = 1,
-where U is the unknot.
-We propose the following conjecture as a version of the volume conj ecture.
-Date: July 16, 2018.
-2000 Mathematics Subject Classiﬁcation. Primary 57M27 57M25 57M50.
-Key words and phrases. colored Jones polynomial, volume conjecture, A-polynomia l, Alexan-
-der polynomial, torus knot, ﬁgure-eight knot.
-This research is partially supported by Grant-in-Aid for Sc ientiﬁc Research (B) (15340019).
-1
-2 HITOSHI MURAKAMI
-Conjecture 2.1 (Parameterized Volume Conjecture). There exists an open subset
-OK of C such that for any u ∈ O K the following limit exists:
-(2.1) lim
-N →∞
-log JN
-(
-K; exp
-((
-u + 2π √−1
-)
-/N
-))
-N .
-Moreover the function of u
-(2.2) H(K; u) :=
-(
-u + 2π
-√
-−1
-)
-lim
-N →∞
-log JN
-(
-E; exp
-((
-u + 2π √−1
-)
-/N
-))
-N
-is analytic on OK. If we put
-vK(u) := 2 d H(K; u)
-d u − 2π
-√
-−1,
-then the following formula holds:
-(2.3) V (K; u) = Im
-(
-H(K; u)
-)
-− π Re(u) − 1
-2 Re(u) Im
-(
-vK(u)
-)
-,
-where V (K; u) is the volume function corresponding to the representation from
-π1(S3 \ K) to SL(2; C) sending the meridian and the longitude to the elements the
-ratios of whose eigenvalues are exp(u) and exp
-(
-vK(u)
-)
-respectively [1, § 4.5].
-Remark 2.2. If u is parameterized by a real number t, then V
-(
-K; u(t)
-)
-satisﬁes the
-following diﬀerential equation from Schl¨ aﬂi’s formula:
-(2.4) d V
-(
-K; u(t)
-)
-d t
-= − 1
-2
-(
-Re
-(
-u(t)
-)d Im
-(
-vK
-(
-u(t)
-))
-d t − Re
-(
-vK
-(
-u(t)
-))d Im
-(
-u(t)
-)
-d t
-)
-.
-See [16, § 5] and [1, § 4.5]. Note that we use the same convention for the merid-
-ian/longitude pair as in [16], which is diﬀerent from that in [1] and [4]. Note also
-that the right hand side of the equation in the last line of Page 62 of [1 ] should be
-multiplied by four (see [4, (5.6)]).
-Remark 2.3. If there exist coprime integers p and q satisfying pu+qvK(u) = 2 π √
-−1,
-then u would deﬁne the ( p, q )-Dehn surgery along K [17]. If this is a hyperbolic
-manifold, V (K; u) is its hyperbolic volume.
-Remark 2.4. The open set OK may not contain 0. Therefore Conjecture 2.1 is
-not a generalization of the volume conjecture. (Recall that the volume conjecture
-[6, 14] states that when u = 0, then the limit (2.1) gives the simplicial volume of
-the knot complement.) In fact the case where K is a torus knot, the limit (2.1) is
-not continuous at 0 [7, 12]. See also [3, Proposition B.2].
-Remark 2.5. S. Garoufalidis and T. Le proved that if u is close enough to −2π √
-−1,
-then JN
-(
-K; exp
-(
-(u + 2π √−1)/N
-))
-converges to 1 / ∆( K; exp(u + 2π √−1)
-)
-, where
-∆( K; t) is the Alexander polynomial of K [2]. (See also [11] for the ﬁgure-eight
-knot.) In this case the right hand side of (2.1) vanishes and so we hav e H(K; u) = 0
-and vK(u) = −2π √−1. Therefore from (2.3) the volume function V (K; u) van-
-ishes. This corresponds to the case where u deﬁnes an abelian representation,
-whose volume function is zero. See [3, Appendix B]. So we exclude such a case in
-Conjecture 2.1.
-Note that the conjecture above is proved for the ﬁgure-eight kn ot by Yokota and
-the author [15]. In fact we proved [15, Corollary 2.4] that for the ﬁ gure-eight knot
-E
-V (E; u) = Im
-(
-H(E; u)
-)
-− π Re(u) − 1
-4 Im
-(
-u vE(u)
-)
-− π
-2 length(γ),
-A VERSION OF THE VOLUME CONJECTURE 3
-where length( γ) is the length of the geodisic γ added to complete the incom-
-plete hyperbolic structure of S3 \ E corresponding to u. But since length( γ) =
-− Im
-(
-u vE(u)
-)
-/ (2π ) from [16, (34)], we have
-V (E; u) = Im
-(
-H(E; u)
-)
-− π Re(u) − 1
-4 Im
-(
-u vE(u)
-)
-+ 1
-4 Im
-(
-u vE(u)
-)
-= Im
-(
-H(E; u)
-)
-− π Re(u) − 1
-2 Re(u) Im
-(
-vE(u)
-)
-as required.
-See also [13, (4.1)]. (The sign of π Re u in [13, (4.1)] should be negative because
-the author used a wrong deﬁnition of the function H in the old version of [15].)
-Note also that Gukov uses a diﬀerent polarization in his generalization of the
-volume conjecture [4, (5.12)]. It agrees with Conjecture 2.1 when R e(u) = 0. The
-diﬀerence for Re( u) ⁄= 0 can be explained by a choice of polarization. Details will
-be described in a forthcoming paper.
+Let $K$ be a knot in $S^3$. Denote by $J_N(K;q)$ the colored Jones polynomial associated to the $N$-dimensional irreducible representation of the Lie algebra $sl(2,\mathbb{C})$ [@Kirillov/Reshetikhin:1989]. We normalize it so that $J_2(K;q)$ is the Jones polynomial [@Jones:BULAM385] and that $J_N(U;q)=1$, where $U$ is the unknot.
+
+We propose the following conjecture as a version of the volume conjecture.
+
+::: conj
+[]{#conj:parameterization label="conj:parameterization"} There exists an open subset $\mathcal{O}_{K}$ of $\mathbb{C}$ such that for any $u\in\mathcal{O}_{K}$ the following limit exists: $$\begin{equation}
+\label{eq:limit}
+  \lim_{N\to\infty}
+  \frac{\log
+        J_N\left(
+             K;\exp\left(
+                     \left(u+2\pi\sqrt{-1}\right)/N
+                   \right)
+           \right)}
+       {N}.
+\end{equation}$$ Moreover the function of $u$ $$\begin{equation}
+\label{eq:H}
+  H(K;u)
+  :=
+  \left(u+2\pi\sqrt{-1}\right)
+  \lim_{N\to\infty}
+  \frac{\log
+        J_N\left(
+             E;\exp\left(
+                     \left(u+2\pi\sqrt{-1}\right)/N
+                   \right)
+           \right)}
+       {N}
+\end{equation}$$ is analytic on $\mathcal{O}_{K}$. If we put $$\begin{equation*}
+  v_{K}(u)
+  :=
+  2\frac{d\,H(K;u)}{d\,u}-2\pi\sqrt{-1},
+\end{equation*}$$ then the following formula holds: $$\begin{equation}
+\label{eq:volume}
+  V(K;u)
+  =
+  \operatorname{Im}\bigl(H(K;u)\bigr)-\pi\operatorname{Re}(u)-\frac{1}{2}\operatorname{Re}(u)\operatorname{Im}\bigl(v_{K}(u)\bigr),
+\end{equation}$$ where $V(K;u)$ is the volume function corresponding to the representation from $\pi_1(S^3\setminus{K})$ to $SL(2;\mathbb{C})$ sending the meridian and the longitude to the elements the ratios of whose eigenvalues are $\exp(u)$ and $\exp\bigl(v_{K}(u)\bigr)$ respectively [@Cooper/Culler/Gillet/Long/Shalen:INVEM1994 § 4.5].
+:::
+
+::: rem
+[]{#rem:Dehn label="rem:Dehn"} If there exist coprime integers $p$ and $q$ satisfying $pu+qv_{K}(u)=2\pi\sqrt{-1}$, then $u$ would define the $(p,q)$-Dehn surgery along $K$ [@Thurston:GT3M]. If this is a hyperbolic manifold, $V(K;u)$ is its hyperbolic volume.
+:::
+
+::: rem
+The open set $\mathcal{O}_{K}$ may not contain $0$. Therefore Conjecture [\[conj:parameterization\]](#conj:parameterization){reference-type="ref" reference="conj:parameterization"} is *not* a generalization of the volume conjecture. (Recall that the volume conjecture [@Kashaev:LETMP97; @Murakami/Murakami:ACTAM12001] states that when $u=0$, then the limit [\[eq:limit\]](#eq:limit){reference-type="eqref" reference="eq:limit"} gives the simplicial volume of the knot complement.) In fact the case where $K$ is a torus knot, the limit [\[eq:limit\]](#eq:limit){reference-type="eqref" reference="eq:limit"} is not continuous at $0$ [@Kashaev/Tirkkonen:ZAPNS2000; @Murakami:INTJM62004]. See also [@Garoufalidis/Le:Kauffman Proposition B.2].
+:::
+
+::: rem
+[]{#rem:Garoufalidis1 label="rem:Garoufalidis1"} S. Garoufalidis and T. Le proved that if $u$ is close enough to $-2\pi\sqrt{-1}$, then $J_N\left(K;\exp\bigl((u+2\pi\sqrt{-1})/N\bigr)\right)$ converges to $1/\Delta(K;\exp(u+2\pi\sqrt{-1})\bigr)$, where $\Delta(K;t)$ is the Alexander polynomial of $K$ [@Garoufalidis/Le:aMMR]. (See also [@Murakami:2005] for the figure-eight knot.) In this case the right hand side of [\[eq:limit\]](#eq:limit){reference-type="eqref" reference="eq:limit"} vanishes and so we have $H(K;u)=0$ and $v_K(u)=-2\pi\sqrt{-1}$. Therefore from [\[eq:volume\]](#eq:volume){reference-type="eqref" reference="eq:volume"} the volume function $V(K;u)$ vanishes. This corresponds to the case where $u$ defines an abelian representation, whose volume function is zero. See [@Garoufalidis/Le:Kauffman Appendix B]. So we exclude such a case in Conjecture [\[conj:parameterization\]](#conj:parameterization){reference-type="ref" reference="conj:parameterization"}.
+:::
+
+Note that the conjecture above is proved for the figure-eight knot by Yokota and the author [@Murakami/Yokota:JREIA]. In fact we proved [@Murakami/Yokota:JREIA Corollary 2.4] that for the figure-eight knot $E$ $$\begin{equation*}
+  V(E;u)
+  =
+  \operatorname{Im}\bigl(H(E;u)\bigr)-\pi\operatorname{Re}(u)-\frac{1}{4}\operatorname{Im}\bigl(u\,v_E(u)\bigr)
+  -\frac{\pi}{2}\operatorname{length}(\gamma),
+\end{equation*}$$ where $\operatorname{length}(\gamma)$ is the length of the geodisic $\gamma$ added to complete the incomplete hyperbolic structure of $S^3\setminus{E}$ corresponding to $u$. But since $\operatorname{length}(\gamma)=-\operatorname{Im}\bigl(u\,\overline{v_E(u)}\bigr)/(2\pi)$ from [@Neumann/Zagier:TOPOL85 (34)], we have $$\begin{equation*}
+\begin{split}
+  V(E;u)
+  &=
+  \operatorname{Im}\bigl(H(E;u)\bigr)-\pi\operatorname{Re}(u)-\frac{1}{4}\operatorname{Im}\bigl(u\,v_E(u)\bigr)
+  +\frac{1}{4}\operatorname{Im}\bigl(u\,\overline{v_E(u)}\bigr)
+  \\
+  &=
+  \operatorname{Im}\bigl(H(E;u)\bigr)-\pi\operatorname{Re}(u)-\frac{1}{2}\operatorname{Re}(u)\operatorname{Im}\bigl(v_E(u)\bigr)
+\end{split}
+\end{equation*}$$ as required.
+
+See also [@Murakami:FUNDM2004 (4.1)]. (The sign of $\pi\operatorname{Re}{u}$ in [@Murakami:FUNDM2004 (4.1)] should be negative because the author used a wrong definition of the function $H$ in the old version of [@Murakami/Yokota:JREIA].)
+
+Note also that Gukov uses a different *polarization* in his generalization of the volume conjecture [@Gukov:COMMP2005 (5.12)]. It agrees with Conjecture [\[conj:parameterization\]](#conj:parameterization){reference-type="ref" reference="conj:parameterization"} when $\operatorname{Re}(u)=0$. The difference for $\operatorname{Re}(u)\ne0$ can be explained by a choice of polarization. Details will be described in a forthcoming paper.

@@ -7,116 +7,112 @@ section_number: 1
 pages: 2-4
 source_pdf: 2607.29018v1.pdf
 source_sha256: 789faa122dd32290
+text_source: latex
+latex_prose_ratio: 0.695
+latex_coverage_ratio: 0.859
 doc_brief: "The Aldous property for normal Cayley graphs on symmetric groups — Aldous’ spectral gap conjecture states that the random walk and the interchange process on any connected graph have the same"
 ---
-All graphs considered in this paper are finite and undirected with no loops or parallel edges.
-The order of a graph is meant to be its number of vertices. Denote byA(Γ) the adjacency
-matrix of a graph Γ, and call its eigenvalues theeigenvaluesof Γ. SinceA(Γ) is a real
-symmetric matrix, the eigenvalues of Γ are real numbers, and we order them asλ 1(Γ)≥
-λ2(Γ)≥···≥λ n(Γ), wherenis the order of Γ. Similarly, for a real symmetric matrixM,
-we writeλ i(M) for itsi-th largest eigenvalue. Thespectrumof Γ, denoted by Spec(Γ), is the
-multiset of eigenvalues of Γ. The differenceλ 1(Γ)−λ 2(Γ) is called thespectral gapof Γ. If
-λ1(Γ) has multiplicityt, then we callλ t+1(Γ) thestrictly second largest eigenvalueof Γ. In
-the case when Γ isd-regular, we haveλ 1(Γ) =dwith multiplicity the number of components
-of Γ, and the spectral gapd−λ 2(Γ) equals the second smallest Laplacian eigenvalue of Γ.
-LetGbe a finite group with identity elemente, and letSbe an inverse-closed subset of
-G\{e}. TheCayley graphonGwith respect to theconnection setS, denoted by Cay(G,S),
-is the|S|-regular graph with vertex setGand edge set{{g,gs}:g∈G,s∈S}. It is readily
-seen that Cay(G,S) hast= [G:⟨S⟩] connected components, so its strictly second largest
-eigenvalue isλt+1(Cay(G,S)), where [G:⟨S⟩] is the index inGof the subgroup⟨S⟩generated
-byS. We call Cay(G,S)normalifSis closed under conjugation (that is,Sis the union of
-some conjugacy classes ofG) andnonnormalotherwise.
-1.1 Aldous’ spectral gap conjecture
-Given a graph Γ on [n] ={1,2,...,n}, we may identify each edge{i,j}of Γ with the trans-
-position (i j) of the symmetric groupS n on [n]. LetT(Γ) be the set of such transpositions
-ofS n. Then Cay(S n,T(Γ)) is a Cayley graph onS n associated with Γ. It is readily seen
-that Cay(Sn,T(Γ)) is connected whenever Γ is connected. Around 1992, Aldous [1] formu-
-lated a stunning conjecture, which is widely known asAldous’ spectral gap conjecture. It
-asserts that any connected graph Γ and its associated Cayley graph Cay(S n,T(Γ)) have the
-same spectral gap. In other words, the random walk and the interchange process on any
-connected graph have the same spectral gap. When Γ is a complete graph [11] or a star [12],
-this was proved before Aldous made his conjecture, and when Γ is a complete multipartite
-graph the conjecture was proved in [6]. After a series of partial successes (see [8] and the
-references therein), Aldous’ spectral gap conjecture was finally proved by Caputo, Liggett
-and Richthammer [4] in 2010. In fact, what they proved is a more general version of Aldous’
-spectral gap conjecture, namely when each edge of Γ has a positive weight which carries for-
-ward to corresponding edges of Cay(S n,T(Γ)). See [4, 7, 8] and [25, Section 8.1] for details.
-In this paper we confine ourselves to the unweighted case.
-Aldous’ spectral gap conjecture can be stated in terms of representations of symmetric
-groups. LetGbe a group, and let ˆG={ρ 1,ρ 2,...,ρ k}denote a complete set of inequivalent
-complex irreducible matrix representations ofG, with the assumption thatρ 1 is the trivial
-representation. For eachρ i∈ ˆG, letχ i be the character ofρ i, and let ˜χi(g) :=χ i(g)/χi(e)
-2
-be the normalized character ofρ i atg∈G, whereχ i(e) = dimρ i is the dimension of
-ρi. It is known [21] that the adjacency matrix of any Cayley graph Cay(G,S) onGis
-equal to ∑
-s∈SRreg(s), whereR reg is the right regular representation ofGandR reg(s) is the
-permutation matrix representing right multiplication bysonG. Setρ i(S) := ∑
-s∈Sρi(s),
-and denote by⊕the direct sum of matrices. The adjacency matrix of Cay(G,S) is similar to
-d1ρ1(S)⊕d 2ρ2(S)⊕···⊕d kρk(S) (see [21, Proposition 7.1]), whered i = dimρi andd iρi(S)
-denotes the direct sum ofd i copies ofρ i(S). This implies that the spectrum of Cay(G,S)
-is the union ofd i copies of the multiset of eigenvalues ofρ i(S), for 1≤i≤k. We say that
-an eigenvalueµof Cay(G,S) isattained[22] by the representationρ i ofGifµ=λ 1(ρi(S)).
-In particular, the strictly second largest eigenvalueλ t+1(Cay(G,S)) of Cay(G,S) (where
-t= [G:⟨S⟩]) isattainedbyρ i ifλ t+1(Cay(G,S)) =λ 1(ρi(S)). If Cay(G,S) is normal, then
-Schur’s lemma implies that eachρ i(S) is a scalar matrix, and the eigenvalues of Cay(G,S)
-are given by ([11, 33])
-µj = 1
-χj(e)
-∑
-s∈S
-χj(s) =
-∑
-s∈S
-˜χj(s), j= 1,2,...,k.(1)
-Moreover, the multiplicity ofµj is equal to∑
-1≤i≤k,µ i=µjχi(e)2. Thus, if Cay(G,S) is normal,
-then an eigenvalueµof Cay(G,S) is attained byρ i if and only ifµ= ∑
-s∈S ˜χi(s), and in
-particular the strictly second largest eigenvalue of Cay(G,S) is attained byρ i if and only if
-λt+1(Cay(G,S)) = ∑
-s∈S ˜χi(s).
-It is known [28] that each partition ofngives rise to an irreducible representation ofS n,
-known as a Specht module, and such Specht modules form a complete list ˆSn of inequiva-
-lent irreducible representations ofS n. The Specht modules corresponding to the partitions
-(n−1,1) and (1 n) ofnare called thestandard representationandsign representationof
-Sn and are denoted byρ (n−1,1) andρ (1n), respectively. As explained in [6, 7, 27], Aldous’
-spectral gap conjecture is equivalent to saying that for any connected graph Γ with ver-
-tex set [n] the second largest eigenvalue of Cay(S n,T(Γ)) is attained byρ (n−1,1); that is,
-λ2(Cay(Sn,T(Γ))) =λ 1(ρ(n−1,1)(T(Γ))), orλ 2(Cay(Sn,T(Γ))) = ∑
-σ∈T(Γ) ˜χ(n−1,1)(σ) when
-Cay(Sn,T(Γ)) is normal. This version of Aldous’ spectral gap conjecture motivated the fol-
-lowing notion for generalizing the conjecture (see [2, 8, 20, 27] for other attempts to generalize
-Aldous’ spectral gap conjecture).
-Definition 1.1([22, Definition 1.1]).A Cayley graph Cay(S n,S) onS n is said to have the
-Aldous propertyif its strictly second largest eigenvalue is attained by the standard represen-
-tation ofS n, that is,λ t+1(Cay(Sn,S)) =λ 1(ρ(n−1,1)(S)), wheret= [S n :⟨S⟩].
-In particular, if Cay(S n,S) is normal, then it has the Aldous property if and only if
-λt+1(Cay(Sn,S)) =
-∑
-σ∈S ˜χ(n−1,1)(σ).
+[]{#sec:intro label="sec:intro"}
+
+All graphs considered in this paper are finite and undirected with no loops or parallel edges. The order of a graph is meant to be its number of vertices. Denote by $A(\Gamma)$ the adjacency matrix of a graph $\Gamma$, and call its eigenvalues the *eigenvalues* of $\Gamma$. Since $A(\Gamma)$ is a real symmetric matrix, the eigenvalues of $\Gamma$ are real numbers, and we order them as $\lambda_1(\Gamma) \geq \lambda_2(\Gamma) \geq \dots \geq \lambda_n(\Gamma)$, where $n$ is the order of $\Gamma$. Similarly, for a real symmetric matrix $M$, we write $\lambda_i(M)$ for its $i$-th largest eigenvalue. The *spectrum* of $\Gamma$, denoted by $\mathrm{Spec}(\Gamma)$, is the multiset of eigenvalues of $\Gamma$. The difference $\lambda_1(\Gamma) - \lambda_2(\Gamma)$ is called the *spectral gap* of $\Gamma$. If $\lambda_1(\Gamma)$ has multiplicity $t$, then we call $\lambda_{t+1}(\Gamma)$ the *strictly second largest eigenvalue* of $\Gamma$. In the case when $\Gamma$ is $d$-regular, we have $\lambda_1(\Gamma) = d$ with multiplicity the number of components of $\Gamma$, and the spectral gap $d - \lambda_2(\Gamma)$ equals the second smallest Laplacian eigenvalue of $\Gamma$.
+
+Let $G$ be a finite group with identity element $e$, and let $S$ be an inverse-closed subset of $G \setminus \{e\}$. The *Cayley graph* on $G$ with respect to the *connection set* $S$, denoted by $\mathrm{Cay}(G, S)$, is the $|S|$-regular graph with vertex set $G$ and edge set $\{\{g, gs\}: g \in G, s \in S\}$. It is readily seen that $\mathrm{Cay}(G, S)$ has $t = [G:\langle S \rangle]$ connected components, so its strictly second largest eigenvalue is $\lambda_{t+1}(\mathrm{Cay}(G, S))$, where $[G:\langle S \rangle]$ is the index in $G$ of the subgroup $\langle S \rangle$ generated by $S$. We call $\mathrm{Cay}(G, S)$ *normal* if $S$ is closed under conjugation (that is, $S$ is the union of some conjugacy classes of $G$) and *nonnormal* otherwise.
+
+## Aldous' spectral gap conjecture
+
+Given a graph $\Gamma$ on $[n] = \{1, 2, \ldots, n\}$, we may identify each edge $\{i,j\}$ of $\Gamma$ with the transposition $(i\ j)$ of the symmetric group $S_n$ on $[n]$. Let $T(\Gamma)$ be the set of such transpositions of $S_n$. Then $\mathrm{Cay}(S_n, T(\Gamma))$ is a Cayley graph on $S_n$ associated with $\Gamma$. It is readily seen that $\mathrm{Cay}(S_n, T(\Gamma))$ is connected whenever $\Gamma$ is connected. Around 1992, Aldous [@A1] formulated a stunning conjecture, which is widely known as *Aldous' spectral gap conjecture*. It asserts that any connected graph $\Gamma$ and its associated Cayley graph $\mathrm{Cay}(S_n, T(\Gamma))$ have the same spectral gap. In other words, the random walk and the interchange process on any connected graph have the same spectral gap. When $\Gamma$ is a complete graph [@DS] or a star [@FOW], this was proved before Aldous made his conjecture, and when $\Gamma$ is a complete multipartite graph the conjecture was proved in [@C]. After a series of partial successes (see [@C3] and the references therein), Aldous' spectral gap conjecture was finally proved by Caputo, Liggett and Richthammer [@CLR] in 2010. In fact, what they proved is a more general version of Aldous' spectral gap conjecture, namely when each edge of $\Gamma$ has a positive weight which carries forward to corresponding edges of $\mathrm{Cay}(S_n, T(\Gamma))$. See [@CLR; @C2; @C3] and [@LZ Section 8.1] for details. In this paper we confine ourselves to the unweighted case.
+
+Aldous' spectral gap conjecture can be stated in terms of representations of symmetric groups. Let $G$ be a group, and let $\widehat{G}=\{\rho_1,\rho_2,\ldots,\rho_k\}$ denote a complete set of inequivalent complex irreducible matrix representations of $G$, with the assumption that $\rho_1$ is the trivial representation. For each $\rho_i \in \widehat{G}$, let $\chi_i$ be the character of $\rho_i$, and let $\tilde{\chi}_i(g):=\chi_i(g)/\chi_i(e)$ be the normalized character of $\rho_i$ at $g\in G$, where $\chi_i(e) = \dim\rho_i$ is the dimension of $\rho_i$. It is known [@MS] that the adjacency matrix of any Cayley graph $\mathrm{Cay}(G, S)$ on $G$ is equal to $\sum_{s\in S} R_{\mathrm{reg}}(s)$, where $R_{\mathrm{reg}}$ is the right regular representation of $G$ and $R_{\mathrm{reg}}(s)$ is the permutation matrix representing right multiplication by $s$ on $G$. Set $\rho_i(S) := \sum_{s \in S} \rho_i(s)$, and denote by $\oplus$ the direct sum of matrices. The adjacency matrix of $\mathrm{Cay}(G,S)$ is similar to $d_1\rho_1(S)\oplus d_2\rho_2(S)\oplus \cdots\oplus d_k\rho_k(S)$ (see [@MS Proposition 7.1]), where $d_i=\dim\rho_i$ and $d_i\rho_i(S)$ denotes the direct sum of $d_i$ copies of $\rho_i(S)$. This implies that the spectrum of $\mathrm{Cay}(G,S)$ is the union of $d_i$ copies of the multiset of eigenvalues of $\rho_i(S)$, for $1\leq i\leq k$. We say that an eigenvalue $\mu$ of $\mathrm{Cay}(G,S)$ is *attained* [@LXZ] by the representation $\rho_i$ of $G$ if $\mu=\lambda_1(\rho_i(S))$. In particular, the strictly second largest eigenvalue $\lambda_{t+1}(\mathrm{Cay}(G,S))$ of $\mathrm{Cay}(G,S)$ (where $t = [G:\langle S \rangle]$) is *attained* by $\rho_i$ if $\lambda_{t+1}(\mathrm{Cay}(G,S))=\lambda_1(\rho_i(S))$. If $\mathrm{Cay}(G,S)$ is normal, then Schur's lemma implies that each $\rho_i(S)$ is a scalar matrix, and the eigenvalues of $\mathrm{Cay}(G,S)$ are given by ([@DS; @Z]) $$\begin{equation}
+\label{eq:muj}
+\mu_j=\frac{1}{\chi_j(e)}\sum_{s\in S}\chi_j(s)=\sum_{s\in S}\tilde{\chi}_j(s),\quad j=1,2,\ldots,k.
+\end{equation}$$ Moreover, the multiplicity of $\mu_j$ is equal to $\sum_{1\leq i\leq k,\, \mu_i=\mu_j}\chi_i(e)^2$. Thus, if $\mathrm{Cay}(G,S)$ is normal, then an eigenvalue $\mu$ of $\mathrm{Cay}(G,S)$ is attained by $\rho_i$ if and only if $\mu = \sum_{s\in S} \tilde{\chi}_i(s)$, and in particular the strictly second largest eigenvalue of $\mathrm{Cay}(G,S)$ is attained by $\rho_i$ if and only if $\lambda_{t+1}(\mathrm{Cay}(G,S))=\sum_{s\in S} \tilde{\chi}_i(s)$.
+
+It is known [@Sagan] that each partition of $n$ gives rise to an irreducible representation of $S_n$, known as a Specht module, and such Specht modules form a complete list $\widehat{S_n}$ of inequivalent irreducible representations of $S_n$. The Specht modules corresponding to the partitions $(n-1,1)$ and $(1^n)$ of $n$ are called the *standard representation* and *sign representation* of $S_n$ and are denoted by $\rho_{(n-1,1)}$ and $\rho_{(1^n)}$, respectively. As explained in [@C; @C2; @PP], Aldous' spectral gap conjecture is equivalent to saying that for any connected graph $\Gamma$ with vertex set $[n]$ the second largest eigenvalue of $\mathrm{Cay}(S_n, T(\Gamma))$ is attained by $\rho_{(n-1,1)}$; that is, $\lambda_{2}(\mathrm{Cay}(S_n, T(\Gamma))) = \lambda_1(\rho_{(n-1,1)}(T(\Gamma)))$, or $\lambda_{2}(\mathrm{Cay}(S_n, T(\Gamma))) = \sum_{\sigma \in T(\Gamma)} \tilde{\chi}_{(n-1,1)}(\sigma)$ when $\mathrm{Cay}(S_n, T(\Gamma))$ is normal. This version of Aldous' spectral gap conjecture motivated the following notion for generalizing the conjecture (see [@AKP; @C3; @K; @PP] for other attempts to generalize Aldous' spectral gap conjecture).
+
+::: def1
+A Cayley graph $\mathrm{Cay}(S_n, S)$ on $S_n$ is said to have the *Aldous property* if its strictly second largest eigenvalue is attained by the standard representation of $S_n$, that is, $\lambda_{t+1}(\mathrm{Cay}(S_n, S)) = \lambda_1(\rho_{(n-1,1)}(S))$, where $t = [S_n:\langle S \rangle]$.
+:::
+
+In particular, if $\mathrm{Cay}(S_n, S)$ is normal, then it has the Aldous property if and only if $\lambda_{t+1}(\mathrm{Cay}(S_n, S)) = \sum_{\sigma \in S} \tilde{\chi}_{(n-1,1)}(\sigma)$.
+
 It would be natural to study the following problem.
-Problem 1.1.Determine all Cayley graphs onS n that have the Aldous property.
-3
-In this paper we study this problem with a focus on normal Cayley graphs onS n. Before
-discussing our results, let us give a brief account of recent progress on Problem 1.1. As
-usual, for a permutationσ∈S n, let supp(σ) ={i∈[n] :σ(i)̸=i}be thesupportofσand
-fix(σ) ={i∈[n] :σ(i) =i}the set offixed pointsofσ. ForI⊆{2,3,...,n}and 2≤k≤n,
-set
-Suppn(I) ={σ∈S n :|supp(σ)|∈I}
-and
-Suppn(k) ={σ∈S n :|supp(σ)|=k}.
-For 1≤r <k <nandI⊆{2,3,...,n}, letC(n,k) be the set of allk-cycles inS n,C(n,k;r)
-the set of allk-cyclesσinS n with fix(σ)⊆{r+ 1,...,n}, andC(n,I) = ⋃
-k∈IC(n,k). In
-[22], Li, Xia and Zhou proved the following results for sufficiently largenwith the help of
-[27, Proposition 2.3]: ifSis a single conjugacy class ofS n, then Cay(Sn,S) has the Aldous
-property if and only if 2≤|supp(σ)|≤n−2 for eachσ∈S; for∅̸=I⊆{2,3,...,n}with
-|I∩{n−1,n}|̸= 1, Cay(S n,Suppn(I)) has the Aldous property if and only ifI∩{n−1,n}=∅;
-for any 2≤k≤n, Cay(S n,Suppn(I)) whereI={2,...,k}has the Aldous property. In
-[23], the same authors proved that the strictly second largest eigenvalue of Cay(S n,C(n,I))
-can be attained by at most four distinct irreducible representations ofS n, and for some
-specialI⊆{2,3,...,n}they further determined the exact value of this eigenvalue and its
-multiplicity. As a corollary, they gave a necessary and sufficient condition for Cay(Sn,C(n,I))
-to have the Aldous property whenI∩{n−1,n}=∅, and showed that this graph does not
+
+::: prob
+[]{#prob label="prob"} Determine all Cayley graphs on $S_n$ that have the Aldous property.
+:::
+
+In this paper we study this problem with a focus on normal Cayley graphs on $S_n$. Before discussing our results, let us give a brief account of recent progress on Problem [\[prob\]](#prob){reference-type="ref" reference="prob"}. As usual, for a permutation $\sigma\in S_n$, let $\mathrm{supp}(\sigma)=\{i\in [n] : \sigma(i)\ne i\}$ be the *support* of $\sigma$ and $\mathrm{fix}(\sigma) = \{i \in [n] : \sigma(i) = i\}$ the set of *fixed points* of $\sigma$. For $I\subseteq \{2,3,\ldots,n\}$ and $2\leq k\leq n$, set $$\mathrm{Supp}_n(I) = \{ \sigma \in S_n : |\mathrm{supp}(\sigma)| \in I \}$$ and $$\mathrm{Supp}_n(k) = \{ \sigma \in S_n : |\mathrm{supp}(\sigma)| = k \}.$$ For $1 \leq r < k < n$ and $I\subseteq \{2,3,\ldots,n\}$, let $C(n,k)$ be the set of all $k$-cycles in $S_n$, $C(n,k;r)$ the set of all $k$-cycles $\sigma$ in $S_n$ with $\mathrm{fix}(\sigma) \subseteq \{r+1, \ldots, n\}$, and $C(n,I)=\bigcup_{k\in I} C(n,k)$. In [@LXZ], Li, Xia and Zhou proved the following results for sufficiently large $n$ with the help of [@PP Proposition 2.3]: if $S$ is a single conjugacy class of $S_n$, then $\mathrm{Cay}(S_n,S)$ has the Aldous property if and only if $2\leq |\mathrm{supp}(\sigma)|\leq n-2$ for each $\sigma\in S$; for $\emptyset\ne I\subseteq \{2,3,\ldots,n\}$ with $|I\cap \{n-1,n\}|\ne 1$, $\mathrm{Cay}(S_n,\mathrm{Supp}_n(I))$ has the Aldous property if and only if $I\cap \{n-1,n\}=\emptyset$; for any $2 \le k \le n$, $\mathrm{Cay}(S_n,\mathrm{Supp}_n(I))$ where $I=\{2, \ldots, k\}$ has the Aldous property. In [@LXZJCTA2024], the same authors proved that the strictly second largest eigenvalue of $\mathrm{Cay}(S_n,C(n,I))$ can be attained by at most four distinct irreducible representations of $S_n$, and for some special $I\subseteq \{2,3,\ldots,n\}$ they further determined the exact value of this eigenvalue and its multiplicity. As a corollary, they gave a necessary and sufficient condition for $\mathrm{Cay}(S_n,C(n,I))$ to have the Aldous property when $I\cap \{n-1,n\}=\emptyset$, and showed that this graph does not have the Aldous property whenever $n\in I$. Another corollary of the main results in [@LXZJCTA2024] states that for any $2 \le k \le n-2$, $\mathrm{Cay}(S_n,C(n,k))$ has the Aldous property, thereby proving a conjecture in [@MR Conjecture 1.4] and solving an open problem in [@SZ]. (See [@DS; @HH; @HH2; @MR] for the proof of this conjecture when $k=2,3,4,5$ respectively.)
+
+In [@SZ], Siemons and Zalesski conjectured that for $n \ge 5$ and $1 \leq r < k < n$ the nonnormal Cayley graph $\mathrm{Cay}(S_n,C(n,k;r))$ has the Aldous property. They proved in the same paper that this is true when $r=k-1$, and the case when $k = 2,3$ was established earlier in [@FOW] and [@HH], respectively. In [@LXZJCTA2026 Theorem 1.3], Li, Xia and Zhou settled this conjecture by showing that for $n \ge 5$, $k \ge 4$ and $1 \leq r < k < n$, $\mathrm{Cay}(S_n,C(n,k;r))$ has the Aldous property except for (i) $(n,k,r) = (6,5,1)$, or (ii) $n$ is odd, $k=n-1$ and $1 \leq r < \frac{n}{2}$. In [@HH2], Huang, Huang and Cioabă proved that most connected normal Cayley graphs on $S_n$ with $n\geq 7$ whose connection sets consist of permutations moving at most five points have the Aldous property. In [@C1], Cesi showed that the pancake graph $P_n$ has the Aldous property, and Chung and Tobin [@CT] generalized this result to a family of graphs containing all pancake graphs. The reader is referred to [@LZ Section 8] for more results on the Aldous property and the second largest eigenvalue of Cayley graphs.
+
+## Main results
+
+A subset $S$ of $S_n \setminus \{e\}$ is called [@PP] a *normal set* in $S_n$ if it is the union of some conjugacy classes of $S_n$. Since in $S_n$ every element is conjugate to its inverse element, a Cayley graph $\mathrm{Cay}(S_n,S)$ on $S_n$ is normal if and only if $S$ is a normal set in $S_n$. Clearly, for a normal set $S$ in $S_n$, the set $$S^c=(S_n\setminus\{e\})\setminus S$$ is also a normal set in $S_n$, and moreover $\mathrm{Cay}(S_n,S)$ and $\mathrm{Cay}(S_n,S^c)$ are complements of each other. Throughout the paper, we denote by $K_n$ the complete graph of order $n$, by $K_{m,n}$ the complete bipartite graph with $m$ and $n$ vertices in the two partite sets respectively, and by $t\Gamma$ the vertex-disjoint union of $t$ copies of a graph $\Gamma$. The first main result in this paper is as follows.
+
+::: thm
+[]{#thm:complement label="thm:complement"} Let $n \ge 5$, and let $S$ be a nonempty normal set in $S_n$ with $S\neq S_n\setminus\{e\}$.
+
+1.  If neither $S$ nor $S^c$ is equal to $A_n\setminus\{e\}$, then at most one of $\mathrm{Cay}(S_n,S)$ and $\mathrm{Cay}(S_n,S^c)$ has the Aldous property.
+
+2.  If either $S$ or $S^c$ is equal to $A_n\setminus\{e\}$, then one of $\mathrm{Cay}(S_n, S)$ and $\mathrm{Cay}(S_n, S^c)$ is isomorphic to $2K_{n!/2}$ and the other to $K_{n!/2,n!/2}$, and moreover both graphs have the Aldous property.
+:::
+
+Theorem [\[thm:complement\]](#thm:complement){reference-type="ref" reference="thm:complement"} implies that at most half of all normal Cayley graphs on $S_n$ exhibit the Aldous property. This is true no matter whether isomorphism is taken into consideration because two normal Cayley graphs are isomorphic if and only if their complements are isomorphic.
+
+The second main result in this paper, Theorem [\[thm:main1\]](#thm:main1){reference-type="ref" reference="thm:main1"} below, settles Problem [\[prob\]](#prob){reference-type="ref" reference="prob"} for sufficiently large $n$ and normal Cayley graphs whose connection sets consist of permutations with support size between $2$ and $n-2$. For a subset $S\subseteq S_n$, denote by $O(S)$ and $E(S)$ the sets of odd and even permutations in $S$, respectively.
+
+::: thm
+[]{#thm:main1 label="thm:main1"} There exists a positive integer $N \geq 5$ such that, for every $n\ge N$ and every nonempty normal set $S$ in $S_n$ satisfying $2 \le |\mathrm{supp}(\sigma)| \le n-2$ for all $\sigma\in S$, the following statements hold:
+
+1.  if $E(S)=\emptyset$ or $O(S)=\emptyset$, then $\mathrm{Cay}(S_n,S)$ has the Aldous property;
+
+2.  if $E(S)\ne\emptyset$ and $O(S)\ne\emptyset$, then $\mathrm{Cay}(S_n,S)$ has the Aldous property if and only if $$\begin{equation}
+    \label{eq:fix}
+    \sum_{\sigma\in S} |\mathrm{fix}(\sigma)| \ge n|E(S)|-(n-2)|O(S)|;
+    \end{equation}$$ moreover, if $\mathrm{Cay}(S_n,S)$ does not have the Aldous property, then its strictly second largest eigenvalue is attained by the sign representation of $S_n$.
+:::
+
+If $2 \le |\mathrm{supp}(\sigma)| \le n-2$ for all $\sigma\in S$, then $\sum_{\sigma\in S} |\mathrm{fix}(\sigma)| \geq 2|S| = 2|E(S)|+2|O(S)|$, and hence [\[eq:fix\]](#eq:fix){reference-type="eqref" reference="eq:fix"} is satisfied when $n|O(S)| \ge (n-2)|E(S)|$. So we obtain the following corollary of Theorem [\[thm:main1\]](#thm:main1){reference-type="ref" reference="thm:main1"} immediately.
+
+::: cor
+[]{#odd-even label="odd-even"} There exists a positive integer $N \ge 5$ such that, for every $n \ge N$ and every nonempty normal set $S$ in $S_n$ satisfying $2 \le |\mathrm{supp}(\sigma)| \le n-2$ for all $\sigma \in S$, if $n|O(S)| \ge (n-2)|E(S)|$, then $\mathrm{Cay}(S_n, S)$ has the Aldous property.
+:::
+
+Another corollary of Theorem [\[thm:main1\]](#thm:main1){reference-type="ref" reference="thm:main1"} is the following explicit formula for the second largest eigenvalue of normal Cayley graphs on the alternating group $A_n$.
+
+::: cor
+[]{#An-sec-eigen label="An-sec-eigen"} There exists a positive integer $N \ge 5$ such that, for every $n \ge N$ and every nonempty normal set $S$ in $S_n$, if $S \subseteq A_n$ and $2 \le |\mathrm{supp}(\sigma)| \le n-2$ for all $\sigma \in S$, then the strictly second largest eigenvalue of $\mathrm{Cay}(S_n, S)$ is given by $$\frac{1}{n-1} \big(\sum_{\sigma \in S} |\mathrm{fix}(\sigma)| - |S| \big),$$ and moreover $\mathrm{Cay}(S_n, S)$ is disconnected with two components each isomorphic to $\mathrm{Cay}(A_n, S)$.
+:::
+
+For a subset $S \subseteq S_n$, let $$\begin{equation}
+\label{eq:ABCS}
+A_S = S \cap \mathrm{Supp}_n(\{2,3,\ldots,n-2\}),\; B_S = S \cap \mathrm{Supp}_n(n-1),\; C_S = S \cap \mathrm{Supp}_n(n)
+\end{equation}$$ and $$\begin{equation}
+\label{eq:barABCS}
+\overline{A}_S = \mathrm{Supp}_n(\{2,3,\ldots,n-2\}) \setminus A_S,\; \overline{B}_S = \mathrm{Supp}_n(n-1)\setminus B_S,\; \overline{C}_S = \mathrm{Supp}_n(n)\setminus C_S.
+\end{equation}$$ The following theorem classifies all normal Cayley graphs $\mathrm{Cay}(S_n, S)$ that have the Aldous property under an easy-to-check condition.
+
+::: thm
+[]{#thm:main2 label="thm:main2"} Let $n\ge 5$, and let $S$ be a nonempty normal set in $S_n$. If $$\begin{equation}
+\label{eq:ABC}
+\sum_{\sigma\in A_S} |\mathrm{fix}(\sigma)| \le |A_S|+|C_S|+n-1,
+\end{equation}$$ then $\mathrm{Cay}(S_n, S)$ has the Aldous property if and only if $S = S_n\setminus\{e\}, S_n\setminus A_n$ or $A_n\setminus\{e\}$, or, equivalently, $\mathrm{Cay}(S_n,S)\cong K_{n!}, K_{n!/2,n!/2}$ or $2K_{n!/2}$, respectively.
+:::
+
+Note that condition [\[eq:ABC\]](#eq:ABC){reference-type="eqref" reference="eq:ABC"} holds only if either $A_S$ is empty or $C_S$ is nonempty. Theorem [\[thm:main2\]](#thm:main2){reference-type="ref" reference="thm:main2"} implies the following corollary.
+
+::: cor
+[]{#cor:main2 label="cor:main2"} Let $n\ge 5$, and let $S$ be a nonempty normal set in $S_n$. Then $\mathrm{Cay}(S_n,S)$ does not have the Aldous property if one of the following conditions holds:
+
+1.  $S \subseteq \mathrm{Supp}_n(\{n-1,n\})$;
+
+2.  $|\overline{A}_S|-|\overline{C}_S|+2(n-1) \ge 0$ and $S \notin \{S_n\setminus\{e\}, S_n\setminus A_n, A_n\setminus\{e\}\}$;
+
+3.  $\mathrm{Supp}_n(n)\subseteq S$ and $S \neq S_n\setminus\{e\}$.
+:::
+
+In [@LXZ Problem 1.2], Li, Xia and Zhou ask for a necessary and sufficient condition for $\mathrm{Cay}(S_n, \mathrm{Supp}_n(I))$ with $\{n\} \subset I \subseteq \{2,3,\ldots,n-2,n\}$ to have the Aldous property for sufficiently large $n$. Solving this problem, part (c) of Corollary [\[cor:main2\]](#cor:main2){reference-type="ref" reference="cor:main2"} implies that such a graph $\mathrm{Cay}(S_n, \mathrm{Supp}_n(I))$ does not have the Aldous property for any $n \geq 5$.
+
+Theorem [\[thm:main1\]](#thm:main1){reference-type="ref" reference="thm:main1"} and Corollary [\[cor:main2\]](#cor:main2){reference-type="ref" reference="cor:main2"} together resolve Problem [\[prob\]](#prob){reference-type="ref" reference="prob"} for all normal Cayley graphs $\mathrm{Cay}(S_n, S)$ with sufficiently large $n$ except when $S \cap \mathrm{Supp}_n(\{2, 3, \dots, n-2\}) \neq \emptyset$, $S \cap \mathrm{Supp}_n(\{n-1, n\}) \neq \emptyset$, and $\mathrm{Supp}_n(n) \not\subseteq S$.
+
+The rest of the paper is organized as follows. The next section is a quick review of representation theory preliminaries. We prove Theorem [\[thm:complement\]](#thm:complement){reference-type="ref" reference="thm:complement"} in Section [\[sec:complements\]](#sec:complements){reference-type="ref" reference="sec:complements"} and establish Theorem [\[thm:main1\]](#thm:main1){reference-type="ref" reference="thm:main1"} and Corollary [\[An-sec-eigen\]](#An-sec-eigen){reference-type="ref" reference="An-sec-eigen"} in Section [\[supp-small\]](#supp-small){reference-type="ref" reference="supp-small"}. To prove Theorem [\[thm:main2\]](#thm:main2){reference-type="ref" reference="thm:main2"}, we first need to determine all normal Cayley graphs on $S_n$ that are line graphs (see Theorem [\[class-linegraph\]](#class-linegraph){reference-type="ref" reference="class-linegraph"}). Using this and the classification [@Stanic2010] of connected regular graphs with second largest eigenvalue at most $1$, we obtain a classification of all normal Cayley graphs on $S_n$ whose strictly second largest eigenvalue is at most $1$ (see Theorem [\[sn-cay-sec-1\]](#sn-cay-sec-1){reference-type="ref" reference="sn-cay-sec-1"}). With the help of this classification, which is of interest for its own sake, we prove Theorem [\[thm:main2\]](#thm:main2){reference-type="ref" reference="thm:main2"} and Corollary [\[cor:main2\]](#cor:main2){reference-type="ref" reference="cor:main2"} in Section [\[supp-large\]](#supp-large){reference-type="ref" reference="supp-large"}.

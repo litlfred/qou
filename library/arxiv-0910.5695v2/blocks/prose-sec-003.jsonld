@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0910.5695v2/blocks/prose-sec-003",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0910.5695v2/blocks/prose-sec-003",
   "kind": "prose",
   "title": "The tensor category Rep(St)",
   "pageStart": 2,
   "pageEnd": 11,
   "text": "../sections/sec-003-2-the-tensor-category-repst.md",
-  "derivedFrom": "library/arxiv-0910.5695v2/manifest",
-  "sourceDocument": "library/arxiv-0910.5695v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0910.5695v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0910.5695v2/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -1,0 +1,138 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = en_GB
+% !TeX root = ../Analyticity-Menger.tex
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[intlimits]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{lmodern}
+\usepackage[thref, amsthm, hyperref, thmmarks, amsmath]{ntheorem}	
+\usepackage[T1]{fontenc}
+\usepackage{etoolbox}
+\usepackage{calc}
+\usepackage{mathtools}
+\usepackage{geometry}
+\usepackage[multiuser]{fixme}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%Hyperref%%%%%%%%%%%%%%%%%%%%%
+%online version pagebackref on
+\usepackage[pdftex=true,breaklinks=true,bookmarks=true,linktocpage=true,pdfpagelabels=true,plainpages=false,pagebackref=true, draft=false]{hyperref}
+
+%print version pagebackref off
+%\usepackage[pdftex=true,breaklinks=true,bookmarks=true,linktocpage=true,pdfpagelabels=true,plainpages=false,pagebackref=false]{hyperref}	%pdfstuff, hyperref has to be the last package to include!
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Letters%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\LL}{\mathcal{L}}
+\newcommand{\GL}{\mathcal{G}}
+\newcommand{\EL}{\mathcal{E}}
+\newcommand{\XL}{\mathcal{X}}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\rho}{\varrho}
+\renewcommand{\d}{\ensuremath{\,\mathrm{d}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Operators%%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\intM}{intM}
+\DeclareMathOperator{\BiLip}{BiLip}
+\newcommand{\transpose}{\intercal}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Brace-Commands%%%%%%%%%%%%%%%%%%%%
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\makeatletter
+\newcommand{\norm}{%
+    \@ifstar
+    \normStar%
+    \normNoStar%
+}
+\newcommand{\set}{%
+    \@ifstar
+    \setStar%
+    \setNoStar%
+}
+\makeatother
+
+\newcommand{\normNoStar}[2][]{\lVert #2 \rVert_{#1}}
+\newcommand{\normStar}[2][]{\left\lVert #2 \right\rVert_{#1}}
+\newcommand{\halfnorm}[2][]{\left[#2\right]_{#1}}
+\newcommand{\gaussBracket}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\restrict}[2]{\left . #1 \right\rvert_{#2}}
+\newcommand{\setStar}[2][]{
+    \left\{#2%
+    \ifthenelse{\equal{#1}{}}{}{\ \middle\vert \ #1}%
+    \right\}%
+}
+\newcommand{\setNoStar}[2][]{
+    \{#2%
+    \ifthenelse{\equal{#1}{}}{}{\mathrel{\vert}#1}
+    \}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%Misc-Commands%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\difference}[1]{\Delta_{#1}}
+\newcommand{\Qp}{\ensuremath{Q^{(p)}}}
+\newcommand{\Qpt}{\ensuremath{\widetilde Q^{(p)}}}
+\newcommand{\Rp}{\ensuremath{R^{(p)}}}
+\newcommand{\Rpt}{\ensuremath{\widetilde R^{(p)}}}
+\newcommand{\Gp}{\ensuremath{\GL^{(p)}}}
+\newcommand{\ball}[2][0]{\ensuremath{B_{#2}\left(#1\right)}}
+\newcommand{\yrightarrow}[1]{\xrightarrow[#1]{}}
+\newcommand{\numberthis}{\refstepcounter{equation}\tag{\theequation}}
+
+\newlength{\adjustedalignmentskip}
+\DeclareRobustCommand{\adjustedalignment}[3][1]{% %Shifts #3 such that it ends in the same place as #2 would (#1 is an optional factor controlling said shift)
+    \setlength{\adjustedalignmentskip}{\widthof{$\displaystyle#2x$}- \widthof{$\displaystyle#3x$}}%
+    \setlength{\adjustedalignmentskip}{#1\adjustedalignmentskip}%
+    \hspace{\adjustedalignmentskip}#3%
+}
+
+\newcommand{\stackrelx}[2]{\adjustedalignment[0.5]{#2}{\stackrel{\scalebox{0.7}{#1}}{#2}}} %Stackrel with positioning according to second argument via simple left-shift
+
+\newcommand{\Mpq}[1][p,q]{\ensuremath{\intM^{\left(#1\right)}}}
+\newcommand{\Mpz}{\Mpq[p,2]}
+
+\renewcommand{\[}{\begin{equation*}}
+\renewcommand{\]}{\end{equation*}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Theorem-Styles%%%%%%%%%%%%%%%%%%%%%%
+\theoremstyle{plain}
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{theorem}[lemma]{Theorem}
+\newtheorem{proposition}[lemma]{Proposition}
+\newtheorem{corollary}[lemma]{Corollary}
+\newtheorem{definition}[lemma]{Definition}
+\newtheorem{conjecture}[lemma]{Conjecture}
+\renewtheorem*{theorem*}{Theorem}
+\renewtheorem*{lemma*}{Lemma}
+\renewtheorem*{definition*}{Definition}
+
+\theoremstyle{definition}
+\newtheorem{remark}[lemma]{Remark}
+\newtheorem{example}[lemma]{Example}
+\newtheorem*{claim}{Claim}
+\newtheorem*{assertion}{Assertion}
+\newtheorem*{exercise}{Exercise}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%Hyphenation%%%%%%%%%%%%%%%%%%%%%%%%%
+\hyphenation{re-pa-ra-met-ri-ze}
+\hyphenation{pa-ra-met-ri-za-tion}
+\hyphenation{nor-med}
+\hyphenation{Ba-nach}
+\hyphenation{Hil-bert}
+\hyphenation{So-bo-lev}
+\hyphenation{strict-ly}
+
+%%%%%%%%%%%%%%%%%%%%%%%%FixMe-Setup%%%%%%%%%%%%%%%%
+\FXRegisterAuthor{d}{dlang}{Daniel}
+\FXRegisterAuthor{n}{nlang}{\color{red} Nicole}
+\fxusetheme{color}
+
+\fxuselayouts{inline, nomargin}
+
+%%%%%%%%%%%%%%%%%%%%%%%Constants%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\mf}{{\frac 5 2}}

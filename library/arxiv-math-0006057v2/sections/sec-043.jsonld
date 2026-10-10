@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0006057v2/sections/sec-043",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Actions of C∗-quantum groupoids on von Neumann algebras. Let a",
+  "pageStart": 32,
+  "pageEnd": 34,
+  "contains": [
+    "library/arxiv-math-0006057v2/blocks/prose-sec-043",
+    "library/arxiv-math-0006057v2/blocks/remark-sec-043-01",
+    "library/arxiv-math-0006057v2/blocks/example-sec-043-02",
+    "library/arxiv-math-0006057v2/blocks/remark-sec-043-03",
+    "library/arxiv-math-0006057v2/blocks/proposition-sec-043-04",
+    "library/arxiv-math-0006057v2/blocks/proposition-sec-043-05",
+    "library/arxiv-math-0006057v2/blocks/theorem-sec-043-06"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1601.02479v5/blocks/prose-sec-021",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1601.02479v5/blocks/prose-sec-021",
   "kind": "prose",
   "title": "The relative cohomological Hall algebra",
   "pageStart": 43,
   "pageEnd": 46,
   "text": "../sections/sec-021-51-the-relative-cohomological-hall-algebra.md",
-  "derivedFrom": "library/arxiv-1601.02479v5/manifest",
-  "sourceDocument": "library/arxiv-1601.02479v5/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1601.02479v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1601.02479v5/manifest.jsonld",
   "provenance": "ingested"
 }

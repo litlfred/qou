@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9211141v1/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "ITD 92/93–9",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-9211141v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-th-9211141v1",
   "contains": [
     "library/arxiv-hep-th-9211141v1/sections/sec-000",
     "library/arxiv-hep-th-9211141v1/sections/sec-001",
@@ -21,8 +26,17 @@
     "library/arxiv-hep-th-9211141v1/sections/sec-012"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/9211141&metadataPrefix=arXiv), submitted 1992-12-01, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-hep-th-9211141v1",
+    "title_source": "slug",
     "source_file": "9211141v1.pdf",
     "source_sha256": "bd9fbd329884c26e9327a403455c9cc5fbd8cb3f2916830d55e6f06d645e2ee6",
     "pages": 34,

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1704.01735v4/blocks/proposition-sec-008-01",
+  "kind": "proposition",
+  "title": "see [2] and [28]",
+  "pageStart": 10,
+  "pageEnd": 12,
+  "text": "proposition-sec-008-01.md",
+  "derivedFrom": "library/arxiv-1704.01735v4/sections/sec-008",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1704.01735v4/manifest.jsonld",
+  "provenance": "ingested"
+}

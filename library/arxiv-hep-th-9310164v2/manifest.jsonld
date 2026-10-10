@@ -1,10 +1,15 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-hep-th-9310164v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "SPHERICAL CATEGORIES",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-hep-th-9310164v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-th-9310164v2",
   "contains": [
     "library/arxiv-hep-th-9310164v2/sections/sec-000",
     "library/arxiv-hep-th-9310164v2/sections/sec-001",
@@ -21,8 +26,17 @@
     "library/arxiv-hep-th-9310164v2/sections/sec-012"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/9310164&metadataPrefix=arXiv), submitted 1998-07-22, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-hep-th-9310164v2",
+    "title_source": "slug",
     "source_file": "9310164v2.pdf",
     "source_sha256": "e0972e04667ccc47e526b1289acfeb7cfda6f852c08ed2431f1dffdebbd689e8",
     "pages": 16,

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1309.0865v1/blocks/prose-sec-052",
+  "kind": "prose",
+  "title": "Soergel’s theorem. We present here another proof of Soergel’s Categoriﬁcation",
+  "pageStart": 66,
+  "pageEnd": 69,
+  "text": "../sections/sec-052-66-soergels-theorem-we-present-here-another-proo.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1309.0865v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1309.0865v1/manifest.jsonld",
+  "provenance": "ingested"
+}

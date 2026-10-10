@@ -1,0 +1,1516 @@
+
+%% This is file `pst-vue3d.tex',
+%%
+%% IMPORTANT NOTICE:
+%%
+%% Package `pst-vue3d.tex'
+%%
+%% Manuel Luque <Mluque5130@aol.com> (France)
+%%
+%% 2003/12/21
+%%
+%% This program can be redistributed and/or modified under the terms
+%% of the LaTeX Project Public License Distributed from CTAN archives
+%% in directory macros/latex/base/lppl.txt.
+%%
+%% DESCRIPTION:
+%%   `pst-vue3d' is a PSTricks package to define 3d views
+%% ChangeLog (at end)
+%%
+\def\fileversion{1.0g}%
+\def\filedate{2003/12/21}%
+\message{`PST-VUE3D v\fileversion, \filedate\space (Manuel LUQUE)}%
+\csname PSTVueTroisDLoaded\endcsname
+\let\PSTVueTroisDLoaded\endinput
+% Require PSTricks and pst-node packages
+\ifx\PSTricksLoaded\endinput\else\input pstricks.tex\fi
+\ifx\PSTnodesLoaded\endinput\else\input pst-node.tex\fi
+% DPC interface to the `keyval' package (until keyval based version of PSTricks)
+\input pst-key.tex
+%
+\edef\PstAtCode{\the\catcode`\@} \catcode`\@=11\relax
+\SpecialCoor
+
+\pstheader{3D.pro}
+%%%%
+\SpecialCoor
+\makeatletter
+\define@key{psset}{scale}{\edef\psk@TroisD@scale{#1}} % echelle
+\define@key{psset}{RotX}{\edef\psk@TroisD@RotX{#1}} % rotation autour de Ox en degrés
+\define@key{psset}{RotY}{\edef\psk@TroisD@RotY{#1}} % rotation autour de Oy en degrés
+\define@key{psset}{RotZ}{\edef\psk@TroisD@RotZ{#1}} % rotation autour de OZ en degrés
+\define@key{psset}{A}{\edef\psk@TroisD@A{#1}} % double  d'une arête du parallèlépipède
+\define@key{psset}{B}{\edef\psk@TroisD@B{#1}} % double  d'une arête du parallèlépipède
+\define@key{psset}{C}{\edef\psk@TroisD@C{#1}} % double  de l'arête du parallèlépipède
+\define@key{psset}{Rtetraedre}{\edef\psk@TroisD@Rtetraedre{#1}} % Rayon du cercle tétraèdre
+\define@key{psset}{ColorFaceA}{\edef\psk@TroisD@TetraedreColorFaceA{#1}} % couleur de la face A du tétraèdre
+\define@key{psset}{ColorFaceB}{\edef\psk@TroisD@TetraedreColorFaceB{#1}} % couleur de la face B du tétraèdre
+\define@key{psset}{ColorFaceC}{\edef\psk@TroisD@TetraedreColorFaceC{#1}} % couleur de la face C du tétraèdre
+\define@key{psset}{ColorFaceD}{\edef\psk@TroisD@TetraedreColorFaceD{#1}} % couleur de la face D du tétraèdre
+\define@key{psset}{ColorFaceE}{\edef\psk@TroisD@TetraedreColorFaceE{#1}} % couleur de la face D du tétraèdre
+\define@key{psset}{fracHeight}{\edef\psk@TroisD@fracHeight{#1}} % fraction de la hauteur du cone
+\define@key{psset}{fracHcone}{\edef\psk@TroisD@fracHeight{#1}} % for compatibility
+%
+\define@key{psset}{normaleLongitude}{\edef\psk@TroisD@normaleLongitude{#1}} % coordonnées angulaires de la normale
+\define@key{psset}{normaleLatitude}{\edef\psk@TroisD@normaleLatitude{#1}} % coordonnées angulaires de la normale
+\define@key{psset}{pas}{\edef\psk@TroisD@pas{#1}} % en cm résolution du tracé
+\define@key{psset}{grille}{\edef\psk@TroisD@grille{#1}} % Pas de la grille en cm
+%
+\define@key{psset}{THETA}{\edef\psk@TroisD@Theta{#1}}
+\define@key{psset}{PHI}{\edef\psk@TroisD@Phi{#1}}
+\define@key{psset}{DeltaTHETA}{\edef\psk@TroisD@DeltaTheta{#1}}
+\define@key{psset}{DeltaPHI}{\edef\psk@TroisD@DeltaPhi{#1}}
+\define@key{psset}{PortionSphereTHETA}{\edef\psk@TroisD@PortionSphereTHETA{#1}}
+\define@key{psset}{PortionSpherePHI}{\edef\psk@TroisD@PortionSpherePHI{#1}}
+\define@key{psset}{PhiCercle}{\edef\psk@TroisD@PhiCercle{#1}}
+\define@key{psset}{ThetaMeridien}{\edef\psk@TroisD@ThetaMeridien{#1}}
+\define@key{psset}{Dobs}{\edef\psk@TroisD@Dobs{#1}}
+\define@key{psset}{Decran}{\edef\psk@TroisD@Ecran{#1}}
+%
+\setkeys{psset}{THETA=30,PHI=10,%
+	Dobs=100,Decran=10,%
+	normaleLongitude=45,%
+	normaleLatitude=45,%
+	PhiCercle=0,%
+	ThetaMeridien=0,%
+	pas=1,%
+	grille=10,%
+	scale=1,%
+	RotX=0,RotY=0,RotZ=0,%
+	A=10,B=10,C=10,%
+	Rtetraedre=5,%
+	ColorFaceD=cyan,ColorFaceA=magenta,ColorFaceB=red,%
+	ColorFaceC=blue,ColorFaceE=yellow,%
+	fracHeight=1,%
+	DeltaTHETA=10,DeltaPHI=10,%
+	PortionSphereTHETA=0,PortionSpherePHI=0}
+% ajout du 28 août 2003
+% colorier au choix les faces du cube
+\define@key{psset}{CubeColorFaceOne}{\edef\psk@TroisD@CubeColorFaceOne{#1}} % couleur de la face 1 du cube
+\define@key{psset}{CubeColorFaceTwo}{\edef\psk@TroisD@CubeColorFaceTwo{#1}} % couleur de la face 2 du cube
+\define@key{psset}{CubeColorFaceThree}{\edef\psk@TroisD@CubeColorFaceThree{#1}} % couleur de la face 3 du cube
+\define@key{psset}{CubeColorFaceFour}{\edef\psk@TroisD@CubeColorFaceFour{#1}} % couleur de la face 4 du cube
+\define@key{psset}{CubeColorFaceFive}{\edef\psk@TroisD@CubeColorFaceFive{#1}} % couleur de la face 5 du cube
+\define@key{psset}{CubeColorFaceSix}{\edef\psk@TroisD@CubeColorFaceSix{#1}} % couleur de la face 6 du cube
+\setkeys{psset}{CubeColorFaceOne= 1 1 0 ,
+                CubeColorFaceTwo= 0.9 0.9 0 ,
+                CubeColorFaceThree= 0.8 0.8 0 ,
+                CubeColorFaceFour= 0.7 0.7 0 ,
+                CubeColorFaceFive= 0.6 0.6 0 ,
+                CubeColorFaceSix= 0.5 0.5 0 }
+% fin 28 août 2003
+% ajout 27 octobre 2003
+\newif\ifPst@cubeInside
+\define@key{psset}{CubeInside}[false]{\@nameuse{Pst@cubeInside#1}}
+\setkeys{psset}{CubeInside=false}
+% hv 2003-12-20
+\newif\ifPst@SphericalCoor
+\define@key{psset}{SphericalCoor}[true]{\@nameuse{Pst@SphericalCoor#1}}
+\setkeys{psset}{SphericalCoor=false}
+%
+\def\variablesTroisD{%
+ 0 0 translate
+    /reduction \psk@TroisD@scale\space def
+    /RotX \psk@TroisD@RotX\space def
+    /RotY \psk@TroisD@RotY\space def
+    /RotZ \psk@TroisD@RotZ\space def
+    /A \psk@TroisD@A\space def
+    /B \psk@TroisD@B\space def
+    /C \psk@TroisD@C\space def
+    /RayonBaseTetraedre \psk@TroisD@Rtetraedre\space def
+    /fracHeight \psk@TroisD@fracHeight\space def
+    /Rpoint A 4 div def
+    /nTheta \psk@TroisD@normaleLongitude\space def
+    /nPhi \psk@TroisD@normaleLatitude\space def
+    /S1 \psk@TroisD@normaleLongitude\space sin def
+    /C1 \psk@TroisD@normaleLongitude\space cos def
+    /S2 \psk@TroisD@normaleLatitude\space sin def
+    /C2 \psk@TroisD@normaleLatitude\space cos def
+    /THETA \psk@TroisD@Theta\space def
+    /PHI \psk@TroisD@Phi\space def
+    /dTHETA \psk@TroisD@DeltaTheta\space def
+    /dPHI \psk@TroisD@DeltaPhi\space def
+    /psTHETA \psk@TroisD@PortionSphereTHETA\space def
+    /psPHI \psk@TroisD@PortionSpherePHI\space def
+    /PhiCercle \psk@TroisD@PhiCercle\space def
+    /ThetaMeridien \psk@TroisD@ThetaMeridien\space def
+    /Dobs \psk@TroisD@Dobs\space def
+    /DScreen \psk@TroisD@Ecran\space def
+    /Sin1 THETA sin def
+    /Sin2 PHI sin def
+    /Cos1 THETA cos def
+    /Cos2 PHI cos def
+    /Cos1Sin2 Cos1 Sin2 mul def
+    /Sin1Sin2 Sin1 Sin2 mul def
+    /Cos1Cos2 Cos1 Cos2 mul def
+    /Sin1Cos2 Sin1 Cos2 mul def
+    /XpointVue Dobs Cos1Cos2 mul def
+    /YpointVue Dobs Sin1Cos2 mul def
+    /ZpointVue Dobs Sin2 mul def
+    /M11 RotZ cos RotY cos mul def
+    /M12 RotZ cos RotY sin mul RotX sin mul
+         RotZ sin RotX cos mul sub def
+    /M13 RotZ cos RotY sin mul RotX cos mul
+         RotZ sin RotX sin mul add def
+    /M21 RotZ sin RotY cos mul def
+    /M22 RotZ sin RotY sin RotX sin mul mul
+         RotZ cos RotX cos mul add def
+    /M23 RotZ sin RotY sin mul RotX cos mul
+         RotZ cos RotX sin mul sub def
+    /M31 RotY sin neg def
+    /M32 RotX sin RotY cos mul def
+    /M33 RotX cos RotY cos mul def
+ }%
+% hv 2003-12-20
+% -------------- Utilities -----------------
+\def\face{%
+	\pscurve(1;160)(0.8;180)(1;200)
+	\pscustom{\gsave\psarc(0,0){1}{165}{195}
+		\pscurve(1;195)(0.85;180)(1;165)
+		\fill[fillstyle=solid,fillcolor=blue]\grestore}
+	\pscurve[linewidth=.4pt](1;195)(0.85;180)(1;165)
+	\bgroup
+		\psset{linewidth=2pt}
+		\psarc(0,1){1}{180}{270}
+		\psarc(0,-1){1}{90}{180}
+	\egroup
+	\psarc(0,0){1}{150}{210}
+	\psset{linewidth=4pt,linecolor=gray}%
+	\pscurve(-.5,3.5)(-1,3)(-1.2,2.5)(-1.3,2)(-1.4,1)(-1.35,0.5)%
+		(-1.2,-.2)(-1.35,-.5)(-1.4,-1)(-1.5,-1.5)(-1.8,-2)(-1.8,-2.3)%
+		(-1.65,-2.5)(-1.35,-2.55)(-.95,-2.8)(-.95,-3.35)(-1,-3.65)(-.8,-4)(-.4,-4.1)
+	\pscurve(-.8,-4)(-.8,-4.2)(-.5,-4.5)(-.4,-5)(-.25,-5.5)(0,-5.8)(.5,-6)%
+}
+\def\eye{%
+    \psarc[linewidth=2pt](0,2.5){2.5}{215}{270}%
+    \psarc[linewidth=2pt](0,-2.5){2.5}{90}{140}%
+    \psarc(-2.5,0){1}{-30}{30}%
+    \psarc(0,0){1.75}{160}{200}
+    \psclip{%
+	\pscircle[linestyle=none](0,0){1.75}}
+    \pscircle[fillstyle=solid,fillcolor=lightgray](-2.5,0){0.9}
+    \endpsclip%
+}
+%
+% -------------- Basic Macros --------------
+%
+% hv 2003
+\def\AxesThreeD{\@ifnextchar[{\AxesThreeD@i}{\AxesThreeD@i[]}}
+\def\AxesThreeD@i[#1](#2){{%
+	\setkeys{psset}{#1}%
+	\AxesThreeD@ii#2,@comma*\relax%
+}}
+\def\AxesThreeD@ii#1,#2*{%
+	\def\@tempa{#2}\def\@tempb{@comma}%
+	\ifx\@tempa\@tempb% only one value
+		\AxesThreeD@iii#1,#2\else\AxesThreeD@iv#1,#2\relax%
+	\fi%
+}
+\def\AxesThreeD@iii#1,#2\relax{%
+	\AxesThreeD@iv#1,#1,#1,#1\relax%
+}
+\def\AxesThreeD@iv#1,#2,#3,#4\relax{{%
+	\pNodeThreeD(0,0,0){O}%
+	\pNodeThreeD(0,0,#3){Z}\pNodeThreeD(#1,0,0){X}\pNodeThreeD(0,#2,0){Y}%
+	\psline{->}(O)(Z)\psline{->}(O)(X)\psline{->}(O)(Y)%
+	\uput[0](Z){\small Z}\uput[90](X){\small X}\uput[0](Y){\small Y}%
+}}
+%
+% hv 2003
+\def\showCoorThreeD{\@ifnextchar[{\showCoorThreeD@i}{\pshowCoorThreeD@i[]}}
+\def\showCoorThreeD@i[#1](#2){{%
+	\psset{linestyle=dashed}
+	\setkeys{psset}{#1}
+	\showCoorThreeD@ii#2,@comma*\relax
+}}
+\def\showCoorThreeD@ii#1,#2*{%
+	\def\@tempa{#2}\def\@tempb{@comma}%
+	\ifx\@tempa\@tempb%
+		\showCoorThreeD@iii#1;#2\else\showCoorThreeD@iv#1,#2\relax%
+	\fi%
+}
+\def\showCoorThreeD@iii#1;#2;#3;#4\relax{%
+	\psline(!
+		\variablesTroisD
+		/Radius #1 def
+		/longitude #2 def
+		/latitude #3 def
+		/Zcote Radius latitude sin mul def
+		/Xabscisse Radius longitude cos mul latitude cos mul def
+		/Yordonnee Radius longitude sin mul latitude cos mul def
+		tx@3DDict begin
+			formulesTroisD
+			Xi reduction mul Yi reduction mul
+		end)(!
+		/Zcote 0 def
+		tx@3DDict begin
+			formulesTroisD
+			Xi reduction mul Yi reduction mul
+		end)
+	\psline(!
+		/Zcote 0 def
+		/Xabscisse Radius longitude cos mul latitude cos mul def
+		/Yordonnee Radius longitude sin mul latitude cos mul def
+		tx@3DDict begin
+			formulesTroisD
+			Xi reduction mul Yi reduction mul
+		end)(!
+		/Zcote 0 def
+		/Yordonnee 0 def
+		tx@3DDict begin
+			formulesTroisD
+			Xi reduction mul Yi reduction mul
+		end)
+	\psline(!
+		/Zcote 0 def
+		/Xabscisse Radius longitude cos mul latitude cos mul def
+		/Yordonnee Radius longitude sin mul latitude cos mul def
+		tx@3DDict begin
+			formulesTroisD
+			Xi reduction mul Yi reduction mul
+		end)(!
+		/Zcote 0 def
+		/Xabscisse 0 def
+		tx@3DDict begin
+			formulesTroisD
+			Xi reduction mul Yi reduction mul
+		end)
+}
+\def\showCoorThreeD@iv#1,#2,#3,#4\relax{%
+%	\qdisk(P){1pt}
+	\LineThreeD(#1,#2,#3)(#1,#2,0)
+	\LineThreeD(#1,#2,0)(#1,0,0)
+	\LineThreeD(#1,#2,0)(0,#2,0)
+}
+%
+%
+\def\CubeThreeD{\pst@object{CubeThreeD}}
+\def\CubeThreeD@i{\@ifnextchar[{\CubeThreeD@do}{\CubeThreeD@do[]}}
+\def\CubeThreeD@do[#1](#2,#3,#4){{%
+    \pst@killglue
+    \setkeys{psset}{#1}%
+    \begin@ClosedObj
+    \addto@pscode{%
+	\variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #2 def
+			/longitude #3 def
+			/latitude #4 def
+			/CZ Radius latitude sin mul def
+			/CX Radius longitude cos mul latitude cos mul def
+			/CY Radius longitude sin mul latitude cos mul def
+		\else
+			/CX #2 def
+			/CY #3 def
+			/CZ #4 def
+		\fi
+	\ifPst@cubeInside
+	    /Condition { ge } def
+	\else
+	    /Condition {le } def
+	\fi
+	/CubeColorFaceOne {\psk@TroisD@CubeColorFaceOne} def
+	/CubeColorFaceTwo {\psk@TroisD@CubeColorFaceTwo} def
+	/CubeColorFaceThree {\psk@TroisD@CubeColorFaceThree} def
+	/CubeColorFaceFive {\psk@TroisD@CubeColorFaceFive} def
+	/CubeColorFaceFour {\psk@TroisD@CubeColorFaceFour} def
+	/CubeColorFaceSix {\psk@TroisD@CubeColorFaceSix} def
+	tx@3DDict begin
+	    /Condition1 {PS1 0 le } def
+	    Cube
+	end
+    }% fin du code ps
+    \end@ClosedObj%
+}}
+%
+\def\DieThreeD{\pst@object{DieThreeD}}
+\def\DieThreeD@i{\@ifnextchar[{\DieThreeD@do}{\DieThreeD@do[]}}
+\def\DieThreeD@do[#1](#2,#3,#4){{%
+% (#2,#3,#4) coordonnées du centre
+    \pst@killglue
+    \setkeys{psset}{#1}%
+    \begin@ClosedObj
+	\addto@pscode{%
+	    \variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #2 def
+			/longitude #3 def
+			/latitude #4 def
+			/CZ Radius latitude sin mul def
+			/CX Radius longitude cos mul latitude cos mul def
+			/CY Radius longitude sin mul latitude cos mul def
+		\else
+			/CX #2 def
+			/CY #3 def
+			/CZ #4 def
+		\fi
+	    \ifPst@cubeInside
+		/Condition { ge } def
+	    \else
+		/Condition {le } def
+	    \fi
+	    /CubeColorFaceOne {\psk@TroisD@CubeColorFaceOne} def
+	    /CubeColorFaceTwo {\psk@TroisD@CubeColorFaceTwo} def
+	    /CubeColorFaceThree {\psk@TroisD@CubeColorFaceThree} def
+	    /CubeColorFaceFive {\psk@TroisD@CubeColorFaceFive} def
+	    /CubeColorFaceFour {\psk@TroisD@CubeColorFaceFour} def
+	    /CubeColorFaceSix {\psk@TroisD@CubeColorFaceSix} def
+	    tx@3DDict begin
+		Cube
+		PointsDie
+	    end
+	}% fin du code ps
+    \end@ClosedObj%
+}}
+%
+\def\SphereThreeD{\pst@object{SphereThreeD}}
+\def\SphereThreeD@i{\@ifnextchar[{\SphereThreeD@do}{\SphereThreeD@do[]}}
+\def\SphereThreeD@do[#1](#2,#3,#4)#5{{%
+% (#2,#3,#4) coordonnées du centre
+% #5 rayon
+    \pst@killglue
+    \setkeys{psset}{#1}%
+    \begin@ClosedObj
+	\addto@pscode{%
+	    \variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #2 def
+			/longitude #3 def
+			/latitude #4 def
+			/CZ Radius latitude sin mul def
+			/CX Radius longitude cos mul latitude cos mul def
+			/CY Radius longitude sin mul latitude cos mul def
+		\else
+			/CX #2 def
+			/CY #3 def
+			/CZ #4 def
+		\fi
+	    reduction reduction scale
+	    /Rsphere #5 def
+	    /increment 10 def
+	    tx@3DDict begin
+			/condition {PSfacette 0 le} def
+			/departPhi -90 def
+			MaillageSphere
+	    end
+	}% fin du code ps
+	\showpointsfalse
+	\end@ClosedObj%
+}}
+% % fin de la commande PSTricks
+%
+% 2décembre 2002
+%
+\def\SphereInverseThreeD{\pst@object{SphereInverseThreeD}}
+\def\SphereInverseThreeD@i{\@ifnextchar[{\SphereInverseThreeD@do}{\SphereInverseThreeD@do[]}}
+\def\SphereInverseThreeD@do[#1](#2,#3,#4)#5{{%
+% (#2,#3,#4) coordonnées du centre
+% #5 rayon
+    \pst@killglue
+    \setkeys{psset}{#1}%
+    \begin@ClosedObj
+	\addto@pscode{%
+	    \variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #2 def
+			/longitude #3 def
+			/latitude #4 def
+			/CZ Radius latitude sin mul def
+			/CX Radius longitude cos mul latitude cos mul def
+			/CY Radius longitude sin mul latitude cos mul def
+		\else
+			/CX #2 def
+			/CY #3 def
+			/CZ #4 def
+		\fi
+	    reduction reduction scale
+	    /Rsphere #5 def
+	    /increment 10 def
+	    tx@3DDict begin
+		/condition {PSfacette 0 ge} def
+		/departPhi -90 def
+		MaillageSphere
+	    end
+	}% fin du code ps
+	\showpointsfalse
+	\end@ClosedObj%
+}}
+% % fin de la commande PSTricks
+% fin 2 décembre 2002
+%
+\def\SphereCercleThreeD{\pst@object{SphereCercleThreeD}}
+\def\SphereCercleThreeD@i{\@ifnextchar[{\SphereCercleThreeD@do}{\SphereCercleThreeD@do[]}}
+\def\SphereCercleThreeD@do[#1](#2,#3,#4)#5{{%
+% (#2,#3,#4) coordonnées du centre
+% #5 rayon
+    \pst@killglue
+    \setkeys{psset}{#1}%
+    \begin@ClosedObj
+	\addto@pscode{%
+	    \variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #2 def
+			/longitude #3 def
+			/latitude #4 def
+			/CZ Radius latitude sin mul def
+			/CX Radius longitude cos mul latitude cos mul def
+			/CY Radius longitude sin mul latitude cos mul def
+		\else
+			/CX #2 def
+			/CY #3 def
+			/CZ #4 def
+		\fi
+	    reduction reduction scale
+	    /Rsphere #5 def
+	    tx@3DDict begin
+	    0 2 360 {
+		/ThetaEquateur exch def
+		/Xpoint Rsphere ThetaEquateur cos mul PhiCercle cos mul def
+		/Ypoint Rsphere ThetaEquateur sin mul PhiCercle cos mul def
+		/Zpoint Rsphere PhiCercle sin mul def
+		CalculsPointsAfterTransformations
+% rayon de las sphère (normale)
+		/nXfacette Xabscisse CX sub def
+		/nYfacette Yordonnee CY sub def
+		/nZfacette Zcote CZ sub def
+% rayon vers point de vue
+		/RXvue Xabscisse XpointVue sub def
+		/RYvue Yordonnee YpointVue sub def
+		/RZvue Zcote ZpointVue sub def
+% test de visibilité
+		/PSPoint RXvue nXfacette mul
+		    RYvue nYfacette mul add
+		    RZvue nZfacette mul add
+		def
+		PSPoint 0 le{
+		    newpath
+			CalcCoordinates
+			0.5 0 360 arc
+		    closepath
+		    fill
+		} if
+%lineto
+	    } for
+	    end
+	}% fin du code ps
+    \showpointsfalse
+    \end@ClosedObj%
+}}
+%
+%
+\def\SphereMeridienThreeD{\pst@object{SphereMeridienThreeD}}
+\def\SphereMeridienThreeD@i{\@ifnextchar[{\SphereMeridienThreeD@do}{\SphereMeridienThreeD@do[]}}
+\def\SphereMeridienThreeD@do[#1](#2,#3,#4)#5{{%
+% (#2,#3,#4) coordonnées du centre
+% #5 rayon
+\pst@killglue
+\setkeys{psset}{#1}%
+\begin@ClosedObj
+	\addto@pscode{%
+		\variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #2 def
+			/longitude #3 def
+			/latitude #4 def
+			/CZ Radius latitude sin mul def
+			/CX Radius longitude cos mul latitude cos mul def
+			/CY Radius longitude sin mul latitude cos mul def
+		\else
+			/CX #2 def
+			/CY #3 def
+			/CZ #4 def
+		\fi
+		reduction reduction scale
+		/Rsphere #5 def
+		tx@3DDict begin
+0 2 360 {
+    /PhiCercle exch def
+    /Xpoint Rsphere ThetaMeridien cos mul PhiCercle cos mul def
+    /Ypoint Rsphere ThetaMeridien sin mul PhiCercle cos mul def
+    /Zpoint Rsphere PhiCercle sin mul def
+CalculsPointsAfterTransformations
+% rayon de las sphère (normale)
+    /nXfacette Xabscisse CX sub def
+    /nYfacette Yordonnee CY sub def
+    /nZfacette Zcote CZ sub def
+% rayon vers point de vue
+    /RXvue Xabscisse XpointVue sub def
+    /RYvue Yordonnee YpointVue sub def
+    /RZvue Zcote ZpointVue sub def
+% test de visibilité
+    /PSPoint RXvue nXfacette mul
+    RYvue nYfacette mul add
+    RZvue nZfacette mul add
+    def
+PSPoint 0 le{
+	newpath
+    CalcCoordinates
+	0.5 0 360 arc
+closepath
+fill
+} if
+%lineto
+} for
+end
+ }% fin du code ps
+\showpointsfalse
+\end@ClosedObj
+}}
+%
+\def\CylindreThreeD{\pst@object{CylindreThreeD}}
+\def\CylindreThreeD@i{\@ifnextchar[{\CylindreThreeD@do}{\CylindreThreeD@do[]}}
+\def\CylindreThreeD@do[#1](#2,#3,#4)#5#6{{%
+% Le centre de la base sera placé avec
+% (#2,#3,#4) les paramètres CX,CY et CZ
+% #5 rayon
+% #6 hauteur
+% on peut ensuite faire tourner le cylindre
+% avec RotX, RotY et RotZ
+\pst@killglue
+\setkeys{psset}{#1}%
+\begin@ClosedObj
+	\addto@pscode{%
+		\variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #2 def
+			/longitude #3 def
+			/latitude #4 def
+			/CZ Radius latitude sin mul def
+			/CX Radius longitude cos mul latitude cos mul def
+			/CY Radius longitude sin mul latitude cos mul def
+		\else
+			/CX #2 def
+			/CY #3 def
+			/CZ #4 def
+		\fi
+		reduction reduction scale
+		/Rcylindre #5 def
+		/Hcylindre #6 def
+		/incrementANGLE 10 def
+		/incrementHAUTEUR Hcylindre 5 div def
+		tx@3DDict begin
+			CylinderThreeD
+		end
+	}% fin du code ps
+	\showpointsfalse
+\end@ClosedObj
+}}% % fin de la commande PSTricks
+%
+% hv 2003-12-18
+\def\LineThreeD{\@ifnextchar[{\LineThreeD@i}{\LineThreeD@i[]}}
+\def\LineThreeD@i[#1](#2,#3,#4)(#5,#6,#7){{%
+% (#2,#3,#4) coordonnées du point1
+% (#5,#6,#7) coordonnées du point2
+	\pst@killglue
+	\psset{#1}
+	\pNodeThreeD(#2,#3,#4){tempNodeA}
+	\pNodeThreeD(#5,#6,#7){tempNodeB}
+	\psline(tempNodeA)(tempNodeB)
+}}
+%
+% hv 2003-12-17
+\def\pNodeThreeD{\@ifnextchar[{\pNodeThreeD@i}{\pNodeThreeD@i[]}}
+% point can be in cartesian (x,y,z) or sphere coordinates (r;phi;theta)
+\def\pNodeThreeD@i[#1](#2)#3{{%
+	\setkeys{psset}{#1}
+	\edef\@NodeNameThreeD{#3}
+	\pNodeThreeD@ii#2,@comma*\relax
+}}
+\def\pNodeThreeD@ii#1,#2*{%
+	\def\@tempa{#2}\def\@tempb{@comma}%
+	\ifx\@tempa\@tempb%
+		\pNodeThreeD@iii#1;#2\else\pNodeThreeD@iv#1,#2\relax%
+	\fi%
+}
+\def\pNodeThreeD@iii#1;#2;#3;#4\relax{%
+	\pnode(!
+		\variablesTroisD
+		/Radius #1 def
+		/longitude #2 def
+		/latitude #3 def
+		/Zcote Radius latitude sin mul def
+		/Xabscisse Radius longitude cos mul latitude cos mul def
+		/Yordonnee Radius longitude sin mul latitude cos mul def
+		tx@3DDict begin
+			formulesTroisD
+			Xi reduction mul Yi reduction mul
+		end){\@NodeNameThreeD}
+}
+\def\pNodeThreeD@iv#1,#2,#3,#4\relax{%
+	\pnode(!
+		\variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #1 def
+			/longitude #2 def
+			/latitude #3 def
+			/Zcote Radius latitude sin mul def
+			/Xabscisse Radius longitude cos mul latitude cos mul def
+			/Yordonnee Radius longitude sin mul latitude cos mul def
+		\else
+			/Zcote #3 def
+			/Xabscisse #1 def
+			/Yordonnee #2 def
+		\fi
+		tx@3DDict begin
+			formulesTroisD
+			Xi reduction mul Yi reduction mul
+		end){\@NodeNameThreeD}%
+}
+%
+%
+\def\TetraedreThreeD{\pst@object{TetraedreThreeD}}
+\def\TetraedreThreeD@i{\@ifnextchar[{\TetraedreThreeD@do}{\TetraedreThreeD@do[]}}
+\def\TetraedreThreeD@do[#1](#2,#3,#4){{%
+    \pst@killglue
+    \setkeys{psset}{#1}%
+    \begin@ClosedObj
+	\addto@pscode{%
+	    \variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #2 def
+			/longitude #3 def
+			/latitude #4 def
+			/CZ Radius latitude sin mul def
+			/CX Radius longitude cos mul latitude cos mul def
+			/CY Radius longitude sin mul latitude cos mul def
+		\else
+			/CX #2 def
+			/CY #3 def
+			/CZ #4 def
+		\fi
+	    tx@3DDict begin
+			Tetraedre
+	    end
+	}% fin du code ps
+    \end@ClosedObj
+}}
+%
+%
+% pyramide
+%
+\def\FaceSAB{\pst@object{FaceSAB}}
+\def\FaceSAB@i{\@ifnextchar[{\FaceSAB@do}{\FaceSAB@do[]}}
+\def\FaceSAB@do[#1](#2,#3,#4)#5{{%
+\pst@killglue
+\setkeys{psset}{#1}%
+\begin@ClosedObj
+    \addto@pscode{%
+	\variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #2 def
+			/longitude #3 def
+			/latitude #4 def
+			/CZ Radius latitude sin mul def
+			/CX Radius longitude cos mul latitude cos mul def
+			/CY Radius longitude sin mul latitude cos mul def
+		\else
+			/CX #2 def
+			/CY #3 def
+			/CZ #4 def
+		\fi
+	/Hpyramide #5 def
+	tx@3DDict begin
+	    SommetsPyramide
+	    PSAB 0 le { %
+		reduction reduction scale
+		newpath
+		1 setlinejoin
+		/Xabscisse XS 1 fracHeight sub XA XS sub mul add def
+		/Yordonnee YS 1 fracHeight sub YA YS sub mul add def
+		/Zcote ZS CZ sub fracHeight mul CZ add def
+		CalcCoordinates
+		moveto
+		/Xabscisse XA def
+		/Yordonnee YA def
+		/Zcote ZA def
+		CalcCoordinates
+		lineto
+		/Xabscisse XB def
+		/Yordonnee YB def
+		/Zcote ZB def
+		CalcCoordinates
+		lineto
+		/Xabscisse XS 1 fracHeight sub XB XS sub mul add def
+		/Yordonnee YS 1 fracHeight sub YB YS sub mul add def
+		/Zcote ZS CZ sub fracHeight mul CZ add def
+		CalcCoordinates
+		lineto
+		closepath
+	    } if
+	end
+    }% fin du code ps
+\end@ClosedObj
+}}
+%
+\def\FaceSBC{\pst@object{FaceSBC}}
+\def\FaceSBC@i{\@ifnextchar[{\FaceSBC@do}{\FaceSBC@do[]}}
+\def\FaceSBC@do[#1](#2,#3,#4)#5{{%
+\pst@killglue
+\setkeys{psset}{#1}%
+\begin@ClosedObj
+    \addto@pscode{%
+	\variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #2 def
+			/longitude #3 def
+			/latitude #4 def
+			/CZ Radius latitude sin mul def
+			/CX Radius longitude cos mul latitude cos mul def
+			/CY Radius longitude sin mul latitude cos mul def
+		\else
+			/CX #2 def
+			/CY #3 def
+			/CZ #4 def
+		\fi
+	/Hpyramide #5 def
+	tx@3DDict begin
+	    SommetsPyramide
+	    PSBC 0 le { %
+		reduction reduction scale
+		newpath
+		1 setlinejoin
+		/Xabscisse XS 1 fracHeight sub XB XS sub mul add def
+		/Yordonnee YS 1 fracHeight sub YB YS sub mul add def
+		/Zcote ZS CZ sub fracHeight mul CZ add def
+		CalcCoordinates
+		moveto
+		/Xabscisse XB def
+		/Yordonnee YB def
+		/Zcote ZB def
+		CalcCoordinates
+		lineto
+		/Xabscisse XC def
+		/Yordonnee YC def
+		/Zcote ZC def
+		CalcCoordinates
+		lineto
+		/Xabscisse XS 1 fracHeight sub XC XS sub mul add def
+		/Yordonnee YS 1 fracHeight sub YC YS sub mul add def
+		/Zcote ZS CZ sub fracHeight mul CZ add def
+		CalcCoordinates
+		lineto
+		closepath
+	    } if
+	end
+    }% fin du code ps
+\end@ClosedObj
+}}
+%
+%
+\def\FaceSCD{\pst@object{FaceSCD}}
+\def\FaceSCD@i{\@ifnextchar[{\FaceSCD@do}{\FaceSCD@do[]}}
+\def\FaceSCD@do[#1](#2,#3,#4)#5{{%
+\pst@killglue
+\setkeys{psset}{#1}%
+\begin@ClosedObj
+    \addto@pscode{%
+	\variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #2 def
+			/longitude #3 def
+			/latitude #4 def
+			/CZ Radius latitude sin mul def
+			/CX Radius longitude cos mul latitude cos mul def
+			/CY Radius longitude sin mul latitude cos mul def
+		\else
+			/CX #2 def
+			/CY #3 def
+			/CZ #4 def
+		\fi
+	/Hpyramide #5 def
+	tx@3DDict begin
+	    SommetsPyramide
+	    PSCD 0 le { %
+    		reduction reduction scale
+		newpath
+		1 setlinejoin
+		/Xabscisse XS 1 fracHeight sub XC XS sub mul add def
+		/Yordonnee YS 1 fracHeight sub YC YS sub mul add def
+		/Zcote ZS CZ sub fracHeight mul CZ add def
+		CalcCoordinates
+		moveto
+		/Xabscisse XC def
+		/Yordonnee YC def
+		/Zcote ZC def
+		CalcCoordinates
+		lineto
+		/Xabscisse XD def
+		/Yordonnee YD def
+		/Zcote ZD def
+		CalcCoordinates
+		lineto
+		/Xabscisse XS 1 fracHeight sub XD XS sub mul add def
+		/Yordonnee YS 1 fracHeight sub YD YS sub mul add def
+		/Zcote ZS CZ sub fracHeight mul CZ add def
+		CalcCoordinates
+		lineto
+		closepath
+	    } if
+	end
+    }% fin du code ps
+\end@ClosedObj
+}}
+%
+\def\FaceSDA{\pst@object{FaceSDA}}
+\def\FaceSDA@i{\@ifnextchar[{\FaceSDA@do}{\FaceSDA@do[]}}
+\def\FaceSDA@do[#1](#2,#3,#4)#5{{%
+\pst@killglue
+\setkeys{psset}{#1}%
+\begin@ClosedObj
+\addto@pscode{%
+    \variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #2 def
+			/longitude #3 def
+			/latitude #4 def
+			/CZ Radius latitude sin mul def
+			/CX Radius longitude cos mul latitude cos mul def
+			/CY Radius longitude sin mul latitude cos mul def
+		\else
+			/CX #2 def
+			/CY #3 def
+			/CZ #4 def
+		\fi
+	/Hpyramide #5 def
+    tx@3DDict begin
+	SommetsPyramide
+	PSDA 0 le { %
+	    reduction reduction scale
+	    newpath
+	    1 setlinejoin
+	    /Xabscisse XS 1 fracHeight sub XD XS sub mul add def
+	    /Yordonnee YS 1 fracHeight sub YD YS sub mul add def
+		/Zcote ZS CZ sub fracHeight mul CZ add def
+	    CalcCoordinates
+		moveto
+	    /Xabscisse XD def
+	    /Yordonnee YD def
+	    /Zcote ZD def
+	    CalcCoordinates
+	    lineto
+	    /Xabscisse XA def
+	    /Yordonnee YA def
+	    /Zcote ZA def
+	    CalcCoordinates
+	    lineto
+	    /Xabscisse XS 1 fracHeight sub XA XS sub mul add def
+	    /Yordonnee YS 1 fracHeight sub YA YS sub mul add def
+		/Zcote ZS CZ sub fracHeight mul CZ add def
+	    CalcCoordinates
+		lineto
+	    closepath
+	} if
+    end
+}% fin du code ps
+\end@ClosedObj
+}}
+%
+\def\FaceABCD{\pst@object{FaceABCD}}
+\def\FaceABCD@i{\@ifnextchar[{\FaceABCD@do}{\FaceABCD@do[]}}
+\def\FaceABCD@do[#1](#2,#3,#4)#5{{%
+\pst@killglue
+\setkeys{psset}{#1}%
+\begin@ClosedObj
+    \addto@pscode{%
+	\variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #2 def
+			/longitude #3 def
+			/latitude #4 def
+			/CZ Radius latitude sin mul def
+			/CX Radius longitude cos mul latitude cos mul def
+			/CY Radius longitude sin mul latitude cos mul def
+		\else
+			/CX #2 def
+			/CY #3 def
+			/CZ #4 def
+		\fi
+	/Hpyramide #5 def
+	tx@3DDict begin
+	SommetsPyramide
+	PSABCD 0 le { %
+	    reduction reduction scale
+	    newpath
+	    1 setlinejoin
+	    /Xabscisse XA def
+	    /Yordonnee YA def
+	    /Zcote ZA def
+	    CalcCoordinates
+    	    moveto
+	    /Xabscisse XB def
+	    /Yordonnee YB def
+	    /Zcote ZB def
+	    CalcCoordinates
+	    lineto
+	    /Xabscisse XC def
+	    /Yordonnee YC def
+	    /Zcote ZC def
+	    CalcCoordinates
+	    lineto
+	    /Xabscisse XD def
+	    /Yordonnee YD def
+	    /Zcote ZD def
+	    CalcCoordinates
+	    lineto
+	    closepath
+	} if
+	end
+    }% fin du code ps
+\end@ClosedObj
+}}
+%
+% hv 2003
+\def\FaceABCDTop{\pst@object{FaceABCDTop}}
+\def\FaceABCDTop@i{\@ifnextchar[{\FaceABCDTop@do}{\FaceABCDTop@do[]}}
+\def\FaceABCDTop@do[#1](#2,#3,#4)#5{{%
+\pst@killglue
+\setkeys{psset}{#1}%
+\begin@ClosedObj
+    \addto@pscode{%
+	\variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #2 def
+			/longitude #3 def
+			/latitude #4 def
+			/CZ Radius latitude sin mul def
+			/CX Radius longitude cos mul latitude cos mul def
+			/CY Radius longitude sin mul latitude cos mul def
+		\else
+			/CX #2 def
+			/CY #3 def
+			/CZ #4 def
+		\fi
+	/Hpyramide #5 def
+	tx@3DDict begin
+	SommetsPyramide
+	PSABCD 0 gt { %
+	    reduction reduction scale
+	    newpath
+	    1 setlinejoin
+	    /Xabscisse XS 1 fracHeight sub XD XS sub mul add def
+	    /Yordonnee YS 1 fracHeight sub YD YS sub mul add def
+	    /Zcote ZS CZ sub fracHeight mul CZ add def
+	    CalcCoordinates
+   	    moveto
+	    /Xabscisse XS 1 fracHeight sub XA XS sub mul add def
+	    /Yordonnee YS 1 fracHeight sub YA YS sub mul add def
+	    /Zcote ZS CZ sub fracHeight mul CZ add def
+	    CalcCoordinates
+	    lineto
+	    /Xabscisse XS 1 fracHeight sub XB XS sub mul add def
+	    /Yordonnee YS 1 fracHeight sub YB YS sub mul add def
+	    /Zcote ZS CZ sub fracHeight mul CZ add def
+	    CalcCoordinates
+	    lineto
+	    /Xabscisse XS 1 fracHeight sub XC XS sub mul add def
+	    /Yordonnee YS 1 fracHeight sub YC YS sub mul add def
+	    /Zcote ZS CZ sub fracHeight mul CZ add def
+	    CalcCoordinates
+	    lineto
+	    closepath
+	} if
+	end
+    }% fin du code ps
+\end@ClosedObj
+}}
+%
+\def\PyramideThreeD{\@ifnextchar[{\@PyramideThreeD}{\@PyramideThreeD[]}}
+% (#2,#3,#4) the coordinates of the origin
+% #5 the height of the pyrimide
+\def\@PyramideThreeD[#1](#2,#3,#4)#5{{%
+%    \setkeys{psset}{#1}%
+%	\setkeys{psset}{CX=#2,CY=#3,CZ=#4,Hpyramide=#5}% makes the values globally
+%    \pst@object{PyramideThreeD}%
+%}}
+%\def\PyramideThreeD@i{%
+    \FaceSAB[fillcolor=\psk@TroisD@TetraedreColorFaceA][#1](#2,#3,#4){#5}%
+    \FaceSBC[fillcolor=\psk@TroisD@TetraedreColorFaceB][#1](#2,#3,#4){#5}%
+    \FaceSCD[fillcolor=\psk@TroisD@TetraedreColorFaceC][#1](#2,#3,#4){#5}%
+    \FaceSDA[fillcolor=\psk@TroisD@TetraedreColorFaceD][#1](#2,#3,#4){#5}%
+    \FaceABCD[fillcolor=\psk@TroisD@TetraedreColorFaceE][#1](#2,#3,#4){#5}%
+%    \ifnum\psk@TroisD@fracHeight < 1
+	\FaceABCDTop[fillcolor=\psk@TroisD@TetraedreColorFaceE][#1](#2,#3,#4){#5}%
+%    \fi
+}}
+%
+%
+\def\ConeThreeD{\pst@object{ConeThreeD}}
+\def\ConeThreeD@i{\@ifnextchar[{\ConeThreeD@do}{\ConeThreeD@do[]}}
+\def\ConeThreeD@do[#1](#2,#3,#4)#5#6{{%
+% Le centre de la base sera placé avec
+% (#2,#3,#4) les paramètres CX,CY et CZ
+% #5 rayon
+% #6 hauteur
+% on peut ensuite faire tourner le cylindre
+% avec RotX, RotY et RotZ
+\pst@killglue
+\setkeys{psset}{#1}%
+\begin@ClosedObj
+	\addto@pscode{%
+		\variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #2 def
+			/longitude #3 def
+			/latitude #4 def
+			/CZ Radius latitude sin mul def
+			/CX Radius longitude cos mul latitude cos mul def
+			/CY Radius longitude sin mul latitude cos mul def
+		\else
+			/CX #2 def
+			/CY #3 def
+			/CZ #4 def
+		\fi
+		reduction reduction scale
+    	/Rcone #5 def
+    	/Hcone #6 def
+		tx@3DDict begin
+			ConeThreeD
+		end
+	}% fin du code ps
+	\showpointsfalse
+\end@ClosedObj
+}}%
+%
+\def\CircleThreeD{\pst@object{CircleThreeD}}
+\def\CircleThreeD@i{\@ifnextchar[{\CircleThreeD@do}{\CircleThreeD@do[]}}
+\def\CircleThreeD@do[#1](#2,#3,#4)#5{{%
+% (#2,#3,#4) les paramètres CX,CY et CZ
+% #5 rayon du cercle
+\pst@killglue
+\setkeys{psset}{#1}%
+\begin@ClosedObj
+    \addto@pscode{%
+	/Rcercle #5 def
+	\variablesTroisD
+	\ifPst@SphericalCoor
+		/Radius #2 def
+		/longitude #3 def
+		/latitude #4 def
+		/CZ Radius latitude sin mul def
+		/CX Radius longitude cos mul latitude cos mul def
+		/CY Radius longitude sin mul latitude cos mul def
+	\else
+		/CX #2 def
+		/CY #3 def
+		/CZ #4 def
+	\fi
+	tx@3DDict begin
+    	    reduction reduction scale
+	    /TableauxPoints [
+	    0 1 359 {% on décrit le cercle
+		/Angle exch def [
+		    /Xcercle Rcercle Angle cos mul def
+		    /Ycercle Rcercle Angle sin mul def
+		    /Xabscisse Xcercle S1 mul Ycercle S2 C1 mul mul add CX add def
+		    /Yordonnee Xcercle C1 mul neg Ycercle S2 S1 mul mul add CY add def
+		    /Zcote Ycercle C2 mul neg CZ add def
+		    CalcCoordinates ]
+	    } for
+	    ] def
+	    TableauxPoints 0 get aload pop moveto
+	    0 1 359 {
+		/compteur exch def
+		TableauxPoints compteur get aload pop
+	    lineto } for
+	end
+	}% fin du code ps
+	\showpointsfalse
+\end@ClosedObj
+}}
+%
+%
+\def\FrameThreeD{\pst@object{FrameThreeD}}
+\def\FrameThreeD@i{\@ifnextchar[{\FrameThreeD@do}{\FrameThreeD@do[]}}
+\def\FrameThreeD@do[#1](#2,#3,#4)(#5,#6)(#7,#8){{%
+% (#2,#3,#4) the origin
+% (#5,#6) d'un sommet
+% (#7,#8) du sommet opposé
+% rectangle ABCD
+\pst@killglue
+\setkeys{psset}{#1}%
+\begin@ClosedObj
+	\addto@pscode{%
+		/XA #5 def
+		/YA #6 def
+		/XC #7 def
+		/YC #8 def
+% on en déduit les autres sommets
+		/XB XC def
+		/YB YA def
+		/XD XA def
+		/YD YC def
+		\variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #2 def
+			/longitude #3 def
+			/latitude #4 def
+			/CZ Radius latitude sin mul def
+			/CX Radius longitude cos mul latitude cos mul def
+			/CY Radius longitude sin mul latitude cos mul def
+		\else
+			/CX #2 def
+			/CY #3 def
+			/CZ #4 def
+		\fi
+		tx@3DDict begin
+			reduction reduction scale
+			newpath
+		    /Xframe XA def
+			/Yframe YA def
+		    /Xabscisse Xframe S1 mul Yframe S2 C1 mul mul add CX add def
+		    /Yordonnee Xframe C1 mul neg Yframe S2 S1 mul mul add CY add def
+		    /Zcote Yframe C2 mul neg CZ add def
+		    CalcCoordinates
+		     moveto
+		    /Xframe XB def
+		    /Yframe YB def
+		    /Xabscisse Xframe S1 mul Yframe S2 C1 mul mul add CX add def
+		    /Yordonnee Xframe C1 mul neg Yframe S2 S1 mul mul add CY add def
+		    /Zcote Yframe C2 mul neg CZ add def
+		    CalcCoordinates
+		    lineto
+		    /Xframe XC def
+		    /Yframe YC def
+		    /Xabscisse Xframe S1 mul Yframe S2 C1 mul mul add CX add def
+		    /Yordonnee Xframe C1 mul neg Yframe S2 S1 mul mul add CY add def
+		    /Zcote Yframe C2 mul neg CZ add def
+		    CalcCoordinates
+		    lineto
+		    /Xframe XD def
+		    /Yframe YD def
+		    /Xabscisse Xframe S1 mul Yframe S2 C1 mul mul add CX add def
+		    /Yordonnee Xframe C1 mul neg Yframe S2 S1 mul mul add CY add def
+		    /Zcote Yframe C2 mul neg CZ add def
+		    CalcCoordinates
+		    lineto
+		    /Xframe XA def
+		    /Yframe YA def
+		    /Xabscisse Xframe S1 mul Yframe S2 C1 mul mul add CX add def
+		    /Yordonnee Xframe C1 mul neg Yframe S2 S1 mul mul add CY add def
+		    /Zcote Yframe C2 mul neg CZ add def
+		    CalcCoordinates
+		    lineto
+			closepath
+		end
+	}% fin du code ps
+	\showpointsfalse
+\end@ClosedObj
+}}% % fin de la commande PSTricks
+%
+%
+\def\QuadrillageThreeD{\pst@object{QuadrillageThreeD}}
+\def\QuadrillageThreeD@i{\@ifnextchar[{\QuadrillageThreeD@do}{\QuadrillageThreeD@do[]}}
+\def\QuadrillageThreeD@do[#1](#2,#3,#4)(#5,#6)(#7,#8){{%
+\pst@killglue
+\setkeys{psset}{#1}%
+\begin@OpenObj
+	\addto@pscode{%
+		\variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #2 def
+			/longitude #3 def
+			/latitude #4 def
+			/CZ Radius latitude sin mul def
+			/CX Radius longitude cos mul latitude cos mul def
+			/CY Radius longitude sin mul latitude cos mul def
+		\else
+			/CX #2 def
+			/CY #3 def
+			/CZ #4 def
+		\fi
+		/Xmin #5 def
+		/Xmax #7 def
+		/Ymin #6 def
+		/Ymax #8 def
+		/pas \psk@TroisD@pas\space def
+		/grille \psk@TroisD@grille\space def
+		tx@3DDict begin
+			reduction reduction scale
+			Ymin grille Ymax {% balayage suivant Oy
+			/Ygrille exch def
+			/TableauxPoints [
+			Xmin pas Xmax { % balayage suivant Ox
+				/Xgrille exch def
+				/Xabscisse Xgrille S1 mul Ygrille S2 C1 mul mul add CX add def
+				/Yordonnee Xgrille C1 mul neg Ygrille S2 S1 mul mul add CY add def
+				/Zcote Ygrille C2 mul neg CZ add def
+				formulesTroisD
+				[ Xi 28.45 mul Yi 28.45 mul ]
+			} for
+    		] def
+			TableauxPoints 0 get aload pop moveto
+			0 1 Xmax Xmin sub pas div {
+				/compteur exch def
+				TableauxPoints compteur get aload pop
+				lineto
+			} for
+% stroke
+    		} for
+%
+			Xmin grille Xmax {% balayage suivant Ox
+    		/Xgrille exch def
+			/TableauxPoints [
+				Ymin pas Ymax { % balayage suivant Ox
+				/Ygrille exch def
+				/Xabscisse Xgrille S1 mul Ygrille S2 C1 mul mul add CX add def
+				/Yordonnee Xgrille C1 mul neg Ygrille S2 S1 mul mul add CY add def
+				/Zcote Ygrille C2 mul neg CZ add def
+				formulesTroisD
+				[ Xi 28.45 mul Yi 28.45 mul ]
+        		} for
+    		] def
+			TableauxPoints 0 get aload pop moveto
+			0 1 Ymax Ymin sub pas div {
+				/compteur exch def
+    			TableauxPoints compteur get aload pop
+   				lineto
+			} for
+			\pst@number\pslinewidth SLW
+  			\pst@usecolor\pslinecolor
+			\@nameuse{psls@\pslinestyle}
+% stroke
+    		} for
+% fin du tracé
+		end
+	}% fin du code ps
+\end@OpenObj
+}}% % fin de la commande PSTricks
+%
+%
+% 11 novembre
+\def\DemiSphereThreeD{\pst@object{DemiSphereThreeD}}
+\def\DemiSphereThreeD@i{\@ifnextchar[{\DemiSphereThreeD@do}{\DemiSphereThreeD@do[]}}
+\def\DemiSphereThreeD@do[#1](#2,#3,#4)#5{{%
+% (#2,#3,#4) coordinates of the center
+% #5 rayon
+	\pst@killglue
+	\setkeys{psset}{#1}%
+	\begin@ClosedObj
+		\addto@pscode{%
+			\variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #2 def
+			/longitude #3 def
+			/latitude #4 def
+			/CZ Radius latitude sin mul def
+			/CX Radius longitude cos mul latitude cos mul def
+			/CY Radius longitude sin mul latitude cos mul def
+		\else
+			/CX #2 def
+			/CY #3 def
+			/CZ #4 def
+		\fi
+			reduction reduction scale
+    		/Rsphere #5 def
+    		/increment 10 def
+			tx@3DDict begin
+				/condition {PSfacette 0 le} def
+				/departPhi 0 def
+				MaillageSphere
+% centre de la base inférieure après transformations
+			    /CxFaceInf CX def
+			    /CyFaceInf CY def
+			    /CzFaceInf CZ def
+% correction 16 novembre 2002
+%    /Xpoint CxFaceInf def
+%    /Ypoint CyFaceInf def
+%    /Zpoint CzFaceInf def
+			    /Xpoint 0 def
+			    /Ypoint 0 def
+			    /Zpoint 0 def
+% fin correction 16/11/2002
+				CalculsPointsAfterTransformations
+ 			   /CxBaseInf Xabscisse def
+		    /CyBaseInf Yordonnee def
+    /CzBaseInf Zcote def
+    /RXvueInf CxBaseInf XpointVue sub def
+    /RYvueInf CyBaseInf YpointVue sub def
+    /RZvueInf CzBaseInf ZpointVue sub def
+% Sommet de la sphère
+    /Xpoint 0 def
+    /Ypoint 0 def
+    /Zpoint Rsphere def
+CalculsPointsAfterTransformations
+    /XsommetSphere Xabscisse def
+    /YsommetSphere Yordonnee def
+    /ZsommetSphere Zcote def
+% Normale extérieure à la base inférieure
+    /nXBaseInf CxFaceInf XsommetSphere sub def
+    /nYBaseInf CyFaceInf YsommetSphere sub def
+    /nZBaseInf CzFaceInf ZsommetSphere sub def
+% Visibilité de la base inférieure
+    /PSbaseSphere nXBaseInf RXvueInf mul
+                  nYBaseInf RYvueInf mul add
+                  nZBaseInf RZvueInf mul add def
+PSbaseSphere 0 le {
+/TableauxPoints [
+0 1 359 {% on décrit le cercle
+    /theta exch def [
+    /Xpoint Rsphere theta cos mul def
+    /Ypoint Rsphere theta sin mul def
+    /Zpoint 0 def
+CalculsPointsAfterTransformations
+    CalcCoordinates ]
+    } for
+    ] def
+gsave
+newpath
+ TableauxPoints 0 get aload pop moveto
+0 1 359 {
+    /compteur exch def
+    TableauxPoints compteur get aload pop
+    lineto } for
+0.7 setgray
+closepath
+fill
+grestore
+ } if
+end
+ }% fin du code ps
+\showpointsfalse
+\end@ClosedObj
+ }}% % fin de la commande PSTricks
+%
+%
+\def\SphereCreuseThreeD{\pst@object{SphereCreuseThreeD}}
+\def\SphereCreuseThreeD@i{\@ifnextchar[{\SphereCreuseThreeD@do}{\SphereCreuseThreeD@do[]}}
+\def\SphereCreuseThreeD@do[#1](#2,#3,#4)#5{{%
+% (#2,#3,#4) coordinates of the center
+% #5 rayon
+\pst@killglue
+\setkeys{psset}{#1}%
+\begin@ClosedObj
+	\addto@pscode{%
+		\variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #2 def
+			/longitude #3 def
+			/latitude #4 def
+			/CZ Radius latitude sin mul def
+			/CX Radius longitude cos mul latitude cos mul def
+			/CY Radius longitude sin mul latitude cos mul def
+		\else
+			/CX #2 def
+			/CY #3 def
+			/CZ #4 def
+		\fi
+		reduction reduction scale
+		/Rsphere #5 def
+		/increment 10 def
+		tx@3DDict begin
+			/SphereInside {
+				/condition {PSfacette 0 ge} def
+				/departPhi 0 def
+				MaillageSphere
+			} def
+%
+% centre de la base inférieure après transformations
+			/CxFaceInf CX def
+			/CyFaceInf CY def
+			/CzFaceInf CZ def
+			/Xpoint CxFaceInf def
+			/Ypoint CyFaceInf def
+			/Zpoint CzFaceInf def
+			CalculsPointsAfterTransformations
+			/CxBaseInf Xabscisse def
+			/CyBaseInf Yordonnee def
+			/CzBaseInf Zcote def
+			/RXvueInf CxBaseInf XpointVue sub def
+			/RYvueInf CyBaseInf YpointVue sub def
+			/RZvueInf CzBaseInf ZpointVue sub def
+% Sommet de la sphère
+			/Xpoint 0 def
+			/Ypoint 0 def
+			/Zpoint Rsphere def
+			CalculsPointsAfterTransformations
+			/XsommetSphere Xabscisse def
+			/YsommetSphere Yordonnee def
+			/ZsommetSphere Zcote def
+% Normale extérieure à la base inférieure
+			/nXBaseInf CxFaceInf XsommetSphere sub def
+			/nYBaseInf CyFaceInf YsommetSphere sub def
+			/nZBaseInf CzFaceInf ZsommetSphere sub def
+% Visibilité de la base inférieure
+			/PSbaseSphere nXBaseInf RXvueInf mul nYBaseInf RYvueInf mul add
+				nZBaseInf RZvueInf mul add def
+			/base {
+				/TableauxPoints [
+					0 1 359 {% on décrit le cercle
+						/theta exch def [
+						/Xpoint Rsphere theta cos mul def
+						/Ypoint Rsphere theta sin mul def
+						/Zpoint 0 def
+						CalculsPointsAfterTransformations
+						CalcCoordinates ]
+					} for
+				] def
+% gsave
+				newpath
+				TableauxPoints 0 get aload pop moveto
+				0 1 359 {
+					/compteur exch def
+					TableauxPoints compteur get aload pop
+				lineto } for
+				0.7 setgray
+				closepath
+				% stroke
+				%grestore
+			} def
+			PSbaseSphere 0 le {
+				base
+				clip
+				SphereInside
+			}{ 0 0 0.01 0 360 arc } ifelse
+		end
+	}% fin du code ps
+	\showpointsfalse
+	\end@ClosedObj
+}}% % fin de la commande PSTricks
+%
+% 30 novembre 2002
+% révisé le 30 octobre 2003
+\def\PortionSphereThreeD{\pst@object{PortionSphereThreeD}}
+\def\PortionSphereThreeD@i{\@ifnextchar[{\PortionSphereThreeD@do}{\PortionSphereThreeD@do[]}}
+\def\PortionSphereThreeD@do[#1](#2,#3,#4)#5{{%
+% (#2,#3,#4) coordinates of the center
+% #5 rayon
+\pst@killglue
+\setkeys{psset}{#1}%
+\begin@ClosedObj
+	\addto@pscode{%
+		\variablesTroisD
+		\ifPst@SphericalCoor
+			/Radius #2 def
+			/longitude #3 def
+			/latitude #4 def
+			/CZ Radius latitude sin mul def
+			/CX Radius longitude cos mul latitude cos mul def
+			/CY Radius longitude sin mul latitude cos mul def
+		\else
+			/CX #2 def
+			/CY #3 def
+			/CZ #4 def
+		\fi
+		reduction reduction scale
+    	/Rsphere #5 def
+    	/increment 1 def
+%    	/increment 2.5 def
+		tx@3DDict begin
+  			PortionSphere
+		end
+ 	}% fin du code ps
+	\showpointsfalse
+\end@ClosedObj
+}}% % fin de la commande PSTricks
+%
+%% END: pst-vue3D.tex
+\endinput
+
+%% ChangeLog
+% 1.0g	2003-12-21	hv: fixed a bug in \pNodeThreeD
+% 1.0f	2003-12-20	hv: added two eye macros, drop the options for
+%                       CX,CY,CZ and Xorigine,...
+%                       added option SphericalCoor and modify all
+%                       macros to use it
+% 1.0e	2003-12-18	hv: edit the \AxesThreeD macro
+% 1.0d	2003-12-18	hv: fix bug in truncated pyramid

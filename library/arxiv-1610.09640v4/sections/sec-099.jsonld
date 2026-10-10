@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-099",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "NC MGM Equivalence",
+  "pageStart": 377,
+  "pageEnd": 385,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-099",
+    "library/arxiv-1610.09640v4/blocks/remark-sec-099-01",
+    "library/arxiv-1610.09640v4/blocks/lemma-sec-099-02",
+    "library/arxiv-1610.09640v4/blocks/lemma-sec-099-03",
+    "library/arxiv-1610.09640v4/blocks/lemma-sec-099-04",
+    "library/arxiv-1610.09640v4/blocks/lemma-sec-099-05",
+    "library/arxiv-1610.09640v4/blocks/theorem-sec-099-06",
+    "library/arxiv-1610.09640v4/blocks/theorem-sec-099-07",
+    "library/arxiv-1610.09640v4/blocks/theorem-sec-099-08",
+    "library/arxiv-1610.09640v4/blocks/example-sec-099-09"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

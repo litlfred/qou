@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0603217v3/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0603217v3 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0603217v3/manifest.jsonld",
+  "provenance": "ingested",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0603217&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0603217v3",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/math/0603217v3",
+    "content_type": "application/gzip",
+    "sha256": "acaf5396d43bb0749a4ac55c5b31f9e4913d9c22453d695979407479defffdf0",
+    "bytes": 6824,
+    "fetched": "2026-10-10T15:29:24+00:00",
+    "files": [
+      {
+        "path": "source/files/pvc.bbl",
+        "role": "bbl",
+        "sha256": "3f5e46a236b5f3c42be270dc53356c7a85d8b50642c18e6f446de43762f88270",
+        "bytes": 3638
+      },
+      {
+        "path": "source/files/pvc.tex",
+        "role": "tex",
+        "sha256": "3f7617b44d43b85522fe66227a0b255ca34f59345e21a7def0deb973c5984c32",
+        "bytes": 16396
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

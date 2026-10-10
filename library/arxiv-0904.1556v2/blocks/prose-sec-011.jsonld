@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-0904.1556v2/blocks/prose-sec-011",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-0904.1556v2/blocks/prose-sec-011",
   "kind": "prose",
   "title": "Color and SU(3)",
   "pageStart": 27,
   "pageEnd": 28,
   "text": "../sections/sec-011-234-color-and-su3.md",
-  "derivedFrom": "library/arxiv-0904.1556v2/manifest",
-  "sourceDocument": "library/arxiv-0904.1556v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0904.1556v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0904.1556v2/manifest.jsonld",
   "provenance": "ingested"
 }

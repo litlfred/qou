@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1909.06797v5/blocks/prose-sec-007",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1909.06797v5/blocks/prose-sec-007",
   "kind": "prose",
   "title": "Large N solutions and automodel diagrams",
   "pageStart": 16,
   "pageEnd": 18,
   "text": "../sections/sec-007-51-large-n-solutions-and-automodel-diagrams.md",
-  "derivedFrom": "library/arxiv-1909.06797v5/manifest",
-  "sourceDocument": "library/arxiv-1909.06797v5/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1909.06797v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1909.06797v5/manifest.jsonld",
   "provenance": "ingested"
 }

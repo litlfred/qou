@@ -5,7 +5,8 @@
   "file": "2301.02038v1.pdf",
   "sha256": "27b303939826ab393daeb77ab186311fc7a7ada9d47f6f830bfeafcf14aedb9a",
   "bytes": 399958,
-  "pages": 26
+  "pages": 26,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Vinogradov's Cohomological Geometry of Partial Differential Equations",
   "authors_raw": "Fabrizio Pugliese, Giovanni Sparano, and Luca Vitagliano",
-  "abstract": "Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-li near partial dif- ferential equations and it is essentially due to Alexandre M . Vinogradov and his collaborators. Many coordinate free properties of PDEs ﬁnd their natu- ral place in Secondary Calculus including: symmetries and c onservation laws, variational principles and the coordinate free aspects of t he calculus of vari- ations, recursion operators and Hamiltonian structures, e tc. The building blocks of this language are horizontal cohomologies of diﬃe ties, i.e. inﬁnite prolongations of PDEs, and their versions with local coeﬃci ents. The main paradigm of Secondary Calculus is the principle, due to A. M. Vinogradov, roughly stating that: diﬀerential calculus on the space of s olutions of a PDE is calculus up to homotopy on the horizontal De Rham algebra of t he associated diﬃety. W e will review the fundamentals of Secondary Calcul us including its main motivations. In the last part of the paper, we will try to explain the role of homotopy in the theory.",
+  "abstract": "Secondary Calculus is a formal replacement for di\ufb00erential cal- culus on the space of solutions of a system of possibly non-li near partial dif- ferential equations and it is essentially due to Alexandre M . Vinogradov and his collaborators. Many coordinate free properties of PDEs \ufb01nd their natu- ral place in Secondary Calculus including: symmetries and c onservation laws, variational principles and the coordinate free aspects of t he calculus of vari- ations, recursion operators and Hamiltonian structures, e tc. The building blocks of this language are horizontal cohomologies of di\ufb03e ties, i.e. in\ufb01nite prolongations of PDEs, and their versions with local coe\ufb03ci ents. The main paradigm of Secondary Calculus is the principle, due to A. M. Vinogradov, roughly stating that: di\ufb00erential calculus on the space of s olutions of a PDE is calculus up to homotopy on the horizontal De Rham algebra of t he associated di\ufb03ety. W e will review the fundamentals of Secondary Calcul us including its main motivations. In the last part of the paper, we will try to explain the role of homotopy in the theory.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20230105203007-05'00'",
@@ -25,10 +26,10 @@
    "Title": "",
    "Author": ""
   },
-  "title_prev": "Contemporary Mathematics Vinogradov’s Cohomological Geometry of Partial Differential Equations",
+  "title_prev": "Contemporary Mathematics Vinogradov\u2019s Cohomological Geometry of Partial Differential Equations",
   "title_lines": [
    "Contemporary Mathematics",
-   "Vinogradov’s Cohomological Geometry",
+   "Vinogradov\u2019s Cohomological Geometry",
    "of Partial Differential Equations"
   ]
  },
@@ -250,6 +251,80 @@
   "likely_scanned": false,
   "toc_entries": 14,
   "sections": 11,
-  "chars_total": 66473
+  "chars_total": 66473,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "Vinogradov_SC_v2.tex",
+   "tex_sections": 4,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.817,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-1-geometry-of-pdes",
+     "title": "Geometry of PDEs",
+     "prose_ratio": 0.178,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-11-jet-spaces",
+     "title": "jet spaces",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-12-the-cartan-distribution",
+     "title": "the Cartan distribution",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-2-cohomology-of-pdes",
+     "title": "Cohomology of PDEs",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-21-horizontal-cohomology",
+     "title": "horizontal cohomology",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-22-interpreting-horizontal-cohomologies",
+     "title": "interpreting horizontal cohomologies",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-23-algebraic-structures-on-horizontal-cohomologi",
+     "title": "algebraic structures on horizontal cohomologies",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-3-homotopy-of-pdes",
+     "title": "Homotopy of PDEs",
+     "prose_ratio": 0.051,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-31-homotopy-algebras",
+     "title": "homotopy algebras",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

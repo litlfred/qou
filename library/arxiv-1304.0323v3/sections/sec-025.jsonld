@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1304.0323v3/sections/sec-025",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A.6. Localization of tensor categories",
+  "pageStart": 72,
+  "pageEnd": 75,
+  "contains": [
+    "library/arxiv-1304.0323v3/blocks/prose-sec-025",
+    "library/arxiv-1304.0323v3/blocks/lemma-sec-025-01",
+    "library/arxiv-1304.0323v3/blocks/proposition-sec-025-02",
+    "library/arxiv-1304.0323v3/blocks/lemma-sec-025-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1304.0323v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1304.0323v3/manifest.jsonld",
+  "provenance": "ingested"
+}

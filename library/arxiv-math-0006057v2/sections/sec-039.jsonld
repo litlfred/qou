@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0006057v2/sections/sec-039",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "C∗-quantum groupoids. Deﬁnition 7.1.1 and the uniqueness of the unit,",
+  "pageStart": 29,
+  "pageEnd": 30,
+  "contains": [
+    "library/arxiv-math-0006057v2/blocks/prose-sec-039",
+    "library/arxiv-math-0006057v2/blocks/theorem-sec-039-01"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "provenance": "ingested"
+}

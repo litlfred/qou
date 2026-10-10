@@ -5,7 +5,8 @@
   "file": "1101.3374v1.pdf",
   "sha256": "01d76c1d259c1d512ac9d5bafd411de4d4f34822ba33db0d8ba1a92459953526",
   "bytes": 1134409,
-  "pages": 60
+  "pages": 60,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -15,9 +16,9 @@
    "stamp_date": "18 Jan 2011"
   },
   "doi": null,
-  "title": "PONTRYAGIN INVARIANTS AND INTEGRAL FORMULAS FOR MILNOR’S TRIPLE LINKING NUMBER",
+  "title": "PONTRYAGIN INVARIANTS AND INTEGRAL FORMULAS FOR MILNOR\u2019S TRIPLE LINKING NUMBER",
   "authors_raw": "DENNIS DETURCK, HERMAN GLUCK, RAFAL KOMENDARCZYK",
-  "abstract": "To each three-component link in the 3-sphere, we associate a geometrically natural characteristic map from the 3-torus to the 2-sphere, and show that the pairwise linking numbers and Milnor triple linking number that classify the link up to link ho- motopy correspond to the Pontryagin invariants that classify its characteristic map up to homotopy. This can be viewed as a natural extension of the familiar fact that the linking number of a two-component link in 3-space is the degree of its associated Gauss map from the 2-torus to the 2-sphere. When the pairwise linking numbers are all zero, we give an integral formula for the triple linking number analogous to the Gauss integral for the pairwise linking numbers. The integrand in this formula is geometrically natural in the sense that it is invariant under orientation-preserving rigid motions of the 3-sphere, while the integral itself can be viewed as the helicity of a related vector ﬁeld on the 3-torus.",
+  "abstract": "To each three-component link in the 3-sphere, we associate a geometrically natural characteristic map from the 3-torus to the 2-sphere, and show that the pairwise linking numbers and Milnor triple linking number that classify the link up to link ho- motopy correspond to the Pontryagin invariants that classify its characteristic map up to homotopy. This can be viewed as a natural extension of the familiar fact that the linking number of a two-component link in 3-space is the degree of its associated Gauss map from the 2-torus to the 2-sphere. When the pairwise linking numbers are all zero, we give an integral formula for the triple linking number analogous to the Gauss integral for the pairwise linking numbers. The integrand in this formula is geometrically natural in the sense that it is invariant under orientation-preserving rigid motions of the 3-sphere, while the integral itself can be viewed as the helicity of a related vector \ufb01eld on the 3-torus.",
   "docinfo": {
    "Author": "Dennis DeTurck, Herman Gluck, Rafal Komendarczyk, Paul Melvin, Clayton Shonkwiler and David Shea Vela-Vick",
    "CreationDate": "D:20180530185457Z",
@@ -27,7 +28,7 @@
   },
   "title_lines": [
    "PONTRYAGIN INVARIANTS AND INTEGRAL FORMULAS",
-   "FOR MILNOR’S TRIPLE LINKING NUMBER"
+   "FOR MILNOR\u2019S TRIPLE LINKING NUMBER"
   ]
  },
  "toc": [
@@ -147,6 +148,39 @@
   "likely_scanned": false,
   "toc_entries": 11,
   "sections": 3,
-  "chars_total": 136128
+  "chars_total": 136128,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "0.tex",
+   "tex_sections": 9,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 0.625,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-4-explicit-formulas-for-the-characteristic-map",
+     "title": "Explicit formulas for the characteristic map",
+     "prose_ratio": 0.953,
+     "coverage_ratio": 0.327,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    },
+    {
+     "id": "sec-002-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

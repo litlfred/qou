@@ -6,7 +6,8 @@
   "sha256": "b33759def53c6a439a547da2da9a5cf31af3de94f9e429022bc6c54a82009378",
   "bytes": 1421939,
   "pages": 53,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -1093,6 +1094,334 @@
   "likely_scanned": false,
   "toc_entries": 62,
   "sections": 62,
-  "chars_total": 121135
+  "chars_total": 121135,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "speed_wide.tex",
+   "tex_sections": 5,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-11-mod-\u03c6-convergence",
+     "title": "Mod-\u03c6 convergence",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-2-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan-n",
+     "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.356,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-12-results-and-outline-of-the-paper",
+     "title": "Results and outline of the paper",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-4-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan-n",
+     "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-13-stable-distributions-and-mod-stable-convergen",
+     "title": "Stable distributions and mod-stable convergence",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-6-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan-n",
+     "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-2-speed-of-convergence-estimates",
+     "title": "Speed of convergence estimates",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-21-the-notion-of-zone-of-control",
+     "title": "The notion of zone of control",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-8-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan-n",
+     "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-22-spaces-of-test-functions",
+     "title": "Spaces of test functions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-0-r",
+     "title": "(R)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-0-r-of",
+     "title": "(R) of",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-10-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
+     "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-12-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
+     "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-23-estimates-for-test-functions",
+     "title": "Estimates for test functions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-14-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
+     "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-24-smoothing-techniques",
+     "title": "Smoothing techniques",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-1-the-kernel\u03c1-is-non-negative-with",
+     "title": "The kernel\u03c1 is non-negative, with",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-3-the-functions\u03c1-and-\u02c6\u03c1-are-even-and",
+     "title": "The functions\u03c1 and \u02c6\u03c1 are even, and",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-2-2\u03be-finallysincx-min1-1",
+     "title": "(2\u2212|\u03be|)+. Finally,sinc(x)\u2264 min(1, 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-2-one-hasf1x-1f1x-and-for-allk-0",
+     "title": "One hasf1(x) = 1\u2212f1(\u2212x), and for allK\u2265 0,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-16-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
+     "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-25-bounds-on-the-kolmogorov-distance",
+     "title": "Bounds on the Kolmogorov distance",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-3-then-there-exists-a-constantc\u03b1cvkk-1-such-that",
+     "title": "Then, there exists a constantC(\u03b1,c,v,K,K 1) such that",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-18-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
+     "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-2-mod-gaussian-convergence-andv-w-3-the-maximal",
+     "title": "(mod-Gaussian convergence), andv = w = 3. The maximal value",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-2-k1-1",
+     "title": "K1 + 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-3-examples-with-an-explicit-fourier-transform",
+     "title": "Examples with an explicit Fourier transform",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-029-31-sums-of-independent-random-variables",
+     "title": "Sums of independent random variables",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-20-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
+     "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-2-therefore",
+     "title": "Therefore,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-32-winding-number-of-a-planar-brownian-motion",
+     "title": "Winding number of a planar Brownian motion",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-14-v-f\u00e9ra-y-p--l-m\u00e9liot-and-a-nikeghbali",
+     "title": "V . F\u00c9RA Y, P .-L. M\u00c9LIOT, AND A. NIKEGHBALI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-33-approximation-of-a-stable-law-by-compound-poi",
+     "title": "Approximation of a stable law by compound Poisson laws",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-22-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
+     "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-24-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
+     "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-34-convergence-of-ornsteinuhlenbeck-processes-to",
+     "title": "Convergence of Ornstein\u2013Uhlenbeck processes to stable laws",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-038-26-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
+     "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-039-35-logarithms-of-characteristic-polynomials-of-r",
+     "title": "Logarithms of characteristic polynomials of random matrices",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-28-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
+     "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-4-cumulants-and-dependency-graphs",
+     "title": "Cumulants and dependency graphs",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-042-41-cumulants-zone-of-control-and-kolmogorov-boun",
+     "title": "Cumulants, zone of control and Kolmogorov bound",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-043-30-valentin-f\u00e9ray-pierre-lo\u00efc-m\u00e9liot-and-ashkan",
+     "title": "Valentin F\u00e9ray, Pierre-Lo\u00efc M\u00e9liot, and Ashkan Nikeghbali",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-044-42-dependency-graphs",
+     "title": "Dependency graphs",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-045-1-ifdn-onn12\u03b5-for-\u03b5-0-thenyn-snnn",
+     "title": "IfDn =O((Nn)1/2\u2212\u03b5) for \u03b5> 0, thenYn = Sn\u221aNn",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-046-43-unbounded-random-variables-and-truncation-met",
+     "title": "Unbounded random variables and truncation methods",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-047-0-otherwise-using-h\u00f6lder-and-bienaym\u00e9-chebyshev",
+     "title": "Otherwise, using H\u00f6lder and Bienaym\u00e9-Chebyshev inequalities,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-048-2-d",
+     "title": "( D",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-049-5-ising-model-and-markov-chains",
+     "title": "Ising model and Markov chains",
+     "prose_ratio": 0.071,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-050-51-weighted-graphs-and-spanning-trees",
+     "title": "Weighted graphs and spanning trees",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-051-52-uniform-weighted-dependency-graphs",
+     "title": "Uniform weighted dependency graphs",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-052-53-magnetization-of-the-ising-model",
+     "title": "Magnetization of the Ising model",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-053-54-functionals-of-markov-chains",
+     "title": "Functionals of Markov chains",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-054-2-kr-\u03b8p-trt1",
+     "title": "Kr (\u03b8P )tr\u2212t1,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-055-2-\u03b8p-trt1",
+     "title": "(\u03b8P )tr\u2212t1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-056-2-\u03b8p-trt1",
+     "title": "(\u03b8P )tr\u2212t1. \u2293 \u2294",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-057-1-when-varsn",
+     "title": "When Var(Sn)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-058-2-this-convergence-in-law-happens-as-soon-asvars",
+     "title": "This convergence in law happens as soon asVar(Sn)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-059-55-the-case-of-linear-functionals-of-the-empiric",
+     "title": "The case of linear functionals of the empirical measure",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-060-5-setf1-1-f2-1-and-f3-0",
+     "title": "Setf(1) = 1, f(2) =\u22121 and f(3) = 0;",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-061-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

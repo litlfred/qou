@@ -5,7 +5,8 @@
   "file": "2111.06645v3.pdf",
   "sha256": "2a4826bd1c2f0823c99f8e3cccfd835c5044d70d30eb20b36fea38dcb8dd83de",
   "bytes": 1560237,
-  "pages": 87
+  "pages": 87,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": "10.3842/SIGMA.2024.055",
   "title": "Knots, Perturbative Series and Quantum Modularity",
   "authors_raw": "Stavros GAROUFALIDIS a and Don ZAGIER bc",
-  "abstract": "We introduce an invariant of a hyperbolic knot which is a map α7→ Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns indexed by the boundary parabolic SL 2(C) representations of the fundamental group of the knot. These matrix invariants have a rich structure: (a) their (σ0,σ 1) entry, whereσ0 is the trivial andσ1 the geometric representation, is the power series expansion of the Kashaev invariant of the knot around the root of unity e 2πiα as an element of the Habiro ring, and the remaining entries belong to generalized Habiro rings of number fields; (b) the first column is given by the perturbative power series of Dimofte–Garoufalidis; (c) the columns of Φ are fundamental solutions of a linear q-difference equation; (d) the matrix defines an SL 2(Z)-cocycle Wγ in matrix-valued functions on Q that conjecturally extends to a smooth function on R and even to holomorphic functions on suitable complex cut planes, lifting the factorially divergent series Φ(h) to actual functions. The two invariants Φ and Wγ are related by a refined quantum modularity conjecture which we illustrate in detail for the three simplest hyperbolic knots, the 4 1, 5 2 and (−2, 3, 7) pretzel knots. This paper has two sequels, one giving a different realization of our invariant as a matrix of convergent q-series with integer coefficients and the other studying its Habiro-like arithmetic properties in more depth.",
+  "abstract": "We introduce an invariant of a hyperbolic knot which is a map \u03b17\u2192 \u03a6\u03b1(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns indexed by the boundary parabolic SL 2(C) representations of the fundamental group of the knot. These matrix invariants have a rich structure: (a) their (\u03c30,\u03c3 1) entry, where\u03c30 is the trivial and\u03c31 the geometric representation, is the power series expansion of the Kashaev invariant of the knot around the root of unity e 2\u03c0i\u03b1 as an element of the Habiro ring, and the remaining entries belong to generalized Habiro rings of number fields; (b) the first column is given by the perturbative power series of Dimofte\u2013Garoufalidis; (c) the columns of \u03a6 are fundamental solutions of a linear q-difference equation; (d) the matrix defines an SL 2(Z)-cocycle W\u03b3 in matrix-valued functions on Q that conjecturally extends to a smooth function on R and even to holomorphic functions on suitable complex cut planes, lifting the factorially divergent series \u03a6(h) to actual functions. The two invariants \u03a6 and W\u03b3 are related by a refined quantum modularity conjecture which we illustrate in detail for the three simplest hyperbolic knots, the 4 1, 5 2 and (\u22122, 3, 7) pretzel knots. This paper has two sequels, one giving a different realization of our invariant as a matrix of convergent q-series with integer coefficients and the other studying its Habiro-like arithmetic properties in more depth.",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20240625010158Z",
@@ -214,7 +215,7 @@
   },
   {
    "level": 2,
-   "title": "Ideal triangulations and the Neumann–Zagier equations",
+   "title": "Ideal triangulations and the Neumann\u2013Zagier equations",
    "page": 47,
    "source": "outline",
    "number": "6.2"
@@ -599,7 +600,7 @@
   {
    "id": "sec-022-62-ideal-triangulations-and-the-neumannzagier-eq",
    "number": "6.2",
-   "title": "Ideal triangulations and the Neumann–Zagier equations",
+   "title": "Ideal triangulations and the Neumann\u2013Zagier equations",
    "level": 2,
    "page_start": 47,
    "page_end": 49,
@@ -772,6 +773,233 @@
   "likely_scanned": false,
   "toc_entries": 49,
   "sections": 39,
-  "chars_total": 291382
+  "chars_total": 291382,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "sigma24-055.tex",
+   "tex_sections": 10,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-part-0-introduction-and-overview",
+     "title": "Part 0: Introduction and overview",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-part-i-the-main-story",
+     "title": "Part I: The main story",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-1-the-original-quantum-modularity-conjecture",
+     "title": "The original quantum modularity conjecture",
+     "prose_ratio": 0.974,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-2-a-collection-of-formal-power-series",
+     "title": "A collection of formal power series",
+     "prose_ratio": 0.983,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-004-31-the-generalized-quantum-modularity-conjecture",
+     "title": "The generalized quantum modularity conjecture",
+     "prose_ratio": 0.314,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-32-lifting-the-qmc-from-constant-terms-to-power",
+     "title": "Lifting the QMC from constant terms to power series",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-33-quadratic-relations",
+     "title": "Quadratic relations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-34-asymptotics-of-the-coefficients",
+     "title": "Asymptotics of the coefficients",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-4-refining-the-quantum-modularity-conjecture",
+     "title": "Refining the quantum modularity conjecture",
+     "prose_ratio": 0.053,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-41-improving-the-quantum-modularity-conjecture-o",
+     "title": "Improving the quantum modularity conjecture: optimal truncation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-42-new-elements-of-the-habiro-ring",
+     "title": "New elements of the Habiro ring",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-43-smoothed-optimal-truncation",
+     "title": "Smoothed optimal truncation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-44-strengthening-the-generalized-quantum-modular",
+     "title": "Strengthening the generalized quantum modularity conjecture",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-45-the-refined-quantum-modularity-conjecture",
+     "title": "The refined quantum modularity conjecture",
+     "prose_ratio": 0.36,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-5-the-matrix-valued-cocycle-associated-to-a-knot",
+     "title": "The matrix-valued cocycle associated to a knot",
+     "prose_ratio": 0.179,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-015-51-the-habiro-like-matrix-and-the-perturbative-m",
+     "title": "The Habiro-like matrix and the perturbative matrix",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-52-smoothness",
+     "title": "Smoothness",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-54-analyticity",
+     "title": "Analyticity",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-55-the-non-hyperbolic-case",
+     "title": "The non-hyperbolic case",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-part-ii-complements",
+     "title": "Part II. Complements",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-6-half-symplectic-matrices-and-their-perturbativ",
+     "title": "Half-symplectic matrices and their perturbative series",
+     "prose_ratio": 0.093,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-021-61-half-symplectic-matrices-and-the-bloch-group",
+     "title": "Half-symplectic matrices and the Bloch group",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-62-ideal-triangulations-and-the-neumannzagier-eq",
+     "title": "Ideal triangulations and the Neumann\u2013Zagier equations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-63-nahm-sums-and-the-perturbative-definition-of",
+     "title": "Nahm sums and the perturbative definition of the Phi-series",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-7-two-q-holonomic-modules",
+     "title": "Two q-holonomic modules",
+     "prose_ratio": 0.224,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-025-71-descendant-habiro-like-functions",
+     "title": "Descendant Habiro-like functions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-73-state-sums",
+     "title": "State-sums",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-74-the-q-holonomic-module-of-formal-power-series",
+     "title": "The q-holonomic module of formal power series",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-8-proof-of-the-modularity-conjecture-for-the-4-1",
+     "title": "Proof of the modularity conjecture for the 4_1 knot",
+     "prose_ratio": 0.613,
+     "coverage_ratio": 0.961,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-029-82-the-general-case",
+     "title": "The general case",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-9-arithmetic-aspects",
+     "title": "Arithmetic aspects",
+     "prose_ratio": 0.034,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-031-91-algebraic-number-theory-aspects",
+     "title": "Algebraic number theory aspects",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-92-denominators-and-integrality-properties",
+     "title": "Denominators and integrality properties",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-10-numerical-aspects",
+     "title": "Numerical aspects",
+     "prose_ratio": 0.829,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-034-102-optimal-truncation-and-smoothed-optimal-trun",
+     "title": "Optimal truncation and smoothed optimal truncation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-a-numerical-data-for-five-sample-knots",
+     "title": "A Numerical data for five sample knots",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-a1-the-figure-eight-knot",
+     "title": "A.1 The figure eight knot",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-a2-the-sister-of-the-figure-eight-knot",
+     "title": "A.2 The sister of the figure eight knot",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-038-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

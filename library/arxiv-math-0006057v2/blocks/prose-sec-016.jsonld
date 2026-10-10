@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0006057v2/blocks/prose-sec-016",
+  "kind": "prose",
+  "title": "Maschke’s Theorem. The existence of left integrals in quantum groupoids",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "text": "../sections/sec-016-33-maschkes-theorem-the-existence-of-left-integr.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-0006057v2/manifest.jsonld",
+  "provenance": "ingested"
+}

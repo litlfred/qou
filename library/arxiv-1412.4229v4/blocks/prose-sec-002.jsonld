@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1412.4229v4/blocks/prose-sec-002",
+  "kind": "prose",
+  "title": "Central Pairs of DG Rings and their Resolutions",
+  "pageStart": 16,
+  "pageEnd": 23,
+  "text": "../sections/sec-002-3-central-pairs-of-dg-rings-and-their-resolution.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1412.4229v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1412.4229v4/manifest.jsonld",
+  "provenance": "ingested"
+}

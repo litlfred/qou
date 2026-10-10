@@ -5,7 +5,8 @@
   "file": "1003.4485v2.pdf",
   "sha256": "714d73873cecd73a2d14ff1661b6ab778124421222b1ec3990acc3f0448a67f0",
   "bytes": 674346,
-  "pages": 60
+  "pages": 60,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "An Invitation to Higher Gauge Theory",
   "authors_raw": "John C. Baez and John Huerta",
-  "abstract": "In this easy introduction to higher gauge theory, we describ e parallel trans- port for particles and strings in terms of 2-connections on 2 -bundles. Just as ordinary gauge theory involves a gauge group, this genera lization in- volves a gauge ‘2-group’. We focus on 6 examples. First, ever y abelian Lie group gives a Lie 2-group; the case of U(1) yields the theo ry of U(1) gerbes, which play an important role in string theory and mul tisymplec- tic geometry. Second, every group representation gives a Li e 2-group; the representation of the Lorentz group on 4d Minkowski spaceti me gives the Poincar´ e 2-group, which leads to a spin foam model for Minko wski space- time. Third, taking the adjoint representation of any Lie gr oup on its own Lie algebra gives a ‘tangent 2-group’, which serves as a gaug e 2-group in 4d BF theory, which has topological gravity as a special case. Fou rth, every Lie group has an ‘inner automorphism 2-group’, which s erves as the gauge group in 4d BF theory with cosmological constant term. Fifth, ev- ery Lie group has an ‘automorphism 2-group’, which plays an i mportant role in the theory of nonabelian gerbes. And sixth, every com pact simple Lie group gives a ‘string 2-group’. We also touch upon higher structures such as the ‘gravity 3-group’, and the Lie 3-superalgebra th at governs 11-dimensional supergravity.",
+  "abstract": "In this easy introduction to higher gauge theory, we describ e parallel trans- port for particles and strings in terms of 2-connections on 2 -bundles. Just as ordinary gauge theory involves a gauge group, this genera lization in- volves a gauge \u20182-group\u2019. We focus on 6 examples. First, ever y abelian Lie group gives a Lie 2-group; the case of U(1) yields the theo ry of U(1) gerbes, which play an important role in string theory and mul tisymplec- tic geometry. Second, every group representation gives a Li e 2-group; the representation of the Lorentz group on 4d Minkowski spaceti me gives the Poincar\u00b4 e 2-group, which leads to a spin foam model for Minko wski space- time. Third, taking the adjoint representation of any Lie gr oup on its own Lie algebra gives a \u2018tangent 2-group\u2019, which serves as a gaug e 2-group in 4d BF theory, which has topological gravity as a special case. Fou rth, every Lie group has an \u2018inner automorphism 2-group\u2019, which s erves as the gauge group in 4d BF theory with cosmological constant term. Fifth, ev- ery Lie group has an \u2018automorphism 2-group\u2019, which plays an i mportant role in the theory of nonabelian gerbes. And sixth, every com pact simple Lie group gives a \u2018string 2-group\u2019. We also touch upon higher structures such as the \u2018gravity 3-group\u2019, and the Lie 3-superalgebra th at governs 11-dimensional supergravity.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
    "CreationDate": "D:20150218202134-05'00'",
@@ -96,7 +97,7 @@
   },
   {
    "level": 2,
-   "title": "The Poincaré 2-Group",
+   "title": "The Poincar\u00e9 2-Group",
    "page": 32,
    "source": "outline",
    "number": "4.2"
@@ -316,6 +317,103 @@
   "likely_scanned": false,
   "toc_entries": 18,
   "sections": 15,
-  "chars_total": 121947
+  "chars_total": 121947,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 5,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.979,
+     "coverage_ratio": 0.889,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-2-categories-and-connections",
+     "title": "Categories and Connections",
+     "prose_ratio": 0.984,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-002-3-2-categories-and-2-connections",
+     "title": "2-Categories and 2-Connections",
+     "prose_ratio": 0.322,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-32-path-2-groupoids",
+     "title": "Path 2-Groupoids",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-33-2-groups",
+     "title": "2-Groups",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-34-2-connections",
+     "title": "2-Connections",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-4-examples-and-applications",
+     "title": "Examples and Applications",
+     "prose_ratio": 0.026,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-41-shifted-abelian-groups",
+     "title": "Shifted Abelian Groups",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-43-tangent-2-groups",
+     "title": "Tangent 2-Groups",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-44-inner-automorphism-2-groups",
+     "title": "Inner Automorphism 2-Groups",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-46-string-2-groups",
+     "title": "String 2-Groups",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-5-further-topics",
+     "title": "Further Topics",
+     "prose_ratio": 0.013,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-012-51-gauge-transformations",
+     "title": "Gauge Transformations",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-52-curvature",
+     "title": "Curvature",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-53-nontrivial-2-bundles",
+     "title": "Nontrivial 2-Bundles",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

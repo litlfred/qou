@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2311.05446v3/blocks/prose-sec-007",
+  "kind": "prose",
+  "title": "Dimensional convexity properties of relative entropy for log-concave measures with homogeneous potential",
+  "pageStart": 13,
+  "pageEnd": 18,
+  "text": "../sections/sec-007-3-dimensional-convexity-properties-of-relative-e.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2311.05446v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2311.05446v3/manifest.jsonld",
+  "provenance": "ingested"
+}

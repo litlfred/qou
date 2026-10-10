@@ -5,7 +5,8 @@
   "file": "2411.03801v2.pdf",
   "sha256": "a7f1f6fa74cb0949e8e9b3aa8a175a534182b79d37dabdfb0bf024fd744b9444",
   "bytes": 541142,
-  "pages": 24
+  "pages": 24,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "1-LOOP EQUALS TORSION FOR TWO-BRIDGE KNOTS",
   "authors_raw": "STAVROS GAROUFALIDIS AND SEOKBEOM YOON",
-  "abstract": "Motivated by the conjectured asymptotics of the Kashaev invariant, Dimofte and the first author introduced a power series associated to a suitable ideal triangulation of a cusped hyperbolic 3-manifold, proved that its constant (1-loop) term is a topological invariant and conjectured that it equals to the adjoint Reidemeister torsion. We prove this conjecture for hyperbolic 2-bridge knots by combining the work of Ohtsuki–Takata with an explicit computation.",
+  "abstract": "Motivated by the conjectured asymptotics of the Kashaev invariant, Dimofte and the first author introduced a power series associated to a suitable ideal triangulation of a cusped hyperbolic 3-manifold, proved that its constant (1-loop) term is a topological invariant and conjectured that it equals to the adjoint Reidemeister torsion. We prove this conjecture for hyperbolic 2-bridge knots by combining the work of Ohtsuki\u2013Takata with an explicit computation.",
   "docinfo": {
    "Author": "",
    "CreationDate": "D:20241114011546Z",
@@ -60,7 +61,7 @@
   },
   {
    "level": 2,
-   "title": "The Ohtsuki–Takata invariant",
+   "title": "The Ohtsuki\u2013Takata invariant",
    "page": 7,
    "source": "outline",
    "number": "2.3"
@@ -174,7 +175,7 @@
   {
    "id": "sec-004-23-the-ohtsukitakata-invariant",
    "number": "2.3",
-   "title": "The Ohtsuki–Takata invariant",
+   "title": "The Ohtsuki\u2013Takata invariant",
    "level": 2,
    "page_start": 7,
    "page_end": 9,
@@ -277,6 +278,95 @@
   "likely_scanned": false,
   "toc_entries": 14,
   "sections": 14,
-  "chars_total": 50295
+  "chars_total": 50295,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "text10.tex",
+   "tex_sections": 4,
+   "overlaid": 1,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.415,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-21-the-1-loop-invariant",
+     "title": "The 1-loop invariant",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-2-two-invariants-from-the-asymptotics-of-the-kas",
+     "title": "Two invariants from the asymptotics of the Kashaev invariant",
+     "prose_ratio": 0.607,
+     "coverage_ratio": 0.956,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-22-essential-open-diagrams-and-their-potential",
+     "title": "Essential open diagrams and their potential",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-23-the-ohtsukitakata-invariant",
+     "title": "The Ohtsuki\u2013Takata invariant",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-3-from-planar-diagrams-to-ideal-triangulations",
+     "title": "From planar diagrams to ideal triangulations",
+     "prose_ratio": 0.24,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-31-octahedral-decomposition",
+     "title": "Octahedral decomposition",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-32-collapsing-the-octahedral-decomposition-to-an",
+     "title": "Collapsing the octahedral decomposition to an ideal triangulation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-4-proof-of-the-main-theorem",
+     "title": "Proof of the main theorem",
+     "prose_ratio": 0.085,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-009-41-flattening-of-the-collapsed-triangulation",
+     "title": "Flattening of the collapsed triangulation",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-42-variable-reduction",
+     "title": "Variable reduction",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-appendix-a-further-discussion-on-collapsing",
+     "title": "Appendix A. Further discussion on collapsing",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-appendix-b-braid-closures",
+     "title": "Appendix B. Braid closures",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

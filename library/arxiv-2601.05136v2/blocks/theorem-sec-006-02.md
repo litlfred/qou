@@ -1,0 +1,1 @@
+]beingessentialisequivalenttoapurelygroup-theoreticconditioncalled arc-faithfulness.

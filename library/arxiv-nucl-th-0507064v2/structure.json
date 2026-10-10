@@ -7,7 +7,8 @@
   "bytes": 495418,
   "pages": 8,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -187,6 +188,74 @@
   "likely_scanned": false,
   "toc_entries": 8,
   "sections": 9,
-  "chars_total": 31539
+  "chars_total": 31539,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "virial_neut_rev.tex",
+   "tex_sections": 5,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-ii-virial-equation-of-state",
+     "title": "VIRIAL EQUATION OF STATE",
+     "prose_ratio": 0.257,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-i-introduction",
+     "title": "INTRODUCTION",
+     "prose_ratio": 0.616,
+     "coverage_ratio": 0.975,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-002-iii-results",
+     "title": "RESULTS",
+     "prose_ratio": 0.478,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-2-p-2t-2",
+     "title": "P \u2212 2T 2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-c-scaling-and-energy",
+     "title": "Scaling and Energy",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-2-t-1-bn\u03bb3n2-12",
+     "title": "T (1 \u2212 bn\u03bb3n/2) . (12)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-iv-conclusions",
+     "title": "CONCLUSIONS",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.993,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-007-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.076,
+     "result": "coverage gate failed \u2014 the LaTeX section holds only part of the PDF section"
+    }
+   ]
+  }
  }
 }

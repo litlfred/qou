@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1909.06797v5/blocks/prose-sec-004",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1909.06797v5/blocks/prose-sec-004",
   "kind": "prose",
   "title": "Fluctuations of automodel diagrams",
   "pageStart": 12,
   "pageEnd": 13,
   "text": "../sections/sec-004-32-fluctuations-of-automodel-diagrams.md",
-  "derivedFrom": "library/arxiv-1909.06797v5/manifest",
-  "sourceDocument": "library/arxiv-1909.06797v5/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1909.06797v5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1909.06797v5/manifest.jsonld",
   "provenance": "ingested"
 }

@@ -5,7 +5,8 @@
   "file": "0604057v2.pdf",
   "sha256": "649fad141dc34eb9388a87f99a58e4520f3c4b0bbf42f17ae49a267b712b5c7b",
   "bytes": 285558,
-  "pages": 19
+  "pages": 19,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "VOLUME CONJECTURE, REGULATOR AND SL2(C)-CHARACTER VARIETY OF A KNOT",
   "authors_raw": "WEIPING LI AND QINGXUE W ANG",
-  "abstract": "In this paper, by using the regulator map of Beilinson-Delig ne, we show that the quan- tization condition posed by Gukov is true for the SL2(C) character variety of the hyperbolic knot in S3. Furthermore, we prove that the corresponding C∗-valued 1-form is a secondary characteristic class (Chern-Simons) arising from the vanishing ﬁrst Chern class of the ﬂat line bundle over the smooth part of the character variety, where the ﬂat line bund le is the pullback of the universal Heisenberg line bundle over C∗ × C∗. The second part of the paper is to deﬁne an algebro-geometric invariant of 3-manifolds resulting from the Dehn surgery along a hyperbolic knot complement in S3. We establish a Casson type invariant for these 3-manifolds. In the last section, we exp licitly calculate the character variety of the ﬁgure-eight knot and discuss some applications.",
+  "abstract": "In this paper, by using the regulator map of Beilinson-Delig ne, we show that the quan- tization condition posed by Gukov is true for the SL2(C) character variety of the hyperbolic knot in S3. Furthermore, we prove that the corresponding C\u2217-valued 1-form is a secondary characteristic class (Chern-Simons) arising from the vanishing \ufb01rst Chern class of the \ufb02at line bundle over the smooth part of the character variety, where the \ufb02at line bund le is the pullback of the universal Heisenberg line bundle over C\u2217 \u00d7 C\u2217. The second part of the paper is to de\ufb01ne an algebro-geometric invariant of 3-manifolds resulting from the Dehn surgery along a hyperbolic knot complement in S3. We establish a Casson type invariant for these 3-manifolds. In the last section, we exp licitly calculate the character variety of the \ufb01gure-eight knot and discuss some applications.",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20220301110147-05'00'",
@@ -286,6 +287,97 @@
   "likely_scanned": false,
   "toc_entries": 15,
   "sections": 14,
-  "chars_total": 55086
+  "chars_total": 55086,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 5,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.95,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-001-2-terminology-and-notation",
+     "title": "Terminology and Notation",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-21",
+     "title": "2.1.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-22",
+     "title": "2.2.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-23",
+     "title": "2.3.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-24",
+     "title": "2.4.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-3-a-polynomial-regulator-and-k2-of-a-curve",
+     "title": "A-polynomial, regulator and K2 of a curve",
+     "prose_ratio": 0.127,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-31",
+     "title": "3.1.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-32-the-regulator-map-of-k2",
+     "title": "The regulator map of K2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-33",
+     "title": "3.3.",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-41-the-curve-of-characters",
+     "title": "The curve of characters",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-42-invariant-and-dehn-surgery-of-hyperbolic-knot",
+     "title": "Invariant and Dehn Surgery of Hyperbolic Knots",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-5-an-example-the-figure-eight-knot",
+     "title": "An Example: The Figure Eight Knot",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 0.985,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-013-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

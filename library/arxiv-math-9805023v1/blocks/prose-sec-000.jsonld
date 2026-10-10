@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-math-9805023v1/blocks/prose-sec-000",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-math-9805023v1/blocks/prose-sec-000",
   "kind": "prose",
   "title": "(k+1)√",
   "pageStart": 3,
   "pageEnd": 5,
   "text": "../sections/sec-000-2-k1.md",
-  "derivedFrom": "library/arxiv-math-9805023v1/manifest",
-  "sourceDocument": "library/arxiv-math-9805023v1/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9805023v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-math-9805023v1/manifest.jsonld",
   "provenance": "ingested"
 }

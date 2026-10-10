@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1801.04409v4/blocks/prose-sec-017",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1801.04409v4/blocks/prose-sec-017",
   "kind": "prose",
   "title": "Appendix A. Categorifications of based rings attached to SO(3).",
   "pageStart": 31,
   "pageEnd": 31,
   "text": "../sections/sec-017-appendix-a-categorifications-of-based-rings-atta.md",
-  "derivedFrom": "library/arxiv-1801.04409v4/manifest",
-  "sourceDocument": "library/arxiv-1801.04409v4/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1801.04409v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1801.04409v4/manifest.jsonld",
   "provenance": "ingested"
 }

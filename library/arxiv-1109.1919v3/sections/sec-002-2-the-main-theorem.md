@@ -7,521 +7,470 @@ section_number: 2
 pages: 5-10
 source_pdf: 1109.1919v3.pdf
 source_sha256: 2b634edddf232047
+text_source: latex
+latex_prose_ratio: 1.0
+latex_coverage_ratio: 0.827
 doc_brief: "COMBINATORIAL DESCENT DATA FOR GERBES AMNON YEKUTIELI — We consider descent data in cosimplicial crossed groupoids."
 ---
-Recall that for a groupoidG, the set of isomorphism classes of objects is denoted
-byπ0(G).
-Deﬁnition 2.1.Let G = (G1,G 2, AdG1↷G2, D) be a crossed groupoid. We deﬁne
-the homotopy set
-π0(G) :=π0(G1),
+\label{sec:equiv-cosim}
+
+Recall that for a groupoid $G$, the set of isomorphism classes of objects
+is denoted by $\bsym{\bsym{\pi}}_0(G)$.
+
+\begin{dfn} \label{dfn:equiv-cosim.101}
+Let 
+$G = 
+( G_1, G_2, 
+\opn{Ad}_{G_1 \crvar G_{2}}, \opn{D} )$
+be a crossed groupoid. 
+We define the homotopy set
+\[ \bsym{\bsym{\pi}}_0(G) := \bsym{\bsym{\pi}}_0(G_1) , \]
 and the homotopy groups
-π1(G,x ) := Coker
-(
-D :G2(x)→G1(x)
-)
+\[ \bsym{\bsym{\pi}}_1(G, x) := 
+\opn{Coker} \bigl( \opn{D} : G_2(x) \to G_1(x) \bigr) \]
 and
-π2(G,x ) := Ker
-(
-D :G2(x)→G1(x)
-)
-for x∈Ob(G).
-The setπ0(G) and the groupsπi(G,x ) are functorial inG. The groupπ2(G,x )
-is central inG2(x), and in particular it is abelian.
-Deﬁnition 2.2.A morphism of crossed groupoids Φ : G→H is called a weak
-equivalenceif the function
-π0(Φ) : π0(G)→π0(H)
+\[ \bsym{\bsym{\pi}}_2(G, x) := 
+\opn{Ker} \bigl( \opn{D} : G_2(x) \to G_1(x) \bigr) \]
+for $x \in \opn{Ob}(G)$.
+\end{dfn}
+
+The set $\bsym{\bsym{\pi}}_0(G)$ and the groups $\bsym{\bsym{\pi}}_i(G, x)$ are
+functorial in $G$. 
+The group $\bsym{\bsym{\pi}}_2(G, x)$ is central in $G_2(x)$, 
+and in particular it is abelian.
+
+\begin{dfn} \label{dfn:equiv-cosim.102}
+A morphism of crossed groupoids $\Phi : G \to H$  
+is called a {\em weak equivalence} if the function
+\[ \bsym{\bsym{\pi}}_0(\Phi)  : \bsym{\bsym{\pi}}_0(G) \to
+\bsym{\bsym{\pi}}_0(H)  \]
 is bijective, and the group homomorphisms
-πi(Φ,x ) :πi(G,x )→πi(H, Φ(x))
-are bijective for allx∈Ob(G) and i∈{1, 2}.
-Deﬁnition 2.3.A morphism Φ : G →H of cosimplicial crossed groupoids is
-called aweak equivalenceif in every simplicial dimensionp the morphism of crossed
-groupoids Φ p :Gp→H p is a weak equivalence.
-6 AMNON YEKUTIELI
-Theorem 2.4(Equivalence). Let Φ : G→H be a weak equivalence between cosim-
-plicial crossed groupoids. Then the function
-Desc(Φ) : Desc(G)→Desc(H)
-from Deﬁnition1.8 is bijective.
-We need a couple of auxiliary results ﬁrst. A partial descent datum inG is a pair
-(x,g ) of elementsx∈Ob(G0) and g∈G1
-1(x(0),x (1)) (cf. Deﬁnition 1.5). Let(x,g )
-and (x′,g′) be partial descent data. A partial gauge transformation(x,g )→(x′,g′)
-is a pair (f,c ) of elements as in Deﬁnition 1.6, that satisﬁes condition (i) of that
-deﬁnition.
-The next lemma is a sort of “Kan condition” satisﬁed byDesc(G).
-Lemma 2.5. Let (x,g,a ) be a descent datum in the cosimplicial crossed groupoid
-G, let(x′,g′) be a partial descent datum inG, and let(f,c ) be a partial gauge trans-
-formation (x,g )→(x′,g′). Then there is a unique elementa′∈G2
-2(x′
-(0)) such that
-the triple (x′,g′,a′) is a descent datum inG, and (f,c ) is a gauge transformation
-(x,g,a )→(x′,g′,a′).
-Proof. Deﬁne
-a′:= Ad(f(0))
-(
-c−1
-(0,2)◦a◦Ad(g−1
-(0,1))(c(1,2))◦c(0,1)
-)
-∈G2
-2(x′
-(0)).
-Then a′satisﬁes condition (ii) of Deﬁnition 1.6, and moreover it is unique.
-We have to show that the triple(x′,g′,a′) is a descent datum. Let us check
-condition (i) of Deﬁnition 1.5. We have
-(g′
-(0,2))−1◦g′
-(1,2)◦g′
-(0,1)
-∆
-=
-(
-f(2)◦g(0,2)◦D(c(0,2))◦f−1
-(0)
-)−1
-◦
-(
-f(2)◦g(1,2)◦D(c(1,2))◦f−1
-(1)
-)
-◦
-(
-f(1)◦g(0,1)◦D(c(0,1))◦f−1
-(0)
-)
-♦
-=f(0)◦D(c(0,2))−1◦g−1
-(0,2)◦g(1,2)◦D(c(1,2))◦g(0,1)◦D(c(0,1))◦f−1
-(0)
-♥
-= Ad(f(0))
-(
-D(c−1
-(0,2))◦D(a)◦g−1
-(0,1)◦D(c(1,2))◦g(0,1)◦D(c(0,1))
-)
-⋆
-= Ad(f(0))
-(
-D(c−1
-(0,2))◦D(a)◦Ad(g−1
-(0,1))(D(c(1,2)))◦D(c(0,1))
-)
-□
-= D
-(
-Ad(f(0))
-(
-c−1
-(0,2)◦a◦Ad(g−1
-(0,1))(c(1,2))◦c(0,1)
-))▽
-= D(a′).
-The equality marked
-∆
-= is true because of condition (i) of Deﬁnition 1.6, applied
-to the elementsg′
-(i,j). The equality marked
-♦
-= is true because of cancellation. The
-equality marked
-♥
-= is because condition (i) of Deﬁnition 1.5 holds for(x,g,a ),
-and by the deﬁnition ofAd(f(0)). The equality marked
-⋆
-= is by the deﬁnition of
-Ad(g−1
-(0,1)). The equality marked
-□
-= is becauseD isG2
-1-equivariant (this is condition
-(i) of Deﬁnition 1.2). And the equality marked
-▽
-= holds by deﬁnition ofa′.
-Finally we have to check that condition (ii) of Deﬁnition 1.5 holds for(x′,g′,a′).
-Namely, letting
-(2.6) u′:= (a′
-(0,1,3))−1◦a′
-(0,2,3)◦a′
-(0,1,2)◦Ad
-(
-(g′
-(0,1))−1)
-(a′
-(1,2,3))−1,
-we have to show thatu′= 1.
-COMBINATORIAL DESCENT DATA 7
-From the deﬁnition ofa′we get
-(2.7)
-Ad
-(
-(g′
-(0,1))−1)
-(a′
-(1,2,3))
-= Ad
-(
-(g′
-(0,1))−1◦f(1)
-)(
-c−1
-(1,3)◦a(1,2,3)◦Ad(g−1
-(1,2))(c(2,3))◦c(1,2)
-)
-♥
-= Ad
-(
-f(0)◦D(c−1
-(0,1))◦(g(0,1))−1)
-(
-c−1
-(1,3)◦a(1,2,3)◦Ad(g−1
-(1,2))(c(2,3))◦c(1,2)
-)
-♦
-=
-(
-Ad(f(0))◦Ad(D(c−1
-(0,1)))◦Ad(g(0,1))−1)
-(
-c−1
-(1,3)◦a(1,2,3)◦Ad(g−1
-(1,2))(c(2,3))◦c(1,2)
-)
-□
-= Ad
-(
-f(0)
-)(
-c−1
-(0,1)◦Ad
-(
-g−1
-(0,1)
-)
-(c−1
-(1,3))◦Ad
-(
-g−1
-(0,1)
-)
-(a(1,2,3))
-◦Ad
-(
-g−1
-(0,1)◦g−1
-(1,2)
-)
-(c(2,3))◦Ad
-(
-g−1
-(0,1)
-)
-(c(1,2))◦c(0,1)
-)
-.
-The equality marked
-♥
-= is true because
-(g′
-(0,1))−1◦f(1) =f(0)◦D(c−1
-(0,1))◦(g(0,1))−1;
-this is from condition (i) of Deﬁnition 1.6. The equality marked
-♦
-= is because Ad
-is a group homomorphism. And
-□
-= is because Ad(D(c−1
-(0,1))) = Ad(c−1
-(0,1)), which is
-an instance of condition (ii) of Deﬁnition 1.2.
-A consequence of condition (ii) of Deﬁnition 1.5 and condition (ii) of Deﬁnition
-1.2 is that
-a−1
-(0,1,2)◦c◦a(0,1,2) = Ad(a−1
-(0,1,2))(c)
-= Ad(D(a−1
-(0,1,2)))(c) = Ad(g−1
-(0,1)◦g−1
-(1,2)◦g(0,2))(c)
-for anyc∈G2
-2(x(0)). Therefore, takingc := Ad(g−1
-(0,2))(c(2,3)), we get
-(2.8) Ad(g−1
-(0,2))(c(2,3))◦a(0,1,2) =a(0,1,2)◦Ad(g−1
-(0,1)◦g−1
-(1,2))(c(2,3)).
-By the deﬁnition ofa′and by formula (2.7) we have
-u′= Ad(f(0))
-(
-c−1
-(0,3)◦a(0,1,3)◦Ad(g−1
-(0,1))(c(1,3))◦c(0,1)
-)−1
-◦Ad(f(0))
-(
-c−1
-(0,3)◦a(0,2,3)◦Ad(g−1
-(0,2))(c(2,3))◦c(0,2)
-)
-◦Ad(f(0))
-(
-c−1
-(0,2)◦a(0,1,2)◦Ad(g−1
-(0,1))(c(1,2))◦c(0,1)
-)
-◦Ad
-(
-f(0)
-)(
-c−1
-(0,1)◦Ad
-(
-g−1
-(0,1)
-)
-(c−1
-(1,3))◦Ad
-(
-g−1
-(0,1)
-)
-(a(1,2,3))
-◦Ad
-(
-g−1
-(0,1)◦g−1
-(1,2)
-)
-(c(2,3))◦Ad
-(
-g−1
-(0,1)
-)
-(c(1,2))◦c(0,1)
-)−1
-.
+\[ \bsym{\bsym{\pi}}_i(\Phi, x) : \bsym{\bsym{\pi}}_i(G, x) \to
+\bsym{\bsym{\pi}}_i(H, \Phi(x))  \]
+are bijective for all $x \in \opn{Ob}(G)$
+and $i \in \{ 1, 2 \}$.
+\end{dfn}
+
+\begin{dfn} \label{dfn:equiv-cosim.103}
+A morphism $\Phi : G \to H$
+of cosimplicial crossed groupoids is called a {\em weak equivalence} if in
+every simplicial dimension $p$ the morphism of crossed groupoids
+ $\Phi^p : G^p \to H^p$ is a weak equivalence.
+\end{dfn}
+
+\begin{thm}[Equivalence] \label{thm:100} 
+Let $\Phi : G \to H$ be a weak equivalence between 
+cosimplicial crossed groupoids. Then the function 
+\[ \ol{\opn{Desc}}(\Phi) : \ol{\opn{Desc}}(G) \to
+\ol{\opn{Desc}}(H) \]
+from Definition \tup{\ref{dfn:cosim.1}} is bijective.
+\end{thm}
+
+We need a couple of auxiliary results first. 
+A partial descent datum in $G$ is a pair $(x, g)$ of elements
+$x \in \opn{Ob}(G^0)$ and 
+$g \in G^1_1(x_{(0)}, x_{(1)})$ (cf.\ Definition \ref{dfn:101}).
+Let $(x, g)$ and $(x', g')$ be partial descent data. A partial gauge
+transformation $(x, g) \to (x', g')$ is a pair $(f, c)$ of elements 
+as in Definition \tup{\ref{dfn:100}}, that satisfies condition \tup{(i)} of that
+definition.
+
+The next lemma is a sort of ``Kan condition'' satisfied by 
+$\opn{Desc}(G)$.
+
+\begin{lem} \label{lem:104}
+Let $(x, g, a)$ be a descent datum in the cosimplicial crossed groupoid
+$G$, let $(x', g')$ be a partial
+descent datum in $G$, and let $(f, c)$ be a partial gauge
+transformation $(x, g) \to (x', g')$.  Then there is a unique element 
+$a' \in G^2_2(x'_{(0)})$ such that the triple 
+$(x', g', a')$ is a descent datum in $G$, and 
+$(f, c)$ is a gauge transformation
+$(x, g, a) \to (x', g', a')$.
+\end{lem}
+
+
+\begin{proof}
+Define 
+\[ a' := \opn{Ad}(f_{(0)}) \Bigl( 
+c_{(0, 2)}^{-1} \circ a \circ \opn{Ad}(g_{(0, 1)}^{-1})(c_{(1, 2)})
+\circ c_{(0, 1)}  \Bigr) \in G^2_2(x'_{(0)}) . \]
+Then $a'$ satisfies condition (ii) of Definition \ref{dfn:100}, and moreover it
+is unique. 
+
+We have to show that the triple $(x', g', a')$ is a descent
+datum. Let us check condition (i) of Definition \ref{dfn:101}. We have 
+\[ \begin{aligned}
+& (g'_{(0, 2)})^{-1} \circ g'_{(1, 2)} \circ g'_{(0, 1)}
+\\
+& \qquad  \overset{\vartriangle}{=} \Bigl( f_{(2)} \circ g_{(0, 2)} \circ 
+\opn{D}(c_{(0, 2)}) \circ f_{(0)}^{-1} \Bigr)^{-1} 
+\circ \Bigl( f_{(2)} \circ g_{(1, 2)} \circ  \opn{D}(c_{(1, 2)}) 
+\circ f_{(1)}^{-1} \Bigr)
+\\
+& \qquad \qquad \circ \Bigl( f_{(1)} \circ g_{(0, 1)} \circ  
+\opn{D}(c_{(0, 1)}) \circ f_{(0)}^{-1} \Bigr)
+\\
+& \qquad \overset{\lozenge}{=} f_{(0)} \circ \opn{D}(c_{(0, 2)})^{-1}
+\circ  
+g_{(0, 2)}^{-1} \circ g_{(1, 2)} \circ \opn{D}(c_{(1, 2)})
+\circ g_{(0, 1)} \circ \opn{D}(c_{(0, 1)}) \circ f_{(0)}^{-1}
+\\
+& \qquad \overset{\heartsuit}{=} \opn{Ad}(f_{(0)}) \Bigl( 
+\opn{D}(c_{(0, 2)}^{-1}) \circ 
+\opn{D}(a) \circ g_{(0, 1)}^{-1} \circ \opn{D}(c_{(1, 2)})
+\circ g_{(0, 1)} \circ \opn{D}(c_{(0, 1)}) \Bigr) 
+\\
+& \qquad \overset{\star}{=} \opn{Ad}(f_{(0)}) \Bigl( 
+\opn{D}(c_{(0, 2)}^{-1}) \circ 
+\opn{D}(a) \circ \opn{Ad}(g_{(0, 1)}^{-1})(\opn{D}(c_{(1, 2)})) 
+\circ \opn{D}(c_{(0, 1)}) \Bigr) 
+\\
+& \qquad \overset{\square}{=} \opn{D} \Bigl( \opn{Ad}(f_{(0)}) \Bigl( 
+c_{(0, 2)}^{-1} \circ a \circ \opn{Ad}(g_{(0, 1)}^{-1})(c_{(1, 2)})
+\circ c_{(0, 1)} \Bigr) \Bigr) 
+\overset{\triangledown}{=} \opn{D}(a') . 
+\end{aligned} \]
+The equality marked $\overset{\vartriangle}{=}$ is true because of  
+condition (i) of Definition \ref{dfn:100}, applied to the elements 
+$g'_{(i, j)}$. The equality marked $\overset{\lozenge}{=}$ is true because of
+cancellation. The equality marked $\overset{\heartsuit}{=}$ is because 
+condition (i) of Definition \ref{dfn:101} holds for $(x, g, a)$, and by the
+definition of $\opn{Ad}(f_{(0)})$. 
+The equality marked $\overset{\star}{=}$ is by the
+definition of $\opn{Ad}(g_{(0,1)}^{-1})$. 
+The equality marked $\overset{\square}{=}$ is because $\opn{D}$ is 
+$G^2_1$-equivariant
+(this is condition (i) of Definition \ref{dfn:cosim.101}).
+And the equality marked $\overset{\triangledown}{=}$ holds by definition of 
+$a'$.
+
+Finally we have to check that condition (ii) of Definition \ref{dfn:101} holds
+for $(x', g', a')$. Namely, letting 
+\begin{equation}
+u' := 
+(a'_{(0, 1, 3)})^{-1} \circ a'_{(0, 2, 3)} \circ a'_{(0, 1, 2)} \circ
+\opn{Ad} \bigl( (g'_{(0, 1)})^{-1} \bigr) (a'_{(1, 2, 3)})^{-1} ,
+\end{equation}
+we have to show that $u' = 1$.
+
+{}From the definition of $a'$ we get
+\begin{equation} \label{eqn:102}
+\begin{aligned}
+& \opn{Ad} \bigl( (g'_{(0, 1)})^{-1} \bigr) (a'_{(1, 2, 3)}) 
+\\ 
+& \qquad = \opn{Ad} \bigl( (g'_{(0, 1)})^{-1} \circ f_{(1)} \bigr)
+\Bigl( c_{(1, 3)}^{-1} \circ a_{(1, 2, 3)} \circ
+\opn{Ad}(g_{(1, 2)}^{-1})(c_{(2, 3)}) \circ c_{(1, 2)} \Bigr)
+\\
+& \qquad \overset{\heartsuit}{=} \opn{Ad} \bigl( f_{(0)} 
+\circ \opn{D}(c_{(0, 1)}^{-1}) \circ (g_{(0, 1)})^{-1} \bigr)
+\\
+& \qquad  \qquad
+\Bigl( c_{(1, 3)}^{-1} \circ a_{(1, 2, 3)} \circ
+\opn{Ad}(g_{(1, 2)}^{-1})(c_{(2, 3)}) \circ c_{(1, 2)}  \Bigr)
+\\
+& \qquad \overset{\lozenge}{=}  
+\bigl( \opn{Ad} (f_{(0)}) \circ \opn{Ad}(\opn{D}(c_{(0, 1)}^{-1})) 
+\circ \opn{Ad}(g_{(0, 1)})^{-1} \bigr) 
+\\
+& \qquad  \qquad
+\Bigl( c_{(1, 3)}^{-1} \circ a_{(1, 2, 3)} \circ
+\opn{Ad}(g_{(1, 2)}^{-1})(c_{(2, 3)}) \circ c_{(1, 2)} \Bigr)
+\\
+& \qquad \overset{\square}{=} \opn{Ad} \bigl( f_{(0)} \bigr)
+\Bigl( c_{(0, 1)}^{-1} \circ 
+\opn{Ad} \bigl( g_{(0, 1)}^{-1} \bigr)(c_{(1, 3)}^{-1}) \circ
+\opn{Ad} \bigl( g_{(0, 1)}^{-1} \bigr)(a_{(1, 2, 3)}) 
+\\
+& \qquad \qquad \circ
+\opn{Ad} \bigl( g_{(0, 1)}^{-1} \circ g_{(1, 2)}^{-1} \bigr)(c_{(2, 3)}) \circ
+\opn{Ad} \bigl( g_{(0, 1)}^{-1} \bigr)(c_{(1, 2)}) 
+\circ c_{(0, 1)} \Bigr) .
+\end{aligned}
+\end{equation}
+The equality marked $\overset{\heartsuit}{=}$ is true because
+\[  (g'_{(0, 1)})^{-1} \circ f_{(1)} = f_{(0)} \circ \opn{D}(c_{(0, 1)}^{-1})
+\circ (g_{(0, 1)})^{-1} ; \]
+this is from condition (i) of Definition \ref{dfn:100}.
+The equality marked $\overset{\lozenge}{=}$ is because $\opn{Ad}$ is a group
+homomorphism. And $\overset{\square}{=}$ is because 
+$\opn{Ad}(\opn{D}(c_{(0, 1)}^{-1})) = \opn{Ad}(c_{(0, 1)}^{-1})$, 
+which is an instance of condition (ii) of Definition \ref{dfn:cosim.101}.
+
+A consequence of condition (ii) of Definition \ref{dfn:101} and 
+condition (ii) of Definition \ref{dfn:cosim.101} is that 
+\[ \begin{aligned}
+& a_{(0, 1, 2)}^{-1} \circ c \circ a_{(0, 1, 2)} =
+\opn{Ad}(a_{(0, 1, 2)}^{-1})(c) 
+\\
+& \qquad = \opn{Ad}(\opn{D}(a_{(0, 1, 2)}^{-1}))(c) = 
+\opn{Ad}(g_{(0, 1)}^{-1} \circ g_{(1, 2)}^{-1} \circ g_{(0, 2)})(c)
+\end{aligned} \]
+for any $c \in G^2_2(x_{(0)})$. 
+Therefore, taking 
+$c := \opn{Ad}(g_{(0, 2)}^{-1})(c_{(2, 3)})$, we get
+\begin{equation} \label{eqn:103}
+\opn{Ad}(g_{(0, 2)}^{-1})(c_{(2, 3)}) \circ a_{(0, 1, 2)}
+ = a_{(0, 1, 2)} \circ 
+\opn{Ad}(g_{(0, 1)}^{-1} \circ g_{(1, 2)}^{-1})(c_{(2, 3)}) .
+\end{equation}
+
+By the definition of $a'$ and by formula (\ref{eqn:102}) we have
+\[ \begin{aligned}
+& u' = 
+\opn{Ad} ( f_{(0)} )
+\Bigl(  c_{(0, 3)}^{-1} \circ a_{(0, 1, 3)}
+\circ \opn{Ad}(g_{(0, 1)}^{-1})(c_{(1, 3)}) \circ c_{(0, 1)} \Bigr)^{-1}
+\\
+& \qquad \qquad \circ
+\opn{Ad} ( f_{(0)} )
+\Bigl( c_{(0, 3)}^{-1}  \circ a_{(0, 2, 3)} \circ
+\opn{Ad}(g_{(0, 2)}^{-1})(c_{(2, 3)}) \circ c_{(0, 2)} \Bigr)
+\\
+& \qquad \qquad \circ  
+\opn{Ad} ( f_{(0)} )
+\Bigl(  c_{(0, 2)}^{-1} \circ a_{(0, 1, 2)} \circ
+\opn{Ad}(g_{(0, 1)}^{-1})(c_{(1, 2)})  \circ c_{(0, 1)} \Bigr)
+\\
+& \qquad \qquad \circ \opn{Ad} \bigl( f_{(0)} \bigr)
+\Bigl( c_{(0, 1)}^{-1} \circ 
+\opn{Ad} \bigl( g_{(0, 1)}^{-1} \bigr)(c_{(1, 3)}^{-1}) \circ
+\opn{Ad} \bigl( g_{(0, 1)}^{-1} \bigr)(a_{(1, 2, 3)}) 
+\\
+& \qquad \qquad  \qquad \circ 
+\opn{Ad} \bigl( g_{(0, 1)}^{-1} \circ g_{(1, 2)}^{-1} \bigr)(c_{(2, 3)}) \circ
+\opn{Ad} \bigl( g_{(0, 1)}^{-1} \bigr)(c_{(1, 2)}) 
+\circ c_{(0, 1)} \Bigr)^{-1} \ .
+\end{aligned} \]
 Canceling adjacent inverse terms we get
-u′= Ad(f(0))
-(
-c−1
-(0,1)◦Ad(g−1
-(0,1))(c−1
-(1,3))◦v′◦Ad
-(
-g−1
-(0,1)
-)
-(c(1,3))◦c(0,1)
-)
-,
+\[ \begin{aligned}
+& u' = 
+\opn{Ad} ( f_{(0)} ) \Bigl(  c_{(0, 1)}^{-1} \circ 
+\opn{Ad}(g_{(0, 1)}^{-1})(c_{(1, 3)}^{-1}) \circ 
+v' \circ
+\opn{Ad} \bigl( g_{(0, 1)}^{-1} \bigr)(c_{(1, 3)})
+\circ c_{(0, 1)} \Bigr) \ , 
+\end{aligned} \]
 where
-v′:=a−1
-(0,1,3)◦a(0,2,3)◦Ad(g−1
-(0,1)◦g−1
-(1,2))(c(2,3))◦a(0,1,2)
-◦Ad
-(
-g−1
-(0,1)◦g−1
-(1,2)
-)
-(c−1
-(2,3))◦Ad
-(
-g−1
-(0,1)
-)
-(a−1
-(1,2,3)) .
-It suﬃces to prove thatv′= 1. Using formula (2.8) we have
-v′=a−1
-(0,1,3)◦a(0,2,3)◦a(0,1,2)◦Ad(g−1
-(0,1)◦g−1
-(1,2))(c(2,3))
-◦Ad
-(
-g−1
-(0,1)◦g−1
-(1,2)
-)
-(c−1
-(2,3))◦Ad
-(
-g−1
-(0,1)
-)
-(a−1
-(1,2,3)) .
-8 AMNON YEKUTIELI
-We now cancel two adjacent inverse terms, and use the fact that condition (ii) of
-Deﬁnition 1.5 holds for(x,g,a ), to conclude thatv′= 1. □
-Suppose G is a crossed groupoid andx,x′∈Ob(G). There is a right action of
-the groupG2(x) on the setG1(x,x′), namelyg↦→g◦D(a) for g∈G1(x,x′) and
-a∈G2(x). The quotient set is
-(2.9) π1(G,x,x′) :=G1(x,x′)/G2(x).
-Giveng,g′∈G1(x,x′) let us deﬁne
-(2.10) G2(x)(g,g′) :={a∈G2(x)|g′=g◦D(a)}.
-Soπ1(G,x,x ) =π1(G,x ) and G2(x)(1x, 1x) =π2(G,x ) in the notation of Deﬁni-
-tion 2.1.
-Lemma 2.11. Let Φ : G→H be a weak equivalence between crossed groupoids.
-Then the induced functions
-π1(Φ,x,x′) :π1(G,x,x′)→π1
-(
-H, Φ(x), Φ(x′)
-)
+\[ \begin{aligned}
+& v' := 
+a_{(0, 1, 3)}^{-1} \circ a_{(0, 2, 3)} \circ 
+\opn{Ad}(g_{(0, 1)}^{-1} \circ g_{(1, 2)}^{-1})(c_{(2, 3)})
+\circ a_{(0, 1, 2)} 
+\\
+& \qquad \qquad \circ
+\opn{Ad} \bigl( g_{(0, 1)}^{-1} \circ g_{(1, 2)}^{-1} \bigr)(c_{(2, 3)}^{-1})
+\circ \opn{Ad} \bigl( g_{(0, 1)}^{-1} \bigr)(a_{(1, 2, 3)}^{-1}) \ .
+\end{aligned} \]
+It suffices to prove that $v' = 1$. 
+Using formula (\ref{eqn:103}) we have 
+\[ \begin{aligned}
+& v' =  a_{(0, 1, 3)}^{-1} \circ a_{(0, 2, 3)}
+\circ a_{(0, 1, 2)} \circ 
+\opn{Ad}(g_{(0, 1)}^{-1} \circ g_{(1, 2)}^{-1})(c_{(2, 3)})
+\\
+& \qquad \qquad \circ
+\opn{Ad} \bigl( g_{(0, 1)}^{-1} \circ g_{(1, 2)}^{-1} \bigr)(c_{(2, 3)}^{-1})
+\circ \opn{Ad} \bigl( g_{(0, 1)}^{-1} \bigr)(a_{(1, 2, 3)}^{-1}) \ .
+\end{aligned} \]
+We now cancel two adjacent inverse terms, and use the fact that condition
+(ii) of Definition \ref{dfn:101} holds for $(x, g, a)$, to conclude that 
+$v' = 1$.
+\end{proof}
+
+Suppose $G$ is a crossed groupoid and $x, x' \in \opn{Ob}(G)$.
+There is a right action of the group $G_2(x)$ on the set 
+$G_1(x, x')$, namely 
+$g \mapsto g \circ \opn{D}(a)$ for $g \in G_1(x, x')$
+and $a \in G_2(x)$. The quotient set is 
+\begin{equation}
+\bsym{\bsym{\pi}}_1(G, x, x') := G_1(x, x') / G_2(x) . 
+\end{equation}
+Given $g, g' \in G_1(x, x')$ let us define 
+\begin{equation}
+G_2(x)(g, g') := \{ a \in G_2(x) \mid 
+g' = g \circ \opn{D}(a) \} . 
+\end{equation}
+So $\bsym{\bsym{\pi}}_1(G, x, x) = \bsym{\bsym{\pi}}_1(G, x)$ and 
+$G_2(x)(1_x, 1_x) = \bsym{\bsym{\pi}}_2(G, x)$
+in the notation of Definition \ref{dfn:equiv-cosim.101}.
+
+\begin{lem} \label{lem:cosim-equiv.100}
+Let $\Phi : G \to H$ be a weak equivalence between crossed
+groupoids. Then the induced functions 
+\[ \bsym{\bsym{\pi}}_1(\Phi, x, x') : \bsym{\bsym{\pi}}_1(G, x, x') \to
+\bsym{\bsym{\pi}}_1 \bigl( H, \Phi(x), \Phi(x') \bigr)  \]
+and 
+\[ \Phi : G_2(x)(g, g') \to 
+H_2 \bigl( \Phi(x) \bigr) \bigl( \Phi(g), \Phi(g') \bigr) \]
+are bijective for all $x, x' \in \opn{Ob}(G)$ and 
+$f, f' \in G_1(x, x')$. 
+\end{lem}
+
+\begin{proof}
+This is the same as the usual proof for $2$-groupoids (cf.\ 
+\cite[Lemma 1.1]{MS}).
+\end{proof}
+
+\begin{proof}[Proof of Theorem \tup{\ref{thm:100}}]
+The proof is a ``nonabelian diagram chasing'', made possible by
+Lemma \ref{lem:104}.
+
+We begin by proving that the function $\ol{\opn{Desc}}(\Phi)$ is
+surjective. Given a descent datum $(y, h, b) \in \opn{Desc}(H)$, we
+have to find a descent datum $(x, g, a) \in \opn{Desc}(G)$, and a gauge
+transformation $(f, c) :  (y, h, b) \to \Phi(x, g, a)$ in $H$. 
+
+Since the function 
+$\bsym{\bsym{\pi}}_0(\Phi^0) : \bsym{\bsym{\pi}}_0(G^0) \to
+\bsym{\bsym{\pi}}_0(H^0)$
+is surjective, there is an object $x \in \opn{Ob}(G^0)$, and a
+$1$-morphism $f \in H^0_1(y, y')$, where 
+$y' := \Phi(x) \in \opn{Ob}(H^0)$. 
+Define 
+\[ h'' := f_{(1)} \circ h \circ f_{(0)}^{-1} \in 
+H^0_1(y'_{(0)}, y'_{(1)})  \]
+and 
+$c'' := 1_{y_{(0)}} \in H^1_2(y_{(0)})$. 
+Then $(y', h'')$ is a partial descent datum in $H$, and 
+$(f, c''): (y, h) \to (y', h'')$ is a partial gauge transformation.
+According to Lemma \ref{lem:104} there is a unique element 
+$b'' \in H^2_2(y'_{(0)})$ such that 
+$(y', h'', b'')$ is a descent datum in $H$, and 
+$(f, c''): (y, h, b) \to (y', h'', b'')$ is a gauge transformation.
+
+Now by Lemma \ref{lem:cosim-equiv.100} the function 
+\[ \bsym{\bsym{\pi}}_1(\Phi^1, x_{(0)}, x_{(1)}) : 
+\bsym{\bsym{\pi}}_1(G^1, x_{(0)}, x_{(1)}) \to
+\bsym{\bsym{\pi}}_1 ( H^1, y'_{(0)}, y'_{(1)}) \]
+is surjective. Hence there are elements
+$g \in G^1_1(x_{(0)}, x_{(1)})$ and 
+$c' \in H^1_2(y'_{(0)})$
+such that, letting 
+$h' := \Phi(g) \in H^1_1(y'_{(0)}, y'_{(1)})$, 
+we have 
+$h'' = h' \circ \opn{D}(c')$.
+Consider the partial gauge transformation 
+$(1_{y'}, c') : (y', h'') \to (y', h')$.
+Lemma \ref{lem:104} there is a unique element 
+$b' \in H^2_2(y'_{(0)})$ such that 
+$(y', h', b')$ is a descent datum in $H$, and 
+$(1_{y'}, c') : (y', h'', b'') \to (y', h', b')$
+is a gauge transformation. Let 
+$c := \opn{Ad}(f_{(0)}^{-1})(c')^{-1} \in H^1_2(y_{(0)})$.
+Then 
+\[ (f, c) :  (y, h, b) \to (y', h', b') \]
+is a gauge transformation in $H$, and $(y', h') = \Phi(x, g)$. 
+
+By Lemma \ref{lem:cosim-equiv.100} the function
+\[ \begin{aligned}
+& \Phi^2 : G^2_2 (x_{(0)})
+\bigl( 1_{x_{(0)}}, g_{(0, 2)}^{-1} \circ g_{(1, 2)} \circ g_{(0, 1)}
+\bigr) \\
+& \qquad \to 
+H^2_2 (y'_{(0)})
+\bigl( 1_{y'_{(0)}}, (h'_{(0, 2)})^{-1} \circ h'_{(1, 2)} 
+\circ h'_{(0, 1)} \bigr)
+\end{aligned} \]
+is bijective. Let $a \in G^2_2 (x_{(0)})$
+be the unique element such that 
+\[ \opn{D}(a) = g_{(0, 2)}^{-1} \circ g_{(1, 2)} \circ g_{(0, 1)} \]
+and $\Phi(a) = b'$. Then the triple of elements 
+$(x, g, a)$ satisfies condition (i) of Definition \ref{dfn:101}, and 
+$\Phi(x, g, a) = (y', h', b')$. 
+Now the element 
+\[ u := a_{(0, 1, 3)}^{-1} \circ a_{(0, 2, 3)} \circ 
+a_{(0, 1, 2)} \circ \opn{Ad}(g_{(0, 1)}^{-1})(a_{(1, 2, 3)})^{-1} 
+\in G^3_2(x_{(0)}) \]
+satisfies $\opn{D}(u) = 1$, so it belongs to the subgroup 
+$\bsym{\bsym{\pi}}_2(G^3, x_{(0)}) \subset G^3_2(x_{(0)})$.
+Since the group homomorphism 
+\[ \bsym{\bsym{\pi}}_2(\Phi^3, x_{(0)}) : \bsym{\bsym{\pi}}_2(G^3, x_{(0)}) \to 
+\bsym{\pi}_2(H^3, y'_{(0)}) \]
+is injective, and since 
+\[ \begin{aligned}
+& \bsym{\pi}_2(\Phi^3, x_{(0)})(u) = \Phi^3(u) =
+\\
+& \qquad  
+(b'_{(0, 1, 3)})^{-1} \circ b'_{(0, 2, 3)} \circ 
+b'_{(0, 1, 2)} \circ \opn{Ad}(h'_{(0, 1)})^{-1}(b'_{(1, 2, 3)})^{-1} = 1 ,
+\end{aligned} \]
+we conclude that $u = 1$. Thus the triple $(x, g, a)$ satisfies 
+condition (ii) of Definition \ref{dfn:101}, so it is a descent datum in 
+$G$. 
+
+Now we prove that the function $\ol{\opn{Desc}}(\Phi)$ is
+injective. Given 
+\[ (x, g, a), (x', g', a') \in \opn{Desc}(G) , \]
+define
+$(y, h, b) := \Phi(x, g, a)$ and $(y', h', b') := \Phi(x', g', a')$. Assume we
+are given a gauge transformation 
+\[ (f, c) :  (y, h, b) \to (y', h', b') \]
+in $H$. We have to produce a gauge transformation 
+\[ (e, d) :  (x, g, a) \to (x', g', a') \]
+in $G$.
+
+We know that the function 
+\[ \bsym{\pi}_1(\Phi^0, x, x') : 
+\bsym{\pi}_1(G^0, x, x') \to
+\bsym{\pi}_1 \bigl( H^0, y, y' \bigr) \]
+is surjective. Therefore there is a $1$-morphism 
+$e \in G^0_1(x, x')$, and a $2$-morphism 
+$v \in H^0_2(y)$, 
+such that 
+$\Phi(e) = f \circ \opn{D}(v)$. 
+Let 
+\[ \til{f} := f \circ \opn{D}(v) \in H^0_1(y, y') \]
 and
-Φ : G2(x)(g,g′)→H2
-(
-Φ(x)
-)(
-Φ(g), Φ(g′)
-)
-are bijective for allx,x′∈Ob(G) and f,f′∈G1(x,x′).
-Proof. This is the same as the usual proof for2-groupoids (cf. [MS, Lemma 1.1]).
-□
-Proof of Theorem2.4. The proof is a “nonabelian diagram chasing”, made possible
-by Lemma 2.5.
-We begin by proving that the functionDesc(Φ) is surjective. Given a descent
-datum (y,h,b )∈Desc(H), we have to ﬁnd a descent datum(x,g,a )∈Desc(G),
-and a gauge transformation(f,c ) : (y,h,b )→Φ(x,g,a ) in H.
-Since the functionπ0(Φ 0) : π0(G0)→π0(H0) is surjective, there is an object
-x∈Ob(G0), and a1-morphism f∈H0
-1(y,y′), wherey′:= Φ(x)∈Ob(H0). Deﬁne
-h′′:=f(1)◦h◦f−1
-(0)∈H0
-1(y′
-(0),y′
-(1))
-and c′′:= 1 y(0) ∈H1
-2(y(0)). Then (y′,h′′) is a partial descent datum inH, and
-(f,c′′) : (y,h )→(y′,h′′) is a partial gauge transformation. According to Lemma
-2.5 there is a unique elementb′′∈H2
-2(y′
-(0)) such that(y′,h′′,b′′) is a descent datum
-in H, and (f,c′′) : (y,h,b )→(y′,h′′,b′′) is a gauge transformation.
-Now by Lemma 2.11 the function
-π1(Φ 1,x (0),x (1)) :π1(G1,x (0),x (1))→π1(H1,y′
-(0),y′
-(1))
-is surjective. Hence there are elements g ∈G1
-1(x(0),x (1)) and c′∈H1
-2(y′
-(0))
-such that, letting h′:= Φ( g) ∈H1
-1(y′
-(0),y′
-(1)), we have h′′= h′◦D(c′). Con-
-sider the partial gauge transformation (1y′,c′) : ( y′,h′′)→(y′,h′). Lemma 2.5
-there is a unique element b′∈H2
-2(y′
-(0)) such that (y′,h′,b′) is a descent da-
-tum in H, and (1y′,c′) : (y′,h′′,b′′)→(y′,h′,b′) is a gauge transformation. Let
-c := Ad(f−1
-(0) )(c′)−1∈H1
-2(y(0)). Then
-(f,c ) : (y,h,b )→(y′,h′,b′)
-is a gauge transformation inH, and (y′,h′) = Φ(x,g ).
-By Lemma 2.11 the function
-Φ 2 :G2
-2(x(0))
-(
-1x(0),g−1
-(0,2)◦g(1,2)◦g(0,1)
-)
-→H2
-2(y′
-(0))
-(
-1y′
-(0)
-, (h′
-(0,2))−1◦h′
-(1,2)◦h′
-(0,1)
-)
-COMBINATORIAL DESCENT DATA 9
-is bijective. Leta∈G2
-2(x(0)) be the unique element such that
-D(a) =g−1
-(0,2)◦g(1,2)◦g(0,1)
-and Φ(a) =b′. Then the triple of elements(x,g,a ) satisﬁes condition (i) of Deﬁni-
-tion 1.5, andΦ(x,g,a ) = (y′,h′,b′). Now the element
-u :=a−1
-(0,1,3)◦a(0,2,3)◦a(0,1,2)◦Ad(g−1
-(0,1))(a(1,2,3))−1∈G3
-2(x(0))
-satisﬁesD(u) = 1, so it belongs to the subgroupπ2(G3,x (0))⊂G3
-2(x(0)). Since the
-group homomorphism
-π2(Φ 3,x (0)) :π2(G3,x (0))→π2(H3,y′
-(0))
-is injective, and since
-π2(Φ 3,x (0))(u) = Φ 3(u) =
-(b′
-(0,1,3))−1◦b′
-(0,2,3)◦b′
-(0,1,2)◦Ad(h′
-(0,1))−1(b′
-(1,2,3))−1 = 1,
-we conclude thatu = 1. Thus the triple(x,g,a ) satisﬁes condition (ii) of Deﬁnition
-1.5, so it is a descent datum inG.
-Now we prove that the functionDesc(Φ) is injective. Given
-(x,g,a ), (x′,g′,a′)∈Desc(G),
-deﬁne(y,h,b ) := Φ( x,g,a ) and (y′,h′,b′) := Φ( x′,g′,a′). Assume we are given a
-gauge transformation
-(f,c ) : (y,h,b )→(y′,h′,b′)
-in H. We have to produce a gauge transformation
-(e,d ) : (x,g,a )→(x′,g′,a′)
-in G.
-We know that the function
-π1(Φ 0,x,x′) :π1(G0,x,x′)→π1
-(
-H0,y,y ′)
-is surjective. Therefore there is a 1-morphism e∈G0
-1(x,x′), and a 2-morphism
-v∈H0
-2(y), such thatΦ(e) =f◦D(v). Let
-˜f :=f◦D(v)∈H0
-1(y,y′)
-and
-˜c := Ad(h−1)(v−1
-(1))◦c◦v(0)∈H0
-2(y(0)).
-A simple calculation shows that
-( ˜f, ˜c) : (y,h,b )→(y′,h′,b′)
-is also a gauge transformation.
-Recall that Φ(e) = ˜f, so
-Φ(g−1◦e−1
-(1)◦g′◦e(0)) =h−1◦˜f−1
-(1)◦h′◦˜f(0) = D(˜c).
-This is condition (i) of Deﬁnition 1.6 for the gauge transformation( ˜f, ˜c). Because
-the group homomorphism
-π1(Φ 1,x (0)) :π1(G1,x (0))→π1(H1,y (0))
-is injective, it follows that there is an elementd′∈G1
-2(x(0)) such that
-g−1◦e−1
-(1)◦g′◦e(0) = D(d′).
-Consider the elementw := ˜c◦Φ(d′)−1 ∈H1
-2(y(0)). It satisﬁes D(w) = 1 , so it
-belongs to the subgroupπ2(H1,y (0)). But the homomorphism
-π2(Φ 1,x (0)) :π2(G1,x (0))→π2(H1,y (0))
-10 AMNON YEKUTIELI
-is bijective, so there is a unique elementv ∈G1
-2(x(0)) satisfying D(v) = 1 and
-Φ(v) =w. Letd :=v◦d′∈G1
-2(x(0)). Then Φ(d) = ˜c and
-D(d) = D(d′) =g−1◦e−1
-(1)◦g′◦e(0).
-Thus the pair(e,d ) is a partial gauge transformation(x,g )→(x′,g′).
-The last thing to check is that condition (ii) of Deﬁnition 1.6 holds for(e,d ).
-Let
-u := Ad(e−1
-(0))(a′)−1◦d−1
-(0,2)◦a◦Ad(g−1
-(0,1))(d(1,2))◦d(0,1)∈G2
-2(x(0)).
-A direct calculation shows thatD(u) = 1 x(0)∈G2
-1(x(0)), sou∈π2(G2,x (0)). We
-know that Φ(u) = 1y(0), and that the homomorphism
-π2(Φ 2,x (0)) :π2(G2,x (0))→π2(H2,y (0))
-is injective. It follows thatu = 1x(0), which is what we had to check. □
+\[ \til{c} := \opn{Ad}(h^{-1})(v_{(1)}^{-1}) \circ c \circ v_{(0)} \in 
+H^0_2(y_{(0)}) . \]
+A simple calculation shows that 
+\[ (\til{f}, \til{c}) :  (y, h, b) \to (y', h', b') \]
+is also a gauge transformation. 
+
+Recall that $\Phi(e) = \til{f}$, so  
+\[ \Phi(g^{-1} \circ e_{(1)}^{-1} \circ g' \circ e_{(0)}) = 
+h^{-1} \circ \til{f}_{(1)}^{-1} \circ h' \circ \til{f}_{(0)} =
+\opn{D}(\til{c}) . \]
+This is condition (i) of Definition \ref{dfn:100} for the gauge transformation 
+$(\til{f}, \til{c})$.
+Because the group homomorphism 
+\[  \bsym{\pi}_1(\Phi^1, x_{(0)}) : 
+\bsym{\pi}_1(G^1, x_{(0)}) \to
+\bsym{\pi}_1 ( H^1, y_{(0)}) \]
+is injective, it follows that there is an element 
+$d' \in G^1_2(x_{(0)})$ such that 
+\[ g^{-1} \circ e_{(1)}^{-1} \circ g' \circ e_{(0)} = \opn{D}(d') . \]
+Consider the element 
+$w := \til{c} \circ \Phi(d')^{-1} \in H^1_2(y_{(0)})$. 
+It satisfies $\opn{D}(w) = 1$, so it belongs to the subgroup 
+$\bsym{\pi}_2(H^1, y_{(0)})$. But the homomorphism 
+\[ \bsym{\pi}_2(\Phi^1, x_{(0)}) : 
+\bsym{\pi}_2(G^1, x_{(0)}) \to
+\bsym{\pi}_2 ( H^1, y_{(0)}) \]
+is bijective, so there is a unique element 
+$v \in G^1_2(x_{(0)})$ satisfying $\opn{D}(v) = 1$ and 
+$\Phi(v) = w$.
+Let $d := v \circ d' \in G^1_2(x_{(0)})$.
+Then $\Phi(d) = \til{c}$ and
+\[ \opn{D}(d) = \opn{D}(d') = g^{-1} \circ e_{(1)}^{-1} \circ g' \circ e_{(0)}
+. \]
+Thus the pair $(e, d)$ is a partial gauge transformation 
+$(x, g) \to (x', g')$. 
+
+The last thing to check is that condition (ii) of Definition \ref{dfn:100}
+holds for $(e, d)$. Let 
+\[ u := \opn{Ad}(e_{(0)}^{-1})(a')^{-1} \circ    
+d_{(0, 2)}^{-1} \circ a \circ 
+\opn{Ad}(g_{(0, 1)}^{-1})(d_{(1, 2)}) \circ d_{(0, 1)}
+\in  G^2_2(x_{(0)}) . \]
+A direct calculation shows that 
+$\opn{D}(u) = 1_{x_{(0)}} \in G^2_1(x_{(0)})$, so 
+$u \in \bsym{\pi}_2(G^2, x_{(0)})$. 
+We know that $\Phi(u) = 1_{y_{(0)}}$, and that the homomorphism 
+\[ \bsym{\pi}_2(\Phi^2 ,x_{(0)}) : \bsym{\pi}_2(G^2 ,x_{(0)}) \to
+\bsym{\pi}_2(H^2 ,y_{(0)}) \] 
+is injective. It follows that $u = 1_{x_{(0)}}$, which is
+what we had to check.
+\end{proof}

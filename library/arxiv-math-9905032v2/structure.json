@@ -6,7 +6,8 @@
   "sha256": "ba933d4cb484964be01f8563c6ac5b3c060b9c8eed62ae17b7728f418748e506",
   "bytes": 429098,
   "pages": 43,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -771,6 +772,238 @@
   "likely_scanned": false,
   "toc_entries": 43,
   "sections": 43,
-  "chars_total": 70895
+  "chars_total": 70895,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "boo.tex",
+   "tex_sections": 4,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-11-plancherel-measures-given-a-\ufb01nite-group-g-by",
+     "title": "Plancherel measures. Given a \ufb01nite group G, by the corre-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-2-a-borodin-a-okounkov-and-g-olshanski",
+     "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-4-a-borodin-a-okounkov-and-g-olshanski",
+     "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-12-poissonization-and-correlation-functions-for",
+     "title": "Poissonization and correlation functions. For \u03b8 > 0, con-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-6-a-borodin-a-okounkov-and-g-olshanski",
+     "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-13-asymptotics-in-the-bulk-of-the-spectrum-given",
+     "title": "Asymptotics in the bulk of the spectrum. Given a sequence",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-8-a-borodin-a-okounkov-and-g-olshanski",
+     "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-14-behavior-near-the-edge-of-the-spectrum-and-th",
+     "title": "Behavior near the edge of the spectrum and the Airy en-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-10-a-borodin-a-okounkov-and-g-olshanski",
+     "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-15-poissonization-and-depoissonization-we-obtain",
+     "title": "Poissonization and depoissonization. We obtain Theorems 3",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-16-organization-of-the-paper-section-2-contains",
+     "title": "Organization of the paper. Section 2 contains the proof of",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-17-acknowledgements-in-many-di\ufb00erent-ways-our-wo",
+     "title": "Acknowledgements. In many di\ufb00erent ways, our work was in-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-2-correlation-functions-of-the-measures-m-\u03b8",
+     "title": "Correlation functions of the measures M \u03b8",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-014-21-proof-of-theorem-1-as-noted-above-theorem-1-i",
+     "title": "Proof of Theorem 1. As noted above, Theorem 1 is a limit",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-12-a-borodin-a-okounkov-and-g-olshanski",
+     "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-2-introduce-the-following-kernel-l",
+     "title": "Introduce the following kernel L",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-14-a-borodin-a-okounkov-and-g-olshanski",
+     "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-16-a-borodin-a-okounkov-and-g-olshanski",
+     "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-23-various-formulas-for-the-kernel-j-recall-that",
+     "title": "Various formulas for the kernel J. Recall that since Jx is an",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-24-commuting-di\ufb00erence-operator-consider-the-di\ufb00",
+     "title": "Commuting di\ufb00erence operator. Consider the di\ufb00erence op-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-18-a-borodin-a-okounkov-and-g-olshanski",
+     "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-3-correlation-functions-in-the-bulk-of-the-spect",
+     "title": "Correlation functions in the bulk of the spectrum",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-023-31-proof-of-theorem-3-we-refer-the-reader-to-sec",
+     "title": "Proof of Theorem 3. We refer the reader to Section 1.3 of the",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-20-a-borodin-a-okounkov-and-g-olshanski",
+     "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-2-u-\u03c9-u-h-u-\u03c0",
+     "title": "(u \u2212 \u2126( u)) , H (u) = \u03c0",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-22-a-borodin-a-okounkov-and-g-olshanski",
+     "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-2-from-39-it-is-obvious-that-\u03b8-is-entire-therefo",
+     "title": "From (3.9) it is obvious that \u033a\u03b8 is entire. Therefore, we can apply",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-24-a-borodin-a-okounkov-and-g-olshanski",
+     "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-32-asymptotics-of-\u03c1n-x-recall-that-the-correlati",
+     "title": "Asymptotics of \u03c1(n, X). Recall that the correlation functions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-2-x-y",
+     "title": "(x + y)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-4-edge-of-the-spectrum-convergence-to-the-airy",
+     "title": "Edge of the spectrum: convergence to the Airy",
+     "prose_ratio": 0.003,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-032-41-results-and-strategy-of-proof-in-this-section",
+     "title": "Results and strategy of proof. In this section we prove Theo-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-26-a-borodin-a-okounkov-and-g-olshanski",
+     "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-42-proof-of-theorem-5-suppose-we-have-a-point-pr",
+     "title": "Proof of Theorem 5. Suppose we have a point process on R",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-28-a-borodin-a-okounkov-and-g-olshanski",
+     "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-3-k-1",
+     "title": "K 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-3-j2rxr",
+     "title": "J2r+xr",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-038-30-a-borodin-a-okounkov-and-g-olshanski",
+     "title": "A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-039-43-depoissonization-and-proof-of-theorem-4-fix-s",
+     "title": "Depoissonization and proof of Theorem 4. Fix some m =",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-0-a",
+     "title": "A+\u2212",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-0-a",
+     "title": "A\u2212\u2212",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-042-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

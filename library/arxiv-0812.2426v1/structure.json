@@ -6,7 +6,8 @@
   "sha256": "df1eb953bc2c6c6362957715c74150736e41354b93e6d84166e669f4693ea198",
   "bytes": 288612,
   "pages": 19,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -788,6 +789,250 @@
   "likely_scanned": false,
   "toc_entries": 44,
   "sections": 44,
-  "chars_total": 48841
+  "chars_total": 48841,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "brug-vir.tex",
+   "tex_sections": 6,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-1-conventions-and-notations-3",
+     "title": "Conventions and notations 3",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-002-2-quantum-invariants-and-hopf-diagrams-5",
+     "title": "Quantum invariants and Hopf diagrams 5",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-3-hopf-monads-11",
+     "title": "Hopf monads 11",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-4-quantum-double-of-hopf-monads-14",
+     "title": "Quantum double of Hopf monads 14",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-5-reshetikhin-turaev-invariants-from-categorical",
+     "title": "Reshetikhin-Turaev invariants from categorical centers 16",
+     "prose_ratio": 0.157,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-2-a-brugui-eres-and-a-virelizier",
+     "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-1-conventions-and-notations",
+     "title": "Conventions and notations",
+     "prose_ratio": 0.202,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-008-4-a-brugui-eres-and-a-virelizier",
+     "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-12-sovereign-categories-a-sovereign-category-is",
+     "title": "Sovereign categories. A sovereign category is a left autonomous category",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-13-braided-categories-a-braided-category-is-a-mo",
+     "title": "Braided categories. A braided category is a monoidal category endowed",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-14-ribbon-categories-a-twist-on-a-braided-catego",
+     "title": "Ribbon categories. A twist on a braided category B is a natural isomor-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-16-coends-of-autonomous-categories-let-c-be-an-a",
+     "title": "Coends of autonomous categories. Let C be an autonomous category. If",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-17-dimension-of-sovereign-categories-let-c-be-a",
+     "title": "Dimension of sovereign categories. Let C be a sovereign category which",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-18-f-usion-categories-a-fusion-category-over-a-c",
+     "title": "F usion categories. A fusion category over a commutative ring k is a k-lin-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-2-quantum-invariants-and-hopf-diagrams",
+     "title": "Quantum invariants and Hopf diagrams",
+     "prose_ratio": 0.059,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-21-constructing-quantum-invariants-let-b-be-a-ri",
+     "title": "Constructing quantum invariants. Let B be a ribbon autonomous cate-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-6-a-brugui-eres-and-a-virelizier",
+     "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-22-kirby-elements-and-quantum-invariants-as-in-t",
+     "title": "Kirby elements and quantum invariants. As in the previous section, let B",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-8-a-brugui-eres-and-a-virelizier",
+     "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-23-hopf-diagrams-for-a-precise-treatment-of-the",
+     "title": "Hopf diagrams. For a precise treatment of the theory of Hopf diagrams, we",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-10-a-brugui-eres-and-a-virelizier",
+     "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-3-hopf-monads",
+     "title": "Hopf monads",
+     "prose_ratio": 0.053,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-023-31-monads-let-c-be-a-category-recall-that-the-ca",
+     "title": "Monads. Let C be a category. Recall that the category End( C) of endofunc-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-12-a-brugui-eres-and-a-virelizier",
+     "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-32-modules-over-a-monad-lett-be-a-monad-on-a-cat",
+     "title": "Modules over a monad. LetT be a monad on a category C. An action ofT",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-33-the-philosophy-roughly-speaking-a-monad-t-on",
+     "title": "The philosophy. Roughly speaking, a monad T on a monoidal category C is",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-34-bimonads-a-bimonad-4-on-a-monoidal-category-c",
+     "title": "Bimonads. A bimonad 4 on a monoidal category C is a monad ( T,\u00b5,\u03b7 ) on C",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-36-hopf-monads-a-hopf-monad-is-a-bimonad-on-an-a",
+     "title": "Hopf monads. A Hopf monad is a bimonad on an autonomous category",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-37-quasitriangular-hopf-monads-lett-be-a-hopf-mo",
+     "title": "Quasitriangular Hopf monads. LetT be a Hopf monad on an autonomous",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-38-ribbon-hopf-monads-let-t-be-a-quasitriangular",
+     "title": "Ribbon Hopf monads. Let T be a quasitriangular Hopf monad T on an",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-39-relations-with-modules-the-notions-of-bimonad",
+     "title": "Relations with modules. The notions of bimonads, Hopf monads, quasi-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-14-a-brugui-eres-and-a-virelizier",
+     "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-4-quantum-double-of-hopf-monads",
+     "title": "Quantum double of Hopf monads",
+     "prose_ratio": 0.093,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-034-41-the-center-of-an-monoidal-category-category-l",
+     "title": "The center of an monoidal category category . Let C be a braided cat-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-42-the-double-of-a-hopf-monad-let-t-be-a-hopf-mo",
+     "title": "The double of a Hopf monad. Let T be a Hopf monad on an autonomous",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-16-a-brugui-eres-and-a-virelizier",
+     "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-43-the-coend-of-a-category-of-modules-over-a-hop",
+     "title": "The coend of a category of modules over a Hopf monad. Let T be a",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-038-5-reshetikhin-turaev-invariants-from-categorical",
+     "title": "Reshetikhin-Turaev invariants from categorical centers",
+     "prose_ratio": 0.133,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-039-51-on-the-center-of-a-fusion-category-fix-a-comm",
+     "title": "On the center of a fusion category. Fix a commutative ring k. Let C",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-52-the-coend-of-the-center-of-a-fusion-category",
+     "title": "The coend of the center of a fusion category . Let us describe the struc-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-041-18-a-brugui-eres-and-a-virelizier",
+     "title": "A. BRUGUI `ERES AND A. VIRELIZIER",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-042-53-computing-rtzcm-3-from-c-let-c-be-a-spherical",
+     "title": "Computing RTZ(C)(M 3) from C. Let C be a spherical fusion category over",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-043-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

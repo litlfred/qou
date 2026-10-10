@@ -5,7 +5,8 @@
   "file": "0407051v2.pdf",
   "sha256": "2de07e909b17c5a5117b4021c0a42d2ed3deeedad318a446c233de63d2cbf9f3",
   "bytes": 168282,
-  "pages": 14
+  "pages": 14,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -17,7 +18,7 @@
   "doi": null,
   "title": "Black hole entropy from Quantum Geometry",
   "authors_raw": "Marcin Domagala 1 and Jerzy Lewandowski 1,2,3",
-  "abstract": "Quantum Geometry (the modern Loop Quantum Gravity using gra phs and spin-networks instead of the loops) provides microscopic d egrees of freedom that account for the black-hole entropy. However, the proce dure for state counting used in the literature contains an error and the num ber of the rel- evant horizon states is underestimated. In our paper a corre ct method of counting is presented. Our results lead to a revision of the l iterature of the subject. It turns out that the contribution of spins greater then 1/2 to the entropy is not negligible. Hence, the value of the Barbero-I mmirzi parameter involved in the spectra of all the geometric and physical ope rators in this theory is diﬀerent than previously derived. Also, the conje ctured relation be- tween Quantum Geometry and the black hole quasi-normal mode s should be understood again. Pacs 04.60Pp, 04.60.Ds, 04.60.Nc, 03.65.Sq 1",
+  "abstract": "Quantum Geometry (the modern Loop Quantum Gravity using gra phs and spin-networks instead of the loops) provides microscopic d egrees of freedom that account for the black-hole entropy. However, the proce dure for state counting used in the literature contains an error and the num ber of the rel- evant horizon states is underestimated. In our paper a corre ct method of counting is presented. Our results lead to a revision of the l iterature of the subject. It turns out that the contribution of spins greater then 1/2 to the entropy is not negligible. Hence, the value of the Barbero-I mmirzi parameter involved in the spectra of all the geometric and physical ope rators in this theory is di\ufb00erent than previously derived. Also, the conje ctured relation be- tween Quantum Geometry and the black hole quasi-normal mode s should be understood again. Pacs 04.60Pp, 04.60.Ds, 04.60.Nc, 03.65.Sq 1",
   "docinfo": {
    "Producer": "GPL Ghostscript 10.01.2",
    "CreationDate": "D:20241126162647-05'00'",
@@ -59,7 +60,7 @@
   },
   {
    "level": 1,
-   "title": "N, m i ∈ {−j1, ..., ji} (7)",
+   "title": "N, m i \u2208 {\u2212j1, ..., ji} (7)",
    "page": 4,
    "source": "inferred",
    "number": "2"
@@ -145,7 +146,7 @@
   {
    "id": "sec-004-2-n-m-i-j1-ji-7",
    "number": "2",
-   "title": "N, m i ∈ {−j1, ..., ji} (7)",
+   "title": "N, m i \u2208 {\u2212j1, ..., ji} (7)",
    "level": 1,
    "page_start": 4,
    "page_end": 7,
@@ -208,6 +209,82 @@
   "likely_scanned": false,
   "toc_entries": 10,
   "sections": 10,
-  "chars_total": 28184
+  "chars_total": 28184,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 5,
+   "overlaid": 4,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-2-physics-department-104-davey-penn-state-univer",
+     "title": "Physics Department, 104 Davey, Penn State, University Pa rk, PA 16802, USA",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-001-abstract",
+     "title": "Abstract",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-i-introduction-and-resul-ts",
+     "title": "INTRODUCTION AND RESUL TS",
+     "prose_ratio": 0.95,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-003-ii-the-horizon-quantum-st-a-tes",
+     "title": "THE HORIZON QUANTUM ST A TES",
+     "prose_ratio": 0.412,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-004-2-n-m-i-j1-ji-7",
+     "title": "N, m i \u2208 {\u2212j1, ..., ji} (7)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-iii-the-combina-toric-formula-tion-of-the-proble",
+     "title": "THE COMBINA TORIC FORMULA TION OF THE PROBLEM",
+     "prose_ratio": 0.891,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-006-2-z",
+     "title": "Z,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-iv-the-entropy-calcula-tions",
+     "title": "THE ENTROPY CALCULA TIONS",
+     "prose_ratio": 0.98,
+     "coverage_ratio": 0.995,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-008-v-the-spin-probability-distribution",
+     "title": "THE SPIN PROBABILITY DISTRIBUTION",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "pandoc"
+    },
+    {
+     "id": "sec-009-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-1610.02592v3/blocks/proposition-sec-033-26",
+  "kind": "proposition",
+  "title": "Compactness criterion",
+  "pageStart": 230,
+  "pageEnd": 246,
+  "text": "proposition-sec-033-26.md",
+  "derivedFrom": "library/arxiv-1610.02592v3/sections/sec-033",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1610.02592v3/manifest.jsonld",
+  "provenance": "ingested"
+}

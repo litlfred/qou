@@ -7,106 +7,172 @@ section_number: 1
 pages: 1-3
 source_pdf: 0607416v6.pdf
 source_sha256: 0705075947ce4a3d
+text_source: latex
+latex_prose_ratio: 0.962
+latex_coverage_ratio: 0.975
 doc_brief: "PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES — W e characterize all linear operators on ﬁnite or inﬁnite-di mensio- nal polynomial spaces that preserve the property of having"
 ---
-Some of the main challenges in the theory of distribution of zeros of p olynomials
-and transcendental entire functions concern the description of linear operators that
-preserve certain prescribed (“good”) properties. Notwithstan ding their fundamen-
-tal character, most of these problems are in fact still open as the y turn out to be
-surprisingly diﬃcult in full generality. Two outstanding questions amo ng these are
-the following: let Ω ⊆ C be an appropriate set of interest and denote by π(Ω) the
-class of all (complex or real) univariate polynomials whose zeros lie in Ω.
-Problem 1. Characterize all linear transformations T : π(Ω) → π(Ω) ∪ {0}.
-Let πn be the vector space (over C or R) of all polynomials of degree at most
-n and denote by πn(Ω) the subclass of π(Ω) consisting of polynomials of degree at
-most n. The ﬁnite degree analog of Problem 1 is as follows.
-Problem 2. Describe all linear operators T : πn(Ω) → π(Ω) ∪ {0} for n ∈ N.
-These problems were stated in precisely this general form in [12, 16 ] (see also
-[5], [38, pp. 182–183]) thereby encompassing essentially all similar que stions or
-variations thereof scattered throughout the literature. Proble ms 1–2 originate from
-the works of Laguerre [26] and P´ olya-Schur [36] and have been open for all but trivial
-choices of Ω, including such important cases when Ω = R or Ω is a half-plane. In
-this paper we completely solve Problems 1–2 in arguably the most relev ant cases,
-namely all closed circular domains (iii)–(v) and their boundaries (i)–(ii) :
-(i) Ω is a line,
-(ii) Ω is a circle,
-(iii) Ω is a closed half-plane,
-(iv) Ω is a closed disk,
-(v) Ω is the complement of an open disk.
-2000 Mathematics Subject Classiﬁcation. Primary 47B38; Secondary 26C10, 30C15, 32A60.
-Key words and phrases. Linear operators on polynomial spaces, zeros of entire func tions, cir-
-cular domains, hyperbolicity and stability preservers, mu ltiplier sequences, Sz´ asz principle.
-1
-2 J. BORCEA AND P. BR ¨AND ´EN
-Despite their long history only relatively few results pertaining to Pro blems 1–2
-are known. As we note in the following (very brief) survey, these de al almost exclu-
-sively with special types of linear transformations satisfying the re quired properties.
-To prove the transcendental characterizations of linear preser vers of polynomials
-whose zeros are located on a line or in a closed half-plane (Theorems 5 and 6) we
-ﬁrst establish a result on uniform limits on compact sets of bivariate p olynomials
-which are non-vanishing whenever both variables are in the upper ha lf-plane (The-
-orem 12). Entire functions which are uniform limits on compact sets o f sequences
-of univariate polynomials with only positive zeros were ﬁrst described by Laguerre
-[26]. In the process he showed that if Q(z) is a real polynomial with all negative ze-
-ros then T (π(R)) ⊆ π(R) ∪ {0}, where T : R[z] → R[z] is the linear operator deﬁned
-by T (zk) = Q(k)zk, k ∈ N. Laguerre also stated without proof the correct result
-for uniform limits of polynomials with all real zeros. The class of entire functions
-thus obtained – the so-called Laguerre-P´ olya class – was subsequently characterized
-by P´ olya [35]. A more complete investigation of sequences of such po lynomials was
-carried out in [29]. This also led to the description of entire functions o btained as
-uniform limits on compact sets of sequences of univariate polynomials all whose
-zeros lie in a given closed half-plane [28, 31, 41] as well as the descript ion of en-
-tire functions in two variables obtained as limits, uniformly on compact sets, of
-sequences of bivariate polynomials which are non-vanishing when bot h variables
-are in a given open half-plane [28].
-The Laguerre-P´ olya class has ever since played a signiﬁcant role in t he theory of
-entire functions [15, 28]. It was for instance a key ingredient in P´ oly a and Schur’s
-(transcendental) characterization of multiplier sequences of the ﬁrst kind [36], see
-Theorem 1 below. The latter are linear transformations T on R[z] that are diag-
-onal in the standard monomial basis of R[z] and satisfy T (π(R)) ⊆ π(R) ∪ {0}.
-P´ olya-Schur’s seminal paper generated a vast literature on this t opic and related
-subjects at the interface between analysis, operator theory an d algebra but a solu-
-tion to Problem 1 in the case Ω = R has so far remained elusive (cf. [12]). Among
-the most noticeable progress in this direction we should mention Theo rem 17 of
-[28, Chap. IX], where Levin describes a certain class of “regular” line ar operators
-acting on the closure of the set of polynomials in one variable which hav e all zeros
-in the closed upper half-plane. However, Levin’s theorem actually us es rather re-
-strictive assumptions and seems in fact to rely on additional (albeit n ot explicitly
-stated) non-degeneracy conditions for the transformations inv olved. Indeed, one
-can easily produce counterexamples to Levin’s result by considering linear opera-
-tors such as the ones described in Corollary 2 (a) of this paper. In [1 3] Craven
-and Csordas established an analog of the P´ olya-Schur theorem fo r multiplier se-
-quences in ﬁnite degree thus solving Problem 2 for Ω = R in the special case of
-diagonal operators. Unipotent upper triangular linear operators T on R[z] satisfy-
-ing T (π(R)) ⊆ π(R) ∪ {0} were described in [10]. Quite recently, in [3] the authors
-solved Problem 1 for Ω = R and obtained multivariate extensions for a large class
-of linear transformations, namely all ﬁnite order linear diﬀerential o perators with
-polynomial coeﬃcients. Further partial progress towards a solut ion to Problem 1
-for Ω = R is preliminarily reported in [17] although the same kind of remarks as in
-the case of Levin’s theorem apply here. Namely, the results of op. cit. are valid only
-in the presence of extra non-degeneracy or continuity assumptio ns for the operators
-under consideration. Various other special cases of Problem 1 for Ω = R have been
-P ´OLYA-SCHUR MASTER THEOREMS 3
-considered in [1, 7, 8, 22, 23, 24]. Finally, we should mention that to th e best of
-our knowledge Problems 1–2 have so far been widely open in cases (ii)– (v).
-To begin with, in §2.1 and §3.1–§3.2 we solve Problems 1–2 for Ω = R and
-Ω = {z ∈ C : Im(z) ≤ 0} and thus obtain complete algebraic and transcendental
-characterizations of linear operators that preserve hyperbolicit y and stability, re-
-spectively. In order to deal with Problems 1–2 for all closed circular domains and
-their boundaries we are naturally led to considering a third classiﬁcat ion problem,
-namely the following more general version of Problem 2.
-Problem 3. Let n ∈ N and Ω ⊂ C. Describe all linear operators
-T : πn(Ω) \ πn−1(Ω) → π(Ω) ∪ {0}.
-As we explain in §2.2, Problems 2 and 3 are equivalent for closed unbounded sets
-but for closed bounded sets the latter problem is more natural and actually turns
-out to be a crucial step in solving Problems 1–2 for closed discs. In §2.2 and §3.3
-we fully answer Problem 3 for any closed circular domain or the bounda ry of such
-a domain and as a consequence we get complete solutions to Problems 1–2 in all
-cases ((i)–(v)) listed above.
-On the one hand, these results accomplish the classiﬁcation progra m originat-
-ing from the works of Laguerre and P´ olya-Schur that we brieﬂy ou tlined in this
-introduction. On the other hand, they seem to have numerous app lications ranging
-from entire function theory and operator theory to real algebra ic geometry, matrix
-theory and combinatorics. Some of these will make the object of fo rthcoming pub-
-lications. The paper concludes with several remarks on related ope n problems and
-potential further developments ( §4).
+\label{s1}
+
+Some of the main challenges in the theory of distribution of zeros of 
+polynomials and transcendental entire functions concern the description of 
+linear operators that preserve certain prescribed (``good'') properties.
+Notwithstanding their fundamental character, most of these problems are 
+in fact still open as they turn out to be surprisingly difficult in full
+generality. Two outstanding questions among these are the following: let 
+$\Om\subseteq\bC$ be an appropriate set of interest and denote by $\pi(\Om)$
+the class of all (complex or real) univariate polynomials whose zeros lie in
+$\Om$. 
+
+\begin{problem}\label{pb1}
+Characterize all linear transformations 
+$T:\pi(\Om)\rightarrow \pi(\Om)\cup\{0\}$. 
+\end{problem}
+
+Let $\pi_n$ be the vector space (over $\bC$ or $\bR$) of all polynomials
+of degree at most $n$ and denote by $\pi_n(\Om)$ the subclass of $\pi(\Om)$
+consisting of polynomials of degree at most $n$. The finite degree analog
+of Problem~\ref{pb1} is as follows.
+
+\begin{problem}\label{pb2}
+Describe all linear operators $T:\pi_n(\Om)\rightarrow \pi(\Om)\cup\{0\}$ for 
+$n\in\bN$.
+\end{problem}
+
+These problems were stated in precisely this general form in 
+\cite{CC1,cso} 
+(see also \cite{BBCV}, \cite[pp.~182--183]{RS}) thereby encompassing 
+essentially all
+similar questions or variations thereof scattered throughout the literature.
+Problems~\ref{pb1}--\ref{pb2} originate from the works of 
+Laguerre \cite{lag} and P\'olya-Schur \cite{PS} and have been open for all but 
+trivial
+choices of $\Om$, including such important cases when $\Om=\bR$
+or $\Om$ is a half-plane. In this paper we completely solve 
+Problems~\ref{pb1}--\ref{pb2} in arguably the most relevant cases, 
+namely all closed circular domains (iii)--(v) 
+and their boundaries (i)--(ii):
+\begin{itemize}
+\item[(i)] $\Om$ is a line, 
+\item[(ii)] $\Om$ is a circle, 
+\item[(iii)] $\Om$ is a closed half-plane, 
+\item[(iv)] $\Om$ is a closed disk, 
+\item[(v)] $\Om$ is the complement of an open disk.
+\end{itemize}
+
+Despite their long history only relatively few results pertaining to
+Problems~\ref{pb1}--\ref{pb2} are known. As we note in the following 
+(very brief) survey, these deal almost 
+exclusively with special
+types of linear transformations satisfying the required properties. 
+
+To prove the transcendental characterizations of linear preservers of 
+polynomials whose zeros are located on a line or 
+in a closed half-plane (Theorems~\ref{tranR} and~\ref{tranC}) we first 
+establish a result
+on uniform limits on compact sets of bivariate polynomials 
+which are non-vanishing whenever  both variables are in the upper half-plane
+(Theorem~\ref{genpol}). Entire functions which are 
+uniform limits on compact sets 
+of sequences of univariate polynomials with only positive zeros were first 
+described 
+by Laguerre \cite{lag}. In the process he showed that if $Q(z)$ is a real 
+polynomial with all negative zeros then 
+$T(\pi(\bR))\subseteq \pi(\bR)\cup\{0\}$, 
+where $T:\bR[z]\rightarrow \bR[z]$ is the linear operator defined by 
+$T(z^k)=Q(k)z^k$, $k\in \bN$. Laguerre also stated without proof 
+the correct result  for uniform limits of polynomials with all real zeros.
+The class of entire functions thus obtained -- the so-called 
+Laguerre-P\'olya class -- was subsequently characterized by P\'olya \cite{pol}.
+A more complete investigation of sequences of such polynomials was 
+carried out in 
+\cite{Lindwart-Polya}. This also led to the description of entire 
+functions obtained as uniform limits on compact sets of sequences of 
+univariate polynomials all whose zeros lie in a given closed 
+half-plane \cite{Le,Ob0,szasz} as well as the description of entire 
+functions in two variables obtained 
+as limits, uniformly on compact sets, of sequences of bivariate polynomials 
+which are non-vanishing when both variables are in a given open half-plane 
+\cite{Le}.
+
+The Laguerre-P\'olya class has ever since 
+played a significant role in the theory of entire functions 
+\cite{CCS,Le}. It was for instance a key ingredient in 
+P\'olya and Schur's (transcendental) 
+characterization of {\em multiplier sequences of the first kind}  \cite{PS}, 
+see Theorem~\ref{ps} below. The latter are linear transformations $T$ on 
+$\bR[z]$ that are 
+diagonal in the standard monomial basis of $\bR[z]$ and satisfy 
+$T(\pi(\bR))\subseteq \pi(\bR)\cup\{0\}$. P\'olya-Schur's seminal paper 
+generated a vast literature on this topic and related subjects at the interface
+between analysis, operator theory and algebra but a solution to 
+Problem~\ref{pb1} in the case $\Om=\bR$ has so far remained elusive 
+(cf.~\cite{CC1}). Among the most noticeable progress in this direction we 
+should mention Theorem 17 of \cite[Chap.~IX]{Le}, where Levin describes a 
+certain class of ``regular" linear operators acting on the closure 
+of the set of polynomials in one variable which have all zeros in the closed 
+upper half-plane. However, Levin's theorem 
+actually uses rather restrictive assumptions and seems in fact to rely on 
+additional (albeit not
+explicitly stated) non-degeneracy conditions for the transformations involved. 
+Indeed, one can easily produce counterexamples to Levin's result by 
+considering linear operators such as the ones described in 
+Corollary \ref{cor-algstab} (a) of this paper. In \cite{CC2} 
+Craven and Csordas established
+an analog of the P\'olya-Schur theorem for multiplier sequences in finite 
+degree thus solving Problem~\ref{pb2} for $\Om=\bR$ in the special case of
+diagonal operators. Unipotent upper triangular linear operators $T$ on 
+$\bR[z]$ 
+satisfying $T(\pi(\bR))\subseteq \pi(\bR)\cup\{0\}$ were described in 
+\cite{CPP}. 
+Quite recently, in \cite{BBS} the authors solved Problem~\ref{pb1} for 
+$\Om=\bR$ and obtained
+multivariate extensions for a large class of linear transformations, namely 
+all finite order linear differential operators with polynomial coefficients.
+Further partial progress towards a solution to Problem~\ref{pb1} for $\Om=\bR$
+is preliminarily reported in \cite{fisk} although the same kind
+of remarks as in the case of Levin's theorem apply here. Namely, the
+results of {\em op.~cit.~}are valid only in the presence of extra 
+non-degeneracy or continuity assumptions for the operators under 
+consideration. Various other special cases of Problem~\ref{pb1} for 
+$\Om=\bR$ have been 
+considered in 
+\cite{aleman,Br,brenti, iserles1,iserles2,iserles3}. Finally, we should 
+mention that to the best of our 
+knowledge  
+Problems~\ref{pb1}--\ref{pb2} have so far been widely open in cases 
+(ii)--(v).
+
+To begin with, in \S \ref{ss21} and \S \ref{ss31}--\S \ref{ss32} we solve 
+Problems~\ref{pb1}--\ref{pb2} for $\Om=\bR$ and 
+$\Om=\{z \in \CC: \Im(z) \leq 0\}$ and thus obtain complete algebraic and
+transcendental characterizations of linear operators that preserve
+hyperbolicity and stability, respectively. In order to deal with 
+Problems~\ref{pb1}--\ref{pb2} for {\em all} closed circular domains and their
+boundaries we are naturally led to considering a third classification problem,
+namely the following more general version of Problem~\ref{pb2}.
+
+\begin{problem}\label{pb3}
+Let $n\in\bN$ and $\Omega \subset \CC$. Describe all linear operators 
+$$T:\pi_n(\Om)\setminus \pi_{n-1}(\Om) \rightarrow \pi(\Om)\cup\{0\}.$$  
+\end{problem}
+
+As we explain in \S \ref{ss22}, Problems~\ref{pb2} and~\ref{pb3} are 
+equivalent for closed unbounded sets but for closed bounded sets the latter 
+problem is more natural and actually turns out to be a crucial step in 
+solving Problems~\ref{pb1}--\ref{pb2} for closed discs. 
+In \S \ref{ss22} and \S \ref{ss33} we fully answer Problem~\ref{pb3} for 
+any closed circular domain or the boundary of such a domain and as a 
+consequence we get
+complete solutions to Problems~\ref{pb1}--\ref{pb2} in all cases ((i)--(v))
+listed above.
+
+On the one hand, these results accomplish the classification program 
+originating from the works of Laguerre and P\'olya-Schur that we briefly 
+outlined 
+in this introduction. On the other hand, they seem to have numerous 
+applications ranging from entire function theory and operator theory to 
+real algebraic geometry, matrix theory and combinatorics. Some of these 
+will make the object of forthcoming publications.  
+The paper concludes with several remarks
+on related open problems and potential further developments (\S \ref{s4}).

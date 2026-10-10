@@ -7,967 +7,1679 @@ section_number: 4
 pages: 21-36
 source_pdf: 2410.20973v1.pdf
 source_sha256: 852b7bbc81a62883
+text_source: latex
+latex_prose_ratio: 0.924
+latex_coverage_ratio: 0.96
 doc_brief: "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS — We prove conjectures of Garoufalidis-Gu-Mari˜ no [ 9] that perturbative series associated with the hyperbolic knots 4 1 and 5 2 are resurgent and"
 ---
-We now go though two explicit examples. One is associated to the ﬁgur e eight knot 4 1,
-where ( A, B) = (1 , 2) and the other is for ( A, B) = (4 , 1). The ﬁrst was studied in [ 9] and
-full conjectural answers were given for the resurgent structu res. We will prove the exact
-formulas given in [ 9] are correct by applying our method to compute the Borel–Laplace
-resummation. A similar analysis for the example ( A, B) = (4 , 1) was carried out in [ 24].
-Here again conjectural formulas were given and we will also prove th em.
-4.1. The 41 knot. This example corresponds to A = 1 and B = 2. See for example [ 12,
-Sec. 7]. We will compute the Borel–Laplace resummation of Φ Ξ with the algorithm described
-in Section 3.1. We will see that this exactly matches the numerical predictions of [ 9]. The
-critical points for the volume V are at p1 = (−5/6, 0) and p2 = (−1/6, 0) and their critical
-values are respectively at V1 =−0.0514175 . . . i and V2 = 0 .0514175 . . . i. Thus the ﬁrst
-Stokes line is at eiϑR>0 with ϑ = 3 .1416 and it separates the regions I and II. While the
-second one is at ϑ = 1.6733 and separates the regions II and III (see Figure 10).
-I
-II
-III
-X
-ϑ = π
-ϑ = 1.6733ϑ = 1.4683
-ϑ = 0
-Figure 10. This ﬁgure illustrates the Stokes rays in τ -plane with ϑ =
-arg(−1/τ ) forming a peacock pattern. Note that this is stretched in the dire c-
-tion of the x-axis and the Stokes rays are all even closer to the vertical line.
-To perform the computation, we plot the set Cp0,ϑ and keep track of the branching of the
-function V . In the plots, this will be noted at the end point with ( m, n) keeping track of the
-sheet of Σ by m∈ Z and analytic continuation of the function V with values n∈ Z so that
-for Im( z) > 0 we have V (z) = B Li2(e(z))
-(2πi)2 + B
-24 + A
-2 z(z + 1) + mz + n while for Im( z) < 0 we
-have V (z) =−B Li2(e(−z))
-(2πi)2 + B
-12− B
-2 (z− 1
-2)2 + A
-2 z(z + 1) + mz + n. This allows us to read oﬀ
-the state integrals given by the algorithm.
-4.1.1. The critical point p2 = (−1/6, 0). The critical point p2 has no Stokes rays for ϑ∈
-( π
-2 , 3π
-2 ). Therefore, computing the Borel–Laplace resummation for a ﬁxe d ϑ∈ ( π
-2 , 3π
-2 ) will be
-enough to determine it for the whole region. We plot the set Cp2,ϑ in Figure 11. We can see
-that this steepest descent contour is equivalent to the state inte gral contourJ0,0. Therefore,
-the algorithm gives
-Ip2,V2,Y = I0,0 , (65)
-where for example Y = I , II, III. This is the original Andersen–Kashaev invariant for 4 1 [1,
-Eq. (38)] and [ 10, Sec. 1.3]. Therefore, our results gives a reﬁned version of their v olume
-22 VERONICA F ANTINI AND CAMPBELL WHEELER
-(0, 0)
-(−2, 0)
-Figure 11. This ﬁgure depicts in orange the set C(−1/6,0),ϑ for ϑ =
-arg(−1/τ ) = 3 .1416 and ( A, B) = (1 , 2).
-conjecture. In particular, not only does the Andersen–Kashaev invariant have exponential
-decay determined by the volume of the ﬁgure eight knot but it is in fac t the resummation
-of its own all order asymptotics.
-4.1.2. State integrals decomposition in I. Let ϑ∈ I. We plot the set Cp1,ϑ in Figure
-12.
-We can decompose the thimble in terms on state integrals contours. We have contributions
-(0, 0)(2, 2)
-(−3, −1)
-Figure 12. This ﬁgure depicts in orange the set C(−5/6,0),ϑ for ϑ =
-arg(−1/τ ) = 4 .0841, and ( A, B) = (1 , 2). The green lines are parallel to
-the lines i/τ . The magenta curve represents the tail at the intersection of the
-setC(−5/6,0),ϑ with the lines parallel to i/τ .
-fromI0,0 from the intersection of the orange contour with the interval ( −1, 0), which has
-(n, m, ℓ) = (0 , 0, 0) and−q2I2,−1 from the intersection of the orange contour with the interval
-(−2,−1), which has ( n, m, ℓ) = (2 , 2,−1). We can see that the tail leads to no contribution
-as it does not cross the reals and heads to ∞. The algorithm therefore gives
-Ip1,V1,I = I0,0− q2I2,−1 = I0,0 +I1,0 , (66)
-where the second equality follows from Equation ( 14).
-SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS 23
-4.1.3. The saddle connection between I and II. The saddle connection is depicted in Fig-
-ure 13.
-(0, 0)
-(−2, 0)
-Figure 13. This ﬁgure depicts in orange the set C(−5/6,0),ϑ for ϑ =
-arg(−1/τ ) = 3 .1416 and ( A, B) = (1 , 2). The green lines are parallel to the
-lines i/τ .
-4.1.4. State integrals decomposition in II. Let ϑ∈ II then Cp1,ϑ is depicted in Figure 14.
-We can decompose the thimble in terms on state integrals contours. We have contributions
-(−2, 0)(−4, −2)
-(1, 1)
-Figure 14. This ﬁgure depicts in orange the set C(−5/6,0),ϑ for ϑ =
-arg(−1/τ ) = 2 .1991, and ( A, B) = (1 , 2). The green lines are parallel to
-the lines i/τ . The magenta curve represents the tail at the intersection of the
-setC(−5/6,0),ϑ with the lines parallel to 1 /τ .
-from−I0,0 from the intersection of the orange contour with the interval ( −1, 0), which has
-(n, m, ℓ) = (0 , 0, 0) and I0,−1 from the intersection of the orange contour with the interval
-(−2,−1), which has ( n, m, ℓ) = (0 , 0,−1). We can see that the tail leads to no contribution
-as it does not cross the reals and heads to ∞. The algorithm therefore gives
-Ip1,V1,II = −I0,0 +I0,−1 = −I0,0−I −1,0 , (67)
-where the equality follows from Equation ( 14).
-24 VERONICA F ANTINI AND CAMPBELL WHEELER
-4.1.5. The saddle connection between II and III. The saddle connection is depicted in Fig-
-ure
-15.
-(−2, 0)(−4, −2)
-(2, 4)
-Figure 15. This ﬁgure depicts in orange the set C(−5/6,0),ϑ for ϑ =
-arg(−1/τ ) = 1 .6733, and ( A, B) = (1 , 2). The green lines are parallel to
-the lines i/τ .
-4.1.6. State integrals decomposition in III. Let ϑ∈ III then Cp1,ϑ is depicted in Figure 16.
-This picture gives rise to many intersections between the thimble and the green lines
-(−2, 0)
-(2, 4)
-Figure 16. This ﬁgure depicts in orange the set C(−5/6,0),ϑ for ϑ =
-arg(−1/τ ) = 1 .6650 and ( A, B) = (1 , 2). The green lines are parallel to the
-lines 1 /τ .
-Z + τ −1R. Therefore, it could require iterations of the algorithm. This is indee d true and
-will involve two additional integrals at the ﬁrst iteration and an additio nal integral at the
-second iteration.
-We can decompose the thimble in terms on state integrals contours. We have contributions
-of−I0,0 from the intersection of the orange contour with the interval ( −1, 0), which has
-(n, m, ℓ) = (0 , 0, 0), I0,−1 from the intersection of the orange contour with the interval
-(−2,−1), which has ( n, m, ℓ) = (0 , 0,−1), and−q4I2,−2 from the intersection of the orange
-contour with the interval (−3,−2), which has ( n, m, ℓ) = (4 , 2,−2).
-At the ﬁrst step of the algorithm we obtain two additional cycles com ing from the magenta
-curves as seen in Figure 17. We have a contribution of 4 q2I1,−1 from the intersection of the
-SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS 25
-(−2, 0)
-(2, 4)
-(1, 2)
-(1, 1)
-(−3, 0)
-(0, 1)
-Figure 17. This ﬁgure depicts in orange the set C(−5/6,0),ϑ for ϑ =
-arg(−1/τ ) = 1 .6650, and ( A, B) = (1 , 2). The green lines are parallel to
-the lines i/τ . The magenta contours represent half of the additional contours
-that appear in the ﬁrst step of the algorithm where we ignore any ze ro contri-
-butions. Then the violet contour represents half of the contour that appears
-in the second step of the algorithm. The additional contours are all crossing
-the real axis, hence they lead to a non-zero state integral.
-two magenta contours in (−1, 0), which have ( n, m, ℓ) = (2 , 1,−1). There is a ﬁnal magenta
-curve depicted, which has additional intersections with the line τ −1R.
-At the second step of the algorithm there is an additional contribut ion coming from the
-violet contour in Figure 17. This appears with the constant attached to the magenta contou r
-it emanates from multiplied by its own constant. We have a contributio n of −4qI0,0 from
-the intersection of the violet contour with the interval ( −1, 0), which has ( n, m, ℓ) = (1 , 0, 0).
-The additional state integrals added are depicted in Figure 18.
+\label{sec:ex}
+
+We now go though two explicit examples. One is associated to the figure eight knot $4_1$, where $(A,B)=(1,2)$ and the other is for $(A,B)=(4,1)$. The first was studied in~\cite{GGM:I} and full conjectural answers were given for the resurgent structures. We will prove the exact formulas given in~\cite{GGM:I} are correct by applying our method to compute the Borel--Laplace resummation. A similar analysis for the example $(A,B)=(4,1)$ was carried out in~\cite{Wh:thesis}. Here again conjectural formulas were given and we will also prove them.
+
+\subsection{\texorpdfstring{The $4_1$ knot}{The 4\_1 knot}}\label{sec:4_1}
+This example corresponds to $A=1$ and $B=2$. See for example~\cite[Sec.~7]{GSW}. We will compute the Borel--Laplace resummation of $\Phi_\Xi$ with the algorithm described in Section~\ref{sec:alg}. We will see that this exactly matches the numerical predictions of~\cite{GGM:I}. The critical points for the volume $V$ are at $p_1=(-5/6,0)$ and $p_2=(-1/6,0)$ and their critical values are respectively at $V_1=-0.0514175\ldots i$ and $V_2=0.0514175\ldots i$. Thus the first Stokes line is at $e^{i\vartheta}\BR_{>0}$ with $\vartheta=3.1416$ and it separates the regions $\mathrm{I}$ and $\mathrm{II}$. While the second one is at $\vartheta=1.6733$ and separates the regions $\mathrm{II}$ and $\mathrm{III}$ (see Figure~\ref{fig:41.stokes}).
+\begin{figure}[ht]
+\begin{tiny}
+\begin{tikzpicture}[scale=2]
+\draw[<->,thick] (-2,0) -- (2,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+\foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25}
+\draw[red,->] (0,0)--(1/\x,1);
+\foreach \x in {-3,-2,-1,0,1,2,3}
+\draw[red,->,thick] (0,0)--(0+0.01*\x,1);
+\foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25}
+\draw[red,->] (0,0)--(-1/\x,1);
+\foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25}
+\draw[red,->] (0,0)--(1/\x,-1);
+\foreach \x in {-3,-2,-1,0,1,2,3}
+\draw[red,->,thick] (0,0)--(0+0.01*\x,-1);
+\foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25}
+\draw[red,->] (0,0)--(-1/\x,-1);
+\draw[red,->] (0,0)--(2,0);
+\draw[red,->] (0,0)--(-2,0);
+\draw(1,-0.4) node {$\mathrm{I}$};
+\draw(1,0.4) node {$\mathrm{II}$};
+\draw(0.6,0.83) node {$\mathrm{III}$};
+\draw(-1,0.4) node {$\mathrm{X}$};
+\draw[red] (2,0) node[right] {$\vartheta=\pi$};
+\draw[red] (1,1) node[right] {$\vartheta=1.6733$};
+\draw[red] (-1,1) node[left] {$\vartheta=1.4683$};
+\draw[red] (-2,0) node[left] {$\vartheta=0$};
+\end{tikzpicture}
+\end{tiny}
+\caption{This figure illustrates the Stokes rays in $\tau$-plane with $\vartheta=\arg(-1/\tau)$ forming a peacock pattern. Note that this is stretched in the direction of the $x$-axis and the Stokes rays are all even closer to the vertical line.}\label{fig:41.stokes}
+\end{figure}
+
+
+
+To perform the computation, we plot the set $\calC_{p_0,\vartheta}$ and keep track of the branching of the function $V$. In the plots, this will be noted at the end point with $(m,n)$ keeping track of the sheet of $\Sigma$ by $m\in\BZ$ and analytic continuation of the function $V$ with values $n\in\BZ$ so that for $\Im(z)>0$ we have $V(z)=B\tfrac{\Li_{2}(\e(z))}{(2\pi i)^2}+\tfrac{B}{24}+\tfrac{A}{2}z(z+1)+mz+n$ while for $\Im(z)<0$ we have $V(z)=-B\tfrac{\Li_{2}(\e(-z))}{(2\pi i)^2}+\tfrac{B}{12}-\tfrac{B}{2}(z-\tfrac{1}{2})^2+\tfrac{A}{2}z(z+1)+mz+n$. This allows us to read off the state integrals given by the algorithm.
+
+\subsubsection{The critical point $p_2=(-1/6,0)$}
+
+The critical point $p_2$ has no Stokes rays for $\vartheta\in(\tfrac{\pi}{2},\tfrac{3\pi}{2})$. Therefore, computing the Borel--Laplace resummation for a fixed $\vartheta\in(\tfrac{\pi}{2},\tfrac{3\pi}{2})$ will be enough to determine it for the whole region. We plot the set $\calC_{p_2,\vartheta}$ in Figure~\ref{fig:thimb.41.ak}.
+\begin{figure}[ht]
+\begin{tiny}
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+\draw[<->,thick] (-2.5,0) -- (1,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+\foreach \x in {-2,-1,0,1}
+\draw[green] (\x,-1)--(\x,1);
+\draw[ultra thick,red] (-0.05,-0.05)--(0.05,0.05);
+\draw[ultra thick,red] (0.05,-0.05)--(-0.05,0.05);
+\draw[ultra thick,red,xshift=-1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[ultra thick,red,xshift=-1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[ultra thick,red,xshift=-2cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[ultra thick,red,xshift=-2cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[orange,thick,->]
+(-0.16667, 0)--(-0.15667, 0.36539)--(-0.14667, 0.51902)--(-0.13667, 0.63842)--(-0.12667, 0.74034)--(-0.11667, 0.83122)--(-0.10667, 0.91436)--(-0.096667, 0.99171) node[above] {$(0,0)$};
+
+\draw[orange,thick,->]
+(-0.16667,0)--(-0.15667, -0.36539)--(-0.14667, -0.51902)--(-0.13667, -0.63842)--(-0.12667, -0.74034)--(-0.11667, -0.83122)--(-0.10667, -0.91436)--(-0.096667, -0.99171) node[below] {$(-2,0)$};
+
+\filldraw[red] (-1/6,0) circle (1pt);
+\end{tikzpicture}
+\end{tiny}
+\caption{This figure depicts in \textcolor{orange}{orange} the set $\calC_{(-1/6,0),\vartheta}$ for $\vartheta=\arg(-1/\tau)=3.1416$ and $(A,B)=(1,2)$.}\label{fig:thimb.41.ak}
+\end{figure}
+We can see that this steepest descent contour is equivalent to the state integral contour $\calJ_{0,0}$. Therefore, the algorithm gives
+\be\label{eq:Iarb.41}
+  \calI_{p_2,V_2,\mathrm{Y}}
+  \=
+  \calI_{0,0}\,,
+\ee
+where for example $\mathrm{Y}=\mathrm{I},\mathrm{II},\mathrm{III}$.
+This is the original Andersen--Kashaev invariant for $4_1$~\cite[Eq.~(38)]{AK:I} and~\cite[Sec.~1.3]{GK:qser}. Therefore, our results gives a refined version of their volume conjecture. In particular, not only does the Andersen--Kashaev invariant have exponential decay determined by the volume of the figure eight knot but it is in fact the resummation of its own all order asymptotics.
+
+\subsubsection{State integrals decomposition in $\mathrm{I}$}
+Let $\vartheta\in\mathrm{I}$. We plot the set $\calC_{p_1,\vartheta}$ in Figure~\ref{fig:thimb.41.I}.
+\begin{figure}[ht]
+\begin{tiny}
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+
+
+
+
+\draw[<->,thick] (-2.5,0) -- (1,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+\foreach \x in {1}
+\draw[green] (\x-0.80902/0.58779/4,0.58779*4/0.58779/4)--(1,-0.58779*4/0.80902+\x*0.58779*4/0.80902);
+\foreach \x in {-2,-1,0}
+\draw[green] (\x+1*0.80902/0.58779/4,-1)--(\x-0.80902/0.58779/4,0.58779*4/0.58779/4);
+\draw[ultra thick,red] (-0.05,-0.05)--(0.05,0.05);
+\draw[ultra thick,red] (0.05,-0.05)--(-0.05,0.05);
+\draw[ultra thick,red,xshift=-1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[ultra thick,red,xshift=-1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[ultra thick,red,xshift=-2cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[ultra thick,red,xshift=-2cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[orange,thick,<->]
+
+(-0.52333, 0.97696) node[above] {$(0,0)$}--(-0.53333, 0.92828)--(-0.54333, 0.88157)--(-0.55333, 0.83668)--(-0.56333, 0.79349)--(-0.57333, 0.75187)--(-0.58333, 0.71173)--(-0.59333, 0.67294)--(-0.60333, 0.63542)--(-0.61333, 0.59908)--(-0.62333, 0.56385)--(-0.63333, 0.52965)--(-0.64333, 0.49641)--(-0.65333, 0.46409)--(-0.66333, 0.43262)--(-0.67333, 0.40197)--(-0.68333, 0.37208)--(-0.69333, 0.34293)--(-0.70333, 0.31448)--(-0.71333, 0.28669)--(-0.72333, 0.25955)--(-0.73333, 0.23304)--(-0.74333, 0.20713)--(-0.75333, 0.18182)--(-0.76333, 0.15708)--(-0.77333, 0.13292)--(-0.78333, 0.10933)--(-0.79333, 0.086308)--(-0.80333, 0.063855)--(-0.81333, 0.041978)--(-0.82333, 0.020688)--(-0.83333, 0)--(-0.84333, -0.020067)--(-0.85333, -0.039487)--(-0.86333, -0.058230)--(-0.87333, -0.076258)--(-0.88333, -0.093524)--(-0.89333, -0.10997)--(-0.90333, -0.12554)--(-0.91333, -0.14014)--(-0.92333, -0.15369)--(-0.93333, -0.16607)--(-0.94333, -0.17715)--(-0.95333, -0.18679)--(-0.96333, -0.19482)--(-0.97333, -0.20108)--(-0.98333, -0.20537)--(-0.99333, -0.20756)--(-1.0033, -0.20750)--(-1.0133, -0.20513)--(-1.0233, -0.20043)--(-1.0333, -0.19344)--(-1.0433, -0.18423)--(-1.0533, -0.17291)--(-1.0633, -0.15958)--(-1.0733, -0.14436)--(-1.0833, -0.12735)--(-1.0933, -0.10866)--(-1.1033, -0.088382)--(-1.1133, -0.066606)--(-1.1233, -0.043408)--(-1.1333, -0.018860)--(-1.1433, 0.0069742)--(-1.1533, 0.034036)--(-1.1633, 0.062273)--(-1.1733, 0.091638)--(-1.1833, 0.12209)--(-1.1933, 0.15358)--(-1.2033, 0.18609)--(-1.2133, 0.21958)--(-1.2233, 0.25402)--(-1.2333, 0.28939)--(-1.2433, 0.32567)--(-1.2533, 0.36284)--(-1.2633, 0.40089)--(-1.2733, 0.43980)--(-1.2833, 0.47957)--(-1.2933, 0.52019)--(-1.3033, 0.56166)--(-1.3133, 0.60399)--(-1.3233, 0.64717)--(-1.3333, 0.69121)--(-1.3433, 0.73613)--(-1.3533, 0.78195)--(-1.3633, 0.82868)--(-1.3733, 0.87636)--(-1.3833, 0.92501)--(-1.3933, 0.97467) node[above] {$(2,2)$};
+
+\filldraw[red] (-5/6,0) circle (1pt);
+\filldraw[magenta] (-1+1*0.80902*0.074,-0.58779*4*0.074) circle (1pt);
+\draw[magenta,thick,->] (-1+1*0.80902*0.074,-0.58779*4*0.074)--(-0.93013, -0.22358)--(-0.92013, -0.26718)--(-0.91013, -0.30635)--(-0.90013, -0.34206)--(-0.89013, -0.37495)--(-0.88013, -0.40554)--(-0.87013, -0.43418)--(-0.86013, -0.46116)--(-0.85013, -0.48670)--(-0.84013, -0.51099)--(-0.83013, -0.53417)--(-0.82013, -0.55636)--(-0.81013, -0.57768)--(-0.80013, -0.59822)--(-0.79013, -0.61804)--(-0.78013, -0.63722)--(-0.77013, -0.65582)--(-0.76013, -0.67388)--(-0.75013, -0.69146)--(-0.74013, -0.70860)--(-0.73013, -0.72533)--(-0.72013, -0.74170)--(-0.71013, -0.75772)--(-0.70013, -0.77344)--(-0.69013, -0.78887)--(-0.68013, -0.80404)--(-0.67013, -0.81897)--(-0.66013, -0.83369)--(-0.65013, -0.84821)--(-0.64013, -0.86255)--(-0.63013, -0.87673)--(-0.62013, -0.89076)--(-0.61013, -0.90466)--(-0.60013, -0.91845)--(-0.59013, -0.93213)--(-0.58013, -0.94572)--(-0.57013, -0.95923)--(-0.56013, -0.97267)--(-0.55013, -0.98605)--(-0.54013, -0.99939) node[below] {$(-3,-1)$};
+
+\end{tikzpicture}
+\end{tiny}
+\caption{This figure depicts in \textcolor{orange}{orange} the set $\calC_{(-5/6,0),\vartheta}$ for $\vartheta=\arg(-1/\tau)=4.0841$, and $(A,B)=(1,2)$. The \textcolor{green}{green} lines are parallel to the lines $i/\tau$. The \textcolor{magenta}{magenta} curve represents the tail at the intersection of the set $\calC_{(-5/6,0),\vartheta}$ with the lines parallel to $i/\tau$.}
+\label{fig:thimb.41.I}
+\end{figure}
+We can decompose the thimble in terms on state integrals contours. We have contributions from $\calI_{0,0}$ from the intersection of the orange contour with the interval $(-1,0)$, which has $(n,m,\ell)=(0,0,0)$ and $-q^2\calI_{2,-1}$ from the intersection of the orange contour with the interval $(-2,-1)$, which has $(n,m,\ell)=(2,2,-1)$. We can see that the tail leads to no contribution as it does not cross the reals and heads to $\infty$. The algorithm therefore gives
+\be\label{eq:I1.41}
+\calI_{p_1,V_1,\mathrm{I}}
+\=
+\calI_{0,0}-q^2\calI_{2,-1}
+\=
+\calI_{0,0}+\calI_{1,0}\,,
+\ee
+where the second equality follows from Equation~\eqref{eq:state_integral_1}.
+\subsubsection{The saddle connection between $\mathrm{I}$ and $\mathrm{II}$}
+The saddle connection is depicted in Figure~\ref{fig:thimb.41.saddleI.II}.
+\begin{figure}[ht]
+\begin{tiny}
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+
+
+\draw[<->,thick] (-2.5,0) -- (1,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+\foreach \x in {-2,-1,0,1}
+\draw[green] (\x,-1)--(\x,1);
+\draw[ultra thick,red] (-0.05,-0.05)--(0.05,0.05);
+\draw[ultra thick,red] (0.05,-0.05)--(-0.05,0.05);
+\draw[ultra thick,red,xshift=-1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[ultra thick,red,xshift=-1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[ultra thick,red,xshift=-2cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[ultra thick,red,xshift=-2cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[orange,thick,->]
+(-0.16667, 0)--(-0.15667, 0.36539)--(-0.14667, 0.51902)--(-0.13667, 0.63842)--(-0.12667, 0.74034)--(-0.11667, 0.83122)--(-0.10667, 0.91436)--(-0.096667, 0.99171) node[above] {$(0,0)$};
+
+\draw[orange,thick,->]
+(-0.16667,0)--(-0.15667, -0.36539)--(-0.14667, -0.51902)--(-0.13667, -0.63842)--(-0.12667, -0.74034)--(-0.11667, -0.83122)--(-0.10667, -0.91436)--(-0.096667, -0.99171) node[below] {$(-2,0)$};
+
+\draw[orange,thick]
+(-0.16667,0)--(-1, 0);
+
+\draw[ultra thick,orange,,xshift=-1cm] (-0.05,0)--(0.05,0);
+\draw[ultra thick,orange,xshift=-1cm] (0,-0.05)--(0,0.05);
+\filldraw[red] (-5/6,0) circle (1pt);
+\filldraw[red] (-1/6,0) circle (1pt);
+\end{tikzpicture}
+\end{tiny}
+\caption{This figure depicts in \textcolor{orange}{orange} the set $\calC_{(-5/6,0),\vartheta}$ for $\vartheta=\arg(-1/\tau)=3.1416$ and $(A,B)=(1,2)$. The \textcolor{green}{green} lines are parallel to the lines $i/\tau$.}\label{fig:thimb.41.saddleI.II}
+\end{figure}
+
+\subsubsection{State integrals decomposition in $\mathrm{II}$}
+Let $\vartheta\in\mathrm{II}$ then $\calC_{p_1,\vartheta}$ is depicted in Figure~\ref{fig:thimb.41.II}.
+\begin{figure}[ht]
+\begin{tiny}
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+
+\draw[<->,thick] (-2.5,0) -- (1,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+\foreach \x in {}
+\draw[green] (-2.5,-0.58779*4*2.5/0.80902-0.58779*4*\x/0.80902)--(\x+0.80902/0.58779/4,0.58779*4/0.58779/4);
+\foreach \x in {}
+\draw[green] (-2.5,-0.58779*4*2.5/0.80902-0.58779*4*\x/0.80902)--(1,0.58779*4/0.80902-\x*0.58779*4);
+\foreach \x in {1}
+\draw[green] (\x-0.80902/0.58779/4,-1)--(1,0.58779*4/0.80902-\x*0.58779*4/0.80902);
+\foreach \x in {-2,-1,0}
+\draw[green] (\x-0.80902/0.58779/4,-1)--(\x+0.80902/0.58779/4,0.58779*4/0.58779/4);
+\draw[ultra thick,red] (-0.05,-0.05)--(0.05,0.05);
+\draw[ultra thick,red] (0.05,-0.05)--(-0.05,0.05);
+\draw[ultra thick,red,xshift=-1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[ultra thick,red,xshift=-1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[ultra thick,red,xshift=-2cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[ultra thick,red,xshift=-2cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[orange,thick,<->]
+
+
+(-0.52333, -0.97696) node[below] {$(-2,0)$}--(-0.53333, -0.92828)--(-0.54333, -0.88157)--(-0.55333, -0.83668)--(-0.56333, -0.79349)--(-0.57333, -0.75187)--(-0.58333, -0.71173)--(-0.59333, -0.67294)--(-0.60333, -0.63542)--(-0.61333, -0.59908)--(-0.62333, -0.56385)--(-0.63333, -0.52965)--(-0.64333, -0.49641)--(-0.65333, -0.46409)--(-0.66333, -0.43262)--(-0.67333, -0.40197)--(-0.68333, -0.37208)--(-0.69333, -0.34293)--(-0.70333, -0.31448)--(-0.71333, -0.28669)--(-0.72333, -0.25955)--(-0.73333, -0.23304)--(-0.74333, -0.20713)--(-0.75333, -0.18182)--(-0.76333, -0.15708)--(-0.77333, -0.13292)--(-0.78333, -0.10933)--(-0.79333, -0.086308)--(-0.80333, -0.063855)--(-0.81333, -0.041978)--(-0.82333, -0.020688)--(-0.83333, 0)--(-0.84333, 0.020067)--(-0.85333, 0.039487)--(-0.86333, 0.058230)--(-0.87333, 0.076258)--(-0.88333, 0.093524)--(-0.89333, 0.10997)--(-0.90333, 0.12554)--(-0.91333, 0.14014)--(-0.92333, 0.15369)--(-0.93333, 0.16607)--(-0.94333, 0.17715)--(-0.95333, 0.18679)--(-0.96333, 0.19482)--(-0.97333, 0.20108)--(-0.98333, 0.20537)--(-0.99333, 0.20756)--(-1.0033, 0.20750)--(-1.0133, 0.20513)--(-1.0233, 0.20043)--(-1.0333, 0.19344)--(-1.0433, 0.18423)--(-1.0533, 0.17291)--(-1.0633, 0.15958)--(-1.0733, 0.14436)--(-1.0833, 0.12735)--(-1.0933, 0.10866)--(-1.1033, 0.088382)--(-1.1133, 0.066606)--(-1.1233, 0.043408)--(-1.1333, 0.018860)--(-1.1433, -0.0069742)--(-1.1533, -0.034036)--(-1.1633, -0.062273)--(-1.1733, -0.091638)--(-1.1833, -0.12209)--(-1.1933, -0.15358)--(-1.2033, -0.18609)--(-1.2133, -0.21958)--(-1.2233, -0.25402)--(-1.2333, -0.28939)--(-1.2433, -0.32567)--(-1.2533, -0.36284)--(-1.2633, -0.40089)--(-1.2733, -0.43980)--(-1.2833, -0.47957)--(-1.2933, -0.52019)--(-1.3033, -0.56166)--(-1.3133, -0.60399)--(-1.3233, -0.64717)--(-1.3333, -0.69121)--(-1.3433, -0.73613)--(-1.3533, -0.78195)--(-1.3633, -0.82868)--(-1.3733, -0.87636)--(-1.3833, -0.92501)--(-1.3933, -0.97467)node[below] {$(-4,-2)$};
+
+
+\filldraw[red] (-5/6,0) circle (1pt);
+\filldraw[magenta](-1+1*0.80902*0.074,0.58779*4*0.074) circle (1pt);
+\draw[magenta,->,thick] (-0.94013, 0.17413)--(-0.93013, 0.22356)--(-0.92013, 0.26717)--(-0.91013, 0.30635)--(-0.90013, 0.34205)--(-0.89013, 0.37495)--(-0.88013, 0.40553)--(-0.87013, 0.43417)--(-0.86013, 0.46115)--(-0.85013, 0.48669)--(-0.84013, 0.51098)--(-0.83013, 0.53416)--(-0.82013, 0.55636)--(-0.81013, 0.57768)--(-0.80013, 0.59821)--(-0.79013, 0.61803)--(-0.78013, 0.63721)--(-0.77013, 0.65581)--(-0.76013, 0.67388)--(-0.75013, 0.69146)--(-0.74013, 0.70860)--(-0.73013, 0.72533)--(-0.72013, 0.74169)--(-0.71013, 0.75772)--(-0.70013, 0.77343)--(-0.69013, 0.78887)--(-0.68013, 0.80404)--(-0.67013, 0.81897)--(-0.66013, 0.83369)--(-0.65013, 0.84821)--(-0.64013, 0.86255)--(-0.63013, 0.87673)--(-0.62013, 0.89076)--(-0.61013, 0.90466)--(-0.60013, 0.91844)--(-0.59013, 0.93212)--(-0.58013, 0.94571)--(-0.57013, 0.95922)--(-0.56013, 0.97266)--(-0.55013, 0.98605)--(-0.54013, 0.99939) node[above] {$(1,1)$};
+
+\end{tikzpicture}
+\end{tiny}
+\caption{This figure depicts in \textcolor{orange}{orange} the set $\calC_{(-5/6,0),\vartheta}$ for $\vartheta=\arg(-1/\tau)=2.1991$, and $(A,B)=(1,2)$. The \textcolor{green}{green} lines are parallel to the lines $i/\tau$. The \textcolor{magenta}{magenta} curve represents the tail at the intersection of the set $\calC_{(-5/6,0),\vartheta}$ with the lines parallel to $1/\tau$.}
+\label{fig:thimb.41.II}
+\end{figure}
+We can decompose the thimble in terms on state integrals contours. We have contributions from $-\calI_{0,0}$ from the intersection of the orange contour with the interval $(-1,0)$, which has $(n,m,\ell)=(0,0,0)$ and $\calI_{0,-1}$ from the intersection of the orange contour with the interval $(-2,-1)$, which has $(n,m,\ell)=(0,0,-1)$. We can see that the tail leads to no contribution as it does not cross the reals and heads to $\infty$. The algorithm therefore gives
+\be\label{eq:I2.41}
+\calI_{p_1,V_1,\mathrm{II}}
+\=
+-\calI_{0,0}+\calI_{0,-1}
+\=
+-\calI_{0,0}-\calI_{-1,0}\,,
+\ee
+where the equality follows from Equation~\eqref{eq:state_integral_1}.
+\subsubsection{The saddle connection between II and III}
+The saddle connection is depicted in Figure~\ref{fig:thimb.41.saddle.II.III}.
+\begin{figure}[ht]
+\begin{tiny}
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+
+
+\draw[<->,thick] (-2.5,0) -- (1,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+\foreach \x in {-2,-3,-4,-5}
+\draw[green] (-2.5,-0.10229*4*2.5/0.99475-0.10229*4*\x/0.99475)--(\x+0.99475/0.10229/4,0.10229*4/0.10229/4);
+\foreach \x in {-1,0}
+\draw[green] (-2.5,-0.10229*4*2.5/0.99475-0.10229*4*\x/0.99475)--(1,0.10229*4/0.99475-\x*0.10229*4);
+\foreach \x in {1,2,3}
+\draw[green] (\x-0.99475/0.10229/4,-1)--(1,0.10229*4/0.99475-\x*0.10229*4/0.99475);
+\draw[ultra thick,red] (-0.05,-0.05)--(0.05,0.05);
+\draw[ultra thick,red] (0.05,-0.05)--(-0.05,0.05);
+\draw[ultra thick,red,xshift=-1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[ultra thick,red,xshift=-1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[ultra thick,red,xshift=-2cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[ultra thick,red,xshift=-2cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[orange,thick,<->]
+
+
+(-0.65333, -0.97842) node[below] {$(-2,0)$}--(-0.66333, -0.89841)--(-0.67333, -0.82314)--(-0.68333, -0.75209)--(-0.69333, -0.68478)--(-0.70333, -0.62085)--(-0.71333, -0.55996)--(-0.72333, -0.50184)--(-0.73333, -0.44626)--(-0.74333, -0.39304)--(-0.75333, -0.34199)--(-0.76333, -0.29300)--(-0.77333, -0.24594)--(-0.78333, -0.20071)--(-0.79333, -0.15725)--(-0.80333, -0.11549)--(-0.81333, -0.075379)--(-0.82333, -0.036891)--(-0.83333, 0)--(-0.84333, 0.035307)--(-0.85333, 0.069031)--(-0.86333, 0.10117)--(-0.87333, 0.13171)--(-0.88333, 0.16063)--(-0.89333, 0.18791)--(-0.90333, 0.21354)--(-0.91333, 0.23747)--(-0.92333, 0.25971)--(-0.93333, 0.28022)--(-0.94333, 0.29901)--(-0.95333, 0.31609)--(-0.96333, 0.33146)--(-0.97333, 0.34517)--(-0.98333, 0.35726)--(-0.99333, 0.36778)--(-1.0033, 0.37680)--(-1.0133, 0.38439)--(-1.0233, 0.39062)--(-1.0333, 0.39558)--(-1.0433, 0.39934)--(-1.0533, 0.40197)--(-1.0633, 0.40354)--(-1.0733, 0.40413)--(-1.0833, 0.40378)--(-1.0933, 0.40257)--(-1.1033, 0.40055)--(-1.1133, 0.39776)--(-1.1233, 0.39426)--(-1.1333, 0.39009)--(-1.1433, 0.38529)--(-1.1533, 0.37990)--(-1.1633, 0.37394)--(-1.1733, 0.36747)--(-1.1833, 0.36050)--(-1.1933, 0.35307)--(-1.2033, 0.34519)--(-1.2133, 0.33691)--(-1.2233, 0.32824)--(-1.2333, 0.31920)--(-1.2433, 0.30981)--(-1.2533, 0.30010)--(-1.2633, 0.29008)--(-1.2733, 0.27977)--(-1.2833, 0.26920)--(-1.2933, 0.25836)--(-1.3033, 0.24729)--(-1.3133, 0.23600)--(-1.3233, 0.22449)--(-1.3333, 0.21279)--(-1.3433, 0.20091)--(-1.3533, 0.18885)--(-1.3633, 0.17664)--(-1.3733, 0.16429)--(-1.3833, 0.15180)--(-1.3933, 0.13920)--(-1.4033, 0.12648)--(-1.4133, 0.11366)--(-1.4233, 0.10076)--(-1.4333, 0.087775)--(-1.4433, 0.074725)--(-1.4533, 0.061619)--(-1.4633, 0.048467)--(-1.4733, 0.035278)--(-1.4833, 0.022063)--(-1.4933, 0.0088306)--(-1.5033, -0.0044080)--(-1.5133, -0.017643)--(-1.5233, -0.030865)--(-1.5333, -0.044064)--(-1.5433, -0.057230)--(-1.5533, -0.070353)--(-1.5633, -0.083422)--(-1.5733, -0.096428)--(-1.5833, -0.10936)--(-1.5933, -0.12221)--(-1.6033, -0.13496)--(-1.6133, -0.14760)--(-1.6233, -0.16013)--(-1.6333, -0.17253)--(-1.6433, -0.18479)--(-1.6533, -0.19690)--(-1.6633, -0.20884)--(-1.6733, -0.22060)--(-1.6833, -0.23217)--(-1.6933, -0.24354)--(-1.7033, -0.25469)--(-1.7133, -0.26560)--(-1.7233, -0.27627)--(-1.7333, -0.28667)--(-1.7433, -0.29678)--(-1.7533, -0.30660)--(-1.7633, -0.31609)--(-1.7733, -0.32525)--(-1.7833, -0.33405)--(-1.7933, -0.34247)--(-1.8033, -0.35048)--(-1.8133, -0.35806)--(-1.8233, -0.36519)--(-1.8333, -0.37183)--(-1.8433, -0.37796)--(-1.8533, -0.38354)--(-1.8633, -0.38855)--(-1.8733, -0.39293)--(-1.8833, -0.39666)--(-1.8933, -0.39969)--(-1.9033, -0.40197)--(-1.9133, -0.40346)--(-1.9233, -0.40410)--(-1.9333, -0.40383)--(-1.9433, -0.40259)--(-1.9533, -0.40032)--(-1.9633, -0.39695)--(-1.9733, -0.39240)--(-1.9833, -0.38659)--(-1.9933, -0.37946)--(-2.0033, -0.37093)--(-2.0133, -0.36091)--(-2.0233, -0.34935)--(-2.0333, -0.33619)--(-2.0433, -0.32137)--(-2.0533, -0.30487)--(-2.0633, -0.28664)--(-2.0733, -0.26670)--(-2.0833, -0.24503)--(-2.0933, -0.22165)--(-2.1033, -0.19658)--(-2.1133, -0.16983)--(-2.1233, -0.14142)--(-2.1333, -0.11138)--(-2.1433, -0.079706)--(-2.1533, -0.046329)--(-2.1633, -0.010180)--(-2.1667,0)--(-2.1733, -0.029204)--(-2.1833, -0.076895)--(-2.1933, -0.12675)--(-2.2033, -0.17923)--(-2.2133, -0.23453)--(-2.2233, -0.29288)--(-2.2333, -0.35452)--(-2.2433, -0.41978)--(-2.2533, -0.48903)--(-2.2633, -0.56276)--(-2.2733, -0.64158)--(-2.2833, -0.72626)--(-2.2933, -0.81779)--(-2.3033, -0.91748) node[below] {$(-4,-2)$};
+
+\draw[orange,thick,->]
+(-2.1667,0)--(-2.1533, 0.056614)--(-2.1433, 0.096865)--(-2.1333, 0.13477)--(-2.1233, 0.17046)--(-2.1133, 0.20400)--(-2.1033, 0.23543)--(-2.0933, 0.26480)--(-2.0833, 0.29216)--(-2.0733, 0.31756)--(-2.0633, 0.34107)--(-2.0533, 0.36275)--(-2.0433, 0.38268)--(-2.0333, 0.40094)--(-2.0233, 0.41761)--(-2.0133, 0.43277)--(-2.0033, 0.44653)--(-1.9933, 0.45896)--(-1.9833, 0.47014)--(-1.9733, 0.48017)--(-1.9633, 0.48912)--(-1.9533, 0.49705)--(-1.9433, 0.50405)--(-1.9333, 0.51016)--(-1.9233, 0.51546)--(-1.9133, 0.51999)--(-1.9033, 0.52381)--(-1.8933, 0.52695)--(-1.8833, 0.52948)--(-1.8733, 0.53142)--(-1.8633, 0.53281)--(-1.8533, 0.53368)--(-1.8433, 0.53408)--(-1.8333, 0.53402)--(-1.8233, 0.53354)--(-1.8133, 0.53267)--(-1.8033, 0.53142)--(-1.7933, 0.52982)--(-1.7833, 0.52789)--(-1.7733, 0.52566)--(-1.7633, 0.52314)--(-1.7533, 0.52034)--(-1.7433, 0.51730)--(-1.7333, 0.51402)--(-1.7233, 0.51052)--(-1.7133, 0.50681)--(-1.7033, 0.50292)--(-1.6933, 0.49884)--(-1.6833, 0.49461)--(-1.6733, 0.49022)--(-1.6633, 0.48570)--(-1.6533, 0.48105)--(-1.6433, 0.47629)--(-1.6333, 0.47143)--(-1.6233, 0.46648)--(-1.6133, 0.46144)--(-1.6033, 0.45634)--(-1.5933, 0.45118)--(-1.5833, 0.44597)--(-1.5733, 0.44072)--(-1.5633, 0.43544)--(-1.5533, 0.43014)--(-1.5433, 0.42484)--(-1.5333, 0.41953)--(-1.5233, 0.41424)--(-1.5133, 0.40897)--(-1.5033, 0.40373)--(-1.4933, 0.39853)--(-1.4833, 0.39337)--(-1.4733, 0.38828)--(-1.4633, 0.38326)--(-1.4533, 0.37831)--(-1.4433, 0.37346)--(-1.4333, 0.36870)--(-1.4233, 0.36406)--(-1.4133, 0.35953)--(-1.4033, 0.35514)--(-1.3933, 0.35088)--(-1.3833, 0.34679)--(-1.3733, 0.34285)--(-1.3633, 0.33909)--(-1.3533, 0.33552)--(-1.3433, 0.33215)--(-1.3333, 0.32900)--(-1.3233, 0.32607)--(-1.3133, 0.32337)--(-1.3033, 0.32094)--(-1.2933, 0.31876)--(-1.2833, 0.31687)--(-1.2733, 0.31528)--(-1.2633, 0.31400)--(-1.2533, 0.31304)--(-1.2433, 0.31243)--(-1.2333, 0.31218)--(-1.2233, 0.31231)--(-1.2133, 0.31282)--(-1.2033, 0.31375)--(-1.1933, 0.31511)--(-1.1833, 0.31690)--(-1.1733, 0.31915)--(-1.1633, 0.32188)--(-1.1533, 0.32508)--(-1.1433, 0.32878)--(-1.1333, 0.33298)--(-1.1233, 0.33767)--(-1.1133, 0.34286)--(-1.1033, 0.34853)--(-1.0933, 0.35466)--(-1.0833, 0.36122)--(-1.0733, 0.36817)--(-1.0633, 0.37545)--(-1.0533, 0.38298)--(-1.0433, 0.39071)--(-1.0333, 0.39854)--(-1.0233, 0.40638)--(-1.0133, 0.41415)--(-1.0033, 0.42179)--(-0.99333, 0.42921)--(-0.98333, 0.43637)--(-0.97333, 0.44323)--(-0.96333, 0.44976)--(-0.95333, 0.45594)--(-0.94333, 0.46177)--(-0.93333, 0.46724)--(-0.92333, 0.47236)--(-0.91333, 0.47713)--(-0.90333, 0.48157)--(-0.89333, 0.48569)--(-0.88333, 0.48949)--(-0.87333, 0.49299)--(-0.86333, 0.49621)--(-0.85333, 0.49916)--(-0.84333, 0.50185)--(-0.83333, 0.50429)--(-0.82333, 0.50650)--(-0.81333, 0.50849)--(-0.80333, 0.51027)--(-0.79333, 0.51184)--(-0.78333, 0.51323)--(-0.77333, 0.51444)--(-0.76333, 0.51548)--(-0.75333, 0.51636)--(-0.74333, 0.51709)--(-0.73333, 0.51768)--(-0.72333, 0.51814)--(-0.71333, 0.51846)--(-0.70333, 0.51868)--(-0.69333, 0.51878)--(-0.68333, 0.51878)--(-0.67333, 0.51868)--(-0.66333, 0.51849)--(-0.65333, 0.51823)--(-0.64333, 0.51788)--(-0.63333, 0.51747)--(-0.62333, 0.51699)--(-0.61333, 0.51646)--(-0.60333, 0.51587)--(-0.59333, 0.51524)--(-0.58333, 0.51457)--(-0.57333, 0.51387)--(-0.56333, 0.51313)--(-0.55333, 0.51238)--(-0.54333, 0.51160)--(-0.53333, 0.51082)--(-0.52333, 0.51002)--(-0.51333, 0.50923)--(-0.50333, 0.50844)--(-0.49333, 0.50766)--(-0.48333, 0.50689)--(-0.47333, 0.50614)--(-0.46333, 0.50542)--(-0.45333, 0.50473)--(-0.44333, 0.50407)--(-0.43333, 0.50345)--(-0.42333, 0.50287)--(-0.41333, 0.50235)--(-0.40333, 0.50188)--(-0.39333, 0.50148)--(-0.38333, 0.50114)--(-0.37333, 0.50087)--(-0.36333, 0.50068)--(-0.35333, 0.50058)--(-0.34333, 0.50056)--(-0.33333, 0.50063)--(-0.32333, 0.50081)--(-0.31333, 0.50109)--(-0.30333, 0.50148)--(-0.29333, 0.50199)--(-0.28333, 0.50262)--(-0.27333, 0.50338)--(-0.26333, 0.50428)--(-0.25333, 0.50531)--(-0.24333, 0.50649)--(-0.23333, 0.50782)--(-0.22333, 0.50931)--(-0.21333, 0.51095)--(-0.20333, 0.51277)--(-0.19333, 0.51475)--(-0.18333, 0.51691)--(-0.17333, 0.51924)--(-0.16333, 0.52176)--(-0.15333, 0.52446)--(-0.14333, 0.52734)--(-0.13333, 0.53040)--(-0.12333, 0.53364)--(-0.11333, 0.53705)--(-0.10333, 0.54064)--(-0.093333, 0.54438)--(-0.083333, 0.54827)--(-0.073333, 0.55230)--(-0.063333, 0.55644)--(-0.053333, 0.56068)--(-0.043333, 0.56500)--(-0.033333, 0.56938)--(-0.023333, 0.57379)--(-0.013333, 0.57821)--(-0.0033333, 0.58262)--(0.0066667, 0.58699)--(0.016667, 0.59130)--(0.026667, 0.59553)--(0.036667, 0.59968)--(0.046667, 0.60372)--(0.056667, 0.60764)--(0.066667, 0.61144)--(0.076667, 0.61511)--(0.086667, 0.61864)--(0.096667, 0.62204)--(0.10667, 0.62529)--(0.11667, 0.62841)--(0.12667, 0.63140)--(0.13667, 0.63424)--(0.14667, 0.63696)--(0.15667, 0.63955)--(0.16667, 0.64201)--(0.17667, 0.64435)--(0.18667, 0.64657)--(0.19667, 0.64868)--(0.20667, 0.65068)--(0.21667, 0.65257)--(0.22667, 0.65437)--(0.23667, 0.65607)--(0.24667, 0.65768)--(0.25667, 0.65920)--(0.26667, 0.66064)--(0.27667, 0.66200)--(0.28667, 0.66328)--(0.29667, 0.66450)--(0.30667, 0.66565)--(0.31667, 0.66674)--(0.32667, 0.66777)--(0.33667, 0.66874)--(0.34667, 0.66967)--(0.35667, 0.67054)--(0.36667, 0.67138)--(0.37667, 0.67217)--(0.38667, 0.67293)--(0.39667, 0.67366)--(0.40667, 0.67435)--(0.41667, 0.67502)--(0.42667, 0.67567)--(0.43667, 0.67630)--(0.44667, 0.67692)--(0.45667, 0.67752)--(0.46667, 0.67811)--(0.47667, 0.67870)--(0.48667, 0.67928)--(0.49667, 0.67987)--(0.50667, 0.68046)--(0.51667, 0.68105)--(0.52667, 0.68166)--(0.53667, 0.68227)--(0.54667, 0.68291)--(0.55667, 0.68356)--(0.56667, 0.68424)--(0.57667, 0.68494)--(0.58667, 0.68567)--(0.59667, 0.68643)--(0.60667, 0.68723)--(0.61667, 0.68806)--(0.62667, 0.68894)--(0.63667, 0.68986)--(0.64667, 0.69082)--(0.65667, 0.69184)--(0.66667, 0.69291)--(0.67667, 0.69403)--(0.68667, 0.69521)--(0.69667, 0.69646)--(0.70667, 0.69777)--(0.71667, 0.69914)--(0.72667, 0.70059)--(0.73667, 0.70210)--(0.74667, 0.70370)--(0.75667, 0.70536)--(0.76667, 0.70711)--(0.77667, 0.70894)--(0.78667, 0.71086)--(0.79667, 0.71285)--(0.80667, 0.71493)--(0.81667, 0.71710)--(0.82667, 0.71936)--(0.83667, 0.72170)--(0.84667, 0.72413)--(0.85667, 0.72664)--(0.86667, 0.72924)--(0.87667, 0.73192)--(0.88667, 0.73468)--(0.89667, 0.73751)--(0.90667, 0.74041)--(0.91667, 0.74337)--(0.92667, 0.74640)--(0.93667, 0.74947)--(0.94667, 0.75259)--(0.95667, 0.75574)--(0.96667, 0.75892)--(0.97667, 0.76211)--(0.98667, 0.76532)--(0.99667, 0.76852)  node[right] {$(2,4)$};
+\filldraw[red] (-5/6,0) circle (1pt);
+\filldraw[red] (-13/6,0) circle (1pt);
+\end{tikzpicture}
+\end{tiny}
+\caption{This figure depicts in \textcolor{orange}{orange} the set $\calC_{(-5/6,0),\vartheta}$ for $\vartheta=\arg(-1/\tau)=1.6733$, and $(A,B)=(1,2)$. The \textcolor{green}{green} lines are parallel to the lines $i/\tau$.
+}\label{fig:thimb.41.saddle.II.III}
+\end{figure}
+\subsubsection{State integrals decomposition in $\mathrm{III}$}
+Let $\vartheta\in\mathrm{III}$ then $\calC_{p_1,\vartheta}$ is depicted in Figure~\ref{fig:thimb.41.III}.
+\begin{figure}[ht]
+\begin{tiny}
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+
+
+
+
+\draw[<->,thick] (-2.5,0) -- (1,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+\foreach \x in {-2,-3,-4,-5}
+\draw[green] (-2.5,-0.094108*4*2.5/0.99556-0.094108*4*\x/0.99556)--(\x+0.99556/0.094108/4,0.094108*4/0.094108/4);
+\foreach \x in {-1,0}
+\draw[green] (-2.5,-0.094108*4*2.5/0.99556-0.094108*4*\x/0.99556)--(1,0.094108*4/0.99556-\x*0.094108*4);
+\foreach \x in {1,2,3}
+\draw[green] (\x-0.99556/0.094108/4,-1)--(1,0.094108*4/0.99556-\x*0.094108*4/0.99556);
+\draw[ultra thick,red] (-0.05,-0.05)--(0.05,0.05);
+\draw[ultra thick,red] (0.05,-0.05)--(-0.05,0.05);
+\draw[ultra thick,red,xshift=-1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[ultra thick,red,xshift=-1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[ultra thick,red,xshift=-2cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[ultra thick,red,xshift=-2cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[orange,thick,<->]
+
+(-0.65333, -0.99196) node[below] {$(-2,0)$}--(-0.66333, -0.91030)--(-0.67333, -0.83361)--(-0.68333, -0.76129)--(-0.69333, -0.69287)--(-0.70333, -0.62794)--(-0.71333, -0.56616)--(-0.72333, -0.50723)--(-0.73333, -0.45093)--(-0.74333, -0.39704)--(-0.75333, -0.34539)--(-0.76333, -0.29583)--(-0.77333, -0.24826)--(-0.78333, -0.20256)--(-0.79333, -0.15867)--(-0.80333, -0.11651)--(-0.81333, -0.076031)--(-0.82333, -0.037204)--(-0.83333, 0)--(-0.84333, 0.035594)--(-0.85333, 0.069582)--(-0.86333, 0.10196)--(-0.87333, 0.13272)--(-0.88333, 0.16185)--(-0.89333, 0.18932)--(-0.90333, 0.21511)--(-0.91333, 0.23921)--(-0.92333, 0.26159)--(-0.93333, 0.28224)--(-0.94333, 0.30117)--(-0.95333, 0.31837)--(-0.96333, 0.33388)--(-0.97333, 0.34772)--(-0.98333, 0.35994)--(-0.99333, 0.37061)--(-1.0033, 0.37978)--(-1.0133, 0.38752)--(-1.0233, 0.39393)--(-1.0333, 0.39906)--(-1.0433, 0.40300)--(-1.0533, 0.40582)--(-1.0633, 0.40759)--(-1.0733, 0.40838)--(-1.0833, 0.40825)--(-1.0933, 0.40726)--(-1.1033, 0.40546)--(-1.1133, 0.40290)--(-1.1233, 0.39964)--(-1.1333, 0.39571)--(-1.1433, 0.39116)--(-1.1533, 0.38601)--(-1.1633, 0.38032)--(-1.1733, 0.37410)--(-1.1833, 0.36740)--(-1.1933, 0.36024)--(-1.2033, 0.35264)--(-1.2133, 0.34463)--(-1.2233, 0.33624)--(-1.2333, 0.32748)--(-1.2433, 0.31838)--(-1.2533, 0.30896)--(-1.2633, 0.29924)--(-1.2733, 0.28923)--(-1.2833, 0.27895)--(-1.2933, 0.26843)--(-1.3033, 0.25766)--(-1.3133, 0.24667)--(-1.3233, 0.23548)--(-1.3333, 0.22410)--(-1.3433, 0.21253)--(-1.3533, 0.20080)--(-1.3633, 0.18891)--(-1.3733, 0.17689)--(-1.3833, 0.16473)--(-1.3933, 0.15245)--(-1.4033, 0.14007)--(-1.4133, 0.12759)--(-1.4233, 0.11502)--(-1.4333, 0.10238)--(-1.4433, 0.089680)--(-1.4533, 0.076922)--(-1.4633, 0.064120)--(-1.4733, 0.051284)--(-1.4833, 0.038425)--(-1.4933, 0.025553)--(-1.5033, 0.012677)--(-1.5233, -0.013047)--(-1.5333, -0.025874)--(-1.5433, -0.038664)--(-1.5533, -0.051408)--(-1.5633, -0.064095)--(-1.5733, -0.076715)--(-1.5833, -0.089257)--(-1.5933, -0.10171)--(-1.6033, -0.11406)--(-1.6133, -0.12631)--(-1.6233, -0.13843)--(-1.6333, -0.15041)--(-1.6433, -0.16225)--(-1.6533, -0.17394)--(-1.6633, -0.18545)--(-1.6733, -0.19678)--(-1.6833, -0.20790)--(-1.6933, -0.21882)--(-1.7033, -0.22951)--(-1.7133, -0.23995)--(-1.7233, -0.25014)--(-1.7333, -0.26005)--(-1.7433, -0.26966)--(-1.7533, -0.27897)--(-1.7633, -0.28794)--(-1.7733, -0.29655)--(-1.7833, -0.30479)--(-1.7933, -0.31262)--(-1.8033, -0.32003)--(-1.8133, -0.32699)--(-1.8233, -0.33346)--(-1.8333, -0.33941)--(-1.8433, -0.34482)--(-1.8533, -0.34964)--(-1.8633, -0.35382)--(-1.8733, -0.35734)--(-1.8833, -0.36013)--(-1.8933, -0.36214)--(-1.9033, -0.36332)--(-1.9133, -0.36358)--(-1.9233, -0.36287)--(-1.9333, -0.36108)--(-1.9433, -0.35813)--(-1.9533, -0.35390)--(-1.9633, -0.34826)--(-1.9733, -0.34106)--(-1.9833, -0.33212)--(-1.9933, -0.32122)--(-2.0033, -0.30811)--(-2.0133, -0.29246)--(-2.0233, -0.27384)--(-2.0333, -0.25165)--(-2.0433, -0.22501)--(-2.0533, -0.19242)--(-2.0633, -0.15080)--(-2.0733, -0.090989)--(-2.0793, -0.023193)--(-2.0793, 0.066491)--(-2.0733, 0.13588)--(-2.0633, 0.19831)--(-2.0533, 0.24258)--(-2.0433, 0.27790)--(-2.0333, 0.30741)--(-2.0233, 0.33264)--(-2.0133, 0.35450)--(-2.0033, 0.37359)--(-1.9933, 0.39034)--(-1.9833, 0.40507)--(-1.9733, 0.41804)--(-1.9633, 0.42944)--(-1.9533, 0.43945)--(-1.9433, 0.44821)--(-1.9333, 0.45583)--(-1.9233, 0.46241)--(-1.9133, 0.46806)--(-1.9033, 0.47284)--(-1.8933, 0.47682)--(-1.8833, 0.48007)--(-1.8733, 0.48264)--(-1.8633, 0.48459)--(-1.8533, 0.48594)--(-1.8433, 0.48676)--(-1.8333, 0.48706)--(-1.8233, 0.48690)--(-1.8133, 0.48629)--(-1.8033, 0.48527)--(-1.7933, 0.48386)--(-1.7833, 0.48210)--(-1.7733, 0.47999)--(-1.7633, 0.47758)--(-1.7533, 0.47486)--(-1.7433, 0.47188)--(-1.7333, 0.46863)--(-1.7233, 0.46515)--(-1.7133, 0.46145)--(-1.7033, 0.45754)--(-1.6933, 0.45343)--(-1.6833, 0.44915)--(-1.6733, 0.44471)--(-1.6633, 0.44012)--(-1.6533, 0.43539)--(-1.6433, 0.43053)--(-1.6333, 0.42556)--(-1.6233, 0.42050)--(-1.6133, 0.41534)--(-1.6033, 0.41010)--(-1.5933, 0.40480)--(-1.5833, 0.39944)--(-1.5733, 0.39404)--(-1.5633, 0.38860)--(-1.5533, 0.38313)--(-1.5433, 0.37765)--(-1.5333, 0.37217)--(-1.5233, 0.36669)--(-1.5133, 0.36122)--(-1.5033, 0.35578)--(-1.4933, 0.35038)--(-1.4833, 0.34502)--(-1.4733, 0.33972)--(-1.4633, 0.33448)--(-1.4533, 0.32932)--(-1.4433, 0.32424)--(-1.4333, 0.31926)--(-1.4233, 0.31439)--(-1.4133, 0.30964)--(-1.4033, 0.30501)--(-1.3933, 0.30053)--(-1.3833, 0.29619)--(-1.3733, 0.29203)--(-1.3633, 0.28804)--(-1.3533, 0.28423)--(-1.3433, 0.28063)--(-1.3333, 0.27724)--(-1.3233, 0.27408)--(-1.3133, 0.27117)--(-1.3033, 0.26851)--(-1.2933, 0.26612)--(-1.2833, 0.26402)--(-1.2733, 0.26222)--(-1.2633, 0.26075)--(-1.2533, 0.25961)--(-1.2433, 0.25883)--(-1.2333, 0.25842)--(-1.2233, 0.25840)--(-1.2133, 0.25880)--(-1.2033, 0.25962)--(-1.1933, 0.26090)--(-1.1833, 0.26265)--(-1.1733, 0.26489)--(-1.1633, 0.26764)--(-1.1533, 0.27092)--(-1.1433, 0.27473)--(-1.1333, 0.27910)--(-1.1233, 0.28403)--(-1.1133, 0.28952)--(-1.1033, 0.29557)--(-1.0933, 0.30216)--(-1.0833, 0.30926)--(-1.0733, 0.31682)--(-1.0633, 0.32478)--(-1.0533, 0.33307)--(-1.0433, 0.34158)--(-1.0333, 0.35022)--(-1.0233, 0.35887)--(-1.0133, 0.36744)--(-1.0033, 0.37581)--(-0.99333, 0.38390)--(-0.98333, 0.39167)--(-0.97333, 0.39906)--(-0.96333, 0.40604)--(-0.95333, 0.41261)--(-0.94333, 0.41875)--(-0.93333, 0.42448)--(-0.92333, 0.42980)--(-0.91333, 0.43473)--(-0.90333, 0.43928)--(-0.89333, 0.44347)--(-0.88333, 0.44732)--(-0.87333, 0.45084)--(-0.86333, 0.45405)--(-0.85333, 0.45697)--(-0.84333, 0.45960)--(-0.83333, 0.46198)--(-0.82333, 0.46410)--(-0.81333, 0.46599)--(-0.80333, 0.46765)--(-0.79333, 0.46910)--(-0.78333, 0.47036)--(-0.77333, 0.47142)--(-0.76333, 0.47231)--(-0.75333, 0.47303)--(-0.74333, 0.47360)--(-0.73333, 0.47401)--(-0.72333, 0.47429)--(-0.71333, 0.47443)--(-0.70333, 0.47445)--(-0.69333, 0.47436)--(-0.68333, 0.47415)--(-0.67333, 0.47385)--(-0.66333, 0.47346)--(-0.65333, 0.47298)--(-0.64333, 0.47242)--(-0.63333, 0.47179)--(-0.62333, 0.47109)--(-0.61333, 0.47033)--(-0.60333, 0.46952)--(-0.59333, 0.46866)--(-0.58333, 0.46776)--(-0.57333, 0.46683)--(-0.56333, 0.46586)--(-0.55333, 0.46487)--(-0.54333, 0.46386)--(-0.53333, 0.46283)--(-0.52333, 0.46180)--(-0.51333, 0.46077)--(-0.50333, 0.45974)--(-0.49333, 0.45871)--(-0.48333, 0.45770)--(-0.47333, 0.45671)--(-0.46333, 0.45574)--(-0.45333, 0.45481)--(-0.44333, 0.45390)--(-0.43333, 0.45304)--(-0.42333, 0.45223)--(-0.41333, 0.45146)--(-0.40333, 0.45075)--(-0.39333, 0.45011)--(-0.38333, 0.44953)--(-0.37333, 0.44903)--(-0.36333, 0.44860)--(-0.35333, 0.44826)--(-0.34333, 0.44801)--(-0.33333, 0.44786)--(-0.32333, 0.44782)--(-0.31333, 0.44788)--(-0.30333, 0.44805)--(-0.29333, 0.44835)--(-0.28333, 0.44878)--(-0.27333, 0.44933)--(-0.26333, 0.45003)--(-0.25333, 0.45088)--(-0.24333, 0.45188)--(-0.23333, 0.45304)--(-0.22333, 0.45437)--(-0.21333, 0.45587)--(-0.20333, 0.45754)--(-0.19333, 0.45940)--(-0.18333, 0.46145)--(-0.17333, 0.46370)--(-0.16333, 0.46614)--(-0.15333, 0.46878)--(-0.14333, 0.47162)--(-0.13333, 0.47467)--(-0.12333, 0.47792)--(-0.11333, 0.48137)--(-0.10333, 0.48501)--(-0.093333, 0.48884)--(-0.083333, 0.49284)--(-0.073333, 0.49700)--(-0.063333, 0.50130)--(-0.053333, 0.50572)--(-0.043333, 0.51023)--(-0.033333, 0.51481)--(-0.023333, 0.51943)--(-0.013333, 0.52406)--(-0.0033333, 0.52867)--(0.0066667, 0.53323)--(0.016667, 0.53773)--(0.026667, 0.54213)--(0.036667, 0.54641)--(0.046667, 0.55057)--(0.056667, 0.55460)--(0.066667, 0.55847)--(0.076667, 0.56219)--(0.086667, 0.56575)--(0.096667, 0.56916)--(0.10667, 0.57241)--(0.11667, 0.57550)--(0.12667, 0.57843)--(0.13667, 0.58122)--(0.14667, 0.58385)--(0.15667, 0.58635)--(0.16667, 0.58871)--(0.17667, 0.59093)--(0.18667, 0.59303)--(0.19667, 0.59500)--(0.20667, 0.59686)--(0.21667, 0.59860)--(0.22667, 0.60024)--(0.23667, 0.60177)--(0.24667, 0.60321)--(0.25667, 0.60455)--(0.26667, 0.60580)--(0.27667, 0.60697)--(0.28667, 0.60807)--(0.29667, 0.60908)--(0.30667, 0.61003)--(0.31667, 0.61092)--(0.32667, 0.61174)--(0.33667, 0.61250)--(0.34667, 0.61321)--(0.35667, 0.61387)--(0.36667, 0.61448)--(0.37667, 0.61506)--(0.38667, 0.61559)--(0.39667, 0.61609)--(0.40667, 0.61656)--(0.41667, 0.61700)--(0.42667, 0.61742)--(0.43667, 0.61782)--(0.44667, 0.61820)--(0.45667, 0.61857)--(0.46667, 0.61893)--(0.47667, 0.61928)--(0.48667, 0.61963)--(0.49667, 0.61998)--(0.50667, 0.62033)--(0.51667, 0.62069)--(0.52667, 0.62106)--(0.53667, 0.62144)--(0.54667, 0.62184)--(0.55667, 0.62226)--(0.56667, 0.62271)--(0.57667, 0.62317)--(0.58667, 0.62367)--(0.59667, 0.62420)--(0.60667, 0.62477)--(0.61667, 0.62538)--(0.62667, 0.62603)--(0.63667, 0.62672)--(0.64667, 0.62747)--(0.65667, 0.62827)--(0.66667, 0.62912)--(0.67667, 0.63003)--(0.68667, 0.63100)--(0.69667, 0.63204)--(0.70667, 0.63315)--(0.71667, 0.63433)--(0.72667, 0.63558)--(0.73667, 0.63692)--(0.74667, 0.63833)--(0.75667, 0.63982)--(0.76667, 0.64141)--(0.77667, 0.64308)--(0.78667, 0.64484)--(0.79667, 0.64669)--(0.80667, 0.64864)--(0.81667, 0.65069)--(0.82667, 0.65283)--(0.83667, 0.65507)--(0.84667, 0.65741)--(0.85667, 0.65984)--(0.86667, 0.66237)--(0.87667, 0.66500)--(0.88667, 0.66771)--(0.89667, 0.67051)--(0.90667, 0.67339)--(0.91667, 0.67635) node[right] {$(2,4)$};
+\filldraw[red] (-5/6,0) circle (1pt);
+\end{tikzpicture}
+\end{tiny}
+\caption{This figure depicts in \textcolor{orange}{orange} the set $\calC_{(-5/6,0),\vartheta}$ for $\vartheta=\arg(-1/\tau)=1.6650$ and $(A,B)=(1,2)$. The \textcolor{green}{green} lines are parallel to the lines $1/\tau$.}
+\label{fig:thimb.41.III}
+\end{figure}
+
+
+\begin{figure}[ht]
+\begin{tiny}
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+
+
+
+
+
+\draw[<->,thick] (-2.5,0) -- (1,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+\foreach \x in {-2,-3,-4,-5}
+\draw[green] (-2.5,-0.094108*4*2.5/0.99556-0.094108*4*\x/0.99556)--(\x+0.99556/0.094108/4,0.094108*4/0.094108/4);
+\foreach \x in {-1,0}
+\draw[green] (-2.5,-0.094108*4*2.5/0.99556-0.094108*4*\x/0.99556)--(1,0.094108*4/0.99556-\x*0.094108*4);
+\foreach \x in {1,2,3}
+\draw[green] (\x-0.99556/0.094108/4,-1)--(1,0.094108*4/0.99556-\x*0.094108*4/0.99556);
+\draw[orange,thick,<->,opacity=0.5]
+
+(-0.65333, -0.99196)  node[below] {$(-2,0)$}--(-0.66333, -0.91030)--(-0.67333, -0.83361)--(-0.68333, -0.76129)--(-0.69333, -0.69287)--(-0.70333, -0.62794)--(-0.71333, -0.56616)--(-0.72333, -0.50723)--(-0.73333, -0.45093)--(-0.74333, -0.39704)--(-0.75333, -0.34539)--(-0.76333, -0.29583)--(-0.77333, -0.24826)--(-0.78333, -0.20256)--(-0.79333, -0.15867)--(-0.80333, -0.11651)--(-0.81333, -0.076031)--(-0.82333, -0.037204)--(-0.83333, 0)--(-0.84333, 0.035594)--(-0.85333, 0.069582)--(-0.86333, 0.10196)--(-0.87333, 0.13272)--(-0.88333, 0.16185)--(-0.89333, 0.18932)--(-0.90333, 0.21511)--(-0.91333, 0.23921)--(-0.92333, 0.26159)--(-0.93333, 0.28224)--(-0.94333, 0.30117)--(-0.95333, 0.31837)--(-0.96333, 0.33388)--(-0.97333, 0.34772)--(-0.98333, 0.35994)--(-0.99333, 0.37061)--(-1.0033, 0.37978)--(-1.0133, 0.38752)--(-1.0233, 0.39393)--(-1.0333, 0.39906)--(-1.0433, 0.40300)--(-1.0533, 0.40582)--(-1.0633, 0.40759)--(-1.0733, 0.40838)--(-1.0833, 0.40825)--(-1.0933, 0.40726)--(-1.1033, 0.40546)--(-1.1133, 0.40290)--(-1.1233, 0.39964)--(-1.1333, 0.39571)--(-1.1433, 0.39116)--(-1.1533, 0.38601)--(-1.1633, 0.38032)--(-1.1733, 0.37410)--(-1.1833, 0.36740)--(-1.1933, 0.36024)--(-1.2033, 0.35264)--(-1.2133, 0.34463)--(-1.2233, 0.33624)--(-1.2333, 0.32748)--(-1.2433, 0.31838)--(-1.2533, 0.30896)--(-1.2633, 0.29924)--(-1.2733, 0.28923)--(-1.2833, 0.27895)--(-1.2933, 0.26843)--(-1.3033, 0.25766)--(-1.3133, 0.24667)--(-1.3233, 0.23548)--(-1.3333, 0.22410)--(-1.3433, 0.21253)--(-1.3533, 0.20080)--(-1.3633, 0.18891)--(-1.3733, 0.17689)--(-1.3833, 0.16473)--(-1.3933, 0.15245)--(-1.4033, 0.14007)--(-1.4133, 0.12759)--(-1.4233, 0.11502)--(-1.4333, 0.10238)--(-1.4433, 0.089680)--(-1.4533, 0.076922)--(-1.4633, 0.064120)--(-1.4733, 0.051284)--(-1.4833, 0.038425)--(-1.4933, 0.025553)--(-1.5033, 0.012677)--(-1.5233, -0.013047)--(-1.5333, -0.025874)--(-1.5433, -0.038664)--(-1.5533, -0.051408)--(-1.5633, -0.064095)--(-1.5733, -0.076715)--(-1.5833, -0.089257)--(-1.5933, -0.10171)--(-1.6033, -0.11406)--(-1.6133, -0.12631)--(-1.6233, -0.13843)--(-1.6333, -0.15041)--(-1.6433, -0.16225)--(-1.6533, -0.17394)--(-1.6633, -0.18545)--(-1.6733, -0.19678)--(-1.6833, -0.20790)--(-1.6933, -0.21882)--(-1.7033, -0.22951)--(-1.7133, -0.23995)--(-1.7233, -0.25014)--(-1.7333, -0.26005)--(-1.7433, -0.26966)--(-1.7533, -0.27897)--(-1.7633, -0.28794)--(-1.7733, -0.29655)--(-1.7833, -0.30479)--(-1.7933, -0.31262)--(-1.8033, -0.32003)--(-1.8133, -0.32699)--(-1.8233, -0.33346)--(-1.8333, -0.33941)--(-1.8433, -0.34482)--(-1.8533, -0.34964)--(-1.8633, -0.35382)--(-1.8733, -0.35734)--(-1.8833, -0.36013)--(-1.8933, -0.36214)--(-1.9033, -0.36332)--(-1.9133, -0.36358)--(-1.9233, -0.36287)--(-1.9333, -0.36108)--(-1.9433, -0.35813)--(-1.9533, -0.35390)--(-1.9633, -0.34826)--(-1.9733, -0.34106)--(-1.9833, -0.33212)--(-1.9933, -0.32122)--(-2.0033, -0.30811)--(-2.0133, -0.29246)--(-2.0233, -0.27384)--(-2.0333, -0.25165)--(-2.0433, -0.22501)--(-2.0533, -0.19242)--(-2.0633, -0.15080)--(-2.0733, -0.090989)--(-2.0793, -0.023193)--(-2.0793, 0.066491)--(-2.0733, 0.13588)--(-2.0633, 0.19831)--(-2.0533, 0.24258)--(-2.0433, 0.27790)--(-2.0333, 0.30741)--(-2.0233, 0.33264)--(-2.0133, 0.35450)--(-2.0033, 0.37359)--(-1.9933, 0.39034)--(-1.9833, 0.40507)--(-1.9733, 0.41804)--(-1.9633, 0.42944)--(-1.9533, 0.43945)--(-1.9433, 0.44821)--(-1.9333, 0.45583)--(-1.9233, 0.46241)--(-1.9133, 0.46806)--(-1.9033, 0.47284)--(-1.8933, 0.47682)--(-1.8833, 0.48007)--(-1.8733, 0.48264)--(-1.8633, 0.48459)--(-1.8533, 0.48594)--(-1.8433, 0.48676)--(-1.8333, 0.48706)--(-1.8233, 0.48690)--(-1.8133, 0.48629)--(-1.8033, 0.48527)--(-1.7933, 0.48386)--(-1.7833, 0.48210)--(-1.7733, 0.47999)--(-1.7633, 0.47758)--(-1.7533, 0.47486)--(-1.7433, 0.47188)--(-1.7333, 0.46863)--(-1.7233, 0.46515)--(-1.7133, 0.46145)--(-1.7033, 0.45754)--(-1.6933, 0.45343)--(-1.6833, 0.44915)--(-1.6733, 0.44471)--(-1.6633, 0.44012)--(-1.6533, 0.43539)--(-1.6433, 0.43053)--(-1.6333, 0.42556)--(-1.6233, 0.42050)--(-1.6133, 0.41534)--(-1.6033, 0.41010)--(-1.5933, 0.40480)--(-1.5833, 0.39944)--(-1.5733, 0.39404)--(-1.5633, 0.38860)--(-1.5533, 0.38313)--(-1.5433, 0.37765)--(-1.5333, 0.37217)--(-1.5233, 0.36669)--(-1.5133, 0.36122)--(-1.5033, 0.35578)--(-1.4933, 0.35038)--(-1.4833, 0.34502)--(-1.4733, 0.33972)--(-1.4633, 0.33448)--(-1.4533, 0.32932)--(-1.4433, 0.32424)--(-1.4333, 0.31926)--(-1.4233, 0.31439)--(-1.4133, 0.30964)--(-1.4033, 0.30501)--(-1.3933, 0.30053)--(-1.3833, 0.29619)--(-1.3733, 0.29203)--(-1.3633, 0.28804)--(-1.3533, 0.28423)--(-1.3433, 0.28063)--(-1.3333, 0.27724)--(-1.3233, 0.27408)--(-1.3133, 0.27117)--(-1.3033, 0.26851)--(-1.2933, 0.26612)--(-1.2833, 0.26402)--(-1.2733, 0.26222)--(-1.2633, 0.26075)--(-1.2533, 0.25961)--(-1.2433, 0.25883)--(-1.2333, 0.25842)--(-1.2233, 0.25840)--(-1.2133, 0.25880)--(-1.2033, 0.25962)--(-1.1933, 0.26090)--(-1.1833, 0.26265)--(-1.1733, 0.26489)--(-1.1633, 0.26764)--(-1.1533, 0.27092)--(-1.1433, 0.27473)--(-1.1333, 0.27910)--(-1.1233, 0.28403)--(-1.1133, 0.28952)--(-1.1033, 0.29557)--(-1.0933, 0.30216)--(-1.0833, 0.30926)--(-1.0733, 0.31682)--(-1.0633, 0.32478)--(-1.0533, 0.33307)--(-1.0433, 0.34158)--(-1.0333, 0.35022)--(-1.0233, 0.35887)--(-1.0133, 0.36744)--(-1.0033, 0.37581)--(-0.99333, 0.38390)--(-0.98333, 0.39167)--(-0.97333, 0.39906)--(-0.96333, 0.40604)--(-0.95333, 0.41261)--(-0.94333, 0.41875)--(-0.93333, 0.42448)--(-0.92333, 0.42980)--(-0.91333, 0.43473)--(-0.90333, 0.43928)--(-0.89333, 0.44347)--(-0.88333, 0.44732)--(-0.87333, 0.45084)--(-0.86333, 0.45405)--(-0.85333, 0.45697)--(-0.84333, 0.45960)--(-0.83333, 0.46198)--(-0.82333, 0.46410)--(-0.81333, 0.46599)--(-0.80333, 0.46765)--(-0.79333, 0.46910)--(-0.78333, 0.47036)--(-0.77333, 0.47142)--(-0.76333, 0.47231)--(-0.75333, 0.47303)--(-0.74333, 0.47360)--(-0.73333, 0.47401)--(-0.72333, 0.47429)--(-0.71333, 0.47443)--(-0.70333, 0.47445)--(-0.69333, 0.47436)--(-0.68333, 0.47415)--(-0.67333, 0.47385)--(-0.66333, 0.47346)--(-0.65333, 0.47298)--(-0.64333, 0.47242)--(-0.63333, 0.47179)--(-0.62333, 0.47109)--(-0.61333, 0.47033)--(-0.60333, 0.46952)--(-0.59333, 0.46866)--(-0.58333, 0.46776)--(-0.57333, 0.46683)--(-0.56333, 0.46586)--(-0.55333, 0.46487)--(-0.54333, 0.46386)--(-0.53333, 0.46283)--(-0.52333, 0.46180)--(-0.51333, 0.46077)--(-0.50333, 0.45974)--(-0.49333, 0.45871)--(-0.48333, 0.45770)--(-0.47333, 0.45671)--(-0.46333, 0.45574)--(-0.45333, 0.45481)--(-0.44333, 0.45390)--(-0.43333, 0.45304)--(-0.42333, 0.45223)--(-0.41333, 0.45146)--(-0.40333, 0.45075)--(-0.39333, 0.45011)--(-0.38333, 0.44953)--(-0.37333, 0.44903)--(-0.36333, 0.44860)--(-0.35333, 0.44826)--(-0.34333, 0.44801)--(-0.33333, 0.44786)--(-0.32333, 0.44782)--(-0.31333, 0.44788)--(-0.30333, 0.44805)--(-0.29333, 0.44835)--(-0.28333, 0.44878)--(-0.27333, 0.44933)--(-0.26333, 0.45003)--(-0.25333, 0.45088)--(-0.24333, 0.45188)--(-0.23333, 0.45304)--(-0.22333, 0.45437)--(-0.21333, 0.45587)--(-0.20333, 0.45754)--(-0.19333, 0.45940)--(-0.18333, 0.46145)--(-0.17333, 0.46370)--(-0.16333, 0.46614)--(-0.15333, 0.46878)--(-0.14333, 0.47162)--(-0.13333, 0.47467)--(-0.12333, 0.47792)--(-0.11333, 0.48137)--(-0.10333, 0.48501)--(-0.093333, 0.48884)--(-0.083333, 0.49284)--(-0.073333, 0.49700)--(-0.063333, 0.50130)--(-0.053333, 0.50572)--(-0.043333, 0.51023)--(-0.033333, 0.51481)--(-0.023333, 0.51943)--(-0.013333, 0.52406)--(-0.0033333, 0.52867)--(0.0066667, 0.53323)--(0.016667, 0.53773)--(0.026667, 0.54213)--(0.036667, 0.54641)--(0.046667, 0.55057)--(0.056667, 0.55460)--(0.066667, 0.55847)--(0.076667, 0.56219)--(0.086667, 0.56575)--(0.096667, 0.56916)--(0.10667, 0.57241)--(0.11667, 0.57550)--(0.12667, 0.57843)--(0.13667, 0.58122)--(0.14667, 0.58385)--(0.15667, 0.58635)--(0.16667, 0.58871)--(0.17667, 0.59093)--(0.18667, 0.59303)--(0.19667, 0.59500)--(0.20667, 0.59686)--(0.21667, 0.59860)--(0.22667, 0.60024)--(0.23667, 0.60177)--(0.24667, 0.60321)--(0.25667, 0.60455)--(0.26667, 0.60580)--(0.27667, 0.60697)--(0.28667, 0.60807)--(0.29667, 0.60908)--(0.30667, 0.61003)--(0.31667, 0.61092)--(0.32667, 0.61174)--(0.33667, 0.61250)--(0.34667, 0.61321)--(0.35667, 0.61387)--(0.36667, 0.61448)--(0.37667, 0.61506)--(0.38667, 0.61559)--(0.39667, 0.61609)--(0.40667, 0.61656)--(0.41667, 0.61700)--(0.42667, 0.61742)--(0.43667, 0.61782)--(0.44667, 0.61820)--(0.45667, 0.61857)--(0.46667, 0.61893)--(0.47667, 0.61928)--(0.48667, 0.61963)--(0.49667, 0.61998)--(0.50667, 0.62033)--(0.51667, 0.62069)--(0.52667, 0.62106)--(0.53667, 0.62144)--(0.54667, 0.62184)--(0.55667, 0.62226)--(0.56667, 0.62271)--(0.57667, 0.62317)--(0.58667, 0.62367)--(0.59667, 0.62420)--(0.60667, 0.62477)--(0.61667, 0.62538)--(0.62667, 0.62603)--(0.63667, 0.62672)--(0.64667, 0.62747)--(0.65667, 0.62827)--(0.66667, 0.62912)--(0.67667, 0.63003)--(0.68667, 0.63100)--(0.69667, 0.63204)--(0.70667, 0.63315)--(0.71667, 0.63433)--(0.72667, 0.63558)--(0.73667, 0.63692)--(0.74667, 0.63833)--(0.75667, 0.63982)--(0.76667, 0.64141)--(0.77667, 0.64308)--(0.78667, 0.64484)--(0.79667, 0.64669)--(0.80667, 0.64864)--(0.81667, 0.65069)--(0.82667, 0.65283)--(0.83667, 0.65507)--(0.84667, 0.65741)--(0.85667, 0.65984)--(0.86667, 0.66237)--(0.87667, 0.66500)--(0.88667, 0.66771)--(0.89667, 0.67051)--(0.90667, 0.67339)--(0.91667, 0.67635) node[right] {$(2,4)$};
+
+
+
+
+\draw[magenta,thick,->]
+
+
+(-0.76459, -0.28904)--(-0.77459, -0.29761)--(-0.78459, -0.30579)--(-0.79459, -0.31358)--(-0.80459, -0.32093)--(-0.81459, -0.32783)--(-0.82459, -0.33424)--(-0.83459, -0.34012)--(-0.84459, -0.34546)--(-0.85459, -0.35020)--(-0.86459, -0.35430)--(-0.87459, -0.35773)--(-0.88459, -0.36043)--(-0.89459, -0.36234)--(-0.90459, -0.36340)--(-0.91459, -0.36355)--(-0.92459, -0.36270)--(-0.93459, -0.36078)--(-0.94459, -0.35767)--(-0.95459, -0.35327)--(-0.96459, -0.34744)--(-0.97459, -0.34003)--(-0.98459, -0.33086)--(-0.99459, -0.31970)--(-1.0046, -0.30629)--(-1.0146, -0.29029)--(-1.0246, -0.27126)--(-1.0346, -0.24857)--(-1.0446, -0.22129)--(-1.0546, -0.18778)--(-1.0646, -0.14463)--(-1.0746, -0.080723)--(-1.0800, -0.0066081)--(-1.0746, 0.12528)--(-1.0646, 0.19181)--(-1.0546, 0.23760)--(-1.0446, 0.27382)--(-1.0346, 0.30396)--(-1.0246, 0.32967)--(-1.0146, 0.35192)--(-1.0046, 0.37133)--(-0.99459, 0.38836)--(-0.98459, 0.40333)--(-0.97459, 0.41650)--(-0.96459, 0.42809)--(-0.95459, 0.43827)--(-0.94459, 0.44717)--(-0.93459, 0.45493)--(-0.92459, 0.46164)--(-0.91459, 0.46740)--(-0.90459, 0.47228)--(-0.89459, 0.47636)--(-0.88459, 0.47970)--(-0.87459, 0.48236)--(-0.86459, 0.48438)--(-0.85459, 0.48580)--(-0.84459, 0.48668)--(-0.83459, 0.48705)--(-0.82459, 0.48694)--(-0.81459, 0.48639)--(-0.80459, 0.48542)--(-0.79459, 0.48406)--(-0.78459, 0.48234)--(-0.77459, 0.48028)--(-0.76459, 0.47790)--(-0.75459, 0.47522)--(-0.74459, 0.47227)--(-0.73459, 0.46906)--(-0.72459, 0.46560)--(-0.71459, 0.46192)--(-0.70459, 0.45804)--(-0.69459, 0.45396)--(-0.68459, 0.44970)--(-0.67459, 0.44528)--(-0.66459, 0.44070)--(-0.65459, 0.43599)--(-0.64459, 0.43115)--(-0.63459, 0.42619)--(-0.62459, 0.42114)--(-0.61459, 0.41599)--(-0.60459, 0.41076)--(-0.59459, 0.40547)--(-0.58459, 0.40012)--(-0.57459, 0.39472)--(-0.56459, 0.38928)--(-0.55459, 0.38382)--(-0.54459, 0.37834)--(-0.53459, 0.37286)--(-0.52459, 0.36738)--(-0.51459, 0.36191)--(-0.50459, 0.35647)--(-0.49459, 0.35106)--(-0.48459, 0.34569)--(-0.47459, 0.34038)--(-0.46459, 0.33513)--(-0.45459, 0.32996)--(-0.44459, 0.32487)--(-0.43459, 0.31988)--(-0.42459, 0.31500)--(-0.41459, 0.31023)--(-0.40459, 0.30558)--(-0.39459, 0.30108)--(-0.38459, 0.29673)--(-0.37459, 0.29254)--(-0.36459, 0.28853)--(-0.35459, 0.28470)--(-0.34459, 0.28107)--(-0.33459, 0.27766)--(-0.32459, 0.27447)--(-0.31459, 0.27152)--(-0.30459, 0.26883)--(-0.29459, 0.26640)--(-0.28459, 0.26427)--(-0.27459, 0.26243)--(-0.26459, 0.26092)--(-0.25459, 0.25973)--(-0.24459, 0.25891)--(-0.23459, 0.25845)--(-0.22459, 0.25838)--(-0.21459, 0.25872)--(-0.20459, 0.25950)--(-0.19459, 0.26072)--(-0.18459, 0.26241)--(-0.17459, 0.26458)--(-0.16459, 0.26727)--(-0.15459, 0.27047)--(-0.14459, 0.27422)--(-0.13459, 0.27852)--(-0.12459, 0.28338)--(-0.11459, 0.28880)--(-0.10459, 0.29478)--(-0.094590, 0.30130)--(-0.084590, 0.30834)--(-0.074590, 0.31584)--(-0.064590, 0.32376)--(-0.054590, 0.33201)--(-0.044590, 0.34050)--(-0.034590, 0.34913)--(-0.024590, 0.35779)--(-0.014590, 0.36637)--(-0.0045900, 0.37477)--(0.0054100, 0.38290)--(0.015410, 0.39071)--(0.025410, 0.39815)--(0.035410, 0.40519)--(0.045410, 0.41180)--(0.055410, 0.41800)--(0.065410, 0.42378)--(0.075410, 0.42915)--(0.085410, 0.43413)--(0.095410, 0.43873)--(0.10541, 0.44297)--(0.11541, 0.44685)--(0.12541, 0.45041)--(0.13541, 0.45366)--(0.14541, 0.45661)--(0.15541, 0.45929)--(0.16541, 0.46169)--(0.17541, 0.46385)--(0.18541, 0.46576)--(0.19541, 0.46745)--(0.20541, 0.46893)--(0.21541, 0.47021)--(0.22541, 0.47130)--(0.23541, 0.47221)--(0.24541, 0.47295)--(0.25541, 0.47353)--(0.26541, 0.47397)--(0.27541, 0.47426)--(0.28541, 0.47442)--(0.29541, 0.47445)--(0.30541, 0.47437)--(0.31541, 0.47419)--(0.32541, 0.47390)--(0.33541, 0.47351)--(0.34541, 0.47304)--(0.35541, 0.47249)--(0.36541, 0.47187)--(0.37541, 0.47118)--(0.38541, 0.47043)--(0.39541, 0.46963)--(0.40541, 0.46877)--(0.41541, 0.46788)--(0.42541, 0.46695)--(0.43541, 0.46598)--(0.44541, 0.46499)--(0.45541, 0.46399)--(0.46541, 0.46296)--(0.47541, 0.46193)--(0.48541, 0.46090)--(0.49541, 0.45986)--(0.50541, 0.45884)--(0.51541, 0.45783)--(0.52541, 0.45683)--(0.53541, 0.45586)--(0.54541, 0.45492)--(0.55541, 0.45402)--(0.56541, 0.45315)--(0.57541, 0.45233)--(0.58541, 0.45155)--(0.59541, 0.45084)--(0.60541, 0.45019)--(0.61541, 0.44960)--(0.62541, 0.44909)--(0.63541, 0.44865)--(0.64541, 0.44830)--(0.65541, 0.44804)--(0.66541, 0.44788)--(0.67541, 0.44782)--(0.68541, 0.44786)--(0.69541, 0.44802)--(0.70541, 0.44831)--(0.71541, 0.44871)--(0.72541, 0.44926)--(0.73541, 0.44994)--(0.74541, 0.45077)--(0.75541, 0.45175)--(0.76541, 0.45289)--(0.77541, 0.45419)--(0.78541, 0.45567)--(0.79541, 0.45732)--(0.80541, 0.45916)--(0.81541, 0.46119)--(0.82541, 0.46340)--(0.83541, 0.46582)--(0.84541, 0.46844)--(0.85541, 0.47125)--(0.86541, 0.47428)--(0.87541, 0.47750)--(0.88541, 0.48093)--(0.89541, 0.48454)--(0.90541, 0.48835)--(0.91541, 0.49233)--(0.92541, 0.49647)--(0.93541, 0.50075)--(0.94541, 0.50516)--(0.95541, 0.50966)--(0.96541, 0.51423)--(0.97541, 0.51885)--(0.98541, 0.52348)--(0.99541, 0.52809) node[right] {$(1,2)$};
+\filldraw[magenta] (-0.99556*0.768,-0.094108*4*0.768) circle (1pt);
+
+
+
+\draw[magenta,thick,->]
+(-0.84967, 0.056826)--(-0.83967, 0.061397)--(-0.82967, 0.065211)--(-0.81967, 0.068326)--(-0.80967, 0.070793)--(-0.79967, 0.072660)--(-0.78967, 0.073969)--(-0.77967, 0.074759)--(-0.76967, 0.075066)--(-0.75967, 0.074922)--(-0.74967, 0.074359)--(-0.73967, 0.073403)--(-0.72967, 0.072082)--(-0.71967, 0.070419)--(-0.70967, 0.068437)--(-0.69967, 0.066158)--(-0.68967, 0.063602)--(-0.67967, 0.060789)--(-0.66967, 0.057735)--(-0.65967, 0.054459)--(-0.64967, 0.050977)--(-0.63967, 0.047305)--(-0.62967, 0.043457)--(-0.61967, 0.039449)--(-0.60967, 0.035294)--(-0.59967, 0.031006)--(-0.58967, 0.026599)--(-0.57967, 0.022084)--(-0.56967, 0.017474)--(-0.55967, 0.012782)--(-0.54967, 0.0080202)--(-0.53967, 0.0031995)--(-0.52967, -0.0016682)--(-0.51967, -0.0065713)--(-0.50967, -0.011498)--(-0.49967, -0.016438)--(-0.48967, -0.021379)--(-0.47967, -0.026310)--(-0.46967, -0.031220)--(-0.45967, -0.036097)--(-0.44967, -0.040930)--(-0.43967, -0.045707)--(-0.42967, -0.050416)--(-0.41967, -0.055045)--(-0.40967, -0.059583)--(-0.39967, -0.064016)--(-0.38967, -0.068332)--(-0.37967, -0.072517)--(-0.36967, -0.076558)--(-0.35967, -0.080442)--(-0.34967, -0.084152)--(-0.33967, -0.087675)--(-0.32967, -0.090995)--(-0.31967, -0.094094)--(-0.30967, -0.096957)--(-0.29967, -0.099563)--(-0.28967, -0.10190)--(-0.27967, -0.10393)--(-0.26967, -0.10565)--(-0.25967, -0.10703)--(-0.24967, -0.10805)--(-0.23967, -0.10867)--(-0.22967, -0.10888)--(-0.21967, -0.10864)--(-0.20967, -0.10791)--(-0.19967, -0.10666)--(-0.18967, -0.10485)--(-0.17967, -0.10244)--(-0.16967, -0.099376)--(-0.15967, -0.095605)--(-0.14967, -0.091067)--(-0.13967, -0.085694)--(-0.12967, -0.079409)--(-0.11967, -0.072125)--(-0.10967, -0.063742)--(-0.099670, -0.054147)--(-0.089670, -0.043209)--(-0.079670, -0.030781)--(-0.069670, -0.016702)--(-0.059670, -0.00080202)--(-0.049670, 0.017058)--(-0.039670, 0.036905)--(-0.029670, 0.058462)--(-0.019670, 0.080827)--(-0.0096700, 0.10246)--(0.00033000, 0.12204)--(0.010330, 0.13921)--(0.020330, 0.15423)--(0.030330, 0.16745)--(0.040330, 0.17919)--(0.050330, 0.18969)--(0.060330, 0.19914)--(0.070330, 0.20768)--(0.080330, 0.21542)--(0.090330, 0.22246)--(0.10033, 0.22886)--(0.11033, 0.23469)--(0.12033, 0.24001)--(0.13033, 0.24485)--(0.14033, 0.24926)--(0.15033, 0.25327)--(0.16033, 0.25692)--(0.17033, 0.26022)--(0.18033, 0.26320)--(0.19033, 0.26589)--(0.20033, 0.26830)--(0.21033, 0.27045)--(0.22033, 0.27236)--(0.23033, 0.27405)--(0.24033, 0.27552)--(0.25033, 0.27680)--(0.26033, 0.27789)--(0.27033, 0.27881)--(0.28033, 0.27957)--(0.29033, 0.28017)--(0.30033, 0.28064)--(0.31033, 0.28096)--(0.32033, 0.28117)--(0.33033, 0.28126)--(0.34033, 0.28125)--(0.35033, 0.28113)--(0.36033, 0.28093)--(0.37033, 0.28064)--(0.38033, 0.28028)--(0.39033, 0.27984)--(0.40033, 0.27935)--(0.41033, 0.27880)--(0.42033, 0.27820)--(0.43033, 0.27755)--(0.44033, 0.27688)--(0.45033, 0.27617)--(0.46033, 0.27543)--(0.47033, 0.27468)--(0.48033, 0.27392)--(0.49033, 0.27315)--(0.50033, 0.27238)--(0.51033, 0.27162)--(0.52033, 0.27086)--(0.53033, 0.27013)--(0.54033, 0.26942)--(0.55033, 0.26873)--(0.56033, 0.26809)--(0.57033, 0.26748)--(0.58033, 0.26692)--(0.59033, 0.26642)--(0.60033, 0.26597)--(0.61033, 0.26559)--(0.62033, 0.26529)--(0.63033, 0.26506)--(0.64033, 0.26492)--(0.65033, 0.26487)--(0.66033, 0.26491)--(0.67033, 0.26507)--(0.68033, 0.26534)--(0.69033, 0.26573)--(0.70033, 0.26624)--(0.71033, 0.26690)--(0.72033, 0.26770)--(0.73033, 0.26865)--(0.74033, 0.26976)--(0.75033, 0.27105)--(0.76033, 0.27251)--(0.77033, 0.27416)--(0.78033, 0.27601)--(0.79033, 0.27807)--(0.80033, 0.28035)--(0.81033, 0.28286)--(0.82033, 0.28560)--(0.83033, 0.28860)--(0.84033, 0.29186)--(0.85033, 0.29538)--(0.86033, 0.29918)--(0.87033, 0.30327)--(0.88033, 0.30765)--(0.89033, 0.31233)--(0.90033, 0.31730)--(0.91033, 0.32256)--(0.92033, 0.32810)--(0.93033, 0.33390)--(0.94033, 0.33994)--(0.95033, 0.34618)--(0.96033, 0.35257)--(0.97033, 0.35907)--(0.98033, 0.36561)--(0.99033, 0.37213) node[right] {$(1,1)$};
+\filldraw[magenta] (0.99556*0.151-1,0.094108*4*0.151) circle (1pt);
+
+\draw[magenta,thick,->]
+(-1.2951, 0.26654)--(-1.2911, 0.22654)--(-1.2875, 0.18654)--(-1.2842, 0.14654)--(-1.2815, 0.10654)--(-1.2792, 0.066540)--(-1.2775, 0.026540)--(-1.2765, -0.013460)--(-1.2761, -0.053460)--(-1.2763, -0.093460)--(-1.2771, -0.13346)--(-1.2784, -0.17346)--(-1.2802, -0.21346)--(-1.2823, -0.25346)--(-1.2848, -0.29346)--(-1.2876, -0.33346)--(-1.2906, -0.37346)--(-1.2937, -0.41346)--(-1.2970, -0.45346)--(-1.3003, -0.49346)--(-1.3037, -0.53346)--(-1.3070, -0.57346)--(-1.3104, -0.61346)--(-1.3138, -0.65346)--(-1.3171, -0.69346)--(-1.3204, -0.73346)--(-1.3236, -0.77346)--(-1.3268, -0.81346)--(-1.3299, -0.85346)--(-1.3329, -0.89346)--(-1.3358, -0.93346)--(-1.3387, -0.97346) node[below] {$(-3,0)$};
+
+\filldraw[magenta] (0.99556*0.708-2,0.094108*4*0.708) circle (1pt);
+
+
+\draw[violet,thick,->]
+(-0.078979, -0.029848)--(-0.080363, 0.010152)--(-0.079987, 0.050152)--(-0.077875, 0.090152)--(-0.077875, 0.090156)--(-0.067875, 0.17336)--(-0.057875, 0.22388)--(-0.047875, 0.26271)--(-0.037875, 0.29461)--(-0.027875, 0.32165)--(-0.017875, 0.34495)--(-0.0078750, 0.36524)--(0.0021250, 0.38300)--(0.012125, 0.39862)--(0.022125, 0.41236)--(0.032125, 0.42445)--(0.042125, 0.43507)--(0.052125, 0.44438)--(0.062125, 0.45250)--(0.072125, 0.45954)--(0.082125, 0.46561)--(0.092125, 0.47077)--(0.10213, 0.47511)--(0.11213, 0.47868)--(0.12213, 0.48156)--(0.13213, 0.48378)--(0.14213, 0.48540)--(0.15213, 0.48645)--(0.16213, 0.48698)--(0.17213, 0.48703)--(0.18213, 0.48662)--(0.19213, 0.48578)--(0.20213, 0.48455)--(0.21213, 0.48294)--(0.22213, 0.48099)--(0.23213, 0.47871)--(0.24213, 0.47613)--(0.25213, 0.47327)--(0.26213, 0.47014)--(0.27213, 0.46676)--(0.28213, 0.46316)--(0.29213, 0.45934)--(0.30213, 0.45532)--(0.31213, 0.45112)--(0.32213, 0.44675)--(0.33213, 0.44222)--(0.34213, 0.43755)--(0.35213, 0.43275)--(0.36213, 0.42783)--(0.37213, 0.42281)--(0.38213, 0.41769)--(0.39213, 0.41249)--(0.40213, 0.40722)--(0.41213, 0.40188)--(0.42213, 0.39650)--(0.43213, 0.39107)--(0.44213, 0.38562)--(0.45213, 0.38014)--(0.46213, 0.37466)--(0.47213, 0.36918)--(0.48213, 0.36370)--(0.49213, 0.35825)--(0.50213, 0.35283)--(0.51213, 0.34745)--(0.52213, 0.34212)--(0.53213, 0.33685)--(0.54213, 0.33165)--(0.55213, 0.32654)--(0.56213, 0.32151)--(0.57213, 0.31659)--(0.58213, 0.31178)--(0.59213, 0.30709)--(0.60213, 0.30255)--(0.61213, 0.29814)--(0.62213, 0.29390)--(0.63213, 0.28983)--(0.64213, 0.28593)--(0.65213, 0.28224)--(0.66213, 0.27875)--(0.67213, 0.27549)--(0.68213, 0.27246)--(0.69213, 0.26968)--(0.70213, 0.26717)--(0.71213, 0.26494)--(0.72213, 0.26300)--(0.73213, 0.26138)--(0.74213, 0.26008)--(0.75213, 0.25914)--(0.76213, 0.25856)--(0.77213, 0.25836)--(0.78213, 0.25857)--(0.79213, 0.25919)--(0.80213, 0.26026)--(0.81213, 0.26180)--(0.82213, 0.26381)--(0.83213, 0.26633)--(0.84213, 0.26936)--(0.85213, 0.27293)--(0.86213, 0.27705)--(0.87213, 0.28172)--(0.88213, 0.28696)--(0.89213, 0.29276)--(0.90213, 0.29910)--(0.91213, 0.30597)--(0.92213, 0.31333)--(0.93213, 0.32112)--(0.94213, 0.32927)--(0.95213, 0.33769)--(0.96213, 0.34629)--(0.97213, 0.35495)--(0.98213, 0.36357)--(0.99213, 0.37203) node[below] {$\qquad\;\;(0,1)$};
+\filldraw[violet] (-0.99556*0.078940/0.99556,-0.094108*4*0.078940/0.99556) circle (1pt);
+\foreach \x in {-2,-1,0}
+\draw[ultra thick,red,xshift=\x cm] (-0.05,-0.05)--(0.05,0.05);
+\foreach \x in {-2,-1,0}
+\draw[ultra thick,red,xshift=\x cm] (0.05,-0.05)--(-0.05,0.05);
+
+\end{tikzpicture}
+\end{tiny}
+\caption{This figure depicts in \textcolor{orange}{orange} the set $\calC_{(-5/6,0),\vartheta}$ for $\vartheta=\arg(-1/\tau)=1.6650$, and $(A,B)=(1,2)$. The \textcolor{green}{green} lines are parallel to the lines $i/\tau$. The \textcolor{magenta}{magenta} contours represent half of the additional contours that appear in the first step of the algorithm where we ignore any zero contributions. Then the \textcolor{violet}{violet} contour represents half of the contour that appears in the second step of the algorithm. The additional contours are all crossing the real axis, hence they lead to a non-zero state integral.
+
+}\label{fig:thimb.41.III.t1}
+\end{figure}
+This picture gives rise to many intersections between the thimble and the green lines $\BZ+\tau^{-1}\BR$. Therefore, it could require iterations of the algorithm. This is indeed true and will involve two additional integrals at the first iteration and an additional integral at the second iteration.
+
+\medskip
+
+We can decompose the thimble in terms on state integrals contours. We have contributions of $-\calI_{0,0}$ from the intersection of the orange contour with the interval $(-1,0)$, which has $(n,m,\ell)=(0,0,0)$, $\calI_{0,-1}$ from the intersection of the orange contour with the interval $(-2,-1)$, which has $(n,m,\ell)=(0,0,-1)$, and $-q^4\calI_{2,-2}$ from the intersection of the orange contour with the interval $(-3,-2)$, which has $(n,m,\ell)=(4,2,-2)$.
+
+\medskip
+
+At the first step of the algorithm we obtain two additional cycles coming from the magenta curves as seen in Figure~\ref{fig:thimb.41.III.t1}. We have a contribution of $4q^2\calI_{1,-1}$ from the intersection of the two magenta contours in $(-1,0)$, which have $(n,m,\ell)=(2,1,-1)$. There is a final magenta curve depicted, which has additional intersections with the line $\tau^{-1}\BR$.
+
+\medskip
+
+At the second step of the algorithm there is an additional contribution coming from the violet contour in Figure~\ref{fig:thimb.41.III.t1}. This appears with the constant attached to the magenta contour it emanates from multiplied by its own constant. We have a contribution of $-4q\calI_{0,0}$ from the intersection of the violet contour with the interval $(-1,0)$, which has $(n,m,\ell)=(1,0,0)$. The additional state integrals added are depicted in Figure~\ref{fig:thimb.41.III.t2}.
+\begin{figure}[ht]
+\begin{tikzpicture}[scale=2]
+\draw[<->,thick,xshift=-2cm] (-2.5,0) -- (1,0);
+\draw[<->,thick,xshift=-2cm] (0,-1) -- (0,1);
+\foreach \x in {-2,-3,-4,-5}
+\draw[green,xshift=-2cm] (-2.5,-0.094108*4*2.5/0.99556-0.094108*4*\x/0.99556)--(\x+0.99556/0.094108/4,0.094108*4/0.094108/4);
+\foreach \x in {-1,0}
+\draw[green,xshift=-2cm] (-2.5,-0.094108*4*2.5/0.99556-0.094108*4*\x/0.99556)--(1,0.094108*4/0.99556-\x*0.094108*4);
+\foreach \x in {1,2,3}
+\draw[green,xshift=-2cm] (\x-0.99556/0.094108/4,-1)--(1,0.094108*4/0.99556-\x*0.094108*4/0.99556);
+\draw[orange,thick,<->,opacity=0.5,xshift=-2cm]
+(-0.65333, -0.99196)--(-0.66333, -0.91030)--(-0.67333, -0.83361)--(-0.68333, -0.76129)--(-0.69333, -0.69287)--(-0.70333, -0.62794)--(-0.71333, -0.56616)--(-0.72333, -0.50723)--(-0.73333, -0.45093)--(-0.74333, -0.39704)--(-0.75333, -0.34539)--(-0.76333, -0.29583)--(-0.77333, -0.24826)--(-0.78333, -0.20256)--(-0.79333, -0.15867)--(-0.80333, -0.11651)--(-0.81333, -0.076031)--(-0.82333, -0.037204)--(-0.83333, 0)--(-0.84333, 0.035594)--(-0.85333, 0.069582)--(-0.86333, 0.10196)--(-0.87333, 0.13272)--(-0.88333, 0.16185)--(-0.89333, 0.18932)--(-0.90333, 0.21511)--(-0.91333, 0.23921)--(-0.92333, 0.26159)--(-0.93333, 0.28224)--(-0.94333, 0.30117)--(-0.95333, 0.31837)--(-0.96333, 0.33388)--(-0.97333, 0.34772)--(-0.98333, 0.35994)--(-0.99333, 0.37061)--(-1.0033, 0.37978)--(-1.0133, 0.38752)--(-1.0233, 0.39393)--(-1.0333, 0.39906)--(-1.0433, 0.40300)--(-1.0533, 0.40582)--(-1.0633, 0.40759)--(-1.0733, 0.40838)--(-1.0833, 0.40825)--(-1.0933, 0.40726)--(-1.1033, 0.40546)--(-1.1133, 0.40290)--(-1.1233, 0.39964)--(-1.1333, 0.39571)--(-1.1433, 0.39116)--(-1.1533, 0.38601)--(-1.1633, 0.38032)--(-1.1733, 0.37410)--(-1.1833, 0.36740)--(-1.1933, 0.36024)--(-1.2033, 0.35264)--(-1.2133, 0.34463)--(-1.2233, 0.33624)--(-1.2333, 0.32748)--(-1.2433, 0.31838)--(-1.2533, 0.30896)--(-1.2633, 0.29924)--(-1.2733, 0.28923)--(-1.2833, 0.27895)--(-1.2933, 0.26843)--(-1.3033, 0.25766)--(-1.3133, 0.24667)--(-1.3233, 0.23548)--(-1.3333, 0.22410)--(-1.3433, 0.21253)--(-1.3533, 0.20080)--(-1.3633, 0.18891)--(-1.3733, 0.17689)--(-1.3833, 0.16473)--(-1.3933, 0.15245)--(-1.4033, 0.14007)--(-1.4133, 0.12759)--(-1.4233, 0.11502)--(-1.4333, 0.10238)--(-1.4433, 0.089680)--(-1.4533, 0.076922)--(-1.4633, 0.064120)--(-1.4733, 0.051284)--(-1.4833, 0.038425)--(-1.4933, 0.025553)--(-1.5033, 0.012677)--(-1.5233, -0.013047)--(-1.5333, -0.025874)--(-1.5433, -0.038664)--(-1.5533, -0.051408)--(-1.5633, -0.064095)--(-1.5733, -0.076715)--(-1.5833, -0.089257)--(-1.5933, -0.10171)--(-1.6033, -0.11406)--(-1.6133, -0.12631)--(-1.6233, -0.13843)--(-1.6333, -0.15041)--(-1.6433, -0.16225)--(-1.6533, -0.17394)--(-1.6633, -0.18545)--(-1.6733, -0.19678)--(-1.6833, -0.20790)--(-1.6933, -0.21882)--(-1.7033, -0.22951)--(-1.7133, -0.23995)--(-1.7233, -0.25014)--(-1.7333, -0.26005)--(-1.7433, -0.26966)--(-1.7533, -0.27897)--(-1.7633, -0.28794)--(-1.7733, -0.29655)--(-1.7833, -0.30479)--(-1.7933, -0.31262)--(-1.8033, -0.32003)--(-1.8133, -0.32699)--(-1.8233, -0.33346)--(-1.8333, -0.33941)--(-1.8433, -0.34482)--(-1.8533, -0.34964)--(-1.8633, -0.35382)--(-1.8733, -0.35734)--(-1.8833, -0.36013)--(-1.8933, -0.36214)--(-1.9033, -0.36332)--(-1.9133, -0.36358)--(-1.9233, -0.36287)--(-1.9333, -0.36108)--(-1.9433, -0.35813)--(-1.9533, -0.35390)--(-1.9633, -0.34826)--(-1.9733, -0.34106)--(-1.9833, -0.33212)--(-1.9933, -0.32122)--(-2.0033, -0.30811)--(-2.0133, -0.29246)--(-2.0233, -0.27384)--(-2.0333, -0.25165)--(-2.0433, -0.22501)--(-2.0533, -0.19242)--(-2.0633, -0.15080)--(-2.0733, -0.090989)--(-2.0793, -0.023193)--(-2.0793, 0.066491)--(-2.0733, 0.13588)--(-2.0633, 0.19831)--(-2.0533, 0.24258)--(-2.0433, 0.27790)--(-2.0333, 0.30741)--(-2.0233, 0.33264)--(-2.0133, 0.35450)--(-2.0033, 0.37359)--(-1.9933, 0.39034)--(-1.9833, 0.40507)--(-1.9733, 0.41804)--(-1.9633, 0.42944)--(-1.9533, 0.43945)--(-1.9433, 0.44821)--(-1.9333, 0.45583)--(-1.9233, 0.46241)--(-1.9133, 0.46806)--(-1.9033, 0.47284)--(-1.8933, 0.47682)--(-1.8833, 0.48007)--(-1.8733, 0.48264)--(-1.8633, 0.48459)--(-1.8533, 0.48594)--(-1.8433, 0.48676)--(-1.8333, 0.48706)--(-1.8233, 0.48690)--(-1.8133, 0.48629)--(-1.8033, 0.48527)--(-1.7933, 0.48386)--(-1.7833, 0.48210)--(-1.7733, 0.47999)--(-1.7633, 0.47758)--(-1.7533, 0.47486)--(-1.7433, 0.47188)--(-1.7333, 0.46863)--(-1.7233, 0.46515)--(-1.7133, 0.46145)--(-1.7033, 0.45754)--(-1.6933, 0.45343)--(-1.6833, 0.44915)--(-1.6733, 0.44471)--(-1.6633, 0.44012)--(-1.6533, 0.43539)--(-1.6433, 0.43053)--(-1.6333, 0.42556)--(-1.6233, 0.42050)--(-1.6133, 0.41534)--(-1.6033, 0.41010)--(-1.5933, 0.40480)--(-1.5833, 0.39944)--(-1.5733, 0.39404)--(-1.5633, 0.38860)--(-1.5533, 0.38313)--(-1.5433, 0.37765)--(-1.5333, 0.37217)--(-1.5233, 0.36669)--(-1.5133, 0.36122)--(-1.5033, 0.35578)--(-1.4933, 0.35038)--(-1.4833, 0.34502)--(-1.4733, 0.33972)--(-1.4633, 0.33448)--(-1.4533, 0.32932)--(-1.4433, 0.32424)--(-1.4333, 0.31926)--(-1.4233, 0.31439)--(-1.4133, 0.30964)--(-1.4033, 0.30501)--(-1.3933, 0.30053)--(-1.3833, 0.29619)--(-1.3733, 0.29203)--(-1.3633, 0.28804)--(-1.3533, 0.28423)--(-1.3433, 0.28063)--(-1.3333, 0.27724)--(-1.3233, 0.27408)--(-1.3133, 0.27117)--(-1.3033, 0.26851)--(-1.2933, 0.26612)--(-1.2833, 0.26402)--(-1.2733, 0.26222)--(-1.2633, 0.26075)--(-1.2533, 0.25961)--(-1.2433, 0.25883)--(-1.2333, 0.25842)--(-1.2233, 0.25840)--(-1.2133, 0.25880)--(-1.2033, 0.25962)--(-1.1933, 0.26090)--(-1.1833, 0.26265)--(-1.1733, 0.26489)--(-1.1633, 0.26764)--(-1.1533, 0.27092)--(-1.1433, 0.27473)--(-1.1333, 0.27910)--(-1.1233, 0.28403)--(-1.1133, 0.28952)--(-1.1033, 0.29557)--(-1.0933, 0.30216)--(-1.0833, 0.30926)--(-1.0733, 0.31682)--(-1.0633, 0.32478)--(-1.0533, 0.33307)--(-1.0433, 0.34158)--(-1.0333, 0.35022)--(-1.0233, 0.35887)--(-1.0133, 0.36744)--(-1.0033, 0.37581)--(-0.99333, 0.38390)--(-0.98333, 0.39167)--(-0.97333, 0.39906)--(-0.96333, 0.40604)--(-0.95333, 0.41261)--(-0.94333, 0.41875)--(-0.93333, 0.42448)--(-0.92333, 0.42980)--(-0.91333, 0.43473)--(-0.90333, 0.43928)--(-0.89333, 0.44347)--(-0.88333, 0.44732)--(-0.87333, 0.45084)--(-0.86333, 0.45405)--(-0.85333, 0.45697)--(-0.84333, 0.45960)--(-0.83333, 0.46198)--(-0.82333, 0.46410)--(-0.81333, 0.46599)--(-0.80333, 0.46765)--(-0.79333, 0.46910)--(-0.78333, 0.47036)--(-0.77333, 0.47142)--(-0.76333, 0.47231)--(-0.75333, 0.47303)--(-0.74333, 0.47360)--(-0.73333, 0.47401)--(-0.72333, 0.47429)--(-0.71333, 0.47443)--(-0.70333, 0.47445)--(-0.69333, 0.47436)--(-0.68333, 0.47415)--(-0.67333, 0.47385)--(-0.66333, 0.47346)--(-0.65333, 0.47298)--(-0.64333, 0.47242)--(-0.63333, 0.47179)--(-0.62333, 0.47109)--(-0.61333, 0.47033)--(-0.60333, 0.46952)--(-0.59333, 0.46866)--(-0.58333, 0.46776)--(-0.57333, 0.46683)--(-0.56333, 0.46586)--(-0.55333, 0.46487)--(-0.54333, 0.46386)--(-0.53333, 0.46283)--(-0.52333, 0.46180)--(-0.51333, 0.46077)--(-0.50333, 0.45974)--(-0.49333, 0.45871)--(-0.48333, 0.45770)--(-0.47333, 0.45671)--(-0.46333, 0.45574)--(-0.45333, 0.45481)--(-0.44333, 0.45390)--(-0.43333, 0.45304)--(-0.42333, 0.45223)--(-0.41333, 0.45146)--(-0.40333, 0.45075)--(-0.39333, 0.45011)--(-0.38333, 0.44953)--(-0.37333, 0.44903)--(-0.36333, 0.44860)--(-0.35333, 0.44826)--(-0.34333, 0.44801)--(-0.33333, 0.44786)--(-0.32333, 0.44782)--(-0.31333, 0.44788)--(-0.30333, 0.44805)--(-0.29333, 0.44835)--(-0.28333, 0.44878)--(-0.27333, 0.44933)--(-0.26333, 0.45003)--(-0.25333, 0.45088)--(-0.24333, 0.45188)--(-0.23333, 0.45304)--(-0.22333, 0.45437)--(-0.21333, 0.45587)--(-0.20333, 0.45754)--(-0.19333, 0.45940)--(-0.18333, 0.46145)--(-0.17333, 0.46370)--(-0.16333, 0.46614)--(-0.15333, 0.46878)--(-0.14333, 0.47162)--(-0.13333, 0.47467)--(-0.12333, 0.47792)--(-0.11333, 0.48137)--(-0.10333, 0.48501)--(-0.093333, 0.48884)--(-0.083333, 0.49284)--(-0.073333, 0.49700)--(-0.063333, 0.50130)--(-0.053333, 0.50572)--(-0.043333, 0.51023)--(-0.033333, 0.51481)--(-0.023333, 0.51943)--(-0.013333, 0.52406)--(-0.0033333, 0.52867)--(0.0066667, 0.53323)--(0.016667, 0.53773)--(0.026667, 0.54213)--(0.036667, 0.54641)--(0.046667, 0.55057)--(0.056667, 0.55460)--(0.066667, 0.55847)--(0.076667, 0.56219)--(0.086667, 0.56575)--(0.096667, 0.56916)--(0.10667, 0.57241)--(0.11667, 0.57550)--(0.12667, 0.57843)--(0.13667, 0.58122)--(0.14667, 0.58385)--(0.15667, 0.58635)--(0.16667, 0.58871)--(0.17667, 0.59093)--(0.18667, 0.59303)--(0.19667, 0.59500)--(0.20667, 0.59686)--(0.21667, 0.59860)--(0.22667, 0.60024)--(0.23667, 0.60177)--(0.24667, 0.60321)--(0.25667, 0.60455)--(0.26667, 0.60580)--(0.27667, 0.60697)--(0.28667, 0.60807)--(0.29667, 0.60908)--(0.30667, 0.61003)--(0.31667, 0.61092)--(0.32667, 0.61174)--(0.33667, 0.61250)--(0.34667, 0.61321)--(0.35667, 0.61387)--(0.36667, 0.61448)--(0.37667, 0.61506)--(0.38667, 0.61559)--(0.39667, 0.61609)--(0.40667, 0.61656)--(0.41667, 0.61700)--(0.42667, 0.61742)--(0.43667, 0.61782)--(0.44667, 0.61820)--(0.45667, 0.61857)--(0.46667, 0.61893)--(0.47667, 0.61928)--(0.48667, 0.61963)--(0.49667, 0.61998)--(0.50667, 0.62033)--(0.51667, 0.62069)--(0.52667, 0.62106)--(0.53667, 0.62144)--(0.54667, 0.62184)--(0.55667, 0.62226)--(0.56667, 0.62271)--(0.57667, 0.62317)--(0.58667, 0.62367)--(0.59667, 0.62420)--(0.60667, 0.62477)--(0.61667, 0.62538)--(0.62667, 0.62603)--(0.63667, 0.62672)--(0.64667, 0.62747)--(0.65667, 0.62827)--(0.66667, 0.62912)--(0.67667, 0.63003)--(0.68667, 0.63100)--(0.69667, 0.63204)--(0.70667, 0.63315)--(0.71667, 0.63433)--(0.72667, 0.63558)--(0.73667, 0.63692)--(0.74667, 0.63833)--(0.75667, 0.63982)--(0.76667, 0.64141)--(0.77667, 0.64308)--(0.78667, 0.64484)--(0.79667, 0.64669)--(0.80667, 0.64864)--(0.81667, 0.65069)--(0.82667, 0.65283)--(0.83667, 0.65507)--(0.84667, 0.65741)--(0.85667, 0.65984)--(0.86667, 0.66237)--(0.87667, 0.66500)--(0.88667, 0.66771)--(0.89667, 0.67051)--(0.90667, 0.67339)--(0.91667, 0.67635);
+\foreach \x in {-2,-1,0}
+\draw[ultra thick,red,xshift=\x cm-2cm] (-0.05,-0.05)--(0.05,0.05);
+\foreach \x in {-2,-1,0}
+\draw[ultra thick,red,xshift=\x cm-2cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[magenta,ultra thick,xshift=-2cm]
+(-0.99556*0.079-1,-0.094108*4*0.079)--(-1.0800, -0.0066081)--(-1.0746, 0.12528)--(-1.0646, 0.19181)--(-1.0546, 0.23760)--(-1.0446, 0.27382)--(-1.0346, 0.30396)--(-1.0246, 0.32967)--(-1.0146, 0.35192)--(-1.0046, 0.37133)--(0.99556*1.001-2,0.094108*4*1.001);
+\filldraw[magenta,xshift=-2cm] (-0.99556*0.079-1,-0.094108*4*0.079) circle (1pt);
+\draw[magenta,thick,->,xshift=-2cm] (-0.99556*0.079-1,-0.094108*4*0.079)--(-0.99556*0.079-1-1.0149*1.4,-0.094108*4*0.079-0.18546*1.4);
+\filldraw[magenta,xshift=-2cm] (0.99556*1.001-2,0.094108*4*1.001) circle (1pt);
+\draw[magenta,thick,->,xshift=-2cm] (0.99556*1.001-2,0.094108*4*1.001)--(0.99556*1.001-2+1.0149*1.9,0.094108*4*1.001+0.18546*1.9);
+\draw[<->,thick,xshift=2cm] (-2.5,0) -- (1,0);
+\draw[<->,thick,xshift=2cm] (0,-1) -- (0,1);
+\foreach \x in {-2,-3,-4,-5}
+\draw[green,xshift=2cm] (-2.5,-0.094108*4*2.5/0.99556-0.094108*4*\x/0.99556)--(\x+0.99556/0.094108/4,0.094108*4/0.094108/4);
+\foreach \x in {-1,0}
+\draw[green,xshift=2cm] (-2.5,-0.094108*4*2.5/0.99556-0.094108*4*\x/0.99556)--(1,0.094108*4/0.99556-\x*0.094108*4);
+\foreach \x in {1,2,3}
+\draw[green,xshift=2cm] (\x-0.99556/0.094108/4,-1)--(1,0.094108*4/0.99556-\x*0.094108*4/0.99556);
+\draw[orange,thick,<->,opacity=0.5,xshift=2cm]
+(-0.65333, -0.99196)--(-0.66333, -0.91030)--(-0.67333, -0.83361)--(-0.68333, -0.76129)--(-0.69333, -0.69287)--(-0.70333, -0.62794)--(-0.71333, -0.56616)--(-0.72333, -0.50723)--(-0.73333, -0.45093)--(-0.74333, -0.39704)--(-0.75333, -0.34539)--(-0.76333, -0.29583)--(-0.77333, -0.24826)--(-0.78333, -0.20256)--(-0.79333, -0.15867)--(-0.80333, -0.11651)--(-0.81333, -0.076031)--(-0.82333, -0.037204)--(-0.83333, 0)--(-0.84333, 0.035594)--(-0.85333, 0.069582)--(-0.86333, 0.10196)--(-0.87333, 0.13272)--(-0.88333, 0.16185)--(-0.89333, 0.18932)--(-0.90333, 0.21511)--(-0.91333, 0.23921)--(-0.92333, 0.26159)--(-0.93333, 0.28224)--(-0.94333, 0.30117)--(-0.95333, 0.31837)--(-0.96333, 0.33388)--(-0.97333, 0.34772)--(-0.98333, 0.35994)--(-0.99333, 0.37061)--(-1.0033, 0.37978)--(-1.0133, 0.38752)--(-1.0233, 0.39393)--(-1.0333, 0.39906)--(-1.0433, 0.40300)--(-1.0533, 0.40582)--(-1.0633, 0.40759)--(-1.0733, 0.40838)--(-1.0833, 0.40825)--(-1.0933, 0.40726)--(-1.1033, 0.40546)--(-1.1133, 0.40290)--(-1.1233, 0.39964)--(-1.1333, 0.39571)--(-1.1433, 0.39116)--(-1.1533, 0.38601)--(-1.1633, 0.38032)--(-1.1733, 0.37410)--(-1.1833, 0.36740)--(-1.1933, 0.36024)--(-1.2033, 0.35264)--(-1.2133, 0.34463)--(-1.2233, 0.33624)--(-1.2333, 0.32748)--(-1.2433, 0.31838)--(-1.2533, 0.30896)--(-1.2633, 0.29924)--(-1.2733, 0.28923)--(-1.2833, 0.27895)--(-1.2933, 0.26843)--(-1.3033, 0.25766)--(-1.3133, 0.24667)--(-1.3233, 0.23548)--(-1.3333, 0.22410)--(-1.3433, 0.21253)--(-1.3533, 0.20080)--(-1.3633, 0.18891)--(-1.3733, 0.17689)--(-1.3833, 0.16473)--(-1.3933, 0.15245)--(-1.4033, 0.14007)--(-1.4133, 0.12759)--(-1.4233, 0.11502)--(-1.4333, 0.10238)--(-1.4433, 0.089680)--(-1.4533, 0.076922)--(-1.4633, 0.064120)--(-1.4733, 0.051284)--(-1.4833, 0.038425)--(-1.4933, 0.025553)--(-1.5033, 0.012677)--(-1.5233, -0.013047)--(-1.5333, -0.025874)--(-1.5433, -0.038664)--(-1.5533, -0.051408)--(-1.5633, -0.064095)--(-1.5733, -0.076715)--(-1.5833, -0.089257)--(-1.5933, -0.10171)--(-1.6033, -0.11406)--(-1.6133, -0.12631)--(-1.6233, -0.13843)--(-1.6333, -0.15041)--(-1.6433, -0.16225)--(-1.6533, -0.17394)--(-1.6633, -0.18545)--(-1.6733, -0.19678)--(-1.6833, -0.20790)--(-1.6933, -0.21882)--(-1.7033, -0.22951)--(-1.7133, -0.23995)--(-1.7233, -0.25014)--(-1.7333, -0.26005)--(-1.7433, -0.26966)--(-1.7533, -0.27897)--(-1.7633, -0.28794)--(-1.7733, -0.29655)--(-1.7833, -0.30479)--(-1.7933, -0.31262)--(-1.8033, -0.32003)--(-1.8133, -0.32699)--(-1.8233, -0.33346)--(-1.8333, -0.33941)--(-1.8433, -0.34482)--(-1.8533, -0.34964)--(-1.8633, -0.35382)--(-1.8733, -0.35734)--(-1.8833, -0.36013)--(-1.8933, -0.36214)--(-1.9033, -0.36332)--(-1.9133, -0.36358)--(-1.9233, -0.36287)--(-1.9333, -0.36108)--(-1.9433, -0.35813)--(-1.9533, -0.35390)--(-1.9633, -0.34826)--(-1.9733, -0.34106)--(-1.9833, -0.33212)--(-1.9933, -0.32122)--(-2.0033, -0.30811)--(-2.0133, -0.29246)--(-2.0233, -0.27384)--(-2.0333, -0.25165)--(-2.0433, -0.22501)--(-2.0533, -0.19242)--(-2.0633, -0.15080)--(-2.0733, -0.090989)--(-2.0793, -0.023193)--(-2.0793, 0.066491)--(-2.0733, 0.13588)--(-2.0633, 0.19831)--(-2.0533, 0.24258)--(-2.0433, 0.27790)--(-2.0333, 0.30741)--(-2.0233, 0.33264)--(-2.0133, 0.35450)--(-2.0033, 0.37359)--(-1.9933, 0.39034)--(-1.9833, 0.40507)--(-1.9733, 0.41804)--(-1.9633, 0.42944)--(-1.9533, 0.43945)--(-1.9433, 0.44821)--(-1.9333, 0.45583)--(-1.9233, 0.46241)--(-1.9133, 0.46806)--(-1.9033, 0.47284)--(-1.8933, 0.47682)--(-1.8833, 0.48007)--(-1.8733, 0.48264)--(-1.8633, 0.48459)--(-1.8533, 0.48594)--(-1.8433, 0.48676)--(-1.8333, 0.48706)--(-1.8233, 0.48690)--(-1.8133, 0.48629)--(-1.8033, 0.48527)--(-1.7933, 0.48386)--(-1.7833, 0.48210)--(-1.7733, 0.47999)--(-1.7633, 0.47758)--(-1.7533, 0.47486)--(-1.7433, 0.47188)--(-1.7333, 0.46863)--(-1.7233, 0.46515)--(-1.7133, 0.46145)--(-1.7033, 0.45754)--(-1.6933, 0.45343)--(-1.6833, 0.44915)--(-1.6733, 0.44471)--(-1.6633, 0.44012)--(-1.6533, 0.43539)--(-1.6433, 0.43053)--(-1.6333, 0.42556)--(-1.6233, 0.42050)--(-1.6133, 0.41534)--(-1.6033, 0.41010)--(-1.5933, 0.40480)--(-1.5833, 0.39944)--(-1.5733, 0.39404)--(-1.5633, 0.38860)--(-1.5533, 0.38313)--(-1.5433, 0.37765)--(-1.5333, 0.37217)--(-1.5233, 0.36669)--(-1.5133, 0.36122)--(-1.5033, 0.35578)--(-1.4933, 0.35038)--(-1.4833, 0.34502)--(-1.4733, 0.33972)--(-1.4633, 0.33448)--(-1.4533, 0.32932)--(-1.4433, 0.32424)--(-1.4333, 0.31926)--(-1.4233, 0.31439)--(-1.4133, 0.30964)--(-1.4033, 0.30501)--(-1.3933, 0.30053)--(-1.3833, 0.29619)--(-1.3733, 0.29203)--(-1.3633, 0.28804)--(-1.3533, 0.28423)--(-1.3433, 0.28063)--(-1.3333, 0.27724)--(-1.3233, 0.27408)--(-1.3133, 0.27117)--(-1.3033, 0.26851)--(-1.2933, 0.26612)--(-1.2833, 0.26402)--(-1.2733, 0.26222)--(-1.2633, 0.26075)--(-1.2533, 0.25961)--(-1.2433, 0.25883)--(-1.2333, 0.25842)--(-1.2233, 0.25840)--(-1.2133, 0.25880)--(-1.2033, 0.25962)--(-1.1933, 0.26090)--(-1.1833, 0.26265)--(-1.1733, 0.26489)--(-1.1633, 0.26764)--(-1.1533, 0.27092)--(-1.1433, 0.27473)--(-1.1333, 0.27910)--(-1.1233, 0.28403)--(-1.1133, 0.28952)--(-1.1033, 0.29557)--(-1.0933, 0.30216)--(-1.0833, 0.30926)--(-1.0733, 0.31682)--(-1.0633, 0.32478)--(-1.0533, 0.33307)--(-1.0433, 0.34158)--(-1.0333, 0.35022)--(-1.0233, 0.35887)--(-1.0133, 0.36744)--(-1.0033, 0.37581)--(-0.99333, 0.38390)--(-0.98333, 0.39167)--(-0.97333, 0.39906)--(-0.96333, 0.40604)--(-0.95333, 0.41261)--(-0.94333, 0.41875)--(-0.93333, 0.42448)--(-0.92333, 0.42980)--(-0.91333, 0.43473)--(-0.90333, 0.43928)--(-0.89333, 0.44347)--(-0.88333, 0.44732)--(-0.87333, 0.45084)--(-0.86333, 0.45405)--(-0.85333, 0.45697)--(-0.84333, 0.45960)--(-0.83333, 0.46198)--(-0.82333, 0.46410)--(-0.81333, 0.46599)--(-0.80333, 0.46765)--(-0.79333, 0.46910)--(-0.78333, 0.47036)--(-0.77333, 0.47142)--(-0.76333, 0.47231)--(-0.75333, 0.47303)--(-0.74333, 0.47360)--(-0.73333, 0.47401)--(-0.72333, 0.47429)--(-0.71333, 0.47443)--(-0.70333, 0.47445)--(-0.69333, 0.47436)--(-0.68333, 0.47415)--(-0.67333, 0.47385)--(-0.66333, 0.47346)--(-0.65333, 0.47298)--(-0.64333, 0.47242)--(-0.63333, 0.47179)--(-0.62333, 0.47109)--(-0.61333, 0.47033)--(-0.60333, 0.46952)--(-0.59333, 0.46866)--(-0.58333, 0.46776)--(-0.57333, 0.46683)--(-0.56333, 0.46586)--(-0.55333, 0.46487)--(-0.54333, 0.46386)--(-0.53333, 0.46283)--(-0.52333, 0.46180)--(-0.51333, 0.46077)--(-0.50333, 0.45974)--(-0.49333, 0.45871)--(-0.48333, 0.45770)--(-0.47333, 0.45671)--(-0.46333, 0.45574)--(-0.45333, 0.45481)--(-0.44333, 0.45390)--(-0.43333, 0.45304)--(-0.42333, 0.45223)--(-0.41333, 0.45146)--(-0.40333, 0.45075)--(-0.39333, 0.45011)--(-0.38333, 0.44953)--(-0.37333, 0.44903)--(-0.36333, 0.44860)--(-0.35333, 0.44826)--(-0.34333, 0.44801)--(-0.33333, 0.44786)--(-0.32333, 0.44782)--(-0.31333, 0.44788)--(-0.30333, 0.44805)--(-0.29333, 0.44835)--(-0.28333, 0.44878)--(-0.27333, 0.44933)--(-0.26333, 0.45003)--(-0.25333, 0.45088)--(-0.24333, 0.45188)--(-0.23333, 0.45304)--(-0.22333, 0.45437)--(-0.21333, 0.45587)--(-0.20333, 0.45754)--(-0.19333, 0.45940)--(-0.18333, 0.46145)--(-0.17333, 0.46370)--(-0.16333, 0.46614)--(-0.15333, 0.46878)--(-0.14333, 0.47162)--(-0.13333, 0.47467)--(-0.12333, 0.47792)--(-0.11333, 0.48137)--(-0.10333, 0.48501)--(-0.093333, 0.48884)--(-0.083333, 0.49284)--(-0.073333, 0.49700)--(-0.063333, 0.50130)--(-0.053333, 0.50572)--(-0.043333, 0.51023)--(-0.033333, 0.51481)--(-0.023333, 0.51943)--(-0.013333, 0.52406)--(-0.0033333, 0.52867)--(0.0066667, 0.53323)--(0.016667, 0.53773)--(0.026667, 0.54213)--(0.036667, 0.54641)--(0.046667, 0.55057)--(0.056667, 0.55460)--(0.066667, 0.55847)--(0.076667, 0.56219)--(0.086667, 0.56575)--(0.096667, 0.56916)--(0.10667, 0.57241)--(0.11667, 0.57550)--(0.12667, 0.57843)--(0.13667, 0.58122)--(0.14667, 0.58385)--(0.15667, 0.58635)--(0.16667, 0.58871)--(0.17667, 0.59093)--(0.18667, 0.59303)--(0.19667, 0.59500)--(0.20667, 0.59686)--(0.21667, 0.59860)--(0.22667, 0.60024)--(0.23667, 0.60177)--(0.24667, 0.60321)--(0.25667, 0.60455)--(0.26667, 0.60580)--(0.27667, 0.60697)--(0.28667, 0.60807)--(0.29667, 0.60908)--(0.30667, 0.61003)--(0.31667, 0.61092)--(0.32667, 0.61174)--(0.33667, 0.61250)--(0.34667, 0.61321)--(0.35667, 0.61387)--(0.36667, 0.61448)--(0.37667, 0.61506)--(0.38667, 0.61559)--(0.39667, 0.61609)--(0.40667, 0.61656)--(0.41667, 0.61700)--(0.42667, 0.61742)--(0.43667, 0.61782)--(0.44667, 0.61820)--(0.45667, 0.61857)--(0.46667, 0.61893)--(0.47667, 0.61928)--(0.48667, 0.61963)--(0.49667, 0.61998)--(0.50667, 0.62033)--(0.51667, 0.62069)--(0.52667, 0.62106)--(0.53667, 0.62144)--(0.54667, 0.62184)--(0.55667, 0.62226)--(0.56667, 0.62271)--(0.57667, 0.62317)--(0.58667, 0.62367)--(0.59667, 0.62420)--(0.60667, 0.62477)--(0.61667, 0.62538)--(0.62667, 0.62603)--(0.63667, 0.62672)--(0.64667, 0.62747)--(0.65667, 0.62827)--(0.66667, 0.62912)--(0.67667, 0.63003)--(0.68667, 0.63100)--(0.69667, 0.63204)--(0.70667, 0.63315)--(0.71667, 0.63433)--(0.72667, 0.63558)--(0.73667, 0.63692)--(0.74667, 0.63833)--(0.75667, 0.63982)--(0.76667, 0.64141)--(0.77667, 0.64308)--(0.78667, 0.64484)--(0.79667, 0.64669)--(0.80667, 0.64864)--(0.81667, 0.65069)--(0.82667, 0.65283)--(0.83667, 0.65507)--(0.84667, 0.65741)--(0.85667, 0.65984)--(0.86667, 0.66237)--(0.87667, 0.66500)--(0.88667, 0.66771)--(0.89667, 0.67051)--(0.90667, 0.67339)--(0.91667, 0.67635);
+\foreach \x in {-2,-1,0}
+\draw[ultra thick,red,xshift=\x cm+2cm] (-0.05,-0.05)--(0.05,0.05);
+\foreach \x in {-2,-1,0}
+\draw[ultra thick,red,xshift=\x cm+2cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[magenta,ultra thick,xshift=2cm]
+(-1.2951, 0.26654)--(-1.2911, 0.22654)--(-1.2875, 0.18654)--(-1.2842, 0.14654)--(-1.2815, 0.10654)--(-1.2792, 0.066540)--(-1.2775, 0.026540)--(-1.2765, -0.013460)--(-1.2761, -0.053460)--(-1.2763, -0.093460)--(-0.99556*0.275-1,-0.094108*4*0.275);
+\filldraw[magenta,xshift=2cm] (0.99556*0.708-2,0.094108*4*0.708) circle (1pt);
+\draw[magenta,thick,->,xshift=2cm] (0.99556*0.708-2,0.094108*4*0.708)--(0.99556*0.708-2+1.0149*2.2,0.094108*4*0.708+0.18546*2.2);
+\filldraw[magenta,xshift=2cm] (-0.99556*0.275-1,-0.094108*4*0.275) circle (1pt);
+\draw[magenta,->,thick,xshift=2cm] (-0.99556*0.275-1,-0.094108*4*0.275)--(-0.99556*0.275-1-1.0149*1.2,-0.094108*4*0.275-0.18546*1.2);
+\draw[<->,thick,yshift=-2.2cm] (-2.5,0) -- (1,0);
+\draw[<->,thick,yshift=-2.2cm] (0,-1) -- (0,1);
+\foreach \x in {-2,-3,-4,-5}
+\draw[green,yshift=-2.2cm] (-2.5,-0.094108*4*2.5/0.99556-0.094108*4*\x/0.99556)--(\x+0.99556/0.094108/4,0.094108*4/0.094108/4);
+\foreach \x in {-1,0}
+\draw[green,yshift=-2.2cm] (-2.5,-0.094108*4*2.5/0.99556-0.094108*4*\x/0.99556)--(1,0.094108*4/0.99556-\x*0.094108*4);
+\foreach \x in {1,2,3}
+\draw[green,yshift=-2.2cm] (\x-0.99556/0.094108/4,-1)--(1,0.094108*4/0.99556-\x*0.094108*4/0.99556);
+\draw[orange,thick,<->,opacity=0.5,yshift=-2.2cm]
+(-0.65333, -0.99196)--(-0.66333, -0.91030)--(-0.67333, -0.83361)--(-0.68333, -0.76129)--(-0.69333, -0.69287)--(-0.70333, -0.62794)--(-0.71333, -0.56616)--(-0.72333, -0.50723)--(-0.73333, -0.45093)--(-0.74333, -0.39704)--(-0.75333, -0.34539)--(-0.76333, -0.29583)--(-0.77333, -0.24826)--(-0.78333, -0.20256)--(-0.79333, -0.15867)--(-0.80333, -0.11651)--(-0.81333, -0.076031)--(-0.82333, -0.037204)--(-0.83333, 0)--(-0.84333, 0.035594)--(-0.85333, 0.069582)--(-0.86333, 0.10196)--(-0.87333, 0.13272)--(-0.88333, 0.16185)--(-0.89333, 0.18932)--(-0.90333, 0.21511)--(-0.91333, 0.23921)--(-0.92333, 0.26159)--(-0.93333, 0.28224)--(-0.94333, 0.30117)--(-0.95333, 0.31837)--(-0.96333, 0.33388)--(-0.97333, 0.34772)--(-0.98333, 0.35994)--(-0.99333, 0.37061)--(-1.0033, 0.37978)--(-1.0133, 0.38752)--(-1.0233, 0.39393)--(-1.0333, 0.39906)--(-1.0433, 0.40300)--(-1.0533, 0.40582)--(-1.0633, 0.40759)--(-1.0733, 0.40838)--(-1.0833, 0.40825)--(-1.0933, 0.40726)--(-1.1033, 0.40546)--(-1.1133, 0.40290)--(-1.1233, 0.39964)--(-1.1333, 0.39571)--(-1.1433, 0.39116)--(-1.1533, 0.38601)--(-1.1633, 0.38032)--(-1.1733, 0.37410)--(-1.1833, 0.36740)--(-1.1933, 0.36024)--(-1.2033, 0.35264)--(-1.2133, 0.34463)--(-1.2233, 0.33624)--(-1.2333, 0.32748)--(-1.2433, 0.31838)--(-1.2533, 0.30896)--(-1.2633, 0.29924)--(-1.2733, 0.28923)--(-1.2833, 0.27895)--(-1.2933, 0.26843)--(-1.3033, 0.25766)--(-1.3133, 0.24667)--(-1.3233, 0.23548)--(-1.3333, 0.22410)--(-1.3433, 0.21253)--(-1.3533, 0.20080)--(-1.3633, 0.18891)--(-1.3733, 0.17689)--(-1.3833, 0.16473)--(-1.3933, 0.15245)--(-1.4033, 0.14007)--(-1.4133, 0.12759)--(-1.4233, 0.11502)--(-1.4333, 0.10238)--(-1.4433, 0.089680)--(-1.4533, 0.076922)--(-1.4633, 0.064120)--(-1.4733, 0.051284)--(-1.4833, 0.038425)--(-1.4933, 0.025553)--(-1.5033, 0.012677)--(-1.5233, -0.013047)--(-1.5333, -0.025874)--(-1.5433, -0.038664)--(-1.5533, -0.051408)--(-1.5633, -0.064095)--(-1.5733, -0.076715)--(-1.5833, -0.089257)--(-1.5933, -0.10171)--(-1.6033, -0.11406)--(-1.6133, -0.12631)--(-1.6233, -0.13843)--(-1.6333, -0.15041)--(-1.6433, -0.16225)--(-1.6533, -0.17394)--(-1.6633, -0.18545)--(-1.6733, -0.19678)--(-1.6833, -0.20790)--(-1.6933, -0.21882)--(-1.7033, -0.22951)--(-1.7133, -0.23995)--(-1.7233, -0.25014)--(-1.7333, -0.26005)--(-1.7433, -0.26966)--(-1.7533, -0.27897)--(-1.7633, -0.28794)--(-1.7733, -0.29655)--(-1.7833, -0.30479)--(-1.7933, -0.31262)--(-1.8033, -0.32003)--(-1.8133, -0.32699)--(-1.8233, -0.33346)--(-1.8333, -0.33941)--(-1.8433, -0.34482)--(-1.8533, -0.34964)--(-1.8633, -0.35382)--(-1.8733, -0.35734)--(-1.8833, -0.36013)--(-1.8933, -0.36214)--(-1.9033, -0.36332)--(-1.9133, -0.36358)--(-1.9233, -0.36287)--(-1.9333, -0.36108)--(-1.9433, -0.35813)--(-1.9533, -0.35390)--(-1.9633, -0.34826)--(-1.9733, -0.34106)--(-1.9833, -0.33212)--(-1.9933, -0.32122)--(-2.0033, -0.30811)--(-2.0133, -0.29246)--(-2.0233, -0.27384)--(-2.0333, -0.25165)--(-2.0433, -0.22501)--(-2.0533, -0.19242)--(-2.0633, -0.15080)--(-2.0733, -0.090989)--(-2.0793, -0.023193)--(-2.0793, 0.066491)--(-2.0733, 0.13588)--(-2.0633, 0.19831)--(-2.0533, 0.24258)--(-2.0433, 0.27790)--(-2.0333, 0.30741)--(-2.0233, 0.33264)--(-2.0133, 0.35450)--(-2.0033, 0.37359)--(-1.9933, 0.39034)--(-1.9833, 0.40507)--(-1.9733, 0.41804)--(-1.9633, 0.42944)--(-1.9533, 0.43945)--(-1.9433, 0.44821)--(-1.9333, 0.45583)--(-1.9233, 0.46241)--(-1.9133, 0.46806)--(-1.9033, 0.47284)--(-1.8933, 0.47682)--(-1.8833, 0.48007)--(-1.8733, 0.48264)--(-1.8633, 0.48459)--(-1.8533, 0.48594)--(-1.8433, 0.48676)--(-1.8333, 0.48706)--(-1.8233, 0.48690)--(-1.8133, 0.48629)--(-1.8033, 0.48527)--(-1.7933, 0.48386)--(-1.7833, 0.48210)--(-1.7733, 0.47999)--(-1.7633, 0.47758)--(-1.7533, 0.47486)--(-1.7433, 0.47188)--(-1.7333, 0.46863)--(-1.7233, 0.46515)--(-1.7133, 0.46145)--(-1.7033, 0.45754)--(-1.6933, 0.45343)--(-1.6833, 0.44915)--(-1.6733, 0.44471)--(-1.6633, 0.44012)--(-1.6533, 0.43539)--(-1.6433, 0.43053)--(-1.6333, 0.42556)--(-1.6233, 0.42050)--(-1.6133, 0.41534)--(-1.6033, 0.41010)--(-1.5933, 0.40480)--(-1.5833, 0.39944)--(-1.5733, 0.39404)--(-1.5633, 0.38860)--(-1.5533, 0.38313)--(-1.5433, 0.37765)--(-1.5333, 0.37217)--(-1.5233, 0.36669)--(-1.5133, 0.36122)--(-1.5033, 0.35578)--(-1.4933, 0.35038)--(-1.4833, 0.34502)--(-1.4733, 0.33972)--(-1.4633, 0.33448)--(-1.4533, 0.32932)--(-1.4433, 0.32424)--(-1.4333, 0.31926)--(-1.4233, 0.31439)--(-1.4133, 0.30964)--(-1.4033, 0.30501)--(-1.3933, 0.30053)--(-1.3833, 0.29619)--(-1.3733, 0.29203)--(-1.3633, 0.28804)--(-1.3533, 0.28423)--(-1.3433, 0.28063)--(-1.3333, 0.27724)--(-1.3233, 0.27408)--(-1.3133, 0.27117)--(-1.3033, 0.26851)--(-1.2933, 0.26612)--(-1.2833, 0.26402)--(-1.2733, 0.26222)--(-1.2633, 0.26075)--(-1.2533, 0.25961)--(-1.2433, 0.25883)--(-1.2333, 0.25842)--(-1.2233, 0.25840)--(-1.2133, 0.25880)--(-1.2033, 0.25962)--(-1.1933, 0.26090)--(-1.1833, 0.26265)--(-1.1733, 0.26489)--(-1.1633, 0.26764)--(-1.1533, 0.27092)--(-1.1433, 0.27473)--(-1.1333, 0.27910)--(-1.1233, 0.28403)--(-1.1133, 0.28952)--(-1.1033, 0.29557)--(-1.0933, 0.30216)--(-1.0833, 0.30926)--(-1.0733, 0.31682)--(-1.0633, 0.32478)--(-1.0533, 0.33307)--(-1.0433, 0.34158)--(-1.0333, 0.35022)--(-1.0233, 0.35887)--(-1.0133, 0.36744)--(-1.0033, 0.37581)--(-0.99333, 0.38390)--(-0.98333, 0.39167)--(-0.97333, 0.39906)--(-0.96333, 0.40604)--(-0.95333, 0.41261)--(-0.94333, 0.41875)--(-0.93333, 0.42448)--(-0.92333, 0.42980)--(-0.91333, 0.43473)--(-0.90333, 0.43928)--(-0.89333, 0.44347)--(-0.88333, 0.44732)--(-0.87333, 0.45084)--(-0.86333, 0.45405)--(-0.85333, 0.45697)--(-0.84333, 0.45960)--(-0.83333, 0.46198)--(-0.82333, 0.46410)--(-0.81333, 0.46599)--(-0.80333, 0.46765)--(-0.79333, 0.46910)--(-0.78333, 0.47036)--(-0.77333, 0.47142)--(-0.76333, 0.47231)--(-0.75333, 0.47303)--(-0.74333, 0.47360)--(-0.73333, 0.47401)--(-0.72333, 0.47429)--(-0.71333, 0.47443)--(-0.70333, 0.47445)--(-0.69333, 0.47436)--(-0.68333, 0.47415)--(-0.67333, 0.47385)--(-0.66333, 0.47346)--(-0.65333, 0.47298)--(-0.64333, 0.47242)--(-0.63333, 0.47179)--(-0.62333, 0.47109)--(-0.61333, 0.47033)--(-0.60333, 0.46952)--(-0.59333, 0.46866)--(-0.58333, 0.46776)--(-0.57333, 0.46683)--(-0.56333, 0.46586)--(-0.55333, 0.46487)--(-0.54333, 0.46386)--(-0.53333, 0.46283)--(-0.52333, 0.46180)--(-0.51333, 0.46077)--(-0.50333, 0.45974)--(-0.49333, 0.45871)--(-0.48333, 0.45770)--(-0.47333, 0.45671)--(-0.46333, 0.45574)--(-0.45333, 0.45481)--(-0.44333, 0.45390)--(-0.43333, 0.45304)--(-0.42333, 0.45223)--(-0.41333, 0.45146)--(-0.40333, 0.45075)--(-0.39333, 0.45011)--(-0.38333, 0.44953)--(-0.37333, 0.44903)--(-0.36333, 0.44860)--(-0.35333, 0.44826)--(-0.34333, 0.44801)--(-0.33333, 0.44786)--(-0.32333, 0.44782)--(-0.31333, 0.44788)--(-0.30333, 0.44805)--(-0.29333, 0.44835)--(-0.28333, 0.44878)--(-0.27333, 0.44933)--(-0.26333, 0.45003)--(-0.25333, 0.45088)--(-0.24333, 0.45188)--(-0.23333, 0.45304)--(-0.22333, 0.45437)--(-0.21333, 0.45587)--(-0.20333, 0.45754)--(-0.19333, 0.45940)--(-0.18333, 0.46145)--(-0.17333, 0.46370)--(-0.16333, 0.46614)--(-0.15333, 0.46878)--(-0.14333, 0.47162)--(-0.13333, 0.47467)--(-0.12333, 0.47792)--(-0.11333, 0.48137)--(-0.10333, 0.48501)--(-0.093333, 0.48884)--(-0.083333, 0.49284)--(-0.073333, 0.49700)--(-0.063333, 0.50130)--(-0.053333, 0.50572)--(-0.043333, 0.51023)--(-0.033333, 0.51481)--(-0.023333, 0.51943)--(-0.013333, 0.52406)--(-0.0033333, 0.52867)--(0.0066667, 0.53323)--(0.016667, 0.53773)--(0.026667, 0.54213)--(0.036667, 0.54641)--(0.046667, 0.55057)--(0.056667, 0.55460)--(0.066667, 0.55847)--(0.076667, 0.56219)--(0.086667, 0.56575)--(0.096667, 0.56916)--(0.10667, 0.57241)--(0.11667, 0.57550)--(0.12667, 0.57843)--(0.13667, 0.58122)--(0.14667, 0.58385)--(0.15667, 0.58635)--(0.16667, 0.58871)--(0.17667, 0.59093)--(0.18667, 0.59303)--(0.19667, 0.59500)--(0.20667, 0.59686)--(0.21667, 0.59860)--(0.22667, 0.60024)--(0.23667, 0.60177)--(0.24667, 0.60321)--(0.25667, 0.60455)--(0.26667, 0.60580)--(0.27667, 0.60697)--(0.28667, 0.60807)--(0.29667, 0.60908)--(0.30667, 0.61003)--(0.31667, 0.61092)--(0.32667, 0.61174)--(0.33667, 0.61250)--(0.34667, 0.61321)--(0.35667, 0.61387)--(0.36667, 0.61448)--(0.37667, 0.61506)--(0.38667, 0.61559)--(0.39667, 0.61609)--(0.40667, 0.61656)--(0.41667, 0.61700)--(0.42667, 0.61742)--(0.43667, 0.61782)--(0.44667, 0.61820)--(0.45667, 0.61857)--(0.46667, 0.61893)--(0.47667, 0.61928)--(0.48667, 0.61963)--(0.49667, 0.61998)--(0.50667, 0.62033)--(0.51667, 0.62069)--(0.52667, 0.62106)--(0.53667, 0.62144)--(0.54667, 0.62184)--(0.55667, 0.62226)--(0.56667, 0.62271)--(0.57667, 0.62317)--(0.58667, 0.62367)--(0.59667, 0.62420)--(0.60667, 0.62477)--(0.61667, 0.62538)--(0.62667, 0.62603)--(0.63667, 0.62672)--(0.64667, 0.62747)--(0.65667, 0.62827)--(0.66667, 0.62912)--(0.67667, 0.63003)--(0.68667, 0.63100)--(0.69667, 0.63204)--(0.70667, 0.63315)--(0.71667, 0.63433)--(0.72667, 0.63558)--(0.73667, 0.63692)--(0.74667, 0.63833)--(0.75667, 0.63982)--(0.76667, 0.64141)--(0.77667, 0.64308)--(0.78667, 0.64484)--(0.79667, 0.64669)--(0.80667, 0.64864)--(0.81667, 0.65069)--(0.82667, 0.65283)--(0.83667, 0.65507)--(0.84667, 0.65741)--(0.85667, 0.65984)--(0.86667, 0.66237)--(0.87667, 0.66500)--(0.88667, 0.66771)--(0.89667, 0.67051)--(0.90667, 0.67339)--(0.91667, 0.67635);
+\foreach \x in {-2,-1,0}
+\draw[ultra thick,red,yshift=-2.2cm,xshift=\x cm] (-0.05,-0.05)--(0.05,0.05);
+\foreach \x in {-2,-1,0}
+\draw[ultra thick,red,yshift=-2.2cm,xshift=\x cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[magenta,->,opacity=0.5,thick,yshift=-2.2cm]
+(-0.84967, 0.056826)--(-0.83967, 0.061397)--(-0.82967, 0.065211)--(-0.81967, 0.068326)--(-0.80967, 0.070793)--(-0.79967, 0.072660)--(-0.78967, 0.073969)--(-0.77967, 0.074759)--(-0.76967, 0.075066)--(-0.75967, 0.074922)--(-0.74967, 0.074359)--(-0.73967, 0.073403)--(-0.72967, 0.072082)--(-0.71967, 0.070419)--(-0.70967, 0.068437)--(-0.69967, 0.066158)--(-0.68967, 0.063602)--(-0.67967, 0.060789)--(-0.66967, 0.057735)--(-0.65967, 0.054459)--(-0.64967, 0.050977)--(-0.63967, 0.047305)--(-0.62967, 0.043457)--(-0.61967, 0.039449)--(-0.60967, 0.035294)--(-0.59967, 0.031006)--(-0.58967, 0.026599)--(-0.57967, 0.022084)--(-0.56967, 0.017474)--(-0.55967, 0.012782)--(-0.54967, 0.0080202)--(-0.53967, 0.0031995)--(-0.52967, -0.0016682)--(-0.51967, -0.0065713)--(-0.50967, -0.011498)--(-0.49967, -0.016438)--(-0.48967, -0.021379)--(-0.47967, -0.026310)--(-0.46967, -0.031220)--(-0.45967, -0.036097)--(-0.44967, -0.040930)--(-0.43967, -0.045707)--(-0.42967, -0.050416)--(-0.41967, -0.055045)--(-0.40967, -0.059583)--(-0.39967, -0.064016)--(-0.38967, -0.068332)--(-0.37967, -0.072517)--(-0.36967, -0.076558)--(-0.35967, -0.080442)--(-0.34967, -0.084152)--(-0.33967, -0.087675)--(-0.32967, -0.090995)--(-0.31967, -0.094094)--(-0.30967, -0.096957)--(-0.29967, -0.099563)--(-0.28967, -0.10190)--(-0.27967, -0.10393)--(-0.26967, -0.10565)--(-0.25967, -0.10703)--(-0.24967, -0.10805)--(-0.23967, -0.10867)--(-0.22967, -0.10888)--(-0.21967, -0.10864)--(-0.20967, -0.10791)--(-0.19967, -0.10666)--(-0.18967, -0.10485)--(-0.17967, -0.10244)--(-0.16967, -0.099376)--(-0.15967, -0.095605)--(-0.14967, -0.091067)--(-0.13967, -0.085694)--(-0.12967, -0.079409)--(-0.11967, -0.072125)--(-0.10967, -0.063742)--(-0.099670, -0.054147)--(-0.089670, -0.043209)--(-0.079670, -0.030781)--(-0.069670, -0.016702)--(-0.059670, -0.00080202)--(-0.049670, 0.017058)--(-0.039670, 0.036905)--(-0.029670, 0.058462)--(-0.019670, 0.080827)--(-0.0096700, 0.10246)--(0.00033000, 0.12204)--(0.010330, 0.13921)--(0.020330, 0.15423)--(0.030330, 0.16745)--(0.040330, 0.17919)--(0.050330, 0.18969)--(0.060330, 0.19914)--(0.070330, 0.20768)--(0.080330, 0.21542)--(0.090330, 0.22246)--(0.10033, 0.22886)--(0.11033, 0.23469)--(0.12033, 0.24001)--(0.13033, 0.24485)--(0.14033, 0.24926)--(0.15033, 0.25327)--(0.16033, 0.25692)--(0.17033, 0.26022)--(0.18033, 0.26320)--(0.19033, 0.26589)--(0.20033, 0.26830)--(0.21033, 0.27045)--(0.22033, 0.27236)--(0.23033, 0.27405)--(0.24033, 0.27552)--(0.25033, 0.27680)--(0.26033, 0.27789)--(0.27033, 0.27881)--(0.28033, 0.27957)--(0.29033, 0.28017)--(0.30033, 0.28064)--(0.31033, 0.28096)--(0.32033, 0.28117)--(0.33033, 0.28126)--(0.34033, 0.28125)--(0.35033, 0.28113)--(0.36033, 0.28093)--(0.37033, 0.28064)--(0.38033, 0.28028)--(0.39033, 0.27984)--(0.40033, 0.27935)--(0.41033, 0.27880)--(0.42033, 0.27820)--(0.43033, 0.27755)--(0.44033, 0.27688)--(0.45033, 0.27617)--(0.46033, 0.27543)--(0.47033, 0.27468)--(0.48033, 0.27392)--(0.49033, 0.27315)--(0.50033, 0.27238)--(0.51033, 0.27162)--(0.52033, 0.27086)--(0.53033, 0.27013)--(0.54033, 0.26942)--(0.55033, 0.26873)--(0.56033, 0.26809)--(0.57033, 0.26748)--(0.58033, 0.26692)--(0.59033, 0.26642)--(0.60033, 0.26597)--(0.61033, 0.26559)--(0.62033, 0.26529)--(0.63033, 0.26506)--(0.64033, 0.26492)--(0.65033, 0.26487)--(0.66033, 0.26491)--(0.67033, 0.26507)--(0.68033, 0.26534)--(0.69033, 0.26573)--(0.70033, 0.26624)--(0.71033, 0.26690)--(0.72033, 0.26770)--(0.73033, 0.26865)--(0.74033, 0.26976)--(0.75033, 0.27105)--(0.76033, 0.27251)--(0.77033, 0.27416)--(0.78033, 0.27601)--(0.79033, 0.27807)--(0.80033, 0.28035)--(0.81033, 0.28286)--(0.82033, 0.28560)--(0.83033, 0.28860)--(0.84033, 0.29186)--(0.85033, 0.29538)--(0.86033, 0.29918)--(0.87033, 0.30327)--(0.88033, 0.30765)--(0.89033, 0.31233)--(0.90033, 0.31730)--(0.91033, 0.32256)--(0.92033, 0.32810)--(0.93033, 0.33390)--(0.94033, 0.33994)--(0.95033, 0.34618)--(0.96033, 0.35257)--(0.97033, 0.35907)--(0.98033, 0.36561)--(0.99033, 0.37213);
+\filldraw[magenta,thick,yshift=-2.2cm] (0.99556*0.151-1,0.094108*4*0.151) circle (0.5pt);
+\draw[violet,ultra thick,yshift=-2.2cm]
+(-0.078979, -0.029848)--(-0.080363, 0.010152)--(-0.079987, 0.050152)--(-0.077875, 0.090152)--(-0.077875, 0.090156)--(-0.067875, 0.17336)--(-0.057875, 0.22388)--(-0.047875, 0.26271)--(-0.037875, 0.29461)--(-0.027875, 0.32165)--(-0.017875, 0.34495)--(-0.0078750, 0.36524)--(0.99556*0.078940/0.99556*12.7-1,0.094108*4*0.078940/0.99556*12.7);
+\filldraw[violet,yshift=-2.2cm] (-0.99556*0.078940/0.99556,-0.094108*4*0.078940/0.99556) circle (1pt);
+\filldraw[violet,->,thick,yshift=-2.2cm] (-0.99556*0.078940/0.99556,-0.094108*4*0.078940/0.99556)--(-0.99556*0.078940/0.99556-1.0149*2.37,-0.094108*4*0.078940/0.99556-0.18546*2.37);
+\filldraw[violet,yshift=-2.2cm] (0.99556*0.078940/0.99556*12.7-1,0.094108*4*0.078940/0.99556*12.7) circle (1pt);
+\draw[violet,->,thick,yshift=-2.2cm] (0.99556*0.078940/0.99556*12.7-1,0.094108*4*0.078940/0.99556*12.7)--(0.99556*0.078940/0.99556*12.7-1+1.0149*0.95,0.094108*4*0.078940/0.99556*12.7+0.18546*0.95);
+\end{tikzpicture}
+\caption{This figure depicts the contours $\gamma_{e,\vartheta}$ that we add at the first and second iteration of the algorithm to $\calI_{p_1,V_1,\mathrm{III}}$ as showed in Figure~\ref{fig:thimb.41.III.t1}.
+
+}\label{fig:thimb.41.III.t2}
+\end{figure}
+\medskip
+
 All together the algorithm produces the function
-Ip1,V1,III = −I0,0 +I0,−1 + 4q2I1,−1− 4qI0,0− q4I2,−2 = −I0,0−I −1,0− 9qI0,0 , (68)
-where the second equality follows from Equation ( 14).
-4.1.7. First few Stokes constants. We can now describe the Stokes matrices. We see from
-Equation ( 65), Equation ( 66), Equation ( 67), and Equation ( 68) that
-(Ip1,V1,II Ip2,V2,II
-)
-=
-(Ip1,V1,I Ip2,V2,I
-) (
-1 0
-−3 1
-)
-, (69)
+\be\label{eq:I3.41}
+  \calI_{p_1,V_1,\mathrm{III}}
+  \=
+  -\calI_{0,0}+\calI_{0,-1}
+  +4q^2\calI_{1,-1}
+  -4q\calI_{0,0}
+  -q^4\calI_{2,-2}
+  \=
+  -\calI_{0,0}-\calI_{-1,0}-9q\calI_{0,0}\,,
+\ee
+where the second equality follows from Equation~\eqref{eq:state_integral_1}.
+\subsubsection{First few Stokes constants}
+We can now describe the Stokes matrices. We see from Equation~\eqref{eq:Iarb.41}, Equation~\eqref{eq:I1.41}, Equation~\eqref{eq:I2.41}, and Equation~\eqref{eq:I3.41} that
+\be
+  \begin{pmatrix}
+    \calI_{p_1,V_1,\mathrm{II}} & \calI_{p_2,V_2,\mathrm{II}}
+  \end{pmatrix}
+  \=
+  \begin{pmatrix}
+    \calI_{p_1,V_1,\mathrm{I}} & \calI_{p_2,V_2,\mathrm{I}}
+  \end{pmatrix}
+  \begin{pmatrix}
+    1 & 0\\
+    -3 & 1
+  \end{pmatrix}\,,
+\ee
 and
-(Ip1,V1,III Ip2,V2,III
-)
-=
-(Ip1,V1,II Ip2,V2,II
-) (
-1 0
-−9q 1
-)
-. (70)
-These agree with the Stokes constants computed in [ 9]. Therefore, we see that
-SI,II(q) =
-(
-1 0
-−3 1
-)
-, SII,III(q) =
-(
-1 0
-−9q 1
-)
-. (71)
-26 VERONICA F ANTINI AND CAMPBELL WHEELER
-Figure 18. This ﬁgure depicts the contours γe,ϑ that we add at the ﬁrst and
-second iteration of the algorithm to Ip1,V1,III as showed in Figure 17.
-4.1.8. Computing all Stokes constants. We want to compute the Stokes matrix Sπ−ǫ,0+ǫ for
-small ǫ > 0. In order to do this, we will use formulae for state integrals found by [ 10]. This
-was the method used in the numerical approach of [ 9]. We can express state integrals—
-and therefore their Borel–Laplace resummations—as bilinear combin ations of q = e(τ ) and
-~q = e(−1/τ )-series. Consider the collections of q-series
-gm(q) =
-∞∑
-k=0
-(−1)k qk(k+1)/2+mk
-(q; q)2
-k
-,
-Gm(q) =
-∞∑
-k=0
-(−1)k qk(k+1)/2+mk
-(q; q)2
-k
-(
-m− 2E1(q) +
-∑
-ℓ=1
-1 + qℓ
-1− qℓ
-)
-,
-(72)
+\be
+  \begin{pmatrix}
+    \calI_{p_1,V_1,\mathrm{III}} & \calI_{p_2,V_2,\mathrm{III}}
+  \end{pmatrix}
+  \=
+  \begin{pmatrix}
+    \calI_{p_1,V_1,\mathrm{II}} & \calI_{p_2,V_2,\mathrm{II}}
+  \end{pmatrix}
+  \begin{pmatrix}
+    1 & 0\\
+    -9q & 1
+  \end{pmatrix}\,.
+\ee
+These agree with the Stokes constants computed in~\cite{GGM:I}. Therefore, we see that
+\be
+  \mathfrak{S}_{\mathrm{I},\mathrm{II}}(q)
+  \=
+  \begin{pmatrix}
+    1 & 0\\
+    -3 & 1
+  \end{pmatrix}\,,\qquad
+  \mathfrak{S}_{\mathrm{II},\mathrm{III}}(q)
+  \=
+  \begin{pmatrix}
+    1 & 0\\
+    -9q & 1
+  \end{pmatrix}\,.
+\ee
+
+\subsubsection{Computing all Stokes constants}
+
+We want to compute the Stokes matrix $\mathfrak{S}_{\pi-\epsilon,0+\epsilon}$ for small $\epsilon>0$. In order to do this, we will use formulae for state integrals found by~\cite{GK:qser}. This was the method used in the numerical approach of~\cite{GGM:I}. We can express state integrals---and therefore their Borel--Laplace resummations---as bilinear combinations of $q=\e(\tau)$ and $\tq=\e(-1/\tau)$-series. Consider the collections of $q$-series
+\be
+\begin{aligned}
+  g_m(q)
+  &\=
+  \sum_{k=0}^{\infty}(-1)^k\frac{q^{k(k+1)/2+mk}}{(q;q)_{k}^2}\,,\\
+  G_m(q)
+  &\=
+  \sum_{k=0}^{\infty}(-1)^k\frac{q^{k(k+1)/2+mk}}{(q;q)_{k}^2}\Big(m-2E_1(q)+\sum_{\ell=1}\frac{1+q^{\ell}}{1-q^{\ell}}\Big)\,,
+\end{aligned}
+\ee
 where
-E1(q) = −1
-4 +
-∞∑
-k=1
-qk
-1− qk = − 1
-4 +q +2q2 +2q3 +3q4 +2q5 +4q6 +2q7 +4q8 +3q9 +··· . (73)
+\be
+  E_1(q)
+  \=
+  -\frac{1}{4}+\sum_{k=1}^{\infty}\frac{q^k}{1-q^k}
+  \=-\tfrac{1}{4}+q + 2q^2 + 2q^3 + 3q^4 + 2q^5 + 4q^6 + 2q^7 + 4q^8 + 3q^9+\cdots\,.
+\ee
 For example, we have
-g0(q) = 1 − q− 2q2− 2q3− 2q4 + q6 + 5q7 + 7q8 + 11q9 + 13q10 + 16q11 +··· ,
-G0(q) = 1
-2(1− 7q− 14q2− 8q3− 2q4 + 30q5 + 43q6 + 95q7 + 109q8 + 137q9 +··· ) . (74)
-SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS 27
-Then as shwon in [ 10, Eq. (14)], the state integral is given by the following formula
-i~q−1/12q1/12
-∫
-Jℓ,τ
-Φ( zτ, τ )2 e
-( 1
-2 z(zτ + τ + 1) + mzτ + nz
-)
-dz
-= τ −1gm(q)G−n(~q)− g−n(~q)Gm(q) .
-(75)
-We can use this to write the Borel–Laplace resummation in matrix form(Ip1,V1,I Ip2,V2,I
-)
-=
-( g0(~q) G0(~q)) (
-−1 0
-0 τ −1
-)(
-G0(q) + G1(q) G0(q)
-g0(q) + g1(q) g0(q)
-)
-.
-(76)
-We can similarly, write(Ip1,V1,X Ip2,V2,X
-)
-=
-( g0(~q) G0(~q)) (
-1 0
-0 τ −1
-)(
-−G0(q) G0(q) + G1(q)
-−g0(q) g0(q) + g1(q)
-)
-.
-(77)
-Then we ﬁnd
-7 that the Stokes matrix going from I to X is given by
-S+(q)
-=
-(
-G0(q) + G−1(q) G0(q)
-g0(q) + g−1(q) g0(q)
-) −1(
-−1 0
-0 1
-)(
-−G0(q) G0(q) + G1(q)
-−g0(q) g0(q) + g1(q)
-)
-=
-(
-−1 + 8q + 9q2− 18q3− 46q4 3− 15q− 24q2 + 15q3 + 69q4
-−9q− 3q2 + 39q3 + 69q4 −1 + 19q + 17q2− 53q3− 126q4
-)
-+···
-=
-(
-1 0
-−3− 9q− 75q2− 642q3− 5580q4 1
-)
-×
-(
-1− 8q− 9q2 + 18q3 + 46q4 0
-0 1 + 8 q + 73q2 + 638q3 + 5571q4
-)
-×
-(
-1 9 q + 75q2 + 642q3 + 5580q4
-0 1
-)
-+··· .
-(78)
-One can see exact agreement with the previous computations of th e ﬁrst two Stokes constants
-−3 and−9. To compute the next constant −75 using the methods we have described would
-presumably involve many iterations of the algorithm and would be best done via computer
-implementation, which we have not attempted.
-4.2. The case of (A, B) = (4 , 1). We will compute the Borel–Laplace resummation of Φ Ξ
-with the algorithm described in Section
-3.1. We will see that this exactly matches the
-numerical predictions of [ 24, Example 39]. The critical points for the function V and their
-critical values are listed below
-7To really prove this, one needs to make a full matrix equation by takin g another choice of n in Equa-
-tion ( 75), which has exactly the same Stokes automorphisms as discussed in the Section 1.3.
-28 VERONICA F ANTINI AND CAMPBELL WHEELER
-Table 1:
-p1 (−0.5− 0.0317451i, 0) V1 −0.435753
-p2 (0.0512932i,−2) V2 0.0127913
-p3 (−0.212516− 0.009774i,−1) V3 −0.0801858 + 0.0248584i
-p4 (0.212516− 0.009774i,−3) V4 −0.0801858− 0.0248584i
-Taking the relative diﬀerence between volumes, the ﬁrst non trivial 8 Stokes line is at eiϑR>0
-with ϑ = 1.30955 and it separates the regions I ⋆ and II. The second one is at ϑ = 1.501 and
-separates the regions II and III. The third one is at ϑ = 1 .52112 and separates the regions
-III and IV. As expected, they form the peacock pattern as illustr ated in Figure 19.
-I
-I⋆
-IIIII
-ϑ = π ϑ= 0
-Figure 19. This ﬁgure depicts the Stokes rays in τ -plane with ϑ = arg(−1/τ )
-forming a peacock pattern. Note that this is stretched in the direc tion of the
-x-axis and the Stokes rays are all even closer to the vertical line. In addition,
-it is symmetric with respect to the imaginary axis: on the right, the ﬁr st solid
-Stokes rays contain the singularties at the points V2− V4, V3− V1, V3− V4 + 1,
-V1− V4 + 1, which correspond to ϑ = 1 .83204, ϑ = 1 .64069, ϑ = 1 .62047 and
-ϑ = 1 .60935, respectively. The dashed Stokes line corresponds to −V4, with
-ϑ = 1 .87141, and crossing that ray there will be no Stokes phenomenon a s
-shown in Section 4.2.9.
-To perform the computation, we plot the set Cp0,ϑ and keep track of the branching of the
-function V . We adopt the same conventions as in Section 4.1.
-4.2.1. State integrals decomposition in I. Let ϑ∈ I. We plot the curves Cpj,ϑ for j = 1, 2, 3, 4
-in Figure 20. We can decompose the thimble in terms on state integrals contours , hence the
-algorithm gives
-Ip1,V1,I = I0,0 , Ip2,V2,I = I−2,0 , Ip3,V3,I = I−1,0 , Ip4,V4,I = I−3,1 . (79)
-4.2.2. The false saddle connection. Let ϑ = 1.87141, which corresponds to the Stokes line at
-the angle arg
-(
-− 2πi
-V4
-)
-. We plot the set Cp4,ϑ in Figure 21. Moving away from this apparent
-saddle, we plot the set Cp4,ϑ in Figure 22 for ϑ = 1.85159.
-8By non trivial we mean with non zero Stokes constants. Indeed the line at ϑ = 1. 27018 is not an eﬀective
-Stokes line.
-SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS 29
-(0, 0)
-(−1, 0)
-(−2, 0)
-(−3, 0)
-(−2, 0)
-(−1, 0) (−3, 0)
-(−3, 0)
-Figure 20. From the right, this ﬁgure depicts in orange the analytic contin-
-uation of the set Cp1,ϑ,Cp2,ϑ,Cp3,ϑ andCp4,ϑ for ϑ = arg(−1/τ ) = 2 .54159 and
-(A, B) = (4 , 1). The green lines are parallel to the lines i/τ .
-(−3, 0)
-Figure 21. This ﬁgure depicts in orange the set Cp4,ϑ for ϑ = arg(−1/τ ) =
-1.87141, and ( A, B) = (4 , 1). The green lines are parallel to the lines i/τ .
-We can decompose the thimbleCp4,ϑ in terms of state integral contours. We have contribution
-of I−3,0 from the intersection of the orange contour with the interval ( −1, 0), which has
-(n, m, ℓ) = (0 ,−3, 0). Then, at the second iteration of the algorithm we get the contr ibution
-of−I−2,0 from the intersection of the magenta curve with the interval ( −1, 0), which has
-(n, m, ℓ) = (0 ,−2, 0). Therefore, we ﬁnd
-Ip4,V4,I⋆ =I−3,0−I −2,0 =I−3,1 (80)
-30 VERONICA F ANTINI AND CAMPBELL WHEELER
-(−3, 0)
-(−4, 0)(−1, 0)
-Figure 22. This ﬁgure depicts in orange the set Cp4,ϑ for ϑ = arg(−1/τ ) =
-1.85159, and ( A, B) = (4 , 1). The green lines are parallel to the lines i/τ . The
-magenta curve represents the tail at the intersection of the set Cp4,ϑ with the
-green lines.
-where in the last equality follows from Equation ( 14). Notice that the set Cp4,ϑ intersects the
-interval (0, 1) twice, thus there is no contribution coming from the state integr alI−3,1.
-4.2.3. The saddle connection between I and II. The saddle connection is depicted in Fig-
-ure 23. Notice that the magenta line hits the critical point p2. This suggests that in the
-(−3, 0)
-(−4, 0)
-(−2, 0)
-(−3, 0)
-Figure 23. This ﬁgure depicts in orange the set Cp4,ϑ for ϑ = arg(−1/τ ) =
-1.83204, and ( A, B) = (4 , 1). The green lines are parallel to the lines i/τ . The
-magenta curve represents the tail at the intersection of the set Cp4,ϑ with the
-green lines.
-state integral decomposition we should see the contribution from I−2,0, as we indeed verify
-in Section 4.2.4.
-4.2.4. State integrals decomposition in II. Let ϑ∈ II. We plot the curve Cp4,ϑ in Figure 24.
-We can decompose the thimble in terms of state integrals contours. We have contributions
-ofI−3,0 from the intersection of the orange contour with the interval ( −1, 0), which has
-(n, m, ℓ) = (0 ,−3, 0). Then, due to the intersection with the green lines we should run t he
-algorithm another time for the magenta contour. The latter inters ects a green line, thus we
-apply the algorithm one more time to produce the violet contours. Bo th the magenta and
-SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS 31
-the violet contours do not contribute as they do not intersect the reals 2.12. Summarising,
-the algorithm gives
-Ip4,V4,II = I−3,0 =I−3,1 +I−2,0 , (81)
-where the second equality follows from Equation ( 14).
-(−3, 0)
-(−4, 0)
-(−2, 0)(−1, 0)
-Figure 24. This ﬁgure depicts in orange the set Cp4,ϑ for ϑ = arg(−1/τ ) =
-1.74159, and ( A, B) = (4 , 1). The green lines are parallel to the lines i/τ . The
-magenta curve represents the tail at the intersection of the set Cp4,ϑ with the
-green lines. The violet contour represents half of the contour that appears
-when we run the algorithm a second time.
-4.2.5. The saddle connection between II and III. The saddle connection is depicted in Fig-
-ure 25. Note that it appears in the contours coming from the ﬁrst iteratio n of the algorithm.
-(0, 0)
-(−1, 0)
-(−3, −1)(−2, −1)
-(1, 0)
-(−1, −1)
-(−2, −1)
-Figure 25. This ﬁgure depicts in orange the set Cp1,ϑ for ϑ = arg(−1/τ ) =
-1.64069 and ( A, B) = (4 , 1). The green lines are parallel to the lines i/τ . The
-magenta curves represent the tails at the intersection of the set Cp4,ϑ with the
-green lines. The violet contour represents half of the contour that appears
-when we run the algorithm a second time. Notice that the magenta contour
-splits at the critical point p3 as this is a saddle connection.
-32 VERONICA F ANTINI AND CAMPBELL WHEELER
-(0, 0)
-(−2, −1)
-(−1, 0)
-Figure 26. This ﬁgure depicts in orange the set Cp1,ϑ for ϑ = arg(−1/τ ) =
-1.63159, and ( A, B) = (4 , 1). The green lines are parallel to the lines i/τ . The
-magenta curve represents the tail at the intersection of the set Cp4,ϑ with the
-green lines.
-4.2.6. State integrals decomposition in III. Let ϑ∈ III. We plot the curve Cp2,ϑ in Figure 26.
-We can decompose the thimble in terms on state integrals contours. We have contributions
-fromI0,0 from the intersection of the orange contour with the interval ( −1, 0), which has
-(n, m, ℓ) = (0 , 0, 0). Then due to the intersection with the green line we should study t he
-contributions from the magenta line. Since the latter crosses the r eals in the interval (−1, 0),
-we get the contribution of I−1,0, which has ( n, m, ℓ) = (0 ,−1, 0). Any other tails lead to no
-contribution as they do not cross the reals and head to ∞. The algorithm therefore gives
-Ip1,V1,III = I0,0−I −1,0 . (82)
-4.2.7. The saddle connection between III and IV. The saddle connection is depicted in Fig-
-ure 27.
-(−3, 0)
-(−4, 0)
-(−2, 0)
-(−1, 0)
-(−4, 1)
-(−5, 2)
-(−5, 2)
-Figure 27. This ﬁgure depicts in orange the set Cp4,ϑ for ϑ = arg(−1/τ ) =
-1.62047, and ( A, B) = (4 , 1). The green lines are parallel to the lines i/τ . The
-magenta curve represents the tail at the intersection of the set Cp4,ϑ with the
-green lines. The violet contour represents half of the contour that appears
-when we run the algorithm a second time. While it is hard to see at this sc ale,
-the violet contour hits the critical point p3 + 1, which is just above the green
-line. Therefore, at this critical angle the violet contour splits at this point.
-SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS 33
-4.2.8. State integrals decomposition in IV. Let ϑ∈ IV. We plot the set Cp4,ϑ in Figure 28.
-We can decompose the thimble in terms of state integrals contours. We have contributions
-(−3, 0)
-(−2, 1)
-(−4, 1)
-(−5, 2)
-Figure 28. This ﬁgure depicts in orange the set Cp4,τ for ϑ = arg(−1/τ ) =
-1.61159, and ( A, B) = (4 , 1). The green lines are parallel to the lines i/τ . The
-magenta curves represent the tails at the intersection of the set Cp4,ϑ with the
-green lines. The violet contour represents half of the contour that appears
-when we run the algorithm a second time.
-ofI−3,0 from the intersection of the orange contour with the interval ( −1, 0), which has
-(n, m, ℓ) = (0 ,−3, 0). Then, due to the intersection with the green lines we should run t he
-algorithm another time for the magenta line. The latter intersects a green line, thus we apply
-the algorithm one more time for the violet line. Then we ﬁnd a contribut ion of−q2I−5,1 from
-the intersection of the violet line with the interval (0 , 1), which has ( n, m, ℓ) = (2 ,−5, 1).
-Summarising, the algorithm gives
-Ip4,V4,IV = I−3,0− q2I−5,1 =I−3,0− qI−1,0 , (83)
-where the second equality follows from Equation ( 14). Notice that the magenta line in
-Figure 28 does not contribute even if it intersects the interval (0 , 1). Indeed it intersects the
-green line before intersecting the reals, and this leads to the contr ibution from the violet
-tail, as shown in Figure 29.
-Figure 29. This ﬁgure depicts in violet the tail that contributes in the de-
-composition of the set Cp4,ϑ given by state integral contours.
-34 VERONICA F ANTINI AND CAMPBELL WHEELER
-4.2.9. First few Stokes constants. We can now describe the Stokes matrices associated to
-ﬁrst Stokes rays in Figure
-19. From Equations ( 79) and ( 80) we get
-( Ip1,V1,I⋆ Ip2,V2,I⋆ Ip3,V3,I⋆ Ip4,V4,I⋆
-) = ( Ip1,V1,I Ip2,V2,I Ip3,V3,I Ip4,V4,I
-)
-
-
-
-
-1 0 0 0
-0 1 0 0
-0 0 1 0
-0 0 0 1
-
-
-
- . (84)
-Therefore we learn that there is no Stokes jump between region I and I⋆. Then, from
-Equations (
-79) and ( 81) we ﬁnd
-(
-Ip1,V1,II Ip2,V2,II Ip3,V3,II Ip4,V4,II
-)
-=
-(
-Ip1,V1,I Ip2,V2,I Ip3,V3,I Ip4,V4,I
-)
-
-
-
-
-1 0 0 0
-0 1 0 1
-0 0 1 0
-0 0 0 1
-
-
-
- . (85)
-From Equations (
-81) and ( 82), we ﬁnd
-(
-Ip1,V1,III Ip2,V2,III Ip3,V3,III Ip4,V4,III
-)
-=
-(
-Ip1,V1,II Ip2,V2,II Ip3,V3,II Ip4,V4,II
-)
-
-
-
-
-1 0 0 0
-0 1 0 0
-−1 0 1 0
-0 0 0 1
-
-
-
- . (86)
-Finally, from Equations (
-82) and ( 83) we ﬁnd
-(
-Ip1,V1,IV Ip2,V2,IV Ip3,V3,IV Ip4,V4,IV
-)
-=
-(
-Ip1,V1,III Ip2,V2,III Ip3,V3,III Ip4,V4,III
-)
-
-
-
-
-1 0 0 0
-0 1 0 0
-0 0 1 −q
-0 0 0 1
-
-
-
- .
-(87)
+\be
+\begin{aligned}
+  g_{0}(q)
+  &\=
+  1 - q - 2q^2 - 2q^3 - 2q^4 + q^6 + 5q^7 + 7q^8 + 11q^9+ 13q^{10} + 16q^{11}+\cdots\,,\\
+  G_{0}(q)
+  &\=
+  \tfrac{1}{2}(1 - 7q - 14q^2 - 8q^3 - 2q^4 + 30q^5 + 43q^6 + 95q^7 + 109q^8 + 137q^9+\cdots)\,.
+\end{aligned}
+\ee
+Then as shwon in~\cite[Eq.~(14)]{GK:qser}, the state integral is given by the following formula
+\be\label{eq:si.qqt}
+\begin{aligned}
+  &i\tq^{-1/12}q^{1/12}
+  \int_{\calJ_{\ell,\tau}}\Phi(z\tau,\tau)^2\,\e\Big(\frac{1}{2} z(z\tau+\tau+1)+mz\tau+nz\Big) dz\\
+  &\=
+  \tau^{-1}g_m(q)G_{-n}(\tq)-g_{-n}(\tq)G_m(q)\,.
+\end{aligned}
+\ee
+We can use this to write the Borel--Laplace resummation in matrix form
+\be
+\begin{aligned}
+  &\begin{pmatrix}
+    \calI_{p_1,V_1,\mathrm{I}} & \calI_{p_2,V_2,\mathrm{I}}
+  \end{pmatrix}\\
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  &\=
+  \begin{pmatrix}
+    g_{0}(\tq) & G_{0}(\tq)
+  \end{pmatrix}
+  \begin{pmatrix}
+    -1 & 0\\
+    0 & \tau^{-1}
+  \end{pmatrix}
+  \begin{pmatrix}
+    G_0(q)+G_{1}(q) & G_0(q)\\
+    g_0(q)+g_{1}(q) & g_0(q)
+  \end{pmatrix}\,.
+\end{aligned}
+\ee
+We can similarly, write
+\be
+\begin{aligned}
+  &\begin{pmatrix}
+    \calI_{p_1,V_1,\mathrm{X}} & \calI_{p_2,V_2,\mathrm{X}}
+  \end{pmatrix}\\
+  &\=
+  \begin{pmatrix}
+    g_{0}(\tq) & G_{0}(\tq)
+  \end{pmatrix}
+  \begin{pmatrix}
+    1 & 0\\
+    0 & \tau^{-1}
+  \end{pmatrix}
+  \begin{pmatrix}
+    -G_0(q) & G_0(q)+G_1(q)\\
+    -g_0(q) & g_0(q)+g_1(q)
+  \end{pmatrix}\,.
+\end{aligned}
+\ee
+Then we find\footnote{To really prove this, one needs to make a full matrix equation by taking another choice of $n$ in Equation~\eqref{eq:si.qqt}, which has exactly the same Stokes automorphisms as discussed in the Section~\ref{sec:BL-intro}.} that the Stokes matrix going from $\mathrm{I}$ to $\mathrm{X}$ is given by
+\be
+\begin{aligned}
+  &\mathsf{S}_+(q)\\
+  &\=\begin{pmatrix}
+    G_0(q)+G_{-1}(q) & G_0(q)\\
+    g_0(q)+g_{-1}(q) & g_0(q)
+  \end{pmatrix}^{-1}
+  \begin{pmatrix}
+    -1 & 0\\
+    0 & 1
+  \end{pmatrix}
+  \begin{pmatrix}
+    -G_0(q) & G_0(q)+G_1(q)\\
+    -g_0(q) & g_0(q)+g_1(q)
+  \end{pmatrix}\\
+  &\=
+  \begin{pmatrix}
+  -1 + 8q + 9q^2 - 18q^3 - 46q^4 & 3 - 15q - 24q^2 + 15q^3 + 69q^4\\
+  -9q - 3q^2 + 39q^3 + 69q^4 & -1 + 19q + 17q^2 - 53q^3 - 126q^4
+  \end{pmatrix}+\cdots\\
+  &\=
+  \begin{pmatrix}
+  1 & 0\\
+  -3 - 9q - 75q^2 - 642q^3 - 5580q^4 & 1
+  \end{pmatrix}\\
+  &\quad\times\begin{pmatrix}
+  1 - 8q - 9q^2 + 18q^3 + 46q^4 & 0\\
+  0 & 1 + 8q + 73q^2 + 638q^3 + 5571q^4
+  \end{pmatrix}\\
+  &\quad\times\begin{pmatrix}
+  1 & 9q + 75q^2 + 642q^3 + 5580q^4\\
+  0 & 1
+  \end{pmatrix}+\cdots\,.
+\end{aligned}
+\ee
+One can see exact agreement with the previous computations of the first two Stokes constants $-3$ and $-9$. To compute the next constant $-75$ using the methods we have described would presumably involve many iterations of the algorithm and would be best done via computer implementation, which we have not attempted.
+
+\subsection{\texorpdfstring{The case of $(A,B)=(4,1)$}{The case of (A,B)=(4,1)}}\label{sec:A4B1}
+We will compute the Borel--Laplace resummation of $\Phi_\Xi$ with the algorithm described in Section~\ref{sec:alg}. We will see that this exactly matches the numerical predictions of~\cite[Example~39]{Wh:thesis}. The critical points for the function $V$ and their critical values are listed below 
+\begin{center}
+\begin{longtblr}{colspec={c|c|[3pt] c|c}}
+$p_1$ & $(-0.5 -0.0317451 i,0)$ & $V_1$ & $-0.435753$\\ 
+\hline
+$p_2$ & $(0.0512932 i,-2)$ & $V_2$ & $0.0127913$\\
+\hline
+$p_3$ & $(-0.212516-0.009774 i, -1)$ & $V_3$ & $-0.0801858 +0.0248584 i$\\
+\hline
+$p_4$ & $(0.212516-0.009774 i, -3)$ & $V_4$ & $-0.0801858 -0.0248584 i$
+\end{longtblr}
+\end{center}
+Taking the relative difference between volumes, the first non trivial\footnote{By non trivial we mean with non zero Stokes constants. Indeed the line at $\vartheta=1.27018$ is not an effective Stokes line.} Stokes line is at $e^{i\vartheta}\BR_{>0}$ with $\vartheta=1.30955$ and it separates the regions $\mathrm{I}_\star$ and $\mathrm{II}$. The second one is at $\vartheta=1.501$ and separates the regions $\mathrm{II}$ and $\mathrm{III}$. The third one is at $\vartheta=1.52112$ and separates the regions $\mathrm{III}$ and $\mathrm{IV}$. As expected, they form the peacock pattern as illustrated in Figure~\ref{fig:A4B1.stokes}.
+\begin{figure}[ht]
+\begin{tiny}
+\begin{tikzpicture}[scale=2]
+\draw[<->,thick] (-2,0) -- (2,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+\foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+\draw[red,->] (0,0)--(1/\x/5,1);
+\foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+\draw[red,->] (0,0)--(1/\x/0.9,1);
+\foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+\draw[red,->] (0,0)--(1/\x/3.7,1);
+\foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+\draw[red,->] (0,0)--(1/\x/6.4,1);
+\foreach \x in {-3,-2,-1,0,1,2,3}
+\draw[red,->,thick] (0,0)--(0-0.01*\x,1);
+\foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+\draw[red,->] (0,0)--(-1/\x/6.4,1);
+\foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+\draw[red,->] (0,0)--(-1/\x/5,1);
+\foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+\draw[red,->] (0,0)--(-1/\x/3.7,1);
+\foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+\draw[red,->] (0,0)--(-1/\x/0.9,1);
+\foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+\draw[red,->] (0,0)--(1/\x/6.4,-1);
+\foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+\draw[red,->] (0,0)--(1/\x/5,-1);
+\foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+\draw[red,->] (0,0)--(1/\x/3.7,-1);
+\foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+\draw[red,->] (0,0)--(1/\x/0.9,-1);
+\foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+\draw[red,->] (0,0)--(-1/\x/6.4,-1);
+\foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+\draw[red,->] (0,0)--(-1/\x/5,-1);
+\foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+\draw[red,->] (0,0)--(-1/\x/3.7,-1);
+\foreach \x in {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}
+\draw[red,->] (0,0)--(-1/\x/0.9,-1);
+\foreach \x in {-3,-2,-1,0,1,2,3}
+\draw[red,->,thick] (0,0)--(0-0.01*\x,-1);
+\draw[red,dashed,->] (0,0)--(1.5,1.5*0.6); 
+\draw[red,<->] (-2,0)--(2,0);
+\draw[font=\tiny](1.4,0.4) node {$\mathrm{I}$};
+\draw[font=\tiny](1,0.73) node {$\mathrm{I_\star}$};
+\draw[font=\tiny](0.7,0.9) node {$\mathrm{II}$};
+\draw[font=\fontsize{3pt}{4pt}\selectfont](0.415,0.9) node {$\mathrm{III}$};
+\draw[red] (2,0) node[right] {$\vartheta=\pi$};
+\draw[red] (-2,0) node[left] {$\vartheta=0$};
+
+
+
+
+
+\end{tikzpicture}
+\end{tiny}
+\caption{This figure depicts the Stokes rays in $\tau$-plane with $\vartheta=\arg(-1/\tau)$ forming a peacock pattern. Note that this is stretched in the direction of the $x$-axis and the Stokes rays are all even closer to the vertical line. In addition, it is symmetric with respect to the imaginary axis: on the right, the first solid Stokes rays contain the singularties at the points $V_2-V_4$, $V_3-V_1$, $V_3-V_4+1$, $V_1-V_4+1$, which correspond to $\vartheta=1.83204$, $\vartheta=1.64069$, $\vartheta=1.62047$ and $\vartheta=1.60935$, respectively. The dashed Stokes line corresponds to $-V_4$, with $\vartheta=1.87141$, and crossing that ray there will be no Stokes phenomenon as shown in Section~\ref{sec:stokes_A4B1}.}\label{fig:A4B1.stokes}
+\end{figure}
+
+\medskip
+
+To perform the computation, we plot the set $\calC_{p_0,\vartheta}$ and keep track of the branching of the function $V$. We adopt the same conventions as in Section~\ref{sec:4_1}. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{State integrals decomposition in $\mathrm{I}$}
+
+Let $\vartheta\in\mathrm{I}$. We plot the curves $\calC_{p_j,\vartheta}$ for $j=1,2,3,4$ in Figure~\ref{fig:thimb.A4B1.I}.
+\begin{figure}[ht]
+\center
+\begin{tiny}
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+
+\draw[<->,thick] (-2.5,0) -- (1.5,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+\foreach \x in {-2,-1,0,1}
+\draw[green] (-0.564642/0.825336/8+\x,-1)--(0.564642/0.825336/8+\x,1);
+\draw[thick,red] (-0.05,-0.05)--(0.05,0.05);
+\draw[ thick,red] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-2cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-2cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[orange,thick,->] (-0.5,- 0.0317451*8)--(-0.49000, -0.21168)--(-0.48000, -0.16925)--(-0.47000, -0.12667)--(-0.46000, -0.083928)--(-0.45000, -0.041031)--(-0.44000, 0.0020231)--(-0.43000, 0.045235)--(-0.42000, 0.088605)--(-0.41000, 0.13213)--(-0.40000, 0.17582)--(-0.39000, 0.21967)--(-0.38000, 0.26369)--(-0.37000, 0.30786)--(-0.36000, 0.35219)--(-0.35000, 0.39669)--(-0.34000, 0.44135)--(-0.33000, 0.48618)--(-0.32000, 0.53116)--(-0.31000, 0.57631)--(-0.30000, 0.62162)--(-0.29000, 0.66709)--(-0.28000, 0.71272)--(-0.27000, 0.75850)--(-0.26000, 0.80443)--(-0.25000, 0.85051)--(-0.24000, 0.89673)--(-0.23000, 0.94309)--(-0.22000, 0.98957) node[left] {$(0,0)$};
+\draw[orange,thick,->] (-0.5,- 0.0317451*8)--(-0.5190233114, -0.3339608000)--(-0.5381794073, -0.4139608000)--(-0.5574701920, -0.4939608000)--(-0.5768977462, -0.5739608000)--(-0.5964642113, -0.6539608000)--(-0.6161717141, -0.7339608000)--(-0.6360222521, -0.8139608000)--(-0.6560175276, -0.8939608000)--(-0.6761587146, -0.9739608000)--(-0.6964461414, -1.053960800) node[left] {$(-1,0)$};
+\filldraw[red] (-0.5,- 0.0317451*8) circle (0.5pt);
+\end{tikzpicture}
+\vspace{0.5mm}
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+\draw[<->,thick] (-2.5,0) -- (1.5,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+\foreach \x in {-2,-1,0,1}
+\draw[green] (-0.564642/0.825336/8+\x,-1)--(0.564642/0.825336/8+\x,1);
+\draw[thick,red] (-0.05,-0.05)--(0.05,0.05);
+\draw[ thick,red] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-2cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-2cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[orange,thick,->] (0,0.0512932*8)--(0.020183, 0.49035)--(0.042316, 0.57035)--(0.065578, 0.65035)--(0.089337, 0.73035)--(0.11321, 0.81035)--(0.13699, 0.89035)--(0.16058, 0.97035) node[right] {$(-2,0)$};
+\draw[orange,thick,->] (0,0.0512932*8)--(-0.017626, 0.33035)--(-0.032785, 0.25035)--(-0.046140, 0.17035)--(-0.058391, 0.090346)--(-0.070036, 0.010346)--(-0.081387, -0.069654)--(-0.092637, -0.14965)--(-0.10391, -0.22965)--(-0.11528, -0.30965)--(-0.12681, -0.38965)--(-0.13853, -0.46965)--(-0.15045, -0.54965)--(-0.16260, -0.62965)--(-0.17498, -0.70965)--(-0.18759, -0.78965)--(-0.20043, -0.86965)--(-0.21351, -0.94965) node[left] {$(-3,0)$};
+\filldraw[brown] (0,0.0512932*8) circle (0.5pt);
+\end{tikzpicture}
+\vspace{0.5mm}
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+
+\draw[<->,thick] (-2.5,0) -- (1.5,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+\foreach \x in {-2,-1,0,1}
+\draw[green] (-0.564642/0.825336/8+\x,-1)--(0.564642/0.825336/8+\x,1);
+\draw[thick,red] (-0.05,-0.05)--(0.05,0.05);
+\draw[ thick,red] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-2cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-2cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=1cm] (0.05,-0.05)--(-0.05,0.05);
+
+
+\draw[orange,thick,->] (-0.212516,-0.00977403*8)--(-0.22252, -0.12993)--(-0.23252, -0.18126)--(-0.24252, -0.23222)--(-0.25252, -0.28280)--(-0.26252, -0.33303)--(-0.27252, -0.38291)--(-0.28252, -0.43247)--(-0.29252, -0.48171)--(-0.30252, -0.53064)--(-0.31252, -0.57928)--(-0.32252, -0.62764)--(-0.33252, -0.67573)--(-0.34252, -0.72355)--(-0.35252, -0.77112)--(-0.36252, -0.81845)--(-0.37252, -0.86554)--(-0.38252, -0.91240)--(-0.39252, -0.95904) node[left] {$(-2,0)$};
+\draw[orange,thick,->] (-0.212516,-0.00977403*8)--(-0.20252, -0.026048)--(0.00022597, 1.0652) node[right] {$(-1,0)$};
+\filldraw[cyan] (-0.212516,-0.009774*8) circle (0.5pt);
+\end{tikzpicture}
+\vspace{0.5mm}
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+
+
+\draw[<->,thick] (-2.5,0) -- (1.5,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+\foreach \x in {-2,-1,0,1}
+\draw[green] (-0.564642/0.825336/8+\x,-1)--(0.564642/0.825336/8+\x,1);
+\draw[thick,red] (-0.05,-0.05)--(0.05,0.05);
+\draw[ thick,red] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-2cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-2cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[orange,thick,->] (0.212516,-0.009774*8)--(0.22252, -0.044656)--(0.23252, -0.010760)--(0.24252, 0.023478)--(0.25252, 0.058045)--(0.26252, 0.092924)--(0.27252, 0.12810)--(0.28252, 0.16357)--(0.29252, 0.19932)--(0.30252, 0.23533)--(0.31252, 0.27159)--(0.32252, 0.30811)--(0.33252, 0.34487)--(0.34252, 0.38185)--(0.35252, 0.41907)--(0.36252, 0.45650)--(0.37252, 0.49414)--(0.38252, 0.53199)--(0.39252, 0.57004)--(0.40252, 0.60829)--(0.41252, 0.64672)--(0.42252, 0.68535)--(0.43252, 0.72415)--(0.44252, 0.76313)--(0.45252, 0.80229)--(0.46252, 0.84162)--(0.47252, 0.88111)--(0.48252, 0.92077)--(0.49252, 0.96059)--(0.50252, 1.0006) node[right] {$(-3,0)$};
+\draw[thick,orange,->] (0.212516,-0.009774*8)--(0.20252, -0.11135)--(0.19252, -0.14411)--(0.18252, -0.17646)--(0.17252, -0.20836)--(0.16252, -0.23980)--(0.15252, -0.27074)--(0.14252, -0.30116)--(0.13252, -0.33104)--(0.12252, -0.36033)--(0.11252, -0.38902)--(0.10252, -0.41707)--(0.092516, -0.44447)--(0.082516, -0.47119)--(0.072516, -0.49725)--(0.062516, -0.52266)--(0.052516, -0.54749)--(0.042516, -0.57184)--(0.032516, -0.59585)--(0.022516, -0.61976)--(0.012516, -0.64381)--(0.0025160, -0.66830)--(0, -0.67457)--(-0.010000, -0.70003)--(-0.020000, -0.72654)--(-0.030000, -0.75431)--(-0.040000, -0.78347)--(-0.050000, -0.81407)--(-0.060000, -0.84612)--(-0.070000, -0.87959)--(-0.080000, -0.91439)--(-0.090000, -0.95043)--(-0.10000, -0.98762) node[left] {$(-3,0)$};
+\filldraw[blue] (0.212516,-0.009774*8) circle (0.5pt);
+\end{tikzpicture}
+\end{tiny}
+\caption{From the right, this figure depicts in \textcolor{orange}{orange} the analytic continuation of the set $\calC_{p_1,\vartheta}, \calC_{p_2,\vartheta}, \calC_{p_3,\vartheta}$ and $\calC_{p_4,\vartheta}$ for $\vartheta=\arg(-1/\tau)=2.54159$ and $(A,B)=(4,1)$. The \textcolor{green}{green} lines are parallel to the lines $i/\tau$.}
+\label{fig:thimb.A4B1.I}
+\end{figure}
+We can decompose the thimble in terms on state integrals contours, hence the algorithm gives
+\be\label{eq:region_I_A4B1}
+\begin{aligned}
+\calI_{p_1,V_1,\mathrm{I}}
+&\=
+\calI_{0,0}\,,\qquad 
+\calI_{p_2,V_2,\mathrm{I}}
+&\=
+\calI_{-2,0}\,, \qquad
+\calI_{p_3,V_3,\mathrm{I}}
+&\=
+\calI_{-1,0}\,, \qquad
+\calI_{p_4,V_4,\mathrm{I}}
+&\=
+\calI_{-3,1}\,.
+\end{aligned}
+\ee
+
+\subsubsection{The \emph{false} saddle connection}
+Let $\vartheta=1.87141$, which corresponds to the Stokes line at the angle $\arg\big(-\frac{2\pi i}{V_4}\big)$. We plot the set $\calC_{p_4,\vartheta}$ in Figure~\ref{fig:FAKE_saddle.A4B1}.
+\begin{figure}[ht]
+\begin{tiny}
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+\draw[<->,thick] (-2.5,0) -- (1.5,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+\foreach \x in {-2,-1,0,1}
+\draw[green] (-0.95516/8/0.29609+\x,-1)--(0.95516/8/0.29609+\x,1);
+\draw[thick,red] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-2cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-2cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[orange,thick,->] (0.2225160000, -0.07324363262)--(0.2325160000, -0.06800069288)--(0.2425160000, -0.06247886801)--(0.2525160000, -0.05669201082)--(0.2625160000, -0.05065262820)--(0.2725160000, -0.04437204753)--(0.2825160000, -0.03786055704)--(0.2925160000, -0.03112752498)--(0.3025160000, -0.02418150133)--(0.3125160000, -0.01703030502)--(0.3225160000, -0.009681099135)--(0.3325160000, -0.002140455987)--(0.3425160000, 0.005585586302)--(0.3525160000, 0.01349147447)--(0.3625160000, 0.02157209693)--(0.3725160000, 0.02982274590)--(0.3825160000, 0.03823908403)--(0.3925160000, 0.04681711498)--(0.4025160000, 0.05555315746)--(0.4125160000, 0.06444382221)--(0.4225160000, 0.07348599155)--(0.4325160000, 0.08267680137)--(0.4425160000, 0.09201362503)--(0.4525160000, 0.1014940591)--(0.4625160000, 0.1111159108)--(0.4725160000, 0.1208771868)--(0.4825160000, 0.1307760832)--(0.4925160000, 0.1408109772)--(0.5025160000, 0.1509804192)--(0.5125160000, 0.1612831261)--(0.5225160000, 0.1717179761)--(0.5325160000, 0.1822840032)--(0.5425160000, 0.1929803935)--(0.5525160000, 0.2038064818)--(0.5625160000, 0.2147617489)--(0.5725160000, 0.2258458196)--(0.5825160000, 0.2370584613)--(0.5925160000, 0.2483995831)--(0.6025160000, 0.2598692360)--(0.6125160000, 0.2714676126)--(0.6225160000, 0.2831950485)--(0.6325160000, 0.2950520232)--(0.6425160000, 0.3070391622)--(0.6525160000, 0.3191572388)--(0.6625160000, 0.3314071769)--(0.6725160000, 0.3437900541)--(0.6825160000, 0.3563071040)--(0.6925160000, 0.3689597199)--(0.7025160000, 0.3817494577)--(0.7125160000, 0.3946780385)--(0.7225160000, 0.4077473507)--(0.7325160000, 0.4209594512)--(0.7425160000, 0.4343165647)--(0.7525160000, 0.4478210811)--(0.7625160000, 0.4614755494)--(0.7725160000, 0.4752826669)--(0.7825160000, 0.4892452627)--(0.7925160000, 0.5033662713)--(0.8025160000, 0.5176486963)--(0.8125160000, 0.5320955562)--(0.8225160000, 0.5467098111)--(0.8325160000, 0.5614942599)--(0.8425160000, 0.5764514011)--(0.8525160000, 0.5915832460)--(0.8625160000, 0.6068910698)--(0.8725160000, 0.6223750869)--(0.8825160000, 0.6380340332)--(0.8925160000, 0.6538646422)--(0.9025160000, 0.6698610107)--(0.9125160000, 0.6860138648)--(0.9225160000, 0.7023097711)--(0.9325160000, 0.7187303841)--(0.9425160000, 0.7352518792)--(0.9525160000, 0.7518447743)--(0.9625160000, 0.7684743567)--(0.9725160000, 0.7851018675)--(0.9825160000, 0.8016864291)--(0.9925160000, 0.8181874790)--(1.002516000, 0.8345672810)--(1.012516000, 0.8507930410)--(1.022516000, 0.8668382826)--(1.032516000, 0.8826833709)--(1.042516000, 0.8983152945)--(1.052516000, 0.9137269384)--(1.062516000, 0.9289161009)--(1.072516000, 0.9438844549)--(1.082516000, 0.9586365826)--(1.092516000, 0.9731791489)--(1.102516000, 0.9875202289)--(1.112516000, 1.001668785)--(1.122516000, 1.015634273)--(1.132516000, 1.029426347)--(1.142516000, 1.043054654)--(1.152516000, 1.056528688)--(1.162516000, 1.069857687)--(1.172516000, 1.083050574)--(1.182516000, 1.096115915)--(1.192516000, 1.109061899)--(1.202516000, 1.121896331)--(1.212516000, 1.134626633) node[right] {$(-3,0)$};
+\draw[orange,thick] (0.2025160000, -0.08282948439)--(0.1925160000, -0.08713596354)--(0.1825160000, -0.09109004966)--(0.1725160000, -0.09466720439)--(0.1625160000, -0.09783948589)--(0.1525160000, -0.1005748645)--(0.1425160000, -0.1028363482)--(0.1325160000, -0.1045808493)--(0.1225160000, -0.1057576905)--(0.1125160000, -0.1063065974)--(0.1025160000, -0.1061549425)--(0.09251600000, -0.1052138628)--(0.08251600000, -0.1033726209)--(0.07251600000, -0.1004901121)--(0.06251600000, -0.09638148330)--(0.05251600000, -0.09079581999)--(0.04251600000, -0.08337607088)--(0.03251600000, -0.07357935415)--(0.02251600000, -0.06049274119)--(0.01251600000, -0.04228477713)--(0.002516000000, -0.01321851667);
+\filldraw[brown] (0,0.0512932*8) circle (0.5pt);
+
+
+\filldraw[blue] (0.212516,- 0.0097740*8) circle (0.5pt);
+
+\draw[thick,orange,] (-0.05,0)--(0.05,0);
+\draw[thick,orange] (0,-0.05)--(0,0.05);
+\end{tikzpicture}
+\end{tiny}
+\caption{This figure depicts in \textcolor{orange}{orange} the set $\calC_{p_4,\vartheta}$ for $\vartheta=\arg(-1/\tau)=1.87141$, and $(A,B)=(4,1)$. The \textcolor{green}{green} lines are parallel to the lines $i/\tau$.}
+\label{fig:FAKE_saddle.A4B1}
+\end{figure}
+Moving away from this apparent saddle, we plot the set $\calC_{p_4,\vartheta}$ in Figure~\ref{fig:after_FAKE_saddle.A4B1} for $\vartheta=1.85159$.
+
+\begin{figure}[ht]
+\begin{tiny}
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+
+
+
+\draw[<->,thick] (-2.5,0) -- (1.5,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+\foreach \x in {-2,-1,0,1}
+\draw[green] (-0.960835/8/0.277121+\x,-1)--(0.960835/8/0.277121+\x,1);
+\draw[thick, red] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick, red] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-2cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-2cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[orange,thick,->] (0.2225160000, -0.07403834333)--(0.2325160000, -0.06959075409)--(0.2425160000, -0.06486487986)--(0.2525160000, -0.05987454944)--(0.2625160000, -0.05463224781)--(0.2725160000, -0.04914928232)--(0.2825160000, -0.04343592277)--(0.2925160000, -0.03750152039)--(0.3025160000, -0.03135460936)--(0.3125160000, -0.02500299386)--(0.3225160000, -0.01845382319)--(0.3325160000, -0.01171365670)--(0.3425160000, -0.004788520271)--(0.3525160000, 0.002316044467)--(0.3625160000, 0.009594937017)--(0.3725160000, 0.01704346022)--(0.3825160000, 0.02465728697)--(0.3925160000, 0.03243243089)--(0.4025160000, 0.04036522043)--(0.4125160000, 0.04845227584)--(0.4225160000, 0.05669048898)--(0.4325160000, 0.06507700517)--(0.4425160000, 0.07360920732)--(0.4525160000, 0.08228470169)--(0.4625160000, 0.09110130543)--(0.4725160000, 0.1000570354)--(0.4825160000, 0.1091500986)--(0.4925160000, 0.1183788832)--(0.5025160000, 0.1277419515)--(0.5125160000, 0.1372380334)--(0.5225160000, 0.1468660204)--(0.5325160000, 0.1566249614)--(0.5425160000, 0.1665140585)--(0.5525160000, 0.1765326642)--(0.5625160000, 0.1866802787)--(0.5725160000, 0.1969565481)--(0.5825160000, 0.2073612636)--(0.5925160000, 0.2178943612)--(0.6025160000, 0.2285559214)--(0.6125160000, 0.2393461705)--(0.6225160000, 0.2502654817)--(0.6325160000, 0.2613143773)--(0.6425160000, 0.2724935312)--(0.6525160000, 0.2838037720)--(0.6625160000, 0.2952460866)--(0.6725160000, 0.3068216242)--(0.6825160000, 0.3185317013)--(0.6925160000, 0.3303778058)--(0.7025160000, 0.3423616031)--(0.7125160000, 0.3544849406)--(0.7225160000, 0.3667498528)--(0.7325160000, 0.3791585664)--(0.7425160000, 0.3917135039)--(0.7525160000, 0.4044172855)--(0.7625160000, 0.4172727297)--(0.7725160000, 0.4302828495)--(0.7825160000, 0.4434508443)--(0.7925160000, 0.4567800846)--(0.8025160000, 0.4702740864)--(0.8125160000, 0.4839364727)--(0.8225160000, 0.4977709150)--(0.8325160000, 0.5117810495)--(0.8425160000, 0.5259703571)--(0.8525160000, 0.5403419963)--(0.8625160000, 0.5548985714)--(0.8725160000, 0.5696418188)--(0.8825160000, 0.5845721856)--(0.8925160000, 0.5996882780)--(0.9025160000, 0.6149861580)--(0.9125160000, 0.6304584812)--(0.9225160000, 0.6460934987)--(0.9325160000, 0.6618740025)--(0.9425160000, 0.6777763758)--(0.9525160000, 0.6937700070)--(0.9625160000, 0.7098173966)--(0.9725160000, 0.7258752566)--(0.9825160000, 0.7418967135)--(0.9925160000, 0.7578343846)--(1.002516000, 0.7736437495)--(1.012516000, 0.7892860916)--(1.022516000, 0.8047304347)--(1.032516000, 0.8199542712)--(1.042516000, 0.8349432362)--(1.052516000, 0.8496900890)--(1.062516000, 0.8641933779)--(1.072516000, 0.8784560773)--(1.082516000, 0.8924843649)--(1.092516000, 0.9062866094)--(1.102516000, 0.9198725786)--(1.112516000, 0.9332528435)--(1.122516000, 0.9464383453)--(1.132516000, 0.9594400884)--(1.142516000, 0.9722689297)--(1.152516000, 0.9849354385)--(1.162516000, 0.9974498077)--(1.172516000, 1.009821801)--(1.182516000, 1.022060727)--(1.192516000, 1.034175430)--(1.202516000, 1.046174291)--(1.212516000, 1.058065244) node[right] {$(-3,0)$};
+\draw[orange,thick,->] (0.2025160000, -0.08203540376)--(0.1925160000, -0.08554850470)--(0.1825160000, -0.08870993936)--(0.1725160000, -0.09149521207)--(0.1625160000, -0.09387643034)--(0.1525160000, -0.09582162230)--(0.1425160000, -0.09729386493)--(0.1325160000, -0.09825015434)--(0.1225160000, -0.09863991735)--(0.1125160000, -0.09840301309)--(0.1025160000, -0.09746699094)--(0.09251600000, -0.09574323108)--(0.08251600000, -0.09312134696)--(0.07251600000, -0.08946076810)--(0.06251600000, -0.08457750966)--(0.05251600000, -0.07822218452)--(0.04251600000, -0.07004071319)--(0.03251600000, -0.05949683693)--(0.02251600000, -0.04569571805)--(0.01251600000, -0.02687723372)--(0.002516000000, 0.001801860594)--(-0.007484000000, 0.02216148560)--(-0.01748400000, 0.02406287056)--(-0.02748400000, 0.01973984130)--(-0.03748400000, 0.01166417041)--(-0.04748400000, 0.0009870574582)--(-0.05748400000, -0.01160991022)--(-0.06748400000, -0.02567377689)--(-0.07748400000, -0.04088231655)--(-0.08748400000, -0.05699584640)--(-0.09748400000, -0.07383041880)--(-0.1074840000, -0.09124157538)--(-0.1174840000, -0.1091138617)--(-0.1274840000, -0.1273537258)--(-0.1374840000, -0.1458845233)--(-0.1474840000, -0.1646428956)--(-0.1574840000, -0.1835760775)--(-0.1674840000, -0.2026398547)--(-0.1774840000, -0.2217969863)--(-0.1874840000, -0.2410159694)--(-0.1974840000, -0.2602700585)--(-0.2074840000, -0.2795364786)--(-0.2174840000, -0.2987957881)--(-0.2274840000, -0.3180313585)--(-0.2374840000, -0.3372289453)--(-0.2474840000, -0.3563763336)--(-0.2574840000, -0.3754630415)--(-0.2674840000, -0.3944800721)--(-0.2774840000, -0.4134197048)--(-0.2874840000, -0.4322753175)--(-0.2974840000, -0.4510412371)--(-0.3074840000, -0.4697126106)--(-0.3174840000, -0.4882852953)--(-0.3274840000, -0.5067557649)--(-0.3374840000, -0.5251210276)--(-0.3474840000, -0.5433785562)--(-0.3574840000, -0.5615262274)--(-0.3674840000, -0.5795622684)--(-0.3774840000, -0.5974852114)--(-0.3874840000, -0.6152938535)--(-0.3974840000, -0.6329872210)--(-0.4074840000, -0.6505645396)--(-0.4174840000, -0.6680252067)--(-0.4274840000, -0.6853687683)--(-0.4374840000, -0.7025948974)--(-0.4474840000, -0.7197033768)--(-0.4574840000, -0.7366940816)--(-0.4674840000, -0.7535669660)--(-0.4774840000, -0.7703220500)--(-0.4874840000, -0.7869594085)--(-0.4974840000, -0.8034791612)--(-0.5074840000, -0.8198814643)--(-0.5174840000, -0.8361665022)--(-0.5274840000, -0.8523344812)--(-0.5374840000, -0.8683856233)--(-0.5474840000, -0.8843201608)--(-0.5574840000, -0.9001383322)--(-0.5674840000, -0.9158403779)--(-0.5774840000, -0.9314265370)--(-0.5874840000, -0.9468970445)--(-0.5974840000, -0.9622521291)--(-0.6074840000, -0.9774920116)--(-0.6174840000, -0.9926169037)node[right] {$(-4,0)$};
+\draw[magenta,thick] (-0.4900000000, -0.6232432934)--(-0.4800000000, -0.6068781913)--(-0.4700000000, -0.5903410822)--(-0.4600000000, -0.5736289234)--(-0.4500000000, -0.5567385108)--(-0.4400000000, -0.5396664753)--(-0.4300000000, -0.5224092798)--(-0.4200000000, -0.5049632160)--(-0.4100000000, -0.4873244031)--(-0.4000000000, -0.4694887858)--(-0.3900000000, -0.4514521350)--(-0.3800000000, -0.4332100489)--(-0.3700000000, -0.4147579564)--(-0.3600000000, -0.3960911237)--(-0.3500000000, -0.3772046632)--(-0.3400000000, -0.3580935466)--(-0.3300000000, -0.3387526244)--(-0.3200000000, -0.3191766507)--(-0.3100000000, -0.2993603173)--(-0.3000000000, -0.2792982979)--(-0.2900000000, -0.2589853071)--(-0.2800000000, -0.2384161753)--(-0.2700000000, -0.2175859469)--(-0.2600000000, -0.1964900059)--(-0.2500000000, -0.1751242384)--(-0.2400000000, -0.1534852409)--(-0.2300000000, -0.1315705886)--(-0.2200000000, -0.1093791824)--(-0.2100000000, -0.08691169588)--(-0.2000000000, -0.06417115559)--(-0.1900000000, -0.04116369643)--(-0.1800000000, -0.01789954901)--(-0.1700000000, 0.005605661938)--(-0.1600000000, 0.02932919915)--(-0.1500000000, 0.05323892146)--(-0.1400000000, 0.07729020072)--(-0.1300000000, 0.1014217291)--(-0.1200000000, 0.1255497428)--(-0.1100000000, 0.1495599338)--(-0.1000000000, 0.1732958822)--(-0.09000000000, 0.1965420414)--(-0.08000000000, 0.2189977167)--(-0.07000000000, 0.2402350357)--(-0.06000000000, 0.2596256700)--(-0.05000000000, 0.2761991247)--(-0.04000000000, 0.2883297458)--(-0.03000000000, 0.2929252230)--(-0.02000000000, 0.2828947942)--(-0.01000000000, 0.2375848532)--(0, 0.08364163774)--(0.001855021165, 0.008000000000)--(0.001793269547, 0.01600000000)--(0.001676846075, 0.02400000000)--(0.001522073587, 0.03200000000);
+\draw[magenta,thick,->] (-0.4900000000, -0.6232432934)--(-0.5100000000, -0.6554688619)--(-0.5200000000, -0.6713346405)--(-0.5300000000, -0.6870390439)--(-0.5400000000, -0.7025843650)--(-0.5500000000, -0.7179727585)--(-0.5600000000, -0.7332062444)--(-0.5700000000, -0.7482867122)--(-0.5800000000, -0.7632159239)--(-0.5900000000, -0.7779955183)--(-0.6000000000, -0.7926270141)--(-0.6100000000, -0.8071118136)--(-0.6200000000, -0.8214512063)--(-0.6300000000, -0.8356463724)--(-0.6400000000, -0.8496983868)--(-0.6500000000, -0.8636082230)--(-0.6600000000, -0.8773767573)--(-0.6700000000, -0.8910047737)--(-0.6800000000, -0.9044929688)--(-0.6900000000, -0.9178419581)--(-0.7000000000, -0.9310522822)--(-0.7100000000, -0.9441244150)--(-0.7200000000, -0.9570587729)--(-0.7300000000, -0.9698557253)--(-0.7400000000, -0.9825156075)--(-0.7500000000, -0.9950387364) node[left] {$(-1,0)$};
+\filldraw[brown] (0,0.0512932*8) circle (0.5pt);
+
+
+\filldraw[blue] (0.212516,- 0.0097740*8) circle (0.5pt);
+
+\end{tikzpicture}
+\end{tiny}
+\caption{This figure depicts in \textcolor{orange}{orange} the set $\calC_{p_4,\vartheta}$ for $\vartheta=\arg(-1/\tau)=1.85159$, and $(A,B)=(4,1)$. The \textcolor{green}{green} lines are parallel to the lines $i/\tau$. The \textcolor{magenta}{magenta} curve represents the tail at the intersection of the set $\calC_{p_4,\vartheta}$ with the green lines.}
+\label{fig:after_FAKE_saddle.A4B1}
+\end{figure}
+
+\noindent We can decompose the thimble $\calC_{p_4,\vartheta}$ in terms of state integral contours. We have contribution of $I_{-3,0}$ from the intersection of the orange contour with the interval $(-1,0)$, which has $(n,m,\ell)=(0,-3,0)$. Then, at the second iteration of the algorithm we get the contribution of $-I_{-2,0}$ from the intersection of the magenta curve with the interval $(-1,0)$, which has $(n,m,\ell)=(0,-2,0)$. Therefore, we find 
+\be\label{eq:region_Is_A4B1}
+\calI_{p_4,V_4,I_\star}=\calI_{-3,0}-\calI_{-2,0}=\calI_{-3,1}
+\ee
+where in the last equality follows from Equation~\eqref{eq:state_integral_1}. Notice that the set $\calC_{p_4,\vartheta}$ intersects the interval $(0,1)$ twice, thus there is no contribution coming from the state integral $\calI_{-3,1}$. 
+
+
+\subsubsection{The saddle connection between $\mathrm{I}$ and $\mathrm{II}$}
+The saddle connection is depicted in Figure~\ref{fig:saddle.A4B1.I-II}.
+\begin{figure}[ht]
+\begin{tiny}
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+
+
+
+
+
+
+
+\draw[<->,thick] (-2.5,0) -- (1.5,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+\foreach \x in {-2,-1,0,1}
+\draw[green] (-0.966069/8/0.258285+\x,-1)--(0.966069/8/0.258285+\x,1);
+\draw[thick,red] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-2cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-2cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[orange,thick,->] (0.212516,-0.009774*8)--(0.22252, -0.074822)--(0.23252, -0.071159)--(0.24252, -0.067218)--(0.25252, -0.063013)--(0.26252, -0.058557)--(0.27252, -0.053860)--(0.28252, -0.048934)--(0.29252, -0.043787)--(0.30252, -0.038428)--(0.31252, -0.032864)--(0.32252, -0.027104)--(0.33252, -0.021153)--(0.34252, -0.015017)--(0.35252, -0.0087020)--(0.36252, -0.0022132)--(0.37252, 0.0044449)--(0.38252, 0.011268)--(0.39252, 0.018252)--(0.40252, 0.025393)--(0.41252, 0.032689)--(0.42252, 0.040135)--(0.43252, 0.047729)--(0.44252, 0.055468)--(0.45252, 0.063351)--(0.46252, 0.071374)--(0.47252, 0.079537)--(0.48252, 0.087836)--(0.49252, 0.096271)--(0.50252, 0.10484)--(0.51252, 0.11354)--(0.52252, 0.12237)--(0.53252, 0.13134)--(0.54252, 0.14043)--(0.55252, 0.14966)--(0.56252, 0.15901)--(0.57252, 0.16849)--(0.58252, 0.17810)--(0.59252, 0.18783)--(0.60252, 0.19770)--(0.61252, 0.20769)--(0.62252, 0.21782)--(0.63252, 0.22807)--(0.64252, 0.23845)--(0.65252, 0.24897)--(0.66252, 0.25962)--(0.67252, 0.27040)--(0.68252, 0.28131)--(0.69252, 0.29236)--(0.70252, 0.30355)--(0.71252, 0.31488)--(0.72252, 0.32636)--(0.73252, 0.33797)--(0.74252, 0.34974)--(0.75252, 0.36165)--(0.76252, 0.37372)--(0.77252, 0.38594)--(0.78252, 0.39833)--(0.79252, 0.41088)--(0.80252, 0.42359)--(0.81252, 0.43648)--(0.82252, 0.44954)--(0.83252, 0.46279)--(0.84252, 0.47622)--(0.85252, 0.48984)--(0.86252, 0.50366)--(0.87252, 0.51767)--(0.88252, 0.53188)--(0.89252, 0.54629)--(0.90252, 0.56090)--(0.91252, 0.57570)--(0.92252, 0.59069)--(0.93252, 0.60584)--(0.94252, 0.62114)--(0.95252, 0.63656)--(0.96252, 0.65205)--(0.97252, 0.66757)--(0.98252, 0.68306)--(0.99252, 0.69847)--(1.0025, 0.71374)--(1.0125, 0.72883)--(1.0225, 0.74370)--(1.0325, 0.75833)--(1.0425, 0.77270)--(1.0525, 0.78680)--(1.0625, 0.80063)--(1.0725, 0.81420)--(1.0825, 0.82751)--(1.0925, 0.84059)--(1.1025, 0.85343)--(1.1125, 0.86605)--(1.1225, 0.87846)--(1.1325, 0.89068)--(1.1425, 0.90271)--(1.1525, 0.91458)--(1.1625, 0.92629)--(1.1725, 0.93785)--(1.1825, 0.94927)--(1.1925, 0.96056)--(1.2025, 0.97173)--(1.2125, 0.98279) node[right] {$(-3,0)$};
+\draw[orange,thick,->] (0.212516,-0.009774*8)--(0.20252, -0.081252)--(0.19252, -0.083983)--(0.18252, -0.086362)--(0.17252, -0.088366)--(0.16252, -0.089967)--(0.15252, -0.091132)--(0.14252, -0.091825)--(0.13252, -0.092004)--(0.12252, -0.091617)--(0.11252, -0.090605)--(0.10252, -0.088895)--(0.092516, -0.086400)--(0.082516, -0.083009)--(0.072516, -0.078582)--(0.062516, -0.072938)--(0.052516, -0.065830)--(0.042516, -0.056909)--(0.032516, -0.045650)--(0.022516, -0.031196)--(0.012516, -0.011927)--(-0.0060000, 0.032361)--(-0.016000, 0.036853)--(-0.026000, 0.034511)--(-0.036000, 0.028157)--(-0.046000, 0.019052)--(-0.056000, 0.0079286)--(-0.066000, -0.0047344)--(-0.076000, -0.018598)--(-0.086000, -0.033412)--(-0.096000, -0.048985)--(-0.10600, -0.065166)--(-0.11600, -0.081837)--(-0.12600, -0.098899)--(-0.13600, -0.11627)--(-0.14600, -0.13390)--(-0.15600, -0.15171)--(-0.16600, -0.16967)--(-0.17600, -0.18774)--(-0.18600, -0.20589)--(-0.19600, -0.22408)--(-0.20600, -0.24230)--(-0.21600, -0.26052)--(-0.22600, -0.27873)--(-0.23600, -0.29691)--(-0.24600, -0.31505)--(-0.25600, -0.33314)--(-0.26600, -0.35116)--(-0.27600, -0.36912)--(-0.28600, -0.38700)--(-0.29600, -0.40479)--(-0.30600, -0.42250)--(-0.31600, -0.44012)--(-0.32600, -0.45763)--(-0.33600, -0.47505)--(-0.34600, -0.49237)--(-0.35600, -0.50958)--(-0.36600, -0.52668)--(-0.37600, -0.54368)--(-0.38600, -0.56056)--(-0.39600, -0.57734)--(-0.40600, -0.59400)--(-0.41600, -0.61055)--(-0.42600, -0.62698)--(-0.43600, -0.64331)--(-0.44600, -0.65951)--(-0.45600, -0.67560)--(-0.46600, -0.69158)--(-0.47600, -0.70744)--(-0.48600, -0.72319)--(-0.49600, -0.73882)--(-0.50600, -0.75434)--(-0.51600, -0.76974)--(-0.52600, -0.78503)--(-0.53600, -0.80020)--(-0.54600, -0.81526)--(-0.55600, -0.83020)--(-0.56600, -0.84503)--(-0.57600, -0.85974)--(-0.58600, -0.87434)--(-0.59600, -0.88882)--(-0.60600, -0.90320)--(-0.61600, -0.91745)--(-0.62600, -0.93160)--(-0.63600, -0.94562)--(-0.64600, -0.95954)--(-0.65600, -0.97334)--(-0.66600, -0.98703)--(-0.67600, -1.0006)--(-0.68600, -1.0141)--(-0.69600, -1.0274)--(-0.70600, -1.0406) node[right] {$(-4,0)$};
+\draw[magenta, thick,-] (-0.00019916, 0.42000)--(0.0011425, 0.34000)--(0.0023724, 0.26000)--(0.0034922, 0.18000)--(0.0043780, 0.10000)--(0.0045469, 0.020000);
+\draw[magenta, thick,->] (0.010000, 0.41962)--(0.020000, 0.42676)--(0.030000, 0.43203)--(0.040000, 0.43578)--(0.050000, 0.43837)--(0.060000, 0.44007)--(0.070000, 0.44114)--(0.080000, 0.44177)--(0.090000, 0.44211)--(0.10000, 0.44227)--(0.11000, 0.44235)--(0.12000, 0.44242)--(0.13000, 0.44254)--(0.14000, 0.44275)--(0.15000, 0.44308)--(0.16000, 0.44355)--(0.17000, 0.44419)--(0.18000, 0.44500)--(0.19000, 0.44600)--(0.20000, 0.44719)--(0.21000, 0.44859)--(0.22000, 0.45018)--(0.23000, 0.45198)--(0.24000, 0.45398)--(0.25000, 0.45618)--(0.26000, 0.45858)--(0.27000, 0.46118)--(0.28000, 0.46398)--(0.29000, 0.46697)--(0.30000, 0.47016)--(0.31000, 0.47353)--(0.32000, 0.47709)--(0.33000, 0.48084)--(0.34000, 0.48476)--(0.35000, 0.48886)--(0.36000, 0.49314)--(0.37000, 0.49759)--(0.38000, 0.50220)--(0.39000, 0.50699)--(0.40000, 0.51193)--(0.41000, 0.51704)--(0.42000, 0.52230)--(0.43000, 0.52773)--(0.44000, 0.53330)--(0.45000, 0.53903)--(0.46000, 0.54490)--(0.47000, 0.55093)--(0.48000, 0.55710)--(0.49000, 0.56341)--(0.50000, 0.56987)--(0.51000, 0.57647)--(0.52000, 0.58321)--(0.53000, 0.59008)--(0.54000, 0.59709)--(0.55000, 0.60424)--(0.56000, 0.61153)--(0.57000, 0.61894)--(0.58000, 0.62649)--(0.59000, 0.63418)--(0.60000, 0.64199)--(0.61000, 0.64994)--(0.62000, 0.65801)--(0.63000, 0.66622)--(0.64000, 0.67456)--(0.65000, 0.68303)--(0.66000, 0.69162)--(0.67000, 0.70035)--(0.68000, 0.70921)--(0.69000, 0.71819)--(0.70000, 0.72731)--(0.71000, 0.73656)--(0.72000, 0.74594)--(0.73000, 0.75545)--(0.74000, 0.76509)--(0.75000, 0.77487)--(0.76000, 0.78478)--(0.77000, 0.79482)--(0.78000, 0.80500)--(0.79000, 0.81532)--(0.80000, 0.82577)--(0.81000, 0.83636)--(0.82000, 0.84708)--(0.83000, 0.85794)--(0.84000, 0.86894)--(0.85000, 0.88007)--(0.86000, 0.89134)--(0.87000, 0.90274)--(0.88000, 0.91426)--(0.89000, 0.92591)--(0.90000, 0.93768)--(0.91000, 0.94956)--(0.92000, 0.96154)--(0.93000, 0.97362)--(0.94000, 0.98577)--(0.95000, 0.99798) node[left] {$(-2,0)$};
+\draw[magenta,thick,->] (-0.010000, 0.39863)--(-0.020000, 0.38433)--(-0.030000, 0.36762)--(-0.040000, 0.34878)--(-0.050000, 0.32815)--(-0.060000, 0.30611)--(-0.070000, 0.28304)--(-0.080000, 0.25924)--(-0.090000, 0.23496)--(-0.10000, 0.21041)--(-0.11000, 0.18575)--(-0.12000, 0.16109)--(-0.13000, 0.13653)--(-0.14000, 0.11214)--(-0.15000, 0.087966)--(-0.16000, 0.064041)--(-0.17000, 0.040393)--(-0.18000, 0.017040)--(-0.19000, -0.0060086)--(-0.20000, -0.028746)--(-0.21000, -0.051169)--(-0.22000, -0.073279)--(-0.23000, -0.095078)--(-0.24000, -0.11657)--(-0.25000, -0.13776)--(-0.26000, -0.15865)--(-0.27000, -0.17924)--(-0.28000, -0.19956)--(-0.29000, -0.21959)--(-0.30000, -0.23935)--(-0.31000, -0.25885)--(-0.32000, -0.27809)--(-0.33000, -0.29708)--(-0.34000, -0.31582)--(-0.35000, -0.33432)--(-0.36000, -0.35258)--(-0.37000, -0.37062)--(-0.38000, -0.38844)--(-0.39000, -0.40603)--(-0.40000, -0.42342)--(-0.41000, -0.44060)--(-0.42000, -0.45757)--(-0.43000, -0.47435)--(-0.44000, -0.49093)--(-0.45000, -0.50733)--(-0.46000, -0.52354)--(-0.47000, -0.53956)--(-0.48000, -0.55540)--(-0.49000, -0.57107)--(-0.50000, -0.58657)--(-0.51000, -0.60190)--(-0.52000, -0.61706)--(-0.53000, -0.63205)--(-0.54000, -0.64688)--(-0.55000, -0.66155)--(-0.56000, -0.67607)--(-0.57000, -0.69043)--(-0.58000, -0.70463)--(-0.59000, -0.71868)--(-0.60000, -0.73259)--(-0.61000, -0.74634)--(-0.62000, -0.75994)--(-0.63000, -0.77340)--(-0.64000, -0.78671)--(-0.65000, -0.79988)--(-0.66000, -0.81290)--(-0.67000, -0.82578)--(-0.68000, -0.83851)--(-0.69000, -0.85111)--(-0.70000, -0.86356)--(-0.71000, -0.87587)--(-0.72000, -0.88804)--(-0.73000, -0.90007)--(-0.74000, -0.91196)--(-0.75000, -0.92371)--(-0.76000, -0.93532)--(-0.77000, -0.94679)--(-0.78000, -0.95811)--(-0.79000, -0.96930)--(-0.80000, -0.98035)--(-0.81000, -0.99125) node[left] {$(-3,0)$};
+
+\filldraw[brown] (0,0.0512932*8) circle (0.5pt);
+
+
+\filldraw[blue] (0.212516,- 0.0097740*8) circle (0.5pt);
+
+\end{tikzpicture}
+\end{tiny}
+\caption{This figure depicts in \textcolor{orange}{orange} the set $\calC_{p_4,\vartheta}$ for $\vartheta=\arg(-1/\tau)=1.83204$, and $(A,B)=(4,1)$. The \textcolor{green}{green} lines are parallel to the lines $i/\tau$. The \textcolor{magenta}{magenta} curve represents the tail at the intersection of the set $\calC_{p_4,\vartheta}$ with the green lines.}
+\label{fig:saddle.A4B1.I-II}
+\end{figure}
+Notice that the magenta line hits the critical point $p_2$. This suggests that in the state integral decomposition we should see the contribution from $\calI_{-2,0}$, as we indeed verify in Section~\ref{sec:region_II}.
+
+\subsubsection{State integrals decomposition in $\mathrm{II}$}\label{sec:region_II}
+Let $\vartheta\in\mathrm{II}$. We plot the curve $\calC_{p_4,\vartheta}$ in Figure~\ref{fig:thimb.A4B1.II}.
+We can decompose the thimble in terms of state integrals contours. We have contributions of $\calI_{-3,0}$ from the intersection of the orange contour with the interval $(-1,0)$, which has $(n,m,\ell)=(0,-3,0)$. Then, due to the intersection with the green lines we should run the algorithm another time for the magenta contour. The latter intersects a green line, thus we apply the algorithm one more time to produce the violet contours. Both the magenta and the violet contours do not contribute as they do not intersect the reals~\ref{cor:half.thimb.stateint.zero}. Summarising, the algorithm gives
+\be\label{eq:region_II_A4B1}
+\calI_{p_4,V_4,\mathrm{II}}
+\=
+\calI_{-3,0}=\calI_{-3,1}+\calI_{-2,0}\,,
+\ee
+where the second equality follows from Equation~\eqref{eq:state_integral_1}.
+\begin{figure}[ht]
+\begin{tiny}
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+
+
+
+\draw[<->,thick] (-2.5,0) -- (1.5,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+\foreach \x in {-1,0}
+\draw[green] (-0.98545/8/0.169967+\x,-1)--(0.98545/8/0.169967+\x,1);
+\draw[green] (-0.98545/8/0.169967+1,-1)--(1.5,0.5*8*0.169967/0.98545);
+\draw[green] (-0.98545/8/0.169967+2,-1)--(1.5,-0.5*8*0.169967/0.98545);
+\draw[green] (-2.5,-0.5*8*0.169967/0.98545)--(0.98545/8/0.169967-2,1);
+\draw[thick,red] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-2cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-2cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[orange,thick,->] (0.2225160000, -0.07844283940)--(0.2325160000, -0.07840218376)--(0.2425160000, -0.07808547578)--(0.2525160000, -0.07750643293)--(0.2625160000, -0.07667744544)--(0.2725160000, -0.07560973907)--(0.2825160000, -0.07431351261)--(0.2925160000, -0.07279805484)--(0.3025160000, -0.07107184447)--(0.3125160000, -0.06914263598)--(0.3225160000, -0.06701753368)--(0.3325160000, -0.06470305583)--(0.3425160000, -0.06220519048)--(0.3525160000, -0.05952944411)--(0.3625160000, -0.05668088423)--(0.3725160000, -0.05366417679)--(0.3825160000, -0.05048361905)--(0.3925160000, -0.04714316860)--(0.4025160000, -0.04364646896)--(0.4125160000, -0.03999687218)--(0.4225160000, -0.03619745893)--(0.4325160000, -0.03225105618)--(0.4425160000, -0.02816025287)--(0.4525160000, -0.02392741378)--(0.4625160000, -0.01955469171)--(0.4725160000, -0.01504403824)--(0.4825160000, -0.01039721308)--(0.4925160000, -0.005615792233)--(0.5025160000, -0.0007011749930)--(0.5125160000, 0.004345410085)--(0.5225160000, 0.009522900226)--(0.5325160000, 0.01483039441)--(0.5425160000, 0.02026715025)--(0.5525160000, 0.02583258172)--(0.5625160000, 0.03152625775)--(0.5725160000, 0.03734790165)--(0.5825160000, 0.04329739139)--(0.5925160000, 0.04937476075)--(0.6025160000, 0.05558020126)--(0.6125160000, 0.06191406514)--(0.6225160000, 0.06837686920)--(0.6325160000, 0.07496929964)--(0.6425160000, 0.08169221802)--(0.6525160000, 0.08854666840)--(0.6625160000, 0.09553388565)--(0.6725160000, 0.1026553053)--(0.6825160000, 0.1099125746)--(0.6925160000, 0.1173075660)--(0.7025160000, 0.1248423911)--(0.7125160000, 0.1325194186)--(0.7225160000, 0.1403412928)--(0.7325160000, 0.1483109558)--(0.7425160000, 0.1564316726)--(0.7525160000, 0.1647070586)--(0.7625160000, 0.1731411119)--(0.7725160000, 0.1817382491)--(0.7825160000, 0.1905033455)--(0.7925160000, 0.1994417803)--(0.8025160000, 0.2085594867)--(0.8125160000, 0.2178630075)--(0.8225160000, 0.2273595542)--(0.8325160000, 0.2370570704)--(0.8425160000, 0.2469642952)--(0.8525160000, 0.2570908213)--(0.8625160000, 0.2674471400)--(0.8725160000, 0.2780446540)--(0.8825160000, 0.2888956311)--(0.8925160000, 0.3000130485)--(0.9025160000, 0.3114102430)--(0.9125160000, 0.3231002258)--(0.9225160000, 0.3350944300)--(0.9325160000, 0.3474005226)--(0.9425160000, 0.3600187569)--(0.9525160000, 0.3729362620)--(0.9625160000, 0.3861190073)--(0.9725160000, 0.3995026298)--(0.9825160000, 0.4129864197)--(0.9925160000, 0.4264378371)--(1.002516000, 0.4397122314)--(1.012516000, 0.4526810511)--(1.022516000, 0.4652529838)--(1.032516000, 0.4773788053)--(1.042516000, 0.4890437236)--(1.052516000, 0.5002558375)--(1.062516000, 0.5110362163)--(1.072516000, 0.5214121116)--(1.082516000, 0.5314128629)--(1.092516000, 0.5410676327)--(1.102516000, 0.5504042543)--(1.112516000, 0.5594487160)--(1.122516000, 0.5682249953)--(1.132516000, 0.5767550743)--(1.142516000, 0.5850590470)--(1.152516000, 0.5931552636)--(1.162516000, 0.6010604874)--(1.172516000, 0.6087900486)--(1.182516000, 0.6163579881)--(1.192516000, 0.6237771895)--(1.202516000, 0.6310594971)--(1.212516000, 0.6382158223) node[right] {$(-3,0)$};
+\draw[orange,thick,->] (0.2025160000, -0.07763328710)--(0.1925160000, -0.07674706300)--(0.1825160000, -0.07551213284)--(0.1725160000, -0.07390430427)--(0.1625160000, -0.07189607259)--(0.1525160000, -0.06945597050)--(0.1425160000, -0.06654774388)--(0.1325160000, -0.06312929380)--(0.1225160000, -0.05915129881)--(0.1125160000, -0.05455539246)--(0.1025160000, -0.04927170956)--(0.09251600000, -0.04321551772)--(0.08251600000, -0.03628249281)--(0.07251600000, -0.02834193909)--(0.06251600000, -0.01922683492)--(0.05251600000, -0.008718955770)--(0.04251600000, 0.003473263373)--(0.03251600000, 0.01774453162)--(0.02251600000, 0.03460725890)--(0.01251600000, 0.05446770841)--(0.002516000000, 0.07554749425)--(-0.007484000000, 0.09068074973)--(-0.01748400000, 0.09796876395)--(-0.02748400000, 0.09998671936)--(-0.03748400000, 0.09844340234)--(-0.04748400000, 0.09433118230)--(-0.05748400000, 0.08828085388)--(-0.06748400000, 0.08072479005)--(-0.07748400000, 0.07197568567)--(-0.08748400000, 0.06226857375)--(-0.09748400000, 0.05178523466)--(-0.1074840000, 0.04066936281)--(-0.1174840000, 0.02903650490)--(-0.1274840000, 0.01698085500)--(-0.1374840000, 0.004580063474)--(-0.1474840000, -0.008101261660)--(-0.1574840000, -0.02100894450)--(-0.1674840000, -0.03409725625)--(-0.1774840000, -0.04732737979)--(-0.1874840000, -0.06066620459)--(-0.1974840000, -0.07408536894)--(-0.2074840000, -0.08756049009)--(-0.2174840000, -0.1010705395)--(-0.2274840000, -0.1145973316)--(-0.2374840000, -0.1281251016)--(-0.2474840000, -0.1416401554)--(-0.2574840000, -0.1551305763)--(-0.2674840000, -0.1685859791)--(-0.2774840000, -0.1819973015)--(-0.2874840000, -0.1953566279)--(-0.2974840000, -0.2086570382)--(-0.3074840000, -0.2218924791)--(-0.3174840000, -0.2350576532)--(-0.3274840000, -0.2481479228)--(-0.3374840000, -0.2611592278)--(-0.3474840000, -0.2740880134)--(-0.3574840000, -0.2869311675)--(-0.3674840000, -0.2996859661)--(-0.3774840000, -0.3123500255)--(-0.3874840000, -0.3249212603)--(-0.3974840000, -0.3373978464)--(-0.4074840000, -0.3497781884)--(-0.4174840000, -0.3620608906)--(-0.4274840000, -0.3742447318)--(-0.4374840000, -0.3863286421)--(-0.4474840000, -0.3983116831)--(-0.4574840000, -0.4101930295)--(-0.4674840000, -0.4219719530)--(-0.4774840000, -0.4336478078)--(-0.4874840000, -0.4452200174)--(-0.4974840000, -0.4566880628)--(-0.5074840000, -0.4680514714)--(-0.5174840000, -0.4793098080)--(-0.5274840000, -0.4904626649)--(-0.5374840000, -0.5015096545)--(-0.5474840000, -0.5124504010)--(-0.5574840000, -0.5232845338)--(-0.5674840000, -0.5340116810)--(-0.5774840000, -0.5446314628)--(-0.5874840000, -0.5551434864)--(-0.5974840000, -0.5655473397)--(-0.6074840000, -0.5758425868)--(-0.6174840000, -0.5860287624)--(-0.6274840000, -0.5961053676)--(-0.6374840000, -0.6060718646)--(-0.6474840000, -0.6159276726)--(-0.6574840000, -0.6256721634)--(-0.6674840000, -0.6353046570)--(-0.6774840000, -0.6448244175)--(-0.6874840000, -0.6542306493)--(-0.6974840000, -0.6635224934)--(-0.7074840000, -0.6726990237)--(-0.7174840000, -0.6817592443)--(-0.7274840000, -0.6907020867)--(-0.7374840000, -0.6995264080)--(-0.7474840000, -0.7082309900)--(-0.7574840000, -0.7168145395)--(-0.7674840000, -0.7252756901)--(-0.7774840000, -0.7336130069)--(-0.7874840000, -0.7418249933)--(-0.7974840000, -0.7499101027)--(-0.8074840000, -0.7578667547)--(-0.8174840000, -0.7656933590)--(-0.8274840000, -0.7733883477)--(-0.8374840000, -0.7809502202)--(-0.8474840000, -0.7883776028)--(-0.8574840000, -0.7956693283)--(-0.8674840000, -0.8028245407)--(-0.8774840000, -0.8098428296)--(-0.8874840000, -0.8167244031)--(-0.8974840000, -0.8234703032)--(-0.9074840000, -0.8300826680)--(-0.9174840000, -0.8365650428)--(-0.9274840000, -0.8429227280)--(-0.9374840000, -0.8491631457)--(-0.9474840000, -0.8552961830)--(-0.9574840000, -0.8613344529)--(-0.9674840000, -0.8672933939)--(-0.9774840000, -0.8731911275)--(-0.9874840000, -0.8790480144)--(-0.9974840000, -0.8848859021)--(-1.010000000, -0.8921999091)--(-1.020000000, -0.8980757759)--(-1.030000000, -0.9040015130)--(-1.040000000, -0.9099940461)--(-1.050000000, -0.9160672501)--(-1.060000000, -0.9222318263)--(-1.070000000, -0.9284954341)--(-1.080000000, -0.9348629908)--(-1.090000000, -0.9413370606)--(-1.100000000, -0.9479182681)--(-1.110000000, -0.9546056932)--(-1.120000000, -0.9613972245)--(-1.130000000, -0.9682898596)--(-1.140000000, -0.9752799535)--(-1.150000000, -0.9823634172)--(-1.160000000, -0.9895358746)--(-1.170000000, -0.9967927835) node[left] {$(-4,0)$};
+\draw[magenta,thick,->](0.02155852790, 0.01000000000)--(0.02245802909, 0.02000000000)--(0.02337971789, 0.03000000000)--(0.02432857291, 0.04000000000)--(0.02530987729, 0.05000000000)--(0.02632929659, 0.06000000000)--(0.02739297450, 0.07000000000)--(0.02850764951, 0.08000000000)--(0.02968079737, 0.09000000000)--(0.03092080632, 0.1000000000)--(0.03223719504, 0.1100000000)--(0.03364088735, 0.1200000000)--(0.03514456353, 0.1300000000)--(0.03676311689, 0.1400000000)--(0.03851425747, 0.1500000000)--(0.04041932548, 0.1600000000)--(0.04250441064, 0.1700000000)--(0.04480192895, 0.1800000000)--(0.04735290445, 0.1900000000)--(0.05021037557, 0.2000000000)--(0.05344467103, 0.2100000000)--(0.05715195092, 0.2200000000)--(0.06146880786, 0.2300000000)--(0.06659900794, 0.2400000000)--(0.07286709632, 0.2500000000)--(0.08084012081, 0.2600000000)--(0.09166042803, 0.2700000000)--(0.1082957490, 0.2800000000)--(0.1100000000, 0.2807588142)--(0.1200000000, 0.2844740892)--(0.1300000000, 0.2871726252)--(0.1400000000, 0.2891175524)--(0.1500000000, 0.2905042528)--(0.1600000000, 0.2914803276)--(0.1700000000, 0.2921588892)--(0.1800000000, 0.2926276584)--(0.1900000000, 0.2929553432)--(0.2000000000, 0.2931962049)--(0.2100000000, 0.2933933879)--(0.2200000000, 0.2935813864)--(0.2300000000, 0.2937878990)--(0.2400000000, 0.2940352396)--(0.2500000000, 0.2943414244)--(0.2600000000, 0.2947210162)--(0.2700000000, 0.2951857881)--(0.2800000000, 0.2957452478)--(0.2900000000, 0.2964070558)--(0.3000000000, 0.2971773616)--(0.3100000000, 0.2980610746)--(0.3200000000, 0.2990620843)--(0.3300000000, 0.3001834406)--(0.3400000000, 0.3014275012)--(0.3500000000, 0.3027960533)--(0.3600000000, 0.3042904141)--(0.3700000000, 0.3059115152)--(0.3800000000, 0.3076599715)--(0.3900000000, 0.3095361403)--(0.4000000000, 0.3115401700)--(0.4100000000, 0.3136720415)--(0.4200000000, 0.3159316033)--(0.4300000000, 0.3183186007)--(0.4400000000, 0.3208327015)--(0.4500000000, 0.3234735171)--(0.4600000000, 0.3262406213)--(0.4700000000, 0.3291335658)--(0.4800000000, 0.3321518941)--(0.4900000000, 0.3352951535)--(0.5000000000, 0.3385629054)--(0.5100000000, 0.3419547346)--(0.5200000000, 0.3454702574)--(0.5300000000, 0.3491091292)--(0.5400000000, 0.3528710506)--(0.5500000000, 0.3567557740)--(0.5600000000, 0.3607631093)--(0.5700000000, 0.3648929289)--(0.5800000000, 0.3691451732)--(0.5900000000, 0.3735198553)--(0.6000000000, 0.3780170662)--(0.6100000000, 0.3826369797)--(0.6200000000, 0.3873798571)--(0.6300000000, 0.3922460527)--(0.6400000000, 0.3972360189)--(0.6500000000, 0.4023503117)--(0.6600000000, 0.4075895967)--(0.6700000000, 0.4129546550)--(0.6800000000, 0.4184463896)--(0.6900000000, 0.4240658325)--(0.7000000000, 0.4298141516)--(0.7100000000, 0.4356926587)--(0.7200000000, 0.4417028169)--(0.7300000000, 0.4478462496)--(0.7400000000, 0.4541247480)--(0.7500000000, 0.4605402806)--(0.7600000000, 0.4670950007)--(0.7700000000, 0.4737912543)--(0.7800000000, 0.4806315863)--(0.7900000000, 0.4876187448)--(0.8000000000, 0.4947556820)--(0.8100000000, 0.5020455498)--(0.8200000000, 0.5094916883)--(0.8300000000, 0.5170976020)--(0.8400000000, 0.5248669204)--(0.8500000000, 0.5328033354)--(0.8600000000, 0.5409105035)--(0.8700000000, 0.5491919025)--(0.8800000000, 0.5576506204)--(0.8900000000, 0.5662890542)--(0.9000000000, 0.5751084863)--(0.9100000000, 0.5841085028)--(0.9200000000, 0.5932862191)--(0.9300000000, 0.6026352940)--(0.9400000000, 0.6121447541)--(0.9500000000, 0.6217977393)--(0.9600000000, 0.6315704134)--(0.9700000000, 0.6414314373)--(0.9800000000, 0.6513424896)--(0.9900000000, 0.6612601783)--(1.000000000, 0.6711392627)--(1.010000000, 0.6809365251)--(1.020000000, 0.6906142817)--(1.030000000, 0.7001426789)--(1.040000000, 0.7095004661)--(1.050000000, 0.7186744956)--(1.060000000, 0.7276584645)--(1.070000000, 0.7364513977)--(1.080000000, 0.7450562001)--(1.090000000, 0.7534784378)--(1.100000000, 0.7617253890)--(1.110000000, 0.7698053423)--(1.120000000, 0.7777270978)--(1.130000000, 0.7854996230)--(1.140000000, 0.7931318228)--(1.150000000, 0.8006323910)--(1.160000000, 0.8080097181)--(1.170000000, 0.8152718391)--(1.180000000, 0.8224264073)--(1.190000000, 0.8294806862)--(1.200000000, 0.8364415527)--(1.210000000, 0.8433155087)--(1.220000000, 0.8501086954)--(1.230000000, 0.8568269123)--(1.240000000, 0.8634756355)--(1.250000000, 0.8700600376)--(1.260000000, 0.8765850067)--(1.270000000, 0.8830551651)--(1.280000000, 0.8894748867)--(1.290000000, 0.8958483143)--(1.300000000, 0.9021793751)--(1.310000000, 0.9084717955)--(1.320000000, 0.9147291149)--(1.330000000, 0.9209546986)--(1.340000000, 0.9271517497)--(1.350000000, 0.9333233203)--(1.360000000, 0.9394723215)--(1.370000000, 0.9456015335)--(1.380000000, 0.9517136140)--(1.390000000, 0.9578111068)--(1.400000000, 0.9638964493)--(1.410000000, 0.9699719796)--(1.420000000, 0.9760399436)--(1.430000000, 0.9821025007)--(1.440000000, 0.9881617297)--(1.450000000, 0.9942196347) node[right] {$(-2,0)$};
+\draw[violet,thick,->] (0.2100000000, 0.2915678695)--(0.2200000000, 0.2985029496)--(0.2300000000, 0.3052032895)--(0.2400000000, 0.3116952344)--(0.2500000000, 0.3180023364)--(0.2600000000, 0.3241457174)--(0.2700000000, 0.3301443754)--(0.2800000000, 0.3360154450)--(0.2900000000, 0.3417744208)--(0.3000000000, 0.3474353479)--(0.3100000000, 0.3530109883)--(0.3200000000, 0.3585129633)--(0.3300000000, 0.3639518786)--(0.3400000000, 0.3693374335)--(0.3500000000, 0.3746785159)--(0.3600000000, 0.3799832871)--(0.3700000000, 0.3852592556)--(0.3800000000, 0.3905133428)--(0.3900000000, 0.3957519415)--(0.4000000000, 0.4009809682)--(0.4100000000, 0.4062059089)--(0.4200000000, 0.4114318610)--(0.4300000000, 0.4166635708)--(0.4400000000, 0.4219054667)--(0.4500000000, 0.4271616900)--(0.4600000000, 0.4324361219)--(0.4700000000, 0.4377324087)--(0.4800000000, 0.4430539841)--(0.4900000000, 0.4484040904)--(0.5000000000, 0.4537857971)--(0.5100000000, 0.4592020182)--(0.5200000000, 0.4646555282)--(0.5300000000, 0.4701489771)--(0.5400000000, 0.4756849038)--(0.5500000000, 0.4812657489)--(0.5600000000, 0.4868938668)--(0.5700000000, 0.4925715364)--(0.5800000000, 0.4983009719)--(0.5900000000, 0.5040843327)--(0.6000000000, 0.5099237327)--(0.6100000000, 0.5158212493)--(0.6200000000, 0.5217789318)--(0.6300000000, 0.5277988102)--(0.6400000000, 0.5338829025)--(0.6500000000, 0.5400332227)--(0.6600000000, 0.5462517885)--(0.6700000000, 0.5525406281)--(0.6800000000, 0.5589017875)--(0.6900000000, 0.5653373374)--(0.7000000000, 0.5718493794)--(0.7100000000, 0.5784400525)--(0.7200000000, 0.5851115388)--(0.7300000000, 0.5918660689)--(0.7400000000, 0.5987059258)--(0.7500000000, 0.6056334491)--(0.7600000000, 0.6126510365)--(0.7700000000, 0.6197611442)--(0.7800000000, 0.6269662842)--(0.7900000000, 0.6342690184)--(0.8000000000, 0.6416719478)--(0.8100000000, 0.6491776951)--(0.8200000000, 0.6567888789)--(0.8300000000, 0.6645080762)--(0.8400000000, 0.6723377695)--(0.8500000000, 0.6802802740)--(0.8600000000, 0.6883376379)--(0.8700000000, 0.6965115094)--(0.8800000000, 0.7048029603)--(0.8900000000, 0.7132122578)--(0.9000000000, 0.7217385744)--(0.9100000000, 0.7303796315)--(0.9200000000, 0.7391312781)--(0.9300000000, 0.7479870243)--(0.9400000000, 0.7569375708)--(0.9500000000, 0.7659704114)--(0.9600000000, 0.7750696174)--(0.9700000000, 0.7842159322)--(0.9800000000, 0.7933872835)--(0.9900000000, 0.8025597452)--(1.000000000, 0.8117088587)--(1.010000000, 0.8208110998)--(1.020000000, 0.8298452213)--(1.030000000, 0.8387932382)--(1.040000000, 0.8476409432)--(1.050000000, 0.8563779691)--(1.060000000, 0.8649975098)--(1.070000000, 0.8734958371)--(1.080000000, 0.8818717416)--(1.090000000, 0.8901259817) node[above] {$(-1,0)$};
+\filldraw[brown] (0,0.0512932*8) circle (0.5pt);
+\filldraw[magenta] (0.02245802909, 0.02000000000) circle (0.5pt);
+
+\filldraw[blue] (0.212516,- 0.0097740*8) circle (0.5pt);
+
+\filldraw[violet] (0.2100000000, 0.2915678695) circle (0.5pt);
+\end{tikzpicture}
+\end{tiny}
+\caption{This figure depicts in \textcolor{orange}{orange} the set $\calC_{p_4,\vartheta}$ for $\vartheta=\arg(-1/\tau)=1.74159$, and $(A,B)=(4,1)$. The \textcolor{green}{green} lines are parallel to the lines $i/\tau$. The \textcolor{magenta}{magenta} curve represents the tail at the intersection of the set $\calC_{p_4,\vartheta}$ with the green lines. The \textcolor{violet}{violet} contour represents half of the contour that appears when we run the algorithm a second time.}
+\label{fig:thimb.A4B1.II}
+\end{figure}
+
+
+
+
+\subsubsection{The saddle connection between $\mathrm{II}$ and $\mathrm{III}$}
+The saddle connection is depicted in Figure~\ref{fig:saddle.A4B1.II-III}. Note that it appears in the contours coming from the first iteration of the algorithm.
+\begin{figure}[ht]
+\begin{tiny}
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\draw[<->,thick] (-2.5,0) -- (2,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+\foreach \x in {0}
+\draw[green] (-0.997565/8/0.0697397+\x,-1)--(0.997565/8/0.0697397+\x,1);
+\draw[green] (-0.997565/8/0.0697397+1,-1)--(2,8*0.0697397/0.997565);
+\draw[green] (-2.5,-1.5*8*0.0697397/0.997565)--(0.997565/8/0.0697397-1,1);
+\draw[green] (-2.5,-0.5*8*0.0697397/0.997565)--(0.997565/8/0.0697397-2,1);
+\draw[green] (-0.997565/8/0.0697397+2,-1)--(2,0);
+\draw[green] (-2.5,0.5*8*0.0697397/0.997565)--(0.997565/8/0.0697397-3,1);
+\draw[thick,red] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-2cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-2cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=1cm] (0.05,-0.05)--(-0.05,0.05);
+
+\draw[orange,thick,->] (-0.5,- 0.0317451*8)--(-0.49000, -0.25111)--(-0.48000, -0.24813)--(-0.47000, -0.24504)--(-0.46000, -0.24182)--(-0.45000, -0.23849)--(-0.44000, -0.23503)--(-0.43000, -0.23145)--(-0.42000, -0.22774)--(-0.41000, -0.22391)--(-0.40000, -0.21995)--(-0.39000, -0.21586)--(-0.38000, -0.21164)--(-0.37000, -0.20730)--(-0.36000, -0.20281)--(-0.35000, -0.19820)--(-0.34000, -0.19344)--(-0.33000, -0.18854)--(-0.32000, -0.18350)--(-0.31000, -0.17830)--(-0.30000, -0.17296)--(-0.29000, -0.16746)--(-0.28000, -0.16180)--(-0.27000, -0.15597)--(-0.26000, -0.14997)--(-0.25000, -0.14380)--(-0.24000, -0.13744)--(-0.23000, -0.13089)--(-0.22000, -0.12414)--(-0.21000, -0.11718)--(-0.20000, -0.11000)--(-0.19000, -0.10259)--(-0.18000, -0.094942)--(-0.17000, -0.087032)--(-0.16000, -0.078848)--(-0.15000, -0.070370)--(-0.14000, -0.061577)--(-0.13000, -0.052444)--(-0.12000, -0.042941)--(-0.11000, -0.033033)--(-0.10000, -0.022678)--(-0.090000, -0.011827)--(-0.080000, -0.00041621)--(-0.070000, 0.011631)--(-0.060000, 0.024413)--(-0.050000, 0.038058)--(-0.040000, 0.052732)--(-0.030000, 0.068649)--(-0.020000, 0.086041)--(-0.010000, 0.10490)--(0.E-19, 0.12403)--(0.010000, 0.14119)--(0.020000, 0.15568)--(0.030000, 0.16795)--(0.040000, 0.17849)--(0.050000, 0.18765)--(0.060000, 0.19569)--(0.070000, 0.20280)--(0.080000, 0.20912)--(0.090000, 0.21476)--(0.10000, 0.21982)--(0.11000, 0.22436)--(0.12000, 0.22846)--(0.13000, 0.23216)--(0.14000, 0.23551)--(0.15000, 0.23855)--(0.16000, 0.24132)--(0.17000, 0.24383)--(0.18000, 0.24612)--(0.19000, 0.24822)--(0.20000, 0.25013)--(0.21000, 0.25189)--(0.22000, 0.25351)--(0.23000, 0.25500)--(0.24000, 0.25637)--(0.25000, 0.25764)--(0.26000, 0.25883)--(0.27000, 0.25993)--(0.28000, 0.26097)--(0.29000, 0.26194)--(0.30000, 0.26286)--(0.31000, 0.26373)--(0.32000, 0.26457)--(0.33000, 0.26537)--(0.34000, 0.26615)--(0.35000, 0.26691)--(0.36000, 0.26765)--(0.37000, 0.26838)--(0.38000, 0.26910)--(0.39000, 0.26982)--(0.40000, 0.27054)--(0.41000, 0.27127)--(0.42000, 0.27200)--(0.43000, 0.27275)--(0.44000, 0.27351)--(0.45000, 0.27429)--(0.46000, 0.27510)--(0.47000, 0.27592)--(0.48000, 0.27677)--(0.49000, 0.27765)--(0.50000, 0.27856)--(0.51000, 0.27950)--(0.52000, 0.28048)--(0.53000, 0.28150)--(0.54000, 0.28255)--(0.55000, 0.28365)--(0.56000, 0.28479)--(0.57000, 0.28597)--(0.58000, 0.28721)--(0.59000, 0.28849)--(0.60000, 0.28982)--(0.61000, 0.29121)--(0.62000, 0.29265)--(0.63000, 0.29414)--(0.64000, 0.29570)--(0.65000, 0.29731)--(0.66000, 0.29899)--(0.67000, 0.30073)--(0.68000, 0.30254)--(0.69000, 0.30442)--(0.70000, 0.30636)--(0.71000, 0.30838)--(0.72000, 0.31048)--(0.73000, 0.31265)--(0.74000, 0.31490)--(0.75000, 0.31723)--(0.76000, 0.31965)--(0.77000, 0.32216)--(0.78000, 0.32476)--(0.79000, 0.32745)--(0.80000, 0.33025)--(0.81000, 0.33314)--(0.82000, 0.33615)--(0.83000, 0.33926)--(0.84000, 0.34249)--(0.85000, 0.34585)--(0.86000, 0.34933)--(0.87000, 0.35295)--(0.88000, 0.35670)--(0.89000, 0.36061)--(0.90000, 0.36468)--(0.91000, 0.36891)--(0.92000, 0.37331)--(0.93000, 0.37789)--(0.94000, 0.38267)--(0.95000, 0.38763)--(0.96000, 0.39278)--(0.97000, 0.39810)--(0.98000, 0.40356)--(0.99000, 0.40910)--(1.0000, 0.41466)--(1.0100, 0.42017)--(1.0200, 0.42554)--(1.0300, 0.43074)--(1.0400, 0.43573)--(1.0500, 0.44052)--(1.0600, 0.44509)--(1.0700, 0.44946)--(1.0800, 0.45364)--(1.0900, 0.45764)--(1.1000, 0.46148)--(1.1100, 0.46516)--(1.1200, 0.46870)--(1.1300, 0.47211)--(1.1400, 0.47540)--(1.1500, 0.47858)--(1.1600, 0.48165)--(1.1700, 0.48463)--(1.1800, 0.48752)--(1.1900, 0.49033)--(1.2000, 0.49306)--(1.2100, 0.49572)--(1.2200, 0.49831)--(1.2300, 0.50084)--(1.2400, 0.50332)--(1.2500, 0.50575)--(1.2600, 0.50812)--(1.2700, 0.51045)--(1.2800, 0.51275)--(1.2900, 0.51500)--(1.3000, 0.51722)--(1.3100, 0.51940)--(1.3200, 0.52156)--(1.3300, 0.52369)--(1.3400, 0.52580)--(1.3500, 0.52789)--(1.3600, 0.52996)--(1.3700, 0.53201)--(1.3800, 0.53405)--(1.3900, 0.53607)--(1.4000, 0.53808)--(1.4100, 0.54009)--(1.4200, 0.54209)--(1.4300, 0.54408)--(1.4400, 0.54607)--(1.4500, 0.54806)--(1.4600, 0.55004)--(1.4700, 0.55203)--(1.4800, 0.55402)--(1.4900, 0.55602)--(1.5000, 0.55802)--(1.5100, 0.56003)--(1.5200, 0.56204)--(1.5300, 0.56407)--(1.5400, 0.56611)--(1.5500, 0.56816)--(1.5600, 0.57022)--(1.5700, 0.57230)--(1.5800, 0.57439)--(1.5900, 0.57651)--(1.6000, 0.57864)--(1.6100, 0.58079)--(1.6200, 0.58297)--(1.6300, 0.58516)--(1.6400, 0.58738)--(1.6500, 0.58963)--(1.6600, 0.59191)--(1.6700, 0.59421)--(1.6800, 0.59654)--(1.6900, 0.59890)--(1.7000, 0.60130)--(1.7100, 0.60373)--(1.7200, 0.60619)--(1.7300, 0.60869)--(1.7400, 0.61123)--(1.7500, 0.61381)--(1.7600, 0.61643)--(1.7700, 0.61910)--(1.7800, 0.62181)--(1.7900, 0.62456)--(1.8000, 0.62737)--(1.8100, 0.63023)--(1.8200, 0.63314)--(1.8300, 0.63610)--(1.8400, 0.63913)--(1.8500, 0.64221)--(1.8600, 0.64535)--(1.8700, 0.64856)--(1.8800, 0.65183)--(1.8900, 0.65518)--(1.9000, 0.65858)--(1.9100, 0.66206)--(1.9200, 0.66561)--(1.9300, 0.66923)--(1.9400, 0.67291)--(1.9500, 0.67666)--(1.9600, 0.68046)--(1.9700, 0.68431)--(1.9800, 0.68819)--(1.9900, 0.69210) node[right] {$(0,0)$};
+
+\draw[magenta,thick] (-0.29000, -0.14811)--(-0.28000, -0.13991)--(-0.27000, -0.13147)--(-0.26000, -0.12281)--(-0.25000, -0.11390)--(-0.24000, -0.10472)--(-0.23000, -0.095266)--(-0.212516,- 0.0097740*8);
+\draw[magenta,thick,->] (-0.212516,- 0.0097740*8)--(-0.2025160000, -0.06795620350)--(-0.19000, -0.054750)--(-0.18000, -0.043725)--(-0.17000, -0.032333)--(-0.16000, -0.020541)--(-0.15000, -0.0083162)--(-0.14000, 0.0043757)--(-0.13000, 0.017574)--(-0.12000, 0.031323)--(-0.11000, 0.045672)--(-0.10000, 0.060678)--(-0.090000, 0.076405)--(-0.080000, 0.092921)--(-0.070000, 0.11030)--(-0.060000, 0.12861)--(-0.050000, 0.14790)--(-0.040000, 0.16814)--(-0.030000, 0.18915)--(-0.020000, 0.21045)--(-0.010000, 0.23113)--(0.E-19, 0.25006)--(0.010000, 0.26643)--(0.020000, 0.28005)--(0.030000, 0.29116)--(0.040000, 0.30013)--(0.050000, 0.30732)--(0.060000, 0.31302)--(0.070000, 0.31748)--(0.080000, 0.32092)--(0.090000, 0.32349)--(0.10000, 0.32533)--(0.11000, 0.32656)--(0.12000, 0.32726)--(0.13000, 0.32753)--(0.14000, 0.32742)--(0.15000, 0.32699)--(0.16000, 0.32629)--(0.17000, 0.32536)--(0.18000, 0.32424)--(0.19000, 0.32296)--(0.20000, 0.32154)--(0.21000, 0.32002)--(0.22000, 0.31841)--(0.23000, 0.31673)--(0.24000, 0.31499)--(0.25000, 0.31322)--(0.26000, 0.31142)--(0.27000, 0.30961)--(0.28000, 0.30779)--(0.29000, 0.30597)--(0.30000, 0.30417)--(0.31000, 0.30239)--(0.32000, 0.30064)--(0.33000, 0.29891)--(0.34000, 0.29723)--(0.35000, 0.29559)--(0.36000, 0.29399)--(0.37000, 0.29245)--(0.38000, 0.29095)--(0.39000, 0.28952)--(0.40000, 0.28815)--(0.41000, 0.28683)--(0.42000, 0.28559)--(0.43000, 0.28441)--(0.44000, 0.28330)--(0.45000, 0.28226)--(0.46000, 0.28130)--(0.47000, 0.28041)--(0.48000, 0.27959)--(0.49000, 0.27886)--(0.50000, 0.27820)--(0.51000, 0.27763)--(0.52000, 0.27713)--(0.53000, 0.27672)--(0.54000, 0.27639)--(0.55000, 0.27615)--(0.56000, 0.27599)--(0.57000, 0.27592)--(0.58000, 0.27594)--(0.59000, 0.27605)--(0.60000, 0.27625)--(0.61000, 0.27655)--(0.62000, 0.27693)--(0.63000, 0.27741)--(0.64000, 0.27799)--(0.65000, 0.27866)--(0.66000, 0.27943)--(0.67000, 0.28030)--(0.68000, 0.28127)--(0.69000, 0.28235)--(0.70000, 0.28353)--(0.71000, 0.28481)--(0.72000, 0.28621)--(0.73000, 0.28771)--(0.74000, 0.28933)--(0.75000, 0.29107)--(0.76000, 0.29292)--(0.77000, 0.29490)--(0.78000, 0.29700)--(0.79000, 0.29923)--(0.80000, 0.30159)--(0.81000, 0.30409)--(0.82000, 0.30672)--(0.83000, 0.30951)--(0.84000, 0.31244)--(0.85000, 0.31554)--(0.86000, 0.31880)--(0.87000, 0.32223)--(0.88000, 0.32584)--(0.89000, 0.32965)--(0.90000, 0.33365)--(0.91000, 0.33786)--(0.92000, 0.34230)--(0.93000, 0.34696)--(0.94000, 0.35187)--(0.95000, 0.35702)--(0.96000, 0.36242)--(0.97000, 0.36805)--(0.98000, 0.37386)--(0.99000, 0.37979)--(1.0000, 0.38574)--(1.0100, 0.39160)--(1.0200, 0.39729)--(1.0300, 0.40274)--(1.0400, 0.40793)--(1.0500, 0.41283)--(1.0600, 0.41748)--(1.0700, 0.42186)--(1.0800, 0.42602)--(1.0900, 0.42995)--(1.1000, 0.43368)--(1.1100, 0.43723)--(1.1200, 0.44062)--(1.1300, 0.44384)--(1.1400, 0.44693)--(1.1500, 0.44988)--(1.1600, 0.45271)--(1.1700, 0.45543)--(1.1800, 0.45805)--(1.1900, 0.46058)--(1.2000, 0.46301)--(1.2100, 0.46537)--(1.2200, 0.46766)--(1.2300, 0.46987)--(1.2400, 0.47203)--(1.2500, 0.47412)--(1.2600, 0.47617)--(1.2700, 0.47816)--(1.2800, 0.48011)--(1.2900, 0.48203)--(1.3000, 0.48390)--(1.3100, 0.48574)--(1.3200, 0.48756)--(1.3300, 0.48934)--(1.3400, 0.49110)--(1.3500, 0.49285)--(1.3600, 0.49457)--(1.3700, 0.49628)--(1.3800, 0.49797)--(1.3900, 0.49965)--(1.4000, 0.50133)--(1.4100, 0.50300)--(1.4200, 0.50466)--(1.4300, 0.50632)--(1.4400, 0.50798)--(1.4500, 0.50964)--(1.4600, 0.51131)--(1.4700, 0.51298)--(1.4800, 0.51465)--(1.4900, 0.51633)--(1.5000, 0.51803)--(1.5100, 0.51973)--(1.5200, 0.52145)--(1.5300, 0.52318)--(1.5400, 0.52493)--(1.5500, 0.52669)--(1.5600, 0.52848)--(1.5700, 0.53028)--(1.5800, 0.53211)--(1.5900, 0.53395)--(1.6000, 0.53583)--(1.6100, 0.53772)--(1.6200, 0.53965)--(1.6300, 0.54160)--(1.6400, 0.54359)--(1.6500, 0.54560)--(1.6600, 0.54765)--(1.6700, 0.54973)--(1.6800, 0.55185)--(1.6900, 0.55400)--(1.7000, 0.55620)--(1.7100, 0.55843)--(1.7200, 0.56071)--(1.7300, 0.56303)--(1.7400, 0.56540)--(1.7500, 0.56781)--(1.7600, 0.57027)--(1.7700, 0.57279)--(1.7800, 0.57535)--(1.7900, 0.57798)--(1.8000, 0.58066) node[below] {$(-1,0)$};
+\draw[magenta,thick,->] (-0.29000, -0.14811)--(-0.31000, -0.16389)--(-0.32000, -0.17148)--(-0.33000, -0.17887)--(-0.34000, -0.18608)--(-0.35000, -0.19310)--(-0.36000, -0.19996)--(-0.37000, -0.20664)--(-0.38000, -0.21315)--(-0.39000, -0.21951)--(-0.40000, -0.22570)--(-0.41000, -0.23174)--(-0.42000, -0.23763)--(-0.43000, -0.24338)--(-0.44000, -0.24897)--(-0.45000, -0.25443)--(-0.46000, -0.25974)--(-0.47000, -0.26492)--(-0.48000, -0.26996)--(-0.49000, -0.27486)--(-0.50000, -0.27963)--(-0.51000, -0.28427)--(-0.52000, -0.28878)--(-0.53000, -0.29315)--(-0.54000, -0.29740)--(-0.55000, -0.30152)--(-0.56000, -0.30551)--(-0.57000, -0.30938)--(-0.58000, -0.31312)--(-0.59000, -0.31673)--(-0.60000, -0.32021)--(-0.61000, -0.32357)--(-0.62000, -0.32680)--(-0.63000, -0.32990)--(-0.64000, -0.33287)--(-0.65000, -0.33571)--(-0.66000, -0.33842)--(-0.67000, -0.34100)--(-0.68000, -0.34344)--(-0.69000, -0.34575)--(-0.70000, -0.34792)--(-0.71000, -0.34995)--(-0.72000, -0.35184)--(-0.73000, -0.35359)--(-0.74000, -0.35518)--(-0.75000, -0.35662)--(-0.76000, -0.35791)--(-0.77000, -0.35904)--(-0.78000, -0.36000)--(-0.79000, -0.36080)--(-0.80000, -0.36141)--(-0.81000, -0.36185)--(-0.82000, -0.36209)--(-0.83000, -0.36214)--(-0.84000, -0.36197)--(-0.85000, -0.36159)--(-0.86000, -0.36098)--(-0.87000, -0.36013)--(-0.88000, -0.35901)--(-0.89000, -0.35762)--(-0.90000, -0.35594)--(-0.91000, -0.35393)--(-0.92000, -0.35158)--(-0.93000, -0.34886)--(-0.94000, -0.34572)--(-0.95000, -0.34215)--(-0.96000, -0.33810)--(-0.97000, -0.33354)--(-0.98000, -0.32849)--(-0.99000, -0.32299)--(-1.010000000, -0.3113872450)--(-1.020000000, -0.3058454635)--(-1.030000000, -0.3008401731)--(-1.040000000, -0.2965219366)--(-1.050000000, -0.2929426864)--(-1.060000000, -0.2900922689)--(-1.070000000, -0.2879295398)--(-1.080000000, -0.2864011505)--(-1.090000000, -0.2854512541)--(-1.100000000, -0.2850260330)--(-1.110000000, -0.2850755646)--(-1.120000000, -0.2855543883)--(-1.130000000, -0.2864214697)--(-1.140000000, -0.2876399065)--(-1.150000000, -0.2891765403)--(-1.160000000, -0.2910015560)--(-1.170000000, -0.2930881012)--(-1.180000000, -0.2954119424)--(-1.190000000, -0.2979511586)--(-1.200000000, -0.3006858731)--(-1.210000000, -0.3035980192)--(-1.220000000, -0.3066711363)--(-1.230000000, -0.3098901926)--(-1.240000000, -0.3132414298)--(-1.250000000, -0.3167122287)--(-1.260000000, -0.3202909902)--(-1.270000000, -0.3239670321)--(-1.280000000, -0.3277304973)--(-1.290000000, -0.3315722731)--(-1.300000000, -0.3354839203)--(-1.310000000, -0.3394576091)--(-1.320000000, -0.3434860632)--(-1.330000000, -0.3475625089)--(-1.340000000, -0.3516806305)--(-1.350000000, -0.3558345292)--(-1.360000000, -0.3600186871)--(-1.370000000, -0.3642279341)--(-1.380000000, -0.3684574180)--(-1.390000000, -0.3727025778)--(-1.400000000, -0.3769591187)--(-1.410000000, -0.3812229903)--(-1.420000000, -0.3854903657)--(-1.430000000, -0.3897576228)--(-1.440000000, -0.3940213275)--(-1.450000000, -0.3982782173)--(-1.460000000, -0.4025251872)--(-1.470000000, -0.4067592757)--(-1.480000000, -0.4109776526)--(-1.490000000, -0.4151776068)--(-1.500000000, -0.4193565361)--(-1.510000000, -0.4235119361)--(-1.520000000, -0.4276413909)--(-1.530000000, -0.4317425641)--(-1.540000000, -0.4358131896)--(-1.550000000, -0.4398510637)--(-1.560000000, -0.4438540371)--(-1.570000000, -0.4478200067)--(-1.580000000, -0.4517469088)--(-1.590000000, -0.4556327115)--(-1.600000000, -0.4594754072)--(-1.610000000, -0.4632730060)--(-1.620000000, -0.4670235283)--(-1.630000000, -0.4707249979)--(-1.640000000, -0.4743754345)--(-1.650000000, -0.4779728466)--(-1.660000000, -0.4815152241)--(-1.670000000, -0.4850005300)--(-1.680000000, -0.4884266931)--(-1.690000000, -0.4917915988)--(-1.700000000, -0.4950930809)--(-1.710000000, -0.4983289114)--(-1.720000000, -0.5014967914)--(-1.730000000, -0.5045943397)--(-1.740000000, -0.5076190818)--(-1.750000000, -0.5105684373)--(-1.760000000, -0.5134397072)--(-1.770000000, -0.5162300596)--(-1.780000000, -0.5189365146)--(-1.790000000, -0.5215559285)--(-1.800000000, -0.5240849769)--(-1.810000000, -0.5265201380)--(-1.820000000, -0.5288576746)--(-1.830000000, -0.5310936186)--(-1.840000000, -0.5332237564)--(-1.850000000, -0.5352436198)--(-1.860000000, -0.5371484848)--(-1.870000000, -0.5389333841)--(-1.880000000, -0.5405931428)--(-1.890000000, -0.5421224500)--(-1.900000000, -0.5435159881)--(-1.910000000, -0.5447686503)--(-1.920000000, -0.5458758925)--(-1.930000000, -0.5468342843)--(-1.940000000, -0.5476423400)--(-1.950000000, -0.5483017189)--(-1.960000000, -0.5488188418)--(-1.970000000, -0.5492068441)--(-1.980000000, -0.5494874959)--(-1.990000000, -0.5496923161)--(-2.010000000, -0.5500433167)--(-2.020000000, -0.5502814709)--(-2.030000000, -0.5506188699)--(-2.040000000, -0.5510881290)--(-2.050000000, -0.5517116180)--(-2.060000000, -0.5525022668)--(-2.070000000, -0.5534654361)--(-2.080000000, -0.5546009864)--(-2.090000000, -0.5559050771)--(-2.100000000, -0.5573715488)--(-2.110000000, -0.5589929084)--(-2.120000000, -0.5607609983)--(-2.130000000, -0.5626674342)--(-2.140000000, -0.5647038818)--(-2.150000000, -0.5668622256)--(-2.160000000, -0.5691346660)--(-2.170000000, -0.5715137694)--(-2.180000000, -0.5739924895)--(-2.190000000, -0.5765641692)--(-2.200000000, -0.5792225314)--(-2.210000000, -0.5819616633)--(-2.220000000, -0.5847759970)--(-2.230000000, -0.5876602884)--(-2.240000000, -0.5906095960)--(-2.250000000, -0.5936192598)--(-2.260000000, -0.5966848812)--(-2.270000000, -0.5998023039)--(-2.280000000, -0.6029675962)--(-2.290000000, -0.6061770343)--(-2.300000000, -0.6094270866)--(-2.310000000, -0.6127144001)--(-2.320000000, -0.6160357868)--(-2.330000000, -0.6193882113)--(-2.340000000, -0.6227687805)--(-2.350000000, -0.6261747323)--(-2.360000000, -0.6296034269)--(-2.370000000, -0.6330523372) node[right] {$(-3,-1)$};
+
+
+
+\draw[orange,thick,->] (-0.5,- 0.0317451*8)--(-0.51000, -0.25669)--(-0.52000, -0.25931)--(-0.53000, -0.26180)--(-0.54000, -0.26417)--(-0.55000, -0.26642)--(-0.56000, -0.26855)--(-0.57000, -0.27055)--(-0.58000, -0.27243)--(-0.59000, -0.27419)--(-0.60000, -0.27582)--(-0.61000, -0.27732)--(-0.62000, -0.27869)--(-0.63000, -0.27994)--(-0.64000, -0.28105)--(-0.65000, -0.28202)--(-0.66000, -0.28286)--(-0.67000, -0.28355)--(-0.68000, -0.28411)--(-0.69000, -0.28451)--(-0.70000, -0.28477)--(-0.71000, -0.28487)--(-0.72000, -0.28482)--(-0.73000, -0.28460)--(-0.74000, -0.28421)--(-0.75000, -0.28364)--(-0.76000, -0.28290)--(-0.77000, -0.28197)--(-0.78000, -0.28084)--(-0.79000, -0.27951)--(-0.80000, -0.27796)--(-0.81000, -0.27619)--(-0.82000, -0.27418)--(-0.83000, -0.27192)--(-0.84000, -0.26939)--(-0.85000, -0.26658)--(-0.86000, -0.26346)--(-0.87000, -0.26002)--(-0.88000, -0.25622)--(-0.89000, -0.25203)--(-0.90000, -0.24742)--(-0.91000, -0.24234)--(-0.92000, -0.23673)--(-0.93000, -0.23051)--(-0.94000, -0.22362)--(-0.95000, -0.21592)--(-0.96000, -0.20727)--(-0.97000, -0.19748)--(-0.98000, -0.18627)--(-0.99000, -0.17334)--(-1.010000000, -0.1428961558)--(-1.020000000, -0.1282209493)--(-1.030000000, -0.1158778087)--(-1.040000000, -0.1060524045)--(-1.050000000, -0.09848657399)--(-1.060000000, -0.09285173206)--(-1.070000000, -0.08885026625)--(-1.080000000, -0.08623221655)--(-1.090000000, -0.08479124564)--(-1.100000000, -0.08435697434)--(-1.110000000, -0.08478786387)--(-1.120000000, -0.08596542788)--(-1.130000000, -0.08778970021)--(-1.140000000, -0.09017571481)--(-1.150000000, -0.09305076311)--(-1.160000000, -0.09635224105)--(-1.170000000, -0.1000259434)--(-1.180000000, -0.1040246996)--(-1.190000000, -0.1083072725)--(-1.200000000, -0.1128374614)--(-1.210000000, -0.1175833659)--(-1.220000000, -0.1225167768)--(-1.230000000, -0.1276126679)--(-1.240000000, -0.1328487715)--(-1.250000000, -0.1382052183)--(-1.260000000, -0.1436642337)--(-1.270000000, -0.1492098779)--(-1.280000000, -0.1548278232)--(-1.290000000, -0.1605051633)--(-1.300000000, -0.1662302474)--(-1.310000000, -0.1719925373)--(-1.320000000, -0.1777824820)--(-1.330000000, -0.1835914092)--(-1.340000000, -0.1894114298)--(-1.350000000, -0.1952353533)--(-1.360000000, -0.2010566143)--(-1.370000000, -0.2068692069)--(-1.380000000, -0.2126676265)--(-1.390000000, -0.2184468183)--(-1.400000000, -0.2242021312)--(-1.410000000, -0.2299292769)--(-1.420000000, -0.2356242927)--(-1.430000000, -0.2412835085)--(-1.440000000, -0.2469035171)--(-1.450000000, -0.2524811472)--(-1.460000000, -0.2580134388)--(-1.470000000, -0.2634976214)--(-1.480000000, -0.2689310933)--(-1.490000000, -0.2743114034)--(-1.500000000, -0.2796362342)--(-1.510000000, -0.2849033862)--(-1.520000000, -0.2901107632)--(-1.530000000, -0.2952563590)--(-1.540000000, -0.3003382449)--(-1.550000000, -0.3053545578)--(-1.560000000, -0.3103034888)--(-1.570000000, -0.3151832731)--(-1.580000000, -0.3199921792)--(-1.590000000, -0.3247284994)--(-1.600000000, -0.3293905403)--(-1.610000000, -0.3339766130)--(-1.620000000, -0.3384850241)--(-1.630000000, -0.3429140664)--(-1.640000000, -0.3472620089)--(-1.650000000, -0.3515270878)--(-1.660000000, -0.3557074964)--(-1.670000000, -0.3598013745)--(-1.680000000, -0.3638067978)--(-1.690000000, -0.3677217664)--(-1.700000000, -0.3715441926)--(-1.710000000, -0.3752718878)--(-1.720000000, -0.3789025477)--(-1.730000000, -0.3824337374)--(-1.740000000, -0.3858628740)--(-1.750000000, -0.3891872075)--(-1.760000000, -0.3924038003)--(-1.770000000, -0.3955095035)--(-1.780000000, -0.3985009308)--(-1.790000000, -0.4013744295)--(-1.800000000, -0.4041260473)--(-1.810000000, -0.4067514959)--(-1.820000000, -0.4092461092)--(-1.830000000, -0.4116047975)--(-1.840000000, -0.4138219970)--(-1.850000000, -0.4158916137)--(-1.860000000, -0.4178069661)--(-1.870000000, -0.4195607256)--(-1.880000000, -0.4211448645)--(-1.890000000, -0.4225506193)--(-1.900000000, -0.4237684923)--(-1.910000000, -0.4247883256)--(-1.920000000, -0.4255995143)--(-1.930000000, -0.4261914712)--(-1.940000000, -0.4265545344)--(-1.950000000, -0.4266816271)--(-1.960000000, -0.4265711121)--(-1.970000000, -0.4262313173)--(-1.980000000, -0.4256867884)--(-1.990000000, -0.4249848448)--(-2.010000000, -0.4234197409)--(-2.020000000, -0.4227444520)--(-2.030000000, -0.4222532707)--(-2.040000000, -0.4220016456)--(-2.050000000, -0.4220195094)--(-2.060000000, -0.4223169729)--(-2.070000000, -0.4228910921)--(-2.080000000, -0.4237313196)--(-2.090000000, -0.4248231998)--(-2.100000000, -0.4261506479)--(-2.110000000, -0.4276972690)--(-2.120000000, -0.4294470809)--(-2.130000000, -0.4313848815)--(-2.140000000, -0.4334964109)--(-2.150000000, -0.4357683981)--(-2.160000000, -0.4381885450)--(-2.170000000, -0.4407454777)--(-2.180000000, -0.4434286832)--(-2.190000000, -0.4462284411)--(-2.200000000, -0.4491357557)--(-2.210000000, -0.4521422912)--(-2.220000000, -0.4552403116)--(-2.230000000, -0.4584226263)--(-2.240000000, -0.4616825392)--(-2.250000000, -0.4650138047)--(-2.260000000, -0.4684105867)--(-2.270000000, -0.4718674222)--(-2.280000000, -0.4753791886)--(-2.290000000, -0.4789410746)--(-2.300000000, -0.4825485533)--(-2.310000000, -0.4861973586)--(-2.320000000, -0.4898834636)--(-2.330000000, -0.4936030612)--(-2.340000000, -0.4973525462)--(-2.350000000, -0.5011284994)--(-2.360000000, -0.5049276731)--(-2.370000000, -0.5087469774)--(-2.380000000, -0.5125834683)--(-2.390000000, -0.5164343364)--(-2.400000000, -0.5202968965)--(-2.410000000, -0.5241685782)--(-2.420000000, -0.5280469171)--(-2.430000000, -0.5319295466)--(-2.440000000, -0.5358141903)--(-2.450000000, -0.5396986550)--(-2.460000000, -0.5435808241)--(-2.470000000, -0.5474586514)--(-2.480000000, -0.5513301551)--(-2.490000000, -0.5551934125)--(-2.500000000, -0.5590465548) node[left] {$(-2,-1)$};
+
+\draw[magenta,thick] (-0.212516,- 0.0097740*8)--(-0.2121997146, -0.08619224000)--(-0.2121670935, -0.09419224000)--(-0.2120729571, -0.1021922400)--(-0.2119628113, -0.1101922400)--(-0.2118461552, -0.1181922400);
+\draw[magenta,thick,->] (0.5100000000, 0.2806372399)--(0.5200000000, 0.2825147500)--(0.5300000000, 0.2844098591)--(0.5400000000, 0.2863246315)--(0.5500000000, 0.2882610886)--(0.5600000000, 0.2902212146)--(0.5700000000, 0.2922069626)--(0.5800000000, 0.2942202607)--(0.5900000000, 0.2962630176)--(0.6000000000, 0.2983371285)--(0.6100000000, 0.3004444810)--(0.6200000000, 0.3025869613)--(0.6300000000, 0.3047664600)--(0.6400000000, 0.3069848785)--(0.6500000000, 0.3092441354)--(0.6600000000, 0.3115461737)--(0.6700000000, 0.3138929676)--(0.6800000000, 0.3162865299)--(0.6900000000, 0.3187289208)--(0.7000000000, 0.3212222560)--(0.7100000000, 0.3237687161)--(0.7200000000, 0.3263705574)--(0.7300000000, 0.3290301222)--(0.7400000000, 0.3317498515)--(0.7500000000, 0.3345322983)--(0.7600000000, 0.3373801424)--(0.7700000000, 0.3402962067)--(0.7800000000, 0.3432834754)--(0.7900000000, 0.3463451140)--(0.8000000000, 0.3494844917)--(0.8100000000, 0.3527052056)--(0.8200000000, 0.3560111075)--(0.8300000000, 0.3594063330)--(0.8400000000, 0.3628953313)--(0.8500000000, 0.3664828965)--(0.8600000000, 0.3701741957)--(0.8700000000, 0.3739747927)--(0.8800000000, 0.3778906568)--(0.8900000000, 0.3819281468)--(0.9000000000, 0.3860939465)--(0.9100000000, 0.3903949165)--(0.9200000000, 0.3948377975)--(0.9300000000, 0.3994286659)--(0.9400000000, 0.4041719803)--(0.9500000000, 0.4090689947)--(0.9600000000, 0.4141152909)--(0.9700000000, 0.4192973541)--(0.9800000000, 0.4245887637)--(0.9900000000, 0.4299478643)--(1.000000000, 0.4353198711)--(1.010000000, 0.4406449641)--(1.020000000, 0.4458693957)--(1.030000000, 0.4509536521)--(1.040000000, 0.4558744402)--(1.050000000, 0.4606220050)--(1.060000000, 0.4651959170)--(1.070000000, 0.4696013481)--(1.080000000, 0.4738464389)--(1.090000000, 0.4779406457)--(1.100000000, 0.4818937779)--(1.110000000, 0.4857154708)--(1.120000000, 0.4894149172)--(1.130000000, 0.4930007488)--(1.140000000, 0.4964809986)--(1.150000000, 0.4998631094)--(1.160000000, 0.5031539636)--(1.170000000, 0.5063599238)--(1.180000000, 0.5094868762)--(1.190000000, 0.5125402735)--(1.200000000, 0.5155251759)--(1.210000000, 0.5184462886)--(1.220000000, 0.5213079959)--(1.230000000, 0.5241143919)--(1.240000000, 0.5268693082)--(1.250000000, 0.5295763383)--(1.260000000, 0.5322388596)--(1.270000000, 0.5348600533)--(1.280000000, 0.5374429216)--(1.290000000, 0.5399903035)--(1.300000000, 0.5425048889)--(1.310000000, 0.5449892313)--(1.320000000, 0.5474457590)--(1.330000000, 0.5498767856)--(1.340000000, 0.5522845191)--(1.350000000, 0.5546710705)--(1.360000000, 0.5570384615)--(1.370000000, 0.5593886315)--(1.380000000, 0.5617234436)--(1.390000000, 0.5640446915)--(1.400000000, 0.5663541038)--(1.410000000, 0.5686533499)--(1.420000000, 0.5709440440)--(1.430000000, 0.5732277500)--(1.440000000, 0.5755059850)--(1.450000000, 0.5777802237)--(1.460000000, 0.5800519013)--(1.470000000, 0.5823224173)--(1.480000000, 0.5845931384)--(1.490000000, 0.5868654019)--(1.500000000, 0.5891405182)--(1.510000000, 0.5914197736)--(1.520000000, 0.5937044334)--(1.530000000, 0.5959957439)--(1.540000000, 0.5982949355)--(1.550000000, 0.6006032245)--(1.560000000, 0.6029218162)--(1.570000000, 0.6052519070)--(1.580000000, 0.6075946864)--(1.590000000, 0.6099513403)--(1.600000000, 0.6123230523)--(1.610000000, 0.6147110070)--(1.620000000, 0.6171163918)--(1.630000000, 0.6195403999)--(1.640000000, 0.6219842322)--(1.650000000, 0.6244491004)--(1.660000000, 0.6269362295)--(1.670000000, 0.6294468603)--(1.680000000, 0.6319822523)--(1.690000000, 0.6345436868)--(1.700000000, 0.6371324693)--(1.710000000, 0.6397499329)--(1.720000000, 0.6423974414)--(1.730000000, 0.6450763917)--(1.740000000, 0.6477882175)--(1.750000000, 0.6505343918)--(1.760000000, 0.6533164294)--(1.770000000, 0.6561358897)--(1.780000000, 0.6589943777)--(1.790000000, 0.6618935455)--(1.800000000, 0.6648350912)--(1.810000000, 0.6678207570)--(1.820000000, 0.6708523243)--(1.830000000, 0.6739316047)--(1.840000000, 0.6770604264)--(1.850000000, 0.6802406133)--(1.860000000, 0.6834739540)--(1.870000000, 0.6867621578)--(1.880000000, 0.6901067923)--(1.890000000, 0.6935091968)--(1.900000000, 0.6969703657)--(1.910000000, 0.7004907921)--(1.920000000, 0.7040702660)--(1.930000000, 0.7077076229)--(1.940000000, 0.7114004480)--(1.950000000, 0.7151447568)--(1.960000000, 0.7189346985)--(1.970000000, 0.7227623559)--(1.980000000, 0.7266177420)--(1.990000000, 0.7304890799)--(2.000000000, 0.7343634029) node[above] {$(1,0)$};
+\draw[magenta,thick,->] (-1.630000000, -0.3463756383)--(-1.640000000, -0.3511559087)--(-1.650000000, -0.3558779913)--(-1.660000000, -0.3605402831)--(-1.670000000, -0.3651411439)--(-1.680000000, -0.3696788893)--(-1.690000000, -0.3741517832)--(-1.700000000, -0.3785580295)--(-1.710000000, -0.3828957636)--(-1.720000000, -0.3871630422)--(-1.730000000, -0.3913578334)--(-1.740000000, -0.3954780052)--(-1.750000000, -0.3995213127)--(-1.760000000, -0.4034853846)--(-1.770000000, -0.4073677073)--(-1.780000000, -0.4111656088)--(-1.790000000, -0.4148762396)--(-1.800000000, -0.4184965520)--(-1.810000000, -0.4220232776)--(-1.820000000, -0.4254529028)--(-1.830000000, -0.4287816425)--(-1.840000000, -0.4320054118)--(-1.850000000, -0.4351197984)--(-1.860000000, -0.4381200367)--(-1.870000000, -0.4410009861)--(-1.880000000, -0.4437571227)--(-1.890000000, -0.4463825516)--(-1.900000000, -0.4488710609)--(-1.910000000, -0.4512162451)--(-1.920000000, -0.4534117488)--(-1.930000000, -0.4554517101)--(-1.940000000, -0.4573315258)--(-1.950000000, -0.4590491090)--(-1.960000000, -0.4606068368)--(-1.970000000, -0.4620142903)--(-1.980000000, -0.4632915054)--(-1.990000000, -0.4644716190)--(-2.010000000, -0.4667338158)--(-2.020000000, -0.4679252443)--(-2.030000000, -0.4692212196)--(-2.040000000, -0.4706544837)--(-2.050000000, -0.4722442069)--(-2.060000000, -0.4739985752)--(-2.070000000, -0.4759180968)--(-2.080000000, -0.4779984560)--(-2.090000000, -0.4802325867)--(-2.100000000, -0.4826120395)--(-2.110000000, -0.4851278314)--(-2.120000000, -0.4877709495)--(-2.130000000, -0.4905326350)--(-2.140000000, -0.4934045324)--(-2.150000000, -0.4963787582)--(-2.160000000, -0.4994479218)--(-2.170000000, -0.5026051192)--(-2.180000000, -0.5058439119)--(-2.190000000, -0.5091582989)--(-2.200000000, -0.5125426851)--(-2.210000000, -0.5159918497)--(-2.220000000, -0.5195009154)--(-2.230000000, -0.5230653196)--(-2.240000000, -0.5266807875)--(-2.250000000, -0.5303433072)--(-2.260000000, -0.5340491077)--(-2.270000000, -0.5377946379)--(-2.280000000, -0.5415765483)--(-2.290000000, -0.5453916744)--(-2.300000000, -0.5492370211)--(-2.310000000, -0.5531097492)--(-2.320000000, -0.5570071625)--(-2.330000000, -0.5609266968)--(-2.340000000, -0.5648659093)--(-2.350000000, -0.5688224691)--(-2.360000000, -0.5727941488)--(-2.370000000, -0.5767788162)--(-2.380000000, -0.5807744273)--(-2.390000000, -0.5847790195)--(-2.400000000, -0.5887907053)--(-2.410000000, -0.5928076668)--(-2.420000000, -0.5968281502)--(-2.430000000, -0.6008504609)--(-2.440000000, -0.6048729588)--(-2.450000000, -0.6088940542)--(-2.460000000, -0.6129122034)--(-2.470000000, -0.6169259052)--(-2.480000000, -0.6209336971)--(-2.490000000, -0.6249341518)--(-2.500000000, -0.6289258738)--(-2.510000000, -0.6329074968)--(-2.520000000, -0.6368776801)--(-2.530000000, -0.6408351059)--(-2.540000000, -0.6447784764)--(-2.550000000, -0.6487065112)--(-2.560000000, -0.6526179445)--(-2.570000000, -0.6565115223)--(-2.580000000, -0.6603860002)--(-2.590000000, -0.6642401403)--(-2.600000000, -0.6680727089)--(-2.610000000, -0.6718824739)--(-2.620000000, -0.6756682022)--(-2.630000000, -0.6794286570)--(-2.640000000, -0.6831625952)--(-2.650000000, -0.6868687646)--(-2.660000000, -0.6905459014)--(-2.670000000, -0.6941927274)--(-2.680000000, -0.6978079470)--(-2.690000000, -0.7013902444)--(-2.700000000, -0.7049382809)--(-2.710000000, -0.7084506918)--(-2.720000000, -0.7119260839)--(-2.730000000, -0.7153630319)--(-2.740000000, -0.7187600768)--(-2.750000000, -0.7221157226)node[left] {$(-1,-1)$};
+\draw[violet,thick,->] (-2.010000000, -0.5539778151)--(-2.020000000, -0.5556279328)--(-2.030000000, -0.5573450763)--(-2.040000000, -0.5591521388)--(-2.050000000, -0.5610646454)--(-2.060000000, -0.5630914855)--(-2.070000000, -0.5652363043)--(-2.080000000, -0.5674989718)--(-2.090000000, -0.5698768322)--(-2.100000000, -0.5723656535)--(-2.110000000, -0.5749602989)--(-2.120000000, -0.5776551811)--(-2.130000000, -0.5804445585)--(-2.140000000, -0.5833227227)--(-2.150000000, -0.5862841116)--(-2.160000000, -0.5893233753)--(-2.170000000, -0.5924354097)--(-2.180000000, -0.5956153705)--(-2.190000000, -0.5988586748)--(-2.200000000, -0.6021609942)--(-2.210000000, -0.6055182448)--(-2.220000000, -0.6089265733)--(-2.230000000, -0.6123823435)--(-2.240000000, -0.6158821214)--(-2.250000000, -0.6194226613)--(-2.260000000, -0.6230008919)--(-2.270000000, -0.6266139037)--(-2.280000000, -0.6302589372)--(-2.290000000, -0.6339333712)--(-2.300000000, -0.6376347127)--(-2.310000000, -0.6413605873)--(-2.320000000, -0.6451087306)--(-2.330000000, -0.6488769794)--(-2.340000000, -0.6526632649)--(-2.350000000, -0.6564656054)--(-2.360000000, -0.6602820999)--(-2.370000000, -0.6641109224)--(-2.380000000, -0.6679503159)--(-2.390000000, -0.6717985880)--(-2.400000000, -0.6756541058)--(-2.410000000, -0.6795152915)--(-2.420000000, -0.6833806182)--(-2.430000000, -0.6872486064)--(-2.440000000, -0.6911178201)--(-2.450000000, -0.6949868635)--(-2.460000000, -0.6988543777)--(-2.470000000, -0.7027190378)--(-2.480000000, -0.7065795500)--(-2.490000000, -0.7104346489)--(-2.500000000, -0.7142830946)--(-2.510000000, -0.7181236707)--(-2.520000000, -0.7219551812)--(-2.530000000, -0.7257764487)--(-2.540000000, -0.7295863122)--(-2.550000000, -0.7333836242)--(-2.560000000, -0.7371672492)--(-2.570000000, -0.7409360615)--(-2.580000000, -0.7446889426)--(-2.590000000, -0.7484247798)--(-2.600000000, -0.7521424636)--(-2.610000000, -0.7558408861)--(-2.620000000, -0.7595189386)--(-2.630000000, -0.7631755099)--(-2.640000000, -0.7668094839)--(-2.650000000, -0.7704197379)--(-2.660000000, -0.7740051403)--(-2.670000000, -0.7775645488)--(-2.680000000, -0.7810968084)--(-2.690000000, -0.7846007493)--(-2.700000000, -0.7880751849)node[below] {$(-2,-1)$};
+
+\filldraw[violet] (-2.010000000, -0.5539778151) circle (0.5pt);
+\filldraw[magenta] (0.5100000000, 0.2806372399) circle (0.5pt);
+\filldraw[magenta] (-1.630000000, -0.3463756383) circle (0.5pt);
+\filldraw[red] (-0.5,- 0.0317451*8) circle (0.5pt);
+\filldraw[cyan] (-0.212516,- 0.0097740*8) circle (0.5pt);
+
+\end{tikzpicture}
+\end{tiny}
+\caption{This figure depicts in \textcolor{orange}{orange} the set $\calC_{p_1,\vartheta}$ for $\vartheta=\arg(-1/\tau)=1.64069$ and $(A,B)=(4,1)$. The \textcolor{green}{green} lines are parallel to the lines $i/\tau$. The \textcolor{magenta}{magenta} curves represent the tails at the intersection of the set $\calC_{p_4,\vartheta}$ with the green lines. The \textcolor{violet}{violet} contour represents half of the contour that appears when we run the algorithm a second time. Notice that the \textcolor{magenta}{magenta} contour splits at the critical point $\textcolor{blue}{p_3}$ as this is a saddle connection.}
+\label{fig:saddle.A4B1.II-III}
+\end{figure}
+
+\subsubsection{State integrals decomposition in $\mathrm{III}$}
+
+Let $\vartheta\in\mathrm{III}$. We plot the curve $\calC_{p_2,\vartheta}$ in Figure~\ref{fig:thimb.A4B1.III}.
+\begin{figure}[ht]
+\begin{tiny}
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+
+
+
+
+
+\draw[<->,thick] (-2.5,0) -- (2,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+\foreach \x in {0}
+\draw[green] (-0.998152/8/0.0607589+\x,-1)--(0.998152/8/0.0607589+\x,1);
+\draw[green] (-0.998152/8/0.0607589+1,-1)--(2,1/0.998152*8*0.0607589);
+\draw[green] (-0.998152/8/0.0607589+2,-1)--(2,0);
+\draw[green] (-0.998152/8/0.0607589+3,-1)--(2,-1/0.998152*8*0.0607589);
+\draw[green] (-2.5,-1.5/0.998152*8*0.0607589)--(0.998152/8/0.0607589-1,1);
+\draw[green] (-2.5,-0.5/0.998152*8*0.0607589)--(0.998152/8/0.0607589-2,1);
+\draw[green] (-2.5,0.5/0.998152*8*0.0607589)--(0.998152/8/0.0607589-3,1);
+\draw[thick,red] (-0.05,-0.05)--(0.05,0.05);
+\draw[ thick,red] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-2cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-2cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[orange,thick,->] (-0.5,- 0.0317451*8)--(-0.4900000000, -0.2514683255)--(-0.4800000000, -0.2488551309)--(-0.4700000000, -0.2461212716)--(-0.4600000000, -0.2432663634)--(-0.4500000000, -0.2402898753)--(-0.4400000000, -0.2371911267)--(-0.4300000000, -0.2339692837)--(-0.4200000000, -0.2306233538)--(-0.4100000000, -0.2271521804)--(-0.4000000000, -0.2235544352)--(-0.3900000000, -0.2198286108)--(-0.3800000000, -0.2159730102)--(-0.3700000000, -0.2119857366)--(-0.3600000000, -0.2078646802)--(-0.3500000000, -0.2036075041)--(-0.3400000000, -0.1992116274)--(-0.3300000000, -0.1946742063)--(-0.3200000000, -0.1899921124)--(-0.3100000000, -0.1851619078)--(-0.3000000000, -0.1801798166)--(-0.2900000000, -0.1750416918)--(-0.2800000000, -0.1697429779)--(-0.2700000000, -0.1642786666)--(-0.2600000000, -0.1586432462)--(-0.2500000000, -0.1528306424)--(-0.2400000000, -0.1468341485)--(-0.2300000000, -0.1406463439)--(-0.2200000000, -0.1342589973)--(-0.2100000000, -0.1276629511)--(-0.2000000000, -0.1208479835)--(-0.1900000000, -0.1138026407)--(-0.1800000000, -0.1065140338)--(-0.1700000000, -0.09896758803)--(-0.1600000000, -0.09114673173)--(-0.1500000000, -0.08303250623)--(-0.1400000000, -0.07460306973)--(-0.1300000000, -0.06583305866)--(-0.1200000000, -0.05669275283)--(-0.1100000000, -0.04714696592)--(-0.1000000000, -0.03715354331)--(-0.09000000000, -0.02666128602)--(-0.08000000000, -0.01560701619)--(-0.07000000000, -0.003911328606)--(-0.06000000000, 0.008527703462)--(-0.05000000000, 0.02184399672)--(-0.04000000000, 0.03621746330)--(-0.03000000000, 0.05189157109)--(-0.02000000000, 0.06917098335)--(-0.01000000000, 0.08821043977)--(0.E-19, 0.1078339234)--(0.01000000000, 0.1252201046)--(0.02000000000, 0.1395970258)--(0.03000000000, 0.1515957346)--(0.04000000000, 0.1617900970)--(0.05000000000, 0.1705714933)--(0.06000000000, 0.1782112078)--(0.07000000000, 0.1849058946)--(0.08000000000, 0.1908039939)--(0.09000000000, 0.1960212874)--(0.1000000000, 0.2006504788)--(0.1100000000, 0.2047673736)--(0.1200000000, 0.2084350318)--(0.1300000000, 0.2117066591)--(0.1400000000, 0.2146276817)--(0.1500000000, 0.2172372749)--(0.1600000000, 0.2195695152)--(0.1700000000, 0.2216542649)--(0.1800000000, 0.2235178640)--(0.1900000000, 0.2251836790)--(0.2000000000, 0.2266725444)--(0.2100000000, 0.2280031217)--(0.2200000000, 0.2291921949)--(0.2300000000, 0.2302549160)--(0.2400000000, 0.2312050099)--(0.2500000000, 0.2320549483)--(0.2600000000, 0.2328160966)--(0.2700000000, 0.2334988406)--(0.2800000000, 0.2341126945)--(0.2900000000, 0.2346663951)--(0.3000000000, 0.2351679836)--(0.3100000000, 0.2356248768)--(0.3200000000, 0.2360439301)--(0.3300000000, 0.2364314925)--(0.3400000000, 0.2367934558)--(0.3500000000, 0.2371352979)--(0.3600000000, 0.2374621215)--(0.3700000000, 0.2377786890)--(0.3800000000, 0.2380894532)--(0.3900000000, 0.2383985857)--(0.4000000000, 0.2387100020)--(0.4100000000, 0.2390273844)--(0.4200000000, 0.2393542027)--(0.4300000000, 0.2396937334)--(0.4400000000, 0.2400490770)--(0.4500000000, 0.2404231734)--(0.4600000000, 0.2408188172)--(0.4700000000, 0.2412386710)--(0.4800000000, 0.2416852777)--(0.4900000000, 0.2421610721)--(0.5000000000, 0.2426683922)--(0.5100000000, 0.2432094890)--(0.5200000000, 0.2437865362)--(0.5300000000, 0.2444016395)--(0.5400000000, 0.2450568449)--(0.5500000000, 0.2457541473)--(0.5600000000, 0.2464954986)--(0.5700000000, 0.2472828149)--(0.5800000000, 0.2481179849)--(0.5900000000, 0.2490028766)--(0.6000000000, 0.2499393455)--(0.6100000000, 0.2509292413)--(0.6200000000, 0.2519744158)--(0.6300000000, 0.2530767307)--(0.6400000000, 0.2542380649)--(0.6500000000, 0.2554603232)--(0.6600000000, 0.2567454443)--(0.6700000000, 0.2580954101)--(0.6800000000, 0.2595122551)--(0.6900000000, 0.2609980765)--(0.7000000000, 0.2625550451)--(0.7100000000, 0.2641854174)--(0.7200000000, 0.2658915485)--(0.7300000000, 0.2676759063)--(0.7400000000, 0.2695410877)--(0.7500000000, 0.2714898360)--(0.7600000000, 0.2735250606)--(0.7700000000, 0.2756498597)--(0.7800000000, 0.2778675447)--(0.7900000000, 0.2801816693)--(0.8000000000, 0.2825960615)--(0.8100000000, 0.2851148602)--(0.8200000000, 0.2877425575)--(0.8300000000, 0.2904840464)--(0.8400000000, 0.2933446745)--(0.8500000000, 0.2963303046)--(0.8600000000, 0.2994473817)--(0.8700000000, 0.3027030044)--(0.8800000000, 0.3061049970)--(0.8900000000, 0.3096619727)--(0.9000000000, 0.3133833710)--(0.9100000000, 0.3172794329)--(0.9200000000, 0.3213610460)--(0.9300000000, 0.3256393315)--(0.9400000000, 0.3301247336)--(0.9500000000, 0.3348251880)--(0.9600000000, 0.3397426907)--(0.9700000000, 0.3448674383)--(0.9800000000, 0.3501693695)--(0.9900000000, 0.3555898543)--(1.000000000, 0.3610414127)--(1.010000000, 0.3664233838)--(1.020000000, 0.3716477691)--(1.030000000, 0.3766568943)--(1.040000000, 0.3814241854)--(1.050000000, 0.3859452212)--(1.060000000, 0.3902281545)--(1.070000000, 0.3942870560)--(1.080000000, 0.3981380971)--(1.090000000, 0.4017975918)--(1.100000000, 0.4052810839)--(1.110000000, 0.4086029810)--(1.120000000, 0.4117764602)--(1.130000000, 0.4148135012)--(1.140000000, 0.4177249747)--(1.150000000, 0.4205207489)--(1.160000000, 0.4232097977)--(1.170000000, 0.4258003015)--(1.180000000, 0.4282997383)--(1.190000000, 0.4307149647)--(1.200000000, 0.4330522866)--(1.210000000, 0.4353175208)--(1.220000000, 0.4375160489)--(1.230000000, 0.4396528637)--(1.240000000, 0.4417326102)--(1.250000000, 0.4437596212)--(1.260000000, 0.4457379481)--(1.270000000, 0.4476713889)--(1.280000000, 0.4495635114)--(1.290000000, 0.4514176755)--(1.300000000, 0.4532370514)--(1.310000000, 0.4550246367)--(1.320000000, 0.4567832715)--(1.330000000, 0.4585156518)--(1.340000000, 0.4602243415)--(1.350000000, 0.4619117837)--(1.360000000, 0.4635803101)--(1.370000000, 0.4652321504)--(1.380000000, 0.4668694403)--(1.390000000, 0.4684942290)--(1.400000000, 0.4701084861)--(1.410000000, 0.4717141081)--(1.420000000, 0.4733129237)--(1.430000000, 0.4749067000)--(1.440000000, 0.4764971468)--(1.450000000, 0.4780859218)--(1.460000000, 0.4796746349)--(1.470000000, 0.4812648521)--(1.480000000, 0.4828580999)--(1.490000000, 0.4844558686)--(1.500000000, 0.4860596160)--(1.510000000, 0.4876707711)--(1.520000000, 0.4892907368)--(1.530000000, 0.4909208937)--(1.540000000, 0.4925626029)--(1.550000000, 0.4942172090)--(1.560000000, 0.4958860433)--(1.570000000, 0.4975704266)--(1.580000000, 0.4992716724)--(1.590000000, 0.5009910896)--(1.600000000, 0.5027299855)--(1.610000000, 0.5044896692)--(1.620000000, 0.5062714545)--(1.630000000, 0.5080766629)--(1.640000000, 0.5099066272)--(1.650000000, 0.5117626949)--(1.660000000, 0.5136462317)--(1.670000000, 0.5155586252)--(1.680000000, 0.5175012888)--(1.690000000, 0.5194756659)--(1.700000000, 0.5214832346)--(1.710000000, 0.5235255117)--(1.720000000, 0.5256040581)--(1.730000000, 0.5277204837)--(1.740000000, 0.5298764530)--(1.750000000, 0.5320736911)--(1.760000000, 0.5343139893)--(1.770000000, 0.5365992113)--(1.780000000, 0.5389313002)--(1.790000000, 0.5413122837)--(1.800000000, 0.5437442808)--(1.810000000, 0.5462295067)--(1.820000000, 0.5487702763)--(1.830000000, 0.5513690060)--(1.840000000, 0.5540282112)--(1.850000000, 0.5567504985)--(1.860000000, 0.5595385486)--(1.870000000, 0.5623950865)--(1.880000000, 0.5653228317)--(1.890000000, 0.5683244197)--(1.900000000, 0.5714022814)--(1.910000000, 0.5745584630)--(1.920000000, 0.5777943640)--(1.930000000, 0.5811103666)--(1.940000000, 0.5845053335)--(1.950000000, 0.5879759688)--(1.960000000, 0.5915160822)--(1.970000000, 0.5951158829)--(1.980000000, 0.5987615458)--(1.990000000, 0.6024353745)--(2.000000000, 0.6061168169) node[right] {$(0,0)$};
+
+\draw[orange,thick,->]  (-0.5,- 0.0317451*8)--(-0.5100000000, -0.2563335390)--(-0.5200000000, -0.2585856099)--(-0.5300000000, -0.2607171210)--(-0.5400000000, -0.2627277407)--(-0.5500000000, -0.2646169925)--(-0.5600000000, -0.2663842512)--(-0.5700000000, -0.2680287401)--(-0.5800000000, -0.2695495264)--(-0.5900000000, -0.2709455151)--(-0.6000000000, -0.2722154434)--(-0.6100000000, -0.2733578722)--(-0.6200000000, -0.2743711774)--(-0.6300000000, -0.2752535396)--(-0.6400000000, -0.2760029323)--(-0.6500000000, -0.2766171076)--(-0.6600000000, -0.2770935813)--(-0.6700000000, -0.2774296142)--(-0.6800000000, -0.2776221922)--(-0.6900000000, -0.2776680024)--(-0.7000000000, -0.2775634063)--(-0.7100000000, -0.2773044088)--(-0.7200000000, -0.2768866228)--(-0.7300000000, -0.2763052274)--(-0.7400000000, -0.2755549210)--(-0.7500000000, -0.2746298649)--(-0.7600000000, -0.2735236189)--(-0.7700000000, -0.2722290651)--(-0.7800000000, -0.2707383171)--(-0.7900000000, -0.2690426137)--(-0.8000000000, -0.2671321900)--(-0.8100000000, -0.2649961239)--(-0.8200000000, -0.2626221476)--(-0.8300000000, -0.2599964190)--(-0.8400000000, -0.2571032368)--(-0.8500000000, -0.2539246858)--(-0.8600000000, -0.2504401876)--(-0.8700000000, -0.2466259251)--(-0.8800000000, -0.2424540940)--(-0.8900000000, -0.2378919141)--(-0.9000000000, -0.2329002985)--(-0.9100000000, -0.2274320256)--(-0.9200000000, -0.2214291703)--(-0.9300000000, -0.2148193998)--(-0.9400000000, -0.2075104826)--(-0.9500000000, -0.1993819161)--(-0.9600000000, -0.1902718713)--(-0.9700000000, -0.1799569374)--(-0.9800000000, -0.1681245466)--(-0.9900000000, -0.1543670596)--(-1.010000000, -0.1212398804)--(-1.020000000, -0.1053459728)--(-1.030000000, -0.09220893921)--(-1.040000000, -0.08185986469)--(-1.050000000, -0.07391709835)--(-1.060000000, -0.06798548278)--(-1.070000000, -0.06373216744)--(-1.080000000, -0.06088769704)--(-1.090000000, -0.05923441470)--(-1.100000000, -0.05859509862)--(-1.110000000, -0.05882394615)--(-1.120000000, -0.05979975864)--(-1.130000000, -0.06142082553)--(-1.140000000, -0.06360105808)--(-1.150000000, -0.06626703400)--(-1.160000000, -0.06935570940)--(-1.170000000, -0.07281262529)--(-1.180000000, -0.07659048477)--(-1.190000000, -0.08064801208)--(-1.200000000, -0.08494902842)--(-1.210000000, -0.08946169648)--(-1.220000000, -0.09415789779)--(-1.230000000, -0.09901271558)--(-1.240000000, -0.1040040024)--(-1.250000000, -0.1091120161)--(-1.260000000, -0.1143191120)--(-1.270000000, -0.1196094806)--(-1.280000000, -0.1249689234)--(-1.290000000, -0.1303846605)--(-1.300000000, -0.1358451640)--(-1.310000000, -0.1413400147)--(-1.320000000, -0.1468597764)--(-1.330000000, -0.1523958866)--(-1.340000000, -0.1579405614)--(-1.350000000, -0.1634867110)--(-1.360000000, -0.1690278661)--(-1.370000000, -0.1745581120)--(-1.380000000, -0.1800720312)--(-1.390000000, -0.1855646516)--(-1.400000000, -0.1910314005)--(-1.410000000, -0.1964680642)--(-1.420000000, -0.2018707506)--(-1.430000000, -0.2072358568)--(-1.440000000, -0.2125600391)--(-1.450000000, -0.2178401861)--(-1.460000000, -0.2230733949)--(-1.470000000, -0.2282569485)--(-1.480000000, -0.2333882960)--(-1.490000000, -0.2384650341)--(-1.500000000, -0.2434848905)--(-1.510000000, -0.2484457077)--(-1.520000000, -0.2533454293)--(-1.530000000, -0.2581820863)--(-1.540000000, -0.2629537843)--(-1.550000000, -0.2676586922)--(-1.560000000, -0.2722950309)--(-1.570000000, -0.2768610624)--(-1.580000000, -0.2813550798)--(-1.590000000, -0.2857753975)--(-1.600000000, -0.2901203415)--(-1.610000000, -0.2943882396)--(-1.620000000, -0.2985774125)--(-1.630000000, -0.3026861638)--(-1.640000000, -0.3067127706)--(-1.650000000, -0.3106554737)--(-1.660000000, -0.3145124671)--(-1.670000000, -0.3182818878)--(-1.680000000, -0.3219618041)--(-1.690000000, -0.3255502038)--(-1.700000000, -0.3290449814)--(-1.710000000, -0.3324439241)--(-1.720000000, -0.3357446966)--(-1.730000000, -0.3389448245)--(-1.740000000, -0.3420416755)--(-1.750000000, -0.3450324392)--(-1.760000000, -0.3479141039)--(-1.770000000, -0.3506834304)--(-1.780000000, -0.3533369229)--(-1.790000000, -0.3558707954)--(-1.800000000, -0.3582809337)--(-1.810000000, -0.3605628515)--(-1.820000000, -0.3627116406)--(-1.830000000, -0.3647219131)--(-1.840000000, -0.3665877358)--(-1.850000000, -0.3683025547)--(-1.860000000, -0.3698591099)--(-1.870000000, -0.3712493407)--(-1.880000000, -0.3724642837)--(-1.890000000, -0.3734939687)--(-1.900000000, -0.3743273270)--(-1.910000000, -0.3749521393)--(-1.920000000, -0.3753550790)--(-1.930000000, -0.3755219584)--(-1.940000000, -0.3754383867)--(-1.950000000, -0.3750912231)--(-1.960000000, -0.3744714948)--(-1.970000000, -0.3735797791)--(-1.980000000, -0.3724350047)--(-1.990000000, -0.3710858921)--(-2.010000000, -0.3681536916)--(-2.020000000, -0.3668146626)--(-2.030000000, -0.3657038471)--(-2.040000000, -0.3648843780)--(-2.050000000, -0.3643839654)--(-2.060000000, -0.3642059157)--(-2.070000000, -0.3643395294)--(-2.080000000, -0.3647672184)--(-2.090000000, -0.3654686987)--(-2.100000000, -0.3664232526)--(-2.110000000, -0.3676108634)--(-2.120000000, -0.3690127287)--(-2.130000000, -0.3706114459)--(-2.140000000, -0.3723910279)--(-2.150000000, -0.3743368382)--(-2.160000000, -0.3764354906)--(-2.170000000, -0.3786747369)--(-2.180000000, -0.3810433562)--(-2.190000000, -0.3835310504)--(-2.200000000, -0.3861283490)--(-2.210000000, -0.3888265237)--(-2.220000000, -0.3916175116)--(-2.230000000, -0.3944938484)--(-2.240000000, -0.3974486079)--(-2.250000000, -0.4004753498)--(-2.260000000, -0.4035680726)--(-2.270000000, -0.4067211724)--(-2.280000000, -0.4099294060)--(-2.290000000, -0.4131878583)--(-2.300000000, -0.4164919134)--(-2.310000000, -0.4198372279)--(-2.320000000, -0.4232197082)--(-2.330000000, -0.4266354889)--(-2.340000000, -0.4300809143)--(-2.350000000, -0.4335525211)--(-2.360000000, -0.4370470227)--(-2.370000000, -0.4405612954)--(-2.380000000, -0.4440923650)--(-2.390000000, -0.4476373958)--(-2.400000000, -0.4511936790)--(-2.410000000, -0.4547586231)--(-2.420000000, -0.4583297450)--(-2.430000000, -0.4619046609)--(-2.440000000, -0.4654810790)--(-2.450000000, -0.4690567918)--(-2.460000000, -0.4726296695)--(-2.470000000, -0.4761976533)--(-2.480000000, -0.4797587497)--(-2.490000000, -0.4833110245)--(-2.500000000, -0.4868525975) node[left] {$(-2,-1)$};
+\draw[magenta,thick,->] (-0.1300000000, -0.07483257610)--(-0.1200000000, -0.05119386744)--(-0.1100000000, -0.02899235755)--(-0.1000000000, -0.007588498004)--(-0.09000000000, 0.01346932712)--(-0.08000000000, 0.03452420213)--(-0.07000000000, 0.05585375242)--(-0.06000000000, 0.07769126382)--(-0.05000000000, 0.1002266734)--(-0.04000000000, 0.1235762503)--(-0.03000000000, 0.1476890983)--(-0.02000000000, 0.1721415485)--(-0.01000000000, 0.1958796953)--(0.E-19, 0.2173978079)--(0.01000000000, 0.2356543326)--(0.02000000000, 0.2505531244)--(0.03000000000, 0.2625195227)--(0.04000000000, 0.2720678359)--(0.05000000000, 0.2796467660)--(0.06000000000, 0.2856169088)--(0.07000000000, 0.2902631907)--(0.08000000000, 0.2938115952)--(0.09000000000, 0.2964431873)--(0.1000000000, 0.2983047297)--(0.1100000000, 0.2995165209)--(0.1200000000, 0.3001781836)--(0.1300000000, 0.3003729777)--(0.1400000000, 0.3001710575)--(0.1500000000, 0.2996319629)--(0.1600000000, 0.2988065503)--(0.1700000000, 0.2977385078)--(0.1800000000, 0.2964655580)--(0.1900000000, 0.2950204221)--(0.2000000000, 0.2934316012)--(0.2100000000, 0.2917240131)--(0.2200000000, 0.2899195180)--(0.2300000000, 0.2880373533)--(0.2400000000, 0.2860944969)--(0.2500000000, 0.2841059723)--(0.2600000000, 0.2820851060)--(0.2700000000, 0.2800437467)--(0.2800000000, 0.2779924512)--(0.2900000000, 0.2759406448)--(0.3000000000, 0.2738967588)--(0.3100000000, 0.2718683489)--(0.3200000000, 0.2698621988)--(0.3300000000, 0.2678844095)--(0.3400000000, 0.2659404777)--(0.3500000000, 0.2640353644)--(0.3600000000, 0.2621735549)--(0.3700000000, 0.2603591122)--(0.3800000000, 0.2585957237)--(0.3900000000, 0.2568867428)--(0.4000000000, 0.2552352257)--(0.4100000000, 0.2536439646)--(0.4200000000, 0.2521155168)--(0.4300000000, 0.2506522311)--(0.4400000000, 0.2492562716)--(0.4500000000, 0.2479296391)--(0.4600000000, 0.2466741903)--(0.4700000000, 0.2454916551)--(0.4800000000, 0.2443836531)--(0.4900000000, 0.2433517080)--(0.5000000000, 0.2423972606)--(0.5100000000, 0.2415216819)--(0.5200000000, 0.2407262843)--(0.5300000000, 0.2400123320)--(0.5400000000, 0.2393810516)--(0.5500000000, 0.2388336417)--(0.5600000000, 0.2383712814)--(0.5700000000, 0.2379951396)--(0.5800000000, 0.2377063833)--(0.5900000000, 0.2375061860)--(0.6000000000, 0.2373957357)--(0.6100000000, 0.2373762434)--(0.6200000000, 0.2374489511)--(0.6300000000, 0.2376151403)--(0.6400000000, 0.2378761409)--(0.6500000000, 0.2382333398)--(0.6600000000, 0.2386881908)--(0.6700000000, 0.2392422244)--(0.6800000000, 0.2398970584)--(0.6900000000, 0.2406544099)--(0.7000000000, 0.2415161075)--(0.7100000000, 0.2424841055)--(0.7200000000, 0.2435604985)--(0.7300000000, 0.2447475389)--(0.7400000000, 0.2460476553)--(0.7500000000, 0.2474634737)--(0.7600000000, 0.2489978418)--(0.7700000000, 0.2506538553)--(0.7800000000, 0.2524348892)--(0.7900000000, 0.2543446329)--(0.8000000000, 0.2563871308)--(0.8100000000, 0.2585668282)--(0.8200000000, 0.2608886257)--(0.8300000000, 0.2633579401)--(0.8400000000, 0.2659807764)--(0.8500000000, 0.2687638084)--(0.8600000000, 0.2717144717)--(0.8700000000, 0.2748410661)--(0.8800000000, 0.2781528658)--(0.8900000000, 0.2816602293)--(0.9000000000, 0.2853746905)--(0.9100000000, 0.2893089946)--(0.9200000000, 0.2934770021)--(0.9300000000, 0.2978933078)--(0.9400000000, 0.3025722765)--(0.9500000000, 0.3075259238)--(0.9600000000, 0.3127596412)--(0.9700000000, 0.3182643228)--(0.9800000000, 0.3240039824)--(0.9900000000, 0.3299021073)--(1.000000000, 0.3358391822)--(1.010000000, 0.3416760952)--(1.020000000, 0.3472945787)--(1.030000000, 0.3526227898)--(1.040000000, 0.3576331423)--(1.050000000, 0.3623268975)--(1.060000000, 0.3667200221)--(1.070000000, 0.3708343764)--(1.080000000, 0.3746931359)--(1.090000000, 0.3783186774)--(1.100000000, 0.3817317311)--(1.110000000, 0.3849511374)--(1.120000000, 0.3879938783)--(1.130000000, 0.3908752195)--(1.140000000, 0.3936088886)--(1.150000000, 0.3962072545)--(1.160000000, 0.3986814938)--(1.170000000, 0.4010417382)--(1.180000000, 0.4032972040)--(1.190000000, 0.4054563033)--(1.200000000, 0.4075267405)--(1.210000000, 0.4095155942)--(1.220000000, 0.4114293893)--(1.230000000, 0.4132741571)--(1.240000000, 0.4150554895)--(1.250000000, 0.4167785842)--(1.260000000, 0.4184482854)--(1.270000000, 0.4200691185)--(1.280000000, 0.4216453214)--(1.290000000, 0.4231808712)--(1.300000000, 0.4246795085)--(1.310000000, 0.4261447585)--(1.320000000, 0.4275799505)--(1.330000000, 0.4289882342)--(1.340000000, 0.4303725956)--(1.350000000, 0.4317358704)--(1.360000000, 0.4330807566)--(1.370000000, 0.4344098254)--(1.380000000, 0.4357255320)--(1.390000000, 0.4370302245)--(1.400000000, 0.4383261527)--(1.410000000, 0.4396154757)--(1.420000000, 0.4409002695)--(1.430000000, 0.4421825336)--(1.440000000, 0.4434641971)--(1.450000000, 0.4447471244)--(1.460000000, 0.4460331211)--(1.470000000, 0.4473239387)--(1.480000000, 0.4486212796)--(1.490000000, 0.4499268015)--(1.500000000, 0.4512421219)--(1.510000000, 0.4525688223)--(1.520000000, 0.4539084520)--(1.530000000, 0.4552625321)--(1.540000000, 0.4566325592)--(1.550000000, 0.4580200090)--(1.560000000, 0.4594263401)--(1.570000000, 0.4608529973)--(1.580000000, 0.4623014155)--(1.590000000, 0.4637730228)--(1.600000000, 0.4652692445)--(1.610000000, 0.4667915064)--(1.620000000, 0.4683412388)--(1.630000000, 0.4699198800)--(1.640000000, 0.4715288804)--(1.650000000, 0.4731697067)--(1.660000000, 0.4748438459)--(1.670000000, 0.4765528100)--(1.680000000, 0.4782981404)--(1.690000000, 0.4800814133)--(1.700000000, 0.4819042448)--(1.710000000, 0.4837682964)--(1.720000000, 0.4856752812)--(1.730000000, 0.4876269704)--(1.740000000, 0.4896252000)--(1.750000000, 0.4916718784)--(1.760000000, 0.4937689939)--(1.770000000, 0.4959186231)--(1.780000000, 0.4981229395)--(1.790000000, 0.5003842227)--(1.800000000, 0.5027048669)--(1.810000000, 0.5050873898)--(1.820000000, 0.5075344406)--(1.830000000, 0.5100488056)--(1.840000000, 0.5126334119)--(1.850000000, 0.5152913244)--(1.860000000, 0.5180257357) node[below] {$(-1,0)$};
+
+
+\filldraw[magenta] (-0.1300000000, -0.07483257610) circle (0.5pt);
+\filldraw[cyan] (-0.212516,- 0.0097740*8) circle (0.5pt);
+
+\filldraw[red] (-0.5,- 0.0317451*8) circle (0.5pt);
+\end{tikzpicture}
+\end{tiny}
+\caption{This figure depicts in \textcolor{orange}{orange} the set $\calC_{p_1,\vartheta}$ for $\vartheta=\arg(-1/\tau)=1.63159$, and $(A,B)=(4,1)$. The \textcolor{green}{green} lines are parallel to the lines $i/\tau$. The \textcolor{magenta}{magenta} curve represents the tail at the intersection of the set $\calC_{p_4,\vartheta}$ with the green lines.}
+\label{fig:thimb.A4B1.III}
+\end{figure}
+We can decompose the thimble in terms on state integrals contours. We have contributions from $\calI_{0,0}$ from the intersection of the orange contour with the interval $(-1,0)$, which has $(n,m,\ell)=(0,0,0)$. Then due to the intersection with the green line we should study the contributions from the magenta line. Since the latter crosses the reals in the interval $(-1,0)$, we get the contribution of $\calI_{-1,0}$, which has $(n,m,\ell)=(0,-1,0)$. Any other tails lead to no contribution as they do not cross the reals and head to $\infty$. The algorithm therefore gives
+\be\label{eq:region_III_A4B1}
+\calI_{p_1,V_1,\mathrm{III}}
+\=
+\calI_{0,0}-\calI_{-1,0}\,.
+\ee
+
+\subsubsection{The saddle connection between $\mathrm{III}$ and $\mathrm{IV}$}
+The saddle connection is depicted in Figure~\ref{fig:saddle.A4B1.III-IV}.
+\begin{figure}[ht]
+\begin{tiny}
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+
+
+
+
+
+
+
+vector(78,k,pts(0.01*k,1.52112/2/Pi-0.25,-0.2,0,-5,2))
+\draw[<->,thick] (-2,0) -- (2,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+\draw[green] (-2,-2/0.998766*8*0.0496559)--(2,2/0.998766*8*0.0496559);
+\draw[green] (-0.998766/8/0.0496559+1,-1)--(2,1/0.998766*8*0.0496559);
+\draw[green] (-0.998766/8/0.0496559+2,-1)--(2,0);
+\draw[green] (-0.998766/8/0.0496559+3,-1)--(2,-1/0.998766*8*0.0496559);
+\draw[green] (-2,-1/0.998766*8*0.0496559)--(0.998766/8/0.0496559-1,1);
+\draw[green] (-2,0)--(0.998766/8/0.0496559-2,1);
+\draw[green] (-2,1/0.998766*8*0.0496559)--(0.998766/8/0.0496559-3,1);
+\draw[thick,red] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-1cm] (0.05,-0.05)--(-0.05,0.05);
+
+
+\draw[thick,red,xshift=1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[orange,->] (0.212516,-0.009774*8)--(0.23252, -0.088108)--(0.24252, -0.092644)--(0.25252, -0.096919)--(0.26252, -0.10094)--(0.27252, -0.10473)--(0.28252, -0.10829)--(0.29252, -0.11163)--(0.30252, -0.11476)--(0.31252, -0.11768)--(0.32252, -0.12041)--(0.33252, -0.12295)--(0.34252, -0.12531)--(0.35252, -0.12749)--(0.36252, -0.12950)--(0.37252, -0.13133)--(0.38252, -0.13301)--(0.39252, -0.13453)--(0.40252, -0.13589)--(0.41252, -0.13709)--(0.42252, -0.13815)--(0.43252, -0.13906)--(0.44252, -0.13983)--(0.45252, -0.14046)--(0.46252, -0.14094)--(0.47252, -0.14129)--(0.48252, -0.14151)--(0.49252, -0.14158)--(0.50252, -0.14153)--(0.51252, -0.14135)--(0.52252, -0.14103)--(0.53252, -0.14058)--(0.54252, -0.14001)--(0.55252, -0.13931)--(0.56252, -0.13848)--(0.57252, -0.13752)--(0.58252, -0.13644)--(0.59252, -0.13522)--(0.60252, -0.13388)--(0.61252, -0.13242)--(0.62252, -0.13082)--(0.63252, -0.12909)--(0.64252, -0.12724)--(0.65252, -0.12525)--(0.66252, -0.12313)--(0.67252, -0.12088)--(0.68252, -0.11849)--(0.69252, -0.11596)--(0.70252, -0.11329)--(0.71252, -0.11048)--(0.72252, -0.10753)--(0.73252, -0.10443)--(0.74252, -0.10117)--(0.75252, -0.097756)--(0.76252, -0.094183)--(0.77252, -0.090443)--(0.78252, -0.086533)--(0.79252, -0.082445)--(0.80252, -0.078172)--(0.81252, -0.073707)--(0.82252, -0.069040)--(0.83252, -0.064162)--(0.84252, -0.059060)--(0.85252, -0.053722)--(0.86252, -0.048131)--(0.87252, -0.042270)--(0.88252, -0.036119)--(0.89252, -0.029650)--(0.90252, -0.022836)--(0.91252, -0.015638)--(0.92252, -0.0080105)--(0.93252, 0.00010448)--(0.94252, 0.0087833)--(0.95252, 0.018129)--(0.96252, 0.028285)--(0.97252, 0.039465)--(0.98252, 0.051989)--(0.99252, 0.066241)--(1.0025, 0.081398)--(1.0125, 0.094582)--(1.0225, 0.10547)--(1.0325, 0.11471)--(1.0425, 0.12274)--(1.0525, 0.12981)--(1.0625, 0.13610)--(1.0725, 0.14175)--(1.0825, 0.14685)--(1.0925, 0.15148)--(1.1025, 0.15569)--(1.1125, 0.15953)--(1.1225, 0.16304)--(1.1325, 0.16626)--(1.1425, 0.16922)--(1.1525, 0.17195)--(1.1625, 0.17446)--(1.1725, 0.17678)--(1.1825, 0.17892)--(1.1925, 0.18091)--(1.2025, 0.18275)--(1.2125, 0.18445)--(1.2225, 0.18604)--(1.2325, 0.18752)--(1.2425, 0.18890)--(1.2525, 0.19020)--(1.2625, 0.19141)--(1.2725, 0.19254)--(1.2825, 0.19361)--(1.2925, 0.19462)--(1.3025, 0.19557)--(1.3125, 0.19648)--(1.3225, 0.19734)--(1.3325, 0.19816)--(1.3425, 0.19896)--(1.3525, 0.19972)--(1.3625, 0.20046)--(1.3725, 0.20117)--(1.3825, 0.20187)--(1.3925, 0.20256)--(1.4025, 0.20324)--(1.4125, 0.20391)--(1.4225, 0.20457)--(1.4325, 0.20524)--(1.4425, 0.20590)--(1.4525, 0.20657)--(1.4625, 0.20725)--(1.4725, 0.20794)--(1.4825, 0.20864)--(1.4925, 0.20935)--(1.5025, 0.21008)--(1.5125, 0.21083)--(1.5225, 0.21159)--(1.5325, 0.21238)--(1.5425, 0.21320)--(1.5525, 0.21404)--(1.5625, 0.21490)--(1.5725, 0.21580)--(1.5825, 0.21673)--(1.5925, 0.21770)--(1.6025, 0.21870)--(1.6125, 0.21974)--(1.6225, 0.22081)--(1.6325, 0.22193)--(1.6425, 0.22309)--(1.6525, 0.22430)--(1.6625, 0.22555)--(1.6725, 0.22685)--(1.6825, 0.22820)--(1.6925, 0.22961)--(1.7025, 0.23107)--(1.7125, 0.23259)--(1.7225, 0.23416)--(1.7325, 0.23580)--(1.7425, 0.23751)--(1.7525, 0.23928)--(1.7625, 0.24112)--(1.7725, 0.24303)--(1.7825, 0.24502)--(1.7925, 0.24709)--(1.8025, 0.24924)--(1.8125, 0.25148)--(1.8225, 0.25381)--(1.8325, 0.25624)--(1.8425, 0.25877)--(1.8525, 0.26140)--(1.8625, 0.26415)--(1.8725, 0.26702)--(1.8825, 0.27002)--(1.8925, 0.27315)--(1.9025, 0.27643)--(1.9125, 0.27986)--(1.9225, 0.28347)--(1.9325, 0.28725)--(1.9425, 0.29123)--(1.9525, 0.29541)--(1.9625, 0.29980)--(1.9725, 0.30440)--(1.9825, 0.30918)--(1.9925, 0.31408)--(2.0025, 0.31900)--(2.0125, 0.32383)--(2.0225, 0.32848)--(2.0325, 0.33291)--(2.0425, 0.33710)--(2.0525, 0.34105)--(2.0625, 0.34478)--(2.0725, 0.34830)--(2.0825, 0.35164)--(2.0925, 0.35480)--(2.1025, 0.35781)--(2.1125, 0.36068)--(2.1225, 0.36341)--(2.1325, 0.36602)--(2.1425, 0.36853)--(2.1525, 0.37093)--(2.1625, 0.37323)--(2.1725, 0.37545)--(2.1825, 0.37759)--(2.1925, 0.37966)--(2.2025, 0.38165)--(2.2125, 0.38359) node[right] {$(-3,0)$};
+\draw[orange,->] (0.212516,-0.009774*8)--(0.20252, -0.072781)--(0.19252, -0.067044)--(0.18252, -0.060959)--(0.17252, -0.054503)--(0.16252, -0.047649)--(0.15252, -0.040366)--(0.14252, -0.032620)--(0.13252, -0.024370)--(0.12252, -0.015569)--(0.11252, -0.0061639)--(0.10252, 0.0039099)--(0.092516, 0.014728)--(0.082516, 0.026380)--(0.072516, 0.038972)--(0.062516, 0.052632)--(0.052516, 0.067506)--(0.042516, 0.083746)--(0.032516, 0.10147)--(0.022516, 0.12060)--(0.012516, 0.14045)--(0.0025160, 0.15911)--(-0.0074840, 0.17428)--(-0.017484, 0.18524)--(-0.027484, 0.19253)--(-0.037484, 0.19694)--(-0.047484, 0.19908)--(-0.057484, 0.19944)--(-0.067484, 0.19836)--(-0.077484, 0.19612)--(-0.087484, 0.19293)--(-0.097484, 0.18894)--(-0.10748, 0.18431)--(-0.11748, 0.17912)--(-0.12748, 0.17349)--(-0.13748, 0.16747)--(-0.14748, 0.16114)--(-0.15748, 0.15455)--(-0.16748, 0.14773)--(-0.17748, 0.14074)--(-0.18748, 0.13361)--(-0.19748, 0.12635)--(-0.20748, 0.11901)--(-0.21748, 0.11160)--(-0.22748, 0.10413)--(-0.23748, 0.096634)--(-0.24748, 0.089117)--(-0.25748, 0.081594)--(-0.26748, 0.074076)--(-0.27748, 0.066573)--(-0.28748, 0.059093)--(-0.29748, 0.051646)--(-0.30748, 0.044236)--(-0.31748, 0.036872)--(-0.32748, 0.029558)--(-0.33748, 0.022299)--(-0.34748, 0.015100)--(-0.35748, 0.0079637)--(-0.36748, 0.00089455)--(-0.37748, -0.0061046)--(-0.38748, -0.013031)--(-0.39748, -0.019882)--(-0.40748, -0.026655)--(-0.41748, -0.033349)--(-0.42748, -0.039961)--(-0.43748, -0.046491)--(-0.44748, -0.052935)--(-0.45748, -0.059293)--(-0.46748, -0.065564)--(-0.47748, -0.071747)--(-0.48748, -0.077839)--(-0.49748, -0.083841)--(-0.50748, -0.089752)--(-0.51748, -0.095569)--(-0.52748, -0.10129)--(-0.53748, -0.10692)--(-0.54748, -0.11246)--(-0.55748, -0.11790)--(-0.56748, -0.12324)--(-0.57748, -0.12848)--(-0.58748, -0.13362)--(-0.59748, -0.13867)--(-0.60748, -0.14361)--(-0.61748, -0.14846)--(-0.62748, -0.15320)--(-0.63748, -0.15783)--(-0.64748, -0.16237)--(-0.65748, -0.16679)--(-0.66748, -0.17111)--(-0.67748, -0.17532)--(-0.68748, -0.17942)--(-0.69748, -0.18341)--(-0.70748, -0.18728)--(-0.71748, -0.19104)--(-0.72748, -0.19468)--(-0.73748, -0.19820)--(-0.74748, -0.20160)--(-0.75748, -0.20487)--(-0.76748, -0.20802)--(-0.77748, -0.21103)--(-0.78748, -0.21391)--(-0.79748, -0.21665)--(-0.80748, -0.21925)--(-0.81748, -0.22169)--(-0.82748, -0.22399)--(-0.83748, -0.22612)--(-0.84748, -0.22808)--(-0.85748, -0.22987)--(-0.86748, -0.23148)--(-0.87748, -0.23289)--(-0.88748, -0.23409)--(-0.89748, -0.23507)--(-0.90748, -0.23582)--(-0.91748, -0.23630)--(-0.92748, -0.23650)--(-0.93748, -0.23640)--(-0.94748, -0.23595)--(-0.95748, -0.23513)--(-0.96748, -0.23388)--(-0.97748, -0.23218)--(-0.98748, -0.23003)--(-0.99748, -0.22751)--(-1.010000000, -0.2242247060)--(-1.020000000, -0.2218808579)--(-1.030000000, -0.2200013472)--(-1.040000000, -0.2186395411)--(-1.050000000, -0.2177763016)--(-1.060000000, -0.2173676655)--(-1.070000000, -0.2173656838)--(-1.080000000, -0.2177256428)--(-1.090000000, -0.2184079456)--(-1.100000000, -0.2193781229)--(-1.110000000, -0.2206062717)--(-1.120000000, -0.2220663886)--(-1.130000000, -0.2237357513)--(-1.140000000, -0.2255943894)--(-1.150000000, -0.2276246467)--(-1.160000000, -0.2298108214)--(-1.170000000, -0.2321388725)--(-1.180000000, -0.2345961795)--(-1.190000000, -0.2371713443)--(-1.200000000, -0.2398540269)--(-1.210000000, -0.2426348091)--(-1.220000000, -0.2455050795)--(-1.230000000, -0.2484569370)--(-1.240000000, -0.2514831087)--(-1.250000000, -0.2545768792)--(-1.260000000, -0.2577320305)--(-1.270000000, -0.2609427897)--(-1.280000000, -0.2642037837)--(-1.290000000, -0.2675099996)--(-1.300000000, -0.2708567498)--(-1.310000000, -0.2742396414)--(-1.320000000, -0.2776545494)--(-1.330000000, -0.2810975921)--(-1.340000000, -0.2845651100)--(-1.350000000, -0.2880536462)--(-1.360000000, -0.2915599294)--(-1.370000000, -0.2950808582)--(-1.380000000, -0.2986134866)--(-1.390000000, -0.3021550119)--(-1.400000000, -0.3057027619)--(-1.410000000, -0.3092541854)--(-1.420000000, -0.3128068413)--(-1.430000000, -0.3163583902)--(-1.440000000, -0.3199065855)--(-1.450000000, -0.3234492662)--(-1.460000000, -0.3269843492)--(-1.470000000, -0.3305098225)--(-1.480000000, -0.3340237392)--(-1.490000000, -0.3375242111)--(-1.500000000, -0.3410094032)--(-1.510000000, -0.3444775283)--(-1.520000000, -0.3479268416)--(-1.530000000, -0.3513556360)--(-1.540000000, -0.3547622370)--(-1.550000000, -0.3581449982)--(-1.560000000, -0.3615022963)--(-1.570000000, -0.3648325271)--(-1.580000000, -0.3681341006)--(-1.590000000, -0.3714054367)--(-1.600000000, -0.3746449603)--(-1.610000000, -0.3778510970)--(-1.620000000, -0.3810222684)--(-1.630000000, -0.3841568870)--(-1.640000000, -0.3872533513)--(-1.650000000, -0.3903100408)--(-1.660000000, -0.3933253098)--(-1.670000000, -0.3962974822)--(-1.680000000, -0.3992248452)--(-1.690000000, -0.4021056423)--(-1.700000000, -0.4049380662)--(-1.710000000, -0.4077202514)--(-1.720000000, -0.4104502654)--(-1.730000000, -0.4131260994)--(-1.740000000, -0.4157456584)--(-1.750000000, -0.4183067496)--(-1.760000000, -0.4208070706)--(-1.770000000, -0.4232441951)--(-1.780000000, -0.4256155582)--(-1.790000000, -0.4279184391)--(-1.800000000, -0.4301499427)--(-1.810000000, -0.4323069788)--(-1.820000000, -0.4343862395)--(-1.830000000, -0.4363841747)--(-1.840000000, -0.4382969654)--(-1.850000000, -0.4401204974)--(-1.860000000, -0.4418503342)--(-1.870000000, -0.4434816941)--(-1.880000000, -0.4450094360)--(-1.890000000, -0.4464280616)--(-1.900000000, -0.4477317499)--(-1.910000000, -0.4489144486)--(-1.920000000, -0.4499700660)--(-1.930000000, -0.4508928305)--(-1.940000000, -0.4516779295)--(-1.950000000, -0.4523225867)--(-1.960000000, -0.4528277742)--(-1.970000000, -0.4532007010)--(-1.980000000, -0.4534578970)--(-1.990000000, -0.4536279387) node[left] {$(-4,0)$};
+\draw[magenta,->](0.22252, 0.083369)--(0.23252, 0.081259)--(0.24252, 0.079008)--(0.25252, 0.076653)--(0.26252, 0.074225)--(0.27252, 0.071751)--(0.28252, 0.069252)--(0.29252, 0.066746)--(0.30252, 0.064250)--(0.31252, 0.061778)--(0.32252, 0.059339)--(0.33252, 0.056945)--(0.34252, 0.054604)--(0.35252, 0.052323)--(0.36252, 0.050108)--(0.37252, 0.047965)--(0.38252, 0.045897)--(0.39252, 0.043910)--(0.40252, 0.042006)--(0.41252, 0.040189)--(0.42252, 0.038461)--(0.43252, 0.036825)--(0.44252, 0.035281)--(0.45252, 0.033833)--(0.46252, 0.032481)--(0.47252, 0.031227)--(0.48252, 0.030072)--(0.49252, 0.029018)--(0.50252, 0.028065)--(0.51252, 0.027213)--(0.52252, 0.026465)--(0.53252, 0.025821)--(0.54252, 0.025281)--(0.55252, 0.024847)--(0.56252, 0.024519)--(0.57252, 0.024298)--(0.58252, 0.024185)--(0.59252, 0.024181)--(0.60252, 0.024287)--(0.61252, 0.024503)--(0.62252, 0.024831)--(0.63252, 0.025271)--(0.64252, 0.025826)--(0.65252, 0.026496)--(0.66252, 0.027282)--(0.67252, 0.028187)--(0.68252, 0.029212)--(0.69252, 0.030358)--(0.70252, 0.031628)--(0.71252, 0.033024)--(0.72252, 0.034549)--(0.73252, 0.036204)--(0.74252, 0.037993)--(0.75252, 0.039920)--(0.76252, 0.041987)--(0.77252, 0.044198)--(0.78252, 0.046559)--(0.79252, 0.049073)--(0.80252, 0.051746)--(0.81252, 0.054585)--(0.82252, 0.057595)--(0.83252, 0.060785)--(0.84252, 0.064163)--(0.85252, 0.067740)--(0.86252, 0.071526)--(0.87252, 0.075534)--(0.88252, 0.079780)--(0.89252, 0.084282)--(0.90252, 0.089061)--(0.91252, 0.094143)--(0.92252, 0.099557)--(0.93252, 0.10534)--(0.94252, 0.11155)--(0.95252, 0.11823)--(0.96252, 0.12545)--(0.97252, 0.13331)--(0.98252, 0.14186)--(0.99252, 0.15103)--(1.0025, 0.16034)--(1.0125, 0.16910)--(1.0225, 0.17696)--(1.0325, 0.18397)--(1.0425, 0.19024)--(1.0525, 0.19588)--(1.0625, 0.20100)--(1.0725, 0.20567)--(1.0825, 0.20995)--(1.0925, 0.21388)--(1.1025, 0.21750)--(1.1125, 0.22086)--(1.1225, 0.22397)--(1.1325, 0.22687)--(1.1425, 0.22956)--(1.1525, 0.23208)--(1.1625, 0.23443)--(1.1725, 0.23664)--(1.1825, 0.23871)--(1.1925, 0.24066)--(1.2025, 0.24249)--(1.2125, 0.24422) node[above] {$(-2,0)$};
+\draw[magenta] (0.20252, 0.086982)--(0.19252, 0.088367)--(0.18252, 0.089372)--(0.17252, 0.089900)--(0.16252, 0.089834)--(0.15252, 0.089028)--(0.14252, 0.087297)--(0.13252, 0.084411)--(0.12252, 0.080073)--(0.11252, 0.073904)--(0.10252, 0.065406)--(0.092516, 0.053928)--(0.082516, 0.038610);
+\draw[violet,->] (0.20252, 0.086982)--(0.22252, 0.085903)--(0.23252, 0.086701)--(0.24252, 0.087326)--(0.25252, 0.087801)--(0.26252, 0.088143)--(0.27252, 0.088371)--(0.28252, 0.088500)--(0.29252, 0.088543)--(0.30252, 0.088514)--(0.31252, 0.088424)--(0.32252, 0.088284)--(0.33252, 0.088102)--(0.34252, 0.087888)--(0.35252, 0.087651)--(0.36252, 0.087396)--(0.37252, 0.087131)--(0.38252, 0.086861)--(0.39252, 0.086594)--(0.40252, 0.086334)--(0.41252, 0.086085)--(0.42252, 0.085853)--(0.43252, 0.085641)--(0.44252, 0.085454)--(0.45252, 0.085295)--(0.46252, 0.085168)--(0.47252, 0.085076)--(0.48252, 0.085021)--(0.49252, 0.085008)--(0.50252, 0.085038)--(0.51252, 0.085114)--(0.52252, 0.085239)--(0.53252, 0.085415)--(0.54252, 0.085644)--(0.55252, 0.085929)--(0.56252, 0.086271)--(0.57252, 0.086674)--(0.58252, 0.087139)--(0.59252, 0.087667)--(0.60252, 0.088262)--(0.61252, 0.088924)--(0.62252, 0.089657)--(0.63252, 0.090461)--(0.64252, 0.091340)--(0.65252, 0.092295)--(0.66252, 0.093329)--(0.67252, 0.094443)--(0.68252, 0.095640)--(0.69252, 0.096922)--(0.70252, 0.098292)--(0.71252, 0.099752)--(0.72252, 0.10131)--(0.73252, 0.10295)--(0.74252, 0.10470)--(0.75252, 0.10655)--(0.76252, 0.10851)--(0.77252, 0.11057)--(0.78252, 0.11275)--(0.79252, 0.11505)--(0.80252, 0.11747)--(0.81252, 0.12002)--(0.82252, 0.12270)--(0.83252, 0.12552)--(0.84252, 0.12849)--(0.85252, 0.13162)--(0.86252, 0.13491)--(0.87252, 0.13838)--(0.88252, 0.14204)--(0.89252, 0.14590)--(0.90252, 0.14997)--(0.91252, 0.15429)--(0.92252, 0.15886)--(0.93252, 0.16373)--(0.94252, 0.16891)--(0.95252, 0.17444)--(0.96252, 0.18038)--(0.97252, 0.18674)--(0.98252, 0.19354)--(0.99252, 0.20067)--(1.0025, 0.20788)--(1.0125, 0.21481)--(1.0225, 0.22124)--(1.0325, 0.22714)--(1.0425, 0.23253)--(1.0525, 0.23747)--(1.0625, 0.24203)--(1.0725, 0.24624)--(1.0825, 0.25015)--(1.0925, 0.25380)--(1.1025, 0.25720)--(1.1125, 0.26039)--(1.1225, 0.26338)--(1.1325, 0.26620)--(1.1425, 0.26886)--(1.1525, 0.27138)--(1.1625, 0.27376)--(1.1725, 0.27602)--(1.1825, 0.27816)--(1.1925, 0.28021)--(1.2025, 0.28216)--(1.2125, 0.28402)--(1.2225, 0.28580)--(1.2325, 0.28751)--(1.2425, 0.28915)--(1.2525, 0.29072)--(1.2625, 0.29224)--(1.2725, 0.29371)--(1.2825, 0.29513)--(1.2925, 0.29650)--(1.3025, 0.29783)--(1.3125, 0.29913)--(1.3225, 0.30039)--(1.3325, 0.30162)--(1.3425, 0.30283)--(1.3525, 0.30401)--(1.3625, 0.30517)--(1.3725, 0.30631)--(1.3825, 0.30744)--(1.3925, 0.30855)--(1.4025, 0.30965)--(1.4125, 0.31074)--(1.4225, 0.31183)--(1.4325, 0.31291)--(1.4425, 0.31398)--(1.4525, 0.31506)--(1.4625, 0.31613)--(1.4725, 0.31721)--(1.4825, 0.31830)--(1.4925, 0.31938)--(1.5025, 0.32048)--(1.5125, 0.32159)--(1.5225, 0.32271)--(1.5325, 0.32384)--(1.5425, 0.32498)--(1.5525, 0.32614)--(1.5625, 0.32732)--(1.5725, 0.32851)--(1.5825, 0.32973)--(1.5925, 0.33097)--(1.6025, 0.33223)--(1.6125, 0.33352)--(1.6225, 0.33483)--(1.6325, 0.33617)--(1.6425, 0.33754)--(1.6525, 0.33894)--(1.6625, 0.34037)--(1.6725, 0.34184)--(1.6825, 0.34334)--(1.6925, 0.34488)--(1.7025, 0.34645)--(1.7125, 0.34807)--(1.7225, 0.34973)--(1.7325, 0.35144)--(1.7425, 0.35319)--(1.7525, 0.35500)--(1.7625, 0.35685)--(1.7725, 0.35875)--(1.7825, 0.36072)--(1.7925, 0.36274)--(1.8025, 0.36482)--(1.8125, 0.36696)--(1.8225, 0.36917)--(1.8325, 0.37146)--(1.8425, 0.37381)--(1.8525, 0.37625)--(1.8625, 0.37877)--(1.8725, 0.38138)--(1.8825, 0.38407)--(1.8925, 0.38687)--(1.9025, 0.38977)--(1.9125, 0.39278)--(1.9225, 0.39590)--(1.9325, 0.39915)--(1.9425, 0.40251)--(1.9525, 0.40601)--(1.9625, 0.40962)--(1.9725, 0.41335)--(1.9825, 0.41717)--(1.9925, 0.42104) node[above] {$(-1,0)$};
+\draw[magenta,->] (0.7400000000, -0.1003146251)--(0.7500000000, -0.09770398788)--(0.7600000000, -0.09469891421)--(0.7700000000, -0.09131535641)--(0.7800000000, -0.08756514732)--(0.7900000000, -0.08345645495)--(0.8000000000, -0.07899410156)--(0.8100000000, -0.07417976670)--(0.8200000000, -0.06901208609)--(0.8300000000, -0.06348665059)--(0.8400000000, -0.05759590320)--(0.8500000000, -0.05132892449)--(0.8600000000, -0.04467108779)--(0.8700000000, -0.03760355414)--(0.8800000000, -0.03010256031)--(0.8900000000, -0.02213842947)--(0.9000000000, -0.01367419705)--(0.9100000000, -0.004663687987)--(0.9200000000, 0.004951208948)--(0.9300000000, 0.01524446454)--(0.9400000000, 0.02631163141)--(0.9500000000, 0.03827818542)--(0.9600000000, 0.05131105328)--(0.9700000000, 0.06563013267)--(0.9800000000, 0.08149065881)--(0.9900000000, 0.09895227381)--(1.000000000, 0.1168742974)--(1.010000000, 0.1328156819)--(1.020000000, 0.1460014342)--(1.030000000, 0.1569256690)--(1.040000000, 0.1661051968)--(1.050000000, 0.1739090879)--(1.060000000, 0.1805983816)--(1.070000000, 0.1863642550)--(1.080000000, 0.1913518408)--(1.090000000, 0.1956747207)--(1.100000000, 0.1994240211)--(1.110000000, 0.2026743470)--(1.120000000, 0.2054878017)--(1.130000000, 0.2079168001)--(1.140000000, 0.2100060960)--(1.150000000, 0.2117942808)--(1.160000000, 0.2133149143)--(1.170000000, 0.2145973957)--(1.180000000, 0.2156676450)--(1.190000000, 0.2165486450)--(1.200000000, 0.2172608762)--(1.210000000, 0.2178226727)--(1.220000000, 0.2182505132)--(1.230000000, 0.2185592644)--(1.240000000, 0.2187623835)--(1.250000000, 0.2188720903)--(1.260000000, 0.2188995127)--(1.270000000, 0.2188548116)--(1.280000000, 0.2187472884)--(1.290000000, 0.2185854780)--(1.300000000, 0.2183772296)--(1.310000000, 0.2181297773)--(1.320000000, 0.2178498026)--(1.330000000, 0.2175434885)--(1.340000000, 0.2172165681)--(1.350000000, 0.2168743682)--(1.360000000, 0.2165218464)--(1.370000000, 0.2161636267)--(1.380000000, 0.2158040292)--(1.390000000, 0.2154470983)--(1.400000000, 0.2150966276)--(1.410000000, 0.2147561825)--(1.420000000, 0.2144291206)--(1.430000000, 0.2141186109)--(1.440000000, 0.2138276501)--(1.450000000, 0.2135590793)--(1.460000000, 0.2133155974)--(1.470000000, 0.2130997755)--(1.480000000, 0.2129140684)--(1.490000000, 0.2127608265)--(1.500000000, 0.2126423065)--(1.510000000, 0.2125606814)--(1.520000000, 0.2125180501)--(1.530000000, 0.2125164464)--(1.540000000, 0.2125578476)--(1.550000000, 0.2126441827)--(1.560000000, 0.2127773402)--(1.570000000, 0.2129591763)--(1.580000000, 0.2131915220)--(1.590000000, 0.2134761909)--(1.600000000, 0.2138149863)--(1.610000000, 0.2142097091)--(1.620000000, 0.2146621650)--(1.630000000, 0.2151741724)--(1.640000000, 0.2157475702)--(1.650000000, 0.2163842265)--(1.660000000, 0.2170860466)--(1.670000000, 0.2178549828)--(1.680000000, 0.2186930438)--(1.690000000, 0.2196023054)--(1.700000000, 0.2205849220)--(1.710000000, 0.2216431391)--(1.720000000, 0.2227793065)--(1.730000000, 0.2239958944)--(1.740000000, 0.2252955098)--(1.750000000, 0.2266809154)--(1.760000000, 0.2281550518)--(1.770000000, 0.2297210612)--(1.780000000, 0.2313823155)--(1.790000000, 0.2331424486)--(1.800000000, 0.2350053929) node[below] {$(-4,1)$};
+\draw[violet,<-] (-1.9900, -0.58684) node[left] {$(-5,2)$}--(-1.9800, -0.58640)--(-1.9700, -0.58592)--(-1.9600, -0.58537)--(-1.9500, -0.58475)--(-1.9400, -0.58404)--(-1.9300, -0.58323)--(-1.9200, -0.58234)--(-1.9100, -0.58134)--(-1.9000, -0.58026)--(-1.8900, -0.57909)--(-1.8800, -0.57782)--(-1.8700, -0.57648)--(-1.8600, -0.57506)--(-1.8500, -0.57356)--(-1.8400, -0.57198)--(-1.8300, -0.57034)--(-1.8200, -0.56862)--(-1.8100, -0.56685)--(-1.8000, -0.56501)--(-1.7900, -0.56311)--(-1.7800, -0.56115)--(-1.7700, -0.55914)--(-1.7600, -0.55708)--(-1.7500, -0.55497)--(-1.7400, -0.55281)--(-1.7300, -0.55061)--(-1.7200, -0.54836)--(-1.7100, -0.54607)--(-1.7000, -0.54374)--(-1.6900, -0.54137)--(-1.6800, -0.53896)--(-1.6700, -0.53652)--(-1.6600, -0.53404)--(-1.6500, -0.53154)--(-1.6400, -0.52900)--(-1.6300, -0.52643)--(-1.6200, -0.52384)--(-1.6100, -0.52122)--(-1.6000, -0.51857)--(-1.5900, -0.51590)--(-1.5800, -0.51321)--(-1.5700, -0.51050)--(-1.5600, -0.50777)--(-1.5500, -0.50503)--(-1.5400, -0.50226)--(-1.5300, -0.49949)--(-1.5200, -0.49670)--(-1.5100, -0.49390)--(-1.5000, -0.49109)--(-1.4900, -0.48827)--(-1.4800, -0.48545)--(-1.4700, -0.48262)--(-1.4600, -0.47978)--(-1.4500, -0.47695)--(-1.4400, -0.47412)--(-1.4300, -0.47129)--(-1.4200, -0.46846)--(-1.4100, -0.46564)--(-1.4000, -0.46283)--(-1.3900, -0.46003)--(-1.3800, -0.45724)--(-1.3700, -0.45447)--(-1.3600, -0.45171)--(-1.3500, -0.44897)--(-1.3400, -0.44626)--(-1.3300, -0.44357)--(-1.3200, -0.44091)--(-1.3100, -0.43828)--(-1.3000, -0.43569)--(-1.2900, -0.43313)--(-1.2800, -0.43062)--(-1.2700, -0.42815)--(-1.2600, -0.42573)--(-1.2500, -0.42336)--(-1.2400, -0.42105)--(-1.2300, -0.41880)--(-1.2200, -0.41662)--(-1.2100, -0.41451)--(-1.2000, -0.41249)--(-1.1900, -0.41055)--(-1.1800, -0.40870)--(-1.1700, -0.40695)--(-1.1600, -0.40531)--(-1.1500, -0.40378)--(-1.1400, -0.40238)--(-1.1300, -0.40112)--(-1.1200, -0.40000)--(-1.1100, -0.39905)--(-1.1000, -0.39826)--(-1.0900, -0.39766)--(-1.0800, -0.39726)--(-1.0700, -0.39707)--(-1.0600, -0.39711)--(-1.0500, -0.39739)--(-1.0400, -0.39791)--(-1.0300, -0.39866)--(-1.0200, -0.39963)--(-1.0100, -0.40075)--(-0.99000, -0.40320)--(-0.98000, -0.40434)--(-0.97000, -0.40534)--(-0.96000, -0.40615)--(-0.95000, -0.40677)--(-0.94000, -0.40717)--(-0.93000, -0.40737)--(-0.92000, -0.40738)--(-0.91000, -0.40720)--(-0.90000, -0.40685)--(-0.89000, -0.40633)--(-0.88000, -0.40565)--(-0.87000, -0.40483)--(-0.86000, -0.40386)--(-0.85000, -0.40277)--(-0.84000, -0.40155)--(-0.83000, -0.40022)--(-0.82000, -0.39876)--(-0.81000, -0.39721)--(-0.80000, -0.39554)--(-0.79000, -0.39378)--(-0.78000, -0.39193)--(-0.77000, -0.38998)--(-0.76000, -0.38794)--(-0.75000, -0.38583)--(-0.74000, -0.38363)--(-0.73000, -0.38135)--(-0.72000, -0.37899)--(-0.71000, -0.37656)--(-0.70000, -0.37407)--(-0.69000, -0.37150)--(-0.68000, -0.36887)--(-0.67000, -0.36617)--(-0.66000, -0.36342)--(-0.65000, -0.36060)--(-0.64000, -0.35773)--(-0.63000, -0.35480)--(-0.62000, -0.35182)--(-0.61000, -0.34879)--(-0.60000, -0.34571)--(-0.59000, -0.34258)--(-0.58000, -0.33941)--(-0.57000, -0.33619)--(-0.56000, -0.33294)--(-0.55000, -0.32964)--(-0.54000, -0.32631)--(-0.53000, -0.32294)--(-0.52000, -0.31954)--(-0.51000, -0.31611)--(-0.50000, -0.31266)--(-0.49000, -0.30917)--(-0.48000, -0.30567)--(-0.47000, -0.30214)--(-0.46000, -0.29860)--(-0.45000, -0.29504)--(-0.44000, -0.29146)--(-0.43000, -0.28788)--(-0.42000, -0.28430)--(-0.41000, -0.28071)--(-0.40000, -0.27712)--(-0.39000, -0.27354)--(-0.38000, -0.26997)--(-0.37000, -0.26641)--(-0.36000, -0.26286)--(-0.35000, -0.25935)--(-0.34000, -0.25585)--(-0.33000, -0.25240)--(-0.32000, -0.24898)--(-0.31000, -0.24561)--(-0.30000, -0.24228)--(-0.29000, -0.23902)--(-0.28000, -0.23583)--(-0.27000, -0.23271)--(-0.26000, -0.22968)--(-0.25000, -0.22675)--(-0.24000, -0.22392)--(-0.23000, -0.22120)--(-0.22000, -0.21862)--(-0.21000, -0.21619)--(-0.20000, -0.21391)--(-0.19000, -0.21181)--(-0.18000, -0.20991)--(-0.17000, -0.20823)--(-0.16000, -0.20678)--(-0.15000, -0.20560)--(-0.14000, -0.20472)--(-0.13000, -0.20416)--(-0.12000, -0.20396)--(-0.11000, -0.20417)--(-0.10000, -0.20483)--(-0.090000, -0.20599)--(-0.080000, -0.20771)--(-0.070000, -0.21007)--(-0.060000, -0.21314)--(-0.050000, -0.21700)--(-0.040000, -0.22173)--(-0.030000, -0.22739)--(-0.020000, -0.23398)--(-0.010000, -0.24133)--(0.010000, -0.25667)--(0.020000, -0.26380)--(0.030000, -0.27027)--(0.040000, -0.27608)--(0.050000, -0.28126)--(0.060000, -0.28589)--(0.070000, -0.29001)--(0.080000, -0.29369)--(0.090000, -0.29696)--(0.10000, -0.29986)--(0.11000, -0.30243)--(0.12000, -0.30468)--(0.13000, -0.30665)--(0.14000, -0.30836)--(0.15000, -0.30981)--(0.16000, -0.31103)--(0.17000, -0.31202)--(0.18000, -0.31281)--(0.19000, -0.31339)--(0.20000, -0.31378)--(0.21000, -0.31398)--(0.22000, -0.31401)--(0.23000, -0.31386)--(0.24000, -0.31355)--(0.25000, -0.31308)--(0.26000, -0.31245)--(0.27000, -0.31167)--(0.28000, -0.31074)--(0.29000, -0.30966)--(0.30000, -0.30844)--(0.31000, -0.30708)--(0.32000, -0.30558)--(0.33000, -0.30395)--(0.34000, -0.30218)--(0.35000, -0.30028)--(0.36000, -0.29824)--(0.37000, -0.29608)--(0.38000, -0.29379)--(0.39000, -0.29137)--(0.40000, -0.28882)--(0.41000, -0.28614)--(0.42000, -0.28334)--(0.43000, -0.28041)--(0.44000, -0.27735)--(0.45000, -0.27417)--(0.46000, -0.27086)--(0.47000, -0.26742)--(0.48000, -0.26385)--(0.49000, -0.26015)--(0.50000, -0.25632)--(0.51000, -0.25236)--(0.52000, -0.24826)--(0.53000, -0.24403)--(0.54000, -0.23966)--(0.55000, -0.23516)--(0.56000, -0.23051)--(0.57000, -0.22573)--(0.58000, -0.22079)--(0.59000, -0.21571)--(0.60000, -0.21048)--(0.61000, -0.20509)--(0.62000, -0.19955)--(0.63000, -0.19385)--(0.64000, -0.18798)--(0.65000, -0.18194)--(0.66000, -0.17572)--(0.67000, -0.16933)--(0.68000, -0.16275)--(0.69000, -0.15598)--(0.70000, -0.14901)--(0.71000, -0.14183)--(0.72000, -0.13445)--(0.73000, -0.12683)--(0.74000, -0.11899)--(0.75000, -0.11091)--(0.76000, -0.10258)--(0.77000, -0.093994)--(0.78000, -0.085191);
+\draw[violet,->] (0.79000, -0.075398)--(0.80000, -0.066261)--(0.81000, -0.056470)--(0.82000, -0.046300)--(0.83000, -0.035745)--(0.84000, -0.024782)--(0.85000, -0.013383)--(0.86000, -0.0015134)--(0.87000, 0.010865)--(0.88000, 0.023797)--(0.89000, 0.037335)--(0.90000, 0.051534)--(0.91000, 0.066464)--(0.92000, 0.082196)--(0.93000, 0.098812)--(0.94000, 0.11639)--(0.95000, 0.13499)--(0.96000, 0.15463)--(0.97000, 0.17515)--(0.98000, 0.19609)--(0.99000, 0.21652)--(1.0000, 0.23517)--(1.0100, 0.25109)--(1.0200, 0.26410)--(1.0300, 0.27446)--(1.0400, 0.28259)--(1.0500, 0.28888)--(1.0600, 0.29365)--(1.0700, 0.29716)--(1.0800, 0.29962)--(1.0900, 0.30121)--(1.1000, 0.30207)--(1.1100, 0.30230)--(1.1200, 0.30202)--(1.1300, 0.30129)--(1.1400, 0.30019)--(1.1500, 0.29877)--(1.1600, 0.29708)--(1.1700, 0.29517)--(1.1800, 0.29307)--(1.1900, 0.29081)--(1.2000, 0.28842)--(1.2100, 0.28592)--(1.2200, 0.28334)--(1.2300, 0.28070)--(1.2400, 0.27800)--(1.2500, 0.27527)--(1.2600, 0.27251)--(1.2700, 0.26975)--(1.2800, 0.26698)--(1.2900, 0.26422)--(1.3000, 0.26148)--(1.3100, 0.25876)--(1.3200, 0.25607)--(1.3300, 0.25341)--(1.3400, 0.25080)--(1.3500, 0.24823)--(1.3600, 0.24570)--(1.3700, 0.24324)--(1.3800, 0.24083)--(1.3900, 0.23847)--(1.4000, 0.23619)--(1.4100, 0.23396)--(1.4200, 0.23181)--(1.4300, 0.22972)--(1.4400, 0.22771)--(1.4500, 0.22576)--(1.4600, 0.22390)--(1.4700, 0.22211)--(1.4800, 0.22040)--(1.4900, 0.21877)--(1.5000, 0.21722)--(1.5100, 0.21575)--(1.5200, 0.21437)--(1.5300, 0.21307)--(1.5400, 0.21185)--(1.5500, 0.21073)--(1.5600, 0.20969)--(1.5700, 0.20874)--(1.5800, 0.20788)--(1.5900, 0.20711)--(1.6000, 0.20643)--(1.6100, 0.20585)--(1.6200, 0.20536)--(1.6300, 0.20497)--(1.6400, 0.20468)--(1.6500, 0.20448)--(1.6600, 0.20439)--(1.6700, 0.20439)--(1.6800, 0.20450)--(1.6900, 0.20471)--(1.7000, 0.20503)--(1.7100, 0.20546)--(1.7200, 0.20600)--(1.7300, 0.20665)--(1.7400, 0.20741)--(1.7500, 0.20830)--(1.7600, 0.20930)--(1.7700, 0.21043)--(1.7800, 0.21169)--(1.7900, 0.21307)--(1.8000, 0.21459)--(1.8100, 0.21626)--(1.8200, 0.21806)--(1.8300, 0.22002)--(1.8400, 0.22213)--(1.8500, 0.22441)--(1.8600, 0.22686)--(1.8700, 0.22949)--(1.8800, 0.23231)--(1.8900, 0.23533)--(1.9000, 0.23857)--(1.9100, 0.24203)--(1.9200, 0.24575)--(1.9300, 0.24973)--(1.9400, 0.25399)--(1.9500, 0.25856)--(1.9600, 0.26346)--(1.9700, 0.26867)--(1.9800, 0.27419) node[right] {$(-5,2)$};
+
+\filldraw[cyan] (-0.212516,- 0.0097740*8) circle (0.25pt);
+\filldraw[cyan,xshift=1cm] (-0.212516,- 0.0097740*8) circle (0.25pt);
+\filldraw[blue] (0.212516,- 0.0097740*8) circle (0.25pt);
+
+\filldraw[magenta] (0.75252, -0.097756) circle (0.25pt);
+\filldraw[magenta] (0.082516, 0.038610) circle (0.25pt);
+\filldraw[violet] (0.20252, 0.086982) circle (0.25pt);
+\end{tikzpicture}
+\end{tiny}
+\caption{This figure depicts in \textcolor{orange}{orange} the set $\calC_{p_4,\vartheta}$ for $\vartheta=\arg(-1/\tau)=1.62047$, and $(A,B)=(4,1)$. The \textcolor{green}{green} lines are parallel to the lines $i/\tau$. The \textcolor{magenta}{magenta} curve represents the tail at the intersection of the set $\calC_{p_4,\vartheta}$ with the green lines. The \textcolor{violet}{violet} contour represents half of the contour that appears when we run the algorithm a second time. While it is hard to see at this scale, the violet contour hits the critical point $\textcolor{blue}{p_3+1}$, which is just above the green line. Therefore, at this critical angle the violet contour splits at this point.}
+\label{fig:saddle.A4B1.III-IV}
+\end{figure}
+
+\subsubsection{State integrals decomposition in $\mathrm{IV}$}
+
+Let $\vartheta\in\mathrm{IV}$. We plot the set $\calC_{p_4,\vartheta}$ in Figure~\ref{fig:thimb.A4B1.IV}.
+\begin{figure}[ht]
+\begin{tiny}
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+
+
+
+
+\draw[<->,thick] (-2.5,0) -- (2,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+
+
+\draw[green] (-2.5,-2.5/0.999168*8*0.040785)--(2,2/0.999168*8*0.040785);
+\draw[green] (-0.999168/8/0.040785+1,-1)--(2,1/0.999168*8*0.040785);
+\draw[green] (-0.999168/8/0.040785+2,-1)--(2,0);
+\draw[green] (-0.999168/8/0.040785+3,-1)--(2,-1/0.999168*8*0.040785);
+\draw[green] (-2.5,-1.5/0.999168*8*0.040785)--(0.999168/8/0.040785-1,1);
+\draw[green] (-2.5,-0.5/0.999168*8*0.040785)--(0.999168/8/0.040785-2,1);
+\draw[green] (-2.5,0.5/0.999168*8*0.040785)--(0.999168/8/0.040785-3,1);
+\draw[green] (-2.5,1.5/0.999168*8*0.040785)--(0.999168/8/0.040785-4,1);
+\draw[thick,red] (-0.05,-0.05)--(0.05,0.05);
+\draw[ thick,red] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-2cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-2cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[orange,thick,->] (0.2225160000, -0.08365217964)--(0.2325160000, -0.08882135230)--(0.2425160000, -0.09371474923)--(0.2525160000, -0.09834600311)--(0.2625160000, -0.1027274494)--(0.2725160000, -0.1068702813)--(0.2825160000, -0.1107846812)--(0.2925160000, -0.1144799336)--(0.3025160000, -0.1179645215)--(0.3125160000, -0.1212462102)--(0.3225160000, -0.1243321192)--(0.3325160000, -0.1272287852)--(0.3425160000, -0.1299422170)--(0.3525160000, -0.1324779431)--(0.3625160000, -0.1348410536)--(0.3725160000, -0.1370362378)--(0.3825160000, -0.1390678161)--(0.3925160000, -0.1409397692)--(0.4025160000, -0.1426557630)--(0.4125160000, -0.1442191717)--(0.4225160000, -0.1456330973)--(0.4325160000, -0.1469003874)--(0.4425160000, -0.1480236506)--(0.4525160000, -0.1490052706)--(0.4625160000, -0.1498474180)--(0.4725160000, -0.1505520612)--(0.4825160000, -0.1511209756)--(0.4925160000, -0.1515557515)--(0.5025160000, -0.1518578015)--(0.5125160000, -0.1520283658)--(0.5225160000, -0.1520685171)--(0.5325160000, -0.1519791649)--(0.5425160000, -0.1517610576)--(0.5525160000, -0.1514147855)--(0.5625160000, -0.1509407811)--(0.5725160000, -0.1503393195)--(0.5825160000, -0.1496105180)--(0.5925160000, -0.1487543340)--(0.6025160000, -0.1477705627)--(0.6125160000, -0.1466588332)--(0.6225160000, -0.1454186041)--(0.6325160000, -0.1440491568)--(0.6425160000, -0.1425495892)--(0.6525160000, -0.1409188062)--(0.6625160000, -0.1391555096)--(0.6725160000, -0.1372581864)--(0.6825160000, -0.1352250940)--(0.6925160000, -0.1330542441)--(0.7025160000, -0.1307433837)--(0.7125160000, -0.1282899721)--(0.7225160000, -0.1256911558)--(0.7325160000, -0.1229437377)--(0.7425160000, -0.1200441421)--(0.7525160000, -0.1169883728)--(0.7625160000, -0.1137719652)--(0.7725160000, -0.1103899281)--(0.7825160000, -0.1068366755)--(0.7925160000, -0.1031059449)--(0.8025160000, -0.09919069869)--(0.8125160000, -0.09508300492)--(0.8225160000, -0.09077389129)--(0.8325160000, -0.08625316476)--(0.8425160000, -0.08150918661)--(0.8525160000, -0.07652858818)--(0.8625160000, -0.07129590715)--(0.8725160000, -0.06579311473)--(0.8825160000, -0.05999899066)--(0.8925160000, -0.05388828010)--(0.9025160000, -0.04743053031)--(0.9125160000, -0.04058844164)--(0.9225160000, -0.03331545456)--(0.9325160000, -0.02555208174)--(0.9425160000, -0.01722006651)--(0.9525160000, -0.008212526049)--(0.9625160000, 0.001623938704)--(0.9725160000, 0.01252481970)--(0.9825160000, 0.02488571165)--(0.9925160000, 0.03940712721)--(1.002516000, 0.05576392450)--(1.012516000, 0.06932165373)--(1.022516000, 0.08005297974)--(1.032516000, 0.08899584042)--(1.042516000, 0.09666649358)--(1.052516000, 0.1033592636)--(1.062516000, 0.1092641339)--(1.072516000, 0.1145142644)--(1.082516000, 0.1192084574)--(1.092516000, 0.1234231164)--(1.102516000, 0.1272191965)--(1.112516000, 0.1306465235)--(1.122516000, 0.1337466236)--(1.132516000, 0.1365546564)--(1.142516000, 0.1391007839)--(1.152516000, 0.1414111673)--(1.162516000, 0.1435087119)--(1.172516000, 0.1454136347)--(1.182516000, 0.1471439066)--(1.192516000, 0.1487156006)--(1.202516000, 0.1501431715)--(1.212516000, 0.1514396823)--(1.222516000, 0.1526169905)--(1.232516000, 0.1536859019)--(1.242516000, 0.1546563002)--(1.252516000, 0.1555372551)--(1.262516000, 0.1563371155)--(1.272516000, 0.1570635887)--(1.282516000, 0.1577238081)--(1.292516000, 0.1583243931)--(1.302516000, 0.1588715002)--(1.312516000, 0.1593708686)--(1.322516000, 0.1598278595)--(1.332516000, 0.1602474920)--(1.342516000, 0.1606344737)--(1.352516000, 0.1609932289)--(1.362516000, 0.1613279237)--(1.372516000, 0.1616424882)--(1.382516000, 0.1619406368)--(1.392516000, 0.1622258866)--(1.402516000, 0.1625015740)--(1.412516000, 0.1627708698)--(1.422516000, 0.1630367933)--(1.432516000, 0.1633022249)--(1.442516000, 0.1635699178)--(1.452516000, 0.1638425088)--(1.462516000, 0.1641225285)--(1.472516000, 0.1644124109)--(1.482516000, 0.1647145015)--(1.492516000, 0.1650310662)--(1.502516000, 0.1653642990)--(1.512516000, 0.1657163291)--(1.522516000, 0.1660892280)--(1.532516000, 0.1664850165)--(1.542516000, 0.1669056710)--(1.552516000, 0.1673531301)--(1.562516000, 0.1678293005)--(1.572516000, 0.1683360630)--(1.582516000, 0.1688752791)--(1.592516000, 0.1694487965)--(1.602516000, 0.1700584554)--(1.612516000, 0.1707060948)--(1.622516000, 0.1713935586)--(1.632516000, 0.1721227024)--(1.642516000, 0.1728954001)--(1.652516000, 0.1737135513)--(1.662516000, 0.1745790887)--(1.672516000, 0.1754939863)--(1.682516000, 0.1764602682)--(1.692516000, 0.1774800181)--(1.702516000, 0.1785553893)--(1.712516000, 0.1796886168)--(1.722516000, 0.1808820291)--(1.732516000, 0.1821380630)--(1.742516000, 0.1834592791)--(1.752516000, 0.1848483796)--(1.762516000, 0.1863082291)--(1.772516000, 0.1878418775)--(1.782516000, 0.1894525869)--(1.792516000, 0.1911438632)--(1.802516000, 0.1929194920)--(1.812516000, 0.1947835811)--(1.822516000, 0.1967406115)--(1.832516000, 0.1987954964)--(1.842516000, 0.2009536531)--(1.852516000, 0.2032210885)--(1.862516000, 0.2056045023)--(1.872516000, 0.2081114117)--(1.882516000, 0.2107503016)--(1.892516000, 0.2135308047)--(1.902516000, 0.2164639131)--(1.912516000, 0.2195622165)--(1.922516000, 0.2228401441)--(1.932516000, 0.2263141405)--(1.942516000, 0.2300025924)--(1.952516000, 0.2339250436)--(1.962516000, 0.2380995782)--(1.972516000, 0.2425358548)--(1.982516000, 0.2472193648)--(1.992516000, 0.2520849701)--(2.002516000, 0.2569991251)--(2.012516000, 0.2617953171)--(2.022516000, 0.2663488159)--(2.032516000, 0.2706071291)--(2.042516000, 0.2745677084)--(2.052516000, 0.2782499065)--(2.062516000, 0.2816793599)--(2.072516000, 0.2848815524)--(2.082516000, 0.2878796644)--(2.092516000, 0.2906941170)--(2.102516000, 0.2933427190)--(2.112516000, 0.2958409897)--(2.122516000, 0.2982025006)--(2.132516000, 0.3004391825)--(2.142516000, 0.3025615875)--(2.152516000, 0.3045791050)--(2.162516000, 0.3065001399)--(2.172516000, 0.3083322584)--(2.182516000, 0.3100823076)--(2.192516000, 0.3117565151)--(2.202516000, 0.3133605708)--(2.212516000, 0.3148996955) node[right] {$(-3,0)$};
+\draw[orange,thick,->] (0.2025160000, -0.07242435900)--(0.1925160000, -0.06633013421)--(0.1825160000, -0.05988840857)--(0.1725160000, -0.05307550033)--(0.1625160000, -0.04586462206)--(0.1525160000, -0.03822531752)--(0.1425160000, -0.03012276698)--(0.1325160000, -0.02151692546)--(0.1225160000, -0.01236144873)--(0.1125160000, -0.002602352609)--(0.1025160000, 0.007823654654)--(0.09251600000, 0.01899121620)--(0.08251600000, 0.03098873362)--(0.07251600000, 0.04392091397)--(0.06251600000, 0.05791059809)--(0.05251600000, 0.07309713766)--(0.04251600000, 0.08962299647)--(0.03251600000, 0.1075834516)--(0.02251600000, 0.1268677760)--(0.01251600000, 0.1467507069)--(0.002516000000, 0.1653975254)--(-0.007484000000, 0.1806667291)--(-0.01748400000, 0.1918671274)--(-0.02748400000, 0.1995062872)--(-0.03748400000, 0.2043092638)--(-0.04748400000, 0.2068805645)--(-0.05748400000, 0.2076795085)--(-0.06748400000, 0.2070530636)--(-0.07748400000, 0.2052671980)--(-0.08748400000, 0.2025295346)--(-0.09748400000, 0.1990049590)--(-0.1074840000, 0.1948264079)--(-0.1174840000, 0.1901024582)--(-0.1274840000, 0.1849227801)--(-0.1374840000, 0.1793621374)--(-0.1474840000, 0.1734833785)--(-0.1574840000, 0.1673397124)--(-0.1674840000, 0.1609764679)--(-0.1774840000, 0.1544324719)--(-0.1874840000, 0.1477411419)--(-0.1974840000, 0.1409313633)--(-0.2074840000, 0.1340281993)--(-0.2174840000, 0.1270534707)--(-0.2274840000, 0.1200262342)--(-0.2374840000, 0.1129631781)--(-0.2474840000, 0.1058789538)--(-0.2574840000, 0.09878645373)--(-0.2674840000, 0.09169704575)--(-0.2774840000, 0.08462077302)--(-0.2874840000, 0.07756652379)--(-0.2974840000, 0.07054217716)--(-0.3074840000, 0.06355472833)--(-0.3174840000, 0.05661039686)--(-0.3274840000, 0.04971472036)--(-0.3374840000, 0.04287263604)--(-0.3474840000, 0.03608855183)--(-0.3574840000, 0.02936640856)--(-0.3674840000, 0.02270973458)--(-0.3774840000, 0.01612169382)--(-0.3874840000, 0.009605128179)--(-0.3974840000, 0.003162595104)--(-0.4074840000, -0.003203599124)--(-0.4174840000, -0.009491369715)--(-0.4274840000, -0.01569882691)--(-0.4374840000, -0.02182425225)--(-0.4474840000, -0.02786607732)--(-0.4574840000, -0.03382286457)--(-0.4674840000, -0.03969328990)--(-0.4774840000, -0.04547612700)--(-0.4874840000, -0.05117023291)--(-0.4974840000, -0.05677453494)--(-0.5074840000, -0.06228801849)--(-0.5174840000, -0.06770971589)--(-0.5274840000, -0.07303869595)--(-0.5374840000, -0.07827405413)--(-0.5474840000, -0.08341490332)--(-0.5574840000, -0.08846036498)--(-0.5674840000, -0.09340956069)--(-0.5774840000, -0.09826160385)--(-0.5874840000, -0.1030155917)--(-0.5974840000, -0.1076705971)--(-0.6074840000, -0.1122256608)--(-0.6174840000, -0.1166797831)--(-0.6274840000, -0.1210319154)--(-0.6374840000, -0.1252809518)--(-0.6474840000, -0.1294257201)--(-0.6574840000, -0.1334649716)--(-0.6674840000, -0.1373973718)--(-0.6774840000, -0.1412214884)--(-0.6874840000, -0.1449357800)--(-0.6974840000, -0.1485385824)--(-0.7074840000, -0.1520280940)--(-0.7174840000, -0.1554023597)--(-0.7274840000, -0.1586592521)--(-0.7374840000, -0.1617964513)--(-0.7474840000, -0.1648114205)--(-0.7574840000, -0.1677013794)--(-0.7674840000, -0.1704632724)--(-0.7774840000, -0.1730937323)--(-0.7874840000, -0.1755890374)--(-0.7974840000, -0.1779450609)--(-0.8074840000, -0.1801572115)--(-0.8174840000, -0.1822203608)--(-0.8274840000, -0.1841287572)--(-0.8374840000, -0.1858759197)--(-0.8474840000, -0.1874545083)--(-0.8574840000, -0.1888561623)--(-0.8674840000, -0.1900712974)--(-0.8774840000, -0.1910888482)--(-0.8874840000, -0.1918959363)--(-0.8974840000, -0.1924774395)--(-0.9074840000, -0.1928154217)--(-0.9174840000, -0.1928883751)--(-0.9274840000, -0.1926702013)--(-0.9374840000, -0.1921288475)--(-0.9474840000, -0.1912245375)--(-0.9574840000, -0.1899077274)--(-0.9674840000, -0.1881177914)--(-0.9774840000, -0.1857869329)--(-0.9874840000, -0.1828662698)--(-0.9974840000, -0.1794185956)--(-1.0100, -0.17488)--(-1.0200, -0.17167)--(-1.0300, -0.16909)--(-1.0400, -0.16714)--(-1.0500, -0.16578)--(-1.0600, -0.16493)--(-1.0700, -0.16452)--(-1.0800, -0.16449)--(-1.0900, -0.16480)--(-1.1000, -0.16542)--(-1.1100, -0.16630)--(-1.1200, -0.16741)--(-1.1300, -0.16875)--(-1.1400, -0.17027)--(-1.1500, -0.17197)--(-1.1600, -0.17383)--(-1.1700, -0.17583)--(-1.1800, -0.17797)--(-1.1900, -0.18022)--(-1.2000, -0.18258)--(-1.2100, -0.18504)--(-1.2200, -0.18759)--(-1.2300, -0.19022)--(-1.2400, -0.19292)--(-1.2500, -0.19570)--(-1.2600, -0.19853)--(-1.2700, -0.20142)--(-1.2800, -0.20436)--(-1.2900, -0.20735)--(-1.3000, -0.21037)--(-1.3100, -0.21344)--(-1.3200, -0.21653)--(-1.3300, -0.21965)--(-1.3400, -0.22280)--(-1.3500, -0.22596)--(-1.3600, -0.22915)--(-1.3700, -0.23235)--(-1.3800, -0.23556)--(-1.3900, -0.23878)--(-1.4000, -0.24200)--(-1.4100, -0.24523)--(-1.4200, -0.24846)--(-1.4300, -0.25168)--(-1.4400, -0.25491)--(-1.4500, -0.25813)--(-1.4600, -0.26134)--(-1.4700, -0.26453)--(-1.4800, -0.26772)--(-1.4900, -0.27090)--(-1.5000, -0.27405)--(-1.5100, -0.27720)--(-1.5200, -0.28032)--(-1.5300, -0.28342)--(-1.5400, -0.28650)--(-1.5500, -0.28955)--(-1.5600, -0.29258)--(-1.5700, -0.29558)--(-1.5800, -0.29855)--(-1.5900, -0.30149)--(-1.6000, -0.30440)--(-1.6100, -0.30727)--(-1.6200, -0.31011)--(-1.6300, -0.31292)--(-1.6400, -0.31568)--(-1.6500, -0.31840)--(-1.6600, -0.32108)--(-1.6700, -0.32372)--(-1.6800, -0.32631)--(-1.6900, -0.32886)--(-1.7000, -0.33135)--(-1.7100, -0.33380)--(-1.7200, -0.33619)--(-1.7300, -0.33853)--(-1.7400, -0.34081)--(-1.7500, -0.34303)--(-1.7600, -0.34519)--(-1.7700, -0.34728)--(-1.7800, -0.34931)--(-1.7900, -0.35126)--(-1.8000, -0.35315)--(-1.8100, -0.35495)--(-1.8200, -0.35668)--(-1.8300, -0.35833)--(-1.8400, -0.35988)--(-1.8500, -0.36135)--(-1.8600, -0.36271)--(-1.8700, -0.36397)--(-1.8800, -0.36513)--(-1.8900, -0.36616)--(-1.9000, -0.36708)--(-1.9100, -0.36786)--(-1.9200, -0.36850)--(-1.9300, -0.36899)--(-1.9400, -0.36933)--(-1.9500, -0.36949)--(-1.9600, -0.36949)--(-1.9700, -0.36931)--(-1.9800, -0.36897)--(-1.9900, -0.36850)--(-2.0100, -0.36742)--(-2.0200, -0.36696)--(-2.0300, -0.36663)--(-2.0400, -0.36648)--(-2.0500, -0.36650)--(-2.0600, -0.36672)--(-2.0700, -0.36712)--(-2.0800, -0.36769)--(-2.0900, -0.36841)--(-2.1000, -0.36929)--(-2.1100, -0.37030)--(-2.1200, -0.37144)--(-2.1300, -0.37269)--(-2.1400, -0.37406)--(-2.1500, -0.37552)--(-2.1600, -0.37707)--(-2.1700, -0.37871)--(-2.1800, -0.38043)--(-2.1900, -0.38221)--(-2.2000, -0.38407)--(-2.2100, -0.38599)--(-2.2200, -0.38797)--(-2.2300, -0.39000)--(-2.2400, -0.39208)--(-2.2500, -0.39421)--(-2.2600, -0.39638)--(-2.2700, -0.39859)--(-2.2800, -0.40084)--(-2.2900, -0.40312)--(-2.3000, -0.40543)--(-2.3100, -0.40776)--(-2.3200, -0.41013)--(-2.3300, -0.41251)--(-2.3400, -0.41492)--(-2.3500, -0.41735)--(-2.3600, -0.41979)--(-2.3700, -0.42225)--(-2.3800, -0.42472)--(-2.3900, -0.42720)--(-2.4000, -0.42970)--(-2.4100, -0.43220)--(-2.4200, -0.43470)--(-2.4300, -0.43721)--(-2.4400, -0.43973)--(-2.4500, -0.44224)--(-2.4600, -0.44476)--(-2.4700, -0.44727)--(-2.4800, -0.44978)--(-2.4900, -0.45229) node[left] {$(-2,1)$};
+
+\draw[magenta,thick,->] (0.5300000000, -0.1381926912)--(0.5400000000, -0.1633244928)--(0.5500000000, -0.1776225750)--(0.5600000000, -0.1863631285)--(0.5700000000, -0.1918503909)--(0.5800000000, -0.1952480077)--(0.5900000000, -0.1972060139)--(0.6000000000, -0.1981154697)--(0.6100000000, -0.1982253217)--(0.6200000000, -0.1977012130)--(0.6300000000, -0.1966572934)--(0.6400000000, -0.1951744547)--(0.6500000000, -0.1933112936)--(0.6600000000, -0.1911109708)--(0.6700000000, -0.1886056491)--(0.6800000000, -0.1858194462)--(0.6900000000, -0.1827704484)--(0.7000000000, -0.1794721094)--(0.7100000000, -0.1759342387)--(0.7200000000, -0.1721637069)--(0.7300000000, -0.1681649505)--(0.7400000000, -0.1639403341)--(0.7500000000, -0.1594904044)--(0.7600000000, -0.1548140614)--(0.7700000000, -0.1499086647)--(0.7800000000, -0.1447700834)--(0.7900000000, -0.1393926974)--(0.8000000000, -0.1337693522)--(0.8100000000, -0.1278912653)--(0.8200000000, -0.1217478824)--(0.8300000000, -0.1153266744)--(0.8400000000, -0.1086128629)--(0.8500000000, -0.1015890576)--(0.8600000000, -0.09423477825)--(0.8700000000, -0.08652582283)--(0.8800000000, -0.07843342591)--(0.8900000000, -0.06992312093)--(0.9000000000, -0.06095317561)--(0.9100000000, -0.05147239216)--(0.9200000000, -0.04141693182)--(0.9300000000, -0.03070558521)--(0.9400000000, -0.01923246505)--(0.9500000000, -0.006855235220)--(0.9600000000, 0.006624689895)--(0.9700000000, 0.02149633204)--(0.9800000000, 0.03819201198)--(0.9900000000, 0.05725407106)--(1.000000000, 0.07786747914)--(1.010000000, 0.09558685243)--(1.020000000, 0.1094644056)--(1.030000000, 0.1206613377)--(1.040000000, 0.1299349872)--(1.050000000, 0.1377407489)--(1.060000000, 0.1443768097)--(1.070000000, 0.1500528940)--(1.080000000, 0.1549244914)--(1.090000000, 0.1591114837)--(1.100000000, 0.1627090970)--(1.110000000, 0.1657947528)--(1.120000000, 0.1684325775)--(1.130000000, 0.1706764946)--(1.140000000, 0.1725724191)--(1.150000000, 0.1741598594)--(1.160000000, 0.1754731173)--(1.170000000, 0.1765422036)--(1.180000000, 0.1773935514)--(1.190000000, 0.1780505801)--(1.200000000, 0.1785341470)--(1.210000000, 0.1788629141)--(1.220000000, 0.1790536491)--(1.230000000, 0.1791214753)--(1.240000000, 0.1790800794)--(1.250000000, 0.1789418878)--(1.260000000, 0.1787182155)--(1.270000000, 0.1784193940)--(1.280000000, 0.1780548805)--(1.290000000, 0.1776333533)--(1.300000000, 0.1771627935)--(1.310000000, 0.1766505577)--(1.320000000, 0.1761034407)--(1.330000000, 0.1755277311)--(1.340000000, 0.1749292610)--(1.350000000, 0.1743134489)--(1.360000000, 0.1736853395)--(1.370000000, 0.1730496377)--(1.380000000, 0.1724107403)--(1.390000000, 0.1717727642)--(1.400000000, 0.1711395710)--(1.410000000, 0.1705147910)--(1.420000000, 0.1699018430)--(1.430000000, 0.1693039543)--(1.440000000, 0.1687241772)--(1.450000000, 0.1681654054)--(1.460000000, 0.1676303887)--(1.470000000, 0.1671217462)--(1.480000000, 0.1666419790)--(1.490000000, 0.1661934820)--(1.500000000, 0.1657785546)--(1.5100, 0.16540)--(1.5200, 0.16506)--(1.5300, 0.16476)--(1.5400, 0.16450)--(1.5500, 0.16428)--(1.5600, 0.16411)--(1.5700, 0.16399)--(1.5800, 0.16392)--(1.5900, 0.16390)--(1.6000, 0.16393)--(1.6100, 0.16402)--(1.6200, 0.16417)--(1.6300, 0.16437)--(1.6400, 0.16463)--(1.6500, 0.16496)--(1.6600, 0.16535)--(1.6700, 0.16581)--(1.6800, 0.16634)--(1.6900, 0.16694)--(1.7000, 0.16761)--(1.7100, 0.16835)--(1.7200, 0.16918)--(1.7300, 0.17008)--(1.7400, 0.17107)--(1.7500, 0.17214)--(1.7600, 0.17330)--(1.7700, 0.17455)--(1.7800, 0.17590)--(1.7900, 0.17735)--(1.8000, 0.17890)--(1.8100, 0.18056)--(1.8200, 0.18233)--(1.8300, 0.18422)--(1.8400, 0.18623)--(1.8500, 0.18837)--(1.8600, 0.19065)--(1.8700, 0.19308)--(1.8800, 0.19566)--(1.8900, 0.19841)--(1.9000, 0.20134)--(1.9100, 0.20446)--(1.9200, 0.20779)--(1.9300, 0.21135)--(1.9400, 0.21516)--(1.9500, 0.21924)--(1.9600, 0.22362)--(1.9700, 0.22832)--(1.9800, 0.23333)--(1.9900, 0.23859)--(2.0000, 0.24396) node[above] {$(-4,1)$};
+\draw[violet,thick,->] (0.9400000000, -0.01854827040)--(0.9500000000, 0.009819596420)--(0.9600000000, 0.03875931849)--(0.9700000000, 0.06859389908)--(0.9800000000, 0.09927048473)--(0.9900000000, 0.1296086577)--(1.000000000, 0.1568020549)--(1.010000000, 0.1787875387)--(1.020000000, 0.1958687633)--(1.030000000, 0.2091089975)--(1.040000000, 0.2194062458)--(1.050000000, 0.2274110172)--(1.060000000, 0.2335933180)--(1.070000000, 0.2383013223)--(1.080000000, 0.2418000231)--(1.090000000, 0.2442959679)--(1.100000000, 0.2459534028)--(1.110000000, 0.2469051286)--(1.120000000, 0.2472600245)--(1.130000000, 0.2471084086)--(1.140000000, 0.2465259524)--(1.150000000, 0.2455766002)--(1.160000000, 0.2443147886)--(1.170000000, 0.2427871613)--(1.180000000, 0.2410339136)--(1.190000000, 0.2390898598)--(1.200000000, 0.2369852902)--(1.210000000, 0.2347466666)--(1.220000000, 0.2323971912)--(1.230000000, 0.2299572768)--(1.240000000, 0.2274449366)--(1.250000000, 0.2248761115)--(1.260000000, 0.2222649453)--(1.270000000, 0.2196240172)--(1.280000000, 0.2169645411)--(1.290000000, 0.2142965345)--(1.300000000, 0.2116289646)--(1.310000000, 0.2089698740)--(1.320000000, 0.2063264898)--(1.330000000, 0.2037053181)--(1.340000000, 0.2011122266)--(1.350000000, 0.1985525168)--(1.360000000, 0.1960309878)--(1.370000000, 0.1935519917)--(1.380000000, 0.1911194834)--(1.390000000, 0.1887370639)--(1.400000000, 0.1864080197)--(1.410000000, 0.1841353566)--(1.420000000, 0.1819218313)--(1.430000000, 0.1797699788)--(1.440000000, 0.1776821374)--(1.450000000, 0.1756604707)--(1.460000000, 0.1737069887)--(1.470000000, 0.1718235654)--(1.480000000, 0.1700119560)--(1.490000000, 0.1682738124)--(1.500000000, 0.1666106968)--(1.510000000, 0.1650240951)--(1.520000000, 0.1635154289)--(1.530000000, 0.1620860667)--(1.540000000, 0.1607373346)--(1.550000000, 0.1594705263)--(1.560000000, 0.1582869127)--(1.570000000, 0.1571877511)--(1.580000000, 0.1561742939)--(1.590000000, 0.1552477979)--(1.600000000, 0.1544095324)--(1.610000000, 0.1536607881)--(1.620000000, 0.1530028857)--(1.630000000, 0.1524371853)--(1.640000000, 0.1519650950)--(1.650000000, 0.1515880807)--(1.660000000, 0.1513076767)--(1.670000000, 0.1511254957)--(1.680000000, 0.1510432410)--(1.690000000, 0.1510627189)--(1.700000000, 0.1511858524)--(1.710000000, 0.1514146964)--(1.720000000, 0.1517514543)--(1.730000000, 0.1521984973)--(1.740000000, 0.1527583853)--(1.750000000, 0.1534338912)--(1.760000000, 0.1542280281)--(1.770000000, 0.1551440814)--(1.780000000, 0.1561856452)--(1.790000000, 0.1573566651)--(1.800000000, 0.1586614881)--(1.810000000, 0.1601049219)--(1.820000000, 0.1616923048)--(1.830000000, 0.1634295901)--(1.840000000, 0.1653234468)--(1.850000000, 0.1673813823)--(1.860000000, 0.1696118923)--(1.870000000, 0.1720246441)--(1.880000000, 0.1746307031)--(1.890000000, 0.1774428117)--(1.900000000, 0.1804757327) node[right] {$(-5,2)$};
+
+\filldraw[magenta] (0.5300000000, -0.1381926912) circle (0.25pt);
+
+\filldraw[violet] (0.9400000000, -0.01854827040) circle (0.25pt);
+\filldraw[cyan] (-0.212516,- 0.0097740*8) circle (0.25pt);
+\filldraw[cyan,xshift=1cm] (-0.212516,- 0.0097740*8) circle (0.25pt);
+\filldraw[blue] (0.212516,- 0.0097740*8) circle (0.25pt);
+
+\end{tikzpicture}
+\end{tiny}
+\caption{This figure depicts in \textcolor{orange}{orange} the set $\calC_{p_4,\tau}$ for $\vartheta=\arg(-1/\tau)=1.61159$, and $(A,B)=(4,1)$. The \textcolor{green}{green} lines are parallel to the lines $i/\tau$. The \textcolor{magenta}{magenta} curves represent the tails at the intersection of the set $\calC_{p_4,\vartheta}$ with the green lines. The \textcolor{violet}{violet} contour represents half of the contour that appears when we run the algorithm a second time.}
+\label{fig:thimb.A4B1.IV}
+\end{figure}
+We can decompose the thimble in terms of state integrals contours. We have contributions of $\calI_{-3,0}$ from the intersection of the orange contour with the interval $(-1,0)$, which has $(n,m,\ell)=(0,-3,0)$. Then, due to the intersection with the green lines we should run the algorithm another time for the magenta line. The latter intersects a green line, thus we apply the algorithm one more time for the violet line. Then we find a contribution of $-q^2\calI_{-5,1}$ from the intersection of the violet line with the interval $(0,1)$, which has $(n,m,\ell)=(2,-5,1)$. Summarising, the algorithm gives
+\be\label{eq:region_IV_A4B1}
+\calI_{p_4,V_4,\mathrm{IV}}
+\=
+\calI_{-3,0}-q^2\calI_{-5,1}=\calI_{-3,0}-q\calI_{-1,0}\,,
+\ee
+where the second equality follows from Equation~\eqref{eq:state_integral_1}. Notice that the magenta line in Figure~\ref{fig:thimb.A4B1.IV} does not contribute even if it intersects the interval $(0,1)$. Indeed it intersects the green line before intersecting the reals, and this leads to the contribution from the violet tail, as shown in Figure~\ref{fig:thimb.A4B1.IV--no_magenta}.
+\begin{figure}[ht]
+\begin{tiny}
+\begin{tikzpicture}[scale=2]
+
+
+
+
+
+
+
+
+
+\draw[<->,thick] (-1.5,0) -- (1.5,0);
+\draw[<->,thick] (0,-1) -- (0,1);
+
+\draw[green] (-1.5,-1.5/0.999168*8*0.040785)--(1.5,1.5/0.999168*8*0.040785);
+\draw[green] (-1.5,-2.5/0.999168*8*0.040785)--(1.5,0.5/0.999168*8*0.040785);
+\draw[green] (-0.999168/8/0.040785+2,-1)--(1.5,-0.5/0.999168*8*0.040785);
+\draw[green] (-0.999168/8/0.040785+3,-1)--(1.5,-1.5/0.999168*8*0.040785);
+\draw[green] (-1.5,-0.5/0.999168*8*0.040785)--(1.5,2.5/0.999168*8*0.040785);
+\draw[green] (-1.5,0.5/0.999168*8*0.040785)--(0.999168/8/0.040785-2,1);
+\draw[green] (-1.5,1.5/0.999168*8*0.040785)--(0.999168/8/0.040785-3,1);
+\draw[thick,red] (-0.05,-0.05)--(0.05,0.05);
+\draw[ thick,red] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=-1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=-1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[thick,red,xshift=1cm] (-0.05,-0.05)--(0.05,0.05);
+\draw[thick,red,xshift=1cm] (0.05,-0.05)--(-0.05,0.05);
+\draw[orange, opacity=0.5, thick,->] (0.2225160000, -0.08365217964)--(0.2325160000, -0.08882135230)--(0.2425160000, -0.09371474923)--(0.2525160000, -0.09834600311)--(0.2625160000, -0.1027274494)--(0.2725160000, -0.1068702813)--(0.2825160000, -0.1107846812)--(0.2925160000, -0.1144799336)--(0.3025160000, -0.1179645215)--(0.3125160000, -0.1212462102)--(0.3225160000, -0.1243321192)--(0.3325160000, -0.1272287852)--(0.3425160000, -0.1299422170)--(0.3525160000, -0.1324779431)--(0.3625160000, -0.1348410536)--(0.3725160000, -0.1370362378)--(0.3825160000, -0.1390678161)--(0.3925160000, -0.1409397692)--(0.4025160000, -0.1426557630)--(0.4125160000, -0.1442191717)--(0.4225160000, -0.1456330973)--(0.4325160000, -0.1469003874)--(0.4425160000, -0.1480236506)--(0.4525160000, -0.1490052706)--(0.4625160000, -0.1498474180)--(0.4725160000, -0.1505520612)--(0.4825160000, -0.1511209756)--(0.4925160000, -0.1515557515)--(0.5025160000, -0.1518578015)--(0.5125160000, -0.1520283658)--(0.5225160000, -0.1520685171)--(0.5325160000, -0.1519791649)--(0.5425160000, -0.1517610576)--(0.5525160000, -0.1514147855)--(0.5625160000, -0.1509407811)--(0.5725160000, -0.1503393195)--(0.5825160000, -0.1496105180)--(0.5925160000, -0.1487543340)--(0.6025160000, -0.1477705627)--(0.6125160000, -0.1466588332)--(0.6225160000, -0.1454186041)--(0.6325160000, -0.1440491568)--(0.6425160000, -0.1425495892)--(0.6525160000, -0.1409188062)--(0.6625160000, -0.1391555096)--(0.6725160000, -0.1372581864)--(0.6825160000, -0.1352250940)--(0.6925160000, -0.1330542441)--(0.7025160000, -0.1307433837)--(0.7125160000, -0.1282899721)--(0.7225160000, -0.1256911558)--(0.7325160000, -0.1229437377)--(0.7425160000, -0.1200441421)--(0.7525160000, -0.1169883728)--(0.7625160000, -0.1137719652)--(0.7725160000, -0.1103899281)--(0.7825160000, -0.1068366755)--(0.7925160000, -0.1031059449)--(0.8025160000, -0.09919069869)--(0.8125160000, -0.09508300492)--(0.8225160000, -0.09077389129)--(0.8325160000, -0.08625316476)--(0.8425160000, -0.08150918661)--(0.8525160000, -0.07652858818)--(0.8625160000, -0.07129590715)--(0.8725160000, -0.06579311473)--(0.8825160000, -0.05999899066)--(0.8925160000, -0.05388828010)--(0.9025160000, -0.04743053031)--(0.9125160000, -0.04058844164)--(0.9225160000, -0.03331545456)--(0.9325160000, -0.02555208174)--(0.9425160000, -0.01722006651)--(0.9525160000, -0.008212526049)--(0.9625160000, 0.001623938704)--(0.9725160000, 0.01252481970)--(0.9825160000, 0.02488571165)--(0.9925160000, 0.03940712721)--(1.002516000, 0.05576392450)--(1.012516000, 0.06932165373)--(1.022516000, 0.08005297974)--(1.032516000, 0.08899584042)--(1.042516000, 0.09666649358)--(1.052516000, 0.1033592636)--(1.062516000, 0.1092641339)--(1.072516000, 0.1145142644)--(1.082516000, 0.1192084574)--(1.092516000, 0.1234231164)--(1.102516000, 0.1272191965)--(1.112516000, 0.1306465235)--(1.122516000, 0.1337466236)--(1.132516000, 0.1365546564)--(1.142516000, 0.1391007839)--(1.152516000, 0.1414111673)--(1.162516000, 0.1435087119)--(1.172516000, 0.1454136347)--(1.182516000, 0.1471439066)--(1.192516000, 0.1487156006)--(1.202516000, 0.1501431715)--(1.212516000, 0.1514396823)--(1.222516000, 0.1526169905)--(1.232516000, 0.1536859019)--(1.242516000, 0.1546563002)--(1.252516000, 0.1555372551)--(1.262516000, 0.1563371155)--(1.272516000, 0.1570635887)--(1.282516000, 0.1577238081)--(1.292516000, 0.1583243931)--(1.302516000, 0.1588715002)--(1.312516000, 0.1593708686)--(1.322516000, 0.1598278595)--(1.332516000, 0.1602474920)--(1.342516000, 0.1606344737)--(1.352516000, 0.1609932289)--(1.362516000, 0.1613279237)--(1.372516000, 0.1616424882)--(1.382516000, 0.1619406368)--(1.392516000, 0.1622258866)--(1.402516000, 0.1625015740)--(1.412516000, 0.1627708698)--(1.422516000, 0.1630367933)--(1.432516000, 0.1633022249)--(1.442516000, 0.1635699178)--(1.452516000, 0.1638425088)--(1.462516000, 0.1641225285)--(1.472516000, 0.1644124109)--(1.482516000, 0.1647145015)--(1.492516000, 0.1650310662)--(1.502516000, 0.1653642990)--(1.512516000, 0.1657163291)--(1.522516000, 0.1660892280)--(1.532516000, 0.1664850165)--(1.542516000, 0.1669056710)--(1.552516000, 0.1673531301)--(1.562516000, 0.1678293005)--(1.572516000, 0.1683360630)--(1.582516000, 0.1688752791)--(1.592516000, 0.1694487965)--(1.602516000, 0.1700584554)--(1.612516000, 0.1707060948)--(1.622516000, 0.1713935586)--(1.632516000, 0.1721227024)--(1.642516000, 0.1728954001)--(1.652516000, 0.1737135513)--(1.662516000, 0.1745790887)--(1.672516000, 0.1754939863)--(1.682516000, 0.1764602682)--(1.692516000, 0.1774800181)--(1.702516000, 0.1785553893)--(1.712516000, 0.1796886168)--(1.722516000, 0.1808820291)--(1.732516000, 0.1821380630)--(1.742516000, 0.1834592791)--(1.752516000, 0.1848483796)--(1.762516000, 0.1863082291)--(1.772516000, 0.1878418775)--(1.782516000, 0.1894525869)--(1.792516000, 0.1911438632)--(1.802516000, 0.1929194920)--(1.812516000, 0.1947835811)--(1.822516000, 0.1967406115)--(1.832516000, 0.1987954964)--(1.842516000, 0.2009536531)--(1.852516000, 0.2032210885)--(1.862516000, 0.2056045023)--(1.872516000, 0.2081114117)--(1.882516000, 0.2107503016)--(1.892516000, 0.2135308047)--(1.902516000, 0.2164639131)--(1.912516000, 0.2195622165)--(1.922516000, 0.2228401441)--(1.932516000, 0.2263141405)--(1.942516000, 0.2300025924)--(1.952516000, 0.2339250436)--(1.962516000, 0.2380995782)--(1.972516000, 0.2425358548)--(1.982516000, 0.2472193648)--(1.992516000, 0.2520849701)--(2.002516000, 0.2569991251)--(2.012516000, 0.2617953171)--(2.022516000, 0.2663488159)--(2.032516000, 0.2706071291)--(2.042516000, 0.2745677084)--(2.052516000, 0.2782499065)--(2.062516000, 0.2816793599)--(2.072516000, 0.2848815524)--(2.082516000, 0.2878796644)--(2.092516000, 0.2906941170)--(2.102516000, 0.2933427190)--(2.112516000, 0.2958409897)--(2.122516000, 0.2982025006)--(2.132516000, 0.3004391825)--(2.142516000, 0.3025615875)--(2.152516000, 0.3045791050)--(2.162516000, 0.3065001399)--(2.172516000, 0.3083322584)--(2.182516000, 0.3100823076)--(2.192516000, 0.3117565151)--(2.202516000, 0.3133605708)--(2.212516000, 0.3148996955);
+\draw[orange,opacity=0.5,thick,->] (0.2025160000, -0.07242435900)--(0.1925160000, -0.06633013421)--(0.1825160000, -0.05988840857)--(0.1725160000, -0.05307550033)--(0.1625160000, -0.04586462206)--(0.1525160000, -0.03822531752)--(0.1425160000, -0.03012276698)--(0.1325160000, -0.02151692546)--(0.1225160000, -0.01236144873)--(0.1125160000, -0.002602352609)--(0.1025160000, 0.007823654654)--(0.09251600000, 0.01899121620)--(0.08251600000, 0.03098873362)--(0.07251600000, 0.04392091397)--(0.06251600000, 0.05791059809)--(0.05251600000, 0.07309713766)--(0.04251600000, 0.08962299647)--(0.03251600000, 0.1075834516)--(0.02251600000, 0.1268677760)--(0.01251600000, 0.1467507069)--(0.002516000000, 0.1653975254)--(-0.007484000000, 0.1806667291)--(-0.01748400000, 0.1918671274)--(-0.02748400000, 0.1995062872)--(-0.03748400000, 0.2043092638)--(-0.04748400000, 0.2068805645)--(-0.05748400000, 0.2076795085)--(-0.06748400000, 0.2070530636)--(-0.07748400000, 0.2052671980)--(-0.08748400000, 0.2025295346)--(-0.09748400000, 0.1990049590)--(-0.1074840000, 0.1948264079)--(-0.1174840000, 0.1901024582)--(-0.1274840000, 0.1849227801)--(-0.1374840000, 0.1793621374)--(-0.1474840000, 0.1734833785)--(-0.1574840000, 0.1673397124)--(-0.1674840000, 0.1609764679)--(-0.1774840000, 0.1544324719)--(-0.1874840000, 0.1477411419)--(-0.1974840000, 0.1409313633)--(-0.2074840000, 0.1340281993)--(-0.2174840000, 0.1270534707)--(-0.2274840000, 0.1200262342)--(-0.2374840000, 0.1129631781)--(-0.2474840000, 0.1058789538)--(-0.2574840000, 0.09878645373)--(-0.2674840000, 0.09169704575)--(-0.2774840000, 0.08462077302)--(-0.2874840000, 0.07756652379)--(-0.2974840000, 0.07054217716)--(-0.3074840000, 0.06355472833)--(-0.3174840000, 0.05661039686)--(-0.3274840000, 0.04971472036)--(-0.3374840000, 0.04287263604)--(-0.3474840000, 0.03608855183)--(-0.3574840000, 0.02936640856)--(-0.3674840000, 0.02270973458)--(-0.3774840000, 0.01612169382)--(-0.3874840000, 0.009605128179)--(-0.3974840000, 0.003162595104)--(-0.4074840000, -0.003203599124)--(-0.4174840000, -0.009491369715)--(-0.4274840000, -0.01569882691)--(-0.4374840000, -0.02182425225)--(-0.4474840000, -0.02786607732)--(-0.4574840000, -0.03382286457)--(-0.4674840000, -0.03969328990)--(-0.4774840000, -0.04547612700)--(-0.4874840000, -0.05117023291)--(-0.4974840000, -0.05677453494)--(-0.5074840000, -0.06228801849)--(-0.5174840000, -0.06770971589)--(-0.5274840000, -0.07303869595)--(-0.5374840000, -0.07827405413)--(-0.5474840000, -0.08341490332)--(-0.5574840000, -0.08846036498)--(-0.5674840000, -0.09340956069)--(-0.5774840000, -0.09826160385)--(-0.5874840000, -0.1030155917)--(-0.5974840000, -0.1076705971)--(-0.6074840000, -0.1122256608)--(-0.6174840000, -0.1166797831)--(-0.6274840000, -0.1210319154)--(-0.6374840000, -0.1252809518)--(-0.6474840000, -0.1294257201)--(-0.6574840000, -0.1334649716)--(-0.6674840000, -0.1373973718)--(-0.6774840000, -0.1412214884)--(-0.6874840000, -0.1449357800)--(-0.6974840000, -0.1485385824)--(-0.7074840000, -0.1520280940)--(-0.7174840000, -0.1554023597)--(-0.7274840000, -0.1586592521)--(-0.7374840000, -0.1617964513)--(-0.7474840000, -0.1648114205)--(-0.7574840000, -0.1677013794)--(-0.7674840000, -0.1704632724)--(-0.7774840000, -0.1730937323)--(-0.7874840000, -0.1755890374)--(-0.7974840000, -0.1779450609)--(-0.8074840000, -0.1801572115)--(-0.8174840000, -0.1822203608)--(-0.8274840000, -0.1841287572)--(-0.8374840000, -0.1858759197)--(-0.8474840000, -0.1874545083)--(-0.8574840000, -0.1888561623)--(-0.8674840000, -0.1900712974)--(-0.8774840000, -0.1910888482)--(-0.8874840000, -0.1918959363)--(-0.8974840000, -0.1924774395)--(-0.9074840000, -0.1928154217)--(-0.9174840000, -0.1928883751)--(-0.9274840000, -0.1926702013)--(-0.9374840000, -0.1921288475)--(-0.9474840000, -0.1912245375)--(-0.9574840000, -0.1899077274)--(-0.9674840000, -0.1881177914)--(-0.9774840000, -0.1857869329)--(-0.9874840000, -0.1828662698)--(-0.9974840000, -0.1794185956)--(-1.0100, -0.17488)--(-1.0200, -0.17167)--(-1.0300, -0.16909)--(-1.0400, -0.16714)--(-1.0500, -0.16578)--(-1.0600, -0.16493)--(-1.0700, -0.16452)--(-1.0800, -0.16449)--(-1.0900, -0.16480)--(-1.1000, -0.16542)--(-1.1100, -0.16630)--(-1.1200, -0.16741)--(-1.1300, -0.16875)--(-1.1400, -0.17027)--(-1.1500, -0.17197)--(-1.1600, -0.17383)--(-1.1700, -0.17583)--(-1.1800, -0.17797)--(-1.1900, -0.18022)--(-1.2000, -0.18258)--(-1.2100, -0.18504)--(-1.2200, -0.18759)--(-1.2300, -0.19022)--(-1.2400, -0.19292)--(-1.2500, -0.19570)--(-1.2600, -0.19853)--(-1.2700, -0.20142)--(-1.2800, -0.20436)--(-1.2900, -0.20735)--(-1.3000, -0.21037)--(-1.3100, -0.21344)--(-1.3200, -0.21653)--(-1.3300, -0.21965)--(-1.3400, -0.22280)--(-1.3500, -0.22596)--(-1.3600, -0.22915)--(-1.3700, -0.23235)--(-1.3800, -0.23556)--(-1.3900, -0.23878)--(-1.4000, -0.24200)--(-1.4100, -0.24523)--(-1.4200, -0.24846)--(-1.4300, -0.25168)--(-1.4400, -0.25491)--(-1.4500, -0.25813)--(-1.4600, -0.26134)--(-1.4700, -0.26453)--(-1.4800, -0.26772)--(-1.4900, -0.27090)--(-1.5000, -0.27405)--(-1.5100, -0.27720)--(-1.5200, -0.28032)--(-1.5300, -0.28342)--(-1.5400, -0.28650);
+\draw[magenta, opacity=0.5,thick,->] (0.5300000000, -0.1381926912)--(0.5400000000, -0.1633244928)--(0.5500000000, -0.1776225750)--(0.5600000000, -0.1863631285)--(0.5700000000, -0.1918503909)--(0.5800000000, -0.1952480077)--(0.5900000000, -0.1972060139)--(0.6000000000, -0.1981154697)--(0.6100000000, -0.1982253217)--(0.6200000000, -0.1977012130)--(0.6300000000, -0.1966572934)--(0.6400000000, -0.1951744547)--(0.6500000000, -0.1933112936)--(0.6600000000, -0.1911109708)--(0.6700000000, -0.1886056491)--(0.6800000000, -0.1858194462)--(0.6900000000, -0.1827704484)--(0.7000000000, -0.1794721094)--(0.7100000000, -0.1759342387)--(0.7200000000, -0.1721637069)--(0.7300000000, -0.1681649505)--(0.7400000000, -0.1639403341)--(0.7500000000, -0.1594904044)--(0.7600000000, -0.1548140614)--(0.7700000000, -0.1499086647)--(0.7800000000, -0.1447700834)--(0.7900000000, -0.1393926974)--(0.8000000000, -0.1337693522)--(0.8100000000, -0.1278912653)--(0.8200000000, -0.1217478824)--(0.8300000000, -0.1153266744)--(0.8400000000, -0.1086128629)--(0.8500000000, -0.1015890576)--(0.8600000000, -0.09423477825)--(0.8700000000, -0.08652582283)--(0.8800000000, -0.07843342591)--(0.8900000000, -0.06992312093)--(0.9000000000, -0.06095317561)--(0.9100000000, -0.05147239216)--(0.9200000000, -0.04141693182)--(0.9300000000, -0.03070558521)--(0.9400000000, -0.01923246505)--(0.9500000000, -0.006855235220)--(0.9600000000, 0.006624689895)--(0.9700000000, 0.02149633204)--(0.9800000000, 0.03819201198)--(0.9900000000, 0.05725407106)--(1.000000000, 0.07786747914)--(1.010000000, 0.09558685243)--(1.020000000, 0.1094644056)--(1.030000000, 0.1206613377)--(1.040000000, 0.1299349872)--(1.050000000, 0.1377407489)--(1.060000000, 0.1443768097)--(1.070000000, 0.1500528940)--(1.080000000, 0.1549244914)--(1.090000000, 0.1591114837)--(1.100000000, 0.1627090970)--(1.110000000, 0.1657947528)--(1.120000000, 0.1684325775)--(1.130000000, 0.1706764946)--(1.140000000, 0.1725724191)--(1.150000000, 0.1741598594)--(1.160000000, 0.1754731173)--(1.170000000, 0.1765422036)--(1.180000000, 0.1773935514)--(1.190000000, 0.1780505801)--(1.200000000, 0.1785341470)--(1.210000000, 0.1788629141)--(1.220000000, 0.1790536491)--(1.230000000, 0.1791214753)--(1.240000000, 0.1790800794)--(1.250000000, 0.1789418878)--(1.260000000, 0.1787182155)--(1.270000000, 0.1784193940)--(1.280000000, 0.1780548805)--(1.290000000, 0.1776333533)--(1.300000000, 0.1771627935)--(1.310000000, 0.1766505577)--(1.320000000, 0.1761034407)--(1.330000000, 0.1755277311)--(1.340000000, 0.1749292610)--(1.350000000, 0.1743134489)--(1.360000000, 0.1736853395)--(1.370000000, 0.1730496377)--(1.380000000, 0.1724107403)--(1.390000000, 0.1717727642)--(1.400000000, 0.1711395710)--(1.410000000, 0.1705147910)--(1.420000000, 0.1699018430)--(1.430000000, 0.1693039543)--(1.440000000, 0.1687241772)--(1.450000000, 0.1681654054)--(1.460000000, 0.1676303887)--(1.470000000, 0.1671217462)--(1.480000000, 0.1666419790)--(1.490000000, 0.1661934820)--(1.500000000, 0.1657785546)--(1.5100, 0.16540)--(1.5200, 0.16506)--(1.5300, 0.16476)--(1.5400, 0.16450)--(1.5500, 0.16428)--(1.5600, 0.16411)--(1.5700, 0.16399)--(1.5800, 0.16392)--(1.5900, 0.16390)--(1.6000, 0.16393)--(1.6100, 0.16402)--(1.6200, 0.16417)--(1.6300, 0.16437)--(1.6400, 0.16463)--(1.6500, 0.16496)--(1.6600, 0.16535)--(1.6700, 0.16581)--(1.6800, 0.16634)--(1.6900, 0.16694)--(1.7000, 0.16761)--(1.7100, 0.16835)--(1.7200, 0.16918)--(1.7300, 0.17008)--(1.7400, 0.17107)--(1.7500, 0.17214)--(1.7600, 0.17330)--(1.7700, 0.17455)--(1.7800, 0.17590)--(1.7900, 0.17735)--(1.8000, 0.17890)--(1.8100, 0.18056)--(1.8200, 0.18233)--(1.8300, 0.18422)--(1.8400, 0.18623)--(1.8500, 0.18837)--(1.8600, 0.19065)--(1.8700, 0.19308)--(1.8800, 0.19566)--(1.8900, 0.19841)--(1.9000, 0.20134)--(1.9100, 0.20446)--(1.9200, 0.20779)--(1.9300, 0.21135)--(1.9400, 0.21516)--(1.9500, 0.21924)--(1.9600, 0.22362)--(1.9700, 0.22832)--(1.9800, 0.23333)--(1.9900, 0.23859)--(2.0000, 0.24396);
+\draw[violet,thick] (0.9400000000, -0.01854827040)--(0.9500000000, 0.009819596420)--(0.9600000000, 0.03875931849)--(0.9700000000, 0.06859389908)--(0.9800000000, 0.09927048473)--(0.9900000000, 0.1296086577)--(1.000000000, 0.1568020549)--(1.010000000, 0.1787875387)--(1.020000000, 0.1958687633)--(1.030000000, 0.2091089975)--(1.040000000, 0.2194062458)--(1.050000000, 0.2274110172)--(1.060000000, 0.2335933180)--(1.070000000, 0.2383013223)--(1.080000000, 0.2418000231)--(1.090000000, 0.2442959679)--(1.100000000, 0.2459534028)--(1.110000000, 0.2469051286)--(1.120000000, 0.2472600245)--(1.130000000, 0.2471084086)--(1.140000000, 0.2465259524)--(1.150000000, 0.2455766002)--(1.160000000, 0.2443147886)--(1.170000000, 0.2427871613)--(1.180000000, 0.2410339136)--(1.190000000, 0.2390898598)--(1.200000000, 0.2369852902)--(1.210000000, 0.2347466666)--(1.220000000, 0.2323971912)--(1.230000000, 0.2299572768)--(1.240000000, 0.2274449366)--(1.250000000, 0.2248761115)--(1.260000000, 0.2222649453)--(1.270000000, 0.2196240172)--(1.280000000, 0.2169645411)--(1.290000000, 0.2142965345)--(1.300000000, 0.2116289646)--(1.310000000, 0.2089698740)--(1.320000000, 0.2063264898)--(1.330000000, 0.2037053181)--(1.340000000, 0.2011122266)--(1.350000000, 0.1985525168)--(1.360000000, 0.1960309878)--(1.370000000, 0.1935519917)--(1.380000000, 0.1911194834)--(1.390000000, 0.1887370639)--(1.400000000, 0.1864080197)--(1.410000000, 0.1841353566)--(1.420000000, 0.1819218313)--(1.430000000, 0.1797699788)--(1.440000000, 0.1776821374)--(1.450000000, 0.1756604707)--(1.460000000, 0.1737069887)--(1.470000000, 0.1718235654)--(1.480000000, 0.1700119560)--(1.490000000, 0.1682738124)--(1.500000000, 0.1666106968);
+\filldraw[violet,->,thick] (0.94,-0.01854827040)--(-1.5,-1.5*8*0.040785/0.999168);
+\filldraw[violet,->,thick] (1.500000000, 0.1666106968)--(2,0.5*8*0.040785/0.999168+0.1666106968);
+
+\filldraw[magenta] (0.5300000000, -0.1381926912) circle (0.25pt);
+
+\filldraw[violet] (0.9400000000, -0.01854827040) circle (0.25pt);
+\filldraw[violet] (1.500000000, 0.1666106968) circle (0.25pt);
+\filldraw[cyan] (-0.212516,- 0.0097740*8) circle (0.25pt);
+\filldraw[cyan,xshift=1cm] (-0.212516,- 0.0097740*8) circle (0.25pt);
+\filldraw[blue] (0.212516,- 0.0097740*8) circle (0.25pt);
+
+\end{tikzpicture}
+\end{tiny}
+\caption{This figure depicts in \textcolor{violet}{violet} the tail that contributes in the decomposition of the set $\calC_{p_4,\vartheta}$ given by state integral contours.}
+\label{fig:thimb.A4B1.IV--no_magenta}
+\end{figure}
+
+
+\subsubsection{First few Stokes constants}\label{sec:stokes_A4B1}
+We can now describe the Stokes matrices associated to first Stokes rays in Figure~\ref{fig:A4B1.stokes}. From Equations~\eqref{eq:region_I_A4B1} and~\eqref{eq:region_Is_A4B1} we get
+
+\be
+\begin{tiny}
+\begin{aligned}
+  \begin{pmatrix}
+    \calI_{p_1,V_1,\mathrm{I}_\star} & \calI_{p_2,V_2,\mathrm{I}_\star} &\calI_{p_3,V_3,\mathrm{I}_\star} & \calI_{p_4,V_4,\mathrm{I}_\star} 
+  \end{pmatrix}
+  \=
+  \begin{pmatrix}
+    \calI_{p_1,V_1,\mathrm{I}} & \calI_{p_2,V_2,\mathrm{I}} &\calI_{p_3,V_3,\mathrm{I}} & \calI_{p_4,V_4,\mathrm{I}}
+  \end{pmatrix}
+  \begin{pmatrix}
+    1 & 0 & 0 & 0\\
+   0 & 1 & 0 & 0 \\
+   0 & 0 & 1 & 0 \\
+   0 & 0 & 0 & 1
+  \end{pmatrix}\,.
+  \end{aligned}
+\end{tiny}
+\ee
+Therefore we learn that there is no Stokes jump between region $I$ and $I_\star$. 
+Then, from Equations~\eqref{eq:region_I_A4B1} and~\eqref{eq:region_II_A4B1} we find 
+\be
+\begin{tiny}
+\begin{aligned}
+  \begin{pmatrix}
+    \calI_{p_1,V_1,\mathrm{II}} & \calI_{p_2,V_2,\mathrm{II}} &\calI_{p_3,V_3,\mathrm{II}} & \calI_{p_4,V_4,\mathrm{II}} 
+  \end{pmatrix}
+  \=
+  \begin{pmatrix}
+    \calI_{p_1,V_1,\mathrm{I}} & \calI_{p_2,V_2,\mathrm{I}} &\calI_{p_3,V_3,\mathrm{I}} & \calI_{p_4,V_4,\mathrm{I}}
+  \end{pmatrix}
+  \begin{pmatrix}
+  1 & 0 & 0 & 0\\
+   0 & 1 & 0 & 1 \\
+   0 & 0 & 1 & 0 \\
+   0 & 0 & 0 & 1
+  \end{pmatrix}\,.
+\end{aligned}
+\end{tiny}
+\ee
+From Equations~\eqref{eq:region_II_A4B1} and~\eqref{eq:region_III_A4B1}, we find 
+\be
+\begin{tiny}
+\begin{aligned}
+  \begin{pmatrix}
+    \calI_{p_1,V_1,\mathrm{III}} & \calI_{p_2,V_2,\mathrm{III}} &\calI_{p_3,V_3,\mathrm{III}} & \calI_{p_4,V_4,\mathrm{III}} 
+  \end{pmatrix}
+  \=
+  \begin{pmatrix}
+    \calI_{p_1,V_1,\mathrm{II}} & \calI_{p_2,V_2,\mathrm{II}} &\calI_{p_3,V_3,\mathrm{II}} & \calI_{p_4,V_4,\mathrm{II}}
+  \end{pmatrix}
+  \begin{pmatrix}
+   1 & 0 & 0 & 0\\
+   0 & 1 & 0 & 0 \\
+   -1 & 0 & 1 & 0 \\
+   0 & 0 & 0 & 1
+  \end{pmatrix}\,.
+\end{aligned}
+\end{tiny}
+\ee
+Finally, from Equations~\eqref{eq:region_III_A4B1} and~\eqref{eq:region_IV_A4B1} we find 
+\be
+\begin{tiny}
+\begin{aligned}
+  \begin{pmatrix}
+    \calI_{p_1,V_1,\mathrm{IV}} & \calI_{p_2,V_2,\mathrm{IV}} &\calI_{p_3,V_3,\mathrm{IV}} & \calI_{p_4,V_4,\mathrm{IV}} 
+  \end{pmatrix}
+  \=
+  \begin{pmatrix}
+    \calI_{p_1,V_1,\mathrm{III}} & \calI_{p_2,V_2,\mathrm{III}} &\calI_{p_3,V_3,\mathrm{III}} & \calI_{p_4,V_4,\mathrm{III}}
+  \end{pmatrix}
+  \begin{pmatrix}
+  1 & 0 & 0 & 0\\
+   0 & 1 & 0 & 0  \\
+   0 & 0 & 1 & -q \\
+   0 & 0 & 0 & 1
+  \end{pmatrix}\,.
+\end{aligned}
+\end{tiny}
+\ee
 Therefore, we see that
-SI,I⋆(q) =
-
-
-
-
-1 0 0 0
-0 1 0 0
-0 0 1 0
-0 0 0 1
-
-
-
- , SI,II(q) =
-
-
-
-
-1 0 0 0
-0 1 0 1
-0 0 1 0
-0 0 0 1
-
-
-
- ,
-SII,III(q) =
-
-
-
-
-1 0 0 0
-0 1 0 0
-−1 0 1 0
-0 0 0 1
-
-
-
- , SIII,IV(q) =
-
-
-
-
-1 0 0 0
-0 1 0 0
-0 0 1 −q
-0 0 0 1
-
-
-
- .
-(88)
-4.2.10. Computing all Stokes constants. We can again compute the Stokes matrix SI,X using
-quantum modularity [
-13] or equivalently the factorisations of the state integrals [ 9, 10]. Here
-it is more complicated than 4 1 or ( A, B) = (1 , 2) from Section 4.1 as one needs to use an
-“untrapping” of the state integral and various identities between q-series and state integrals.
-This was all done in [ 24, Sec. 10.1]. To give these results we need some notation.
-Let Θ( q) be the matrix whose columns are given by the coeﬃcients of ǫ0, ǫ1, ǫ2, ǫ4 respec-
-tively of the series
-exp
-( 1
-2 ǫ + 1
-4ǫ2E2(q)
-)
-
-
-
-
-θ(− exp(ǫ); q4)
-−q5/8 exp(ǫ/4)θ(−q exp(ǫ); q4)
-q12/8 exp(ǫ/2)θ(−q2 exp(ǫ); q4)
-−q21/8 exp(3ǫ/4)θ(−q3 exp(ǫ); q4)
-
-
-
- , (89)
-SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS 35
-where θ(x; q) = ( qx; q)∞(x−1; q)∞(q; q)∞ and E2(q) =− 1
-24 +∑ ∞
-k=1 k qk
-1−qk . Let
-G(t; q) =
-∞∑
-k=0
-q3k(4k+1)/2t4k
-(q; q)4k
-
-
-
-
-
-
-
-
-1
-(q;q)4k
-q3k+ 3
-4 t
-(q;q)4k+1
-q6k+ 9
-4 t2
-(q;q)4k+2
-q9k+ 9
-2 t3
-(q;q)4k+3
-q4k
-(q;q)4k
-q3k+ 3
-4 +4k+1t
-(q;q)4k+1
-q6k+ 9
-4 +4k+2t2
-(q;q)4k+2
-q9k+ 9
-2 +4k+3t3
-(q;q)4k+3
-q8k
-(q;q)4k
-q3k+ 3
-4 +8k+2t
-(q;q)4k+1
-q6k+ 9
-4 +8k+4t2
-(q;q)4k+2
-q9k+ 9
-2 +8k+6t3
-(q;q)4k+3
-q12k
-(q;q)4k
-q3k+ 3
-4 +12k+3t
-(q;q)4k+1
-q6k+ 9
-4 +12k+6t2
-(q;q)4k+2
-q9k+ 9
-2 +12k+9t3
-(q;q)4k+3
-
-
-
-
-
-
-
-
-, (90)
-P (q) =
-
-
-
-
-1 0 0 0
-−q−3 − q−2 − q−1 q−3 + q−2 + 2q−1 + 1 + q −q2 − q3 − q4 − q5 − q12 q12
-q−5 + q−4 + q−3 −q−5 − 2q−4 − 2q−3 − 2q−2 − q−1 + q3 1 + 2q + 2q2 + q3 + q4 + q10 + q11 −q10 − q11
-−q−6 − q−1 q−6 + q−5 + q−4 − q2 −q−1 − 1 − q − q9 q9
-
-
-
-
-(91)
+\be\label{eq:AB41stokes}
+\begin{aligned}
+  \mathfrak{S}_{\mathrm{I},\mathrm{I}_\star}(q)
+  &=&
+  \begin{pmatrix}
+    1 & 0 & 0 & 0\\
+   0 & 1 & 0 & 0 \\
+   0 & 0 & 1 & 0 \\
+   0 & 0 & 0 & 1
+  \end{pmatrix},&\,&\qquad
+   \mathfrak{S}_{\mathrm{I},\mathrm{II}}(q)
+  &=\;
+  \begin{pmatrix}
+     1 & 0 & 0 & 0\\
+   0 & 1 & 0 & 1 \\
+   0 & 0 & 1 & 0 \\
+   0 & 0 & 0 & 1
+  \end{pmatrix},&\,& \\
+ \mathfrak{S}_{\mathrm{II},\mathrm{III}}(q)
+  &=&
+  \begin{pmatrix}
+   1 & 0 & 0 & 0\\
+   0 & 1 & 0 & 0 \\
+   -1 & 0 & 1 & 0 \\
+   0 & 0 & 0 & 1
+  \end{pmatrix},&\,& \qquad 
+  \mathfrak{S}_{\mathrm{III},\mathrm{IV}}(q)
+  &=\;
+  \begin{pmatrix}
+   1 & 0 & 0 & 0\\
+   0 & 1 & 0 & 0 \\
+   0 & 0 & 1 & -q \\
+   0 & 0 & 0 & 1
+  \end{pmatrix}.&\,&
+  \end{aligned}
+\ee
+
+
+\subsubsection{Computing all Stokes constants}
+We can again compute the Stokes matrix $\mathfrak{S}_{\mathrm{I},\mathrm{X}}$ using quantum modularity~\cite{GZ:RQMOD} or equivalently the factorisations of the state integrals~\cite{GGM:I,GK:qser}. Here it is more complicated than $4_1$ or $(A,B)=(1,2)$ from Section~\ref{sec:4_1} as one needs to use an ``untrapping'' of the state integral and various identities between $q$-series and state integrals. This was all done in~\cite[Sec.~10.1]{Wh:thesis}. To give these results we need some notation.
+
+Let $\Theta(q)$ be the matrix whose columns are given by the coefficients of $\epsilon^0,\epsilon^1,\epsilon^2,\epsilon^4$ respectively of the series
+\be
+    \exp\Big(\frac{1}{2}\epsilon+\frac{1}{4}\epsilon^2E_{2}(q)\Big)
+    \begin{pmatrix}
+        \theta(-\exp(\epsilon);q^{4})\\
+        -q^{5/8}\exp(\epsilon/4)\theta(-q\exp(\epsilon);q^{4})\\
+        q^{12/8}\exp(\epsilon/2)\theta(-q^{2}\exp(\epsilon);q^{4})\\
+        -q^{21/8}\exp(3\epsilon/4)\theta(-q^{3}\exp(\epsilon);q^{4})
+    \end{pmatrix}\,,
+\ee
+where $\theta(x;q)=(qx;q)_{\infty}(x^{-1};q)_{\infty}(q;q)_{\infty}$ and $E_{2}(q)=-\tfrac{1}{24}+\sum_{k=1}^{\infty}k\tfrac{q^k}{1-q^k}$.
+Let
+\be
+    G(t;q)
+    \=
+    \sum_{k=0}^{\infty}\frac{q^{3k(4k+1)/2}t^{4k}}{(q;q)_{4k}}
+    \begin{pmatrix}
+        \frac{1}{(q;q)_{4k}} &
+        \frac{q^{3k+\frac{3}{4}}t}{(q;q)_{4k+1}} &
+        \frac{q^{6k+\frac{9}{4}}t^{2}}{(q;q)_{4k+2}} &
+        \frac{q^{9k+\frac{9}{2}}t^{3}}{(q;q)_{4k+3}}\\
+        \frac{q^{4k}}{(q;q)_{4k}} &
+        \frac{q^{3k+\frac{3}{4}+4k+1}t}{(q;q)_{4k+1}} &
+        \frac{q^{6k+\frac{9}{4}+4k+2}t^{2}}{(q;q)_{4k+2}} &
+        \frac{q^{9k+\frac{9}{2}+4k+3}t^{3}}{(q;q)_{4k+3}}\\
+        \frac{q^{8k}}{(q;q)_{4k}} &
+        \frac{q^{3k+\frac{3}{4}+8k+2}t}{(q;q)_{4k+1}} &
+        \frac{q^{6k+\frac{9}{4}+8k+4}t^{2}}{(q;q)_{4k+2}} &
+        \frac{q^{9k+\frac{9}{2}+8k+6}t^{3}}{(q;q)_{4k+3}}\\
+        \frac{q^{12k}}{(q;q)_{4k}} &
+        \frac{q^{3k+\frac{3}{4}+12k+3}t}{(q;q)_{4k+1}} &
+        \frac{q^{6k+\frac{9}{4}+12k+6}t^{2}}{(q;q)_{4k+2}} &
+        \frac{q^{9k+\frac{9}{2}+12k+9}t^{3}}{(q;q)_{4k+3}}
+    \end{pmatrix}\,,
+\ee
+\be
+\begin{tiny}
+\begin{aligned}
+    P(q)
+    \=
+    \begin{pmatrix}
+    1 & 0 & 0 & 0\\
+    -q^{-3} - q^{-2} - q^{-1} &  q^{-3} + q^{-2} + 2q^{-1} + 1 + q &  -q^2 - q^3 - q^4 - q^5 - q^{12} &  q^{12}\\
+    q^{-5} + q^{-4} + q^{-3} &  -q^{-5} - 2q^{-4} - 2q^{-3} - 2q^{-2} - q^{-1} + q^3 &  1 + 2q + 2q^2 + q^3 + q^4 + q^{10} + q^{11} &  -q^{10} - q^{11}\\
+    -q^{-6} - q^{-1} &  q^{-6} + q^{-5} + q^{-4} - q^2 &  -q^{-1} - 1 - q - q^9 &  q^9
+    \end{pmatrix}
+\end{aligned}
+\end{tiny}
+\ee
 and
-F (q) = P (q)
-
-
-
-
-1 0 0 0
-0 1 0 0
-0 0 q−4 0
-0 0 0 q−12
-
-
-
- G(q−3/8; q)Θ( q) . (92)
-The ﬁrst column of F (q) is given by
-∞∑
-k=0
-q2k(k+1)
-(q; q)k
-
-
-
-
-q−2k
-q−k
-1
-qk
-
-
-
- . (93)
-The matrix F (q) can be extended to |q|⁄= 1 using the relations θ(x; q−1) = θ(x−1; q)−1 and
-E2(q−1) = −E2(q). Let f (q) be the third row of F (q). Then using the identities of [
-24,
-Sec. 10.1], we ﬁnd that
-(Ip1,V1,I Ip2,V2,I Ip3,V3,I Ip4,V4,I
-)
-= f (q−1)
-
-
-
-
-1 0 0 0
-0 τ 0 0
-0 0 τ 2 0
-0 0 0 τ 4
-
-
-
-
-−1
-F (q−1)−1
-
-
-
-
-0 0 1 0
-1 0 0 0
-0 1 0 0
-0 0 0 q−1
-
-
-
-
-−1
-.
-(94)
-This exactly agrees with the conjectures [
-24, Ex. 61] for the Borel–Laplace resummation in
-region I. A similar computation shows that in the region X we also ﬁnd ag reement with the
-conjectures and
-(Ip1,V1,X Ip2,V2,X Ip3,V3,X Ip4,V4,X
-)
-= f (q−1)
-
-
-
-
-1 0 0 0
-0 −τ 0 0
-0 0 τ 2 0
-0 0 0 τ 4
-
-
-
-
-−1
-F (q−1)−1
-
-
-
-
-0 0 1 0
-1 0 0 0
-0 0 0 q−1
-0 1 0 0
-
-
-
-
-−1
-.
-(95)
-36 VERONICA F ANTINI AND CAMPBELL WHEELER
+\be
+\begin{aligned}
+    &F(q)\=P(q)
+    \begin{pmatrix}
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & q^{-4} & 0\\
+        0 & 0 & 0 & q^{-12}\\
+    \end{pmatrix}
+    G(q^{-3/8};q)
+    \Theta(q)\,.
+\end{aligned}
+\ee
+The first column of $F(q)$ is given by
+\be
+  \sum_{k=0}^{\infty}\frac{q^{2k(k+1)}}{(q;q)_{k}}
+  \begin{pmatrix}
+    q^{-2k}\\q^{-k}\\1\\q^k
+  \end{pmatrix}\,.
+\ee
+The matrix $F(q)$ can be extended to $|q|\neq1$ using the relations $\theta(x;q^{-1})=\theta(x^{-1};q)^{-1}$ and $E_{2}(q^{-1})=-E_{2}(q)$.
+Let $f(q)$ be the third row of $F(q)$. Then using the identities of~\cite[Sec.~10.1]{Wh:thesis}, we find that
+\be
+\begin{aligned}
+\begin{pmatrix}
+    \calI_{p_1,V_1,\mathrm{I}} & \calI_{p_2,V_2,\mathrm{I}} &\calI_{p_3,V_3,\mathrm{I}} & \calI_{p_4,V_4,\mathrm{I}}
+  \end{pmatrix}
+  \=
+  f(q^{-1})
+  \begin{pmatrix}
+        1 & 0 & 0 & 0\\
+        0 & \tau & 0 & 0\\
+        0 & 0 & \tau^2 & 0\\
+        0 & 0 & 0 & \tau^4
+    \end{pmatrix}^{-1}
+\!\!\!\!\!\!
+    F(q^{-1})^{-1}\!
+    \begin{pmatrix}
+        0 & 0 & 1 & 0\\
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 0 & q^{-1}
+    \end{pmatrix}^{-1}\!\!\!\!\!\!\!.
+\end{aligned}
+\ee
+This exactly agrees with the conjectures~\cite[Ex.~61]{Wh:thesis} for the Borel--Laplace resummation in region $\mathrm{I}$. A similar computation shows that in the region $\mathrm{X}$ we also find agreement with the conjectures and
+\be
+\begin{aligned}
+\!\begin{pmatrix}
+    \calI_{p_1,V_1,\mathrm{X}} & \calI_{p_2,V_2,\mathrm{X}} &\calI_{p_3,V_3,\mathrm{X}} & \calI_{p_4,V_4,\mathrm{X}}
+  \end{pmatrix}
+  \=
+  f(q^{-1})\!
+  \begin{pmatrix}
+        1 & 0 & 0 & 0\\
+        0 & -\tau & 0 & 0\\
+        0 & 0 & \tau^2 & 0\\
+        0 & 0 & 0 & \tau^4
+    \end{pmatrix}^{-1}
+\!\!\!\!\!\!\!
+    F(q^{-1})^{-1}\!\!
+    \begin{pmatrix}
+        0 & 0 & 1 & 0\\
+        1 & 0 & 0 & 0\\
+        0 & 0 & 0 & q^{-1}\\
+        0 & 1 & 0 & 0
+    \end{pmatrix}^{-1}\!\!\!\!\!\!\!.
+\end{aligned}
+\ee
 This implies that
-S+(q) =
-
-
-
-
-0 0 1 0
-1 0 0 0
-0 1 0 0
-0 0 0 q−1
-
-
-
- F (q−1)
-
-
-
-
-1 0 0 0
-0 −1 0 0
-0 0 1 0
-0 0 0 1
-
-
-
- F (q−1)−1
-
-
-
-
-0 0 1 0
-1 0 0 0
-0 0 0 q−1
-0 1 0 0
-
-
-
-
-−1
-=
-
-
-
-
-
-
-
-
-0 0 1 0
-1 0 0 0
-0 1 0 0
-0 0 0 q
-
-
-
- F (q)
-
-
-
-
-1 0 0 0
-0 −1 0 0
-0 0 1 0
-0 0 0 1
-
-
-
- F (q)−1
-
-
-
-
-0 0 1 0
-1 0 0 0
-0 0 0 q−1
-0 1 0 0
-
-
-
-
-−1
-
-
-
-−T
-=
-
-
-
-
-1− q− 2q2 q2 q −q− q2
-1 + q + q2 1− q− q2 −1 + q + q2 1− q2
-−1− q q + q2 1− q− 2q2 2q2
-1− q2 −q 2q + q2 1− q− 2q2
-
-
-
- + O(q3)
-=
-
-
-
-
-1 0 0 0
-0 1 0 1
-0 0 1 0
-0 0 0 1
-
-
-
-
-
-
-
-
-1 0 0 0
-0 1 0 0
-−1 0 1 0
-0 0 0 1
-
-
-
-
-
-
-
-
-1 0 0 0
-0 1 0 0
-0 0 1 −q
-0 0 0 1
-
-
-
-··· .
-(96)
-The second equality follows from the duality of [
-9, Conj. 1] and can be explicitly proved in
-this example. This exactly agrees with the computations of Equation (88).
+\be
+\begin{aligned}
+  \mathsf{S}_+(q)
+  &\=\begin{pmatrix}
+        0 & 0 & 1 & 0\\
+        1 & 0 & 0 & 0\\
+        0 & 1 & 0 & 0\\
+        0 & 0 & 0 & q^{-1}
+    \end{pmatrix}
+    F(q^{-1})
+    \begin{pmatrix}
+        1 & 0 & 0 & 0\\
+        0 & -1 & 0 & 0\\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1
+    \end{pmatrix}
+    F(q^{-1})^{-1}
+    \begin{pmatrix}
+        0 & 0 & 1 & 0\\
+        1 & 0 & 0 & 0\\
+        0 & 0 & 0 & q^{-1}\\
+        0 & 1 & 0 & 0
+    \end{pmatrix}^{-1}\\
+    &\=
+    \left(\begin{pmatrix}
+            0 & 0 & 1 & 0\\
+            1 & 0 & 0 & 0\\
+            0 & 1 & 0 & 0\\
+            0 & 0 & 0 & q
+        \end{pmatrix}
+        F(q)
+        \begin{pmatrix}
+            1 & 0 & 0 & 0\\
+            0 & -1 & 0 & 0\\
+            0 & 0 & 1 & 0\\
+            0 & 0 & 0 & 1
+        \end{pmatrix}
+        F(q)^{-1}
+        \begin{pmatrix}
+            0 & 0 & 1 & 0\\
+            1 & 0 & 0 & 0\\
+            0 & 0 & 0 & q^{-1}\\
+            0 & 1 & 0 & 0
+        \end{pmatrix}^{-1}\right)^{-T}\\
+    &\=
+    \begin{pmatrix}
+    1 - q - 2q^2 & q^2 & q & -q - q^2\\
+    1 + q + q^2 & 1 - q - q^2 & -1 + q + q^2 & 1 - q^2\\
+    -1 - q & q + q^2 & 1 - q - 2q^2 & 2q^2\\
+    1 - q^2 & -q & 2q + q^2 & 1 - q - 2q^2
+    \end{pmatrix}
+    +O(q^3)\\
+    &\=
+    \begin{pmatrix}
+     1 & 0 & 0 & 0\\
+     0 & 1 & 0 & 1 \\
+     0 & 0 & 1 & 0 \\
+     0 & 0 & 0 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+     1 & 0 & 0 & 0\\
+     0 & 1 & 0 & 0 \\
+     -1 & 0 & 1 & 0 \\
+     0 & 0 & 0 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+     1 & 0 & 0 & 0\\
+     0 & 1 & 0 & 0 \\
+     0 & 0 & 1 & -q \\
+     0 & 0 & 0 & 1
+    \end{pmatrix}
+    \cdots\,.
+\end{aligned}
+\ee
+The second equality follows from the duality of~\cite[Conj.~1]{GGM:I} and can be explicitly proved in this example.
+This exactly agrees with the computations of Equation~\eqref{eq:AB41stokes}.

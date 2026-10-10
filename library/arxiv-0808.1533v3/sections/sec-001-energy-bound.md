@@ -7,228 +7,71 @@ section_number: null
 pages: 21-25
 source_pdf: 0808.1533v3.pdf
 source_sha256: 3e003cc35a4e5711
+text_source: latex
+latex_prose_ratio: 0.97
+latex_coverage_ratio: 1.0
 doc_brief: "On the third order helicity of magnetic fields on invariant domains in S³ — We introduce an alternative approach to the third order heli city of a volume preserving vector ﬁeld B, which leads us to a"
 ---
-In this section we indicate how the quantity H123(B; T ) invariant under frozen-in-ﬁeld de-
-formations provides a lower bound for the L2-energy E2(B) of a volume preserving ﬁeld B
-on M = S3. We restrict our considerations to the case of an invariant unlinked handlebody
-T , deﬁned in Section 4. For the notation used in this section see Appen dix C.
-Recall the deﬁnition
-E2(B) =
-∫
-M
-|B|2 = ‖B‖2
-L2(M ) . (7.1)
-The ordinary helicity H12(B) provides a well known lower bound (see [3, p. 123]):
-1
-λ1
-|H12(B)| ≤ E2(B),
-where λ1 is the ﬁrst eigenvalue of the elliptic self adjoint operator ∗ d : Ω 1(M) ↦→Ω 1(M)
-(known as the curl operator), ∗ denotes the Hodge star. Importance of such lower energy
-bounds, stems from an area of interest in the ideal magnetohydro dynamics, [32], as this
-constrains the phenomenon of “magnetic relaxation”, [14]. A need f or higher helicities can
-be justiﬁed by the fact that one may easily produce examples of vec tor ﬁelds B for which
-H12(B) vanishes, but the energy of the ﬁeld B still cannot be relaxed. For example, consider
-a classical case of Borromean ﬂux tubes T Borr with B smooth and vanishing outside the
-tubes. Furthermore, assume that orbits of B are just “parallel circles” inside each tube. By
-taking B = B1 + B2 + B3, bilinearity of H12( · , · ) on SVect( S3) and disjoint supports of Bi
-yield
-H12(B) = H12(B, B) =
-3∑
-i=1
-H12(Bi) +
-∑
-i⁄=j
-H12(Bi, Bj) = 0 ,
-where “cross-helicities” H12(Bi, Bj), i ⁄= j vanish by Formula (6.1), and self helicities H12(Bi)
-vanish because the average linking number of orbits is zero (orbits a re just parallel circles).
-21
-Nevertheless, Formula (6.2) tells us
-H123(B; T Borr) ⁄= 0,
-as a result we may regard H123(B; T ) as a possible “higher obstruction” to the energy relax-
-ation or the third order cross-helicity of B on T .
-To obtain a lower bound for E2(B) in such situations we notice that H123(B; T ) is the
-L2-inner product of the 6-forms: ∗(ω ∧ αω) and ιB1µ1 ∧ ιB2µ2 ∧ ιB3µ3. Indeed, from (4.4) we
-have
-H123(B; T ) =
-(
-∗(αω ∧ ω), ιB1µ1 ∧ ιB2µ2 ∧ ιB3µ3
-)
-L2Ω 6((S3)3) .
-Let CT = ‖αω ∧ ω‖L2, for a ﬁxed Riemannian product metric on ( S3)3 this constant depends
-on the domain T in ( S3)3. We estimate using the Cauchy-Schwarz inequality
-|H123(B; T )| ≤ ‖ αω ∧ ω‖L2‖ιB1µ1 ∧ ιB2µ2 ∧ ιB3µ3‖L2
-= CT
-(∫
-T
-(ιB1µ1 ∧ ιB2µ2 ∧ ιB3µ3) ∧ ∗(ιB1µ1 ∧ ιB2µ2 ∧ ιB3µ3)
-) 1
-2
-(1)
-= CT
-(∫
-T
-|B1|2|B2|2|B3|2 µ
-) 1
-2
-(2)
-= CT
-(∫
-T1
-|B1|2
-) 1
-2
-(∫
-T2
-|B2|2
-) 1
-2
-(∫
-T3
-|B3|2
-) 1
-2
-≤ CT E2(B)
-3
-2 ,
-(7.2)
-where E2(B) =
-∫
-S3 |B|2. To observe (1) ﬁrst note that for any pair of forms: α ∈ Ω k(M),
-and β ∈ Ω j(N), on Riemannian manifolds M and N, on the product M × N we have
-∗M ×N (π∗
-M (α) ∧ π∗
-N (β)) = ( ∗M π∗
-M α) ∧ (∗N π∗
-N β), (7.3)
-where πM : M × N − →M and πN : M × N − →N are the natural projections, (the proof is
-a simple calculation in an orthogonal frame of the product and is left t o the reader). Now,
-step (1) in (7.2) follows by applying (7.3) to the integrand, and obser ving in the coframe
-{ηi
-k}:
-ιBiµi ∧ ∗ιBiµi = ( a1ηi
-2 ∧ ηi
-3 − a2ηi
-1 ∧ ηi
-3 + a3ηi
-1 ∧ ηi
-2) ∧ (a1ηi
-1 − a2ηi
-2 + a3ηi
-3)
-= ( a2
-1 + a2
-2 + a2
-3) ηi
-1 ∧ ηi
-2 ∧ ηi
-3 = |Bi|2ηi
-1 ∧ ηi
-2 ∧ ηi
-3 = |Bi|2µi,
-where Bi = (a1, a2, a3). Step (2) in (7.2) follows from Fubini Theorem.
-Next, we aim to provide an estimate for CT . For this purpose we review some basic
-L2-theory of the operator d−1 (i.e. inverse of the exterior derivative d). The main goal is
-to estimate an L2-norm of the potential αω of ω in (4.2). Following the standard elliptic
-theory of diﬀerential forms, [34], the potential αω in (4.2) can be obtained via a solution to
-the Neumann problem for 2-forms on ~T (see Appendix C)
-{
-∆ φN = ω, in ~T
-n φN = n dφN = 0, on ∂~T , (7.4)
-22
-where n stands for the normal component of a diﬀerential form, and ∆ = dδ + δd, δ = ± ∗d∗,
-(c.f. [34]). As T is a domain with corners we replace it by a slightly larger domain ~T in (S3)3
-with the same topology (i.e. T is a deformation retract of ~T ) but with smooth boundary ∂~T .
-(One may argue that it is not really necessary, since T is Lipschitz and elliptic problems,
-such as (7.4) are well posed on Lipschitz domains, [31]). Because of ( i) in Theorem 4.3, we
-may use the restriction of
-αω = δφN , (7.5)
-to T (see Appendix C for justiﬁcation of (7.5)). Associated to (7.4) is th e Neumann Laplacian
-∆ N : H 2Ω 2
-N (~T ) − →L2Ω 2(~T ),
-which has a discrete positive spectrum {λi,N } and eigenvalues satisfy the variational principle
-called Rayleigh-Ritz quotient, [11]. The ﬁrst (principal) eigenvalue λ1,N may be expressed as
-λ1,N = inf
-(‖dϕ‖2
-L2 + ‖δϕ‖2
-L2
-‖ϕ‖2
-L2
-⏐
-⏐
-⏐ ϕ ∈ H 1Ω 2
-N (M) ∩ H2
-N (M)⊥
-)
-We denote the inverse of ∆ N by
-GN : L2Ω 2(~T ) − →H 2Ω 2
-N (~T ),
-which restricts to a compact, self-adjoint operator on L2. As a result the spectrum of GN
-is discrete and given as {1/λi,N }. Note that based on these considerations we may deﬁne
-d−1 := δGN .
-Theorem 7.1 (Energy bound) . For every volume preserving vector ﬁeld B which has an
-invariant unlinked domain T , the L2-energy of B on S3 is bounded below by the third order
-helicity H123(B; T ), as follows
-|H123(B; T )| ≤ CT (E2(B))
-3
-2 . (7.6)
-Also, we may estimate the constant CT :
-CT ≤ 1√
-λ1,N
-‖ω‖2
-L∞Ω 2( eT )(Vol(S3))3, (7.7)
-where λ1,N is the ﬁrst eigenvalue of the Neumann Laplacian on Ω 2(~T ).
-Proof. We estimate
-‖αω‖2
-L2 = ‖δφN ‖2
-L2 ≤ ‖ dφN ‖2
-L2 + ‖δφN ‖2
-L2
-= |(∆ φN , φN )| ≤ ‖ ω‖L2‖φN ‖L2,
-23
-where we used the Green’s formula [34, p. 60] and boundary condit ions of (7.4) in the second
-identity. Now, because φN = GN ω, and it is a well known fact that ‖GN ‖L2 = 1
-λ1,N
-, ( GN is
-compact self adjoint on L2) we obtain:
-‖αω‖L2 ≤ 1√
-λ1,N
-‖ω‖L2 .
-As a result we estimate CT :
-CT = ‖αω ∧ ω‖L2 ≤ ‖ ω‖L∞‖αω‖L2
-≤ 1√
-λ1,N
-‖ω‖L2‖ω‖L∞.
-Notably, the best energy estimate so far has been obtained by Fre edman and He, [15],
-for the L3/2-energy of B, in the case when B admits an invariant domain T modeled on
-an n-component link L = {L1, . . . , Ln} in R3. Their estimate is based on the asymptotic
-crossing number and reads
-E3/2(B) ≥
-(π
-16
-) 1/4
-( n∑
-k=1
-ac(Lk, L)|Flux(Bk)|
-)
-· min
-1≤k≤n
-{|Flux(Bk)|}, (7.8)
-where the asymptotic crossing numbers ac( Lk, L) for Borromean links can be estimated below
-by a smallest genus among surfaces in R3 \ {L1 ∪ . . . ∪ ˆLk ∪ . . . ∪ Ln} with a single boundary
-component Li. Since L3/2-energy of B bounds the L2-energy, inequality (7.8) leads to a
-lower estimate purely in terms of ﬂuxes and topological data. It is no t clear to the author
-if this approach can be extended to the case of invariant handlebod ies considered in Section
-4. A diﬀerent, more optimal estimate, has been obtained by Lauren ce and Stredulinsky, via
-the Massey product formula, in [26], but the proof is provided only in a special case of the
-vector ﬁeld B.
-Contrary to these lower bounds, which are given in terms of topolog ical data, the estimate
-in (7.6) depends on the geometry of the domain T , and also ‖ω‖L∞. Unfortunately, ω blows
-up on the diagonals ∆ ⊂ (S3)3, and as a result the estimate is meaningless when the
-handlebodies Ti get close to each other during the evolution of the magnetic ﬁeld B. At
-this point, we need an assumption for Ti to stay 1cm apart during the evolution. Another
-drawback is that λ1,N is a geometric constant which is altered during the evolution as well.
-If we consider the situation in which the boundaries of Ti are invariant during the evolution,
-the estimate may be useful. Under such assumption, which occurs w henever the velocity
-ﬁeld v of plasma in (1.1) is tangent to ∂Ti, the bound in (7.7) stays constant.
-24
+[]{#sec:energy label="sec:energy"}
+
+In this section we indicate how the quantity $\mathsf{H}_{123}(B;\mathcal{T})$ invariant under frozen-in-field deformations provides a lower bound for the $L^2$-energy $E_2(B)$ of a volume preserving field $B$ on $M=S^3$. We restrict our considerations to the case of an invariant unlinked handlebody $\mathcal{T}$, defined in Section [\[sec:handlebody\]](#sec:handlebody){reference-type="ref" reference="sec:handlebody"}. For the notation used in this section see Appendix [\[apx:C\]](#apx:C){reference-type="ref" reference="apx:C"}.
+
+Recall the definition $$\begin{equation}
+\label{eq:energy}
+ E_2(B)=\int_M |B|^2 = \|B\|^2_{L^2(M)}\ .
+\end{equation}$$ The ordinary helicity $\mathsf{H}_{12}(B)$ provides a well known lower bound (see [@Khesin98 p. 123]): $$\frac{1}{\lambda_1}|\mathsf{H}_{12}(B)|\leq  E_2(B),$$ where $\lambda_1$ is the first eigenvalue of the elliptic self adjoint operator $\ast\,d:\Omega^1(M)\mapsto \Omega^1(M)$ (known as the curl operator), $\ast$ denotes the Hodge star. Importance of such lower energy bounds, stems from an area of interest in the ideal magnetohydrodynamics, [@Priest84], as this constrains the phenomenon of "magnetic relaxation", [@Freedman99]. A need for higher helicities can be justified by the fact that one may easily produce examples of vector fields $B$ for which $\mathsf{H}_{12}(B)$ vanishes, but the energy of the field $B$ still cannot be relaxed. For example, consider a classical case of Borromean flux tubes $\mathcal{T}^\text{Borr}$ with $B$ smooth and vanishing outside the tubes. Furthermore, assume that orbits of $B$ are just "parallel circles" inside each tube. By taking $B=B_1+B_2+B_3$, bilinearity of $\mathsf{H}_{12}(\,\cdot\,,\,\cdot\,)$ on $\text{\rm SVect}(S^3)$ and disjoint supports of $B_i$ yield $$\mathsf{H}_{12}(B)=\mathsf{H}_{12}(B,B)=\sum^3_{i=1}\mathsf{H}_{12}(B_i)+\sum_{i\neq j} \mathsf{H}_{12}(B_i,B_j)=0,$$ where "cross-helicities" $\mathsf{H}_{12}(B_i,B_j)$, $i\neq j$ vanish by Formula [\[eq:helicity12-flux-tubes\]](#eq:helicity12-flux-tubes){reference-type="eqref" reference="eq:helicity12-flux-tubes"}, and self helicities $\mathsf{H}_{12}(B_i)$ vanish because the average linking number of orbits is zero (orbits are just parallel circles). Nevertheless, Formula [\[eq:helicity-fluxes\]](#eq:helicity-fluxes){reference-type="eqref" reference="eq:helicity-fluxes"} tells us $$\mathsf{H}_{123}(B;\mathcal{T}^\text{Borr})\neq 0,$$ as a result we may regard $\mathsf{H}_{123}(B;\mathcal{T})$ as a possible "higher obstruction" to the energy relaxation or the third order cross-helicity of $B$ on $\mathcal{T}$.
+
+To obtain a lower bound for $E_2(B)$ in such situations we notice that $\mathsf{H}_{123}(B;\mathcal{T})$ is the $L^2$-inner product of the $6$-forms: $\ast(\omega\wedge\alpha_\omega)$ and $\iota_{B_1}\mu_1\wedge \iota_{B_2}\mu_2\wedge \iota_{B_3}\mu_3$. Indeed, from [\[eq:mu_123-helicity\]](#eq:mu_123-helicity){reference-type="eqref" reference="eq:mu_123-helicity"} we have $$\mathsf{H}_{123}(B;\mathcal{T})=\bigl(\ast(\alpha_\omega\wedge \omega),\iota_{B_1}\mu_1\wedge \iota_{B_2}\mu_2\wedge \iota_{B_3}\mu_3\bigr)_{L^2\Omega^6((S^3)^3)}\ .$$ Let $C_\mathcal{T}=\|\alpha_\omega\wedge \omega\|_{L^2}$, for a fixed Riemannian product metric on $(S^3)^3$ this constant depends on the domain $\mathcal{T}$ in $(S^3)^3$. We estimate using the Cauchy-Schwarz inequality $$\begin{equation}
+\label{eq:energy-est}
+\begin{split}
+ |\mathsf{H}_{123}(B;\mathcal{T})| & \leq  \|\alpha_\omega\wedge \omega\|_{L^2}\|\iota_{B_1}\mu_1\wedge \iota_{B_2}\mu_2\wedge \iota_{B_3}\mu_3\|_{L^2}\\
+ & =  C_\mathcal{T}\Bigl(\int_{\mathcal{T}}(\iota_{B_1}\mu_1\wedge \iota_{B_2}\mu_2\wedge \iota_{B_3}\mu_3)\wedge \ast(\iota_{B_1}\mu_1\wedge \iota_{B_2}\mu_2\wedge \iota_{B_3}\mu_3)\Bigr)^\frac{1}{2}\\
+ & \stackrel{(1)}{=}  C_\mathcal{T}\Bigl(\int_{\mathcal{T}}|B_1|^2|B_2|^2|B_3|^2\,\mu\Bigr)^\frac{1}{2}\\
+ & \stackrel{(2)}{=} C_\mathcal{T}\Bigl(\int_{\mathcal{T}_1}|B_1|^2\Bigr)^\frac{1}{2}\Bigl(\int_{\mathcal{T}_2}|B_2|^2\Bigr)^\frac{1}{2}\Bigl(\int_{\mathcal{T}_3}|B_3|^2\Bigr)^\frac{1}{2}\\
+ & \leq    C_\mathcal{T} E_2(B)^\frac{3}{2},
+\end{split}
+\end{equation}$$ where $E_2(B)=\int_{S^3} |B|^2$. To observe (1) first note that for any pair of forms: $\alpha\in \Omega^k(M)$, and $\beta\in \Omega^j(N)$, on Riemannian manifolds $M$ and $N$, on the product $M\times N$ we have $$\begin{equation}
+\label{eq:hodge-product}
+  \ast_{M\times N}(\pi^\ast_M(\alpha)\wedge \pi^\ast_N(\beta))=(\ast_M \pi^\ast_M \alpha)\wedge (\ast_N \pi^\ast_N \beta),
+\end{equation}$$ where $\pi_M:M\times N\longrightarrow M$ and $\pi_N:M\times N\longrightarrow N$ are the natural projections, (the proof is a simple calculation in an orthogonal frame of the product and is left to the reader). Now, step (1) in [\[eq:energy-est\]](#eq:energy-est){reference-type="eqref" reference="eq:energy-est"} follows by applying [\[eq:hodge-product\]](#eq:hodge-product){reference-type="eqref" reference="eq:hodge-product"} to the integrand, and observing in the coframe $\{\eta^i_k\}$: $$\begin{eqnarray*}
+ \iota_{B_i}\mu_i\wedge \ast \iota_{B_i}\mu_i & = & (a_1\eta^i_2\wedge\eta^i_3-a_2\eta^i_1\wedge\eta^i_3+a_3\eta^i_1\wedge\eta^i_2)\wedge (a_1\eta^i_1-a_2\eta^i_2+a_3\eta^i_3)\\
+ & = & (a^2_1+a^2_2+a^2_3)\, \eta^i_1\wedge\eta^i_2\wedge\eta^i_3 = |B_i |^2 \eta^i_1\wedge\eta^i_2\wedge\eta^i_3=|B_i |^2 \mu_i,
+\end{eqnarray*}$$ where $B_i=(a_1,a_2,a_3)$. Step (2) in [\[eq:energy-est\]](#eq:energy-est){reference-type="eqref" reference="eq:energy-est"} follows from Fubini Theorem.
+
+Next, we aim to provide an estimate for $C_\mathcal{T}$. For this purpose we review some basic $L^2$-theory of the operator $d^{-1}$ (i.e. inverse of the exterior derivative $d$). The main goal is to estimate an $L^2$-norm of the potential $\alpha_\omega$ of $\omega$ in [\[eq:omega-exact\]](#eq:omega-exact){reference-type="eqref" reference="eq:omega-exact"}. Following the standard elliptic theory of differential forms, [@Schwarz95], the potential $\alpha_\omega$ in [\[eq:omega-exact\]](#eq:omega-exact){reference-type="eqref" reference="eq:omega-exact"} can be obtained via a solution to the Neumann problem for $2$-forms on $\widetilde{\mathcal{T}}$ (see Appendix [\[apx:C\]](#apx:C){reference-type="ref" reference="apx:C"}) $$\begin{equation}
+\label{eq:neumann-problem}
+ \begin{cases}
+  \Delta \phi_N=\omega,\qquad \text{in } \widetilde{\mathcal{T}}\\
+  \mathbf{n}\,\phi_N=\mathbf{n}\,d\phi_N=0,\qquad \text{on } \partial \widetilde{\mathcal{T}},
+ \end{cases}
+\end{equation}$$ where $\mathbf{n}$ stands for the normal component of a differential form, and $\Delta=d\delta+\delta d$, $\delta=\pm\ast d\ast$, (c.f. [@Schwarz95]). As $\mathcal{T}$ is a domain with corners we replace it by a slightly larger domain $\widetilde{\mathcal{T}}$ in $(S^3)^3$ with the same topology (i.e. $\mathcal{T}$ is a deformation retract of $\widetilde{\mathcal{T}}$) but with smooth boundary $\partial\widetilde{\mathcal{T}}$. (One may argue that it is not really necessary, since $\mathcal{T}$ is Lipschitz and elliptic problems, such as [\[eq:neumann-problem\]](#eq:neumann-problem){reference-type="eqref" reference="eq:neumann-problem"} are well posed on Lipschitz domains, [@Mitrea-Mitrea-Taylor01]). Because of $(i)$ in Theorem [\[th:invariance-th\]](#th:invariance-th){reference-type="ref" reference="th:invariance-th"}, we may use the restriction of $$\begin{equation}
+\label{eq:potential-neumann}
+\alpha_\omega=\delta\phi_N,
+\end{equation}$$ to $\mathcal{T}$ (see Appendix [\[apx:C\]](#apx:C){reference-type="ref" reference="apx:C"} for justification of [\[eq:potential-neumann\]](#eq:potential-neumann){reference-type="eqref" reference="eq:potential-neumann"}). Associated to [\[eq:neumann-problem\]](#eq:neumann-problem){reference-type="eqref" reference="eq:neumann-problem"} is the Neumann Laplacian $$\Delta_N:H^2\Omega^2_N(\widetilde{\mathcal{T}})\longrightarrow L^2\Omega^2(\widetilde{\mathcal{T}}),$$ which has a discrete positive spectrum $\{\lambda_{i,N}\}$ and eigenvalues satisfy the variational principle called *Rayleigh-Ritz quotient*, [@Chavel84]. The first (principal) eigenvalue $\lambda_{1,N}$ may be expressed as $$\lambda_{1,N}=\inf\left(   \frac{\|d\varphi\|^2_{L^2}+\|\delta\varphi\|^2_{L^2}}{\|\varphi\|^2_{L^2}}\ \Bigl|\ \varphi\in H^1\Omega^2_N(M)\cap \mathcal{H}^2_N(M)^\perp\right)$$ We denote the inverse of $\Delta_N$ by $$G_N:L^2\Omega^2(\widetilde{\mathcal{T}})\longrightarrow H^2\Omega^2_N(\widetilde{\mathcal{T}}),$$ which restricts to a compact, self-adjoint operator on $L^2$. As a result the spectrum of $G_N$ is discrete and given as $\{1/\lambda_{i,N}\}$. Note that based on these considerations we may define $d^{-1}:=\delta G_N$.
+
+::: theorem
+For every volume preserving vector field $B$ which has an invariant unlinked domain $\mathcal{T}$, the $L^2$-energy of $B$ on $S^3$ is bounded below by the third order helicity $\mathsf{H}_{123}(B;\mathcal{T})$, as follows $$\begin{equation}
+\label{eq:H123-estimate}
+  |\mathsf{H}_{123}(B;\mathcal{T})|\leq C_\mathcal{T} (E_2(B))^\frac{3}{2}.
+\end{equation}$$ Also, we may estimate the constant $C_\mathcal{T}$: $$\begin{equation}
+\label{eq:C_T-estimate}
+  C_\mathcal{T}\leq \frac{1}{\sqrt{\lambda_{1,N}}}\|\omega\|^2_{L^\infty\Omega^2(\widetilde{\mathcal{T}})}(\text{Vol}(S^3))^3,
+\end{equation}$$ where $\lambda_{1,N}$ is the first eigenvalue of the Neumann Laplacian on $\Omega^2(\widetilde{\mathcal{T}})$.
+:::
+
+::: proof
+*Proof.* We estimate $$\begin{eqnarray*}
+ \|\alpha_\omega\|^2_{L^2} = \|\delta \phi_N\|^2_{L^2} & \leq & \|d\phi_N\|^2_{L^2}+\|\delta\phi_N\|^2_{L^2}\\
+ & = & |(\Delta \phi_N,\phi_N)| \leq  \|\omega\|_{L^2}\|\phi_N\|_{L^2},
+\end{eqnarray*}$$ where we used the Green's formula [@Schwarz95 p. 60] and boundary conditions of [\[eq:neumann-problem\]](#eq:neumann-problem){reference-type="eqref" reference="eq:neumann-problem"} in the second identity. Now, because $\phi_N=G_N\omega$, and it is a well known fact that $\|G_N\|_{L^2}=\frac{1}{\lambda_{1,N}}$, ($G_N$ is compact self adjoint on $L^2$) we obtain: $$\|\alpha_\omega\|_{L^2}\leq \frac{1}{\sqrt{\lambda_{1, N}}} \|\omega\|_{L^2}\ .$$ As a result we estimate $C_\mathcal{T}$: $$\begin{eqnarray*}
+ C_\mathcal{T}=\|\alpha_\omega\wedge\omega\|_{L^2} & \leq & \|\omega\|_{L^\infty}\|\alpha_\omega\|_{L^2}\\
+ & \leq &  \frac{1}{\sqrt{\lambda_{1, N}}} \|\omega\|_{L^2}\|\omega\|_{L^\infty}.
+\end{eqnarray*}$$ ◻
+:::
+
+Notably, the best energy estimate so far has been obtained by Freedman and He, [@Freedman91-2], for the $L^{3/2}$-energy of $B$, in the case when $B$ admits an invariant domain $\mathcal{T}$ modeled on an $n$-component link $L=\{L_1,\ldots,L_n\}$ in $\mbox{\bbb R}^3$. Their estimate is based on the asymptotic crossing number and reads $$\begin{equation}
+\label{eq:energy-free-he}
+ E_{3/2}(B)\geq \Bigl(\frac{\pi}{16}\Bigr)^{1/4}\left(\sum^n_{k=1} \text{ac}(L_k,L)|\text{Flux}(B_k)|\right)\cdot \min_{1\leq k\leq n}\{|\text{Flux}(B_k)|\},
+\end{equation}$$ where the asymptotic crossing numbers $\text{ac}(L_k,L)$ for Borromean links can be estimated below by a smallest genus among surfaces in $\mbox{\bbb R}^3\setminus \{L_1\cup\ldots\cup\hat{L}_k\cup\ldots\cup L_n\}$ with a single boundary component $L_i$. Since $L^{3/2}$-energy of $B$ bounds the $L^2$-energy, inequality [\[eq:energy-free-he\]](#eq:energy-free-he){reference-type="eqref" reference="eq:energy-free-he"} leads to a lower estimate purely in terms of fluxes and topological data. It is not clear to the author if this approach can be extended to the case of invariant handlebodies considered in Section [\[sec:handlebody\]](#sec:handlebody){reference-type="ref" reference="sec:handlebody"}. A different, more optimal estimate, has been obtained by Laurence and Stredulinsky, via the Massey product formula, in [@Laurence-Stredulinsky00a], but the proof is provided only in a special case of the vector field $B$.
+
+Contrary to these lower bounds, which are given in terms of topological data, the estimate in [\[eq:H123-estimate\]](#eq:H123-estimate){reference-type="eqref" reference="eq:H123-estimate"} depends on the geometry of the domain $\mathcal{T}$, and also $\|\omega\|_{L^\infty}$. Unfortunately, $\omega$ blows up on the diagonals $\mathbf{\Delta}\subset (S^3)^3$, and as a result the estimate is meaningless when the handlebodies $\mathcal{T}_i$ get close to each other during the evolution of the magnetic field $B$. At this point, we need an assumption for $\mathcal{T}_i$ to stay *1cm* apart during the evolution. Another drawback is that $\lambda_{1,N}$ is a geometric constant which is altered during the evolution as well. If we consider the situation in which the boundaries of $\mathcal{T}_i$ are invariant during the evolution, the estimate may be useful. Under such assumption, which occurs whenever the velocity field $v$ of plasma in [\[eq:Eulers-eq\]](#eq:Eulers-eq){reference-type="eqref" reference="eq:Eulers-eq"} is tangent to $\partial\mathcal{T}_i$, the bound in [\[eq:C_T-estimate\]](#eq:C_T-estimate){reference-type="eqref" reference="eq:C_T-estimate"} stays constant.

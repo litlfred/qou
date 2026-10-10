@@ -7,198 +7,395 @@ section_number: 2
 pages: 15-19
 source_pdf: 0905.0488v5.pdf
 source_sha256: fcf8dee7cd3849b9
+text_source: latex
+latex_prose_ratio: 0.986
+latex_coverage_ratio: 0.747
 doc_brief: "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES AMNON YEKUTIELI — Let X be a smooth algebraic variety over a ﬁeldK containing the real numbers."
 ---
-In this section we recall material from the companion papers [Ye7] and [Ye9]. For
-the rest of the paper we work over a base ﬁeldK of characteristic 0. All algebras
-are by defaultK-algebras, and all homomorphisms are by default overK. Further
-conventions are that associative algebras are unital, and commutative algebras are
-associative (and unital). For K-modules M,N we writeM⊗N := M⊗KN and
-Hom(M,N ) := HomK(M,N ).
-Deﬁnition 2.1.Aparameter K-algebraisacompletelocalnoetheriancommutative
-K-algebraR, with maximal idealm and residue ﬁeldR/m = K. We sometimes say
-that (R, m) is a parameter K-algebra. For i≥0 we letRi := R/mi+1. The K-
-algebra homomorphismR→K is called the augmentation ofR.
-By homomorphism of parameter algebrasR→R′we mean aK-algebra homo-
-morphism (it is automatically a local homomorphism).
-Note thatR can be recovered fromm, sinceR = K⊕m as K-modules, with the
-obvious multiplication.
-Example 2.2. The most important parameter algebra in deformation theory is
-K[[ℏ]], the ring of formal power series in the variableℏ. A K[[ℏ]]-deformation (see
-below) is sometimes called a “1-parameter formal deformation”.
-Remark 2.3. Some of the deﬁnitions and results in the paper hold for a ﬁeldK
-of arbitrary characteristic. (A few of them hold even for any commutative ringK
-and any commutativeK-algebraR.) A rule of thumb is that whenever exponential
-functionsoccur, weneedcharacteristic 0. Forthesakeofclaritywerestrictattention
-to a ﬁeld of characteristic0 and parameter algebras over it.
-16 AMNON YEKUTIELI
-Let (R, m) be a parameter algebra, and letM be an R-module. The m-adic
-completion ofM is theR-module ˆM := lim←i (Ri⊗RM). The moduleM is called
-m-adically completeif the canonical homomorphismM→ˆM is bijective. SinceR
-is noetherian, the m-adic completion of anyR-module is m-adically complete; see
-[Ye5, Corollary 3.5]. (This may be false whenR is not noetherian.)
-Given aK-module V and anR-module M, we letMˆ⊗V := ˆM⊗V, the m-adic
-completion of theR-module M⊗V.
-Let X be a topological space. Recall that a sheafM of R-modules on X is
-called ﬂatif for every pointx∈X the stalkMx is a ﬂatR-module. The m-adic
-completion ofM is the sheafˆM := lim←i (Ri⊗RM). The sheafM is called m-
-adically completeif the canonical sheaf homomorphismM→ˆMis an isomorphism.
-We need some properties of sheaves onX. SupposeU ={Uk}k∈K is a collection
-of open sets inX. Fork0,...,km∈K we writeUk0,...,km :=Uk0∩···∩Ukm.
-Deﬁnition 2.4.LetN be a sheaf of abelian groups on a topological spaceX.
-(1) An open setU ⊂X will be calledN-acyclic if the derived functor sheaf
-cohomology satisﬁesHi(U,N ) = 0 for alli> 0.
-(2) Now suppose U ={Uk}k∈K is a collection of open sets inX. We say
-that the collectionU isN-acyclic if all the ﬁnite intersectionsUk0,...,km are
-N-acyclic.
-(3) We say thatthere are enoughN-acyclic open setsif for any open setU⊂X,
-and any open coveringU ofU, there exists anN-acyclic open coveringU′
-of U which reﬁnesU.
-Example 2.5. Here are a few typical examples of a topological spaceX, and a
-sheafN, such that there are enoughN-acyclic open sets.
-(1) X is an algebraic variety over the ﬁeldK (i.e. an integral ﬁnite type sepa-
-rated K-scheme), withstructuresheafOX, andN isacoherent OX-module.
-Then any aﬃne open setU isN-acyclic.
-(2) X is a complex analytic manifold, with structure sheafOX, andN is a
-coherentOX-module. Here we takeK = C of course. Then any Stein open
-set U isN-acyclic.
-(3) X is a diﬀerentiable manifold, with structure sheafOX, andN is anyOX-
-module. The ﬁeld isK = R. Then any open setU isN-acyclic.
-(4) X is a diﬀerentiable manifold, andN is a locally constant sheaf of abelian
-groups. Then any suﬃciently small simply connected open setU isN-
-acyclic.
-In order to get a good behavior ofm-adically complete sheaves, we shall consider
-deformations in the following setup:
-Setup 2.6. K is a ﬁeld of characteristic0; (R, m) is a parameterK-algebra; X is
-a topological space; andOX is a sheaf of commutativeK-algebras onX. Moreover
-X has enoughOX-acyclic open sets.
-As Example 2.5 shows this covers many instances. We assume Setup 2.6 for the
-rest of this section.
-Deﬁnition 2.7.An associativeR-deformation ofOX is a sheafA of ﬂatm-adically
-complete associativeR-algebras onX, together with an isomorphism of sheaves of
-K-algebras ψ: K⊗RA→OX, called anaugmentation.
-LetA andA′be associative R-deformations ofOX. A gauge transformation
-g :A→A′is an isomorphism of sheaves ofR-algebras that commutes with the
-augmentations toOX.
-TWISTED DEFORMATION QUANTIZATION 17
-Similarly, given a commutativeK-algebraC, anassociativeR-deformation ofC
-is a ﬂatm-adically complete associativeR-algebraA, together with an isomorphism
-of K-algebras K⊗RA∼=C.
-Observe that we do not impose a condition that an associative deformationA
-should be “locally diﬀerential”; see Remarks 3.7 and 3.8 for a discussion.
-Recall that a Poisson bracket on a commutativeR-algebra A is an R-bilinear
-pairing{−,−}: A×A →A which is a Lie bracket, and is a biderivation (a
-derivation in each variable). The pair(A,{−,−}) is called aPoisson R-algebra. A
-homomorphism of PoissonR-algebras A→A′is an algebra homomorphism that
-respects the Poisson brackets. All of this makes sense also for sheaves ofR-algebras.
-Deﬁnition2.8.WeviewOX asasheafofPoisson K-algebraswiththezerobracket.
-A Poisson R-deformation ofOX is a sheafA of ﬂatm-adically complete Poisson
-R-algebras onX, together with an isomorphism of sheaves of PoissonK-algebras
-ψ: K⊗RA→OX, called anaugmentation.
-LetA andA′be Poisson R-deformations ofOX. A gauge transformationg :
-A→A′is an isomorphism of sheaves of PoissonR-algebras that commutes with
-the augmentations toOX.
-Similarly, given a commutativeK-algebra C, a Poisson R-deformation ofC is
-a ﬂatm-adically complete PoissonR-algebra A, together with an isomorphism of
-Poisson K-algebras K⊗RA∼=A.
-According to [Ye9, Proposition 4.5], ifA is an associative (resp. Poisson)R-
-deformation ofOX, andU⊂X is anOX-acyclic open set, thenA := Γ(U,A) is an
-associative (resp. Poisson)R-deformation ofC := Γ(U,OX). The important fact is
-that A is a ﬂat andm-adically completeR-module.
-LetA be an associative (resp. Poisson)R-deformation ofOX. It has an R-
-bilinear Lie bracket[−,−] on it. In the associative case let⋆denote the multipli-
-cation. Given local sectionsa1,a 2∈A, their bracket is[a1,a 2] :=a1⋆a2−a2⋆a1.
-In the Poisson case we take the Poisson bracket:[a1,a 2] := {a1,a 2}. Note that
-[A,A]⊂mA. According to [Ye9, Corollary 3.8], for everyj≥0 the sheaf mjA is
-m-adically complete. Thus we obtain a sheaf of pronilpotent groups
-(2.9) Exp(mjA) := lim
-←i
-Exp(mjA/mj+iA),
+\label{sec:defs-alg-vars}
+
+In this section we recall material from the companion papers
+\cite{Ye7} and \cite{Ye9}.
+For the rest of the paper we work over a base field $\K$ of characteristic
+$0$. All algebras are by default $\K$-algebras, and all homomorphisms are by
+default over $\K$. Further conventions are that associative algebras are
+unital, and commutative algebras are associative (and unital). 
+For $\K$-modules $M, N$ we write $M \ot N := M \ot_{\K} N$  and
+$\opn{Hom}(M, N) := \opn{Hom}_{\K}(M, N)$.
+
+\begin{dfn} \label{dfn:13}
+A {\em parameter $\K$-algebra} is a 
+complete local noetherian commutative
+$\K$-algebra $R$, with maximal ideal $\m$ and residue field 
+$R / \m = \K$.
+We sometimes say that $(R, \m)$ is a parameter $\K$-algebra.
+For $i \geq 0$ we let
+$R_i := R / \m^{i+1}$.
+The $\K$-algebra homomorphism $R \to \K$ is called the 
+augmentation of $R$.
+
+By homomorphism of parameter algebras $R \to R'$ we mean a $\K$-algebra
+homomorphism (it is automatically a local homomorphism).
+\end{dfn}
+
+Note that $R$ can be recovered from $\m$, since
+$R = \K \oplus \m$ as $\K$-modules, with the obvious multiplication. 
+
+\begin{exa}
+The most important parameter algebra in deformation theory is
+$\K[[\hbar]]$, the ring of formal power series in the variable
+$\hbar$. A $\K[[\hbar]]$-deformation (see below) is sometimes called
+a ``$1$-parameter formal deformation''. 
+\end{exa}
+
+\begin{rem}
+Some of the definitions and results in the paper hold for a field $\K$ of
+arbitrary characteristic.
+(A few of them hold even for any commutative ring $\K$ and any 
+commutative $\K$-algebra $R$.) A rule of thumb is that
+whenever exponential functions occur, we need characteristic $0$. For the sake
+of clarity we restrict attention to a field of characteristic $0$ and parameter
+algebras over it.
+\end{rem}
+
+Let $(R, \m)$ be a parameter algebra, and let $M$ be an $R$-module. 
+The $\m$-adic completion of $M$ is the $R$-module
+$\what{M} :=  \lim_{\leftarrow i}\, (R_i \otimes_R M)$. 
+The module $M$ is called {\em $\m$-adically complete} if the
+canonical homomorphism
+$M \to \what{M}$ is bijective. 
+Since $R$ is noetherian, the $\m$-adic completion of any $R$-module is 
+$\m$-adically complete; see \cite[Corollary 3.5]{Ye5}. (This may be false when
+$R$ is not noetherian.) 
+
+Given a $\K$-module $V$ and an $R$-module $M$, we let
+$M \hot V := \what{M \ot V}$, the $\m$-adic completion of the $R$-module 
+$M \ot V$.  
+
+Let $X$ be a topological space. Recall that a sheaf $\mcal{M}$ 
+of $R$-modules on $X$ is called {\em flat} if for every point 
+$x \in X$ the stalk $\mcal{M}_x$ is a flat $R$-module. 
+The {\em $\m$-adic completion} of $\mcal{M}$ is the sheaf 
+$\what{\mcal{M}} := \lim_{\leftarrow i}\, (R_i \otimes_R \mcal{M})$.
+The sheaf $\mcal{M}$ is called {\em $\m$-adically complete} if the
+canonical sheaf homomorphism 
+$\mcal{M} \to \what{\mcal{M}}$ is an isomorphism.
+
+We need some properties of sheaves on $X$.
+Suppose $\bsym{U} = \{ U_k \}_{k \in K}$ is a collection of
+open sets in $X$. For $k_0, \ldots, k_m \in K$ we write
+$U_{k_0, \ldots, k_m} := U_{k_0} \cap \cdots \cap U_{k_m}$.
+
+\begin{dfn} \label{dfn:23}
+Let $\mcal{N}$ be a sheaf of abelian groups on a topological space
+$X$. 
+\begin{enumerate}
+\item An open set $U \subset X$ will be called {\em
+$\mcal{N}$-acyclic} if the derived functor sheaf cohomology satisfies
+$\mrm{H}^i (U, \mcal{N}) = 0$ for all $i > 0$.
+
+\item Now suppose $\bsym{U} = \{ U_k \}_{k \in K}$ is a collection of
+open sets in $X$. We say that the collection $\bsym{U}$ is
+{\em $\mcal{N}$-acyclic} if all the finite intersections
+$U_{k_0, \ldots, k_m}$ are $\mcal{N}$-acyclic.
+
+\item We say that {\em there are enough $\mcal{N}$-acyclic open
+sets} if for any open set $U \subset X$, and any open covering
+$\bsym{U}$ of $U$, there exists an $\mcal{N}$-acyclic open covering
+$\bsym{U}'$ of $U$ which refines $\bsym{U}$.
+\end{enumerate}
+\end{dfn}
+
+\begin{exa} \label{exa:20}
+Here are a few typical examples of a topological space $X$, and a
+sheaf $\mcal{N}$, such that there are enough $\mcal{N}$-acyclic 
+open sets.
+\begin{enumerate}
+\item $X$ is an algebraic variety over the field $\K$
+(i.e.\ an integral finite type separated  $\K$-scheme), with structure
+sheaf $\mcal{O}_X$, and $\mcal{N}$ is a coherent $\mcal{O}_X$-module.
+Then any affine open set $U$ is $\mcal{N}$-acyclic.
+
+\item $X$ is a complex analytic manifold, with structure sheaf 
+$\mcal{O}_X$, and $\mcal{N}$ is a coherent $\mcal{O}_X$-module. 
+Here we take $\K = \mbb{C}$ of course. Then
+any Stein open set $U$ is $\mcal{N}$-acyclic.
+
+\item $X$ is a differentiable manifold, with structure
+sheaf $\mcal{O}_X$, and $\mcal{N}$ is any $\mcal{O}_X$-module. 
+The field is $\K = \mbb{R}$. Then
+any open set $U$ is $\mcal{N}$-acyclic.
+
+\item $X$ is a differentiable manifold, and $\mcal{N}$ is a locally
+constant sheaf of abelian groups. Then any sufficiently small
+simply connected open set $U$ is $\mcal{N}$-acyclic. 
+\end{enumerate}
+\end{exa}
+
+In order to get a good behavior of $\m$-adically complete sheaves, we shall
+consider deformations in the following setup:
+
+\begin{setup} \label{setup:200}
+$\K$ is a field of characteristic $0$;
+$(R, \m)$ is a parameter $\K$-algebra; $X$ is a topological
+space; and $\mcal{O}_X$ is a sheaf of commutative $\K$-algebras on $X$. 
+Moreover $X$ has enough $\mcal{O}_X$-acyclic open sets.
+\end{setup}
+
+As Example \ref{exa:20} shows this covers many instances.
+We assume Setup \ref{setup:200} for the rest of this section.
+
+\begin{dfn} \label{dfn:230}
+An {\em associative $R$-deformation of $\mcal{O}_X$} is a sheaf
+$\mcal{A}$ of flat $\m$-adically complete associative
+$R$-algebras on $X$, together with an isomorphism of
+sheaves of $\K$-algebras
+$\psi : \K \otimes_R \mcal{A} \to \mcal{O}_X$, called an {\em augmentation}.
+
+Let $\mcal{A}$ and $\mcal{A}'$ be associative $R$-deformations of
+$\mcal{O}_X$. A {\em gauge transformation}
+$g : \mcal{A} \to \mcal{A}'$
+is an isomorphism of sheaves of $R$-algebras that commutes with
+the augmentations to $\mcal{O}_X$.
+\end{dfn}
+
+Similarly, given a commutative $\K$-algebra $C$, an {\em associative
+$R$-deformation of $C$} is a flat $\m$-adically complete associative
+$R$-algebra $A$, together with an isomorphism of $\K$-algebras
+$\K \otimes_R A \cong C$. 
+
+Observe that we do not impose a condition that an associative deformation $\AA$
+should be ``locally differential''; see Remarks \ref{rem:defs-sh.110} and
+\ref{rem:221} for a discussion. 
+
+Recall that a Poisson bracket on a commutative $R$-algebra $A$ is 
+an $R$-bilinear pairing 
+$\{ -,- \} : A \times A \to A$ 
+which is a Lie bracket, and is a biderivation (a derivation in each variable). 
+The pair $(A, \{ -,- \} )$ is called a {\em Poisson $R$-algebra}. 
+A homomorphism of Poisson $R$-algebras $A \to A'$ is an algebra homomorphism
+that respects the Poisson brackets. All of this makes sense also for sheaves of
+$R$-algebras. 
+
+\begin{dfn} \label{dfn:231}
+We view $\mcal{O}_X$ as a sheaf of Poisson $\K$-algebras
+with the zero bracket.
+A {\em Poisson $R$-deformation of $\mcal{O}_X$} is a sheaf
+$\mcal{A}$ of flat $\m$-adically complete Poisson
+$R$-algebras on $X$, together with an isomorphism of
+sheaves of Poisson $\K$-algebras
+$\psi : \K \otimes_R \mcal{A} \to \mcal{O}_X$, called an {\em augmentation}.
+
+ Let $\mcal{A}$ and $\mcal{A}'$ be Poisson $R$-deformations of
+$\mcal{O}_X$. A {\em gauge transformation}
+$g : \mcal{A} \to \mcal{A}'$
+is an isomorphism of sheaves of Poisson $R$-algebras that commutes with
+the augmentations to $\mcal{O}_X$.
+\end{dfn}
+
+Similarly, given a commutative $\K$-algebra $C$, a {\em Poisson $R$-deformation
+of $C$} is a flat $\m$-adically complete Poisson $R$-algebra $A$, together with
+an isomorphism of Poisson $\K$-algebras $\K \otimes_R \mcal{A} \cong A$.
+
+According to \cite[Proposition 4.5]{Ye9}, if $\mcal{A}$ is an associative
+(resp.\ Poisson) $R$-deformation of $\OX$, and $U \subset X$ is an $\OX$-acyclic
+open set, then $A := \Gamma(U, \mcal{A})$ is an associative
+(resp.\ Poisson) $R$-deformation of $C :=  \Gamma(U, \OX)$.
+The important fact is that $A$ is a flat and $\m$-adically complete
+$R$-module.
+
+Let $\mcal{A}$ be an associative (resp.\ Poisson) $R$-deformation of $\OX$.
+It has an $R$-bilinear Lie bracket $[-,-]$ on it. In the associative case let
+$\star$ denote the multiplication. Given local sections $a_1,  a_2 \in
+\mcal{A}$, their bracket is 
+$[a_1,  a_2] := a_1 \star a_2 - a_2 \star a_1$. 
+In the Poisson case we take the Poisson bracket:
+$[a_1,  a_2] := \{ a_1,  a_2 \}$. 
+Note that $[\mcal{A}, \mcal{A}] \subset \m \AA$.
+According to \cite[Corollary 3.8]{Ye9}, for every $j \geq 0$ the sheaf 
+$\m^j \mcal{A}$ is $\m$-adically complete. Thus we obtain a sheaf of
+pronilpotent groups
+\begin{equation} \label{eqn:350}
+\opn{Exp}(\m^j \mcal{A}) := 
+\lim_{\leftarrow i}\, \opn{Exp}(\m^j \mcal{A} / \m^{j+i} \mcal{A}) ,
+\end{equation}
 and an isomorphism of sheaves of sets
-(2.10) exp : mjA
-≃
-− →Exp(mjA).
+\begin{equation} \label{eqn:351}
+\exp : \m^j \AA \iso \opn{Exp}(\m^j \mcal{A}) .
+\end{equation}
 In particular we have a sheaf of pronilpotent groups
-(2.11) IG(A) := Exp(mA)
-that we call thesheaf of inner gauge groupsofA. A gauge transformationg :A→
-A′induces a group isomorphism
-(2.12) IG(g) : IG(A)→IG(A′).
-Consider a local section α∈mA. Let adA(α) : A → Abe the operator
-adA(α)(a′) := [α,a′], where [−,−] is the Lie bracket. Then to the group element
-a := exp(α)∈IG(A) we can associate the operator
-(2.13) ig(a) := exp(adA(α))
-onA. It turns out thatadA(α) is a derivation of the algebraA, and henceig(a) is
-a gauge transformation ofA. In the associative case the groupIG(A) is canonically
-identiﬁed with the kernel of the augmentation homomorphismψ:A×→O×
-X, and
-then ig(a) becomes conjugation by the invertible elementa. In the Poisson case we
-call ig(a) a formal hamiltonian ﬂow. See [Ye9, Section 5] for details.
-18 AMNON YEKUTIELI
-Deﬁnition 2.14.We denote byAssDef(R,OX) (resp. PoisDef(R,OX)) the crossed
-groupoid P = (P1, P2, AdP1↷P2, D) described as follows:
-•The objects of P are the associative (resp. Poisson)R-deformationsA of
-OX.
-•The 1-morphisms, i.e. the elements of the sets P1(A,A′), are the gauge
-transformations g :A→A′.
-•The groups of2-morphisms are P2(A) := Γ(X, IG(A)).
-•The twisting by a1-morphism g is AdP1↷P2(g) := IG(g).
-•The feedback D : P2(A)→P1(A) is D(a) := ig(a).
-According to [Ye9, Proposition 5.7] these are indeed crossed groupoids.
-In the next two propositions we write P(R,X ) for either AssDef(R,OX) or
-PoisDef(R,OX); etc.
-Proposition 2.15. Let U′⊂U be open subsets ofX, andR→R′a homomor-
-phism of parameter algebras. There is a morphism of crossed groupoidsP(R,U )→
-P(R′,U′), sendingA to (R′ˆ⊗RA)|U′.
-Proof. ForR→R′this is [Ye9, Proposition 5.8]. ThatA|U′is a deformation of
-OU′is trivial. □
-Proposition 2.16. The assignmentU↦→P(R,U ) is a stack of crossed groupoids
-on X.
-Proof. By Proposition 2.15 we have a morphism of crossed groupoids
-restV/U : P(R,OU)→P(R,OV )
-for every inclusionV ⊂U of open sets. So the local objects and local1-morphisms
-form a split prestack of groupoids, say P1. Since the property of being an R-
-deformation ofOX is local, and gauge transformations between deformations are
-local, it follows that P1 is a stack. Finally, we know that the local2-morphisms
-form sheaves of groups (these are the sheavesIG(A)). □
-Deﬁnition 2.17. (1) The stack of crossed groupoidsU ↦→AssDef(R,OU) is
-called thestack of associativeR-deformations ofOX, and it is denoted by
-AssDef(R,OX).
-(2) The stack of crossed groupoidsU↦→PoisDef(R,OU) is called thestack of
-Poisson R-deformations ofOX, and it is denoted byPoisDef(R,OX).
-We now discuss ﬁrst order brackets. SupposeA is an R-deformation ofOX.
-SinceA is ﬂat overR, and we have the augmentationψ: K⊗RA
-≃
-− →OX, there is
-an induced K-linear isomorphism mA/m2A∼= (m/m2)⊗OX. This gives rise to a
-homomorphism of sheavesψ+ : mA→(m/m2)⊗OX.
-Suppose A is an associative deformation, with multiplication ⋆. Given local
-sections a1,a 2∈A, the commutator satisﬁesa1⋆a2−a2⋆a1∈mA. Hence we get
-(2.18) ψ+(a1⋆a2−a2⋆a1)∈(m/m2)⊗OX.
-Likewise ifA is a Poisson deformation, with Poisson bracket{−,−}, then we have
-ψ+({a1,a 2})∈(m/m2)⊗OX.
-Proposition 2.19. LetA be associative (resp. Poisson) R-deformation ofOX.
-There is a uniqueK-bilinear sheaf morphism
-{−,−}A :OX×OX→(m/m2)⊗OX
-having the following property. Given local sectionsc1,c 2∈OX, choose local liftings
-a1,a 2∈Arelative to the augmentationψ:A→OX, i.e.ci =ψ(ai). Then
-{c1,c 2}A =ψ+(1
-2(a1⋆a2−a2⋆a1)
-{
-TWISTED DEFORMATION QUANTIZATION 19
+\begin{equation} \label{eqn:230}
+\opn{IG}(\mcal{A}) := \opn{Exp}(\m \mcal{A})  
+\end{equation}
+that we call the {\em sheaf of inner gauge groups} of $\AA$.
+A gauge transformation $g : \mcal{A} \to \mcal{A}'$ induces a group isomorphism 
+\begin{equation} \label{eqn:234}
+\opn{IG}(g) : \opn{IG}(\mcal{A}) \to \opn{IG}(\mcal{A}') .
+\end{equation}
+
+Consider a local section $\al \in \m \mcal{A}$.
+Let $\opn{ad}_{\mcal{A}}(\al) : \mcal{A} \to \mcal{A}$ be the operator
+$\opn{ad}_{\mcal{A}}(\al)(a') := [\al, a']$,
+where $[-,-]$ is the Lie bracket. Then to the group element 
+$a := \exp(\al) \in \opn{IG}(\mcal{A})$ we can associate the operator 
+\begin{equation} \label{eqn:231}
+\opn{ig}(a) := \exp( \opn{ad}_{\mcal{A}}(\al) ) 
+\end{equation}
+on $\mcal{A}$. It turns out that $\opn{ad}_{\mcal{A}}(\al)$ is a derivation of
+the algebra $\mcal{A}$, and hence $\opn{ig}(a)$ is a gauge transformation of
+$\mcal{A}$. In the associative case the group $\opn{IG}(\mcal{A})$ is
+canonically identified with the kernel of the augmentation homomorphism 
+$\psi : \mcal{A}^{\times} \to \mcal{O}_X^{\times}$,
+and then $\opn{ig}(a)$ becomes conjugation by the invertible element $a$.
+In the Poisson case we call $\opn{ig}(a)$ a 
+{\em formal hamiltonian flow}.
+See \cite[Section 5]{Ye9} for details. 
+
+\begin{dfn} \label{dfn:233}
+We denote by $\cat{AssDef}(R, \mcal{O}_X)$ (resp.\ 
+$\cat{PoisDef}(R, \mcal{O}_X)$) the crossed groupoid 
+$\cat{P} = (\cat{P}_1, \cat{P}_2, 
+\opn{Ad}_{\cat{P}_1 \crvar \cat{P}_{2}}, \opn{D})$
+described as follows:
+\begin{itemize}
+\item The objects of $\cat{P}$ are the associative (resp.\ Poisson)
+$R$-deformations $\mcal{A}$ of $\mcal{O}_X$.
+
+\item The $1$-morphisms, i.e.\ the elements of the sets
+$\cat{P}_1(\mcal{A}, \mcal{A}')$, are the gauge transformations 
+$g : \mcal{A} \to \mcal{A}'$.
+
+\item The groups of $2$-morphisms are
+$\cat{P}_2(\mcal{A}) := \Gamma(X, \opn{IG}(\mcal{A}))$.
+
+\item The twisting by a $1$-morphism $g$ is 
+$\opn{Ad}_{\cat{P}_1 \crvar \cat{P}_{2}}(g) := \opn{IG}(g)$.
+
+\item The feedback 
+$\opn{D} : \cat{P}_2(\mcal{A}) \to \cat{P}_1(\mcal{A})$ is
+$\opn{D}(a) := \opn{ig}(a)$.
+\end{itemize}
+\end{dfn}
+
+According to \cite[Proposition 5.7]{Ye9} these are indeed crossed groupoids.
+
+In the next two propositions we write $\cat{P}(R, X)$ for either 
+$\cat{AssDef}(R, \mcal{O}_X)$ or $\cat{PoisDef}(R, \mcal{O}_X)$; etc.
+
+\begin{prop} \label{prop:206}
+Let $U' \subset U$ be open subsets of $X$, and $R \to R'$ a homomorphism of
+parameter algebras.  There is a morphism of crossed groupoids 
+$\cat{P}(R, U) \to \cat{P}(R', U')$,
+sending $\mcal{A}$ to $(R' \hatotimes{R} \mcal{A})|_{U'}$. 
+\end{prop}
+
+\begin{proof}
+For $R \to R'$ this is \cite[Proposition 5.8]{Ye9}. That 
+$\mcal{A}|_{U'}$ is a deformation of $\mcal{O}_{U'}$ is trivial. 
+\end{proof}
+
+\begin{prop} \label{prop:210}
+The assignment 
+$U \mapsto \cat{P}(R, U)$
+is a stack of crossed groupoids on $X$. 
+\end{prop}
+
+\begin{proof}
+By Proposition \ref{prop:206} we have a morphism of crossed groupoids
+\[ \opn{rest}_{V / U} : \cat{P}(R, \mcal{O}_U) \to \cat{P}(R, \mcal{O}_V) \]
+for every inclusion $V \subset U$ of open sets. So the local objects and local
+$1$-morphisms form a split prestack of groupoids, say $\twocat{P}_1$. Since the
+property of being an $R$-deformation of $\OX$ is local, and gauge
+transformations between deformations are local, it follows that $\twocat{P}_1$
+is a stack.
+Finally, we know that the local $2$-morphisms form sheaves of groups
+(these are the sheaves $\opn{IG}(\mcal{A})$). 
+\end{proof}
+
+\begin{dfn} \label{dfn:210}
+\begin{enumerate}
+\item The stack of crossed groupoids
+$U \mapsto \cat{AssDef}(R, \mcal{O}_U)$ 
+is called the {\em stack of associative $R$-deformations of $\OX$},
+and it is denoted by $\twocat{AssDef}(R, \mcal{O}_X)$.
+
+\item The stack of crossed groupoids
+$U \mapsto \cat{PoisDef}(R, \mcal{O}_U)$ 
+is called the {\em stack of Poisson $R$-deformations of $\OX$},
+and it is denoted by $\twocat{PoisDef}(R, \mcal{O}_X)$.
+\end{enumerate}
+\end{dfn}
+
+We now discuss first order brackets.
+Suppose $\mcal{A}$ is an $R$-deformation of $\mcal{O}_X$. Since
+$\mcal{A}$ is flat over $R$, and we have the augmentation 
+$\psi : \K \otimes_R \mcal{A} \iso \mcal{O}_X$,
+there is an induced $\K$-linear isomorphism 
+$\m \mcal{A} / \m^2 \mcal{A} \cong
+(\m / \m^2) \ot  \mcal{O}_X$.
+This gives rise to a homomorphism of sheaves
+$\psi^+ : \m \mcal{A} \to (\m / \m^2) \ot  \mcal{O}_X$.
+
+Suppose $\mcal{A}$ is an associative deformation, with multiplication
+$\star$. Given local sections $a_1,  a_2 \in \mcal{A}$, the
+commutator satisfies
+$a_1 \star a_2 - a_2 \star a_1 \in \m \mcal{A}$.
+Hence we get
+\begin{equation} \label{eqn:400}
+\psi^+(a_1 \star a_2 - a_2 \star a_1) \in 
+(\m / \m^2) \ot  \mcal{O}_X . 
+\end{equation}
+Likewise if $\mcal{A}$ is a Poisson deformation, with Poisson bracket
+$\{ -,- \}$, then we have
+$\psi^+(\{ a_1, a_2 \}) \in (\m / \m^2) \ot  \mcal{O}_X$.
+
+\begin{prop} 
+Let $\mcal{A}$ be associative \tup{(}resp.\ Poisson\tup{)}
+$R$-deformation of $\mcal{O}_X$. 
+There is a unique $\K$-bilinear sheaf morphism
+\[ \{ -,- \}_{\mcal{A}} : \mcal{O}_X \times \mcal{O}_X \to 
+(\m / \m^2) \ot \mcal{O}_X  \]
+having the following property.
+Given local sections $c_1, c_2 \in \mcal{O}_X$, choose local liftings 
+$a_1,  a_2 \in \mcal{A}$ relative to the augmentation
+$\psi : \mcal{A} \to \mcal{O}_X$, 
+i.e.\ $c_i = \psi(a_i)$. Then 
+\[ \{ c_1, c_2 \}_{\mcal{A}} = \psi^+ 
+\bigl( \smfrac{1}{2} (a_1 \star a_2 - a_2 \star a_1) \bigr) \]
 or
-{c1,c 2}A =ψ+({a1,a 2}),
+\[ \{ c_1, c_2 \}_{\mcal{A}} = \psi^+(\{ a_1, a_2 \}) , \]
 as the case may be.
-Proof. This is a variant of the usual calculation in deformation theory. The only
-thing to notice is that it makes sense for sheaves. □
-Deﬁnition 2.20.The ﬁrst order bracketofA is the K-bilinear sheaf morphism
-{−,−}A in the proposition above.
-Proposition 2.21. (1) The ﬁrst order bracket is gauge invariant. Namely if
-A and B are gauge equivalent R-deformations ofOX, then {−,−}A =
-{−,−}B.
-(2) The bracket{−,−}A is a biderivation ofOX-modules.
-(3) Suppose R = K[[ℏ]]. Using the isomorphism ℏ−1 : m/m2 ≃
-− →K, we get a
-bilinear function
-{−,−}A :OX×OX→OX.
-Then this is a Poisson bracket onOX.
-Proof. All these statements are easy local calculations. □
+\end{prop}
+
+\begin{proof}
+This is a variant of the usual calculation in deformation theory. The
+only thing to notice is that it makes sense for sheaves.
+\end{proof}
+
+\begin{dfn} \label{dfn:20}
+The {\em first order bracket} of $\mcal{A}$ is the 
+$\K$-bilinear sheaf morphism
+$\{ -,- \}_{\mcal{A}}$ in the proposition above. 
+\end{dfn}
+
+\begin{prop} \label{prop:20}
+\begin{enumerate}
+\item The first order bracket is gauge invariant. Namely if 
+$\mcal{A}$ and $\mcal{B}$ are gauge equivalent
+$R$-deformations of $\mcal{O}_X$, then 
+$\{ -,- \}_{\mcal{A}} = \{ -,- \}_{\mcal{B}}$.
+
+\item The bracket $\{ -,- \}_{\mcal{A}}$ is a biderivation of
+$\mcal{O}_X$-modules.
+
+\item Suppose $R = \K[[\hbar]]$. Using the isomorphism
+$\hbar^{-1} : \m / \m^2 \iso \K$, we get a bilinear function
+\[ \{ -,- \}_{\mcal{A}} : \mcal{O}_X \times \mcal{O}_X \to \mcal{O}_X
+. \]
+Then this is a Poisson bracket on $\mcal{O}_X$.
+\end{enumerate}
+\end{prop}
+
+\begin{proof}
+All these statements are easy local calculations. 
+\end{proof}

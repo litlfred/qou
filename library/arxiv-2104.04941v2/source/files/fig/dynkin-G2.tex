@@ -1,0 +1,36 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+
+\begin{document}
+  \begin{tikzpicture}
+    \pgfdeclaredecoration{ztriple}{initial}{
+      \state{initial}[width=\pgfdecoratedinputsegmentlength]{
+        \pgfmathsetlengthmacro\lw{2.2\pgflinewidth}
+        \pgfmathsetlengthmacro\lma{ 1.0pt+.5*\pgfdecoratedinputsegmentlength}
+        \pgfmathsetlengthmacro\lmb{-1.0pt+.5*\pgfdecoratedinputsegmentlength}
+        \begin{pgfscope}
+          \pgfpathmoveto{\pgfpoint{0pt}{\lw}}%
+          \pgfpathlineto{\pgfpoint{\pgfdecoratedinputsegmentlength}{ \lw}}%
+          \pgfpathmoveto{\pgfpoint{0pt}{0}}%
+          \pgfpathlineto{\pgfpoint{\pgfdecoratedinputsegmentlength}{ 0}}%
+          \pgfpathmoveto{\pgfpoint{0pt}{-\lw}}%
+          \pgfpathlineto{\pgfpoint{\pgfdecoratedinputsegmentlength}{-\lw}}%
+          \pgfmoveto{\pgfpoint{\lmb}{ 2.0pt}}%
+          \pgfpathlineto{\pgfpoint{\lma}{0pt}}%
+          \pgfpathlineto{\pgfpoint{\lmb}{-2.0pt}}%
+        \end{pgfscope}
+      }
+    }
+
+    \tikzstyle{vn} = [color=darkgray          , circle, outer sep=0.5pt, fill, inner sep=1.5pt]
+    \tikzstyle{et} = [decorate,decoration={ztriple}]
+
+    \node[vn] (1) at ( 0.0, 0) {};
+    \node[vn] (2) at ( 0.4, 0) {};
+    \draw[et] (2) -- (1);
+  \end{tikzpicture}
+\end{document}

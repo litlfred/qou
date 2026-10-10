@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1603.06017v2/blocks/prose-sec-019",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1603.06017v2/blocks/prose-sec-019",
   "kind": "prose",
   "title": "Calling an Automaton",
   "pageStart": 17,
   "pageEnd": 18,
   "text": "../sections/sec-019-45-calling-an-automaton.md",
-  "derivedFrom": "library/arxiv-1603.06017v2/manifest",
-  "sourceDocument": "library/arxiv-1603.06017v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1603.06017v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1603.06017v2/manifest.jsonld",
   "provenance": "ingested"
 }

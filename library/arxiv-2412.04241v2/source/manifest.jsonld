@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2412.04241v2/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The Habiro ring of a number field (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2412.04241v2/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2412.04241&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2412.04241v2",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/2412.04241v2",
+    "content_type": "application/gzip",
+    "sha256": "b93170cf809075112bd80fb4e0df299baf96d3dc3eb0c79f37aa60b1a0d8fd66",
+    "bytes": 82639,
+    "fetched": "2026-10-10T15:20:58+00:00",
+    "files": [
+      {
+        "path": "source/files/text131.bbl",
+        "role": "bbl",
+        "sha256": "2e25a0763e6b28031eca0a8ed3ae342223346afb2e0f4a738f758bb1d1c9896e",
+        "bytes": 10305
+      },
+      {
+        "path": "source/files/text131.tex",
+        "role": "tex",
+        "sha256": "0c107252f75f5edc2c2f067a127b0192f3e32b2b8a653c74faa1c67be408ae26",
+        "bytes": 247642
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

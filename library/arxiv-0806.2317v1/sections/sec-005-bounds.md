@@ -7,157 +7,154 @@ section_number: null
 pages: 14-18
 source_pdf: 0806.2317v1.pdf
 source_sha256: c54e80d460413a5e
+text_source: latex
+latex_prose_ratio: 0.935
+latex_coverage_ratio: 0.91
 doc_brief: "Bounds for codes and designs in complex subspaces Aidan Roy ∗ — We introduce the concepts of complex Grassmannian codes and designs."
 ---
-The correct normalizations satisfy
-⟨Zµ,a , Z µ,a ⟩ = Zµ (1, 1, . . . , 1) = dim Hµ .
-With the exception of the case µ = 0 (which is normalized correctly in the
-formula above), normalizations for Zµ will not play a role in the results which
-follow.
-6 Bounds
-Recall that an A-code is a collection S of subspaces in Gm,n such that tr(PaPb) ∈
-A for every a ⁄= b in S. In this section, we ﬁnd upper bounds on the size of an
-A-code in terms of either the cardinality of A or its elements. A summary of
-the results for |A| ≤ 2 is given in Table 1.
-If A = {α 1, . . . , α k}, then the annihilator of A is the function
-annA(x) :=
-k∏
-i=1
-(x − α i),
-14
-The signiﬁcance of the annihilator is that ann A(tr(PaPb)) = 0 for any a ⁄= b
-in S. More generally, for any polynomial f , an f -code is a collection S of
-subspaces such that f (tr(Pa)) ⁄= 0 and f (tr(PaPb)) = 0 for every a ⁄= b in S. If
-A is any set of angles and f is the annihilator of A, then an A-code is also an
-f -code.
-Theorem 6.1. If S ⊆ G m,n is an A-code, with |A| = k, then
-|S| ≤ dim(Homk(n)) ≤
-(n2 + k − 1
-k
-)
-.
-Proof. We prove more generally that if S is an f -code, with deg( f ) = k, then
-|S| ≤ dim(Homk(n)). The result then follows by taking f to be the annihilator
-of A.
-Consider the zonal polynomials fa(b) := f (tr(PaPb)), for a ∈ S. Note that
-fa is in Hom k(n), since fa(b) is a degree- k polynomial in the entries of Pb. Since
-fa(b) = 0 for every b ∈ S except a, and fa(a) ⁄= 0, the set {fa : a ∈ S} is linearly
-independent. Thus the number of functions |S| is at most the dimension of the
-space Hom k(n).
-Corollary 6.2. Let S be a collection of subspaces in Gm,n such that tr(PaPb) =
-α for all a ⁄= b in S. Then
-|S| ≤ n2.
-Proof. Use Theorem 6.1 with the degree-1 annihilator of α , which induces
-zonal polynomials in Hom 1(n).
-Since fa(b) is also a degree- k symmetric polynomial in the principal angles
-of a and b, it follows that fa is also in Hk(m, n ). Then by the same argument
-as in Theorem 6.1, we have
-Corollary 6.3. If S ⊆ G m,n is an A-code, with |A| = k, then
-|S| ≤ dim(Hk(m, n )).
-If equality holds, then the functions fa form a basis for the space. Moreover,
-the space Hk(m, n ) is exactly the space of functions on S.
-Theorem 6.1 and Corollary 6.3 are called absolute bounds for Grassmannian
-codes, because the bounds depend only on the number of diﬀeren t inner product
-values that occur in S. When m = 1 these bounds reduce to the absolute
-bounds of Delsarte, Goethals and Seidel [11, Theorem 6.1]. T here is also a
-relative bound , which depends on the actual values of the inner products and
-is sometimes tighter.
-15
-Theorem 6.4. Let f (y1, . . . , y m) ∈ R[y1, . . . , y m] be a symmetric polynomial
-such that f =∑
-µ cµ Zµ , where Zµ is a zonal orthogonal polynomial, and each
-cµ ≥ 0. Further assume that c0 is strictly positive. If S is a set of subspaces in
-Gm,n such that fa(b) := f (y1(a, b ), . . . , y m(a, b )) is nonpositive for every a ⁄= b
-in S, then
-|S| ≤ f (1, . . . , 1)
-c0
-.
-Proof. Since fa(b) ≤ 0 for b ⁄= a, summing over all b ∈ S, we have
-∑
-b∈S
-fa(b) ≤ fa(a) = f (1, . . . , 1).
-Then averaging over all a ∈ S,
-f (1, . . . , 1) ≥ 1
-|S|
-∑
-a,b ∈S
-fa(b)
-= 1
-|S|
-∑
-µ
-cµ
-∑
-a,b ∈S
-Zµ (a, b ).
-By Lemma 5.1, the inner sum is non-negative for µ ⁄= 0. If µ = 0, then
-Z0(a, b ) = 1 for all a and b, and hence,
-f (1) ≥ 1
-|S| c0
-∑
-a,b ∈S
-1
-= c0|S|.
-Equality holds if and only if fa(b) = 0 for every a ⁄= b ∈ S and for each
-µ ⁄= 0, we have either cµ = 0 or ∑
-a∈S Zµ,a = 0. (We will see in Section 9 that
-when cµ > 0 for all |µ | ≤ deg(f ), this implies that we have a Grassmannian
-t-design.)
-By way of example, we consider the case of an {α }-code in detail.
-Corollary 6.5. Let S be a subset of Gm,n such that tr(PaPb) = α for all a ⁄= b
-in S, and α < m 2/n . Then
-|S| ≤ n(m − α )
-m2 − nα .
-Proof. The ﬁrst two zonal orthogonal polynomials are Z0(y) = 1 and (up to
-normalization) Z1(y) =∑ m
-i=1 yi−m2/n . The annihilator for α is the polynomial
-f (x) = x − α , which induces the zonal polynomial at subspace a given by
-fa(b) = tr( PaPb) − α tr(Pb)
-m =
-m∑
-i=1
-yi − α,
-16
-for principle angles y1, . . . , y m of a and b. Thus we may write
-f (y1, . . . , y m) =
-m∑
-i=1
-yi − α
-= c1Z1(y) +
-(m2
-n − α
-)
-Z0(y).
-Applying Theorem 6.4, we ﬁnd that
-|S| ≤ f (1, . . . , 1)
-c0
-= m − α
-m2/n − α .
-When m = 1, we recover Delsarte, Goethals and Seidel’s bound for com plex
-equiangular lines:
-|S| ≤ n(1 − α )
-1 − nα .
-Similarly, using the zonal orthogonal polynomials Z0, Z 1, Z 1, 1 and Z2, we
-get a bound on the size of a subset containing two inner produc ts, say α and
-β .
-Corollary 6.6. Let S be a subset of Gm,n such that tr(PaPb) ∈ α, β for all
-a ⁄= b in S. Further assume that
-α + β ≤ 2(m2n − 4m + n)
-n2 − 4 ,
-α + β − nαβ
-m2 < m2n − 2m + n
-n2 − 1 .
+\label{sec:bounds}
+
+Recall that an $\scr{A}$-code is a collection $S$ of subspaces in $\gras{m}{n}$ such that $\tr(P_aP_b) \in \scr{A}$ for every $a \neq b$ in $S$. In this section, we find upper bounds on the size of an $\scr{A}$-code in terms of either the cardinality of $\scr{A}$ or its elements. A summary of the results for $\abs{\scr{A}} \leq 2$ is given in Table \ref{tab:codebounds}.
+
+\begin{table}
+\renewcommand{\arraystretch}{2.2}
+\setlength{\tabcolsep}{10pt}
+\begin{center}
+\begin{tabular}{|c||c|c|}
+\hline
+$\scr{A}$ & $\{\al\}$ & $\{\al,\be\}$ \\
+\hline
+\rule{0pt}{37pt} \parbox{0.7in}{Absolute bound\\} & \raisebox{8pt}{$n^2$} & \raisebox{7pt}{$\qquad \qquad  \quad \; \dbinom{n^2}{2} \qquad (m > 1)$} \\
+\hline 
+\rule{0pt}{30pt} \parbox{0.7in}{Relative bound} & \raisebox{-2pt}{$\dfrac{n(m-\al)}{m^2-n\al}$} &  \raisebox{1pt}{$\dfrac{n(m-\al)(m-\be)}{m^2\left[\frac{(m+1)^2}{2(n+1)}+\frac{(m-1)^2}{2(n-1)}-(\al+\be) + \frac{n\al\be}{m^2}\right]}$} \\
+\rule{0pt}{40pt} \parbox{0.7in}{Relative bound\\conditions} & $\al < \dfrac{m^2}{n}$ & $\al+\be \leq \dfrac{2(m^2n-4m+n)}{n^2-4}$, \\
+\rule{0pt}{30pt} & & \raisebox{10pt}{$\al + \be - \dfrac{n\al\be}{m^2} < \dfrac{m^2n-2m+n}{n^2-1}$} \\
+\hline
+\end{tabular}
+\caption{Upper bounds on $|S|$, when $S \sbs \gras{m}{n}$ is an $\scr{A}$-code.}
+\label{tab:codebounds}
+\end{center}
+\end{table}
+
+If $\scr{A} = \{\al_1,\ldots,\al_k\}$, then the \defn{annihilator} of $\scr{A}$ is the function 
+\[
+\ann_{\scr{A}}(x) := \prod_{i=1}^k (x-\al_i),
+\]
+The significance of the annihilator is that $\ann_{\scr{A}}(\tr(P_aP_b)) = 0$ for any $a \neq b$ in $S$. More generally, for any polynomial $f$, an \defn{$f$-code} is a collection $S$ of subspaces such that $f(\tr(P_a)) \neq 0$ and $f(\tr(P_aP_b)) = 0$ for every $a \neq b$ in $S$. If $\scr{A}$ is any set of angles and $f$ is the annihilator of $\scr{A}$, then an $\scr{A}$-code is also an $f$-code.
+
+\begin{theorem}
+\label{thm:abscodebnd}
+If $S \sbs \gras{m}{n}$ is an $\scr{A}$-code, with $|\scr{A}| = k$, then
+\[
+|S| \leq \dim(\Hom_k(n)) \leq \binom{n^2+k-1}{k}.
+\]
+\end{theorem}
+
+\begin{proof}
+We prove more generally that if $S$ is an $f$-code, with $\deg(f) = k$, then $|S| \leq \dim(\Hom_k(n))$. The result then follows by taking $f$ to be the annihilator of $\scr{A}$. 
+
+Consider the zonal polynomials $f_a(b) := f(\tr(P_aP_b))$, for $a \in S$. Note that $f_a$ is in $\Hom_k(n)$, since $f_a(b)$ is a degree-$k$ polynomial in the entries of $P_b$. Since $f_a(b) = 0$ for every $b \in S$ except $a$, and $f_a(a) \neq 0$, the set $\{f_a: a \in S\}$ is linearly independent. Thus the number of functions $|S|$ is at most the dimension of the space $\Hom_k(n)$. \qed
+\end{proof}
+
+\begin{corollary}
+\label{cor:abscodebnd1}
+Let $S$ be a collection of subspaces in $\gras{m}{n}$ such that $\tr(P_aP_b) = \al$ for all $a \neq b$ in $S$. Then
+\[
+|S| \leq n^2.
+\]
+\end{corollary}
+
+\begin{proof}
+Use Theorem \ref{thm:abscodebnd} with the degree-$1$ annihilator of $\al$, which induces zonal polynomials in $\Hom_1(n)$. \qed
+\end{proof}
+
+Since $f_a(b)$ is also a degree-$k$ symmetric polynomial in the principal angles of $a$ and $b$, it follows that $f_a$ is also in $H_k(m,n)$. Then by the same argument as in Theorem \ref{thm:abscodebnd}, we have 
+\begin{corollary}
+\label{cor:abscodebnd}
+If $S \sbs \gras{m}{n}$ is an $\scr{A}$-code, with $|\scr{A}| = k$, then
+\[
+|S| \leq \dim(H_k(m,n)).
+\]
+\end{corollary}
+
+If equality holds, then the functions $f_a$ form a basis for the space. Moreover, the space $H_k(m,n)$ is exactly the space of functions on $S$. 
+
+Theorem \ref{thm:abscodebnd} and Corollary \ref{cor:abscodebnd} are called \defn{absolute bounds} for Grassmannian codes, because the bounds depend only on the number of different inner product values that occur in $S$. When $m = 1$ these bounds reduce to the absolute bounds of Delsarte, Goethals and Seidel \cite[Theorem 6.1]{dgs}. There is also a \defn{relative bound}, which depends on the actual values of the inner products and is sometimes tighter.
+
+\begin{theorem}
+\label{thm:relcodebnd}
+Let $f(y_1,\ldots,y_m) \in \re[y_1,\ldots,y_m]$ be a symmetric polynomial such that $f = \sum_{\mu}c_{\mu} Z_{\mu}$, where $Z_{\mu}$ is a zonal orthogonal polynomial, and each $c_{\mu} \geq 0$. Further assume that $c_0$ is strictly positive. If $S$ is a set of subspaces in $\gras{m}{n}$ such that $f_a(b) := f(y_1(a,b),\ldots,y_m(a,b))$ is nonpositive for every $a \neq b$ in $S$, then 
+\[
+|S| \leq \frac{f(1,\ldots,1)}{c_0}.
+\]
+\end{theorem}
+
+\begin{proof}
+Since $f_a(b) \leq 0$ for $b \neq a$, summing over all $b \in S$, we have
+\[
+\sum_{b \in S} f_a(b) \leq f_a(a) = f(1,\ldots,1).
+\]
+Then averaging over all $a \in S$,
+\begin{align*}
+f(1,\ldots,1) & \geq \frac{1}{|S|}\sum_{a,b \in S} f_a(b) \\
+& = \frac{1}{|S|} \sum_\mu c_\mu \sum_{a,b \in S} Z_\mu(a,b). 
+\end{align*}
+By Lemma \ref{lem:possum}, the inner sum is non-negative for $\mu \neq 0$. If $\mu = 0$, then $Z_0(a,b) = 1$ for all $a$ and $b$, and hence,
+\begin{align*}
+f(1) & \geq \frac{1}{|S|} c_0 \sum_{a,b \in S} 1 \\
+& = c_0 |S|. \eqed
+\end{align*} 
+\end{proof}
+
+Equality holds if and only if $f_a(b) = 0$ for every $a \neq b \in S$ and for each $\mu \neq 0$, we have either $c_\mu = 0$ or $\sum_{a \in S} Z_{\mu,a} = 0$. (We will see in Section \ref{sec:designs} that when $c_\mu > 0$ for all $\abs{\mu} \leq \deg(f)$, this implies that we have a Grassmannian $t$-design.)
+
+By way of example, we consider the case of an $\{\al\}$-code in detail.
+
+\begin{corollary}
+\label{cor:onebound}
+Let $S$ be a subset of $\gras{m}{n}$ such that $\tr(P_aP_b) = \al$ for all $a \neq b$ in $S$, and $\al < m^2/n$. Then
+\[
+|S| \leq \frac{n(m-\al)}{m^2-n\al}.
+\]
+\end{corollary}
+
+\begin{proof}
+The first two zonal orthogonal polynomials are $Z_0(y) = 1$ and (up to normalization) $Z_1(y) = \sum_{i=1}^my_i - m^2/n$. The annihilator for $\al$ is the polynomial $f(x) = x - \al$, which induces the zonal polynomial at subspace $a$ given by 
+\[
+f_{a}(b) = \tr(P_aP_b) - \frac{\al\tr(P_b)}{m} = \sum_{i=1}^m y_i - \al,
+\]
+for principle angles $y_1,\ldots,y_m$ of $a$ and $b$. Thus we may write
+\begin{align*}
+f(y_1,\ldots,y_m) & = \sum_{i=1}^m y_i - \al \\
+& = c_1Z_{1}(y) + \left(\frac{m^2}{n}-\al\right)Z_{0}(y).
+\end{align*}
+Applying Theorem \ref{thm:relcodebnd}, we find that
+\[
+|S| \leq \frac{f(1,\ldots,1)}{c_0} = \frac{m-\al}{m^2/n-\al}. \eqed
+\]
+\end{proof}
+When $m = 1$, we recover Delsarte, Goethals and Seidel's bound for complex equiangular lines: 
+\[
+|S| \leq \frac{n(1-\al)}{1-n\al}.
+\]
+
+Similarly, using the zonal orthogonal polynomials $Z_0,Z_1,Z_{1,1}$ and $Z_2$, we get a bound on the size of a subset containing two inner products, say $\al$ and $\be$.
+
+\begin{corollary}
+\label{cor:twobound}
+Let $S$ be a subset of $\gras{m}{n}$ such that $\tr(P_aP_b) \in {\al,\be}$ for all $a \neq b$ in $S$. Further assume that
+\begin{align*}
+\al+\be & \leq \frac{2(m^2n-4m+n)}{n^2-4}, \\
+\al + \be - \frac{n\al\be}{m^2} & < \frac{m^2n-2m+n}{n^2-1}.
+\end{align*}
 Then
-|S| ≤ n(m − α )(m − β )
-m2
-[
-(m+1)2
-2(n+1) + (m−1)2
-2(n−1) − (α + β ) + nαβ
-m2
-] .
-When m = 1 this reduces to the Delsarte, Goethals and Seidel bound of
-|S| ≤ n(n + 1)(1 − α )(1 − β )
-2 − (n + 1)(α + β ) + n(n + 1)αβ
-for lines in complex projective space CP n−1.
-17
+\[
+|S| \leq \frac{n(m-\al)(m-\be)}{m^2\left[\frac{(m+1)^2}{2(n+1)}+\frac{(m-1)^2}{2(n-1)}-(\al+\be) + \frac{n\al\be}{m^2}\right]}.
+\]
+\end{corollary}
+
+When $m = 1$ this reduces to the Delsarte, Goethals and Seidel bound of 
+\[
+|S| \leq \frac{n(n+1)(1-\al)(1-\be)}{2-(n+1)(\al+\be) + n(n+1)\al\be}
+\]
+for lines in complex projective space $\cx P^{n-1}$.

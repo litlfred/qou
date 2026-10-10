@@ -5,7 +5,8 @@
   "file": "0811.1338v1.pdf",
   "sha256": "9a57cb6e014d3ead46a259490c046a5a76877c1e3f4dcc0c18c0df748c4adcc2",
   "bytes": 1378358,
-  "pages": 52
+  "pages": 52,
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -16,7 +17,7 @@
   },
   "doi": null,
   "title": "Modern theory of nuclear forces",
-  "authors_raw": "Forschungszentrum Jülich, Institut für Kernphysik (IKP-3) and Jülich Center for Hadron Physics, D-52425 Jülich",
+  "authors_raw": "Forschungszentrum J\u00fclich, Institut f\u00fcr Kernphysik (IKP-3) and J\u00fclich Center for Hadron Physics, D-52425 J\u00fclich",
   "abstract": null,
   "docinfo": {
    "Producer": "GPL Ghostscript 10.01.2",
@@ -27,9 +28,9 @@
   },
   "title_lines": [
    "Modern Theory of Nuclear Forces",
-   "E. Epelbaum∗"
+   "E. Epelbaum\u2217"
   ],
-  "title_prev": "Modern Theory of Nuclear Forces E. Epelbaum∗"
+  "title_prev": "Modern Theory of Nuclear Forces E. Epelbaum\u2217"
  },
  "toc": [
   {
@@ -83,14 +84,14 @@
   },
   {
    "level": 1,
-   "title": "(¯uu + ¯dd) + mu −md",
+   "title": "(\u00afuu + \u00afdd) + mu \u2212md",
    "page": 3,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(¯uu − ¯dd) ,",
+   "title": "(\u00afuu \u2212 \u00afdd) ,",
    "page": 3,
    "source": "inferred",
    "number": "2"
@@ -118,35 +119,35 @@
   },
   {
    "level": 1,
-   "title": "(⃗ σ1 +⃗ σ2) ·⃗ q×⃗k +C6⃗ q·⃗ σ1⃗ q·⃗ σ2",
+   "title": "(\u20d7 \u03c31 +\u20d7 \u03c32) \u00b7\u20d7 q\u00d7\u20d7k +C6\u20d7 q\u00b7\u20d7 \u03c31\u20d7 q\u00b7\u20d7 \u03c32",
    "page": 15,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "( ¯NN )( ¯NS ·uN ), (2.17)",
+   "title": "( \u00afNN )( \u00afNS \u00b7uN ), (2.17)",
    "page": 16,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "( ¯NN )( ¯N τ N ) · ( ¯N τN ). (2.21)",
+   "title": "( \u00afNN )( \u00afN \u03c4 N ) \u00b7 ( \u00afN \u03c4N ). (2.21)",
    "page": 16,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(ann +app) −anp = 5.64 ± 0.40 fm ,",
+   "title": "(ann +app) \u2212anp = 5.64 \u00b1 0.40 fm ,",
    "page": 18,
    "source": "inferred",
    "number": "2"
   },
   {
    "level": 1,
-   "title": "(rnn +rpp) −rnp = 0.03 ± 0.06 fm .(2.26)",
+   "title": "(rnn +rpp) \u2212rnp = 0.03 \u00b1 0.06 fm .(2.26)",
    "page": 18,
    "source": "inferred",
    "number": "2"
@@ -174,56 +175,56 @@
   },
   {
    "level": 1,
-   "title": "(χ+ − ⟨χ+⟩) δijgµνTν",
+   "title": "(\u03c7+ \u2212 \u27e8\u03c7+\u27e9) \u03b4ijg\u00b5\u03bdT\u03bd",
    "page": 29,
    "source": "inferred",
    "number": "5"
   },
   {
    "level": 2,
-   "title": "MeV and m∆ 0 = 1233.45 ± 0.35 MeV (324) together",
+   "title": "MeV and m\u2206 0 = 1233.45 \u00b1 0.35 MeV (324) together",
    "page": 29,
    "source": "inferred",
    "number": "0.30"
   },
   {
    "level": 1,
-   "title": "MeV and |δm2",
+   "title": "MeV and |\u03b4m2",
    "page": 29,
    "source": "inferred",
    "number": "8"
   },
   {
    "level": 1,
-   "title": "(4α − 1)f,",
+   "title": "(4\u03b1 \u2212 1)f,",
    "page": 32,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "(1 + 2α)f, f ΞΞ π = −(1 − 2α)f,",
+   "title": "(1 + 2\u03b1)f, f \u039e\u039e \u03c0 = \u2212(1 \u2212 2\u03b1)f,",
    "page": 32,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "(1 + 2α)f, f ΞΛ K = 1√",
+   "title": "(1 + 2\u03b1)f, f \u039e\u039b K = 1\u221a",
    "page": 32,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "(1 −α)f, f ΣΣ η8 = 2√",
+   "title": "(1 \u2212\u03b1)f, f \u03a3\u03a3 \u03b78 = 2\u221a",
    "page": 32,
    "source": "inferred",
    "number": "3"
   },
   {
    "level": 1,
-   "title": "(1 −α)f,",
+   "title": "(1 \u2212\u03b1)f,",
    "page": 32,
    "source": "inferred",
    "number": "3"
@@ -237,28 +238,28 @@
   },
   {
    "level": 1,
-   "title": "A]−1|(x,y)(⁄p +m)n(p)",
+   "title": "A]\u22121|(x,y)(\u2044p +m)n(p)",
    "page": 39,
    "source": "inferred",
    "number": "0"
   },
   {
    "level": 1,
-   "title": "A]−1|(x,x′) (⁄q +m)n(q)",
+   "title": "A]\u22121|(x,x\u2032) (\u2044q +m)n(q)",
    "page": 39,
    "source": "inferred",
    "number": "0"
   },
   {
    "level": 1,
-   "title": "A]−1|(y′,y)(⁄p +m)n(p)",
+   "title": "A]\u22121|(y\u2032,y)(\u2044p +m)n(p)",
    "page": 39,
    "source": "inferred",
    "number": "0"
   },
   {
    "level": 1,
-   "title": "A)−1 that",
+   "title": "A)\u22121 that",
    "page": 40,
    "source": "inferred",
    "number": "0"
@@ -367,7 +368,7 @@
   {
    "id": "sec-007-2-uu-dd-mu-md",
    "number": "2",
-   "title": "(¯uu + ¯dd) + mu −md",
+   "title": "(\u00afuu + \u00afdd) + mu \u2212md",
    "level": 1,
    "page_start": 3,
    "page_end": 3,
@@ -377,7 +378,7 @@
   {
    "id": "sec-008-2-uu-dd",
    "number": "2",
-   "title": "(¯uu − ¯dd) ,",
+   "title": "(\u00afuu \u2212 \u00afdd) ,",
    "level": 1,
    "page_start": 3,
    "page_end": 4,
@@ -415,9 +416,9 @@
    "n_words": 5170
   },
   {
-   "id": "sec-012-2-σ1-σ2-qk-c6-q-σ1-q-σ2",
+   "id": "sec-012-2-\u03c31-\u03c32-qk-c6-q-\u03c31-q-\u03c32",
    "number": "2",
-   "title": "(⃗ σ1 +⃗ σ2) ·⃗ q×⃗k +C6⃗ q·⃗ σ1⃗ q·⃗ σ2",
+   "title": "(\u20d7 \u03c31 +\u20d7 \u03c32) \u00b7\u20d7 q\u00d7\u20d7k +C6\u20d7 q\u00b7\u20d7 \u03c31\u20d7 q\u00b7\u20d7 \u03c32",
    "level": 1,
    "page_start": 15,
    "page_end": 16,
@@ -427,7 +428,7 @@
   {
    "id": "sec-013-2-nn-ns-un-217",
    "number": "2",
-   "title": "( ¯NN )( ¯NS ·uN ), (2.17)",
+   "title": "( \u00afNN )( \u00afNS \u00b7uN ), (2.17)",
    "level": 1,
    "page_start": 16,
    "page_end": 16,
@@ -435,9 +436,9 @@
    "n_words": 621
   },
   {
-   "id": "sec-014-2-nn-n-τ-n-n-τn-221",
+   "id": "sec-014-2-nn-n-\u03c4-n-n-\u03c4n-221",
    "number": "2",
-   "title": "( ¯NN )( ¯N τ N ) · ( ¯N τN ). (2.21)",
+   "title": "( \u00afNN )( \u00afN \u03c4 N ) \u00b7 ( \u00afN \u03c4N ). (2.21)",
    "level": 1,
    "page_start": 16,
    "page_end": 18,
@@ -447,7 +448,7 @@
   {
    "id": "sec-015-2-ann-app-anp-564-040-fm",
    "number": "2",
-   "title": "(ann +app) −anp = 5.64 ± 0.40 fm ,",
+   "title": "(ann +app) \u2212anp = 5.64 \u00b1 0.40 fm ,",
    "level": 1,
    "page_start": 18,
    "page_end": 18,
@@ -457,7 +458,7 @@
   {
    "id": "sec-016-2-rnn-rpp-rnp-003-006-fm-226",
    "number": "2",
-   "title": "(rnn +rpp) −rnp = 0.03 ± 0.06 fm .(2.26)",
+   "title": "(rnn +rpp) \u2212rnp = 0.03 \u00b1 0.06 fm .(2.26)",
    "level": 1,
    "page_start": 18,
    "page_end": 20,
@@ -495,9 +496,9 @@
    "n_words": 4366
   },
   {
-   "id": "sec-020-5-χ-χ-δijgµνtν",
+   "id": "sec-020-5-\u03c7-\u03c7-\u03b4ijg\u00b5\u03bdt\u03bd",
    "number": "5",
-   "title": "(χ+ − ⟨χ+⟩) δijgµνTν",
+   "title": "(\u03c7+ \u2212 \u27e8\u03c7+\u27e9) \u03b4ijg\u00b5\u03bdT\u03bd",
    "level": 1,
    "page_start": 29,
    "page_end": 29,
@@ -507,7 +508,7 @@
   {
    "id": "sec-021-030-mev-and-m-0-123345-035-mev-324-together",
    "number": "0.30",
-   "title": "MeV and m∆ 0 = 1233.45 ± 0.35 MeV (324) together",
+   "title": "MeV and m\u2206 0 = 1233.45 \u00b1 0.35 MeV (324) together",
    "level": 2,
    "page_start": 29,
    "page_end": 29,
@@ -515,9 +516,9 @@
    "n_words": 114
   },
   {
-   "id": "sec-022-8-mev-and-δm2",
+   "id": "sec-022-8-mev-and-\u03b4m2",
    "number": "8",
-   "title": "MeV and |δm2",
+   "title": "MeV and |\u03b4m2",
    "level": 1,
    "page_start": 29,
    "page_end": 32,
@@ -525,9 +526,9 @@
    "n_words": 2449
   },
   {
-   "id": "sec-023-3-4α-1f",
+   "id": "sec-023-3-4\u03b1-1f",
    "number": "3",
-   "title": "(4α − 1)f,",
+   "title": "(4\u03b1 \u2212 1)f,",
    "level": 1,
    "page_start": 32,
    "page_end": 32,
@@ -535,9 +536,9 @@
    "n_words": 5
   },
   {
-   "id": "sec-024-3-1-2αf-f-ξξ-π-1-2αf",
+   "id": "sec-024-3-1-2\u03b1f-f-\u03be\u03be-\u03c0-1-2\u03b1f",
    "number": "3",
-   "title": "(1 + 2α)f, f ΞΞ π = −(1 − 2α)f,",
+   "title": "(1 + 2\u03b1)f, f \u039e\u039e \u03c0 = \u2212(1 \u2212 2\u03b1)f,",
    "level": 1,
    "page_start": 32,
    "page_end": 32,
@@ -545,9 +546,9 @@
    "n_words": 5
   },
   {
-   "id": "sec-025-3-1-2αf-f-ξλ-k-1",
+   "id": "sec-025-3-1-2\u03b1f-f-\u03be\u03bb-k-1",
    "number": "3",
-   "title": "(1 + 2α)f, f ΞΛ K = 1√",
+   "title": "(1 + 2\u03b1)f, f \u039e\u039b K = 1\u221a",
    "level": 1,
    "page_start": 32,
    "page_end": 32,
@@ -555,9 +556,9 @@
    "n_words": 8
   },
   {
-   "id": "sec-026-3-1-αf-f-σς-η8-2",
+   "id": "sec-026-3-1-\u03b1f-f-\u03c3\u03c2-\u03b78-2",
    "number": "3",
-   "title": "(1 −α)f, f ΣΣ η8 = 2√",
+   "title": "(1 \u2212\u03b1)f, f \u03a3\u03a3 \u03b78 = 2\u221a",
    "level": 1,
    "page_start": 32,
    "page_end": 39,
@@ -577,7 +578,7 @@
   {
    "id": "sec-028-0-a1xyp-mnp",
    "number": "0",
-   "title": "A]−1|(x,y)(⁄p +m)n(p)",
+   "title": "A]\u22121|(x,y)(\u2044p +m)n(p)",
    "level": 1,
    "page_start": 39,
    "page_end": 39,
@@ -587,7 +588,7 @@
   {
    "id": "sec-029-0-a1xx-q-mnq",
    "number": "0",
-   "title": "A]−1|(x,x′) (⁄q +m)n(q)",
+   "title": "A]\u22121|(x,x\u2032) (\u2044q +m)n(q)",
    "level": 1,
    "page_start": 39,
    "page_end": 39,
@@ -597,7 +598,7 @@
   {
    "id": "sec-030-0-a1yyp-mnp",
    "number": "0",
-   "title": "A]−1|(y′,y)(⁄p +m)n(p)",
+   "title": "A]\u22121|(y\u2032,y)(\u2044p +m)n(p)",
    "level": 1,
    "page_start": 39,
    "page_end": 40,
@@ -607,7 +608,7 @@
   {
    "id": "sec-031-0-a1-that",
    "number": "0",
-   "title": "A)−1 that",
+   "title": "A)\u22121 that",
    "level": 1,
    "page_start": 40,
    "page_end": 42,
@@ -660,6 +661,210 @@
   "likely_scanned": false,
   "toc_entries": 37,
   "sections": 36,
-  "chars_total": 262092
+  "chars_total": 262092,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "ehmrmp.tex",
+   "tex_sections": 5,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-i-qcd-and-nuclear-f-orces-1",
+     "title": "QCD and Nuclear F orces 1",
+     "prose_ratio": 0.005,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-c-conventional-approaches-to-the-nuclear-force-p",
+     "title": "Conventional approaches to the nuclear force problem 4",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-ii-eft-for-f-ew-nucleon-systems-f-oundations-and",
+     "title": "EFT for F ew-Nucleon Systems: F oundations and",
+     "prose_ratio": 0.009,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-003-c-chiral-eft-for-few-nucleons-applications-21",
+     "title": "Chiral EFT for few nucleons: applications 21",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-c-eft-for-halo-nuclei-42",
+     "title": "EFT for halo nuclei 42",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-iv-summary-and-perspectives-45",
+     "title": "Summary and perspectives 45",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-006-i-qcd-and-nuclear-forces",
+     "title": "QCD AND NUCLEAR FORCES",
+     "prose_ratio": 0.445,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-2-uu-dd-mu-md",
+     "title": "(\u00afuu + \u00afdd) + mu \u2212md",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-2-uu-dd",
+     "title": "(\u00afuu \u2212 \u00afdd) ,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-c-conventional-approaches-to-the-nuclear-force-p",
+     "title": "Conventional approaches to the nuclear force problem",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-ii-eft-for-few-nucleon-systems",
+     "title": "EFT FOR FEW-NUCLEON SYSTEMS:",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-0-cs",
+     "title": "(Cs",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-2-\u03c31-\u03c32-qk-c6-q-\u03c31-q-\u03c32",
+     "title": "(\u20d7 \u03c31 +\u20d7 \u03c32) \u00b7\u20d7 q\u00d7\u20d7k +C6\u20d7 q\u00b7\u20d7 \u03c31\u20d7 q\u00b7\u20d7 \u03c32",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-2-nn-ns-un-217",
+     "title": "( \u00afNN )( \u00afNS \u00b7uN ), (2.17)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-2-nn-n-\u03c4-n-n-\u03c4n-221",
+     "title": "( \u00afNN )( \u00afN \u03c4 N ) \u00b7 ( \u00afN \u03c4N ). (2.21)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-2-ann-app-anp-564-040-fm",
+     "title": "(ann +app) \u2212anp = 5.64 \u00b1 0.40 fm ,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-2-rnn-rpp-rnp-003-006-fm-226",
+     "title": "(rnn +rpp) \u2212rnp = 0.03 \u00b1 0.06 fm .(2.26)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-2-charge",
+     "title": "(charge-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-c-chiral-eft-for-few-nucleons-applications",
+     "title": "Chiral EFT for few nucleons: applications",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-2830-mev-these-numbers-are-similar-to-the-ones-o",
+     "title": "MeV. These numbers are similar to the ones ob-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-5-\u03c7-\u03c7-\u03b4ijg\u00b5\u03bdt\u03bd",
+     "title": "(\u03c7+ \u2212 \u27e8\u03c7+\u27e9) \u03b4ijg\u00b5\u03bdT\u03bd",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-030-mev-and-m-0-123345-035-mev-324-together",
+     "title": "MeV and m\u2206 0 = 1233.45 \u00b1 0.35 MeV (324) together",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-8-mev-and-\u03b4m2",
+     "title": "MeV and |\u03b4m2",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-3-4\u03b1-1f",
+     "title": "(4\u03b1 \u2212 1)f,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-024-3-1-2\u03b1f-f-\u03be\u03be-\u03c0-1-2\u03b1f",
+     "title": "(1 + 2\u03b1)f, f \u039e\u039e \u03c0 = \u2212(1 \u2212 2\u03b1)f,",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-3-1-2\u03b1f-f-\u03be\u03bb-k-1",
+     "title": "(1 + 2\u03b1)f, f \u039e\u039b K = 1\u221a",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-3-1-\u03b1f-f-\u03c3\u03c2-\u03b78-2",
+     "title": "(1 \u2212\u03b1)f, f \u03a3\u03a3 \u03b78 = 2\u221a",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-iii-towards-a-many-body-eft-for-nuclei",
+     "title": "TOWARDS A MANY-BODY EFT FOR NUCLEI",
+     "prose_ratio": 0.164,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-028-0-a1xyp-mnp",
+     "title": "A]\u22121|(x,y)(\u2044p +m)n(p)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-0-a1xx-q-mnq",
+     "title": "A]\u22121|(x,x\u2032) (\u2044q +m)n(q)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-030-0-a1yyp-mnp",
+     "title": "A]\u22121|(y\u2032,y)(\u2044p +m)n(p)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-0-a1-that",
+     "title": "A)\u22121 that",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-032-c-eft-for-halo-nuclei",
+     "title": "EFT for halo nuclei",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-iv-summary-and-perspectives",
+     "title": "SUMMARY AND PERSPECTIVES",
+     "prose_ratio": 0.967,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-034-acknowledgments",
+     "title": "Acknowledgments",
+     "prose_ratio": 1.0,
+     "coverage_ratio": 1.0,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-035-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

@@ -7,7 +7,8 @@
   "bytes": 835453,
   "pages": 91,
   "text_source": "embedded",
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "math_source": "text-layer"
  },
  "metadata": {
   "arxiv": {
@@ -1054,6 +1055,330 @@
   "likely_scanned": false,
   "toc_entries": 59,
   "sections": 60,
-  "chars_total": 155020
+  "chars_total": 155020,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "e-print",
+   "tex_sections": 12,
+   "overlaid": 0,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-front-matter",
+     "title": "Front matter",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-000-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.346,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-001-4-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+     "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-6-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+     "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-8-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+     "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-1-quantum-groups-and-global-bases",
+     "title": "Quantum groups and global bases",
+     "prose_ratio": 0.087,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-005-11-quantum-groups-let-i-be-an-index-set-a-cartan",
+     "title": "Quantum groups. Let I be an index set. A Cartan datum is a quintuple",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-10-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+     "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-007-12-integrable-representations-a-uqg-module-m-is",
+     "title": "Integrable representations. A Uq(g)-module M is called integrable if M =\u2a01",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-12-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+     "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-13-crystal-bases-and-global-bases-for-a-subring",
+     "title": "Crystal bases and global bases. For a subring A of Q(q), we say that L",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-010-14-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+     "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-011-2-klr-algebras-and-r-matrices",
+     "title": "KLR algebras and R-matrices",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-21-klr-algebras-we-recall-the-de\ufb01nition-of-khova",
+     "title": "KLR algebras. We recall the de\ufb01nition of Khovanov-Lauda-Rouquier algebra or",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-16-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+     "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-18-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+     "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-015-20-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+     "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-016-3-simplicity-of-heads-and-socles-of-convolution",
+     "title": "Simplicity of heads and socles of convolution products",
+     "prose_ratio": 0.335,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-017-22-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+     "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-2-\u03bbmn-\u03bbnm-for-some-c-k",
+     "title": "(\u039b(M,N )+\u039b(N,M )) for some c \u2208 k\u00d7. \u25a1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-24-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+     "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-26-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+     "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-021-28-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+     "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-022-30-s-j-kang-m-kashiw-ara-m-kim-s-j-oh",
+     "title": "S.-J. KANG, M. KASHIW ARA, M. KIM, S.-J. OH",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-023-4-leclercs-conjecture",
+     "title": "Leclerc\u2019s conjecture",
+     "prose_ratio": 0.042,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-024-41-leclercs-conjecture-the-following-theorem-is",
+     "title": "Leclerc\u2019s conjecture. The following theorem is a part of Leclerc\u2019s conjecture",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-025-42-geometric-results-the-result-of-this-subsecti",
+     "title": "Geometric results. The result of this subsection (Theorem 4.2.1) was explained",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-026-1031-in-this-subsection-we-assume-further-that-t",
+     "title": "In this subsection, we assume further that the base \ufb01eld k is of characteristic",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-027-0-assume-that-m-r-gmod-has-a-head-qch-with-a-sel",
+     "title": "Assume that M \u2208 R-gmod has a head qcH with a self-dual simple module H and",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-028-43-proof-of-theorem-421-recall-that-the-graded-a",
+     "title": "Proof of Theorem 4.2.1. Recall that the graded algebra R(\u03b2) (\u03b2 \u2208 Q+) is",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-029-5-quantum-cluster-algebras",
+     "title": "Quantum cluster algebras",
+     "prose_ratio": 0.115,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-030-51-quantum-seeds-fix-a-\ufb01nite-index-set-j-jex-jfr",
+     "title": "Quantum seeds. Fix a \ufb01nite index set J =Jex \u2294Jfr with the decomposition into",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-031-6-monoidal-categorification-of-cluster-algebras",
+     "title": "Monoidal categorification of cluster algebras",
+     "prose_ratio": 0.164,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-032-52-mutation-fork-jex-we-de\ufb01ne-a-j-j-matrix-e-eij",
+     "title": "Mutation. Fork \u2208Jex, we de\ufb01ne a J \u00d7J-matrix E = (eij)i,j\u2208J and a Jex \u00d7Jex-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-033-62-graded-cases-let-q-be-a-free-abelian-group-eq",
+     "title": "Graded cases. Let Q be a free abelian group equipped with a symmetric bilinear",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-034-2-dk\u03b6-1",
+     "title": "(dk,\u03b6 ) + 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-035-4-dkdk-\u03b6\u03b6-1",
+     "title": "((dk,dk) + (\u03b6,\u03b6 )) \u2212 1",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-036-4-\u03b6-dk\u03b6-dk",
+     "title": "(\u03b6 +dk,\u03b6 +dk)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-037-7-monoidal-categorification-via-modules-over-klr",
+     "title": "Monoidal categorification via modules over KLR algebras",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-038-71-admissible-pair-in-this-section-we-assume-tha",
+     "title": "Admissible pair. In this section, we assume that R is a symmetric KLR algebra",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-039-4-wtmiwtmimiij-\u03bb-bd-we",
+     "title": "(wt(Mi),wt(Mi))[Mi]}i\u2208J, \u2212\u039b, ~B,D ). We",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-040-8-quantum-coordinate-rings-and-modified-quantize",
+     "title": "Quantum coordinate rings and modified quantized envelopin g",
+     "prose_ratio": 0.005,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-041-81-quantum-coordinate-ring-let-uqg-be-hom-qquqg",
+     "title": "Quantum coordinate ring. Let Uq(g)\u2217 be Hom Q(q)(Uq(g), Q(q)). Then the co-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-042-82-unipotent-quantum-coordinate-ring-let-us-endo",
+     "title": "Unipotent quantum coordinate ring. Let us endow U +",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-043-2-\u03b2\u03b2-x-for-x-aqn\u03b283",
+     "title": "(\u03b2,\u03b2 )x for x \u2208Aq(n)\u03b2.(8.3)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-044-83-modi\ufb01ed-quantum-enveloping-algebra-for-the-ma",
+     "title": "Modi\ufb01ed quantum enveloping algebra. For the materials in this subsec-",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-045-84-relationship-of-aqg-and-uqg-there-exists-a-ca",
+     "title": "Relationship of Aq(g) and ~Uq(g). There exists a canonical pairing Aq(g) \u00d7",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-046-86-global-basis-of-uqg-and-tensor-products-of-uq",
+     "title": "Global basis of ~Uq(g) and tensor products of Uq(g)-modules in Oint(g). Let",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-047-9-quantum-minors-and-t-systems",
+     "title": "Quantum minors and T-systems",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-048-91-quantum-minors-using-the-isomorphism-\u03c6-in-81",
+     "title": "Quantum minors. Using the isomorphism \u03a6 in ( 8.1), for each \u03bb \u2208 P+ and",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-049-92-t-system-in-this-subsection-we-recall-the-t",
+     "title": "T-system. In this subsection, we recall the T -system among the (unipotent)",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-050-93-revisit-of-crystal-bases-and-global-bases-in",
+     "title": "Revisit of crystal bases and global bases. In order to prove Theorem 9.3.3",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-051-94-generalized-t-system-thet--system-in-92-can-b",
+     "title": "Generalized T-system. TheT -system in \u00a79.2 can be interpreted as a system of",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-052-10-klr-algebras-and-their-modules",
+     "title": "KLR algebras and their modules",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-053-101-chevalley-and-kashiwara-operators-let-us-rec",
+     "title": "Chevalley and Kashiwara operators. Let us recall the de\ufb01nition of several",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-054-102-determinantial-modules-and-t-system-we-will",
+     "title": "Determinantial modules and T-system. We will use the materials in \u00a7 9 to",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-055-11-monoidal-categorification-of-aqnw",
+     "title": "Monoidal categorification of Aq(n(w))",
+     "prose_ratio": 0.0,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-056-111-quantum-cluster-algebra-structure-on-aqnw-in",
+     "title": "Quantum cluster algebra structure on Aq(n(w)). In this subsection, we",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-057-112-admissible-seeds-in-the-monoidal-category-cw",
+     "title": "Admissible seeds in the monoidal category Cw. For 0 \u2264t \u2264s \u2264r, we set",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-058-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

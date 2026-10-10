@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-nucl-th-0103005v2/blocks/prose-sec-020",
+  "kind": "prose",
+  "title": "DENSITY AND MOMENTUM DISTRIBUTIONS",
+  "pageStart": 27,
+  "pageEnd": 28,
+  "text": "../sections/sec-020-6-density-and-momentum-distributions.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-nucl-th-0103005v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-nucl-th-0103005v2/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,64 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-0810.1697v1/source/manifest",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0810.1697v1 (LaTeX source)",
+  "partOf": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-0810.1697v1/manifest.jsonld",
+  "provenance": "ingested",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0810.1697&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0810.1697v1",
+    "format": "latex",
+    "url": "https://arxiv.org/e-print/0810.1697v1",
+    "content_type": "application/gzip",
+    "sha256": "ea5d3aa785d881055a972113391537fbc08093fb1a0cd6ded009e880266fe90d",
+    "bytes": 430056,
+    "fetched": "2026-10-10T15:01:25+00:00",
+    "files": [
+      {
+        "path": "source/files/appendix.tex",
+        "role": "tex",
+        "sha256": "27862169cf0418d1fae1a73f37e9bf4ffe439491f87a0640f95e569d562aa255",
+        "bytes": 2496
+      },
+      {
+        "path": "source/files/article2.tex",
+        "role": "tex",
+        "sha256": "550ce3e38a156173ccdf36a4c707263ed9dcc33ee54e41cd3c83598c9e79cffe",
+        "bytes": 3455
+      },
+      {
+        "path": "source/files/definitions-and-notations2.tex",
+        "role": "tex",
+        "sha256": "6c40813cb7c989cfce6af82558db6082adcaca3c122650fe35739352aa4458ae",
+        "bytes": 7171
+      },
+      {
+        "path": "source/files/expansion-of-cable.tex",
+        "role": "tex",
+        "sha256": "4e7d485386194e7f31a3f698516fcc5776dd1349c159e44939447eda1207a3a1",
+        "bytes": 7787
+      },
+      {
+        "path": "source/files/proof.tex",
+        "role": "tex",
+        "sha256": "d9d2ccb49284dc230b12a275ef983dc2381ef7fe3bd7e3b5bf17a077f8033160",
+        "bytes": 5581
+      }
+    ],
+    "disposition": "ingested source material — the authors' LaTeX, attributed to its document, not folio content"
+  }
+}

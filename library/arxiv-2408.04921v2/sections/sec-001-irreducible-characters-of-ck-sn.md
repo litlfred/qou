@@ -7,182 +7,99 @@ section_number: 2
 pages: 4-6
 source_pdf: 2408.04921v2.pdf
 source_sha256: dcfe112640a8adda
+text_source: latex
+latex_prose_ratio: 0.944
+latex_coverage_ratio: 0.973
 doc_brief: "IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP HUIMIN GAO AND NAIHUAN JING — 5 sections: Introduction; Irreducible characters of Ck ≀ Sn; X ij"
 ---
-The generalized symmetric group Ck ≀ Sn is the wreath product of the
-cyclic group Ck of order k with the symmetric group Sn of n elements, i.e.
-the semidirect product Ckn ⋊ Sn , where the symmetric group Sn acts on
-the direct product Ckn = Ck × · · · × Ck by permutating the factors. The
-multiplication is given by
-(g; σ) · (h; τ ) = (gσ(h); στ ),
+The generalized symmetric group $C_k\wr S_n$ is the wreath product of the cyclic group $C_k$ of order $k$ with the symmetric group $S_n$ of $n$ elements, i.e. the semidirect product $C_k^{n}\rtimes S_n$, where the symmetric group $S_n$ acts on the direct product $C_k^{n}=C_k\times \cdots \times C_k$ by permutating the factors. The multiplication is given by $$\begin{align}
+    (g;\sigma)\cdot (h;\tau)=(g\sigma(h);\sigma\tau),
+\end{align}$$ where $g,h\in C_k^{n}$ and $\sigma,\tau\in S_n$.
 
-(2.1)
+Since $C_k$ is an abelian group of order $k$, there are exactly $k$ conjugacy classes, given by $\{1\},\{c\},\cdots,\{c^{k-1}\}$, where $C_k=\langle c \rangle$. The order of the centralizer of each conjugacy class is $k$. Its irreducible characters are given by $\gamma_i$, $i=0, \ldots, k-1$, where $\gamma_i(c^j)=\omega^{ij}$, and $\omega=e^{2\pi i/k}$ is the $k$-th primitive root of unity. The space of class functions on $C_k$ is given by $$\begin{align*}
+    R(C_k)=\bigoplus_{i=0}^{k-1}\mathbb{C}\gamma_i.
+\end{align*}$$
 
-where g, h ∈ Ckn and σ, τ ∈ Sn .
-Since Ck is an abelian group of order k, there are exactly k conjugacy
-classes, given by {1}, {c}, · · · , {ck−1 }, where Ck = hci. The order of the
-centralizer of each conjugacy class is k. Its irreducible characters are given
-by γi , i = 0, . . . , k − 1, where γi (cj ) = ω ij , and ω = e2πi/k is the k-th
-primitive root of unity. The space of class functions on Ck is given by
-R(Ck ) =
+The conjugacy classes of $C_k\wr S_n$ are parametrized by colored partitions. The color set is $I=\{0,1,\cdots,k-1\}$, the indexing set of conjugacy classes. The conjugacy class of an element $x=(g;\sigma)\in C_k\wr S_n$ corresponds to *the $I$-colored partition* $\boldsymbol{\lambda}=(\lambda^{(i)})$, which consists of $|I|$ partitions $\lambda^{(i)}$ such that $\Arrowvert\boldsymbol{\lambda}\Arrowvert=\sum_{i=0}^{k-1}|\lambda^{(i)}|=n$, the $i$th partition $\lambda^{(i)}$ given by $$\begin{align*}
+    \lambda^{(i)}=(1^{m_1(c^{i})}2^{m_2(c^{i})}\cdots),
+\end{align*}$$ where $m_j(c^i)$ equals to the number of $j$-cycles in $\sigma$ whose cycle product is $c^i$. We also say that the colored partition $\boldsymbol{\lambda}=(\lambda^{(i)})$ is supported at its constituent subpartitions $\lambda^{(i)}$. In particular, a colored partition $\boldsymbol{\lambda}$ supported at only one color has one nontrivial constituent subpartition, and all other constituents are empty.
 
-k−1
-M
+Given a partition $\lambda=(\lambda_1, \lambda_2, \ldots, \lambda_l)$, one can paint the parts with the colors $\{0, 1, \ldots, k-1\}$, to get $k^{l(\lambda)}$ colored partitions $\boldsymbol{\lambda}$, which are referred as the colored partitions arising from $\lambda$. On the other hand, all these $k^{l(\lambda)}$ colored partitions become to the partition $\lambda$ by erasing their colors. If $\boldsymbol{\lambda}=(\lambda^{(i)})$ is a colored partition, we define the *weighted length* $\eta(\boldsymbol{\lambda})$ as $\sum_i il(\lambda^{(i)})$.
 
-Cγi .
+We also call $\boldsymbol{\lambda}$ the type of the conjugacy class. It is known that two elements are conjugate in $C_k\wr S_n$ if and only if they have the same type.
 
-i=0
+A *hook* is a special partition of the form $(a, 1^b)$, where $a-1$ is the length of its arm and $b$ is the length of its leg. The hook length is defined as $a+b$. For a general partition $\lambda$, its hook length at $x=(i, j)\in \lambda$, of the Young diagram, is defined by $$h(x)=\lambda_{i}+\lambda_j'-i-j+1,$$ and the hook length of $\lambda$ is defined as the product of $h(x)$ for $x\in \lambda$, where $\lambda'$ is the conjugate of $\lambda$.
 
-The conjugacy classes of Ck ≀ Sn are parametrized by colored partitions.
-The color set is I = {0, 1, · · · , k − 1}, the indexing set of conjugacy classes.
-The conjugacy class of an element x = (g; σ) ∈ Ck ≀ Sn corresponds to the
-I-colored partition λ = (λ(i) ), which consists of |I| partitions λ(i) such that
-Pk−1 (i)
-kλk = i=0
-|λ | = n, the ith partition λ(i) given by
-i
+::: exmp
+In $C_3\wr S_7$, $$\begin{align*}
+        x=((1,1,1,\omega^1,\omega^1,\omega^2,1);(1,2,3)(4,5)(6,7));\\
+        y=((1,\omega^2,\omega^1,1,1,1,\omega^1);(1,4,5)(2,6)(3,7))
+\end{align*}$$ are conjuagate, since they have the same type $((3),(\phi),(2,2))$.
+:::
 
-i
+Irreducible characters of the generalized symmetric group $C_k\wr S_n$ were determined by Specht [@S]. Frenkel, Wang, and the second author have given a vertex algebraic method to express the irreducible character values by matrix coefficients of certain vertex operators [@FJW], which we now recall in the following.
 
-λ(i) = (1m1 (c ) 2m2 (c ) · · · ),
+Let $\{a_n(\gamma_i)|n\in \mathbb{Z},i\in I\}\cup\{c\}$ be the set of generators of the Heisenberg algebra $\mathcal{H}$ with defining relations $$\begin{align}
+    [a_n(\gamma_i),a_m(\gamma_j)]=n\delta_{n,-m}\delta_{i,j}c,
+\end{align}$$ $$\begin{align}
+    [a_n(\gamma_i),c]=0.
+\end{align}$$
 
-where mj (ci ) equals to the number of j-cycles in σ whose cycle product
-is ci . We also say that the colored partition λ = (λ(i) ) is supported at its
-constituent subpartitions λ(i) . In particular, a colored partition λ supported
-at only one color has one nontrivial constituent subpartition, and all other
-constituents are empty.
-Given a partition λ = (λ1 , λ2 , . . . , λl ), one can paint the parts with the
-colors {0, 1, . . . , k − 1}, to get kl(λ) colored partitions λ, which are referred
-as the colored partitions arising from λ. On the other hand, all these kl(λ)
-colored partitions become to the partition λ by erasing their colors.
-=
-P If λ
-(i)
-(i)
-(λ ) is a colored partition, we define the weighted length η(λ) as i il(λ ).
-We also call λ the type of the conjugacy class. It is known that two
-elements are conjugate in Ck ≀ Sn if and only if they have the same type.
+Consider the Fock space $V=\mathrm{Sym}(a_{-n}(\gamma_i)'s)$, the polynomial algebra on the variables $a_{-n}(\gamma_i)$,$n\in \mathbb{N}$ and $i\in I$. The algebra $\mathcal{H}$ acts on $V$ by the following rule: $$\begin{align}
+    &a_{-n}(\gamma_i).v=a_{-n}(\gamma_i)v,\\
+    &c.v=v, \\ \notag
+    &a_n(\gamma_i).a_{-n_1}(\alpha_1)a_{-n_2}(\alpha_2)\cdots a_{-n_k}(\alpha_k)\\ \label{e:2.6}
+    &=\sum_{j=1}^{k}\delta_{n,n_j}\langle \gamma_i,\alpha_j\rangle a_{-n_1}(\alpha_1)a_{-n_2}(\alpha_2)\cdots a_{-n_k}(\alpha_k)
+\end{align}$$ where $\alpha_j\in R(C_k)$, $\langle \gamma_i,\gamma_j\rangle =\delta_{i,j}$ and $\langle \gamma_i,\alpha_j\rangle$ is extended the whole space by linearity.
 
-
-IRREDUCIBLE CHARACTERS OF THE GENERALIZED SYMMETRIC GROUP
+For convenience, we denote $a_n(\gamma_i):=a_{in}$, where the first index $i$ stands for $\gamma_i$. The space $V$ is equipped with a bilinear form given by $$\begin{align}
+    \langle 1,1\rangle =1, \quad a_{in}^*=a_{-in},
+\end{align}$$ where $a_{in}^*$ denotes the adjoint of $a_{in}$. We denote by $A_i(z)$ and $A_i^*(z)$ the generating series: $$\begin{align}
+    A_i(z)=\sum_{n\in \mathbb{N}}a_{-in}z^n, \quad A_i^*(z)=\sum_{n\in \mathbb{N}}a_{in}z^{-n}.
+\end{align}$$
 
-5
+Moreover, for a partition $\lambda=(\lambda_1,\lambda_2,\cdots \lambda_l)$, we define $$\begin{align}
+\label{e:2.9}
+    a_{-i\lambda}=a_{-i\lambda_1}a_{-i\lambda_2}\cdots a_{-i\lambda_l},
+\end{align}$$ which form an orthogonal basis: $$\begin{align}
+\label{e:innerprod}
+    \langle a_{-i\lambda}, a_{-j\mu}\rangle=\delta_{i,j}\delta_{\lambda \mu}z_\lambda,
+\end{align}$$ where $z_\lambda=\prod_i i^{m_i}m_i!$ for $(1^{m_1}2^{m_2}\cdots)$, the exponential notation of $\lambda$.
 
-A hook is a special partition of the form (a, 1b ), where a − 1 is the length
-of its arm and b is the length of its leg. The hook length is defined as a + b.
-For a general partition λ, its hook length at x = (i, j) ∈ λ, of the Young
-diagram, is defined by
-h(x) = λi + λ′j − i − j + 1,
-and the hook length of λ is defined as the product of h(x) for x ∈ λ, where
-λ′ is the conjugate of λ.
-Example 2.1. In C3 ≀ S7 ,
-x = ((1, 1, 1, ω 1 , ω 1 , ω 2 , 1); (1, 2, 3)(4, 5)(6, 7));
-y = ((1, ω 2 , ω 1 , 1, 1, 1, ω 1 ); (1, 4, 5)(2, 6)(3, 7))
-are conjuagate, since they have the same type ((3), (φ), (2, 2)).
-Irreducible characters of the generalized symmetric group Ck ≀ Sn were
-determined by Specht [22]. Frenkel, Wang, and the second author have given
-a vertex algebraic method to express the irreducible character values by
-matrix coefficients of certain vertex operators [5], which we now recall in
-the following.
-Let {an (γi )|n ∈ Z, i ∈ I} ∪ {c} be the set of generators of the Heisenberg
-algebra H with defining relations
-[an (γi ), am (γj )] = nδn,−m δi,j c,
+In fact, $\mathcal{H}$ has another set of generators consisting of the Fourier transform of the first set: $\{\widetilde{a}_{in}|n\in \mathbb{Z},i\in I\}\cup\{c\}$, where $$\begin{align}
+\label{e:2.11}
+    \widetilde{a}_{in}=\sum_{j=0}^{k-1}\omega^{-ij}a_{jn}.
+\end{align}$$ Under the inverse Fourier transform, we have that $$\begin{align}
+    a_{in}=\frac{1}{k}\sum_{j=0}^{k-1}\omega^{ij}\widetilde{a}_{jn}.
+\end{align}$$
 
-(2.2)
+Similarly, for a partition $\lambda=(\lambda_1, \lambda_2, \ldots, \lambda_l)$ we denote $$\begin{align}
+    \widetilde{a}_{-i\lambda}=\widetilde{a}_{-i\lambda_1}\widetilde{a}_{-i\lambda_2}\cdots \widetilde{a}_{-i\lambda_l}.
+\end{align}$$
 
-[an (γi ), c] = 0.
+For a colored partition $\boldsymbol{\lambda}=(\lambda^{(0)},\lambda^{(1)},\cdots,\lambda^{(k-1)})$, let $$\begin{align}
+    \widetilde{a}_{-\boldsymbol{\lambda}}=\widetilde{a}_{-0\lambda^{(0)}}\widetilde{a}_{-1\lambda^{(1)}}\cdots \widetilde{a}_{-(k-1)\lambda^{(k-1)}}.
+\end{align}$$ Then $\widetilde{a}_{-\boldsymbol{\lambda}}$ form another basis of $\mathcal{H}$.
 
-(2.3)
+We introduce the vertex operator $X_i(z)$ and its adjoint $X_i^*(z)$ as the linear maps: $V\longrightarrow V[[z, z^{-1}]]$ given by $$\begin{align}
+    X_i(z)&=\mbox{exp} \left( \sum\limits_{n\geq 1} \frac{1}{n}a_{-in}z^{n} \right) \mbox{exp} \left( -\sum \limits_{n\geq 1} \frac{1}{n}a_{in}z^{-n} \right)\\ \notag
+    &=\sum_{n\in\mathbb Z}X_{in}z^n,\\
+    X_i^*(z)&=\mbox{exp} \left( -\sum\limits_{n\geq 1} \frac{1}{n}a_{-in}z^{n} \right) \mbox{exp} \left( \sum \limits_{n\geq 1} \frac{1}{n}a_{in}z^{-n} \right)\\ \notag
+    &=\sum_{n\in\mathbb Z}X_{in}^*z^{-n}.
+\end{align}$$
 
-Consider the Fock space V = Sym(a−n (γi )′ s), the polynomial algebra on
-the variables a−n (γi ),n ∈ N and i ∈ I. The algebra H acts on V by the
-following rule:
-a−n (γi ).v = a−n (γi )v,
+In fact, for a partition $\lambda=(\lambda_1,\lambda_2,\cdots, \lambda_l)$, it is known that $$\begin{align}
+    s_{i\lambda}=X_{i\lambda_1}X_{i\lambda_2}\cdots X_{i\lambda_l}.1
+\end{align}$$ is the Schur function associated to the parition $\lambda$ in the variables $a_{-in}$ (as a power-sum symmetric function) [@J2]. Then we have $$\begin{align}
+    \langle s_{i\lambda}, s_{i\mu}\rangle=\delta_{\lambda \mu}.
+\end{align}$$
 
-(2.4)
+For a colored partition $\boldsymbol{\lambda}=(\lambda^{(0)},\lambda^{(1)},\cdots,\lambda^{(k-1)})$, we denote $$\begin{align}
+        s_{\boldsymbol{\lambda}}=s_{0\lambda^{(0)}}s_{1\lambda^{(1)}}\cdots s_{(k-1)\lambda^{({k-1})}}.
+\end{align}$$ We recall the following vertex algebraic formulation of Specht characters:
 
-c.v = v,
-
-(2.5)
-
-an (γi ).a−n1 (α1 )a−n2 (α2 ) · · · a−nk (αk )
-=
-
-k
-X
-
-δn,nj hγi , αj ia−n1 (α1 )a−n2 (α2 ) · · · a−nk (αk )
-
-(2.6)
-
-j=1
-
-where αj ∈ R(Ck ), hγi , γj i = δi,j and hγi , αj i is extended the whole space
-by linearity.
-For convenience, we denote an (γi ) := ain , where the first index i stands
-for γi . The space V is equipped with a bilinear form given by
-h1, 1i = 1,
-
-a∗in = a−in ,
-
-(2.7)
-
-where a∗in denotes the adjoint of ain . We denote by Ai (z) and A∗i (z) the
-
-generating series:
-
-Ai (z) =
-
-X
-
-n∈N
-
-a−in z n ,
-
-A∗i (z) =
-
-X
-
-n∈N
-
-ain z −n .
-
-(2.8)
-
-
-6
-
-HUIMIN GAO AND NAIHUAN JING
-
-Moreover, for a partition λ = (λ1 , λ2 , · · · λl ), we define
-a−iλ = a−iλ1 a−iλ2 · · · a−iλl ,
-
-(2.9)
-
-which form an orthogonal basis:
-ha−iλ , a−jµ i = δi,j δλµ zλ ,
-
-Q
-
-(2.10)
-
-where zλ = i imi mi ! for (1m1 2m2 · · · ), the exponential notation of λ.
-In fact, H has another set of generators consisting of the Fourier transform
-of the first set: {e
-ain |n ∈ Z, i ∈ I} ∪ {c}, where
-e
-ain =
-
-k−1
-X
-
-ω −ij ajn .
-
-(2.11)
-
-j=0
-
-Under the inverse Fourier transform, we have that
-k−1
-
-ain =
+::: thm
+[@FJW] []{#t:FJW label="t:FJW"} Given colored partitions $\boldsymbol{\lambda}=(\lambda^{(0)},\lambda^{(1)},\cdots,\lambda^{(k-1)})$ and $\boldsymbol{\rho}=(\rho^{(0)},\rho^{(1)},\cdots,\rho^{(k-1)})$ of $n$, the matrix coefficient $$\begin{align*}
+        \langle s_{\boldsymbol{\lambda}}, \widetilde{a}_{-\boldsymbol{\rho}} \rangle
+\end{align*}$$ is equal to the value of the irreducible character $\chi^{\boldsymbol{\lambda}}$ at the conjugacy class of type $\boldsymbol{\rho}$ in $C_k\wr S_n$.
+:::

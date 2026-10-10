@@ -1,0 +1,55 @@
+\newcommand{\set}[1]{\left\{ \def\given{\ \middle| \ }  #1 \right\}  }
+\newcommand{\defeq}{\mathrel{:=}}
+\newcommand{\iso}{\cong}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\tr}{tr}
+
+\newcommand{\ii}{\mathsf{i}}
+
+\newcommand{\transp}{\mathrm{T}}
+
+%
+%
+\def\leftfun#1{\mathopen{}\left#1}
+\def\rightfun#1{\right#1}
+
+\NewDocumentCommand{\slg}{}{\operatorname{SL}_2(\mathbb{C})}
+\NewDocumentCommand{\pslg}{}{\operatorname{PSL}_2(\mathbb{C})}
+\NewDocumentCommand{\glg}{}{\operatorname{GL}_2(\mathbb{C})}
+\NewDocumentCommand{\psp}{O{\mathbb{C}} O{1}}{{#1 P}^{#2}}
+
+\NewDocumentCommand{\upf}{m}{\varphi^+\leftfun(#1\rightfun)}
+\NewDocumentCommand{\dnf}{m}{\varphi^-\leftfun(#1\rightfun)}
+\NewDocumentCommand{\aroundhol}{m}{\tau\leftfun(#1\rightfun)}
+
+\NewDocumentCommand{\upr}{m}{#1^{\uparrow}}
+\NewDocumentCommand{\dnr}{m}{#1^{\downarrow}}
+
+\NewDocumentCommand{\gpoid}{m}{\Pi\leftfun(#1\rightfun)}
+
+\NewDocumentCommand{\qndl}{}{\triangleleft}
+
+\NewDocumentCommand{\Hol}{m}{\operatorname{Hol}_{#1}}
+\NewDocumentCommand{\hol}{m}{\operatorname{hol}_{#1}}
+
+\NewDocumentCommand{\evec}{m}{\mathrm{\mathbf{e}}_{#1}}
+
+\DeclareMathOperator{\dil}{Li_2}
+\DeclareMathOperator{\logdil}{L}
+
+
+%
+\ExplSyntaxOn
+\DeclareExpandableDocumentCommand{\IfEmptyTF}{mmm}
+ {
+    \tl_if_empty:nTF {#1} {#2} {#3}
+ }
+\ExplSyntaxOff
+
+\NewDocumentCommand{\potl}{o m}{
+  \Phi_{\IfNoValueTF{#1}{}{#1}}%
+  \IfEmptyTF{#2}{%
+  }{%
+    \leftfun(#2\rightfun)
+  }
+}

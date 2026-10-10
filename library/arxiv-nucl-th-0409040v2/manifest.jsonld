@@ -1,16 +1,36 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-nucl-th-0409040v2/manifest",
-  "@type": [
-    "folio:SourceDocument"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
-  "title": "On the correlation between the binding energies of the triton and the alpha-particle",
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-nucl-th-0409040v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-nucl-th-0409040v2",
   "contains": [
+    "library/arxiv-nucl-th-0409040v2/sections/sec-front-matter",
     "library/arxiv-nucl-th-0409040v2/sections/sec-000"
   ],
   "provenance": "ingested",
+  "inSubgraph": "https://litlfred.github.io/qou/qou.jsonld#directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:nucl-th/0409040&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
   "meta": {
     "doc_id": "arxiv-nucl-th-0409040v2",
+    "title_source": "slug",
     "source_file": "0409040v2.pdf",
     "source_sha256": "986093ee95b94b241d0bd0147d8769ea42a3c23486c9a8d849af0d5155d7f9a2",
     "pages": 7,

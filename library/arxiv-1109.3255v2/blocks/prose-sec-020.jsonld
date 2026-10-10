@@ -1,16 +1,17 @@
 {
-  "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "library/arxiv-1109.3255v2/blocks/prose-sec-020",
-  "@type": [
-    "folio:Prose",
-    "doco:Section"
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
   ],
+  "@id": "library/arxiv-1109.3255v2/blocks/prose-sec-020",
   "kind": "prose",
   "title": "Algebraic motivation",
   "pageStart": 64,
   "pageEnd": 64,
   "text": "../sections/sec-020-71-algebraic-motivation.md",
-  "derivedFrom": "library/arxiv-1109.3255v2/manifest",
-  "sourceDocument": "library/arxiv-1109.3255v2/manifest",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1109.3255v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-1109.3255v2/manifest.jsonld",
   "provenance": "ingested"
 }

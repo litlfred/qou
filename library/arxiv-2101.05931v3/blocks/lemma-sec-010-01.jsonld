@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2101.05931v3/blocks/lemma-sec-010-01",
+  "kind": "lemma",
+  "title": "Lemma 4.6, [8]",
+  "pageStart": 12,
+  "pageEnd": 13,
+  "text": "lemma-sec-010-01.md",
+  "derivedFrom": "library/arxiv-2101.05931v3/sections/sec-010",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2101.05931v3/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -6,7 +6,8 @@
   "sha256": "d94bd6edf8544d4a019931edf61d67240f30e1d7db0b299daf55003255f1416c",
   "bytes": 625115,
   "pages": 37,
-  "text_source": "embedded"
+  "text_source": "embedded",
+  "math_source": "latex"
  },
  "metadata": {
   "arxiv": {
@@ -431,6 +432,134 @@
   "likely_scanned": false,
   "toc_entries": 26,
   "sections": 21,
-  "chars_total": 95054
+  "chars_total": 95054,
+  "latex_overlay": {
+   "_schema": "latex-math-overlay/v1",
+   "main": "0-traces-v4.tex",
+   "tex_sections": 6,
+   "overlaid": 2,
+   "thresholds": {
+    "title": 0.85,
+    "prose": 0.6,
+    "coverage": 0.5
+   },
+   "sections": [
+    {
+     "id": "sec-000-1-introduction",
+     "title": "Introduction",
+     "prose_ratio": 0.639,
+     "coverage_ratio": 0.828,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-001-11-nonzero-traces",
+     "title": "Nonzero traces",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-002-12-questions",
+     "title": "Questions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-003-13-conventions",
+     "title": "Conventions",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-004-14-organization",
+     "title": "Organization",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-005-15-acknowledgements",
+     "title": "Acknowledgements",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-006-2-zero-surgeries-on-ffpf-knots",
+     "title": "Zero-surgeries on ffpf knots",
+     "prose_ratio": 0.06,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-007-21-surface-homeomorphisms-and-fibered-knots",
+     "title": "Surface homeomorphisms and fibered knots",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-008-22-fixed-points-and-ffpf-knots",
+     "title": "Fixed points and ffpf knots",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-009-23-zero-surgeries-on-ffpf-knots",
+     "title": "Zero-surgeries on ffpf knots",
+     "prose_ratio": 0.544,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-010-3-traces-and-large-surgeries",
+     "title": "Traces and large surgeries",
+     "prose_ratio": 0.195,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-011-31-topological-preliminaries",
+     "title": "Topological preliminaries",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-012-33-the-mod-2-grading",
+     "title": "The mod 2 grading",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-013-34-zero-traces-of-l-space-knots",
+     "title": "Zero-traces of L-space knots",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-014-4-traces-and-rational-surgeries",
+     "title": "Traces and rational surgeries",
+     "prose_ratio": 0.94,
+     "coverage_ratio": 0.75,
+     "result": "overlaid",
+     "converter": "latex"
+    },
+    {
+     "id": "sec-015-5-negative-traces-and-positive-torus-knots",
+     "title": "Negative traces and positive torus knots",
+     "prose_ratio": 0.424,
+     "result": "prose gate failed \u2014 titles agree, contents do not"
+    },
+    {
+     "id": "sec-016-52-satellite-knots",
+     "title": "Satellite knots",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-017-53-hyperbolic-knots",
+     "title": "Hyperbolic knots",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-018-61-alexander-polynomials-of-l-space-knots",
+     "title": "Alexander polynomials of L-space knots",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-019-63-traces-that-detect-knot-floer-homology",
+     "title": "Traces that detect knot Floer homology",
+     "result": "no matching \\section"
+    },
+    {
+     "id": "sec-020-references",
+     "title": "References",
+     "result": "no matching \\section"
+    }
+   ]
+  }
  }
 }

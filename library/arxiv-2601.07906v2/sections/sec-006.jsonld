@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2601.07906v2/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Summing over handlebodies",
+  "pageStart": 22,
+  "pageEnd": 22,
+  "contains": [
+    "library/arxiv-2601.07906v2/blocks/prose-sec-006"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2601.07906v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/./arxiv-2601.07906v2/manifest.jsonld",
+  "provenance": "ingested"
+}
