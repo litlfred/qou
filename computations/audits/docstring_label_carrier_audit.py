@@ -40,7 +40,37 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent  # computations/
 LABEL = re.compile(r'\b((?:conj|prop|def|thm|lem|cor|rem|sec|ex|sim|alg):'
                    r'[A-Za-z0-9][A-Za-z0-9_-]{2,})')
 
-tracked = set(subprocess.run(["git","ls-files"],capture_output=True,text=True).stdout.split())
+# 🛑 EVERY git CALL IS PINNED TO THE REPO ROOT. `git ls-files` and `git grep`
+# resolve pathspecs RELATIVE TO THE CWD, so without this the verdict depends on
+# where the script is invoked from. Measured 2026-10-10 on one tree at one
+# commit, varying nothing but the cwd:
+#
+#     from the repo root   ->  26 dead labels,   58 citations
+#     from computations/   -> 400 dead labels, 1052 citations
+#
+# A 15x swing. The scan itself is cwd-independent (both runs report the same 488
+# labels over the same 862 files, because ROOT comes from __file__), so the two
+# halves disagreed silently: `git ls-files` listed only computations/, and
+# `git grep -- folio/ content/` matched nothing because neither path exists
+# relative to computations/. The gate harness happens to run from the root, so
+# the gate read the right number while a human running it next to the files it
+# scans read the wrong one.
+#
+# This matters for the FLIP-TO-BLOCKING condition in scripts/precision-gates.sh:
+# a gate whose count depends on its cwd has no meaningful threshold at all.
+# Found by a sibling session; reproduced here before fixing.
+_GIT_ROOT = subprocess.run(["git", "rev-parse", "--show-toplevel"],
+                           capture_output=True, text=True,
+                           cwd=pathlib.Path(__file__).resolve().parent).stdout.strip()
+
+
+def _git(*args: str) -> str:
+    """Run git from the REPO ROOT, never from the caller's cwd."""
+    return subprocess.run(["git", *args], capture_output=True, text=True,
+                          cwd=_GIT_ROOT or None).stdout
+
+
+tracked = set(_git("ls-files").split())
 
 _cache = {}
 def has_carrier(label: str) -> bool:
@@ -48,9 +78,8 @@ def has_carrier(label: str) -> bool:
     stem = label.split(":",1)[1]
     hit = any(stem in p for p in tracked)
     if not hit:
-        r = subprocess.run(["git","grep","-l","--fixed-strings",f'"{label}"',
-                            "--","folio/","content/"], capture_output=True, text=True)
-        hit = bool(r.stdout.strip())
+        hit = bool(_git("grep", "-l", "--fixed-strings", f'"{label}"',
+                        "--", "folio/", "content/").strip())
     _cache[label] = hit
     return hit
 
@@ -106,6 +135,17 @@ if set(_FLAGS) & {"--selftest", "--self-test"}:
     for l in ("conj:shared-denominator-cusp-holonomy",
               "def:q-pochhammer-partial-product"):
         if not has_carrier(l): print(f"SELFTEST FAIL: known-live {l} read as dead"); ok = False
+    # 4. CWD INDEPENDENCE: the git layer must have reached the whole repo.
+    #    `tracked` holds only computations/ when git ran from the wrong cwd,
+    #    which is the 26-vs-400 defect above. Assert on a path OUTSIDE
+    #    computations/ so a cwd regression cannot pass.
+    if not any(t.startswith("folio/") for t in tracked):
+        print("SELFTEST FAIL: git ls-files saw no folio/ path -- the git layer "
+              "is resolving relative to the cwd, not the repo root"); ok = False
+    if len(tracked) < 1000:
+        print(f"SELFTEST FAIL: only {len(tracked)} tracked files visible -- "
+              "the git layer is cwd-scoped"); ok = False
+
     print("SELFTEST PASS" if ok else "SELFTEST FAILED")
     sys.exit(0 if ok else 1)
 
