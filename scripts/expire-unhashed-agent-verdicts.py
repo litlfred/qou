@@ -28,6 +28,15 @@ Provenance of the population: origin ``e62336dabc1`` (2026-07-07, "heuristic
 agentic redo for proof criteria (full replace)"); the writers were deleted in
 ``9ddf0ad9c0`` and none survives. Analysis: bean ``qou-pwut``.
 
+WHERE IT LOOKS (issue #7642). An agent verdict is a JUDGEMENT: since the split
+its home is ``test/attestations/block-qa/**.attestations.json`` on main, and the
+derived report under ``test/results/block-qa/`` carries a projection of it.
+Both copies are scanned and the same deterministic rule is applied to each, so
+they stay identical; otherwise a later writer would see a judgement the store
+does not hold and refuse. The ``$expired`` explanation is added only to derived
+reports, because the attestation envelope is strict and has no room for it.
+``--root`` still takes any tree, including a legacy ``folio/``.
+
 Idempotent. ``--dry-run`` is the default; pass ``--apply`` to write.
 """
 from __future__ import annotations
@@ -65,11 +74,16 @@ def dumps_like(original: str, doc: object) -> str:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--root", default="folio")
+    ap.add_argument("--root", action="append",
+                    help="tree to scan (repeatable); default: the attestation store and the results tree")
     ap.add_argument("--apply", action="store_true", help="write (default: dry-run)")
     args = ap.parse_args()
 
-    files = sorted(pathlib.Path(args.root).rglob("*.qa.json"))
+    roots = args.root or ["test/attestations/block-qa", "test/results/block-qa"]
+    files = sorted(
+        p for r in roots for p in pathlib.Path(r).rglob("*.json")
+        if p.name.endswith(".qa.json") or p.name.endswith(".attestations.json")
+    )
     stats = collections.Counter()
     crit = collections.Counter()
 
@@ -108,7 +122,8 @@ def main() -> int:
 
         if changed:
             stats["files"] += 1
-            doc.setdefault("$expired", NOTE)
+            if not path.name.endswith(".attestations.json"):
+                doc.setdefault("$expired", NOTE)
             if args.apply:
                 path.write_text(dumps_like(original, doc))
 

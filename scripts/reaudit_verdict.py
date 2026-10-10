@@ -14,11 +14,19 @@ Usage:
   result ∈ {pass, fail, warn, n/a}
   --score (0..1) only for proof-rater-* criteria.
 
+`<qa_path>` may be the legacy sidecar path, the block's .md/.ts, or its
+results-tree report: since issue #7642 the verdict is a JUDGEMENT kept in
+test/attestations/block-qa/ and the derived report is under
+test/results/block-qa/ (scripts/lib/block_qa.py). The path only names the block.
+
 Concurrency: re-audit batches are disjoint sets of files, so parallel agents
 never write the same sidecar — safe without locking.
 """
 from __future__ import annotations
 import argparse, datetime, hashlib, json, os, subprocess, sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib"))
+import block_qa  # noqa: E402  -- where block QA lives after the split (#7642)
 
 VALID_RESULTS = {"pass", "fail", "warn", "n/a"}
 VALID_CRITERIA = {
@@ -37,7 +45,7 @@ def file_hash(path: str) -> str | None:
 
 
 def field_hash(qa: str) -> dict:
-    base = qa[: -len(".qa.json")]
+    base = str(block_qa.block_root_of(qa))
     out = {}
     for ext in ("md", "ts", "lean"):
         h = file_hash(f"{base}.{ext}")
@@ -61,16 +69,17 @@ def main() -> int:
     if args.criterion not in VALID_CRITERIA:
         print(f"bad criterion {args.criterion!r}; want one of {sorted(VALID_CRITERIA)}", file=sys.stderr)
         return 2
-    if not os.path.exists(args.qa):
-        print(f"no such sidecar: {args.qa}", file=sys.stderr)
+    if block_qa.read_path(args.qa) is None:
+        print(f"no QA report for block {block_qa.block_root_of(args.qa)} "
+              f"(neither {block_qa.results_path(args.qa)} nor the legacy sibling); "
+              f"{block_qa.FETCH_HINT}", file=sys.stderr)
         return 2
 
     head = subprocess.check_output(["git", "rev-parse", "HEAD"]).decode().strip()
     now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z")
     today = now[:10]
 
-    with open(args.qa, encoding="utf-8") as f:
-        d = json.load(f)
+    d = block_qa.load(args.qa)
     crit = d.setdefault("criteria", {})
     entry = {
         "field_hash": field_hash(args.qa),
@@ -90,9 +99,7 @@ def main() -> int:
         entry["score"] = {"max": 1, "value": args.score}
     crit.setdefault(args.criterion, []).append(entry)
 
-    with open(args.qa, "w", encoding="utf-8") as f:
-        json.dump(d, f, indent=2, ensure_ascii=False)
-        f.write("\n")
+    block_qa.save(args.qa, d, "attesting")
     print(f"{args.criterion} <- {args.result}"
           + (f" ({args.score})" if args.score is not None else "")
           + f"  [{os.path.basename(args.qa)}]")

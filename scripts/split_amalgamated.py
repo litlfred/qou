@@ -1,23 +1,23 @@
-import os, glob, re, json
+import os, glob, re, json, sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib"))
+import block_qa  # noqa: E402  -- where block QA lives after the split (#7642)
 
 def merge_qa_sidecar(target_qa_path, source_qa_data):
-    if not os.path.exists(target_qa_path):
-        target_data = {"criteria": {}}
-    else:
-        try:
-            with open(target_qa_path) as f:
-                target_data = json.load(f)
-        except json.JSONDecodeError:
-            target_data = {"criteria": {}}
-            
-    if "criteria" not in target_data:
-        target_data["criteria"] = {}
-        
+    """Copy the `milnor-amalgamated-flow` verdict onto one block.
+
+    Since issue #7642 the verdict is not written beside the block. Its entries
+    (which carry no `reviewer.kind`, so the platform counts them as judgements)
+    go to test/attestations/block-qa/, and the derived report is written under
+    test/results/block-qa/, both through scripts/lib/block_qa.py. The
+    `target_qa_path` argument only names the block.
+    """
     flow_data = source_qa_data.get("criteria", {}).get("milnor-amalgamated-flow")
-    if flow_data:
-        target_data["criteria"]["milnor-amalgamated-flow"] = flow_data
-        with open(target_qa_path, "w") as f:
-            json.dump(target_data, f, indent=2)
+    if not flow_data:
+        return
+    target_data = block_qa.load(target_qa_path) or {"criteria": {}}
+    target_data.setdefault("criteria", {})["milnor-amalgamated-flow"] = flow_data
+    block_qa.save(target_qa_path, target_data, "attesting")
 
 def run():
     base_dir = "/Users/litlfred/space_cats/qou/folio/quantum-observable-universe"

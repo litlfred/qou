@@ -24,6 +24,16 @@ reading of prose that has since changed. `--check` reports and exits 1
 if the working tree is missing any live-valid agent entry REF carries;
 `--apply` writes the union.
 
+Since issue #7642 (the block-QA split) agent verdicts are JUDGEMENTS kept on
+main in `test/attestations/block-qa/**.attestations.json`, which is now the
+git-tracked file that conflicts at merge time. The derived `.qa.json` reports
+live in the gitignored results tree and on the qa-reports branch. So the union
+is applied to the attestation store. A REF from before the split still
+carries legacy `folio/**.qa.json` sidecars; their agent entries are unioned
+into the same store file for that block. That makes a comparison spanning the
+cutover see both sides, in the same way `_TREE_ALIASES` handles the
+`content/` -> `folio/` rename.
+
 Numbers are parsed as Decimal and re-serialised verbatim so an unrelated
 float in the file is not reformatted (`0.000074` -> `7.4e-05` is what
 made the first hand-restoration unreviewable), and `ensure_ascii=False`
@@ -91,17 +101,23 @@ def _git_show(ref: str, path: str) -> str | None:
 # Accept every known spelling so a comparison spanning the rename still sees both
 # sides, and refuse an empty scan rather than certify it.
 _TREE_ALIASES = ("folio/", "content/")
+_STORE = "test/attestations/block-qa/"
+_STORE_SUFFIX = ".attestations.json"
 
 
 def _sidecars_at(ref: str) -> list[str]:
     proc = subprocess.run(
-        ["git", "ls-tree", "-r", "--name-only", ref, *_TREE_ALIASES],
+        ["git", "ls-tree", "-r", "--name-only", ref, *_TREE_ALIASES, _STORE],
         cwd=REPO,
         capture_output=True,
         text=True,
         check=True,
     )
-    found = [p for p in proc.stdout.splitlines() if p.endswith(".qa.json")]
+    found = [
+        p for p in proc.stdout.splitlines()
+        if (p.endswith(".qa.json") and not p.startswith(_STORE))
+        or (p.startswith(_STORE) and p.endswith(_STORE_SUFFIX))
+    ]
     if not found:
         raise SystemExit(
             f"qa-sidecar-agent-union: no .qa.json found at {ref} under any of "
@@ -130,10 +146,27 @@ def _identity(entry: dict) -> tuple:
     )
 
 
+def _target(rel: str) -> str:
+    """The working-tree file a REF path's agent entries are unioned into: the
+    attestation store file for its block (issue #7642)."""
+    if rel.startswith(_STORE):
+        return rel
+    block = rel[: -len(".qa.json")]
+    if block.startswith("content/"):
+        block = "folio/" + block[len("content/"):]
+    return _STORE + block + _STORE_SUFFIX
+
+
 def _live_md_hash(sidecar: Path, doc: dict) -> str | None:
     paths = doc.get("paths") or {}
     md_rel = paths.get("md")
-    md = (REPO / md_rel) if md_rel else sidecar.with_suffix("").with_suffix(".md")
+    subject = (doc.get("subject") or {}).get("path")
+    if md_rel:
+        md = REPO / md_rel
+    elif subject:
+        md = REPO / f"{subject}.md"
+    else:
+        md = sidecar.with_suffix("").with_suffix(".md")
     if not md.exists():
         return None
     return _sha12(md.read_bytes())
@@ -162,7 +195,7 @@ def main() -> int:
         except json.JSONDecodeError:
             continue
 
-        path = REPO / rel
+        path = REPO / _target(rel)
         if path.exists():
             raw = path.read_text()
             try:
