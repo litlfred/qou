@@ -1,14 +1,14 @@
 ---
 # qou-nmib
 title: 'Delta(1232) quartet at N=2: the I_3 labelling is DONE and sorry-free; open only on a wiring decision (no content block cites QOU/EightfoldWay/)'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-lean
 created_at: 2026-07-20T00:46:28Z
-updated_at: 2026-10-10T10:47:33Z
+updated_at: 2026-10-10T12:00:00Z
 parent: qou-8lxd
 ---
 
@@ -220,3 +220,26 @@ what a proposition claims. Not chosen here.
 
 **Default if unanswered: nothing changes.** The theorems stay built and
 uncited; no number moves anywhere.
+
+
+## 2026-10-10 — WIRED on owner decision 5b; completed
+
+Owner ruling 5b (ofri, 2026-10-10): add a NEW block, leave
+`prop:borromean-decuplet` alone. Done in `eb32650e65`:
+
+- `prop:delta-quartet-isospin-ladder` —
+  `folio/quantum-observable-universe/eightfold-way/delta-quartet-isospin-ladder.{ts,md}`,
+  in `sec:baryon-multiplets` directly after `borromean-decuplet-derivation`.
+- `lean.ref` = `qou:QOU.EightfoldWay.SymmetricChannelDimension.quadruplet_dim`
+  (real library decl, no shadowing sibling stub); the .md cites
+  `twoI3_quartetPoint`, `twoI3_mem_ladder`, `twoI3_odd`, `twoI3_injOn`.
+- `uses[]` = `[prop:schur-weyl-eightfold]`. Model register, no empirical claim,
+  not conditional on N = 3.
+- `prop:borromean-decuplet` claim and its `eightfold_channels_at_three` ref unchanged.
+
+Completed because the only remaining task was the citation; this bean tracks
+no open conjecture (the Lean was already sorry-free). The N = 3 decuplet stays
+with `qou-3oi0` (blocked by `qou-j3w6`), Wigner with `qou-x0th`.
+
+Not machine-validated: folio-assistant absent, so run-validate / render /
+qa-sweep / gen-block-jsonld not run; grep battery + expository pass done by hand.
