@@ -1231,6 +1231,14 @@ export const references: Reference[] = [
   // ── Witten 2011 ───────────────────────────────────────────────
   ref({
     id: "witten2011",
+    library: {
+      docId: "arxiv-1001.2933v4",
+      dir: "library/arxiv-1001.2933v4",
+      stage: "candidates",
+      pages: 126,
+      sections: 26,
+      arxiv: "1001.2933v4",
+    },
     type: "chapter",
     title: "Analytic Continuation Of Chern-Simons Theory",
     author: [
@@ -1243,7 +1251,7 @@ export const references: Reference[] = [
     volume: "50",
     page: "347-446",
     DOI: "10.1090/conm/560",
-    note: "arXiv:1001.2933",
+    note: "arXiv:1001.2933. Text extract of v4 (28 Aug 2010, 126 pp) held at library/arxiv-1001.2933v4/ — NO PDF; sections/ built from the plain-text extraction.",
     URL: "https://arxiv.org/abs/1001.2933",
   }),
 
@@ -7288,6 +7296,14 @@ export const references: Reference[] = [
   // ── Ram 1991 ──────────────────────────────────────────────────
   ref({
     id: "ram1991",
+    library: {
+      docId: "ram1991-frobenius-formula",
+      dir: "library/ram1991-frobenius-formula",
+      pdf: "library/ram1991-frobenius-formula/ram1991-frobenius-formula.pdf",
+      stage: "candidates",
+      pages: 28,
+      sections: 11,
+    },
     type: "article-journal",
     title:
       "A Frobenius formula for the characters of the Hecke algebras",
@@ -7301,6 +7317,7 @@ export const references: Reference[] = [
     page: "461-488",
     DOI: "10.1007/BF01243922",
     URL: "https://doi.org/10.1007/BF01243922",
+    note: "PDF library/ram1991-frobenius-formula/ — cut from the GDZ Göttingen scan of Invent. Math. vol. 106 (PDF pp. 468-495); OCR text only. GDZ terms: reproductions may not be donated to other repositories.",
   }),
 
   // ── Klein 1888 (icosahedron / Bring's curve) ──────────────────
@@ -8854,6 +8871,122 @@ export const references: Reference[] = [
     issued: { "date-parts": [[2025]] },
     URL: "https://arxiv.org/abs/2502.06229",
     note: "arXiv:2502.06229 (first posted 2025; held version v5, 14 Apr 2026, 35 pp, math.OA). Survey/outline of the ciamprone2021 programme; §9 compares it with the original Drinfeld–Kohno theorem. PDF library/arxiv-2502.06229v5/.",
+  }),
+
+  // ── Teschner 1997 — SL(2,C)/SU(2) WZNW structure constants and fusion rules ──
+  ref({
+    id: "teschner1997",
+    library: {
+      docId: "arxiv-hep-th-9712256v2",
+      dir: "library/arxiv-hep-th-9712256v2",
+      pdf: "library/arxiv-hep-th-9712256v2/9712256v2.pdf",
+      stage: "candidates",
+      pages: 25,
+      sections: 9,
+      arxiv: "hep-th/9712256v2",
+    },
+    type: "article",
+    title: "On structure constants and fusion rules in the SL(2,C)/SU(2) WZNW model",
+    author: [{ family: "Teschner", given: "Jörg" }],
+    issued: { "date-parts": [[1997]] },
+    URL: "https://arxiv.org/abs/hep-th/9712256",
+    note: "arXiv:hep-th/9712256 (held version v2, 27 Jun 1998, 25 pp). Closed formula for the H3+ (SL(2,C)/SU(2)) WZNW structure constants by the Liouville-theory method; fusion rules from canonical quantization. Journal publication (Nucl. Phys. B) not checked against the publisher record here. PDF library/arxiv-hep-th-9712256v2/.",
+  }),
+
+  // ── Bonini–Tricarico 2000 — fine-tuning and the Wilson RG ──
+  ref({
+    id: "bonini2000",
+    library: {
+      docId: "arxiv-hep-th-0006183v1",
+      dir: "library/arxiv-hep-th-0006183v1",
+      pdf: "library/arxiv-hep-th-0006183v1/0006183v1.pdf",
+      stage: "candidates",
+      pages: 22,
+      sections: 8,
+      arxiv: "hep-th/0006183v1",
+    },
+    type: "article",
+    title: "Fine-tuning and the Wilson renormalization group",
+    author: [{ family: "Bonini", given: "M." }, { family: "Tricarico", given: "E." }],
+    issued: { "date-parts": [[2000]] },
+    URL: "https://arxiv.org/abs/hep-th/0006183",
+    note: "arXiv:hep-th/0006183v1 (23 Jun 2000, 22 pp; preprint UPRF-00-04, Parma). Wilson RG solution of the fine-tuning of non-invariant couplings in SU(2) Yang-Mills at one loop. Metadata read from page 1, not verified against a publisher record. PDF library/arxiv-hep-th-0006183v1/.",
+  }),
+
+  // ── Lecture notes, 'Mathematical ideas and notions of QFT' (lect.ps, 2002) ──
+  ref({
+    id: "qftnotions2002",
+    library: {
+      docId: "lect-mathematical-ideas-notions-qft-2002",
+      dir: "library/lect-mathematical-ideas-notions-qft-2002",
+      pdf: "library/lect-mathematical-ideas-notions-qft-2002/lect-mathematical-ideas-notions-qft-2002.pdf",
+      stage: "candidates",
+      pages: 78,
+      sections: 12,
+    },
+    type: "manuscript",
+    title: "Mathematical ideas and notions of quantum field theory",
+    issued: { "date-parts": [[2002]] },
+    note: "Lecture notes (78 pp), uploaded as a dvips PostScript 'lect.ps' (TeX output 2002-12-09). NO AUTHOR is printed in the file; the title matches P. Etingof's MIT lecture notes, an attribution by the ingesting agent that is not stated in the source and is unverified, so no author is recorded here. Steepest descent, Feynman calculus, matrix integrals, Euler characteristic of M_g, path integrals in QM, fermions. PDF library/lect-mathematical-ideas-notions-qft-2002/ (ps2pdf conversion; original lect.ps beside it).",
+  }),
+
+  // ── Inventiones Math. 106 (1991): four articles cut from the Göttingen GDZ scan ──
+  ref({
+    id: "traczyk1991",
+    library: {
+      docId: "traczyk1991-periodic-knots",
+      dir: "library/traczyk1991-periodic-knots",
+      pdf: "library/traczyk1991-periodic-knots/traczyk1991-periodic-knots.pdf",
+      stage: "candidates",
+      pages: 12,
+      sections: 6,
+    },
+    type: "article-journal",
+    title: "Periodic knots and the skein polynomial",
+    author: [{ family: "Traczyk", given: "Paweł" }],
+    "container-title": "Inventiones Mathematicae",
+    volume: "106",
+    page: "73-84",
+    issued: { "date-parts": [[1991]] },
+    note: "Cut from the GDZ Göttingen scan of Invent. Math. vol. 106 (PPN356556735_0106, PDF pp. 80-91); OCR text only. GDZ terms: reproductions may not be donated to other repositories. DOI not recorded (not verified here). PDF library/traczyk1991-periodic-knots/.",
+  }),
+  ref({
+    id: "schechtman-varchenko1991",
+    library: {
+      docId: "schechtman-varchenko1991-arrangements",
+      dir: "library/schechtman-varchenko1991-arrangements",
+      pdf: "library/schechtman-varchenko1991-arrangements/schechtman-varchenko1991-arrangements.pdf",
+      stage: "candidates",
+      pages: 56,
+      sections: 10,
+    },
+    type: "article-journal",
+    title: "Arrangements of hyperplanes and Lie algebra homology",
+    author: [{ family: "Schechtman", given: "Vadim V." }, { family: "Varchenko", given: "Alexander N." }],
+    "container-title": "Inventiones Mathematicae",
+    volume: "106",
+    page: "139-194",
+    issued: { "date-parts": [[1991]] },
+    note: "Hypergeometric (integral) solutions of the KZ equations via hyperplane arrangements; the contravariant/Shapovalov form as a limit of the arrangement's bilinear form. Cut from the GDZ Göttingen scan of Invent. Math. vol. 106 (PDF pp. 146-201); OCR text only. GDZ terms: reproductions may not be donated to other repositories. DOI not recorded (not verified here). PDF library/schechtman-varchenko1991-arrangements/.",
+  }),
+  ref({
+    id: "cherednik1991",
+    library: {
+      docId: "cherednik1991-kz-dunkl",
+      dir: "library/cherednik1991-kz-dunkl",
+      pdf: "library/cherednik1991-kz-dunkl/cherednik1991-kz-dunkl.pdf",
+      stage: "candidates",
+      pages: 21,
+      sections: 6,
+    },
+    type: "article-journal",
+    title: "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras",
+    author: [{ family: "Cherednik", given: "Ivan" }],
+    "container-title": "Inventiones Mathematicae",
+    volume: "106",
+    page: "411-431",
+    issued: { "date-parts": [[1991]] },
+    note: "Cut from the GDZ Göttingen scan of Invent. Math. vol. 106 (PDF pp. 418-438; PDF p. 439, journal p. 432, is blank and omitted); OCR text only. GDZ terms: reproductions may not be donated to other repositories. DOI not recorded (not verified here). PDF library/cherednik1991-kz-dunkl/.",
   }),
 
   // ── Faddeev 1995 — quantum dilogarithm functional equation ────
