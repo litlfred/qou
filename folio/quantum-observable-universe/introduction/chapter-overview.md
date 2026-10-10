@@ -44,6 +44,10 @@ The relation is used in reverse: it is inverted for $q_0$, so it is the CAL-2 ca
 
 [*The Mass Endomorphism*](#chap:mass-endomorphism) extracts mass from the spectral data of a single categorical endomorphism. Mass is a categorical invariant: the Markov trace $\mathrm{tr}_M$ of a distinguished Hecke element. A recursive Gröbner–Shirshov reduction evaluates this trace, and the **mass endomorphism conjecture** resums the brane tower.
 
+[*Knots, Particles, and Confinement*](#chap:knots-particles-confinement) fixes the knot–particle dictionary used everywhere after it: the particle definitions, the nucleon built from pair production, the hadron algebra and its knot factorisation, and the Borromean baryon, whose mass is shown to be a knot invariant under the three Reidemeister moves.
+
+[*The Eightfold Way and Flavor Structure*](#chap:eightfold-way) asks why these particles fall into octets and decuplets. It separates two objects that share the name $A_2$: the Coxeter type of three-strand braiding, which holds by construction, and the flavour Lie algebra $\mathfrak{sl}_3$, which enters through quantum Schur–Weyl duality only when the fibre has dimension three. The meson octet and the baryon decuplet are built from the second.
+
 [*Nuclear Interactions and Binding*](#chap:nuclear-interactions) develops the interaction-selection mechanism. A **semidefinite program** selects the unique transfer operator minimizing the categorical action at each vertex. Bring's surface embeddability bound limits these operators to a **six-dimensional** basis in $H_3(q)$, covering identity, $\beta$-decay, photon handling, and pair production without free parameters.
 
 [*$q$-Hyperbolic Geometry*](#chap:climax-volume-mass) defines the topological mass formula:
@@ -77,4 +81,4 @@ The geometric term $\mathrm{Geom}(K) = \mathrm{Vol}(K)/\hbar_q^{2}$ acts as a re
 The [Glossary](#chap:glossary), [Knot-Periodic Table](#app:knot-periodic-table), and [Index of Definitions](#app:index-definitions) supply the formal reference data. This paper's hardest results meet at the obstruction class $\kappa_n \in H^2(S, B)$. The programme is to translate each $q$-deformed millennium problem—Navier–Stokes, Yang–Mills, P vs NP, Riemann, BSD—into the vanishing of a drift read off that class; the translations, not the vanishing calculation, carry the open content, and each is open separately. Sharing a class does not by itself make the verdicts agree: the evaluation maps land in different groups, and at $\chi(A) = -6$ two of them already disagree.
 
 **Calibration.**
-The framework requires **exactly three** calibration inputs—$m_e$, $P_{\mathrm{skew}}^{\beta}$, and $P_{\mathrm{avg}}^{\pi}$—to fix the state space's cohomology. Every other mass ratio, binding energy, and coupling is a zero-parameter prediction.
+The three calibration inputs and the standard against which every comparison is judged are stated in [Mathematics and measurement](#sec:introduction-mathematics-measurement) above; every other mass ratio, binding energy, and coupling is computed rather than fitted.
