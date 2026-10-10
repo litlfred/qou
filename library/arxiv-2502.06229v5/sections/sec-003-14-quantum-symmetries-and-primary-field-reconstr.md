@@ -8,6 +8,7 @@ pages: 5-6
 source_pdf: 2502.06229v5.pdf
 source_sha256: 3499c40ea150a617
 toc_source: outline
+doc_brief: "Constructing equivalences between fusion categories of quantum groups and of vertex operator algebras via quantum gauge groups — This paper establishes connections between a problem posed by"
 ---
 AQFT. In low-dimensional quantum field theories (specifically in two and three space-
 time dimensions), the categories of superselection sectors naturally admit a braided tensor

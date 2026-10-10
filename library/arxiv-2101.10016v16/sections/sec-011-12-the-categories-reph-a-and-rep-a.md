@@ -8,6 +8,7 @@ pages: 91-96
 source_pdf: 2101.10016v16.pdf.txt
 source_sha256: 51d21209730be025
 toc_source: inferred
+doc_brief: "Unitary coboundary weak quasi-Hopf algebras in the Kazhdan-Lusztig-Finkelberg theorem — We construct, for every complex simple Lie algebra g and every positive integer level k, a unitary modular"
 ---
 12. The categories Reph(A) and Rep+(A)
 Let A be a complex ∗-algebra. In this section we associate with A the linear ∗-category

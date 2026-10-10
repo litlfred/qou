@@ -8,6 +8,8 @@ pages: 10-10
 source_pdf: 1404.0724v1.pdf
 source_sha256: ea40edaad77c1617
 toc_source: outline
+doc_brief: "Introduction to Representations of Braid Groups — These are lecture notes prepared for a minicourse given at the Cimpa Research School Algebraic and geometric aspects of representation the- ory, held"
+duplicate_of: "ariasabad2015-revcolmat"
 ---
 Let us denote by D the closed disk in the plane with n distinguished interior points p1 < · · · <
 pn ∈D ∩R and set Q := {p1, . . . , pn}. Observe that for any point p in the interior of D:

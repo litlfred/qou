@@ -8,5 +8,6 @@ pages: 1-1
 source_pdf: 2502.06229v5.pdf
 source_sha256: 3499c40ea150a617
 toc_source: outline
+doc_brief: "Constructing equivalences between fusion categories of quantum groups and of vertex operator algebras via quantum gauge groups — This paper establishes connections between a problem posed by"
 ---
 

@@ -8,6 +8,7 @@ pages: 12-14
 source_pdf: 2502.06229v5.pdf
 source_sha256: 3499c40ea150a617
 toc_source: outline
+doc_brief: "Constructing equivalences between fusion categories of quantum groups and of vertex operator algebras via quantum gauge groups — This paper establishes connections between a problem posed by"
 ---
 Let g be a complex simple Lie algebra and let Rep(Vgk) be the module category of the
 corresponding affine vertex operator algebra Vgk at level k ∈N, endowed with the ribbon

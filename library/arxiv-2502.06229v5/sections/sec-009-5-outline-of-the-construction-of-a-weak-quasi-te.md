@@ -8,6 +8,7 @@ pages: 16-17
 source_pdf: 2502.06229v5.pdf
 source_sha256: 3499c40ea150a617
 toc_source: outline
+doc_brief: "Constructing equivalences between fusion categories of quantum groups and of vertex operator algebras via quantum gauge groups — This paper establishes connections between a problem posed by"
 ---
 Zhu algebra A(Vgk) via Wenzl quantisation isomorphism and Drinfeld
 twist method.

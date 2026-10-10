@@ -8,6 +8,7 @@ pages: 14-16
 source_pdf: 2502.06229v5.pdf
 source_sha256: 3499c40ea150a617
 toc_source: outline
+doc_brief: "Constructing equivalences between fusion categories of quantum groups and of vertex operator algebras via quantum gauge groups — This paper establishes connections between a problem posed by"
 ---
 Part (a) of Theorem 3.1 follows from the application to Zhu’s functor of the general con-
 struction. Let us consider a (ribbon, braided) semsimple tensor category C together with

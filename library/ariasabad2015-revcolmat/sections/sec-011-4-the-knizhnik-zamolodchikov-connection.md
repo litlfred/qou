@@ -8,6 +8,7 @@ pages: 18-18
 source_pdf: ariasabad2015-revcolmat.pdf
 source_sha256: 822d696773a274e0
 toc_source: inferred
+doc_brief: "Introduction to Representations of Braid Groups — These are lecture notes prepared for a minicourse given at the Cimpa Research School Algebraic and geometric aspects of representation the- ory, held"
 ---
 We will now describe representations of braid groups that arise by monodromy
 of certain ﬂat connections, known as Knizhnik-Zamolodchivov connections, on

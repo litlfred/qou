@@ -8,6 +8,7 @@ pages: 146-149
 source_pdf: 2101.10016v16.pdf.txt
 source_sha256: 51d21209730be025
 toc_source: inferred
+doc_brief: "Unitary coboundary weak quasi-Hopf algebras in the Kazhdan-Lusztig-Finkelberg theorem — We construct, for every complex simple Lie algebra g and every positive integer level k, a unitary modular"
 ---
 24. Conformal nets and weak quasi-Hopf algebras
 In this brief section we explain how most of the constructions and results we have discussed in the case of rational vertex operator algebras have an analogue in the case of
