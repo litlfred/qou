@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-10-10T07:00:16Z
-updated_at: 2026-10-10T07:48:49Z
+updated_at: 2026-10-10T08:01:23Z
 parent: qou-d8c7
 ---
 
@@ -67,3 +67,5 @@ product"; a pointer note is appended there).
 
 
 2026-10-10: closed on merge of PR #7554. Crashing caller ported to mpf; module precision unchanged by design. Remaining importer sweep stays with qou-47sx; the A=4 sparse-mpf wall stays with qou-fmoi.
+
+2026-10-10 (bean qou-we2d, PR #7557): Lean now proves the Molien weight M_mu(q^2) = q^{-kappa}/prod[h]_q is the z = 0 Markov trace and equals the symmetrising trace tau(T_w)=delta_{w,1} (QOU.SchurWeyl.SeminormalRep.molienMarkovTrace_symmetrising, eq_molien_of_zero; ocneanuWeight q 0 = molienWeight). Consequence for this bean: Molien as a TRACE weight has z = 0, so any channel that needs a Markov property with z != 0 (interface mu = tau(sigma)) cannot use it; Molien as a MEASURE is unaffected.

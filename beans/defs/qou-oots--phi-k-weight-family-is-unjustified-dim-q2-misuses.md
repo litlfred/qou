@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T05:55:40Z
-updated_at: 2026-10-10T07:01:36Z
+updated_at: 2026-10-10T08:01:23Z
 parent: qou-3l2l
 ---
 
@@ -685,3 +685,5 @@ Was in-progress with no bean update since 2026-09-08 and no main commit naming i
 ## 2026-10-10 — pointer
 
 Tracked under carrier M7 (qou-g16t) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+2026-10-10 (bean qou-we2d, PR #7557): Lean now proves the Molien weight M_mu(q^2) = q^{-kappa}/prod[h]_q is the z = 0 Markov trace and equals the symmetrising trace tau(T_w)=delta_{w,1} (QOU.SchurWeyl.SeminormalRep.molienMarkovTrace_symmetrising, eq_molien_of_zero; ocneanuWeight q 0 = molienWeight). Consequence for this bean: Molien as a TRACE weight has z = 0, so any channel that needs a Markov property with z != 0 (interface mu = tau(sigma)) cannot use it; Molien as a MEASURE is unaffected.
