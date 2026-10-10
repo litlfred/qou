@@ -1,0 +1,244 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/bach2013-double-slit/double-slit-experiment/bach-introduction",
+    "path": "folio/bach2013-double-slit/double-slit-experiment/bach-introduction"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "0f6a0e869b3f",
+          "ts": "49c1596eafd9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-28",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T16:15:26.000Z",
+        "reviewed_sha": "223e2e140539d2820d219061638d69029acfe2bd",
+        "notes": "False positive: the flagged informal phrasing is a direct Feynman quotation ('that you should not try to set up'), properly attributed with \\cite{feynman1965} — quoted source text, not the paper's own voice.",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0f6a0e869b3f",
+          "ts": "49c1596eafd9"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "0f6a0e869b3f",
+          "ts": "49c1596eafd9"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "0f6a0e869b3f",
+          "ts": "49c1596eafd9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.098Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of prose sec:bach-intro-prose (Feynman quote, Bach et al. novelty claim, Jonsson/Tonomura priority paragraph). Judged all ten categories in context.",
+        "notes": "Cat.1: 'using biprisms rather than true double-slits' is substantive mathematical/experimental contrast - the distinction IS the priority claim - pass per the false-positive class. Cat.2: 'is true only in the sense that ...' is a concessive that delimits exactly what prior work achieved, not a setup-then-reframe pivot. Cat.9: 'the first to combine both elements' is a factual priority claim carried from the source paper, not manufactured superlative. NOTE (not a trap): Jonsson (1961) and Tonomura (1989) are attributed by year with no \\\\cite key; only bach2013 and feynman1965 are cited."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "0f6a0e869b3f",
+          "ts": "49c1596eafd9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.141Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of prose sec:bach-intro-prose (Feynman quote, Bach et al. novelty claim, Jonsson/Tonomura priority paragraph). Judged all ten categories in context.",
+        "notes": "Cat.1: 'using biprisms rather than true double-slits' is substantive mathematical/experimental contrast - the distinction IS the priority claim - pass per the false-positive class. Cat.2: 'is true only in the sense that ...' is a concessive that delimits exactly what prior work achieved, not a setup-then-reframe pivot. Cat.9: 'the first to combine both elements' is a factual priority claim carried from the source paper, not manufactured superlative. NOTE (not a trap): Jonsson (1961) and Tonomura (1989) are attributed by year with no \\\\cite key; only bach2013 and feynman1965 are cited."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "0f6a0e869b3f",
+          "ts": "49c1596eafd9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.184Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of prose sec:bach-intro-prose (Feynman quote, Bach et al. novelty claim, Jonsson/Tonomura priority paragraph). Judged all ten categories in context.",
+        "notes": "Cat.1: 'using biprisms rather than true double-slits' is substantive mathematical/experimental contrast - the distinction IS the priority claim - pass per the false-positive class. Cat.2: 'is true only in the sense that ...' is a concessive that delimits exactly what prior work achieved, not a setup-then-reframe pivot. Cat.9: 'the first to combine both elements' is a factual priority claim carried from the source paper, not manufactured superlative. NOTE (not a trap): Jonsson (1961) and Tonomura (1989) are attributed by year with no \\\\cite key; only bach2013 and feynman1965 are cited."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "0f6a0e869b3f",
+          "ts": "49c1596eafd9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.224Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of prose sec:bach-intro-prose (Feynman quote, Bach et al. novelty claim, Jonsson/Tonomura priority paragraph). Judged all ten categories in context.",
+        "notes": "Cat.1: 'using biprisms rather than true double-slits' is substantive mathematical/experimental contrast - the distinction IS the priority claim - pass per the false-positive class. Cat.2: 'is true only in the sense that ...' is a concessive that delimits exactly what prior work achieved, not a setup-then-reframe pivot. Cat.9: 'the first to combine both elements' is a factual priority claim carried from the source paper, not manufactured superlative. NOTE (not a trap): Jonsson (1961) and Tonomura (1989) are attributed by year with no \\\\cite key; only bach2013 and feynman1965 are cited."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "0f6a0e869b3f",
+          "ts": "49c1596eafd9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.265Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of prose sec:bach-intro-prose (Feynman quote, Bach et al. novelty claim, Jonsson/Tonomura priority paragraph). Judged all ten categories in context.",
+        "notes": "Cat.1: 'using biprisms rather than true double-slits' is substantive mathematical/experimental contrast - the distinction IS the priority claim - pass per the false-positive class. Cat.2: 'is true only in the sense that ...' is a concessive that delimits exactly what prior work achieved, not a setup-then-reframe pivot. Cat.9: 'the first to combine both elements' is a factual priority claim carried from the source paper, not manufactured superlative. NOTE (not a trap): Jonsson (1961) and Tonomura (1989) are attributed by year with no \\\\cite key; only bach2013 and feynman1965 are cited."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "0f6a0e869b3f",
+          "ts": "49c1596eafd9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.306Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of prose sec:bach-intro-prose (Feynman quote, Bach et al. novelty claim, Jonsson/Tonomura priority paragraph). Judged all ten categories in context.",
+        "notes": "Cat.1: 'using biprisms rather than true double-slits' is substantive mathematical/experimental contrast - the distinction IS the priority claim - pass per the false-positive class. Cat.2: 'is true only in the sense that ...' is a concessive that delimits exactly what prior work achieved, not a setup-then-reframe pivot. Cat.9: 'the first to combine both elements' is a factual priority claim carried from the source paper, not manufactured superlative. NOTE (not a trap): Jonsson (1961) and Tonomura (1989) are attributed by year with no \\\\cite key; only bach2013 and feynman1965 are cited."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "0f6a0e869b3f",
+          "ts": "49c1596eafd9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.346Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of prose sec:bach-intro-prose (Feynman quote, Bach et al. novelty claim, Jonsson/Tonomura priority paragraph). Judged all ten categories in context.",
+        "notes": "Cat.1: 'using biprisms rather than true double-slits' is substantive mathematical/experimental contrast - the distinction IS the priority claim - pass per the false-positive class. Cat.2: 'is true only in the sense that ...' is a concessive that delimits exactly what prior work achieved, not a setup-then-reframe pivot. Cat.9: 'the first to combine both elements' is a factual priority claim carried from the source paper, not manufactured superlative. NOTE (not a trap): Jonsson (1961) and Tonomura (1989) are attributed by year with no \\\\cite key; only bach2013 and feynman1965 are cited."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "0f6a0e869b3f",
+          "ts": "49c1596eafd9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.384Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of prose sec:bach-intro-prose (Feynman quote, Bach et al. novelty claim, Jonsson/Tonomura priority paragraph). Judged all ten categories in context.",
+        "notes": "Cat.1: 'using biprisms rather than true double-slits' is substantive mathematical/experimental contrast - the distinction IS the priority claim - pass per the false-positive class. Cat.2: 'is true only in the sense that ...' is a concessive that delimits exactly what prior work achieved, not a setup-then-reframe pivot. Cat.9: 'the first to combine both elements' is a factual priority claim carried from the source paper, not manufactured superlative. NOTE (not a trap): Jonsson (1961) and Tonomura (1989) are attributed by year with no \\\\cite key; only bach2013 and feynman1965 are cited."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "0f6a0e869b3f",
+          "ts": "49c1596eafd9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.424Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of prose sec:bach-intro-prose (Feynman quote, Bach et al. novelty claim, Jonsson/Tonomura priority paragraph). Judged all ten categories in context.",
+        "notes": "Cat.1: 'using biprisms rather than true double-slits' is substantive mathematical/experimental contrast - the distinction IS the priority claim - pass per the false-positive class. Cat.2: 'is true only in the sense that ...' is a concessive that delimits exactly what prior work achieved, not a setup-then-reframe pivot. Cat.9: 'the first to combine both elements' is a factual priority claim carried from the source paper, not manufactured superlative. NOTE (not a trap): Jonsson (1961) and Tonomura (1989) are attributed by year with no \\\\cite key; only bach2013 and feynman1965 are cited."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "0f6a0e869b3f",
+          "ts": "49c1596eafd9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.464Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of prose sec:bach-intro-prose (Feynman quote, Bach et al. novelty claim, Jonsson/Tonomura priority paragraph). Judged all ten categories in context.",
+        "notes": "Cat.1: 'using biprisms rather than true double-slits' is substantive mathematical/experimental contrast - the distinction IS the priority claim - pass per the false-positive class. Cat.2: 'is true only in the sense that ...' is a concessive that delimits exactly what prior work achieved, not a setup-then-reframe pivot. Cat.9: 'the first to combine both elements' is a factual priority claim carried from the source paper, not manufactured superlative. NOTE (not a trap): Jonsson (1961) and Tonomura (1989) are attributed by year with no \\\\cite key; only bach2013 and feynman1965 are cited."
+      }
+    ]
+  }
+}

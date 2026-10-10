@@ -1,0 +1,488 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/skein-binding-lagrangian-derivation",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/skein-binding-lagrangian-derivation"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq22"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "29e6a6ab4414",
+          "ts": "2e61eba59244"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "29e6a6ab4414",
+          "ts": "2e61eba59244"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:34:02.000Z",
+        "reviewed_sha": "ac23185fdd79b20f0f12667ae502017bff78d196",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:34:02.000Z",
+        "reviewed_sha": "ac23185fdd79b20f0f12667ae502017bff78d196",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:34:02.000Z",
+        "reviewed_sha": "ac23185fdd79b20f0f12667ae502017bff78d196",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:34:02.000Z",
+        "reviewed_sha": "ac23185fdd79b20f0f12667ae502017bff78d196",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:34:02.000Z",
+        "reviewed_sha": "ac23185fdd79b20f0f12667ae502017bff78d196",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:34:02.000Z",
+        "reviewed_sha": "ac23185fdd79b20f0f12667ae502017bff78d196",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:34:02.000Z",
+        "reviewed_sha": "ac23185fdd79b20f0f12667ae502017bff78d196",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:34:02.000Z",
+        "reviewed_sha": "ac23185fdd79b20f0f12667ae502017bff78d196",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:34:02.000Z",
+        "reviewed_sha": "ac23185fdd79b20f0f12667ae502017bff78d196",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:34:02.000Z",
+        "reviewed_sha": "ac23185fdd79b20f0f12667ae502017bff78d196",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:34:02.000Z",
+        "reviewed_sha": "ac23185fdd79b20f0f12667ae502017bff78d196",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:34:02.000Z",
+        "reviewed_sha": "ac23185fdd79b20f0f12667ae502017bff78d196",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:34:02.000Z",
+        "reviewed_sha": "ac23185fdd79b20f0f12667ae502017bff78d196",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:34:02.000Z",
+        "reviewed_sha": "ac23185fdd79b20f0f12667ae502017bff78d196",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:34:02.000Z",
+        "reviewed_sha": "ac23185fdd79b20f0f12667ae502017bff78d196",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "a4bf5d993f2d",
+          "ts": "2e61eba59244"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:49.010Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Four assert-by-denial constructions ('without phenomenological liquid-drop fitting', 'requires no empirical Bethe-Weizsacker parameters (a_V, a_S, a_A, a_P)', 'without arbitrary fits', 'no empirical parameter'). Recorded pass: parameter-freedom is the framework's three-calibration claim and is genuine content, not manufactured contrast - the defect here is the strength of the claim, recorded under trap-superlative, and the Lean divergence, reported as an anomaly (the Lean sibling carries lambda_V, lambda_S, lambda_C and a_A as free structure fields)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "a4bf5d993f2d",
+          "ts": "2e61eba59244"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:48.621Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "evidence": "Full read (remark interpreting def:skein-binding-lagrangian, ~2.0kB). q0 ~ 1.1100 is a correct rounding. The gravity/gauge/matter triple is the standard sector decomposition and passes. The mixed-crossing coefficient (q+q^-1)/2 is the averaged-crossing weight used elsewhere in the chapter and is consistent with the definition block. Eight categories clean; trap-superlative and trap-negation-contrast recorded separately."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "a4bf5d993f2d",
+          "ts": "2e61eba59244"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:48.662Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "evidence": "Full read (remark interpreting def:skein-binding-lagrangian, ~2.0kB). q0 ~ 1.1100 is a correct rounding. The gravity/gauge/matter triple is the standard sector decomposition and passes. The mixed-crossing coefficient (q+q^-1)/2 is the averaged-crossing weight used elsewhere in the chapter and is consistent with the definition block. Eight categories clean; trap-superlative and trap-negation-contrast recorded separately."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "a4bf5d993f2d",
+          "ts": "2e61eba59244"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:48.704Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "evidence": "Full read (remark interpreting def:skein-binding-lagrangian, ~2.0kB). q0 ~ 1.1100 is a correct rounding. The gravity/gauge/matter triple is the standard sector decomposition and passes. The mixed-crossing coefficient (q+q^-1)/2 is the averaged-crossing weight used elsewhere in the chapter and is consistent with the definition block. Eight categories clean; trap-superlative and trap-negation-contrast recorded separately."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "a4bf5d993f2d",
+          "ts": "2e61eba59244"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:48.746Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "evidence": "Full read (remark interpreting def:skein-binding-lagrangian, ~2.0kB). q0 ~ 1.1100 is a correct rounding. The gravity/gauge/matter triple is the standard sector decomposition and passes. The mixed-crossing coefficient (q+q^-1)/2 is the averaged-crossing weight used elsewhere in the chapter and is consistent with the definition block. Eight categories clean; trap-superlative and trap-negation-contrast recorded separately."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "a4bf5d993f2d",
+          "ts": "2e61eba59244"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:48.791Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "evidence": "Full read (remark interpreting def:skein-binding-lagrangian, ~2.0kB). q0 ~ 1.1100 is a correct rounding. The gravity/gauge/matter triple is the standard sector decomposition and passes. The mixed-crossing coefficient (q+q^-1)/2 is the averaged-crossing weight used elsewhere in the chapter and is consistent with the definition block. Eight categories clean; trap-superlative and trap-negation-contrast recorded separately."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "a4bf5d993f2d",
+          "ts": "2e61eba59244"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:48.833Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "evidence": "Full read (remark interpreting def:skein-binding-lagrangian, ~2.0kB). q0 ~ 1.1100 is a correct rounding. The gravity/gauge/matter triple is the standard sector decomposition and passes. The mixed-crossing coefficient (q+q^-1)/2 is the averaged-crossing weight used elsewhere in the chapter and is consistent with the definition block. Eight categories clean; trap-superlative and trap-negation-contrast recorded separately."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "a4bf5d993f2d",
+          "ts": "2e61eba59244"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:48.874Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "evidence": "Full read (remark interpreting def:skein-binding-lagrangian, ~2.0kB). q0 ~ 1.1100 is a correct rounding. The gravity/gauge/matter triple is the standard sector decomposition and passes. The mixed-crossing coefficient (q+q^-1)/2 is the averaged-crossing weight used elsewhere in the chapter and is consistent with the definition block. Eight categories clean; trap-superlative and trap-negation-contrast recorded separately."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "a4bf5d993f2d",
+          "ts": "2e61eba59244"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:48.965Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Intensifier flood carrying an overclaim: 'derives strictly from', 'determined solely by', 'It relies strictly on', 'yields the nuclear binding terms exactly', 'arises organically', 'automatically distinguishes', 'producing Coulomb repulsion directly', 'without arbitrary fits'. Eight maximal qualifiers in ~200 words. Substantively wrong, not merely inflated: the definition block this remark interprets carries the opposite hedges in its own text - 'intended', 'not a completed closure', 'the per-isotope binding magnitude (Delta_lambda) is open', 'remain to be verified (no witness yet)'. The hedging pass reached the definition and not this remark.",
+        "notes": "PROPOSED (not applied - restoring the hedges changes the claims, so it needs the author): mirror the definition block's scope wording - 'The strong-force binding is derived from the JSJ decomposition ...' for 'derives strictly from'; drop 'exactly' from 'yields the nuclear binding terms exactly'; and qualify the Coulomb paragraph with the definition block's 'the exact categorical value and its match to the empirical a_C ~ 0.71 remain to be verified'."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "a4bf5d993f2d",
+          "ts": "2e61eba59244"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:48.919Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "evidence": "Full read (remark interpreting def:skein-binding-lagrangian, ~2.0kB). q0 ~ 1.1100 is a correct rounding. The gravity/gauge/matter triple is the standard sector decomposition and passes. The mixed-crossing coefficient (q+q^-1)/2 is the averaged-crossing weight used elsewhere in the chapter and is consistent with the definition block. Eight categories clean; trap-superlative and trap-negation-contrast recorded separately."
+      }
+    ]
+  }
+}

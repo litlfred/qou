@@ -1,0 +1,183 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/braids-and-knots/winding-parity-sign-transport",
+    "path": "folio/quantum-observable-universe/braids-and-knots/winding-parity-sign-transport"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f5e2a98e5f11",
+          "ts": "8ef9a6643c19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:01:41.454Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "'a conjectural mechanism, not a derivation' kept — epistemic scope statement preventing a real misreading (FP class); 'need not be produced by...if produced by parity' is the block's claim."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f5e2a98e5f11",
+          "ts": "8ef9a6643c19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:01:41.497Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Full-context agent read (batch q08); no trap-rhetorical-pivot construction present."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f5e2a98e5f11",
+          "ts": "8ef9a6643c19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:01:41.541Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Full-context agent read (batch q08); no trap-em-dash construction present."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f5e2a98e5f11",
+          "ts": "8ef9a6643c19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:01:41.585Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Full-context agent read (batch q08); no trap-compulsive-triple construction present."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f5e2a98e5f11",
+          "ts": "8ef9a6643c19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:01:41.643Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Closer is a substantive scope summary after the fix; content (arithmetic sign source, golden-order exclusivity) is load-bearing."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f5e2a98e5f11",
+          "ts": "8ef9a6643c19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:01:41.696Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "severity": "minor",
+        "evidence": "Line 18 narrated the author's own stance ('are not softened here'); closer narrated emphasis ('worth stating plainly').",
+        "notes": "Fixes applied: 'Two limitations are essential and are not softened here.' -> 'Two limitations are essential.'; 'What survives is narrow and worth stating plainly:' -> 'What survives is narrow:'."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f5e2a98e5f11",
+          "ts": "8ef9a6643c19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:01:41.743Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Full-context agent read (batch q08); no trap-thesis-restatement construction present."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f5e2a98e5f11",
+          "ts": "8ef9a6643c19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:01:41.786Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Full-context agent read (batch q08); no trap-performed-warmth construction present."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f5e2a98e5f11",
+          "ts": "8ef9a6643c19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:01:41.832Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Full-context agent read (batch q08); no trap-superlative-inflation construction present."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f5e2a98e5f11",
+          "ts": "8ef9a6643c19"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:01:41.878Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Full-context agent read (batch q08); no trap-nonspeakable-syntax construction present."
+      }
+    ]
+  }
+}

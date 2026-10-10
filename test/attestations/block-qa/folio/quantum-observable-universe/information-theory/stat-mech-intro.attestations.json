@@ -1,0 +1,480 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/information-theory/stat-mech-intro",
+    "path": "folio/quantum-observable-universe/information-theory/stat-mech-intro"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "4bb356a83ecf",
+          "ts": "df53a4e67280"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "4bb356a83ecf",
+          "ts": "df53a4e67280"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical structure cleanly anchoring continuous averaging firmly onto exact finite period discrete counts.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical structure cleanly anchoring continuous averaging firmly onto exact finite period discrete counts.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical structure cleanly anchoring continuous averaging firmly onto exact finite period discrete counts.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical structure cleanly anchoring continuous averaging firmly onto exact finite period discrete counts.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical structure cleanly anchoring continuous averaging firmly onto exact finite period discrete counts.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical structure cleanly anchoring continuous averaging firmly onto exact finite period discrete counts.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical structure cleanly anchoring continuous averaging firmly onto exact finite period discrete counts.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical structure cleanly anchoring continuous averaging firmly onto exact finite period discrete counts.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical structure cleanly anchoring continuous averaging firmly onto exact finite period discrete counts.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical structure cleanly anchoring continuous averaging firmly onto exact finite period discrete counts.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical structure cleanly anchoring continuous averaging firmly onto exact finite period discrete counts.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical structure cleanly anchoring continuous averaging firmly onto exact finite period discrete counts.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical structure cleanly anchoring continuous averaging firmly onto exact finite period discrete counts.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical structure cleanly anchoring continuous averaging firmly onto exact finite period discrete counts.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical structure cleanly anchoring continuous averaging firmly onto exact finite period discrete counts.",
+        "reviewed_at": "2026-07-08T13:46:57.000Z",
+        "reviewed_sha": "1b08ac2b521b06696a33f4cc8fa10862be489191",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "99e99d11fbfd",
+          "ts": "df53a4e67280"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:28.671Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "'not as an analogy, but as the exact mechanism' is load-bearing disambiguation (guards against reading the section as analogy)"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "99e99d11fbfd",
+          "ts": "df53a4e67280"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:28.710Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "99e99d11fbfd",
+          "ts": "df53a4e67280"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:28.748Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "99e99d11fbfd",
+          "ts": "df53a4e67280"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:28.786Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "99e99d11fbfd",
+          "ts": "df53a4e67280"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:28.825Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "99e99d11fbfd",
+          "ts": "df53a4e67280"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:28.863Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "99e99d11fbfd",
+          "ts": "df53a4e67280"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:28.901Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "99e99d11fbfd",
+          "ts": "df53a4e67280"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:28.940Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "99e99d11fbfd",
+          "ts": "df53a4e67280"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:28.977Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "intensifier density trimmed",
+        "notes": "fixed: 'counts the precise number'->'counts the number'; 'coincides identically'->'coincides'; 'seamlessly average'->'average'; 'stand literally as'->'are'; 'firmly establish'->'establish'"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "99e99d11fbfd",
+          "ts": "df53a4e67280"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:29.014Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ]
+  }
+}

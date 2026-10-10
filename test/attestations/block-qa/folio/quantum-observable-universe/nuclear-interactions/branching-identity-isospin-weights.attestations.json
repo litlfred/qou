@@ -1,0 +1,201 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/branching-identity-isospin-weights",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/branching-identity-isospin-weights"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "5bc424c5cca2",
+          "ts": "645641862423"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:00:22.049Z",
+        "reviewed_sha": "5898ecbd4dabb5386ec0cf3457313978ab71a280",
+        "severity": "major",
+        "evidence": "Full-context read of prop:branching-identity-isospin-weights. Re-derived EVERY claim from first principles with sympy and confirmed all of them exactly: chi(1) = (1,2,1) and chi(sigma) = (q, q-1/q, -1/q) are the correct H_3 character values; the combination -tr(sigma) - q^-1 tr(1) does cancel y_(1^3) and yields z + q^-1 = (q+q^-1)(y_(3)+y_(2,1)); tr(sigma) - q tr(1) cancels y_(3) and yields q - z = (q+q^-1)(y_(2,1)+y_(1^3)); mu_+ + mu_- = 1 identically with z cancelling, exactly as the 'vacuous' corollary says. Solving the three Markov conditions (tr(1)=1, tr(sigma)=z, tr(sigma_1 sigma_2)=z^2 with chi^{(2,1)}(sigma_1 sigma_2) = -1) at convention D z = q^3/(q^2+1) gives y_(1^3) = 0 exactly, y_(2,1) = q^2/(q^2+1)^2 = 1/[2]_q^2 exactly, so mu_- = y_(2,1) as claimed and the three 'descriptions' are literally the same rational function. The 20-digit 0.24729788674803459841 back-solves to q0 = 1.10997858275138080751, i.e. the high-precision PROTON pin (the compute default) carried beyond its 17-digit float64 literal - not muon (which gives 0.24729788615) and not 1.1097 (0.24731078).",
+        "notes": "Two instances, both substantive: 'not new data attached to H_3(q) but the weights of the two-strand algebra seen one level up' IS the section's claim (its heading says exactly that), and 'No convention is chosen, no value of q is fixed, and no fit enters' is a scope statement about the identity's generality, each denial distinct and load-bearing in this corpus."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "5bc424c5cca2",
+          "ts": "645641862423"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:00:22.090Z",
+        "reviewed_sha": "5898ecbd4dabb5386ec0cf3457313978ab71a280",
+        "severity": "major",
+        "evidence": "Full-context read of prop:branching-identity-isospin-weights. Re-derived EVERY claim from first principles with sympy and confirmed all of them exactly: chi(1) = (1,2,1) and chi(sigma) = (q, q-1/q, -1/q) are the correct H_3 character values; the combination -tr(sigma) - q^-1 tr(1) does cancel y_(1^3) and yields z + q^-1 = (q+q^-1)(y_(3)+y_(2,1)); tr(sigma) - q tr(1) cancels y_(3) and yields q - z = (q+q^-1)(y_(2,1)+y_(1^3)); mu_+ + mu_- = 1 identically with z cancelling, exactly as the 'vacuous' corollary says. Solving the three Markov conditions (tr(1)=1, tr(sigma)=z, tr(sigma_1 sigma_2)=z^2 with chi^{(2,1)}(sigma_1 sigma_2) = -1) at convention D z = q^3/(q^2+1) gives y_(1^3) = 0 exactly, y_(2,1) = q^2/(q^2+1)^2 = 1/[2]_q^2 exactly, so mu_- = y_(2,1) as claimed and the three 'descriptions' are literally the same rational function. The 20-digit 0.24729788674803459841 back-solves to q0 = 1.10997858275138080751, i.e. the high-precision PROTON pin (the compute default) carried beyond its 17-digit float64 literal - not muon (which gives 0.24729788615) and not 1.1097 (0.24731078).",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "5bc424c5cca2",
+          "ts": "645641862423"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:00:22.133Z",
+        "reviewed_sha": "5898ecbd4dabb5386ec0cf3457313978ab71a280",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:branching-identity-isospin-weights. Re-derived EVERY claim from first principles with sympy and confirmed all of them exactly: chi(1) = (1,2,1) and chi(sigma) = (q, q-1/q, -1/q) are the correct H_3 character values; the combination -tr(sigma) - q^-1 tr(1) does cancel y_(1^3) and yields z + q^-1 = (q+q^-1)(y_(3)+y_(2,1)); tr(sigma) - q tr(1) cancels y_(3) and yields q - z = (q+q^-1)(y_(2,1)+y_(1^3)); mu_+ + mu_- = 1 identically with z cancelling, exactly as the 'vacuous' corollary says. Solving the three Markov conditions (tr(1)=1, tr(sigma)=z, tr(sigma_1 sigma_2)=z^2 with chi^{(2,1)}(sigma_1 sigma_2) = -1) at convention D z = q^3/(q^2+1) gives y_(1^3) = 0 exactly, y_(2,1) = q^2/(q^2+1)^2 = 1/[2]_q^2 exactly, so mu_- = y_(2,1) as claimed and the three 'descriptions' are literally the same rational function. The 20-digit 0.24729788674803459841 back-solves to q0 = 1.10997858275138080751, i.e. the high-precision PROTON pin (the compute default) carried beyond its 17-digit float64 literal - not muon (which gives 0.24729788615) and not 1.1097 (0.24731078).",
+        "notes": "Three spaced-dash pairs, all matched and all enclosing genuine parenthetical asides (the z-cancellation gloss, the seminorm-kernel gloss, the list of archimedean constructs); none appends an afterthought or dodges a comma/full-stop choice."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "5bc424c5cca2",
+          "ts": "645641862423"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:00:22.173Z",
+        "reviewed_sha": "5898ecbd4dabb5386ec0cf3457313978ab71a280",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:branching-identity-isospin-weights. Re-derived EVERY claim from first principles with sympy and confirmed all of them exactly: chi(1) = (1,2,1) and chi(sigma) = (q, q-1/q, -1/q) are the correct H_3 character values; the combination -tr(sigma) - q^-1 tr(1) does cancel y_(1^3) and yields z + q^-1 = (q+q^-1)(y_(3)+y_(2,1)); tr(sigma) - q tr(1) cancels y_(3) and yields q - z = (q+q^-1)(y_(2,1)+y_(1^3)); mu_+ + mu_- = 1 identically with z cancelling, exactly as the 'vacuous' corollary says. Solving the three Markov conditions (tr(1)=1, tr(sigma)=z, tr(sigma_1 sigma_2)=z^2 with chi^{(2,1)}(sigma_1 sigma_2) = -1) at convention D z = q^3/(q^2+1) gives y_(1^3) = 0 exactly, y_(2,1) = q^2/(q^2+1)^2 = 1/[2]_q^2 exactly, so mu_- = y_(2,1) as claimed and the three 'descriptions' are literally the same rational function. The 20-digit 0.24729788674803459841 back-solves to q0 = 1.10997858275138080751, i.e. the high-precision PROTON pin (the compute default) carried beyond its 17-digit float64 literal - not muon (which gives 0.24729788615) and not 1.1097 (0.24731078).",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "5bc424c5cca2",
+          "ts": "645641862423"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:00:22.212Z",
+        "reviewed_sha": "5898ecbd4dabb5386ec0cf3457313978ab71a280",
+        "severity": "major",
+        "evidence": "Full-context read of prop:branching-identity-isospin-weights. Re-derived EVERY claim from first principles with sympy and confirmed all of them exactly: chi(1) = (1,2,1) and chi(sigma) = (q, q-1/q, -1/q) are the correct H_3 character values; the combination -tr(sigma) - q^-1 tr(1) does cancel y_(1^3) and yields z + q^-1 = (q+q^-1)(y_(3)+y_(2,1)); tr(sigma) - q tr(1) cancels y_(3) and yields q - z = (q+q^-1)(y_(2,1)+y_(1^3)); mu_+ + mu_- = 1 identically with z cancelling, exactly as the 'vacuous' corollary says. Solving the three Markov conditions (tr(1)=1, tr(sigma)=z, tr(sigma_1 sigma_2)=z^2 with chi^{(2,1)}(sigma_1 sigma_2) = -1) at convention D z = q^3/(q^2+1) gives y_(1^3) = 0 exactly, y_(2,1) = q^2/(q^2+1)^2 = 1/[2]_q^2 exactly, so mu_- = y_(2,1) as claimed and the three 'descriptions' are literally the same rational function. The 20-digit 0.24729788674803459841 back-solves to q0 = 1.10997858275138080751, i.e. the high-precision PROTON pin (the compute default) carried beyond its 17-digit float64 literal - not muon (which gives 0.24729788615) and not 1.1097 (0.24731078).",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "5bc424c5cca2",
+          "ts": "645641862423"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:00:22.251Z",
+        "reviewed_sha": "5898ecbd4dabb5386ec0cf3457313978ab71a280",
+        "severity": "major",
+        "evidence": "Full-context read of prop:branching-identity-isospin-weights. Re-derived EVERY claim from first principles with sympy and confirmed all of them exactly: chi(1) = (1,2,1) and chi(sigma) = (q, q-1/q, -1/q) are the correct H_3 character values; the combination -tr(sigma) - q^-1 tr(1) does cancel y_(1^3) and yields z + q^-1 = (q+q^-1)(y_(3)+y_(2,1)); tr(sigma) - q tr(1) cancels y_(3) and yields q - z = (q+q^-1)(y_(2,1)+y_(1^3)); mu_+ + mu_- = 1 identically with z cancelling, exactly as the 'vacuous' corollary says. Solving the three Markov conditions (tr(1)=1, tr(sigma)=z, tr(sigma_1 sigma_2)=z^2 with chi^{(2,1)}(sigma_1 sigma_2) = -1) at convention D z = q^3/(q^2+1) gives y_(1^3) = 0 exactly, y_(2,1) = q^2/(q^2+1)^2 = 1/[2]_q^2 exactly, so mu_- = y_(2,1) as claimed and the three 'descriptions' are literally the same rational function. The 20-digit 0.24729788674803459841 back-solves to q0 = 1.10997858275138080751, i.e. the high-precision PROTON pin (the compute default) carried beyond its 17-digit float64 literal - not muon (which gives 0.24729788615) and not 1.1097 (0.24731078).",
+        "notes": "'This is the edge that fixes where the Temperley-Lieb characterisation belongs ...' narrates organisation rather than emphasis, so it is not the category-6 construction; noted only that per AGENTS.md section 4d an editorial-placement remark of this kind sits more naturally in .ts authorNotes than in the proposition prose."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "5bc424c5cca2",
+          "ts": "645641862423"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:00:22.291Z",
+        "reviewed_sha": "5898ecbd4dabb5386ec0cf3457313978ab71a280",
+        "severity": "major",
+        "evidence": "Full-context read of prop:branching-identity-isospin-weights. Re-derived EVERY claim from first principles with sympy and confirmed all of them exactly: chi(1) = (1,2,1) and chi(sigma) = (q, q-1/q, -1/q) are the correct H_3 character values; the combination -tr(sigma) - q^-1 tr(1) does cancel y_(1^3) and yields z + q^-1 = (q+q^-1)(y_(3)+y_(2,1)); tr(sigma) - q tr(1) cancels y_(3) and yields q - z = (q+q^-1)(y_(2,1)+y_(1^3)); mu_+ + mu_- = 1 identically with z cancelling, exactly as the 'vacuous' corollary says. Solving the three Markov conditions (tr(1)=1, tr(sigma)=z, tr(sigma_1 sigma_2)=z^2 with chi^{(2,1)}(sigma_1 sigma_2) = -1) at convention D z = q^3/(q^2+1) gives y_(1^3) = 0 exactly, y_(2,1) = q^2/(q^2+1)^2 = 1/[2]_q^2 exactly, so mu_- = y_(2,1) as claimed and the three 'descriptions' are literally the same rational function. The 20-digit 0.24729788674803459841 back-solves to q0 = 1.10997858275138080751, i.e. the high-precision PROTON pin (the compute default) carried beyond its 17-digit float64 literal - not muon (which gives 0.24729788615) and not 1.1097 (0.24731078).",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "5bc424c5cca2",
+          "ts": "645641862423"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:00:22.331Z",
+        "reviewed_sha": "5898ecbd4dabb5386ec0cf3457313978ab71a280",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:branching-identity-isospin-weights. Re-derived EVERY claim from first principles with sympy and confirmed all of them exactly: chi(1) = (1,2,1) and chi(sigma) = (q, q-1/q, -1/q) are the correct H_3 character values; the combination -tr(sigma) - q^-1 tr(1) does cancel y_(1^3) and yields z + q^-1 = (q+q^-1)(y_(3)+y_(2,1)); tr(sigma) - q tr(1) cancels y_(3) and yields q - z = (q+q^-1)(y_(2,1)+y_(1^3)); mu_+ + mu_- = 1 identically with z cancelling, exactly as the 'vacuous' corollary says. Solving the three Markov conditions (tr(1)=1, tr(sigma)=z, tr(sigma_1 sigma_2)=z^2 with chi^{(2,1)}(sigma_1 sigma_2) = -1) at convention D z = q^3/(q^2+1) gives y_(1^3) = 0 exactly, y_(2,1) = q^2/(q^2+1)^2 = 1/[2]_q^2 exactly, so mu_- = y_(2,1) as claimed and the three 'descriptions' are literally the same rational function. The 20-digit 0.24729788674803459841 back-solves to q0 = 1.10997858275138080751, i.e. the high-precision PROTON pin (the compute default) carried beyond its 17-digit float64 literal - not muon (which gives 0.24729788615) and not 1.1097 (0.24731078).",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "5bc424c5cca2",
+          "ts": "645641862423"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:00:22.372Z",
+        "reviewed_sha": "5898ecbd4dabb5386ec0cf3457313978ab71a280",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:branching-identity-isospin-weights. Re-derived EVERY claim from first principles with sympy and confirmed all of them exactly: chi(1) = (1,2,1) and chi(sigma) = (q, q-1/q, -1/q) are the correct H_3 character values; the combination -tr(sigma) - q^-1 tr(1) does cancel y_(1^3) and yields z + q^-1 = (q+q^-1)(y_(3)+y_(2,1)); tr(sigma) - q tr(1) cancels y_(3) and yields q - z = (q+q^-1)(y_(2,1)+y_(1^3)); mu_+ + mu_- = 1 identically with z cancelling, exactly as the 'vacuous' corollary says. Solving the three Markov conditions (tr(1)=1, tr(sigma)=z, tr(sigma_1 sigma_2)=z^2 with chi^{(2,1)}(sigma_1 sigma_2) = -1) at convention D z = q^3/(q^2+1) gives y_(1^3) = 0 exactly, y_(2,1) = q^2/(q^2+1)^2 = 1/[2]_q^2 exactly, so mu_- = y_(2,1) as claimed and the three 'descriptions' are literally the same rational function. The 20-digit 0.24729788674803459841 back-solves to q0 = 1.10997858275138080751, i.e. the high-precision PROTON pin (the compute default) carried beyond its 17-digit float64 literal - not muon (which gives 0.24729788615) and not 1.1097 (0.24731078).",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "5bc424c5cca2",
+          "ts": "645641862423"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:00:22.412Z",
+        "reviewed_sha": "5898ecbd4dabb5386ec0cf3457313978ab71a280",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:branching-identity-isospin-weights. Re-derived EVERY claim from first principles with sympy and confirmed all of them exactly: chi(1) = (1,2,1) and chi(sigma) = (q, q-1/q, -1/q) are the correct H_3 character values; the combination -tr(sigma) - q^-1 tr(1) does cancel y_(1^3) and yields z + q^-1 = (q+q^-1)(y_(3)+y_(2,1)); tr(sigma) - q tr(1) cancels y_(3) and yields q - z = (q+q^-1)(y_(2,1)+y_(1^3)); mu_+ + mu_- = 1 identically with z cancelling, exactly as the 'vacuous' corollary says. Solving the three Markov conditions (tr(1)=1, tr(sigma)=z, tr(sigma_1 sigma_2)=z^2 with chi^{(2,1)}(sigma_1 sigma_2) = -1) at convention D z = q^3/(q^2+1) gives y_(1^3) = 0 exactly, y_(2,1) = q^2/(q^2+1)^2 = 1/[2]_q^2 exactly, so mu_- = y_(2,1) as claimed and the three 'descriptions' are literally the same rational function. The 20-digit 0.24729788674803459841 back-solves to q0 = 1.10997858275138080751, i.e. the high-precision PROTON pin (the compute default) carried beyond its 17-digit float64 literal - not muon (which gives 0.24729788615) and not 1.1097 (0.24731078).",
+        "notes": "No trap of this category."
+      }
+    ]
+  }
+}

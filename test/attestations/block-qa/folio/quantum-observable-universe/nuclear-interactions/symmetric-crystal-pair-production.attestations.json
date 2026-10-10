@@ -1,0 +1,743 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/symmetric-crystal-pair-production",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/symmetric-crystal-pair-production"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097",
+          "lean": "907b301144c4"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097",
+          "lean": "907b301144c4"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.204690Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.204690Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.204690Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.204690Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.204690Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.204690Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claims in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' are non-vacuous as they make concrete conjectures about 'with Hecke normal forms $\\{T_w\\}$, and let $\\mathrm{Cryst}(\\mathfrak{sl}_n)$ be its associated Kashiwara crystal unde...'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.204690Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.204690Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.204690Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.204690Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.204690Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.204690Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.204690Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.204690Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.204690Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.204690Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Conjectured block 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' has no Lean sibling, representing a minor structural gap.",
+        "severity": "minor",
+        "evidence": "Conjectured block 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' has no Lean sibling, representing a minor structural gap."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.204690Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.204690Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Citations to kashiwara1991, lecouvey2007, khovanovlauda2009, brundankleshchev2009 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.204690Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.204690Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.204690Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.204690Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.204690Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.204690Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.204690Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.204690Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' are reproducible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/symmetric-crystal-pair-production.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.204690Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.204690Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing.",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The conjectured algebraic and physical relations in 'Type-B folding forces matter/antimatter to be created in conjugate-operator pairs' are unproven, and the sibling Lean file is missing entirely, preventing formal verification.",
+        "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing."
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq16 enforcing Milnor brevity. Cleaned up the intro, replacing conversational 'We conjecture ... We then exhibit' with succinct declarations. Streamlined the conditional theorem and conjecture blocks.",
+        "reviewed_at": "2026-07-07T14:26:57.204690Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.204690Z"
+        },
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:39:23.000Z",
+        "reviewed_sha": "d4cc8ef842e48bfd1fd8f214e58d2c8dcd5f1dfe",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:07.354Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~2.7kB). T_w is the standard Hecke basis-element notation sanctioned by AGENTS.md's own derivation chain ('canonical T_w'), not a sec-7a generator violation - no generator is written T here. Verified the stated identity: for conjugate partitions the q and -q^-1 eigenvalue multiplicities of rho_lambda(sigma_i) swap, so det rho_lambda(w) det rho_lambda'(w) = (q(-q^-1))^(a+b) = +-1 as claimed. 'Admits no lowering operator as a unimodal step' and 'forbids a single chiral excitation' are the conjecture's content, not manufactured contrast. All ten categories clean."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:07.394Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~2.7kB). T_w is the standard Hecke basis-element notation sanctioned by AGENTS.md's own derivation chain ('canonical T_w'), not a sec-7a generator violation - no generator is written T here. Verified the stated identity: for conjugate partitions the q and -q^-1 eigenvalue multiplicities of rho_lambda(sigma_i) swap, so det rho_lambda(w) det rho_lambda'(w) = (q(-q^-1))^(a+b) = +-1 as claimed. 'Admits no lowering operator as a unimodal step' and 'forbids a single chiral excitation' are the conjecture's content, not manufactured contrast. All ten categories clean."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:07.438Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~2.7kB). T_w is the standard Hecke basis-element notation sanctioned by AGENTS.md's own derivation chain ('canonical T_w'), not a sec-7a generator violation - no generator is written T here. Verified the stated identity: for conjugate partitions the q and -q^-1 eigenvalue multiplicities of rho_lambda(sigma_i) swap, so det rho_lambda(w) det rho_lambda'(w) = (q(-q^-1))^(a+b) = +-1 as claimed. 'Admits no lowering operator as a unimodal step' and 'forbids a single chiral excitation' are the conjecture's content, not manufactured contrast. All ten categories clean."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:07.481Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~2.7kB). T_w is the standard Hecke basis-element notation sanctioned by AGENTS.md's own derivation chain ('canonical T_w'), not a sec-7a generator violation - no generator is written T here. Verified the stated identity: for conjugate partitions the q and -q^-1 eigenvalue multiplicities of rho_lambda(sigma_i) swap, so det rho_lambda(w) det rho_lambda'(w) = (q(-q^-1))^(a+b) = +-1 as claimed. 'Admits no lowering operator as a unimodal step' and 'forbids a single chiral excitation' are the conjecture's content, not manufactured contrast. All ten categories clean."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:07.525Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~2.7kB). T_w is the standard Hecke basis-element notation sanctioned by AGENTS.md's own derivation chain ('canonical T_w'), not a sec-7a generator violation - no generator is written T here. Verified the stated identity: for conjugate partitions the q and -q^-1 eigenvalue multiplicities of rho_lambda(sigma_i) swap, so det rho_lambda(w) det rho_lambda'(w) = (q(-q^-1))^(a+b) = +-1 as claimed. 'Admits no lowering operator as a unimodal step' and 'forbids a single chiral excitation' are the conjecture's content, not manufactured contrast. All ten categories clean."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:07.569Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~2.7kB). T_w is the standard Hecke basis-element notation sanctioned by AGENTS.md's own derivation chain ('canonical T_w'), not a sec-7a generator violation - no generator is written T here. Verified the stated identity: for conjugate partitions the q and -q^-1 eigenvalue multiplicities of rho_lambda(sigma_i) swap, so det rho_lambda(w) det rho_lambda'(w) = (q(-q^-1))^(a+b) = +-1 as claimed. 'Admits no lowering operator as a unimodal step' and 'forbids a single chiral excitation' are the conjecture's content, not manufactured contrast. All ten categories clean."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:07.636Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~2.7kB). T_w is the standard Hecke basis-element notation sanctioned by AGENTS.md's own derivation chain ('canonical T_w'), not a sec-7a generator violation - no generator is written T here. Verified the stated identity: for conjugate partitions the q and -q^-1 eigenvalue multiplicities of rho_lambda(sigma_i) swap, so det rho_lambda(w) det rho_lambda'(w) = (q(-q^-1))^(a+b) = +-1 as claimed. 'Admits no lowering operator as a unimodal step' and 'forbids a single chiral excitation' are the conjecture's content, not manufactured contrast. All ten categories clean."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:07.709Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~2.7kB). T_w is the standard Hecke basis-element notation sanctioned by AGENTS.md's own derivation chain ('canonical T_w'), not a sec-7a generator violation - no generator is written T here. Verified the stated identity: for conjugate partitions the q and -q^-1 eigenvalue multiplicities of rho_lambda(sigma_i) swap, so det rho_lambda(w) det rho_lambda'(w) = (q(-q^-1))^(a+b) = +-1 as claimed. 'Admits no lowering operator as a unimodal step' and 'forbids a single chiral excitation' are the conjecture's content, not manufactured contrast. All ten categories clean."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:07.761Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~2.7kB). T_w is the standard Hecke basis-element notation sanctioned by AGENTS.md's own derivation chain ('canonical T_w'), not a sec-7a generator violation - no generator is written T here. Verified the stated identity: for conjugate partitions the q and -q^-1 eigenvalue multiplicities of rho_lambda(sigma_i) swap, so det rho_lambda(w) det rho_lambda'(w) = (q(-q^-1))^(a+b) = +-1 as claimed. 'Admits no lowering operator as a unimodal step' and 'forbids a single chiral excitation' are the conjecture's content, not manufactured contrast. All ten categories clean."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "fa99ad292a6f",
+          "ts": "4ec73eb5f097"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:07.814Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (conjecture, ~2.7kB). T_w is the standard Hecke basis-element notation sanctioned by AGENTS.md's own derivation chain ('canonical T_w'), not a sec-7a generator violation - no generator is written T here. Verified the stated identity: for conjugate partitions the q and -q^-1 eigenvalue multiplicities of rho_lambda(sigma_i) swap, so det rho_lambda(w) det rho_lambda'(w) = (q(-q^-1))^(a+b) = +-1 as claimed. 'Admits no lowering operator as a unimodal step' and 'forbids a single chiral excitation' are the conjecture's content, not manufactured contrast. All ten categories clean."
+      }
+    ]
+  }
+}

@@ -1,0 +1,658 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/meson-formation-chain",
+    "path": "folio/quantum-observable-universe/predicted-spectra/meson-formation-chain"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "91a9e76fb49d",
+          "ts": "b64b50afb18a"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "91a9e76fb49d",
+          "ts": "b64b50afb18a"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "91a9e76fb49d",
+          "ts": "b64b50afb18a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:53.233Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the three-step chain plus the summary and the closing normal form. Arithmetic checks: the printed NF coefficients 0.209 + 1.044 + 0.044 + 0.218 sum to 1.515 as claimed, and all four match computations/_deprecated/meson-nucleon-nf.witness.json to the digits shown (0.20906032, 1.04370622, 0.04370622, 0.21819756, net 1.51467). The first two are h and h^2+1 at q_0, consistent with the lepton continuant of prop:lepton-continuant-recurrence. Every dash in the block is a compound (electron--positron, quark--antiquark, Iwahori--Hecke, Breit--Wheeler). The three steps are a substantive enumeration, not a reflex triple; the block ends on a computed value, not an aphorism; no pivot, meta-commentary, warmth or superlative.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "91a9e76fb49d",
+          "ts": "b64b50afb18a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:53.275Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the three-step chain plus the summary and the closing normal form. Arithmetic checks: the printed NF coefficients 0.209 + 1.044 + 0.044 + 0.218 sum to 1.515 as claimed, and all four match computations/_deprecated/meson-nucleon-nf.witness.json to the digits shown (0.20906032, 1.04370622, 0.04370622, 0.21819756, net 1.51467). The first two are h and h^2+1 at q_0, consistent with the lepton continuant of prop:lepton-continuant-recurrence. Every dash in the block is a compound (electron--positron, quark--antiquark, Iwahori--Hecke, Breit--Wheeler). The three steps are a substantive enumeration, not a reflex triple; the block ends on a computed value, not an aphorism; no pivot, meta-commentary, warmth or superlative.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "91a9e76fb49d",
+          "ts": "b64b50afb18a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:53.317Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the three-step chain plus the summary and the closing normal form. Arithmetic checks: the printed NF coefficients 0.209 + 1.044 + 0.044 + 0.218 sum to 1.515 as claimed, and all four match computations/_deprecated/meson-nucleon-nf.witness.json to the digits shown (0.20906032, 1.04370622, 0.04370622, 0.21819756, net 1.51467). The first two are h and h^2+1 at q_0, consistent with the lepton continuant of prop:lepton-continuant-recurrence. Every dash in the block is a compound (electron--positron, quark--antiquark, Iwahori--Hecke, Breit--Wheeler). The three steps are a substantive enumeration, not a reflex triple; the block ends on a computed value, not an aphorism; no pivot, meta-commentary, warmth or superlative.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "91a9e76fb49d",
+          "ts": "b64b50afb18a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:53.357Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the three-step chain plus the summary and the closing normal form. Arithmetic checks: the printed NF coefficients 0.209 + 1.044 + 0.044 + 0.218 sum to 1.515 as claimed, and all four match computations/_deprecated/meson-nucleon-nf.witness.json to the digits shown (0.20906032, 1.04370622, 0.04370622, 0.21819756, net 1.51467). The first two are h and h^2+1 at q_0, consistent with the lepton continuant of prop:lepton-continuant-recurrence. Every dash in the block is a compound (electron--positron, quark--antiquark, Iwahori--Hecke, Breit--Wheeler). The three steps are a substantive enumeration, not a reflex triple; the block ends on a computed value, not an aphorism; no pivot, meta-commentary, warmth or superlative.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "91a9e76fb49d",
+          "ts": "b64b50afb18a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:53.397Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the three-step chain plus the summary and the closing normal form. Arithmetic checks: the printed NF coefficients 0.209 + 1.044 + 0.044 + 0.218 sum to 1.515 as claimed, and all four match computations/_deprecated/meson-nucleon-nf.witness.json to the digits shown (0.20906032, 1.04370622, 0.04370622, 0.21819756, net 1.51467). The first two are h and h^2+1 at q_0, consistent with the lepton continuant of prop:lepton-continuant-recurrence. Every dash in the block is a compound (electron--positron, quark--antiquark, Iwahori--Hecke, Breit--Wheeler). The three steps are a substantive enumeration, not a reflex triple; the block ends on a computed value, not an aphorism; no pivot, meta-commentary, warmth or superlative.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "91a9e76fb49d",
+          "ts": "b64b50afb18a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:53.440Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the three-step chain plus the summary and the closing normal form. Arithmetic checks: the printed NF coefficients 0.209 + 1.044 + 0.044 + 0.218 sum to 1.515 as claimed, and all four match computations/_deprecated/meson-nucleon-nf.witness.json to the digits shown (0.20906032, 1.04370622, 0.04370622, 0.21819756, net 1.51467). The first two are h and h^2+1 at q_0, consistent with the lepton continuant of prop:lepton-continuant-recurrence. Every dash in the block is a compound (electron--positron, quark--antiquark, Iwahori--Hecke, Breit--Wheeler). The three steps are a substantive enumeration, not a reflex triple; the block ends on a computed value, not an aphorism; no pivot, meta-commentary, warmth or superlative.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "91a9e76fb49d",
+          "ts": "b64b50afb18a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:53.480Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the three-step chain plus the summary and the closing normal form. Arithmetic checks: the printed NF coefficients 0.209 + 1.044 + 0.044 + 0.218 sum to 1.515 as claimed, and all four match computations/_deprecated/meson-nucleon-nf.witness.json to the digits shown (0.20906032, 1.04370622, 0.04370622, 0.21819756, net 1.51467). The first two are h and h^2+1 at q_0, consistent with the lepton continuant of prop:lepton-continuant-recurrence. Every dash in the block is a compound (electron--positron, quark--antiquark, Iwahori--Hecke, Breit--Wheeler). The three steps are a substantive enumeration, not a reflex triple; the block ends on a computed value, not an aphorism; no pivot, meta-commentary, warmth or superlative.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "91a9e76fb49d",
+          "ts": "b64b50afb18a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:53.521Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the three-step chain plus the summary and the closing normal form. Arithmetic checks: the printed NF coefficients 0.209 + 1.044 + 0.044 + 0.218 sum to 1.515 as claimed, and all four match computations/_deprecated/meson-nucleon-nf.witness.json to the digits shown (0.20906032, 1.04370622, 0.04370622, 0.21819756, net 1.51467). The first two are h and h^2+1 at q_0, consistent with the lepton continuant of prop:lepton-continuant-recurrence. Every dash in the block is a compound (electron--positron, quark--antiquark, Iwahori--Hecke, Breit--Wheeler). The three steps are a substantive enumeration, not a reflex triple; the block ends on a computed value, not an aphorism; no pivot, meta-commentary, warmth or superlative.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "91a9e76fb49d",
+          "ts": "b64b50afb18a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:53.561Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the three-step chain plus the summary and the closing normal form. Arithmetic checks: the printed NF coefficients 0.209 + 1.044 + 0.044 + 0.218 sum to 1.515 as claimed, and all four match computations/_deprecated/meson-nucleon-nf.witness.json to the digits shown (0.20906032, 1.04370622, 0.04370622, 0.21819756, net 1.51467). The first two are h and h^2+1 at q_0, consistent with the lepton continuant of prop:lepton-continuant-recurrence. Every dash in the block is a compound (electron--positron, quark--antiquark, Iwahori--Hecke, Breit--Wheeler). The three steps are a substantive enumeration, not a reflex triple; the block ends on a computed value, not an aphorism; no pivot, meta-commentary, warmth or superlative.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "91a9e76fb49d",
+          "ts": "b64b50afb18a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:53.600Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Step headings are bold noun labels followed by finite-verb sentences; nothing stalls read aloud.",
+        "notes": "pass. FOUR FINDINGS, none fixed inline. (1) UNDEFINED SYMBOLS COLLIDING WITH THE TORUS-KNOT NOTATION: step 3 writes M_+ = T_{01} . L_H . T_{10} and neither T_{01} nor T_{10} is defined anywhere in the block. The backing witness defines them (T_01 = sigma_0 sigma_1 = L_+, T_10 = sigma_1 sigma_0 = L_-), but in a chapter where T_{2,3}, T_{2,5}, T_{1,0} are torus knots throughout, 'T_{01}' reads as the torus knot T_{0,1}. AGENTS.md 7a also reserves against T for algebra elements. Proposed: write L_+ . L_H . L_- , which is what the witness means. (2) BRAID WORD: step 2 writes e^- = sigma_0 sigma_1 sigma_0 inside (sigma_0 sigma_1)(sigma_0 sigma_1 sigma_0). Computed the closure: the permutation of sigma_0 sigma_1 sigma_0 in B_3 is the transposition (0 2), 2 cycles, so it closes to a 2-component link (the Hopf link after Markov destabilisation), not to the 1-component trefoil the corpus assigns to e^-. This is the SAME wrong word already flagged on prf:knot-operator-selection and mass-theory/breit-wheeler-vertex.md \u2014 three blocks now. (3) DEPRECATED WITNESS: the values in this block come from computations/_deprecated/meson-nucleon-nf.witness.json; the live tree has no meson-nucleon-nf witness. (4) PIN CURRENCY: that witness records q = 1.1099785955541805, the OLD muon value, against the current muon pin 1.10997859555733471 and the proton compute default 1.1099785827513808. Also minor: L_+ carries two meanings inside this one block \u2014 a coefficient in step 1 (L_+ = phi_0 psi_1) and the basis element sigma_0 sigma_1 in step 2. And the block's NF(M_+) = 0.209 sigma_1 + 1.044 L_+ + 0.044 L_- + 0.218 e^- (net 1.515) is a DIFFERENT normal form for the same symbol M_+ than the one in rem:meson-to-proton-via-borromean, which gives -0.209 sigma_1 - 0.044 L_+ + 1.000 L_- + 0.209 e^- (net 0.956) \u2014 because the two blocks define M_+ differently (T_01 . H_L . T_10 here, sigma_0 . L_+ . sigma_0^{-1} there) without saying so."
+      }
+    ]
+  }
+}

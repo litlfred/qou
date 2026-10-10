@@ -1,0 +1,181 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/knots-particles-confinement/confinement-grading-correspondence-conditional-witness",
+    "path": "folio/quantum-observable-universe/knots-particles-confinement/confinement-grading-correspondence-conditional-witness"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "a307e94af236",
+          "ts": "438d66ac2ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:04.517Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no assert-by-denial construction; contrasts present are substantive mathematical content."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "a307e94af236",
+          "ts": "438d66ac2ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:04.555Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no setup-then-reframe pivot construction."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "a307e94af236",
+          "ts": "438d66ac2ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:04.594Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no load-bearing spaced em-dashes; density nil."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "a307e94af236",
+          "ts": "438d66ac2ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:04.633Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; enumerations present are substantive, not reflex three-item lists."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "a307e94af236",
+          "ts": "438d66ac2ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:04.671Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; final line is technical or bookkeeping, not a quotable closer."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "a307e94af236",
+          "ts": "438d66ac2ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:04.709Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no narration of own emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "a307e94af236",
+          "ts": "438d66ac2ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:12.466Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "'This identification is precisely the content of the upstream conjecture' is a cross-reference identification (bookkeeping), not a closer restating the block."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "a307e94af236",
+          "ts": "438d66ac2ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:04.749Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; register institutional throughout, no personal warmth."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "a307e94af236",
+          "ts": "438d66ac2ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:04.789Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no unqualified maximum-strength claims."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "a307e94af236",
+          "ts": "438d66ac2ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b1",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:04.828Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; sentences parse aloud; no noun-chain pileups."
+      }
+    ]
+  }
+}

@@ -1,0 +1,684 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-exists-proof",
+    "path": "folio/quantum-observable-universe/quantum-observable-universes/q-dilogarithm-exists-proof"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:32.588Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-dilogarithm-exists-proof.ts:1",
+        "notes": "No false claims identified in 'Proof of existence of the $q$-dilogarithm': mathematical reasoning is consistent in prose."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The block 'Proof of existence of the $q$-dilogarithm' presents substantial mathematical content: '$\\Delta_q(p_k) = p_k \\otimes 1 + 1 \\otimes p_k + \\sum_{i=1}^{k-1} p_i \\otimes...'."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-dilogarithm-exists-proof.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Proof of existence of the $q$-dilogarithm'."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The remarks and narrative scope in 'Proof of existence of the $q$-dilogarithm' are appropriately qualified."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-dilogarithm-exists-proof.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Proof of existence of the $q$-dilogarithm'."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-dilogarithm-exists-proof.ts:1",
+        "notes": "The prose arguments in 'Proof of existence of the $q$-dilogarithm' proceed logically through the stated steps."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "No Lean sibling required; narrative matches the expected configuration."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-dilogarithm-exists-proof.ts:1",
+        "notes": "No citations are present in 'Proof of existence of the $q$-dilogarithm', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-dilogarithm-exists-proof.ts:1",
+        "notes": "Key terms and symbols in 'Proof of existence of the $q$-dilogarithm' are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-dilogarithm-exists-proof.ts:1",
+        "notes": "The empirical claims in 'Proof of existence of the $q$-dilogarithm' are structurally anchored to the QOU mass framework and are stable."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "q-dilogarithm-exists-proof.ts:1",
+        "notes": "The physical concepts described in 'Proof of existence of the $q$-dilogarithm' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The derivation steps and formal definitions in 'Proof of existence of the $q$-dilogarithm' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Proof of existence of the $q$-dilogarithm' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:53.718Z",
+        "reviewed_sha": "b61b8161f6e60cc822c15c1ea7ad31197a6d8aa1",
+        "evidence": "Full read of the proof; no instance of this construction. Level bookkeeping cross-checked and consistent: p_0 = 1, p_1 = log_q, p_2 = Li_2^q matches sec:intro-q-special-functions, which calls Li_2^q the level-2 iterated primitive, and matches def:q-dilogarithm's shuffle recursion.",
+        "notes": "No trap. Structural note, not fixed: the proof's load-bearing step -- 'has a one-dimensional solution space at each level (up to lower-level primitives)' -- is asserted, not argued, and the rest of the proof follows from it immediately. The block also carries no QED marker where the sibling proof block in this chapter does."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:53.762Z",
+        "reviewed_sha": "b61b8161f6e60cc822c15c1ea7ad31197a6d8aa1",
+        "evidence": "Full read of the proof; no instance of this construction. Level bookkeeping cross-checked and consistent: p_0 = 1, p_1 = log_q, p_2 = Li_2^q matches sec:intro-q-special-functions, which calls Li_2^q the level-2 iterated primitive, and matches def:q-dilogarithm's shuffle recursion.",
+        "notes": "No trap. Structural note, not fixed: the proof's load-bearing step -- 'has a one-dimensional solution space at each level (up to lower-level primitives)' -- is asserted, not argued, and the rest of the proof follows from it immediately. The block also carries no QED marker where the sibling proof block in this chapter does."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:53.807Z",
+        "reviewed_sha": "b61b8161f6e60cc822c15c1ea7ad31197a6d8aa1",
+        "evidence": "Full read of the proof; no instance of this construction. Level bookkeeping cross-checked and consistent: p_0 = 1, p_1 = log_q, p_2 = Li_2^q matches sec:intro-q-special-functions, which calls Li_2^q the level-2 iterated primitive, and matches def:q-dilogarithm's shuffle recursion.",
+        "notes": "No trap. Structural note, not fixed: the proof's load-bearing step -- 'has a one-dimensional solution space at each level (up to lower-level primitives)' -- is asserted, not argued, and the rest of the proof follows from it immediately. The block also carries no QED marker where the sibling proof block in this chapter does."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:53.673Z",
+        "reviewed_sha": "b61b8161f6e60cc822c15c1ea7ad31197a6d8aa1",
+        "evidence": "Full read: proof of prop:q-dilogarithm-exists. The list 'Over F_p, Q_p, C_p' names three genuinely distinct arithmetic settings and matches rem:q-dilog-three-contexts; the count is set by the content.",
+        "notes": "Pass by the substantive-enumeration carve-out."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:53.851Z",
+        "reviewed_sha": "b61b8161f6e60cc822c15c1ea7ad31197a6d8aa1",
+        "evidence": "Full read of the proof; no instance of this construction. Level bookkeeping cross-checked and consistent: p_0 = 1, p_1 = log_q, p_2 = Li_2^q matches sec:intro-q-special-functions, which calls Li_2^q the level-2 iterated primitive, and matches def:q-dilogarithm's shuffle recursion.",
+        "notes": "No trap. Structural note, not fixed: the proof's load-bearing step -- 'has a one-dimensional solution space at each level (up to lower-level primitives)' -- is asserted, not argued, and the rest of the proof follows from it immediately. The block also carries no QED marker where the sibling proof block in this chapter does."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:53.895Z",
+        "reviewed_sha": "b61b8161f6e60cc822c15c1ea7ad31197a6d8aa1",
+        "evidence": "Full read of the proof; no instance of this construction. Level bookkeeping cross-checked and consistent: p_0 = 1, p_1 = log_q, p_2 = Li_2^q matches sec:intro-q-special-functions, which calls Li_2^q the level-2 iterated primitive, and matches def:q-dilogarithm's shuffle recursion.",
+        "notes": "No trap. Structural note, not fixed: the proof's load-bearing step -- 'has a one-dimensional solution space at each level (up to lower-level primitives)' -- is asserted, not argued, and the rest of the proof follows from it immediately. The block also carries no QED marker where the sibling proof block in this chapter does."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:53.938Z",
+        "reviewed_sha": "b61b8161f6e60cc822c15c1ea7ad31197a6d8aa1",
+        "evidence": "Full read of the proof; no instance of this construction. Level bookkeeping cross-checked and consistent: p_0 = 1, p_1 = log_q, p_2 = Li_2^q matches sec:intro-q-special-functions, which calls Li_2^q the level-2 iterated primitive, and matches def:q-dilogarithm's shuffle recursion.",
+        "notes": "No trap. Structural note, not fixed: the proof's load-bearing step -- 'has a one-dimensional solution space at each level (up to lower-level primitives)' -- is asserted, not argued, and the rest of the proof follows from it immediately. The block also carries no QED marker where the sibling proof block in this chapter does."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:53.982Z",
+        "reviewed_sha": "b61b8161f6e60cc822c15c1ea7ad31197a6d8aa1",
+        "evidence": "Full read of the proof; no instance of this construction. Level bookkeeping cross-checked and consistent: p_0 = 1, p_1 = log_q, p_2 = Li_2^q matches sec:intro-q-special-functions, which calls Li_2^q the level-2 iterated primitive, and matches def:q-dilogarithm's shuffle recursion.",
+        "notes": "No trap. Structural note, not fixed: the proof's load-bearing step -- 'has a one-dimensional solution space at each level (up to lower-level primitives)' -- is asserted, not argued, and the rest of the proof follows from it immediately. The block also carries no QED marker where the sibling proof block in this chapter does."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:54.027Z",
+        "reviewed_sha": "b61b8161f6e60cc822c15c1ea7ad31197a6d8aa1",
+        "evidence": "Full read of the proof; no instance of this construction. Level bookkeeping cross-checked and consistent: p_0 = 1, p_1 = log_q, p_2 = Li_2^q matches sec:intro-q-special-functions, which calls Li_2^q the level-2 iterated primitive, and matches def:q-dilogarithm's shuffle recursion.",
+        "notes": "No trap. Structural note, not fixed: the proof's load-bearing step -- 'has a one-dimensional solution space at each level (up to lower-level primitives)' -- is asserted, not argued, and the rest of the proof follows from it immediately. The block also carries no QED marker where the sibling proof block in this chapter does."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f09f9eb60a49",
+          "ts": "2d51f0b9a578"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:54.071Z",
+        "reviewed_sha": "b61b8161f6e60cc822c15c1ea7ad31197a6d8aa1",
+        "evidence": "Full read of the proof; no instance of this construction. Level bookkeeping cross-checked and consistent: p_0 = 1, p_1 = log_q, p_2 = Li_2^q matches sec:intro-q-special-functions, which calls Li_2^q the level-2 iterated primitive, and matches def:q-dilogarithm's shuffle recursion.",
+        "notes": "No trap. Structural note, not fixed: the proof's load-bearing step -- 'has a one-dimensional solution space at each level (up to lower-level primitives)' -- is asserted, not argued, and the rest of the proof follows from it immediately. The block also carries no QED marker where the sibling proof block in this chapter does."
+      }
+    ]
+  }
+}

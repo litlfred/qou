@@ -1,0 +1,194 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/six-canonical-knot-operators-context",
+    "path": "folio/quantum-observable-universe/mass-theory/six-canonical-knot-operators-context"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "0cdf8442e4fd",
+          "ts": "f58aee0e9f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:43:39.509Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "No assert-by-denying constructions."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "0cdf8442e4fd",
+          "ts": "f58aee0e9f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:43:39.551Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "A numbered trajectory trace followed by two summary paragraphs; no setup-then-reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "0cdf8442e4fd",
+          "ts": "f58aee0e9f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:43:39.592Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Zero em-dashes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "0cdf8442e4fd",
+          "ts": "f58aee0e9f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:43:39.634Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "The four numbered items are the four S_3 conjugacy classes, and the three colour sectors are the physical content; no reflex triples."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "0cdf8442e4fd",
+          "ts": "f58aee0e9f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:43:39.673Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Ends on a geometric statement about the Garside trajectory's hyperbolic piece."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "0cdf8442e4fd",
+          "ts": "f58aee0e9f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:43:39.716Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "'We trace the trajectories across the Reeb bundle' announces the procedure and then performs it; standard mathematical framing."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "0cdf8442e4fd",
+          "ts": "f58aee0e9f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:43:39.760Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "The penultimate paragraph draws the bijection conclusion the trace was built for; the final paragraph adds new geometric content."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "0cdf8442e4fd",
+          "ts": "f58aee0e9f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:43:39.803Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "No personal register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "0cdf8442e4fd",
+          "ts": "f58aee0e9f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:43:39.845Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "'explicitly constructs' and 'pairwise distinct' are accurate descriptions of what the list does."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "0cdf8442e4fd",
+          "ts": "f58aee0e9f6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:43:39.885Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Very short declarative sentences throughout; the register is staccato but speakable.",
+        "notes": "THREE SUBSTANTIVE FINDINGS, none fixable inline. (1) WRONG 3-CYCLE RATE, contradicting the block's own cited witness: 'All three sectors rotate uniformly with rate +q or -q'. computations/reeb-flow-garside-closed-form-verification.witness.json gives predicted_twists_in_q_pi_units = (0.5, 0.0, -0.5) for BOTH three_cycle_plus_sigma1_sigma2 and three_cycle_minus_sigma2_sigma1, and separately asserts center_of_mass_preserved, Sum of dpsi over r, g, b equals 0 for all six operators, reporting it PASSING. A uniform (+q,+q,+q) sums to +3q. It also contradicts the block's own mechanism two items earlier, where sigma_1's swap comes from opposite rates whose difference accumulates a phase of pi with the centre of mass conserved. Concatenating the letters gives the witness value exactly: (+q,-q,0) then (0,+q,-q) averages over 2 sub-intervals to (0.5, 0, -0.5), and the witness records n_sub_intervals = 2. The two 3-cycles differ by the ORDER of the sub-intervals, not by an overall sign. (2) S_3 DOES NOT EMBED IN SU(2): 'This explicitly constructs the S_3 holonomy of rho: B_3 -> SU(2)'. SU(2) has a unique element of order 2, namely -I, since g^2 = I with det g = 1 forces both eigenvalues +1 or both -1; S_3 has three involutions. PROPOSED: rho: B_3 -> SO(3) = PSU(2), where S_3 = D_3 does sit, or state it as a projective representation. (3) Item 2 is headed 'Adjacent transpositions sigma_1, sigma_2' but only sigma_1 is traced; sigma_2 and its (gb) footprint are never derived. CHECKED AND NOT A DEFECT: 'north foundry' is established corpus terminology, used in def:q-reeb-flow-on-color-coords and prop:ramified-disc-fusion, not a garble."
+      }
+    ]
+  }
+}

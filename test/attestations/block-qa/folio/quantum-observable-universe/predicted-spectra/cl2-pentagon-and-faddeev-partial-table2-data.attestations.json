@@ -1,0 +1,203 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial-table2-data",
+    "path": "folio/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial-table2-data"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The \"Open content\" column header now sits over a two-column table naming the specific unproved statements and the Mathlib infrastructure each needs, so it reads as \"what is still open\" rather than as work-tracker bookkeeping.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e6c1ec90ffe9",
+          "ts": "83379fd7e5c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:35.372Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 2-row open-content table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. The 'Substantive work needed' cells name concrete missing Mathlib infrastructure (Fourier sine-series rearrangements; uniform Tauberian theorem for q-series) rather than hedged filler."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "e6c1ec90ffe9",
+          "ts": "83379fd7e5c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:35.413Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 2-row open-content table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. The 'Substantive work needed' cells name concrete missing Mathlib infrastructure (Fourier sine-series rearrangements; uniform Tauberian theorem for q-series) rather than hedged filler."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "e6c1ec90ffe9",
+          "ts": "83379fd7e5c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:35.465Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 2-row open-content table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. The 'Substantive work needed' cells name concrete missing Mathlib infrastructure (Fourier sine-series rearrangements; uniform Tauberian theorem for q-series) rather than hedged filler."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "e6c1ec90ffe9",
+          "ts": "83379fd7e5c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:35.508Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 2-row open-content table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. The 'Substantive work needed' cells name concrete missing Mathlib infrastructure (Fourier sine-series rearrangements; uniform Tauberian theorem for q-series) rather than hedged filler."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "e6c1ec90ffe9",
+          "ts": "83379fd7e5c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:35.549Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 2-row open-content table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. The 'Substantive work needed' cells name concrete missing Mathlib infrastructure (Fourier sine-series rearrangements; uniform Tauberian theorem for q-series) rather than hedged filler."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "e6c1ec90ffe9",
+          "ts": "83379fd7e5c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:35.591Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 2-row open-content table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. The 'Substantive work needed' cells name concrete missing Mathlib infrastructure (Fourier sine-series rearrangements; uniform Tauberian theorem for q-series) rather than hedged filler."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "e6c1ec90ffe9",
+          "ts": "83379fd7e5c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:35.634Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 2-row open-content table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. The 'Substantive work needed' cells name concrete missing Mathlib infrastructure (Fourier sine-series rearrangements; uniform Tauberian theorem for q-series) rather than hedged filler."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "e6c1ec90ffe9",
+          "ts": "83379fd7e5c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:35.678Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 2-row open-content table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. The 'Substantive work needed' cells name concrete missing Mathlib infrastructure (Fourier sine-series rearrangements; uniform Tauberian theorem for q-series) rather than hedged filler."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "e6c1ec90ffe9",
+          "ts": "83379fd7e5c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:35.718Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 2-row open-content table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. The 'Substantive work needed' cells name concrete missing Mathlib infrastructure (Fourier sine-series rearrangements; uniform Tauberian theorem for q-series) rather than hedged filler."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "e6c1ec90ffe9",
+          "ts": "83379fd7e5c3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:35.759Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 2-row open-content table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. The 'Substantive work needed' cells name concrete missing Mathlib infrastructure (Fourier sine-series rearrangements; uniform Tauberian theorem for q-series) rather than hedged filler."
+      }
+    ]
+  }
+}

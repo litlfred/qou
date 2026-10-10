@@ -1,0 +1,641 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/appendix-knot-periodic-table/knot-periodic-table-sim",
+    "path": "folio/quantum-observable-universe/appendix-knot-periodic-table/knot-periodic-table-sim"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed by agentic redo script (sequential slow). fit-section-chapter verified.",
+        "reviewed_at": "2026-07-07T23:26:13.000Z",
+        "reviewed_sha": "b49291acba5b6a9d49bbd4cc2fd93f2dc65ee9e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid spec for interactive periodic table simulation.",
+        "reviewed_at": "2026-07-08T08:56:59.000Z",
+        "reviewed_sha": "569dd24c108166aa5edf73300bdf532c43cc54e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed by agentic redo script (sequential slow). da-false-claim verified.",
+        "reviewed_at": "2026-07-07T23:26:13.000Z",
+        "reviewed_sha": "b49291acba5b6a9d49bbd4cc2fd93f2dc65ee9e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid spec for interactive periodic table simulation.",
+        "reviewed_at": "2026-07-08T08:56:59.000Z",
+        "reviewed_sha": "569dd24c108166aa5edf73300bdf532c43cc54e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed by agentic redo script (sequential slow). da-vacuous verified.",
+        "reviewed_at": "2026-07-07T23:26:13.000Z",
+        "reviewed_sha": "b49291acba5b6a9d49bbd4cc2fd93f2dc65ee9e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid spec for interactive periodic table simulation.",
+        "reviewed_at": "2026-07-08T08:56:59.000Z",
+        "reviewed_sha": "569dd24c108166aa5edf73300bdf532c43cc54e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed by agentic redo script (sequential slow). da-circular verified.",
+        "reviewed_at": "2026-07-07T23:26:13.000Z",
+        "reviewed_sha": "b49291acba5b6a9d49bbd4cc2fd93f2dc65ee9e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid spec for interactive periodic table simulation.",
+        "reviewed_at": "2026-07-08T08:56:59.000Z",
+        "reviewed_sha": "569dd24c108166aa5edf73300bdf532c43cc54e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed by agentic redo script (sequential slow). da-overclaim verified.",
+        "reviewed_at": "2026-07-07T23:26:13.000Z",
+        "reviewed_sha": "b49291acba5b6a9d49bbd4cc2fd93f2dc65ee9e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid spec for interactive periodic table simulation.",
+        "reviewed_at": "2026-07-08T08:56:59.000Z",
+        "reviewed_sha": "569dd24c108166aa5edf73300bdf532c43cc54e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed by agentic redo script (sequential slow). da-hidden-dof verified.",
+        "reviewed_at": "2026-07-07T23:26:13.000Z",
+        "reviewed_sha": "b49291acba5b6a9d49bbd4cc2fd93f2dc65ee9e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid spec for interactive periodic table simulation.",
+        "reviewed_at": "2026-07-08T08:56:59.000Z",
+        "reviewed_sha": "569dd24c108166aa5edf73300bdf532c43cc54e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed by agentic redo script (sequential slow). da-non-sequitur verified.",
+        "reviewed_at": "2026-07-07T23:26:13.000Z",
+        "reviewed_sha": "b49291acba5b6a9d49bbd4cc2fd93f2dc65ee9e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid spec for interactive periodic table simulation.",
+        "reviewed_at": "2026-07-08T08:56:59.000Z",
+        "reviewed_sha": "569dd24c108166aa5edf73300bdf532c43cc54e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed by agentic redo script (sequential slow). da-lean-narrative-divergence verified.",
+        "reviewed_at": "2026-07-07T23:26:13.000Z",
+        "reviewed_sha": "b49291acba5b6a9d49bbd4cc2fd93f2dc65ee9e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid spec for interactive periodic table simulation.",
+        "reviewed_at": "2026-07-08T08:56:59.000Z",
+        "reviewed_sha": "569dd24c108166aa5edf73300bdf532c43cc54e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed by agentic redo script (sequential slow). da-citation-misuse verified.",
+        "reviewed_at": "2026-07-07T23:26:13.000Z",
+        "reviewed_sha": "b49291acba5b6a9d49bbd4cc2fd93f2dc65ee9e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid spec for interactive periodic table simulation.",
+        "reviewed_at": "2026-07-08T08:56:59.000Z",
+        "reviewed_sha": "569dd24c108166aa5edf73300bdf532c43cc54e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed by agentic redo script (sequential slow). da-definitional-ambiguity verified.",
+        "reviewed_at": "2026-07-07T23:26:13.000Z",
+        "reviewed_sha": "b49291acba5b6a9d49bbd4cc2fd93f2dc65ee9e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid spec for interactive periodic table simulation.",
+        "reviewed_at": "2026-07-08T08:56:59.000Z",
+        "reviewed_sha": "569dd24c108166aa5edf73300bdf532c43cc54e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed by agentic redo script (sequential slow). da-empirical-fragility verified.",
+        "reviewed_at": "2026-07-07T23:26:13.000Z",
+        "reviewed_sha": "b49291acba5b6a9d49bbd4cc2fd93f2dc65ee9e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid spec for interactive periodic table simulation.",
+        "reviewed_at": "2026-07-08T08:56:59.000Z",
+        "reviewed_sha": "569dd24c108166aa5edf73300bdf532c43cc54e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed by agentic redo script (sequential slow). da-physical-implausibility verified.",
+        "reviewed_at": "2026-07-07T23:26:13.000Z",
+        "reviewed_sha": "b49291acba5b6a9d49bbd4cc2fd93f2dc65ee9e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid spec for interactive periodic table simulation.",
+        "reviewed_at": "2026-07-08T08:56:59.000Z",
+        "reviewed_sha": "569dd24c108166aa5edf73300bdf532c43cc54e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed by agentic redo script (sequential slow). da-reproducibility verified.",
+        "reviewed_at": "2026-07-07T23:26:13.000Z",
+        "reviewed_sha": "b49291acba5b6a9d49bbd4cc2fd93f2dc65ee9e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid spec for interactive periodic table simulation.",
+        "reviewed_at": "2026-07-08T08:56:59.000Z",
+        "reviewed_sha": "569dd24c108166aa5edf73300bdf532c43cc54e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed by agentic redo script (sequential slow). da-referee-verdict verified.",
+        "reviewed_at": "2026-07-07T23:26:13.000Z",
+        "reviewed_sha": "b49291acba5b6a9d49bbd4cc2fd93f2dc65ee9e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid spec for interactive periodic table simulation.",
+        "reviewed_at": "2026-07-08T08:56:59.000Z",
+        "reviewed_sha": "569dd24c108166aa5edf73300bdf532c43cc54e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Clean. No branch/audit working labels, bean ids, PR or branch names, AGENTS.md / skill-file or audit-memo pointers, dated status notes, or first-person work narration found in the .md body or the published .ts title.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:57.847Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-periodic-table (two descriptive paragraphs plus a six-item view list). No constructions from the ten categories. VERIFIED the classification sentence: T(2,n) has gcd(2,n) components, so odd n gives a one-component knot and even n a two-component link - 'fermions are single-component odd-n torus knots, bosons are even-n 2-component links' is correct as stated. Also note with approval that this block writes the trefoil correctly as 'closure of sigma_1^3 in B_2', the 2-strand word.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) That correct B_2 trefoil word is the direct counterexample to the knot-operations appendix, which writes T(2,3) as the 3-strand sigma_0 sigma_1 sigma_0 - the two chapters disagree. (2) The classification is said to classify 'all entries', but protons and neutrons are given as 3-component Borromean links while being fermions, which the single-component rule excludes. (3) The .md cites def:confined-particle, prop:fermion-boson-knot-link and rem:building-block-knots, none of which appear in the .ts uses[] (which lists prop:shell-structure-eigenvalues and prop:knot-particle-correspondence). Minor pin note: every view in the .ts pins q = 1.11, which is a 3-digit truncation matching no documented pin; defensible as a slider default, worth saying so."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:57.887Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-periodic-table (two descriptive paragraphs plus a six-item view list). No constructions from the ten categories. VERIFIED the classification sentence: T(2,n) has gcd(2,n) components, so odd n gives a one-component knot and even n a two-component link - 'fermions are single-component odd-n torus knots, bosons are even-n 2-component links' is correct as stated. Also note with approval that this block writes the trefoil correctly as 'closure of sigma_1^3 in B_2', the 2-strand word.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) That correct B_2 trefoil word is the direct counterexample to the knot-operations appendix, which writes T(2,3) as the 3-strand sigma_0 sigma_1 sigma_0 - the two chapters disagree. (2) The classification is said to classify 'all entries', but protons and neutrons are given as 3-component Borromean links while being fermions, which the single-component rule excludes. (3) The .md cites def:confined-particle, prop:fermion-boson-knot-link and rem:building-block-knots, none of which appear in the .ts uses[] (which lists prop:shell-structure-eigenvalues and prop:knot-particle-correspondence). Minor pin note: every view in the .ts pins q = 1.11, which is a 3-digit truncation matching no documented pin; defensible as a slider default, worth saying so."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:57.930Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-periodic-table (two descriptive paragraphs plus a six-item view list). No constructions from the ten categories. VERIFIED the classification sentence: T(2,n) has gcd(2,n) components, so odd n gives a one-component knot and even n a two-component link - 'fermions are single-component odd-n torus knots, bosons are even-n 2-component links' is correct as stated. Also note with approval that this block writes the trefoil correctly as 'closure of sigma_1^3 in B_2', the 2-strand word.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) That correct B_2 trefoil word is the direct counterexample to the knot-operations appendix, which writes T(2,3) as the 3-strand sigma_0 sigma_1 sigma_0 - the two chapters disagree. (2) The classification is said to classify 'all entries', but protons and neutrons are given as 3-component Borromean links while being fermions, which the single-component rule excludes. (3) The .md cites def:confined-particle, prop:fermion-boson-knot-link and rem:building-block-knots, none of which appear in the .ts uses[] (which lists prop:shell-structure-eigenvalues and prop:knot-particle-correspondence). Minor pin note: every view in the .ts pins q = 1.11, which is a 3-digit truncation matching no documented pin; defensible as a slider default, worth saying so."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:57.973Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-periodic-table (two descriptive paragraphs plus a six-item view list). No constructions from the ten categories. VERIFIED the classification sentence: T(2,n) has gcd(2,n) components, so odd n gives a one-component knot and even n a two-component link - 'fermions are single-component odd-n torus knots, bosons are even-n 2-component links' is correct as stated. Also note with approval that this block writes the trefoil correctly as 'closure of sigma_1^3 in B_2', the 2-strand word.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) That correct B_2 trefoil word is the direct counterexample to the knot-operations appendix, which writes T(2,3) as the 3-strand sigma_0 sigma_1 sigma_0 - the two chapters disagree. (2) The classification is said to classify 'all entries', but protons and neutrons are given as 3-component Borromean links while being fermions, which the single-component rule excludes. (3) The .md cites def:confined-particle, prop:fermion-boson-knot-link and rem:building-block-knots, none of which appear in the .ts uses[] (which lists prop:shell-structure-eigenvalues and prop:knot-particle-correspondence). Minor pin note: every view in the .ts pins q = 1.11, which is a 3-digit truncation matching no documented pin; defensible as a slider default, worth saying so."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:58.015Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-periodic-table (two descriptive paragraphs plus a six-item view list). No constructions from the ten categories. VERIFIED the classification sentence: T(2,n) has gcd(2,n) components, so odd n gives a one-component knot and even n a two-component link - 'fermions are single-component odd-n torus knots, bosons are even-n 2-component links' is correct as stated. Also note with approval that this block writes the trefoil correctly as 'closure of sigma_1^3 in B_2', the 2-strand word.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) That correct B_2 trefoil word is the direct counterexample to the knot-operations appendix, which writes T(2,3) as the 3-strand sigma_0 sigma_1 sigma_0 - the two chapters disagree. (2) The classification is said to classify 'all entries', but protons and neutrons are given as 3-component Borromean links while being fermions, which the single-component rule excludes. (3) The .md cites def:confined-particle, prop:fermion-boson-knot-link and rem:building-block-knots, none of which appear in the .ts uses[] (which lists prop:shell-structure-eigenvalues and prop:knot-particle-correspondence). Minor pin note: every view in the .ts pins q = 1.11, which is a 3-digit truncation matching no documented pin; defensible as a slider default, worth saying so."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:58.056Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-periodic-table (two descriptive paragraphs plus a six-item view list). No constructions from the ten categories. VERIFIED the classification sentence: T(2,n) has gcd(2,n) components, so odd n gives a one-component knot and even n a two-component link - 'fermions are single-component odd-n torus knots, bosons are even-n 2-component links' is correct as stated. Also note with approval that this block writes the trefoil correctly as 'closure of sigma_1^3 in B_2', the 2-strand word.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) That correct B_2 trefoil word is the direct counterexample to the knot-operations appendix, which writes T(2,3) as the 3-strand sigma_0 sigma_1 sigma_0 - the two chapters disagree. (2) The classification is said to classify 'all entries', but protons and neutrons are given as 3-component Borromean links while being fermions, which the single-component rule excludes. (3) The .md cites def:confined-particle, prop:fermion-boson-knot-link and rem:building-block-knots, none of which appear in the .ts uses[] (which lists prop:shell-structure-eigenvalues and prop:knot-particle-correspondence). Minor pin note: every view in the .ts pins q = 1.11, which is a 3-digit truncation matching no documented pin; defensible as a slider default, worth saying so."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:58.097Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-periodic-table (two descriptive paragraphs plus a six-item view list). No constructions from the ten categories. VERIFIED the classification sentence: T(2,n) has gcd(2,n) components, so odd n gives a one-component knot and even n a two-component link - 'fermions are single-component odd-n torus knots, bosons are even-n 2-component links' is correct as stated. Also note with approval that this block writes the trefoil correctly as 'closure of sigma_1^3 in B_2', the 2-strand word.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) That correct B_2 trefoil word is the direct counterexample to the knot-operations appendix, which writes T(2,3) as the 3-strand sigma_0 sigma_1 sigma_0 - the two chapters disagree. (2) The classification is said to classify 'all entries', but protons and neutrons are given as 3-component Borromean links while being fermions, which the single-component rule excludes. (3) The .md cites def:confined-particle, prop:fermion-boson-knot-link and rem:building-block-knots, none of which appear in the .ts uses[] (which lists prop:shell-structure-eigenvalues and prop:knot-particle-correspondence). Minor pin note: every view in the .ts pins q = 1.11, which is a 3-digit truncation matching no documented pin; defensible as a slider default, worth saying so."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:58.138Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-periodic-table (two descriptive paragraphs plus a six-item view list). No constructions from the ten categories. VERIFIED the classification sentence: T(2,n) has gcd(2,n) components, so odd n gives a one-component knot and even n a two-component link - 'fermions are single-component odd-n torus knots, bosons are even-n 2-component links' is correct as stated. Also note with approval that this block writes the trefoil correctly as 'closure of sigma_1^3 in B_2', the 2-strand word.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) That correct B_2 trefoil word is the direct counterexample to the knot-operations appendix, which writes T(2,3) as the 3-strand sigma_0 sigma_1 sigma_0 - the two chapters disagree. (2) The classification is said to classify 'all entries', but protons and neutrons are given as 3-component Borromean links while being fermions, which the single-component rule excludes. (3) The .md cites def:confined-particle, prop:fermion-boson-knot-link and rem:building-block-knots, none of which appear in the .ts uses[] (which lists prop:shell-structure-eigenvalues and prop:knot-particle-correspondence). Minor pin note: every view in the .ts pins q = 1.11, which is a 3-digit truncation matching no documented pin; defensible as a slider default, worth saying so."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:58.193Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-periodic-table (two descriptive paragraphs plus a six-item view list). No constructions from the ten categories. VERIFIED the classification sentence: T(2,n) has gcd(2,n) components, so odd n gives a one-component knot and even n a two-component link - 'fermions are single-component odd-n torus knots, bosons are even-n 2-component links' is correct as stated. Also note with approval that this block writes the trefoil correctly as 'closure of sigma_1^3 in B_2', the 2-strand word.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) That correct B_2 trefoil word is the direct counterexample to the knot-operations appendix, which writes T(2,3) as the 3-strand sigma_0 sigma_1 sigma_0 - the two chapters disagree. (2) The classification is said to classify 'all entries', but protons and neutrons are given as 3-component Borromean links while being fermions, which the single-component rule excludes. (3) The .md cites def:confined-particle, prop:fermion-boson-knot-link and rem:building-block-knots, none of which appear in the .ts uses[] (which lists prop:shell-structure-eigenvalues and prop:knot-particle-correspondence). Minor pin note: every view in the .ts pins q = 1.11, which is a 3-digit truncation matching no documented pin; defensible as a slider default, worth saying so."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:58.233Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-periodic-table (two descriptive paragraphs plus a six-item view list). No constructions from the ten categories. VERIFIED the classification sentence: T(2,n) has gcd(2,n) components, so odd n gives a one-component knot and even n a two-component link - 'fermions are single-component odd-n torus knots, bosons are even-n 2-component links' is correct as stated. Also note with approval that this block writes the trefoil correctly as 'closure of sigma_1^3 in B_2', the 2-strand word.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) That correct B_2 trefoil word is the direct counterexample to the knot-operations appendix, which writes T(2,3) as the 3-strand sigma_0 sigma_1 sigma_0 - the two chapters disagree. (2) The classification is said to classify 'all entries', but protons and neutrons are given as 3-component Borromean links while being fermions, which the single-component rule excludes. (3) The .md cites def:confined-particle, prop:fermion-boson-knot-link and rem:building-block-knots, none of which appear in the .ts uses[] (which lists prop:shell-structure-eigenvalues and prop:knot-particle-correspondence). Minor pin note: every view in the .ts pins q = 1.11, which is a 3-digit truncation matching no documented pin; defensible as a slider default, worth saying so."
+      }
+    ]
+  }
+}

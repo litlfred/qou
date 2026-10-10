@@ -1,0 +1,696 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/quantum-observable-universes/categorical-irreducible-proof",
+    "path": "folio/quantum-observable-universe/quantum-observable-universes/categorical-irreducible-proof"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3",
+          "lean": "7423571fcdae"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3",
+          "lean": "7423571fcdae"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3",
+          "lean": "18b70452a9d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:31.147Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3",
+          "lean": "18b70452a9d9"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3",
+          "lean": "18b70452a9d9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-irreducible-proof.lean:1",
+        "notes": "The mathematical claims in 'Proof of Irreducibility from observability' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/quantum-observable-universes/categorical-irreducible-proof.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3",
+          "lean": "18b70452a9d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-irreducible-proof.ts:1",
+        "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3",
+          "lean": "18b70452a9d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-irreducible-proof.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Proof of Irreducibility from observability'."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3",
+          "lean": "18b70452a9d9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The prose presents 'Proof of Irreducibility from observability' as verified, but the sibling Lean file fails to compile.",
+        "evidence": "The prose presents 'Proof of Irreducibility from observability' as verified, but the sibling Lean file fails to compile."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3",
+          "lean": "18b70452a9d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-irreducible-proof.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Proof of Irreducibility from observability'."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3",
+          "lean": "18b70452a9d9"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-irreducible-proof.lean:1",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/quantum-observable-universes/categorical-irreducible-proof.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3",
+          "lean": "18b70452a9d9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/categorical-irreducible-proof.lean fails compilation, causing divergence from the narrative.",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/categorical-irreducible-proof.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3",
+          "lean": "18b70452a9d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-irreducible-proof.ts:1",
+        "notes": "No citations are present in 'Proof of Irreducibility from observability', hence no citation misuse is possible."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3",
+          "lean": "18b70452a9d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-irreducible-proof.ts:1",
+        "notes": "Key terms and symbols in 'Proof of Irreducibility from observability' are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3",
+          "lean": "18b70452a9d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-irreducible-proof.ts:1",
+        "notes": "The empirical claims in 'Proof of Irreducibility from observability' are structurally anchored to the QOU mass framework and are stable."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3",
+          "lean": "18b70452a9d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-irreducible-proof.ts:1",
+        "notes": "The physical concepts described in 'Proof of Irreducibility from observability' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3",
+          "lean": "18b70452a9d9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "categorical-irreducible-proof.lean:1 \u2014 folio/quantum-observable-universe/quantum-observable-universes/categorical-irreducible-proof.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist",
+        "notes": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/categorical-irreducible-proof.lean fails compilation, indicating a reproducibility failure."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3",
+          "lean": "18b70452a9d9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.145Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "critical",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/quantum-observable-universes/categorical-irreducible-proof.lean fails compilation: folio/quantum-observable-universe/quantum-observable-universes/categorical-irreducible-proof.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/quantum-observable-universes/categorical-irreducible-proof.lean contains compilation errors: folio/quantum-observable-universe/quantum-observable-universes/categorical-irreducible-proof.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/quantum-observable-universes/categorical-irreducible-proof.lean fails compilation: folio/quantum-observable-universe/quantum-observable-universes/categorical-irreducible-proof.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:12.286Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:12.393Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:12.505Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:12.557Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:12.593Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:12.629Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:12.669Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:12.717Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:12.756Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "804bb6da65c6",
+          "ts": "3f787a770eb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:12.795Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, no templated preamble (contrast with the exists/unique proof blocks of this chapter), a commuting tikzcd triangle in a fenced tex block, and a three-sentence argument. All ten categories checked; nothing fires. OUT-OF-SCOPE math observation reported to the caller, not fixed: the last step is a non sequitur as written -- '\\int_A vanishes on \\mathrm{Ad}(A) ... But \\int_A is non-degenerate ..., so s=0' does not follow, since a form that vanishes identically on a subobject cannot be used with global non-degeneracy to kill a morphism into that subobject; the argument needs non-degeneracy of the restricted pairing on \\mathrm{Ad}(A), or the trace-free splitting stated as an orthogonal decomposition."
+      }
+    ]
+  }
+}

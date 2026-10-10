@@ -1,0 +1,201 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/atomic-nf-witness-procedure",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/atomic-nf-witness-procedure"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "152242fca58a",
+          "ts": "e5a35267dbed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:33.142Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "major",
+        "evidence": "Full-context read of rem:atomic-nf-witness-procedure (3-step numbered procedure + 2 closing sentences). All ten categories judged over the whole text.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "152242fca58a",
+          "ts": "e5a35267dbed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:33.179Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "major",
+        "evidence": "Full-context read of rem:atomic-nf-witness-procedure (3-step numbered procedure + 2 closing sentences). All ten categories judged over the whole text.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "152242fca58a",
+          "ts": "e5a35267dbed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:33.214Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:atomic-nf-witness-procedure (3-step numbered procedure + 2 closing sentences). All ten categories judged over the whole text.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "152242fca58a",
+          "ts": "e5a35267dbed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:33.248Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:atomic-nf-witness-procedure (3-step numbered procedure + 2 closing sentences). All ten categories judged over the whole text.",
+        "notes": "'The three Wedderburn invariants Phi_1, Phi_2, Phi_3' carries an explicit count matching the named objects; the certificate-record list has six items. No reflex triple."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "152242fca58a",
+          "ts": "e5a35267dbed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:33.284Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "major",
+        "evidence": "Full-context read of rem:atomic-nf-witness-procedure (3-step numbered procedure + 2 closing sentences). All ten categories judged over the whole text.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "152242fca58a",
+          "ts": "e5a35267dbed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:33.318Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "major",
+        "evidence": "Full-context read of rem:atomic-nf-witness-procedure (3-step numbered procedure + 2 closing sentences). All ten categories judged over the whole text.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "152242fca58a",
+          "ts": "e5a35267dbed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:33.355Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "major",
+        "evidence": "Full-context read of rem:atomic-nf-witness-procedure (3-step numbered procedure + 2 closing sentences). All ten categories judged over the whole text.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "152242fca58a",
+          "ts": "e5a35267dbed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:33.391Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:atomic-nf-witness-procedure (3-step numbered procedure + 2 closing sentences). All ten categories judged over the whole text.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "152242fca58a",
+          "ts": "e5a35267dbed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:33.431Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:atomic-nf-witness-procedure (3-step numbered procedure + 2 closing sentences). All ten categories judged over the whole text.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "152242fca58a",
+          "ts": "e5a35267dbed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:49:33.465Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:atomic-nf-witness-procedure (3-step numbered procedure + 2 closing sentences). All ten categories judged over the whole text.",
+        "notes": "No trap of this category."
+      }
+    ]
+  }
+}

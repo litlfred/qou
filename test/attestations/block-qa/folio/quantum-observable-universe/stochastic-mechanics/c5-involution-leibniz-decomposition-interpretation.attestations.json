@@ -1,0 +1,482 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/stochastic-mechanics/c5-involution-leibniz-decomposition-interpretation",
+    "path": "folio/quantum-observable-universe/stochastic-mechanics/c5-involution-leibniz-decomposition-interpretation"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "308da8e28658",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "308da8e28658",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. \"The probe **is queued in** [`computations/qbeta/qbeta_decay_sdp_extended_ck.py`]\" -> \"The extraction is set up in [`computations/qbeta/qbeta_decay_sdp_extended_ck.py`]\". The script citation stays; the work-queue report is gone, and the preceding sentence still says the claim is testable rather than tested. Separately in this block, \"its full proof is gated on the order-by-order Hecke expansion machinery\" -> \"requires\" it.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "66c6c8198c19",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:15.032Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "'This decomposition is a structural identification, not a first-principles derivation.' and 'not a quantum-deformation artifact'.",
+        "notes": "False-positive classes: the first is a temporal/scope status statement, the second a substantive mathematical contrast that IS the blockquote's claim."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "66c6c8198c19",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:15.073Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read (blockquotes, Categorical interpretation, Falsifiable prediction, Discussion; 402 words, zero em-dashes). The Discussion is an honest self-scoping paragraph ('a structural identification, not a first-principles derivation ... Both are concrete computations not yet executed') and is credited as such. Cited scripts all exist: computations/pentagon_reduction_li2q.py, computations/qbeta/qbeta_decay_sdp_extended_ck.py, and the .ts's qbeta_silver_ratio_pell_lucas_ck.py + its witness."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "66c6c8198c19",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:15.112Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read (blockquotes, Categorical interpretation, Falsifiable prediction, Discussion; 402 words, zero em-dashes). The Discussion is an honest self-scoping paragraph ('a structural identification, not a first-principles derivation ... Both are concrete computations not yet executed') and is credited as such. Cited scripts all exist: computations/pentagon_reduction_li2q.py, computations/qbeta/qbeta_decay_sdp_extended_ck.py, and the .ts's qbeta_silver_ratio_pell_lucas_ck.py + its witness."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "66c6c8198c19",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:15.152Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read (blockquotes, Categorical interpretation, Falsifiable prediction, Discussion; 402 words, zero em-dashes). The Discussion is an honest self-scoping paragraph ('a structural identification, not a first-principles derivation ... Both are concrete computations not yet executed') and is credited as such. Cited scripts all exist: computations/pentagon_reduction_li2q.py, computations/qbeta/qbeta_decay_sdp_extended_ck.py, and the .ts's qbeta_silver_ratio_pell_lucas_ck.py + its witness."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "66c6c8198c19",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:15.192Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read (blockquotes, Categorical interpretation, Falsifiable prediction, Discussion; 402 words, zero em-dashes). The Discussion is an honest self-scoping paragraph ('a structural identification, not a first-principles derivation ... Both are concrete computations not yet executed') and is credited as such. Cited scripts all exist: computations/pentagon_reduction_li2q.py, computations/qbeta/qbeta_decay_sdp_extended_ck.py, and the .ts's qbeta_silver_ratio_pell_lucas_ck.py + its witness."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "66c6c8198c19",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:15.233Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read (blockquotes, Categorical interpretation, Falsifiable prediction, Discussion; 402 words, zero em-dashes). The Discussion is an honest self-scoping paragraph ('a structural identification, not a first-principles derivation ... Both are concrete computations not yet executed') and is credited as such. Cited scripts all exist: computations/pentagon_reduction_li2q.py, computations/qbeta/qbeta_decay_sdp_extended_ck.py, and the .ts's qbeta_silver_ratio_pell_lucas_ck.py + its witness."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "66c6c8198c19",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:15.273Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read (blockquotes, Categorical interpretation, Falsifiable prediction, Discussion; 402 words, zero em-dashes). The Discussion is an honest self-scoping paragraph ('a structural identification, not a first-principles derivation ... Both are concrete computations not yet executed') and is credited as such. Cited scripts all exist: computations/pentagon_reduction_li2q.py, computations/qbeta/qbeta_decay_sdp_extended_ck.py, and the .ts's qbeta_silver_ratio_pell_lucas_ck.py + its witness."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "66c6c8198c19",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:15.313Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read (blockquotes, Categorical interpretation, Falsifiable prediction, Discussion; 402 words, zero em-dashes). The Discussion is an honest self-scoping paragraph ('a structural identification, not a first-principles derivation ... Both are concrete computations not yet executed') and is credited as such. Cited scripts all exist: computations/pentagon_reduction_li2q.py, computations/qbeta/qbeta_decay_sdp_extended_ck.py, and the .ts's qbeta_silver_ratio_pell_lucas_ck.py + its witness."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "66c6c8198c19",
+          "ts": "3104a61685ec"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:15.359Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "minor",
+        "evidence": "'Both reproduce $\\mathfrak{Q}_\\beta$ exactly via the precision ladder.'",
+        "notes": "Unearned maximum-strength claim. The ladder is a truncated series of near-matches (AGENTS.md records c_3 = -2 as a 3.47% near-match, and Q_beta currently misses its L2 100x target by ~164x), and this block's own Discussion says the order-by-order expansion proving the c_5 form has 'not yet [been] executed'. Proposed: 'Both contribute to the precision ladder' or state the rung and the residual. STRUCTURAL, do not fix inline. Two further findings in this block, both checkable on the page: (a) the crossing census 'The proton braid has 11 typed crossings: 7 pure sigma_0, 4 pure sigma_1, 1 averaged sigma_0, 1 averaged sigma_1, 3 inverted sigma_1^{-1}' sums to 16, not 11 - and the 11 is the load-bearing number, since the .ts refined-framing note derives the rung as k = floor(n_total/2) = floor(11/2) = 5; it also contradicts the proof sibling's Step 2, which gives the proton ONE averaged crossing. (b) The 'Falsifiable prediction' offers k = 8 as an untested check ('This is testable by extending SDP-T_beta extraction to k >= 8 and checking whether c_8 has a 1/2 fingerprint'), but the Lean sibling already records the test as done - 'Tested k=5, 8, 10 all show 1/2 fingerprints; k=9 is clean Pell-Lucas' - and its def averagingResonanceRungs := [5, 8, 10, 11, 13, 14] contradicts this block's 'k = 8, 11, ... (every 3 rungs)'. Also 'those k for which C(2,2) x (combinatorial weight) peaks' is vacuous as written: C(2,2) = 1."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "66c6c8198c19",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:15.405Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read (blockquotes, Categorical interpretation, Falsifiable prediction, Discussion; 402 words, zero em-dashes). The Discussion is an honest self-scoping paragraph ('a structural identification, not a first-principles derivation ... Both are concrete computations not yet executed') and is credited as such. Cited scripts all exist: computations/pentagon_reduction_li2q.py, computations/qbeta/qbeta_decay_sdp_extended_ck.py, and the .ts's qbeta_silver_ratio_pell_lucas_ck.py + its witness."
+      }
+    ]
+  }
+}

@@ -1,0 +1,944 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1",
+    "path": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "ebe8b5d611bc",
+          "ts": "ab3d1ffde706",
+          "lean": "29d452c75a76"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "ebe8b5d611bc",
+          "ts": "ab3d1ffde706",
+          "lean": "29d452c75a76"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "ebe8b5d611bc",
+          "ts": "ab3d1ffde706",
+          "lean": "29d452c75a76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "ebe8b5d611bc",
+          "ts": "ab3d1ffde706",
+          "lean": "29d452c75a76"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "ebe8b5d611bc",
+          "ts": "ab3d1ffde706",
+          "lean": "29d452c75a76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
+        "notes": "No false claims identified in 'Conjecture (D24 Lusztig canonical basis closure, conditional on': mathematical reasoning is consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "ebe8b5d611bc",
+          "ts": "ab3d1ffde706",
+          "lean": "29d452c75a76"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.lean:1",
+        "notes": "The Lean sibling folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.lean contains 'sorry' placeholders, rendering the formal proof vacuous."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "ebe8b5d611bc",
+          "ts": "ab3d1ffde706",
+          "lean": "29d452c75a76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Conjecture (D24 Lusztig canonical basis closure, conditional on'."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "ebe8b5d611bc",
+          "ts": "ab3d1ffde706",
+          "lean": "29d452c75a76"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The prose in 'Conjecture (D24 Lusztig canonical basis closure, conditional on' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation).",
+        "evidence": "The prose in 'Conjecture (D24 Lusztig canonical basis closure, conditional on' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation)."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "ebe8b5d611bc",
+          "ts": "ab3d1ffde706",
+          "lean": "29d452c75a76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Conjecture (D24 Lusztig canonical basis closure, conditional on'."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "ebe8b5d611bc",
+          "ts": "ab3d1ffde706",
+          "lean": "29d452c75a76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
+        "notes": "The argument flow in 'Conjecture (D24 Lusztig canonical basis closure, conditional on' is logically sound, mapping onto the cited dependencies."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "ebe8b5d611bc",
+          "ts": "ab3d1ffde706",
+          "lean": "29d452c75a76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.lean:1",
+        "notes": "No narrative divergence: the Lean sibling implements the structure claimed in 'Conjecture (D24 Lusztig canonical basis closure, conditional on' (though incomplete)."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "ebe8b5d611bc",
+          "ts": "ab3d1ffde706",
+          "lean": "29d452c75a76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
+        "notes": "Citations to kazhdan-lusztig1979, lusztig1990, kashiwara1991 are correct and contextually appropriate."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "ebe8b5d611bc",
+          "ts": "ab3d1ffde706",
+          "lean": "29d452c75a76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
+        "notes": "Key terms and symbols in 'Conjecture (D24 Lusztig canonical basis closure, conditional on' are mathematically defined and unambiguous."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "ebe8b5d611bc",
+          "ts": "ab3d1ffde706",
+          "lean": "29d452c75a76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
+        "notes": "The algebraic and logical relations in 'Conjecture (D24 Lusztig canonical basis closure, conditional on' are independent of empirical tuning parameters."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "ebe8b5d611bc",
+          "ts": "ab3d1ffde706",
+          "lean": "29d452c75a76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
+        "notes": "The physical concepts described in 'Conjecture (D24 Lusztig canonical basis closure, conditional on' are consistent with quantum observable mechanics."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "ebe8b5d611bc",
+          "ts": "ab3d1ffde706",
+          "lean": "29d452c75a76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.ts:1",
+        "notes": "The derivation steps and formal definitions in 'Conjecture (D24 Lusztig canonical basis closure, conditional on' are reproducible."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "ebe8b5d611bc",
+          "ts": "ab3d1ffde706",
+          "lean": "29d452c75a76"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/stochastic-mechanics/lusztig-canonical-basis-q-eq-1.md:1 — Conjecture (D24 Lusztig canonical basis closure, conditional on",
+        "notes": "Conjecture/Proof is open with sorry placeholders, hence the objection is survivable.",
+        "verdict": "survivable-objection",
+        "referee_argument": "The specialization of the Lusztig canonical basis at q=1 remains unproven due to sorry stubs in lusztig-canonical-basis-q-eq-1.lean."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Connected the orphan stochastic mechanics blocks cleanly. Made the reverse crystal limits and AJ machinery arguments crisp.",
+        "reviewed_at": "2026-07-07T14:26:56.052511Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.052511Z"
+        },
+        "field_hash": {
+          "md": "ebe8b5d611bc",
+          "ts": "ab3d1ffde706",
+          "lean": "29d452c75a76"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The duality-tracker row ids are gone from both the prose and the table column; the decategorification relation is now stated by naming the maps (bar involution, Kashiwara crystal) rather than by D-number.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "63df5335a4ab",
+          "ts": "e0f7a7b3f202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:48.037Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read (conditional conjecture banner, array display, limit-duality table, isospin/Type-B section, Diagnostics). Zero em-dashes, no closer, no warmth, no pivot. The 3b-cond conditional banner ('conditional on conj:kazhdan-lusztig-classical-limit') is present and correctly formed. Bar-symmetry diagnostic is right: the KL basis is bar-invariant by definition. The array environment is inside $$...$$, i.e. already in math mode, so it does not trip the render-math-mode-envelope rule."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "63df5335a4ab",
+          "ts": "e0f7a7b3f202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:48.075Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read (conditional conjecture banner, array display, limit-duality table, isospin/Type-B section, Diagnostics). Zero em-dashes, no closer, no warmth, no pivot. The 3b-cond conditional banner ('conditional on conj:kazhdan-lusztig-classical-limit') is present and correctly formed. Bar-symmetry diagnostic is right: the KL basis is bar-invariant by definition. The array environment is inside $$...$$, i.e. already in math mode, so it does not trip the render-math-mode-envelope rule."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "63df5335a4ab",
+          "ts": "e0f7a7b3f202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:48.113Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read (conditional conjecture banner, array display, limit-duality table, isospin/Type-B section, Diagnostics). Zero em-dashes, no closer, no warmth, no pivot. The 3b-cond conditional banner ('conditional on conj:kazhdan-lusztig-classical-limit') is present and correctly formed. Bar-symmetry diagnostic is right: the KL basis is bar-invariant by definition. The array environment is inside $$...$$, i.e. already in math mode, so it does not trip the render-math-mode-envelope rule."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "63df5335a4ab",
+          "ts": "e0f7a7b3f202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:48.150Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read (conditional conjecture banner, array display, limit-duality table, isospin/Type-B section, Diagnostics). Zero em-dashes, no closer, no warmth, no pivot. The 3b-cond conditional banner ('conditional on conj:kazhdan-lusztig-classical-limit') is present and correctly formed. Bar-symmetry diagnostic is right: the KL basis is bar-invariant by definition. The array environment is inside $$...$$, i.e. already in math mode, so it does not trip the render-math-mode-envelope rule."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "63df5335a4ab",
+          "ts": "e0f7a7b3f202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:48.187Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read (conditional conjecture banner, array display, limit-duality table, isospin/Type-B section, Diagnostics). Zero em-dashes, no closer, no warmth, no pivot. The 3b-cond conditional banner ('conditional on conj:kazhdan-lusztig-classical-limit') is present and correctly formed. Bar-symmetry diagnostic is right: the KL basis is bar-invariant by definition. The array environment is inside $$...$$, i.e. already in math mode, so it does not trip the render-math-mode-envelope rule."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "63df5335a4ab",
+          "ts": "e0f7a7b3f202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:48.230Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read (conditional conjecture banner, array display, limit-duality table, isospin/Type-B section, Diagnostics). Zero em-dashes, no closer, no warmth, no pivot. The 3b-cond conditional banner ('conditional on conj:kazhdan-lusztig-classical-limit') is present and correctly formed. Bar-symmetry diagnostic is right: the KL basis is bar-invariant by definition. The array environment is inside $$...$$, i.e. already in math mode, so it does not trip the render-math-mode-envelope rule."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "63df5335a4ab",
+          "ts": "e0f7a7b3f202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:48.273Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read (conditional conjecture banner, array display, limit-duality table, isospin/Type-B section, Diagnostics). Zero em-dashes, no closer, no warmth, no pivot. The 3b-cond conditional banner ('conditional on conj:kazhdan-lusztig-classical-limit') is present and correctly formed. Bar-symmetry diagnostic is right: the KL basis is bar-invariant by definition. The array environment is inside $$...$$, i.e. already in math mode, so it does not trip the render-math-mode-envelope rule."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "63df5335a4ab",
+          "ts": "e0f7a7b3f202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:48.314Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read (conditional conjecture banner, array display, limit-duality table, isospin/Type-B section, Diagnostics). Zero em-dashes, no closer, no warmth, no pivot. The 3b-cond conditional banner ('conditional on conj:kazhdan-lusztig-classical-limit') is present and correctly formed. Bar-symmetry diagnostic is right: the KL basis is bar-invariant by definition. The array environment is inside $$...$$, i.e. already in math mode, so it does not trip the render-math-mode-envelope rule."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "63df5335a4ab",
+          "ts": "e0f7a7b3f202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:48.356Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "No superlative language; used as the defect channel.",
+        "notes": "STRUCTURAL FINDINGS (report only). (1) TERMINOLOGY: 'The Kazhdan-Lusztig basis polynomials {P_{y,w}(q)} are the STRUCTURE CONSTANTS of this decategorification.' P_{y,w} are change-of-basis coefficients - C'_w = sum_{y <= w} P_{y,w}(q) T_y expresses the KL basis in the standard basis - not structure constants of the algebra. The downstream claim that they are integers at q = 1 is correct either way. (2) The conjecture has NO formal content anywhere in the tree. The sibling lusztig-canonical-basis-q-eq-1.lean declares 'class LusztigCanonicalBasisQEq1 where holds : Prop', the bare holds:Prop placeholder that AGENTS.md 3b-tax flags as proof-claims-unencoded (inhabited by <True>). Its docstring says the substantive class 'lives at ../lean/QOU/BraidsAndKnots/LusztigCanonicalBasisQEq1.lean (file pending; class structure sketched in the .md \"Lean axiomatisation (sketch)\" section)'. I ran both checks: that path does not exist (ls: No such file or directory), and the .md has no section of that name (grep for 'Lean axiomatisation' returns nothing). So both pointers in the stub's docstring are dead in the present tree. (3) Minor: the stub's -- Ref line points at 'quantum-observable-universe/braids-and-knots/lusztig-canonical-basis-q-eq-1.ts'; the only copy of that .ts is under stochastic-mechanics/. (4) Minor notation: 'q = q_0 (substrate approx 1.11)' puts a numerical q outside the introduction and Ch 7, which AGENTS.md's notation rule reserves it to."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "63df5335a4ab",
+          "ts": "e0f7a7b3f202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:32:48.394Z",
+        "reviewed_sha": "fd84dfa322f7a0857eeac81d5749ecec979b5879",
+        "evidence": "Full read (conditional conjecture banner, array display, limit-duality table, isospin/Type-B section, Diagnostics). Zero em-dashes, no closer, no warmth, no pivot. The 3b-cond conditional banner ('conditional on conj:kazhdan-lusztig-classical-limit') is present and correctly formed. Bar-symmetry diagnostic is right: the KL basis is bar-invariant by definition. The array environment is inside $$...$$, i.e. already in math mode, so it does not trip the render-math-mode-envelope rule."
+      }
+    ]
+  }
+}

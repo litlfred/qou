@@ -1,0 +1,479 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/models-of-qous/framing-arc-intro",
+    "path": "folio/quantum-observable-universe/models-of-qous/framing-arc-intro"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] \"The arc\" is now anchored by the block's opening sentence \u2014 \"Five structural steps map the logical arc of this paper\" \u2014 so \"The non-abelian Stokes mass identity closes the arc\" resolves to the five-step arc rather than to a run of blocks.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "b948105952bd",
+          "ts": "3ebad3b1e365"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "b948105952bd",
+          "ts": "3ebad3b1e365"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:21:13.000Z",
+        "reviewed_sha": "e5e72ac8bd89158ce24aec81758b4731b2eb58e3",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b948105952bd",
+          "ts": "3ebad3b1e365"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:18:32.885Z",
+        "reviewed_sha": "d2abcdbcc6824e5cdca906216c20b149a2eaed70",
+        "evidence": "Full read (prose, ~1.0kB). The five numbered steps are the chapter's structure, not a reflex list. The specialisation chain R -> R[i] -> R[i][q,q^-1] matches sec:step-archimedean exactly. All ten categories clean. Minor expository note (not a trap): 'The Reeb-bundle complement equals the volume invariant' equates a manifold with a number."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b948105952bd",
+          "ts": "3ebad3b1e365"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:18:32.926Z",
+        "reviewed_sha": "d2abcdbcc6824e5cdca906216c20b149a2eaed70",
+        "evidence": "Full read (prose, ~1.0kB). The five numbered steps are the chapter's structure, not a reflex list. The specialisation chain R -> R[i] -> R[i][q,q^-1] matches sec:step-archimedean exactly. All ten categories clean. Minor expository note (not a trap): 'The Reeb-bundle complement equals the volume invariant' equates a manifold with a number."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b948105952bd",
+          "ts": "3ebad3b1e365"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:18:32.969Z",
+        "reviewed_sha": "d2abcdbcc6824e5cdca906216c20b149a2eaed70",
+        "evidence": "Full read (prose, ~1.0kB). The five numbered steps are the chapter's structure, not a reflex list. The specialisation chain R -> R[i] -> R[i][q,q^-1] matches sec:step-archimedean exactly. All ten categories clean. Minor expository note (not a trap): 'The Reeb-bundle complement equals the volume invariant' equates a manifold with a number."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b948105952bd",
+          "ts": "3ebad3b1e365"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:18:33.012Z",
+        "reviewed_sha": "d2abcdbcc6824e5cdca906216c20b149a2eaed70",
+        "evidence": "Full read (prose, ~1.0kB). The five numbered steps are the chapter's structure, not a reflex list. The specialisation chain R -> R[i] -> R[i][q,q^-1] matches sec:step-archimedean exactly. All ten categories clean. Minor expository note (not a trap): 'The Reeb-bundle complement equals the volume invariant' equates a manifold with a number."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b948105952bd",
+          "ts": "3ebad3b1e365"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:18:33.054Z",
+        "reviewed_sha": "d2abcdbcc6824e5cdca906216c20b149a2eaed70",
+        "evidence": "Full read (prose, ~1.0kB). The five numbered steps are the chapter's structure, not a reflex list. The specialisation chain R -> R[i] -> R[i][q,q^-1] matches sec:step-archimedean exactly. All ten categories clean. Minor expository note (not a trap): 'The Reeb-bundle complement equals the volume invariant' equates a manifold with a number."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b948105952bd",
+          "ts": "3ebad3b1e365"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:18:33.095Z",
+        "reviewed_sha": "d2abcdbcc6824e5cdca906216c20b149a2eaed70",
+        "evidence": "Full read (prose, ~1.0kB). The five numbered steps are the chapter's structure, not a reflex list. The specialisation chain R -> R[i] -> R[i][q,q^-1] matches sec:step-archimedean exactly. All ten categories clean. Minor expository note (not a trap): 'The Reeb-bundle complement equals the volume invariant' equates a manifold with a number."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b948105952bd",
+          "ts": "3ebad3b1e365"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:18:33.141Z",
+        "reviewed_sha": "d2abcdbcc6824e5cdca906216c20b149a2eaed70",
+        "evidence": "Full read (prose, ~1.0kB). The five numbered steps are the chapter's structure, not a reflex list. The specialisation chain R -> R[i] -> R[i][q,q^-1] matches sec:step-archimedean exactly. All ten categories clean. Minor expository note (not a trap): 'The Reeb-bundle complement equals the volume invariant' equates a manifold with a number."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b948105952bd",
+          "ts": "3ebad3b1e365"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:18:33.187Z",
+        "reviewed_sha": "d2abcdbcc6824e5cdca906216c20b149a2eaed70",
+        "evidence": "Full read (prose, ~1.0kB). The five numbered steps are the chapter's structure, not a reflex list. The specialisation chain R -> R[i] -> R[i][q,q^-1] matches sec:step-archimedean exactly. All ten categories clean. Minor expository note (not a trap): 'The Reeb-bundle complement equals the volume invariant' equates a manifold with a number."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b948105952bd",
+          "ts": "3ebad3b1e365"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:18:33.231Z",
+        "reviewed_sha": "d2abcdbcc6824e5cdca906216c20b149a2eaed70",
+        "evidence": "Full read (prose, ~1.0kB). The five numbered steps are the chapter's structure, not a reflex list. The specialisation chain R -> R[i] -> R[i][q,q^-1] matches sec:step-archimedean exactly. All ten categories clean. Minor expository note (not a trap): 'The Reeb-bundle complement equals the volume invariant' equates a manifold with a number."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b948105952bd",
+          "ts": "3ebad3b1e365"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:18:33.273Z",
+        "reviewed_sha": "d2abcdbcc6824e5cdca906216c20b149a2eaed70",
+        "evidence": "Full read (prose, ~1.0kB). The five numbered steps are the chapter's structure, not a reflex list. The specialisation chain R -> R[i] -> R[i][q,q^-1] matches sec:step-archimedean exactly. All ten categories clean. Minor expository note (not a trap): 'The Reeb-bundle complement equals the volume invariant' equates a manifold with a number."
+      }
+    ]
+  }
+}

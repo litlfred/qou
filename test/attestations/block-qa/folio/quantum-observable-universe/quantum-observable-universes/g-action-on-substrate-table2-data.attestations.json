@@ -1,0 +1,203 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate-table2-data",
+    "path": "folio/quantum-observable-universe/quantum-observable-universes/g-action-on-substrate-table2-data"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "477ae1e44e9b",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:31.704Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 4-row table (factor / source axiom / meaning); no connected prose. Checked against parent conj:g-action-on-substrate: the four factors [2]_q,[4]_q,[4]_q,[6]_q multiply to [2]_q*[4]_q^2*[6]_q, which is exactly the parent's N_sym(q). Recomputed at proton q0=1.1099785827513808 with balanced brackets [n]_q=(q^n-q^-n)/(q-q^-1): [2]=2.0108969, [4]=4.1096824, [6]=6.3880866, product 216.95872 -- reproduces the parent's 216.96.",
+        "notes": "No trap. Numerics confirm the factorisation; see the returned anomaly list for two parent-block observations ([4]_q^2 quoted as 16.892 vs 16.8895, and the -1.81% residual being target-normalised)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "477ae1e44e9b",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:31.750Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 4-row table (factor / source axiom / meaning); no connected prose. Checked against parent conj:g-action-on-substrate: the four factors [2]_q,[4]_q,[4]_q,[6]_q multiply to [2]_q*[4]_q^2*[6]_q, which is exactly the parent's N_sym(q). Recomputed at proton q0=1.1099785827513808 with balanced brackets [n]_q=(q^n-q^-n)/(q-q^-1): [2]=2.0108969, [4]=4.1096824, [6]=6.3880866, product 216.95872 -- reproduces the parent's 216.96.",
+        "notes": "No trap. Numerics confirm the factorisation; see the returned anomaly list for two parent-block observations ([4]_q^2 quoted as 16.892 vs 16.8895, and the -1.81% residual being target-normalised)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "477ae1e44e9b",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:31.796Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 4-row table (factor / source axiom / meaning); no connected prose. Checked against parent conj:g-action-on-substrate: the four factors [2]_q,[4]_q,[4]_q,[6]_q multiply to [2]_q*[4]_q^2*[6]_q, which is exactly the parent's N_sym(q). Recomputed at proton q0=1.1099785827513808 with balanced brackets [n]_q=(q^n-q^-n)/(q-q^-1): [2]=2.0108969, [4]=4.1096824, [6]=6.3880866, product 216.95872 -- reproduces the parent's 216.96.",
+        "notes": "No trap. Numerics confirm the factorisation; see the returned anomaly list for two parent-block observations ([4]_q^2 quoted as 16.892 vs 16.8895, and the -1.81% residual being target-normalised)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "477ae1e44e9b",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:31.841Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 4-row table (factor / source axiom / meaning); no connected prose. Checked against parent conj:g-action-on-substrate: the four factors [2]_q,[4]_q,[4]_q,[6]_q multiply to [2]_q*[4]_q^2*[6]_q, which is exactly the parent's N_sym(q). Recomputed at proton q0=1.1099785827513808 with balanced brackets [n]_q=(q^n-q^-n)/(q-q^-1): [2]=2.0108969, [4]=4.1096824, [6]=6.3880866, product 216.95872 -- reproduces the parent's 216.96.",
+        "notes": "No trap. Numerics confirm the factorisation; see the returned anomaly list for two parent-block observations ([4]_q^2 quoted as 16.892 vs 16.8895, and the -1.81% residual being target-normalised)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "477ae1e44e9b",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:31.885Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 4-row table (factor / source axiom / meaning); no connected prose. Checked against parent conj:g-action-on-substrate: the four factors [2]_q,[4]_q,[4]_q,[6]_q multiply to [2]_q*[4]_q^2*[6]_q, which is exactly the parent's N_sym(q). Recomputed at proton q0=1.1099785827513808 with balanced brackets [n]_q=(q^n-q^-n)/(q-q^-1): [2]=2.0108969, [4]=4.1096824, [6]=6.3880866, product 216.95872 -- reproduces the parent's 216.96.",
+        "notes": "No trap. Numerics confirm the factorisation; see the returned anomaly list for two parent-block observations ([4]_q^2 quoted as 16.892 vs 16.8895, and the -1.81% residual being target-normalised)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "477ae1e44e9b",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:31.932Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 4-row table (factor / source axiom / meaning); no connected prose. Checked against parent conj:g-action-on-substrate: the four factors [2]_q,[4]_q,[4]_q,[6]_q multiply to [2]_q*[4]_q^2*[6]_q, which is exactly the parent's N_sym(q). Recomputed at proton q0=1.1099785827513808 with balanced brackets [n]_q=(q^n-q^-n)/(q-q^-1): [2]=2.0108969, [4]=4.1096824, [6]=6.3880866, product 216.95872 -- reproduces the parent's 216.96.",
+        "notes": "No trap. Numerics confirm the factorisation; see the returned anomaly list for two parent-block observations ([4]_q^2 quoted as 16.892 vs 16.8895, and the -1.81% residual being target-normalised)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "477ae1e44e9b",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:31.975Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 4-row table (factor / source axiom / meaning); no connected prose. Checked against parent conj:g-action-on-substrate: the four factors [2]_q,[4]_q,[4]_q,[6]_q multiply to [2]_q*[4]_q^2*[6]_q, which is exactly the parent's N_sym(q). Recomputed at proton q0=1.1099785827513808 with balanced brackets [n]_q=(q^n-q^-n)/(q-q^-1): [2]=2.0108969, [4]=4.1096824, [6]=6.3880866, product 216.95872 -- reproduces the parent's 216.96.",
+        "notes": "No trap. Numerics confirm the factorisation; see the returned anomaly list for two parent-block observations ([4]_q^2 quoted as 16.892 vs 16.8895, and the -1.81% residual being target-normalised)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "477ae1e44e9b",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:32.019Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 4-row table (factor / source axiom / meaning); no connected prose. Checked against parent conj:g-action-on-substrate: the four factors [2]_q,[4]_q,[4]_q,[6]_q multiply to [2]_q*[4]_q^2*[6]_q, which is exactly the parent's N_sym(q). Recomputed at proton q0=1.1099785827513808 with balanced brackets [n]_q=(q^n-q^-n)/(q-q^-1): [2]=2.0108969, [4]=4.1096824, [6]=6.3880866, product 216.95872 -- reproduces the parent's 216.96.",
+        "notes": "No trap. Numerics confirm the factorisation; see the returned anomaly list for two parent-block observations ([4]_q^2 quoted as 16.892 vs 16.8895, and the -1.81% residual being target-normalised)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "477ae1e44e9b",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:32.063Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 4-row table (factor / source axiom / meaning); no connected prose. Checked against parent conj:g-action-on-substrate: the four factors [2]_q,[4]_q,[4]_q,[6]_q multiply to [2]_q*[4]_q^2*[6]_q, which is exactly the parent's N_sym(q). Recomputed at proton q0=1.1099785827513808 with balanced brackets [n]_q=(q^n-q^-n)/(q-q^-1): [2]=2.0108969, [4]=4.1096824, [6]=6.3880866, product 216.95872 -- reproduces the parent's 216.96.",
+        "notes": "No trap. Numerics confirm the factorisation; see the returned anomaly list for two parent-block observations ([4]_q^2 quoted as 16.892 vs 16.8895, and the -1.81% residual being target-normalised)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "477ae1e44e9b",
+          "ts": "52714e92ae44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:32.110Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 4-row table (factor / source axiom / meaning); no connected prose. Checked against parent conj:g-action-on-substrate: the four factors [2]_q,[4]_q,[4]_q,[6]_q multiply to [2]_q*[4]_q^2*[6]_q, which is exactly the parent's N_sym(q). Recomputed at proton q0=1.1099785827513808 with balanced brackets [n]_q=(q^n-q^-n)/(q-q^-1): [2]=2.0108969, [4]=4.1096824, [6]=6.3880866, product 216.95872 -- reproduces the parent's 216.96.",
+        "notes": "No trap. Numerics confirm the factorisation; see the returned anomaly list for two parent-block observations ([4]_q^2 quoted as 16.892 vs 16.8895, and the -1.81% residual being target-normalised)."
+      }
+    ]
+  }
+}

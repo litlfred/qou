@@ -1,0 +1,1257 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/information-theory/boltzmann-constant",
+    "path": "folio/quantum-observable-universe/information-theory/boltzmann-constant"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "4e3808876f31",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:27.551Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.565928Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "evidence": "k_B T_{\\mathrm{phys}} \\;=\\; \\hbar_q \\;=\\; \\frac{q-1}{q}",
+        "notes": "The proposition mixes a definitional statement with an interpretative physical equivalence between thermal energy and the quantum deformation parameter."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "4e3808876f31",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:27.898Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.565928Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound fundamental definition solidly normalizing empirical thermodynamics safely against exact theoretical flow actions.",
+        "reviewed_at": "2026-07-08T13:53:25.000Z",
+        "reviewed_sha": "ce6aea94ea1f5a9a03ef3fd71ffd4fc1877744cc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565928Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.565928Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement respects the chapter's base-ring regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "4e3808876f31",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:28.648Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.565928Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "notes": "Proposition has no corresponding proof block.",
+        "evidence": "Proposition has no corresponding proof block."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "4e3808876f31",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The claim in 'Boltzmann constant is unity in QOU natural units' is unverified due to Lean compilation failures in sibling file.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/information-theory/boltzmann-constant.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.565928Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound fundamental definition solidly normalizing empirical thermodynamics safely against exact theoretical flow actions.",
+        "reviewed_at": "2026-07-08T13:53:25.000Z",
+        "reviewed_sha": "ce6aea94ea1f5a9a03ef3fd71ffd4fc1877744cc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "4e3808876f31",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The block 'Boltzmann constant is unity in QOU natural units' presents substantial mathematical content: In QOU natural units, the Boltzmann constant is unity:...",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.565928Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound fundamental definition solidly normalizing empirical thermodynamics safely against exact theoretical flow actions.",
+        "reviewed_at": "2026-07-08T13:53:25.000Z",
+        "reviewed_sha": "ce6aea94ea1f5a9a03ef3fd71ffd4fc1877744cc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "4e3808876f31",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Boltzmann constant is unity in QOU natural units'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/information-theory/boltzmann-constant.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.565928Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound fundamental definition solidly normalizing empirical thermodynamics safely against exact theoretical flow actions.",
+        "reviewed_at": "2026-07-08T13:53:25.000Z",
+        "reviewed_sha": "ce6aea94ea1f5a9a03ef3fd71ffd4fc1877744cc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "4e3808876f31",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The prose presents 'Boltzmann constant is unity in QOU natural units' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor",
+        "evidence": "The prose presents 'Boltzmann constant is unity in QOU natural units' as verified, but the sibling Lean file fails to compile."
+      },
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.565928Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound fundamental definition solidly normalizing empirical thermodynamics safely against exact theoretical flow actions.",
+        "reviewed_at": "2026-07-08T13:53:25.000Z",
+        "reviewed_sha": "ce6aea94ea1f5a9a03ef3fd71ffd4fc1877744cc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "4e3808876f31",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Boltzmann constant is unity in QOU natural units'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/information-theory/boltzmann-constant.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.565928Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound fundamental definition solidly normalizing empirical thermodynamics safely against exact theoretical flow actions.",
+        "reviewed_at": "2026-07-08T13:53:25.000Z",
+        "reviewed_sha": "ce6aea94ea1f5a9a03ef3fd71ffd4fc1877744cc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "4e3808876f31",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/information-theory/boltzmann-constant.lean.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/information-theory/boltzmann-constant.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.565928Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound fundamental definition solidly normalizing empirical thermodynamics safely against exact theoretical flow actions.",
+        "reviewed_at": "2026-07-08T13:53:25.000Z",
+        "reviewed_sha": "ce6aea94ea1f5a9a03ef3fd71ffd4fc1877744cc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "4e3808876f31",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling folio/quantum-observable-universe/information-theory/boltzmann-constant.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/information-theory/boltzmann-constant.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.565928Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound fundamental definition solidly normalizing empirical thermodynamics safely against exact theoretical flow actions.",
+        "reviewed_at": "2026-07-08T13:53:25.000Z",
+        "reviewed_sha": "ce6aea94ea1f5a9a03ef3fd71ffd4fc1877744cc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "4e3808876f31",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'Boltzmann constant is unity in QOU natural units', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/information-theory/boltzmann-constant.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.565928Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound fundamental definition solidly normalizing empirical thermodynamics safely against exact theoretical flow actions.",
+        "reviewed_at": "2026-07-08T13:53:25.000Z",
+        "reviewed_sha": "ce6aea94ea1f5a9a03ef3fd71ffd4fc1877744cc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "4e3808876f31",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'Boltzmann constant is unity in QOU natural units' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/information-theory/boltzmann-constant.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.565928Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound fundamental definition solidly normalizing empirical thermodynamics safely against exact theoretical flow actions.",
+        "reviewed_at": "2026-07-08T13:53:25.000Z",
+        "reviewed_sha": "ce6aea94ea1f5a9a03ef3fd71ffd4fc1877744cc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "4e3808876f31",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'Boltzmann constant is unity in QOU natural units' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/information-theory/boltzmann-constant.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.565928Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound fundamental definition solidly normalizing empirical thermodynamics safely against exact theoretical flow actions.",
+        "reviewed_at": "2026-07-08T13:53:25.000Z",
+        "reviewed_sha": "ce6aea94ea1f5a9a03ef3fd71ffd4fc1877744cc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "4e3808876f31",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'Boltzmann constant is unity in QOU natural units' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/information-theory/boltzmann-constant.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.565928Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "major",
+        "notes": "Identifying k_B T with \\hbar_q implies temperature is purely a measure of quantum deformation. While this aligns with thermal time hypotheses, asserting it without dimensional justification feels physically fragile.",
+        "evidence": "Identifying k_B T with \\hbar_q implies temperature is purely a measure of quantum deformation. While this aligns with thermal time hypotheses, asserting it without dimensional justification feels physically fragile."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound fundamental definition solidly normalizing empirical thermodynamics safely against exact theoretical flow actions.",
+        "reviewed_at": "2026-07-08T13:53:25.000Z",
+        "reviewed_sha": "ce6aea94ea1f5a9a03ef3fd71ffd4fc1877744cc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "4e3808876f31",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The Lean sibling folio/quantum-observable-universe/information-theory/boltzmann-constant.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/information-theory/boltzmann-constant.lean:1 — /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/information-theory/boltzmann-constant.lean:26:13: error: unexpected token 'section'; expected 'lemma'"
+      },
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.565928Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound fundamental definition solidly normalizing empirical thermodynamics safely against exact theoretical flow actions.",
+        "reviewed_at": "2026-07-08T13:53:25.000Z",
+        "reviewed_sha": "ce6aea94ea1f5a9a03ef3fd71ffd4fc1877744cc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "4e3808876f31",
+          "ts": "d8892d9d0f83",
+          "lean": "1f6ebfb1c1ac"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:03.753Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/information-theory/boltzmann-constant.lean fails compilation: /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/information-theory/boltzmann-constant.lean:26:13: error: unexpected token 'section'; expected 'lemma'",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/information-theory/boltzmann-constant.lean contains compilation errors: /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/information-theory/boltzmann-constant.lean:26:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/information-theory/boltzmann-constant.lean fails compilation: /Users/litlfred/space_cats/qou/folio/quantum-observable-universe/information-theory/boltzmann-constant.lean:26:13: error: unexpected token 'section'; expected 'lemma'"
+      },
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-20",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.565928Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound fundamental definition solidly normalizing empirical thermodynamics safely against exact theoretical flow actions.",
+        "reviewed_at": "2026-07-08T13:53:25.000Z",
+        "reviewed_sha": "ce6aea94ea1f5a9a03ef3fd71ffd4fc1877744cc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Streamlined stat-mech derivations. Compressed disjoint numbered lists in hydrogen section. Aligned physical derivations with concise declaratory statements. Preserved critical SUPERSEDED warning. Maintained all file markers.",
+        "reviewed_at": "2026-07-07T14:26:55.565928Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.565928Z"
+        },
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68",
+          "lean": "e1fb9a073a88"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound fundamental definition solidly normalizing empirical thermodynamics safely against exact theoretical flow actions.",
+        "reviewed_at": "2026-07-08T13:53:25.000Z",
+        "reviewed_sha": "ce6aea94ea1f5a9a03ef3fd71ffd4fc1877744cc",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:38:12.112Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "Full read: no assert-by-denial constructions; contrasts absent or substantive."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:38:12.153Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "Full read: no setup-then-reframe pivot constructions."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:38:12.197Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "Em-dash use absent or genuinely parenthetical; no structural substitution, low density."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:38:12.252Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "No reflex three-item lists; enumerations substantive where present."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:38:12.316Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "Final line substantive (math/bookkeeping), not a placed quotable."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:38:12.429Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "No self-narrated emphasis (no 'we emphasize'/'note the framing')."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:38:12.481Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "No block-final restatement of already-established content."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:38:12.547Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "Institutional register throughout; no personal warmth."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:38:12.642Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "No unqualified maximum-strength claims."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9cdb2e0c6964",
+          "ts": "71f611afbc68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:38:12.722Z",
+        "reviewed_sha": "68d54c5ca03377e69c89a4a54d8fac141a4605b7",
+        "evidence": "Prose reads aloud cleanly; no stalled noun chains."
+      }
+    ]
+  }
+}

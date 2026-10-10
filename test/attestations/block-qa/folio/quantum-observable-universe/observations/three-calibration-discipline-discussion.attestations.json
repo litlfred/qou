@@ -1,0 +1,195 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/observations/three-calibration-discipline-discussion",
+    "path": "folio/quantum-observable-universe/observations/three-calibration-discipline-discussion"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] All flagged items are gone: the \"## Audit\" heading is now \"## Discussion\", and the \"Task P1.5\" workplan id and the docs/audits link have been removed.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d91842398510",
+          "ts": "903a708d09a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b8",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:35:59.788Z",
+        "reviewed_sha": "d0ffecf6293224ab8a63c0c15fee05819a98aa97",
+        "evidence": "'not three distinct degrees H^0/H^1/H^2' and 'not a fourth input' are substantive calibration-counting contrasts (the block's claim)",
+        "notes": "pass-with-note: substantive mathematical contrast class"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d91842398510",
+          "ts": "903a708d09a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b8",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:35:59.847Z",
+        "reviewed_sha": "d0ffecf6293224ab8a63c0c15fee05819a98aa97",
+        "evidence": "full-text agent review: no rhetorical-pivot construction found"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d91842398510",
+          "ts": "903a708d09a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b8",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:35:59.898Z",
+        "reviewed_sha": "d0ffecf6293224ab8a63c0c15fee05819a98aa97",
+        "evidence": "full-text agent review: no em-dash construction found"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d91842398510",
+          "ts": "903a708d09a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b8",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:35:59.935Z",
+        "reviewed_sha": "d0ffecf6293224ab8a63c0c15fee05819a98aa97",
+        "evidence": "full-text agent review: no triples construction found"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d91842398510",
+          "ts": "903a708d09a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b8",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:35:59.989Z",
+        "reviewed_sha": "d0ffecf6293224ab8a63c0c15fee05819a98aa97",
+        "evidence": "full-text agent review: no closing-aphorism construction found"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d91842398510",
+          "ts": "903a708d09a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b8",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:36:00.083Z",
+        "reviewed_sha": "d0ffecf6293224ab8a63c0c15fee05819a98aa97",
+        "evidence": "'This proposition formalizes the calibration discipline' is a discussion-block lead-in describing the companion prop, not narrated emphasis",
+        "notes": "pass-with-note: cross-reference framing, not emphasis narration"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d91842398510",
+          "ts": "903a708d09a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b8",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:36:00.120Z",
+        "reviewed_sha": "d0ffecf6293224ab8a63c0c15fee05819a98aa97",
+        "evidence": "full-text agent review: no thesis-restatement construction found"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d91842398510",
+          "ts": "903a708d09a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b8",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:36:00.156Z",
+        "reviewed_sha": "d0ffecf6293224ab8a63c0c15fee05819a98aa97",
+        "evidence": "full-text agent review: no performed-warmth construction found"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d91842398510",
+          "ts": "903a708d09a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b8",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:36:00.215Z",
+        "reviewed_sha": "d0ffecf6293224ab8a63c0c15fee05819a98aa97",
+        "evidence": "full-text agent review: no superlative construction found"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d91842398510",
+          "ts": "903a708d09a7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b8",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:36:00.277Z",
+        "reviewed_sha": "d0ffecf6293224ab8a63c0c15fee05819a98aa97",
+        "evidence": "full-text agent review: no nonspeakable construction found"
+      }
+    ]
+  }
+}

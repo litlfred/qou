@@ -1,0 +1,527 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists-proof",
+    "path": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists-proof"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:38.051Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists-proof.ts:1",
+        "notes": "No false claims identified in 'The strategy is constructive. We define the specific endomorphism L_q = ...': mathematical reasoning is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The claims in 'The strategy is constructive. We define the specific endomorphism L_q = ...' are non-vacuous as they present substantial mathematical content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists-proof.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'The strategy is constructive. We define the specific endomorphism L_q = ...'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "No overclaims: the scope of 'The strategy is constructive. We define the specific endomorphism L_q = ...' is appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists-proof.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The strategy is constructive. We define the specific endomorphism L_q = ...'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists-proof.ts:1",
+        "notes": "The argument flow in 'The strategy is constructive. We define the specific endomorphism L_q = ...' is logically sound, mapping onto the cited dependencies."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists-proof.ts:1",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists-proof.ts:1",
+        "notes": "No citations are present in 'The strategy is constructive. We define the specific endomorphism L_q = ...', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists-proof.ts:1",
+        "notes": "Key terms and symbols in 'The strategy is constructive. We define the specific endomorphism L_q = ...' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists-proof.ts:1",
+        "notes": "The algebraic and logical relations in 'The strategy is constructive. We define the specific endomorphism L_q = ...' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists-proof.ts:1",
+        "notes": "The physical concepts described in 'The strategy is constructive. We define the specific endomorphism L_q = ...' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists-proof.ts:1",
+        "notes": "The derivation steps and formal definitions in 'The strategy is constructive. We define the specific endomorphism L_q = ...' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lagrangian-exists-proof.md:1 \u2014 The strategy is constructive. We define the specific endomorphism L_q = ...",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'The strategy is constructive. We define the specific endomorphism L_q = ...' are consistent."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:37.525Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 7-line construction body. All ten categories checked on the whole text."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:37.559Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 7-line construction body. All ten categories checked on the whole text."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:37.598Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 7-line construction body. All ten categories checked on the whole text."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:37.634Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 7-line construction body. All ten categories checked on the whole text."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:37.670Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 7-line construction body. All ten categories checked on the whole text."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:37.706Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Templated proof-strategy preamble narrating the method rather than proving it: 'The strategy is constructive. We define the specific endomorphism $L_q = D^2 + \\psi^* \\otimes D \\psi$ in $\\mathrm{End}(A)$ and verify that it correctly encapsulates both the kinetic and interaction terms, satisfying the requirements for the categorical Lagrangian.' The body neither defines $L_q$ nor verifies any 'kinetic/interaction' encapsulation -- it checks that each summand exists and that morphism addition exists. The preamble also breaks the notation register ($L_q$, $D$ plain, against $\\mathcal{L}_q$, $\\mathcal{D}_\\nabla$ calligraphic in the definition, the proposition and this block's own body), which marks it as separately generated text spliced on.",
+        "notes": "Proposed (structural: whole-paragraph removal plus a notation conflict, and the same template recurs on ~10 sibling *-proof blocks in this chapter): delete the preamble. If a roadmap is kept it must use \\mathcal{L}_q / \\mathcal{D}_\\nabla and describe what the body actually does (existence of each summand plus closure of End(A) under addition). Not fixed inline because it is math-adjacent (the plain-L/plain-D symbols would have to be rewritten, not merely deleted)."
+      },
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:03:48.811Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Templated proof-strategy preamble: 'The strategy is constructive. We define the specific endomorphism $L_q = D^2 + \\psi^* \\otimes D \\psi$ in $\\mathrm{End}(A)$ and verify that it correctly encapsulates both the kinetic and interaction terms, satisfying the requirements for the categorical Lagrangian.' The body defines nothing and verifies no kinetic/interaction encapsulation -- it checks that each summand exists and that End(A) is closed under addition. The preamble also writes plain $L_q$, $D$ against the calligraphic $\\mathcal{L}_q$, $\\mathcal{D}_\\nabla$ used by the definition, the proposition and this block's own body.",
+        "notes": "NOT fixed inline: the preamble carries a formula, so it falls outside the pure-prose small-trap threshold. Proposed: delete the preamble paragraph, matching categorical-instanton-exists-proof.md (fixed in this batch) and categorical-action-{exists,unique}-proof.md (fixed by a sibling agent). Do not merely re-notate it -- the sentence describes work the proof does not do."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:37.742Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 7-line construction body. All ten categories checked on the whole text."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:37.781Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 7-line construction body. All ten categories checked on the whole text."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:37.817Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 7-line construction body. All ten categories checked on the whole text."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f95d05989f2e",
+          "ts": "3ebf6d40009e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:37.853Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, 2-sentence templated preamble plus a 7-line construction body. All ten categories checked on the whole text."
+      }
+    ]
+  }
+}

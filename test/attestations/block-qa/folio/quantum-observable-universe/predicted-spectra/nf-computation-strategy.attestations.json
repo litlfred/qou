@@ -1,0 +1,679 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/nf-computation-strategy",
+    "path": "folio/quantum-observable-universe/predicted-spectra/nf-computation-strategy"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f3c66ab6f8e2",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:49.204Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f3c66ab6f8e2",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:28.282Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the whole strategy remark (three regimes, inductive chaining, the strand-8 bottleneck, six optimisation strategies, the scalability table). Checked the complexity arithmetic and it holds: summing (A-i-1) transfer matrices over i = 0..A-2 gives A(A-1)/2 = binom(A,2), as claimed; O(A^2) per strand over A strands is O(A^3); i128's maximum is about 1.7e38, so '> 10^38 (i128 overflow)' at A = 17-20 is right. The term counts cross-check against the sibling rem:kummer-shell-closure exactly (about 14,000 at A=8 vs its 14256; about 230,000 at A=9 vs its 234504; under 30 s at A<=9 vs its 29 s). Every dash is a compound or a numeric range. The three regimes and the two three-item output lists are substantive enumerations. The heavy 'We apply / We accumulate / We partition' register is method narration in a computational-strategy remark, which is standard, not manufactured emphasis. No aphorism, no warmth, no pivot, no superlative inflation ('the sole degree-changing rule' is accurate for the Hecke relation).",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:28.321Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the whole strategy remark (three regimes, inductive chaining, the strand-8 bottleneck, six optimisation strategies, the scalability table). Checked the complexity arithmetic and it holds: summing (A-i-1) transfer matrices over i = 0..A-2 gives A(A-1)/2 = binom(A,2), as claimed; O(A^2) per strand over A strands is O(A^3); i128's maximum is about 1.7e38, so '> 10^38 (i128 overflow)' at A = 17-20 is right. The term counts cross-check against the sibling rem:kummer-shell-closure exactly (about 14,000 at A=8 vs its 14256; about 230,000 at A=9 vs its 234504; under 30 s at A<=9 vs its 29 s). Every dash is a compound or a numeric range. The three regimes and the two three-item output lists are substantive enumerations. The heavy 'We apply / We accumulate / We partition' register is method narration in a computational-strategy remark, which is standard, not manufactured emphasis. No aphorism, no warmth, no pivot, no superlative inflation ('the sole degree-changing rule' is accurate for the Hecke relation).",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:28.363Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the whole strategy remark (three regimes, inductive chaining, the strand-8 bottleneck, six optimisation strategies, the scalability table). Checked the complexity arithmetic and it holds: summing (A-i-1) transfer matrices over i = 0..A-2 gives A(A-1)/2 = binom(A,2), as claimed; O(A^2) per strand over A strands is O(A^3); i128's maximum is about 1.7e38, so '> 10^38 (i128 overflow)' at A = 17-20 is right. The term counts cross-check against the sibling rem:kummer-shell-closure exactly (about 14,000 at A=8 vs its 14256; about 230,000 at A=9 vs its 234504; under 30 s at A<=9 vs its 29 s). Every dash is a compound or a numeric range. The three regimes and the two three-item output lists are substantive enumerations. The heavy 'We apply / We accumulate / We partition' register is method narration in a computational-strategy remark, which is standard, not manufactured emphasis. No aphorism, no warmth, no pivot, no superlative inflation ('the sole degree-changing rule' is accurate for the Hecke relation).",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:28.409Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the whole strategy remark (three regimes, inductive chaining, the strand-8 bottleneck, six optimisation strategies, the scalability table). Checked the complexity arithmetic and it holds: summing (A-i-1) transfer matrices over i = 0..A-2 gives A(A-1)/2 = binom(A,2), as claimed; O(A^2) per strand over A strands is O(A^3); i128's maximum is about 1.7e38, so '> 10^38 (i128 overflow)' at A = 17-20 is right. The term counts cross-check against the sibling rem:kummer-shell-closure exactly (about 14,000 at A=8 vs its 14256; about 230,000 at A=9 vs its 234504; under 30 s at A<=9 vs its 29 s). Every dash is a compound or a numeric range. The three regimes and the two three-item output lists are substantive enumerations. The heavy 'We apply / We accumulate / We partition' register is method narration in a computational-strategy remark, which is standard, not manufactured emphasis. No aphorism, no warmth, no pivot, no superlative inflation ('the sole degree-changing rule' is accurate for the Hecke relation).",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:28.455Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the whole strategy remark (three regimes, inductive chaining, the strand-8 bottleneck, six optimisation strategies, the scalability table). Checked the complexity arithmetic and it holds: summing (A-i-1) transfer matrices over i = 0..A-2 gives A(A-1)/2 = binom(A,2), as claimed; O(A^2) per strand over A strands is O(A^3); i128's maximum is about 1.7e38, so '> 10^38 (i128 overflow)' at A = 17-20 is right. The term counts cross-check against the sibling rem:kummer-shell-closure exactly (about 14,000 at A=8 vs its 14256; about 230,000 at A=9 vs its 234504; under 30 s at A<=9 vs its 29 s). Every dash is a compound or a numeric range. The three regimes and the two three-item output lists are substantive enumerations. The heavy 'We apply / We accumulate / We partition' register is method narration in a computational-strategy remark, which is standard, not manufactured emphasis. No aphorism, no warmth, no pivot, no superlative inflation ('the sole degree-changing rule' is accurate for the Hecke relation).",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:28.500Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the whole strategy remark (three regimes, inductive chaining, the strand-8 bottleneck, six optimisation strategies, the scalability table). Checked the complexity arithmetic and it holds: summing (A-i-1) transfer matrices over i = 0..A-2 gives A(A-1)/2 = binom(A,2), as claimed; O(A^2) per strand over A strands is O(A^3); i128's maximum is about 1.7e38, so '> 10^38 (i128 overflow)' at A = 17-20 is right. The term counts cross-check against the sibling rem:kummer-shell-closure exactly (about 14,000 at A=8 vs its 14256; about 230,000 at A=9 vs its 234504; under 30 s at A<=9 vs its 29 s). Every dash is a compound or a numeric range. The three regimes and the two three-item output lists are substantive enumerations. The heavy 'We apply / We accumulate / We partition' register is method narration in a computational-strategy remark, which is standard, not manufactured emphasis. No aphorism, no warmth, no pivot, no superlative inflation ('the sole degree-changing rule' is accurate for the Hecke relation).",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:28.546Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the whole strategy remark (three regimes, inductive chaining, the strand-8 bottleneck, six optimisation strategies, the scalability table). Checked the complexity arithmetic and it holds: summing (A-i-1) transfer matrices over i = 0..A-2 gives A(A-1)/2 = binom(A,2), as claimed; O(A^2) per strand over A strands is O(A^3); i128's maximum is about 1.7e38, so '> 10^38 (i128 overflow)' at A = 17-20 is right. The term counts cross-check against the sibling rem:kummer-shell-closure exactly (about 14,000 at A=8 vs its 14256; about 230,000 at A=9 vs its 234504; under 30 s at A<=9 vs its 29 s). Every dash is a compound or a numeric range. The three regimes and the two three-item output lists are substantive enumerations. The heavy 'We apply / We accumulate / We partition' register is method narration in a computational-strategy remark, which is standard, not manufactured emphasis. No aphorism, no warmth, no pivot, no superlative inflation ('the sole degree-changing rule' is accurate for the Hecke relation).",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:28.587Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the whole strategy remark (three regimes, inductive chaining, the strand-8 bottleneck, six optimisation strategies, the scalability table). Checked the complexity arithmetic and it holds: summing (A-i-1) transfer matrices over i = 0..A-2 gives A(A-1)/2 = binom(A,2), as claimed; O(A^2) per strand over A strands is O(A^3); i128's maximum is about 1.7e38, so '> 10^38 (i128 overflow)' at A = 17-20 is right. The term counts cross-check against the sibling rem:kummer-shell-closure exactly (about 14,000 at A=8 vs its 14256; about 230,000 at A=9 vs its 234504; under 30 s at A<=9 vs its 29 s). Every dash is a compound or a numeric range. The three regimes and the two three-item output lists are substantive enumerations. The heavy 'We apply / We accumulate / We partition' register is method narration in a computational-strategy remark, which is standard, not manufactured emphasis. No aphorism, no warmth, no pivot, no superlative inflation ('the sole degree-changing rule' is accurate for the Hecke relation).",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:28.628Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the whole strategy remark (three regimes, inductive chaining, the strand-8 bottleneck, six optimisation strategies, the scalability table). Checked the complexity arithmetic and it holds: summing (A-i-1) transfer matrices over i = 0..A-2 gives A(A-1)/2 = binom(A,2), as claimed; O(A^2) per strand over A strands is O(A^3); i128's maximum is about 1.7e38, so '> 10^38 (i128 overflow)' at A = 17-20 is right. The term counts cross-check against the sibling rem:kummer-shell-closure exactly (about 14,000 at A=8 vs its 14256; about 230,000 at A=9 vs its 234504; under 30 s at A<=9 vs its 29 s). Every dash is a compound or a numeric range. The three regimes and the two three-item output lists are substantive enumerations. The heavy 'We apply / We accumulate / We partition' register is method narration in a computational-strategy remark, which is standard, not manufactured emphasis. No aphorism, no warmth, no pivot, no superlative inflation ('the sole degree-changing rule' is accurate for the Hecke relation).",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "374e0e949af0",
+          "ts": "d24ae2c8773c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:28.671Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Bolded strategy headings are noun labels, each followed by finite-verb sentences; nothing stalls read aloud.",
+        "notes": "pass. THREE FINDINGS, none fixed inline. (1) UNDECLARED VARIABLE t, MIXED WITH q IN THE SAME BLOCK. Regime 2 says coefficients are 'exact Laurent polynomials in Z[t, t^{-1}]', and the chaining section uses c_w(t), tr_alt(t), net(t) and the alternating weight (-t^{-2})^{l(w)} \u2014 while the optimisation section writes the Hecke relation with q, sigma_i^2 = (q - q^{-1}) sigma_i + 1. t is never defined. It is inferable: the sibling rem:kummer-shell-closure writes the same objects over Z[qcheck^{+-1}] with qcheck = q^{1/2} and the alternating weight (-q^{-1})^{l(w)}, and -t^{-2} = -q^{-1} exactly when t = q^{1/2} \u2014 so t is qcheck. But the reader has to reconstruct that from another block, and AGENTS.md 7a reserves against t as a polynomial variable (Jones is J_K(q), never V_K(t)). Proposed: write qcheck throughout, or state 't := q^{1/2}' once. (2) FLOAT FALLBACK, against the NO-FLOAT64 directive. The block's closing sentence prescribes 'a per-length accumulation float engine' for A > 20, and the sibling kummer block likewise has 'The float engine serves as a cross-check at q_0'. AGENTS.md's precision section (STRICT, 2026-08-18) forbids computing in float in computations/ and says a float64 input poisons the whole result; a per-length accumulation over A > 20 terms is exactly the aggregate-error case it names. Whether the engine actually exists is outside what I could check from the .md, but the block prescribes it. (3) UNDEFINED PARAMETERS c and d: the bottleneck paragraph characterises neutron-neutron crossings by 'c = 1, d = -(q - q^{-1})', referring back to the transfer matrices T(c_j, d_j) of Regime 1, which are named but never given. Lesser note: the scalability table's 'Coefficients' column holds magnitudes (10^12, 10^17, 10^22, > 10^38) in four rows and a count, O(A^2), in the fifth."
+      }
+    ]
+  }
+}

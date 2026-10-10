@@ -1,0 +1,495 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/garside-gram-intro",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/garside-gram-intro"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "6d979d4a3b52",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "6d979d4a3b52",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq7"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "4d8dc14686af",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.473Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 6-sentence section intro. The single em-dash is inside a parenthetical and introduces a file cross-reference; the block has no aphorism, pivot, meta-narration, warmth or superlative, and the closing sentence ('This anchors the Q_q-value in the Jucys-Murphy spectral data') states a forward deliverable of the section rather than restating an established result.",
+        "notes": "Clean on all ten. POSITIVE NOTE for the coordinator: this block is convention-correct and unusually careful - it names convention D explicitly and states the D-singularity ('G is singular on H_n, so the weighting is taken on the non-degenerate quotient'), which is exactly what the gram-matrix-dual witness shows (gram_determinant 3.998e-17, one zero eigenvalue, radical recorded). The cited lean/QOU/QBeta/MarkovGramDegenerate.lean exists. Unverified here: the claimed isomorphism H_n/rad = TL_n."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "4d8dc14686af",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.515Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 6-sentence section intro. The single em-dash is inside a parenthetical and introduces a file cross-reference; the block has no aphorism, pivot, meta-narration, warmth or superlative, and the closing sentence ('This anchors the Q_q-value in the Jucys-Murphy spectral data') states a forward deliverable of the section rather than restating an established result.",
+        "notes": "Clean on all ten. POSITIVE NOTE for the coordinator: this block is convention-correct and unusually careful - it names convention D explicitly and states the D-singularity ('G is singular on H_n, so the weighting is taken on the non-degenerate quotient'), which is exactly what the gram-matrix-dual witness shows (gram_determinant 3.998e-17, one zero eigenvalue, radical recorded). The cited lean/QOU/QBeta/MarkovGramDegenerate.lean exists. Unverified here: the claimed isomorphism H_n/rad = TL_n."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "4d8dc14686af",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.557Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 6-sentence section intro. The single em-dash is inside a parenthetical and introduces a file cross-reference; the block has no aphorism, pivot, meta-narration, warmth or superlative, and the closing sentence ('This anchors the Q_q-value in the Jucys-Murphy spectral data') states a forward deliverable of the section rather than restating an established result.",
+        "notes": "Clean on all ten. POSITIVE NOTE for the coordinator: this block is convention-correct and unusually careful - it names convention D explicitly and states the D-singularity ('G is singular on H_n, so the weighting is taken on the non-degenerate quotient'), which is exactly what the gram-matrix-dual witness shows (gram_determinant 3.998e-17, one zero eigenvalue, radical recorded). The cited lean/QOU/QBeta/MarkovGramDegenerate.lean exists. Unverified here: the claimed isomorphism H_n/rad = TL_n."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "4d8dc14686af",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.600Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 6-sentence section intro. The single em-dash is inside a parenthetical and introduces a file cross-reference; the block has no aphorism, pivot, meta-narration, warmth or superlative, and the closing sentence ('This anchors the Q_q-value in the Jucys-Murphy spectral data') states a forward deliverable of the section rather than restating an established result.",
+        "notes": "Clean on all ten. POSITIVE NOTE for the coordinator: this block is convention-correct and unusually careful - it names convention D explicitly and states the D-singularity ('G is singular on H_n, so the weighting is taken on the non-degenerate quotient'), which is exactly what the gram-matrix-dual witness shows (gram_determinant 3.998e-17, one zero eigenvalue, radical recorded). The cited lean/QOU/QBeta/MarkovGramDegenerate.lean exists. Unverified here: the claimed isomorphism H_n/rad = TL_n."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "4d8dc14686af",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.643Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 6-sentence section intro. The single em-dash is inside a parenthetical and introduces a file cross-reference; the block has no aphorism, pivot, meta-narration, warmth or superlative, and the closing sentence ('This anchors the Q_q-value in the Jucys-Murphy spectral data') states a forward deliverable of the section rather than restating an established result.",
+        "notes": "Clean on all ten. POSITIVE NOTE for the coordinator: this block is convention-correct and unusually careful - it names convention D explicitly and states the D-singularity ('G is singular on H_n, so the weighting is taken on the non-degenerate quotient'), which is exactly what the gram-matrix-dual witness shows (gram_determinant 3.998e-17, one zero eigenvalue, radical recorded). The cited lean/QOU/QBeta/MarkovGramDegenerate.lean exists. Unverified here: the claimed isomorphism H_n/rad = TL_n."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "4d8dc14686af",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.685Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 6-sentence section intro. The single em-dash is inside a parenthetical and introduces a file cross-reference; the block has no aphorism, pivot, meta-narration, warmth or superlative, and the closing sentence ('This anchors the Q_q-value in the Jucys-Murphy spectral data') states a forward deliverable of the section rather than restating an established result.",
+        "notes": "Clean on all ten. POSITIVE NOTE for the coordinator: this block is convention-correct and unusually careful - it names convention D explicitly and states the D-singularity ('G is singular on H_n, so the weighting is taken on the non-degenerate quotient'), which is exactly what the gram-matrix-dual witness shows (gram_determinant 3.998e-17, one zero eigenvalue, radical recorded). The cited lean/QOU/QBeta/MarkovGramDegenerate.lean exists. Unverified here: the claimed isomorphism H_n/rad = TL_n."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "4d8dc14686af",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.727Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 6-sentence section intro. The single em-dash is inside a parenthetical and introduces a file cross-reference; the block has no aphorism, pivot, meta-narration, warmth or superlative, and the closing sentence ('This anchors the Q_q-value in the Jucys-Murphy spectral data') states a forward deliverable of the section rather than restating an established result.",
+        "notes": "Clean on all ten. POSITIVE NOTE for the coordinator: this block is convention-correct and unusually careful - it names convention D explicitly and states the D-singularity ('G is singular on H_n, so the weighting is taken on the non-degenerate quotient'), which is exactly what the gram-matrix-dual witness shows (gram_determinant 3.998e-17, one zero eigenvalue, radical recorded). The cited lean/QOU/QBeta/MarkovGramDegenerate.lean exists. Unverified here: the claimed isomorphism H_n/rad = TL_n."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "4d8dc14686af",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.766Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 6-sentence section intro. The single em-dash is inside a parenthetical and introduces a file cross-reference; the block has no aphorism, pivot, meta-narration, warmth or superlative, and the closing sentence ('This anchors the Q_q-value in the Jucys-Murphy spectral data') states a forward deliverable of the section rather than restating an established result.",
+        "notes": "Clean on all ten. POSITIVE NOTE for the coordinator: this block is convention-correct and unusually careful - it names convention D explicitly and states the D-singularity ('G is singular on H_n, so the weighting is taken on the non-degenerate quotient'), which is exactly what the gram-matrix-dual witness shows (gram_determinant 3.998e-17, one zero eigenvalue, radical recorded). The cited lean/QOU/QBeta/MarkovGramDegenerate.lean exists. Unverified here: the claimed isomorphism H_n/rad = TL_n."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "4d8dc14686af",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.808Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 6-sentence section intro. The single em-dash is inside a parenthetical and introduces a file cross-reference; the block has no aphorism, pivot, meta-narration, warmth or superlative, and the closing sentence ('This anchors the Q_q-value in the Jucys-Murphy spectral data') states a forward deliverable of the section rather than restating an established result.",
+        "notes": "Clean on all ten. POSITIVE NOTE for the coordinator: this block is convention-correct and unusually careful - it names convention D explicitly and states the D-singularity ('G is singular on H_n, so the weighting is taken on the non-degenerate quotient'), which is exactly what the gram-matrix-dual witness shows (gram_determinant 3.998e-17, one zero eigenvalue, radical recorded). The cited lean/QOU/QBeta/MarkovGramDegenerate.lean exists. Unverified here: the claimed isomorphism H_n/rad = TL_n."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "4d8dc14686af",
+          "ts": "6224ab273a6c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.849Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 6-sentence section intro. The single em-dash is inside a parenthetical and introduces a file cross-reference; the block has no aphorism, pivot, meta-narration, warmth or superlative, and the closing sentence ('This anchors the Q_q-value in the Jucys-Murphy spectral data') states a forward deliverable of the section rather than restating an established result.",
+        "notes": "Clean on all ten. POSITIVE NOTE for the coordinator: this block is convention-correct and unusually careful - it names convention D explicitly and states the D-singularity ('G is singular on H_n, so the weighting is taken on the non-degenerate quotient'), which is exactly what the gram-matrix-dual witness shows (gram_determinant 3.998e-17, one zero eigenvalue, radical recorded). The cited lean/QOU/QBeta/MarkovGramDegenerate.lean exists. Unverified here: the claimed isomorphism H_n/rad = TL_n."
+      }
+    ]
+  }
+}

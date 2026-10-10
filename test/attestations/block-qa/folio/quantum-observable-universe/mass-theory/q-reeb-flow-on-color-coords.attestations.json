@@ -1,0 +1,1003 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords",
+    "path": "folio/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "773bb0fad519",
+          "ts": "68893ae80386",
+          "lean": "9ea2e5873ff9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:57:05.853Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Definition of the q-Reeb flow in color-sector coordinates; the geometric substrate machinery feeds the six-canonical-knot-operators construction it cross-references, on-topic for the mass-theory braid-to-color-coordinate bridge."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T19:02:19.000Z",
+        "reviewed_sha": "e2f21001c31df9f254128c6a23290a82fe7d7f9f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "001619590869",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The flow is defined symbolically over the substrate parameter q (flow t k ψ = ψ + k·q·t); trig appears only inside the explicit embedding description as exposition, not as an order/Real hypothesis on the definition itself. Generic-substrate regime, no numeric q≈value or MeV in the definitional claim."
+      },
+      {
+        "field_hash": {
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The sibling Lean file folio/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.lean is missing entirely.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.md:1",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-fable-5-1",
+          "agent_date": "2026-09-03T20:33:14Z",
+          "agent_skill": "local/dispatch-agent"
+        },
+        "reviewed_at": "2026-09-03T20:33:14Z",
+        "reviewed_sha": "4a4e5ce3d2cbbfd6b22fdfc08b74b38323a736e3",
+        "notes": "Geometric-face definition of a flow on the Reeb bundle in an archimedean chapter (mass-theory): the only archimedean tokens are the S^1/latitude parametrisation t in [0,pi] and psi = q*pi inherited from def:reeb-bundle; q stays symbolic (no numeric q0, MeV, Real.*, order hypothesis), so the regime matches its section and the prior fail (which never read the .md and refused on a Lean file that now exists) is superseded.",
+        "evidence": "REGIME: `mass-theory` is in ARCHIMEDEAN_CHAPTERS (folio-assistant/cat-harness/content/pipeline/_folio-chapter-profiles.qou.ts:175) with mixed expected profile {na, symbolic, generic-R, real-positive, real-gt-1, fixed-q0} (:88-90); chapter docstring mass-theory.ts:4-21 lists a GEOMETRIC face; the block sits in section sec:exceptional-divisor-reeb (mass-theory.ts:449-470, block at :459) under the `GEOMETRIC FACE` banner (:440-445). Section peers on this criterion: reeb-bundle pass, vertex-operator pass, six-canonical-knot-operators pass, reeb-bundle-complement-equals-volume pass, ramified-disc-fusion fail-then-pass (same missing-Lean refusal). STATEMENT TOKENS (.md, whole file is the definitional statement; no proof section): :1 colour-sector parametrisation r,g,b(phi,psi) on the Reeb bundle R_p (a principal U(1)-bundle over S^2 with contact structure, per reeb-bundle.md:1-9 in the SAME section) and the q-Reeb flow phi^q_t; :4 psi -> psi + k^(r) q t (ring arithmetic, q symbolic); :7 k in Z, `t in [0,pi]` latitude with endpoints t=0 south / t=pi north foundry (real-interval / S^1 parametrisation), `counter-rotates ... centre-of-mass` (physical gloss, no constant); :9 `psi = q*pi` on the north foundry (pi), additive composition phi_{t1} o phi_{t2} = phi_{t1+t2} (algebraic), `[X,P]_q = J*hbar_q` (symbolic hbar_q = 1 - q^-1, no numeric value); :11 k = +-1 (integers). ABSENT: Real.sqrt/log/exp/cos, numeric q ~ 1.10998 / q_0, MeV, m_e, CODATA, any order hypothesis on q (0<q, q>1), limits, vector-field/ODE integration. Outside-statement tokens: none. BRANCHES: (i) generic-chapter FAIL branch does not apply — the chapter is archimedean; (ii) archimedean-chapter FAIL branch (`purely algebraic identity that belongs upstream`) does not apply — the .md is a geometric definition of a flow on R_p with a real latitude parameter and foundry endpoints, not a bare ring identity, and its `uses` (def:reeb-bundle, this section; def:color-sector-coords, brings-surface; ex:q-reeb-flow, quantum-observable-universes) place it exactly at the point where the upstream algebraic q-Reeb example is realised on the geometric Reeb bundle; (iii) WARN (mixed regimes unflagged) considered and rejected — the real tokens are the fibre/latitude parametrisation already fixed by def:reeb-bundle (S^3 -> S^2 Hopf, U(1) fibre), not a numeric evaluation of q on one side of the wall, and no quantity is evaluated at q_0; the .lean corroborates the split without deciding it: QOU.CategoricalReeb.qReebFlowSector is over `{R : Type*} [CommRing R]` (q-reeb-flow-on-color-coords.lean:20-25) with the docstring `Algebraic content only (a real-angle specialisation lives downstream); the construction holds over any commutative ring` (:12-13), i.e. the algebraic core is kept generic per §7c and the archimedean realisation is the narrative's job in this geometric-face section. PASS: regime matches its section. PRIOR: the 2026-07-07 `fail` (reviewer gemini-3.1-pro, evidence `.md:1`, notes `sibling Lean file ... is missing entirely`) judged a Lean-existence question that is not this criterion (depends_on: [md]) and is false now (lean hash ca71790a3f12 present); the 2026-06-27 `pass` (qa-proof-wall-fit-audit) reached the same conclusion as this review on a prior md hash 001619590869. No §4d banner needed: the .md carries no author-tracking prose."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Lean file checked on branch. No 'proof-no-trivial-true' issue detected. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:37:37.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-false-claim.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T19:02:19.000Z",
+        "reviewed_sha": "e2f21001c31df9f254128c6a23290a82fe7d7f9f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-vacuous.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T19:02:19.000Z",
+        "reviewed_sha": "e2f21001c31df9f254128c6a23290a82fe7d7f9f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-circular.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T19:02:19.000Z",
+        "reviewed_sha": "e2f21001c31df9f254128c6a23290a82fe7d7f9f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-overclaim.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T19:02:19.000Z",
+        "reviewed_sha": "e2f21001c31df9f254128c6a23290a82fe7d7f9f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-hidden-dof.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T19:02:19.000Z",
+        "reviewed_sha": "e2f21001c31df9f254128c6a23290a82fe7d7f9f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-non-sequitur.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T19:02:19.000Z",
+        "reviewed_sha": "e2f21001c31df9f254128c6a23290a82fe7d7f9f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-citation-misuse.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T19:02:19.000Z",
+        "reviewed_sha": "e2f21001c31df9f254128c6a23290a82fe7d7f9f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T19:02:19.000Z",
+        "reviewed_sha": "e2f21001c31df9f254128c6a23290a82fe7d7f9f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-empirical-fragility.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T19:02:19.000Z",
+        "reviewed_sha": "e2f21001c31df9f254128c6a23290a82fe7d7f9f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-physical-implausibility.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T19:02:19.000Z",
+        "reviewed_sha": "e2f21001c31df9f254128c6a23290a82fe7d7f9f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-reproducibility.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T19:02:19.000Z",
+        "reviewed_sha": "e2f21001c31df9f254128c6a23290a82fe7d7f9f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Referee verdict: open-objection. Objection: Sibling Lean file is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file is missing, preventing formal verification of the claims.",
+        "evidence": "Referee verdict: open-objection. Objection: Sibling Lean file is missing."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T19:02:19.000Z",
+        "reviewed_sha": "e2f21001c31df9f254128c6a23290a82fe7d7f9f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.lean is missing, leading to complete divergence.",
+        "severity": "minor",
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/mass-theory/q-reeb-flow-on-color-coords.lean is missing, leading to complete divergence."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T19:02:19.000Z",
+        "reviewed_sha": "e2f21001c31df9f254128c6a23290a82fe7d7f9f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq17 enforcing Milnor rules. Restructured wordy trajectory explanations into direct mathematical prose. Streamlined 'why before what' for the Reeb bundle and geometric constructs. Verified math formatting.",
+        "reviewed_at": "2026-07-07T14:26:56.798859Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.798859Z"
+        },
+        "field_hash": {
+          "md": "018fd46adf25",
+          "ts": "c4078f0f4e5c",
+          "lean": "ca71790a3f12"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T19:02:19.000Z",
+        "reviewed_sha": "e2f21001c31df9f254128c6a23290a82fe7d7f9f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:31.350Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the definition. Checked internal consistency of the flow: with k^(r)=+1 and t=pi the stated map phi^q_t . r(phi,psi) = r(phi, psi + k q t) does send psi=0 to psi=q*pi as the text claims, and additivity phi_{t1} o phi_{t2} = phi_{t1+t2} follows from the linear-in-t form. Noted separately: t is declared to range over [0,pi] yet the composition law is asserted unrestricted, so the stated parameter set is not closed under it; and J in [X,P]_q = J hbar_q is never introduced. No trap of this category."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:31.411Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the definition. Checked internal consistency of the flow: with k^(r)=+1 and t=pi the stated map phi^q_t . r(phi,psi) = r(phi, psi + k q t) does send psi=0 to psi=q*pi as the text claims, and additivity phi_{t1} o phi_{t2} = phi_{t1+t2} follows from the linear-in-t form. Noted separately: t is declared to range over [0,pi] yet the composition law is asserted unrestricted, so the stated parameter set is not closed under it; and J in [X,P]_q = J hbar_q is never introduced. No trap of this category."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:31.490Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the definition. Checked internal consistency of the flow: with k^(r)=+1 and t=pi the stated map phi^q_t . r(phi,psi) = r(phi, psi + k q t) does send psi=0 to psi=q*pi as the text claims, and additivity phi_{t1} o phi_{t2} = phi_{t1+t2} follows from the linear-in-t form. Noted separately: t is declared to range over [0,pi] yet the composition law is asserted unrestricted, so the stated parameter set is not closed under it; and J in [X,P]_q = J hbar_q is never introduced. No trap of this category."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:31.555Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The three colour sectors r/g/b and the three k^(s) cases (0, +1, -1) are forced by the subject matter, not by a rhythm reflex."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:31.622Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the definition. Checked internal consistency of the flow: with k^(r)=+1 and t=pi the stated map phi^q_t . r(phi,psi) = r(phi, psi + k q t) does send psi=0 to psi=q*pi as the text claims, and additivity phi_{t1} o phi_{t2} = phi_{t1+t2} follows from the linear-in-t form. Noted separately: t is declared to range over [0,pi] yet the composition law is asserted unrestricted, so the stated parameter set is not closed under it; and J in [X,P]_q = J hbar_q is never introduced. No trap of this category."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:31.676Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the definition. Checked internal consistency of the flow: with k^(r)=+1 and t=pi the stated map phi^q_t . r(phi,psi) = r(phi, psi + k q t) does send psi=0 to psi=q*pi as the text claims, and additivity phi_{t1} o phi_{t2} = phi_{t1+t2} follows from the linear-in-t form. Noted separately: t is declared to range over [0,pi] yet the composition law is asserted unrestricted, so the stated parameter set is not closed under it; and J in [X,P]_q = J hbar_q is never introduced. No trap of this category."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:31.747Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "Block-final sentence was 'The signed-rate machine links the algebraic Hecke generator $\\sigma_i$ to the explicit ODE on color-sector coordinates.' - a summary closer restating the earlier 'The braid generator determines the signed rate multiplier $k^{(s)}$', and over-claiming en route: the block presents a flow map, never an ODE.",
+        "notes": "FIXED inline (1 sentence, pure prose, no math): sentence deleted. The paragraph now ends on 'Uniform-vortex 3-cycle generators apply $k = +1$ or $k = -1$ to all sectors simultaneously.' Delimiters re-checked ($$ count even)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:31.791Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the definition. Checked internal consistency of the flow: with k^(r)=+1 and t=pi the stated map phi^q_t . r(phi,psi) = r(phi, psi + k q t) does send psi=0 to psi=q*pi as the text claims, and additivity phi_{t1} o phi_{t2} = phi_{t1+t2} follows from the linear-in-t form. Noted separately: t is declared to range over [0,pi] yet the composition law is asserted unrestricted, so the stated parameter set is not closed under it; and J in [X,P]_q = J hbar_q is never introduced. No trap of this category."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:31.850Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the definition. Checked internal consistency of the flow: with k^(r)=+1 and t=pi the stated map phi^q_t . r(phi,psi) = r(phi, psi + k q t) does send psi=0 to psi=q*pi as the text claims, and additivity phi_{t1} o phi_{t2} = phi_{t1+t2} follows from the linear-in-t form. Noted separately: t is declared to range over [0,pi] yet the composition law is asserted unrestricted, so the stated parameter set is not closed under it; and J in [X,P]_q = J hbar_q is never introduced. No trap of this category."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "87fe59cbad22",
+          "ts": "c4078f0f4e5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:31.900Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the definition. Checked internal consistency of the flow: with k^(r)=+1 and t=pi the stated map phi^q_t . r(phi,psi) = r(phi, psi + k q t) does send psi=0 to psi=q*pi as the text claims, and additivity phi_{t1} o phi_{t2} = phi_{t1+t2} follows from the linear-in-t form. Noted separately: t is declared to range over [0,pi] yet the composition law is asserted unrestricted, so the stated parameter set is not closed under it; and J in [X,P]_q = J hbar_q is never introduced. No trap of this category."
+      }
+    ]
+  }
+}

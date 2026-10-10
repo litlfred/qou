@@ -1,0 +1,225 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/bach2013-double-slit/double-slit-experiment/bach-single-electron-buildup",
+    "path": "folio/bach2013-double-slit/double-slit-experiment/bach-single-electron-buildup"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "940e0fe7e91e",
+          "ts": "864e475bbaf7"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "940e0fe7e91e",
+          "ts": "864e475bbaf7"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "940e0fe7e91e",
+          "ts": "864e475bbaf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:47.581Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of ex:bach-single-electron-buildup (1 Hz rate paragraph, buildup table, interpretive closer). All ten categories judged in context. Recomputed the electron kinematics: at 600 eV, v = sqrt(2E/m) = 1.453e7 m/s.",
+        "notes": "Cat.3: the single '---' in the closer is a genuine appositive expansion of the quoted phrase, not a substitute for sentence structure; density is one - pass. Cat.5/7: the final sentence attributes and states the standard self-interference reading and names the wave-particle tension, so it carries content rather than performing a quotable ending - pass. NOT A TRAP, reported separately: 'a detection rate of approximately 1 Hz' and 'the average distance between consecutive electrons was 2.3e6 m' are not consistent with each other - 1 Hz at v = 1.453e7 m/s gives 1.45e7 m spacing; 2.3e6 m corresponds to ~6.3 Hz, i.e. the two figures differ by a detector-efficiency factor the sentence elides."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "940e0fe7e91e",
+          "ts": "864e475bbaf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:47.620Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of ex:bach-single-electron-buildup (1 Hz rate paragraph, buildup table, interpretive closer). All ten categories judged in context. Recomputed the electron kinematics: at 600 eV, v = sqrt(2E/m) = 1.453e7 m/s.",
+        "notes": "Cat.3: the single '---' in the closer is a genuine appositive expansion of the quoted phrase, not a substitute for sentence structure; density is one - pass. Cat.5/7: the final sentence attributes and states the standard self-interference reading and names the wave-particle tension, so it carries content rather than performing a quotable ending - pass. NOT A TRAP, reported separately: 'a detection rate of approximately 1 Hz' and 'the average distance between consecutive electrons was 2.3e6 m' are not consistent with each other - 1 Hz at v = 1.453e7 m/s gives 1.45e7 m spacing; 2.3e6 m corresponds to ~6.3 Hz, i.e. the two figures differ by a detector-efficiency factor the sentence elides."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "940e0fe7e91e",
+          "ts": "864e475bbaf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:47.656Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of ex:bach-single-electron-buildup (1 Hz rate paragraph, buildup table, interpretive closer). All ten categories judged in context. Recomputed the electron kinematics: at 600 eV, v = sqrt(2E/m) = 1.453e7 m/s.",
+        "notes": "Cat.3: the single '---' in the closer is a genuine appositive expansion of the quoted phrase, not a substitute for sentence structure; density is one - pass. Cat.5/7: the final sentence attributes and states the standard self-interference reading and names the wave-particle tension, so it carries content rather than performing a quotable ending - pass. NOT A TRAP, reported separately: 'a detection rate of approximately 1 Hz' and 'the average distance between consecutive electrons was 2.3e6 m' are not consistent with each other - 1 Hz at v = 1.453e7 m/s gives 1.45e7 m spacing; 2.3e6 m corresponds to ~6.3 Hz, i.e. the two figures differ by a detector-efficiency factor the sentence elides."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "940e0fe7e91e",
+          "ts": "864e475bbaf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:47.696Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of ex:bach-single-electron-buildup (1 Hz rate paragraph, buildup table, interpretive closer). All ten categories judged in context. Recomputed the electron kinematics: at 600 eV, v = sqrt(2E/m) = 1.453e7 m/s.",
+        "notes": "Cat.3: the single '---' in the closer is a genuine appositive expansion of the quoted phrase, not a substitute for sentence structure; density is one - pass. Cat.5/7: the final sentence attributes and states the standard self-interference reading and names the wave-particle tension, so it carries content rather than performing a quotable ending - pass. NOT A TRAP, reported separately: 'a detection rate of approximately 1 Hz' and 'the average distance between consecutive electrons was 2.3e6 m' are not consistent with each other - 1 Hz at v = 1.453e7 m/s gives 1.45e7 m spacing; 2.3e6 m corresponds to ~6.3 Hz, i.e. the two figures differ by a detector-efficiency factor the sentence elides."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "940e0fe7e91e",
+          "ts": "864e475bbaf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:47.736Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of ex:bach-single-electron-buildup (1 Hz rate paragraph, buildup table, interpretive closer). All ten categories judged in context. Recomputed the electron kinematics: at 600 eV, v = sqrt(2E/m) = 1.453e7 m/s.",
+        "notes": "Cat.3: the single '---' in the closer is a genuine appositive expansion of the quoted phrase, not a substitute for sentence structure; density is one - pass. Cat.5/7: the final sentence attributes and states the standard self-interference reading and names the wave-particle tension, so it carries content rather than performing a quotable ending - pass. NOT A TRAP, reported separately: 'a detection rate of approximately 1 Hz' and 'the average distance between consecutive electrons was 2.3e6 m' are not consistent with each other - 1 Hz at v = 1.453e7 m/s gives 1.45e7 m spacing; 2.3e6 m corresponds to ~6.3 Hz, i.e. the two figures differ by a detector-efficiency factor the sentence elides."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "940e0fe7e91e",
+          "ts": "864e475bbaf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:47.774Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of ex:bach-single-electron-buildup (1 Hz rate paragraph, buildup table, interpretive closer). All ten categories judged in context. Recomputed the electron kinematics: at 600 eV, v = sqrt(2E/m) = 1.453e7 m/s.",
+        "notes": "Cat.3: the single '---' in the closer is a genuine appositive expansion of the quoted phrase, not a substitute for sentence structure; density is one - pass. Cat.5/7: the final sentence attributes and states the standard self-interference reading and names the wave-particle tension, so it carries content rather than performing a quotable ending - pass. NOT A TRAP, reported separately: 'a detection rate of approximately 1 Hz' and 'the average distance between consecutive electrons was 2.3e6 m' are not consistent with each other - 1 Hz at v = 1.453e7 m/s gives 1.45e7 m spacing; 2.3e6 m corresponds to ~6.3 Hz, i.e. the two figures differ by a detector-efficiency factor the sentence elides."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "940e0fe7e91e",
+          "ts": "864e475bbaf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:47.810Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of ex:bach-single-electron-buildup (1 Hz rate paragraph, buildup table, interpretive closer). All ten categories judged in context. Recomputed the electron kinematics: at 600 eV, v = sqrt(2E/m) = 1.453e7 m/s.",
+        "notes": "Cat.3: the single '---' in the closer is a genuine appositive expansion of the quoted phrase, not a substitute for sentence structure; density is one - pass. Cat.5/7: the final sentence attributes and states the standard self-interference reading and names the wave-particle tension, so it carries content rather than performing a quotable ending - pass. NOT A TRAP, reported separately: 'a detection rate of approximately 1 Hz' and 'the average distance between consecutive electrons was 2.3e6 m' are not consistent with each other - 1 Hz at v = 1.453e7 m/s gives 1.45e7 m spacing; 2.3e6 m corresponds to ~6.3 Hz, i.e. the two figures differ by a detector-efficiency factor the sentence elides."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "940e0fe7e91e",
+          "ts": "864e475bbaf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:47.851Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of ex:bach-single-electron-buildup (1 Hz rate paragraph, buildup table, interpretive closer). All ten categories judged in context. Recomputed the electron kinematics: at 600 eV, v = sqrt(2E/m) = 1.453e7 m/s.",
+        "notes": "Cat.3: the single '---' in the closer is a genuine appositive expansion of the quoted phrase, not a substitute for sentence structure; density is one - pass. Cat.5/7: the final sentence attributes and states the standard self-interference reading and names the wave-particle tension, so it carries content rather than performing a quotable ending - pass. NOT A TRAP, reported separately: 'a detection rate of approximately 1 Hz' and 'the average distance between consecutive electrons was 2.3e6 m' are not consistent with each other - 1 Hz at v = 1.453e7 m/s gives 1.45e7 m spacing; 2.3e6 m corresponds to ~6.3 Hz, i.e. the two figures differ by a detector-efficiency factor the sentence elides."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "940e0fe7e91e",
+          "ts": "864e475bbaf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:47.889Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of ex:bach-single-electron-buildup (1 Hz rate paragraph, buildup table, interpretive closer). All ten categories judged in context. Recomputed the electron kinematics: at 600 eV, v = sqrt(2E/m) = 1.453e7 m/s.",
+        "notes": "Cat.3: the single '---' in the closer is a genuine appositive expansion of the quoted phrase, not a substitute for sentence structure; density is one - pass. Cat.5/7: the final sentence attributes and states the standard self-interference reading and names the wave-particle tension, so it carries content rather than performing a quotable ending - pass. NOT A TRAP, reported separately: 'a detection rate of approximately 1 Hz' and 'the average distance between consecutive electrons was 2.3e6 m' are not consistent with each other - 1 Hz at v = 1.453e7 m/s gives 1.45e7 m spacing; 2.3e6 m corresponds to ~6.3 Hz, i.e. the two figures differ by a detector-efficiency factor the sentence elides."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "940e0fe7e91e",
+          "ts": "864e475bbaf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:47.932Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of ex:bach-single-electron-buildup (1 Hz rate paragraph, buildup table, interpretive closer). All ten categories judged in context. Recomputed the electron kinematics: at 600 eV, v = sqrt(2E/m) = 1.453e7 m/s.",
+        "notes": "Cat.3: the single '---' in the closer is a genuine appositive expansion of the quoted phrase, not a substitute for sentence structure; density is one - pass. Cat.5/7: the final sentence attributes and states the standard self-interference reading and names the wave-particle tension, so it carries content rather than performing a quotable ending - pass. NOT A TRAP, reported separately: 'a detection rate of approximately 1 Hz' and 'the average distance between consecutive electrons was 2.3e6 m' are not consistent with each other - 1 Hz at v = 1.453e7 m/s gives 1.45e7 m spacing; 2.3e6 m corresponds to ~6.3 Hz, i.e. the two figures differ by a detector-efficiency factor the sentence elides."
+      }
+    ]
+  }
+}

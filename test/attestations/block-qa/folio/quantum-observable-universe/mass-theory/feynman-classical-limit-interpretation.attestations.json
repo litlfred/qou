@@ -1,0 +1,483 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/feynman-classical-limit-interpretation",
+    "path": "folio/quantum-observable-universe/mass-theory/feynman-classical-limit-interpretation"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "442b073d05d1",
+          "lean": "09245d47c57d"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "442b073d05d1",
+          "lean": "09245d47c57d"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:58:40.000Z",
+        "reviewed_sha": "04fe49f41ec5a33efe2500ae73e38c584286bf85",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:58:40.000Z",
+        "reviewed_sha": "04fe49f41ec5a33efe2500ae73e38c584286bf85",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:58:40.000Z",
+        "reviewed_sha": "04fe49f41ec5a33efe2500ae73e38c584286bf85",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:58:40.000Z",
+        "reviewed_sha": "04fe49f41ec5a33efe2500ae73e38c584286bf85",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:58:40.000Z",
+        "reviewed_sha": "04fe49f41ec5a33efe2500ae73e38c584286bf85",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:58:40.000Z",
+        "reviewed_sha": "04fe49f41ec5a33efe2500ae73e38c584286bf85",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:58:40.000Z",
+        "reviewed_sha": "04fe49f41ec5a33efe2500ae73e38c584286bf85",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:58:40.000Z",
+        "reviewed_sha": "04fe49f41ec5a33efe2500ae73e38c584286bf85",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:58:40.000Z",
+        "reviewed_sha": "04fe49f41ec5a33efe2500ae73e38c584286bf85",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:58:40.000Z",
+        "reviewed_sha": "04fe49f41ec5a33efe2500ae73e38c584286bf85",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:58:40.000Z",
+        "reviewed_sha": "04fe49f41ec5a33efe2500ae73e38c584286bf85",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:58:40.000Z",
+        "reviewed_sha": "04fe49f41ec5a33efe2500ae73e38c584286bf85",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:58:40.000Z",
+        "reviewed_sha": "04fe49f41ec5a33efe2500ae73e38c584286bf85",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:58:40.000Z",
+        "reviewed_sha": "04fe49f41ec5a33efe2500ae73e38c584286bf85",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration scaling distinct analytic boundary variations carefully into testable continuous values.",
+        "reviewed_at": "2026-07-08T14:58:40.000Z",
+        "reviewed_sha": "04fe49f41ec5a33efe2500ae73e38c584286bf85",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "339ab9e4d06a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:08.332Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of rem:feynman-classical-limit-interpretation (four bold-headed paragraphs: Hecke degeneration, loss of knot discrimination, vanishing of quantum corrections, the finite sum persists). No construction of this category present."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "339ab9e4d06a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:08.370Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of rem:feynman-classical-limit-interpretation (four bold-headed paragraphs: Hecke degeneration, loss of knot discrimination, vanishing of quantum corrections, the finite sum persists). No construction of this category present."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "339ab9e4d06a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:08.406Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of rem:feynman-classical-limit-interpretation (four bold-headed paragraphs: Hecke degeneration, loss of knot discrimination, vanishing of quantum corrections, the finite sum persists). No construction of this category present."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "339ab9e4d06a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:08.442Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of rem:feynman-classical-limit-interpretation (four bold-headed paragraphs: Hecke degeneration, loss of knot discrimination, vanishing of quantum corrections, the finite sum persists). No construction of this category present."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "339ab9e4d06a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:08.622Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "The block ends on a technical causal claim about where the continuum divergences come from, not on a quotable line."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "339ab9e4d06a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:08.586Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "'The classical limit reveals how the QOU categorical trace degenerates to the standard quantum-mechanical formalism' is a scope sentence for a remark block, not narration of the author's own emphasis; no 'note that' / 'we emphasize' pattern anywhere."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "339ab9e4d06a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:08.479Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of rem:feynman-classical-limit-interpretation (four bold-headed paragraphs: Hecke degeneration, loss of knot discrimination, vanishing of quantum corrections, the finite sum persists). No construction of this category present."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "339ab9e4d06a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:08.514Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of rem:feynman-classical-limit-interpretation (four bold-headed paragraphs: Hecke degeneration, loss of knot discrimination, vanishing of quantum corrections, the finite sum persists). No construction of this category present."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "339ab9e4d06a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:08.658Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "severity": "minor",
+        "evidence": "'All knots become topologically trivial under the symmetric quotient B_n ->> S_n.' The maximal quantifier is attached to the wrong object: knots do not become trivial - the INVARIANT stops distinguishing them, because the quotient forgets the braiding. The block's own preceding sentences say the right thing ('J_K(1) = 1 for every knot K', 'The Markov trace becomes constant'), so the over-claim is gratuitous.",
+        "notes": "STRUCTURAL (a meaning change, so not fixed inline). Proposed: 'All knots become indistinguishable to the invariant under the symmetric quotient B_n ->> S_n.' RIGOR (reported, not fixed): (1) CANONICAL MASS-FORMULA SHAPE. The block writes 'The topological mass formula m(K) = Vol(K)/hbar_q^2'. The canonical shape per AGENTS.md is m(K) = m_e . Vol(K) . rho(K) / hbar_q^2 - both the electron scale m_e (CAL-1) and the per-block density rho(K) are missing here. The divergence conclusion is unaffected (rho and m_e are hbar_q-independent), but the formula as printed is the purged short form. (2) UNSUPPORTED PHYSICS CLAIM: 'consistent with the classical expectation that only unknotted particles have finite mass' - no such classical expectation exists in the literature; this reads as a post-hoc rationalisation of the divergence. Proposed: delete the clause or cite what asserts it. (3) VERIFIED CORRECT: J_K(1) = 1 for every KNOT (the block correctly says knot - for an L-component link the value is (-2)^{L-1}); at q = 1 the Hecke quadratic has roots +-1 and H_n(R,q) -> k[S_n]; hbar_q = 1 - q^{-1} -> 0 and c_q = 1/(q-1) -> infinity; V^{(x)n} = (+) V_lambda (x) S_lambda keeps floor(n/2)+1 summands, consistent with the sibling proposition."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ed263c851e19",
+          "ts": "339ab9e4d06a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:54:08.550Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of rem:feynman-classical-limit-interpretation (four bold-headed paragraphs: Hecke degeneration, loss of knot discrimination, vanishing of quantum corrections, the finite sum persists). No construction of this category present."
+      }
+    ]
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/hydrogen-derived-nf-table1-data",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/hydrogen-derived-nf-table1-data"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "84dfde08c0eb",
+          "ts": "55b1dfee354b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:14.193Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Table-only block (basis / coefficient / role). Role cells are short noun phrases ('Vacuum energy (positive for bound state)', 'Dominant: proton-electron crossing'). No trap constructions; no sentences to carry a pivot or closer.",
+        "notes": "Clean. Coefficients cross-checked against the parent ex:hydrogen-derived-nf in the same batch."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "84dfde08c0eb",
+          "ts": "55b1dfee354b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:14.229Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Table-only block (basis / coefficient / role). Role cells are short noun phrases ('Vacuum energy (positive for bound state)', 'Dominant: proton-electron crossing'). No trap constructions; no sentences to carry a pivot or closer.",
+        "notes": "Clean. Coefficients cross-checked against the parent ex:hydrogen-derived-nf in the same batch."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "84dfde08c0eb",
+          "ts": "55b1dfee354b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:14.264Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Table-only block (basis / coefficient / role). Role cells are short noun phrases ('Vacuum energy (positive for bound state)', 'Dominant: proton-electron crossing'). No trap constructions; no sentences to carry a pivot or closer.",
+        "notes": "Clean. Coefficients cross-checked against the parent ex:hydrogen-derived-nf in the same batch."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "84dfde08c0eb",
+          "ts": "55b1dfee354b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:14.299Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Table-only block (basis / coefficient / role). Role cells are short noun phrases ('Vacuum energy (positive for bound state)', 'Dominant: proton-electron crossing'). No trap constructions; no sentences to carry a pivot or closer.",
+        "notes": "Clean. Coefficients cross-checked against the parent ex:hydrogen-derived-nf in the same batch."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "84dfde08c0eb",
+          "ts": "55b1dfee354b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:14.335Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Table-only block (basis / coefficient / role). Role cells are short noun phrases ('Vacuum energy (positive for bound state)', 'Dominant: proton-electron crossing'). No trap constructions; no sentences to carry a pivot or closer.",
+        "notes": "Clean. Coefficients cross-checked against the parent ex:hydrogen-derived-nf in the same batch."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "84dfde08c0eb",
+          "ts": "55b1dfee354b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:14.373Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Table-only block (basis / coefficient / role). Role cells are short noun phrases ('Vacuum energy (positive for bound state)', 'Dominant: proton-electron crossing'). No trap constructions; no sentences to carry a pivot or closer.",
+        "notes": "Clean. Coefficients cross-checked against the parent ex:hydrogen-derived-nf in the same batch."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "84dfde08c0eb",
+          "ts": "55b1dfee354b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:14.412Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Table-only block (basis / coefficient / role). Role cells are short noun phrases ('Vacuum energy (positive for bound state)', 'Dominant: proton-electron crossing'). No trap constructions; no sentences to carry a pivot or closer.",
+        "notes": "Clean. Coefficients cross-checked against the parent ex:hydrogen-derived-nf in the same batch."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "84dfde08c0eb",
+          "ts": "55b1dfee354b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:14.449Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Table-only block (basis / coefficient / role). Role cells are short noun phrases ('Vacuum energy (positive for bound state)', 'Dominant: proton-electron crossing'). No trap constructions; no sentences to carry a pivot or closer.",
+        "notes": "Clean. Coefficients cross-checked against the parent ex:hydrogen-derived-nf in the same batch."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "84dfde08c0eb",
+          "ts": "55b1dfee354b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:14.487Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Table-only block (basis / coefficient / role). Role cells are short noun phrases ('Vacuum energy (positive for bound state)', 'Dominant: proton-electron crossing'). No trap constructions; no sentences to carry a pivot or closer.",
+        "notes": "Clean. Coefficients cross-checked against the parent ex:hydrogen-derived-nf in the same batch."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "84dfde08c0eb",
+          "ts": "55b1dfee354b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:14.525Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "evidence": "Table-only block (basis / coefficient / role). Role cells are short noun phrases ('Vacuum energy (positive for bound state)', 'Dominant: proton-electron crossing'). No trap constructions; no sentences to carry a pivot or closer.",
+        "notes": "Clean. Coefficients cross-checked against the parent ex:hydrogen-derived-nf in the same batch."
+      }
+    ]
+  }
+}

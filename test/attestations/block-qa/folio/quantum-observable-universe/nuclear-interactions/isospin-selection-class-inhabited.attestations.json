@@ -1,0 +1,201 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/isospin-selection-class-inhabited",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/isospin-selection-class-inhabited"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1cc774a9cdcb",
+          "ts": "6dd7b7c5a1e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:50.029Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Four constructions: 'the class constrains nothing'; 'not as a typeclass instance'; 'leaning on nothing'; 'leaving its physical content intact and entirely unproved'.",
+        "notes": "Substantive mathematical contrast throughout -- the vacuity/physics separation IS the block's content, and the instance-vs-statement distinction is load-bearing (registering the instance would silently discharge four conditional theorems). Density 4 noted but every one carries the claim."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1cc774a9cdcb",
+          "ts": "6dd7b7c5a1e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:50.072Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the remark (4 paras) + .ts (title, interprets, refined-framing authorNote). Retraction carrier for the InterfaceExchangeAntisymmetry vacuity claim; lean.ref QOU.BraidsAndKnots.ColorFlavorIsospinSelection.trivially_inhabited RESOLVES (library file line-verified, `def select` at :79, `antisymmetry_forces_select : coupling = select` at :100 — the class really is inhabited by <select, rfl>).",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1cc774a9cdcb",
+          "ts": "6dd7b7c5a1e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:50.120Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "2 spaced '---' pairs, both true parentheticals (the four-consequence aside; the 'while reading, to anyone scanning the file' aside).",
+        "notes": "Within density norms."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1cc774a9cdcb",
+          "ts": "6dd7b7c5a1e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:50.165Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'Those statements would be true, they would follow by evaluating a two-line table, and they would be worthless'; and the four-item consequence list.",
+        "notes": "Rhetorical escalation in the first, but each clause is a distinct factual assertion and the four-item list is the actual downstream set named in the .ts authorNote. Passes as substantive."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1cc774a9cdcb",
+          "ts": "6dd7b7c5a1e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:50.208Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the remark (4 paras) + .ts (title, interprets, refined-framing authorNote). Retraction carrier for the InterfaceExchangeAntisymmetry vacuity claim; lean.ref QOU.BraidsAndKnots.ColorFlavorIsospinSelection.trivially_inhabited RESOLVES (library file line-verified, `def select` at :79, `antisymmetry_forces_select : coupling = select` at :100 — the class really is inhabited by <select, rfl>).",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1cc774a9cdcb",
+          "ts": "6dd7b7c5a1e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:50.250Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Was: 'That is worth saying plainly, because the opposite was previously asserted.' -- narrated emphasis.",
+        "notes": "FIX APPLIED: 'That is worth saying plainly, because the opposite was previously asserted.' -> 'The opposite was previously asserted.' Remaining instances none; 'Inhabitation is recorded as ... and deliberately not as a typeclass instance' places the emphasis rather than announcing it."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1cc774a9cdcb",
+          "ts": "6dd7b7c5a1e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:50.293Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the remark (4 paras) + .ts (title, interprets, refined-framing authorNote). Retraction carrier for the InterfaceExchangeAntisymmetry vacuity claim; lean.ref QOU.BraidsAndKnots.ColorFlavorIsospinSelection.trivially_inhabited RESOLVES (library file line-verified, `def select` at :79, `antisymmetry_forces_select : coupling = select` at :100 — the class really is inhabited by <select, rfl>).",
+        "notes": "No block-final sentence restating what the text already established."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1cc774a9cdcb",
+          "ts": "6dd7b7c5a1e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:50.335Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the remark (4 paras) + .ts (title, interprets, refined-framing authorNote). Retraction carrier for the InterfaceExchangeAntisymmetry vacuity claim; lean.ref QOU.BraidsAndKnots.ColorFlavorIsospinSelection.trivially_inhabited RESOLVES (library file line-verified, `def select` at :79, `antisymmetry_forces_select : coupling = select` at :100 — the class really is inhabited by <select, rfl>).",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1cc774a9cdcb",
+          "ts": "6dd7b7c5a1e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:50.380Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the remark (4 paras) + .ts (title, interprets, refined-framing authorNote). Retraction carrier for the InterfaceExchangeAntisymmetry vacuity claim; lean.ref QOU.BraidsAndKnots.ColorFlavorIsospinSelection.trivially_inhabited RESOLVES (library file line-verified, `def select` at :79, `antisymmetry_forces_select : coupling = select` at :100 — the class really is inhabited by <select, rfl>).",
+        "notes": "No unqualified maximum-strength claim; quantitative assertions checked against the block's own arithmetic and cited sources where present."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1cc774a9cdcb",
+          "ts": "6dd7b7c5a1e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:50.424Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the remark (4 paras) + .ts (title, interprets, refined-framing authorNote). Retraction carrier for the InterfaceExchangeAntisymmetry vacuity claim; lean.ref QOU.BraidsAndKnots.ColorFlavorIsospinSelection.trivially_inhabited RESOLVES (library file line-verified, `def select` at :79, `antisymmetry_forces_select : coupling = select` at :100 — the class really is inhabited by <select, rfl>).",
+        "notes": "Sentences parse aloud; no noun-chain stall."
+      }
+    ]
+  }
+}

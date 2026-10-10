@@ -1,0 +1,712 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/braids-and-knots/hecke-satisfies-blitvic-hypothesis",
+    "path": "folio/quantum-observable-universe/braids-and-knots/hecke-satisfies-blitvic-hypothesis"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor brevity across all blocks in seq3. Removed verbose narrative framing. Clarified structural properties and eliminated speculative forward references.",
+        "reviewed_at": "2026-07-07T14:26:55.389338Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.389338Z"
+        },
+        "field_hash": {
+          "md": "c6b5e439d632",
+          "ts": "d88b9c2eb97a"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Excellent algebraic reduction matching the Hecke centered generator moments to Blitvic's pair-partition combinatorial weights.",
+        "reviewed_at": "2026-07-08T09:20:33.000Z",
+        "reviewed_sha": "1259ccb47148f3bd1f4c33a8a81b0e0c26e4be63",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Excellent algebraic reduction matching the Hecke centered generator moments to Blitvic's pair-partition combinatorial weights.",
+        "reviewed_at": "2026-07-08T09:20:33.000Z",
+        "reviewed_sha": "1259ccb47148f3bd1f4c33a8a81b0e0c26e4be63",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Excellent algebraic reduction matching the Hecke centered generator moments to Blitvic's pair-partition combinatorial weights.",
+        "reviewed_at": "2026-07-08T09:20:33.000Z",
+        "reviewed_sha": "1259ccb47148f3bd1f4c33a8a81b0e0c26e4be63",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Excellent algebraic reduction matching the Hecke centered generator moments to Blitvic's pair-partition combinatorial weights.",
+        "reviewed_at": "2026-07-08T09:20:33.000Z",
+        "reviewed_sha": "1259ccb47148f3bd1f4c33a8a81b0e0c26e4be63",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Excellent algebraic reduction matching the Hecke centered generator moments to Blitvic's pair-partition combinatorial weights.",
+        "reviewed_at": "2026-07-08T09:20:33.000Z",
+        "reviewed_sha": "1259ccb47148f3bd1f4c33a8a81b0e0c26e4be63",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Excellent algebraic reduction matching the Hecke centered generator moments to Blitvic's pair-partition combinatorial weights.",
+        "reviewed_at": "2026-07-08T09:20:33.000Z",
+        "reviewed_sha": "1259ccb47148f3bd1f4c33a8a81b0e0c26e4be63",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Excellent algebraic reduction matching the Hecke centered generator moments to Blitvic's pair-partition combinatorial weights.",
+        "reviewed_at": "2026-07-08T09:20:33.000Z",
+        "reviewed_sha": "1259ccb47148f3bd1f4c33a8a81b0e0c26e4be63",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Excellent algebraic reduction matching the Hecke centered generator moments to Blitvic's pair-partition combinatorial weights.",
+        "reviewed_at": "2026-07-08T09:20:33.000Z",
+        "reviewed_sha": "1259ccb47148f3bd1f4c33a8a81b0e0c26e4be63",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Excellent algebraic reduction matching the Hecke centered generator moments to Blitvic's pair-partition combinatorial weights.",
+        "reviewed_at": "2026-07-08T09:20:33.000Z",
+        "reviewed_sha": "1259ccb47148f3bd1f4c33a8a81b0e0c26e4be63",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Excellent algebraic reduction matching the Hecke centered generator moments to Blitvic's pair-partition combinatorial weights.",
+        "reviewed_at": "2026-07-08T09:20:33.000Z",
+        "reviewed_sha": "1259ccb47148f3bd1f4c33a8a81b0e0c26e4be63",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Excellent algebraic reduction matching the Hecke centered generator moments to Blitvic's pair-partition combinatorial weights.",
+        "reviewed_at": "2026-07-08T09:20:33.000Z",
+        "reviewed_sha": "1259ccb47148f3bd1f4c33a8a81b0e0c26e4be63",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Excellent algebraic reduction matching the Hecke centered generator moments to Blitvic's pair-partition combinatorial weights.",
+        "reviewed_at": "2026-07-08T09:20:33.000Z",
+        "reviewed_sha": "1259ccb47148f3bd1f4c33a8a81b0e0c26e4be63",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Excellent algebraic reduction matching the Hecke centered generator moments to Blitvic's pair-partition combinatorial weights.",
+        "reviewed_at": "2026-07-08T09:20:33.000Z",
+        "reviewed_sha": "1259ccb47148f3bd1f4c33a8a81b0e0c26e4be63",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Excellent algebraic reduction matching the Hecke centered generator moments to Blitvic's pair-partition combinatorial weights.",
+        "reviewed_at": "2026-07-08T09:20:33.000Z",
+        "reviewed_sha": "1259ccb47148f3bd1f4c33a8a81b0e0c26e4be63",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Excellent algebraic reduction matching the Hecke centered generator moments to Blitvic's pair-partition combinatorial weights.",
+        "reviewed_at": "2026-07-08T09:20:33.000Z",
+        "reviewed_sha": "1259ccb47148f3bd1f4c33a8a81b0e0c26e4be63",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "c6b5e439d632",
+          "ts": "d88b9c2eb97a",
+          "lean": "5f869cd3b83a"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "c6b5e439d632",
+          "ts": "d88b9c2eb97a",
+          "lean": "5f869cd3b83a"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {},
+        "result": "warn",
+        "severity": "minor",
+        "evidence": "Block mixes bare claim with inline motivation ('Why Hecke generators satisfy it') rather than deferring interpretation to a linked remark.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.676299Z",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.676299Z",
+        "reviewed_sha": "a7cca7f44ae79f745c5b5e6b3275ec74c5e1ce07",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Motivation/physical meaning should move to a separate remark with interprets: this proposition."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {},
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Statement is about algebraic pair-partition structure of Hecke generators under Markov trace — pure generic-ring algebra, no archimedean constructs.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.676299Z",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.676299Z",
+        "reviewed_sha": "a7cca7f44ae79f745c5b5e6b3275ec74c5e1ce07",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Observations chapter is archimedean but the statement itself is algebraic/categorical, which is acceptable for a structural proposition."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {},
+        "result": "pass",
+        "severity": "minor",
+        "evidence": "Proof body uses Hecke quadratic relation, Markov property, Wenzl factorization — all algebraic/categorical, no linarith/IVT/archimedean machinery.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.676299Z",
+          "agent_skill": "qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.676299Z",
+        "reviewed_sha": "a7cca7f44ae79f745c5b5e6b3275ec74c5e1ce07",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Clean algebraic proof consistent with generic-ring regime."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e56957c90597",
+          "ts": "b4be58f394a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:10.914Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no negation-contrast construction present."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "e56957c90597",
+          "ts": "b4be58f394a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:10.955Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no rhetorical-pivot construction present."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "e56957c90597",
+          "ts": "b4be58f394a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:10.998Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no load-bearing em-dash construction present."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "e56957c90597",
+          "ts": "b4be58f394a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:11.043Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no compulsive-triple construction present."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "e56957c90597",
+          "ts": "b4be58f394a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:11.084Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no closing-aphorism construction present."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "e56957c90597",
+          "ts": "b4be58f394a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:11.126Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no meta-commentary construction present."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "e56957c90597",
+          "ts": "b4be58f394a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:11.168Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Closer 'provides the required input for the QOU q-CLT' is a cross-reference pointer to the downstream consumer; bookkeeping FP class."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "e56957c90597",
+          "ts": "b4be58f394a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:11.213Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no performed-warmth construction present."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "e56957c90597",
+          "ts": "b4be58f394a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:11.257Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no superlative-inflation construction present."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "e56957c90597",
+          "ts": "b4be58f394a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:04:11.300Z",
+        "reviewed_sha": "6b39cae7b551a388b0af1e89078272138c479d9c",
+        "evidence": "Agent full-block read (agent:q06, all ten categories judged in context); no non-speakable syntax construction present."
+      }
+    ]
+  }
+}

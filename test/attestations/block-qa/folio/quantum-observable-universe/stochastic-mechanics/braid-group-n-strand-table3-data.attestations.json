@@ -1,0 +1,193 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/stochastic-mechanics/braid-group-n-strand-table3-data",
+    "path": "folio/quantum-observable-universe/stochastic-mechanics/braid-group-n-strand-table3-data"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Clean. No branch/audit working labels, bean ids, PR or branch names, AGENTS.md / skill-file or audit-memo pointers, dated status notes, or first-person work narration found in the .md body or the published .ts title.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "c40913c56f89",
+          "ts": "215c17351ed1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:27.637Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 3-row data table (n=2/n=3 bridge lemmas), no prose sentences. Names are Lean identifiers with their closure tactic; nothing assertive enough to carry a trap."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "c40913c56f89",
+          "ts": "215c17351ed1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:27.676Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 3-row data table (n=2/n=3 bridge lemmas), no prose sentences. Names are Lean identifiers with their closure tactic; nothing assertive enough to carry a trap."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "c40913c56f89",
+          "ts": "215c17351ed1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:27.717Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 3-row data table (n=2/n=3 bridge lemmas), no prose sentences. Names are Lean identifiers with their closure tactic; nothing assertive enough to carry a trap."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "c40913c56f89",
+          "ts": "215c17351ed1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:27.757Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 3-row data table (n=2/n=3 bridge lemmas), no prose sentences. Names are Lean identifiers with their closure tactic; nothing assertive enough to carry a trap."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "c40913c56f89",
+          "ts": "215c17351ed1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:27.797Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 3-row data table (n=2/n=3 bridge lemmas), no prose sentences. Names are Lean identifiers with their closure tactic; nothing assertive enough to carry a trap."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "c40913c56f89",
+          "ts": "215c17351ed1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:27.837Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 3-row data table (n=2/n=3 bridge lemmas), no prose sentences. Names are Lean identifiers with their closure tactic; nothing assertive enough to carry a trap."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "c40913c56f89",
+          "ts": "215c17351ed1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:27.877Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 3-row data table (n=2/n=3 bridge lemmas), no prose sentences. Names are Lean identifiers with their closure tactic; nothing assertive enough to carry a trap."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "c40913c56f89",
+          "ts": "215c17351ed1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:27.917Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 3-row data table (n=2/n=3 bridge lemmas), no prose sentences. Names are Lean identifiers with their closure tactic; nothing assertive enough to carry a trap."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "c40913c56f89",
+          "ts": "215c17351ed1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:27.955Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 3-row data table (n=2/n=3 bridge lemmas), no prose sentences. Names are Lean identifiers with their closure tactic; nothing assertive enough to carry a trap."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "c40913c56f89",
+          "ts": "215c17351ed1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:21:27.995Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 3-row data table (n=2/n=3 bridge lemmas), no prose sentences. Names are Lean identifiers with their closure tactic; nothing assertive enough to carry a trap."
+      }
+    ]
+  }
+}

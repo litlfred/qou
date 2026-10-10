@@ -1,0 +1,480 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/information-theory/quantum-brings-intro",
+    "path": "folio/quantum-observable-universe/information-theory/quantum-brings-intro"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. The work-status banner and the pipeline's manifest are gone. \"**Outline (future work).** This section outlines the quantum deformation ...\" -> \"The quantum deformation ... is described here in outline\", and \"The detailed content is deferred to a follow-up paper. Its inclusion in the manifest preserves the structural scope without claiming a finished exposition.\" -> \"The details are not developed here. What this section fixes is the structural scope of the deformation, not a finished exposition of it.\" The admission that no finished exposition is claimed survives; the $U_q(\\mathfrak{su}(2))$ deformation, Bring's defining equations and the $q \\to 1$ limit are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "3f0db7e97550",
+          "ts": "9bd52f3f442a"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "3f0db7e97550",
+          "ts": "9bd52f3f442a"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound forward outline explicitly cordoning advanced geometric constructions cleanly out of immediate foundational scope.",
+        "reviewed_at": "2026-07-08T13:51:51.000Z",
+        "reviewed_sha": "e9653c746c0a3d395d592796d04a1371237dca46",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound forward outline explicitly cordoning advanced geometric constructions cleanly out of immediate foundational scope.",
+        "reviewed_at": "2026-07-08T13:51:51.000Z",
+        "reviewed_sha": "e9653c746c0a3d395d592796d04a1371237dca46",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound forward outline explicitly cordoning advanced geometric constructions cleanly out of immediate foundational scope.",
+        "reviewed_at": "2026-07-08T13:51:51.000Z",
+        "reviewed_sha": "e9653c746c0a3d395d592796d04a1371237dca46",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound forward outline explicitly cordoning advanced geometric constructions cleanly out of immediate foundational scope.",
+        "reviewed_at": "2026-07-08T13:51:51.000Z",
+        "reviewed_sha": "e9653c746c0a3d395d592796d04a1371237dca46",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound forward outline explicitly cordoning advanced geometric constructions cleanly out of immediate foundational scope.",
+        "reviewed_at": "2026-07-08T13:51:51.000Z",
+        "reviewed_sha": "e9653c746c0a3d395d592796d04a1371237dca46",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound forward outline explicitly cordoning advanced geometric constructions cleanly out of immediate foundational scope.",
+        "reviewed_at": "2026-07-08T13:51:51.000Z",
+        "reviewed_sha": "e9653c746c0a3d395d592796d04a1371237dca46",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound forward outline explicitly cordoning advanced geometric constructions cleanly out of immediate foundational scope.",
+        "reviewed_at": "2026-07-08T13:51:51.000Z",
+        "reviewed_sha": "e9653c746c0a3d395d592796d04a1371237dca46",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound forward outline explicitly cordoning advanced geometric constructions cleanly out of immediate foundational scope.",
+        "reviewed_at": "2026-07-08T13:51:51.000Z",
+        "reviewed_sha": "e9653c746c0a3d395d592796d04a1371237dca46",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound forward outline explicitly cordoning advanced geometric constructions cleanly out of immediate foundational scope.",
+        "reviewed_at": "2026-07-08T13:51:51.000Z",
+        "reviewed_sha": "e9653c746c0a3d395d592796d04a1371237dca46",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound forward outline explicitly cordoning advanced geometric constructions cleanly out of immediate foundational scope.",
+        "reviewed_at": "2026-07-08T13:51:51.000Z",
+        "reviewed_sha": "e9653c746c0a3d395d592796d04a1371237dca46",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound forward outline explicitly cordoning advanced geometric constructions cleanly out of immediate foundational scope.",
+        "reviewed_at": "2026-07-08T13:51:51.000Z",
+        "reviewed_sha": "e9653c746c0a3d395d592796d04a1371237dca46",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound forward outline explicitly cordoning advanced geometric constructions cleanly out of immediate foundational scope.",
+        "reviewed_at": "2026-07-08T13:51:51.000Z",
+        "reviewed_sha": "e9653c746c0a3d395d592796d04a1371237dca46",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound forward outline explicitly cordoning advanced geometric constructions cleanly out of immediate foundational scope.",
+        "reviewed_at": "2026-07-08T13:51:51.000Z",
+        "reviewed_sha": "e9653c746c0a3d395d592796d04a1371237dca46",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound forward outline explicitly cordoning advanced geometric constructions cleanly out of immediate foundational scope.",
+        "reviewed_at": "2026-07-08T13:51:51.000Z",
+        "reviewed_sha": "e9653c746c0a3d395d592796d04a1371237dca46",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound forward outline explicitly cordoning advanced geometric constructions cleanly out of immediate foundational scope.",
+        "reviewed_at": "2026-07-08T13:51:51.000Z",
+        "reviewed_sha": "e9653c746c0a3d395d592796d04a1371237dca46",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "70d3ea03a8f9",
+          "ts": "9bd52f3f442a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:25.739Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "closing cleft 'What this section fixes is X, not Y'",
+        "notes": "fixed: 'The details are not developed here. What this section fixes is the structural scope of the deformation, not a finished exposition of it.' -> 'The details are not developed here; this section fixes only the structural scope of the deformation.'"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "70d3ea03a8f9",
+          "ts": "9bd52f3f442a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:25.778Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no rhetorical pivot (setup-then-reframe) construction found"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "70d3ea03a8f9",
+          "ts": "9bd52f3f442a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:25.818Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no load-bearing em-dash construction found"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "70d3ea03a8f9",
+          "ts": "9bd52f3f442a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:25.855Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no compulsive triple construction found"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "70d3ea03a8f9",
+          "ts": "9bd52f3f442a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:25.892Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no closing aphorism construction found"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "70d3ea03a8f9",
+          "ts": "9bd52f3f442a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:25.932Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no meta-commentary (narrated emphasis) construction found"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "70d3ea03a8f9",
+          "ts": "9bd52f3f442a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:25.970Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no thesis restatement closer construction found"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "70d3ea03a8f9",
+          "ts": "9bd52f3f442a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:26.006Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no performed warmth construction found"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "70d3ea03a8f9",
+          "ts": "9bd52f3f442a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:26.046Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no superlative inflation construction found"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "70d3ea03a8f9",
+          "ts": "9bd52f3f442a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:26.084Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no non-speakable syntax construction found"
+      }
+    ]
+  }
+}

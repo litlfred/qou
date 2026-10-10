@@ -1,0 +1,184 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis-derivation",
+    "path": "folio/quantum-observable-universe/brings-surface/descartes-knot-eigenbasis-derivation"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "0416f2491d8e",
+          "ts": "91ba7fabb881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:08.167Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "full-text read; no assert-by-denial construction; contrasts present are substantive mathematical distinctions"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "0416f2491d8e",
+          "ts": "91ba7fabb881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:08.204Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "full-text read; no setup-then-reframe pivot"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "0416f2491d8e",
+          "ts": "91ba7fabb881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:08.237Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "unspaced em-dash pair sets off the three-input enumeration; true parenthetical",
+        "notes": "pass-with-note"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "0416f2491d8e",
+          "ts": "91ba7fabb881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:08.270Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "\"Schur--Weyl decomposition, Alexander surjectivity, and Markov trace detection\" are the combining theorem's three actual hypotheses",
+        "notes": "pass-with-note: substantive enumeration"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "0416f2491d8e",
+          "ts": "91ba7fabb881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:08.305Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "final line \"A finite categorical trace ... replaces the Feynman path integral\" is the step-4 substantive claim of the derivation, not decoration",
+        "notes": "pass-with-note"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "0416f2491d8e",
+          "ts": "91ba7fabb881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:08.337Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "full-text read; no emphasis narration"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "0416f2491d8e",
+          "ts": "91ba7fabb881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:08.372Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "full-text read; no block-final restatement of established content"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "0416f2491d8e",
+          "ts": "91ba7fabb881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:08.409Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "full-text read; institutional register throughout"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "0416f2491d8e",
+          "ts": "91ba7fabb881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:08.446Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "full-text read; no unqualified maximum-strength claims"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "0416f2491d8e",
+          "ts": "91ba7fabb881"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:08.479Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "full-text read; sentences parse aloud; noun chains within normal mathematical register"
+      }
+    ]
+  }
+}

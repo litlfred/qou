@@ -1,0 +1,232 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-endomorphism/whipple-rotation-intertwining",
+    "path": "folio/quantum-observable-universe/mass-endomorphism/whipple-rotation-intertwining"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "0b657c77f022",
+          "ts": "cd8e79f815de",
+          "lean": "6eb31805ad56"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "0b657c77f022",
+          "ts": "cd8e79f815de",
+          "lean": "6eb31805ad56"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "76d5b6701e67",
+          "ts": "cd8e79f815de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:47.946Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "major",
+        "evidence": "Six contrasts, all epistemic scope statements: 'grid-verified (not one-point)', 'not only at the generic grid points', 'a genuine consequence ... (not a restatement)', 'from the flip, not from an assumption', 'numerical evidence for the modeling layer, not a proof', 'not primitive'. Each marks exactly what is and is not established - the temporal/scope false-positive class, and the discipline this corpus asks for.",
+        "notes": "note: this block is the batch's model for honest scoping."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "76d5b6701e67",
+          "ts": "cd8e79f815de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:47.985Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (conjecture, ~5.1kB) plus all three cited witnesses. Verified independently: cosh(t + i pi/2) = i sinh t; the cosh eta <-> coth eta map IS an exact involution (f(c) = c/sqrt(c^2-1), f(f(c)) = c); [d]_{q^{-1}} = [d]_q; both stated shift laws follow exactly from C(nu,mu) = sqrt(2/pi) e^{-i pi nu}/Gamma(nu+mu+1/2); and that C reproduces the witness values at all three physical windings to 7 digits (0.6002109i, -0.2400844i, 0.0685955i for d = 2,3,4), which also confirms e^{-i pi nu} rather than an e^{-i pi mu} placement, since mu is fixed at 1/2 and the sign alternates with nu. The ladder factor d^2-1 gives 3, 8, 15 as claimed. The prose's '~10^{-50}' is right and is BETTER than the witness's own verdict string, which says 1e-30 while its data show 1.5e-50, 6.7e-51, 2.0e-51 - a witness-internal inconsistency reported as an anomaly, in the block's favour."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "76d5b6701e67",
+          "ts": "cd8e79f815de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:48.027Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "minor",
+        "evidence": "Three spaced dashes, each a genuine parenthetical carrying a scope qualification."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "76d5b6701e67",
+          "ts": "cd8e79f815de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:48.066Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (conjecture, ~5.1kB) plus all three cited witnesses. Verified independently: cosh(t + i pi/2) = i sinh t; the cosh eta <-> coth eta map IS an exact involution (f(c) = c/sqrt(c^2-1), f(f(c)) = c); [d]_{q^{-1}} = [d]_q; both stated shift laws follow exactly from C(nu,mu) = sqrt(2/pi) e^{-i pi nu}/Gamma(nu+mu+1/2); and that C reproduces the witness values at all three physical windings to 7 digits (0.6002109i, -0.2400844i, 0.0685955i for d = 2,3,4), which also confirms e^{-i pi nu} rather than an e^{-i pi mu} placement, since mu is fixed at 1/2 and the sign alternates with nu. The ladder factor d^2-1 gives 3, 8, 15 as claimed. The prose's '~10^{-50}' is right and is BETTER than the witness's own verdict string, which says 1e-30 while its data show 1.5e-50, 6.7e-51, 2.0e-51 - a witness-internal inconsistency reported as an anomaly, in the block's favour."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "76d5b6701e67",
+          "ts": "cd8e79f815de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:48.107Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (conjecture, ~5.1kB) plus all three cited witnesses. Verified independently: cosh(t + i pi/2) = i sinh t; the cosh eta <-> coth eta map IS an exact involution (f(c) = c/sqrt(c^2-1), f(f(c)) = c); [d]_{q^{-1}} = [d]_q; both stated shift laws follow exactly from C(nu,mu) = sqrt(2/pi) e^{-i pi nu}/Gamma(nu+mu+1/2); and that C reproduces the witness values at all three physical windings to 7 digits (0.6002109i, -0.2400844i, 0.0685955i for d = 2,3,4), which also confirms e^{-i pi nu} rather than an e^{-i pi mu} placement, since mu is fixed at 1/2 and the sign alternates with nu. The ladder factor d^2-1 gives 3, 8, 15 as claimed. The prose's '~10^{-50}' is right and is BETTER than the witness's own verdict string, which says 1e-30 while its data show 1.5e-50, 6.7e-51, 2.0e-51 - a witness-internal inconsistency reported as an anomaly, in the block's favour."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "76d5b6701e67",
+          "ts": "cd8e79f815de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:48.148Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (conjecture, ~5.1kB) plus all three cited witnesses. Verified independently: cosh(t + i pi/2) = i sinh t; the cosh eta <-> coth eta map IS an exact involution (f(c) = c/sqrt(c^2-1), f(f(c)) = c); [d]_{q^{-1}} = [d]_q; both stated shift laws follow exactly from C(nu,mu) = sqrt(2/pi) e^{-i pi nu}/Gamma(nu+mu+1/2); and that C reproduces the witness values at all three physical windings to 7 digits (0.6002109i, -0.2400844i, 0.0685955i for d = 2,3,4), which also confirms e^{-i pi nu} rather than an e^{-i pi mu} placement, since mu is fixed at 1/2 and the sign alternates with nu. The ladder factor d^2-1 gives 3, 8, 15 as claimed. The prose's '~10^{-50}' is right and is BETTER than the witness's own verdict string, which says 1e-30 while its data show 1.5e-50, 6.7e-51, 2.0e-51 - a witness-internal inconsistency reported as an anomaly, in the block's favour."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "76d5b6701e67",
+          "ts": "cd8e79f815de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:48.187Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (conjecture, ~5.1kB) plus all three cited witnesses. Verified independently: cosh(t + i pi/2) = i sinh t; the cosh eta <-> coth eta map IS an exact involution (f(c) = c/sqrt(c^2-1), f(f(c)) = c); [d]_{q^{-1}} = [d]_q; both stated shift laws follow exactly from C(nu,mu) = sqrt(2/pi) e^{-i pi nu}/Gamma(nu+mu+1/2); and that C reproduces the witness values at all three physical windings to 7 digits (0.6002109i, -0.2400844i, 0.0685955i for d = 2,3,4), which also confirms e^{-i pi nu} rather than an e^{-i pi mu} placement, since mu is fixed at 1/2 and the sign alternates with nu. The ladder factor d^2-1 gives 3, 8, 15 as claimed. The prose's '~10^{-50}' is right and is BETTER than the witness's own verdict string, which says 1e-30 while its data show 1.5e-50, 6.7e-51, 2.0e-51 - a witness-internal inconsistency reported as an anomaly, in the block's favour."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "76d5b6701e67",
+          "ts": "cd8e79f815de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:48.227Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (conjecture, ~5.1kB) plus all three cited witnesses. Verified independently: cosh(t + i pi/2) = i sinh t; the cosh eta <-> coth eta map IS an exact involution (f(c) = c/sqrt(c^2-1), f(f(c)) = c); [d]_{q^{-1}} = [d]_q; both stated shift laws follow exactly from C(nu,mu) = sqrt(2/pi) e^{-i pi nu}/Gamma(nu+mu+1/2); and that C reproduces the witness values at all three physical windings to 7 digits (0.6002109i, -0.2400844i, 0.0685955i for d = 2,3,4), which also confirms e^{-i pi nu} rather than an e^{-i pi mu} placement, since mu is fixed at 1/2 and the sign alternates with nu. The ladder factor d^2-1 gives 3, 8, 15 as claimed. The prose's '~10^{-50}' is right and is BETTER than the witness's own verdict string, which says 1e-30 while its data show 1.5e-50, 6.7e-51, 2.0e-51 - a witness-internal inconsistency reported as an anomaly, in the block's favour."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "76d5b6701e67",
+          "ts": "cd8e79f815de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:48.266Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (conjecture, ~5.1kB) plus all three cited witnesses. Verified independently: cosh(t + i pi/2) = i sinh t; the cosh eta <-> coth eta map IS an exact involution (f(c) = c/sqrt(c^2-1), f(f(c)) = c); [d]_{q^{-1}} = [d]_q; both stated shift laws follow exactly from C(nu,mu) = sqrt(2/pi) e^{-i pi nu}/Gamma(nu+mu+1/2); and that C reproduces the witness values at all three physical windings to 7 digits (0.6002109i, -0.2400844i, 0.0685955i for d = 2,3,4), which also confirms e^{-i pi nu} rather than an e^{-i pi mu} placement, since mu is fixed at 1/2 and the sign alternates with nu. The ladder factor d^2-1 gives 3, 8, 15 as claimed. The prose's '~10^{-50}' is right and is BETTER than the witness's own verdict string, which says 1e-30 while its data show 1.5e-50, 6.7e-51, 2.0e-51 - a witness-internal inconsistency reported as an anomaly, in the block's favour."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "76d5b6701e67",
+          "ts": "cd8e79f815de"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:48.305Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (conjecture, ~5.1kB) plus all three cited witnesses. Verified independently: cosh(t + i pi/2) = i sinh t; the cosh eta <-> coth eta map IS an exact involution (f(c) = c/sqrt(c^2-1), f(f(c)) = c); [d]_{q^{-1}} = [d]_q; both stated shift laws follow exactly from C(nu,mu) = sqrt(2/pi) e^{-i pi nu}/Gamma(nu+mu+1/2); and that C reproduces the witness values at all three physical windings to 7 digits (0.6002109i, -0.2400844i, 0.0685955i for d = 2,3,4), which also confirms e^{-i pi nu} rather than an e^{-i pi mu} placement, since mu is fixed at 1/2 and the sign alternates with nu. The ladder factor d^2-1 gives 3, 8, 15 as claimed. The prose's '~10^{-50}' is right and is BETTER than the witness's own verdict string, which says 1e-30 while its data show 1.5e-50, 6.7e-51, 2.0e-51 - a witness-internal inconsistency reported as an anomaly, in the block's favour."
+      }
+    ]
+  }
+}

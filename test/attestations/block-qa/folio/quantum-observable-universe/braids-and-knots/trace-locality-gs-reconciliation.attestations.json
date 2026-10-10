@@ -1,0 +1,181 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/braids-and-knots/trace-locality-gs-reconciliation",
+    "path": "folio/quantum-observable-universe/braids-and-knots/trace-locality-gs-reconciliation"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "852d0695efff",
+          "ts": "1302a54f018d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:25.459Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; no assert-by-denial construction present."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "852d0695efff",
+          "ts": "1302a54f018d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:25.501Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; no setup-then-reframe pivot."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "852d0695efff",
+          "ts": "1302a54f018d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:25.543Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; em-dashes absent or parenthetical/range only, low density."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "852d0695efff",
+          "ts": "1302a54f018d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:25.586Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; no reflex three-item list."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "852d0695efff",
+          "ts": "1302a54f018d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:25.630Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; no quotable-flourish closer."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "852d0695efff",
+          "ts": "1302a54f018d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:25.671Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; no narration of the block's own emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "852d0695efff",
+          "ts": "1302a54f018d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:25.713Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Final 'The process is therefore local after normalisation' draws the reconciliation conclusion of the three cited facts — a derivation step, not a restatement closer."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "852d0695efff",
+          "ts": "1302a54f018d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:25.753Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; no personal register in institutional prose."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "852d0695efff",
+          "ts": "1302a54f018d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:25.797Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; no unqualified maximum-strength claim."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "852d0695efff",
+          "ts": "1302a54f018d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:02:25.841Z",
+        "reviewed_sha": "edd7ff1e13299fd2295da5346560d43ca7b9b636",
+        "evidence": "Read in full; prose parses aloud cleanly."
+      }
+    ]
+  }
+}

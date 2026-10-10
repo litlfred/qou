@@ -1,0 +1,181 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/complex-mass-constituent-functional",
+    "path": "folio/quantum-observable-universe/mass-theory/complex-mass-constituent-functional"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "a97d35b2b1fe",
+          "ts": "35860860e330"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:50.895Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'The quark masses are not hyperbolic volumes of independent per-quark knots: the Standard-Model appendix records that no carrier knot exists' and 'This is a formalize-first scaffold, not a derivation' are both substantive -- the first is the setup the conjecture exists to replace, the second is the anti-laundering discipline stated in its own terms."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "a97d35b2b1fe",
+          "ts": "35860860e330"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:50.928Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 52-line conjecture (complex-mass constituent functional), both generalisation items, the no-tuning, falsifiability and status sections; the authorNote hierarchy figures (m_c/m_u ~ 577, ~4.46, 5.85x) recomputed. no setup-then-reframe pivot."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "a97d35b2b1fe",
+          "ts": "35860860e330"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:50.961Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Five dashes, every one a true parenthetical or appositive gloss ('the confinement / instability scale --- the Breit-Wigner width of ...'; 'rigid --- zero free parameters once the hadron's quark content fixes the braid --- so ...'). None dodges a comma-vs-full-stop choice."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "a97d35b2b1fe",
+          "ts": "35860860e330"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:50.995Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 52-line conjecture (complex-mass constituent functional), both generalisation items, the no-tuning, falsifiability and status sections; the authorNote hierarchy figures (m_c/m_u ~ 577, ~4.46, 5.85x) recomputed. no reflex three-item list; enumerations are substantive."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "a97d35b2b1fe",
+          "ts": "35860860e330"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:51.029Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 52-line conjecture (complex-mass constituent functional), both generalisation items, the no-tuning, falsifiability and status sections; the authorNote hierarchy figures (m_c/m_u ~ 577, ~4.46, 5.85x) recomputed. final line is technical/cross-reference, not a quotable closer."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "a97d35b2b1fe",
+          "ts": "35860860e330"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:51.063Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 52-line conjecture (complex-mass constituent functional), both generalisation items, the no-tuning, falsifiability and status sections; the authorNote hierarchy figures (m_c/m_u ~ 577, ~4.46, 5.85x) recomputed. no narrating of own emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "a97d35b2b1fe",
+          "ts": "35860860e330"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:51.097Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "The block closes on the anti-fit gate ('a $\\mathfrak{M}$ obtained by inverting the quark-mass anchors is a fit, not a derivation, and may not be wired to production as canonical'), which adds a constraint rather than restating the claim."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "a97d35b2b1fe",
+          "ts": "35860860e330"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:51.131Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 52-line conjecture (complex-mass constituent functional), both generalisation items, the no-tuning, falsifiability and status sections; the authorNote hierarchy figures (m_c/m_u ~ 577, ~4.46, 5.85x) recomputed. institutional register; no personal warmth vocabulary."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "a97d35b2b1fe",
+          "ts": "35860860e330"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:51.165Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 52-line conjecture (complex-mass constituent functional), both generalisation items, the no-tuning, falsifiability and status sections; the authorNote hierarchy figures (m_c/m_u ~ 577, ~4.46, 5.85x) recomputed. claims are qualified; no maximum-strength inflation."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "a97d35b2b1fe",
+          "ts": "35860860e330"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:51.200Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the 52-line conjecture (complex-mass constituent functional), both generalisation items, the no-tuning, falsifiability and status sections; the authorNote hierarchy figures (m_c/m_u ~ 577, ~4.46, 5.85x) recomputed. prose parses aloud; noun chains stay within technical necessity."
+      }
+    ]
+  }
+}

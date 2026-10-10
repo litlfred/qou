@@ -1,0 +1,1019 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/knots-particles-confinement/unstable-atom-decay-channel",
+    "path": "folio/quantum-observable-universe/knots-particles-confinement/unstable-atom-decay-channel"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "75f48595dd4d",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "75f48595dd4d",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "83ff213bd4cf",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.368629Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.368629Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement is a bare mathematical claim."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "83ff213bd4cf",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.368629Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.368629Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "83ff213bd4cf",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "83ff213bd4cf",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.368629Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.368629Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement respects the chapter's base-ring regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "83ff213bd4cf",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.368629Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.368629Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Proof machinery matches the statement regime."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "75f48595dd4d",
+          "ts": "6e21abfe8217",
+          "lean": "ee82a4c479e5"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws-vacuity-drain",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-31T11:55:02.722Z",
+        "reviewed_sha": "52844595f8db28fbd291aba42e8c85ff9f0b3297",
+        "severity": "minor",
+        "evidence": "Two of the three manuscript sub-claims are now derived; the first is not encoded at all. (i) Well-definedness of lambda* -- the manuscript derives it by running the LP relaxation, taking the optimal vertex and rounding. Nothing in the Lean constructs the LP, its vertex, or the arg min. The old library encoding had it as the bare field 'E_lambda != 0', which is neither that argument nor a consequence of it; it is dropped rather than restated. Also unencoded: the boundary variety is an opaque predicate OnBoundary, so its definition as {q : exists lam1 != lam2, |y_lam1(q)| = |y_lam2(q)|} and its measure-zero property are absent and the manuscript's 'generically' is not formalised; and continuity of E(lambda*, .) is a hypothesis of the crossing result, which the manuscript does not establish either.",
+        "notes": "Two defects fixed. FIRST, the lean.ref did not resolve to the declaration it names. Per AGENTS.md 0a resolution checks the sibling first, and this sibling exists -- so qou:QOU.BraidKnot.UnstableAtom.decay_channel resolved HERE, to a file declaring decay_channel_unique and no decay_channel. The sibling's own docstring meanwhile declared the library path canonical ('The substantive Lean encoding ... lives at the canonical library path'), which resolution makes unreachable. The sibling now declares decay_channel. SECOND, the library DecayChannelContext carried Z, N, q, PartitionIdx, lam_star, E_lambda, on_boundary, lam_alt, q_1, q_2 AND all three sub-claims as its own fields, with decay_channel returning the three claim fields as a triple; on_boundary := fun _ => True makes (ii) vacuous, q_1 := 1, q_2 := 0 makes (iii) vacuous, E_lambda := 1 discharges (i), so the binder assumed nothing. The library file is gutted (0 importers). GAINED: sub-claim (iii) is now PROVED rather than assumed -- 'stable at q1, unstable at q2 implies exists q* in [q1,q2] with E(lambda*,q*) = 0' is the intermediate value theorem, which is what the manuscript's own Connection-to-phase-boundary paragraph argues; phase_boundary_crossing derives it from ContinuousOn and a sign change. Sub-claim (ii) is derived from the LP-duality selection input by composing it with itself through lam_star. .md untouched, so all 42 needs-agent criteria on this block are pre-existing. Bean qou-z9ws."
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Lean file checked on branch. No 'proof-no-trivial-true' issue detected. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:37:37.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "83ff213bd4cf",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.368629Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.368629Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Unstable atom has a uniquely-determined decay channel' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean:25:13: error: Function expected at.",
+        "severity": "minor",
+        "evidence": "unstable-atom-decay-channel.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "83ff213bd4cf",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.368629Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.368629Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "minor",
+        "evidence": "unstable-atom-decay-channel.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "83ff213bd4cf",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.368629Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.368629Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Unstable atom has a uniquely-determined decay channel'.",
+        "severity": "minor",
+        "evidence": "unstable-atom-decay-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "83ff213bd4cf",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.368629Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.368629Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Unstable atom has a uniquely-determined decay channel' are appropriately qualified.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "83ff213bd4cf",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.368629Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.368629Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Unstable atom has a uniquely-determined decay channel'.",
+        "severity": "minor",
+        "evidence": "unstable-atom-decay-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "83ff213bd4cf",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.368629Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.368629Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean.",
+        "severity": "minor",
+        "evidence": "unstable-atom-decay-channel.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "83ff213bd4cf",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.368629Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.368629Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "83ff213bd4cf",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.368629Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.368629Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Unstable atom has a uniquely-determined decay channel', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "unstable-atom-decay-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "83ff213bd4cf",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.368629Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.368629Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Unstable atom has a uniquely-determined decay channel' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "unstable-atom-decay-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "83ff213bd4cf",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.368629Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.368629Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Unstable atom has a uniquely-determined decay channel' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "unstable-atom-decay-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "83ff213bd4cf",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.368629Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.368629Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Unstable atom has a uniquely-determined decay channel' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "unstable-atom-decay-channel.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "83ff213bd4cf",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.368629Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.368629Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "unstable-atom-decay-channel.lean:1 — folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean:25:13: error: Function expected at"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "83ff213bd4cf",
+          "ts": "6e21abfe8217",
+          "lean": "8b45d05c5219"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.368629Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.368629Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "75f48595dd4d",
+          "ts": "6e21abfe8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q13",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:08.435Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Full-context read; no assert-by-denial construction; contrasts present (if any) are substantive mathematical distinctions."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "75f48595dd4d",
+          "ts": "6e21abfe8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q13",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:08.477Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Full-context read; no setup-then-reframe pivot."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "75f48595dd4d",
+          "ts": "6e21abfe8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q13",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:08.521Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Full-context read; em-dash usage absent or true parenthetical/gloss; density low."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "75f48595dd4d",
+          "ts": "6e21abfe8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q13",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:08.562Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Full-context read; no reflex three-item lists; enumerations are substantive."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "75f48595dd4d",
+          "ts": "6e21abfe8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q13",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:08.624Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Full-context read; final line is content/cross-reference, not a quotable closer."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "75f48595dd4d",
+          "ts": "6e21abfe8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q13",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:08.670Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Full-context read; no narration of emphasis ('we emphasize', 'note the framing')."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "75f48595dd4d",
+          "ts": "6e21abfe8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q13",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:08.714Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Full-context read; no block-final restatement of established content."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "75f48595dd4d",
+          "ts": "6e21abfe8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q13",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:08.760Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Full-context read; institutional scholarly register throughout."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "75f48595dd4d",
+          "ts": "6e21abfe8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q13",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:08.808Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Full-context read; no unqualified maximum-strength claims."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "75f48595dd4d",
+          "ts": "6e21abfe8217"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q13",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:08.852Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Full-context read; prose parses aloud; noun chains within normal mathematical register."
+      }
+    ],
+    "proof-no-placeholder-stub": [
+      {
+        "field_hash": {
+          "md": "75f48595dd4d",
+          "ts": "6e21abfe8217",
+          "lean": "ee82a4c479e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws-vacuity-drain",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-31T11:55:02.773Z",
+        "reviewed_sha": "52844595f8db28fbd291aba42e8c85ff9f0b3297",
+        "notes": "The library file this block's ref used to name called itself a 'Placeholder canonical ... The full Lean statement is pending; this stub exists so the lean.ref URI resolves to a real declaration'. It is gutted and the sibling now declares decay_channel with two derived conjuncts. Bean qou-z9ws."
+      }
+    ]
+  }
+}

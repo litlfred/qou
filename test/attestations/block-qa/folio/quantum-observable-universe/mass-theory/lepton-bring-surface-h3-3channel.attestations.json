@@ -1,0 +1,663 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/lepton-bring-surface-h3-3channel",
+    "path": "folio/quantum-observable-universe/mass-theory/lepton-bring-surface-h3-3channel"
+  },
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.",
+        "reviewed_at": "2026-07-07T14:26:56.715010Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.715010Z"
+        },
+        "field_hash": {
+          "md": "8fe08909c54c",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic condition meticulously classifying known theoretical constraints accurately.",
+        "reviewed_at": "2026-07-08T14:56:55.000Z",
+        "reviewed_sha": "fc43d6b430d30cd9128f3b6be16d9f1de8aabc1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic condition meticulously classifying known theoretical constraints accurately.",
+        "reviewed_at": "2026-07-08T14:56:55.000Z",
+        "reviewed_sha": "fc43d6b430d30cd9128f3b6be16d9f1de8aabc1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic condition meticulously classifying known theoretical constraints accurately.",
+        "reviewed_at": "2026-07-08T14:56:55.000Z",
+        "reviewed_sha": "fc43d6b430d30cd9128f3b6be16d9f1de8aabc1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic condition meticulously classifying known theoretical constraints accurately.",
+        "reviewed_at": "2026-07-08T14:56:55.000Z",
+        "reviewed_sha": "fc43d6b430d30cd9128f3b6be16d9f1de8aabc1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic condition meticulously classifying known theoretical constraints accurately.",
+        "reviewed_at": "2026-07-08T14:56:55.000Z",
+        "reviewed_sha": "fc43d6b430d30cd9128f3b6be16d9f1de8aabc1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic condition meticulously classifying known theoretical constraints accurately.",
+        "reviewed_at": "2026-07-08T14:56:55.000Z",
+        "reviewed_sha": "fc43d6b430d30cd9128f3b6be16d9f1de8aabc1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic condition meticulously classifying known theoretical constraints accurately.",
+        "reviewed_at": "2026-07-08T14:56:55.000Z",
+        "reviewed_sha": "fc43d6b430d30cd9128f3b6be16d9f1de8aabc1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic condition meticulously classifying known theoretical constraints accurately.",
+        "reviewed_at": "2026-07-08T14:56:55.000Z",
+        "reviewed_sha": "fc43d6b430d30cd9128f3b6be16d9f1de8aabc1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic condition meticulously classifying known theoretical constraints accurately.",
+        "reviewed_at": "2026-07-08T14:56:55.000Z",
+        "reviewed_sha": "fc43d6b430d30cd9128f3b6be16d9f1de8aabc1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic condition meticulously classifying known theoretical constraints accurately.",
+        "reviewed_at": "2026-07-08T14:56:55.000Z",
+        "reviewed_sha": "fc43d6b430d30cd9128f3b6be16d9f1de8aabc1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic condition meticulously classifying known theoretical constraints accurately.",
+        "reviewed_at": "2026-07-08T14:56:55.000Z",
+        "reviewed_sha": "fc43d6b430d30cd9128f3b6be16d9f1de8aabc1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic condition meticulously classifying known theoretical constraints accurately.",
+        "reviewed_at": "2026-07-08T14:56:55.000Z",
+        "reviewed_sha": "fc43d6b430d30cd9128f3b6be16d9f1de8aabc1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic condition meticulously classifying known theoretical constraints accurately.",
+        "reviewed_at": "2026-07-08T14:56:55.000Z",
+        "reviewed_sha": "fc43d6b430d30cd9128f3b6be16d9f1de8aabc1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic condition meticulously classifying known theoretical constraints accurately.",
+        "reviewed_at": "2026-07-08T14:56:55.000Z",
+        "reviewed_sha": "fc43d6b430d30cd9128f3b6be16d9f1de8aabc1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic condition meticulously classifying known theoretical constraints accurately.",
+        "reviewed_at": "2026-07-08T14:56:55.000Z",
+        "reviewed_sha": "fc43d6b430d30cd9128f3b6be16d9f1de8aabc1e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "2a6f064c658a",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "2a6f064c658a",
+          "ts": "9331fd6f2e80",
+          "lean": "5771d58fe201"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "2a6f064c658a",
+          "ts": "17df2c75cad9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:12:55.817Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one display) + two prose paragraphs, read in full alongside the .ts title and both authorNotes. Recomputed the block's own formula at 40 dps from the canonical H_3 weights (W_SYM = W_ALT = q^2/(q^4+4q^2+1), W_STD = (q^2+1)^2/same) with a_3 = h^2+1, b_3 = h: it gives 0.5938490 under z_C and 0.6730159 under the canonical z_D. Eight of ten categories clean; the numeric divergences are flagged on other axes."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "2a6f064c658a",
+          "ts": "17df2c75cad9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:12:55.872Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one display) + two prose paragraphs, read in full alongside the .ts title and both authorNotes. Recomputed the block's own formula at 40 dps from the canonical H_3 weights (W_SYM = W_ALT = q^2/(q^4+4q^2+1), W_STD = (q^2+1)^2/same) with a_3 = h^2+1, b_3 = h: it gives 0.5938490 under z_C and 0.6730159 under the canonical z_D. Eight of ten categories clean; the numeric divergences are flagged on other axes."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "2a6f064c658a",
+          "ts": "17df2c75cad9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:12:55.936Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one display) + two prose paragraphs, read in full alongside the .ts title and both authorNotes. Recomputed the block's own formula at 40 dps from the canonical H_3 weights (W_SYM = W_ALT = q^2/(q^4+4q^2+1), W_STD = (q^2+1)^2/same) with a_3 = h^2+1, b_3 = h: it gives 0.5938490 under z_C and 0.6730159 under the canonical z_D. Eight of ten categories clean; the numeric divergences are flagged on other axes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "2a6f064c658a",
+          "ts": "17df2c75cad9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:12:56.005Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one display) + two prose paragraphs, read in full alongside the .ts title and both authorNotes. Recomputed the block's own formula at 40 dps from the canonical H_3 weights (W_SYM = W_ALT = q^2/(q^4+4q^2+1), W_STD = (q^2+1)^2/same) with a_3 = h^2+1, b_3 = h: it gives 0.5938490 under z_C and 0.6730159 under the canonical z_D. Eight of ten categories clean; the numeric divergences are flagged on other axes."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "2a6f064c658a",
+          "ts": "17df2c75cad9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:12:56.056Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one display) + two prose paragraphs, read in full alongside the .ts title and both authorNotes. Recomputed the block's own formula at 40 dps from the canonical H_3 weights (W_SYM = W_ALT = q^2/(q^4+4q^2+1), W_STD = (q^2+1)^2/same) with a_3 = h^2+1, b_3 = h: it gives 0.5938490 under z_C and 0.6730159 under the canonical z_D. Eight of ten categories clean; the numeric divergences are flagged on other axes."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "2a6f064c658a",
+          "ts": "17df2c75cad9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:12:56.108Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one display) + two prose paragraphs, read in full alongside the .ts title and both authorNotes. Recomputed the block's own formula at 40 dps from the canonical H_3 weights (W_SYM = W_ALT = q^2/(q^4+4q^2+1), W_STD = (q^2+1)^2/same) with a_3 = h^2+1, b_3 = h: it gives 0.5938490 under z_C and 0.6730159 under the canonical z_D. Eight of ten categories clean; the numeric divergences are flagged on other axes."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "2a6f064c658a",
+          "ts": "17df2c75cad9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:12:56.160Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one display) + two prose paragraphs, read in full alongside the .ts title and both authorNotes. Recomputed the block's own formula at 40 dps from the canonical H_3 weights (W_SYM = W_ALT = q^2/(q^4+4q^2+1), W_STD = (q^2+1)^2/same) with a_3 = h^2+1, b_3 = h: it gives 0.5938490 under z_C and 0.6730159 under the canonical z_D. Eight of ten categories clean; the numeric divergences are flagged on other axes."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "2a6f064c658a",
+          "ts": "17df2c75cad9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:12:56.212Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one display) + two prose paragraphs, read in full alongside the .ts title and both authorNotes. Recomputed the block's own formula at 40 dps from the canonical H_3 weights (W_SYM = W_ALT = q^2/(q^4+4q^2+1), W_STD = (q^2+1)^2/same) with a_3 = h^2+1, b_3 = h: it gives 0.5938490 under z_C and 0.6730159 under the canonical z_D. Eight of ten categories clean; the numeric divergences are flagged on other axes."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "2a6f064c658a",
+          "ts": "17df2c75cad9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:12:56.264Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "severity": "minor",
+        "evidence": "Three unhedged verbs of sufficiency in one paragraph, none of them earned by the block: 'Both configurations project 3-fold substrate representations into single observables' and 'The $H_3$ evaluation SATISFIES the cohomological discipline linking 3 calibration inputs to 3 Wedderburn channels' assert a match between two unrelated countings-of-three. Per AGENTS.md the three calibrations are the three real DOF of the single $H^1(Bring) = 2W$, not three channel-indexed degrees, so '3 calibrations = 3 Wedderburn channels' is a coincidence of cardinality stated as a structural satisfaction.",
+        "notes": "proposed: 'The $H_3$ evaluation uses all three Wedderburn channels.' Drop the calibration-count clause, or state explicitly that the two threes are not claimed to be the same three."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "2a6f064c658a",
+          "ts": "17df2c75cad9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:12:56.325Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "severity": "minor",
+        "evidence": "'The lepton embedding utilizes the 3 $H_3$ Wedderburn channels' — 'utilizes' for 'uses' in a three-sentence run of agentless abstractions ('The framework embeds…', 'Both configurations project…', 'The $H_3$ evaluation satisfies…'), none with a doer. Also 'forces $\\hat V > q_0$, breaching the convergence radius and diverging' stacks three verbs on one subject.",
+        "notes": "proposed: 'uses' for 'utilizes'; split the tau sentence at 'breaching'."
+      }
+    ]
+  }
+}

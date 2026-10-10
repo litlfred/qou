@@ -1,0 +1,513 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/energy-scale-planck",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/energy-scale-planck"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "4f4b82447394",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "4f4b82447394",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq22"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:58.000Z",
+        "reviewed_sha": "33ed00b385c59dc2d0b1facd776c76767d8a60cd",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d2f8cda7d148",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:18:53.165Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of all six sections. Recomputed every numeric with mpmath at 40 dps. CORRECT: E_0 = m_e/(q(q-1)) = 4.185981 MeV at the proton pin (block: approx 4.186); the algebra c_q^2 hbar_q = 1/((q-1)q) with c_q = 1/(q-1) and hbar_q = (q-1)/q = 1 - 1/q; the amplification (1-2q)/(q-1) = -11.09268, which I independently re-derived as d ln E_0 / d ln q = -1 - q/(q-1) and confirmed the two forms are algebraically identical; sqrt(0.3^2 + (11.09*1.22)^2) = 13.533 ppb; sigma_E0 = 5.66e-8 MeV; hbar_q^2/(1-hbar_q^2) = 0.9915% (block: approx 1%); and (4.186-4.155)/4.155 = 0.7461% (block: 0.74%). PIN NOTE: at the printed 4-digit precision E_0 CANNOT discriminate the pins - proton 1.1099785827513808 and muon 1.10997859555733471 both give 4.185981 - so this block's value is pin-agnostic. The erroneous rounding 1.1097 would give 4.197665, so it is demonstrably not in use here.",
+        "notes": "Clean."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d2f8cda7d148",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:18:53.206Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of all six sections. Recomputed every numeric with mpmath at 40 dps. CORRECT: E_0 = m_e/(q(q-1)) = 4.185981 MeV at the proton pin (block: approx 4.186); the algebra c_q^2 hbar_q = 1/((q-1)q) with c_q = 1/(q-1) and hbar_q = (q-1)/q = 1 - 1/q; the amplification (1-2q)/(q-1) = -11.09268, which I independently re-derived as d ln E_0 / d ln q = -1 - q/(q-1) and confirmed the two forms are algebraically identical; sqrt(0.3^2 + (11.09*1.22)^2) = 13.533 ppb; sigma_E0 = 5.66e-8 MeV; hbar_q^2/(1-hbar_q^2) = 0.9915% (block: approx 1%); and (4.186-4.155)/4.155 = 0.7461% (block: 0.74%). PIN NOTE: at the printed 4-digit precision E_0 CANNOT discriminate the pins - proton 1.1099785827513808 and muon 1.10997859555733471 both give 4.185981 - so this block's value is pin-agnostic. The erroneous rounding 1.1097 would give 4.197665, so it is demonstrably not in use here.",
+        "notes": "Clean."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d2f8cda7d148",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:18:53.248Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of all six sections. Recomputed every numeric with mpmath at 40 dps. CORRECT: E_0 = m_e/(q(q-1)) = 4.185981 MeV at the proton pin (block: approx 4.186); the algebra c_q^2 hbar_q = 1/((q-1)q) with c_q = 1/(q-1) and hbar_q = (q-1)/q = 1 - 1/q; the amplification (1-2q)/(q-1) = -11.09268, which I independently re-derived as d ln E_0 / d ln q = -1 - q/(q-1) and confirmed the two forms are algebraically identical; sqrt(0.3^2 + (11.09*1.22)^2) = 13.533 ppb; sigma_E0 = 5.66e-8 MeV; hbar_q^2/(1-hbar_q^2) = 0.9915% (block: approx 1%); and (4.186-4.155)/4.155 = 0.7461% (block: 0.74%). PIN NOTE: at the printed 4-digit precision E_0 CANNOT discriminate the pins - proton 1.1099785827513808 and muon 1.10997859555733471 both give 4.185981 - so this block's value is pin-agnostic. The erroneous rounding 1.1097 would give 4.197665, so it is demonstrably not in use here.",
+        "notes": "Zero em-dashes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d2f8cda7d148",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:18:53.288Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of all six sections. Recomputed every numeric with mpmath at 40 dps. CORRECT: E_0 = m_e/(q(q-1)) = 4.185981 MeV at the proton pin (block: approx 4.186); the algebra c_q^2 hbar_q = 1/((q-1)q) with c_q = 1/(q-1) and hbar_q = (q-1)/q = 1 - 1/q; the amplification (1-2q)/(q-1) = -11.09268, which I independently re-derived as d ln E_0 / d ln q = -1 - q/(q-1) and confirmed the two forms are algebraically identical; sqrt(0.3^2 + (11.09*1.22)^2) = 13.533 ppb; sigma_E0 = 5.66e-8 MeV; hbar_q^2/(1-hbar_q^2) = 0.9915% (block: approx 1%); and (4.186-4.155)/4.155 = 0.7461% (block: 0.74%). PIN NOTE: at the printed 4-digit precision E_0 CANNOT discriminate the pins - proton 1.1099785827513808 and muon 1.10997859555733471 both give 4.185981 - so this block's value is pin-agnostic. The erroneous rounding 1.1097 would give 4.197665, so it is demonstrably not in use here.",
+        "notes": "The three q-constants c_q, hbar_q, t_P and the three calibration rows are substantive."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d2f8cda7d148",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:18:53.331Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of all six sections. Recomputed every numeric with mpmath at 40 dps. CORRECT: E_0 = m_e/(q(q-1)) = 4.185981 MeV at the proton pin (block: approx 4.186); the algebra c_q^2 hbar_q = 1/((q-1)q) with c_q = 1/(q-1) and hbar_q = (q-1)/q = 1 - 1/q; the amplification (1-2q)/(q-1) = -11.09268, which I independently re-derived as d ln E_0 / d ln q = -1 - q/(q-1) and confirmed the two forms are algebraically identical; sqrt(0.3^2 + (11.09*1.22)^2) = 13.533 ppb; sigma_E0 = 5.66e-8 MeV; hbar_q^2/(1-hbar_q^2) = 0.9915% (block: approx 1%); and (4.186-4.155)/4.155 = 0.7461% (block: 0.74%). PIN NOTE: at the printed 4-digit precision E_0 CANNOT discriminate the pins - proton 1.1099785827513808 and muon 1.10997859555733471 both give 4.185981 - so this block's value is pin-agnostic. The erroneous rounding 1.1097 would give 4.197665, so it is demonstrably not in use here.",
+        "notes": "Ends on a technical statement about the brane-tower residual."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d2f8cda7d148",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:18:53.376Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of all six sections. Recomputed every numeric with mpmath at 40 dps. CORRECT: E_0 = m_e/(q(q-1)) = 4.185981 MeV at the proton pin (block: approx 4.186); the algebra c_q^2 hbar_q = 1/((q-1)q) with c_q = 1/(q-1) and hbar_q = (q-1)/q = 1 - 1/q; the amplification (1-2q)/(q-1) = -11.09268, which I independently re-derived as d ln E_0 / d ln q = -1 - q/(q-1) and confirmed the two forms are algebraically identical; sqrt(0.3^2 + (11.09*1.22)^2) = 13.533 ppb; sigma_E0 = 5.66e-8 MeV; hbar_q^2/(1-hbar_q^2) = 0.9915% (block: approx 1%); and (4.186-4.155)/4.155 = 0.7461% (block: 0.74%). PIN NOTE: at the printed 4-digit precision E_0 CANNOT discriminate the pins - proton 1.1099785827513808 and muon 1.10997859555733471 both give 4.185981 - so this block's value is pin-agnostic. The erroneous rounding 1.1097 would give 4.197665, so it is demonstrably not in use here.",
+        "notes": "No narrated emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d2f8cda7d148",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:18:53.418Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of all six sections. Recomputed every numeric with mpmath at 40 dps. CORRECT: E_0 = m_e/(q(q-1)) = 4.185981 MeV at the proton pin (block: approx 4.186); the algebra c_q^2 hbar_q = 1/((q-1)q) with c_q = 1/(q-1) and hbar_q = (q-1)/q = 1 - 1/q; the amplification (1-2q)/(q-1) = -11.09268, which I independently re-derived as d ln E_0 / d ln q = -1 - q/(q-1) and confirmed the two forms are algebraically identical; sqrt(0.3^2 + (11.09*1.22)^2) = 13.533 ppb; sigma_E0 = 5.66e-8 MeV; hbar_q^2/(1-hbar_q^2) = 0.9915% (block: approx 1%); and (4.186-4.155)/4.155 = 0.7461% (block: 0.74%). PIN NOTE: at the printed 4-digit precision E_0 CANNOT discriminate the pins - proton 1.1099785827513808 and muon 1.10997859555733471 both give 4.185981 - so this block's value is pin-agnostic. The erroneous rounding 1.1097 would give 4.197665, so it is demonstrably not in use here.",
+        "notes": "No restating closer."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d2f8cda7d148",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:18:53.460Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of all six sections. Recomputed every numeric with mpmath at 40 dps. CORRECT: E_0 = m_e/(q(q-1)) = 4.185981 MeV at the proton pin (block: approx 4.186); the algebra c_q^2 hbar_q = 1/((q-1)q) with c_q = 1/(q-1) and hbar_q = (q-1)/q = 1 - 1/q; the amplification (1-2q)/(q-1) = -11.09268, which I independently re-derived as d ln E_0 / d ln q = -1 - q/(q-1) and confirmed the two forms are algebraically identical; sqrt(0.3^2 + (11.09*1.22)^2) = 13.533 ppb; sigma_E0 = 5.66e-8 MeV; hbar_q^2/(1-hbar_q^2) = 0.9915% (block: approx 1%); and (4.186-4.155)/4.155 = 0.7461% (block: 0.74%). PIN NOTE: at the printed 4-digit precision E_0 CANNOT discriminate the pins - proton 1.1099785827513808 and muon 1.10997859555733471 both give 4.185981 - so this block's value is pin-agnostic. The erroneous rounding 1.1097 would give 4.197665, so it is demonstrably not in use here.",
+        "notes": "Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d2f8cda7d148",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:18:53.505Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of all six sections. Recomputed every numeric with mpmath at 40 dps. CORRECT: E_0 = m_e/(q(q-1)) = 4.185981 MeV at the proton pin (block: approx 4.186); the algebra c_q^2 hbar_q = 1/((q-1)q) with c_q = 1/(q-1) and hbar_q = (q-1)/q = 1 - 1/q; the amplification (1-2q)/(q-1) = -11.09268, which I independently re-derived as d ln E_0 / d ln q = -1 - q/(q-1) and confirmed the two forms are algebraically identical; sqrt(0.3^2 + (11.09*1.22)^2) = 13.533 ppb; sigma_E0 = 5.66e-8 MeV; hbar_q^2/(1-hbar_q^2) = 0.9915% (block: approx 1%); and (4.186-4.155)/4.155 = 0.7461% (block: 0.74%). PIN NOTE: at the printed 4-digit precision E_0 CANNOT discriminate the pins - proton 1.1099785827513808 and muon 1.10997859555733471 both give 4.185981 - so this block's value is pin-agnostic. The erroneous rounding 1.1097 would give 4.197665, so it is demonstrably not in use here.",
+        "notes": "No inflation."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d2f8cda7d148",
+          "ts": "e48607b3f49e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:18:53.549Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "severity": "minor",
+        "evidence": "Full read of all six sections. Recomputed every numeric with mpmath at 40 dps. CORRECT: E_0 = m_e/(q(q-1)) = 4.185981 MeV at the proton pin (block: approx 4.186); the algebra c_q^2 hbar_q = 1/((q-1)q) with c_q = 1/(q-1) and hbar_q = (q-1)/q = 1 - 1/q; the amplification (1-2q)/(q-1) = -11.09268, which I independently re-derived as d ln E_0 / d ln q = -1 - q/(q-1) and confirmed the two forms are algebraically identical; sqrt(0.3^2 + (11.09*1.22)^2) = 13.533 ppb; sigma_E0 = 5.66e-8 MeV; hbar_q^2/(1-hbar_q^2) = 0.9915% (block: approx 1%); and (4.186-4.155)/4.155 = 0.7461% (block: 0.74%). PIN NOTE: at the printed 4-digit precision E_0 CANNOT discriminate the pins - proton 1.1099785827513808 and muon 1.10997859555733471 both give 4.185981 - so this block's value is pin-agnostic. The erroneous rounding 1.1097 would give 4.197665, so it is demonstrably not in use here. The opening paragraph read 'It holds a natural interpretation in terms of the $q$-deformed Planck scale' - 'holds an interpretation' is unidiomatic, the token-substitution shape the sweep-damage guidance describes.",
+        "notes": "FIX APPLIED (mechanical, no meaning change): 'It holds a natural interpretation' -> 'It has a natural interpretation'. Math delimiters re-checked and balanced."
+      },
+      {
+        "field_hash": {
+          "md": "d2f8cda7d148",
+          "ts": "e48607b3f49e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:18:53.602Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Numeric and doctrinal recheck of every quoted figure and label in the block.",
+        "notes": "MATH AND DOCTRINE FINDINGS (report, not fixed), four items. (1) THE SAME FORMULA IS QUOTED TWICE WITH TWO DIFFERENT VALUES, AND NEITHER MATCHES THE PRINTED INPUTS. The Calibration-cross-check section gives E_0^(cal) = Q_beta / |Delta net| approx 4.155 MeV; the Calibration-by-free-neutron-decay section gives the same quotient as approx 4.179 MeV. The block's own inputs, Q_beta = 0.782 MeV and |Delta net| approx 0.188, give 0.782/0.188 = 4.1596. Back-solving: 4.155 needs |Delta net| = 0.188207, 4.179 needs 0.187126. The 0.74% gap the block computes uses 4.155; had it used 4.179 the gap would be 0.17%, so the choice is load-bearing. (2) A RESIDUAL BETWEEN A QUANTITY AND ITSELF. The boxed derived form DEFINES E_0 = m_e c_q^2 hbar_q, yet the final sentence says 'The 1% residual between E_0 and m_e c_q^2 hbar_q represents the brane tower contribution.' Under the block's own definition that residual is identically zero; the sentence must mean the residual between the CALIBRATED E_0 and the derived one, and should say so. (3) THE CALIBRATION TABLE VIOLATES A STRICT AGENTS.md RULING. It assigns H^0 / H^1 / H^2 degrees to m_e, m_mu/m_e and Q_beta. AGENTS.md states the three calibrations are the three real DOF of the SINGLE H^1(Bring) = 2W - rank-2 W-plane scale plus modulus plus one orthogonal class - and 'NOT three distinct degrees H^0/H^1/H^2'. The H^k column should be removed or relabelled as the three DOF of H^1. (4) Q_beta IS MISLABELLED CAL-3. The block says 'A historical calibrated E_0 definition used CAL-3 (Q_beta) as input'. Per the owner ruling of 2026-06-26, CAL-3 is the pion decay width D_pi (proxy m_pi); Q_beta = hbar/D_beta is the proxy for CAL-2. The opening sentence's 'CAL-2 (q_0)' is also loose - CAL-2 is D_beta, which FIXES q_0. VERIFIED-CORRECT, so a later pass need not re-flag: E_0 = 4.185981, the -11.09 amplification, 13.5 ppb, 5.7e-8 MeV, the 0.9915% structural bound and the 0.74% gap all reproduce exactly."
+      }
+    ]
+  }
+}

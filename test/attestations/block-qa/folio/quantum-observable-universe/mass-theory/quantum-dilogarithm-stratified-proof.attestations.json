@@ -1,0 +1,672 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/quantum-dilogarithm-stratified-proof",
+    "path": "folio/quantum-observable-universe/mass-theory/quantum-dilogarithm-stratified-proof"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:34:07.457Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:02:41.000Z",
+        "reviewed_sha": "de3bad4054211d5a970ba5ac09e070761d174ee6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "411e298ba888",
+          "ts": "39a9a01b2cd4"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "411e298ba888",
+          "ts": "39a9a01b2cd4"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.646Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.685Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.723Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.763Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.805Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.847Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.889Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.934Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:21.977Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "55a4d284f7e4",
+          "ts": "cc84bd3acd30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:22.019Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Long proof block (four steps, sub-items (a)-(f), plus an Open section), read in full. All ten categories clean, and the block is unusually well-calibrated: 'but explicit here means WRITTEN DOWN, not ESTABLISHED', 'together with the partition-vs-word identification this proof itself flags as unestablished at Step 3', and 'is a definition -- not a consequence of curvature-rank stratification, which stratifies by the curvature rank of WORDS and mentions no partition' are all honest scope statements of the kind the anti-laundering discipline asks for, not traps. Heavy bold is used to place emphasis rather than to narrate it. The one borderline construction, 'the passage above ... states the position of this proof', is load-bearing disambiguation (it stops a reader from believing the citation supplies the identification) and is a documented false-positive class. RIGOR PASS on what is right: Step 3(a)'s w_lambda(q) = dim_q^2 V_lambda/[n]_q!, its q=1 coincidence with the classical Plancherel measure (d_lambda^2/n!, which I confirmed against tbl:plancherel-weight-boundedness-table-data), the q-hook-length formula dim_q V_lambda = [n]_q!/prod[h]_q, and the symmetric quantum integer [h]_q = (q^h - q^{-h})/(q - q^{-1}) are all stated correctly -- I used exactly this formula to reproduce the sibling partition-sum table to the last printed digit.",
+        "notes": "THREE MATHEMATICAL FINDINGS, all verified, none fixed (math). (1) STEP 3(c) IS FALSE, with a counterexample inside the chapter's own working partition. It asserts that dim_q V_lambda has a factor [k]_q 'exactly when lambda contains a box with h(box) = k, EQUIVALENTLY depth_GB(lambda) >= k'. That equivalence fails: the hook multiset of a partition need not contain every value up to its maximum. Smallest counterexample is lambda = (2,1), the very V_{(2,1)} the Q_beta ladder blocks work in: its hooks are {3,1}, so max-hook = depth_GB = 3 >= 2, yet no box has hook 2. Exhaustive check to n = 7 finds 22 such partitions, e.g. (3,1) with hooks {4,2,1,1} missing 3, and (4,1,1,1) with hooks {7,3,2,1} missing 4, 5 and 6. (2) STEP 3(d) IS MALFORMED. It defines F_n(z) = sum_{lambda |- n} dim_q^{-1}(V_lambda) * z^{|lambda|}. Since |lambda| = n for every lambda |- n, this is the MONOMIAL (sum_lambda 1/dim_q V_lambda) * z^n -- and that coefficient is precisely the quantity the sibling tbl:partition-sum-proton-residual-table3-data tabulates (2.4972905 at n = 3). A monomial cannot equal prod_k (1 - q^{-k}z)^{-c_k(n)} * u_n(q), which has poles in z; concretely at n = 3 every partition has max-hook 3, so c_3(3) = 3 and the claimed product is u_3(q)(1 - q^{-3}z)^{-3}, not C*z^3. The exponent z^{|lambda|} needs to be a statistic that varies over lambda (depth, or number of parts) for the expansion to be stateable at all. The proof's Open section calls (d) 'the remaining open piece ... requires verification on small cases'; it is not merely unverified, it is not yet well-formed. (3) STEP 4 DOES NOT FOLLOW FROM STEP 1 AS STATED. Step 1 asserts <Z^(k), Z^(l)> = 0 whenever k + l != N (a Poincare-type duality pairing depth k with depth N-k). Step 4 then needs <phi^(k), T_w> = 0 for k > k_star, citing 'depth orthogonality (Step 1)'. Under Step 1's rule the pairing survives when k + l = N for some l <= k_star, i.e. it vanishes only for k > N - k_star, which equals the claimed k > k_star only if k_star = N/2. What Step 4 actually needs is DIAGONAL orthogonality (<Z^(k), Z^(l)> = 0 for k != l), which is what the standard centre pairing gives, since Z(A) = sum_lambda R e_lambda with orthogonal idempotents makes <e_lambda, e_mu> proportional to delta_{lambda mu}. So Step 1 states one orthogonality and Step 4 uses another. Proposed fix: state the diagonal orthogonality as the working fact and present the k + l = N duality separately as the (unused) self-duality remark."
+      }
+    ]
+  }
+}

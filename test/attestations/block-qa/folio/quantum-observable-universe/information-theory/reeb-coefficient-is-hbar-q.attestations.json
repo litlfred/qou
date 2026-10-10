@@ -1,0 +1,184 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/information-theory/reeb-coefficient-is-hbar-q",
+    "path": "folio/quantum-observable-universe/information-theory/reeb-coefficient-is-hbar-q"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b8182f7f7cdd",
+          "ts": "9b2fc943125f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:30.754Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "'a weight, not a length'; 'a fraction and its reciprocal rather than two competing scales'",
+        "notes": "substantive content of the identification; false-positive class, kept"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b8182f7f7cdd",
+          "ts": "9b2fc943125f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:30.796Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-text read; no rhetorical pivot (setup-then-reframe) construction found"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b8182f7f7cdd",
+          "ts": "9b2fc943125f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:30.836Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "'---' pairs used as true parentheticals ('both sides clear to q-1 over q')",
+        "notes": "low density, genuine parentheticals; kept"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b8182f7f7cdd",
+          "ts": "9b2fc943125f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:30.878Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-text read; no compulsive triple construction found"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b8182f7f7cdd",
+          "ts": "9b2fc943125f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:30.920Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-text read; no closing aphorism construction found"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b8182f7f7cdd",
+          "ts": "9b2fc943125f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:30.960Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "'-- and that is the point' narrates significance",
+        "notes": "load-bearing: explains why an immediate identity merits a proposition; deliberate authorial voice, kept"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b8182f7f7cdd",
+          "ts": "9b2fc943125f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:31.001Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-text read; no thesis restatement closer construction found"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b8182f7f7cdd",
+          "ts": "9b2fc943125f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:31.038Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-text read; no performed warmth construction found"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b8182f7f7cdd",
+          "ts": "9b2fc943125f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:31.077Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-text read; no superlative inflation construction found"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b8182f7f7cdd",
+          "ts": "9b2fc943125f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:31.122Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-text read; no non-speakable syntax construction found"
+      }
+    ]
+  }
+}

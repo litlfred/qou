@@ -1,0 +1,489 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/gauge-coupling-uniqueness-proof",
+    "path": "folio/quantum-observable-universe/predicted-spectra/gauge-coupling-uniqueness-proof"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:34.414Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a single four-sentence proof paragraph. None of the ten constructions is present; this is a genuine proof with a stated argument (factor through the singlet summand; completeness gives exactly one; compute the scalar), unlike the assertion-only prf:gauge-conformal-invariance elsewhere in this chapter. Ends on the QED box.",
+        "notes": "Two content items reported to the batch, not failed here. (1) UNSTATED INVERTIBILITY STEP: the proof concludes 'with $\\lambda = \\phi(e_-)/\\mathrm{tr}_\\tau(e_-) \\in R$' - for lambda to lie in R = Z[q^{+-1/2},(q-q^{-1})^{-1}] the trace must be a UNIT of R, not merely nonzero, and that is never checked. The block's own witness (computations/probes/gauge-coupling-uniqueness-probe.witness.json, assertion 'tr_M_e_minus_nonzero_at_q_0') verifies only NON-VANISHING, which is strictly weaker. (2) NOTATION: the proof introduces $\\phi \\colon E \\to R$, but E is defined nowhere in the block and notation-collisions states that bare $E$ is NOT USED in this paper (use $\\mathcal{S}_p$, $\\mathfrak{E}$, $\\mathcal{E}_q$ or $E_{\\mathfrak{H}}$). The corollary it proves writes the domain as $A \\otimes A$; use that."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:34.479Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a single four-sentence proof paragraph. None of the ten constructions is present; this is a genuine proof with a stated argument (factor through the singlet summand; completeness gives exactly one; compute the scalar), unlike the assertion-only prf:gauge-conformal-invariance elsewhere in this chapter. Ends on the QED box.",
+        "notes": "Two content items reported to the batch, not failed here. (1) UNSTATED INVERTIBILITY STEP: the proof concludes 'with $\\lambda = \\phi(e_-)/\\mathrm{tr}_\\tau(e_-) \\in R$' - for lambda to lie in R = Z[q^{+-1/2},(q-q^{-1})^{-1}] the trace must be a UNIT of R, not merely nonzero, and that is never checked. The block's own witness (computations/probes/gauge-coupling-uniqueness-probe.witness.json, assertion 'tr_M_e_minus_nonzero_at_q_0') verifies only NON-VANISHING, which is strictly weaker. (2) NOTATION: the proof introduces $\\phi \\colon E \\to R$, but E is defined nowhere in the block and notation-collisions states that bare $E$ is NOT USED in this paper (use $\\mathcal{S}_p$, $\\mathfrak{E}$, $\\mathcal{E}_q$ or $E_{\\mathfrak{H}}$). The corollary it proves writes the domain as $A \\otimes A$; use that."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:34.534Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a single four-sentence proof paragraph. None of the ten constructions is present; this is a genuine proof with a stated argument (factor through the singlet summand; completeness gives exactly one; compute the scalar), unlike the assertion-only prf:gauge-conformal-invariance elsewhere in this chapter. Ends on the QED box.",
+        "notes": "Two content items reported to the batch, not failed here. (1) UNSTATED INVERTIBILITY STEP: the proof concludes 'with $\\lambda = \\phi(e_-)/\\mathrm{tr}_\\tau(e_-) \\in R$' - for lambda to lie in R = Z[q^{+-1/2},(q-q^{-1})^{-1}] the trace must be a UNIT of R, not merely nonzero, and that is never checked. The block's own witness (computations/probes/gauge-coupling-uniqueness-probe.witness.json, assertion 'tr_M_e_minus_nonzero_at_q_0') verifies only NON-VANISHING, which is strictly weaker. (2) NOTATION: the proof introduces $\\phi \\colon E \\to R$, but E is defined nowhere in the block and notation-collisions states that bare $E$ is NOT USED in this paper (use $\\mathcal{S}_p$, $\\mathfrak{E}$, $\\mathcal{E}_q$ or $E_{\\mathfrak{H}}$). The corollary it proves writes the domain as $A \\otimes A$; use that."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:34.590Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a single four-sentence proof paragraph. None of the ten constructions is present; this is a genuine proof with a stated argument (factor through the singlet summand; completeness gives exactly one; compute the scalar), unlike the assertion-only prf:gauge-conformal-invariance elsewhere in this chapter. Ends on the QED box.",
+        "notes": "Two content items reported to the batch, not failed here. (1) UNSTATED INVERTIBILITY STEP: the proof concludes 'with $\\lambda = \\phi(e_-)/\\mathrm{tr}_\\tau(e_-) \\in R$' - for lambda to lie in R = Z[q^{+-1/2},(q-q^{-1})^{-1}] the trace must be a UNIT of R, not merely nonzero, and that is never checked. The block's own witness (computations/probes/gauge-coupling-uniqueness-probe.witness.json, assertion 'tr_M_e_minus_nonzero_at_q_0') verifies only NON-VANISHING, which is strictly weaker. (2) NOTATION: the proof introduces $\\phi \\colon E \\to R$, but E is defined nowhere in the block and notation-collisions states that bare $E$ is NOT USED in this paper (use $\\mathcal{S}_p$, $\\mathfrak{E}$, $\\mathcal{E}_q$ or $E_{\\mathfrak{H}}$). The corollary it proves writes the domain as $A \\otimes A$; use that."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:34.642Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a single four-sentence proof paragraph. None of the ten constructions is present; this is a genuine proof with a stated argument (factor through the singlet summand; completeness gives exactly one; compute the scalar), unlike the assertion-only prf:gauge-conformal-invariance elsewhere in this chapter. Ends on the QED box.",
+        "notes": "Two content items reported to the batch, not failed here. (1) UNSTATED INVERTIBILITY STEP: the proof concludes 'with $\\lambda = \\phi(e_-)/\\mathrm{tr}_\\tau(e_-) \\in R$' - for lambda to lie in R = Z[q^{+-1/2},(q-q^{-1})^{-1}] the trace must be a UNIT of R, not merely nonzero, and that is never checked. The block's own witness (computations/probes/gauge-coupling-uniqueness-probe.witness.json, assertion 'tr_M_e_minus_nonzero_at_q_0') verifies only NON-VANISHING, which is strictly weaker. (2) NOTATION: the proof introduces $\\phi \\colon E \\to R$, but E is defined nowhere in the block and notation-collisions states that bare $E$ is NOT USED in this paper (use $\\mathcal{S}_p$, $\\mathfrak{E}$, $\\mathcal{E}_q$ or $E_{\\mathfrak{H}}$). The corollary it proves writes the domain as $A \\otimes A$; use that."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:34.695Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a single four-sentence proof paragraph. None of the ten constructions is present; this is a genuine proof with a stated argument (factor through the singlet summand; completeness gives exactly one; compute the scalar), unlike the assertion-only prf:gauge-conformal-invariance elsewhere in this chapter. Ends on the QED box.",
+        "notes": "Two content items reported to the batch, not failed here. (1) UNSTATED INVERTIBILITY STEP: the proof concludes 'with $\\lambda = \\phi(e_-)/\\mathrm{tr}_\\tau(e_-) \\in R$' - for lambda to lie in R = Z[q^{+-1/2},(q-q^{-1})^{-1}] the trace must be a UNIT of R, not merely nonzero, and that is never checked. The block's own witness (computations/probes/gauge-coupling-uniqueness-probe.witness.json, assertion 'tr_M_e_minus_nonzero_at_q_0') verifies only NON-VANISHING, which is strictly weaker. (2) NOTATION: the proof introduces $\\phi \\colon E \\to R$, but E is defined nowhere in the block and notation-collisions states that bare $E$ is NOT USED in this paper (use $\\mathcal{S}_p$, $\\mathfrak{E}$, $\\mathcal{E}_q$ or $E_{\\mathfrak{H}}$). The corollary it proves writes the domain as $A \\otimes A$; use that."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:34.745Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a single four-sentence proof paragraph. None of the ten constructions is present; this is a genuine proof with a stated argument (factor through the singlet summand; completeness gives exactly one; compute the scalar), unlike the assertion-only prf:gauge-conformal-invariance elsewhere in this chapter. Ends on the QED box.",
+        "notes": "Two content items reported to the batch, not failed here. (1) UNSTATED INVERTIBILITY STEP: the proof concludes 'with $\\lambda = \\phi(e_-)/\\mathrm{tr}_\\tau(e_-) \\in R$' - for lambda to lie in R = Z[q^{+-1/2},(q-q^{-1})^{-1}] the trace must be a UNIT of R, not merely nonzero, and that is never checked. The block's own witness (computations/probes/gauge-coupling-uniqueness-probe.witness.json, assertion 'tr_M_e_minus_nonzero_at_q_0') verifies only NON-VANISHING, which is strictly weaker. (2) NOTATION: the proof introduces $\\phi \\colon E \\to R$, but E is defined nowhere in the block and notation-collisions states that bare $E$ is NOT USED in this paper (use $\\mathcal{S}_p$, $\\mathfrak{E}$, $\\mathcal{E}_q$ or $E_{\\mathfrak{H}}$). The corollary it proves writes the domain as $A \\otimes A$; use that."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:34.802Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a single four-sentence proof paragraph. None of the ten constructions is present; this is a genuine proof with a stated argument (factor through the singlet summand; completeness gives exactly one; compute the scalar), unlike the assertion-only prf:gauge-conformal-invariance elsewhere in this chapter. Ends on the QED box.",
+        "notes": "Two content items reported to the batch, not failed here. (1) UNSTATED INVERTIBILITY STEP: the proof concludes 'with $\\lambda = \\phi(e_-)/\\mathrm{tr}_\\tau(e_-) \\in R$' - for lambda to lie in R = Z[q^{+-1/2},(q-q^{-1})^{-1}] the trace must be a UNIT of R, not merely nonzero, and that is never checked. The block's own witness (computations/probes/gauge-coupling-uniqueness-probe.witness.json, assertion 'tr_M_e_minus_nonzero_at_q_0') verifies only NON-VANISHING, which is strictly weaker. (2) NOTATION: the proof introduces $\\phi \\colon E \\to R$, but E is defined nowhere in the block and notation-collisions states that bare $E$ is NOT USED in this paper (use $\\mathcal{S}_p$, $\\mathfrak{E}$, $\\mathcal{E}_q$ or $E_{\\mathfrak{H}}$). The corollary it proves writes the domain as $A \\otimes A$; use that."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:34.855Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a single four-sentence proof paragraph. None of the ten constructions is present; this is a genuine proof with a stated argument (factor through the singlet summand; completeness gives exactly one; compute the scalar), unlike the assertion-only prf:gauge-conformal-invariance elsewhere in this chapter. Ends on the QED box.",
+        "notes": "Two content items reported to the batch, not failed here. (1) UNSTATED INVERTIBILITY STEP: the proof concludes 'with $\\lambda = \\phi(e_-)/\\mathrm{tr}_\\tau(e_-) \\in R$' - for lambda to lie in R = Z[q^{+-1/2},(q-q^{-1})^{-1}] the trace must be a UNIT of R, not merely nonzero, and that is never checked. The block's own witness (computations/probes/gauge-coupling-uniqueness-probe.witness.json, assertion 'tr_M_e_minus_nonzero_at_q_0') verifies only NON-VANISHING, which is strictly weaker. (2) NOTATION: the proof introduces $\\phi \\colon E \\to R$, but E is defined nowhere in the block and notation-collisions states that bare $E$ is NOT USED in this paper (use $\\mathcal{S}_p$, $\\mathfrak{E}$, $\\mathcal{E}_q$ or $E_{\\mathfrak{H}}$). The corollary it proves writes the domain as $A \\otimes A$; use that."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:34.905Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a single four-sentence proof paragraph. None of the ten constructions is present; this is a genuine proof with a stated argument (factor through the singlet summand; completeness gives exactly one; compute the scalar), unlike the assertion-only prf:gauge-conformal-invariance elsewhere in this chapter. Ends on the QED box.",
+        "notes": "Two content items reported to the batch, not failed here. (1) UNSTATED INVERTIBILITY STEP: the proof concludes 'with $\\lambda = \\phi(e_-)/\\mathrm{tr}_\\tau(e_-) \\in R$' - for lambda to lie in R = Z[q^{+-1/2},(q-q^{-1})^{-1}] the trace must be a UNIT of R, not merely nonzero, and that is never checked. The block's own witness (computations/probes/gauge-coupling-uniqueness-probe.witness.json, assertion 'tr_M_e_minus_nonzero_at_q_0') verifies only NON-VANISHING, which is strictly weaker. (2) NOTATION: the proof introduces $\\phi \\colon E \\to R$, but E is defined nowhere in the block and notation-collisions states that bare $E$ is NOT USED in this paper (use $\\mathcal{S}_p$, $\\mathfrak{E}$, $\\mathcal{E}_q$ or $E_{\\mathfrak{H}}$). The corollary it proves writes the domain as $A \\otimes A$; use that."
+      }
+    ]
+  }
+}

@@ -1,0 +1,512 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/baryon-product-from-alt-proof",
+    "path": "folio/quantum-observable-universe/predicted-spectra/baryon-product-from-alt-proof"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "f8c242b80b98",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "f8c242b80b98",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f8c242b80b98",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:33.211Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof: Schur-Weyl decomposition, sign projector, wedge evaluation, Vandermonde/discriminant identity, post-QED isotype discussion. All ten categories judged; every algebraic step recomputed by hand."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f8c242b80b98",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:33.301Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof: Schur-Weyl decomposition, sign projector, wedge evaluation, Vandermonde/discriminant identity, post-QED isotype discussion. All ten categories judged; every algebraic step recomputed by hand."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f8c242b80b98",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:33.369Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof: Schur-Weyl decomposition, sign projector, wedge evaluation, Vandermonde/discriminant identity, post-QED isotype discussion. All ten categories judged; every algebraic step recomputed by hand."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f8c242b80b98",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:33.421Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof: Schur-Weyl decomposition, sign projector, wedge evaluation, Vandermonde/discriminant identity, post-QED isotype discussion. All ten categories judged; every algebraic step recomputed by hand."
+      },
+      {
+        "field_hash": {
+          "md": "f8c242b80b98",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:33.917Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Three isotypes of S_3 - a complete, forced enumeration. MATH FINDINGS recorded here (see notes).",
+        "notes": "STANDING-TRAP FINDINGS, report only, do not fix inline. (1) DIMENSION CLUSTER: three mutually inconsistent statements about the same V in consecutive sentences. The display gives V = V_(3) + V_(1,1,1) + V_(2,1) = Sym^3 + Alt^3 + Std^{+2}, which has dimension 1+1+2*2 = 6 - that is the REGULAR representation R[S_3] (and the sibling proposition correctly writes R[S_3] = R + R + R^{2x2}), not V. The next sentence says the dimensions are 1, 1, 2, 'summing to 4' - arithmetically right for irrep dimensions but not the dimension of anything, and inconsistent with the Std^{+2} just displayed. The sentence after that corrects to V = V_(3) + V_(2,1), rank 3, which is the CORRECT statement and the one the rest of the proof uses (it is why the Alt piece has to be found inside Lambda^3 V). So the first display and the dimension sentence are stale and contradict the proof's own working. (2) The same V is defined as a tensor product (dim 1 over C, as a product of three tangent lines) and then identified with the free module R<dc_1/dz, dc_2/dz, dc_3/dz> (rank 3); the isomorphism sign should be a direct sum. Later the projector is applied 'to ... in V^{tensor 3}', a third meaning of V. (3) CORRECT AND CHECKED: the sign projector (1/6)(id - (12) - (13) - (23) + (123) + (132)) has the right signs; V_3^2 = Delta and (prod dc_k/dz)^2 = V_3^2/Delta^2 = 1/Delta is consistent. (4) NOTATION: 'the scalar weight w_lambda from the Markov trace' - AGENTS.md 7aa separates y_lambda, w_lambda and tilde-w_lambda as distinct families at q != 1, and the corpus's Markov-trace coefficients are y_lambda (prop:y-lambda-closed-form-wenzl-bridge). Confirm which family is meant."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f8c242b80b98",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:33.574Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof: Schur-Weyl decomposition, sign projector, wedge evaluation, Vandermonde/discriminant identity, post-QED isotype discussion. All ten categories judged; every algebraic step recomputed by hand."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f8c242b80b98",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:33.633Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof: Schur-Weyl decomposition, sign projector, wedge evaluation, Vandermonde/discriminant identity, post-QED isotype discussion. All ten categories judged; every algebraic step recomputed by hand."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f8c242b80b98",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:33.693Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof: Schur-Weyl decomposition, sign projector, wedge evaluation, Vandermonde/discriminant identity, post-QED isotype discussion. All ten categories judged; every algebraic step recomputed by hand."
+      },
+      {
+        "field_hash": {
+          "md": "f8c242b80b98",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:33.873Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "Closing sentence 'This algebraic choice of the sign block, combined with the scalar weight w_lambda from the Markov trace, fully determines the baryon integrand lambda_baryon.' restates the proposition's own conclusion after the QED box, with 'fully determines' added.",
+        "notes": "proposed: 'The Markov-trace weight then fixes the remaining scalar (prop:categorical-mass-markov).' Not fixed inline because the sentence carries a live cross-reference and a symbol that may be wrong - see the notes on trap-triples."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f8c242b80b98",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:33.741Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof: Schur-Weyl decomposition, sign projector, wedge evaluation, Vandermonde/discriminant identity, post-QED isotype discussion. All ten categories judged; every algebraic step recomputed by hand."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f8c242b80b98",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:33.785Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof: Schur-Weyl decomposition, sign projector, wedge evaluation, Vandermonde/discriminant identity, post-QED isotype discussion. All ten categories judged; every algebraic step recomputed by hand."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f8c242b80b98",
+          "ts": "cc02c2f8e8ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:34:33.831Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof: Schur-Weyl decomposition, sign projector, wedge evaluation, Vandermonde/discriminant identity, post-QED isotype discussion. All ten categories judged; every algebraic step recomputed by hand."
+      }
+    ]
+  }
+}

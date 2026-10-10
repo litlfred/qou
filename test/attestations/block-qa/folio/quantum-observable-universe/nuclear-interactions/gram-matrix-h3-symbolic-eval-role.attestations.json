@@ -1,0 +1,204 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/gram-matrix-h3-symbolic-eval-role",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/gram-matrix-h3-symbolic-eval-role"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] \"the Phase 1 workstream\" is gone; the sentence now reads \"The remaining $\\det \\neq 0$ proof reduces what remains to a symbolic-determinant computation.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "c246d10c045d",
+          "ts": "7dbf567f0176"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:27.333Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of both sections. Recomputed every quoted numeric against computations/gram-h3-symbolic-regression.witness.json: det_at_q_0 = -0.18920521914403675 (block says approx -0.189, correct); eigenvalues of the recorded matrix are {-0.85506726, 0.10179667, 0.85506726 x3, 3.4769498}, so 'one negative eigenvalue approx -0.855' is exactly right. q_0 approx 1.110 is correct but at that precision CANNOT discriminate the proton pin 1.1099785827513808 from the muon pin 1.10997859555733471 - both round to 1.110.",
+        "notes": "Clean."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "c246d10c045d",
+          "ts": "7dbf567f0176"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:27.369Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of both sections. Recomputed every quoted numeric against computations/gram-h3-symbolic-regression.witness.json: det_at_q_0 = -0.18920521914403675 (block says approx -0.189, correct); eigenvalues of the recorded matrix are {-0.85506726, 0.10179667, 0.85506726 x3, 3.4769498}, so 'one negative eigenvalue approx -0.855' is exactly right. q_0 approx 1.110 is correct but at that precision CANNOT discriminate the proton pin 1.1099785827513808 from the muon pin 1.10997859555733471 - both round to 1.110.",
+        "notes": "Clean."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "c246d10c045d",
+          "ts": "7dbf567f0176"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:27.409Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of both sections. Recomputed every quoted numeric against computations/gram-h3-symbolic-regression.witness.json: det_at_q_0 = -0.18920521914403675 (block says approx -0.189, correct); eigenvalues of the recorded matrix are {-0.85506726, 0.10179667, 0.85506726 x3, 3.4769498}, so 'one negative eigenvalue approx -0.855' is exactly right. q_0 approx 1.110 is correct but at that precision CANNOT discriminate the proton pin 1.1099785827513808 from the muon pin 1.10997859555733471 - both round to 1.110.",
+        "notes": "Zero em-dashes in the block."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "c246d10c045d",
+          "ts": "7dbf567f0176"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:27.445Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of both sections. Recomputed every quoted numeric against computations/gram-h3-symbolic-regression.witness.json: det_at_q_0 = -0.18920521914403675 (block says approx -0.189, correct); eigenvalues of the recorded matrix are {-0.85506726, 0.10179667, 0.85506726 x3, 3.4769498}, so 'one negative eigenvalue approx -0.855' is exactly right. q_0 approx 1.110 is correct but at that precision CANNOT discriminate the proton pin 1.1099785827513808 from the muon pin 1.10997859555733471 - both round to 1.110.",
+        "notes": "No reflex triple."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "c246d10c045d",
+          "ts": "7dbf567f0176"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:27.483Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of both sections. Recomputed every quoted numeric against computations/gram-h3-symbolic-regression.witness.json: det_at_q_0 = -0.18920521914403675 (block says approx -0.189, correct); eigenvalues of the recorded matrix are {-0.85506726, 0.10179667, 0.85506726 x3, 3.4769498}, so 'one negative eigenvalue approx -0.855' is exactly right. q_0 approx 1.110 is correct but at that precision CANNOT discriminate the proton pin 1.1099785827513808 from the muon pin 1.10997859555733471 - both round to 1.110.",
+        "notes": "The closer is a scope statement about remaining work, not a quotable line."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "c246d10c045d",
+          "ts": "7dbf567f0176"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:27.521Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of both sections. Recomputed every quoted numeric against computations/gram-h3-symbolic-regression.witness.json: det_at_q_0 = -0.18920521914403675 (block says approx -0.189, correct); eigenvalues of the recorded matrix are {-0.85506726, 0.10179667, 0.85506726 x3, 3.4769498}, so 'one negative eigenvalue approx -0.855' is exactly right. q_0 approx 1.110 is correct but at that precision CANNOT discriminate the proton pin 1.1099785827513808 from the muon pin 1.10997859555733471 - both round to 1.110.",
+        "notes": "'which shows that ...' places the inference rather than narrating emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "c246d10c045d",
+          "ts": "7dbf567f0176"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:27.559Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of both sections. Recomputed every quoted numeric against computations/gram-h3-symbolic-regression.witness.json: det_at_q_0 = -0.18920521914403675 (block says approx -0.189, correct); eigenvalues of the recorded matrix are {-0.85506726, 0.10179667, 0.85506726 x3, 3.4769498}, so 'one negative eigenvalue approx -0.855' is exactly right. q_0 approx 1.110 is correct but at that precision CANNOT discriminate the proton pin 1.1099785827513808 from the muon pin 1.10997859555733471 - both round to 1.110.",
+        "notes": "Closer states remaining work, not an established result."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "c246d10c045d",
+          "ts": "7dbf567f0176"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:27.598Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of both sections. Recomputed every quoted numeric against computations/gram-h3-symbolic-regression.witness.json: det_at_q_0 = -0.18920521914403675 (block says approx -0.189, correct); eigenvalues of the recorded matrix are {-0.85506726, 0.10179667, 0.85506726 x3, 3.4769498}, so 'one negative eigenvalue approx -0.855' is exactly right. q_0 approx 1.110 is correct but at that precision CANNOT discriminate the proton pin 1.1099785827513808 from the muon pin 1.10997859555733471 - both round to 1.110.",
+        "notes": "Institutional register throughout."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "c246d10c045d",
+          "ts": "7dbf567f0176"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:27.638Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of both sections. Recomputed every quoted numeric against computations/gram-h3-symbolic-regression.witness.json: det_at_q_0 = -0.18920521914403675 (block says approx -0.189, correct); eigenvalues of the recorded matrix are {-0.85506726, 0.10179667, 0.85506726 x3, 3.4769498}, so 'one negative eigenvalue approx -0.855' is exactly right. q_0 approx 1.110 is correct but at that precision CANNOT discriminate the proton pin 1.1099785827513808 from the muon pin 1.10997859555733471 - both round to 1.110.",
+        "notes": "No unqualified maximum-strength claims."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "c246d10c045d",
+          "ts": "7dbf567f0176"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:27.681Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "minor",
+        "evidence": "Full read of both sections. Recomputed every quoted numeric against computations/gram-h3-symbolic-regression.witness.json: det_at_q_0 = -0.18920521914403675 (block says approx -0.189, correct); eigenvalues of the recorded matrix are {-0.85506726, 0.10179667, 0.85506726 x3, 3.4769498}, so 'one negative eigenvalue approx -0.855' is exactly right. q_0 approx 1.110 is correct but at that precision CANNOT discriminate the proton pin 1.1099785827513808 from the muon pin 1.10997859555733471 - both round to 1.110. Final sentence read 'The remaining $\\det \\neq 0$ proof reduces what remains to a symbolic-determinant computation.' - 'remaining ... what remains' is a doubled-noun garble that stalls aloud.",
+        "notes": "FIX APPLIED (mechanical, no meaning change): 'The remaining $\\det \\neq 0$ proof reduces what remains to a symbolic-determinant computation.' -> 'The remaining $\\det \\neq 0$ proof reduces to a symbolic-determinant computation.' SEPARATE FINDING for the coordinator: the numbers in this remark are CONVENTION-C-frame - they come from gram-h3-symbolic-regression.witness.json whose G[0][1]=0.4993203341836944 is z_C=sqrt(q)/(q+1) (excised). The canonical-D sibling witness gram-matrix-dual.witness.json (z=0.6126880371464652) gives gram_determinant = 3.998e-17, i.e. numerically ZERO with a 1-dimensional radical, and eigenvalue -0.7527 instead of -0.855. So under canonical convention D the '-0.189' and '-0.855' both change and the parent proposition's det != 0 clause is at risk (the known D-singularity, bean qou-cds2)."
+      }
+    ]
+  }
+}

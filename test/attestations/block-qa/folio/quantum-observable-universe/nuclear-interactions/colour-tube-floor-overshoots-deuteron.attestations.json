@@ -1,0 +1,201 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/colour-tube-floor-overshoots-deuteron",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/colour-tube-floor-overshoots-deuteron"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f04419cf927c",
+          "ts": "0a3cc3db8435"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:20.146Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of rem:colour-tube-floor-overshoots-deuteron (4 sections, ~600 words) plus its two .ts authorNotes. Recomputed every quoted figure: 2.29580 - 2.224566 = 0.071234 MeV (matches '0.0712') = 3.2022% (matches '3.2%'); the S_3 average 2.46755 is 10.92% above target (matches 'some 11%'); B_AME(2H) = 2.224566 MeV is the AME2020 value (2224.5661 keV). All internally consistent. This block is a MODEL of the (a)/(b) refutation discipline: the category error is scoped (b) with its invariant named in the .ts caveat (the weight factors through NucleonColorContent, on which the deuteron line is not an eigenvector) and the numerical scan is scoped (a) explicitly, with the prose itself flagging the figures as provisional and unbacked by a witness. Verified separately that 2.29580 indeed appears nowhere in computations/, exactly as the authorNote says.",
+        "notes": "'a category error rather than a numerical miss' and 'not a linear functional on the flavour space but a function of the labels' are both the block's actual content - separating the structural exclusion from the numerical one IS what the block is for. Substantive-contrast false-positive class."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f04419cf927c",
+          "ts": "0a3cc3db8435"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:20.186Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of rem:colour-tube-floor-overshoots-deuteron (4 sections, ~600 words) plus its two .ts authorNotes. Recomputed every quoted figure: 2.29580 - 2.224566 = 0.071234 MeV (matches '0.0712') = 3.2022% (matches '3.2%'); the S_3 average 2.46755 is 10.92% above target (matches 'some 11%'); B_AME(2H) = 2.224566 MeV is the AME2020 value (2224.5661 keV). All internally consistent. This block is a MODEL of the (a)/(b) refutation discipline: the category error is scoped (b) with its invariant named in the .ts caveat (the weight factors through NucleonColorContent, on which the deuteron line is not an eigenvector) and the numerical scan is scoped (a) explicitly, with the prose itself flagging the figures as provisional and unbacked by a witness. Verified separately that 2.29580 indeed appears nowhere in computations/, exactly as the authorNote says.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f04419cf927c",
+          "ts": "0a3cc3db8435"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:20.226Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:colour-tube-floor-overshoots-deuteron (4 sections, ~600 words) plus its two .ts authorNotes. Recomputed every quoted figure: 2.29580 - 2.224566 = 0.071234 MeV (matches '0.0712') = 3.2022% (matches '3.2%'); the S_3 average 2.46755 is 10.92% above target (matches 'some 11%'); B_AME(2H) = 2.224566 MeV is the AME2020 value (2224.5661 keV). All internally consistent. This block is a MODEL of the (a)/(b) refutation discipline: the category error is scoped (b) with its invariant named in the .ts caveat (the weight factors through NucleonColorContent, on which the deuteron line is not an eigenvector) and the numerical scan is scoped (a) explicitly, with the prose itself flagging the figures as provisional and unbacked by a witness. Verified separately that 2.29580 indeed appears nowhere in computations/, exactly as the authorNote says.",
+        "notes": "Three spaced dashes, each introducing a genuine appositive (the quark contents, the overshoot figure, the D_6 aside) in a ~600-word block; no afterthought-appending and no comma/full-stop dodging."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f04419cf927c",
+          "ts": "0a3cc3db8435"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:20.263Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:colour-tube-floor-overshoots-deuteron (4 sections, ~600 words) plus its two .ts authorNotes. Recomputed every quoted figure: 2.29580 - 2.224566 = 0.071234 MeV (matches '0.0712') = 3.2022% (matches '3.2%'); the S_3 average 2.46755 is 10.92% above target (matches 'some 11%'); B_AME(2H) = 2.224566 MeV is the AME2020 value (2224.5661 keV). All internally consistent. This block is a MODEL of the (a)/(b) refutation discipline: the category error is scoped (b) with its invariant named in the .ts caveat (the weight factors through NucleonColorContent, on which the deuteron line is not an eigenvector) and the numerical scan is scoped (a) explicitly, with the prose itself flagging the figures as provisional and unbacked by a witness. Verified separately that 2.29580 indeed appears nowhere in computations/, exactly as the authorNote says.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f04419cf927c",
+          "ts": "0a3cc3db8435"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:20.304Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of rem:colour-tube-floor-overshoots-deuteron (4 sections, ~600 words) plus its two .ts authorNotes. Recomputed every quoted figure: 2.29580 - 2.224566 = 0.071234 MeV (matches '0.0712') = 3.2022% (matches '3.2%'); the S_3 average 2.46755 is 10.92% above target (matches 'some 11%'); B_AME(2H) = 2.224566 MeV is the AME2020 value (2224.5661 keV). All internally consistent. This block is a MODEL of the (a)/(b) refutation discipline: the category error is scoped (b) with its invariant named in the .ts caveat (the weight factors through NucleonColorContent, on which the deuteron line is not an eigenvector) and the numerical scan is scoped (a) explicitly, with the prose itself flagging the figures as provisional and unbacked by a witness. Verified separately that 2.29580 indeed appears nowhere in computations/, exactly as the authorNote says.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f04419cf927c",
+          "ts": "0a3cc3db8435"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:20.347Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of rem:colour-tube-floor-overshoots-deuteron (4 sections, ~600 words) plus its two .ts authorNotes. Recomputed every quoted figure: 2.29580 - 2.224566 = 0.071234 MeV (matches '0.0712') = 3.2022% (matches '3.2%'); the S_3 average 2.46755 is 10.92% above target (matches 'some 11%'); B_AME(2H) = 2.224566 MeV is the AME2020 value (2224.5661 keV). All internally consistent. This block is a MODEL of the (a)/(b) refutation discipline: the category error is scoped (b) with its invariant named in the .ts caveat (the weight factors through NucleonColorContent, on which the deuteron line is not an eigenvector) and the numerical scan is scoped (a) explicitly, with the prose itself flagging the figures as provisional and unbacked by a witness. Verified separately that 2.29580 indeed appears nowhere in computations/, exactly as the authorNote says.",
+        "notes": "'The two arguments are of different kinds and should not be conflated' is load-bearing disambiguation under the AGENTS.md (a)/(b) scope rule - it prevents a real misreading rather than narrating emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f04419cf927c",
+          "ts": "0a3cc3db8435"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:20.388Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of rem:colour-tube-floor-overshoots-deuteron (4 sections, ~600 words) plus its two .ts authorNotes. Recomputed every quoted figure: 2.29580 - 2.224566 = 0.071234 MeV (matches '0.0712') = 3.2022% (matches '3.2%'); the S_3 average 2.46755 is 10.92% above target (matches 'some 11%'); B_AME(2H) = 2.224566 MeV is the AME2020 value (2224.5661 keV). All internally consistent. This block is a MODEL of the (a)/(b) refutation discipline: the category error is scoped (b) with its invariant named in the .ts caveat (the weight factors through NucleonColorContent, on which the deuteron line is not an eigenvector) and the numerical scan is scoped (a) explicitly, with the prose itself flagging the figures as provisional and unbacked by a witness. Verified separately that 2.29580 indeed appears nowhere in computations/, exactly as the authorNote says.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f04419cf927c",
+          "ts": "0a3cc3db8435"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:20.430Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:colour-tube-floor-overshoots-deuteron (4 sections, ~600 words) plus its two .ts authorNotes. Recomputed every quoted figure: 2.29580 - 2.224566 = 0.071234 MeV (matches '0.0712') = 3.2022% (matches '3.2%'); the S_3 average 2.46755 is 10.92% above target (matches 'some 11%'); B_AME(2H) = 2.224566 MeV is the AME2020 value (2224.5661 keV). All internally consistent. This block is a MODEL of the (a)/(b) refutation discipline: the category error is scoped (b) with its invariant named in the .ts caveat (the weight factors through NucleonColorContent, on which the deuteron line is not an eigenvector) and the numerical scan is scoped (a) explicitly, with the prose itself flagging the figures as provisional and unbacked by a witness. Verified separately that 2.29580 indeed appears nowhere in computations/, exactly as the authorNote says.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f04419cf927c",
+          "ts": "0a3cc3db8435"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:20.472Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:colour-tube-floor-overshoots-deuteron (4 sections, ~600 words) plus its two .ts authorNotes. Recomputed every quoted figure: 2.29580 - 2.224566 = 0.071234 MeV (matches '0.0712') = 3.2022% (matches '3.2%'); the S_3 average 2.46755 is 10.92% above target (matches 'some 11%'); B_AME(2H) = 2.224566 MeV is the AME2020 value (2224.5661 keV). All internally consistent. This block is a MODEL of the (a)/(b) refutation discipline: the category error is scoped (b) with its invariant named in the .ts caveat (the weight factors through NucleonColorContent, on which the deuteron line is not an eigenvector) and the numerical scan is scoped (a) explicitly, with the prose itself flagging the figures as provisional and unbacked by a witness. Verified separately that 2.29580 indeed appears nowhere in computations/, exactly as the authorNote says.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f04419cf927c",
+          "ts": "0a3cc3db8435"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:05:20.515Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:colour-tube-floor-overshoots-deuteron (4 sections, ~600 words) plus its two .ts authorNotes. Recomputed every quoted figure: 2.29580 - 2.224566 = 0.071234 MeV (matches '0.0712') = 3.2022% (matches '3.2%'); the S_3 average 2.46755 is 10.92% above target (matches 'some 11%'); B_AME(2H) = 2.224566 MeV is the AME2020 value (2224.5661 keV). All internally consistent. This block is a MODEL of the (a)/(b) refutation discipline: the category error is scoped (b) with its invariant named in the .ts caveat (the weight factors through NucleonColorContent, on which the deuteron line is not an eigenvector) and the numerical scan is scoped (a) explicitly, with the prose itself flagging the figures as provisional and unbacked by a witness. Verified separately that 2.29580 indeed appears nowhere in computations/, exactly as the authorNote says.",
+        "notes": "No trap of this category."
+      }
+    ]
+  }
+}

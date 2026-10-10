@@ -1,0 +1,548 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/gravity-spacetime/lqg-adm-ashtekar-comparison",
+    "path": "folio/quantum-observable-universe/gravity-spacetime/lqg-adm-ashtekar-comparison"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical dictionary strictly distinguishing the categorical background from canonical continuous approximations.",
+        "reviewed_at": "2026-07-08T13:34:53.000Z",
+        "reviewed_sha": "ade8459120b039966a6b8ae98dc611a1b11e5c95",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical dictionary strictly distinguishing the categorical background from canonical continuous approximations.",
+        "reviewed_at": "2026-07-08T13:34:53.000Z",
+        "reviewed_sha": "ade8459120b039966a6b8ae98dc611a1b11e5c95",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical dictionary strictly distinguishing the categorical background from canonical continuous approximations.",
+        "reviewed_at": "2026-07-08T13:34:53.000Z",
+        "reviewed_sha": "ade8459120b039966a6b8ae98dc611a1b11e5c95",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical dictionary strictly distinguishing the categorical background from canonical continuous approximations.",
+        "reviewed_at": "2026-07-08T13:34:53.000Z",
+        "reviewed_sha": "ade8459120b039966a6b8ae98dc611a1b11e5c95",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical dictionary strictly distinguishing the categorical background from canonical continuous approximations.",
+        "reviewed_at": "2026-07-08T13:34:53.000Z",
+        "reviewed_sha": "ade8459120b039966a6b8ae98dc611a1b11e5c95",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical dictionary strictly distinguishing the categorical background from canonical continuous approximations.",
+        "reviewed_at": "2026-07-08T13:34:53.000Z",
+        "reviewed_sha": "ade8459120b039966a6b8ae98dc611a1b11e5c95",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical dictionary strictly distinguishing the categorical background from canonical continuous approximations.",
+        "reviewed_at": "2026-07-08T13:34:53.000Z",
+        "reviewed_sha": "ade8459120b039966a6b8ae98dc611a1b11e5c95",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical dictionary strictly distinguishing the categorical background from canonical continuous approximations.",
+        "reviewed_at": "2026-07-08T13:34:53.000Z",
+        "reviewed_sha": "ade8459120b039966a6b8ae98dc611a1b11e5c95",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical dictionary strictly distinguishing the categorical background from canonical continuous approximations.",
+        "reviewed_at": "2026-07-08T13:34:53.000Z",
+        "reviewed_sha": "ade8459120b039966a6b8ae98dc611a1b11e5c95",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical dictionary strictly distinguishing the categorical background from canonical continuous approximations.",
+        "reviewed_at": "2026-07-08T13:34:53.000Z",
+        "reviewed_sha": "ade8459120b039966a6b8ae98dc611a1b11e5c95",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical dictionary strictly distinguishing the categorical background from canonical continuous approximations.",
+        "reviewed_at": "2026-07-08T13:34:53.000Z",
+        "reviewed_sha": "ade8459120b039966a6b8ae98dc611a1b11e5c95",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical dictionary strictly distinguishing the categorical background from canonical continuous approximations.",
+        "reviewed_at": "2026-07-08T13:34:53.000Z",
+        "reviewed_sha": "ade8459120b039966a6b8ae98dc611a1b11e5c95",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical dictionary strictly distinguishing the categorical background from canonical continuous approximations.",
+        "reviewed_at": "2026-07-08T13:34:53.000Z",
+        "reviewed_sha": "ade8459120b039966a6b8ae98dc611a1b11e5c95",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical dictionary strictly distinguishing the categorical background from canonical continuous approximations.",
+        "reviewed_at": "2026-07-08T13:34:53.000Z",
+        "reviewed_sha": "ade8459120b039966a6b8ae98dc611a1b11e5c95",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Sound physical dictionary strictly distinguishing the categorical background from canonical continuous approximations.",
+        "reviewed_at": "2026-07-08T13:34:53.000Z",
+        "reviewed_sha": "ade8459120b039966a6b8ae98dc611a1b11e5c95",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Clean. No branch/audit working labels, bean ids, PR or branch names, AGENTS.md / skill-file or audit-memo pointers, dated status notes, or first-person work narration found in the .md body or the published .ts title.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.619Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'The substantive differences are not which structures appear but where they live' IS the dictionary's claim; 'not a tunable coupling constant' is the extraction-vs-fit distinction."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.664Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None; limitations section states conditional scope directly."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.706Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Single spaced dash ('observed at our energy scale \u2014 not a tunable coupling constant'), low density."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.749Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'Three structural advantages' are three genuinely distinct obstruction-avoidance claims."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.791Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Closes on the conditional-equivalence scope statement, factual."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.834Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'The dictionary tightens around three points' introduces the list, acceptable."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.875Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Limitations paragraph adds hypotheses (OS reflection positivity, surreal mass gap), not restatement."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.919Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None; 'fudge factor'/'bolts on' are colloquial register (clarity-grad-style territory, noted for that audit), not warmth."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.963Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Advantage claims are qualified by the Limitations section."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f90ab747ed4d",
+          "ts": "fc8d8c61503a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:06.005Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Dictionary rows are dense but tabular.",
+        "notes": "TWO FLAGS, not edited: (1) register violation \u2014 Barbero-Immirzi row quotes the numerical substrate value 'q_0 approx 1.11' outside the introduction/Ch-7 carve-out (notation-collisions rule: no specific numerical q value elsewhere); (2) cross-sibling contradiction \u2014 row 'LQC bounce & CCC: Big Bang = q->1+; heat death = q->infty' vs glossary-q-bit.md values table 'q=infty ... Big Bang (no information)'. The two blocks assign opposite cosmological ends to q->infty; at most one is right."
+      }
+    ]
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/bach2013-double-slit/double-slit-experiment/bach-intensity-profile",
+    "path": "folio/bach2013-double-slit/double-slit-experiment/bach-intensity-profile"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "9f80b22297b6",
+          "ts": "a11e6de75a18"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "9f80b22297b6",
+          "ts": "a11e6de75a18"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9f80b22297b6",
+          "ts": "a11e6de75a18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:33.702Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of ex:bach-intensity-profile including the Fraunhofer display. Checked all ten categories; no rhetorical construction found. Verified the physics: I(theta)=cos^2(pi d sin theta/lambda)*sinc^2(pi a sin theta/lambda) is the correct two-slit interference times single-slit envelope (the summation-index-independent-phase error class is NOT present here), and the quoted fringe spacing lambda/d = 50pm/280nm = 0.1786 mrad reproduces the stated 0.179 mrad.",
+        "notes": "Cat.10: the methods sentence ('threshold-based bright pixel extraction ... producing a 150-bin histogram of horizontal electron positions mapped to scattering angle') is noun-heavy but is standard experimental-methods register - pass. Closing sentence is a cross-reference to the simulator, the documented false-positive class. NOT A TRAP, reported separately: the stated angular span +/-2.56 mrad is inconsistent with 'five resolved interference maxima' at this block's own fringe spacing (five maxima span +/-0.36 mrad; +/-2.56 mrad would hold ~29 maxima and reach 2.5x past the first envelope zero lambda/a = 1.0 mrad)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9f80b22297b6",
+          "ts": "a11e6de75a18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:33.742Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of ex:bach-intensity-profile including the Fraunhofer display. Checked all ten categories; no rhetorical construction found. Verified the physics: I(theta)=cos^2(pi d sin theta/lambda)*sinc^2(pi a sin theta/lambda) is the correct two-slit interference times single-slit envelope (the summation-index-independent-phase error class is NOT present here), and the quoted fringe spacing lambda/d = 50pm/280nm = 0.1786 mrad reproduces the stated 0.179 mrad.",
+        "notes": "Cat.10: the methods sentence ('threshold-based bright pixel extraction ... producing a 150-bin histogram of horizontal electron positions mapped to scattering angle') is noun-heavy but is standard experimental-methods register - pass. Closing sentence is a cross-reference to the simulator, the documented false-positive class. NOT A TRAP, reported separately: the stated angular span +/-2.56 mrad is inconsistent with 'five resolved interference maxima' at this block's own fringe spacing (five maxima span +/-0.36 mrad; +/-2.56 mrad would hold ~29 maxima and reach 2.5x past the first envelope zero lambda/a = 1.0 mrad)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9f80b22297b6",
+          "ts": "a11e6de75a18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:33.781Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of ex:bach-intensity-profile including the Fraunhofer display. Checked all ten categories; no rhetorical construction found. Verified the physics: I(theta)=cos^2(pi d sin theta/lambda)*sinc^2(pi a sin theta/lambda) is the correct two-slit interference times single-slit envelope (the summation-index-independent-phase error class is NOT present here), and the quoted fringe spacing lambda/d = 50pm/280nm = 0.1786 mrad reproduces the stated 0.179 mrad.",
+        "notes": "Cat.10: the methods sentence ('threshold-based bright pixel extraction ... producing a 150-bin histogram of horizontal electron positions mapped to scattering angle') is noun-heavy but is standard experimental-methods register - pass. Closing sentence is a cross-reference to the simulator, the documented false-positive class. NOT A TRAP, reported separately: the stated angular span +/-2.56 mrad is inconsistent with 'five resolved interference maxima' at this block's own fringe spacing (five maxima span +/-0.36 mrad; +/-2.56 mrad would hold ~29 maxima and reach 2.5x past the first envelope zero lambda/a = 1.0 mrad)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9f80b22297b6",
+          "ts": "a11e6de75a18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:33.819Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of ex:bach-intensity-profile including the Fraunhofer display. Checked all ten categories; no rhetorical construction found. Verified the physics: I(theta)=cos^2(pi d sin theta/lambda)*sinc^2(pi a sin theta/lambda) is the correct two-slit interference times single-slit envelope (the summation-index-independent-phase error class is NOT present here), and the quoted fringe spacing lambda/d = 50pm/280nm = 0.1786 mrad reproduces the stated 0.179 mrad.",
+        "notes": "Cat.10: the methods sentence ('threshold-based bright pixel extraction ... producing a 150-bin histogram of horizontal electron positions mapped to scattering angle') is noun-heavy but is standard experimental-methods register - pass. Closing sentence is a cross-reference to the simulator, the documented false-positive class. NOT A TRAP, reported separately: the stated angular span +/-2.56 mrad is inconsistent with 'five resolved interference maxima' at this block's own fringe spacing (five maxima span +/-0.36 mrad; +/-2.56 mrad would hold ~29 maxima and reach 2.5x past the first envelope zero lambda/a = 1.0 mrad)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9f80b22297b6",
+          "ts": "a11e6de75a18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:33.857Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of ex:bach-intensity-profile including the Fraunhofer display. Checked all ten categories; no rhetorical construction found. Verified the physics: I(theta)=cos^2(pi d sin theta/lambda)*sinc^2(pi a sin theta/lambda) is the correct two-slit interference times single-slit envelope (the summation-index-independent-phase error class is NOT present here), and the quoted fringe spacing lambda/d = 50pm/280nm = 0.1786 mrad reproduces the stated 0.179 mrad.",
+        "notes": "Cat.10: the methods sentence ('threshold-based bright pixel extraction ... producing a 150-bin histogram of horizontal electron positions mapped to scattering angle') is noun-heavy but is standard experimental-methods register - pass. Closing sentence is a cross-reference to the simulator, the documented false-positive class. NOT A TRAP, reported separately: the stated angular span +/-2.56 mrad is inconsistent with 'five resolved interference maxima' at this block's own fringe spacing (five maxima span +/-0.36 mrad; +/-2.56 mrad would hold ~29 maxima and reach 2.5x past the first envelope zero lambda/a = 1.0 mrad)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9f80b22297b6",
+          "ts": "a11e6de75a18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:33.896Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of ex:bach-intensity-profile including the Fraunhofer display. Checked all ten categories; no rhetorical construction found. Verified the physics: I(theta)=cos^2(pi d sin theta/lambda)*sinc^2(pi a sin theta/lambda) is the correct two-slit interference times single-slit envelope (the summation-index-independent-phase error class is NOT present here), and the quoted fringe spacing lambda/d = 50pm/280nm = 0.1786 mrad reproduces the stated 0.179 mrad.",
+        "notes": "Cat.10: the methods sentence ('threshold-based bright pixel extraction ... producing a 150-bin histogram of horizontal electron positions mapped to scattering angle') is noun-heavy but is standard experimental-methods register - pass. Closing sentence is a cross-reference to the simulator, the documented false-positive class. NOT A TRAP, reported separately: the stated angular span +/-2.56 mrad is inconsistent with 'five resolved interference maxima' at this block's own fringe spacing (five maxima span +/-0.36 mrad; +/-2.56 mrad would hold ~29 maxima and reach 2.5x past the first envelope zero lambda/a = 1.0 mrad)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9f80b22297b6",
+          "ts": "a11e6de75a18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:33.935Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of ex:bach-intensity-profile including the Fraunhofer display. Checked all ten categories; no rhetorical construction found. Verified the physics: I(theta)=cos^2(pi d sin theta/lambda)*sinc^2(pi a sin theta/lambda) is the correct two-slit interference times single-slit envelope (the summation-index-independent-phase error class is NOT present here), and the quoted fringe spacing lambda/d = 50pm/280nm = 0.1786 mrad reproduces the stated 0.179 mrad.",
+        "notes": "Cat.10: the methods sentence ('threshold-based bright pixel extraction ... producing a 150-bin histogram of horizontal electron positions mapped to scattering angle') is noun-heavy but is standard experimental-methods register - pass. Closing sentence is a cross-reference to the simulator, the documented false-positive class. NOT A TRAP, reported separately: the stated angular span +/-2.56 mrad is inconsistent with 'five resolved interference maxima' at this block's own fringe spacing (five maxima span +/-0.36 mrad; +/-2.56 mrad would hold ~29 maxima and reach 2.5x past the first envelope zero lambda/a = 1.0 mrad)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9f80b22297b6",
+          "ts": "a11e6de75a18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:33.974Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of ex:bach-intensity-profile including the Fraunhofer display. Checked all ten categories; no rhetorical construction found. Verified the physics: I(theta)=cos^2(pi d sin theta/lambda)*sinc^2(pi a sin theta/lambda) is the correct two-slit interference times single-slit envelope (the summation-index-independent-phase error class is NOT present here), and the quoted fringe spacing lambda/d = 50pm/280nm = 0.1786 mrad reproduces the stated 0.179 mrad.",
+        "notes": "Cat.10: the methods sentence ('threshold-based bright pixel extraction ... producing a 150-bin histogram of horizontal electron positions mapped to scattering angle') is noun-heavy but is standard experimental-methods register - pass. Closing sentence is a cross-reference to the simulator, the documented false-positive class. NOT A TRAP, reported separately: the stated angular span +/-2.56 mrad is inconsistent with 'five resolved interference maxima' at this block's own fringe spacing (five maxima span +/-0.36 mrad; +/-2.56 mrad would hold ~29 maxima and reach 2.5x past the first envelope zero lambda/a = 1.0 mrad)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9f80b22297b6",
+          "ts": "a11e6de75a18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.014Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of ex:bach-intensity-profile including the Fraunhofer display. Checked all ten categories; no rhetorical construction found. Verified the physics: I(theta)=cos^2(pi d sin theta/lambda)*sinc^2(pi a sin theta/lambda) is the correct two-slit interference times single-slit envelope (the summation-index-independent-phase error class is NOT present here), and the quoted fringe spacing lambda/d = 50pm/280nm = 0.1786 mrad reproduces the stated 0.179 mrad.",
+        "notes": "Cat.10: the methods sentence ('threshold-based bright pixel extraction ... producing a 150-bin histogram of horizontal electron positions mapped to scattering angle') is noun-heavy but is standard experimental-methods register - pass. Closing sentence is a cross-reference to the simulator, the documented false-positive class. NOT A TRAP, reported separately: the stated angular span +/-2.56 mrad is inconsistent with 'five resolved interference maxima' at this block's own fringe spacing (five maxima span +/-0.36 mrad; +/-2.56 mrad would hold ~29 maxima and reach 2.5x past the first envelope zero lambda/a = 1.0 mrad)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9f80b22297b6",
+          "ts": "a11e6de75a18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.056Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of ex:bach-intensity-profile including the Fraunhofer display. Checked all ten categories; no rhetorical construction found. Verified the physics: I(theta)=cos^2(pi d sin theta/lambda)*sinc^2(pi a sin theta/lambda) is the correct two-slit interference times single-slit envelope (the summation-index-independent-phase error class is NOT present here), and the quoted fringe spacing lambda/d = 50pm/280nm = 0.1786 mrad reproduces the stated 0.179 mrad.",
+        "notes": "Cat.10: the methods sentence ('threshold-based bright pixel extraction ... producing a 150-bin histogram of horizontal electron positions mapped to scattering angle') is noun-heavy but is standard experimental-methods register - pass. Closing sentence is a cross-reference to the simulator, the documented false-positive class. NOT A TRAP, reported separately: the stated angular span +/-2.56 mrad is inconsistent with 'five resolved interference maxima' at this block's own fringe spacing (five maxima span +/-0.36 mrad; +/-2.56 mrad would hold ~29 maxima and reach 2.5x past the first envelope zero lambda/a = 1.0 mrad)."
+      }
+    ]
+  }
+}

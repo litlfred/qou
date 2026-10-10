@@ -1,0 +1,466 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/markov-pair-z2-proof",
+    "path": "folio/quantum-observable-universe/mass-theory/markov-pair-z2-proof"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      },
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-24",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:34:58.468Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53"
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:37.395Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right \u2014 a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:37.472Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right \u2014 a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:37.540Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right \u2014 a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:37.612Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right \u2014 a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:37.698Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right \u2014 a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:37.757Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "'The naive worry is that \u2026 The proof above sidesteps that concern because \u2026' names an objection and answers it, which is ordinary mathematical exposition rather than narrating one's own emphasis. It would only be meta-commentary if it announced the importance of the answer instead of giving it."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:37.807Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right \u2014 a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:37.859Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right \u2014 a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:37.907Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right \u2014 a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "c29aed8be7cb",
+          "ts": "edcd8685b319"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:22:37.971Z",
+        "reviewed_sha": "e5bb3d31598c6619e05f9cd7c89ae200c06ed0b6",
+        "evidence": "Proof read in full and re-derived. The two peels are correct: in H_{j+1} the rightmost generator is sigma_j and sigma_i lies in H_j, so tr^{H_{j+1}}(sigma_i sigma_j) = z tr^{H_j}(sigma_i); Markov closure then drops to H_{i+2}, where sigma_i is rightmost, giving z tr(1) = z; hence z^2. The adjacency-independence argument is also right \u2014 a length-2 word invokes no braid relation, and both stated conditions are indeed independent of |i-j|. All ten trap categories clean."
+      }
+    ]
+  }
+}

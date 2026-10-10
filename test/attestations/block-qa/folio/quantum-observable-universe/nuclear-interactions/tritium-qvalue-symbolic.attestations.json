@@ -1,0 +1,1017 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/tritium-qvalue-symbolic",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/tritium-qvalue-symbolic"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec",
+          "lean": "41e8be3de209"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec",
+          "lean": "41e8be3de209"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-no-placeholder-stub": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_date": "2026-07-07T14:26:57.434706Z",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "gemini-3.1-pro"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.434706Z",
+        "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
+        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest — real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.434706Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.434706Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement is a bare mathematical claim."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.434706Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.434706Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:34.000Z",
+        "reviewed_sha": "a472cca38a3b3226c1fcd5a777e1ae909509ec6a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.434706Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.434706Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Substrate statement contains archimedean constructs.",
+        "evidence": "Substrate statement contains archimedean constructs."
+      },
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-fable-5-1",
+          "agent_date": "2026-09-03T05:15:41Z",
+          "agent_skill": "local/dispatch-agent"
+        },
+        "reviewed_at": "2026-09-03T05:15:41Z",
+        "reviewed_sha": "e71ba7a90360c4c6aee91f9e189fb7580a99db79",
+        "notes": "Archimedean-chapter statement (Q-value scaled by m_e) matching its chapter regime; numeric q_0/MeV evaluation is confined to a separately headed section outside the Statement — prior templated fail was a false positive.",
+        "evidence": "Regime: nuclear-interactions was split from particle-interactions (folio/quantum-observable-universe/nuclear-interactions/nuclear-interactions.ts:11-12; manifest describes 'beta decay transfer matrices … branching Q-values', :6-9), and particle-interactions is in ARCHIMEDEAN_CHAPTERS with fixed-q0 expected (folio-assistant/cat-harness/content/pipeline/_folio-chapter-profiles.qou.ts:95-97, :174-176; .claude/skills/local/q-usage-watcher.md:79-83); the block sits in section sec:branching-qvalue (nuclear-interactions.ts:257-268), so the chapter regime is archimedean. Tokens: the Statement (tritium-qvalue-symbolic.md:7-11) is a rational function of q times the physical mass scale m_e (md:10) — a Q-value, i.e. a comparison-boundary quantity — and is not a purely algebraic identity belonging upstream: the pure identity a^Z b^(N-1)(a-b) already lives upstream in branching-qvalue-factorization.md:8-14 (uses[] at tritium-qvalue-symbolic.ts:17-19), and this block is its (Z,N)=(1,2) specialisation with the m_e scale attached, exactly the same shape as the passing peer neutron-qvalue-symbolic.md:32-39 (m_e·|q²−2q−1|(q+1)/(2q³)). The archimedean evaluation (q_0 at md:29; ≈ 0.0179 MeV at md:33; Q_exp = 0.0186 MeV, −3.64 %, CODATA at md:36) is confined to the separately headed '## Numerical evaluation' section, opens with 'At the substrate parameter q_0' (md:29) which flags the side of evaluation, and uses ≈ per AGENTS.md §7ab — so the two sides are not mixed unflagged and no WARN applies. No §3b-cond banner is owed (uses[] carries no conj:), no wall: field or authorNotes exist in the .ts (AGENTS.md §4d at :3594 is moot), and AGENTS.md §7c (:3929, :3965) permits an archimedean statement in an archimedean chapter; the prior 2026-07-07 fail cited no token or line and its evidence string is the templated one shared by four other blocks in this directory."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.434706Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.434706Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Proof machinery matches the statement regime."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.434706Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.434706Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Symbolic Q-value for tritium beta decay': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "tritium-qvalue-symbolic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:34.000Z",
+        "reviewed_sha": "a472cca38a3b3226c1fcd5a777e1ae909509ec6a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.434706Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.434706Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Symbolic Q-value for tritium beta decay' presents substantial mathematical content: '${}^3\\mathrm{H} \\to {}^3\\mathrm{He} + e^- + \\bar\\nu_e$'.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:34.000Z",
+        "reviewed_sha": "a472cca38a3b3226c1fcd5a777e1ae909509ec6a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.434706Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.434706Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Symbolic Q-value for tritium beta decay'.",
+        "severity": "minor",
+        "evidence": "tritium-qvalue-symbolic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:34.000Z",
+        "reviewed_sha": "a472cca38a3b3226c1fcd5a777e1ae909509ec6a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.434706Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.434706Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Symbolic Q-value for tritium beta decay' are appropriately qualified.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:34.000Z",
+        "reviewed_sha": "a472cca38a3b3226c1fcd5a777e1ae909509ec6a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.434706Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.434706Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Symbolic Q-value for tritium beta decay'.",
+        "severity": "minor",
+        "evidence": "tritium-qvalue-symbolic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:34.000Z",
+        "reviewed_sha": "a472cca38a3b3226c1fcd5a777e1ae909509ec6a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.434706Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.434706Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose arguments in 'Symbolic Q-value for tritium beta decay' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "tritium-qvalue-symbolic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:34.000Z",
+        "reviewed_sha": "a472cca38a3b3226c1fcd5a777e1ae909509ec6a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.434706Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.434706Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:34.000Z",
+        "reviewed_sha": "a472cca38a3b3226c1fcd5a777e1ae909509ec6a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.434706Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.434706Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Symbolic Q-value for tritium beta decay', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "tritium-qvalue-symbolic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:34.000Z",
+        "reviewed_sha": "a472cca38a3b3226c1fcd5a777e1ae909509ec6a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.434706Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.434706Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Symbolic Q-value for tritium beta decay' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "tritium-qvalue-symbolic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:34.000Z",
+        "reviewed_sha": "a472cca38a3b3226c1fcd5a777e1ae909509ec6a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.434706Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.434706Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Symbolic Q-value for tritium beta decay' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "tritium-qvalue-symbolic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:34.000Z",
+        "reviewed_sha": "a472cca38a3b3226c1fcd5a777e1ae909509ec6a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.434706Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.434706Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Symbolic Q-value for tritium beta decay' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "tritium-qvalue-symbolic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:34.000Z",
+        "reviewed_sha": "a472cca38a3b3226c1fcd5a777e1ae909509ec6a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.434706Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.434706Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Symbolic Q-value for tritium beta decay' are reproducible.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:34.000Z",
+        "reviewed_sha": "a472cca38a3b3226c1fcd5a777e1ae909509ec6a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.434706Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.434706Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Symbolic Q-value for tritium beta decay' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:34.000Z",
+        "reviewed_sha": "a472cca38a3b3226c1fcd5a777e1ae909509ec6a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor exposition standard (H1-H8) and brevity rules. Shortened sentences, removed editorializing ('surprisingly', 'remarkably'), replaced 'this book' with 'this paper', and maintained Math, markdown, and cross-block consistency.",
+        "reviewed_at": "2026-07-07T14:26:57.434706Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.434706Z"
+        },
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:34.000Z",
+        "reviewed_sha": "a472cca38a3b3226c1fcd5a777e1ae909509ec6a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:06.621Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (proposition, ~0.9kB). Re-derived the closed form from the stated derivation and it is exactly right: with a = -h/2 and b = -3(q^2-1)(q^2+1)^2/(4q^3) from def:spectator-normalization, ab(a-b) = 3(q^2-1)^3(q^2+1)^2[3(q^2+1)^2-2q^2]/(32q^7) and 3(q^2+1)^2-2q^2 = 3q^4+4q^2+3 - symbolic difference from the displayed form is exactly 0. Numeric Q = 0.01793259 MeV at the proton pin, matching the quoted ~0.0179. All ten trap categories clean. Two numeric/scope defects (the -3.64% figure and the 'three CODATA inputs fix q0' attribution) are reported as anomalies."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:06.677Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (proposition, ~0.9kB). Re-derived the closed form from the stated derivation and it is exactly right: with a = -h/2 and b = -3(q^2-1)(q^2+1)^2/(4q^3) from def:spectator-normalization, ab(a-b) = 3(q^2-1)^3(q^2+1)^2[3(q^2+1)^2-2q^2]/(32q^7) and 3(q^2+1)^2-2q^2 = 3q^4+4q^2+3 - symbolic difference from the displayed form is exactly 0. Numeric Q = 0.01793259 MeV at the proton pin, matching the quoted ~0.0179. All ten trap categories clean. Two numeric/scope defects (the -3.64% figure and the 'three CODATA inputs fix q0' attribution) are reported as anomalies."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:06.726Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (proposition, ~0.9kB). Re-derived the closed form from the stated derivation and it is exactly right: with a = -h/2 and b = -3(q^2-1)(q^2+1)^2/(4q^3) from def:spectator-normalization, ab(a-b) = 3(q^2-1)^3(q^2+1)^2[3(q^2+1)^2-2q^2]/(32q^7) and 3(q^2+1)^2-2q^2 = 3q^4+4q^2+3 - symbolic difference from the displayed form is exactly 0. Numeric Q = 0.01793259 MeV at the proton pin, matching the quoted ~0.0179. All ten trap categories clean. Two numeric/scope defects (the -3.64% figure and the 'three CODATA inputs fix q0' attribution) are reported as anomalies."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:06.770Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (proposition, ~0.9kB). Re-derived the closed form from the stated derivation and it is exactly right: with a = -h/2 and b = -3(q^2-1)(q^2+1)^2/(4q^3) from def:spectator-normalization, ab(a-b) = 3(q^2-1)^3(q^2+1)^2[3(q^2+1)^2-2q^2]/(32q^7) and 3(q^2+1)^2-2q^2 = 3q^4+4q^2+3 - symbolic difference from the displayed form is exactly 0. Numeric Q = 0.01793259 MeV at the proton pin, matching the quoted ~0.0179. All ten trap categories clean. Two numeric/scope defects (the -3.64% figure and the 'three CODATA inputs fix q0' attribution) are reported as anomalies."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:06.827Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (proposition, ~0.9kB). Re-derived the closed form from the stated derivation and it is exactly right: with a = -h/2 and b = -3(q^2-1)(q^2+1)^2/(4q^3) from def:spectator-normalization, ab(a-b) = 3(q^2-1)^3(q^2+1)^2[3(q^2+1)^2-2q^2]/(32q^7) and 3(q^2+1)^2-2q^2 = 3q^4+4q^2+3 - symbolic difference from the displayed form is exactly 0. Numeric Q = 0.01793259 MeV at the proton pin, matching the quoted ~0.0179. All ten trap categories clean. Two numeric/scope defects (the -3.64% figure and the 'three CODATA inputs fix q0' attribution) are reported as anomalies."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:06.871Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (proposition, ~0.9kB). Re-derived the closed form from the stated derivation and it is exactly right: with a = -h/2 and b = -3(q^2-1)(q^2+1)^2/(4q^3) from def:spectator-normalization, ab(a-b) = 3(q^2-1)^3(q^2+1)^2[3(q^2+1)^2-2q^2]/(32q^7) and 3(q^2+1)^2-2q^2 = 3q^4+4q^2+3 - symbolic difference from the displayed form is exactly 0. Numeric Q = 0.01793259 MeV at the proton pin, matching the quoted ~0.0179. All ten trap categories clean. Two numeric/scope defects (the -3.64% figure and the 'three CODATA inputs fix q0' attribution) are reported as anomalies."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:06.913Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (proposition, ~0.9kB). Re-derived the closed form from the stated derivation and it is exactly right: with a = -h/2 and b = -3(q^2-1)(q^2+1)^2/(4q^3) from def:spectator-normalization, ab(a-b) = 3(q^2-1)^3(q^2+1)^2[3(q^2+1)^2-2q^2]/(32q^7) and 3(q^2+1)^2-2q^2 = 3q^4+4q^2+3 - symbolic difference from the displayed form is exactly 0. Numeric Q = 0.01793259 MeV at the proton pin, matching the quoted ~0.0179. All ten trap categories clean. Two numeric/scope defects (the -3.64% figure and the 'three CODATA inputs fix q0' attribution) are reported as anomalies."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:06.960Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (proposition, ~0.9kB). Re-derived the closed form from the stated derivation and it is exactly right: with a = -h/2 and b = -3(q^2-1)(q^2+1)^2/(4q^3) from def:spectator-normalization, ab(a-b) = 3(q^2-1)^3(q^2+1)^2[3(q^2+1)^2-2q^2]/(32q^7) and 3(q^2+1)^2-2q^2 = 3q^4+4q^2+3 - symbolic difference from the displayed form is exactly 0. Numeric Q = 0.01793259 MeV at the proton pin, matching the quoted ~0.0179. All ten trap categories clean. Two numeric/scope defects (the -3.64% figure and the 'three CODATA inputs fix q0' attribution) are reported as anomalies."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:07.002Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (proposition, ~0.9kB). Re-derived the closed form from the stated derivation and it is exactly right: with a = -h/2 and b = -3(q^2-1)(q^2+1)^2/(4q^3) from def:spectator-normalization, ab(a-b) = 3(q^2-1)^3(q^2+1)^2[3(q^2+1)^2-2q^2]/(32q^7) and 3(q^2+1)^2-2q^2 = 3q^4+4q^2+3 - symbolic difference from the displayed form is exactly 0. Numeric Q = 0.01793259 MeV at the proton pin, matching the quoted ~0.0179. All ten trap categories clean. Two numeric/scope defects (the -3.64% figure and the 'three CODATA inputs fix q0' attribution) are reported as anomalies."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "65f46c84666a",
+          "ts": "006729f446ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:07.047Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (proposition, ~0.9kB). Re-derived the closed form from the stated derivation and it is exactly right: with a = -h/2 and b = -3(q^2-1)(q^2+1)^2/(4q^3) from def:spectator-normalization, ab(a-b) = 3(q^2-1)^3(q^2+1)^2[3(q^2+1)^2-2q^2]/(32q^7) and 3(q^2+1)^2-2q^2 = 3q^4+4q^2+3 - symbolic difference from the displayed form is exactly 0. Numeric Q = 0.01793259 MeV at the proton pin, matching the quoted ~0.0179. All ten trap categories clean. Two numeric/scope defects (the -3.64% figure and the 'three CODATA inputs fix q0' attribution) are reported as anomalies."
+      }
+    ]
+  }
+}

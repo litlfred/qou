@@ -1,0 +1,1138 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/knots-particles-confinement/shell-transition-knot-interpretation",
+    "path": "folio/quantum-observable-universe/knots-particles-confinement/shell-transition-knot-interpretation"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "07e36150d0d2",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "07e36150d0d2",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "71228c7d8ba7",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:57:23.649Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:07.000Z",
+        "reviewed_sha": "031364e0d426aec8701a3db3a1220dd79570250c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "71228c7d8ba7",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Shell-transition threshold at $N = 3$': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "shell-transition-knot-interpretation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:07.000Z",
+        "reviewed_sha": "031364e0d426aec8701a3db3a1220dd79570250c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "71228c7d8ba7",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Shell-transition threshold at $N = 3$' presents substantial mathematical content: '$N = 3$'.",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:07.000Z",
+        "reviewed_sha": "031364e0d426aec8701a3db3a1220dd79570250c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "71228c7d8ba7",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Shell-transition threshold at $N = 3$'.",
+        "severity": "minor",
+        "evidence": "shell-transition-knot-interpretation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:07.000Z",
+        "reviewed_sha": "031364e0d426aec8701a3db3a1220dd79570250c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "71228c7d8ba7",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Shell-transition threshold at $N = 3$' are appropriately qualified.",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:07.000Z",
+        "reviewed_sha": "031364e0d426aec8701a3db3a1220dd79570250c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "71228c7d8ba7",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Shell-transition threshold at $N = 3$'.",
+        "severity": "minor",
+        "evidence": "shell-transition-knot-interpretation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:07.000Z",
+        "reviewed_sha": "031364e0d426aec8701a3db3a1220dd79570250c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "71228c7d8ba7",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose arguments in 'Shell-transition threshold at $N = 3$' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "shell-transition-knot-interpretation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:07.000Z",
+        "reviewed_sha": "031364e0d426aec8701a3db3a1220dd79570250c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "71228c7d8ba7",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:07.000Z",
+        "reviewed_sha": "031364e0d426aec8701a3db3a1220dd79570250c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "71228c7d8ba7",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Shell-transition threshold at $N = 3$', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "shell-transition-knot-interpretation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:07.000Z",
+        "reviewed_sha": "031364e0d426aec8701a3db3a1220dd79570250c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "71228c7d8ba7",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Shell-transition threshold at $N = 3$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "shell-transition-knot-interpretation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:07.000Z",
+        "reviewed_sha": "031364e0d426aec8701a3db3a1220dd79570250c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "71228c7d8ba7",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Shell-transition threshold at $N = 3$' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "shell-transition-knot-interpretation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:07.000Z",
+        "reviewed_sha": "031364e0d426aec8701a3db3a1220dd79570250c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "71228c7d8ba7",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Shell-transition threshold at $N = 3$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "shell-transition-knot-interpretation.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:07.000Z",
+        "reviewed_sha": "031364e0d426aec8701a3db3a1220dd79570250c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "71228c7d8ba7",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Shell-transition threshold at $N = 3$' are reproducible.",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:07.000Z",
+        "reviewed_sha": "031364e0d426aec8701a3db3a1220dd79570250c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "71228c7d8ba7",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:11:58.919Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Shell-transition threshold at $N = 3$' are consistent."
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "b8b6fdebb321",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:07.000Z",
+        "reviewed_sha": "031364e0d426aec8701a3db3a1220dd79570250c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:51:07.000Z",
+        "reviewed_sha": "031364e0d426aec8701a3db3a1220dd79570250c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "07e36150d0d2",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q13",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:03.265Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Sub/above-threshold contrast is substantive.",
+        "notes": "Non-trap flag: block asserts Borromean link B_3 'has crossing number 3'; corpus braid word (s0 s1^-1)^3 in B_3 has 6 crossings and the Borromean rings' minimal crossing number is 6 (stable-atom-properties.md counts B_3 x Delta_3 as 9 = 6+3, consistent with 6). '3' may mean components/pairwise interlockings; needs owner reconciliation, not edited."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "07e36150d0d2",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q13",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:03.308Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Full-context read; no setup-then-reframe pivot."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "07e36150d0d2",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q13",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:03.351Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Full-context read; em-dash usage absent or true parenthetical/gloss; density low."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "07e36150d0d2",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q13",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:03.391Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Full-context read; no reflex three-item lists; enumerations are substantive."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "07e36150d0d2",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q13",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:03.433Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Full-context read; final line is content/cross-reference, not a quotable closer."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "07e36150d0d2",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q13",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:03.488Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Full-context read; no narration of emphasis ('we emphasize', 'note the framing')."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "07e36150d0d2",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q13",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:03.527Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Full-context read; no block-final restatement of established content."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "07e36150d0d2",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q13",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:03.569Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Full-context read; institutional scholarly register throughout."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "07e36150d0d2",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q13",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:03.612Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Full-context read; no unqualified maximum-strength claims."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "07e36150d0d2",
+          "ts": "6cadef2e0a44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q13",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:03.656Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Full-context read; prose parses aloud; noun chains within normal mathematical register."
+      }
+    ]
+  }
+}

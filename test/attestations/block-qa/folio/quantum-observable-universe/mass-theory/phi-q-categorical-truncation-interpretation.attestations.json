@@ -1,0 +1,483 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/phi-q-categorical-truncation-interpretation",
+    "path": "folio/quantum-observable-universe/mass-theory/phi-q-categorical-truncation-interpretation"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:31.327Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'This strictly differs from the structural GB-depth' is the block's disambiguating claim, stated positively as a difference between two named invariants."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:31.375Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Two short paragraphs, five sentences; no reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:31.425Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Zero em-dashes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:31.505Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "The title promises 'the THREE depth invariants' and the body distinguishes only TWO: the witness k_max (Coxeter-length filtration) and the structural GB-depth k_star(T_w). The only other symbol in the block, n_0, appears once as a bound (k_star <= n_0) and is never defined, so it does not supply a third invariant. Either the third was lost or the count is a reflex triple in the title.",
+        "notes": "Proposed (structural \u2014 the fix requires knowing what the third invariant is): name and define the third depth invariant, or retitle to 'the two depth invariants'. Candidate for the missing third, from the sibling proof block: the empirical truncation level k = 2 (the 'subtractive sweet spot'), which is a third and genuinely distinct notion of depth."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:31.576Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on a technical requirement, not a quotable line."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:31.646Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narration of emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:31.761Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Paragraph 2 adds the bound and the Habiro requirement."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:31.839Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:32.026Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'strictly differs' and 'rigid upper bound' are mild; both attach to specific claims."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:32.079Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Final sentence: 'The canonical real-valued mass requires the uniform z-Habiro bound to achieve canonical closed-form agreement, as truncation depths diverge empirically if left unregularized.' It uses 'canonical' twice as two different modifiers inside one sentence and ends on a subordinate clause; it stalls aloud.",
+        "notes": "SUSPECTED SWEEP DAMAGE, reported for the coordinator rather than fixed (I could not confirm it from history \u2014 the file has a single commit, 230cdd113, so no earlier wording survives to diff against). The doubled 'canonical' fits the token-substitution class in which 'canonical' replaced 'numerical(ly)': read as 'The NUMERICAL real-valued mass requires the uniform z-Habiro bound to achieve NUMERICAL closed-form agreement', the sentence becomes coherent and matches the sibling proof block's framing ('its real-valued canonical evaluation at |V-hat| approx 1', 'the canonical mass formula at q = q_0'), where the same word sits where 'numerical' would be expected. Flagged at moderate confidence only: 'canonical' is also a live technical term in this corpus, so a reader who knows the intended sense should adjudicate before any sweep. Also unresolved: n_0 is used undefined."
+      }
+    ]
+  }
+}

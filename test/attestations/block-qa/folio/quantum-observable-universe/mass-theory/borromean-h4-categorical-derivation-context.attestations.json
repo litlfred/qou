@@ -1,0 +1,204 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation-context",
+    "path": "folio/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation-context"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. Heading \"## Connection to the wider framework on `main`\" -> \"## Connection to the wider framework\"; \"each have a categorical home that landed on `main` after the initial derivation\" -> \"each acquired a categorical home elsewhere in the framework after the initial derivation\"; \"that was the original GAP-A-4 question (`conj:s5-so3-fiber-action`) and remains open\" -> \"that is the question posed by (`conj:s5-so3-fiber-action`), and it remains open\". The open cross-algebra obstruction and the eight refuted candidate functors survive.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d7d54fc11654",
+          "ts": "83c61ffc75ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:33.894Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "'The derivation is purely categorical -- no empirical fitting, no free parameters' is the corpus's derived-vs-fitted discipline, and the mu_lambda-vs-chi^lambda contrast prevents a real misreading."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d7d54fc11654",
+          "ts": "83c61ffc75ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:33.929Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 451-word remark; the H_3 weight vector and the h^4 chain recomputed."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d7d54fc11654",
+          "ts": "83c61ffc75ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:33.965Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Three spaced dashes, each a true parenthetical or a substantive contrast ('the q-Laplacian eigenvalues -- heat-flow decay rates, *not* the braid-character values')."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d7d54fc11654",
+          "ts": "83c61ffc75ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.000Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 451-word remark; the H_3 weight vector and the h^4 chain recomputed."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d7d54fc11654",
+          "ts": "83c61ffc75ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.035Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 451-word remark; the H_3 weight vector and the h^4 chain recomputed."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d7d54fc11654",
+          "ts": "83c61ffc75ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.071Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 451-word remark; the H_3 weight vector and the h^4 chain recomputed."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d7d54fc11654",
+          "ts": "83c61ffc75ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.106Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 451-word remark; the H_3 weight vector and the h^4 chain recomputed."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d7d54fc11654",
+          "ts": "83c61ffc75ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.140Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 451-word remark; the H_3 weight vector and the h^4 chain recomputed."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d7d54fc11654",
+          "ts": "83c61ffc75ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.175Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'the *first topological invariant* of the Borromean linking' is glossed immediately as 'the part of the Jones polynomial that distinguishes B_3 from the trivial 3-component unlink', i.e. an ordinal fact rather than an inflation."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d7d54fc11654",
+          "ts": "83c61ffc75ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.211Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Parses.",
+        "notes": "RIGOR (not a trap): VERIFIED -- y_{(2,1)}(q)=1/[2]_q^2 gives 1/4 at q=1; the full H_3 vector ([4]_q/[2]_q^3, 1/[2]_q^2, 0) evaluates to (1/2, 1/4, 0) as stated; the printed Hecke relation q*sigma^2 = (q^2-1)sigma + q is equivalent to AGENTS.md 7a's sigma^2 = (q-q^{-1})sigma + 1; the h^4 coefficient of (4+h^2-3h^4-h^6)/(4+h^2) is -3/4 by series division. SCOPE: 'eight candidate cross-algebra functors have been refuted' is a durable refutation without the (a) scope-limited / (b) structural-exclusion classification AGENTS.md requires; proposed wording: 'eight candidate cross-algebra functors have been tested and none reproduces ...'."
+      }
+    ]
+  }
+}

@@ -1,0 +1,496 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/observations/archimedean-macroscopic-washout",
+    "path": "folio/quantum-observable-universe/observations/archimedean-macroscopic-washout"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "cfb9a49186ed",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "cfb9a49186ed",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies fit-section-chapter. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-false-claim. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-vacuous. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-circular. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-overclaim. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-hidden-dof. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-non-sequitur. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-lean-narrative-divergence. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-citation-misuse. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-definitional-ambiguity. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c5605181b436",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The algebraic and logical relations in 'Archimedean macroscopic wash-out: why bounded observers see continuous q-Gaussian bell curves on a discrete substrate' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/observations/archimedean-macroscopic-washout.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-empirical-fragility. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-physical-implausibility. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-reproducibility. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies da-referee-verdict. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block satisfies milnor-brevity. No issues found.",
+        "reviewed_at": "2026-07-07T23:34:07Z",
+        "reviewed_sha": "d33ec8a8bda78bab6c23f5a38df2890961ea72e9",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "cfb9a49186ed",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:49.348Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "'q-Gaussian rather than Gaussian' is the block's mathematical content (global correlations -> q-Gaussian attractor)"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "cfb9a49186ed",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:49.391Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no rhetorical pivot construction found"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "cfb9a49186ed",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:49.447Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no load-bearing em-dash construction found"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "cfb9a49186ed",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:49.512Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no compulsive triple construction found"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "cfb9a49186ed",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:49.557Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no closing aphorism construction found"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "cfb9a49186ed",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:49.621Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no meta-commentary construction found"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "cfb9a49186ed",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:49.676Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no thesis restatement construction found"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "cfb9a49186ed",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:49.733Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no performed warmth construction found"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "cfb9a49186ed",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:49.781Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no superlative inflation construction found"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "cfb9a49186ed",
+          "ts": "21b96ec89d1f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b0",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:25:49.817Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "full-text read; no non-speakable syntax construction found"
+      }
+    ]
+  }
+}

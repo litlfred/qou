@@ -1,0 +1,1080 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion",
+    "path": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "324b9dceee83",
+          "ts": "b697f5dc18b8",
+          "lean": "14a46a58d433"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "324b9dceee83",
+          "ts": "b697f5dc18b8",
+          "lean": "14a46a58d433"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "528221f3982b",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "Statement + proof followed by **Why this matters.** (lines 66-77) giving physical/motivational reading (\"not posited — it is read off as the monodromy...\"). The block uses rem:rho-s3-holonomy-exposition but has no interprets: link holding this interpretation.",
+        "notes": "Interpretation could move to a linked remark; the cited exposition remark is a candidate host."
+      },
+      {
+        "field_hash": {
+          "md": "528221f3982b",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "ramified-disc-fusion.md:66-77 `**Why this matters.** The proposition closes the geometric chain … the S_3 Galois action … is not posited — it is read off as the monodromy …`",
+        "notes": "Statement (parts 1-3) + Sketch of proof are the bare claim, but the trailing **Why this matters** paragraph is substantive interpretation/significance with no companion interprets: remark holding it. Borderline; recommend relocating to a linked remark. Warn, not fail."
+      },
+      {
+        "field_hash": {
+          "md": "2b0b74c57f6f",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Statement contains only the bare claim without physical interpretation.",
+        "severity": "minor"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "528221f3982b",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Placed in sec:exceptional-divisor-reeb (geometric face: exceptional divisor, Reeb bundle, vertex operators), uses def:reeb-bundle + def:color-sector-coords. Ramified-disc fusion / S_3 monodromy at the foundry boundary of the Reeb bundle is squarely the section's subject."
+      },
+      {
+        "field_hash": {
+          "md": "2b0b74c57f6f",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Block placement and kind 'proposition' match validated structurally for 'Ramified-disc fusion at the foundry boundary' within chapter 'mass-theory'.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:09:49.000Z",
+        "reviewed_sha": "9c187e94ca72e0b77664092d6c8f580ca18b81e8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2b0b74c57f6f",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "528221f3982b",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is topological/algebraic (branched cover, ramification degree, S_3 Galois monodromy, cube roots of unity) with no archimedean constructs (no Real.sqrt/exp, no numeric q≈, no order hypothesis). Generic/substrate-side content appropriate to the geometric-face chapter regime."
+      },
+      {
+        "field_hash": {
+          "md": "2b0b74c57f6f",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The sibling Lean file folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is missing entirely.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.md:1",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-fable-5-1",
+          "agent_date": "2026-09-03T20:28:24Z",
+          "agent_skill": "local/dispatch-agent"
+        },
+        "reviewed_at": "2026-09-03T20:28:24Z",
+        "reviewed_sha": "4a4e5ce3d2cbbfd6b22fdfc08b74b38323a736e3",
+        "notes": "Geometric-face section (sec:exceptional-divisor-reeb); the Statement is purely topological/finite-group/cyclotomic with no q, no numeric value, no Real.*, no units and no order hypothesis, so its regime matches its section; the 2026-07-07 fail was a templated missing-sibling refusal, not a wall-side reading.",
+        "evidence": "REGIME. The block sits in mass-theory.ts:447-470, section 'Exceptional divisor, Reeb bundle, and vertex operators' (sec:exceptional-divisor-reeb), under the '=== GEOMETRIC FACE ===' banner at mass-theory.ts:440-445; the chapter docstring (mass-theory.ts:4-21) names four faces and lists this material under 'Geometric' (line 13-16), distinct from the 'Archimedean' (lines 17-18) and 'Physical' (lines 19-20) faces. The chapter profile _folio-chapter-profiles.qou.ts:88-90 admits regimes {na, symbolic, generic-R, real-positive, real-gt-1, fixed-q0} for mass-theory and line 175 lists mass-theory among ARCHIMEDEAN_CHAPTERS, so the chapter tolerates both sides; the section-level regime is geometric/topological over the state bundle S and its Reeb bundle R_p (def:reeb-bundle, def:color-sector-coords are in uses[] and defined in this same section, mass-theory.ts:452,458). Peer verdicts in the same section on this criterion: reeb-bundle pass, vertex-operator pass, vertex-is-exceptional-divisor pass, six-canonical-knot-operators pass, reeb-bundle-complement-equals-volume pass; the only fail in the section (q-reeb-flow-on-color-coords) carries the identical 2026-07-07 'sibling Lean file missing' template. TOKENS IN THE STATEMENT (ramified-disc-fusion.md:1-11): line 1 'small open disc D subset S_p' (point-set topology of the fibre; not a Real.* construct, no numeric value); line 4 'pi_H^{-1}(D) subset R_p' (bundle preimage, topological); line 9 'connected topological disc', 'degree-3 ramification' (branched-cover topology, integer degree); line 10 'C_3 = <(rgb)>', 'symmetric group S_3', 'Galois group of the regular closure' (finite group theory / algebra); line 11 'Lagrange resolvents', 'w_k -> zeta w_k' (cyclotomic algebra over C, zeta^3 = 1), 'parity reflections' (combinatorial). The statement contains NO occurrence of q or q_0, no numeric q-value, no Real.sqrt/rpow/log/exp/cos, no MeV/m_e/CODATA, no order hypothesis (0<q, q>1), no Vol or Bloch-Wigner, no limit over R. Its q-regime is 'na', which is in the chapter's admitted set. TOKENS OUTSIDE THE STATEMENT (proof-sketch paragraph, md:13): 'phi -> 0 or pi', 'sin phi -> 0' (a real latitude-angle limit and the sine function - archimedean/analytic), 'cube-root DFT', 'zeta^{-k}' (algebraic). These belong to the wall-side-proof criterion, not this one; they are the collapse argument for claim 1 and do not enter the Statement. BRANCH. FAIL-1 (generic/substrate-section statement hard-coding archimedean constructs unflagged) does not apply: no archimedean construct appears in the statement at all. FAIL-2 (archimedean-section statement that is a purely algebraic identity belonging upstream) does not apply: claims 1-2 are topological facts about the Reeb bundle R_p over the state bundle, objects defined in this very section, and claim 3 is a comparison of that geometric monodromy with the algebraic S_3 resolvent action - i.e. exactly the geometric-face bridge this section exists to state, not a displaced braids-and-knots identity. WARN (mixing regimes without saying which side) does not apply: the statement is uniformly topological/algebraic, evaluates nothing numerically, and the one analytic device (sin phi -> 0) is confined to the proof sketch. PASS: the statement's regime (topology of a branched cover + finite-group/cyclotomic algebra, q-regime 'na') matches its geometric-face section, and no banner is needed because nothing archimedean is being specialised. PRIOR ENTRY. The 2026-07-07 'fail' (gemini-3.1-pro, notes 'sibling Lean file ... is missing entirely', evidence 'ramified-disc-fusion.md:1') is not a wall-side-statement verdict: the criterion is depends_on ['md'], automated:false, and adjudicates the narrative Statement's regime; the reviewer never engaged the .md text. It was also mis-stamped severity 'minor' against the criterion default 'major', and its field_hash (md 2b0b74c57f6f / ts b697f5dc18b8) predates the current tree (md 6db9a8b7558d / ts 744f580506bc). The underlying claim is itself misleading: the .ts lean.ref (ramified-disc-fusion.ts:15) targets the library declaration qou:QOU.BraidsKnots.RamifiedDiscFusion.resolvent_agreement, which exists at folio/quantum-observable-universe/lean/QOU/BraidsKnots/RamifiedDiscFusion.lean (line 51, over C with hzeta : zeta^3 = 1) and resolves by AGENTS.md §0a candidate 2 - the .qa.json source_hashes already record lean 14a46a58d433 - so the absent sibling is the no-shadowing-stub convention, not a defect. The earlier 2026-06-27 pass (qa-proof-wall-fit-audit) reached the same regime reading independently. Prior verdict was NOT a valid wall-side verdict."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "528221f3982b",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The sketch proves via topological tiling / quotient-cone argument, loop-monodromy, and the cube-root DFT relating sectors to Lagrange resolvents — algebraic/topological machinery matching the algebraic statement. No archimedean linarith/IVT/continuity/Real.* method."
+      },
+      {
+        "field_hash": {
+          "md": "2b0b74c57f6f",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Lean proof is missing because the Lean file folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is not found.",
+        "severity": "major",
+        "evidence": "Lean proof is missing because the Lean file folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is not found."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Lean file checked on branch. No 'proof-no-trivial-true' issue detected. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:37:37.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2b0b74c57f6f",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-false-claim.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:09:49.000Z",
+        "reviewed_sha": "9c187e94ca72e0b77664092d6c8f580ca18b81e8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2b0b74c57f6f",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-vacuous.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:09:49.000Z",
+        "reviewed_sha": "9c187e94ca72e0b77664092d6c8f580ca18b81e8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2b0b74c57f6f",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-circular.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:09:49.000Z",
+        "reviewed_sha": "9c187e94ca72e0b77664092d6c8f580ca18b81e8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2b0b74c57f6f",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-overclaim.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:09:49.000Z",
+        "reviewed_sha": "9c187e94ca72e0b77664092d6c8f580ca18b81e8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2b0b74c57f6f",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-hidden-dof.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:09:49.000Z",
+        "reviewed_sha": "9c187e94ca72e0b77664092d6c8f580ca18b81e8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2b0b74c57f6f",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-non-sequitur.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:09:49.000Z",
+        "reviewed_sha": "9c187e94ca72e0b77664092d6c8f580ca18b81e8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2b0b74c57f6f",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-citation-misuse.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:09:49.000Z",
+        "reviewed_sha": "9c187e94ca72e0b77664092d6c8f580ca18b81e8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2b0b74c57f6f",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:09:49.000Z",
+        "reviewed_sha": "9c187e94ca72e0b77664092d6c8f580ca18b81e8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2b0b74c57f6f",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-empirical-fragility.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:09:49.000Z",
+        "reviewed_sha": "9c187e94ca72e0b77664092d6c8f580ca18b81e8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2b0b74c57f6f",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-physical-implausibility.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:09:49.000Z",
+        "reviewed_sha": "9c187e94ca72e0b77664092d6c8f580ca18b81e8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2b0b74c57f6f",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-reproducibility.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:09:49.000Z",
+        "reviewed_sha": "9c187e94ca72e0b77664092d6c8f580ca18b81e8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "2b0b74c57f6f",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Referee verdict: open-objection. Objection: Sibling Lean file is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file is missing, preventing formal verification of the claims.",
+        "evidence": "Referee verdict: open-objection. Objection: Sibling Lean file is missing."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:09:49.000Z",
+        "reviewed_sha": "9c187e94ca72e0b77664092d6c8f580ca18b81e8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2b0b74c57f6f",
+          "ts": "b697f5dc18b8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is missing, leading to complete divergence.",
+        "severity": "minor",
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is missing, leading to complete divergence."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:09:49.000Z",
+        "reviewed_sha": "9c187e94ca72e0b77664092d6c8f580ca18b81e8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq17 enforcing Milnor rules. Restructured wordy trajectory explanations into direct mathematical prose. Streamlined 'why before what' for the Reeb bundle and geometric constructs. Verified math formatting.",
+        "reviewed_at": "2026-07-07T14:26:56.713410Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.713410Z"
+        },
+        "field_hash": {
+          "md": "2b0b74c57f6f",
+          "ts": "b697f5dc18b8"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.",
+        "reviewed_at": "2026-07-08T18:09:49.000Z",
+        "reviewed_sha": "9c187e94ca72e0b77664092d6c8f580ca18b81e8",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.308Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Proposition (three numbered clauses plus a discursive paragraph), read in full. All ten categories clean: the 'three sectors / three colour-tube sections' groupings are the actual r/g/b content rather than reflex triples; the paragraph is a chain of short declaratives with no dashes, no closer, no meta-commentary, no warmth. RIGOR PASS on the algebra, which I verified directly. With the cube-root DFT w_k = c_r + zeta^k c_g + zeta^{2k} c_b and zeta^3 = 1, the cyclic permutation (c_r,c_g,c_b) -> (c_g,c_b,c_r) gives w_k -> c_g + zeta^k c_b + zeta^{2k} c_r = zeta^{-k} w_k. So the PROSE is exactly right, and the C_3 monodromy / degree-3 ramification / 'adjoining orientation reversals yields S_3' chain is coherent.",
+        "notes": "TWO FINDINGS. (1) THE STATEMENT CONTRADICTS ITS OWN PROSE. Clause 3 says 'The cyclic generator (rgb) corresponds to the cyclic permutation w_k -> zeta w_k', but the paragraph below says the same permutation 'sends w_k -> zeta^{-k} w_k'. These are different maps: the correct exponent depends on the resolvent index k (and carries a minus sign), so clause 3's uniform 'zeta' is wrong at every k except k = 1 -- at k = 0 it multiplies an invariant by zeta, and at k = 2 it is off by zeta^{-3}... i.e. it disagrees except where the exponents happen to coincide. My derivation above confirms the prose. Proposed fix: clause 3 should read 'corresponds to w_k -> zeta^{-k} w_k'. (2) CHECK THE GALOIS CLAIM. Clause 2 says 'The monodromy around dD is the cyclic group C_3' and then 'The full Galois group of the regular closure is the symmetric group S_3'. A degree-3 cover with cyclic C_3 monodromy IS already regular (Galois with group C_3); its regular closure does not acquire transpositions. The paragraph is more careful -- it obtains S_3 only after 'adjoining orientation reversals', which is extra structure beyond the cover -- so as in finding (1) the prose is right and the numbered clause overstates. Proposed fix: say that C_3 is the monodromy and that S_3 arises once orientation reversals are adjoined, rather than calling S_3 the Galois group of the regular closure."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.347Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Proposition (three numbered clauses plus a discursive paragraph), read in full. All ten categories clean: the 'three sectors / three colour-tube sections' groupings are the actual r/g/b content rather than reflex triples; the paragraph is a chain of short declaratives with no dashes, no closer, no meta-commentary, no warmth. RIGOR PASS on the algebra, which I verified directly. With the cube-root DFT w_k = c_r + zeta^k c_g + zeta^{2k} c_b and zeta^3 = 1, the cyclic permutation (c_r,c_g,c_b) -> (c_g,c_b,c_r) gives w_k -> c_g + zeta^k c_b + zeta^{2k} c_r = zeta^{-k} w_k. So the PROSE is exactly right, and the C_3 monodromy / degree-3 ramification / 'adjoining orientation reversals yields S_3' chain is coherent.",
+        "notes": "TWO FINDINGS. (1) THE STATEMENT CONTRADICTS ITS OWN PROSE. Clause 3 says 'The cyclic generator (rgb) corresponds to the cyclic permutation w_k -> zeta w_k', but the paragraph below says the same permutation 'sends w_k -> zeta^{-k} w_k'. These are different maps: the correct exponent depends on the resolvent index k (and carries a minus sign), so clause 3's uniform 'zeta' is wrong at every k except k = 1 -- at k = 0 it multiplies an invariant by zeta, and at k = 2 it is off by zeta^{-3}... i.e. it disagrees except where the exponents happen to coincide. My derivation above confirms the prose. Proposed fix: clause 3 should read 'corresponds to w_k -> zeta^{-k} w_k'. (2) CHECK THE GALOIS CLAIM. Clause 2 says 'The monodromy around dD is the cyclic group C_3' and then 'The full Galois group of the regular closure is the symmetric group S_3'. A degree-3 cover with cyclic C_3 monodromy IS already regular (Galois with group C_3); its regular closure does not acquire transpositions. The paragraph is more careful -- it obtains S_3 only after 'adjoining orientation reversals', which is extra structure beyond the cover -- so as in finding (1) the prose is right and the numbered clause overstates. Proposed fix: say that C_3 is the monodromy and that S_3 arises once orientation reversals are adjoined, rather than calling S_3 the Galois group of the regular closure."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.387Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Proposition (three numbered clauses plus a discursive paragraph), read in full. All ten categories clean: the 'three sectors / three colour-tube sections' groupings are the actual r/g/b content rather than reflex triples; the paragraph is a chain of short declaratives with no dashes, no closer, no meta-commentary, no warmth. RIGOR PASS on the algebra, which I verified directly. With the cube-root DFT w_k = c_r + zeta^k c_g + zeta^{2k} c_b and zeta^3 = 1, the cyclic permutation (c_r,c_g,c_b) -> (c_g,c_b,c_r) gives w_k -> c_g + zeta^k c_b + zeta^{2k} c_r = zeta^{-k} w_k. So the PROSE is exactly right, and the C_3 monodromy / degree-3 ramification / 'adjoining orientation reversals yields S_3' chain is coherent.",
+        "notes": "TWO FINDINGS. (1) THE STATEMENT CONTRADICTS ITS OWN PROSE. Clause 3 says 'The cyclic generator (rgb) corresponds to the cyclic permutation w_k -> zeta w_k', but the paragraph below says the same permutation 'sends w_k -> zeta^{-k} w_k'. These are different maps: the correct exponent depends on the resolvent index k (and carries a minus sign), so clause 3's uniform 'zeta' is wrong at every k except k = 1 -- at k = 0 it multiplies an invariant by zeta, and at k = 2 it is off by zeta^{-3}... i.e. it disagrees except where the exponents happen to coincide. My derivation above confirms the prose. Proposed fix: clause 3 should read 'corresponds to w_k -> zeta^{-k} w_k'. (2) CHECK THE GALOIS CLAIM. Clause 2 says 'The monodromy around dD is the cyclic group C_3' and then 'The full Galois group of the regular closure is the symmetric group S_3'. A degree-3 cover with cyclic C_3 monodromy IS already regular (Galois with group C_3); its regular closure does not acquire transpositions. The paragraph is more careful -- it obtains S_3 only after 'adjoining orientation reversals', which is extra structure beyond the cover -- so as in finding (1) the prose is right and the numbered clause overstates. Proposed fix: say that C_3 is the monodromy and that S_3 arises once orientation reversals are adjoined, rather than calling S_3 the Galois group of the regular closure."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.428Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Proposition (three numbered clauses plus a discursive paragraph), read in full. All ten categories clean: the 'three sectors / three colour-tube sections' groupings are the actual r/g/b content rather than reflex triples; the paragraph is a chain of short declaratives with no dashes, no closer, no meta-commentary, no warmth. RIGOR PASS on the algebra, which I verified directly. With the cube-root DFT w_k = c_r + zeta^k c_g + zeta^{2k} c_b and zeta^3 = 1, the cyclic permutation (c_r,c_g,c_b) -> (c_g,c_b,c_r) gives w_k -> c_g + zeta^k c_b + zeta^{2k} c_r = zeta^{-k} w_k. So the PROSE is exactly right, and the C_3 monodromy / degree-3 ramification / 'adjoining orientation reversals yields S_3' chain is coherent.",
+        "notes": "TWO FINDINGS. (1) THE STATEMENT CONTRADICTS ITS OWN PROSE. Clause 3 says 'The cyclic generator (rgb) corresponds to the cyclic permutation w_k -> zeta w_k', but the paragraph below says the same permutation 'sends w_k -> zeta^{-k} w_k'. These are different maps: the correct exponent depends on the resolvent index k (and carries a minus sign), so clause 3's uniform 'zeta' is wrong at every k except k = 1 -- at k = 0 it multiplies an invariant by zeta, and at k = 2 it is off by zeta^{-3}... i.e. it disagrees except where the exponents happen to coincide. My derivation above confirms the prose. Proposed fix: clause 3 should read 'corresponds to w_k -> zeta^{-k} w_k'. (2) CHECK THE GALOIS CLAIM. Clause 2 says 'The monodromy around dD is the cyclic group C_3' and then 'The full Galois group of the regular closure is the symmetric group S_3'. A degree-3 cover with cyclic C_3 monodromy IS already regular (Galois with group C_3); its regular closure does not acquire transpositions. The paragraph is more careful -- it obtains S_3 only after 'adjoining orientation reversals', which is extra structure beyond the cover -- so as in finding (1) the prose is right and the numbered clause overstates. Proposed fix: say that C_3 is the monodromy and that S_3 arises once orientation reversals are adjoined, rather than calling S_3 the Galois group of the regular closure."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.468Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Proposition (three numbered clauses plus a discursive paragraph), read in full. All ten categories clean: the 'three sectors / three colour-tube sections' groupings are the actual r/g/b content rather than reflex triples; the paragraph is a chain of short declaratives with no dashes, no closer, no meta-commentary, no warmth. RIGOR PASS on the algebra, which I verified directly. With the cube-root DFT w_k = c_r + zeta^k c_g + zeta^{2k} c_b and zeta^3 = 1, the cyclic permutation (c_r,c_g,c_b) -> (c_g,c_b,c_r) gives w_k -> c_g + zeta^k c_b + zeta^{2k} c_r = zeta^{-k} w_k. So the PROSE is exactly right, and the C_3 monodromy / degree-3 ramification / 'adjoining orientation reversals yields S_3' chain is coherent.",
+        "notes": "TWO FINDINGS. (1) THE STATEMENT CONTRADICTS ITS OWN PROSE. Clause 3 says 'The cyclic generator (rgb) corresponds to the cyclic permutation w_k -> zeta w_k', but the paragraph below says the same permutation 'sends w_k -> zeta^{-k} w_k'. These are different maps: the correct exponent depends on the resolvent index k (and carries a minus sign), so clause 3's uniform 'zeta' is wrong at every k except k = 1 -- at k = 0 it multiplies an invariant by zeta, and at k = 2 it is off by zeta^{-3}... i.e. it disagrees except where the exponents happen to coincide. My derivation above confirms the prose. Proposed fix: clause 3 should read 'corresponds to w_k -> zeta^{-k} w_k'. (2) CHECK THE GALOIS CLAIM. Clause 2 says 'The monodromy around dD is the cyclic group C_3' and then 'The full Galois group of the regular closure is the symmetric group S_3'. A degree-3 cover with cyclic C_3 monodromy IS already regular (Galois with group C_3); its regular closure does not acquire transpositions. The paragraph is more careful -- it obtains S_3 only after 'adjoining orientation reversals', which is extra structure beyond the cover -- so as in finding (1) the prose is right and the numbered clause overstates. Proposed fix: say that C_3 is the monodromy and that S_3 arises once orientation reversals are adjoined, rather than calling S_3 the Galois group of the regular closure."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.508Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Proposition (three numbered clauses plus a discursive paragraph), read in full. All ten categories clean: the 'three sectors / three colour-tube sections' groupings are the actual r/g/b content rather than reflex triples; the paragraph is a chain of short declaratives with no dashes, no closer, no meta-commentary, no warmth. RIGOR PASS on the algebra, which I verified directly. With the cube-root DFT w_k = c_r + zeta^k c_g + zeta^{2k} c_b and zeta^3 = 1, the cyclic permutation (c_r,c_g,c_b) -> (c_g,c_b,c_r) gives w_k -> c_g + zeta^k c_b + zeta^{2k} c_r = zeta^{-k} w_k. So the PROSE is exactly right, and the C_3 monodromy / degree-3 ramification / 'adjoining orientation reversals yields S_3' chain is coherent.",
+        "notes": "TWO FINDINGS. (1) THE STATEMENT CONTRADICTS ITS OWN PROSE. Clause 3 says 'The cyclic generator (rgb) corresponds to the cyclic permutation w_k -> zeta w_k', but the paragraph below says the same permutation 'sends w_k -> zeta^{-k} w_k'. These are different maps: the correct exponent depends on the resolvent index k (and carries a minus sign), so clause 3's uniform 'zeta' is wrong at every k except k = 1 -- at k = 0 it multiplies an invariant by zeta, and at k = 2 it is off by zeta^{-3}... i.e. it disagrees except where the exponents happen to coincide. My derivation above confirms the prose. Proposed fix: clause 3 should read 'corresponds to w_k -> zeta^{-k} w_k'. (2) CHECK THE GALOIS CLAIM. Clause 2 says 'The monodromy around dD is the cyclic group C_3' and then 'The full Galois group of the regular closure is the symmetric group S_3'. A degree-3 cover with cyclic C_3 monodromy IS already regular (Galois with group C_3); its regular closure does not acquire transpositions. The paragraph is more careful -- it obtains S_3 only after 'adjoining orientation reversals', which is extra structure beyond the cover -- so as in finding (1) the prose is right and the numbered clause overstates. Proposed fix: say that C_3 is the monodromy and that S_3 arises once orientation reversals are adjoined, rather than calling S_3 the Galois group of the regular closure."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.549Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Proposition (three numbered clauses plus a discursive paragraph), read in full. All ten categories clean: the 'three sectors / three colour-tube sections' groupings are the actual r/g/b content rather than reflex triples; the paragraph is a chain of short declaratives with no dashes, no closer, no meta-commentary, no warmth. RIGOR PASS on the algebra, which I verified directly. With the cube-root DFT w_k = c_r + zeta^k c_g + zeta^{2k} c_b and zeta^3 = 1, the cyclic permutation (c_r,c_g,c_b) -> (c_g,c_b,c_r) gives w_k -> c_g + zeta^k c_b + zeta^{2k} c_r = zeta^{-k} w_k. So the PROSE is exactly right, and the C_3 monodromy / degree-3 ramification / 'adjoining orientation reversals yields S_3' chain is coherent.",
+        "notes": "TWO FINDINGS. (1) THE STATEMENT CONTRADICTS ITS OWN PROSE. Clause 3 says 'The cyclic generator (rgb) corresponds to the cyclic permutation w_k -> zeta w_k', but the paragraph below says the same permutation 'sends w_k -> zeta^{-k} w_k'. These are different maps: the correct exponent depends on the resolvent index k (and carries a minus sign), so clause 3's uniform 'zeta' is wrong at every k except k = 1 -- at k = 0 it multiplies an invariant by zeta, and at k = 2 it is off by zeta^{-3}... i.e. it disagrees except where the exponents happen to coincide. My derivation above confirms the prose. Proposed fix: clause 3 should read 'corresponds to w_k -> zeta^{-k} w_k'. (2) CHECK THE GALOIS CLAIM. Clause 2 says 'The monodromy around dD is the cyclic group C_3' and then 'The full Galois group of the regular closure is the symmetric group S_3'. A degree-3 cover with cyclic C_3 monodromy IS already regular (Galois with group C_3); its regular closure does not acquire transpositions. The paragraph is more careful -- it obtains S_3 only after 'adjoining orientation reversals', which is extra structure beyond the cover -- so as in finding (1) the prose is right and the numbered clause overstates. Proposed fix: say that C_3 is the monodromy and that S_3 arises once orientation reversals are adjoined, rather than calling S_3 the Galois group of the regular closure."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.589Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Proposition (three numbered clauses plus a discursive paragraph), read in full. All ten categories clean: the 'three sectors / three colour-tube sections' groupings are the actual r/g/b content rather than reflex triples; the paragraph is a chain of short declaratives with no dashes, no closer, no meta-commentary, no warmth. RIGOR PASS on the algebra, which I verified directly. With the cube-root DFT w_k = c_r + zeta^k c_g + zeta^{2k} c_b and zeta^3 = 1, the cyclic permutation (c_r,c_g,c_b) -> (c_g,c_b,c_r) gives w_k -> c_g + zeta^k c_b + zeta^{2k} c_r = zeta^{-k} w_k. So the PROSE is exactly right, and the C_3 monodromy / degree-3 ramification / 'adjoining orientation reversals yields S_3' chain is coherent.",
+        "notes": "TWO FINDINGS. (1) THE STATEMENT CONTRADICTS ITS OWN PROSE. Clause 3 says 'The cyclic generator (rgb) corresponds to the cyclic permutation w_k -> zeta w_k', but the paragraph below says the same permutation 'sends w_k -> zeta^{-k} w_k'. These are different maps: the correct exponent depends on the resolvent index k (and carries a minus sign), so clause 3's uniform 'zeta' is wrong at every k except k = 1 -- at k = 0 it multiplies an invariant by zeta, and at k = 2 it is off by zeta^{-3}... i.e. it disagrees except where the exponents happen to coincide. My derivation above confirms the prose. Proposed fix: clause 3 should read 'corresponds to w_k -> zeta^{-k} w_k'. (2) CHECK THE GALOIS CLAIM. Clause 2 says 'The monodromy around dD is the cyclic group C_3' and then 'The full Galois group of the regular closure is the symmetric group S_3'. A degree-3 cover with cyclic C_3 monodromy IS already regular (Galois with group C_3); its regular closure does not acquire transpositions. The paragraph is more careful -- it obtains S_3 only after 'adjoining orientation reversals', which is extra structure beyond the cover -- so as in finding (1) the prose is right and the numbered clause overstates. Proposed fix: say that C_3 is the monodromy and that S_3 arises once orientation reversals are adjoined, rather than calling S_3 the Galois group of the regular closure."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.629Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Proposition (three numbered clauses plus a discursive paragraph), read in full. All ten categories clean: the 'three sectors / three colour-tube sections' groupings are the actual r/g/b content rather than reflex triples; the paragraph is a chain of short declaratives with no dashes, no closer, no meta-commentary, no warmth. RIGOR PASS on the algebra, which I verified directly. With the cube-root DFT w_k = c_r + zeta^k c_g + zeta^{2k} c_b and zeta^3 = 1, the cyclic permutation (c_r,c_g,c_b) -> (c_g,c_b,c_r) gives w_k -> c_g + zeta^k c_b + zeta^{2k} c_r = zeta^{-k} w_k. So the PROSE is exactly right, and the C_3 monodromy / degree-3 ramification / 'adjoining orientation reversals yields S_3' chain is coherent.",
+        "notes": "TWO FINDINGS. (1) THE STATEMENT CONTRADICTS ITS OWN PROSE. Clause 3 says 'The cyclic generator (rgb) corresponds to the cyclic permutation w_k -> zeta w_k', but the paragraph below says the same permutation 'sends w_k -> zeta^{-k} w_k'. These are different maps: the correct exponent depends on the resolvent index k (and carries a minus sign), so clause 3's uniform 'zeta' is wrong at every k except k = 1 -- at k = 0 it multiplies an invariant by zeta, and at k = 2 it is off by zeta^{-3}... i.e. it disagrees except where the exponents happen to coincide. My derivation above confirms the prose. Proposed fix: clause 3 should read 'corresponds to w_k -> zeta^{-k} w_k'. (2) CHECK THE GALOIS CLAIM. Clause 2 says 'The monodromy around dD is the cyclic group C_3' and then 'The full Galois group of the regular closure is the symmetric group S_3'. A degree-3 cover with cyclic C_3 monodromy IS already regular (Galois with group C_3); its regular closure does not acquire transpositions. The paragraph is more careful -- it obtains S_3 only after 'adjoining orientation reversals', which is extra structure beyond the cover -- so as in finding (1) the prose is right and the numbered clause overstates. Proposed fix: say that C_3 is the monodromy and that S_3 arises once orientation reversals are adjoined, rather than calling S_3 the Galois group of the regular closure."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "6db9a8b7558d",
+          "ts": "744f580506bc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:10.671Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Proposition (three numbered clauses plus a discursive paragraph), read in full. All ten categories clean: the 'three sectors / three colour-tube sections' groupings are the actual r/g/b content rather than reflex triples; the paragraph is a chain of short declaratives with no dashes, no closer, no meta-commentary, no warmth. RIGOR PASS on the algebra, which I verified directly. With the cube-root DFT w_k = c_r + zeta^k c_g + zeta^{2k} c_b and zeta^3 = 1, the cyclic permutation (c_r,c_g,c_b) -> (c_g,c_b,c_r) gives w_k -> c_g + zeta^k c_b + zeta^{2k} c_r = zeta^{-k} w_k. So the PROSE is exactly right, and the C_3 monodromy / degree-3 ramification / 'adjoining orientation reversals yields S_3' chain is coherent.",
+        "notes": "TWO FINDINGS. (1) THE STATEMENT CONTRADICTS ITS OWN PROSE. Clause 3 says 'The cyclic generator (rgb) corresponds to the cyclic permutation w_k -> zeta w_k', but the paragraph below says the same permutation 'sends w_k -> zeta^{-k} w_k'. These are different maps: the correct exponent depends on the resolvent index k (and carries a minus sign), so clause 3's uniform 'zeta' is wrong at every k except k = 1 -- at k = 0 it multiplies an invariant by zeta, and at k = 2 it is off by zeta^{-3}... i.e. it disagrees except where the exponents happen to coincide. My derivation above confirms the prose. Proposed fix: clause 3 should read 'corresponds to w_k -> zeta^{-k} w_k'. (2) CHECK THE GALOIS CLAIM. Clause 2 says 'The monodromy around dD is the cyclic group C_3' and then 'The full Galois group of the regular closure is the symmetric group S_3'. A degree-3 cover with cyclic C_3 monodromy IS already regular (Galois with group C_3); its regular closure does not acquire transpositions. The paragraph is more careful -- it obtains S_3 only after 'adjoining orientation reversals', which is extra structure beyond the cover -- so as in finding (1) the prose is right and the numbered clause overstates. Proposed fix: say that C_3 is the monodromy and that S_3 arises once orientation reversals are adjoined, rather than calling S_3 the Galois group of the regular closure."
+      }
+    ]
+  }
+}

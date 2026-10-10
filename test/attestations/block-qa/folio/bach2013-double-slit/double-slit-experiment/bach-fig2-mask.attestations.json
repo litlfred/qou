@@ -1,0 +1,225 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/bach2013-double-slit/double-slit-experiment/bach-fig2-mask",
+    "path": "folio/bach2013-double-slit/double-slit-experiment/bach-fig2-mask"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "fdb39b7fd46f",
+          "ts": "89bfdf96ccea"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "fdb39b7fd46f",
+          "ts": "89bfdf96ccea"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "fdb39b7fd46f",
+          "ts": "89bfdf96ccea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:01.667Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of diagram caption fig:bach-mask-movement. Caption prose plus one added summary sentence about the continuous sweep; no rhetorical constructions found in any category.",
+        "notes": "Triple 'one slit, both slits, or neither slit' enumerates the three real mask states, substantive (cat.4 pass). Closing sentence describes the observed sweep and adds information, so not a closing aphorism."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "fdb39b7fd46f",
+          "ts": "89bfdf96ccea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:01.709Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of diagram caption fig:bach-mask-movement. Caption prose plus one added summary sentence about the continuous sweep; no rhetorical constructions found in any category.",
+        "notes": "Triple 'one slit, both slits, or neither slit' enumerates the three real mask states, substantive (cat.4 pass). Closing sentence describes the observed sweep and adds information, so not a closing aphorism."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "fdb39b7fd46f",
+          "ts": "89bfdf96ccea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:01.749Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of diagram caption fig:bach-mask-movement. Caption prose plus one added summary sentence about the continuous sweep; no rhetorical constructions found in any category.",
+        "notes": "Triple 'one slit, both slits, or neither slit' enumerates the three real mask states, substantive (cat.4 pass). Closing sentence describes the observed sweep and adds information, so not a closing aphorism."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "fdb39b7fd46f",
+          "ts": "89bfdf96ccea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:01.790Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of diagram caption fig:bach-mask-movement. Caption prose plus one added summary sentence about the continuous sweep; no rhetorical constructions found in any category.",
+        "notes": "Triple 'one slit, both slits, or neither slit' enumerates the three real mask states, substantive (cat.4 pass). Closing sentence describes the observed sweep and adds information, so not a closing aphorism."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "fdb39b7fd46f",
+          "ts": "89bfdf96ccea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:01.832Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of diagram caption fig:bach-mask-movement. Caption prose plus one added summary sentence about the continuous sweep; no rhetorical constructions found in any category.",
+        "notes": "Triple 'one slit, both slits, or neither slit' enumerates the three real mask states, substantive (cat.4 pass). Closing sentence describes the observed sweep and adds information, so not a closing aphorism."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "fdb39b7fd46f",
+          "ts": "89bfdf96ccea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:01.872Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of diagram caption fig:bach-mask-movement. Caption prose plus one added summary sentence about the continuous sweep; no rhetorical constructions found in any category.",
+        "notes": "Triple 'one slit, both slits, or neither slit' enumerates the three real mask states, substantive (cat.4 pass). Closing sentence describes the observed sweep and adds information, so not a closing aphorism."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "fdb39b7fd46f",
+          "ts": "89bfdf96ccea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:01.913Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of diagram caption fig:bach-mask-movement. Caption prose plus one added summary sentence about the continuous sweep; no rhetorical constructions found in any category.",
+        "notes": "Triple 'one slit, both slits, or neither slit' enumerates the three real mask states, substantive (cat.4 pass). Closing sentence describes the observed sweep and adds information, so not a closing aphorism."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "fdb39b7fd46f",
+          "ts": "89bfdf96ccea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:01.955Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of diagram caption fig:bach-mask-movement. Caption prose plus one added summary sentence about the continuous sweep; no rhetorical constructions found in any category.",
+        "notes": "Triple 'one slit, both slits, or neither slit' enumerates the three real mask states, substantive (cat.4 pass). Closing sentence describes the observed sweep and adds information, so not a closing aphorism."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "fdb39b7fd46f",
+          "ts": "89bfdf96ccea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:01.995Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of diagram caption fig:bach-mask-movement. Caption prose plus one added summary sentence about the continuous sweep; no rhetorical constructions found in any category.",
+        "notes": "Triple 'one slit, both slits, or neither slit' enumerates the three real mask states, substantive (cat.4 pass). Closing sentence describes the observed sweep and adds information, so not a closing aphorism."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "fdb39b7fd46f",
+          "ts": "89bfdf96ccea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:02.034Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of diagram caption fig:bach-mask-movement. Caption prose plus one added summary sentence about the continuous sweep; no rhetorical constructions found in any category.",
+        "notes": "Triple 'one slit, both slits, or neither slit' enumerates the three real mask states, substantive (cat.4 pass). Closing sentence describes the observed sweep and adds information, so not a closing aphorism."
+      }
+    ]
+  }
+}

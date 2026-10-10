@@ -1,0 +1,182 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/convention-d-kills-antisymmetriser-proof",
+    "path": "folio/quantum-observable-universe/mass-theory/convention-d-kills-antisymmetriser-proof"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.238Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'Two consequences make the exclusion structural rather than aesthetic' considered: the paragraph's whole content is that the exclusion is forced (mixed-symmetry block lost; isospin weights degenerate to 1 and 0), so the contrast IS the claim -> false-positive class 'substantive mathematical contrast'."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.272Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 351 w: read in full (elimination -> factorisation -> exclusion of z=q). Prose is argument-carrying throughout; no manufactured construction."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.304Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "One spaced '---': '...before any inverse structure is imposed --- which is what makes it safe to reuse over a coefficient ring where q is not invertible.' Appends a clause but carries real scope content; single instance in 351 w, no density.",
+        "notes": "Optional: '. This is what makes it safe...' if the chapter drains dashes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.338Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 351 w: read in full (elimination -> factorisation -> exclusion of z=q). Prose is argument-carrying throughout; no manufactured construction."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.372Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 351 w: read in full (elimination -> factorisation -> exclusion of z=q). Prose is argument-carrying throughout; no manufactured construction."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.409Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 351 w: read in full (elimination -> factorisation -> exclusion of z=q). Prose is argument-carrying throughout; no manufactured construction."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.481Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 351 w: read in full (elimination -> factorisation -> exclusion of z=q). Prose is argument-carrying throughout; no manufactured construction."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.518Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 351 w: read in full (elimination -> factorisation -> exclusion of z=q). Prose is argument-carrying throughout; no manufactured construction."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.553Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 351 w: read in full (elimination -> factorisation -> exclusion of z=q). Prose is argument-carrying throughout; no manufactured construction."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1bb681323fa9",
+          "ts": "c939833a5924"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:32.588Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 351 w: read in full (elimination -> factorisation -> exclusion of z=q). Prose is argument-carrying throughout; no manufactured construction."
+      }
+    ]
+  }
+}

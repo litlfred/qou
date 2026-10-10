@@ -1,0 +1,505 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/confinement-sdp-multi-operator",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/confinement-sdp-multi-operator"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:43.000Z",
+        "reviewed_sha": "51411824036096964bb92cf6a5dbe5565bb6848e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:43.000Z",
+        "reviewed_sha": "51411824036096964bb92cf6a5dbe5565bb6848e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:43.000Z",
+        "reviewed_sha": "51411824036096964bb92cf6a5dbe5565bb6848e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:43.000Z",
+        "reviewed_sha": "51411824036096964bb92cf6a5dbe5565bb6848e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:43.000Z",
+        "reviewed_sha": "51411824036096964bb92cf6a5dbe5565bb6848e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:43.000Z",
+        "reviewed_sha": "51411824036096964bb92cf6a5dbe5565bb6848e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:43.000Z",
+        "reviewed_sha": "51411824036096964bb92cf6a5dbe5565bb6848e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:43.000Z",
+        "reviewed_sha": "51411824036096964bb92cf6a5dbe5565bb6848e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:43.000Z",
+        "reviewed_sha": "51411824036096964bb92cf6a5dbe5565bb6848e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:43.000Z",
+        "reviewed_sha": "51411824036096964bb92cf6a5dbe5565bb6848e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:43.000Z",
+        "reviewed_sha": "51411824036096964bb92cf6a5dbe5565bb6848e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:43.000Z",
+        "reviewed_sha": "51411824036096964bb92cf6a5dbe5565bb6848e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:43.000Z",
+        "reviewed_sha": "51411824036096964bb92cf6a5dbe5565bb6848e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:43.000Z",
+        "reviewed_sha": "51411824036096964bb92cf6a5dbe5565bb6848e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq2"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:43:43.000Z",
+        "reviewed_sha": "51411824036096964bb92cf6a5dbe5565bb6848e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:41.255Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-multi-operator (two displays, two bullets). Checked the SDP formalism: the optimality identity Phi* (y_0* I + sum y_lambda* pi_lambda - T) = 0 is the standard complementary-slackness form for a semidefinite program, correctly written. One defect reported: 'Its rank counts the active dual support' has a broken referent - the sentence's subject is the matrix EQUATION, whose right-hand side is 0, so 'its rank' is either 0 or means the rank of Phi* or of the dual slack; the sentence does not say which.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:41.295Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-multi-operator (two displays, two bullets). Checked the SDP formalism: the optimality identity Phi* (y_0* I + sum y_lambda* pi_lambda - T) = 0 is the standard complementary-slackness form for a semidefinite program, correctly written. One defect reported: 'Its rank counts the active dual support' has a broken referent - the sentence's subject is the matrix EQUATION, whose right-hand side is 0, so 'its rank' is either 0 or means the rank of Phi* or of the dual slack; the sentence does not say which.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:41.335Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-multi-operator (two displays, two bullets). Checked the SDP formalism: the optimality identity Phi* (y_0* I + sum y_lambda* pi_lambda - T) = 0 is the standard complementary-slackness form for a semidefinite program, correctly written. One defect reported: 'Its rank counts the active dual support' has a broken referent - the sentence's subject is the matrix EQUATION, whose right-hand side is 0, so 'its rank' is either 0 or means the rank of Phi* or of the dual slack; the sentence does not say which.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:41.375Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-multi-operator (two displays, two bullets). Checked the SDP formalism: the optimality identity Phi* (y_0* I + sum y_lambda* pi_lambda - T) = 0 is the standard complementary-slackness form for a semidefinite program, correctly written. One defect reported: 'Its rank counts the active dual support' has a broken referent - the sentence's subject is the matrix EQUATION, whose right-hand side is 0, so 'its rank' is either 0 or means the rank of Phi* or of the dual slack; the sentence does not say which.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:41.415Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-multi-operator (two displays, two bullets). Checked the SDP formalism: the optimality identity Phi* (y_0* I + sum y_lambda* pi_lambda - T) = 0 is the standard complementary-slackness form for a semidefinite program, correctly written. One defect reported: 'Its rank counts the active dual support' has a broken referent - the sentence's subject is the matrix EQUATION, whose right-hand side is 0, so 'its rank' is either 0 or means the rank of Phi* or of the dual slack; the sentence does not say which.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:41.457Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-multi-operator (two displays, two bullets). Checked the SDP formalism: the optimality identity Phi* (y_0* I + sum y_lambda* pi_lambda - T) = 0 is the standard complementary-slackness form for a semidefinite program, correctly written. One defect reported: 'Its rank counts the active dual support' has a broken referent - the sentence's subject is the matrix EQUATION, whose right-hand side is 0, so 'its rank' is either 0 or means the rank of Phi* or of the dual slack; the sentence does not say which.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:41.499Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-multi-operator (two displays, two bullets). Checked the SDP formalism: the optimality identity Phi* (y_0* I + sum y_lambda* pi_lambda - T) = 0 is the standard complementary-slackness form for a semidefinite program, correctly written. One defect reported: 'Its rank counts the active dual support' has a broken referent - the sentence's subject is the matrix EQUATION, whose right-hand side is 0, so 'its rank' is either 0 or means the rank of Phi* or of the dual slack; the sentence does not say which.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:41.541Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-multi-operator (two displays, two bullets). Checked the SDP formalism: the optimality identity Phi* (y_0* I + sum y_lambda* pi_lambda - T) = 0 is the standard complementary-slackness form for a semidefinite program, correctly written. One defect reported: 'Its rank counts the active dual support' has a broken referent - the sentence's subject is the matrix EQUATION, whose right-hand side is 0, so 'its rank' is either 0 or means the rank of Phi* or of the dual slack; the sentence does not say which.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:41.582Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-multi-operator (two displays, two bullets). Checked the SDP formalism: the optimality identity Phi* (y_0* I + sum y_lambda* pi_lambda - T) = 0 is the standard complementary-slackness form for a semidefinite program, correctly written. One defect reported: 'Its rank counts the active dual support' has a broken referent - the sentence's subject is the matrix EQUATION, whose right-hand side is 0, so 'its rank' is either 0 or means the rank of Phi* or of the dual slack; the sentence does not say which.",
+        "notes": "'It includes all shell-closure and magic-number configurations' is an unsupported 'all', but it is a modest classification claim, nothing in the block contradicts it, and it reads as definitional of the |S*| >= 2 regime - unlike the two superlative failures recorded elsewhere in this batch, which were both maximum-strength AND self-contradicted."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d2750794cab8",
+          "ts": "f712b2bcba81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:41.624Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-multi-operator (two displays, two bullets). Checked the SDP formalism: the optimality identity Phi* (y_0* I + sum y_lambda* pi_lambda - T) = 0 is the standard complementary-slackness form for a semidefinite program, correctly written. One defect reported: 'Its rank counts the active dual support' has a broken referent - the sentence's subject is the matrix EQUATION, whose right-hand side is 0, so 'its rank' is either 0 or means the rank of Phi* or of the dual slack; the sentence does not say which.",
+        "notes": "No trap of this category."
+      }
+    ]
+  }
+}

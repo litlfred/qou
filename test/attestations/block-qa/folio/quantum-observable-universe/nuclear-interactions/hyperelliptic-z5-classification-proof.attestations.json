@@ -1,0 +1,505 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/hyperelliptic-z5-classification-proof",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/hyperelliptic-z5-classification-proof"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "388bebce1ef9",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "388bebce1ef9",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:40:09.000Z",
+        "reviewed_sha": "560178d2da093515f3131c826bcd8761846a647c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "388bebce1ef9",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:52.280Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Full read of the whole proof, and re-derived every step independently. Verified: an order-5 element of PGL_2(C) is conjugate to x -> zeta_5 x with exactly the two fixed points {0, infinity}; orbit sizes 1 and 5 give ",
+        "notes": "Branch| in {0,1,2,5,6,7,10,11,12,...}; Riemann-Hurwitz gives |Branch| = 2g+2 so the size is even; 6 is the smallest even member at least 6; 6 = 5a + b with b <= 2 has the unique solution (a,b) = (1,1); and the chart change x -> 1/x, y -> y/x^3 does send y^2 = x^6 - x to v^2 = 1 - u^5, i.e. to y^2 = x^5 - 1 up to sign. Ten trap categories clean throughout.|Clean."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "388bebce1ef9",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:52.333Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Full read of the whole proof, and re-derived every step independently. Verified: an order-5 element of PGL_2(C) is conjugate to x -> zeta_5 x with exactly the two fixed points {0, infinity}; orbit sizes 1 and 5 give ",
+        "notes": "Branch| in {0,1,2,5,6,7,10,11,12,...}; Riemann-Hurwitz gives |Branch| = 2g+2 so the size is even; 6 is the smallest even member at least 6; 6 = 5a + b with b <= 2 has the unique solution (a,b) = (1,1); and the chart change x -> 1/x, y -> y/x^3 does send y^2 = x^6 - x to v^2 = 1 - u^5, i.e. to y^2 = x^5 - 1 up to sign. Ten trap categories clean throughout.|Clean."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "388bebce1ef9",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:52.385Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Full read of the whole proof, and re-derived every step independently. Verified: an order-5 element of PGL_2(C) is conjugate to x -> zeta_5 x with exactly the two fixed points {0, infinity}; orbit sizes 1 and 5 give ",
+        "notes": "Branch| in {0,1,2,5,6,7,10,11,12,...}; Riemann-Hurwitz gives |Branch| = 2g+2 so the size is even; 6 is the smallest even member at least 6; 6 = 5a + b with b <= 2 has the unique solution (a,b) = (1,1); and the chart change x -> 1/x, y -> y/x^3 does send y^2 = x^6 - x to v^2 = 1 - u^5, i.e. to y^2 = x^5 - 1 up to sign. Ten trap categories clean throughout.|Zero em-dashes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "388bebce1ef9",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:52.431Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Full read of the whole proof, and re-derived every step independently. Verified: an order-5 element of PGL_2(C) is conjugate to x -> zeta_5 x with exactly the two fixed points {0, infinity}; orbit sizes 1 and 5 give ",
+        "notes": "Branch| in {0,1,2,5,6,7,10,11,12,...}; Riemann-Hurwitz gives |Branch| = 2g+2 so the size is even; 6 is the smallest even member at least 6; 6 = 5a + b with b <= 2 has the unique solution (a,b) = (1,1); and the chart change x -> 1/x, y -> y/x^3 does send y^2 = x^6 - x to v^2 = 1 - u^5, i.e. to y^2 = x^5 - 1 up to sign. Ten trap categories clean throughout.|No reflex triple."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "388bebce1ef9",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:52.494Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Full read of the whole proof, and re-derived every step independently. Verified: an order-5 element of PGL_2(C) is conjugate to x -> zeta_5 x with exactly the two fixed points {0, infinity}; orbit sizes 1 and 5 give ",
+        "notes": "Branch| in {0,1,2,5,6,7,10,11,12,...}; Riemann-Hurwitz gives |Branch| = 2g+2 so the size is even; 6 is the smallest even member at least 6; 6 = 5a + b with b <= 2 has the unique solution (a,b) = (1,1); and the chart change x -> 1/x, y -> y/x^3 does send y^2 = x^6 - x to v^2 = 1 - u^5, i.e. to y^2 = x^5 - 1 up to sign. Ten trap categories clean throughout.|Ends with the QED box after the isomorphism."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "388bebce1ef9",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:52.543Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Full read of the whole proof, and re-derived every step independently. Verified: an order-5 element of PGL_2(C) is conjugate to x -> zeta_5 x with exactly the two fixed points {0, infinity}; orbit sizes 1 and 5 give ",
+        "notes": "Branch| in {0,1,2,5,6,7,10,11,12,...}; Riemann-Hurwitz gives |Branch| = 2g+2 so the size is even; 6 is the smallest even member at least 6; 6 = 5a + b with b <= 2 has the unique solution (a,b) = (1,1); and the chart change x -> 1/x, y -> y/x^3 does send y^2 = x^6 - x to v^2 = 1 - u^5, i.e. to y^2 = x^5 - 1 up to sign. Ten trap categories clean throughout.|No narrated emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "388bebce1ef9",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:52.590Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Full read of the whole proof, and re-derived every step independently. Verified: an order-5 element of PGL_2(C) is conjugate to x -> zeta_5 x with exactly the two fixed points {0, infinity}; orbit sizes 1 and 5 give ",
+        "notes": "Branch| in {0,1,2,5,6,7,10,11,12,...}; Riemann-Hurwitz gives |Branch| = 2g+2 so the size is even; 6 is the smallest even member at least 6; 6 = 5a + b with b <= 2 has the unique solution (a,b) = (1,1); and the chart change x -> 1/x, y -> y/x^3 does send y^2 = x^6 - x to v^2 = 1 - u^5, i.e. to y^2 = x^5 - 1 up to sign. Ten trap categories clean throughout.|'Therefore, X = X_5' is the proof's conclusion, which the false-positive list explicitly allows."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "388bebce1ef9",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:52.644Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Full read of the whole proof, and re-derived every step independently. Verified: an order-5 element of PGL_2(C) is conjugate to x -> zeta_5 x with exactly the two fixed points {0, infinity}; orbit sizes 1 and 5 give ",
+        "notes": "Branch| in {0,1,2,5,6,7,10,11,12,...}; Riemann-Hurwitz gives |Branch| = 2g+2 so the size is even; 6 is the smallest even member at least 6; 6 = 5a + b with b <= 2 has the unique solution (a,b) = (1,1); and the chart change x -> 1/x, y -> y/x^3 does send y^2 = x^6 - x to v^2 = 1 - u^5, i.e. to y^2 = x^5 - 1 up to sign. Ten trap categories clean throughout.|Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "388bebce1ef9",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:52.720Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Full read of the whole proof, and re-derived every step independently. Verified: an order-5 element of PGL_2(C) is conjugate to x -> zeta_5 x with exactly the two fixed points {0, infinity}; orbit sizes 1 and 5 give ",
+        "notes": "Branch| in {0,1,2,5,6,7,10,11,12,...}; Riemann-Hurwitz gives |Branch| = 2g+2 so the size is even; 6 is the smallest even member at least 6; 6 = 5a + b with b <= 2 has the unique solution (a,b) = (1,1); and the chart change x -> 1/x, y -> y/x^3 does send y^2 = x^6 - x to v^2 = 1 - u^5, i.e. to y^2 = x^5 - 1 up to sign. Ten trap categories clean throughout.|No inflation."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "388bebce1ef9",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:52.762Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Full read of the whole proof, and re-derived every step independently. Verified: an order-5 element of PGL_2(C) is conjugate to x -> zeta_5 x with exactly the two fixed points {0, infinity}; orbit sizes 1 and 5 give ",
+        "notes": "Branch| in {0,1,2,5,6,7,10,11,12,...}; Riemann-Hurwitz gives |Branch| = 2g+2 so the size is even; 6 is the smallest even member at least 6; 6 = 5a + b with b <= 2 has the unique solution (a,b) = (1,1); and the chart change x -> 1/x, y -> y/x^3 does send y^2 = x^6 - x to v^2 = 1 - u^5, i.e. to y^2 = x^5 - 1 up to sign. Ten trap categories clean throughout.|Speakable throughout."
+      },
+      {
+        "field_hash": {
+          "md": "388bebce1ef9",
+          "ts": "843266f3dc56"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:14:52.820Z",
+        "reviewed_sha": "6f7d32c10c2eabb90a879a6940bb0fbec5284932",
+        "evidence": "Cross-block consistency check against the sibling interpretation remark.",
+        "notes": "CROSS-BLOCK FINDING (report, not fixed) - THIS BLOCK REFUTES ITS OWN SIBLING, and this block is the correct one. The proof establishes |Branch| in {0,1,2,5,6,7,10,11,12,...} (non-negative combinations of one 5-orbit size and at most two fixed points) together with |Branch| = 2g+2. Taking the even members at least 6 gives 6, 10, 12, 16, 20, 22, 26, ... hence g in {2, 4, 5, 7, 9, 10, 12, ...}. In particular g=6 would require |Branch| = 14, and 14 is not in the list (14 - 0, 14 - 1, 14 - 2 = 14, 13, 12, none divisible by 5); g=8 fails the same way. But rem:hyperelliptic-z5-classification-interpretation item 2 says dropping minimality yields 'genera g in {4, 5, 6, ...}'. The remark's own g=4 'two size-5 orbits' example is right; the set-listing should read {4, 5, 7, ...}. Verified independently before reading this proof, then confirmed by it."
+      }
+    ]
+  }
+}

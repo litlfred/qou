@@ -1,0 +1,183 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/eightfold-way/vector-meson-nonet",
+    "path": "folio/quantum-observable-universe/eightfold-way/vector-meson-nonet"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "c631b7cd909b",
+          "ts": "9bacf8bbd94a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:01.430Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "'not a failure of SU(3): the omega is not the octet member' and 'a statement about the target, not about prospects' are substantive disambiguations."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "c631b7cd909b",
+          "ts": "9bacf8bbd94a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:01.479Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "None; the contrast section is data-led."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "c631b7cd909b",
+          "ts": "9bacf8bbd94a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:01.521Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Post-fix density fine; remaining dashes are appositive (rho, K*, omega, phi list; ss-bar gloss)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "c631b7cd909b",
+          "ts": "9bacf8bbd94a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:01.562Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "No reflex triples."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "c631b7cd909b",
+          "ts": "9bacf8bbd94a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:01.604Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Block closes on the OZI/anomaly attribution and 'no candidate mechanism is proposed here' — factual."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "c631b7cd909b",
+          "ts": "9bacf8bbd94a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:01.644Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "'What is recorded here is a statement about the target, not about prospects' is load-bearing scope disambiguation."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "c631b7cd909b",
+          "ts": "9bacf8bbd94a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:01.685Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Fixed: near-final sentence restated the opening thesis ('first eightfold-way quantity whose derivation would carry information').",
+        "notes": "fix applied: '...proved content-bearing. A derivation of the vector nonet's near-ideal mixing would be the first eightfold-way result that is evidence for anything --- which is what makes it the highest-value open item in this chapter.' -> '...proved content-bearing, which makes its derivation the highest-value open item in this chapter.'"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "c631b7cd909b",
+          "ts": "9bacf8bbd94a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:01.728Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "None."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "c631b7cd909b",
+          "ts": "9bacf8bbd94a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:01.771Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "'highest-value open item' is reasoned (only content-bearing target among the three); post-fix the 'evidence for anything' sweep is gone."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "c631b7cd909b",
+          "ts": "9bacf8bbd94a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:13:01.811Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Numbers sane: vector GMO deviation recomputed approx 30 pct (text: approx 32 pct); phi ss-bar 99.5 pct near-ideal.",
+        "notes": "NOTE: 'three headline quantitative successes, two proved content-free' may be stale against the u-spin block's 'third null result' (Coleman-Glashow) if CG counts among the headline successes — flagged for author, not edited."
+      }
+    ]
+  }
+}

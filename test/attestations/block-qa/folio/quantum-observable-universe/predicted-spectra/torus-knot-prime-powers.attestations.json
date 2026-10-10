@@ -1,0 +1,484 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/torus-knot-prime-powers",
+    "path": "folio/quantum-observable-universe/predicted-spectra/torus-knot-prime-powers"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "8f163c78fe29",
+          "ts": "0f5952570fff"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "8f163c78fe29",
+          "ts": "0f5952570fff"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:53:35.000Z",
+        "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:53:35.000Z",
+        "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:53:35.000Z",
+        "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:53:35.000Z",
+        "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:53:35.000Z",
+        "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:53:35.000Z",
+        "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:53:35.000Z",
+        "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:53:35.000Z",
+        "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:53:35.000Z",
+        "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:53:35.000Z",
+        "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:53:35.000Z",
+        "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:53:35.000Z",
+        "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:53:35.000Z",
+        "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:53:35.000Z",
+        "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:53:35.000Z",
+        "reviewed_sha": "7dccf62ad58dafbfb9e0918b4d5920362159574c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "8f163c78fe29",
+          "ts": "0f5952570fff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:37.482Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~4.2kB, four tables). Verified: g(T_{3,p^k}) = p^k - 1; embeddability p^k <= 5; the Mersenne genus sequence 1,3,7,15; T_{3,4} = 8_19 and T_{3,5} = 10_124 (both correct knot-table identifications); T_{2,9} genus 4; T_{3,25} genus 24. Two crossing numbers are wrong (21 and 45 for T_{3,8} and T_{3,16}; the minimal crossing number is n(m-1) = 16 and 32) and the final table's column headers are swapped relative to the text - both reported as anomalies."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "8f163c78fe29",
+          "ts": "0f5952570fff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:37.523Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~4.2kB, four tables). Verified: g(T_{3,p^k}) = p^k - 1; embeddability p^k <= 5; the Mersenne genus sequence 1,3,7,15; T_{3,4} = 8_19 and T_{3,5} = 10_124 (both correct knot-table identifications); T_{2,9} genus 4; T_{3,25} genus 24. Two crossing numbers are wrong (21 and 45 for T_{3,8} and T_{3,16}; the minimal crossing number is n(m-1) = 16 and 32) and the final table's column headers are swapped relative to the text - both reported as anomalies."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "8f163c78fe29",
+          "ts": "0f5952570fff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:37.561Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~4.2kB, four tables). Verified: g(T_{3,p^k}) = p^k - 1; embeddability p^k <= 5; the Mersenne genus sequence 1,3,7,15; T_{3,4} = 8_19 and T_{3,5} = 10_124 (both correct knot-table identifications); T_{2,9} genus 4; T_{3,25} genus 24. Two crossing numbers are wrong (21 and 45 for T_{3,8} and T_{3,16}; the minimal crossing number is n(m-1) = 16 and 32) and the final table's column headers are swapped relative to the text - both reported as anomalies."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "8f163c78fe29",
+          "ts": "0f5952570fff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:37.601Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~4.2kB, four tables). Verified: g(T_{3,p^k}) = p^k - 1; embeddability p^k <= 5; the Mersenne genus sequence 1,3,7,15; T_{3,4} = 8_19 and T_{3,5} = 10_124 (both correct knot-table identifications); T_{2,9} genus 4; T_{3,25} genus 24. Two crossing numbers are wrong (21 and 45 for T_{3,8} and T_{3,16}; the minimal crossing number is n(m-1) = 16 and 32) and the final table's column headers are swapped relative to the text - both reported as anomalies."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "8f163c78fe29",
+          "ts": "0f5952570fff"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:37.641Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "minor",
+        "evidence": "'The genus-4 boundary separates matter from force across both winding families.' is a quotable final line whose content the two preceding sentences ('Matter generators have lower genus.' / 'The saturating genus-4 generator stands apart.') already deliver.",
+        "notes": "proposed: delete the final sentence."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "8f163c78fe29",
+          "ts": "0f5952570fff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:37.681Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~4.2kB, four tables). Verified: g(T_{3,p^k}) = p^k - 1; embeddability p^k <= 5; the Mersenne genus sequence 1,3,7,15; T_{3,4} = 8_19 and T_{3,5} = 10_124 (both correct knot-table identifications); T_{2,9} genus 4; T_{3,25} genus 24. Two crossing numbers are wrong (21 and 45 for T_{3,8} and T_{3,16}; the minimal crossing number is n(m-1) = 16 and 32) and the final table's column headers are swapped relative to the text - both reported as anomalies."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "8f163c78fe29",
+          "ts": "0f5952570fff"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:37.722Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "major",
+        "evidence": "Same sentence also restates the block's own thesis, stated twice already ('Matter vs. force dichotomy' heading and 'The knot T_{3,5} is structurally distinguished from both matter generations').",
+        "notes": "proposed: keep one statement of the dichotomy - the section heading plus one sentence - and cut the other two."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "8f163c78fe29",
+          "ts": "0f5952570fff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:37.762Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~4.2kB, four tables). Verified: g(T_{3,p^k}) = p^k - 1; embeddability p^k <= 5; the Mersenne genus sequence 1,3,7,15; T_{3,4} = 8_19 and T_{3,5} = 10_124 (both correct knot-table identifications); T_{2,9} genus 4; T_{3,25} genus 24. Two crossing numbers are wrong (21 and 45 for T_{3,8} and T_{3,16}; the minimal crossing number is n(m-1) = 16 and 32) and the final table's column headers are swapped relative to the text - both reported as anomalies."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "8f163c78fe29",
+          "ts": "0f5952570fff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:37.802Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~4.2kB, four tables). Verified: g(T_{3,p^k}) = p^k - 1; embeddability p^k <= 5; the Mersenne genus sequence 1,3,7,15; T_{3,4} = 8_19 and T_{3,5} = 10_124 (both correct knot-table identifications); T_{2,9} genus 4; T_{3,25} genus 24. Two crossing numbers are wrong (21 and 45 for T_{3,8} and T_{3,16}; the minimal crossing number is n(m-1) = 16 and 32) and the final table's column headers are swapped relative to the text - both reported as anomalies."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "8f163c78fe29",
+          "ts": "0f5952570fff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:37.841Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~4.2kB, four tables). Verified: g(T_{3,p^k}) = p^k - 1; embeddability p^k <= 5; the Mersenne genus sequence 1,3,7,15; T_{3,4} = 8_19 and T_{3,5} = 10_124 (both correct knot-table identifications); T_{2,9} genus 4; T_{3,25} genus 24. Two crossing numbers are wrong (21 and 45 for T_{3,8} and T_{3,16}; the minimal crossing number is n(m-1) = 16 and 32) and the final table's column headers are swapped relative to the text - both reported as anomalies."
+      }
+    ]
+  }
+}

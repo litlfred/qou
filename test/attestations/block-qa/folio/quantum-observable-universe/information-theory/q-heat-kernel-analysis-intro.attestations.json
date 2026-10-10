@@ -1,0 +1,482 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/information-theory/q-heat-kernel-analysis-intro",
+    "path": "folio/quantum-observable-universe/information-theory/q-heat-kernel-analysis-intro"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "630074957fd2",
+          "ts": "aac7a051b369"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "630074957fd2",
+          "ts": "aac7a051b369"
+        },
+        "result": "warn",
+        "severity": "minor",
+        "notes": "Agentic heuristic: Detected potential AI slop words.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        },
+        "evidence": "Agentic heuristic: Detected potential AI slop words."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound introductory text systematically forecasting rigorous heat convergence inside formal Jackson-based trace mechanics.",
+        "reviewed_at": "2026-07-08T13:39:46.000Z",
+        "reviewed_sha": "6687bbc694c295d4f0695210bf3719500b61af12",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound introductory text systematically forecasting rigorous heat convergence inside formal Jackson-based trace mechanics.",
+        "reviewed_at": "2026-07-08T13:39:46.000Z",
+        "reviewed_sha": "6687bbc694c295d4f0695210bf3719500b61af12",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound introductory text systematically forecasting rigorous heat convergence inside formal Jackson-based trace mechanics.",
+        "reviewed_at": "2026-07-08T13:39:46.000Z",
+        "reviewed_sha": "6687bbc694c295d4f0695210bf3719500b61af12",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound introductory text systematically forecasting rigorous heat convergence inside formal Jackson-based trace mechanics.",
+        "reviewed_at": "2026-07-08T13:39:46.000Z",
+        "reviewed_sha": "6687bbc694c295d4f0695210bf3719500b61af12",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound introductory text systematically forecasting rigorous heat convergence inside formal Jackson-based trace mechanics.",
+        "reviewed_at": "2026-07-08T13:39:46.000Z",
+        "reviewed_sha": "6687bbc694c295d4f0695210bf3719500b61af12",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound introductory text systematically forecasting rigorous heat convergence inside formal Jackson-based trace mechanics.",
+        "reviewed_at": "2026-07-08T13:39:46.000Z",
+        "reviewed_sha": "6687bbc694c295d4f0695210bf3719500b61af12",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound introductory text systematically forecasting rigorous heat convergence inside formal Jackson-based trace mechanics.",
+        "reviewed_at": "2026-07-08T13:39:46.000Z",
+        "reviewed_sha": "6687bbc694c295d4f0695210bf3719500b61af12",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound introductory text systematically forecasting rigorous heat convergence inside formal Jackson-based trace mechanics.",
+        "reviewed_at": "2026-07-08T13:39:46.000Z",
+        "reviewed_sha": "6687bbc694c295d4f0695210bf3719500b61af12",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound introductory text systematically forecasting rigorous heat convergence inside formal Jackson-based trace mechanics.",
+        "reviewed_at": "2026-07-08T13:39:46.000Z",
+        "reviewed_sha": "6687bbc694c295d4f0695210bf3719500b61af12",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound introductory text systematically forecasting rigorous heat convergence inside formal Jackson-based trace mechanics.",
+        "reviewed_at": "2026-07-08T13:39:46.000Z",
+        "reviewed_sha": "6687bbc694c295d4f0695210bf3719500b61af12",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound introductory text systematically forecasting rigorous heat convergence inside formal Jackson-based trace mechanics.",
+        "reviewed_at": "2026-07-08T13:39:46.000Z",
+        "reviewed_sha": "6687bbc694c295d4f0695210bf3719500b61af12",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound introductory text systematically forecasting rigorous heat convergence inside formal Jackson-based trace mechanics.",
+        "reviewed_at": "2026-07-08T13:39:46.000Z",
+        "reviewed_sha": "6687bbc694c295d4f0695210bf3719500b61af12",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound introductory text systematically forecasting rigorous heat convergence inside formal Jackson-based trace mechanics.",
+        "reviewed_at": "2026-07-08T13:39:46.000Z",
+        "reviewed_sha": "6687bbc694c295d4f0695210bf3719500b61af12",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound introductory text systematically forecasting rigorous heat convergence inside formal Jackson-based trace mechanics.",
+        "reviewed_at": "2026-07-08T13:39:46.000Z",
+        "reviewed_sha": "6687bbc694c295d4f0695210bf3719500b61af12",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound introductory text systematically forecasting rigorous heat convergence inside formal Jackson-based trace mechanics.",
+        "reviewed_at": "2026-07-08T13:39:46.000Z",
+        "reviewed_sha": "6687bbc694c295d4f0695210bf3719500b61af12",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "630074957fd2",
+          "ts": "aac7a051b369"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:22.453Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no negation-contrast (assert-by-denial) construction found"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "630074957fd2",
+          "ts": "aac7a051b369"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:22.494Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no rhetorical pivot (setup-then-reframe) construction found"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "630074957fd2",
+          "ts": "aac7a051b369"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:22.536Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no load-bearing em-dash construction found"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "630074957fd2",
+          "ts": "aac7a051b369"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:22.583Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "'proceeds in three steps: First/Second/Third' maps to the three actual propositions of the section",
+        "notes": "substantive enumeration"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "630074957fd2",
+          "ts": "aac7a051b369"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:22.627Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no closing aphorism construction found"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "630074957fd2",
+          "ts": "aac7a051b369"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:22.668Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no meta-commentary (narrated emphasis) construction found"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "630074957fd2",
+          "ts": "aac7a051b369"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:22.708Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no thesis restatement closer construction found"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "630074957fd2",
+          "ts": "aac7a051b369"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:22.750Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no performed warmth construction found"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "630074957fd2",
+          "ts": "aac7a051b369"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:22.789Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no superlative inflation construction found"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "630074957fd2",
+          "ts": "aac7a051b369"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b4",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:22.826Z",
+        "reviewed_sha": "7109044220ca1eb3db19cb2a0b38275daeb0dbf3",
+        "evidence": "full-text read; no non-speakable syntax construction found"
+      }
+    ]
+  }
+}

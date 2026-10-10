@@ -1,0 +1,481 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/gram-kappa-spectral-interpretation",
+    "path": "folio/quantum-observable-universe/predicted-spectra/gram-kappa-spectral-interpretation"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "18464ef80fa7",
+          "ts": "d134ecc38f04"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "18464ef80fa7",
+          "ts": "d134ecc38f04"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:54:27.000Z",
+        "reviewed_sha": "96a8bc8a13ad6fff3d7f3e2bc569f2a778b40e0e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:54:27.000Z",
+        "reviewed_sha": "96a8bc8a13ad6fff3d7f3e2bc569f2a778b40e0e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:54:27.000Z",
+        "reviewed_sha": "96a8bc8a13ad6fff3d7f3e2bc569f2a778b40e0e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:54:27.000Z",
+        "reviewed_sha": "96a8bc8a13ad6fff3d7f3e2bc569f2a778b40e0e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:54:27.000Z",
+        "reviewed_sha": "96a8bc8a13ad6fff3d7f3e2bc569f2a778b40e0e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:54:27.000Z",
+        "reviewed_sha": "96a8bc8a13ad6fff3d7f3e2bc569f2a778b40e0e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:54:27.000Z",
+        "reviewed_sha": "96a8bc8a13ad6fff3d7f3e2bc569f2a778b40e0e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:54:27.000Z",
+        "reviewed_sha": "96a8bc8a13ad6fff3d7f3e2bc569f2a778b40e0e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:54:27.000Z",
+        "reviewed_sha": "96a8bc8a13ad6fff3d7f3e2bc569f2a778b40e0e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:54:27.000Z",
+        "reviewed_sha": "96a8bc8a13ad6fff3d7f3e2bc569f2a778b40e0e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:54:27.000Z",
+        "reviewed_sha": "96a8bc8a13ad6fff3d7f3e2bc569f2a778b40e0e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:54:27.000Z",
+        "reviewed_sha": "96a8bc8a13ad6fff3d7f3e2bc569f2a778b40e0e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:54:27.000Z",
+        "reviewed_sha": "96a8bc8a13ad6fff3d7f3e2bc569f2a778b40e0e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:54:27.000Z",
+        "reviewed_sha": "96a8bc8a13ad6fff3d7f3e2bc569f2a778b40e0e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:54:27.000Z",
+        "reviewed_sha": "96a8bc8a13ad6fff3d7f3e2bc569f2a778b40e0e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9c9bf55da607",
+          "ts": "d134ecc38f04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:55:49.961Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "'The $q$-deformed weights do **not** sum to $1$ away from $q = 1$ ... the sum is finite because $\\lambda$ ranges over the partitions of $n$, not because it is normalised.' is load-bearing disambiguation against a real misreading (that these are a probability measure), and it is quantified with two verified numbers. Substantive."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9c9bf55da607",
+          "ts": "d134ecc38f04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:55:49.395Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Full read (numerical check, a four-row comparison table, a Lean-handle paragraph and a sensitivity paragraph). No pivot, no spaced em-dash, no reflex triple (the three named partitions are three actual dominant blocks), no aphoristic closer ('This bound is finite and computable' is flat and factual), no narrated emphasis, no restatement closer, no warm register, no superlative. THE HEADLINE NUMBERS VERIFY EXACTLY: recomputing the Plancherel weight sum with w_lambda = dim_q^2(V_lambda)/[n]_q! (q-hook-length dim_q, [n]_q = (q^n-q^-n)/(q-q^-1)) gives 0.98744 at n=3 and 1.05056 at n=8, matching the quoted 0.987 and 1.051; the same expression tends to exactly 1 as q->1, confirming the stated convention. Both are pin-independent to 7 significant figures. The 2-jet value kappa = 1.7216 that this block says it matches was independently reproduced from the Gram recipe in rem:em-coupling-chern-simons."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9c9bf55da607",
+          "ts": "d134ecc38f04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:55:49.485Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Full read (numerical check, a four-row comparison table, a Lean-handle paragraph and a sensitivity paragraph). No pivot, no spaced em-dash, no reflex triple (the three named partitions are three actual dominant blocks), no aphoristic closer ('This bound is finite and computable' is flat and factual), no narrated emphasis, no restatement closer, no warm register, no superlative. THE HEADLINE NUMBERS VERIFY EXACTLY: recomputing the Plancherel weight sum with w_lambda = dim_q^2(V_lambda)/[n]_q! (q-hook-length dim_q, [n]_q = (q^n-q^-n)/(q-q^-1)) gives 0.98744 at n=3 and 1.05056 at n=8, matching the quoted 0.987 and 1.051; the same expression tends to exactly 1 as q->1, confirming the stated convention. Both are pin-independent to 7 significant figures. The 2-jet value kappa = 1.7216 that this block says it matches was independently reproduced from the Gram recipe in rem:em-coupling-chern-simons."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9c9bf55da607",
+          "ts": "d134ecc38f04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:55:49.553Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Full read (numerical check, a four-row comparison table, a Lean-handle paragraph and a sensitivity paragraph). No pivot, no spaced em-dash, no reflex triple (the three named partitions are three actual dominant blocks), no aphoristic closer ('This bound is finite and computable' is flat and factual), no narrated emphasis, no restatement closer, no warm register, no superlative. THE HEADLINE NUMBERS VERIFY EXACTLY: recomputing the Plancherel weight sum with w_lambda = dim_q^2(V_lambda)/[n]_q! (q-hook-length dim_q, [n]_q = (q^n-q^-n)/(q-q^-1)) gives 0.98744 at n=3 and 1.05056 at n=8, matching the quoted 0.987 and 1.051; the same expression tends to exactly 1 as q->1, confirming the stated convention. Both are pin-independent to 7 significant figures. The 2-jet value kappa = 1.7216 that this block says it matches was independently reproduced from the Gram recipe in rem:em-coupling-chern-simons."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9c9bf55da607",
+          "ts": "d134ecc38f04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:55:49.624Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Full read (numerical check, a four-row comparison table, a Lean-handle paragraph and a sensitivity paragraph). No pivot, no spaced em-dash, no reflex triple (the three named partitions are three actual dominant blocks), no aphoristic closer ('This bound is finite and computable' is flat and factual), no narrated emphasis, no restatement closer, no warm register, no superlative. THE HEADLINE NUMBERS VERIFY EXACTLY: recomputing the Plancherel weight sum with w_lambda = dim_q^2(V_lambda)/[n]_q! (q-hook-length dim_q, [n]_q = (q^n-q^-n)/(q-q^-1)) gives 0.98744 at n=3 and 1.05056 at n=8, matching the quoted 0.987 and 1.051; the same expression tends to exactly 1 as q->1, confirming the stated convention. Both are pin-independent to 7 significant figures. The 2-jet value kappa = 1.7216 that this block says it matches was independently reproduced from the Gram recipe in rem:em-coupling-chern-simons."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9c9bf55da607",
+          "ts": "d134ecc38f04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:55:49.715Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Full read (numerical check, a four-row comparison table, a Lean-handle paragraph and a sensitivity paragraph). No pivot, no spaced em-dash, no reflex triple (the three named partitions are three actual dominant blocks), no aphoristic closer ('This bound is finite and computable' is flat and factual), no narrated emphasis, no restatement closer, no warm register, no superlative. THE HEADLINE NUMBERS VERIFY EXACTLY: recomputing the Plancherel weight sum with w_lambda = dim_q^2(V_lambda)/[n]_q! (q-hook-length dim_q, [n]_q = (q^n-q^-n)/(q-q^-1)) gives 0.98744 at n=3 and 1.05056 at n=8, matching the quoted 0.987 and 1.051; the same expression tends to exactly 1 as q->1, confirming the stated convention. Both are pin-independent to 7 significant figures. The 2-jet value kappa = 1.7216 that this block says it matches was independently reproduced from the Gram recipe in rem:em-coupling-chern-simons."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9c9bf55da607",
+          "ts": "d134ecc38f04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:55:49.773Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Full read (numerical check, a four-row comparison table, a Lean-handle paragraph and a sensitivity paragraph). No pivot, no spaced em-dash, no reflex triple (the three named partitions are three actual dominant blocks), no aphoristic closer ('This bound is finite and computable' is flat and factual), no narrated emphasis, no restatement closer, no warm register, no superlative. THE HEADLINE NUMBERS VERIFY EXACTLY: recomputing the Plancherel weight sum with w_lambda = dim_q^2(V_lambda)/[n]_q! (q-hook-length dim_q, [n]_q = (q^n-q^-n)/(q-q^-1)) gives 0.98744 at n=3 and 1.05056 at n=8, matching the quoted 0.987 and 1.051; the same expression tends to exactly 1 as q->1, confirming the stated convention. Both are pin-independent to 7 significant figures. The 2-jet value kappa = 1.7216 that this block says it matches was independently reproduced from the Gram recipe in rem:em-coupling-chern-simons."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9c9bf55da607",
+          "ts": "d134ecc38f04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:55:49.858Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Full read (numerical check, a four-row comparison table, a Lean-handle paragraph and a sensitivity paragraph). No pivot, no spaced em-dash, no reflex triple (the three named partitions are three actual dominant blocks), no aphoristic closer ('This bound is finite and computable' is flat and factual), no narrated emphasis, no restatement closer, no warm register, no superlative. THE HEADLINE NUMBERS VERIFY EXACTLY: recomputing the Plancherel weight sum with w_lambda = dim_q^2(V_lambda)/[n]_q! (q-hook-length dim_q, [n]_q = (q^n-q^-n)/(q-q^-1)) gives 0.98744 at n=3 and 1.05056 at n=8, matching the quoted 0.987 and 1.051; the same expression tends to exactly 1 as q->1, confirming the stated convention. Both are pin-independent to 7 significant figures. The 2-jet value kappa = 1.7216 that this block says it matches was independently reproduced from the Gram recipe in rem:em-coupling-chern-simons."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9c9bf55da607",
+          "ts": "d134ecc38f04"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:55:49.909Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Full read (numerical check, a four-row comparison table, a Lean-handle paragraph and a sensitivity paragraph). No pivot, no spaced em-dash, no reflex triple (the three named partitions are three actual dominant blocks), no aphoristic closer ('This bound is finite and computable' is flat and factual), no narrated emphasis, no restatement closer, no warm register, no superlative. THE HEADLINE NUMBERS VERIFY EXACTLY: recomputing the Plancherel weight sum with w_lambda = dim_q^2(V_lambda)/[n]_q! (q-hook-length dim_q, [n]_q = (q^n-q^-n)/(q-q^-1)) gives 0.98744 at n=3 and 1.05056 at n=8, matching the quoted 0.987 and 1.051; the same expression tends to exactly 1 as q->1, confirming the stated convention. Both are pin-independent to 7 significant figures. The 2-jet value kappa = 1.7216 that this block says it matches was independently reproduced from the Gram recipe in rem:em-coupling-chern-simons."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9c9bf55da607",
+          "ts": "d134ecc38f04"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:55:50.042Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "severity": "minor",
+        "evidence": "'The sensitivity bounds by $\\max_\\lambda ...$' is ungrammatical - 'bounds' is used transitively with no object, the de-passivisation of 'is bounded by', which the following sentence ('This bound is finite and computable') confirms was the intent. Same sweep-damage shape as 'The categorical structure defines over ...' in prop:em-coupling-projection.",
+        "notes": "FIX APPLIED (one word, pure prose, no math, no meaning change): 'The sensitivity bounds by' -> 'The sensitivity is bounded by'. Math delimiters re-checked (2 x $$, balanced). TWO ITEMS REPORTED, not fixed: (1) '(5,4)' is called 'the rectangular partition' - a rectangular partition has all parts equal (a^b); (5,4) is a two-row partition, not rectangular. The rectangular partitions of 9 are (9), (3,3,3) and (1^9). (2) PIN CURRENCY: 'q_0 = 1.109978595554181... (muon pin, 16 dps)' is the OLD muon value (current muon 1.10997859555733471, owner-default proton 1.1099785827513808); harmless numerically here, since both weight sums are pin-independent to 7 figures, but it is the same stale string as prf:golden-skew-dual-node."
+      }
+    ]
+  }
+}

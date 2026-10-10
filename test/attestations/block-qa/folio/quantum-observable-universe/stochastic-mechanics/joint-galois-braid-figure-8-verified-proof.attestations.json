@@ -1,0 +1,662 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified-proof",
+    "path": "folio/quantum-observable-universe/stochastic-mechanics/joint-galois-braid-figure-8-verified-proof"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "d90ae563c70b",
+          "ts": "d77283e75f34"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "d90ae563c70b",
+          "ts": "d77283e75f34"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:37.717849+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:37.717849+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:37.733895+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:37.733895+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:37.751631+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:37.751631+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:37.767211+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:37.767211+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:37.784663+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:37.784663+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:37.803223+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:37.803223+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:37.818155+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:37.818155+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:37.832605+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:37.832605+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:37.850214+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:37.850214+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:37.865772+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:37.865772+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:37.883017+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:37.883017+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:37.899705+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:37.899705+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:37.917380+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:37.917380+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Checked and meets criteria. No obvious flaws found.",
+        "reviewed_at": "2026-07-07T23:38:37.931578+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:38:37.931578+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Clean. No branch/audit working labels, bean ids, PR or branch names, AGENTS.md / skill-file or audit-memo pointers, dated status notes, or first-person work narration found in the .md body or the published .ts title.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d90ae563c70b",
+          "ts": "d77283e75f34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:36:30.905Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read of the five-step proof (270 words, 2 em-dashes, both appositive after bold run-ins). No closer, no warmth, no pivot, no triple, no meta-narration. Aligned environment is inside $$...$$ (math mode), so no render-math-mode-envelope issue. Every mathematical step recomputed or checked and CORRECT: (2,2)' = (2,2) so bar fixes e_{(2,2)}; centrality gives beta e beta^{-1} = e; Li_2(conj z) = conj(Li_2(z)) by Schwarz reflection; D(conj z) = -D(z); the two composites of Step 5 both reduce to e_{(2,2)} . Li_2^{q^{-1}}(zeta_6^{-1}). tau_arch is used in the AGENTS.md-sanctioned sense (pi_infty composed with the fibre functor)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d90ae563c70b",
+          "ts": "d77283e75f34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:36:30.944Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read of the five-step proof (270 words, 2 em-dashes, both appositive after bold run-ins). No closer, no warmth, no pivot, no triple, no meta-narration. Aligned environment is inside $$...$$ (math mode), so no render-math-mode-envelope issue. Every mathematical step recomputed or checked and CORRECT: (2,2)' = (2,2) so bar fixes e_{(2,2)}; centrality gives beta e beta^{-1} = e; Li_2(conj z) = conj(Li_2(z)) by Schwarz reflection; D(conj z) = -D(z); the two composites of Step 5 both reduce to e_{(2,2)} . Li_2^{q^{-1}}(zeta_6^{-1}). tau_arch is used in the AGENTS.md-sanctioned sense (pi_infty composed with the fibre functor)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d90ae563c70b",
+          "ts": "d77283e75f34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:36:30.984Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read of the five-step proof (270 words, 2 em-dashes, both appositive after bold run-ins). No closer, no warmth, no pivot, no triple, no meta-narration. Aligned environment is inside $$...$$ (math mode), so no render-math-mode-envelope issue. Every mathematical step recomputed or checked and CORRECT: (2,2)' = (2,2) so bar fixes e_{(2,2)}; centrality gives beta e beta^{-1} = e; Li_2(conj z) = conj(Li_2(z)) by Schwarz reflection; D(conj z) = -D(z); the two composites of Step 5 both reduce to e_{(2,2)} . Li_2^{q^{-1}}(zeta_6^{-1}). tau_arch is used in the AGENTS.md-sanctioned sense (pi_infty composed with the fibre functor)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d90ae563c70b",
+          "ts": "d77283e75f34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:36:31.022Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read of the five-step proof (270 words, 2 em-dashes, both appositive after bold run-ins). No closer, no warmth, no pivot, no triple, no meta-narration. Aligned environment is inside $$...$$ (math mode), so no render-math-mode-envelope issue. Every mathematical step recomputed or checked and CORRECT: (2,2)' = (2,2) so bar fixes e_{(2,2)}; centrality gives beta e beta^{-1} = e; Li_2(conj z) = conj(Li_2(z)) by Schwarz reflection; D(conj z) = -D(z); the two composites of Step 5 both reduce to e_{(2,2)} . Li_2^{q^{-1}}(zeta_6^{-1}). tau_arch is used in the AGENTS.md-sanctioned sense (pi_infty composed with the fibre functor)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d90ae563c70b",
+          "ts": "d77283e75f34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:36:31.061Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read of the five-step proof (270 words, 2 em-dashes, both appositive after bold run-ins). No closer, no warmth, no pivot, no triple, no meta-narration. Aligned environment is inside $$...$$ (math mode), so no render-math-mode-envelope issue. Every mathematical step recomputed or checked and CORRECT: (2,2)' = (2,2) so bar fixes e_{(2,2)}; centrality gives beta e beta^{-1} = e; Li_2(conj z) = conj(Li_2(z)) by Schwarz reflection; D(conj z) = -D(z); the two composites of Step 5 both reduce to e_{(2,2)} . Li_2^{q^{-1}}(zeta_6^{-1}). tau_arch is used in the AGENTS.md-sanctioned sense (pi_infty composed with the fibre functor)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d90ae563c70b",
+          "ts": "d77283e75f34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:36:31.100Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read of the five-step proof (270 words, 2 em-dashes, both appositive after bold run-ins). No closer, no warmth, no pivot, no triple, no meta-narration. Aligned environment is inside $$...$$ (math mode), so no render-math-mode-envelope issue. Every mathematical step recomputed or checked and CORRECT: (2,2)' = (2,2) so bar fixes e_{(2,2)}; centrality gives beta e beta^{-1} = e; Li_2(conj z) = conj(Li_2(z)) by Schwarz reflection; D(conj z) = -D(z); the two composites of Step 5 both reduce to e_{(2,2)} . Li_2^{q^{-1}}(zeta_6^{-1}). tau_arch is used in the AGENTS.md-sanctioned sense (pi_infty composed with the fibre functor)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d90ae563c70b",
+          "ts": "d77283e75f34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:36:31.138Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read of the five-step proof (270 words, 2 em-dashes, both appositive after bold run-ins). No closer, no warmth, no pivot, no triple, no meta-narration. Aligned environment is inside $$...$$ (math mode), so no render-math-mode-envelope issue. Every mathematical step recomputed or checked and CORRECT: (2,2)' = (2,2) so bar fixes e_{(2,2)}; centrality gives beta e beta^{-1} = e; Li_2(conj z) = conj(Li_2(z)) by Schwarz reflection; D(conj z) = -D(z); the two composites of Step 5 both reduce to e_{(2,2)} . Li_2^{q^{-1}}(zeta_6^{-1}). tau_arch is used in the AGENTS.md-sanctioned sense (pi_infty composed with the fibre functor)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d90ae563c70b",
+          "ts": "d77283e75f34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:36:31.176Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read of the five-step proof (270 words, 2 em-dashes, both appositive after bold run-ins). No closer, no warmth, no pivot, no triple, no meta-narration. Aligned environment is inside $$...$$ (math mode), so no render-math-mode-envelope issue. Every mathematical step recomputed or checked and CORRECT: (2,2)' = (2,2) so bar fixes e_{(2,2)}; centrality gives beta e beta^{-1} = e; Li_2(conj z) = conj(Li_2(z)) by Schwarz reflection; D(conj z) = -D(z); the two composites of Step 5 both reduce to e_{(2,2)} . Li_2^{q^{-1}}(zeta_6^{-1}). tau_arch is used in the AGENTS.md-sanctioned sense (pi_infty composed with the fibre functor)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d90ae563c70b",
+          "ts": "d77283e75f34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:36:31.216Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "No superlative language in the proof.",
+        "notes": "STRUCTURAL FINDINGS (report only). (1) A REFUTABLE STATEMENT behind the Lean sibling's sorry. QOU/AlgebraicSubstrate/JointGaloisBraidFigure8.lean closes with 'theorem kappa_commutes_bar (D : DisjointTensorCell) (p) : D.barTensor (D.kappa p) = D.kappa (D.barTensor p) := by sorry', whose docstring calls it 'a non-false, non-trivial claim'. As stated it quantifies over EVERY DisjointTensorCell with no hypothesis tying kappa to barF, and it is false: take Factor := Bool, barF := not, kappa := fun p => (p.2, true); then barTensor (kappa p) = (not p.2, false) but kappa (barTensor p) = (not p.2, true). So the sorry cannot be discharged as written - the missing bar-invariance hypothesis on kappa has to be added to the structure. The rest of the file is sound (Figure8SelfConjugateCell carries genuine hypotheses A and B; bar_commutes_gen and figure_8_joint_action are derived by rewriting and induction, no self-assumption). (2) Minor: Step 3 restricts 'D(conj z) = -D(z)' to z on the unit circle; the Bloch-Wigner identity holds for all z in C, so the restriction is unnecessary (harmless here, since zeta_6 is on the circle)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d90ae563c70b",
+          "ts": "d77283e75f34"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:36:31.254Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read of the five-step proof (270 words, 2 em-dashes, both appositive after bold run-ins). No closer, no warmth, no pivot, no triple, no meta-narration. Aligned environment is inside $$...$$ (math mode), so no render-math-mode-envelope issue. Every mathematical step recomputed or checked and CORRECT: (2,2)' = (2,2) so bar fixes e_{(2,2)}; centrality gives beta e beta^{-1} = e; Li_2(conj z) = conj(Li_2(z)) by Schwarz reflection; D(conj z) = -D(z); the two composites of Step 5 both reduce to e_{(2,2)} . Li_2^{q^{-1}}(zeta_6^{-1}). tau_arch is used in the AGENTS.md-sanctioned sense (pi_infty composed with the fibre functor)."
+      }
+    ]
+  }
+}

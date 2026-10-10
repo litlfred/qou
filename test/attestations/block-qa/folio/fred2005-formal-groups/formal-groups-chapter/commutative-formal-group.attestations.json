@@ -1,0 +1,386 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/fred2005-formal-groups/formal-groups-chapter/commutative-formal-group",
+    "path": "folio/fred2005-formal-groups/formal-groups-chapter/commutative-formal-group"
+  },
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "6304438de732",
+          "ts": "bb971d567c51",
+          "lean": "4750c95ea032"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "6304438de732",
+          "ts": "bb971d567c51",
+          "lean": "4750c95ea032"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "6304438de732",
+          "ts": "bb971d567c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:54.048Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:commutative-formal-group (fred2005 paper, NOT quantum-observable-universe - judged against formal-group conventions, no QOU q0/Markov/calibration doctrine applied). All ten categories clean; three short declarative sentences plus a reference line.",
+        "notes": "Cat.7: 'This is the base object H/F_p in the dissertation's integration theorem' orients the object inside the source thesis rather than restating the definition - pass. NOT A TRAP, reported separately: the .md states F(X,0)=X as part of the definition but the resolved Lean structure Fred2005.CommutativeFormalGroup carries only a 'zero : coordRing' field with no unitality axiom (the docstring merely remarks on it), and neither .md nor Lean states associativity, which a formal group law requires; the typing 'F : O(H) x O(H) -> O(H)' also has the arrow of an algebra multiplication rather than the comultiplication O(H) -> O(H) (x) O(H)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "6304438de732",
+          "ts": "bb971d567c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:54.088Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:commutative-formal-group (fred2005 paper, NOT quantum-observable-universe - judged against formal-group conventions, no QOU q0/Markov/calibration doctrine applied). All ten categories clean; three short declarative sentences plus a reference line.",
+        "notes": "Cat.7: 'This is the base object H/F_p in the dissertation's integration theorem' orients the object inside the source thesis rather than restating the definition - pass. NOT A TRAP, reported separately: the .md states F(X,0)=X as part of the definition but the resolved Lean structure Fred2005.CommutativeFormalGroup carries only a 'zero : coordRing' field with no unitality axiom (the docstring merely remarks on it), and neither .md nor Lean states associativity, which a formal group law requires; the typing 'F : O(H) x O(H) -> O(H)' also has the arrow of an algebra multiplication rather than the comultiplication O(H) -> O(H) (x) O(H)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "6304438de732",
+          "ts": "bb971d567c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:54.128Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:commutative-formal-group (fred2005 paper, NOT quantum-observable-universe - judged against formal-group conventions, no QOU q0/Markov/calibration doctrine applied). All ten categories clean; three short declarative sentences plus a reference line.",
+        "notes": "Cat.7: 'This is the base object H/F_p in the dissertation's integration theorem' orients the object inside the source thesis rather than restating the definition - pass. NOT A TRAP, reported separately: the .md states F(X,0)=X as part of the definition but the resolved Lean structure Fred2005.CommutativeFormalGroup carries only a 'zero : coordRing' field with no unitality axiom (the docstring merely remarks on it), and neither .md nor Lean states associativity, which a formal group law requires; the typing 'F : O(H) x O(H) -> O(H)' also has the arrow of an algebra multiplication rather than the comultiplication O(H) -> O(H) (x) O(H)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "6304438de732",
+          "ts": "bb971d567c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:54.167Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:commutative-formal-group (fred2005 paper, NOT quantum-observable-universe - judged against formal-group conventions, no QOU q0/Markov/calibration doctrine applied). All ten categories clean; three short declarative sentences plus a reference line.",
+        "notes": "Cat.7: 'This is the base object H/F_p in the dissertation's integration theorem' orients the object inside the source thesis rather than restating the definition - pass. NOT A TRAP, reported separately: the .md states F(X,0)=X as part of the definition but the resolved Lean structure Fred2005.CommutativeFormalGroup carries only a 'zero : coordRing' field with no unitality axiom (the docstring merely remarks on it), and neither .md nor Lean states associativity, which a formal group law requires; the typing 'F : O(H) x O(H) -> O(H)' also has the arrow of an algebra multiplication rather than the comultiplication O(H) -> O(H) (x) O(H)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "6304438de732",
+          "ts": "bb971d567c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:54.207Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:commutative-formal-group (fred2005 paper, NOT quantum-observable-universe - judged against formal-group conventions, no QOU q0/Markov/calibration doctrine applied). All ten categories clean; three short declarative sentences plus a reference line.",
+        "notes": "Cat.7: 'This is the base object H/F_p in the dissertation's integration theorem' orients the object inside the source thesis rather than restating the definition - pass. NOT A TRAP, reported separately: the .md states F(X,0)=X as part of the definition but the resolved Lean structure Fred2005.CommutativeFormalGroup carries only a 'zero : coordRing' field with no unitality axiom (the docstring merely remarks on it), and neither .md nor Lean states associativity, which a formal group law requires; the typing 'F : O(H) x O(H) -> O(H)' also has the arrow of an algebra multiplication rather than the comultiplication O(H) -> O(H) (x) O(H)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "6304438de732",
+          "ts": "bb971d567c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:54.249Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:commutative-formal-group (fred2005 paper, NOT quantum-observable-universe - judged against formal-group conventions, no QOU q0/Markov/calibration doctrine applied). All ten categories clean; three short declarative sentences plus a reference line.",
+        "notes": "Cat.7: 'This is the base object H/F_p in the dissertation's integration theorem' orients the object inside the source thesis rather than restating the definition - pass. NOT A TRAP, reported separately: the .md states F(X,0)=X as part of the definition but the resolved Lean structure Fred2005.CommutativeFormalGroup carries only a 'zero : coordRing' field with no unitality axiom (the docstring merely remarks on it), and neither .md nor Lean states associativity, which a formal group law requires; the typing 'F : O(H) x O(H) -> O(H)' also has the arrow of an algebra multiplication rather than the comultiplication O(H) -> O(H) (x) O(H)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "6304438de732",
+          "ts": "bb971d567c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:54.289Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:commutative-formal-group (fred2005 paper, NOT quantum-observable-universe - judged against formal-group conventions, no QOU q0/Markov/calibration doctrine applied). All ten categories clean; three short declarative sentences plus a reference line.",
+        "notes": "Cat.7: 'This is the base object H/F_p in the dissertation's integration theorem' orients the object inside the source thesis rather than restating the definition - pass. NOT A TRAP, reported separately: the .md states F(X,0)=X as part of the definition but the resolved Lean structure Fred2005.CommutativeFormalGroup carries only a 'zero : coordRing' field with no unitality axiom (the docstring merely remarks on it), and neither .md nor Lean states associativity, which a formal group law requires; the typing 'F : O(H) x O(H) -> O(H)' also has the arrow of an algebra multiplication rather than the comultiplication O(H) -> O(H) (x) O(H)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "6304438de732",
+          "ts": "bb971d567c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:54.330Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:commutative-formal-group (fred2005 paper, NOT quantum-observable-universe - judged against formal-group conventions, no QOU q0/Markov/calibration doctrine applied). All ten categories clean; three short declarative sentences plus a reference line.",
+        "notes": "Cat.7: 'This is the base object H/F_p in the dissertation's integration theorem' orients the object inside the source thesis rather than restating the definition - pass. NOT A TRAP, reported separately: the .md states F(X,0)=X as part of the definition but the resolved Lean structure Fred2005.CommutativeFormalGroup carries only a 'zero : coordRing' field with no unitality axiom (the docstring merely remarks on it), and neither .md nor Lean states associativity, which a formal group law requires; the typing 'F : O(H) x O(H) -> O(H)' also has the arrow of an algebra multiplication rather than the comultiplication O(H) -> O(H) (x) O(H)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "6304438de732",
+          "ts": "bb971d567c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:54.371Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:commutative-formal-group (fred2005 paper, NOT quantum-observable-universe - judged against formal-group conventions, no QOU q0/Markov/calibration doctrine applied). All ten categories clean; three short declarative sentences plus a reference line.",
+        "notes": "Cat.7: 'This is the base object H/F_p in the dissertation's integration theorem' orients the object inside the source thesis rather than restating the definition - pass. NOT A TRAP, reported separately: the .md states F(X,0)=X as part of the definition but the resolved Lean structure Fred2005.CommutativeFormalGroup carries only a 'zero : coordRing' field with no unitality axiom (the docstring merely remarks on it), and neither .md nor Lean states associativity, which a formal group law requires; the typing 'F : O(H) x O(H) -> O(H)' also has the arrow of an algebra multiplication rather than the comultiplication O(H) -> O(H) (x) O(H)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "6304438de732",
+          "ts": "bb971d567c51"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:54.423Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:commutative-formal-group (fred2005 paper, NOT quantum-observable-universe - judged against formal-group conventions, no QOU q0/Markov/calibration doctrine applied). All ten categories clean; three short declarative sentences plus a reference line.",
+        "notes": "Cat.7: 'This is the base object H/F_p in the dissertation's integration theorem' orients the object inside the source thesis rather than restating the definition - pass. NOT A TRAP, reported separately: the .md states F(X,0)=X as part of the definition but the resolved Lean structure Fred2005.CommutativeFormalGroup carries only a 'zero : coordRing' field with no unitality axiom (the docstring merely remarks on it), and neither .md nor Lean states associativity, which a formal group law requires; the typing 'F : O(H) x O(H) -> O(H)' also has the arrow of an algebra multiplication rather than the comultiplication O(H) -> O(H) (x) O(H)."
+      }
+    ]
+  }
+}

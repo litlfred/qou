@@ -1,0 +1,480 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/qbeta-formalize-first-gates-intro",
+    "path": "folio/quantum-observable-universe/mass-theory/qbeta-formalize-first-gates-intro"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic mapping carefully classifying explicit analytic constants explicitly within analytic bounded parameters.",
+        "reviewed_at": "2026-07-08T14:51:42.000Z",
+        "reviewed_sha": "f1d2dfd170c4e8ec2271879a321a2858a8796bf5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic mapping carefully classifying explicit analytic constants explicitly within analytic bounded parameters.",
+        "reviewed_at": "2026-07-08T14:51:42.000Z",
+        "reviewed_sha": "f1d2dfd170c4e8ec2271879a321a2858a8796bf5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic mapping carefully classifying explicit analytic constants explicitly within analytic bounded parameters.",
+        "reviewed_at": "2026-07-08T14:51:42.000Z",
+        "reviewed_sha": "f1d2dfd170c4e8ec2271879a321a2858a8796bf5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic mapping carefully classifying explicit analytic constants explicitly within analytic bounded parameters.",
+        "reviewed_at": "2026-07-08T14:51:42.000Z",
+        "reviewed_sha": "f1d2dfd170c4e8ec2271879a321a2858a8796bf5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic mapping carefully classifying explicit analytic constants explicitly within analytic bounded parameters.",
+        "reviewed_at": "2026-07-08T14:51:42.000Z",
+        "reviewed_sha": "f1d2dfd170c4e8ec2271879a321a2858a8796bf5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic mapping carefully classifying explicit analytic constants explicitly within analytic bounded parameters.",
+        "reviewed_at": "2026-07-08T14:51:42.000Z",
+        "reviewed_sha": "f1d2dfd170c4e8ec2271879a321a2858a8796bf5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic mapping carefully classifying explicit analytic constants explicitly within analytic bounded parameters.",
+        "reviewed_at": "2026-07-08T14:51:42.000Z",
+        "reviewed_sha": "f1d2dfd170c4e8ec2271879a321a2858a8796bf5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic mapping carefully classifying explicit analytic constants explicitly within analytic bounded parameters.",
+        "reviewed_at": "2026-07-08T14:51:42.000Z",
+        "reviewed_sha": "f1d2dfd170c4e8ec2271879a321a2858a8796bf5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic mapping carefully classifying explicit analytic constants explicitly within analytic bounded parameters.",
+        "reviewed_at": "2026-07-08T14:51:42.000Z",
+        "reviewed_sha": "f1d2dfd170c4e8ec2271879a321a2858a8796bf5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic mapping carefully classifying explicit analytic constants explicitly within analytic bounded parameters.",
+        "reviewed_at": "2026-07-08T14:51:42.000Z",
+        "reviewed_sha": "f1d2dfd170c4e8ec2271879a321a2858a8796bf5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic mapping carefully classifying explicit analytic constants explicitly within analytic bounded parameters.",
+        "reviewed_at": "2026-07-08T14:51:42.000Z",
+        "reviewed_sha": "f1d2dfd170c4e8ec2271879a321a2858a8796bf5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic mapping carefully classifying explicit analytic constants explicitly within analytic bounded parameters.",
+        "reviewed_at": "2026-07-08T14:51:42.000Z",
+        "reviewed_sha": "f1d2dfd170c4e8ec2271879a321a2858a8796bf5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic mapping carefully classifying explicit analytic constants explicitly within analytic bounded parameters.",
+        "reviewed_at": "2026-07-08T14:51:42.000Z",
+        "reviewed_sha": "f1d2dfd170c4e8ec2271879a321a2858a8796bf5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic mapping carefully classifying explicit analytic constants explicitly within analytic bounded parameters.",
+        "reviewed_at": "2026-07-08T14:51:42.000Z",
+        "reviewed_sha": "f1d2dfd170c4e8ec2271879a321a2858a8796bf5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic mapping carefully classifying explicit analytic constants explicitly within analytic bounded parameters.",
+        "reviewed_at": "2026-07-08T14:51:42.000Z",
+        "reviewed_sha": "f1d2dfd170c4e8ec2271879a321a2858a8796bf5",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "0ccb19a27e02",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "0ccb19a27e02",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f696c82bf9ea",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:43.700Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the four-paragraph section intro. Checked its c_k epistemics against the 2026-08-16 AGENTS.md correction and they are CURRENT and correctly stated: 'The seed c_2=-1 is Taylor-exact *for the explicit-factor product* (the normalised series has tilde-c_2 = -9/8)' names the series, which is exactly the fix that correction demanded; 'c_3 approx -2 is a near-match'; 'c_k for k>=4 fit to the CODATA residual ... remain cal-anchored' - tiered, not binary. J_Hopf(1) = -2 is correct. No trap of this category."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f696c82bf9ea",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:43.781Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the four-paragraph section intro. Checked its c_k epistemics against the 2026-08-16 AGENTS.md correction and they are CURRENT and correctly stated: 'The seed c_2=-1 is Taylor-exact *for the explicit-factor product* (the normalised series has tilde-c_2 = -9/8)' names the series, which is exactly the fix that correction demanded; 'c_3 approx -2 is a near-match'; 'c_k for k>=4 fit to the CODATA residual ... remain cal-anchored' - tiered, not binary. J_Hopf(1) = -2 is correct. No trap of this category."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f696c82bf9ea",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:43.841Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the four-paragraph section intro. Checked its c_k epistemics against the 2026-08-16 AGENTS.md correction and they are CURRENT and correctly stated: 'The seed c_2=-1 is Taylor-exact *for the explicit-factor product* (the normalised series has tilde-c_2 = -9/8)' names the series, which is exactly the fix that correction demanded; 'c_3 approx -2 is a near-match'; 'c_k for k>=4 fit to the CODATA residual ... remain cal-anchored' - tiered, not binary. J_Hopf(1) = -2 is correct. No trap of this category."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f696c82bf9ea",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:43.888Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'Four gates prune the candidates' followed by exactly four gate sentences, each a distinct proposition with its own cross-reference; a genuine enumeration, and notably four rather than the reflex three."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f696c82bf9ea",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:43.948Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the four-paragraph section intro. Checked its c_k epistemics against the 2026-08-16 AGENTS.md correction and they are CURRENT and correctly stated: 'The seed c_2=-1 is Taylor-exact *for the explicit-factor product* (the normalised series has tilde-c_2 = -9/8)' names the series, which is exactly the fix that correction demanded; 'c_3 approx -2 is a near-match'; 'c_k for k>=4 fit to the CODATA residual ... remain cal-anchored' - tiered, not binary. J_Hopf(1) = -2 is correct. No trap of this category."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f696c82bf9ea",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:44.024Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'This section determines the structural constraints...' and 'we prove the invariants that prune the hypothesis class, then search the survivors' are roadmap sentences standard in a section intro, not narrated emphasis. SWEEP DAMAGE found and repaired here instead.",
+        "notes": "FIXED inline (pure prose, no math): 'Any future $F$ failing a gate is excluded without a canonical search.' -> '... without a numerical search.' This is the documented 'canonical' substituted for 'numerical(ly)' sweep pattern - 'a canonical search' is not a thing, and the sentence's sense (the gate excludes on structure, so no search need be run) requires 'numerical'. Delimiters re-checked."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f696c82bf9ea",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:44.081Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the four-paragraph section intro. Checked its c_k epistemics against the 2026-08-16 AGENTS.md correction and they are CURRENT and correctly stated: 'The seed c_2=-1 is Taylor-exact *for the explicit-factor product* (the normalised series has tilde-c_2 = -9/8)' names the series, which is exactly the fix that correction demanded; 'c_3 approx -2 is a near-match'; 'c_k for k>=4 fit to the CODATA residual ... remain cal-anchored' - tiered, not binary. J_Hopf(1) = -2 is correct. No trap of this category."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f696c82bf9ea",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:44.133Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the four-paragraph section intro. Checked its c_k epistemics against the 2026-08-16 AGENTS.md correction and they are CURRENT and correctly stated: 'The seed c_2=-1 is Taylor-exact *for the explicit-factor product* (the normalised series has tilde-c_2 = -9/8)' names the series, which is exactly the fix that correction demanded; 'c_3 approx -2 is a near-match'; 'c_k for k>=4 fit to the CODATA residual ... remain cal-anchored' - tiered, not binary. J_Hopf(1) = -2 is correct. No trap of this category."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f696c82bf9ea",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:44.194Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the four-paragraph section intro. Checked its c_k epistemics against the 2026-08-16 AGENTS.md correction and they are CURRENT and correctly stated: 'The seed c_2=-1 is Taylor-exact *for the explicit-factor product* (the normalised series has tilde-c_2 = -9/8)' names the series, which is exactly the fix that correction demanded; 'c_3 approx -2 is a near-match'; 'c_k for k>=4 fit to the CODATA residual ... remain cal-anchored' - tiered, not binary. J_Hopf(1) = -2 is correct. No trap of this category."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f696c82bf9ea",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:44.246Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the four-paragraph section intro. Checked its c_k epistemics against the 2026-08-16 AGENTS.md correction and they are CURRENT and correctly stated: 'The seed c_2=-1 is Taylor-exact *for the explicit-factor product* (the normalised series has tilde-c_2 = -9/8)' names the series, which is exactly the fix that correction demanded; 'c_3 approx -2 is a near-match'; 'c_k for k>=4 fit to the CODATA residual ... remain cal-anchored' - tiered, not binary. J_Hopf(1) = -2 is correct. No trap of this category."
+      }
+    ]
+  }
+}

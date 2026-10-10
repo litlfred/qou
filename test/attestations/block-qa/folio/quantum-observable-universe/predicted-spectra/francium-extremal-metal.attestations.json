@@ -1,0 +1,424 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/francium-extremal-metal",
+    "path": "folio/quantum-observable-universe/predicted-spectra/francium-extremal-metal"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:05.306Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast, no setup-then-reframe pivot, no spaced em-dash (the only dash is the compound 'metallic-nonmetallic'), no reflex triple (the enumerations are 'in two ways' and a three-bullet consequence list whose items are logically distinct), no narrated emphasis, no block-final restatement (the closing sentence introduces the filling fraction, which is new), no warm register, and no noun-pile subjects. Electron bookkeeping recomputed and CORRECT: 2+8+18+32+18+8 = 86 for the radon core, 86+1 = 87; fluorine has 7 electrons in shell n=2 of capacity 2n^2 = 8, so |R| = 7 = 2n^2-1 as stated."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:05.354Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast, no setup-then-reframe pivot, no spaced em-dash (the only dash is the compound 'metallic-nonmetallic'), no reflex triple (the enumerations are 'in two ways' and a three-bullet consequence list whose items are logically distinct), no narrated emphasis, no block-final restatement (the closing sentence introduces the filling fraction, which is new), no warm register, and no noun-pile subjects. Electron bookkeeping recomputed and CORRECT: 2+8+18+32+18+8 = 86 for the radon core, 86+1 = 87; fluorine has 7 electrons in shell n=2 of capacity 2n^2 = 8, so |R| = 7 = 2n^2-1 as stated."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:05.434Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast, no setup-then-reframe pivot, no spaced em-dash (the only dash is the compound 'metallic-nonmetallic'), no reflex triple (the enumerations are 'in two ways' and a three-bullet consequence list whose items are logically distinct), no narrated emphasis, no block-final restatement (the closing sentence introduces the filling fraction, which is new), no warm register, and no noun-pile subjects. Electron bookkeeping recomputed and CORRECT: 2+8+18+32+18+8 = 86 for the radon core, 86+1 = 87; fluorine has 7 electrons in shell n=2 of capacity 2n^2 = 8, so |R| = 7 = 2n^2-1 as stated."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:05.522Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast, no setup-then-reframe pivot, no spaced em-dash (the only dash is the compound 'metallic-nonmetallic'), no reflex triple (the enumerations are 'in two ways' and a three-bullet consequence list whose items are logically distinct), no narrated emphasis, no block-final restatement (the closing sentence introduces the filling fraction, which is new), no warm register, and no noun-pile subjects. Electron bookkeeping recomputed and CORRECT: 2+8+18+32+18+8 = 86 for the radon core, 86+1 = 87; fluorine has 7 electrons in shell n=2 of capacity 2n^2 = 8, so |R| = 7 = 2n^2-1 as stated."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:05.988Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "The final sentence names the parameter (the filling fraction |R|/2n^2) rather than delivering a flourish, so it is content and not an aphorism - but its 'the entire ... spectrum' scope is recorded under trap-superlative."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:05.622Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast, no setup-then-reframe pivot, no spaced em-dash (the only dash is the compound 'metallic-nonmetallic'), no reflex triple (the enumerations are 'in two ways' and a three-bullet consequence list whose items are logically distinct), no narrated emphasis, no block-final restatement (the closing sentence introduces the filling fraction, which is new), no warm register, and no noun-pile subjects. Electron bookkeeping recomputed and CORRECT: 2+8+18+32+18+8 = 86 for the radon core, 86+1 = 87; fluorine has 7 electrons in shell n=2 of capacity 2n^2 = 8, so |R| = 7 = 2n^2-1 as stated."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:05.706Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast, no setup-then-reframe pivot, no spaced em-dash (the only dash is the compound 'metallic-nonmetallic'), no reflex triple (the enumerations are 'in two ways' and a three-bullet consequence list whose items are logically distinct), no narrated emphasis, no block-final restatement (the closing sentence introduces the filling fraction, which is new), no warm register, and no noun-pile subjects. Electron bookkeeping recomputed and CORRECT: 2+8+18+32+18+8 = 86 for the radon core, 86+1 = 87; fluorine has 7 electrons in shell n=2 of capacity 2n^2 = 8, so |R| = 7 = 2n^2-1 as stated."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:05.809Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast, no setup-then-reframe pivot, no spaced em-dash (the only dash is the compound 'metallic-nonmetallic'), no reflex triple (the enumerations are 'in two ways' and a three-bullet consequence list whose items are logically distinct), no narrated emphasis, no block-final restatement (the closing sentence introduces the filling fraction, which is new), no warm register, and no noun-pile subjects. Electron bookkeeping recomputed and CORRECT: 2+8+18+32+18+8 = 86 for the radon core, 86+1 = 87; fluorine has 7 electrons in shell n=2 of capacity 2n^2 = 8, so |R| = 7 = 2n^2-1 as stated."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:06.077Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "Three consecutive maximum-strength bullets with no qualification - 'The lowest ionization energy ($E_{ion}\\approx 4.07$ eV)', 'The highest electropositive character', 'The strongest metallic bonding tendency' - followed later by 'the most electronegative element' and a closing 'parametrises the entire metallic-nonmetallic spectrum'. The first is not merely unqualified but FALSE against the block's own table (Cs 3.89 eV < Fr 4.07 eV), and the block concedes the reversal two sentences afterwards, so the superlative register is what carried an unchecked claim into the text. 'The entire spectrum' generalises from six alkalis plus fluorine to all elements.",
+        "notes": "Structural (factual correction required, not a register fix), not edited. Proposed fix for the falsified bullet: 'The lowest ionization energy among the alkali metals except caesium ($E_{ion} \\approx 4.07$ eV; Cs is 3.89 eV, the minimum, because relativistic contraction of the $7s$ orbital raises Fr back above it).' Then delete the later 'slight ionization-energy uptick' sentence, which currently reads as a concession to a claim the block has already made. Also drop 'monotonically' from 'The crossing energy decreases monotonically with n', which the same table falsifies. And bound the closer: 'parametrises the metallic-nonmetallic trend across the alkali and halogen series'."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "08f4aa230b1b",
+          "ts": "baf2a38018c5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:37:05.901Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read. No negation-contrast, no setup-then-reframe pivot, no spaced em-dash (the only dash is the compound 'metallic-nonmetallic'), no reflex triple (the enumerations are 'in two ways' and a three-bullet consequence list whose items are logically distinct), no narrated emphasis, no block-final restatement (the closing sentence introduces the filling fraction, which is new), no warm register, and no noun-pile subjects. Electron bookkeeping recomputed and CORRECT: 2+8+18+32+18+8 = 86 for the radon core, 86+1 = 87; fluorine has 7 electrons in shell n=2 of capacity 2n^2 = 8, so |R| = 7 = 2n^2-1 as stated."
+      }
+    ]
+  }
+}

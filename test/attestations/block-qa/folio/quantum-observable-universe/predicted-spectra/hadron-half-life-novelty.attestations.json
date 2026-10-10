@@ -1,0 +1,481 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/hadron-half-life-novelty",
+    "path": "folio/quantum-observable-universe/predicted-spectra/hadron-half-life-novelty"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "efd12b2f1407",
+          "ts": "3d64a2cb7aaf"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "efd12b2f1407",
+          "ts": "3d64a2cb7aaf"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "efd12b2f1407",
+          "ts": "3d64a2cb7aaf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:59:43.341Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of a two-sentence novelty remark. None of these nine constructions is present, and unlike two other 'novelty' remarks in this batch it does state its novelty (unification of the Fermi golden rule with the Sargent rule in one Markov-trace matrix element). The Sargent Q^5 scaling it invokes does appear in the sibling rem:hadron-half-life-fermi, so the claim is internally anchored."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "efd12b2f1407",
+          "ts": "3d64a2cb7aaf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:59:43.403Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of a two-sentence novelty remark. None of these nine constructions is present, and unlike two other 'novelty' remarks in this batch it does state its novelty (unification of the Fermi golden rule with the Sargent rule in one Markov-trace matrix element). The Sargent Q^5 scaling it invokes does appear in the sibling rem:hadron-half-life-fermi, so the claim is internally anchored."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "efd12b2f1407",
+          "ts": "3d64a2cb7aaf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:59:43.454Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of a two-sentence novelty remark. None of these nine constructions is present, and unlike two other 'novelty' remarks in this batch it does state its novelty (unification of the Fermi golden rule with the Sargent rule in one Markov-trace matrix element). The Sargent Q^5 scaling it invokes does appear in the sibling rem:hadron-half-life-fermi, so the claim is internally anchored."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "efd12b2f1407",
+          "ts": "3d64a2cb7aaf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:59:43.503Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of a two-sentence novelty remark. None of these nine constructions is present, and unlike two other 'novelty' remarks in this batch it does state its novelty (unification of the Fermi golden rule with the Sargent rule in one Markov-trace matrix element). The Sargent Q^5 scaling it invokes does appear in the sibling rem:hadron-half-life-fermi, so the claim is internally anchored."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "efd12b2f1407",
+          "ts": "3d64a2cb7aaf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:59:43.570Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of a two-sentence novelty remark. None of these nine constructions is present, and unlike two other 'novelty' remarks in this batch it does state its novelty (unification of the Fermi golden rule with the Sargent rule in one Markov-trace matrix element). The Sargent Q^5 scaling it invokes does appear in the sibling rem:hadron-half-life-fermi, so the claim is internally anchored."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "efd12b2f1407",
+          "ts": "3d64a2cb7aaf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:59:43.632Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of a two-sentence novelty remark. None of these nine constructions is present, and unlike two other 'novelty' remarks in this batch it does state its novelty (unification of the Fermi golden rule with the Sargent rule in one Markov-trace matrix element). The Sargent Q^5 scaling it invokes does appear in the sibling rem:hadron-half-life-fermi, so the claim is internally anchored."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "efd12b2f1407",
+          "ts": "3d64a2cb7aaf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:59:43.687Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of a two-sentence novelty remark. None of these nine constructions is present, and unlike two other 'novelty' remarks in this batch it does state its novelty (unification of the Fermi golden rule with the Sargent rule in one Markov-trace matrix element). The Sargent Q^5 scaling it invokes does appear in the sibling rem:hadron-half-life-fermi, so the claim is internally anchored."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "efd12b2f1407",
+          "ts": "3d64a2cb7aaf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:59:43.750Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of a two-sentence novelty remark. None of these nine constructions is present, and unlike two other 'novelty' remarks in this batch it does state its novelty (unification of the Fermi golden rule with the Sargent rule in one Markov-trace matrix element). The Sargent Q^5 scaling it invokes does appear in the sibling rem:hadron-half-life-fermi, so the claim is internally anchored."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "efd12b2f1407",
+          "ts": "3d64a2cb7aaf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:59:43.866Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "severity": "minor",
+        "evidence": "'This geometric framing derives the empirical weak-decay structure purely categorically.' - 'purely' is contradicted by the block's own sibling under the same parent. rem:hadron-half-life-fermi closes with an 'Open computations' section listing TWO ingredients the half-life needs and does not have: the weak-scale crossing count N_v ('This must be derived ... from the Skein algebra') and the weak vertex form factor W(q). A derivation missing two of its inputs is not 'purely' anything. The register also wobbles: 'geometric framing' and 'purely categorically' name two different settings in one sentence.",
+        "notes": "Structural (the fix is a factual scoping, not a register change), not edited. Proposed fix: 'This categorical framing re-derives the empirical weak-decay structure from the Markov trace, unifying the Fermi golden rule and the Sargent rule in a single matrix element; two inputs, the weak-scale crossing count $N_v$ and the vertex form factor $\\mathcal{W}(q)$, remain to be derived (see rem:hadron-half-life-fermi).'"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "efd12b2f1407",
+          "ts": "3d64a2cb7aaf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:59:43.815Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of a two-sentence novelty remark. None of these nine constructions is present, and unlike two other 'novelty' remarks in this batch it does state its novelty (unification of the Fermi golden rule with the Sargent rule in one Markov-trace matrix element). The Sargent Q^5 scaling it invokes does appear in the sibling rem:hadron-half-life-fermi, so the claim is internally anchored."
+      }
+    ]
+  }
+}

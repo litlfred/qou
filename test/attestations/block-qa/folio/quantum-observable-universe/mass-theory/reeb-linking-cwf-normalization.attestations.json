@@ -1,0 +1,229 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/reeb-linking-cwf-normalization",
+    "path": "folio/quantum-observable-universe/mass-theory/reeb-linking-cwf-normalization"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "3b27764c366d",
+          "ts": "7a3d99b5d013",
+          "lean": "496bb2ed4f0a"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "3b27764c366d",
+          "ts": "7a3d99b5d013",
+          "lean": "496bb2ed4f0a"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Pass. The flagged \"per the corpus discipline, axiomatization is not proof, and nothing here unblocks any downstream wiring\" had already been rewritten to \"and axiomatisation is not proof, so nothing here is carried downstream\". Re-read in full: the open MeV unit anchor, the near-match label on $B(^2\\mathrm{H}) = 5g$ and the no-instance caveat are all intact, and no pipeline vocabulary remains.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "a40afae4e9c1",
+          "ts": "7a3d99b5d013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:12:58.329Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "conjecture; 3 apparent negations all factual scope: 'does not supply the MeV unit', 'axiomatisation is not proof', 'square-root-free'. Substantive-contrast / temporal-status false-positive classes."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "a40afae4e9c1",
+          "ts": "7a3d99b5d013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:12:58.405Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "No setup-then-reframe. 'what this conjecture asserts is the remaining physical identification' is a scope delimiter separating two cited theorems from the conjectural step."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "a40afae4e9c1",
+          "ts": "7a3d99b5d013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:12:58.479Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "One dash pair, a true parenthetical enumerating the two TL channels (direct amplitude 1, exchange weight z=delta^-1). Density 1 in 3 paragraphs."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "a40afae4e9c1",
+          "ts": "7a3d99b5d013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:12:58.570Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Semicolon triple 'Markov property (theorem); CWF unit-tangent (theorem); remaining identification (conjecture)' is a substantive proved/proved/open partition, not a reflex list."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "a40afae4e9c1",
+          "ts": "7a3d99b5d013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:12:58.629Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Final line 'No instance of the class is provided, and axiomatisation is not proof, so nothing here is carried downstream' is the repo Anti-Laundering scope statement, factual not quotable-flourish."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "a40afae4e9c1",
+          "ts": "7a3d99b5d013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:12:58.691Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "No narrated emphasis; no 'we emphasize'/'note the framing'."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "a40afae4e9c1",
+          "ts": "7a3d99b5d013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:12:58.750Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Closing section is Scope (new information: MeV anchor open, near-match label), not a restatement of the conjecture."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "a40afae4e9c1",
+          "ts": "7a3d99b5d013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:12:58.808Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Institutional register throughout."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "a40afae4e9c1",
+          "ts": "7a3d99b5d013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:12:58.877Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "No unqualified maximum-strength claims; 'near-match' and 'remains open' are hedged correctly."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "a40afae4e9c1",
+          "ts": "7a3d99b5d013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:12:58.943Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "One long noun chain ('the Gauss-Calugareanu-White-Fuller linking integrand reads that direction through unit tangents per unit arc length') but it parses aloud; rest is short-clause."
+      }
+    ]
+  }
+}

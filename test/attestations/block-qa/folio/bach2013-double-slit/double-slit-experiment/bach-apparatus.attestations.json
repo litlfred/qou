@@ -1,0 +1,225 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/bach2013-double-slit/double-slit-experiment/bach-apparatus",
+    "path": "folio/bach2013-double-slit/double-slit-experiment/bach-apparatus"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "9ccc00c0dd2b",
+          "ts": "365e396ffe36"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "9ccc00c0dd2b",
+          "ts": "365e396ffe36"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9ccc00c0dd2b",
+          "ts": "365e396ffe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:00.852Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of remark rem:bach-apparatus (imported Bach et al. 2013 sec.2 apparatus description). Plain instrumental prose, no rhetorical constructions in any of the ten categories. Verified lambda_dB: h/sqrt(2mE) at 600 eV = 50.06 pm, matching the stated 50 pm.",
+        "notes": "Triple 'collimation slit, double-slit, and mask' enumerates three physically distinct fabricated components - substantive, passes cat.4. No em-dashes, no closer, no meta-commentary."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9ccc00c0dd2b",
+          "ts": "365e396ffe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:00.895Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of remark rem:bach-apparatus (imported Bach et al. 2013 sec.2 apparatus description). Plain instrumental prose, no rhetorical constructions in any of the ten categories. Verified lambda_dB: h/sqrt(2mE) at 600 eV = 50.06 pm, matching the stated 50 pm.",
+        "notes": "Triple 'collimation slit, double-slit, and mask' enumerates three physically distinct fabricated components - substantive, passes cat.4. No em-dashes, no closer, no meta-commentary."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9ccc00c0dd2b",
+          "ts": "365e396ffe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:00.937Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of remark rem:bach-apparatus (imported Bach et al. 2013 sec.2 apparatus description). Plain instrumental prose, no rhetorical constructions in any of the ten categories. Verified lambda_dB: h/sqrt(2mE) at 600 eV = 50.06 pm, matching the stated 50 pm.",
+        "notes": "Triple 'collimation slit, double-slit, and mask' enumerates three physically distinct fabricated components - substantive, passes cat.4. No em-dashes, no closer, no meta-commentary."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9ccc00c0dd2b",
+          "ts": "365e396ffe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:00.978Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of remark rem:bach-apparatus (imported Bach et al. 2013 sec.2 apparatus description). Plain instrumental prose, no rhetorical constructions in any of the ten categories. Verified lambda_dB: h/sqrt(2mE) at 600 eV = 50.06 pm, matching the stated 50 pm.",
+        "notes": "Triple 'collimation slit, double-slit, and mask' enumerates three physically distinct fabricated components - substantive, passes cat.4. No em-dashes, no closer, no meta-commentary."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9ccc00c0dd2b",
+          "ts": "365e396ffe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:01.020Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of remark rem:bach-apparatus (imported Bach et al. 2013 sec.2 apparatus description). Plain instrumental prose, no rhetorical constructions in any of the ten categories. Verified lambda_dB: h/sqrt(2mE) at 600 eV = 50.06 pm, matching the stated 50 pm.",
+        "notes": "Triple 'collimation slit, double-slit, and mask' enumerates three physically distinct fabricated components - substantive, passes cat.4. No em-dashes, no closer, no meta-commentary."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9ccc00c0dd2b",
+          "ts": "365e396ffe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:01.062Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of remark rem:bach-apparatus (imported Bach et al. 2013 sec.2 apparatus description). Plain instrumental prose, no rhetorical constructions in any of the ten categories. Verified lambda_dB: h/sqrt(2mE) at 600 eV = 50.06 pm, matching the stated 50 pm.",
+        "notes": "Triple 'collimation slit, double-slit, and mask' enumerates three physically distinct fabricated components - substantive, passes cat.4. No em-dashes, no closer, no meta-commentary."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9ccc00c0dd2b",
+          "ts": "365e396ffe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:01.103Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of remark rem:bach-apparatus (imported Bach et al. 2013 sec.2 apparatus description). Plain instrumental prose, no rhetorical constructions in any of the ten categories. Verified lambda_dB: h/sqrt(2mE) at 600 eV = 50.06 pm, matching the stated 50 pm.",
+        "notes": "Triple 'collimation slit, double-slit, and mask' enumerates three physically distinct fabricated components - substantive, passes cat.4. No em-dashes, no closer, no meta-commentary."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9ccc00c0dd2b",
+          "ts": "365e396ffe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:01.144Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of remark rem:bach-apparatus (imported Bach et al. 2013 sec.2 apparatus description). Plain instrumental prose, no rhetorical constructions in any of the ten categories. Verified lambda_dB: h/sqrt(2mE) at 600 eV = 50.06 pm, matching the stated 50 pm.",
+        "notes": "Triple 'collimation slit, double-slit, and mask' enumerates three physically distinct fabricated components - substantive, passes cat.4. No em-dashes, no closer, no meta-commentary."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9ccc00c0dd2b",
+          "ts": "365e396ffe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:01.185Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of remark rem:bach-apparatus (imported Bach et al. 2013 sec.2 apparatus description). Plain instrumental prose, no rhetorical constructions in any of the ten categories. Verified lambda_dB: h/sqrt(2mE) at 600 eV = 50.06 pm, matching the stated 50 pm.",
+        "notes": "Triple 'collimation slit, double-slit, and mask' enumerates three physically distinct fabricated components - substantive, passes cat.4. No em-dashes, no closer, no meta-commentary."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9ccc00c0dd2b",
+          "ts": "365e396ffe36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:01.226Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of remark rem:bach-apparatus (imported Bach et al. 2013 sec.2 apparatus description). Plain instrumental prose, no rhetorical constructions in any of the ten categories. Verified lambda_dB: h/sqrt(2mE) at 600 eV = 50.06 pm, matching the stated 50 pm.",
+        "notes": "Triple 'collimation slit, double-slit, and mask' enumerates three physically distinct fabricated components - substantive, passes cat.4. No em-dashes, no closer, no meta-commentary."
+      }
+    ]
+  }
+}

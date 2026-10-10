@@ -1,0 +1,203 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/notation/notation-register-table3-data",
+    "path": "folio/quantum-observable-universe/notation/notation-register-table3-data"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. All six dated rename entries are restated as what the symbol means now, with the older notation named but not dated: \"Canonized 2026-07-12\" on h_A and on the 0-indexed generators, \"Renamed from r on 2026-06-04\", \"Renamed from kappa 2026-07-12\", \"Introduced 2026-07-12\", and \"Renamed from r_W in the May 2026 cleanup\" all now read \"Older text writes ...\" or a plain statement of the convention. The repository counts are gone: \"443 corpus uses\" and \"261 generic-angle uses\" become plain distinctions from the contact form and the generic angle, and \"1489+ uses\" is dropped from the Markov-trace row. The formalisation-status marker \"aspirational pending formalization of Reeb as a category\" is now \"whether it promotes to a functor is not settled here, since Reeb is not formalized as a category\", which keeps the unresolved status in present tense. Also removed: a list of block filenames behind the theta_q entry, and \"desync the two blocks\" \u2192 \"desynchronize the two statements\". A dangling \"of .\" left by an earlier link removal is closed off.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "7060d31072fb",
+          "ts": "b1546b3a7635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:23.770Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 22-row braids/knots register, the densest table in the chapter. h_A discriminant identity, e_i^2 = [2]_q e_i, 1/[2]_q = 0.4972905456, z_C = 0.4993203342, the 0.408% gap and the three-strand D weights (0.5054042, 0.2472979, 0) all recomputed correct.",
+        "notes": "no assertion-by-denial beyond substantive mathematical contrast"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "7060d31072fb",
+          "ts": "b1546b3a7635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:23.813Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 22-row braids/knots register, the densest table in the chapter. h_A discriminant identity, e_i^2 = [2]_q e_i, 1/[2]_q = 0.4972905456, z_C = 0.4993203342, the 0.408% gap and the three-strand D weights (0.5054042, 0.2472979, 0) all recomputed correct.",
+        "notes": "no setup-then-reframe construction"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "7060d31072fb",
+          "ts": "b1546b3a7635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:23.853Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 22-row braids/knots register, the densest table in the chapter. h_A discriminant identity, e_i^2 = [2]_q e_i, 1/[2]_q = 0.4972905456, z_C = 0.4993203342, the 0.408% gap and the three-strand D weights (0.5054042, 0.2472979, 0) all recomputed correct.",
+        "notes": "em-dashes are glossary glosses / true parentheticals, not sentence-structure substitutes"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "7060d31072fb",
+          "ts": "b1546b3a7635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:23.893Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 22-row braids/knots register, the densest table in the chapter. h_A discriminant identity, e_i^2 = [2]_q e_i, 1/[2]_q = 0.4972905456, z_C = 0.4993203342, the 0.408% gap and the three-strand D weights (0.5054042, 0.2472979, 0) all recomputed correct.",
+        "notes": "no reflex three-item list; enumerations present are substantive"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "7060d31072fb",
+          "ts": "b1546b3a7635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:23.936Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 22-row braids/knots register, the densest table in the chapter. h_A discriminant identity, e_i^2 = [2]_q e_i, 1/[2]_q = 0.4972905456, z_C = 0.4993203342, the 0.408% gap and the three-strand D weights (0.5054042, 0.2472979, 0) all recomputed correct.",
+        "notes": "block does not end on a manufactured quotable line"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "7060d31072fb",
+          "ts": "b1546b3a7635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:23.978Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 22-row braids/knots register, the densest table in the chapter. h_A discriminant identity, e_i^2 = [2]_q e_i, 1/[2]_q = 0.4972905456, z_C = 0.4993203342, the 0.408% gap and the three-strand D weights (0.5054042, 0.2472979, 0) all recomputed correct.",
+        "notes": "emphasis is placed, not announced"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "7060d31072fb",
+          "ts": "b1546b3a7635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.018Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 22-row braids/knots register, the densest table in the chapter. h_A discriminant identity, e_i^2 = [2]_q e_i, 1/[2]_q = 0.4972905456, z_C = 0.4993203342, the 0.408% gap and the three-strand D weights (0.5054042, 0.2472979, 0) all recomputed correct.",
+        "notes": "no block-final restatement of what the text established"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "7060d31072fb",
+          "ts": "b1546b3a7635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.057Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 22-row braids/knots register, the densest table in the chapter. h_A discriminant identity, e_i^2 = [2]_q e_i, 1/[2]_q = 0.4972905456, z_C = 0.4993203342, the 0.408% gap and the three-strand D weights (0.5054042, 0.2472979, 0) all recomputed correct.",
+        "notes": "institutional register throughout"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "7060d31072fb",
+          "ts": "b1546b3a7635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.097Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 22-row braids/knots register, the densest table in the chapter. h_A discriminant identity, e_i^2 = [2]_q e_i, 1/[2]_q = 0.4972905456, z_C = 0.4993203342, the 0.408% gap and the three-strand D weights (0.5054042, 0.2472979, 0) all recomputed correct.",
+        "notes": "no unqualified maximum-strength claim"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "7060d31072fb",
+          "ts": "b1546b3a7635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.138Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 22-row braids/knots register, the densest table in the chapter. h_A discriminant identity, e_i^2 = [2]_q e_i, 1/[2]_q = 0.4972905456, z_C = 0.4993203342, the 0.408% gap and the three-strand D weights (0.5054042, 0.2472979, 0) all recomputed correct.",
+        "notes": "noun chains parse aloud"
+      }
+    ]
+  }
+}

@@ -1,0 +1,932 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/weinberg-angle-categorical",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/weinberg-angle-categorical"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' is unverified due to Lean compilation failures: folio/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:46:2: error(lean.unknownIdentifier): Unknown identifier `FarCommutes`.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claims in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' are non-vacuous as they make concrete conjectures about 'generic (not a root of unity in $R$, $q \\neq 1$). Under the Hoefsmit cell-content identification of the EW triplet in...'.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor",
+        "evidence": "The prose presents 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' as verified, but the sibling Lean file fails to compile."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Lean and narrative statements for 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' are structurally aligned.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:1 — folio/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:46:2: error(lean.unknownIdentifier): Unknown identifier `FarCommutes`"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d",
+          "lean": "d0b93849dde0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.211954Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.211954Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Lean sibling folio/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean contains compilation errors.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean for conjecture 'Weinberg angle $\\\\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors' fails to compile: folio/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean:46:2: error(lean.unknownIdentifier): Unknown identifier `FarCommutes`",
+        "evidence": "Lean sibling folio/quantum-observable-universe/particle-interactions/weinberg-angle-categorical.lean contains compilation errors."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq24"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:38:52.000Z",
+        "reviewed_sha": "3971483e96fd7f43c640ce9423d90fbd1fde6d1a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:15:50.074Z",
+        "reviewed_sha": "418e6217592f3c1eb9e8f4432c23e275cc8ceeea",
+        "evidence": "Full read (conjecture, ~2.1kB). CODATA target checked: sin^2 theta_W = 0.23121 gives cot theta_W = 1.82348, matching the quoted 1.823. Sec 7a respected. cos^2 + sin^2 = 1 holds for the two displayed definitions. Eight categories clean; trap-rhetorical-pivot and trap-closing-aphorism recorded separately. The quoted q^-4 value is wrong and is reported as an anomaly."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:15:50.521Z",
+        "reviewed_sha": "418e6217592f3c1eb9e8f4432c23e275cc8ceeea",
+        "severity": "major",
+        "evidence": "Setup-then-reframe across a paragraph break. Setup: 'This fails to match the 1.823 CODATA target' - a factor-2.8 miss. Reframe, opening the very next paragraph: 'Expressing theta_W as a ratio of categorical scalars remains structurally consistent.' The second clause carries everything: a numerical refutation of the stated evaluation is converted into a statement of continued structural health without any argument in between. The .ts authorNotes are blunter and more accurate than the .md ('Open. The statement is currently a structural proposal; the simple-multiplicity reading numerically fails'), and authorNotes do not render by default, so the reader sees only the reframe.",
+        "notes": "PROPOSED (not applied - the sentence carries an epistemic claim): make the survival explicit and bounded, e.g. 'The ratio-of-categorical-scalars FORM survives this failure; what is refuted is the simple-multiplicity evaluation, not the shape.'"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:15:50.118Z",
+        "reviewed_sha": "418e6217592f3c1eb9e8f4432c23e275cc8ceeea",
+        "evidence": "Full read (conjecture, ~2.1kB). CODATA target checked: sin^2 theta_W = 0.23121 gives cot theta_W = 1.82348, matching the quoted 1.823. Sec 7a respected. cos^2 + sin^2 = 1 holds for the two displayed definitions. Eight categories clean; trap-rhetorical-pivot and trap-closing-aphorism recorded separately. The quoted q^-4 value is wrong and is reported as an anomaly."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:15:50.155Z",
+        "reviewed_sha": "418e6217592f3c1eb9e8f4432c23e275cc8ceeea",
+        "evidence": "Full read (conjecture, ~2.1kB). CODATA target checked: sin^2 theta_W = 0.23121 gives cot theta_W = 1.82348, matching the quoted 1.823. Sec 7a respected. cos^2 + sin^2 = 1 holds for the two displayed definitions. Eight categories clean; trap-rhetorical-pivot and trap-closing-aphorism recorded separately. The quoted q^-4 value is wrong and is reported as an anomaly."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:15:50.610Z",
+        "reviewed_sha": "418e6217592f3c1eb9e8f4432c23e275cc8ceeea",
+        "severity": "minor",
+        "evidence": "Block-final 'Proving this conjecture supplies sin theta_W, cos theta_W in R as categorical scalars, closing the Weinberg-angle gap' is a conditional-triumph closer placed three sentences after the block reported that its own evaluation fails by a factor of 2.8. 'Closing the gap' is doing the work of a summary the block has not earned.",
+        "notes": "PROPOSED (not applied - pairs with the pivot above): end on the .ts's own next-step list instead, or on the falsifier, rather than on the payoff."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:15:50.198Z",
+        "reviewed_sha": "418e6217592f3c1eb9e8f4432c23e275cc8ceeea",
+        "evidence": "Full read (conjecture, ~2.1kB). CODATA target checked: sin^2 theta_W = 0.23121 gives cot theta_W = 1.82348, matching the quoted 1.823. Sec 7a respected. cos^2 + sin^2 = 1 holds for the two displayed definitions. Eight categories clean; trap-rhetorical-pivot and trap-closing-aphorism recorded separately. The quoted q^-4 value is wrong and is reported as an anomaly."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:15:50.257Z",
+        "reviewed_sha": "418e6217592f3c1eb9e8f4432c23e275cc8ceeea",
+        "evidence": "Full read (conjecture, ~2.1kB). CODATA target checked: sin^2 theta_W = 0.23121 gives cot theta_W = 1.82348, matching the quoted 1.823. Sec 7a respected. cos^2 + sin^2 = 1 holds for the two displayed definitions. Eight categories clean; trap-rhetorical-pivot and trap-closing-aphorism recorded separately. The quoted q^-4 value is wrong and is reported as an anomaly."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:15:50.325Z",
+        "reviewed_sha": "418e6217592f3c1eb9e8f4432c23e275cc8ceeea",
+        "evidence": "Full read (conjecture, ~2.1kB). CODATA target checked: sin^2 theta_W = 0.23121 gives cot theta_W = 1.82348, matching the quoted 1.823. Sec 7a respected. cos^2 + sin^2 = 1 holds for the two displayed definitions. Eight categories clean; trap-rhetorical-pivot and trap-closing-aphorism recorded separately. The quoted q^-4 value is wrong and is reported as an anomaly."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:15:50.370Z",
+        "reviewed_sha": "418e6217592f3c1eb9e8f4432c23e275cc8ceeea",
+        "evidence": "Full read (conjecture, ~2.1kB). CODATA target checked: sin^2 theta_W = 0.23121 gives cot theta_W = 1.82348, matching the quoted 1.823. Sec 7a respected. cos^2 + sin^2 = 1 holds for the two displayed definitions. Eight categories clean; trap-rhetorical-pivot and trap-closing-aphorism recorded separately. The quoted q^-4 value is wrong and is reported as an anomaly."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "e8c9554cffaa",
+          "ts": "4eaaf360a48d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:15:50.433Z",
+        "reviewed_sha": "418e6217592f3c1eb9e8f4432c23e275cc8ceeea",
+        "evidence": "Full read (conjecture, ~2.1kB). CODATA target checked: sin^2 theta_W = 0.23121 gives cot theta_W = 1.82348, matching the quoted 1.823. Sec 7a respected. cos^2 + sin^2 = 1 holds for the two displayed definitions. Eight categories clean; trap-rhetorical-pivot and trap-closing-aphorism recorded separately. The quoted q^-4 value is wrong and is reported as an anomaly."
+      }
+    ]
+  }
+}

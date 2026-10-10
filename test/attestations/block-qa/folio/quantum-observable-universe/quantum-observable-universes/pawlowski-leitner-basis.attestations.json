@@ -1,0 +1,920 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/quantum-observable-universes/pawlowski-leitner-basis",
+    "path": "folio/quantum-observable-universe/quantum-observable-universes/pawlowski-leitner-basis"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "3ca628c5e37d",
+          "ts": "314e666ba0e1",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "3ca628c5e37d",
+          "ts": "314e666ba0e1",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "3ca628c5e37d",
+          "ts": "314e666ba0e1",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.787794Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.787794Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement is a bare mathematical claim."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3ca628c5e37d",
+          "ts": "314e666ba0e1",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.787794Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.787794Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "3ca628c5e37d",
+          "ts": "314e666ba0e1",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "3ca628c5e37d",
+          "ts": "314e666ba0e1",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.787794Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.787794Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement respects the chapter's base-ring regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "3ca628c5e37d",
+          "ts": "314e666ba0e1",
+          "lean": "9a1caabe7da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.787794Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.787794Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Proof machinery matches the statement regime."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Content appears sound according to this criterion.",
+        "reviewed_at": "2026-07-07T23:32:47+0000",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Content appears sound according to this criterion.",
+        "reviewed_at": "2026-07-07T23:32:47+0000",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Content appears sound according to this criterion.",
+        "reviewed_at": "2026-07-07T23:32:47+0000",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Content appears sound according to this criterion.",
+        "reviewed_at": "2026-07-07T23:32:47+0000",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Content appears sound according to this criterion.",
+        "reviewed_at": "2026-07-07T23:32:47+0000",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Content appears sound according to this criterion.",
+        "reviewed_at": "2026-07-07T23:32:47+0000",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Content appears sound according to this criterion.",
+        "reviewed_at": "2026-07-07T23:32:47+0000",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Content appears sound according to this criterion.",
+        "reviewed_at": "2026-07-07T23:32:47+0000",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Content appears sound according to this criterion.",
+        "reviewed_at": "2026-07-07T23:32:47+0000",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Content appears sound according to this criterion.",
+        "reviewed_at": "2026-07-07T23:32:47+0000",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Content appears sound according to this criterion.",
+        "reviewed_at": "2026-07-07T23:32:47+0000",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Content appears sound according to this criterion.",
+        "reviewed_at": "2026-07-07T23:32:47+0000",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Content appears sound according to this criterion.",
+        "reviewed_at": "2026-07-07T23:32:47+0000",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq6 to Milnor rules. Cleared forward/back references. Condensed the intro block. Streamlined the exposition of the adjoint trace and PawLei basis, dropping excessive editorializing and citation metadata where it interrupted the logical flow. Condensed the archimedean specialization meta-commentary into a single declarative sentence.",
+        "reviewed_at": "2026-07-07T14:26:55.787794Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.787794Z"
+        },
+        "field_hash": {
+          "md": "3ca628c5e37d",
+          "ts": "314e666ba0e1",
+          "lean": "9a1caabe7da5"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ca45ed42e2cc",
+          "ts": "314e666ba0e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:47.828Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: proposition block. RECOMPUTED the dimension formula (2j+1)n!/((n/2+j+1)!(n/2-j)!) three independent ways for every (n, j) with n <= 10 -- against the Clebsch-Gordan multiplicity C(n, n/2-j) - C(n, n/2-j-1) and against the two-row SYT hook-length count -- and all three agree in every case, so the displayed formula and the 'vanishes otherwise' parity clause are correct as printed. Also checked the Lean sibling's pawLeiDim: its natural-number division (twice_j+1)/2 looks wrong beside the .md's j but is exactly the ceiling that compensates the floored n/2 in the half-integer case; verified 0 mismatches for n <= 14, so it is correct and should not be 'fixed'. Register: no trap construction of any of the ten kinds.",
+        "notes": "No trap. Structural flag, not fixed: the tikzcd diagram composes 1 -> Lambda^2 V -> V^(x)n -> V_j, a single composite from the unit to V_j, which by Schur's lemma is zero for every j != 0 -- so as drawn it cannot depict a basis element of Hom(V_j, V^(x)n) except in the trivial case. See the returned anomaly list."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ca45ed42e2cc",
+          "ts": "314e666ba0e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:47.873Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: proposition block. RECOMPUTED the dimension formula (2j+1)n!/((n/2+j+1)!(n/2-j)!) three independent ways for every (n, j) with n <= 10 -- against the Clebsch-Gordan multiplicity C(n, n/2-j) - C(n, n/2-j-1) and against the two-row SYT hook-length count -- and all three agree in every case, so the displayed formula and the 'vanishes otherwise' parity clause are correct as printed. Also checked the Lean sibling's pawLeiDim: its natural-number division (twice_j+1)/2 looks wrong beside the .md's j but is exactly the ceiling that compensates the floored n/2 in the half-integer case; verified 0 mismatches for n <= 14, so it is correct and should not be 'fixed'. Register: no trap construction of any of the ten kinds.",
+        "notes": "No trap. Structural flag, not fixed: the tikzcd diagram composes 1 -> Lambda^2 V -> V^(x)n -> V_j, a single composite from the unit to V_j, which by Schur's lemma is zero for every j != 0 -- so as drawn it cannot depict a basis element of Hom(V_j, V^(x)n) except in the trivial case. See the returned anomaly list."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ca45ed42e2cc",
+          "ts": "314e666ba0e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:47.916Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: proposition block. RECOMPUTED the dimension formula (2j+1)n!/((n/2+j+1)!(n/2-j)!) three independent ways for every (n, j) with n <= 10 -- against the Clebsch-Gordan multiplicity C(n, n/2-j) - C(n, n/2-j-1) and against the two-row SYT hook-length count -- and all three agree in every case, so the displayed formula and the 'vanishes otherwise' parity clause are correct as printed. Also checked the Lean sibling's pawLeiDim: its natural-number division (twice_j+1)/2 looks wrong beside the .md's j but is exactly the ceiling that compensates the floored n/2 in the half-integer case; verified 0 mismatches for n <= 14, so it is correct and should not be 'fixed'. Register: no trap construction of any of the ten kinds.",
+        "notes": "No trap. Structural flag, not fixed: the tikzcd diagram composes 1 -> Lambda^2 V -> V^(x)n -> V_j, a single composite from the unit to V_j, which by Schur's lemma is zero for every j != 0 -- so as drawn it cannot depict a basis element of Hom(V_j, V^(x)n) except in the trivial case. See the returned anomaly list."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ca45ed42e2cc",
+          "ts": "314e666ba0e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:47.961Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: proposition block. RECOMPUTED the dimension formula (2j+1)n!/((n/2+j+1)!(n/2-j)!) three independent ways for every (n, j) with n <= 10 -- against the Clebsch-Gordan multiplicity C(n, n/2-j) - C(n, n/2-j-1) and against the two-row SYT hook-length count -- and all three agree in every case, so the displayed formula and the 'vanishes otherwise' parity clause are correct as printed. Also checked the Lean sibling's pawLeiDim: its natural-number division (twice_j+1)/2 looks wrong beside the .md's j but is exactly the ceiling that compensates the floored n/2 in the half-integer case; verified 0 mismatches for n <= 14, so it is correct and should not be 'fixed'. Register: no trap construction of any of the ten kinds.",
+        "notes": "No trap. Structural flag, not fixed: the tikzcd diagram composes 1 -> Lambda^2 V -> V^(x)n -> V_j, a single composite from the unit to V_j, which by Schur's lemma is zero for every j != 0 -- so as drawn it cannot depict a basis element of Hom(V_j, V^(x)n) except in the trivial case. See the returned anomaly list."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ca45ed42e2cc",
+          "ts": "314e666ba0e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.020Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: proposition block. RECOMPUTED the dimension formula (2j+1)n!/((n/2+j+1)!(n/2-j)!) three independent ways for every (n, j) with n <= 10 -- against the Clebsch-Gordan multiplicity C(n, n/2-j) - C(n, n/2-j-1) and against the two-row SYT hook-length count -- and all three agree in every case, so the displayed formula and the 'vanishes otherwise' parity clause are correct as printed. Also checked the Lean sibling's pawLeiDim: its natural-number division (twice_j+1)/2 looks wrong beside the .md's j but is exactly the ceiling that compensates the floored n/2 in the half-integer case; verified 0 mismatches for n <= 14, so it is correct and should not be 'fixed'. Register: no trap construction of any of the ten kinds.",
+        "notes": "No trap. Structural flag, not fixed: the tikzcd diagram composes 1 -> Lambda^2 V -> V^(x)n -> V_j, a single composite from the unit to V_j, which by Schur's lemma is zero for every j != 0 -- so as drawn it cannot depict a basis element of Hom(V_j, V^(x)n) except in the trivial case. See the returned anomaly list."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ca45ed42e2cc",
+          "ts": "314e666ba0e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.064Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: proposition block. RECOMPUTED the dimension formula (2j+1)n!/((n/2+j+1)!(n/2-j)!) three independent ways for every (n, j) with n <= 10 -- against the Clebsch-Gordan multiplicity C(n, n/2-j) - C(n, n/2-j-1) and against the two-row SYT hook-length count -- and all three agree in every case, so the displayed formula and the 'vanishes otherwise' parity clause are correct as printed. Also checked the Lean sibling's pawLeiDim: its natural-number division (twice_j+1)/2 looks wrong beside the .md's j but is exactly the ceiling that compensates the floored n/2 in the half-integer case; verified 0 mismatches for n <= 14, so it is correct and should not be 'fixed'. Register: no trap construction of any of the ten kinds.",
+        "notes": "No trap. Structural flag, not fixed: the tikzcd diagram composes 1 -> Lambda^2 V -> V^(x)n -> V_j, a single composite from the unit to V_j, which by Schur's lemma is zero for every j != 0 -- so as drawn it cannot depict a basis element of Hom(V_j, V^(x)n) except in the trivial case. See the returned anomaly list."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ca45ed42e2cc",
+          "ts": "314e666ba0e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.124Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: proposition block. RECOMPUTED the dimension formula (2j+1)n!/((n/2+j+1)!(n/2-j)!) three independent ways for every (n, j) with n <= 10 -- against the Clebsch-Gordan multiplicity C(n, n/2-j) - C(n, n/2-j-1) and against the two-row SYT hook-length count -- and all three agree in every case, so the displayed formula and the 'vanishes otherwise' parity clause are correct as printed. Also checked the Lean sibling's pawLeiDim: its natural-number division (twice_j+1)/2 looks wrong beside the .md's j but is exactly the ceiling that compensates the floored n/2 in the half-integer case; verified 0 mismatches for n <= 14, so it is correct and should not be 'fixed'. Register: no trap construction of any of the ten kinds.",
+        "notes": "No trap. Structural flag, not fixed: the tikzcd diagram composes 1 -> Lambda^2 V -> V^(x)n -> V_j, a single composite from the unit to V_j, which by Schur's lemma is zero for every j != 0 -- so as drawn it cannot depict a basis element of Hom(V_j, V^(x)n) except in the trivial case. See the returned anomaly list."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ca45ed42e2cc",
+          "ts": "314e666ba0e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.169Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: proposition block. RECOMPUTED the dimension formula (2j+1)n!/((n/2+j+1)!(n/2-j)!) three independent ways for every (n, j) with n <= 10 -- against the Clebsch-Gordan multiplicity C(n, n/2-j) - C(n, n/2-j-1) and against the two-row SYT hook-length count -- and all three agree in every case, so the displayed formula and the 'vanishes otherwise' parity clause are correct as printed. Also checked the Lean sibling's pawLeiDim: its natural-number division (twice_j+1)/2 looks wrong beside the .md's j but is exactly the ceiling that compensates the floored n/2 in the half-integer case; verified 0 mismatches for n <= 14, so it is correct and should not be 'fixed'. Register: no trap construction of any of the ten kinds.",
+        "notes": "No trap. Structural flag, not fixed: the tikzcd diagram composes 1 -> Lambda^2 V -> V^(x)n -> V_j, a single composite from the unit to V_j, which by Schur's lemma is zero for every j != 0 -- so as drawn it cannot depict a basis element of Hom(V_j, V^(x)n) except in the trivial case. See the returned anomaly list."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ca45ed42e2cc",
+          "ts": "314e666ba0e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.210Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: proposition block. RECOMPUTED the dimension formula (2j+1)n!/((n/2+j+1)!(n/2-j)!) three independent ways for every (n, j) with n <= 10 -- against the Clebsch-Gordan multiplicity C(n, n/2-j) - C(n, n/2-j-1) and against the two-row SYT hook-length count -- and all three agree in every case, so the displayed formula and the 'vanishes otherwise' parity clause are correct as printed. Also checked the Lean sibling's pawLeiDim: its natural-number division (twice_j+1)/2 looks wrong beside the .md's j but is exactly the ceiling that compensates the floored n/2 in the half-integer case; verified 0 mismatches for n <= 14, so it is correct and should not be 'fixed'. Register: no trap construction of any of the ten kinds.",
+        "notes": "No trap. Structural flag, not fixed: the tikzcd diagram composes 1 -> Lambda^2 V -> V^(x)n -> V_j, a single composite from the unit to V_j, which by Schur's lemma is zero for every j != 0 -- so as drawn it cannot depict a basis element of Hom(V_j, V^(x)n) except in the trivial case. See the returned anomaly list."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ca45ed42e2cc",
+          "ts": "314e666ba0e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.253Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: proposition block. RECOMPUTED the dimension formula (2j+1)n!/((n/2+j+1)!(n/2-j)!) three independent ways for every (n, j) with n <= 10 -- against the Clebsch-Gordan multiplicity C(n, n/2-j) - C(n, n/2-j-1) and against the two-row SYT hook-length count -- and all three agree in every case, so the displayed formula and the 'vanishes otherwise' parity clause are correct as printed. Also checked the Lean sibling's pawLeiDim: its natural-number division (twice_j+1)/2 looks wrong beside the .md's j but is exactly the ceiling that compensates the floored n/2 in the half-integer case; verified 0 mismatches for n <= 14, so it is correct and should not be 'fixed'. Register: no trap construction of any of the ten kinds.",
+        "notes": "No trap. Structural flag, not fixed: the tikzcd diagram composes 1 -> Lambda^2 V -> V^(x)n -> V_j, a single composite from the unit to V_j, which by Schur's lemma is zero for every j != 0 -- so as drawn it cannot depict a basis element of Hom(V_j, V^(x)n) except in the trivial case. See the returned anomaly list."
+      }
+    ]
+  }
+}

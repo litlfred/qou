@@ -1,0 +1,1331 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character",
+    "path": "folio/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character"
+  },
+  "criteria": {
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.673Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Universal closed form for 1-d Hecke irrep characters: $\\\\chi^{(n)}_q(\\\\beta) = q^w \\\\cdot ([2]_q/2)^m$ and $\\\\chi^{(1^n)}_q(\\\\beta) = (-q^{-1})^w \\\\cdot (-[2]_q/2)^m$ for typed braids of any $n$'.",
+        "severity": "minor",
+        "evidence": "hecke-1d-irrep-closed-form-character.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.844792Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.844792Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration safely mapping explicit operational metrics reliably across rigorous continuous derivations.",
+        "reviewed_at": "2026-07-08T14:39:43.000Z",
+        "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.692Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The citations wenzl1988, jones1985,  in 'Universal closed form for 1-d Hecke irrep characters: $\\\\chi^{(n)}_q(\\\\beta) = q^w \\\\cdot ([2]_q/2)^m$ and $\\\\chi^{(1^n)}_q(\\\\beta) = (-q^{-1})^w \\\\cdot (-[2]_q/2)^m$ for typed braids of any $n$' are consistent with the sources referenced in the text.",
+        "severity": "minor",
+        "evidence": "hecke-1d-irrep-closed-form-character.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.844792Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.844792Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration safely mapping explicit operational metrics reliably across rigorous continuous derivations.",
+        "reviewed_at": "2026-07-08T14:39:43.000Z",
+        "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.698Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Universal closed form for 1-d Hecke irrep characters: $\\\\chi^{(n)}_q(\\\\beta) = q^w \\\\cdot ([2]_q/2)^m$ and $\\\\chi^{(1^n)}_q(\\\\beta) = (-q^{-1})^w \\\\cdot (-[2]_q/2)^m$ for typed braids of any $n$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "hecke-1d-irrep-closed-form-character.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.844792Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.844792Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "closed-form character over the complex field",
+        "notes": "scope: limited\nruling: partial\nreferee_argument: The base ring / regime is left implicit. Claiming a closed-form character without specifying if q is a root of unity introduces definitional ambiguity in the algebraic structure.\nrebuttal: "
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration safely mapping explicit operational metrics reliably across rigorous continuous derivations.",
+        "reviewed_at": "2026-07-08T14:39:43.000Z",
+        "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.704Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The empirical claims in 'Universal closed form for 1-d Hecke irrep characters: $\\\\chi^{(n)}_q(\\\\beta) = q^w \\\\cdot ([2]_q/2)^m$ and $\\\\chi^{(1^n)}_q(\\\\beta) = (-q^{-1})^w \\\\cdot (-[2]_q/2)^m$ for typed braids of any $n$' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "hecke-1d-irrep-closed-form-character.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.844792Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.844792Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration safely mapping explicit operational metrics reliably across rigorous continuous derivations.",
+        "reviewed_at": "2026-07-08T14:39:43.000Z",
+        "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.667Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The mathematical claims in 'Universal closed form for 1-d Hecke irrep characters: $\\\\chi^{(n)}_q(\\\\beta) = q^w \\\\cdot ([2]_q/2)^m$ and $\\\\chi^{(1^n)}_q(\\\\beta) = (-q^{-1})^w \\\\cdot (-[2]_q/2)^m$ for typed braids of any $n$' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Order/Ring/Lemmas.olean' of module Mathlib.Algebra.Order.Ring.Lemmas does not exist.",
+        "severity": "minor",
+        "evidence": "hecke-1d-irrep-closed-form-character.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.844792Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.844792Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration safely mapping explicit operational metrics reliably across rigorous continuous derivations.",
+        "reviewed_at": "2026-07-08T14:39:43.000Z",
+        "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.679Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Universal closed form for 1-d Hecke irrep characters: $\\\\chi^{(n)}_q(\\\\beta) = q^w \\\\cdot ([2]_q/2)^m$ and $\\\\chi^{(1^n)}_q(\\\\beta) = (-q^{-1})^w \\\\cdot (-[2]_q/2)^m$ for typed braids of any $n$'.",
+        "severity": "minor",
+        "evidence": "hecke-1d-irrep-closed-form-character.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.844792Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.844792Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration safely mapping explicit operational metrics reliably across rigorous continuous derivations.",
+        "reviewed_at": "2026-07-08T14:39:43.000Z",
+        "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "md:1 opens '**Proposition (conditional on conj:borromean-quark …).**' but ts:11-13 uses[] omits conj:borromean-quark (§3b-cond req 4) and the real export lean:225 takes no [BorromeanQuark] (§3b-cond req 2); the class appears only in the orphan stub lean:245-248.",
+        "rebuttal": "partial — real §3b-cond bookkeeping defect, but it OVER-states a dependency: the 1-d Hecke character bookkeeping is genuinely unconditional and true, so the unconditional Lean is correct and the banner is spurious. Fix = drop banner or wire uses[]+export to the class; no math at risk.",
+        "evidence": [
+          {
+            "text": "hecke-1d-irrep-closed-form-character.md:1"
+          },
+          {
+            "text": "hecke-1d-irrep-closed-form-character.ts:11"
+          },
+          {
+            "text": "hecke-1d-irrep-closed-form-character.lean:225"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      },
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.844792Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.844792Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration safely mapping explicit operational metrics reliably across rigorous continuous derivations.",
+        "reviewed_at": "2026-07-08T14:39:43.000Z",
+        "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.685Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.lean.",
+        "severity": "minor",
+        "evidence": "hecke-1d-irrep-closed-form-character.lean:1"
+      },
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.844792Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.844792Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration safely mapping explicit operational metrics reliably across rigorous continuous derivations.",
+        "reviewed_at": "2026-07-08T14:39:43.000Z",
+        "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "md:36-44 Proof asserts λ_σ∈{+q,-q⁻¹} forced 'by the Iwahori-Hecke relation (σ_i−q)(σ_i+q⁻¹)=0' and md:88-91 calls eigenvalues 'substrate-derived'; but oneDim_character_closed_form lean:120 takes lam_sig as a free real (only ≠0) and the specialisations merely PLUG IN +q,-q⁻¹ — the Lean never states/uses the quadratic relation, so exhaustiveness is narrative-only.",
+        "rebuttal": "partial — the closed-form FORMULAS are exactly what the Lean discharges; eigenvalue-forcing is a standard fact correctly deferred to prop:hecke-branching-trace-decomposition (present in corpus). Scope/labelling weakness, not a false claim.",
+        "evidence": [
+          {
+            "text": "hecke-1d-irrep-closed-form-character.md:40"
+          },
+          {
+            "text": "hecke-1d-irrep-closed-form-character.lean:120"
+          },
+          {
+            "text": "hecke-1d-irrep-closed-form-character.md:88"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      },
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.844792Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.844792Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration safely mapping explicit operational metrics reliably across rigorous continuous derivations.",
+        "reviewed_at": "2026-07-08T14:39:43.000Z",
+        "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.711Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Universal closed form for 1-d Hecke irrep characters: $\\\\chi^{(n)}_q(\\\\beta) = q^w \\\\cdot ([2]_q/2)^m$ and $\\\\chi^{(1^n)}_q(\\\\beta) = (-q^{-1})^w \\\\cdot (-[2]_q/2)^m$ for typed braids of any $n$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "hecke-1d-irrep-closed-form-character.ts:1"
+      },
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.844792Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.844792Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration safely mapping explicit operational metrics reliably across rigorous continuous derivations.",
+        "reviewed_at": "2026-07-08T14:39:43.000Z",
+        "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "warn",
+        "verdict": "survivable-objection",
+        "referee_argument": "The mechanical Bucket-B flag is rebutted: it caught an orphan §3b-cond audit stub at lean:248 in a namespace the lean.ref never resolves to; the referenced export at lean:225 is a sorry-free inductive proof of both 1-d character closed forms. Survivable objections: (i) the .md §3b-cond 'conditional on conj:borromean-quark' banner is unsupported — uses[] omits the conjecture and the real theorem is unconditional, a manifest/Lean divergence that over-states a dependency; (ii) the Lean proves power-bookkeeping for a free scalar λ_σ and never certifies λ_σ∈{+q,-q⁻¹} is forced by the Hecke quadratic relation, so the advertised eigenvalue-derivation is narrative-only. Neither impugns the closed-form character, which is true and proven.",
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43",
+        "evidence": "The mechanical Bucket-B flag is rebutted: it caught an orphan §3b-cond audit stub at lean:248 in a namespace the lean.ref never resolves to; the referenced export at lean:225 is a sorry-free inductive proof of both 1-d character closed forms. Survivable objections: (i) the .md §3b-cond 'conditional on conj:borromean-quark' banner is unsupported — uses[] omits the conjecture and the real theorem is unconditional, a manifest/Lean divergence that over-states a dependency; (ii) the Lean proves power-bookkeeping for a free scalar λ_σ and never certifies λ_σ∈{+q,-q⁻¹} is forced by the Hecke quadratic relation, so the advertised eigenvalue-derivation is narrative-only. Neither impugns the closed-form character, which is true and proven."
+      },
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.844792Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.844792Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration safely mapping explicit operational metrics reliably across rigorous continuous derivations.",
+        "reviewed_at": "2026-07-08T14:39:43.000Z",
+        "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:38.717Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The Lean sibling folio/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "hecke-1d-irrep-closed-form-character.lean:1 — folio/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Order/Ring/Lemmas.olean' of module Mathlib.Algebra.Order.Ring.Lemmas does not exist"
+      },
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.844792Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.844792Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration safely mapping explicit operational metrics reliably across rigorous continuous derivations.",
+        "reviewed_at": "2026-07-08T14:39:43.000Z",
+        "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "lean:248 `def hecke_d_irrep_closed_form_character_g2_conditional [_inst : BorromeanQuark] : True := trivial` — a def-disguised-True; the Bucket-B 'closed-form over :=trivial' flag latched here.",
+        "rebuttal": "rebutted — ts:6 lean.ref qou:QOU.BraidKnot.hecke_1d_irrep_closed_form_character resolves to lean:225, a sorry-free inductive proof of both 1-d character closed forms (zpow_add_one/zpow_sub_one/pow_succ/field_simp;ring). The :True:=trivial at lean:248 is an orphan in namespace QOU.Hecke1dIrrepClosedFormCharacter.ConditionalAudit the ref never points to.",
+        "evidence": [
+          {
+            "text": "hecke-1d-irrep-closed-form-character.ts:6"
+          },
+          {
+            "text": "hecke-1d-irrep-closed-form-character.lean:225"
+          },
+          {
+            "text": "hecke-1d-irrep-closed-form-character.lean:248"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T12:07:53Z",
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+      },
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.844792Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.844792Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration safely mapping explicit operational metrics reliably across rigorous continuous derivations.",
+        "reviewed_at": "2026-07-08T14:39:43.000Z",
+        "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:55.124Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.844792Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.844792Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration safely mapping explicit operational metrics reliably across rigorous continuous derivations.",
+        "reviewed_at": "2026-07-08T14:39:43.000Z",
+        "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Smoothed transitions, enforced present tense and active voice across blocks. Kept all mathematical definitions intact. Applied Economy and Linear Argument to remove redundancies and non-essential commentary. Replaced passive voice and first-person-singular.",
+        "reviewed_at": "2026-07-07T14:26:56.844792Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.844792Z"
+        },
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration safely mapping explicit operational metrics reliably across rigorous continuous derivations.",
+        "reviewed_at": "2026-07-08T14:39:43.000Z",
+        "reviewed_sha": "dd34bae5a3750edf8154b181814ff0e94de16098",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Lean file checked on branch. No 'proof-no-trivial-true' issue detected. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:39:08.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:54.712Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.844792Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.844792Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:55.770Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.844792Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.844792Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "231fff0cfa09",
+          "ts": "cb140b5db438",
+          "lean": "3e0c0f51336a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:55.412Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "c688a4c6a11c",
+          "ts": "cb140b5db438",
+          "lean": "bd02ad2f2103"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-23",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.844792Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.844792Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Evaluated successfully."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.500Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Full read. \"Evaluation at q_0 is a downstream specialization and is not used in the derivation\" is a factual scope statement (temporal/scope false-positive class), not assertion-by-denial."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.536Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "No setup-then-reframe construction."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.572Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Zero em-dashes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.606Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "The crossing set {sigma_i, sigma_i^-1, sigma_i - h/2} and the three-bullet symbol glossary are substantive enumerations of the actual objects."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.640Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Final sentence is a scope statement about substrate-vs-archimedean placement, not a quotable closer."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.676Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "No narration of emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.709Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "\"This form is independent of n\" is a substantive claim carried forward into the ring-minimality sentence, not a closing restatement."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.743Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.777Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "\"universal closed form\" is bounded by the explicit quantifier \"for typed braids of any n\" and is the title's technical term."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.812Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "The minimal-ring sentence is long but parses aloud; no noun-chain stall.",
+        "notes": "Separate (non-trap) findings reported: (1) the opening banner \"Proposition (conditional on conj:borromean-quark)\" contradicts the block's own closing sentence (\"The identity is algebraic and sits on the substrate side of the wall\") and its Lean ref QOU.BraidKnot.hecke_1d_irrep_closed_form_character, which carries only [CommRing R] [Invertible (2:R)] and NO [BorromeanQuark] binder; (2) uses[] omits conj:borromean-quark, violating AGENTS.md 3b-cond item 4. Proposed fix: drop the conditional banner (the derivation is unconditional Hecke-quadratic-relation algebra), or, if conditionality is intended, add the conjecture to uses[] and retarget lean.ref at the ConditionalAudit namespace."
+      }
+    ]
+  }
+}

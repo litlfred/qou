@@ -1,0 +1,196 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09a-mass-identity",
+    "path": "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-step09a-mass-identity"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. All five owner-governance markers are gone. The two \"(owner ruling 2026-06-24)\" tags on the mass identity and on canonical_mass.py become, respectively, \"the form adopted here as canonical\" and \"the single entry point\"; \"(owner ruling 2026-07-03, which stripped an earlier fitted Habiro 4-loop dressing from the pin)\" becomes a substantive parenthetical stating that an earlier pin carried such a dressing and this one does not; the \"Deprecation (owner ruling ..., guardrail ...)\" heading with its docs/ link becomes \"Superseded forms\"; and both \"owner-gated\" reconciles become \"is unresolved\". \"neither c_4 = 46 nor c_4 = 4143/90 has a derivation trail in the corpus\" is now \"is derived anywhere in this paper\". \"Dashboard roll-up\" is now a plain statement that residuals are collected in the witness. Every number survives: the 242 ppb overshoot, the 1.4 ppb muon reconcile, both c_4 values, and the fit-tier (not derived) label on the dressing. Note: R_s5bb keeps its subscript, which encodes a bean id, because it is tied to the producer field name habiro_ratio_s5bb.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ab438c72c65e",
+          "ts": "ab1ab2cd4451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:51.177Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "'name mass identity is deliberately not used' + 'fit-tier, not derived' + 'a rendering rather than an independent absolute-mass claim'",
+        "notes": "pass-with-note: symbol-collision disambiguation + mandated absolute-mass-excision / fit-tier epistemic labels; substantive, not manufactured emphasis"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ab438c72c65e",
+          "ts": "ab1ab2cd4451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:51.217Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no rhetorical-pivot trap present."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ab438c72c65e",
+          "ts": "ab1ab2cd4451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:51.299Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "several spaced dashes, all parenthetical or cross-ref ('Family-A -- bit-for-bit equal', 'the binding-side density is Step 9b's frontier')",
+        "notes": "pass-with-note: parenthetical/technical-annotation use, density acceptable for an algorithm contract block"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ab438c72c65e",
+          "ts": "ab1ab2cd4451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:51.370Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no compulsive-triple trap present."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ab438c72c65e",
+          "ts": "ab1ab2cd4451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:51.479Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no closing-aphorism trap present."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ab438c72c65e",
+          "ts": "ab1ab2cd4451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:51.522Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "blockquote explaining why the name 'mass identity' is avoided",
+        "notes": "pass-with-note: load-bearing disambiguation (def:mass-identity is a different object), stated as fact not narrated emphasis"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ab438c72c65e",
+          "ts": "ab1ab2cd4451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:51.564Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no thesis-restatement trap present."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ab438c72c65e",
+          "ts": "ab1ab2cd4451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:51.607Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no performed-warmth trap present."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ab438c72c65e",
+          "ts": "ab1ab2cd4451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:51.650Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no superlative-inflation trap present."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ab438c72c65e",
+          "ts": "ab1ab2cd4451"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:34:51.694Z",
+        "reviewed_sha": "188f950b6931be7386771182aff9b07f82e4a9f0",
+        "evidence": "Full-text read in context; no non-speakable syntax trap present."
+      }
+    ]
+  }
+}

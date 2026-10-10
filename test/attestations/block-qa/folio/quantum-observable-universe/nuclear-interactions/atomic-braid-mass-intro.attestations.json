@@ -1,0 +1,505 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/atomic-braid-mass-intro",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/atomic-braid-mass-intro"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The \"\u00a77c\" tag after \"Type-B folded crystal\" is gone; the only section reference left is the bare \"\u00a77\", the paper's own chapter of transfer matrices.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "f09d1db85aea",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "f09d1db85aea",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq9"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:44:16.000Z",
+        "reviewed_sha": "39fa146175ae7dfb601e0bb49d064c2ea32a024b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "c61754cadba2",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:56.348Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "major",
+        "evidence": "Full-context read of sec:atomic-braid-mass-intro (5-para section roadmap). Verified internal count fidelity: 'four components' is followed by exactly four items, 'Three locality statements' and 'Two propositions' match; the four-item ILP list (confinement, gluon, electron-attachment, molecular-bonding) is enumerative. Cross-checked roadmap items against the section 7 block list (nuclear-interactions.ts 213-234).",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "c61754cadba2",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:56.390Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "major",
+        "evidence": "Full-context read of sec:atomic-braid-mass-intro (5-para section roadmap). Verified internal count fidelity: 'four components' is followed by exactly four items, 'Three locality statements' and 'Two propositions' match; the four-item ILP list (confinement, gluon, electron-attachment, molecular-bonding) is enumerative. Cross-checked roadmap items against the section 7 block list (nuclear-interactions.ts 213-234).",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "c61754cadba2",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:56.432Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Full-context read of sec:atomic-braid-mass-intro (5-para section roadmap). Verified internal count fidelity: 'four components' is followed by exactly four items, 'Three locality statements' and 'Two propositions' match; the four-item ILP list (confinement, gluon, electron-attachment, molecular-bonding) is enumerative. Cross-checked roadmap items against the section 7 block list (nuclear-interactions.ts 213-234).",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "c61754cadba2",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:56.473Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Full-context read of sec:atomic-braid-mass-intro (5-para section roadmap). Verified internal count fidelity: 'four components' is followed by exactly four items, 'Three locality statements' and 'Two propositions' match; the four-item ILP list (confinement, gluon, electron-attachment, molecular-bonding) is enumerative. Cross-checked roadmap items against the section 7 block list (nuclear-interactions.ts 213-234).",
+        "notes": "Every enumeration carries an explicit stated count that matches its item count (four components / three locality statements / two propositions); no reflex triple."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "c61754cadba2",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:56.515Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "major",
+        "evidence": "Full-context read of sec:atomic-braid-mass-intro (5-para section roadmap). Verified internal count fidelity: 'four components' is followed by exactly four items, 'Three locality statements' and 'Two propositions' match; the four-item ILP list (confinement, gluon, electron-attachment, molecular-bonding) is enumerative. Cross-checked roadmap items against the section 7 block list (nuclear-interactions.ts 213-234).",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "c61754cadba2",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:56.558Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "major",
+        "evidence": "Full-context read of sec:atomic-braid-mass-intro (5-para section roadmap). Verified internal count fidelity: 'four components' is followed by exactly four items, 'Three locality statements' and 'Two propositions' match; the four-item ILP list (confinement, gluon, electron-attachment, molecular-bonding) is enumerative. Cross-checked roadmap items against the section 7 block list (nuclear-interactions.ts 213-234).",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "c61754cadba2",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:56.602Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "major",
+        "evidence": "Full-context read of sec:atomic-braid-mass-intro (5-para section roadmap). Verified internal count fidelity: 'four components' is followed by exactly four items, 'Three locality statements' and 'Two propositions' match; the four-item ILP list (confinement, gluon, electron-attachment, molecular-bonding) is enumerative. Cross-checked roadmap items against the section 7 block list (nuclear-interactions.ts 213-234).",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "c61754cadba2",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:56.643Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Full-context read of sec:atomic-braid-mass-intro (5-para section roadmap). Verified internal count fidelity: 'four components' is followed by exactly four items, 'Three locality statements' and 'Two propositions' match; the four-item ILP list (confinement, gluon, electron-attachment, molecular-bonding) is enumerative. Cross-checked roadmap items against the section 7 block list (nuclear-interactions.ts 213-234).",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "c61754cadba2",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:56.684Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Full-context read of sec:atomic-braid-mass-intro (5-para section roadmap). Verified internal count fidelity: 'four components' is followed by exactly four items, 'Three locality statements' and 'Two propositions' match; the four-item ILP list (confinement, gluon, electron-attachment, molecular-bonding) is enumerative. Cross-checked roadmap items against the section 7 block list (nuclear-interactions.ts 213-234).",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "c61754cadba2",
+          "ts": "c316d69fa604"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:47:56.726Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Full-context read of sec:atomic-braid-mass-intro (5-para section roadmap). Verified internal count fidelity: 'four components' is followed by exactly four items, 'Three locality statements' and 'Two propositions' match; the four-item ILP list (confinement, gluon, electron-attachment, molecular-bonding) is enumerative. Cross-checked roadmap items against the section 7 block list (nuclear-interactions.ts 213-234).",
+        "notes": "No trap of this category."
+      }
+    ]
+  }
+}

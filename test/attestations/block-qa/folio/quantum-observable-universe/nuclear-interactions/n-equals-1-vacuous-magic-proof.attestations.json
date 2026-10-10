@@ -1,0 +1,926 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/n-equals-1-vacuous-magic-proof",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/n-equals-1-vacuous-magic-proof"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "97074197c5cd",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "97074197c5cd",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:49:19.000Z",
+        "reviewed_sha": "fb30d7d5c29cefd64d6f0a8d1bf2a529a811091a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:49:19.000Z",
+        "reviewed_sha": "fb30d7d5c29cefd64d6f0a8d1bf2a529a811091a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "n-equals-1-vacuous-magic-proof.md: \"ranges over the empty set of decompositions and is vacuously true.\"",
+        "notes": "The proof is literally titled \"vacuous magic proof\" and correctly identifies itself as a vacuous truth, which may not carry physical significance."
+      },
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "severity": "minor",
+        "evidence": "The claim reduces to a vacuous-truth statement",
+        "notes": "The proof relies entirely on a trivial integer inequality (1 >= 2) for contradiction. While mathematically valid, asserting physical 'magic' from a vacuous truth is epistemically weak."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:49:19.000Z",
+        "reviewed_sha": "fb30d7d5c29cefd64d6f0a8d1bf2a529a811091a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:49:19.000Z",
+        "reviewed_sha": "fb30d7d5c29cefd64d6f0a8d1bf2a529a811091a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:49:19.000Z",
+        "reviewed_sha": "fb30d7d5c29cefd64d6f0a8d1bf2a529a811091a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:49:19.000Z",
+        "reviewed_sha": "fb30d7d5c29cefd64d6f0a8d1bf2a529a811091a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:49:19.000Z",
+        "reviewed_sha": "fb30d7d5c29cefd64d6f0a8d1bf2a529a811091a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:49:19.000Z",
+        "reviewed_sha": "fb30d7d5c29cefd64d6f0a8d1bf2a529a811091a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:49:19.000Z",
+        "reviewed_sha": "fb30d7d5c29cefd64d6f0a8d1bf2a529a811091a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:49:19.000Z",
+        "reviewed_sha": "fb30d7d5c29cefd64d6f0a8d1bf2a529a811091a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:49:19.000Z",
+        "reviewed_sha": "fb30d7d5c29cefd64d6f0a8d1bf2a529a811091a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:49:19.000Z",
+        "reviewed_sha": "fb30d7d5c29cefd64d6f0a8d1bf2a529a811091a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:49:19.000Z",
+        "reviewed_sha": "fb30d7d5c29cefd64d6f0a8d1bf2a529a811091a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-37",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:19.148Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Looks sound on heuristic scan."
+      },
+      {
+        "field_hash": {
+          "md": "c8018442bfd6",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-36",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T23:15:46.583Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Passes criterion based on structural review."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:49:19.000Z",
+        "reviewed_sha": "fb30d7d5c29cefd64d6f0a8d1bf2a529a811091a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:49:19.000Z",
+        "reviewed_sha": "fb30d7d5c29cefd64d6f0a8d1bf2a529a811091a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "97074197c5cd",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:55.280Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 5-step proof. The vacuous-truth argument is valid: no decomposition of 1 into k>=2 parts each >=1 exists, so the universally quantified statement is vacuously true.",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "97074197c5cd",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:55.327Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 5-step proof. The vacuous-truth argument is valid: no decomposition of 1 into k>=2 parts each >=1 exists, so the universally quantified statement is vacuously true.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "97074197c5cd",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:55.373Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 5-step proof. The vacuous-truth argument is valid: no decomposition of 1 into k>=2 parts each >=1 exists, so the universally quantified statement is vacuously true.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "97074197c5cd",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:55.414Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 5-step proof. The vacuous-truth argument is valid: no decomposition of 1 into k>=2 parts each >=1 exists, so the universally quantified statement is vacuously true.",
+        "notes": "No reflex three-item list; enumerations present are driven by the underlying content."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "97074197c5cd",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:55.458Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 5-step proof. The vacuous-truth argument is valid: no decomposition of 1 into k>=2 parts each >=1 exists, so the universally quantified statement is vacuously true.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "97074197c5cd",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:55.499Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 5-step proof. The vacuous-truth argument is valid: no decomposition of 1 into k>=2 parts each >=1 exists, so the universally quantified statement is vacuously true.",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "97074197c5cd",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:55.540Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 5-step proof. The vacuous-truth argument is valid: no decomposition of 1 into k>=2 parts each >=1 exists, so the universally quantified statement is vacuously true.",
+        "notes": "No block-final sentence restating what the text already established."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "97074197c5cd",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:55.581Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 5-step proof. The vacuous-truth argument is valid: no decomposition of 1 into k>=2 parts each >=1 exists, so the universally quantified statement is vacuously true.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "97074197c5cd",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:55.622Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 5-step proof. The vacuous-truth argument is valid: no decomposition of 1 into k>=2 parts each >=1 exists, so the universally quantified statement is vacuously true.",
+        "notes": "No unqualified maximum-strength claim; quantitative assertions checked against the block's own arithmetic and cited sources where present."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "97074197c5cd",
+          "ts": "b92ec2182db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:55.663Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 5-step proof. The vacuous-truth argument is valid: no decomposition of 1 into k>=2 parts each >=1 exists, so the universally quantified statement is vacuously true.",
+        "notes": "Sentences parse aloud; no noun-chain stall."
+      }
+    ]
+  }
+}

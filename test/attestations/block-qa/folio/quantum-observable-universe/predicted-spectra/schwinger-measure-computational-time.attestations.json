@@ -1,0 +1,204 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/schwinger-measure-computational-time",
+    "path": "folio/quantum-observable-universe/predicted-spectra/schwinger-measure-computational-time"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. The workstream label is gone in all three places: \"the open content of R2-core\" -> \"what remains open\"; \"this closes R2-core's unit\" -> \"this fixes the unit\"; \"a derivation closes R2-core's unit; a refutation removes the lead\" -> \"a derivation would fix the unit; a refutation would rule the identification out\", which also drops the tracked-lead framing and the unresolvable \"of the same species as R2 itself\". The dated heading \"(bar-parity, 2026-07-25)\" -> \"(bar-parity)\". \"enters the corpus only formally\" -> \"enters this paper only formally\". \"recorded ... in the exploration witness\" -> \"verified exactly at orders $n = 1$ through $6$\". Audit-tier vocabulary: \"at measured tier\" -> \"as measured\", and \"promote the $u \\equiv 1$ alignment from measured to derived\" -> \"derive the $u \\equiv 1$ alignment that is at present only measured\", which keeps the admission that it is measured and not derived. \"data-blind on the current corpus\" -> \"data-blind on the data available here\". Separately, the \"keystone\" honorific on the normalizer identity is replaced by plain description. Every number, hedge and open-content statement is unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ed9419da97b2",
+          "ts": "439737249ed3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:28.119Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): scanned the whole text for assertion-by-denial (not-X-but-Y, 'rather than', bolded denials, negation-first openers), not only the scanner's candidates; none present.",
+        "notes": "clean"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ed9419da97b2",
+          "ts": "439737249ed3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:28.160Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): checked for setup-then-reframe constructions in which a second clause carries the claim; the block states its claims directly.",
+        "notes": "clean"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ed9419da97b2",
+          "ts": "439737249ed3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:28.202Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "severity": "minor",
+        "evidence": "22 spaced em-dashes in roughly 1600 words (about one per 73 words) -- the highest density in the batch by a wide margin; every other block in the batch has 0-5. Individually each is a genuine restrictive appositive naming a mathematical object, so this is a density verdict, not a per-instance one.",
+        "notes": "proposed: convert a subset (the sentence-final appositives, e.g. \"... the unit class -- by derivation\" and \"... -- the unique strip ...\") to parentheses or commas. No edit applied: the block is math-dense throughout and every dash is load-bearing content."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ed9419da97b2",
+          "ts": "439737249ed3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:28.241Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): every enumeration checked for reflex-of-three padding; those present enumerate distinct named objects tied to the block's content.",
+        "notes": "Three-element groupings (\"three frames\", the three selection principles, the P1/P2 premises) each name distinct mathematical objects; substantive, not reflex."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ed9419da97b2",
+          "ts": "439737249ed3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:28.282Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): final sentence checked: it carries content (a cross-reference, a technical statement, or a scope note) rather than a quotable flourish placed for cadence.",
+        "notes": "clean"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ed9419da97b2",
+          "ts": "439737249ed3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:28.321Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): checked for narrated emphasis ('the key point', 'we emphasize', 'note the framing', 'the takeaway'); none present.",
+        "notes": "clean"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ed9419da97b2",
+          "ts": "439737249ed3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:28.361Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): block-final sentence compared against the body; it adds content rather than restating what the text already established.",
+        "notes": "The final \"Nothing downstream depends on this. The conjecture is unchanged in kind; its open fibre content is relocated, with exact coordinates, from the choice of kernel to the choice of self-adjoint extension.\" partly restates the third bullet, but \"nothing downstream depends on this\" is new scope information a reader needs. Passed."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ed9419da97b2",
+          "ts": "439737249ed3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:28.402Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): institutional register throughout; no personal or affective language.",
+        "notes": "clean"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ed9419da97b2",
+          "ts": "439737249ed3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:28.442Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): maximum-strength claims checked against the block's own tables, witness and arithmetic where present; those present are quantified or qualified.",
+        "notes": "clean"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ed9419da97b2",
+          "ts": "439737249ed3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:28.482Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): read aloud for noun-chain stalls; sentence length and verb placement are conventional for the register.",
+        "notes": "clean"
+      }
+    ]
+  }
+}

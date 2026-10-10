@@ -1,0 +1,594 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/qdifference-kernel-prolongation-symbol",
+    "path": "folio/quantum-observable-universe/mass-theory/qdifference-kernel-prolongation-symbol"
+  },
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-07T23:27:02.000Z",
+        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-07T23:27:02.000Z",
+        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-07T23:27:02.000Z",
+        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-07T23:27:02.000Z",
+        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-07T23:27:02.000Z",
+        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-07T23:27:02.000Z",
+        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-07T23:27:02.000Z",
+        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-07T23:27:02.000Z",
+        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-07T23:27:02.000Z",
+        "reviewed_sha": "783c0bae957f3615ea0656cf137565a82610a9f2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound property consistently mapping explicit theoretical constraints across diverse geometric derivations.",
+        "reviewed_at": "2026-07-08T18:08:01.000Z",
+        "reviewed_sha": "e9bef2465959455ea00489ca51c5f9cfc0de8287",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. \"This conjecture is therefore the **single keystone** of the step-9b binding closure\" -> \"... the **single remaining input** to the binding closure\". The two consequences, the Newton-polygon refutation in the scope note and the falsifiability framing are unchanged. The .ts title is a two-line string concatenation that reads correctly end to end (\"... carried by the binding q-lift module\"), so it needed no change.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "fca313f3203f",
+          "ts": "4de4a2de0362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:10.515Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'R is structurally fixed, not fitted' and 'to be *derived* from the prolonged connection's local monodromy, not fitted numerically' are the corpus's anti-fit discipline stated where it binds; the denied alternative is the live failure mode, so this is substantive."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "fca313f3203f",
+          "ts": "4de4a2de0362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:10.580Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture including the Scope note and both consequences. VERIFIED the algebra: with x = q^m, sigma: x -> qx and [n]_q = (q^n-1)/(q-1), the recurrence [m+2]_q b_{m+2} = b_{m+1} + b_m rearranges to exactly (q^2 x - 1)sigma^2 - (q-1)sigma - (q-1) = L_K as stated. Note the block silently uses the NON-symmetric quantum integer here, while AGENTS.md 7a's convention is [n]_q = (q^n - q^-n)/(q - q^-1); L_K is only correct under the former. The Newton-polygon slope multisets {1/2,1/2} vs {-1,+1} are consistent with the two operators' x-degrees, and the module-non-isomorphism is properly scope-(b) with the invariant named and cited (rsz2013 Thm 2.2.1(i), 2.2.4) - exemplary refutation hygiene. Recorded separately: the .md's central identification is stated on an object the .ts authorNotes record as proved non-existent. No trap of this category."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "fca313f3203f",
+          "ts": "4de4a2de0362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:10.628Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture including the Scope note and both consequences. VERIFIED the algebra: with x = q^m, sigma: x -> qx and [n]_q = (q^n-1)/(q-1), the recurrence [m+2]_q b_{m+2} = b_{m+1} + b_m rearranges to exactly (q^2 x - 1)sigma^2 - (q-1)sigma - (q-1) = L_K as stated. Note the block silently uses the NON-symmetric quantum integer here, while AGENTS.md 7a's convention is [n]_q = (q^n - q^-n)/(q - q^-1); L_K is only correct under the former. The Newton-polygon slope multisets {1/2,1/2} vs {-1,+1} are consistent with the two operators' x-degrees, and the module-non-isomorphism is properly scope-(b) with the invariant named and cited (rsz2013 Thm 2.2.1(i), 2.2.4) - exemplary refutation hygiene. Recorded separately: the .md's central identification is stated on an object the .ts authorNotes record as proved non-existent. No trap of this category."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "fca313f3203f",
+          "ts": "4de4a2de0362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:10.671Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'the residue form, the body-order = jet-degree coincidence, and the recurrence machinery are all proved' enumerates three genuinely distinct established results, each named elsewhere in the corpus."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "fca313f3203f",
+          "ts": "4de4a2de0362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:10.716Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture including the Scope note and both consequences. VERIFIED the algebra: with x = q^m, sigma: x -> qx and [n]_q = (q^n-1)/(q-1), the recurrence [m+2]_q b_{m+2} = b_{m+1} + b_m rearranges to exactly (q^2 x - 1)sigma^2 - (q-1)sigma - (q-1) = L_K as stated. Note the block silently uses the NON-symmetric quantum integer here, while AGENTS.md 7a's convention is [n]_q = (q^n - q^-n)/(q - q^-1); L_K is only correct under the former. The Newton-polygon slope multisets {1/2,1/2} vs {-1,+1} are consistent with the two operators' x-degrees, and the module-non-isomorphism is properly scope-(b) with the invariant named and cited (rsz2013 Thm 2.2.1(i), 2.2.4) - exemplary refutation hygiene. Recorded separately: the .md's central identification is stated on an object the .ts authorNotes record as proved non-existent. No trap of this category."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "fca313f3203f",
+          "ts": "4de4a2de0362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:10.785Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture including the Scope note and both consequences. VERIFIED the algebra: with x = q^m, sigma: x -> qx and [n]_q = (q^n-1)/(q-1), the recurrence [m+2]_q b_{m+2} = b_{m+1} + b_m rearranges to exactly (q^2 x - 1)sigma^2 - (q-1)sigma - (q-1) = L_K as stated. Note the block silently uses the NON-symmetric quantum integer here, while AGENTS.md 7a's convention is [n]_q = (q^n - q^-n)/(q - q^-1); L_K is only correct under the former. The Newton-polygon slope multisets {1/2,1/2} vs {-1,+1} are consistent with the two operators' x-degrees, and the module-non-isomorphism is properly scope-(b) with the invariant named and cited (rsz2013 Thm 2.2.1(i), 2.2.4) - exemplary refutation hygiene. Recorded separately: the .md's central identification is stated on an object the .ts authorNotes record as proved non-existent. No trap of this category."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "fca313f3203f",
+          "ts": "4de4a2de0362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:10.876Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture including the Scope note and both consequences. VERIFIED the algebra: with x = q^m, sigma: x -> qx and [n]_q = (q^n-1)/(q-1), the recurrence [m+2]_q b_{m+2} = b_{m+1} + b_m rearranges to exactly (q^2 x - 1)sigma^2 - (q-1)sigma - (q-1) = L_K as stated. Note the block silently uses the NON-symmetric quantum integer here, while AGENTS.md 7a's convention is [n]_q = (q^n - q^-n)/(q - q^-1); L_K is only correct under the former. The Newton-polygon slope multisets {1/2,1/2} vs {-1,+1} are consistent with the two operators' x-degrees, and the module-non-isomorphism is properly scope-(b) with the invariant named and cited (rsz2013 Thm 2.2.1(i), 2.2.4) - exemplary refutation hygiene. Recorded separately: the .md's central identification is stated on an object the .ts authorNotes record as proved non-existent. No trap of this category."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "fca313f3203f",
+          "ts": "4de4a2de0362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:10.940Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture including the Scope note and both consequences. VERIFIED the algebra: with x = q^m, sigma: x -> qx and [n]_q = (q^n-1)/(q-1), the recurrence [m+2]_q b_{m+2} = b_{m+1} + b_m rearranges to exactly (q^2 x - 1)sigma^2 - (q-1)sigma - (q-1) = L_K as stated. Note the block silently uses the NON-symmetric quantum integer here, while AGENTS.md 7a's convention is [n]_q = (q^n - q^-n)/(q - q^-1); L_K is only correct under the former. The Newton-polygon slope multisets {1/2,1/2} vs {-1,+1} are consistent with the two operators' x-degrees, and the module-non-isomorphism is properly scope-(b) with the invariant named and cited (rsz2013 Thm 2.2.1(i), 2.2.4) - exemplary refutation hygiene. Recorded separately: the .md's central identification is stated on an object the .ts authorNotes record as proved non-existent. No trap of this category."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "fca313f3203f",
+          "ts": "4de4a2de0362"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:10.993Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'This conjecture is therefore the **single remaining input** to the binding closure' and 'It closes the binding program'. Both are contradicted by the block's own .ts authorNotes (2026-07-20): 'the confluent-limit narrowing ... proves the stated bounded-depth kernel on the raw OGF cannot exist: R(1,x)=1 is forced and the first-order relation fails against the proved Gevrey-1/2 growth. The surviving well-posed form places the kernel on the q-Borel (Gevrey-normalized) transform; the prolongation-symbol identification itself remains open there.' A conjecture whose stated carrier is proved not to exist is not the single remaining input to anything.",
+        "notes": "Proposed (structural, meaning at stake): the .md was updated for the GGM clause (the Scope note) but not for the confluent narrowing. Restate the kernel on the q-Borel / Gevrey-normalised transform per the authorNote, and replace 'the single remaining input ... It closes the binding program' with the accurate scope - the raw-OGF form is refuted, the q-Borel form is open, and the closure is contingent on the latter."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "fca313f3203f",
+          "ts": "4de4a2de0362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:11.047Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture including the Scope note and both consequences. VERIFIED the algebra: with x = q^m, sigma: x -> qx and [n]_q = (q^n-1)/(q-1), the recurrence [m+2]_q b_{m+2} = b_{m+1} + b_m rearranges to exactly (q^2 x - 1)sigma^2 - (q-1)sigma - (q-1) = L_K as stated. Note the block silently uses the NON-symmetric quantum integer here, while AGENTS.md 7a's convention is [n]_q = (q^n - q^-n)/(q - q^-1); L_K is only correct under the former. The Newton-polygon slope multisets {1/2,1/2} vs {-1,+1} are consistent with the two operators' x-degrees, and the module-non-isomorphism is properly scope-(b) with the invariant named and cited (rsz2013 Thm 2.2.1(i), 2.2.4) - exemplary refutation hygiene. Recorded separately: the .md's central identification is stated on an object the .ts authorNotes record as proved non-existent. No trap of this category."
+      }
+    ]
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/index-of-definitions/definition-index",
+    "path": "folio/quantum-observable-universe/index-of-definitions/definition-index"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The AGENTS.md section id is gone: the LP strong-duality row no longer carries \"(**§3b-cond**)\", so the index no longer inherits an agent-instruction section number from the definition title.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "fc7e6b89fb3b",
+          "ts": "28799677c020"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:40:10.607Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Generated index: 910 table rows across 7 sections, and exactly one prose line ('**910** indexed entries across 7 categories.'). Row count verified = 910. No prose surface for this category."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "fc7e6b89fb3b",
+          "ts": "28799677c020"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:40:10.656Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Generated index: 910 table rows across 7 sections, and exactly one prose line ('**910** indexed entries across 7 categories.'). Row count verified = 910. No prose surface for this category."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "fc7e6b89fb3b",
+          "ts": "28799677c020"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:40:10.729Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Generated index: 910 table rows across 7 sections, and exactly one prose line ('**910** indexed entries across 7 categories.'). Row count verified = 910. No prose surface for this category."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "fc7e6b89fb3b",
+          "ts": "28799677c020"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:40:10.789Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Generated index: 910 table rows across 7 sections, and exactly one prose line ('**910** indexed entries across 7 categories.'). Row count verified = 910. No prose surface for this category."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "fc7e6b89fb3b",
+          "ts": "28799677c020"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:40:10.872Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Generated index: 910 table rows across 7 sections, and exactly one prose line ('**910** indexed entries across 7 categories.'). Row count verified = 910. No prose surface for this category."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "fc7e6b89fb3b",
+          "ts": "28799677c020"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:40:10.932Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Generated index: 910 table rows across 7 sections, and exactly one prose line ('**910** indexed entries across 7 categories.'). Row count verified = 910. No prose surface for this category."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "fc7e6b89fb3b",
+          "ts": "28799677c020"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:40:10.978Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Generated index: 910 table rows across 7 sections, and exactly one prose line ('**910** indexed entries across 7 categories.'). Row count verified = 910. No prose surface for this category."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "fc7e6b89fb3b",
+          "ts": "28799677c020"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:40:11.058Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Generated index: 910 table rows across 7 sections, and exactly one prose line ('**910** indexed entries across 7 categories.'). Row count verified = 910. No prose surface for this category."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "fc7e6b89fb3b",
+          "ts": "28799677c020"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:40:11.165Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Generated index: 910 table rows across 7 sections, and exactly one prose line ('**910** indexed entries across 7 categories.'). Row count verified = 910. No prose surface for this category."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "fc7e6b89fb3b",
+          "ts": "28799677c020"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:40:11.275Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Generated index: 910 table rows across 7 sections, and exactly one prose line ('**910** indexed entries across 7 categories.'). Row count verified = 910. No prose surface for this category."
+      },
+      {
+        "field_hash": {
+          "md": "fc7e6b89fb3b",
+          "ts": "28799677c020"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:40:11.362Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Generated index: 910 table rows across 7 sections, and exactly one prose line ('**910** indexed entries across 7 categories.'). Row count verified = 910. No prose surface for this category.",
+        "notes": "Two generated-output defects found while skimming (not trap-class): line 694 is the only row whose label is bare text rather than a markdown link ('| lem:ccg-cosimplicial-identities |' vs '| [lem:...](#lem:...) |' in the other 909), and the section heading at line 717 reads 'Corollarys'."
+      }
+    ]
+  }
+}

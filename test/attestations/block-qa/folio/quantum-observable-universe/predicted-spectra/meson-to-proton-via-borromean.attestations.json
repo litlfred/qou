@@ -1,0 +1,660 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/meson-to-proton-via-borromean",
+    "path": "folio/quantum-observable-universe/predicted-spectra/meson-to-proton-via-borromean"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:57:28.000Z",
+        "reviewed_sha": "6a617d821de3072f2e8f793f0040f6b30e70e192",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:57:28.000Z",
+        "reviewed_sha": "6a617d821de3072f2e8f793f0040f6b30e70e192",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:57:28.000Z",
+        "reviewed_sha": "6a617d821de3072f2e8f793f0040f6b30e70e192",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:57:28.000Z",
+        "reviewed_sha": "6a617d821de3072f2e8f793f0040f6b30e70e192",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:57:28.000Z",
+        "reviewed_sha": "6a617d821de3072f2e8f793f0040f6b30e70e192",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:57:28.000Z",
+        "reviewed_sha": "6a617d821de3072f2e8f793f0040f6b30e70e192",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:57:28.000Z",
+        "reviewed_sha": "6a617d821de3072f2e8f793f0040f6b30e70e192",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:57:28.000Z",
+        "reviewed_sha": "6a617d821de3072f2e8f793f0040f6b30e70e192",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:57:28.000Z",
+        "reviewed_sha": "6a617d821de3072f2e8f793f0040f6b30e70e192",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:57:28.000Z",
+        "reviewed_sha": "6a617d821de3072f2e8f793f0040f6b30e70e192",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:57:28.000Z",
+        "reviewed_sha": "6a617d821de3072f2e8f793f0040f6b30e70e192",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:57:28.000Z",
+        "reviewed_sha": "6a617d821de3072f2e8f793f0040f6b30e70e192",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:57:28.000Z",
+        "reviewed_sha": "6a617d821de3072f2e8f793f0040f6b30e70e192",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:57:28.000Z",
+        "reviewed_sha": "6a617d821de3072f2e8f793f0040f6b30e70e192",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:57:28.000Z",
+        "reviewed_sha": "6a617d821de3072f2e8f793f0040f6b30e70e192",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:25.690Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (baryon-number argument, meson instability, three pair productions, typed crossings, the E_0 scale derivation, the 'Full derivation' paragraph and the witness list). Verified what is verifiable: baryon-number arithmetic B(qqbar)=0, B(q)=1/3, sum 1/3 vs 1 for a baryon \u2014 correct; charged-pion lifetime 26 ns \u2014 correct (26.03 ns); Borromean braid (sigma_0 sigma_1^{-1})^3 \u2014 correct, its permutation is the identity, 3 components; dim H_3(q) = 6 as stated; Q_beta = m_n - m_p - m_e = 0.78233 MeV \u2014 correct; the +-0.6 eV precision claim \u2014 correct, the backing witness records 6.13e-07 MeV; net difference 0.8108 - 0.9991 = -0.1883 \u2014 correct, and both nucleon nets match beta-decay-energy-scale.witness.json (0.8108345, 0.9991251). No em-dash outside compounds, no pivot, no meta-commentary, no warmth, no aphorism, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:25.730Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (baryon-number argument, meson instability, three pair productions, typed crossings, the E_0 scale derivation, the 'Full derivation' paragraph and the witness list). Verified what is verifiable: baryon-number arithmetic B(qqbar)=0, B(q)=1/3, sum 1/3 vs 1 for a baryon \u2014 correct; charged-pion lifetime 26 ns \u2014 correct (26.03 ns); Borromean braid (sigma_0 sigma_1^{-1})^3 \u2014 correct, its permutation is the identity, 3 components; dim H_3(q) = 6 as stated; Q_beta = m_n - m_p - m_e = 0.78233 MeV \u2014 correct; the +-0.6 eV precision claim \u2014 correct, the backing witness records 6.13e-07 MeV; net difference 0.8108 - 0.9991 = -0.1883 \u2014 correct, and both nucleon nets match beta-decay-energy-scale.witness.json (0.8108345, 0.9991251). No em-dash outside compounds, no pivot, no meta-commentary, no warmth, no aphorism, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:25.770Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (baryon-number argument, meson instability, three pair productions, typed crossings, the E_0 scale derivation, the 'Full derivation' paragraph and the witness list). Verified what is verifiable: baryon-number arithmetic B(qqbar)=0, B(q)=1/3, sum 1/3 vs 1 for a baryon \u2014 correct; charged-pion lifetime 26 ns \u2014 correct (26.03 ns); Borromean braid (sigma_0 sigma_1^{-1})^3 \u2014 correct, its permutation is the identity, 3 components; dim H_3(q) = 6 as stated; Q_beta = m_n - m_p - m_e = 0.78233 MeV \u2014 correct; the +-0.6 eV precision claim \u2014 correct, the backing witness records 6.13e-07 MeV; net difference 0.8108 - 0.9991 = -0.1883 \u2014 correct, and both nucleon nets match beta-decay-energy-scale.witness.json (0.8108345, 0.9991251). No em-dash outside compounds, no pivot, no meta-commentary, no warmth, no aphorism, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:25.812Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (baryon-number argument, meson instability, three pair productions, typed crossings, the E_0 scale derivation, the 'Full derivation' paragraph and the witness list). Verified what is verifiable: baryon-number arithmetic B(qqbar)=0, B(q)=1/3, sum 1/3 vs 1 for a baryon \u2014 correct; charged-pion lifetime 26 ns \u2014 correct (26.03 ns); Borromean braid (sigma_0 sigma_1^{-1})^3 \u2014 correct, its permutation is the identity, 3 components; dim H_3(q) = 6 as stated; Q_beta = m_n - m_p - m_e = 0.78233 MeV \u2014 correct; the +-0.6 eV precision claim \u2014 correct, the backing witness records 6.13e-07 MeV; net difference 0.8108 - 0.9991 = -0.1883 \u2014 correct, and both nucleon nets match beta-decay-energy-scale.witness.json (0.8108345, 0.9991251). No em-dash outside compounds, no pivot, no meta-commentary, no warmth, no aphorism, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:25.852Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (baryon-number argument, meson instability, three pair productions, typed crossings, the E_0 scale derivation, the 'Full derivation' paragraph and the witness list). Verified what is verifiable: baryon-number arithmetic B(qqbar)=0, B(q)=1/3, sum 1/3 vs 1 for a baryon \u2014 correct; charged-pion lifetime 26 ns \u2014 correct (26.03 ns); Borromean braid (sigma_0 sigma_1^{-1})^3 \u2014 correct, its permutation is the identity, 3 components; dim H_3(q) = 6 as stated; Q_beta = m_n - m_p - m_e = 0.78233 MeV \u2014 correct; the +-0.6 eV precision claim \u2014 correct, the backing witness records 6.13e-07 MeV; net difference 0.8108 - 0.9991 = -0.1883 \u2014 correct, and both nucleon nets match beta-decay-energy-scale.witness.json (0.8108345, 0.9991251). No em-dash outside compounds, no pivot, no meta-commentary, no warmth, no aphorism, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:25.893Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (baryon-number argument, meson instability, three pair productions, typed crossings, the E_0 scale derivation, the 'Full derivation' paragraph and the witness list). Verified what is verifiable: baryon-number arithmetic B(qqbar)=0, B(q)=1/3, sum 1/3 vs 1 for a baryon \u2014 correct; charged-pion lifetime 26 ns \u2014 correct (26.03 ns); Borromean braid (sigma_0 sigma_1^{-1})^3 \u2014 correct, its permutation is the identity, 3 components; dim H_3(q) = 6 as stated; Q_beta = m_n - m_p - m_e = 0.78233 MeV \u2014 correct; the +-0.6 eV precision claim \u2014 correct, the backing witness records 6.13e-07 MeV; net difference 0.8108 - 0.9991 = -0.1883 \u2014 correct, and both nucleon nets match beta-decay-energy-scale.witness.json (0.8108345, 0.9991251). No em-dash outside compounds, no pivot, no meta-commentary, no warmth, no aphorism, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:25.934Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (baryon-number argument, meson instability, three pair productions, typed crossings, the E_0 scale derivation, the 'Full derivation' paragraph and the witness list). Verified what is verifiable: baryon-number arithmetic B(qqbar)=0, B(q)=1/3, sum 1/3 vs 1 for a baryon \u2014 correct; charged-pion lifetime 26 ns \u2014 correct (26.03 ns); Borromean braid (sigma_0 sigma_1^{-1})^3 \u2014 correct, its permutation is the identity, 3 components; dim H_3(q) = 6 as stated; Q_beta = m_n - m_p - m_e = 0.78233 MeV \u2014 correct; the +-0.6 eV precision claim \u2014 correct, the backing witness records 6.13e-07 MeV; net difference 0.8108 - 0.9991 = -0.1883 \u2014 correct, and both nucleon nets match beta-decay-energy-scale.witness.json (0.8108345, 0.9991251). No em-dash outside compounds, no pivot, no meta-commentary, no warmth, no aphorism, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:25.974Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (baryon-number argument, meson instability, three pair productions, typed crossings, the E_0 scale derivation, the 'Full derivation' paragraph and the witness list). Verified what is verifiable: baryon-number arithmetic B(qqbar)=0, B(q)=1/3, sum 1/3 vs 1 for a baryon \u2014 correct; charged-pion lifetime 26 ns \u2014 correct (26.03 ns); Borromean braid (sigma_0 sigma_1^{-1})^3 \u2014 correct, its permutation is the identity, 3 components; dim H_3(q) = 6 as stated; Q_beta = m_n - m_p - m_e = 0.78233 MeV \u2014 correct; the +-0.6 eV precision claim \u2014 correct, the backing witness records 6.13e-07 MeV; net difference 0.8108 - 0.9991 = -0.1883 \u2014 correct, and both nucleon nets match beta-decay-energy-scale.witness.json (0.8108345, 0.9991251). No em-dash outside compounds, no pivot, no meta-commentary, no warmth, no aphorism, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:26.054Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "minor",
+        "evidence": "'This produces the only stable hadronic states, the proton and neutron.' The maximum-strength 'the only' is asserted without qualification and is false as written: the free neutron is not stable, it beta-decays with a mean life of about 880 s. The block contradicts itself three paragraphs later, where the entire E_0 derivation is built on the decay n -> p + e^- + nubar_e. The proton is the only stable hadron; the neutron is stable only when bound.",
+        "notes": "flagged, not fixed \u2014 correcting it is a physics edit, not a punctuation one. Proposed: 'This produces the only stable hadronic states: the proton, and the neutron when bound.' FIVE FURTHER FINDINGS, none fixed inline. (1) DEAD/DEPRECATED WITNESS CITATIONS: of the three witnesses the block cites, meson-nucleon-nf.witness.json and beta-decay-energy-scale.witness.json exist ONLY under computations/_deprecated/; only confinement-operator-selection.witness.json is live. (2) That live witness carries z = 0.4993203340335982, which is exactly z_C = sqrt(q)/(q+1) = 0.499320334034, not z_D = q^3/(q^2+1) = 0.612688050546 \u2014 and it is used as the Markov parameter building the 6x6 Gram (G_{01} = 0.49932...), so this is a genuine convention-C dependence, not the harmless positivity-inequality use. Convention D was made canonical and C excised by the 2026-08-15 owner ruling. (3) The same witness has y0_star, y_star, dual_obj, duality_gap all null with the status string 'STUB \u2014 re-run script through lp_dual_solver.py to populate', so it does not satisfy the AGENTS.md LP/SDP first-class-dual requirement it is subject to. It also records gram_det = -0.1892052530713217, i.e. NONZERO, while its sibling block prf:knot-operator-selection asserts 'on H_n itself det G = 0 exactly'. Those two statements are consistent only if one is convention-C and the other convention-D \u2014 which is exactly the split I measure \u2014 so the chapter is carrying both conventions at once. (4) DISPLAYED ARITHMETIC DOES NOT REPRODUCE: 'E_0 = 0.782/0.1883 approx 4.155 MeV' \u2014 the printed division gives 4.1529, not 4.155. The RESULT is right (the witness has E0_MeV = 4.154925) because it was computed from Q = 0.7823334 and |Delta net| = 0.18829062; it is the rounded display that fails to reproduce it. Proposed: quote 0.78233/0.18829. (5) CIRCULARITY, stated as a verification: 'The six terms sum exactly to Q_beta.' E_0 is DEFINED as Q_beta/|Delta net| and Delta net is by the block's own linearity clause the sum of the six coefficient differences, so sum_i Delta_i E_0 = Q_beta identically. That is the definition unfolded, not a check, and it should not be presented as one. Related: 'Untyped composition yields net approx 1.506. The CODATA proton net is approx 0.999. Typed crossings close this gap.' \u2014 CODATA measures masses, not 'nets'; 0.999 is a target, and the typed-crossing shift h_A is introduced to reach it, landing on 0.9991. That is the shape of a fit and should be labelled per the production-vs-exploratory discipline. Two lesser notes: the bold banner '**Full derivation.**' is followed by three summary sentences that derive nothing (the dangling-banner pattern); and the block says 'CODATA 2022' while its witness carries CODATA-2018 masses (m_p = 938.27208816 against the 2022 value 938.27208943). The witness's own auditOnly pointer, docs/audits/categorical-vs-fitted-q-decay-ba.md, does not exist."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "33b211cf9442",
+          "ts": "578ce09485ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:17:26.013Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (baryon-number argument, meson instability, three pair productions, typed crossings, the E_0 scale derivation, the 'Full derivation' paragraph and the witness list). Verified what is verifiable: baryon-number arithmetic B(qqbar)=0, B(q)=1/3, sum 1/3 vs 1 for a baryon \u2014 correct; charged-pion lifetime 26 ns \u2014 correct (26.03 ns); Borromean braid (sigma_0 sigma_1^{-1})^3 \u2014 correct, its permutation is the identity, 3 components; dim H_3(q) = 6 as stated; Q_beta = m_n - m_p - m_e = 0.78233 MeV \u2014 correct; the +-0.6 eV precision claim \u2014 correct, the backing witness records 6.13e-07 MeV; net difference 0.8108 - 0.9991 = -0.1883 \u2014 correct, and both nucleon nets match beta-decay-energy-scale.witness.json (0.8108345, 0.9991251). No em-dash outside compounds, no pivot, no meta-commentary, no warmth, no aphorism, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ]
+  }
+}

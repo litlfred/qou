@@ -1,0 +1,664 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/corrected-markov-trace-proof",
+    "path": "folio/quantum-observable-universe/mass-theory/corrected-markov-trace-proof"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies fit-section-chapter.",
+        "reviewed_at": "2026-07-07T23:31:37Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-false-claim.",
+        "reviewed_at": "2026-07-07T23:31:37Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "fail",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "evidence": "Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-vacuous.",
+        "reviewed_at": "2026-07-07T23:31:37Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-circular.",
+        "reviewed_at": "2026-07-07T23:31:37Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-overclaim.",
+        "reviewed_at": "2026-07-07T23:31:37Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-hidden-dof.",
+        "reviewed_at": "2026-07-07T23:31:37Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-non-sequitur.",
+        "reviewed_at": "2026-07-07T23:31:37Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-lean-narrative-divergence.",
+        "reviewed_at": "2026-07-07T23:31:37Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-citation-misuse.",
+        "reviewed_at": "2026-07-07T23:31:37Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-definitional-ambiguity.",
+        "reviewed_at": "2026-07-07T23:31:37Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-empirical-fragility.",
+        "reviewed_at": "2026-07-07T23:31:37Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-physical-implausibility.",
+        "reviewed_at": "2026-07-07T23:31:37Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-reproducibility.",
+        "reviewed_at": "2026-07-07T23:31:37Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-referee-verdict.",
+        "reviewed_at": "2026-07-07T23:31:37Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Fails da-false-claim. The proof relies on an invalid application of the Markov property (tr_M(x*sigma_n) = z*tr_M(x) where x is in H_n). Here, it incorrectly peels sigma_0 from sigma_0*sigma_1*sigma_0, falsely claiming sigma_0 has maximal index, but sigma_1 does. The correct value is hz^2 + z, not z^3. The file explicitly contradicts the fixed markov-trace-product-proof.md and gram-matrix-spectral-connection.md.",
+        "reviewed_at": "2026-07-08T19:06:34.000Z",
+        "reviewed_sha": "ed52c2b28907c5d9e98e08d99f4da3976639b5ff",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.504Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'this holds when ... but fails for ...' is a genuine case split, not assertion-by-denial."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.538Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 135 w: read in full. Three-step Markov-property computation, Hecke/skein commentary, Impact list."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.572Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Load-bearing spaced dash joining two independent clauses: 'assumes that the Hecke reduction of each generator is independent - this holds when generators are non-adjacent (commuting), but fails for the trefoil ...'. The dash dodges the comma-vs-full-stop choice in a 135-word block.",
+        "notes": "Proposed (NOT applied - block's mathematics is under dispute, see coordinator report): '... is independent. This holds when generators are non-adjacent (commuting) but fails for sigma_0 sigma_1 sigma_0, where the two generators satisfy the braid relation.'"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.606Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 135 w: read in full. Three-step Markov-property computation, Hecke/skein commentary, Impact list."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.642Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 135 w: read in full. Three-step Markov-property computation, Hecke/skein commentary, Impact list."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.678Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 135 w: read in full. Three-step Markov-property computation, Hecke/skein commentary, Impact list."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.714Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 135 w: read in full. Three-step Markov-property computation, Hecke/skein commentary, Impact list."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.750Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 135 w: read in full. Three-step Markov-property computation, Hecke/skein commentary, Impact list."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.783Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 135 w: read in full. Three-step Markov-property computation, Hecke/skein commentary, Impact list."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "13409474891d",
+          "ts": "6e131ed575dc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.817Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 135 w: read in full. Three-step Markov-property computation, Hecke/skein commentary, Impact list."
+      }
+    ]
+  }
+}

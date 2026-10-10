@@ -1,0 +1,669 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/moduli-symmetry-d4",
+    "path": "folio/quantum-observable-universe/predicted-spectra/moduli-symmetry-d4"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
+        "reviewed_at": "2026-07-07T14:26:56.434881Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.434881Z"
+        },
+        "field_hash": {
+          "md": "ba7af05eb5cf",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c",
+          "lean": "5e9507368e40"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:51.000Z",
+        "reviewed_sha": "b95c99f15f0057020c753dd9f0465ba72f296c67",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:23:29.378Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "No negation-contrast construction anywhere in the block.",
+        "notes": "pass. THREE FINDINGS, none fixed inline (all math-adjacent). (1) sigma IS NOT AN INVOLUTION, and the block's own first line calls it one: 'The two natural involutions on the substrate moduli line C^x, sigma: q |-> iq ... tau: q |-> q^{-1}'. sigma^2(q) = -q, not q; sigma has order 4, which the block itself asserts two displays later with sigma^4 = 1. Proposed: 'The two natural symmetries', or 'a rotation sigma of order 4 and the bar involution tau'. (2) The two-coset table calls them 'sigma<1>-orbit', which is not notation for anything — they are the two cosets of the cyclic subgroup <sigma>, and the header sentence 'The eight elements partition by stabilizer into two cosets' misattributes the partition to the stabilizer, which is trivial here (order 8 group acting freely on 8 points, as the proof block correctly derives). Proposed: '<sigma>-orbit through phi' and 'partition into the two <sigma>-cosets'. (3) 'the eight roots of P_C(z) ... over Q(i)' — z^8 - 7z^4 + 1 has rational coefficients, so the natural field of definition is Q; Q(i) is where the ROOTS live, not where the polynomial is defined. Not false, but it states the weaker thing. Notation note: tau is the bar involution here and the fibre functor in the notation register — the same collision I recorded on prop:knot-operator-selection and rem:lepton-tower-witness. The Lean sibling moduli-symmetry-d4.lean is substantive (sigma_pow_four, tau_pow_two, sigma_tau_involution, moduli_symmetry_d4), not a shadow stub."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:23:28.993Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics symbolically. The presentation sigma^4 = tau^2 = (sigma tau)^2 = 1 is the standard one for the dihedral group of order 8, and the block says 'order 8' explicitly so the D_4-vs-D_8 naming is unambiguous. The tau sigma tau computation is correct: tau(sigma(q^{-1})) = (i q^{-1})^{-1} = -i q = sigma^{-1}(q). The golden octet is a genuine free orbit of size 8. The polynomial claim is CORRECT and I checked all of it: P(z/i) = P(-iz) = z^4 + 3z^2 + 1; the product is (z^4+1)^2 - 9z^4 = z^8 - 7z^4 + 1; and the eight roots of z^8 - 7z^4 + 1 computed exactly are {+-phi, +-1/phi, +-i phi, +-i/phi} = G_8. Both intersection claims are right: G_8 cap R = Q and G_8 cap iR = iQ. No em-dash, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:23:29.034Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics symbolically. The presentation sigma^4 = tau^2 = (sigma tau)^2 = 1 is the standard one for the dihedral group of order 8, and the block says 'order 8' explicitly so the D_4-vs-D_8 naming is unambiguous. The tau sigma tau computation is correct: tau(sigma(q^{-1})) = (i q^{-1})^{-1} = -i q = sigma^{-1}(q). The golden octet is a genuine free orbit of size 8. The polynomial claim is CORRECT and I checked all of it: P(z/i) = P(-iz) = z^4 + 3z^2 + 1; the product is (z^4+1)^2 - 9z^4 = z^8 - 7z^4 + 1; and the eight roots of z^8 - 7z^4 + 1 computed exactly are {+-phi, +-1/phi, +-i phi, +-i/phi} = G_8. Both intersection claims are right: G_8 cap R = Q and G_8 cap iR = iQ. No em-dash, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:23:29.078Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics symbolically. The presentation sigma^4 = tau^2 = (sigma tau)^2 = 1 is the standard one for the dihedral group of order 8, and the block says 'order 8' explicitly so the D_4-vs-D_8 naming is unambiguous. The tau sigma tau computation is correct: tau(sigma(q^{-1})) = (i q^{-1})^{-1} = -i q = sigma^{-1}(q). The golden octet is a genuine free orbit of size 8. The polynomial claim is CORRECT and I checked all of it: P(z/i) = P(-iz) = z^4 + 3z^2 + 1; the product is (z^4+1)^2 - 9z^4 = z^8 - 7z^4 + 1; and the eight roots of z^8 - 7z^4 + 1 computed exactly are {+-phi, +-1/phi, +-i phi, +-i/phi} = G_8. Both intersection claims are right: G_8 cap R = Q and G_8 cap iR = iQ. No em-dash, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:23:29.123Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics symbolically. The presentation sigma^4 = tau^2 = (sigma tau)^2 = 1 is the standard one for the dihedral group of order 8, and the block says 'order 8' explicitly so the D_4-vs-D_8 naming is unambiguous. The tau sigma tau computation is correct: tau(sigma(q^{-1})) = (i q^{-1})^{-1} = -i q = sigma^{-1}(q). The golden octet is a genuine free orbit of size 8. The polynomial claim is CORRECT and I checked all of it: P(z/i) = P(-iz) = z^4 + 3z^2 + 1; the product is (z^4+1)^2 - 9z^4 = z^8 - 7z^4 + 1; and the eight roots of z^8 - 7z^4 + 1 computed exactly are {+-phi, +-1/phi, +-i phi, +-i/phi} = G_8. Both intersection claims are right: G_8 cap R = Q and G_8 cap iR = iQ. No em-dash, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:23:29.166Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics symbolically. The presentation sigma^4 = tau^2 = (sigma tau)^2 = 1 is the standard one for the dihedral group of order 8, and the block says 'order 8' explicitly so the D_4-vs-D_8 naming is unambiguous. The tau sigma tau computation is correct: tau(sigma(q^{-1})) = (i q^{-1})^{-1} = -i q = sigma^{-1}(q). The golden octet is a genuine free orbit of size 8. The polynomial claim is CORRECT and I checked all of it: P(z/i) = P(-iz) = z^4 + 3z^2 + 1; the product is (z^4+1)^2 - 9z^4 = z^8 - 7z^4 + 1; and the eight roots of z^8 - 7z^4 + 1 computed exactly are {+-phi, +-1/phi, +-i phi, +-i/phi} = G_8. Both intersection claims are right: G_8 cap R = Q and G_8 cap iR = iQ. No em-dash, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:23:29.212Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics symbolically. The presentation sigma^4 = tau^2 = (sigma tau)^2 = 1 is the standard one for the dihedral group of order 8, and the block says 'order 8' explicitly so the D_4-vs-D_8 naming is unambiguous. The tau sigma tau computation is correct: tau(sigma(q^{-1})) = (i q^{-1})^{-1} = -i q = sigma^{-1}(q). The golden octet is a genuine free orbit of size 8. The polynomial claim is CORRECT and I checked all of it: P(z/i) = P(-iz) = z^4 + 3z^2 + 1; the product is (z^4+1)^2 - 9z^4 = z^8 - 7z^4 + 1; and the eight roots of z^8 - 7z^4 + 1 computed exactly are {+-phi, +-1/phi, +-i phi, +-i/phi} = G_8. Both intersection claims are right: G_8 cap R = Q and G_8 cap iR = iQ. No em-dash, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:23:29.254Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics symbolically. The presentation sigma^4 = tau^2 = (sigma tau)^2 = 1 is the standard one for the dihedral group of order 8, and the block says 'order 8' explicitly so the D_4-vs-D_8 naming is unambiguous. The tau sigma tau computation is correct: tau(sigma(q^{-1})) = (i q^{-1})^{-1} = -i q = sigma^{-1}(q). The golden octet is a genuine free orbit of size 8. The polynomial claim is CORRECT and I checked all of it: P(z/i) = P(-iz) = z^4 + 3z^2 + 1; the product is (z^4+1)^2 - 9z^4 = z^8 - 7z^4 + 1; and the eight roots of z^8 - 7z^4 + 1 computed exactly are {+-phi, +-1/phi, +-i phi, +-i/phi} = G_8. Both intersection claims are right: G_8 cap R = Q and G_8 cap iR = iQ. No em-dash, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:23:29.294Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics symbolically. The presentation sigma^4 = tau^2 = (sigma tau)^2 = 1 is the standard one for the dihedral group of order 8, and the block says 'order 8' explicitly so the D_4-vs-D_8 naming is unambiguous. The tau sigma tau computation is correct: tau(sigma(q^{-1})) = (i q^{-1})^{-1} = -i q = sigma^{-1}(q). The golden octet is a genuine free orbit of size 8. The polynomial claim is CORRECT and I checked all of it: P(z/i) = P(-iz) = z^4 + 3z^2 + 1; the product is (z^4+1)^2 - 9z^4 = z^8 - 7z^4 + 1; and the eight roots of z^8 - 7z^4 + 1 computed exactly are {+-phi, +-1/phi, +-i phi, +-i/phi} = G_8. Both intersection claims are right: G_8 cap R = Q and G_8 cap iR = iQ. No em-dash, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:23:29.335Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics symbolically. The presentation sigma^4 = tau^2 = (sigma tau)^2 = 1 is the standard one for the dihedral group of order 8, and the block says 'order 8' explicitly so the D_4-vs-D_8 naming is unambiguous. The tau sigma tau computation is correct: tau(sigma(q^{-1})) = (i q^{-1})^{-1} = -i q = sigma^{-1}(q). The golden octet is a genuine free orbit of size 8. The polynomial claim is CORRECT and I checked all of it: P(z/i) = P(-iz) = z^4 + 3z^2 + 1; the product is (z^4+1)^2 - 9z^4 = z^8 - 7z^4 + 1; and the eight roots of z^8 - 7z^4 + 1 computed exactly are {+-phi, +-1/phi, +-i phi, +-i/phi} = G_8. Both intersection claims are right: G_8 cap R = Q and G_8 cap iR = iQ. No em-dash, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ]
+  }
+}

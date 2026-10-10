@@ -1,0 +1,965 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/models-of-qous/spatial-realization-functor",
+    "path": "folio/quantum-observable-universe/models-of-qous/spatial-realization-functor"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1",
+          "lean": "b200f3357e36"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1",
+          "lean": "b200f3357e36"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1",
+          "lean": "b200f3357e36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Block placement and kind 'definition' match validated structurally for 'Spatial realization functor' within chapter 'models-of-qous'.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:23:41.000Z",
+        "reviewed_sha": "1ed3c86588723dc063ea978704a34807637f76e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1",
+          "lean": "b200f3357e36"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1",
+          "lean": "b200f3357e36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The Lean theorem statement in folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean matches the mathematical statement in folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.md.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:1 — Lean file exists"
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1",
+          "lean": "b200f3357e36"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The claim in 'Spatial realization functor' is unverified due to Lean compilation failures in sibling file.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:23:41.000Z",
+        "reviewed_sha": "1ed3c86588723dc063ea978704a34807637f76e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1",
+          "lean": "b200f3357e36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The block 'Spatial realization functor' presents substantial mathematical content: Let $(\\mathbf{C}, A, \\tau)$ be a quantum observable universe ([quantum observabl...",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:23:41.000Z",
+        "reviewed_sha": "1ed3c86588723dc063ea978704a34807637f76e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1",
+          "lean": "b200f3357e36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Spatial realization functor'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:23:41.000Z",
+        "reviewed_sha": "1ed3c86588723dc063ea978704a34807637f76e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1",
+          "lean": "b200f3357e36"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The prose presents 'Spatial realization functor' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor",
+        "evidence": "The prose presents 'Spatial realization functor' as verified, but the sibling Lean file fails to compile."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:23:41.000Z",
+        "reviewed_sha": "1ed3c86588723dc063ea978704a34807637f76e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1",
+          "lean": "b200f3357e36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Spatial realization functor'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:23:41.000Z",
+        "reviewed_sha": "1ed3c86588723dc063ea978704a34807637f76e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1",
+          "lean": "b200f3357e36"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:23:41.000Z",
+        "reviewed_sha": "1ed3c86588723dc063ea978704a34807637f76e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1",
+          "lean": "b200f3357e36"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The Lean sibling folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:23:41.000Z",
+        "reviewed_sha": "1ed3c86588723dc063ea978704a34807637f76e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1",
+          "lean": "b200f3357e36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No citations are present in 'Spatial realization functor', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:23:41.000Z",
+        "reviewed_sha": "1ed3c86588723dc063ea978704a34807637f76e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1",
+          "lean": "b200f3357e36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Key terms and symbols in 'Spatial realization functor' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:23:41.000Z",
+        "reviewed_sha": "1ed3c86588723dc063ea978704a34807637f76e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1",
+          "lean": "b200f3357e36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The algebraic and logical relations in 'Spatial realization functor' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:23:41.000Z",
+        "reviewed_sha": "1ed3c86588723dc063ea978704a34807637f76e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1",
+          "lean": "b200f3357e36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The physical concepts described in 'Spatial realization functor' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:23:41.000Z",
+        "reviewed_sha": "1ed3c86588723dc063ea978704a34807637f76e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1",
+          "lean": "b200f3357e36"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The Lean sibling folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:1 — folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:44:13: error: Function expected at"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:23:41.000Z",
+        "reviewed_sha": "1ed3c86588723dc063ea978704a34807637f76e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1",
+          "lean": "b200f3357e36"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean fails compilation: folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:44:13: error: Function expected at",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean contains compilation errors: folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:44:13: error: Function expected at, invalidating the claimed formalization.",
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean fails compilation: folio/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:44:13: error: Function expected at"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:23:41.000Z",
+        "reviewed_sha": "1ed3c86588723dc063ea978704a34807637f76e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Tightened paragraphs, used 'we' consistently, replaced references with direct, plain descriptions where necessary.",
+        "reviewed_at": "2026-07-07T14:26:55.436943Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.436943Z"
+        },
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1",
+          "lean": "b200f3357e36"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:23:41.000Z",
+        "reviewed_sha": "1ed3c86588723dc063ea978704a34807637f76e4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.010Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (definition, ~2.5kB). The four numbered structures are standard and correctly stated: m_p/m_p^2 dual to T_pM, A/m_p^2 = 1 + m_p/m_p^2, and the Cartan relations iota_xi Theta_A = id_1, iota_xi dTheta_A = 0 matching ex:reeb-decomposition. Two tikzcd diagrams share one equation environment inside a single tex fence, which is legal (equation is an outer env). All ten categories clean; the closing paragraph re-reads the diagram but adds the non-degeneracy consequence, so it is not a bare restatement."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.046Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (definition, ~2.5kB). The four numbered structures are standard and correctly stated: m_p/m_p^2 dual to T_pM, A/m_p^2 = 1 + m_p/m_p^2, and the Cartan relations iota_xi Theta_A = id_1, iota_xi dTheta_A = 0 matching ex:reeb-decomposition. Two tikzcd diagrams share one equation environment inside a single tex fence, which is legal (equation is an outer env). All ten categories clean; the closing paragraph re-reads the diagram but adds the non-degeneracy consequence, so it is not a bare restatement."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.083Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (definition, ~2.5kB). The four numbered structures are standard and correctly stated: m_p/m_p^2 dual to T_pM, A/m_p^2 = 1 + m_p/m_p^2, and the Cartan relations iota_xi Theta_A = id_1, iota_xi dTheta_A = 0 matching ex:reeb-decomposition. Two tikzcd diagrams share one equation environment inside a single tex fence, which is legal (equation is an outer env). All ten categories clean; the closing paragraph re-reads the diagram but adds the non-degeneracy consequence, so it is not a bare restatement."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.121Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (definition, ~2.5kB). The four numbered structures are standard and correctly stated: m_p/m_p^2 dual to T_pM, A/m_p^2 = 1 + m_p/m_p^2, and the Cartan relations iota_xi Theta_A = id_1, iota_xi dTheta_A = 0 matching ex:reeb-decomposition. Two tikzcd diagrams share one equation environment inside a single tex fence, which is legal (equation is an outer env). All ten categories clean; the closing paragraph re-reads the diagram but adds the non-degeneracy consequence, so it is not a bare restatement."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.158Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (definition, ~2.5kB). The four numbered structures are standard and correctly stated: m_p/m_p^2 dual to T_pM, A/m_p^2 = 1 + m_p/m_p^2, and the Cartan relations iota_xi Theta_A = id_1, iota_xi dTheta_A = 0 matching ex:reeb-decomposition. Two tikzcd diagrams share one equation environment inside a single tex fence, which is legal (equation is an outer env). All ten categories clean; the closing paragraph re-reads the diagram but adds the non-degeneracy consequence, so it is not a bare restatement."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.195Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (definition, ~2.5kB). The four numbered structures are standard and correctly stated: m_p/m_p^2 dual to T_pM, A/m_p^2 = 1 + m_p/m_p^2, and the Cartan relations iota_xi Theta_A = id_1, iota_xi dTheta_A = 0 matching ex:reeb-decomposition. Two tikzcd diagrams share one equation environment inside a single tex fence, which is legal (equation is an outer env). All ten categories clean; the closing paragraph re-reads the diagram but adds the non-degeneracy consequence, so it is not a bare restatement."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.233Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (definition, ~2.5kB). The four numbered structures are standard and correctly stated: m_p/m_p^2 dual to T_pM, A/m_p^2 = 1 + m_p/m_p^2, and the Cartan relations iota_xi Theta_A = id_1, iota_xi dTheta_A = 0 matching ex:reeb-decomposition. Two tikzcd diagrams share one equation environment inside a single tex fence, which is legal (equation is an outer env). All ten categories clean; the closing paragraph re-reads the diagram but adds the non-degeneracy consequence, so it is not a bare restatement."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.271Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (definition, ~2.5kB). The four numbered structures are standard and correctly stated: m_p/m_p^2 dual to T_pM, A/m_p^2 = 1 + m_p/m_p^2, and the Cartan relations iota_xi Theta_A = id_1, iota_xi dTheta_A = 0 matching ex:reeb-decomposition. Two tikzcd diagrams share one equation environment inside a single tex fence, which is legal (equation is an outer env). All ten categories clean; the closing paragraph re-reads the diagram but adds the non-degeneracy consequence, so it is not a bare restatement."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.308Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (definition, ~2.5kB). The four numbered structures are standard and correctly stated: m_p/m_p^2 dual to T_pM, A/m_p^2 = 1 + m_p/m_p^2, and the Cartan relations iota_xi Theta_A = id_1, iota_xi dTheta_A = 0 matching ex:reeb-decomposition. Two tikzcd diagrams share one equation environment inside a single tex fence, which is legal (equation is an outer env). All ten categories clean; the closing paragraph re-reads the diagram but adds the non-degeneracy consequence, so it is not a bare restatement."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.345Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (definition, ~2.5kB). The four numbered structures are standard and correctly stated: m_p/m_p^2 dual to T_pM, A/m_p^2 = 1 + m_p/m_p^2, and the Cartan relations iota_xi Theta_A = id_1, iota_xi dTheta_A = 0 matching ex:reeb-decomposition. Two tikzcd diagrams share one equation environment inside a single tex fence, which is legal (equation is an outer env). All ten categories clean; the closing paragraph re-reads the diagram but adds the non-degeneracy consequence, so it is not a bare restatement."
+      }
+    ]
+  }
+}

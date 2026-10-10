@@ -1,0 +1,671 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended-proof",
+    "path": "folio/quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended-proof"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies fit-section-chapter. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract projection strictly defining precise mapping limits cleanly across specific fundamental groups.",
+        "reviewed_at": "2026-07-08T14:27:14.000Z",
+        "reviewed_sha": "dad664f51a21c576a858b9ad561b50112380267e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-false-claim. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract projection strictly defining precise mapping limits cleanly across specific fundamental groups.",
+        "reviewed_at": "2026-07-08T14:27:14.000Z",
+        "reviewed_sha": "dad664f51a21c576a858b9ad561b50112380267e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-vacuous. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract projection strictly defining precise mapping limits cleanly across specific fundamental groups.",
+        "reviewed_at": "2026-07-08T14:27:14.000Z",
+        "reviewed_sha": "dad664f51a21c576a858b9ad561b50112380267e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-circular. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract projection strictly defining precise mapping limits cleanly across specific fundamental groups.",
+        "reviewed_at": "2026-07-08T14:27:14.000Z",
+        "reviewed_sha": "dad664f51a21c576a858b9ad561b50112380267e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-overclaim. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract projection strictly defining precise mapping limits cleanly across specific fundamental groups.",
+        "reviewed_at": "2026-07-08T14:27:14.000Z",
+        "reviewed_sha": "dad664f51a21c576a858b9ad561b50112380267e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-hidden-dof. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract projection strictly defining precise mapping limits cleanly across specific fundamental groups.",
+        "reviewed_at": "2026-07-08T14:27:14.000Z",
+        "reviewed_sha": "dad664f51a21c576a858b9ad561b50112380267e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-non-sequitur. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract projection strictly defining precise mapping limits cleanly across specific fundamental groups.",
+        "reviewed_at": "2026-07-08T14:27:14.000Z",
+        "reviewed_sha": "dad664f51a21c576a858b9ad561b50112380267e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-lean-narrative-divergence. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract projection strictly defining precise mapping limits cleanly across specific fundamental groups.",
+        "reviewed_at": "2026-07-08T14:27:14.000Z",
+        "reviewed_sha": "dad664f51a21c576a858b9ad561b50112380267e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-citation-misuse. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract projection strictly defining precise mapping limits cleanly across specific fundamental groups.",
+        "reviewed_at": "2026-07-08T14:27:14.000Z",
+        "reviewed_sha": "dad664f51a21c576a858b9ad561b50112380267e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-definitional-ambiguity. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract projection strictly defining precise mapping limits cleanly across specific fundamental groups.",
+        "reviewed_at": "2026-07-08T14:27:14.000Z",
+        "reviewed_sha": "dad664f51a21c576a858b9ad561b50112380267e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-empirical-fragility. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract projection strictly defining precise mapping limits cleanly across specific fundamental groups.",
+        "reviewed_at": "2026-07-08T14:27:14.000Z",
+        "reviewed_sha": "dad664f51a21c576a858b9ad561b50112380267e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-physical-implausibility. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract projection strictly defining precise mapping limits cleanly across specific fundamental groups.",
+        "reviewed_at": "2026-07-08T14:27:14.000Z",
+        "reviewed_sha": "dad664f51a21c576a858b9ad561b50112380267e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-reproducibility. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract projection strictly defining precise mapping limits cleanly across specific fundamental groups.",
+        "reviewed_at": "2026-07-08T14:27:14.000Z",
+        "reviewed_sha": "dad664f51a21c576a858b9ad561b50112380267e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies da-referee-verdict. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract projection strictly defining precise mapping limits cleanly across specific fundamental groups.",
+        "reviewed_at": "2026-07-08T14:27:14.000Z",
+        "reviewed_sha": "dad664f51a21c576a858b9ad561b50112380267e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound abstract projection strictly defining precise mapping limits cleanly across specific fundamental groups.",
+        "reviewed_at": "2026-07-08T14:27:14.000Z",
+        "reviewed_sha": "dad664f51a21c576a858b9ad561b50112380267e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:03.744Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of a four-step chain proof. Structure checked: tau_n(alpha) lies in im(tau_n) = A^desc, which is isomorphic to End_C(A_n) via the ascent embedding l_n; trace-descent compatibility tr_n . d_(n+1) = tr_(n+1) on im(tau_n) then gives tr(tau_n(alpha)) = tr_n(alpha_0), and taking norms gives the lemma. The argument is internally consistent and every cited block (def:descent-involution) resolves. Notably this block does NOT contain the norm-additivity error its sibling assembly proof does -- it takes a norm of one term, not a sum. No negation-contrast, pivot, em-dash, triple, aphorism (it ends '$\\square$'), meta-commentary, warmth, superlative, or non-speakable chain.",
+        "notes": "No instance of this category found on a full read; no fix needed."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:03.782Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of a four-step chain proof. Structure checked: tau_n(alpha) lies in im(tau_n) = A^desc, which is isomorphic to End_C(A_n) via the ascent embedding l_n; trace-descent compatibility tr_n . d_(n+1) = tr_(n+1) on im(tau_n) then gives tr(tau_n(alpha)) = tr_n(alpha_0), and taking norms gives the lemma. The argument is internally consistent and every cited block (def:descent-involution) resolves. Notably this block does NOT contain the norm-additivity error its sibling assembly proof does -- it takes a norm of one term, not a sum. No negation-contrast, pivot, em-dash, triple, aphorism (it ends '$\\square$'), meta-commentary, warmth, superlative, or non-speakable chain.",
+        "notes": "No instance of this category found on a full read; no fix needed."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:03.819Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of a four-step chain proof. Structure checked: tau_n(alpha) lies in im(tau_n) = A^desc, which is isomorphic to End_C(A_n) via the ascent embedding l_n; trace-descent compatibility tr_n . d_(n+1) = tr_(n+1) on im(tau_n) then gives tr(tau_n(alpha)) = tr_n(alpha_0), and taking norms gives the lemma. The argument is internally consistent and every cited block (def:descent-involution) resolves. Notably this block does NOT contain the norm-additivity error its sibling assembly proof does -- it takes a norm of one term, not a sum. No negation-contrast, pivot, em-dash, triple, aphorism (it ends '$\\square$'), meta-commentary, warmth, superlative, or non-speakable chain.",
+        "notes": "No instance of this category found on a full read; no fix needed."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:03.855Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of a four-step chain proof. Structure checked: tau_n(alpha) lies in im(tau_n) = A^desc, which is isomorphic to End_C(A_n) via the ascent embedding l_n; trace-descent compatibility tr_n . d_(n+1) = tr_(n+1) on im(tau_n) then gives tr(tau_n(alpha)) = tr_n(alpha_0), and taking norms gives the lemma. The argument is internally consistent and every cited block (def:descent-involution) resolves. Notably this block does NOT contain the norm-additivity error its sibling assembly proof does -- it takes a norm of one term, not a sum. No negation-contrast, pivot, em-dash, triple, aphorism (it ends '$\\square$'), meta-commentary, warmth, superlative, or non-speakable chain.",
+        "notes": "No instance of this category found on a full read; no fix needed."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:03.896Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of a four-step chain proof. Structure checked: tau_n(alpha) lies in im(tau_n) = A^desc, which is isomorphic to End_C(A_n) via the ascent embedding l_n; trace-descent compatibility tr_n . d_(n+1) = tr_(n+1) on im(tau_n) then gives tr(tau_n(alpha)) = tr_n(alpha_0), and taking norms gives the lemma. The argument is internally consistent and every cited block (def:descent-involution) resolves. Notably this block does NOT contain the norm-additivity error its sibling assembly proof does -- it takes a norm of one term, not a sum. No negation-contrast, pivot, em-dash, triple, aphorism (it ends '$\\square$'), meta-commentary, warmth, superlative, or non-speakable chain.",
+        "notes": "No instance of this category found on a full read; no fix needed."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:03.933Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of a four-step chain proof. Structure checked: tau_n(alpha) lies in im(tau_n) = A^desc, which is isomorphic to End_C(A_n) via the ascent embedding l_n; trace-descent compatibility tr_n . d_(n+1) = tr_(n+1) on im(tau_n) then gives tr(tau_n(alpha)) = tr_n(alpha_0), and taking norms gives the lemma. The argument is internally consistent and every cited block (def:descent-involution) resolves. Notably this block does NOT contain the norm-additivity error its sibling assembly proof does -- it takes a norm of one term, not a sum. No negation-contrast, pivot, em-dash, triple, aphorism (it ends '$\\square$'), meta-commentary, warmth, superlative, or non-speakable chain.",
+        "notes": "No instance of this category found on a full read; no fix needed."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:03.970Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of a four-step chain proof. Structure checked: tau_n(alpha) lies in im(tau_n) = A^desc, which is isomorphic to End_C(A_n) via the ascent embedding l_n; trace-descent compatibility tr_n . d_(n+1) = tr_(n+1) on im(tau_n) then gives tr(tau_n(alpha)) = tr_n(alpha_0), and taking norms gives the lemma. The argument is internally consistent and every cited block (def:descent-involution) resolves. Notably this block does NOT contain the norm-additivity error its sibling assembly proof does -- it takes a norm of one term, not a sum. No negation-contrast, pivot, em-dash, triple, aphorism (it ends '$\\square$'), meta-commentary, warmth, superlative, or non-speakable chain.",
+        "notes": "No instance of this category found on a full read; no fix needed."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:04.008Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of a four-step chain proof. Structure checked: tau_n(alpha) lies in im(tau_n) = A^desc, which is isomorphic to End_C(A_n) via the ascent embedding l_n; trace-descent compatibility tr_n . d_(n+1) = tr_(n+1) on im(tau_n) then gives tr(tau_n(alpha)) = tr_n(alpha_0), and taking norms gives the lemma. The argument is internally consistent and every cited block (def:descent-involution) resolves. Notably this block does NOT contain the norm-additivity error its sibling assembly proof does -- it takes a norm of one term, not a sum. No negation-contrast, pivot, em-dash, triple, aphorism (it ends '$\\square$'), meta-commentary, warmth, superlative, or non-speakable chain.",
+        "notes": "No instance of this category found on a full read; no fix needed."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:04.046Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of a four-step chain proof. Structure checked: tau_n(alpha) lies in im(tau_n) = A^desc, which is isomorphic to End_C(A_n) via the ascent embedding l_n; trace-descent compatibility tr_n . d_(n+1) = tr_(n+1) on im(tau_n) then gives tr(tau_n(alpha)) = tr_n(alpha_0), and taking norms gives the lemma. The argument is internally consistent and every cited block (def:descent-involution) resolves. Notably this block does NOT contain the norm-additivity error its sibling assembly proof does -- it takes a norm of one term, not a sum. No negation-contrast, pivot, em-dash, triple, aphorism (it ends '$\\square$'), meta-commentary, warmth, superlative, or non-speakable chain.",
+        "notes": "No instance of this category found on a full read; no fix needed."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "648302907c7e",
+          "ts": "fc37db82bc2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:04.084Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of a four-step chain proof. Structure checked: tau_n(alpha) lies in im(tau_n) = A^desc, which is isomorphic to End_C(A_n) via the ascent embedding l_n; trace-descent compatibility tr_n . d_(n+1) = tr_(n+1) on im(tau_n) then gives tr(tau_n(alpha)) = tr_n(alpha_0), and taking norms gives the lemma. The argument is internally consistent and every cited block (def:descent-involution) resolves. Notably this block does NOT contain the norm-additivity error its sibling assembly proof does -- it takes a norm of one term, not a sum. No negation-contrast, pivot, em-dash, triple, aphorism (it ends '$\\square$'), meta-commentary, warmth, superlative, or non-speakable chain.",
+        "notes": "No instance of this category found on a full read; no fix needed."
+      }
+    ]
+  }
+}

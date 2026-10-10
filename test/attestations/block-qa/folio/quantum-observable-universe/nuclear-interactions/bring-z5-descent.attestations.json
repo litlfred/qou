@@ -1,0 +1,505 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/bring-z5-descent",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/bring-z5-descent"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:10.000Z",
+        "reviewed_sha": "9df128695083d2b5605eaaf3c489988234d82c90",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:10.000Z",
+        "reviewed_sha": "9df128695083d2b5605eaaf3c489988234d82c90",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:10.000Z",
+        "reviewed_sha": "9df128695083d2b5605eaaf3c489988234d82c90",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:10.000Z",
+        "reviewed_sha": "9df128695083d2b5605eaaf3c489988234d82c90",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:10.000Z",
+        "reviewed_sha": "9df128695083d2b5605eaaf3c489988234d82c90",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:10.000Z",
+        "reviewed_sha": "9df128695083d2b5605eaaf3c489988234d82c90",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:10.000Z",
+        "reviewed_sha": "9df128695083d2b5605eaaf3c489988234d82c90",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:10.000Z",
+        "reviewed_sha": "9df128695083d2b5605eaaf3c489988234d82c90",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:10.000Z",
+        "reviewed_sha": "9df128695083d2b5605eaaf3c489988234d82c90",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:10.000Z",
+        "reviewed_sha": "9df128695083d2b5605eaaf3c489988234d82c90",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:10.000Z",
+        "reviewed_sha": "9df128695083d2b5605eaaf3c489988234d82c90",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:10.000Z",
+        "reviewed_sha": "9df128695083d2b5605eaaf3c489988234d82c90",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:10.000Z",
+        "reviewed_sha": "9df128695083d2b5605eaaf3c489988234d82c90",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:10.000Z",
+        "reviewed_sha": "9df128695083d2b5605eaaf3c489988234d82c90",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq23"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:10.000Z",
+        "reviewed_sha": "9df128695083d2b5605eaaf3c489988234d82c90",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:20.689Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of rem:bring-z5-descent (statement + 2 paras). Verified the group theory: S_5 has exactly six Sylow 5-subgroups (24 five-cycles / 4 per subgroup), each of order 5 - the block is right. Verified that X_5 : y^2 = x^5 - 1 has genus floor((5-1)/2) = 2 and carries the order-5 automorphism x -> zeta_5 x. MAJOR defect reported: Riemann-Hurwitz refutes the descent claim - for a degree-5 quotient of a genus-4 curve, 2*4-2 = 6 = 5(2g'-2) + sum(e-1) with every e = 5, so g' = 0 (16 = 4 fixed points) is the ONLY solution; g' = 2 forces sum(e-1) = -4. Bring's curve modulo a Sylow 5-subgroup is P^1 with four branch points, not a genus-2 hyperelliptic curve.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:20.732Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of rem:bring-z5-descent (statement + 2 paras). Verified the group theory: S_5 has exactly six Sylow 5-subgroups (24 five-cycles / 4 per subgroup), each of order 5 - the block is right. Verified that X_5 : y^2 = x^5 - 1 has genus floor((5-1)/2) = 2 and carries the order-5 automorphism x -> zeta_5 x. MAJOR defect reported: Riemann-Hurwitz refutes the descent claim - for a degree-5 quotient of a genus-4 curve, 2*4-2 = 6 = 5(2g'-2) + sum(e-1) with every e = 5, so g' = 0 (16 = 4 fixed points) is the ONLY solution; g' = 2 forces sum(e-1) = -4. Bring's curve modulo a Sylow 5-subgroup is P^1 with four branch points, not a genus-2 hyperelliptic curve.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:20.773Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:bring-z5-descent (statement + 2 paras). Verified the group theory: S_5 has exactly six Sylow 5-subgroups (24 five-cycles / 4 per subgroup), each of order 5 - the block is right. Verified that X_5 : y^2 = x^5 - 1 has genus floor((5-1)/2) = 2 and carries the order-5 automorphism x -> zeta_5 x. MAJOR defect reported: Riemann-Hurwitz refutes the descent claim - for a degree-5 quotient of a genus-4 curve, 2*4-2 = 6 = 5(2g'-2) + sum(e-1) with every e = 5, so g' = 0 (16 = 4 fixed points) is the ONLY solution; g' = 2 forces sum(e-1) = -4. Bring's curve modulo a Sylow 5-subgroup is P^1 with four branch points, not a genus-2 hyperelliptic curve.",
+        "notes": "Single matched spaced-dash pair enclosing a genuine appositive ('the non-abelian structure that accommodates three color tubes'); not an appended afterthought."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:20.816Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:bring-z5-descent (statement + 2 paras). Verified the group theory: S_5 has exactly six Sylow 5-subgroups (24 five-cycles / 4 per subgroup), each of order 5 - the block is right. Verified that X_5 : y^2 = x^5 - 1 has genus floor((5-1)/2) = 2 and carries the order-5 automorphism x -> zeta_5 x. MAJOR defect reported: Riemann-Hurwitz refutes the descent claim - for a degree-5 quotient of a genus-4 curve, 2*4-2 = 6 = 5(2g'-2) + sum(e-1) with every e = 5, so g' = 0 (16 = 4 fixed points) is the ONLY solution; g' = 2 forces sum(e-1) = -4. Bring's curve modulo a Sylow 5-subgroup is P^1 with four branch points, not a genus-2 hyperelliptic curve.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:20.853Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of rem:bring-z5-descent (statement + 2 paras). Verified the group theory: S_5 has exactly six Sylow 5-subgroups (24 five-cycles / 4 per subgroup), each of order 5 - the block is right. Verified that X_5 : y^2 = x^5 - 1 has genus floor((5-1)/2) = 2 and carries the order-5 automorphism x -> zeta_5 x. MAJOR defect reported: Riemann-Hurwitz refutes the descent claim - for a degree-5 quotient of a genus-4 curve, 2*4-2 = 6 = 5(2g'-2) + sum(e-1) with every e = 5, so g' = 0 (16 = 4 fixed points) is the ONLY solution; g' = 2 forces sum(e-1) = -4. Bring's curve modulo a Sylow 5-subgroup is P^1 with four branch points, not a genus-2 hyperelliptic curve.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:20.892Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of rem:bring-z5-descent (statement + 2 paras). Verified the group theory: S_5 has exactly six Sylow 5-subgroups (24 five-cycles / 4 per subgroup), each of order 5 - the block is right. Verified that X_5 : y^2 = x^5 - 1 has genus floor((5-1)/2) = 2 and carries the order-5 automorphism x -> zeta_5 x. MAJOR defect reported: Riemann-Hurwitz refutes the descent claim - for a degree-5 quotient of a genus-4 curve, 2*4-2 = 6 = 5(2g'-2) + sum(e-1) with every e = 5, so g' = 0 (16 = 4 fixed points) is the ONLY solution; g' = 2 forces sum(e-1) = -4. Bring's curve modulo a Sylow 5-subgroup is P^1 with four branch points, not a genus-2 hyperelliptic curve.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:20.931Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of rem:bring-z5-descent (statement + 2 paras). Verified the group theory: S_5 has exactly six Sylow 5-subgroups (24 five-cycles / 4 per subgroup), each of order 5 - the block is right. Verified that X_5 : y^2 = x^5 - 1 has genus floor((5-1)/2) = 2 and carries the order-5 automorphism x -> zeta_5 x. MAJOR defect reported: Riemann-Hurwitz refutes the descent claim - for a degree-5 quotient of a genus-4 curve, 2*4-2 = 6 = 5(2g'-2) + sum(e-1) with every e = 5, so g' = 0 (16 = 4 fixed points) is the ONLY solution; g' = 2 forces sum(e-1) = -4. Bring's curve modulo a Sylow 5-subgroup is P^1 with four branch points, not a genus-2 hyperelliptic curve.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:20.978Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:bring-z5-descent (statement + 2 paras). Verified the group theory: S_5 has exactly six Sylow 5-subgroups (24 five-cycles / 4 per subgroup), each of order 5 - the block is right. Verified that X_5 : y^2 = x^5 - 1 has genus floor((5-1)/2) = 2 and carries the order-5 automorphism x -> zeta_5 x. MAJOR defect reported: Riemann-Hurwitz refutes the descent claim - for a degree-5 quotient of a genus-4 curve, 2*4-2 = 6 = 5(2g'-2) + sum(e-1) with every e = 5, so g' = 0 (16 = 4 fixed points) is the ONLY solution; g' = 2 forces sum(e-1) = -4. Bring's curve modulo a Sylow 5-subgroup is P^1 with four branch points, not a genus-2 hyperelliptic curve.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:21.021Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:bring-z5-descent (statement + 2 paras). Verified the group theory: S_5 has exactly six Sylow 5-subgroups (24 five-cycles / 4 per subgroup), each of order 5 - the block is right. Verified that X_5 : y^2 = x^5 - 1 has genus floor((5-1)/2) = 2 and carries the order-5 automorphism x -> zeta_5 x. MAJOR defect reported: Riemann-Hurwitz refutes the descent claim - for a degree-5 quotient of a genus-4 curve, 2*4-2 = 6 = 5(2g'-2) + sum(e-1) with every e = 5, so g' = 0 (16 = 4 fixed points) is the ONLY solution; g' = 2 forces sum(e-1) = -4. Bring's curve modulo a Sylow 5-subgroup is P^1 with four branch points, not a genus-2 hyperelliptic curve.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "05c974bbb2ae",
+          "ts": "bc06a5c9c843"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:21.062Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:bring-z5-descent (statement + 2 paras). Verified the group theory: S_5 has exactly six Sylow 5-subgroups (24 five-cycles / 4 per subgroup), each of order 5 - the block is right. Verified that X_5 : y^2 = x^5 - 1 has genus floor((5-1)/2) = 2 and carries the order-5 automorphism x -> zeta_5 x. MAJOR defect reported: Riemann-Hurwitz refutes the descent claim - for a degree-5 quotient of a genus-4 curve, 2*4-2 = 6 = 5(2g'-2) + sum(e-1) with every e = 5, so g' = 0 (16 = 4 fixed points) is the ONLY solution; g' = 2 forces sum(e-1) = -4. Bring's curve modulo a Sylow 5-subgroup is P^1 with four branch points, not a genus-2 hyperelliptic curve.",
+        "notes": "No trap of this category."
+      }
+    ]
+  }
+}

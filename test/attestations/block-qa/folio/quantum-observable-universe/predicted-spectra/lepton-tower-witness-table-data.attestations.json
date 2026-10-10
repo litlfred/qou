@@ -1,0 +1,203 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/lepton-tower-witness-table-data",
+    "path": "folio/quantum-observable-universe/predicted-spectra/lepton-tower-witness-table-data"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "90c482953991",
+          "ts": "35580965c1b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:11:04.132Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (10 rows, n = 0..9); no prose, so no trap construction can occur. Recomputed every cell at 40 dps from the continuant a_{n+1}=b_n, b_{n+1}=h b_n + b_{n-1}, b_0=0, b_1=1, h = q - 1/q at the proton pin: n=0 (1.000, 0.000, 1.000), n=1 (0.000, 1.000, 1.000), n=2 (1.000, 0.20906, 1.20906), n=3 (0.20906, 1.04371, 1.25277), n=4 (1.04371, 0.427258, 1.470968), n=5 (0.427258, 1.13303, 1.560288), n=6 (1.13303, 0.664129, 1.797159), n=7 (0.664129, 1.27187, 1.936), n=8 (1.27187, 0.930024, 2.201894), n=9 (0.930024, 1.466303, 2.396327). All 30 printed values correct to the 3 decimals shown.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "90c482953991",
+          "ts": "35580965c1b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:11:04.172Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (10 rows, n = 0..9); no prose, so no trap construction can occur. Recomputed every cell at 40 dps from the continuant a_{n+1}=b_n, b_{n+1}=h b_n + b_{n-1}, b_0=0, b_1=1, h = q - 1/q at the proton pin: n=0 (1.000, 0.000, 1.000), n=1 (0.000, 1.000, 1.000), n=2 (1.000, 0.20906, 1.20906), n=3 (0.20906, 1.04371, 1.25277), n=4 (1.04371, 0.427258, 1.470968), n=5 (0.427258, 1.13303, 1.560288), n=6 (1.13303, 0.664129, 1.797159), n=7 (0.664129, 1.27187, 1.936), n=8 (1.27187, 0.930024, 2.201894), n=9 (0.930024, 1.466303, 2.396327). All 30 printed values correct to the 3 decimals shown.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "90c482953991",
+          "ts": "35580965c1b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:11:04.213Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (10 rows, n = 0..9); no prose, so no trap construction can occur. Recomputed every cell at 40 dps from the continuant a_{n+1}=b_n, b_{n+1}=h b_n + b_{n-1}, b_0=0, b_1=1, h = q - 1/q at the proton pin: n=0 (1.000, 0.000, 1.000), n=1 (0.000, 1.000, 1.000), n=2 (1.000, 0.20906, 1.20906), n=3 (0.20906, 1.04371, 1.25277), n=4 (1.04371, 0.427258, 1.470968), n=5 (0.427258, 1.13303, 1.560288), n=6 (1.13303, 0.664129, 1.797159), n=7 (0.664129, 1.27187, 1.936), n=8 (1.27187, 0.930024, 2.201894), n=9 (0.930024, 1.466303, 2.396327). All 30 printed values correct to the 3 decimals shown.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "90c482953991",
+          "ts": "35580965c1b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:11:04.255Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (10 rows, n = 0..9); no prose, so no trap construction can occur. Recomputed every cell at 40 dps from the continuant a_{n+1}=b_n, b_{n+1}=h b_n + b_{n-1}, b_0=0, b_1=1, h = q - 1/q at the proton pin: n=0 (1.000, 0.000, 1.000), n=1 (0.000, 1.000, 1.000), n=2 (1.000, 0.20906, 1.20906), n=3 (0.20906, 1.04371, 1.25277), n=4 (1.04371, 0.427258, 1.470968), n=5 (0.427258, 1.13303, 1.560288), n=6 (1.13303, 0.664129, 1.797159), n=7 (0.664129, 1.27187, 1.936), n=8 (1.27187, 0.930024, 2.201894), n=9 (0.930024, 1.466303, 2.396327). All 30 printed values correct to the 3 decimals shown.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "90c482953991",
+          "ts": "35580965c1b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:11:04.298Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (10 rows, n = 0..9); no prose, so no trap construction can occur. Recomputed every cell at 40 dps from the continuant a_{n+1}=b_n, b_{n+1}=h b_n + b_{n-1}, b_0=0, b_1=1, h = q - 1/q at the proton pin: n=0 (1.000, 0.000, 1.000), n=1 (0.000, 1.000, 1.000), n=2 (1.000, 0.20906, 1.20906), n=3 (0.20906, 1.04371, 1.25277), n=4 (1.04371, 0.427258, 1.470968), n=5 (0.427258, 1.13303, 1.560288), n=6 (1.13303, 0.664129, 1.797159), n=7 (0.664129, 1.27187, 1.936), n=8 (1.27187, 0.930024, 2.201894), n=9 (0.930024, 1.466303, 2.396327). All 30 printed values correct to the 3 decimals shown.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "90c482953991",
+          "ts": "35580965c1b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:11:04.339Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (10 rows, n = 0..9); no prose, so no trap construction can occur. Recomputed every cell at 40 dps from the continuant a_{n+1}=b_n, b_{n+1}=h b_n + b_{n-1}, b_0=0, b_1=1, h = q - 1/q at the proton pin: n=0 (1.000, 0.000, 1.000), n=1 (0.000, 1.000, 1.000), n=2 (1.000, 0.20906, 1.20906), n=3 (0.20906, 1.04371, 1.25277), n=4 (1.04371, 0.427258, 1.470968), n=5 (0.427258, 1.13303, 1.560288), n=6 (1.13303, 0.664129, 1.797159), n=7 (0.664129, 1.27187, 1.936), n=8 (1.27187, 0.930024, 2.201894), n=9 (0.930024, 1.466303, 2.396327). All 30 printed values correct to the 3 decimals shown.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "90c482953991",
+          "ts": "35580965c1b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:11:04.380Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (10 rows, n = 0..9); no prose, so no trap construction can occur. Recomputed every cell at 40 dps from the continuant a_{n+1}=b_n, b_{n+1}=h b_n + b_{n-1}, b_0=0, b_1=1, h = q - 1/q at the proton pin: n=0 (1.000, 0.000, 1.000), n=1 (0.000, 1.000, 1.000), n=2 (1.000, 0.20906, 1.20906), n=3 (0.20906, 1.04371, 1.25277), n=4 (1.04371, 0.427258, 1.470968), n=5 (0.427258, 1.13303, 1.560288), n=6 (1.13303, 0.664129, 1.797159), n=7 (0.664129, 1.27187, 1.936), n=8 (1.27187, 0.930024, 2.201894), n=9 (0.930024, 1.466303, 2.396327). All 30 printed values correct to the 3 decimals shown.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "90c482953991",
+          "ts": "35580965c1b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:11:04.421Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (10 rows, n = 0..9); no prose, so no trap construction can occur. Recomputed every cell at 40 dps from the continuant a_{n+1}=b_n, b_{n+1}=h b_n + b_{n-1}, b_0=0, b_1=1, h = q - 1/q at the proton pin: n=0 (1.000, 0.000, 1.000), n=1 (0.000, 1.000, 1.000), n=2 (1.000, 0.20906, 1.20906), n=3 (0.20906, 1.04371, 1.25277), n=4 (1.04371, 0.427258, 1.470968), n=5 (0.427258, 1.13303, 1.560288), n=6 (1.13303, 0.664129, 1.797159), n=7 (0.664129, 1.27187, 1.936), n=8 (1.27187, 0.930024, 2.201894), n=9 (0.930024, 1.466303, 2.396327). All 30 printed values correct to the 3 decimals shown.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "90c482953991",
+          "ts": "35580965c1b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:11:04.461Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (10 rows, n = 0..9); no prose, so no trap construction can occur. Recomputed every cell at 40 dps from the continuant a_{n+1}=b_n, b_{n+1}=h b_n + b_{n-1}, b_0=0, b_1=1, h = q - 1/q at the proton pin: n=0 (1.000, 0.000, 1.000), n=1 (0.000, 1.000, 1.000), n=2 (1.000, 0.20906, 1.20906), n=3 (0.20906, 1.04371, 1.25277), n=4 (1.04371, 0.427258, 1.470968), n=5 (0.427258, 1.13303, 1.560288), n=6 (1.13303, 0.664129, 1.797159), n=7 (0.664129, 1.27187, 1.936), n=8 (1.27187, 0.930024, 2.201894), n=9 (0.930024, 1.466303, 2.396327). All 30 printed values correct to the 3 decimals shown.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "90c482953991",
+          "ts": "35580965c1b4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:11:04.504Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (10 rows, n = 0..9); no prose, so no trap construction can occur. Recomputed every cell at 40 dps from the continuant a_{n+1}=b_n, b_{n+1}=h b_n + b_{n-1}, b_0=0, b_1=1, h = q - 1/q at the proton pin: n=0 (1.000, 0.000, 1.000), n=1 (0.000, 1.000, 1.000), n=2 (1.000, 0.20906, 1.20906), n=3 (0.20906, 1.04371, 1.25277), n=4 (1.04371, 0.427258, 1.470968), n=5 (0.427258, 1.13303, 1.560288), n=6 (1.13303, 0.664129, 1.797159), n=7 (0.664129, 1.27187, 1.936), n=8 (1.27187, 0.930024, 2.201894), n=9 (0.930024, 1.466303, 2.396327). All 30 printed values correct to the 3 decimals shown.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ]
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions-detail",
+    "path": "folio/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions-detail"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The AGENTS.md section id is gone: \"The \u00a73b-cond chain provides unconditional functional identities\" now reads \"The conditional-class chain provides unconditional functional identities.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.471Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.508Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.546Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.586Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.623Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.661Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.697Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "major",
+        "evidence": "The '## Target translation' section exists only to restate the three advances just listed, and closes on 'This translates a prior axiomatic gap into specific, named Lean targets ready for upstreaming.' - which is also an overclaim, since the sibling Table 2 lists the absolute convergence of complexLiTwo as open and Table 1 records its convergence as merely 'implicit'.",
+        "notes": "proposed: delete the section, or reduce it to the one fact not already stated - which named declarations are unconditional - and drop 'ready for upstreaming'."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.732Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.768Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "4a8f0f1133f5",
+          "ts": "eed1b43fd3a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:41.803Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, ~1.4kB). Cl_2(-theta) = -Cl_2(theta) and the periodicity/half-period identities are all correct; the Bloch-Wigner formula Im Li_2(z) + log|z| arg(1-z) is the standard one."
+      }
+    ]
+  }
+}

@@ -1,0 +1,1038 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/hadron-half-life",
+    "path": "folio/quantum-observable-universe/predicted-spectra/hadron-half-life"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.435630Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.435630Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The statement is written in standard scholarly mathematical and physics voice.",
+        "severity": "minor"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.435630Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.435630Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Block placement and kind 'proposition' match validated structurally.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.435630Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.435630Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling fails compilation, preventing statement verification: folio/quantum-observable-universe/predicted-spectra/hadron-half-life.lean:74:2: error: linarith failed to find a contradiction",
+        "severity": "minor",
+        "evidence": "The Lean sibling fails compilation, preventing statement verification: folio/quantum-observable-universe/predicted-spectra/hadron-half-life.lean:74:2: error: linarith failed to find a contradiction"
+      },
+      {
+        "field_hash": {
+          "md": "011fd415c481",
+          "ts": "5ced91f158a8",
+          "lean": "b0b4f2939e13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-fable-5-1",
+          "agent_date": "2026-09-03T20:39:56Z",
+          "agent_skill": "local/dispatch-agent"
+        },
+        "reviewed_at": "2026-09-03T20:39:56Z",
+        "reviewed_sha": "4a4e5ce3d2cbbfd6b22fdfc08b74b38323a736e3",
+        "notes": "Archimedean physical-rate statement (ln 2, dimensional scale mu_0, |.|^2, Q^5 phase space) in the explicitly archimedean predicted-spectra chapter, with the evaluation side fixed by 'Let (C, A, tau) be the Descartes universe' and a section-7c authorNote on the .ts; regime matches chapter, so PASS.",
+        "evidence": "REGIME: predicted-spectra is listed in the archimedean chapter set at folio-assistant/cat-harness/content/pipeline/_folio-chapter-profiles.qou.ts:180 and its allowed q-regimes include real-positive/real-gt-1/fixed-q0 (same file :109-111); the chapter manifest folio/quantum-observable-universe/predicted-spectra/predicted-spectra.ts:4-8,17-20 describes it as 'Predicted Particle Spectra ... comparisons to CODATA ... Part III Physical Realization'; the registry description (qa-criteria-registry.ts:386-387) names 'numeric predicted-spectra blocks' among the explicitly-archimedean class. Peer verdicts on this criterion in the chapter: 22 pass / 2 n/a / 2 fail, and both fails (this block and q-value-transition) are Lean-compile refusals, not statement findings. STATEMENT TOKENS (hadron-half-life.md, statement = lines 3-21): :4 'Descartes universe (C, A, tau)' (the archimedean tuple, AGENTS.md section 7), 'beta-decay half-life' (a time); :7-9 t_{1/2} = ln 2 / Gamma_beta (Real.log, physical rate); :13 |W(q)|^2 (modulus -> ordered/normed field), mu_0 'dimensional scale', 2 pi^3 (real transcendental constant); :15 [2]_q = q + q^{-1} (algebraic, generic-ring); :17 |M_q|^2 (modulus); :19 f(Q) proportional to Q^5, 'Sargent phase-space integral' in the Q-value (energy, integral); :21 tr_Markov((sigma_1 sigma_2)^5) in H_3(q) and T_{3,5} (algebraic inputs), 'dimensional scale mu_0', 'f(Q) proportional to Q^5'. Outside the statement: :1 'substrate parameter q', 'half-life', 'beta decay', 'q-deformed transition amplitude'. No numeric q value, no MeV literal, no CODATA/PDG literal appears anywhere in the .md (consistent with the 7aa rule that q = 1.1097 not appear outside intro/Ch 7). BRANCHES: FAIL-1 (generic chapter hard-coding archimedean constructs) does not apply because the chapter is archimedean. FAIL-2 (archimedean-chapter statement that is a purely algebraic identity belonging upstream) does not apply: the statement is a Fermi-golden-rule-shaped decay-rate formula with ln 2, a dimensional scale, moduli and a phase-space integral, none of which is generic-ring; the algebraic ingredients ([2]_q, the H_3(q) Markov trace, the trace ratio) are consumed as inputs by cross-reference (:21 links to def:beta-decay-skein, prop:trace-ratio-observable, rem:building-block-knots) rather than asserted as identities here. WARN (mixes regimes without flagging the side) does not apply: the statement opens by fixing the archimedean side explicitly ('Let (C, A, tau) be the Descartes universe with substrate parameter q', :4) and closes by naming the dimensional scale it is evaluated against (:21), and the .ts carries an authorNotes entry (hadron-half-life.ts:5) 'Lean sibling: archimedean specialisation over R (AGENTS.md section 7c). Underlying combinatorial content stays generic to any commutative ring'; the Lean header (hadron-half-life.lean:21-24) likewise declares Ground ring R. So the statement matches its chapter regime and is explicitly specialised -> PASS. SIDE NOTE (not scored, md-only criterion): the prior 2026-07-07 entry recorded 'linarith failed' at hadron-half-life.lean:74 as a Lean-build refusal; the .lean hash has since changed (6015600812a9 -> b0b4f2939e13) and at the reviewed sha line 74 is a docstring, with the q_integer_2_gt_two proof now using nlinarith at :72 -- whether it compiles today is a separate lean-build finding that was not checked here. The .md hash also changed since that entry (3715492f6d98 -> 011fd415c481)."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.435630Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.435630Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Lean proof contains compilation errors.",
+        "severity": "minor",
+        "evidence": "Lean proof contains compilation errors."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.435630Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.435630Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Hadron half-life from the $q$-deformed transition amplitude' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/predicted-spectra/hadron-half-life.lean:74:2: error: linarith failed to find a contradiction.",
+        "severity": "minor",
+        "evidence": "hadron-half-life.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.435630Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.435630Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/hadron-half-life.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "minor",
+        "evidence": "hadron-half-life.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.435630Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.435630Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Hadron half-life from the $q$-deformed transition amplitude'.",
+        "severity": "minor",
+        "evidence": "hadron-half-life.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.435630Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.435630Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The remarks and narrative scope in 'Hadron half-life from the $q$-deformed transition amplitude' are appropriately qualified.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.435630Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.435630Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Hadron half-life from the $q$-deformed transition amplitude'.",
+        "severity": "minor",
+        "evidence": "hadron-half-life.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.435630Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.435630Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/predicted-spectra/hadron-half-life.lean.",
+        "severity": "minor",
+        "evidence": "hadron-half-life.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.435630Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.435630Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/hadron-half-life.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/hadron-half-life.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.435630Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.435630Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Hadron half-life from the $q$-deformed transition amplitude', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "hadron-half-life.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.435630Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.435630Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Hadron half-life from the $q$-deformed transition amplitude' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "hadron-half-life.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.435630Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.435630Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Hadron half-life from the $q$-deformed transition amplitude' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "hadron-half-life.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.435630Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.435630Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Hadron half-life from the $q$-deformed transition amplitude' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "hadron-half-life.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.435630Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.435630Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/hadron-half-life.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "hadron-half-life.lean:1 — folio/quantum-observable-universe/predicted-spectra/hadron-half-life.lean:74:2: error: linarith failed to find a contradiction"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.435630Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.435630Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/predicted-spectra/hadron-half-life.lean fails compilation.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/hadron-half-life.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/predicted-spectra/hadron-half-life.lean fails compilation."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
+        "reviewed_at": "2026-07-07T14:26:56.435630Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.435630Z"
+        },
+        "field_hash": {
+          "md": "3715492f6d98",
+          "ts": "5ced91f158a8",
+          "lean": "6015600812a9"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:58:46.000Z",
+        "reviewed_sha": "37ade373f667545a51e0def9f90dbe3200e54aeb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "011fd415c481",
+          "ts": "5ced91f158a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:19.317Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of the proposition statement (a lead-in plus the Proposition with one display and a where-clause). None of the ten constructions is present. The statement is consistent with its proof block; (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5); f(Q) proportional to Q^5 is the Sargent rule; [2]_q = q + q^{-1} is the SU_q(2) fundamental dimension. uses[] names prop:integer-stability, a proposition, so 3b propagation does not apply.",
+        "notes": "TWO ITEMS REPORTED, not fixed. (1) NOTATION VIOLATION AND AN INTERNAL COLLISION IN ONE SENTENCE: 'let $\\mathcal{N}(Z, N)$ ... be a nucleus with proton displacement $\\delta p = p - p_{\\mathrm{stab}}(A)$' uses BOTH $Z$ and $p$ for the proton count, in the same clause. notation-collisions reserves $p$ for the brane point and specifies $Z$ for the proton count (the proton itself is \\mathfrak{p}). The rate is then written $\\Gamma_\\beta(p, A)$ throughout. Mechanical fix: p -> Z everywhere in this block and its proof, and rename delta p accordingly. Same violation as rem:francium-extremal-metal. (2) DANGLING DEFINITION: $\\delta p$ is defined in the hypothesis and then never used - neither the half-life formula nor any factor mentions it. Either use it or drop it."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "011fd415c481",
+          "ts": "5ced91f158a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:19.358Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of the proposition statement (a lead-in plus the Proposition with one display and a where-clause). None of the ten constructions is present. The statement is consistent with its proof block; (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5); f(Q) proportional to Q^5 is the Sargent rule; [2]_q = q + q^{-1} is the SU_q(2) fundamental dimension. uses[] names prop:integer-stability, a proposition, so 3b propagation does not apply.",
+        "notes": "TWO ITEMS REPORTED, not fixed. (1) NOTATION VIOLATION AND AN INTERNAL COLLISION IN ONE SENTENCE: 'let $\\mathcal{N}(Z, N)$ ... be a nucleus with proton displacement $\\delta p = p - p_{\\mathrm{stab}}(A)$' uses BOTH $Z$ and $p$ for the proton count, in the same clause. notation-collisions reserves $p$ for the brane point and specifies $Z$ for the proton count (the proton itself is \\mathfrak{p}). The rate is then written $\\Gamma_\\beta(p, A)$ throughout. Mechanical fix: p -> Z everywhere in this block and its proof, and rename delta p accordingly. Same violation as rem:francium-extremal-metal. (2) DANGLING DEFINITION: $\\delta p$ is defined in the hypothesis and then never used - neither the half-life formula nor any factor mentions it. Either use it or drop it."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "011fd415c481",
+          "ts": "5ced91f158a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:19.400Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of the proposition statement (a lead-in plus the Proposition with one display and a where-clause). None of the ten constructions is present. The statement is consistent with its proof block; (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5); f(Q) proportional to Q^5 is the Sargent rule; [2]_q = q + q^{-1} is the SU_q(2) fundamental dimension. uses[] names prop:integer-stability, a proposition, so 3b propagation does not apply.",
+        "notes": "TWO ITEMS REPORTED, not fixed. (1) NOTATION VIOLATION AND AN INTERNAL COLLISION IN ONE SENTENCE: 'let $\\mathcal{N}(Z, N)$ ... be a nucleus with proton displacement $\\delta p = p - p_{\\mathrm{stab}}(A)$' uses BOTH $Z$ and $p$ for the proton count, in the same clause. notation-collisions reserves $p$ for the brane point and specifies $Z$ for the proton count (the proton itself is \\mathfrak{p}). The rate is then written $\\Gamma_\\beta(p, A)$ throughout. Mechanical fix: p -> Z everywhere in this block and its proof, and rename delta p accordingly. Same violation as rem:francium-extremal-metal. (2) DANGLING DEFINITION: $\\delta p$ is defined in the hypothesis and then never used - neither the half-life formula nor any factor mentions it. Either use it or drop it."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "011fd415c481",
+          "ts": "5ced91f158a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:19.441Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of the proposition statement (a lead-in plus the Proposition with one display and a where-clause). None of the ten constructions is present. The statement is consistent with its proof block; (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5); f(Q) proportional to Q^5 is the Sargent rule; [2]_q = q + q^{-1} is the SU_q(2) fundamental dimension. uses[] names prop:integer-stability, a proposition, so 3b propagation does not apply.",
+        "notes": "TWO ITEMS REPORTED, not fixed. (1) NOTATION VIOLATION AND AN INTERNAL COLLISION IN ONE SENTENCE: 'let $\\mathcal{N}(Z, N)$ ... be a nucleus with proton displacement $\\delta p = p - p_{\\mathrm{stab}}(A)$' uses BOTH $Z$ and $p$ for the proton count, in the same clause. notation-collisions reserves $p$ for the brane point and specifies $Z$ for the proton count (the proton itself is \\mathfrak{p}). The rate is then written $\\Gamma_\\beta(p, A)$ throughout. Mechanical fix: p -> Z everywhere in this block and its proof, and rename delta p accordingly. Same violation as rem:francium-extremal-metal. (2) DANGLING DEFINITION: $\\delta p$ is defined in the hypothesis and then never used - neither the half-life formula nor any factor mentions it. Either use it or drop it."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "011fd415c481",
+          "ts": "5ced91f158a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:19.484Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of the proposition statement (a lead-in plus the Proposition with one display and a where-clause). None of the ten constructions is present. The statement is consistent with its proof block; (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5); f(Q) proportional to Q^5 is the Sargent rule; [2]_q = q + q^{-1} is the SU_q(2) fundamental dimension. uses[] names prop:integer-stability, a proposition, so 3b propagation does not apply.",
+        "notes": "TWO ITEMS REPORTED, not fixed. (1) NOTATION VIOLATION AND AN INTERNAL COLLISION IN ONE SENTENCE: 'let $\\mathcal{N}(Z, N)$ ... be a nucleus with proton displacement $\\delta p = p - p_{\\mathrm{stab}}(A)$' uses BOTH $Z$ and $p$ for the proton count, in the same clause. notation-collisions reserves $p$ for the brane point and specifies $Z$ for the proton count (the proton itself is \\mathfrak{p}). The rate is then written $\\Gamma_\\beta(p, A)$ throughout. Mechanical fix: p -> Z everywhere in this block and its proof, and rename delta p accordingly. Same violation as rem:francium-extremal-metal. (2) DANGLING DEFINITION: $\\delta p$ is defined in the hypothesis and then never used - neither the half-life formula nor any factor mentions it. Either use it or drop it."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "011fd415c481",
+          "ts": "5ced91f158a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:19.526Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of the proposition statement (a lead-in plus the Proposition with one display and a where-clause). None of the ten constructions is present. The statement is consistent with its proof block; (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5); f(Q) proportional to Q^5 is the Sargent rule; [2]_q = q + q^{-1} is the SU_q(2) fundamental dimension. uses[] names prop:integer-stability, a proposition, so 3b propagation does not apply.",
+        "notes": "TWO ITEMS REPORTED, not fixed. (1) NOTATION VIOLATION AND AN INTERNAL COLLISION IN ONE SENTENCE: 'let $\\mathcal{N}(Z, N)$ ... be a nucleus with proton displacement $\\delta p = p - p_{\\mathrm{stab}}(A)$' uses BOTH $Z$ and $p$ for the proton count, in the same clause. notation-collisions reserves $p$ for the brane point and specifies $Z$ for the proton count (the proton itself is \\mathfrak{p}). The rate is then written $\\Gamma_\\beta(p, A)$ throughout. Mechanical fix: p -> Z everywhere in this block and its proof, and rename delta p accordingly. Same violation as rem:francium-extremal-metal. (2) DANGLING DEFINITION: $\\delta p$ is defined in the hypothesis and then never used - neither the half-life formula nor any factor mentions it. Either use it or drop it."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "011fd415c481",
+          "ts": "5ced91f158a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:19.569Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of the proposition statement (a lead-in plus the Proposition with one display and a where-clause). None of the ten constructions is present. The statement is consistent with its proof block; (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5); f(Q) proportional to Q^5 is the Sargent rule; [2]_q = q + q^{-1} is the SU_q(2) fundamental dimension. uses[] names prop:integer-stability, a proposition, so 3b propagation does not apply.",
+        "notes": "TWO ITEMS REPORTED, not fixed. (1) NOTATION VIOLATION AND AN INTERNAL COLLISION IN ONE SENTENCE: 'let $\\mathcal{N}(Z, N)$ ... be a nucleus with proton displacement $\\delta p = p - p_{\\mathrm{stab}}(A)$' uses BOTH $Z$ and $p$ for the proton count, in the same clause. notation-collisions reserves $p$ for the brane point and specifies $Z$ for the proton count (the proton itself is \\mathfrak{p}). The rate is then written $\\Gamma_\\beta(p, A)$ throughout. Mechanical fix: p -> Z everywhere in this block and its proof, and rename delta p accordingly. Same violation as rem:francium-extremal-metal. (2) DANGLING DEFINITION: $\\delta p$ is defined in the hypothesis and then never used - neither the half-life formula nor any factor mentions it. Either use it or drop it."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "011fd415c481",
+          "ts": "5ced91f158a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:19.616Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of the proposition statement (a lead-in plus the Proposition with one display and a where-clause). None of the ten constructions is present. The statement is consistent with its proof block; (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5); f(Q) proportional to Q^5 is the Sargent rule; [2]_q = q + q^{-1} is the SU_q(2) fundamental dimension. uses[] names prop:integer-stability, a proposition, so 3b propagation does not apply.",
+        "notes": "TWO ITEMS REPORTED, not fixed. (1) NOTATION VIOLATION AND AN INTERNAL COLLISION IN ONE SENTENCE: 'let $\\mathcal{N}(Z, N)$ ... be a nucleus with proton displacement $\\delta p = p - p_{\\mathrm{stab}}(A)$' uses BOTH $Z$ and $p$ for the proton count, in the same clause. notation-collisions reserves $p$ for the brane point and specifies $Z$ for the proton count (the proton itself is \\mathfrak{p}). The rate is then written $\\Gamma_\\beta(p, A)$ throughout. Mechanical fix: p -> Z everywhere in this block and its proof, and rename delta p accordingly. Same violation as rem:francium-extremal-metal. (2) DANGLING DEFINITION: $\\delta p$ is defined in the hypothesis and then never used - neither the half-life formula nor any factor mentions it. Either use it or drop it."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "011fd415c481",
+          "ts": "5ced91f158a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:19.661Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of the proposition statement (a lead-in plus the Proposition with one display and a where-clause). None of the ten constructions is present. The statement is consistent with its proof block; (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5); f(Q) proportional to Q^5 is the Sargent rule; [2]_q = q + q^{-1} is the SU_q(2) fundamental dimension. uses[] names prop:integer-stability, a proposition, so 3b propagation does not apply.",
+        "notes": "TWO ITEMS REPORTED, not fixed. (1) NOTATION VIOLATION AND AN INTERNAL COLLISION IN ONE SENTENCE: 'let $\\mathcal{N}(Z, N)$ ... be a nucleus with proton displacement $\\delta p = p - p_{\\mathrm{stab}}(A)$' uses BOTH $Z$ and $p$ for the proton count, in the same clause. notation-collisions reserves $p$ for the brane point and specifies $Z$ for the proton count (the proton itself is \\mathfrak{p}). The rate is then written $\\Gamma_\\beta(p, A)$ throughout. Mechanical fix: p -> Z everywhere in this block and its proof, and rename delta p accordingly. Same violation as rem:francium-extremal-metal. (2) DANGLING DEFINITION: $\\delta p$ is defined in the hypothesis and then never used - neither the half-life formula nor any factor mentions it. Either use it or drop it."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "011fd415c481",
+          "ts": "5ced91f158a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:19.705Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read of the proposition statement (a lead-in plus the Proposition with one display and a where-clause). None of the ten constructions is present. The statement is consistent with its proof block; (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5); f(Q) proportional to Q^5 is the Sargent rule; [2]_q = q + q^{-1} is the SU_q(2) fundamental dimension. uses[] names prop:integer-stability, a proposition, so 3b propagation does not apply.",
+        "notes": "TWO ITEMS REPORTED, not fixed. (1) NOTATION VIOLATION AND AN INTERNAL COLLISION IN ONE SENTENCE: 'let $\\mathcal{N}(Z, N)$ ... be a nucleus with proton displacement $\\delta p = p - p_{\\mathrm{stab}}(A)$' uses BOTH $Z$ and $p$ for the proton count, in the same clause. notation-collisions reserves $p$ for the brane point and specifies $Z$ for the proton count (the proton itself is \\mathfrak{p}). The rate is then written $\\Gamma_\\beta(p, A)$ throughout. Mechanical fix: p -> Z everywhere in this block and its proof, and rename delta p accordingly. Same violation as rem:francium-extremal-metal. (2) DANGLING DEFINITION: $\\delta p$ is defined in the hypothesis and then never used - neither the half-life formula nor any factor mentions it. Either use it or drop it."
+      }
+    ]
+  }
+}

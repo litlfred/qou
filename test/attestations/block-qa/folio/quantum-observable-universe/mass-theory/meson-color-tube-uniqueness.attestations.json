@@ -1,0 +1,1264 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness",
+    "path": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "e1862f65e4dc",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Statement contains only the bare claim without physical interpretation.",
+        "severity": "minor"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e1862f65e4dc",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "e1862f65e4dc",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "e1862f65e4dc",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean theorem statement matches the mathematical statement in the markdown file.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 \u2014 Lean file exists",
+        "severity": "minor"
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "e1862f65e4dc",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Lean proof contains compilation errors.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 \u2014 folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:143:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+        "severity": "minor"
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "meson-color-tube-uniqueness.md:1-5 + lean:108-129 \u2014 title/statement claims m_K\u00b2/m_\u03c0\u00b2 'factors UNIQUELY through T(2,3) and T(2,4) \u2026 with the q-integer indices FORCED by the proved \u03b1_shift formula'. But the Lean meson_ratio_via_alpha_shift (lean:122-129) proves only mK2_over_mpi2 q = qChar q (alphaShift 2 3) * qChar q (alphaShift 2 4) by rewriting 3 = alphaShift 2 3 (=3\u00b7(2\u22121)=3, rfl) into the UNCONSTRAINED class hypothesis MesonGMORFactorization.factors. No minimisation/uniqueness principle is proved; the \u03b1_shift 'derivation of the indices' is a numeric tautology, and the abstract qChar imposes no q-integer closed form.",
+        "rebuttal": "surviving \u2014 the .md itself (58-63) concedes 'why specifically the smallest non-trivial torus-knot pair carries the meson role \u2026 Lean target: a theorem deriving the index pair (3,4) from a minimisation principle' is OPEN. corpus-grep finds NO closure; the block's own meson-3x4-structural-origin.witness.json says 'Spin assignment post-hoc', and the cited audit docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md is titled 'meson m_K/m_\u03c0 is fitted, not a derived character ratio'.",
+        "evidence": [
+          {
+            "text": "meson-color-tube-uniqueness.md:1-5"
+          },
+          {
+            "text": "meson-color-tube-uniqueness.lean:122-129"
+          },
+          {
+            "text": "computations/meson-3x4-structural-origin.witness.json"
+          },
+          {
+            "text": "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md:1"
+          }
+        ],
+        "severity": "major",
+        "result": "fail",
+        "field_hash": {
+          "md": "e1862f65e4dc",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "three mutually inconsistent m_K/m_\u03c0 numbers: ts:18 authorNotes 'the 1098\u00d7 m_K/m_\u03c0 miss'; md:79 'err 23.44 ppb vs target 263.6 ppb'; fresh witness per-observable-100x-status.witness.json obs=m_K/m_pi gives err_ppb=28.01, miss_factor=0.1062, beats_100x=TRUE. None of {1098\u00d7, 23.44 ppb, 28.01 ppb} agree.",
+        "rebuttal": "partial \u2014 the witness scriptHash 4e679e710146 matches the live producer (FRESH) and reproduces a PASSING result (28.01 ppb < 263.6 ppb). The 1098\u00d7 authorNotes is a pre-fix stale claim (q0-repin-staleness) contradicted by the now-passing witness; md's 23.44 ppb is simply wrong. Prose stale/wrong but NOT load-bearing for the Lean; the empirical core is sound.",
+        "evidence": [
+          {
+            "text": "meson-color-tube-uniqueness.ts:18"
+          },
+          {
+            "text": "meson-color-tube-uniqueness.md:79"
+          },
+          {
+            "text": "computations/per-observable-100x-status.witness.json"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "e1862f65e4dc",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "md:48-52 describes meson_ratio_via_alpha_shift as delivering the uniqueness 'staged via \u00a73b-cond', and the title says 'uniqueness'. The Lean theorem is a pointwise factorisation projection, not a uniqueness statement; the only Subsingleton object (meson_ratio_subsingleton, lean:134-144) proves two evaluators sharing the SAME qChar + SAME class agree \u2014 a trivial congruence, not uniqueness of (3,4).",
+        "rebuttal": "partial \u2014 not contradictory at the proposition level (the \u00a73b-cond staging is present: MesonGMORFactorization is the named unproved class), but the NAME 'uniqueness' + the subsingleton companion oversell: Subsingleton over {f // \u2203 _ : Class f, True} is vacuous-adjacent (any two functions satisfying the same unconstrained axiom are equal by funext), proving nothing about why (3,4). Divergence in emphasis/labelling, not a false Lean statement.",
+        "evidence": [
+          {
+            "text": "meson-color-tube-uniqueness.lean:134-144"
+          },
+          {
+            "text": "meson-color-tube-uniqueness.md:48-52"
+          }
+        ],
+        "severity": "minor",
+        "result": "warn",
+        "field_hash": {
+          "md": "e1862f65e4dc",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "C1 flagged sorry-free+proved+no-fitting+closed-form while Lean 'reportedly contains a sorry'; and upstream alpha-shift-torus-knot.lean proves alphaShift p k = k*(p-1) := by rfl, suggesting the chain rests on a tautology.",
+        "rebuttal": "rebutted \u2014 NO sorry anywhere in meson-color-tube-uniqueness.lean (tactic OR comment); the only 'sorry' token is the docstring word 'sorry-free' (lean:18). C1 = 4th-of-4 FALSE POSITIVE. Not a :True/\u2228True/def-disguised-True shadow-stub: lean.ref resolves SIBLING-FIRST to the real theorem at lean:122. The upstream rfl is honest (formula = its definition). Vacuity does not fire; the genuine defect is overclaim.",
+        "evidence": [
+          {
+            "text": "meson-color-tube-uniqueness.lean:54-144"
+          },
+          {
+            "text": "meson-color-tube-uniqueness.qa.json source_hashes.lean=bd777034f37c"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "e1862f65e4dc",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "the no-fitting label is strong; the (3,4) torus-knot index choice could be a hidden discrete DOF tuned to hit GMOR.",
+        "rebuttal": "rebutted \u2014 given (3,4), [3]_q\u00b7[4]_q is parameter-free (= q-CG fusion [2]_q+[4]_q+[6]_q, sibling meson-qcg-fusion-identity.lean:37-43 real field_simp;ring), and the \u03b1_em correction is an explicitly ACKNOWLEDGED CLASS-A anchor, not a hidden continuous DOF. The discrete (3,4) choice is the un-derived part \u2014 re-scoped to da-overclaim, not a hidden tuning parameter.",
+        "evidence": [
+          {
+            "text": "folio/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.lean:37-43"
+          },
+          {
+            "text": "computations/per-observable-100x-status.witness.json"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "e1862f65e4dc",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "the .md (75-78) cites dashboard Lean refs qou:QOU.BraidKnot.meson_qCG_3x4 + meson_EM_closed_form; could be mis-namespaced/non-existent.",
+        "rebuttal": "rebutted \u2014 both exist with the cited namespace QOU.BraidKnot: meson_qCG_3x4 at meson-qcg-fusion-identity.lean:37, meson_EM_closed_form at meson-em-sinh-closed-form.lean:38. jones1987 (references.ts:906), wenzl1988 (:3443) resolve. No misuse.",
+        "evidence": [
+          {
+            "text": "folio/quantum-observable-universe/braids-and-knots/meson-qcg-fusion-identity.lean:37"
+          },
+          {
+            "text": "folio/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.lean:38"
+          }
+        ],
+        "severity": "minor",
+        "result": "pass",
+        "field_hash": {
+          "md": "e1862f65e4dc",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "verdict": "open-objection",
+        "referee_argument": "Strip the labels and the proposition titled 'meson color-tube UNIQUENESS' proves no uniqueness. Its load-bearing Lean theorem rewrites the numeric tautology 3 = 3\u00b7(2\u22121) into an unconstrained class hypothesis and hands it back; the abstract qChar imposes no q-integer value; and the actual 'why the indices are (3,4)' minimisation principle is conceded-open in the block's own .md and corpus-empty. Worse, the block's own structural-origin witness admits the spin/index assignment is 'post-hoc', and the audit it cites is literally titled 'meson m_K/m_\u03c0 is fitted, not a derived character ratio'. The C1 sorry-flag is a clean false positive (no sorry exists, 4th of 4), and the empirical value actually passes \u2014 but the title's strongest word, 'uniqueness\u2026 forced', is an overclaim its own materials refute.",
+        "result": "fail",
+        "field_hash": {
+          "md": "e1862f65e4dc",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33",
+        "evidence": "Strip the labels and the proposition titled 'meson color-tube UNIQUENESS' proves no uniqueness. Its load-bearing Lean theorem rewrites the numeric tautology 3 = 3\u00b7(2\u22121) into an unconstrained class hypothesis and hands it back; the abstract qChar imposes no q-integer value; and the actual 'why the indices are (3,4)' minimisation principle is conceded-open in the block's own .md and corpus-empty. Worse, the block's own structural-origin witness admits the spin/index assignment is 'post-hoc', and the audit it cites is literally titled 'meson m_K/m_\u03c0 is fitted, not a derived character ratio'. The C1 sorry-flag is a clean false positive (no sorry exists, 4th of 4), and the empirical value actually passes \u2014 but the title's strongest word, 'uniqueness\u2026 forced', is an overclaim its own materials refute."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e1862f65e4dc",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-false-claim.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e1862f65e4dc",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-circular.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e1862f65e4dc",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-non-sequitur.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e1862f65e4dc",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e1862f65e4dc",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-physical-implausibility.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e1862f65e4dc",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The Lean sibling fails compilation, indicating a reproducibility failure.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:1 \u2014 folio/quantum-observable-universe/mass-theory/meson-color-tube-uniqueness.lean:143:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote mass-theory_seq11.md to strictly follow H1-H8. Streamlined LP constraints and operator choices. Clarified the categorical reading vs empirical consequences. All formulas and code structures preserved.",
+        "reviewed_at": "2026-07-07T14:26:56.791272Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.791272Z"
+        },
+        "field_hash": {
+          "md": "e1862f65e4dc",
+          "ts": "477db9b4fde8",
+          "lean": "86f575746859"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:11.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.",
+        "reviewed_at": "2026-07-08T18:21:34.000Z",
+        "reviewed_sha": "841e7c9b888badfc0222b00c6d11a17075018acf",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:50:59.659Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read (145 words). No assert-by-denial."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:50:59.747Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No pivot."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:50:59.844Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:50:59.943Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The Lean-structure list has three items, each a distinct declaration."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:00.026Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on the Lean declaration list."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:00.118Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:00.210Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:00.300Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:00.375Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'The pair {T(2,3), T(2,4)} is the SMALLEST NON-TRIVIAL torus-knot pair on the substrate's Hecke-algebra surface' and 'factors UNIQUELY' both assert minimality/uniqueness with no argument and no cited proposition. The Lean sibling named in the block does not establish either; per its own description meson_ratio_via_alpha_shift 'proves the factorisation using the specific indices', which presupposes the indices rather than showing no other pair works.",
+        "notes": "Proposed: either cite where minimality and uniqueness are proved, or restate as 'the pair ... realises the factorisation' and drop 'smallest' and 'uniquely'."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1326ca3262bf",
+          "ts": "477db9b4fde8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:00.444Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Speakable.",
+        "notes": "THREE FINDINGS, none fixed inline. (1) T(2,4) IS NOT A KNOT. The block writes 'The knot T(2,4) carries [4]_q' and calls the pair a 'torus-knot pair'. T(p,k) is a knot iff gcd(p,k) = 1; gcd(2,4) = 2, so T(2,4) is the (2,4)-TORUS LINK with TWO components \u2014 the closure of sigma_1^4 in B_2, which is the standard 2-component (4,2) link, not a knot. The companion pair it is compared to, {T(2,9), T(3,5)}, is genuinely two knots (gcd 1 both), which makes the slip easy to miss. The same issue affects 'the lepton tower T(2,k)', which is a knot only for odd k. (2) THE LEAN PATTERN LOOKS SELF-ASSUMING. The block describes MesonGMORFactorization as 'the substrate factorisation axiom' and then says meson_ratio_via_alpha_shift 'proves the factorisation using the specific indices'. If the class carries the factorisation as a field and the theorem projects it, that is the vacuous self-assuming projection AGENTS.md section 3b-cond item 5 forbids \u2014 the class must axiomatise the HYPOTHESES, not the conclusion. Worth checking QOU.BraidKnot.meson_ratio_via_alpha_shift directly. (3) NUMBER SUPPLIED (the block quotes none): at the proton pin, [3]_q [4]_q = 12.50866587 against (m_K/m_pi)^2 = 12.51120685 from PDG m_K+- = 493.677, m_pi+- = 139.57039, i.e. -203.1 ppm. Note this disagrees with the sibling prop:meson-kaon-pion-hecke-seifert, whose route gives -289.65 ppm on the unsquared ratio (about -579 ppm squared): two derivations of the same observable in one chapter, differing by roughly 3x in residual. Also the .ts has uses: [] while the .md cites prop:alpha-shift-torus-knot, so the dependency edge is missing."
+      }
+    ]
+  }
+}

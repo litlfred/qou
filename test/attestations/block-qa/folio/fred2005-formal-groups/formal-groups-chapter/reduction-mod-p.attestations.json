@@ -1,0 +1,386 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/fred2005-formal-groups/formal-groups-chapter/reduction-mod-p",
+    "path": "folio/fred2005-formal-groups/formal-groups-chapter/reduction-mod-p"
+  },
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4",
+          "lean": "4f856d58c70a"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4",
+          "lean": "4f856d58c70a"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.276Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:reduction-mod-p. One sentence plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.reduction_mod_p_commutative proves only forall x y, F(F(x,x),F(y,y)) = F(F(y,y),F(x,x)) - a specialised instance of G.base.commutative. It formalises neither the reduction of G/Z_p to H/F_p mod p (the .md's main clause) nor even the clean statement 'the base formal group law is commutative' (which would be forall x y, F x y = F y x)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.315Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:reduction-mod-p. One sentence plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.reduction_mod_p_commutative proves only forall x y, F(F(x,x),F(y,y)) = F(F(y,y),F(x,x)) - a specialised instance of G.base.commutative. It formalises neither the reduction of G/Z_p to H/F_p mod p (the .md's main clause) nor even the clean statement 'the base formal group law is commutative' (which would be forall x y, F x y = F y x)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.355Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:reduction-mod-p. One sentence plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.reduction_mod_p_commutative proves only forall x y, F(F(x,x),F(y,y)) = F(F(y,y),F(x,x)) - a specialised instance of G.base.commutative. It formalises neither the reduction of G/Z_p to H/F_p mod p (the .md's main clause) nor even the clean statement 'the base formal group law is commutative' (which would be forall x y, F x y = F y x)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.395Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:reduction-mod-p. One sentence plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.reduction_mod_p_commutative proves only forall x y, F(F(x,x),F(y,y)) = F(F(y,y),F(x,x)) - a specialised instance of G.base.commutative. It formalises neither the reduction of G/Z_p to H/F_p mod p (the .md's main clause) nor even the clean statement 'the base formal group law is commutative' (which would be forall x y, F x y = F y x)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.437Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:reduction-mod-p. One sentence plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.reduction_mod_p_commutative proves only forall x y, F(F(x,x),F(y,y)) = F(F(y,y),F(x,x)) - a specialised instance of G.base.commutative. It formalises neither the reduction of G/Z_p to H/F_p mod p (the .md's main clause) nor even the clean statement 'the base formal group law is commutative' (which would be forall x y, F x y = F y x)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.477Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:reduction-mod-p. One sentence plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.reduction_mod_p_commutative proves only forall x y, F(F(x,x),F(y,y)) = F(F(y,y),F(x,x)) - a specialised instance of G.base.commutative. It formalises neither the reduction of G/Z_p to H/F_p mod p (the .md's main clause) nor even the clean statement 'the base formal group law is commutative' (which would be forall x y, F x y = F y x)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.518Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:reduction-mod-p. One sentence plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.reduction_mod_p_commutative proves only forall x y, F(F(x,x),F(y,y)) = F(F(y,y),F(x,x)) - a specialised instance of G.base.commutative. It formalises neither the reduction of G/Z_p to H/F_p mod p (the .md's main clause) nor even the clean statement 'the base formal group law is commutative' (which would be forall x y, F x y = F y x)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.561Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:reduction-mod-p. One sentence plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.reduction_mod_p_commutative proves only forall x y, F(F(x,x),F(y,y)) = F(F(y,y),F(x,x)) - a specialised instance of G.base.commutative. It formalises neither the reduction of G/Z_p to H/F_p mod p (the .md's main clause) nor even the clean statement 'the base formal group law is commutative' (which would be forall x y, F x y = F y x)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.604Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:reduction-mod-p. One sentence plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.reduction_mod_p_commutative proves only forall x y, F(F(x,x),F(y,y)) = F(F(y,y),F(x,x)) - a specialised instance of G.base.commutative. It formalises neither the reduction of G/Z_p to H/F_p mod p (the .md's main clause) nor even the clean statement 'the base formal group law is commutative' (which would be forall x y, F x y = F y x)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "36c47da47d15",
+          "ts": "179090a8b9c4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.649Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:reduction-mod-p. One sentence plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.reduction_mod_p_commutative proves only forall x y, F(F(x,x),F(y,y)) = F(F(y,y),F(x,x)) - a specialised instance of G.base.commutative. It formalises neither the reduction of G/Z_p to H/F_p mod p (the .md's main clause) nor even the clean statement 'the base formal group law is commutative' (which would be forall x y, F x y = F y x)."
+      }
+    ]
+  }
+}

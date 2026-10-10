@@ -1,0 +1,195 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/tilting-module-rigidity-context",
+    "path": "folio/quantum-observable-universe/predicted-spectra/tilting-module-rigidity-context"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "c7f5cf782229",
+          "ts": "66715ba76bd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:32.971Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, one paragraph, ~0.4kB). The JWST claim ('the massive, dust-free cocoon of atomic hydrogen and H2 gas observed by JWST') is an empirical observational assertion with no entry in the block's cites - reported as an anomaly."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "c7f5cf782229",
+          "ts": "66715ba76bd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:33.014Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, one paragraph, ~0.4kB). The JWST claim ('the massive, dust-free cocoon of atomic hydrogen and H2 gas observed by JWST') is an empirical observational assertion with no entry in the block's cites - reported as an anomaly."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "c7f5cf782229",
+          "ts": "66715ba76bd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:33.055Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, one paragraph, ~0.4kB). The JWST claim ('the massive, dust-free cocoon of atomic hydrogen and H2 gas observed by JWST') is an empirical observational assertion with no entry in the block's cites - reported as an anomaly."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "c7f5cf782229",
+          "ts": "66715ba76bd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:33.094Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, one paragraph, ~0.4kB). The JWST claim ('the massive, dust-free cocoon of atomic hydrogen and H2 gas observed by JWST') is an empirical observational assertion with no entry in the block's cites - reported as an anomaly."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "c7f5cf782229",
+          "ts": "66715ba76bd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:33.134Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, one paragraph, ~0.4kB). The JWST claim ('the massive, dust-free cocoon of atomic hydrogen and H2 gas observed by JWST') is an empirical observational assertion with no entry in the block's cites - reported as an anomaly."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "c7f5cf782229",
+          "ts": "66715ba76bd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:33.177Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, one paragraph, ~0.4kB). The JWST claim ('the massive, dust-free cocoon of atomic hydrogen and H2 gas observed by JWST') is an empirical observational assertion with no entry in the block's cites - reported as an anomaly."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "c7f5cf782229",
+          "ts": "66715ba76bd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:33.216Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, one paragraph, ~0.4kB). The JWST claim ('the massive, dust-free cocoon of atomic hydrogen and H2 gas observed by JWST') is an empirical observational assertion with no entry in the block's cites - reported as an anomaly."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "c7f5cf782229",
+          "ts": "66715ba76bd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:33.255Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, one paragraph, ~0.4kB). The JWST claim ('the massive, dust-free cocoon of atomic hydrogen and H2 gas observed by JWST') is an empirical observational assertion with no entry in the block's cites - reported as an anomaly."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "c7f5cf782229",
+          "ts": "66715ba76bd2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:33.295Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "minor",
+        "evidence": "Four unqualified maximum-strength terms in four sentences - 'lock ... onto a rigid spectrahedral vertex', 'minimum-action', 'the massive, dust-free cocoon' - carrying an uncited observational claim.",
+        "notes": "proposed: hedge the JWST sentence to what a citation would support, or add the citation; 'lock' -> 'constrain'. Not applied - the claim itself needs the author."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "c7f5cf782229",
+          "ts": "66715ba76bd2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:33.335Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, one paragraph, ~0.4kB). The JWST claim ('the massive, dust-free cocoon of atomic hydrogen and H2 gas observed by JWST') is an empirical observational assertion with no entry in the block's cites - reported as an anomaly."
+      }
+    ]
+  }
+}

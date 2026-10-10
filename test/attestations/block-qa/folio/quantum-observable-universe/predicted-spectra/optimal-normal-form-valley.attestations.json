@@ -1,0 +1,650 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/optimal-normal-form-valley",
+    "path": "folio/quantum-observable-universe/predicted-spectra/optimal-normal-form-valley"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "e208ef76eee2",
+          "ts": "83d844694f1b",
+          "lean": "e1867e07ee7e"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "e208ef76eee2",
+          "ts": "83d844694f1b",
+          "lean": "e1867e07ee7e"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:44.000Z",
+        "reviewed_sha": "1c6d6ee0ad4fdfe185219cdccdbf66e52dc11127",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:44.000Z",
+        "reviewed_sha": "1c6d6ee0ad4fdfe185219cdccdbf66e52dc11127",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:44.000Z",
+        "reviewed_sha": "1c6d6ee0ad4fdfe185219cdccdbf66e52dc11127",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:44.000Z",
+        "reviewed_sha": "1c6d6ee0ad4fdfe185219cdccdbf66e52dc11127",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:44.000Z",
+        "reviewed_sha": "1c6d6ee0ad4fdfe185219cdccdbf66e52dc11127",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:44.000Z",
+        "reviewed_sha": "1c6d6ee0ad4fdfe185219cdccdbf66e52dc11127",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:44.000Z",
+        "reviewed_sha": "1c6d6ee0ad4fdfe185219cdccdbf66e52dc11127",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:44.000Z",
+        "reviewed_sha": "1c6d6ee0ad4fdfe185219cdccdbf66e52dc11127",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:44.000Z",
+        "reviewed_sha": "1c6d6ee0ad4fdfe185219cdccdbf66e52dc11127",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:44.000Z",
+        "reviewed_sha": "1c6d6ee0ad4fdfe185219cdccdbf66e52dc11127",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:44.000Z",
+        "reviewed_sha": "1c6d6ee0ad4fdfe185219cdccdbf66e52dc11127",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:44.000Z",
+        "reviewed_sha": "1c6d6ee0ad4fdfe185219cdccdbf66e52dc11127",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:44.000Z",
+        "reviewed_sha": "1c6d6ee0ad4fdfe185219cdccdbf66e52dc11127",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:44.000Z",
+        "reviewed_sha": "1c6d6ee0ad4fdfe185219cdccdbf66e52dc11127",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:44.000Z",
+        "reviewed_sha": "1c6d6ee0ad4fdfe185219cdccdbf66e52dc11127",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e208ef76eee2",
+          "ts": "83d844694f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:34:38.538Z",
+        "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
+        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A \u2014 internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "e208ef76eee2",
+          "ts": "83d844694f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:34:38.578Z",
+        "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
+        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A \u2014 internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "e208ef76eee2",
+          "ts": "83d844694f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:34:38.618Z",
+        "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
+        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A \u2014 internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "e208ef76eee2",
+          "ts": "83d844694f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:34:38.656Z",
+        "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
+        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A \u2014 internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "e208ef76eee2",
+          "ts": "83d844694f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:34:38.695Z",
+        "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
+        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A \u2014 internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "e208ef76eee2",
+          "ts": "83d844694f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:34:38.733Z",
+        "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
+        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A \u2014 internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "e208ef76eee2",
+          "ts": "83d844694f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:34:38.774Z",
+        "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
+        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A \u2014 internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "e208ef76eee2",
+          "ts": "83d844694f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:34:38.815Z",
+        "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
+        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A \u2014 internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "e208ef76eee2",
+          "ts": "83d844694f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:34:38.855Z",
+        "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
+        "evidence": "Full read of the theorem block, its .ts and both Lean files the ref can reach. Checked the term count: the display runs c_0 . 1 + c_1 sigma_0 + ... + c_{A-1} sigma_{A-2}, which is 1 + (A-1) = A terms over the A-1 generators of B_A \u2014 internally consistent with 'exactly A terms' and with the sibling rem:nf-computation-strategy's optimal basis {1, sigma_0, ..., sigma_{A-2}}. The .ts uses authorNotes for the base-ring note rather than a prose banner (correct per AGENTS.md 4d) and marks the Lean validation honestly as 'stub'. The two em-dashes are a matched unspaced parenthetical pair around 'the optimal Groebner--Shirshov basis'. No negation-contrast, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "e208ef76eee2",
+          "ts": "83d844694f1b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:34:38.894Z",
+        "reviewed_sha": "3594d4bcb5cc7953bff5d1c77f85ac398065076c",
+        "evidence": "Statement register throughout; the one long sentence is a theorem statement with its hypotheses in apposition and reads cleanly aloud.",
+        "notes": "pass. THREE FINDINGS, none fixed inline. (1) THE LEAN THE REF RESOLVES TO IS A TAUTOLOGY THAT SHADOWS A REAL PROOF. lean.ref is qou:QOU.OptimalNF.optimal_nf_is_standard_basis, and TWO declarations of that exact name exist in that exact namespace. The library one, lean/QOU/Archimedean/OptimalNF.lean:257, is substantive \u2014 it takes h_stable : valleyOfStability Z N and h_pos, and concludes an existential over prefix-closed supports whose non-I9-absorbable words lie in standardBasis (Z+N-1), discharged from nf_support_prefix_closed and optimal_from_prefix_closed. The sibling one, predicted-spectra/optimal-normal-form-valley.lean:46, is what AGENTS.md 0a resolution reaches FIRST, and it states 'exists c : Fin (massNumber Z N) -> R, forall i, c i = markovVolume i q' proved by 'exact <fun i => markovVolume i q, fun _ => rfl>'. That is 'there exists a function equal to this function' \u2014 true for any function whatsoever, with markovVolume declared 'opaque'. Both hypotheses, hq : q > 1 and hval : inValley Z N, are UNUSED, which is the operational test AGENTS.md's Strict Lean Discipline item 5 gives for a banned tautological conclusion. Nothing about Groebner--Shirshov reduction, the I8/I9 ideals, the valley of stability, or the term count is encoded. The .ts marking validation 'stub' is partial honesty, but 1a's honest dispositions are prove / state-with-sorry-plus-Ref / demote to conjecture \u2014 a rfl-provable existential is none of the three. Proposed: delete the sibling so the ref resolves to the library theorem (0a's 'no shadowing stubs' says exactly this when the real formalisation exists), or restate the sibling with sorry and a -- Ref:. (2) SYMBOL COLLISION IN THE THEOREM STATEMENT: 'For any nucleus $N(Z, N)$ with $N \\geq Z - 1$' uses N as both the nucleus and the neutron count, twice in one line. The chapter's own convention elsewhere is calligraphic \u2014 prop:nuclear-spin-parity writes $\\mathcal{N}(Z, N)$ \u2014 and this block uses $\\mathcal{N}_{opt}$ in its own display two lines later. Proposed: $\\mathcal{N}(Z,N)$. (3) 'valley of stability ($N \\geq Z - 1$)' is a very loose reading of the valley: it excludes only proton-rich nuclides and admits arbitrarily neutron-rich ones, so it is a half-plane rather than a valley. The Lean agrees with the .md (inValley Z N := N + 1 >= Z), so this is a definitional choice rather than a transcription error, but the name oversells it."
+      }
+    ]
+  }
+}

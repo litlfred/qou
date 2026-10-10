@@ -1,0 +1,181 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/typed-garside-element-adjacent-comparison",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/typed-garside-element-adjacent-comparison"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "43f1561ca6e2",
+          "ts": "114426c11664"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:09.305Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (remark, 3 sentences, ~0.4kB). 'factored through scalar vertex volumes rather than the full H_A(q) element' is a substantive technical contrast - the comparison IS the block's content, so the false-positive class applies. The closing sentence ('The typed Garside element retains the complete algebraic structure') is the comparison's verdict, which is what a comparison remark is for, not a restatement of earlier text. All ten categories clean."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "43f1561ca6e2",
+          "ts": "114426c11664"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:09.371Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (remark, 3 sentences, ~0.4kB). 'factored through scalar vertex volumes rather than the full H_A(q) element' is a substantive technical contrast - the comparison IS the block's content, so the false-positive class applies. The closing sentence ('The typed Garside element retains the complete algebraic structure') is the comparison's verdict, which is what a comparison remark is for, not a restatement of earlier text. All ten categories clean."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "43f1561ca6e2",
+          "ts": "114426c11664"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:09.440Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (remark, 3 sentences, ~0.4kB). 'factored through scalar vertex volumes rather than the full H_A(q) element' is a substantive technical contrast - the comparison IS the block's content, so the false-positive class applies. The closing sentence ('The typed Garside element retains the complete algebraic structure') is the comparison's verdict, which is what a comparison remark is for, not a restatement of earlier text. All ten categories clean."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "43f1561ca6e2",
+          "ts": "114426c11664"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:09.505Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (remark, 3 sentences, ~0.4kB). 'factored through scalar vertex volumes rather than the full H_A(q) element' is a substantive technical contrast - the comparison IS the block's content, so the false-positive class applies. The closing sentence ('The typed Garside element retains the complete algebraic structure') is the comparison's verdict, which is what a comparison remark is for, not a restatement of earlier text. All ten categories clean."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "43f1561ca6e2",
+          "ts": "114426c11664"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:09.598Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (remark, 3 sentences, ~0.4kB). 'factored through scalar vertex volumes rather than the full H_A(q) element' is a substantive technical contrast - the comparison IS the block's content, so the false-positive class applies. The closing sentence ('The typed Garside element retains the complete algebraic structure') is the comparison's verdict, which is what a comparison remark is for, not a restatement of earlier text. All ten categories clean."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "43f1561ca6e2",
+          "ts": "114426c11664"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:09.642Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (remark, 3 sentences, ~0.4kB). 'factored through scalar vertex volumes rather than the full H_A(q) element' is a substantive technical contrast - the comparison IS the block's content, so the false-positive class applies. The closing sentence ('The typed Garside element retains the complete algebraic structure') is the comparison's verdict, which is what a comparison remark is for, not a restatement of earlier text. All ten categories clean."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "43f1561ca6e2",
+          "ts": "114426c11664"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:09.690Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (remark, 3 sentences, ~0.4kB). 'factored through scalar vertex volumes rather than the full H_A(q) element' is a substantive technical contrast - the comparison IS the block's content, so the false-positive class applies. The closing sentence ('The typed Garside element retains the complete algebraic structure') is the comparison's verdict, which is what a comparison remark is for, not a restatement of earlier text. All ten categories clean."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "43f1561ca6e2",
+          "ts": "114426c11664"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:09.751Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (remark, 3 sentences, ~0.4kB). 'factored through scalar vertex volumes rather than the full H_A(q) element' is a substantive technical contrast - the comparison IS the block's content, so the false-positive class applies. The closing sentence ('The typed Garside element retains the complete algebraic structure') is the comparison's verdict, which is what a comparison remark is for, not a restatement of earlier text. All ten categories clean."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "43f1561ca6e2",
+          "ts": "114426c11664"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:09.818Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (remark, 3 sentences, ~0.4kB). 'factored through scalar vertex volumes rather than the full H_A(q) element' is a substantive technical contrast - the comparison IS the block's content, so the false-positive class applies. The closing sentence ('The typed Garside element retains the complete algebraic structure') is the comparison's verdict, which is what a comparison remark is for, not a restatement of earlier text. All ten categories clean."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "43f1561ca6e2",
+          "ts": "114426c11664"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:09.862Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (remark, 3 sentences, ~0.4kB). 'factored through scalar vertex volumes rather than the full H_A(q) element' is a substantive technical contrast - the comparison IS the block's content, so the false-positive class applies. The closing sentence ('The typed Garside element retains the complete algebraic structure') is the comparison's verdict, which is what a comparison remark is for, not a restatement of earlier text. All ten categories clean."
+      }
+    ]
+  }
+}

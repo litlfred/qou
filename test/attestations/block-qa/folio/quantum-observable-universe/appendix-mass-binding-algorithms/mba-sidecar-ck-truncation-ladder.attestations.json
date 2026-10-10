@@ -1,0 +1,203 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-ck-truncation-ladder",
+    "path": "folio/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-ck-truncation-ladder"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. The dated branch history \"(six entries as of 2026-05-31)\" is gone; the Notes now say the classification of c_3 has been reversed repeatedly, which keeps the reason tiered classification is mandatory. The pipeline framing \"never as binary wired / dropped\" is now \"never collapsed to a binary keep-or-discard verdict\", and \"inclusion/exclusion gate\" is now \"inclusion/exclusion criterion\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e0fdeacadbcb",
+          "ts": "0f76d11c8391"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:23.892Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:ck-truncation-ladder. No constructions from the ten categories; the block is notably well-disciplined on the tiering rule itself and correctly reports c_2 as 'structural' rather than 'proved', correctly separates c_2 = -1 from the normalised c_2-tilde = -9/8, and correctly quotes the 3.47 percent swing in the |-2 - c_3|/2 normalisation rather than the witness's 3.35 percent.",
+        "notes": "NOT A TRAP, reported separately, five items. (1) NO CONVENTION LABEL. The 2026-08-15 ruling makes convention D canonical and scopes every c_k conclusion as convention-C-frame and C-conditional until re-derived; this block states c_2, c_3 = -2 = J_Hopf(q=1) and the whole ladder with no such label. (2) The N-from-epsilon framing ('Input: target precision', 'Output: truncation order N >= ...', 'Choose N from target precision') is the framing the 2026-08-16 correction says does not describe the canonical producer, which extracts one rung by inverting the target so that later rungs are never computed. (3) WITNESS CONTRACT UNMET: the block says the canonical witness computations/q-beta-predicted.witness.json MUST record each c_k alongside its tier; that file contains no c_2, c_3, c_k or tier key at all, and its three assertions are about Q_beta accuracy. (4) PIN CURRENCY: that same witness carries q_0_50dps = 1.1099785955541805752..., i.e. the OLD MUON value 1.109978595554181 (superseded muon pin is ...9555733471) - arithmetically valid but stale, and labelled 50 dps while only ~16 digits are the old value; meanwhile the block's own tier table quotes a m_p-pin figure, so prose and witness sit on different layers. (5) The declared tier enum is proved/near-match/fitted but the table's first row uses a fourth tier, 'structural'; and the Notes sentence ending '...(1 - h^2 alpha)' is missing its full stop."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "e0fdeacadbcb",
+          "ts": "0f76d11c8391"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:23.932Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:ck-truncation-ladder. No constructions from the ten categories; the block is notably well-disciplined on the tiering rule itself and correctly reports c_2 as 'structural' rather than 'proved', correctly separates c_2 = -1 from the normalised c_2-tilde = -9/8, and correctly quotes the 3.47 percent swing in the |-2 - c_3|/2 normalisation rather than the witness's 3.35 percent.",
+        "notes": "NOT A TRAP, reported separately, five items. (1) NO CONVENTION LABEL. The 2026-08-15 ruling makes convention D canonical and scopes every c_k conclusion as convention-C-frame and C-conditional until re-derived; this block states c_2, c_3 = -2 = J_Hopf(q=1) and the whole ladder with no such label. (2) The N-from-epsilon framing ('Input: target precision', 'Output: truncation order N >= ...', 'Choose N from target precision') is the framing the 2026-08-16 correction says does not describe the canonical producer, which extracts one rung by inverting the target so that later rungs are never computed. (3) WITNESS CONTRACT UNMET: the block says the canonical witness computations/q-beta-predicted.witness.json MUST record each c_k alongside its tier; that file contains no c_2, c_3, c_k or tier key at all, and its three assertions are about Q_beta accuracy. (4) PIN CURRENCY: that same witness carries q_0_50dps = 1.1099785955541805752..., i.e. the OLD MUON value 1.109978595554181 (superseded muon pin is ...9555733471) - arithmetically valid but stale, and labelled 50 dps while only ~16 digits are the old value; meanwhile the block's own tier table quotes a m_p-pin figure, so prose and witness sit on different layers. (5) The declared tier enum is proved/near-match/fitted but the table's first row uses a fourth tier, 'structural'; and the Notes sentence ending '...(1 - h^2 alpha)' is missing its full stop."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "e0fdeacadbcb",
+          "ts": "0f76d11c8391"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:23.971Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:ck-truncation-ladder. No constructions from the ten categories; the block is notably well-disciplined on the tiering rule itself and correctly reports c_2 as 'structural' rather than 'proved', correctly separates c_2 = -1 from the normalised c_2-tilde = -9/8, and correctly quotes the 3.47 percent swing in the |-2 - c_3|/2 normalisation rather than the witness's 3.35 percent.",
+        "notes": "NOT A TRAP, reported separately, five items. (1) NO CONVENTION LABEL. The 2026-08-15 ruling makes convention D canonical and scopes every c_k conclusion as convention-C-frame and C-conditional until re-derived; this block states c_2, c_3 = -2 = J_Hopf(q=1) and the whole ladder with no such label. (2) The N-from-epsilon framing ('Input: target precision', 'Output: truncation order N >= ...', 'Choose N from target precision') is the framing the 2026-08-16 correction says does not describe the canonical producer, which extracts one rung by inverting the target so that later rungs are never computed. (3) WITNESS CONTRACT UNMET: the block says the canonical witness computations/q-beta-predicted.witness.json MUST record each c_k alongside its tier; that file contains no c_2, c_3, c_k or tier key at all, and its three assertions are about Q_beta accuracy. (4) PIN CURRENCY: that same witness carries q_0_50dps = 1.1099785955541805752..., i.e. the OLD MUON value 1.109978595554181 (superseded muon pin is ...9555733471) - arithmetically valid but stale, and labelled 50 dps while only ~16 digits are the old value; meanwhile the block's own tier table quotes a m_p-pin figure, so prose and witness sit on different layers. (5) The declared tier enum is proved/near-match/fitted but the table's first row uses a fourth tier, 'structural'; and the Notes sentence ending '...(1 - h^2 alpha)' is missing its full stop."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "e0fdeacadbcb",
+          "ts": "0f76d11c8391"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.009Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:ck-truncation-ladder. No constructions from the ten categories; the block is notably well-disciplined on the tiering rule itself and correctly reports c_2 as 'structural' rather than 'proved', correctly separates c_2 = -1 from the normalised c_2-tilde = -9/8, and correctly quotes the 3.47 percent swing in the |-2 - c_3|/2 normalisation rather than the witness's 3.35 percent.",
+        "notes": "NOT A TRAP, reported separately, five items. (1) NO CONVENTION LABEL. The 2026-08-15 ruling makes convention D canonical and scopes every c_k conclusion as convention-C-frame and C-conditional until re-derived; this block states c_2, c_3 = -2 = J_Hopf(q=1) and the whole ladder with no such label. (2) The N-from-epsilon framing ('Input: target precision', 'Output: truncation order N >= ...', 'Choose N from target precision') is the framing the 2026-08-16 correction says does not describe the canonical producer, which extracts one rung by inverting the target so that later rungs are never computed. (3) WITNESS CONTRACT UNMET: the block says the canonical witness computations/q-beta-predicted.witness.json MUST record each c_k alongside its tier; that file contains no c_2, c_3, c_k or tier key at all, and its three assertions are about Q_beta accuracy. (4) PIN CURRENCY: that same witness carries q_0_50dps = 1.1099785955541805752..., i.e. the OLD MUON value 1.109978595554181 (superseded muon pin is ...9555733471) - arithmetically valid but stale, and labelled 50 dps while only ~16 digits are the old value; meanwhile the block's own tier table quotes a m_p-pin figure, so prose and witness sit on different layers. (5) The declared tier enum is proved/near-match/fitted but the table's first row uses a fourth tier, 'structural'; and the Notes sentence ending '...(1 - h^2 alpha)' is missing its full stop."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "e0fdeacadbcb",
+          "ts": "0f76d11c8391"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.048Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:ck-truncation-ladder. No constructions from the ten categories; the block is notably well-disciplined on the tiering rule itself and correctly reports c_2 as 'structural' rather than 'proved', correctly separates c_2 = -1 from the normalised c_2-tilde = -9/8, and correctly quotes the 3.47 percent swing in the |-2 - c_3|/2 normalisation rather than the witness's 3.35 percent.",
+        "notes": "NOT A TRAP, reported separately, five items. (1) NO CONVENTION LABEL. The 2026-08-15 ruling makes convention D canonical and scopes every c_k conclusion as convention-C-frame and C-conditional until re-derived; this block states c_2, c_3 = -2 = J_Hopf(q=1) and the whole ladder with no such label. (2) The N-from-epsilon framing ('Input: target precision', 'Output: truncation order N >= ...', 'Choose N from target precision') is the framing the 2026-08-16 correction says does not describe the canonical producer, which extracts one rung by inverting the target so that later rungs are never computed. (3) WITNESS CONTRACT UNMET: the block says the canonical witness computations/q-beta-predicted.witness.json MUST record each c_k alongside its tier; that file contains no c_2, c_3, c_k or tier key at all, and its three assertions are about Q_beta accuracy. (4) PIN CURRENCY: that same witness carries q_0_50dps = 1.1099785955541805752..., i.e. the OLD MUON value 1.109978595554181 (superseded muon pin is ...9555733471) - arithmetically valid but stale, and labelled 50 dps while only ~16 digits are the old value; meanwhile the block's own tier table quotes a m_p-pin figure, so prose and witness sit on different layers. (5) The declared tier enum is proved/near-match/fitted but the table's first row uses a fourth tier, 'structural'; and the Notes sentence ending '...(1 - h^2 alpha)' is missing its full stop."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "e0fdeacadbcb",
+          "ts": "0f76d11c8391"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.086Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:ck-truncation-ladder. No constructions from the ten categories; the block is notably well-disciplined on the tiering rule itself and correctly reports c_2 as 'structural' rather than 'proved', correctly separates c_2 = -1 from the normalised c_2-tilde = -9/8, and correctly quotes the 3.47 percent swing in the |-2 - c_3|/2 normalisation rather than the witness's 3.35 percent.",
+        "notes": "NOT A TRAP, reported separately, five items. (1) NO CONVENTION LABEL. The 2026-08-15 ruling makes convention D canonical and scopes every c_k conclusion as convention-C-frame and C-conditional until re-derived; this block states c_2, c_3 = -2 = J_Hopf(q=1) and the whole ladder with no such label. (2) The N-from-epsilon framing ('Input: target precision', 'Output: truncation order N >= ...', 'Choose N from target precision') is the framing the 2026-08-16 correction says does not describe the canonical producer, which extracts one rung by inverting the target so that later rungs are never computed. (3) WITNESS CONTRACT UNMET: the block says the canonical witness computations/q-beta-predicted.witness.json MUST record each c_k alongside its tier; that file contains no c_2, c_3, c_k or tier key at all, and its three assertions are about Q_beta accuracy. (4) PIN CURRENCY: that same witness carries q_0_50dps = 1.1099785955541805752..., i.e. the OLD MUON value 1.109978595554181 (superseded muon pin is ...9555733471) - arithmetically valid but stale, and labelled 50 dps while only ~16 digits are the old value; meanwhile the block's own tier table quotes a m_p-pin figure, so prose and witness sit on different layers. (5) The declared tier enum is proved/near-match/fitted but the table's first row uses a fourth tier, 'structural'; and the Notes sentence ending '...(1 - h^2 alpha)' is missing its full stop."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "e0fdeacadbcb",
+          "ts": "0f76d11c8391"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.126Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:ck-truncation-ladder. No constructions from the ten categories; the block is notably well-disciplined on the tiering rule itself and correctly reports c_2 as 'structural' rather than 'proved', correctly separates c_2 = -1 from the normalised c_2-tilde = -9/8, and correctly quotes the 3.47 percent swing in the |-2 - c_3|/2 normalisation rather than the witness's 3.35 percent.",
+        "notes": "NOT A TRAP, reported separately, five items. (1) NO CONVENTION LABEL. The 2026-08-15 ruling makes convention D canonical and scopes every c_k conclusion as convention-C-frame and C-conditional until re-derived; this block states c_2, c_3 = -2 = J_Hopf(q=1) and the whole ladder with no such label. (2) The N-from-epsilon framing ('Input: target precision', 'Output: truncation order N >= ...', 'Choose N from target precision') is the framing the 2026-08-16 correction says does not describe the canonical producer, which extracts one rung by inverting the target so that later rungs are never computed. (3) WITNESS CONTRACT UNMET: the block says the canonical witness computations/q-beta-predicted.witness.json MUST record each c_k alongside its tier; that file contains no c_2, c_3, c_k or tier key at all, and its three assertions are about Q_beta accuracy. (4) PIN CURRENCY: that same witness carries q_0_50dps = 1.1099785955541805752..., i.e. the OLD MUON value 1.109978595554181 (superseded muon pin is ...9555733471) - arithmetically valid but stale, and labelled 50 dps while only ~16 digits are the old value; meanwhile the block's own tier table quotes a m_p-pin figure, so prose and witness sit on different layers. (5) The declared tier enum is proved/near-match/fitted but the table's first row uses a fourth tier, 'structural'; and the Notes sentence ending '...(1 - h^2 alpha)' is missing its full stop."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "e0fdeacadbcb",
+          "ts": "0f76d11c8391"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.163Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:ck-truncation-ladder. No constructions from the ten categories; the block is notably well-disciplined on the tiering rule itself and correctly reports c_2 as 'structural' rather than 'proved', correctly separates c_2 = -1 from the normalised c_2-tilde = -9/8, and correctly quotes the 3.47 percent swing in the |-2 - c_3|/2 normalisation rather than the witness's 3.35 percent.",
+        "notes": "NOT A TRAP, reported separately, five items. (1) NO CONVENTION LABEL. The 2026-08-15 ruling makes convention D canonical and scopes every c_k conclusion as convention-C-frame and C-conditional until re-derived; this block states c_2, c_3 = -2 = J_Hopf(q=1) and the whole ladder with no such label. (2) The N-from-epsilon framing ('Input: target precision', 'Output: truncation order N >= ...', 'Choose N from target precision') is the framing the 2026-08-16 correction says does not describe the canonical producer, which extracts one rung by inverting the target so that later rungs are never computed. (3) WITNESS CONTRACT UNMET: the block says the canonical witness computations/q-beta-predicted.witness.json MUST record each c_k alongside its tier; that file contains no c_2, c_3, c_k or tier key at all, and its three assertions are about Q_beta accuracy. (4) PIN CURRENCY: that same witness carries q_0_50dps = 1.1099785955541805752..., i.e. the OLD MUON value 1.109978595554181 (superseded muon pin is ...9555733471) - arithmetically valid but stale, and labelled 50 dps while only ~16 digits are the old value; meanwhile the block's own tier table quotes a m_p-pin figure, so prose and witness sit on different layers. (5) The declared tier enum is proved/near-match/fitted but the table's first row uses a fourth tier, 'structural'; and the Notes sentence ending '...(1 - h^2 alpha)' is missing its full stop."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "e0fdeacadbcb",
+          "ts": "0f76d11c8391"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.202Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:ck-truncation-ladder. No constructions from the ten categories; the block is notably well-disciplined on the tiering rule itself and correctly reports c_2 as 'structural' rather than 'proved', correctly separates c_2 = -1 from the normalised c_2-tilde = -9/8, and correctly quotes the 3.47 percent swing in the |-2 - c_3|/2 normalisation rather than the witness's 3.35 percent.",
+        "notes": "NOT A TRAP, reported separately, five items. (1) NO CONVENTION LABEL. The 2026-08-15 ruling makes convention D canonical and scopes every c_k conclusion as convention-C-frame and C-conditional until re-derived; this block states c_2, c_3 = -2 = J_Hopf(q=1) and the whole ladder with no such label. (2) The N-from-epsilon framing ('Input: target precision', 'Output: truncation order N >= ...', 'Choose N from target precision') is the framing the 2026-08-16 correction says does not describe the canonical producer, which extracts one rung by inverting the target so that later rungs are never computed. (3) WITNESS CONTRACT UNMET: the block says the canonical witness computations/q-beta-predicted.witness.json MUST record each c_k alongside its tier; that file contains no c_2, c_3, c_k or tier key at all, and its three assertions are about Q_beta accuracy. (4) PIN CURRENCY: that same witness carries q_0_50dps = 1.1099785955541805752..., i.e. the OLD MUON value 1.109978595554181 (superseded muon pin is ...9555733471) - arithmetically valid but stale, and labelled 50 dps while only ~16 digits are the old value; meanwhile the block's own tier table quotes a m_p-pin figure, so prose and witness sit on different layers. (5) The declared tier enum is proved/near-match/fitted but the table's first row uses a fourth tier, 'structural'; and the Notes sentence ending '...(1 - h^2 alpha)' is missing its full stop."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "e0fdeacadbcb",
+          "ts": "0f76d11c8391"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.241Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:ck-truncation-ladder. No constructions from the ten categories; the block is notably well-disciplined on the tiering rule itself and correctly reports c_2 as 'structural' rather than 'proved', correctly separates c_2 = -1 from the normalised c_2-tilde = -9/8, and correctly quotes the 3.47 percent swing in the |-2 - c_3|/2 normalisation rather than the witness's 3.35 percent.",
+        "notes": "NOT A TRAP, reported separately, five items. (1) NO CONVENTION LABEL. The 2026-08-15 ruling makes convention D canonical and scopes every c_k conclusion as convention-C-frame and C-conditional until re-derived; this block states c_2, c_3 = -2 = J_Hopf(q=1) and the whole ladder with no such label. (2) The N-from-epsilon framing ('Input: target precision', 'Output: truncation order N >= ...', 'Choose N from target precision') is the framing the 2026-08-16 correction says does not describe the canonical producer, which extracts one rung by inverting the target so that later rungs are never computed. (3) WITNESS CONTRACT UNMET: the block says the canonical witness computations/q-beta-predicted.witness.json MUST record each c_k alongside its tier; that file contains no c_2, c_3, c_k or tier key at all, and its three assertions are about Q_beta accuracy. (4) PIN CURRENCY: that same witness carries q_0_50dps = 1.1099785955541805752..., i.e. the OLD MUON value 1.109978595554181 (superseded muon pin is ...9555733471) - arithmetically valid but stale, and labelled 50 dps while only ~16 digits are the old value; meanwhile the block's own tier table quotes a m_p-pin figure, so prose and witness sit on different layers. (5) The declared tier enum is proved/near-match/fitted but the table's first row uses a fourth tier, 'structural'; and the Notes sentence ending '...(1 - h^2 alpha)' is missing its full stop."
+      }
+    ]
+  }
+}

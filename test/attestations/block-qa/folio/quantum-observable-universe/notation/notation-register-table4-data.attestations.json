@@ -1,0 +1,203 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/notation/notation-register-table4-data",
+    "path": "folio/quantum-observable-universe/notation/notation-register-table4-data"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Clean. No branch/audit working labels, bean ids, PR or branch names, AGENTS.md / skill-file or audit-memo pointers, dated status notes, or first-person work narration found in the .md body or the published .ts title.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.177Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row algebraic-substrate register. zeta_6 = e^{i pi/3} consistent with zeta_n := e^{2 pi i / n}; the Goncharov P_n vs P_ell separation is stated.",
+        "notes": "no assertion-by-denial beyond substantive mathematical contrast"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.216Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row algebraic-substrate register. zeta_6 = e^{i pi/3} consistent with zeta_n := e^{2 pi i / n}; the Goncharov P_n vs P_ell separation is stated.",
+        "notes": "no setup-then-reframe construction"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.255Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row algebraic-substrate register. zeta_6 = e^{i pi/3} consistent with zeta_n := e^{2 pi i / n}; the Goncharov P_n vs P_ell separation is stated.",
+        "notes": "em-dashes are glossary glosses / true parentheticals, not sentence-structure substitutes"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.296Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row algebraic-substrate register. zeta_6 = e^{i pi/3} consistent with zeta_n := e^{2 pi i / n}; the Goncharov P_n vs P_ell separation is stated.",
+        "notes": "no reflex three-item list; enumerations present are substantive"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.336Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row algebraic-substrate register. zeta_6 = e^{i pi/3} consistent with zeta_n := e^{2 pi i / n}; the Goncharov P_n vs P_ell separation is stated.",
+        "notes": "block does not end on a manufactured quotable line"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.375Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row algebraic-substrate register. zeta_6 = e^{i pi/3} consistent with zeta_n := e^{2 pi i / n}; the Goncharov P_n vs P_ell separation is stated.",
+        "notes": "emphasis is placed, not announced"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.414Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row algebraic-substrate register. zeta_6 = e^{i pi/3} consistent with zeta_n := e^{2 pi i / n}; the Goncharov P_n vs P_ell separation is stated.",
+        "notes": "no block-final restatement of what the text established"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.454Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row algebraic-substrate register. zeta_6 = e^{i pi/3} consistent with zeta_n := e^{2 pi i / n}; the Goncharov P_n vs P_ell separation is stated.",
+        "notes": "institutional register throughout"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.495Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row algebraic-substrate register. zeta_6 = e^{i pi/3} consistent with zeta_n := e^{2 pi i / n}; the Goncharov P_n vs P_ell separation is stated.",
+        "notes": "no unqualified maximum-strength claim"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "4601598bc8d6",
+          "ts": "8c89ca307c76"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:24.534Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row algebraic-substrate register. zeta_6 = e^{i pi/3} consistent with zeta_n := e^{2 pi i / n}; the Goncharov P_n vs P_ell separation is stated.",
+        "notes": "noun chains parse aloud"
+      }
+    ]
+  }
+}

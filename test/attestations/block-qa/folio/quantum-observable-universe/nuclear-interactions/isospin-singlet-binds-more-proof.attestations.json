@@ -1,0 +1,201 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/isospin-singlet-binds-more-proof",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/isospin-singlet-binds-more-proof"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ef0c2a8061fc",
+          "ts": "9fb3273c7a07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:50.464Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of both proof sections. Recomputed the closed form: 2z-h = (q^4+1)/(q(q^2+1)) verified symbolically and at q0 (both sides 1.0163157755). The log-transport step is correct.",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ef0c2a8061fc",
+          "ts": "9fb3273c7a07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:50.504Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of both proof sections. Recomputed the closed form: 2z-h = (q^4+1)/(q(q^2+1)) verified symbolically and at q0 (both sides 1.0163157755). The log-transport step is correct.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ef0c2a8061fc",
+          "ts": "9fb3273c7a07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:50.546Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of both proof sections. Recomputed the closed form: 2z-h = (q^4+1)/(q(q^2+1)) verified symbolically and at q0 (both sides 1.0163157755). The log-transport step is correct.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ef0c2a8061fc",
+          "ts": "9fb3273c7a07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:50.585Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of both proof sections. Recomputed the closed form: 2z-h = (q^4+1)/(q(q^2+1)) verified symbolically and at q0 (both sides 1.0163157755). The log-transport step is correct.",
+        "notes": "No reflex three-item list; enumerations present are driven by the underlying content."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ef0c2a8061fc",
+          "ts": "9fb3273c7a07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:50.625Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of both proof sections. Recomputed the closed form: 2z-h = (q^4+1)/(q(q^2+1)) verified symbolically and at q0 (both sides 1.0163157755). The log-transport step is correct.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ef0c2a8061fc",
+          "ts": "9fb3273c7a07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:50.665Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of both proof sections. Recomputed the closed form: 2z-h = (q^4+1)/(q(q^2+1)) verified symbolically and at q0 (both sides 1.0163157755). The log-transport step is correct.",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ef0c2a8061fc",
+          "ts": "9fb3273c7a07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:50.703Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Closing sentence of the transport section restates that the two halves sit on opposite sides of the substrate wall.",
+        "notes": "Substantive scope statement (which half is archimedean-specialised), not a restatement of the theorem -- passes as a Sec.7c wall note."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ef0c2a8061fc",
+          "ts": "9fb3273c7a07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:50.744Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of both proof sections. Recomputed the closed form: 2z-h = (q^4+1)/(q(q^2+1)) verified symbolically and at q0 (both sides 1.0163157755). The log-transport step is correct.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ef0c2a8061fc",
+          "ts": "9fb3273c7a07"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:50.785Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'which is the strongest form the claim admits' (closing sentence of section 1).",
+        "notes": "Unearned superlative about the PROOF rather than the mathematics: a sign claim written as a ratio of positives is a clean argument, but 'the strongest form the claim admits' is not a checkable statement and nothing in the block establishes a ranking over proof forms. PROPOSED: '...has been written as a ratio of positives.' (drop the trailing clause)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ef0c2a8061fc",
+          "ts": "9fb3273c7a07"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:50.826Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of both proof sections. Recomputed the closed form: 2z-h = (q^4+1)/(q(q^2+1)) verified symbolically and at q0 (both sides 1.0163157755). The log-transport step is correct.",
+        "notes": "Sentences parse aloud; no noun-chain stall."
+      }
+    ]
+  }
+}

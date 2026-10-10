@@ -1,0 +1,518 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/quantum-observable-universes/dq-squared-proof",
+    "path": "folio/quantum-observable-universe/quantum-observable-universes/dq-squared-proof"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:38.286Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/dq-squared-proof.ts:1",
+        "notes": "No false claims identified in 'Write a = q^{-1} and b = 1 - q^{-1}, so a + b = 1. Then': mathematical reasoning is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The claims in 'Write a = q^{-1} and b = 1 - q^{-1}, so a + b = 1. Then' are non-vacuous as they present substantial mathematical content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/dq-squared-proof.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Write a = q^{-1} and b = 1 - q^{-1}, so a + b = 1. Then'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "No overclaims: the scope of 'Write a = q^{-1} and b = 1 - q^{-1}, so a + b = 1. Then' is appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/dq-squared-proof.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Write a = q^{-1} and b = 1 - q^{-1}, so a + b = 1. Then'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/dq-squared-proof.ts:1",
+        "notes": "The argument flow in 'Write a = q^{-1} and b = 1 - q^{-1}, so a + b = 1. Then' is logically sound, mapping onto the cited dependencies."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/dq-squared-proof.ts:1",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/dq-squared-proof.ts:1",
+        "notes": "No citations are present in 'Write a = q^{-1} and b = 1 - q^{-1}, so a + b = 1. Then', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/dq-squared-proof.ts:1",
+        "notes": "Key terms and symbols in 'Write a = q^{-1} and b = 1 - q^{-1}, so a + b = 1. Then' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/dq-squared-proof.ts:1",
+        "notes": "The algebraic and logical relations in 'Write a = q^{-1} and b = 1 - q^{-1}, so a + b = 1. Then' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/dq-squared-proof.ts:1",
+        "notes": "The physical concepts described in 'Write a = q^{-1} and b = 1 - q^{-1}, so a + b = 1. Then' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/dq-squared-proof.ts:1",
+        "notes": "The derivation steps and formal definitions in 'Write a = q^{-1} and b = 1 - q^{-1}, so a + b = 1. Then' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/dq-squared-proof.md:1 \u2014 Write a = q^{-1} and b = 1 - q^{-1}, so a + b = 1. Then",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Write a = q^{-1} and b = 1 - q^{-1}, so a + b = 1. Then' are consistent."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:58:22.576Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:58:22.694Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:58:22.737Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:58:22.825Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:58:22.872Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:58:22.973Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:58:23.086Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:58:23.164Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:58:23.202Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "297f821b05e8",
+          "ts": "1e759a62b346"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:58:23.307Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the proof of prop:dq-squared. Verified the whole computation by hand: d_q(d_q alpha) = a^2 d^2 alpha + ab d(Theta wedge L_xi alpha) + ab Theta wedge L_xi d alpha + b^2 Theta wedge L_xi(Theta wedge L_xi alpha) with a = q^{-1}, b = 1-q^{-1}; term 1 vanishes by d^2 = 0; term 2 expands as ab dTheta wedge L_xi alpha - ab Theta wedge d L_xi alpha since Theta is a 1-form; term 3 cancels its negative part by [d, L_xi] = 0; L_xi Theta = iota_xi dTheta + d(Theta(xi)) = 0 by Cartan, so term 4 becomes b^2 Theta wedge Theta wedge L_xi^2 alpha = 0. Result ab dTheta wedge L_xi alpha is correct. Prose is bare computation - no negation-contrast, pivot, load-bearing dash, triple, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH DEFECT REPORTED, NOT FIXED (math-adjacent, per skill: report never fix inline). The token '\\\\mathcal{L}_\\\\xid\\\\alpha' appears twice - once in the align block (third term) and once in the prose sentence about [d, L_xi] = 0. The intended reading is L_xi (d alpha), but '\\\\xid' is a REAL macro: main.tex:222 defines \\\\newcommand{\\\\xid}{{\\\\xi_{d}}} ('Reeb field (d-component)'). So the PDF silently typesets L_{xi_d} alpha instead of L_xi d alpha, turning the key cancellation sentence into 'Theta wedge L_{xi_d} alpha = Theta wedge d L_xi alpha', which is not what [d, L_xi] = 0 gives. On the KaTeX/markdown render path \\\\xid is not defined at all, so the same two spots error out. These are the only two occurrences of \\\\xid in all of content/. PROPOSED FIX: insert a space - '\\\\mathcal{L}_\\\\xi d\\\\alpha' in both places."
+      }
+    ]
+  }
+}

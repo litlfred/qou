@@ -1,0 +1,205 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-endomorphism/intro-hecke-chi-closed-forms",
+    "path": "folio/quantum-observable-universe/mass-endomorphism/intro-hecke-chi-closed-forms"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e16d430e4e5f",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:06.363Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "Three paragraphs read in full; no assertion-by-denial. \"does not interact with the enumeration\" is a factual independence claim.",
+        "notes": "No change."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "e16d430e4e5f",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:06.402Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "No setup-then-reframe.",
+        "notes": "No change."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "e16d430e4e5f",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:06.441Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "Zero em-dashes.",
+        "notes": "No change."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "e16d430e4e5f",
+          "ts": "da134280c0f0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:06.479Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "severity": "minor",
+        "evidence": "\"The analysis proceeds in three stages.\" is followed by four items: (i) \"First, we reduce the u-coordinate identities to a small set of generating discharge moves\"; (ii) \"We then express the chi-character as a polynomial in u and the substrate parameter\"; (iii) \"The middle blocks establish the closed-form chi values at the small partitions\"; (iv) \"The closing blocks tie the chi-closed forms to the Markov-axiom recursive ascent\". The announced count does not match the list, which is the tell that the \"three stages\" framing was applied to the paragraph rather than read off it.",
+        "notes": "STRUCTURAL (fixing it means deciding which items are stages, a content judgement about the sub-section's actual organisation), not edited. Proposed: either drop the count - \"The analysis proceeds as follows.\" - or make the enumeration explicit and correct it to four."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "e16d430e4e5f",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:06.516Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "Closes on \"The substrate-parameter dependence remains uniform across partitions and does not interact with the enumeration\" - a scope claim.",
+        "notes": "No change."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "e16d430e4e5f",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:06.556Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "The roadmap sentences describe the sub-section's order, which is a section preamble's job.",
+        "notes": "No change."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "e16d430e4e5f",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:06.595Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "Intro block.",
+        "notes": "No change."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "e16d430e4e5f",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:06.636Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "severity": "minor",
+        "evidence": "\"Readers focused on the binding-energy applications can take the closed forms on faith.\" Direct reader-address plus the informal \"on faith\" - not warmth in the \"thank you / we are excited\" sense, so not a fail under category 8, but it is off-register for graduate-level formal mathematical prose.",
+        "notes": "Recorded for the clarity-grad-style axis rather than fixed here. Proposed: \"The closed forms are used downstream only through the character table; the derivations may be skipped.\""
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "e16d430e4e5f",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:06.676Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "No maximum-strength claims; \"two natural coordinate systems\" and \"uniform across partitions\" are both bounded.",
+        "notes": "Noted, not a trap: \"the Markov u-coordinate\" reuses u, which elsewhere in the corpus denotes the Q_beta ladder parameter u = b hbar_q^2 approx 0.00852. Different object, same glyph, same chapter neighbourhood - worth a notation-register check."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "e16d430e4e5f",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:06.716Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "\"a small set of generating discharge moves (the u-coordinate discharges)\" is the densest phrase and still reads.",
+        "notes": "No change."
+      }
+    ]
+  }
+}

@@ -1,0 +1,240 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/binding-period-involution-statistic",
+    "path": "folio/quantum-observable-universe/mass-theory/binding-period-involution-statistic"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "d605699bf3e9",
+          "ts": "6b57e9264163",
+          "lean": "9d8c7b7f8efe"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "d605699bf3e9",
+          "ts": "6b57e9264163",
+          "lean": "9d8c7b7f8efe"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d605699bf3e9",
+          "ts": "6b57e9264163"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.526Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 152-word proposition; the stated identity was recomputed exactly for n=1..8 by building q^{content(lam)}*ftilde_lam(q^2) with integer polynomial arithmetic."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d605699bf3e9",
+          "ts": "6b57e9264163"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.560Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 152-word proposition; the stated identity was recomputed exactly for n=1..8 by building q^{content(lam)}*ftilde_lam(q^2) with integer polynomial arithmetic."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d605699bf3e9",
+          "ts": "6b57e9264163"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.598Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "No dashes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d605699bf3e9",
+          "ts": "6b57e9264163"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.633Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 152-word proposition; the stated identity was recomputed exactly for n=1..8 by building q^{content(lam)}*ftilde_lam(q^2) with integer polynomial arithmetic."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d605699bf3e9",
+          "ts": "6b57e9264163"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.667Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 152-word proposition; the stated identity was recomputed exactly for n=1..8 by building q^{content(lam)}*ftilde_lam(q^2) with integer polynomial arithmetic."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d605699bf3e9",
+          "ts": "6b57e9264163"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.700Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 152-word proposition; the stated identity was recomputed exactly for n=1..8 by building q^{content(lam)}*ftilde_lam(q^2) with integer polynomial arithmetic."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d605699bf3e9",
+          "ts": "6b57e9264163"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.736Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 152-word proposition; the stated identity was recomputed exactly for n=1..8 by building q^{content(lam)}*ftilde_lam(q^2) with integer polynomial arithmetic."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d605699bf3e9",
+          "ts": "6b57e9264163"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.772Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 152-word proposition; the stated identity was recomputed exactly for n=1..8 by building q^{content(lam)}*ftilde_lam(q^2) with integer polynomial arithmetic."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d605699bf3e9",
+          "ts": "6b57e9264163"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.806Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 152-word proposition; the stated identity was recomputed exactly for n=1..8 by building q^{content(lam)}*ftilde_lam(q^2) with integer polynomial arithmetic."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d605699bf3e9",
+          "ts": "6b57e9264163"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:29.840Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Clean statement prose.",
+        "notes": "RIGOR (not a trap) -- MATH ERROR CONFIRMED: the closing clause 'the left side is a polynomial in q of degree n(n-1)' is wrong. Computed degrees are n=2:1, n=3:4, n=4:8, n=5:14, n=6:22, n=7:31, n=8:42 against the claimed 2,6,12,20,30,42,56. The true max degree is n(n-1) - min_{lam}(b(lam)+b(lam')), attained at the staircase; only n=1 gives n(n-1). The identity itself and the q=1 -> I(n) specialisation ARE correct (coefficient sums 2,4,10 = I(2),I(3),I(4)). Proposed: replace with 'of degree at most n(n-1)' or state the exact bound."
+      }
+    ]
+  }
+}

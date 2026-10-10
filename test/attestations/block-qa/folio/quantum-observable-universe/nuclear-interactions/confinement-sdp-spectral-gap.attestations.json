@@ -1,0 +1,505 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/confinement-sdp-spectral-gap",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/confinement-sdp-spectral-gap"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq2"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:41:24.000Z",
+        "reviewed_sha": "1f7de53e39f3f1e414f7892acb7fdea5d31b3d4d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:55.723Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-spectral-gap (feasibility display + deconfinement para). Verified the mathematics: the Hecke generator's eigenvalues q and -q^-1 coincide exactly when q^2 = -1, i.e. q = +/- i, and q + q^-1 = 0 at exactly the same points - so Delta_sigma(q) = |q + q^-1| is the correct non-degeneracy gap and the 'q -> +/- i' deconfinement claim is right. The eigenvalue assignment to S^2 V and Lambda^2 V is standard. Note that Delta_sigma is |[2]_q|, which the block does not say.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:55.764Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-spectral-gap (feasibility display + deconfinement para). Verified the mathematics: the Hecke generator's eigenvalues q and -q^-1 coincide exactly when q^2 = -1, i.e. q = +/- i, and q + q^-1 = 0 at exactly the same points - so Delta_sigma(q) = |q + q^-1| is the correct non-degeneracy gap and the 'q -> +/- i' deconfinement claim is right. The eigenvalue assignment to S^2 V and Lambda^2 V is standard. Note that Delta_sigma is |[2]_q|, which the block does not say.",
+        "notes": "Closing setup-then-reframe: 'The SDP retains its role as a numerical certificate at a given q. However, its existence is guaranteed by the categorical volume constraint and follows from the eigenvalue structure alone.' The first sentence concedes a lesser role so the second can carry everything. It also breaks twice: 'its' has no clear referent (the certificate? the feasible cone?), and 'guaranteed by the categorical volume constraint AND follows from the eigenvalue structure alone' offers two justifications while asserting one suffices alone. NOT applied - fixing it requires the author to name the referent and choose the justification. Proposed: state directly which object exists and by which of the two arguments."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:55.808Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-spectral-gap (feasibility display + deconfinement para). Verified the mathematics: the Hecke generator's eigenvalues q and -q^-1 coincide exactly when q^2 = -1, i.e. q = +/- i, and q + q^-1 = 0 at exactly the same points - so Delta_sigma(q) = |q + q^-1| is the correct non-degeneracy gap and the 'q -> +/- i' deconfinement claim is right. The eigenvalue assignment to S^2 V and Lambda^2 V is standard. Note that Delta_sigma is |[2]_q|, which the block does not say.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:55.849Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-spectral-gap (feasibility display + deconfinement para). Verified the mathematics: the Hecke generator's eigenvalues q and -q^-1 coincide exactly when q^2 = -1, i.e. q = +/- i, and q + q^-1 = 0 at exactly the same points - so Delta_sigma(q) = |q + q^-1| is the correct non-degeneracy gap and the 'q -> +/- i' deconfinement claim is right. The eigenvalue assignment to S^2 V and Lambda^2 V is standard. Note that Delta_sigma is |[2]_q|, which the block does not say.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:55.890Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-spectral-gap (feasibility display + deconfinement para). Verified the mathematics: the Hecke generator's eigenvalues q and -q^-1 coincide exactly when q^2 = -1, i.e. q = +/- i, and q + q^-1 = 0 at exactly the same points - so Delta_sigma(q) = |q + q^-1| is the correct non-degeneracy gap and the 'q -> +/- i' deconfinement claim is right. The eigenvalue assignment to S^2 V and Lambda^2 V is standard. Note that Delta_sigma is |[2]_q|, which the block does not say.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:55.931Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-spectral-gap (feasibility display + deconfinement para). Verified the mathematics: the Hecke generator's eigenvalues q and -q^-1 coincide exactly when q^2 = -1, i.e. q = +/- i, and q + q^-1 = 0 at exactly the same points - so Delta_sigma(q) = |q + q^-1| is the correct non-degeneracy gap and the 'q -> +/- i' deconfinement claim is right. The eigenvalue assignment to S^2 V and Lambda^2 V is standard. Note that Delta_sigma is |[2]_q|, which the block does not say.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:55.972Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-spectral-gap (feasibility display + deconfinement para). Verified the mathematics: the Hecke generator's eigenvalues q and -q^-1 coincide exactly when q^2 = -1, i.e. q = +/- i, and q + q^-1 = 0 at exactly the same points - so Delta_sigma(q) = |q + q^-1| is the correct non-degeneracy gap and the 'q -> +/- i' deconfinement claim is right. The eigenvalue assignment to S^2 V and Lambda^2 V is standard. Note that Delta_sigma is |[2]_q|, which the block does not say.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:56.013Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-spectral-gap (feasibility display + deconfinement para). Verified the mathematics: the Hecke generator's eigenvalues q and -q^-1 coincide exactly when q^2 = -1, i.e. q = +/- i, and q + q^-1 = 0 at exactly the same points - so Delta_sigma(q) = |q + q^-1| is the correct non-degeneracy gap and the 'q -> +/- i' deconfinement claim is right. The eigenvalue assignment to S^2 V and Lambda^2 V is standard. Note that Delta_sigma is |[2]_q|, which the block does not say.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:56.053Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-spectral-gap (feasibility display + deconfinement para). Verified the mathematics: the Hecke generator's eigenvalues q and -q^-1 coincide exactly when q^2 = -1, i.e. q = +/- i, and q + q^-1 = 0 at exactly the same points - so Delta_sigma(q) = |q + q^-1| is the correct non-degeneracy gap and the 'q -> +/- i' deconfinement claim is right. The eigenvalue assignment to S^2 V and Lambda^2 V is standard. Note that Delta_sigma is |[2]_q|, which the block does not say.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:56.095Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-spectral-gap (feasibility display + deconfinement para). Verified the mathematics: the Hecke generator's eigenvalues q and -q^-1 coincide exactly when q^2 = -1, i.e. q = +/- i, and q + q^-1 = 0 at exactly the same points - so Delta_sigma(q) = |q + q^-1| is the correct non-degeneracy gap and the 'q -> +/- i' deconfinement claim is right. The eigenvalue assignment to S^2 V and Lambda^2 V is standard. Note that Delta_sigma is |[2]_q|, which the block does not say.",
+        "notes": "No trap of this category."
+      }
+    ]
+  }
+}

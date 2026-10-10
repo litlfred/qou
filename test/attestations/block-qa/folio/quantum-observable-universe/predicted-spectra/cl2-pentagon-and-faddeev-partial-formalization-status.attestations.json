@@ -1,0 +1,197 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial-formalization-status",
+    "path": "folio/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial-formalization-status"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The AGENTS.md section id is gone: \"The \u00a73b-cond scaffolding is structurally complete\" now reads \"The conditional-class scaffolding is structurally complete.\" The remaining \"## Closed content\" / \"## Remaining content\" / \"## Status\" headings report which Lean theorems are proved and which are open, which is the mathematics this block is about.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:28:24.207Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: four sections (Lean theorems / Closed content / Remaining content / Status), each a short prose paragraph plus a cross-reference to an extracted table."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:28:24.246Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: four sections (Lean theorems / Closed content / Remaining content / Status), each a short prose paragraph plus a cross-reference to an extracted table."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:28:24.286Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: four sections (Lean theorems / Closed content / Remaining content / Status), each a short prose paragraph plus a cross-reference to an extracted table."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:28:24.324Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: four sections (Lean theorems / Closed content / Remaining content / Status), each a short prose paragraph plus a cross-reference to an extracted table."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:28:24.476Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Final line 'This represents the maximum formalization achievable without upstream Lean analysis infrastructure.' has the shape of a placed quotable closer, but it carries a substantive scope claim rather than decoration, so it is adjudicated under trap-superlative instead (recorded fail there)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:28:24.361Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: four sections (Lean theorems / Closed content / Remaining content / Status), each a short prose paragraph plus a cross-reference to an extracted table."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:28:24.569Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "The four-sentence recap closing '## Remaining content' - 'Both remain isolated tasks. The conditional-class scaffolding is structurally complete. The boundary-case identities are closed in Lean. The open content isolates the upstream Mathlib gap.' - restates material already established: sentence 3 repeats '## Closed content' sentence 1 ('The boundary-case identities are proven Lean theorems.') almost verbatim, and sentence 2 repeats its 'This discharges the consistency requirements for the classes ...'. Sentence 4 repeats the section heading. The paragraph adds no new content after Table 2.",
+        "notes": "Structural - four sentences, so not fixed inline. Proposed: delete sentences 2 and 3 and merge the rest into the lead: 'Both remain isolated tasks that turn on the upstream Mathlib gap.' That leaves the section stating the open content once."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:28:24.400Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: four sections (Lean theorems / Closed content / Remaining content / Status), each a short prose paragraph plus a cross-reference to an extracted table."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:28:24.515Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "Final line: 'This represents the maximum formalization achievable without upstream Lean analysis infrastructure.' - an unqualified maximal claim with no supporting argument, and the block's own Table 3 contradicts it: gap (1) 'BlochGroup F quotient' is listed '(pending) pentagon generators wiring', which is a wiring task, not blocked on Mathlib analysis infrastructure.",
+        "notes": "Not fixed inline: removing the superlative weakens a claim, i.e. it is a meaning change, not a mechanical construction fix. Proposed: 'The remaining content is blocked on upstream Mathlib analysis infrastructure (Fourier-series rearrangement and a uniform Tauberian theorem for q-series); the pentagon-generator wiring of gap (1) is not.' Alternatively keep a maximality claim only if an argument for it is supplied."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ca50d83fab09",
+          "ts": "cfa1f353effa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:28:24.438Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: four sections (Lean theorems / Closed content / Remaining content / Status), each a short prose paragraph plus a cross-reference to an extracted table."
+      }
+    ]
+  }
+}

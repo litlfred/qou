@@ -1,0 +1,669 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/golden-skew-dual-node",
+    "path": "folio/quantum-observable-universe/predicted-spectra/golden-skew-dual-node"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6",
+          "lean": "7078f8502e33"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6",
+          "lean": "7078f8502e33"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
+        "reviewed_at": "2026-07-07T14:26:56.431826Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.431826Z"
+        },
+        "field_hash": {
+          "md": "9e1370f0399c",
+          "ts": "e52574c35af6",
+          "lean": "7078f8502e33"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:02:34.000Z",
+        "reviewed_sha": "328ad86e799c515517b34fff424b6f7b7310c2bb",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:33.774Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present. EVERY CLAIM RECOMPUTED AND CORRECT: phi^2 = (3+sqrt5)/2 = 2.618034; the minimal polynomial of 1/phi over Q is s^2+s-1 and of phi is s^2-s-1; applying s -> 1/s to s^2+s-1 and clearing denominators gives -s^2+s+1, i.e. the phi polynomial up to sign, exactly as the block says ('exchanges these quadratics up to sign'); the positive roots are {1/phi, phi} as stated (the negative roots -phi and -1/phi are correctly excluded by the 'on the positive real axis' qualifier); q = s^2 makes 1/phi^2 <-> phi^2 the induced action; and the Hecke eigenvalue pair {q, -q^{-1}} matches 7a.",
+        "notes": "Graph-hygiene note reported to the batch: this is a proposition whose uses[] names rem:golden-ratio-degeneration, a remark. Per 3a a remark makes no logical claims, so a proposition should not depend on one; the underlying node result should live in a provable-kind block."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:33.838Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present. EVERY CLAIM RECOMPUTED AND CORRECT: phi^2 = (3+sqrt5)/2 = 2.618034; the minimal polynomial of 1/phi over Q is s^2+s-1 and of phi is s^2-s-1; applying s -> 1/s to s^2+s-1 and clearing denominators gives -s^2+s+1, i.e. the phi polynomial up to sign, exactly as the block says ('exchanges these quadratics up to sign'); the positive roots are {1/phi, phi} as stated (the negative roots -phi and -1/phi are correctly excluded by the 'on the positive real axis' qualifier); q = s^2 makes 1/phi^2 <-> phi^2 the induced action; and the Hecke eigenvalue pair {q, -q^{-1}} matches 7a.",
+        "notes": "Graph-hygiene note reported to the batch: this is a proposition whose uses[] names rem:golden-ratio-degeneration, a remark. Per 3a a remark makes no logical claims, so a proposition should not depend on one; the underlying node result should live in a provable-kind block."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:33.910Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present. EVERY CLAIM RECOMPUTED AND CORRECT: phi^2 = (3+sqrt5)/2 = 2.618034; the minimal polynomial of 1/phi over Q is s^2+s-1 and of phi is s^2-s-1; applying s -> 1/s to s^2+s-1 and clearing denominators gives -s^2+s+1, i.e. the phi polynomial up to sign, exactly as the block says ('exchanges these quadratics up to sign'); the positive roots are {1/phi, phi} as stated (the negative roots -phi and -1/phi are correctly excluded by the 'on the positive real axis' qualifier); q = s^2 makes 1/phi^2 <-> phi^2 the induced action; and the Hecke eigenvalue pair {q, -q^{-1}} matches 7a.",
+        "notes": "Graph-hygiene note reported to the batch: this is a proposition whose uses[] names rem:golden-ratio-degeneration, a remark. Per 3a a remark makes no logical claims, so a proposition should not depend on one; the underlying node result should live in a provable-kind block."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:33.959Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present. EVERY CLAIM RECOMPUTED AND CORRECT: phi^2 = (3+sqrt5)/2 = 2.618034; the minimal polynomial of 1/phi over Q is s^2+s-1 and of phi is s^2-s-1; applying s -> 1/s to s^2+s-1 and clearing denominators gives -s^2+s+1, i.e. the phi polynomial up to sign, exactly as the block says ('exchanges these quadratics up to sign'); the positive roots are {1/phi, phi} as stated (the negative roots -phi and -1/phi are correctly excluded by the 'on the positive real axis' qualifier); q = s^2 makes 1/phi^2 <-> phi^2 the induced action; and the Hecke eigenvalue pair {q, -q^{-1}} matches 7a.",
+        "notes": "Graph-hygiene note reported to the batch: this is a proposition whose uses[] names rem:golden-ratio-degeneration, a remark. Per 3a a remark makes no logical claims, so a proposition should not depend on one; the underlying node result should live in a provable-kind block."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.005Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present. EVERY CLAIM RECOMPUTED AND CORRECT: phi^2 = (3+sqrt5)/2 = 2.618034; the minimal polynomial of 1/phi over Q is s^2+s-1 and of phi is s^2-s-1; applying s -> 1/s to s^2+s-1 and clearing denominators gives -s^2+s+1, i.e. the phi polynomial up to sign, exactly as the block says ('exchanges these quadratics up to sign'); the positive roots are {1/phi, phi} as stated (the negative roots -phi and -1/phi are correctly excluded by the 'on the positive real axis' qualifier); q = s^2 makes 1/phi^2 <-> phi^2 the induced action; and the Hecke eigenvalue pair {q, -q^{-1}} matches 7a.",
+        "notes": "Graph-hygiene note reported to the batch: this is a proposition whose uses[] names rem:golden-ratio-degeneration, a remark. Per 3a a remark makes no logical claims, so a proposition should not depend on one; the underlying node result should live in a provable-kind block."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.059Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present. EVERY CLAIM RECOMPUTED AND CORRECT: phi^2 = (3+sqrt5)/2 = 2.618034; the minimal polynomial of 1/phi over Q is s^2+s-1 and of phi is s^2-s-1; applying s -> 1/s to s^2+s-1 and clearing denominators gives -s^2+s+1, i.e. the phi polynomial up to sign, exactly as the block says ('exchanges these quadratics up to sign'); the positive roots are {1/phi, phi} as stated (the negative roots -phi and -1/phi are correctly excluded by the 'on the positive real axis' qualifier); q = s^2 makes 1/phi^2 <-> phi^2 the induced action; and the Hecke eigenvalue pair {q, -q^{-1}} matches 7a.",
+        "notes": "Graph-hygiene note reported to the batch: this is a proposition whose uses[] names rem:golden-ratio-degeneration, a remark. Per 3a a remark makes no logical claims, so a proposition should not depend on one; the underlying node result should live in a provable-kind block."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.124Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present. EVERY CLAIM RECOMPUTED AND CORRECT: phi^2 = (3+sqrt5)/2 = 2.618034; the minimal polynomial of 1/phi over Q is s^2+s-1 and of phi is s^2-s-1; applying s -> 1/s to s^2+s-1 and clearing denominators gives -s^2+s+1, i.e. the phi polynomial up to sign, exactly as the block says ('exchanges these quadratics up to sign'); the positive roots are {1/phi, phi} as stated (the negative roots -phi and -1/phi are correctly excluded by the 'on the positive real axis' qualifier); q = s^2 makes 1/phi^2 <-> phi^2 the induced action; and the Hecke eigenvalue pair {q, -q^{-1}} matches 7a.",
+        "notes": "Graph-hygiene note reported to the batch: this is a proposition whose uses[] names rem:golden-ratio-degeneration, a remark. Per 3a a remark makes no logical claims, so a proposition should not depend on one; the underlying node result should live in a provable-kind block."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.187Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present. EVERY CLAIM RECOMPUTED AND CORRECT: phi^2 = (3+sqrt5)/2 = 2.618034; the minimal polynomial of 1/phi over Q is s^2+s-1 and of phi is s^2-s-1; applying s -> 1/s to s^2+s-1 and clearing denominators gives -s^2+s+1, i.e. the phi polynomial up to sign, exactly as the block says ('exchanges these quadratics up to sign'); the positive roots are {1/phi, phi} as stated (the negative roots -phi and -1/phi are correctly excluded by the 'on the positive real axis' qualifier); q = s^2 makes 1/phi^2 <-> phi^2 the induced action; and the Hecke eigenvalue pair {q, -q^{-1}} matches 7a.",
+        "notes": "Graph-hygiene note reported to the batch: this is a proposition whose uses[] names rem:golden-ratio-degeneration, a remark. Per 3a a remark makes no logical claims, so a proposition should not depend on one; the underlying node result should live in a provable-kind block."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.246Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present. EVERY CLAIM RECOMPUTED AND CORRECT: phi^2 = (3+sqrt5)/2 = 2.618034; the minimal polynomial of 1/phi over Q is s^2+s-1 and of phi is s^2-s-1; applying s -> 1/s to s^2+s-1 and clearing denominators gives -s^2+s+1, i.e. the phi polynomial up to sign, exactly as the block says ('exchanges these quadratics up to sign'); the positive roots are {1/phi, phi} as stated (the negative roots -phi and -1/phi are correctly excluded by the 'on the positive real axis' qualifier); q = s^2 makes 1/phi^2 <-> phi^2 the induced action; and the Hecke eigenvalue pair {q, -q^{-1}} matches 7a.",
+        "notes": "Graph-hygiene note reported to the batch: this is a proposition whose uses[] names rem:golden-ratio-degeneration, a remark. Per 3a a remark makes no logical claims, so a proposition should not depend on one; the underlying node result should live in a provable-kind block."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.306Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present. EVERY CLAIM RECOMPUTED AND CORRECT: phi^2 = (3+sqrt5)/2 = 2.618034; the minimal polynomial of 1/phi over Q is s^2+s-1 and of phi is s^2-s-1; applying s -> 1/s to s^2+s-1 and clearing denominators gives -s^2+s+1, i.e. the phi polynomial up to sign, exactly as the block says ('exchanges these quadratics up to sign'); the positive roots are {1/phi, phi} as stated (the negative roots -phi and -1/phi are correctly excluded by the 'on the positive real axis' qualifier); q = s^2 makes 1/phi^2 <-> phi^2 the induced action; and the Hecke eigenvalue pair {q, -q^{-1}} matches 7a.",
+        "notes": "Graph-hygiene note reported to the batch: this is a proposition whose uses[] names rem:golden-ratio-degeneration, a remark. Per 3a a remark makes no logical claims, so a proposition should not depend on one; the underlying node result should live in a provable-kind block."
+      }
+    ]
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/bach2013-double-slit/double-slit-experiment/bach-mask-control",
+    "path": "folio/bach2013-double-slit/double-slit-experiment/bach-mask-control"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "5a9cebe1c757",
+          "ts": "9e5a32c1b81f"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "5a9cebe1c757",
+          "ts": "9e5a32c1b81f"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "5a9cebe1c757",
+          "ts": "9e5a32c1b81f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.504Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of rem:bach-mask-control (three mask regimes plus the P12 != P1+P2 verification). All ten categories judged. Recomputed the order cutoff: mask edge 2500 nm at 230 um behind the slits subtends 10.87 mrad, and m*lambda/d = 10.87 mrad gives m = 60.9, reproducing the block's 'orders > 60' exactly - the geometry is internally consistent.",
+        "notes": "Cat.4: the three numbered regimes P1/P12/P2 are the three real mask positions, substantive. Cat.9: 'The key quantum mechanical relation' uses a mild intensifier inside normal physics register, not maximum-strength inflation - pass. Final sentence states a verified experimental result, not a closing aphorism."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "5a9cebe1c757",
+          "ts": "9e5a32c1b81f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.544Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of rem:bach-mask-control (three mask regimes plus the P12 != P1+P2 verification). All ten categories judged. Recomputed the order cutoff: mask edge 2500 nm at 230 um behind the slits subtends 10.87 mrad, and m*lambda/d = 10.87 mrad gives m = 60.9, reproducing the block's 'orders > 60' exactly - the geometry is internally consistent.",
+        "notes": "Cat.4: the three numbered regimes P1/P12/P2 are the three real mask positions, substantive. Cat.9: 'The key quantum mechanical relation' uses a mild intensifier inside normal physics register, not maximum-strength inflation - pass. Final sentence states a verified experimental result, not a closing aphorism."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "5a9cebe1c757",
+          "ts": "9e5a32c1b81f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.584Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of rem:bach-mask-control (three mask regimes plus the P12 != P1+P2 verification). All ten categories judged. Recomputed the order cutoff: mask edge 2500 nm at 230 um behind the slits subtends 10.87 mrad, and m*lambda/d = 10.87 mrad gives m = 60.9, reproducing the block's 'orders > 60' exactly - the geometry is internally consistent.",
+        "notes": "Cat.4: the three numbered regimes P1/P12/P2 are the three real mask positions, substantive. Cat.9: 'The key quantum mechanical relation' uses a mild intensifier inside normal physics register, not maximum-strength inflation - pass. Final sentence states a verified experimental result, not a closing aphorism."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "5a9cebe1c757",
+          "ts": "9e5a32c1b81f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.627Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of rem:bach-mask-control (three mask regimes plus the P12 != P1+P2 verification). All ten categories judged. Recomputed the order cutoff: mask edge 2500 nm at 230 um behind the slits subtends 10.87 mrad, and m*lambda/d = 10.87 mrad gives m = 60.9, reproducing the block's 'orders > 60' exactly - the geometry is internally consistent.",
+        "notes": "Cat.4: the three numbered regimes P1/P12/P2 are the three real mask positions, substantive. Cat.9: 'The key quantum mechanical relation' uses a mild intensifier inside normal physics register, not maximum-strength inflation - pass. Final sentence states a verified experimental result, not a closing aphorism."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "5a9cebe1c757",
+          "ts": "9e5a32c1b81f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.668Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of rem:bach-mask-control (three mask regimes plus the P12 != P1+P2 verification). All ten categories judged. Recomputed the order cutoff: mask edge 2500 nm at 230 um behind the slits subtends 10.87 mrad, and m*lambda/d = 10.87 mrad gives m = 60.9, reproducing the block's 'orders > 60' exactly - the geometry is internally consistent.",
+        "notes": "Cat.4: the three numbered regimes P1/P12/P2 are the three real mask positions, substantive. Cat.9: 'The key quantum mechanical relation' uses a mild intensifier inside normal physics register, not maximum-strength inflation - pass. Final sentence states a verified experimental result, not a closing aphorism."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "5a9cebe1c757",
+          "ts": "9e5a32c1b81f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.708Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of rem:bach-mask-control (three mask regimes plus the P12 != P1+P2 verification). All ten categories judged. Recomputed the order cutoff: mask edge 2500 nm at 230 um behind the slits subtends 10.87 mrad, and m*lambda/d = 10.87 mrad gives m = 60.9, reproducing the block's 'orders > 60' exactly - the geometry is internally consistent.",
+        "notes": "Cat.4: the three numbered regimes P1/P12/P2 are the three real mask positions, substantive. Cat.9: 'The key quantum mechanical relation' uses a mild intensifier inside normal physics register, not maximum-strength inflation - pass. Final sentence states a verified experimental result, not a closing aphorism."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "5a9cebe1c757",
+          "ts": "9e5a32c1b81f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.744Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of rem:bach-mask-control (three mask regimes plus the P12 != P1+P2 verification). All ten categories judged. Recomputed the order cutoff: mask edge 2500 nm at 230 um behind the slits subtends 10.87 mrad, and m*lambda/d = 10.87 mrad gives m = 60.9, reproducing the block's 'orders > 60' exactly - the geometry is internally consistent.",
+        "notes": "Cat.4: the three numbered regimes P1/P12/P2 are the three real mask positions, substantive. Cat.9: 'The key quantum mechanical relation' uses a mild intensifier inside normal physics register, not maximum-strength inflation - pass. Final sentence states a verified experimental result, not a closing aphorism."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "5a9cebe1c757",
+          "ts": "9e5a32c1b81f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.784Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of rem:bach-mask-control (three mask regimes plus the P12 != P1+P2 verification). All ten categories judged. Recomputed the order cutoff: mask edge 2500 nm at 230 um behind the slits subtends 10.87 mrad, and m*lambda/d = 10.87 mrad gives m = 60.9, reproducing the block's 'orders > 60' exactly - the geometry is internally consistent.",
+        "notes": "Cat.4: the three numbered regimes P1/P12/P2 are the three real mask positions, substantive. Cat.9: 'The key quantum mechanical relation' uses a mild intensifier inside normal physics register, not maximum-strength inflation - pass. Final sentence states a verified experimental result, not a closing aphorism."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "5a9cebe1c757",
+          "ts": "9e5a32c1b81f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.824Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of rem:bach-mask-control (three mask regimes plus the P12 != P1+P2 verification). All ten categories judged. Recomputed the order cutoff: mask edge 2500 nm at 230 um behind the slits subtends 10.87 mrad, and m*lambda/d = 10.87 mrad gives m = 60.9, reproducing the block's 'orders > 60' exactly - the geometry is internally consistent.",
+        "notes": "Cat.4: the three numbered regimes P1/P12/P2 are the three real mask positions, substantive. Cat.9: 'The key quantum mechanical relation' uses a mild intensifier inside normal physics register, not maximum-strength inflation - pass. Final sentence states a verified experimental result, not a closing aphorism."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "5a9cebe1c757",
+          "ts": "9e5a32c1b81f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.864Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of rem:bach-mask-control (three mask regimes plus the P12 != P1+P2 verification). All ten categories judged. Recomputed the order cutoff: mask edge 2500 nm at 230 um behind the slits subtends 10.87 mrad, and m*lambda/d = 10.87 mrad gives m = 60.9, reproducing the block's 'orders > 60' exactly - the geometry is internally consistent.",
+        "notes": "Cat.4: the three numbered regimes P1/P12/P2 are the three real mask positions, substantive. Cat.9: 'The key quantum mechanical relation' uses a mild intensifier inside normal physics register, not maximum-strength inflation - pass. Final sentence states a verified experimental result, not a closing aphorism."
+      }
+    ]
+  }
+}

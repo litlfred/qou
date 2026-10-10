@@ -1,0 +1,197 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/magic-A-binding-formula-context",
+    "path": "folio/quantum-observable-universe/mass-theory/magic-A-binding-formula-context"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed: the AGENTS.md section labels (\u00a77c / \u00a73b-cond and friends) no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "94aa6ade1ed2",
+          "ts": "9de106149e7f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:18:02.957Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Remark read in full (regime table, dispatch argument, rho_F paragraph, witness paragraph). Numbers recomputed: 8G = 7.3277247534, B(4He) = 2*m_e*4*8G = 29.9557 MeV, +5.865%% vs 28.296 \u2014 the sibling proposition's figures are right. Eight of ten categories clean; the two failures are both sweep damage rather than authored prose."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "94aa6ade1ed2",
+          "ts": "9de106149e7f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:18:03.046Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Remark read in full (regime table, dispatch argument, rho_F paragraph, witness paragraph). Numbers recomputed: 8G = 7.3277247534, B(4He) = 2*m_e*4*8G = 29.9557 MeV, +5.865%% vs 28.296 \u2014 the sibling proposition's figures are right. Eight of ten categories clean; the two failures are both sweep damage rather than authored prose."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "94aa6ade1ed2",
+          "ts": "9de106149e7f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:18:03.113Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Remark read in full (regime table, dispatch argument, rho_F paragraph, witness paragraph). Numbers recomputed: 8G = 7.3277247534, B(4He) = 2*m_e*4*8G = 29.9557 MeV, +5.865%% vs 28.296 \u2014 the sibling proposition's figures are right. Eight of ten categories clean; the two failures are both sweep damage rather than authored prose."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "94aa6ade1ed2",
+          "ts": "9de106149e7f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:18:03.191Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Remark read in full (regime table, dispatch argument, rho_F paragraph, witness paragraph). Numbers recomputed: 8G = 7.3277247534, B(4He) = 2*m_e*4*8G = 29.9557 MeV, +5.865%% vs 28.296 \u2014 the sibling proposition's figures are right. Eight of ten categories clean; the two failures are both sweep damage rather than authored prose."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "94aa6ade1ed2",
+          "ts": "9de106149e7f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:18:03.242Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Remark read in full (regime table, dispatch argument, rho_F paragraph, witness paragraph). Numbers recomputed: 8G = 7.3277247534, B(4He) = 2*m_e*4*8G = 29.9557 MeV, +5.865%% vs 28.296 \u2014 the sibling proposition's figures are right. Eight of ten categories clean; the two failures are both sweep damage rather than authored prose."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "94aa6ade1ed2",
+          "ts": "9de106149e7f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:18:03.333Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Remark read in full (regime table, dispatch argument, rho_F paragraph, witness paragraph). Numbers recomputed: 8G = 7.3277247534, B(4He) = 2*m_e*4*8G = 29.9557 MeV, +5.865%% vs 28.296 \u2014 the sibling proposition's figures are right. Eight of ten categories clean; the two failures are both sweep damage rather than authored prose."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "94aa6ade1ed2",
+          "ts": "9de106149e7f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:18:03.427Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Remark read in full (regime table, dispatch argument, rho_F paragraph, witness paragraph). Numbers recomputed: 8G = 7.3277247534, B(4He) = 2*m_e*4*8G = 29.9557 MeV, +5.865%% vs 28.296 \u2014 the sibling proposition's figures are right. Eight of ten categories clean; the two failures are both sweep damage rather than authored prose."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "94aa6ade1ed2",
+          "ts": "9de106149e7f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:18:03.487Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Remark read in full (regime table, dispatch argument, rho_F paragraph, witness paragraph). Numbers recomputed: 8G = 7.3277247534, B(4He) = 2*m_e*4*8G = 29.9557 MeV, +5.865%% vs 28.296 \u2014 the sibling proposition's figures are right. Eight of ten categories clean; the two failures are both sweep damage rather than authored prose."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "94aa6ade1ed2",
+          "ts": "9de106149e7f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:18:03.565Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "severity": "major",
+        "evidence": "'quantifies the 80$\\times$ gap closure for ${}^4_2He$' overstates the cited witness by a factor of ~6. The witness's own honest_gap_report says 'closing the alpha_shift gap by 13.5x (",
+        "notes": "rel_err| 0.7904 -> 0.0587)', and I recomputed 0.7904/0.0587 = 13.47. The '80' looks like the alpha-shift miss of -79%% (a percentage) re-read as a factor.|proposed: 'quantifies the 13.5x gap closure for ${}^4_2He$ (|rel_err| 0.7904 -> 0.0587)'. Numeric, so flagged rather than edited."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "94aa6ade1ed2",
+          "ts": "9de106149e7f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:18:03.624Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "severity": "major",
+        "evidence": "THREE literal instances of the corpus's named token substitution, two of them leaving broken sentences. (1) 'sourced from the canonical / the canonical formalism / entry `2\u00b7m_e\u00b74\u00b7Vol(L6a4)`' \u2014 the phrase is duplicated across two lines and the sentence has no grammatical subject for 'entry'. (2) A section header reading '## canonical witness' \u2014 a bare lowercase 'canonical' opening, the documented tell. (3) 'the canonical formalism / emits a comparison witness showing\u2026' \u2014 a formalism does not emit a witness; a producer does, and here it is identifiable as computations/binding_alpha_shift_witness.py, which the cited witness JSON names in its own 'generator' field.",
+        "notes": "proposed: (1) '\u2026sourced from the canonical magic_A_formula.magic_A_binding entry `2\u00b7m_e\u00b74\u00b7Vol(L6a4)`' (the witness's magic_A_inputs.source names exactly this); (2) '## Comparison witness'; (3) '`computations/binding_alpha_shift_witness.py` emits a comparison witness\u2026'. Flagged rather than fixed: (1) is grammatically broken in a way that needs the author to confirm the intended referent."
+      }
+    ]
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/categorical-proton-table1-data",
+    "path": "folio/quantum-observable-universe/predicted-spectra/categorical-proton-table1-data"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "a49a4e4639ac",
+          "ts": "216e4c692ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:34:46.874Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Extracted 5-row data table (basis element / particle / coefficient); no prose sentences, no personal register.",
+        "notes": "Table-only block."
+      },
+      {
+        "field_hash": {
+          "md": "a49a4e4639ac",
+          "ts": "216e4c692ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:33.889Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 5-row extracted table (Hecke NF basis / particle / coefficient) with no prose sentences. All ten categories judged on the whole text; nothing to carry a construction.",
+        "notes": "Table-only block, no prose. Numeric check: coefficients form an approximately unit-norm vector (sum of squares 1.00036). Anomaly reported separately: the 6th H_3(q) NF basis element sigma_0 sigma_1 sigma_0 is omitted here but present in table3; and no producer/witness in computations/ carries these four-decimal coefficients (searched all *.witness.json)."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "a49a4e4639ac",
+          "ts": "216e4c692ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:33.593Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 5-row extracted table (Hecke NF basis / particle / coefficient) with no prose sentences. All ten categories judged on the whole text; nothing to carry a construction.",
+        "notes": "Table-only block, no prose. Numeric check: coefficients form an approximately unit-norm vector (sum of squares 1.00036). Anomaly reported separately: the 6th H_3(q) NF basis element sigma_0 sigma_1 sigma_0 is omitted here but present in table3; and no producer/witness in computations/ carries these four-decimal coefficients (searched all *.witness.json)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "a49a4e4639ac",
+          "ts": "216e4c692ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:33.635Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 5-row extracted table (Hecke NF basis / particle / coefficient) with no prose sentences. All ten categories judged on the whole text; nothing to carry a construction.",
+        "notes": "Table-only block, no prose. Numeric check: coefficients form an approximately unit-norm vector (sum of squares 1.00036). Anomaly reported separately: the 6th H_3(q) NF basis element sigma_0 sigma_1 sigma_0 is omitted here but present in table3; and no producer/witness in computations/ carries these four-decimal coefficients (searched all *.witness.json)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "a49a4e4639ac",
+          "ts": "216e4c692ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:33.677Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 5-row extracted table (Hecke NF basis / particle / coefficient) with no prose sentences. All ten categories judged on the whole text; nothing to carry a construction.",
+        "notes": "Table-only block, no prose. Numeric check: coefficients form an approximately unit-norm vector (sum of squares 1.00036). Anomaly reported separately: the 6th H_3(q) NF basis element sigma_0 sigma_1 sigma_0 is omitted here but present in table3; and no producer/witness in computations/ carries these four-decimal coefficients (searched all *.witness.json)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "a49a4e4639ac",
+          "ts": "216e4c692ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:33.720Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 5-row extracted table (Hecke NF basis / particle / coefficient) with no prose sentences. All ten categories judged on the whole text; nothing to carry a construction.",
+        "notes": "Table-only block, no prose. Numeric check: coefficients form an approximately unit-norm vector (sum of squares 1.00036). Anomaly reported separately: the 6th H_3(q) NF basis element sigma_0 sigma_1 sigma_0 is omitted here but present in table3; and no producer/witness in computations/ carries these four-decimal coefficients (searched all *.witness.json)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "a49a4e4639ac",
+          "ts": "216e4c692ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:33.763Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 5-row extracted table (Hecke NF basis / particle / coefficient) with no prose sentences. All ten categories judged on the whole text; nothing to carry a construction.",
+        "notes": "Table-only block, no prose. Numeric check: coefficients form an approximately unit-norm vector (sum of squares 1.00036). Anomaly reported separately: the 6th H_3(q) NF basis element sigma_0 sigma_1 sigma_0 is omitted here but present in table3; and no producer/witness in computations/ carries these four-decimal coefficients (searched all *.witness.json)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "a49a4e4639ac",
+          "ts": "216e4c692ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:33.807Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 5-row extracted table (Hecke NF basis / particle / coefficient) with no prose sentences. All ten categories judged on the whole text; nothing to carry a construction.",
+        "notes": "Table-only block, no prose. Numeric check: coefficients form an approximately unit-norm vector (sum of squares 1.00036). Anomaly reported separately: the 6th H_3(q) NF basis element sigma_0 sigma_1 sigma_0 is omitted here but present in table3; and no producer/witness in computations/ carries these four-decimal coefficients (searched all *.witness.json)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "a49a4e4639ac",
+          "ts": "216e4c692ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:33.848Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 5-row extracted table (Hecke NF basis / particle / coefficient) with no prose sentences. All ten categories judged on the whole text; nothing to carry a construction.",
+        "notes": "Table-only block, no prose. Numeric check: coefficients form an approximately unit-norm vector (sum of squares 1.00036). Anomaly reported separately: the 6th H_3(q) NF basis element sigma_0 sigma_1 sigma_0 is omitted here but present in table3; and no producer/witness in computations/ carries these four-decimal coefficients (searched all *.witness.json)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "a49a4e4639ac",
+          "ts": "216e4c692ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:33.930Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 5-row extracted table (Hecke NF basis / particle / coefficient) with no prose sentences. All ten categories judged on the whole text; nothing to carry a construction.",
+        "notes": "Table-only block, no prose. Numeric check: coefficients form an approximately unit-norm vector (sum of squares 1.00036). Anomaly reported separately: the 6th H_3(q) NF basis element sigma_0 sigma_1 sigma_0 is omitted here but present in table3; and no producer/witness in computations/ carries these four-decimal coefficients (searched all *.witness.json)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "a49a4e4639ac",
+          "ts": "216e4c692ac8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:33.972Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Read in full: 5-row extracted table (Hecke NF basis / particle / coefficient) with no prose sentences. All ten categories judged on the whole text; nothing to carry a construction.",
+        "notes": "Table-only block, no prose. Numeric check: coefficients form an approximately unit-norm vector (sum of squares 1.00036). Anomaly reported separately: the 6th H_3(q) NF basis element sigma_0 sigma_1 sigma_0 is omitted here but present in table3; and no producer/witness in computations/ carries these four-decimal coefficients (searched all *.witness.json)."
+      }
+    ]
+  }
+}

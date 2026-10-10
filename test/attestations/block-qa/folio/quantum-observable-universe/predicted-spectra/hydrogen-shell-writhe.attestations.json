@@ -1,0 +1,953 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe",
+    "path": "folio/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Both flagged items are gone: the \"§7c\" tag was dropped and \"This block sits on the archimedean side\" was rewritten to \"What follows sits on the archimedean side of the substrate wall.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "842c06bff5ed",
+          "ts": "2385f564b4e9",
+          "lean": "bc0608ab8af0"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "842c06bff5ed",
+          "ts": "2385f564b4e9",
+          "lean": "bc0608ab8af0"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "842c06bff5ed",
+          "ts": "2385f564b4e9",
+          "lean": "bc0608ab8af0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "842c06bff5ed",
+          "ts": "2385f564b4e9",
+          "lean": "bc0608ab8af0"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "842c06bff5ed",
+          "ts": "2385f564b4e9",
+          "lean": "bc0608ab8af0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Electron shell number equals writhe level of the trefoil embedding' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean:38:2: error: No goals to be solved.",
+        "severity": "minor",
+        "evidence": "hydrogen-shell-writhe.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "842c06bff5ed",
+          "ts": "2385f564b4e9",
+          "lean": "bc0608ab8af0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean contains 'sorry' placeholders, rendering the formal proof vacuous.",
+        "severity": "major",
+        "evidence": "hydrogen-shell-writhe.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "842c06bff5ed",
+          "ts": "2385f564b4e9",
+          "lean": "bc0608ab8af0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Electron shell number equals writhe level of the trefoil embedding'.",
+        "severity": "minor",
+        "evidence": "hydrogen-shell-writhe.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "842c06bff5ed",
+          "ts": "2385f564b4e9",
+          "lean": "bc0608ab8af0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Electron shell number equals writhe level of the trefoil embedding' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor",
+        "evidence": "The prose presents 'Electron shell number equals writhe level of the trefoil embedding' as verified, but the sibling Lean file fails to compile."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "842c06bff5ed",
+          "ts": "2385f564b4e9",
+          "lean": "bc0608ab8af0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Electron shell number equals writhe level of the trefoil embedding'.",
+        "severity": "minor",
+        "evidence": "hydrogen-shell-writhe.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "842c06bff5ed",
+          "ts": "2385f564b4e9",
+          "lean": "bc0608ab8af0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean.",
+        "severity": "minor",
+        "evidence": "hydrogen-shell-writhe.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "842c06bff5ed",
+          "ts": "2385f564b4e9",
+          "lean": "bc0608ab8af0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "842c06bff5ed",
+          "ts": "2385f564b4e9",
+          "lean": "bc0608ab8af0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Electron shell number equals writhe level of the trefoil embedding', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "hydrogen-shell-writhe.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "842c06bff5ed",
+          "ts": "2385f564b4e9",
+          "lean": "bc0608ab8af0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Electron shell number equals writhe level of the trefoil embedding' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "hydrogen-shell-writhe.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "842c06bff5ed",
+          "ts": "2385f564b4e9",
+          "lean": "bc0608ab8af0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The empirical claims in 'Electron shell number equals writhe level of the trefoil embedding' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "hydrogen-shell-writhe.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "842c06bff5ed",
+          "ts": "2385f564b4e9",
+          "lean": "bc0608ab8af0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Electron shell number equals writhe level of the trefoil embedding' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "hydrogen-shell-writhe.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "842c06bff5ed",
+          "ts": "2385f564b4e9",
+          "lean": "bc0608ab8af0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "hydrogen-shell-writhe.lean:1 — folio/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean:38:2: error: No goals to be solved"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "842c06bff5ed",
+          "ts": "2385f564b4e9",
+          "lean": "bc0608ab8af0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean contains 'sorry' placeholders.",
+        "severity": "major",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/predicted-spectra/hydrogen-shell-writhe.lean contains 'sorry' placeholders."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote prose blocks to adhere to Milnor standards. Improved economy, preserved all math.",
+        "reviewed_at": "2026-07-07T14:26:56.365102Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.365102Z"
+        },
+        "field_hash": {
+          "md": "842c06bff5ed",
+          "ts": "2385f564b4e9",
+          "lean": "bc0608ab8af0"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:00:45.000Z",
+        "reviewed_sha": "b0b3555a8991cd5a84bfcbe3f0b1c9df3b78605e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "7d7ddb6a480b",
+          "ts": "2385f564b4e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.848Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: a three-clause conditional statement plus an archimedean-specialisation paragraph. Judged all ten categories; the prose carries no rhetorical construction.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) the .ts declares kind conjecture with label conj:hydrogen-shell-writhe, while the .md opens '**Proposition (conditional on conj:borromean-quark).**' -- the narrative kind and the manifest kind disagree; (2) the AGENTS.md sec3b-cond rule 4 requires the conditioning conjecture in uses[], but uses[] is ['def:electron-knot'] and conj:borromean-quark is absent; (3) the closing paragraph begins 'What follows evaluates generic q-deformation identities at the real-valued substrate parameter q_0' but nothing follows -- it is the block's last paragraph, so the forward reference dangles. Mathematics verified: n = (w-1)/2 with w = 2n+1 is consistent; sum_{l=0}^{n-1}(2l+1) = n^2 is correct; the three clauses agree with the sibling remark rem:hydrogen-orbitals and with rem:hydrogen-orbital-tables."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "7d7ddb6a480b",
+          "ts": "2385f564b4e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.887Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: a three-clause conditional statement plus an archimedean-specialisation paragraph. Judged all ten categories; the prose carries no rhetorical construction.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) the .ts declares kind conjecture with label conj:hydrogen-shell-writhe, while the .md opens '**Proposition (conditional on conj:borromean-quark).**' -- the narrative kind and the manifest kind disagree; (2) the AGENTS.md sec3b-cond rule 4 requires the conditioning conjecture in uses[], but uses[] is ['def:electron-knot'] and conj:borromean-quark is absent; (3) the closing paragraph begins 'What follows evaluates generic q-deformation identities at the real-valued substrate parameter q_0' but nothing follows -- it is the block's last paragraph, so the forward reference dangles. Mathematics verified: n = (w-1)/2 with w = 2n+1 is consistent; sum_{l=0}^{n-1}(2l+1) = n^2 is correct; the three clauses agree with the sibling remark rem:hydrogen-orbitals and with rem:hydrogen-orbital-tables."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "7d7ddb6a480b",
+          "ts": "2385f564b4e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.926Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: a three-clause conditional statement plus an archimedean-specialisation paragraph. Judged all ten categories; the prose carries no rhetorical construction.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) the .ts declares kind conjecture with label conj:hydrogen-shell-writhe, while the .md opens '**Proposition (conditional on conj:borromean-quark).**' -- the narrative kind and the manifest kind disagree; (2) the AGENTS.md sec3b-cond rule 4 requires the conditioning conjecture in uses[], but uses[] is ['def:electron-knot'] and conj:borromean-quark is absent; (3) the closing paragraph begins 'What follows evaluates generic q-deformation identities at the real-valued substrate parameter q_0' but nothing follows -- it is the block's last paragraph, so the forward reference dangles. Mathematics verified: n = (w-1)/2 with w = 2n+1 is consistent; sum_{l=0}^{n-1}(2l+1) = n^2 is correct; the three clauses agree with the sibling remark rem:hydrogen-orbitals and with rem:hydrogen-orbital-tables."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "7d7ddb6a480b",
+          "ts": "2385f564b4e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.967Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "The three numbered clauses (shell-writhe correspondence / orbital counting / energy scaling) are the proposition's three distinct assertions, each with its own formula. Substantive enumeration.",
+        "notes": "No change."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "7d7ddb6a480b",
+          "ts": "2385f564b4e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:05.007Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: a three-clause conditional statement plus an archimedean-specialisation paragraph. Judged all ten categories; the prose carries no rhetorical construction.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) the .ts declares kind conjecture with label conj:hydrogen-shell-writhe, while the .md opens '**Proposition (conditional on conj:borromean-quark).**' -- the narrative kind and the manifest kind disagree; (2) the AGENTS.md sec3b-cond rule 4 requires the conditioning conjecture in uses[], but uses[] is ['def:electron-knot'] and conj:borromean-quark is absent; (3) the closing paragraph begins 'What follows evaluates generic q-deformation identities at the real-valued substrate parameter q_0' but nothing follows -- it is the block's last paragraph, so the forward reference dangles. Mathematics verified: n = (w-1)/2 with w = 2n+1 is consistent; sum_{l=0}^{n-1}(2l+1) = n^2 is correct; the three clauses agree with the sibling remark rem:hydrogen-orbitals and with rem:hydrogen-orbital-tables."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "7d7ddb6a480b",
+          "ts": "2385f564b4e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:05.046Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: a three-clause conditional statement plus an archimedean-specialisation paragraph. Judged all ten categories; the prose carries no rhetorical construction.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) the .ts declares kind conjecture with label conj:hydrogen-shell-writhe, while the .md opens '**Proposition (conditional on conj:borromean-quark).**' -- the narrative kind and the manifest kind disagree; (2) the AGENTS.md sec3b-cond rule 4 requires the conditioning conjecture in uses[], but uses[] is ['def:electron-knot'] and conj:borromean-quark is absent; (3) the closing paragraph begins 'What follows evaluates generic q-deformation identities at the real-valued substrate parameter q_0' but nothing follows -- it is the block's last paragraph, so the forward reference dangles. Mathematics verified: n = (w-1)/2 with w = 2n+1 is consistent; sum_{l=0}^{n-1}(2l+1) = n^2 is correct; the three clauses agree with the sibling remark rem:hydrogen-orbitals and with rem:hydrogen-orbital-tables."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "7d7ddb6a480b",
+          "ts": "2385f564b4e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:05.086Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: a three-clause conditional statement plus an archimedean-specialisation paragraph. Judged all ten categories; the prose carries no rhetorical construction.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) the .ts declares kind conjecture with label conj:hydrogen-shell-writhe, while the .md opens '**Proposition (conditional on conj:borromean-quark).**' -- the narrative kind and the manifest kind disagree; (2) the AGENTS.md sec3b-cond rule 4 requires the conditioning conjecture in uses[], but uses[] is ['def:electron-knot'] and conj:borromean-quark is absent; (3) the closing paragraph begins 'What follows evaluates generic q-deformation identities at the real-valued substrate parameter q_0' but nothing follows -- it is the block's last paragraph, so the forward reference dangles. Mathematics verified: n = (w-1)/2 with w = 2n+1 is consistent; sum_{l=0}^{n-1}(2l+1) = n^2 is correct; the three clauses agree with the sibling remark rem:hydrogen-orbitals and with rem:hydrogen-orbital-tables."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "7d7ddb6a480b",
+          "ts": "2385f564b4e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:05.127Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: a three-clause conditional statement plus an archimedean-specialisation paragraph. Judged all ten categories; the prose carries no rhetorical construction.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) the .ts declares kind conjecture with label conj:hydrogen-shell-writhe, while the .md opens '**Proposition (conditional on conj:borromean-quark).**' -- the narrative kind and the manifest kind disagree; (2) the AGENTS.md sec3b-cond rule 4 requires the conditioning conjecture in uses[], but uses[] is ['def:electron-knot'] and conj:borromean-quark is absent; (3) the closing paragraph begins 'What follows evaluates generic q-deformation identities at the real-valued substrate parameter q_0' but nothing follows -- it is the block's last paragraph, so the forward reference dangles. Mathematics verified: n = (w-1)/2 with w = 2n+1 is consistent; sum_{l=0}^{n-1}(2l+1) = n^2 is correct; the three clauses agree with the sibling remark rem:hydrogen-orbitals and with rem:hydrogen-orbital-tables."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "7d7ddb6a480b",
+          "ts": "2385f564b4e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:05.167Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: a three-clause conditional statement plus an archimedean-specialisation paragraph. Judged all ten categories; the prose carries no rhetorical construction.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) the .ts declares kind conjecture with label conj:hydrogen-shell-writhe, while the .md opens '**Proposition (conditional on conj:borromean-quark).**' -- the narrative kind and the manifest kind disagree; (2) the AGENTS.md sec3b-cond rule 4 requires the conditioning conjecture in uses[], but uses[] is ['def:electron-knot'] and conj:borromean-quark is absent; (3) the closing paragraph begins 'What follows evaluates generic q-deformation identities at the real-valued substrate parameter q_0' but nothing follows -- it is the block's last paragraph, so the forward reference dangles. Mathematics verified: n = (w-1)/2 with w = 2n+1 is consistent; sum_{l=0}^{n-1}(2l+1) = n^2 is correct; the three clauses agree with the sibling remark rem:hydrogen-orbitals and with rem:hydrogen-orbital-tables."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "7d7ddb6a480b",
+          "ts": "2385f564b4e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:05.207Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: a three-clause conditional statement plus an archimedean-specialisation paragraph. Judged all ten categories; the prose carries no rhetorical construction.",
+        "notes": "STRUCTURAL DEFECTS reported, not fixed: (1) the .ts declares kind conjecture with label conj:hydrogen-shell-writhe, while the .md opens '**Proposition (conditional on conj:borromean-quark).**' -- the narrative kind and the manifest kind disagree; (2) the AGENTS.md sec3b-cond rule 4 requires the conditioning conjecture in uses[], but uses[] is ['def:electron-knot'] and conj:borromean-quark is absent; (3) the closing paragraph begins 'What follows evaluates generic q-deformation identities at the real-valued substrate parameter q_0' but nothing follows -- it is the block's last paragraph, so the forward reference dangles. Mathematics verified: n = (w-1)/2 with w = 2n+1 is consistent; sum_{l=0}^{n-1}(2l+1) = n^2 is correct; the three clauses agree with the sibling remark rem:hydrogen-orbitals and with rem:hydrogen-orbital-tables."
+      }
+    ]
+  }
+}

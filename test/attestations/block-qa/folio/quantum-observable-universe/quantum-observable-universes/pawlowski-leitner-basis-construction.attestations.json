@@ -1,0 +1,203 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/quantum-observable-universes/pawlowski-leitner-basis-construction",
+    "path": "folio/quantum-observable-universe/quantum-observable-universes/pawlowski-leitner-basis-construction"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d97a4e830c88",
+          "ts": "23a4d8785ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:47.399Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: single-sentence remark on prop:pawlowski-leitner-basis. Cross-paper reference unital-groebner-bases:cor:pbw is correctly package-qualified. The sentence is 45 words with a colon and a trailing parenthetical, but it holds together when read aloud and has one subject and one main verb, so it is not category-10. No negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no superlative.",
+        "notes": "No trap."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d97a4e830c88",
+          "ts": "23a4d8785ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:47.441Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: single-sentence remark on prop:pawlowski-leitner-basis. Cross-paper reference unital-groebner-bases:cor:pbw is correctly package-qualified. The sentence is 45 words with a colon and a trailing parenthetical, but it holds together when read aloud and has one subject and one main verb, so it is not category-10. No negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no superlative.",
+        "notes": "No trap."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d97a4e830c88",
+          "ts": "23a4d8785ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:47.485Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: single-sentence remark on prop:pawlowski-leitner-basis. Cross-paper reference unital-groebner-bases:cor:pbw is correctly package-qualified. The sentence is 45 words with a colon and a trailing parenthetical, but it holds together when read aloud and has one subject and one main verb, so it is not category-10. No negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no superlative.",
+        "notes": "No trap."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d97a4e830c88",
+          "ts": "23a4d8785ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:47.525Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: single-sentence remark on prop:pawlowski-leitner-basis. Cross-paper reference unital-groebner-bases:cor:pbw is correctly package-qualified. The sentence is 45 words with a colon and a trailing parenthetical, but it holds together when read aloud and has one subject and one main verb, so it is not category-10. No negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no superlative.",
+        "notes": "No trap."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d97a4e830c88",
+          "ts": "23a4d8785ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:47.568Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: single-sentence remark on prop:pawlowski-leitner-basis. Cross-paper reference unital-groebner-bases:cor:pbw is correctly package-qualified. The sentence is 45 words with a colon and a trailing parenthetical, but it holds together when read aloud and has one subject and one main verb, so it is not category-10. No negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no superlative.",
+        "notes": "No trap."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d97a4e830c88",
+          "ts": "23a4d8785ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:47.609Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: single-sentence remark on prop:pawlowski-leitner-basis. Cross-paper reference unital-groebner-bases:cor:pbw is correctly package-qualified. The sentence is 45 words with a colon and a trailing parenthetical, but it holds together when read aloud and has one subject and one main verb, so it is not category-10. No negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no superlative.",
+        "notes": "No trap."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d97a4e830c88",
+          "ts": "23a4d8785ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:47.651Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: single-sentence remark on prop:pawlowski-leitner-basis. Cross-paper reference unital-groebner-bases:cor:pbw is correctly package-qualified. The sentence is 45 words with a colon and a trailing parenthetical, but it holds together when read aloud and has one subject and one main verb, so it is not category-10. No negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no superlative.",
+        "notes": "No trap."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d97a4e830c88",
+          "ts": "23a4d8785ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:47.694Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: single-sentence remark on prop:pawlowski-leitner-basis. Cross-paper reference unital-groebner-bases:cor:pbw is correctly package-qualified. The sentence is 45 words with a colon and a trailing parenthetical, but it holds together when read aloud and has one subject and one main verb, so it is not category-10. No negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no superlative.",
+        "notes": "No trap."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d97a4e830c88",
+          "ts": "23a4d8785ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:47.737Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: single-sentence remark on prop:pawlowski-leitner-basis. Cross-paper reference unital-groebner-bases:cor:pbw is correctly package-qualified. The sentence is 45 words with a colon and a trailing parenthetical, but it holds together when read aloud and has one subject and one main verb, so it is not category-10. No negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no superlative.",
+        "notes": "No trap."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d97a4e830c88",
+          "ts": "23a4d8785ed2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:47.780Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read: single-sentence remark on prop:pawlowski-leitner-basis. Cross-paper reference unital-groebner-bases:cor:pbw is correctly package-qualified. The sentence is 45 words with a colon and a trailing parenthetical, but it holds together when read aloud and has one subject and one main verb, so it is not category-10. No negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no superlative.",
+        "notes": "No trap."
+      }
+    ]
+  }
+}

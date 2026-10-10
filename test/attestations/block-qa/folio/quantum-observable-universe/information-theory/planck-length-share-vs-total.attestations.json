@@ -1,0 +1,192 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/information-theory/planck-length-share-vs-total",
+    "path": "folio/quantum-observable-universe/information-theory/planck-length-share-vs-total"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "7486a0d62a06",
+          "ts": "3044e7fc5d72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:35.672Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "major",
+        "evidence": "'a proportionality, not an equality', 'not two values for one quantity', 'They are not in disagreement' are the disambiguation this block exists to state"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "7486a0d62a06",
+          "ts": "3044e7fc5d72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:35.708Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "major",
+        "evidence": "read full block in context; no rhetorical-pivot construction present"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "7486a0d62a06",
+          "ts": "3044e7fc5d72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:35.746Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "minor",
+        "evidence": "two spaced '---' appendages converted to colons; block now dash-free in prose",
+        "notes": "fixed: 'the connection --- the per-step share' -> 'the connection: the per-step share'; 'one unit --- two compatible statements' -> 'one unit: two compatible statements'"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "7486a0d62a06",
+          "ts": "3044e7fc5d72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:35.782Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "minor",
+        "evidence": "read full block in context; no triples construction present"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "7486a0d62a06",
+          "ts": "3044e7fc5d72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:35.818Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "major",
+        "evidence": "read full block in context; no closing-aphorism construction present"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "7486a0d62a06",
+          "ts": "3044e7fc5d72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:35.854Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "major",
+        "evidence": "read full block in context; no meta-commentary construction present"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "7486a0d62a06",
+          "ts": "3044e7fc5d72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:35.891Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "major",
+        "evidence": "read full block in context; no thesis-restatement construction present"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "7486a0d62a06",
+          "ts": "3044e7fc5d72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:35.929Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "minor",
+        "evidence": "read full block in context; no performed-warmth construction present"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "7486a0d62a06",
+          "ts": "3044e7fc5d72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:35.967Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "minor",
+        "evidence": "read full block in context; no superlative construction present"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "7486a0d62a06",
+          "ts": "3044e7fc5d72"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:36.003Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "minor",
+        "evidence": "read full block in context; no nonspeakable construction present"
+      }
+    ]
+  }
+}

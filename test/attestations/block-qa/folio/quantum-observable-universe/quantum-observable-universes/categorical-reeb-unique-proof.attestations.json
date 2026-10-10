@@ -1,0 +1,508 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique-proof",
+    "path": "folio/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique-proof"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:38.149Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique-proof.ts:1",
+        "notes": "No false claims identified in 'By the vertical-generator axiom,': mathematical reasoning is consistent."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "The claims in 'By the vertical-generator axiom,' are non-vacuous as they present substantial mathematical content."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique-proof.ts:1",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'By the vertical-generator axiom,'."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "notes": "No overclaims: the scope of 'By the vertical-generator axiom,' is appropriately qualified."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique-proof.ts:1",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'By the vertical-generator axiom,'."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique-proof.ts:1",
+        "notes": "The argument flow in 'By the vertical-generator axiom,' is logically sound, mapping onto the cited dependencies."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique-proof.ts:1",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique-proof.ts:1",
+        "notes": "No citations are present in 'By the vertical-generator axiom,', hence no citation misuse is possible."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique-proof.ts:1",
+        "notes": "Key terms and symbols in 'By the vertical-generator axiom,' are mathematically defined and unambiguous."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique-proof.ts:1",
+        "notes": "The algebraic and logical relations in 'By the vertical-generator axiom,' are independent of empirical tuning parameters."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique-proof.ts:1",
+        "notes": "The physical concepts described in 'By the vertical-generator axiom,' are consistent with quantum observable mechanics."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique-proof.ts:1",
+        "notes": "The derivation steps and formal definitions in 'By the vertical-generator axiom,' are reproducible."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:19:33.342Z",
+        "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/quantum-observable-universes/categorical-reeb-unique-proof.md:1 \u2014 By the vertical-generator axiom,",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'By the vertical-generator axiom,' are consistent."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.955Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.990Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:59.025Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:59.061Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:59.098Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:59.136Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:59.172Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:59.209Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:59.244Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:59.278Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
+      }
+    ]
+  }
+}

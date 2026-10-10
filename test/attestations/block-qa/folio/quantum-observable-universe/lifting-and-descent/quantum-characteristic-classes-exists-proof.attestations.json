@@ -1,0 +1,493 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof",
+    "path": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:28.297Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No false claims identified in 'The jet prolongation (jet prolongation)': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The claims in 'The jet prolongation (jet prolongation)' are non-vacuous as they present substantial mathematical content.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'The jet prolongation (jet prolongation)'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No overclaims: the scope of 'The jet prolongation (jet prolongation)' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'The jet prolongation (jet prolongation)'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The argument flow in 'The jet prolongation (jet prolongation)' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "No citations are present in 'The jet prolongation (jet prolongation)', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Key terms and symbols in 'The jet prolongation (jet prolongation)' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The algebraic and logical relations in 'The jet prolongation (jet prolongation)' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The physical concepts described in 'The jet prolongation (jet prolongation)' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "The derivation steps and formal definitions in 'The jet prolongation (jet prolongation)' are reproducible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/lifting-and-descent/quantum-characteristic-classes-exists-proof.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T10:51:06.075Z",
+        "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'The jet prolongation (jet prolongation)' are consistent."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:43.881Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no assert-by-denial construction; contrasts present are substantive mathematical distinctions or absent."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:43.998Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no setup-then-reframe pivot construction."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:44.100Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no load-bearing spaced dashes; any dashes are ranges or true parentheticals."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:44.143Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no reflex three-item list; enumerations present are substantive."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:44.237Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no quotable-sounding final line."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:44.280Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no narration of emphasis (no 'we emphasize'/'note the framing')."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:44.325Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no block-final restatement of already-established content."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:44.370Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no personal register in institutional prose."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:44.414Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no unqualified maximum-strength claims."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "405b1e330f40",
+          "ts": "71301a6bbc77"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:44.459Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): prose parses aloud; no stalling noun chains."
+      }
+    ]
+  }
+}

@@ -1,0 +1,495 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/e-minus-one",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/e-minus-one"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "b1ce5145bb8a",
+          "ts": "67e21b31dc21"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "b1ce5145bb8a",
+          "ts": "67e21b31dc21"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:44.000Z",
+        "reviewed_sha": "8a21253bc9f480baae34b8ce7b197748802a0ab7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:44.000Z",
+        "reviewed_sha": "8a21253bc9f480baae34b8ce7b197748802a0ab7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:44.000Z",
+        "reviewed_sha": "8a21253bc9f480baae34b8ce7b197748802a0ab7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:44.000Z",
+        "reviewed_sha": "8a21253bc9f480baae34b8ce7b197748802a0ab7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:44.000Z",
+        "reviewed_sha": "8a21253bc9f480baae34b8ce7b197748802a0ab7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:44.000Z",
+        "reviewed_sha": "8a21253bc9f480baae34b8ce7b197748802a0ab7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:44.000Z",
+        "reviewed_sha": "8a21253bc9f480baae34b8ce7b197748802a0ab7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:44.000Z",
+        "reviewed_sha": "8a21253bc9f480baae34b8ce7b197748802a0ab7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:44.000Z",
+        "reviewed_sha": "8a21253bc9f480baae34b8ce7b197748802a0ab7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:44.000Z",
+        "reviewed_sha": "8a21253bc9f480baae34b8ce7b197748802a0ab7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:44.000Z",
+        "reviewed_sha": "8a21253bc9f480baae34b8ce7b197748802a0ab7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:44.000Z",
+        "reviewed_sha": "8a21253bc9f480baae34b8ce7b197748802a0ab7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:44.000Z",
+        "reviewed_sha": "8a21253bc9f480baae34b8ce7b197748802a0ab7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:44.000Z",
+        "reviewed_sha": "8a21253bc9f480baae34b8ce7b197748802a0ab7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq23"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:48:44.000Z",
+        "reviewed_sha": "8a21253bc9f480baae34b8ce7b197748802a0ab7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b1ce5145bb8a",
+          "ts": "67e21b31dc21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:54.200Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of the 4-sentence remark on S_{-1} as skew-mirror bundle. The matter/antimatter clause pair is a genuine perspective contrast (the block's content), not manufactured emphasis; the closer 'The distinction is purely one of orientation in the descent tower' carries the substantive claim (orientation is the ONLY distinction), so it is not a bare restatement.",
+        "notes": "Clean on all ten. FLAGGED (notation, not a trap): the .ts title reads 'E_{-1} as skew-mirror bundle' while the .md writes S_{-1} throughout. Per AGENTS.md 7aa the bare symbol E is deprecated (P/E superseded by the state bundle S); the title should read 'S_{-1}' to match the prose."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b1ce5145bb8a",
+          "ts": "67e21b31dc21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:54.238Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of the 4-sentence remark on S_{-1} as skew-mirror bundle. The matter/antimatter clause pair is a genuine perspective contrast (the block's content), not manufactured emphasis; the closer 'The distinction is purely one of orientation in the descent tower' carries the substantive claim (orientation is the ONLY distinction), so it is not a bare restatement.",
+        "notes": "Clean on all ten. FLAGGED (notation, not a trap): the .ts title reads 'E_{-1} as skew-mirror bundle' while the .md writes S_{-1} throughout. Per AGENTS.md 7aa the bare symbol E is deprecated (P/E superseded by the state bundle S); the title should read 'S_{-1}' to match the prose."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b1ce5145bb8a",
+          "ts": "67e21b31dc21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:54.275Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of the 4-sentence remark on S_{-1} as skew-mirror bundle. The matter/antimatter clause pair is a genuine perspective contrast (the block's content), not manufactured emphasis; the closer 'The distinction is purely one of orientation in the descent tower' carries the substantive claim (orientation is the ONLY distinction), so it is not a bare restatement.",
+        "notes": "Clean on all ten. FLAGGED (notation, not a trap): the .ts title reads 'E_{-1} as skew-mirror bundle' while the .md writes S_{-1} throughout. Per AGENTS.md 7aa the bare symbol E is deprecated (P/E superseded by the state bundle S); the title should read 'S_{-1}' to match the prose."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b1ce5145bb8a",
+          "ts": "67e21b31dc21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:54.314Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of the 4-sentence remark on S_{-1} as skew-mirror bundle. The matter/antimatter clause pair is a genuine perspective contrast (the block's content), not manufactured emphasis; the closer 'The distinction is purely one of orientation in the descent tower' carries the substantive claim (orientation is the ONLY distinction), so it is not a bare restatement.",
+        "notes": "Clean on all ten. FLAGGED (notation, not a trap): the .ts title reads 'E_{-1} as skew-mirror bundle' while the .md writes S_{-1} throughout. Per AGENTS.md 7aa the bare symbol E is deprecated (P/E superseded by the state bundle S); the title should read 'S_{-1}' to match the prose."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b1ce5145bb8a",
+          "ts": "67e21b31dc21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:54.353Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of the 4-sentence remark on S_{-1} as skew-mirror bundle. The matter/antimatter clause pair is a genuine perspective contrast (the block's content), not manufactured emphasis; the closer 'The distinction is purely one of orientation in the descent tower' carries the substantive claim (orientation is the ONLY distinction), so it is not a bare restatement.",
+        "notes": "Clean on all ten. FLAGGED (notation, not a trap): the .ts title reads 'E_{-1} as skew-mirror bundle' while the .md writes S_{-1} throughout. Per AGENTS.md 7aa the bare symbol E is deprecated (P/E superseded by the state bundle S); the title should read 'S_{-1}' to match the prose."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b1ce5145bb8a",
+          "ts": "67e21b31dc21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:54.398Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of the 4-sentence remark on S_{-1} as skew-mirror bundle. The matter/antimatter clause pair is a genuine perspective contrast (the block's content), not manufactured emphasis; the closer 'The distinction is purely one of orientation in the descent tower' carries the substantive claim (orientation is the ONLY distinction), so it is not a bare restatement.",
+        "notes": "Clean on all ten. FLAGGED (notation, not a trap): the .ts title reads 'E_{-1} as skew-mirror bundle' while the .md writes S_{-1} throughout. Per AGENTS.md 7aa the bare symbol E is deprecated (P/E superseded by the state bundle S); the title should read 'S_{-1}' to match the prose."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b1ce5145bb8a",
+          "ts": "67e21b31dc21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:54.441Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of the 4-sentence remark on S_{-1} as skew-mirror bundle. The matter/antimatter clause pair is a genuine perspective contrast (the block's content), not manufactured emphasis; the closer 'The distinction is purely one of orientation in the descent tower' carries the substantive claim (orientation is the ONLY distinction), so it is not a bare restatement.",
+        "notes": "Clean on all ten. FLAGGED (notation, not a trap): the .ts title reads 'E_{-1} as skew-mirror bundle' while the .md writes S_{-1} throughout. Per AGENTS.md 7aa the bare symbol E is deprecated (P/E superseded by the state bundle S); the title should read 'S_{-1}' to match the prose."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b1ce5145bb8a",
+          "ts": "67e21b31dc21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:54.479Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of the 4-sentence remark on S_{-1} as skew-mirror bundle. The matter/antimatter clause pair is a genuine perspective contrast (the block's content), not manufactured emphasis; the closer 'The distinction is purely one of orientation in the descent tower' carries the substantive claim (orientation is the ONLY distinction), so it is not a bare restatement.",
+        "notes": "Clean on all ten. FLAGGED (notation, not a trap): the .ts title reads 'E_{-1} as skew-mirror bundle' while the .md writes S_{-1} throughout. Per AGENTS.md 7aa the bare symbol E is deprecated (P/E superseded by the state bundle S); the title should read 'S_{-1}' to match the prose."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b1ce5145bb8a",
+          "ts": "67e21b31dc21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:54.517Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of the 4-sentence remark on S_{-1} as skew-mirror bundle. The matter/antimatter clause pair is a genuine perspective contrast (the block's content), not manufactured emphasis; the closer 'The distinction is purely one of orientation in the descent tower' carries the substantive claim (orientation is the ONLY distinction), so it is not a bare restatement.",
+        "notes": "Clean on all ten. FLAGGED (notation, not a trap): the .ts title reads 'E_{-1} as skew-mirror bundle' while the .md writes S_{-1} throughout. Per AGENTS.md 7aa the bare symbol E is deprecated (P/E superseded by the state bundle S); the title should read 'S_{-1}' to match the prose."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b1ce5145bb8a",
+          "ts": "67e21b31dc21"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:54.556Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of the 4-sentence remark on S_{-1} as skew-mirror bundle. The matter/antimatter clause pair is a genuine perspective contrast (the block's content), not manufactured emphasis; the closer 'The distinction is purely one of orientation in the descent tower' carries the substantive claim (orientation is the ONLY distinction), so it is not a bare restatement.",
+        "notes": "Clean on all ten. FLAGGED (notation, not a trap): the .ts title reads 'E_{-1} as skew-mirror bundle' while the .md writes S_{-1} throughout. Per AGENTS.md 7aa the bare symbol E is deprecated (P/E superseded by the state bundle S); the title should read 'S_{-1}' to match the prose."
+      }
+    ]
+  }
+}

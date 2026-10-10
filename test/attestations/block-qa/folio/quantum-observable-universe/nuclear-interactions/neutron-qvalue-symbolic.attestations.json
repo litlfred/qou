@@ -1,0 +1,1213 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/neutron-qvalue-symbolic",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/neutron-qvalue-symbolic"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2",
+          "lean": "916688614a38"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2",
+          "lean": "916688614a38"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-no-placeholder-stub": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/lean-proof-vacuity-audit",
+          "agent_date": "2026-07-07T14:26:57.134928Z",
+          "agent_skill": "local/lean-proof-vacuity-audit",
+          "agent_model": "gemini-3.1-pro"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.134928Z",
+        "reviewed_sha": "a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32",
+        "notes": "4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest — real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass."
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "cb659f8c0ffc",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:57:20.124Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "d4168616b98d",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:09.443Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4"
+      },
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.134928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.134928Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "The ansatz-dependency status is correctly externalised to authorNotes (.ts caveat); the '## Relation to the transfer-matrix eigenfunction form' section is a scope/equivalence cross-reference, not mislocated physical motivation."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "cb659f8c0ffc",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:57:20.543Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.134928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.134928Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:35:12.000Z",
+        "reviewed_sha": "bd9b83dafcb9fd961ae615bc1e7dac408668a13f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "cb659f8c0ffc",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:57:21.045Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.134928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.134928Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Archimedean block (Q_β, MeV, q_0 numeric) with the §3b-cond conditional banner at md:1; the library Lean carries the order hypotheses (0<h<2, 1<q) as explicit BorromeanQuark class fields."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "cb659f8c0ffc",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:57:21.328Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.134928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.134928Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Derivation uses abs resolution under 0<h<2 + field_simp — archimedean, and the Lean proof carries those bounds as explicit class hypotheses (h_pos, h_lt_two), matching the statement's side."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "cb659f8c0ffc",
+          "ts": "ce8950017eb2"
+        },
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "ts:46-47 wires computation.witness=codata-masses.witness.json (CODATA masses, not a Q_β witness); prose md:135 names q_parameter.py while ts computation.script=codata_masses.py; q_0 used is muon-anchored (pre-re-pin).",
+        "rebuttal": "partial→survived — q_0 shifts only ~22 ppb between anchors so the 0.17% headline is unaffected and the algebra is exact (0.78365, +0.166%); but the cited witness does not reproduce Q_β and the script names disagree. Recommend a genuine Q_β witness + script reconciliation.",
+        "evidence": [
+          {
+            "text": "neutron-qvalue-symbolic.ts:46-47; .md:135"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+        "severity": "major"
+      },
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.134928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.134928Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Symbolic $Q$-value of free neutron decay' are reproducible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:35:12.000Z",
+        "reviewed_sha": "bd9b83dafcb9fd961ae615bc1e7dac408668a13f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "cb659f8c0ffc",
+          "ts": "ce8950017eb2"
+        },
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "0.17% could be coincidence (audit possibility b); no independent derivation of the |q^2-2q-1| numerator.",
+        "rebuttal": "partial — block claims only 'empirical evidence for the ansatz', not closure; concern is live but disclosed (authorNotes reproduce the (a)/(b) disjunction + cite the audit).",
+        "evidence": [
+          {
+            "text": "neutron-qvalue-symbolic.md:117-124; audit 2026-05-24:27"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.134928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.134928Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Symbolic $Q$-value of free neutron decay' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:35:12.000Z",
+        "reviewed_sha": "bd9b83dafcb9fd961ae615bc1e7dac408668a13f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "cb659f8c0ffc",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "Title 'derived symbolically' + 'predicted, not used as input' smells like derived-status laundering of a fit.",
+        "rebuttal": "rebutted — body+authorNotes explicitly scope to 'conditional on the ansatz ... does not derive it'; cite the 2026-05-24 audit.",
+        "evidence": [
+          {
+            "text": "neutron-qvalue-symbolic.md:117"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.134928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.134928Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No overclaims: the scope of 'Symbolic $Q$-value of free neutron decay' is appropriately qualified.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:35:12.000Z",
+        "reviewed_sha": "bd9b83dafcb9fd961ae615bc1e7dac408668a13f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "cb659f8c0ffc",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "scope": "limited",
+        "ruling": "rebutted",
+        "referee_argument": "theorem neutron_qvalue_symbolic projects class fields (self-assuming risk §3b-cond rule 5).",
+        "rebuttal": "rebutted — the genuinely-derived part Δ(net)=(h^2-2h)/2 is proved by ring from net coefficients in the BorromeanQuark conditional class (non-degenerate); the unproved ansatz is the disclosed gap, not hidden.",
+        "evidence": [
+          {
+            "text": "neutron_qvalue_symbolic.lean:64-70,99-101"
+          }
+        ],
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.134928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.134928Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Symbolic $Q$-value of free neutron decay' presents substantial mathematical content: The $Q$-value of free neutron $\\beta^-$-decay $n \\to p + e^- + \\bar\\nu_e$ is derived symbolically from the categorica...",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:35:12.000Z",
+        "reviewed_sha": "bd9b83dafcb9fd961ae615bc1e7dac408668a13f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "cb659f8c0ffc",
+          "ts": "ce8950017eb2"
+        },
+        "result": "warn",
+        "verdict": "survivable-objection",
+        "referee_argument": "The +0.17% Q_β match rides on the ansatz Q_β=|Δ(net)|·E_0 the cited audit labels 'POSTULATED, NOT DERIVED' (with net != the tr_M-weighted mass) — honestly disclosed, but the wired witness is a CODATA-masses witness (not a Q_β witness) and prose/ts name different scripts, a surviving reproducibility-wiring defect.",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-24",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-06-24T06:07:15Z",
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+        "evidence": "The +0.17% Q_β match rides on the ansatz Q_β=|Δ(net)|·E_0 the cited audit labels 'POSTULATED, NOT DERIVED' (with net != the tr_M-weighted mass) — honestly disclosed, but the wired witness is a CODATA-masses witness (not a Q_β witness) and prose/ts name different scripts, a surviving reproducibility-wiring defect."
+      },
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.134928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.134928Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.lean is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file folio/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.lean is missing entirely, preventing formal verification of the claims in 'Symbolic $Q$-value of free neutron decay'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file folio/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.lean is missing."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:35:12.000Z",
+        "reviewed_sha": "bd9b83dafcb9fd961ae615bc1e7dac408668a13f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.134928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.134928Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Symbolic $Q$-value of free neutron decay': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:35:12.000Z",
+        "reviewed_sha": "bd9b83dafcb9fd961ae615bc1e7dac408668a13f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.134928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.134928Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Symbolic $Q$-value of free neutron decay'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:35:12.000Z",
+        "reviewed_sha": "bd9b83dafcb9fd961ae615bc1e7dac408668a13f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.134928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.134928Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Symbolic $Q$-value of free neutron decay'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:35:12.000Z",
+        "reviewed_sha": "bd9b83dafcb9fd961ae615bc1e7dac408668a13f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.134928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.134928Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'Symbolic $Q$-value of free neutron decay' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:35:12.000Z",
+        "reviewed_sha": "bd9b83dafcb9fd961ae615bc1e7dac408668a13f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.134928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.134928Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.lean is missing, leading to complete divergence.",
+        "severity": "minor",
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.lean is missing, leading to complete divergence."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:35:12.000Z",
+        "reviewed_sha": "bd9b83dafcb9fd961ae615bc1e7dac408668a13f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.134928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.134928Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Symbolic $Q$-value of free neutron decay', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:35:12.000Z",
+        "reviewed_sha": "bd9b83dafcb9fd961ae615bc1e7dac408668a13f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.134928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.134928Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Symbolic $Q$-value of free neutron decay' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:35:12.000Z",
+        "reviewed_sha": "bd9b83dafcb9fd961ae615bc1e7dac408668a13f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.134928Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.134928Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Symbolic $Q$-value of free neutron decay' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:35:12.000Z",
+        "reviewed_sha": "bd9b83dafcb9fd961ae615bc1e7dac408668a13f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq8"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:35:12.000Z",
+        "reviewed_sha": "bd9b83dafcb9fd961ae615bc1e7dac408668a13f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.554Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Header: 'The value $\\mathfrak{Q}_\\beta(n)$ ($H^2$) is the $\\beta$-decay datum being predicted, not used as input.' Plus 'These two forms are not competing predictions; they describe the same observable in two bases.'",
+        "notes": "The first is assertion-by-denial whose positive half is SUPERSEDED. AGENTS.md's 2026-06-26 owner ruling states verbatim that 'Q_beta is the proxy for CAL-2 (D_beta), not \"derived, not a calibration\"', explicitly superseding the 'three measured masses / Q_beta derived' wording this sentence carries. The same header also labels the inputs H^0/H^1/H^2, which the same cheat-sheet rules out ('not three distinct degrees H^0/H^1/H^2' -- all three are DOF of the single H^1(Bring)=2W). Both need the owner's current framing, so structural. VERIFIED SOUND separately: the derivation itself is exact -- Delta(net)=h(h-2)/2 follows from the two displayed NFs and times E_0 gives precisely m_e|q^2-2q-1|(q+1)/(2q^3), reproducing 0.7836 MeV, +0.17%, +1.3 keV."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.602Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the 2026-05-24 ansatz-dependency caveat). Recomputed the whole chain: Delta(net)=h(h-2)/2 follows from the two displayed NFs; times E_0=m_e/(q(q-1)) it gives exactly m_e|q^2-2q-1|(q+1)/(2q^3); at the proton pin Q_beta=0.783645826 MeV, CODATA 0.78233341, +0.168% and +1.31 keV as stated.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.654Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts (incl. the 2026-05-24 ansatz-dependency caveat). Recomputed the whole chain: Delta(net)=h(h-2)/2 follows from the two displayed NFs; times E_0=m_e/(q(q-1)) it gives exactly m_e|q^2-2q-1|(q+1)/(2q^3); at the proton pin Q_beta=0.783645826 MeV, CODATA 0.78233341, +0.168% and +1.31 keV as stated.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.700Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts (incl. the 2026-05-24 ansatz-dependency caveat). Recomputed the whole chain: Delta(net)=h(h-2)/2 follows from the two displayed NFs; times E_0=m_e/(q(q-1)) it gives exactly m_e|q^2-2q-1|(q+1)/(2q^3); at the proton pin Q_beta=0.783645826 MeV, CODATA 0.78233341, +0.168% and +1.31 keV as stated.",
+        "notes": "No reflex three-item list; enumerations present are driven by the underlying content."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.747Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the 2026-05-24 ansatz-dependency caveat). Recomputed the whole chain: Delta(net)=h(h-2)/2 follows from the two displayed NFs; times E_0=m_e/(q(q-1)) it gives exactly m_e|q^2-2q-1|(q+1)/(2q^3); at the proton pin Q_beta=0.783645826 MeV, CODATA 0.78233341, +0.168% and +1.31 keV as stated.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.796Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the 2026-05-24 ansatz-dependency caveat). Recomputed the whole chain: Delta(net)=h(h-2)/2 follows from the two displayed NFs; times E_0=m_e/(q(q-1)) it gives exactly m_e|q^2-2q-1|(q+1)/(2q^3); at the proton pin Q_beta=0.783645826 MeV, CODATA 0.78233341, +0.168% and +1.31 keV as stated.",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.837Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts (incl. the 2026-05-24 ansatz-dependency caveat). Recomputed the whole chain: Delta(net)=h(h-2)/2 follows from the two displayed NFs; times E_0=m_e/(q(q-1)) it gives exactly m_e|q^2-2q-1|(q+1)/(2q^3); at the proton pin Q_beta=0.783645826 MeV, CODATA 0.78233341, +0.168% and +1.31 keV as stated.",
+        "notes": "No block-final sentence restating what the text already established."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.880Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts (incl. the 2026-05-24 ansatz-dependency caveat). Recomputed the whole chain: Delta(net)=h(h-2)/2 follows from the two displayed NFs; times E_0=m_e/(q(q-1)) it gives exactly m_e|q^2-2q-1|(q+1)/(2q^3); at the proton pin Q_beta=0.783645826 MeV, CODATA 0.78233341, +0.168% and +1.31 keV as stated.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.921Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'The $L_+$ and $L_-$ contributions cancel exactly because both nucleons share the same Hopf content at single wrap.' and 'The entire $Q$-value arises from the vacuum channel and the two crossing channels.'",
+        "notes": "NO $L_-$ TERM APPEARS ANYWHERE IN THIS BLOCK. The displayed proton NF is L_+ - (h/2)sigma_0 and the neutron NF is L_+ - h*sigma_0 - (h/2)sigma_1 + (h^2/2)gamma; neither contains L_-. So 'the L_+ and L_- contributions cancel' names a cancellation between one present term and one absent one. What the algebra actually shows is that the two L_+ coefficients are both 1 and subtract. Also flags a CROSS-BLOCK DISAGREEMENT: this block gives Q_calc = 0.7836 MeV (+0.17%) for n->p, while prf:parity-regime-selection's table gives 0.7816 MeV (-0.10%) for the same decay -- 0.25% apart, with opposite error signs. Reported, not resolved."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "0489f32065be",
+          "ts": "ce8950017eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:56.963Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'We derive the $Q$-value of free neutron $\\beta^-$-decay ... symbolically from the categorical three-calibration inputs' -- five-noun subject.",
+        "notes": "Dense but each noun is a defined term of the framework; reads as standard technical prose."
+      }
+    ]
+  }
+}

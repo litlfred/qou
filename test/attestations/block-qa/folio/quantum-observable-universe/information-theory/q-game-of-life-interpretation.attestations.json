@@ -1,0 +1,489 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/information-theory/q-game-of-life-interpretation",
+    "path": "folio/quantum-observable-universe/information-theory/q-game-of-life-interpretation"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical deduction explicitly subsuming discrete ontological structures identically into exact geometric substrates.",
+        "reviewed_at": "2026-07-08T13:43:42.000Z",
+        "reviewed_sha": "5b9d2af0de9d5fa21d9ac1718a98b7a53b0a290d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical deduction explicitly subsuming discrete ontological structures identically into exact geometric substrates.",
+        "reviewed_at": "2026-07-08T13:43:42.000Z",
+        "reviewed_sha": "5b9d2af0de9d5fa21d9ac1718a98b7a53b0a290d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical deduction explicitly subsuming discrete ontological structures identically into exact geometric substrates.",
+        "reviewed_at": "2026-07-08T13:43:42.000Z",
+        "reviewed_sha": "5b9d2af0de9d5fa21d9ac1718a98b7a53b0a290d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical deduction explicitly subsuming discrete ontological structures identically into exact geometric substrates.",
+        "reviewed_at": "2026-07-08T13:43:42.000Z",
+        "reviewed_sha": "5b9d2af0de9d5fa21d9ac1718a98b7a53b0a290d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical deduction explicitly subsuming discrete ontological structures identically into exact geometric substrates.",
+        "reviewed_at": "2026-07-08T13:43:42.000Z",
+        "reviewed_sha": "5b9d2af0de9d5fa21d9ac1718a98b7a53b0a290d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical deduction explicitly subsuming discrete ontological structures identically into exact geometric substrates.",
+        "reviewed_at": "2026-07-08T13:43:42.000Z",
+        "reviewed_sha": "5b9d2af0de9d5fa21d9ac1718a98b7a53b0a290d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical deduction explicitly subsuming discrete ontological structures identically into exact geometric substrates.",
+        "reviewed_at": "2026-07-08T13:43:42.000Z",
+        "reviewed_sha": "5b9d2af0de9d5fa21d9ac1718a98b7a53b0a290d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical deduction explicitly subsuming discrete ontological structures identically into exact geometric substrates.",
+        "reviewed_at": "2026-07-08T13:43:42.000Z",
+        "reviewed_sha": "5b9d2af0de9d5fa21d9ac1718a98b7a53b0a290d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical deduction explicitly subsuming discrete ontological structures identically into exact geometric substrates.",
+        "reviewed_at": "2026-07-08T13:43:42.000Z",
+        "reviewed_sha": "5b9d2af0de9d5fa21d9ac1718a98b7a53b0a290d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical deduction explicitly subsuming discrete ontological structures identically into exact geometric substrates.",
+        "reviewed_at": "2026-07-08T13:43:42.000Z",
+        "reviewed_sha": "5b9d2af0de9d5fa21d9ac1718a98b7a53b0a290d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical deduction explicitly subsuming discrete ontological structures identically into exact geometric substrates.",
+        "reviewed_at": "2026-07-08T13:43:42.000Z",
+        "reviewed_sha": "5b9d2af0de9d5fa21d9ac1718a98b7a53b0a290d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical deduction explicitly subsuming discrete ontological structures identically into exact geometric substrates.",
+        "reviewed_at": "2026-07-08T13:43:42.000Z",
+        "reviewed_sha": "5b9d2af0de9d5fa21d9ac1718a98b7a53b0a290d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical deduction explicitly subsuming discrete ontological structures identically into exact geometric substrates.",
+        "reviewed_at": "2026-07-08T13:43:42.000Z",
+        "reviewed_sha": "5b9d2af0de9d5fa21d9ac1718a98b7a53b0a290d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical deduction explicitly subsuming discrete ontological structures identically into exact geometric substrates.",
+        "reviewed_at": "2026-07-08T13:43:42.000Z",
+        "reviewed_sha": "5b9d2af0de9d5fa21d9ac1718a98b7a53b0a290d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound physical deduction explicitly subsuming discrete ontological structures identically into exact geometric substrates.",
+        "reviewed_at": "2026-07-08T13:43:42.000Z",
+        "reviewed_sha": "5b9d2af0de9d5fa21d9ac1718a98b7a53b0a290d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "a2215d251a31",
+          "ts": "8e4b6e2062e8"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "a2215d251a31",
+          "ts": "8e4b6e2062e8"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "a2215d251a31",
+          "ts": "8e4b6e2062e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:39.206Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "major",
+        "evidence": "read full block in context; no negation-contrast construction present"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "a2215d251a31",
+          "ts": "8e4b6e2062e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:39.245Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "major",
+        "evidence": "read full block in context; no rhetorical-pivot construction present"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "a2215d251a31",
+          "ts": "8e4b6e2062e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:39.284Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "minor",
+        "evidence": "read full block in context; no em-dash construction present"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "a2215d251a31",
+          "ts": "8e4b6e2062e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:39.326Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "minor",
+        "evidence": "read full block in context; no triples construction present"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "a2215d251a31",
+          "ts": "8e4b6e2062e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:39.381Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "major",
+        "evidence": "read full block in context; no closing-aphorism construction present"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "a2215d251a31",
+          "ts": "8e4b6e2062e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:39.421Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "major",
+        "evidence": "read full block in context; no meta-commentary construction present"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "a2215d251a31",
+          "ts": "8e4b6e2062e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:39.464Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "major",
+        "evidence": "read full block in context; no thesis-restatement construction present"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "a2215d251a31",
+          "ts": "8e4b6e2062e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:39.507Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "minor",
+        "evidence": "read full block in context; no performed-warmth construction present"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "a2215d251a31",
+          "ts": "8e4b6e2062e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:39.560Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "minor",
+        "evidence": "'subsumes their construction' is a substantive generalisation claim (their gate is the q->1 limit of the q-Toffoli)"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "a2215d251a31",
+          "ts": "8e4b6e2062e8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b3",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:03:39.611Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "severity": "minor",
+        "evidence": "read full block in context; no nonspeakable construction present"
+      }
+    ]
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/n-equals-1-vacuous-magic-context",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/n-equals-1-vacuous-magic-context"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "bd9fd449b9d9",
+          "ts": "1d5edcdbfbaf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.854Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "'The proof uses only elementary arithmetic. It uses no SDP analysis, Hecke-algebra machinery, or tensor-product manipulation.'",
+        "notes": "Textbook assertion-by-denial: the positive claim is complete in the first sentence, and the second re-asserts it by listing three things that are absent. PROPOSED: delete the second sentence. Not applied -- the three named machineries may be intended as a deliberate contrast with the rest of the chapter, which is an author call."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "bd9fd449b9d9",
+          "ts": "1d5edcdbfbaf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.894Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (3 paragraphs) + .ts. Magic-number claim (empirical series starts at 2) correct.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "bd9fd449b9d9",
+          "ts": "1d5edcdbfbaf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.937Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "One unspaced em-dash, 'strictly magic---just for a vacuous reason'.",
+        "notes": "FIX APPLIED: 'strictly magic—just for a vacuous reason.' -> 'strictly magic, just for a vacuous reason.'"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "bd9fd449b9d9",
+          "ts": "1d5edcdbfbaf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:54.979Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'no SDP analysis, Hecke-algebra machinery, or tensor-product manipulation'.",
+        "notes": "Reflex three-item list of absent things; the count is not driven by the content (any number of unused techniques could be named). Same sentence as the negation-contrast fail; one deletion clears both."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "bd9fd449b9d9",
+          "ts": "1d5edcdbfbaf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:55.019Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (3 paragraphs) + .ts. Magic-number claim (empirical series starts at 2) correct.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "bd9fd449b9d9",
+          "ts": "1d5edcdbfbaf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:55.062Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (3 paragraphs) + .ts. Magic-number claim (empirical series starts at 2) correct.",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "bd9fd449b9d9",
+          "ts": "1d5edcdbfbaf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:55.104Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (3 paragraphs) + .ts. Magic-number claim (empirical series starts at 2) correct.",
+        "notes": "No block-final sentence restating what the text already established."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "bd9fd449b9d9",
+          "ts": "1d5edcdbfbaf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:55.146Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (3 paragraphs) + .ts. Magic-number claim (empirical series starts at 2) correct.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "bd9fd449b9d9",
+          "ts": "1d5edcdbfbaf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:55.187Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (3 paragraphs) + .ts. Magic-number claim (empirical series starts at 2) correct.",
+        "notes": "No unqualified maximum-strength claim; quantitative assertions checked against the block's own arithmetic and cited sources where present."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "bd9fd449b9d9",
+          "ts": "1d5edcdbfbaf"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:55.239Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'The framework's $n = 1$ primality is sometimes glossed as below the lowest shell closure.' and the third paragraph 'The archimedean specialisation invokes real- or complex-analytic constructs...'.",
+        "notes": "Two problems. (1) The 'glossed as below the lowest shell closure' clause does not parse -- 'glossed as' wants a gloss, not a location; a word looks to have been dropped. (2) The third paragraph is the orphaned archimedean banner again, here MUTATED (the 'What follows' opener has been stripped, leaving a bare assertion about a specialisation the block never performs). Fourth instance of the banner defect."
+      }
+    ]
+  }
+}

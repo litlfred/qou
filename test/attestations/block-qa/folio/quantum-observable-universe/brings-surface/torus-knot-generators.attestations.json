@@ -1,0 +1,1091 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/brings-surface/torus-knot-generators",
+    "path": "folio/quantum-observable-universe/brings-surface/torus-knot-generators"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "556a18d8e386",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:19.994Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement is a bare mathematical claim."
+      },
+      {
+        "field_hash": {
+          "md": "f04bc1ad0387",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-statement-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T13:05:07.188Z",
+        "reviewed_sha": "5c56efca34ea54868ebf1b46224834536965bbb4",
+        "severity": "minor",
+        "evidence": "The genus-bound finiteness statement (lines 13-37) is followed by a 'Physical interpretation' section (lines 38-69) with four substantive numbered points of physical interpretation in the same block — 'Lepton generations', 'Quark sector' (T_{3,4} color binding / T_{3,5} weak interaction), 'Saturation', and 'Hyperbolic knots are derived'. The .ts has no interprets: and there is no companion remark holding this interpretation.",
+        "notes": "The bare claim is the (m-1)(n-1)<=8 finiteness of the generator set; the particle-physics reading (lepton generations, quark sector mediators, why no 4th generation) is substantive interpretation that should live in a linked remark."
+      },
+      {
+        "field_hash": {
+          "md": "f4f72605003a",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-27T14:33:06.940Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "severity": "minor",
+        "evidence": "torus-knot-generators.md:38-75: '**Physical interpretation.** 1. **Lepton generations.** ... 2. **Quark sector.** ... 3. **Saturation.** ... 4. **Hyperbolic knots are derived.** ... **Remark on the cutoff.**'",
+        "notes": "The proposition block carries an extensive 'Physical interpretation' section (lepton generations, quark sector, saturation, hyperbolic-knots-derived) plus a 'Remark on the cutoff' — substantive physical-meaning/downstream-consequence prose appended after the statement+proof. No companion `interprets:` remark holds it; the .ts lists only proofs[] and uses[]. This interpretation is mislocated inside the provable block and should move to a linked remark."
+      },
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.002985Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.002985Z",
+        "reviewed_sha": "a4ee56c45c24b7546adeba6c599ed5aa42ef5ff2",
+        "notes": "Stale flag / already addressed: the physical interpretation (lepton generations, quark sector, saturation, hyperbolic knots) lives in the dedicated rem:torus-knot-generators-interpretation block; the proposition .md now carries only the claim + genus bound. Flag describes pre-split content.",
+        "severity": "minor"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "556a18d8e386",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:20.363Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.002985Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.002985Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological enumerator showing how g=4 limits the number of embeddable torus knots to exactly 7 (including the unknot).",
+        "reviewed_at": "2026-07-08T09:42:55.000Z",
+        "reviewed_sha": "2a6334f2f9396c5d1edd11b572464adb585e6d0b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "556a18d8e386",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:20.807Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement respects the chapter's base-ring regime."
+      },
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.002985Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.002985Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Statement is genus/coprime-pair arithmetic over ℕ (g(T_{m,n})=(m-1)(n-1)/2 ≤ 4); no Real.*, MeV, or order-over-ℝ hypothesis. Lean sibling is over ℕ. The chapter is the archimedean Descartes universe, and the combinatorial statement matches it; the leading note flags the ℝ-specialisation framing for any analytic part."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "556a18d8e386",
+          "ts": "e13b575bb7a1",
+          "lean": "8c07903a8fcb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:21.231Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Proof machinery matches the statement regime."
+      },
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-proof-wall-fit-audit",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.002985Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.002985Z",
+        "reviewed_sha": "fcfffff2d6161119deebf0b79b76012244c907be",
+        "notes": "Narrative proof ('Genus bound from χ=-6') is Seifert-genus arithmetic and crossing-change inequalities; Lean proof uses nlinarith/interval_cases/omega over ℕ — no IVT/continuity/Real machinery. Method matches the algebraic/combinatorial statement."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.002985Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.002985Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No demonstrably false algebraic or geometric claims in the narrative statement.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological enumerator showing how g=4 limits the number of embeddable torus knots to exactly 7 (including the unknot).",
+        "reviewed_at": "2026-07-08T09:42:55.000Z",
+        "reviewed_sha": "2a6334f2f9396c5d1edd11b572464adb585e6d0b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.002985Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.002985Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The proof is genuine and sorry-free, formalising the core claim.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological enumerator showing how g=4 limits the number of embeddable torus knots to exactly 7 (including the unknot).",
+        "reviewed_at": "2026-07-08T09:42:55.000Z",
+        "reviewed_sha": "2a6334f2f9396c5d1edd11b572464adb585e6d0b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.002985Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.002985Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The block exhibits post-hoc fitting of parameters and representations to match physical data.",
+        "severity": "minor",
+        "evidence": "The block exhibits post-hoc fitting of parameters and representations to match physical data."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological enumerator showing how g=4 limits the number of embeddable torus knots to exactly 7 (including the unknot).",
+        "reviewed_at": "2026-07-08T09:42:55.000Z",
+        "reviewed_sha": "2a6334f2f9396c5d1edd11b572464adb585e6d0b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.002985Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.002985Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The claims match the scope of the presented material.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological enumerator showing how g=4 limits the number of embeddable torus knots to exactly 7 (including the unknot).",
+        "reviewed_at": "2026-07-08T09:42:55.000Z",
+        "reviewed_sha": "2a6334f2f9396c5d1edd11b572464adb585e6d0b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.002985Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.002985Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "No hidden degrees of freedom or unconstrained parameters found.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological enumerator showing how g=4 limits the number of embeddable torus knots to exactly 7 (including the unknot).",
+        "reviewed_at": "2026-07-08T09:42:55.000Z",
+        "reviewed_sha": "2a6334f2f9396c5d1edd11b572464adb585e6d0b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.002985Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.002985Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The logic chain is sound and has no gaps.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological enumerator showing how g=4 limits the number of embeddable torus knots to exactly 7 (including the unknot).",
+        "reviewed_at": "2026-07-08T09:42:55.000Z",
+        "reviewed_sha": "2a6334f2f9396c5d1edd11b572464adb585e6d0b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.002985Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.002985Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/brings-surface/torus-knot-generators.lean:36:30: error: unknown tactic",
+        "evidence": "folio/quantum-observable-universe/brings-surface/torus-knot-generators.lean:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological enumerator showing how g=4 limits the number of embeddable torus knots to exactly 7 (including the unknot).",
+        "reviewed_at": "2026-07-08T09:42:55.000Z",
+        "reviewed_sha": "2a6334f2f9396c5d1edd11b572464adb585e6d0b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.002985Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.002985Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Citations are used correctly to support the mathematical claims.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological enumerator showing how g=4 limits the number of embeddable torus knots to exactly 7 (including the unknot).",
+        "reviewed_at": "2026-07-08T09:42:55.000Z",
+        "reviewed_sha": "2a6334f2f9396c5d1edd11b572464adb585e6d0b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.002985Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.002985Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Definitions are clear and unambiguous.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological enumerator showing how g=4 limits the number of embeddable torus knots to exactly 7 (including the unknot).",
+        "reviewed_at": "2026-07-08T09:42:55.000Z",
+        "reviewed_sha": "2a6334f2f9396c5d1edd11b572464adb585e6d0b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.002985Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.002985Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The constants are algebraic and not sensitive to small perturbations.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological enumerator showing how g=4 limits the number of embeddable torus knots to exactly 7 (including the unknot).",
+        "reviewed_at": "2026-07-08T09:42:55.000Z",
+        "reviewed_sha": "2a6334f2f9396c5d1edd11b572464adb585e6d0b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.002985Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.002985Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "The physical mapping of torus knots or moduli surfaces to particles/interactions is highly speculative.",
+        "severity": "minor",
+        "evidence": "The physical mapping of torus knots or moduli surfaces to particles/interactions is highly speculative."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological enumerator showing how g=4 limits the number of embeddable torus knots to exactly 7 (including the unknot).",
+        "reviewed_at": "2026-07-08T09:42:55.000Z",
+        "reviewed_sha": "2a6334f2f9396c5d1edd11b572464adb585e6d0b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.002985Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.002985Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Lean sibling fails to compile: folio/quantum-observable-universe/brings-surface/torus-knot-generators.lean:36:30: error: unknown tactic",
+        "evidence": "folio/quantum-observable-universe/brings-surface/torus-knot-generators.lean:1",
+        "severity": "major"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological enumerator showing how g=4 limits the number of embeddable torus knots to exactly 7 (including the unknot).",
+        "reviewed_at": "2026-07-08T09:42:55.000Z",
+        "reviewed_sha": "2a6334f2f9396c5d1edd11b572464adb585e6d0b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.002985Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:55.002985Z",
+        "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
+        "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/torus-knot-generators.lean:36:30: error: unknown tactic",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/torus-knot-generators.lean:36:30: error: unknown tactic",
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: folio/quantum-observable-universe/brings-surface/torus-knot-generators.lean:36:30: error: unknown tactic"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological enumerator showing how g=4 limits the number of embeddable torus knots to exactly 7 (including the unknot).",
+        "reviewed_at": "2026-07-08T09:42:55.000Z",
+        "reviewed_sha": "2a6334f2f9396c5d1edd11b572464adb585e6d0b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Applied Milnor brevity. Removed bloated prose. Un-cluttered internal references. Restructured paragraphs to flow logically.",
+        "reviewed_at": "2026-07-07T14:26:55.002985Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.002985Z"
+        },
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6",
+          "lean": "af0608b25387"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological enumerator showing how g=4 limits the number of embeddable torus knots to exactly 7 (including the unknot).",
+        "reviewed_at": "2026-07-08T09:42:55.000Z",
+        "reviewed_sha": "2a6334f2f9396c5d1edd11b572464adb585e6d0b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:22.141Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full-text read; no negation-contrast construction found in context."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:22.179Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full-text read; no rhetorical-pivot construction found in context."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:22.214Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full-text read; no em-dash construction found in context."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:22.258Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full-text read; no triples construction found in context."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:22.297Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full-text read; no closing-aphorism construction found in context."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:22.333Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full-text read; no meta-commentary construction found in context."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:22.369Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full-text read; no thesis-restatement construction found in context."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:22.405Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full-text read; no performed-warmth construction found in context."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:22.441Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full-text read; no superlative construction found in context."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "118b6ed62b99",
+          "ts": "befda4d6e2a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:22.477Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full-text read; no nonspeakable construction found in context."
+      }
+    ]
+  }
+}

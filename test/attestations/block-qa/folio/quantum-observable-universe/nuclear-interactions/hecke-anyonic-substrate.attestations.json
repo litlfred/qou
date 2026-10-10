@@ -1,0 +1,770 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/hecke-anyonic-substrate",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/hecke-anyonic-substrate"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "b71a08149436",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "b71a08149436",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "e6e7f31adc6f",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "e6e7f31adc6f",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "e6e7f31adc6f",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' is unverified because the formal proof in folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean is incomplete (contains sorry).",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "e6e7f31adc6f",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claims in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' are non-vacuous as they make concrete conjectures about '$T_w \\in H_n(R, q)$ be its Hecke normal form at generic deformation parameter $q$. Then the topological statistics of...'.",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "e6e7f31adc6f",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "e6e7f31adc6f",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' presents the result as established, but the Lean formalization in folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean is incomplete (has sorry).",
+        "severity": "minor",
+        "evidence": "The prose in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' presents the result as established, but the Lean formalization in folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean is incomplete (has sorry)."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "e6e7f31adc6f",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "e6e7f31adc6f",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The argument flow in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "e6e7f31adc6f",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean uses a class-conjecture pattern, matching the conjectural nature of 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation'.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "e6e7f31adc6f",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Citations to kassel1995, kitaev2006, nayak2008, khovanovlauda2009 are correct and contextually appropriate.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "e6e7f31adc6f",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "e6e7f31adc6f",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "e6e7f31adc6f",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "e6e7f31adc6f",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The derivation steps and formal definitions in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' are reproducible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "e6e7f31adc6f",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
+        "severity": "minor",
+        "verdict": "survivable-objection",
+        "referee_argument": "The conjectured relations in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' remain unproven and are represented only by sorry stubs in the formalization folio/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean.",
+        "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq16 enforcing Milnor brevity. Cleaned up the intro, replacing conversational 'We conjecture ... We then exhibit' with succinct declarations. Streamlined the conditional theorem and conjecture blocks.",
+        "reviewed_at": "2026-07-07T14:26:57.158688Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.158688Z"
+        },
+        "field_hash": {
+          "md": "e6e7f31adc6f",
+          "ts": "88c9a8029cf2",
+          "lean": "873856865a4a"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-11T03:37:40.000Z",
+        "reviewed_sha": "ba76f86044efc8b82f9fa1e9e7ac0faa2e64517d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-11"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b71a08149436",
+          "ts": "88c9a8029cf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:06:54.080Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the conjecture, its three named parts, and the two follow-on paragraphs. 'Bosonic and fermionic statistics are not fundamental. They emerge as the image of anyonic braiding under tau.' is the conjecture's actual content (emergence is the claim), so it is substantive contrast. Cited keys kitaev2006, nayak2008, khovanovlauda2009, kassel1995 all appear in the .ts cites. No em-dash, no aphorism at the block end (the closer names the missing ingredient, the cyclotomic-KLR equivalence), no warmth, no meta-narration.",
+        "notes": "Kept as substantive contrast."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b71a08149436",
+          "ts": "88c9a8029cf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:06:54.117Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the conjecture, its three named parts, and the two follow-on paragraphs. 'Bosonic and fermionic statistics are not fundamental. They emerge as the image of anyonic braiding under tau.' is the conjecture's actual content (emergence is the claim), so it is substantive contrast. Cited keys kitaev2006, nayak2008, khovanovlauda2009, kassel1995 all appear in the .ts cites. No em-dash, no aphorism at the block end (the closer names the missing ingredient, the cyclotomic-KLR equivalence), no warmth, no meta-narration.",
+        "notes": "No pivot."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b71a08149436",
+          "ts": "88c9a8029cf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:06:54.156Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the conjecture, its three named parts, and the two follow-on paragraphs. 'Bosonic and fermionic statistics are not fundamental. They emerge as the image of anyonic braiding under tau.' is the conjecture's actual content (emergence is the claim), so it is substantive contrast. Cited keys kitaev2006, nayak2008, khovanovlauda2009, kassel1995 all appear in the .ts cites. No em-dash, no aphorism at the block end (the closer names the missing ingredient, the cyclotomic-KLR equivalence), no warmth, no meta-narration.",
+        "notes": "Zero em-dashes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b71a08149436",
+          "ts": "88c9a8029cf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:06:54.195Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the conjecture, its three named parts, and the two follow-on paragraphs. 'Bosonic and fermionic statistics are not fundamental. They emerge as the image of anyonic braiding under tau.' is the conjecture's actual content (emergence is the claim), so it is substantive contrast. Cited keys kitaev2006, nayak2008, khovanovlauda2009, kassel1995 all appear in the .ts cites. No em-dash, no aphorism at the block end (the closer names the missing ingredient, the cyclotomic-KLR equivalence), no warmth, no meta-narration.",
+        "notes": "No reflex triple."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b71a08149436",
+          "ts": "88c9a8029cf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:06:54.269Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the conjecture, its three named parts, and the two follow-on paragraphs. 'Bosonic and fermionic statistics are not fundamental. They emerge as the image of anyonic braiding under tau.' is the conjecture's actual content (emergence is the claim), so it is substantive contrast. Cited keys kitaev2006, nayak2008, khovanovlauda2009, kassel1995 all appear in the .ts cites. No em-dash, no aphorism at the block end (the closer names the missing ingredient, the cyclotomic-KLR equivalence), no warmth, no meta-narration.",
+        "notes": "The block-final sentence states what a proof would require; 'No particle escapes the anyonic substrate prior to observation' is quotable-shaped but sits mid-paragraph and states the exhaustion claim being conjectured."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b71a08149436",
+          "ts": "88c9a8029cf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:06:54.316Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the conjecture, its three named parts, and the two follow-on paragraphs. 'Bosonic and fermionic statistics are not fundamental. They emerge as the image of anyonic braiding under tau.' is the conjecture's actual content (emergence is the claim), so it is substantive contrast. Cited keys kitaev2006, nayak2008, khovanovlauda2009, kassel1995 all appear in the .ts cites. No em-dash, no aphorism at the block end (the closer names the missing ingredient, the cyclotomic-KLR equivalence), no warmth, no meta-narration.",
+        "notes": "No narrated emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b71a08149436",
+          "ts": "88c9a8029cf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:06:54.361Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the conjecture, its three named parts, and the two follow-on paragraphs. 'Bosonic and fermionic statistics are not fundamental. They emerge as the image of anyonic braiding under tau.' is the conjecture's actual content (emergence is the claim), so it is substantive contrast. Cited keys kitaev2006, nayak2008, khovanovlauda2009, kassel1995 all appear in the .ts cites. No em-dash, no aphorism at the block end (the closer names the missing ingredient, the cyclotomic-KLR equivalence), no warmth, no meta-narration.",
+        "notes": "No restating closer."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b71a08149436",
+          "ts": "88c9a8029cf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:06:54.404Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the conjecture, its three named parts, and the two follow-on paragraphs. 'Bosonic and fermionic statistics are not fundamental. They emerge as the image of anyonic braiding under tau.' is the conjecture's actual content (emergence is the claim), so it is substantive contrast. Cited keys kitaev2006, nayak2008, khovanovlauda2009, kassel1995 all appear in the .ts cites. No em-dash, no aphorism at the block end (the closer names the missing ingredient, the cyclotomic-KLR equivalence), no warmth, no meta-narration.",
+        "notes": "Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b71a08149436",
+          "ts": "88c9a8029cf2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:06:54.444Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the conjecture, its three named parts, and the two follow-on paragraphs. 'Bosonic and fermionic statistics are not fundamental. They emerge as the image of anyonic braiding under tau.' is the conjecture's actual content (emergence is the claim), so it is substantive contrast. Cited keys kitaev2006, nayak2008, khovanovlauda2009, kassel1995 all appear in the .ts cites. No em-dash, no aphorism at the block end (the closer names the missing ingredient, the cyclotomic-KLR equivalence), no warmth, no meta-narration.",
+        "notes": "'Every particle ... is an anyon' is the conjecture's scope, correctly carried by a conjecture block."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b71a08149436",
+          "ts": "88c9a8029cf2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:06:54.482Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full read of the conjecture, its three named parts, and the two follow-on paragraphs. 'Bosonic and fermionic statistics are not fundamental. They emerge as the image of anyonic braiding under tau.' is the conjecture's actual content (emergence is the claim), so it is substantive contrast. Cited keys kitaev2006, nayak2008, khovanovlauda2009, kassel1995 all appear in the .ts cites. No em-dash, no aphorism at the block end (the closer names the missing ingredient, the cyclotomic-KLR equivalence), no warmth, no meta-narration. Recorded here to carry the SS7a finding, which is the substantive issue with this block; the prose itself is speakable.",
+        "notes": "NOT A STYLE FIX - MATH/NOTATION FINDING, reported not applied. The block writes the Hecke generator as T_{s_i} and its quadratic relation as (T_{s_i} - q)(T_{s_i} + 1) = 0. AGENTS.md SS7a is STRICT on both points: the generator is sigma_i, NEVER T, and the relation is (sigma_i - q)(sigma_i + q^{-1}) = 0, equivalently sigma_i^2 = (q - q^{-1}) sigma_i + 1. The form printed here is the OTHER standard normalisation (eigenvalues q and -1 rather than q and -q^{-1}); it is not wrong mathematics but it is a different normalisation from the repo's, and mixing the two silently changes the Markov-trace and skein normalisations downstream. Note the sibling thm:groebner-shirshov-energy in this same chapter uses the SS7a form sigma_i^2 = (q - q^{-1}) sigma_i + 1, so the two blocks currently disagree. The .ts lean ref (QOU.IwahoriHecke.Tw....) suggests the T_w spelling is entrenched, so this needs an ontologist/owner decision rather than an inline edit."
+      }
+    ]
+  }
+}

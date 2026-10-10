@@ -1,0 +1,675 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/information-theory/speed-of-light-regimes-lieb-robinson",
+    "path": "folio/quantum-observable-universe/information-theory/speed-of-light-regimes-lieb-robinson"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric derivation cleanly isolating finite continuous signal bounds firmly within discrete sequence limits.",
+        "reviewed_at": "2026-07-08T13:52:37.000Z",
+        "reviewed_sha": "ef6a3d35957dab33dc5e5507382d75d36ea1ee8d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric derivation cleanly isolating finite continuous signal bounds firmly within discrete sequence limits.",
+        "reviewed_at": "2026-07-08T13:52:37.000Z",
+        "reviewed_sha": "ef6a3d35957dab33dc5e5507382d75d36ea1ee8d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric derivation cleanly isolating finite continuous signal bounds firmly within discrete sequence limits.",
+        "reviewed_at": "2026-07-08T13:52:37.000Z",
+        "reviewed_sha": "ef6a3d35957dab33dc5e5507382d75d36ea1ee8d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric derivation cleanly isolating finite continuous signal bounds firmly within discrete sequence limits.",
+        "reviewed_at": "2026-07-08T13:52:37.000Z",
+        "reviewed_sha": "ef6a3d35957dab33dc5e5507382d75d36ea1ee8d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric derivation cleanly isolating finite continuous signal bounds firmly within discrete sequence limits.",
+        "reviewed_at": "2026-07-08T13:52:37.000Z",
+        "reviewed_sha": "ef6a3d35957dab33dc5e5507382d75d36ea1ee8d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric derivation cleanly isolating finite continuous signal bounds firmly within discrete sequence limits.",
+        "reviewed_at": "2026-07-08T13:52:37.000Z",
+        "reviewed_sha": "ef6a3d35957dab33dc5e5507382d75d36ea1ee8d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric derivation cleanly isolating finite continuous signal bounds firmly within discrete sequence limits.",
+        "reviewed_at": "2026-07-08T13:52:37.000Z",
+        "reviewed_sha": "ef6a3d35957dab33dc5e5507382d75d36ea1ee8d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric derivation cleanly isolating finite continuous signal bounds firmly within discrete sequence limits.",
+        "reviewed_at": "2026-07-08T13:52:37.000Z",
+        "reviewed_sha": "ef6a3d35957dab33dc5e5507382d75d36ea1ee8d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric derivation cleanly isolating finite continuous signal bounds firmly within discrete sequence limits.",
+        "reviewed_at": "2026-07-08T13:52:37.000Z",
+        "reviewed_sha": "ef6a3d35957dab33dc5e5507382d75d36ea1ee8d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric derivation cleanly isolating finite continuous signal bounds firmly within discrete sequence limits.",
+        "reviewed_at": "2026-07-08T13:52:37.000Z",
+        "reviewed_sha": "ef6a3d35957dab33dc5e5507382d75d36ea1ee8d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric derivation cleanly isolating finite continuous signal bounds firmly within discrete sequence limits.",
+        "reviewed_at": "2026-07-08T13:52:37.000Z",
+        "reviewed_sha": "ef6a3d35957dab33dc5e5507382d75d36ea1ee8d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric derivation cleanly isolating finite continuous signal bounds firmly within discrete sequence limits.",
+        "reviewed_at": "2026-07-08T13:52:37.000Z",
+        "reviewed_sha": "ef6a3d35957dab33dc5e5507382d75d36ea1ee8d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric derivation cleanly isolating finite continuous signal bounds firmly within discrete sequence limits.",
+        "reviewed_at": "2026-07-08T13:52:37.000Z",
+        "reviewed_sha": "ef6a3d35957dab33dc5e5507382d75d36ea1ee8d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric derivation cleanly isolating finite continuous signal bounds firmly within discrete sequence limits.",
+        "reviewed_at": "2026-07-08T13:52:37.000Z",
+        "reviewed_sha": "ef6a3d35957dab33dc5e5507382d75d36ea1ee8d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is clear, concise, and satisfies all criteria. No vacuous claims, definitions are unambiguous, and physical claims are physically plausible.",
+        "reviewed_at": "2026-07-07T23:34:28.810087+00:00",
+        "reviewed_sha": "HEAD",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric derivation cleanly isolating finite continuous signal bounds firmly within discrete sequence limits.",
+        "reviewed_at": "2026-07-08T13:52:37.000Z",
+        "reviewed_sha": "ef6a3d35957dab33dc5e5507382d75d36ea1ee8d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "ce0d09e52c67",
+          "ts": "f30a5ea13bb4"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "ce0d09e52c67",
+          "ts": "f30a5ea13bb4"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ce0d09e52c67",
+          "ts": "f30a5ea13bb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:27.869Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "'This is **not** 1' is load-bearing disambiguation against the c=1 natural-units misreading"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ce0d09e52c67",
+          "ts": "f30a5ea13bb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:27.908Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ce0d09e52c67",
+          "ts": "f30a5ea13bb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:27.945Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "one spaced '---' appending 'but that obscures the physics'; single instance, no density"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ce0d09e52c67",
+          "ts": "f30a5ea13bb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:27.982Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ce0d09e52c67",
+          "ts": "f30a5ea13bb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:28.022Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ce0d09e52c67",
+          "ts": "f30a5ea13bb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:28.061Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ce0d09e52c67",
+          "ts": "f30a5ea13bb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:28.123Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ce0d09e52c67",
+          "ts": "f30a5ea13bb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:28.161Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ce0d09e52c67",
+          "ts": "f30a5ea13bb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:28.201Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ce0d09e52c67",
+          "ts": "f30a5ea13bb4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:it-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:04:28.240Z",
+        "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
+        "evidence": "full-block agent read; no such construction present"
+      }
+    ]
+  }
+}

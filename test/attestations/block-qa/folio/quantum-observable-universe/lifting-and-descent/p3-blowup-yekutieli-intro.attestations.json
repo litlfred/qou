@@ -1,0 +1,181 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli-intro",
+    "path": "folio/quantum-observable-universe/lifting-and-descent/p3-blowup-yekutieli-intro"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "8649047c376b",
+          "ts": "613dd7c17306"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:40.299Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no assert-by-denial construction; contrasts present are substantive mathematical distinctions or absent."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "8649047c376b",
+          "ts": "613dd7c17306"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:40.343Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no setup-then-reframe pivot construction."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "8649047c376b",
+          "ts": "613dd7c17306"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:40.397Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no load-bearing spaced dashes; any dashes are ranges or true parentheticals."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "8649047c376b",
+          "ts": "613dd7c17306"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:40.444Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no reflex three-item list; enumerations present are substantive."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "8649047c376b",
+          "ts": "613dd7c17306"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:40.484Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no quotable-sounding final line."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "8649047c376b",
+          "ts": "613dd7c17306"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:40.523Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no narration of emphasis (no 'we emphasize'/'note the framing')."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "8649047c376b",
+          "ts": "613dd7c17306"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:40.562Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no block-final restatement of already-established content."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "8649047c376b",
+          "ts": "613dd7c17306"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:40.606Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no personal register in institutional prose."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "8649047c376b",
+          "ts": "613dd7c17306"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:40.646Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no unqualified maximum-strength claims."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "8649047c376b",
+          "ts": "613dd7c17306"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:40.688Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): prose parses aloud; no stalling noun chains."
+      }
+    ]
+  }
+}

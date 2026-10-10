@@ -1,0 +1,484 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/gauge-conformal-invariance-proof",
+    "path": "folio/quantum-observable-universe/predicted-spectra/gauge-conformal-invariance-proof"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:55:37.000Z",
+        "reviewed_sha": "d72389761431d3693a5c7d9bb58862987f4198a7",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:38.874Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (a three-sentence proof plus a six-sentence commentary paragraph). 'the poles do not slide independently' is a substantive dynamical claim, not emphasis-by-denial. No pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence states the locked Balmer/Cemetery separation, which is the block's content), no narrated emphasis, no warm register."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:38.961Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (a three-sentence proof plus a six-sentence commentary paragraph). 'the poles do not slide independently' is a substantive dynamical claim, not emphasis-by-denial. No pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence states the locked Balmer/Cemetery separation, which is the block's content), no narrated emphasis, no warm register."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:39.034Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (a three-sentence proof plus a six-sentence commentary paragraph). 'the poles do not slide independently' is a substantive dynamical claim, not emphasis-by-denial. No pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence states the locked Balmer/Cemetery separation, which is the block's content), no narrated emphasis, no warm register."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:39.090Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (a three-sentence proof plus a six-sentence commentary paragraph). 'the poles do not slide independently' is a substantive dynamical claim, not emphasis-by-denial. No pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence states the locked Balmer/Cemetery separation, which is the block's content), no narrated emphasis, no warm register."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:39.141Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (a three-sentence proof plus a six-sentence commentary paragraph). 'the poles do not slide independently' is a substantive dynamical claim, not emphasis-by-denial. No pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence states the locked Balmer/Cemetery separation, which is the block's content), no narrated emphasis, no warm register."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:39.201Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (a three-sentence proof plus a six-sentence commentary paragraph). 'the poles do not slide independently' is a substantive dynamical claim, not emphasis-by-denial. No pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence states the locked Balmer/Cemetery separation, which is the block's content), no narrated emphasis, no warm register."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:39.291Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "The post-QED paragraph restates the proof's own conclusion. The proof ends 'This preserves the exactness of the eigenspace ratio.'; the commentary then says 'The relative ratios of the eigenspaces remain strictly preserved.' - same claim, one intensifier added - and thm:gauge-conformal-invariance has already stated it a third time ('the relative ratio of their eigenspaces is invariant'). Three statements of one claim across a block and its parent.",
+        "notes": "Structural, not edited. Proposed fix: delete 'The relative ratios of the eigenspaces remain strictly preserved.' from the commentary; the sentence on either side of it ('the poles do not slide independently' and 'The mathematical distance ... is structurally locked') already carry the consequence, which is what the commentary is for."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:39.246Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (a three-sentence proof plus a six-sentence commentary paragraph). 'the poles do not slide independently' is a substantive dynamical claim, not emphasis-by-denial. No pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence states the locked Balmer/Cemetery separation, which is the block's content), no narrated emphasis, no warm register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:39.338Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "'strictly bound', 'strictly preserved', 'structurally locked' are intensifiers rather than superlatives; no maximum-strength ranking claim is made.",
+        "notes": "Reported to the batch as an intensifier cluster (the de-hedging sweep pattern): 'strictly' twice and 'structurally' once here, plus 'structurally required' in the sibling rem:gauge-conformal-invariance-interpretation. Each adverb is doing rhetorical rather than mathematical work - 'preserved' and 'locked' are already absolute."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:39.398Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "Three nominalised, agentless sentences, two of them opaque: 'Direct algebraic verification on the Hecke eigenvalues isolates the conformal scaling as a global factor.' (four-word nominal subject), 'For eigenvalues structured as words in $q$, the relative quotient factors through the fundamental algebra relations.' ('the relative quotient' is never defined and the sentence has no recoverable referent), and 'The mathematical distance between a primary Balmer transition and a higher-order Cemetery group spike is structurally locked.' (two long noun phrases bracketing a copula).",
+        "notes": "Structural, not edited. Two content defects reported to the batch alongside it: (1) 'All eigenvalues remain strictly bound to words of the generators $q$ and $q^{-1}$' calls q and q^-1 GENERATORS - per 7a the generators are sigma_i and q is the deformation parameter; the intended claim is presumably that eigenvalues are Laurent monomials in q. (2) The proof proper is three assertions and a QED box with no argument: 'direct algebraic verification' names a method without performing it, and 'factors through the fundamental algebra relations' names no relation. Also, the block invokes the Cemetery group without a uses[] edge to def:cemetery-group (which does exist, in knots-particles-confinement/)."
+      }
+    ]
+  }
+}

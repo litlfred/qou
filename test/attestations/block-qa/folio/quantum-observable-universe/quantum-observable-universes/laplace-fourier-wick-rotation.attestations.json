@@ -1,0 +1,489 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/quantum-observable-universes/laplace-fourier-wick-rotation",
+    "path": "folio/quantum-observable-universe/quantum-observable-universes/laplace-fourier-wick-rotation"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "17269da005a1",
+          "ts": "142a51fb9065"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "17269da005a1",
+          "ts": "142a51fb9065"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "17269da005a1",
+          "ts": "142a51fb9065"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:33:11.331Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: remark on def:categorical-fourier. Math checked: F[f](xi) = L[f](i xi) is the standard Wick relation (Fourier is Laplace on the imaginary axis). The heat/Schroedinger pair d_t u = -Delta_q u and i d_t u = -Delta_q u is internally consistent with a positive Delta_q (matching the (s+Delta_q)^{-1} resolvent in the sibling intro block) under the t -> -it rotation direction. Register checked sentence by sentence: no negation-contrast, no pivot, no dash, no triple, no announced emphasis; the final sentence is a technical scope condition ('where a primitive fourth root of unity exists'), not a quotable closer.",
+        "notes": "No trap. Two notes, neither a trap and neither fixed: (1) the symbol 'tau = t + i Theta' collides twice with reserved notation -- see the returned anomaly list; (2) 'securing base-ring independence' is an odd verb choice for what is really a base-ring *condition*."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "17269da005a1",
+          "ts": "142a51fb9065"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:33:11.374Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: remark on def:categorical-fourier. Math checked: F[f](xi) = L[f](i xi) is the standard Wick relation (Fourier is Laplace on the imaginary axis). The heat/Schroedinger pair d_t u = -Delta_q u and i d_t u = -Delta_q u is internally consistent with a positive Delta_q (matching the (s+Delta_q)^{-1} resolvent in the sibling intro block) under the t -> -it rotation direction. Register checked sentence by sentence: no negation-contrast, no pivot, no dash, no triple, no announced emphasis; the final sentence is a technical scope condition ('where a primitive fourth root of unity exists'), not a quotable closer.",
+        "notes": "No trap. Two notes, neither a trap and neither fixed: (1) the symbol 'tau = t + i Theta' collides twice with reserved notation -- see the returned anomaly list; (2) 'securing base-ring independence' is an odd verb choice for what is really a base-ring *condition*."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "17269da005a1",
+          "ts": "142a51fb9065"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:33:11.417Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: remark on def:categorical-fourier. Math checked: F[f](xi) = L[f](i xi) is the standard Wick relation (Fourier is Laplace on the imaginary axis). The heat/Schroedinger pair d_t u = -Delta_q u and i d_t u = -Delta_q u is internally consistent with a positive Delta_q (matching the (s+Delta_q)^{-1} resolvent in the sibling intro block) under the t -> -it rotation direction. Register checked sentence by sentence: no negation-contrast, no pivot, no dash, no triple, no announced emphasis; the final sentence is a technical scope condition ('where a primitive fourth root of unity exists'), not a quotable closer.",
+        "notes": "No trap. Two notes, neither a trap and neither fixed: (1) the symbol 'tau = t + i Theta' collides twice with reserved notation -- see the returned anomaly list; (2) 'securing base-ring independence' is an odd verb choice for what is really a base-ring *condition*."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "17269da005a1",
+          "ts": "142a51fb9065"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:33:11.457Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: remark on def:categorical-fourier. Math checked: F[f](xi) = L[f](i xi) is the standard Wick relation (Fourier is Laplace on the imaginary axis). The heat/Schroedinger pair d_t u = -Delta_q u and i d_t u = -Delta_q u is internally consistent with a positive Delta_q (matching the (s+Delta_q)^{-1} resolvent in the sibling intro block) under the t -> -it rotation direction. Register checked sentence by sentence: no negation-contrast, no pivot, no dash, no triple, no announced emphasis; the final sentence is a technical scope condition ('where a primitive fourth root of unity exists'), not a quotable closer.",
+        "notes": "No trap. Two notes, neither a trap and neither fixed: (1) the symbol 'tau = t + i Theta' collides twice with reserved notation -- see the returned anomaly list; (2) 'securing base-ring independence' is an odd verb choice for what is really a base-ring *condition*."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "17269da005a1",
+          "ts": "142a51fb9065"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:33:11.501Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: remark on def:categorical-fourier. Math checked: F[f](xi) = L[f](i xi) is the standard Wick relation (Fourier is Laplace on the imaginary axis). The heat/Schroedinger pair d_t u = -Delta_q u and i d_t u = -Delta_q u is internally consistent with a positive Delta_q (matching the (s+Delta_q)^{-1} resolvent in the sibling intro block) under the t -> -it rotation direction. Register checked sentence by sentence: no negation-contrast, no pivot, no dash, no triple, no announced emphasis; the final sentence is a technical scope condition ('where a primitive fourth root of unity exists'), not a quotable closer.",
+        "notes": "No trap. Two notes, neither a trap and neither fixed: (1) the symbol 'tau = t + i Theta' collides twice with reserved notation -- see the returned anomaly list; (2) 'securing base-ring independence' is an odd verb choice for what is really a base-ring *condition*."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "17269da005a1",
+          "ts": "142a51fb9065"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:33:11.545Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: remark on def:categorical-fourier. Math checked: F[f](xi) = L[f](i xi) is the standard Wick relation (Fourier is Laplace on the imaginary axis). The heat/Schroedinger pair d_t u = -Delta_q u and i d_t u = -Delta_q u is internally consistent with a positive Delta_q (matching the (s+Delta_q)^{-1} resolvent in the sibling intro block) under the t -> -it rotation direction. Register checked sentence by sentence: no negation-contrast, no pivot, no dash, no triple, no announced emphasis; the final sentence is a technical scope condition ('where a primitive fourth root of unity exists'), not a quotable closer.",
+        "notes": "No trap. Two notes, neither a trap and neither fixed: (1) the symbol 'tau = t + i Theta' collides twice with reserved notation -- see the returned anomaly list; (2) 'securing base-ring independence' is an odd verb choice for what is really a base-ring *condition*."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "17269da005a1",
+          "ts": "142a51fb9065"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:33:11.587Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: remark on def:categorical-fourier. Math checked: F[f](xi) = L[f](i xi) is the standard Wick relation (Fourier is Laplace on the imaginary axis). The heat/Schroedinger pair d_t u = -Delta_q u and i d_t u = -Delta_q u is internally consistent with a positive Delta_q (matching the (s+Delta_q)^{-1} resolvent in the sibling intro block) under the t -> -it rotation direction. Register checked sentence by sentence: no negation-contrast, no pivot, no dash, no triple, no announced emphasis; the final sentence is a technical scope condition ('where a primitive fourth root of unity exists'), not a quotable closer.",
+        "notes": "No trap. Two notes, neither a trap and neither fixed: (1) the symbol 'tau = t + i Theta' collides twice with reserved notation -- see the returned anomaly list; (2) 'securing base-ring independence' is an odd verb choice for what is really a base-ring *condition*."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "17269da005a1",
+          "ts": "142a51fb9065"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:33:11.629Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: remark on def:categorical-fourier. Math checked: F[f](xi) = L[f](i xi) is the standard Wick relation (Fourier is Laplace on the imaginary axis). The heat/Schroedinger pair d_t u = -Delta_q u and i d_t u = -Delta_q u is internally consistent with a positive Delta_q (matching the (s+Delta_q)^{-1} resolvent in the sibling intro block) under the t -> -it rotation direction. Register checked sentence by sentence: no negation-contrast, no pivot, no dash, no triple, no announced emphasis; the final sentence is a technical scope condition ('where a primitive fourth root of unity exists'), not a quotable closer.",
+        "notes": "No trap. Two notes, neither a trap and neither fixed: (1) the symbol 'tau = t + i Theta' collides twice with reserved notation -- see the returned anomaly list; (2) 'securing base-ring independence' is an odd verb choice for what is really a base-ring *condition*."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "17269da005a1",
+          "ts": "142a51fb9065"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:33:11.671Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: remark on def:categorical-fourier. Math checked: F[f](xi) = L[f](i xi) is the standard Wick relation (Fourier is Laplace on the imaginary axis). The heat/Schroedinger pair d_t u = -Delta_q u and i d_t u = -Delta_q u is internally consistent with a positive Delta_q (matching the (s+Delta_q)^{-1} resolvent in the sibling intro block) under the t -> -it rotation direction. Register checked sentence by sentence: no negation-contrast, no pivot, no dash, no triple, no announced emphasis; the final sentence is a technical scope condition ('where a primitive fourth root of unity exists'), not a quotable closer.",
+        "notes": "No trap. Two notes, neither a trap and neither fixed: (1) the symbol 'tau = t + i Theta' collides twice with reserved notation -- see the returned anomaly list; (2) 'securing base-ring independence' is an odd verb choice for what is really a base-ring *condition*."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "17269da005a1",
+          "ts": "142a51fb9065"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:33:11.714Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: remark on def:categorical-fourier. Math checked: F[f](xi) = L[f](i xi) is the standard Wick relation (Fourier is Laplace on the imaginary axis). The heat/Schroedinger pair d_t u = -Delta_q u and i d_t u = -Delta_q u is internally consistent with a positive Delta_q (matching the (s+Delta_q)^{-1} resolvent in the sibling intro block) under the t -> -it rotation direction. Register checked sentence by sentence: no negation-contrast, no pivot, no dash, no triple, no announced emphasis; the final sentence is a technical scope condition ('where a primitive fourth root of unity exists'), not a quotable closer.",
+        "notes": "No trap. Two notes, neither a trap and neither fixed: (1) the symbol 'tau = t + i Theta' collides twice with reserved notation -- see the returned anomaly list; (2) 'securing base-ring independence' is an odd verb choice for what is really a base-ring *condition*."
+      }
+    ]
+  }
+}

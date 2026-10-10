@@ -1,0 +1,489 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/quantum-observable-universes/frobenius-simplification",
+    "path": "folio/quantum-observable-universe/quantum-observable-universes/frobenius-simplification"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "a2df3a29ad48",
+          "ts": "b2a2c3135690"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "a2df3a29ad48",
+          "ts": "b2a2c3135690"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "a2df3a29ad48",
+          "ts": "b2a2c3135690"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:17.698Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 2-sentence remark. No negation-contrast, pivot, dash, triple, aphorism, meta-commentary, thesis restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH FLAG (not a trap, reported not fixed): the stated reason is wrong. 'The non-degeneracy of the Frobenius form forces H^0(M, Ad(A)) = 0, as any global parallel section in the adjoint representation would pair with itself against the irreducibility constraint.' A non-zero invariant section pairing non-trivially with itself is not a contradiction - non-degeneracy does not force the vanishing. The corpus's own proof of this fact (prf:fiber-adjoint-involution) derives it from SU(2) emergence plus SCHUR'S LEMMA on the 3-dimensional irreducible adjoint representation. This is the same mis-attribution to int_A / non-degeneracy that closes prf:fiber-adjoint-involution, so it is a repeated pattern rather than a one-off. PROPOSED: 'Because Ad(A) is the irreducible adjoint representation of the reconstructed gauge group, Schur's lemma gives H^0(M, Ad(A)) = 0.' SECOND FLAG: this block writes H^0(M, Ad(A)) while rem:fibre-functor-rigidity in the same chapter writes H^0_G(Ad(A)) for what reads as the same object; one notation should be chosen."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "a2df3a29ad48",
+          "ts": "b2a2c3135690"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:17.738Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 2-sentence remark. No negation-contrast, pivot, dash, triple, aphorism, meta-commentary, thesis restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH FLAG (not a trap, reported not fixed): the stated reason is wrong. 'The non-degeneracy of the Frobenius form forces H^0(M, Ad(A)) = 0, as any global parallel section in the adjoint representation would pair with itself against the irreducibility constraint.' A non-zero invariant section pairing non-trivially with itself is not a contradiction - non-degeneracy does not force the vanishing. The corpus's own proof of this fact (prf:fiber-adjoint-involution) derives it from SU(2) emergence plus SCHUR'S LEMMA on the 3-dimensional irreducible adjoint representation. This is the same mis-attribution to int_A / non-degeneracy that closes prf:fiber-adjoint-involution, so it is a repeated pattern rather than a one-off. PROPOSED: 'Because Ad(A) is the irreducible adjoint representation of the reconstructed gauge group, Schur's lemma gives H^0(M, Ad(A)) = 0.' SECOND FLAG: this block writes H^0(M, Ad(A)) while rem:fibre-functor-rigidity in the same chapter writes H^0_G(Ad(A)) for what reads as the same object; one notation should be chosen."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "a2df3a29ad48",
+          "ts": "b2a2c3135690"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:17.778Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 2-sentence remark. No negation-contrast, pivot, dash, triple, aphorism, meta-commentary, thesis restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH FLAG (not a trap, reported not fixed): the stated reason is wrong. 'The non-degeneracy of the Frobenius form forces H^0(M, Ad(A)) = 0, as any global parallel section in the adjoint representation would pair with itself against the irreducibility constraint.' A non-zero invariant section pairing non-trivially with itself is not a contradiction - non-degeneracy does not force the vanishing. The corpus's own proof of this fact (prf:fiber-adjoint-involution) derives it from SU(2) emergence plus SCHUR'S LEMMA on the 3-dimensional irreducible adjoint representation. This is the same mis-attribution to int_A / non-degeneracy that closes prf:fiber-adjoint-involution, so it is a repeated pattern rather than a one-off. PROPOSED: 'Because Ad(A) is the irreducible adjoint representation of the reconstructed gauge group, Schur's lemma gives H^0(M, Ad(A)) = 0.' SECOND FLAG: this block writes H^0(M, Ad(A)) while rem:fibre-functor-rigidity in the same chapter writes H^0_G(Ad(A)) for what reads as the same object; one notation should be chosen."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "a2df3a29ad48",
+          "ts": "b2a2c3135690"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:17.818Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 2-sentence remark. No negation-contrast, pivot, dash, triple, aphorism, meta-commentary, thesis restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH FLAG (not a trap, reported not fixed): the stated reason is wrong. 'The non-degeneracy of the Frobenius form forces H^0(M, Ad(A)) = 0, as any global parallel section in the adjoint representation would pair with itself against the irreducibility constraint.' A non-zero invariant section pairing non-trivially with itself is not a contradiction - non-degeneracy does not force the vanishing. The corpus's own proof of this fact (prf:fiber-adjoint-involution) derives it from SU(2) emergence plus SCHUR'S LEMMA on the 3-dimensional irreducible adjoint representation. This is the same mis-attribution to int_A / non-degeneracy that closes prf:fiber-adjoint-involution, so it is a repeated pattern rather than a one-off. PROPOSED: 'Because Ad(A) is the irreducible adjoint representation of the reconstructed gauge group, Schur's lemma gives H^0(M, Ad(A)) = 0.' SECOND FLAG: this block writes H^0(M, Ad(A)) while rem:fibre-functor-rigidity in the same chapter writes H^0_G(Ad(A)) for what reads as the same object; one notation should be chosen."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "a2df3a29ad48",
+          "ts": "b2a2c3135690"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:17.858Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 2-sentence remark. No negation-contrast, pivot, dash, triple, aphorism, meta-commentary, thesis restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH FLAG (not a trap, reported not fixed): the stated reason is wrong. 'The non-degeneracy of the Frobenius form forces H^0(M, Ad(A)) = 0, as any global parallel section in the adjoint representation would pair with itself against the irreducibility constraint.' A non-zero invariant section pairing non-trivially with itself is not a contradiction - non-degeneracy does not force the vanishing. The corpus's own proof of this fact (prf:fiber-adjoint-involution) derives it from SU(2) emergence plus SCHUR'S LEMMA on the 3-dimensional irreducible adjoint representation. This is the same mis-attribution to int_A / non-degeneracy that closes prf:fiber-adjoint-involution, so it is a repeated pattern rather than a one-off. PROPOSED: 'Because Ad(A) is the irreducible adjoint representation of the reconstructed gauge group, Schur's lemma gives H^0(M, Ad(A)) = 0.' SECOND FLAG: this block writes H^0(M, Ad(A)) while rem:fibre-functor-rigidity in the same chapter writes H^0_G(Ad(A)) for what reads as the same object; one notation should be chosen."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "a2df3a29ad48",
+          "ts": "b2a2c3135690"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:17.900Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 2-sentence remark. No negation-contrast, pivot, dash, triple, aphorism, meta-commentary, thesis restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH FLAG (not a trap, reported not fixed): the stated reason is wrong. 'The non-degeneracy of the Frobenius form forces H^0(M, Ad(A)) = 0, as any global parallel section in the adjoint representation would pair with itself against the irreducibility constraint.' A non-zero invariant section pairing non-trivially with itself is not a contradiction - non-degeneracy does not force the vanishing. The corpus's own proof of this fact (prf:fiber-adjoint-involution) derives it from SU(2) emergence plus SCHUR'S LEMMA on the 3-dimensional irreducible adjoint representation. This is the same mis-attribution to int_A / non-degeneracy that closes prf:fiber-adjoint-involution, so it is a repeated pattern rather than a one-off. PROPOSED: 'Because Ad(A) is the irreducible adjoint representation of the reconstructed gauge group, Schur's lemma gives H^0(M, Ad(A)) = 0.' SECOND FLAG: this block writes H^0(M, Ad(A)) while rem:fibre-functor-rigidity in the same chapter writes H^0_G(Ad(A)) for what reads as the same object; one notation should be chosen."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "a2df3a29ad48",
+          "ts": "b2a2c3135690"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:17.940Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 2-sentence remark. No negation-contrast, pivot, dash, triple, aphorism, meta-commentary, thesis restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH FLAG (not a trap, reported not fixed): the stated reason is wrong. 'The non-degeneracy of the Frobenius form forces H^0(M, Ad(A)) = 0, as any global parallel section in the adjoint representation would pair with itself against the irreducibility constraint.' A non-zero invariant section pairing non-trivially with itself is not a contradiction - non-degeneracy does not force the vanishing. The corpus's own proof of this fact (prf:fiber-adjoint-involution) derives it from SU(2) emergence plus SCHUR'S LEMMA on the 3-dimensional irreducible adjoint representation. This is the same mis-attribution to int_A / non-degeneracy that closes prf:fiber-adjoint-involution, so it is a repeated pattern rather than a one-off. PROPOSED: 'Because Ad(A) is the irreducible adjoint representation of the reconstructed gauge group, Schur's lemma gives H^0(M, Ad(A)) = 0.' SECOND FLAG: this block writes H^0(M, Ad(A)) while rem:fibre-functor-rigidity in the same chapter writes H^0_G(Ad(A)) for what reads as the same object; one notation should be chosen."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "a2df3a29ad48",
+          "ts": "b2a2c3135690"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:17.981Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 2-sentence remark. No negation-contrast, pivot, dash, triple, aphorism, meta-commentary, thesis restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH FLAG (not a trap, reported not fixed): the stated reason is wrong. 'The non-degeneracy of the Frobenius form forces H^0(M, Ad(A)) = 0, as any global parallel section in the adjoint representation would pair with itself against the irreducibility constraint.' A non-zero invariant section pairing non-trivially with itself is not a contradiction - non-degeneracy does not force the vanishing. The corpus's own proof of this fact (prf:fiber-adjoint-involution) derives it from SU(2) emergence plus SCHUR'S LEMMA on the 3-dimensional irreducible adjoint representation. This is the same mis-attribution to int_A / non-degeneracy that closes prf:fiber-adjoint-involution, so it is a repeated pattern rather than a one-off. PROPOSED: 'Because Ad(A) is the irreducible adjoint representation of the reconstructed gauge group, Schur's lemma gives H^0(M, Ad(A)) = 0.' SECOND FLAG: this block writes H^0(M, Ad(A)) while rem:fibre-functor-rigidity in the same chapter writes H^0_G(Ad(A)) for what reads as the same object; one notation should be chosen."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "a2df3a29ad48",
+          "ts": "b2a2c3135690"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:18.021Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 2-sentence remark. No negation-contrast, pivot, dash, triple, aphorism, meta-commentary, thesis restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH FLAG (not a trap, reported not fixed): the stated reason is wrong. 'The non-degeneracy of the Frobenius form forces H^0(M, Ad(A)) = 0, as any global parallel section in the adjoint representation would pair with itself against the irreducibility constraint.' A non-zero invariant section pairing non-trivially with itself is not a contradiction - non-degeneracy does not force the vanishing. The corpus's own proof of this fact (prf:fiber-adjoint-involution) derives it from SU(2) emergence plus SCHUR'S LEMMA on the 3-dimensional irreducible adjoint representation. This is the same mis-attribution to int_A / non-degeneracy that closes prf:fiber-adjoint-involution, so it is a repeated pattern rather than a one-off. PROPOSED: 'Because Ad(A) is the irreducible adjoint representation of the reconstructed gauge group, Schur's lemma gives H^0(M, Ad(A)) = 0.' SECOND FLAG: this block writes H^0(M, Ad(A)) while rem:fibre-functor-rigidity in the same chapter writes H^0_G(Ad(A)) for what reads as the same object; one notation should be chosen."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "a2df3a29ad48",
+          "ts": "b2a2c3135690"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:18.062Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 2-sentence remark. No negation-contrast, pivot, dash, triple, aphorism, meta-commentary, thesis restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "MATH FLAG (not a trap, reported not fixed): the stated reason is wrong. 'The non-degeneracy of the Frobenius form forces H^0(M, Ad(A)) = 0, as any global parallel section in the adjoint representation would pair with itself against the irreducibility constraint.' A non-zero invariant section pairing non-trivially with itself is not a contradiction - non-degeneracy does not force the vanishing. The corpus's own proof of this fact (prf:fiber-adjoint-involution) derives it from SU(2) emergence plus SCHUR'S LEMMA on the 3-dimensional irreducible adjoint representation. This is the same mis-attribution to int_A / non-degeneracy that closes prf:fiber-adjoint-involution, so it is a repeated pattern rather than a one-off. PROPOSED: 'Because Ad(A) is the irreducible adjoint representation of the reconstructed gauge group, Schur's lemma gives H^0(M, Ad(A)) = 0.' SECOND FLAG: this block writes H^0(M, Ad(A)) while rem:fibre-functor-rigidity in the same chapter writes H^0_G(Ad(A)) for what reads as the same object; one notation should be chosen."
+      }
+    ]
+  }
+}

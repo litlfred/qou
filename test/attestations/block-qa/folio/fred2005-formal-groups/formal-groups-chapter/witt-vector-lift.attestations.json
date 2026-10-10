@@ -1,0 +1,386 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/fred2005-formal-groups/formal-groups-chapter/witt-vector-lift",
+    "path": "folio/fred2005-formal-groups/formal-groups-chapter/witt-vector-lift"
+  },
+  "criteria": {
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af",
+          "lean": "506c407a9cd5"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af",
+          "lean": "506c407a9cd5"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.707Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:witt-vector-lift. Single definitional paragraph plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.WittVectorLift is a record bundling (base, poisson, lifted, reduces) - there is no Witt vector functor W, no generic fibre and no Q_p anywhere in the formalisation, so the .md's 'applying the Witt vector functor W ... whose generic fibre is a non-commutative formal group over Q_p' is narrative that the structure does not carry. Minor: 'Groebner--Shirshov'/'Dieudonne' appear unaccented here while the Lean library writes 'Grobner-Shirshov' with the umlaut - a consistency point, not a crash class."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.747Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:witt-vector-lift. Single definitional paragraph plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.WittVectorLift is a record bundling (base, poisson, lifted, reduces) - there is no Witt vector functor W, no generic fibre and no Q_p anywhere in the formalisation, so the .md's 'applying the Witt vector functor W ... whose generic fibre is a non-commutative formal group over Q_p' is narrative that the structure does not carry. Minor: 'Groebner--Shirshov'/'Dieudonne' appear unaccented here while the Lean library writes 'Grobner-Shirshov' with the umlaut - a consistency point, not a crash class."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.786Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:witt-vector-lift. Single definitional paragraph plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.WittVectorLift is a record bundling (base, poisson, lifted, reduces) - there is no Witt vector functor W, no generic fibre and no Q_p anywhere in the formalisation, so the .md's 'applying the Witt vector functor W ... whose generic fibre is a non-commutative formal group over Q_p' is narrative that the structure does not carry. Minor: 'Groebner--Shirshov'/'Dieudonne' appear unaccented here while the Lean library writes 'Grobner-Shirshov' with the umlaut - a consistency point, not a crash class."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.825Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:witt-vector-lift. Single definitional paragraph plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.WittVectorLift is a record bundling (base, poisson, lifted, reduces) - there is no Witt vector functor W, no generic fibre and no Q_p anywhere in the formalisation, so the .md's 'applying the Witt vector functor W ... whose generic fibre is a non-commutative formal group over Q_p' is narrative that the structure does not carry. Minor: 'Groebner--Shirshov'/'Dieudonne' appear unaccented here while the Lean library writes 'Grobner-Shirshov' with the umlaut - a consistency point, not a crash class."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.865Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:witt-vector-lift. Single definitional paragraph plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.WittVectorLift is a record bundling (base, poisson, lifted, reduces) - there is no Witt vector functor W, no generic fibre and no Q_p anywhere in the formalisation, so the .md's 'applying the Witt vector functor W ... whose generic fibre is a non-commutative formal group over Q_p' is narrative that the structure does not carry. Minor: 'Groebner--Shirshov'/'Dieudonne' appear unaccented here while the Lean library writes 'Grobner-Shirshov' with the umlaut - a consistency point, not a crash class."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.905Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:witt-vector-lift. Single definitional paragraph plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.WittVectorLift is a record bundling (base, poisson, lifted, reduces) - there is no Witt vector functor W, no generic fibre and no Q_p anywhere in the formalisation, so the .md's 'applying the Witt vector functor W ... whose generic fibre is a non-commutative formal group over Q_p' is narrative that the structure does not carry. Minor: 'Groebner--Shirshov'/'Dieudonne' appear unaccented here while the Lean library writes 'Grobner-Shirshov' with the umlaut - a consistency point, not a crash class."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.945Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:witt-vector-lift. Single definitional paragraph plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.WittVectorLift is a record bundling (base, poisson, lifted, reduces) - there is no Witt vector functor W, no generic fibre and no Q_p anywhere in the formalisation, so the .md's 'applying the Witt vector functor W ... whose generic fibre is a non-commutative formal group over Q_p' is narrative that the structure does not carry. Minor: 'Groebner--Shirshov'/'Dieudonne' appear unaccented here while the Lean library writes 'Grobner-Shirshov' with the umlaut - a consistency point, not a crash class."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:15.985Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:witt-vector-lift. Single definitional paragraph plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.WittVectorLift is a record bundling (base, poisson, lifted, reduces) - there is no Witt vector functor W, no generic fibre and no Q_p anywhere in the formalisation, so the .md's 'applying the Witt vector functor W ... whose generic fibre is a non-commutative formal group over Q_p' is narrative that the structure does not carry. Minor: 'Groebner--Shirshov'/'Dieudonne' appear unaccented here while the Lean library writes 'Grobner-Shirshov' with the umlaut - a consistency point, not a crash class."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:16.025Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:witt-vector-lift. Single definitional paragraph plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.WittVectorLift is a record bundling (base, poisson, lifted, reduces) - there is no Witt vector functor W, no generic fibre and no Q_p anywhere in the formalisation, so the .md's 'applying the Witt vector functor W ... whose generic fibre is a non-commutative formal group over Q_p' is narrative that the structure does not carry. Minor: 'Groebner--Shirshov'/'Dieudonne' appear unaccented here while the Lean library writes 'Grobner-Shirshov' with the umlaut - a consistency point, not a crash class."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f24382954795",
+          "ts": "1841a10be2af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:16.064Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:witt-vector-lift. Single definitional paragraph plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the resolved Lean Fred2005.WittVectorLift is a record bundling (base, poisson, lifted, reduces) - there is no Witt vector functor W, no generic fibre and no Q_p anywhere in the formalisation, so the .md's 'applying the Witt vector functor W ... whose generic fibre is a non-commutative formal group over Q_p' is narrative that the structure does not carry. Minor: 'Groebner--Shirshov'/'Dieudonne' appear unaccented here while the Lean library writes 'Grobner-Shirshov' with the umlaut - a consistency point, not a crash class."
+      }
+    ]
+  }
+}

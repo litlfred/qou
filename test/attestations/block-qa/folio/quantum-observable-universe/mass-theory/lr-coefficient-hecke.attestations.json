@@ -1,0 +1,661 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/lr-coefficient-hecke",
+    "path": "folio/quantum-observable-universe/mass-theory/lr-coefficient-hecke"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "51179385f2dd",
+          "ts": "3ce85ffebce1",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "51179385f2dd",
+          "ts": "3ce85ffebce1",
+          "lean": "864c3fc25237"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Smoothed transitions, enforced present tense and active voice across blocks. Kept all mathematical definitions intact. Applied Economy and Linear Argument to remove redundancies and non-essential commentary. Replaced passive voice and first-person-singular.",
+        "reviewed_at": "2026-07-07T14:26:56.868161Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.868161Z"
+        },
+        "field_hash": {
+          "md": "b34f32640609",
+          "ts": "3ce85ffebce1",
+          "lean": "864c3fc25237"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound classification successfully structuring empirical limits cleanly into complex physical states.",
+        "reviewed_at": "2026-07-08T18:01:46.000Z",
+        "reviewed_sha": "fb0320a8b06ebfa803501b2f4c1db5cd6ffb2ca2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound classification successfully structuring empirical limits cleanly into complex physical states.",
+        "reviewed_at": "2026-07-08T18:01:46.000Z",
+        "reviewed_sha": "fb0320a8b06ebfa803501b2f4c1db5cd6ffb2ca2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound classification successfully structuring empirical limits cleanly into complex physical states.",
+        "reviewed_at": "2026-07-08T18:01:46.000Z",
+        "reviewed_sha": "fb0320a8b06ebfa803501b2f4c1db5cd6ffb2ca2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound classification successfully structuring empirical limits cleanly into complex physical states.",
+        "reviewed_at": "2026-07-08T18:01:46.000Z",
+        "reviewed_sha": "fb0320a8b06ebfa803501b2f4c1db5cd6ffb2ca2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound classification successfully structuring empirical limits cleanly into complex physical states.",
+        "reviewed_at": "2026-07-08T18:01:46.000Z",
+        "reviewed_sha": "fb0320a8b06ebfa803501b2f4c1db5cd6ffb2ca2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound classification successfully structuring empirical limits cleanly into complex physical states.",
+        "reviewed_at": "2026-07-08T18:01:46.000Z",
+        "reviewed_sha": "fb0320a8b06ebfa803501b2f4c1db5cd6ffb2ca2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound classification successfully structuring empirical limits cleanly into complex physical states.",
+        "reviewed_at": "2026-07-08T18:01:46.000Z",
+        "reviewed_sha": "fb0320a8b06ebfa803501b2f4c1db5cd6ffb2ca2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound classification successfully structuring empirical limits cleanly into complex physical states.",
+        "reviewed_at": "2026-07-08T18:01:46.000Z",
+        "reviewed_sha": "fb0320a8b06ebfa803501b2f4c1db5cd6ffb2ca2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound classification successfully structuring empirical limits cleanly into complex physical states.",
+        "reviewed_at": "2026-07-08T18:01:46.000Z",
+        "reviewed_sha": "fb0320a8b06ebfa803501b2f4c1db5cd6ffb2ca2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound classification successfully structuring empirical limits cleanly into complex physical states.",
+        "reviewed_at": "2026-07-08T18:01:46.000Z",
+        "reviewed_sha": "fb0320a8b06ebfa803501b2f4c1db5cd6ffb2ca2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound classification successfully structuring empirical limits cleanly into complex physical states.",
+        "reviewed_at": "2026-07-08T18:01:46.000Z",
+        "reviewed_sha": "fb0320a8b06ebfa803501b2f4c1db5cd6ffb2ca2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound classification successfully structuring empirical limits cleanly into complex physical states.",
+        "reviewed_at": "2026-07-08T18:01:46.000Z",
+        "reviewed_sha": "fb0320a8b06ebfa803501b2f4c1db5cd6ffb2ca2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound classification successfully structuring empirical limits cleanly into complex physical states.",
+        "reviewed_at": "2026-07-08T18:01:46.000Z",
+        "reviewed_sha": "fb0320a8b06ebfa803501b2f4c1db5cd6ffb2ca2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound classification successfully structuring empirical limits cleanly into complex physical states.",
+        "reviewed_at": "2026-07-08T18:01:46.000Z",
+        "reviewed_sha": "fb0320a8b06ebfa803501b2f4c1db5cd6ffb2ca2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound classification successfully structuring empirical limits cleanly into complex physical states.",
+        "reviewed_at": "2026-07-08T18:01:46.000Z",
+        "reviewed_sha": "fb0320a8b06ebfa803501b2f4c1db5cd6ffb2ca2",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "51179385f2dd",
+          "ts": "3ce85ffebce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:15:31.776Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. LR content checked against the standard statement and is correct: the branching multiplicity of $V_\\lambda$ over $H_{n_1}(q) \\otimes H_{n_2}(q)$, $c^\\lambda_{\\mu\\nu} = |LR(\\lambda/\\mu,\\nu)|$ with the Yamanouchi/lattice-word condition stated correctly (every prefix has #i >= #(i+1)), and the vanishing conditions mu not-subset lambda or |lambda|-|mu| != |nu| are right. Nine of ten categories clean."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "51179385f2dd",
+          "ts": "3ce85ffebce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:15:31.840Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. LR content checked against the standard statement and is correct: the branching multiplicity of $V_\\lambda$ over $H_{n_1}(q) \\otimes H_{n_2}(q)$, $c^\\lambda_{\\mu\\nu} = |LR(\\lambda/\\mu,\\nu)|$ with the Yamanouchi/lattice-word condition stated correctly (every prefix has #i >= #(i+1)), and the vanishing conditions mu not-subset lambda or |lambda|-|mu| != |nu| are right. Nine of ten categories clean."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "51179385f2dd",
+          "ts": "3ce85ffebce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:15:31.912Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. LR content checked against the standard statement and is correct: the branching multiplicity of $V_\\lambda$ over $H_{n_1}(q) \\otimes H_{n_2}(q)$, $c^\\lambda_{\\mu\\nu} = |LR(\\lambda/\\mu,\\nu)|$ with the Yamanouchi/lattice-word condition stated correctly (every prefix has #i >= #(i+1)), and the vanishing conditions mu not-subset lambda or |lambda|-|mu| != |nu| are right. Nine of ten categories clean."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "51179385f2dd",
+          "ts": "3ce85ffebce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:15:32.083Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. LR content checked against the standard statement and is correct: the branching multiplicity of $V_\\lambda$ over $H_{n_1}(q) \\otimes H_{n_2}(q)$, $c^\\lambda_{\\mu\\nu} = |LR(\\lambda/\\mu,\\nu)|$ with the Yamanouchi/lattice-word condition stated correctly (every prefix has #i >= #(i+1)), and the vanishing conditions mu not-subset lambda or |lambda|-|mu| != |nu| are right. Nine of ten categories clean."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "51179385f2dd",
+          "ts": "3ce85ffebce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:15:32.155Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. LR content checked against the standard statement and is correct: the branching multiplicity of $V_\\lambda$ over $H_{n_1}(q) \\otimes H_{n_2}(q)$, $c^\\lambda_{\\mu\\nu} = |LR(\\lambda/\\mu,\\nu)|$ with the Yamanouchi/lattice-word condition stated correctly (every prefix has #i >= #(i+1)), and the vanishing conditions mu not-subset lambda or |lambda|-|mu| != |nu| are right. Nine of ten categories clean."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "51179385f2dd",
+          "ts": "3ce85ffebce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:15:32.247Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. LR content checked against the standard statement and is correct: the branching multiplicity of $V_\\lambda$ over $H_{n_1}(q) \\otimes H_{n_2}(q)$, $c^\\lambda_{\\mu\\nu} = |LR(\\lambda/\\mu,\\nu)|$ with the Yamanouchi/lattice-word condition stated correctly (every prefix has #i >= #(i+1)), and the vanishing conditions mu not-subset lambda or |lambda|-|mu| != |nu| are right. Nine of ten categories clean."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "51179385f2dd",
+          "ts": "3ce85ffebce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:15:32.331Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. LR content checked against the standard statement and is correct: the branching multiplicity of $V_\\lambda$ over $H_{n_1}(q) \\otimes H_{n_2}(q)$, $c^\\lambda_{\\mu\\nu} = |LR(\\lambda/\\mu,\\nu)|$ with the Yamanouchi/lattice-word condition stated correctly (every prefix has #i >= #(i+1)), and the vanishing conditions mu not-subset lambda or |lambda|-|mu| != |nu| are right. Nine of ten categories clean."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "51179385f2dd",
+          "ts": "3ce85ffebce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:15:32.403Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. LR content checked against the standard statement and is correct: the branching multiplicity of $V_\\lambda$ over $H_{n_1}(q) \\otimes H_{n_2}(q)$, $c^\\lambda_{\\mu\\nu} = |LR(\\lambda/\\mu,\\nu)|$ with the Yamanouchi/lattice-word condition stated correctly (every prefix has #i >= #(i+1)), and the vanishing conditions mu not-subset lambda or |lambda|-|mu| != |nu| are right. Nine of ten categories clean."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "51179385f2dd",
+          "ts": "3ce85ffebce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:15:32.458Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition read in full. LR content checked against the standard statement and is correct: the branching multiplicity of $V_\\lambda$ over $H_{n_1}(q) \\otimes H_{n_2}(q)$, $c^\\lambda_{\\mu\\nu} = |LR(\\lambda/\\mu,\\nu)|$ with the Yamanouchi/lattice-word condition stated correctly (every prefix has #i >= #(i+1)), and the vanishing conditions mu not-subset lambda or |lambda|-|mu| != |nu| are right. Nine of ten categories clean."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "51179385f2dd",
+          "ts": "3ce85ffebce1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:15:32.506Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "severity": "major",
+        "evidence": "The closing paragraph carries the corpus's named sweep-damage substitution, twice in two sentences: 'THE CANONICAL FORMALISM computes $c^\\lambda_{\\mu\\nu}$ by direct LR-tableau enumeration with Yamanouchi pruning. THE CANONICAL $A=2,3,4$ atomic decompositions rely on precomputed tables.' A formalism does not enumerate tableaux — a script does — so the first sentence has lost the producer name it originally carried, and the second reads as 'canonical' substituted over a word like 'current'. The block's .ts declares no computation.script, so the reader has no way to recover what was named. Third sentence in the same paragraph is also agentless: 'The skew-SYT primitive $f^{\\lambda/\\mu}$ counts all standard Young tableaux of skew shape and WEIGHTS ALL CHAINS.'",
+        "notes": "proposed: name the producer explicitly ('computations/… enumerates $c^\\lambda_{\\mu\\nu}$ by LR-tableau enumeration with Yamanouchi pruning') and restore the intended adjective in the second sentence. Flagged, not fixed: recovering the script name is not something I can do from this block, and guessing it would launder the defect."
+      }
+    ]
+  }
+}

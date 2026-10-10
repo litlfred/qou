@@ -1,0 +1,203 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification-details",
+    "path": "folio/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification-details"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Both flagged items are gone: the \"**Archimedean specialisation (\u00a77c)**\" tag and the \"Path B\" branch decision label no longer appear.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ae7bc444cfd3",
+          "ts": "9a2359790665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:10.232Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: statement + significance + Lean structure + the standard Archimedean-specialisation banner. AJ operator relations L^M = q M^L correct; the 'critical point evaluating to Vol(4_1)' is off by a factor 2 (reported).",
+        "notes": "no assertion-by-denial beyond substantive mathematical contrast"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ae7bc444cfd3",
+          "ts": "9a2359790665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:10.271Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: statement + significance + Lean structure + the standard Archimedean-specialisation banner. AJ operator relations L^M = q M^L correct; the 'critical point evaluating to Vol(4_1)' is off by a factor 2 (reported).",
+        "notes": "no setup-then-reframe construction"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ae7bc444cfd3",
+          "ts": "9a2359790665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:10.310Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: statement + significance + Lean structure + the standard Archimedean-specialisation banner. AJ operator relations L^M = q M^L correct; the 'critical point evaluating to Vol(4_1)' is off by a factor 2 (reported).",
+        "notes": "em-dashes are glossary glosses / true parentheticals, not sentence-structure substitutes"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ae7bc444cfd3",
+          "ts": "9a2359790665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:10.347Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: statement + significance + Lean structure + the standard Archimedean-specialisation banner. AJ operator relations L^M = q M^L correct; the 'critical point evaluating to Vol(4_1)' is off by a factor 2 (reported).",
+        "notes": "no reflex three-item list; enumerations present are substantive"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ae7bc444cfd3",
+          "ts": "9a2359790665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:10.385Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: statement + significance + Lean structure + the standard Archimedean-specialisation banner. AJ operator relations L^M = q M^L correct; the 'critical point evaluating to Vol(4_1)' is off by a factor 2 (reported).",
+        "notes": "block does not end on a manufactured quotable line"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ae7bc444cfd3",
+          "ts": "9a2359790665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:10.424Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: statement + significance + Lean structure + the standard Archimedean-specialisation banner. AJ operator relations L^M = q M^L correct; the 'critical point evaluating to Vol(4_1)' is off by a factor 2 (reported).",
+        "notes": "emphasis is placed, not announced"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ae7bc444cfd3",
+          "ts": "9a2359790665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:10.463Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: statement + significance + Lean structure + the standard Archimedean-specialisation banner. AJ operator relations L^M = q M^L correct; the 'critical point evaluating to Vol(4_1)' is off by a factor 2 (reported).",
+        "notes": "no block-final restatement of what the text established"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ae7bc444cfd3",
+          "ts": "9a2359790665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:10.500Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: statement + significance + Lean structure + the standard Archimedean-specialisation banner. AJ operator relations L^M = q M^L correct; the 'critical point evaluating to Vol(4_1)' is off by a factor 2 (reported).",
+        "notes": "institutional register throughout"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ae7bc444cfd3",
+          "ts": "9a2359790665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:10.537Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: statement + significance + Lean structure + the standard Archimedean-specialisation banner. AJ operator relations L^M = q M^L correct; the 'critical point evaluating to Vol(4_1)' is off by a factor 2 (reported).",
+        "notes": "no unqualified maximum-strength claim"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ae7bc444cfd3",
+          "ts": "9a2359790665"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:10.575Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: statement + significance + Lean structure + the standard Archimedean-specialisation banner. AJ operator relations L^M = q M^L correct; the 'critical point evaluating to Vol(4_1)' is off by a factor 2 (reported).",
+        "notes": "noun chains parse aloud"
+      }
+    ]
+  }
+}

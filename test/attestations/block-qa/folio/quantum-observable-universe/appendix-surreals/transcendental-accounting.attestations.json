@@ -1,0 +1,678 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/appendix-surreals/transcendental-accounting",
+    "path": "folio/quantum-observable-universe/appendix-surreals/transcendental-accounting"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block appears sound and meets fit-section-chapter.",
+        "reviewed_at": "2026-07-07T23:32:10.570250+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Meticulous structural ledger distinguishing archimedean accidents from $q$-rational identities. Appropriately highlights open questions regarding Bring's S5 Galois symmetry.",
+        "reviewed_at": "2026-07-08T08:59:26.000Z",
+        "reviewed_sha": "81d8ec701001c6b062119ca99f418db1334297ac",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block appears sound and meets da-false-claim.",
+        "reviewed_at": "2026-07-07T23:32:10.570250+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Meticulous structural ledger distinguishing archimedean accidents from $q$-rational identities. Appropriately highlights open questions regarding Bring's S5 Galois symmetry.",
+        "reviewed_at": "2026-07-08T08:59:26.000Z",
+        "reviewed_sha": "81d8ec701001c6b062119ca99f418db1334297ac",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block appears sound and meets da-vacuous.",
+        "reviewed_at": "2026-07-07T23:32:10.570250+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Meticulous structural ledger distinguishing archimedean accidents from $q$-rational identities. Appropriately highlights open questions regarding Bring's S5 Galois symmetry.",
+        "reviewed_at": "2026-07-08T08:59:26.000Z",
+        "reviewed_sha": "81d8ec701001c6b062119ca99f418db1334297ac",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block appears sound and meets da-circular.",
+        "reviewed_at": "2026-07-07T23:32:10.570250+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Meticulous structural ledger distinguishing archimedean accidents from $q$-rational identities. Appropriately highlights open questions regarding Bring's S5 Galois symmetry.",
+        "reviewed_at": "2026-07-08T08:59:26.000Z",
+        "reviewed_sha": "81d8ec701001c6b062119ca99f418db1334297ac",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block appears sound and meets da-overclaim.",
+        "reviewed_at": "2026-07-07T23:32:10.570250+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Meticulous structural ledger distinguishing archimedean accidents from $q$-rational identities. Appropriately highlights open questions regarding Bring's S5 Galois symmetry.",
+        "reviewed_at": "2026-07-08T08:59:26.000Z",
+        "reviewed_sha": "81d8ec701001c6b062119ca99f418db1334297ac",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block appears sound and meets da-hidden-dof.",
+        "reviewed_at": "2026-07-07T23:32:10.570250+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Meticulous structural ledger distinguishing archimedean accidents from $q$-rational identities. Appropriately highlights open questions regarding Bring's S5 Galois symmetry.",
+        "reviewed_at": "2026-07-08T08:59:26.000Z",
+        "reviewed_sha": "81d8ec701001c6b062119ca99f418db1334297ac",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block appears sound and meets da-non-sequitur.",
+        "reviewed_at": "2026-07-07T23:32:10.570250+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Meticulous structural ledger distinguishing archimedean accidents from $q$-rational identities. Appropriately highlights open questions regarding Bring's S5 Galois symmetry.",
+        "reviewed_at": "2026-07-08T08:59:26.000Z",
+        "reviewed_sha": "81d8ec701001c6b062119ca99f418db1334297ac",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block appears sound and meets da-lean-narrative-divergence.",
+        "reviewed_at": "2026-07-07T23:32:10.570250+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Meticulous structural ledger distinguishing archimedean accidents from $q$-rational identities. Appropriately highlights open questions regarding Bring's S5 Galois symmetry.",
+        "reviewed_at": "2026-07-08T08:59:26.000Z",
+        "reviewed_sha": "81d8ec701001c6b062119ca99f418db1334297ac",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block appears sound and meets da-citation-misuse.",
+        "reviewed_at": "2026-07-07T23:32:10.570250+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Meticulous structural ledger distinguishing archimedean accidents from $q$-rational identities. Appropriately highlights open questions regarding Bring's S5 Galois symmetry.",
+        "reviewed_at": "2026-07-08T08:59:26.000Z",
+        "reviewed_sha": "81d8ec701001c6b062119ca99f418db1334297ac",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block appears sound and meets da-definitional-ambiguity.",
+        "reviewed_at": "2026-07-07T23:32:10.570250+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Meticulous structural ledger distinguishing archimedean accidents from $q$-rational identities. Appropriately highlights open questions regarding Bring's S5 Galois symmetry.",
+        "reviewed_at": "2026-07-08T08:59:26.000Z",
+        "reviewed_sha": "81d8ec701001c6b062119ca99f418db1334297ac",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block appears sound and meets da-empirical-fragility.",
+        "reviewed_at": "2026-07-07T23:32:10.570250+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Meticulous structural ledger distinguishing archimedean accidents from $q$-rational identities. Appropriately highlights open questions regarding Bring's S5 Galois symmetry.",
+        "reviewed_at": "2026-07-08T08:59:26.000Z",
+        "reviewed_sha": "81d8ec701001c6b062119ca99f418db1334297ac",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block appears sound and meets da-physical-implausibility.",
+        "reviewed_at": "2026-07-07T23:32:10.570250+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Meticulous structural ledger distinguishing archimedean accidents from $q$-rational identities. Appropriately highlights open questions regarding Bring's S5 Galois symmetry.",
+        "reviewed_at": "2026-07-08T08:59:26.000Z",
+        "reviewed_sha": "81d8ec701001c6b062119ca99f418db1334297ac",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block appears sound and meets da-reproducibility.",
+        "reviewed_at": "2026-07-07T23:32:10.570250+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Meticulous structural ledger distinguishing archimedean accidents from $q$-rational identities. Appropriately highlights open questions regarding Bring's S5 Galois symmetry.",
+        "reviewed_at": "2026-07-08T08:59:26.000Z",
+        "reviewed_sha": "81d8ec701001c6b062119ca99f418db1334297ac",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block appears sound and meets da-referee-verdict.",
+        "reviewed_at": "2026-07-07T23:32:10.570250+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Meticulous structural ledger distinguishing archimedean accidents from $q$-rational identities. Appropriately highlights open questions regarding Bring's S5 Galois symmetry.",
+        "reviewed_at": "2026-07-08T08:59:26.000Z",
+        "reviewed_sha": "81d8ec701001c6b062119ca99f418db1334297ac",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Content is quite long, consider brevity.",
+        "reviewed_at": "2026-07-07T23:32:10.570250+00:00",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "evidence": "Content is quite long, consider brevity."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Meticulous structural ledger distinguishing archimedean accidents from $q$-rational identities. Appropriately highlights open questions regarding Bring's S5 Galois symmetry.",
+        "reviewed_at": "2026-07-08T08:59:26.000Z",
+        "reviewed_sha": "81d8ec701001c6b062119ca99f418db1334297ac",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "199a4b3c02b0",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "199a4b3c02b0",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] The bare nickname is resolved -- \"The graded-Mikusiński keystone ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)) predicts the origin of each relation by depth\" -- and \"ledger\" is used mathematically and explained in place (\"We provide the dual ledger to [`rem:algebraic-core-survives`]. That ledger enumerates the algebra that survives the archimedean wall; this one enumerates the transcendentals\"), i.e. an accounting of periods, not the project tracking surface.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "6915d3bd1524",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:57.281Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "full-block read (agent:q04): no constructions of this category present"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "6915d3bd1524",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:57.319Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "full-block read (agent:q04): no constructions of this category present"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "6915d3bd1524",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:57.357Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "full-block read (agent:q04): no constructions of this category present"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "6915d3bd1524",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:57.395Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "full-block read (agent:q04): no constructions of this category present"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "6915d3bd1524",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:57.434Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "full-block read (agent:q04): no constructions of this category present"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "6915d3bd1524",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:57.474Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "full-block read (agent:q04): no constructions of this category present"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "6915d3bd1524",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:57.514Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "final sentence restated the dimension/depth/equivariance facts of the two preceding sentences; trimmed",
+        "notes": "fixed: 'This is a clean concrete instance...: an S_5-equivariant 4-dimensional period space sitting at depth 3, generated by Bring-natural inputs.' -> 'This gives a concrete instance of post-archimedean structure not visible at the q-polynomial level.' (dropped restating appositive)"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "6915d3bd1524",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:57.554Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "full-block read (agent:q04): no constructions of this category present"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "6915d3bd1524",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:57.594Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "one mild self-praise adjective ('clean concrete instance') removed; no other inflation",
+        "notes": "'clean' self-assessment removed as part of the thesis-restatement fix"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "6915d3bd1524",
+          "ts": "c6caa7e4d88a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T20:48:57.634Z",
+        "reviewed_sha": "3e49f58e1fa5d5c2efdf9a964179fd4213f0194e",
+        "evidence": "full-block read (agent:q04): no constructions of this category present"
+      }
+    ]
+  }
+}

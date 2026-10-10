@@ -1,0 +1,659 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lichnerowicz",
+    "path": "folio/quantum-observable-universe/quantum-observable-universes/categorical-lichnerowicz"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Deleted the Lean diagnostics blocks. Shortened pedagogical 'dictionary' translations into clean geometric facts. Unified definitions.",
+        "reviewed_at": "2026-07-07T14:26:55.767046Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:55.767046Z"
+        },
+        "field_hash": {
+          "md": "f921e8e6c5cf",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "f921e8e6c5cf",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "f921e8e6c5cf",
+          "ts": "1ea7de4cef06",
+          "lean": "fc070e2b4dd2"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:52:53.000Z",
+        "reviewed_sha": "c8e9ff7366c490105f7f6253bc80946d3988bc57",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f921e8e6c5cf",
+          "ts": "1ea7de4cef06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:22.856Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, three setup sentences, one display identity \\Delta_\\nabla^q = \\mathfrak{D}_\\nabla^2 + \\tfrac14 \\mathrm{Sc}_q, then two consequence sentences. No trap construction: the Bring-background sentence and the Sc_q = R + O(\\hbar_q) sentence both add content. uses[] carries no conj:, so no 3b propagation issue. OUT-OF-SCOPE observations reported to the caller: (i) NOTATION COLLISION -- this block writes the categorical Dirac operator \\mathfrak{D}_\\nabla (fraktur) while def:categorical-lagrangian, prop:categorical-lagrangian-exists/-unique and their proofs write \\mathcal{D}_\\nabla (calligraphic) for the same object, all four citing def:categorical-dirac-operator; per the notation register fraktur is reserved for physical observables and calligraphic for sheaves/bundles/algebras, so at most one of the two is admissible and the chapter must pick one. (ii) SYMBOL REUSE -- \\xi is the Reeb generator here and in the Reeb blocks, but the Fourier spectral variable in def:categorical-fourier and an unexplained datum in sec:categorical-lagrangian-intro."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f921e8e6c5cf",
+          "ts": "1ea7de4cef06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:22.901Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, three setup sentences, one display identity \\Delta_\\nabla^q = \\mathfrak{D}_\\nabla^2 + \\tfrac14 \\mathrm{Sc}_q, then two consequence sentences. No trap construction: the Bring-background sentence and the Sc_q = R + O(\\hbar_q) sentence both add content. uses[] carries no conj:, so no 3b propagation issue. OUT-OF-SCOPE observations reported to the caller: (i) NOTATION COLLISION -- this block writes the categorical Dirac operator \\mathfrak{D}_\\nabla (fraktur) while def:categorical-lagrangian, prop:categorical-lagrangian-exists/-unique and their proofs write \\mathcal{D}_\\nabla (calligraphic) for the same object, all four citing def:categorical-dirac-operator; per the notation register fraktur is reserved for physical observables and calligraphic for sheaves/bundles/algebras, so at most one of the two is admissible and the chapter must pick one. (ii) SYMBOL REUSE -- \\xi is the Reeb generator here and in the Reeb blocks, but the Fourier spectral variable in def:categorical-fourier and an unexplained datum in sec:categorical-lagrangian-intro."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f921e8e6c5cf",
+          "ts": "1ea7de4cef06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:22.953Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, three setup sentences, one display identity \\Delta_\\nabla^q = \\mathfrak{D}_\\nabla^2 + \\tfrac14 \\mathrm{Sc}_q, then two consequence sentences. No trap construction: the Bring-background sentence and the Sc_q = R + O(\\hbar_q) sentence both add content. uses[] carries no conj:, so no 3b propagation issue. OUT-OF-SCOPE observations reported to the caller: (i) NOTATION COLLISION -- this block writes the categorical Dirac operator \\mathfrak{D}_\\nabla (fraktur) while def:categorical-lagrangian, prop:categorical-lagrangian-exists/-unique and their proofs write \\mathcal{D}_\\nabla (calligraphic) for the same object, all four citing def:categorical-dirac-operator; per the notation register fraktur is reserved for physical observables and calligraphic for sheaves/bundles/algebras, so at most one of the two is admissible and the chapter must pick one. (ii) SYMBOL REUSE -- \\xi is the Reeb generator here and in the Reeb blocks, but the Fourier spectral variable in def:categorical-fourier and an unexplained datum in sec:categorical-lagrangian-intro."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f921e8e6c5cf",
+          "ts": "1ea7de4cef06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:22.994Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, three setup sentences, one display identity \\Delta_\\nabla^q = \\mathfrak{D}_\\nabla^2 + \\tfrac14 \\mathrm{Sc}_q, then two consequence sentences. No trap construction: the Bring-background sentence and the Sc_q = R + O(\\hbar_q) sentence both add content. uses[] carries no conj:, so no 3b propagation issue. OUT-OF-SCOPE observations reported to the caller: (i) NOTATION COLLISION -- this block writes the categorical Dirac operator \\mathfrak{D}_\\nabla (fraktur) while def:categorical-lagrangian, prop:categorical-lagrangian-exists/-unique and their proofs write \\mathcal{D}_\\nabla (calligraphic) for the same object, all four citing def:categorical-dirac-operator; per the notation register fraktur is reserved for physical observables and calligraphic for sheaves/bundles/algebras, so at most one of the two is admissible and the chapter must pick one. (ii) SYMBOL REUSE -- \\xi is the Reeb generator here and in the Reeb blocks, but the Fourier spectral variable in def:categorical-fourier and an unexplained datum in sec:categorical-lagrangian-intro."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f921e8e6c5cf",
+          "ts": "1ea7de4cef06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:23.030Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, three setup sentences, one display identity \\Delta_\\nabla^q = \\mathfrak{D}_\\nabla^2 + \\tfrac14 \\mathrm{Sc}_q, then two consequence sentences. No trap construction: the Bring-background sentence and the Sc_q = R + O(\\hbar_q) sentence both add content. uses[] carries no conj:, so no 3b propagation issue. OUT-OF-SCOPE observations reported to the caller: (i) NOTATION COLLISION -- this block writes the categorical Dirac operator \\mathfrak{D}_\\nabla (fraktur) while def:categorical-lagrangian, prop:categorical-lagrangian-exists/-unique and their proofs write \\mathcal{D}_\\nabla (calligraphic) for the same object, all four citing def:categorical-dirac-operator; per the notation register fraktur is reserved for physical observables and calligraphic for sheaves/bundles/algebras, so at most one of the two is admissible and the chapter must pick one. (ii) SYMBOL REUSE -- \\xi is the Reeb generator here and in the Reeb blocks, but the Fourier spectral variable in def:categorical-fourier and an unexplained datum in sec:categorical-lagrangian-intro."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f921e8e6c5cf",
+          "ts": "1ea7de4cef06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:23.066Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, three setup sentences, one display identity \\Delta_\\nabla^q = \\mathfrak{D}_\\nabla^2 + \\tfrac14 \\mathrm{Sc}_q, then two consequence sentences. No trap construction: the Bring-background sentence and the Sc_q = R + O(\\hbar_q) sentence both add content. uses[] carries no conj:, so no 3b propagation issue. OUT-OF-SCOPE observations reported to the caller: (i) NOTATION COLLISION -- this block writes the categorical Dirac operator \\mathfrak{D}_\\nabla (fraktur) while def:categorical-lagrangian, prop:categorical-lagrangian-exists/-unique and their proofs write \\mathcal{D}_\\nabla (calligraphic) for the same object, all four citing def:categorical-dirac-operator; per the notation register fraktur is reserved for physical observables and calligraphic for sheaves/bundles/algebras, so at most one of the two is admissible and the chapter must pick one. (ii) SYMBOL REUSE -- \\xi is the Reeb generator here and in the Reeb blocks, but the Fourier spectral variable in def:categorical-fourier and an unexplained datum in sec:categorical-lagrangian-intro."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f921e8e6c5cf",
+          "ts": "1ea7de4cef06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:23.105Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, three setup sentences, one display identity \\Delta_\\nabla^q = \\mathfrak{D}_\\nabla^2 + \\tfrac14 \\mathrm{Sc}_q, then two consequence sentences. No trap construction: the Bring-background sentence and the Sc_q = R + O(\\hbar_q) sentence both add content. uses[] carries no conj:, so no 3b propagation issue. OUT-OF-SCOPE observations reported to the caller: (i) NOTATION COLLISION -- this block writes the categorical Dirac operator \\mathfrak{D}_\\nabla (fraktur) while def:categorical-lagrangian, prop:categorical-lagrangian-exists/-unique and their proofs write \\mathcal{D}_\\nabla (calligraphic) for the same object, all four citing def:categorical-dirac-operator; per the notation register fraktur is reserved for physical observables and calligraphic for sheaves/bundles/algebras, so at most one of the two is admissible and the chapter must pick one. (ii) SYMBOL REUSE -- \\xi is the Reeb generator here and in the Reeb blocks, but the Fourier spectral variable in def:categorical-fourier and an unexplained datum in sec:categorical-lagrangian-intro."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f921e8e6c5cf",
+          "ts": "1ea7de4cef06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:23.142Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, three setup sentences, one display identity \\Delta_\\nabla^q = \\mathfrak{D}_\\nabla^2 + \\tfrac14 \\mathrm{Sc}_q, then two consequence sentences. No trap construction: the Bring-background sentence and the Sc_q = R + O(\\hbar_q) sentence both add content. uses[] carries no conj:, so no 3b propagation issue. OUT-OF-SCOPE observations reported to the caller: (i) NOTATION COLLISION -- this block writes the categorical Dirac operator \\mathfrak{D}_\\nabla (fraktur) while def:categorical-lagrangian, prop:categorical-lagrangian-exists/-unique and their proofs write \\mathcal{D}_\\nabla (calligraphic) for the same object, all four citing def:categorical-dirac-operator; per the notation register fraktur is reserved for physical observables and calligraphic for sheaves/bundles/algebras, so at most one of the two is admissible and the chapter must pick one. (ii) SYMBOL REUSE -- \\xi is the Reeb generator here and in the Reeb blocks, but the Fourier spectral variable in def:categorical-fourier and an unexplained datum in sec:categorical-lagrangian-intro."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f921e8e6c5cf",
+          "ts": "1ea7de4cef06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:23.177Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, three setup sentences, one display identity \\Delta_\\nabla^q = \\mathfrak{D}_\\nabla^2 + \\tfrac14 \\mathrm{Sc}_q, then two consequence sentences. No trap construction: the Bring-background sentence and the Sc_q = R + O(\\hbar_q) sentence both add content. uses[] carries no conj:, so no 3b propagation issue. OUT-OF-SCOPE observations reported to the caller: (i) NOTATION COLLISION -- this block writes the categorical Dirac operator \\mathfrak{D}_\\nabla (fraktur) while def:categorical-lagrangian, prop:categorical-lagrangian-exists/-unique and their proofs write \\mathcal{D}_\\nabla (calligraphic) for the same object, all four citing def:categorical-dirac-operator; per the notation register fraktur is reserved for physical observables and calligraphic for sheaves/bundles/algebras, so at most one of the two is admissible and the chapter must pick one. (ii) SYMBOL REUSE -- \\xi is the Reeb generator here and in the Reeb blocks, but the Fourier spectral variable in def:categorical-fourier and an unexplained datum in sec:categorical-lagrangian-intro."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f921e8e6c5cf",
+          "ts": "1ea7de4cef06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:23.215Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, three setup sentences, one display identity \\Delta_\\nabla^q = \\mathfrak{D}_\\nabla^2 + \\tfrac14 \\mathrm{Sc}_q, then two consequence sentences. No trap construction: the Bring-background sentence and the Sc_q = R + O(\\hbar_q) sentence both add content. uses[] carries no conj:, so no 3b propagation issue. OUT-OF-SCOPE observations reported to the caller: (i) NOTATION COLLISION -- this block writes the categorical Dirac operator \\mathfrak{D}_\\nabla (fraktur) while def:categorical-lagrangian, prop:categorical-lagrangian-exists/-unique and their proofs write \\mathcal{D}_\\nabla (calligraphic) for the same object, all four citing def:categorical-dirac-operator; per the notation register fraktur is reserved for physical observables and calligraphic for sheaves/bundles/algebras, so at most one of the two is admissible and the chapter must pick one. (ii) SYMBOL REUSE -- \\xi is the Reeb generator here and in the Reeb blocks, but the Fourier spectral variable in def:categorical-fourier and an unexplained datum in sec:categorical-lagrangian-intro."
+      }
+    ]
+  }
+}

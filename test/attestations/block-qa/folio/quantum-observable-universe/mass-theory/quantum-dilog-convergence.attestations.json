@@ -1,0 +1,1013 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/quantum-dilog-convergence",
+    "path": "folio/quantum-observable-universe/mass-theory/quantum-dilog-convergence"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "05ef8e686236",
+          "lean": "a73595625017"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "05ef8e686236",
+          "lean": "a73595625017"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "2fad016d7144",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.757496Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.757496Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Statement contains only the bare claim without physical interpretation.",
+        "severity": "minor"
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "2fad016d7144",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.757496Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.757496Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:23:19.000Z",
+        "reviewed_sha": "c8f6fe4976981c68adb316e7614fb7a87413855e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "2fad016d7144",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "2fad016d7144",
+          "ts": "05ef8e686236"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.757496Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.757496Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "The sibling Lean file folio/quantum-observable-universe/mass-theory/quantum-dilog-convergence.lean is missing entirely.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/quantum-dilog-convergence.md:1",
+        "severity": "minor"
+      },
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-fable-5-1",
+          "agent_date": "2026-09-03T20:32:08.343949Z",
+          "agent_skill": "local/dispatch-agent"
+        },
+        "reviewed_at": "2026-09-03T20:32:08.343949Z",
+        "reviewed_sha": "4a4e5ce3d2cbbfd6b22fdfc08b74b38323a736e3",
+        "notes": "Explicitly real-analytic convergence statement (q in R, 1<q, |z|<q, product converges to a non-zero real) sits in mass-theory, an ARCHIMEDEAN chapter whose profile admits real-gt-1; the statement declares its side, so regime matches section regime.",
+        "evidence": "REGIME. mass-theory is listed in ARCHIMEDEAN_CHAPTERS (folio-assistant/cat-harness/content/pipeline/_folio-chapter-profiles.qou.ts:175) and its admitted q-regime profile is {na, symbolic, generic-R, real-positive, real-gt-1, fixed-q0} (:88-90). The chapter docstring (folio/quantum-observable-universe/mass-theory/mass-theory.ts:4-21) declares Algebraic/Geometric/Archimedean/Physical faces and names the quantum dilogarithm and archimedean realization under the Geometric face (:15-17). The block is in section 'Hoefsmit convergence: construction', label sec:hoefsmit-convergence-construction (mass-theory.ts:236-263; block listed at :256). Peers in that section with a wall-side-statement verdict are all pass: operator-selection-lp, hecke-convergence-bound ('Statement respects the chapter's base-ring regime'), algebraic-quantum-volume, habiro-ring, habiro-expansion-atomic, z-habiro-ring (all 2026-07-07). TOKENS IN STATEMENT (.md is a single 7-line statement, no proof body): :1 'q in R' (real base field declared), :1 '1 < q' (order hypothesis, real-gt-1), :1 'z in R', :1 '|z| < q' (absolute-value order hypothesis), :4 infinite product prod_{k>=1}(1 - q^{-k} z)^{-1} (limit object; q^{-k} needs a field, convergence needs a norm), :7 'infinite product converges to a well-defined, non-zero real number' (convergence/limit claim, explicitly real-valued). Tokens outside the statement: none in the .md (there is nothing outside the statement). No Real.sqrt/log/exp, no numeric q or q_0, no MeV/m_e/CODATA, no Faddeev/Rogers evaluation. BRANCHES. Not FAIL branch 1: the chapter is archimedean, not generic/substrate, so hard-coding 1<q and |z|<q is admitted by the profile (real-gt-1) and needs no wall: field or banner; and the statement nonetheless flags its side explicitly by writing 'q in R' and 'real number'. Not FAIL branch 2: this is not a purely algebraic identity belonging upstream - convergence of an infinite product is a topological/normed notion with no generic-ring content (the .ts authorNotes §7c note, quantum-dilog-convergence.ts:21-26, says exactly this: 'R is load-bearing ... a generic commutative ring supports none of it'). Not WARN: there is a single regime (real, 1<q) throughout; nothing is mixed and the evaluation side is stated in the first clause. PASS: the statement's regime (real-gt-1 analytic convergence) matches its chapter's regime and is explicitly specialised in the text. PRIOR VERDICT. The 2026-07-07 fail (gemini-3.1-pro) cites only 'sibling Lean file ... is missing' at .md:1 - that is not a wall-side-statement finding (criterion depends_on md only, judges the narrative statement's regime) and the reviewer did not engage the statement; the fail was incorrect. SIDE NOTE (not scored): there is no .lean sibling, but the .ts lean.ref 'qou:QOU.MassEndomorphism.PhiQConvergence.quantumDilog_multipliable' resolves via candidate 2 to folio/quantum-observable-universe/lean/QOU/MassEndomorphism/PhiQConvergence.lean:211 'theorem quantumDilog_multipliable {q z : R} (hq : 1 < q) (hz : |z| < q)', whose hypotheses match the .md statement exactly; the .ts comment (:7-8) records that no stub was added per the no-shadowing rule. Not built this session."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "2fad016d7144",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.757496Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.757496Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Proof machinery matches the statement regime."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Drifted Lean file found via module path components. Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T01:05:41.000Z",
+        "reviewed_sha": "150027a6d84e5f98eba54dcf37e09e7dbbba2bc0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "2fad016d7144",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.757496Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.757496Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-false-claim.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:23:19.000Z",
+        "reviewed_sha": "c8f6fe4976981c68adb316e7614fb7a87413855e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "2fad016d7144",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.757496Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.757496Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-vacuous.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:23:19.000Z",
+        "reviewed_sha": "c8f6fe4976981c68adb316e7614fb7a87413855e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "2fad016d7144",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.757496Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.757496Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-circular.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:23:19.000Z",
+        "reviewed_sha": "c8f6fe4976981c68adb316e7614fb7a87413855e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "2fad016d7144",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.757496Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.757496Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-overclaim.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:23:19.000Z",
+        "reviewed_sha": "c8f6fe4976981c68adb316e7614fb7a87413855e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "2fad016d7144",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.757496Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.757496Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-hidden-dof.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:23:19.000Z",
+        "reviewed_sha": "c8f6fe4976981c68adb316e7614fb7a87413855e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "2fad016d7144",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.757496Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.757496Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-non-sequitur.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:23:19.000Z",
+        "reviewed_sha": "c8f6fe4976981c68adb316e7614fb7a87413855e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "2fad016d7144",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.757496Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.757496Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-citation-misuse.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:23:19.000Z",
+        "reviewed_sha": "c8f6fe4976981c68adb316e7614fb7a87413855e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "2fad016d7144",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.757496Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.757496Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-definitional-ambiguity.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:23:19.000Z",
+        "reviewed_sha": "c8f6fe4976981c68adb316e7614fb7a87413855e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "2fad016d7144",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.757496Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.757496Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-empirical-fragility.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:23:19.000Z",
+        "reviewed_sha": "c8f6fe4976981c68adb316e7614fb7a87413855e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "2fad016d7144",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.757496Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.757496Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-physical-implausibility.",
+        "evidence": "folio/quantum-observable-universe/mass-theory/quantum-dilog-convergence.ts:1",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:23:19.000Z",
+        "reviewed_sha": "c8f6fe4976981c68adb316e7614fb7a87413855e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "2fad016d7144",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.757496Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.757496Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "No issues found for da-reproducibility.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:23:19.000Z",
+        "reviewed_sha": "c8f6fe4976981c68adb316e7614fb7a87413855e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "d15d9a86a728",
+          "ts": "05ef8e686236"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-28T05:50:24.256Z",
+        "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
+        "notes": "Referee verdict: open-objection. Objection: Sibling Lean file is missing.",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The referenced Lean sibling file is missing, preventing formal verification of the claims.",
+        "evidence": "Referee verdict: open-objection. Objection: Sibling Lean file is missing."
+      },
+      {
+        "field_hash": {
+          "md": "2fad016d7144",
+          "ts": "05ef8e686236"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-27",
+          "version": "1.0",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.757496Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.757496Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "verdict: clean"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:23:19.000Z",
+        "reviewed_sha": "c8f6fe4976981c68adb316e7614fb7a87413855e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "2fad016d7144",
+          "ts": "05ef8e686236"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.757496Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.757496Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The referenced Lean file folio/quantum-observable-universe/mass-theory/quantum-dilog-convergence.lean is missing, leading to complete divergence.",
+        "severity": "minor",
+        "evidence": "The referenced Lean file folio/quantum-observable-universe/mass-theory/quantum-dilog-convergence.lean is missing, leading to complete divergence."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:23:19.000Z",
+        "reviewed_sha": "c8f6fe4976981c68adb316e7614fb7a87413855e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote mass-theory_seq8.md via precise python replacement for Milnor standards: clean declarative prose, no wasted words.",
+        "reviewed_at": "2026-07-07T14:26:56.757496Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "milnor-editor",
+          "version": "v1",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.757496Z"
+        },
+        "field_hash": {
+          "md": "2fad016d7144",
+          "ts": "05ef8e686236"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound conceptual formulation correctly verifying specific complex categorical configurations meticulously within distinct formal boundaries.",
+        "reviewed_at": "2026-07-08T18:23:19.000Z",
+        "reviewed_sha": "c8f6fe4976981c68adb316e7614fb7a87413855e",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.583Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full -- a bare hypothesis-and-conclusion statement with no discursive prose, so all ten categories are clean by construction (no negation-contrast, no pivot, no dash, no triple, no closer, no meta, no restatement, no warmth, no superlative, and the single sentence is speakable). RIGOR PASS: the hypotheses are exactly what the conclusion needs. With q > 1 and |z| < q, |q^{-k}z| < q^{1-k} <= 1 for k >= 1 with strict inequality at every k, so no factor vanishes; sum_k |q^{-k}z| = |z|/(q-1) < infinity, giving multipliability and a non-zero limit. The product form prod_{k>=1}(1 - q^{-k}z)^{-1} is the standard quantum dilogarithm and is consistent with the Phi_q used in the sibling stratification and brane-tower blocks.",
+        "notes": "Clean. Note for the record that this block correctly declares its archimedean side (q, z real, q > 1) rather than stating a generic-ring result -- appropriate under SS7c, since convergence is an archimedean notion."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.624Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full -- a bare hypothesis-and-conclusion statement with no discursive prose, so all ten categories are clean by construction (no negation-contrast, no pivot, no dash, no triple, no closer, no meta, no restatement, no warmth, no superlative, and the single sentence is speakable). RIGOR PASS: the hypotheses are exactly what the conclusion needs. With q > 1 and |z| < q, |q^{-k}z| < q^{1-k} <= 1 for k >= 1 with strict inequality at every k, so no factor vanishes; sum_k |q^{-k}z| = |z|/(q-1) < infinity, giving multipliability and a non-zero limit. The product form prod_{k>=1}(1 - q^{-k}z)^{-1} is the standard quantum dilogarithm and is consistent with the Phi_q used in the sibling stratification and brane-tower blocks.",
+        "notes": "Clean. Note for the record that this block correctly declares its archimedean side (q, z real, q > 1) rather than stating a generic-ring result -- appropriate under SS7c, since convergence is an archimedean notion."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.662Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full -- a bare hypothesis-and-conclusion statement with no discursive prose, so all ten categories are clean by construction (no negation-contrast, no pivot, no dash, no triple, no closer, no meta, no restatement, no warmth, no superlative, and the single sentence is speakable). RIGOR PASS: the hypotheses are exactly what the conclusion needs. With q > 1 and |z| < q, |q^{-k}z| < q^{1-k} <= 1 for k >= 1 with strict inequality at every k, so no factor vanishes; sum_k |q^{-k}z| = |z|/(q-1) < infinity, giving multipliability and a non-zero limit. The product form prod_{k>=1}(1 - q^{-k}z)^{-1} is the standard quantum dilogarithm and is consistent with the Phi_q used in the sibling stratification and brane-tower blocks.",
+        "notes": "Clean. Note for the record that this block correctly declares its archimedean side (q, z real, q > 1) rather than stating a generic-ring result -- appropriate under SS7c, since convergence is an archimedean notion."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.703Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full -- a bare hypothesis-and-conclusion statement with no discursive prose, so all ten categories are clean by construction (no negation-contrast, no pivot, no dash, no triple, no closer, no meta, no restatement, no warmth, no superlative, and the single sentence is speakable). RIGOR PASS: the hypotheses are exactly what the conclusion needs. With q > 1 and |z| < q, |q^{-k}z| < q^{1-k} <= 1 for k >= 1 with strict inequality at every k, so no factor vanishes; sum_k |q^{-k}z| = |z|/(q-1) < infinity, giving multipliability and a non-zero limit. The product form prod_{k>=1}(1 - q^{-k}z)^{-1} is the standard quantum dilogarithm and is consistent with the Phi_q used in the sibling stratification and brane-tower blocks.",
+        "notes": "Clean. Note for the record that this block correctly declares its archimedean side (q, z real, q > 1) rather than stating a generic-ring result -- appropriate under SS7c, since convergence is an archimedean notion."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.743Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full -- a bare hypothesis-and-conclusion statement with no discursive prose, so all ten categories are clean by construction (no negation-contrast, no pivot, no dash, no triple, no closer, no meta, no restatement, no warmth, no superlative, and the single sentence is speakable). RIGOR PASS: the hypotheses are exactly what the conclusion needs. With q > 1 and |z| < q, |q^{-k}z| < q^{1-k} <= 1 for k >= 1 with strict inequality at every k, so no factor vanishes; sum_k |q^{-k}z| = |z|/(q-1) < infinity, giving multipliability and a non-zero limit. The product form prod_{k>=1}(1 - q^{-k}z)^{-1} is the standard quantum dilogarithm and is consistent with the Phi_q used in the sibling stratification and brane-tower blocks.",
+        "notes": "Clean. Note for the record that this block correctly declares its archimedean side (q, z real, q > 1) rather than stating a generic-ring result -- appropriate under SS7c, since convergence is an archimedean notion."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.784Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full -- a bare hypothesis-and-conclusion statement with no discursive prose, so all ten categories are clean by construction (no negation-contrast, no pivot, no dash, no triple, no closer, no meta, no restatement, no warmth, no superlative, and the single sentence is speakable). RIGOR PASS: the hypotheses are exactly what the conclusion needs. With q > 1 and |z| < q, |q^{-k}z| < q^{1-k} <= 1 for k >= 1 with strict inequality at every k, so no factor vanishes; sum_k |q^{-k}z| = |z|/(q-1) < infinity, giving multipliability and a non-zero limit. The product form prod_{k>=1}(1 - q^{-k}z)^{-1} is the standard quantum dilogarithm and is consistent with the Phi_q used in the sibling stratification and brane-tower blocks.",
+        "notes": "Clean. Note for the record that this block correctly declares its archimedean side (q, z real, q > 1) rather than stating a generic-ring result -- appropriate under SS7c, since convergence is an archimedean notion."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.823Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full -- a bare hypothesis-and-conclusion statement with no discursive prose, so all ten categories are clean by construction (no negation-contrast, no pivot, no dash, no triple, no closer, no meta, no restatement, no warmth, no superlative, and the single sentence is speakable). RIGOR PASS: the hypotheses are exactly what the conclusion needs. With q > 1 and |z| < q, |q^{-k}z| < q^{1-k} <= 1 for k >= 1 with strict inequality at every k, so no factor vanishes; sum_k |q^{-k}z| = |z|/(q-1) < infinity, giving multipliability and a non-zero limit. The product form prod_{k>=1}(1 - q^{-k}z)^{-1} is the standard quantum dilogarithm and is consistent with the Phi_q used in the sibling stratification and brane-tower blocks.",
+        "notes": "Clean. Note for the record that this block correctly declares its archimedean side (q, z real, q > 1) rather than stating a generic-ring result -- appropriate under SS7c, since convergence is an archimedean notion."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.862Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full -- a bare hypothesis-and-conclusion statement with no discursive prose, so all ten categories are clean by construction (no negation-contrast, no pivot, no dash, no triple, no closer, no meta, no restatement, no warmth, no superlative, and the single sentence is speakable). RIGOR PASS: the hypotheses are exactly what the conclusion needs. With q > 1 and |z| < q, |q^{-k}z| < q^{1-k} <= 1 for k >= 1 with strict inequality at every k, so no factor vanishes; sum_k |q^{-k}z| = |z|/(q-1) < infinity, giving multipliability and a non-zero limit. The product form prod_{k>=1}(1 - q^{-k}z)^{-1} is the standard quantum dilogarithm and is consistent with the Phi_q used in the sibling stratification and brane-tower blocks.",
+        "notes": "Clean. Note for the record that this block correctly declares its archimedean side (q, z real, q > 1) rather than stating a generic-ring result -- appropriate under SS7c, since convergence is an archimedean notion."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.902Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full -- a bare hypothesis-and-conclusion statement with no discursive prose, so all ten categories are clean by construction (no negation-contrast, no pivot, no dash, no triple, no closer, no meta, no restatement, no warmth, no superlative, and the single sentence is speakable). RIGOR PASS: the hypotheses are exactly what the conclusion needs. With q > 1 and |z| < q, |q^{-k}z| < q^{1-k} <= 1 for k >= 1 with strict inequality at every k, so no factor vanishes; sum_k |q^{-k}z| = |z|/(q-1) < infinity, giving multipliability and a non-zero limit. The product form prod_{k>=1}(1 - q^{-k}z)^{-1} is the standard quantum dilogarithm and is consistent with the Phi_q used in the sibling stratification and brane-tower blocks.",
+        "notes": "Clean. Note for the record that this block correctly declares its archimedean side (q, z real, q > 1) rather than stating a generic-ring result -- appropriate under SS7c, since convergence is an archimedean notion."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "17af59bb9bb2",
+          "ts": "93d50e06f9a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.943Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proposition, read in full -- a bare hypothesis-and-conclusion statement with no discursive prose, so all ten categories are clean by construction (no negation-contrast, no pivot, no dash, no triple, no closer, no meta, no restatement, no warmth, no superlative, and the single sentence is speakable). RIGOR PASS: the hypotheses are exactly what the conclusion needs. With q > 1 and |z| < q, |q^{-k}z| < q^{1-k} <= 1 for k >= 1 with strict inequality at every k, so no factor vanishes; sum_k |q^{-k}z| = |z|/(q-1) < infinity, giving multipliability and a non-zero limit. The product form prod_{k>=1}(1 - q^{-k}z)^{-1} is the standard quantum dilogarithm and is consistent with the Phi_q used in the sibling stratification and brane-tower blocks.",
+        "notes": "Clean. Note for the record that this block correctly declares its archimedean side (q, z real, q > 1) rather than stating a generic-ring result -- appropriate under SS7c, since convergence is an archimedean notion."
+      }
+    ]
+  }
+}

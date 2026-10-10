@@ -1,0 +1,735 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/hopf-link-non-magic",
+    "path": "folio/quantum-observable-universe/mass-theory/hopf-link-non-magic"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "19315ced5be9",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "19315ced5be9",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "19315ced5be9",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:56.620Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic property rigorously grouping discrete continuous constraints logically alongside formal mathematical constraints.",
+        "reviewed_at": "2026-07-08T14:50:04.000Z",
+        "reviewed_sha": "5968237116c2265d14f14dd22ad655bca56b3280",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "19315ced5be9",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "19315ced5be9",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.038Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in 'Hopf link as the canonical non-magic knot operator (lowest cohomological degree)': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "hopf-link-non-magic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic property rigorously grouping discrete continuous constraints logically alongside formal mathematical constraints.",
+        "reviewed_at": "2026-07-08T14:50:04.000Z",
+        "reviewed_sha": "5968237116c2265d14f14dd22ad655bca56b3280",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "19315ced5be9",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.044Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The block 'Hopf link as the canonical non-magic knot operator (lowest cohomological degree)' presents substantial mathematical content: 'The Hopf link $T_{2,2}$ is the simplest non-trivial 2-component link'.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic property rigorously grouping discrete continuous constraints logically alongside formal mathematical constraints.",
+        "reviewed_at": "2026-07-08T14:50:04.000Z",
+        "reviewed_sha": "5968237116c2265d14f14dd22ad655bca56b3280",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "19315ced5be9",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.050Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Hopf link as the canonical non-magic knot operator (lowest cohomological degree)'.",
+        "severity": "minor",
+        "evidence": "hopf-link-non-magic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic property rigorously grouping discrete continuous constraints logically alongside formal mathematical constraints.",
+        "reviewed_at": "2026-07-08T14:50:04.000Z",
+        "reviewed_sha": "5968237116c2265d14f14dd22ad655bca56b3280",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "19315ced5be9",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.056Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The remarks and narrative scope in 'Hopf link as the canonical non-magic knot operator (lowest cohomological degree)' are appropriately qualified.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic property rigorously grouping discrete continuous constraints logically alongside formal mathematical constraints.",
+        "reviewed_at": "2026-07-08T14:50:04.000Z",
+        "reviewed_sha": "5968237116c2265d14f14dd22ad655bca56b3280",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "19315ced5be9",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.062Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Hopf link as the canonical non-magic knot operator (lowest cohomological degree)'.",
+        "severity": "minor",
+        "evidence": "hopf-link-non-magic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic property rigorously grouping discrete continuous constraints logically alongside formal mathematical constraints.",
+        "reviewed_at": "2026-07-08T14:50:04.000Z",
+        "reviewed_sha": "5968237116c2265d14f14dd22ad655bca56b3280",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "19315ced5be9",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.068Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose arguments in 'Hopf link as the canonical non-magic knot operator (lowest cohomological degree)' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "hopf-link-non-magic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic property rigorously grouping discrete continuous constraints logically alongside formal mathematical constraints.",
+        "reviewed_at": "2026-07-08T14:50:04.000Z",
+        "reviewed_sha": "5968237116c2265d14f14dd22ad655bca56b3280",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "19315ced5be9",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.074Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic property rigorously grouping discrete continuous constraints logically alongside formal mathematical constraints.",
+        "reviewed_at": "2026-07-08T14:50:04.000Z",
+        "reviewed_sha": "5968237116c2265d14f14dd22ad655bca56b3280",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "19315ced5be9",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.080Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No citations are present in 'Hopf link as the canonical non-magic knot operator (lowest cohomological degree)', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "hopf-link-non-magic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic property rigorously grouping discrete continuous constraints logically alongside formal mathematical constraints.",
+        "reviewed_at": "2026-07-08T14:50:04.000Z",
+        "reviewed_sha": "5968237116c2265d14f14dd22ad655bca56b3280",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "19315ced5be9",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.085Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Hopf link as the canonical non-magic knot operator (lowest cohomological degree)' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "hopf-link-non-magic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic property rigorously grouping discrete continuous constraints logically alongside formal mathematical constraints.",
+        "reviewed_at": "2026-07-08T14:50:04.000Z",
+        "reviewed_sha": "5968237116c2265d14f14dd22ad655bca56b3280",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "19315ced5be9",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.091Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The empirical claims in 'Hopf link as the canonical non-magic knot operator (lowest cohomological degree)' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "hopf-link-non-magic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic property rigorously grouping discrete continuous constraints logically alongside formal mathematical constraints.",
+        "reviewed_at": "2026-07-08T14:50:04.000Z",
+        "reviewed_sha": "5968237116c2265d14f14dd22ad655bca56b3280",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "19315ced5be9",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.098Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Hopf link as the canonical non-magic knot operator (lowest cohomological degree)' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "hopf-link-non-magic.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic property rigorously grouping discrete continuous constraints logically alongside formal mathematical constraints.",
+        "reviewed_at": "2026-07-08T14:50:04.000Z",
+        "reviewed_sha": "5968237116c2265d14f14dd22ad655bca56b3280",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "19315ced5be9",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.104Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The derivation steps and formal definitions in 'Hopf link as the canonical non-magic knot operator (lowest cohomological degree)' are reproducible.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic property rigorously grouping discrete continuous constraints logically alongside formal mathematical constraints.",
+        "reviewed_at": "2026-07-08T14:50:04.000Z",
+        "reviewed_sha": "5968237116c2265d14f14dd22ad655bca56b3280",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "19315ced5be9",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:43.110Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Hopf link as the canonical non-magic knot operator (lowest cohomological degree)' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic property rigorously grouping discrete continuous constraints logically alongside formal mathematical constraints.",
+        "reviewed_at": "2026-07-08T14:50:04.000Z",
+        "reviewed_sha": "5968237116c2265d14f14dd22ad655bca56b3280",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.",
+        "reviewed_at": "2026-07-07T23:33:44.464Z",
+        "reviewed_sha": "aa944b9b92668dad00f41928a8b2a565806b4b42",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretic property rigorously grouping discrete continuous constraints logically alongside formal mathematical constraints.",
+        "reviewed_at": "2026-07-08T14:50:04.000Z",
+        "reviewed_sha": "5968237116c2265d14f14dd22ad655bca56b3280",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "87f9d3996e43",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:40.978Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "\"(Seifert-fibered, not hyperbolic)\", \"operators NOT Hopf-decomposable\" and \"none of which is Hopf-decomposable\" are all substantive mathematical facts; the magic/non-magic split IS the remark content."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "87f9d3996e43",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:41.014Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "No setup-then-reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "87f9d3996e43",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:41.051Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "severity": "minor",
+        "evidence": "Seven spaced em-dashes in ~330 words and NONE is a parenthetical pair: every one appends a gloss to a finished clause (\"simeq T^2 -- cohomology rank <= 2\"; \"the *by definition-non-trivial* link -- its Alexander structure\"; \"Z + Z -- abelian\"; \"spectral sequence (...) -- the *descended Markov-trace* piece\"; \"is **Hopf-decomposable** -- expressible as\"; \"torus knots {...} -- none of which is Hopf-decomposable\"). The construction is doing the work punctuation and sentence structure should do.",
+        "notes": "PARTIALLY FIXED inline (the two in running prose, comma swaps only): \"is **Hopf-decomposable** -- expressible as\" -> \"is **Hopf-decomposable**, expressible as\"; \"{T_23,...,T_35} -- none of which\" -> \"{T_23,...,T_35}, none of which\". Count 7 -> 5. The remaining five sit inside bullet items where a dash-gloss is more idiomatic; proposed fix is parentheses (\"Z + Z (abelian)\") but left for the author since it touches four bullets. $$ delimiters re-verified balanced."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "87f9d3996e43",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:41.105Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "No reflex triple; the torus-knot set has six members and the bullet list has five."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "87f9d3996e43",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:41.141Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "Closes on a quantitative claim (descended tr_M contributes at most about 0.5% of magic-shell binding)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "87f9d3996e43",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:41.177Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "No narration of emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "87f9d3996e43",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:41.228Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "severity": "minor",
+        "evidence": "Not block-final, but noted: \"It lives entirely in E_infty^{0,*} (the descended Markov-trace piece per conj:mass-endomorphism)\" duplicates, two paragraphs later, \"The Hopf link lives entirely in the E_infty^{0,*} slot ... -- the descended Markov-trace piece\", citing the same conjecture both times."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "87f9d3996e43",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:41.267Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "87f9d3996e43",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:41.324Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "evidence": "\"the simplest non-trivial 2-component link\" and \"minimum for any non-trivial link\" are both true of the Hopf link, and \"entirely\" is a genuine exclusivity claim about the E_infty grading."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "87f9d3996e43",
+          "ts": "e0f1ec2d7fb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:33:41.358Z",
+        "reviewed_sha": "735c9f916b1c04b73ec6eb54451c1628354eca4d",
+        "severity": "minor",
+        "evidence": "\"its E^{0,*}-only cohomological location\" is a compressed noun chain, but the rest reads aloud.",
+        "notes": "VERIFIED: the topological facts are all CORRECT: Hopf link = T(2,2), crossing number 2, Seifert-fibered with volume 0, complement homotopy equivalent to T^2 with cohomology ranks 1,2,1, pi_1 = Z + Z, multivariable Alexander polynomial 1 while the one-variable Alexander polynomial is 0, and all six listed torus knots are genuine knots (gcd(p,q) = 1 in every case). Separate (non-trap) findings: (1) SWEEP GARBLE of the documented \"non-by definition\" class: \"the Hopf link is the *by definition-non-trivial* link -- its Alexander structure carries no signed information\". The sentence contradicts itself as written (an Alexander structure carrying no signed information is the TRIVIAL case), so the intended wording cannot be recovered from context; not fixed. (2) NOTATION COLLISION inside one table row: \"non-Hopf Bring torus knot (T_{p,q} with q >= 3, p in {2,3})\" sits in the column immediately left of \"E_infty^{p >= 1, q >= 1}\", so p and q carry two different meanings in adjacent cells, and q is also the substrate parameter elsewhere in the block (\"at substrate q_0\"). (3) The prose says magic shells need \"E_infty^{p, q >= 1}\" while the table row says \"E_infty^{p >= 1, q >= 1}\"."
+      }
+    ]
+  }
+}

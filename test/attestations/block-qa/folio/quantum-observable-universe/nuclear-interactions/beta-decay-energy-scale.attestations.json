@@ -1,0 +1,505 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/beta-decay-energy-scale",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/beta-decay-energy-scale"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "1c026179412c",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "1c026179412c",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:39:32.000Z",
+        "reviewed_sha": "c1a229c80770510f1919fb33b48ca8790f7153a6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:39:32.000Z",
+        "reviewed_sha": "c1a229c80770510f1919fb33b48ca8790f7153a6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:39:32.000Z",
+        "reviewed_sha": "c1a229c80770510f1919fb33b48ca8790f7153a6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:39:32.000Z",
+        "reviewed_sha": "c1a229c80770510f1919fb33b48ca8790f7153a6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:39:32.000Z",
+        "reviewed_sha": "c1a229c80770510f1919fb33b48ca8790f7153a6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:39:32.000Z",
+        "reviewed_sha": "c1a229c80770510f1919fb33b48ca8790f7153a6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:39:32.000Z",
+        "reviewed_sha": "c1a229c80770510f1919fb33b48ca8790f7153a6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:39:32.000Z",
+        "reviewed_sha": "c1a229c80770510f1919fb33b48ca8790f7153a6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:39:32.000Z",
+        "reviewed_sha": "c1a229c80770510f1919fb33b48ca8790f7153a6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:39:32.000Z",
+        "reviewed_sha": "c1a229c80770510f1919fb33b48ca8790f7153a6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:39:32.000Z",
+        "reviewed_sha": "c1a229c80770510f1919fb33b48ca8790f7153a6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:39:32.000Z",
+        "reviewed_sha": "c1a229c80770510f1919fb33b48ca8790f7153a6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:39:32.000Z",
+        "reviewed_sha": "c1a229c80770510f1919fb33b48ca8790f7153a6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:39:32.000Z",
+        "reviewed_sha": "c1a229c80770510f1919fb33b48ca8790f7153a6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq8"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:39:32.000Z",
+        "reviewed_sha": "c1a229c80770510f1919fb33b48ca8790f7153a6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "8926c7183ffe",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:51.356Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "major",
+        "evidence": "Full-context read of rem:beta-decay-energy-scale (7 sections, 3 displays). Recomputed every quoted numeric with mpmath at the proton pin: E_0^(N=0) = m_e/(q0(q0-1)) = 4.185981 (matches 4.186); E_0^(cal) = Q_beta/|Delta net| = 4.154917 (matches 4.155); 1/(1-hbar_q^2) = 1.0099145 (matches 1.0099); Q_beta = m_n - m_p - m_e = 0.78233 (matches). Internal consistency confirmed: the N=0 form predicts +0.75% and the tower form +1.75%, so 'the geometric tower form moves the prediction further from the calibrated value' is correct, and 0.877 > Q_beta as the block says. Two numeric defects reported separately: E_0^full is stated 4.228 but is 4.227483 (the block appears to have multiplied the ROUNDED 4.186 by 1.0099145, giving 4.22751); and 'From the witness: Delta(net) = -0.188291' appears in NO witness - neither of the two cited files, nor anywhere else in computations/.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "8926c7183ffe",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:51.394Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "major",
+        "evidence": "Full-context read of rem:beta-decay-energy-scale (7 sections, 3 displays). Recomputed every quoted numeric with mpmath at the proton pin: E_0^(N=0) = m_e/(q0(q0-1)) = 4.185981 (matches 4.186); E_0^(cal) = Q_beta/|Delta net| = 4.154917 (matches 4.155); 1/(1-hbar_q^2) = 1.0099145 (matches 1.0099); Q_beta = m_n - m_p - m_e = 0.78233 (matches). Internal consistency confirmed: the N=0 form predicts +0.75% and the tower form +1.75%, so 'the geometric tower form moves the prediction further from the calibrated value' is correct, and 0.877 > Q_beta as the block says. Two numeric defects reported separately: E_0^full is stated 4.228 but is 4.227483 (the block appears to have multiplied the ROUNDED 4.186 by 1.0099145, giving 4.22751); and 'From the witness: Delta(net) = -0.188291' appears in NO witness - neither of the two cited files, nor anywhere else in computations/.",
+        "notes": "The 'Open finding' paragraph (both forms move further from calibration; the closure is a resummation identity the conjecture seeks) is a scope-(a) negative result with its follow-on, not a setup-then-reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "8926c7183ffe",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:51.430Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:beta-decay-energy-scale (7 sections, 3 displays). Recomputed every quoted numeric with mpmath at the proton pin: E_0^(N=0) = m_e/(q0(q0-1)) = 4.185981 (matches 4.186); E_0^(cal) = Q_beta/|Delta net| = 4.154917 (matches 4.155); 1/(1-hbar_q^2) = 1.0099145 (matches 1.0099); Q_beta = m_n - m_p - m_e = 0.78233 (matches). Internal consistency confirmed: the N=0 form predicts +0.75% and the tower form +1.75%, so 'the geometric tower form moves the prediction further from the calibrated value' is correct, and 0.877 > Q_beta as the block says. Two numeric defects reported separately: E_0^full is stated 4.228 but is 4.227483 (the block appears to have multiplied the ROUNDED 4.186 by 1.0099145, giving 4.22751); and 'From the witness: Delta(net) = -0.188291' appears in NO witness - neither of the two cited files, nor anywhere else in computations/.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "8926c7183ffe",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:51.466Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:beta-decay-energy-scale (7 sections, 3 displays). Recomputed every quoted numeric with mpmath at the proton pin: E_0^(N=0) = m_e/(q0(q0-1)) = 4.185981 (matches 4.186); E_0^(cal) = Q_beta/|Delta net| = 4.154917 (matches 4.155); 1/(1-hbar_q^2) = 1.0099145 (matches 1.0099); Q_beta = m_n - m_p - m_e = 0.78233 (matches). Internal consistency confirmed: the N=0 form predicts +0.75% and the tower form +1.75%, so 'the geometric tower form moves the prediction further from the calibrated value' is correct, and 0.877 > Q_beta as the block says. Two numeric defects reported separately: E_0^full is stated 4.228 but is 4.227483 (the block appears to have multiplied the ROUNDED 4.186 by 1.0099145, giving 4.22751); and 'From the witness: Delta(net) = -0.188291' appears in NO witness - neither of the two cited files, nor anywhere else in computations/.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "8926c7183ffe",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:51.505Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "major",
+        "evidence": "Full-context read of rem:beta-decay-energy-scale (7 sections, 3 displays). Recomputed every quoted numeric with mpmath at the proton pin: E_0^(N=0) = m_e/(q0(q0-1)) = 4.185981 (matches 4.186); E_0^(cal) = Q_beta/|Delta net| = 4.154917 (matches 4.155); 1/(1-hbar_q^2) = 1.0099145 (matches 1.0099); Q_beta = m_n - m_p - m_e = 0.78233 (matches). Internal consistency confirmed: the N=0 form predicts +0.75% and the tower form +1.75%, so 'the geometric tower form moves the prediction further from the calibrated value' is correct, and 0.877 > Q_beta as the block says. Two numeric defects reported separately: E_0^full is stated 4.228 but is 4.227483 (the block appears to have multiplied the ROUNDED 4.186 by 1.0099145, giving 4.22751); and 'From the witness: Delta(net) = -0.188291' appears in NO witness - neither of the two cited files, nor anywhere else in computations/.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "8926c7183ffe",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:51.545Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "major",
+        "evidence": "Full-context read of rem:beta-decay-energy-scale (7 sections, 3 displays). Recomputed every quoted numeric with mpmath at the proton pin: E_0^(N=0) = m_e/(q0(q0-1)) = 4.185981 (matches 4.186); E_0^(cal) = Q_beta/|Delta net| = 4.154917 (matches 4.155); 1/(1-hbar_q^2) = 1.0099145 (matches 1.0099); Q_beta = m_n - m_p - m_e = 0.78233 (matches). Internal consistency confirmed: the N=0 form predicts +0.75% and the tower form +1.75%, so 'the geometric tower form moves the prediction further from the calibrated value' is correct, and 0.877 > Q_beta as the block says. Two numeric defects reported separately: E_0^full is stated 4.228 but is 4.227483 (the block appears to have multiplied the ROUNDED 4.186 by 1.0099145, giving 4.22751); and 'From the witness: Delta(net) = -0.188291' appears in NO witness - neither of the two cited files, nor anywhere else in computations/.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "8926c7183ffe",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:51.584Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "major",
+        "evidence": "Full-context read of rem:beta-decay-energy-scale (7 sections, 3 displays). Recomputed every quoted numeric with mpmath at the proton pin: E_0^(N=0) = m_e/(q0(q0-1)) = 4.185981 (matches 4.186); E_0^(cal) = Q_beta/|Delta net| = 4.154917 (matches 4.155); 1/(1-hbar_q^2) = 1.0099145 (matches 1.0099); Q_beta = m_n - m_p - m_e = 0.78233 (matches). Internal consistency confirmed: the N=0 form predicts +0.75% and the tower form +1.75%, so 'the geometric tower form moves the prediction further from the calibrated value' is correct, and 0.877 > Q_beta as the block says. Two numeric defects reported separately: E_0^full is stated 4.228 but is 4.227483 (the block appears to have multiplied the ROUNDED 4.186 by 1.0099145, giving 4.22751); and 'From the witness: Delta(net) = -0.188291' appears in NO witness - neither of the two cited files, nor anywhere else in computations/.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "8926c7183ffe",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:51.622Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:beta-decay-energy-scale (7 sections, 3 displays). Recomputed every quoted numeric with mpmath at the proton pin: E_0^(N=0) = m_e/(q0(q0-1)) = 4.185981 (matches 4.186); E_0^(cal) = Q_beta/|Delta net| = 4.154917 (matches 4.155); 1/(1-hbar_q^2) = 1.0099145 (matches 1.0099); Q_beta = m_n - m_p - m_e = 0.78233 (matches). Internal consistency confirmed: the N=0 form predicts +0.75% and the tower form +1.75%, so 'the geometric tower form moves the prediction further from the calibrated value' is correct, and 0.877 > Q_beta as the block says. Two numeric defects reported separately: E_0^full is stated 4.228 but is 4.227483 (the block appears to have multiplied the ROUNDED 4.186 by 1.0099145, giving 4.22751); and 'From the witness: Delta(net) = -0.188291' appears in NO witness - neither of the two cited files, nor anywhere else in computations/.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "8926c7183ffe",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:51.660Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:beta-decay-energy-scale (7 sections, 3 displays). Recomputed every quoted numeric with mpmath at the proton pin: E_0^(N=0) = m_e/(q0(q0-1)) = 4.185981 (matches 4.186); E_0^(cal) = Q_beta/|Delta net| = 4.154917 (matches 4.155); 1/(1-hbar_q^2) = 1.0099145 (matches 1.0099); Q_beta = m_n - m_p - m_e = 0.78233 (matches). Internal consistency confirmed: the N=0 form predicts +0.75% and the tower form +1.75%, so 'the geometric tower form moves the prediction further from the calibrated value' is correct, and 0.877 > Q_beta as the block says. Two numeric defects reported separately: E_0^full is stated 4.228 but is 4.227483 (the block appears to have multiplied the ROUNDED 4.186 by 1.0099145, giving 4.22751); and 'From the witness: Delta(net) = -0.188291' appears in NO witness - neither of the two cited files, nor anywhere else in computations/.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "8926c7183ffe",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:51.698Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:beta-decay-energy-scale (7 sections, 3 displays). Recomputed every quoted numeric with mpmath at the proton pin: E_0^(N=0) = m_e/(q0(q0-1)) = 4.185981 (matches 4.186); E_0^(cal) = Q_beta/|Delta net| = 4.154917 (matches 4.155); 1/(1-hbar_q^2) = 1.0099145 (matches 1.0099); Q_beta = m_n - m_p - m_e = 0.78233 (matches). Internal consistency confirmed: the N=0 form predicts +0.75% and the tower form +1.75%, so 'the geometric tower form moves the prediction further from the calibrated value' is correct, and 0.877 > Q_beta as the block says. Two numeric defects reported separately: E_0^full is stated 4.228 but is 4.227483 (the block appears to have multiplied the ROUNDED 4.186 by 1.0099145, giving 4.22751); and 'From the witness: Delta(net) = -0.188291' appears in NO witness - neither of the two cited files, nor anywhere else in computations/.",
+        "notes": "No trap of this category."
+      }
+    ]
+  }
+}

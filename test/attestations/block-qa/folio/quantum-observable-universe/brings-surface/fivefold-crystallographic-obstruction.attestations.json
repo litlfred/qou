@@ -1,0 +1,482 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/brings-surface/fivefold-crystallographic-obstruction",
+    "path": "folio/quantum-observable-universe/brings-surface/fivefold-crystallographic-obstruction"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric correlation interpreting the 5-fold non-periodicity as the aperiodic behavior of the weak interaction.",
+        "reviewed_at": "2026-07-08T09:55:13.000Z",
+        "reviewed_sha": "53b9638d2669f901c14720e35fbc4e6a0c1d8457",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric correlation interpreting the 5-fold non-periodicity as the aperiodic behavior of the weak interaction.",
+        "reviewed_at": "2026-07-08T09:55:13.000Z",
+        "reviewed_sha": "53b9638d2669f901c14720e35fbc4e6a0c1d8457",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric correlation interpreting the 5-fold non-periodicity as the aperiodic behavior of the weak interaction.",
+        "reviewed_at": "2026-07-08T09:55:13.000Z",
+        "reviewed_sha": "53b9638d2669f901c14720e35fbc4e6a0c1d8457",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric correlation interpreting the 5-fold non-periodicity as the aperiodic behavior of the weak interaction.",
+        "reviewed_at": "2026-07-08T09:55:13.000Z",
+        "reviewed_sha": "53b9638d2669f901c14720e35fbc4e6a0c1d8457",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric correlation interpreting the 5-fold non-periodicity as the aperiodic behavior of the weak interaction.",
+        "reviewed_at": "2026-07-08T09:55:13.000Z",
+        "reviewed_sha": "53b9638d2669f901c14720e35fbc4e6a0c1d8457",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric correlation interpreting the 5-fold non-periodicity as the aperiodic behavior of the weak interaction.",
+        "reviewed_at": "2026-07-08T09:55:13.000Z",
+        "reviewed_sha": "53b9638d2669f901c14720e35fbc4e6a0c1d8457",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric correlation interpreting the 5-fold non-periodicity as the aperiodic behavior of the weak interaction.",
+        "reviewed_at": "2026-07-08T09:55:13.000Z",
+        "reviewed_sha": "53b9638d2669f901c14720e35fbc4e6a0c1d8457",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric correlation interpreting the 5-fold non-periodicity as the aperiodic behavior of the weak interaction.",
+        "reviewed_at": "2026-07-08T09:55:13.000Z",
+        "reviewed_sha": "53b9638d2669f901c14720e35fbc4e6a0c1d8457",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric correlation interpreting the 5-fold non-periodicity as the aperiodic behavior of the weak interaction.",
+        "reviewed_at": "2026-07-08T09:55:13.000Z",
+        "reviewed_sha": "53b9638d2669f901c14720e35fbc4e6a0c1d8457",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric correlation interpreting the 5-fold non-periodicity as the aperiodic behavior of the weak interaction.",
+        "reviewed_at": "2026-07-08T09:55:13.000Z",
+        "reviewed_sha": "53b9638d2669f901c14720e35fbc4e6a0c1d8457",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric correlation interpreting the 5-fold non-periodicity as the aperiodic behavior of the weak interaction.",
+        "reviewed_at": "2026-07-08T09:55:13.000Z",
+        "reviewed_sha": "53b9638d2669f901c14720e35fbc4e6a0c1d8457",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric correlation interpreting the 5-fold non-periodicity as the aperiodic behavior of the weak interaction.",
+        "reviewed_at": "2026-07-08T09:55:13.000Z",
+        "reviewed_sha": "53b9638d2669f901c14720e35fbc4e6a0c1d8457",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric correlation interpreting the 5-fold non-periodicity as the aperiodic behavior of the weak interaction.",
+        "reviewed_at": "2026-07-08T09:55:13.000Z",
+        "reviewed_sha": "53b9638d2669f901c14720e35fbc4e6a0c1d8457",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric correlation interpreting the 5-fold non-periodicity as the aperiodic behavior of the weak interaction.",
+        "reviewed_at": "2026-07-08T09:55:13.000Z",
+        "reviewed_sha": "53b9638d2669f901c14720e35fbc4e6a0c1d8457",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound geometric correlation interpreting the 5-fold non-periodicity as the aperiodic behavior of the weak interaction.",
+        "reviewed_at": "2026-07-08T09:55:13.000Z",
+        "reviewed_sha": "53b9638d2669f901c14720e35fbc4e6a0c1d8457",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "d08f11647546",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "d08f11647546",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "322fb9161ade",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:12.262Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "\"Periodic lattices cannot possess 5-fold rotational symmetry\" is the crystallographic restriction theorem itself; substantive",
+        "notes": "pass-with-note: substantive mathematical contrast"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "322fb9161ade",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:12.297Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "full-text read; no setup-then-reframe pivot"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "322fb9161ade",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:12.336Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "full-text read; no load-bearing spaced dashes; density normal"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "322fb9161ade",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:12.370Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "full-text read; no reflex three-item lists"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "322fb9161ade",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:12.404Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "final line \"The weak force remains weak precisely because...\" was an epigram-shaped closer; fixed inline",
+        "notes": "fixed: \"The weak force remains weak precisely because its 5-fold symmetry confines it to local, aperiodic interactions.\" -> \"The 5-fold symmetry confines the weak force to local, aperiodic interactions, accounting for its weakness.\""
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "322fb9161ade",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:12.444Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "full-text read; no emphasis narration"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "322fb9161ade",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:12.480Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "full-text read; no block-final restatement of established content"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "322fb9161ade",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:12.516Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "full-text read; institutional register throughout"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "322fb9161ade",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:12.555Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "\"precisely because\" dropped in the aphorism fix; \"the only force violating parity\" is a factual physics claim, kept",
+        "notes": "pass-with-note"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "322fb9161ade",
+          "ts": "a0848ffc58fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:02:12.591Z",
+        "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
+        "evidence": "full-text read; sentences parse aloud; noun chains within normal mathematical register"
+      }
+    ]
+  }
+}

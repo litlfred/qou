@@ -1,0 +1,1043 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/confinement-topological",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/confinement-topological"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540",
+          "lean": "2e6d96de1649"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540",
+          "lean": "2e6d96de1649"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-statement-no-interpretation": [
+      {
+        "field_hash": {
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement is a bare mathematical claim."
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement respects the chapter's base-ring regime."
+      }
+    ],
+    "wall-side-proof": [
+      {
+        "field_hash": {
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Proof machinery matches the statement regime."
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Drifted Lean file found via module path components. Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T01:05:41.000Z",
+        "reviewed_sha": "150027a6d84e5f98eba54dcf37e09e7dbbba2bc0",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "confinement-topological.lean:20 `theorem gram_indefinite_witness : True := by trivial`. The block is kind proposition (ts:3) carrying the prose 'This is proved by showing that the linear program … has a strictly lower optimum' (md:1-4); the resolved Lean proves only True. Flagged B_provable_vacuous in buckets.json ({lean::: True, labels:[proved]}).",
+        "rebuttal": "surviving — §0a lean.ref qou:QOU.Interactions.gram_indefinite_witness resolves SIBLING-FIRST to the :True:=trivial sibling. No conjecture/§3b carve-out (kind=proposition, no conditional banner). A real same-FQN library decl exists but is shadowed and, separately, does not prove the .md statement.",
+        "evidence": [
+          {
+            "text": "confinement-topological.lean:20"
+          },
+          {
+            "text": "confinement-topological.ts:3"
+          },
+          {
+            "text": "docs/audits/2026-06-24-status-label-overclaim-buckets.json: B_provable_vacuous"
+          }
+        ],
+        "severity": "critical",
+        "field_hash": {
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "GramIndefinite.lean:187-192 (the real, non-shadowed decl) proves hopfPlus*hopfPlus + hopfMinus*hopfMinus ≠ 2•(hopfPlus*hopfMinus) — a 2×2 matrix non-equality. The .md Proposition (md:26-38) asserts (i) tr_M*=0 is the LP optimum, (ii) the LP optimum x* has x_{e^-}*→+∞ and is NOT in the braid-group image, (iii) B_3 is the unique braid word of length ≤6 with |Δnet|=0. None of (i)/(ii)/(iii) appears in ANY Lean declaration.",
+        "rebuttal": "surviving — a matrix non-equality is strictly weaker than the three claims; grepped content/ + GramIndefinite.lean + ConfinementLP.lean: no decl states the LP optimum value, braid-image properness, or the enumeration.",
+        "evidence": [
+          {
+            "text": "folio/quantum-observable-universe/lean/QOU/Interactions/GramIndefinite.lean:187"
+          },
+          {
+            "text": "confinement-topological.md:26"
+          }
+        ],
+        "severity": "critical",
+        "field_hash": {
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "ConfinementLP.lean:92-96 `theorem lp_achieves_zero_trace : hopfPlus ≠ hopfMinus := hopf_ne` and :110-116 `theorem braid_coefficients_bounded : … ≠ 2•(…) := gram_indefinite_witness`. 'L₊≠L₋' does not establish 'the LP achieves trace 0' (claim i); the Gram non-equality does not establish 'braid image is a proper subset' (claim ii).",
+        "rebuttal": "surviving — the Lean names assert the proposition's sub-claims but their proof terms are logically disconnected accessors; the repo's own AUDIT-REPORT.md:224 flags them orphaned/redundant.",
+        "evidence": [
+          {
+            "text": "folio/quantum-observable-universe/lean/QOU/Interactions/ConfinementLP.lean:92"
+          },
+          {
+            "text": "folio/quantum-observable-universe/lean/AUDIT-REPORT.md:224"
+          }
+        ],
+        "severity": "major",
+        "field_hash": {
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "fail",
+        "scope": "limited",
+        "ruling": "surviving",
+        "referee_argument": "md:1-4 'Confinement is **topological**, not energetic. This is proved by…' presents a completed proof of a physical confinement mechanism; the strongest available formal object is a 2×2 matrix inequality; the LP-optimum, braid-image, uniqueness claims are unformalised. 'proved' overclaimed.",
+        "rebuttal": "surviving — corpus-grep: tracked not closed (listed in the live B_provable_vacuous bucket; AUDIT-REPORT marks the supporting ConfinementLP claims orphaned). No audit retracts the 'proved' framing.",
+        "evidence": [
+          {
+            "text": "confinement-topological.md:1"
+          },
+          {
+            "text": "docs/audits/2026-06-24-status-label-overclaim-buckets.json"
+          }
+        ],
+        "severity": "major",
+        "field_hash": {
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "internal numeric inconsistency on the load-bearing eigenvalue: md:57-58 states λ_-≈-0.855 'at q_0', while the sibling confinement-lp.md:96-104 states the corrected trace gives λ≈-0.956 and reclassifies B_3 as a LOCAL minimum with the GLOBAL minimum at tr_M=0. The headline 'B_3 selected by minimum action' is contradicted by its own sibling caveat.",
+        "rebuttal": "partial — both numbers and the local-vs-global tension are inside the block's own material, not reconciled; a coherence defect rather than independent falsification.",
+        "evidence": [
+          {
+            "text": "confinement-topological.md:57"
+          },
+          {
+            "text": "confinement-lp.md:96"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "warn",
+        "scope": "limited",
+        "ruling": "partial",
+        "referee_argument": "the proposition's only empirical support is **Witness**: confinement-lp.witness.json (md:99), but that file lives at computations/_deprecated/confinement-lp.witness.json — deprecated; the 4^6 enumeration and the LP vertex x* are not backed by a live witness.",
+        "rebuttal": "partial — a deprecated witness is weak but present; numerical claims checkable in principle. Reproducibility degraded, not absent.",
+        "evidence": [
+          {
+            "text": "confinement-topological.md:99"
+          },
+          {
+            "text": "computations/_deprecated/confinement-lp.witness.json"
+          }
+        ],
+        "severity": "minor",
+        "field_hash": {
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "fail",
+        "verdict": "open-objection",
+        "referee_argument": "The resolved Lean (sibling-first per §0a) is : True := trivial — a no-shadowing-stub violation over a real same-FQN library decl, and a Bucket-B 'proved'-over-vacuous flag. The shadow is not even the worst problem: the real library decl proves only a 2×2 matrix non-equality, while the .md proposition claims a fully-proved LP-optimum / braid-image / uniqueness theorem for a physical confinement mechanism, and the downstream ConfinementLP backing discharges those sub-claims by logically-disconnected accessors (hopf_ne). corpus-grep finds the overclaim tracked, never closed, and the sibling caveat actively contradicts the selection claim. Multiple referee arguments survive. Downstream consumers (confined-particle, shell-closure-stability, nucleon-ordering-factorization) rely on it as a proved selection principle.",
+        "field_hash": {
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
+        },
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/devils-advocate-watcher",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z",
+          "agent_skill": "local/devils-advocate-watcher"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c",
+        "evidence": "The resolved Lean (sibling-first per §0a) is : True := trivial — a no-shadowing-stub violation over a real same-FQN library decl, and a Bucket-B 'proved'-over-vacuous flag. The shadow is not even the worst problem: the real library decl proves only a 2×2 matrix non-equality, while the .md proposition claims a fully-proved LP-optimum / braid-image / uniqueness theorem for a physical confinement mechanism, and the downstream ConfinementLP backing discharges those sub-claims by logically-disconnected accessors (hopf_ne). corpus-grep finds the overclaim tracked, never closed, and the sibling caveat actively contradicts the selection claim. Multiple referee arguments survive. Downstream consumers (confined-particle, shell-closure-stability, nucleon-ordering-factorization) rely on it as a proved selection principle."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No false claims identified in 'Confinement is topological (LP proof)': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Confinement is topological (LP proof)'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Confinement is topological (LP proof)'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Confinement is topological (LP proof)', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Confinement is topological (LP proof)' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "971c0e06d789",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.266789Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.266789Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Confinement is topological (LP proof)' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/confinement-topological.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq3"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:40:03.000Z",
+        "reviewed_sha": "13e7c0a3c2d489330bf7b9786b226d9eb80b488d",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.901Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the italic statement, display LP, and 3-clause conclusion. Verified clause 3's braid word by computing the closure permutation: sigma_0 sigma_1^{-1} maps to (1 2)(2 3), a 3-cycle, so (sigma_0 sigma_1^{-1})^3 is the identity permutation and the closure has 3 components - correct for the Borromean rings, so the word is right and matches the label B_3. Clause 1's lambda_min(G) < 0 is corroborated by the producer's own gram_eigenvalues, which include -0.7527 (convention D) / -0.855 (convention C). No trap constructions.",
+        "notes": "Clean on all ten; braid word verified. NOTE: the object called 'the Gram matrix of H_3(q)' is built by computations/gram-matrix-dual.py:151-154 as tr_M(b_i b_j) with no anti-involution, i.e. the indefinite Frobenius trace form. That is consistent with clause 1 (it is why lambda_min < 0) but the name 'Gram matrix' invites the positive-definiteness reading that the sibling prop:gram-matrix-h3-symbolic .ts authorNote wrongly asserts."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.944Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the italic statement, display LP, and 3-clause conclusion. Verified clause 3's braid word by computing the closure permutation: sigma_0 sigma_1^{-1} maps to (1 2)(2 3), a 3-cycle, so (sigma_0 sigma_1^{-1})^3 is the identity permutation and the closure has 3 components - correct for the Borromean rings, so the word is right and matches the label B_3. Clause 1's lambda_min(G) < 0 is corroborated by the producer's own gram_eigenvalues, which include -0.7527 (convention D) / -0.855 (convention C). No trap constructions.",
+        "notes": "Clean on all ten; braid word verified. NOTE: the object called 'the Gram matrix of H_3(q)' is built by computations/gram-matrix-dual.py:151-154 as tr_M(b_i b_j) with no anti-involution, i.e. the indefinite Frobenius trace form. That is consistent with clause 1 (it is why lambda_min < 0) but the name 'Gram matrix' invites the positive-definiteness reading that the sibling prop:gram-matrix-h3-symbolic .ts authorNote wrongly asserts."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.987Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the italic statement, display LP, and 3-clause conclusion. Verified clause 3's braid word by computing the closure permutation: sigma_0 sigma_1^{-1} maps to (1 2)(2 3), a 3-cycle, so (sigma_0 sigma_1^{-1})^3 is the identity permutation and the closure has 3 components - correct for the Borromean rings, so the word is right and matches the label B_3. Clause 1's lambda_min(G) < 0 is corroborated by the producer's own gram_eigenvalues, which include -0.7527 (convention D) / -0.855 (convention C). No trap constructions.",
+        "notes": "Clean on all ten; braid word verified. NOTE: the object called 'the Gram matrix of H_3(q)' is built by computations/gram-matrix-dual.py:151-154 as tr_M(b_i b_j) with no anti-involution, i.e. the indefinite Frobenius trace form. That is consistent with clause 1 (it is why lambda_min < 0) but the name 'Gram matrix' invites the positive-definiteness reading that the sibling prop:gram-matrix-h3-symbolic .ts authorNote wrongly asserts."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:34.042Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the italic statement, display LP, and 3-clause conclusion. Verified clause 3's braid word by computing the closure permutation: sigma_0 sigma_1^{-1} maps to (1 2)(2 3), a 3-cycle, so (sigma_0 sigma_1^{-1})^3 is the identity permutation and the closure has 3 components - correct for the Borromean rings, so the word is right and matches the label B_3. Clause 1's lambda_min(G) < 0 is corroborated by the producer's own gram_eigenvalues, which include -0.7527 (convention D) / -0.855 (convention C). No trap constructions.",
+        "notes": "Clean on all ten; braid word verified. NOTE: the object called 'the Gram matrix of H_3(q)' is built by computations/gram-matrix-dual.py:151-154 as tr_M(b_i b_j) with no anti-involution, i.e. the indefinite Frobenius trace form. That is consistent with clause 1 (it is why lambda_min < 0) but the name 'Gram matrix' invites the positive-definiteness reading that the sibling prop:gram-matrix-h3-symbolic .ts authorNote wrongly asserts."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:34.084Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the italic statement, display LP, and 3-clause conclusion. Verified clause 3's braid word by computing the closure permutation: sigma_0 sigma_1^{-1} maps to (1 2)(2 3), a 3-cycle, so (sigma_0 sigma_1^{-1})^3 is the identity permutation and the closure has 3 components - correct for the Borromean rings, so the word is right and matches the label B_3. Clause 1's lambda_min(G) < 0 is corroborated by the producer's own gram_eigenvalues, which include -0.7527 (convention D) / -0.855 (convention C). No trap constructions.",
+        "notes": "Clean on all ten; braid word verified. NOTE: the object called 'the Gram matrix of H_3(q)' is built by computations/gram-matrix-dual.py:151-154 as tr_M(b_i b_j) with no anti-involution, i.e. the indefinite Frobenius trace form. That is consistent with clause 1 (it is why lambda_min < 0) but the name 'Gram matrix' invites the positive-definiteness reading that the sibling prop:gram-matrix-h3-symbolic .ts authorNote wrongly asserts."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:34.126Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the italic statement, display LP, and 3-clause conclusion. Verified clause 3's braid word by computing the closure permutation: sigma_0 sigma_1^{-1} maps to (1 2)(2 3), a 3-cycle, so (sigma_0 sigma_1^{-1})^3 is the identity permutation and the closure has 3 components - correct for the Borromean rings, so the word is right and matches the label B_3. Clause 1's lambda_min(G) < 0 is corroborated by the producer's own gram_eigenvalues, which include -0.7527 (convention D) / -0.855 (convention C). No trap constructions.",
+        "notes": "Clean on all ten; braid word verified. NOTE: the object called 'the Gram matrix of H_3(q)' is built by computations/gram-matrix-dual.py:151-154 as tr_M(b_i b_j) with no anti-involution, i.e. the indefinite Frobenius trace form. That is consistent with clause 1 (it is why lambda_min < 0) but the name 'Gram matrix' invites the positive-definiteness reading that the sibling prop:gram-matrix-h3-symbolic .ts authorNote wrongly asserts."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:34.169Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the italic statement, display LP, and 3-clause conclusion. Verified clause 3's braid word by computing the closure permutation: sigma_0 sigma_1^{-1} maps to (1 2)(2 3), a 3-cycle, so (sigma_0 sigma_1^{-1})^3 is the identity permutation and the closure has 3 components - correct for the Borromean rings, so the word is right and matches the label B_3. Clause 1's lambda_min(G) < 0 is corroborated by the producer's own gram_eigenvalues, which include -0.7527 (convention D) / -0.855 (convention C). No trap constructions.",
+        "notes": "Clean on all ten; braid word verified. NOTE: the object called 'the Gram matrix of H_3(q)' is built by computations/gram-matrix-dual.py:151-154 as tr_M(b_i b_j) with no anti-involution, i.e. the indefinite Frobenius trace form. That is consistent with clause 1 (it is why lambda_min < 0) but the name 'Gram matrix' invites the positive-definiteness reading that the sibling prop:gram-matrix-h3-symbolic .ts authorNote wrongly asserts."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:34.211Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the italic statement, display LP, and 3-clause conclusion. Verified clause 3's braid word by computing the closure permutation: sigma_0 sigma_1^{-1} maps to (1 2)(2 3), a 3-cycle, so (sigma_0 sigma_1^{-1})^3 is the identity permutation and the closure has 3 components - correct for the Borromean rings, so the word is right and matches the label B_3. Clause 1's lambda_min(G) < 0 is corroborated by the producer's own gram_eigenvalues, which include -0.7527 (convention D) / -0.855 (convention C). No trap constructions.",
+        "notes": "Clean on all ten; braid word verified. NOTE: the object called 'the Gram matrix of H_3(q)' is built by computations/gram-matrix-dual.py:151-154 as tr_M(b_i b_j) with no anti-involution, i.e. the indefinite Frobenius trace form. That is consistent with clause 1 (it is why lambda_min < 0) but the name 'Gram matrix' invites the positive-definiteness reading that the sibling prop:gram-matrix-h3-symbolic .ts authorNote wrongly asserts."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:34.253Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the italic statement, display LP, and 3-clause conclusion. Verified clause 3's braid word by computing the closure permutation: sigma_0 sigma_1^{-1} maps to (1 2)(2 3), a 3-cycle, so (sigma_0 sigma_1^{-1})^3 is the identity permutation and the closure has 3 components - correct for the Borromean rings, so the word is right and matches the label B_3. Clause 1's lambda_min(G) < 0 is corroborated by the producer's own gram_eigenvalues, which include -0.7527 (convention D) / -0.855 (convention C). No trap constructions.",
+        "notes": "Clean on all ten; braid word verified. NOTE: the object called 'the Gram matrix of H_3(q)' is built by computations/gram-matrix-dual.py:151-154 as tr_M(b_i b_j) with no anti-involution, i.e. the indefinite Frobenius trace form. That is consistent with clause 1 (it is why lambda_min < 0) but the name 'Gram matrix' invites the positive-definiteness reading that the sibling prop:gram-matrix-h3-symbolic .ts authorNote wrongly asserts."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9eac29854c0e",
+          "ts": "943149e87540"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:34.296Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the italic statement, display LP, and 3-clause conclusion. Verified clause 3's braid word by computing the closure permutation: sigma_0 sigma_1^{-1} maps to (1 2)(2 3), a 3-cycle, so (sigma_0 sigma_1^{-1})^3 is the identity permutation and the closure has 3 components - correct for the Borromean rings, so the word is right and matches the label B_3. Clause 1's lambda_min(G) < 0 is corroborated by the producer's own gram_eigenvalues, which include -0.7527 (convention D) / -0.855 (convention C). No trap constructions.",
+        "notes": "Clean on all ten; braid word verified. NOTE: the object called 'the Gram matrix of H_3(q)' is built by computations/gram-matrix-dual.py:151-154 as tr_M(b_i b_j) with no anti-involution, i.e. the indefinite Frobenius trace form. That is consistent with clause 1 (it is why lambda_min < 0) but the name 'Gram matrix' invites the positive-definiteness reading that the sibling prop:gram-matrix-h3-symbolic .ts authorNote wrongly asserts."
+      }
+    ]
+  }
+}

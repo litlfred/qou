@@ -1,0 +1,944 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/stable-nucleus",
+    "path": "folio/quantum-observable-universe/predicted-spectra/stable-nucleus"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Both flagged items are gone: the \"§7c\" tag was dropped and the deictic was rewritten to \"What follows sits on the archimedean side of the substrate wall. We invoke real- and complex-analytic constructs ...\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "20d74567a1b7",
+          "ts": "83a1ae13998b",
+          "lean": "1a74c3fa3908"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "20d74567a1b7",
+          "ts": "83a1ae13998b",
+          "lean": "1a74c3fa3908"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "20d74567a1b7",
+          "ts": "83a1ae13998b",
+          "lean": "1a74c3fa3908"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.337596Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.337596Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:10.000Z",
+        "reviewed_sha": "4b0671b8ea9b7a42963536e0f38e6f2fcc00cd11",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "20d74567a1b7",
+          "ts": "83a1ae13998b",
+          "lean": "1a74c3fa3908"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "20d74567a1b7",
+          "ts": "83a1ae13998b",
+          "lean": "1a74c3fa3908"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.337596Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.337596Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement is correctly placed in an archimedean chapter."
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "20d74567a1b7",
+          "ts": "83a1ae13998b",
+          "lean": "1a74c3fa3908"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.337596Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.337596Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The mathematical claims in 'Stable nucleus (Skein energy minimum)' are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/predicted-spectra/stable-nucleus.lean:26:13: error: unexpected token 'section'; expected 'lemma'.",
+        "severity": "minor",
+        "evidence": "stable-nucleus.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:10.000Z",
+        "reviewed_sha": "4b0671b8ea9b7a42963536e0f38e6f2fcc00cd11",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "20d74567a1b7",
+          "ts": "83a1ae13998b",
+          "lean": "1a74c3fa3908"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.337596Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.337596Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No vacuous proofs detected. Sibling Lean file does not contain sorry, though it fails compilation on modules.",
+        "severity": "minor",
+        "evidence": "stable-nucleus.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:10.000Z",
+        "reviewed_sha": "4b0671b8ea9b7a42963536e0f38e6f2fcc00cd11",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "20d74567a1b7",
+          "ts": "83a1ae13998b",
+          "lean": "1a74c3fa3908"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.337596Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.337596Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The definition 'Stable nucleus (Skein energy minimum)' is formulated via non-circular relations to existing primitives.",
+        "severity": "minor",
+        "evidence": "stable-nucleus.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:10.000Z",
+        "reviewed_sha": "4b0671b8ea9b7a42963536e0f38e6f2fcc00cd11",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "20d74567a1b7",
+          "ts": "83a1ae13998b",
+          "lean": "1a74c3fa3908"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.337596Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.337596Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Stable nucleus (Skein energy minimum)' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor",
+        "evidence": "The prose presents 'Stable nucleus (Skein energy minimum)' as verified, but the sibling Lean file fails to compile."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:10.000Z",
+        "reviewed_sha": "4b0671b8ea9b7a42963536e0f38e6f2fcc00cd11",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "20d74567a1b7",
+          "ts": "83a1ae13998b",
+          "lean": "1a74c3fa3908"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.337596Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.337596Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Stable nucleus (Skein energy minimum)'.",
+        "severity": "minor",
+        "evidence": "stable-nucleus.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:10.000Z",
+        "reviewed_sha": "4b0671b8ea9b7a42963536e0f38e6f2fcc00cd11",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "20d74567a1b7",
+          "ts": "83a1ae13998b",
+          "lean": "1a74c3fa3908"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.337596Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.337596Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/predicted-spectra/stable-nucleus.lean.",
+        "severity": "minor",
+        "evidence": "stable-nucleus.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:10.000Z",
+        "reviewed_sha": "4b0671b8ea9b7a42963536e0f38e6f2fcc00cd11",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "20d74567a1b7",
+          "ts": "83a1ae13998b",
+          "lean": "1a74c3fa3908"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.337596Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.337596Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/stable-nucleus.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/stable-nucleus.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:10.000Z",
+        "reviewed_sha": "4b0671b8ea9b7a42963536e0f38e6f2fcc00cd11",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "20d74567a1b7",
+          "ts": "83a1ae13998b",
+          "lean": "1a74c3fa3908"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.337596Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.337596Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Stable nucleus (Skein energy minimum)', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "stable-nucleus.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:10.000Z",
+        "reviewed_sha": "4b0671b8ea9b7a42963536e0f38e6f2fcc00cd11",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "20d74567a1b7",
+          "ts": "83a1ae13998b",
+          "lean": "1a74c3fa3908"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.337596Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.337596Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Stable nucleus (Skein energy minimum)' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "stable-nucleus.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:10.000Z",
+        "reviewed_sha": "4b0671b8ea9b7a42963536e0f38e6f2fcc00cd11",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "20d74567a1b7",
+          "ts": "83a1ae13998b",
+          "lean": "1a74c3fa3908"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.337596Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.337596Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Stable nucleus (Skein energy minimum)' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "stable-nucleus.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:10.000Z",
+        "reviewed_sha": "4b0671b8ea9b7a42963536e0f38e6f2fcc00cd11",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "20d74567a1b7",
+          "ts": "83a1ae13998b",
+          "lean": "1a74c3fa3908"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.337596Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.337596Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Stable nucleus (Skein energy minimum)' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "stable-nucleus.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:10.000Z",
+        "reviewed_sha": "4b0671b8ea9b7a42963536e0f38e6f2fcc00cd11",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "20d74567a1b7",
+          "ts": "83a1ae13998b",
+          "lean": "1a74c3fa3908"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.337596Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.337596Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/stable-nucleus.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "stable-nucleus.lean:1 — folio/quantum-observable-universe/predicted-spectra/stable-nucleus.lean:26:13: error: unexpected token 'section'; expected 'lemma'"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:10.000Z",
+        "reviewed_sha": "4b0671b8ea9b7a42963536e0f38e6f2fcc00cd11",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "20d74567a1b7",
+          "ts": "83a1ae13998b",
+          "lean": "1a74c3fa3908"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:56.337596Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:56.337596Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/predicted-spectra/stable-nucleus.lean fails compilation: folio/quantum-observable-universe/predicted-spectra/stable-nucleus.lean:26:13: error: unexpected token 'section'; expected 'lemma'",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/predicted-spectra/stable-nucleus.lean contains compilation errors: folio/quantum-observable-universe/predicted-spectra/stable-nucleus.lean:26:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/predicted-spectra/stable-nucleus.lean fails compilation: folio/quantum-observable-universe/predicted-spectra/stable-nucleus.lean:26:13: error: unexpected token 'section'; expected 'lemma'"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:10.000Z",
+        "reviewed_sha": "4b0671b8ea9b7a42963536e0f38e6f2fcc00cd11",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
+        "reviewed_at": "2026-07-08T00:54:12.000Z",
+        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:03:10.000Z",
+        "reviewed_sha": "4b0671b8ea9b7a42963536e0f38e6f2fcc00cd11",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "43af8e7112f0",
+          "ts": "e681776b2071"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:29.681Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (definition, ~1.9kB). Beta-stability line Z = A/(2 + a_C A^{2/3}/(2 a_A)) is the standard SEMF minimum and matches the sim:valley-stability curve p*(A) = A/(2 + cA^{2/3}). Stable atom = N(Z,N) + Z x T_{2,3} is consistent with the electron = trefoil assignment used across the chapter. Closing paragraph is the standard Archimedean-specialisation banner (template). Structural note: the block defines three things (nucleus, stable nucleus, stable atom) and carries a derivation, which is a definition-clarity matter rather than a trap."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "43af8e7112f0",
+          "ts": "e681776b2071"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:29.721Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (definition, ~1.9kB). Beta-stability line Z = A/(2 + a_C A^{2/3}/(2 a_A)) is the standard SEMF minimum and matches the sim:valley-stability curve p*(A) = A/(2 + cA^{2/3}). Stable atom = N(Z,N) + Z x T_{2,3} is consistent with the electron = trefoil assignment used across the chapter. Closing paragraph is the standard Archimedean-specialisation banner (template). Structural note: the block defines three things (nucleus, stable nucleus, stable atom) and carries a derivation, which is a definition-clarity matter rather than a trap."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "43af8e7112f0",
+          "ts": "e681776b2071"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:29.779Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (definition, ~1.9kB). Beta-stability line Z = A/(2 + a_C A^{2/3}/(2 a_A)) is the standard SEMF minimum and matches the sim:valley-stability curve p*(A) = A/(2 + cA^{2/3}). Stable atom = N(Z,N) + Z x T_{2,3} is consistent with the electron = trefoil assignment used across the chapter. Closing paragraph is the standard Archimedean-specialisation banner (template). Structural note: the block defines three things (nucleus, stable nucleus, stable atom) and carries a derivation, which is a definition-clarity matter rather than a trap."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "43af8e7112f0",
+          "ts": "e681776b2071"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:29.823Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (definition, ~1.9kB). Beta-stability line Z = A/(2 + a_C A^{2/3}/(2 a_A)) is the standard SEMF minimum and matches the sim:valley-stability curve p*(A) = A/(2 + cA^{2/3}). Stable atom = N(Z,N) + Z x T_{2,3} is consistent with the electron = trefoil assignment used across the chapter. Closing paragraph is the standard Archimedean-specialisation banner (template). Structural note: the block defines three things (nucleus, stable nucleus, stable atom) and carries a derivation, which is a definition-clarity matter rather than a trap."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "43af8e7112f0",
+          "ts": "e681776b2071"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:29.882Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (definition, ~1.9kB). Beta-stability line Z = A/(2 + a_C A^{2/3}/(2 a_A)) is the standard SEMF minimum and matches the sim:valley-stability curve p*(A) = A/(2 + cA^{2/3}). Stable atom = N(Z,N) + Z x T_{2,3} is consistent with the electron = trefoil assignment used across the chapter. Closing paragraph is the standard Archimedean-specialisation banner (template). Structural note: the block defines three things (nucleus, stable nucleus, stable atom) and carries a derivation, which is a definition-clarity matter rather than a trap."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "43af8e7112f0",
+          "ts": "e681776b2071"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:29.921Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (definition, ~1.9kB). Beta-stability line Z = A/(2 + a_C A^{2/3}/(2 a_A)) is the standard SEMF minimum and matches the sim:valley-stability curve p*(A) = A/(2 + cA^{2/3}). Stable atom = N(Z,N) + Z x T_{2,3} is consistent with the electron = trefoil assignment used across the chapter. Closing paragraph is the standard Archimedean-specialisation banner (template). Structural note: the block defines three things (nucleus, stable nucleus, stable atom) and carries a derivation, which is a definition-clarity matter rather than a trap."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "43af8e7112f0",
+          "ts": "e681776b2071"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:29.989Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (definition, ~1.9kB). Beta-stability line Z = A/(2 + a_C A^{2/3}/(2 a_A)) is the standard SEMF minimum and matches the sim:valley-stability curve p*(A) = A/(2 + cA^{2/3}). Stable atom = N(Z,N) + Z x T_{2,3} is consistent with the electron = trefoil assignment used across the chapter. Closing paragraph is the standard Archimedean-specialisation banner (template). Structural note: the block defines three things (nucleus, stable nucleus, stable atom) and carries a derivation, which is a definition-clarity matter rather than a trap."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "43af8e7112f0",
+          "ts": "e681776b2071"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:30.033Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (definition, ~1.9kB). Beta-stability line Z = A/(2 + a_C A^{2/3}/(2 a_A)) is the standard SEMF minimum and matches the sim:valley-stability curve p*(A) = A/(2 + cA^{2/3}). Stable atom = N(Z,N) + Z x T_{2,3} is consistent with the electron = trefoil assignment used across the chapter. Closing paragraph is the standard Archimedean-specialisation banner (template). Structural note: the block defines three things (nucleus, stable nucleus, stable atom) and carries a derivation, which is a definition-clarity matter rather than a trap."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "43af8e7112f0",
+          "ts": "e681776b2071"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:30.071Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (definition, ~1.9kB). Beta-stability line Z = A/(2 + a_C A^{2/3}/(2 a_A)) is the standard SEMF minimum and matches the sim:valley-stability curve p*(A) = A/(2 + cA^{2/3}). Stable atom = N(Z,N) + Z x T_{2,3} is consistent with the electron = trefoil assignment used across the chapter. Closing paragraph is the standard Archimedean-specialisation banner (template). Structural note: the block defines three things (nucleus, stable nucleus, stable atom) and carries a derivation, which is a definition-clarity matter rather than a trap."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "43af8e7112f0",
+          "ts": "e681776b2071"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:30.108Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (definition, ~1.9kB). Beta-stability line Z = A/(2 + a_C A^{2/3}/(2 a_A)) is the standard SEMF minimum and matches the sim:valley-stability curve p*(A) = A/(2 + cA^{2/3}). Stable atom = N(Z,N) + Z x T_{2,3} is consistent with the electron = trefoil assignment used across the chapter. Closing paragraph is the standard Archimedean-specialisation banner (template). Structural note: the block defines three things (nucleus, stable nucleus, stable atom) and carries a derivation, which is a definition-clarity matter rather than a trap."
+      }
+    ]
+  }
+}

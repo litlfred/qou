@@ -1,0 +1,499 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/box-braid-irreducibility-proof",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/box-braid-irreducibility-proof"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:50.589Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "major",
+        "evidence": "Full-context read of prf:box-braid-irreducibility (formula + four numbered arguments). Verified every knot-theoretic fact independently: c(T_{m,n}) = min((m-1)n,(n-1)m) is the standard torus-knot crossing number; min(2*5, 4*3) = 10 is right; braid index of T(p,q) = min(p,q) = 3 is right; (sigma_0 sigma_1)^5 in B_3 has exactly 10 letters; dim H_3(q) = |S_3| = 6 and the longest element of S_3 has length 3, so 'maximum word length 3 per basis element' is right; Bring's surface has genus 4. Generator notation follows section 7a. One gap reported: T_{3,4} has c = min(8,9) = 8 < 10 and the block places it on the same surface, so 'No alternative mediator with fewer crossings exists' holds only under the restriction to flavour-changing charged-to-neutral mediators asserted in the preceding sentence.",
+        "notes": "Argument (ii)'s 'computes the amplitude ..., not the physical crossing count' and 'it does not reduce the number of applications' ARE the argument - the whole point of (ii) is separating algebraic reduction from physical crossing count. Substantive-contrast false-positive class."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:50.626Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "major",
+        "evidence": "Full-context read of prf:box-braid-irreducibility (formula + four numbered arguments). Verified every knot-theoretic fact independently: c(T_{m,n}) = min((m-1)n,(n-1)m) is the standard torus-knot crossing number; min(2*5, 4*3) = 10 is right; braid index of T(p,q) = min(p,q) = 3 is right; (sigma_0 sigma_1)^5 in B_3 has exactly 10 letters; dim H_3(q) = |S_3| = 6 and the longest element of S_3 has length 3, so 'maximum word length 3 per basis element' is right; Bring's surface has genus 4. Generator notation follows section 7a. One gap reported: T_{3,4} has c = min(8,9) = 8 < 10 and the block places it on the same surface, so 'No alternative mediator with fewer crossings exists' holds only under the restriction to flavour-changing charged-to-neutral mediators asserted in the preceding sentence.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:50.664Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:box-braid-irreducibility (formula + four numbered arguments). Verified every knot-theoretic fact independently: c(T_{m,n}) = min((m-1)n,(n-1)m) is the standard torus-knot crossing number; min(2*5, 4*3) = 10 is right; braid index of T(p,q) = min(p,q) = 3 is right; (sigma_0 sigma_1)^5 in B_3 has exactly 10 letters; dim H_3(q) = |S_3| = 6 and the longest element of S_3 has length 3, so 'maximum word length 3 per basis element' is right; Bring's surface has genus 4. Generator notation follows section 7a. One gap reported: T_{3,4} has c = min(8,9) = 8 < 10 and the block places it on the same surface, so 'No alternative mediator with fewer crossings exists' holds only under the restriction to flavour-changing charged-to-neutral mediators asserted in the preceding sentence.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:50.705Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:box-braid-irreducibility (formula + four numbered arguments). Verified every knot-theoretic fact independently: c(T_{m,n}) = min((m-1)n,(n-1)m) is the standard torus-knot crossing number; min(2*5, 4*3) = 10 is right; braid index of T(p,q) = min(p,q) = 3 is right; (sigma_0 sigma_1)^5 in B_3 has exactly 10 letters; dim H_3(q) = |S_3| = 6 and the longest element of S_3 has length 3, so 'maximum word length 3 per basis element' is right; Bring's surface has genus 4. Generator notation follows section 7a. One gap reported: T_{3,4} has c = min(8,9) = 8 < 10 and the block places it on the same surface, so 'No alternative mediator with fewer crossings exists' holds only under the restriction to flavour-changing charged-to-neutral mediators asserted in the preceding sentence.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:50.744Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "major",
+        "evidence": "Full-context read of prf:box-braid-irreducibility (formula + four numbered arguments). Verified every knot-theoretic fact independently: c(T_{m,n}) = min((m-1)n,(n-1)m) is the standard torus-knot crossing number; min(2*5, 4*3) = 10 is right; braid index of T(p,q) = min(p,q) = 3 is right; (sigma_0 sigma_1)^5 in B_3 has exactly 10 letters; dim H_3(q) = |S_3| = 6 and the longest element of S_3 has length 3, so 'maximum word length 3 per basis element' is right; Bring's surface has genus 4. Generator notation follows section 7a. One gap reported: T_{3,4} has c = min(8,9) = 8 < 10 and the block places it on the same surface, so 'No alternative mediator with fewer crossings exists' holds only under the restriction to flavour-changing charged-to-neutral mediators asserted in the preceding sentence.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:50.783Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "major",
+        "evidence": "Full-context read of prf:box-braid-irreducibility (formula + four numbered arguments). Verified every knot-theoretic fact independently: c(T_{m,n}) = min((m-1)n,(n-1)m) is the standard torus-knot crossing number; min(2*5, 4*3) = 10 is right; braid index of T(p,q) = min(p,q) = 3 is right; (sigma_0 sigma_1)^5 in B_3 has exactly 10 letters; dim H_3(q) = |S_3| = 6 and the longest element of S_3 has length 3, so 'maximum word length 3 per basis element' is right; Bring's surface has genus 4. Generator notation follows section 7a. One gap reported: T_{3,4} has c = min(8,9) = 8 < 10 and the block places it on the same surface, so 'No alternative mediator with fewer crossings exists' holds only under the restriction to flavour-changing charged-to-neutral mediators asserted in the preceding sentence.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:50.821Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "major",
+        "evidence": "Full-context read of prf:box-braid-irreducibility (formula + four numbered arguments). Verified every knot-theoretic fact independently: c(T_{m,n}) = min((m-1)n,(n-1)m) is the standard torus-knot crossing number; min(2*5, 4*3) = 10 is right; braid index of T(p,q) = min(p,q) = 3 is right; (sigma_0 sigma_1)^5 in B_3 has exactly 10 letters; dim H_3(q) = |S_3| = 6 and the longest element of S_3 has length 3, so 'maximum word length 3 per basis element' is right; Bring's surface has genus 4. Generator notation follows section 7a. One gap reported: T_{3,4} has c = min(8,9) = 8 < 10 and the block places it on the same surface, so 'No alternative mediator with fewer crossings exists' holds only under the restriction to flavour-changing charged-to-neutral mediators asserted in the preceding sentence.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:50.860Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:box-braid-irreducibility (formula + four numbered arguments). Verified every knot-theoretic fact independently: c(T_{m,n}) = min((m-1)n,(n-1)m) is the standard torus-knot crossing number; min(2*5, 4*3) = 10 is right; braid index of T(p,q) = min(p,q) = 3 is right; (sigma_0 sigma_1)^5 in B_3 has exactly 10 letters; dim H_3(q) = |S_3| = 6 and the longest element of S_3 has length 3, so 'maximum word length 3 per basis element' is right; Bring's surface has genus 4. Generator notation follows section 7a. One gap reported: T_{3,4} has c = min(8,9) = 8 < 10 and the block places it on the same surface, so 'No alternative mediator with fewer crossings exists' holds only under the restriction to flavour-changing charged-to-neutral mediators asserted in the preceding sentence.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:50.899Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:box-braid-irreducibility (formula + four numbered arguments). Verified every knot-theoretic fact independently: c(T_{m,n}) = min((m-1)n,(n-1)m) is the standard torus-knot crossing number; min(2*5, 4*3) = 10 is right; braid index of T(p,q) = min(p,q) = 3 is right; (sigma_0 sigma_1)^5 in B_3 has exactly 10 letters; dim H_3(q) = |S_3| = 6 and the longest element of S_3 has length 3, so 'maximum word length 3 per basis element' is right; Bring's surface has genus 4. Generator notation follows section 7a. One gap reported: T_{3,4} has c = min(8,9) = 8 < 10 and the block places it on the same surface, so 'No alternative mediator with fewer crossings exists' holds only under the restriction to flavour-changing charged-to-neutral mediators asserted in the preceding sentence.",
+        "notes": "'T_{3,5} is the unique cross-family mediator' is carried by an actual enumeration (only T_{3,4} and T_{3,5} embed with winding from both families) plus a stated restriction, unlike the bare assertion of the same sentence in the sibling interpretation block."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "7f3d8e9820b3",
+          "ts": "f8afe94b87d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:59:50.938Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:box-braid-irreducibility (formula + four numbered arguments). Verified every knot-theoretic fact independently: c(T_{m,n}) = min((m-1)n,(n-1)m) is the standard torus-knot crossing number; min(2*5, 4*3) = 10 is right; braid index of T(p,q) = min(p,q) = 3 is right; (sigma_0 sigma_1)^5 in B_3 has exactly 10 letters; dim H_3(q) = |S_3| = 6 and the longest element of S_3 has length 3, so 'maximum word length 3 per basis element' is right; Bring's surface has genus 4. Generator notation follows section 7a. One gap reported: T_{3,4} has c = min(8,9) = 8 < 10 and the block places it on the same surface, so 'No alternative mediator with fewer crossings exists' holds only under the restriction to flavour-changing charged-to-neutral mediators asserted in the preceding sentence.",
+        "notes": "No trap of this category."
+      }
+    ]
+  }
+}

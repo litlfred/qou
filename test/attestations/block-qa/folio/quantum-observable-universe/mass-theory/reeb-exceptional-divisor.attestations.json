@@ -1,0 +1,489 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/reeb-exceptional-divisor",
+    "path": "folio/quantum-observable-universe/mass-theory/reeb-exceptional-divisor"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "cfc534d2db73",
+          "ts": "4b6190421d63"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "cfc534d2db73",
+          "ts": "4b6190421d63"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological property linking strict topological constraints successfully alongside specific testable values.",
+        "reviewed_at": "2026-07-08T14:49:11.000Z",
+        "reviewed_sha": "98a84e97332de656eaf1020203f517de4365ad5b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological property linking strict topological constraints successfully alongside specific testable values.",
+        "reviewed_at": "2026-07-08T14:49:11.000Z",
+        "reviewed_sha": "98a84e97332de656eaf1020203f517de4365ad5b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological property linking strict topological constraints successfully alongside specific testable values.",
+        "reviewed_at": "2026-07-08T14:49:11.000Z",
+        "reviewed_sha": "98a84e97332de656eaf1020203f517de4365ad5b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological property linking strict topological constraints successfully alongside specific testable values.",
+        "reviewed_at": "2026-07-08T14:49:11.000Z",
+        "reviewed_sha": "98a84e97332de656eaf1020203f517de4365ad5b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological property linking strict topological constraints successfully alongside specific testable values.",
+        "reviewed_at": "2026-07-08T14:49:11.000Z",
+        "reviewed_sha": "98a84e97332de656eaf1020203f517de4365ad5b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological property linking strict topological constraints successfully alongside specific testable values.",
+        "reviewed_at": "2026-07-08T14:49:11.000Z",
+        "reviewed_sha": "98a84e97332de656eaf1020203f517de4365ad5b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological property linking strict topological constraints successfully alongside specific testable values.",
+        "reviewed_at": "2026-07-08T14:49:11.000Z",
+        "reviewed_sha": "98a84e97332de656eaf1020203f517de4365ad5b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological property linking strict topological constraints successfully alongside specific testable values.",
+        "reviewed_at": "2026-07-08T14:49:11.000Z",
+        "reviewed_sha": "98a84e97332de656eaf1020203f517de4365ad5b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological property linking strict topological constraints successfully alongside specific testable values.",
+        "reviewed_at": "2026-07-08T14:49:11.000Z",
+        "reviewed_sha": "98a84e97332de656eaf1020203f517de4365ad5b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological property linking strict topological constraints successfully alongside specific testable values.",
+        "reviewed_at": "2026-07-08T14:49:11.000Z",
+        "reviewed_sha": "98a84e97332de656eaf1020203f517de4365ad5b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological property linking strict topological constraints successfully alongside specific testable values.",
+        "reviewed_at": "2026-07-08T14:49:11.000Z",
+        "reviewed_sha": "98a84e97332de656eaf1020203f517de4365ad5b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological property linking strict topological constraints successfully alongside specific testable values.",
+        "reviewed_at": "2026-07-08T14:49:11.000Z",
+        "reviewed_sha": "98a84e97332de656eaf1020203f517de4365ad5b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological property linking strict topological constraints successfully alongside specific testable values.",
+        "reviewed_at": "2026-07-08T14:49:11.000Z",
+        "reviewed_sha": "98a84e97332de656eaf1020203f517de4365ad5b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological property linking strict topological constraints successfully alongside specific testable values.",
+        "reviewed_at": "2026-07-08T14:49:11.000Z",
+        "reviewed_sha": "98a84e97332de656eaf1020203f517de4365ad5b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound topological property linking strict topological constraints successfully alongside specific testable values.",
+        "reviewed_at": "2026-07-08T14:49:11.000Z",
+        "reviewed_sha": "98a84e97332de656eaf1020203f517de4365ad5b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "cfc534d2db73",
+          "ts": "4b6190421d63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:11.493Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Remark, five paragraphs, read in full. All ten categories clean. The opening 'The surface supplies the genus-4 handles. The Reeb vector supplies the flow through them. The substrate parameter q sets the flow's pitch.' is a parallel three-sentence run, but the three assignments are distinct and substantive (topology / dynamics / parameter), so it is not a reflex triple. The closing two-limit paragraph looked like a placed symmetric closer, and I checked it before ruling: its q -> infinity half carries information found nowhere else in the block ([X,P]_q -> J, spinning maximal), so the paragraph is load-bearing rather than a restatement, even though its q -> 1 half does overlap paragraph 2. No em-dashes, no warmth, no meta-commentary, no superlatives. CONSISTENCY CHECK: the q -> 1 limit statements agree with the framework -- hbar_q = 1 - q^{-1} -> 0 as q -> 1, so '[X,P]_q -> 0' and 'the Reeb field trivialises' are the right direction, and hbar_q -> 1 as q -> infinity matches '[X,P]_q -> J' with J a finite maximum.",
+        "notes": "TWO SYMBOL FINDINGS, neither fixed (both are notation-register matters). (1) UNDEFINED SYMBOL: J appears only in the final sentence, '[X,P]_q -> J', with no definition anywhere in the block and no uses[] entry that obviously supplies it. Since the same sentence is the block's only statement about the large-q regime, the reader cannot evaluate it. (2) POSSIBLE zeta COLLISION. This block says 'The C_5 phase rotation now circulates around the exceptional divisor' and twice writes the phase rotation as w_k -> zeta^k w_k. The sibling prop:ramified-disc-fusion, which shares the same w_k resolvents and the same chapter, derives w_k -> zeta^{-k} w_k with zeta a CUBE root of unity coming from the three colour coordinates (c_r, c_g, c_b). C_5 is natural for Bring's surface and a cube root is natural for the colour triple, but one glyph zeta is doing both jobs across two adjacent blocks with no disambiguation. Per the notation-collision register this needs either two symbols or an explicit statement of which root of unity is meant where."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "cfc534d2db73",
+          "ts": "4b6190421d63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:11.533Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Remark, five paragraphs, read in full. All ten categories clean. The opening 'The surface supplies the genus-4 handles. The Reeb vector supplies the flow through them. The substrate parameter q sets the flow's pitch.' is a parallel three-sentence run, but the three assignments are distinct and substantive (topology / dynamics / parameter), so it is not a reflex triple. The closing two-limit paragraph looked like a placed symmetric closer, and I checked it before ruling: its q -> infinity half carries information found nowhere else in the block ([X,P]_q -> J, spinning maximal), so the paragraph is load-bearing rather than a restatement, even though its q -> 1 half does overlap paragraph 2. No em-dashes, no warmth, no meta-commentary, no superlatives. CONSISTENCY CHECK: the q -> 1 limit statements agree with the framework -- hbar_q = 1 - q^{-1} -> 0 as q -> 1, so '[X,P]_q -> 0' and 'the Reeb field trivialises' are the right direction, and hbar_q -> 1 as q -> infinity matches '[X,P]_q -> J' with J a finite maximum.",
+        "notes": "TWO SYMBOL FINDINGS, neither fixed (both are notation-register matters). (1) UNDEFINED SYMBOL: J appears only in the final sentence, '[X,P]_q -> J', with no definition anywhere in the block and no uses[] entry that obviously supplies it. Since the same sentence is the block's only statement about the large-q regime, the reader cannot evaluate it. (2) POSSIBLE zeta COLLISION. This block says 'The C_5 phase rotation now circulates around the exceptional divisor' and twice writes the phase rotation as w_k -> zeta^k w_k. The sibling prop:ramified-disc-fusion, which shares the same w_k resolvents and the same chapter, derives w_k -> zeta^{-k} w_k with zeta a CUBE root of unity coming from the three colour coordinates (c_r, c_g, c_b). C_5 is natural for Bring's surface and a cube root is natural for the colour triple, but one glyph zeta is doing both jobs across two adjacent blocks with no disambiguation. Per the notation-collision register this needs either two symbols or an explicit statement of which root of unity is meant where."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "cfc534d2db73",
+          "ts": "4b6190421d63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:11.573Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Remark, five paragraphs, read in full. All ten categories clean. The opening 'The surface supplies the genus-4 handles. The Reeb vector supplies the flow through them. The substrate parameter q sets the flow's pitch.' is a parallel three-sentence run, but the three assignments are distinct and substantive (topology / dynamics / parameter), so it is not a reflex triple. The closing two-limit paragraph looked like a placed symmetric closer, and I checked it before ruling: its q -> infinity half carries information found nowhere else in the block ([X,P]_q -> J, spinning maximal), so the paragraph is load-bearing rather than a restatement, even though its q -> 1 half does overlap paragraph 2. No em-dashes, no warmth, no meta-commentary, no superlatives. CONSISTENCY CHECK: the q -> 1 limit statements agree with the framework -- hbar_q = 1 - q^{-1} -> 0 as q -> 1, so '[X,P]_q -> 0' and 'the Reeb field trivialises' are the right direction, and hbar_q -> 1 as q -> infinity matches '[X,P]_q -> J' with J a finite maximum.",
+        "notes": "TWO SYMBOL FINDINGS, neither fixed (both are notation-register matters). (1) UNDEFINED SYMBOL: J appears only in the final sentence, '[X,P]_q -> J', with no definition anywhere in the block and no uses[] entry that obviously supplies it. Since the same sentence is the block's only statement about the large-q regime, the reader cannot evaluate it. (2) POSSIBLE zeta COLLISION. This block says 'The C_5 phase rotation now circulates around the exceptional divisor' and twice writes the phase rotation as w_k -> zeta^k w_k. The sibling prop:ramified-disc-fusion, which shares the same w_k resolvents and the same chapter, derives w_k -> zeta^{-k} w_k with zeta a CUBE root of unity coming from the three colour coordinates (c_r, c_g, c_b). C_5 is natural for Bring's surface and a cube root is natural for the colour triple, but one glyph zeta is doing both jobs across two adjacent blocks with no disambiguation. Per the notation-collision register this needs either two symbols or an explicit statement of which root of unity is meant where."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "cfc534d2db73",
+          "ts": "4b6190421d63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:11.612Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Remark, five paragraphs, read in full. All ten categories clean. The opening 'The surface supplies the genus-4 handles. The Reeb vector supplies the flow through them. The substrate parameter q sets the flow's pitch.' is a parallel three-sentence run, but the three assignments are distinct and substantive (topology / dynamics / parameter), so it is not a reflex triple. The closing two-limit paragraph looked like a placed symmetric closer, and I checked it before ruling: its q -> infinity half carries information found nowhere else in the block ([X,P]_q -> J, spinning maximal), so the paragraph is load-bearing rather than a restatement, even though its q -> 1 half does overlap paragraph 2. No em-dashes, no warmth, no meta-commentary, no superlatives. CONSISTENCY CHECK: the q -> 1 limit statements agree with the framework -- hbar_q = 1 - q^{-1} -> 0 as q -> 1, so '[X,P]_q -> 0' and 'the Reeb field trivialises' are the right direction, and hbar_q -> 1 as q -> infinity matches '[X,P]_q -> J' with J a finite maximum.",
+        "notes": "TWO SYMBOL FINDINGS, neither fixed (both are notation-register matters). (1) UNDEFINED SYMBOL: J appears only in the final sentence, '[X,P]_q -> J', with no definition anywhere in the block and no uses[] entry that obviously supplies it. Since the same sentence is the block's only statement about the large-q regime, the reader cannot evaluate it. (2) POSSIBLE zeta COLLISION. This block says 'The C_5 phase rotation now circulates around the exceptional divisor' and twice writes the phase rotation as w_k -> zeta^k w_k. The sibling prop:ramified-disc-fusion, which shares the same w_k resolvents and the same chapter, derives w_k -> zeta^{-k} w_k with zeta a CUBE root of unity coming from the three colour coordinates (c_r, c_g, c_b). C_5 is natural for Bring's surface and a cube root is natural for the colour triple, but one glyph zeta is doing both jobs across two adjacent blocks with no disambiguation. Per the notation-collision register this needs either two symbols or an explicit statement of which root of unity is meant where."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "cfc534d2db73",
+          "ts": "4b6190421d63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:11.652Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Remark, five paragraphs, read in full. All ten categories clean. The opening 'The surface supplies the genus-4 handles. The Reeb vector supplies the flow through them. The substrate parameter q sets the flow's pitch.' is a parallel three-sentence run, but the three assignments are distinct and substantive (topology / dynamics / parameter), so it is not a reflex triple. The closing two-limit paragraph looked like a placed symmetric closer, and I checked it before ruling: its q -> infinity half carries information found nowhere else in the block ([X,P]_q -> J, spinning maximal), so the paragraph is load-bearing rather than a restatement, even though its q -> 1 half does overlap paragraph 2. No em-dashes, no warmth, no meta-commentary, no superlatives. CONSISTENCY CHECK: the q -> 1 limit statements agree with the framework -- hbar_q = 1 - q^{-1} -> 0 as q -> 1, so '[X,P]_q -> 0' and 'the Reeb field trivialises' are the right direction, and hbar_q -> 1 as q -> infinity matches '[X,P]_q -> J' with J a finite maximum.",
+        "notes": "TWO SYMBOL FINDINGS, neither fixed (both are notation-register matters). (1) UNDEFINED SYMBOL: J appears only in the final sentence, '[X,P]_q -> J', with no definition anywhere in the block and no uses[] entry that obviously supplies it. Since the same sentence is the block's only statement about the large-q regime, the reader cannot evaluate it. (2) POSSIBLE zeta COLLISION. This block says 'The C_5 phase rotation now circulates around the exceptional divisor' and twice writes the phase rotation as w_k -> zeta^k w_k. The sibling prop:ramified-disc-fusion, which shares the same w_k resolvents and the same chapter, derives w_k -> zeta^{-k} w_k with zeta a CUBE root of unity coming from the three colour coordinates (c_r, c_g, c_b). C_5 is natural for Bring's surface and a cube root is natural for the colour triple, but one glyph zeta is doing both jobs across two adjacent blocks with no disambiguation. Per the notation-collision register this needs either two symbols or an explicit statement of which root of unity is meant where."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "cfc534d2db73",
+          "ts": "4b6190421d63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:11.691Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Remark, five paragraphs, read in full. All ten categories clean. The opening 'The surface supplies the genus-4 handles. The Reeb vector supplies the flow through them. The substrate parameter q sets the flow's pitch.' is a parallel three-sentence run, but the three assignments are distinct and substantive (topology / dynamics / parameter), so it is not a reflex triple. The closing two-limit paragraph looked like a placed symmetric closer, and I checked it before ruling: its q -> infinity half carries information found nowhere else in the block ([X,P]_q -> J, spinning maximal), so the paragraph is load-bearing rather than a restatement, even though its q -> 1 half does overlap paragraph 2. No em-dashes, no warmth, no meta-commentary, no superlatives. CONSISTENCY CHECK: the q -> 1 limit statements agree with the framework -- hbar_q = 1 - q^{-1} -> 0 as q -> 1, so '[X,P]_q -> 0' and 'the Reeb field trivialises' are the right direction, and hbar_q -> 1 as q -> infinity matches '[X,P]_q -> J' with J a finite maximum.",
+        "notes": "TWO SYMBOL FINDINGS, neither fixed (both are notation-register matters). (1) UNDEFINED SYMBOL: J appears only in the final sentence, '[X,P]_q -> J', with no definition anywhere in the block and no uses[] entry that obviously supplies it. Since the same sentence is the block's only statement about the large-q regime, the reader cannot evaluate it. (2) POSSIBLE zeta COLLISION. This block says 'The C_5 phase rotation now circulates around the exceptional divisor' and twice writes the phase rotation as w_k -> zeta^k w_k. The sibling prop:ramified-disc-fusion, which shares the same w_k resolvents and the same chapter, derives w_k -> zeta^{-k} w_k with zeta a CUBE root of unity coming from the three colour coordinates (c_r, c_g, c_b). C_5 is natural for Bring's surface and a cube root is natural for the colour triple, but one glyph zeta is doing both jobs across two adjacent blocks with no disambiguation. Per the notation-collision register this needs either two symbols or an explicit statement of which root of unity is meant where."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "cfc534d2db73",
+          "ts": "4b6190421d63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:11.731Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Remark, five paragraphs, read in full. All ten categories clean. The opening 'The surface supplies the genus-4 handles. The Reeb vector supplies the flow through them. The substrate parameter q sets the flow's pitch.' is a parallel three-sentence run, but the three assignments are distinct and substantive (topology / dynamics / parameter), so it is not a reflex triple. The closing two-limit paragraph looked like a placed symmetric closer, and I checked it before ruling: its q -> infinity half carries information found nowhere else in the block ([X,P]_q -> J, spinning maximal), so the paragraph is load-bearing rather than a restatement, even though its q -> 1 half does overlap paragraph 2. No em-dashes, no warmth, no meta-commentary, no superlatives. CONSISTENCY CHECK: the q -> 1 limit statements agree with the framework -- hbar_q = 1 - q^{-1} -> 0 as q -> 1, so '[X,P]_q -> 0' and 'the Reeb field trivialises' are the right direction, and hbar_q -> 1 as q -> infinity matches '[X,P]_q -> J' with J a finite maximum.",
+        "notes": "TWO SYMBOL FINDINGS, neither fixed (both are notation-register matters). (1) UNDEFINED SYMBOL: J appears only in the final sentence, '[X,P]_q -> J', with no definition anywhere in the block and no uses[] entry that obviously supplies it. Since the same sentence is the block's only statement about the large-q regime, the reader cannot evaluate it. (2) POSSIBLE zeta COLLISION. This block says 'The C_5 phase rotation now circulates around the exceptional divisor' and twice writes the phase rotation as w_k -> zeta^k w_k. The sibling prop:ramified-disc-fusion, which shares the same w_k resolvents and the same chapter, derives w_k -> zeta^{-k} w_k with zeta a CUBE root of unity coming from the three colour coordinates (c_r, c_g, c_b). C_5 is natural for Bring's surface and a cube root is natural for the colour triple, but one glyph zeta is doing both jobs across two adjacent blocks with no disambiguation. Per the notation-collision register this needs either two symbols or an explicit statement of which root of unity is meant where."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "cfc534d2db73",
+          "ts": "4b6190421d63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:11.771Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Remark, five paragraphs, read in full. All ten categories clean. The opening 'The surface supplies the genus-4 handles. The Reeb vector supplies the flow through them. The substrate parameter q sets the flow's pitch.' is a parallel three-sentence run, but the three assignments are distinct and substantive (topology / dynamics / parameter), so it is not a reflex triple. The closing two-limit paragraph looked like a placed symmetric closer, and I checked it before ruling: its q -> infinity half carries information found nowhere else in the block ([X,P]_q -> J, spinning maximal), so the paragraph is load-bearing rather than a restatement, even though its q -> 1 half does overlap paragraph 2. No em-dashes, no warmth, no meta-commentary, no superlatives. CONSISTENCY CHECK: the q -> 1 limit statements agree with the framework -- hbar_q = 1 - q^{-1} -> 0 as q -> 1, so '[X,P]_q -> 0' and 'the Reeb field trivialises' are the right direction, and hbar_q -> 1 as q -> infinity matches '[X,P]_q -> J' with J a finite maximum.",
+        "notes": "TWO SYMBOL FINDINGS, neither fixed (both are notation-register matters). (1) UNDEFINED SYMBOL: J appears only in the final sentence, '[X,P]_q -> J', with no definition anywhere in the block and no uses[] entry that obviously supplies it. Since the same sentence is the block's only statement about the large-q regime, the reader cannot evaluate it. (2) POSSIBLE zeta COLLISION. This block says 'The C_5 phase rotation now circulates around the exceptional divisor' and twice writes the phase rotation as w_k -> zeta^k w_k. The sibling prop:ramified-disc-fusion, which shares the same w_k resolvents and the same chapter, derives w_k -> zeta^{-k} w_k with zeta a CUBE root of unity coming from the three colour coordinates (c_r, c_g, c_b). C_5 is natural for Bring's surface and a cube root is natural for the colour triple, but one glyph zeta is doing both jobs across two adjacent blocks with no disambiguation. Per the notation-collision register this needs either two symbols or an explicit statement of which root of unity is meant where."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "cfc534d2db73",
+          "ts": "4b6190421d63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:11.810Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Remark, five paragraphs, read in full. All ten categories clean. The opening 'The surface supplies the genus-4 handles. The Reeb vector supplies the flow through them. The substrate parameter q sets the flow's pitch.' is a parallel three-sentence run, but the three assignments are distinct and substantive (topology / dynamics / parameter), so it is not a reflex triple. The closing two-limit paragraph looked like a placed symmetric closer, and I checked it before ruling: its q -> infinity half carries information found nowhere else in the block ([X,P]_q -> J, spinning maximal), so the paragraph is load-bearing rather than a restatement, even though its q -> 1 half does overlap paragraph 2. No em-dashes, no warmth, no meta-commentary, no superlatives. CONSISTENCY CHECK: the q -> 1 limit statements agree with the framework -- hbar_q = 1 - q^{-1} -> 0 as q -> 1, so '[X,P]_q -> 0' and 'the Reeb field trivialises' are the right direction, and hbar_q -> 1 as q -> infinity matches '[X,P]_q -> J' with J a finite maximum.",
+        "notes": "TWO SYMBOL FINDINGS, neither fixed (both are notation-register matters). (1) UNDEFINED SYMBOL: J appears only in the final sentence, '[X,P]_q -> J', with no definition anywhere in the block and no uses[] entry that obviously supplies it. Since the same sentence is the block's only statement about the large-q regime, the reader cannot evaluate it. (2) POSSIBLE zeta COLLISION. This block says 'The C_5 phase rotation now circulates around the exceptional divisor' and twice writes the phase rotation as w_k -> zeta^k w_k. The sibling prop:ramified-disc-fusion, which shares the same w_k resolvents and the same chapter, derives w_k -> zeta^{-k} w_k with zeta a CUBE root of unity coming from the three colour coordinates (c_r, c_g, c_b). C_5 is natural for Bring's surface and a cube root is natural for the colour triple, but one glyph zeta is doing both jobs across two adjacent blocks with no disambiguation. Per the notation-collision register this needs either two symbols or an explicit statement of which root of unity is meant where."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "cfc534d2db73",
+          "ts": "4b6190421d63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:46:11.851Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "Remark, five paragraphs, read in full. All ten categories clean. The opening 'The surface supplies the genus-4 handles. The Reeb vector supplies the flow through them. The substrate parameter q sets the flow's pitch.' is a parallel three-sentence run, but the three assignments are distinct and substantive (topology / dynamics / parameter), so it is not a reflex triple. The closing two-limit paragraph looked like a placed symmetric closer, and I checked it before ruling: its q -> infinity half carries information found nowhere else in the block ([X,P]_q -> J, spinning maximal), so the paragraph is load-bearing rather than a restatement, even though its q -> 1 half does overlap paragraph 2. No em-dashes, no warmth, no meta-commentary, no superlatives. CONSISTENCY CHECK: the q -> 1 limit statements agree with the framework -- hbar_q = 1 - q^{-1} -> 0 as q -> 1, so '[X,P]_q -> 0' and 'the Reeb field trivialises' are the right direction, and hbar_q -> 1 as q -> infinity matches '[X,P]_q -> J' with J a finite maximum.",
+        "notes": "TWO SYMBOL FINDINGS, neither fixed (both are notation-register matters). (1) UNDEFINED SYMBOL: J appears only in the final sentence, '[X,P]_q -> J', with no definition anywhere in the block and no uses[] entry that obviously supplies it. Since the same sentence is the block's only statement about the large-q regime, the reader cannot evaluate it. (2) POSSIBLE zeta COLLISION. This block says 'The C_5 phase rotation now circulates around the exceptional divisor' and twice writes the phase rotation as w_k -> zeta^k w_k. The sibling prop:ramified-disc-fusion, which shares the same w_k resolvents and the same chapter, derives w_k -> zeta^{-k} w_k with zeta a CUBE root of unity coming from the three colour coordinates (c_r, c_g, c_b). C_5 is natural for Bring's surface and a cube root is natural for the colour triple, but one glyph zeta is doing both jobs across two adjacent blocks with no disambiguation. Per the notation-collision register this needs either two symbols or an explicit statement of which root of unity is meant where."
+      }
+    ]
+  }
+}

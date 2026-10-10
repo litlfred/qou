@@ -1,0 +1,487 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/golden-quartet-galois-proof",
+    "path": "folio/quantum-observable-universe/predicted-spectra/golden-quartet-galois-proof"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "69f83f7983bb",
+          "ts": "6f807032257c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "69f83f7983bb",
+          "ts": "6f807032257c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:14.000Z",
+        "reviewed_sha": "68c24355f9e0f82d6e024dfd99cb72811516f51b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:14.000Z",
+        "reviewed_sha": "68c24355f9e0f82d6e024dfd99cb72811516f51b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:14.000Z",
+        "reviewed_sha": "68c24355f9e0f82d6e024dfd99cb72811516f51b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:14.000Z",
+        "reviewed_sha": "68c24355f9e0f82d6e024dfd99cb72811516f51b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:14.000Z",
+        "reviewed_sha": "68c24355f9e0f82d6e024dfd99cb72811516f51b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:14.000Z",
+        "reviewed_sha": "68c24355f9e0f82d6e024dfd99cb72811516f51b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:14.000Z",
+        "reviewed_sha": "68c24355f9e0f82d6e024dfd99cb72811516f51b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:14.000Z",
+        "reviewed_sha": "68c24355f9e0f82d6e024dfd99cb72811516f51b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:14.000Z",
+        "reviewed_sha": "68c24355f9e0f82d6e024dfd99cb72811516f51b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:14.000Z",
+        "reviewed_sha": "68c24355f9e0f82d6e024dfd99cb72811516f51b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:14.000Z",
+        "reviewed_sha": "68c24355f9e0f82d6e024dfd99cb72811516f51b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:14.000Z",
+        "reviewed_sha": "68c24355f9e0f82d6e024dfd99cb72811516f51b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:14.000Z",
+        "reviewed_sha": "68c24355f9e0f82d6e024dfd99cb72811516f51b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:14.000Z",
+        "reviewed_sha": "68c24355f9e0f82d6e024dfd99cb72811516f51b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:56:14.000Z",
+        "reviewed_sha": "68c24355f9e0f82d6e024dfd99cb72811516f51b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "aa89eef24940",
+          "ts": "6f807032257c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:49:52.886Z",
+        "reviewed_sha": "7fb0d4b505e597022cf0f976c8cc57da741c732e",
+        "severity": "major",
+        "evidence": "Block-final paragraph opened 'The four golden values are not arbitrary algebraic numbers.' followed immediately by 'They form the complete real Galois orbit...' - the textbook assert-by-deny split across two sentences, with the second clause carrying the whole content. The denial adds nothing: no reader was going to suppose the roots of a named quartic were arbitrary, and the positive claim is already the proposition's statement and the proof's own QED line.",
+        "notes": "FIX APPLIED (two sentences merged into one; pure prose, no math, no meaning change - deleting the denial alone would have left 'They' dangling, so the subject was folded in). BEFORE: 'The four golden values are not arbitrary algebraic numbers. They form the complete real Galois orbit generated by $\\varphi$ (or $1/\\varphi$) and the bar involution.' AFTER: 'The four golden values form the complete real Galois orbit generated by $\\varphi$ (or $1/\\varphi$) and the bar involution.' Math delimiters re-checked (6 x $$, balanced)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "aa89eef24940",
+          "ts": "6f807032257c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:49:52.837Z",
+        "reviewed_sha": "7fb0d4b505e597022cf0f976c8cc57da741c732e",
+        "evidence": "'Rather than fixing $\\varphi$ as a real combination under the $\\zeta_5$-action, we identify the golden quartet $Q$ as closed under the $G$-action' is a methodological contrast between two real constructions, not a setup-then-reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "aa89eef24940",
+          "ts": "6f807032257c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:49:52.569Z",
+        "reviewed_sha": "7fb0d4b505e597022cf0f976c8cc57da741c732e",
+        "evidence": "Full read (proof with four displays and an orbit table, plus two commentary sections). No spaced em-dash, no reflex triple, no narrated emphasis (the 'we identify' is ordinary mathematical first person), no warm register, and the final sentence is a substantive claim rather than a flourish. EVERY STEP RECOMPUTED AND CORRECT (sympy): the nine-term intermediate expansion is exactly right term for term and collapses to x^4-3x^2+1; the minimal polynomials are correctly assigned to phi and 1/phi; both tau computations are correct; the four-row orbit table is correct and the two orders of composition agree, so G = Z/2 x Z/2 is well defined; the biquadratic discriminant 16d(b^2-4d)^2 at b=-3, d=1 gives 400 = 2^4 . 5^2, confirmed by sympy's discriminant; Q(sqrt5) is indeed the maximal real subfield of Q(zeta_5) = Q(zeta_10) and Gal(Q(zeta_5)/Q) = Z/4 with the stated order-2 quotient."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "aa89eef24940",
+          "ts": "6f807032257c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:49:52.628Z",
+        "reviewed_sha": "7fb0d4b505e597022cf0f976c8cc57da741c732e",
+        "evidence": "Full read (proof with four displays and an orbit table, plus two commentary sections). No spaced em-dash, no reflex triple, no narrated emphasis (the 'we identify' is ordinary mathematical first person), no warm register, and the final sentence is a substantive claim rather than a flourish. EVERY STEP RECOMPUTED AND CORRECT (sympy): the nine-term intermediate expansion is exactly right term for term and collapses to x^4-3x^2+1; the minimal polynomials are correctly assigned to phi and 1/phi; both tau computations are correct; the four-row orbit table is correct and the two orders of composition agree, so G = Z/2 x Z/2 is well defined; the biquadratic discriminant 16d(b^2-4d)^2 at b=-3, d=1 gives 400 = 2^4 . 5^2, confirmed by sympy's discriminant; Q(sqrt5) is indeed the maximal real subfield of Q(zeta_5) = Q(zeta_10) and Gal(Q(zeta_5)/Q) = Z/4 with the stated order-2 quotient."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "aa89eef24940",
+          "ts": "6f807032257c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:49:52.786Z",
+        "reviewed_sha": "7fb0d4b505e597022cf0f976c8cc57da741c732e",
+        "evidence": "Full read (proof with four displays and an orbit table, plus two commentary sections). No spaced em-dash, no reflex triple, no narrated emphasis (the 'we identify' is ordinary mathematical first person), no warm register, and the final sentence is a substantive claim rather than a flourish. EVERY STEP RECOMPUTED AND CORRECT (sympy): the nine-term intermediate expansion is exactly right term for term and collapses to x^4-3x^2+1; the minimal polynomials are correctly assigned to phi and 1/phi; both tau computations are correct; the four-row orbit table is correct and the two orders of composition agree, so G = Z/2 x Z/2 is well defined; the biquadratic discriminant 16d(b^2-4d)^2 at b=-3, d=1 gives 400 = 2^4 . 5^2, confirmed by sympy's discriminant; Q(sqrt5) is indeed the maximal real subfield of Q(zeta_5) = Q(zeta_10) and Gal(Q(zeta_5)/Q) = Z/4 with the stated order-2 quotient."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "aa89eef24940",
+          "ts": "6f807032257c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:49:52.682Z",
+        "reviewed_sha": "7fb0d4b505e597022cf0f976c8cc57da741c732e",
+        "evidence": "Full read (proof with four displays and an orbit table, plus two commentary sections). No spaced em-dash, no reflex triple, no narrated emphasis (the 'we identify' is ordinary mathematical first person), no warm register, and the final sentence is a substantive claim rather than a flourish. EVERY STEP RECOMPUTED AND CORRECT (sympy): the nine-term intermediate expansion is exactly right term for term and collapses to x^4-3x^2+1; the minimal polynomials are correctly assigned to phi and 1/phi; both tau computations are correct; the four-row orbit table is correct and the two orders of composition agree, so G = Z/2 x Z/2 is well defined; the biquadratic discriminant 16d(b^2-4d)^2 at b=-3, d=1 gives 400 = 2^4 . 5^2, confirmed by sympy's discriminant; Q(sqrt5) is indeed the maximal real subfield of Q(zeta_5) = Q(zeta_10) and Gal(Q(zeta_5)/Q) = Z/4 with the stated order-2 quotient."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "aa89eef24940",
+          "ts": "6f807032257c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:49:52.941Z",
+        "reviewed_sha": "7fb0d4b505e597022cf0f976c8cc57da741c732e",
+        "severity": "minor",
+        "evidence": "The surviving sentence of that closing paragraph ('The four golden values form the complete real Galois orbit generated by phi and the bar involution') restates what the proposition states and what the proof has already proved and boxed ('Since all four elements appear and |G| = 4 = |Q|, the action is transitive. QED'). Three statements of transitivity in one block-plus-parent.",
+        "notes": "Structural, not edited (the sentence is now the subject-bearing opener of the final paragraph, so removing it needs the paragraph reworked). Proposed fix: drop the sentence and let the paragraph begin with the claim that is actually new - the identification of the quartet with the phase boundaries and Moebius fixed points."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "aa89eef24940",
+          "ts": "6f807032257c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:49:52.738Z",
+        "reviewed_sha": "7fb0d4b505e597022cf0f976c8cc57da741c732e",
+        "evidence": "Full read (proof with four displays and an orbit table, plus two commentary sections). No spaced em-dash, no reflex triple, no narrated emphasis (the 'we identify' is ordinary mathematical first person), no warm register, and the final sentence is a substantive claim rather than a flourish. EVERY STEP RECOMPUTED AND CORRECT (sympy): the nine-term intermediate expansion is exactly right term for term and collapses to x^4-3x^2+1; the minimal polynomials are correctly assigned to phi and 1/phi; both tau computations are correct; the four-row orbit table is correct and the two orders of composition agree, so G = Z/2 x Z/2 is well defined; the biquadratic discriminant 16d(b^2-4d)^2 at b=-3, d=1 gives 400 = 2^4 . 5^2, confirmed by sympy's discriminant; Q(sqrt5) is indeed the maximal real subfield of Q(zeta_5) = Q(zeta_10) and Gal(Q(zeta_5)/Q) = Z/4 with the stated order-2 quotient."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "aa89eef24940",
+          "ts": "6f807032257c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:49:53.002Z",
+        "reviewed_sha": "7fb0d4b505e597022cf0f976c8cc57da741c732e",
+        "severity": "minor",
+        "evidence": "Block-final sentence 'They encode the full set of phase boundaries and Moebius fixed points of the Descartes universe.' - 'the full set' is a completeness claim over two objects (phase boundaries; Moebius fixed points) that this block never defines, never enumerates and never derives. Nothing before it in the block concerns either. It is the maximum-strength form of a claim whose weakest form is not established here.",
+        "notes": "Structural (content claim, not register), not edited. Proposed fix: either cite the block that establishes the correspondence and weaken to 'These four values are the phase boundaries and Moebius fixed points identified in [ref]', or drop the sentence. Related, in the same commentary: 'This value encodes the depth of the Gal(Q(sqrt5)/Q)-extension supporting the S_5 symmetry restricted to A_4 subset S_5' - the perfect-square discriminant 400 = 20^2 does correctly place the quartic's Galois group inside A_4 as a permutation group on the four roots, but the splitting field is Q(sqrt5) and the actual Galois group is Z/2, so tying it to Bring's S_5 is asserted rather than shown, and 'encodes the depth' names no invariant."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "aa89eef24940",
+          "ts": "6f807032257c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:49:53.066Z",
+        "reviewed_sha": "7fb0d4b505e597022cf0f976c8cc57da741c732e",
+        "severity": "minor",
+        "evidence": "Two noun-chain sentences in the commentary sections: 'The quartic $P(x) = x^4-3x^2+1$ is the maximal real subfield shadow of the resolvent determining the chiral fibration of Bring's surface.' (a five-word compound predicate nominal followed by two participial modifiers, with 'shadow' undefined) and 'This value encodes the depth of the $\\mathrm{Gal}(\\mathbb{Q}(\\sqrt5)/\\mathbb{Q})$-extension supporting the $S_5$ symmetry restricted to $A_4 \\subset S_5$.' Neither survives being read aloud; both are in the two paragraphs that carry the block's interpretive content, where clarity matters most.",
+        "notes": "Structural (math-adjacent), not edited. Proposed fix for the first: 'Over the maximal real subfield, the resolvent that determines the chiral fibration of Bring's surface reduces to $P(x) = x^4-3x^2+1$.'"
+      }
+    ]
+  }
+}

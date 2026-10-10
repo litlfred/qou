@@ -1,0 +1,194 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/jet-tower-convergence-context",
+    "path": "folio/quantum-observable-universe/mass-theory/jet-tower-convergence-context"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Fixed. \"(workplan **P3.4** path (b))\" deleted. The named conjecture link, the empirical per-level bound, the `uniform_bound_pass` witness citation and the open status of the uniform-$\\Delta_{\\max}$ subconjecture are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "2e945b2ca6f0",
+          "ts": "97081a6cb62b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:16:10.372Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "'The jet loop is therefore not the bottleneck for sub-ppm precision - the level-1 V-hat model is' has the trap shape but the contrast IS the engineering claim (which of two factors dominates the error budget); substantive-contrast false-positive class."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "2e945b2ca6f0",
+          "ts": "97081a6cb62b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:16:10.428Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the four-section remark (kind remark, interprets prop:jet-tower-convergence). Category absent."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "2e945b2ca6f0",
+          "ts": "97081a6cb62b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:16:10.497Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Two spaced em-dash constructions: a genuine matched pair around 'uniform boundedness of per-level binding across the brane tower', and one appending dash in 'not the bottleneck for sub-ppm precision - the level-1 V-hat model is'. Two in a four-section block is not density."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "2e945b2ca6f0",
+          "ts": "97081a6cb62b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:16:10.565Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the four-section remark (kind remark, interprets prop:jet-tower-convergence). Category absent."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "2e945b2ca6f0",
+          "ts": "97081a6cb62b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:16:10.608Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the four-section remark (kind remark, interprets prop:jet-tower-convergence). Category absent."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "2e945b2ca6f0",
+          "ts": "97081a6cb62b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:16:10.665Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the four-section remark (kind remark, interprets prop:jet-tower-convergence). Category absent."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "2e945b2ca6f0",
+          "ts": "97081a6cb62b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:16:10.712Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Closes on a cross-reference ('Closing that conditional is the main outstanding piece of open subconjecture 1 on rem:mass-endomorphism-jet-tower'), the bookkeeping false-positive class.",
+        "notes": "SEPARATE (non-trap) findings recorded for durability. (1) SWEEP DAMAGE, the exact named class: 'Empirically (see / the canonical formalism / and the formal derivation) the per-level terms for D, T, 3He satisfy ...' - two citations replaced by 'the canonical formalism' and 'the formal derivation', with the line breaks still sitting where the links were. From conj:jet-tower-uniform-delta-max's own .ts the intended referents are computations/jet_tower_delta_max.py and computations/jet-tower-delta-max.witness.json (the latter is still correctly linked three lines below). Not fixed inline: restoring a citation on inference risks fabricating it. (2) The '|hbar^2n Delta^n| <= |hbar^2(n-1) Delta^(n-1)| . hbar^2 to three significant figures' phrasing is loose - recomputed from the cited witness, the weighted-term ratios are 0.004145..0.004864 for D against hbar_q^2 = 0.009817188513985985, so the inequality holds with a factor-2 margin rather than 'to three significant figures'. (3) 'n = 1, ..., 7' here is correct against the witness (n_levels_measured = 7, six ratios) and CONTRADICTS conj:jet-tower-uniform-delta-max.md, which says 'n = 1, 2, 3'."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "2e945b2ca6f0",
+          "ts": "97081a6cb62b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:16:10.810Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the four-section remark (kind remark, interprets prop:jet-tower-convergence). Category absent."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "2e945b2ca6f0",
+          "ts": "97081a6cb62b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:16:10.868Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the four-section remark (kind remark, interprets prop:jet-tower-convergence). Category absent."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "2e945b2ca6f0",
+          "ts": "97081a6cb62b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:16:10.950Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the four-section remark (kind remark, interprets prop:jet-tower-convergence). Category absent."
+      }
+    ]
+  }
+}

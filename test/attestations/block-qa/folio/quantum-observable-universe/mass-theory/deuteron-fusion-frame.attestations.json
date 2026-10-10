@@ -1,0 +1,231 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/deuteron-fusion-frame",
+    "path": "folio/quantum-observable-universe/mass-theory/deuteron-fusion-frame"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "b3856ebeb445",
+          "ts": "cb47f78b6696",
+          "lean": "2daa18af475e"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "b3856ebeb445",
+          "ts": "cb47f78b6696",
+          "lean": "2daa18af475e"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "10f92ef264cc",
+          "ts": "cb47f78b6696"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.562Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read (three-identity statement, 'Rigidity of the integer 5', 'The exchange rate is a linking rate', downstream caveat). Two X-not-Y forms: 'the Ocneanu-Markov normalization ..., not a modeling parameter' and 'is a counting datum ... not an adjustable integer'. Both are anti-fit disclosures about distinct objects (the bond factor z, and the integer 5), which the production-vs-exploratory discipline requires a block to state; each denies a specific objection a referee would raise.",
+        "notes": "Doubling noted: the two denials make the same move one paragraph apart. If tightened, the second can drop 'not an adjustable integer' since 'counting datum' already carries it."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "10f92ef264cc",
+          "ts": "cb47f78b6696"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.600Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Both section bodies argue straight through to their headings; no setup-then-reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "10f92ef264cc",
+          "ts": "cb47f78b6696"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.640Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "One paired parenthetical ('is a counting datum — a total quantum dimension — not an adjustable integer'); no dashes substituting for sentence structure elsewhere."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "10f92ef264cc",
+          "ts": "cb47f78b6696"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.677Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "The numbered list has three members because there are three exact identities, each independently verified here: [2]_v^2 = [3]_v + 1; 1 + [2]_v^2 = 5 + (v-1/v)^2 (both sides 5.010896867 at q_0); g^2(1 + [2]_v^2) = 1 (computed 1.0 exactly). The 'canonical Markov parameter -> channel slope -> linking rate' chain is a three-step derivation, not a rhetorical list."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "10f92ef264cc",
+          "ts": "cb47f78b6696"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.712Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Ends 'The archimedean evaluation at q_0 and the MeV unit E_unit are downstream and remain the open inputs of the linear law' — an open-input disclosure that weakens the block's own result."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "10f92ef264cc",
+          "ts": "cb47f78b6696"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.748Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No emphasis narration."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "10f92ef264cc",
+          "ts": "cb47f78b6696"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.787Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "'So the 5 ... is a counting datum' is the conclusion the section heading promises, drawn from identity 2 rather than restating it."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "10f92ef264cc",
+          "ts": "cb47f78b6696"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.824Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No affective register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "10f92ef264cc",
+          "ts": "cb47f78b6696"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.864Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Every exactness claim in the block is literally exact and was checked: the '(1 + [2]_v^2) g = 1/g' split from 5g by 'the exact factor 1 + (v-1/v)^2/5' reduces to (1+[2]^2)/5, and 5.010896867/5 = 1 + 0.010896867/5. No inflation."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "10f92ef264cc",
+          "ts": "cb47f78b6696"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.904Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Densest sentence is 'the linking number per unit arc length, in exchange-cycle units, of a slope-z geodesic pair on the shared torus', which parses aloud by its commas.",
+        "notes": "Adjacent: 'the deuteron magnitude reads *canonical Markov parameter -> channel slope -> linking rate*' embeds arrow glyphs in running prose, which cannot be voiced; a reader must supply 'then'. Cosmetic, not fixed."
+      }
+    ]
+  }
+}

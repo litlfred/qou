@@ -1,0 +1,539 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram",
+    "path": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "1796ab0e9968",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "1796ab0e9968",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "39af9ea2c63c",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:54.338Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "field_hash": {
+          "md": "39af9ea2c63c",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "39af9ea2c63c",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No false claims identified in 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)': mathematical reasoning is consistent.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "39af9ea2c63c",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The block 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)' presents substantial mathematical content: $^{6}\\mathrm{Li}$ ($Z = N = 3$, $A = 6$) is the canonical...",
+        "severity": "minor"
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "39af9ea2c63c",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "39af9ea2c63c",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No overclaims: the scope of 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)' is appropriately qualified.",
+        "severity": "minor"
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "39af9ea2c63c",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "39af9ea2c63c",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The argument flow in 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)' is logically sound, mapping onto the cited dependencies.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "39af9ea2c63c",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No Lean sibling required; narrative matches the expected TypeScript configuration.",
+        "severity": "minor"
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "39af9ea2c63c",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "No citations are present in 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "39af9ea2c63c",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Key terms and symbols in 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "39af9ea2c63c",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The algebraic and logical relations in 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "39af9ea2c63c",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The physical concepts described in 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "39af9ea2c63c",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "The derivation steps and formal definitions in 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)' are reproducible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/observations/non-magic-Li6-diagram.ts:1"
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "39af9ea2c63c",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T11:04:37.262Z",
+        "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
+        "notes": "Referee verdict: clean.",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Non-magic illustration: $^{6}\\\\mathrm{Li}$ at $Z = N = 3$ (frayed both sides)' are consistent.",
+        "severity": "minor"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T20:08:23.000Z",
+        "reviewed_sha": "0065c844f3e6236d2221183e68b2697fc90e290c",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1796ab0e9968",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:26:26.301Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "frayed-vs-rigid and 'whereas Ca40 single arrow / Li6 fan of arrows' contrasts are the example's mathematical content",
+        "notes": "pass-with-note: substantive contrast"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1796ab0e9968",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:26:25.514Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "No setup-then-reframe pivot construction"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1796ab0e9968",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:26:25.563Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "No spaced em-dashes; only LaTeX -- in compound names"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1796ab0e9968",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:26:25.899Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "No reflex triples; enumerations substantive or other cardinality"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1796ab0e9968",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:26:26.393Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "Section closer 'The empirical loose binding is the algebraic non-rigidity' states the section's identification claim; block closer names the mechanism",
+        "notes": "pass-with-note: compressed identity is the claim, not ornament"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1796ab0e9968",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:26:25.973Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "No narrated emphasis; no 'we emphasize'/'note the framing'"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1796ab0e9968",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:26:26.033Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "No block-final restatement of already-established content"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1796ab0e9968",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:26:26.100Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "Institutional register throughout; no personal warmth"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1796ab0e9968",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:26:26.164Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "No unqualified maximum-strength claims"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1796ab0e9968",
+          "ts": "5836caca1385"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:obs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T11:26:26.255Z",
+        "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
+        "evidence": "Sentences short and speakable; no noun-chain pileups"
+      }
+    ]
+  }
+}

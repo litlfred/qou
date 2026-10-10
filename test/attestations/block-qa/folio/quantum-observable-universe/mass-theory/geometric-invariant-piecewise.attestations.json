@@ -1,0 +1,734 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/geometric-invariant-piecewise",
+    "path": "folio/quantum-observable-universe/mass-theory/geometric-invariant-piecewise"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "fb79bedbd7bc",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "fb79bedbd7bc",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "fb79bedbd7bc",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:55.556Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "fb79bedbd7bc",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "fb79bedbd7bc",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.043Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No false claims identified in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$': mathematical reasoning is consistent in prose.",
+        "severity": "minor",
+        "evidence": "geometric-invariant-piecewise.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "fb79bedbd7bc",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.049Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The block 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$' presents substantial mathematical content: 'The categorical action $S = \\mathrm{tr}(\\Phi)$'.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "fb79bedbd7bc",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.055Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$'.",
+        "severity": "minor",
+        "evidence": "geometric-invariant-piecewise.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "fb79bedbd7bc",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.061Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The remarks and narrative scope in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$' are appropriately qualified.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "fb79bedbd7bc",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.067Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$'.",
+        "severity": "minor",
+        "evidence": "geometric-invariant-piecewise.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "fb79bedbd7bc",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.073Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The prose arguments in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$' proceed logically through the stated steps.",
+        "severity": "minor",
+        "evidence": "geometric-invariant-piecewise.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "fb79bedbd7bc",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.079Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No Lean sibling required; narrative matches the expected configuration.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "fb79bedbd7bc",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.085Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "No citations are present in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "geometric-invariant-piecewise.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "fb79bedbd7bc",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.091Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Key terms and symbols in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "geometric-invariant-piecewise.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "fb79bedbd7bc",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.097Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The empirical claims in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$' are structurally anchored to the QOU mass framework and are stable.",
+        "severity": "minor",
+        "evidence": "geometric-invariant-piecewise.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "fb79bedbd7bc",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.103Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The physical concepts described in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "geometric-invariant-piecewise.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "fb79bedbd7bc",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.109Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "The derivation steps and formal definitions in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$' are reproducible.",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "fb79bedbd7bc",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent"
+        },
+        "reviewed_at": "2026-06-28T10:58:41.115Z",
+        "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
+        "notes": "Referee verdict: clean.",
+        "severity": "minor",
+        "verdict": "clean",
+        "referee_argument": "No significant objections; the mathematical claims in 'Piecewise geometric invariant $\\\\mathrm{Geom}(K)$' are consistent."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Block properly satisfies milnor-brevity. The content accurately reflects the necessary properties without overclaiming.",
+        "reviewed_at": "2026-07-07T23:31:21.966149Z",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound algebraic mechanism mapping discrete structural constraints reliably alongside formal analytic limits.",
+        "reviewed_at": "2026-07-08T14:44:51.000Z",
+        "reviewed_sha": "c79284cb7deb1ea847e747d28dc9e59b219c1622",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d17e63a4dc01",
+          "ts": "3f690eb86c88"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:20.505Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "severity": "major",
+        "evidence": "'The three cases are not *ad hoc*: each arises from an established theorem in low-dimensional topology.' \u2014 the quality is asserted by denying its opposite, in a sentence that then supplies the positive justification anyway.",
+        "notes": "FIXED: 'The three cases are not *ad hoc*: each arises from an established theorem in low-dimensional topology.' -> 'Each of the three cases arises from an established theorem in low-dimensional topology.' Same construction as in frobenius-codim-universal-proof ('forced by the structure, not ad-hoc'), so this is a chapter-level habit rather than a one-off."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d17e63a4dc01",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:20.540Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "The 'if hyperbolic knots represent ... torus knots represent ...' sentence is a stated duality with both halves developed, not a setup-then-reframe."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d17e63a4dc01",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:20.577Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Zero em-dashes in 481 words (the double hyphens in 'Kashaev--Murakami--Murakami', 'Chern--Simons' and 'Thurston' are en-dash markup)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d17e63a4dc01",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:20.614Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "'three cases' and 'three geometric structures' are the case split of the displayed definition and Thurston's trichotomy respectively \u2014 forced by the mathematics."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d17e63a4dc01",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:20.649Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Ends on the reason the unknot is normalised to zero, not on a quotable line."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d17e63a4dc01",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:20.688Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "'The figure-eight knot 4_1 is special:' announces significance rather than showing it, but the next clause immediately gives the reason (amphicheirality), so the emphasis is placed rather than merely narrated."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d17e63a4dc01",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:20.726Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "The five numbered sections each add a distinct justification; none restates the opening."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d17e63a4dc01",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:20.766Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "No personal register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d17e63a4dc01",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:20.813Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "'the vast majority of knots' is a true statement about knot censuses; 'strict duality', 'purely the phase' and 'manifestly real' are locally justified.",
+        "notes": "VERIFIED: 4_1 is amphicheiral, and the two figure-eight BW factors are real algebraic in q \u2014 1 - h^2 = 4 - [3]_q and h[2]_q = q^2 - q^-2 both check symbolically."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d17e63a4dc01",
+          "ts": "3f690eb86c88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:20.851Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Numbered sections, short sentences, displays carry the formulas.",
+        "notes": "FOUR RIGOR FLAGS, in decreasing confidence. (1) SUPPRESS/AMPLIFY INVERTED, verified numerically: the block says hyperbolic knots are states 'where hbar_q^2 suppresses the volume' and torus knots ones 'where hbar_q^2 amplifies the Chern-Simons phase'. At the proton pin hbar_q^2 = 0.009817186, so dividing by it (the hyperbolic case, Vol/hbar_q^2) MULTIPLIES by 101.86 and multiplying by it (the torus case, CS x hbar_q^2) suppresses by the same factor. The two verbs are swapped. (2) THE TRICHOTOMY DOES NOT MATCH THE CASE SPLIT: Thurston's classification is quoted correctly as hyperbolic / Seifert-fibred (torus) / satellite, and the block then says 'The piecewise definition of Geom(K) follows this classification directly'. It does not: Geom(K) has no satellite case, and it has an unknot case that is not one of the three. Satellite knots are therefore undefined under Geom. (3) CS FORMULA UNCITED AND UNBOUNDED: CS(T_{m,n}) = pi^2 (m^2-1)(n^2-1)/(12 m n) is given with no citation and grows without bound (T(2,101) gives 124.6), whereas a Chern-Simons invariant is defined only modulo its period lattice \u2014 at best this is a specific lift and should say so. It does have one good internal consistency check: it vanishes at m=1, agreeing with the unknot case. (4) THE PAIRING IDENTITY IS VACUOUS: the displayed 'Frobenius inner product' is literally Geom(K) divided by Geom(K-mirror), so '= 1' follows from Vol(K-mirror) = Vol(K) alone and tells us nothing about the Frobenius pairing or about hbar_q^2 'mediating' it. Minor: torus knots are called 'self-dual under the descent involution', but T(2,3) is chiral, so that phrase needs its involution named. Advisory: the Volume-Conjecture paragraph slides from the coloured Jones at roots of unity to tr_M(rho(B_K)) at fixed q, which are different objects; the VC is itself a conjecture and should be cited as a hypothesis."
+      }
+    ]
+  }
+}

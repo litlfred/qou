@@ -1,0 +1,193 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/skein-finiteness-bound-table1-data",
+    "path": "folio/quantum-observable-universe/predicted-spectra/skein-finiteness-bound-table1-data"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f0f2c8dcff43",
+          "ts": "9c8ad7a3ed8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:23.014Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: transfer-matrix eigenvalues. Arithmetic re-derived and correct."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f0f2c8dcff43",
+          "ts": "9c8ad7a3ed8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:23.053Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: transfer-matrix eigenvalues. Arithmetic re-derived and correct."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f0f2c8dcff43",
+          "ts": "9c8ad7a3ed8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:23.092Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: transfer-matrix eigenvalues. Arithmetic re-derived and correct."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f0f2c8dcff43",
+          "ts": "9c8ad7a3ed8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:23.133Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: transfer-matrix eigenvalues. Arithmetic re-derived and correct."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f0f2c8dcff43",
+          "ts": "9c8ad7a3ed8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:23.174Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: transfer-matrix eigenvalues. Arithmetic re-derived and correct."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f0f2c8dcff43",
+          "ts": "9c8ad7a3ed8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:23.213Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: transfer-matrix eigenvalues. Arithmetic re-derived and correct."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f0f2c8dcff43",
+          "ts": "9c8ad7a3ed8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:23.252Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: transfer-matrix eigenvalues. Arithmetic re-derived and correct."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f0f2c8dcff43",
+          "ts": "9c8ad7a3ed8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:23.290Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: transfer-matrix eigenvalues. Arithmetic re-derived and correct."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f0f2c8dcff43",
+          "ts": "9c8ad7a3ed8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:23.328Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: transfer-matrix eigenvalues. Arithmetic re-derived and correct."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f0f2c8dcff43",
+          "ts": "9c8ad7a3ed8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:23.364Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: transfer-matrix eigenvalues. Arithmetic re-derived and correct."
+      }
+    ]
+  }
+}

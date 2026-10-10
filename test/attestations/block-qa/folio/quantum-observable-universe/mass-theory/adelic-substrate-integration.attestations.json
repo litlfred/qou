@@ -1,0 +1,197 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/adelic-substrate-integration",
+    "path": "folio/quantum-observable-universe/mass-theory/adelic-substrate-integration"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "4b7cc546d91e",
+          "ts": "0c3efa6a9251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:22.841Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Three: 'the local q-geometries ... do not assemble into a continuous manifold, but they do assemble into a global adelic object'; 'not the real continuum R alone but the simultaneous integration of all local non-archimedean data'; 'are not Riemann integrals over R. They are Tate integrals over A.'",
+        "notes": "Density-3 in a 1.5 kB block was weighed and passed: the R-versus-A contrast IS this block's mathematical content (the motivation for replacing R by A), and each denial names a specific false alternative a reader would otherwise assume. False-positive class 'substantive mathematical contrast'. Flagged here so a later pass can re-weigh the concentration if the block is expanded."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "4b7cc546d91e",
+          "ts": "0c3efa6a9251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:22.940Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, motivation for the adelic substrate and Tate integration); no setup-then-reframe pivot found."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "4b7cc546d91e",
+          "ts": "0c3efa6a9251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.025Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, motivation for the adelic substrate and Tate integration); no load-bearing spaced em-dash found."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "4b7cc546d91e",
+          "ts": "0c3efa6a9251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.069Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'the macroscopic mass functional, the global L-function of Bring's coordinate ring, the partition functions of the brane tower'; and the (now removed) three-beat closer.",
+        "notes": "The surviving triple is a substantive enumeration of three distinct global observables. The closer's cadence was removed under trap-closing-aphorism."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "4b7cc546d91e",
+          "ts": "0c3efa6a9251"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.131Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "major",
+        "evidence": "Block ended on 'This is the global stitch: discrete quantum data at every prime, glued by adelic restriction, projected to physical numbers by the archimedean realization functor.' - colon-introduced label ('the global stitch', a phrase used nowhere else in the corpus) plus a three-beat participial cadence, i.e. a quotable closer rather than a claim.",
+        "notes": "fix applied: 'This is the global stitch: discrete quantum data at every prime, glued by adelic restriction, projected to physical numbers by the [archimedean realization functor](#def:archimedean-realization-functor).' -> 'Discrete quantum data at every prime is glued by adelic restriction and projected to physical numbers by the [archimedean realization functor](#def:archimedean-realization-functor).' Content and the cross-reference are preserved; the label and the three-beat cadence are gone."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "4b7cc546d91e",
+          "ts": "0c3efa6a9251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.190Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, motivation for the adelic substrate and Tate integration); no narration of own emphasis found."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "4b7cc546d91e",
+          "ts": "0c3efa6a9251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.246Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, motivation for the adelic substrate and Tate integration); no block-final restatement of what is already established found."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "4b7cc546d91e",
+          "ts": "0c3efa6a9251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.314Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, motivation for the adelic substrate and Tate integration); no personal / warm register in institutional prose found."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "4b7cc546d91e",
+          "ts": "0c3efa6a9251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.374Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, motivation for the adelic substrate and Tate integration); no unqualified maximum-strength claim found."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "4b7cc546d91e",
+          "ts": "0c3efa6a9251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:23.454Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, motivation for the adelic substrate and Tate integration); no noun-chain syntax that stalls when read aloud found."
+      }
+    ]
+  }
+}

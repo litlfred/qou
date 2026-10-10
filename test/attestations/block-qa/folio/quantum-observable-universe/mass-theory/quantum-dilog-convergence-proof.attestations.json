@@ -1,0 +1,490 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/mass-theory/quantum-dilog-convergence-proof",
+    "path": "folio/quantum-observable-universe/mass-theory/quantum-dilog-convergence-proof"
+  },
+  "criteria": {
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      },
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "qa-reviewer-swarm-22",
+          "version": "1.0"
+        },
+        "reviewed_at": "2026-06-28T22:26:39.926Z",
+        "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
+        "notes": "Reviewed and passes basic QA."
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.981Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proof block plus two italic scope paragraphs, read in full. All ten categories clean. The block-final 'The proposition closes the analytic existence question, not the regularization question' is a factual scope statement of what was and was not proved -- the documented temporal/scope false-positive class -- and the same holds for 'the convergence half ... that survives the refutation of the level-selection rule n_star'. RIGOR PASS, every step checked: |q^{-k}z| < q^{-k}*q = q^{1-k} <= 1 for k >= 1 is correct; sum|a_k| = |z| sum q^{-k} converges for q > 1; the uniform bound 1 - a_k >= 1 - |z|/q > 0 is correct since |a_k| <= |z|/q for k >= 1 and |z| < q; hence |g_k| <= |a_k|/(1 - |z|/q) is summable and the one-plus-summable criterion applies. The proof is complete and correct.",
+        "notes": "NUMERIC CONFIRMED, including the pin question. The scope note's 'Phi_q(0.989) approx 6.7e5' is CORRECT: evaluating prod_{k>=1}(1 - q^{-k}*0.989)^{-1} to convergence gives 671093.7 at the proton pin. PIN DISCRIMINATION: proton gives 671093.7 and muon 671092.6 -- indistinguishable at the printed two significant figures -- while the erroneous 1.1097 gives 695611.8, which would print as 7.0e5, so this figure DOES exclude 1.1097 while not separating the two live pins. One uses-hygiene note: the proof's prose cites conj:brane-tower-z-habiro and prop:mass-endomorphism-tower, neither of which appears in the block's uses[] (it lists only the parent proposition)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:28.019Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proof block plus two italic scope paragraphs, read in full. All ten categories clean. The block-final 'The proposition closes the analytic existence question, not the regularization question' is a factual scope statement of what was and was not proved -- the documented temporal/scope false-positive class -- and the same holds for 'the convergence half ... that survives the refutation of the level-selection rule n_star'. RIGOR PASS, every step checked: |q^{-k}z| < q^{-k}*q = q^{1-k} <= 1 for k >= 1 is correct; sum|a_k| = |z| sum q^{-k} converges for q > 1; the uniform bound 1 - a_k >= 1 - |z|/q > 0 is correct since |a_k| <= |z|/q for k >= 1 and |z| < q; hence |g_k| <= |a_k|/(1 - |z|/q) is summable and the one-plus-summable criterion applies. The proof is complete and correct.",
+        "notes": "NUMERIC CONFIRMED, including the pin question. The scope note's 'Phi_q(0.989) approx 6.7e5' is CORRECT: evaluating prod_{k>=1}(1 - q^{-k}*0.989)^{-1} to convergence gives 671093.7 at the proton pin. PIN DISCRIMINATION: proton gives 671093.7 and muon 671092.6 -- indistinguishable at the printed two significant figures -- while the erroneous 1.1097 gives 695611.8, which would print as 7.0e5, so this figure DOES exclude 1.1097 while not separating the two live pins. One uses-hygiene note: the proof's prose cites conj:brane-tower-z-habiro and prop:mass-endomorphism-tower, neither of which appears in the block's uses[] (it lists only the parent proposition)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:28.057Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proof block plus two italic scope paragraphs, read in full. All ten categories clean. The block-final 'The proposition closes the analytic existence question, not the regularization question' is a factual scope statement of what was and was not proved -- the documented temporal/scope false-positive class -- and the same holds for 'the convergence half ... that survives the refutation of the level-selection rule n_star'. RIGOR PASS, every step checked: |q^{-k}z| < q^{-k}*q = q^{1-k} <= 1 for k >= 1 is correct; sum|a_k| = |z| sum q^{-k} converges for q > 1; the uniform bound 1 - a_k >= 1 - |z|/q > 0 is correct since |a_k| <= |z|/q for k >= 1 and |z| < q; hence |g_k| <= |a_k|/(1 - |z|/q) is summable and the one-plus-summable criterion applies. The proof is complete and correct.",
+        "notes": "NUMERIC CONFIRMED, including the pin question. The scope note's 'Phi_q(0.989) approx 6.7e5' is CORRECT: evaluating prod_{k>=1}(1 - q^{-k}*0.989)^{-1} to convergence gives 671093.7 at the proton pin. PIN DISCRIMINATION: proton gives 671093.7 and muon 671092.6 -- indistinguishable at the printed two significant figures -- while the erroneous 1.1097 gives 695611.8, which would print as 7.0e5, so this figure DOES exclude 1.1097 while not separating the two live pins. One uses-hygiene note: the proof's prose cites conj:brane-tower-z-habiro and prop:mass-endomorphism-tower, neither of which appears in the block's uses[] (it lists only the parent proposition)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:28.096Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proof block plus two italic scope paragraphs, read in full. All ten categories clean. The block-final 'The proposition closes the analytic existence question, not the regularization question' is a factual scope statement of what was and was not proved -- the documented temporal/scope false-positive class -- and the same holds for 'the convergence half ... that survives the refutation of the level-selection rule n_star'. RIGOR PASS, every step checked: |q^{-k}z| < q^{-k}*q = q^{1-k} <= 1 for k >= 1 is correct; sum|a_k| = |z| sum q^{-k} converges for q > 1; the uniform bound 1 - a_k >= 1 - |z|/q > 0 is correct since |a_k| <= |z|/q for k >= 1 and |z| < q; hence |g_k| <= |a_k|/(1 - |z|/q) is summable and the one-plus-summable criterion applies. The proof is complete and correct.",
+        "notes": "NUMERIC CONFIRMED, including the pin question. The scope note's 'Phi_q(0.989) approx 6.7e5' is CORRECT: evaluating prod_{k>=1}(1 - q^{-k}*0.989)^{-1} to convergence gives 671093.7 at the proton pin. PIN DISCRIMINATION: proton gives 671093.7 and muon 671092.6 -- indistinguishable at the printed two significant figures -- while the erroneous 1.1097 gives 695611.8, which would print as 7.0e5, so this figure DOES exclude 1.1097 while not separating the two live pins. One uses-hygiene note: the proof's prose cites conj:brane-tower-z-habiro and prop:mass-endomorphism-tower, neither of which appears in the block's uses[] (it lists only the parent proposition)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:28.136Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proof block plus two italic scope paragraphs, read in full. All ten categories clean. The block-final 'The proposition closes the analytic existence question, not the regularization question' is a factual scope statement of what was and was not proved -- the documented temporal/scope false-positive class -- and the same holds for 'the convergence half ... that survives the refutation of the level-selection rule n_star'. RIGOR PASS, every step checked: |q^{-k}z| < q^{-k}*q = q^{1-k} <= 1 for k >= 1 is correct; sum|a_k| = |z| sum q^{-k} converges for q > 1; the uniform bound 1 - a_k >= 1 - |z|/q > 0 is correct since |a_k| <= |z|/q for k >= 1 and |z| < q; hence |g_k| <= |a_k|/(1 - |z|/q) is summable and the one-plus-summable criterion applies. The proof is complete and correct.",
+        "notes": "NUMERIC CONFIRMED, including the pin question. The scope note's 'Phi_q(0.989) approx 6.7e5' is CORRECT: evaluating prod_{k>=1}(1 - q^{-k}*0.989)^{-1} to convergence gives 671093.7 at the proton pin. PIN DISCRIMINATION: proton gives 671093.7 and muon 671092.6 -- indistinguishable at the printed two significant figures -- while the erroneous 1.1097 gives 695611.8, which would print as 7.0e5, so this figure DOES exclude 1.1097 while not separating the two live pins. One uses-hygiene note: the proof's prose cites conj:brane-tower-z-habiro and prop:mass-endomorphism-tower, neither of which appears in the block's uses[] (it lists only the parent proposition)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:28.175Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proof block plus two italic scope paragraphs, read in full. All ten categories clean. The block-final 'The proposition closes the analytic existence question, not the regularization question' is a factual scope statement of what was and was not proved -- the documented temporal/scope false-positive class -- and the same holds for 'the convergence half ... that survives the refutation of the level-selection rule n_star'. RIGOR PASS, every step checked: |q^{-k}z| < q^{-k}*q = q^{1-k} <= 1 for k >= 1 is correct; sum|a_k| = |z| sum q^{-k} converges for q > 1; the uniform bound 1 - a_k >= 1 - |z|/q > 0 is correct since |a_k| <= |z|/q for k >= 1 and |z| < q; hence |g_k| <= |a_k|/(1 - |z|/q) is summable and the one-plus-summable criterion applies. The proof is complete and correct.",
+        "notes": "NUMERIC CONFIRMED, including the pin question. The scope note's 'Phi_q(0.989) approx 6.7e5' is CORRECT: evaluating prod_{k>=1}(1 - q^{-k}*0.989)^{-1} to convergence gives 671093.7 at the proton pin. PIN DISCRIMINATION: proton gives 671093.7 and muon 671092.6 -- indistinguishable at the printed two significant figures -- while the erroneous 1.1097 gives 695611.8, which would print as 7.0e5, so this figure DOES exclude 1.1097 while not separating the two live pins. One uses-hygiene note: the proof's prose cites conj:brane-tower-z-habiro and prop:mass-endomorphism-tower, neither of which appears in the block's uses[] (it lists only the parent proposition)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:28.215Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proof block plus two italic scope paragraphs, read in full. All ten categories clean. The block-final 'The proposition closes the analytic existence question, not the regularization question' is a factual scope statement of what was and was not proved -- the documented temporal/scope false-positive class -- and the same holds for 'the convergence half ... that survives the refutation of the level-selection rule n_star'. RIGOR PASS, every step checked: |q^{-k}z| < q^{-k}*q = q^{1-k} <= 1 for k >= 1 is correct; sum|a_k| = |z| sum q^{-k} converges for q > 1; the uniform bound 1 - a_k >= 1 - |z|/q > 0 is correct since |a_k| <= |z|/q for k >= 1 and |z| < q; hence |g_k| <= |a_k|/(1 - |z|/q) is summable and the one-plus-summable criterion applies. The proof is complete and correct.",
+        "notes": "NUMERIC CONFIRMED, including the pin question. The scope note's 'Phi_q(0.989) approx 6.7e5' is CORRECT: evaluating prod_{k>=1}(1 - q^{-k}*0.989)^{-1} to convergence gives 671093.7 at the proton pin. PIN DISCRIMINATION: proton gives 671093.7 and muon 671092.6 -- indistinguishable at the printed two significant figures -- while the erroneous 1.1097 gives 695611.8, which would print as 7.0e5, so this figure DOES exclude 1.1097 while not separating the two live pins. One uses-hygiene note: the proof's prose cites conj:brane-tower-z-habiro and prop:mass-endomorphism-tower, neither of which appears in the block's uses[] (it lists only the parent proposition)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:28.254Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proof block plus two italic scope paragraphs, read in full. All ten categories clean. The block-final 'The proposition closes the analytic existence question, not the regularization question' is a factual scope statement of what was and was not proved -- the documented temporal/scope false-positive class -- and the same holds for 'the convergence half ... that survives the refutation of the level-selection rule n_star'. RIGOR PASS, every step checked: |q^{-k}z| < q^{-k}*q = q^{1-k} <= 1 for k >= 1 is correct; sum|a_k| = |z| sum q^{-k} converges for q > 1; the uniform bound 1 - a_k >= 1 - |z|/q > 0 is correct since |a_k| <= |z|/q for k >= 1 and |z| < q; hence |g_k| <= |a_k|/(1 - |z|/q) is summable and the one-plus-summable criterion applies. The proof is complete and correct.",
+        "notes": "NUMERIC CONFIRMED, including the pin question. The scope note's 'Phi_q(0.989) approx 6.7e5' is CORRECT: evaluating prod_{k>=1}(1 - q^{-k}*0.989)^{-1} to convergence gives 671093.7 at the proton pin. PIN DISCRIMINATION: proton gives 671093.7 and muon 671092.6 -- indistinguishable at the printed two significant figures -- while the erroneous 1.1097 gives 695611.8, which would print as 7.0e5, so this figure DOES exclude 1.1097 while not separating the two live pins. One uses-hygiene note: the proof's prose cites conj:brane-tower-z-habiro and prop:mass-endomorphism-tower, neither of which appears in the block's uses[] (it lists only the parent proposition)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:28.294Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proof block plus two italic scope paragraphs, read in full. All ten categories clean. The block-final 'The proposition closes the analytic existence question, not the regularization question' is a factual scope statement of what was and was not proved -- the documented temporal/scope false-positive class -- and the same holds for 'the convergence half ... that survives the refutation of the level-selection rule n_star'. RIGOR PASS, every step checked: |q^{-k}z| < q^{-k}*q = q^{1-k} <= 1 for k >= 1 is correct; sum|a_k| = |z| sum q^{-k} converges for q > 1; the uniform bound 1 - a_k >= 1 - |z|/q > 0 is correct since |a_k| <= |z|/q for k >= 1 and |z| < q; hence |g_k| <= |a_k|/(1 - |z|/q) is summable and the one-plus-summable criterion applies. The proof is complete and correct.",
+        "notes": "NUMERIC CONFIRMED, including the pin question. The scope note's 'Phi_q(0.989) approx 6.7e5' is CORRECT: evaluating prod_{k>=1}(1 - q^{-k}*0.989)^{-1} to convergence gives 671093.7 at the proton pin. PIN DISCRIMINATION: proton gives 671093.7 and muon 671092.6 -- indistinguishable at the printed two significant figures -- while the erroneous 1.1097 gives 695611.8, which would print as 7.0e5, so this figure DOES exclude 1.1097 while not separating the two live pins. One uses-hygiene note: the proof's prose cites conj:brane-tower-z-habiro and prop:mass-endomorphism-tower, neither of which appears in the block's uses[] (it lists only the parent proposition)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "858aac7c4179",
+          "ts": "d392831954fa"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:28.334Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Proof block plus two italic scope paragraphs, read in full. All ten categories clean. The block-final 'The proposition closes the analytic existence question, not the regularization question' is a factual scope statement of what was and was not proved -- the documented temporal/scope false-positive class -- and the same holds for 'the convergence half ... that survives the refutation of the level-selection rule n_star'. RIGOR PASS, every step checked: |q^{-k}z| < q^{-k}*q = q^{1-k} <= 1 for k >= 1 is correct; sum|a_k| = |z| sum q^{-k} converges for q > 1; the uniform bound 1 - a_k >= 1 - |z|/q > 0 is correct since |a_k| <= |z|/q for k >= 1 and |z| < q; hence |g_k| <= |a_k|/(1 - |z|/q) is summable and the one-plus-summable criterion applies. The proof is complete and correct.",
+        "notes": "NUMERIC CONFIRMED, including the pin question. The scope note's 'Phi_q(0.989) approx 6.7e5' is CORRECT: evaluating prod_{k>=1}(1 - q^{-k}*0.989)^{-1} to convergence gives 671093.7 at the proton pin. PIN DISCRIMINATION: proton gives 671093.7 and muon 671092.6 -- indistinguishable at the printed two significant figures -- while the erroneous 1.1097 gives 695611.8, which would print as 7.0e5, so this figure DOES exclude 1.1097 while not separating the two live pins. One uses-hygiene note: the proof's prose cites conj:brane-tower-z-habiro and prop:mass-endomorphism-tower, neither of which appears in the block's uses[] (it lists only the parent proposition)."
+      }
+    ]
+  }
+}

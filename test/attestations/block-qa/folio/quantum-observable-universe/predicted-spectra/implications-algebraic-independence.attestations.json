@@ -1,0 +1,679 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/implications-algebraic-independence",
+    "path": "folio/quantum-observable-universe/predicted-spectra/implications-algebraic-independence"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "f3a045ea42bf",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "claude-opus-4-8",
+          "agent_date": "2026-06-22",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-06-22T02:56:47.914Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:04:21.000Z",
+        "reviewed_sha": "c419ded0fab06778faf2a007f50ddf391ca7794b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "f3a045ea42bf",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "warn",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Uses words like 'obviously' or 'trivial' which might mask false claims. author resolution needed.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        },
+        "evidence": "Uses words like 'obviously' or 'trivial' which might mask false claims. author resolution needed."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:04:21.000Z",
+        "reviewed_sha": "c419ded0fab06778faf2a007f50ddf391ca7794b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:04:21.000Z",
+        "reviewed_sha": "c419ded0fab06778faf2a007f50ddf391ca7794b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:04:21.000Z",
+        "reviewed_sha": "c419ded0fab06778faf2a007f50ddf391ca7794b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:04:21.000Z",
+        "reviewed_sha": "c419ded0fab06778faf2a007f50ddf391ca7794b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:04:21.000Z",
+        "reviewed_sha": "c419ded0fab06778faf2a007f50ddf391ca7794b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:04:21.000Z",
+        "reviewed_sha": "c419ded0fab06778faf2a007f50ddf391ca7794b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:04:21.000Z",
+        "reviewed_sha": "c419ded0fab06778faf2a007f50ddf391ca7794b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:04:21.000Z",
+        "reviewed_sha": "c419ded0fab06778faf2a007f50ddf391ca7794b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:04:21.000Z",
+        "reviewed_sha": "c419ded0fab06778faf2a007f50ddf391ca7794b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:04:21.000Z",
+        "reviewed_sha": "c419ded0fab06778faf2a007f50ddf391ca7794b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:04:21.000Z",
+        "reviewed_sha": "c419ded0fab06778faf2a007f50ddf391ca7794b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:04:21.000Z",
+        "reviewed_sha": "c419ded0fab06778faf2a007f50ddf391ca7794b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-07T23:33:29.067070+00:00",
+        "reviewed_sha": "69257b35f0732d1d15e1288a5c38fde18f9dbcad",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T23:33:29.067070+00:00"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:04:21.000Z",
+        "reviewed_sha": "c419ded0fab06778faf2a007f50ddf391ca7794b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T02:04:21.000Z",
+        "reviewed_sha": "c419ded0fab06778faf2a007f50ddf391ca7794b",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.432Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 4 framework) plus a Lean-formalisation paragraph. Judged all ten categories; no rhetorical construction present.",
+        "notes": "Logic verified and CORRECT on the point where the sibling conjecture block errs: 'The volumes ... are individually irrational' IS a valid consequence of ALGEBRAIC independence (if Vol = a/b then bx - a is a nonzero rational polynomial vanishing on the set), and likewise 'provably transcendental values of the Bloch--Wigner dilogarithm' follows by taking P in one variable. Trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) correctly assigned; pairwise non-commensurability of the three complements is correct (two distinct arithmetic fields plus one non-arithmetic complement). Cosmetic: items 2 and framework-2 end with a trailing space."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.471Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 4 framework) plus a Lean-formalisation paragraph. Judged all ten categories; no rhetorical construction present.",
+        "notes": "Logic verified and CORRECT on the point where the sibling conjecture block errs: 'The volumes ... are individually irrational' IS a valid consequence of ALGEBRAIC independence (if Vol = a/b then bx - a is a nonzero rational polynomial vanishing on the set), and likewise 'provably transcendental values of the Bloch--Wigner dilogarithm' follows by taking P in one variable. Trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) correctly assigned; pairwise non-commensurability of the three complements is correct (two distinct arithmetic fields plus one non-arithmetic complement). Cosmetic: items 2 and framework-2 end with a trailing space."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.510Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 4 framework) plus a Lean-formalisation paragraph. Judged all ten categories; no rhetorical construction present.",
+        "notes": "Logic verified and CORRECT on the point where the sibling conjecture block errs: 'The volumes ... are individually irrational' IS a valid consequence of ALGEBRAIC independence (if Vol = a/b then bx - a is a nonzero rational polynomial vanishing on the set), and likewise 'provably transcendental values of the Bloch--Wigner dilogarithm' follows by taking P in one variable. Trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) correctly assigned; pairwise non-commensurability of the three complements is correct (two distinct arithmetic fields plus one non-arithmetic complement). Cosmetic: items 2 and framework-2 end with a trailing space."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.549Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 4 framework) plus a Lean-formalisation paragraph. Judged all ten categories; no rhetorical construction present.",
+        "notes": "Logic verified and CORRECT on the point where the sibling conjecture block errs: 'The volumes ... are individually irrational' IS a valid consequence of ALGEBRAIC independence (if Vol = a/b then bx - a is a nonzero rational polynomial vanishing on the set), and likewise 'provably transcendental values of the Bloch--Wigner dilogarithm' follows by taking P in one variable. Trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) correctly assigned; pairwise non-commensurability of the three complements is correct (two distinct arithmetic fields plus one non-arithmetic complement). Cosmetic: items 2 and framework-2 end with a trailing space."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.587Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 4 framework) plus a Lean-formalisation paragraph. Judged all ten categories; no rhetorical construction present.",
+        "notes": "Logic verified and CORRECT on the point where the sibling conjecture block errs: 'The volumes ... are individually irrational' IS a valid consequence of ALGEBRAIC independence (if Vol = a/b then bx - a is a nonzero rational polynomial vanishing on the set), and likewise 'provably transcendental values of the Bloch--Wigner dilogarithm' follows by taking P in one variable. Trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) correctly assigned; pairwise non-commensurability of the three complements is correct (two distinct arithmetic fields plus one non-arithmetic complement). Cosmetic: items 2 and framework-2 end with a trailing space."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.625Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 4 framework) plus a Lean-formalisation paragraph. Judged all ten categories; no rhetorical construction present.",
+        "notes": "Logic verified and CORRECT on the point where the sibling conjecture block errs: 'The volumes ... are individually irrational' IS a valid consequence of ALGEBRAIC independence (if Vol = a/b then bx - a is a nonzero rational polynomial vanishing on the set), and likewise 'provably transcendental values of the Bloch--Wigner dilogarithm' follows by taking P in one variable. Trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) correctly assigned; pairwise non-commensurability of the three complements is correct (two distinct arithmetic fields plus one non-arithmetic complement). Cosmetic: items 2 and framework-2 end with a trailing space."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.663Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 4 framework) plus a Lean-formalisation paragraph. Judged all ten categories; no rhetorical construction present.",
+        "notes": "Logic verified and CORRECT on the point where the sibling conjecture block errs: 'The volumes ... are individually irrational' IS a valid consequence of ALGEBRAIC independence (if Vol = a/b then bx - a is a nonzero rational polynomial vanishing on the set), and likewise 'provably transcendental values of the Bloch--Wigner dilogarithm' follows by taking P in one variable. Trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) correctly assigned; pairwise non-commensurability of the three complements is correct (two distinct arithmetic fields plus one non-arithmetic complement). Cosmetic: items 2 and framework-2 end with a trailing space."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.703Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 4 framework) plus a Lean-formalisation paragraph. Judged all ten categories; no rhetorical construction present.",
+        "notes": "Logic verified and CORRECT on the point where the sibling conjecture block errs: 'The volumes ... are individually irrational' IS a valid consequence of ALGEBRAIC independence (if Vol = a/b then bx - a is a nonzero rational polynomial vanishing on the set), and likewise 'provably transcendental values of the Bloch--Wigner dilogarithm' follows by taking P in one variable. Trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) correctly assigned; pairwise non-commensurability of the three complements is correct (two distinct arithmetic fields plus one non-arithmetic complement). Cosmetic: items 2 and framework-2 end with a trailing space."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.743Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 4 framework) plus a Lean-formalisation paragraph. Judged all ten categories; no rhetorical construction present.",
+        "notes": "Logic verified and CORRECT on the point where the sibling conjecture block errs: 'The volumes ... are individually irrational' IS a valid consequence of ALGEBRAIC independence (if Vol = a/b then bx - a is a nonzero rational polynomial vanishing on the set), and likewise 'provably transcendental values of the Bloch--Wigner dilogarithm' follows by taking P in one variable. Trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) correctly assigned; pairwise non-commensurability of the three complements is correct (two distinct arithmetic fields plus one non-arithmetic complement). Cosmetic: items 2 and framework-2 end with a trailing space."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "24b25953bb6f",
+          "ts": "b41081400fb8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:54.783Z",
+        "reviewed_sha": "7e768ee85ca4895f3d9793d095392b0ebf1ffd6a",
+        "evidence": "Read in full: two numbered consequence lists (3 mathematical, 4 framework) plus a Lean-formalisation paragraph. Judged all ten categories; no rhetorical construction present.",
+        "notes": "Logic verified and CORRECT on the point where the sibling conjecture block errs: 'The volumes ... are individually irrational' IS a valid consequence of ALGEBRAIC independence (if Vol = a/b then bx - a is a nonzero rational polynomial vanishing on the set), and likewise 'provably transcendental values of the Bloch--Wigner dilogarithm' follows by taking P in one variable. Trace fields Q(sqrt-3) / cubic field of 5_2 / Q(i) correctly assigned; pairwise non-commensurability of the three complements is correct (two distinct arithmetic fields plus one non-arithmetic complement). Cosmetic: items 2 and framework-2 end with a trailing space."
+      }
+    ]
+  }
+}

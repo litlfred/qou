@@ -1,0 +1,801 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/models-of-qous/step-archimedean",
+    "path": "folio/quantum-observable-universe/models-of-qous/step-archimedean"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies fit-section-chapter. No issues found.",
+        "reviewed_at": "2026-07-07T23:33:20Z",
+        "reviewed_sha": "bd9ef897067333e0cae4336d0bba55ba810f7889",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:22:03.000Z",
+        "reviewed_sha": "5f56c0bfe3010bd7d15918be1a735a31b9b23f28",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-false-claim. No issues found.",
+        "reviewed_at": "2026-07-07T23:33:20Z",
+        "reviewed_sha": "bd9ef897067333e0cae4336d0bba55ba810f7889",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:22:03.000Z",
+        "reviewed_sha": "5f56c0bfe3010bd7d15918be1a735a31b9b23f28",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-vacuous. No issues found.",
+        "reviewed_at": "2026-07-07T23:33:20Z",
+        "reviewed_sha": "bd9ef897067333e0cae4336d0bba55ba810f7889",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:22:03.000Z",
+        "reviewed_sha": "5f56c0bfe3010bd7d15918be1a735a31b9b23f28",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-circular. No issues found.",
+        "reviewed_at": "2026-07-07T23:33:20Z",
+        "reviewed_sha": "bd9ef897067333e0cae4336d0bba55ba810f7889",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:22:03.000Z",
+        "reviewed_sha": "5f56c0bfe3010bd7d15918be1a735a31b9b23f28",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-overclaim. No issues found.",
+        "reviewed_at": "2026-07-07T23:33:20Z",
+        "reviewed_sha": "bd9ef897067333e0cae4336d0bba55ba810f7889",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:22:03.000Z",
+        "reviewed_sha": "5f56c0bfe3010bd7d15918be1a735a31b9b23f28",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-hidden-dof. No issues found.",
+        "reviewed_at": "2026-07-07T23:33:20Z",
+        "reviewed_sha": "bd9ef897067333e0cae4336d0bba55ba810f7889",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:22:03.000Z",
+        "reviewed_sha": "5f56c0bfe3010bd7d15918be1a735a31b9b23f28",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-non-sequitur. No issues found.",
+        "reviewed_at": "2026-07-07T23:33:20Z",
+        "reviewed_sha": "bd9ef897067333e0cae4336d0bba55ba810f7889",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:22:03.000Z",
+        "reviewed_sha": "5f56c0bfe3010bd7d15918be1a735a31b9b23f28",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-lean-narrative-divergence. No issues found.",
+        "reviewed_at": "2026-07-07T23:33:20Z",
+        "reviewed_sha": "bd9ef897067333e0cae4336d0bba55ba810f7889",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:22:03.000Z",
+        "reviewed_sha": "5f56c0bfe3010bd7d15918be1a735a31b9b23f28",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-citation-misuse. No issues found.",
+        "reviewed_at": "2026-07-07T23:33:20Z",
+        "reviewed_sha": "bd9ef897067333e0cae4336d0bba55ba810f7889",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:22:03.000Z",
+        "reviewed_sha": "5f56c0bfe3010bd7d15918be1a735a31b9b23f28",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-definitional-ambiguity. No issues found.",
+        "reviewed_at": "2026-07-07T23:33:20Z",
+        "reviewed_sha": "bd9ef897067333e0cae4336d0bba55ba810f7889",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:22:03.000Z",
+        "reviewed_sha": "5f56c0bfe3010bd7d15918be1a735a31b9b23f28",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-empirical-fragility. No issues found.",
+        "reviewed_at": "2026-07-07T23:33:20Z",
+        "reviewed_sha": "bd9ef897067333e0cae4336d0bba55ba810f7889",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:22:03.000Z",
+        "reviewed_sha": "5f56c0bfe3010bd7d15918be1a735a31b9b23f28",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-physical-implausibility. No issues found.",
+        "reviewed_at": "2026-07-07T23:33:20Z",
+        "reviewed_sha": "bd9ef897067333e0cae4336d0bba55ba810f7889",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:22:03.000Z",
+        "reviewed_sha": "5f56c0bfe3010bd7d15918be1a735a31b9b23f28",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-reproducibility. No issues found.",
+        "reviewed_at": "2026-07-07T23:33:20Z",
+        "reviewed_sha": "bd9ef897067333e0cae4336d0bba55ba810f7889",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:22:03.000Z",
+        "reviewed_sha": "5f56c0bfe3010bd7d15918be1a735a31b9b23f28",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies da-referee-verdict. No issues found.",
+        "reviewed_at": "2026-07-07T23:33:20Z",
+        "reviewed_sha": "bd9ef897067333e0cae4336d0bba55ba810f7889",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:22:03.000Z",
+        "reviewed_sha": "5f56c0bfe3010bd7d15918be1a735a31b9b23f28",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "Block satisfies milnor-brevity. No issues found.",
+        "reviewed_at": "2026-07-07T23:33:20Z",
+        "reviewed_sha": "bd9ef897067333e0cae4336d0bba55ba810f7889",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-08T19:22:03.000Z",
+        "reviewed_sha": "5f56c0bfe3010bd7d15918be1a735a31b9b23f28",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:18:34.170Z",
+        "reviewed_sha": "d2abcdbcc6824e5cdca906216c20b149a2eaed70",
+        "evidence": "Full read (prose, ~1.1kB). 'Observed, not derived from Bring topology' is a scope statement of exactly the kind AGENTS.md permanently gates, and is substantive rather than manufactured contrast - kept. All ten categories clean. Two substantive defects (the mass-endomorphism form Vol(K) c_q^-2, and a raw LaTeX \\ref in prose) are reported as anomalies."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:18:34.211Z",
+        "reviewed_sha": "d2abcdbcc6824e5cdca906216c20b149a2eaed70",
+        "evidence": "Full read (prose, ~1.1kB). 'Observed, not derived from Bring topology' is a scope statement of exactly the kind AGENTS.md permanently gates, and is substantive rather than manufactured contrast - kept. All ten categories clean. Two substantive defects (the mass-endomorphism form Vol(K) c_q^-2, and a raw LaTeX \\ref in prose) are reported as anomalies."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:18:34.254Z",
+        "reviewed_sha": "d2abcdbcc6824e5cdca906216c20b149a2eaed70",
+        "evidence": "Full read (prose, ~1.1kB). 'Observed, not derived from Bring topology' is a scope statement of exactly the kind AGENTS.md permanently gates, and is substantive rather than manufactured contrast - kept. All ten categories clean. Two substantive defects (the mass-endomorphism form Vol(K) c_q^-2, and a raw LaTeX \\ref in prose) are reported as anomalies."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:18:34.298Z",
+        "reviewed_sha": "d2abcdbcc6824e5cdca906216c20b149a2eaed70",
+        "evidence": "Full read (prose, ~1.1kB). 'Observed, not derived from Bring topology' is a scope statement of exactly the kind AGENTS.md permanently gates, and is substantive rather than manufactured contrast - kept. All ten categories clean. Two substantive defects (the mass-endomorphism form Vol(K) c_q^-2, and a raw LaTeX \\ref in prose) are reported as anomalies."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:18:34.340Z",
+        "reviewed_sha": "d2abcdbcc6824e5cdca906216c20b149a2eaed70",
+        "evidence": "Full read (prose, ~1.1kB). 'Observed, not derived from Bring topology' is a scope statement of exactly the kind AGENTS.md permanently gates, and is substantive rather than manufactured contrast - kept. All ten categories clean. Two substantive defects (the mass-endomorphism form Vol(K) c_q^-2, and a raw LaTeX \\ref in prose) are reported as anomalies."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:18:34.381Z",
+        "reviewed_sha": "d2abcdbcc6824e5cdca906216c20b149a2eaed70",
+        "evidence": "Full read (prose, ~1.1kB). 'Observed, not derived from Bring topology' is a scope statement of exactly the kind AGENTS.md permanently gates, and is substantive rather than manufactured contrast - kept. All ten categories clean. Two substantive defects (the mass-endomorphism form Vol(K) c_q^-2, and a raw LaTeX \\ref in prose) are reported as anomalies."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:18:34.422Z",
+        "reviewed_sha": "d2abcdbcc6824e5cdca906216c20b149a2eaed70",
+        "evidence": "Full read (prose, ~1.1kB). 'Observed, not derived from Bring topology' is a scope statement of exactly the kind AGENTS.md permanently gates, and is substantive rather than manufactured contrast - kept. All ten categories clean. Two substantive defects (the mass-endomorphism form Vol(K) c_q^-2, and a raw LaTeX \\ref in prose) are reported as anomalies."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:18:34.465Z",
+        "reviewed_sha": "d2abcdbcc6824e5cdca906216c20b149a2eaed70",
+        "evidence": "Full read (prose, ~1.1kB). 'Observed, not derived from Bring topology' is a scope statement of exactly the kind AGENTS.md permanently gates, and is substantive rather than manufactured contrast - kept. All ten categories clean. Two substantive defects (the mass-endomorphism form Vol(K) c_q^-2, and a raw LaTeX \\ref in prose) are reported as anomalies."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:18:34.506Z",
+        "reviewed_sha": "d2abcdbcc6824e5cdca906216c20b149a2eaed70",
+        "evidence": "Full read (prose, ~1.1kB). 'Observed, not derived from Bring topology' is a scope statement of exactly the kind AGENTS.md permanently gates, and is substantive rather than manufactured contrast - kept. All ten categories clean. Two substantive defects (the mass-endomorphism form Vol(K) c_q^-2, and a raw LaTeX \\ref in prose) are reported as anomalies."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "c5e9485b9640",
+          "ts": "a0d84d60f41c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:18:34.548Z",
+        "reviewed_sha": "d2abcdbcc6824e5cdca906216c20b149a2eaed70",
+        "evidence": "Full read (prose, ~1.1kB). 'Observed, not derived from Bring topology' is a scope statement of exactly the kind AGENTS.md permanently gates, and is substantive rather than manufactured contrast - kept. All ten categories clean. Two substantive defects (the mass-endomorphism form Vol(K) c_q^-2, and a raw LaTeX \\ref in prose) are reported as anomalies."
+      }
+    ]
+  }
+}

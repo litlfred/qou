@@ -1,0 +1,201 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/bar-involution-invariance-proof",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/bar-involution-invariance-proof"
+  },
+  "criteria": {
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "5dd0dbb1697a",
+          "ts": "fe266eadf7cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:15.432Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "major",
+        "evidence": "Full-context read of prf:bar-involution-invariance (three numbered proof parts + a 'Worked example: n=3' section). Verified the two mathematical inputs independently: the balanced q-integer [k]_q = (q^k - q^-k)/(q - q^-1) is indeed bar-invariant (numerator and denominator both flip sign), consistent with the section 7a skein convention the corpus uses, and the block's own '[k]_{q^-1} = [k]_q'; and the multiset of hook lengths IS invariant under transpose, so 'Hook lengths are unchanged by transpose. This yields identical w_lambda' is sound. Content note reported separately: the 'Worked example: n = 3' section contains no n = 3 data (no partitions of 3, no hook products), and part (3) has no closing square.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "5dd0dbb1697a",
+          "ts": "fe266eadf7cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:15.471Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "major",
+        "evidence": "Full-context read of prf:bar-involution-invariance (three numbered proof parts + a 'Worked example: n=3' section). Verified the two mathematical inputs independently: the balanced q-integer [k]_q = (q^k - q^-k)/(q - q^-1) is indeed bar-invariant (numerator and denominator both flip sign), consistent with the section 7a skein convention the corpus uses, and the block's own '[k]_{q^-1} = [k]_q'; and the multiset of hook lengths IS invariant under transpose, so 'Hook lengths are unchanged by transpose. This yields identical w_lambda' is sound. Content note reported separately: the 'Worked example: n = 3' section contains no n = 3 data (no partitions of 3, no hook products), and part (3) has no closing square.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "5dd0dbb1697a",
+          "ts": "fe266eadf7cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:15.511Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:bar-involution-invariance (three numbered proof parts + a 'Worked example: n=3' section). Verified the two mathematical inputs independently: the balanced q-integer [k]_q = (q^k - q^-k)/(q - q^-1) is indeed bar-invariant (numerator and denominator both flip sign), consistent with the section 7a skein convention the corpus uses, and the block's own '[k]_{q^-1} = [k]_q'; and the multiset of hook lengths IS invariant under transpose, so 'Hook lengths are unchanged by transpose. This yields identical w_lambda' is sound. Content note reported separately: the 'Worked example: n = 3' section contains no n = 3 data (no partitions of 3, no hook products), and part (3) has no closing square.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "5dd0dbb1697a",
+          "ts": "fe266eadf7cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:15.551Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:bar-involution-invariance (three numbered proof parts + a 'Worked example: n=3' section). Verified the two mathematical inputs independently: the balanced q-integer [k]_q = (q^k - q^-k)/(q - q^-1) is indeed bar-invariant (numerator and denominator both flip sign), consistent with the section 7a skein convention the corpus uses, and the block's own '[k]_{q^-1} = [k]_q'; and the multiset of hook lengths IS invariant under transpose, so 'Hook lengths are unchanged by transpose. This yields identical w_lambda' is sound. Content note reported separately: the 'Worked example: n = 3' section contains no n = 3 data (no partitions of 3, no hook products), and part (3) has no closing square.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "5dd0dbb1697a",
+          "ts": "fe266eadf7cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:15.591Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "major",
+        "evidence": "Full-context read of prf:bar-involution-invariance (three numbered proof parts + a 'Worked example: n=3' section). Verified the two mathematical inputs independently: the balanced q-integer [k]_q = (q^k - q^-k)/(q - q^-1) is indeed bar-invariant (numerator and denominator both flip sign), consistent with the section 7a skein convention the corpus uses, and the block's own '[k]_{q^-1} = [k]_q'; and the multiset of hook lengths IS invariant under transpose, so 'Hook lengths are unchanged by transpose. This yields identical w_lambda' is sound. Content note reported separately: the 'Worked example: n = 3' section contains no n = 3 data (no partitions of 3, no hook products), and part (3) has no closing square.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "5dd0dbb1697a",
+          "ts": "fe266eadf7cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:15.631Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "major",
+        "evidence": "Full-context read of prf:bar-involution-invariance (three numbered proof parts + a 'Worked example: n=3' section). Verified the two mathematical inputs independently: the balanced q-integer [k]_q = (q^k - q^-k)/(q - q^-1) is indeed bar-invariant (numerator and denominator both flip sign), consistent with the section 7a skein convention the corpus uses, and the block's own '[k]_{q^-1} = [k]_q'; and the multiset of hook lengths IS invariant under transpose, so 'Hook lengths are unchanged by transpose. This yields identical w_lambda' is sound. Content note reported separately: the 'Worked example: n = 3' section contains no n = 3 data (no partitions of 3, no hook products), and part (3) has no closing square.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "5dd0dbb1697a",
+          "ts": "fe266eadf7cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:15.671Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "major",
+        "evidence": "Full-context read of prf:bar-involution-invariance (three numbered proof parts + a 'Worked example: n=3' section). Verified the two mathematical inputs independently: the balanced q-integer [k]_q = (q^k - q^-k)/(q - q^-1) is indeed bar-invariant (numerator and denominator both flip sign), consistent with the section 7a skein convention the corpus uses, and the block's own '[k]_{q^-1} = [k]_q'; and the multiset of hook lengths IS invariant under transpose, so 'Hook lengths are unchanged by transpose. This yields identical w_lambda' is sound. Content note reported separately: the 'Worked example: n = 3' section contains no n = 3 data (no partitions of 3, no hook products), and part (3) has no closing square.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "5dd0dbb1697a",
+          "ts": "fe266eadf7cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:15.712Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:bar-involution-invariance (three numbered proof parts + a 'Worked example: n=3' section). Verified the two mathematical inputs independently: the balanced q-integer [k]_q = (q^k - q^-k)/(q - q^-1) is indeed bar-invariant (numerator and denominator both flip sign), consistent with the section 7a skein convention the corpus uses, and the block's own '[k]_{q^-1} = [k]_q'; and the multiset of hook lengths IS invariant under transpose, so 'Hook lengths are unchanged by transpose. This yields identical w_lambda' is sound. Content note reported separately: the 'Worked example: n = 3' section contains no n = 3 data (no partitions of 3, no hook products), and part (3) has no closing square.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "5dd0dbb1697a",
+          "ts": "fe266eadf7cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:15.751Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:bar-involution-invariance (three numbered proof parts + a 'Worked example: n=3' section). Verified the two mathematical inputs independently: the balanced q-integer [k]_q = (q^k - q^-k)/(q - q^-1) is indeed bar-invariant (numerator and denominator both flip sign), consistent with the section 7a skein convention the corpus uses, and the block's own '[k]_{q^-1} = [k]_q'; and the multiset of hook lengths IS invariant under transpose, so 'Hook lengths are unchanged by transpose. This yields identical w_lambda' is sound. Content note reported separately: the 'Worked example: n = 3' section contains no n = 3 data (no partitions of 3, no hook products), and part (3) has no closing square.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "5dd0dbb1697a",
+          "ts": "fe266eadf7cd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:52:15.789Z",
+        "reviewed_sha": "0524a58c85a0ef5db1cd3e3d415cf0183225f64b",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:bar-involution-invariance (three numbered proof parts + a 'Worked example: n=3' section). Verified the two mathematical inputs independently: the balanced q-integer [k]_q = (q^k - q^-k)/(q - q^-1) is indeed bar-invariant (numerator and denominator both flip sign), consistent with the section 7a skein convention the corpus uses, and the block's own '[k]_{q^-1} = [k]_q'; and the multiset of hook lengths IS invariant under transpose, so 'Hook lengths are unchanged by transpose. This yields identical w_lambda' is sound. Content note reported separately: the 'Worked example: n = 3' section contains no n = 3 data (no partitions of 3, no hook products), and part (3) has no closing square.",
+        "notes": "No trap of this category."
+      }
+    ]
+  }
+}

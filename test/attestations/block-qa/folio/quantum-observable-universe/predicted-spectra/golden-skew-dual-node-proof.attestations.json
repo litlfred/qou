@@ -1,0 +1,480 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/predicted-spectra/golden-skew-dual-node-proof",
+    "path": "folio/quantum-observable-universe/predicted-spectra/golden-skew-dual-node-proof"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, agent status markers or first-person work narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "ecc0ef5ff64f",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "ecc0ef5ff64f",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:59:22.000Z",
+        "reviewed_sha": "7b58d10d733341d85a2a8301f94bce3144f75826",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:59:22.000Z",
+        "reviewed_sha": "7b58d10d733341d85a2a8301f94bce3144f75826",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:59:22.000Z",
+        "reviewed_sha": "7b58d10d733341d85a2a8301f94bce3144f75826",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:59:22.000Z",
+        "reviewed_sha": "7b58d10d733341d85a2a8301f94bce3144f75826",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:59:22.000Z",
+        "reviewed_sha": "7b58d10d733341d85a2a8301f94bce3144f75826",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:59:22.000Z",
+        "reviewed_sha": "7b58d10d733341d85a2a8301f94bce3144f75826",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:59:22.000Z",
+        "reviewed_sha": "7b58d10d733341d85a2a8301f94bce3144f75826",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:59:22.000Z",
+        "reviewed_sha": "7b58d10d733341d85a2a8301f94bce3144f75826",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:59:22.000Z",
+        "reviewed_sha": "7b58d10d733341d85a2a8301f94bce3144f75826",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:59:22.000Z",
+        "reviewed_sha": "7b58d10d733341d85a2a8301f94bce3144f75826",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:59:22.000Z",
+        "reviewed_sha": "7b58d10d733341d85a2a8301f94bce3144f75826",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:59:22.000Z",
+        "reviewed_sha": "7b58d10d733341d85a2a8301f94bce3144f75826",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:59:22.000Z",
+        "reviewed_sha": "7b58d10d733341d85a2a8301f94bce3144f75826",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:59:22.000Z",
+        "reviewed_sha": "7b58d10d733341d85a2a8301f94bce3144f75826",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:59:22.000Z",
+        "reviewed_sha": "7b58d10d733341d85a2a8301f94bce3144f75826",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "2d9409648e0c",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:09.097Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "'The Descartes elliptic curve does not acquire a node at $q = \\varphi^2$ ... Instead, the bar-dual node signifies the degeneration of the dual curve' is substantive mathematical contrast: the denial is verified (s^2+s-1 = 1+sqrt5 at s = phi, non-zero) and it is exactly the distinction the section exists to draw. 'It has no closed form in $\\varphi$ alone' is a factual scope statement."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "2d9409648e0c",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:09.154Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "No setup-then-reframe; the sections are declarative."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "2d9409648e0c",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:08.660Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read (five-sentence proof plus four commentary sections). No spaced em-dash (only the Iwahori--Hecke name en-dash), no reflex triple, no aphoristic closer, no narrated emphasis ('We predict that...' is a falsifiability statement, not narration of emphasis), no warm register. THE MATHEMATICS IS ALL CORRECT, recomputed: multiplying s^2+s-1 by -s_0^{-2} does give -1-s_0^{-1}+s_0^{-2}, and u = s_0^{-1} gives u^2-u-1 exactly; the arithmetic midpoint is exact, 1/phi^2 + phi^2 = 3 so the midpoint is 3/2; the ratio (phi^2-q_0)/(q_0-1/phi^2) = 2.07147 matches the quoted 2.07; s^2+s-1 evaluates to 1+sqrt5 = 3.236 (non-zero) at s = phi and to 0 at s = 1/phi, so the 'does not acquire a node at q = phi^2' claim is right; and the Moebius map f(q) = (4-q)/(4q+3) has fixed points exactly {(sqrt5-1)/2, -(1+sqrt5)/2} = {1/phi, -phi}, as stated."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "2d9409648e0c",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:08.743Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read (five-sentence proof plus four commentary sections). No spaced em-dash (only the Iwahori--Hecke name en-dash), no reflex triple, no aphoristic closer, no narrated emphasis ('We predict that...' is a falsifiability statement, not narration of emphasis), no warm register. THE MATHEMATICS IS ALL CORRECT, recomputed: multiplying s^2+s-1 by -s_0^{-2} does give -1-s_0^{-1}+s_0^{-2}, and u = s_0^{-1} gives u^2-u-1 exactly; the arithmetic midpoint is exact, 1/phi^2 + phi^2 = 3 so the midpoint is 3/2; the ratio (phi^2-q_0)/(q_0-1/phi^2) = 2.07147 matches the quoted 2.07; s^2+s-1 evaluates to 1+sqrt5 = 3.236 (non-zero) at s = phi and to 0 at s = 1/phi, so the 'does not acquire a node at q = phi^2' claim is right; and the Moebius map f(q) = (4-q)/(4q+3) has fixed points exactly {(sqrt5-1)/2, -(1+sqrt5)/2} = {1/phi, -phi}, as stated."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "2d9409648e0c",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:08.805Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read (five-sentence proof plus four commentary sections). No spaced em-dash (only the Iwahori--Hecke name en-dash), no reflex triple, no aphoristic closer, no narrated emphasis ('We predict that...' is a falsifiability statement, not narration of emphasis), no warm register. THE MATHEMATICS IS ALL CORRECT, recomputed: multiplying s^2+s-1 by -s_0^{-2} does give -1-s_0^{-1}+s_0^{-2}, and u = s_0^{-1} gives u^2-u-1 exactly; the arithmetic midpoint is exact, 1/phi^2 + phi^2 = 3 so the midpoint is 3/2; the ratio (phi^2-q_0)/(q_0-1/phi^2) = 2.07147 matches the quoted 2.07; s^2+s-1 evaluates to 1+sqrt5 = 3.236 (non-zero) at s = phi and to 0 at s = 1/phi, so the 'does not acquire a node at q = phi^2' claim is right; and the Moebius map f(q) = (4-q)/(4q+3) has fixed points exactly {(sqrt5-1)/2, -(1+sqrt5)/2} = {1/phi, -phi}, as stated."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "2d9409648e0c",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:08.883Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read (five-sentence proof plus four commentary sections). No spaced em-dash (only the Iwahori--Hecke name en-dash), no reflex triple, no aphoristic closer, no narrated emphasis ('We predict that...' is a falsifiability statement, not narration of emphasis), no warm register. THE MATHEMATICS IS ALL CORRECT, recomputed: multiplying s^2+s-1 by -s_0^{-2} does give -1-s_0^{-1}+s_0^{-2}, and u = s_0^{-1} gives u^2-u-1 exactly; the arithmetic midpoint is exact, 1/phi^2 + phi^2 = 3 so the midpoint is 3/2; the ratio (phi^2-q_0)/(q_0-1/phi^2) = 2.07147 matches the quoted 2.07; s^2+s-1 evaluates to 1+sqrt5 = 3.236 (non-zero) at s = phi and to 0 at s = 1/phi, so the 'does not acquire a node at q = phi^2' claim is right; and the Moebius map f(q) = (4-q)/(4q+3) has fixed points exactly {(sqrt5-1)/2, -(1+sqrt5)/2} = {1/phi, -phi}, as stated."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "2d9409648e0c",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:09.269Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "The proof ends on its QED box and each commentary section introduces new content (the margin numbers, the dual-curve distinction, the Moebius connection, the falsifiability claim). No section merely restates a prior one."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "2d9409648e0c",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:09.005Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read (five-sentence proof plus four commentary sections). No spaced em-dash (only the Iwahori--Hecke name en-dash), no reflex triple, no aphoristic closer, no narrated emphasis ('We predict that...' is a falsifiability statement, not narration of emphasis), no warm register. THE MATHEMATICS IS ALL CORRECT, recomputed: multiplying s^2+s-1 by -s_0^{-2} does give -1-s_0^{-1}+s_0^{-2}, and u = s_0^{-1} gives u^2-u-1 exactly; the arithmetic midpoint is exact, 1/phi^2 + phi^2 = 3 so the midpoint is 3/2; the ratio (phi^2-q_0)/(q_0-1/phi^2) = 2.07147 matches the quoted 2.07; s^2+s-1 evaluates to 1+sqrt5 = 3.236 (non-zero) at s = phi and to 0 at s = 1/phi, so the 'does not acquire a node at q = phi^2' claim is right; and the Moebius map f(q) = (4-q)/(4q+3) has fixed points exactly {(sqrt5-1)/2, -(1+sqrt5)/2} = {1/phi, -phi}, as stated."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "2d9409648e0c",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:09.350Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "No maximum-strength claims; the quantitative statements carry explicit numbers and the prediction is stated as a prediction.",
+        "notes": "Two content items reported to the batch. (1) UNSUPPORTED EMPIRICAL APPEAL, the strongest item in this block: 'This aligns with the empirical observation that nuclear physics is more robust against substrate compression than rarefaction.' There is no empirical observation of substrate compression - the substrate parameter q is framework-internal - and no citation, witness or measurement is given. The supporting arithmetic is also not stated: q_0 sits 0.728 from the sub-classical node and 1.508 from the super-classical one, so which margin counts as 'compression' depends on a sign convention the block never fixes. (2) PIN CURRENCY: 'The physical parameter $q_0 = 1.109978595554181\\ldots$ (muon pin, 16 dps)'. That string is the OLD muon value; the current muon pin is 1.10997859555733471 and the owner-default compute pin (2026-08-07) is the proton 1.1099785827513808. The '16 dps' label is honest about the digit count, which is better than the usual '(50 dps)' mislabel - and the defect is cosmetic here, because all three pins give the same margins to 8 significant figures (see the verdict on tbl:golden-skew-dual-node-table-data)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "2d9409648e0c",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:09.505Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "The prose is clause-based and readable throughout; no noun-pile subjects and no agentless nominalisation chains, in contrast with the other proof blocks in this batch."
+      }
+    ]
+  }
+}

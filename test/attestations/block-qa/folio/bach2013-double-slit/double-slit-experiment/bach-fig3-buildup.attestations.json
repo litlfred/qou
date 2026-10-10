@@ -1,0 +1,225 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/bach2013-double-slit/double-slit-experiment/bach-fig3-buildup",
+    "path": "folio/bach2013-double-slit/double-slit-experiment/bach-fig3-buildup"
+  },
+  "criteria": {
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "d2036526cab2",
+          "ts": "438a1e76125f"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "d2036526cab2",
+          "ts": "438a1e76125f"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d2036526cab2",
+          "ts": "438a1e76125f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:02.074Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of diagram caption fig:bach-electron-buildup, including the five-stage electron-count list. No constructions from the ten categories.",
+        "notes": "The '(a--c)' is an en-dash range, not a load-bearing em-dash (cat.3 pass). Final sentence 'Panel (e) is the source for the digitized intensity profile ...' is a cross-reference closer pointing at ex:bach-intensity-profile - the documented false-positive class, not thesis restatement or aphorism."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d2036526cab2",
+          "ts": "438a1e76125f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:02.115Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of diagram caption fig:bach-electron-buildup, including the five-stage electron-count list. No constructions from the ten categories.",
+        "notes": "The '(a--c)' is an en-dash range, not a load-bearing em-dash (cat.3 pass). Final sentence 'Panel (e) is the source for the digitized intensity profile ...' is a cross-reference closer pointing at ex:bach-intensity-profile - the documented false-positive class, not thesis restatement or aphorism."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d2036526cab2",
+          "ts": "438a1e76125f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:02.155Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of diagram caption fig:bach-electron-buildup, including the five-stage electron-count list. No constructions from the ten categories.",
+        "notes": "The '(a--c)' is an en-dash range, not a load-bearing em-dash (cat.3 pass). Final sentence 'Panel (e) is the source for the digitized intensity profile ...' is a cross-reference closer pointing at ex:bach-intensity-profile - the documented false-positive class, not thesis restatement or aphorism."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d2036526cab2",
+          "ts": "438a1e76125f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:02.196Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of diagram caption fig:bach-electron-buildup, including the five-stage electron-count list. No constructions from the ten categories.",
+        "notes": "The '(a--c)' is an en-dash range, not a load-bearing em-dash (cat.3 pass). Final sentence 'Panel (e) is the source for the digitized intensity profile ...' is a cross-reference closer pointing at ex:bach-intensity-profile - the documented false-positive class, not thesis restatement or aphorism."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d2036526cab2",
+          "ts": "438a1e76125f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:02.237Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of diagram caption fig:bach-electron-buildup, including the five-stage electron-count list. No constructions from the ten categories.",
+        "notes": "The '(a--c)' is an en-dash range, not a load-bearing em-dash (cat.3 pass). Final sentence 'Panel (e) is the source for the digitized intensity profile ...' is a cross-reference closer pointing at ex:bach-intensity-profile - the documented false-positive class, not thesis restatement or aphorism."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d2036526cab2",
+          "ts": "438a1e76125f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:02.277Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of diagram caption fig:bach-electron-buildup, including the five-stage electron-count list. No constructions from the ten categories.",
+        "notes": "The '(a--c)' is an en-dash range, not a load-bearing em-dash (cat.3 pass). Final sentence 'Panel (e) is the source for the digitized intensity profile ...' is a cross-reference closer pointing at ex:bach-intensity-profile - the documented false-positive class, not thesis restatement or aphorism."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d2036526cab2",
+          "ts": "438a1e76125f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:02.316Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of diagram caption fig:bach-electron-buildup, including the five-stage electron-count list. No constructions from the ten categories.",
+        "notes": "The '(a--c)' is an en-dash range, not a load-bearing em-dash (cat.3 pass). Final sentence 'Panel (e) is the source for the digitized intensity profile ...' is a cross-reference closer pointing at ex:bach-intensity-profile - the documented false-positive class, not thesis restatement or aphorism."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d2036526cab2",
+          "ts": "438a1e76125f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:02.355Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of diagram caption fig:bach-electron-buildup, including the five-stage electron-count list. No constructions from the ten categories.",
+        "notes": "The '(a--c)' is an en-dash range, not a load-bearing em-dash (cat.3 pass). Final sentence 'Panel (e) is the source for the digitized intensity profile ...' is a cross-reference closer pointing at ex:bach-intensity-profile - the documented false-positive class, not thesis restatement or aphorism."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d2036526cab2",
+          "ts": "438a1e76125f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:02.397Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of diagram caption fig:bach-electron-buildup, including the five-stage electron-count list. No constructions from the ten categories.",
+        "notes": "The '(a--c)' is an en-dash range, not a load-bearing em-dash (cat.3 pass). Final sentence 'Panel (e) is the source for the digitized intensity profile ...' is a cross-reference closer pointing at ex:bach-intensity-profile - the documented false-positive class, not thesis restatement or aphorism."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d2036526cab2",
+          "ts": "438a1e76125f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:02.437Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of diagram caption fig:bach-electron-buildup, including the five-stage electron-count list. No constructions from the ten categories.",
+        "notes": "The '(a--c)' is an en-dash range, not a load-bearing em-dash (cat.3 pass). Final sentence 'Panel (e) is the source for the digitized intensity profile ...' is a cross-reference closer pointing at ex:bach-intensity-profile - the documented false-positive class, not thesis restatement or aphorism."
+      }
+    ]
+  }
+}

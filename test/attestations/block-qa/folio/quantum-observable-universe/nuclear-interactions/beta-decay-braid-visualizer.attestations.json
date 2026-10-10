@@ -1,0 +1,505 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/beta-decay-braid-visualizer",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/beta-decay-braid-visualizer"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:01.000Z",
+        "reviewed_sha": "c66a267d27ca3e8fcc30a14c902fd644402aee60",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:01.000Z",
+        "reviewed_sha": "c66a267d27ca3e8fcc30a14c902fd644402aee60",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:01.000Z",
+        "reviewed_sha": "c66a267d27ca3e8fcc30a14c902fd644402aee60",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:01.000Z",
+        "reviewed_sha": "c66a267d27ca3e8fcc30a14c902fd644402aee60",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:01.000Z",
+        "reviewed_sha": "c66a267d27ca3e8fcc30a14c902fd644402aee60",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:01.000Z",
+        "reviewed_sha": "c66a267d27ca3e8fcc30a14c902fd644402aee60",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:01.000Z",
+        "reviewed_sha": "c66a267d27ca3e8fcc30a14c902fd644402aee60",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:01.000Z",
+        "reviewed_sha": "c66a267d27ca3e8fcc30a14c902fd644402aee60",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:01.000Z",
+        "reviewed_sha": "c66a267d27ca3e8fcc30a14c902fd644402aee60",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:01.000Z",
+        "reviewed_sha": "c66a267d27ca3e8fcc30a14c902fd644402aee60",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:01.000Z",
+        "reviewed_sha": "c66a267d27ca3e8fcc30a14c902fd644402aee60",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:01.000Z",
+        "reviewed_sha": "c66a267d27ca3e8fcc30a14c902fd644402aee60",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:01.000Z",
+        "reviewed_sha": "c66a267d27ca3e8fcc30a14c902fd644402aee60",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:01.000Z",
+        "reviewed_sha": "c66a267d27ca3e8fcc30a14c902fd644402aee60",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq8"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:46:01.000Z",
+        "reviewed_sha": "c66a267d27ca3e8fcc30a14c902fd644402aee60",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:36.309Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "major",
+        "evidence": "Full-context read of sim:beta-decay-braid (4 sections incl. a 4-item panel list). Verified the knot-theory claims: T(3,5) has crossing number min(3*4, 5*2) = 10, and its minimal braid word (sigma_1 sigma_2)^5 in B_3 has exactly 10 letters, so 'Its braid word has 10 crossings' is right; the crossing budget 3 (electron) + 0 (antineutrino) + 7 (re-reduction) sums to 10, and 3 = trefoil / 0 = unknot matches the chapter's electron/neutrino knot assignments in braids-and-knots-intro.md.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:36.349Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "major",
+        "evidence": "Full-context read of sim:beta-decay-braid (4 sections incl. a 4-item panel list). Verified the knot-theory claims: T(3,5) has crossing number min(3*4, 5*2) = 10, and its minimal braid word (sigma_1 sigma_2)^5 in B_3 has exactly 10 letters, so 'Its braid word has 10 crossings' is right; the crossing budget 3 (electron) + 0 (antineutrino) + 7 (re-reduction) sums to 10, and 3 = trefoil / 0 = unknot matches the chapter's electron/neutrino knot assignments in braids-and-knots-intro.md.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:36.388Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "minor",
+        "evidence": "Full-context read of sim:beta-decay-braid (4 sections incl. a 4-item panel list). Verified the knot-theory claims: T(3,5) has crossing number min(3*4, 5*2) = 10, and its minimal braid word (sigma_1 sigma_2)^5 in B_3 has exactly 10 letters, so 'Its braid word has 10 crossings' is right; the crossing budget 3 (electron) + 0 (antineutrino) + 7 (re-reduction) sums to 10, and 3 = trefoil / 0 = unknot matches the chapter's electron/neutrino knot assignments in braids-and-knots-intro.md.",
+        "notes": "The four spaced dashes are all label-gloss separators in a numbered panel list ('**Braid flow diagram** --- ...'), the conventional definition-list form, not sentence-structure substitutes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:36.423Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "minor",
+        "evidence": "Full-context read of sim:beta-decay-braid (4 sections incl. a 4-item panel list). Verified the knot-theory claims: T(3,5) has crossing number min(3*4, 5*2) = 10, and its minimal braid word (sigma_1 sigma_2)^5 in B_3 has exactly 10 letters, so 'Its braid word has 10 crossings' is right; the crossing budget 3 (electron) + 0 (antineutrino) + 7 (re-reduction) sums to 10, and 3 = trefoil / 0 = unknot matches the chapter's electron/neutrino knot assignments in braids-and-knots-intro.md.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:36.462Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "major",
+        "evidence": "Full-context read of sim:beta-decay-braid (4 sections incl. a 4-item panel list). Verified the knot-theory claims: T(3,5) has crossing number min(3*4, 5*2) = 10, and its minimal braid word (sigma_1 sigma_2)^5 in B_3 has exactly 10 letters, so 'Its braid word has 10 crossings' is right; the crossing budget 3 (electron) + 0 (antineutrino) + 7 (re-reduction) sums to 10, and 3 = trefoil / 0 = unknot matches the chapter's electron/neutrino knot assignments in braids-and-knots-intro.md.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:36.498Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "major",
+        "evidence": "Full-context read of sim:beta-decay-braid (4 sections incl. a 4-item panel list). Verified the knot-theory claims: T(3,5) has crossing number min(3*4, 5*2) = 10, and its minimal braid word (sigma_1 sigma_2)^5 in B_3 has exactly 10 letters, so 'Its braid word has 10 crossings' is right; the crossing budget 3 (electron) + 0 (antineutrino) + 7 (re-reduction) sums to 10, and 3 = trefoil / 0 = unknot matches the chapter's electron/neutrino knot assignments in braids-and-knots-intro.md.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:36.536Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "major",
+        "evidence": "Full-context read of sim:beta-decay-braid (4 sections incl. a 4-item panel list). Verified the knot-theory claims: T(3,5) has crossing number min(3*4, 5*2) = 10, and its minimal braid word (sigma_1 sigma_2)^5 in B_3 has exactly 10 letters, so 'Its braid word has 10 crossings' is right; the crossing budget 3 (electron) + 0 (antineutrino) + 7 (re-reduction) sums to 10, and 3 = trefoil / 0 = unknot matches the chapter's electron/neutrino knot assignments in braids-and-knots-intro.md.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:36.576Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "minor",
+        "evidence": "Full-context read of sim:beta-decay-braid (4 sections incl. a 4-item panel list). Verified the knot-theory claims: T(3,5) has crossing number min(3*4, 5*2) = 10, and its minimal braid word (sigma_1 sigma_2)^5 in B_3 has exactly 10 letters, so 'Its braid word has 10 crossings' is right; the crossing budget 3 (electron) + 0 (antineutrino) + 7 (re-reduction) sums to 10, and 3 = trefoil / 0 = unknot matches the chapter's electron/neutrino knot assignments in braids-and-knots-intro.md.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:36.613Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "minor",
+        "evidence": "Full-context read of sim:beta-decay-braid (4 sections incl. a 4-item panel list). Verified the knot-theory claims: T(3,5) has crossing number min(3*4, 5*2) = 10, and its minimal braid word (sigma_1 sigma_2)^5 in B_3 has exactly 10 letters, so 'Its braid word has 10 crossings' is right; the crossing budget 3 (electron) + 0 (antineutrino) + 7 (re-reduction) sums to 10, and 3 = trefoil / 0 = unknot matches the chapter's electron/neutrino knot assignments in braids-and-knots-intro.md.",
+        "notes": "No trap of this category."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "2acce4630819",
+          "ts": "491f59b82fca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:36.650Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "minor",
+        "evidence": "Full-context read of sim:beta-decay-braid (4 sections incl. a 4-item panel list). Verified the knot-theory claims: T(3,5) has crossing number min(3*4, 5*2) = 10, and its minimal braid word (sigma_1 sigma_2)^5 in B_3 has exactly 10 letters, so 'Its braid word has 10 crossings' is right; the crossing budget 3 (electron) + 0 (antineutrino) + 7 (re-reduction) sums to 10, and 3 = trefoil / 0 = unknot matches the chapter's electron/neutrino knot assignments in braids-and-knots-intro.md.",
+        "notes": "No trap of this category."
+      }
+    ]
+  }
+}

@@ -1,0 +1,485 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/step-lp-verification",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/step-lp-verification"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "880fa6aeba9c",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "880fa6aeba9c",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {},
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq9"
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound. Removed anthropomorphism from hydrogen-derived-nf.",
+        "reviewed_at": "2026-07-13T01:50:00.000Z",
+        "reviewed_sha": "0a89a3cc741fbe2d6e63643626a54ddc284cc8b4",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "880fa6aeba9c",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:08.402Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (remark, ~0.6kB, entirely italicised). The three bullets are the three Wedderburn channels of H_3 ((3), (2,1), (1,1,1)) - a substantive enumeration, not a reflex triple. Four sentences open 'We verify' / 'We compute', which is institutional register rather than performed warmth. All ten categories clean; the unsupported '20 atoms' count is reported as an anomaly."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "880fa6aeba9c",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:08.458Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (remark, ~0.6kB, entirely italicised). The three bullets are the three Wedderburn channels of H_3 ((3), (2,1), (1,1,1)) - a substantive enumeration, not a reflex triple. Four sentences open 'We verify' / 'We compute', which is institutional register rather than performed warmth. All ten categories clean; the unsupported '20 atoms' count is reported as an anomaly."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "880fa6aeba9c",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:08.504Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (remark, ~0.6kB, entirely italicised). The three bullets are the three Wedderburn channels of H_3 ((3), (2,1), (1,1,1)) - a substantive enumeration, not a reflex triple. Four sentences open 'We verify' / 'We compute', which is institutional register rather than performed warmth. All ten categories clean; the unsupported '20 atoms' count is reported as an anomaly."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "880fa6aeba9c",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:08.554Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (remark, ~0.6kB, entirely italicised). The three bullets are the three Wedderburn channels of H_3 ((3), (2,1), (1,1,1)) - a substantive enumeration, not a reflex triple. Four sentences open 'We verify' / 'We compute', which is institutional register rather than performed warmth. All ten categories clean; the unsupported '20 atoms' count is reported as an anomaly."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "880fa6aeba9c",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:08.613Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (remark, ~0.6kB, entirely italicised). The three bullets are the three Wedderburn channels of H_3 ((3), (2,1), (1,1,1)) - a substantive enumeration, not a reflex triple. Four sentences open 'We verify' / 'We compute', which is institutional register rather than performed warmth. All ten categories clean; the unsupported '20 atoms' count is reported as an anomaly."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "880fa6aeba9c",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:08.666Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (remark, ~0.6kB, entirely italicised). The three bullets are the three Wedderburn channels of H_3 ((3), (2,1), (1,1,1)) - a substantive enumeration, not a reflex triple. Four sentences open 'We verify' / 'We compute', which is institutional register rather than performed warmth. All ten categories clean; the unsupported '20 atoms' count is reported as an anomaly."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "880fa6aeba9c",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:08.754Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (remark, ~0.6kB, entirely italicised). The three bullets are the three Wedderburn channels of H_3 ((3), (2,1), (1,1,1)) - a substantive enumeration, not a reflex triple. Four sentences open 'We verify' / 'We compute', which is institutional register rather than performed warmth. All ten categories clean; the unsupported '20 atoms' count is reported as an anomaly."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "880fa6aeba9c",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:08.816Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (remark, ~0.6kB, entirely italicised). The three bullets are the three Wedderburn channels of H_3 ((3), (2,1), (1,1,1)) - a substantive enumeration, not a reflex triple. Four sentences open 'We verify' / 'We compute', which is institutional register rather than performed warmth. All ten categories clean; the unsupported '20 atoms' count is reported as an anomaly."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "880fa6aeba9c",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:08.877Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (remark, ~0.6kB, entirely italicised). The three bullets are the three Wedderburn channels of H_3 ((3), (2,1), (1,1,1)) - a substantive enumeration, not a reflex triple. Four sentences open 'We verify' / 'We compute', which is institutional register rather than performed warmth. All ten categories clean; the unsupported '20 atoms' count is reported as an anomaly."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "880fa6aeba9c",
+          "ts": "4bdf81fe10d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:11:08.928Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (remark, ~0.6kB, entirely italicised). The three bullets are the three Wedderburn channels of H_3 ((3), (2,1), (1,1,1)) - a substantive enumeration, not a reflex triple. Four sentences open 'We verify' / 'We compute', which is institutional register rather than performed warmth. All ten categories clean; the unsupported '20 atoms' count is reported as an anomaly."
+      }
+    ]
+  }
+}

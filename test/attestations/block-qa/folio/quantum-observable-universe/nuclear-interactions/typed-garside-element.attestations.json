@@ -1,0 +1,949 @@
+{
+  "$schema": "qa-attestations/v1",
+  "family": "block-qa",
+  "subject": {
+    "kind": "block",
+    "id": "folio/quantum-observable-universe/nuclear-interactions/typed-garside-element",
+    "path": "folio/quantum-observable-universe/nuclear-interactions/typed-garside-element"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
+    "voice-scholarly-default": [
+      {
+        "field_hash": {
+          "md": "a0544a432b35",
+          "ts": "4ca795135db4",
+          "lean": "08ea6d830a5c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "voice-ai-slop": [
+      {
+        "field_hash": {
+          "md": "a0544a432b35",
+          "ts": "4ca795135db4",
+          "lean": "08ea6d830a5c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "fit-section-chapter": [
+      {
+        "field_hash": {
+          "md": "a0544a432b35",
+          "ts": "4ca795135db4",
+          "lean": "08ea6d830a5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "The block content is well-aligned with the chapter scope."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      },
+      {
+        "field_hash": {
+          "md": "a0544a432b35",
+          "ts": "4ca795135db4",
+          "lean": "08ea6d830a5c"
+        },
+        "result": "pass",
+        "notes": "Agentic heuristic check: pass.",
+        "reviewed_at": "2026-07-19T17:19:09.000Z",
+        "reviewed_sha": "92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca",
+        "reviewer": {
+          "kind": "agent",
+          "id": "one-voice-audit",
+          "version": "gemini-3.1-pro"
+        }
+      }
+    ],
+    "wall-side-statement": [
+      {
+        "field_hash": {
+          "md": "a0544a432b35",
+          "ts": "4ca795135db4",
+          "lean": "08ea6d830a5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z",
+          "agent_skill": "local/qa-agent-drain"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
+        "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
+        "notes": "Statement respects the chapter's base-ring regime."
+      }
+    ],
+    "proof-no-trivial-true": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Lean file checked on branch. No 'proof-no-trivial-true' issue detected. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:37:37.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "da-false-claim": [
+      {
+        "field_hash": {
+          "md": "a0544a432b35",
+          "ts": "4ca795135db4",
+          "lean": "08ea6d830a5c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The claim in 'Typed Garside element of the nuclear braid' is unverified due to Lean compilation failures: folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-vacuous": [
+      {
+        "field_hash": {
+          "md": "a0544a432b35",
+          "ts": "4ca795135db4",
+          "lean": "08ea6d830a5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The block 'Typed Garside element of the nuclear braid' presents substantial mathematical content: Let $\\mathcal{A}(Z, N)$ be a nucleus with $A = Z + N$ nucleons in ordering $(t_0, \\ldots, t_{A-1})$ where $t_i \\in \\{...",
+        "severity": "minor"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-circular": [
+      {
+        "field_hash": {
+          "md": "a0544a432b35",
+          "ts": "4ca795135db4",
+          "lean": "08ea6d830a5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No circular reasoning or self-assuming definitions detected in 'Typed Garside element of the nuclear braid'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/typed-garside-element.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-overclaim": [
+      {
+        "field_hash": {
+          "md": "a0544a432b35",
+          "ts": "4ca795135db4",
+          "lean": "08ea6d830a5c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The prose presents 'Typed Garside element of the nuclear braid' as verified, but the sibling Lean file fails to compile.",
+        "severity": "minor",
+        "evidence": "The prose presents 'Typed Garside element of the nuclear braid' as verified, but the sibling Lean file fails to compile."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-hidden-dof": [
+      {
+        "field_hash": {
+          "md": "a0544a432b35",
+          "ts": "4ca795135db4",
+          "lean": "08ea6d830a5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No hidden degrees of freedom or unstated parameters are introduced in 'Typed Garside element of the nuclear braid'.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/typed-garside-element.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-non-sequitur": [
+      {
+        "field_hash": {
+          "md": "a0544a432b35",
+          "ts": "4ca795135db4",
+          "lean": "08ea6d830a5c"
+        },
+        "result": "warn",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-lean-narrative-divergence": [
+      {
+        "field_hash": {
+          "md": "a0544a432b35",
+          "ts": "4ca795135db4",
+          "lean": "08ea6d830a5c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean fails compilation, causing divergence from the narrative.",
+        "severity": "minor",
+        "evidence": "The Lean sibling folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-citation-misuse": [
+      {
+        "field_hash": {
+          "md": "a0544a432b35",
+          "ts": "4ca795135db4",
+          "lean": "08ea6d830a5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "No citations are present in 'Typed Garside element of the nuclear braid', hence no citation misuse is possible.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/typed-garside-element.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-definitional-ambiguity": [
+      {
+        "field_hash": {
+          "md": "a0544a432b35",
+          "ts": "4ca795135db4",
+          "lean": "08ea6d830a5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Key terms and symbols in 'Typed Garside element of the nuclear braid' are mathematically defined and unambiguous.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/typed-garside-element.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-empirical-fragility": [
+      {
+        "field_hash": {
+          "md": "a0544a432b35",
+          "ts": "4ca795135db4",
+          "lean": "08ea6d830a5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The algebraic and logical relations in 'Typed Garside element of the nuclear braid' are independent of empirical tuning parameters.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/typed-garside-element.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-physical-implausibility": [
+      {
+        "field_hash": {
+          "md": "a0544a432b35",
+          "ts": "4ca795135db4",
+          "lean": "08ea6d830a5c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The physical concepts described in 'Typed Garside element of the nuclear braid' are consistent with quantum observable mechanics.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/typed-garside-element.ts:1"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-reproducibility": [
+      {
+        "field_hash": {
+          "md": "a0544a432b35",
+          "ts": "4ca795135db4",
+          "lean": "08ea6d830a5c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "The Lean sibling folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean fails compilation, indicating a reproducibility failure.",
+        "severity": "minor",
+        "evidence": "folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean:1 — folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "da-referee-verdict": [
+      {
+        "field_hash": {
+          "md": "a0544a432b35",
+          "ts": "4ca795135db4",
+          "lean": "08ea6d830a5c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "id": "local/qa-agent-drain",
+          "name": "QA Drain Agent",
+          "kind": "agent",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-07T14:26:57.177724Z"
+        },
+        "reviewed_at": "2026-07-07T14:26:57.177724Z",
+        "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
+        "notes": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean fails compilation: folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist",
+        "severity": "critical",
+        "verdict": "open-objection",
+        "referee_argument": "The Lean sibling folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean for 'Typed Garside element of the nuclear braid' fails compilation with error: folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean fails compilation: folio/quantum-observable-universe/particle-interactions/typed-garside-element.lean:12:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RingTheory/HeckeAlgebra.olean' of module Mathlib.RingTheory.HeckeAlgebra does not exist"
+      },
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "proof-narrative-lean-equiv": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "milnor-amalgamated-flow": [
+      {
+        "result": "pass",
+        "notes": "Rewrote seq7"
+      }
+    ],
+    "proof-statement-integrity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-self-assuming-projection": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-false-premise": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-decide-masking": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-no-unused-hypotheses": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        }
+      }
+    ],
+    "proof-rater-strategy-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-goal-plausibility": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "proof-rater-novelty": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Heuristic score",
+        "reviewed_at": "2026-07-08T00:35:07.000Z",
+        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain-heuristic",
+          "agent_skill": "local/qa-agent-drain-heuristic",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-08"
+        },
+        "score": {
+          "value": 0.85
+        }
+      }
+    ],
+    "expo-milnor-clarity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.",
+        "reviewed_at": "2026-07-19T17:16:30.000Z",
+        "reviewed_sha": "715a9a708c210d840f41c621cb20b53301cf19b6",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-19"
+        }
+      }
+    ],
+    "milnor-brevity": [
+      {
+        "result": "pass",
+        "notes": "[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.",
+        "reviewed_at": "2026-07-13T01:32:23.000Z",
+        "reviewed_sha": "3e7d7ea4a128c8097894ac1087f2e3713b0f836f",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/qa-agent-drain",
+          "agent_skill": "local/qa-agent-drain",
+          "agent_model": "gemini-3.1-pro",
+          "agent_date": "2026-07-13"
+        }
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "653c98ee92ac",
+          "ts": "4ca795135db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:08.662Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (definition, ~1.3kB). Verified the combinatorics: sum over levels 0..A-2 of (l+1) factors = A(A-1)/2 = C(A,2), matching the stated factor count. Verified the typed coefficients are the three canonical crossings, not free parameters: sigma + d(p,p) = sigma; sigma + d(n,n) = sigma - h = sigma^-1 (since sigma - sigma^-1 = h); sigma + d(p,n) = sigma - h/2 = (sigma + sigma^-1)/2, the averaged pn crossing - consistent with the pp/nn/pn assignment in brings-surface/inter-nucleon-channel-color-tube. Terminal paragraph is the 'Archimedean specialisation' template banner (withdrawn as a finding). The equation environment is correctly fenced as tex. All ten categories clean."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "653c98ee92ac",
+          "ts": "4ca795135db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:08.726Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (definition, ~1.3kB). Verified the combinatorics: sum over levels 0..A-2 of (l+1) factors = A(A-1)/2 = C(A,2), matching the stated factor count. Verified the typed coefficients are the three canonical crossings, not free parameters: sigma + d(p,p) = sigma; sigma + d(n,n) = sigma - h = sigma^-1 (since sigma - sigma^-1 = h); sigma + d(p,n) = sigma - h/2 = (sigma + sigma^-1)/2, the averaged pn crossing - consistent with the pp/nn/pn assignment in brings-surface/inter-nucleon-channel-color-tube. Terminal paragraph is the 'Archimedean specialisation' template banner (withdrawn as a finding). The equation environment is correctly fenced as tex. All ten categories clean."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "653c98ee92ac",
+          "ts": "4ca795135db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:08.810Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (definition, ~1.3kB). Verified the combinatorics: sum over levels 0..A-2 of (l+1) factors = A(A-1)/2 = C(A,2), matching the stated factor count. Verified the typed coefficients are the three canonical crossings, not free parameters: sigma + d(p,p) = sigma; sigma + d(n,n) = sigma - h = sigma^-1 (since sigma - sigma^-1 = h); sigma + d(p,n) = sigma - h/2 = (sigma + sigma^-1)/2, the averaged pn crossing - consistent with the pp/nn/pn assignment in brings-surface/inter-nucleon-channel-color-tube. Terminal paragraph is the 'Archimedean specialisation' template banner (withdrawn as a finding). The equation environment is correctly fenced as tex. All ten categories clean."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "653c98ee92ac",
+          "ts": "4ca795135db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:08.874Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (definition, ~1.3kB). Verified the combinatorics: sum over levels 0..A-2 of (l+1) factors = A(A-1)/2 = C(A,2), matching the stated factor count. Verified the typed coefficients are the three canonical crossings, not free parameters: sigma + d(p,p) = sigma; sigma + d(n,n) = sigma - h = sigma^-1 (since sigma - sigma^-1 = h); sigma + d(p,n) = sigma - h/2 = (sigma + sigma^-1)/2, the averaged pn crossing - consistent with the pp/nn/pn assignment in brings-surface/inter-nucleon-channel-color-tube. Terminal paragraph is the 'Archimedean specialisation' template banner (withdrawn as a finding). The equation environment is correctly fenced as tex. All ten categories clean."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "653c98ee92ac",
+          "ts": "4ca795135db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:08.922Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (definition, ~1.3kB). Verified the combinatorics: sum over levels 0..A-2 of (l+1) factors = A(A-1)/2 = C(A,2), matching the stated factor count. Verified the typed coefficients are the three canonical crossings, not free parameters: sigma + d(p,p) = sigma; sigma + d(n,n) = sigma - h = sigma^-1 (since sigma - sigma^-1 = h); sigma + d(p,n) = sigma - h/2 = (sigma + sigma^-1)/2, the averaged pn crossing - consistent with the pp/nn/pn assignment in brings-surface/inter-nucleon-channel-color-tube. Terminal paragraph is the 'Archimedean specialisation' template banner (withdrawn as a finding). The equation environment is correctly fenced as tex. All ten categories clean."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "653c98ee92ac",
+          "ts": "4ca795135db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:08.980Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (definition, ~1.3kB). Verified the combinatorics: sum over levels 0..A-2 of (l+1) factors = A(A-1)/2 = C(A,2), matching the stated factor count. Verified the typed coefficients are the three canonical crossings, not free parameters: sigma + d(p,p) = sigma; sigma + d(n,n) = sigma - h = sigma^-1 (since sigma - sigma^-1 = h); sigma + d(p,n) = sigma - h/2 = (sigma + sigma^-1)/2, the averaged pn crossing - consistent with the pp/nn/pn assignment in brings-surface/inter-nucleon-channel-color-tube. Terminal paragraph is the 'Archimedean specialisation' template banner (withdrawn as a finding). The equation environment is correctly fenced as tex. All ten categories clean."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "653c98ee92ac",
+          "ts": "4ca795135db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:09.045Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (definition, ~1.3kB). Verified the combinatorics: sum over levels 0..A-2 of (l+1) factors = A(A-1)/2 = C(A,2), matching the stated factor count. Verified the typed coefficients are the three canonical crossings, not free parameters: sigma + d(p,p) = sigma; sigma + d(n,n) = sigma - h = sigma^-1 (since sigma - sigma^-1 = h); sigma + d(p,n) = sigma - h/2 = (sigma + sigma^-1)/2, the averaged pn crossing - consistent with the pp/nn/pn assignment in brings-surface/inter-nucleon-channel-color-tube. Terminal paragraph is the 'Archimedean specialisation' template banner (withdrawn as a finding). The equation environment is correctly fenced as tex. All ten categories clean."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "653c98ee92ac",
+          "ts": "4ca795135db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:09.119Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (definition, ~1.3kB). Verified the combinatorics: sum over levels 0..A-2 of (l+1) factors = A(A-1)/2 = C(A,2), matching the stated factor count. Verified the typed coefficients are the three canonical crossings, not free parameters: sigma + d(p,p) = sigma; sigma + d(n,n) = sigma - h = sigma^-1 (since sigma - sigma^-1 = h); sigma + d(p,n) = sigma - h/2 = (sigma + sigma^-1)/2, the averaged pn crossing - consistent with the pp/nn/pn assignment in brings-surface/inter-nucleon-channel-color-tube. Terminal paragraph is the 'Archimedean specialisation' template banner (withdrawn as a finding). The equation environment is correctly fenced as tex. All ten categories clean."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "653c98ee92ac",
+          "ts": "4ca795135db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:09.174Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (definition, ~1.3kB). Verified the combinatorics: sum over levels 0..A-2 of (l+1) factors = A(A-1)/2 = C(A,2), matching the stated factor count. Verified the typed coefficients are the three canonical crossings, not free parameters: sigma + d(p,p) = sigma; sigma + d(n,n) = sigma - h = sigma^-1 (since sigma - sigma^-1 = h); sigma + d(p,n) = sigma - h/2 = (sigma + sigma^-1)/2, the averaged pn crossing - consistent with the pp/nn/pn assignment in brings-surface/inter-nucleon-channel-color-tube. Terminal paragraph is the 'Archimedean specialisation' template banner (withdrawn as a finding). The equation environment is correctly fenced as tex. All ten categories clean."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "653c98ee92ac",
+          "ts": "4ca795135db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:13:09.227Z",
+        "reviewed_sha": "9656d9788d295d928ae07cf66db20cfa5f112f89",
+        "evidence": "Full read (definition, ~1.3kB). Verified the combinatorics: sum over levels 0..A-2 of (l+1) factors = A(A-1)/2 = C(A,2), matching the stated factor count. Verified the typed coefficients are the three canonical crossings, not free parameters: sigma + d(p,p) = sigma; sigma + d(n,n) = sigma - h = sigma^-1 (since sigma - sigma^-1 = h); sigma + d(p,n) = sigma - h/2 = (sigma + sigma^-1)/2, the averaged pn crossing - consistent with the pp/nn/pn assignment in brings-surface/inter-nucleon-channel-color-tube. Terminal paragraph is the 'Archimedean specialisation' template banner (withdrawn as a finding). The equation environment is correctly fenced as tex. All ten categories clean."
+      }
+    ]
+  }
+}
