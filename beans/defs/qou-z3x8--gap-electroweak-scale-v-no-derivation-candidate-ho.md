@@ -7,8 +7,9 @@ priority: normal
 tags:
     - sm-26
     - reorg-2026-10-04
+    - 8f-ew
 created_at: 2026-07-31T20:15:08Z
-updated_at: 2026-10-04T15:19:59Z
+updated_at: 2026-10-10T07:15:59Z
 parent: qou-8lxd
 ---
 

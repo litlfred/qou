@@ -6,8 +6,9 @@ type: task
 priority: low
 tags:
     - reorg-2026-10-04
+    - 8f-lean
 created_at: 2026-09-04T09:08:25Z
-updated_at: 2026-10-04T15:26:01Z
+updated_at: 2026-10-10T07:16:19Z
 parent: qou-8lxd
 ---
 

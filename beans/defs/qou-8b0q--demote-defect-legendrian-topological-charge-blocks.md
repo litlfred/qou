@@ -5,10 +5,11 @@ status: todo
 type: task
 priority: normal
 tags:
-    - reorg-2026-10-04
     - needs-owner
+    - 8f-lean
+    - reorg-2026-10-04
 created_at: 2026-08-21T15:10:31Z
-updated_at: 2026-10-04T15:18:43Z
+updated_at: 2026-10-10T07:16:16Z
 parent: qou-8lxd
 ---
 

@@ -5,11 +5,12 @@ status: todo
 type: task
 priority: normal
 tags:
+    - reorg-2026-10-04
+    - 8f-lean
     - lean
     - gap
-    - reorg-2026-10-04
 created_at: 2026-09-03T09:08:30Z
-updated_at: 2026-10-04T15:20:01Z
+updated_at: 2026-10-10T07:16:17Z
 parent: qou-8lxd
 ---
 

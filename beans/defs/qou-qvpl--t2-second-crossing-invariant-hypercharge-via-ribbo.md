@@ -6,8 +6,9 @@ type: task
 priority: critical
 tags:
     - reorg-2026-10-04
+    - 8f-tseries
 created_at: 2026-08-03T23:27:16Z
-updated_at: 2026-10-04T15:10:38Z
+updated_at: 2026-10-10T07:16:10Z
 parent: qou-8lxd
 ---
 

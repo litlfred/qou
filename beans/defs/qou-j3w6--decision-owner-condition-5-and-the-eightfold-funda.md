@@ -6,8 +6,9 @@ type: task
 priority: high
 tags:
     - reorg-2026-10-04
+    - 8f-decide
 created_at: 2026-09-03T15:35:48Z
-updated_at: 2026-10-04T15:14:47Z
+updated_at: 2026-10-10T07:15:34Z
 parent: qou-8lxd
 ---
 
