@@ -134,3 +134,5 @@ T13 row: `fsh-guts/` itself also left `main`.
 - **Open:**
   - Qou's published build (platform `publish.yml`, via `build.yml`) has no mount step, so a dispatched build would miss the parked simulators.
   - The `wedderburn-weight-canonical.ts` `verified`-against-deprecated question is unchanged: its path follows the file, and the owner decision is still pending.
+
+**2026-10-10 (later): the simulator gap is closed.** The paper still used nine of the eleven files in the deprecated simulators folder, so they were restored to `simulators/` on main and the eleven blocks re-pointed there (two are `todo-html` stubs whose HTML never existed). `double_slit.html` and `empty.html` are unreferenced and stay on the branch store. run-validate **unmounted** now reads Valid, 9 issues, the same as main, so the platform publish workflow no longer needs a mount step.
