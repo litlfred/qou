@@ -160,3 +160,79 @@ that cannot move a number moved one. Live: the defect is an unrecorded
 provenance change, not a surviving C binding.
 
 Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+## 2026-10-10: the "falsely passing" state is GONE — somebody regenerated it, and the bean never recorded that
+
+Measured on `main` `8fadf3a6d6`. The honest-intermediate state this bean
+describes — *"the witness stays stale AND is now documented as stale"*, with a
+C-frame value and `allPassed: true` — **no longer exists.**
+`computations/probes/qbeta-ck-basis-constrained-pslq.witness.json` was
+regenerated **2026-09-15**, a month after this bean, and now reads:
+
+| field | the bean's "committed" | on `main` today |
+|---|---|---|
+| `c3_reproduced_canonical` | `-2.02018812814143945582016855395` | **`-974.382147079536184945277477315`** |
+| `allPassed` | `true` | **`false`** |
+
+So the D-frame value is recorded and the assertion fails honestly. **Nothing
+was ratified** — `verdict.conclusion` is still `ENTROPY-BLOCKED`, Stage 2 PSLQ
+was not run, and `-974` is not wired anywhere. That is the state this bean
+wanted; it simply arrived from elsewhere and was never written down here.
+
+### What WAS still live, and is now fixed at the producer
+
+Two labelling defects, both on the one artifact where the frame *is* the entire
+content:
+
+**1. No convention stamp at all.** `markov_convention` was **absent** from a
+witness whose recorded number is, per registry §9g, the convention-**D** muon
+`c_3`, and whose entire history is an undisclosed C→D flip. That is the
+`qou-ng7j` coverage gap (1.3 % of witnesses carry the field) biting exactly
+where it costs most. Now stamped `"D"` with a separate
+`markov_convention_reason`, matching the `q0Anchor` / `q0AnchorReason` shape the
+same module already uses — and the reason says in words that `-974.38` is
+`qou-cds1`'s *sensitivity measurement*, **not** a proposed `c_3`.
+
+**2. The failing assertion named the wrong axis.** Its `source` read *"same
+chain + same Q_codata + same q0 as `qbeta-ck-cache.witness.json`"* — three axes
+of sameness, while the mismatch that makes it fail is on a **fourth it did not
+mention**: the Markov convention. So the failure read as a defect in the
+extraction chain when it is two artifacts in different frames. Verified
+directly: this probe binds `z = q**3/(q**2+1)` (D) while
+`qbeta-ck-cache.witness.json` declares `markov_convention: "C"` and its `c_3` is
+reachable only via `--historical-convention-C`. The `source` now says so, and
+says the assertion is **left FAILING on purpose** — silencing it would ratify
+one frame, which is this bean's whole point.
+
+**Re-run, masking provenance: 3 non-provenance fields moved and ZERO are
+numeric.** `-974.382147079536184945277477315` reproduces byte-identically and
+`allPassed` stays `false`. The changes are the two new stamp fields and the
+corrected `source` prose — a label, not a number.
+
+### A 3.38e-7 discrepancy I could not account for, and an exclusion I will NOT claim
+
+The bean's 2026-08-18 re-run gave `-974.382476607697851630950275826`; the
+committed 2026-09-15 value is `-974.382147079536184945277477315`. That is
+`3.295e-4` absolute, **`3.38e-7` relative** — far above any rounding.
+
+The obvious suspect is the muon CODATA re-pin (`fca08de7d2`, ruling
+2026-08-22), which lands **between** the two runs, and this probe does derive
+its pin live (`Q0_CANONICAL = q_muon_at(50)`), so it flowed through. Measured:
+the pin moved `0.0798 ppb` on `q₀` and `1.454e-9` on `u`, so the `1/u³`
+prefactor in `c_3 = (Q_codata/Q_N2 − 1)/u³` scales `c_3` by only
+**`-4.36e-9`** — **77.6× too small** to explain the move.
+
+🛑 **That is not an exclusion, and I am stating the limit rather than the
+headline.** I tested the `1/u³` **prefactor only**. The numerator
+`(Q_codata/Q_N2 − 1)` is a near-cancellation of two almost-equal quantities and
+can carry far more `q₀` sensitivity than the prefactor does, so the re-pin
+remains a live candidate — what is established is only that the *amplification
+route* does not account for it. Cause **undetermined**; settling it needs the
+full chain differentiated at both pins, which I did not do.
+
+### Status
+
+**Re-scoped, not closed.** The undisclosed-flip defect is recorded and the
+artifact now states its own frame; what stays open is the `3.38e-7`
+discrepancy above and, upstream of everything here, `qou-cds1`'s re-derivation
+of the ladder under D. Neither is a labelling job.
