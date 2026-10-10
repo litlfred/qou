@@ -340,26 +340,42 @@ beans themselves; this is the index.
 | `qou-htsi` | Its scope item 1 — re-run the value and producer audits — was executed today. It found 6 unadjudicated sites and 3 stale trackers, so the owner's "be suspicious of closed gates based on compute" was right and is now discharged. |
 | `qou-lt8x` | Superseded by method. It finds that a READ-SET blast radius missed 31 of 43 structurally-C witnesses; the value audit uses no read-set — it evaluates every binding — so the gap it names cannot exist under the current detector. |
 
-### MIS-PARENTED — 12, real work on the wrong milestone
+### MIS-PARENTED — 8, real work on the wrong milestone
 
-These are live and worth doing, and **none of them is about the Markov
-parameter.** They are why the convention question looked 57 beans deep.
+> **🛑 This said 12, and 4 of those were CORRECTLY parented. Corrected
+> 2026-10-10, same session.** The claim rested on treating `qou-cdx1` as a
+> C-excision milestone. **It is not** — its title is *"excise convention C,
+> **adopt proton pin + colour weighting** (owner ruling 2026-08-15)"* and its
+> body names three rulings: **R1** convention D canonical, **R2** proton pin
+> canonical, **R3** `bring_color_weighted` canonical. So a q₀-pin bean (R2) or a
+> colour-weight bean (R3) belongs there by design.
+>
+> Withdrawn from this list and left under `qou-cdx1`: **`qou-3f7a`**,
+> **`qou-q0rf`**, **`qou-324i`** (all R2) and **`qou-o3ta`** (R3). The
+> retraction is appended to each of the four beans.
+>
+> The paragraph that used to follow said the pin group "inherited one milestone
+> because R1 and R2 landed in the same ruling" — exactly backwards. They share a
+> milestone because the milestone was *scoped* to cover all three, deliberately.
 
-| axis | beans |
-|---|---|
-| float64 / laundering (`qou-840k` family) | `qou-b7cf`, `qou-nmza`, `qou-eg4l` |
-| q-integer convention (Gaussian bracket vs classical) | `qou-b8vx`, `qou-gl58`, `qou-qint`, `qou-6p3b` |
-| q₀ **pin** axis (ruling R2, not R1) | `qou-3f7a`, `qou-q0rf`, `qou-324i` |
-| other migrations reached via this work | `qou-47sx` (`atom_per_generator_volumes` shape change), `qou-o3ta` (Gram null-vector science) |
+The 8 that really were mis-parented are live, worth doing, and **about none of
+R1, R2 or R3**:
 
-The pin group is the instructive one: R1 (convention D) and R2 (proton pin)
-landed in the **same 2026-08-15 ruling**, which is how they came to share a
-milestone — but they are independent surfaces with independent audits, and
-folding them together makes each look worse than it is.
+| axis | beans | moved to |
+|---|---|---|
+| float64 / laundering | `qou-b7cf`, `qou-nmza`, `qou-eg4l` | `qou-9nnz` *(Precision hygiene: float64, dps, gates, witness currency)* |
+| `atom_per_generator_volumes` shape change | `qou-47sx` | `qou-9nnz` |
+| q-integer convention (Gaussian bracket vs classical) | `qou-b8vx`, `qou-gl58`, `qou-qint`, `qou-6p3b` | **`qou-4cu3`** *(new epic — see below)* |
 
-**Re-parenting is proposed, not enacted.** It reshapes someone's milestone, and
-the owner's call is whether these get a sibling milestone each or move under the
-existing float64 / q-integer / pin trackers.
+**Enacted 2026-10-10.** `qou-cdx1`: 57 → **49 children**. The q-integer four
+went to a new epic `qou-4cu3` because no existing parent covered that axis;
+`qou-9nnz` was already the right home for the other four and now has 86.
+
+The q-integer group is the instructive one: it shares the *word* "convention"
+with R1 and nothing else. `[n]_q = (qⁿ − q⁻ⁿ)/(q − q⁻¹)` versus the classical
+`(qⁿ − 1)/(q − 1)` is a different question from `z = q³/(q²+1)` versus
+`√q/(q+1)`, and four beans sat under the Markov-parameter milestone on the
+strength of the overlap.
 
 ### LIVE — 23, and the reason they survive a clean code surface
 
@@ -388,11 +404,23 @@ useful axis:
 
 ### What this changes about the milestone
 
-`qou-cdx1` is now **51 todo / 6 completed** rather than 57 todo. If the 12
-mis-parented beans move, the convention-excision milestone is **~39 children**,
-of which one (`qou-pmkh`) names a still-actionable file and the rest are
-recorded numbers, reader-facing text, detector defects, or mathematics behind
-`qou-cds1`.
+`qou-cdx1` went **57 todo → 49 children** (6 completed on evidence, 8
+re-parented). Of those 49, exactly one (`qou-pmkh`) names a still-actionable
+file; the rest are recorded numbers, reader-facing text, detector defects, or
+mathematics behind `qou-cds1` — plus the R2 (proton-pin) and R3 (colour-weight)
+work the milestone covers by design.
+
+New sibling epic: **`qou-4cu3`** — the q-integer convention axis, four children.
+
+**Three corrections of mine are recorded in this file**, all the same class — a
+claim about an artifact made without reading that artifact's own primary text
+closely enough:
+
+| what I claimed | what is true | where |
+|---|---|---|
+| 66 paper sites unscoped | 23; the other 43 say *was/now/withdrawn/retracted* in C-vs-D tables | §4 |
+| `qou-m7py` measurably satisfied | its headline bug is fixed, its owner items are not | §9, and on the bean |
+| 12 beans mis-parented | 8; `qou-cdx1` covers R2 and R3 by design | §9 above |
 
 ---
 

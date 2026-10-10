@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T14:15:32Z
-updated_at: 2026-10-10T07:46:15Z
-parent: qou-cdx1
+updated_at: 2026-10-10T07:55:54Z
+parent: qou-4cu3
 ---
 
 ## Scoped 2026-08-24 — full analysis in docs/audits/2026-08-24-qfac-dimq-threading-scope.md
