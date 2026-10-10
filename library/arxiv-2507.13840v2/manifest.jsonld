@@ -1,0 +1,49 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/agent-aa0db88738c4896fe/arxiv-2507.13840v2/manifest.jsonld",
+  "@type": [
+    "folio-assistant-core:SourceDocument"
+  ],
+  "title": "Quantifying mixed-state entanglement via partial transpose and realignment moments",
+  "contains": [
+    "library/arxiv-2507.13840v2/sections/sec-front-matter",
+    "library/arxiv-2507.13840v2/sections/sec-000",
+    "library/arxiv-2507.13840v2/sections/sec-001",
+    "library/arxiv-2507.13840v2/sections/sec-002",
+    "library/arxiv-2507.13840v2/sections/sec-003",
+    "library/arxiv-2507.13840v2/sections/sec-004",
+    "library/arxiv-2507.13840v2/sections/sec-005",
+    "library/arxiv-2507.13840v2/sections/sec-006",
+    "library/arxiv-2507.13840v2/sections/sec-007",
+    "library/arxiv-2507.13840v2/sections/sec-008",
+    "library/arxiv-2507.13840v2/sections/sec-009",
+    "library/arxiv-2507.13840v2/sections/sec-010",
+    "library/arxiv-2507.13840v2/sections/sec-011",
+    "library/arxiv-2507.13840v2/sections/sec-012",
+    "library/arxiv-2507.13840v2/sections/sec-013"
+  ],
+  "provenance": "ingested",
+  "meta": {
+    "doc_id": "arxiv-2507.13840v2",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "q-2026-08-19-2194.pdf",
+    "source_sha256": "34ad8ede52fbf42e007d9a41e77ada67497feb28006b687831c4f867f1d8a618",
+    "pages": 43,
+    "arxiv": {
+      "id": "2507.13840",
+      "version": "2",
+      "primary_class": "quant-ph",
+      "stamp_date": "11 Aug 2026"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

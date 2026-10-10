@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-2507.13840v2/blocks/prose-sec-012",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "Effects of depolarizing noise on entanglement",
+  "pageStart": 42,
+  "pageEnd": 43,
+  "text": "../sections/sec-012-effects-of-depolarizing-noise-on-entanglement.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/agent-aa0db88738c4896fe/arxiv-2507.13840v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/agent-aa0db88738c4896fe/arxiv-2507.13840v2/manifest.jsonld",
+  "provenance": "ingested"
+}

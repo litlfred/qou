@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "library/arxiv-math-0404010v1/blocks/prose-sec-005",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "kind": "prose",
+  "title": "References",
+  "pageStart": 9,
+  "pageEnd": 9,
+  "text": "../sections/sec-005-references.md",
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/agent-aa0db88738c4896fe/arxiv-math-0404010v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/agent-aa0db88738c4896fe/arxiv-math-0404010v1/manifest.jsonld",
+  "provenance": "ingested"
+}
