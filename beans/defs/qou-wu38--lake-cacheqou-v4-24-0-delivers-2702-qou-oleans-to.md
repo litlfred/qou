@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: high
 created_at: 2026-10-10T07:31:52Z
-updated_at: 2026-10-10T09:58:52Z
+updated_at: 2026-10-10T12:30:00Z
 parent: qou-n4r9
 ---
 
@@ -254,3 +254,58 @@ relayed in chat as "an owner call, not a follow-up commit". It was neither.
 **`qou-wu38` is fully closed.** Both halves — delivery (`94b88ccbbb`,
 `--transform`) and the silent success (`334752248a`) — are fixed on main. No
 owner decision is outstanding on this bean.
+
+---
+
+## 🛑 CORRECTION 2026-10-10 — the cost figure is cited to a document that
+## records the OPPOSITE, and two different gaps are conflated
+
+Caught by a sibling agent filing the taxonomy row for this class (PR #7583),
+and left to me to fix because the error is mine. Two sentences in this bean
+are wrong:
+
+1. **The citation.** This bean says a wrong "library was never built"
+   diagnosis "leads to a multi-hour from-source rebuild. That is exactly the
+   cost `docs/audits/2026-09-07-mathlib-cache-gap-closed.md` records for the
+   previous misdiagnosis of this family (attributed to a container resource
+   limit; it was 79 missing oleans)." **That document records neither half.**
+   Measured: it contains the string `resource limit` **zero** times, and its
+   only cost line reads *"no `lake`, no network, a few minutes total.
+   Packaged: **2.3 MB**"* (line 32). It is the **3-target / 7-module** gap,
+   and it states the state it found was correctly a *cache* defect rather
+   than a corpus one.
+
+2. **Two gaps, one of them cheap.** The sentence actually cited exists
+   verbatim one document over —
+   `docs/audits/2026-09-11-gap-cache-branch-seeded-7-to-86.md` lines 33-35:
+   *"That was attributed to a container resource limit (bean `qou-ed8a` …).
+   **It is not one.** It is 79 missing oleans: **188 s** to build from
+   source, **22 MB** to fetch."* That is the **79-module** gap. So the bean
+   merged a figure from one gap with a citation to another, and **neither
+   gap cost hours**: a few minutes / 2.3 MB, and 188 s / 22 MB.
+
+**What survives.** The structural claim is untouched: an exit-0 restore that
+strands every QOU olean under `content/` makes an agent diagnose an unbuilt
+library, and the repair is the one-line `mv` recorded above (2.5 s per file
+warm afterwards). A *genuine* from-source QOU rebuild is expensive — AGENTS.md
+puts a `lake build` Mathlib-closure rebuild at 30 min+ and records a 50-minute
+run that produced zero QOU oleans — but that is **not measured in this
+session and not what either cited document says.** State it as unmeasured
+here, or cite the AGENTS.md figures; do not re-attach a cost to the 09-07 doc.
+
+**Where it propagated** (all three now carry the correction): the body of
+PR #7546, the body of PR #7571, and taxonomy row 55 in
+`docs/audits/2026-08-15-detector-blindness-taxonomy.md`, which the sibling
+filed with a *"Do not inherit the cost figure this row was first filed with"*
+note rather than repeating it.
+
+**The discipline this is an instance of, for the third time this arc:** a bean
+is not a primary source. I asserted a document's content from a bean's summary
+of it, in a bean whose own subject is asserting a script's state from a commit
+message about it. `y_lambda_at`'s rule generalises past docstrings — **read at
+the body.** Opening the file costs one `grep`; the citation survived into two
+merged PR bodies.
+
+**Status unchanged: `completed`.** Both halves of the defect are fixed on main
+and no conjecture is open here — this is a correction to the record, not a
+reopening.
