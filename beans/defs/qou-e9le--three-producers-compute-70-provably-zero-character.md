@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T06:46:25Z
-updated_at: 2026-10-10T09:55:04Z
+updated_at: 2026-10-10T10:32:41Z
 parent: qou-5vkl
 ---
 
@@ -130,3 +130,8 @@ move no number; the defect is only that they defeat a `None`/truthiness prune.
 **Propagation:** `chi_at_q0_via_hoefsmit_mpfr.py` copies these into `chi-deuteron-h6-at-q0-50dps.witness.json` (7 residue entries at n=6), which `rho_w_crystal_vertex_trace.py` read, which made three exact-zero SUPPORT assertions in `probes/delta_lambda_closure_tl_support_probe.py` FAIL spuriously. Fixed at `rho_w` with the row-count remedy this bean recommends (snap ℓ>2 to exact 0, refuse above 10^-(dps-10)), commit 3d8010bc52.
 **Consumer audit (73 readers of the cache or the loader), grep for zero-tests / log / division / sign on y:** no wrong NUMBER found. `probes/lr_hecke_character_probe.py:183` prunes on `y_lam == 0` — residue only costs extra terms × ~1e-72 (compute, not value). `brng_*` probes take log|y| of the DOMINANT (two-row) block only. `audits/y_lambda_two_row_cap_gate.py` already tolerates ~1e-73. Caveat: a grep is not a proof of absence; a consumer testing zero by an unforeseen spelling would be missed.
 **Root-cause option, NOT taken (owner call):** make `regenerate_y_lambda_mpfr.py` emit exact 0 for ℓ(λ) > N (as the computed route already does) and regenerate the proton table. Fixes all 73 readers at once; moves no recorded number above ~1e-72; but rewrites a central input table.
+
+
+## 2026-10-10 CORRECTION to the entry above (same session)
+**'287 entries' was my arithmetic error; the count is 223.** The per-n counts I listed (1, 2, 4, 7, 11, 17, 25, 36, 50, 70 for n = 3..12) sum to 223; I mis-added them. Re-measured by a second, independent walk of the table (mpf, 0 < |y| < 1e-60 on ℓ ≥ 3). The wrong figure also appears in commit cbf8611031's message (pushed; not rewritten) and in my chat report; nothing else repeated it.
+**Downstream measured:** 14 witnesses copy the residue into their own payload — chi_at_q0_via_hoefsmit_mpfr caches (deuteron/diproton/dineutron h6, tritium/³He h9, ⁴He h12, proton/neutron h3), a-K-via-lp-dual(-full), two Rust matrix-M caches (⁴He h12, deuteron h6 90dps), probe-pauli-young the3 signtest, probe-d-delta-lambda-terms. Owner approved (2026-10-10, '1 and downstream'): producer fix + proton-table regeneration + those 14; in progress.
