@@ -1,11 +1,11 @@
 ---
 # qou-7xpx
 title: 'M6: re-run interface-knot full/constit tr_M table at convention D'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-10-10T08:52:03Z
-updated_at: 2026-10-10T14:06:36Z
+updated_at: 2026-10-10T14:13:02Z
 parent: qou-d8c7
 ---
 
@@ -25,3 +25,5 @@ Constit traces: D 0.29901502, T 0.14207206, 3He 0.18817864, 4He 0.08940998; cons
 CONSTIT STEP FAILS (scope-a negative): step = tr_M(proton) = 0.62932840 (alternating word) / 1.14575969 (grouped word) vs 2q-1 = 1.21995717 -> 48.4% / 6.1% miss. Full per-Z step canonical 0.38558198, not z_D(2q-1) = 0.74745316. conj:constit-factor-2q-minus-1 does not hold at D on either intra ordering; no claim about other closed forms. Note: that conj label has no content block (dangling code-quoted ref).
 
 Proof .md updated: table replaced with D values + dated note; constit paragraph records the negative. Closeable as far as this bean's task goes (table re-run done); the open research is whether a D-frame closed form for tr_M(proton) exists - not tracked here.
+
+2026-10-10: closed. The task (re-run the interface-knot table under convention D) is done on branch claude/interface-knot-d-rerun-2026-10-10. The remaining research question, a D-frame closed form for tr_M(proton), moved to qou-nzp3.
