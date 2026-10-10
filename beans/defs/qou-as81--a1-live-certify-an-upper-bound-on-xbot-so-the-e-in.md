@@ -234,3 +234,21 @@ enumerability limit 32. That would close this bean's goal.
 2. *All pe.* Wall rows satisfy `u_j <= u_{j+1}` (gap 1) and pay `ln q0 (pe - j)` each, so deep
    wall rows cost quadratically against bounded gains.
 Also pending: the midpoint-concavity spot test (running).
+
+## 2026-10-10 (evening) — final checkpointed run recorded
+
+**Final full run** (witness `rev-e-infinity-xbot-relaxation.witness.json`, computedAt
+2026-10-10T18:15:06Z, two windows from the R1–R5 checkpoint): R1, R2, R3, R4, R5, R5b **pass**;
+R6 **fails by design**. R6 asserts the G1-free cut is enumerable (<= 32). With
+`B_bot = 3.37604722643986568255` (integer box, 1.563x the enumerated maximum 2.1598) the G1-free
+cut is **48**, against **27** via G1 (6,325,874 blocks). So the script exits 1; the red check is
+this bean's open goal, not a defect. PR #7419 carries this run.
+
+**Midpoint-concavity spot test: result NOT recorded.** It was running in the previous session's
+scratch (`/tmp/claude-0/hj/`), and that container was reclaimed before its output was written
+anywhere durable. Absence of a recorded result is not a result; re-run it in the Murota follow-up.
+The scratch `lnat.py` (steepest ascent / min-cut check) was lost the same way, so the follow-up
+re-implements it in-repo rather than porting it.
+
+**Next:** the Murota / L♮ certificate as a new PR (owner decision 2026-10-10: new PR after
+#7419), targeting R6 green at cut 25, with the tail lemma (all T) and the all-pe lemma still open.
