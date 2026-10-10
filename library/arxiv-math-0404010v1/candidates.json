@@ -1,0 +1,190 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0404010v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "a9522d4bec3ce6fbb8dd8eada5b68b125eea30f75af824609c4a9b66107e393c",
+  "file": "0404010v1.pdf"
+ },
+ "provenance": {
+  "title": "YANG\u2013BAXTER OPERATORS ARISING FROM ALGEBRA STRUCTURES AND THE ALEXANDER POLYNOMIAL OF KNOTS",
+  "authors": "GW\u00c9NA\u00cbL MASSUYEAU AND FLORIN F. NICHITA",
+  "arxiv": {
+   "id": "math/0404010",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "1 Apr 2004"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 12,
+  "by_kind": {
+   "remark": 3,
+   "theorem": 4,
+   "proposition": 3,
+   "lemma": 2
+  },
+  "formalization_candidates": 9
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.2",
+   "name": null,
+   "statement": "Equation (1) is usually called the braid equation. An operator R satis\ufb01es",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.3",
+   "name": "D\u02d8asc\u02d8alescu\u2013Nichita [1]",
+   "statement": "Let A be a k\u2013algebra of dimension at least 2",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.5",
+   "name": "D\u02d8asc\u02d8alescu\u2013Nichita [1]",
+   "statement": "Let A and A\u2032 be k\u2013algebras of dimension",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.6",
+   "name": null,
+   "statement": "In fact, according to the proof of [1, Proposition 3.1], a bijective k\u2013linear",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.2",
+   "name": "Turaev [12]",
+   "statement": "Let S be an enhanced YB operator. If two braids b1 and b2",
+   "section_file": "sections/sec-001-3-invariants-of-oriented-links-derived-from-yang.md",
+   "section_title": "Invariants of oriented links derived from Yang--Baxter operators",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.4",
+   "name": "Murakami [8]",
+   "statement": "Let S be a redundant YB operator. If two braids b1 and b2",
+   "section_file": "sections/sec-001-3-invariants-of-oriented-links-derived-from-yang.md",
+   "section_title": "Invariants of oriented links derived from Yang--Baxter operators",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "3.5",
+   "name": null,
+   "statement": "If S = (R, \u00b5, \u03b1, \u03b2) is a redundant Yang\u2013Baxter operator, then we have that",
+   "section_file": "sections/sec-001-3-invariants-of-oriented-links-derived-from-yang.md",
+   "section_title": "Invariants of oriented links derived from Yang--Baxter operators",
+   "pages": "3-6",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.6",
+   "name": null,
+   "statement": "Let S = (R, \u00b5, \u03b1, \u03b2) be an enhanced Yang\u2013Baxter operator such that",
+   "section_file": "sections/sec-001-3-invariants-of-oriented-links-derived-from-yang.md",
+   "section_title": "Invariants of oriented links derived from Yang--Baxter operators",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.7",
+   "name": null,
+   "statement": "Let R : V \u2297V \u2192V \u2297V be a YB operator such that R2 + b \u00b7 R + c \u00b7 Id\u22972 =",
+   "section_file": "sections/sec-001-3-invariants-of-oriented-links-derived-from-yang.md",
+   "section_title": "Invariants of oriented links derived from Yang--Baxter operators",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "claim",
+   "number": null,
+   "name": null,
+   "statement": "If b, c \u2208Bn are such that \u03c1R(b) \u2208Cn and \u03c1R(c) \u2208Cn, then we have that",
+   "section_file": "sections/sec-001-3-invariants-of-oriented-links-derived-from-yang.md",
+   "section_title": "Invariants of oriented links derived from Yang--Baxter operators",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.1",
+   "name": null,
+   "statement": "Let \u00b5 : A \u2192A be a bijective k\u2013linear map and let \u03b1, \u03b2 be nonzero scalars.",
+   "section_file": "sections/sec-003-41-enhancements-of-rxy.md",
+   "section_title": "Enhancements of Rx,y",
+   "pages": "6-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.3",
+   "name": null,
+   "statement": "Let \u00b5 : A \u2192A and \u03b1, \u03b2 \u2208k be such that S = (Rx,y, \u00b5, \u03b1, \u03b2) is an",
+   "section_file": "sections/sec-004-42-connection-with-the-alexander-polynomial.md",
+   "section_title": "Connection with the Alexander polynomial",
+   "pages": "8-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

@@ -1,0 +1,328 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2507.13840v2",
+ "source": {
+  "file": "q-2026-08-19-2194.pdf",
+  "sha256": "34ad8ede52fbf42e007d9a41e77ada67497feb28006b687831c4f867f1d8a618",
+  "bytes": 1172370,
+  "pages": 43,
+  "text_source": "embedded",
+  "extractor": "pymupdf",
+  "mtime": "2026-10-10T16:28:27Z",
+  "mimetype_sniffed": "application/pdf",
+  "mimetype_source": "magic-bytes"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2507.13840",
+   "version": "2",
+   "primary_class": "quant-ph",
+   "stamp_date": "11 Aug 2026"
+  },
+  "doi": null,
+  "title": "Quantifying mixed-state entanglement via partial transpose and realignment moments",
+  "authors_raw": "Poetri Sonya Tarabunga1,2 and Tobias Haug3",
+  "title_lines": [
+   "Quantifying mixed-state entanglement via partial transpose",
+   "and realignment moments"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Title": "Quantifying mixed-state entanglement via partial transpose and realignment moments",
+   "Author": "Poetri Sonya Tarabunga; Tobias Haug",
+   "Producer": "pikepdf 8.15.1",
+   "Creator": "arXiv GenPDF (tex2pdf:8def8d8)"
+  },
+  "title_raw": "Quantifying mixed-state entanglement via partial transpose and realignment moments",
+  "title_source": "metadata",
+  "title_verified": true,
+  "title_evidence": {
+   "metadata": "Quantifying mixed-state entanglement via partial transpose and realignment moments",
+   "heading": "Quantifying mixed-state entanglement via partial transpose and realignment moments",
+   "outline": "Efficient algorithm to measure PT negativity moment",
+   "text": "Quantifying mixed-state entanglement via partial transpose and realignment moments",
+   "corroborated_by": [
+    "heading",
+    "text",
+    "page"
+   ],
+   "browser_print": false
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Efficient algorithm to measure PT negativity moment",
+   "page": 30,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Efficient algorithm to measure CCNR negativity moment",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Upper bounds for the PT negativity and the CCNR negativity",
+   "page": 32,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Upper bound on DF",
+   "page": 33,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Relationship between PT negativity, CCNR negativity, and robustness of entanglement",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Relationship between PT negativity, CCNR negativity, and the Schmidt number",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Depth-dependent bound on the PT negativity and the CCNR negativity",
+   "page": 35,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Certification of circuit depth",
+   "page": 35,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Entanglement of pseudorandom density matrices and pseudoentanglement",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Schmidt rank testing",
+   "page": 37,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Operator Schmidt rank testing",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "p-negativity in Haar random states",
+   "page": 39,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "PT and realignment moments in translation-invariant MPS",
+   "page": 40,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Matrix product states algorithm for the PT negativity and the CCNR negativity",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Effects of depolarizing noise on entanglement",
+   "page": 42,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Witnessing entanglement in Werner States",
+   "page": 43,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "toc_undetermined_reason": null,
+ "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 30,
+   "n_chars": 112223,
+   "n_words": 17585
+  },
+  {
+   "id": "sec-000-efficient-algorithm-to-measure-pt-negativity-mom",
+   "number": null,
+   "title": "Efficient algorithm to measure PT negativity moment",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 2,
+   "n_words": 1
+  },
+  {
+   "id": "sec-001-efficient-algorithm-to-measure-ccnr-negativity-m",
+   "number": null,
+   "title": "Efficient algorithm to measure CCNR negativity moment",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 32,
+   "n_chars": 5923,
+   "n_words": 1049
+  },
+  {
+   "id": "sec-002-upper-bounds-for-the-pt-negativity-and-the-ccnr",
+   "number": null,
+   "title": "Upper bounds for the PT negativity and the CCNR negativity",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 3111,
+   "n_words": 569
+  },
+  {
+   "id": "sec-003-upper-bound-on-df",
+   "number": null,
+   "title": "Upper bound on DF",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 988,
+   "n_words": 177
+  },
+  {
+   "id": "sec-004-relationship-between-pt-negativity-ccnr-negativi",
+   "number": null,
+   "title": "Relationship between PT negativity, CCNR negativity, and robustness of entanglement",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 1546,
+   "n_words": 289
+  },
+  {
+   "id": "sec-005-depth-dependent-bound-on-the-pt-negativity-and-t",
+   "number": null,
+   "title": "Depth-dependent bound on the PT negativity and the CCNR negativity",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 458,
+   "n_words": 85
+  },
+  {
+   "id": "sec-006-certification-of-circuit-depth",
+   "number": null,
+   "title": "Certification of circuit depth",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 2293,
+   "n_words": 432
+  },
+  {
+   "id": "sec-007-entanglement-of-pseudorandom-density-matrices-an",
+   "number": null,
+   "title": "Entanglement of pseudorandom density matrices and pseudoentanglement",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 3425,
+   "n_words": 556
+  },
+  {
+   "id": "sec-008-schmidt-rank-testing",
+   "number": null,
+   "title": "Schmidt rank testing",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 3127,
+   "n_words": 587
+  },
+  {
+   "id": "sec-009-operator-schmidt-rank-testing",
+   "number": null,
+   "title": "Operator Schmidt rank testing",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 40,
+   "n_chars": 6024,
+   "n_words": 1226
+  },
+  {
+   "id": "sec-010-pt-and-realignment-moments-in-translation-invari",
+   "number": null,
+   "title": "PT and realignment moments in translation-invariant MPS",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 2278,
+   "n_words": 426
+  },
+  {
+   "id": "sec-011-matrix-product-states-algorithm-for-the-pt-negat",
+   "number": null,
+   "title": "Matrix product states algorithm for the PT negativity and the CCNR negativity",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 1351,
+   "n_words": 256
+  },
+  {
+   "id": "sec-012-effects-of-depolarizing-noise-on-entanglement",
+   "number": null,
+   "title": "Effects of depolarizing noise on entanglement",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 43,
+   "n_chars": 2014,
+   "n_words": 390
+  },
+  {
+   "id": "sec-013-witnessing-entanglement-in-werner-states",
+   "number": null,
+   "title": "Witnessing entanglement in Werner States",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 1607,
+   "n_words": 324
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 16,
+  "toc_inferred_entries": 0,
+  "sections": 15,
+  "chars_total": 146370
+ }
+}

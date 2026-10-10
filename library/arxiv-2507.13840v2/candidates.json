@@ -1,0 +1,176 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2507.13840v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "34ad8ede52fbf42e007d9a41e77ada67497feb28006b687831c4f867f1d8a618",
+  "file": "q-2026-08-19-2194.pdf"
+ },
+ "provenance": {
+  "title": "Quantifying mixed-state entanglement via partial transpose and realignment moments",
+  "authors": "Poetri Sonya Tarabunga1,2 and Tobias Haug3",
+  "arxiv": {
+   "id": "2507.13840",
+   "version": "2",
+   "primary_class": "quant-ph",
+   "stamp_date": "11 Aug 2026"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "proposition": 4,
+   "definition": 2,
+   "theorem": 5
+  },
+  "formalization_candidates": 11
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3",
+   "name": "Efficient CCNR negativity moment",
+   "statement": "For a given (mixed) n-qubit state \u03c1, there",
+   "section_file": "sections/sec-001-efficient-algorithm-to-measure-ccnr-negativity-m.md",
+   "section_title": "Efficient algorithm to measure CCNR negativity moment",
+   "pages": "30-32",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4",
+   "name": "Efficient certification of circuit depth",
+   "statement": "Given n-qubit mixed state \u03c1, there exists an",
+   "section_file": "sections/sec-006-certification-of-circuit-depth.md",
+   "section_title": "Certification of circuit depth",
+   "pages": "35-36",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "definition",
+   "source_kind": "definition",
+   "number": null,
+   "name": null,
+   "statement": "I.1 (Pseudo-random density matrix (PRDM) [10]). Let \u03ba = poly(n) be the security pa-",
+   "section_file": "sections/sec-007-entanglement-of-pseudorandom-density-matrices-an.md",
+   "section_title": "Entanglement of pseudorandom density matrices and pseudoentanglement",
+   "pages": "36-37",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "5",
+   "name": "Lower bound on entanglement of PRDM",
+   "statement": "Any ensemble of PRDMs with entropy",
+   "section_file": "sections/sec-007-entanglement-of-pseudorandom-density-matrices-an.md",
+   "section_title": "Entanglement of pseudorandom density matrices and pseudoentanglement",
+   "pages": "36-37",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "definition",
+   "source_kind": "definition",
+   "number": null,
+   "name": null,
+   "statement": "I.2 (Pseudoentanglement). A pseudoentangled state ensemble with gap f(n) vs g(n)",
+   "section_file": "sections/sec-007-entanglement-of-pseudorandom-density-matrices-an.md",
+   "section_title": "Entanglement of pseudorandom density matrices and pseudoentanglement",
+   "pages": "36-37",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "J.1 (Efficient testing of Schmidt rank). Let |\u03c8\u27e9be an n-qubit state where it is promised",
+   "section_file": "sections/sec-008-schmidt-rank-testing.md",
+   "section_title": "Schmidt rank testing",
+   "pages": "37-38",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "K.1 (Efficient testing of operator Schmidt rank). Let \u03c1 be an n-qubit state where it is",
+   "section_file": "sections/sec-009-operator-schmidt-rank-testing.md",
+   "section_title": "Operator Schmidt rank testing",
+   "pages": "38-40",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": "Efficient testing of entanglement",
+   "statement": "Let \u03c1 be an n-qubit state with S2(\u03c1) = O(log n)",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-30",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": "Efficient testing of Schmidt rank",
+   "statement": "Let |\u03c8\u27e9be an n-qubit state where it is promised",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-30",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": "Efficient\ntesting\nof\noperator\nSchmidt rank",
+   "statement": "Let \u03c1 be an n-qubit state where it",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-30",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2",
+   "name": "Pseudoentanglement of mixed\nstates",
+   "statement": "Pseudoentangled state ensembles with",
+   "section_file": "sections/sec-front-matter.md",
+   "section_title": "Front matter",
+   "pages": "1-30",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}
