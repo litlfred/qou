@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T03:01:15Z
-updated_at: 2026-10-10T06:49:37Z
+updated_at: 2026-10-10T07:02:43Z
 parent: qou-n4nr
 ---
 
@@ -170,6 +170,11 @@ deliberate act and re-opening someone else's closed thread is not mine to do.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-26 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — scrapped as a duplicate
+
+Checked mechanically: all 20 substantive paragraphs of this bean's body appear verbatim in `wpdb`, which holds them plus a further ~340 lines. `wpdb` stays open as related carrier M12 of epic `qou-d8c7` (issue litlfred/qou#7547) and is the bean to continue in. Nothing here is lost by closing this copy.
 
 
 ## 2026-10-10 scrapped as duplicate (session_01ST9RpvTF7JHNdUNafrjf9J)

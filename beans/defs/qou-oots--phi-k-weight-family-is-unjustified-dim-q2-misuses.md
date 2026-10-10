@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T05:55:40Z
-updated_at: 2026-10-10T06:49:11Z
-parent: qou-slz5
+updated_at: 2026-10-10T07:01:36Z
+parent: qou-3l2l
 ---
 
 ## 2026-09-05 — requirement derivation + prune + discriminator (in-progress; the CHOICE is open, the PRUNE is not)
@@ -680,6 +680,11 @@ nearest actionable one.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — pointer
+
+Tracked under carrier M7 (qou-g16t) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
 
 
 

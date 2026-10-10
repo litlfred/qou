@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-30T06:41:11Z
-updated_at: 2026-10-10T06:49:40Z
+updated_at: 2026-10-10T07:01:36Z
 parent: qou-cdx1
 ---
 
@@ -475,6 +475,11 @@ convention-independent and are marked as such.
 
 **Residues after this pass:** one — the `qou-mass/.../data/_deprecated/`
 mirror, correctly left alone.
+
+
+## 2026-10-10 — pointer
+
+Tracked under carrier M6 (qou-2cof) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
 
 
 ## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J) — linked from thread qou-moj0 (nucleon word/ordering).

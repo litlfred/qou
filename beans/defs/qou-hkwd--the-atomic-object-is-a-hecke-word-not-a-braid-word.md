@@ -7,8 +7,8 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T12:25:33Z
-updated_at: 2026-10-10T06:49:09Z
-parent: qou-moj0
+updated_at: 2026-10-10T07:01:41Z
+parent: qou-mub3
 ---
 
 Owner instruction 2026-09-06: "do a separate rename tranche. coordinate with all
@@ -84,6 +84,11 @@ readable; volumes, crossing numbers and genus are not.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — pointer
+
+Tracked under carrier M9 (qou-jgg0) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
 
 
 

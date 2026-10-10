@@ -1,7 +1,7 @@
 ---
 # tmvac
 title: 'GAP: the topological-mass cluster defines its content trivially (0, 1, identity)'
-status: completed
+status: todo
 type: task
 priority: medium
 tags:
@@ -9,8 +9,8 @@ tags:
     - lean
     - vacuity
 created_at: 2026-08-08T12:00:00Z
-updated_at: 2026-10-10T06:49:36Z
-parent: qou-wp3h
+updated_at: 2026-10-10T07:01:23Z
+parent: qou-d8c7
 ---
 
 Found while draining the `wall-side-correct` WEAK queue, where it is **not** the
@@ -65,6 +65,19 @@ The **base-ring** question for these files was answered separately and is closed
 the cluster's `ℝ` is load-bearing by meaning (a `nrm : ℝ → ℝ` is a norm; the rest
 are masses and a holonomy), and §7c acknowledgements were added to the referring
 blocks. That verdict is independent of this one.
+
+
+## 2026-10-10 — reparented to the mass-endomorphism epic
+
+This bean is carrier M2 of epic `qou-d8c7` (issue litlfred/qou#7547). Parent moved from `qou-wp3h` to `qou-d8c7`; nothing in the body above was changed by the move.
+
+
+## 2026-10-10 — residues added by the epic survey (carrier M2 of `qou-d8c7`)
+
+Absorbs `qou-m5fy` (scrapped today with a pointer here), and links `qou-0w3s`, `qou-wuxx`, `qou-ki4u`, and the `qou-lf1m` / `qou-hjf4` items. Two residues no bean owned, checked on `main` 2026-10-10:
+
+- `instance trivialVortex` at `topological-mass-conjecture.lean:180` is a live global instance, so any `[...]`-conditional statement over that class is discharged trivially wherever it is in scope.
+- `tm_transient_localisation.lean` carries its inputs as class fields that a zero instance satisfies, so the localisation statement says nothing as written.
 
 
 ## 2026-10-10 closed (session_01ST9RpvTF7JHNdUNafrjf9J)

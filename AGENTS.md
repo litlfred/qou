@@ -3253,8 +3253,11 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **forty-six** rows (re-counted 2026-09-14; 46 landed the same
->   day in `81a8ac98b9`, after this line last said forty-five), and the groups
+>   catalogues **forty-nine** rows (re-counted 2026-09-29; 46 landed 2026-09-14
+>   in `81a8ac98b9` after this line last said forty-five, then 47 and 48 landed,
+>   and 49 is PR #7401's — which arrived numbered 46 and had to be renumbered on
+>   merge, so **re-count before citing any number here, including this one**),
+>   and the groups
 >   below split the FIRST THIRTY-FOUR seven ways — only the first group is
 >   about conventions at all. **Rows 35-46 are NOT in this list**: 35 (the
 >   identifier's alphabet), 36 (the direction of the cast), 37 (the numerator

@@ -1,14 +1,14 @@
 ---
 # qou-2cof
 title: markov-trace proof block was convention C at the muon pin while its statement was D at proton — 15% disagreement
-status: completed
+status: todo
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T04:46:54Z
-updated_at: 2026-10-10T06:49:37Z
-parent: qou-cdx1
+updated_at: 2026-10-10T07:00:32Z
+parent: qou-d8c7
 ---
 
 ## What it is
@@ -77,6 +77,11 @@ remaining C surface be treated as **unmeasured**, and this is one more
 data point for that, not a measurement of it. A targeted sweep would be:
 for each migrated statement block, check whether its proof sibling's
 numbers still evaluate under C.
+
+
+## 2026-10-10 — reparented to the mass-endomorphism epic
+
+This bean is carrier M6 of epic `qou-d8c7` (issue litlfred/qou#7547). Parent moved from `qou-cdx1` to `qou-d8c7`; nothing in the body above was changed by the move.
 
 
 ## 2026-10-10 closed (session_01ST9RpvTF7JHNdUNafrjf9J)

@@ -1,6 +1,6 @@
 ---
 # qou-jgp2
-title: 'hecke_baer_star_generic: discharged by an external AXIOM (hecke_baer_star_generic_sketch_axiom), not proved; module unimported'
+title: 'De-axiomatise hecke_baer_star_generic: claim rests on two axioms in the sibling .lean'
 status: todo
 type: task
 priority: normal
@@ -12,8 +12,8 @@ tags:
     - cite-kassel1995
     - reorg-2026-10-04
 created_at: 2026-08-01T23:31:02Z
-updated_at: 2026-10-10T06:49:34Z
-parent: qou-thkm
+updated_at: 2026-10-10T07:01:01Z
+parent: qou-d8c7
 ---
 
 **File:** `QOU/BraidKnot/HeckeBaerStarGeneric/hecke_baer_star_generic.lean` (QOU)  ·  1 cited sorry(s)
@@ -26,6 +26,18 @@ parent: qou-thkm
   - [kassel1995] Kassel (1995), *Quantum Groups* — https://doi.org/10.1007/978-1-4612-0783-2
 - **Tractability:** Right-annihilator generators are self-adjoint idempotents in a Hecke Baer* algebra; needs repo Hecke Baer*-algebra infra.
 - **Next step:** Blocked on in-repo scaffolding (not Mathlib). Complete/route the named repo infra, then discharge; do NOT weaken the statement.
+
+
+## 2026-10-10 — reparented to the mass-endomorphism epic
+
+This bean is carrier M3 of epic `qou-d8c7` (issue litlfred/qou#7547). Parent moved from `qou-an4u` to `qou-d8c7`; nothing in the body above was changed by the move.
+
+
+## 2026-10-10 — status update (title changed; survey for epic `qou-d8c7`, issue #7547)
+
+Former title began 'PROVE(lean): hecke_baer_star_generic — theorem hecke_baer_star_generic ...'.
+
+Checked on `main` 2026-10-10: the library file `QOU/BraidKnot/HeckeBaerStarGeneric/hecke_baer_star_generic.lean` is 33 lines with no theorem. The chapter sibling `mass-endomorphism/hecke-baer-star-generic.lean` carries the claim and rests on two axioms: `matrix_algebra_baer_right_axiom` (line 60) and `hecke_baer_star_generic_sketch_axiom` (line 144). The open work is replacing those axioms with proofs (Wedderburn decomposition into matrix algebras, then the Baer-* property of each matrix block). Axioms are not a proof (anti-laundering rule), so this stays open.
 
 
 

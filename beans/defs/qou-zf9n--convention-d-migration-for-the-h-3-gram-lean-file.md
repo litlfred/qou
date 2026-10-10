@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T19:27:04Z
-updated_at: 2026-10-10T07:44:03Z
-parent: qou-slz5
+updated_at: 2026-10-10T07:01:37Z
+parent: qou-cdx1
 ---
 
 Found while dispositioning `qou-bm4i` block 5/12 (`prop:gram-matrix-h3-symbolic`).
@@ -486,6 +486,11 @@ the precision discipline forbids. It bounds the precision of everything above.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-24 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — pointer
+
+Tracked under carrier M6 (qou-2cof) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
 
 
 

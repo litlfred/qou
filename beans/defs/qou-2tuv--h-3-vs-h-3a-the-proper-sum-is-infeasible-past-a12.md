@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-10-10T07:09:01Z
-parent: qou-6lx4
+updated_at: 2026-10-10T07:01:38Z
+parent: qou-v2om
 ---
 
 ## What the audit recommends, and why its Path A is not available
@@ -1666,6 +1666,11 @@ the measurement only.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-15 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — pointer
+
+Tracked under carrier M7 (qou-g16t) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
 
 
 

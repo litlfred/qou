@@ -13,9 +13,9 @@ export default proposition({
     "prop:wenzl-bridge-applicability-qou",
   ],
   cites: [
+    "halverson_ram_1998",
     "wenzl1988",
     "hoefsmit1974",
-    "orellana1998",
   ],
   tags: [
     "hecke",
