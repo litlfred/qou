@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T09:11:25Z
-updated_at: 2026-10-04T15:19:02Z
+updated_at: 2026-10-10T07:25:44Z
 parent: qou-v2om
 ---
 
@@ -444,3 +444,7 @@ that four of its thirteen blind spellings were found BY detectors written to
 catch the previous blind spot. This is a fifth, and it was caught only because I
 re-verified a negative by a different method before merging -- the negative is
 the result nobody re-checks.
+
+## 2026-10-10 — second consumer hits the same wall
+
+`computations/brane_tower_isospin_diagnosis.py`, ported in issue litlfred/qou#7552 to `per_generator_V_hat_3A` with `QOU_H3A_MPF=1`, computes proton through helium-3 at mpf and fails at helium-4: `syt_prefix_cache` hands an object-dtype matrix to `scipy.sparse` (ValueError, mass_at_3A_proper.py:431 -> syt_prefix_cache.py:199). The witness records helium-4 as not computed rather than falling back to float64. Carrier for the port: `qou-g16t`.

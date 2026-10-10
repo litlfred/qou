@@ -1,13 +1,13 @@
 ---
 # qou-82w7
 title: 'GAP: c3 carrier S=c3+Vol(4_1) — z(q0) argument map is transcendental, not combinatorial'
-status: todo
+status: scrapped
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T01:23:31Z
-updated_at: 2026-10-04T15:19:48Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -148,3 +148,13 @@ is evidence for the other; they are independent instances of one shape.
 
 **Ownership**: `qou-qiw9` (sibling, todo, 08-19) now owns the bridge question
 and overlaps this bean directly. Coordinate before any bridge-side probe here.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: SUPERSEDED.** Superseded. The bridge question was answered negatively in qou-qiw9, the front state is in qou-dvlt, and every target number here (S, ratio -4.08, q*_S) is convention-C and conditional on a sign flip the data do not establish. qou-zol3 is an empty duplicate of the same gap.
+
+Evidence: Its own 2026-08-19 section hands the bridge question to `qou-qiw9`, which is **completed** ("LOCALISED, and negative-shaped": two anchors cannot constrain a form). Its targets (S(muon)=+0.00968, S(p)=-0.03946, ratio -4.08, `q*_S`) are convention-C (cds1 §9g table; `qou-iax1`: under D, q* leaves the anchor interval). The sign flip is "not established" (±1.262 band). The structural pieces it cites exist and are sorry-free by grep: `NewtonRealityInvariance.lean`, `EkParitySplit.lean`. `qbeta_c3_barodd_tetraplectic_reduction_probe.py` re-run exits 0 and reproduces S(m), S(p) and the ratio -4.0751. `qou-zol3` (empty, todo) restates the same z(q0) gap.
+
+Status: `todo` → `scrapped`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

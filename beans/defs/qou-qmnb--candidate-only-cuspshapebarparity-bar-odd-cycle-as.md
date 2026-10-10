@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T17:10:14Z
-updated_at: 2026-10-04T15:16:51Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -81,3 +81,13 @@ reading that lands on u = 0 is excluded immediately by the measured S != 0.
 
 Any pursuit must yield theta ABSOLUTELY, per knot. A ratio is unfalsifiable and
 does not close this bean.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: EVIDENCE-UNRELIABLE.** AV1 cannot be applied: the measured sign flip it presupposes is unresolved (sign_flip_resolved=False). AV2 (is the (+,−) signature match generic?) needs no data and can still close the candidate.
+
+Evidence: AV1, its only decisive test, uses `signflip_forces_diagonal_cross` (FigureEight:204, sorry-free), whose antecedent (the anchor sign flip) is unresolved per the witness. AV2, whether the signature match is generic, is data-free and undone. CuspShapeBarParity.lean has 0 real sorries.
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

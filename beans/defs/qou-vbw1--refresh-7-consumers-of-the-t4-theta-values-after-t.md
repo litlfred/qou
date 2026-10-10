@@ -1,13 +1,13 @@
 ---
 # qou-vbw1
 title: Refresh 7 consumers of the T4 theta values after the q0 unit-conflation fix
-status: todo
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-07T22:02:31Z
-updated_at: 2026-10-04T15:15:04Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -98,3 +98,13 @@ STILL OPEN — four files, other agents' work, deliberately untouched:
     computations/probes/qbeta_3bp8_w2_direct_sheet_probe.py
     computations/probes/qbeta_3bp8_annihilator_continuation_probe.py
     computations/probes/qbeta_awpk_perwinding_stokes_41_probe.py
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: DONE.** Done: all consumers refreshed and the last one verified via qou-p2ka. Hygiene only: the ϑ values themselves remain evidence-unreliable (see qou-4kgh).
+
+Evidence: Commits 23b2a60cfe, 653f8d644e, 0b487dd722, ec09f40013 (last consumer), and 833e328165 (registry reads). All 9 named files now read `Q_50_DIGIT_STR` or `theta_t4()` from `computations/qbeta_t4_anchors.py`, or carry corrected 17-digit values, and the remaining `1.11020` hits are comments only. qou-p2ka (completed) verified the A2 re-run: residual 1.6719e-10 vs 1.6704e-10, verdict unchanged. `theta_t4` reproduces 0.0585920168400597 / 0.203132507018276.
+
+Status: `todo` → `completed`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

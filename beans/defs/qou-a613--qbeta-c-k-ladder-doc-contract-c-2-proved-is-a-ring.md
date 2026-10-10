@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T16:47:05Z
-updated_at: 2026-10-04T15:22:58Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -163,3 +163,13 @@ decision is the owner's, and claiming would block a sibling for nothing.
 
 `qou-cds1` is ACTIVE with a sibling — not claimed here. F2 bears on it only as
 already-recorded context, not as new input.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: OPEN.** The doc-contract defect (F3b) is still live at sidecar lines 52-62. Repointing it is an owner call. It now also needs to say the only c_k artifact is the C-frame `qbeta-ck-cache.witness.json` (markov_convention: C).
+
+Evidence: F3b is still present. `folio/.../appendix-mass-binding-algorithms/mba-sidecar-ck-truncation-ladder.md:52-62` still names `computations/q_beta_predicted.py` as canonical c_k compute and says the witness "must record each c_k alongside its tier". `computations/q-beta-predicted.witness.json` has 0 c_k/tier keys, and `q_beta_predicted.py` has no c_k logic. The real producer `qbeta/qbeta_ck_cache.py` is unnamed. F1/F2 superseded and F3a retracted, as the bean says.
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

@@ -8,7 +8,7 @@ tags:
     - alien-habiro
     - reorg-2026-10-04
 created_at: 2026-07-18T17:08:37Z
-updated_at: 2026-10-04T15:10:53Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -43,3 +43,13 @@ Status left `in-progress` (not `done`): the QOU-actionable content is exhausted,
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-11 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: OPEN.** Open: an internal derivation of 3 is literature-open. Correct item 2: eq (98) is the 5₂ matrix, so "a 4 co-occurs for 4₁" is false. H1 is refuted only conditionally, via 9f527376. The adopted block must not say GGM proved Conj 3.
+
+Evidence: Lean: `MathlibExt/DoublyPeriodicLiouville.lean` and `QBeta/FaddeevPhiFullUniqueness.lean` contain no `sorry`/`axiom` tokens. They are not compiled here because Mathlib oleans are absent. `StokesQZeroDTCount.lean` uses `decide` on 2×2 data. Item 2 ("H1 refuted, 4₁ spectrum {3,4} eq 98") rests on the misattribution. Item 3's adopted block overclaims Conj 3 (finding 3).
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

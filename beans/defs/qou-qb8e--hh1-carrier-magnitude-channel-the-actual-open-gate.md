@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T10:15:00Z
-updated_at: 2026-10-04T15:14:55Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -506,3 +506,13 @@ bean's gate:
 
 ## 2026-08-29 — workflow (both lenses survive): OPEN, blocked upstream on cds1; convention-agnostic braid-exclusion handle
 |c3| gate untouched; -974 is a z-swap artifact not a D target (blocked on cds1). CONVENTION-AGNOSTIC scope-(b) prune: the magnitude carrier CANNOT be a braid-word image -- alpha is unbounded/non-constant in BOTH frames (alpha_C->-inf, alpha_D->+inf), so any polynomial relation forces all coeffs zero (BraidImageEigenphase{Exclusion,Algebraic}.lean, sorry-free, char + eigenvalue-pair; the proof never reads z). This is the |c3| analog of the avt1 affine-transport convention-agnostic handle. Sole surviving carrier = branch (3) KZ/Kohno-Drinfeld holonomy on V_(2,1), hbar=2ln q -- but red-team flags qou-pdix precision obstruction (0.579% NF ambiguity > 0.160% target effect, 3.6x). Also: D residual N2/N1~0.89 = NO rung convergence, so c3 may not be a convergent-ladder coeff under D. Audit 2026-08-29-convention-d-qbeta-front.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: BLOCKED.** Blocked on qou-cds1. Even if it unblocks, the zero-location gate is about 26× short of experimental resolution (C-frame). The prohibitions (no Borel/Stokes on the D-ladder, no q0 Habiro assembly, no magnitude matching) are backed by sorry-free Lean and stand.
+
+Evidence: Blocked on `qou-cds1` (in-progress): the gate target q*_S is C-frame, and there is no S-zero between the anchors under D (`qou-iax1`). `qbeta_habiro_evaluation_dichotomy_and_test_power.py` re-run exits 0, 7/7 (σ(q*_S)=3.29e-7, ratio 25.679). Lean, all sorry-free by grep: `HabiroEvaluationTrichotomy`, `Fig8CyclotomicBarInvariance`, `BraidImageEigenphaseExclusion`/`Algebraic`. The D-ladder convergence (ρ=0.14280) is recorded in `docs/audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md`. That was not re-run here.
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

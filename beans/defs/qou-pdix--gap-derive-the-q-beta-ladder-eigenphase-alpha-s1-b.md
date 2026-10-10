@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-22T15:35:20Z
-updated_at: 2026-10-04T15:12:51Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -3364,3 +3364,20 @@ finitely many monic integer polynomials of that degree and height ⟹ pigeonhole
 on powers ⟹ finite order. Days, not hours, for a generalisation nothing
 consumes. **Recommendation (my judgement, not a finding): leave it open and
 say why, which assertion 8 now does.**
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: OPEN.** Open on its own terms, but it is not the S1 blocker. On the ruled base no α makes the ladder reach CODATA. Its "S1 blocker" title and the ckwt/v6wz/iagg chains that cite it should be rescoped. No activity since 2026-09-14, so todo rather than in-progress.
+
+Evidence: α is still underived; all four named attacks are closed or withdrawn (bean, 2026-09-14). It is off the Q_β critical path because of `EigenphaseQuantization.cos_rung_lt_of_base_short_ladder` and `LadderFactorBound`/`LadderUniformBound` (verified merged audit `docs/audits/2026-09-13-formb-probe-adjudication-and-cds1-state.md` §5.1). `EigenphaseCarrierVacuity.lean`: the carrier is vacuous. Last activity 2026-09-14.
+
+Status: `in-progress` → `in-progress` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+
+## 2026-10-10 — a witness this bean cites is red (cross-cluster check, verification sweep of `qou-avtq`)
+
+`qbeta_habiro_wenzl_tower_zeta_n.py` is listed as an "asset on main" for route A, but its witness (`qbeta-habiro-wenzl-tower-zeta-n.witness.json`, 2026-06-02, no q0Anchor) fails `level_4_tower_holds_at_M_11` (0 vs 1) and predates the C→D move. Do not cite it as a working asset.
+
+See also `qou-cds1`'s 2026-10-10 entries: on the ruled base no phase α unblocks the ladder, so this bean is not on the critical path for `qou-cds1` (cluster 3 found the chain `iagg ← cds1 ← pdix` broken). This bean stays open on its own terms.
