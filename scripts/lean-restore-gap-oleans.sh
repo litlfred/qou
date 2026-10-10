@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
-# Restore the 91 Mathlib oleans that lake-cache/qou-<slug> is missing.
+# Restore the 93 Mathlib oleans that lake-cache/qou-<slug> is missing.
+#
+# 91 -> 93 on 2026-10-10 (branch commit 2004227c918).  With the Conv cone in
+# place, AntipodeDetermined then stopped on Mathlib.CategoryTheory.Monoidal.Hopf_
+# (cone of two: Monoidal.Bimon_, Monoidal.Hopf_); both built lean-direct, exit
+# 0, and AntipodeDetermined is then verified ok.  The 91 are byte-identical.
 #
 # 86 -> 91 on 2026-10-10 (branch commits bc84c9f0e8d, 9ebccc6dd64).  A full
 # 2952-module QOU library sweep found two more modules the cache could not
