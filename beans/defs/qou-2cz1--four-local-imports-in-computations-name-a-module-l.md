@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-10-10T07:57:44Z
-updated_at: 2026-10-10T12:10:14Z
+updated_at: 2026-10-10T12:24:18Z
 parent: qou-5vkl
 ---
 
@@ -386,3 +386,95 @@ local only, nothing force-pushed; `git branch --contains a49b625c39` confirms
 reachability. Their uncommitted work (`scripts/precision-gates.sh`, six
 regenerated audit witnesses, `docstring_label_carrier_audit.py`) was left
 untouched and is not in my commit.
+
+
+---
+
+## 2026-10-10 (same session, addendum) — this bean's thesis is demonstrated BETTER by site 1 than by `snappy_cusp_seeding`, and sites 2+3 were never invisible
+
+Two measurements that change what this bean should claim. Both are about
+**which detector fires**, which is the bean's reusable half.
+
+### Site 1 is the airtight case: THREE detectors report healthy, and the witness says `allPassed: True`
+
+`computations/atom-braid-active-partitions.witness.json` records
+`allPassed: True` with its one assertion
+`all_atoms_satisfy_exterior_algebra_bound` **PASS**, `computedAt`
+2026-08-23 — from a producer that **cannot complete**, and could not on that
+date either.
+
+| detector | what it reports for site 1 | why |
+|---|---|---|
+| scriptHash staleness | **IN SYNC** — witness `d7f7f6dbb7ba`, pre-fix producer `d7f7f6dbb7ba` | the consumer's own bytes never changed |
+| `producer_importability_audit` | **does not mention the file at all** | the broken import is in a function body, so the module imports fine |
+| `witness-producer-executes-audit` | **`static: "OK"`, `smoke: "NOT_RUN"`** (row 148) | the static check only imports; nothing ever executed it |
+
+So this bean's headline — *"scriptHash reports them IN SYNC"* — is true, and
+site 1 is the sharper exhibit than `snappy_cusp_seeding`: it is in sync against
+**three** independent detectors simultaneously, one of which exists
+specifically to run producers and declined to.
+
+**My fix moves the scriptHash `d7f7f6dbb7ba` → `91b62268ccc0`, i.e. it converts
+a FALSE in-sync into an HONEST out-of-sync.** That is the intended direction and
+should not be read as the fix introducing staleness — the staleness was already
+there, merely unreportable.
+
+### Sites 2+3 were NOT invisible — a detector has been reporting them for six weeks
+
+`computations/audits/producer-importability-audit.witness.json` (`computedAt`
+2026-08-30) carries, at `/data/findings/other[2]/error`:
+
+> `ImportError: cannot import name 'tet_norm' from 'qbeta_g3_fourone_index_assembly'`
+
+So for the two import-TIME sites the problem is **not** that nothing fired; it
+is that the finding sat in a committed witness for six weeks with nobody acting
+on it. Worth separating in this bean, because the two halves have different
+remedies: site 1 needed a detector that did not exist (the AST audit), sites 2+3
+needed someone to read one that did.
+
+That also means the new AST audit's unique value is precisely the
+**function-body** import — the one class no runtime detector can reach, because
+the module imports clean and the failure waits for a branch.
+
+### Mandatory preflight — `scripts/precision-gates.sh --changed`
+
+**Verdict: exit 1, and NOTHING attributable to this change.** 10 relevant files
+in scope (`working tree + 2 commits since origin/main`), so the gate ran rather
+than skipping.
+
+**It first could not be evaluated at all** — `PREFLIGHT FAILED … missing:
+qou_substrate`, exit **2**, whose own text says *"This is NOT a gate failure.
+Nothing was examined."* The package is not pip-installed in this container; it
+is importable via `PYTHONPATH=tools/qou-substrate/python` (and confirms the live
+`COMPUTE_DPS=70 / OUTPUT_DPS=60 / GUARD=10`). Re-run with that set, it
+evaluated. **Worth knowing: a bare `bash scripts/precision-gates.sh` in a fresh
+container reports exit 2 having measured nothing**, which an agent in a hurry
+could read as a pass.
+
+RED (9), all pre-existing corpus-wide ratchets: `q0-anchor flip`,
+`q0-anchor refill ratchet`, `import-time dps ratchet`,
+`never-raises-dps ratchet`, `float64-padding ratchet`,
+`reference-literal ratchet`, `witness-value copy ratchet`,
+`q0-value drift ratchet`, `mixed mpf/f64 -> serializer`.
+
+**`atom_braid_active_partitions.py` is named exactly ONCE in the whole gate
+output, and it is pre-existing:**
+`computations/atom_braid_active_partitions.py:144 <- q_parameter.Q`, in the
+**advisory** (non-gating) `F64_CAST` tier of `f64-into-mpmath` — 1 of **183
+sites across 103 files**. That is the line `q = float(Q)`, which sits at line
+**135** on `origin/main` and at **144** post-fix: a pure **+9 line shift** from
+my 9-line comment block, same line, same site. The gate's own note says not to
+drain it (*"`Q` is ALREADY a float … Do NOT drain it by deleting casts — that is
+metric-gaming"*). No RED gate names the file.
+
+`local import resolution (advisory)` reports **UNRESOLVED: 2** and sits in
+ADVISORY, not gating, with `--selftest` PASS. (In a concurrent full run earlier
+in this container it appeared under RED annotated `(self-test)` — that was the
+sibling mid-edit on the audit script, not a real regression.)
+
+Side effects handled: the run regenerated **6** audit witnesses, all of which
+were already dirty from a concurrent run. Reverted by explicit name.
+**NOT `git checkout -- computations/`** — that would have destroyed the
+sibling's uncommitted edit to `local_import_resolution_audit.py`, which is the
+exact hazard `witness_dependency_residue_run.py`'s own `restore()` docstring
+records having caused once.
