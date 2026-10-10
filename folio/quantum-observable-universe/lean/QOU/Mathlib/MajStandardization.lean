@@ -39,7 +39,8 @@ Orientation: the *reverse* convention makes the weight shift exactly `maj S = Σ
 
 The second half — `Σ_{T ∈ RSSYT(λ)} q^{|T|} = q^{n(λ)} / ∏_x (1 − q^{h(x)})` — and the `maj` formula
 itself are proved in `QOU.Mathlib.MajFormula` (`fmaj_mul_hook`). `SYTe` is an ordering-based
-presentation of standard tableaux; it is not yet bridged to `QOU.Mathlib.StandardYoungTableau`.
+presentation of standard tableaux, equivalent to `QOU.Mathlib.StandardYoungTableau` by
+`QOU.Mathlib.MajSYTBridge.sytEquiv`.
 
 Pure finite combinatorics on `ℕ`; nothing archimedean.
 -/
