@@ -56,11 +56,15 @@ one of these signatures.
 from __future__ import annotations
 
 import argparse
+import fnmatch
 import glob
 import json
 import os
 import re
 import sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib"))
+import block_qa  # noqa: E402  -- where block QA lives after the split (#7642)
 from collections import Counter
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -115,7 +119,11 @@ def main() -> int:
                     help="exit 1 if any live verdict rests on a flagged signature")
     ap.add_argument("--json", dest="json_out",
                     help="write the full finding list to this path")
-    ap.add_argument("--glob", default="content/**/*.qa.json")
+    ap.add_argument("--glob", default="folio/**/*.qa.json",
+                    help="block selector, matched against the legacy sibling path; "
+                         "the report is read where block_qa reads it (#7642). The "
+                         "old default, content/**, matched nothing after the "
+                         "content/ -> folio/ rename.")
     args = ap.parse_args()
 
     findings: list[dict] = []
@@ -126,10 +134,14 @@ def main() -> int:
     unresolvable = 0
 
     pattern = os.path.join(REPO, args.glob)
-    for qa_path in sorted(glob.glob(pattern, recursive=True)):
+    block_qa.warn_if_unfetched("qa-evidence-provenance-gate")
+    for _broot, _src in block_qa.iter_reports("folio"):
+        qa_path = str(block_qa.legacy_path(_broot))
+        if not fnmatch.fnmatch(qa_path, pattern):
+            continue
         rel = os.path.relpath(qa_path, REPO)
         try:
-            with open(qa_path) as fh:
+            with open(_src) as fh:
                 sidecar = json.load(fh)
         except (OSError, json.JSONDecodeError):
             continue

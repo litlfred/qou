@@ -58,6 +58,7 @@ from __future__ import annotations
 
 import argparse
 import datetime
+import fnmatch
 import glob
 import hashlib
 import json
@@ -65,6 +66,9 @@ import os
 import re
 import subprocess
 import sys
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib"))
+import block_qa  # noqa: E402  -- where block QA lives after the split (#7642)
 from collections import Counter
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -104,7 +108,7 @@ def file_hash(path: str) -> str | None:
 
 
 def field_hash(qa_path: str) -> dict:
-    base = qa_path[: -len(".qa.json")]
+    base = str(block_qa.block_root_of(qa_path))
     out = {}
     for ext in ("md", "ts", "lean"):
         h = file_hash(f"{base}.{ext}")
@@ -145,7 +149,9 @@ def main() -> int:
     ap.add_argument("--apply", action="store_true",
                     help="write the corrections (default: dry run)")
     ap.add_argument("--glob",
-                    default="folio/quantum-observable-universe/*/*.qa.json")
+                    default="folio/quantum-observable-universe/*/*.qa.json",
+                    help="block selector, matched against the legacy sibling path; "
+                         "the report itself is read where block_qa reads it (#7642)")
     args = ap.parse_args()
 
     results = load_results(args.results)
@@ -162,8 +168,13 @@ def main() -> int:
     genuine_blocks: list[str] = []
     skipped_inconclusive: list[str] = []
 
-    for qa_path in sorted(glob.glob(os.path.join(REPO, args.glob))):
-        rel = os.path.relpath(qa_path, REPO)
+    block_qa.warn_if_unfetched("reaudit-da-compile-claims")
+    for _broot, qa_path in block_qa.iter_reports("folio"):
+        qa_path = str(qa_path)
+        legacy = str(block_qa.legacy_path(_broot))
+        if not fnmatch.fnmatch(legacy, os.path.join(REPO, args.glob)):
+            continue
+        rel = os.path.relpath(legacy, REPO)
         with open(qa_path) as fh:
             sidecar = json.load(fh)
 
@@ -233,9 +244,7 @@ def main() -> int:
                 })
 
         if args.apply:
-            with open(qa_path, "w") as fh:
-                json.dump(sidecar, fh, indent=2)
-                fh.write("\n")
+            block_qa.save(qa_path, sidecar, "attesting")
 
     mode = "APPLIED" if args.apply else "DRY RUN (no writes; pass --apply)"
     print(f"=== reaudit-da-compile-claims -- {mode}\n")

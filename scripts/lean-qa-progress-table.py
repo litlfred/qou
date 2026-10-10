@@ -16,6 +16,9 @@ is whatever the last CI build verified (this script does not run lake).
 import hashlib, json, re, sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent / "lib"))
+import block_qa  # noqa: E402  -- where block QA lives after the split (#7642)
+
 REPO = Path(__file__).resolve().parent.parent
 ROOT = REPO / "folio/quantum-observable-universe"
 LEAN_ROOT = ROOT / "lean"
@@ -243,7 +246,10 @@ def collect():
                     if cls == "sorry":
                         sorries.append((ch, ts.stem, kind,
                                         lp.relative_to(REPO), sorry_refs(lp)))
-        for qa in sorted(d.glob("*.qa.json")):
+        # Issue #7642: the results tree first, then the legacy sibling.
+        for broot, qa in block_qa.iter_reports(d):
+            if broot.parent != d:
+                continue
             try:
                 data = json.loads(qa.read_text())
             except Exception:
@@ -260,10 +266,10 @@ def collect():
             s["da_fail"] += sum(1 for c in failing if c.startswith("da-"))
             if failing:
                 s["qa_fail_blocks"] += 1
-                fails_here.append((data.get("label") or qa.stem, sorted(failing)))
+                fails_here.append((data.get("label") or broot.name, sorted(failing)))
             sh = data.get("source_hashes") or {}
             for ext in ("md", "ts"):
-                f = qa.with_name(qa.name.replace(".qa.json", "." + ext))
+                f = Path(f"{broot}.{ext}")
                 if sh.get(ext) and f.exists() and h12(f) != sh[ext]:
                     s["qa_stale"] += 1
                     break
@@ -274,7 +280,7 @@ def collect():
 
 def fail_by_criterion():
     out = {}
-    for qa in ROOT.rglob("*.qa.json"):
+    for _broot, qa in block_qa.iter_reports(ROOT):
         try:
             data = json.loads(qa.read_text())
         except Exception:
@@ -294,6 +300,7 @@ def totals(rows):
 
 
 def main():
+    block_qa.warn_if_unfetched("lean-qa-progress-table")
     rows, drill, sorries = collect()
     T = totals(rows)
     crit = fail_by_criterion()

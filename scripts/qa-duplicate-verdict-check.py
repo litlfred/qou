@@ -47,6 +47,9 @@ from pathlib import Path
 
 CONTENT = Path("folio")
 
+sys.path.insert(0, str(Path(__file__).resolve().parent / "lib"))
+import block_qa  # noqa: E402  -- where block QA lives after the split (#7642)
+
 
 def slots(path: Path):
     """Yield (criterion, reviewer_id, entries) for every agent group in one sidecar."""
@@ -88,7 +91,7 @@ def main(argv):
     paths = (
         [Path(t) for t in targets]
         if targets
-        else sorted(CONTENT.glob("**/*.qa.json"))
+        else [q.relative_to(block_qa.REPO) for _r, q in block_qa.iter_reports(CONTENT)]  # results tree first (#7642)
     )
 
     contradictions, redundant, undetermined, reaudits = [], [], [], []

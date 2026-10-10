@@ -39,6 +39,9 @@ import collections
 import os
 import sys
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib"))
+import block_qa  # noqa: E402  -- where block QA lives after the split (#7642)
+
 ROOT = os.environ.get("QOU_ROOT") or os.getcwd()
 MIN_FRAG = 25
 SPLIT_ELLIPSIS = re.compile(r"\.\.\.|…")
@@ -91,9 +94,14 @@ def main() -> int:
     counts = collections.Counter()
     by_crit = collections.defaultdict(collections.Counter)
     rows = []
-    for f in sorted(glob.glob(os.path.join(ROOT, "content/**/*.qa.json"), recursive=True)):
+    # Issue #7642: read where the platform reads (results tree, then the legacy
+    # sibling). The old glob was content/**, which matched nothing after the
+    # content/ -> folio/ rename, so this audit had been reporting zero.
+    block_qa.warn_if_unfetched("qa-stale-agent-evidence")
+    for _broot, _src in block_qa.iter_reports("folio"):
+        f = str(block_qa.legacy_path(_broot))
         try:
-            d = json.load(open(f, encoding="utf-8"))
+            d = json.load(open(_src, encoding="utf-8"))
         except Exception:
             continue
         entries = []

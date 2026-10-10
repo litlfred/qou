@@ -33,6 +33,9 @@ Without --apply it is a dry run (prints the plan, writes nothing).
 from __future__ import annotations
 import argparse, datetime, glob, hashlib, json, os, re, subprocess, sys
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "lib"))
+import block_qa  # noqa: E402  -- where block QA lives after the split (#7642)
+
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LEAN_ROOT = "folio/quantum-observable-universe/lean/QOU"
 
@@ -145,9 +148,16 @@ def main() -> int:
     genuine: dict[str, list[str]] = {c: [] for c in CRITERIA}
     touched = 0
 
-    for qa in sorted(glob.glob("content/**/*.qa.json", recursive=True)):
+    # Issue #7642: read where the platform reads (results tree, then the legacy
+    # sibling), and save through the attestation store. `qa` keeps naming the
+    # block by its legacy sibling path, which is what resolve_lean and
+    # current_field_hash derive from. The old glob, content/**, matched nothing
+    # after the content/ -> folio/ rename.
+    block_qa.warn_if_unfetched("reaudit-proof-deterministic")
+    for _broot, _src in block_qa.iter_reports("folio"):
+        qa = os.path.relpath(block_qa.legacy_path(_broot), block_qa.REPO)
         try:
-            with open(qa, encoding="utf-8") as f:
+            with open(_src, encoding="utf-8") as f:
                 d = json.load(f)
             if isinstance(d, list):  # tolerate list-wrapped sidecars
                 d = d[0] if d else {}
@@ -206,9 +216,7 @@ def main() -> int:
         if changed:
             touched += 1
             if args.apply:
-                with open(qa, "w", encoding="utf-8") as f:
-                    json.dump(d, f, indent=2, ensure_ascii=False)
-                    f.write("\n")
+                block_qa.save(_broot, d, "attesting")
 
     print("=== deterministic proof re-audit (%s) ===" % ("APPLY" if args.apply else "DRY RUN"))
     for c, s in stats.items():

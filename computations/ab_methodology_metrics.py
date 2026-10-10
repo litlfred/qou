@@ -134,9 +134,16 @@ M5_STUBS = tuple(c for c in M5_CRITS if c in STUB_CRITERIA)
 
 def iter_first_verdicts():
     """Yield (block, criterion, first_entry, n_entries_until_pass)."""
-    for f in sorted((REPO / "folio").rglob("*.qa.json")):
+    # Issue #7642: reports are read where the platform reads them (the results
+    # tree first, then the legacy sibling); `f` keeps naming the block by its
+    # legacy sibling path so the output's block keys do not change.
+    sys.path.insert(0, str(REPO / "scripts" / "lib"))
+    import block_qa
+    block_qa.warn_if_unfetched("ab_methodology_metrics")
+    for broot, src in block_qa.iter_reports(REPO / "folio"):
+        f = block_qa.legacy_path(broot)
         try:
-            doc = json.loads(f.read_text())
+            doc = json.loads(src.read_text())
         except (OSError, json.JSONDecodeError):
             continue
         crits = doc.get("criteria")
