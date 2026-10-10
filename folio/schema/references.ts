@@ -962,6 +962,21 @@ export const references: Reference[] = [
     URL: "https://www.wiley.com/en-us/Theory+of+Linear+and+Integer+Programming-p-9780471982326",
   }),
 
+  // ── Murota 2003 ───────────────────────────────────────────────
+  ref({
+    id: "murota2003",
+    type: "book",
+    title: "Discrete Convex Analysis",
+    author: [
+      { family: "Murota", given: "Kazuo" },
+    ],
+    publisher: "Society for Industrial and Applied Mathematics",
+    "publisher-place": "Philadelphia",
+    issued: { "date-parts": [[2003]] },
+    "collection-title": "SIAM Monographs on Discrete Mathematics and Applications",
+    DOI: "10.1137/1.9780898718508",
+  }),
+
   // ── Macdonald 1995 ────────────────────────────────────────────
   ref({
     id: "macdonald1995",
