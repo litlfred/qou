@@ -1,11 +1,11 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-05T09:22:17.731590+00:00",
+  "computedAt": "2026-10-10T10:32:58.810540+00:00",
   "computation": "qbeta-ck-qholonomic-recurrence-test",
   "scriptFile": "qbeta_ck_qholonomic_recurrence_test.py",
-  "scriptHash": "e77a417c74e6",
-  "commitSha": "598025307901a860e2940110b1661f4cd8af65bb",
+  "scriptHash": "a2dffc642fdd",
+  "commitSha": "96a6bcfd829772cfe48706ffbc88c8382af628ff",
   "audit_only": true,
   "tier": "structural test (known operator vs empirical data; no fit, no wiring)",
   "description": "PROBE 5 (2026-07-11 untested-avenues audit Sec. 3.E): drive the P-C15/KC15 q-holonomic survivor to a verdict. Tests whether the machine-verified 4_1 order-2 qZeilberger operator (aj_figure_eight_certificate.py; Garoufalidis-Le arXiv:math/0309214), instantiated as the c_k recursion kernel via the corpus I-A color<->rung dictionary with x = q0^k, annihilates the empirical rung sequence c_2..c_7 (sequential ladder extraction, both anchors), in homogeneous (D1) and inhomogeneous (D2) form. Kill criterion pre-stated. Hopf-link operator: ABSENT from corpus -> untested (no literature hunt per pre-statement). No parameter tuned; a clean negative sharpens P-C15 (scope-(a): raw instantiation excluded, operator survives as fibre object).",
@@ -295,7 +295,7 @@
     }
   ],
   "verdict": {
-    "overall": "NEGATIVE (scope-(a))",
+    "overall": "INCONCLUSIVE (input ladder failed Gate 1)",
     "min_rel_residual_per_anchor": {
       "proton": 1.0051191173383258,
       "muon": 1.0051191156228758
@@ -307,7 +307,7 @@
       "muon": "1507.3464764366037706662444667649976515092471857309"
     },
     "operator_c4_prediction_cross_anchor_swing_pct": 0.005095480280910323,
-    "summary": "The 4_1 order-2 qZeilberger operator, instantiated as the recursion kernel via the corpus I-A color<->rung dictionary (x = q0^k), does NOT annihilate the empirical rung sequence as-is: relative residuals are O(1) (100-280% of the largest term) at EVERY rung k=2..5, at BOTH anchors, for BOTH the homogeneous and the inhomogeneous variant \u2014 >40x the 2.4% c_3 cross-anchor uncertainty scale, and anchor-stable (so not a noise fluke of one anchor). Its inhomogeneous c_4 prediction (+7.4 to +7.5, anchor-stable to ~1%) has the WRONG SIGN vs every recorded empirical/candidate c_4 (raw -2.54/-8.31; fit -0.97; form -2b^4 = -1.13). Scope-limited (a): this excludes the RAW q^N -> q^k instantiation only \u2014 it sharpens P-C15 (the surviving kernel candidate needs a conjugation / basis change / twist, e.g. the I-B cyclotomic re-basing or the KC15 pair-difference channel), and it does NOT retest or disturb P-C15's bar-parity survivor status. CAVEAT (Y2): the AME extraction floor sigma(c_k)=sigma_R/u^k exceeds |c_k| for k>=4, so the kill is at the level of the recorded empirical sequence; a noise-floor-proof retest needs genuine canonical rungs (the H_4 Hoefsmit c_4^even build, bean 8we6 \u2014 exactly the gated next step P-C15 already named).",
+    "summary": "The empirical rung sequence under test failed its own Gate-1 checks (see [FAIL] lines above), so the residual tables above measure that sequence, not the 4_1 operator. Computed for the record: relative residuals 1.0051191 .. 1.0131757; inhomogeneous c_4 prediction 1507.3465 .. 1507.4233. No kill, no wiring.",
     "scope": "(a) scope-limited \u2014 raw q^N -> q^k instantiation only; not a structural exclusion of the 4_1 operator as fibre kernel (P-C15 bar-parity survivor status unchanged)"
   },
   "context": {
@@ -321,6 +321,6 @@
   },
   "durationMs": 0,
   "allPassed": false,
-  "scriptCommitSha": "afd363f4b81a718f76087553af0c348b7c092c2c",
+  "scriptCommitSha": "aa914b606a6de5e4f447e3746adaa687a9f608c6",
   "q0Anchor": "ambiguous"
 }
