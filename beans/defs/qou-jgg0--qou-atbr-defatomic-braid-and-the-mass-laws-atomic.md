@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T09:58:53Z
-updated_at: 2026-10-10T07:00:33Z
+updated_at: 2026-10-10T07:58:20Z
 parent: qou-d8c7
 ---
 
@@ -682,3 +682,9 @@ Was in-progress with no bean update since 2026-09-07 and no main commit naming i
 ## 2026-10-10 — reparented to the mass-endomorphism epic
 
 This bean is carrier M9 of epic `qou-d8c7` (issue litlfred/qou#7547). Parent moved from `qou-v2om` to `qou-d8c7`; nothing in the body above was changed by the move.
+
+
+
+## 2026-10-10 — 3A+Z cell resolved: owner choice B1
+
+`mass-endomorphism/atomic-mass-gb-nf.md` now states `𝓑_K` on `3A` strands (the electron-free core), naming `𝒜 ∈ H_{A+Z}` only as the object it is the core of. Corpus-consistent: its producer `canonical_mass_table_extended.py` uses `n = 3*A`, and its interpretation block already writes A=3 as n=9. `notation-collisions.md` updated from 'unresolved'. PR #7559. Bean STAYS OPEN (rule 13a): the SCOPE items of 2026-09-12 (colour-weighted 3A construction untested, qou-q6pp p–n sign, #6919 additivity) are untouched.
