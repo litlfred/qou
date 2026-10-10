@@ -290,6 +290,95 @@ So the checkpoint is no longer a nice-to-have. Design constraints, measured:
 - **Quote 1.56363x, not 1.23x and not 1.517x.** Both earlier figures were partial-run artifacts
   of mine; 1.23x was the `T <= 6` smoke range and 1.517x was the 8-frame prefix.
 
+
+## 🛑 2026-10-10 — R6 EVALUATED, AND IT FAILS. Scope-(a) negative, with the target quantified
+
+R6 never ran inside either killed run. Evaluated directly from R5's recorded `B_allT`, executing
+the probe's own prelude so `cut_for`, `xrun`, `E_INF_7335` and `B_TOP_CERT` are the **committed**
+definitions (nothing retyped), with `xrun` memoised across the two thresholds — which cannot
+change the answer, since the two `cut_for` calls differ only in `th`.
+
+    E_INF_7335  = 2.439296455120784027065
+    B_TOP_CERT  = 2.253735567000904882966        (#7349, certified)
+    B_allT      = 3.37712160481715115067163      (R5, pe = 8, lam = 0.010434072)
+
+    cut via G1   (B_top, B_top)  = 27     ->  6,325,874 blocks   ENUMERABLE
+    cut G1-FREE  (B_top, B_allT) = 48     ->  NOT enumerable (> 32)
+    widening                     = 21
+
+    R6 verdict (cut_free <= 32):  FALSE
+
+**`cut via G1 = 27` reproduces #7349's cut exactly**, which is the consistency check that makes
+the 48 credible rather than a harness artifact.
+
+### The verdict, scoped per AGENTS.md
+
+**Scope (a), not (b).** What is established: *the concave relaxation plus the `u^2 >= u`
+tightening, as assembled, gives a `B_bot` that is not tight enough to make the G1-free cut
+enumerable.* That constrains a **magnitude**, not an ingredient. Nothing here shows no `B_bot`
+can be tight enough — and the required tightness is now a number rather than a hope.
+
+### How tight `B_bot` has to be — the forward target
+
+`cut_for = max{ell : xrun(ell) > th}` with `th = E_INF - B_top - B_bot`, so
+`cut <= K  iff  xrun(K+1) <= th  iff  B_bot <= E_INF - B_top - xrun(K+1)`:
+
+| goal | `xrun(K+1)` | `B_bot` must be <= | as a ratio of the enumerated max | overshoot now |
+|---|---|---|---|---|
+| **cut <= 32** (enumerable at all) | `xrun(33) = -2.37879957477410162` | **2.5643604628939807681** | **1.1873125x** | **0.8127611419** |
+| cut <= 27 (lose nothing vs G1) | `xrun(28) = -2.11794595238436931` | 2.3035068405042484508 | 1.0665359x | 1.073614764 |
+
+So the bypass needs `B_bot` tightened from **1.5636x to 1.1873x** — a **24 % improvement** — to
+be enumerable at all, and to **1.0665x** to cost nothing against the G1 route. For calibration,
+#7349's top edge reached **1.04x** by the same concave-relaxation route, so 1.1873x is not
+obviously out of reach. **That is the number the next attempt is aiming at, and it was not
+available before this evaluation.**
+
+### Where the remaining looseness is, and what it is NOT
+
+- **`lam` is already doing work** — `lam* = 0.010434072` is non-zero, so the integrality-gap
+  tightening is exercised, not discarded. The residual 1.5636x is what survives it.
+- **`PEMAX` is the open flank.** `B_allT`'s maximum sits at `pe = 8`, the **last frame scanned**
+  (`pe = 6 ≡ pe = 7` is a local flat; `pe = 8` jumps +0.10004). If the bound keeps rising,
+  1.5636x is itself a lower bound and the cut of 48 is optimistic. **Re-measure `PEMAX` before
+  trusting 48 as the gap to close.**
+- The padded charge at `pe = 8` is **0.100063** — the only frame where it is non-zero, and
+  almost exactly the `pe = 7 -> 8` jump. Worth checking whether the `pe = 8` excess IS the
+  padded charge: if so, a tighter padding argument at that one frame recovers most of it.
+
+### 🛑 R6's real cost, and the probe's true total
+
+Measured: `cut_for` is `max(ell for ell in range(1, 3000) if xrun(ell) > th)`, i.e. ~2,999 calls
+to the committed `_ap_value` on a length-`ell` word at 1e-40 scale. **2610 s (43.5 min)** for the
+first threshold; the second was **0 s** purely because of the memoisation. Un-memoised, as the
+probe runs it, **R6 is ~87 min on its own.**
+
+So the probe's true total is **R1-R4 ~58 min + R5 ~55 min + R6 ~87 min = ~200 min** against a
+**120-min** harness ceiling. It does not fit, and no single-window restart can make it fit. This
+also corrects my own claims twice over: I called R6 "seconds of work", then "minutes". It is
+three quarters of an hour even memoised.
+
+**Two safe speedups, both verifiable, neither changing a result:**
+
+1. **Memoise `xrun`.** The two `cut_for` calls share every value. Halves R6. Zero semantic change.
+2. **Early-break on monotonicity.** `best` stops moving at `ell ~ 250` and `xrun` is antitone over
+   the range (checked: `xrun(33) > xrun(49)`). Verify antitonicity over the scanned window and
+   break once `xrun(ell) <= th`, and R6 becomes near-instant — the scan to 3000 is ~12x wasteful.
+   **Verify, do not assume**: the probe deliberately scans the full range, so the monotonicity
+   has to be established rather than asserted.
+
+### Consequence for the arc and for #7419
+
+- **A1 does not close as assembled.** The G1 bypass is live but not yet a tool, and that is now a
+  measured statement with a target attached rather than a verdict.
+- **#7419's conclusion needs rewriting, not just its figures.** Its body says the next step is
+  "the same tightening rather than a new idea"; the tightening has now been applied and leaves
+  1.5636x. The honest headline is: *the concave route transfers, the `u^2 >= u` tightening is
+  exercised, and the resulting cut is 48 — unenumerable, 21 wider than the G1 route, needing a
+  further 24 % on `B_bot`.*
+- **G1 itself is untouched** (`qou-o7c0`): still neither proved nor refuted. It has not become
+  more necessary — the bypass is a magnitude short, not wrong.
+
 ## 2026-10-10 (afternoon) — integer hi_j floor, checkpoint, and the Murota lead CHECKED
 
 **Integer box (`hi_j` floor), scope (a) negative.** Rounding the per-row confinement box to
