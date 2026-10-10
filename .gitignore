@@ -294,3 +294,19 @@ folio/*/lean/blocks-shadow/
 # would be a second, diverging copy. `/**`, not `/fsh-guts/`, matching the
 # platform's rule so branch-store still sees the mount's files.
 /fsh-guts/**
+
+# Block QA after the split (issue #7642, owner 2026-10-10). Derived block-QA
+# reports live in test/results/block-qa/ (ignored above) and on the
+# cat/cat-harness/qa-reports branch, keyed by commit. Judgements live in
+# test/attestations/block-qa/ on main. A report beside its block is the legacy
+# location; nothing writes one now, and this keeps a stray one from being
+# committed. The one tracked exception is not a content block (it has no .ts
+# sibling), so the migrator does not handle it and it stays where it is.
+folio/**/*.qa.json
+!folio/quantum-observable-universe/lean/AUDIT-REPORT.qa.json
+
+# The bean work-plan lives on its own branch, `cat/cat-harness/beans` (issue
+# #7642). The session-start hook's `state:mount` puts it at beans/; a mounted
+# copy committed to main would be a second, diverging copy. `/**`, as for
+# fsh-guts, so branch-store still sees the mount's files.
+/beans/**
