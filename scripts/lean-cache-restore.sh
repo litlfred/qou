@@ -50,7 +50,13 @@ if [ ! -s "$tgz" ]; then
   echo "lean-cache-restore: no 'lake-oleans.tgz.part*' blobs on $branch." >&2
   exit 1
 fi
-tar xzf "$tgz" -C "$REPO_ROOT" || {
+# The seeded tarball stores PAPER paths as `content/<paper>/lean/...` (measured
+# 2026-10-10: 13670 `content/` members, 0 `folio/`), because it was seeded before
+# the `content/` -> `folio/` tree rename (#7485).  A plain extract therefore puts
+# every paper olean in a directory nothing reads -- LEAN_PATH is built from
+# `folio/*/lean/...`.  Transform on the way out; a no-op once the branch is
+# re-seeded from a `folio/` tree.
+tar xzf "$tgz" -C "$REPO_ROOT" --transform 's,^content/,folio/,' || {
   echo "lean-cache-restore: tar extraction failed (exit $?)." >&2
   exit 1
 }

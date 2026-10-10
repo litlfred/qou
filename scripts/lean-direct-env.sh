@@ -23,5 +23,5 @@ fi
 export PATH="$TCDIR/bin:$PATH"
 LP=""
 for p in "$ROOT"/.lake/packages/*/.lake/build/lib/lean; do [ -d "$p" ] && LP="$LP${LP:+:}$p"; done
-for p in "$ROOT"/content/*/lean/.lake/build/lib/lean; do [ -d "$p" ] && LP="$LP${LP:+:}$p"; done
+for p in "$ROOT"/folio/*/lean/.lake/build/lib/lean; do [ -d "$p" ] && LP="$LP${LP:+:}$p"; done
 export LEAN_PATH="$LP"

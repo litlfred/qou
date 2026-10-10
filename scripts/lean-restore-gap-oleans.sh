@@ -29,7 +29,7 @@
 # the two verification paths disagree about which one they read:
 #
 #   scripts/lean-direct-env.sh    pins  $ROOT/.lake/packages/*        (ROOT)
-#   scripts/lean-shadow-verify.sh pins  content/*/lean/.lake/packages/* FIRST
+#   scripts/lean-shadow-verify.sh pins  folio/*/lean/.lake/packages/* FIRST
 #                                       (PAPER), by design -- the documented
 #                                       sandbox restore fills the paper tree, so
 #                                       that is the one it can guarantee.
@@ -53,7 +53,7 @@ if [ $# -ge 1 ]; then
   DESTS=("$1")
 else
   DESTS=()
-  for d in "$ROOT"/content/*/lean/.lake/packages/mathlib/.lake/build/lib/lean \
+  for d in "$ROOT"/folio/*/lean/.lake/packages/mathlib/.lake/build/lib/lean \
            "$ROOT"/.lake/packages/mathlib/.lake/build/lib/lean; do
     [ -d "$d" ] && DESTS+=("$d")
   done
