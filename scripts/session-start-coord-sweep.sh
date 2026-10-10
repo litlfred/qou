@@ -66,6 +66,43 @@ if [ -n "$RECENT_SIBLINGS" ]; then
   echo
 fi
 
+# 4a. Branch-kept state: mount it, or say loudly that it is not there.
+#
+# Since issue #7642 (owner, 2026-10-10) the bean work-plan is NOT on main. It
+# lives on `cat/cat-harness/beans` and is mounted at beans/ by the platform's
+# state:mount (qou.json declares it, `source: {kind: branch, keyedBy: tip}`).
+# Without this step 4b below would find no beans/defs and print nothing. That
+# reads as "no active work" when it means "work plan unreachable", which is the
+# failure state:mount exists to prevent. state:mount prints its own loud block
+# and exits non-zero on a failure. Both are passed through.
+echo "**Branch-kept state (\`state:mount\`: beans, fsh-guts):**"
+if [ -f folio-assistant/cat-harness/scripts/state-mount.ts ] && command -v bun >/dev/null 2>&1; then
+  set +e
+  MOUNT_OUT="$(bun folio-assistant/cat-harness/scripts/state-mount.ts 2>&1)"; MOUNT_RC=$?
+  set -e
+  printf '%s\n' "$MOUNT_OUT" | sed 's/^/    /'
+  if [ "$MOUNT_RC" -ne 0 ]; then
+    echo "    ⚠ state:mount exited $MOUNT_RC. If the bean list below is empty, that means the work plan is UNREACHABLE, not that there is no work."
+  fi
+else
+  echo "    ⚠ cannot mount: the platform is not linked (run scripts/setup-folio-assistant.sh) or bun is missing."
+  echo "      beans/ is NOT on disk, so an empty bean list below means the work plan is UNREACHABLE, not that there is no work."
+fi
+if [ ! -d beans/defs ]; then
+  echo "    ⚠ beans/defs is not on disk. The work plan has not been read."
+fi
+echo "_Bean edits go back to the branch with \`bun run folio-assistant/cat-harness/scripts/branch-store.ts push --id beans\`. The \`beans\` CLI never pushes, so an unpushed edit is lost when the container goes._"
+echo
+
+# 4a'. Block-QA results tree. The derived block reports live on the
+# qa-reports branch, keyed by commit (issue #7642). Without a fetch, every QA
+# reader sees an empty tree, so say so here.
+if [ -z "$(ls -A test/results/block-qa 2>/dev/null)" ]; then
+  echo "**Block QA:** not fetched (test/results/block-qa is empty). Before reading any QA verdict:"
+  echo "    bun run folio-assistant/cat-harness/scripts/qa-store.ts fetch --ref main"
+  echo
+fi
+
 # 4b. Active beans — the bean work-plan (anti-stall). Read beans/defs/ directly
 # so this works even when the `beans` CLI is absent (fresh containers) and
 # regardless of the status underscore/hyphen skew. Non-completed only.
