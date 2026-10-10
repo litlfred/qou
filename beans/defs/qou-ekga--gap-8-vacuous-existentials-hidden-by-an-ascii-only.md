@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T08:33:27Z
-updated_at: 2026-10-10T12:58:45Z
+updated_at: 2026-10-10T13:11:46Z
 parent: qou-5vkl
 ---
 
@@ -286,3 +286,11 @@ QOU.BraidKnot.MarkovTraceAxioms: no consumers outside its file; inside it is onl
 
 ## 2026-10-10 OWNER DECISION (session_01ST9RpvTF7JHNdUNafrjf9J)
 Owner chose A + B + C: (A) demote the trivial QOU.BraidKnot.MarkovTraceAxioms and withdraw its 7 vacuous theorems; (B) restate the honest claims (k-fold stabilisation gives tau*z^k; disjoint factorisation) against a content-bearing trace class and prove them; (C) merge the two content-bearing copies (QOU.Braiding in mass-theory/markov-trace-product.lean, QOU.Hecke in lean/QOU/Hecke/MarkovTraceProduct.lean) into one canonical class. In progress.
+
+
+## 2026-10-10 A+B+C done (commit d635dca69c, session_01ST9RpvTF7JHNdUNafrjf9J)
+- (C) QOU.Hecke.MarkovTraceAxioms is now the single canonical class; mass-theory/markov-trace-product.lean re-exports it into QOU.Braiding (lean.ref unchanged).
+- (A) The trivial QOU.BraidKnot class is renamed MarkovScalarPins and marked @[deprecated]. Its 7 vacuous theorems and the fake discharge are deleted (no external consumers). Vacuous-existential audit: 9 → 2 candidates.
+- (B) markov_trace_stabilise (k-fold: trace·z^k) and markov_trace_disjoint_stabilise are proved sorry-free from the canonical class's fields; chainProductMarkovTrace shows the class is satisfiable. Scope: these hold for the chain-list model only, which is the class's sole inhabitant per z.
+- STILL OPEN (bean stays open): it is not formalised that the Hecke-algebra trace of a braid equals the chain-list trace. MarkovDisjointStabilisation is itself trivially inhabited and is NOT discharged. markov_pair_z2 has 4 unused hypotheses.
+- lean-direct exit 0 on all changed files and reverse importers; axioms are standard only. The QOU.BraidKnot aggregator could not be verified (HookSumThicknessBound.olean is missing from the cache). The .qa.json sidecars for the two blocks are stale (qa-sweep not run).
