@@ -113,8 +113,12 @@ Still in place and **owner-gated**, not undone: `appendix-standard-model/` and
   these 149, and the seven beans PR #4640 spun out (`8pl1`, `8pl2`, `8pl3`,
   `mrel`, `sym2`, `sgd1`, `tup9`) contain neither word. **Never scope this arc
   by title-grep.**
-- **`beans` rejects a `parent` on a `milestone`.** `qou-vwu9` sits detached by
-  schema, not oversight, and is linked from here instead.
+- **`beans` rejects a `parent` on a `milestone`** — which is why the 2026-10-04
+  reorg retyped `qou-vwu9` and `qou-20sx` from `milestone`/`epic` to `feature`:
+  that is the move that let them be parented here. If you need a grouping node
+  under this epic, make it a `feature`, not a `milestone`. (An earlier draft of
+  this index asserted `vwu9` was "detached by schema"; it is not — it carries
+  `type: feature`, `parent: qou-8lxd`. Corrected before this body shipped.)
 - **Session beans are ephemeral.** Four (`a0gr`, `cl94`, `1qug`, `nc56`) sat
   `in-progress` for 5-9 weeks, one of them holding `qou-d7h1` — the arc's
   largest open item — as a child. All four are now closed.
