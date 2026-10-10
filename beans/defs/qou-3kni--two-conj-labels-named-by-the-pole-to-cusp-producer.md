@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-14T19:57:29Z
-updated_at: 2026-10-10T07:58:22Z
+updated_at: 2026-10-10T12:35:00Z
 parent: b9cj
 ---
 
@@ -297,3 +297,84 @@ files, `denominator-zeros-as-sw-critical-points` **0**,
 `jet-gb-pl-correspondence` **0**, against
 `shared-denominator-cusp-holonomy` **6** and
 `algebraic-geometric-dilog-equivalence` **5**.
+
+## 2026-10-10 — item 3 MEASURED: 25 dead labels, not three, and the worst is cited nine times
+
+Item 3 above reads *"Three dead labels in two files is a small sample; the
+population is unmeasured."* It is now measured, and the sample understated it
+**by 8×**.
+
+[`computations/audits/docstring_label_carrier_audit.py`](../../computations/audits/docstring_label_carrier_audit.py),
+run on `main` `2ab87236c9`:
+
+| quantity | measured |
+|---|---|
+| distinct corpus labels cited in `computations/` docstrings | **487** |
+| files doing the citing | **860** |
+| labels resolving to **no** block in `folio/` or `content/` | **25** |
+| citations pointing at nothing | **57** |
+
+Worst by citing-file count:
+
+```
+ 9  prop:li2q-phiq-bar-symmetrization
+ 8  prop:constit-factor-tau-M-proton-identity
+ 6  conj:delta-lambda-categorical-closure
+ 6  prop:mass-formula-iterative-lp-dual
+```
+
+`prop:li2q-phiq-bar-symmetrization` is cited by nine files including
+`computations/_li_2_q_util.py`, which the mass-formula banner in AGENTS.md
+names as load-bearing (`vol_density_*`). So this is not confined to the two
+pole-to-cusp producers this bean was opened about.
+
+**The regex's character class IS the blind spot, and that is what the
+self-test asserts.** A `[a-z0-9-]` tail truncates
+`prop:constit-factor-tau-M-proton-identity` at the uppercase `M` and reports
+the **fragment** as dead — a false positive that reads exactly like a real
+finding. The selftest asserts the full label is captured **and** that the
+fragment is not, plus two known-dead and two known-live classifications, and
+is mutation-tested four ways. The first mutation attempt patched the memo
+cache rather than the return value, so it blinded nothing and "passed" —
+recorded rather than asserted, per taxonomy row 45: an audit that
+self-certifies its calibration cannot discover its own blind spot.
+
+The audit **skips its own file**: its calibration note quotes the truncated
+fragment as documentation, and once the file sat under `computations/` the
+selftest failed on a clean tree.
+
+**Wired ADVISORY** into `scripts/precision-gates.sh`, with the flip-to-blocking
+condition stated inline: it flips when the dead count reaches 0. It is not
+blocking now because most of the 25 name blocks in the removed
+`descartes-universe/` chapter, and whether each becomes a restored carrier, a
+retired citation, or a scoped citation is **a content decision per label, not
+a sweep** — under AGENTS.md's ASK-THE-OWNER rule that is the owner's call, not
+an agent's.
+
+**Item 3 is therefore done as far as an agent may take it**: the checker it
+calls "worth considering, not proposed" exists, is calibrated, and is wired.
+**The bean stays `todo`** — items 1 and 2 are untouched, and item 2 turns on
+the `A_ω → S` identification, which is an open conjecture.
+
+### The decision this leaves with the owner
+
+Nothing changes if you say nothing: the gate is advisory, prints the 25, and
+blocks no commit. The 57 dead citations stay as they are.
+
+- **Restore the carriers** (write the missing blocks back). Costs a content
+  block per label, 25 of them, several naming removed-chapter material whose
+  statements would have to be reconstructed; risks re-publishing a claim the
+  chapter was removed *for*. Commits the corpus to supporting each label.
+- **Retire the citations** (edit the 57 docstring sites to drop or rephrase).
+  Costs 57 small edits over ~40 files; risks deleting the only pointer to what
+  a producer was *for*, which is the blocker recorded in this bean's own
+  §"Why the producer docstrings were NOT edited". Commits to nothing.
+- **Scope them** (keep the label, mark it `[no carrier]` inline, as
+  `snappy_cusp_seeding.py` already does for its two). Costs 57 edits of one
+  clause; no risk to the record; commits to nothing, and makes the gate
+  flippable to blocking.
+
+**My recommendation, as judgement rather than finding:** scope them, in one
+pass, the way `snappy_cusp_seeding.py` already reads. It is the only option
+that preserves the provenance a reader needs while making the surface
+drainable — and it is reversible, where restoring a carrier is not.
