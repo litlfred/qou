@@ -1400,12 +1400,30 @@
     "terms": []
   },
   "pn_count": 28,
-  "f_pauli_f64": 0.962062018607962,
-  "tr_alt_f64": -6.345707869990266e-7,
-  "net_f64": -6.595944697174587e-7,
+  "f_pauli_f64": 0.3090446183552141,
+  "tr_alt_f64": 1.4578744610673228e-08,
+  "net_f64": 1.7144829078576167e-08,
   "strands": [],
   "total_words": 11,
   "max_coeff_log10": 15.301029995663981,
   "elapsed_seconds": 0.021506289,
-  "computed_at": ""
+  "computed_at": "",
+  "generation": {
+    "binary": "reanchor_certificates.py",
+    "argv": [
+      "reanchor_certificates.py",
+      "--write",
+      "--signoff",
+      "owner ofri (litlfred), project thread 'qou-m7py', 2026-10-10: '1 2 then 4'"
+    ],
+    "reproduce": "python3 tools/hecke-engine/scripts/reanchor_certificates.py --write",
+    "q0": 1.1099785827513808,
+    "q0_pin": "proton",
+    "engine_version": "reanchor",
+    "commit": "",
+    "reanchored_from": 1.10998,
+    "reanchor_note": "*_f64 fields re-evaluated from this file's own exact Laurent polynomials at the proton pin, at 78 dps chosen from 19 digits of cancellation; exact terms untouched.",
+    "owner_signoff": "owner ofri (litlfred), project thread 'qou-m7py', 2026-10-10: '1 2 then 4'",
+    "generated_by": null
+  }
 }
