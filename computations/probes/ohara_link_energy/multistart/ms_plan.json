@@ -1,0 +1,1786 @@
+[
+ {
+  "id": "nuc9_s01",
+  "cls": "nuc9",
+  "kind": "braid",
+  "word": "nuc9",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "route-1 canonical start (reproduction)"
+ },
+ {
+  "id": "nuc9_s02",
+  "cls": "nuc9",
+  "kind": "braid",
+  "word": "nuc9",
+  "R_over_a": 2.0,
+  "zamp": 1.5,
+  "warp_seed": 101,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "R/a=2, tall crossings, warped slices"
+ },
+ {
+  "id": "nuc9_s03",
+  "cls": "nuc9",
+  "kind": "braid",
+  "word": "nuc9",
+  "R_over_a": 5.0,
+  "zamp": 0.6,
+  "warp_seed": 102,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "R/a=5, flat crossings, warped slices"
+ },
+ {
+  "id": "nuc9_s04",
+  "cls": "nuc9",
+  "kind": "braid",
+  "word": "nuc9",
+  "R_over_a": 3.5,
+  "zamp": 1.0,
+  "warp_seed": 103,
+  "warp_amp": 0.85,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "R/a=3.5, strongly warped slices"
+ },
+ {
+  "id": "nuc9_s05",
+  "cls": "nuc9",
+  "kind": "braid",
+  "word": "nuc9_rot4",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "conjugate word"
+ },
+ {
+  "id": "nuc9_s06",
+  "cls": "nuc9",
+  "kind": "braid",
+  "word": "nuc9_rot7",
+  "R_over_a": 2.5,
+  "zamp": 1.2,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "cyclic rotation",
+  "word_list": [
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0
+  ],
+  "strands": 3
+ },
+ {
+  "id": "nuc9_s07",
+  "cls": "nuc9",
+  "kind": "braid",
+  "word": "nuc9_dconj",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "Delta-conjugate (s0<->s1)"
+ },
+ {
+  "id": "nuc9_s08",
+  "cls": "nuc9",
+  "kind": "braid",
+  "word": "nuc9_rewrite",
+  "R_over_a": 4.0,
+  "zamp": 1.0,
+  "warp_seed": 104,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "braid-relation rewrite / other rotation"
+ },
+ {
+  "id": "nuc9_s09",
+  "cls": "nuc9",
+  "kind": "braid",
+  "word": "nuc9_stabtop",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "DIFFERENT braid rep: Markov stabilisation, 4 strands (top)"
+ },
+ {
+  "id": "nuc9_s10",
+  "cls": "nuc9",
+  "kind": "braid",
+  "word": "nuc9_stabbot",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "DIFFERENT braid rep: Markov stabilisation, 4 strands (bottom)"
+ },
+ {
+  "id": "nuc9_s11",
+  "cls": "nuc9",
+  "kind": "mobius",
+  "source": "../curves/nuc9_N256_ext.npz",
+  "seed": 11,
+  "schedule": [
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "random orientation-preserving M\u00f6bius image of route-1 best curve"
+ },
+ {
+  "id": "nuc9_s12",
+  "cls": "nuc9",
+  "kind": "mobius",
+  "source": "../curves/nuc9_N256_ext.npz",
+  "seed": 12,
+  "schedule": [
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "random orientation-preserving M\u00f6bius image of route-1 best curve"
+ },
+ {
+  "id": "nuc9_s13",
+  "cls": "nuc9",
+  "kind": "perturb",
+  "source": "../curves/nuc9_N256_ext.npz",
+  "eps": 0.05,
+  "seed": 13,
+  "schedule": [
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "random smooth perturbation eps=0.05 of route-1 best curve"
+ },
+ {
+  "id": "nuc9_s14",
+  "cls": "nuc9",
+  "kind": "perturb",
+  "source": "../curves/nuc9_N256_ext.npz",
+  "eps": 0.15,
+  "seed": 14,
+  "schedule": [
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "random smooth perturbation eps=0.15 of route-1 best curve"
+ },
+ {
+  "id": "A_s01",
+  "cls": "A",
+  "kind": "braid",
+  "word": "gluon_s1_s0",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "route-1 canonical start (reproduction)"
+ },
+ {
+  "id": "A_s02",
+  "cls": "A",
+  "kind": "braid",
+  "word": "gluon_s1_s0",
+  "R_over_a": 2.0,
+  "zamp": 1.5,
+  "warp_seed": 101,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "R/a=2, tall crossings, warped slices"
+ },
+ {
+  "id": "A_s03",
+  "cls": "A",
+  "kind": "braid",
+  "word": "gluon_s1_s0",
+  "R_over_a": 5.0,
+  "zamp": 0.6,
+  "warp_seed": 102,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "R/a=5, flat crossings, warped slices"
+ },
+ {
+  "id": "A_s04",
+  "cls": "A",
+  "kind": "braid",
+  "word": "gluon_s1_s0",
+  "R_over_a": 3.5,
+  "zamp": 1.0,
+  "warp_seed": 103,
+  "warp_amp": 0.85,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "R/a=3.5, strongly warped slices"
+ },
+ {
+  "id": "A_s05",
+  "cls": "A",
+  "kind": "braid",
+  "word": "gluon_s1_s1",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "conjugate word"
+ },
+ {
+  "id": "A_s06",
+  "cls": "A",
+  "kind": "braid",
+  "word": "gluon_s1_s0_rot5",
+  "R_over_a": 2.5,
+  "zamp": 1.2,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "cyclic rotation",
+  "word_list": [
+   1,
+   0,
+   0,
+   1,
+   1,
+   0,
+   0,
+   1,
+   0,
+   1,
+   0
+  ],
+  "strands": 3
+ },
+ {
+  "id": "A_s07",
+  "cls": "A",
+  "kind": "braid",
+  "word": "A_dconj",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "Delta-conjugate (s0<->s1)"
+ },
+ {
+  "id": "A_s08",
+  "cls": "A",
+  "kind": "braid",
+  "word": "A_rewrite",
+  "R_over_a": 4.0,
+  "zamp": 1.0,
+  "warp_seed": 104,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "braid-relation rewrite / other rotation"
+ },
+ {
+  "id": "A_s09",
+  "cls": "A",
+  "kind": "braid",
+  "word": "A_stabtop",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "DIFFERENT braid rep: Markov stabilisation, 4 strands (top)"
+ },
+ {
+  "id": "A_s10",
+  "cls": "A",
+  "kind": "braid",
+  "word": "A_stabbot",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "DIFFERENT braid rep: Markov stabilisation, 4 strands (bottom)"
+ },
+ {
+  "id": "A_s11",
+  "cls": "A",
+  "kind": "mobius",
+  "source": "../curves/gluon_s1_s0_N256.npz",
+  "seed": 11,
+  "schedule": [
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "random orientation-preserving M\u00f6bius image of route-1 best curve"
+ },
+ {
+  "id": "A_s12",
+  "cls": "A",
+  "kind": "mobius",
+  "source": "../curves/gluon_s1_s0_N256.npz",
+  "seed": 12,
+  "schedule": [
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "random orientation-preserving M\u00f6bius image of route-1 best curve"
+ },
+ {
+  "id": "A_s13",
+  "cls": "A",
+  "kind": "perturb",
+  "source": "../curves/gluon_s1_s0_N256.npz",
+  "eps": 0.05,
+  "seed": 13,
+  "schedule": [
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "random smooth perturbation eps=0.05 of route-1 best curve"
+ },
+ {
+  "id": "A_s14",
+  "cls": "A",
+  "kind": "perturb",
+  "source": "../curves/gluon_s1_s0_N256.npz",
+  "eps": 0.15,
+  "seed": 14,
+  "schedule": [
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "random smooth perturbation eps=0.15 of route-1 best curve"
+ },
+ {
+  "id": "B_s01",
+  "cls": "B",
+  "kind": "braid",
+  "word": "gluon_s0_s1",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "route-1 canonical start (reproduction)"
+ },
+ {
+  "id": "B_s02",
+  "cls": "B",
+  "kind": "braid",
+  "word": "gluon_s0_s1",
+  "R_over_a": 2.0,
+  "zamp": 1.5,
+  "warp_seed": 101,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "R/a=2, tall crossings, warped slices"
+ },
+ {
+  "id": "B_s03",
+  "cls": "B",
+  "kind": "braid",
+  "word": "gluon_s0_s1",
+  "R_over_a": 5.0,
+  "zamp": 0.6,
+  "warp_seed": 102,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "R/a=5, flat crossings, warped slices"
+ },
+ {
+  "id": "B_s04",
+  "cls": "B",
+  "kind": "braid",
+  "word": "gluon_s0_s1",
+  "R_over_a": 3.5,
+  "zamp": 1.0,
+  "warp_seed": 103,
+  "warp_amp": 0.85,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "R/a=3.5, strongly warped slices"
+ },
+ {
+  "id": "B_s05",
+  "cls": "B",
+  "kind": "braid",
+  "word": "gluon_s0_s0",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "conjugate word"
+ },
+ {
+  "id": "B_s06",
+  "cls": "B",
+  "kind": "braid",
+  "word": "gluon_s0_s1_rot5",
+  "R_over_a": 2.5,
+  "zamp": 1.2,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "cyclic rotation",
+  "word_list": [
+   1,
+   0,
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0,
+   1,
+   0
+  ],
+  "strands": 3
+ },
+ {
+  "id": "B_s07",
+  "cls": "B",
+  "kind": "braid",
+  "word": "B_dconj",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "Delta-conjugate (s0<->s1)"
+ },
+ {
+  "id": "B_s08",
+  "cls": "B",
+  "kind": "braid",
+  "word": "B_rewrite",
+  "R_over_a": 4.0,
+  "zamp": 1.0,
+  "warp_seed": 104,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "braid-relation rewrite / other rotation"
+ },
+ {
+  "id": "B_s09",
+  "cls": "B",
+  "kind": "braid",
+  "word": "B_stabtop",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "DIFFERENT braid rep: Markov stabilisation, 4 strands (top)"
+ },
+ {
+  "id": "B_s10",
+  "cls": "B",
+  "kind": "braid",
+  "word": "B_stabbot",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "DIFFERENT braid rep: Markov stabilisation, 4 strands (bottom)"
+ },
+ {
+  "id": "B_s11",
+  "cls": "B",
+  "kind": "mobius",
+  "source": "../curves/gluon_s0_s1_N256_ext.npz",
+  "seed": 11,
+  "schedule": [
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "random orientation-preserving M\u00f6bius image of route-1 best curve"
+ },
+ {
+  "id": "B_s12",
+  "cls": "B",
+  "kind": "mobius",
+  "source": "../curves/gluon_s0_s1_N256_ext.npz",
+  "seed": 12,
+  "schedule": [
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "random orientation-preserving M\u00f6bius image of route-1 best curve"
+ },
+ {
+  "id": "B_s13",
+  "cls": "B",
+  "kind": "perturb",
+  "source": "../curves/gluon_s0_s1_N256_ext.npz",
+  "eps": 0.05,
+  "seed": 13,
+  "schedule": [
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "random smooth perturbation eps=0.05 of route-1 best curve"
+ },
+ {
+  "id": "B_s14",
+  "cls": "B",
+  "kind": "perturb",
+  "source": "../curves/gluon_s0_s1_N256_ext.npz",
+  "eps": 0.15,
+  "seed": 14,
+  "schedule": [
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "random smooth perturbation eps=0.15 of route-1 best curve"
+ },
+ {
+  "id": "G_s01",
+  "cls": "G",
+  "kind": "braid",
+  "word": "gen_grouped",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "route-1 canonical start (reproduction)"
+ },
+ {
+  "id": "G_s02",
+  "cls": "G",
+  "kind": "braid",
+  "word": "gen_grouped",
+  "R_over_a": 2.0,
+  "zamp": 1.5,
+  "warp_seed": 101,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "R/a=2, tall crossings, warped slices"
+ },
+ {
+  "id": "G_s03",
+  "cls": "G",
+  "kind": "braid",
+  "word": "gen_grouped",
+  "R_over_a": 5.0,
+  "zamp": 0.6,
+  "warp_seed": 102,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "R/a=5, flat crossings, warped slices"
+ },
+ {
+  "id": "G_s04",
+  "cls": "G",
+  "kind": "braid",
+  "word": "gen_grouped",
+  "R_over_a": 3.5,
+  "zamp": 1.0,
+  "warp_seed": 103,
+  "warp_amp": 0.85,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "R/a=3.5, strongly warped slices"
+ },
+ {
+  "id": "G_s05",
+  "cls": "G",
+  "kind": "braid",
+  "word": "G_rot3",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "conjugate word"
+ },
+ {
+  "id": "G_s06",
+  "cls": "G",
+  "kind": "braid",
+  "word": "gen_grouped_rot9",
+  "R_over_a": 2.5,
+  "zamp": 1.2,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "cyclic rotation",
+  "word_list": [
+   1,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   1
+  ],
+  "strands": 3
+ },
+ {
+  "id": "G_s07",
+  "cls": "G",
+  "kind": "braid",
+  "word": "G_dconj",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "Delta-conjugate (s0<->s1)"
+ },
+ {
+  "id": "G_s08",
+  "cls": "G",
+  "kind": "braid",
+  "word": "G_rot9",
+  "R_over_a": 4.0,
+  "zamp": 1.0,
+  "warp_seed": 104,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "braid-relation rewrite / other rotation"
+ },
+ {
+  "id": "G_s09",
+  "cls": "G",
+  "kind": "braid",
+  "word": "G_stabtop",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "DIFFERENT braid rep: Markov stabilisation, 4 strands (top)"
+ },
+ {
+  "id": "G_s10",
+  "cls": "G",
+  "kind": "braid",
+  "word": "G_stabbot",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "warp_amp": 0.6,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "DIFFERENT braid rep: Markov stabilisation, 4 strands (bottom)"
+ },
+ {
+  "id": "G_s11",
+  "cls": "G",
+  "kind": "mobius",
+  "source": "../curves/nuc11_gen_grouped_N128.npz",
+  "seed": 11,
+  "schedule": [
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "random orientation-preserving M\u00f6bius image of route-1 best curve"
+ },
+ {
+  "id": "G_s12",
+  "cls": "G",
+  "kind": "mobius",
+  "source": "../curves/nuc11_gen_grouped_N128.npz",
+  "seed": 12,
+  "schedule": [
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "random orientation-preserving M\u00f6bius image of route-1 best curve"
+ },
+ {
+  "id": "G_s13",
+  "cls": "G",
+  "kind": "perturb",
+  "source": "../curves/nuc11_gen_grouped_N128.npz",
+  "eps": 0.05,
+  "seed": 13,
+  "schedule": [
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "random smooth perturbation eps=0.05 of route-1 best curve"
+ },
+ {
+  "id": "G_s14",
+  "cls": "G",
+  "kind": "perturb",
+  "source": "../curves/nuc11_gen_grouped_N128.npz",
+  "eps": 0.15,
+  "seed": 14,
+  "schedule": [
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "random smooth perturbation eps=0.15 of route-1 best curve"
+ },
+ {
+  "id": "hopf_c1",
+  "cls": "hopf",
+  "kind": "braid",
+  "word": "hopf_s1^2",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "calibration control"
+ },
+ {
+  "id": "hopf_c2",
+  "cls": "hopf",
+  "kind": "braid",
+  "word": "hopf_3strand",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "calibration control"
+ },
+ {
+  "id": "trefoil_c1",
+  "cls": "trefoil",
+  "kind": "braid",
+  "word": "trefoil_s1^3",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "calibration control"
+ },
+ {
+  "id": "trefoil_c2",
+  "cls": "trefoil",
+  "kind": "braid",
+  "word": "trefoil_3strand",
+  "R_over_a": 3.0,
+  "zamp": 1.0,
+  "warp_seed": null,
+  "schedule": [
+   [
+    64,
+    6000,
+    1e-06
+   ],
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "calibration control"
+ },
+ {
+  "id": "hopf_c3",
+  "cls": "hopf",
+  "kind": "mobius",
+  "source": "../curves/cal_hopf_s1^2_N256_ext.npz",
+  "seed": 31,
+  "schedule": [
+   [
+    128,
+    4000,
+    1e-06
+   ],
+   [
+    256,
+    3000,
+    1e-08
+   ]
+  ],
+  "note": "calibration: M\u00f6bius image of route-1 Hopf"
+ },
+ {
+  "id": "nuc9_s11_p2",
+  "cls": "nuc9",
+  "kind": "continue",
+  "source": "curves/nuc9_s11_N256.npz",
+  "schedule": [
+   [
+    512,
+    2000,
+    1e-08
+   ]
+  ],
+  "note": "phase 2 (pre-registered)"
+ },
+ {
+  "id": "A_s11_p2",
+  "cls": "A",
+  "kind": "continue",
+  "source": "curves/A_s11_N256.npz",
+  "schedule": [
+   [
+    512,
+    2000,
+    1e-08
+   ]
+  ],
+  "note": "phase 2 (pre-registered)"
+ },
+ {
+  "id": "B_s09_p2",
+  "cls": "B",
+  "kind": "continue",
+  "source": "curves/B_s09_N256.npz",
+  "schedule": [
+   [
+    512,
+    2000,
+    1e-08
+   ]
+  ],
+  "note": "phase 2 (pre-registered)"
+ },
+ {
+  "id": "G_s05_p2",
+  "cls": "G",
+  "kind": "continue",
+  "source": "curves/G_s05_N256.npz",
+  "schedule": [
+   [
+    512,
+    2000,
+    1e-08
+   ]
+  ],
+  "note": "phase 2 (pre-registered)"
+ },
+ {
+  "id": "G_s12_p2",
+  "cls": "G",
+  "kind": "continue",
+  "source": "curves/G_s12_N256.npz",
+  "schedule": [
+   [
+    512,
+    2000,
+    1e-08
+   ]
+  ],
+  "note": "phase 2 (pre-registered)"
+ },
+ {
+  "id": "G_s09_p2",
+  "cls": "G",
+  "kind": "continue",
+  "source": "curves/G_s09_N256.npz",
+  "schedule": [
+   [
+    512,
+    2000,
+    1e-08
+   ]
+  ],
+  "note": "phase 2 (pre-registered)"
+ },
+ {
+  "id": "hopf_c1_p2",
+  "cls": "hopf",
+  "kind": "continue",
+  "source": "curves/hopf_c1_N256.npz",
+  "schedule": [
+   [
+    512,
+    2000,
+    1e-08
+   ]
+  ],
+  "note": "phase 2 (pre-registered)"
+ },
+ {
+  "id": "B_s08_p2",
+  "cls": "B",
+  "kind": "continue",
+  "source": "curves/B_s08_N256.npz",
+  "schedule": [
+   [
+    512,
+    2000,
+    1e-08
+   ]
+  ],
+  "note": "phase 2 POST-HOC extension"
+ },
+ {
+  "id": "G_s07_p2",
+  "cls": "G",
+  "kind": "continue",
+  "source": "curves/G_s07_N256.npz",
+  "schedule": [
+   [
+    512,
+    2000,
+    1e-08
+   ]
+  ],
+  "note": "phase 2 POST-HOC extension"
+ },
+ {
+  "id": "A_s10_p2",
+  "cls": "A",
+  "kind": "continue",
+  "source": "curves/A_s10_N256.npz",
+  "schedule": [
+   [
+    512,
+    2000,
+    1e-08
+   ]
+  ],
+  "note": "phase 2 POST-HOC extension"
+ },
+ {
+  "id": "B_s09n128_x",
+  "cls": "B",
+  "kind": "continue",
+  "source": "curves/B_s09_N128.npz",
+  "schedule": [
+   [
+    512,
+    2000,
+    1e-08
+   ]
+  ],
+  "note": "POST-HOC: N=512 flow from the N=128 B_s09 curve"
+ }
+]
