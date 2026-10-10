@@ -3,14 +3,15 @@ import { definition } from "../../schema/builders";
 export default definition({
   label: "def:mass-identity",
   examples: ["ex:mass-identity-su2"],
-  // Was `qou:QOU.categoricalMass` — wrong declaration entirely. That name is
+  // 2026-10-10: ref moved to the mass integrand Ψ (MassTraceIdentity). Before that:
+  // was `qou:QOU.categoricalMass` — wrong declaration entirely. That name is
   // ambiguous (four distinct "categorical mass" constructs exist in the Lean
   // tree; see bean qou-qc6s) and none of them is this block. The canonical
   // declaration is `QOU.Torsion.MassIdentity`, which carries this block's own
   // LaTeX label `\label{def:mass-identity}`, and whose siblings back
   // `mass-identity-C.ts`, `mass-identity-exists.ts` and `mass-identity-unique.ts`.
-  lean: { ref: "qou:QOU.Torsion.MassIdentity", validation: "not_checked" },
-  title: "Mass (categorical trace)",
+  lean: { ref: "qou:QOU.Torsion.MassTraceIdentity.massIntegrand", validation: "not_checked" },
+  title: "Mass (Frobenius form of the mass integrand)",
   tags: ["mass", "categorical-trace", "frobenius-hopf"],
   uses: [
     "def:frobenius-pairing",
@@ -18,25 +19,19 @@ export default definition({
   ],
   authorNotes: [
     {
-      kind: "caveat",
+      kind: "status",
       date: "2026-10-10",
       body:
-        "**The prose and the `lean.ref` formalise different objects; not yet resolved.** " +
-        "This block *defines* mass as the Frobenius–Hopf categorical trace " +
-        "$\\mathfrak{m}(\\varrho) = \\lVert \\mathrm{tr}((\\int_A \\otimes \\mathrm{id}) \\circ \\Delta \\circ \\varrho) \\rVert$. " +
-        "The referenced declaration `QOU.Torsion.MassIdentity` is a structure holding a vortex cycle " +
-        "and two factors of **nonabelian multiplicative integration** " +
-        "($m = \\lVert \\mathrm{MI}\\!\\int_\\Sigma (\\nabla_A q, L \\wedge F^+) \\rVert$); neither text " +
-        "states the other's formula, and no declaration asserts that the two agree. " +
-        "Separately, the sibling `.lean` defines `frobeniusMass` (generic $R$) and `scalarMass` " +
-        "($R \\to \\mathbb{R}$), the two names the *Archimedean specialisation* paragraph uses, " +
-        "but `frobeniusMass` takes the trace value as an input rather than computing it, so it " +
-        "does not formalise the trace formula either. " +
-        "As written, the argument of $\\mathrm{tr}$ is a morphism $\\mathbf{1} \\to A$ " +
-        "(via $\\mathbf{1} \\otimes A \\cong A$), whereas $\\mathrm{tr}$ is declared on " +
-        "$\\mathrm{End}_{\\mathbf{C}}(A)$; the endomorphism is $(\\int_A \\otimes \\mathrm{id}) \\circ \\Delta$ " +
-        "before precomposition with $\\varrho$. Which object this block means is an open author decision " +
-        "(bean qou-puwe, defect 1).",
+        "**Typed and proved (bean qou-puwe, defect 1; goal milestone qou-ywyq).** The definition used to " +
+        "apply the categorical trace on $\\mathrm{End}(A)$ to $\\Psi \\circ \\varrho \\colon \\mathbf{1} \\to A$, " +
+        "which does not typecheck. It now integrates the composite $\\int_A \\circ \\Psi \\circ \\varrho$, the reading " +
+        "that reproduces the Markov-trace values of `prop:categorical-mass-markov`; the alternative " +
+        "(trace of $L_\\varrho \\circ \\Psi$) is the regular trace and does not. Proved sorry-free in " +
+        "`QOU/Torsion/MassTraceIdentity.lean`: `frobeniusForm_massIntegrand` ($\\int_A(\\Psi \\varrho) = \\int_A(u\\varrho)$), " +
+        "`frobeniusForm_massIntegrand_of_frobeniusForm_eq_counit` ($= \\int_A \\varrho$ when $\\int_A = \\varepsilon$), " +
+        "`massTrace_eq_functional_hol` (the trace reading). The choice between the two readings was put to the " +
+        "owner on 2026-10-10. The sibling `mass-identity.lean` still documents the old formula, and " +
+        "`QOU.Torsion.MassIdentity` (the multiplicative-integration structure) is not identified with this definition.",
     },
   ],
 });
