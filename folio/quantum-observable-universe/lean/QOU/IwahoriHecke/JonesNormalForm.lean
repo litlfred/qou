@@ -48,9 +48,11 @@ arbitrary quadratic relation, which is what Markov uniqueness needs.
   form for general `r` needs the Wedderburn/Ocneanu-weight structure (or an equivalent
   recursion), which is not formalised. Only `r = 2, 3` are proved
   (`QOU.Archimedean.rj_canonical_inner_product`).
-* It does not discharge `QOU.Hecke.markov_trace_unique_axiom`: that axiom quantifies over
-  the class `QOU.Hecke.MarkovTrace`, which does not carry the cross-level Markov property
-  this proof uses.
+* It did not discharge `QOU.Hecke.markov_trace_unique_axiom`, which quantified over the
+  class `QOU.Hecke.MarkovTrace` without the cross-level Markov property — and was **false**
+  (`QOU.Hecke.MarkovTraceClassNotUnique.markov_trace_unique_axiom_false`). The axiom is
+  removed; `QOU.Hecke.markov_trace_unique` is now proved from `markov_unique_of_adjoin_eq_top`
+  with (M3) as a hypothesis (`MarkovTrace.IsMarkov`).
 
 -- Ref: [jones1987] Jones, *Hecke algebra representations of braid groups and link
 --      polynomials*, Ann. Math. 126 (1987), §4–5 (normal form, Markov trace).
