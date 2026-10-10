@@ -97,6 +97,32 @@ theorem offDiag_axialDist_ne_zero {μ : YoungDiagram} (hq0 : q ≠ 0) (hq2 : QOU
   have hbound := TableauCells.two_le_natAbs_axialDist T hk hk' hadm
   rcases eq_one_or_neg_one_of_offDiag_eq_zero q hq0 hq2 hzero with h | h <;> omega
 
+/-- **`offDiag` vanishes exactly at `d = -1`** — the biconditional, and it is *stronger* than
+the disjunction `eq_one_or_neg_one_of_offDiag_eq_zero` concludes.
+
+The `d = 1` disjunct is never realised: `offDiag` takes the plain branch for every `d ≥ 0`
+(`offDiag_of_not_neg`), so `offDiag q 1 = 1 ≠ 0` in any field. Only the negative branch can
+vanish, and there the two-to-one argument leaves `d = -1` alone.
+
+This is the honest `_iff_` for this entry, and it is **not** the one the declaration's old name
+`offDiag_eq_zero_iff` promised. That name suggested `offDiag q d = 0 ↔ d = 1 ∨ d = -1`, whose
+reverse direction is **false** at `d = 1` — so no amount of work could have produced it. Bean
+`qou-y4ca` asked whether that converse was true; it is not, and this is what the corpus licenses
+instead. -/
+theorem offDiag_eq_zero_iff_eq_neg_one (hq0 : q ≠ 0)
+    (hq2 : QOU.SchurWeyl.GenericParameter.NotRootOfUnity q) {d : ℤ} :
+    offDiag q d = 0 ↔ d = -1 := by
+  constructor
+  · intro hzero
+    rcases eq_one_or_neg_one_of_offDiag_eq_zero q hq0 hq2 hzero with h | h
+    · subst h
+      rw [offDiag_one] at hzero
+      exact absurd hzero one_ne_zero
+    · exact h
+  · intro h
+    subst h
+    exact offDiag_neg_one q hq0 hq2
+
 end SeminormalRep
 
 end QOU.SchurWeyl
