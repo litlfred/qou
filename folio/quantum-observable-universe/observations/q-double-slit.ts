@@ -10,7 +10,7 @@ import { simulator } from "../../schema/builders";
 export default simulator({
   label: "sim:q-double-slit",
   title: "q-Deformed Double-Slit Simulator",
-  html: "fsh-guts/deprecated/simulators/q_double_slit.html",
+  html: "simulators/q_double_slit.html",
   uses: [
     "prop:local-substrate-q",
     "def:categorical-dirac-operator",
