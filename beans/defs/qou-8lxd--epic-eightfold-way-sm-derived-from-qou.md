@@ -65,8 +65,24 @@ framework**. Keep that register when adding to any front.
 
 ### Suggested order
 
-1. **`8f-lean`** — 15 items, mechanical, each independently landable, no research
-   risk. Scaffolds, vacuity defects, one float64 producer. Cheapest real shrink.
+1. **`8f-lean`** — ~~15 items, mechanical, each independently landable, no
+   research risk~~ **🛑 that was wrong, and it was measured wrong on 2026-10-10.**
+   Of the first **7** bodies actually read, only **2 were mechanical**
+   (`qou-t88s`, `qou-8b0q` — both now closed). One was owner-gated
+   (`qou-skgn`, re-filed to `8f-decide`), **three are open Lean formalisation**
+   (`qou-0tiw` needs a circularity broken — the hypothesis would need the
+   conclusion; `qou-006b` needs a conjecture class restructured and warns a
+   green file would mean nothing either way; `qou-ibck` needs a `Fin`-enumeration
+   of `p(n)` partitions or a route that is still sorry-blocked), and one is a
+   7-item bundle (`qou-6766`, 3 enacted, 4 left). **9 remain untriaged.**
+
+   Those three now carry the tag **`8f-open`**, so the front splits:
+
+   ```
+   beans list --tag 8f-lean --ready                 # 12 — the queue
+   beans list --tag 8f-lean --no-tag 8f-open --ready   # 9 — not yet triaged
+   beans list --tag 8f-open -q                      # 3 — triaged, open work
+   ```
 2. **`8f-lit`** — 7 items, mostly the four queues; drains fast and unblocks
    citations other fronts need.
 3. **`8f-decide`** — 4 items, zero agent effort, and `qou-j3w6` gates
@@ -77,7 +93,13 @@ framework**. Keep that register when adding to any front.
    map. Most are blocked on `8f-flavour` or `8f-colour` landing first; read the
    individual bean before starting, several say so explicitly.
 
-### The gate, stated once
+#> **Do not call any front "mechanical" before triaging it — including on my own
+> recommendation above.** The measured rate on the one front triaged is **2 of 7**.
+> Triage is cheap (read the body, ~1-3k chars) and the tag is a title's guess; the
+> claim "this front is mechanical" has now been wrong once in this index and must
+> be earned per front, not inherited.
+
+## The gate, stated once
 
 **`qou-j3w6` — owner decision, asked 2026-09-03, dismissed, still open.** Every
 single-fibre route to flavour `SU(3)` is closed by a proved invariant. The
