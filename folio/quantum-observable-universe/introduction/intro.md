@@ -18,9 +18,35 @@ observe and the instruments we use. Smooth change is the rule across
 scales, so linear approximation describes the world from planetary
 orbits to particle scattering, with integration and differentiation
 as its native operations. Things occupy space, and that space can be
-measured — the universe has *volume*. Even the capacity for
-computation — to reason, count, and calculate — seems woven into the
-fabric rather than added on.
+measured — the universe has *volume*. We have the experience of
+choice: we decide what to measure and when, and the decision shapes
+what is recorded. Whether that experience reflects something in the
+structure of the world, or only our ignorance of it, is a question
+rather than a premise; the paper returns to it when observation is
+treated as a process inside the structure
+([Measurement and Observation](#chap:measurement-observation)). Even
+the capacity for computation — to reason, count, and calculate —
+seems woven into the fabric rather than added on.
+
+One assumption is deliberately left out: that the constants of nature
+are constant. A physical theory usually takes its constants as fixed
+numbers, measured once and then held still. If they are allowed to
+vary — not arbitrarily, but in a controlled, algebraic way — how does
+that change the mechanics, or more precisely the mechanics of how we
+observe? That is the question the paper asks, and the
+[substrate parameter](#sec:introduction-substrate-parameter) below is
+the form it takes.
+
+Einstein taught that geometry and mass are bound together: spacetime
+is not a passive stage on which matter performs, but a participant
+shaped by the matter it contains. The motivating hope here is that a
+similar bond holds one level down, between the *algebra* of processes
+and the mass and interactions of what those processes describe. The
+algebraic counterpart of curvature is torsion — the failure of two
+operations to commute — and the paper asks how much of the structure
+of particles that failure can carry. Gravity itself is taken up in
+its own chapter
+([Gravity and Spacetime Emergence](#chap:gravity-spacetime-emergence)).
 
 As Heisenberg put it, what we observe is never nature itself but
 nature exposed to our method of questioning. So we do not ask what
@@ -75,3 +101,15 @@ the Dirac operator is a connection twisted by the system's own
 internal time-flow ([categorical Dirac operator](#def:categorical-dirac-operator)).
 Each is a construction the axioms allow, not an entry borrowed from
 the classical dictionary.
+
+Noether taught that every continuous symmetry of a physical system
+yields a conserved quantity: invariance under rotation gives angular
+momentum, under translation in time gives energy, under a change of
+gauge gives charge. Her theorem is the bridge from the symmetries we
+*observe* to the quantities we *measure*, and it suggests why a trace
+should be the notion of integration here: a trace is a device for
+extracting one number from a symmetric process. Once the structure is
+deformed by the parameter of the next section, the bridge bends
+rather than breaks: the conserved quantities acquire corrections, and
+some identities that held exactly become approximate ones
+([Noether's theorem in the $q$-deformed setting](#rem:noether-theorem-callout)).
