@@ -28,7 +28,7 @@ the basis is the **six Bring generators** `(γ, σ₀, σ₁, L₊, L₋, e⁻)`
 are strong-sector** (all but the electron `e⁻`). In both places the **electron is the distinguishing
 fifth element**: the A₅ five-fold completes only through the electron-block chirality split `T₁ ⊕ T₂`,
 and the strong confinement five is the six Bring generators minus the electron. This is the candidate
-structural origin of the per-unit `5` in the binding residual `10A − 5 = 5(2A−1)`
+structural origin of the per-unit `5` in the binding residual `10A − 5 = 5(2A−1)` (a grouped-word near-match, not supported on the canonical interleaved word — bean `qou-zf9n`)
 ([`QOU/Mass/BindingResidualExponent.lean`](../Mass/BindingResidualExponent.lean), the `5` open there).
 The identification of the binding `5` with this A₅ five-fold is **near-match tier** (not asserted as a
 theorem here); what is proved below is the partition→irrep five-fold structure itself.

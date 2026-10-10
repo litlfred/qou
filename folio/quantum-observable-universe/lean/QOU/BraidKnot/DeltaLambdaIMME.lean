@@ -9,7 +9,7 @@ import Mathlib.Tactic
 
       f(T₃) = a + b·T₃ + c·T₃²
 
-  with `a` the bar-even isoscalar (leading `10A−5`, A≤4), `b·T₃` the bar-ODD
+  with `a` the bar-even isoscalar (leading `10A−5`, A≤4 — grouped-word figure, not supported on the canonical interleaved word; bean `qou-zf9n`), `b·T₃` the bar-ODD
   linear writhe Z-correction (#3089), and `c·T₃²` the bar-EVEN QUADRATIC.
 
   This file is the exact parity bookkeeping that explains WHY mirror pairs

@@ -99,6 +99,11 @@ not proved. Two layers of doubt:
    measured `B_sym/B_lin` ratio by 3×→145×; the fitted exponent is ≈ 1.4 per
    site, consistent with an exp-vs-linear (Kashaev) correction, not a
    `q₀`-power.
+3. *Grouped-word artifact.* **Rescoped 2026-10-10 (bean `qou-zf9n`, PR #7551).** The near-match
+   `log_q₀ Δ_λ ≈ 10A − 5` was read off the pre-2026-09-05 *grouped* atom word. On the
+   canonical *interleaved* word it does not hold: `log_q₀ Δ_λ` = 28.388 (²H, vs 15),
+   43.745 (³H), 41.522 (³He), 58.817 (⁴He) — `computations/delta-lambda-canonical-residual.witness.json`.
+   Scope (a): withdrawn as empirical support only. The arithmetic proved here is unaffected.
 
 The honest next step is to measure the per-site exponent from real compute
 before chasing the complex-q mechanism for "why 5". Keeping the contested

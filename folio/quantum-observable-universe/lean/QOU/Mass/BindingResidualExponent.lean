@@ -32,6 +32,13 @@ proton-rich `A = 3` case).
 Base ring: this is pure combinatorial bookkeeping over `ℕ` (crossing/bond counts) — no archimedean
 construct, no `q₀`. No fit: the per-unit weight `5` is carried as a parameter; only the chain
 decomposition is asserted.
+
+**Rescoped 2026-10-10 (bean `qou-zf9n`, PR #7551).** The near-match
+`log_q₀ Δ_λ ≈ 10A − 5` was read off the pre-2026-09-05 *grouped* atom word. On the
+canonical *interleaved* word it does not hold: `log_q₀ Δ_λ` = 28.388 (²H, vs 15),
+43.745 (³H), 41.522 (³He), 58.817 (⁴He) — `computations/delta-lambda-canonical-residual.witness.json`.
+Scope (a): withdrawn as empirical support only. The arithmetic proved here is unaffected.
+The measured `w = 5` and the ³He `−1.40` deviation quoted above are grouped-word figures.
 -/
 
 namespace QOU.Binding.ResidualExponent
@@ -69,8 +76,9 @@ theorem residualExponent_eq (w A : ℕ) (hA : 1 ≤ A) :
     residualExponent w A = w * (2 * A - 1) := by
   unfold residualExponent; rw [chainUnits_eq A hA]
 
-/-- **The empirical law.** At the measured per-unit weight `w = 5`, the residual exponent is the
-observed `10A − 5 = 5(2A − 1)`. The `2A−1` is derived; only the `5` is empirical. -/
+/-- **Arithmetic at `w = 5`.** At per-unit weight `w = 5` the residual exponent is
+`10A − 5 = 5(2A − 1)`. The `2A−1` is derived. The `5` was read off the grouped atom word and is
+not supported on the canonical word (see the module note); this lemma is arithmetic only. -/
 theorem residualExponent_five (A : ℕ) (hA : 1 ≤ A) :
     residualExponent 5 A = 10 * A - 5 := by
   rw [residualExponent_eq 5 A hA]; omega

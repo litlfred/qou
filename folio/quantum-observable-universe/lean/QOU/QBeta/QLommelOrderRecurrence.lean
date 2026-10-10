@@ -84,7 +84,13 @@ term is the **second-kind admixture** (Y_ν / K_ν branch) that carries the
 per-isotope deviations from the pure first-kind geometric law. The open keystone
 is a categorical derivation of the exponent `10A−5 = 5(2A−1)` — the `5` is the
 Bring quintic — from the W_free vs W_atom crossing/jet bookkeeping; this lemma
-is the recurrence half that the exponent derivation feeds. -/
+is the recurrence half that the exponent derivation feeds.
+
+**Rescoped 2026-10-10 (bean `qou-zf9n`, PR #7551).** The near-match
+`log_q₀ Δ_λ ≈ 10A − 5` was read off the pre-2026-09-05 *grouped* atom word. On the
+canonical *interleaved* word it does not hold: `log_q₀ Δ_λ` = 28.388 (²H, vs 15),
+43.745 (³H), 41.522 (³He), 58.817 (⁴He) — `computations/delta-lambda-canonical-residual.witness.json`.
+Scope (a): withdrawn as empirical support only. The arithmetic proved here is unaffected. -/
 theorem two_root_geometric (r s α β : K) (hrs : r * s = 1) :
     IsOrderThreeTermRec (fun _ => r + s) (fun n => α * r ^ n + β * s ^ n) := by
   intro n
