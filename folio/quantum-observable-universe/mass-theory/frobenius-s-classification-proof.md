@@ -40,23 +40,67 @@ For each primitive the determinant is $S$-invariant.  Since
 $\det$ is multiplicative on chain products, $\Phi_2 = \sum_i
 \log\lvert\det M_i\rvert$ is $S$-invariant.
 
-**Functional $\Phi_3$.** For each primitive, direct computation
-shows
-$\chi^{\mathrm{sym}}(S(c, d)) = -\chi^{\mathrm{alt}}(c, d)$ and
-$\chi^{\mathrm{alt}}(S(c, d)) = -\chi^{\mathrm{sym}}(c, d)$
-(verify: for $(1, 0)$ with $\chi^{\mathrm{sym}} = q$,
-$\chi^{\mathrm{alt}} = -1/q$, and $S(1, 0) = (1, -h_{\mathrm{A}})$ giving
-$\chi^{\mathrm{sym}} = q + (-h_{\mathrm{A}}) = q^{-1}$ and
-$\chi^{\mathrm{alt}} = -1/q + (-h_{\mathrm{A}}) = -q$, matching the swap with
-sign).  For a chain product
+**Functional $\Phi_3$.** Write an element of the two-strand Hecke algebra as
+$X = c\,\sigma + d$, with characters $\chi^{\mathrm{sym}}(X) = cq + d$ and
+$\chi^{\mathrm{alt}}(X) = -c q^{-1} + d$ (the eigenvalues $q$ and $-q^{-1}$ of
+$\sigma$). The bar involution sends $\sigma \mapsto \sigma^{-1} = \sigma - h_{\mathrm{A}}$
+and $q \mapsto q^{-1}$, so $S(c\sigma + d) = \bar c\,\sigma + (\bar d - \bar c\,h_{\mathrm{A}})$,
+where $\bar{\ }$ is $q \mapsto q^{-1}$ on the coefficients. It is a ring
+automorphism (semilinear over $q \mapsto q^{-1}$), so $S$ of a chain product is
+the product of the barred factors.
+
+Call $X$ *bar-homogeneous of sign* $\varepsilon \in \{\pm 1\}$ if
+$\bar c = \varepsilon c$ and $\bar d = -\varepsilon d$. Two facts follow by
+direct expansion, using $\bar h_{\mathrm{A}} = -h_{\mathrm{A}}$ and
+$q - h_{\mathrm{A}} = q^{-1}$:
+
+1. *Character swap.* If $X$ is homogeneous of sign $\varepsilon$, then
+   $\chi^{\mathrm{sym}}(S X) = \varepsilon c\,(q - h_{\mathrm{A}}) - \varepsilon d
+   = -\varepsilon\,\chi^{\mathrm{alt}}(X)$ and
+   $\chi^{\mathrm{alt}}(S X) = -\varepsilon c\,(q^{-1} + h_{\mathrm{A}}) - \varepsilon d
+   = -\varepsilon\,\chi^{\mathrm{sym}}(X)$.
+2. *Closure.* With $\sigma^2 = h_{\mathrm{A}}\sigma + 1$,
+   $(a\sigma + b)(c\sigma + d) = (ac\,h_{\mathrm{A}} + ad + bc)\,\sigma + (ac + bd)$.
+   If the factors are homogeneous of signs $\varepsilon, \varepsilon'$, every
+   monomial of the $\sigma$-coefficient has bar-sign $-\varepsilon\varepsilon'$
+   and every monomial of the constant term has bar-sign $\varepsilon\varepsilon'$,
+   so the product is homogeneous of sign $-\varepsilon\varepsilon'$.
+
+The three primitives $(1, 0)$, $(1, -h_{\mathrm{A}})$, $(1, -h_{\mathrm{A}}/2)$
+are homogeneous of sign $+1$ (the coefficient $1$ is bar-invariant and $0$,
+$-h_{\mathrm{A}}$, $-h_{\mathrm{A}}/2$ are bar-anti-invariant), and the unit
+$(0, 1)$ is homogeneous of sign $-1$. By closure every chain product $X_i$
+entering $\Phi_3$ is homogeneous, of sign $(-1)^{n-1}$ for $n$ primitive
+factors, and by the character swap
 
 $$
-  \frac{\chi^{\mathrm{sym}}(S(\beta))}{\chi^{\mathrm{alt}}(S(\beta))}
-  = \frac{(-1)^n \chi^{\mathrm{alt}}(\beta)}{(-1)^n \chi^{\mathrm{sym}}(\beta)}
-  = \left(\frac{\chi^{\mathrm{sym}}(\beta)}{\chi^{\mathrm{alt}}(\beta)}\right)^{-1}
+  \frac{\chi^{\mathrm{sym}}(S X_i)}{\chi^{\mathrm{alt}}(S X_i)}
+  = \frac{-\varepsilon\,\chi^{\mathrm{alt}}(X_i)}{-\varepsilon\,\chi^{\mathrm{sym}}(X_i)}
+  = \left(\frac{\chi^{\mathrm{sym}}(X_i)}{\chi^{\mathrm{alt}}(X_i)}\right)^{-1}.
 $$
 
-so $\Phi_3(S(\beta)) = -\Phi_3(\beta)$, eigenvalue $-1$.
+The sign $\varepsilon$ cancels, so only homogeneity matters, not the parity of
+$n$. The identity holds in the field of rational functions and so at every
+evaluation point where both characters are nonzero. Taking
+$\log\lvert\cdot\rvert$ and summing over $i$ gives
+$\Phi_3(S(\beta)) = -\Phi_3(\beta)$, eigenvalue $-1$. (Lean, sorry-free over a
+generic field: `chi_swap`, `barHom_hmul`, `primitives_barHom`,
+`chiRatio_inverts`.)
+
+*Scope.* The argument is for chains of bar-homogeneous factors, which
+includes every chain of the three primitives (and the nucleon and electron
+crossings of the same form). It is not a property of $\Phi_3$ on all of the
+Hecke algebra. For a general element, $\chi^{\mathrm{sym}}$ and
+$\chi^{\mathrm{alt}}$ are bar-equivariant, since both are ring homomorphisms
+and $\chi(\sigma^{-1}) = \overline{\chi(\sigma)}$. So $S$ acts on $\Phi_3$, as
+on $\Phi_1$, by the evaluation flip $q_0 \mapsto q_0^{-1}$, which is not a
+sign change in general. Example: $X = \sigma + 1$ is not homogeneous, and the
+product of the two ratios is
+$-(q+1)^2/(q-1)^2 \neq \pm 1$, so $\Phi_3 + \Phi_3 \circ S$ picks up
+$2\log\lvert (q_0+1)/(q_0-1) \rvert \neq 0$ from this factor.
+Numerically, `computations/probes/frobenius_s_parity_convention_d_probe.py`
+finds $\lvert\Phi_3 + \Phi_3 \circ S\rvert \lesssim 10^{-51}$ at the proton
+pin (mpmath, 50 digits) on all seven of its chains.
 
 **Functional $\Phi_1$.** Because the canonical Markov trace commutes with
 $S$, $S$ acts on $\Phi_1$ by inverting the evaluation point:

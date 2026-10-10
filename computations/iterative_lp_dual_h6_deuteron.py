@@ -179,7 +179,7 @@ def main() -> int:
     # Markov trace |tr_M(β_D)| loaded from markov-peel-atomic-tr-m.witness.json
     # (leading-δ canonical value).  The prior reference was a hardcoded
     # 0.3882864715477132 sourced from wenzl_n6_closed_form.witness.json — now
-    # DEPRECATED (computations/_deprecated/); it disagreed with the canonical
+    # DEPRECATED (fsh-guts/deprecated/computations/); it disagreed with the canonical
     # value by ~1.8e-4, which spuriously failed this assertion.  Load from the
     # canonical witness so the reference cannot go stale again.
     tr_M_check = sum(y_at_q0[p] * chi_at_q0[p] for p in parts_6)

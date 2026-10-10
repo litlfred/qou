@@ -54,7 +54,7 @@ The seven named "empirical / fitted" constants in the pipeline are largely
    > independent ground that it is a **fit**: it was determined by normalising
    > the scale on CODATA `M_p` and root-finding on CODATA `M_n` — two inputs,
    > neither of them CAL-1/2/3, both quantities the framework is meant to
-   > derive. Producer retired to `computations/_deprecated/`.
+   > derive. Producer retired to `fsh-guts/deprecated/computations/`.
    >
    > What the nucleon channel is actually missing is **open**.
    >

@@ -23,7 +23,7 @@ export default remark({
         "9-crossing element violates Frobenius positivity, that a Hopf link is " +
         "the minimum structure capable of restoring stability, and that the " +
         "gluon is strictly required by the LP dual. All three came from " +
-        "`computations/_deprecated/integer-lp-gluon.py`, which computes the " +
+        "`fsh-guts/deprecated/computations/integer-lp-gluon.py`, which computes the " +
         "Markov trace with `tr_M(e-) = z^3`. That weight was retired on " +
         "2026-05-19: the correct value by Markov recursion is `h*z^2 + z` " +
         "(`docs/audits/2026-05-19-trm5-markov-bug.md`), and the retired script " +

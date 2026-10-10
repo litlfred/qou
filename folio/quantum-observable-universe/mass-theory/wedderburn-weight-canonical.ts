@@ -22,7 +22,7 @@ export default proposition({
   computation: {
     engine: "python",
     script:
-      "computations/_deprecated/bw_wenzl_shadow_equivalence.py",
+      "fsh-guts/deprecated/computations/bw_wenzl_shadow_equivalence.py",
     witness: "docs/audits/2026-05-01-p1-3a-bw-equivalence.witness.json",
     status: "verified",
   },

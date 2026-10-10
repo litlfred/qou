@@ -2,7 +2,7 @@
 
 **Scope.** `computations/` (this repo's top-level compute tree) and its
 subdirs (`a_operator/`, `substrate/`, `markov/`, `alpha/`, `habiro/`,
-`qbeta/`, `probes/`, `phase5/`, …), excluding `computations/_deprecated/`.
+`qbeta/`, `probes/`, `phase5/`, …), excluding `fsh-guts/deprecated/computations/`.
 Rust fits in `tools/hecke-engine/` noted but not deep-dived.
 
 **Motivation.** The rank-deficient `A^λ_{ξν}(I)` least-squares extract in

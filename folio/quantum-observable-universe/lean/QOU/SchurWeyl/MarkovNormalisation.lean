@@ -45,12 +45,14 @@ is used; but the uniqueness step should not be described as discharged.
 
 ## Base ring (§7c)
 
-`ℝ`, inherited from the convention-D chain.
+Generic `[Field K]`, like the rest of the convention-D chain.  No ordering, no `ℝ`.
 
 LaTeX label: `thm:markov-normalisation`
 -/
 
 namespace QOU.SchurWeyl
+
+variable {K : Type*} [Field K]
 
 open QOU.Mathlib YoungDiagram
 
@@ -58,8 +60,8 @@ variable {m k : ℕ}
 
 /-- **Weight branching, for every diagram.**  The weights of the diagrams obtained by adding one
 addable cell sum to the weight of the diagram itself. -/
-theorem ocneanuWeight_addable_sum (q : ℝ) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
-    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : ℝ) ^ i ≠ 1) (ν : YoungDiagram) :
+theorem ocneanuWeight_addable_sum (q : K) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
+    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : K) ^ i ≠ 1) (ν : YoungDiagram) :
     ∑ s : {s : ℕ × ℕ // IsAddableCell ν s},
         ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) (addCell ν s.1 s.2)
       = ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) ν := by
@@ -112,18 +114,18 @@ theorem ocneanuWeight_addable_sum (q : ℝ) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠
       (rowLen_two_pos_addCell s.2 h2)
 
 /-- **The weighted dimension sum does not depend on `n`.** -/
-theorem sum_dim_weight_succ (q : ℝ) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
-    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : ℝ) ^ i ≠ 1) (n : ℕ) :
+theorem sum_dim_weight_succ (q : K) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
+    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : K) ^ i ≠ 1) (n : ℕ) :
     ∑ L : {ρ : YoungDiagram // ρ.cells.card = n + 1},
-        (numStandardYoungTableaux L.1 : ℝ) * ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) L.1
+        (numStandardYoungTableaux L.1 : K) * ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) L.1
       = ∑ ν : {ν : YoungDiagram // ν.cells.card = n},
-          (numStandardYoungTableaux ν.1 : ℝ) * ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) ν.1 := by
+          (numStandardYoungTableaux ν.1 : K) * ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) ν.1 := by
   classical
-  set F : {ν : YoungDiagram // ν.cells.card = n} → (ℕ × ℕ) → ℝ :=
-    fun ν c => (numStandardYoungTableaux ν.1 : ℝ)
+  set F : {ν : YoungDiagram // ν.cells.card = n} → (ℕ × ℕ) → K :=
+    fun ν c => (numStandardYoungTableaux ν.1 : K)
       * ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) (addCellOrSelf ν.1 c) with hF
   have step : ∀ L : {ρ : YoungDiagram // ρ.cells.card = n + 1},
-      (numStandardYoungTableaux L.1 : ℝ) * ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) L.1
+      (numStandardYoungTableaux L.1 : K) * ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) L.1
         = ∑ c : {c : ℕ × ℕ // IsCornerCell L.1 c},
             F ⟨eraseCorner L.1 c.1 c.2, by
               have := card_eraseCorner L.1 c.1 c.2
@@ -138,7 +140,7 @@ theorem sum_dim_weight_succ (q : ℝ) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
       rw [addCellOrSelf_of (isAddableCell_eraseCorner c.1 c.2), addCell_eraseCorner]
     simp only [hadd]
   calc ∑ L : {ρ : YoungDiagram // ρ.cells.card = n + 1},
-        (numStandardYoungTableaux L.1 : ℝ) * ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) L.1
+        (numStandardYoungTableaux L.1 : K) * ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) L.1
       = ∑ L : {ρ : YoungDiagram // ρ.cells.card = n + 1},
           ∑ c : {c : ℕ × ℕ // IsCornerCell L.1 c},
             F ⟨eraseCorner L.1 c.1 c.2, by
@@ -149,7 +151,7 @@ theorem sum_dim_weight_succ (q : ℝ) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
           ∑ s : {s : ℕ × ℕ // IsAddableCell ν.1 s}, F ν s.1 :=
         sum_corner_eq_sum_addable n F
     _ = ∑ ν : {ν : YoungDiagram // ν.cells.card = n},
-          (numStandardYoungTableaux ν.1 : ℝ) * ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) ν.1 := by
+          (numStandardYoungTableaux ν.1 : K) * ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) ν.1 := by
         refine Finset.sum_congr rfl fun ν _ => ?_
         rw [hF]
         simp only
@@ -163,12 +165,12 @@ theorem eq_bot_of_card_zero (ν : YoungDiagram) (h : ν.cells.card = 0) : ν = �
   rw [hc]
   simp [YoungDiagram.cells_bot]
 
-theorem ocneanuWeight_bot (q z : ℝ) : ocneanuWeight q z (⊥ : YoungDiagram) = 1 := by
+theorem ocneanuWeight_bot (q z : K) : ocneanuWeight q z (⊥ : YoungDiagram) = 1 := by
   simp [ocneanuWeight, YoungDiagram.cells_bot]
 
-theorem sum_dim_weight_zero (q z : ℝ) :
+theorem sum_dim_weight_zero (q z : K) :
     ∑ ν : {ν : YoungDiagram // ν.cells.card = 0},
-        (numStandardYoungTableaux ν.1 : ℝ) * ocneanuWeight q z ν.1 = 1 := by
+        (numStandardYoungTableaux ν.1 : K) * ocneanuWeight q z ν.1 = 1 := by
   have hb : (⊥ : YoungDiagram).cells.card = 0 := by rw [YoungDiagram.cells_bot]; rfl
   rw [Fintype.sum_eq_single (⟨⊥, hb⟩ : {ν : YoungDiagram // ν.cells.card = 0})
     (fun x hx => absurd (Subtype.ext (eq_bot_of_card_zero x.1 x.2)) hx)]
@@ -176,10 +178,10 @@ theorem sum_dim_weight_zero (q z : ℝ) :
   norm_num
 
 /-- **The normalisation, at every `n`.** -/
-theorem sum_dim_weight_eq_one (q : ℝ) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
-    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : ℝ) ^ i ≠ 1) (n : ℕ) :
+theorem sum_dim_weight_eq_one (q : K) (hq : q ≠ 0) (hq21 : q ^ 2 + 1 ≠ 0)
+    (hgen : ∀ i : ℕ, 0 < i → (q ^ 2 : K) ^ i ≠ 1) (n : ℕ) :
     ∑ ν : {ν : YoungDiagram // ν.cells.card = n},
-        (numStandardYoungTableaux ν.1 : ℝ) * ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) ν.1 = 1 := by
+        (numStandardYoungTableaux ν.1 : K) * ocneanuWeight q (q ^ 3 / (q ^ 2 + 1)) ν.1 = 1 := by
   induction n with
   | zero => exact sum_dim_weight_zero q _
   | succ n ih => rw [sum_dim_weight_succ q hq hq21 hgen n]; exact ih

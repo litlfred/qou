@@ -54,7 +54,7 @@ P_77 three times; the sequence is kept because the last step is what settles it.
                        unknowns.
   v4  "derived"        THIS.  Not a return to v2's reasoning -- a new source.
 
-`computations/_deprecated/toffoli-braid.py` records the construction the content
+`fsh-guts/deprecated/computations/toffoli-braid.py` records the construction the content
 blocks report, and it fixes the decomposition with no inversion at all:
 
     V_i     = z*a_i + b_i,  (a_i, b_i) from chain_reduce -- RATIONAL IN q, no z

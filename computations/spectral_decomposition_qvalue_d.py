@@ -16,7 +16,7 @@ pin q0, every number the spectral-decomposition-qvalue block family quotes:
     Q = Q_bare * F_deg2^[d>=2] * F_Pauli^[N magic] against NNDC/ENSDF.
 
 It replaces, for these purposes, the float-only convention-C producer
-computations/_deprecated/rosso-jones-qvalues.py.  That script is ported here,
+fsh-guts/deprecated/computations/rosso-jones-qvalues.py.  That script is ported here,
 not re-used: its crossing coefficients (pp: (1,0), nn: (1,-(q-q^-1)),
 pn: (1,-(q-q^-1)/2)) are the ones published in prop:beta-decay-transfer-matrix
 and are kept; its Markov parameter (convention C) and its float arithmetic are

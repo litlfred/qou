@@ -27,7 +27,7 @@ in BOTH the production convention D and the excised convention C:
 
 Only the trivial one-cell partition satisfies it.  Note that (2,2) and (3,2,1)
 are exactly the two partitions the block's own cited script
-`computations/_deprecated/bw_wenzl_shadow_equivalence.py` is said to have
+`fsh-guts/deprecated/computations/bw_wenzl_shadow_equivalence.py` is said to have
 verified.
 
 TWO OF THE FOUR FAIL STRUCTURALLY, NOT NUMERICALLY — scope (b).  Convention D

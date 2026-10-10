@@ -1,0 +1,184 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-10-10T16:29:43.054372+00:00",
+  "commitSha": "ce171d625efbae60126876cc4d626aeb670472d1",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "level3-su3-channel",
+  "scriptFile": "level3_su3_channel_probe.py",
+  "scriptHash": "95c0e924bf75",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "56da610cbcf4b215"
+  },
+  "invocation": {
+    "argv": [
+      "computations/eightfold/level3_su3_channel_probe.py"
+    ],
+    "reproduce": "python3 -u computations/eightfold/level3_su3_channel_probe.py"
+  },
+  "description": "Pre-registered level-3 (SU(3)) Hecke channel test (bean qou-lxh5): m_p/m_e from the corpus proton identity with the level-3 Markov trace on beta_Bor, at q_0 pinned by CAL-2 alone; r=2 control and section-4 uncompared quantities.",
+  "auditOnly": "docs/audits/2026-10-10-level3-su3-channel-test.md",
+  "parameters": {
+    "mp_dps": 70,
+    "preregistration_commit": "ce171d625e"
+  },
+  "data": {
+    "seminormal_relations_ok": true,
+    "schur_hook_content_eq_bialternant": true,
+    "z2_ok": true,
+    "z3_ok": true,
+    "z3_eq_q3_over_q3int": true,
+    "markov_property_level3": {
+      "n=3": true,
+      "n=4@q=7/5": true,
+      "n=4@q=3/2": true
+    },
+    "control_r2_matches_closed_form": true,
+    "tr3_beta_exact": "-(q**16 - 2*q**14 - q**12 - 5*q**8 - q**4 - 2*q**2 + 1)/(q**4*(q**2 - q + 1)**2*(q**2 + q + 1)**2)",
+    "y_level3_n3_exact": {
+      "(3,)": "(q**4 + 1)*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/((q**2 - q + 1)**3*(q**2 + q + 1)**3)",
+      "(2, 1)": "q**2*(q**2 + 1)**2*(q**4 + 1)/((q**2 - q + 1)**3*(q**2 + q + 1)**3)",
+      "(1, 1, 1)": "q**6/((q**2 - q + 1)**3*(q**2 + q + 1)**3)"
+    },
+    "tr3_minus_tr2_exact": "-(q - 1)**4*(q + 1)**4*(q**4 - q**3 + q**2 - q + 1)*(q**4 + q**3 + q**2 + q + 1)/(q**2*(q**2 + 1)**2*(q**2 - q + 1)**2*(q**2 + q + 1)**2)",
+    "primary": {
+      "r2": {
+        "R_muon_pin": "1836.15222566141989846348076812",
+        "dR_drmu": "10.253209679991750859",
+        "sigma_model": "4.7164764528e-5",
+        "sigma_pred": "4.71647753835e-5",
+        "residual": "-0.00044776458010153651923",
+        "residual_sigma": "9.49362265505",
+        "residual_rel": "2.43860211943e-7",
+        "verdict": "NEAR-MATCH",
+        "R_proton_pin_secondary": "1836.152673426",
+        "residual_rel_proton_pin": "-1.31306292382e-70"
+      },
+      "r3": {
+        "R_muon_pin": "1835.65953848963141277563242438",
+        "dR_drmu": "10.255532652723272482",
+        "sigma_model": "4.71754502025e-5",
+        "sigma_pred": "4.71754610556e-5",
+        "residual": "-0.49313493636858722437",
+        "residual_sigma": "10453.2086244",
+        "residual_rel": "0.000268569680237",
+        "verdict": "NEAR-MATCH",
+        "R_proton_pin_secondary": "1835.6599863556572777576603637",
+        "residual_rel_proton_pin": "-0.000268325764776"
+      }
+    },
+    "inputs": {
+      "q0_muon_pin": "1.109978595642739046681795129380001752700065561029",
+      "q0_proton_pin": "1.1099785827513808075916690956107688798744991218736",
+      "m_mu_over_m_e": "206.7682827",
+      "sigma_m_mu_over_m_e": "0.0000046",
+      "m_p_over_m_e_CODATA": "1836.152673426",
+      "sigma_m_p_over_m_e": "0.000000032",
+      "Vol_4_1": "2.0298832128193072500424051085490405718833786150606"
+    },
+    "F_Bor": {
+      "r2": "4.469138596906816352988651",
+      "r3": "4.467947197613474720742633"
+    },
+    "abs_tr_beta_at_q0_muon": {
+      "r2": "0.9985621631931484942158685",
+      "r3": "0.9982959628438441751821401"
+    },
+    "section4": {
+      "z3_exact": "q**5/(q**4 + q**2 + 1)",
+      "z3_at_q0_muon": "0.449304823303470312603410097035",
+      "z2_at_q0_muon": "0.612688050638272415220888927646",
+      "quotient_dims_l_le_3_n1_8": [
+        1,
+        2,
+        6,
+        23,
+        103,
+        513,
+        2761,
+        15767
+      ],
+      "quotient_dims_match_W6": true,
+      "l3_markov_shares": {
+        "3": {
+          "exact": "q**6/((q**2 - q + 1)**3*(q**2 + q + 1)**3)",
+          "at_q0_muon": "0.03546433374263785533896859",
+          "at_q1": "1/27",
+          "SU3_state_fraction": "1/27",
+          "q1_consistent": true
+        },
+        "4": {
+          "exact": "3*q**6/((q**2 - q + 1)**3*(q**2 + q + 1)**3)",
+          "at_q0_muon": "0.1063930012279135660169058",
+          "at_q1": "1/9",
+          "SU3_state_fraction": "1/9",
+          "q1_consistent": true
+        },
+        "5": {
+          "exact": "q**6*(6*q**4 + 5*q**2 + 6)/((q**2 - q + 1)**4*(q**2 + q + 1)**4)",
+          "at_q0_muon": "0.2011343083700313725764775",
+          "at_q1": "17/81",
+          "SU3_state_fraction": "17/81",
+          "q1_consistent": true
+        },
+        "6": {
+          "exact": "q**6*(10*q**12 + 26*q**10 + 52*q**8 + 57*q**6 + 52*q**4 + 26*q**2 + 10)/((q**2 - q + 1)**6*(q**2 + q + 1)**6)",
+          "at_q0_muon": "0.3067788421153863136085447",
+          "at_q1": "233/729",
+          "SU3_state_fraction": "233/729",
+          "q1_consistent": true
+        },
+        "7": {
+          "exact": "q**6*(15*q**12 + 35*q**10 + 71*q**8 + 71*q**6 + 71*q**4 + 35*q**2 + 15)/((q**2 - q + 1)**6*(q**2 + q + 1)**6)",
+          "at_q0_muon": "0.4129875974857559254643459",
+          "at_q1": "313/729",
+          "SU3_state_fraction": "313/729",
+          "q1_consistent": true
+        },
+        "8": {
+          "exact": "q**6*(21*q**16 + 64*q**14 + 155*q**12 + 211*q**10 + 261*q**8 + 211*q**6 + 155*q**4 + 64*q**2 + 21)/((q**2 - q + 1)**7*(q**2 + q + 1)**7)",
+          "at_q0_muon": "0.5128184167137518032361449",
+          "at_q1": "1163/2187",
+          "SU3_state_fraction": "1163/2187",
+          "q1_consistent": true
+        }
+      },
+      "T29_markov_trace": {
+        "r2": {
+          "exact": "(q**18 + q**14 - q**12 + q**10 - q**8 + q**6 - q**4 + q**2 - 1)/(q**7*(q**2 + 1))",
+          "at_q0_muon": "1.828414019163828021830881"
+        },
+        "r3": {
+          "exact": "(q**20 + q**16 - 1)/(q**7*(q**2 - q + 1)*(q**2 + q + 1))",
+          "at_q0_muon": "1.588844578876665309405442"
+        }
+      },
+      "T29_note": "2 strands: only (2),(1,1) exist; no l=3 block, so the level enters only through z_r (the weight split of (2) vs (1,1))",
+      "W_needed": "No separate flavour/colour object W was introduced: the only input is the integer r = 3 (z_3, weights s_lambda(1,Q,Q^2)). But by Jimbo-Schur-Weyl the level-3 trace IS the normalised trace on V^(x)n for a 3-dimensional U_q(gl_3)-module V, with Lambda^3 V != 0 (the (1,1,1) weight is the q-determinant line) and Lambda^4 V = 0. So the channel is equivalent to choosing a 3-dim object with nonzero Lambda^3: the colour object is ASSUMED via r, not derived (the audit's 'A collapses into C' risk is realised in this sense)."
+    }
+  },
+  "caveats": [
+    "Level 3 contradicts the premise of QOU/BraidsAndKnots/FibreDimensionForcesTL.lean (mass fibre is 2-dimensional => level 2); this probe tests the substitution, it does not overturn that theorem.",
+    "F_Bor and the constants 2, 12 were identified at level 2; carrying them unchanged to level 3 is part of the pre-registered hypothesis."
+  ],
+  "q0Anchor": "comparison",
+  "q0Values": {
+    "muon": "1.109978595642739046681795129380001752700065561029",
+    "proton": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "q0AnchorReason": "primary evaluation at the CAL-2 (muon) pin because the proton pin is solved from this identity at r=2; the proton-pin value is a secondary readout (E1 comparison)."
+}

@@ -90,7 +90,7 @@ def count_importers(root: pathlib.Path) -> tuple[int, int]:
     live = mirror = 0
     for p in root.rglob("*.py"):
         s = str(p)
-        if ".git" in s or "_deprecated" in s:
+        if ".git" in s or ("_deprecated" in s or "fsh-guts" in s):
             continue
         try:
             if not _IMPORT.search(p.read_text(encoding="utf-8", errors="replace")):

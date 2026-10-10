@@ -25,13 +25,14 @@ content `β_b − r`, and their difference is `β_a − β_b + 1`.
 
 ## Base ring (§7c)
 
-`ℝ`, forced — `seminormalParam` is `ℝ`-valued.  Nothing archimedean is *used*: the proof is a
-`field_simp`, and the statement would hold over any field.
+Generic `[Field K]`.  Nothing archimedean: the proof is a `field_simp`.
 
 LaTeX label: `lem:seminormal-node-form`
 -/
 
 namespace QOU.SchurWeyl
+
+variable {K : Type*} [Field K]
 
 open Seminormal
 
@@ -42,25 +43,25 @@ With `x_a`, `x_b` the nodes and `d` the axial distance, `Q^d·x_b = Q·x_a` turn
 `a(d) = (q − q⁻¹)/(1 − q^{−2d})`  into  `(q − q⁻¹)·Q·x_a/(Q·x_a − x_b)`,
 
 which is exactly the weight in `QOU.Mathlib.sum_prod_qratio_weighted`. -/
-theorem seminormalParam_node_form (q : ℝ) (hq : q ≠ 0) (xa xb : ℝ) (hxb : xb ≠ 0) (d : ℤ)
-    (hd : ((q ^ 2 : ℝ)) ^ d * xb = q ^ 2 * xa) (hden : q ^ 2 * xa - xb ≠ 0) :
+theorem seminormalParam_node_form (q : K) (hq : q ≠ 0) (xa xb : K) (hxb : xb ≠ 0) (d : ℤ)
+    (hd : ((q ^ 2 : K)) ^ d * xb = q ^ 2 * xa) (hden : q ^ 2 * xa - xb ≠ 0) :
     seminormalParam q d = (q - q⁻¹) * (q ^ 2 * xa) / (q ^ 2 * xa - xb) := by
-  have hq2 : (q ^ 2 : ℝ) ≠ 0 := pow_ne_zero _ hq
-  have hzp : (q ^ 2 : ℝ) ^ d ≠ 0 := zpow_ne_zero _ hq2
-  have hxa : (q ^ 2 : ℝ) * xa ≠ 0 := by rw [← hd]; exact mul_ne_zero hzp hxb
-  have hneg : q ^ (-2 * d) = (((q ^ 2 : ℝ)) ^ d)⁻¹ := by
-    have hcast : ((q : ℝ) ^ (2 : ℕ)) = q ^ (2 : ℤ) := (zpow_natCast q 2).symm
+  have hq2 : (q ^ 2 : K) ≠ 0 := pow_ne_zero _ hq
+  have hzp : (q ^ 2 : K) ^ d ≠ 0 := zpow_ne_zero _ hq2
+  have hxa : (q ^ 2 : K) * xa ≠ 0 := by rw [← hd]; exact mul_ne_zero hzp hxb
+  have hneg : q ^ (-2 * d) = (((q ^ 2 : K)) ^ d)⁻¹ := by
+    have hcast : ((q : K) ^ (2 : ℕ)) = q ^ (2 : ℤ) := (zpow_natCast q 2).symm
     rw [hcast, ← zpow_mul, show (2 : ℤ) * d = -((-2) * d) from by ring, zpow_neg, inv_inv]
   have hxa' : xa ≠ 0 := fun hz => hxa (by rw [hz]; ring)
-  have hinv : (((q ^ 2 : ℝ)) ^ d)⁻¹ = xb / (q ^ 2 * xa) := by
+  have hinv : (((q ^ 2 : K)) ^ d)⁻¹ = xb / (q ^ 2 * xa) := by
     rw [eq_div_iff hxa, ← hd, inv_mul_cancel_left₀ hzp]
   rw [Seminormal.seminormalParam, hneg, hinv,
-    show (1 : ℝ) - xb / (q ^ 2 * xa) = (q ^ 2 * xa - xb) / (q ^ 2 * xa) from by field_simp,
+    show (1 : K) - xb / (q ^ 2 * xa) = (q ^ 2 * xa - xb) / (q ^ 2 * xa) from by field_simp,
     div_div_eq_mul_div]
 
 /-- The `d = 1` value in the shape the `a = b` term of the corner identity produces:
 `(q − q⁻¹)·Q/(Q − 1) = q`. -/
-theorem seminormalParam_one' (q : ℝ) (hq : q ≠ 0) (hq2 : q ^ 2 - 1 ≠ 0) :
+theorem seminormalParam_one' (q : K) (hq : q ≠ 0) (hq2 : q ^ 2 - 1 ≠ 0) :
     (q - q⁻¹) * q ^ 2 / (q ^ 2 - 1) = q := by
   field_simp
 
@@ -99,7 +100,7 @@ theorem axialDistance_corner_addable (r : ℕ) (ν : YoungDiagram) {s c : ℕ ×
   omega
 
 /-- The dictionary in the form `seminormalParam_node_form` consumes. -/
-theorem zpow_node_dictionary {Q : ℝ} (hQ : Q ≠ 0) (ba bb : ℕ) :
+theorem zpow_node_dictionary {Q : K} (hQ : Q ≠ 0) (ba bb : ℕ) :
     Q ^ ((ba : ℤ) - (bb : ℤ) + 1) * Q ^ bb = Q * Q ^ ba := by
   rw [← zpow_natCast Q bb, ← zpow_add₀ hQ, ← zpow_natCast Q ba,
     show ((ba : ℤ) - (bb : ℤ) + 1) + (bb : ℤ) = (ba : ℤ) + 1 from by ring,

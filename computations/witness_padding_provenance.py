@@ -220,7 +220,7 @@ def main() -> int:
         # name, where picking the wrong one swaps the check being run).
         # `sorted()` alone would only make the wrong pick reproducible, so
         # ambiguity is reported instead. Bean qou-kcii.
-        hits = sorted(p for p in comp.rglob(name) if "_deprecated" not in p.parts)
+        hits = sorted(p for p in comp.rglob(name) if ("_deprecated" not in p.parts and "fsh-guts" not in p.parts))
         if not hits:
             results.append({"producer": name, "status": "not_found", "fields": []})
             continue

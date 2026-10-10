@@ -729,7 +729,7 @@ trustworthy:
 > …and *"The atlas is auto-rendered by [`recursive_atom_knot_atlas_render.py`]."*
 
 **Both producers are deprecated.** Neither exists at the path the block links
-(`computations/<name>.py`); both sit in `computations/_deprecated/`. Meanwhile the
+(`computations/<name>.py`); both sit in `fsh-guts/deprecated/computations/`. Meanwhile the
 live producer,
 [`per_atom_hyperbolic_volume_witness.py`](../../computations/per_atom_hyperbolic_volume_witness.py),
 carries a **hand-written `ATLAS` dict** with hardcoded knot names and braid words.

@@ -56,7 +56,7 @@ def _in_range(v: float) -> bool:
 def main() -> int:
     # HERE.parent == computations/; *.py globbing there is CWD- and OS-independent
     # (substrate/ is a subdir, so not matched; _deprecated/ likewise excluded).
-    files = [p for p in HERE.parent.glob("*.py") if "_deprecated" not in p.name]
+    files = [p for p in HERE.parent.glob("*.py") if ("_deprecated" not in p.name and "fsh-guts" not in p.name)]
     safe: dict[str, set] = {}
     unsafe: dict[str, set] = {}
     for p in files:

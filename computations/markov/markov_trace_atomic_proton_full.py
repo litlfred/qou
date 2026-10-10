@@ -196,7 +196,7 @@ def main() -> int:
     #
     # 1.6334 is a hardcoded CONVENTION-C decimal. There is no `char_fast`
     # function anywhere in the live tree to call — the only implementations
-    # are in `computations/_deprecated/` — so this was never a cross-check
+    # are in `fsh-guts/deprecated/computations/` — so this was never a cross-check
     # against code, only against a transcribed number from a retired path.
     # Convention C was excised 2026-08-09 (owner ruling R1, 2026-08-15 makes
     # D canonical), and under D this word gives 1.8843…, which is what the

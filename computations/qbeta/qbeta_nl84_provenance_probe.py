@@ -31,7 +31,7 @@ The answer is that nothing computes it.  Full corpus-grep checklist:
 
  4. THE ONLY ILP-COUNTING CODE IN THE CORPUS is deprecated, heuristic, and
     structurally cannot return 84.
-    computations/_deprecated/confinement_adaptive.py::
+    fsh-guts/deprecated/computations/confinement_adaptive.py::
     ilp_solution_count_nucleon_level(Z, N) returns 3 (both magic), 2 (one
     magic), 1 (neither), or 0 (A < 2).  Its own docstring: "Heuristic (proxy
     for Lenstra ILP enumeration) ... This is a categorical proxy; the full ILP
@@ -190,7 +190,7 @@ def main() -> int:
           f"but not to the number", w)
 
     # 4 -- the only counting code
-    dep = ROOT / "computations/_deprecated/confinement_adaptive.py"
+    dep = ROOT / "fsh-guts/deprecated/computations/confinement_adaptive.py"
     src = dep.read_text() if dep.exists() else ""
     returns = sorted({int(m) for m in re.findall(r"return (\d+)\n", src)})
     importers = subprocess.run(
@@ -201,7 +201,7 @@ def main() -> int:
     # contains the string and it counted itself as a live importer.
     _self = str(Path(__file__).resolve())
     live = [p for p in importers
-            if "_deprecated" not in p and str(Path(p).resolve()) != _self]
+            if ("_deprecated" not in p and "fsh-guts" not in p) and str(Path(p).resolve()) != _self]
     print(f"\n  only ILP-counting code: {dep.relative_to(ROOT)}")
     print(f"    return values     : {returns}   (max {max(returns) if returns else 'n/a'})")
     print(f"    live importers    : {len(live)}  {live or '(orphaned)'}")
@@ -220,7 +220,7 @@ def main() -> int:
     loose = subprocess.run(
         ["grep", "-rl", "adjoin", "--include=*.py", str(ROOT / "computations")],
         capture_output=True, text=True).stdout.split()
-    loose = [p for p in loose if "_deprecated" not in p]
+    loose = [p for p in loose if ("_deprecated" not in p and "fsh-guts" not in p)]
     tight = [p for p in loose
              if re.search(r"adjoin(?!t)", Path(p).read_text())]
     print(f"\n  method note -- grep 'adjoin' matches ADJOINT:")

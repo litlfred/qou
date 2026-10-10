@@ -133,7 +133,7 @@ BASELINE = HERE / "mpf-import-time-dps-baseline.json"
 BROKEN_KINDS = ("syntax-error", "unreadable", "unparseable")
 
 # Directories whose constants never reach a committed witness.
-SKIP_DIRS = {"_deprecated", "__pycache__", "data"}
+SKIP_DIRS = {"_deprecated", "fsh-guts", "__pycache__", "data"}
 
 
 def loses_precision(literal: str) -> bool:

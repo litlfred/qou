@@ -4,7 +4,7 @@ export default simulator({
   label: "sim:valley-stability",
   title:
     "Valley of stability: beta-stability curve vs integer lattice",
-  html: "fsh-guts/deprecated/simulators/valley_stability.html",
+  html: "simulators/valley_stability.html",
   tags: [
     "simulator",
     "valley-of-stability",

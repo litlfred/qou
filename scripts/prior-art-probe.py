@@ -44,7 +44,7 @@ PY_RE = re.compile(r"^\s*(?:async\s+)?(?:def|class)\s+([A-Za-z_][A-Za-z0-9_]*)")
 def _tracked(*globs: str) -> list[pathlib.Path]:
     out = subprocess.run(["git", "ls-files", *globs], cwd=ROOT,
                          capture_output=True, text=True).stdout.split("\n")
-    return [ROOT / p for p in out if p and ".lake" not in p and "_deprecated" not in p]
+    return [ROOT / p for p in out if p and ".lake" not in p and ("_deprecated" not in p and "fsh-guts" not in p)]
 
 def declarations() -> list[tuple[pathlib.Path, int, str, str]]:
     """(path, lineno, declared-name, full line) over every tracked decl site."""

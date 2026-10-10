@@ -169,15 +169,24 @@ theorem mass_mono_of_extra_dilog {R : Type*} [AddCommMonoid R] [PartialOrder R] 
         exact le_add_of_nonneg_right hextra_nonneg
     _ = ∑ i : Fin M₂.N, M₂.dilog i := Fin.sum_congr' _ hN.symm
 
-/-- **Trivial-vortex skeleton instance.**  The flat-vortex case
-    `holonomy = 0`, `N = 0`, `mass = 0` satisfies the decomposition
-    by `simp`.  Encodes none of the conjectural content (the actual
-    holonomy + dilogarithm values for a non-trivial vortex must come
-    from a richer instance) but discharges the §3b-cond hypothesis
-    for downstream blocks consuming
-    `[TopologicalDecompositionMass ℝ vortex]`. -/
+/-- **Flat-vortex satisfiability witness** (a `def`, deliberately NOT an
+    `instance`).  The data `holonomy = 0`, `N = 0`, `mass = 0` satisfies
+    `decomp` by `simp`.  It shows only that the class is consistent; it
+    encodes none of the conjectural content.
+
+    This was a global `instance` until 2026-10-10 (bean `tmvac`).  As an
+    instance over an arbitrary `vortex` it was found by typeclass resolution
+    for every vortex type, so any `[TopologicalDecompositionMass ℝ vortex]`
+    binder was discharged with all-zero data and `M.mass` resolved to `0`.
+    That preempted the §3b-cond hypothesis rather than witnessing it.  Use
+    it explicitly, e.g. `@mass_nonneg ℝ _ _ _ v (flatVortex v)`, where a
+    consistency check is wanted.
+
+    Note that `mass` is itself a field of the class, so `decomp` relates
+    fields of one instance to each other.  It does not tie `mass` to a mass
+    defined independently of the instance. -/
 -- Ref: [manuscript] conj:topological-decomposition-mass §"Skeleton"
-instance trivialVortex (vortex : Type*) :
+def flatVortex (vortex : Type*) :
     TopologicalDecompositionMass ℝ vortex where
   holonomy := 0
   holonomy_nonneg := le_refl 0

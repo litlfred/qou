@@ -28,7 +28,7 @@ here, and the ninth is reported with a marker. Read them before acting on a row.
      returned nothing and were read as corroboration that the library ingest
      producer had been deleted. It had not.
 
-  4. MOVED, NOT DELETED — `computations/_deprecated/hecke_core_legacy.py` is now
+  4. MOVED, NOT DELETED — `fsh-guts/deprecated/computations/hecke_core_legacy.py` is now
      `computations/hecke_core_legacy.py`. NOT filtered, because "the bean's
      reference is stale" is a real if minor finding and the basename search that
      would suppress it also suppresses genuine deletions. Reported with a

@@ -310,7 +310,7 @@ No bean has ever worked the rank question. `Sasaki` matches 3 beans, all
 
 **Path 3 (`computations/`) is effectively empty for the axis:** `contact form` /
 `CR manifold` / `Levi distribution` / `ker Theta` / `contact distribution` /
-`Levi form` matches **2** files, one of which is `computations/_deprecated/`.
+`Levi form` matches **2** files, one of which is `fsh-guts/deprecated/computations/`.
 
 ### 2.3 Path 5 — the library holds NOTHING on this, and that is the finding
 

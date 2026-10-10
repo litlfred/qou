@@ -132,7 +132,7 @@ def main() -> int:
         print("REFUSING to report: scanned 0 files. Roots:", [str(r) for r in ROOTS])
         return 2
     for p in sorted(files):
-        if "_deprecated" in p.parts: continue
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts): continue
         h = scan(p)
         if h:
             n += 1
@@ -285,7 +285,7 @@ def scan_computed(files):
     """(safe, unrooted_rows) over every COMPUTED-target witness write."""
     safe_n, rows, by_design = 0, [], []
     for q in files:
-        if "_deprecated" in q.parts:
+        if ("_deprecated" in q.parts or "fsh-guts" in q.parts):
             continue
         try:
             tree = ast.parse(q.read_text(errors="ignore"))

@@ -115,7 +115,7 @@ _CALLS = {
     "Decimal": lambda v: v,
 }
 
-_SKIP_DIRS = {".git", ".lake", "__pycache__", "_deprecated", "node_modules"}
+_SKIP_DIRS = {".git", ".lake", "__pycache__", "_deprecated", "fsh-guts", "node_modules"}
 
 #: Variable names that conventionally denote sqrt(q) in this corpus, and those
 #: that denote q itself.  Used only to triage a `-sqrtvar` match; an unlisted

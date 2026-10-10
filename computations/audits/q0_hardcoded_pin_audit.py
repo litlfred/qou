@@ -203,7 +203,7 @@ def main() -> int:
         cwd=_ROOT, capture_output=True, text=True).stdout.split()
     off_pin = []
     for rel in off_pin_files:
-        if "_deprecated" in rel:
+        if ("_deprecated" in rel or "fsh-guts" in rel):
             continue
         # An AUDIT that hunts a literal necessarily contains it. Excluding
         # computations/audits/ keeps a detector from reporting itself — the

@@ -309,7 +309,7 @@ this file does not yet carry:
 Separately, `markov_trace_origin` also needs **Step 4** — naming the specific
 Wenzl–Hoefsmit operator whose trace is `ℏ_rⁿ` (an *identification*, not a
 trace-infrastructure gap). That operator is currently unidentified; every
-compute attempt at it lives in `computations/_deprecated/`.
+compute attempt at it lives in `fsh-guts/deprecated/computations/`.
 
 **Scope of the gap — Wenzl POSITIVITY is NOT required (W1 audit, 2026-07-25).**
 The general-`n` `MarkovTrace` instance needs only the three class fields

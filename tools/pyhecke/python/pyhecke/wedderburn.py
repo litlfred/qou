@@ -15,7 +15,7 @@ Symbols owned by this module:
 For the `partition_jet_depth` (jet-prefix combinatorial depth) symbol
 — EXPLORATORY per the canonical/exploratory audit
 (docs/audits/2026-05-24-hecke-core-canonical-audit.md) — see
-`computations/_deprecated/hecke_core_legacy.py`. It
+`fsh-guts/deprecated/computations/hecke_core_legacy.py`. It
 is re-exported here for back-compat but lives in the legacy file.
 
 See `partition.py` for Young-tableau specific helpers (SYT

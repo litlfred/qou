@@ -71,7 +71,7 @@ def _rg(pattern: str, *, fixed: bool = False) -> set[str]:
             continue
         if out.returncode in (0, 1):
             return {Path(l).stem for l in out.stdout.splitlines()
-                    if l and "_deprecated" not in l}
+                    if l and ("_deprecated" not in l and "fsh-guts" not in l)}
     return set()
 
 
@@ -79,7 +79,7 @@ def witnesses_of(stem: str) -> set[str]:
     """Witness filenames this producer emits, per each witness's own scriptFile."""
     names = set()
     for w in HERE.rglob("*.witness.json"):
-        if "_deprecated" in w.parts:
+        if ("_deprecated" in w.parts or "fsh-guts" in w.parts):
             continue
         try:
             d = json.loads(w.read_text(encoding="utf-8"))
@@ -122,7 +122,7 @@ def classify(stem: str, depth: int = 3) -> dict:
     hits = list(src.rglob("*")) if src.is_dir() else []
     defines_const = False
     for p in ([src] if src.exists() else
-              [p for p in HERE.rglob(f"{stem}.py") if "_deprecated" not in p.parts]):
+              [p for p in HERE.rglob(f"{stem}.py") if ("_deprecated" not in p.parts and "fsh-guts" not in p.parts)]):
         if PRODUCTION_CONST.search(p.read_text(encoding="utf-8", errors="ignore")):
             defines_const = True
     return {"stem": stem, "production": defines_const,
