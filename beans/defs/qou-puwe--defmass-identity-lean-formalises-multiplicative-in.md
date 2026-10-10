@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T02:47:59Z
-updated_at: 2026-10-10T14:43:06Z
+updated_at: 2026-10-10T16:42:20Z
 parent: qou-ywyq
 ---
 
@@ -209,3 +209,8 @@ New library file `QOU/Torsion/MassTraceIdentity.lean`, sorry-free, axioms `prope
 Open, recorded not fixed: the functional `x ↦ ∫_A(u x c)` is the categorical trace of `A` on itself; in free `R`-modules it is the regular trace `Tr_A(L_{ux})`, which is not a Markov trace. Exact check (sympy over ℚ(q), scratch probe): normalised regular trace on `H_3(q)` gives `tr(σ₁σ₂) = h²/6` against `tr(σ₁)² = h²/4`, `h = q − q⁻¹`. So `categorical-mass-markov-proof` Step 1 ("categorical trace descends to the Jones–Markov trace") fails for the trace of `A`; the Markov trace is the quantum trace of `V^{⊗n}` (already stated in `MassLeftMulEndomorphism.lean`). Also: the corpus form `m = ‖Hol‖` would make every unitary SU(2) holonomy have mass 1; the trace form above is the one that carries content.
 
 2026-10-10: reparented under owner GOAL #1 milestone qou-ywyq (defect 1 is the subject of that goal).
+
+## 2026-10-10 — PR #7632 (session_01HjpvdM6z2jkKWYbBfwkCZG)
+- PROVED (sorry-free, library sweep 15/15): `QOU.Torsion.MassTraceMarkov.braidTrace_wordBraid` — tr_M(β_ℓ) = wi^{m+1}·Tr(K^{⊗(m+1)}·Hol(ℓ)), Hol = ordered product of R-matrix transports (Ř for +, Ř⁻¹ for −); `jonesFn_wordBraid` is the framing-corrected form.
+- `def:mass-identity` retyped: m(ϱ)=‖∫_A Ψ ϱ‖, Ψ=(∫_A⊗id)Δ = id when ∫=ε (counit law).
+- STILL OPEN (bean stays open): Markov's theorem (link invariance); qou-0fmb abstract Ocneanu trace; H_n/rad ≅ TL_n; ∫=ε for the actual data; continuous KZ holonomy (Drinfeld–Kohno cited only).
