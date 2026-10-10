@@ -73,6 +73,26 @@ Arc: bean `qou-as81` (A1), epic `qou-3e6w`.
 
 namespace QOU.BraidKnot.PenaltyFamilyCeiling
 
+/-- **A concave penalty is useless, which is why an admissible one must be convex somewhere.**
+If `p` is concave and non-negative at the two ends of a cell, it is non-negative throughout —
+so a penalty that is concave on `[0, ∞)` and valid at every non-negative integer satisfies
+`p ≥ 0` everywhere, and `G + p ≥ G` makes the bound *worse* than the plain relaxation.
+
+This is the structural reason the admissible family is shaped the way it is: a useful penalty
+must have a convex region (so that it can dip below zero strictly inside a cell while vanishing
+at the cell's integer ends), and its curvature is then capped by `G`'s own concavity.  The cap
+is what `unit_penalty_ge_neg_quarter` turns into a depth, and the depth is what
+`certified_floor` turns into an exclusion. -/
+theorem concave_penalty_useless (p : ℝ → ℝ) (a b : ℝ) (t : ℝ)
+    (hconc : ∀ x y : ℝ, ∀ u v : ℝ, 0 ≤ u → 0 ≤ v → u + v = 1 →
+      u * p x + v * p y ≤ p (u * x + v * y))
+    (ha : 0 ≤ p a) (hb : 0 ≤ p b) (h0 : 0 ≤ t) (h1 : t ≤ 1) :
+    0 ≤ p ((1 - t) * a + t * b) := by
+  have hco := hconc a b (1 - t) t (by linarith) h0 (by ring)
+  have h2 : 0 ≤ (1 - t) * p a := mul_nonneg (by linarith) ha
+  have h3 : 0 ≤ t * p b := mul_nonneg h0 hb
+  linarith
+
 /-- **A bounded penalty buys at most its own depth.**  If `B` bounds the penalised objective
 `f + h` everywhere and the penalty never dips below `-M`, then `B + M` bounds `f`.  Read the
 other way: a certificate on `f + h` cannot be better than a certificate on `f` by more than

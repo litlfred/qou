@@ -62,11 +62,26 @@ import sys
 
 import mpmath as mp
 
+HERE = os.path.dirname(os.path.abspath(__file__))
+
+# Imported from the PACKAGE, not by the bare name `_precision`.  `computations/substrate/
+# _precision.py` is a declared back-compat shim ("New code should import from `qou_substrate`
+# directly"), and reaching it by bare name needs `computations/` on `sys.path` and then
+# `_path_bridge` — the ordering trap AGENTS.md records, which hides a script from any runner
+# that does not happen to set `PYTHONPATH`.  Verified here with `PYTHONPATH` stripped.
+from qou_substrate.precision import set_compute_dps  # noqa: E402
+
+# Raise the working precision BEFORE the module constants below are built.  `mp.mpf('3.277...')`
+# at import time is constructed at whatever `mp.dps` then is — 15 by default — so the constant
+# is already truncated when the first comparison reads it.  Caught by
+# `computations/module_const_precision_audit.py`, which reported all five of these as LOSSY.
+# `set_compute_dps()` is idempotent and safe alongside the call in `main()`.
+set_compute_dps()
+
 # The relaxation probe's definitions end at its R1 banner; everything above is definitions plus
 # cheap setup.  Asserted rather than assumed, so a shift in that file fails loudly here.
 _CUT_BANNER = 'print("R1  does the real extension reproduce the committed integer evaluator?")'
 
-HERE = os.path.dirname(os.path.abspath(__file__))
 RELAX = os.path.join(HERE, "rev_e_infinity_xbot_relaxation_probe.py")
 
 # The two numbers the exclusion turns on, from `PenaltyFamilyCeiling.lean`.
