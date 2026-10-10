@@ -1,0 +1,18 @@
+{
+  "$schema": "state-manifest/v1",
+  "status": "seed",
+  "authoritative": false,
+  "keyedBy": "tip",
+  "source": {
+    "ref": "refs/heads/main",
+    "sha": "3ec6ea7e9b7c4510d4082fc1b066bcde5fb0989a"
+  },
+  "seededAt": "2026-10-10T18:40:22Z",
+  "graphs": [
+    {
+      "path": "beans",
+      "tree": "d9f96b38494891fed2cd4bf8abf3234f9789daaa",
+      "files": 5564
+    }
+  ]
+}

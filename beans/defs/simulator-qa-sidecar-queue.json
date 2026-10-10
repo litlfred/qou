@@ -1,0 +1,56 @@
+{
+  "generated_at": "2026-06-14",
+  "total_gaps": 4,
+  "total_blocks": 4,
+  "total_batches": 2,
+  "batches": [
+    {
+      "batch_id": 1,
+      "chapter": "brings-surface",
+      "status": "fixed",
+      "blocks": [
+        {
+          "block": "content/quantum-observable-universe/observations/brings-surface-simulator",
+          "chapter": "brings-surface",
+          "kind": "simulator",
+          "deviations": [
+            "Missing '+i' shift in the omega definitions.",
+            "Completely ignores the required quaternionic multiplication structure."
+          ]
+        },
+        {
+          "block": "content/quantum-observable-universe/observations/quantum-brings-surface-simulator",
+          "chapter": "brings-surface",
+          "kind": "simulator",
+          "deviations": [
+            "Uses crude visual approximations instead of rigorous U(1)-equivariant reduction formulas."
+          ]
+        }
+      ]
+    },
+    {
+      "batch_id": 2,
+      "chapter": "mass-theory",
+      "status": "fixed",
+      "blocks": [
+        {
+          "block": "content/quantum-observable-universe/observations/beta-decay-simulator",
+          "chapter": "mass-theory",
+          "kind": "simulator",
+          "deviations": [
+            "Truncates electron mass M_E to 0.511 (should be 0.51099895).",
+            "Truncates Fermi coupling constant G_F to 1.1664e-11 (should be 1.1663787e-11)."
+          ]
+        },
+        {
+          "block": "content/quantum-observable-universe/appendix-knot-periodic-table/knot-periodic-table-sim",
+          "chapter": "mass-theory",
+          "kind": "simulator",
+          "deviations": [
+            "Hardcodes He4 binding energy per nucleon as 7.0739 instead of 7.0739185 (derived from AME 2020 28.295674)."
+          ]
+        }
+      ]
+    }
+  ]
+}
