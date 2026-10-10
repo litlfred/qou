@@ -5,7 +5,7 @@
   "data": {
     "dirty_witnesses": 975,
     "total_fields": 25396,
-    "lp_dual_carved_out_fields": 392,
+    "lp_dual_carved_out_fields": 394,
     "lp_dual_carved_out_by_file": {
       "computations/a-K-via-lp-dual-full.witness.json": 141,
       "computations/a-K-via-lp-dual-hecke-basis.witness.json": 10,
@@ -22,7 +22,7 @@
       "computations/probes/lpdual-active-set-vs-edge-set-negative.witness.json": 7,
       "computations/probes/qbk2-reeb-vs-lp-dual-active-channel.witness.json": 7,
       "computations/rho-k-h3a-gg-trajectory.witness.json": 22,
-      "computations/rho-k-h3a-lp-dual.witness.json": 40,
+      "computations/rho-k-h3a-lp-dual.witness.json": 42,
       "computations/three-quark-borromean-lp-sweep.witness.json": 24,
       "computations/two-quark-active-set-mahler-sweep.witness.json": 6,
       "computations/whitehead-saddle.witness.json": 1
@@ -133,10 +133,10 @@
   },
   "scriptFile": "witness_raw_float64_audit.py",
   "scriptHash": "9eb501eed27a",
-  "scriptCommitSha": "d1bc358ade1369639d19fd60f10e64ad7e7886d3",
-  "commitSha": "6a939b9882577e2209fe46fb9551731997642d4a",
+  "scriptCommitSha": "6ff3254a0f7d56d7961ba93607680644b8d7b07b",
+  "commitSha": "56109c8579a2cf9ae1b5875e745352030b869267",
   "engine": "python",
-  "computedAt": "2026-09-27T18:34:06.444318+00:00",
+  "computedAt": "2026-10-10T08:18:31.373705+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

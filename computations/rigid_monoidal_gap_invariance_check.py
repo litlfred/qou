@@ -26,7 +26,19 @@ symbolically AND at substrate q_0 to 50 dps / 1e-40):
 
 Conventions (AGENTS.md §7a): Hecke quadratic (s - q)(s + q^{-1}) = 0,
 i.e. s_i^2 = h s_i + 1 with h = q - q^{-1}; Markov parameter
-z = 1/(sqrt(q) + 1/sqrt(q)).
+z = q**3 / (q**2 + 1) (convention D, canonical per the 2026-08-15 ruling R1).
+
+The z clause read `1/(sqrt(q) + 1/sqrt(q))` — convention C — citing §7a
+alongside it. §7a fixes the HECKE relation and says nothing about the Markov
+parameter, so the correct citation was no evidence about the wrong value next
+to it. Corrected 2026-10-10, bean `qou-u5z0`.
+
+The live binding is `Z = Q**3 / (Q**2 + 1)` at line 72 — already convention D —
+so this correction moves the LABEL into agreement with the arithmetic and no
+number here changes. It is bound as CAPITAL `Z`, which is why a grep for a
+lowercase `z` assignment reports this file as having no binding at all; same
+identifier-case blindness as the `markovZC` / `markovZc` collision on the Lean
+side.
 
 Words covered (H_3): s0 -> z; s0 s1 -> z^2; s0 s1 s0 -> h z^2 + z;
 (s0 s1)^3 (trefoil closure word).
@@ -225,9 +237,14 @@ def main() -> int:
     print(f"  distinct (bug detectable): {bug_distinct}")
 
     w.add_data("results", results)
+    # The §7a half of this string is correct and unchanged; the `z` half read
+    # `1/(sqrt(q) + 1/sqrt(q))` — convention C — and is now the canonical
+    # convention D of the 2026-08-15 ruling R1. Agreement between the two
+    # halves was no evidence about either: §7a fixes the HECKE relation and
+    # says nothing about the Markov parameter. Bean qou-u5z0.
     w.add_data("hecke_convention",
                "s^2 = (q - q^{-1}) s + 1 per AGENTS.md §7a; "
-               "z = 1/(sqrt(q) + 1/sqrt(q))")
+               "z = q**3 / (q**2 + 1) (convention D)")
     w.add_data("tolerance_at_q0", "1e-40 (both routes symbolic, 50 dps)")
     w.add_data("superseded_producer",
                "lp-duality-check.py (z^3 claim via invalid Markov-move "
