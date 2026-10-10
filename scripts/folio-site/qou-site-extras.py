@@ -157,7 +157,10 @@ def qa_report(md: Path) -> dict | None:
     for cid, hist in (d.get("criteria") or {}).items():
         if not hist:
             continue
-        e = hist[-1]
+        # The MOST RECENT verdict by review time, not by position: writers disagree
+        # on whether a new entry goes first or last (the 2026-10-10 Milnor audit
+        # put its verdict first, ahead of expired entries).
+        e = max(hist, key=lambda h: h.get("reviewed_at") or "")
         fh = e.get("field_hash") or {}
         stale = None
         if fh:
