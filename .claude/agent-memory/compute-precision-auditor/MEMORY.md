@@ -511,3 +511,12 @@ TRAPs.
   from 2026-09-04 seen from the other side — commit before a 5-minute gate run, not
   after; and **`q_at(mp.dps)` is the right anchor call for a probe** (proton pin,
   production default) with explicit rational controls beside it.
+- 2026-10-10 (vtlj/2tuv/zf9n/892m/q6pp re-run on clean data, report-only). Three TRAPs:
+  * **A gen-GROUPED word is algebraically confined to span{1,σ₀,σ₁,σ₀σ₁}** — each `σ_g+d`
+    stays in span{1,σ_g}, so L₋/e⁻ coords are 0 for ANY shifts. "Exactly 0" on such a word
+    is the assembly, not the physics. Check `hecke_word`-style helpers before trusting a zero.
+  * **`per_generator_V_hat_3A` buckets letters by generator → ORDER-BLIND by construction**;
+    intra_order cannot move the tower binding. Only absolute-trace routes move (×3.785 D).
+  * **`_cached_seminormal` writes DENSE npz to computations/.cache — n=12 (⁴He) filled 16 GB
+    and bricked the shell (ENOSPC).** Delete `find computations/.cache -mmin -N`. Under
+    QOU_H3A_MPF=1 n=12 crashes earlier (scipy.sparse rejects dtype object).

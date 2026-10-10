@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-25T06:06:25Z
-updated_at: 2026-10-04T15:14:25Z
+updated_at: 2026-10-10T07:09:02Z
 parent: qou-v2om
 ---
 
@@ -540,3 +540,7 @@ and mentions neither `3A` nor `qou-jgg0`.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — all-pairs + convention D at ³H/³He/⁴He (session_01ST9RpvTF7JHNdUNafrjf9J)
+D reproduces −179.33%. The old 'WRONG SIGN' at T/³He/⁴He does NOT reproduce: all right-signed, but strongly ordering-dependent — ³H +13.73% (epnn) / +21.51%; ³He −61.02% / +5.19%; ⁴He +42.3..+62.7%. Choosing the best ordering would be selection against the target. Cause of the old sign: UNDETERMINED (convention vs the 2-chain reading), not word order.

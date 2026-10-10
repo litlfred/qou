@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-19T17:31:15Z
-updated_at: 2026-10-04T15:20:31Z
+updated_at: 2026-10-10T07:09:02Z
 parent: qou-v2om
 ---
 
@@ -31,3 +31,7 @@ So the two thermodynamic frames do not refer to each other anywhere.
 This is orthogonal to which entropy functional is right (that is settled -- S,
 by extensivity). It asks whether the framework has ONE temperature or two
 unrelated ones wearing the same name.
+
+
+## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J)
+Tower-summed E₀ = 4.22748335563 MeV: 'not a unit conversion' survives (E₀/m_e 8.272979 vs 1/ħ_q 10.092679). But 'no simple relation lands on E₀' is an arithmetic miss: by qbeta_e0's own definition E₀ = m_e/(q²·ħ_q) at order zero (×1/(1−ħ_q²) tower-summed), so the two kT readings differ by exactly q² (and the tower factor). The open question is which one is the temperature, not whether they are related.

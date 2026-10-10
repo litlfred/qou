@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-29T02:49:11Z
-updated_at: 2026-10-10T06:49:08Z
+updated_at: 2026-10-10T07:09:01Z
 parent: qou-moj0
 ---
 
@@ -709,3 +709,12 @@ Was in-progress with no bean update since 2026-09-03 and no main commit naming i
 
 ## 2026-10-10 — consolidated (owner-approved, session_01ST9RpvTF7JHNdUNafrjf9J)
 Re-homed under thread qou-moj0. Previous parent: qou-10v9.
+
+
+## 2026-10-10 — clean rerun on the interleaved (borromean) word (session_01ST9RpvTF7JHNdUNafrjf9J)
+Probe: computations/qbeta/qbeta_delta_net_borromean_word_rerun_probe.py (exact Q(q), proton pin, no witness).
+- ARTIFACT CONFIRMED (algebraically): hecke_word() multiplies all gen-0 then all gen-1 letters; each factor σ_g+d stays in span{1,σ_g} (closed since σ_g²=hσ_g+1), so ANY grouped word lies in span{1,σ₀,σ₁,σ₀σ₁} => L₋=e⁻=0 by construction. The earlier 'refuted ordering hypothesis' tested multisets, not span confinement.
+- Borromean neutron: L₋ 0 → +0.22058167852 = (q²−1)(q²+1)²(q⁴−q²+1)/(4q⁵); e⁻ 0 → −0.04813037782. nets p 1.20808375089, n 0.98092403913, Δnet −0.22715971177.
+- SURVIVES: 0/6 table match (max|err| 1.346 → 1.059); exclusion at q₀ (ΔtrM max −0.098487720221 at z*=−0.0929; misses ±0.04458602833; at z_D −0.154194885).
+- DOES NOT SURVIVE: 'for all q>1'. The constant term carries 2q¹²−7q¹⁰+12q⁸−16q⁶+12q⁴−7q²+2, real root q=1.38401986525 (independently re-verified by sympy real_roots). Exclusion holds only on 1<q<1.38402, and its stated mechanism (L₋,e⁻ vanishing) is a grouping artifact.
+- UNEXPLAINED: 4 of the table's 6 magnitudes (1.0109, 0.2206, 0.0189, 0.0481) appear among borromean neutron coordinates in permuted slots; no rotation/reversal reproduces the table. Basis-convention explanation UNDETERMINED.

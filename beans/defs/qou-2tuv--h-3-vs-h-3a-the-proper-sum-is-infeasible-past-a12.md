@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-10-10T06:49:10Z
+updated_at: 2026-10-10T07:09:01Z
 parent: qou-6lx4
 ---
 
@@ -1671,3 +1671,7 @@ Was in-progress with no bean update since 2026-09-15 and no main commit naming i
 
 ## 2026-10-10 — consolidated (owner-approved, session_01ST9RpvTF7JHNdUNafrjf9J)
 Re-homed under thread qou-6lx4. Previous parent: qou-v2om.
+
+
+## 2026-10-10 — clean rerun (session_01ST9RpvTF7JHNdUNafrjf9J)
+Ordering hypothesis REFUTED structurally: per_generator_V_hat_3A buckets letters by generator, so it is order-blind; grouped and borromean give identical results. With QOU_H3A_MPF=1, E₀=Q_β: D 1.80422173363 (−18.8956%), ³H 3.96153521804 (−53.29%), ³He 4.03651031554 (−47.70%). At α=3.74445966 MeV: +288% / +124% / +150%. The −18.9% survives. Caveat: the 'mpf' path still carries float64 Q0_PROTON, _delta, weights, z_mark, E_0, m_e (cannot move percent level). ⁴He not computed: mpf path crashes (scipy.sparse dtype object, syt_prefix_cache.py:199); float64 path writes ~16 GB dense seminormal cache at n=12 and filled the disk.

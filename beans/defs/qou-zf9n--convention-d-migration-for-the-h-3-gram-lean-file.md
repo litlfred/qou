@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-23T19:27:04Z
-updated_at: 2026-10-10T06:49:12Z
+updated_at: 2026-10-10T07:09:02Z
 parent: qou-slz5
 ---
 
@@ -491,3 +491,7 @@ Was in-progress with no bean update since 2026-08-24 and no main commit naming i
 
 ## 2026-10-10 — consolidated (owner-approved, session_01ST9RpvTF7JHNdUNafrjf9J)
 Re-homed under thread qou-slz5. Previous parent: qou-cdx1.
+
+
+## 2026-10-10 — clean rerun (session_01ST9RpvTF7JHNdUNafrjf9J)
+TL support (y_λ=0 for ≥3-row λ at N=2) SURVIVES (exact Schur vanishing; agreement 3.2e-51). Its quantitative companions are GROUPED-WORD ARTIFACTS: on borromean words (D weights, 70 dps) total −0.717445 → +0.531580 (sign flip), cancellation 3.4352× → 1.2031× (the probe's '>3' check would FAIL), capture 16.480% → 12.211%. The 10A−5 near-match is also an artifact: delta-lambda-canonical-residual.witness.json (2026-08-24) is a stale consumer of grouped B_pred; borromean log_q₀ Δ_λ = D 28.388, T 43.745, ³He 41.522, ⁴He 58.817 vs 10A−5 (deviations +13..+24). Committed witnesses NOT regenerated (owner-gated).
