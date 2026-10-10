@@ -645,3 +645,15 @@ heartbeats (whole declaration). `set_option maxHeartbeats 4000000 in` (placed BE
 docstring — after it is a parse error) → whole 3-theorem file ~2 min wall. Entries as nested
 `![…]` vectors reduce under plain `simp`. For trace values, get `linear_combination`
 cofactors from `sympy.reduced(P, [q*qi-1, (q+qi)*t-1], q, qi, t)` (sympy 1.14 present).
+
+## TRAP — `open Polynomial` + `QOU.QBeta.WenzlWeight.content`: `unfold content` is AMBIGUOUS (2026-10-10)
+
+In the SchurWeyl/Molien files both `Polynomial` and `QOU.QBeta.WenzlWeight` are opened, so
+`content x` elaborates fine in statements (by type) but `rw [content]` fails ("not an equality")
+and `unfold content` fails ("ambiguous term"). Use `unfold QOU.QBeta.WenzlWeight.content`.
+Also: `field_simp` over a generic `[Field R]` will not clear a denominator containing `3`
+unless `(3 : R) ≠ 0` is in context, and it does not match a hypothesis `X ≠ 0` against its own
+normal form of a compound `X` — `generalize hZ : X = Z at h ⊢`, `field_simp`, `rw [← hZ]; ring`.
+Before defining `qFactBal`-style helpers, grep `MathlibExt/QIntegerCanonical.lean` — it already
+has `qFactBal`, `qIntBal_two`, `qIntBal_one_of_ne_sing` (an `open QOU.QInteger` duplicate compiles
+silently).
