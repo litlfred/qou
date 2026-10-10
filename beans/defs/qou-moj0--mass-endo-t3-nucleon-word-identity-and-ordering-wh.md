@@ -5,7 +5,7 @@ status: todo
 type: epic
 priority: normal
 created_at: 2026-10-10T06:48:53Z
-updated_at: 2026-10-10T07:09:03Z
+updated_at: 2026-10-10T08:03:00Z
 ---
 
 Thread (session https://claude.ai/code/session_01ST9RpvTF7JHNdUNafrjf9J). Children: qou-1qsw, qou-vtlj, qou-4e5k, qou-hkwd. Linked (broad, stay under own parents): qou-4383 (grouped-era artifact audit), qou-46ab (C literals).
@@ -15,3 +15,7 @@ Residual from qou-2cof (closed): sweep other proof siblings for convention-C sur
 
 ## 2026-10-10 rerun results
 vtlj: grouping artifact confirmed; the q₀ exclusion survives but the all-q theorem fails above q=1.38402. See qou-vtlj.
+
+
+## 2026-10-10 — relation to qou-d8c7 (session_01ST9RpvTF7JHNdUNafrjf9J)
+Kept: this thread is cross-chapter (mass-theory / binding compute), outside qou-d8c7's scope rule ('a chapter block or its Lean/library module is the subject'). qou-d8c7 lists some of these beans as links (M6/M7/M9); chapter-subject beans stay with qou-d8c7.

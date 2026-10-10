@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-04T01:39:43Z
-updated_at: 2026-10-10T06:49:40Z
-parent: qou-thkm
+updated_at: 2026-10-10T08:02:58Z
+parent: qou-d8c7
 blocking:
     - qou-0w3s
     - qou-wuxx
@@ -20,3 +20,6 @@ Blocks: cat_descended_is_base_mass (2), cat_eigenspace_decomposition (1), mass_c
 
 ## 2026-10-10 — consolidated (owner-approved, session_01ST9RpvTF7JHNdUNafrjf9J)
 Re-homed under thread qou-thkm. Previous parent: qou-rtxm.
+
+
+## 2026-10-10 (session_01ST9RpvTF7JHNdUNafrjf9J) — moved from retired thread qou-thkm to qou-d8c7 (chapter subject).

@@ -5,7 +5,7 @@ status: todo
 type: epic
 priority: normal
 created_at: 2026-10-10T07:00:10Z
-updated_at: 2026-10-10T07:24:59Z
+updated_at: 2026-10-10T08:03:02Z
 ---
 
 One home for every bean whose subject is the mathematics of `chap:mass-endomorphism`
@@ -120,3 +120,11 @@ H_3 Wedderburn weights in `mass_endomorphism.py`, so no weight change is owed th
 Full correction on `qou-g16t`. The diagnosis-script item of M7 is done (ported, not
 retired). M14: the eight citation items are applied in the same PR; the
 `terashima-yamazaki2013` entry's authors are corrected to Teschner–Vartanov (id kept).
+
+
+## 2026-10-10 — results from PR #7551 (session session_01ST9RpvTF7JHNdUNafrjf9J), parallel to this epic
+- M2/M10: global instances phiDConj_V3/V21/V111 and defaultGeneralPhiD4F (phi-d-syt-count-conjecture.lean) and trivialVortex (topological-mass-conjecture.lean:180) are REMOVED (zero consumers, lean-direct exit 0). The classes have no instances.
+- M8: new sorry-free QOU/BraidsAndKnots/FibreQuantumTraceOnV3.lean builds the R-matrix rep of H_3(q) on V^{⊗3} and the pivoted quantum trace; τ(σ₁)=q−[2]⁻¹ (convention D) and y₍₁³₎=0 now follow from the trace. MassTraceIsFibreCategorical stays unclosed: it names no trace, so it is trivially inhabited; needs a mass-channel trace object + H_3 split semisimplicity.
+- M3: confirmed the axiom discharge (no instance-level proof).
+- 'Failed, possibly bad data' — new entries, measured: qou-vtlj L₋=e⁻=0 is forced by grouped words (span{1,σ₀,σ₁,σ₀σ₁}); the q₀ exclusion survives, 'for all q>1' fails above q=1.38401986525. qou-zf9n: the 10A−5 near-match and the 3.4× TL cancellation are grouped-word artifacts (witnesses regenerated; deuteron 28.388 vs 15). qou-2tuv −18.9% is NOT bad data (consumer order-blind). qou-q6pp old wrong sign does not reproduce under all-pairs + D.
+- Cross-chapter threads kept on that PR: qou-moj0 (nucleon word/ordering), qou-6lx4 (atom object/tower), qou-slz5 (full-tower mass weight). Retired as duplicates of this epic: qou-thkm, qou-9bxg, qou-5knn.

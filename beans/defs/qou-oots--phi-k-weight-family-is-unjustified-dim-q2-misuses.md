@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-05T05:55:40Z
-updated_at: 2026-10-10T07:01:36Z
-parent: qou-3l2l
+updated_at: 2026-10-10T08:02:59Z
+parent: qou-slz5
 ---
 
 ## 2026-09-05 — requirement derivation + prune + discriminator (in-progress; the CHOICE is open, the PRUNE is not)

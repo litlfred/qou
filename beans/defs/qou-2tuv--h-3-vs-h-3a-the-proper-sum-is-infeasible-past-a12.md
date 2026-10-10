@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T11:25:45Z
-updated_at: 2026-10-10T07:01:38Z
-parent: qou-v2om
+updated_at: 2026-10-10T08:02:59Z
+parent: qou-6lx4
 ---
 
 ## What the audit recommends, and why its Path A is not available

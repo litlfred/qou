@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T10:24:30Z
-updated_at: 2026-10-10T07:01:40Z
-parent: qou-rtxm
+updated_at: 2026-10-10T08:03:00Z
+parent: qou-slz5
 ---
 
 ## The measurement
