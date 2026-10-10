@@ -1,14 +1,14 @@
 ---
 # qou-t88s
 title: 'STALE: 2026-05-30 atom-braid audit says Mathlib CoxeterSystem API is in flux — it is 1612 lines across four stable files at the pin'
-status: todo
+status: completed
 type: task
 priority: low
 tags:
     - reorg-2026-10-04
     - 8f-lean
 created_at: 2026-09-04T09:08:25Z
-updated_at: 2026-10-10T07:16:19Z
+updated_at: 2026-10-10T07:26:38Z
 parent: qou-8lxd
 ---
 
@@ -48,3 +48,30 @@ standing (`qou-3nva` precedent) — so the right shape is probably an inline dat
 correction note rather than a rewrite. Author's call.
 
 Source: `docs/audits/2026-09-04-mathlib-infrastructure-inventory.md` §F8, §H4.
+
+
+## ENACTED and COMPLETED 2026-10-10
+
+The stale clause is removed from
+`docs/audits/2026-05-30-atom-braid-categorical-proof-feasibility.md` (bullet 1 of
+"Why a single-session attempt won't close"), replaced by a dated correction note.
+
+**A stronger, locally-checkable fact than the one this bean recorded.** The bean
+argued from Mathlib line counts and from `IwahoriHeckeAlgebra.lean` using
+`CoxeterSystem` as a positive control. The sharper evidence is one line up:
+that file's **line 3 is `import Mathlib.GroupTheory.Coxeter.Basic`** — the corpus
+*compiles against* the API, and an API you build against is not in flux. That
+settles it without needing any line count.
+
+**What is NOT re-measured here, stated so nobody inherits it as fresh.** The
+1612-lines-across-four-files figure against pinned mathlib `f897ebcf72cd` is
+carried from this bean's 2026-09-04 measurement. Mathlib source is **absent from
+this container** — which `IwahoriHeckeAlgebra.lean` itself notes is normal
+("the source is not present in every container"). The import argument does not
+depend on the figure, which is why the correction leads with the import.
+
+**The rest of the bullet stays, and the correction says so explicitly**, because
+the risk in fixing a stale sub-clause is that a reader takes the whole bullet as
+discredited: KLR algebras, Hoefsmit seminormal basis, Kashiwara crystals and
+Type-B folding still do not exist in Mathlib, and the load-bearing blocker is
+Step 4, not the Coxeter API.
