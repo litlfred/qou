@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-10-10T13:52:16Z
-updated_at: 2026-10-10T16:35:09Z
+updated_at: 2026-10-10T18:10:02Z
 ---
 
 Open, not attempted to closure (session 2026-10-10, PR #7596).
@@ -36,3 +36,9 @@ Proved sorry-free in `QOU/SchurWeyl/HookDivisibility.lean` (lean-direct -DautoIm
 - Route: cyclotomic factorisation + hook inequality d·#{x : d ∣ h(x)} ≤ n (`mul_card_filter_dvd_hook_le`), via beta-sets/abacus.
 
 Still open (this bean stays open): nonnegative coefficients, i.e. the maj formula Σ_{T∈SYT} Q^{maj T} = Q^{n(λ)}[n]!/∏[h]. Not reachable from the integrality route.
+
+
+## Update 2026-10-10: (A) Stanley standardization PROVED (QOU/Mathlib/MajStandardization.lean)
+
+`stdEquivSigma μ : (Σ S : SYTe μ, DecSeq n) ≃ RSSYT μ` with `|T| = maj S + |b|` (`sum_stdEquivSigma`), sorry-free, lean-direct exit 0. Reverse orientation (rows weakly decreasing, columns strictly decreasing) so the shift is maj, not comaj.
+Remaining for the maj formula: (B) Σ_{RSSYT} q^{|T|} = q^{n(λ)}/∏(1−q^h); route pending owner card (bialternant/LGV vs Hillman–Grassl). Also bridge SYTe ↔ QOU.Mathlib.StandardYoungTableau. Bean stays open.
