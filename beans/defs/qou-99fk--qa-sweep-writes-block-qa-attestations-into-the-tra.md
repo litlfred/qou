@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-10-10T07:37:59Z
-updated_at: 2026-10-10T07:49:54Z
+updated_at: 2026-10-10T18:12:00Z
 ---
 
 ## The finding
@@ -161,3 +161,7 @@ the cat-harness `qa-reports` branch (which `.folio-assistant-pin` says is where
 the derived QA corpus now lives, owner ruling 2026-10-04), or given a field
 hash, is an owner call about someone else's arc. This bean stays `todo` at
 `high` with its title's second half intact.
+
+## 2026-10-10 — owner decision
+
+Owner decision 6a (ofri, 2026-10-10): leave `test/attestations/` and the in-tree `.qa.json` sidecars as they are. The measurement suggested alongside 6a has not been run. It would grep the pinned platform for the sidecar write path, and it needs the folio-assistant clone, which is absent in this container. It remains the next step if the question is reopened.

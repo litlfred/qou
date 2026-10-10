@@ -9,8 +9,8 @@ tags:
     - reorg-2026-10-04
     - 8f-ew
 created_at: 2026-07-31T20:15:08Z
-updated_at: 2026-10-10T07:15:59Z
-parent: qou-8lxd
+updated_at: 2026-10-10T18:10:00Z
+parent: qou-20sx
 ---
 
 ## 🔥 Roast (2026-09-03, qou-bsu0)
@@ -21,3 +21,7 @@ parent: qou-8lxd
 (iv) Next: not near-term; first decide whether v is a framework observable at all, or a Yukawa-parameterisation rendering with no categorical preimage. No gating object owns it.
 (v) Forecast: longest-open EW parameter; at best a conditional G_F from a derived N_v.
 Tower status [reading: qou-ggdk]: ORDER-ZERO-ONLY — every formula is (crossing count) × (single crossing energy); no full-tower formulation exists.
+
+## 2026-10-10 — reparented under qou-20sx
+
+Owner decision 7b (ofri, 2026-10-10): the electroweak (`8f-ew`) beans are grouped under `qou-20sx`, the electroweak front's node, instead of directly under the epic `qou-8lxd`. Only the parent changed. Status, scope and body are untouched.
