@@ -442,6 +442,137 @@ point. It says nothing about padding or about the relaxation's tightness.
 padding and not `PEMAX`. The keyed checkpoint + `xrun` memoisation remain needed to run anything
 end-to-end, but they are infrastructure, not the front.
 
+## 2026-10-10 — 🟥 THE OBJECTIVE-PENALTY ROUTE IS EXCLUDED, with a floor and a reopening condition
+
+Formalize-first prune, done entirely from the recorded figures and the probe's own source — **no
+probe run**. This supersedes both leads the section above re-pointed to, because it bounds them
+simultaneously. Lean:
+[`QOU/BraidKnot/PenaltyFamilyCeiling.lean`](folio/quantum-observable-universe/lean/QOU/BraidKnot/PenaltyFamilyCeiling.lean),
+10 theorems, `lean`-direct exit 0 with `-DautoImplicit=false -s 65536`, no warnings, all ten
+sorry-free (`#print axioms`: `propext`, `Classical.choice`, `Quot.sound` only).
+
+### The argument
+
+Three steps, none of them about `G`:
+
+1. **A bounded penalty buys at most its own depth.** If a bound `B` is valid for `f + h` and
+   `h >= -M`, then `f <= B + M` everywhere (`drop_le_of_bounded_penalty`).
+2. **A separable penalty's depth is `J` times its per-row depth** (`sum_penalty_ge`). A *padded*
+   row sits at `u = 0`, where every penalty in the family vanishes — so the depth does **not**
+   grow with block length. Same `T`-freeness as `Gamma_j`.
+3. **The deepest an admissible per-coordinate penalty can dip is `-lam/4`**
+   (`unit_penalty_ge_neg_quarter`), and the depth is attained at the half-integer
+   (`unit_penalty_eq_neg_quarter`), so the cap is the right number rather than vacuously loose.
+   The inequality is `lam*(t - 1/2)^2 >= 0`, so it needs **no** `0 <= t <= 1` hypothesis — the
+   first draft carried two and Lean's linter reported both unused. That matters: the depth is a
+   property of the cell shape alone and transfers to every cell without a per-cell argument.
+
+### The result — a FLOOR, charge-free
+
+`certified_floor`: if the unpenalised objective reaches `S` somewhere and the penalty never dips
+below `-M`, **every** bound valid for the penalised objective is at least `S - M`.
+
+    sup_real G  >=  3.27708095409687544      (the lam = 0 ascent at pe = 6, KKT residual 9.4e-14)
+    M           <=  26 * lam_max / 4  =  0.339107341038438415      (lam_max = ln q0/2, J = JPAD = 26)
+    ------------------------------------------------------------------------------------
+    floor       >=  2.937973613058437025  =  1.360297426 x the enumerated Xbot maximum
+    cut <= 32   requires 2.5643604628939807681  =  1.187312548 x
+
+**The floor EXCEEDS the requirement by 0.373613150**, so the family is **excluded**, not merely
+short (`floor_exceeds_cut32_requirement`). G1 parity is 0.634466773 out of reach.
+
+### 🛑 And my own first arrangement of this was weaker and subtly wrong
+
+I first compared the depth `0.3391` against the *certificate's* overshoot
+`B_allT - need32 = 0.8128` and reported "a factor 2.4 short" (commit `ee171422404`). `B_allT`
+bundles the padded box charge `0.100063` in with the relaxation gap, so that arrangement
+(a) credits the penalty for work the padding lead would have to do, and (b) states the
+obstruction as a *shortfall*, which leaves open the reading that padding + penalty **together**
+might close it. The floor is charge-free — it binds with the charge set to zero — so it closes
+that reading. Corrected in `0a51d0cc5a2`; the honest budget figure is **2.1x**, not 2.397x.
+
+### What this does to the two leads of the previous section
+
+- **The padding lead (0.100063) cannot rescue the route.** The floor already assumes it has been
+  taken in full.
+- **A finer `lam` grid cannot either** — and the grid *is* coarse. Read from source,
+  `_LAMS = [LAM_MAX * f / 20 for f in (0, 4, 10)]` is **three points**: `0`, `0.2 lam_max`,
+  `0.5 lam_max`. Verified exactly: `0.2 * lam_max = 0.010434072032` against the reported
+  `lam* = 0.010434072` (|diff| 3.2e-11). So `lam*` is the **middle of a three-point grid** —
+  genuinely bracketed, resolution ±0.3 `lam_max`, and the top half of `[0, lam_max)` never
+  sampled. Refining it is legitimate and is now known to be worth at most `0.339 - 0.068`.
+- **`lam* = 0.010434072 = ln q0 / 10` is a GRID ARTIFACT, not a derived constant.** It is
+  `(1/5) * (ln q0 / 2)`, and `ln q0 = 0.10434072...`, which is why the digits look like a
+  one-place shift of `ln q0`. Do not "derive" it.
+
+### A second source-level defect, independent of the ceiling
+
+Stage 1 scans `lam` at **one** frame, `_pe_scan`, chosen as the `pe` maximising R4's **ascent**;
+stage 2 then applies that fixed `lam*` to every frame, and the bound **binds** at the frame with
+the largest **charge**. Those are different frames, and that is provable from the recorded
+stage-2 column alone: `pe = 6`/`pe = 7` have ascent `3.27708095409687544` against `pe = 8`'s
+`3.27705877732425894`, yet `pe = 8` carries the largest bound. At the ascent-argmax frame the
+padded charge `lam` exists to kill is `2.4e-11`; at the binding frame it is `0.1`. So `lam` is
+selected where its advertised mechanism is inactive and applied where it is worth `0.1`.
+
+Worth fixing on general grounds — but by the ceiling it cannot close A1 either, so it is
+hygiene, not the front.
+
+### The free improvement that is also capped: the sawtooth
+
+The pointwise-optimal admissible penalty is **not** `lam(u^2 - u)` but the sawtooth
+`lam * frac(u) * (frac(u) - 1)`, which vanishes at **every** non-negative integer instead of
+growing like `lam u^2`. Consequences, all verified:
+
+- **Valid** — it is `0` at every integer, so `sup_integer G` is unchanged.
+- **Concavity-preserving at the same `lam`** — same curvature `2 lam` on each cell interior, and
+  its derivative jumps **down** by `2 lam` at each integer, which is what concavity wants.
+- **Pointwise no worse** — the two coincide on `[0, 1]`, and for `u >= 1` the quadratic has gone
+  non-negative (`quadratic_nonneg_of_one_le`) while the sawtooth stays non-positive
+  (`sawtooth_le_quadratic_of_one_le`). Numerically checked over `u` in `[0, 6]`, 0 violations.
+- **Capped by the same `-lam/4`**, so it is a cleaner formulation, not a way out.
+
+🛑 I briefly thought the sawtooth at `lam = lam_max` would cancel `G`'s curvature exactly and make
+the relaxation **exact**. **It does not, and the reason is worth recording.** That needs `G`'s
+per-coordinate curvature to be the constant `-ln q0`, which it is not: `dG_coord`'s `x`-dependence
+runs through `Rg(b+x)`, `Wg(h-x)` and a `gx(...)` term per pair, all nonlinear, so the
+`-(LNQ - 2 lam) x` term is only part of the curvature and `G` is not separable (the pair terms
+`epsx(g) - epsx(g + u_jp - u_j)` are genuine cross terms). Checked against the source before
+writing it down, which is the only reason it is in this paragraph rather than in a PR body.
+
+### What reopens the route — the one falsifiable condition
+
+`budget_needed_for_cut_32`: the per-row curvature budget would have to satisfy
+
+    lam  >=  4 * (3.27708095409687544 - 2.5643604628939807681) / 26  =  0.1096493063  =  2.102 x lam_max
+
+and `0.1497806329 = 2.871 x lam_max` for G1 parity. **`lam_max = ln q0 / 2` is a SUFFICIENT
+concavity condition in the probe, not a measured budget** — `G` carries extra negative curvature
+from exactly the `Rg` / `Wg` / `gx` terms above — so the true admissible budget may be larger and
+measuring it is a well-posed question. That measurement is now the only thing that reopens the
+penalty route, and it is cheap compared with a probe run: it is a Hessian bound on `G`, not a
+search.
+
+### Where the room actually is
+
+The exclusion is **scope (b) for the objective-penalty route, conditional on the budget**. It says
+nothing against changing the **feasible set** rather than the objective — a disjunctive /
+support-branching relaxation, in which each coordinate is split `u_j = 0` against `u_j >= 1` and
+the box lower bound on the second branch becomes `1` rather than `0`. That removes exactly the
+mechanism the probe's own docstring names as the gap's source ("an arbitrarily small displacement
+on arbitrarily many rows"), and it is outside the family this prune covers. The obstacle there is
+branch count (`2^J` in general); whether the antitonicity of `Gamma_j` makes the optimal support an
+initial segment — which would cut it to `J + 1 = 27` branches — is **not established** and is the
+next question worth a Lean lemma rather than a probe.
+
+### Minor, noted not acted on
+
+`SupergradientCertificate.lean`, `SearchCoercivity.lean` and now `PenaltyFamilyCeiling.lean` are
+**not imported by `QOU.lean`**, so `lake build QOU` does not check any of the arc's Lean —
+only `lean`-direct and `scripts/lean-library-sweep.py` do. That is precisely the "standalone
+library file escapes every per-block checker" hazard AGENTS.md names. Adding them would change
+what the root module gates on, so it is an owner call, not a tidy-up.
+
 ## 2026-10-10 (afternoon) — integer hi_j floor, checkpoint, and the Murota lead CHECKED
 
 **Integer box (`hi_j` floor), scope (a) negative.** Rounding the per-row confinement box to
