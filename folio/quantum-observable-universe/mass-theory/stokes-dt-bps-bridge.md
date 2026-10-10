@@ -16,8 +16,10 @@ graded dimension categorifies the $3$d index.
 The first equality is
 [`garoufalidis-gu-marino2023peacock`] Conjecture 3(d) — *"the Stokes
 constants are integers corresponding to the Donaldson--Thomas invariants and the
-BPS degeneracies"* — proved by Garoufalidis--Gu--Mariño for the figure-eight
-$4_1$. The second is the [`gukov-pei-putrov-vafa2017`] (GPPV) realisation of the
+BPS degeneracies"* — which Garoufalidis--Gu--Mariño state as a **conjecture and
+do not prove for any knot**, $4_1$ included. What they prove is their
+Conjecture 5 for $4_1$ and $5_2$ (their Theorem 6, via Theorems 17 and 25), and
+they verify Conjecture 4 for both knots by computation (§5.2, §6.2). The second is the [`gukov-pei-putrov-vafa2017`] (GPPV) realisation of the
 DT/BPS count as the graded dimension of the fivebrane BPS Hilbert space of
 $T[M_3]$ on $M_3 \times D^2$, categorifying the $3$d $\mathcal{N}=2$ indices. The
 $3$d--$3$d dictionary itself --- the assignment of a $3$d $\mathcal{N}=2$ theory
@@ -43,7 +45,11 @@ Two published knot-homology/BPS bridges live in the literature, and they identif
 | Bridge | BPS sector | $4_1$ count |
 |--------|-----------|-------------|
 | Gukov--Stošić [`gukov-stosic2012`] | **open** BPS states (conormal $L_K \subset T^*S^3$; colored HOMFLY homology) | $\det(4_1) = 5$ |
-| GPPV [`gukov-pei-putrov-vafa2017`] + GGM Conj 3(d) | **closed** / state-integral ($\hat{Z}$; resurgent Stokes) | $\{3, 4\}$ |
+| GPPV [`gukov-pei-putrov-vafa2017`] + GGM Conj 3(d) | **closed** / state-integral ($\hat{Z}$; resurgent Stokes) | $3$ |
+
+The closed-sector entry is the $4_1$ Stokes integer of GGM eq. (60) (§3.1, *the
+$4_1$ knot when $u = 0$*). The integer $4$ that has been quoted beside it comes
+from GGM eqs. (96)/(98), which are **$5_2$ data** (§3.2), not $4_1$ data.
 
 The **open**-HOMFLY count is fixed by the knots--quivers correspondence
 [`kucharski-reineke-stosic-sulkowski2017`]: the quiver of a knot has one node per
@@ -65,16 +71,16 @@ identification is not a coincidence of the figure-eight:
 
 All four counts equal $1 + 4pm$, the determinant of the double twist knot
 $K(p, -m)$ implied by the Alexander polynomial of [`singh-physrevd108106023`].
-Since $5 \notin \{3, 4\}$, the **open**-HOMFLY Gukov--Stošić bridge does *not*
-reproduce the GGM resurgent-Stokes spectrum $\{3, 4\}$ and does *not* license
-$A_\omega = 3$. Only the **closed**-sector bridge stated above reproduces
-$\{3, 4\}$ (reduced symmetry constant $3$); its $q \to 0$ anchor $S^+(0)_{01} = 3$
-is machine-checked unconditionally (`QOU.QBeta.StokesQZeroDTCount`).
+Since $5 \neq 3$, the **open**-HOMFLY Gukov--Stošić bridge does *not* reproduce
+the $4_1$ Stokes integer $3$ of GGM eq. (60) and does *not* license
+$A_\omega = 3$. Only the **closed**-sector bridge stated above relates to that
+integer; its $q \to 0$ anchor $S^+(0)_{01} = 3$ is machine-checked
+unconditionally (`QOU.QBeta.StokesQZeroDTCount`).
 
 We therefore adopt the **closed**-sector bridge, and A_ω=3 is made
 conditional on it downstream
-([`thm:aomega-fourone-dt-count`](#thm:aomega-fourone-dt-count)) — a theorem for
-$4_1$, conjectural in general. It is *not* the open-HOMFLY bridge.
+([`thm:aomega-fourone-dt-count`](#thm:aomega-fourone-dt-count)) — conditional for
+every knot, $4_1$ included, since GGM's Conjecture 3(d) is not proved for $4_1$. It is *not* the open-HOMFLY bridge.
 
 ### Lean axiomatisation
 
@@ -92,7 +98,7 @@ class StokesDTBPSBridge (Knot : Type*) where
 
 The fields are the conjecture's *inputs*; no field asserts a value of $A_\omega$.
 Any instance is the conjecture holding; none is supplied (the general statement is
-open — it is a theorem for $4_1$). Downstream results take
+open for every knot, $4_1$ included). Downstream results take
 `[StokesDTBPSBridge Knot]` as an explicit hypothesis and are then fully verified
 by Lean modulo that class instance, following the same pattern as
 [`conj:kashaev-volume-conjecture`](kashaev-volume-conjecture.md).
