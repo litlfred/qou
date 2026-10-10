@@ -128,10 +128,3 @@ Since $S$ maps the proton braid (uud) to a braid with quark content (ddu),
 the $S$-odd part of the mass is the structural carrier of the
 proton-neutron splitting at the Wedderburn formula level, and it has two
 sources, $\Phi_1^{-}$ and $h_{\mathrm{A}}^2\Phi_3$, not one.
-
-**Witness**:
-the formal derivation
-verifies the eigenvalue assignments canonical at $q_0$ and
-confirms that $\Phi_3 \approx 0$ for inter-nucleon-only chains in
-free $A=1$ nucleons (consistent with the $S$-eigenspace
-decomposition).
