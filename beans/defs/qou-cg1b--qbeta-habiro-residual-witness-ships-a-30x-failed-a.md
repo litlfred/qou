@@ -1,13 +1,13 @@
 ---
 # qou-cg1b
 title: qbeta-habiro-residual witness ships a 30x failed assertion — the 112th recorded-failure witness
-status: todo
+status: completed
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-21T16:38:18Z
-updated_at: 2026-10-04T15:15:48Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -123,3 +123,13 @@ Verified before the push failed: with this applied, `precision-gates.sh` reports
 the failed-assertion ratchet under ADVISORY, and the only remaining blocking
 reds are the two inherited `qbeta_ohtsuki_sixone_kappa_series.py:166` gates
 (`qou-xbh4`) — which are red on `main` independently of any branch.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: DONE.** yes
+
+Evidence: `computations/probes/qbeta-habiro-residual.witness.json`: `Q_A_witness_matches_live_single_wrap computed 1.1065e-42, tolerance 1.0, passed true`, `allPassed true`, `q0Anchor proton`, computedAt 2026-08-30 (it was 29.959 / failed). Re-ran `qbeta_habiro_residual_probe.py`: exit 0, 2/2, assertion values identical. Only env and mpmath metadata differ, and the probe warns about raw-float64 fields and a weaker env block. It is absent from `witness_failed_assertion_audit.py`'s NEW list. The advisory-flip patch is on main: `scripts/precision-gates.sh:208` ends `
+
+Status: `todo` → `completed`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

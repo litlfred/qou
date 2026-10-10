@@ -26,7 +26,7 @@ Nothing there divides.
 The **reciprocal side** — `partialProduct = (x; q)_n⁻¹` — genuinely needs
 a field, and this is not scaffolding that could be moved to a unit: the
 element being inverted, `(x; q)_n`, **provably vanishes**. That is the
-whole subject of the file — `denomPoly_root_iff` exhibits the roots and
+whole subject of the file — `denomPoly_eq_zero_of_factor_eq_zero` exhibits the roots and
 `AlgebraicCuspComplete` is *defined* as `(x; q)_n = 0`, the algebraic
 address of a cusp. An inverse of something that can vanish is exactly the
 case a `Field` (equivalently a `GroupWithZero`, whose `0⁻¹ = 0` convention
@@ -63,7 +63,7 @@ def denomPoly (q x : R) : ℕ → R
     These roots are the algebraic addresses of the geometric cusps
     that bound the active JSJ piece on the archimedean side. -/
 -- Ref: [manuscript] def:q-pochhammer-partial-product §interpretation
-theorem denomPoly_root_iff (q x : R) (n : ℕ) (k : ℕ) (hk : k < n) :
+theorem denomPoly_eq_zero_of_factor_eq_zero (q x : R) (n : ℕ) (k : ℕ) (hk : k < n) :
     1 - x * q ^ k = 0 → denomPoly q x n = 0 := by
   intro hroot
   -- Induction on n peels off the (k+1)th factor.
@@ -76,6 +76,29 @@ theorem denomPoly_root_iff (q x : R) (n : ℕ) (k : ℕ) (hk : k < n) :
       simp [this]
     · subst heq
       rw [denomPoly_succ, hroot, zero_mul]
+
+/-- **Root characterisation (biconditional).** Over an integral domain the
+    denominator `(x; q)_n` vanishes exactly when one of its factors does:
+    `denomPoly q x n = 0 ↔ ∃ k < n, 1 - x q^k = 0`. The reverse direction is
+    `denomPoly_eq_zero_of_factor_eq_zero`; the forward direction is where
+    `IsDomain` is used (a product of nonzero factors is nonzero). Over a
+    ring with zero divisors the forward direction fails, so the hypothesis
+    is not removable. -/
+-- Ref: [manuscript] def:q-pochhammer-partial-product
+theorem denomPoly_eq_zero_iff [IsDomain R] (q x : R) (n : ℕ) :
+    denomPoly q x n = 0 ↔ ∃ k < n, 1 - x * q ^ k = 0 := by
+  induction n with
+  | zero => simp
+  | succ m ih =>
+    rw [denomPoly_succ, mul_eq_zero, ih]
+    constructor
+    · rintro (h | ⟨k, hk, h⟩)
+      · exact ⟨m, Nat.lt_succ_self m, h⟩
+      · exact ⟨k, Nat.lt_succ_of_lt hk, h⟩
+    · rintro ⟨k, hk, h⟩
+      rcases Nat.lt_succ_iff_lt_or_eq.mp hk with hlt | rfl
+      · exact Or.inr ⟨k, hlt, h⟩
+      · exact Or.inl h
 
 /-- Algebraic cusp-completeness predicate: a Hecke normal-form word
     at GB-depth `n` is algebraically cusp-complete at substrate `q`

@@ -78,20 +78,39 @@ echo
 for f in "${files[@]}"; do
   [ -f "$f" ] || continue
   case "$f" in
-    # ANY .lean under content/ — the branch below already distinguishes a
+    # ANY .lean under folio/ — the branch below already distinguishes a
     # content-block sibling (has .md/.ts) from standalone library Lean, so
     # the path pattern must not pre-filter.
     #
     # It used to read `content/*/lean/*.lean|content/*lean*/*.lean`, which
     # requires the literal path component `lean/`. Content-block Lean does
     # NOT live under one — it sits beside its .md/.ts, e.g.
-    # `content/<paper>/braids-and-knots/bar-involution.lean`. Those matched
+    # `folio/<paper>/braids-and-knots/bar-involution.lean`. Those matched
     # no branch at all (there is no default `*.lean` case), so a .lean-only
     # edit to a content block silently escaped the sidecar-staleness gate:
     # 941 sidecar-carrying blocks were invisible to it. Caught when a
     # 53-file swarm reported "0 blocks needing refresh" while every one of
     # those 53 sidecars was in fact stale on source_hashes.lean.
-    content/*.lean)
+    #
+    # 🛑 AND IT HAPPENED A SECOND TIME, 2026-10-10 — same gate, same shape, one
+    # layer up. Every pattern here read `content/`, and the paper tree was
+    # renamed `content/` -> `folio/` (#7485); `content/` does not exist on main
+    # at all. So EVERY paper file fell through to no branch again. MEASURED on
+    # `folio/.../braids-and-knots/braid-group.{lean,md}`: the gate printed
+    # "2 changed file(s)", mapped **0** sidecar criteria, and exited 0 — a
+    # silent pass, which is strictly worse than the error it replaced. After
+    # the fix the same invocation maps **26** criteria per file.
+    #
+    # The migration of this file had been STARTED AND STOPPED: line ~293
+    # already carried `folio/schema/*|folio/values/*` arms while the arm below
+    # it and all six tail greps were still `content/`-only. A half-migrated
+    # dispatch is the dangerous state, because the file LOOKS migrated.
+    #
+    # Lesson for the next widening: a `case` pattern here is not path-aware
+    # (`*` crosses `/`), so the risk is never "too deep" — it is always the
+    # PREFIX. When a tree moves, grep this file for the old prefix and expect
+    # to find the tail greps as well as the case arms.
+    folio/*.lean)
       base="${f%.lean}"
       if [ -f "$base.md" ] || [ -f "$base.ts" ]; then
         # Content-block Lean — has (or should have) a .qa.json sidecar.
@@ -287,13 +306,13 @@ for f in "${files[@]}"; do
         fi
       fi
       ;;
-    # Pipeline / schema code under content/ is not a content block — it has no
+    # Pipeline / schema code under folio/ is not a content block — it has no
     # .md sibling and no sidecar, so the arm below would print a bogus
     # "(no sidecar yet)" and a qa-sweep line that cannot do anything.
-    content/pipeline/*|folio/schema/*|folio/values/*)
+    folio/pipeline/*|folio/schema/*|folio/values/*)
       echo "▸ $f  [content-tree code — not a block, no sidecar applies]"
       ;;
-    content/*.md|content/*.ts)
+    folio/*.md|folio/*.ts)
       base="${f%.*}"
       qa="$base.qa.json"
       # A chapter/paper MANIFEST is `<dir>/<dir>.ts` with no `.md` sibling — it
@@ -442,7 +461,7 @@ fi
 
 # ── canonical-mass status guard ───────────────────────────────────────────────
 # Runs when the change touches a surface the guard covers: production compute
-# docstrings (computations/**.py), the authoritative paper (content/**.md), or a
+# docstrings (computations/**.py), the authoritative paper (folio/**.md), or a
 # live reference doc (docs/**.md).
 #
 # Hosted HERE rather than in CI on purpose. Every workflow in .github/workflows
@@ -456,7 +475,7 @@ fi
 # them directly when touching the guard itself:
 #   python3 computations/canonical_mass_status_guard_test.py
 #   python3 computations/canonical_mass_table_nucleon_rows_test.py
-if printf '%s\n' "${files[@]}" | grep -qE '^(computations/.*\.py|(content|docs)/.*\.md)$'; then
+if printf '%s\n' "${files[@]}" | grep -qE '^(computations/.*\.py|(folio|docs)/.*\.md)$'; then
   guard="computations/canonical_mass_status_guard.py"
   if [ -f "$guard" ]; then
     if ! guard_out=$(python3 "$guard" --strict 2>&1); then
@@ -478,8 +497,8 @@ fi
 # per-block QA checker, with validation still green. Five blocks were in that
 # state on 2026-08-15, three of them since June/July, each announced as landed
 # by its commit message. This is the gate that catches the sixth.
-if printf '%s\n' "${files[@]}" | grep -qE '^content/.*\.(md|ts)$'; then
-  mapfile -t blockfiles < <(printf '%s\n' "${files[@]}" | grep -E '^content/.*\.(md|ts)$')
+if printf '%s\n' "${files[@]}" | grep -qE '^folio/.*\.(md|ts)$'; then
+  mapfile -t blockfiles < <(printf '%s\n' "${files[@]}" | grep -E '^folio/.*\.(md|ts)$')
   if ! bma_out=$(bun run --preload "$ROOT/scripts/preload-registry.ts" \
         "$ROOT/folio/pipeline/block-manifest-audit.ts" --diff "${blockfiles[@]}" 2>&1); then
     action=1
@@ -494,8 +513,8 @@ fi
 # constraint, no sweep, no CI step — and 12 of 166 blocks marked `verified`
 # cited a witness whose own `allPassed` was false, one of them contradicting a
 # number the block states by a factor of three.
-if printf '%s\n' "${files[@]}" | grep -qE '^content/.*\.ts$'; then
-  mapfile -t statusfiles < <(printf '%s\n' "${files[@]}" | grep -E '^content/.*\.ts$')
+if printf '%s\n' "${files[@]}" | grep -qE '^folio/.*\.ts$'; then
+  mapfile -t statusfiles < <(printf '%s\n' "${files[@]}" | grep -E '^folio/.*\.ts$')
   if ! st_out=$(python3 "$ROOT/scripts/check-computation-status.py" \
         --files "${statusfiles[@]}" --strict 2>&1); then
     action=1
@@ -513,7 +532,7 @@ fi
 # Restricted to CHAPTER dirs -- `*/audit/`, `lean/`, and paper-root notes are
 # legitimately not blocks -- and to CHANGED files, so it flags what a commit
 # adds rather than reprinting the standing backlog.
-if printf '%s\n' "${files[@]}" | grep -qE '^content/[^/]+/[^/]+/[^/]+\.md$'; then
+if printf '%s\n' "${files[@]}" | grep -qE '^folio/[^/]+/[^/]+/[^/]+\.md$'; then
   unreg=()
   while read -r m; do
     case "$m" in */audit/*|*/lean/*|*.qa.md) continue;; esac
@@ -523,7 +542,7 @@ if printf '%s\n' "${files[@]}" | grep -qE '^content/[^/]+/[^/]+/[^/]+\.md$'; the
     # ns-kummer-specialisation-divisibility.md, deleted long ago.
     [ -f "$m" ] || continue
     [ -f "${m%.md}.ts" ] || unreg+=("$m")
-  done < <(printf '%s\n' "${files[@]}" | grep -E '^content/[^/]+/[^/]+/[^/]+\.md$')
+  done < <(printf '%s\n' "${files[@]}" | grep -E '^folio/[^/]+/[^/]+/[^/]+\.md$')
   if [ ${#unreg[@]} -gt 0 ]; then
     action=1
     echo "⚠ content .md with no .ts manifest — unregistered, so absent from the"

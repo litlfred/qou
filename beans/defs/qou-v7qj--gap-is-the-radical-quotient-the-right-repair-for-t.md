@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T21:23:19Z
-updated_at: 2026-10-04T15:20:07Z
+updated_at: 2026-10-10T07:47:09Z
 parent: qou-cdx1
 ---
 
@@ -167,3 +167,11 @@ Scope: braid index 3 only. Birman–Menasco are explicit that the pathologies of
 papers III–V obstruct generalisation to higher index.
 
 Full analysis: `docs/audits/2026-08-25-closed-3-braid-selection-principle-exists.md`.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+Is the radical quotient the right repair for the convention-D operator-
+selection LP? Open mathematics downstream of D, not a C site. Live.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

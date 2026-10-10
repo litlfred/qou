@@ -127,7 +127,7 @@ norm of every unit power is `+1`; on Bring's golden order it is `(−1)ⁿ`. Hen
 sign that alternates with the winding number is available on the disc-5 order and
 structurally unavailable on the disc-12 one — which is exactly why the sign flip
 must live on Bring's surface rather than on the cusp torus. -/
-theorem parity_flip_iff_golden (n : ℕ) :
+theorem norm3_pell3_eq_one_and_normPhi_goldenPow (n : ℕ) :
     norm3 (pell3 n) = 1 ∧ normPhi (goldenPow n) = (-1) ^ n :=
   ⟨pell3_norm n, goldenPow_norm n⟩
 

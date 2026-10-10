@@ -8,8 +8,9 @@
 
   Canonical refutation precedent: PR #1850's trace-level Markov-
   stabilization attack (refuted-class row C12) was killed at the
-  formalize-first level because z(q_0) = 0.4993 < 1 cannot multiply
-  up to linking_weight ≈ 2.53 > 1. The direction-sanity invariant
+  formalize-first level because z(q_0) < 1 cannot multiply up to
+  linking_weight ≈ 2.53 > 1 (z(q_0) ≈ 0.6127 at the canonical
+  z = q³/(q²+1); the PR quoted 0.4993, the excised convention-C value). The direction-sanity invariant
   abstracts this one-line magnitude argument.
 
   Three ingredients:

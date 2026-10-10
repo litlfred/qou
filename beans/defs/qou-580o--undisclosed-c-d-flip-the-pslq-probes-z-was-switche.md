@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-18T08:21:15Z
-updated_at: 2026-10-04T15:14:17Z
+updated_at: 2026-10-10T07:47:05Z
 parent: qou-cdx1
 ---
 
@@ -151,3 +151,12 @@ they were correct and remain correct.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-18 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+An undisclosed C->D flip inside a Lambda/Cl2-named key rename, where a rename
+that cannot move a number moved one. Live: the defect is an unrecorded
+provenance change, not a surviving C binding.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

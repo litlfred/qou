@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-01T18:47:21Z
-updated_at: 2026-10-04T15:16:50Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -23,3 +23,13 @@ is: **assess whether the archimedean q₀-evaluation of the fibre-level
 McPhail-Snyder diagrammatic state-sum has any bridge to the QOU c₃ at all,
 and flag the fibre↔observable category error before spending compute.** If no
 bridge, record the negative. No fit, nothing wired.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: OPEN.** Still unassessed. The likely outcome is a written negative: HabiroEvaluationTrichotomy rules out the series route at q0, and ModularDoubleReciprocity makes the state-integral route degenerate at the substrate. Close by writing that bridge-assessment up against qou-t7az. Do not probe.
+
+Evidence: The re-scoped task (does a q0-evaluation of McPhail-Snyder's fibre-level state-sum bridge to c_3?) has no probe or witness. The negative prior is in `beans/defs/qou-t7az` (roast: ρ is an input, k∈Z^E is summed rather than selected, it is a root-of-unity object, it targets volume). Two structural results bear on it: `QOU/QBeta/HabiroEvaluationTrichotomy.lean` (an infinite Habiro series has no continuous evaluation at q>1) and `QOU/QBeta/ModularDoubleReciprocity.lean` (the state-integral dual is ~1e-165 at the substrate).
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

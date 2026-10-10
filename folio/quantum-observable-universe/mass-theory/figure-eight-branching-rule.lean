@@ -93,7 +93,7 @@ axiom figure_eight_b_zero_iff_row_or_col_axiom :
 
 /-- b_λ = 0 iff λ does not contain [2,1] as a sub-diagram,
     which holds iff λ is a single row or single column. -/
-theorem figure_eight_b_zero_iff_row_or_col (lambda : List ℕ)
+theorem row_or_col_degenerate_of_skewSYTCount_eq_zero (lambda : List ℕ)
     (hlam : lambda ≠ []) :
     skewSYTCount [2, 1] lambda = 0 →
     (∀ i, i < lambda.length → i ≥ 1 → lambda[i]! = 0) ∨

@@ -7,7 +7,7 @@ priority: medium
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T11:45:00Z
-updated_at: 2026-10-04T15:26:05Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -367,3 +367,13 @@ NEW derived structural obstruction to porting the C bar-split to D: alpha_C=(z_C
 
 ## 2026-08-29 — the alpha_D bar-mixed obstruction is now PROVED-LEAN (landed)
 QOU/QBeta/EigenphaseBarMixedD.lean committed (0f4df6eed6), sorry-free (clean axioms): twoAlphaD_bar_even_sum (2a_D(1/q)+2a_D(q)=(q^2-1)^2/q^2) + twoAlphaD_not_bar_odd. Contrast alpha_C pure bar-odd (QOU.Interactions.eigenphase_bar_involution). This machine-checks the exact obstruction to porting the C bar-split to D. Parity still OPEN (blocked on cds1 D ladder).
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: BLOCKED.** Parity is undetermined and stays blocked until qou-cds1 produces a D-frame c_3. The "(H1) is 0.03σ" evidence probe has a committed red witness (allPassed:false). Its 0.48% assertion predates the CODATA-2022 muon re-pin and needs fixing at the producer.
+
+Evidence: Blocked on `qou-cds1`, as its own last line says. `EigenphaseBarMixedD.lean` and `MarkovZFullBarCondition.lean` are sorry-free by grep: under D the eigenphase is bar-mixed, with even part (q²-1)²/(4q²). `qbeta_c3_bar_partner_extractor_breakdown.py` re-run exits 0 and reproduces. **Broken witness:** `qbeta_h1_significance_against_cal3_band.py` exits **1**, and the committed witness at HEAD already records `allPassed:false`. Assertion `quoted_048pct_is_the_muon_not_the_substrate_anchor` fails because the muon figure is now 0.4962% (CODATA-2022 pin), not 0.48%.
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

@@ -230,7 +230,17 @@ def main() -> int:
     print()
 
     builder.add_data("symbolic_closed_forms", {
-        "z": "1/(sqrt(q) + 1/sqrt(q))",
+        # This string read `1/(sqrt(q) + 1/sqrt(q))` — convention C — while the
+        # `z` it claims to document has been `q**3 / (q**2 + 1)` (convention D)
+        # at line 114 since the 2026-08-15 ruling. A convention surviving as a
+        # STRING LITERAL bound for a witness field is invisible to every
+        # detector on the excision campaign: the value audit compiles the RHS
+        # and evaluates it, and a `str` evaluates to itself rather than to
+        # 0.4993…; the shape audit scans assignment and return *expressions*;
+        # and `scriptHash` matched, so witness-staleness reported this witness
+        # fresh — correctly, because it faithfully recorded a producer that
+        # misdescribed itself. Bean qou-u5z0.
+        "z": "q**3 / (q**2 + 1)",
         "h": "q - 1/q",
         "alpha": "(z - 1)*h/2",
         "b": "sqrt(q**4 + q**2 + 1)/(q**2 + 1)",

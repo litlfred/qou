@@ -2,7 +2,8 @@
 The Iwahori--Hecke algebra $H_A(q)$ is defined over the ring
 $\mathbb{Z}[q^{\pm 1}]$.  Each crossing factor
 $C_{ij} = c_j \sigma_i + d_j$ has coefficients $(c_j, d_j)$
-in $\mathbb{Z}[q^{\pm 1}]$:
+in $\mathbb{Z}[\tfrac12][q^{\pm 1}]$ (the factor $\tfrac12$ enters only
+through the mixed crossing):
 
 | Pair type | $c_j$ | $d_j$ | Hecke element |
 |-----------|-------|-------|---------------|
@@ -27,41 +28,53 @@ $$
     c_j(q - q^{-1}) + d_j & c_j \\
     c_j & d_j
   \end{pmatrix}
-   \in  \mathrm{M}_2(\mathbb{Z}[q^{\pm 1}])
+   \in  \mathrm{M}_2(\mathbb{Z}[\tfrac12][q^{\pm 1}])
 $$
 
-has entries that are Laurent polynomials in $q$.  The
+has entries that are Laurent polynomials in $q$ with exponents in
+$[-1, 1]$.  The
 product of $k_i = A - i - 1$ such matrices at generator $\sigma_i$:
 
 $$
   M_i(q) =  \prod_{j=i+1}^{A-1} T_j(q)
-   \in  \mathrm{M}_2(\mathbb{Z}[q^{\pm 1/2}])
+   \in  \mathrm{M}_2(\mathbb{Z}[\tfrac12][q^{\pm 1}])
 $$
 
-has entries that are polynomials in $q^{1/2}$ of degree $\leq 2k_i$.
+has entries that are Laurent polynomials in $q$ with exponents in
+$[-k_i, k_i]$.
 The traced volume:
 
 $$
   \hat{V}_i(q) =  z(q) \cdot (M_i)_{11}(q) + (M_i)_{21}(q)
 $$
 
-is a rational function in $q^{1/2}$ (the $z$ denominator
-$q^{1/2} + q^{-1/2}$ divides into the numerator for link
-invariants by Jones's theorem).
+is, with $z = q^3/(q^2+1)$,
+
+$$
+  \hat{V}_i(q) = \frac{q^3 (M_i)_{11}(q) + (q^2+1)(M_i)_{21}(q)}{q^2+1},
+$$
+
+a quotient of a Laurent polynomial with exponents in
+$[-k_i, k_i + 3]$ by $q^2 + 1$.  The denominator does not cancel in
+general (for one $\mathfrak{p}$-$\mathfrak{p}$ crossing,
+$\hat{V}_0 = (q^4+1)/(q^2+1)$).
 
 The product $P_{\mathcal{N}}(q) = \prod_i \hat{V}_i(q)$ is
-a polynomial in $q^{1/2}$ because each factor is (after
-cancellation with $z$), and its degree is bounded by:
+therefore a rational function whose denominator divides
+$(q^2+1)^{A-1}$, and the span of its numerator is bounded by:
 
 $$
-  \deg P_{\mathcal{N}}
+  \operatorname{span} N_{\mathcal{N}}
    \leq 
-  \sum_{i=0}^{A-2} (2k_i + 1)
+  \sum_{i=0}^{A-2} (2k_i + 3)
   = 
-  2 \cdot \frac{A(A-1)}{2} + (A-1)
+  2 \cdot \frac{A(A-1)}{2} + 3(A-1)
   = 
-  A^2 - 1.
+  (A-1)(A+3).
 $$
+
+The bound is attained: a symbolic check over random crossing
+sequences for $A \le 5$ reaches it and never exceeds it.
 
 The computation requires exactly
 $\sum_i k_i = \binom{A}{2}$ transfer matrix multiplications
@@ -85,14 +98,19 @@ topological invariant to the physical energy.
 
 **Degree bounds for specific nuclei.**
 
-| Nucleus | $A$ | $\binom{A}{2}$ steps | $\deg P_{\mathcal{N}} \leq$ |
+| Nucleus | $A$ | $\binom{A}{2}$ steps | $\operatorname{span} N_{\mathcal{N}} \leq$ |
 |---------|-----|:---:|:---:|
-| ${}^{2}\mathrm{H}$ | 2 | 1 | 3 |
-| ${}^{3}\mathrm{H}$ | 3 | 3 | 8 |
-| ${}^{4}\mathrm{He}$ | 4 | 6 | 15 |
-| ${}^{14}\mathrm{C}$ | 14 | 91 | 195 |
-| ${}^{56}\mathrm{Fe}$ | 56 | 1540 | 3135 |
-| ${}^{210}\mathrm{Bi}$ | 210 | 21945 | 44099 |
+| ${}^{2}\mathrm{H}$ | 2 | 1 | 5 |
+| ${}^{3}\mathrm{H}$ | 3 | 3 | 12 |
+| ${}^{4}\mathrm{He}$ | 4 | 6 | 21 |
+| ${}^{14}\mathrm{C}$ | 14 | 91 | 221 |
+| ${}^{56}\mathrm{Fe}$ | 56 | 1540 | 3245 |
+| ${}^{210}\mathrm{Bi}$ | 210 | 21945 | 44517 |
+
+Until 2026-10-10 this proof used the excised convention-C parameter
+$z = 1/(q^{1/2} + q^{-1/2})$, which cancels against the numerator and
+gives a polynomial in $q^{1/2}$ of degree $\leq A^2 - 1$ (table values
+$3, 8, 15, 195, 3135, 44099$).
 
 All evaluated in milliseconds.
 

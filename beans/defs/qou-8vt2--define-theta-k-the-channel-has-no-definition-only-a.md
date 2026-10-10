@@ -7,7 +7,7 @@ priority: critical
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T00:00:00Z
-updated_at: 2026-10-04T15:14:33Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -921,3 +921,13 @@ richer bar-transformation that depends on the cell-content multiset.
 
 **Guard.** This is a structural finding (exact symbolic identity + exhaustive
 numerical verification), not a fit. No anchor input used.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: OPEN.** Still open: u is a free class field. Add that the sign-flip antecedent of two of its four filters is not established by data (sign_flip_resolved=False). Also, the Lipschitz filter is convention-C-conditional and is the extractor's 1/u³ amplification (see qou-4kr1). Its theorems hold; whether they apply is open.
+
+Evidence: The exclusions it relies on are sorry-free (real-sorry scan = 0): ChannelMeridianIdentification, CompleteStructureExclusion, ThetaLipschitzObstruction (folio/.../lean/QOU/QBeta/). The c3 arc check (2.65 ppm falsified) is consistent with ck-dk registry. Caveat: `no_sign_flip_of_theta_zero` and `opposite_sides_of_diagonal` take the anchor signs as hypotheses, and witness `sign_flip_resolved=False`. ThetaLipschitzObstruction's bite uses the swing, which is resolved but convention-C.
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

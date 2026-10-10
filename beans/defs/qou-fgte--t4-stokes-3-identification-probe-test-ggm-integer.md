@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-27T14:57:31Z
-updated_at: 2026-10-04T15:14:06Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -26,3 +26,13 @@ NOT marking completed (owner-only per AGENTS §4a).
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-01 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: EVIDENCE-UNRELIABLE.** The action ≈ Vol/π comes from a 12-term numeric fit, not a proof. The amplitude test is inconclusive. The magnitude test is a linear ansatz on convention-C empirical anchors. Redo in convention D with an exponential (bridge-equation) form, or retire it.
+
+Evidence: The large-order fit re-run reproduces the witness: A_ratio 0.6557, Aitken 0.6443 vs Vol/π 0.6461, 2πP ≈ 0.995. This is 12 orders, and the `kappa` field is stored as ~16-digit floats despite the "54-digit" claim. The amplitude "≠3" is normalization-dependent, so it does not decide the bean. The magnitude half (`qbeta_stokes3_magnitude_identification_probe.py`) re-ran with exit 0 and the same verdict (inconsistent Im u). It uses the linear S = 3·Im𝔙 ansatz that dtd3 rejects, empirical CODATA anchors, and `c3_target_at` in convention C. The muon S in its docstring (0.00968298) ≠ the witness (0.0100229).
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

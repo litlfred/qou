@@ -79,15 +79,6 @@ structure PAdicQOU extends FIsocrystalData where
     frobenius (verschiebung (frobenius x)) =
     frobenius (frobenius (verschiebung x))
 
-/-- The observability condition for the `ℚ_p` realisation generalises
-    irreducibility of the instanton connection to the p-adic setting:
-    `Hom(𝟙, Ad(A)) = 0` iff the F-crystal is irreducible.
-
-    LaTeX: `\label{ex:p-adic-realisation}`, key structures. -/
-theorem padic_observability_iff_irreducible (pq : PAdicQOU) :
-    (∀ (x y : pq.carrier), pq.frobenius x = x → pq.frobenius y = y → x = y) :=
-  pq.frobenius_irreducible
-
 /-! ## §2  Finite-Field Realisation -/
 
 /-- **`𝔽_p` Quantum Observable Universe**: a QOU over a finite field,
@@ -161,18 +152,6 @@ theorem padic_qou_lifts_from_finite_field
      frobenius_surjective := fun y => ⟨y, rfl⟩
      fv_comm := fun _ => rfl }, rfl⟩
 
-/-- The unit-root condition on the F-crystal is equivalent to
-    integrability of the skewed-Poisson structure on the underlying
-    formal group: the Frobenius is surjective.
-
-    LaTeX: `\label{rem:witt-lift-qou}`, item (4).
-    Reference: [fred2005, Corollary 5.3]. -/
-theorem unit_root_iff_skew_poisson_integrable
-    (pq : PAdicQOU) :
-    (∀ (y : pq.carrier), ∃ (x : pq.carrier), pq.frobenius x = y) :=
-  pq.frobenius_surjective
-
-
 /-! ### Removed 2026-08-30 — self-assuming projections
 
 - `padic_frobenius_relation_preserved` — body was `pq.fv_comm`: the conclusion was the projected field
@@ -184,6 +163,25 @@ the restatement goes. That is the vacuity ledger's recorded disposition for
 this category — *"drop the pseudo-theorem and project the field at use sites"*
 — and there were no use sites: each had **zero references anywhere in the
 corpus**, including in this file. Bean `qou-z9ws`.
+
+### Removed 2026-10-10 — the same category, two survivors of the 2026-08-30 pass
+
+- `unit_root_iff_skew_poisson_integrable` — body was `pq.frobenius_surjective`
+- `padic_observability_iff_irreducible` — body was `pq.frobenius_irreducible`
+
+Identical to the case above: each conclusion was the projected field verbatim,
+so the declaration restated its own hypothesis. Both had **zero references
+anywhere in the corpus**, in Lean and outside it, so the recorded disposition
+applies unchanged — the content stays in `frobenius_surjective` and
+`frobenius_irreducible` on `PAdicQOU`, and only the restatement goes.
+
+They survived the 2026-08-30 pass because they were reached from the other
+side: bean `qou-bybn` found them by NAME, as two of thirteen `*_iff*`
+declarations whose statements contain no `↔` (taxonomy row 49). A name-keyed
+probe and a body-keyed probe each saw half of the defect, and neither saw that
+the honest disposition was removal rather than a rename. Renaming
+`unit_root_iff_skew_poisson_integrable` to `frobenius_surjective` would also
+have collided with the `PAdicQOU` field it projects. Bean `qou-bybn`, PR #7546.
 -/
 
 end QOU.PAdicQuantumGroups

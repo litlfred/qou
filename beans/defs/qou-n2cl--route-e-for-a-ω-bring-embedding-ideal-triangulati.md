@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T09:01:48Z
-updated_at: 2026-10-04T15:13:53Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -42,3 +42,13 @@ What this buys: a common *frame* — both legs carry a Gromov norm, proportional
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-06 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: OPEN.** The NZ derivation for 4₁ reproduces. A_ω is untouched, so this stays open. Item 3 should cite 9f527376 (5₂ entry 4, conditional) rather than "a co-occurring 4 in 4₁", which is GGM's 5₂ matrix.
+
+Evidence: `nz_gluing_from_braid_monodromy_probe.py` re-run: exit 0, 5 s, every listed assertion PASS. Vol = 2.0298832128193072500424 = 2Cl₂(π/3), and the cusp shape is 2√3 i. It does not touch A_ω. Item 3's "disc reading already refuted (co-occurring 4)" rests on the eq-98 misattribution (finding 1).
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-10-10T07:02:43Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -8596,3 +8596,131 @@ radius on `qou-6moa`; fixed so far in AGENTS.md and
 ## 2026-10-10 — item moved here from `qou-54g5` (epic `qou-d8c7`, issue litlfred/qou#7547)
 
 `qou-54g5` is completed today: the ladder headline it questioned was settled on 2026-08-31 (sign positive, `+0.0071` ppm) and its 2026-09-13 entries confirm the witness carries the live `7.133937` ppb. One thing it left open belongs with this re-derivation: **the cause of the 7.133 ppb epoch offset** between the published-epoch column and the recomputed N=3 row (`qou-54g5` lines ~386-430, marked there "NOT FITTED: the cause ... is not identified"). It is not identified here either.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: OPEN.** c_k u^k\
+
+Evidence: No D-frame c_k ladder exists. `qbeta_ck_cache.py` refuses on D (exit 2, re-run). On the ruled base the ladder form is excluded for every α (`qbeta_ladder_form_cannot_reach_ruled_base_probe.py` re-run: exit 0, 8/8, F_required 1.75923699418 / 1.20016236389 vs cap 0.99992745). It is also excluded for any rungs with Σ\
+
+Status: `in-progress` → `in-progress` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+
+## 2026-10-10 — the convention-D ladder, expanded exactly from its definitions (owner: "Do c_k under convention D", option 1)
+
+Derivation from `QBetaCategoricalPrecisionLadder.lean`'s definitions with sympy, plus a numeric check at the proton pin (`q_at(50)`, 50 dps). **No data enters except the final comparison against the ruled-base requirement, which is a CHECK and not a search target. Nothing is wired and no number moved.**
+
+**1. Bar parity, exact (sympy `simplify` → 0).**
+- `bar(z_D) = z_D − h = q⁻⁴·z_D`.
+- `bar(2α_D) + 2α_D = h²`.
+- `a_odd := α_D − h²/4` is exactly bar-odd.
+- `b` is bar-even; `z_C` and `α_C` are bar-even and bar-odd respectively.
+
+**2. In the h-frame the forced projection is just the odd part.**
+- `q ↦ 1/q` sends `h ↦ −h`, and the whole even part of `α_D` is `h²/4`, exactly.
+- So `a_odd` is the odd part of `α_D` in `h` (`qou-cwin`'s authorised frame):
+  - `α_C(h)        = −h/4 −  h³/128 + 7h⁵/8192  − 33h⁷/262144 + …`
+  - `α_D(h)        = −h/4 + h²/4 + 3h³/32 − 5h⁵/512 + 7h⁷/4096 − …`
+  - `a_odd^D(h)    = −h/4 + 3h³/32 − 5h⁵/512 + 7h⁷/4096 − …`
+- **C and D agree at O(h) and first differ at O(h³):** `−1/128` against `+12/128`, a difference of `13h³/128`.
+
+**3. The rungs `c₂…c₅` are unchanged under D, because they are z-free.**
+- The tail `N2…N5` contains no `z` (checked symbolically).
+- Its rungs are, exactly:
+  - `c₂ = −1`
+  - `c₃ = −2`
+  - `c₄ = −2(q⁴+q²+1)²/(q²+1)⁴ = −1.13312094258…`
+  - `c₅ = −(3q⁴+4q²+3)/(2(q²+1)²) = −1.25270211325…`
+- **"Re-deriving c_k under D" therefore has nothing to re-derive at k ≥ 2.** The only convention-D object is the N=1 phase.
+- This is consistent with the 2026-09-14 entry: "one phase to derive, five values to re-extract". The re-extracted values are artefacts of inverting the single data scalar through N1.
+
+**4. The uniform-bound gate passes, so the ruled-base exclusion STANDS for this ladder.**
+- `max|c_k| = 2 ≪ C_min = 2279.46` (`LadderUniformBound`).
+
+| N=1 phase | α(q₀) | F(q₀) |
+|---|---|---|
+| C (`α_C`) | −0.0523361203 | 0.9983252784 |
+| D z-swap (`α_D`) | −0.0404857773 | 0.9989254255 |
+| D bar-odd (`a_odd`) | −0.0514123295 | 0.9983771024 |
+| cap `1 − u²` | | 0.9999274567 |
+
+- `F_required` on the ruled `z_D` base is 1.75924, so every row misses by about 76%.
+- The tail is `0.99992621505014018…`, reproducing the 2026-09-14 entry.
+
+**Scope.**
+- This derives the ladder *as the corpus defines it*. It does not derive the ladder's ansatz, and it does not derive α: `a_odd` is forced by parity, not by mechanism.
+- It does not touch `qou-pdix`.
+- The open question remains the one recorded on 2026-09-14: **what element or functional supplies a factor above 1 on the ruled base.** Owner, 2026-10-10: work that next.
+
+Script: `ck_D_exact.py` (sympy and mpmath; sections 1–2 exact, section 4 at 50 dps).
+
+
+## 2026-10-10 (2) — what supplies a factor above 1 on the ruled base: nothing admissible, with one ruling question open
+
+Owner, 2026-10-10: *"Find what element or functional supplies a factor above 1 on the ruled base."*
+
+The candidates were pre-registered at 07:46Z, before any value was computed at q₀: 19 rows, each with its structural source, why it is admissible, and a gate. Results: **0 SUPPLIES · 11 FAILS · 6 INADMISSIBLE · 1 INDETERMINATE.** Every inadmissible row also failed its own gate on value, so admissibility decided nothing on its own. All numbers are at 60 dps, after 7 calibrations against corpus witnesses. 1.75924 was used only as a check, never as a search target.
+
+**Functional side — closed by an exact identity, for every q.**
+- `χ_(2,1)(Δ_S) = 0`. Proof: σᵢ has trace `h` in the (2,1) irrep, so `2·(h²/2) − (h/2)(h+h) = 0`. Verified independently.
+- Under D, `y_(1³) = 0`. So **every** trace of `Δ_S` is `a_(3)·χ_(3)(Δ_S)`, Markov or not.
+- The two admissible Wenzl levels fix `a_(3)` at:
+  - `y_(3) = [4]_q/[2]_q³ = (q⁴+1)/(q²+1)² = 0.5054` at `z_D` (ruled), or
+  - `1` at `z = q` (augmentation).
+- CODATA needs `0.8891`, strictly between them, which is the non-integer level 1.1258.
+- So the functional choice is a single bit, and the ruling takes the value further from CODATA.
+- Projections, adding or removing the trace-invisible part, conjugation and bar-symmetrisation all give exactly 1. `Δ_S` is already exactly bar-odd at `z_D`.
+- `[2]_q²` and `[2]_q³` quantum-trace rescalings (4.04, 8.13) and the augmentation (1.979) are inadmissible, and they overshoot anyway.
+
+**Element side — a factor above 1 exists, but not 1.759 under the literal rulings.** These figures are the research agent's numerics and have not been re-derived here.
+- The most ruling-compliant family is the γγ core `(σ₀σ₁⁻¹)³` with quark letters, no gluon letters, and the reading-3 test passed on the whole word.
+- It gives `F = 1.147–1.349` across the four combinations the unresolved 2-fold degeneracy leaves.
+- With the tower-summed `E₀` the best is 1.362, about 23% short: `Q_β ≤ 0.606 MeV` against 0.78233.
+
+**OPEN — owner ruling, recorded undecided 2026-10-10.** Does the 2026-08-30 single-wrap ruling's *"no gluon"* exclude the gluon letters of the γγ nucleon words?
+- **If yes:** the ruled base is closed negatively for the corpus alphabet, capped at 1.362.
+- **If no:** the family straddles the target. In a POST-HOC check, only the live 2-letter gluon budget straddles (0.12–2.29), and nothing selects a word. The next item is then the energy / O'Hara selection principle proposed on 2026-09-14 (`qou-99qc`). Only that principle may pick a word, never closeness to 1.759.
+
+**Follow-ups this surfaced.**
+- A small Lean target: `χ_(2,1)(Δ_S) = 0`, and hence "the admissible functionals on `Δ_S` are exactly `{y_(3), 1}·χ_(3)(Δ_S)`".
+- An engine fragility: at 2 gluon letters, 16 words sit exactly on the reading-3 boundary (`χ_(2,1) = 0`). The corpus counts of 149 and 145 are right only because round-off falls at `+4e-51`; a fresh engine counted 146 and 142. The comparison needs an explicit tolerance.
+- The 30 routes the corpus had already closed are listed with their evidence in the research notes and were not re-run.
+
+
+## 2026-10-10 — two of this bean's cited supports are red (cross-cluster check, verification sweep of `qou-avtq`)
+
+- **Step 27** cites `qbeta_level_k_binding_operator_probe.py` as "(8/8)" for "the level-k operator IS binding". A re-run today gives **6/8**, exit 1, failing `binding_character_is_largest_in_a_tl_kernel_block` and `the_only_small_eigenphases_are_in_blind_blocks`. Both headline findings of Step 27 are red. `qou-g5oz` (parent `qou-9nnz`) tracks the probe.
+- **The swing-gate cancellation and α(q0):** `qbeta-c3-swing-gate.witness.json` fails `swing_matches_o2` (3.4e-4 against tol 1e-6) and carries no q0Anchor. `qbeta-symbolic-chain-alpha-b.witness.json` fails `alpha_q0_matches_probe_n3_witness` (0.01185 against tol 1e-30).
+
+
+## 2026-10-10 — re-audit: you are the ONLY thing left, and the 8593 lines above are why nobody could tell (bean `qou-am5t`)
+
+Measured the whole C→D surface today rather than quoting any figure. Result:
+**this bean is the migration.** Three of the four trace channels are `agreed`
+with definitional and production convention both D; `qbeta-decay` is the fourth
+and is yours. Across the entire repo there is **one non-probe production file**
+binding convention C — `computations/qbeta/qbeta_ck_cache.py:140`,
+`z = sqrt(q) / (1 + q)` — and 11 of the registry's 12
+`blocked_on_rederivation` rows point here.
+
+Everything else an audit still reports is accounted: 143 adjudicated comparison
+arms (the last 6 adjudicated today, `BLOCKING` 6 → 0, `e6a5d23e9`), 1 stays-C
+by design, 18 deliberate Lean definitions, 1 symbolically-C witness.
+
+**Nothing about the mathematics is new here.** The one thing worth adding is a
+pointer, because this bean is 8593 lines and its own framing of the blocker was
+wrong until 2026-09-14: the ladder is **not** blocked on the phase `α`
+(`qou-pdix`). `cos ≤ 1` caps `F_N2(α) = cos(α − u/2)·(1 − u²)` at
+`1 − u² = 0.99992745` for every real `α`, while the ruled `z_D` base needs
+`F_required = 1.75923699418` (order-zero `E₀`) or `1.20016236389` (the
+dashboard-scored cell) — so no `α` unblocks it, and the two cells a cosine can
+reach are the two the 2026-09-08 ruling does not select. The live question is
+**what object supplies a factor above 1 at all** — the base or the assembly.
+
+State summary with the command behind each number:
+[`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §5.
+
+**Not reclaiming this bean** — the claim reset of 2026-10-04 stands and the open
+item is research, not drain.

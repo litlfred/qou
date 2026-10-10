@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T11:29:16Z
-updated_at: 2026-10-04T15:23:00Z
+updated_at: 2026-10-10T07:47:07Z
 parent: qou-cdx1
 ---
 
@@ -56,3 +56,13 @@ and should stay until the quotient repair lands.
 Note the probe's own docstring already anticipated the precision it was relying
 on: "the float64 version of this gate could only ask for 1e-6". At 1e-6 this
 failure would have been invisible.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+`qbeta_braid_nf_sdp_offset_probe` solves against a Gram that is singular under
+D. The registry records this as the one real downstream consequence of
+migrating pyhecke's mpmath path. Live; the probe's own guard refuses rather
+than publishing laundered numbers, which is correct behaviour and not a fix.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

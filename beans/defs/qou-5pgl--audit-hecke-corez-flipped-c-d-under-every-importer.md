@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-24T13:23:16Z
-updated_at: 2026-10-04T15:16:28Z
+updated_at: 2026-10-10T07:47:06Z
 parent: qou-cdx1
 ---
 
@@ -274,3 +274,118 @@ The carrier-3 **conclusion survives** — "the towers are fitting experiment" ho
 
 - **The Greek-letter blind spot bit on the first run.** The keyword gate was ASCII-only (`tr_M|trace|markov|hecke|braid`) and the confirmed table row is `` | `(σ₀σ₁⁻¹)³` — true β_Bor | 0.998562… | ``, matching none of them: **1 of 3** figures scored, **3 of 3** after adding Greek. Same class as the thirteen-blind-spellings problem.
 - **A float64 smell in `probe3qrv.py` that is INERT — reporting the negative.** Line 26 does `hn = float(h0)`. Measured rather than assumed, same word both ways: float64 `h` → `0.998562163836787265951213135147`; exact 50-dps `h` → **byte-identical**. The coefficient enters symbolically and the substitution carries the precision. Tested for the interleaved Borromean word only; the cast is worth removing on principle, but the 18 quoted digits are **not** contaminated by it.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+8 files carrying constants CALIBRATED before `hecke_core.z` flipped C->D. A
+constant fitted under C and left in place is invisible to any detector that
+reads `z`, because the `z` is gone and only its consequence remains. Live,
+same class as `qou-46ab`.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
+
+---
+
+## 2026-10-10 — verdict on the two top candidates: NEITHER is convention-calibrated. One carries a DIFFERENT live defect.
+
+Re-audit of the C→D migration tracker (session epic `qou-am5t`). This bean named
+two constants as "likely calibrated, worth checking first". Both were run down.
+**Neither is a convention issue, and this bean's own §141 table already said so
+for both** — so the queue here is narrower than the 8-candidate list reads.
+
+### `3.74446989` — NOT convention-calibrated, and the bean already prunes it
+
+`computations/sweeps/paper_six_term_isotope_sweep.py:1151`:
+
+```python
+ALPHA_BORROMEAN_MEV      = 3.74446989    # m_e · 8G  (`prop:binding-scale-catalan`)
+```
+
+`m_e · 8G` carries **no Markov parameter** — neither `m_e` (CAL-1, a CODATA
+input) nor Catalan's `G` is a function of `z`, so no C→D flip can move it. This
+bean's §141 table marks it **PRUNE** for exactly that reason, and that verdict
+is correct. Closing it as a convention candidate.
+
+### But the same grep confirms the §161 "Incidental", and it is SHARPER than recorded
+
+§161 of this bean records *"`3.74446989` does not reproduce its own stated closed
+form"*. Recomputed here at `mp.dps = 30` with CODATA-2022 `m_e = 0.51099895069`
+and `mpmath.catalan`:
+
+```
+8G          = 7.327724753417752120436828
+m_e · 8G    = 3.7444596599416103248
+literal     = 3.74446989
+residual    = +2.73205 ppm   (literal HIGH)
+```
+
+That reproduces the figure in `qou-3nva` and in the QA sidecar
+`folio/quantum-observable-universe/mass-theory/six-term-per-derivation-weights-proof.qa.json`
+(both report `3.744459660`) **to every digit they publish** — three independent
+measurements, one value.
+
+**What is new here: the two charitable readings are both excluded.** A 2.7 ppm
+gap on a product of two constants invites "stale CODATA edition" or "a different
+Catalan truncation". Inverting the literal against each factor in turn:
+
+| if the other factor is right | literal implies | actual |
+|---|---|---|
+| `8G` correct ⇒ implied `m_e` | `0.51100034676569` | 2022 `0.51099895069`, 2018 `0.51099895000`, 2014 `0.5109989461` |
+| `m_e` correct ⇒ implied `G` | `0.91596809664282` | `0.91596559417722` |
+
+The implied `m_e` matches **no** CODATA edition — all three agree to seven digits
+at `0.5109989x`, and the implied value diverges at the sixth. The implied `G`
+diverges from Catalan's constant at the seventh digit and is not any published
+truncation of it. So this is **not** edition drift and **not** a truncation
+choice: it is a transcription/arithmetic error in a hardcoded literal, which is
+the stronger claim and the one that makes it fixable rather than a convention
+question.
+
+**Not fixed here.** It is one digit in a production sweep that feeds the
+six-term isotope table, it belongs to `qou-3nva`'s arc rather than to this
+bean's, and per AGENTS.md §🟥 ASK THE OWNER a correction outside the two
+exemptions waits. Exemption 2 (*derived from the corpus*) arguably reaches it —
+the comment on the same line states the closed form the value violates, and a
+QA sidecar publishes the right number — so this is a candidate for a one-line
+corpus-derived fix, flagged rather than taken.
+
+### `1.2999219630934102` — NOT convention-calibrated, and it lives in TWO files
+
+```
+computations/multiterm_cost_he3_l6a4_probe_algebraic.py:39   M_E_SIGMA_9 = mp.mpf("1.2999219630934102")
+computations/multiterm_cost_he3_l6a4_probe.py:61             M_E_SIGMA_9 = mp.mpf("1.2999219630934102")
+```
+
+This bean's §141 table lists it as *"`M_E_SIGMA_9`, used as the additive `T4
+(MeV)` term — no evidence it is [convention-calibrated] — **deprioritise**"*,
+and nothing found here contradicts that. **One correction to the bean's own
+record: it names only `..._algebraic.py`. The constant is in two files**, so a
+drain keyed on the single path it lists would leave the second copy behind. Same
+17-digit literal in both; not re-measured against a closed form, because no
+closed form is stated for it in either file.
+
+### Net effect on this bean
+
+Both named "check first" candidates are **off** the convention queue. This bean
+remains `todo` because the mechanism it documents is real and its remaining
+candidates are unmeasured — the `alpha_high_precision` instance (`qou-l1gv`,
+α* +14.74 % at one unchanged commit) is still the only *confirmed* member of the
+class, and the corpus still records the pre-migration α* ≈ 0.305807.
+
+**Why no detector can close this bean.** A constant calibrated before the flip
+has no `z` left in it to evaluate, so the value-based audit
+(`scripts/convention-c-value-audit.py`) is structurally blind to it — it walks
+bindings and evaluates their RHS, and there is no RHS here, only a literal. The
+shape audit is blinder still. This is the same class as `qou-46ab` /
+`qou-u5z0`: **a recorded NUMBER, not a binding.** Closing it needs a per-constant
+derivation of what it *should* be, which is hand work, one constant at a time.
+
+Reproduce:
+
+```sh
+grep -rn "3.74446989" --include=*.py computations/
+grep -rn "1.2999219630934102" --include=*.py . | grep -v _deprecated
+python3 -c "from mpmath import mp,mpf,catalan; mp.dps=30; me=mpf('0.51099895069'); \
+  v=me*8*catalan; print(mp.nstr(v,20), mp.nstr((mpf('3.74446989')-v)/v*10**6,6))"
+```

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-12T17:55:54Z
-updated_at: 2026-10-04T15:23:15Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -48,3 +48,13 @@ was derived in convention C on the `z = 1` cell, and
 ladder and the mass channel's three-row forcing mutually exclusive — so
 substituting `z_D` into it is not a valid move. That is the whole content of
 `qou-cds1`.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: BLOCKED.** Blocked on qou-cds1, not on qou-pdix. Because of the proved ladder-form exclusion it may never unblock in the current form. The recorded baseline has moved (Q_β now 1.668e8 ppb on the scored cell), so re-read the witness rather than this table.
+
+Evidence: Waits for a c_k ladder on the z_D base (qou-cds1). Its stated chain "pdix → cds1" is wrong on the ruled base (see cds1 row). The "first re-score" figures it records (Q_β 4.316e8 ppb) are already stale: the live witness has Q_β err_ppb 1.668e+8 at the scored cell (pred 0.651856 MeV) and m_n 1.389e+5. `ck_rungs_applied: 0` is still the field that would flip.
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

@@ -1,13 +1,13 @@
 ---
 # qou-c66b
 title: 'conj:im-q-physical-role: Q_beta IS an Im(q)-sensitive observable already in the framework — the conjecture''s stated obstacle is wrong'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T10:42:33Z
-updated_at: 2026-10-04T15:12:10Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -546,3 +546,13 @@ Third instance on main, not mine: `qou-vtlj`.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-05 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: DONE.** The bean's claim (the conjecture's stated obstacle was wrong) is corrected in the block and backed by sorry-free Lean that reproduces. Candidate (iii) remains open inside the conjecture block itself. A further bean is not needed for it.
+
+Evidence: Lean `QOU/QBeta/ImQRealityLocus.lean`, `ImQChiralityIsBarInvolution.lean`, `ImQDecayWidthMechanism.lean`: no `sorry`/`axiom` (grep). Probes re-run: `qbeta_imq_reality_locus_probe.py` exit 0 with witness unchanged. `imq_chirality_is_the_bar_involution_probe.py` exit 0, diff only `content/`→`folio/` paths. The block `folio/.../mass-theory/conj-im-q-physical-role.md` carries the §"Reality of 𝔔_β at the substrate" table with (iii) open. `qou-tltf` is already scrapped as its duplicate.
+
+Status: `todo` → `completed`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

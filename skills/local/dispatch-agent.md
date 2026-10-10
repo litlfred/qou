@@ -156,6 +156,29 @@ Run it against the session tasks dir:
 `tasks/` folder holding the `<agentId>.output` files (the dispatch tool
 result names each `output_file`; its parent dir is `$TASKS_DIR`).
 
+> **🛑 That dir also holds the stdout of every BACKGROUNDED BASH JOB, and a
+> glob cannot tell them apart by name.** Measured 2026-10-10: a heartbeat over
+> a dir with **one** agent and six backgrounded Bash commands printed **seven**
+> rows, six reading `[live] (no progress block yet — agent still spinning up)`
+> — for a `pip install`, a `setup-folio-assistant.sh` and a
+> `precision-gates.sh` run. They never advance, because a Bash job emits no
+> `⟦PROGRESS⟧` block, so they read as permanently-hung agents and invite a
+> `SendMessage` nudge to something that cannot receive one. **And it buried a
+> real signal: one of the six had TIMED OUT (`GATE_EXIT=124`) while its row
+> said "spinning up".**
+>
+> `scripts/agent-progress.py` now discriminates on the first line — an agent
+> transcript is JSONL whose first record carries
+> `isSidechain`/`parentUuid`/`promptId`; Bash stdout is arbitrary text — and
+> **announces the count it skipped** rather than filtering silently. Same dir,
+> after the fix: `(skipped 7 non-agent .output file(s))` then one row.
+>
+> Two consequences for the heartbeat. **A `[live]` row with no block is only
+> evidence about an agent if the file is an agent transcript** — check before
+> nudging. And **`cat` the Bash job's own `.output` when you want its result**;
+> the extractor deliberately will not show it, and a 0-byte file under a
+> `| tail` pipeline means "not finished", not "crashed".
+
 ### 3b. The cadence
 
 Every ~120 s while any agent is still `[live]`:

@@ -48,7 +48,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 PUB = re.compile(r"\d+\.\d{7,}")     # published figures worth tracing
 SRC = re.compile(r"\d+\.\d{3,}")     # sources may carry fewer digits
 SRC_GLOBS = ("computations/**/*.py", "computations/**/*.json", "qou-mass/**/*",
-             "tools/**/*.py", "content/**/lean/**/*.lean", "docs/**/*.md")
+             "tools/**/*.py", "folio/**/lean/**/*.lean", "docs/**/*.md")
 PUB_GLOBS = ("content/**/*.md", "content/**/*.ts")
 
 

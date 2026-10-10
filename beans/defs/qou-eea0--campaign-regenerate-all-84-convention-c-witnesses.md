@@ -1,13 +1,13 @@
 ---
 # qou-eea0
 title: 'CAMPAIGN: regenerate all 84 convention-C witnesses under D and report total impact'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T01:15:27Z
-updated_at: 2026-10-04T15:12:04Z
+updated_at: 2026-10-10T07:47:21Z
 parent: qou-cdx1
 ---
 
@@ -366,3 +366,18 @@ conventions.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 re-audit verdict: **CLOSE** (bean `qou-am5t`)
+
+Population drained 84 -> 1, and that 1 is not a convention-C weight.
+`y_lambda_convention_c_fingerprint_audit.py` (the detector this bean's class
+was filed from) reports ONE live file:
+`computations/probes/sdp-o3-falsifier.witness.json`, `lambda=(1,1,1)
+y=1.45e-17`. Under convention D `y_(1^3)` is exactly 0, so 1.45e-17 is a
+float64 zero -- the DEAD_TOL float64-noise sub-class this bean's sibling
+`qou-a6yh` already names, not a C weight. `convention-c-witness-audit.py`
+reports 0 structural / 1 symbolic (`y-lambda-macdonald-telescope`). The
+campaign's premise ('code and data disagree') no longer holds.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.
