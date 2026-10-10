@@ -1,4 +1,4 @@
-The Markov trace on the Iwahori–Hecke algebra $H_r(q)$ induces a unique inner product on the representation ring $R(H_r(q))$ via Schur orthogonality.
+The Markov trace on the Iwahori–Hecke algebra $H_r(q)$ induces a canonical bilinear form on the representation ring $R(H_r(q))$ via Schur orthogonality. The form is degenerate, and it is an inner product on the span of the two-row classes.
 
 ## Statement
 
@@ -38,5 +38,3 @@ $$
 $$
 
 *The sum runs over the hooks $(r-j, 1^j)$, and the signs $(-1)^j$ are the coefficients of the Adams operation $\psi^r$ applied to the fundamental representation. Since $c_{(r-j,1^j)} = r(r-1-2j)/2$, each exponent $2 s c_\lambda / r = s(r-1-2j)$ is an integer. Only $j = 0, 1$ contribute, because $d_\lambda = 0$ for every hook with more than two rows. The unknot-normalised invariant $[2]_q^{\,r-1} \, q^{-2s(r-1)} \, \mathrm{tr}_M(\gamma^s)$ is the Jones polynomial of $\tau(r,s)$ at $t = q^{-2}$.*
-
-Until 2026-10-10 this proposition used the excised convention-C parameter $z = (q^{1/2} + q^{-1/2})^{-1}$, with values in $\mathbb{Q}(q^{1/2})$, half-integer $q$-integers and the quantum dimension $\prod [h(\Box)]_q/[h'(\Box)]_q$; under that convention the form had no radical. The same revision corrected two statements. Part (iii) previously read $J(\tau(r,s)) = \sum_{\lambda \vdash r} d_\lambda(q)\, q^{c_\lambda s}$: that sum runs over all partitions rather than the hooks, omits the Adams-operation signs, and uses the exponent $c_\lambda s$ in place of $2 c_\lambda s / r$. In exact arithmetic over $\mathbb{Q}(q)$ it agrees with the directly computed trace only for $r = 2$ with $s$ even, that is, for two-component torus links, while the formula above agrees for every coprime pair tested ($r = 2, 3, 4$). Part (ii) previously asserted that every diagonal form compatible with $\mathrm{tr}_M(1) = 1$ is a scalar multiple of $\langle -, - \rangle_{\mathrm{RJ}}$, which is false as stated; the uniqueness is that of the Markov trace.
