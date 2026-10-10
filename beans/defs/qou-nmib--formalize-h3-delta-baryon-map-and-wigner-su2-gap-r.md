@@ -1,6 +1,6 @@
 ---
 # qou-nmib
-title: Formalize the Delta(1232) isospin quartet as Sym^3 of the N=2 fundamental (dim C(4,3) = 4) -- UNGATED by qou-j3w6; the full decuplet is qou-3oi0
+title: 'Delta(1232) quartet at N=2: the I_3 labelling is DONE and sorry-free; open only on a wiring decision (no content block cites QOU/EightfoldWay/)'
 status: todo
 type: task
 priority: normal
@@ -8,7 +8,7 @@ tags:
     - reorg-2026-10-04
     - 8f-lean
 created_at: 2026-07-20T00:46:28Z
-updated_at: 2026-10-10T08:28:05Z
+updated_at: 2026-10-10T10:47:33Z
 parent: qou-8lxd
 ---
 
@@ -126,3 +126,97 @@ states with `I₃` and strangeness.
 **Watch the base ring (§7c).** `Sym³` over a generic `{R : Type*} [CommRing R]`
 is the right signature; there is no archimedean construct in a dimension count,
 so do not specialise to `ℝ`.
+
+
+## 2026-10-10 — LEAN HALF DONE. Stays open on a wiring decision, not on mathematics.
+
+Worked. The corpus-grep answered half of it before any Lean was written, which is
+the headline.
+
+### Already existed — do not re-derive it
+
+`folio/quantum-observable-universe/lean/QOU/EightfoldWay/SymmetricChannelDimension.lean`
+(163 lines before this change, sorry-free) already proves the dimension content,
+and proves it **properly**:
+
+```
+finrank_homogeneousSubmodule :
+  Module.finrank K (homogeneousSubmodule (Fin N) K n) = (N + n - 1).choose n
+```
+
+general in `N`, `n` and the base ring, via an explicit `Equiv` from the weight
+diagram to `Sym (Fin N) n` and Mathlib's `Sym.card_sym_eq_choose`, with
+`quadruplet_dim = 4` (**the Δ quartet, N = 2**) and `decuplet_dim = 10` as `rfl`
+consequences, plus `decuplet_ne_quadruplet` as an explicit anti-fit guard.
+
+**This file is the standard the arc should be held to**, and it is worth saying
+next to `qou-x0th`: real Mathlib imports, a real `Equiv`, real `Module.finrank`,
+numerals as consequences of a general theorem. Compare `S5SO3FiberAction.lean`
+(same arc) — zero imports, `decide` over hardcoded tables, one theorem that is
+`1 ≠ 2`.
+
+### What was missing is exactly what this bean named: the I₃ map
+
+A dimension count does not say the four states **are** the isospin quartet. Six
+declarations added, sorry-free, axioms `[propext, Classical.choice, Quot.sound]`:
+
+| declaration | content |
+|---|---|
+| `coordSum_of_mem` | `degree = n ⟹ n_u + n_d = n`, via `Finsupp.degree_eq_sum` |
+| `twoI3` | `2I₃ = n_u − n_d`, doubled to stay in `ℤ` (no division, no `ℝ`) |
+| `quartetPoint` / `_mem` | the explicit point `u^(3−k) d^k`, shown to lie in the diagram |
+| `twoI3_quartetPoint` | `2I₃ = 3 − 2k` — the ladder is **attained** |
+| `twoI3_mem_ladder` | every point carries one of `3, 1, −1, −3` — **closed** |
+| `twoI3_odd` | `2I₃` is odd everywhere — the half-integral/fermionic fact |
+| `twoI3_injOn` | distinct points ⟹ distinct `I₃` — the label is **faithful** |
+
+Attained + closed make the value set exactly those four. `injOn` is what upgrades
+`quadruplet_dim`'s 4 from "four basis vectors" to "four isospin-labelled states",
+which is the bean's actual ask.
+
+**Negative-controlled**, since this bean sits beside `qou-x0th`, where the
+complaint was precisely that theorems were not falsifiable. Two wrong versions
+were written and confirmed to FAIL: the integer-weight ladder `{2, 0, −2}` at
+degree 3 (`omega` fails on all four branches), and `twoI3_odd` restated at degree
+2 (fails — oddness is genuinely degree-dependent, not an artifact of the
+encoding). A first attempt at the controls errored on an unbound `n` under
+`autoImplicit=false`; **that was my harness and was nearly reported as the
+result**, which is the `hadron_knot_table` trap one level down.
+
+### Scope held at N = 2
+
+The new section's docstring **states and does not prove** that at three flavours
+`I₃` alone is not faithful (strangeness is an independent coordinate). That is
+`qou-3oi0`, is gated on `qou-j3w6`, and is deliberately not touched.
+
+### Verification
+
+- `lean` direct, `-DautoImplicit=false -s 65536`: **exit 0**, 7.2 s.
+- `scripts/lean-library-sweep.py --only-exact`: **1 ok, 0 RED**.
+- `scripts/check-sidecars.sh`: `[library Lean — no ℝ, generic OK]` (§7c).
+- `#print axioms` on all six plus `quadruplet_dim`: **no `sorryAx`**.
+- Zero `native_decide`, zero `sorry` in the file.
+
+### Why this bean STAYS OPEN — and it is not the mathematics
+
+`QOU/EightfoldWay/` holds two substantive sorry-free modules (this one and
+`MesonOctetTracelessSplit`) and **neither is imported in `QOU.lean`**, whose 931
+imports are all `QOU.Eightfold.*` — singular, a live 45-module directory sitting
+beside a near-twin.
+
+**They ARE built**, so "orphan" is wrong about the build: the paper lakefile's
+`globs = ["QOU", "QOU.+"]` were widened for exactly this (bean `qou-rc7b`, whose
+comment records that 785 of 1655 modules were previously never compiled). What is
+true, and is what matters, is that **no content block carries a `lean.ref` to
+either module**. A sorry-free derivation that no block cites does not reach the
+paper.
+
+**That is a content decision and so is the owner's**: `prop:borromean-decuplet`
+currently points its `lean.ref` at
+`QOU.Eightfold.RowCapObstruction.eightfold_channels_at_three` — the *obstruction*
+— which is arguably the honest current state and may be deliberate. Pointing a
+block at `quadruplet_dim` instead, or adding a block for the quartet, changes
+what a proposition claims. Not chosen here.
+
+**Default if unanswered: nothing changes.** The theorems stay built and
+uncited; no number moves anywhere.
