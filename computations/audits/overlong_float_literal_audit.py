@@ -171,7 +171,7 @@ def main() -> int:
         return selftest()
 
     hits, scanned = scan(root)
-    live = [h for h in hits if "_deprecated" not in h["file"]]
+    live = [h for h in hits if ("_deprecated" not in h and "fsh-guts" not in h)["file"]]
     dead = len(hits) - len(live)
 
     print("=" * 78)

@@ -201,7 +201,7 @@ def main() -> int:
     # contains the string and it counted itself as a live importer.
     _self = str(Path(__file__).resolve())
     live = [p for p in importers
-            if "_deprecated" not in p and str(Path(p).resolve()) != _self]
+            if ("_deprecated" not in p and "fsh-guts" not in p) and str(Path(p).resolve()) != _self]
     print(f"\n  only ILP-counting code: {dep.relative_to(ROOT)}")
     print(f"    return values     : {returns}   (max {max(returns) if returns else 'n/a'})")
     print(f"    live importers    : {len(live)}  {live or '(orphaned)'}")
@@ -220,7 +220,7 @@ def main() -> int:
     loose = subprocess.run(
         ["grep", "-rl", "adjoin", "--include=*.py", str(ROOT / "computations")],
         capture_output=True, text=True).stdout.split()
-    loose = [p for p in loose if "_deprecated" not in p]
+    loose = [p for p in loose if ("_deprecated" not in p and "fsh-guts" not in p)]
     tight = [p for p in loose
              if re.search(r"adjoin(?!t)", Path(p).read_text())]
     print(f"\n  method note -- grep 'adjoin' matches ADJOINT:")

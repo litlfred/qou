@@ -119,7 +119,7 @@ def classify(path: str) -> dict | None:
         "q0Anchor": anchor,
         "q0Value_prefix": str(q0v)[:24] if q0v else None,
         "computed_at_A": bool(q0v and str(q0v).startswith(A_PREFIX)),
-        "deprecated": "_deprecated" in path,
+        "deprecated": ("_deprecated" in path or "fsh-guts" in path),
     }
 
 

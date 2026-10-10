@@ -517,7 +517,7 @@ def scan() -> tuple[list[dict], int]:
     roots = ["computations", "tools", "qou-mass", "scripts"]
     for f in sorted(g for r in roots
                     for g in ROOT.joinpath(r).rglob("*.py")):
-        if "_deprecated" in f.parts or "__pycache__" in f.parts:
+        if ("_deprecated" in f.parts or "fsh-guts" in f.parts) or "__pycache__" in f.parts:
             continue
         if f.name == Path(__file__).name or f.name in REGISTRY_FILES:
             continue

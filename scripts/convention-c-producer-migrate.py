@@ -427,7 +427,7 @@ def main() -> int:
             continue
         for p in sorted(base.rglob("*.py")):
             sp_ = str(p)
-            if "_deprecated" in sp_ or sp_.startswith(SKIP_PREFIXES):
+            if ("_deprecated" in sp_ or "fsh-guts" in sp_) or sp_.startswith(SKIP_PREFIXES):
                 continue
             edits, skipped = migrate_file(p, apply)
             if edits:

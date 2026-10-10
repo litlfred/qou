@@ -185,7 +185,7 @@ def main() -> int:
     # Scan the compute tree (computations/), not just audits/ (reorg
     # scan-root fix). Skip _deprecated and the audits/ dir itself.
     for py in sorted((HERE.parent).rglob("*.py")):
-        if "_deprecated" in py.parts or HERE.name in py.parts:
+        if ("_deprecated" in py.parts or "fsh-guts" in py.parts) or HERE.name in py.parts:
             continue
         if py.name.startswith("_"):
             continue

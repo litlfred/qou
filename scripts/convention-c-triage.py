@@ -86,7 +86,7 @@ def _importers(module_stem: str) -> list[str]:
     hits = []
     for p in REPO.rglob("*.py"):
         rel = str(p.relative_to(REPO))
-        if "_deprecated" in rel or rel.endswith(f"/{module_stem}.py") \
+        if ("_deprecated" in rel or "fsh-guts" in rel) or rel.endswith(f"/{module_stem}.py") \
                 or ".lake" in rel or rel.startswith(".git"):
             continue
         try:
@@ -317,7 +317,7 @@ def equivalence_form_sites() -> list[tuple[str, int, str, str]]:
     out = []
     for path in sorted(REPO.glob("computations/**/*.py")):
         rel = str(path.relative_to(REPO))
-        if "_deprecated" in rel or "_internal" in rel:
+        if ("_deprecated" in rel or "fsh-guts" in rel) or "_internal" in rel:
             continue
         try:
             lines = path.read_text(errors="ignore").splitlines()
@@ -348,7 +348,7 @@ def value_literal_sites() -> list[tuple[str, int, str]]:
     out = []
     for path in sorted(REPO.glob("computations/**/*.py")):
         rel = str(path.relative_to(REPO))
-        if "_deprecated" in rel or "_internal" in rel:
+        if ("_deprecated" in rel or "fsh-guts" in rel) or "_internal" in rel:
             continue
         try:
             lines = path.read_text().splitlines()

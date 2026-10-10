@@ -217,7 +217,8 @@ def validate_chain(chain_path: Path) -> ChainResult:
                     # Accept the cited script if a copy exists there;
                     # provenance is preserved for future refresh.
                     deprecated_path = (
-                        script_path.parent / "_deprecated" /
+                        Path(__file__).resolve().parent.parent
+                        / "fsh-guts" / "deprecated" / "computations" /
                         script_path.name
                     )
                     if not deprecated_path.exists():
@@ -332,7 +333,7 @@ def _scan(root: Path, pattern: str) -> list[Path]:
     rather than overstating it. A coverage hole in a gap-measuring tool is the
     one defect that hides itself, so the scan is recursive.
     """
-    return sorted(q for q in root.rglob(pattern) if "_deprecated" not in q.parts)
+    return sorted(q for q in root.rglob(pattern) if ("_deprecated" not in q.parts and "fsh-guts" not in q.parts))
 
 
 def collect_referenced_scripts(chains_dir: Path) -> set[str]:

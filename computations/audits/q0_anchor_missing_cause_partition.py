@@ -161,7 +161,7 @@ def main() -> int:
         if name.endswith(".witness.json"):
             witnesses[name] = body
         elif name.endswith(".py"):
-            if "_deprecated" not in Path(name).parts:
+            if ("_deprecated" not in Path(name).parts and "fsh-guts" not in Path(name).parts):
                 sources[name] = body
         elif name.endswith("q0_anchor_manifest.json"):
             manifest_raw = body
@@ -192,7 +192,7 @@ def main() -> int:
     stamped = exempt = 0
     for name, body in sorted(witnesses.items()):
         parts = Path(name).parts
-        if not args.include_deprecated and "_deprecated" in parts:
+        if not args.include_deprecated and ("_deprecated" in parts or "fsh-guts" in parts):
             continue
         if any(name.endswith(s) for s in AUDIT_SUFFIXES):
             exempt += 1

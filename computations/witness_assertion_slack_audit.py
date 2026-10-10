@@ -117,7 +117,7 @@ def main() -> int:
     args = ap.parse_args()
 
     paths = [p for p in sorted(glob.glob(f"{args.root}/**/*.witness.json", recursive=True))
-             if args.include_deprecated or "_deprecated" not in p]
+             if args.include_deprecated or ("_deprecated" not in p and "fsh-guts" not in p)]
     unfalsifiable, wide_miss, vacuous = audit(paths)
 
     if args.json:

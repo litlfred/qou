@@ -168,7 +168,7 @@ def resolve(ref: str) -> Path | None:
     # rested on nothing. Every other scan in this repo already skips
     # `_deprecated`; this one did not.
     hits = [p for p in HERE.rglob(name)
-            if p.is_file() and "_deprecated" not in p.parts]
+            if p.is_file() and ("_deprecated" not in p.parts and "fsh-guts" not in p.parts)]
     if len(hits) == 1:
         return hits[0]
     if not hits:
@@ -182,7 +182,7 @@ def resolve(ref: str) -> Path | None:
         wide = [p for p in ROOT.rglob(name)
                 if p.is_file() and not any(
                     part in (".git", ".claude", ".lake", "node_modules",
-                             "target", "__pycache__", "_deprecated")
+                             "target", "__pycache__", "_deprecated", "fsh-guts")
                     for part in p.parts)]
         if len(wide) == 1:
             return wide[0]
@@ -202,7 +202,7 @@ def strip_ephemeral(obj):
 def witnesses() -> list[Path]:
     out = []
     for p in sorted(HERE.rglob("*.witness.json")):
-        if "_deprecated" in p.parts or "__pycache__" in p.parts:
+        if ("_deprecated" in p.parts or "fsh-guts" in p.parts) or "__pycache__" in p.parts:
             continue
         if any(p.name.endswith(s) for s in SELF_AUDIT_SUFFIXES):
             continue

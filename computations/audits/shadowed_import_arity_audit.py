@@ -102,7 +102,7 @@ def _imported_names() -> set[str]:
     """
     names: set[str] = set()
     for path in COMPUTATIONS.rglob("*.py"):
-        if "_deprecated" in path.parts:
+        if ("_deprecated" in path.parts or "fsh-guts" in path.parts):
             continue
         try:
             tree = ast.parse(path.read_text())
@@ -125,7 +125,7 @@ def _imported_stems() -> set[str]:
     """
     imported: set[str] = set()
     for path in COMPUTATIONS.rglob("*.py"):
-        if "_deprecated" in path.parts:
+        if ("_deprecated" in path.parts or "fsh-guts" in path.parts):
             continue
         try:
             tree = ast.parse(path.read_text())
@@ -181,7 +181,7 @@ def collisions() -> dict[str, dict[str, tuple]]:
 def audit(coll: dict[str, dict[str, tuple]]) -> list[dict]:
     findings = []
     for path in sorted(COMPUTATIONS.rglob("*.py")):
-        if "_deprecated" in path.parts:
+        if ("_deprecated" in path.parts or "fsh-guts" in path.parts):
             continue
         try:
             tree = ast.parse(path.read_text())

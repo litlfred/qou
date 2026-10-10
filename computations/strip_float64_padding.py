@@ -111,7 +111,7 @@ def main() -> int:
     for p in sorted(HERE.rglob("*.witness.json")):
         if p.name in SELF_OUTPUTS:
             continue
-        if not args.include_deprecated and "_deprecated" in p.parts:
+        if not args.include_deprecated and ("_deprecated" in p.parts or "fsh-guts" in p.parts):
             continue
         try:
             raw = p.read_text(encoding="utf-8")

@@ -48,7 +48,7 @@ import re
 import sys
 
 REPO = pathlib.Path(__file__).resolve().parents[1]
-DEPRECATED = REPO / "computations" / "_deprecated"
+DEPRECATED = REPO / "fsh-guts" / "deprecated" / "computations"
 CONTENT = REPO / "folio"
 
 # The convention-C signature: a square root of the substrate parameter. Kept

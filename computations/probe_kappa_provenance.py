@@ -109,7 +109,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-DEP = HERE / "_deprecated"
+DEP = HERE.parent / "fsh-guts" / "deprecated" / "computations"
 
 COUPLING = DEP / "interface-type-resolved-coupling-probe.witness.json"
 COMPOSITION = DEP / "canonical-braid-interface-composition.witness.json"

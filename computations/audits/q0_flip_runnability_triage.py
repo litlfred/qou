@@ -75,7 +75,7 @@ def main() -> int:
         if not wp:
             cat["witness not found"] += 1
             continue
-        if "_deprecated" in wp[0]:
+        if ("_deprecated" in wp or "fsh-guts" in wp)[0]:
             cat["archived (_deprecated)"] += 1
             continue
         sf = json.load(open(wp[0])).get("scriptFile")   # TOP-LEVEL, see docstring

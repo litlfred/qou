@@ -167,7 +167,7 @@ def scan() -> list[dict]:
         if not root.exists():
             continue
         for p in sorted(root.rglob("*.py")):
-            if "_deprecated" in p.parts or ".lake" in p.parts:
+            if ("_deprecated" in p.parts or "fsh-guts" in p.parts) or ".lake" in p.parts:
                 continue
             rel = p.relative_to(ROOT).as_posix()
             try:

@@ -141,8 +141,8 @@ def main() -> int:
                 * (_q * sp.sqrt(_q) + _q + 1) / (2 * (_q + 1) ** 2)),
     }
     # the producer's own committed witness
-    wpath = (Path(__file__).resolve().parent.parent
-             / "_deprecated" / "toffoli-braid.witness.json")
+    wpath = (Path(__file__).resolve().parent.parent.parent
+             / "fsh-guts" / "deprecated" / "computations" / "toffoli-braid.witness.json")
     prod = {}
     if wpath.exists():
         d = json.loads(wpath.read_text())

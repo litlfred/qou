@@ -84,7 +84,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 BASELINE = HERE / "never-raises-dps-baseline.json"
-SKIP_DIRS = {"_deprecated", "__pycache__", "data"}
+SKIP_DIRS = {"_deprecated", "fsh-guts", "__pycache__", "data"}
 
 # Calls that CONSTRUCT an mpmath value. Deliberately a construction list rather
 # than "anything on mp": `mp.dps`, `mp.prec` and friends are settings, not values.

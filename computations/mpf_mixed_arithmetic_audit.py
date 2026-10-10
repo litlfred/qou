@@ -412,7 +412,7 @@ def audit_file(p: Path, registry: dict[str, str]) -> list[dict]:
 def scan() -> tuple[list[dict], dict[str, str]]:
     files = [p for root in SEARCH_ROOTS if root.exists()
              for p in sorted(root.rglob("*.py"))
-             if "_deprecated" not in p.parts]
+             if ("_deprecated" not in p.parts and "fsh-guts" not in p.parts)]
     registry = build_registry(files)
     rows: list[dict] = []
     for p in files:

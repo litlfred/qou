@@ -45,7 +45,7 @@ def _producer_index(roots: list[Path]) -> dict[str, list[Path]]:
         if not root.is_dir():
             continue
         for py in root.rglob("*.py"):
-            if "_deprecated" in py.parts or ".lake" in py.parts:
+            if ("_deprecated" in py.parts or "fsh-guts" in py.parts) or ".lake" in py.parts:
                 continue
             idx.setdefault(py.name, []).append(py)
     return idx

@@ -304,7 +304,7 @@ def main() -> int:
         # self-matching detector is the cheapest kind of false positive and the
         # easiest to miss, since the row looks like all the others.
         if (rel == _Path(__file__).resolve().relative_to(ROOT).as_posix()
-                or "_deprecated" in rel or "__pycache__" in rel):
+                or ("_deprecated" in rel or "fsh-guts" in rel) or "__pycache__" in rel):
             continue
         try:
             text = f.read_text(errors="replace")

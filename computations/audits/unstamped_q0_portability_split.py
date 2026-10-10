@@ -184,7 +184,7 @@ def build_py_index() -> dict:
         p = _REPO / rel
         idx[p.name].append(p)
     for name in idx:
-        idx[name].sort(key=lambda p: ("_deprecated" in str(p), len(str(p))))
+        idx[name].sort(key=lambda p: (("_deprecated" in str(p) or "fsh-guts" in str(p)), len(str(p))))
     return {k: v[0] for k, v in idx.items()}
 
 

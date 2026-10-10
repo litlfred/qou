@@ -74,7 +74,7 @@ REPO = Path(__file__).resolve().parent.parent
 SCAN_EXTS = {".py", ".ts", ".md", ".lean", ".json"}
 SKIP_DIRS = {
     ".git", "node_modules", ".lake", "__pycache__", "library",
-    ".beans", "build", "dist", ".pytest_cache", "_deprecated",
+    ".beans", "build", "dist", ".pytest_cache", "_deprecated", "fsh-guts",
     # `.claude/worktrees/` holds gitignored agent worktrees — whole extra
     # copies of the repo. Scanning them reports the SAME literal once per
     # worktree and turns this gate RED on findings that are not in the branch,
