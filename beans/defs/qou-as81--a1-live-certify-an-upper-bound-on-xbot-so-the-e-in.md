@@ -7,7 +7,7 @@ priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-10-10T07:03:48Z
-updated_at: 2026-10-10T08:52:56Z
+updated_at: 2026-10-10T16:30:00Z
 parent: qou-3e6w
 blocking:
     - qou-jz80
@@ -193,3 +193,44 @@ What is still unmeasured, and would decide it: the two remaining frames, the `la
 and R6's actual cut width.
 
 **Do not quote 1.23x. Do not merge #7419 until R5/R6 complete.**
+
+## 2026-10-10 (afternoon) — integer hi_j floor, checkpoint, and the Murota lead CHECKED
+
+**Integer box (`hi_j` floor), scope (a) negative.** Rounding the per-row confinement box to
+`[ceil lo_j, floor U_j]` (sound: Xbot is an integer maximum) moves the all-T bound at `lam*`,
+`JPAD = 26` from `3.377121604817151150672` to `3.376047226439865682559` at `pe = 8`
+(gain 1.07e-3; pe 6/7 gain < 1e-12). Ratio 1.5636x -> 1.5631x; the cut stays 48. The boxes are
+wide (U 12..35) and the ascended rows carry gradient ~1e-12, so almost nothing is charged.
+
+**Checkpoint.** R1–R5 are keyed (sha256 of source-to-stage-end + evaluator + q0 + dps + env);
+restore measured at 2.2 s, stdout and witness identical apart from timestamps. Commit f3556b276.
+
+**The L♮ (Murota) lead holds, and it is the route.** `G(u) = sum_j phi_j(u_j) +
+sum_{j<j'} psi_{jj'}(u_j' - u_j)` with every piece univariate concave and a domain cut out by
+box and difference constraints — the L♮-concave form (Murota, *Discrete Convex Analysis*, 2003).
+For such functions an integer point is a global maximum iff no move `u ± chi_S` improves it,
+and the best move is an s–t min cut (the gain is supermodular with pairwise structure).
+
+Measured with a scratch script (not committed; `/tmp/claude-0/hj/lnat.py`):
+- split form of `G` equals the probe's `G` to 8e-25; zero-padding leaves `G` unchanged.
+- steepest ascent from `u = 0`, exact min-cut moves, converges in <= 2 steps in every frame.
+  Integer max per frame: pe 0: 1.0762795, 1: 1.7009977, 2: 2.0254822, and **pe = 3..20:
+  2.159802376118285961604** (N = 40 rows), the same profile shifted up by one row per frame.
+  This equals the BMAX=10/BUMAX=3 enumeration exactly — the enumeration cap was not binding.
+- brute force over every `S ⊆ 10 rows`, both signs, all 9 frames at the found optimum:
+  best gain **-0.000759** (pe = 2). No improving move exists, so the min cut is right there.
+- Frame identity, exact: frame `pe+1` with `u_0 = 0` IS frame `pe` shifted — the one-body term
+  `R(b) - R(b+u)` is precisely the pair interaction with the infinite sea of rows below.
+
+**What it would buy.** With `B_bot = 2.159802376118285961604` the G1-free cut is **25**
+(`xrun(25) = -1.96143 > threshold -1.97424 >= xrun(26) = -2.01360`), against 48 now and the
+enumerability limit 32. That would close this bean's goal.
+
+**Still open — do not quote 2.1598 as certified for all T and all pe until both land:**
+1. *Tail lemma (all T).* Rows above the support never help. Sketch: split `S = S1 ∪ S2` with S2
+   in the zero region; each maximal run in the gap-2 AP loses `sum_d mult(d)[delta(2d-1) -
+   delta(2d)] > 0` by reflection symmetry, plus `eps(b_j+1) - ln(q0)/2` per row, plus terms
+   `O(T2^{-2m})` from the support `m` rows below.
+2. *All pe.* Wall rows satisfy `u_j <= u_{j+1}` (gap 1) and pay `ln q0 (pe - j)` each, so deep
+   wall rows cost quadratically against bounded gains.
+Also pending: the midpoint-concavity spot test (running).
