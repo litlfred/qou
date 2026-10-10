@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T02:47:59Z
-updated_at: 2026-10-10T13:10:51Z
-parent: qou-d8c7
+updated_at: 2026-10-10T14:43:06Z
+parent: qou-ywyq
 ---
 
 
@@ -195,3 +195,5 @@ Verified lean-direct (-DautoImplicit=false -s 65536, fresh oleans): MassIdentity
 **Defect 1: caveat added** to mass-identity.ts authorNotes (2026-10-10). Two new observations beyond the body above: (i) the sibling `mass-identity.lean` DOES define `frobeniusMass`/`scalarMass` (this body's 'neither exists' was about the library tree), but `frobeniusMass` takes the trace value as an input `R` rather than computing it, so it does not formalise the trace formula either; (ii) the prose formula is ill-typed as written: `tr` is on End(A) but its argument `(∫_A⊗id)∘Δ∘ϱ` is 𝟙 → 𝟙⊗A ≅ A. The endomorphism is `(∫_A⊗id)∘Δ` before ϱ (the sibling's `massComposite : A ⟶ 𝟙 ⊗ A` confirms this). Any resolution (options 2/3 above) must also fix this typing.
 
 Not closeable: defect 1 is an open owner decision.
+
+2026-10-10: reparented under owner GOAL #1 milestone qou-ywyq (defect 1 is the subject of that goal).
