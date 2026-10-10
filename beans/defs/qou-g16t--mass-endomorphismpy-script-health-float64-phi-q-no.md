@@ -1,11 +1,11 @@
 ---
 # qou-g16t
 title: 'mass_endomorphism.py script health: float64 Phi_q, non-Molien weights, crashing diagnosis caller'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-10-10T07:00:16Z
-updated_at: 2026-10-10T07:24:58Z
+updated_at: 2026-10-10T07:48:49Z
 parent: qou-d8c7
 ---
 
@@ -63,3 +63,7 @@ sign and ~37× the old H_3 figure. ⁴He is NOT computed: the mpf seminormal pat
 hands an object-dtype matrix to `scipy.sparse` at 12 strands (already
 tracked as `qou-fmoi`, "exact chi_lambda at A=4 needs a sparse-mpf character
 product"; a pointer note is appended there).
+
+
+
+2026-10-10: closed on merge of PR #7554. Crashing caller ported to mpf; module precision unchanged by design. Remaining importer sweep stays with qou-47sx; the A=4 sparse-mpf wall stays with qou-fmoi.
