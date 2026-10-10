@@ -1,0 +1,105 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "drinfeld1991-quasitriangular",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "1a1d279e92445fdc15830f12d3f8226731290d9e516651971d846250cf7469ba",
+  "file": "drinfeld1991-quasitriangular.pdf"
+ },
+ "provenance": {
+  "title": "On quasitriangular quasi-Hopf algebras and a group closely connected with Gal(Q\u0304/Q)",
+  "authors": "V. G. DRINFEL'D",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "proposition": 5,
+   "theorem": 1
+  },
+  "formalization_candidates": 6
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.3",
+   "name": null,
+   "statement": "to an arbitrary pair (d(t), (t)).",
+   "section_file": "sections/sec-002-3-proofs-of-theorems-a-a-and-b.md",
+   "section_title": "Proofs of Theorems A, A', and B",
+   "pages": "5-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "A' implies the existence part of Theorem A. Uniqueness is a con-",
+   "section_file": "sections/sec-002-3-proofs-of-theorems-a-a-and-b.md",
+   "section_title": "Proofs of Theorems A, A', and B",
+   "pages": "5-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.11",
+   "name": null,
+   "statement": "of [1]. Indeed, if we identify Ugo with Sym* go in the usual",
+   "section_file": "sections/sec-002-3-proofs-of-theorems-a-a-and-b.md",
+   "section_title": "Proofs of Theorems A, A', and B",
+   "pages": "5-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.13",
+   "name": null,
+   "statement": "of [1J, a suitable twist turns (A, A, e) into Ug with the usual",
+   "section_file": "sections/sec-002-3-proofs-of-theorems-a-a-and-b.md",
+   "section_title": "Proofs of Theorems A, A', and B",
+   "pages": "5-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "5.1",
+   "name": null,
+   "statement": ", we find that (O, f) E GT(k) , where f(X , Y) - x(ln X , ln Y) .",
+   "section_file": "sections/sec-004-5-proof-of-theorem-a.md",
+   "section_title": "Proof of Theorem A''",
+   "pages": "10-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "5.7",
+   "name": null,
+   "statement": "2) Here is an outline of another proof of Proposition 5.2. Denote by Spl(k)",
+   "section_file": "sections/sec-004-5-proof-of-theorem-a.md",
+   "section_title": "Proof of Theorem A''",
+   "pages": "10-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}
