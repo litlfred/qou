@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-14T19:57:29Z
-updated_at: 2026-10-10T07:05:41Z
+updated_at: 2026-10-10T07:35:00Z
 parent: b9cj
 ---
 
@@ -164,3 +164,12 @@ mathematics decision for the owner — clause (1) of
 `conj:algebraic-geometric-dilog-equivalence` defers to that line for the
 depth-equals-tetrahedron-count identification, so changing it moves what the
 conjecture is understood to rest on.
+
+## 2026-10-10 — owner ruling on the GB–PL line: scope it
+
+Owner chose "Scope it" on a decision card (scope / retire / give a carrier / leave).
+`thurston-relaxation.md` line 9 now says the depth-equals-tetrahedron-count identification
+is asserted, not established, names clause (1) of `conj:algebraic-geometric-dilog-equivalence`
+as resting on it, and gives it that conjecture's tier. No mathematics was decided. A
+carrier block is still possible later. This bean stays `todo`: the identification is
+still open, and the producer re-run half is tracked separately.
