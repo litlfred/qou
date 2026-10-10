@@ -15,7 +15,7 @@ $$
   \}
 $$
 
-where $\lambda_-(q) < 0$ for all $q > 1$. At $q_0$, $\lambda_- \approx -0.855$.
+where $\lambda_-(q) < 0$ for all $q > 1$. At the proton-pinned $q_0$ with the canonical weight $z = q^3/(q^2+1)$, $\lambda_- \approx -0.7527$ and $\lambda_0 = 0$. (Until 2026-10-10 this read $\lambda_- \approx -0.855$, the excised convention-C value.)
 
 The LP exploits this. The eigenvector $v_-$ corresponding to $\lambda_-$ satisfies $t \cdot v_- < 0$ while $Gv_- \geq 0$ in certain components. Moving along $v_-$ decreases the objective without violating Frobenius positivity.
 
