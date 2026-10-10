@@ -16,7 +16,6 @@ export default proposition({
     "halverson_ram_1998",
     "wenzl1988",
     "hoefsmit1974",
-    "orellana1998",
   ],
   tags: [
     "hecke",
