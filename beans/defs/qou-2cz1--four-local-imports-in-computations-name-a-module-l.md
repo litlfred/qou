@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-10-10T07:57:44Z
-updated_at: 2026-10-10T08:13:42Z
+updated_at: 2026-10-10T12:10:14Z
 parent: qou-5vkl
 ---
 
@@ -217,3 +217,172 @@ after the merge is the way to confirm the count moved 4 → 3 rather than taking
 it from this note. The recommendation above (option 3: wire it into
 `scripts/precision-gates.sh` so the class cannot recur) is unaffected by any of
 the four being fixed — a gate is about the next rename, not this one.
+
+
+---
+
+## 2026-10-10 — measured all three; 1 FIXED (corpus-decided), 2 OPEN and NOT what this bean said they were
+
+PR #7584, branch `claude/qou2cz1-unresolved-imports-2026-10-10`, one commit,
+one file. Audit `local_import_resolution_audit.py`: **UNRESOLVED 3 → 2**,
+`--selftest` PASS. The clone is SHALLOW (410 commits, back to 2026-09-14), and
+all three breakages predate that window — `git log -S` finds every name only in
+this bean's own commits, and the `qbeta_g3` consumer is byte-identical to the
+shallow boundary. So `-S` is useless for dating them; everything below is
+decided by corpus artifacts, not by history.
+
+### Site 1 — `atom_braid_active_partitions.py:128` `hook_length_dim_lambda` → **FIXED as `specht_dim`**
+
+**Measured.** The name is not in `hecke_characters`, has no module
+`__getattr__`, and appears NOWHERE else in the tree — ripgrep over the whole
+repo including `beans/`, `docs/`, `.lean` and witnesses returns only the two
+consumer lines. **It was never defined**; this is not a rename whose source was
+lost. The branch is live: `expand_to_branches` starts from `[(1, [])]`, so the
+all-identity leaf of any word with an Avg crossing keeps the empty word —
+confirmed on `atom_braid_word_3A(1, 1)`.
+
+**Why the corpus decides it** (AGENTS.md exemption 2 — each checkable against an
+artifact, not against my reasoning):
+
+1. The call site's own comment names the quantity: *"Empty word = identity
+   element; χ_λ(1) = dim V_λ"*.
+2. `hecke_characters.specht_dim`'s docstring IS that quantity, in the absent
+   name's own words: *"Integer Specht-module dimension `f^λ = #SYT(λ) =
+   n! / ∏ hook(c)` (hook-length formula)"*.
+3. `partition_utils.dim_lambda` — the declared single source of truth —
+   records itself as replacing ad-hoc `partition_dim` / `syt_count` /
+   **`hook_length_dim`** copies across compute scripts. The absent name is that
+   family plus `_lambda`.
+
+**Verified, not assumed** (proton pin, via `_path_bridge`): `#SYT(λ) ==
+specht_dim` for every `λ ⊢ n`, `n = 1..7`; the seminormal rep's matrix
+dimension `== specht_dim` for `n ≤ 6`, so `tr(identity)` — which is what
+`χ_λ(1)` is — **is** `specht_dim`; Burnside `Σ_λ (f^λ)² = n!` exactly for
+`n = 1..8`, confirming the ordinary `q → 1` dimension rather than a
+q-deformation; `specht_dim == partition_utils.dim_lambda` exactly, so choosing
+between the two centralisation sites does not move the number; and the fixed
+branch executes and matches the closed form `χ(σ₁) + (−h/2)·dim V_λ` to
+< 1e-40. **Not `dim_q`** (the only other candidate in the module): that is the
+q-deformed dimension, `2.0108968702` vs `2` at `λ = (2,1)` at the proton `q₀`.
+
+### Sites 2 + 3 — `qbeta_g3_annihilator_certification.py:52` — **OPEN, deliberately not fixed**
+
+**🛑 This bean's framing of site 2 is wrong and should not be carried forward.**
+It records `tet_norm → tet_abs` as *"rename plausible, unconfirmed"*. It is not
+a rename: **the corpus names `tet_norm` as a BUG and `tet_abs` as its fix.**
+
+- `docs/coordination/1ppq-qbeta.md` (#3813, 2026-07-18): *"its `tet_norm`
+  under-summed the per-factor series, reported a spurious negative lead for
+  large-argument I_Δ, and its convergence guard then wrongly rejected the
+  convergent bare sum as a 'flat divergent wing.'"*
+- `qbeta_g3_fourone_index_assembly_corrected.py`: *"consumes `tet_index_exact`
+  … as I_Δ — **NOT the buggy `tet_norm`**"*.
+- `qbeta-g3-fourone-index-assembly.witness.json` names the mechanism exactly:
+  *"the 'divergent flat wing' was a truncation artifact of **rebasing each
+  tetrahedron factor to its (un-cancelled) minimum exponent**; computing I_Δ at
+  **absolute degree** instead makes the flux sum converge"* — and `tet_abs`'s
+  docstring is *"ABSOLUTE x-degrees … **No min-degree rebasing**"*.
+
+So `abs` here means **absolute degree, not absolute value**, and the bean's
+"a norm and an absolute value are not the same function" caution, while
+correct in spirit, is aimed at the wrong distinction. The two also have
+different return contracts — `tet_norm` is unpacked `sh1, s1 = tet_norm(...)`,
+i.e. `(shift, dense_list)`; `tet_abs` returns a flat tuple of `(deg, coeff)`
+pairs. Substituting it would mis-unpack **silently** when the tuple has
+length 2.
+
+**`_dense_mul` confirmed to have no candidate under any name**, as this bean
+says. Ripgrep over the whole tree: every `*dense*` hit in Python is a
+matrix/representation helper in an unrelated probe, and the only
+`dense_dense_mul` family is Rust **matrix** multiply. Nothing is a
+Laurent-series multiply. Its contract is nonetheless fully readable off the
+call site: `prod = _dense_mul(s1, s2, order - off)` followed by
+`for d, c in enumerate(prod)` ⇒ it returns a **dense list indexed by degree**.
+
+**The script is a pre-rewrite fossil, and its job already runs elsewhere.** The
+provider's own `main()` step **[5]** *is* the annihilator certification
+(`quantum_a_poly_op` → "quantum A-polynomial L̂_4₁ annihilates I_41, DGG eq
+C.7"); its step [0] ties `tet_abs` to the certified `tet_index_exact`; and
+`qbeta-g3-fourone-index-assembly.witness.json` records
+`quantum_a_polynomial_annihilation` → **PASS**. The standalone script's witness,
+dated the same day as #3813, records the opposite —
+`assembly_certified_by_annihilator` **FAIL**, `certified_candidate_unique`
+**FAIL**, `"error": "candidate non-convergent at grid point"` — which is
+literally the `return None` from the rejection guard the ledger adjudicated as
+wrong, and a published FAILED verdict ("no candidate annihilated — operator
+reading or assembly space needs revisit") attached to content block
+`conj:im-q-physical-role`.
+
+**Why not fixed.** Restoring the two names would resurrect the exact rebasing
+mechanism the corpus names as the bug, to re-derive a verdict the corpus has
+already reached by the corrected route. A probe conclusion is an argument that
+gets written into beans, audit docs and content blocks where nothing
+re-derives it, so this is the expensive kind of wrong. Note also that it is
+**not an import fix at all**: `ser_mul` (the corrected path's multiply) returns
+a **dict**, so a port must also change the `enumerate(prod)` loop — i.e. edit
+the algorithm.
+
+**One part is NOT superseded and needs neither broken import.**
+`trefoil_calibrate()` — extracted and run in isolation — reproduces its
+recorded witness assertion exactly: pinned convention annihilates `δ_{e,3m}`,
+all 15 other conventions FAIL, `n_conventions_passing = 1`. The provider's step
+[5] does **not** re-verify that 16-convention uniqueness. So the file splits
+cleanly: `trefoil_calibrate` works and is unique; `_assemble` / `assemble` /
+`annihilator_residual` / `main` are broken and superseded.
+
+**The observation that would settle it** is a disposition choice, not a
+measurement — which is why it is left here:
+
+1. **Retire the script.** Cheap; the certification already PASSES in the
+   provider and the calibrator result is already recorded in the witness.
+   Costs the calibrator's standalone re-runnability.
+2. **Reduce it to `trefoil_calibrate` alone** — delete `_assemble`,
+   `annihilator_residual` and the two broken imports, keep the unique
+   16-convention uniqueness check, and re-emit a witness carrying only the
+   assertion that passes. Removes the published FAILED verdict, which is the
+   strongest argument for it.
+3. **Port `_assemble`** to `tet_index_exact` + `ser_mul` + window stability
+   (dropping the adjudicated-wrong rejection guard). Most work, and duplicates
+   the provider's step [5]; only worth it if an independent second
+   implementation of the certification is wanted.
+
+**Recommendation (my judgement, not a finding): option 2.** It is the only one
+that both removes a published FAILED certification the corpus has since
+reversed and keeps the one result in the file that nothing else computes.
+Option 1 is a close second and strictly cheaper. **Default if nothing is done:**
+the audit keeps reporting 2 unresolved, the script stays un-importable, and its
+witness keeps publishing the superseded FAIL — i.e. the no-op is *not*
+harmless here, which is the one reason not to defer indefinitely.
+
+### Also found: a SECOND, independent defect in the site-1 file — reported, NOT fixed
+
+Fixing the import exposed that the producer still cannot run, for an unrelated
+reason. The module-level float64 literal `HA = 0.20906032198987945` has drifted
+**2.319e-08** from the live `hecke_core.h = 0.20906029879563937` — seven orders
+above the `1e-12` guard tolerance — so `expand_to_branches` raises
+`ValueError: unexpected d=-0.209060298795639` on every live word. Measured `d`
+values in `atom_braid_word_3A(1, 1)`: `-0.20906029879563932` (= −h),
+`-0.10453014939781966` (= −h/2), `-0.10445824776972629` (colour-weighted), `0`.
+
+**It is not only a guard problem — the stale literal is also the empty-word
+branch's coefficient, so it contaminates results.** At `λ = (2,1)` the exact
+value is `0` and comes out at `−2.3194e-08`, exactly the drift.
+
+Replacing a hardcoded literal with a derived value is AGENTS.md exemption 1, so
+this is *eligible* to fix without asking — but it moves the producer's numbers
+and needs a witness regeneration, which is outside this bean. **Observation that
+would settle it:** whether `HA` / `H_HALF` should be derived from
+`hecke_core.h` at the live pin (and the `1e-12` guards re-expressed against it),
+and which anchor the regenerated `atom-braid-active-partitions.witness.json`
+should carry. Worth its own bean.
+
+### Process note — shared working tree
+
+This container's tree is shared with a concurrent agent in the same session. My
+`git checkout -b` moved it off `claude/taxonomy-row-cache-universe-2026-10-10`
+and that agent's next commit (`a49b625c39`, "taxonomy row 55") landed on my
+branch. Moved back with `git branch -f` so it sits on their branch — additive,
+local only, nothing force-pushed; `git branch --contains a49b625c39` confirms
+reachability. Their uncommitted work (`scripts/precision-gates.sh`, six
+regenerated audit witnesses, `docstring_label_carrier_audit.py`) was left
+untouched and is not in my commit.
