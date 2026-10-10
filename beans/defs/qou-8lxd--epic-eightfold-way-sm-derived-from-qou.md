@@ -106,6 +106,31 @@ Still in place and **owner-gated**, not undone: `appendix-standard-model/` and
 `brings-surface/` (**181** blocks). PR #5023 states the 8 → 4 restructure
 "needs author sign-off", so `qou-akee` and `qou-ywsk` are deferred.
 
+### 🛑 The front tags were assigned from TITLES — treat them as a routing hint, not a verdict
+
+All 117 were classified by reading **titles**, not bodies. That is what made a
+one-pass reorganisation possible, and it has a measured error rate above zero:
+the **first body actually read afterwards produced a re-filing.** `qou-skgn`
+("prop:skein-generation is a self-assuming projection") was tagged `8f-lean`
+because the title reads like a Lean defect to repair; its body states that
+choosing among its three dispositions *"is the author's call, not a mechanical
+repair"*, so it belongs in `8f-decide` and was making the mechanical front look
+one item larger than it is.
+
+Checked the rest of `8f-lean` for the same shape by grepping each body for
+owner-gate language: **one further hit, `qou-an6y`, and it is a false
+positive** — its "owner decision 3" refers to the stalled-claim-reset policy,
+not to a gate on its own content. So within `8f-lean` the known mis-filing rate
+is **1 of 14**, and the other twelve bodies are unread.
+
+**What to do with that:** before starting an item, read its body and re-tag if
+the title misled. A front count is the size of a *queue to triage*, not a count
+of confirmed mechanical work. Expect the research fronts
+(`8f-flavour`, `8f-colour`, `8f-tseries`) to be more reliable, since those
+titles describe subject matter; expect the disposition-flavoured fronts
+(`8f-lean`, `8f-decide`) to be the ones that move, since those titles describe
+*what kind of work it is* — which is exactly the thing a title gets wrong.
+
 ### Hygiene rules for this arc
 
 - **Tag every new bean** with its `8f-*` front and set `parent: qou-8lxd`.
