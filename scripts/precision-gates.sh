@@ -239,6 +239,58 @@ GATES=(
   # circumstantial ("lists of places to look", per its own docstring), and a
   # gate that fails on a high-recall list gets muted rather than fixed.
   "f64-into-mpmath (advisory)|computations/f64_into_mpmath_audit.py||yes|no"
+  # ADVISORY, red on arrival, and never wired in at all until now.
+  #
+  # Catches a dependency renaming or removing a module-level name while the
+  # consumer's import is never updated. The consumer's OWN file hash does not
+  # change, so every scriptHash-keyed staleness path reports it healthy while
+  # the script cannot be imported. Worked case: snappy_cusp_seeding.py sat
+  # scriptHash-IN-SYNC with its witness for three weeks while un-importable,
+  # because q_pochhammer_seed.IM_PERTURBATION had become IM_PERTURBATION_STR
+  # in the NO-FLOAT64 migration. Bean qou-2cz1.
+  #
+  # This is AGENTS.md's import-cone drift class one step worse: there, a
+  # byte-stable producer's NUMBER moves because a numeric module in its cone
+  # changed; here the cone change stops the producer running at all, which no
+  # staleness metric can express. witness_import_cone_staleness_audit.py ranks
+  # by "a cone module changed more recently than the witness" -- a recency
+  # heuristic -- and never asks whether the import resolves.
+  #
+  # FLIP TO BLOCKING WHEN THE UNRESOLVED COUNT REACHES 0. It is pure AST, so
+  # nothing is imported or executed and no producer writes a sibling witness
+  # while it runs; --selftest is calibrated on a synthetic fixture rather than
+  # on a live defect, and mutation-tested four ways. Advisory only because a
+  # gate that is red on arrival gets muted rather than fixed, which is the
+  # failure this script's own header is about.
+  #
+  # Count as measured on main 2ab87236c9: 3. A sibling branch (qou-2cz1) has
+  # since dispositioned all three -- one was corpus-decided and is fixed (the
+  # absent hook_length_dim_lambda is specht_dim), and the other two are a
+  # SUPERSEDED ALGORITHM rather than missing names, so there is no candidate of
+  # any name to import. Re-measure before quoting either number; do not read
+  # "2 remain" as "2 renames pending".
+  "local import resolution (advisory)|computations/audits/local_import_resolution_audit.py||yes|no"
+  # ADVISORY, red on arrival at 25, and the surface was UNMEASURED until now
+  # (bean qou-3kni item 3: "the population is unmeasured").
+  #
+  # A corpus label cited in a producer DOCSTRING that resolves to no block.
+  # `uses-resolve` reads MANIFEST uses[], so a label in a docstring is not a
+  # manifest edge and no existing gate sees it: a reader following one lands on
+  # nothing. Measured on main: 487 distinct labels across 860 files, 25 dead,
+  # 57 citations pointing at nothing. The bean's sample was "three dead labels
+  # in two files"; the worst single label is cited by NINE files, among them
+  # the load-bearing computations/_li_2_q_util.py.
+  #
+  # FLIP TO BLOCKING WHEN THE DEAD COUNT REACHES 0. Not blocking now because
+  # most of the 25 name blocks in the removed descartes-universe/ chapter, and
+  # whether each becomes a restored carrier, a retired citation, or a scoped
+  # one is a content decision per label, not a sweep. --selftest asserts no
+  # truncation plus two known-live and two known-dead labels; mutation-tested
+  # four ways. The truncation assertion is not decoration: the first version
+  # used [a-z0-9-] for the stem and silently clipped
+  # prop:constit-factor-tau-M-proton-identity at the uppercase M, then reported
+  # the fragment as dead -- the label's own character class was the blind spot.
+  "docstring label carriers (advisory)|computations/audits/docstring_label_carrier_audit.py||yes|no"
   # BLOCKING as of 2026-08-19, and green on arrival. Bean qou-irzg.
   #
   # It ran ADVISORY because the ratchet had no MEMORY for this tree, not
