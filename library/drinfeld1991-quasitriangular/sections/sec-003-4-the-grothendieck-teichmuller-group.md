@@ -9,6 +9,7 @@ source_pdf: drinfeld1991-quasitriangular.pdf
 source_sha256: 1a1d279e92445fdc
 toc_source: inferred
 text_source: ocr (rapidocr-onnxruntime; spread split into left/right page; quality: partial, display math largely lost)
+doc_brief: "On quasitriangular quasi-Hopf algebras and a group closely connected with Gal(Q̄/Q) — A previously announced theorem is proved concerning the struc- ture of quasitriangular quasi-Hopf algebras in the"
 ---
 g4. The Grothendieck-Teichmiller group
 Suppose given a quasitensored category (see g1), i.e., a category C , a functor

@@ -8,6 +8,7 @@ pages: 13-18
 source_pdf: kohno1987-aif.pdf
 source_sha256: 88c5119985dfe878
 toc_source: inferred
+doc_brief: "Monodromy representations of braid groups and Yang-Baxter equations — 8 sections: Front matter; Introduction; MONODROMY OF INTEGRABLE CONNECTION"
 ---
 IN TWO DIMENSIONAL CONFORMAL FIELD THEORY
 2.1. Review of A(^) model due to Tsuchiya and Kanie.

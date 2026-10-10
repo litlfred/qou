@@ -8,6 +8,7 @@ pages: 18-22
 source_pdf: kohno1987-aif.pdf
 source_sha256: 88c5119985dfe878
 toc_source: inferred
+doc_brief: "Monodromy representations of braid groups and Yang-Baxter equations — 8 sections: Front matter; Introduction; MONODROMY OF INTEGRABLE CONNECTION"
 ---
 of^I(2,C).
 For a half integer j ^ 0, we denote by V, the irreducible left sl(2,C)

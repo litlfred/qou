@@ -9,6 +9,7 @@ source_pdf: drinfeld1991-quasitriangular.pdf
 source_sha256: 1a1d279e92445fdc
 toc_source: inferred
 text_source: ocr (rapidocr-onnxruntime; spread split into left/right page; quality: partial, display math largely lost)
+doc_brief: "On quasitriangular quasi-Hopf algebras and a group closely connected with Gal(Q̄/Q) — A previously announced theorem is proved concerning the struc- ture of quasitriangular quasi-Hopf algebras in the"
 ---
 BIBLIOGRAPHY
 1. V. G. Drinfel'd, Quasi-Hopf algebras, Algebra i Analiz 1 (1989), no. 6, 114-148; English transl.
