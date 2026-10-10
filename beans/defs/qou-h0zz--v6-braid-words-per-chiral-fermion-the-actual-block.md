@@ -7,8 +7,9 @@ priority: normal
 tags:
     - 8f-gen
     - reorg-2026-10-04
+    - 8f-open
 created_at: 2026-08-10T18:34:14Z
-updated_at: 2026-10-10T07:16:05Z
+updated_at: 2026-10-10T12:24:01Z
 parent: qou-8lxd
 ---
 

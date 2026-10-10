@@ -69,7 +69,7 @@ The two excluded IDs are the milestone and this epic, which print as tree rows.
 | `8f-colour` | 15 | Colour `SU(3)` action and its construction routes (sub-epic `qou-8p1x`). |
 | `8f-mass` | 10 | SM mass gaps: `m_u/m_d`, `m_s/m_c`, `m_b/m_t`, `m_tau`, neutrinos, `m_H`, the lepton tower. |
 | `8f-ew` | 9 | Electroweak: `sin^2 theta_W`, Weinberg angle, vev `v`, Higgs mechanism, hypercharge `Y = B - L`, CKM + PMNS. |
-| `8f-gen` | 7 | Three generations, chirality grading, what excludes `T(2,9)`. |
+| `8f-gen` | 8 | Three generations, chirality grading, what excludes `T(2,9)`. **FULLY TRIAGED 2026-10-10: 8 of 8 are `8f-open` research — 0 mechanical, 0 already-done.** All eight bodies read; one was title-only (`xtcl`, the front's keystone) and three were stale against a *sibling bean's* recorded result. |
 | `8f-qcd` | 8 | Gluon flux tube (G2-opt1..3), lattice QCD from QOU, partition-function unification. |
 | `8f-lit` | 7 | Literature + the four P4.SM queues (cite / cross-check / prove-lean / remark-interpreting). |
 | `8f-tseries` | 5 | `T2`–`T6` derivation spine: hypercharge via ribbon twist, twist multisets, root-of-unity freeze-out, no-free-parameter certificate. **FULLY TRIAGED 2026-10-10: 5 of 5 are `8f-open` research — 0 mechanical, 0 already-done.** All five bodies read; two were title-only or stale-bodied and now carry their measurement. |
@@ -146,7 +146,7 @@ are open Lean formalisation. So `8f-lean` is not the cheap front; triaging it
 > chars) and a tag is a title's guess; the claim "this front is mechanical" has
 > now been wrong once in this index and must be earned per front, not inherited.
 
-> **Second data point, and it CONFIRMS this index's own prediction (2026-10-10).**
+> **Second and THIRD data points, and they CONFIRM this index's own prediction (2026-10-10).**
 > `8f-tseries` is the second front triaged to completion, and the contrast with
 > `8f-lean` is the whole finding:
 >
@@ -154,6 +154,7 @@ are open Lean formalisation. So `8f-lean` is not the cheap front; triaging it
 > |---|---|---:|---:|---:|---:|---:|
 > | `8f-lean` | *kind of work* | 14 | 2 | 2 | 3 | 5 (+2 rescoped) |
 > | `8f-tseries` | *subject matter* | 5 | **0** | **0** | 0 | **5** |
+> | `8f-gen` | *subject matter* | 8 | **0** | **0** | 0 | **8** |
 >
 > That is what §"the front tags came from titles" predicted — fronts named for
 > **what kind of work it is** move; fronts named for **subject matter** do not,
@@ -184,6 +185,53 @@ are open Lean formalisation. So `8f-lean` is not the cheap front; triaging it
 >   going by T2 alone would close T2b wrongly. Guarded from both sides, and the
 >   dependency (`kebu` → `qvpl` → `htw2`) is now in the graph rather than in
 >   prose.
+
+> **🛑 `8f-gen`, and the pattern across BOTH subject-matter fronts is worth more
+> than either front (2026-10-10).** 13 bodies read across `8f-tseries` and
+> `8f-gen`; **0 closeable**, and **5 of the 13 were stale against a SIBLING
+> BEAN's recorded result** — not against the corpus, against another bean:
+>
+> | bean | what a sibling had already settled |
+> |---|---|
+> | `qou-kebu` (T2b) | `qou-qvpl` lists its battery as "BATTERY PASSED", which reads as done; T2b's own body states the gap |
+> | `qou-qvpl` (T2) | the converse — its own heading is what would mislead a reader about T2b |
+> | `qou-jk6g` (V3) | its recorded blocker (*"BLOCKED BY V2: if L needs framing while Y needs framing-independence"*) was **dissolved** by `qou-h0zz` on 2026-08-10, in as many words — and `h0zz` also supplies V3's own ask, `L(β) = sign(writhe β)`, which is in the Lean |
+> | `qou-t0hl` (V1) | its chain uses **`Y`**; `h0zz` establishes the separating datum is **`B` (μ̄₁₂₃), not `Y`** |
+> | `qou-x4qm` | its roast says *"two filters, two counts"*; there are **three**, returning 4 / 3 / 2 |
+>
+> **The reusable rule: before working a bean, read the beans it cites AND the
+> beans that cite it.** AGENTS.md's corpus-grep path 6 says to grep `beans/defs/`
+> before declaring something open — this is the same discipline pointed inward,
+> and nothing prompts it. Three of the five above were resolved by **one** bean
+> (`qou-h0zz`) whose result none of them had absorbed.
+>
+> **And `8f-gen` has ONE ROOT BLOCKER, shared with `8f-tseries`.** There is **no
+> per-chiral-fermion braid word** in the corpus (`htw2`; `qou-h0zz` caveat 2:
+> *"The QUARK braid word is still NOT in the corpus; `w = 0` is ASSUMED …
+> **Every quark row rests on it**"*). That one missing object blocks `t0hl`,
+> `jk6g`, `h0zz` and `wqto`'s chirality grading on this front, and `kebu` plus
+> `qvpl`'s sub-item A on `8f-tseries`. **It is the highest-leverage item in
+> either front** — five beans across two fronts wait on one construction.
+>
+> **The keystone, newly bodied: `qou-xtcl` and the THREE filters.** It was
+> title-only (654 chars, body empty) and `qou-x4qm` is `blocked-by` it. The
+> corpus carries three filters on the odd windings and they give three counts —
+> Seifert genus `≤ 4` → `{3,5,7,9}` (**four**, and `torus_knot_genus_four_unique`
+> is a real `interval_cases` theorem); continuant divisibility → `{3,5,7}`
+> (**three**, on a criterion `qou-a5os` already established is unrelated to
+> generation counting); `S₅`-equivariant embedding → `{3,5}` (**two**).
+> **Filters 1 and 3 are two properties of the SAME object** — `Σ₄` is genus 4
+> *and* has `Aut = S₅`, stated in one sentence of `brings-surface-def.md` — so
+> the disagreement is inside one geometric object rather than between rival
+> criteria, and **three generations is produced by neither of them.** Reading
+> filter 3 as *the* criterion predicts **two** generations, which would refute a
+> headline claim; nobody has written that down. Also recorded there: the `S₅`
+> block's Lean is `trivial`/1-step by the corpus's own
+> `docs/audits/lean-triviality.json` (2026-08-07), so the `{3,5}` count rests on
+> the narrative argument, which **is** sound — and the removal of the
+> `(odd primes)` parenthesis (Q1-D, this PR) matters here, because primality was
+> doing filter 2's work in a parenthesis, `9 = 3²` being the only non-prime in
+> the set.
 
 > **A title-only bean is not a small bean — it is an unclaimable one.**
 > `8f-lean` had three (`xlw1` at priority **high**, empty five weeks; `nmib`,

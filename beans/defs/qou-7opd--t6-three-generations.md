@@ -7,8 +7,9 @@ priority: low
 tags:
     - reorg-2026-10-04
     - 8f-gen
+    - 8f-open
 created_at: 2026-08-03T23:27:17Z
-updated_at: 2026-10-10T07:16:04Z
+updated_at: 2026-10-10T12:23:59Z
 parent: qou-8lxd
 ---
 
