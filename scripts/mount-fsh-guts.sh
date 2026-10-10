@@ -4,9 +4,9 @@
 # Since 2026-10-10 (owner; bean qou-6u3n, issue #7621) fsh-guts/ and the
 # former _deprecated/ trees live on the branch store `cat/cat-harness/fsh-guts`,
 # not on main. Readers that need them (the _path_bridge last-resort fallback,
-# simulator blocks whose `html:` sits under fsh-guts/deprecated/simulators/,
 # a content block citing a deprecated producer) find nothing until it is
-# mounted. run-validate measured: 9 issues mounted, 18 (INVALID) unmounted.
+# mounted. The nine simulators the paper uses were restored to simulators/
+# on main, so validate no longer depends on the mount.
 #
 # Prefers the platform's `state:mount` (folio-assistant/), which keeps the
 # per-worktree marker that `state:push` needs. Falls back to a read-only
