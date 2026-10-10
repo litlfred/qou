@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-14T09:52:04.125342+00:00",
-  "commitSha": "a5a4ae7f32cc69dfa76dc06153cb92611bc28837",
+  "engineVersion": "python 3.13.16",
+  "computedAt": "2026-10-10T13:07:29.582765+00:00",
+  "commitSha": "76bb7f47850dc6f559a347a7a049e5b9921b5bd2",
   "assertions": [
     {
       "name": "frobenius_pairing_at_N2_IS_the_markov_trace_at_zD",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1594,
+  "durationMs": 1369,
   "computation": "qbeta-d-frame-baseline-element-consistency",
   "scriptFile": "qbeta_d_frame_baseline_element_consistency_probe.py",
-  "scriptHash": "76e5d8082873",
-  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+  "scriptHash": "55d23300a5c1",
+  "scriptCommitSha": "aa914b606a6de5e4f447e3746adaa687a9f608c6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,14 +53,11 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "e87a23f8d6fd6732"
+    "mpmath": "1.4.1"
   },
   "invocation": {
     "argv": [
