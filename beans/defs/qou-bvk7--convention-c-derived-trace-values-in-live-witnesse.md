@@ -169,3 +169,5 @@ artifact beside it is correct, so no published number is wrong today.
 
 **Status: staying `todo`** on the deletion decision and on survivor 2, which is
 blocked behind `qou-lnog`. The per-file reading this bean asked for is complete.
+
+**2026-10-10 — survivor 1 moved (owner picked "move to fsh-guts").** The orphan `computations/probes/option-e-deuteron-delta-lambda-probe.witness.json` is now at `fsh-guts/deprecated/computations/probes/` on branch `cat/cat-harness/fsh-guts` (commit `8a0b888de8`), with a README saying why it is frozen. It is removed from main. The live copy at `computations/option-e-deuteron-delta-lambda-probe.witness.json` is untouched. Survivor 2 stays blocked behind `qou-lnog`, so this bean stays `todo`.
