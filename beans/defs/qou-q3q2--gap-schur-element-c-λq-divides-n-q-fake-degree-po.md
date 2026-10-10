@@ -1,11 +1,11 @@
 ---
 # qou-q3q2
 title: 'GAP: Schur element c_λ(Q) divides [n]_Q! (fake-degree polynomiality)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-10-10T13:52:16Z
-updated_at: 2026-10-10T18:10:02Z
+updated_at: 2026-10-10T21:00:00Z
 ---
 
 Open, not attempted to closure (session 2026-10-10, PR #7596).
@@ -42,3 +42,15 @@ Still open (this bean stays open): nonnegative coefficients, i.e. the maj formul
 
 `stdEquivSigma μ : (Σ S : SYTe μ, DecSeq n) ≃ RSSYT μ` with `|T| = maj S + |b|` (`sum_stdEquivSigma`), sorry-free, lean-direct exit 0. Reverse orientation (rows weakly decreasing, columns strictly decreasing) so the shift is maj, not comaj.
 Remaining for the maj formula: (B) Σ_{RSSYT} q^{|T|} = q^{n(λ)}/∏(1−q^h); route pending owner card (bialternant/LGV vs Hillman–Grassl). Also bridge SYTe ↔ QOU.Mathlib.StandardYoungTableau. Bean stays open.
+
+
+## Update 2026-10-10 (PR #7640): maj formula and nonnegativity PROVED — bean complete
+
+All sorry-free, lean-direct `-DautoImplicit=false` exit 0, axioms propext / Classical.choice / Quot.sound only:
+- `QOU/Mathlib/Bialternant.lean`: `alt_add_stair`, a_{ν+δ} = a_δ · s_ν (generic CommRing).
+- `QOU/Mathlib/RSSYTSchur.lean`: `bsum_eq_schur`, reverse tableaux with entries < N sum to s_ν.
+- `QOU/Mathlib/PrincipalSchurHook.lean`: `hook_mul_schur_principal`, H(μ)·s_μ(1,…,Q^{N−1}) = Q^{n(μ)}·∏_{i<N}∏_{t<μ_i}(1−Q^{N−i+t}) (uses corpus `SchurWeyl.hookSide_betaR`).
+- `QOU/Mathlib/MajFormula.lean`: `fmaj_mul_hook`, (Σ_S X^{maj S})·∏_c(1−X^{h(c)}) = X^{n(μ)}·∏_{m=1}^n(1−X^m) in ℤ[X]; `fmaj_mul_qHook` (q-integer form); `qFactorial_eq_schurElt_mul_fmaj`, [n]_Q! = c_λ(Q)·Σ_S Q^{maj S} for Q ≠ 0,1 in any field; `coeff_fmaj_nonneg`.
+
+So [n]_Q!/c_λ(Q) = Σ_{S∈SYT(λ)} Q^{maj S}, with nonnegative integer coefficients. The bean statement is closed.
+Not done (separate, not this bean's statement): bridge `MajStandardization.SYTe` to `QOU.Mathlib.StandardYoungTableau`.
