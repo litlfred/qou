@@ -265,3 +265,116 @@ the owner's explicit "rename" on top.
 decision as the `4.66e6` drain (`qou-3nva`): dated audits are records of their
 own analysis. Whether to mark the 2026-09-04 recommendation as landed is a
 separate, cheap call and is **not** taken here.
+
+---
+
+## EXPLORED 2026-09-14 (PR #7401, issue #7400) — Finding 1's framing was wrong, and Finding 3 has a sharper second half
+
+The owner asked for both open findings to be explored. Both survive; both were
+mis-framed here, and in opposite directions.
+
+### Finding 1 — I framed a settled question as an open one
+
+This bean says the repair "means choosing among three inequivalent statements"
+and recommends **not** touching it. That treats as a mathematical choice
+something **the corpus had already decided in the sibling block this bean never
+opened.**
+
+`shared-denominator-cusp-holonomy.md` is named by clause (1) itself as the
+carrier of the bijection, and it says **tetrahedra**, twice:
+
+- statement (`:28-32`): `Hol_μk(z_k) = Hol_λk(z_k) = 1` "for some cusp k", `z_k`
+  the shape of the ideal tetrahedron at cusp k;
+- table row 4 (`:49`): "GB-depth k_star = n | thimble dimension n |
+  **n ideal tetrahedra in JSJ piece**".
+
+And the compute agrees: `snappy_cusp_seeding.py:66` sets
+`n = M.num_tetrahedra()` and emits **one algebraic seed per tetrahedron** —
+**8** for `L6a4`'s 8 tetrahedra, not 3 for its 3 cusps.
+
+So the corpus carries **six** statements with **five** counts (4 vertices / 1
+tetrahedron / c cusps / T tetrahedra / 4T vertices), and clause (1) is the sole
+outlier. This bean found three of the six and missed the two that decide it.
+
+**For 4_1, measured from the corpus's own witness** (`m004`): vertices of one
+tetrahedron **4**, tetrahedra **2**, `4T` **8**, cusps **1** — and the braid
+whose closure it is, `(σ₁σ₂⁻¹)²`, lives in `H_3`. Four candidate targets and the
+algebraic side matches none, because **`n` is not pinned**: it is the Hecke
+index / GB-depth in the carrier's hypothesis, `num_tetrahedra()` in the compute,
+a free sweep `MAX_DEPTH = 4` in `q_pochhammer_seed.py`, and `n → ∞` in clause
+(2). So this bean's counting argument is sound but **unposable** — you cannot
+compare `n` to 4 until someone says what `n` is.
+
+**The part that is not a judgement call at all, and this bean missed it
+entirely.** `algebraic-geometric-dilog-equivalence.md` §Witness asserted four
+things its own cited witness denies — "the trefoil" (0 occurrences in producer
+or witness), "n = 3" (the producer sweeps 1-4), "the SnapPy-solved cusp shape
+parameters" (the producer **never imported snappy in any commit**;
+`git log -S "import snappy"` is empty — it pairs against the 6 Picard-Lefschetz
+discriminant roots of the colour-tube cubic), and "the residual after one Newton
+step" (9 of 10 runs, up to 11 iterations). The witness refutes it in its own
+`caveats`. The sibling block describes the **same** witness correctly.
+
+**Landed in #7401:** the §Witness rewrite, clause (1) and the Kashaev table row
+retargeted to tetrahedra, a scoping note recording that `n` is still unpinned,
+and the sixth "depth" sense registered in `notation-collisions.md`. I
+recommended deferring the clause (1) repair until `n` is pinned; **the owner
+directed it**, and that is recorded in the commit.
+
+**Split out:** the two dead `conj:` labels both producers declare, and the dead
+`prop:jet-gb-pl-correspondence` behind `thurston-relaxation`'s "GB-PL
+bijection", are `qou-3kni` — including why the producer docstrings were NOT
+edited (neither producer can be re-run here: no `snappy`, and local `mpmath`
+1.3.0 against the witness's 1.4.1).
+
+### Finding 3 — mechanism confirmed, one claim downgraded, one half added
+
+**Confirmed against the live code**, not asserted:
+`borrowed_hits("pole_cusp_bijection_proved", doc)` returns `[]`, so
+`if not hits: continue` (line 316) discards it before any other signal runs.
+
+**Added, and it is the sharper half:** `borrowed_hits` reads
+`split_camel(name) + " " + doc`, while `overclaim = bool(OVERCLAIM.search(doc))`
+(line 338) reads the docstring **alone** — and `OVERCLAIM` matches `'proved'`.
+The detector **held the token and never looked where it was written**. Verified
+by importing the module: `OVERCLAIM.search(doc)` False,
+`OVERCLAIM.search(split_camel(name))` True.
+
+**Downgraded:** measured corpus-wide, that asymmetry costs **10 of 25,810**
+provable declarations (7 also eponym-free, so never scored at all), and the 3
+that do reach classification look legitimate. So the asymmetry is real but
+nearly benign — weaker than this bean implied.
+
+**The class is not benign, and is now measurable.** Guard
+`scripts/lean-structure-word-audit.py` (taxonomy **row 46**, added #7401) finds
+`pole_cusp_bijection_proved` as the **sole** `bijection` member at `926f2c71ec^`
+and zero after the rename, and **13 live members under `iff`** — `qou-bybn`.
+
+🛑 **My first calibration of that probe reported 173 `unique` hits and every one
+was Mathlib's uniqueness idiom** (`(a b : T) … : a = b`, no `∃!`). 173 false
+positives from one convention I did not know, in the probe written to extend
+taxonomy row 45 — whose lesson is that an audit self-certifying its calibration
+cannot discover its own blind spot. The `--selftest` now pins the limit as well
+as the catch.
+
+### Prior-art, run properly this time
+
+The §CORRECTION above records that I declared novelty after a path returned five
+hits and I opened one. This time all six paths were run and every hit opened
+(path 0 `corpus_search` was **UNAVAILABLE** — the `paper-assistant` MCP failed
+to connect — so both negatives are scope-(a), not scope-(b)).
+
+Result, and it lands on this bean: **Question 1 was ALREADY RECORDED — by
+Finding 1 of this bean**, for the vertices-vs-tetrahedra half. The
+cusps-vs-tetrahedra half, the `shared-denominator-cusp-holonomy` internal
+disagreement, and the producer's 8-seeds-against-3-cusps are on **no** path.
+**Question 2 — that `n` carries both the Hecke-index and tetrahedron-count
+meanings — is NOT FOUND on all six paths**; the register's own "depth" collision
+entry had five senses and none was the tetrahedron count, which is why the sixth
+was added.
+
+One more thing worth flagging separately: the corpus-grepper reported that
+AGENTS.md's agent-memory figures are stale — it states "195-419 lines for
+MEMORY.md and 412-657 for the directory"; measured, `lean-verifier` is **721**
+and its directory **2484**, and three of five directories exceed the stated
+range. Not fixed here.

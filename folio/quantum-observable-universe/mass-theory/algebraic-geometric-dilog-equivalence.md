@@ -17,10 +17,11 @@ Under the Archimedean realization $\tau_{\mathrm{arch}}$
 
 1. *(**Pole-to-cusp bijection.**) The roots
    $\{x = q^{-k} : k = 0, \dots, n-1\}$ of the denominator
-   $(x; q)_n$ are in bijection with the ideal vertices of a hyperbolic
-   tetrahedron triangulating the $\Phi_q$-piece $K_S$ of the lifted
+   $(x; q)_n$ are in bijection with the $n$ ideal tetrahedra of a
+   hyperbolic triangulation of the $\Phi_q$-piece $K_S$ of the lifted
    transient crossing
-   ([Φ$_q$-piece](#def:phi-q-piece)).*
+   ([Φ$_q$-piece](#def:phi-q-piece)), the root of index $k$ labelling
+   the tetrahedron whose shape parameter it seeds.*
 
 2. *(**Asymptotic Bloch–Wigner.**) The asymptotic of the partial
    product under Faddeev's scaling
@@ -57,6 +58,24 @@ $$
    energy pipeline (cf.
    [Φ$_q$-tower JSJ bridge](#rem:phi-q-tower-jsj-bridge)).*
 
+**Note — what $n$ is, and it is not pinned.** Clause (1) counts $n$ ideal
+tetrahedra because that is what the carrier of the bijection
+([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy),
+table row 4) and the compute both count: `snappy_cusp_seeding.py` takes
+$n$ from `num_tetrahedra()` and emits one algebraic seed per tetrahedron, eight
+for the eight-tetrahedron $\mathtt{L6a4}$. But the same symbol is the Hecke
+index and GB-depth $k_\star(T_w) = n$ in that carrier's own hypothesis, a free
+truncation order swept over $1, \dots, 4$ in
+[q-pochhammer-seed.witness.json](../../../computations/q-pochhammer-seed.witness.json),
+and unbounded in clause (2) below, which takes $n \to \infty$. For the
+figure-eight $4_1$ these disagree: the triangulation has **2** tetrahedra and
+**1** cusp, while the braid whose closure it is has Hecke index **3**. So
+clause (1) fixes the geometric *object* the roots label without fixing the
+*count*, and no clause here should be read as asserting that the Hecke depth
+equals the tetrahedron count — that identification is asserted in
+[thurston-relaxation](#sec:thurston-relaxation) as the "GB-PL bijection" and
+is not established here.
+
 ## Relation to the structural form of Kashaev
 
 The conjecture is the **QOU-native, partial-product** form of the
@@ -70,7 +89,7 @@ denominator**:
 |------|--------|--------------------|
 | Algebraic ($R$) | $\Phi_n(x; q_0)$ | zero of $(1 - x q^k)$ at $x = q^{-k}$ |
 | Archimedean ($\mathbb{C}$) | $\mathrm{Li}_2$ | logarithmic singularity at $t = 1$ |
-| Geometric ($\mathbf{Hyp}_3$) | ideal tetrahedron $\Delta_z$ | cusp at vertex $v_k$ |
+| Geometric ($\mathbf{Hyp}_3$) | ideal tetrahedron $\Delta_{z_k}$ | complete cusp of $\Delta_{z_k}$ |
 
 The bijection between the rows is the content of
 ([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)).
@@ -217,9 +236,22 @@ forces a substrate point with vanishing deformed Chern–Simons part).
 
 ## Witness
 
-The algebraic-geometric matching of poles to cusps for the simplest
-non-trivial case (the trefoil, $n = 3$) is recorded in
-[q-pochhammer-seed.witness.json](../../../computations/q-pochhammer-seed.witness.json).
-The witness reports the algebraic denominator zeros, the SnapPy-
-solved cusp shape parameters obtained by feeding those zeros as
-Newton–Raphson seeds, and the residual after one Newton step.
+Two witnesses bracket the matching, and neither is a SnapPy cusp solve
+driven from the algebraic seeds.
+
+[q-pochhammer-seed.witness.json](../../../computations/q-pochhammer-seed.witness.json)
+sweeps the partial-product order over $n = 1, \dots, 4$; at each order it
+extracts the $n$ denominator zeros $q_0^{-k}$, lifts them off the real line by a
+fixed imaginary perturbation, and drives Newton-Raphson from each seed onto the
+**colour-tube discriminant** $\Delta(z) = 0$ — not onto the Thurston gluing
+equations. Nine of its ten runs converge, in at most 11 iterations. Its own
+caveat records that it *"does not yet drive a SnapPy Newton iteration"*.
+
+[snappy-cusp-seeding.witness.json](../../../computations/snappy-cusp-seeding.witness.json)
+is the SnapPy side. It compares the bare algebraic seeds against SnapPy's
+converged tetrahedral shape parameters for the figure-eight $4_1$
+($\mathtt{m004}$), its sister $\mathtt{m003}$, and the Borromean rings
+$\mathtt{L6a4}$, and reports the pairing distance; it seeds no solve. Those
+distances ($0.40$ to $0.91$) are what bound the conjecture's canonical form, as
+[shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)
+§*Empirical scope* records.

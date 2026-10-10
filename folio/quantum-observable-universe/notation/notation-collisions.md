@@ -38,11 +38,31 @@ A handful of common letters carry overloaded meanings in the literature. We enfo
 - **$\mathfrak{Q}_\beta$ (fraktur)** = the $\beta$-decay Q-value as a *trace-component* ($\mathrm{Im}\mathfrak{V}$, derived). We promoted this to fraktur (observable register) from the older roman $Q_\beta$. The measured/experimental value is $\mathfrak{Q}_\beta^{\,\mathrm{obs}}$ (CODATA).
 - **$\mathfrak{D}$ (decay width) vs $\mathcal{D}$ (operator)** — visually close but register-distinct. We write $\mathfrak{D}$ (fraktur, a genuine decay-rate observable) always carrying a decay subscript — $\mathfrak{D}_n$ (neutron), $\mathfrak{D}_\mu$ (muon), $\mathfrak{D}_K$ (generic hadron) — under the convention $\mathfrak{D}_K = \hbar/\tau_K$. The calibration channels $P_{\mathrm{skew}}^{\beta}$ (CAL-2) and $P_{\mathrm{avg}}^{\pi}$ (CAL-3) formerly carried this symbol and no longer do: they are bar-parity projections, not rates, and their proxies are a $Q$-value and a mass respectively. We write $\mathcal{D}$ (calligraphic, an operator) as the categorical Dirac operator $\mathcal{D}_\nabla$ or the path measure $\mathcal{D}\phi$. The subscript / decoration disambiguates. We never write a bare $\mathfrak{D}$ or bare $\mathcal{D}$.
 - **$S_n$ vs $H_n(q)$** — $q$-deformed braiding decompositions (eigenvalues $\{q, -q^{-1}\}$) are actions of the Iwahori–Hecke algebra $H_n(q)$, not the symmetric group $S_n$, even when the block dimensions match the classical $S_n$ irreps. We write classical $S_n$ only for a genuine $\epsilon = \pm 1$ flip. We never write fraktur $\mathfrak{S}_n$ (fraktur $\mathfrak{S}$ is the action).
-- **"depth"** = **five** distinct filtration/cutoff indices share this English word, and the register had never claimed it — which is why the name stayed available to be taken repeatedly. We never write a bare "depth"; each sense carries its own symbol and is named in full on first use in a block.
+- **"depth"** = **six** distinct filtration/cutoff indices share this English word, and the register had never claimed it — which is why the name stayed available to be taken repeatedly. We never write a bare "depth"; each sense carries its own symbol and is named in full on first use in a block.
     - **transcendence depth** $n$ — the iterated-integral index of $\mathcal{H}_q^{(n,K)}$, where $G^{(n)}$ adjoins $\mathrm{Li}_n^q$ and $\tau_{\mathrm{arch}}(G^{(n)}) \subseteq \mathcal{P}_n$. This is the sense moved *additively* by the $q$-shuffle ($\mathcal{H}^{(n_1)} \ast_q \mathcal{H}^{(n_2)} \subseteq \bigoplus \mathcal{H}^{(n_1+n_2)}$), and the sense the $K$-theory period rosetta indexes.
     - **cell** $\lambda_K \vdash n_K$ — the Hecke/knot partition cell of an atom's braid. A partition, not an integer; write the partition, never "the depth of $K$".
     - **curvature-rank** $k$ — the Gröbner–Shirshov grading, $k = \mathrm{depth}(\lambda) - 1$ with $\mathrm{depth}(\lambda)$ the *partition* depth (max hook length). **Read the scope note**: all three readings of the underlying $J^\bullet$ are excluded ([bean `qou-wjbd`](../../../docs/audits/2026-08-26-no-shift-rescues-the-word-partition-bridge.md)), so this index is currently attached to no well-defined filtration. Renaming it does not supply one.
     - **cascade depth** $N_{\mathrm{eff}} = \lfloor \log_q(\mathrm{Re}_q^{3/4}) \rfloor$ — the $q$-turbulence Reynolds cutoff of the fluid-dynamics chapter. Not a filtration at all, and unrelated to every sense above.
+    - **triangulation size** $n$ — the number of ideal tetrahedra in a hyperbolic
+      triangulation of the $\Phi_q$-piece $K_S$. This is the sense the
+      pole-to-cusp correspondence counts: `conj:shared-denominator-cusp-holonomy`'s
+      table row 4 reads "$n$ ideal tetrahedra in JSJ piece", and
+      `computations/snappy_cusp_seeding.py` takes $n$ from SnapPy's
+      `num_tetrahedra()` and emits one algebraic seed per tetrahedron — **eight**
+      for the eight-tetrahedron $\mathtt{L6a4}$, not three for its three cusps.
+      It collides head-on with the **GB-depth** $k_\star(T_w) = n$ that the same
+      conjecture's own hypothesis fixes, and with **transcendence depth** $n$
+      above: for the figure-eight $4_1$ the triangulation has **2** tetrahedra
+      and **1** cusp, while the braid whose closure it is,
+      $(\sigma_1\sigma_2^{-1})^2$, lives in $H_3(q)$
+      (`computations/eigenvalue_reeb_extension_h4_h5.py`,
+      `atom-word-braid-letter-census.witness.json`). The corpus *asserts* the
+      first two are equal — [thurston-relaxation](#sec:thurston-relaxation)
+      calls it the "GB-PL bijection" — but the carrier it names for that,
+      `prop:jet-gb-pl-correspondence`, has **no file in the tree**, so the
+      identification is currently unsupported rather than merely unproved.
+      Never write a bare $n$ in this arc.
+
     - **tower depth** $N$ — the brane-tower truncation index, as in $\mathfrak{E}_0^{(N)}$ and $N_v = 120\,q_0^{90}$. This is the one sense the register already carried, inside the energy row of the fraktur table, where nothing marked it as a claim on the word.
 
   Two further names are *identified* with senses above by propositions rather than by definition, and are therefore one object or two according to those propositions' status: **NF support depth** (asserted equal to tower depth by `prop:phi-q-categorical-truncation`) and **slicing depth** (given as the Coxeter length $\ell(w)$ in the atom-knot mass derivation's dictionary). Cite the proposition when using either as a synonym. **"cyclotomic depth"** and **"Bring-natural depth"** read as transcendence depth under a different adjective — recorded as probably synonymous, not measured to be.
