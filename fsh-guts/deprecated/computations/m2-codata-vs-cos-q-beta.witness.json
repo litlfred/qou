@@ -1,0 +1,90 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-16T03:41:08.463993+00:00",
+  "commitSha": "f4f2076185f84e8d11ba439335a2a9f08c40fad5",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "m2-codata-vs-cos-q-beta",
+  "scriptFile": "probe_m2_codata_vs_cos_q_beta.py",
+  "scriptHash": "d61bde655564",
+  "scriptCommitSha": "f4f2076185f84e8d11ba439335a2a9f08c40fad5",
+  "description": "M2 mass-table comparison: per-derivation assembly under codata Q_β vs cos((z−1)·h/2) substrate Q_β. Verifies the q_beta_source flag from this commit, and surfaces the per-atom mass-prediction shift under the cos tightening. Closes the wiring half of M1 §7 item 3.",
+  "contentBlock": "prop:q-beta-categorical-precision-ladder",
+  "parameters": {
+    "Q_beta_codata_MeV": 0.7823334100000222,
+    "Q_beta_form_a_cos_MeV": 0.7825728174022026
+  },
+  "data": {
+    "delta_Q_beta_MeV": 0.0002394074021804249,
+    "per_atom": [
+      {
+        "atom": "p",
+        "Z": 1,
+        "N": 0,
+        "M_codata_MeV": 938.27208816,
+        "M_pred_codata_MeV": 937.5965043920628,
+        "M_pred_cos_MeV": 937.5961412774593,
+        "err_pct_codata": -0.07200296976349471,
+        "err_pct_cos": -0.07204167011577736,
+        "delta_M_pred_MeV": -0.00036311460348770197
+      },
+      {
+        "atom": "n",
+        "Z": 0,
+        "N": 1,
+        "M_codata_MeV": 939.56542052,
+        "M_pred_codata_MeV": 938.7466275186582,
+        "M_pred_cos_MeV": 938.7463769539976,
+        "err_pct_codata": -0.08714592762349652,
+        "err_pct_cos": -0.08717259576763636,
+        "delta_M_pred_MeV": -0.0002505646606323353
+      },
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "M_codata_MeV": 1876.123956,
+        "M_pred_codata_MeV": 1875.5822088120092,
+        "M_pred_cos_MeV": 1875.5819169730837,
+        "err_pct_codata": -0.028875873913243855,
+        "err_pct_cos": -0.02889142933134637,
+        "delta_M_pred_MeV": -0.00029183892547735013
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "M_codata_MeV": 2809.432098,
+        "M_pred_codata_MeV": 2814.1566903439075,
+        "M_pred_cos_MeV": 2814.1566610991863,
+        "err_pct_codata": 0.16816894586171488,
+        "err_pct_cos": 0.16816790491393008,
+        "delta_M_pred_MeV": -2.924472119048005e-05
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "M_codata_MeV": 2809.413524,
+        "M_pred_codata_MeV": 2801.527336967438,
+        "M_pred_cos_MeV": 2801.5242312544624,
+        "err_pct_codata": -0.2807058115579231,
+        "err_pct_cos": -0.28081635822358414,
+        "delta_M_pred_MeV": -0.003105712975411734
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "M_codata_MeV": 3728.401311,
+        "M_pred_codata_MeV": 3747.302428105725,
+        "M_pred_cos_MeV": 3747.3020697296606,
+        "err_pct_codata": 0.506949642195451,
+        "err_pct_cos": 0.5069400301383098,
+        "delta_M_pred_MeV": -0.00035837606446875725
+      }
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-22T20:27:33.891819+00:00",
+  "commitSha": "b6b10ce28a289bcd0a2a796d520e4c0426c9d84e",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 21,
+  "computation": "family-a-variants-investigation",
+  "scriptFile": "probe_family_a_variants.py",
+  "scriptHash": "18a3767c8a87",
+  "scriptCommitSha": "717609fffa789b66c1fbac3c5aa7f7fd7a11cfeb",
+  "description": "Investigation of Family A variants: 8 natural Wedderburn-sum normalizations tested for leading 5/2 at q=1 and h² coefficient. Family A is EXACT (not truncated). Variants test whether other natural sums close the 3% gap to CODATA.",
+  "contentBlock": "prop:flavor-dressed-mass-from-substrate-split",
+  "data": {
+    "target_at_q0": 2.4616482108893916,
+    "variants": [
+      {
+        "name": "V1: (1/4) Σ dim_q V_λ (Family A)",
+        "value_at_q1": "5/2",
+        "h2_coefficient": "3/4",
+        "value_at_q0": 2.5327796636728834,
+        "rel_pct_vs_target": 2.8895864351710974
+      },
+      {
+        "name": "V2: (1/48/5) Σ dim_q² V_λ",
+        "value_at_q1": "5/2",
+        "h2_coefficient": "5/3",
+        "value_at_q0": 2.5734406450233562,
+        "rel_pct_vs_target": 4.541365156866754
+      },
+      {
+        "name": "V3: (1/48/5) Σ dim_q · dim_cl",
+        "value_at_q1": "5/2",
+        "h2_coefficient": "5/6",
+        "value_at_q0": 2.5364218485254266,
+        "rel_pct_vs_target": 3.0375435980358625
+      },
+      {
+        "name": "V4: (1/48) Σ hook_cl · dim_q",
+        "value_at_q1": "5/2",
+        "h2_coefficient": "7/12",
+        "value_at_q0": 2.525495293967798,
+        "rel_pct_vs_target": 2.593672109441603
+      },
+      {
+        "name": "V6: (1/4/5) · dim_q V_(2,2) only",
+        "value_at_q1": "5/2",
+        "h2_coefficient": "5/4",
+        "value_at_q0": 2.55463277278814,
+        "rel_pct_vs_target": 3.7773294123595798
+      },
+      {
+        "name": "V7: Σ dim_q V_λ / [4]_q",
+        "value_at_q1": "5/2",
+        "h2_coefficient": "-13/16",
+        "value_at_q0": 2.465182848883424,
+        "rel_pct_vs_target": 0.1435882665279519
+      },
+      {
+        "name": "V8: 5/Σ(1/dim_q V_λ) (harmonic)",
+        "value_at_q1": "30/19",
+        "h2_coefficient": "85/361",
+        "value_at_q0": 1.5891173386000912,
+        "rel_pct_vs_target": -35.444986348153115
+      }
+    ]
+  }
+}

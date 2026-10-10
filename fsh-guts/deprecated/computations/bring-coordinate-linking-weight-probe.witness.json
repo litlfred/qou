@@ -1,0 +1,16 @@
+{
+  "computation": "bring-coordinate-linking-weight-probe",
+  "description": "Bring-coordinate analysis of the interface linking weight. The 3 H_3 Wedderburn blocks = 3 Bring chart volumes (W_sym, W_std, W_alt). Interface \u03c3\u2083 monodromy is trivial on sym/alt (|R|\u22481) and nontrivial on std. CG decomposition std\u2297std = triv+std+sign gives Bring sum q\u00b3+2+q\u207b\u00b3 = 4.10. lw_A \u00d7 CG/3 = 3.46 (41% off target 5.85). No simple algebraic shortcut closes the gap.",
+  "data": {
+    "plancherel_weights": {
+      "W_sym": 0.163,
+      "W_std": 0.661,
+      "W_alt": 0.163
+    },
+    "interface_trace_std_tensor_std": "2h = 0.418",
+    "cg_decomposition": "V_(2,1) \u2297 V_(2,1) = V_(3) \u2295 V_(2,1) \u2295 V_(1\u00b3)",
+    "bring_cg_sum": 4.1,
+    "best_prediction": "lw_A \u00d7 CG/3 = 3.46 (41% off)",
+    "conclusion": "No algebraic shortcut. Full H_6 interface spectral computation needed."
+  }
+}

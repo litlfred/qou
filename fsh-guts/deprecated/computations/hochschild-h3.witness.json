@@ -1,0 +1,26 @@
+{
+  "computation": "hochschild-h3",
+  "description": "Hochschild cohomology HH*(H_3(q), H_3(q)) over R[q, q\u207b\u00b9]: structure constants, regular representation, center, and inner-derivation cup products computed symbolically.  Outer derivations (non-trivial HH^1 classes) require additional linear-algebra computation.",
+  "reference_blocks": [
+    "prop:terms-2-6-higher-operations",
+    "prop:gb-spectral-sequence"
+  ],
+  "computedAt": "2026-04-24T21:59:04.964199+00:00",
+  "parameters": {
+    "q_0": 1.1099785955541805
+  },
+  "dimension": 6,
+  "basis": [
+    "1",
+    "\u03c3_0",
+    "\u03c3_1",
+    "\u03c3_0\u03c3_1",
+    "\u03c3_1\u03c3_0",
+    "\u03c3_0\u03c3_1\u03c3_0"
+  ],
+  "hecke_relation_verified": true,
+  "inner_derivation_pairing_at_q0": 0.0,
+  "cup_product_inner_pair_at_q0": 0.0,
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

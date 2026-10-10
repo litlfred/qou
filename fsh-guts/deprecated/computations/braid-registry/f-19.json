@@ -1,0 +1,235 @@
+{
+  "nucleus": "F-19",
+  "p": 9,
+  "n": 10,
+  "A": 19,
+  "q": 1.11,
+  "timestamp": "2026-03-27T14:13:47.629802+00:00",
+  "parent": {
+    "ordering": [
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0
+    ],
+    "ordering_visual": "\u25cf\u25cb\u25cf\u25cb\u25cf\u25cb\u25cf\u25cb\u25cf\u25cb\u25cf\u25cb\u25cf\u25cb\u25cf\u25cb\u25cf\u25cb\u25cb",
+    "sign": 1,
+    "log_trace": -15.37128272274412,
+    "trace_numerical": 2.1102637258123133e-07,
+    "n_negative_generators": 6,
+    "negative_generator_positions": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11
+    ],
+    "ground_state_method": "yb-optimized(0)",
+    "n_orderings_searched": 92378,
+    "generator_volumes": [
+      {
+        "i": 0,
+        "V_hat": 1.8334620787073586,
+        "sign": 1,
+        "log_abs": 0.6062060258541415,
+        "n_crossings": 18
+      },
+      {
+        "i": 1,
+        "V_hat": -0.5270579377459085,
+        "sign": -1,
+        "log_abs": -0.6404447976868111,
+        "n_crossings": 17
+      },
+      {
+        "i": 2,
+        "V_hat": 1.6717494887159376,
+        "sign": 1,
+        "log_abs": 0.5138706761142715,
+        "n_crossings": 16
+      },
+      {
+        "i": 3,
+        "V_hat": -0.4131273228600991,
+        "sign": -1,
+        "log_abs": -0.8839994457351725,
+        "n_crossings": 15
+      },
+      {
+        "i": 4,
+        "V_hat": 1.5298610643701986,
+        "sign": 1,
+        "log_abs": 0.4251769236799069,
+        "n_crossings": 14
+      },
+      {
+        "i": 5,
+        "V_hat": -0.3048954807954396,
+        "sign": -1,
+        "log_abs": -1.1877862470215534,
+        "n_crossings": 13
+      },
+      {
+        "i": 6,
+        "V_hat": 1.4060483009106415,
+        "sign": 1,
+        "log_abs": 0.3407831462199168,
+        "n_crossings": 12
+      },
+      {
+        "i": 7,
+        "V_hat": -0.20113054566943322,
+        "sign": -1,
+        "log_abs": -1.6038011008020767,
+        "n_crossings": 11
+      },
+      {
+        "i": 8,
+        "V_hat": 1.2987770408217651,
+        "sign": 1,
+        "log_abs": 0.26142308386653806,
+        "n_crossings": 10
+      },
+      {
+        "i": 9,
+        "V_hat": -0.10066226913598975,
+        "sign": -1,
+        "log_abs": -2.295984235309126,
+        "n_crossings": 9
+      },
+      {
+        "i": 10,
+        "V_hat": 1.2067085682608063,
+        "sign": 1,
+        "log_abs": 0.1878964616446847,
+        "n_crossings": 8
+      },
+      {
+        "i": 11,
+        "V_hat": -0.0023687009317024943,
+        "sign": -1,
+        "log_abs": -6.045413604196645,
+        "n_crossings": 7
+      },
+      {
+        "i": 12,
+        "V_hat": 1.128683021099325,
+        "sign": 1,
+        "log_abs": 0.12105148498450957,
+        "n_crossings": 6
+      },
+      {
+        "i": 13,
+        "V_hat": 0.09483646434306842,
+        "sign": 1,
+        "log_abs": -2.3556012987089967,
+        "n_crossings": 5
+      },
+      {
+        "i": 14,
+        "V_hat": 1.0637049161626273,
+        "sign": 1,
+        "log_abs": 0.061758018021525835,
+        "n_crossings": 4
+      },
+      {
+        "i": 15,
+        "V_hat": 0.19201601822386488,
+        "sign": 1,
+        "log_abs": -1.650176482185002,
+        "n_crossings": 3
+      },
+      {
+        "i": 16,
+        "V_hat": 1.0109306083110137,
+        "sign": 1,
+        "log_abs": 0.010871300997282859,
+        "n_crossings": 2
+      },
+      {
+        "i": 17,
+        "V_hat": 0.2902209839744902,
+        "sign": 1,
+        "log_abs": -1.237112632481515,
+        "n_crossings": 1
+      }
+    ]
+  },
+  "daughter": {
+    "p": 10,
+    "n": 9,
+    "ordering": [
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1
+    ],
+    "ordering_visual": "\u25cf\u25cb\u25cf\u25cb\u25cf\u25cb\u25cf\u25cb\u25cf\u25cb\u25cf\u25cb\u25cf\u25cb\u25cf\u25cb\u25cf\u25cb\u25cf",
+    "sign": -1,
+    "log_trace": -14.98042823698502,
+    "trace_numerical": -3.119483408685758e-07,
+    "n_negative_generators": 5,
+    "negative_generator_positions": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ],
+    "ground_state_method": "yb-optimized(0)"
+  },
+  "transition": {
+    "same_sign": false,
+    "delta_phi": -0.39085448575909965,
+    "intensive_delta_tr": 1.6764785861455727,
+    "converting_position": 18,
+    "eIeR": null
+  },
+  "experimental": {
+    "Q_exp_MeV": null,
+    "t_obs": null,
+    "t_unit": null
+  },
+  "computation": {
+    "elapsed_s": 0.0038309097290039062,
+    "engine": "braid-registry.py",
+    "factored_trace_theorem": "thm:markov-trace-factorization",
+    "parameters": {
+      "z_markov": 0.4993200830735895,
+      "ha": 0.2090990990990993,
+      "hbar_q2": 0.009820631442253083,
+      "M_total_MeV": 3838.7665869302245
+    }
+  }
+}

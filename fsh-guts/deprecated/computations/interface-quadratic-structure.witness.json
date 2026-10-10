@@ -1,0 +1,11 @@
+{
+  "computation": "interface-quadratic-eigenvalue-splitting",
+  "description": "Interface operator quadratic structure: (sigma-h/2)^2 = 1+h^2/4 = [2]_q^2/4 (SCALAR). Even powers are identity; odd powers are linear in sigma. 5 averaged interface crossings = (1+h^2/4)^2 x single crossing (scalar 1.022). Eigenvalue splitting n_+ - n_- from SYT counting predicts R_lambda SIGN correctly for 9/11 partitions. Extremal (1-dim) blocks match to 2.2%. Middle blocks need full Hoefsmit matrix (Rust hecke-engine).",
+  "data": {
+    "quadratic_identity": "(sigma - h/2)^2 = 1 + h^2/4 (SCALAR, from Hecke relation)",
+    "scalar_factor_5_crossings": 1.022,
+    "extremal_match": "2.2% for (6,) and (1^6)",
+    "middle_failure": "64-335% for d_lambda > 1 (off-diagonal mixing)",
+    "sign_prediction": "9/11 correct (wrong for (4,1,1) and (3,1,1,1))"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "state-manifest/v1",
+  "status": "seed",
+  "authoritative": false,
+  "subgraph": "fsh-guts",
+  "note": "Seed of qou's fsh-guts branch store. main's fsh-guts/ and the three _deprecated/ trees are copied here unchanged; main remains authoritative until the cut-over.",
+  "source": { "ref": "main", "sha": "2a34fae18ddada8e2c9c253e21edde777dfb97fd" },
+  "seededAt": "2026-10-10T13:27:34Z",
+  "keyedBy": "tip",
+  "graphs": [ { "path": "fsh-guts", "tree": "98ed17eb61978b739490d61209b120c6a9081743", "files": 1944 } ]
+}

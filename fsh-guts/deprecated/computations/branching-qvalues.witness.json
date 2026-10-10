@@ -1,0 +1,91 @@
+{
+  "computedAt": "2026-04-12T14:55:15.743594+00:00",
+  "auditOnly": "docs/audits/2026-05-02-forward-derivation-pre-archimedean.md",
+  "title": "Branching Q-values via S₃ᴬ decomposition",
+  "status": "Work in progress — formula not yet unified across all A",
+  "inputs": {
+    "Vol_figure_eight": 2.029883212819307,
+    "mass_ratio_mu_e": 206.768283,
+    "m_e_MeV": 0.51099895,
+    "q0": 1.1099785955541805,
+    "q0_uncertainty": 1.3578965598837824e-09
+  },
+  "per_nucleon_channels": {
+    "proton": {
+      "triv": "(q²+1)²/(4q)",
+      "conf": "(3q²+1)/(4q³)",
+      "unconf": "-q(q²+3)/4",
+      "sign": "-(q²+1)²/(4q³)"
+    },
+    "neutron": {
+      "triv": "(q²+1)²/(4q³)",
+      "conf": "-(q⁸-q⁶-2q⁴-5q²-1)/(4q³(q²+1))",
+      "unconf": "-(q⁸+5q⁶+2q⁴+q²-1)/(4q³(q²+1))",
+      "sign": "-(q²+1)²/(4q)"
+    }
+  },
+  "decays": [
+    {
+      "name": "n→p",
+      "A": 1,
+      "Z_par": 0,
+      "N_par": 1,
+      "method": "(Σ_all + 1) × m_e",
+      "char_sum": 0.529503732,
+      "Q_calc_MeV": 0.7816,
+      "Q_exp_MeV": 0.782333,
+      "error_pct": -0.1,
+      "symbolic": "[(q-1)(q+1)(3q⁴+4q²+3)/(4q³) + 1] × m_e",
+      "note": "+1 = emitted electron categorical action"
+    },
+    {
+      "name": "³H→³He",
+      "A": 3,
+      "Z_par": 1,
+      "N_par": 2,
+      "method": "|Σ_all| × m_e (64 configs)",
+      "char_sum": 0.0350932119,
+      "Q_calc_MeV": 0.017933,
+      "Q_exp_MeV": 0.01861,
+      "error_pct": -3.6,
+      "symbolic": "3(q-1)³(q+1)³(q²+1)²(3q⁴+4q²+3)/(32q⁷) × m_e"
+    },
+    {
+      "name": "⁶He→⁶Li",
+      "A": 6,
+      "Z_par": 2,
+      "N_par": 4,
+      "method": "|Σ_FP| × m_e (2048 of 4096 Frobenius-positive)",
+      "char_sum_all": -0.0014746525,
+      "char_sum_fp": 6.1173467706,
+      "Q_calc_MeV": 3.125958,
+      "Q_exp_MeV": 3.508,
+      "error_pct": -10.9,
+      "symbolic": "-27(q-1)⁶(q+1)⁶(q²+1)⁶(3q⁴+4q²+3)/(1024q¹⁴) × m_e [all; FP sum not factored]",
+      "note": "Frobenius positivity filter: me_par≥0 AND me_dau≥0"
+    }
+  ],
+  "open_problems": [
+    "Formula not unified: A=1 needs +1, A=3 uses Σ_all, A=6 uses Σ_FP",
+    "The +1 (emitted electron) should emerge from the LP dual, not be added manually",
+    "Frobenius filter activation threshold between A=3 and A=6 needs derivation",
+    "¹⁴C (A=14, 4¹⁴≈268M configs) computed but result not yet validated",
+    "⁶He error (-10.9%) may improve with refined LP dual eigenvalue threshold"
+  ],
+  "infrastructure": {
+    "rust_engine": "tools/hecke-engine/src/bin/v14_irrep.rs (--confine mode)",
+    "python_scripts": [
+      "full-derivation-verified.py",
+      "branching-lp.py",
+      "lp-constrained-6he.py",
+      "unified-lp.py",
+      "knot-operator-symbolic.py",
+      "symbolic-sparse.py"
+    ]
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0,
+  "engine": "python",
+  "scriptFile": "frob_filter_cancellation_test.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+}

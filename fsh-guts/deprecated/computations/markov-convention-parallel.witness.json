@@ -1,0 +1,67 @@
+{
+  "engine": "tower-with-configurable-z",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-24T13:16:15.234443+00:00",
+  "commitSha": "48ff4dcbfd468587804cf607a455992a2e0f0a31",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "markov-convention-parallel",
+  "scriptFile": "markov_convention_parallel.py",
+  "scriptHash": "6159ee1d1c3c",
+  "scriptCommitSha": "6c121134b8e267eb6b16c3efa6a6ee6b7d62ba26",
+  "description": "Parallel evaluation of Markov-weight conventions 1 and 2 on the mass-endomorphism-tower for proton/neutron.",
+  "data": {
+    "params": {
+      "q_0": 1.1099785955541805,
+      "H_A": 0.20906032198987945,
+      "two_q": 2.010896869118482,
+      "hbar_q_sq": 0.009817188513478667,
+      "z_JO": 0.4993203340335982,
+      "z_Planck": 0.10453016099493972
+    },
+    "level_0": {
+      "z_JO": {
+        "V_e": 0.5938490006705095,
+        "V0_p": 0.9890073159292595,
+        "V1_p": 0.9710701586527437,
+        "V0_n": 0.8542103128258388,
+        "V1_n": 0.9755094711077458,
+        "m_e_Hecke": 630.5292680965904,
+        "m_p_MeV": 955.4916893413767,
+        "m_n_MeV": 419.345340170355,
+        "m_p_err_pct": 1.8352460228402738,
+        "m_n_err_pct": -55.36815946905864
+      },
+      "z_Planck": {
+        "V_e": 0.31815910101293454,
+        "V0_p": 0.6713859088665596,
+        "V1_p": 1.0551103311661434,
+        "V0_n": 0.5516561227194695,
+        "V1_n": 1.0883675532170307,
+        "m_e_Hecke": 23.570076632058353,
+        "m_p_MeV": 114670.25166901309,
+        "m_n_MeV": 600534.4817637177,
+        "m_p_err_pct": 12121.42842316533,
+        "m_n_err_pct": 63816.19664241724
+      }
+    },
+    "corrected_geometric_series": {
+      "correction_factor": 0.9806408227196728,
+      "z_JO": {
+        "m_p_MeV": 936.9941563375377,
+        "m_n_MeV": 411.22715938831794,
+        "m_p_err_pct": -0.1362005583016296,
+        "m_n_err_pct": -56.232195182244425
+      },
+      "z_Planck": {
+        "m_p_MeV": 112450.32993817293,
+        "m_n_MeV": 588908.6282683045,
+        "m_p_err_pct": 11884.831623702443,
+        "m_n_err_pct": 62578.83166053244
+      }
+    }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

@@ -1,0 +1,308 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-16T22:04:40.137108+00:00",
+  "commitSha": "8063c5f09cf981d4611c85450bc6d7f97704ad9e",
+  "assertions": [
+    {
+      "name": "LP_stable(H)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "bare NF"
+    },
+    {
+      "name": "LP_stable(D)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "bare NF"
+    },
+    {
+      "name": "LP_stable(T)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "bare NF"
+    },
+    {
+      "name": "LP_stable(He3)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "bare NF"
+    },
+    {
+      "name": "LP_stable(He4)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "bare NF"
+    },
+    {
+      "name": "LP_stable(Li6)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "bare NF"
+    },
+    {
+      "name": "LP_stable(Li7)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "bare NF"
+    },
+    {
+      "name": "LP_stable(Be9)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "bare NF"
+    },
+    {
+      "name": "LP_stable(B11)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "bare NF"
+    },
+    {
+      "name": "LP_stable(C12)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "bare NF"
+    },
+    {
+      "name": "LP_stabilizable(C14)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "2 ops: \u03c3\u2081\u00b7\u03c3\u2081"
+    },
+    {
+      "name": "LP_stable(N14)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "bare NF"
+    },
+    {
+      "name": "LP_stabilizable(O16)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "bool",
+      "source": "1 ops: \u03c3\u2081"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "nuclear-ilp",
+  "scriptFile": "nuclear_ilp.py",
+  "scriptHash": "d0e9df6dd156",
+  "scriptCommitSha": "",
+  "description": "Per-nucleus minimum-action Frobenius stabilizer from integer LP.",
+  "data": {
+    "atoms": [
+      {
+        "name": "H",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "bare_stable": true,
+        "n_ops": 0,
+        "stabilizer": "",
+        "tr_M": 1.02998093
+      },
+      {
+        "name": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "bare_stable": true,
+        "n_ops": 0,
+        "stabilizer": "",
+        "tr_M": 0.29028251
+      },
+      {
+        "name": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "bare_stable": true,
+        "n_ops": 0,
+        "stabilizer": "",
+        "tr_M": 0.71544209
+      },
+      {
+        "name": "He3",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "bare_stable": true,
+        "n_ops": 0,
+        "stabilizer": "",
+        "tr_M": 0.37667237
+      },
+      {
+        "name": "He4",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "bare_stable": true,
+        "n_ops": 0,
+        "stabilizer": "",
+        "tr_M": 1.42790401
+      },
+      {
+        "name": "Li6",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "bare_stable": true,
+        "n_ops": 0,
+        "stabilizer": "",
+        "tr_M": 0.71619801
+      },
+      {
+        "name": "Li7",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "bare_stable": true,
+        "n_ops": 0,
+        "stabilizer": "",
+        "tr_M": 1.21011152
+      },
+      {
+        "name": "Be9",
+        "Z": 4,
+        "N": 5,
+        "A": 9,
+        "bare_stable": true,
+        "n_ops": 0,
+        "stabilizer": "",
+        "tr_M": 1.06477799
+      },
+      {
+        "name": "B11",
+        "Z": 5,
+        "N": 6,
+        "A": 11,
+        "bare_stable": true,
+        "n_ops": 0,
+        "stabilizer": "",
+        "tr_M": 1.49172025
+      },
+      {
+        "name": "C12",
+        "Z": 6,
+        "N": 6,
+        "A": 12,
+        "bare_stable": true,
+        "n_ops": 0,
+        "stabilizer": "",
+        "tr_M": 3.95364459
+      },
+      {
+        "name": "C14",
+        "Z": 6,
+        "N": 8,
+        "A": 14,
+        "bare_stable": false,
+        "n_ops": 2,
+        "stabilizer": "\u03c3\u2081\u00b7\u03c3\u2081",
+        "tr_M": 0.56847693
+      },
+      {
+        "name": "N14",
+        "Z": 7,
+        "N": 7,
+        "A": 14,
+        "bare_stable": true,
+        "n_ops": 0,
+        "stabilizer": "",
+        "tr_M": 3.46755062
+      },
+      {
+        "name": "O16",
+        "Z": 8,
+        "N": 8,
+        "A": 16,
+        "bare_stable": false,
+        "n_ops": 1,
+        "stabilizer": "\u03c3\u2081",
+        "tr_M": 11.7528194
+      },
+      {
+        "name": "Ne20",
+        "Z": 10,
+        "N": 10,
+        "A": 20,
+        "bare_stable": false,
+        "n_ops": -1,
+        "stabilizer": "NOT FOUND",
+        "tr_M": 99.20196214
+      },
+      {
+        "name": "Si28",
+        "Z": 14,
+        "N": 14,
+        "A": 28,
+        "bare_stable": false,
+        "n_ops": -1,
+        "stabilizer": "NOT FOUND",
+        "tr_M": 465407.18163206
+      },
+      {
+        "name": "Ca40",
+        "Z": 20,
+        "N": 20,
+        "A": 40,
+        "bare_stable": false,
+        "n_ops": -1,
+        "stabilizer": "NOT FOUND",
+        "tr_M": 235764768257463.25
+      },
+      {
+        "name": "Fe56",
+        "Z": 26,
+        "N": 30,
+        "A": 56,
+        "bare_stable": false,
+        "n_ops": -1,
+        "stabilizer": "NOT FOUND",
+        "tr_M": 5.706369638814518e+29
+      }
+    ]
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

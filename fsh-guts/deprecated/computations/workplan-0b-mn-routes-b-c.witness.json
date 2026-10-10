@@ -1,0 +1,73 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T16:40:07.858710+00:00",
+  "commitSha": "50697e0496f3c1d6885d01876023b574d7425313",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 46,
+  "computation": "workplan-0b-mn-routes-b-c",
+  "scriptFile": "probe_workplan_0b_mn_routes_b_c.py",
+  "scriptHash": "2e531119ef88",
+  "scriptCommitSha": "unknown",
+  "description": "Workplan-0b/M_N exploration: Tasks 1 (C2 inflection structural), 2 (Route B Frobenius trace), 3 (Route C Bring zero-mode sketch). Documents what's known + open R&D direction for upgrading the M_N anchor from CLASS-A to derived per the framework's three-calibration-discipline.",
+  "contentBlock": "prop:flavor-dressed-mass-from-substrate-split",
+  "parameters": {
+    "dps": 80
+  },
+  "data": {
+    "task_1_c2_inflection_structure": {
+      "a_post_hoc_formula": "(4-q)/(4q+3)",
+      "a_at_q0": 0.38844820732799046,
+      "mobius_matrix": [
+        [
+          -1,
+          4
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "mobius_determinant": -19,
+      "fixed_point": 0.6180339887498949,
+      "verdict": "RATIONAL in q, not Laurent in q^{1/2}. Fails canonical three-calibration form. The Möbius transform has no obvious structural origin. Status: empirical, structural derivation OPEN."
+    },
+    "task_2_route_b_candidates": [
+      {
+        "name": "τ_M((σ_1σ_2^{-1})^3) · Vol(B_3)/ℏ_q² · m_e",
+        "value_MeV": 627.0524055008108,
+        "rel_pct": -33.21547763293017,
+        "note": "Half-symmetric Borromean trace × Vol form"
+      },
+      {
+        "name": "τ_M(Δ²) · Vol(B_3)/ℏ_q² · m_e",
+        "value_MeV": 3255.797789824054,
+        "rel_pct": 246.76033200685953,
+        "note": "Full-twist Δ² eigenvalue cubed (very rough)"
+      },
+      {
+        "name": "(5/2 + 3h²/4) · Vol(B_3)/ℏ_q² · m_e (Family A)",
+        "value_MeV": 966.0496233026864,
+        "rel_pct": 2.8895864351711276,
+        "note": "PROVED Family A theorem"
+      },
+      {
+        "name": "Vol(B_3) · m_e · π_HS_id (= (1/4) Σ dim_q V_λ)",
+        "value_MeV": 9.48389126533753,
+        "rel_pct": -98.98991353389206,
+        "note": "Variant scale (Vol direct, not /ℏ_q²)"
+      }
+    ],
+    "task_3_route_c_sketch": {
+      "target_class": "Secondary Euler / Chern-Simons of B_3 complement",
+      "known_quantity": "CS(B_3, level 1) ≈ Vol(B_3) = 8·G",
+      "open_piece": "Identify the SECONDARY characteristic fixing M_N from {q_0, m_e, Vol(B_3)}",
+      "status": "Sketch only; concrete computation deferred to follow-up R&D"
+    },
+    "recommendation": "Pursue Route B with the operator-valued LR framework from PR #689 lineage. Simple Vol(K_p) ansätze (Route A) are ruled out by PR #701's R&D 4. The C2 inflection (PR #690) lacks structural derivation. Bring zero-mode adaptation (Route C) needs concrete characteristic-class identification before numerical compute is meaningful."
+  },
+  "caveats": [
+    "Exploratory probe — no production wiring. Surfaces the structural open pieces for each of the three Workplan-0b/M_N routes. Concrete compute on Routes B and C is deferred to dedicated follow-up R&D."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "engine": "tower+kashaev",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-24T06:25:52.267636+00:00",
+  "commitSha": "22bdd79d487e1cd093b6a8131a738e9be1103564",
+  "assertions": [
+    {
+      "name": "tower ratio m_n/m_p matches CODATA within 10%",
+      "computed": 49.916872404104886,
+      "expected": 0.0,
+      "passed": false,
+      "tolerance": 10.0,
+      "source": "Hecke Plancherel tower"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 6,
+  "computation": "proton-neutron-mass-error",
+  "scriptFile": "proton_neutron_mass_error.py",
+  "scriptHash": "427b1d0fb537",
+  "scriptCommitSha": "",
+  "description": "Explicit proton and neutron mass calculation via (A) Hecke Plancherel tower m = \u03a3 w_\u03bb \u03c7_\u03bb / d_\u03bb and (B) Kashaev substrate m = Vol \u00b7 \u03c1_q with \u03c1_q = 1/\u210f_q\u00b2. Reports absolute predictions, the calibration-free m_n / m_p ratio, and the mass splitting.",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "H_A": 0.20906032198987945,
+    "rho_q_cat_units": 101.86215723850407,
+    "CODATA_m_p_MeV": 938.27208816,
+    "CODATA_m_n_MeV": 939.56542052,
+    "CODATA_m_n_over_m_p": 1.0013784193053599
+  },
+  "data": {
+    "route_A_tower": {
+      "m_p_cat_units": 0.17176282331965073,
+      "m_n_cat_units": 0.08614277137518261,
+      "m_n_over_m_p_pred": 0.501521631458461,
+      "m_n_over_m_p_codata": 1.0013784193053599,
+      "ratio_err_pct": -49.916872404104886,
+      "E_0_calibrated_MeV": 5462.602849825512,
+      "m_n_MeV_calibrated": 470.5637484059401,
+      "mass_diff_MeV_calibrated": -467.7083397540599,
+      "mass_diff_MeV_codata": 1.29333216,
+      "m_p_pred_alpha_MeV": 0.6431589621296551,
+      "m_n_pred_alpha_MeV": 0.3225581319743951,
+      "err_p_alpha_pct": -99.93145283012832,
+      "err_n_alpha_pct": -99.96566943344979
+    },
+    "route_B_kashaev": {
+      "m_nucleon_kashaev_me": 746.4178510331175,
+      "m_nucleon_kashaev_MeV": 381.4187381391794,
+      "err_pct_vs_m_p": -59.34881331840944,
+      "Vol_Borromean_8G": 7.327724753417752,
+      "rho_q_cat": 101.86215723850407
+    }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

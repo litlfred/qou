@@ -1,0 +1,124 @@
+{
+  "engine": "closed-form",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-27T19:41:55.071407+00:00",
+  "commitSha": "2d88d04e30b05e9b7b2290b911479e0cc660d893",
+  "assertions": [
+    {
+      "name": "D: correction changes |err|",
+      "computed": 0.002319749196739606,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 11.09031035969991,
+      "source": "1/(1+H_A²/4) multiplicative"
+    },
+    {
+      "name": "T: correction changes |err|",
+      "computed": 1.2347909761793945,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 10.155627531385088,
+      "source": "1/(1+H_A²/4) multiplicative"
+    },
+    {
+      "name": "3He: correction changes |err|",
+      "computed": 4.01736633742528,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 12.968606854126326,
+      "source": "1/(1+H_A²/4) multiplicative"
+    },
+    {
+      "name": "4He: correction changes |err|",
+      "computed": 4.722314181392263,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 15.866568260696315,
+      "source": "1/(1+H_A²/4) multiplicative"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "d-inter-correction-test",
+  "scriptFile": "d_inter_correction_test.py",
+  "scriptHash": "3ce545e31a6e",
+  "scriptCommitSha": "555f9404b4a09a7bb9bd553fff91984d1a90be94",
+  "description": "Derive 2·log|χ(inter)| = log(1 + H_A²/4) from chi-sym-alt-theorem and test the correction factor 1/(1+H_A²/4) on Kashaev predictions for D, T, ³He, ⁴He.  Tests universality.",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "H_A": 0.20906032198987945
+  },
+  "data": {
+    "derivation": {
+      "q_0": 1.1099785955541805,
+      "H_A_sq_over_4": 0.010926554557628018,
+      "factor_1_plus_H_sq_4": 1.010926554557628,
+      "log_factor": 0.010867291066749597,
+      "correction_multiplier": 0.9891915446197678,
+      "chi_sym_inter": 1.005448434559241,
+      "chi_alt_inter": -1.005448434559241
+    },
+    "atoms": [
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "B_AME": 2.22456612,
+        "B_kashaev": 2.2488207948647343,
+        "err_kashaev_pct": 1.0903103596999093,
+        "B_corrected": 2.2245145156453003,
+        "err_corrected_pct": -0.002319749196739606,
+        "err_corrected_ppm": -23.197491967396058,
+        "kashaev_formula": "1·m_e·Vol(6_2)",
+        "verdict": "MUCH BETTER"
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "B_AME": 8.4817984,
+        "B_kashaev": 8.46859838653302,
+        "err_kashaev_pct": -0.15562753138508753,
+        "B_corrected": 8.377065918739072,
+        "err_corrected_pct": -1.2347909761793945,
+        "err_corrected_ppm": -12347.909761793944,
+        "kashaev_formula": "2·m_e·Vol(8_11)",
+        "verdict": "WORSE"
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "B_AME": 7.7180375,
+        "B_kashaev": 7.48891930977096,
+        "err_kashaev_pct": -2.968606854126327,
+        "B_corrected": 7.407975659565141,
+        "err_corrected_pct": -4.01736633742528,
+        "err_corrected_ppm": -40173.6633742528,
+        "kashaev_formula": "2·m_e·Vol(L6a4)",
+        "verdict": "WORSE"
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "B_AME": 28.2956912,
+        "B_kashaev": 29.95567723908384,
+        "err_kashaev_pct": 5.866568260696314,
+        "B_corrected": 29.631902638260563,
+        "err_corrected_pct": 4.722314181392263,
+        "err_corrected_ppm": 47223.14181392263,
+        "kashaev_formula": "2·m_e·4·8G",
+        "verdict": "better"
+      }
+    ],
+    "summary": {
+      "mean_abs_err_kashaev_pct": 2.5202782514769098,
+      "mean_abs_err_corrected_pct": 2.4941978110484193
+    }
+  }
+}

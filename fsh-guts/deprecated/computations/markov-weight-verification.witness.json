@@ -1,0 +1,105 @@
+{
+  "engine": "numeric",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-24T13:32:09.086795+00:00",
+  "commitSha": "1df251fd643fe8c9e21a9cd3a383cadc3ec16156",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "markov-weight-verification",
+  "scriptFile": "markov_weight_verification.py",
+  "scriptHash": "94a2b210a8f9",
+  "scriptCommitSha": "9eeabafdca820175236c1e2b79b8c1bc0bde8259",
+  "description": "Verify whether \u03a3_\u03bb (d_q\u00b2/[n]_q!)\u00b7\u03c7_\u03bb(\u03c3_1) reproduces the Markov-trace value z = 1/(q^{1/2}+q^{-1/2}) for H_2(q) and H_3(q) at q=q_0.  Addresses gemini's HIGH-priority claim.",
+  "data": {
+    "params": {
+      "q_0": 1.1099785955541805,
+      "z_project": 0.4993203340335982,
+      "z_from_formula": 0.4993203340335982,
+      "two_q": 2.010896869118482
+    },
+    "H_2": {
+      "n": 2,
+      "z_project": 0.4993203340335982,
+      "Plancherel_sum_sigma_1": 0.10396372146201871,
+      "Plancherel_sum_1": 0.9945810900171829,
+      "ratio_sigma_over_one": 0.10453016099493967,
+      "expected_Markov": 0.4993203340335982,
+      "Plancherel_gives_Markov": false,
+      "per_partition": [
+        {
+          "lambda": [
+            2
+          ],
+          "d_classical": 1,
+          "d_q": 1.0,
+          "w_Plancherel": 0.49729054500859143,
+          "chi(sigma_1)": 1.1099785955541805,
+          "contribution_sigma": 0.5519818607310093,
+          "contribution_one": 0.49729054500859143
+        },
+        {
+          "lambda": [
+            1,
+            1
+          ],
+          "d_classical": 1,
+          "d_q": 1.0,
+          "w_Plancherel": 0.49729054500859143,
+          "chi(sigma_1)": -0.9009182735643011,
+          "contribution_sigma": -0.4480181392689906,
+          "contribution_one": 0.49729054500859143
+        }
+      ]
+    },
+    "H_3": {
+      "n": 3,
+      "z_project": 0.4993203340335982,
+      "Plancherel_sum_sigma_1": 0.17227762169280988,
+      "Plancherel_sum_1": 1.6553132750035098,
+      "ratio_sigma_over_one": 0.10407553923135462,
+      "expected_Markov": 0.4993203340335982,
+      "Plancherel_gives_Markov": false,
+      "per_partition": [
+        {
+          "lambda": [
+            3
+          ],
+          "d_classical": 1,
+          "d_q": 1.0,
+          "w_Plancherel": 0.16338322733975824,
+          "chi(sigma_1)": 1.1099785955541805,
+          "contribution_sigma": 0.18135188521969425,
+          "contribution_one": 0.16338322733975824
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1
+          ],
+          "d_classical": 1,
+          "d_q": 1.0,
+          "w_Plancherel": 0.16338322733975824,
+          "chi(sigma_1)": -0.9009182735643011,
+          "contribution_sigma": -0.1471949351042987,
+          "contribution_one": 0.16338322733975824
+        },
+        {
+          "lambda": [
+            2,
+            1
+          ],
+          "d_classical": 2,
+          "d_q": 2.010896869118482,
+          "w_Plancherel": 0.6606737723483499,
+          "chi(sigma_1)": 0.20906032198987945,
+          "contribution_sigma": 0.13812067157741434,
+          "contribution_one": 1.3285468203239934
+        }
+      ]
+    }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

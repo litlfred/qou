@@ -1,0 +1,116 @@
+{
+  "name": "deuterium-derived-binding",
+  "description": "Deuterium binding energy from first-principles Hecke algebra computation with QED correction. B(d) = [tr_M(p) + tr_M(n) - tr_M(T_pn\u00b7n)] \u00d7 m_e\u00b78G \u00d7 (1 - \u03b1_EM/2). Zero fitted parameters.",
+  "computedAt": "2026-04-14T23:31:10.663871+00:00",
+  "git_sha": "d3ed64c1",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "h": 0.20906032198987945,
+    "z": 0.4993203340335982,
+    "m_e_MeV": 0.51099895,
+    "Vol_B3": 7.327724753417752,
+    "ALPHA": 3.74445965488548,
+    "alpha_EM": 0.007297368094269709,
+    "alpha_EM_inv": 137.03570754300506,
+    "crossing_operator": "\u00bd(\u03c3\u2080 + \u03c3\u2080\u207b\u00b9) = \u03c3\u2080 - h/2",
+    "crossing_params": {
+      "c": 1,
+      "d": -0.10453016099493972,
+      "gen": 0
+    }
+  },
+  "results": {
+    "proton_nf": {
+      "quarks": [
+        "u",
+        "u",
+        "d"
+      ],
+      "components": {
+        "\u03b3": -0.0996576638783709,
+        "\u03c3\u2080": 0.03572941527166866,
+        "\u03c3\u2081": 0.9975704635686099,
+        "L\u208a": 0.009336913072779455,
+        "L\u208b": 0.09935378478991747,
+        "e\u207b": -0.04320778758182197
+      },
+      "net": 0.9991251252427826,
+      "markov_trace": 0.4380098498610998
+    },
+    "neutron_nf": {
+      "quarks": [
+        "u",
+        "d",
+        "d"
+      ],
+      "components": {
+        "\u03b3": -0.20170383884270424,
+        "\u03c3\u2080": 0.04813038950468018,
+        "\u03c3\u2081": 1.008995448774928,
+        "L\u208a": 0.009237074564505125,
+        "L\u208b": -0.009640792161232883,
+        "e\u207b": -0.04418377660851536
+      },
+      "net": 0.8108345052316608,
+      "markov_trace": 0.32053945262901223
+    },
+    "crossed_neutron": {
+      "operator": "T_pn = \u00bd(\u03c3\u2080+\u03c3\u2080\u207b\u00b9)",
+      "components": {
+        "\u03b3": 0.06921452425220544,
+        "\u03c3\u2080": -0.19667276147903084,
+        "\u03c3\u2081": -0.09623338213909956,
+        "L\u208a": 1.0099610016662781,
+        "L\u208b": -0.04317602305178293,
+        "e\u207b": -0.014259329443485446
+      },
+      "net": 0.7288340298050847,
+      "markov_trace": 0.1622249738186035
+    },
+    "binding": {
+      "delta_tr": 0.5963243286715085,
+      "energy_scale_MeV": 3.74445965488548,
+      "B_strong_MeV": 2.2329123899371326,
+      "qed_correction": 0.9963513159528652,
+      "qed_shift_keV": 8.147191815813137,
+      "B_phys_MeV": 2.2247651981213195,
+      "B_observed_MeV": 2.224566,
+      "error_bare_percent": 0.3751918323454,
+      "error_bare_keV": 8.34638993713277,
+      "error_corrected_percent": 0.008954471178631363,
+      "error_corrected_keV": 0.19919812131963255
+    },
+    "error_analysis": {
+      "bare_residual_keV": 8.34638993713277,
+      "half_alpha_B_keV": 8.116738475998593,
+      "ratio": 1.0282935641961686,
+      "interpretation": "The bare residual (8.35 keV) matches \u00bd\u03b1_EM \u00d7 B_obs (8.13 keV) to 2.7%. The one-loop QED correction (1 - \u03b1_EM/2) accounts for virtual photon exchange between the proton and neutron.",
+      "corrected_residual_keV": 0.19919812131963255,
+      "expected_two_loop_keV": 0.11846165676856696,
+      "two_loop_interpretation": "The corrected residual (0.19 keV) is O(\u03b1\u00b2) \u2248 0.12 keV, consistent with two-loop QED effects."
+    },
+    "derivation_chain": [
+      "Vol(4\u2081) = 2.0299 (SnapPy, hyperbolic volume)",
+      "m_\u03bc/m_e = 206.768 (CODATA 2022)",
+      "q\u2080 = 1 + Vol(4\u2081)/(m_\u03bc/m_e) - Vol(4\u2081)\u00b2/(m_\u03bc/m_e)\u00b3 + ... (derived)",
+      "h = q\u2080 - q\u2080\u207b\u00b9 = 0.2091 (Hecke parameter)",
+      "z = 1/(\u221aq + 1/\u221aq) = 0.4993 (Markov parameter)",
+      "B\u2083 = (\u03c3\u2080\u03c3\u2081\u207b\u00b9)\u00b3 (Borromean confinement = gluon field)",
+      "proton = B\u2083 \u00b7 crossing(u,u) \u00b7 crossing(u,d) \u00b7 crossing(u,d)",
+      "neutron = B\u2083 \u00b7 crossing(u,d) \u00b7 crossing(u,d) \u00b7 crossing(d,d)",
+      "T_pn = \u00bd(\u03c3\u2080+\u03c3\u2080\u207b\u00b9) (time-reversal symmetric nuclear crossing)",
+      "\u03b1_EM = 1/(q\u2080\u00b7[9]\u00b7[10]) with CS correction",
+      "B(d) = [tr_M(p) + tr_M(n) - tr_M(T_pn\u00b7n)] \u00d7 m_e\u00b78G \u00d7 (1 - \u03b1_EM/2)"
+    ],
+    "inputs": {
+      "Vol_4_1": 2.029883212819307,
+      "m_mu_over_m_e": 206.768283,
+      "m_e_MeV": 0.51099895,
+      "G_catalan": 0.915965594177219,
+      "fitted_parameters": 0,
+      "semi_empirical_scalings": 0
+    }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

@@ -1,0 +1,219 @@
+{
+  "computation": "li-atom-knot-search",
+  "description": "\u2076Li, \u2077Li atom-knot identification via mass-table-ppb framework: B_pred = \u03c1 \u00b7 m_e \u00b7 Vol_hyp(K). Searches hyperbolic knots/links with crossing number \u2264 11 from SnapPy HTLinkExteriors + OrientableCuspedCensus.",
+  "B_AME_6Li": 31.99405,
+  "B_AME_7Li": 39.24452,
+  "m_e_MeV": 0.51099895,
+  "n_knots_searched": 2368,
+  "results": {
+    "6Li": {
+      "1": {
+        "target_vol": 62.610794014351704,
+        "best_knot": "L11a520(0,0)(0,0)(0,0)",
+        "vol": 20.90470795498715,
+        "source": "HT-11cr",
+        "B_pred": 10.68228381505508,
+        "err_mev": -21.311766184944922,
+        "err_pct": -66.6116549325419,
+        "err_ppb": -666116549.325419,
+        "methodology": "volume-match-deprecated",
+        "provisional": true
+      },
+      "2": {
+        "target_vol": 31.305397007175852,
+        "best_knot": "L11a520(0,0)(0,0)(0,0)",
+        "vol": 20.90470795498715,
+        "source": "HT-11cr",
+        "B_pred": 21.36456763011016,
+        "err_mev": -10.629482369889843,
+        "err_pct": -33.22330986508379,
+        "err_ppb": -332233098.65083796,
+        "methodology": "volume-match-deprecated",
+        "provisional": true
+      },
+      "3": {
+        "target_vol": 20.870264671450567,
+        "best_knot": "L11a520(0,0)(0,0)(0,0)",
+        "vol": 20.90470795498715,
+        "source": "HT-11cr",
+        "B_pred": 32.04685144516524,
+        "err_mev": 0.05280144516523677,
+        "err_pct": 0.16503520237430638,
+        "err_ppb": 1650352.023743064,
+        "methodology": "volume-match-deprecated",
+        "provisional": true
+      },
+      "4": {
+        "target_vol": 15.652698503587926,
+        "best_knot": "K10a11(0,0)",
+        "vol": 15.646649171780131,
+        "source": "HT-10cr",
+        "B_pred": 31.981685191192064,
+        "err_mev": -0.012364808807937777,
+        "err_pct": -0.03864721349106404,
+        "err_ppb": -386472.1349106404,
+        "methodology": "volume-match-deprecated",
+        "provisional": true
+      },
+      "5": {
+        "target_vol": 12.52215880287034,
+        "best_knot": "K11a259(0,0)",
+        "vol": 12.520092760910273,
+        "source": "HT-11cr",
+        "B_pred": 31.98877127363875,
+        "err_mev": -0.005278726361250818,
+        "err_pct": -0.016499087678023938,
+        "err_ppb": -164990.8767802394,
+        "methodology": "volume-match-deprecated",
+        "provisional": true
+      },
+      "6": {
+        "target_vol": 10.435132335725283,
+        "best_knot": "L11a374(0,0)(0,0)",
+        "vol": 10.426712138641179,
+        "source": "HT-11cr",
+        "B_pred": 31.96823372878738,
+        "err_mev": -0.025816271212622866,
+        "err_pct": -0.08069085099455325,
+        "err_ppb": -806908.5099455324,
+        "methodology": "volume-match-deprecated",
+        "provisional": true
+      },
+      "7": {
+        "target_vol": 8.944399144907386,
+        "best_knot": "K8a5(0,0)",
+        "vol": 8.93585692748669,
+        "source": "HT-8cr",
+        "B_pred": 31.96349455107147,
+        "err_mev": -0.030555448928531348,
+        "err_pct": -0.09550353559030929,
+        "err_ppb": -955035.3559030928,
+        "methodology": "volume-match-deprecated",
+        "provisional": true
+      },
+      "8": {
+        "target_vol": 7.826349251793963,
+        "best_knot": "K11n141(0,0)",
+        "vol": 7.8034944954780645,
+        "source": "HT-11cr",
+        "B_pred": 31.900619948160564,
+        "err_mev": -0.09343005183943731,
+        "err_pct": -0.29202321006386284,
+        "err_ppb": -2920232.1006386285,
+        "methodology": "volume-match-deprecated",
+        "provisional": true
+      }
+    },
+    "7Li": {
+      "1": {
+        "target_vol": 76.79960986221205,
+        "best_knot": "L11a520(0,0)(0,0)(0,0)",
+        "vol": 20.90470795498715,
+        "source": "HT-11cr",
+        "B_pred": 10.68228381505508,
+        "err_mev": -28.562236184944922,
+        "err_pct": -72.78018990917693,
+        "err_ppb": -727801899.0917693,
+        "methodology": "volume-match-deprecated",
+        "provisional": true
+      },
+      "2": {
+        "target_vol": 38.399804931106026,
+        "best_knot": "L11a520(0,0)(0,0)(0,0)",
+        "vol": 20.90470795498715,
+        "source": "HT-11cr",
+        "B_pred": 21.36456763011016,
+        "err_mev": -17.879952369889843,
+        "err_pct": -45.56037981835385,
+        "err_ppb": -455603798.1835385,
+        "methodology": "volume-match-deprecated",
+        "provisional": true
+      },
+      "3": {
+        "target_vol": 25.599869954070684,
+        "best_knot": "L11a520(0,0)(0,0)(0,0)",
+        "vol": 20.90470795498715,
+        "source": "HT-11cr",
+        "B_pred": 32.04685144516524,
+        "err_mev": -7.197668554834763,
+        "err_pct": -18.34056972753078,
+        "err_ppb": -183405697.2753078,
+        "methodology": "volume-match-deprecated",
+        "provisional": true
+      },
+      "4": {
+        "target_vol": 19.199902465553013,
+        "best_knot": "K11a170(0,0)",
+        "vol": 19.205107175426015,
+        "source": "HT-11cr",
+        "B_pred": 39.25515840512063,
+        "err_mev": 0.010638405120630523,
+        "err_pct": 0.027108001628330585,
+        "err_ppb": 271080.0162833058,
+        "methodology": "volume-match-deprecated",
+        "provisional": true
+      },
+      "5": {
+        "target_vol": 15.359921972442411,
+        "best_knot": "L11a62(0,0)(0,0)",
+        "vol": 15.35998355198632,
+        "source": "HT-11cr",
+        "B_pred": 39.244677335411396,
+        "err_mev": 0.00015733541139439922,
+        "err_pct": 0.00040091052558267806,
+        "err_ppb": 4009.1052558267806,
+        "methodology": "volume-match-deprecated",
+        "provisional": true
+      },
+      "6": {
+        "target_vol": 12.799934977035342,
+        "best_knot": "L10a83(0,0)(0,0)",
+        "vol": 12.8003903548617,
+        "source": "HT-10cr",
+        "B_pred": 39.24591618554673,
+        "err_mev": 0.0013961855467314876,
+        "err_pct": 0.0035576573410287284,
+        "err_ppb": 35576.57341028728,
+        "methodology": "volume-match-deprecated",
+        "provisional": true
+      },
+      "7": {
+        "target_vol": 10.971372837458865,
+        "best_knot": "K10a49(0,0)",
+        "vol": 10.965810532424646,
+        "source": "HT-10cr",
+        "B_pred": 39.22462367577554,
+        "err_mev": -0.019896324224461637,
+        "err_pct": -0.050698350303333146,
+        "err_ppb": -506983.5030333315,
+        "methodology": "volume-match-deprecated",
+        "provisional": true
+      },
+      "8": {
+        "target_vol": 9.599951232776506,
+        "best_knot": "L10a44(0,0)(0,0)",
+        "vol": 9.58585949395367,
+        "source": "HT-10cr",
+        "B_pred": 39.18691309006285,
+        "err_mev": -0.05760690993714945,
+        "err_pct": -0.14678969175097428,
+        "err_ppb": -1467896.9175097428,
+        "methodology": "volume-match-deprecated",
+        "provisional": true
+      }
+    }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0,
+  "deprecation": {
+    "status": "deprecated",
+    "deprecated_at": "2026-04-26",
+    "reason": "Volume-match search reverse-engineers the answer: it picks the knot whose Vol_hyp matches the AME binding, rather than deriving the knot from GB-NF as the principled framework requires. At ~2400 knots searched, residuals below ~10 ppb are indistinguishable from numerical coincidence absent an independent braid-word derivation.",
+    "principled_alternative": "GB-NF(particle) \u2192 T_w \u2208 H_{n_0}(q_0) \u2192 Markov closure \u2192 Vol_hyp \u2192 B_pred. See confined-particle.md (registry) and mass-table-ppb framework.",
+    "see_also": "methodology-deprecation.witness.json",
+    "results_classification": {
+      "6Li": "provisional-volume-match (165,000 ppb at K11a259, \u03c1=5; near noise floor)",
+      "7Li": "provisional-volume-match (4,001 ppb at L11a62, \u03c1=5; striking but unverified)"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "computation": "linking-weight-h4-correction-analysis",
+  "description": "Analysis of the last 130 ppm gap after spectral correction. If lw = 5/2 + 3h\u00b2/4 + c\u2084h\u2074 with c\u2084 \u2248 \u221a3/10 (0.20% off exact), m_p = 938.272 MeV at 0.4 ppm. But: c\u2084 = \u221a3/10 is FITTING, not derived. The exact c\u2084 = 0.17286 is the propagation of all q-dependent factors through the mass formula chain. Not a simple Habiro or Wedderburn sum.",
+  "data": {
+    "c4_exact": 0.17286,
+    "c4_sqrt3_10": 0.17321,
+    "miss_sqrt3_10": "0.20%",
+    "mp_with_c4": "938.272 MeV (0.4 ppm)",
+    "mp_without_c4": "938.150 MeV (130 ppm)",
+    "status": "FITTING \u2014 \u221a3/10 is a near-miss, not a derivation"
+  }
+}

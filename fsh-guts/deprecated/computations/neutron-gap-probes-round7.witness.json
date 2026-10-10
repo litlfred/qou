@@ -1,0 +1,186 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-18T19:21:32.810661+00:00",
+  "commitSha": "709fc166085e3e1aae101036fd8a2a04cbaa4e5e",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "neutron-gap-probes-round7",
+  "scriptFile": "probe_neutron_gap_round7.py",
+  "scriptHash": "c1d0126d6ee2",
+  "scriptCommitSha": "",
+  "description": "Round-7 probe: per-bond Skein-pair binding B = z_inv \u00b7 (n_pp \u03bc_pp + n_pn \u03bc_pn + n_nn \u03bc_nn) under K_A complete-graph bond counting. Three structural inputs (\u03bc_pp, \u03bc_pn, \u03bc_nn) calibrated from D/T/\u00b3He. Tests on \u2074He, \u2076Li, \u2077Li, \u2079Be, \u00b9\u00b2C, \u00b9\u2076O. Generalizes round-3's nucleon n/p Skein-pair scheme to the atomic level.",
+  "contentBlock": "prop:atom-knot-mass-derivation",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "precision_dps": 50,
+    "z_inv": "1.00408169639535717322417248226",
+    "mu_pn_MeV": "2.2155230276442337204",
+    "mu_nn_MeV": "4.0162729531642987727",
+    "mu_pp_MeV": "3.2556168205588607172",
+    "bond_model": "K_A complete graph",
+    "hypothesis": "B = z_inv \u00b7 \u03a3_t n_t \u03bc_t for t \u2208 {pp, pn, nn}"
+  },
+  "data": {
+    "results": [
+      {
+        "atom": "deuteron",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "bonds": {
+          "pp": 0,
+          "pn": 1,
+          "nn": 0
+        },
+        "B_AME_MeV": 2.22456612,
+        "B_pred_MeV": "2.22456612",
+        "err_pct": 0.0,
+        "err_ppb": 0.0,
+        "is_calibration": true
+      },
+      {
+        "atom": "tritium",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "bonds": {
+          "pp": 0,
+          "pn": 2,
+          "nn": 1
+        },
+        "B_AME_MeV": 8.4817984,
+        "B_pred_MeV": "8.4817984",
+        "err_pct": 0.0,
+        "err_ppb": 0.0,
+        "is_calibration": true
+      },
+      {
+        "atom": "helium-3",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "bonds": {
+          "pp": 1,
+          "pn": 2,
+          "nn": 0
+        },
+        "B_AME_MeV": 7.7180375,
+        "B_pred_MeV": "7.7180375",
+        "err_pct": 0.0,
+        "err_ppb": 0.0,
+        "is_calibration": true
+      },
+      {
+        "atom": "helium-4",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "bonds": {
+          "pp": 1,
+          "pn": 4,
+          "nn": 1
+        },
+        "B_AME_MeV": 28.295673,
+        "B_pred_MeV": "16.1998359",
+        "err_pct": -42.748009916569224,
+        "err_ppb": -427480099.1656922,
+        "is_calibration": false
+      },
+      {
+        "atom": "lithium-6",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "bonds": {
+          "pp": 3,
+          "pn": 9,
+          "nn": 3
+        },
+        "B_AME_MeV": 31.99405,
+        "B_pred_MeV": "41.92580934",
+        "err_pct": 31.04251990604503,
+        "err_ppb": 310425199.0604503,
+        "is_calibration": false
+      },
+      {
+        "atom": "lithium-7",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "bonds": {
+          "pp": 3,
+          "pn": 12,
+          "nn": 6
+        },
+        "B_AME_MeV": 39.244626,
+        "B_pred_MeV": "60.69750618",
+        "err_pct": 54.6645040775774,
+        "err_ppb": 546645040.775774,
+        "is_calibration": false
+      },
+      {
+        "atom": "beryllium-9",
+        "Z": 4,
+        "N": 5,
+        "A": 9,
+        "bonds": {
+          "pp": 6,
+          "pn": 20,
+          "nn": 10
+        },
+        "B_AME_MeV": 58.16498,
+        "B_pred_MeV": "104.43141556",
+        "err_pct": 79.54345649220545,
+        "err_ppb": 795434564.9220545,
+        "is_calibration": false
+      },
+      {
+        "atom": "carbon-12",
+        "Z": 6,
+        "N": 6,
+        "A": 12,
+        "bonds": {
+          "pp": 15,
+          "pn": 36,
+          "nn": 15
+        },
+        "B_AME_MeV": 92.16175,
+        "B_pred_MeV": "189.60795162",
+        "err_pct": 105.73388810433829,
+        "err_ppb": 1057338881.043383,
+        "is_calibration": false
+      },
+      {
+        "atom": "oxygen-16",
+        "Z": 8,
+        "N": 8,
+        "A": 16,
+        "bonds": {
+          "pp": 28,
+          "pn": 64,
+          "nn": 28
+        },
+        "B_AME_MeV": 127.61932,
+        "B_pred_MeV": "346.81623144",
+        "err_pct": 171.75840730071278,
+        "err_ppb": 1717584073.0071278,
+        "is_calibration": false
+      }
+    ],
+    "verdict": "K_A complete-graph hypothesis FALSIFIED \u2014 worst oxygen-16: +171.76% (+1.72e+09 ppb). The right bond topology is not fully-connected.",
+    "attestation": {
+      "used_fitting": false,
+      "used_root_find": false,
+      "uses_codata_inputs": false,
+      "calibration_atoms": [
+        "deuteron",
+        "tritium",
+        "helium-3"
+      ],
+      "calibration_count": 3,
+      "structural_inputs": 3
+    }
+  }
+}

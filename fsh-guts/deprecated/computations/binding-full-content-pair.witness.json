@@ -1,0 +1,170 @@
+{
+  "computation": "binding-full-content-pair-v2",
+  "description": "Production unified_lift.binding_unified with the scalar pair term swapped for content-weighted V\u0302_{ij}^{content} in every jet level.  Single-gen V_i remains K\u00e4hler-lifted per unified_lift; \u03b2-decay E_0 and \u210f_q\u00b2 multi-level scaling unchanged.  Tests whether content-pair + K\u00e4hler is constructive or over-corrects.",
+  "computedAt": "2026-04-19T00:14:31.716521+00:00",
+  "parameters": {
+    "q0": 1.1099785955541805,
+    "hbar_q_sq": 0.009817188513478667,
+    "E_0_MeV": 0.782,
+    "kahler_orders_tested": [
+      0,
+      2
+    ]
+  },
+  "results": [
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "pair_form": "content-weighted",
+      "kahler_order": 0,
+      "E_0_MeV": 0.782,
+      "canonical_MeV": 0.46547745351007225,
+      "tower_delta_1_cat": 22773.535230149973,
+      "tower_MeV": 174.83469928338295,
+      "B_MeV": 175.300176736893,
+      "jet_levels_used": 2,
+      "jet_log": [
+        {
+          "level": 1,
+          "delta_n": 22773.535230149973,
+          "term_cat": 223.57208847273006,
+          "cumulative_cat": 223.57208847273006
+        },
+        {
+          "level": 2,
+          "delta_n": 17.595212257389413,
+          "term_cat": 0.0016957771202607917,
+          "cumulative_cat": 223.57378424985032
+        }
+      ],
+      "eps_MeV": 17.322792453813488,
+      "eps_order": "O(\u210f_q^3)",
+      "canonical_time_sec": 0.0017936229705810547,
+      "kahler_time_sec": 3.358052968978882,
+      "content_time_sec": 0.04317736625671387,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "err_content_pct": 9.223106771644735,
+      "err_scalar_ref_pct": 0.018403815230062067,
+      "delta_err_pct": 9.204702956414673,
+      "time_sec": 3.4055421352386475
+    },
+    {
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "pair_form": "content-weighted",
+      "kahler_order": 0,
+      "E_0_MeV": 0.782,
+      "canonical_MeV": 0.6287061048678985,
+      "tower_delta_1_cat": 2220.6925831311946,
+      "tower_MeV": 17.051344830873937,
+      "B_MeV": 17.680050935741836,
+      "jet_levels_used": 2,
+      "jet_log": [
+        {
+          "level": 1,
+          "delta_n": 2220.6925831311946,
+          "term_cat": 21.800957719082835,
+          "cumulative_cat": 21.800957719082835
+        },
+        {
+          "level": 2,
+          "delta_n": 39.750766635565114,
+          "term_cat": 0.0038310672009715615,
+          "cumulative_cat": 21.804788786283805
+        }
+      ],
+      "eps_MeV": 1.6891798454890707,
+      "eps_order": "O(\u210f_q^3)",
+      "canonical_time_sec": 0.10829806327819824,
+      "kahler_time_sec": 25.058680772781372,
+      "content_time_sec": 12.36311650276184,
+      "atom": "T",
+      "B_AME_MeV": 8.481821,
+      "err_content_pct": 0.32677908381016146,
+      "err_scalar_ref_pct": 0.060358198400202914,
+      "delta_err_pct": 0.26642088540995856,
+      "time_sec": 37.536887884140015
+    },
+    {
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "pair_form": "content-weighted",
+      "kahler_order": 0,
+      "E_0_MeV": 0.782,
+      "canonical_MeV": 0.6578306844531467,
+      "tower_delta_1_cat": 6194.505783413837,
+      "tower_MeV": 47.558754491689555,
+      "B_MeV": 48.2165851761427,
+      "jet_levels_used": 2,
+      "jet_log": [
+        {
+          "level": 1,
+          "delta_n": 6194.505783413837,
+          "term_cat": 60.812631023607494,
+          "cumulative_cat": 60.812631023607494
+        },
+        {
+          "level": 2,
+          "delta_n": 43.48100421984559,
+          "term_cat": 0.004190577018530207,
+          "cumulative_cat": 60.81682160062603
+        }
+      ],
+      "eps_MeV": 4.711878808256445,
+      "eps_order": "O(\u210f_q^3)",
+      "canonical_time_sec": 0.1112663745880127,
+      "kahler_time_sec": 26.061280250549316,
+      "content_time_sec": 12.405641317367554,
+      "atom": "3He",
+      "B_AME_MeV": 7.71804,
+      "err_content_pct": 1.438763499146754,
+      "err_scalar_ref_pct": 0.03228767564273555,
+      "delta_err_pct": 1.4064758235040185,
+      "time_sec": 38.58441686630249
+    },
+    {
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "pair_form": "content-weighted",
+      "kahler_order": 2,
+      "E_0_MeV": 0.782,
+      "canonical_MeV": 0.46547745351007225,
+      "tower_delta_1_cat": 22745.924312892268,
+      "tower_MeV": 174.62267214271643,
+      "B_MeV": 175.0881495962265,
+      "jet_levels_used": 2,
+      "jet_log": [
+        {
+          "level": 1,
+          "delta_n": 22745.924312892268,
+          "term_cat": 223.3010268929811,
+          "cumulative_cat": 223.3010268929811
+        },
+        {
+          "level": 2,
+          "delta_n": 16.839107716169494,
+          "term_cat": 0.0016229058889980063,
+          "cumulative_cat": 223.3026497988701
+        }
+      ],
+      "eps_MeV": 0.16985493488377748,
+      "eps_order": "O(\u210f_q^5)",
+      "canonical_time_sec": 0.0016202926635742188,
+      "kahler_time_sec": 3.150538682937622,
+      "content_time_sec": 0.043126821517944336,
+      "atom": "D",
+      "B_AME_MeV": 2.22452,
+      "err_content_pct": 9.211807961669242,
+      "err_scalar_ref_pct": 0.024149874726671686,
+      "delta_err_pct": 9.187658086942571,
+      "time_sec": 3.1979215145111084
+    }
+  ],
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>QOU Ruby 3D Viewer</title>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --plot-bg: #f9f9fa;
+            --grid-color: #e0e0e0;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #0d1117;
+                --text-color: #e6edf3;
+                --plot-bg: #0d1117;
+                --grid-color: #30363d;
+            }
+        }
+        body.dark-mode {
+            --bg-color: #0d1117;
+            --text-color: #e6edf3;
+            --plot-bg: #0d1117;
+            --grid-color: #30363d;
+        }
+        body.light-mode {
+            --bg-color: #ffffff;
+            --text-color: #1a1a1a;
+            --plot-bg: #f9f9fa;
+            --grid-color: #e0e0e0;
+        }
+        
+        body, html { 
+            margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; 
+            background: var(--bg-color); color: var(--text-color); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            transition: background 0.3s, color 0.3s;
+        }
+        #tester { width: 100vw; height: 100vh; }
+        #loading { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 18px; font-weight: 500; }
+        
+        #theme-toggle {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            background: var(--text-color);
+            color: var(--bg-color);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        #theme-toggle:hover { opacity: 0.9; }
+    </style>
+</head>
+<body>
+    <button id="theme-toggle" onclick="toggleTheme()">Toggle Paper / Screen Mode</button>
+    <div id="loading">Loading UNCOVER LRD Data...</div>
+    <div id="tester"></div>
+    <script>
+        let currentData = null;
+        
+        function getTheme() {
+            const isDark = document.body.classList.contains('dark-mode') || 
+                          (!document.body.classList.contains('light-mode') && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            return {
+                bg: isDark ? '#0d1117' : '#ffffff',
+                plotBg: isDark ? '#0d1117' : '#f9f9fa',
+                text: isDark ? '#e6edf3' : '#1a1a1a',
+                grid: isDark ? '#30363d' : '#e0e0e0',
+            };
+        }
+
+        function renderPlot() {
+            if (!currentData) return;
+            const theme = getTheme();
+            
+            var trace = {
+                x: currentData.x,
+                y: currentData.y,
+                z: currentData.z,
+                mode: 'markers',
+                marker: {
+                    size: 4,
+                    color: currentData.q_vals,
+                    colorscale: 'Magma',
+                    colorbar: { title: 'Topological Tension (q_local)', titleside: 'right', tickfont: {color: theme.text}, titlefont: {color: theme.text} },
+                    opacity: 0.9,
+                    line: { color: theme.bg, width: 0.5 }
+                },
+                text: currentData.text,
+                type: 'scatter3d'
+            };
+
+            var layout = {
+                title: { text: 'UNCOVER Little Red Dots (3D Q-Density Map)', font: {color: theme.text, size: 16} },
+                paper_bgcolor: theme.bg,
+                plot_bgcolor: theme.plotBg,
+                font: { color: theme.text },
+                scene: {
+                    xaxis: { title: 'X (z * cos(dec) * cos(ra))', backgroundcolor: theme.plotBg, gridcolor: theme.grid, showbackground: true, zerolinecolor: theme.grid },
+                    yaxis: { title: 'Y (z * cos(dec) * sin(ra))', backgroundcolor: theme.plotBg, gridcolor: theme.grid, showbackground: true, zerolinecolor: theme.grid },
+                    zaxis: { title: 'Z (z * sin(dec))', backgroundcolor: theme.plotBg, gridcolor: theme.grid, showbackground: true, zerolinecolor: theme.grid },
+                    camera: { eye: {x: 1.5, y: 1.5, z: 1.5} }
+                },
+                margin: { l: 0, r: 0, b: 0, t: 60 }
+            };
+
+            Plotly.react('tester', [trace], layout, {responsive: true});
+        }
+
+        function toggleTheme() {
+            if (document.body.classList.contains('dark-mode')) {
+                document.body.classList.remove('dark-mode');
+                document.body.classList.add('light-mode');
+            } else if (document.body.classList.contains('light-mode')) {
+                document.body.classList.remove('light-mode');
+                document.body.classList.add('dark-mode');
+            } else {
+                // If neither, explicitly set the opposite of OS preference
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    document.body.classList.add('light-mode');
+                } else {
+                    document.body.classList.add('dark-mode');
+                }
+            }
+            renderPlot();
+        }
+
+        fetch('jwst-uncover-distribution.json')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('loading').style.display = 'none';
+                
+                const x = [], y = [], z = [], q_vals = [], text = [];
+                data.sources.forEach(s => {
+                    const ra_rad = (Math.random() * 360) * Math.PI / 180;
+                    const dec_rad = ((Math.random() * 180) - 90) * Math.PI / 180;
+                    const r = s.z_spec;
+                    
+                    x.push(r * Math.cos(dec_rad) * Math.cos(ra_rad));
+                    y.push(r * Math.cos(dec_rad) * Math.sin(ra_rad));
+                    z.push(r * Math.sin(dec_rad));
+                    q_vals.push(s.q_local_inferred);
+                    text.push(`ID: ${s.id}<br>z_spec: ${s.z_spec.toFixed(2)}<br>q_local: ${s.q_local_inferred.toFixed(4)}`);
+                });
+
+                currentData = { x, y, z, q_vals, text };
+                renderPlot();
+            })
+            .catch(err => {
+                document.getElementById('loading').innerText = 'Error loading data: ' + err.message;
+            });
+            
+        // Listen for OS theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (!document.body.classList.contains('dark-mode') && !document.body.classList.contains('light-mode')) {
+                renderPlot(); // Re-render if following OS theme
+            }
+        });
+    </script>
+</body>
+</html>

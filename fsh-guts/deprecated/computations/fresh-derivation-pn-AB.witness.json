@@ -1,0 +1,426 @@
+{
+  "computation": "fresh-derivation-pn-AB",
+  "description": "Variants A (V_hyp per particle via Kashaev eff) + B (SDP/LP shadow prices y_\u03bb for n=3 partitions) combined.  Three cost modes (1/d_q, d_q, classical) explored.  Assembly m_fresh = V_kash \u00b7 \u03a3_\u03bb |y_\u03bb\u00b7\u03c7_\u03bb(\u03b2)| \u00b7 prefactor.",
+  "computedAt": "2026-04-27T21:04:18.551589+00:00",
+  "q_0": 1.1099785955541805,
+  "proton": {
+    "name": "PROTON",
+    "m_codata": 938.27208816,
+    "V_kash": "-0.74029476332669006299",
+    "tr_M": {
+      "re": 0.7022507726245278,
+      "im": 0.0
+    },
+    "chi_per_lambda": {
+      "[3]": {
+        "re": 1.3824945145464325,
+        "im": 0.0
+      },
+      "[2, 1]": {
+        "re": 1.8077033200981516,
+        "im": 0.0
+      },
+      "[1, 1, 1]": {
+        "re": -0.7392235469701218,
+        "im": 0.0
+      }
+    },
+    "lp_results": {
+      "inverse_dq": {
+        "success": true,
+        "parts": [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "c": [
+          1.0,
+          0.4972905450085914,
+          1.0
+        ],
+        "x": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "obj": 0.4972905450085914,
+        "y_eq": 0.4972905450085914,
+        "y_lambda": {
+          "[3]": 0.5027094549914086,
+          "[2, 1]": 0.0,
+          "[1, 1, 1]": 0.5027094549914086
+        }
+      },
+      "dq": {
+        "success": true,
+        "parts": [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "c": [
+          1.0,
+          2.010896869118482,
+          1.0
+        ],
+        "x": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "obj": 1.0,
+        "y_eq": 1.0,
+        "y_lambda": {
+          "[3]": 0.0,
+          "[2, 1]": 1.0108968691184819,
+          "[1, 1, 1]": 0.0
+        }
+      },
+      "d_classical": {
+        "success": true,
+        "parts": [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "c": [
+          1.0,
+          2.0,
+          1.0
+        ],
+        "x": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "obj": 1.0,
+        "y_eq": 1.0,
+        "y_lambda": {
+          "[3]": 0.0,
+          "[2, 1]": 1.0,
+          "[1, 1, 1]": 0.0
+        }
+      }
+    },
+    "assembly": [
+      {
+        "cost_mode": "inverse_dq",
+        "prefactor_name": "m_e",
+        "prefactor_value": 0.51099895,
+        "sum_y_chi_abs": 1.066607730350415,
+        "V_kash_times_sum": -0.7896041173021785,
+        "m_fresh_MeV": -0.40348687485709006,
+        "err_pct": -100.04300318425206
+      },
+      {
+        "cost_mode": "inverse_dq",
+        "prefactor_name": "m_e \u00b7 8G",
+        "prefactor_value": 3.7444596548845848,
+        "sum_y_chi_abs": 1.066607730350415,
+        "V_kash_times_sum": -0.7896041173021785,
+        "m_fresh_MeV": -2.956640760568763,
+        "err_pct": -100.31511549771952
+      },
+      {
+        "cost_mode": "inverse_dq",
+        "prefactor_name": "m_e \u00b7 2\u03c0",
+        "prefactor_value": 3.2107010946241963,
+        "sum_y_chi_abs": 1.066607730350415,
+        "V_kash_times_sum": -0.7896041173021785,
+        "m_fresh_MeV": -2.535182803741877,
+        "err_pct": -100.27019697545447
+      },
+      {
+        "cost_mode": "dq",
+        "prefactor_name": "m_e",
+        "prefactor_value": 0.51099895,
+        "sum_y_chi_abs": 1.8274016265823063,
+        "V_kash_times_sum": -1.352815854653557,
+        "m_fresh_MeV": -0.6912874812713202,
+        "err_pct": -100.07367665413844
+      },
+      {
+        "cost_mode": "dq",
+        "prefactor_name": "m_e \u00b7 8G",
+        "prefactor_value": 3.7444596548845848,
+        "sum_y_chi_abs": 1.8274016265823063,
+        "V_kash_times_sum": -1.352815854653557,
+        "m_fresh_MeV": -5.065564388238452,
+        "err_pct": -100.53988224227925
+      },
+      {
+        "cost_mode": "dq",
+        "prefactor_name": "m_e \u00b7 2\u03c0",
+        "prefactor_value": 3.2107010946241963,
+        "sum_y_chi_abs": 1.8274016265823063,
+        "V_kash_times_sum": -1.352815854653557,
+        "m_fresh_MeV": -4.343487345361143,
+        "err_pct": -100.46292407076491
+      },
+      {
+        "cost_mode": "d_classical",
+        "prefactor_name": "m_e",
+        "prefactor_value": 0.51099895,
+        "sum_y_chi_abs": 1.8077033200981516,
+        "V_kash_times_sum": -1.338233301516933,
+        "m_fresh_MeV": -0.6838358119301862,
+        "err_pct": -100.07288246347296
+      },
+      {
+        "cost_mode": "d_classical",
+        "prefactor_name": "m_e \u00b7 8G",
+        "prefactor_value": 3.7444596548845848,
+        "sum_y_chi_abs": 1.8077033200981516,
+        "V_kash_times_sum": -1.338233301516933,
+        "m_fresh_MeV": -5.010960606353153,
+        "err_pct": -100.53406263168074
+      },
+      {
+        "cost_mode": "d_classical",
+        "prefactor_name": "m_e \u00b7 2\u03c0",
+        "prefactor_value": 3.2107010946241963,
+        "sum_y_chi_abs": 1.8077033200981516,
+        "V_kash_times_sum": -1.338233301516933,
+        "m_fresh_MeV": -4.296667126042968,
+        "err_pct": -100.45793402364436
+      }
+    ]
+  },
+  "neutron": {
+    "name": "NEUTRON",
+    "m_codata": 939.56542052,
+    "V_kash": "-1.0824872166862153389",
+    "tr_M": {
+      "re": 0.5963964943611775,
+      "im": 0.0
+    },
+    "chi_per_lambda": {
+      "[3]": {
+        "re": 1.1221068372362972,
+        "im": 0.0
+      },
+      "[2, 1]": {
+        "re": 1.7008888500891552,
+        "im": 0.0
+      },
+      "[1, 1, 1]": {
+        "re": -0.9107622062323645,
+        "im": 0.0
+      }
+    },
+    "lp_results": {
+      "inverse_dq": {
+        "success": true,
+        "parts": [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "c": [
+          1.0,
+          0.4972905450085914,
+          1.0
+        ],
+        "x": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "obj": 0.4972905450085914,
+        "y_eq": 0.4972905450085914,
+        "y_lambda": {
+          "[3]": 0.5027094549914086,
+          "[2, 1]": 0.0,
+          "[1, 1, 1]": 0.5027094549914086
+        }
+      },
+      "dq": {
+        "success": true,
+        "parts": [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "c": [
+          1.0,
+          2.010896869118482,
+          1.0
+        ],
+        "x": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "obj": 1.0,
+        "y_eq": 1.0,
+        "y_lambda": {
+          "[3]": 0.0,
+          "[2, 1]": 1.0108968691184819,
+          "[1, 1, 1]": 0.0
+        }
+      },
+      "d_classical": {
+        "success": true,
+        "parts": [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "c": [
+          1.0,
+          2.0,
+          1.0
+        ],
+        "x": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "obj": 1.0,
+        "y_eq": 1.0,
+        "y_lambda": {
+          "[3]": 0.0,
+          "[2, 1]": 1.0,
+          "[1, 1, 1]": 0.0
+        }
+      }
+    },
+    "assembly": [
+      {
+        "cost_mode": "inverse_dq",
+        "prefactor_name": "m_e",
+        "prefactor_value": 0.51099895,
+        "sum_y_chi_abs": 1.0219424889110371,
+        "V_kash_times_sum": -1.1062396804346921,
+        "m_fresh_MeV": -0.5652873151504632,
+        "err_pct": -100.06016476370934
+      },
+      {
+        "cost_mode": "inverse_dq",
+        "prefactor_name": "m_e \u00b7 8G",
+        "prefactor_value": 3.7444596548845848,
+        "sum_y_chi_abs": 1.0219424889110371,
+        "V_kash_times_sum": -1.1062396804346921,
+        "m_fresh_MeV": -4.14226985202012,
+        "err_pct": -100.44087082831632
+      },
+      {
+        "cost_mode": "inverse_dq",
+        "prefactor_name": "m_e \u00b7 2\u03c0",
+        "prefactor_value": 3.2107010946241963,
+        "sum_y_chi_abs": 1.0219424889110371,
+        "V_kash_times_sum": -1.1062396804346921,
+        "m_fresh_MeV": -3.5518049528883866,
+        "err_pct": -100.37802635934841
+      },
+      {
+        "cost_mode": "dq",
+        "prefactor_name": "m_e",
+        "prefactor_value": 0.51099895,
+        "sum_y_chi_abs": 1.719423213273662,
+        "V_kash_times_sum": -1.861253648442275,
+        "m_fresh_MeV": -0.9510986600376717,
+        "err_pct": -100.10122750787393
+      },
+      {
+        "cost_mode": "dq",
+        "prefactor_name": "m_e \u00b7 8G",
+        "prefactor_value": 3.7444596548845848,
+        "sum_y_chi_abs": 1.719423213273662,
+        "V_kash_times_sum": -1.861253648442275,
+        "m_fresh_MeV": -6.969389194098836,
+        "err_pct": -100.74176731517446
+      },
+      {
+        "cost_mode": "dq",
+        "prefactor_name": "m_e \u00b7 2\u03c0",
+        "prefactor_value": 3.2107010946241963,
+        "sum_y_chi_abs": 1.719423213273662,
+        "V_kash_times_sum": -1.861253648442275,
+        "m_fresh_MeV": -5.975929126426891,
+        "err_pct": -100.63603119015592
+      },
+      {
+        "cost_mode": "d_classical",
+        "prefactor_name": "m_e",
+        "prefactor_value": 0.51099895,
+        "sum_y_chi_abs": 1.7008888500891552,
+        "V_kash_times_sum": -1.8411904372256271,
+        "m_fresh_MeV": -0.9408463801723363,
+        "err_pct": -100.10013633533381
+      },
+      {
+        "cost_mode": "d_classical",
+        "prefactor_name": "m_e \u00b7 8G",
+        "prefactor_value": 3.7444596548845848,
+        "sum_y_chi_abs": 1.7008888500891552,
+        "V_kash_times_sum": -1.8411904372256271,
+        "m_fresh_MeV": -6.894263309150669,
+        "err_pct": -100.73377150314184
+      },
+      {
+        "cost_mode": "d_classical",
+        "prefactor_name": "m_e \u00b7 2\u03c0",
+        "prefactor_value": 3.2107010946241963,
+        "sum_y_chi_abs": 1.7008888500891552,
+        "V_kash_times_sum": -1.8411904372256271,
+        "m_fresh_MeV": -5.911512152211923,
+        "err_pct": -100.62917515088414
+      }
+    ]
+  }
+}

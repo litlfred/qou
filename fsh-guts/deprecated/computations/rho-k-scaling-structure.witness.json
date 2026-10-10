@@ -1,0 +1,103 @@
+{
+  "computation": "rho-k-scaling-structure",
+  "description": "ρ_K scaling-structure probe. Tests three structural ansätze for the categorical density ρ_K = M(K) / (m_e · |tr_M(NF_GS(β_K))|): (1) power-law in A; (2) leading-order constituent-mass ansatz ρ_K = (Z·m_p + N·m_n)/(m_e·|tr_M|); (3) mirror-pair analysis (T vs ³He) showing ρ_K is NOT a function of (A, n_strands) alone. The leading-order ansatz captures ρ_K to ~0.1% across A=1..3 — the categorical question reduces to deriving the nucleon-mass anchors from H_3(q_0).",
+  "reference_blocks": [
+    "prop:atomic-mass-gb-nf",
+    "prop:categorical-mass-markov",
+    "prop:atomic-braid-mass"
+  ],
+  "computedAt": "2026-05-04T23:06:19.884450+00:00",
+  "parameters": {
+    "m_e_MeV": 0.51099895,
+    "m_p_MeV_codata": 938.27208816,
+    "m_n_MeV_codata": 939.56542052
+  },
+  "power_law_fit": {
+    "k_exponent": 2.7123416856364626,
+    "c_prefactor": 1781.8643405414327,
+    "n_points": 5
+  },
+  "leading_order_ansatz": [
+    {
+      "atom": "p",
+      "Z": 1,
+      "N": 0,
+      "A": 1,
+      "abs_tr_M": 1.0653062285923893,
+      "rho_K_actual": 1723.5914182642152,
+      "rho_K_leading_order": 1723.5914182642152,
+      "residual_pct": 0.0,
+      "M_nucleons_MeV": 938.27208816,
+      "M_atom_MeV": 938.27208816,
+      "binding_proxy_MeV": 0.0
+    },
+    {
+      "atom": "n",
+      "Z": 0,
+      "N": 1,
+      "A": 1,
+      "abs_tr_M": 0.9232332971695837,
+      "rho_K_actual": 1991.5699177606223,
+      "rho_K_leading_order": 1991.5699177606223,
+      "residual_pct": 0.0,
+      "M_nucleons_MeV": 939.56542052,
+      "M_atom_MeV": 939.56542052,
+      "binding_proxy_MeV": 0.0
+    },
+    {
+      "atom": "D",
+      "Z": 1,
+      "N": 1,
+      "A": 2,
+      "abs_tr_M": 0.3882864715477134,
+      "rho_K_actual": 9453.028206804904,
+      "rho_K_leading_order": 9464.239947622238,
+      "residual_pct": -0.11860475365199367,
+      "M_nucleons_MeV": 1877.83750868,
+      "M_atom_MeV": 1875.61294257,
+      "binding_proxy_MeV": -2.2245661099998415
+    },
+    {
+      "atom": "T",
+      "Z": 1,
+      "N": 2,
+      "A": 3,
+      "abs_tr_M": 0.10405211867552573,
+      "rho_K_actual": 52828.540213112974,
+      "rho_K_leading_order": 52988.060858754,
+      "residual_pct": -0.3019592156010918,
+      "M_nucleons_MeV": 2817.4029292,
+      "M_atom_MeV": 2808.92113298,
+      "binding_proxy_MeV": -8.481796219999978
+    },
+    {
+      "atom": "3He",
+      "Z": 2,
+      "N": 1,
+      "A": 3,
+      "abs_tr_M": 0.20654085856226276,
+      "rho_K_actual": 26609.19160651719,
+      "rho_K_leading_order": 26682.318679851418,
+      "residual_pct": -0.2748188461175107,
+      "M_nucleons_MeV": 2816.10959684,
+      "M_atom_MeV": 2808.39160743,
+      "binding_proxy_MeV": -7.717989409999973
+    }
+  ],
+  "mirror_pair_analysis": {
+    "available": true,
+    "T_rho_K": 52828.540213112974,
+    "3He_rho_K": 26609.19160651719,
+    "ratio_rho_T_over_3He": 1.9853493106560245,
+    "T_abs_tr_M": 0.10405211867552573,
+    "3He_abs_tr_M": 0.20654085856226276,
+    "ratio_trM_3He_over_T": 1.98497504127077,
+    "T_M_codata": 2808.92113298,
+    "3He_M_codata": 2808.39160743,
+    "M_diff_MeV": 0.5295255500000167,
+    "note": "T and ³He have the same A=3 and n_strands=9, so any categorical formula for ρ_K depending only on A is blind to this pair. The actual ρ_K differs by ~2× because |tr_M| differs by ~2×; M_codata differs by only 0.5 MeV (0.02%). Hence ρ_K · |tr_M| is nearly identical for the mirror pair — consistent with ρ_K · |tr_M| = M/m_e being the physically-meaningful quantity, and ρ_K alone being a normalisation that depends inversely on |tr_M|."
+  },
+  "engine": "python",
+  "scriptFile": "rho_k_scaling_structure_probe.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+}

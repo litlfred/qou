@@ -1,0 +1,67 @@
+{
+  "computedAt": "2026-05-03T23:13:14.912154+00:00",
+  "computation": "kashaev-integration-identity",
+  "description": "Numerical test of the Kashaev integration identity from prop:mass-endomorphism-tower. Compares ∫_0^V (ln_q(1+t)/t) dt to Φ_q(V) and to ln|V| to determine which form the integration evaluates to.  Resolves the conflict between prop:atomic-braid-mass (uses α·Σ ln|V_i|) and thm:knot-mass-formula-unified (uses Σ Φ_q(|V_i|)) at q_0.",
+  "auditOnly": "docs/audits/2026-05-03-tower-mev-calibration-finding.md",
+  "rows": [
+    {
+      "V": 0.1,
+      "integral": 0.09761733844944791,
+      "phi_q": 2.5390068056466535,
+      "log_V": -2.302585092994046,
+      "integral_over_log_V": -0.04239467142667736,
+      "integral_over_phi_q": 0.0384470566334642
+    },
+    {
+      "V": 0.3,
+      "integral": 0.28016353526050336,
+      "phi_q": 19.1252125791318,
+      "log_V": -1.203972804325936,
+      "integral_over_log_V": -0.2326992223195253,
+      "integral_over_phi_q": 0.014648910912822988
+    },
+    {
+      "V": 0.5,
+      "integral": 0.44862253725802154,
+      "phi_q": 189.10387793008675,
+      "log_V": -0.6931471805599453,
+      "integral_over_log_V": -0.6472255097331718,
+      "integral_over_phi_q": 0.002372360324751674
+    },
+    {
+      "V": 0.7,
+      "integral": 0.6055086551791254,
+      "phi_q": 2813.025484270612,
+      "log_V": -0.3566749439387324,
+      "integral_over_log_V": -1.6976484204147975,
+      "integral_over_phi_q": 0.0002152517488963053
+    },
+    {
+      "V": 0.85,
+      "integral": 0.7167070312564976,
+      "phi_q": 33346.80250795853,
+      "log_V": -0.1625189294977749,
+      "integral_over_log_V": -4.409991091322751,
+      "integral_over_phi_q": 2.1492526339982632e-05
+    },
+    {
+      "V": 0.95,
+      "integral": 0.7881095965243263,
+      "phi_q": 257962.27053084117,
+      "log_V": -0.051293294387550536,
+      "integral_over_log_V": -15.364768551805273,
+      "integral_over_phi_q": 3.0551351362450595e-06
+    },
+    {
+      "V": 0.989,
+      "integral": 0.8154061461021356,
+      "phi_q": 671092.6101542669,
+      "log_V": -0.011060947359424938,
+      "integral_over_log_V": -73.71937679527379,
+      "integral_over_phi_q": 1.2150426539709546e-06
+    }
+  ],
+  "engine": "python",
+  "scriptFile": "kashaev_integration_identity_probe.py",
+  "commitSha": "06e88b6885fd78860cf1e0d1d01de2a96f5b0811"
+}

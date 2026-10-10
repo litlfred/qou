@@ -1,0 +1,86 @@
+{
+  "engine": "rust+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T01:01:49.626045+00:00",
+  "commitSha": "54c6b103cb1b3360f584cb09ebe596e167428392",
+  "assertions": [
+    {
+      "name": "all_atoms_match_12dps",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "unit": "boolean",
+      "source": "Rust canonical-χ value matches PR #682 / sympy reference to 12 decimal places on every probed atom."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 18,
+  "computation": "canonical-chi-rust-vs-sympy",
+  "scriptFile": "probe_canonical_chi_rust_vs_sympy.py",
+  "scriptHash": "fc7b0570c949",
+  "scriptCommitSha": "unknown",
+  "description": "Cross-check: Rust canonical-χ binary (hecke-canonical-chi, MPFR-50dps) vs sympy/markov_peel canonical |tr_M(β_atom, q_0)| for p, n, D, T, ³He. Verifies that the Rust path emits values matching the sympy reference to 12 decimal places. Establishes Rust as the canonical fast path (~60s per H_9 atom vs hours for sympy symbolic chi-cache + combiner).",
+  "auditOnly": "docs/audits/2026-05-17-structural-diagnosis-operator-valued.md",
+  "data": {
+    "results": [
+      {
+        "atom": "p",
+        "Z": 1,
+        "N": 0,
+        "rust_value_mp30dps": "1.0653062285923888278539954787",
+        "expected_value_12dps": "1.065306228592",
+        "matches_at_12dps": true,
+        "relative_error": "3.65e-13",
+        "rust_wall_sec": 0.3767819404602051,
+        "rust_duration_ms": 0
+      },
+      {
+        "atom": "n",
+        "Z": 0,
+        "N": 1,
+        "rust_value_mp30dps": "0.92323329716958329979973322032",
+        "expected_value_12dps": "0.923233297170",
+        "matches_at_12dps": true,
+        "relative_error": "4.51e-13",
+        "rust_wall_sec": 0.002848386764526367,
+        "rust_duration_ms": 0
+      },
+      {
+        "atom": "D",
+        "Z": 1,
+        "N": 1,
+        "rust_value_mp30dps": "0.388286471547712977380225986087",
+        "expected_value_12dps": "0.388286471548",
+        "matches_at_12dps": true,
+        "relative_error": "7.39e-13",
+        "rust_wall_sec": 0.032280683517456055,
+        "rust_duration_ms": 28
+      },
+      {
+        "atom": "T",
+        "Z": 1,
+        "N": 2,
+        "rust_value_mp30dps": "0.104052118675525553529444545305",
+        "expected_value_12dps": "0.104052118676",
+        "matches_at_12dps": true,
+        "relative_error": "4.56e-12",
+        "rust_wall_sec": 59.93311262130737,
+        "rust_duration_ms": 59925
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "rust_value_mp30dps": "0.206540858562262363857550650876",
+        "expected_value_12dps": "0.206540858562",
+        "matches_at_12dps": true,
+        "relative_error": "1.27e-12",
+        "rust_wall_sec": 57.42094683647156,
+        "rust_duration_ms": 57414
+      }
+    ]
+  },
+  "caveats": [
+    "Only atoms with PR #682 reference values are checked. ⁴He (H_12, 77 partitions) commented out — wall-time ~minutes expected at MPFR-50dps. The sympy path provides SYMBOLIC χ (polynomial in q) needed for per-u-pole-order analysis; the Rust path only provides values at q_0, suitable for the canonical |tr_M(q_0)| consumer chain."
+  ]
+}

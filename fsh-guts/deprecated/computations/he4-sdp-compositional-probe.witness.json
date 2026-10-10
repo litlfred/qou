@@ -1,0 +1,79 @@
+{
+  "engine": "numpy+scipy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-18T17:32:55.755644+00:00",
+  "commitSha": "78e889115cacec6f1f7e370b571171863f8a2558",
+  "assertions": [
+    {
+      "name": "duality_gap_zero",
+      "computed": 0.0,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-06,
+      "unit": "dimensionless",
+      "source": "strong duality for feasible LP/SDP"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "he4-sdp-compositional-probe",
+  "scriptFile": "probe_he4_sdp_compositional.py",
+  "scriptHash": "b15a8028b4c9",
+  "scriptCommitSha": "1cc9c1f442b5e6a799a1036808a079255874b44a",
+  "description": "⁴He compositional channel identification via SDP active-set fingerprint. Identifies which of the three primary channels (D⊕D, T⊕p, ³He⊕n) carry the magic-shell coupling without computing the full β_{⁴He} Markov trace. Forward step on F1 from the three-PR integration audit.",
+  "contentBlock": "prop:magic-shell-coupling-kappa",
+  "parameters": {
+    "channels": [
+      "DD",
+      "Tp",
+      "He3n"
+    ],
+    "n_target": 13.19687380754797
+  },
+  "data": {
+    "delta_cat_inputs": {
+      "proton": -0.5443703642391706,
+      "neutron": -0.471771245458695,
+      "deuteron": 2.026152020739914,
+      "tritium": 8.375456953223063,
+      "he3": 7.506975676285171,
+      "he4": 28.21082516011831
+    },
+    "channel_parts_sum": {
+      "DD": 4.052304041479828,
+      "Tp": 7.831086588983892,
+      "He3n": 7.035204430826476
+    },
+    "t_residual_MeV": [
+      24.158521118638483,
+      20.379738571134418,
+      21.175620729291836
+    ],
+    "solver": "lp_scipy_linprog",
+    "sdp_full": {
+      "x_star": [
+        -0.0,
+        13.19687380754797,
+        -0.0
+      ],
+      "y0_star": 20.379738571134418,
+      "y_star": [
+        3.778782547504065,
+        0.0,
+        0.7958821581574185
+      ],
+      "active_set": [
+        0,
+        2
+      ],
+      "primal_obj": 268.9488381540789,
+      "dual_obj": 268.9488381540789,
+      "duality_gap": 0.0,
+      "feasible": true
+    },
+    "active_channels": [
+      "DD",
+      "He3n"
+    ]
+  }
+}

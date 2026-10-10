@@ -1,0 +1,77 @@
+name: Build Lean Documentation (doc-gen4)
+
+on:
+  # CI auto-triggers disabled (owner directive 2026-06-30): Actions billing.
+  workflow_dispatch:
+
+concurrency:
+  group: doc-gen4-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  doc-gen4:
+    name: Build doc-gen4 HTML
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install elan
+        run: |
+          set -o pipefail
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+
+      - name: Cache oleans (mathlib)
+        uses: actions/cache@v4
+        with:
+          path: content/quantum-observable-universe/lean/.lake
+          key: lean-cache-${{ runner.os }}-${{ hashFiles('content/quantum-observable-universe/lean/lean-toolchain') }}
+          restore-keys: |
+            lean-cache-${{ runner.os }}-
+
+      - name: Restore mathlib oleans via script
+        # Restores mathlib from GitHub Release cache (or orphan-branch fallback) to save 30+ min of build time
+        run: |
+          export PATH="$HOME/.elan/bin:$PATH"
+          ./scripts/lean-cache-restore.sh || true
+
+      - name: Enable doc-gen4 in lakefile.toml
+        # Un-comment ONLY the doc-gen4 block, delimited by its sentinels.
+        #
+        # The previous version ran four file-wide seds, the first being
+        # `s/# \[\[require\]\]/[[require]]/`. That also matched the commented-out
+        # `checkdecls` block's `# [[require]]` while leaving its `# name`/`# git`/
+        # `# rev` commented, producing a `[[require]]` table with no fields. It
+        # also silently no-opped when the block was already active, which is how
+        # the lakefile drifted out of sync with its own comment.
+        run: |
+          cd content/quantum-observable-universe/lean
+          sed -i '/--- BEGIN doc-gen4 (CI-only) ---/,/--- END doc-gen4 (CI-only) ---/ {
+            /^# \(\[\[require\]\]\|name = \|git = \|rev = \)/ s/^# //
+          }' lakefile.toml
+          # Fail loudly rather than no-op: a silent success is the exact failure
+          # mode this step used to have.
+          grep -q '^name = "doc-gen4"' lakefile.toml \
+            || { echo "::error::doc-gen4 block not enabled - check the sentinels in lakefile.toml"; exit 1; }
+          # Guard the collision that motivated this change: every [[require]]
+          # must be followed by a name field.
+          awk '/^\[\[require\]\]/ { getline nxt; if (nxt !~ /^name = /) {
+                 print "::error::fieldless [[require]] near line " NR; exit 1 } }' lakefile.toml
+
+      - name: Build doc-gen4 HTML
+        run: |
+          export PATH="$HOME/.elan/bin:$PATH"
+          cd content/quantum-observable-universe/lean
+          lake update doc-gen4
+          lake -R -Kenv=dev build QOU:docs
+
+      - name: Deploy doc-gen4 to gh-pages (in /lean/)
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./content/quantum-observable-universe/lean/.lake/build/doc
+          destination_dir: lean
+          keep_files: true
+          commit_message: 'docs(lean): update doc-gen4 HTML from ${{ github.sha }}'

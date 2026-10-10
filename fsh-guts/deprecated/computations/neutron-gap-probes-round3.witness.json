@@ -1,0 +1,84 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-05-18T19:13:53.473692+00:00",
+  "commitSha": "b04b9d9448368dbef60abb37b0f96d9d9d42e9a4",
+  "assertions": [
+    {
+      "name": "h5_self_consistent",
+      "computed": 5.011569756983755e-08,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "m_n = m_p + Q_β + m_e by construction"
+    },
+    {
+      "name": "h7_skein_pair_self_consistency",
+      "computed": 2.648775265492841e-08,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "m_n − m_p = slope · (μ_d − μ_u) algebraic identity"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 27,
+  "computation": "neutron-gap-probes-round3",
+  "scriptFile": "probe_neutron_gap_round3.py",
+  "scriptHash": "82b9e9b5273b",
+  "scriptCommitSha": "769dc81b1ad61f35ee5471afccf6de2601815129",
+  "description": "Round-3 neutron-gap probe per calibration-inputs.md and nucleon-mass-splitting-proof.md (3-input Skein-pair scheme). Tests whether the −56 % round-1 / −25 % round-2 neutron residual closes when m_n is sourced from the canonical 3-input form m_n = m_p + Q_β(n) + m_e rather than from the Hecke trace alone.",
+  "contentBlock": "prop:atom-knot-mass-derivation",
+  "parameters": {
+    "q_0": 1.1099785955541805,
+    "m_p_codata_MeV": 938.27208816,
+    "m_n_codata_MeV": 939.56542052,
+    "m_e_codata_MeV": 0.51099895,
+    "Q_beta_n_MeV": 0.7823334100000222,
+    "precision_dps": 50,
+    "threshold_ppb": 10000000.0
+  },
+  "data": {
+    "results": [
+      {
+        "name": "h5_3input_canonical",
+        "description": "m_n_pred = m_p_AME + Q_β(n) + m_e (exact by construction)",
+        "neutron_pred_MeV": 939.56542052,
+        "neutron_codata_MeV": 939.56542052,
+        "err_pct": 5.011569756983754e-15,
+        "err_ppb": 5.011569756983755e-08
+      },
+      {
+        "name": "h6_hecke_proton_plus_Qbeta",
+        "description": "m_n_pred = m_p_PRED (from |tr_M(proton, q_0)|) + Q_β + m_e; tests consistency with H5 since proton calibration is exact",
+        "neutron_pred_MeV": 939.56542052,
+        "neutron_codata_MeV": 939.56542052,
+        "err_pct": 5.011569756983754e-15,
+        "err_ppb": 5.011569756983755e-08
+      },
+      {
+        "name": "h7_skein_pair_self_consistency",
+        "description": "m_n − m_p = ((q+q⁻¹)/(q^{1/2}+q^{-1/2})) · (μ_d − μ_u); back-solve μ_d − μ_u from CODATA, reconstruct m_n. Self-consistency check on the split formula.",
+        "slope_factor": 1.0040816963953572,
+        "mu_d_minus_u_MeV": 1.2880748296110263,
+        "neutron_pred_MeV": 939.56542052,
+        "neutron_codata_MeV": 939.56542052,
+        "err_pct": 2.648775265492841e-15,
+        "err_ppb": 2.648775265492841e-08
+      }
+    ],
+    "cross_round_comparison": {
+      "round1_baseline_ppb": -561730000.0,
+      "round2_H4_full_tr_M_ppb": -252230000.0,
+      "round3_H5_3input_ppb": 5.011569756983755e-08
+    },
+    "verdict": "h5 closes the gap",
+    "recommendation": "H5 brings neutron err to ~0 ppb by construction. The canonical 3-input Skein-pair scheme (m_μ/m_e, m_e, Q_β(n)) is the theoretically-correct form of the n/p split: the Hecke trace alone does NOT distinguish neutron from proton, so any framework that omits Q_β as a structural input will show residuals at the m_n − m_p ≈ 0.14 % scale (or larger). Sprint A v5's naïve assembly should be revised to use the 3-input convention: predict m_p from |tr_M(p)|·E0; predict m_n = m_p + Q_β + m_e (NOT from |tr_M(n)|).",
+    "attestation": {
+      "used_fitting": false,
+      "used_root_find": false,
+      "modifies_baseline_alpha_blend_tower_py": false,
+      "uses_codata_inputs": true
+    }
+  }
+}

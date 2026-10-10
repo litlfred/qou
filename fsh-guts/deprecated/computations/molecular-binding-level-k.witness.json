@@ -1,0 +1,134 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-04-15T23:57:37.230279+00:00",
+  "commitSha": "9e37aefc3ce51da65787467d5b541dfa8421bbea",
+  "assertions": [
+    {
+      "name": "k=3 single bond",
+      "computed": 7.624,
+      "expected": 4.48,
+      "passed": false,
+      "tolerance": 1.0,
+      "unit": "eV",
+      "source": "H-H experimental"
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 4,
+  "computation": "molecular-binding-level-k",
+  "scriptFile": "molecular_binding_level_k.py",
+  "scriptHash": "ae6f4eb1a41c",
+  "scriptCommitSha": "",
+  "description": "Molecular binding at Hecke levels k=3..10 via LP dual shadow prices. Bond character \u03c7_\u03bb(T\u207b\u207f) computed from Hoefsmit seminormal form. Single/double/triple bonds.",
+  "parameters": {
+    "k_max": 10,
+    "E_MOL_eV": 6.72933203541817
+  },
+  "data": {
+    "single_bond": {
+      "3": {
+        "E_eV": 7.624462748048532,
+        "n_parts": 3
+      },
+      "4": {
+        "E_eV": 7.583776640667126,
+        "n_parts": 5
+      },
+      "5": {
+        "E_eV": 7.5842734574883535,
+        "n_parts": 7
+      },
+      "6": {
+        "E_eV": 7.652692371927206,
+        "n_parts": 11
+      },
+      "7": {
+        "E_eV": 7.817563093687909,
+        "n_parts": 15
+      },
+      "8": {
+        "E_eV": 8.112061746217007,
+        "n_parts": 22
+      },
+      "9": {
+        "E_eV": 8.578207358771195,
+        "n_parts": 30
+      },
+      "10": {
+        "E_eV": 9.2730723825682,
+        "n_parts": 42
+      }
+    },
+    "double_bond": {
+      "3": {
+        "E_eV": 1.6002333091311156,
+        "n_parts": 3
+      },
+      "4": {
+        "E_eV": 1.4937477758845403,
+        "n_parts": 5
+      },
+      "5": {
+        "E_eV": 1.1924658628945053,
+        "n_parts": 7
+      },
+      "6": {
+        "E_eV": 1.0031392286385545,
+        "n_parts": 11
+      },
+      "7": {
+        "E_eV": 0.8750780787856846,
+        "n_parts": 15
+      },
+      "8": {
+        "E_eV": 0.8472788910147085,
+        "n_parts": 22
+      },
+      "9": {
+        "E_eV": 0.8329380901504904,
+        "n_parts": 30
+      },
+      "10": {
+        "E_eV": 0.8478389331241727,
+        "n_parts": 42
+      }
+    },
+    "triple_bond": {
+      "3": {
+        "E_eV": 9.889737564711057,
+        "n_parts": 3
+      },
+      "4": {
+        "E_eV": 9.837059147529072,
+        "n_parts": 5
+      },
+      "5": {
+        "E_eV": 9.837796784021817,
+        "n_parts": 7
+      },
+      "6": {
+        "E_eV": 9.926636642648276,
+        "n_parts": 11
+      },
+      "7": {
+        "E_eV": 10.14058865634678,
+        "n_parts": 15
+      },
+      "8": {
+        "E_eV": 10.52269109491123,
+        "n_parts": 22
+      },
+      "9": {
+        "E_eV": 11.127454345787703,
+        "n_parts": 30
+      },
+      "10": {
+        "E_eV": 12.02891751882088,
+        "n_parts": 42
+      }
+    }
+  },
+  "precision": "f64_numeric_fallback",
+  "truncation_eps": 0.0
+}

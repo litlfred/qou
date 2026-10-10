@@ -1,0 +1,118 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-05-09T00:09:07.985652+00:00",
+  "commitSha": "0bf80848d4f0be0afbe05720b5d03621bd602453",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "n-sym-goldstone-phase-space-probe",
+  "scriptFile": "n_sym_goldstone_phase_space_probe.py",
+  "scriptHash": "483e019334b3",
+  "scriptCommitSha": "4a7af5993a77e88d836e6195e1782344e0e95a29",
+  "description": "Probe of conj:n-sym-symmetric-channel-normalization candidate (b) — Higgs-eaten Goldstone phase space. Tests 19 Goldstone q-dim assignment schemes against N_sym(q_0) = 213.111807. The 3 broken EW generators (W±, Z Goldstones) live on the W and Z hosts (genus 1 and 2 respectively per the path-α identification).",
+  "q_0_dps": 100,
+  "q_0": "1.1099785955541805169583001889887986763787613849839",
+  "N_sym_target": "213.1118072427836670785458",
+  "candidates": [
+    {
+      "candidate": "(b8) [3]_q · [4]_q^3",
+      "value": "211.2649855751819361137071",
+      "rel_err_pct": 0.8665975346442318
+    },
+    {
+      "candidate": "(b3) [4]_q^2 · [6]_q · 2",
+      "value": "215.7830486322144369735258",
+      "rel_err_pct": 1.2534459840545615
+    },
+    {
+      "candidate": "(b2) [4]_q · [4]_q · [6]_q · [2]_q",
+      "value": "216.9587284516805408177022",
+      "rel_err_pct": 1.80511875839631
+    },
+    {
+      "candidate": "(b12) [2]_q · [4]_q · [5]_q^2",
+      "value": "225.2228759945756261616117",
+      "rel_err_pct": 5.6829646881060185
+    },
+    {
+      "candidate": "(b14) [3]_q · [4]_q · [5]_q · [3]_q",
+      "value": "198.756319590878724839731",
+      "rel_err_pct": 6.736129657776643
+    },
+    {
+      "candidate": "(b15) [3]_q · [4]_q · [6]_q · [3]_q",
+      "value": "243.2117360759461457382973",
+      "rel_err_pct": 14.124008060647572
+    },
+    {
+      "candidate": "(b5) [3]_q^3 · [6]_q",
+      "value": "180.1270743018193227756386",
+      "rel_err_pct": 15.477665629003418
+    },
+    {
+      "candidate": "(b13) [4]_q · [5]_q · [10]_q",
+      "value": "255.1840247861398616956293",
+      "rel_err_pct": 19.741851982619714
+    },
+    {
+      "candidate": "(b18) [3]_q! · [5]_q · [4]_q",
+      "value": "131.3130874421800469147829",
+      "rel_err_pct": 38.383006957195924
+    },
+    {
+      "candidate": "(b7) [4]_q · [6]_q · [10]_q",
+      "value": "312.2605098285013809951781",
+      "rel_err_pct": 46.52426529927757
+    },
+    {
+      "candidate": "(b1) [4]_q · [4]_q · [6]_q",
+      "value": "107.8915243161072184867629",
+      "rel_err_pct": 49.373277007972725
+    },
+    {
+      "candidate": "(b17) [4]_q^2 · [6]_q^2 / [2]_q",
+      "value": "342.7427929816619750222269",
+      "rel_err_pct": 60.82768825248552
+    },
+    {
+      "candidate": "(b6) [2]_q^2 · [3]_q · [6]_q",
+      "value": "78.62363666525912477273532",
+      "rel_err_pct": 63.10686034599266
+    },
+    {
+      "candidate": "(b19) [4]_q! / [2]_q",
+      "value": "12.50866598430321127397602",
+      "rel_err_pct": 94.13046787686758
+    },
+    {
+      "candidate": "(b10) [3]_q · [4]_q · [5]_q · [6]_q",
+      "value": "417.146894811819026596252",
+      "rel_err_pct": 95.74086495197902
+    },
+    {
+      "candidate": "(b9) [2]_q · [4]_q · [6]_q · [8]_q",
+      "value": "472.261680868067440569077",
+      "rel_err_pct": 121.60277601609005
+    },
+    {
+      "candidate": "(b16) [4]_q · [4]_q · [6]_q · [8]_q · ½",
+      "value": "482.5820669110315331863463",
+      "rel_err_pct": 126.44548566061329
+    },
+    {
+      "candidate": "(b11) [2]_q · [3]_q · [4]_q^2 · [5]_q",
+      "value": "539.6550890304859692525934",
+      "rel_err_pct": 153.22627404482284
+    },
+    {
+      "candidate": "(b4) [4]_q · [4]_q · [6]_q · [8]_q",
+      "value": "965.1641338220630663726926",
+      "rel_err_pct": 352.8909713212266
+    }
+  ],
+  "best_candidate": "(b8) [3]_q · [4]_q^3",
+  "best_value": "211.2649855751819361137071",
+  "best_rel_err_pct": 0.8665975346442318,
+  "verdict": "promising"
+}
