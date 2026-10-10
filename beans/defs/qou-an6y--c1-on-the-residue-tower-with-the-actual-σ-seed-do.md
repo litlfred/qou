@@ -1,14 +1,14 @@
 ---
 # qou-an6y
 title: 'C1 on the residue tower with the ACTUAL Σ seed: do the Jackson / q-d/dz towers on the branch-point expansion of the colour cubic satisfy L_K from level 2? and how underdetermined is the weight problem?'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
     - 8f-lean
 created_at: 2026-09-04T12:28:29Z
-updated_at: 2026-10-10T07:16:22Z
+updated_at: 2026-10-10T08:07:44Z
 parent: qou-8lxd
 ---
 
@@ -40,3 +40,34 @@ Waiting on: owner merge permission for #6652.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-04 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## CLOSED 2026-10-10 — all four plan items delivered; #6652 MERGED
+
+The one open dependency this bean recorded ("Waiting on: owner merge permission
+for #6652") is discharged: **#6652 merged 2026-09-04T20:55Z** by the owner
+(5 commits, 6 files, +554/−125). Verified on the live post-rename tree:
+
+| plan item | state |
+|---|---|
+| 1. seed built exactly-enough | `computations/probes/c1_residue_tower_sw_seed_probe.py` (11104 B), 80 dps, joint Newton on `P = P_X = 0` |
+| 2. test the two derivative-only candidates | **scope-(a) negative**, defect order 9–255 at four `q`, both sheets, both conventions |
+| 3. underdetermination counting | exact sympy: 6/10/14/18 weight values at `m = 0..3`, of which 6/4/4/4 new, all linear, against one constraint per level |
+| 4. Lean / audit / scope note | no new Lean (backbone is #6628's `QOU.Mass.C1KernelLevelReading.twoOp_c1RecFrom_two_iff`, live at `C1KernelLevelReading.lean:147`); `docs/audits/2026-09-04-c1-residue-tower-on-the-sw-seed.md` (6385 B); scope note live at `folio/quantum-observable-universe/mass-theory/qdifference-kernel-prolongation-symbol.md:198` |
+
+**What this bean does NOT close, and where it went.** The surviving question —
+*where `D_q`'s weights come from* — is wall W1 and is tracked at
+**`qou-d8de`** ("GAP W1: construct the q-difference prolongation `D_q` from the
+color spectral curve Σ"), which stays `todo`. Closing this bean closes a
+*measurement question that was answered*; it does not close a conjecture, so
+AGENTS.md rule 13a is satisfied.
+
+**The reusable output is the negative and the prune**, not a result: with free
+weights a fit always exists, so fitting weights to the C1 recurrence is evidence
+of nothing. Plus the precision trap — `mp.polyroots` gives a double root to only
+half the working precision (`|P_X| = 3.3e-41` at 80 dps); refine on
+`P = P_X = 0`. The `zgeometric_ramification_parity_probe.py` `|P_X| ≈ 6e-21` is
+the same effect one level down.
+
+Front re-file: stays `8f-lean` only because that is where it was tagged; its
+actual content is a compute probe. No action implied.
