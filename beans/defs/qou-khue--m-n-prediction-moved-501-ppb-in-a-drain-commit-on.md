@@ -1,14 +1,14 @@
 ---
 # qou-khue
 title: m_n prediction moved 501 ppb in a drain commit on 2026-08-24, invisible because the canonical table had dropped its p/n rows
-status: todo
+status: completed
 type: bug
 priority: normal
 tags:
     - reorg-2026-10-04
     - needs-owner
 created_at: 2026-08-28T18:18:52Z
-updated_at: 2026-10-04T15:15:46Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -231,3 +231,13 @@ predicted — one of the two re-scored, the other not.
 Re-scoring `m-p-substrate-identity-50dps` onto the ruled `z_D` base is
 `qou-99qc`'s arc and a producer re-run — gated, not done here. The labelling fix
 is still the whole of what is narrow.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: DONE.** The route-labelling fix is in (`nucleon_prediction_route`), but its "~555x" wording is stale (now ~277×, reversed); correct the text at the producer. The remaining re-score of the substrate-identity witness onto z_D belongs to qou-99qc.
+
+Evidence: The narrow labelling fix landed: `computations/canonical_mass_table_extended.py:821` emits `nucleon_prediction_route`, and the witness `canonical-mass-table-extended.witness.json` carries it. But its text says "the two differ by ~555x", which is stale: now 501 ppb (subid, computedAt 2026-08-29, not re-scored) vs 1.389e5 ppb (dashboard), about 277×, reversed. The re-score of `m-p-substrate-identity-50dps` belongs to qou-99qc.
+
+Status: `todo` → `completed`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

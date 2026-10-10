@@ -90,7 +90,7 @@ confinement) makes the resulting topology — and hence the mass — discrete"*
 > metric is not *chosen*; it does not mean the volume is not *derivable*.  The
 > corpus in fact asserts the opposite of what I wrote:
 > `brings-surface/thurston-relaxation.md` states that the `q`-Pochhammer poles
-> are in bijection with the ideal vertices of the tetrahedral triangulation, that
+> are in bijection with the `n` ideal tetrahedra of a hyperbolic triangulation, that
 > Newton iteration on Thurston's gluing equations seeded by those poles converges
 > to the shape parameters realising the complete hyperbolic structure, and that
 > *"the same algebraic-residue data feeds both the SDP and the gluing solver;

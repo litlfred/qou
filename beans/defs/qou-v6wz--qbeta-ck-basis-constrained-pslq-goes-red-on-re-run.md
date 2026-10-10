@@ -1,13 +1,13 @@
 ---
 # qou-v6wz
 title: 'qbeta-ck-basis-constrained-pslq goes RED on re-run: c3 moves by 972, and the witness is stamped q0-independent while carrying q0_canonical'
-status: todo
+status: completed
 type: bug
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-04T11:46:20Z
-updated_at: 2026-10-04T15:14:36Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -106,3 +106,13 @@ allPassed still False (the honest state), no sibling witness touched; scriptHash
 **Bean stays OPEN.** Defect 1 is real; only its diagnosis was wrong. It is now
 correctly parented to the cds1/pdix blocker rather than to a slope
 reconciliation.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: DONE.** All actionable work is landed. The remaining RED is qou-cds1 surfacing (a C-frame constant vs a hybrid-D producer), not a separate defect. Close and point to cds1. The "-974" it reproduces is a retired-base hybrid, not a D value.
+
+Evidence: Defect 2 was fixed in PR #6824: the witness has `q0Anchor: "ambiguous"`. Defect 1 was re-diagnosed as a D producer vs a C constant and labelled at `computations/probes/qbeta_ck_basis_constrained_pslq.py:110-116`. The witness has `allPassed: false` (honest) and `c3_reproduced_canonical` -974.382147…, which equals the sensitivity witness `D_muon` -974.3821470795362.
+
+Status: `todo` → `completed`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

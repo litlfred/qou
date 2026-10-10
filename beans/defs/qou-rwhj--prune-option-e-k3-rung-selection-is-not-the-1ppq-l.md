@@ -1,13 +1,13 @@
 ---
 # qou-rwhj
 title: 'PRUNE: Option E k>=3 rung-selection is NOT the 1ppQ lever — ladder is C-frame-unmoored under D, and the digit budget is ~2 at c_3 / 0 beyond'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-16T13:32:51Z
-updated_at: 2026-10-04T15:22:48Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -71,3 +71,13 @@ under D — not an extension of the C-frame one.
 The fourth miss, m_mu at 970x, is NOT a precision deficit at all: it is the
 mu-p pin artifact (proton-pinned => m_mu is a prediction carrying the ~11.5 ppb
 theory residual). More digits cannot move it.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: CLOSED-REFUTED.** c_k\
+
+Evidence: The prune of "Option E against the C-frame ladder" rests on the red-team audit plus the one-datum argument (= qou-p7n5). Later, stronger result: on the ruled base the ladder form cannot reach CODATA for any α or for rungs below \
+
+Status: `todo` → `completed`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

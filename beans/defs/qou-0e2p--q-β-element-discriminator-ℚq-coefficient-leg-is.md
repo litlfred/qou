@@ -1,13 +1,13 @@
 ---
 # qou-0e2p
 title: 'Q_β element discriminator, ℚ(q)-coefficient leg: is Δ_L bar-odd under ANY ℚ(q)-linear combination of the admissible traces; fix codata_constants.Q_BETA_MEV 8-sig-fig truncation (continues qou-99qc / #7118)'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T18:26:20Z
-updated_at: 2026-10-04T15:13:36Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -29,3 +29,13 @@ Still open (owner): the CAL-3 dataset decision. Still open (mechanical, other ar
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: CLOSED-PROVED.** Leg 1 is settled by exact symbolic computation in convention D and reproduces (24/24): over ℚ(q) the criterion is vacuous, and over F = ℚ(q+1/q), Δ_L has exactly one bar-odd line, which is not a Markov trace. The CAL-3 dataset decision is tracked in qou-c1fz. The Δc₃ ≈ +0.31 blast-radius figure is quoted against the convention-C c₃ ≈ −2.069.
+
+Evidence: Re-ran `computations/qbeta/qbeta_bar_odd_qq_coefficient_leg_probe.py`: exit 0, 24/24, witness unchanged. It uses exact sympy with symbolic z and Z_D = q³/(q²+1), i.e. convention D. Leg 2 (the owner's CAL-3 dataset choice) is now its own bean, `qou-c1fz` (todo, needs-owner). `qou-vyvt` records leg 1 DONE on PR #7164.
+
+Status: `todo` → `completed`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

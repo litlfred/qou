@@ -1,13 +1,13 @@
 ---
 # qou-54g5
 title: 'qou-cds1 fallout: the ladder block claims -0.0066 ppm at the muon pin; the implementation gives +7.34 ppb'
-status: todo
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T23:21:11Z
-updated_at: 2026-10-04T15:15:03Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -623,3 +623,23 @@ Both are the same failure: treating a bean's surface as its state.
 **No producer was re-run and no witness was committed as a result of this
 check** — the only change a re-run would have produced is a provenance
 downgrade, and the tree was reverted.
+
+
+## 2026-10-10 — completed (survey for epic `qou-d8c7`, issue litlfred/qou#7547)
+
+The headline question was settled on 2026-08-31 (sign positive, `+0.0071` ppm) and the 2026-09-13 entries confirm the witness carries the live value. The one open residue, the cause of the 7.133 ppb epoch offset, is moved to `qou-cds1` (appended there today), where the ladder re-derivation lives.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: DONE.** The sign defect is fixed in the block (headline +0.0071 ppm). The "stale witness" remark is false on the current tree. All numbers here are C-frame, retired base. The remaining epoch-offset question concerns an excised-convention artifact, so it should not hold this bean open.
+
+Evidence: `folio/.../mass-theory/q-beta-categorical-precision-ladder.md:2` now says +0.0071 ppm (muon pin) and +0.0377 ppm (proton pin), with the sign convention stated. `.ts` `computation.script` = `computations/qbeta/qbeta_precision_ladder_n5.py` (PR #6424). The bean's own 2026-09-13 entry shows `qbeta-ladder-convention-fee.witness.json` holds 7.1339366 (scriptHash matches), so the "stale 7.336484 witness" claim is false. Open in the body: cause of the 7.133 ppb epoch offset, and a thin 0.91% magnitude crossing.
+
+Status: `completed` → `completed` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.
+
+
+## 2026-10-10 — a witness this bean cites is red (cross-cluster check, verification sweep of `qou-avtq`)
+
+`computations/qbeta/qbeta-decay-sdp-full-ck-derivation.witness.json` (2026-08-29) has **no q0Anchor**, and its `c_4..c_7_extracted_matches_empirical` checks all fail (|Δ| = 1.1e5, 1.3e7, 1.6e9, 1.8e11). So "the SDP extraction decides it" (c_5 = −1.2229 ruling out 3c_3²+b) is unsupported: that extractor emits the accuracy floor (`qou-8ofm`/`qou-frch`/`qou-tv6l`). The superseded-producer finding may still stand on provenance alone. The completed status (set today by another session) is unchanged.

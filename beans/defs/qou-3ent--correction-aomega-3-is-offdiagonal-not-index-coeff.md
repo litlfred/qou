@@ -9,7 +9,7 @@ tags:
     - correction
     - reorg-2026-10-04
 created_at: 2026-08-11T11:20:00Z
-updated_at: 2026-10-04T15:14:47Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -34,3 +34,13 @@ TWO further constraints on any "explain the 3" attempt:
    says nothing about the tower is not an explanation.
 
 ACTION: grep the corpus for text asserting the stronger reading and correct it.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: OPEN.** Verified 2026-10-10 against library/arxiv-2012.00062v3. GGM prove Conjecture 4 (eqs 20/21) and Conjecture 5 for 4₁/5₂; Conj 3(d) (Stokes = DT) is unproved. The correction is still owed in mass-theory/aomega-fourone-dt-count.md:38-39, which says GGM proved Conjecture 3 for 4₁.
+
+Evidence: Every factual claim checks against the held GGM text. Eq (21) `S⁺_{σ1σ1}(x;q)=Ind^rot(0,x;q)` is diagonal-only (`sec-003…md:106-107`). Eq (61) gives S⁺₁₁ = 1−8q−9q²… (`sec-007…md:442`). The tower 9, 75, 642, 5580, 48558 is eq (62) (`:445`). `S⁺(x;0)=[[1,x⁻¹+1+x],[0,1]]` is eq (188) (`sec-011…md:724`). s(x) = x⁻¹+1+x is eq (239) and (277) for 5₂. The ACTION is not done: `mass-theory/aomega-fourone-dt-count.md:38` still says GGM "proved peacock Conjecture 3".
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

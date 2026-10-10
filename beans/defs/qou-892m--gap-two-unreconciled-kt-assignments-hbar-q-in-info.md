@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-19T17:31:15Z
-updated_at: 2026-10-04T15:20:31Z
+updated_at: 2026-10-10T07:01:41Z
 parent: qou-v2om
 ---
 
@@ -31,3 +31,8 @@ So the two thermodynamic frames do not refer to each other anywhere.
 This is orthogonal to which entropy functional is right (that is settled -- S,
 by extensivity). It asks whether the framework has ONE temperature or two
 unrelated ones wearing the same name.
+
+
+## 2026-10-10 — pointer
+
+Tracked under related carrier M13 of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.

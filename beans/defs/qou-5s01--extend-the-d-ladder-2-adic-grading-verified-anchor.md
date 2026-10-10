@@ -1,13 +1,13 @@
 ---
 # qou-5s01
 title: Extend the D-ladder 2-adic grading verified anchor from K=5 to K=21 (data already committed)
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-19T17:21:15Z
-updated_at: 2026-10-04T15:19:03Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -49,3 +49,13 @@ one carrying `Mathlib/Tactic.olean`. Use the QOU-local tree:
 
     R=content/quantum-observable-universe/lean
     export LEAN_PATH=$(find "$R/.lake" -type d -name lean -path "*build/lib*" | tr '\n' ':')
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: DONE.** Landed: the anchor is extended to K=21. Naming hazard: "D-ladder" is KC21's D(ũ) ladder function, not convention D. The ladder it grades is built on the C-frame α / Q_A, so its physical relevance is C-frame even though the Lean fact stands.
+
+Evidence: `L/QBeta/DLadderTwoAdicGrading.lean:109` `bDen_two_adic_graded : TwoAdicParityGraded bDen 21` plus the `_five` corollary. Textually sorry/axiom-free ("sorry" occurs only in docstrings). `DLadderGradingConjecture` class remains open, as the bean says.
+
+Status: `todo` → `completed`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-10T18:42:38Z
-updated_at: 2026-10-04T15:12:22Z
+updated_at: 2026-10-10T07:47:08Z
 parent: qou-cdx1
 ---
 
@@ -331,3 +331,12 @@ each has a value you can compute and match; a derived identity has neither.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-15 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+The detector is blind to non-`y_lambda` convention-C quantities (`tr_M`, `z`
+as recorded values). Live, and corroborated today: the value audit catches `z`
+BINDINGS; a recorded `tr_M` is a number, not a binding.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

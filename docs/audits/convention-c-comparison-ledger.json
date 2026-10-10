@@ -1593,6 +1593,78 @@
       "adjudicated_by": "convention-auditor subagent (session 0134BL9G), evidence: each site READ — docstring + enclosing scope; convention D remains canonical (R1, 2026-08-15)",
       "date": "2026-09-06",
       "bean": "qou-htsi"
+    },
+    {
+      "path": "computations/audits/intra_ordering_value_fingerprint_audit.py",
+      "target": "z_c",
+      "line_when_adjudicated": 187,
+      "scope": "fingerprints",
+      "source": "z_c = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))",
+      "verdict": "comparison",
+      "rationale": "This is a value-keyed DETECTOR, and z_C is the reference value it detects WITH. The module's purpose (its own docstring) is to find grouped-era artifacts by their value after three symptom-keyed sweeps missed them, and its `fingerprints` table enumerates the convention as one axis of the key: 'convention C, muon q0 0.0553483458766980 / convention C, proton q0 0.0553483351637685 / convention D, colour-BLIND / convention D, colour-weighted, grouped / convention D, colour-weighted, borromean <- canonical'. Binding only z_D would delete four of the five rows of the fingerprint table and with it the audit's ability to recognise a convention-C value in circulation — which is the one thing it exists to do. Not co-bound with z_D in the same scope (the D values come from the canonical helpers, not a local binding), which is why --propose-ledger does not stub it.",
+      "adjudicated_by": "agent (re-audit 2026-10-10, bean qou-am5t)",
+      "date": "2026-10-10",
+      "source_hash": "8d7c4a5b3459"
+    },
+    {
+      "path": "computations/probes/phi1_is_chain_additive_iff_z_is_an_eigenvalue_probe.py",
+      "target": "zC",
+      "line_when_adjudicated": 184,
+      "scope": "<module>",
+      "source": "zC = sp.sqrt(q) / (q + 1)",
+      "verdict": "comparison",
+      "rationale": "CHECK 6 of this probe is titled 'neither canonical convention is such a root' and its whole content is to evaluate the residual z^2 - h z - 1 at BOTH conventions and assert it is non-zero at each. The two are bound on adjacent lines (zC, then zD) and iterated over as a pair. Binding only z_D would halve the check and leave the claim 'NEITHER convention' unsupported for the convention it is most natural to doubt.",
+      "adjudicated_by": "agent (re-audit 2026-10-10, bean qou-am5t)",
+      "date": "2026-10-10",
+      "source_hash": "adfb5f133f3c"
+    },
+    {
+      "path": "computations/qbeta/qbeta_eigenphase_rationality_quantization_probe.py",
+      "target": "zC",
+      "line_when_adjudicated": 353,
+      "scope": "main",
+      "source": "zC = mp.sqrt(q) / (1 + q)",
+      "verdict": "comparison",
+      "rationale": "z_C is used to form the C-frame ladder phase aC = (zC - 1) * h / 2 and then to report `alpha_C` and `C_windows_from_required = abs(aC - areq) / win` — i.e. the probe's output is the DISTANCE of the convention-C phase from the required one, in units of the quantization window, at both the proton and muon anchors. The measured gap IS the result; deleting the C arm deletes it. This site sits in the one channel still pending (qbeta-decay, bean qou-cds1), so note explicitly: adjudicating it as a comparison does NOT adjudicate the ladder — the ladder's own C-frame sites are registered separately in the registry's blocked_on_rederivation list and stay in the actionable count.",
+      "adjudicated_by": "agent (re-audit 2026-10-10, bean qou-am5t)",
+      "date": "2026-10-10",
+      "source_hash": "9a463edf25e0"
+    },
+    {
+      "path": "computations/qbeta/qbeta_ladder_form_cannot_reach_ruled_base_probe.py",
+      "target": "z_c",
+      "line_when_adjudicated": 146,
+      "scope": "main",
+      "source": "z_c = mp.sqrt(q) / (q + 1)",
+      "verdict": "comparison",
+      "rationale": "The probe's subject is which Q_beta base a cosine ladder factor can reach. It binds z_c and z_d on adjacent lines and builds one base per Markov parameter — including the RETIRED z=1 cell, annotated as such — precisely so the four candidate bases can be compared against the ladder's cap 1 - u^2. Binding only z_D would remove the comparison arms that make the exclusion an exclusion.",
+      "adjudicated_by": "agent (re-audit 2026-10-10, bean qou-am5t)",
+      "date": "2026-10-10",
+      "source_hash": "57ee4db69620"
+    },
+    {
+      "path": "computations/qbeta/qbeta_operator_basis_radical_calibration_probe.py",
+      "target": "z_convention_C",
+      "line_when_adjudicated": 138,
+      "scope": "main",
+      "source": "z_convention_C = mp.sqrt(Q0) / (Q0 + 1)",
+      "verdict": "comparison",
+      "rationale": "Step A1 of the probe is headed 'convention, established at the source' and prints three values side by side — the module constant `_order.ZD`, the recomputed q^3/(q^2+1) labelled [conv D], and sqrt(q)/(q+1) labelled [conv C] — so that a reader can see which convention the operator basis is actually calibrated in rather than take the constant's name for it. The C line is the control that makes the D agreement informative.",
+      "adjudicated_by": "agent (re-audit 2026-10-10, bean qou-am5t)",
+      "date": "2026-10-10",
+      "source_hash": "b6c5a5739ec1"
+    },
+    {
+      "path": "computations/qbeta/qbeta_skein_normalisation_admissibility_robustness_probe.py",
+      "target": "zC",
+      "line_when_adjudicated": 203,
+      "scope": "main",
+      "source": "zC = sp.sqrt(q) / (q + 1)",
+      "verdict": "comparison",
+      "rationale": "The probe tests the skein transport map on the admissible kernel set. It binds zC and zD together and asserts transport_carries_z_D_to_u_over_u2_plus_1 — that z_D under the transport q -> u^2 lands on the kernel u/(u^2+1), which is z_C's shape in the sqrt variable. The two conventions are the two endpoints of the map under test, so the C binding is the map's codomain, not a leftover.",
+      "adjudicated_by": "agent (re-audit 2026-10-10, bean qou-am5t)",
+      "date": "2026-10-10",
+      "source_hash": "adfb5f133f3c"
     }
   ]
 }

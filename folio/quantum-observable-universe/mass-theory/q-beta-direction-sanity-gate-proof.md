@@ -84,8 +84,8 @@ bound the admissible threshold window.
    threshold well above the few-percent near-match band therefore
    tests direction, not anchor choice or near-match precision.
 2. *Upper bound.* The threshold must still catch the
-   geometric-decay direction errors of Step 4, which escape only
-   thresholds $\gtrsim 16$.
+   geometric-decay direction errors of Step 4, which for $m \ge 5$
+   escape only thresholds $\gtrsim 11.6$.
 
 The decade convention $10\times$ sits inside this admissible window.
 Finer discrimination is deliberately delegated to the complementary
@@ -95,19 +95,29 @@ fibre-level tolerance ($\S 4(a)$).
 **Step 4 — non-vacuity: the stabilisation direction obstruction.**
 The canonical refuted precedent is the family of trace-level
 candidates whose substrate magnitude is a power of the
-positive-stabilisation weight $z = 1/(q^{1/2} + q^{-1/2})$. For every
-$q > 1$ the AM–GM inequality gives $q^{1/2} + q^{-1/2} > 2$, hence
-$0 < z < 1/2$; at the substrate, $z(q_0) \approx 0.4993$. A candidate
-with $|F(q_0)| = z(q_0)^m$ after $m$ stabilisations therefore
-satisfies
+positive-stabilisation weight, at the canonical value
+$z = q^3/(q^2+1)$. This satisfies $z < 1$ exactly when
+$q^3 - q^2 - 1 < 0$, that is for $1 < q < \psi \approx 1.4656$ (the
+real root of $x^3 = x^2 + 1$); the substrate lies in that range, with
+$z(q_0) \approx 0.6127$. A candidate with $|F(q_0)| = z(q_0)^m$ after
+$m$ stabilisations therefore satisfies
 
 $$
 \frac{F_{\text{target}}(q_0)}{|F(q_0)|}
-\;>\; 0.998 \cdot 2^{\,m},
+\;\approx\; 0.998 \cdot 1.632^{\,m},
 $$
 
-which exceeds $10$ already at $m = 4$ (where $0.998 \cdot 16 \approx
-16.0$). Repeated stabilisation can only shrink the magnitude — it can
-never climb to a target of order unity, let alone to the
-linking-weight scale $\approx 2.5$ of the precedent — so the entire
-family fails the gate for every $m \ge 4$. $\blacksquare$
+which exceeds $10$ first at $m = 5$ (where it is $\approx 11.6$;
+at $m = 4$ it is $\approx 7.1$). Repeated stabilisation can only
+shrink the magnitude — it can never climb to a target of order unity,
+let alone to the linking-weight scale $\approx 2.5$ of the precedent —
+and the gate refutes every member with $m \ge 5$. The members with
+$m \le 4$ are not caught by the decade threshold; their exclusion
+rests on the direction argument itself, not on this gate.
+$\blacksquare$
+
+Until 2026-10-10 this step used the excised convention-C weight
+$z = 1/(q^{1/2} + q^{-1/2})$. That weight satisfies $0 < z < 1/2$ for
+every $q > 1$ by AM–GM, which made the obstruction hold at all $q > 1$
+with first exceedance at $m = 4$ (ratio $\approx 16$). Neither holds
+at the canonical weight.

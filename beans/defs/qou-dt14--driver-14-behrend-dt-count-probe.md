@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T01:00:00Z
-updated_at: 2026-10-04T15:19:24Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -63,3 +63,13 @@ count, does NOT close A_ω/Δ_λ/bwse, and (lever map #4601) closing it would NO
 close binding anyway. Bounded characterization."* A characterization of what any
 supplier must satisfy is not a supplier. Rule 13a: the subject — the
 irreducibly-external Behrend-weighted DT count — is open. Stays `todo`.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: OPEN.** The parity obstruction is machine-checked (re-compiled 2026-10-10). The subject, a supplier of the Behrend-weighted DT count, is open, as the bean's own 2026-09-08 note says.
+
+Evidence: `QBeta/DTBehrendParityObstruction.lean` is Mathlib-free and compiled exit 0 locally (Lean 4.25). `no_constant_weight_yields_three`, `at_least_two_strata` and `odd_count_needs_odd_stratum` are present and sorry-free. They are elementary parity facts.
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-06T13:05:29Z
-updated_at: 2026-10-04T15:13:23Z
-parent: qou-10v9
+updated_at: 2026-10-10T07:58:20Z
+parent: qou-d8c7
 ---
 
 ## Measured
@@ -534,3 +534,20 @@ deliberately not bundled into the verified Lean commit.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — reparented to the mass-endomorphism epic
+
+This bean is carrier M5 of epic `qou-d8c7` (issue litlfred/qou#7547). Parent moved from `qou-10v9` to `qou-d8c7`; nothing in the body above was changed by the move.
+
+
+## 2026-10-10 — residue added by the epic survey (carrier M5 of `qou-d8c7`)
+
+Absorbs `qou-g3mz` (scrapped today with a pointer here) and links `qou-ox7y`. `qbeta-delta-tau-surrogate-taylor-coefficients-formal-scope.md` (lines 15-17) still states the grouped degree-11 / degree-7 quotient and "sorry, orders 2..7". Both predate the ordering fix recorded in this bean, so that file is stale prose. Not edited here (bean-only PR).
+
+
+
+## 2026-10-10 — residue closed, and the 'Still open' Python item was already done
+
+- `qbeta_utils.chi_block_21` already defaults to `intra_order="borromean"`; the producer `qbeta_c3_multiblock_recursion_attack.py` and its witness are borromean. The 2026-09-07 'Still open' paragraph was stale when the epic survey quoted it.
+- What WAS stale: `QBetaDeltaTauSurrogateTaylorCoefficients.lean` — the lean.ref of `prop:qbeta-delta-tau-surrogate-taylor-coefficients` — catalogued grouped values for orders 3..7. Now canonical (-23/9, 77/18, 1349/108, -191/4, 26285/162; sympy re-derivation agrees with the witness). Order2.lean header and the formal-scope remark corrected. PR #7559.

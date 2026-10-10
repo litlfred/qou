@@ -1,13 +1,13 @@
 ---
 # qou-hkaq
 title: Cite [jing-liu-2021] at prop:q-hecke-seminormal-character-closure
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-08T23:35:24Z
-updated_at: 2026-10-04T15:17:39Z
+updated_at: 2026-10-10T07:26:05Z
 parent: qou-mub3
 ---
 
@@ -23,3 +23,10 @@ Source: `library/arxiv-2104.06067v1/2104.06067v1.pdf` (`jing-liu-2021`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+
+## 2026-10-10 — pointer
+
+Tracked under carrier M14 (qou-9w2m) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+## 2026-10-10 — Done in issue litlfred/qou#7552: `q-hecke-seminormal-character-closure.md` now cites `\cite[Thm.~4.1, Cor.~4.2]{jing-liu-2021}` for the q-Murnaghan-Nakayama rule and `\cite[Thm.~2.9]{jing-liu-2021}` for hook values. Correction to this bean: Thm 3.1 is a sum over hook characters, NOT the MN rule; the MN rule is Thm 4.1 (eq. 4.3) and its combinatorial form Cor 4.2. The sentence notes JL's T_i^2=(q-1)T_i+q convention needs rescaling.

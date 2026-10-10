@@ -1,13 +1,13 @@
 ---
 # qou-f5xq
 title: 'R1: run the bar-odd question over Q(sqrt-23) against the A6 sigma-pair tower (SHAPE only — value is q0-gated)'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-19T13:37:31Z
-updated_at: 2026-10-04T15:23:08Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -43,3 +43,13 @@ Generalises: a quantity defined as an extremum over components is not tested by
 comparing the components. Reading it the other way turned a clean 24/24 into a
 spurious pair of exceptions and would have invited a hunt for a pattern that is
 not there.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: CLOSED-REFUTED.** Exact rational check over the 24 available orders: the bar-odd part is never 23-adically shallower than the full element, and the result reproduces. Scope-(a), limited to those 24 orders. It computes no value, and the task is complete.
+
+Evidence: Re-ran `computations/probes/fivetwo_bar_odd_23adic_depth_probe.py`: exit 0, 3/3, python-fractions exact, `q0Anchor: independent`, payload unchanged (provenance-only diff).
+
+Status: `todo` → `completed`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

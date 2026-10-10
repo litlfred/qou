@@ -1,13 +1,13 @@
 ---
 # qou-xzrj
 title: 'GAP: the 7.67% trace-invisible remainder of epsNPq (step 8)'
-status: todo
+status: scrapped
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T21:07:16Z
-updated_at: 2026-10-04T15:13:00Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -558,3 +558,13 @@ Merge note: GitHub refused rebase-merge (4 merge commits); branch was linearized
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-30 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: SUPERSEDED.** Superseded by the 2026-09-08 ruling (qou-99qc): the canonical ε is a trace and cannot see the [H,H] remainder, so "what carries the 7.67%" no longer bears on Q_β. The representation net = Σ a_λ χ^λ + μ·tr_M(x·dC) on main stays valid algebra (scope a).
+
+Evidence: The question is about the trace-invisible 7.67% of epsNPq. The 2026-09-08 ruling makes ε a Markov trace (tr_M at z_D, AGENTS.md:2329), and every trace annihilates [H,H] (`L/QBeta/PairingSeesCommutator.lean` `cyclic_annihilates_commutator`, textually sorry-free). So the remainder is not part of the canonical functional. The algebraic representation result landed (PR #5869, 9ce3ed2942).
+
+Status: `todo` → `scrapped`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

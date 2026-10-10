@@ -1,13 +1,13 @@
 ---
 # qou-avt1
 title: 'ATTACK 1 (best): derive the counit->trace transport; the cosine is the unjustified step'
-status: todo
+status: completed
 type: task
 priority: high
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T04:14:19Z
-updated_at: 2026-10-04T15:10:48Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -149,3 +149,13 @@ QOU/QBeta/LadderCosClash.lean committed (0f4df6eed6), sorry-free, verified lean-
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-29 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: CLOSED-REFUTED.** Refuted, with exact algebra that reproduces: the data wants w* = 0.9985, about 0.3–0.4% of the counit→trace distance. The full transport is exactly the ruled tr_M(z_D) base, which is 43% low. The leftover "drop both cosine carriers" item is cleanup and belongs with qou-pdix (carrier already proved vacuous, `EigenphaseCarrierVacuity.lean`).
+
+Evidence: Re-ran `qbeta_counit_trace_transport_overshoot_probe.py`: exit 0, 6/6, reproduces w* = 0.99850030441134736542, overshoot 333.8542× (C) and 258.26039× (D). This is exact affine algebra at 60 dps. Independent corroboration: `qbeta_ruled_base_affine_solve_probe.py` (re-run, exit 0, 2/2) gives z_required = 0.99850030441113, the same number. G2 form clash is Lean: `L/QBeta/LadderCosClash.lean` `transport_even_sum`, `cos_correction_ne_affine_even_part` (textually sorry-free).
+
+Status: `todo` → `completed`.
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

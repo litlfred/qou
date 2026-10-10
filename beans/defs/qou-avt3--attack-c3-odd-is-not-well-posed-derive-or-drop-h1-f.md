@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T04:14:19Z
-updated_at: 2026-10-04T15:16:25Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -39,3 +39,13 @@ convergent, radius rho = u-tilde(q*_rho), closed form
 D(w) = phi(w)log(1 - w/rho) + psi(w) with phi(rho) = 1/(2*h*_rho) pinned and no
 free parameters, plus certified non-holonomicity across every tested class
 including the log-closure.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: BLOCKED.** Correct as a "do not attack" note. It waits on qou-cds1 (no D-frame c_3) and on (H1) being derived. It largely restates qou-qb8g obstacles 1–2, so consider folding it into qb8g.
+
+Evidence: Blocked on (H1) being derived or dropped, and on `qou-cds1`. Evidence that (H1) is neither derived nor testable: `qbeta_h1_significance_against_cal3_band.py` (0.031σ proton / 0.008σ muon). Evidence that the extractor cannot reach 1/q0: `qbeta_c3_bar_partner_extractor_breakdown.py`, re-run exit 0, reproduces c_3(1/q0) = -352599.7. Overlaps qou-qb8g almost entirely.
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

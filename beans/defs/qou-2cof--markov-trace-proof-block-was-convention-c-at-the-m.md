@@ -7,8 +7,8 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-26T04:46:54Z
-updated_at: 2026-10-04T15:21:29Z
-parent: qou-cdx1
+updated_at: 2026-10-10T08:25:07Z
+parent: qou-d8c7
 ---
 
 ## What it is
@@ -77,3 +77,27 @@ remaining C surface be treated as **unmeasured**, and this is one more
 data point for that, not a measurement of it. A targeted sweep would be:
 for each migrated statement block, check whether its proof sibling's
 numbers still evaluate under C.
+
+
+## 2026-10-10 — reparented to the mass-endomorphism epic
+
+This bean is carrier M6 of epic `qou-d8c7` (issue litlfred/qou#7547). Parent moved from `qou-cdx1` to `qou-d8c7`; nothing in the body above was changed by the move.
+
+
+
+## 2026-10-10 — measured: 21 live survivors (6 in the D-statement/C-sibling pattern, 15 in unmarked blocks), ~38 deliberate, 4 undetermined groups
+
+Read-only scan of all 3635 content .md blocks, values recomputed under C and D in mpmath at the proton pin (calculator calibrated against this bean's 1.63315 / 1.88432). Full table and blind spots: /mnt/project-files/mass-endomorphism/m6-convention-c-count.md (issue #7558). Notable: `markov-trace-product-proof.md:43` calls a C value 'canonical'; `frobenius-s-classification` claims q→1/q invariance of z, true only for z_C. No edits made: a sweep needs the owner's go (ask-first rule).
+
+
+2026-10-10: Group A (6 sites, statement D / sibling C) fixed in PR #7562, commit bbd38f07. Each D value recomputed at the proton pin (mpmath 30 dps); old C figure kept in a dated note. Remaining: 15 Group B unmarked sites + 4 undetermined groups, per-file plan awaiting owner approval (mass-endomorphism/m6-group-b-plan.md in project files).
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+A proof block whose numerical witness was C at the muon pin under a D
+statement at proton. The CODE surface is clean, but a published proof block's
+recorded numbers are not code -- re-deriving them is the `qou-cds1` ladder
+work or a scoped note. Not closeable by a value audit.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-09-07T08:08:28Z
-updated_at: 2026-10-04T15:13:20Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -98,3 +98,18 @@ library twin's — it stops at order 1 plus a note — so the swap was four edit
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-07 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 — pointer
+
+Tracked under carrier M5 (qou-eddc) of epic `qou-d8c7` "Mass endomorphism" (issue litlfred/qou#7547). Parent and status unchanged; the epic body lists what is still open for this item and where it sits in the attack-vector catalogue.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: DONE.** The migration landed in f1291a048a and both affected probes reproduce on main. The bean was reset to todo only by the 2026-10-04 claim sweep, not because work was outstanding.
+
+Evidence: Commit `f1291a048a` (2026-09-07) is on main. `computations/qbeta/qbeta_utils.py:49/133/184`: `chi_block_21`, `delta_tau_M_surrogate` and `delta_tau_M_canonical_explicit` all take `intra_order="borromean"` and raise `ValueError` on anything else. Re-ran `qbeta_reeb_tower_jacobi_anger.py` (exit 0, `allPassed=True`, χ_(2,1) odd orders to 9 as claimed) and `qbeta_delta_tau_M_canonical_explicit_instance.py` (exit 0, 2/2, witness unchanged). The Lean sibling is at `folio/…/mass-endomorphism/qbeta-per-block-chi-closed-forms.lean`.
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

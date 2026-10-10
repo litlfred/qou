@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-09T12:42:32Z
-updated_at: 2026-10-04T15:11:38Z
+updated_at: 2026-10-10T07:47:11Z
 parent: qou-cdx1
 ---
 
@@ -518,3 +518,61 @@ per `qou-4bq3`.
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-09-08 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 🛑 TITLE IS STALE BY ~30× — re-measured 2026-10-10 (bean `qou-am5t`)
+
+This bean's title reads **"174 py + 61 lean + tools/ Rust"**, and `qou-cds2`
+names this bean as *"the canonical ledger for the convention-C excision
+family"*. So a reader who follows that pointer to find the state of the
+migration gets the worst available answer. Measured today on `main`
+`77695711d`:
+
+| surface | this title | **measured 2026-10-10** | command |
+|---|---|---|---|
+| Python, blocking | 174 | **0** | `convention-c-value-audit.py` |
+| Python, actionable by shape | — | 13 (12 probes + 1 producer) | `convention-c-producer-audit.py` |
+| Lean, actionable | 61 | **0** (23 C defs, all deliberate) | `lean-markov-convention-audit.py` |
+| `tools/` Rust | "Rust" | **0 live** (only `archive/v2.rs`) | by hand — no audit scans `.rs` |
+| witnesses | — | 0 structural, 1 symbolic | `convention-c-witness-audit.py` |
+
+`BLOCKING` was 6 this morning and is **0** as of `e6a5d23e9`: the six were read
+and adjudicated into `docs/audits/convention-c-comparison-ledger.json` (137 →
+143 entries) as two-convention comparison arms, with a rationale each.
+
+**What is actually left is one producer and one research question**, not a
+drain:
+
+- `computations/qbeta/qbeta_ck_cache.py:140` — the canonical `c_k` producer, the
+  only non-probe production file still on C, and the `qbeta-decay` channel
+  (registry: definitional D, production **C**, `agreed-migration-pending`).
+- It is **not drainable by substituting `z_D`** —
+  `QOU.QBeta.decayLadder_zC_threeRow_ne_zero`, sorry-free.
+- And it is **not blocked on the ladder phase `α`** (`qou-pdix`), which the
+  corpus asserted in two places until 2026-09-14: `cos ≤ 1` caps the N=2 factor
+  at `1 − u² = 0.99992745` for every real `α`, while the ruled `z_D` base needs
+  `F_required = 1.759` (order-zero `E₀`) or `1.200` (the dashboard-scored cell).
+  No `α` reaches either. The live question is what object supplies a factor
+  above 1 at all.
+
+**Status proposal, not enacted:** this bean's *claim* — that the excision is
+incomplete at that scale — is measurably false, and its role as the family's
+canonical ledger is now served by
+[`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md),
+which carries the command for every number. I have **not** changed the status or
+the title: retitling a bean whose body is an append-only ledger of a campaign
+would rewrite the record of what the campaign believed, and the owner's call is
+whether this becomes `completed` with the residual re-homed on `qou-cds1`, or
+stays open as the family root with a corrected title. Nothing downstream depends
+on the answer — the status doc is the thing readers should be pointed at either
+way.
+
+
+## 2026-10-10 re-audit verdict: **LIVE** (bean `qou-am5t`)
+
+See the dedicated 2026-10-10 append on this bean: title stale by ~30x (174 py
++ 61 lean vs a measured 0/0), residual is one producer plus `qou-cds1`. Left
+open deliberately -- retitling an append-only campaign ledger rewrites what
+the campaign believed; status is an owner call.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

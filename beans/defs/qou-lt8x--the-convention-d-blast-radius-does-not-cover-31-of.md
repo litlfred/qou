@@ -1,13 +1,13 @@
 ---
 # qou-lt8x
 title: 'The convention-D blast radius does NOT cover 31 of the 43 structurally-C witnesses: read-set != write-set'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-08-11T01:13:43Z
-updated_at: 2026-10-04T15:14:10Z
+updated_at: 2026-10-10T07:47:22Z
 parent: qou-cdx1
 ---
 
@@ -362,3 +362,17 @@ Regenerating `multi-level-jet-sum` also drained a STALE q0 anchor
 ## Claim reset 2026-10-04
 
 Was in-progress with no bean update since 2026-08-16 and no main commit naming it since 2026-09-20 (owner decision 3). Re-claim with `bun run beans:claim` if you pick it up.
+
+
+## 2026-10-10 re-audit verdict: **CLOSE** (bean `qou-am5t`)
+
+Superseded by method, not by drain. This bean's finding is that the blast
+radius was built from a READ-SET ('which producers read one of the four moved
+witnesses') and so missed 31 of 43 structurally-C witnesses.
+`scripts/convention-c-value-audit.py` does not use a read-set at all: it walks
+every binding with `ast`, compiles the RHS and **evaluates** it, so a C site
+is found wherever it is written and whatever reads it. The structural gap this
+bean names cannot exist under the value detector. Its own prescription is
+satisfied by a tool that postdates it.
+
+Full 41-bean triage table and the method behind it: [`docs/coordination/convention-d-migration-status.md`](../../docs/coordination/convention-d-migration-status.md) §9.

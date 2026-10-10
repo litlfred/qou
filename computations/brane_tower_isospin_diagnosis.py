@@ -1,5 +1,39 @@
 #!/usr/bin/env python3
 """
+🛑 PORTED 2026-10-10 (beans `qou-g16t` / `qou-47sx`, issue litlfred/qou#7552).
+Everything below the line of `═` further down is the ORIGINAL 2026-05 analysis,
+kept as the record of what this script used to measure.  Its numbers came from
+`pyhecke.atom.atom_per_generator_volumes` (hardcoded H_3 Wedderburn weights,
+documented as wrong for A ≥ 2) and the float64 `Phi_q`, and they are NOT what
+the script computes now.  Do not quote them as current.
+
+What changed:
+
+* Volumes: `mass_at_3A_proper.per_generator_V_hat_3A(Z, N)`, the canonical
+  H_{3A} replacement, run with `QOU_H3A_MPF=1` so the seminormal matrices are
+  built at mpf, not seeded from binary64 q.
+* Kernel: `mass_endomorphism.Phi_q_mp`, the mpf twin of `Phi_q`.  Its pole is
+  at |z| = q₀ ≈ 1.10998 (the first factor 1 − z/q₀ vanishes there).
+* Removed: the hardcoded `E_0 = 7.947423e-04` MeV conversion and the printed
+  "-736.6 MeV" total, neither of which this script ever computed.
+
+What the port shows, measured 2026-10-10 (read the witness for the digits):
+
+* The per-generator volumes take the same short list of values in every atom:
+  proton quark generators |V̂| = 0.67139, 1.05511; neutron 0.55166, 1.08837;
+  the two inter-nucleon values 7.19e-5 and 0.10453.  None reaches the pole.
+* The neutron's second generator, 1.08837, is about 2 % below q₀, so
+  Φ_q = 2.77e7 there and it dominates every sum it appears in.  The old H_3
+  volumes were all below 1, which kept the sums at ~1e6.
+* Σ Φ_q: proton 5.29e6, neutron 2.77e7, deuteron 3.30e7, tritium 6.07e7,
+  helium-3 3.83e7.  So ³He − T = −2.24e7 Hecke units: the OPPOSITE sign of the
+  old +0.6e6 and about 37× larger.  The finding of the original analysis —
+  Φ_q amplifies small per-generator p/n differences enormously — survives the
+  port and gets stronger; its numbers do not.
+* ⁴He (A = 4, 12 strands) is NOT computed: under `QOU_H3A_MPF=1`
+  `syt_prefix_cache` hands an mpf matrix to `scipy.sparse`, which rejects
+  `dtype=object`.  Recorded as a gap in the witness, not filled with float64.
+════════════════════════════════════════════════════════════════════════════
 **CONTEXT (per prop:li2q-phiq-bar-symmetrization).** This script is a
 **BINDING-context DIAGNOSTIC**: it documents the compact q-dilog Φ_q failure
 mode (the −737 MeV mirror-nucleus pathology in the T2/T3 brane tower)
@@ -148,140 +182,136 @@ Output: `brane-tower-isospin-diagnosis.witness.json`
 """
 from __future__ import annotations
 
-import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-import json
-import sys
-from datetime import datetime, timezone
-from pathlib import Path
+import os
 
-import mpmath as mp
+# The mpf seminormal path in mass_at_3A_proper is opt-in and read at import
+# time, so it must be set before that module is imported.
+os.environ.setdefault("QOU_H3A_MPF", "1")
 
-from _precision import set_compute_dps  # noqa: E402
+import _path_bridge  # noqa: F401, E402 — substrate modules live in substrate/
+import json  # noqa: E402
+import sys  # noqa: E402
+from datetime import datetime, timezone  # noqa: E402
+from pathlib import Path  # noqa: E402
+
+from mpmath import mp  # noqa: E402
+
+from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
-from hecke_core import atom_per_generator_volumes  # noqa: E402
-from mass_endomorphism import Phi_q  # noqa: E402
+from mass_at_3A_proper import per_generator_V_hat_3A  # noqa: E402
+from mass_endomorphism import Phi_q_mp, q0_mp  # noqa: E402
 
-
-def abs_mpf(v):
-    """Coerce a per-generator volume to abs mpmath float; no
-    `str(float(...))` round-trip (preserves precision)."""
-    x = v["full"] if isinstance(v, dict) else v
-    return abs(mp.mpf(x))
+ATOMS = [
+    ("proton", 1, 0), ("neutron", 0, 1),
+    ("deuteron", 1, 1), ("tritium", 1, 2),
+    ("helium-3", 2, 1), ("helium-4", 2, 2),
+]
 
 
 def diagnose_atom(label, Z, N):
     A = Z + N
     inter = (A >= 2)
-    vols = atom_per_generator_volumes(Z, N, include_inter=inter)
-    abs_vols = [float(abs_mpf(v)) for v in vols]
-    phi_vals = [float(Phi_q(v)) for v in vols]
+    base = {"atom": label, "Z": Z, "N": N, "A": A, "include_inter": inter}
+    try:
+        vols = per_generator_V_hat_3A(Z, N, include_inter=inter)
+    except ValueError as e:
+        # Not a refusal defined by the cone: scipy.sparse rejecting an mpf
+        # matrix.  Report it as a gap; do not fall back to float64.
+        return {**base, "computed": False,
+                "gap": f"per_generator_V_hat_3A raised {type(e).__name__}: {e}"}
+    abs_vols = [abs(mp.mpf(v["full"])) for v in vols]
+    phis = [Phi_q_mp(x) for x in abs_vols]
+    poles = [i for i, x in enumerate(abs_vols) if x >= q0_mp]
+    finite = [p for p in phis if p != mp.inf]
     return {
-        "atom": label, "Z": Z, "N": N, "A": A,
+        **base,
+        "computed": True,
         "n_generators": len(vols),
-        "include_inter": inter,
-        "abs_per_gen": abs_vols,
-        "phi_q_per_gen": phi_vals,
-        "sum_phi_q": sum(phi_vals),
-        "max_phi_q": max(phi_vals),
-        "max_abs_v": max(abs_vols),
+        "abs_per_gen": [fmt(x) for x in abs_vols],
+        "phi_q_per_gen": [fmt(p) for p in phis],
+        "generators_at_or_past_pole": poles,
+        "sum_phi_q": fmt(mp.fsum(phis)),
+        "sum_phi_q_finite_generators": fmt(mp.fsum(finite)),
+        "max_abs_v": fmt(max(abs_vols)),
     }
 
 
 def main() -> int:
     print("=" * 80)
-    print("  Brane-tower isospin-violation diagnosis (T2/T3 root cause)")
+    print("  Brane-tower isospin diagnosis — PORTED to H_{3A} volumes + mpf Φ_q")
     print("=" * 80)
+    print(f"\n  pole: Φ_q(z) = +inf for |z| ≥ q₀ = {mp.nstr(q0_mp, 15)}")
 
-    print("\n  Φ_q(x) divergence near x=1:")
-    for x in (0.5, 0.7, 0.85, 0.9, 0.95, 0.97, 0.99):
-        v = float(Phi_q(mp.mpf(str(x))))
-        print(f"    Φ_q({x:>6.3f}) = {v:>12.4e}")
+    print("\n  Φ_q(x) near x = 1 (mpf):")
+    divergence = []
+    for s in ("0.5", "0.7", "0.85", "0.9", "0.95", "0.97", "0.99", "1.05", "1.08"):
+        v = Phi_q_mp(mp.mpf(s))
+        divergence.append({"x": s, "phi_q": fmt(v)})
+        print(f"    Φ_q({s:>5}) = {mp.nstr(v, 8)}")
 
     print("\n  Per-atom diagnostics:")
     rows = []
-    for label, Z, N in [
-        ("proton", 1, 0), ("neutron", 0, 1),
-        ("deuteron", 1, 1), ("tritium", 1, 2),
-        ("helium-3", 2, 1), ("helium-4", 2, 2),
-    ]:
+    for label, Z, N in ATOMS:
         d = diagnose_atom(label, Z, N)
         rows.append(d)
+        if not d["computed"]:
+            print(f"\n  {label:<10}  NOT COMPUTED — {d['gap'][:110]}")
+            continue
         print(f"\n  {label:<10}  n_gens={d['n_generators']}  "
-              f"max|V|={d['max_abs_v']:.4f}  sum Φ_q={d['sum_phi_q']:.4e}  "
-              f"max Φ_q={d['max_phi_q']:.4e}")
+              f"poles at gens {d['generators_at_or_past_pole']}  "
+              f"Σ Φ_q = {mp.nstr(mp.mpf(d['sum_phi_q']), 8)}")
         for i, (a, p) in enumerate(zip(d["abs_per_gen"], d["phi_q_per_gen"])):
-            kind = "intra"
-            if d["include_inter"]:
-                if i % 3 == 2:
-                    kind = "inter"
-            print(f"    gen {i:>2} ({kind}):  |V|={a:.4f}  Φ_q={p:>12.4e}")
+            kind = "inter" if d["include_inter"] and i % 3 == 2 else "intra"
+            print(f"    gen {i:>2} ({kind}):  |V|={mp.nstr(mp.mpf(a), 10)}  "
+                  f"Φ_q={mp.nstr(mp.mpf(p), 8)}")
 
-    # Isospin asymmetry: T vs ³He
-    print("\n  Isospin asymmetry (T vs ³He):")
     rT = next(r for r in rows if r["atom"] == "tritium")
     r3 = next(r for r in rows if r["atom"] == "helium-3")
-    print(f"    Σ Φ_q  (T)   = {rT['sum_phi_q']:.4e}")
-    print(f"    Σ Φ_q  (³He) = {r3['sum_phi_q']:.4e}")
-    diff = r3['sum_phi_q'] - rT['sum_phi_q']
-    print(f"    Δ            = {diff:.4e}  Hecke-units")
-    E_0 = 7.947423e-04  # MeV per Hecke-unit (from proton calibration in canonical T1 sweep)
-    print(f"    × E_0        = {diff * E_0:.4f} MeV (Term 2 contribution to T - ³He)")
-    print(f"    Total predicted T - ³He = -736.6 MeV (T2 + T3 + T4 + T5)")
-
-    print("\n  CONCLUSION:")
-    print("    The brane-tower Σ Φ_q(|V̂_i|) is dominated by generators")
-    print("    where |V̂_i| ≈ 1, where Φ_q is order 10⁵.  Tiny per-generator")
-    print("    asymmetries between p and n intra-crossings get amplified ")
-    print("    into hundreds of MeV.  This is the structural source of the")
-    print("    isospin pathology — not a software bug.")
-    print()
-    print("    The canonical Markov trace (Term 1) does NOT have this problem")
-    print("    (T = 0.10, ³He = 0.21, difference < 0.2 MeV after E_0 scaling).")
-    print()
-    print("    Reconciliation requires either:")
-    print("    (A) audit per-generator (c, d) crossing parameters in hecke_core")
-    print("    (B) audit derivation of Φ_q in prop:mass-endomorphism-tower")
-    print("    (C) re-evaluate whether brane-tower applies at q_0 (vs roots)")
-    print("    (D) check Term 5 chirality pattern absorbs more p/n asymmetry")
+    t_inf = mp.mpf(rT["sum_phi_q"]) == mp.inf
+    h_inf = mp.mpf(r3["sum_phi_q"]) == mp.inf
+    if t_inf or h_inf:
+        asym = None
+        asym_note = ("undefined: Σ Φ_q is +inf for "
+                     + ", ".join(n for n, f in (("tritium", t_inf), ("helium-3", h_inf)) if f)
+                     + " because a neutron generator volume is at or past the pole")
+    else:
+        asym = fmt(mp.mpf(r3["sum_phi_q"]) - mp.mpf(rT["sum_phi_q"]))
+        asym_note = "Σ Φ_q(³He) − Σ Φ_q(T), Hecke units"
+    print(f"\n  Isospin asymmetry (³He − T): {asym if asym is not None else asym_note}")
 
     witness = {
         "computation": "brane-tower-isospin-diagnosis",
         "description": (
-            "Diagnoses the origin of the 6-term formula's isospin "
-            "violation (predicted T - ³He = -737 MeV vs CODATA +0.019). "
-            "Localises to T2/T3 brane-tower: Φ_q diverges near x=1 and "
-            "amplifies tiny per-generator |V̂_i| differences between p/n "
-            "intra-crossings into hundreds of MeV.  Term 1 (canonical "
-            "Markov trace) does NOT have this problem — the issue is "
-            "structural to the brane-tower formula at q_0."
+            "Ported 2026-10-10: per-generator H_{3A} volumes "
+            "(per_generator_V_hat_3A, mpf seminormal path) fed to the mpf "
+            "Phi_q_mp kernel.  Replaces the 2026-05 run on hardcoded H_3 "
+            "weights and float64 Phi_q, whose numbers are superseded."
         ),
         "computedAt": datetime.now(timezone.utc).isoformat(),
+        "auditOnly": True,
+        "volume_source": "mass_at_3A_proper.per_generator_V_hat_3A (QOU_H3A_MPF=1)",
+        "kernel": "mass_endomorphism.Phi_q_mp",
+        "pole_q0": fmt(q0_mp),
+        "phi_q_divergence": divergence,
         "rows": rows,
+        "isospin_asymmetry_hecke_units": asym,
+        "isospin_asymmetry_note": asym_note,
         "verdict": (
-            "Brane-tower Σ Φ_q(|V̂_i|) is the pathology source.  The "
-            "formula faithfully reproduces |V̂_i| from the Wedderburn "
-            "construction, but Φ_q's divergence near x=1 amplifies "
-            "small p/n asymmetries by 10⁵×.  Not a software bug — a "
-            "feature of the formula as stated."
+            "Under the canonical H_{3A} volumes no generator reaches the "
+            "Phi_q pole at q0, but the neutron's second quark generator "
+            "(|V_hat| = 1.08837, about 2 % below q0) gives Phi_q = 2.77e7 and "
+            "dominates every sum it enters.  Sigma Phi_q(3He) - Sigma "
+            "Phi_q(T) = -2.24e7 Hecke units, opposite in sign and ~37x the "
+            "2026-05 H_3 figure.  Helium-4 is not computed (mpf matrices "
+            "rejected by scipy.sparse)."
         ),
-        "reconciliation_paths": [
-            "(A) audit per-generator (c, d) for p vs n intra-crossings",
-            "(B) audit Φ_q derivation in prop:mass-endomorphism-tower",
-            "(C) re-evaluate brane-tower applicability at q_0 (vs roots)",
-            "(D) check Term 5 chirality absorbs more p/n asymmetry",
-        ],
     }
     out = HERE / "brane-tower-isospin-diagnosis.witness.json"
-    # Provenance stamp (bean qou-4un2): this producer writes its
-    # witness directly, so nothing else records which script made
-    # it -- and a re-run of an unstamped producer DELETES the
-    # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
     from qou_substrate.witness import WitnessBuilder as _WB
-    import os as _os  # noqa: E402 -- provenance stamp
-    witness.setdefault("scriptFile", _os.path.basename(__file__))
+    witness.setdefault("scriptFile", os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
         witness, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(witness, indent=2, default=str))

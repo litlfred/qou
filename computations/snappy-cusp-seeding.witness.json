@@ -1,15 +1,15 @@
 {
   "engine": "snappy",
   "engineVersion": "snappy 3.3.2",
-  "computedAt": "2026-08-28T15:34:32.270308+00:00",
-  "commitSha": "3119740b7ebcbb54e18b6ca6bc3e7beffe1ebf93",
+  "computedAt": "2026-10-10T07:32:11.322571+00:00",
+  "commitSha": "ba00c9415329e81aa3f14dbc8d3432da421ac2ba",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 45,
+  "durationMs": 23,
   "computation": "snappy-cusp-seeding",
   "scriptFile": "snappy_cusp_seeding.py",
-  "scriptHash": "f4733c216049",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "scriptHash": "372e58e05caf",
+  "scriptCommitSha": "6ff3254a0f7d56d7961ba93607680644b8d7b07b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,14 +17,14 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
+    "python": "3.13.16",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "cd378682bfd642d0"
   },
   "invocation": {
     "argv": [

@@ -7,7 +7,7 @@ priority: normal
 tags:
     - reorg-2026-10-04
 created_at: 2026-07-03T19:12:19Z
-updated_at: 2026-10-04T15:22:55Z
+updated_at: 2026-10-10T08:30:00Z
 parent: qou-avtq
 ---
 
@@ -33,3 +33,13 @@ Refs:
 - Part of the 2026-07-03 path-to-1ppQ reanalysis (artifact): Identity I ≠ keystone
   unlock; Σ(2,3,5) WRT geometric leg refuted 2026-07-02; Q_β is the one near-term
   needle-mover above the CAL-2 floor.
+
+
+## 2026-10-10 — evidence re-check (verification sweep of `qou-avtq`)
+
+**Verdict: BLOCKED.** The P-C15 structural result (the 4₁ Casoratian ratio is exactly bar-self-reciprocal) is convention-independent and reproduces. Everything it is compared against (W2, c2^even, c3^even) is convention C. The next step waits on 8we6 and on the D-frame ladder re-derivation (qou-cds1). Separately, the witness's a1_note contradicts its own a1 field and should be reconciled.
+
+Evidence: `computations/qbeta/qbeta_pc15_casoratian_bar_parity_probe.py` re-run: exit 0, payload reproduces (twist = 1, exact sympy). The witness `qbeta-pc15-casoratian-bar-parity.witness.json` has a stale `scriptHash` (f80535476adf vs live db2068a05d67), and its `a1_note` ("a1 bar-ratio is x^7/q^5") contradicts its own `coeff_bar_ratios.a1 = x**9/q**3`. Gate bean `8we6` is still `todo`. The "consistent with W2 = +102.674" comparison uses c_k^even from the KC21 net-route ladder, which evaluates z_C (`qou-cds1` §"Live C sites": `qbeta_ck_sseries_exact_rational.py:20,248`).
+
+Status: `todo` → `todo` (unchanged: edited today by another session, or held in-progress).
+Checked against qou `main` at `77695711d2`. Probes were re-run only where cheap and decisive. A numeric result counts as evidence only where it reproduces and its precision exceeds the gap it decides; convention-C numbers are not evidence about convention-D claims.

@@ -51,7 +51,7 @@ in particular any real `t > 1`, `no_scaling_survives_of_one_lt` — then
 gauge scaling is `X³ = 0`. This is general; it is not a fact about this `Σ`.
 
 For the colour cubic the conclusion is immediate and sharp
-(`gauge_scaling_fixes_colorCubic_iff`): the fibre over `z = 0` is
+(`eq_one_of_gauge_scaling_fixes_colorCubic`): the fibre over `z = 0` is
 `X³ + X² + X + 1`, whose three non-leading coefficients are all `1`, so `t = 1`.
 
 ## How this differs from the neighbouring results, and what it does NOT say
@@ -212,7 +212,7 @@ theorem coeffs_vanish_of_scaling (t a₂ a₁ a₀ : K) (ht : t ≠ 0)
 /-- **The colour cubic, sharply.** If the gauge scaling by `t` fixes the colour
 cubic then `t = 1`. Only the fibre over `z = 0` is used — it is `X³+X²+X+1`, all
 three non-leading coefficients equal to `1`, so no weight can be absorbed. -/
-theorem gauge_scaling_fixes_colorCubic_iff (t : K)
+theorem eq_one_of_gauge_scaling_fixes_colorCubic (t : K)
     (h : ∀ X z : K, gaugedColorCubic t X z = colorCubic X z) : t = 1 := by
   have h0 := h 0 0
   have h1 := h 1 0
@@ -227,7 +227,7 @@ theorem gauge_scaling_fixes_colorCubic_iff (t : K)
 `(λ, μ)` of scalings — `X ↦ λ·X` in the fibre, `z ↦ μ·z` on the base — sends the
 colour cubic to a constant multiple of itself, then all three of `λ, μ, ν` are
 `1`. This is the statement that closes the *combined* move, which neither
-#6769 (base only) nor `gauge_scaling_fixes_colorCubic_iff` (fibre only) reaches
+#6769 (base only) nor `eq_one_of_gauge_scaling_fixes_colorCubic` (fibre only) reaches
 on its own.
 
 Four evaluations: `(0,0)` fixes `ν`, then `(±1, 0)` fix `λ`, then `(±1, 1)`
