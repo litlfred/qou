@@ -423,7 +423,7 @@ SVGs and JSON inline.
 > 2026-06-30) is deprecated to `fsh-guts/deprecated/workflows/`.
 >
 > **The branch itself is NOT removed and the links below still work.** It stays
-> as a file store: ~9,500 files under `lean/`, ~7,300 under `drafts/`, plus the
+> as a file store: ~3,000 files under `lean/` (the doc-gen4 render), ~7,300 under `drafts/`, plus the
 > paper PDFs and manifests.  Deleting it would break every chapter-PDF link in
 > the table further up this README, which is why the deprecation stops at the
 > rendering.
@@ -433,7 +433,7 @@ SVGs and JSON inline.
 | Folio landing page | [index.html](https://github.com/litlfred/qou/blob/gh-pages/index.html) |
 | Paper viewer | [papers/quantum-observable-universe/](https://github.com/litlfred/qou/tree/gh-pages/papers/quantum-observable-universe) |
 | Paper (PDF) | [quantum-observable-universe.pdf](https://github.com/litlfred/qou/blob/gh-pages/quantum-observable-universe.pdf) |
-| Lean interactive docs | [lean/docs/](https://github.com/litlfred/qou/tree/gh-pages/lean/docs) |
+| Lean interactive docs | [lean/](https://github.com/litlfred/qou/tree/gh-pages/lean) |
 | Schema docs (TypeDoc) | [schema-docs/](https://github.com/litlfred/qou/tree/gh-pages/schema-docs) |
 | Python API docs | [python-api/](https://github.com/litlfred/qou/tree/gh-pages/python-api) |
 | Rust API docs | [rust-api/](https://github.com/litlfred/qou/tree/gh-pages/rust-api) |
@@ -446,7 +446,10 @@ SVGs and JSON inline.
 > The **Blueprint** row and the `docs/` row that used to sit here have been
 > removed: neither `blueprint/` nor `docs/` exists on `gh-pages`, so both
 > links were dead in either column.  The Lean docs are published at
-> `lean/docs/`, which is what the row above points at.
+> `lean/` (index `lean/index.html`), which is what the row above points at. They
+> were rebuilt 2026-10-11 with doc-gen4, pruned to the QOU, UGB and Fred2005
+> modules and wrapped in the harness navbar; until then they sat at `lean/docs/`
+> and covered only 27 of those modules.
 >
 > `docs/` is still absent, and now deliberately so — `docs-site.yml` builds the
 > Jekyll docs site and uploads it as a **workflow artifact**; its gh-pages
