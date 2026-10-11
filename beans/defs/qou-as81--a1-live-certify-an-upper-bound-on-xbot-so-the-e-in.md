@@ -713,6 +713,156 @@ maximum is characterised by local optimality over `±χ_X` and found by steepest
 enumeration. If that holds here, the integer maximum per `(pe, T)` is certifiable directly, and
 the integrality gap the relaxation fights would not need branching. To verify before relying on.
 
+## 2026-10-11 — the L♮ form is ESTABLISHED, not merely credible: the structural half is proved
+
+Converging on the sibling's lead (`96c3c65e83e`) rather than re-deriving it, per the
+parallel-exploration rule. Their result 1 — *"a fixed-`w` supergradient certificate is invariant
+under the support split"* — is the remark I had left **unverified** at the end of my previous
+entry (*"the architecture may be structurally unable to exploit integrality"*). It is now their
+theorem, and I did not re-prove it.
+
+What they flagged *"to verify before relying on"* was the L♮-concave form. **Both halves of the
+structural claim are now proved**, and only the algorithmic half is left.
+
+### The chain, and where each link now stands
+
+| link | status |
+|---|---|
+| **C1** `G = Σ_j φ_j(u_j) + Σ_{j<k} ψ(u_k − u_j)` | read off the live source; 5/5 fragments asserted machine-side, so a reshape of `G` fails the probe instead of passing on a stale reading |
+| **C2** every univariate piece concave | **PROVED** — `neg_exp_series_concave` |
+| **C2b** the premise that proof consumes (coefficients positive) | **EXHAUSTIVE** — all 62,946 of them |
+| **C1 + C2 ⟹ discrete midpoint concavity** | **PROVED** — `concave_exchange_inward` + `parity_spread` |
+| **⟹ `G` is L♮-concave on `ℤ^J`** | **established** |
+| local optimum over `±χ_X` ⟹ global; steepest ascent terminates | **OPEN — nothing downstream may assume it** |
+
+### C2 is a theorem, and the reason is one line of reading
+
+With `t = q₀² > 1` and `L = ln t > 0`, every univariate piece of `G` is **minus a non-negative
+combination of decaying exponentials**, straight off the producer's own definitions:
+
+- `epsx x = −log(1 − t^{−x}) = Σ_{k≥1} (1/k)·e^{−kLx}` — Mercator, all coefficients `1/k > 0`;
+- `R x = Σ_{r≥1} c_r e^{−rLx}` with `c_r = t^{−r}/(r(1 − t^{−r})) > 0`, which is literally what
+  the code accumulates as `_ER[r] * z**r`;
+- `W y = epsx y + Σ_{r≥1} ((D_r − 1)/r)·e^{−rLy}`, where the `− 1` is the producer's own
+  splitting off of `δ = 0`, so `D_r − 1 = Σ_{δ∈Δ, δ≥1} t^{−rδ}`.
+
+A non-negative combination of `e^{−rLx}` is convex, hence `−R(b+u)`, `−W(c−u)` and `−epsx(g+d)`
+are concave. `neg_exp_series_concave` is that statement in the two-point form
+`concave_exchange_inward` consumes, over a `Finset` — so it is **uniform in the truncation order
+`RSER`**: a partial sum of a non-negative combination is one too.
+
+**C2b, the premise, is verified exhaustively rather than sampled.** All **62,946** `W`
+coefficients over `pe = 0..8`, `T = 1..26`, `r = 1..269`, plus all 269 `R` coefficients:
+`min(D_r − 1) = 1.743778818e-49` (at `pe=0, T=1, r=269`) and
+`min t^{−r}/(1−t^{−r}) = 4.17585777776e-25`. Both strictly positive. Note where the minimum
+sits — **at the truncation edge `r = RSER`**, which is exactly where a sampled check would have
+missed it. Also provable in general: `1/(1−w) > 1` for `0 < w < 1` covers `m = 0`, and for
+`m ≥ 1` the head already contains the `δ = 0` term `= 1` plus a positive tail. Now wired into
+the probe as check C2b.
+
+### The implication, proved rather than cited
+
+[`QOU/BraidKnot/LNaturalConcaveForm.lean`](folio/quantum-observable-universe/lean/QOU/BraidKnot/LNaturalConcaveForm.lean)
+— **8 theorems**, `lean -DautoImplicit=false -s 65536` **exit 0**, `#print axioms` clean on all
+eight (no `sorryAx`), `scripts/lean-library-sweep.py --only-exact` **1 ok / 0 RED**.
+
+- **`concave_exchange_inward`** — a concave `φ` cannot lose by an inward exchange preserving the
+  sum. Parametrising the inward pair as `p = (1−t)x + ty`, `q = tx + (1−t)y` makes it one line,
+  no division, no `ConcaveOn` instance. Handles the separable part outright, since
+  `|p_j − q_j| ≤ 1`.
+- **`parity_spread`** — the DIFFERENCE part is where it could fail, and the obstruction is
+  concrete: `(d_p, d_q) = (1, −1)` against `(d_x, d_y) = (0, 0)` would demand
+  `ψ(0) + ψ(0) ≤ ψ(1) + ψ(−1)`, **false** for concave `ψ`. With `m = x_j+y_j = 2s+r`,
+  `n = x_k+y_k = 2t+e`, `A = x_j−y_j`, `B = x_k−y_k`:
+
+      (d_p − d_x)(d_p − d_y)  =  ((r − e)² − (A − B)²)/4 ,
+
+  so betweenness holds exactly when `(r−e)² ≤ (A−B)²` — and `r ≡ A`, `e ≡ B` (mod 2), so either
+  `r = e` (left side 0) or `r ≠ e`, forcing `A ≠ B` and `|A−B| ≥ 1`. **Excluded by parity, not
+  by magnitude.**
+- `exp_decay_convex`, `neg_exp_series_concave` — C2, above.
+- `between_of_product_nonpos`, `difference_between_of_parity`, `exchange_sum_eq`,
+  `midpoint_concave_add` — the assembly.
+
+### Direct check of the conclusion: 1876 non-trivial integer pairs, 0 violations
+
+[`rev_e_infinity_lnatural_concavity_probe.py`](computations/deltalambda/rev_e_infinity_lnatural_concavity_probe.py),
+now 5/5. Tightest slack `+0.00709354725729` at `pe=0, T=8`. `H_G`'s off-diagonals (the
+continuous shadow of the difference coupling) are `≥ +0.00045` throughout.
+
+### 🛑 C4 passed VACUOUSLY twice before it tested anything, and I nearly reported the first one
+
+The most reusable finding here.
+
+1. **13 pairs out of ~900, and the tightest was an identity.** Uniform-random integer vectors
+   almost all violate `G`'s pair constraint (`u_j − u_jp < b0(jp) − b0(j)`) and return `−inf`.
+   Worse, the reported "tightest slack `0.0`" was at `x = [1,1,1]`, `y = [0,0,0]`, where
+   `{floor mid, ceil mid} = {y, x}` — **the inequality is an identity, slack zero by
+   construction.** It printed `PASS`.
+2. **Non-decreasing vectors — correct reasoning, still vacuous.** Non-decreasing `u` does make
+   the pair constraint automatic (`u_j − u_jp ≤ 0 < g`). But the per-row ceiling
+   `bT − b0(j) − 1` **decreases** in `j`, so such a vector hits its own ceiling immediately:
+   **44 vectors out of 6000, every one trivial.** 0 tested.
+3. **Derive the admissible set instead of guessing a family.** It is a system of consecutive
+   difference constraints, and drawing **backwards** from row `T−1` works where drawing forwards
+   dies — the ceiling and the difference constraint bound the same end. **97 % of forward draws
+   failed; backwards essentially all succeed.** 1876 non-trivial pairs.
+
+Two guards now in the probe so it cannot recur silently: trivial pairs are **excluded and
+counted**, and C4 **fails below 100 non-trivial pairs** rather than passing on a handful. I kept
+that threshold rather than lowering it to fit the 38 the second fix produced.
+
+The derivation also exposed geometry that was not obvious: for `j < pe` the row gap is 1, so an
+admissible integer `u` is **non-decreasing** there; for `j ≥ pe` the gap is 2, so it may fall by
+at most 1 per row.
+
+### Corpus-grep: the literature is NOT held, measured across all four library tiers
+
+Murota / L-natural / discrete convex analysis, over `library/INDEX.md`, `library/*/sections/`,
+**`library/*/ocr/`** (the fourth tier the documented path misses), `beans/`, `content/`,
+`folio/`, `computations/`, `docs/`: **one hit**, `s00453-026-01372-w` (Algorithmica 2026,
+*Concentration of Submodular Functions and Read-k Families Under Negative Dependence*) — a
+different subject. The sibling's "no hits" is confirmed, including on the tier they are unlikely
+to have checked, so the sufficient condition genuinely had to be re-derived. **This is a
+citation gap worth closing by ingesting Murota**, independently of this arc.
+
+Path 6 also returned `qou-pohg` (*"the linear-minus-concave-deficit class cannot be excluded by
+three points"*, completed 2026-09-04, `QOU/MassTheory/ConcaveDeficitNonExclusion.lean`). **Read
+it: a different arc** — the aggregator-family exclusion in mass theory, not the `Xbot`
+objective. Not a duplicate, but the nearest prior concave-structure work in the corpus.
+
+### What remains — exactly one thing, and what it would buy
+
+**The algorithmic half**: that a local optimum over `±χ_X` is global, and that steepest ascent
+terminates. Standard consequences of the form, equally not citable here. Cheap verification is
+an exhaustive enumeration at a small frame against a local-search result; the expensive one is a
+proof. **Until then nothing downstream may assume it.**
+
+If it lands, A1 changes shape: the integer maximum per `(pe, T)` becomes directly computable and
+A1 needs neither the relaxation (gap `1.5636×`), the penalty family (excluded, floor `1.3235×`
+against `1.1873×` needed) nor support branching (no 27-branch reduction). **The `T`-free half of
+A1 is untouched by any of this** and still has to come from the coercivity / `Γ`-decay side —
+that is what stops this being a complete answer.
+
+### 🛑 Where the residual softness actually is — read this before citing "established"
+
+There is **no single Lean theorem saying "`G` is L♮-concave"**, because `G` is not formalized in
+Lean: it is a Python producer. What is proved in Lean are the *engines*, stated over arbitrary
+real functions and arbitrary non-negative coefficient families. The assembly against the real
+`G` rests on two non-Lean links:
+
+1. **C1 is a reading of the producer's source**, machine-asserted as five literal fragments.
+   That catches a reshape of `G`, and it does **not** catch a semantic change that preserves
+   those five lines.
+2. **C2b is a check over the producer's grid** (`pe ≤ 8`, `T ≤ 26`, `r ≤ 269`). The general
+   argument for positivity is given above and is airtight, but what is *machine-enforced* is the
+   grid, not the general statement.
+
+So the honest tier is: **structural claim established, with the producer-to-Lean bridge carried
+by a source assertion and an exhaustive grid check rather than by a proof about `G` itself.**
+That is strictly stronger than the sibling's "credible lead" and strictly weaker than
+"sorry-free theorem about the objective". Do not compress it to either.
+
 ## 2026-10-10 (afternoon) — integer hi_j floor, checkpoint, and the Murota lead CHECKED
 
 **Integer box (`hi_j` floor), scope (a) negative.** Rounding the per-row confinement box to
