@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-10-11T07:35:00Z
-updated_at: 2026-10-11T07:45:00Z
+updated_at: 2026-10-11T07:55:00Z
 parent: qou-8lxd
 ---
 
@@ -64,3 +64,52 @@ Lean status of the other two, measured:
   by `wigner_coefficient_axiom`, an axiom asserting
   `|[5]_q! m_e - 68.896|/68.896 < 0.03` at the muon-era q0. That is an
   empirical comparison inside a formal proof.
+
+
+---
+
+# 2026-10-11 — Can either candidate be derived? (owner: "explore 1 2"; 3 stands)
+
+**Neither, from the corpus as it stands.** And the comparison exposes the root:
+the corpus gives the symbol `C_lambda` **two inconsistent definitions**.
+
+    unified-iterative-correction-proof.md:5   C_lambda = m_e . H_q(lambda)      (hook product)
+    mass-coefficient-shadow-price.lean:94     C_eq : C lam = w lam * (h/2)       (class field)
+
+At (2,2): `m_e H_q = m_e [3][2]^2 = 6.2893 MeV` versus `m_e w h/2 = 0.00887 MeV`.
+Since `w = dim_q^2/[4]!` and `dim_q = [4]!/H_q`, the hook product is
+`H_q = dim_q / w`, so the two are not related by any scale the corpus states.
+
+## Route 1 (shadow price) — not derived
+
+- `h/2 = tr(sigma)/dim` for self-conjugate shapes is a real theorem
+  (`self_conjugate_trace`). `w` is a definition. So `C = w h/2` is fine **as a
+  definition**.
+- The step that makes it a binding coefficient, `u*_lambda = C_lambda S_lambda(Z,N,A)`,
+  is the class field `factor`, not a theorem. It cannot come from the stated
+  program: the dual constraints are `u_0 + (w/d) u_lambda <= w/d`,
+  `u_lambda >= 0`, which contain **no nuclear datum**. The dual optimum is
+  `u_0* = min_lambda (w/d)` with the `u_lambda*` degenerate, the same set for
+  every (Z, N). So no `S_lambda(Z,N,A)` is produced by this LP. The block's own
+  note agrees: the compute it names "solves no program".
+- `S_lambda`'s form (`T(T+1)/A^p` for content sum 0) and its normalisation are
+  asserted. With `S` normalised to `T(T+1)/A`, the MeV coefficient would be
+  `0.00887 MeV`.
+
+## Route 2 (hook product) — not derived
+
+- The selection of (2,2) **is** derived given "isospin class at the quartet
+  level": it is the only content-zero partition of 4 (`qou-ld2a`,
+  `IsospinClassSingleton.lean`).
+- The value `C = m_e H_q(lambda)` is asserted as universal and fails for 6 of
+  the 7 BW coefficients (`qou-orjl`); the bridge that might rescue it,
+  `wedderburnEmbed`, is `opaque` and registers as an extra axiom (`qou-qb7p`).
+- `m_e [2]^2[3]` is also the corpus's **shell** coefficient `delta_S`. The same
+  number is used for two terms.
+- The scaling shape is not settled either: `derived-mass-formula-light-isotopes.md:18`
+  uses `min(Z,N)/A`, the Wigner blocks use `T(T+1)/A`.
+
+## Successor
+
+The sharp question is no longer "which Wigner coefficient" but **which
+definition of `C_lambda` the corpus means**. Owner decision; nothing edited.
