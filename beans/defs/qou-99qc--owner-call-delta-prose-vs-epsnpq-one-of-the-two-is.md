@@ -3343,3 +3343,11 @@ Full entry on `qou-pzsi`; probe `computations/probes/ohara_link_energy/`.
 - **Flowed link Möbius energy (upper bounds, multi-start).** It ranks `nuc9` (234.2) well below both dressing classes (≈291), which sit well below `gen_grouped` (>311). It does **not** separate the two dressing classes: the gap is 1.1 against a combined error of 1.2.
 - **So the owner's 2026-09-14 direction is confirmed as the right class.** The energy is order-sensitive where letter-sums are not. But on this candidate set it **cannot pick among the gluon dressings**, and it cannot see the letter decoration at all.
 - The gluon dressing stays unselected. No dashboard row was re-scored.
+
+## 2026-10-11 route 2 status
+
+- The gluon tail is ALLOWED (owner ruling, 2026-10-11).
+- The q-deformed recipe uses t = −q₀ (owner ruling). PR #7647 merged; it gives no ranking.
+- Option 1, ropelength on fresh 11-letter words, FAILED its pre-registered test (24-way tie). PR #7651 merged.
+- Option 1b pre-registers a same-loop-up-to-symmetry rule on fresh 13-letter words (branch claude/bring-route2-sameloop-2026-10-11).
+- No word is selected by route 2.

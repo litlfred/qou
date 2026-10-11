@@ -49,6 +49,8 @@ its numbers.** Which one is "the" R-q is an owner decision; the default if nobod
 decides is that the primary column is what R-q means and the secondary is a
 cross-reference.
 
+> **Owner ruling, 2026-10-11 (decision card):** t = −q₀ defines the q-deformed recipe. It is the reading that returns to route 2's matrices as q₀ → 1. The t = +q₀ column stays in the results as a cross-reference. The ruling was made after both columns had been computed. Neither column ranks the words, so the choice could not have been steered by the numbers.
+
 q₀ = the proton pin, `qou_substrate.constants.Q_50_DIGIT_STR`
 = 1.1099785827513808075916690956107688798744991218736.
 
