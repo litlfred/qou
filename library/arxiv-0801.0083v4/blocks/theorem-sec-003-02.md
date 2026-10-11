@@ -1,1 +1,0 @@
-Consider a central extension
