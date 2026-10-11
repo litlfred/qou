@@ -222,3 +222,11 @@ Six compositions of W = W_L W_R with the selected bond G = (sigma_2 sigma_3^-1)^
 Lean QOU/Mass/GammaGammaIsospinChannel.lean (sorry-free): C1 sum rule mu+ + mu− = mu_G; under C1 the right sign pattern forces B_{T=0} > alpha ln(1/(mu_G − 1)) ≈ 31 MeV; under C4/C5 mu_G > 1 forces at least one unbound channel.
 Scope (a): the six compositions are an enumeration; the corpus fixes no composition rule.
 Combined with the nn/pn entry above: neither the selection alone nor selection + T projectors yields the nuclear ordering with charge independence. Open lever: a derived composition rule, a two-body bond term, or the binding law (owner hold, option 3).
+
+## 2026-10-11 — two-body interface bonds (commit 079fd5e51b8, PR #7612; owner "explore all", item 2)
+Enumerated all 126 gamma-gamma words of up to 6 vertices over the straddling vertices v1 = sigma_1 sigma_2^-1 and v2 = sigma_2 sigma_3^-1: 83 are genuinely two-body (B_pn ∉ {B_pp, B_nn}), and 34 pass bond-alone reading 3.
+- Bond-alone reading 3, cheapest: a forced tie at 4 crossings, {v12 = sigma_1 sigma_3^-1 (split, additively separable), v21 = its conjugate (two-body)}, with equal characters. v21: pp 4.318, nn 4.272, pn 4.562, np 3.986 MeV, all bound; pn is the strict max but np the strict min; the symmetrised pn sits between pp and nn. Breaking the tie needs a rule not found in the corpus.
+- Whole-element reading 3 (live scope B): selects additively separable or one-body words only; no two-body word is selected.
+- Non-gamma-gamma references (block braiding c, c^2, full twist) are two-body but writhe ≠ 0 excludes them under the ruling.
+Lean QOU/Mass/TwoBodyInterfaceBond.lean (sorry-free): additively separable ⇒ B_pn + B_np = B_pp + B_nn; a strict max forces the reverse strict min; exchange-symmetric ⇒ 2B_pn = B_pp + B_nn, so pn is never strictly first; a two-body witness shows non-vacuity.
+Consequence: an exchange-symmetric pair functional (pn = np, as physics requires) can never put the deuteron strictly first, two-body or not. Scope (a) for the selection outcome; the structural lemmas are scope (b).
